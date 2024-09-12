@@ -76,6 +76,8 @@
     sound:
       collection: SMGDrop
   # Goobstation edit end
+  - type: Multishot # Goobstation
+    spreadMultiplier: 1.4
 
 - type: entity
   name: MA PDW-58 Atreides (5.7x28mm)

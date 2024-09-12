@@ -257,6 +257,7 @@
     deconstructionTarget: null
   - type: StaticPrice # Mono
     price: 300
+  - type: Multishot # Goobstation
 
 - type: entity
   name: sawn-off shotgun (12 gauge)
@@ -296,6 +297,7 @@
     deconstructionTarget: null
   - type: StaticPrice
     price: 0
+  - type: Multishot # Goobstation
 
 - type: entity
   name: blunderbuss (12 gauge)

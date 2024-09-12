@@ -69,6 +69,8 @@
     sound:
       collection: RevolversDrop
   # Goobstation edit end
+  - type: Multishot # Goobstation
+    spreadMultiplier: 1.2
 
 - type: entity
   name: NT Deckard (.45 magnum)

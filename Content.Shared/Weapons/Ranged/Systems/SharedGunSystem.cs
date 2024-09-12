@@ -525,6 +525,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         RaiseLocalEvent(gunUid, ref shotEv);
 
         CauseImpulse(toCoordinates.Value, (gunUid, gun), ev.Ammo.Count);
+        UpdateAmmoCount(gunUid); //GoobStation - Multishot
     }
 
     public void Shoot(
