@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared.Camera;
+using Content.Goobstation.Common.TheManWhoSoldTheWorld;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -83,6 +84,9 @@ public abstract partial class SharedWieldableSystem : EntitySystem
         if (TryComp<NoWieldNeededComponent>(args.User, out var noWieldNeeded) && noWieldNeeded.GetBonus) { // GoobStation change - check for NoWieldNeeded
             _gun.RefreshModifiers(uid, args.User);
         }
+
+        if(HasComp<TheManWhoSoldTheWorldComponent>(args.User))
+            return;
 
         if (TryComp<WieldableComponent>(uid, out var wieldable) &&
             !wieldable.Wielded &&
