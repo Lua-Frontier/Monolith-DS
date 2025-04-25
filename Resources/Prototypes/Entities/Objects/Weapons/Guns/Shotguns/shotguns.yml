@@ -297,7 +297,6 @@
     deconstructionTarget: null
   - type: StaticPrice
     price: 0
-  - type: Multishot # Goobstation
 
 - type: entity
   name: blunderbuss (12 gauge)

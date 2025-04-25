@@ -190,6 +190,7 @@
   - type: StaticPrice
     price: 190
   - type: Multishot # Goobstation
+    spreadAddition: 10
 
 - type: entity
   name: makeshift laser pistol
@@ -219,6 +220,7 @@
     maxCharge: 500
     startingCharge: 500
   - type: Multishot # Goobstation
+    spreadAddition: 10
 
 - type: entity
   name: tesla gun
@@ -613,7 +615,7 @@
     price: 100
   - type: Gun
     fireRate: 2
-    projectileSpeed: 35 # any higher and this causes issues in lag
+    #projectileSpeed: 35 # Goobstation - nuh uh
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: ProjectileBatteryAmmoProvider
@@ -807,6 +809,7 @@
     - AdvancedLaserPistol
     - Sidearm
   - type: Multishot # Goobstation
+    spreadAddition: 10
 
 - type: entity
   name: C.H.I.M.P. handcannon
