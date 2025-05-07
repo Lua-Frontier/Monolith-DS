@@ -303,6 +303,20 @@
     state: conpipe-y
 
 - type: construction
+  name: disposal four-way junction
+  description: A four-way junction for disposal pipes.
+  id: DisposalXJunction
+  graph: DisposalPipe
+  startNode: start
+  targetNode: xJunction
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/disposal.rsi
+    state: conpipe-x
+
+- type: construction
   name: disposal bend
   description: A tube bent at a 90 degree angle.
   id: DisposalBend
