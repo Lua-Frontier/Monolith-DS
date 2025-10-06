@@ -20,6 +20,7 @@
   - NFBlueprintSyringeBluespace
   - NFBlueprintJugBluespace
   - NFBlueprintVialBluespace
+  - MedicalPouch # LuaM add
   # Salvage
   - NFBlueprintOreBagOfHolding
   - NFBlueprintMiningDrillDiamond
