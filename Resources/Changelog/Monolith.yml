@@ -21480,3 +21480,10 @@ Entries:
   id: 2367
   time: '2026-06-08T10:47:16.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3839
+- author: lordsej
+  changes:
+    - type: Add
+      message: Vim flight and fight capabilities
+  id: 2368
+  time: '2026-06-08T12:05:08.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/4053
