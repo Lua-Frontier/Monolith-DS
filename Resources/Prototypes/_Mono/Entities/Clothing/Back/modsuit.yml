@@ -70,7 +70,7 @@
     sprite: _Mono/Clothing/Back/Modsuits/rogue.rsi
   - type: Storage # Extra space - Mono
     grid:
-    - 0,0,7,3
+    - 0,0,12,6
     maxItemSize: Huge
   - type: ToggleableClothing
     clothingPrototypes:

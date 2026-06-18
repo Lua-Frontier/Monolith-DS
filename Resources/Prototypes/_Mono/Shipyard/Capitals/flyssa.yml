@@ -9,7 +9,7 @@
   category: Large
   group: Security
   access: Security
-  shuttlePath: /Maps/_Mono/Shuttles/Capitals/flyssa.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml
   guidebookPage: Null
   class:
   - Capital
@@ -24,7 +24,7 @@
 - type: gameMap
   id: Flyssa
   mapName: 'TSF-SKR Flyssa-K'
-  mapPath: /Maps/_Mono/Shuttles/Capitals/flyssa.yml
+  mapPath: /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml
   minPlayers: 0
   stations:
     Flyssa:

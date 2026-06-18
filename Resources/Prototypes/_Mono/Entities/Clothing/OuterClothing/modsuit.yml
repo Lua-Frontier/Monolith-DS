@@ -70,18 +70,20 @@
   - type: FireProtection
     reduction: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 1.1
+    sprintModifier: 1.1
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.45
-        Slash: 0.45
-        Piercing: 0.525
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.4
         Heat: 0.5
-        Radiation: 0.2
-        Caustic: 0.3
+        Radiation: 0.1
+        Caustic: 0.1
+        Shock: 0.5
         Poison: 0.8
+
 
 # Volta
 

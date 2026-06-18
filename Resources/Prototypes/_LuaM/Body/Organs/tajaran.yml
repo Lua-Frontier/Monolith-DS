@@ -1,0 +1,16 @@
+- type: entity
+  id: OrganTajaranEyes
+  parent: [ OrganHumanEyes ]
+  name: tajaran eyes
+  description: They reflect off the darkness.
+  components:
+  - type: Organ
+    onAdd:
+    - type: NightVision
+      activateSound: null
+      deactivateSound: null
+  - type: Sprite
+    sprite: _LuaM/Body/Organs/tajaran-eyes.rsi
+    layers:
+    - state: eyeball-l
+    - state: eyeball-r

@@ -1,0 +1,14 @@
+- type: entity
+  id: OrganVulpkaninEyes
+  parent: [ OrganHumanEyes ]
+  name: vulpkanin eyes
+  description: They reflect off the darkness.
+  components:
+  - type: Organ
+    onAdd:
+    - type: ThermalVision
+      flashDurationMultiplier: 1
+      pulseTime: 2
+      isEquipment: false
+      toggleAction: PulseVulpkaninThermalVision
+      color: "#DC143C"

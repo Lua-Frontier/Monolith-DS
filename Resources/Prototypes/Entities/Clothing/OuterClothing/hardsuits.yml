@@ -867,9 +867,11 @@
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitCybersun
       helmetcover: ClothingHeadHelmetCoverBlock
-      helmetattachment: ClothingHeadHelmetAttachmentBlock
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.4
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHeavySuit
 
 #Wizard Hardsuit
 - type: entity

@@ -197,14 +197,14 @@
   - type: Damageable
     damageContainer: Shield
   - type: Battery
-    maxCharge: 10
-    startingCharge: 10
+    maxCharge: 30
+    startingCharge: 30
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 1
   - type: RechargeableBlocking
-    chargedRechargeRate: 0
-    dischargedRechargeRate: 0.3
+    chargedRechargeRate: 0.5
+    dischargedRechargeRate: 1
   - type: UseDelay
     delay: 10
   - type: PointLight
@@ -212,3 +212,8 @@
     radius: 1.4
     energy: 2
     color: "#5dd439"
+  - type: EmpResistance
+    coefficient: 0.000001
+  - type: Reflect
+    reflects: Energy
+    reflectProb: 0.4

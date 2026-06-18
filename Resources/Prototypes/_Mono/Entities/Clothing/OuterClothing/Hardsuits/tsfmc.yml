@@ -27,8 +27,8 @@
   - type: StaminaDamageResistance
     coefficient: 0.25
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 1.05
+    sprintModifier: 1.05
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -69,7 +69,7 @@
     sprintModifier: 0.95
 
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseFactionGearTSFT3]
+  parent: [ClothingOuterHardsuitBase, BaseFactionGearTSFT3, EnergyShieldClothing]
   id: ClothingOuterHardsuitM86
   name: M86 Mk.3(R) hardsuit
   description: An armored hardsuit, designed to be an upgrade for the M82 series. The extra general armor gives it significant weight to move around.
@@ -84,31 +84,70 @@
     highPressureMultiplier: 0.03
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.3
-  - type: Armor
+    damageCoefficient: 0.2
+  - type: Armor # Mono - Armor Value Changes
     modifiers:
       coefficients:
-        Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.4
-        Shock: 0.8
-        Heat: 0.5
-        Radiation: 0.5
-        Caustic: 0.6
-  - type: StaminaDamageResistance
-    coefficient: 0.2
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.7
+        Heat: 0.3
+        Radiation: 0.35
+        Caustic: 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
-  - type: HeldSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
+  - type: Tag
+    tags:
+    - RogueHardsuit
+  # Shielding
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.1
+        Slash: 0.1
+        Piercing: 0.1
+        Heat: 0.1
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.1
+        Slash: 0.1
+        Piercing: 0.1
+        Heat: 0.1
+      flatReductions:
+        Heat: 5
+    passiveBlockFraction: 1.0
+    activeBlockFraction: 1.0
+    isClothing: true
+  - type: Damageable
+    damageContainer: Shield
+  - type: Battery
+    maxCharge: 20
+    startingCharge: 20
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 1
+  - type: RechargeableBlocking
+    chargedRechargeRate: 0.5
+    dischargedRechargeRate: 1
+  - type: UseDelay
+    delay: 10
+  - type: PointLight
+    enabled: false
+    radius: 1.4
+    energy: 2
+    color: "#5dd439"
+  - type: EmpResistance
+    coefficient: 0.000001
+  - type: Reflect
+    reflects: Energy
+    reflectProb: 0.4
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
     replaceCurrentClothing: true
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitM86
-      helmetcover: ClothingHeadHelmetCoverBlock
-      helmetattachment: ClothingHeadHelmetAttachmentBlock
   - type: StaticPrice
     price: 7500
     vendPrice: 1000
@@ -154,7 +193,7 @@
     id: ClothingOuterHardsuitTacsuitHighValue
 
 - type: entity
-  parent: [ClothingOuterHardsuitJuggernaut, EnergyShieldClothing, BaseFactionGearTSFT3 ] # Jugger Suit
+  parent: [ClothingOuterHardsuitJuggernaut, BaseFactionGearTSFT3 ] # Jugger Suit
   id: ClothingOuterHardsuitNfsdExperimental
   name: TSFMC M92-X tacsuit
   description: An experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Durable, and comes with an integrated soft-shield along with numerous gadgets at the cost of insulation and solid armor.
@@ -181,53 +220,25 @@
   - type: Armor # Mono - Armor Value Changes
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.6
-        Heat: 0.7
-        Radiation: 0.5
-        Caustic: 0.8
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.3
+        Radiation: 0.3
+        Caustic: 0.3
         Poison: 0.8 # Mono
   - type: ClothingSpeedModifier # Mono - Armor Value Changes
-    walkModifier: 0.7
-    sprintModifier: 0.65
+    walkModifier: 0.75
+    sprintModifier: 0.75
   - type: FactionClothing
     faction: NanoTrasen
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.25
   - type: PirateBountyItem # Mono
     id: ClothingOuterHardsuitTacsuitHighValue
-  # Mono - Shielding comps
-  - type: Blocking
-    passiveBlockModifier:
-      coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
-        Heat: 0.5
-    activeBlockModifier:
-      coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
-        Heat: 0.5
-      flatReductions:
-        Heat: 5
-        Piercing: 5
-    passiveBlockFraction: 0.6
-    activeBlockFraction: 0.6
-    isClothing: true
-  - type: Damageable
-    damageContainer: Shield
-  - type: Battery
-    maxCharge: 150
-    startingCharge: 150
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 1.5
-  - type: RechargeableBlocking
-  - type: UseDelay
-    delay: 10
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHeavySuit
 
 # MARSOC only
 

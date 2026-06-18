@@ -9,7 +9,7 @@
       types:
         Piercing: 65
         Structural: 100
-    armorPenetration: 0.4
+    armorPenetration: 0.5
   - type: Tracer
     color: "#FFFFFFFF"
     length: 3
@@ -30,9 +30,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 2
-    intensitySlope: 2
-    totalIntensity: 18 # 30 damage per tile
+    maxIntensity: 6
+    intensitySlope: 8
+    totalIntensity: 15
     maxTileBreak: 0
   - type: PointLight
     radius: 3.5
