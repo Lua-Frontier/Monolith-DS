@@ -1,4 +1,4 @@
-<p align="center"> <img alt="Monolith DS" height="300" src="https://github.com/Lua-Frontier/Monolith-DS/blob/master/Resources/Textures/_LuaM/Logo/logogit.png?raw=true" /></p>
+<p align="center"> <img alt="Monolith DS" height="300" src="https://github.com/Lua-Frontier/Monolith-DS/blob/master/Resources/Textures/_LuaM/logogit.png?raw=true" /></p>
 
 ![Alt](https://repobeats.axiom.co/api/embed/cfba1806606b5f66bb0bd62eebcd8941d9008e31.svg "Repobeats analytics image")
 
