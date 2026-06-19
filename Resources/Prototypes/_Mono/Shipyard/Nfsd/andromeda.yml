@@ -21,7 +21,7 @@
 - type: gameMap
   id: Andromeda
   mapName: 'Andromeda'
-  mapPath: /Maps/_LuaM/Shuttles/TSFMC/andromeda.yml
+  mapPath: /Maps/_LuaM/Shuttles/TSFMC/andromeda.yml # LuaM: /Maps/_Mono/Shuttles/Nfsd/andromeda.yml > /Maps/_LuaM/Shuttles/TSFMC/andromeda.yml
   minPlayers: 0
   stations:
     Andromeda:
