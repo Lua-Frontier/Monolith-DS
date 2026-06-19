@@ -9,7 +9,7 @@
       - torso
       organs:
         brain: OrganHumanBrain
-        eyes: OrganTajaranEyes
+        eyes: OrganTajaranEyes # LuaM: OrganHumanEyes > OrganTajaranEyes
     torso:
       part: TorsoTajaran
       connections:
