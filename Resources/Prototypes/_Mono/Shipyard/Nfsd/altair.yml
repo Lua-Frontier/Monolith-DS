@@ -10,7 +10,7 @@
   category: Large
   group: Security
   access: Security
-  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/altair.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/altair.yml # LuaM: /Maps/_Mono/Shuttles/Nfsd/altair.yml > /Maps/_LuaM/Shuttles/TSFMC/altair.yml
   guidebookPage: Null
   class:
   - Frigate
