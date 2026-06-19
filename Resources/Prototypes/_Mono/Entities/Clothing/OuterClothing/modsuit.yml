@@ -70,8 +70,9 @@
   - type: FireProtection
     reduction: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1
+    walkModifier: 1.1 # LuaM: 0.95 > 1.1
+    sprintModifier: 1.1 # LuaM: 0.95 > 1.1
+
   - type: Armor
     modifiers:
       coefficients:
