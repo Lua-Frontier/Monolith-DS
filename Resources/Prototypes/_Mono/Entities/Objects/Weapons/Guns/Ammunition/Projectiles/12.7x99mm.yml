@@ -30,9 +30,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 6
-    intensitySlope: 8
-    totalIntensity: 15
+    maxIntensity: 6 # LuaM: 2 > 6
+    intensitySlope: 8 # LuaM: 2 > 8
+    totalIntensity: 15 # LuaM: 18 > 15
     maxTileBreak: 0
   - type: PointLight
     radius: 3.5
