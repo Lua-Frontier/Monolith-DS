@@ -197,8 +197,8 @@
   - type: Damageable
     damageContainer: Shield
   - type: Battery
-    maxCharge: 30
-    startingCharge: 30
+    maxCharge: 30 # LuaM: 10 > 30
+    startingCharge: 30 # LuaM: 10 > 30
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 1
