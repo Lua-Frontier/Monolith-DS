@@ -20,7 +20,7 @@
 
 ## Требования
 <!-- Подтвердите следующее, поставив X в квадратных скобках [X]: -->
-- [] Я прочитал [CONTRIBUTING.md](https://github.com/HacksLua/sector-frontier/blob/master/CONTRIBUTING.md) и соблюдаю [Руководство по пулл-реквестам и изменению логов](https://docs.spacestation14.com/ru/general-development/codebase-info/pull-request-guidelines.html).
+- [] Я прочитал [CONTRIBUTING.md](https://github.com/Lua-Frontier/Monolith-DS/blob/master/CONTRIBUTING.md) и соблюдаю [Руководство по пулл-реквестам и изменению логов](https://docs.spacestation14.com/ru/general-development/codebase-info/pull-request-guidelines.html).
 - [] Я приложил медиа-материалы к этому PR или они не требуются.
 - [] Я ознакомился с [Руководством по добавлению кораблей](https://frontierstation.wiki.gg/wiki/Ship_Submission_Guidelines), если это уместно.
 - [] Я подтверждаю, что ИИ-инструменты не использовались для создания материалов в этом PR.
