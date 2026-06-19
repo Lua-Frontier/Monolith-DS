@@ -84,8 +84,8 @@
     highPressureMultiplier: 0.03
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.2
-  - type: Armor # Mono - Armor Value Changes
+    damageCoefficient: 0.2 # LuaM: 0.3 > 0.2
+  - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.75 # LuaM: 0.4 > 0.75
