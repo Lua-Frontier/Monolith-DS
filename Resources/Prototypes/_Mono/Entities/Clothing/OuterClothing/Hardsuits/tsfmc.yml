@@ -27,8 +27,8 @@
   - type: StaminaDamageResistance
     coefficient: 0.25
   - type: ClothingSpeedModifier
-    walkModifier: 1.05
-    sprintModifier: 1.05
+    walkModifier: 1.05 # LuaM: 0.95 > 1.05
+    sprintModifier: 1.05 # LuaM: 0.95 > 1.05
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
