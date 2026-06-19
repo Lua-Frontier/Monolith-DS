@@ -118,7 +118,7 @@
   id: Telecrystal
   name: Telecrystal (1)
   minimumTemperature: 0
-  maximumTemperature: 40
+  maximumTemperature: 40 # LuaM: 10 > 40
   energyRelease: 1040
   products:
     Telecrystal1: 1
