@@ -870,7 +870,7 @@
 #      helmetattachment: ClothingHeadHelmetAttachmentBlock
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.4
-  - type: FootstepModifier
+  - type: FootstepModifier # LuaM
     footstepSoundCollection:
       collection: FootstepHeavySuit
 
