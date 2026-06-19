@@ -223,12 +223,12 @@
   - type: Armor # Mono - Armor Value Changes
     modifiers:
       coefficients:
-        Blunt: 0.3
-        Slash: 0.3
-        Piercing: 0.3
-        Heat: 0.3
-        Radiation: 0.3
-        Caustic: 0.3
+        Blunt: 0.3 # LuaM: 0.5 > 0.3
+        Slash: 0.3 # LuaM: 0.5 > 0.3
+        Piercing: 0.3 # LuaM: 0.6 > 0.3
+        Heat: 0.3 # LuaM: 0.7 > 0.3
+        Radiation: 0.3 # LuaM: 0.5 > 0.3
+        Caustic: 0.3 # LuaM: 0.8 > 0.3
         Poison: 0.8 # Mono
   - type: ClothingSpeedModifier # Mono - Armor Value Changes
     walkModifier: 0.75
