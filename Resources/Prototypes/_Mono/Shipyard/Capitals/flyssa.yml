@@ -9,7 +9,7 @@
   category: Large
   group: Security
   access: Security
-  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml # LuaM: /Maps/_Mono/Shuttles/Capitals/flyssa.yml > /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml
   guidebookPage: Null
   class:
   - Capital
