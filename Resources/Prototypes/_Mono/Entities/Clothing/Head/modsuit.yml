@@ -152,7 +152,7 @@
       highPressureMultiplier: 0.3
       lowPressureMultiplier: 1000
     - type: TemperatureProtection
-      heatingCoefficient: 0.001
+      heatingCoefficient: 0.001 # LuaM:  0.01 > 0.001
       coolingCoefficient: 0.01
     - type: IdentityBlocker
     - type: IngestionBlocker
