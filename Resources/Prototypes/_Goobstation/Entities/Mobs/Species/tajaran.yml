@@ -38,7 +38,7 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
- # - type: NightVision
+ # - type: NightVision # Commented by LuaM
  #   activateSound: null
  #   deactivateSound: null
   - type: MeleeWeapon
