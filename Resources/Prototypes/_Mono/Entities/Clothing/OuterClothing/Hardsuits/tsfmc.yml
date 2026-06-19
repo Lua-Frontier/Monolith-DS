@@ -239,7 +239,7 @@
     coefficient: 0.25
   - type: PirateBountyItem # Mono
     id: ClothingOuterHardsuitTacsuitHighValue
-  - type: FootstepModifier
+  - type: FootstepModifier # LuaM
     footstepSoundCollection:
       collection: FootstepHeavySuit
 
