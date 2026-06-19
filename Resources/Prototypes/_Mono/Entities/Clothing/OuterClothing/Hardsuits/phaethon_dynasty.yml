@@ -212,8 +212,10 @@
     radius: 1.4
     energy: 2
     color: "#5dd439"
+# LuaM-start:
   - type: EmpResistance
     coefficient: 0.000001
   - type: Reflect
     reflects: Energy
     reflectProb: 0.4
+ # LuaM-end.
