@@ -98,6 +98,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.1 # LuaM: 0.8 > 1.1
     sprintModifier: 1.1 # LuaM: 0.8 > 1.1
+# LuaM-start:
   - type: Tag
     tags:
     - RogueHardsuit
@@ -143,6 +144,7 @@
   - type: Reflect
     reflects: Energy
     reflectProb: 0.4
+ # LuaM-end.
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
