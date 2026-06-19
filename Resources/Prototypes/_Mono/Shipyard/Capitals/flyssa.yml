@@ -24,7 +24,7 @@
 - type: gameMap
   id: Flyssa
   mapName: 'TSF-SKR Flyssa-K'
-  mapPath: /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml
+  mapPath: /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml # LuaM: /Maps/_Mono/Shuttles/Capitals/flyssa.yml > /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml
   minPlayers: 0
   stations:
     Flyssa:
