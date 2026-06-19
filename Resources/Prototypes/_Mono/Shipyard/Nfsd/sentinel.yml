@@ -10,7 +10,7 @@
   category: Medium
   group: Security
   access: Security
-  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/sentinel.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/sentinel.yml # LuaM: /Maps/_Mono/Shuttles/Nfsd/sentinel.yml > /Maps/_LuaM/Shuttles/TSFMC/sentinel.yml 
   guidebookPage: Null
   class:
   - Patrol
