@@ -867,7 +867,7 @@
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitCybersun
       helmetcover: ClothingHeadHelmetCoverBlock
-#      helmetattachment: ClothingHeadHelmetAttachmentBlock
+#      helmetattachment: ClothingHeadHelmetAttachmentBlock # Commented by LuaM
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.4
   - type: FootstepModifier # LuaM
