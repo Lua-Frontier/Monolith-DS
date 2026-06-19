@@ -97,7 +97,7 @@
   - type: Item
     size: Small
     heldPrefix: brain
-  - type: RadarBlip
+  - type: RadarBlip # LuaM
     radarColor: "#E0FFFF"
     scale: 6
     shape: Star
