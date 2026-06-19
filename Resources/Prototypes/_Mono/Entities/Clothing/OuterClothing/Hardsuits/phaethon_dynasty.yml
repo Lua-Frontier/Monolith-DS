@@ -203,8 +203,8 @@
     autoRecharge: true
     autoRechargeRate: 1
   - type: RechargeableBlocking
-    chargedRechargeRate: 0.5
-    dischargedRechargeRate: 1
+    chargedRechargeRate: 0.5 # LuaM: 0 > 0.5
+    dischargedRechargeRate: 1 # LuaM: 0.3 > 1
   - type: UseDelay
     delay: 10
   - type: PointLight
