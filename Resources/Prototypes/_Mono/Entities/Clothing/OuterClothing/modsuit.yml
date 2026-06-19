@@ -80,9 +80,9 @@
         Slash: 0.6 # LuaM: 0.45 > 0.6
         Piercing: 0.4 # LuaM: 0.525 > 0.4
         Heat: 0.5
-        Radiation: 0.1
-        Caustic: 0.1
-        Shock: 0.5
+        Radiation: 0.1 # LuaM: 0.2 > 0.1
+        Caustic: 0.1 # LuaM: 0.3 > 0.1
+        Shock: 0.5 # LuaM
         Poison: 0.8
 
 
