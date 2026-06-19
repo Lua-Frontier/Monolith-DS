@@ -231,8 +231,8 @@
         Caustic: 0.3 # LuaM: 0.8 > 0.3
         Poison: 0.8 # Mono
   - type: ClothingSpeedModifier # Mono - Armor Value Changes
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.75 # LuaM: 0.7 > 0.75
+    sprintModifier: 0.75 # LuaM: 0.65 > 0.75
   - type: FactionClothing
     faction: NanoTrasen
   - type: StaminaDamageResistance # Mono - Stamres
