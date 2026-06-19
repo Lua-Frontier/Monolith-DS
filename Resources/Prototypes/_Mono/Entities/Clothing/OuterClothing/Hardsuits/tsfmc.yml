@@ -98,6 +98,9 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.1 # LuaM: 0.8 > 1.1
     sprintModifier: 1.1 # LuaM: 0.8 > 1.1
+#  - type: HeldSpeedModifier
+  - type: StaminaDamageResistance
+    coefficient: 0.2
 # LuaM-start:
   - type: Tag
     tags:
@@ -242,6 +245,36 @@
   - type: FootstepModifier # LuaM
     footstepSoundCollection:
       collection: FootstepHeavySuit
+#  - type: Blocking
+#    passiveBlockModifier:
+#      coefficients:
+#        Blunt: 0.5
+#        Slash: 0.5
+#        Piercing: 0.5
+#        Heat: 0.5
+#    activeBlockModifier:
+#      coefficients:
+#        Blunt: 0.5
+#        Slash: 0.5
+#        Piercing: 0.5
+#        Heat: 0.5
+#      flatReductions:
+#        Heat: 5
+#        Piercing: 5
+#    passiveBlockFraction: 0.6
+#    activeBlockFraction: 0.6
+#    isClothing: true
+#  - type: Damageable
+#    damageContainer: Shield
+#  - type: Battery
+#    maxCharge: 150
+#    startingCharge: 150
+#  - type: BatterySelfRecharger
+#    autoRecharge: true
+#    autoRechargeRate: 1.5
+#  - type: RechargeableBlocking
+#  - type: UseDelay
+#    delay: 10  #LuaM
 
 # MARSOC only
 
