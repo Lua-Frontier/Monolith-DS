@@ -76,9 +76,9 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.4
+        Blunt: 0.6 # LuaM: 0.45 > 0.6
+        Slash: 0.6 # LuaM: 0.45 > 0.6
+        Piercing: 0.4 # LuaM: 0.525 > 0.4
         Heat: 0.5
         Radiation: 0.1
         Caustic: 0.1
