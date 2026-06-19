@@ -88,12 +88,13 @@
   - type: Armor # Mono - Armor Value Changes
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.7
-        Heat: 0.3
-        Radiation: 0.35
-        Caustic: 0.5
+        Blunt: 0.75 # LuaM: 0.4 > 0.75
+        Slash: 0.75 # LuaM: 0.4 > 0.75
+        Piercing: 0.7 # LuaM: 0.4 > 0.7
+#       Shock: 0.8 # Commented by LuaM
+        Heat: 0.3 # LuaM: 0.5 > 0.3
+        Radiation: 0.35 # LuaM: 0.5 > 0.35
+        Caustic: 0.5 # LuaM: 0.6 > 0.5
   - type: ClothingSpeedModifier
     walkModifier: 1.1
     sprintModifier: 1.1
