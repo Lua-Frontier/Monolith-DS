@@ -96,8 +96,8 @@
         Radiation: 0.35 # LuaM: 0.5 > 0.35
         Caustic: 0.5 # LuaM: 0.6 > 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1
+    walkModifier: 1.1 # LuaM: 0.8 > 1.1
+    sprintModifier: 1.1 # LuaM: 0.8 > 1.1
   - type: Tag
     tags:
     - RogueHardsuit
