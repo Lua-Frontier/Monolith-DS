@@ -11,7 +11,7 @@
   category: Large
   group: Security
   access: Armory
-  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/andromeda.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/andromeda.yml # LuaM: /Maps/_Mono/Shuttles/Nfsd/andromeda.yml > /Maps/_LuaM/Shuttles/TSFMC/andromeda.yml
   guidebookPage: Null
   class:
   - Frigate
