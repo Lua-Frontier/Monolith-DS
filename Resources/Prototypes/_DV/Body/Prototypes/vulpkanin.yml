@@ -9,7 +9,7 @@
       - torso
       organs:
         brain: OrganHumanBrain
-        eyes: OrganVulpkaninEyes
+        eyes: OrganVulpkaninEyes # LuaM: OrganHumanEyes > OrganVulpkaninEyes
     torso:
       part: TorsoVulpkanin
       organs:
