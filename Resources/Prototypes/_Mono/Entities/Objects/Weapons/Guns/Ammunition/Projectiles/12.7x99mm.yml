@@ -9,7 +9,7 @@
       types:
         Piercing: 65
         Structural: 100
-    armorPenetration: 0.5
+    armorPenetration: 0.5 # LuaM: 0.4 > 0.5
   - type: Tracer
     color: "#FFFFFFFF"
     length: 3
