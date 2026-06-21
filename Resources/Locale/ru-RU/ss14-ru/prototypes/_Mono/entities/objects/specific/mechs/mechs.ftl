@@ -21,19 +21,19 @@ ent-AFFlailE = ASF-59-E "Spyglass"
 ent-AFMace = ASF-59-B "Mace"
     .desc = Случайная переделка, бронепластины сняты для добавления увеличенных ускорителей. Из-за ограничений по питанию может нести только одно оружие, ограничивая универсальность. Подходит для тяжёлых креплений.
 
-ent-AFInterceptorTSF = TSF { ent-BaseAFInterceptor }
+ent-AFInterceptorTSF = ТСФ { ent-BaseAFInterceptor }
     .desc = { ent-BaseAFInterceptor.desc }
-ent-AFInterceptorMTSF = TSF { ent-AFInterceptorM }
+ent-AFInterceptorMTSF = ТСФ { ent-AFInterceptorM }
     .desc = { ent-AFInterceptorM.desc }
 
-ent-AFFlailTSF = TSF { ent-AFFlail }
+ent-AFFlailTSF = ТСФ { ent-AFFlail }
     .desc = { ent-AFFlail.desc }
-ent-AFMaceTSF = TSF { ent-AFMace }
+ent-AFMaceTSF = ТСФ { ent-AFMace }
     .desc = { ent-AFMace.desc }
-ent-AFFlailETSF = TSF { ent-AFFlailE }
+ent-AFFlailETSF = ТСФ { ent-AFFlailE }
     .desc = { ent-AFFlailE.desc }
 
-ent-MechDurandTSF = { ent-MechDurand } TSF
+ent-MechDurandTSF = { ent-MechDurand } ТСФ
     .desc = { ent-MechDurand.desc }
-ent-MechGygaxTSF = { ent-MechGygax } TSF
+ent-MechGygaxTSF = { ent-MechGygax } ТСФ
     .desc = { ent-MechGygax.desc }
