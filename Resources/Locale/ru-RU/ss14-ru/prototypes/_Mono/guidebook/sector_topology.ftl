@@ -1,1 +1,1 @@
-ent-MonoSectorMap = sector map
+ent-MonoSectorMap = Карта сектора

@@ -1,8 +1,0 @@
-ent-ForgeBaseWeaponEnergyPistolFireModes = режимы огня энергетического пистолета
-ent-ForgeBaseWeaponEnergyPistolHitScan = лазерный луч
-ent-ForgeBaseWeaponFrameEnergyPistolFrontierGunsmith = энергетический пистолет Frontier Gunsmith
-ent-ForgeBaseWeaponFrameEnergyPistol = энергетический пистолет
-ent-ForgeBaseWeaponEnergyPistolHitScanPulse = импульсный луч
-ent-ForgeBaseWeaponEnergyGunPractice = тренировочный энергетический пистолет
-ent-ForgeBaseWeaponEnergyPistolDisabler = станнер
-ent-ForgeBaseWeaponFrameEnergyPistolNanotrasen = энергетический пистолет Nanotrasen

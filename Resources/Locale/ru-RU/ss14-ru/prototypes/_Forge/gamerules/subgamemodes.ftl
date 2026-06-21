@@ -1,1 +1,0 @@
-ent-Contractor = Подрядчик

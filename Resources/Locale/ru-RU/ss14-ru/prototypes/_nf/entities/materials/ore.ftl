@@ -15,10 +15,7 @@ ent-ScrapOre10 = { ent-ScrapOre }
 ent-ScrapOre20 = { ent-ScrapOre }
   .suffix = 20
   .desc = { ent-ScrapOre.desc }
-materials-raw-scrap = несортированный лом
-materials-scrap = лом
 ent-SpawnRandomRefinedScrap = очищенный лом
-
 ent-NFOreScrap = руда из лома
 ent-ScrapOre50 = металлолом
 ent-ScrapOre100 = металлолом

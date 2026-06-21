@@ -1,2 +1,2 @@
-ent-InstantEffectEMP = instant EMP effect
-ent-LightningEMP = ionised lightning
+ent-InstantEffectEMP = мгновенный ЭМИ-эффект
+ent-LightningEMP = ионизированная молния

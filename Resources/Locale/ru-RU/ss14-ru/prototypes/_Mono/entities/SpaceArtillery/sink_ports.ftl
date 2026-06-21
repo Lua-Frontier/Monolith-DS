@@ -1,2 +1,2 @@
-ent-SpaceArtilleryFire = Fire Armament
-    .desc = Controls Space Artillery's firing mechanism.
+ent-SpaceArtilleryFire = Огонь
+    .desc = Управляет механизмом стрельбы космической артиллерии.

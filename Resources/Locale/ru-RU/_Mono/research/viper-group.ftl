@@ -1,10 +1,10 @@
-research-discipline-viper-group = Viper Group
+research-discipline-viper-group = группировка Viper
 
 # T1 VG
-research-technology-viper-group-apparel = Viper Group Apparel
+research-technology-viper-group-apparel = Снаряжение группировки Viper
 
 # T2 VG
-research-technology-viper-group-basic = Viper Group Basic Hardsuits
+research-technology-viper-group-basic = Базовые скафандры группировки Viper
 
 # T3 VG
-research-technology-viper-group-juggernaut = Viper Group Juggernaut Hardsuit
+research-technology-viper-group-juggernaut = Скафандр Джаггернаута группировки Viper
