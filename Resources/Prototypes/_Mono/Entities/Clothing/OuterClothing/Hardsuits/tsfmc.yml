@@ -98,7 +98,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.1 # LuaM: 0.8 > 1.1
     sprintModifier: 1.1 # LuaM: 0.8 > 1.1
-#  - type: HeldSpeedModifier
+#  - type: HeldSpeedModifier # Commented by LuaM
   - type: StaminaDamageResistance
     coefficient: 0.2
 # LuaM-start:
@@ -154,6 +154,8 @@
     replaceCurrentClothing: true
     clothingPrototypes:
       head: ClothingHeadHelmetHardsuitM86
+#     helmetcover: ClothingHeadHelmetCoverBlock # Commented by LuaM
+#     helmetattachment: ClothingHeadHelmetAttachmentBlock
   - type: StaticPrice
     price: 7500
     vendPrice: 1000
@@ -245,7 +247,7 @@
   - type: FootstepModifier # LuaM
     footstepSoundCollection:
       collection: FootstepHeavySuit
-#  - type: Blocking
+#  - type: Blocking # Commented by LuaM
 #    passiveBlockModifier:
 #      coefficients:
 #        Blunt: 0.5
@@ -274,7 +276,7 @@
 #    autoRechargeRate: 1.5
 #  - type: RechargeableBlocking
 #  - type: UseDelay
-#    delay: 10  #LuaM
+#    delay: 10
 
 # MARSOC only
 
