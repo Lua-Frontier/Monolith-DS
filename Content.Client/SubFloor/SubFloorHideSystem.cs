@@ -10,6 +10,7 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
 {
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private IUserInterfaceManager _ui = default!;
+	[Dependency] private readonly SpriteSystem _sprite = default!; // LuaM
 
     private bool _showAll;
 
@@ -86,7 +87,9 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
 
         args.Sprite.Visible = hasVisibleLayer || revealed;
 
+// Commented by LuaM
         // allows a t-ray to show wires/pipes above carpets/puddles
+/*
         if (scannerRevealed)
         {
             if (component.OriginalDrawDepth is not null)
@@ -101,7 +104,28 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
             component.OriginalDrawDepth = null;
         }
     }
-
+*/
+// LuaM-start:
+        if (ShowAll)
+        {
+            component.OriginalDrawDepth ??= args.Sprite.DrawDepth;
+            _sprite.SetDrawDepth((uid, args.Sprite), (int)Shared.DrawDepth.DrawDepth.Overdoors);
+        }
+        else if (scannerRevealed)
+        {
+            if (component.OriginalDrawDepth is not null)
+                return;
+            component.OriginalDrawDepth = args.Sprite.DrawDepth;
+            var drawDepthDifference = Shared.DrawDepth.DrawDepth.ThickPipe - Shared.DrawDepth.DrawDepth.Puddles;
+            _sprite.SetDrawDepth((uid, args.Sprite), args.Sprite.DrawDepth - (drawDepthDifference - 1));
+        }
+        else if (component.OriginalDrawDepth.HasValue)
+        {
+            _sprite.SetDrawDepth((uid, args.Sprite), component.OriginalDrawDepth.Value);
+            component.OriginalDrawDepth = null;
+        }
+    }
+// LuaM-end.
     private void UpdateAll()
     {
         var query = AllEntityQuery<SubFloorHideComponent, AppearanceComponent>();
