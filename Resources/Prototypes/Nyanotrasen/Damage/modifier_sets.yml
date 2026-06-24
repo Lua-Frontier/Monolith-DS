@@ -7,7 +7,7 @@
 
 - type: damageModifierSet
   id: Felinid
-  coefficients:
-    Blunt: 1.1 # 1.15->1.1 Mono
-    Slash: 1.1 # 1.15->1.1 Mono
-#    Piercing: 1.1
+  coefficients: #LuaM
+    Blunt: 1.25 # 1.15 -> 1.1 by Mono, 1.1 -> 1.25 by LuaM
+    Slash: 1.25 # 1.15 -> 1.1 by Mono, 1.1 -> 1.25 by LuaM
+    Piercing: 1.15 # disabled by Mono, 1.1 -> 1.25 and enabled by LuaM
