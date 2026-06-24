@@ -70,7 +70,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead # mono
+      150: Dead # LuaM - 100 -> 150
     stateAlertDict:
       Alive: BorgHealth
       Critical: BorgCrit
@@ -87,9 +87,9 @@
       - !type:GibBehavior { }
   - type: SlowOnDamage
     speedModifierThresholds:
-      60: 0.7
-      90: 0.5
-      120: 0.3
+      90: 0.8 # LuaM 60 -> 90 / 0.7 -> 0.8
+      115: 0.5 # LuaM 90 -> 115
+      140: 0.3 # LuaM 120 -> 140
   - type: SiliconDownOnDead
   - type: Inventory
     templateId: ipc
@@ -111,7 +111,7 @@
       0: 0.00
   - type: BatteryDrinker
   - type: EncryptionKeyHolder
-    keySlots: 8 # Mono
+    keySlots: 18 # LuaM - 8 -> 18
     examineWhileLocked: false
     keysExtractionMethod: Cutting
     keysUnlocked: false

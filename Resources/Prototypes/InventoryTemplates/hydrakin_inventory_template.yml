@@ -40,13 +40,13 @@
       uiWindowPos: 1,3
       strippingWindowPos: 1,1
       displayName: Mask
-#   - name: eyes
-#     slotTexture: glasses
-#     slotFlags: EYES
-#     stripTime: 3
-#     uiWindowPos: 0,4
-#     strippingWindowPos: 0,0
-#     displayName: Eyes
+    - name: eyes # LuaM - Enabled
+      slotTexture: glasses
+      slotFlags: EYES
+      stripTime: 3
+      uiWindowPos: 0,4
+      strippingWindowPos: 0,0
+      displayName: Eyes
     - name: ears
       slotTexture: ears
       slotFlags: EARS

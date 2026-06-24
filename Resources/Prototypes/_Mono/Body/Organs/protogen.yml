@@ -93,6 +93,13 @@
   components:
   - type: Organ # Shitmed Change
     slotId: eyes # Shitmed Change
+    onAdd:
+    - type: ThermalVision # LuaM
+      flashDurationMultiplier: 1
+      pulseTime: 2
+      isEquipment: false
+      toggleAction: PulseVulpkaninThermalVision
+      color: "#da4260"
   - type: Eyes # Shitmed Change
   - type: Sprite
     layers:

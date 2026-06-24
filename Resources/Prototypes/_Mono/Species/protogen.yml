@@ -1,7 +1,7 @@
 - type: species
   id: Protogen
   name: species-name-protogen
-  roundStart: false
+  roundStart: true # LuaM - false -> true
   prototype: MobProtogen
   sprites: MobProtogenSprites
   defaultSkinTone: "#ffda93"
