@@ -10,7 +10,7 @@
   category: Medium
   group: BlackMarket
   access: Pirate
-  shuttlePath: /Maps/_Mono/Shuttles/BlackMarket/fenrir.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/PDV/FenrirLuaM.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/Fenrir.yml -> /Maps/_LuaM/Shuttles/PDV/FenrirLuaM.yml
   guidebookPage: ShipyardFenrir
   class:
   - Pirate
@@ -21,7 +21,7 @@
 - type: gameMap
   id: Fenrir
   mapName: 'PDV Fenrir'
-  mapPath: /Maps/_Mono/Shuttles/BlackMarket/fenrir.yml
+  mapPath: /Maps/_LuaM/Shuttles/PDV/FenrirLuaM.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/Fenrir.yml -> /Maps/_LuaM/Shuttles/PDV/FenrirLuaM.yml
   minPlayers: 0
   stations:
     Fenrir:

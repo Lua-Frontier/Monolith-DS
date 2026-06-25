@@ -10,7 +10,7 @@
   purchasable: false # Voucher only
   category: Large
   group: BlackMarket
-  shuttlePath: /Maps/_Mono/Shuttles/BlackMarket/saintie.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/PDV/santieLuaM.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/santie.yml -> /Maps/_LuaM/Shuttles/PDV/santieLuaM.yml
   guidebookPage: Null
   class:
   - Pirate
@@ -21,7 +21,7 @@
 - type: gameMap
   id: Saintie
   mapName: 'Saintie'
-  mapPath: /Maps/_Mono/Shuttles/BlackMarket/saintie.yml
+  mapPath: /Maps/_LuaM/Shuttles/PDV/santieLuaM.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/santie.yml -> /Maps/_LuaM/Shuttles/PDV/santieLuaM.yml
   minPlayers: 0
   stations:
     Saintie:
