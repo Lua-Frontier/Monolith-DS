@@ -55,7 +55,7 @@ ghost-role-information-dungeon-boss-rules = Вы — [color=red][bold]коман
 nf-ghost-role-information-derelict-cyborg-description = Вы — борг, который много лет провёл на месте крушения, подвергаясь воздействию бесчисленных ионных бурь.
 ghost-role-information-sigmis-name = Сигмис
 ghost-role-information-sigmis-description = Ни с места! Работает Синдикат! Разыскивается во всех уголках сектора за массовый геноцид мышей.
-ghost-role-information-sigmis-rules = Ты, созданный Синдикатом кот. Подчиняющийся непосредственно кадету синдиката и его начальству.
+ghost-role-information-sigmis-rules = Ты, созданный Синдикатом кот. Подчиняющийся непосредственно кадету Синдиката и его начальству.
 
 ghost-role-information-cult-cat-name = Кот культа крови
 ghost-role-information-cult-cat-description = Основал Кровавый культ от скуки.

@@ -14,7 +14,7 @@ ui-vote-fluff = На основе Robust™ СЗИ-НСД
 
 ui-vote-menu-command-description = Открывает меню голосования
 ui-vote-menu-command-help-text = Использование: votemenu
-ui-vote-type-votekick = Votekick
+ui-vote-type-votekick = Кик игрока
 
 # Votekick reasons
 ui-vote-votekick-type-raiding = Набег

@@ -1,0 +1,13 @@
+- type: loadout
+  id: ContractorRubberStampApproved
+  price: 500
+  storage:
+    back:
+    - RubberStampApproved
+
+- type: loadout
+  id: ContractorRubberStampDenied
+  price: 500
+  storage:
+    back:
+    - RubberStampDenied

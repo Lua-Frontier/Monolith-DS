@@ -1,0 +1,1 @@
+armor-examine-stamina = - [color=cyan]Урон по выносливости[/color] снижается на [color=lightblue]{$num}%[/color].

@@ -1,4 +1,4 @@
 # Forge
-department-Frontier = НаноТрейзен
+department-Frontier = Колосс Централл
 # Forge end
-department-Antag = Криминал
+department-Antag = Авангард Нордфолла

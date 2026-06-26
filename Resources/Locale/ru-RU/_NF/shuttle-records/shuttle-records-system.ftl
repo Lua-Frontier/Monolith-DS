@@ -1,5 +1,5 @@
 shuttle-records-console-window-title = консоль учёта кораблей
-shuttle-records-copy-deed-button = Скопировать владение на ID карту
+shuttle-records-copy-deed-button = Скопировать права на владение ID-карту
 shuttle-records-shuttle-name-label = Шаттл: { $name }
 shuttle-records-shuttle-owner-label = Владелец: { $owner }
 shuttle-records-shuttle-price-label = Цена шаттла: { $price }
@@ -8,7 +8,7 @@ shuttle-records-shuttle-status-active = Активен, в секторе
 shuttle-records-shuttle-status-inactive = Продан или уничтожен
 shuttle-records-transactions = Список транзакций
 shuttle-records-detail-title = Информация выбранного шаттла
-shuttle-records-no-idcard = ID Карта отсутствует.
+shuttle-records-no-idcard = ID-Карта отсутствует.
 shuttle-records-no-record-found = Записей не найдено.
 shuttle-records-no-bank-account = У станции нет банковского счета.
 shuttle-records-insufficient-funds = У станции недостаточно средств.

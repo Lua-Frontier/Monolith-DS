@@ -1,3 +1,3 @@
 ent-HandTeleporterAdmin = { ent-HandTeleporter }
     .desc = Продвинутый админ-телепорт.
-    .suffix = Админ
+    .suffix = Адмемы

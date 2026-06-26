@@ -1,0 +1,2 @@
+alerts-modsuit-power-name = [color=yellow]Энергия МОДа[/color]
+alerts-modsuit-power-desc = Показывает текущий уровень энергии вашего МОДкостюма. Низкий заряд может повлиять на функциональность костюма.

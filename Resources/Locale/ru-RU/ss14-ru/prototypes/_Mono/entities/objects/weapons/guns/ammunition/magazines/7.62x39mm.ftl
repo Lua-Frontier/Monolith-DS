@@ -12,7 +12,7 @@ ent-Magazine762x39mmPractice = магазин (7.62x39мм учебные)
 ent-Magazine762x39mmIncendiary = магазин (7.62x39мм зажигательные)
 ent-Magazine762x39mmUranium = магазин (7.62x39мм урановые)
 ent-MagazineDP29 = магазин DP-29 (7.62x39мм)
-ent-Magazine762x39mmBox = боксовый магазин для L6 SAW (7.62х39мм FMJ)
+ent-Magazine762x39mmBox = магазин для L6 SAW (7.62х39мм FMJ)
 ent-Magazine762x39mmPkBox = ящик с боеприпасами ПК (7.62х39мм FMJ)
 ent-Magazine762x39mmMaxim = дисковый магазин (7.62x39мм FMJ)
 

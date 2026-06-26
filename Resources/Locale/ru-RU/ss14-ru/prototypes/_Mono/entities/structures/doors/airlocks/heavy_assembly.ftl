@@ -19,7 +19,7 @@ ent-AirlockHeavyAssemblyGrey = { ent-AirlockHeavyAssembly }
 
 ent-AirlockHeavyAssemblyPDV = { ent-AirlockHeavyAssembly }
     .desc = { ent-AirlockHeavyAssembly.desc }
-    .suffix = PDV
+    .suffix = Авангард
 
 ent-AirlockHeavyAssemblySecurity = { ent-AirlockHeavyAssembly }
     .desc = { ent-AirlockHeavyAssembly.desc }
@@ -27,8 +27,8 @@ ent-AirlockHeavyAssemblySecurity = { ent-AirlockHeavyAssembly }
 
 ent-AirlockHeavyAssemblyTSFMC = { ent-AirlockHeavyAssembly }
     .desc = { ent-AirlockHeavyAssembly.desc }
-    .suffix = TSFMC
+    .suffix = ТСФ
 
 ent-AirlockHeavyAssemblyUSSP = { ent-AirlockHeavyAssembly }
     .desc = { ent-AirlockHeavyAssembly.desc }
-    .suffix = USSP
+    .suffix = СССП

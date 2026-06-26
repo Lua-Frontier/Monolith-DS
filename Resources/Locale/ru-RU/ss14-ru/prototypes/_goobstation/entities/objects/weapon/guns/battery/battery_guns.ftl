@@ -1,4 +1,4 @@
-ent-WeaponEnergyRevolver = VFD EG-4 энергетический револьвер
+ent-WeaponEnergyRevolver = EG-4 "Шериф"
     .desc = Высокотехнологичный энергетический револьвер, способный стрелять как смертоносными, так и обезвреживающими зарядами.
 
 ent-WeaponEnergyGunLawbringer = DT-12 «Законник»

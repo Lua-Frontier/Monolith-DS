@@ -20,16 +20,16 @@
     back:
     - HandLabeler
 
-- type: loadout
-  id: ContractorStampsApprovedDenied
-  price: 1000
-  name: approved and denied stamps
-  description: A pair of stamps used for reviewing forms.
-  previewEntity: RubberStampApproved
-  storage:
-    back:
-    - RubberStampApproved
-    - RubberStampDenied
+#- type: loadout
+#  id: ContractorStampsApprovedDenied
+#  price: 1000
+#  name: approved and denied stamps
+#  description: A pair of stamps used for reviewing forms.
+#  previewEntity: RubberStampApproved
+#  storage:
+#    back:
+#    - RubberStampApproved
+#    - RubberStampDenied
 
 - type: loadout
   id: ContractorRubberStampClown

@@ -9,4 +9,4 @@ trait-deuteranopia-desc =
     Из-за бионических глаз, мутаций или вулпканинской природы
     у вас отсутствует восприятие красно-зеленых цветов.
 trait-uncloneable-name = Неклонируемость
-trait-uncloneable-desc = Клонирование невозможно.
+trait-uncloneable-desc = Вас невозможно клонировать.

@@ -401,7 +401,7 @@
 
 - type: loadout #Iroh
   id: SecurityGuardIrohLoadout
-  name: iroh gun case
+  #name: iroh gun case # Commented by LuaM
   price: 0
   inhand:
   - WeaponCaseLongIrohSecurity

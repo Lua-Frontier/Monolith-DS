@@ -458,6 +458,7 @@
   id: NFPouchFirstAid
   parent: NFPouchBase
   name: first aid pouch
+  suffix: Red # LuaM
   components:
   - type: Sprite
     layers:
@@ -509,6 +510,7 @@
   id: NFPouchFirstAidAlt
   parent: NFPouchFirstAid
   name: first aid pouch
+  suffix: Blue # LuaM
   components:
   - type: Sprite
     layers:

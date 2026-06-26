@@ -1,0 +1,16 @@
+ent-ClothingHeadHatWideBrimmedWhite = шляпа с широкими полями (белая)
+    .desc = Отлично заменяет фрисби.
+ent-ClothingHeadHatWideBrimmedPurple = шляпа с широкими полями (фиолетовая)
+    .desc = Отлично заменяет фрисби.
+ent-ClothingHeadHatWideBrimmedRed = шляпа с широкими полями (красная)
+    .desc = Отлично заменяет фрисби.
+ent-ClothingHeadHatWideBrimmedGreen = шляпа с широкими полями (зелёная)
+    .desc = Отлично заменяет фрисби.
+ent-ClothingHeadHatWideBrimmedBlue = шляпа с широкими полями (синяя)
+    .desc = Отлично заменяет фрисби.
+ent-ClothingHeadHatWideBrimmedYellow = шляпа с широкими полями (жёлтая)
+    .desc = Отлично заменяет фрисби.
+ent-ClothingHeadHatCapVizier = фуражка командора Авангарда
+    .desc = Модная фуражка, которую носит командор Авангарда, чтобы обозначить свой официальный статус выше остальных имперцев.
+ent-ClothingHeadHatCapVizierPurple = фуражка командора Авангарда
+    .desc = Модная фуражка, которую носит командор Авангарда, чтобы обозначить свой официальный статус выше остальных имперцев.

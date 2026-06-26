@@ -7,7 +7,7 @@ lathe-category-robotics = Робототехника
 lathe-category-tools = Инструменты
 lathe-category-weapons = Вооружение
 # Frontier lines below
-lathe-category-evasuits = ЕВА
+lathe-category-evasuits = EVA
 lathe-category-armor-nf = Броня
 # Forge-Change
 lathe-category-smechs = Небольшие экзокостюмы
@@ -41,6 +41,6 @@ lathe-category-jumpsuits = Комбинезоны
 lathe-category-neck = Шея
 lathe-category-pdas = КПК
 lathe-category-headset = Гарнитуры
-lathe-category-idcards = ID карты
+lathe-category-idcards = ID-карты
 lathe-category-encryptionkeys = Ключи шифрования
 lathe-category-bureaucracy = Бюрократия

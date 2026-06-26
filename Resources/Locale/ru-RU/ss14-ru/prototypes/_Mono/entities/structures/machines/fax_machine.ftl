@@ -1,3 +1,3 @@
-ent-FaxMachineUSSP = POI, USSP
-ent-FaxMachineUSSPCommisar = POI, USSP Commisar
-ent-FaxMachinePDVJupiter = POI, PDV Jupiter
+ent-FaxMachineUSSP = POI, СССП
+ent-FaxMachineUSSPCommisar = POI, СССП комиссар
+ent-FaxMachinePDVJupiter = POI, Авангард "Юпитер"

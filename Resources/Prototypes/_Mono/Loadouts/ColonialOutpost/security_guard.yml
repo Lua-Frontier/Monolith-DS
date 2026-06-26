@@ -27,7 +27,7 @@
 
 - type: loadout
   id: MonoSecurityGuardWebbing
-  name: security carrier (filled)
+  #name: security carrier (filled) # Commented by LuaM
   equipment:
     belt: ClothingBeltSecurityWebbingFilled
 
@@ -43,7 +43,7 @@
 
 - type: loadout
   id: MonoSecurityGuardAssaultBelt
-  name: assault belt
+  #name: assault belt # Commented by LuaM
   equipment:
     belt: ClothingBeltAssault
 

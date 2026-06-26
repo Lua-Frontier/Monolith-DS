@@ -1,0 +1,19 @@
+advertisement-barista-1 = Свежесваренный, специально для вас!
+advertisement-barista-2 = Лучшие чаи галактики и не только!
+advertisement-barista-3 = Начните смену с идеальной чашки.
+advertisement-barista-4 = Выпейте чашечку по-настоящему
+advertisement-barista-5 = Попробуйте наши новые чайные порошки - уже в наличии!
+advertisement-barista-6 = Чашки, листья и всё необходимое для перерыва.
+advertisement-barista-7 = Остановитесь на мгновение, отпейте уюта.
+advertisement-barista-8 = Бариста: ваш ежедневный ритуал с доставкой.
+thankyou-barista-1 = Наслаждайтесь вашим напитком!
+thankyou-barista-2 = Пусть ваш день будет наполнен вкусом!
+thankyou-barista-3 = Смакуйте момент, чашка за чашкой.
+thankyou-barista-4 = Спасибо, что выбрали Бариста!
+
+advertisement-uplink-ads-1 = СИСТЕМА РАБОТАЕТ ШТАТНО.
+advertisement-uplink-ads-2 = ОЖИДАНИЕ ЗАЯВКИ НА ПОСТАВКУ.
+advertisement-uplink-ads-3 = ОШИБКА: ПОЛЬЗОВАТЕЛЬ ОТСУТСТВУЕТ.
+advertisement-uplink-ads-4 = СОЕДИНЕНИЕ С КАРГО УСТАНОВЛЕНО.
+advertisement-uplink-ads-5 = ПОДДЕРЖАНИЕ ЦЕЛОСТНОСТИ ПОСТАВОК.
+advertisement-uplink-ads-6 = ОБОРУДОВАНИЕ В НАЛИЧИИ, ОЖИДАНИЕ КОМАНДЫ НА ВЫДАЧУ.

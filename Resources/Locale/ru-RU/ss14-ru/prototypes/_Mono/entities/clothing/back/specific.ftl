@@ -12,9 +12,9 @@ ent-ClothingBackpackDuffelTsfmc = вещевой мешок ТСФ
 ent-ClothingBackpackSatchelTsfmc = полевая сумка ТСФ
     .desc = Часть стандартной разгрузочной системы морской пехоты.
 
-ent-ClothingBackpackPDV = тактический рюкзак «Авангард»
+ent-ClothingBackpackPDV = тактический рюкзак Авангарда
     .desc = Тактический рюкзак гвадрии.
-ent-ClothingBackpackDuffelPDV = тактический вещевой мешок «Авангард»
+ent-ClothingBackpackDuffelPDV = тактический вещевой мешок Авангарда
     .desc = Тактический вещевой мешок гвардии.
-ent-ClothingBackpackSatchelPDV = тактическая полевая сумка «Авангард»
+ent-ClothingBackpackSatchelPDV = тактическая полевая сумка Авангарда
     .desc = Тактическая полевая сумка гварлии.

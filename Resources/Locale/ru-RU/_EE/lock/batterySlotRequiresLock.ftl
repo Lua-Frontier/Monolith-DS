@@ -1,0 +1,1 @@
+batteryslotrequireslock-component-alert-owner = {$user} копается в вашей сервисной панели!

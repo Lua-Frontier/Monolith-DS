@@ -1,6 +1,6 @@
 ent-BedsheetNfsd = одеяло ТСФ
     .desc = { ent-BedsheetBase.desc }
-ent-BedsheetNfsdBrigmedic = одеяло коронера
+ent-BedsheetNfsdBrigmedic = одеяло фельдшера
     .desc = { ent-BedsheetBase.desc }
-ent-BedsheetNfsdSheriff = одеяло командующего офицера
+ent-BedsheetNfsdSheriff = одеяло полковника
     .desc = { ent-BedsheetBase.desc }

@@ -1,1 +1,1 @@
-ent-LockerVizier = шкафчик великого визиря
+ent-LockerVizier = шкафчик командора Авангарда

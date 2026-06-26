@@ -969,7 +969,11 @@
   - ContractorBoxFolderMedicalDoctor
   - ContractorBrbSign
   - ContractorHandLabeler
-  - ContractorStampsApprovedDenied
+# - ContractorStampsApprovedDenied # Commented by LuaM
+# LuaM-start:
+  - ContractorRubberStampApproved 
+  - ContractorRubberStampDenied
+# LuaM-end.
   - ContractorRubberStampCaptain
   - ContractorRubberStampChaplain
   - ContractorRubberStampDoctor

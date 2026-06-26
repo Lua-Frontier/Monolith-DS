@@ -1,2 +1,2 @@
-ent-ClothingBackpackDuffelSyndicateBurner = набор «Горелка»
+ent-ClothingBackpackDuffelSyndicateBurner = набор CS-12 «Горелка»
     .desc = Крупнокалиберная винтовка «Горелка», поставляется с некоторым количеством противотехнических и фугасных боеприпасов.

@@ -1,6 +1,6 @@
-ent-WeaponRifleLecter = TCA M-6 «Лектер» (6,8×52 мм безгильзовый)
+ent-WeaponRifleLecter = M-6 «Лектер»
     .desc = Проект нового стандартного ружья для вооружённых сил ТСФ. Точное и удобное, стреляет безгильзовым 6,8×52 мм STANAG; также принимает магазины 5,56×45 мм для унификации боекомплекта.
-ent-WeaponRifleLecterRubber = Лектер
+ent-WeaponRifleLecterRubber = M-6 «Лектер»
     .suffix = Травматический
     .desc = { ent-WeaponRifleLecter.desc }
 ent-WeaponRifleNovaliteC1Rubber = { ent-WeaponRifleNovaliteC1 }
@@ -10,12 +10,11 @@ ent-WeaponRifleSVS = СВС-42
     .desc = Старая винтовка, разработанная Самоновым. Выглядит так, будто она побывала на нескольких войнах. В ней используются магазины 30-го калибра малой емкости. Оснащена штыком.
 ent-WeaponSniperCeremonial = церемониальная винтовка
     .desc = Церемониальный вариант винтовки Mark 1, в изысканном сине-белом цвете. Использует винтовочные патроны .30.
-ent-WeaponRifleVulcan = вулкан
+ent-WeaponRifleVulcan = R-11 «Вулкан»
     .desc = Эта винтовка, являющаяся одним из самых тяжелых образцов стрелкового оружия в арсенале Службы безопасности, представляет собой современный вариант классической винтовки, которую неофициально называют "Правой рукой свободного мира". В ней используются винтовочные патроны 30-го калибра.
-ent-WeaponRifleJackdaw = CAWS-25 "Галка"
+ent-WeaponRifleJackdaw = CAWS-25 «Галка»
     .desc = Начало конца возвещается песней галки. Использует безгильзовые патроны .25.
 ent-WeaponRifleVulcanRubber = { ent-WeaponRifleVulcan }
   .desc = { ent-WeaponRifleVulcan.desc }
-
-ent-WeaponRifleGestioPMC = PA Gestio (7.62x39 мм)
+ent-WeaponRifleGestioPMC = PA "Гестио"
     .desc = Старая винтовка с режимом очереди, так и не вышедшая из испытаний. Принимает магазины 7.62x39 мм малой ёмкости. Легально приобретена у лицензированного поставщика.

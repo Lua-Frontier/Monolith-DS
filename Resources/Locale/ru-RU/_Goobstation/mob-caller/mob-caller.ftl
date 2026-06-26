@@ -1,0 +1,1 @@
+mob-caller-occluded = [color=red]Не сработает вне открытого космоса![/color]

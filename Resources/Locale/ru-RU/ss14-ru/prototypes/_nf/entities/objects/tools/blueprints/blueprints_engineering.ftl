@@ -1,12 +1,12 @@
-ent-NFBlueprintClothingBackpackHolding = чертёж бездонного рюкзака
+ent-NFBlueprintClothingBackpackHolding = чертёж блюспейс-рюкзака
     .desc = Чертёж со схемой бездонного рюкзака. Его можно вставить в автолат или любой техфаб.
-ent-NFBlueprintClothingBackpackSatchelHolding = чертёж бездонной сумки
+ent-NFBlueprintClothingBackpackSatchelHolding = чертёж блюспейс-сумки
     .desc = Чертёж со схемой бездонной сумки. Его можно вставить в автолат или любой техфаб.
-ent-NFBlueprintConstructionBagOfHolding = чертёж строительной блюспейс сумки
+ent-NFBlueprintConstructionBagOfHolding = чертёж строительного блюспейс-подсумка
     .desc = Чертёж со схемой строительной блюспейс сумки. Его можно вставить в автолат или любой техфаб.
-ent-NFBlueprintClothingBackpackDuffelHolding = чертёж бездонного вещмешка
+ent-NFBlueprintClothingBackpackDuffelHolding = чертёж блюспейс-вещмешка
     .desc = Чертёж со схемой бездонного вещмешка. Его можно вставить в автолат или любой техфаб.
-ent-NFBlueprintClothingBackpackMessengerHolding = чертёж бездонного мессенджера
+ent-NFBlueprintClothingBackpackMessengerHolding = чертёж блюспейс-мессенджера
     .desc = Чертёж со схемой бездонного мессенджера. Его можно вставить в автолат или любой техфаб.
 ent-NFBlueprintSignallerAdvanced = чертёж продвинутого передатчика сигналов
     .desc = Чертёж со схемой продвинутого передатчика сигналов. Его можно вставить в автолат или любой техфаб.

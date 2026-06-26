@@ -128,22 +128,22 @@
 
 - type: loadout
   id: ContractorBible
-  name: bible and faith implanter
-  description: For the budding chaplain. Perform miracles, proselytize, and grow your flock.
-  previewEntity: Bible
+  #name: bible and faith implanter # Commented by LuaM
+  #description: For the budding chaplain. Perform miracles, proselytize, and grow your flock. # Commented by LuaM
+  #previewEntity: Bible # Commented by LuaM
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 5000
+  price: 1000 # LuaM: 5000 > 1000
   inhand:
     - Bible
-  storage:
-    back:
-      - BibleUserImplanter
+  #storage: # Commented by LuaM
+  #  back:
+  #    - BibleUserImplanter
 
 - type: loadout
   id: ContractorMimePowersImplanter
-  name: mime vow implanter
+  #name: mime vow implanter # Commented by LuaM
   description: For the budding mime. Take your vow today.
   effects:
   - !type:GroupLoadoutEffect
@@ -155,8 +155,8 @@
 
 - type: loadout
   id: ContractorMonkeyCubeWrapped
-  name: monkey cube
-  description: Unwrap this to get a monkey cube.
+  #name: monkey cube # Commented by LuaM
+  #description: Unwrap this to get a monkey cube. # Commented by LuaM
   previewEntity: MonkeyCubeWrapped
   effects:
   - !type:GroupLoadoutEffect
@@ -167,8 +167,8 @@
 
 - type: loadout
   id: ContractorKoboldCubeWrapped
-  name: kobold cube
-  description: Unwrap this to get a kobold cube.
+  #name: kobold cube # Commented by LuaM
+  #description: Unwrap this to get a kobold cube. # Commented by LuaM
   previewEntity: KoboldCubeWrapped
   effects:
   - !type:GroupLoadoutEffect

@@ -1,0 +1,1 @@
+shipyard-menu-flavor-left = Стандартная система распределения верфей SKR-OS

@@ -16,5 +16,5 @@ job-name-governmentman = Человек в костюме
 JobNavyOfficer = Офицер Зимнего Солнцестояния
 JobNavyOfficerUndercover = Оперативник Зимнего Солнцестояния
 JobNavyCaptain = Капитан Зимнего Солнцестояния
-JobDiplomat = Дипломат TSF
-JobGovernmentMan = Человек в костюме
+JobDiplomat = Дипломат ТСФ
+JobGovernmentMan = G-man

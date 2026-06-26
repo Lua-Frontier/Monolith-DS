@@ -12,9 +12,9 @@ nf-holopad-general-trade-station-stc = Торговая Станция - Дис�
 nf-holopad-general-trade-station-cafeteria = Торговая Станция - Кафетерий
 nf-holopad-general-medical-dispatch = Госпиталь - Приёмная
 # Forge
-nf-holopad-general-medical-dispatch-doc = Госпиталь - Офис Директора TTI
+nf-holopad-general-medical-dispatch-doc = Госпиталь - Офис Директора медицинского центра
 # Forge end
-nf-holopad-general-nfsd-sheriff-office = ТСФ — офис командующего офицера
+nf-holopad-general-nfsd-sheriff-office = ТСФ — офис полковника
 nf-holopad-general-nfsd-reception = ТСФ - Приёмная
 nf-holopad-general-nfsd-lobby = ТСФ - Лобби
 nf-holopad-general-edison-reception = Электростанция Эдисона - Приёмная

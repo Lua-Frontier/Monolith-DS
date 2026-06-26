@@ -37,8 +37,6 @@ materials-raw-silver = руда серебра
 materials-raw-plasma = руда плазмы
 materials-raw-uranium = руда урана
 materials-raw-bananium = руда бананиума
-# Material Reclaimer
-material-reclaimer-upgrade-process-rate = скорость обработки
 materials-raw-salt = каменная соль
 materials-raw-diamond = необработанные алмазы
 materials-cotton = хлопок

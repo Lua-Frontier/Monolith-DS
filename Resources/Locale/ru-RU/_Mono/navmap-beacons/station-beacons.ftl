@@ -1,0 +1,13 @@
+station-beacon-ussp-shipyard = Верфь СССП
+station-beacon-ussp-dock-alpha = Док Альфа СССП
+station-beacon-ussp-dock-beta = Док Бета СССП
+station-beacon-ussp-control = Комната управления СССП
+station-beacon-ussp-reception = Приёмная СССП
+station-beacon-ussp-dorms = Общежитие СССП
+station-beacon-ussp-commissar = Комиссар СССП
+station-beacon-ussp-armory = Оружейная СССП
+station-beacon-ussp-cargo = Грузовой отсек СССП
+station-beacon-ussp-brig = Бриг СССП
+station-beacon-ussp-servers = Серверы СССП
+station-beacon-exped-lounge = Лаунж экспедиции
+station-beacon-mail-room = Почта

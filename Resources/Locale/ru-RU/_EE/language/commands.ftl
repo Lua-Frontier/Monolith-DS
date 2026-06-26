@@ -1,34 +1,34 @@
-command-list-langs-desc = List languages your current entity can speak at the current moment.
-command-list-langs-help = Usage: {$command}
+command-list-langs-desc = Показать языки, на которых ваша сущность может говорить в данный момент.
+command-list-langs-help = Использование: {$command}
 
-command-saylang-desc = Send a message in a specific language. To choose a language, you can use either the name of the language, or its position in the list of languages.
-command-saylang-help = Usage: {$command} <language id> <message>. Example: {$command} TauCetiBasic "Hello World!". Example: {$command} 1 "Hello World!"
+command-saylang-desc = Отправить сообщение на определённом языке. Для выбора языка можно использовать его название или позицию в списке языков.
+command-saylang-help = Использование: {$command} <id языка> <сообщение>. Пример: {$command} TauCetiBasic "Hello World!". Пример: {$command} 1 "Hello World!"
 
-command-language-select-desc = Select the currently spoken language of your entity. You can use either the name of the language, or its position in the list of languages.
-command-language-select-help = Usage: {$command} <language id>. Example: {$command} 1. Example: {$command} TauCetiBasic
+command-language-select-desc = Выбрать текущий язык вашей сущности. Можно использовать название языка или его позицию в списке.
+command-language-select-help = Использование: {$command} <id языка>. Пример: {$command} 1. Пример: {$command} TauCetiBasic
 
-command-language-spoken = Spoken:
-command-language-understood = Understood:
-command-language-current-entry = {$id}. {$language} - {$name} (current)
+command-language-spoken = Разговорные:
+command-language-understood = Понимаемые:
+command-language-current-entry = {$id}. {$language} - {$name} (текущий)
 command-language-entry = {$id}. {$language} - {$name}
 
-command-language-invalid-number = The language number must be between 0 and {$total}. Alternatively, use the language name.
-command-language-invalid-language = The language {$id} does not exist or you cannot speak it.
+command-language-invalid-number = Номер языка должен быть от 0 до {$total}. Или используйте название языка.
+command-language-invalid-language = Язык {$id} не существует или вы не можете на нём говорить.
 
 # Toolshed
 
-command-description-language-add = Adds a new language to the piped entity. The two last arguments indicate whether it should be spoken/understood. Example: 'self language:add "Canilunzt" true true'
-command-description-language-rm = Removes a language from the piped entity. Works similarly to language:add. Example: 'self language:rm "TauCetiBasic" true true'.
-command-description-language-lsspoken = Lists all languages the entity can speak. Example: 'self language:lsspoken'
-command-description-language-lsunderstood = Lists all languages the entity can understand. Example: 'self language:lssunderstood'
+command-description-language-add = Добавляет новый язык для сущности в конвейере. Два последних аргумента указывают, должен ли язык быть разговорным/понимаемым. Пример: 'self language:add "Canilunzt" true true'
+command-description-language-rm = Удаляет язык у сущности в конвейере. Работает аналогично language:add. Пример: 'self language:rm "TauCetiBasic" true true'
+command-description-language-lsspoken = Показывает все языки, на которых сущность может говорить. Пример: 'self language:lsspoken'
+command-description-language-lsunderstood = Показывает все языки, которые сущность может понимать. Пример: 'self language:lssunderstood'
 
-command-description-translator-addlang = Adds a new target language to the piped translator entity. See language:add for details.
-command-description-translator-rmlang = Removes a target language from the piped translator entity. See language:rm for details.
-command-description-translator-addrequired = Adds a new required language to the piped translator entity. Example: 'ent 1234 translator:addrequired "TauCetiBasic"'
-command-description-translator-rmrequired = Removes a required language from the piped translator entity. Example: 'ent 1234 translator:rmrequired "TauCetiBasic"'
-command-description-translator-lsspoken = Lists all spoken languages for the piped translator entity. Example: 'ent 1234 translator:lsspoken'
-command-description-translator-lsunderstood = Lists all understood languages for the piped translator entity. Example: 'ent 1234 translator:lssunderstood'
-command-description-translator-lsrequired = Lists all required languages for the piped translator entity. Example: 'ent 1234 translator:lsrequired'
+command-description-translator-addlang = Добавляет целевой язык для сущности-переводчика в конвейере. Подробнее см. language:add.
+command-description-translator-rmlang = Удаляет целевой язык у сущности-переводчика в конвейере. Подробнее см. language:rm.
+command-description-translator-addrequired = Добавляет обязательный язык для сущности-переводчика в конвейере. Пример: 'ent 1234 translator:addrequired "TauCetiBasic"'
+command-description-translator-rmrequired = Удаляет обязательный язык у сущности-переводчика в конвейере. Пример: 'ent 1234 translator:rmrequired "TauCetiBasic"'
+command-description-translator-lsspoken = Показывает все разговорные языки для сущности-переводчика в конвейере. Пример: 'ent 1234 translator:lsspoken'
+command-description-translator-lsunderstood = Показывает все понимаемые языки для сущности-переводчика в конвейере. Пример: 'ent 1234 translator:lssunderstood'
+command-description-translator-lsrequired = Показывает все обязательные языки для сущности-переводчика в конвейере. Пример: 'ent 1234 translator:lsrequired'
 
-command-language-error-this-will-not-work = This will not work.
-command-language-error-not-a-translator = Entity {$entity} is not a translator.
+command-language-error-this-will-not-work = Это не сработает.
+command-language-error-not-a-translator = Сущность {$entity} не является переводчиком.

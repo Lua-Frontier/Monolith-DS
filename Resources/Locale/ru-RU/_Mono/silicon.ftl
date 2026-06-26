@@ -1,13 +1,13 @@
 # AI Core
 
 ghost-role-information-vessel-core = Ядро ИИ судна
-ghost-role-information-vessel-core-description = Ядро ИИ ADS, перепрограммированное и установленное на гражданское судно.
+ghost-role-information-vessel-core-description = Ядро ИИ, перепрограммированное и установленное на гражданское судно.
 
 ghost-role-information-tsfmc-core = Ядро ИИ ТСФ
-ghost-role-information-tsfmc-core-description = Ядро ИИ ADS, перепрограммированное и установленное на судно ТСФ.
+ghost-role-information-tsfmc-core-description = Ядро ИИ NanoTrasen, перепрограммированное и установленное на судно ТСФ.
 
-ghost-role-information-pdv-core = Ядро ИИ СИВ
-ghost-role-information-pdv-core-description = Ядро ИИ ADS, перепрограммированное и установленное на имперское судно.
+ghost-role-information-pdv-core = Ядро ИИ Авангарда
+ghost-role-information-pdv-core-description = Ядро ИИ Синдиката, перепрограммированное и установленное на имперское судно.
 
 # AI Core Lawsets
 

@@ -1,30 +1,30 @@
 # Contractor
 
-loadout-group-contractor-gloves = перчатки
-loadout-group-contractor-head = головные уборы
-loadout-group-contractor-jumpsuit = униформа
-loadout-group-contractor-outerclothing = верхняя одежда
-loadout-group-contractor-belt = пояса
-loadout-group-contractor-shoes = обувь
-loadout-group-contractor-neck = плащи
+loadout-group-contractor-gloves = Перчатки
+loadout-group-contractor-head = Головные уборы
+loadout-group-contractor-jumpsuit = Униформа
+loadout-group-contractor-outerclothing = Верхняя одежда
+loadout-group-contractor-belt = Пояса
+loadout-group-contractor-shoes = Обувь
+loadout-group-contractor-neck = Плащи
 loadout-group-contractor-id = КПК
-loadout-group-contractor-backpack = рюкзаки
-loadout-group-contractor-glasses = очки
-loadout-group-contractor-face = маски
-loadout-group-contractor-utility = инструменты
-loadout-group-contractor-fun = приколы
-loadout-group-contractor-trinkets = безделушки
-loadout-group-contractor-survival-box = наборы выживания
-loadout-group-contractor-encryption-key = ключи шифрования
-loadout-group-contractor-implanter = импланты
-loadout-group-contractor-bureaucracy = бюрократия
-loadout-group-contractor-cartridge = картриджи для КПК
-loadout-group-contractor-ears = гарнитуры
-loadout-group-contractor-wallet = кошельки
+loadout-group-contractor-backpack = Рюкзаки
+loadout-group-contractor-glasses = Очки
+loadout-group-contractor-face = Маски
+loadout-group-contractor-utility = Инструменты
+loadout-group-contractor-fun = Дополнительно
+loadout-group-contractor-trinkets = Безделушки
+loadout-group-contractor-survival-box = Наборы выживания
+loadout-group-contractor-encryption-key = Ключи шифрования
+loadout-group-contractor-implanter = Импланты
+loadout-group-contractor-bureaucracy = Бюрократия
+loadout-group-contractor-cartridge = Картриджи для КПК
+loadout-group-contractor-ears = Гарнитуры
+loadout-group-contractor-wallet = Кошельки
 loadout-group-contractor-pda = КПК
-loadout-group-contractor-backpack-items = предметы в рюкзаке
-loadout-group-contractor-hand-items = предметы в руке
-loadout-group-contractor-armorplates = бронеплиты
+loadout-group-contractor-backpack-items = Предметы в рюкзаке
+loadout-group-contractor-hand-items = Предметы в руке
+loadout-group-contractor-armorplates = Бронеплиты
 
 # Forge-add Merc
-loadout-group-merc-utility = вооружение
+loadout-group-merc-utility = Вооружение

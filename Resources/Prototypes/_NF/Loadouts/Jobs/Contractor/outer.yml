@@ -673,7 +673,7 @@
 
 - type: loadout
   id: ContractorClothingOuterCoatBomberRandomized
-  name: punk jacket (random)
+  #name: punk jacket (random) # Commented by LuaM
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2

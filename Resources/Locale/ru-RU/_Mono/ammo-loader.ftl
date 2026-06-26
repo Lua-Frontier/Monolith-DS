@@ -5,7 +5,7 @@ ammo-loader-insert-success = Боеприпасы загружены.
 ammo-loader-not-anchored = Боекомплектор должен быть закреплён!
 ammo-loader-empty = Боекомплектор пуст!
 ammo-loader-flushed = Боеприпасы отправлены!
-ammo-loader-no-artillery = Нет корабельных орудий, связанных с этим боекомплектером.
+ammo-loader-no-artillery = Нет корабельных орудий, связанных с этим боекомплектом.
 ammo-loader-transfer-failed = Не удалось загрузить боеприпасы ни в одно из связанных орудий.
 ammo-loader-insert-fail = Боекомплектор заполнен.
 

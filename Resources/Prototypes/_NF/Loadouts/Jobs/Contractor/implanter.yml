@@ -1,7 +1,7 @@
 #T0
 - type: loadout
   id: ContractorMedicalTrackingImplanter
-  name: medical tracking implanter
+  #name: medical tracking implanter # Commented by LuaM
   storage:
     back:
     - MedicalTrackingImplanter
@@ -9,7 +9,7 @@
 #T1
 - type: loadout
   id: ContractorLightImplanter
-  name: light implanter
+  #name: light implanter # Commented by LuaM
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
@@ -20,7 +20,7 @@
 
 - type: loadout
   id: ContractorBikeHornImplanter
-  name: bike horn implanter
+  #name: bike horn implanter # Commented by LuaM
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
@@ -31,7 +31,7 @@
 
 - type: loadout
   id: ContractorSadTromboneImplanter
-  name: sad trombone implanter
+  # name: sad trombone implanter # Commented by LuaM
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1

@@ -1,4 +1,4 @@
-job-name-mail-carrier = Почтальон НТ
+job-name-mail-carrier = Почтальон
 job-name-prisoner = Заключенный
 job-name-valet = Консьерж
 job-name-guard = Тюремный охранник
@@ -6,3 +6,5 @@ job-description-mail-carrier = Доставлять почту. Избегать
 job-description-prisoner = Сидеть в тюрьме. Играть в азартные игры с сокамерниками. Писать мемуары. Пытаться сбежать.
 job-description-valet = Заботиться о станции и её многочисленных гостях.
 job-description-guard = Следить за заключенными и обеспечивать их основными потребностями.
+job-name-service-worker = Сервисный работник
+job-description-service-worker = Работайте под руководством коменданта на многочисленных объектах в секторе Колосса.

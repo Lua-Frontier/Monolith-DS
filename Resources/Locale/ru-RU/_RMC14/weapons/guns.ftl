@@ -1,0 +1,1 @@
+rmc-wield-use-delay = Вам нужно подождать {$seconds} секунд перед тем, как взять {THE($wieldable)} в руки!

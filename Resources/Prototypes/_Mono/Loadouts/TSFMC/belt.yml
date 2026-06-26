@@ -1,33 +1,33 @@
 - type: loadout
   id: TsfmcCombatWebbing
-  name: chest rig
+# name: chest rig # Commented by LuaM
   equipment:
     belt: ClothingBeltWebbingsNormalTSFMC
 
 - type: loadout
   id: TsfmcCombatWebbingLarge
-  name: large chest rig
+# name: large chest rig # Commented by LuaM
   equipment:
     belt: ClothingBeltWebbingsBigTSFMC
 
 # Brigmedic
 - type: loadout
   id: TsfmcCombatWebbingMedical
-  name: chest rig (medical)
+# name: chest rig (medical) # Commented by LuaM
   equipment:
     belt: ClothingBeltMilitaryWebbingMed
 
 # engi
 - type: loadout
   id: TsfClothingBeltUtilityEngineering
-  name: utility belt (filled)
+# name: utility belt (filled) # Commented by LuaM
   equipment:
     belt: ClothingBeltUtilityEngineering
 
 # engi (pro)
 - type: loadout
   id: TsfClothingBeltUtilityEngineeringPro
-  name: utility belt (pro) (filled)
+# name: utility belt (pro) (filled) # Commented by LuaM
   effects:
   - !type:GroupLoadoutEffect
     proto: ProTsfEngineer

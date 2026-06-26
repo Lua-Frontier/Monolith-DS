@@ -13,9 +13,9 @@ spray-painter-style-locker-pilot = Пилот
 spray-painter-style-locker-nfsd = ТСФ
 spray-painter-style-locker-nfsd-copper = ТСФ (бронза)
 spray-painter-style-locker-nfsd-silver = ТСФ (серебро)
-spray-painter-style-locker-nfsd-brigmedic = ТСФ (Коронер)
+spray-painter-style-locker-nfsd-brigmedic = ТСФ (фельдшер)
 spray-painter-style-locker-nfsd-gold = ТСФ (золото)
-spray-painter-style-locker-nfsd-sheriff = ТСФ (командующий офицер)
+spray-painter-style-locker-nfsd-sheriff = ТСФ (полковник)
 spray-painter-style-locker-station-representative = Представитель Фронтира
 spray-painter-style-locker-fsb = FSB
 
@@ -33,7 +33,7 @@ spray-painter-style-cratesecure-private-security = Частная охрана
 spray-painter-style-cratesecure-mercenary-ammo = Боеприпасы
 spray-painter-style-cratesecure-firearms = Огнестрельное оружие
 spray-painter-style-cratesecure-uranium = Уран
-spray-painter-style-cratesecure-brigmedic = ТСФ (Коронер)
+spray-painter-style-cratesecure-brigmedic = ТСФ (фельдшер)
 spray-painter-style-cratesecure-nfsd1 = ТСФ
 spray-painter-style-cratesecure-nfsd2 = ТСФ (полосы)
 

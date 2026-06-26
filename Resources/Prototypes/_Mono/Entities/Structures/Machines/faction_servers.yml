@@ -144,6 +144,7 @@
   id: ResearchAndDevelopmentServerDebug
   parent: BaseRdServerFaction
   name: debug R&D server
+  suffix: Debug # LuaM
   description: Contains the collective knowledge of Everyone. Damn
   components:
   - type: TechnologyDatabase

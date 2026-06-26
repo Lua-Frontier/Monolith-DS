@@ -1,6 +1,6 @@
-ent-ClothingHeadHelmetHardsuitAshen = шлем боевого тактического костюма PDV CV-32
+ent-ClothingHeadHelmetHardsuitAshen = шлем боевого тактического костюма Авангарда CV-32
     .desc = Боевой тактический костюм, разработанный в династии Фаэтон.
-ent-ClothingHeadHelmetHardsuitAshenElite = шлем боевого скафандра PDV CV-53
+ent-ClothingHeadHelmetHardsuitAshenElite = шлем боевого скафандра Авангарда CV-53
     .desc = Основан на CV-32, жертвует боевой защитой ради защиты окружающей среды.
-ent-ClothingHeadHelmetHardsuitVizier = шлем боевого скафандра PDV CV-67
+ent-ClothingHeadHelmetHardsuitVizier = шлем боевого скафандра Авангарда CV-67
     .desc = Украшенный тактический костюм, разработанный с несовершенным наноламинатным составом. Высокая манёвренность, прочная броня.

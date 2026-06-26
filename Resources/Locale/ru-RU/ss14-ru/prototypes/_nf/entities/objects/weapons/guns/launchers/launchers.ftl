@@ -1,7 +1,7 @@
 ent-WeaponLauncherChinaLakeEmp = china lake
     .desc = БЛУП
     .suffix = ЭМИ
-ent-WeaponLauncherRocketEmp = РПГ-7
+ent-WeaponLauncherRocketEmp = RPG-7 "Занавес"
     .desc = Древний ручной реактивный гранатомёт.
     .suffix = ЭМИ
 ent-WeaponMailLake = почтовый СБДП

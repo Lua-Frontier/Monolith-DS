@@ -47,15 +47,15 @@ ent-AirlockHeavyGrey = { ent-AirlockHeavy }
 
 ent-AirlockHeavyPDV = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
-    .suffix = PDV
+    .suffix = Авангард
 
 ent-AirlockHeavyPDVCommandLocked = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
-    .suffix = PDV, Командный, Закрыт
+    .suffix = Авангард, Командный, Закрыт
 
 ent-AirlockHeavyPDVLocked = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
-    .suffix = PDV, Закрыт
+    .suffix = Авангард, Закрыт
 
 ent-AirlockHeavyTsfEngineeringLocked = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
@@ -63,27 +63,27 @@ ent-AirlockHeavyTsfEngineeringLocked = { ent-AirlockHeavy }
 
 ent-AirlockHeavyTSFMC = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
-    .suffix = TSFMC
+    .suffix = TСФ
 
 ent-AirlockHeavyTSFMCArmoryLocked = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
-    .suffix = TSFMC Оружейная, Закрыт
+    .suffix = ТСФ Оружейная, Закрыт
 
 ent-AirlockHeavyTSFMCLocked = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
-    .suffix = TSFMC, Закрыт
+    .suffix = ТСФ, Закрыт
 
 ent-AirlockHeavyUSSP = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
-    .suffix = USSP
+    .suffix = СССП
 
 ent-AirlockHeavyUSSPCommandLocked = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
-    .suffix = USSP, Командный, Закрыт
+    .suffix = СССП, Командный, Закрыт
 
 ent-AirlockHeavyUSSPLocked = { ent-AirlockHeavy }
     .desc = { ent-AirlockHeavy.desc }
-    .suffix = USSP, Закрыт
+    .suffix = СССП, Закрыт
 
 ent-AirlockHeavyGlass = стеклянный укреплённый шлюз
     .desc = { ent-AirlockHeavy.desc }

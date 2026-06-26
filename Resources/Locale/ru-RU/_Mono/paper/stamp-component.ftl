@@ -1,0 +1,11 @@
+stamp-component-stamped-name-paycheck-bratva = Paycheck Bratva
+stamp-component-stamped-name-winter-solstice = Командование локальных операций ТСФ
+stamp-component-stamped-name-tsf-colonel = Полковник ТСФ
+stamp-component-stamped-name-tsf-captain = Капитан ТСФ
+stamp-component-stamped-name-ussp-stratcomm = СТРАТКОМ СССП
+stamp-component-stamped-name-ussp-taccomm = ТАККОМ СССП
+stamp-component-stamped-name-ussp = Союз Советских Социалистических Планет
+stamp-component-stamped-name-pdv-overwatch = Локальное наблюдение авангарда Нордфолла
+stamp-component-stamped-name-pdv-vizier = Командор Авангарда
+stamp-component-stamped-name-pdv-asvaran = Асваран Авангарда
+stamp-component-stamped-name-pdv-spasaka = Медик Авангарда

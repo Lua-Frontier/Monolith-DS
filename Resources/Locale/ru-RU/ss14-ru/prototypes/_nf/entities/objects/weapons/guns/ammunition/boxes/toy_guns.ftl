@@ -1,1 +1,1 @@
-ent-BoxCartridgeRGBB = Коробка пулек
+ent-BoxCartridgeRGBB = коробка пулек

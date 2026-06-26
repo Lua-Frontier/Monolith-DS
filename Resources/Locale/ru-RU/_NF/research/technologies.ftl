@@ -155,5 +155,5 @@ nf-research-technology-syringe-gun = Шприцемёт
 nf-research-technology-trash-power-generators = Мусорные генераторы
 nf-research-technology-vim = В.И.М.
 nf-research-technology-wireless-audio-visual-communication = АВ телекоммуникации
-nf-research-technology-thermal-vision-goggles = Очки термального виденья
-nf-research-technology-nightvision-goggles = Очки ночного виденья
+nf-research-technology-thermal-vision-goggles = Очки термального видения
+nf-research-technology-nightvision-goggles = Очки ночного видения

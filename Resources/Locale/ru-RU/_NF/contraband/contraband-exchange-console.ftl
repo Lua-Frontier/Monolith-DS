@@ -9,7 +9,7 @@ contraband-pallet-sell-button = Продать
 contraband-pallet-disclaimer = Пожалуйста, поместите все контрабандные предметы на платформу.
 
 pirate-contraband-pallet-console-menu-title = Обмен Добычи
-pirate-contraband-console-menu-points-amount = {$amount} ДБ
+pirate-contraband-console-menu-points-amount = {$amount} Ч
 pirate-contraband-pallet-menu-no-goods-text = Здесь нет добычи!
 pirate-contraband-pallet-menu-appraisal-label = Оценочная стоимость:{" "}
 pirate-contraband-pallet-menu-count-label = Количество предметов:{" "}
