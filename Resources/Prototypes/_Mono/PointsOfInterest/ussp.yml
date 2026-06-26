@@ -16,7 +16,7 @@
   maximumDistance: 12400
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueUSSP, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
   spawnGroup: Required
-  gridPath: /Maps/_Mono/POI/camelot.yml
+  gridPath: /Maps/_LuaM/POI/camelotLuaM.yml # LuaM: /Maps/_Mono/POI/camelot.yml -> /Maps/_LuaM/POI/camelotLuaM.yml
   addComponents:
   - type: IFF
     color: "#ccaa55"
@@ -24,7 +24,7 @@
 - type: gameMap
   id: USSPCamelot
   mapName: 'Camelot Station'
-  mapPath: /Maps/_Mono/POI/camelot.yml
+  mapPath: /Maps/_LuaM/POI/camelotLuaM.yml # LuaM: /Maps/_Mono/POI/camelot.yml -> /Maps/_LuaM/POI/camelotLuaM.yml
   minPlayers: 0
   stations:
     USSPCamelot:
