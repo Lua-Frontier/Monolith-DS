@@ -34,9 +34,9 @@
   - ReptilianCube
   - VulpkaninCube
   - SlimePersonCube
-  - YowieCube
+#  - YowieCube #LuaM - Disabled...  Хуй вам а не выключение передозов
   - VoxCube
   - ResomiCube
   - GoblinCube
   - ChitinidCube
-#  - ProtogenCube #mono: retired
+  - ProtogenCube #LuaM - enabled
