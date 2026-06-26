@@ -1,4 +1,4 @@
 ent-OrganVulpkaninEyes = глаза вульпканина
     .desc = Они отражают красные тона.
-ent-JunkCannon = глаза таяра
+ent-JunkCannon = кошачьи глаза
     .desc = Они отражают даже самые слабые лучи света.
