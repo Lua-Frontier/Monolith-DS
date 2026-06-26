@@ -1,0 +1,79 @@
+- type: guideEntry
+  id: LuaMRuleset
+  name: guide-entry-monolith-rules
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/LuaMRuleset.xml"
+  priority: -2
+  ruleEntry: true
+  children:
+    - LuaMRule0
+    - LuaMRule1
+    - LuaMRule2
+    - LuaMRule3
+    - LuaMRule4
+    - LuaMRule5
+    - LuaMRule6
+    - LuaMRule7
+    - LuaMRule8
+    - LuaMRule9
+
+# Основные правила:
+- type: guideEntry
+  id: LuaMRule0
+  name: guide-entry-luam-rule-zero
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/0.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: LuaMRule1
+  name: guide-entry-luam-rule-one
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/1.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: LuaMRule2
+  name: guide-entry-luam-rule-two
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/2.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: LuaMRule3
+  name: guide-entry-luam-rule-three
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/3.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: LuaMRule4
+  name: guide-entry-luam-rule-four
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/4.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: LuaMRule5
+  name: guide-entry-luam-rule-five
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/5.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: LuaMRule6
+  name: guide-entry-luam-rule-six
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/6.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: LuaMRule7
+  name: guide-entry-luam-rule-seven
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/7.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: LuaMRule8
+  name: guide-entry-luam-rule-eight
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/8.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: LuaMRule9
+  name: guide-entry-luam-rule-nine
+  text: "/ServerInfo/_LuaM/Guidebook/Rules/List/9.xml"
+  ruleEntry: true
+
