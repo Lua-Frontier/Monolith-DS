@@ -51,10 +51,24 @@
     containers:
       storagebase: !type:Container
         ents: []
+      item: !type:ContainerSlot #Lua
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
+  - type: Matchbox #Lua
+  - type: ItemSlots #Lua
+    slots:
+      item:
+        name: clothing-webbing-sidearm
+        whitelist:
+          components:
+          - Gun
+          - MeleeWeapon
+          - WeaponCaseInsertable
+  - type: Tag #Lua
+    tags:
+    - Webbing
 
 - type: entity
   abstract: true
