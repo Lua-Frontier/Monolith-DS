@@ -1,2 +1,2 @@
-ent-ClothingOuterHardsuitPirateScaf = классический скафандр Авангард
+ent-ClothingOuterHardsuitPirateScaf = классический скафандр Авангарда
     .desc = Старый боевой скафаднр, окрашенный в цвета Авангарда. Броня кажется деградированной, но легче.

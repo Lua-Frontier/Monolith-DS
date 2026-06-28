@@ -8,9 +8,9 @@
   markingLimits: MobGoblinMarkingLimits
   dollPrototype: MobGoblinDummy
   skinColoration: HumanToned #Possible values: TintedHues, Hues, HumanToned
-  maleFirstNames: names_goblin_male
-  femaleFirstNames: names_goblin_female
-  lastNames: names_goblin_last
+  maleFirstNames: NamesGoblinFirstMale # LuaM: names_goblin_male > NamesGoblinFirstMale
+  femaleFirstNames: NamesGoblinFirstFemale # LuaM: names_goblin_female > NamesGoblinFirstFemale
+  lastNames: NamesGoblinLast # LuaM: names_goblin_last > NamesGoblinLast
 
 - type: speciesBaseSprites
   id: MobGoblinSprites

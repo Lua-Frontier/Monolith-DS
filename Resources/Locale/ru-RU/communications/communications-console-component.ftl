@@ -25,3 +25,6 @@ comms-console-menu-alert-level-button-tooltip = Изменить уровень 
 comms-console-menu-emergency-shuttle-button-tooltip = Вызывает или отзывает эвакуационный шаттл. Отзыв возможен только при достаточном количестве времени до прибытия шаттла.
 comms-console-announcement-title-station-ai = Станционный ИИ
 comms-console-announcement-title-wizard = Волшебник
+
+# Mono
+comms-console-announcement-title-rogue = Авангард Нордфолла

@@ -6,8 +6,8 @@
   sprites: MobResomiSprites
   defaultSkinTone: "#faf7f7"
   markingLimits: MobResomiMarkingLimits
-  maleFirstNames: NamesResomiUnisex
-  femaleFirstNames: NamesResomiUnisex
+  maleFirstNames: NamesResomiMale # LuaM: NamesResomiUnisex > 
+  femaleFirstNames: NamesResomiFemale # LuaM: NamesResomiUnisex > 
   naming: First
   dollPrototype: MobResomiDummy
   skinColoration: Hues

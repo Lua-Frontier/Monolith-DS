@@ -100,6 +100,8 @@ namespace Content.Client.Lobby.UI
         private ColorSelectorSliders _rgbSkinColorSelector;
 
         private bool _isDirty;
+        private float _height = 1.0f; // LuaM
+       private float _width = 1.0f;   // LuaM
 
         [ValidatePrototypeId<GuideEntryPrototype>]
         private const string DefaultSpeciesGuidebook = "Species";
@@ -1200,6 +1202,8 @@ namespace Content.Client.Lobby.UI
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
             UpdateCompanyControls();
+            UpdateHeightControls(); // LuaM
+            UpdateWidthControls(); // LuaM
 
             RefreshAntags();
             RefreshJobs();
@@ -1718,6 +1722,10 @@ namespace Content.Client.Lobby.UI
         private void SetHeight(float newHeight)
         {
             Profile = Profile?.WithCharacterAppearance(Profile.Appearance.WithHeight(newHeight));
+// LuaM-start:
+            _height = newHeight;
+            UpdateHeightLabel();
+// LuaM-end.
             SetDirty();
             ReloadPreview();
         }
@@ -1731,6 +1739,10 @@ namespace Content.Client.Lobby.UI
         private void SetWidth(float newWidth)
         {
             Profile = Profile?.WithCharacterAppearance(Profile.Appearance.WithWidth(newWidth));
+// LuaM-start:
+            _width = newWidth;
+            UpdateWidthLabel();
+// LuaM-end.
             SetDirty();
             ReloadPreview();
         }
@@ -1942,7 +1954,8 @@ namespace Content.Client.Lobby.UI
 
             SpawnPriorityButton.SelectId((int) Profile.SpawnPriority);
         }
-
+// Commented by LuaM
+/*
         private void UpdateHeightControls()
         {
             if (Profile == null)
@@ -1962,7 +1975,39 @@ namespace Content.Client.Lobby.UI
 
             WidthSlider.Value = Profile.Appearance.Width;
         }
+*/
+// LuaM-start:
+        private void UpdateHeightControls()
+        {
+            if (Profile == null) return;
+            _height = Profile.Appearance.Height;
+            HeightSlider.Value = _height;
+            UpdateHeightLabel();
+        }
 
+        private void UpdateWidthControls()
+        {
+            if (Profile == null) return;
+            _width = Profile.Appearance.Width;
+            WidthSlider.Value = _width;
+            UpdateWidthLabel();
+        }
+        private void UpdateHeightLabel()
+        {
+            if (Profile == null) return;
+            var species = _species.Find(x => x.ID == Profile.Species) ?? _species.First();
+            var height = MathF.Round(species.AverageHeight * _height);
+            HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int)height));
+        }
+
+        private void UpdateWidthLabel()
+        {
+            if (Profile == null) return;
+            var species = _species.Find(x => x.ID == Profile.Species) ?? _species.First();
+            var width = MathF.Round(species.AverageWidth * _width);
+            WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int)width));
+        }
+// LuaM-end.
         private void UpdateHairPickers()
         {
             if (Profile == null)

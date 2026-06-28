@@ -1,0 +1,15 @@
+# Randomly generated based on https://github.com/ParadiseSS13/Paradise/blob/5b516c3166a07cd10d035be1616248ba126e31a1/code/modules/mob/language.dm
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+
+- type: localizedDataset
+  id: NamesTajaranFirst
+  values:
+    prefix: names-tajaran-first-dataset-
+    count: 100
+
+
+- type: localizedDataset
+  id: NamesTajaranLast
+  values:
+    prefix: names-tajaran-last-dataset-
+    count: 35

@@ -120,7 +120,7 @@ ghost-role-information-space-dragon-name = Космический дракон
 ghost-role-information-space-dragon-description = Вызовите 3 карповых разлома и захватите этот квадрант! У вас есть лишь 5 минут между каждым разломом, прежде чем вы исчезнете.
 ghost-role-information-space-dragon-rules = Вы [color=red][bold]Командный антагонист[/bold][/color], в команде с другими призванными карпами.
 ghost-role-information-space-dragon-summoned-carp-rules = Вы [color=red][bold]Командный антагонист[/bold][/color], в команде с драконом и другими его союзниками.
-ghost-role-information-onestar-mecha-name = Мех OneStar
+ghost-role-information-onestar-mecha-name = Механоид OneStar
 ghost-role-information-onestar-mecha-description = Вы — экспериментальный мех, созданный неизвестными силами. Всё, что вам известно, — у вас есть вооружение и способность обнаруживать живые цели поблизости...
 ghost-role-information-onestar-mecha-rules = Ваша задача — сеять хаос, используя ваш арсенал. Вы — злодей.
 ghost-role-information-space-dragon-dungeon-description = Защищайте подземелье экспедиции вместе со своими рыбьими товарищами! Вам запрещено покидать своё гнездо!

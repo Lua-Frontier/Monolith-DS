@@ -1,4 +1,4 @@
-ui-lobby-title = Мёртвый Космос: Монолит
+ui-lobby-title = Мёртвый Космос: Сектор Колосс
 ui-lobby-ahelp-button = Админ-помощь
 ui-lobby-options-button = Настройки
 ui-lobby-leave-button = Выйти

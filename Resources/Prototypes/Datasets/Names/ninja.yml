@@ -1,42 +1,12 @@
-﻿- type: dataset
-  id: names_ninja
+﻿# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+- type: localizedDataset
+  id: NamesNinja
   values:
-  - Shadow
-  - Sarutobi
-  - Smoke
-  - Rain
-  - Zero
-  - Raphael
-  - Michaelangelo
-  - Donatello
-  - Leonardo
-  - Splinter
-  - Shredder
-  - Hazuki
-  - Hien
-  - Hiryu
-  - Hayabusa
-  - Midnight
-  - Seven
-  - McNinja
-  - Hanzo
-  - Blood
-  - Iga
-  - Koga
-  - Hero
-  - Hiro
-  - Phantom
-  - Baki
-  - Ogre
-  - Daemon
-  - Goemon
-  - McAwesome
-  - Throat
-  - Death
-  - Aria
-  - Bro
-  - Fox
-  - Samurai
-  - Eater
-  - Ryu
-  - Raiden
+    prefix: names-ninja-dataset-
+    count: 39
+
+- type: localizedDataset
+  id: NamesNinjaTitle
+  values:
+    prefix: names-ninja-title-dataset-
+    count: 46
