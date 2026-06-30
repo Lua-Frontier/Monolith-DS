@@ -61,14 +61,13 @@
     slots:
       item:
         name: clothing-webbing-sidearm
+        blacklist:
+          tags:
+          - GrenadeLauncher
         whitelist:
           components:
           - Gun
-        blacklist:
-          id:
-          - WeaponLauncherTSFAnubis
-          - WeaponLauncherChinaLakeEmp
-          - WeaponLauncherChinaLake
+
 
 - type: entity
   abstract: true

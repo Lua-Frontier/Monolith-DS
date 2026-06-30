@@ -56,6 +56,11 @@
     proto: 40mmGrenadeFragmentation
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: Tag
+    tags:
+    - GrenadeLauncher
+
+    
 
 - type: entity
   name: PA RPG-7
@@ -90,6 +95,9 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: Tag
+    tags:
+    - GrenadeLauncher
 
 - type: entity
   name: multiple rocket launcher
@@ -125,6 +133,9 @@
     steps: 2
     zeroVisible: true
   - type: Appearance
+  - type: Tag
+    tags:
+    - GrenadeLauncher
 
 - type: entity
   name: pirate cannon
@@ -157,6 +168,9 @@
       proto: CannonBall
       soundInsert:
         path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+    - type: Tag
+      tags:
+      - GrenadeLauncher
 
 - type: entity
   name: tether gun
