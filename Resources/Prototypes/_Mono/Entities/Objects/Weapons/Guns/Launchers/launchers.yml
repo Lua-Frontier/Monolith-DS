@@ -140,7 +140,7 @@
     rsi:
       sprite: _RMC14/Interface/MousePointer/explosive_mouse.rsi
       state: all
-  - type: Tag
+  - type: Tag #LuaM
     tags:
     - GrenadeLauncher
 
@@ -191,7 +191,7 @@
     baseDelay: 2
     modifiedDelay: 2
     preventFiring: true
-  - type: Tag
+  - type: Tag #LuaM
     tags:
     - GrenadeLauncher
 
@@ -284,6 +284,6 @@
   - type: LaserPointer
     targetedColor: "#ff0037"
     defaultColor: "#03c2fc"
-  - type: Tag
+  - type: Tag #LuaM
     tags:
     - GrenadeLauncher

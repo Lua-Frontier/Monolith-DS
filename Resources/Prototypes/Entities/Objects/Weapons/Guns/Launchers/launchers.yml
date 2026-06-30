@@ -56,7 +56,7 @@
     proto: 40mmGrenadeFragmentation
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-  - type: Tag
+  - type: Tag #LuaM
     tags:
     - GrenadeLauncher
 
@@ -95,7 +95,7 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
-  - type: Tag
+  - type: Tag #LuaM
     tags:
     - GrenadeLauncher
 
@@ -133,7 +133,7 @@
     steps: 2
     zeroVisible: true
   - type: Appearance
-  - type: Tag
+  - type: Tag #LuaM
     tags:
     - GrenadeLauncher
 
@@ -168,7 +168,7 @@
       proto: CannonBall
       soundInsert:
         path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
-    - type: Tag
+    - type: Tag #LuaM
       tags:
       - GrenadeLauncher
 
