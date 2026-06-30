@@ -66,9 +66,6 @@
           - Gun
           - MeleeWeapon
           - WeaponCaseInsertable
-  - type: Tag #LuaM
-    tags:
-    - Webbing
 
 - type: entity
   abstract: true
