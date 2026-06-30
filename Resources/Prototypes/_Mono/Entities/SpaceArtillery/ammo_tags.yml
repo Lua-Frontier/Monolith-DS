@@ -30,6 +30,11 @@
 - type: Tag
   id: 90mmCartridge
 
+# 120mm
+
+- type: Tag
+  id: 120mmCartridge
+
 # 220mm
 
 - type: Tag
@@ -44,6 +49,11 @@
 
 - type: Tag
   id: 150mmShell
+
+# 430mm
+
+- type: Tag
+  id: R300Shell
 
 # Railguns
 

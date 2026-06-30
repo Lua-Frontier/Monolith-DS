@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-NC-SA-3.0",
-  "copyright": "Made by kasature90 (github)/_starch_ (discord)",
+  "copyright": "Made by Corrupt142 (github)",
   "size": {
     "x": 48,
     "y": 48
@@ -14,8 +14,7 @@
       "name": "fcs-unshaded"
     },
     {
-      "name": "muzzle_ak570"
+      "name": "muzzle_r300"
     }
   ]
 }
-

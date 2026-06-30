@@ -12,6 +12,7 @@
   - type: CartridgeAmmo
     proto: ShipMissileASM250
     deleteOnSpawn: true
+    muzzleFlash: null
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/hybrid_missile.rsi
     layers:
