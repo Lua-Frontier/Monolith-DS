@@ -383,7 +383,8 @@
   materials:
     Steel: 2500
     Plasteel: 2000
-    Wood: 1500
+    Wood: 400 
+    #Enough for lore accurate wooden grip
 
 
 # Ussp guns
