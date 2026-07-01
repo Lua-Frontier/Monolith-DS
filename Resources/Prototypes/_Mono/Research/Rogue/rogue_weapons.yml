@@ -69,7 +69,7 @@
   cost: 55000
   recipeUnlocks:
   - WeaponSniperHristovRogue
-  - WeaponLightMachineGunL6
+  - WeaponLightMachineGunL6 #LuaM
   - AmmoBox145x114mm
   - AmmoBox145x114mmBig
   - WeaponDEWBasilisk
