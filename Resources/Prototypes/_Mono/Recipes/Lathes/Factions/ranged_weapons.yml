@@ -369,6 +369,23 @@
     Silver: 2000
     Uranium: 400
 
+# L6 SAW
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponLightMachineGunL6
+  result: WeaponLightMachineGunL6
+  categories:
+  - GPMGs
+  - MGs
+  - Ballistic
+  - Weapons
+  materials:
+    Steel: 2500
+    Plasteel: 2000
+    Wood: 1500
+
+
 # Ussp guns
 
 - type: latheRecipe
