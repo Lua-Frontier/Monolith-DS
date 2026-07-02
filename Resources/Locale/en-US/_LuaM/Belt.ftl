@@ -1,0 +1,1 @@
+clothing-webbing-sidearm = Side-arms

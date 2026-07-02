@@ -18,10 +18,10 @@ public sealed partial class SalvageTimeMod : IPrototype, ISalvageMod
     public float Cost { get; private set; }
 
     [DataField("minDuration")]
-    public int MinDuration = 900;
+    public int MinDuration = 2700; // LuaM: 900 > 2700
 
     [DataField("maxDuration")]
-    public int MaxDuration = 930;
+    public int MaxDuration = 3600; // LuaM: 930 > 3600
 
     // Hack: Description isn't nullable
     [DataField]

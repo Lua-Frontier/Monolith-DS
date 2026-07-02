@@ -781,6 +781,9 @@ public sealed partial class ChatSystem : SharedChatSystem
                     _adminLogger.Add(LogType.Chat, LogImpact.Low,
                         $"Direct messaged from {ToPrettyString(source):user}, original: {originalMessage}, transformed: {message}.");
             }
+
+        var ev = new EntitySpokeToEntityEvent(source, message, languageObfuscatedMessage, recipients, language);
+        RaiseLocalEvent(source, ev, true);
     }
 
     private void SendEntityEmote(
@@ -1263,6 +1266,32 @@ public sealed class EntitySpokeEvent : EntityEventArgs
         Message = message;
         Channel = channel;
         IsWhisper = isWhisper;
+        Language = language;
+    }
+}
+
+/// <summary>
+///     Raised on an entity when it speaks directly to one or more target entities.
+/// </summary>
+public sealed class EntitySpokeToEntityEvent : EntityEventArgs
+{
+    public readonly EntityUid Source;
+    public readonly string Message;
+    public readonly string ObfuscatedMessage;
+    public readonly IReadOnlyList<EntityUid> Targets;
+    public readonly LanguagePrototype Language;
+
+    public EntitySpokeToEntityEvent(
+        EntityUid source,
+        string message,
+        string obfuscatedMessage,
+        IReadOnlyList<EntityUid> targets,
+        LanguagePrototype language)
+    {
+        Source = source;
+        Message = message;
+        ObfuscatedMessage = obfuscatedMessage;
+        Targets = targets;
         Language = language;
     }
 }

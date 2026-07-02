@@ -368,6 +368,13 @@ namespace Content.Client.Lobby.UI
 
             #endregion SpawnPriority
 
+            #region TTS
+
+            TTSContainer.Visible = _cfgManager.GetCVar(CCVars.TTSEnabled);
+            InitializeVoice();
+
+            #endregion TTS
+
             #region Height
 
             HeightSlider.OnValueChanged += args =>
@@ -1189,6 +1196,7 @@ namespace Content.Client.Lobby.UI
             UpdateNameEdit();
             UpdateFlavorTextEdit();
             UpdateSexControls();
+            UpdateTTSVoicesControls();
             UpdateGenderControls();
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
@@ -1649,6 +1657,7 @@ namespace Content.Client.Lobby.UI
             }
 
             UpdateGenderControls();
+            UpdateTTSVoicesControls();
             Markings.SetSex(newSex);
             ReloadPreview();
         }
@@ -1672,6 +1681,7 @@ namespace Content.Client.Lobby.UI
             // Frontier: In case there's species restrictions for traits
             RefreshTraits(); // Frontier
             UpdateSexControls(); // update sex for new species
+            UpdateTTSVoicesControls();
             UpdateSpeciesGuidebookIcon();
             ReloadPreview();
         }

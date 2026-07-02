@@ -30,7 +30,7 @@
                     </BoxContainer>
                 </ui:HighlightedContainer>
             </BoxContainer>
-            <!-- Import/Export -->
+            <!-- Import/Export (из test2) -->
             <BoxContainer Orientation="Vertical" MinSize="60 0" HorizontalExpand="True" HorizontalAlignment="Right">
                 <ui:HighlightedContainer Name="ProfileHighlight">
                     <BoxContainer Orientation="Vertical">
@@ -91,16 +91,23 @@
                                 <Control HorizontalExpand="True" />
                                 <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
                             </BoxContainer>
-                            <!-- Height -->
+                            <!-- TTS Voice (из master) -->
+                            <BoxContainer HorizontalExpand="True" Visible="False" Name="TTSContainer">
+                                <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
+                                <Control HorizontalExpand="True" />
+                                <OptionButton Name="VoiceButton" HorizontalAlignment="Right" />
+                                <Button Name="VoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" HorizontalAlignment="Right" />
+                            </BoxContainer>
+                            <!-- Height (из master) -->
                             <BoxContainer HorizontalExpand="True">
-                                <Label Name="HeightLabel" Text="100" HorizontalAlignment="Right" MinSize="40 0" />
+                                <Label Text="{Loc 'humanoid-profile-editor-height-label'}" />
                                 <Control HorizontalExpand="True" />
                                 <Slider Name="HeightSlider" MinValue="0.8" MaxValue="1.2" Value="1.0" HorizontalAlignment="Right" MinSize="200 0" />
                                 <Button Name="HeightResetButton" Text="{Loc 'humanoid-profile-editor-reset-button'}" HorizontalAlignment="Right" />
                             </BoxContainer>
-                            <!-- Width -->
+                            <!-- Width (из master) -->
                             <BoxContainer HorizontalExpand="True">
-                                <Label Name="WidthLabel" Text="100" HorizontalAlignment="Right" MinSize="40 0" />
+                                <Label Text="{Loc 'humanoid-profile-editor-width-label'}" />
                                 <Control HorizontalExpand="True" />
                                 <Slider Name="WidthSlider" MinValue="0.8" MaxValue="1.2" Value="1.0" HorizontalAlignment="Right" MinSize="200 0" />
                                 <Button Name="WidthResetButton" Text="{Loc 'humanoid-profile-editor-reset-button'}" HorizontalAlignment="Right" />
@@ -132,14 +139,13 @@
                     <BoxContainer Name="JobList" Orientation="Vertical" />
                 </ScrollContainer>
             </BoxContainer>
-            <!-- Frontier: no Antags tab
+            <!-- Frontier: no Antags tab -->
             <BoxContainer Orientation="Vertical" Margin="10">
-                <! - - Antags  - - >
+                <!-- Antags -->
                 <ScrollContainer VerticalExpand="True">
                     <BoxContainer Name="AntagList" Orientation="Vertical" />
                 </ScrollContainer>
             </BoxContainer>
-            End Frontier -->
             <BoxContainer Orientation="Vertical" Margin="10">
                 <!-- Traits -->
                 <ScrollContainer VerticalExpand="True">
