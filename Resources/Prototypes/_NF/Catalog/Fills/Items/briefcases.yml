@@ -23,16 +23,30 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: SpaceCash10000 #LuaM
+      - id: SpaceCash5000
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 10000 #LuaM
+    price: 5000
 
 - type: entity
   parent: SpaceCashExpedition
   id: SpaceCashExpeditionT2
   name: credits (10,000)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: SpaceCash10000
+    sound:
+      collection: storageRustle
+  - type: StaticPrice # Require since you can still sell a ship that have it on it
+    price: 10000
+
+- type: entity
+  parent: SpaceCashExpedition
+  id: SpaceCashExpeditionT3
+  name: credits (20,000)
   categories: [ HideSpawnMenu ]
   components:
   - type: SpawnItemsOnUse
@@ -45,21 +59,6 @@
 
 - type: entity
   parent: SpaceCashExpedition
-  id: SpaceCashExpeditionT3
-  name: credits (20,000)
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: SpawnItemsOnUse
-    items:
-      - id: SpaceCash20000 #LuaM
-        amount: 2 #LuaM
-    sound:
-      collection: storageRustle
-  - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 40000 #LuaM
-
-- type: entity
-  parent: SpaceCashExpedition
   id: SpaceCashExpeditionT4
   name: credits (40,000)
   categories: [ HideSpawnMenu ]
@@ -67,11 +66,11 @@
   - type: SpawnItemsOnUse
     items:
       - id: SpaceCash20000
-        amount: 3 #LuaM
+        amount: 2 #LuaM
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 60000 #LuaM
+    price: 40000 #LuaM
 
 - type: entity
   parent: SpaceCashExpedition
@@ -85,9 +84,9 @@
     #  - id: SpaceCash25000
     #    amount: 2
       - id: SpaceCash20000
-        amount: 4
+        amount: 3
     # LuaM-end
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 80000 #LuaM
+    price: 60000 #LuaM
