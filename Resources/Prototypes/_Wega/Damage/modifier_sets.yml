@@ -1,0 +1,9 @@
+- type: damageModifierSet
+  id: Demon
+  coefficients:
+    Blunt: 1
+    Slash: 1
+    Piercing: 1
+    Cold: 0.9
+    Heat: 0.85
+    Poison: 0.85
