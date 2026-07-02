@@ -104,5 +104,5 @@ marking-DemonHornsDevilPrime1 = Аркана, рога (Прайм, 1)
 marking-DemonHornsDevilPrime1-devil_prime1 = Рога
 marking-DemonHornsDevilPrime2 = Аркана, рога (Прайм, 2)
 marking-DemonHornsDevilPrime2-devil_prime2 = Рога
-marking-DemonHornsFat_Horn = Аркана, рога (Толстые)
-marking-DemonHornsFat_Horn-fat_horn = Рога
+marking-DemonHornsFatHorn = Аркана, рога (Толстые)
+marking-DemonHornsFatHorn-fat_horn = Рога
