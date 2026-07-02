@@ -1,61 +1,18 @@
-- type: dataset
-  id: SyndicateNamesNormal
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+- type: localizedDataset
+  id: NamesSyndicateNormal
   values:
-  - Alfa
-  - Bravo
-  - Charlie
-  - Delta
-  - Echo
-  - Foxtrot
-  - Golf
-  - Hotel
-  - India
-  - Juliett
-  - Kilo
-  - Lima
-  - Mike
-  - November
-  - Oscar
-  - Papa
-  - Quebec
-  - Romeo
-  - Sierra
-  - Tango
-  - Uniform
-  - Victor
-  - Whiskey
-  - X-Ray
-  - Zulu
+    prefix: names-syndicate-normal-dataset-
+    count: 26
 
-- type: dataset
-  id: SyndicateNamesElite
+- type: localizedDataset
+  id: NamesSyndicateElite
   values:
-  - Alpha
-  - Beta
-  - Gamma
-  - Delta
-  - Epsilon
-  - Zeta
-  - Eta
-  - Theta
-  - Iota
-  - Lambda
-  - Mu
-  - Nu
-  - Xi
-  - Omicron
-  - Pi
-  - Rho
-  - Sigma
-  - Tau
-  - Upsilon
-  - Phi
-  - Chi
-  - Psi
-  - Omega
+    prefix: names-syndicate-elite-dataset-
+    count: 23
 
-- type: dataset
-  id: SyndicateNamesPrefix
+- type: localizedDataset
+  id: NamesSyndicatePrefix
   values:
-  - Operative
-  - Agent
+    prefix: names-syndicate-prefix-dataset-
+    count: 2

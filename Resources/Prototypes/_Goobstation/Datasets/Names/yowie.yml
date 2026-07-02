@@ -1,0 +1,13 @@
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+
+- type: localizedDataset
+  id: NamesYowieMale
+  values:
+    prefix: names-yowie-male-dataset-
+    count: 43
+
+- type: localizedDataset
+  id: NamesYowieFemale
+  values:
+    prefix: names-yowie-female-dataset-
+    count: 35

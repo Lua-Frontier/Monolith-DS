@@ -8,8 +8,8 @@
   markingLimits: MobChitinidMarkingLimits
   dollPrototype: MobChitinidDummy
   skinColoration: Hues
-  maleFirstNames: NamesChitinidFirstMale
-  femaleFirstNames: NamesChitinidFirstFemale
+  maleFirstNames: NamesChitinidFirstMale # LuaM: NamesChitinidFirstMale > NamesChitinidFirstMale
+  femaleFirstNames: NamesChitinidFirstFemale # LuaM: NamesChitinidFirstFemale > NamesChitinidFirstFemale
   naming: First
 
 - type: speciesBaseSprites
