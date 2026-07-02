@@ -23,11 +23,11 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: SpaceCash5000
+      - id: SpaceCash10000 #LuaM
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 5000
+    price: 10000
 
 - type: entity
   parent: SpaceCashExpedition
@@ -37,11 +37,11 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: SpaceCash10000
+      - id: SpaceCash20000 #LuaM
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 10000
+    price: 20000 #LuaM
 
 - type: entity
   parent: SpaceCashExpedition
@@ -51,11 +51,12 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: SpaceCash20000
+      - id: SpaceCash20000 #LuaM
+        amount: 2 #LuaM
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 20000
+    price: 40000 #LuaM
 
 - type: entity
   parent: SpaceCashExpedition
@@ -66,11 +67,11 @@
   - type: SpawnItemsOnUse
     items:
       - id: SpaceCash20000
-        amount: 2
+        amount: 3 #LuaM
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 40000
+    price: 60000 #LuaM
 
 - type: entity
   parent: SpaceCashExpedition
@@ -80,10 +81,13 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: SpaceCash25000
-        amount: 2
+    # LuaM-start
+    #  - id: SpaceCash25000
+    #    amount: 2
       - id: SpaceCash20000
+        amount: 4
+    # LuaM-end
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 70000
+    price: 80000 #LuaM
