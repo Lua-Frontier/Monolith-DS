@@ -80,13 +80,13 @@
   components:
   - type: SpawnItemsOnUse
     items:
-    # LuaM-start
+    # Commented by LuaM
     #  - id: SpaceCash25000
     #    amount: 2
       - id: SpaceCash20000
         amount: 3 # LuaM: 2 > 3
-    # LuaM-end
+    # LuaM end
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 60000 #LuaM
+    price: 60000 #LuaM: 70000 > 60000

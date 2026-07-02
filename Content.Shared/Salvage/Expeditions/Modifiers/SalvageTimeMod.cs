@@ -21,7 +21,7 @@ public sealed partial class SalvageTimeMod : IPrototype, ISalvageMod
     public int MinDuration = 2700; // LuaM: 900 > 2700
 
     [DataField("maxDuration")]
-    public int MaxDuration = 3600; // LuaM
+    public int MaxDuration = 3600; // LuaM: 930 > 3600
 
     // Hack: Description isn't nullable
     [DataField]

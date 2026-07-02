@@ -116,8 +116,8 @@
 - type: salvageTimeMod
   id: RushTime
   desc: salvage-time-mod-rush
-  minDuration: 2700 # LuaM
-  maxDuration: 3600 # LuaM
+  minDuration: 2700 # Frontier # LuaM: 630 > 2700
+  maxDuration: 3600 # Frontier # LuaM: 840 > 3600
   cost: 1
 
 # Weather mods
