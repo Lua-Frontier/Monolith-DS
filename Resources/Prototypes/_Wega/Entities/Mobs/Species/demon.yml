@@ -112,17 +112,6 @@
       285: 0.8
       248: 0.6
       220: 0.4
-  - type: DamageOnAction
-    damage:
-      types:
-        Blunt: -10
-        Slash: -10
-        Piercing: -10
-        Heat: -10
-        Cold: -10
-        Poison: -10
-        Asphyxiation: -20
-        Bloodloss: -20
   - type: PassiveDamage
     allowedStates:
     - Alive
