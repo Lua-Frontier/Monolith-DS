@@ -6,3 +6,4 @@ admin-announce-button = Announce
 admin-announce-type-station = Station
 admin-announce-type-server = Server
 admin-announce-keep-open = Keep open
+admin-announce-enable-tts = Enable TTS

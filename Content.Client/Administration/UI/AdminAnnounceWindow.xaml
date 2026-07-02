@@ -9,6 +9,11 @@
             <OptionButton Name="AnnounceMethod" Access="Public" HorizontalExpand="True" SizeFlagsStretchRatio="2"/>
         </BoxContainer>
         <TextEdit Name="Announcement" Access="Public" VerticalExpand="True" MinHeight="100" />
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <CheckBox Name="EnableTTS" Access="Public" Text="{Loc admin-announce-enable-tts}" Pressed="True" />
+            <Control HorizontalExpand="True" />
+            <OptionButton Name="VoiceSelector" Access="Public" HorizontalExpand="True" SizeFlagsStretchRatio="2"/>
+        </BoxContainer>
 
         <GridContainer Rows="1">
             <CheckBox Name="KeepWindowOpen" Access="Public" Text="{Loc 'admin-announce-keep-open'}" />

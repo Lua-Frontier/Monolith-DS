@@ -3,6 +3,7 @@ using Content.Server.Emp;
 using Content.Server.Radio.Components;
 using Content.Shared._Mono.Radio;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Corvax.TTS;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Server.Speech;
@@ -56,7 +57,7 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
             && TryComp(component.Headset, out EncryptionKeyHolderComponent? keys)
             && keys.Channels.Contains(args.Channel.ID))
         {
-            _radio.SendRadioMessage(uid, args.Message, args.Channel, component.Headset);
+            _radio.SendRadioMessage(uid, args.Message, args.Channel, component.Headset, language: args.Language);
             args.Channel = null; // prevent duplicate messages from other listeners.
         }
     }
@@ -105,10 +106,12 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
 
     private void OnHeadsetReceive(EntityUid uid, HeadsetComponent component, ref RadioReceiveEvent args)
     {
-        if (TryComp(Transform(uid).ParentUid, out ActorComponent? actor))
+        var parent = Transform(uid).ParentUid;
+
+        if (TryComp(parent, out ActorComponent? actor))
         {
             // Einstein Engines - Language begin
-            var canUnderstand = _language.CanUnderstand(Transform(uid).ParentUid, args.Language.ID);
+            var canUnderstand = _language.CanUnderstand(parent, args.Language.ID);
             var msg = new MsgChatMessage
             {
                 Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
@@ -119,12 +122,19 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
 
             // Mono - Borers begin
             var ev = new RadioMessageHeardEvent(uid, msg, args.Channel);
-            RaiseLocalEvent(Transform(uid).ParentUid, ref ev);
+            RaiseLocalEvent(parent, ref ev);
             // Mono - Borers end
 
             // Send radio noise event to client
             var radioNoiseEvent = new RadioNoiseEvent(GetNetEntity(uid), args.Channel.ID);
             RaiseNetworkEvent(radioNoiseEvent, actor.PlayerSession);
+
+            if (parent != args.MessageSource &&
+                HasComp<TTSComponent>(args.MessageSource) &&
+                !args.Receivers.Contains(parent))
+            {
+                args.Receivers.Add(parent);
+            }
         }
     }
 }

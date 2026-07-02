@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Content.Shared.Chat;
 using Content.Shared._EinsteinEngines.Language;
 using Content.Shared.Radio;
@@ -16,7 +17,8 @@ public readonly record struct RadioReceiveEvent(
     ChatMessage OriginalChatMsg,
     ChatMessage LanguageObfuscatedChatMsg,
     LanguagePrototype Language,
-    EntityUid RadioSource
+    EntityUid RadioSource,
+    List<EntityUid> Receivers
 );
 // Einstein Engines - Language end
 

@@ -1,3 +1,4 @@
+using Content.Shared.Humanoid;
 using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
 
@@ -25,6 +26,9 @@ public sealed partial class VoiceMaskComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<SpeechVerbPrototype>? VoiceMaskSpeechVerb;
+
+    [DataField]
+    public string VoiceId = SharedHumanoidAppearanceSystem.DefaultVoice;
 
     /// <summary>
     ///     The action that gets displayed when the voice mask is equipped.
