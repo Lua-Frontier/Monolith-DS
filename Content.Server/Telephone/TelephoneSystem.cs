@@ -7,6 +7,7 @@ using Content.Server.Speech;
 using Content.Server.Speech.Components;
 using Content.Server._EinsteinEngines.Language;
 using Content.Shared.Chat;
+using Content.Shared.Corvax.TTS;
 using Content.Shared.Database;
 using Content.Shared.Labels.Components;
 using Content.Shared.Mind.Components;
@@ -109,6 +110,7 @@ public sealed partial class TelephoneSystem : SharedTelephoneSystem
 
         // Determine if speech should be relayed via the telephone itself or a designated speaker
         var speaker = entity.Comp.Speaker != null ? entity.Comp.Speaker.Value.Owner : entity.Owner;
+        SyncRelayedSpeakerTts(args.MessageSource, speaker);
 
         var name = Loc.GetString("chat-telephone-name-relay",
             ("originalName", nameEv.VoiceName),
@@ -118,6 +120,21 @@ public sealed partial class TelephoneSystem : SharedTelephoneSystem
         var volume = entity.Comp.SpeakerVolume == TelephoneVolume.Speak ? InGameICChatType.Speak : InGameICChatType.Whisper;
 
         _chat.TrySendInGameICMessage(speaker, args.Message, volume, range, nameOverride: name, checkRadioPrefix: false, languageOverride: args.Language); // Einstein Engines - Language
+    }
+
+    private void SyncRelayedSpeakerTts(EntityUid messageSource, EntityUid speaker)
+    {
+        var speakerTts = EnsureComp<TTSComponent>(speaker);
+        if (!TryComp<TTSComponent>(messageSource, out var sourceTts) ||
+            string.IsNullOrEmpty(sourceTts.VoicePrototypeId))
+        {
+            speakerTts.VoicePrototypeId = null;
+            return;
+        }
+
+        var voiceEv = new TransformSpeakerVoiceEvent(messageSource, sourceTts.VoicePrototypeId);
+        RaiseLocalEvent(messageSource, voiceEv);
+        speakerTts.VoicePrototypeId = voiceEv.VoiceId;
     }
 
     #endregion

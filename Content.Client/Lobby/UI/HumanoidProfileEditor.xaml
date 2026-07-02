@@ -91,6 +91,13 @@
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
+                                <!-- TTS Voice -->
+                                <BoxContainer HorizontalExpand="True" Visible="False" Name="TTSContainer">
+                                    <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <OptionButton Name="VoiceButton" HorizontalAlignment="Right" />
+                                    <Button Name="VoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" HorizontalAlignment="Right" />
+                                </BoxContainer>
                                 <!-- Height -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-height-label'}" />

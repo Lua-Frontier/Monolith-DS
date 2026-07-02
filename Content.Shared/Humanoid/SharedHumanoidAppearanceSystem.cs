@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using Content.Shared.CCVar;
+using Content.Shared.Corvax.TTS;
 using Content.Shared.Decals;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid.Markings;
@@ -44,6 +45,16 @@ public abstract partial class SharedHumanoidAppearanceSystem : EntitySystem
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
+
+    [ValidatePrototypeId<TTSVoicePrototype>]
+    public const string DefaultVoice = "Noble";
+
+    public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
+    {
+        { Sex.Male, "Garithos" },
+        { Sex.Female, "Maiev" },
+        { Sex.Unsexed, "Myron" },
+    };
 
     public override void Initialize()
     {
@@ -164,6 +175,7 @@ public abstract partial class SharedHumanoidAppearanceSystem : EntitySystem
         targetHumanoid.Height = sourceHumanoid.Height;
         targetHumanoid.Width = sourceHumanoid.Width;
         SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);
+        SetTTSVoice(target, sourceHumanoid.Voice, false, targetHumanoid);
         targetHumanoid.CustomBaseLayers = new(sourceHumanoid.CustomBaseLayers);
         targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
 
@@ -397,6 +409,7 @@ public abstract partial class SharedHumanoidAppearanceSystem : EntitySystem
 
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
+        SetTTSVoice(uid, profile.Voice, false, humanoid);
         humanoid.EyeColor = profile.Appearance.EyeColor;
 
         SetSkinColor(uid, profile.Appearance.SkinColor, false);
@@ -505,6 +518,20 @@ public abstract partial class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         humanoid.MarkingSet.AddBack(prototype.MarkingCategory, markingObject);
+
+        if (sync)
+            Dirty(uid, humanoid);
+    }
+
+    public void SetTTSVoice(EntityUid uid, string voiceId, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid))
+            return;
+
+        humanoid.Voice = voiceId;
+
+        if (TryComp<TTSComponent>(uid, out var tts))
+            tts.VoicePrototypeId = voiceId;
 
         if (sync)
             Dirty(uid, humanoid);

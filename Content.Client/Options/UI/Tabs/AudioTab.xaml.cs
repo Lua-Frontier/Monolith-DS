@@ -60,6 +60,18 @@ public sealed partial class AudioTab : Control
             _cfg.GetCVar(CCVars.MinMaxAmbientSourcesConfigured),
             _cfg.GetCVar(CCVars.MaxMaxAmbientSourcesConfigured));
 
+        Control.AddOptionPercentSlider(
+            CCVars.TTSVolume,
+            SliderVolumeTts,
+            scale: ContentAudioSystem.TtsMultiplier);
+
+        Control.AddOptionPercentSlider(
+            CCVars.TTSVolumeRadio,
+            SliderVolumeTtsRadio,
+            scale: ContentAudioSystem.TtsMultiplier);
+
+        Control.AddOptionCheckBox(CCVars.RadioTTSSoundsEnabled, RadioTTSSoundsCheckBox);
+
         // Mono begin
         Control.AddOptionPercentSlider(
             MonoCVars.CombatMusicVolume,
