@@ -27,7 +27,7 @@
     sound:
       collection: storageRustle
   - type: StaticPrice # Require since you can still sell a ship that have it on it
-    price: 10000
+    price: 10000 #LuaM
 
 - type: entity
   parent: SpaceCashExpedition
