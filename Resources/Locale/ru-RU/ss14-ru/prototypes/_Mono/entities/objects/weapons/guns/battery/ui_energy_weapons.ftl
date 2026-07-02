@@ -1,6 +1,6 @@
-ent-UllmanWeaponPulsePistol = DP-17 "Абдуктор"
+ent-UllmanWeaponPulsePistol = DP-17 «Абдуктор»
     .desc = Новинка на рынке от Ullman. DP-17 - мощный лазерный импульсный пистолет, основанный на старых разработках.
-ent-UllmanWeaponPulseRifle = DP-27 "Луна"
+ent-UllmanWeaponPulseRifle = DP-27 «Луна»
     .desc = Крупный импульсный карабин — автоматическое оружие для подавления групп целей, роботов и живых. Одна из топовых направленных импульсных систем Ullman.
-ent-UllmanWeaponPulseSniper = DP-40 "Марс"
+ent-UllmanWeaponPulseSniper = DP-40 «Марс»
     .desc = Вершина инженерной мысли Ullman: DP-40 для дальнего подавления — луч прожигает пластитановую броню насквозь.

@@ -10,7 +10,7 @@
 - type: pointOfInterest
   id: Lancelot
   parent: BasePOI
-  name: 'Lancelot Mining Outpost'
+  name: 'Шахтёрский Аванпост «Ланцелот»' # LuaM: 'Lancelot Mining Outpost' > 'Шахтёрский Аванпост «Ланцелот»'
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGroup: Optional

@@ -121,7 +121,8 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
       types:
-        Slash: 50
+        Slash: 15 # LuaM: 50 > 15
+        Heat: 20 # LuaM
         Structural: 100
 
 - type: entity
@@ -330,9 +331,9 @@
         variation: 0.250
     activatedDamage:
       types:
-        Slash: 15 # Mono increased from 10 to 15 to be on-par with normal e-swords
-        Heat: 20
-        Structural: 100 # Mono increased from 25 to 100, keep in mind a breaching hammer does 300 a hit
+        Slash: 20 # Mono increased from 10 to 15 to be on-par with normal e-swords # LuaM: 15 > 20
+        Heat: 25 # LuaM: 20 > 25
+        Structural: 125 # Mono increased from 25 to 100, keep in mind a breaching hammer does 300 a hit # LuaM: 100 > 125
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Weapons/ebladehum.ogg

@@ -165,7 +165,7 @@ ghost-role-information-loneop-rules = Вы [color=red][bold]Командный �
 ghost-role-information-hellspawn-name = Адское отродье
 ghost-role-information-BreadDog-rules = Вы — съедобная собака, вылепленная из хлеба. В мире, где каждый мечтает вас отведать, ваша миссия — найти собственное место и избежать участи стать чьим-то угощением.
 ghost-role-information-hellspawn-description = Несите смерть всем, кто не повинуется великой богине Нар'Си.
-ghost-role-information-Death-Squad-name = Оперативник Эскадрона смерти
+ghost-role-information-Death-Squad-name = Оперативник Эскадрона Смерти
 ghost-role-information-space-ninja-rules = Вы — элитный наёмник Клана Паука. Вы не обязаны следовать своим задачам, но ЧЕСТЬ НИНДЗЯ требует, чтобы вы попытались.
 ghost-role-information-Death-Squad-description = Приготовьтесь к массированному наступлению на станцию. Ваша задача как тяжеловооружённого оперативника - уничтожить всё живое на своём пути. И никаких свидетелей.
 ghost-role-information-Death-Squad-rules = Вы обязаны подчиняться приказам своего командира, вы фактически являетесь его [color=#6495ed][bold]фамильяром[/bold][/color].

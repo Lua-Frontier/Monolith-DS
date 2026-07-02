@@ -10,7 +10,7 @@
 - type: pointOfInterest
   id: AutomatedTanker
   parent: BaseMobilePOI
-  name: 'Automated Inter Sector Tanker'
+  name: 'Автоматический Секториальный Танкер' # LuaM: 'Automated Inter Sector Tanker' > 'Автоматический Секториальный Танкер'
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGroup: Optional

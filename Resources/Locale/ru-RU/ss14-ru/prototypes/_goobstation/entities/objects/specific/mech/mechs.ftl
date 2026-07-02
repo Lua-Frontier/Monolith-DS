@@ -1,3 +1,16 @@
+ent-MechRipley2 = Рипли АВП МК-II
+    .desc = Версия «МК-II» оснащена герметичной кабиной для работы в космосе, но её вес снижает мобильность.
+ent-MechRipley2Battery = { ent-MechRipley2 }
+    .suffix = С Батарея
+    .desc = { ent-MechRipley2.desc }
+ent-MechClarke = Кларк
+    .desc = Быстроходный механоид для космических путешествий. Оснащён встроенными двигателями.
+ent-MechClarkeBattery = { ent-MechClarke }
+    .suffix = Батарея
+    .desc = { ent-MechClarke.desc }
+ent-MechHonkerFilled = { ent-MechHonker }
+    .suffix = Батарея, Заполненный
+    .desc = { ent-MechHonker.desc }
 ent-MechGygax = Гигакс
     .desc = Несмотря на легкую броню, Гигакс обладает невероятной мобильностью благодаря своей способности пробивать стены на высокой скорости.
 ent-MechGygaxBattery = { ent-MechGygax }

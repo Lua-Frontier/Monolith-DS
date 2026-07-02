@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: TSFMCOutpost
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'TSFMC Secondary Outpost'
+  name: 'Переферийный аванпост ТСФ' # LuaM: 'TSFMC Secondary Outpost' > 'Переферийный аванпост ТСФ'
   minimumDistance: 11000
   maximumDistance: 14000
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]

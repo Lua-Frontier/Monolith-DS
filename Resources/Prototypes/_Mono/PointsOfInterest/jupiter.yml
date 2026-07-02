@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Jupiter
   parent: [BaseMobilePOI, BaseRepairablePOI]
-  name: 'PDV Jupiter Class Carrier'
+  name: 'Крейсер AN-474 «Юпитер»' # LuaM: 'PDV Jupiter Class Carrier' > 'Крейсер AN-474 «Юпитер»'
   minimumDistance: 17000
   maximumDistance: 19000
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoRogueUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
@@ -19,7 +19,7 @@
   gridPath: /Maps/_Mono/POI/jupiter.yml
   addComponents:
   - type: IFF
-    color: "#d1bf58"
+    color: "#e03131" # LuaM: d1bf58 > e03131
     flags: [HideLabel]
     readOnly: false
 

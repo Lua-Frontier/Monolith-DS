@@ -10,7 +10,7 @@
 - type: pointOfInterest
   id: Mining
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'Derelict Drillsite'
+  name: 'Древняя Буровая Станция' # LuaM: 'Derelict Drillsite' > 'Древняя Буровая Станция'
   minimumDistance: 5500
   maximumDistance: 9500
   spawnGroup: Required

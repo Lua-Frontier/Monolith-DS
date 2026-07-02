@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: TradeMall
   parent: [BasePOI, BaseRepairablePOI]
-  name: Trade Mall
+  name: Торговый Центр # LuaM: Trade Mall > Торговый Центр
   minimumDistance: 3500
   maximumDistance: 6500
   spawnGroup: MarketStation

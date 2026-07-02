@@ -14,7 +14,7 @@ ent-ComputerContrabandPalletConsole = консоль обмена контраб
     .desc = Используется для обмена контрабанды
 ent-ComputerShuttleAntagEmpty = { ent-ComputerShuttle }
     .desc = { ent-ComputerShuttle.desc }
-ent-ComputerIFFPOI = Консоль системы опознавания
+ent-ComputerIFFPOI = консоль системы опознавания
     .desc = Позволяет контролировать параметры системы опознавания судна или станции.
     .suffix = POI
 ent-ComputerMarketConsoleNFBase = консоль покупки товаров
@@ -25,12 +25,12 @@ ent-ComputerMarketConsoleNFLow = консоль покупки товаров
 ent-ComputerMarketConsoleNFHigh = консоль покупки товаров
     .suffix = Высокий 10x
     .desc = { ent-ComputerMarketConsoleNFBase.desc }
-ent-ComputerPirateBounty = консоль пиратских заданий
-    .desc = Используй для получения особых заданий за вознаграждение.
-ent-ComputerContrabandPalletConsolePirate = компьютер обмена награбленным
-    .desc = Сбывай здесь свои незаконно добытые товары!
-ent-ComputerPirateBountyRedemption = консоль пиратских вознаграждений
-    .desc = Вернулся из плавания? Обменивай здесь свои награды, дружище.
+ent-ComputerPirateBounty = консоль контрабандных заказов
+    .desc = Консоль, благодаря которой вы можете получить особые заказы с особо-крупной наградой.
+ent-ComputerContrabandPalletConsolePirate = консоль передачи контрабанды
+    .desc = Нажав на кнопку, вы можете отправить свою добычу в далёкий путь по секторам, а заодно и получить награду.
+ent-ComputerPirateBountyRedemption = консоль контрабандных заказов
+    .desc = Консоль, благодаря которой вы можете получить особые заказы с особо-крупной наградой.
 ent-ComputerShuttleAntag = { ent-ComputerShuttleAntagEmpty }
     .desc = { ent-ComputerShuttleAntagEmpty.desc }
 
@@ -53,17 +53,17 @@ ent-GasSaleConsoleVeryHigh =  { ent-GasSaleConsole }
     .suffix = Очень высокая
 
 # Traffic console
-ent-ComputerShuttleFrontierOutpostLocal = Консоль трафика Фронтира
+ent-ComputerShuttleFrontierOutpostLocal = консоль трафика Фронтира
     .desc = Отслеживает движение вокруг Фронтира.
     .suffix = Локальная
-ent-ComputerShuttleFrontierOutpostRemote = Консоль трафика Фронтира
+ent-ComputerShuttleFrontierOutpostRemote = консоль трафика Фронтира
     .desc = Отслеживает движение вокруг Фронтира.
     .suffix = Удалённая
 
-ent-ComputerShuttleTradeOutpostLocal = Консоль трафика Торговой Станции
+ent-ComputerShuttleTradeOutpostLocal = консоль трафика Торговой Станции
     .desc = Отслеживает движение вокруг Торговой Станции.
     .suffix = Локальная
-ent-ComputerShuttleTradeOutpostRemote = Консоль трафика Торговой Станции
+ent-ComputerShuttleTradeOutpostRemote = консоль трафика Торговой Станции
     .desc = Отслеживает движение вокруг Торговой Станции.
     .suffix = Удалённая
 

@@ -60,7 +60,7 @@ ent-ClothingModsuitEngineerPowerCell = контроллер скафандра M
     .suffix = батарея высокой ёмкости
 
 ent-ClothingModsuitHeadOfSecurity = контроллер MOD "Бастион"
-    .desc = Надёжный контроллер скафандром главы службы безопасности.
+    .desc = Надёжный контроллер скафандра коменданта.
 ent-ClothingModsuitHeadOfSecurityPowerCell = контроллер скафандра MOD "Бастион"
     .desc = { ent-ClothingModsuitHeadOfSecurity.desc }
     .suffix = батарея высокой ёмкости

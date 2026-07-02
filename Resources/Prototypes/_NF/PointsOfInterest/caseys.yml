@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: CaseysCasino
   parent: [BasePOI, BaseRepairablePOI]
-  name: "Crazy Casey's Casino"
+  name: "Безумное Казино Кэсси" # LuaM: "Crazy Casey's Casino" > "Безумное Казино Кэсси"
   minimumDistance: 4250
   maximumDistance: 5600
   gridPath: /Maps/_NF/POI/caseyscasino.yml

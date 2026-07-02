@@ -1,6 +1,6 @@
 - type: gameMap
   id: Frontier
-  mapName: 'Colossus Central'
+  mapName: '«Колосс Централл»' # LuaM: 'Colossus Central' > '«Колосс Централл»'
   mapPath: /Maps/_Mono/Outpost/colossus_central.yml # Mono
   minPlayers: 0
   maxPlayers: 100
@@ -13,10 +13,10 @@
       - type: VesselMusic
         ambientMusicPrototype: ColossusCentralMusic
       - type: VesselInfo
-        description: "The closest thing to civilisation in this sector. You almost feel safe."
+        description: "Это одно из самых цивилизованных мест в секторе. Здесь безопасно. Почти." # LuaM: "The closest thing to civilisation in this sector. You almost feel safe." > "Это одно из самых цивилизованных мест в секторе. Здесь безопасно. Почти."
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Colossus Central'
+          mapNameTemplate: '«Колосс Централл»' # LuaM: 'Colossus Central' > '«Колосс Централл»'
 #          nameGenerator:
 #            !type:NanotrasenNameGenerator
 #            prefixCreator: '14'

@@ -1,0 +1,12 @@
+ent-ChronoPDA = футуристический КПК
+    .desc = Мощный квантовый компьютер, замаскированный под обычный КПК.
+ent-NavyCaptainPDA = КПК Высшего Командования Зимнего Солнцестояния
+    .desc = Дьявол кроется в деталях.
+ent-NavyOfficerPDA = КПК офицера Зимнего Солнцестояния
+    .desc = { ent-NavyCaptainPDA.desc }
+ent-SpecialOperationsOfficerPDA = КПК офицера специальных операций
+    .desc = { ent-NavyCaptainPDA.desc }
+ent-DiplomatPDA = КПК дипломата
+    .desc = { ent-NavyCaptainPDA.desc }
+ent-GmanPDA = странный КПК
+    .desc = Ваш разум не может до конца осознать это.

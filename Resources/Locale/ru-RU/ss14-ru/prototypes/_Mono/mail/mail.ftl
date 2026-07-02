@@ -1,6 +1,6 @@
-ent-MailMonoC20r = MailMonoC20r
+ent-MailMonoC20r = C-20R «Рейд»
 ent-MailMonoAK = AK
-ent-MailMonoC4 = MailMonoC4
-ent-MailMonoRCD = RCD
-ent-MailMonoERTMailKit = ErtMailKit
-ent-MailMonoDesword = Desword # Who the hell puts this in the mail?
+ent-MailMonoC4 = C-4
+ent-MailMonoRCD = РСУ
+ent-MailMonoERTMailKit = Набор почтальона ОБР
+ent-MailMonoDesword = Desword

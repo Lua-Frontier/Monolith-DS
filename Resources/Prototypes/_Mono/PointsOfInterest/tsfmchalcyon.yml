@@ -13,7 +13,7 @@
 - type: pointOfInterest
   id: TSFMCHalcyon
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'TSFMC Flagship Halcyon'
+  name: 'Флагман TSF-113 «Халкион»' # LuaM: 'TSFMC Flagship Halcyon' > 'Флагман TSF-113 «Халкион»'
   minimumDistance: 4500 # Mono
   maximumDistance: 5500 # Mono
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]

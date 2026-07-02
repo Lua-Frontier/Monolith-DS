@@ -8,7 +8,7 @@
 - type: pointOfInterest
   id: HeliosFortress
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'PDV Helios Fortress'
+  name: 'Крепость «Гелиос»' # LuaM: 'PDV Helios Fortress' > 'Крепость «Гелиос»'
   minimumDistance: 7500
   maximumDistance: 9500
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoRogueUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
@@ -16,7 +16,7 @@
   gridPath: /Maps/_LuaM/POI/HeliosLuaM.yml #LuaM: /Maps/_Mono/POI/pdvhelios.yml -> /Maps/_LuaM/POI/heliosLuaM.yml
   addComponents:
   - type: IFF
-    color: "#DE9E59"
+    color: "#c21010" # LuaM: DE9E59 > c21010
     readOnly: true # mono
 
 - type: gameMap

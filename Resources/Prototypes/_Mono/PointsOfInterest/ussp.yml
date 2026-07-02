@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: USSPCamelot
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'Camelot Station'
+  name: 'Станция «Камелот»' # LuaM: 'Camelot Station' > 'Станция «Камелот»'
   minimumDistance: 10650
   maximumDistance: 12400
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueUSSP, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
