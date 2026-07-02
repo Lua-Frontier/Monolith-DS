@@ -1,7 +1,3 @@
 - type: metabolizerType
-  id: Ariral
-  name: metabolizer-type-ariral
-
-- type: metabolizerType
   id: Demon
   name: metabolizer-type-demon
