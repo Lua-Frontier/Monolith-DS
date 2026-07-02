@@ -1,4 +1,4 @@
-using Content.Server.Actions;
+using Content.Server.Actions; // Forge-Change
 using Content.Server.Humanoid;
 using Content.Shared.Actions; // Forge-Change
 using Content.Shared._Shitmed.Humanoid.Events; // Forge-Change
@@ -33,12 +33,14 @@ public sealed partial class WaggingSystem : EntitySystem
 
     private void OnWaggingMapInit(EntityUid uid, WaggingComponent component, MapInitEvent args)
     {
+    // Forge-Change-start
         UpdateWaggingAction(uid, component);
     }
 
     private void OnProfileLoadFinished(EntityUid uid, WaggingComponent component, ProfileLoadFinishedEvent args)
     {
         UpdateWaggingAction(uid, component);
+    // Forge-Change-end
     }
 
     private void OnWaggingShutdown(EntityUid uid, WaggingComponent component, ComponentShutdown args)

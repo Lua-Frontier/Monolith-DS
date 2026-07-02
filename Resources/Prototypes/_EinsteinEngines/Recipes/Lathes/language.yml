@@ -207,7 +207,7 @@
     Gold: 50
     Silver: 50
 
-- type: latheRecipe
+- type: latheRecipe # Forge Change begin
   id: KelaelTranslatorImplanter
   result: KelaelTranslatorImplanter
   completetime: 2
@@ -216,7 +216,7 @@
     Glass: 500
     Plastic: 100
     Gold: 50
-    Silver: 50
+    Silver: 50 # Forge Change end
 
 - type: latheRecipe
   id: CanilunztTranslatorImplanter

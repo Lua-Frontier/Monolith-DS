@@ -55,7 +55,7 @@
     - BubblishTranslator
     - NekomimeticTranslator
     - DraconicTranslator
-    - KelaelTranslator
+    - KelaelTranslator # Arkans Forge Change
     #- SolCommonTranslator # Rogues dont have craftable freespeak translators, why should TSF?
     - RootSpeakTranslator
     - MofficTranslator
@@ -70,7 +70,7 @@
     - BubblishTranslatorImplanter
     - NekomimeticTranslatorImplanter
     - DraconicTranslatorImplanter
-    - KelaelTranslatorImplanter
+    - KelaelTranslatorImplanter # Arkans Forge Change
     #- SolCommonTranslatorImplanter # Rogues dont have craftable freespeak translators, why should TSF?
     - RootSpeakTranslatorImplanter
     - MofficTranslatorImplanter
