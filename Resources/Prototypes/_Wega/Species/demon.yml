@@ -8,6 +8,11 @@
   dollPrototype: MobDemonDummy
   defaultSkinTone: "#34a223"
   skinColoration: Hues
+  # LuaM commented start:
+  # MaleFirstNames: names_first_male
+  # femaleFirstNames: names_first_female
+  # lastNames: names_last
+  # LuaM commented end:
   naming: FirstLast
   minAge: 50
   youngAge: 100
