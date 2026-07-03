@@ -10,7 +10,7 @@
 - type: pointOfInterest
   id: Sevastopol
   parent: BasePOI
-  name: 'Sevastopol Data Storage Center'
+  name: 'Хранилище Технологий «Севастополь»' # LuaM: 'Sevastopol Data Storage Center' > 'Хранилище Технологий «Севастополь»'
   minimumDistance: 3500
   maximumDistance: 7500
   spawnGroup: Required

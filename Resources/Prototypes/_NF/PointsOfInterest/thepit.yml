@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: ThePit
   parent: [BasePOI, BaseRepairablePOI]
-  name: "The Pit"
+  name: "Бойцовская Яма" # LuaM: "The Pit" > "Бойцовская Яма"
   minimumDistance: 5200
   maximumDistance: 6200
   spawnGroup: Arena

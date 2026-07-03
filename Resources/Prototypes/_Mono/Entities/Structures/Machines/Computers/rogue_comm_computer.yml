@@ -21,7 +21,7 @@
     access: [[ "Pirate" ]]
   - type: CommunicationsConsole
     title: comms-console-announcement-title-rogue
-    color: "#D2B48C"
+    color: "#c90a0a" # LuaM: D2B48C > c90a0a
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
     sound: /Audio/Announcements/announce.ogg

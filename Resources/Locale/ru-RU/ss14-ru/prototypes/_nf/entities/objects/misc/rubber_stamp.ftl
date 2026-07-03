@@ -1,4 +1,4 @@
-ent-RubberStampSr = штамп представителя фронтира
+ent-RubberStampSr = штамп коменданта
     .desc = { ent-RubberStampHop.desc }
 ent-RubberStampPsychologist = штамп психолога
     .suffix = НЕ МАППИТЬ

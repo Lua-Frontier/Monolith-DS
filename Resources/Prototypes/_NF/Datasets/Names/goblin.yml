@@ -1,0 +1,20 @@
+# used this tool: https://www.fantasynamegenerators.com/goblin-names.php
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+
+- type: localizedDataset
+  id: NamesGoblinFirstFemale
+  values:
+    prefix: names-goblin-first-female-dataset-
+    count: 209
+
+- type: localizedDataset
+  id: NamesGoblinLast
+  values:
+    prefix: names-goblin-last-dataset-
+    count: 211
+
+- type: localizedDataset
+  id: NamesGoblinFirstMale
+  values:
+    prefix: names-goblin-first-male-dataset-
+    count: 210

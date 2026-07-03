@@ -1,8 +1,8 @@
-ent-BaseWeaponLauncher = BaseWeaponLauncher
+ent-BaseWeaponLauncher = Дебаг-гранатомёт
     .desc = Дерзай — налетай, целься и стреляй.
-ent-WeaponLauncherChinaLake = China Lake
+ent-WeaponLauncherChinaLake = GL-16 «China-Lake»
     .desc = БЛУП
-ent-WeaponLauncherRocket = RPG-7 "Занавес"
+ent-WeaponLauncherRocket = RPG-7 «Занавес»
     .desc = Древний ручной реактивный гранатомёт.
 ent-WeaponLauncherMultipleRocket = система залпового пуска
     .desc = Модифицированный древний ручной реактивный гранатомёт.

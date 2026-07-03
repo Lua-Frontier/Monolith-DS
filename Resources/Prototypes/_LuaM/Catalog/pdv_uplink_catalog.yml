@@ -1,0 +1,14 @@
+- type: listing
+  id: UplinkPirateWhitePhosphorusGrenade
+  name: uplink-pirate-white-phosphorus-name
+  description: uplink-pirate-white-phosphorus-desc
+  productEntity: WhitePhosphorusGrenade
+  cost:
+    Doubloon: 35
+  categories:
+    - UplinkPirateExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - PirateUplink

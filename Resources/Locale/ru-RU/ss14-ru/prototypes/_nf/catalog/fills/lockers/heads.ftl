@@ -4,8 +4,9 @@ ent-LockerQuarterMasterFilledHardsuit = { ent-LockerQuarterMaster }
 ent-LockerStationRepresentativeFilled = { ent-LockerStationRepresentative }
     .suffix = Заполненный
     .desc = { ent-LockerStationRepresentative.desc }
-ent-GunSafeSr = оружейный сейф ПФ
+ent-GunSafeSr = оружейный сейф коменданта
     .suffix = Заполненный
     .desc = { ent-GunSafe.desc }
-
-ent-LockerNfsdSheriffFilled = LockerNfsdSheriffFilled
+ent-LockerNfsdSheriffFilled = { ent-LockerNfsdSheriff }
+    .suffix = Заполненный
+    .desc = { ent-LockerNfsdSheriff.desc }

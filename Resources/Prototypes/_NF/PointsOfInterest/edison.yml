@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Edison
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'Edison Power Plant'
+  name: 'Электростанция Эдисона' # LuaM: 'Edison Power Plant' > 'Электростанция Эдисона'
   minimumDistance: 5650
   maximumDistance: 7400
   spawnGroup: Required

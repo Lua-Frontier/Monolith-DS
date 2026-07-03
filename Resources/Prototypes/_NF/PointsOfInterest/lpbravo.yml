@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: LPBravo
   parent: BasePOI
-  name: 'Listening Point Bravo'
+  name: 'Прослушка «Браво»' # LuaM: 'Listening Point Bravo' > 'Прослушка «Браво»'
   minimumDistance: 10000
   maximumDistance: 13000
   spawnGroup: SyndicateFOB

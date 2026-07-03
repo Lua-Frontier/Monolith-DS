@@ -22,7 +22,7 @@ ent-LockerNfsdBailiff = шкафчик капитана ТСФ
     .desc = { ent-LockerBaseSecure.desc }
 ent-LockerNfsdSheriff = шкафчик полковника ТСФ
     .desc = { ent-LockerBaseSecure.desc }
-ent-LockerStationRepresentative = шкафчик оменданта
+ent-LockerStationRepresentative = шкафчик коменданта
     .desc = { ent-LockerBaseSecure.desc }
 
 ent-LockerMaterials = шкафчик с материалами

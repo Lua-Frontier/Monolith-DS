@@ -1,0 +1,12 @@
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+- type: localizedDataset
+  id: NamesReptilianMale
+  values:
+    prefix: names-reptilian-male-dataset-
+    count: 328
+
+- type: localizedDataset
+  id: NamesReptilianFemale
+  values:
+    prefix: names-reptilian-female-dataset-
+    count: 163

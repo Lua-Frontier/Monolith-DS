@@ -10,7 +10,7 @@
 - type: pointOfInterest
   id: Zenith
   parent: BaseMobilePOI
-  name: 'ADS Zenith CK-395'
+  name: 'АСЗ СК-395 «Зенит»' # LuaM: 'ADS Zenith CK-395' > 'АСЗ СК-395 «Зенит»'
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGroup: Optional

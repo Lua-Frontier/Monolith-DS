@@ -10,7 +10,7 @@
 - type: pointOfInterest
   id: Polaris
   parent: BasePOI
-  name: 'Polaris Bioresearch Center'
+  name: 'Центр Биологического Исследования «Полярис»' # LuaM: 'Polaris Bioresearch Center' > 'Центр Биологического Исследования «Полярис»'
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGroup: Optional

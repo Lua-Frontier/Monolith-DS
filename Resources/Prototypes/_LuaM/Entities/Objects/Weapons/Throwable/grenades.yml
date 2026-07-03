@@ -1,0 +1,18 @@
+- type: entity
+  parent: SmokeGrenade
+  id: WhitePhosphorusGrenade
+  name: grenade with white phosphorus
+  description: A grenade that's hot to the touch; prone to catch things on fire.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Grenades/white_phosphorus.rsi
+  - type: SmokeOnTrigger
+    duration: 10
+    spreadAmount: 10
+    solution:
+      reagents:
+      - ReagentId: WhitePhosphorus
+        Quantity: 20
+  - type: DeleteOnTrigger
+  - type: SoundOnTrigger
+    sound: /Audio/Items/smoke_grenade_smoke.ogg

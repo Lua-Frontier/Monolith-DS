@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Grifty
   parent: [BasePOI, BaseRepairablePOI]
-  name: "Grifty's Gas n Grub"
+  name: "Заправка Грифти" # LuaM: "Grifty's Gas n Grub" > "Заправка Грифти"
   minimumDistance: 6250
   maximumDistance: 8600
   spawnGroup: Scrapyard

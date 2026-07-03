@@ -1,6 +1,6 @@
 ent-Telecrystal = телекристалл
     .desc = Похоже, он переливается подозрительно манящей энергией.
-    .suffix = 20 ТК
+    .suffix = 100 ТК
 ent-Telecrystal5 = { ent-Telecrystal }
     .suffix = 5 ТК
     .desc = { ent-Telecrystal.desc }

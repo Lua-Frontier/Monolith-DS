@@ -1,0 +1,2 @@
+uplink-pirate-white-phosphorus-name = White Phosphorus Grenade
+uplink-pirate-white-phosphorus-desc = The best way to solve a problem without leaving a trace. Fast, effective, and completely ruthless. Your enemies will burn, your secrets will stay secrets. Recommended for failed negotiations.

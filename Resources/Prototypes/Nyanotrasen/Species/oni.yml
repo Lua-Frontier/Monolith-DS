@@ -7,9 +7,9 @@
   markingLimits: MobOniMarkingLimits
   sprites: MobHumanSprites
   skinColoration: Hues
-  maleFirstNames: names_oni_male
-  femaleFirstNames: names_oni_female
-  lastNames: names_oni_location
+  maleFirstNames: NamesOniMale # LuaM: names_oni_male > NamesOniMale
+  femaleFirstNames: NamesOniFemale # LuaM: names_oni_female > NamesOniFemale
+  lastNames: NamesOniLocation # LuaM: names_oni_location > NamesOniLocation
   naming: LastNoFirst
 
 - type: markingPoints

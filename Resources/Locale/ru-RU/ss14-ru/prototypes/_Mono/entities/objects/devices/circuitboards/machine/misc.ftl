@@ -1,4 +1,12 @@
-ent-CarpCallerMachineCircuitboard = плата машины вызова карпов
-ent-ContainmentFieldGeneratorCircuitboard = плата генератора поля сдерживания
-ent-SmartfridgeCircuitboard = плата умного холодильника
-    .desc = Печатная плата машины для умного холодильника.
+ent-CarpCallerMachineCircuitboard = приманка космических карпов (машинная плата)
+    .desc = Печатная плата машины для сброки приманки космических карпов.
+    .suffix = Машинная плата
+ent-ContainmentFieldGeneratorCircuitboard = генератор сдерживающего поля (машинная плата)
+    .desc = Печатная плата машины для сброки генератора сдерживающего поля.
+    .suffix = Машинная плата
+ent-SmartfridgeCircuitboard = умный холодильника (машинная плата)
+    .desc = Печатная плата машины для сброки умного холодильника.
+    .suffix = Машинная плата
+ent-SmartArmoryCircuitboard = умный арсенал (машинная плата)
+    .desc = Печатная плата для сброки умного арсенала.
+    .suffix = Машинная плата

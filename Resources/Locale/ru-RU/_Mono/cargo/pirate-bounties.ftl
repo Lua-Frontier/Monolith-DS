@@ -14,7 +14,7 @@ pirate-bounty-item-cybernetics = Бионические конечности
 pirate-bounty-item-techfab = Техфаб
 pirate-bounty-item-rtg = РТГ
 
-pirate-bounty-description-generic = Династии это необходимо.
+pirate-bounty-description-generic = Это может спасти жизнь парочке бойцов Авангарда, а может и убить парочку бойцов ТСФ.
 pirate-bounty-description-encryption-key-faction = Засчитываются только ключи шифрования ТСФ и СССП. Снимите ключ с гарнитуры отверткой; сама гарнитура не нужна.
 pirate-bounty-description-merc-suit = Классические боевые скафандры наемников и скафандры ЧВК засчитываются одинаково. Ваши собственные классические боевые скафандры не засчитываются.
 pirate-bounty-description-faction-tacsuit = Засчитывается любой скафандр фракции, кроме скафандров наемников.

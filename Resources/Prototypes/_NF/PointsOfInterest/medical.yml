@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Medical
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'Medical Dispatch'
+  name: 'Медицинский Центр' # LuaM: 'Medical Dispatch' > 'Медицинский Центр'
   minimumDistance: 1650
   maximumDistance: 2700
   spawnGroup: Required

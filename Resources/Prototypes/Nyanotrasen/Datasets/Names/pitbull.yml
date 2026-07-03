@@ -1,34 +1,7 @@
-- type: dataset
-  id: names_pitbull
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+
+- type: localizedDataset
+  id: NamesPitbull
   values:
-  - Zeus
-  - 45_magnum
-  - Diesel
-  - Satan
-  - Dante
-  - Midas
-  - Blue
-  - Petunia
-  - Luna
-  - Bubbles
-  - Rainbow
-  - Echo
-  - Cuddles
-  - Killer
-  - Paisley
-  - Echo
-  - Sweetie
-  - Tutu
-  - Reaper
-  - Peaches
-  - Cujo
-  - Cuddles
-  - Lucifer
-  - Daisy
-  - Blaze
-  - Lady
-  - Franny
-  - Hades
-  - Baby
-  - Demon
-  - Trixie
+    prefix: names-pitbull-dataset-
+    count: 31

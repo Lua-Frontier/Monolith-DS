@@ -1,0 +1,13 @@
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+
+- type: localizedDataset
+  id: IpcFirst
+  values:
+    prefix: names-ipc-first-dataset-
+    count: 100
+
+- type: localizedDataset
+  id: IpcLast
+  values:
+    prefix: names-ipc-last-dataset-
+    count: 1000

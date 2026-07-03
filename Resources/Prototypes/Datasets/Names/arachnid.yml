@@ -1,0 +1,12 @@
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+- type: localizedDataset
+  id: NamesArachnidFirst
+  values:
+    prefix: names-arachnid-first-dataset-
+    count: 73
+
+- type: localizedDataset
+  id: NamesArachnidLast
+  values:
+    prefix: names-arachnid-last-dataset-
+    count: 73

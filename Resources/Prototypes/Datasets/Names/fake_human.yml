@@ -1,0 +1,12 @@
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolit
+- type: localizedDataset
+  id: NamesFakeHumanFirst
+  values:
+    prefix: names-fake-human-first-dataset-
+    count: 43
+
+- type: localizedDataset
+  id: NamesFakeHumanLast
+  values:
+    prefix: names-fake-human-last-dataset-
+    count: 78

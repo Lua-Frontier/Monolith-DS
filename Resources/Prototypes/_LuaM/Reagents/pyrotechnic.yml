@@ -1,0 +1,39 @@
+- type: reagent
+  id: WhitePhosphorus
+  parent: BasePyrotechnic
+  name: reagent-name-white-phosphorus
+  desc: reagent-desc-white-phosphorus
+  physicalDesc: reagent-physical-desc-burning
+  flavor: bitter
+  color: "#ffffff"
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        damage:
+          types:
+            Heat: 6
+            Poison: 3
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Yowie
+        damage:
+          types:
+            Heat: 6
+      - !type:FlammableReaction
+        multiplier: 0.45
+      - !type:AdjustTemperature
+        amount: 6750
+      - !type:Ignite
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:FlammableReaction
+        multiplier: 0.45
+      - !type:Ignite

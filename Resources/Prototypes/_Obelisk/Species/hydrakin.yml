@@ -12,8 +12,8 @@
   markingLimits: MobHydrakinMarkingLimits
   dollPrototype: MobHydrakinDummy
   skinColoration: Hues
-  maleFirstNames: names_hydrakin_unisex
-  femaleFirstNames: names_hydrakin_unisex
+  maleFirstNames: NamesHydrakinUnisex # LuaM: names_hydrakin_unisex > NamesHydrakinUnisex
+  femaleFirstNames: NamesHydrakinUnisex # LuaM: names_hydrakin_unisex > NamesHydrakinUnisex
   naming: First
   sexes:
   - Unsexed

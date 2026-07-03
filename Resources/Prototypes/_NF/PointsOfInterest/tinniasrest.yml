@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Tinnia
   parent: [BasePOI, BaseRepairablePOI]
-  name: "Tinnia's Rest"
+  name: "Ресторан Тиннии" # LuaM: "Tinnia's Rest" > "Ресторан Тиннии"
   minimumDistance: 3400
   maximumDistance: 5800
   spawnGroup: RestStop

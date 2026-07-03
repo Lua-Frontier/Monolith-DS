@@ -1,0 +1,19 @@
+# Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
+
+- type: localizedDataset
+  id: NamesCynoFemale
+  values:
+    prefix: names-cyno-female-dataset-
+    count: 38
+
+- type: localizedDataset
+  id: NamesCynoMale
+  values:
+    prefix: names-cyno-male-dataset-
+    count: 19
+
+- type: localizedDataset
+  id: NamesCynoLast
+  values:
+    prefix: names-cyno-last-dataset-
+    count: 19

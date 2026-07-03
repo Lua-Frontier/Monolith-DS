@@ -2,6 +2,7 @@
   parent: [ BoxCardboard, BaseBagOpenClose ]
   id: CardBoxBase
   name: deck box
+  description: A cardboard box for storing playing cards. # LuaM
   categories: [ HideSpawnMenu ]
   components:
   - type: Item

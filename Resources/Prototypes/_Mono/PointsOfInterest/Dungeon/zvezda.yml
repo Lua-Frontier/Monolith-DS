@@ -10,7 +10,7 @@
 - type: pointOfInterest
   id: Zvezda
   parent: BasePOI
-  name: 'Zvezda Orbital Habitation'
+  name: 'Орбитальный Комплекс «Звезда»' # LuaM: 'Zvezda Orbital Habitation' > 'Орбитальный Комплекс «Звезда»'
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGroup: Optional

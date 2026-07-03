@@ -12,7 +12,7 @@
 - type: pointOfInterest
   id: McHobo
   parent: BasePOI
-  name: Derelict McCargo
+  name:  Заброшенный МаКарго # LuaM: Derelict McCargo > Заброшенный МаКарго
   minimumDistance: 6250
   maximumDistance: 7600
   spawnGroup: Scrapyard

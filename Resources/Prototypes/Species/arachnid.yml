@@ -1,16 +1,16 @@
 - type: species
   id: Arachnid
   name: species-name-arachnid
-  roundStart: false #LuaM True -> false due to a bug
+  roundStart: true
   prototype: MobArachnid
   sprites: MobArachnidSprites
   defaultSkinTone: "#385878"
   markingLimits: MobArachnidMarkingLimits
   dollPrototype: MobArachnidDummy
   skinColoration: Hues
-  maleFirstNames: names_arachnid_first
-  femaleFirstNames: names_arachnid_first
-  lastNames: names_arachnid_last
+  maleFirstNames: NamesArachnidFirst # LuaM:names_arachnid_first > 
+  femaleFirstNames: NamesArachnidFirst # LuaM: names_arachnid_first > 
+  lastNames: NamesArachnidLast # LuaM: names_arachnid_last > 
   sexes:
   - Unsexed
 

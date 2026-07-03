@@ -1,33 +1,32 @@
 <Document>
-  # Cargo Hauling
+  # Грузоперевозки
 
-One of the ways you can make money in the Colossus is by moving shipments of [color=peru]trading crates[/color].
+Один из способов заработать на Фронтире — перевозить партии [color=peru]торговых ящиков[/color].
 
   <Box>
     <GuideEntityEmbed Entity="CrateTradeSecureNormal"/>
     <GuideEntityEmbed Entity="CrateTradeContrabandSecure1"/>
   </Box>
 
-You can find these by:
-  * Buying them at [color=peru]cargo request computers[/color] at the [color=darkgreen]Trade Outpost[/color]
-  * Salvaging them from [color=#88b0d1]space wrecks[/color]
-  * Finding [color=#c83737]contraband crates[/color] to be smuggled (ask around to find out how)
+Такие ящики можно получить:
+  - Купив их через [color=peru]карго-компьютеры[/color] на [color=forestgreen]Торговом форпосте[/color]
+  - Найдя их среди [color=#88b0d1]обломков в космосе[/color]
+  - Обнаружив [color=#c83737]контрабандные ящики[/color] для тайной перевозки (узнайте у других, как это сделать)
 
-Each trading crate will have a destination symbol on the right side of the crate. Examining the crate (Shift+Click) shows the name of the station it should be delivered to.
+Каждый торговый ящик имеет [bold]этикетку[/bold] с указанием [bold]места назначения[/bold], а также [bold][color=orange]символ назначения[/color][/bold] справа на ящике. Если осмотреть ящик ([color=yellow]Shift+Клик[/color]), будет показано название станции, куда его нужно доставить.
 
-Selling a crate at its destination station will result in receiving more money than the crate's worth, while selling it at other stations will result in less.
+[bold]Продажа ящика на станции назначения[/bold] принесёт вам [bold][color=lightgreen]больше денег[/color][/bold], а [bold]продажа на других станциях[/bold] — [bold][color=lightpink]меньше[/color][/bold].
 
-## Express Deliveries
+## Экспресс-доставка
 
-Some crates are labelled as [color=yellow]express deliveries[/color].  These provide a bonus if delivered [italic]to the destination[/italic] on time.
+Некоторые ящики помечены как [color=yellow]экспресс-доставка[/color]. За своевременную доставку по адресу вы получите бонус.
 
   <Box>
     <GuideEntityEmbed Entity="CrateTradeSecureHigh"/>
     <GuideEntityEmbed Entity="CrateTradeContrabandSecure2"/>
   </Box>
 
-To make deliveries in time, make sure to keep your cargo bay organized so the crates for each destination can be removed from the cargo bay in order.
+Чтобы успеть вовремя, держите грузовой отсек в порядке, чтобы ящики для каждой станции можно было быстро выгрузить.
 
-Remember, more hands make light work, so crew up to help deliveries run smoothly!
 
 </Document>

@@ -10,7 +10,7 @@
 - type: pointOfInterest
   id: HammerOfTheUnion
   parent: [BaseMobilePOI, BaseRepairablePOI]
-  name: 'Hammer Of The Union'
+  name: 'Молот «Союза»' # LuaM:: 'Hammer Of The Union' > 'Молот «Союза»'
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGroup: Required
