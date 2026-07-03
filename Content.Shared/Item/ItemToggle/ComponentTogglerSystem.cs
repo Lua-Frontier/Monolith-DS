@@ -1,12 +1,15 @@
 using Content.Shared.Item.ItemToggle.Components;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Item.ItemToggle;
 
 /// <summary>
 /// Handles <see cref="ComponentTogglerComponent"/> component manipulation.
 /// </summary>
-public sealed class ComponentTogglerSystem : EntitySystem
+public sealed partial class ComponentTogglerSystem : EntitySystem
 {
+    [Dependency] private IGameTiming _timing = default!; // LuaM: predict err fix
+
     public override void Initialize()
     {
         base.Initialize();
@@ -22,14 +25,32 @@ public sealed class ComponentTogglerSystem : EntitySystem
     // Goobstation - Make this system more flexible
     public void ToggleComponent(EntityUid uid, bool activate)
     {
+        if (!_timing.IsFirstTimePredicted) // LuaM: predict err fix
+            return;
+
         if (!TryComp<ComponentTogglerComponent>(uid, out var component))
             return;
 
-        var target = component.Parent ? Transform(uid).ParentUid : uid;
-
+        // LuaM-start: add target for the correct remove component, in o.w. - wizden logic
         if (activate)
+        {
+            var target = component.Parent ? Transform(uid).ParentUid : uid;
+            if (TerminatingOrDeleted(target))
+                return;
+
+            component.Target = target;
             EntityManager.AddComponents(target, component.Components);
+        }
         else
-            EntityManager.RemoveComponents(target, component.RemoveComponents ?? component.Components);
+        {
+            if (component.Target == null)
+                return;
+
+            if (TerminatingOrDeleted(component.Target.Value))
+                return;
+
+            EntityManager.RemoveComponents(component.Target.Value, component.RemoveComponents ?? component.Components);
+        }
+        // LuaM-end
     }
 }
