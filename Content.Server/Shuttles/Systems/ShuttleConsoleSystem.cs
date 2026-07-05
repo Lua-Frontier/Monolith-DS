@@ -31,8 +31,8 @@ using Content.Shared._Mono.FireControl;
 using Content.Shared._Mono.Ships.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
-using Content.Shared._Crescent.ShipShields;
-using Robust.Shared.Timing;
+using Content.Shared._Crescent.ShipShields; // Forge
+using Robust.Shared.Timing; // Forge
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -54,7 +54,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     [Dependency] private StationJobsSystem _stationJobs = default!;
     [Dependency] private ILogManager _log = default!;
     [Dependency] private CrewedShuttleSystem _crewedShuttle = default!;
-    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!; // Forge
 
     private ISawmill _sawmill = default!;
 

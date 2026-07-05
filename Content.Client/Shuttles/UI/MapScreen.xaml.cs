@@ -56,6 +56,7 @@ public sealed partial class MapScreen : BoxContainer
 
     private float _minMapDequeue = 0.05f;
     private float _maxMapDequeue = 0.25f;
+
     private StyleBoxFlat _ftlStyle;
 
     public event Action<MapCoordinates, Angle>? RequestFTL;

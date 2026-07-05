@@ -1,6 +1,6 @@
 using Content.Server.Power.Components;
-using Content.Server._Mono.FireControl;
-using Content.Server.Shuttles.Systems;
+using Content.Server._Mono.FireControl; // Forge
+using Content.Server.Shuttles.Systems; // Forge
 using Content.Shared._Crescent.ShipShields;
 using Content.Shared._Mono.SpaceArtillery;
 using Content.Shared.Physics;
@@ -30,8 +30,8 @@ public sealed partial class ShipShieldsSystem : EntitySystem
     [Dependency] private FixtureSystem _fixtureSystem = default!;
     [Dependency] private PhysicsSystem _physicsSystem = default!;
     [Dependency] private PvsOverrideSystem _pvsSys = default!;
-    [Dependency] private ShuttleConsoleSystem _shuttleConsole = default!;
-    [Dependency] private FireControlSystem _fireControl = default!;
+    [Dependency] private ShuttleConsoleSystem _shuttleConsole = default!; // Forge
+    [Dependency] private FireControlSystem _fireControl = default!; // Forge
 
     private EntityQuery<ProjectileComponent> _projectileQuery;
     private EntityQuery<ShipWeaponProjectileComponent> _shipWeaponProjectileQuery;
