@@ -39,8 +39,8 @@ public sealed partial class SpaceBiomeTextOverlay : Overlay
     public SpaceBiomeTextOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _font = _cache.GetFont("/Fonts/Iceberg/Iceberg-Regular.ttf", 25);
-        _descriptionfont = _cache.GetFont("/Fonts/Iceberg/Iceberg-Regular.ttf", 15);
+        _font = _cache.GetFont("/Fonts/Jura/Jura.ttf", 25); // LuaM changed: Iceberg-Regular.ttf -> Jura.ttf
+        _descriptionfont = _cache.GetFont("/Fonts/Jura/Jura.ttf", 15); // LuaM changed: Iceberg-Regular.ttf -> Jura.ttf
     }
 
     public void Reset()
