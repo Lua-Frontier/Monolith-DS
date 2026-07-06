@@ -23,7 +23,7 @@ public sealed partial class SolutionTransferComponent : Component
     /// </summary>
     [DataField("minTransferAmount")]
     [ViewVariables(VVAccess.ReadWrite)]
-    public FixedPoint2 MinimumTransferAmount { get; set; } = FixedPoint2.New(5);
+    public FixedPoint2 MinimumTransferAmount { get; set; } = FixedPoint2.New(1); /// LuaM: 5 > 1
 
     /// <summary>
     ///     The maximum amount of solution that can be transferred at once from this solution.
