@@ -202,6 +202,8 @@
   components:
   - type: Sprite
     state: shuttle
+  - type: Rotatable #LuaM
+    rotateWhileAnchored: true #LuaM  
   - type: Construction
     graph: Seat
     node: chairPilotSeat
