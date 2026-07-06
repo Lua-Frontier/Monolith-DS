@@ -8,6 +8,10 @@
     Gauze: 4294967295 # Infinite
     EmergencyMedipen: 4294967295 # Infinite
     PillCanisterTricordrazine: 4294967295 # Infinite - Mono
+    PillCanisterDermaline: 4294967295 #LuaM
+    PillCanisterDylovene: 4294967295 #LuaM
+    PillCanisterDexalin: 4294967295 #LuaM
+    PillCanisterHyronalin: 4294967295 #LuaM
     HypoMini: 4294967295 # Infinite - Mono
     HypoMiniLimitedEdition: 10 # Limited because its a direct upgrade, and can be found on expeds 
     Hypospray: 1 # only one in stock. its supposed to be really rare to use these, but still findable. - Mono end
