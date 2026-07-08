@@ -23,7 +23,7 @@ public sealed class HudPerfLabel : RichTextLabel
         var clientFps = _gameTiming.FramesPerSecondAvg;
         var serverFps = _serverPerf.ServerFpsAvg;
         var tps = _serverPerf.ServerTickRate;
-        var version = Loc.GetString("connecting-version");
+        // var version = Loc.GetString("connecting-version"); LuaM Deleted
         string statusText;
         string statusColorHex;
         if (serverFps < 50)
@@ -41,7 +41,7 @@ public sealed class HudPerfLabel : RichTextLabel
             statusText = Loc.GetString("server-status-stable");
             statusColorHex = "#00FF00";
         }
-        Text = $"FPS: {clientFps:N0} | SrvFPS: [color={statusColorHex}]{serverFps:N0}[/color] | TPS: {tps} | {version} | [color={statusColorHex}]{statusText}[/color]";
+        Text = $"FPS: {clientFps:N0} | SrvFPS: [color={statusColorHex}]{serverFps:N0}[/color] | TPS: {tps} | [color={statusColorHex}]{statusText}[/color]"; //LuaM Deleted {version}
     }
 }
 
