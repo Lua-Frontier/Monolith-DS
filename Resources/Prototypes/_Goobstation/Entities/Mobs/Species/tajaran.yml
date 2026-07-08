@@ -38,9 +38,15 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
- # - type: NightVision # Commented by LuaM
- #   activateSound: null
- #   deactivateSound: null
+  # - type: NightVision # Gen 3 wide-quadtube # Commented by LuaM
+  #   relayOverlay: false
+  #   goggleEffect: true
+  #   viewCircleRadius: 450
+  #   viewCircleCount: 4
+  #   viewCircleSpacing: 280
+  #   action: ActionToggleNightVision
+  #   phosphorColor: "#00FF00"
+  #   lightingColor: "#FFFFFF32"
   - type: MeleeWeapon
     soundHit:
       collection: Punch

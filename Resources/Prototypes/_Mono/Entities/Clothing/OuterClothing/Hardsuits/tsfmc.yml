@@ -262,3 +262,11 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.1 # LuaM: 0.9 > 1.1
     sprintModifier: 1.1 # LuaM: 0.875 > 1.1
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head: ClothingHeadHelmetHardsuitM86Mk4
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
