@@ -109,6 +109,8 @@
     - 0,0,1,1
     sprite: Objects/Specific/Medical/firstaidkits.rsi
     heldPrefix: blackkit
+  - type: Clothing # LuaM added
+    slots: pocket
   - type: PhysicalComposition
     materialComposition:
       Plastic: 150
