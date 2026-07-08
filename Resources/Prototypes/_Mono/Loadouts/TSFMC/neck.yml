@@ -1,14 +1,17 @@
 - type: loadout
   id: TsfmcClothingNeckIFFCyan
+  price: 100 # LuaM
   equipment:
     neck: ClothingNeckIFFCyan
 
 - type: loadout
   id: TsfmcClothingNeckIFFOrange
+  price: 100 # LuaM
   equipment:
     neck: ClothingNeckIFFOrange
 
 - type: loadout
   id: TsfmcClothingNeckIFFWhite
+  price: 100 # LuaM
   equipment:
     neck: ClothingNeckIFFNeutral

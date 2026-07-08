@@ -64,7 +64,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 4000
+        damage: 1000 # LuaM: 4000 > 1000
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]

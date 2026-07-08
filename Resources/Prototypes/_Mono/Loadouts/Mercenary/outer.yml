@@ -1,24 +1,24 @@
 - type: loadout
   id: MercenaryVestSlim
-  price: 0
+  price: 1500 # LuaM: 0 > 1500
   equipment:
     outerClothing: ClothingOuterArmorBasicSlim
 
 - type: loadout
   id: MercenaryVestNormal
-  price: 0
+  price: 1500 # LuaM: 0 > 1500
   equipment:
     outerClothing: ClothingOuterArmorBasic
 
 - type: loadout
   id: MercenaryClothingOuterVestDetective
-  price: 0
+  price: 1500 # LuaM: 0 > 1500
   equipment:
     outerClothing: ClothingOuterVestDetective
 
 - type: loadout
   id: MercenaryClothingOuterCoatBHTrench
-  price: 0
+  price: 1500 # LuaM: 0 > 1500
   equipment:
     outerClothing: ClothingOuterCoatBHTrench
 
@@ -26,48 +26,48 @@
 
 - type: loadout
   id: MercenaryClothingOuterArmorBPVestLight
-  price: 0
+  price: 1400 # LuaM: 0 > 1400
   equipment:
     outerClothing: ClothingOuterArmorBPVestLight
 
 - type: loadout
   id: MercenaryClothingOuterArmorBPVestMedium
-  price: 0
+  price: 2000 # LuaM: 0 > 2000
   equipment:
     outerClothing: ClothingOuterArmorBPVestMedium
 
 - type: loadout
   id: MercenaryClothingOuterArmorBPVestHeavy
-  price: 0
+  price: 7500 # LuaM: 0 > 7500
   equipment:
     outerClothing: ClothingOuterArmorBPVestHeavy
 
 - type: loadout
   id: MercenaryClothingOuterArmorBPVestPolyvalent
-  price: 0
+  price: 1500 # LuaM: 0 > 1500
   equipment:
     outerClothing: ClothingOuterArmorBPVestPolyvalent
 
 - type: loadout
   id: MercenaryClothingOuterArmorBPVestStabproof
-  price: 0
+  price: 1500 # LuaM: 0 > 1500
   equipment:
     outerClothing: ClothingOuterArmorBPVestStabproof
 
 - type: loadout
   id: MercenaryClothingOuterHardsuitMercenary
-  price: 0
+  price: 5500 # LuaM: 0 > 5500
   equipment:
     outerClothing: ClothingOuterHardsuitMercenary
 
 - type: loadout
   id: MercenaryClothingOuterHardsuitPrivateSecurity
-  price: 0
+  price: 5500 # LuaM: 0 > 5500
   equipment:
     outerClothing: ClothingOuterHardsuitPrivateSecurity
 
 - type: loadout
   id: MercenaryClothingOuterHardsuitMercenaryWarlord
-  price: 50000
+  price: 25000 # LuaM: 50000 > 25000
   equipment:
     outerClothing: ClothingOuterHardsuitMercenaryWarlord

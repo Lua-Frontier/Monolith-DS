@@ -17,7 +17,7 @@
   - SmugglingEventScheduler
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
-  - PortstrikeAnnounceRuleHour4
+  - PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
 
 - type: gamePreset
   id: MonoRogueTSF
@@ -33,7 +33,7 @@
   - SmugglingEventScheduler
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
-  - PortstrikeAnnounceRuleHour4
+  - PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
 
 - type: gamePreset
   id: MonoRogueUSSP
@@ -49,7 +49,7 @@
   - SmugglingEventScheduler
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
-  - PortstrikeAnnounceRuleHour4
+  - PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
 
 - type: gamePreset
   id: MonoTSFUSSP
@@ -65,7 +65,7 @@
   - SmugglingEventScheduler
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
-  - PortstrikeAnnounceRuleHour4
+  - PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
 
 - type: gamePreset
   id: MonoADS
@@ -84,7 +84,7 @@
   - MonoAISTCShuttleSpawnerSchedulerTier2
   - MonoAsakimSTCShuttleSpawnerScheduler
   - MonoMonolithicEventsScheduler
-  - PortstrikeAnnounceRuleHour4
+  - PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
 
 - type: gamePreset
   id: MonoChimera
@@ -101,13 +101,14 @@
   - FrontierRoundstartVariation
   - MonoChimeraSTCShuttleSpawnerScheduler
   - MonoMonolithicEventsScheduler
-  - PortstrikeAnnounceRuleHour4
+  - PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
 
 - type: gamePreset
   id: MonoMixed
   name: mono-mixed-title
   description: mono-mixed-description
   showInVote: true
+  weight: 0.35 # LuaM
   rules:
   - NFAdventure
   - BasicStationEventScheduler
@@ -121,13 +122,13 @@
   - MonoAISTCShuttleSpawnerSchedulerTier2Slow
   - MonoAsakimSTCShuttleSpawnerSchedulerSlow
   - MonoMonolithicEventsScheduler
-  - PortstrikeAnnounceRuleHour4
+  - PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
 
 - type: gamePreset
   id: MonoAllAtOnce
   name: mono-allatonce-title
   description: mono-allatonce-description
-  showInVote: true # we ball
+  showInVote: false # we ball # LuaM: true > false
   weight: 0.25 # requires 80% votes
   rules:
   - NFAdventure

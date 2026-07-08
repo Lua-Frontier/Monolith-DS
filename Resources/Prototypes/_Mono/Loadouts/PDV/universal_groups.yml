@@ -8,14 +8,14 @@
 - type: loadoutGroup
   id: PDVNeck
   name: loadout-group-contractor-neck
-  hidden: true
-  minLimit: 1
+#  hidden: true # Commented by LuaM
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - PDVClothingNeckIFFOrange
 - type: loadoutGroup
   id: PDVCommanderNeck
   name: loadout-group-contractor-neck
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - PDVClothingNeckIFFOrange
   - PDVClothingNeckCloakCommander
@@ -60,7 +60,7 @@
 - type: loadoutGroup
   id: PDVFace
   name: loadout-group-contractor-face
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   maxLimit: 1
   loadouts:
   - PDVGaiter
@@ -87,7 +87,7 @@
 - type: loadoutGroup
   id: PDVCommanderHead
   name: loadout-group-contractor-head
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - PDVCommanderBeret
   - PDVCapVizier

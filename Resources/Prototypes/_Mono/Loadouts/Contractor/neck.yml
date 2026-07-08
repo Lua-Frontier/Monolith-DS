@@ -1,11 +1,11 @@
 - type: loadout
   id: ContractorClothingNeckMantleBH
-  price: 0
+  price: 250 # LuaM: 0 > 250
   equipment:
     neck: ClothingNeckMantleBH
 
 - type: loadout
   id: ContractorClothingNeckCloakSanabi
-  price: 0
+  price: 250 # LuaM: 0 > 250
   equipment:
     neck: ClothingNeckCloakSanabi

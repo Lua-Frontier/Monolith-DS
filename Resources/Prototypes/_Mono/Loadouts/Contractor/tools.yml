@@ -3,7 +3,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0
+  price: 500 # LuaM: 0 > 500
   storage:
     back:
     - Binoculars

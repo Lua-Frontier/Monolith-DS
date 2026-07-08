@@ -43,5 +43,5 @@ ent-ClothingNeckScarfStripedRainbow = радужный шарф
     .desc = Стильный радужный шарф. Идеальный зимний аксессуар для тех, у кого обострённое чувство моды, и тех, кто вынужден заниматься бумажной работой на холоде.
 ent-ClothingNeckScarfStripedTrans = {ent-ClothingNeckScarfStripedAce}
     .desc = {ent-ClothingNeckScarfStripedAce.desc}
-ent-ClothingNeckScarfStripedLesbianLong = длинный бекон
-    .desc = Длинный бекон! Идеально подходит для того, чтобы поделиться с подругой!
+ent-ClothingNeckScarfStripedLesbianLong = длинный радужный шарф
+    .desc = Длинный радужный шарф. Идеальный зимний аксессуар для тех, у кого обострённое чувство моды, и тех, кто вынужден заниматься бумажной работой на холоде.

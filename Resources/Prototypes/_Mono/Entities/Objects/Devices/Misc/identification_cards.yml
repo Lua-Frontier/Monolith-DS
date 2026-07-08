@@ -201,7 +201,7 @@
   name: spasaka ID card
   parent: [ IDCardStandard, BaseFactionGearPDVT2 ]
   id: PDVSpasakaIDCard
-  suffix: Chameleon
+#  suffix: Chameleon # Commented by LuaM
   components:
   - type: PresetIdCard
     job: PDVInfiltrator
@@ -215,22 +215,23 @@
     layers:
     - state: base
     - state: id_rakhshan
-  - type: AgentIDCard
-  - type: ActivatableUI
-    key: enum.AgentIDCardUiKey.Key
-    inHandsOnly: true
   - type: Tag
     tags:
     - DoorBumpOpener
-  - type: ChameleonClothing
-    slot: [idcard]
-    default: PDVRakhshanIDCard
-    requireTag: WhitelistChameleonIdCard
-  - type: UserInterface
-    interfaces:
-      enum.AgentIDCardUiKey.Key:
-        type: AgentIDCardBoundUserInterface
-      enum.ChameleonUiKey.Key:
-        type: ChameleonBoundUserInterface
-  - type: Contraband # Frontier
-    hideValues: true # Frontier
+# Commented by LuaM
+#  - type: AgentIDCard
+#  - type: ActivatableUI
+#    key: enum.AgentIDCardUiKey.Key
+#    inHandsOnly: true
+#  - type: ChameleonClothing
+#    slot: [idcard]
+#    default: PDVRakhshanIDCard
+#    requireTag: WhitelistChameleonIdCard
+#  - type: UserInterface
+#    interfaces:
+#      enum.AgentIDCardUiKey.Key:
+#        type: AgentIDCardBoundUserInterface
+#      enum.ChameleonUiKey.Key:
+#        type: ChameleonBoundUserInterface
+#  - type: Contraband # Frontier
+#    hideValues: true # Frontier

@@ -1,54 +1,65 @@
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskBlack
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskBlack
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskGray
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskGray
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskWhite
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskWhite
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskRed
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskRed
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskGreen
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskGreen
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskBlue
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskBlue
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskPurple
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskPurple
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskYellow
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskYellow
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskTan
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskTan
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskRangerGreen
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskRangerGreen
 
 - type: loadout
   id: MercenaryClothingBalaclavaSkiMaskCoyoteBrown
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskCoyoteBrown

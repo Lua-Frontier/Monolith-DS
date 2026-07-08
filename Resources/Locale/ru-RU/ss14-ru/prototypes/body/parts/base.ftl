@@ -1,5 +1,3 @@
-ent-BasePart = часть тела
-    .desc = { ent-BaseItem.desc }
 ent-BaseTorso = туловище
     .desc = { ent-BasePart.desc }
 ent-BaseHead = голова

@@ -1,66 +1,66 @@
 - type: loadout
   id: MercenaryClothingBeltWebbingsBigBase
-  price: 0
+  price: 1250 # LuaM: 0 > 1250
   equipment:
     belt: ClothingBeltWebbingsBigBase
 
 - type: loadout
   id: MercenaryClothingBeltWebbingsNormalBlack
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltWebbingsNormalBlack
 
 - type: loadout
   id: MercenaryClothingBeltWebbingsBigBlack
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltWebbingsBigBlack
 
 - type: loadout
   id: MercenaryClothingBeltWebbingsNormalTan
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltWebbingsNormalTan
 
 - type: loadout
   id: MercenaryClothingBeltWebbingsBigTan
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltWebbingsBigTan
 
 - type: loadout
   id: MercenaryClothingBeltWebbingsNormalRangerGreen
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltWebbingsNormalRangerGreen
 
 - type: loadout
   id: MercenaryClothingBeltWebbingsBigRangerGreen
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltWebbingsBigRangerGreen
 
 - type: loadout
   id: MercenaryClothingBeltWebbingsNormalOlive
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltWebbingsNormalOlive
 
 - type: loadout
   id: MercenaryClothingBeltWebbingsBigOlive
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltWebbingsBigOlive
 
 - type: loadout
   id: MercenaryClothingBeltBandolier
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltBandolier
 
 - type: loadout
-  name: security belt (empty)
+#  name: security belt (empty) # Commented by LuaM
   id: MercenaryClothingBeltSecurityEmpty
-  price: 0
+  price: 500 # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltSecurity

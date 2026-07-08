@@ -1,11 +1,13 @@
 - type: loadout
   id: TsfmcGasmask
+  price: 450 # LuaM
   storage:
     back:
     - ClothingMaskGasSecurity
 
 - type: loadout
   id: TsfmcGaiter
+  price: 100 # LuaM
   storage:
     back:
     - ClothingMaskNeckGaiter

@@ -1,7 +1,7 @@
 - type: loadoutGroup
   id: RogueFirearm
   name: loadout-group-weapon
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - FactionC20RLoadout
   # - FactionWt550Loadout
@@ -14,7 +14,7 @@
 - type: loadoutGroup
   id: RogueFirearmCommander
   name: loadout-group-weapon
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - FactionC20RLoadout
   - FactionWt550Loadout

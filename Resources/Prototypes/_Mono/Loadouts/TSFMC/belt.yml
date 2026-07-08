@@ -6,6 +6,7 @@
 
 - type: loadout
   id: TsfmcCombatWebbingLarge
+  price: 1250 # LuaM
 # name: large chest rig # Commented by LuaM
   equipment:
     belt: ClothingBeltWebbingsBigTSFMC
@@ -20,6 +21,7 @@
 # engi
 - type: loadout
   id: TsfClothingBeltUtilityEngineering
+  price: 1250 # LuaM
 # name: utility belt (filled) # Commented by LuaM
   equipment:
     belt: ClothingBeltUtilityEngineering
@@ -36,6 +38,7 @@
 
 - type: loadoutEffectGroup
   id: ProTsfEngineer
+  price: 7500 # LuaM
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:

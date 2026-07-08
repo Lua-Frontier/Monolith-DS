@@ -1,7 +1,7 @@
 - type: loadoutGroup
   id: TsfmcFirearmColonel
   name: loadout-group-weapon
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - FactionFrostLoadout
   - FactionDrozdLoadout
@@ -14,7 +14,7 @@
 - type: loadoutGroup
   id: TsfmcFirearm
   name: loadout-group-weapon
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - FactionLecterLoadout
   - FactionDrozdLoadout

@@ -1,11 +1,13 @@
 - type: loadout
   id: PDVGasmask
+  price: 450 # LuaM
   storage:
     back:
     - ClothingMaskGasSecurity
 
 - type: loadout
   id: PDVGaiter
+  price: 100 # LuaM
   storage:
     back:
     - ClothingMaskNeckGaiter

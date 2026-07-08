@@ -1,29 +1,35 @@
 - type: loadout
   id: TsfmcHelmet
+  price: 850 # LuaM
   equipment:
     head: ClothingHeadHelmetMercenaryBlack
 
 - type: loadout
   id: TsfmcUtilityCap
+  price: 100 # LuaM
   equipment:
     head: ClothingHeadHatUtilityTsfmc
 
 - type: loadout
   id: TsfmcBeret
+  price: 100 # LuaM
   equipment:
     head: ClothingHeadHatBeretCommander
 
 - type: loadout
   id: TsfmcBeretEngineer
+  price: 100 # LuaM
   equipment:
     head: ClothingHeadHatBeretEngineering
 
 - type: loadout
   id: TsfmcBeretMedic
+  price: 100 # LuaM
   equipment:
     head: ClothingHeadHatBeretBrigmedic
 
 - type: loadout
   id: TsfmcBeretCommon
+  price: 100 # LuaM
   equipment:
     head: ClothingHeadHatBeretCommon

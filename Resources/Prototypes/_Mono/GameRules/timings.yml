@@ -6,26 +6,27 @@
     endAt: 10800 # 3 hour
 
 - type: entity
-  id: PortstrikeAnnounceRuleHour4
+  id: PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
   parent: BaseGameRule
   components:
   - type: GameRule
     delay:
-      min: 14400
-      max: 14400
+      min: 10800 # LuaM: 14400 > 10800
+      max: 10800 # LuaM: 14400 > 10800
   - type: BlankRule
   - type: StationEvent
     earliestStart: 0
     endAnnouncement: gamerule-portstrike-announce-announcement
     announceSender: gamerule-portstrike-announce-sender
+    endAnnouncementColor: "#6B8E23" # LuaM
     endAudio:
-      path: /Audio/Misc/gamma.ogg
+      path: /Audio/_LuaM/Music/running_in.ogg # LuaM: /Audio/Misc/gamma.ogg > /Audio/_LuaM/Music/running_in.ogg
       params:
-        volume: -2
+        volume: -1
 
 - type: entity
   id: PortstrikeAnnounceRuleHour1
-  parent: PortstrikeAnnounceRuleHour4
+  parent: PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
   components:
   - type: GameRule
     delay:
@@ -42,7 +43,7 @@
 
 - type: entity
   id: PortstrikeAnnounceRuleSeconds20
-  parent: PortstrikeAnnounceRuleHour4
+  parent: PortstrikeAnnounceRuleHour3 # LuaM: PortstrikeAnnounceRuleHour4 > PortstrikeAnnounceRuleHour3
   components:
   - type: GameRule
     delay:

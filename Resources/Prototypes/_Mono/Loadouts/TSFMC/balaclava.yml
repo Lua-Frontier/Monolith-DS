@@ -1,9 +1,11 @@
 - type: loadout
   id: TsfmcBalaclava
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskBlack
 
 - type: loadout
   id: TsfmcBalaclavaAlt
+  price: 150 # LuaM
   equipment:
     balaclava: ClothingBalaclavaSkiMaskGray

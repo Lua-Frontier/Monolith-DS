@@ -65,8 +65,8 @@
 - type: loadoutGroup
   id: TsfmcGloves
   name: loadout-group-contractor-gloves
-  hidden: true # No point in showing this, it gets auto-selected.
-  minLimit: 1
+#  hidden: true # No point in showing this, it gets auto-selected. # Commented by LuaM
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - TsfmcCombatGloves
   fallbacks:
@@ -75,7 +75,7 @@
 - type: loadoutGroup
   id: TsfmcBrigmedicGloves
   name: loadout-group-contractor-gloves
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   maxLimit: 1
   loadouts:
   - TsfmcCombatGloves
@@ -99,11 +99,15 @@
 - type: loadoutGroup
   id: TsfmcUtilBelt
   name: loadout-group-contractor-belt
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   maxLimit: 1
   loadouts:
   - TsfClothingBeltUtilityEngineering
   - TsfClothingBeltUtilityEngineeringPro
+# LuaM-start:
+  - TsfmcCombatWebbing
+  - TsfmcCombatWebbingLarge
+# LuaM-end.
   fallbacks:
   - TsfClothingBeltUtilityEngineering
 
@@ -122,7 +126,7 @@
 - type: loadoutGroup
   id: TsfmcFace
   name: loadout-group-contractor-face
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   maxLimit: 1
   loadouts:
   - TsfmcGaiter
@@ -160,7 +164,7 @@
 - type: loadoutGroup
   id: TsfmcNeckEngi
   name: loadout-group-contractor-neck
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   maxLimit: 1
   loadouts:
   - TsfmcClothingNeckIFFOrange
@@ -169,7 +173,7 @@
 - type: loadoutGroup
   id: TsfmcNeckMedic
   name: loadout-group-contractor-neck
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   maxLimit: 1
   loadouts:
   - TsfmcClothingNeckIFFWhite
@@ -252,7 +256,7 @@
 - type: loadoutGroup
   id: FactionArmorPlates
   name: loadout-group-contractor-armorplates
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   maxLimit: 1
   loadouts:
   - FactionArmorPlatePierce

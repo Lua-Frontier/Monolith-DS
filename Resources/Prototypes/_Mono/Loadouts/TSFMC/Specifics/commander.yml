@@ -1,7 +1,7 @@
 - type: loadoutGroup
   id: TsfmcNeckCommander
   name: loadout-group-contractor-neck
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - TsfmcClothingNeckIFFCyan
   - SheriffClothingNeckMantleSheriff
@@ -13,7 +13,7 @@
 - type: loadoutGroup
   id: TsfmcNeckCaptain
   name: loadout-group-contractor-neck
-  minLimit: 1
+  minLimit: 0 # LuaM: 1 > 0
   loadouts:
   - TsfmcClothingNeckIFFCyan
   - TsfClothingNeckCaptainCloak
@@ -23,6 +23,7 @@
 - type: loadoutGroup
   id: TsfmcEarsCommander
   name: loadout-group-contractor-ears
+  hidden: true # LuaM
   minLimit: 1
   loadouts:
   - TsfmcCommanderHeadset
@@ -34,10 +35,12 @@
 
 - type: loadout
   id: TsfClothingNeckColonelCloak
+  price: 100 # LuaM
   equipment:
     neck: ClothingNeckColonelCloak
 
 - type: loadout
   id: TsfClothingNeckCaptainCloak
+  price: 100 # LuaM
   equipment:
     neck: ClothingNeckCaptainCloak

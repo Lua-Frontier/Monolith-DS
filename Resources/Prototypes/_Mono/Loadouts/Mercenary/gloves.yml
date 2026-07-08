@@ -1,29 +1,35 @@
 - type: loadout
   id: MercenaryClothingHandsGlovesTacticalCombatTan
+  price: 500 # LuaM
   equipment:
     gloves: ClothingHandsGlovesTacticalCombatTan
 
 - type: loadout
   id: MercenaryClothingHandsGlovesTacticalCombatBlack
+  price: 500 # LuaM
   equipment:
     gloves: ClothingHandsGlovesTacticalCombatBlack
 
 - type: loadout
   id: MercenaryClothingHandsGlovesTacticalCombatRangerGreen
+  price: 500 # LuaM
   equipment:
     gloves: ClothingHandsGlovesTacticalCombatRangerGreen
 
 - type: loadout
   id: MercenaryClothingHandsGlovesTacticalCombatOlive
+  price: 500 # LuaM
   equipment:
     gloves: ClothingHandsGlovesTacticalCombatOlive
 
 - type: loadout
   id: MercenaryClothingHandsGlovesTacticalCombatCoyoteBrown
+  price: 500 # LuaM
   equipment:
     gloves: ClothingHandsGlovesTacticalCombatCoyoteBrown
 
 - type: loadout
   id: MercenaryClothingHandsGlovesTacticalCombatWhite
+  price: 500 # LuaM
   equipment:
     gloves: ClothingHandsGlovesTacticalCombatWhite

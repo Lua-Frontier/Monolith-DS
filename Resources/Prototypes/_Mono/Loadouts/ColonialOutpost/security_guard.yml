@@ -50,6 +50,7 @@
 - type: loadoutGroup
   id: MonoSecurityGuardGaiter
   name: loadout-group-contractor-face
+  minLimit: 0 # LuaM
   loadouts:
   - MonoSecurityGuardNeckGaiter
   - MonoSecurityGuardNeckGaiterRed
@@ -58,12 +59,14 @@
 
 - type: loadout
   id: MonoSecurityGuardNeckGaiter
+  price: 100 # LuaM
   storage:
     back:
     - ClothingMaskNeckGaiter
 
 - type: loadout
   id: MonoSecurityGuardNeckGaiterRed
+  price: 100 # LuaM
   storage:
     back:
     - ClothingMaskNeckGaiterRed
@@ -141,5 +144,6 @@
 
 - type: loadout
   id: MonoSecurityGuardDuffel
+  price: 5000 # LuaM
   equipment:
     back: ClothingBackpackDuffelSecurity

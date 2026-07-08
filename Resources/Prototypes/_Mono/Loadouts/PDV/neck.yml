@@ -1,24 +1,29 @@
 - type: loadout
   id: PDVClothingNeckIFFOrange
+  price: 75 # LuaM
   equipment:
     neck: ClothingNeckIFFOrange
 
 - type: loadout
   id: PDVClothingNeckCloakCommander
+  price: 100 # LuaM
   equipment:
     neck: ClothingNeckCloakRogueCommander
 
 - type: loadout
   id: PDVClothingNeckCloakVizier
+  price: 100 # LuaM
   equipment:
     neck: ClothingNeckCloakVizier
 
 - type: loadout
   id: PDVClothingNeckMantleVizier
+  price: 100 # LuaM
   equipment:
     neck: ClothingNeckMantleVizier
 
 - type: loadout
   id: PDVClothingNeckCloakPdvPurple
+  price: 100 # LuaM
   equipment:
     neck: ClothingNeckCloakPdvPurple

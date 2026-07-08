@@ -2,56 +2,56 @@
 
 - type: loadout #MK32 Universal
   id: ContractorMk32Loadout
-  price: 0
+  price: 2500 # LuaM: 0 > 2500
   storage:
     back:
     - WeaponPistolMk32
 
 - type: loadout #MK32 Universal Ammo
   id: Contractor9x19mmPistolAmmoLoadout
-  price: 500
+  price: 1000 # LuaM: 500 > 1000
   storage:
     back:
     - BoxMagazine9x19mmFMJ
 
 - type: loadout #Disabler
   id: ContractorDisablerLoadout
-  price: 0
+  price: 1500 # LuaM: 0 > 1500
   storage:
     back:
     - WeaponDisabler
 
 - type: loadout #Svalinn
   id: ContractorSvalinnLoadout
-  price: 2000
+  price: 3000 # LuaM: 2000 > 3000
   storage:
     back:
     - WeaponLaserSvalinn
 
 - type: loadout #Makeshift Laser
   id: ContractorLaserLoadout
-  price: 0
+  price: 850 # LuaM: 0 > 850
   storage:
     back:
     - WeaponMakeshiftLaser
 
 - type: loadout #Argenti
   id: ContractorArgentiLoadout
-  price: 2000
+  price: 3000 # LuaM: 2000 > 3000
   storage:
     back:
     - WeaponRevolverArgenti
 
 - type: loadout #Argenti Ammo
   id: Contractor556x45mmAmmoLoadout
-  price: 1000
+  price: 1500 # LuaM: 1000 > 1500
   storage:
     back:
     - BoxMagazineSpeedLoader556x45mmFMJ
 
 - type: loadout # Survival Knife
   id: ContractorSurvivalKnifeLoadout
-  price: 0
+  price: 650 # LuaM: 0 > 650
   storage:
     back:
     - SurvivalKnife
@@ -60,14 +60,14 @@
 
 - type: loadout #Double Barrel Beanbag
   id: ContractorDoubleBarreledLoadout
-  price: 3000
+  price: 3750 # LuaM: 3000 > 3750
   storage:
     back:
     - WeaponShotgunDoubleBarreledRubber
 
 - type: loadout #Beanbag Shells
   id: ContractorBeanbagAmmoLoadout
-  price: 200
+  price: 450 # LuaM: 200 > 450
   storage:
     back:
     - AmmoBox12_gaugeBeanbag
@@ -100,35 +100,35 @@
 
 - type: loadout #Lecter / Prometheus Ammo
   id: Mercenary556x45mmAmmoLoadout
-  price: 1000
+  price: 1500 # LuaM: 1000 > 1500
   storage:
     back:
     - BoxMagazine556x45mmFMJ
 
 - type: loadout #Gestio
   id: MercenaryGestioLoadout
-  price: 5000
+  price: 6500 # LuaM: 5000 > 6500
   storage:
     back:
     - WeaponRifleGestio
 
 - type: loadout #Gestio Ammo
   id: Mercenary762x39mmAmmoLoadout
-  price: 1000
+  price: 1500 # LuaM: 1000 > 1500
   storage:
     back:
     - BoxMagazine762x39mmFMJ
 
 - type: loadout # Novalite
   id: MercenaryNovaliteLoadout
-  price: 5000
+  price: 6500 # LuaM: 5000 > 6500
   storage:
     back:
     - WeaponRifleNovaliteC1
 
 - type: loadout #Novalite Ammo
   id: MercenaryNovaliteAmmoLoadout
-  price: 1000
+  price: 1500 # LuaM: 1000 > 1500
   storage:
     back:
     - BoxMagazineNovaliteC1
@@ -149,14 +149,14 @@
 
 - type: loadout #Vulcan-C / Lee Enfield Ammo
   id: Mercenary762x51mmAmmoLoadout
-  price: 1000
+  price: 1500 # LuaM: 1000 > 1500
   storage:
     back:
     - BoxMagazine762x51mmFMJ
 
 - type: loadout #Mosin
   id: MercenaryMosinLoadout
-  price: 5000
+  price: 4000 # LuaM: 5000 > 4000
   storage:
     back:
     - WeaponSniperMosin
@@ -170,7 +170,7 @@
 
 - type: loadout #Mosin / SVS42 Ammo
   id: Mercenary762x54mmRAmmoLoadout
-  price: 1000
+  price: 1500 # LuaM: 1000 > 1500
   storage:
     back:
     - BoxMagazine762x54mmRFMJ
@@ -179,35 +179,35 @@
 
 - type: loadout #Kammerer
   id: MercenaryKammererLoadout
-  price: 5000
+  price: 7500 # LuaM: 5000 > 7500
   storage:
     back:
     - WeaponShotgunKammererPMC
 
 - type: loadout #Enforcer
   id: MercenaryEnforcerLoadout
-  price: 12000
+  price: 25000 # LuaM: 12000 > 25000
   storage:
    back:
     - WeaponShotgunEnforcerPMC
 
 - type: loadout #Helepolis Sidearm
   id: MercenaryHelepolisLoadout
-  price: 3000
+  price: 4500 # LuaM: 3000 > 4500
   storage:
     back:
     - WeaponShotgunHelepolis
 
 - type: loadout #Buckshot Shells
   id: MercenaryBuckshotAmmoLoadout
-  price: 500
+  price: 1500 # LuaM: 500 > 1500
   storage:
     back:
     - AmmoBox12_gaugeBuckshot
 
 - type: loadout #Slug Shells
   id: MercenarySlugAmmoLoadout
-  price: 500
+  price: 1000 # LuaM: 500 > 1000
   storage:
     back:
     - AmmoBox12_gaugeSlug
@@ -223,21 +223,21 @@
 
 - type: loadout #Keyboard
   id: MercenaryKeyboardLoadout
-  price: 5000
+  price: 6500 # LuaM: 5000 > 6500
   storage:
     back:
     - WeaponSubMachineGunTypewriterPMC
 
 - type: loadout #Drozd / Keyboard  Ammo
   id: MercenaryAcpSubAmmoLoadout
-  price: 1000
+  price: 1500 # LuaM: 1000 > 1500
   storage:
     back:
     - BoxMagazine45_ACPSubMachineGunFMJ
 
 - type: loadout #AK220
   id: MercenaryAk220Loadout
-  price: 5000
+  price: 7500 # LuaM: 5000 > 7500
   storage:
     back:
     - WeaponSubMachineGunAK220
@@ -251,7 +251,7 @@
 
 - type: loadout #WT550 Ammo
   id: Mercenary46x30mmTopAmmoLoadout
-  price: 1000
+  price: 1500 # LuaM: 1000 > 1500
   storage:
     back:
     - BoxMagazine46x30mmSubMachineGunTopMountedFMJ
@@ -265,14 +265,14 @@
 
 - type: loadout #C20r Ammo
   id: Mercenary9x19SmgAmmoLoadout
-  price: 1000
+  price: 1500 # LuaM: 1000 > 1500
   storage:
     back:
     - BoxMagazine9x19mmSubMachineGunFMJ
 
 - type: loadout # Knallstock
   id: MercenaryKnallstockLoadout
-  price: 5000
+  price: 6500 # LuaM: 5000 > 6500
   storage:
     back:
     - WeaponSubMachineGunKnallstock
@@ -281,14 +281,14 @@
 
 - type: loadout #Energy Gun
   id: MercenaryEnergyGunLoadout
-  price: 5000
+  price: 6500 # LuaM: 5000 > 6500
   storage:
     back:
     - WeaponEnergyGunPMC
 
 - type: loadout #Laser Carbine
   id: MercenaryLaserCarbineLoadout
-  price: 5000
+  price: 6500 # LuaM: 5000 > 6500
   storage:
     back:
     - WeaponLaserCarbine
@@ -302,14 +302,14 @@
 
 - type: loadout #Disabler SMG
   id: MercenaryDisablerSMGLoadout
-  price: 2500
+  price: 5000 # LuaM: 2500 > 5000
   storage:
     back:
     - WeaponDisablerSMGPMC
 
 - type: loadout #Energy Recharger Flatpack
   id: MercenaryRechargerLoadout
-  price: 500
+  price: 1750 # LuaM: 500 > 1750
   storage:
     back:
     - WeaponCapacitorRechargerFlatpack
@@ -318,7 +318,7 @@
 
 - type: loadout #Pollock
   id: MercenaryPollockLoadout
-  price: 0
+  price: 2500 # LuaM: 0 > 2500
   storage:
     back:
     - WeaponPistolPollock
@@ -332,35 +332,35 @@
 
 - type: loadout #Pollock / Viper / Knallstock Ammo
   id: Mercenary9x19mmPistolAmmoLoadout
-  price: 0
+  price: 1000
   storage:
     back:
     - BoxMagazine9x19mmFMJ
 
 - type: loadout #MK58
   id: MercenaryMk58Loadout
-  price: 1500
+  price: 2500 # LuaM: 1500 > 2500
   storage:
     back:
     - WeaponPistolMk58
 
 - type: loadout #MK58 / Knallstock Ammo
   id: MercenaryAcpPistolAmmoLoadout
-  price: 500
+  price: 1000 # LuaM: 500 > 1000 
   storage:
     back:
     - BoxMagazine45_ACPFMJ
 
 - type: loadout #Sawn-off
   id: MercenarySawedOffLoadout
-  price: 3000
+  price: 3750 # LuaM: 3000 > 3750
   storage:
     back:
     - WeaponShotgunSawn
 
 - type: loadout #Laser Pistol
   id: MercenaryLaserPistolLoadout
-  price: 1500
+  price: 2500 # LuaM: 1500 > 2500
   storage:
     back:
     - WeaponLaserPistolNF
@@ -369,28 +369,28 @@
 
 - type: loadout # Machete
   id: MercenaryMacheteLoadout
-  price: 0
+  price: 850 # LuaM: 0 > 850
   storage:
     back:
     - Machete
 
 - type: loadout # Throwing Knifes Box
   id: MercenaryThrowingKnifeLoadout
-  price: 0
+  price: 1000 # LuaM: 0 > 1000
   storage:
     back:
     - ThrowingKnivesKit
 
 - type: loadout # Kukri Knife
   id: MercenaryKukriKnifeLoadout
-  price: 0
+  price: 750 # LuaM: 0 > 750
   storage:
     back:
     - KukriKnife
 
 - type: loadout # Combat Knife
   id: MercenaryCombatKnifeLoadout
-  price: 0
+  price: 750 # LuaM: 0 > 750
   storage:
     back:
     - CombatKnife
@@ -402,7 +402,7 @@
 - type: loadout #Iroh
   id: SecurityGuardIrohLoadout
   #name: iroh gun case # Commented by LuaM
-  price: 0
+  price: 7500 # LuaM: 0 > 7500
   inhand:
   - WeaponCaseLongIrohSecurity
 
@@ -417,21 +417,21 @@
 
 - type: loadout #Kammerer
   id: SecurityGuardKammererLoadout
-  price: 0
+  price: 7500 # LuaM: 0 > 7500
   storage:
     back:
     - WeaponShotgunKammerer
 
 - type: loadout #Enforcer
   id: SecurityGuardEnforcerLoadout
-  price: 0
+  price: 7500 # LuaM: 0 > 7500
   storage:
     back:
     - WeaponShotgunEnforcer
 
 - type: loadout # Shells
   id: SecurityGuardBeanbagAmmoLoadout
-  price: 0
+  price: 500 # LuaM: 0 > 500
   storage:
     back:
     - AmmoBox12_gaugeBuckshot
@@ -440,14 +440,14 @@
 
 - type: loadout #Vector
   id: SecurityGuardVectorLoadout
-  price: 0
+  price: 7500 # LuaM: 0 > 7500
   storage:
     back:
     - WeaponSubMachineGunVector45_ACPRegistered
 
 - type: loadout #Drozd/Vector Ammo
   id: SecurityGuardAcpSmgAmmoRubberLoadout
-  price: 0
+  price: 500 # LuaM: 0 > 500
   storage:
     back:
     - BoxMagazine45_ACPSubMachineGunFMJ
@@ -456,14 +456,14 @@
 
 - type: loadout #Disabler SMG
   id: SecurityGuardDisablerSMGLoadout
-  price: 0
+  price: 2500 # LuaM: 0 > 2500
   storage:
     back:
     - WeaponDisablerSMG
 
 - type: loadout #Energy Gun
   id: SecurityGuardEnergyGunLoadout
-  price: 0
+  price: 7500 # LuaM: 0 > 7500
   storage:
     back:
     - WeaponEnergyGun
@@ -488,7 +488,7 @@
 
 - type: loadout #Lecter
   id: StationRepWeaponEnergyShotgun
-  price: 0
+  price: 12500 # LuaM: 0 > 125001250
   storage:
     back:
     - WeaponEnergyShotgun

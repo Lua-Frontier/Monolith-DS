@@ -1,5 +1,6 @@
 - type: loadout
   id: TsfmcCombatGloves
+  price: 500 # LuaM
   equipment:
     gloves: ClothingHandsGlovesTacticalCombatBlack
 

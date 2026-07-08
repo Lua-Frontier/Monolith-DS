@@ -1,6 +1,6 @@
 ent-BaseToolSurgery = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-Cautery = прибор для прижигания
+ent-Cautery = термокаутер
     .desc = Хирургический инструмент, используемый для прижигания открытых ран.
 ent-Drill = дрель
     .desc = Хирургическая дрель для проделывания отверстий в твёрдом материале.
