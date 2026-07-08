@@ -1311,7 +1311,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 # start T1
 
@@ -1328,7 +1328,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 - type: listing
   id: UplinkSecurityT1VoucherFenrir
@@ -1343,7 +1343,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 - type: listing
   id: UplinkSecurityT1VoucherScorpion
@@ -1358,7 +1358,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 - type: listing
   id: UplinkSecurityT1VoucherBastion
@@ -1373,7 +1373,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 - type: listing
   id: UplinkSecurityT1VoucherNeptune
@@ -1388,7 +1388,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 # end T1
 
@@ -1407,7 +1407,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 - type: listing
   id: UplinkSecurityT2VoucherVulture
@@ -1422,7 +1422,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 - type: listing
   id: UplinkSecurityT2VoucherMotleyAnne
@@ -1437,7 +1437,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 # end T2
 
@@ -1456,7 +1456,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 # end T3
 
@@ -1475,6 +1475,6 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - FactionStaticUplinkPdv
+      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 # end T4

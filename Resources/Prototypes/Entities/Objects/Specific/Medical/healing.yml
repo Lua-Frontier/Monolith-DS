@@ -431,6 +431,9 @@
     contents:
     - id: PillDexalin
       amount: 7
+  - type: StaticPrice #LuaM
+    price: 0
+    vendPrice: 750    
 
 - type: entity
   name: pill
@@ -464,6 +467,9 @@
     contents:
     - id: PillDylovene
       amount: 5
+  - type: StaticPrice #LuaM
+    price: 0
+    vendPrice: 750        
 
 - type: entity
   name: pill
@@ -497,6 +503,9 @@
     contents:
     - id: PillHyronalin
       amount: 5
+  - type: StaticPrice #LuaM
+    price: 0
+    vendPrice: 750    
 
 - type: entity
   name: pill
@@ -662,6 +671,9 @@
     contents:
     - id: PillDermaline
       amount: 5
+  - type: StaticPrice #LuaM
+    price: 0
+    vendPrice: 750    
 
 - type: entity
   name: space mirage
@@ -710,7 +722,7 @@
       amount: 5
   - type: StaticPrice #Mono
     price: 0
-    vendPrice: 675
+    vendPrice: 750 # LuaM: 625 > 750
 
 - type: entity
   name: pill
