@@ -197,4 +197,10 @@ public sealed partial class DecalPlacementSystem : EntitySystem
         else
             _inputSystem.SetEntityContextActive();
     }
+// Erida-start:
+    public bool GetCurrentSnap()
+    {
+        return _snap;
+    }
+// // Erida-end.
 }

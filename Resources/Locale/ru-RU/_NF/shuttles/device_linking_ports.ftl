@@ -1,0 +1,16 @@
+signal-port-name-shuttle-1 = Кнопка 1
+signal-port-name-shuttle-2 = Кнопка 2
+signal-port-name-shuttle-3 = Кнопка 3
+signal-port-name-shuttle-4 = Кнопка 4
+signal-port-name-shuttle-5 = Кнопка 5
+signal-port-name-shuttle-6 = Кнопка 6
+signal-port-name-shuttle-7 = Кнопка 7
+signal-port-name-shuttle-8 = Кнопка 8
+signal-port-description-shuttle-1 = Первый сигнальный порт консоли шаттла.
+signal-port-description-shuttle-2 = Второй сигнальный порт консоли шаттла.
+signal-port-description-shuttle-3 = Третий сигнальный порт консоли шаттла.
+signal-port-description-shuttle-4 = Четвёртый сигнальный порт консоли шаттла.
+signal-port-description-shuttle-5 = Пятый сигнальный порт консоли шаттла.
+signal-port-description-shuttle-6 = Шестой сигнальный порт консоли шаттла.
+signal-port-description-shuttle-7 = Седьмой сигнальный порт консоли шаттла.
+signal-port-description-shuttle-8 = Восьмой сигнальный порт консоли шаттла.

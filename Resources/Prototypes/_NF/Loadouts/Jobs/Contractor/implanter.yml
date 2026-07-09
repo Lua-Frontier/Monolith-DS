@@ -13,7 +13,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 1000
+  price: 3500 # LuaM: 1000 > 3500
   storage:
     back:
     - LightImplanter
@@ -24,7 +24,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 1000
+  price: 5000 # LuaM: 1000 > 5000
   storage:
     back:
     - BikeHornImplanter
@@ -35,7 +35,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 1000
+  price: 5000 # LuaM: 1000 > 5000
   storage:
     back:
     - SadTromboneImplanter

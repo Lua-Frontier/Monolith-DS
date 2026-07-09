@@ -1,32 +1,31 @@
 <Document>
-  # Rodentia
+  # Раткины
 
   <Box>
     <GuideEntityEmbed Entity="MobRodentiaDummy" Caption=""/>
   </Box>
 
-  Rodentia are a race of humanoid beings resembling rodents. Resourceful, evasive, sneaky, but fragile.
+  Раткины - раса гуманоидных существ, напоминающих грызунов. Находчивы, уклончивы, скрытны, но хрупки.
 
-  ## Diet
+  ## Питание
 
-  - Can eat raw meat.
-  - Will get poisoned by Theobromine (Chocolate, Tea, Coffee) and Allicin (Onion, Garlic).
+  - Могут есть сырое мясо.
+  - Отравляются теобромином (шоколад, чай, кофе) и аллицином (лук, чеснок).
 
-  ## Benefits
+  ## Преимущества
 
-  - Uses their claws to do some Slashing and Blunt damage.
-  - Smaller than humans.
-  - Can fit in duffelbags.
+  - Используют когти для нанесения урона порезами и ушибами.
+  - Куда более маленькие, чем люди.
+  - Могут поместиться в вещмешки.
 
-  ## Special
+  ## Особенности
 
-  - Can Rummage in disposal chutes, which can dig up trash.
-  - Can "sneak" underneath tables, but not doors.
+  - Могут рыться в мусоропроводах, добывая оттуда мусор.
+  - Могут «красться» под столами, но не под дверьми.
 
-  ## Drawbacks
+  ## Недостатки
 
-  - Takes 30% more Blunt damage, and 15% more Slash and Piercing damage.
-  - Always triggers mousetraps, regardless of whether or not they are wearing shoes.
-  - Gets hungry 33% faster.
-
+  - Получают на 30% больше урона ушибами и на 15% больше уронами порезами и уколами.
+  - Всегда активируют мышеловки, независимо от того, обуты ли они.
+  - Голодают на 33% быстрее.
 </Document>

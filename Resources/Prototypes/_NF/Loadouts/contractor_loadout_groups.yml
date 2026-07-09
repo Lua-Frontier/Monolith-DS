@@ -815,6 +815,7 @@
 - type: loadoutGroup
   id: ContractorFace
   name: loadout-group-contractor-face
+  minLimit: 0 # LuaM
   loadouts:
   - ContractorClothingMaskCOG # MONO
   - ContractorClothingMaskBreath
@@ -939,7 +940,7 @@
   id: ContractorCartridge
   name: loadout-group-contractor-cartridge
   minLimit: 0
-  maxLimit: 5
+  maxLimit: 4 # LuaM: 5 > 4
   loadouts:
   - ContractorAppraisalCartridge
   - ContractorMedTekCartridge
@@ -950,7 +951,7 @@
   id: ContractorImplanter
   name: loadout-group-contractor-implanter
   minLimit: 0
-  maxLimit: 2
+  maxLimit: 5 # LuaM: 2 > 5
   loadouts:
   - ContractorMedicalTrackingImplanter
   - ContractorLightImplanter

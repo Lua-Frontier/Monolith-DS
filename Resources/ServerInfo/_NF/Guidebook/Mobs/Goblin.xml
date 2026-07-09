@@ -20,14 +20,6 @@
   - Благодаря маленькому размеру могут залезать в унитазы и почтовые терминалы.
   - Уникальные кричалки.
   - Изначально говорят на гоблинском жаргоне.
-  - Могут мастерить устройства разной сложности из мусора.
-
-  <Box>
-    <GuideEntityEmbed Entity="NFGoblinMadeMultitool" Caption=""/>
-    <GuideEntityEmbed Entity="NFGoblinMadeCrowbar" Caption=""/>
-    <GuideEntityEmbed Entity="NFGoblinMadeMiningDrill" Caption=""/>
-    <GuideEntityEmbed Entity="NFGoblinMadeRemoteSignaller" Caption=""/>
-  </Box>
 
   ## Недостатки
 

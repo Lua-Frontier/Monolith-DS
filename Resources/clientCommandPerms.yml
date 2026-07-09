@@ -79,6 +79,7 @@
     - mapping
     - toggleautosave
     - toggledecals
+    - drawline # Lua
 
 - Flags: QUERY
   Commands:

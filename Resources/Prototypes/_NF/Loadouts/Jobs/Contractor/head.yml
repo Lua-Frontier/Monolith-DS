@@ -1,126 +1,126 @@
 - type: loadout
   id: ContractorClothingHeadHelmetEVALarge
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   equipment:
     head: ClothingHeadHelmetEVALarge
 
 - type: loadout
   id: ContractorClothingHeadBandBlack
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadBandBlack
 
 - type: loadout
   id: ContractorClothingHeadBandBlue
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadBandBlue
 
 - type: loadout
   id: ContractorClothingHeadBandGreen
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadBandGreen
 
 - type: loadout
   id: ContractorClothingHeadBandRed
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadBandRed
 
 - type: loadout
   id: ContractorClothingHeadBandSkull
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadBandSkull
 
 - type: loadout
   id: ContractorClothingHeadHatGreysoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatGreysoft
 
 - type: loadout
   id: ContractorClothingHeadHatBluesoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBluesoft
 
 - type: loadout
   id: ContractorClothingHeadHatYellowsoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatYellowsoft
 
 - type: loadout
   id: ContractorClothingHeadHatGreensoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatGreensoft
 
 - type: loadout
   id: ContractorClothingHeadHatOrangesoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatOrangesoft
 
 - type: loadout
   id: ContractorClothingHeadHatRedsoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatRedsoft
 
 - type: loadout
   id: ContractorClothingHeadHatBlacksoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBlacksoft
 
 - type: loadout
   id: ContractorClothingHeadHatPurplesoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatPurplesoft
 
 - type: loadout
   id: ContractorClothingHeadHatCorpsoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCorpsoft
 
 - type: loadout
   id: ContractorClothingHeadBandGrey
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadBandGrey
 
 - type: loadout
   id: ContractorClothingHeadHatUshanka
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatUshanka
 
 - type: loadout
   id: ContractorClothingHeadHatHardhatYellow
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     head: ClothingHeadHatHardhatYellow
 
 - type: loadout
   id: ContractorClothingHeadHatChef
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatChef
 
 - type: loadout
   id: ContractorClothingHeadHatCargosoft
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCargosoft
 
 - type: loadout
   id: ContractorClothingHeadBandBotany
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadBandBotany
 
@@ -130,7 +130,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatHoodBioScientist
 
@@ -139,7 +139,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadRastaHat
 
@@ -148,7 +148,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatSombrero
 
@@ -157,7 +157,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadFishCap
 
@@ -166,7 +166,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatTrucker
 
@@ -175,7 +175,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCasa
 
@@ -184,7 +184,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBowlerHat
 
@@ -193,7 +193,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatGreyFlatcap
 
@@ -202,7 +202,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBrownFlatcap
 
@@ -211,7 +211,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatParamedicsoft
 
@@ -220,7 +220,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadNurseHat
 
@@ -229,7 +229,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBeretMedic
 
@@ -238,7 +238,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatSurgcapGreen
 
@@ -247,7 +247,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatSurgcapBlue
 
@@ -256,7 +256,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatSurgcapPurple
 
@@ -265,7 +265,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatFedoraGrey
 
@@ -274,7 +274,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatFedoraBrown
 
@@ -285,7 +285,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCaptain
 
@@ -294,7 +294,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCapcap
 
@@ -303,7 +303,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadTinfoil
 
@@ -312,7 +312,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBeretRND
 
@@ -321,7 +321,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBeretEngineering
 
@@ -330,7 +330,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBeretSeniorPhysician
 
@@ -339,7 +339,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBeretCmo
 
@@ -348,7 +348,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBeretQM
 
@@ -357,7 +357,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatQMsoft
 
@@ -366,7 +366,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCardinal
 
@@ -375,7 +375,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatHoodNunHood
 
@@ -384,7 +384,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadSafari
 
@@ -393,7 +393,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatJester
 
@@ -402,7 +402,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatJesterAlt
 
@@ -411,7 +411,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBeret
 
@@ -420,7 +420,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBeretFrench
 
@@ -429,7 +429,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatMimesoft
 
@@ -438,7 +438,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatPilgrim
 
@@ -447,7 +447,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatStrawHat
 
@@ -456,7 +456,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCowboyBlack
 
@@ -465,7 +465,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCowboyBrown
 
@@ -474,7 +474,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCowboyGrey
 
@@ -483,7 +483,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCowboyBountyHunter
 
@@ -492,7 +492,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatBH
 
@@ -501,7 +501,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCowboyRed
 
@@ -510,7 +510,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatCowboyWhite
 
@@ -519,7 +519,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatWideBrimmed
 
@@ -530,7 +530,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatWideBrimmedWhite
 
@@ -539,7 +539,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatWideBrimmedPurple
 
@@ -548,7 +548,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatWideBrimmedRed
 
@@ -557,7 +557,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatWideBrimmedGreen
 
@@ -566,7 +566,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatWideBrimmedBlue
 
@@ -575,7 +575,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatWideBrimmedYellow
 
@@ -584,7 +584,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 1100
+  price: 2500 # LuaM: 1100 > 2500
   equipment:
     head: ClothingHeadHatUNSABeer
 
@@ -595,7 +595,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatWitchhunter
 
@@ -604,7 +604,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   equipment:
     head: ClothingHeadHatBishopMitre
 
@@ -613,7 +613,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatKippah
 
@@ -622,7 +622,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatPlaguedoctor
 
@@ -632,7 +632,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     head: Plunger
 
@@ -641,7 +641,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     head: ClothingHeadHatCone
 
@@ -650,7 +650,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono0
+  price: 10000 # Mono # LuaM: 0 > 10000
   equipment:
     head: ClothingHeadBandGold
 
@@ -659,6 +659,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     head: ClothingHeadHatTophat
+ 

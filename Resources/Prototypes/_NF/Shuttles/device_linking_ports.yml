@@ -2,40 +2,40 @@
 
 - type: sourcePort
   id: device-button-1
-  name: Button 1
-  description: "Button 1"
+  name: signal-port-name-shuttle-1 # LuaM: Button 1: > signal-port-name-shuttle-1
+  description: signal-port-description-shuttle-1 # LuaM: "Button 1": > signal-port-description-shuttle-1
 
 - type: sourcePort
   id: device-button-2
-  name: Button 2
-  description: "Button 2"
+  name: signal-port-name-shuttle-2 # LuaM: Button 2: > signal-port-name-shuttle-2
+  description: signal-port-description-shuttle-2 # LuaM: "Button 2": > signal-port-description-shuttle-2
 
 - type: sourcePort
   id: device-button-3
-  name: Button 3
-  description: "Button 3"
+  name: signal-port-name-shuttle-3 # LuaM: Button 3: > signal-port-name-shuttle-3
+  description: signal-port-description-shuttle-3 # LuaM: "Button 3": > signal-port-description-shuttle-3
 
 - type: sourcePort
   id: device-button-4
-  name: Button 4
-  description: "Button 4"
+  name: signal-port-name-shuttle-4 # LuaM: Button 4: > signal-port-name-shuttle-4
+  description: signal-port-description-shuttle-4 # LuaM: "Button 4": > signal-port-description-shuttle-4
 
 - type: sourcePort
   id: device-button-5
-  name: Button 5
-  description: "Button 5"
+  name: signal-port-name-shuttle-5 # LuaM: Button 5: > signal-port-name-shuttle-5
+  description: signal-port-description-shuttle-5 # LuaM: "Button 5": > signal-port-description-shuttle-5
 
 - type: sourcePort
   id: device-button-6
-  name: Button 6
-  description: "Button 6"
+  name: signal-port-name-shuttle-6 # LuaM: Button 6: > signal-port-name-shuttle-6
+  description: signal-port-description-shuttle-6 # LuaM: "Button 6": > signal-port-description-shuttle-6
 
 - type: sourcePort
   id: device-button-7
-  name: Button 7
-  description: "Button 7"
+  name: signal-port-name-shuttle-7 # LuaM: Button 7: > signal-port-name-shuttle-7
+  description: signal-port-description-shuttle-7 # LuaM: "Button 7": > signal-port-description-shuttle-7
 
 - type: sourcePort
   id: device-button-8
-  name: Button 8
-  description: "Button 8"
+  name: signal-port-name-shuttle-8 # LuaM: Button 8: > signal-port-name-shuttle-8
+  description: signal-port-description-shuttle-8 # LuaM: "Button 8": > signal-port-description-shuttle-8

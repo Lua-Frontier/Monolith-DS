@@ -22,3 +22,26 @@ shuttle-console-set-target-description = Устанавливает целеву
 shuttle-console-hide-target-description = Переключает видимость целевой точки на консоли управления шаттлом.
 shuttle-console-target-name = Цель
 shuttle-console-map-track = ⌖
+
+shuttle-console-force-anchored = Вы не можете совершить FTL-переход на аванпосте.
+shuttle-console-signature-infrared = Тепловая сигнатура
+
+# Mono - Unknowns
+shuttle-console-signature-unknown =
+    { $mass ->
+        [small] Небольшой Неизвестный Объект
+        [medium] Средний Неизвестный Объект
+        [large] Большой Неизвестный Объект
+        [huge] Огромный Неизвестный Объект
+        [supermassive] Гигантский Неизвестный Объект
+       *[other] Неизвестный Объект
+    }
+
+shuttle-console-device-button-1 = Кнопка 1
+shuttle-console-device-button-2 = Кнопка 2
+shuttle-console-device-button-3 = Кнопка 3
+shuttle-console-device-button-4 = Кнопка 4
+shuttle-console-device-button-5 = Кнопка 5
+shuttle-console-device-button-6 = Кнопка 6
+shuttle-console-device-button-7 = Кнопка 7
+shuttle-console-device-button-8 = Кнопка 8

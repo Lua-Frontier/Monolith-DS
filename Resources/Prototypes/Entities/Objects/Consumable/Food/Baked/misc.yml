@@ -603,6 +603,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: StaticPrice #LuaM
+    price: 50
+    vendPrice: 200
 
 - type: entity
   name: chèvre chaud

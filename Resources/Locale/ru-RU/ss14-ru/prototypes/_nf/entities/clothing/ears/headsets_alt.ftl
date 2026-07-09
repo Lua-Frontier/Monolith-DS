@@ -33,3 +33,5 @@ ent-ClothingHeadsetAltPilotCommon = { ent-ClothingHeadsetAltPilot }
     .desc = { ent-ClothingHeadsetAltPilot.desc }
 ent-ClothingHeadsetAltCentComCommon = полноразмерная гарнитура коменданта
     .desc = { ent-ClothingHeadsetAltCentCom.desc }
+ent-ClothingHeadsetAltCentComCommonSR = { ent-ClothingHeadsetAltCentComCommon }
+    .desc = { ent-ClothingHeadsetAltCentComCommon.desc }

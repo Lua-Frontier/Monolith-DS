@@ -138,10 +138,10 @@
 
   ## Командная работа
   <Box>
-  <GuideEntityEmbed Entity="GuidebookMemeNpcGood" Caption="the good,"/>
-  <GuideEntityEmbed Entity="GuidebookMemeNpcBad" Caption="the bad,"/>
-  <GuideEntityEmbed Entity="GuidebookMemeNpcUgly" Caption="the ugly"/>
-  <GuideEntityEmbed Entity="GuidebookMemeNpcThatGuy" Caption="and that guy"/>
+  <GuideEntityEmbed Entity="GuidebookMemeNpcGood" Caption="Добрый пацан,"/>
+  <GuideEntityEmbed Entity="GuidebookMemeNpcBad" Caption="Злой пацан,"/>
+  <GuideEntityEmbed Entity="GuidebookMemeNpcUgly" Caption="Уродливый пацан"/>
+  <GuideEntityEmbed Entity="GuidebookMemeNpcThatGuy" Caption="... и этот пацан"/>
   </Box>
   Ваш главный шанс выжить в экспедиции — это команда. Вы можете [italic]знать[/italic], как себя лечить, но не сможете этого сделать, если будете без сознания.
 
@@ -164,6 +164,6 @@
   <GuideEntityEmbed Entity="ClothingEyesHudMedical"/>
   <GuideEntityEmbed Entity="ClothingEyesHudDiagnostic"/>
   </Box>
-  Адаптивность — залог успеха: тактики против [textlink="ксеносов" link="MobsExpeditionGuideXenos"] могут не сработать против [textlink="наёмников" link="MobsExpeditionGuideMercenaries"], и наоборот. Гайд по враждебным существам даст общее представление о планетных угрозах, но ничто не заменит личного опыта. Спускайтесь на планету, собирайте трофеи и встречайте опасности лицом к лицу — сокровища не будут ждать вечно!
+  Адаптивность — залог успеха: тактики против [textlink="ксеноморфов" link="MobsExpeditionGuideXenos"] могут не сработать против [textlink="наёмников" link="MobsExpeditionGuideMercenaries"], и наоборот. Гайд по враждебным существам даст общее представление о планетных угрозах, но ничто не заменит личного опыта. Спускайтесь на планету, собирайте трофеи и встречайте опасности лицом к лицу - сокровища не будут ждать вечно!
 
 </Document>

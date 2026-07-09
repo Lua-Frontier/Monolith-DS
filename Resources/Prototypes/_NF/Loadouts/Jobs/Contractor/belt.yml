@@ -1,90 +1,90 @@
 - type: loadout
   id: ContractorClothingBeltPlant
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltPlant
 
 - type: loadout
   id: ContractorClothingBeltPlantFilled
   #name: botanical belt (filled) # Commented by LuaM
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 650
   equipment:
     belt: ClothingBeltPlantFilled
 
 - type: loadout
   id: ContractorClothingBeltChef
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltChef
 
 - type: loadout
   id: ContractorClothingBeltChefFilled
   #name: chef belt (filled) # Commented by LuaM
-  price: 0 # Mono
+  price: 225 # Mono # LuaM: 0 > 225
   equipment:
     belt: ClothingBeltChefFilled
 
 - type: loadout
   id: ContractorClothingBeltStorageWaistbag
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltStorageWaistbag
 
 - type: loadout
   id: ContractorClothingBeltMedical
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltMedical
 
 - type: loadout
   id: ContractorClothingBeltMedicalFilled
   #name: medical belt (filled) # Commented by LuaM
-  price: 0 # Mono
+  price: 400 # Mono # LuaM: 0 > 400
   equipment:
     belt: ClothingBeltMedicalFilled
 
 - type: loadout
   id: ContractorClothingBeltMedicalEMT
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltMedicalEMT
 
 - type: loadout
   id: ContractorClothingBeltMedicalEMTFilled
   #name: EMT belt (filled) # Commented by LuaM
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     belt: ClothingBeltMedicalEMTFilled
 
 - type: loadout
   id: ContractorClothingBeltUtility
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltUtility
 
 - type: loadout
   id: ContractorClothingBeltUtilityFilled
 # name: utility belt (filled) # Commented by LuaM
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltUtilityEngineering
 
 - type: loadout
   id: ContractorClothingBeltSalvageWebbing
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltSalvageWebbing
 
 - type: loadout
   id: ContractorClothingBeltSalvageWebbingFilledNF
   #name: salvage rig (filled) # Commented by LuaM
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltSalvageWebbingFilledNF
 
 - type: loadout
   id: ContractorClothingBeltDrakeIndustries
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltDrakeIndustries
 #T1
@@ -93,7 +93,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: BoxFolderClipboard
 
@@ -102,7 +102,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltPilot
 
@@ -112,7 +112,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 750 # Mono # LuaM: 0 > 750
   equipment:
     belt: ClothingBeltPilotFilled
 
@@ -121,7 +121,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltBandolier
 
@@ -130,7 +130,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltHolster
 
@@ -139,7 +139,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltChaplainSash
 
@@ -149,7 +149,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 1200 # Mono # LuaM: 0 > 1200
   equipment:
     belt: ClothingBeltChaplainSashFilled
 
@@ -158,7 +158,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     belt: BooksBag
 
@@ -167,7 +167,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     belt: ChemBag
 
@@ -176,7 +176,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     belt: OreBag
 
@@ -185,7 +185,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     belt: PlantBag
 
@@ -194,7 +194,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     belt: ConstructionBag
 
@@ -204,7 +204,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltMartialBlack
 
@@ -214,7 +214,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   equipment:
     belt: ClothingBeltPunkRandomized
 
@@ -224,7 +224,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   equipment:
     belt: ClothingBeltPunkRandomizedFilled
 
@@ -234,7 +234,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono0
+  price: 1000 # Mono # LuaM: 0 > 1000
   equipment:
     belt: ClothingBeltChampion
 
@@ -244,6 +244,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 1500 # Mono # LuaM: 0 > 1500
   equipment:
     belt: ClothingBeltSheathFilled

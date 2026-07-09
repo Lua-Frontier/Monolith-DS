@@ -144,6 +144,5 @@
 
 - type: loadout
   id: MonoSecurityGuardDuffel
-  price: 5000 # LuaM
   equipment:
     back: ClothingBackpackDuffelSecurity

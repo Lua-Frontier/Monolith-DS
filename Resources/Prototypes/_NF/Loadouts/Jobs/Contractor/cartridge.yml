@@ -4,7 +4,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 700 # Mono # LuaM: 0 > 700
   storage:
     back:
     - AppraisalCartridge
@@ -14,7 +14,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 1500 # Mono # LuaM: 0 > 1500
   storage:
     back:
     - MedTekCartridge
@@ -24,7 +24,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 600 # Mono # LuaM: 0 > 600
   storage:
     back:
     - NetProbeCartridge
@@ -34,7 +34,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 750 # Mono # LuaM: 0 > 750
   storage:
     back:
     - LogProbeCartridge

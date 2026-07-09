@@ -5,7 +5,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   inhand:
     - BriefcaseBrownFilled
 
@@ -15,7 +15,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   inhand:
     - ToolboxEmergency
 
@@ -25,7 +25,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 200 # Mono # LuaM: 0 > 200
   inhand:
     - ToolboxMechanical
 
@@ -34,7 +34,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   inhand:
     - PlushieSharkGrey
 
@@ -43,7 +43,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   inhand:
     - PlushieSharkBlue
 
@@ -52,7 +52,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   inhand:
     - PlushieSharkPink
 
@@ -61,7 +61,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   inhand:
     - HarmonicaInstrument
 
@@ -70,7 +70,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   inhand:
     - SaxophoneInstrument
 
@@ -79,7 +79,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   inhand:
     - AcousticGuitarInstrument
 
@@ -89,7 +89,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   inhand:
     - Cane
 
@@ -98,7 +98,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   inhand:
     - LGBTQHandyFlag
 
@@ -109,7 +109,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   inhand:
     - PonderingOrb
 
@@ -119,7 +119,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 3500 # Mono # LuaM: 0 > 3500
   inhand:
     - PlushieRGBee
 
@@ -128,7 +128,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   inhand:
     - MysterySpaceBladeBox
 
@@ -146,7 +146,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 1500 # Mono # LuaM: 0 > 1500
   inhand:
     - FlashlightUmbrella
 
@@ -155,7 +155,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 4000 # Mono # LuaM: 0 > 4000
   inhand:
     - DawInstrumentFlatpack
 
@@ -164,7 +164,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 10000 # Mono
+  price: 15000 # Mono # LuaM: 10000 > 15000
   inhand:
     - HoverbikeFlatpack
 
@@ -174,7 +174,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 2000 # Mono
+  price: 2500 # Mono # LuaM: 2000 > 2500
   inhand:
     - PetCarrierNPCEmotionalSupportSafe
 
@@ -183,6 +183,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 5000 # Mono # LuaM: 0 > 5000
   inhand:
     - CrayonMagic

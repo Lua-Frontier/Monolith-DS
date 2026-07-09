@@ -25,6 +25,7 @@
     size: Tiny
   - type: StaticPrice
     price: 1
+    vendPrice: 125 # LuaM
 # Snacks
 
 # "Snacks" means food in a packet. Down the line this stuff can have multiple

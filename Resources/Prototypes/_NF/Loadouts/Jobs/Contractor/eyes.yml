@@ -1,25 +1,25 @@
 #T0
 - type: loadout
   id: ContractorClothingEyesGlasses
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     eyes: ClothingEyesGlasses
 
 - type: loadout
   id: ContractorClothingEyesGlassesCheapSunglasses
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     eyes: ClothingEyesGlassesCheapSunglasses
 
 - type: loadout
   id: ContractorClothingEyesBlindfold
-  price: 0 # Mono
+  price: 75 # Mono # LuaM: 0 > 75
   equipment:
     eyes: ClothingEyesBlindfold
 
 - type: loadout
   id: ContractorClothingEyesEyepatch
-  price: 0 # Mono
+  price: 50 # Mono # LuaM: 0 > 50
   equipment:
     eyes: ClothingEyesEyepatch
 
@@ -29,7 +29,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 500
+  price: 125 # LuaM: 500 > 125
   equipment:
     eyes: ClothingEyesGlassesJamjar
 
@@ -38,7 +38,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 350 # Mono # LuaM: 0 > 350
   equipment:
     eyes: ClothingEyesGlassesChemical
 
@@ -47,7 +47,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 350 # Mono # LuaM: 0 > 350
   equipment:
     eyes: ClothingEyesHudDiagnostic
 
@@ -56,7 +56,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 350 # Mono # LuaM: 0 > 350
   equipment:
     eyes: ClothingEyesGlassesMeson
 
@@ -65,7 +65,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 350 # Mono # LuaM: 0 > 350
   equipment:
     eyes: ClothingEyesHudMedical
 
@@ -75,7 +75,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     eyes: ClothingEyesPunkGoggles
 
@@ -85,7 +85,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 350 # Mono # LuaM: 0 > 350
   equipment:
     eyes: ClothingEyesPunkInfoShades
 
@@ -96,7 +96,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 350 # Mono # LuaM: 0 > 350
   equipment:
     eyes: ClothingEyesEyepatchHudDiag
 
@@ -105,7 +105,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 350 # Mono # LuaM: 0 > 350
   equipment:
     eyes: ClothingEyesEyepatchHudMedical
-

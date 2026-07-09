@@ -1,13 +1,14 @@
 #T0
 - type: loadout
   id: ContractorClothingMaskBreath
+  price: 50 # LuaM
   storage:
     back:
     - ClothingMaskBreath
 
 - type: loadout
   id: ContractorClothingMaskBreathMedical
-  price: 0 # Mono
+  price: 50 # Mono # LuaM: 0 > 50
   storage:
     back:
     - ClothingMaskBreathMedical
@@ -18,7 +19,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 35 # Mono # LuaM: 0 > 35
   storage:
     back:
     - ClothingMaskSterile
@@ -28,7 +29,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskGas
@@ -39,7 +40,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskPunkHalf
@@ -50,7 +51,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   storage:
     back:
     - ClothingMaskGasExplorer
@@ -60,7 +61,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 50 # Mono # LuaM: 0 > 50
   storage:
     back:
     - ClothingMaskCOG
@@ -70,7 +71,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   storage:
     back:
     - ClothingMaskGasCaptain
@@ -80,7 +81,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   storage:
     back:
     - ClothingMaskGasAtmos
@@ -90,7 +91,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   storage:
     back:
     - ClothingMaskDrakeIndustries
@@ -99,7 +100,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskPlague
@@ -109,7 +110,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskMime
@@ -119,7 +120,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskScaredMime
@@ -129,7 +130,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskSadMime
@@ -139,7 +140,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskClown
@@ -149,7 +150,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskClownBald
@@ -159,7 +160,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskNeckGaiter
@@ -169,7 +170,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskNeckGaiterRed
@@ -179,7 +180,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   storage:
     back:
     - ClothingMaskGasSecurity
@@ -199,7 +200,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskRat
@@ -209,7 +210,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskRaven
@@ -219,7 +220,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskBear
@@ -229,7 +230,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskBat
@@ -239,7 +240,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskBee
@@ -249,7 +250,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   storage:
     back:
     - ClothingMaskFox

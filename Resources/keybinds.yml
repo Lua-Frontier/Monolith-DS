@@ -615,3 +615,11 @@ binds:
   key: X
   mod1: Shift
 # endregion Frontier
+# Erida-start:
+- function: EditorNextObject
+  type: State
+  key: Num9
+- function: EditorPreviousObject
+  type: State
+  key: Num3
+# Erifa-end.

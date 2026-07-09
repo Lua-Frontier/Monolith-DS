@@ -4,7 +4,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   equipment:
     gloves: ClothingHandsGlovesColorYellow
 
@@ -13,7 +13,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesLeather
 
@@ -22,7 +22,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesFingerless
 
@@ -31,7 +31,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesLatex
 
@@ -40,7 +40,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesNitrile
 
@@ -49,7 +49,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesRobohands
 
@@ -58,7 +58,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorBlack
 
@@ -67,7 +67,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorBlue
 
@@ -76,7 +76,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorGreen
 
@@ -85,7 +85,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorGray
 
@@ -94,7 +94,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorBrown
 
@@ -103,7 +103,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorLightBrown
 
@@ -112,7 +112,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorOrange
 
@@ -121,7 +121,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorPurple
 
@@ -130,7 +130,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorRed
 
@@ -140,7 +140,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesBoxingGreen
 
@@ -149,7 +149,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesBoxingBlue
 
@@ -158,7 +158,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesBoxingRed
 
@@ -167,7 +167,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesBoxingYellow
 
@@ -176,7 +176,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   equipment:
     gloves: ClothingHandsGlovesCaptain
 
@@ -186,6 +186,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 100 # Mono # LuaM: 0 > 100
   equipment:
     gloves: ClothingHandsGlovesColorWhite

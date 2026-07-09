@@ -24,6 +24,7 @@
     size: Tiny
   - type: StaticPrice
     price: 14
+    vendPrice: 75 # LuaM
 # Tastes like donut.
 
 # The sprinkles are now an overlay, so you can put them on any donut! If we really

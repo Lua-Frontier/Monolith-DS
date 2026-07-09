@@ -17,7 +17,8 @@
     solution: food
   - type: SpaceGarbage
   - type: StaticPrice
-    price: 0
+    price: 5 # LuaM: 0 > 5 
+    vendPrice: 25 # LuaM
 
 # Packets
 

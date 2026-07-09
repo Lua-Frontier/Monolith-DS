@@ -129,6 +129,7 @@
         - Cash
     cashSlotName: cash_slot
     currencyStackType: Credit
+    requiresCash: true # LuaM
   - type: PirateBountyItem
     id: VendingMachine
   - type: ItemSlots
