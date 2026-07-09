@@ -213,7 +213,7 @@ public sealed partial class MonoCVars
     ///     Threshold before the IRS comes into effect.
     /// </summary>
     public static readonly CVarDef<float> DepositThreshold =
-        CVarDef.Create("mono.deposit.threshold", 2000000f, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("mono.deposit.threshold", 20000000f, CVar.SERVER | CVar.REPLICATED); /// LuaM - 2000000f -> 20000000f
 
     /// <summary>
     ///     How exponential taxes are. When I set this to 5, it broke the integer limit, so probably don't mess with it.
