@@ -35,7 +35,6 @@ public sealed partial class FireControlWindow : FancyWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         RefreshButton.OnPressed += _ => OnServerRefresh?.Invoke();
-        ShowIFFCheckbox.OnToggled += args => NavRadar.ShowIFF = args.Pressed; // Forge-Change
         SelectAllButton.OnPressed += SelectAllWeapons;
         UnselectAllButton.OnPressed += UnselectAllWeapons;
         SelectBallisticButton.OnPressed += SelectBallisticWeapons;
