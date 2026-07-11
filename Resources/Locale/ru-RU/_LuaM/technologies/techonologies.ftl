@@ -1,4 +1,4 @@
 research-technology-implants = Продвинутое протезирование
-research-technology-сybernetic-organs = Усиления организма
-research-technology-сybernetic-liver = Искусственная фильтрация
-research-technology-upgraded-сybernetic-organs = Выживание в вакууме
+research-technology-cybernetic-organs = Усиления организма
+research-technology-cybernetic-liver = Искусственная фильтрация
+research-technology-upgraded-cybernetic-organs = Выживание в вакууме

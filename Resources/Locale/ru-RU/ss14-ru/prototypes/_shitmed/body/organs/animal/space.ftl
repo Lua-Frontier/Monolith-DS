@@ -1,4 +1,4 @@
-ent-OrganSpaceAnimalLungs = легкие космического животного
+ent-OrganSpaceAnimalLungs = лёгкие космического животного
     .desc = { ent-OrganAnimalLungs.desc }
 ent-OrganSpaceAnimalHeart = сердце космического животного
     .desc = { ent-OrganAnimalHeart.desc }

@@ -1,9 +1,16 @@
 ent-BaseMagazine8x65mm = STANAG магазин (8x65мм SKR)
+    .desc = Магазин, использующий патроны калибра 8x65мм SKR.
 ent-Magazine8x65mmSKR = { ent-BaseMagazine8x65mm }
+    .desc = { ent-BaseMagazine8x65mm.desc }
 ent-Magazine8x65mmEmpty = STANAG магазин (8x65мм)
+    .desc = Магазин, использующий патроны калибра 8x65мм SKR.
     .suffix = Пустой
 ent-Magazine8x65mmSKRIncendiary = STANAG магазин (8x65мм SKR зажигательные)
+    .desc = Магазин, использующий зажигательные патроны калибра 8x65мм SKR.
 ent-Magazine8x65mmSKRPractice = STANAG магазин (8x65мм SKR учебные)
+    .desc = Магазин, использующий учебные патроны калибра 8x65мм SKR.
 ent-Magazine8x65mmSKRBox = SAW короб (8x65мм SKR)
+    .desc = Коробчатый магазин, использующий патроны калибра 8x65мм SKR.
 ent-Magazine8x65mmEmptyBox = SAW короб (8x65мм SKR)
+    .desc = Коробчатый магазин, использующий патроны калибра 8x65мм SKR.
     .suffix = Пустой

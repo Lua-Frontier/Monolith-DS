@@ -19,7 +19,7 @@
 
 - type: technology
   id: CyberneticOrgans
-  name: research-technology-сybernetic-organs
+  name: research-technology-cybernetic-organs
   entityIcon: BasicCyberneticLungs
   discipline: CivilianServices
   tier: 3
@@ -33,7 +33,7 @@
 
 - type: technology
   id: CyberneticLiver
-  name: research-technology-сybernetic-liver
+  name: research-technology-cybernetic-liver
   entityIcon: BasicCyberneticLiver
   discipline: CivilianServices
   tier: 3
@@ -46,7 +46,7 @@
 
 - type: technology
   id: UpgradedCyberneticOrgans
-  name: research-technology-upgraded-сybernetic-organs
+  name: research-technology-upgraded-cybernetic-organs
   entityIcon: UpgradedCyberneticHeart
   discipline: CivilianServices
   tier: 3

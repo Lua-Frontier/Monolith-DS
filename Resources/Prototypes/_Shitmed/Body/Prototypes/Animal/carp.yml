@@ -8,10 +8,10 @@
       connections:
       - tail
       organs:
-        lungs: OrganSpaceAnimalLungs # Immunity to airloss
+        lungs: OrganAnimalLungs # Immunity to airloss # LuaM: OrganSpaceAnimalLungs > OrganAnimalLungs
         stomach: OrganAnimalStomach
         liver: OrganAnimalLiver
-        heart: OrganSpaceAnimalHeart # Immunity to cold
+        heart: OrganAnimalHeart # Immunity to cold # LuaM: OrganSpaceAnimalHeart > OrganAnimalHeart
         kidneys: OrganAnimalKidneys
     tail:
       part: TailCarp
