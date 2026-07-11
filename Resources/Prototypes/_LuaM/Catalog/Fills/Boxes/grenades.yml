@@ -1,0 +1,10 @@
+- type: entity
+  name: box of white phosphorus grenades
+  parent: BoxBundleNfsd
+  id: BoxWhitePhosphorusGrenades
+  description: A box full of white phosphorus grenades.
+  components:
+  - type: StorageFill
+    contents:
+      - id: WhitePhosphorusGrenade
+        amount: 4

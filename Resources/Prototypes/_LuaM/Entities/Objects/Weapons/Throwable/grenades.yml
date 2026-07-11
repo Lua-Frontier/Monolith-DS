@@ -12,7 +12,7 @@
     solution:
       reagents:
       - ReagentId: WhitePhosphorus
-        Quantity: 20
+        Quantity: 30
   - type: DeleteOnTrigger
   - type: SoundOnTrigger
     sound: /Audio/Items/smoke_grenade_smoke.ogg

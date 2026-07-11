@@ -2,7 +2,8 @@
   id: UplinkPirateWhitePhosphorusGrenade
   name: uplink-pirate-white-phosphorus-name
   description: uplink-pirate-white-phosphorus-desc
-  productEntity: WhitePhosphorusGrenade
+  productEntity: BoxWhitePhosphorusGrenades
+  icon: { sprite: _LuaM/Objects/Weapons/Grenades/white_phosphorus.rsi, state: icon}
   cost:
     Doubloon: 35
   categories:

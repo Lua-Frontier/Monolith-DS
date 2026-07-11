@@ -26,14 +26,14 @@
           types:
             Heat: 6
       - !type:FlammableReaction
-        multiplier: 0.45
+        multiplier: 1.85
       - !type:AdjustTemperature
-        amount: 6750
+        amount: 15500
       - !type:Ignite
   reactiveEffects:
     Flammable:
       methods: [ Touch ]
       effects:
       - !type:FlammableReaction
-        multiplier: 0.45
+        multiplier: 1.85
       - !type:Ignite
