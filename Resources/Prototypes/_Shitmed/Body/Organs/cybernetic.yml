@@ -87,12 +87,6 @@
     sprite: _Shitmed/Mobs/Species/Misc/Cybernetics/organs.rsi
     state: eyes
   - type: Organ
-    intCap: 21
-    integrity: 21
-    integrityThresholds:
-      Normal: 21
-      Damaged: 11
-      Destroyed: 0
     slotId: eyes
     onAdd:
     - type: FlashImmunity
@@ -118,12 +112,10 @@
       damageContainers:
       - Inorganic
       - Silicon
-      - SiliconRadiation
     - type: ShowHealthIcons
       damageContainers:
       - Inorganic
       - Silicon
-      - SiliconRadiation
 
 # Heart
 
@@ -137,18 +129,11 @@
     state: heart-on
   - type: Heart
   - type: Organ
-    intCap: 25
-    integrity: 25
-    integrityThresholds:
-      Normal: 25
-      Damaged: 9
-      Destroyed: 0
     slotId: heart
     onAdd:
     - type: StaminaModifier
       modifier: 1.35
   - type: Metabolizer
-    maxPoisonsProcessable: 2
     metabolizerTypes: [ Cybernetic ]
     groups:
     - id: Medicine
@@ -174,19 +159,12 @@
   - type: Sprite
     state: heart-u-on
   - type: Organ
-    intCap: 32
-    integrity: 32
-    integrityThresholds:
-      Normal: 32
-      Damaged: 9
-      Destroyed: 0
     slotId: heart
     onAdd:
     - type: StaminaModifier
       modifier: 1.7
     - type: PressureImmunity # LuaM
   - type: Metabolizer
-    maxPoisonsProcessable: 2
     metabolizerTypes: [ Cybernetic ]
     groups:
     - id: Medicine
@@ -206,12 +184,6 @@
   components:
   - type: Liver
   - type: Organ
-    intCap: 29
-    integrity: 29
-    integrityThresholds:
-      Normal: 29
-      Damaged: 12
-      Destroyed: 0
     slotId: liver
   - type: Sprite
     state: liver
@@ -219,7 +191,6 @@
     size: Small
     heldPrefix: liver
   - type: Metabolizer
-    maxPoisonsProcessable: 1
     metabolizerTypes: [ Cybernetic ]
     groups:
     - id: Alcohol
@@ -242,12 +213,6 @@
       - state: lung-l
       - state: lung-r
   - type: Organ
-    intCap: 25
-    integrity: 25
-    integrityThresholds:
-      Normal: 25
-      Damaged: 9
-      Destroyed: 0
     slotId: lungs
   - type: Item
     size: Small
@@ -269,7 +234,6 @@
   - type: Tag
     tags:
     - Organ
-    - Lungs
 
 - type: entity
   parent: BasicCyberneticLungs
@@ -282,12 +246,6 @@
       - state: lung-u-l
       - state: lung-u-r
   - type: Organ
-    intCap: 32
-    integrity: 32
-    integrityThresholds:
-      Normal: 32
-      Damaged: 9
-      Destroyed: 0
     slotId: lungs
     onAdd:
     - type: BreathingImmunity # LuaM

@@ -13,7 +13,6 @@
 - type: latheRecipe
   id: BasicCyberneticLungs
   result: BasicCyberneticLungs
-  entityIcon: BasicCyberneticLungs
   completetime: 20
   materials:
     Steel: 2500
@@ -50,7 +49,6 @@
 - type: latheRecipe
   id: UpgradedCyberneticLungs
   result: UpgradedCyberneticLungs
-  entityIcon: UpgradedCyberneticHeart
   completetime: 35
   materials:
     Plasteel: 3500
