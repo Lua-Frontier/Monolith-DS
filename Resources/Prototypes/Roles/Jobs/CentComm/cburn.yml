@@ -47,7 +47,7 @@
     - Handcuffs
     - Handcuffs
     - TrackingImplanter # TSFMC tracker
-    - MedicalTrackingImplanterLabeled # Medical Dispatch Tracker
+    - MedicalTrackingImplanter # Medical Dispatch Tracker # LuaM: MedicalTrackingImplanterLabeled > MedicalTrackingImplanter
     belt:
     - AmmoBox12_gaugeIncendiary
     - AmmoBox12_gaugeIncendiary

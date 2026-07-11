@@ -48,13 +48,13 @@
     implant: MimePowersImplant
 
 # Labeled implanters (for vendors)
-- type: entity
-  id: MedicalTrackingImplanterLabeled
-  parent: MedicalTrackingImplanter
-  suffix: medical tracking, Labeled
-  components:
-  - type: Label
-    currentLabel: implanter-label-medical-tracking
+#- type: entity # Commented by LuaM
+#  id: MedicalTrackingImplanterLabeled
+#  parent: MedicalTrackingImplanter
+#  suffix: medical tracking, Labeled
+#  components:
+#  - type: Label
+#    currentLabel: implanter-label-medical-tracking
 
 - type: entity
   id: SadTromboneImplanterLabeled

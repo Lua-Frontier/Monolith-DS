@@ -15,7 +15,7 @@ trait-language-SiikMaas-name = Сиик'маас
 trait-language-SiikMaas-desc =
     Древний религиозный язык таяран, ныне самый распространённый и преподаваемый.
 
-trait-language-novunederic-name = НовоНедрик
+trait-language-novunederic-name = Нова-Недрик
 trait-language-novunederic-desc =
     Когда-то язык мореплавателей, а ныне язык межсекторных перевозчиков.
     Звонкие слоги и плавная интонация делают его привычным для экипажей кораблей и торговых конвоев.

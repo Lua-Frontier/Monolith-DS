@@ -1,2 +1,9 @@
-ent-SyringeCaseAltFilled = Filled
-
+ent-SyringeCaseAltFilled = { ent-SyringeCaseAlt }
+    .suffix = Заполненный
+    .desc = { ent-SyringeCaseAlt.desc }
+ent-WeaponCaseHeavyAmmo150EMP = { ent-WeaponCaseHeavyAmmo }
+    .suffix = Тяжёлый, Корабельный, 150 мм, ЭМИ
+    .desc = { ent-WeaponCaseHeavyAmmo.desc }
+ent-WeaponCaseHeavyAmmo150AP = { ent-WeaponCaseHeavyAmmo }
+    .suffix = Тяжёлый, Корабельный, 150 мм, Бронебойный
+    .desc = { ent-WeaponCaseHeavyAmmo.desc }

@@ -1,6 +1,6 @@
 # Original code REMOVED by LuaM. If you need to find the original code, look for a file with this (or similar) name in the original repository - https://github.com/Monolith-Station/Monolith
 - type: localizedDataset
-  id: DescriptionsCookieFortune
+  id: CookieFortuneDescriptions
   values:
     prefix: descriptions-cookie-fortune-dataset-
     count: 79

@@ -1,11 +1,11 @@
 ent-GooglyEyes = бегающие глаза
     .desc = Приклейте на что-нибудь, чтобы сделать это смешным.
 ent-GooglyEyesAdmeme = { ent-GooglyEyes }
-    .suffix = Адмем
+    .suffix = Адмемы
     .desc = { ent-GooglyEyes.desc }
 ent-GooglyEyesWatchful = { ent-GooglyEyes }
     .suffix = Наблюдательные
     .desc = { ent-GooglyEyes.desc }
 ent-GooglyEyesWatchfulAdmeme = { ent-GooglyEyes }
-    .suffix = Адмем, Наблюдательные
+    .suffix = Адмемы, Наблюдающие
     .desc = { ent-GooglyEyes.desc }

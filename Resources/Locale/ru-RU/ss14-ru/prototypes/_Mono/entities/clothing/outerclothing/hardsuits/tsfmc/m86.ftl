@@ -1,4 +1,4 @@
-ent-ClothingOuterHardsuitM86 = M86 Mk.3(R) скафандр
+ent-ClothingOuterHardsuitM86 = скафандр ТСФ M-86R
     .desc = Бронированный скафандр, разработанный как улучшение серии M82. Дополнительная броня добавляет веса при движении.
-ent-ClothingOuterHardsuitM86Mk4 = M86 Mk.4(B) скафандр
+ent-ClothingOuterHardsuitM86Mk4 = скафандр ТСФ M-86B
     .desc = Ограниченная серия переработки M86 Mk.3(R) со встроенным генератором личного щита.

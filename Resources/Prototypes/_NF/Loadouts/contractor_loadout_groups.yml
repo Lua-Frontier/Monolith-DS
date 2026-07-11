@@ -717,7 +717,7 @@
   - ContractorBotanistPDA
   - ContractorChaplainPDA
   - ContractorLibrarianPDA
-  - ContractorMedicalPDA
+#  - ContractorMedicalPDA # Commented by LuaM
   - ContractorParamedicPDA
   - ContractorPsychologistPDA
   - ContractorChemistryPDA

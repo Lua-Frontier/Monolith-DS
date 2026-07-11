@@ -6380,7 +6380,7 @@ entities:
       pos: 14.5,-15.5
       parent: 1
     - type: Docking
-      name: CIV-ARM2
+      name: ОРУЖ-2
   - uid: 160
     components:
     - type: Transform
@@ -6465,14 +6465,14 @@ entities:
       pos: 15.5,-31.5
       parent: 1
     - type: Docking
-      name: PDV-ARM2
+      name: AN-ОРУЖ-2
   - uid: 174
     components:
     - type: Transform
       pos: -14.5,-31.5
       parent: 1
     - type: Docking
-      name: PDV-ARM1
+      name: AN-ОРУЖ-1
   - uid: 175
     components:
     - type: Transform
@@ -6480,7 +6480,7 @@ entities:
       pos: 27.5,9.5
       parent: 1
     - type: Docking
-      name: PDV-CB2
+      name: AN-F2
   - uid: 176
     components:
     - type: Transform
@@ -6493,7 +6493,7 @@ entities:
       pos: 0.5,-4.5
       parent: 1
     - type: Docking
-      name: CIV-CB1
+      name: А-1
       dockJointId: CIV-CB1
   - uid: 178
     components:
@@ -6506,7 +6506,7 @@ entities:
       pos: 39.5,27.5
       parent: 1
     - type: Docking
-      name: PDV-B-B3
+      name: AN-D3
   - uid: 180
     components:
     - type: Transform
@@ -6523,7 +6523,7 @@ entities:
       pos: -21.5,2.5
       parent: 1
     - type: Docking
-      name: PDV-C2
+      name: AN-E2
   - uid: 183
     components:
     - type: Transform
@@ -6540,7 +6540,7 @@ entities:
       pos: -38.5,27.5
       parent: 1
     - type: Docking
-      name: PDV-B-A3
+      name: AN-C3
   - uid: 186
     components:
     - type: Transform
@@ -6565,7 +6565,7 @@ entities:
       pos: -17.5,72.5
       parent: 1
     - type: Docking
-      name: PDV-A-A3
+      name: AN-A3
   - uid: 190
     components:
     - type: Transform
@@ -6585,7 +6585,7 @@ entities:
       pos: -16.5,85.5
       parent: 1
     - type: Docking
-      name: PDV-A-A2
+      name: AN-A2
   - uid: 193
     components:
     - type: Transform
@@ -6599,7 +6599,7 @@ entities:
       pos: -22.5,54.5
       parent: 1
     - type: Docking
-      name: PDV-A-C1
+      name: AN-A6
   - uid: 195
     components:
     - type: Transform
@@ -6619,7 +6619,7 @@ entities:
       pos: -42.5,31.5
       parent: 1
     - type: Docking
-      name: PDV-B-A2
+      name: AN-C2
   - uid: 198
     components:
     - type: Transform
@@ -6639,7 +6639,7 @@ entities:
       pos: -26.5,9.5
       parent: 1
     - type: Docking
-      name: PDV-C1
+      name: AN-E1
   - uid: 201
     components:
     - type: Transform
@@ -6659,7 +6659,7 @@ entities:
       pos: -38.5,35.5
       parent: 1
     - type: Docking
-      name: PDV-B-A1
+      name: AN-C1
   - uid: 204
     components:
     - type: Transform
@@ -6673,7 +6673,7 @@ entities:
       pos: -19.5,58.5
       parent: 1
     - type: Docking
-      name: PDV-A-C2
+      name: AN-B5
   - uid: 206
     components:
     - type: Transform
@@ -6693,7 +6693,7 @@ entities:
       pos: -12.5,89.5
       parent: 1
     - type: Docking
-      name: PDV-A-A1
+      name: AN-A1
   - uid: 209
     components:
     - type: Transform
@@ -6701,7 +6701,7 @@ entities:
       pos: 13.5,89.5
       parent: 1
     - type: Docking
-      name: PDV-A-B1
+      name: AN-B1
   - uid: 210
     components:
     - type: Transform
@@ -6721,7 +6721,7 @@ entities:
       pos: 20.5,58.5
       parent: 1
     - type: Docking
-      name: PDV-A-D2
+      name: AN-B5
   - uid: 213
     components:
     - type: Transform
@@ -6735,7 +6735,7 @@ entities:
       pos: 39.5,35.5
       parent: 1
     - type: Docking
-      name: PDV-B-B1
+      name: AN-D1
   - uid: 215
     components:
     - type: Transform
@@ -6755,7 +6755,7 @@ entities:
       pos: 43.5,31.5
       parent: 1
     - type: Docking
-      name: PDV-B-B2
+      name: AN-D2
   - uid: 218
     components:
     - type: Transform
@@ -6775,7 +6775,7 @@ entities:
       pos: 23.5,54.5
       parent: 1
     - type: Docking
-      name: PDV-A-D1
+      name: AN-B6
   - uid: 221
     components:
     - type: Transform
@@ -6811,7 +6811,7 @@ entities:
       pos: 18.5,72.5
       parent: 1
     - type: Docking
-      name: PDV-A-B3
+      name: AN-B3
   - uid: 227
     components:
     - type: Transform
@@ -6825,7 +6825,7 @@ entities:
       pos: 17.5,85.5
       parent: 1
     - type: Docking
-      name: PDV-A-B2
+      name: AN-B2
   - uid: 229
     components:
     - type: Transform
@@ -6851,7 +6851,7 @@ entities:
       pos: -14.5,64.5
       parent: 1
     - type: Docking
-      name: PDV-A-C3
+      name: AN-A4
   - uid: 233
     components:
     - type: Transform
@@ -6859,7 +6859,7 @@ entities:
       pos: 15.5,64.5
       parent: 1
     - type: Docking
-      name: PDV-A-D3
+      name: AN-B4
   - uid: 234
     components:
     - type: Transform
@@ -6872,7 +6872,7 @@ entities:
       pos: 22.5,2.5
       parent: 1
     - type: Docking
-      name: PDV-CB1
+      name: AN-F1
   - uid: 236
     components:
     - type: Transform
@@ -6885,7 +6885,7 @@ entities:
       pos: -13.5,-15.5
       parent: 1
     - type: Docking
-      name: CIV-ARM1
+      name: ОРУЖ-1
   - uid: 238
     components:
     - type: Transform

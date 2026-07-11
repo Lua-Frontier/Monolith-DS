@@ -1,19 +1,19 @@
 #fallback, don't remove
 - type: ambientSpaceBiome
   id: BiomeDefault
-  name: Uncharted Space
+  name: Неисследованный космос # LuaM: Uncharted Space > Неисследованный космос
 
 #expedition biome - hardcoded in SpawnSalvageMissionJob.cs
 - type: ambientSpaceBiome
   id: BiomeExpedition
-  name: Expedition
-  description: "Uncharted land."
+  name: Экспедиция # LuaM: Expedition > Экспедиция
+  description: "Земли далёких давно забытых планет, полные опасностей и добычи." # LuaM: "Uncharted land." > "Земли далёких давно забытых планет, полные опасностей и добычи."
 
 #ftl biome - hardcoded in ShuttleSystem.FasterThanLight.cs
 - type: ambientSpaceBiome
   id: BiomeFTL
-  name: Hyperspace
-  description: "Upon the pale horse, with Hell behind you."
+  name: Гиперпространство # LuaM: Hyperspace > Гиперпространство
+  description: "Отдалённый слой космоса, соприкасающийся с блюспейс-простарнством." # LuaM: "Upon the pale horse, with Hell behind you." > "Отдалённый слой космоса, соприкасающийся с блюспейс-простарнством."
 
 #far reaches
 
@@ -40,15 +40,15 @@
 #actual biomes
 - type: ambientSpaceBiome
   id: BiomeOuterRing
-  name: Outer Ring
-  description: "Far from radio range. Far from help. The stars here are dimmer."
+  name: Внешнее кольцо # LuaM: Outer Ring > Внешнее кольцо
+  description: "Звёзды здесь тусклее, а привычного света шаттлов и аванпостов нет вовсе." # LuaM: "Far from radio range. Far from help. The stars here are dimmer." > "Звёзды здесь тусклее, а привычного света шаттлов и аванпостов нет вовсе."
 
 - type: ambientSpaceBiome
   id: BiomeMiddleRing
-  name: Middle Ring
-  description: "Stellar outskirts, often crawling with riches and danger."
+  name: Среднее кольцо # LuaM: Outer Ring > Среднее кольцо
+  description: "Звёздные окраины, часто кишащие богатствами и опасностями." # LuaM: "Stellar outskirts, often crawling with riches and danger." > "Звёздные окраины, часто кишащие богатствами и опасностями."
 
 - type: ambientSpaceBiome
   id: BiomeInnerRing
-  name: Inner Ring
-  description: "Civilised space. The constellations seen from here are burned into your memory."
+  name: Внутреннее кольцо # LuaM: Inner Ring > Внутреннее кольцо
+  description: "Цивилизованная часть космоса. Созвездия, видимые отсюда, навсегда останутся в вашей памяти." # LuaM: "Civilised space. The constellations seen from here are burned into your memory." > "Цивилизованная часть космоса. Созвездия, видимые отсюда, навсегда останутся в вашей памяти."

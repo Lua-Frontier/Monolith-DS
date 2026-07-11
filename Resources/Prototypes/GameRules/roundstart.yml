@@ -124,7 +124,7 @@
       - type: RandomMetadata
         nameSegments:
         - nukeops-role-commander
-        - SyndicateNamesElite
+#        - SyndicateNamesElite # Commented by LuaM
       - type: NpcFactionMember
         factions:
         - Syndicate

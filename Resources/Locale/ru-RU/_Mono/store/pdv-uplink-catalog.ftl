@@ -111,7 +111,7 @@ uplink-pirate-viper-desc = Маленький, легко скрываемый, 
 uplink-pirate-kanabou-name = Канабу
 uplink-pirate-kanabou-desc = Оружие для тех, кто не ценит скрытность. Идеально подходит для Они, желающих произвести впечатление силой.
 
-uplink-pirate-ak-name = АКМ «Товарищ»
+uplink-pirate-ak-name = АК-74 «Товарищ»
 uplink-pirate-ak-desc = Легендарное оружие, повидавшее не одну войну. Использует патроны 7.62x39мм.
 
 uplink-pirate-laser-gun-name = LP-2432 «Пришелец»

@@ -1,2 +1,3 @@
-ent-ThrusterLargeNfsd = большой ракетный двигатель TSFMC
+ent-ThrusterLargeNfsd = большой ракетный двигатель ТСФ
     .desc = { ent-Thruster }
+    .suffix = ТСФ

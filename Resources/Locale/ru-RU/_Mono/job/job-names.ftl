@@ -6,7 +6,7 @@ job-name-ussp-medic = Боевой медик СССП
 job-name-ussp-rifleman = Стрелок СССП
 
 # MARK: Медицинский Центр
-job-name-md-medic = Спасатель
+job-name-md-medic = Парамедик
 
 # MARK: ТСФ
 job-name-tsf-engineer = Инженер ТСФ

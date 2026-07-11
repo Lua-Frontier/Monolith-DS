@@ -1,7 +1,9 @@
-ent-ThrusterRogue = ракетный двигатель Rogue
-    .desc = { ent-Thruster }
-ent-DebugThrusterRogue = ракетный двигатель Rogue
-    .desc = { ent-Thruster }
-    .suffix = DEBUG
-ent-ThrusterLargeRogue = большой ракетный двигатель Rogue
-    .desc = { ent-Thruster }
+ent-ThrusterRogue = ракетный двигатель Авангарда
+    .desc = { ent-Thruster.desc }
+    .suffix = Авангард
+ent-DebugThrusterRogue = { ent-ThrusterRogue }
+    .desc = { ent-Thruster.desc }
+    .suffix = ДЕБАГ
+ent-ThrusterLargeRogue = большой ракетный двигатель Авангарда
+    .desc = { ent-Thruster.desc }
+    .suffix = Авангард

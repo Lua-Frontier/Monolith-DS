@@ -34,7 +34,7 @@ changelog-tab-title-Upstream = Журнал изменений
 
 multiauth-already-connected = Уже подключены к серверу Фронтира.
 
-public-transit-shuttle-name = Маршрутка
+public-transit-shuttle-name = Автобус
 public-transit-departure = Следующая остановка: { $destination }. Ориентировочное время в пути: { $flytime } секунд.
 public-transit-arrival = Благодарим за выбор общественного транспорта NT. Следующий автобус до { $destination } отправляется через { $waittime } секунд.
 public-transit-shuttle-screen-text = {" "}АВТОБУС {$number}{$suffix}

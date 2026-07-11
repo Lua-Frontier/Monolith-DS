@@ -15,10 +15,10 @@ chat-radio-engineering = Инженерный
 chat-radio-medical = Медицинский
 chat-radio-science = Научный
 chat-radio-security = Безопасность
-chat-radio-service = NanoTrasen
+chat-radio-service = Колосс Централл
 chat-radio-supply = Снабжение
 chat-radio-syndicate = Синдикат
-chat-radio-freelance = Фриланс
+chat-radio-freelance = Авангард Нордфолла
 chat-radio-vanguard-command = Командование Авангарда
 # not headset but whatever
 chat-radio-handheld = Портативный

@@ -1,0 +1,19 @@
+syndicate-mob-prefix-1 = Агент
+syndicate-mob-prefix-2 = Оперативник
+syndicate-mob-prefix-3 = Специалист
+syndicate-mob-prefix-4 = Наёмник
+syndicate-mob-prefix-5 = Диверсант
+syndicate-mob-prefix-6 = Исполнитель
+syndicate-mob-prefix-7 = Канонир
+syndicate-mob-prefix-8 = Сапёр
+syndicate-mob-prefix-9 = Штурмовик
+
+syndicate-mob-names-normal-1 = «Альфа»
+syndicate-mob-names-normal-2 = «Бета»
+syndicate-mob-names-normal-3 = «Гамма»
+syndicate-mob-names-normal-4 = «Дельта»
+syndicate-mob-names-normal-5 = «Сокол»
+syndicate-mob-names-normal-6 = «Ястреб»
+syndicate-mob-names-normal-7 = «Волк»
+syndicate-mob-names-normal-8 = «Змей»
+syndicate-mob-names-normal-9 = «Призрак»

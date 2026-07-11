@@ -1,7 +1,15 @@
+ent-CombatMech = { "" }
+    .desc = { "" }
+ent-IndustrialMech = { "" }
+    .desc = { "" }
+ent-SpecialMech = { "" }
+    .desc = { "" }
+ent-SmallMech = { "" }
+    .desc = { "" }
 ent-MechRipley2 = Рипли АВП МК-II
     .desc = Версия «МК-II» оснащена герметичной кабиной для работы в космосе, но её вес снижает мобильность.
 ent-MechRipley2Battery = { ent-MechRipley2 }
-    .suffix = С Батарея
+    .suffix = Батарея
     .desc = { ent-MechRipley2.desc }
 ent-MechClarke = Кларк
     .desc = Быстроходный механоид для космических путешествий. Оснащён встроенными двигателями.

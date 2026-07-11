@@ -1,0 +1,11 @@
+- type: localizedDataset
+  id: SyndicateNamesPrefix
+  values:
+    prefix: syndicate-mob-prefix-
+    count: 9
+
+- type: localizedDataset
+  id: SyndicateNamesNormal
+  values:
+    prefix: syndicate-mob-names-normal-
+    count: 9

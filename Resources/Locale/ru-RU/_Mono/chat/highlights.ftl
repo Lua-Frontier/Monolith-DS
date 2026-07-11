@@ -21,7 +21,7 @@ highlights-pdv-rahkshan = Оперативник, Опер, Юпитер, Ава
 highlights-pdv-cyborg = "борг", "киборг", "робот"," Юпитер, Авангард
 
 highlights-director-of-care = "ДМЦ", "Директор", "Помоги", "МЦ", "Помогите"
-highlights-emergency-responder = "Мед", "Помогите", "Спасатель", "Медик", "Док", "Доктор", "Помоги", "МЦ"
+highlights-emergency-responder = "Мед", "Помогите", "Спасатель", "Медик", "Док", "Доктор", "Помоги", "МЦ", "Парамед", "Парамедик"
 
 highlights-tsfmc-colonel = Полковник, ТСФ, ТСФКМ
 highlights-tsfmc-captain = Капитан, "Кэп", Кеп, ТСФ, ТСФКМ

@@ -86,14 +86,14 @@
   equipment:
     id: LibrarianPDA
 
-- type: loadout
-  id: ContractorMedicalPDA
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500 # Mono # LuaM: 0 > 500
-  equipment:
-    id: MedicalPDA
+#- type: loadout # Commented by LuaM
+#  id: ContractorMedicalPDA
+#  effects:
+#  - !type:GroupLoadoutEffect
+#    proto: ContractorT1
+#  price: 500 # Mono # LuaM: 0 > 500
+#  equipment:
+#    id: MedicalPDA
 
 - type: loadout
   id: ContractorParamedicPDA

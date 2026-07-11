@@ -1,0 +1,1 @@
+lathe-recipe-WeaponCaseHeavyAmmo-name = патронный ящик (тяжёлый, пустой)

@@ -21,7 +21,7 @@
     nameSegments:
     - SyndicateNamesPrefix
     - SyndicateNamesNormal
-    - SyndicateNamesElite
+#    - SyndicateNamesElite # Commented by LuaM
   #- type: AutoImplant
     #implants:
     #- DeathRattleImplant

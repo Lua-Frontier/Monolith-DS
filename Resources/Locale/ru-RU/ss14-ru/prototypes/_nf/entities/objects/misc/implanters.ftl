@@ -1,4 +1,5 @@
 ent-MedicalTrackingImplanter = импплантер «медицинский трекер»
+    .suffix = Медицинский трекер
     .desc = { ent-BaseImplantOnlyImplanter.desc }
 ent-FreelanceTrackingImplanter = имплантер «фриланс трекер»
     .suffix = Фриланс
@@ -19,7 +20,7 @@ ent-BikeHornImplanterLabeled = имплантер «хонк»
     .suffix = Хонк
     .desc = { ent-BaseImplantOnlyImplanter.desc }
 ent-MedicalTrackingImplanterLabeled = имплантер «медицинский трекер»
-    .suffix = Мед. трекер
+    .suffix = Медицинский трекер
     .desc = { ent-BaseImplantOnlyImplanter.desc }
 ent-SadTromboneImplanterLabeled = имплантер «грустный тромбон»
     .suffix = Грустный тромбон
