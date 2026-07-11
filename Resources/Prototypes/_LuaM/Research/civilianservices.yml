@@ -1,0 +1,60 @@
+# Tier 3
+- type: technology
+  id: Implants
+  name: research-technology-implants
+  entityIcon: BasicCyberneticEyes
+  discipline: CivilianServices
+  tier: 3
+  cost: 25000
+  recipeUnlocks:
+  - JawsOfLifeLeftArm
+  - JawsOfLifeRightArm
+  - SpeedLeftLeg
+  - SpeedRightLeg
+  - DexLeftHand
+  - DexRightHand
+  technologyPrerequisites:
+  - CyberneticEnhancements
+  position: -2, 13
+
+- type: technology
+  id: CyberneticOrgans
+  name: research-technology-сybernetic-organs
+  entityIcon: BasicCyberneticLungs
+  discipline: CivilianServices
+  tier: 3
+  cost: 25000
+  recipeUnlocks:
+  - BasicCyberneticHeart
+  - BasicCyberneticLungs
+  technologyPrerequisites:
+  - Implants
+  position: -2, 14
+
+- type: technology
+  id: CyberneticLiver
+  name: research-technology-сybernetic-liver
+  entityIcon: BasicCyberneticLiver
+  discipline: CivilianServices
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - BasicCyberneticLiver
+  technologyPrerequisites:
+  - CyberneticOrgans
+  position: -3, 14
+
+- type: technology
+  id: UpgradedCyberneticOrgans
+  name: research-technology-upgraded-сybernetic-organs
+  entityIcon: UpgradedCyberneticHeart
+  discipline: CivilianServices
+  tier: 3
+  cost: 50000
+  recipeUnlocks:
+  - UpgradedCyberneticHeart
+  - UpgradedCyberneticLungs
+  technologyPrerequisites:
+  - CyberneticOrgans
+  - HighEndSurgery
+  position: -2, 15

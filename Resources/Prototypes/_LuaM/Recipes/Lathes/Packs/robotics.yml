@@ -1,0 +1,26 @@
+- type: latheRecipePack
+  id: Implants
+  recipes:
+  - JawsOfLifeLeftArm
+  - JawsOfLifeRightArm
+  - SpeedLeftLeg
+  - SpeedRightLeg
+  - DexLeftHand
+  - DexRightHand
+
+- type: latheRecipePack
+  id: CyberLiver
+  recipes:
+  - BasicCyberneticLiver
+
+- type: latheRecipePack
+  id: CyberOrgans
+  recipes:
+  - BasicCyberneticHeart
+  - BasicCyberneticLungs
+
+- type: latheRecipePack
+  id: UpgradedCyberOrgans
+  recipes:
+  - UpgradedCyberneticHeart
+  - UpgradedCyberneticLungs

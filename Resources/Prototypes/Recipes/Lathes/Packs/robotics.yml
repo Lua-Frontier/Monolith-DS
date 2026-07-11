@@ -26,15 +26,16 @@
 - type: latheRecipePack
   id: SMCybernetics
   recipes:
-  - JawsOfLifeLeftArm
-  - JawsOfLifeRightArm
-  - SpeedLeftLeg
-  - SpeedRightLeg
+#  - JawsOfLifeLeftArm # Commented by LuaM
+#  - JawsOfLifeRightArm
+#  - SpeedLeftLeg
+#  - SpeedRightLeg
   - BasicCyberneticEyes
   - SecurityCyberneticEyes
   - MedicalCyberneticEyes
-  - DexLeftHand
-  - DexRightHand
+  - DiagnosticCyberneticEyes # LuaM
+#  - DexLeftHand # Commented by LuaM
+#  - DexRightHand
 
 - type: latheRecipePack
   id: BorgLimbsStatic

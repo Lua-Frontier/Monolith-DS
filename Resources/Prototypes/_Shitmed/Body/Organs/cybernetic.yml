@@ -1,32 +1,36 @@
-- type: entity
-  parent: OrganHumanEyes
-  abstract: true
-  id: BaseCyberneticEyes
-  components:
-  - type: Cybernetics
-  - type: Sprite
-    sprite: _EinsteinEngines/Mobs/Species/IPC/organs.rsi
-    state: "eyes"
-  - type: PirateBountyItem # Mono
-    id: Cybernetics
+#- type: entity # Commented by LuaM
+#  parent: OrganHumanEyes
+#  abstract: true
+#  id: BaseCyberneticEyes
+#  components:
+#  - type: Cybernetics
+#  - type: Sprite
+#    sprite: _EinsteinEngines/Mobs/Species/IPC/organs.rsi
+#    state: "eyes"
+#  - type: PirateBountyItem # Mono
+#    id: Cybernetics
+
+#- type: entity # Commented by LuaM
+#  parent: BaseCyberneticEyes
+#  id: BasicCyberneticEyes
+#  name: cybernetic eyes
+#  description: A pair of cybernetic eyes that enhance your vision, and protect you from eye damage.
+#  components:
+#  - type: Organ
+#    onAdd:
+#    - type: FlashImmunity
+#    - type: EyeProtection
 
 - type: entity
-  parent: BaseCyberneticEyes
-  id: BasicCyberneticEyes
-  name: cybernetic eyes
-  description: A pair of cybernetic eyes that enhance your vision, and protect you from eye damage.
-  components:
-  - type: Organ
-    onAdd:
-    - type: FlashImmunity
-    - type: EyeProtection
-
-- type: entity
-  parent: BaseCyberneticEyes
+  parent: BasicCyberneticEyes # LuaM: BaseCyberneticEyes > BasicCyberneticEyes
   id: SecurityCyberneticEyes
   name: cybernetic security eyes
   description: A pair of cybernetic eyes that enhance your vision, featuring an integrated SecHUD.
   components:
+# LuaM-start:
+  - type: Sprite
+    state: eyes-sechud
+# LuaM-end.
   - type: Organ
     onAdd:
     - type: FlashImmunity
@@ -36,18 +40,255 @@
     - type: ShowCriminalRecordIcons
 
 - type: entity
-  parent: BaseCyberneticEyes
+  parent: BasicCyberneticEyes # LuaM: BaseCyberneticEyes > BasicCyberneticEyes
   id: MedicalCyberneticEyes
   name: cybernetic diagnostic eyes
   description: A pair of cybernetic eyes that enhance your vision, featuring an integrated MedHUD.
   components:
+# LuaM-start:
+  - type: Sprite
+    state: eyes-medhud
+# LuaM-end.
   - type: Organ
     onAdd:
-    - type: FlashImmunity
-    - type: EyeProtection
+#    - type: FlashImmunity # Commented by LuaM
+#    - type: EyeProtection # Commented by LuaM
     - type: ShowHealthBars
       damageContainers:
       - Biological
     - type: ShowHealthIcons
       damageContainers:
       - Biological
+
+# LuaM-start:
+# It's a port of original GoobStation organs:
+- type: entity
+  id: BaseCyberneticOrgan
+  parent: BaseHumanOrgan
+  abstract: true
+  components:
+  - type: Cybernetics
+  - type: Sprite
+    sprite: _Shitmed/Mobs/Species/Misc/Cybernetics/organs.rsi
+  - type: Tag
+    tags:
+    - Organ
+
+# Eyes
+
+- type: entity
+  parent: BaseCyberneticOrgan
+  id: BasicCyberneticEyes
+  name: cybernetic eyes
+  description: A pair of cybernetic eyes that enhance your vision, and protect you from eye damage.
+  components:
+  - type: Cybernetics
+  - type: Sprite
+    sprite: _Shitmed/Mobs/Species/Misc/Cybernetics/organs.rsi
+    state: eyes
+  - type: Organ
+    intCap: 21
+    integrity: 21
+    integrityThresholds:
+      Normal: 21
+      Damaged: 11
+      Destroyed: 0
+    slotId: eyes
+    onAdd:
+    - type: FlashImmunity
+    - type: EyeProtection
+  - type: Tag
+    tags:
+    - Eyes
+  - type: Eyes
+  - type: PirateBountyItem # LuaM
+    id: Cybernetics
+
+- type: entity
+  parent: BasicCyberneticEyes
+  id: DiagnosticCyberneticEyes
+  name: cybernetic diagnostic eyes
+  description: A pair of cybernetic eyes that enhance your vision, featuring an integrated diagnostic hud.
+  components:
+  - type: Sprite
+    state: eyes-diagnostic
+  - type: Organ
+    onAdd:
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
+      - SiliconRadiation
+    - type: ShowHealthIcons
+      damageContainers:
+      - Inorganic
+      - Silicon
+      - SiliconRadiation
+
+# Heart
+
+- type: entity
+  parent: BaseCyberneticOrgan
+  id: BasicCyberneticHeart
+  name: cybernetic heart
+  description: A precision-tuned heart that slows down medicine absorption while hastening the absorption of poisons and narcotics resulting in weakened effects.
+  components:
+  - type: Sprite
+    state: heart-on
+  - type: Heart
+  - type: Organ
+    intCap: 25
+    integrity: 25
+    integrityThresholds:
+      Normal: 25
+      Damaged: 9
+      Destroyed: 0
+    slotId: heart
+    onAdd:
+    - type: StaminaModifier
+      modifier: 1.35
+  - type: Metabolizer
+    maxPoisonsProcessable: 2
+    metabolizerTypes: [ Cybernetic ]
+    groups:
+    - id: Medicine
+      rateModifier: 0.7
+    - id: Poison
+      rateModifier: 1.4
+    - id: Narcotic
+      rateModifier: 1.2
+  - type: Tag
+    tags:
+    - Organ
+    - Heart
+  - type: Item
+    size: Small
+    heldPrefix: heart
+
+- type: entity
+  parent: BasicCyberneticHeart
+  id: UpgradedCyberneticHeart
+  name: upgraded cybernetic heart
+  description: A next-gen circulatory core that slowly delivers medicine throughout the body providing much better healing while heavily accelerating and weakening toxins and narcotics.
+  components:
+  - type: Sprite
+    state: heart-u-on
+  - type: Organ
+    intCap: 32
+    integrity: 32
+    integrityThresholds:
+      Normal: 32
+      Damaged: 9
+      Destroyed: 0
+    slotId: heart
+    onAdd:
+    - type: StaminaModifier
+      modifier: 1.7
+    - type: PressureImmunity # LuaM
+  - type: Metabolizer
+    maxPoisonsProcessable: 2
+    metabolizerTypes: [ Cybernetic ]
+    groups:
+    - id: Medicine
+      rateModifier: 0.4
+    - id: Poison
+      rateModifier: 2.8
+    - id: Narcotic
+      rateModifier: 1.6
+
+# Liver
+
+- type: entity
+  parent: BaseCyberneticOrgan
+  id: BasicCyberneticLiver
+  name: cybernetic liver
+  description: A high-efficiency synthetic liver that neutralizes all negative effects of alcohol while preserving the buzz.
+  components:
+  - type: Liver
+  - type: Organ
+    intCap: 29
+    integrity: 29
+    integrityThresholds:
+      Normal: 29
+      Damaged: 12
+      Destroyed: 0
+    slotId: liver
+  - type: Sprite
+    state: liver
+  - type: Item
+    size: Small
+    heldPrefix: liver
+  - type: Metabolizer
+    maxPoisonsProcessable: 1
+    metabolizerTypes: [ Cybernetic ]
+    groups:
+    - id: Alcohol
+      rateModifier: 0.1
+  - type: Tag
+    tags:
+    - Organ
+    - Liver
+
+# Lungs
+
+- type: entity
+  parent: BaseCyberneticOrgan
+  id: BasicCyberneticLungs
+  name: cybernetic lungs
+  description: Advanced synthetic lungs that breathe oxygen and nitrogen, ignore CO2, and resist most other atmospheric hazards.
+  components:
+  - type: Sprite
+    layers:
+      - state: lung-l
+      - state: lung-r
+  - type: Organ
+    intCap: 25
+    integrity: 25
+    integrityThresholds:
+      Normal: 25
+      Damaged: 9
+      Destroyed: 0
+    slotId: lungs
+  - type: Item
+    size: Small
+    heldPrefix: lungs
+  - type: Lung
+  - type: Metabolizer
+    removeEmpty: true
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [ Cybernetic ]
+    groups:
+    - id: Gas
+      rateModifier: 100.0
+  - type: SolutionContainerManager
+    solutions:
+      Lung:
+        maxVol: 100.0
+        canReact: false
+  - type: Tag
+    tags:
+    - Organ
+    - Lungs
+
+- type: entity
+  parent: BasicCyberneticLungs
+  id: UpgradedCyberneticLungs
+  name: upgraded cybernetic lungs
+  description: A self-contained respiratory system that eliminates the need to breathe entirely and grants increased stamina recovery.
+  components:
+  - type: Sprite
+    layers:
+      - state: lung-u-l
+      - state: lung-u-r
+  - type: Organ
+    intCap: 32
+    integrity: 32
+    integrityThresholds:
+      Normal: 32
+      Damaged: 9
+      Destroyed: 0
+    slotId: lungs
+    onAdd:
+    - type: BreathingImmunity # LuaM
+# LuaM-end.

@@ -413,6 +413,12 @@
     - S2Mechs
     - SpaceMechaWeapons
     - SpaceMechaIFF
+    # LuaM-start:
+    - Implants
+    - CyberLiver
+    - CyberOrgans
+    - UpgradedCyberOrgans
+    # LuaM-end.
   - type: MaterialStorage
     whitelist:
       tags:
@@ -499,7 +505,7 @@
     - DynamicAmmoRecipePack
     - SecurityWeapons
     - SecurityDisablers
-    - SMCybernetics
+#    - SMCybernetics # Commented by LuaM
     # Mono - Mechs
     - WeaponMechCombatArsenal
     - SmartGun # Goobstation
@@ -616,6 +622,12 @@
     # Einstein Engines Packs
     - Translators # Language
     - TranslatorImplanters # Language
+    # LuaM-start:
+    - Implants
+    - CyberLiver
+    - CyberOrgans
+    - UpgradedCyberOrgans
+    # LuaM-end.
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget

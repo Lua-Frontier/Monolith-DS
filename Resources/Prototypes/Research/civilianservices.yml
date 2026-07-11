@@ -191,15 +191,16 @@
   tier: 2
   cost: 20000
   recipeUnlocks:
-  - JawsOfLifeLeftArm
-  - JawsOfLifeRightArm
-  - SpeedLeftLeg
-  - SpeedRightLeg
-  - DexLeftHand
-  - DexRightHand
+#  - JawsOfLifeLeftArm # Commented by LuaM
+#  - JawsOfLifeRightArm
+#  - SpeedLeftLeg
+#  - SpeedRightLeg
+#  - DexLeftHand
+#  - DexRightHand
   - BasicCyberneticEyes
   - SecurityCyberneticEyes
   - MedicalCyberneticEyes
+  - DiagnosticCyberneticEyes # LuaM
   technologyPrerequisites:
   - AdvancedTreatment
   position: -2, 12

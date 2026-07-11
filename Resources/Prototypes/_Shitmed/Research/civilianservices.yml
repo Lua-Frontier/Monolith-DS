@@ -15,5 +15,5 @@
   - ShitmedOmnimedTool
   - AutodocCircuitboard
   technologyPrerequisites:
-  - CyberneticEnhancements
-  position: -2, 13
+  - CyberneticOrgans # LuaM: CyberneticEnhancements > CyberneticOrgans
+  position: -1, 11 # LuaM: -2, 13 > -1, 11

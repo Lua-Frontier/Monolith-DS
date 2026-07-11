@@ -1,0 +1,61 @@
+- type: latheRecipe
+  id: BasicCyberneticLiver
+  result: BasicCyberneticLiver
+  completetime: 15
+  materials:
+    Steel: 2000
+    Glass: 1000
+    Plastic: 1000
+    Silver: 1500
+    Gold: 600
+    Bluespace: 200
+
+- type: latheRecipe
+  id: BasicCyberneticLungs
+  result: BasicCyberneticLungs
+  entityIcon: BasicCyberneticLungs
+  completetime: 20
+  materials:
+    Steel: 2500
+    Glass: 500
+    Plastic: 2000
+    Silver: 1000
+    Plasma: 1250
+    Bluespace: 200
+
+- type: latheRecipe
+  id: BasicCyberneticHeart
+  result: BasicCyberneticHeart
+  completetime: 20
+  materials:
+    Steel: 3000
+    Glass: 500
+    Plastic: 1500
+    Gold: 1000
+    Plasma: 1250
+    Bluespace: 200
+
+- type: latheRecipe
+  id: UpgradedCyberneticHeart
+  result: UpgradedCyberneticHeart
+  completetime: 35
+  materials:
+    Plasteel: 3000
+    Glass: 1500
+    Plastic: 2500
+    Gold: 1000
+    Plasma: 2500
+    Bluespace: 400
+
+- type: latheRecipe
+  id: UpgradedCyberneticLungs
+  result: UpgradedCyberneticLungs
+  entityIcon: UpgradedCyberneticHeart
+  completetime: 35
+  materials:
+    Plasteel: 3500
+    Glass: 1500
+    Plastic: 2000
+    Silver: 1000
+    Plasma: 2500
+    Bluespace: 400
