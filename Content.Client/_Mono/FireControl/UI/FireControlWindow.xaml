@@ -34,6 +34,8 @@
                     StyleClasses="ButtonSquare" Margin="2 2 2 2"/>
             </PanelContainer>
 
+            <!-- Forge-Change-Start -->
+
             <!-- Shield status -->
             <PanelContainer Name="ShieldPanel" Visible="False" VerticalExpand="False" HorizontalExpand="True">
                 <PanelContainer.PanelOverride>
@@ -44,6 +46,7 @@
                     <shields:ShipShieldBar Name="ShieldBar" HorizontalExpand="True" MinHeight="20"/>
                 </BoxContainer>
             </PanelContainer>
+
             <!-- Forge-Change-End -->
 
             <!-- Weapons Control Section -->
