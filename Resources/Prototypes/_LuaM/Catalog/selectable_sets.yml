@@ -1,0 +1,31 @@
+- type: thiefBackpackSet
+  id: KitSelectorANMedicDoctor
+  name: selectable-set-an-medic-doctor-kit-name
+  description: selectable-set-an-medic-doctor-kit-desc
+  sprite:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: blackkit
+  content:
+  - ClothingModsuitRoguePowerCell
+
+
+- type: thiefBackpackSet
+  id: KitSelectorANMedicSurgeon
+  name: selectable-set-an-medic-surgeon-kit-name
+  description: selectable-set-an-medic-surgeon-kit-desc
+  sprite:
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    state: e-scalpel
+  content:
+  - ClothingModsuitRoguePowerCell
+
+
+- type: thiefBackpackSet
+  id: KitSelectorANMedicChemistry
+  name: selectable-set-an-medic-chemistry-kit-name
+  description: selectable-set-an-medic-chemistry-kit-desc
+  sprite:
+    sprite: Objects/Specific/Chemistry/vial.rsi
+    state: vial
+  content:
+  - ClothingModsuitRoguePowerCell

@@ -9,8 +9,13 @@
     state: standard
   - type: ThiefUndeterminedBackpack
     possibleSets:
-    - KitSelectorPDVInfiltratorSabateour
-    - KitSelectorPDVInfiltratorChameleon
+#    - KitSelectorPDVInfiltratorSabateour # Commented by LuaM
+#    - KitSelectorPDVInfiltratorChameleon # Commented by LuaM
+     # LuaM-start:
+     - KitSelectorANMedicDoctor
+     - KitSelectorANMedicSurgeon
+     - KitSelectorANMedicChemistry
+     # LuaM-end.
     maxSelectedSets: 1
   - type: ActivatableUI
     key: enum.ThiefBackpackUIKey.Key

@@ -1,4 +1,4 @@
-ent-BluespaceDungeonBase = Мониторинг Блюспейс-активности
+ent-BluespaceDungeonBase = Мониторинг блюспейс-активности
 ent-BluespaceDungeonSnow = { ent-BluespaceDungeonBase }
 ent-BluespaceDungeonScrap = { ent-BluespaceDungeonBase }
 ent-BluespaceDungeonChromite = { ent-BluespaceDungeonBase }

@@ -42,6 +42,13 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
+  - !type:AddLanguageSpecial # LuaM
+    languagesSpoken:
+    - SolCommon
+    - Freespeak
+    languagesUnderstood:
+    - SolCommon
+    - Freespeak
 
 - type: startingGear
   id: SrGear
