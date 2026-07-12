@@ -294,7 +294,7 @@
     maxCharge: 300
   - type: ProjectileBatteryAmmoProvider
     proto: MechMediumPlasmaProjectile
-    fireCost: 225 # LuaM: 100 > 225
+    fireCost: 100
   - type: Appearance
   - type: AmmoCounter
 

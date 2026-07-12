@@ -1345,20 +1345,20 @@
       tags:
       - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
-- type: listing
-  id: UplinkSecurityT1VoucherScorpion
-  name:  uplink-pdv-t1-scorpion-voucher-name
-  description: uplink-pdv-t1-scorpion-voucher-desc
-  productEntity: ShipVoucherScorpion
-  cost:
-    Doubloon: 120
-  categories:
-  - UplinkPdvVouchers
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
+#- type: listing # Commented by LuaM
+#  id: UplinkSecurityT1VoucherScorpion
+#  name:  uplink-pdv-t1-scorpion-voucher-name
+#  description: uplink-pdv-t1-scorpion-voucher-desc
+#  productEntity: ShipVoucherScorpion
+#  cost:
+#    Doubloon: 120
+#  categories:
+#  - UplinkPdvVouchers
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - PirateUplink # LuaM FactionStaticUplinkPdv > PirateUplink
 
 - type: listing
   id: UplinkSecurityT1VoucherBastion
