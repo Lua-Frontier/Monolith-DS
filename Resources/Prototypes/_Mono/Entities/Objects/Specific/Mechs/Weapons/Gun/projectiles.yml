@@ -117,15 +117,15 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 240 # LuaM 60 > 240
-        Blunt: 200 # LuaM 50 > 200
-        Structural: 1000 # LuaM 250 > 1000
+        Piercing: 60
+        Blunt: 50
+        Structural: 250
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 60 # LuaM 15 > 60
+    maxIntensity: 15
     intensitySlope: 20
-    totalIntensity: 60 # LuaM 15 > 60
+    totalIntensity: 15
     maxTileBreak: 1
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
@@ -322,9 +322,9 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 100 # LuaM 25 > 100
-        Structural: 1200 # LuaM 400 > 1200
-        Heat: 200 # LuaM 50 > 200
+        Radiation: 25
+        Structural: 400
+        Heat: 50
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -343,7 +343,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 100 # LuaM 25 > 100
+    totalIntensity: 25
     intensitySlope: 12
-    maxIntensity: 60 # LuaM 15 > 60
+    maxIntensity: 15
     maxTileBreak: 1

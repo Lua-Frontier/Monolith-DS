@@ -35,12 +35,17 @@ public sealed partial class FireControlWindow : FancyWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         RefreshButton.OnPressed += _ => OnServerRefresh?.Invoke();
-        ShowIFFCheckbox.OnToggled += args => NavRadar.ShowIFF = args.Pressed; // Forge-Change
         SelectAllButton.OnPressed += SelectAllWeapons;
         UnselectAllButton.OnPressed += UnselectAllWeapons;
         SelectBallisticButton.OnPressed += SelectBallisticWeapons;
         SelectEnergyButton.OnPressed += SelectEnergyWeapons;
         SelectMissileButton.OnPressed += SelectMissileWeapons;
+
+        IFFToggle.OnToggled += OnIFFTogglePressed;
+        IFFToggle.Pressed = NavRadar.ShowIFF;
+
+        DockToggle.OnToggled += OnDockTogglePressed;
+        DockToggle.Pressed = NavRadar.ShowDocks;
     }
 
     private void SelectAllWeapons(BaseButton.ButtonEventArgs args)
@@ -137,6 +142,18 @@ public sealed partial class FireControlWindow : FancyWindow
 
         OnWeaponSelectionChanged?.Invoke();
         UpdateAllWeaponButtonTexts();
+    }
+
+    private void OnIFFTogglePressed(BaseButton.ButtonEventArgs args)
+    {
+        NavRadar.ShowIFF ^= true;
+        args.Button.Pressed = NavRadar.ShowIFF;
+    }
+
+    private void OnDockTogglePressed(BaseButton.ButtonEventArgs args)
+    {
+        NavRadar.ShowDocks ^= true;
+        args.Button.Pressed = NavRadar.ShowDocks;
     }
 
     /// <summary>

@@ -13,3 +13,21 @@
     whitelist:
       tags:
       - PirateUplink
+
+# Vouchers
+# T1
+
+- type: listing
+  id: UplinkSecurityT1VoucherScorpionLuaM
+  name:  uplink-pdv-t1-scorpion-voucher-name
+  description: uplink-pdv-t1-scorpion-voucher-desc
+  productEntity: ShipVoucherScorpionLuaM
+  cost:
+    Doubloon: 100
+  categories:
+  - UplinkPdvVouchers
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - PirateUplink

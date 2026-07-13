@@ -33,14 +33,8 @@
             <Button Name="RefreshButton" Access="Public" Text="{Loc admin-logs-refresh}"
                     StyleClasses="ButtonSquare" Margin="2 2 2 2"/>
             </PanelContainer>
+
             <!-- Forge-Change-Start -->
-            <PanelContainer VerticalExpand="False" HorizontalExpand="True">
-                <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BorderThickness="4" BorderColor="#2e2e2e" BackgroundColor="#1c1c1c" />
-                </PanelContainer.PanelOverride>
-            <CheckBox Name="ShowIFFCheckbox" Access="Public" Text="{Loc 'gunnery-show-iff'}"
-                      Margin="4 2 2 2" Pressed="True"/>
-            </PanelContainer>
 
             <!-- Shield status -->
             <PanelContainer Name="ShieldPanel" Visible="False" VerticalExpand="False" HorizontalExpand="True">
@@ -52,6 +46,7 @@
                     <shields:ShipShieldBar Name="ShieldBar" HorizontalExpand="True" MinHeight="20"/>
                 </BoxContainer>
             </PanelContainer>
+
             <!-- Forge-Change-End -->
 
             <!-- Weapons Control Section -->
@@ -92,6 +87,40 @@
             </PanelContainer>
             </BoxContainer>
             </PanelContainer>
+
+            <!-- LuaM-Change-Start -->
+
+            <!-- IFF-and-Dock-toggles -->
+            <PanelContainer VerticalExpand="False" HorizontalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BorderThickness="4" BorderColor="#262626" BackgroundColor="#111111" />
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Horizontal" MinWidth="256" MaxWidth="256" HorizontalExpand="False" Margin="2 3 2 3">
+                    <PanelContainer VerticalExpand="False" HorizontalExpand="True">
+                        <PanelContainer.PanelOverride>
+                            <gfx:StyleBoxFlat BorderThickness="4" BorderColor="#2e2e2e" BackgroundColor="#1c1c1c" />
+                        </PanelContainer.PanelOverride>
+                        <Button Name="IFFToggle" Access="Public" Text="{Loc 'shuttle-console-iff-toggle'}"
+                                StyleClasses="ButtonSquare" HorizontalExpand="True" Margin="4 4" ToggleMode="True"/>
+                    </PanelContainer>
+                </BoxContainer>
+            </PanelContainer>
+            <PanelContainer VerticalExpand="False" HorizontalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BorderThickness="4" BorderColor="#262626" BackgroundColor="#111111" />
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Horizontal" MinWidth="256" MaxWidth="256" HorizontalExpand="False" Margin="2 3 2 3">
+                    <PanelContainer VerticalExpand="False" HorizontalExpand="True">
+                        <PanelContainer.PanelOverride>
+                            <gfx:StyleBoxFlat BorderThickness="4" BorderColor="#2e2e2e" BackgroundColor="#1c1c1c" />
+                        </PanelContainer.PanelOverride>
+                        <Button Name="DockToggle" Access="Public" Text="{Loc 'shuttle-console-dock-toggle'}"
+                                StyleClasses="ButtonSquare" HorizontalExpand="True" Margin="4 4" ToggleMode="True"/>
+                    </PanelContainer>
+                </BoxContainer>
+            </PanelContainer>
+
+            <!-- LuaM-Change-End -->
 
             <!-- Weapons List -->
             <PanelContainer VerticalExpand="True" Margin="0 3 0 3">

@@ -443,7 +443,7 @@
     criticalPowerStateSpeedPenalty: 0.85
     maxEquipmentAmount: 3
     airtight: true
-    maxIntegrity: 10000 # LuaM 3000 > 10000
+    maxIntegrity: 3000
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -460,7 +460,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 13000 # LuaM 6000 > 13000
+        damage: 6000
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -651,7 +651,7 @@
     criticalPowerStateSpeedPenalty: 0.95
     maxEquipmentAmount: 1
     airtight: true
-    maxIntegrity: 15000 # LuaM 2000 > 15000
+    maxIntegrity: 2000
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -660,7 +660,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 17000 # LuaM 4000 > 17000
+        damage: 4000
       behaviors:
       - !type:PlaySoundBehavior
         sound:

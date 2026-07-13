@@ -102,6 +102,7 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 3 # Goobstation
+    projectileSpeed: 40 # LuaM
     selectedMode: FullAuto
     availableModes:
     - FullAuto
