@@ -18,7 +18,7 @@
       activeSound:
         path: /Audio/Weapons/ebladehum.ogg
     - type: ItemToggleSize
-      activatedSize: Huge
+      activatedSize: Ginormous # LuaM: Huge > Ginormous
     - type: ComponentToggler
       components:
       - type: DisarmMalus

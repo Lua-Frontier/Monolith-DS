@@ -124,3 +124,6 @@ ent-ButtonFrameExit = { ent-ButtonFrame }
 ent-ButtonFrameJanitor = { ent-ButtonFrame }
     .suffix = Уборщик
     .desc = { ent-ButtonFrame.desc }
+ent-LockableButtonCentcomm = { ent-LockableButton }
+    .suffix = УСФ
+    .desc = { ent-LockableButton.desc }
