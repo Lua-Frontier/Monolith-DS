@@ -1,0 +1,47 @@
+# Author Info
+# GitHub: fox76055
+# Discord: daeqa1us_
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Phoenix
+  parent: BaseVessel
+  name: FXD Phoenix
+  description: Тяжёлый корвет с облегчённой бронёй, специализированный для экспедиций и ислледований. Вооруженный 6 Bofors 255 мм, и 4 L65 «Лонгбоу» 90 мм.
+  price: 380000
+  category: Large
+  group: Expedition
+  access: Mercenary
+  shuttlePath: /Maps/_LuaM/Shuttles/Expedition/Phoenix.yml
+  guidebookPage: Null
+  class:
+  - Capital
+  - Medical
+  - Chemistry
+  - Pursuit
+  - Expedition
+  - Science
+  - Salvage
+  engine:
+  - NFR
+
+- type: gameMap
+  id: Phoenix
+  mapName: 'FXD Phoenix'
+  mapPath: /Maps/_LuaM/Shuttles/Expedition/Phoenix.yml
+  minPlayers: 0
+  stations:
+    Phoenix:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'FXD Phoenix{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]
