@@ -7,7 +7,23 @@
     state: blackkit
   content:
   - ClothingModsuitRoguePowerCell
-
+  - DefibrillatorSyndicate
+  - JetpackVoidFilled
+  - MedkitCombatFilled
+  - MedkitCombatFilled
+  - RadAutoInjector
+  - RadAutoInjector
+  - AntiPoisonMedipen
+  - AntiPoisonMedipen
+  - CombatMedipen
+  - CombatMedipen
+  - CombatMedipen
+  - BruteAutoInjector
+  - BruteAutoInjector
+  - BruteAutoInjector
+  - BurnAutoInjector
+  - BurnAutoInjector
+  - BurnAutoInjector
 
 - type: thiefBackpackSet
   id: KitSelectorANMedicSurgeon
@@ -18,7 +34,16 @@
     state: e-scalpel
   content:
   - ClothingModsuitRoguePowerCell
-
+  - OmnimedToolSyndie
+  - ClothingBackpackDuffelSyndicateFilledSurgery
+  - BoxNitrileGloves
+  - ClothingMaskBreathMedicalSecurity
+  - NitrousOxideTankFilled
+  - EthanolChemistryBottle
+  - ClothingHeadHatSurgcapPurple
+  - UniformScrubsColorPurple
+  - MedkitToxinFilled
+  - MedkitToxinFilled
 
 - type: thiefBackpackSet
   id: KitSelectorANMedicChemistry
@@ -29,3 +54,19 @@
     state: vial
   content:
   - ClothingModsuitRoguePowerCell
+  - SyndiHypo
+  - BluespaceBeaker
+  - JugOmnizine
+  - ChemBag
+  - NFBlueprintJugBluespace
+  - NFBlueprintSyringeBluespace
+  - NFBlueprintVialBluespace
+  - NFBlueprintBluespaceBeaker
+  - ChemMasterFlatpack
+  - ChemDispenserFlatpack
+  - VendingMachineChemicalsFlatpack
+  - MachineCentrifugeFlatpack
+  - KitchenReagentGrinderFlatpack
+  - BaseGasCondenserFlatpack
+  - ChemicalSynthesisKit
+  - ChemicalSynthesisKit

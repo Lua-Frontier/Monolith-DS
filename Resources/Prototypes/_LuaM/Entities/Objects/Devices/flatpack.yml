@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseNFFlatpack
+  id: ChemDispenserFlatpack
+  name: chem dispenser flatpack
+  description: A flatpack used for constructing an chem dispenser.
+  suffix: Filled
+  components:
+  - type: Flatpack
+    entity: ChemDispenser

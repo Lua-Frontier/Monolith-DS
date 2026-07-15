@@ -2,7 +2,7 @@
 - type: technology
   id: Implants
   name: research-technology-implants
-  entityIcon: BasicCyberneticEyes
+  entityIcon: JawsOfLifeRightArm
   discipline: CivilianServices
   tier: 3
   cost: 25000

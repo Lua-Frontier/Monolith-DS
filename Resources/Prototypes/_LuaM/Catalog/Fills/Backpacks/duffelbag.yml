@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateMedicalBundle
+  id: ClothingBackpackDuffelSyndicateFilledSurgery
+  name: syndicate advanced surgical duffel bag
+  description: A large duffel bag containing a full suite of advanced surgical tools.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHandsGlovesSurgical
+      - id: EnergyScalpel
+      - id: AdvancedRetractor
+      - id: EnergyCautery
+      - id: AdvancedBoneGel

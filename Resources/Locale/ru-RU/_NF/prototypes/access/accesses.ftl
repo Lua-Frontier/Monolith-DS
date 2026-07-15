@@ -6,4 +6,4 @@ id-card-access-level-stc = Диспетчер
 id-card-access-level-sergeant = Сержант ТСФ
 id-card-access-level-bailiff = Капитан ТСФ
 id-card-access-level-brigmedic = Фельдшер ТСФ
-id-card-access-level-pirate = Пират
+id-card-access-level-pirate = Авангард

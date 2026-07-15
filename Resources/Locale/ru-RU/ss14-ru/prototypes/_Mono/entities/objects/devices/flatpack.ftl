@@ -50,3 +50,4 @@ ent-ResearchAndDevelopmentServerMercFlatpack = упакованный РнД-с�
     .desc = Набор для сборки РнД-сервера наёмников.
 ent-ChemMasterFilledFlatpack = упакованный ХимМастер 4000
     .desc = Набор для сборки ХимМастера 4000.
+    .suffix = Заполненный

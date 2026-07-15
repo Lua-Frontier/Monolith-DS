@@ -312,6 +312,7 @@
   id: ChemMasterFilledFlatpack
   name: filled chemmaster flatpack
   description: A flatpack used for constructing a pre-filled ChemMaster 4000.
+  suffix: Filled # LuaM
   components:
   - type: Flatpack
     entity: ChemMasterFilled

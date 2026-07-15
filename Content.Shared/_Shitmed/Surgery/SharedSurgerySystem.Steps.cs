@@ -32,10 +32,16 @@ namespace Content.Shared._Shitmed.Medical.Surgery;
 
 public abstract partial class SharedSurgerySystem
 {
+
+    private EntityQuery<SurgeryIgnoreClothingComponent> _ignoreQuery; // LuaM-port-Shitmed-content.
+
     private static readonly string[] BruteDamageTypes = { "Slash", "Blunt", "Piercing" };
     private static readonly string[] BurnDamageTypes = { "Heat", "Shock", "Cold", "Caustic" };
     private void InitializeSteps()
     {
+
+        _ignoreQuery = GetEntityQuery<SurgeryIgnoreClothingComponent>(); // LuaM-port-Shitmed-content.
+
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryStepEvent>(OnToolStep);
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryStepCompleteCheckEvent>(OnToolCheck);
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryCanPerformStepEvent>(OnToolCanPerform);
@@ -278,8 +284,14 @@ public abstract partial class SharedSurgerySystem
                 return;
             }
         }
-
-        if (_inventory.TryGetContainerSlotEnumerator(args.Body, out var containerSlotEnumerator, args.TargetSlots))
+        // LuaM-start:
+    bool ignoreClothing = _ignoreQuery.HasComp(args.User) 
+        || args.Tools.Any(tool => _ignoreQuery.HasComp(tool));
+    
+    if (!ignoreClothing 
+        && _inventory.TryGetContainerSlotEnumerator(args.Body, out var containerSlotEnumerator, args.TargetSlots))
+        // LuaM-end
+//        if (_inventory.TryGetContainerSlotEnumerator(args.Body, out var containerSlotEnumerator, args.TargetSlots)) // Commented by LuaM
         {
             while (containerSlotEnumerator.MoveNext(out var containerSlot))
             {

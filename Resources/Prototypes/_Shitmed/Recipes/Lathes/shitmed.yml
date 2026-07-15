@@ -4,10 +4,21 @@
 - type: latheRecipe
   id: ShitmedOmnimedTool
   result: OmnimedTool
-  completetime: 2
+  completetime: 8 # LuaM: 2 > 8
   materials:
     Steel: 1200
     Glass: 300
     Gold: 300
     Silver: 300
     Plasma: 300 
+
+# LuaM port original Shitmed content
+- type: latheRecipe
+  parent: BaseSurgicalRecipe
+  id: AdvancedBoneGel
+  result: AdvancedBoneGel
+  completetime: 2
+  materials:
+    Steel: 600
+    Glass: 150
+    Plasma: 150

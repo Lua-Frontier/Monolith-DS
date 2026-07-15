@@ -366,9 +366,9 @@
         Piercing: 10
         Heat: 1
   - type: Cautery
-    speed: 1.5
+    speed: 3 # LuaM: 1.5 > 3
   - type: Drill
-    speed: 1.5
+    speed: 3 # LuaM: 1.5 > 3
   - type: StaticPrice # Mono
     price: 120
 
@@ -399,9 +399,9 @@
         Slash: 10
         Heat: 1
   - type: Scalpel
-    speed: 1.5
+    speed: 3 # LuaM: 1.5 > 3
   - type: BoneSaw
-    speed: 1.5
+    speed: 3 # LuaM: 1.5 > 3
   - type: StaticPrice # Mono
     price: 120
 
@@ -432,13 +432,13 @@
         Slash: 6.5
         Heat: 1
   - type: Hemostat
-    speed: 1.5
+    speed: 3 # LuaM: 1.5 > 3
   - type: Retractor
-    speed: 1.5
+    speed: 3 # LuaM: 1.5 > 3
   - type: Tweezers
-    speed: 1.5
+    speed: 3 # LuaM: 1.5 > 3
   - type: Tending
-    speed: 1.5
+    speed: 3 # LuaM: 1.5 > 3
   - type: StaticPrice # Mono
     price: 120
 
