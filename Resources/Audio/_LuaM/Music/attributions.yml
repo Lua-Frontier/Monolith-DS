@@ -2,3 +2,18 @@
   license: "Custom"
   copyright: "Creative Commons. Created by Q/\ntum"
   source: "https://www.youtube.com/watch?v=AisGME8DRk0"
+
+- files: ["Scattle2.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Created by Maciej EllisTinker (Discord) for Space Station 14 server Frontier Colososs"
+  source: "https://github.com/Lua-Frontier/Monolith-DS"
+
+- files: ["Hotline_Run.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Created by Maciej EllisTinker (Discord) for Space Station 14 server Frontier Colososs"
+  source: "https://github.com/Lua-Frontier/Monolith-DS"
+
+- files: ["Hotlin_Hookers.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Created by Maciej EllisTinker (Discord) for Space Station 14 server Frontier Colososs"
+  source: "https://github.com/Lua-Frontier/Monolith-DS"
