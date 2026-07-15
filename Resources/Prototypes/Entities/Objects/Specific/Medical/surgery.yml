@@ -227,6 +227,11 @@
   - type: Item
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/bonesetter.rsi
   - type: BoneSetter
+  - type: SurgeryTool # LuaM
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/bone_setter.ogg
+    endSound:
+      path: /Audio/_Shitmed/Medical/Surgery/bone_setter.ogg
 
 # Bone Gel - Shitmed Change
 - type: entity
