@@ -18,10 +18,10 @@
 # T1
 
 - type: listing
-  id: UplinkSecurityT1VoucherScorpionLuaM
+  id: UplinkSecurityT1VoucherScorpion
   name:  uplink-pdv-t1-scorpion-voucher-name
   description: uplink-pdv-t1-scorpion-voucher-desc
-  productEntity: ShipVoucherScorpionLuaM
+  productEntity: ShipVoucherScorpion
   cost:
     Doubloon: 100
   categories:

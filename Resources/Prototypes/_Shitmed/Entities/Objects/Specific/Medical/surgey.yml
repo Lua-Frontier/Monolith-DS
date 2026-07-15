@@ -48,15 +48,5 @@
         Blunt: 12
   - type: BoneGel
     speed: 3
-    soundStateActivate:
-      collection: sparks
-      params:
-        variation: 0.125
-        volume: -5
   - type: BoneSetter
     speed: 3
-    soundStateActivate:
-      collection: sparks
-      params:
-        variation: 0.125
-        volume: -5
