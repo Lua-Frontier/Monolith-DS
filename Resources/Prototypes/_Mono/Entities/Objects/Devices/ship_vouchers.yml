@@ -534,7 +534,7 @@
     prototypes:
     - ShipVoucherNeptune
     - ShipVoucherBastion
-    - ShipVoucherScorpionLuaM # LuaM ShipVoucherScorpion > ShipVoucherScorpionLuaM
+    - ShipVoucherScorpion
     - ShipVoucherFenrir
     - ShipVoucherGarm
 
