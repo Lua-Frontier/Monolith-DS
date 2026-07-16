@@ -173,6 +173,11 @@
         - !type:OrganType # Goobstation - Yowie
           type: Yowie
           shouldHave: false
+        # LuaM-port-original-Shitmed-content-start:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: false
+        # LuaM-port-original-Shitmed-content-end.
         damage:
           types:
             Poison: 1
@@ -220,6 +225,11 @@
         - !type:OrganType # Goobstation - Yowie
           type: Yowie
           shouldHave: false
+        # LuaM-port-original-Shitmed-content-start:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: false
+        # LuaM-port-original-Shitmed-content-end.
       - !type:Drunk
         boozePower: 2
 
