@@ -52,9 +52,9 @@
   description: A combat hardsuit designed by the Phaethon Dynasty. A heavier but still general-purpose hardsuit, effective but not stellar against most damage types.
   components:
   - type: Sprite
-    sprite: _Mono/Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    sprite: _LuaM/Clothing/OuterClothing/Hardsuits/syndicate.rsi # LuaM: _Mono/Clothing/OuterClothing/Hardsuits/syndicate.rsi -> _LuaM/Clothing/OuterClothing/Hardsuits/syndicate.rsi
   - type: Clothing
-    sprite: _Mono/Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    sprite: _LuaM/Clothing/OuterClothing/Hardsuits/syndicate.rsi # LuaM: _Mono/Clothing/OuterClothing/Hardsuits/syndicate.rsi -> _LuaM/Clothing/OuterClothing/Hardsuits/syndicate.rsi
   - type: ToggleableClothing
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
@@ -141,9 +141,9 @@
   description: An adorned tacsuit designed with an imperfect nanolaminate composition. High maneuverability, sturdy armor.
   components:
   - type: Sprite
-    sprite: _Mono/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi
+    sprite: _LuaM/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi # LuaM: _Mono/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi -> _LuaM/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi
   - type: Clothing
-    sprite: _Mono/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi
+    sprite: _LuaM/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi # LuaM: _Mono/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi -> _LuaM/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi
   - type: ToggleableClothing
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
@@ -183,9 +183,9 @@
   description: Originally based off of the CV-32 hardsuit, the CV-53 tacsuit sacrifices conventional armor plating for environmental protection, and a rechargeable hard-shield.
   components:
   - type: Sprite
-    sprite: _Mono/Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+    sprite: _LuaM/Clothing/OuterClothing/Hardsuits/syndieelite.rsi # LuaM: _Mono/Clothing/OuterClothing/Hardsuits/syndieelite.rsi -> _LuaM/Clothing/OuterClothing/Hardsuits/syndieelite.rsi
   - type: Clothing
-    sprite: _Mono/Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+    sprite: _LuaM/Clothing/OuterClothing/Hardsuits/syndieelite.rsi # LuaM: _Mono/Clothing/OuterClothing/Hardsuits/syndieelite.rsi ->  _LuaM/Clothing/OuterClothing/Hardsuits/syndieelite.rsi
   - type: ToggleableClothing
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
