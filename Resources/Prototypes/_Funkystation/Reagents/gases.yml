@@ -25,6 +25,11 @@
         - !type:OrganType
           type: Hydrakin
           shouldHave: false
+        # LuaM-port-original-Shitmed-content-start:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: false
+        # LuaM-port-original-Shitmed-content-end.
         emote: Cough
         showInChat: true
         probability: 0.1
@@ -39,6 +44,11 @@
         - !type:OrganType
           type: Hydrakin
           shouldHave: false
+        # LuaM-port-original-Shitmed-content-start:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: false
+        # LuaM-port-original-Shitmed-content-end.
         scaleByQuantity: true
         ignoreResistances: true
         damage:
@@ -53,6 +63,11 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        # LuaM-port-original-Shitmed-content-start:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: false
+        # LuaM-port-original-Shitmed-content-end.
         key: SeeingRainbows
         component: SeeingRainbows
         type: Add
@@ -315,9 +330,32 @@
         conditions:
         - !type:OrganType
           type: Plant
+      # LuaM-port-original-Shitmed-content-start:
+      - !type:Oxygenate
+        factor: 8
+        conditions:
+        - !type:OrganType
+          type: Cybernetic
+      # LuaM-port-original-Shitmed-content-end.
       # Convert Pluoxium into CO2.
       - !type:ModifyLungGas
+      # LuaM-port-original-Shitmed-content-start:
+        conditions:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: false
+      # LuaM-port-original-Shitmed-content-end.
         ratios:
           CarbonDioxide: 1.0
-          Pluoxium: -1.0 
+          Pluoxium: -1.0
+      # LuaM-port-original-Shitmed-content-start:
+      - !type:ModifyLungGas
+        conditions:
+        - !type:OrganType
+          type: Cybernetic
+          shouldHave: true
+        ratios:
+          CarbonDioxide: 0.5
+          Pluoxium: -0.5
+      # LuaM-port-original-Shitmed-content-end.
  
