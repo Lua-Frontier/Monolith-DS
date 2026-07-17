@@ -111,7 +111,7 @@
   - ContractorFun
   - SeniorOfficerTrinkets
   - NfsdSpeciesSpecific
-  - TsfmcFirearm
+  - TsfmcFirearmCommand
   - TsfmcSidearm
   - TsfmcMag
   - TsfmcSidearmAmmo
@@ -141,7 +141,7 @@
   - ContractorFun
   - SeniorOfficerTrinkets
   - NfsdSpeciesSpecific
-  - TsfmcFirearm
+  - TsfmcFirearmCommand
   - TsfmcSidearm
   - TsfmcMag
   - TsfmcSidearmAmmo

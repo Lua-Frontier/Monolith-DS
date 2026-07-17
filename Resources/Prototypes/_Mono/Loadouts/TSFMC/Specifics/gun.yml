@@ -16,23 +16,20 @@
   name: loadout-group-weapon
   minLimit: 0
   loadouts:
-  - FactionRiversongLoadout
+  - FactionLecterLoadout
   - FactionDrozdLoadout
-  - FactionDragonfangLoadout
+  - FactionVulcanLoadout
   - SecurityGuardEnforcerLoadout
 
 - type: loadoutGroup
   id: TsfmcFirearm
   name: loadout-group-weapon
-  minLimit: 0 # LuaM: 1 > 0
+  minLimit: 0
   loadouts:
-  - FactionLecterLoadout
+  - FactionRiversongLoadout
   - FactionDrozdLoadout
-  - FactionVulcanLoadout
-  - FactionEnergyGunLoadout
-  # - FactionBanditLoadout
-  fallbacks:
-  - FactionVulcanLoadout
+  - FactionDragonfangLoadout
+  - SecurityGuardEnforcerLoadout
 
 - type: loadoutGroup
   id: TsfmcSidearm
