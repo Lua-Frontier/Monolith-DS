@@ -415,7 +415,7 @@
     examinable: false
   - type: ProjectileGrenade
     fillPrototype: NavalMine90mm
-    capacity: 6
+    capacity: 3
     minVelocity: 2
     maxVelocity: 2
     randomAngle: true
@@ -477,7 +477,7 @@
     intensitySlope: 5
     maxIntensity: 400
   - type: RadarBlip
-    scale: 0.3
+    scale: 0.7
     shape: circle
     radarColor: "#1df5cd"
   - type: TimedDespawn
@@ -1083,7 +1083,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: HardBomb
-    totalIntensity: 18000
+    totalIntensity: 13000
     intensitySlope: 5
     maxIntensity: 500
   - type: GatheringProjectile
