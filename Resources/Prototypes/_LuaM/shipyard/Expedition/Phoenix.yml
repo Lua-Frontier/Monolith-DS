@@ -7,8 +7,8 @@
 - type: vessel
   id: Phoenix
   parent: BaseVessel
-  name: FXD Phoenix
-  description: Тяжёлый корвет с облегчённой бронёй, специализированный для экспедиций и ислледований. Вооруженный 6 Bofors 255 мм, и 4 L65 «Лонгбоу» 90 мм.
+  name: vessel-phoenix-name
+  description: vessel-phoenix-desc
   limit: 2
   price: 420000
   category: Large

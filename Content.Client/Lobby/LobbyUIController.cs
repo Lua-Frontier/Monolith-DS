@@ -257,11 +257,11 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
         var companyId = humanoid.Company;
         if (_prototypeManager.TryIndex<CompanyPrototype>(companyId, out var company))
         {
-            PreviewPanel.SetCompanyText($"[color=white]Company:[/color] [color={company.Color.ToHex()}]{company.Name}[/color]");
+            PreviewPanel.SetCompanyText($"[color=white]{Loc.GetString("lobby-company-label")}[/color] [color={company.Color.ToHex()}]{company.Name}[/color]"); // LuaM: Company: > {Loc.GetString("lobby-company-label")} 
         }
         else
         {
-            PreviewPanel.SetCompanyText($"[color=white]Company:[/color] [color=yellow]{companyId}[/color]");
+            PreviewPanel.SetCompanyText($"[color=white]{Loc.GetString("lobby-company-label")}[/color] [color=yellow]{companyId}[/color]"); // LuaM: Company: > {Loc.GetString("lobby-company-label")}
         }
 
         // MonoCoins Display - Request balance from server and update display

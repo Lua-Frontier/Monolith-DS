@@ -6,6 +6,8 @@ lathe-menu-search-designs = Поиск проектов
 lathe-menu-category-all = Всё
 lathe-menu-search-filter = Фильтр
 lathe-menu-amount = Кол-во:
+lathe-menu-loop = Зациклить
+lathe-menu-skip = Пропускать при недостатке
 lathe-menu-reagent-slot-examine = Сбоку имеется слот для мензурки.
 lathe-menu-material-display = { $material } { $amount }
 lathe-menu-tooltip-display = { $amount } { $material }
@@ -21,6 +23,7 @@ lathe-menu-material-amount-missing =
        *[other] { NATURALFIXED($amount, 2) } { $unit } { $material } ([color=red]{ NATURALFIXED($missingAmount, 2) } { $unit } не хватает[/color])
     }
 lathe-menu-no-materials-message = Материалы не загружены
+lathe-menu-silo-linked-message = Связано с хранилищем материалов
 lathe-menu-fabricating-message = Производится...
 lathe-menu-materials-title = Материалы
 lathe-menu-queue-title = Очередь производства

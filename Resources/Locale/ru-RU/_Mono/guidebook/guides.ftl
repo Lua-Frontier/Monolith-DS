@@ -29,7 +29,7 @@ guide-entry-monolith-rules = Правила сервера
 
 # Существа
 guide-entry-creatures = Существа сектора
-guide-entry-cortical-borer = Кортикальный буравчик
+guide-entry-cortical-borer = Мозговой червь
 
 # Механоиды
 guide-entry-mechs = Механоиды

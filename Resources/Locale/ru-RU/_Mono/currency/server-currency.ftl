@@ -1,2 +1,2 @@
 server-currency-loading = Загрузка баланса...
-server-currency-text = Баланс: ${$balance}
+server-currency-text = Офшорный счёт: ${$balance}

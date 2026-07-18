@@ -7,9 +7,9 @@
 - type: vessel
   id: Arkansaw
   parent: BaseVessel
-  name: COG Arkansaw
-  description: Made by a forgotten cult; it is a Capital sized mech carrier with a dedicated science and mining bay with mining pulsars. Relatively thin armor and runs on 3 bananium generators wired together. 
-  price: 262000 # engine is fueled with bananium, extremely radioactive engine room, thin armor, extremely vulnerable rear thrusters. 
+  name: vessel-arkansaw-name # LuaM: COG Arkansaw > vessel-arkansaw-name
+  description: vessel-arkansaw-desc # LuaM: Made by a forgotten cult; it is a Capital sized mech carrier with a dedicated science and mining bay with mining pulsars. Relatively thin armor and runs on 3 bananium generators wired together. > vessel-arkansaw-desc
+  price: 262000 # engine is fueled with bananium, extremely radioactive engine room, thin armor, extremely vulnerable rear thrusters.
   category: Large
   group: Expedition
   shuttlePath: /Maps/_Mono/Shuttles/Expedition/arkansaw.yml

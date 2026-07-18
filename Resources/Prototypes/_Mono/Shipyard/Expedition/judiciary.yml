@@ -7,8 +7,8 @@
 - type: vessel
   id: Judiciary
   parent: BaseVessel
-  name: SHM Judiciary
-  description: A refitted research vessel armed with expedition-rated combat equipment.
+  name: vessel-judiciary-name # LuaM: SHM Judiciary > vessel-judiciary-name
+  description: vessel-judiciary-desc # LuaM: A refitted research vessel armed with expedition-rated combat equipment. > vessel-judiciary-desc
   price: 70001 # ~20,000$ markup
   category: Medium
   group: Expedition

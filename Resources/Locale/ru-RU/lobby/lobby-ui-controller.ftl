@@ -1,0 +1,1 @@
+lobby-company-label = Компания:

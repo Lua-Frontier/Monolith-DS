@@ -99,7 +99,7 @@
             <Button Name="TargetIdButton" Access="Public"
                     StyleClasses="ButtonSquare"/>
             <controls:ConfirmButton Name="SellShipButton"
-                Text="Sell"
+                Text="{Loc 'shipyard-console-sell'}"
                 ConfirmationText="{Loc 'shipyard-console-confirm-unassign'}"
                 StyleClasses="ButtonSquare"
                 Disabled="True" />

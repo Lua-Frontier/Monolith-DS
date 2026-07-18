@@ -1,14 +1,12 @@
 ent-PrizeCounter = раздатчик призов
     .desc = Забери свой приз и выиграй несколько игрушек и милых плюшевых мишек!
-ent-TilePrinterNF = Плиточник 5000
-    .desc = Печатает напольные плитки.
-ent-SalvageTechfabNF = утилизационный техфаб
+ent-SalvageTechfabNF = утилизационный ТехФаб
     .desc = Печатает снаряжение необходимое каждому утилизатору.
-ent-NfsdTechFab = техфаб ТСФ
+ent-NfsdTechFab = ТехФаб ТСФ
     .desc = Печатает снаряжение необходимое ТСФ.
-ent-MercenaryTechFab = техфаб наёмника
+ent-MercenaryTechFab = ТехФаб наёмника
     .desc = Печатает снаряжение необходимое каждому наёмнику.
-ent-MercenaryTechFabHacked = взломанный техфаб наёмника
+ent-MercenaryTechFabHacked = взломанный ТехФаб наёмника
     .desc = Печатает снаряжение необходимое каждому наёмнику.
 ent-BlueprintLithograph = литографическая машина
     .desc = Печатает чертежи.
@@ -19,11 +17,11 @@ ent-BiogeneratorFill = { ent-Biogenerator }
     .suffix = Биомасса, 50
     .desc = { ent-Biogenerator.desc }
 
-ent-PirateTechFab = пиратский техфаб
+ent-PirateTechFab = пиратский ТехФаб
     .desc = Вы можете услышать, как оно гудит в предвкушении того, что его накормят новыми чертежами.
     .suffix = DoNotMap
 
-ent-BlueprintReceiverBase = сервисный техфаб
+ent-BlueprintReceiverBase = сервисный ТехФаб
     .desc = Печатает снаряжение для обслуживающего персонала.
-ent-Techfab = инженерный техфаб
+ent-Techfab = инженерный ТехФаб
     .desc = Печатает снаряжение для инженеров.

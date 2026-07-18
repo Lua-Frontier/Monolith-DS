@@ -1,2 +1,2 @@
-vessel-judiciary-name = SHM «Джудишери»
+vessel-judiciary-name = SHM «Джудикари»
 vessel-judiciary-desc = Переоборудованное исследовательское судно с боевым оснащением экспедиционного класса.

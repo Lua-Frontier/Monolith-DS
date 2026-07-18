@@ -13,5 +13,5 @@ ent-MobSpawnMonolithicHellLocust = спаунер
 ent-MobMonolithicHellLocust = монолитная адская саранча
     .desc = Аномальная сущность. Похоже, состоит из резко материальной энергии в странно знакомой форме. Также похоже, что она угрожающе бежит на вас. Осторожно!
 ent-MobSpawnMonolithicGolomRanged = спаунер
-ent-MobMonolithicGolomRanged = монолитный голум
+ent-MobMonolithicGolomRanged = монолитный голем
     .desc = Аномальная сущность. Похоже, полностью состоит из какого-то прочного, кристаллоподобного вида энергии, которой она стреляет в вас. Осторожно!

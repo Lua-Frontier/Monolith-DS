@@ -5,8 +5,8 @@
 - type: vessel
   id: Duran
   parent: BaseVessel
-  name: SRA Duran
-  description: A general-purpose expeditionary vessel with a complementary kitchen. Cheap, slow, and has the structural integrity of a crunchy autumn leaf, but by god does it have soul.
+  name: vessel-duran-name # LuaM: SRA Duran > vessel-duran-name
+  description: vessel-duran-desc # LuaM: A general-purpose expeditionary vessel with a complementary kitchen. Cheap, slow, and has the structural integrity of a crunchy autumn leaf, but by god does it have soul. > vessel-duran-desc
   price: 40600
   category: Medium
   group: Expedition

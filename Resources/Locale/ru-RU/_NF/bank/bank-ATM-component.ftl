@@ -1,7 +1,8 @@
 ## UI
 
-bank-atm-menu-title = Галактический Банк NT
+bank-atm-menu-title = Галактический Банк
 bank-atm-menu-balance-label = Баланс аккаунта:{ " " }
+bank-atm-menu-savings-label = Сбережения:{" "}
 bank-atm-menu-no-bank = Нет аккаунта!
 bank-atm-menu-withdraw-button = Вывести
 bank-atm-menu-deposit-label = Внести сумму:{ " " }
@@ -21,7 +22,7 @@ bank-atm-reason-label = Причина:{ " " }
 bank-atm-description-label = Описание:{ " " }
 vending-machine-menu-cash-slot-label = Наличные:{" "}
 station-bank-payroll = Заработная плата
-station-bank-workorder = Рабочий заказ
+station-bank-work-order = Рабочий заказ
 station-bank-supplies = Ресурсы станции
 station-bank-bounty = Контракт
 station-bank-other = Другое
@@ -29,9 +30,10 @@ station-bank-required = { "(" }Выбрать{ ")" }
 station-bank-requires-reason = Требуются детали транзакции!
 station-bank-unauthorized = Не авторизовано!
 bank-atm-menu-cash-error = ERR: ОШИБКА
+bank-atm-menu-deposit-label-ut = Депозит (сбережения):{" "}
+bank-atm-menu-withdraw-amount = Введите сумму
 
 ## ATM entity
 
 bank-ATM-cashSlot = Купюроприёмник
 station-bank-ATM-cashSlot = Купюроприёмник
-station-bank-work-order = Рабочий заказ

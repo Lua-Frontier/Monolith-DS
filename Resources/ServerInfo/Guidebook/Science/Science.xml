@@ -19,10 +19,8 @@
     <GuideEntityEmbed Entity="Wrench" Caption="Промышленность"/>
     <GuideEntityEmbed Entity="WeaponTetherGun" Caption="Экспериментальная"/>
     <GuideEntityEmbed Entity="ComputerTelevision" Caption="Гражданские службы"/>
-    <GuideEntityEmbed Entity="NFWeaponEnergyRifleSniperXrayCannon" Caption="Арсенал"/> <!-- Frontier: WeaponXrayCannon<WeaponEnergyRifleSniperXrayCannon -->
-  </Box>
-
-<GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/> Используйте ближайшую консоль R&D, чтобы понять, какие исследования закреплены за каждым древом дисциплины.
+    <GuideEntityEmbed Entity="WeaponXrayCannon" Caption="Арсенал"/>
+<GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/> Используйте ближайшую консоль РнД, чтобы понять, какие исследования закреплены за каждым древом дисциплины.
 
 ## Тиры
 У каждого древа дисциплины — до 3 тиров технологий. Вначале открыт только тир 1.

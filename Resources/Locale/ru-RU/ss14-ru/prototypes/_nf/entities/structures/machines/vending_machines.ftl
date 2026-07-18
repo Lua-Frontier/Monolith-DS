@@ -75,7 +75,9 @@ ent-VendingMachinePottedPlantVendPOI = { ent-VendingMachinePottedPlantVend }
    .desc = { ent-VendingMachinePottedPlantVend.desc }
 ent-VendingMachineCigsPOI = { ent-VendingMachineCigs }
    .desc = { ent-VendingMachineCigs.desc }
-
-ent-NFVendingMachineCartNfsd = ТредсЧум
-    .desc = Испорченный ОдежМаг.
-ent-NFVendingMachineCart = тележка вендингового автомата
+ent-NFVendingMachineCartNfsd = ТСФТех
+    .desc = Автомат для выдачи всяких бюрократических и не очень бюрократических штучек бойцам ТСФ.
+    .suffix = ТСФ
+ent-NFVendingMachineCart = КЦТех
+    .desc = Автомат для выдачи всяких бюрократических и не очень бюрократических штучек сотрудникам Колосса Централл.
+    .suffix = Комендант

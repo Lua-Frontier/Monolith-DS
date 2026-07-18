@@ -1,5 +1,5 @@
-blink-component-control-active = моргание: [color=green]активно[/color]
-blink-component-control-inactive = моргание: [color=red]неактивно[/color]
+blink-component-control-active = Телепорт: [color=green]активен[/color]
+blink-component-control-inactive = Телепорт: [color=red]неактивен[/color]
 
-blink-activated-message = Моргание активировано.
-blink-deactivated-message = Моргание деактивировано.
+blink-activated-message = Телепорт активирован.
+blink-deactivated-message = Телепорт деактивирован.

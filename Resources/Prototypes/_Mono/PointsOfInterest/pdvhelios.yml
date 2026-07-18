@@ -42,7 +42,7 @@
             PirateCaptain: [ 1, 1 ]
             PirateFirstMate: [ 1, 1 ]
             PDVDenasvar: [ 3, 3 ]
-            PDVInfiltrator: [ 2, 2 ]
+            PDVInfiltrator: [ 1, 1 ] # LuaM: [ 2, 2 ] > [ 1, 1 ]
             Pirate: [ -1, -1 ]
             PdvBorg: [ 2, 2 ]
           tags:

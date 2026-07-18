@@ -40,7 +40,7 @@ ent-TechDiskComputerCircuitboard = терминал технологически
     .desc = Консольная плата для терминала технологических дисков.
 ent-CrewMonitoringComputerCircuitboard = консоль мониторинга экипажа (консольная плата)
     .desc = { ent-BaseComputerCircuitboard.desc }
-ent-IDComputerCircuitboard = консоль ID карт (консольная плата)
+ent-IDComputerCircuitboard = консоль ID=карт (консольная плата)
     .desc = { ent-BaseComputerCircuitboard.desc }
 ent-BodyScannerComputerCircuitboard = сканер тела (консольная плата)
     .desc = { ent-BaseComputerCircuitboard.desc }
