@@ -4,7 +4,7 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/15/2026 13:27:20
+  time: 07/18/2026 05:26:06
   entityCount: 3374
 maps: []
 grids:
@@ -175,8 +175,8 @@ entities:
     - type: SpreaderGrid
       spreadQueues:
         Smoke: []
-        MetalFoam: []
         Kudzu: []
+        MetalFoam: []
         Puddle: []
     - type: Shuttle
       dampingModifier: 0.25
@@ -7303,6 +7303,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 12.5,-21.5
       parent: 1
+- proto: CarbonDioxideCanister
+  entities:
+  - uid: 1945
+    components:
+    - type: Transform
+      pos: 19.5,-19.5
+      parent: 1
 - proto: CarpetBlack
   entities:
   - uid: 980
@@ -13820,15 +13827,6 @@ entities:
     - type: Transform
       pos: -0.5,-19.5
       parent: 1
-- proto: Paper
-  entities:
-  - uid: 1945
-    components:
-    - type: Transform
-      pos: 12.530091,-23.486595
-      parent: 1
-    - type: Paper
-      content: Нажми кнопку, поставь потребление турбины 500, нагрузку не трогай, стержни на 50%, топливные стержни вставь, меняй каждые 30 - 45 минут. Остальное думай сам, не глупый.
 - proto: PaperBin20
   entities:
   - uid: 1946
