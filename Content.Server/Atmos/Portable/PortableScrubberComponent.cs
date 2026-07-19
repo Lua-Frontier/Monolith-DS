@@ -34,7 +34,8 @@ namespace Content.Server.Atmos.Portable
             Gas.Frezon,
             Gas.BZ, //Funky/Goob
             Gas.Healium, //Funky/Goob
-			Gas.Nitrium, //Funky/Goob
+            Gas.Nitrium, //Funky/Goob
+            Gas.InfectionDeadSpace, // LuaM - Dead Space
         };
 
         [ViewVariables(VVAccess.ReadWrite)]

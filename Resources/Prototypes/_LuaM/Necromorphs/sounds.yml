@@ -1,0 +1,44 @@
+- type: soundCollection
+  id: NecroScreams
+  files:
+    - /Audio/_LuaM/Necromorfs/necromorphSound.ogg
+    - /Audio/_LuaM/Necromorfs/necromorphSound2.ogg
+    - /Audio/_LuaM/Necromorfs/necroSlasher1.ogg
+    - /Audio/_LuaM/Necromorfs/necroSlasher2.ogg
+
+- type: soundCollection
+  id: NecroScreamsWoman
+  files:
+    - /Audio/_LuaM/Necromorfs/necro-scream-woman-1.ogg
+    - /Audio/_LuaM/Necromorfs/necro-scream-woman-2.ogg
+    - /Audio/_LuaM/Necromorfs/necro-scream-woman-3.ogg
+
+- type: soundCollection
+  id: NecroScreamsOther
+  files:
+    - /Audio/_LuaM/Necromorfs/necro-scream-other-1.ogg
+    - /Audio/_LuaM/Necromorfs/necro-scream-other-2.ogg
+    - /Audio/_LuaM/Necromorfs/necro-scream-other-3.ogg
+
+- type: soundCollection
+  id: ConvergenceMusic
+  files:
+    - /Audio/_LuaM/Necromorfs/plasma_cutters_are_your_friend.ogg
+
+- type: soundCollection
+  id: DevaEat
+  files:
+    - /Audio/_LuaM/Necromorfs/deva_eat1.ogg
+    - /Audio/_LuaM/Necromorfs/deva_eat2.ogg
+    - /Audio/_LuaM/Necromorfs/deva_eat3.ogg
+
+- type: soundCollection
+  id: DevaEnrage
+  files:
+    - /Audio/_LuaM/Necromorfs/deva_enrage1.ogg
+    - /Audio/_LuaM/Necromorfs/deva_enrage2.ogg
+
+- type: soundCollection
+  id: SoundsHeadaches
+  files:
+    - /Audio/_LuaM/Necromorfs/headaches.ogg

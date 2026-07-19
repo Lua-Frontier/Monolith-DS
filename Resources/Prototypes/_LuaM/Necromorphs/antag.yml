@@ -1,0 +1,41 @@
+- type: factionIcon
+  id: UnitologyHeadFaction
+  priority: 11
+  showTo:
+    components:
+      - ShowAntagIcons
+      - Unitology
+      - Necromorf
+      - UnitologyEnslaved
+      - UnitologyHead
+  icon:
+    sprite: /Textures/_LuaM/Interface/Misc/antag_icons.rsi
+    state: UnitologyHead
+
+- type: factionIcon
+  id: UnitologyFaction
+  priority: 11
+  showTo:
+    components:
+      - ShowAntagIcons
+      - Unitology
+      - Necromorf
+      - UnitologyEnslaved
+      - UnitologyHead
+  icon:
+    sprite: /Textures/_LuaM/Interface/Misc/antag_icons.rsi
+    state: Unitology
+
+- type: factionIcon
+  id: UnitologyEnslavedFaction
+  priority: 11
+  showTo:
+    components:
+      - ShowAntagIcons
+      - Unitology
+      - Necromorf
+      - UnitologyEnslaved
+      - UnitologyHead
+  icon:
+    sprite: /Textures/_LuaM/Interface/Misc/antag_icons.rsi
+    state: UnitologyEnslaved
