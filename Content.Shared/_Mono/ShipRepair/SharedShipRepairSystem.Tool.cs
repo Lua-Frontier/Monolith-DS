@@ -20,12 +20,14 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
 
     private void OnAfterInteract(Entity<ShipRepairToolComponent> ent, ref AfterInteractEvent args)
     {
-        if (!args.CanReach)
-            return;
-
         var ourXform = Transform(ent);
         var clickPos = args.ClickLocation;
+        var userXform = Transform(args.User);
         var clickWorld = _transform.ToWorldPosition(clickPos);
+        var userWorld = _transform.ToWorldPosition(userXform.Coordinates);
+
+        if ((clickWorld - userWorld).Length() > ent.Comp.MaxRepairDistance)
+            return;
         var grids = new List<Entity<MapGridComponent>>();
         _mapMan.FindGridsIntersecting(ourXform.MapID, Box2.CenteredAround(clickWorld, new Vector2(1f, 1f)), ref grids, false, false);
         if (grids.Count == 0 && ourXform.GridUid == null)
@@ -85,8 +87,9 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
                 var delay = repairable.RepairTime * ent.Comp.RepairTimeMultiplier;
                 var cost = repairable.RepairCost;
 
-                // only consider it if it's close enough
-                if ((spec.LocalPosition - clickPos.Position).Length() > ent.Comp.EntitySearchRadius)
+                // only consider it if it's close enough to the clicked location, ignoring reach/visibility
+                var entityWorldPos = _transform.ToWorldPosition(new EntityCoordinates(targetGrid, spec.LocalPosition));
+                if ((entityWorldPos - clickWorld).Length() > ent.Comp.EntitySearchRadius)
                     continue;
 
                 var needsRepair = true;
