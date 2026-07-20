@@ -3,7 +3,7 @@
 - type: vessel
   id: Vulture
   parent: BaseVesselAntag
-  name: UI Vulture
+  name: AN Vulture # LuaM: UI Vulture > AN Vulture
   description: A heavy material reclaiming ship manufacted by Ullman industries originally for deep-space mining and planet cracking, but has been up-gunned and sold to the Phaethon Dynasty in recent days. Equiped with a full array or PTKs and 3, 255mm Bofors cannons.
   limit: 2
   price: 285580
@@ -21,7 +21,7 @@
 
 - type: gameMap
   id: Vulture
-  mapName: 'Vulture'
+  mapName: 'AN Vulture' # LuaM: 'UI Vulture' > 'AN Vulture'
   mapPath: /Maps/_LuaM/Shuttles/PDV/VultureLuaM.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/vulture.yml -> /Maps/_LuaM/Shuttles/PDV/vultureLuaM.yml
   minPlayers: 0
   stations:

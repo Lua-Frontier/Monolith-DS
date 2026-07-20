@@ -167,6 +167,39 @@
                     </controls:PanelContainer>
                     <!-- End Frontier - IFF search -->
 
+                    <!-- Frontier - settable target -->
+                    <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 2 2 2">
+                        <controls:PanelContainer.PanelOverride>
+                            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#333333" BackgroundColor="#181818"/>
+                        </controls:PanelContainer.PanelOverride>
+                    <controls:BoxContainer Orientation="Vertical" HorizontalExpand="True" Name="TargetCoordsBox" Margin="2 2 2 2">
+                        <controls:Label Text="{controls:Loc 'shuttle-console-target'}"/>
+                        <controls:BoxContainer Orientation="Horizontal"
+                                               HorizontalExpand="True"
+                                               Align="Center"
+                                               Margin="0 0 0 3">
+                            <controls:LineEdit Name="TargetX" Access="Public" HorizontalExpand="True"/>
+                            <controls:LineEdit Name="TargetY" Access="Public" HorizontalExpand="True"/>
+                            <controls:Button Name="TargetSet"
+                                             Text="{controls:Loc 'shuttle-console-set-target'}"
+                                             TextAlign="Center"
+                                             MinWidth="20"
+                                             ToolTip="{controls:Loc 'shuttle-console-set-target-description'}"
+                                             StyleClasses="OpenRight"
+                                             Margin="0"/>
+                            <controls:Button Name="TargetHide"
+                                             Text="{controls:Loc 'shuttle-console-hide-target'}"
+                                             TextAlign="Center"
+                                             ToggleMode="True"
+                                             MinWidth="20"
+                                             ToolTip="{controls:Loc 'shuttle-console-hide-target-description'}"
+                                             StyleClasses="OpenLeft"
+                                             Margin="0"/>
+                        </controls:BoxContainer>
+                    </controls:BoxContainer>
+                    </controls:PanelContainer>
+                    <!-- End Frontier - settable target -->
+
                     <!-- Frontier - Maximum IFF Distance -->
                     <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
                         <controls:PanelContainer.PanelOverride>

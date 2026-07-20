@@ -3,13 +3,16 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Tag;
 using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Timing; // LuaM
 using YamlDotNet.Core.Tokens;
 
 namespace Content.Shared._Goobstation.Clothing.Systems;
+
 public sealed partial class ClothingGrantingSystem : EntitySystem
 {
     [Dependency] private ISerializationManager _serializationManager = default!;
     [Dependency] private TagSystem _tagSystem = default!;
+    [Dependency] private IGameTiming _timing = default!; // LuaM: predict err fix
 
     public override void Initialize()
     {
@@ -25,6 +28,9 @@ public sealed partial class ClothingGrantingSystem : EntitySystem
     // Monolith Cleanup - Below
     private void OnCompEquip(EntityUid uid, ClothingGrantComponentComponent component, GotEquippedEvent args)
     {
+        if (!_timing.IsFirstTimePredicted) // LuaM: predict err fix
+            return;
+
         if (!TryComp<ClothingComponent>(uid, out var clothing))
             return;
 
@@ -33,7 +39,7 @@ public sealed partial class ClothingGrantingSystem : EntitySystem
 
         foreach (var (name, data) in component.Components)
         {
-            var newComp = (Component) Factory.GetComponent(name);
+            var newComp = (Component)Factory.GetComponent(name);
 
             if (HasComp(args.Equipee, newComp.GetType()))
                 continue;
@@ -48,12 +54,15 @@ public sealed partial class ClothingGrantingSystem : EntitySystem
 
     private void OnCompUnequip(EntityUid uid, ClothingGrantComponentComponent component, GotUnequippedEvent args)
     {
+        if (!_timing.IsFirstTimePredicted) // LuaM: predict err fix
+            return;
+
         foreach (var (name, _) in component.Components)
         {
             if (!component.Active.TryGetValue(name, out _))
                 continue;
 
-            var newComp = (Component) Factory.GetComponent(name);
+            var newComp = (Component)Factory.GetComponent(name);
 
             RemComp(args.Equipee, newComp.GetType());
             component.Active[name] = false;
@@ -63,6 +72,9 @@ public sealed partial class ClothingGrantingSystem : EntitySystem
 
     private void OnTagEquip(EntityUid uid, ClothingGrantTagComponent component, GotEquippedEvent args)
     {
+        if (!_timing.IsFirstTimePredicted) // LuaM: predict err fix
+            return;
+
         if (!TryComp<ClothingComponent>(uid, out var clothing))
             return;
 
@@ -77,6 +89,9 @@ public sealed partial class ClothingGrantingSystem : EntitySystem
 
     private void OnTagUnequip(EntityUid uid, ClothingGrantTagComponent component, GotUnequippedEvent args)
     {
+        if (!_timing.IsFirstTimePredicted) // LuaM: predict err fix
+            return;
+
         if (!component.IsActive)
             return;
 

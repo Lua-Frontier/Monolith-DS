@@ -123,7 +123,7 @@ public sealed partial class NavScreen : BoxContainer
         ShieldBar.SetState(scc.ShieldState);
         // Forge-Change-End
 
-        NfUpdateState(); // Frontier Update State
+        NfUpdateState(scc); // Frontier Update State
     }
 
     /// <summary>

@@ -17,7 +17,6 @@
   shuttlePath: /Maps/_LuaM/Shuttles/Expedition/Phoenix.yml
   guidebookPage: Null
   class:
-  - Capital
   - Medical
   - Chemistry
   - Pursuit

@@ -1,5 +1,6 @@
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
+using System.Numerics; // Frontier
 using Content.Shared._NF.Shuttles.Events; // Frontier - InertiaDampeningMode access
 using Content.Shared._Crescent.ShipShields; // Forge-add
 
@@ -43,6 +44,10 @@ public sealed class NavInterfaceState
     /// Frontier: settable coordinate visibility
     /// </summary>
     public bool HideCoords = false;
+
+    public bool HideTarget = true;
+    public Vector2? Target;
+    public NetEntity? TargetEntity;
     // End Frontier fields
 
     // Forge-Change-Start
@@ -58,13 +63,25 @@ public sealed class NavInterfaceState
         Angle? angle,
         Dictionary<NetEntity, List<DockingPortState>> docks,
         InertiaDampeningMode dampeningMode, // Frontier: add dampeningMode
-        Dictionary<string, string>? networkPortNames = null)
+        bool hideTarget, // Frontier
+        Vector2? target, // Frontier
+        NetEntity? targetEntity, // Frontier
+        float? maxIffRange, // Frontier
+        bool hideCoords, // Frontier
+        Dictionary<string, string>? networkPortNames = null,
+        bool pannable = true, // Mono
+        bool relativePan = false) // Mono
     {
         MaxRange = maxRange;
         Coordinates = coordinates;
         Angle = angle;
         Docks = docks;
         DampeningMode = dampeningMode; // Frontier
+        HideTarget = hideTarget; // Frontier
+        Target = target; // Frontier
+        TargetEntity = targetEntity; // Frontier
+        MaxIffRange = maxIffRange; // Frontier
+        HideCoords = hideCoords; // Frontier
         NetworkPortNames = networkPortNames ?? new Dictionary<string, string>();
     }
 }

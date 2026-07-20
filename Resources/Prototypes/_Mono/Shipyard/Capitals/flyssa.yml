@@ -12,14 +12,14 @@
   shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml # LuaM: /Maps/_Mono/Shuttles/Capitals/flyssa.yml > /Maps/_LuaM/Shuttles/TSFMC/flyssa.yml
   guidebookPage: Null
   class:
-  - Capital
+  # - Capital # Commented by LuaM
   - Destroyer
   - Medical
   - Chemistry
   - Pursuit
   - Patrol
   engine:
-  - AME
+  - Plasma # LuaM: AME > Plasma
 
 - type: gameMap
   id: Flyssa

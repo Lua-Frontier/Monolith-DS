@@ -11,8 +11,8 @@
   id: HammerOfTheUnion
   parent: [BaseMobilePOI, BaseRepairablePOI]
   name: 'Молот «Союза»' # LuaM:: 'Hammer Of The Union' > 'Молот «Союза»'
-  minimumDistance: 10000
-  maximumDistance: 15000
+  minimumDistance: 20000 # LuaM: 10000 > 20000
+  maximumDistance: 25000 # LuaM : 15000 > 25000
   spawnGroup: Required
   gridPath: /Maps/_Mono/POI/Dungeons/hammeroftheunion.yml
   addComponents:

@@ -1,0 +1,41 @@
+#Author: almaz3200(discord)
+
+- type: vessel
+  id: TSFMCRising
+  parent: BaseVesselAntag
+  name: vessel-rising-name
+  description: vessel-rising-desc
+  limit: 1
+  price: 320000
+  purchasable: false # voucher only
+  category: Large
+  group: Security
+  access: Armory
+  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/Rising.yml
+  guidebookPage: Null
+  class:
+  - Frigate
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: TSFMCRising
+  mapName: 'Rising'
+  mapPath: /Maps/_LuaM/Shuttles/TSFMC/Rising.yml
+  minPlayers: 0
+  stations:
+    TSFMCRising:
+      stationProto: StandardFrontierSecurityVessel
+      gridComponents:
+      - type: VesselInfo
+        description: "Бесславный Ублюдок"
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Восход TSF{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          Deputy: [ 0, 0 ]
+          TsfBorg: [ 0, 0 ]

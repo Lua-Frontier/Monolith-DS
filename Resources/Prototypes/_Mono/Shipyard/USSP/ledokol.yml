@@ -5,16 +5,16 @@
   parent: BaseVesselAntag
   name: BYP Ledokol
   description: A massive shuttle originally made for ramming through compact debris fields. Trades off fire-power for thrust-power.
-  limit: 1
-  price: 425000
-  purchasable: false # voucher only
+  # limit: 1 # Commented by LuaM
+  price: 300000 # LuaM 425000 > 300000
+  purchasable: true # voucher only # LuaM: false > true
   category: Large
   group: Ussp
   access: Mercenary
-  shuttlePath: /Maps/_Mono/Shuttles/USSP/Ledokol/ledokol.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/USSP/LedokolLuaM.yml # LuaM: /Maps/_Mono/Shuttles/USSP/Ledokol.yml > /Maps/_LuaM/Shuttles/USSP/LedokolLuaM.yml
   guidebookPage: Null
   class:
-  - Capital
+  # - Capital # Commented by LuaM
   - Frigate
   - Medical
   - Chemistry

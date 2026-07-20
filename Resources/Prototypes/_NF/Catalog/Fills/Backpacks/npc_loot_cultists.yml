@@ -54,6 +54,7 @@
     - id: ClothingBeltQuiverCrossbowFilledBolt
     - id: SpaceCash1000
     # Bonus Loot T1
+    - id: SpaceCash5000 # LuaM
     - id: SpaceCash500
       prob: 0.9
     - id: SpawnDungeonLootMaterialsBasicFull
@@ -74,6 +75,7 @@
     - id: ClothingBeltQuiverCrossbowFilledUranium
     - id: SpaceCash1000
     # Bonus Loot T1
+    - id: SpaceCash5000 # LuaM
     - id: SpaceCash500
       prob: 0.9
     - id: SpaceCash1000
@@ -93,6 +95,7 @@
     - id: ClothingBeltQuiverCrossbowFilledPlasma
     - id: SpaceCash500
     # Bonus Loot T1
+    - id: SpaceCash5000 # LuaM
     - id: SpaceCash500
       prob: 0.9
     - id: SpawnDungeonLootMaterialsBasicFull
@@ -111,6 +114,7 @@
     items:
     - id: SpaceCash500
     # Bonus Loot T1
+    - id: SpaceCash5000 # LuaM
     - id: SpaceCash500
       prob: 0.9
     - id: SpaceCash1000
@@ -140,6 +144,7 @@
     - id: MaterialBones
       prob: 0.2
     # Bonus Loot T2
+    - id: SpaceCash7500 # LuaM
     - id: SpaceCash1000
       prob: 0.9
     - id: SpawnDungeonLootMaterialsBasicFull
@@ -175,6 +180,7 @@
     - id: MaterialBones
       prob: 0.1
     # Bonus Loot T3
+    - id: SpaceCash10000 # LuaM
     - id: SpaceCash1000
       prob: 0.9
     - id: SpaceCash500
@@ -210,6 +216,7 @@
     - id: MaterialBones1
       prob: 0.1
     # Bonus Loot T1
+    - id: SpaceCash5000 # LuaM
     - id: SpaceCash500
       prob: 0.9
     - id: SpaceCash1000
@@ -236,6 +243,7 @@
     - id: MaterialBones1
       prob: 0.05
     # Bonus Loot T1
+    - id: SpaceCash5000 # LuaM
     - id: SpaceCash500
       prob: 0.9
     - id: SpawnDungeonLootMaterialsBasicFull

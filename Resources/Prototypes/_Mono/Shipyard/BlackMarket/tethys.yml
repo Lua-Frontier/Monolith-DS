@@ -3,7 +3,7 @@
 - type: vessel
   id: Tethys
   parent: BaseVesselAntag
-  name: PDV Tethys
+  name: AN Tethys # LuaM: PDV Tethys > AN Tethys
   description: A medical Phaethon Dynasty shuttle. It comes equipped with 4 90mm turrets and 2 tovek missile launchers. Hot damn.
   price: 72000
   category: Medium
@@ -18,7 +18,7 @@
 
 - type: gameMap
   id: Tethys
-  mapName: 'PDV Tethys'
+  mapName: 'AN Tethys' # LuaM: 'PDV Tethys' > 'AN Tethys'
   mapPath: /Maps/_LuaM/Shuttles/PDV/TethysLuaM.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/Tethys.yml -> /Maps/_LuaM/Shuttles/PDV/TethysLuaM.yml
   minPlayers: 0
   stations:

@@ -3,7 +3,7 @@
 - type: vessel
   id: Carrion
   parent: BaseVesselAntag
-  name: ELH Carrion
+  name: AN Carrion # LuaM: ELH Carrion > AN Carrion
   description: A fighter armed with 4x 90mm DRAVON autocannons and a GPOB-L bomb bay, built for reconnaissance and extreme-speed skirmishing.
   price: 29000 #Appraised at 26000-ish
   category: Small
@@ -19,7 +19,7 @@
 
 - type: gameMap
   id: Carrion
-  mapName: 'ELH Carrion'
+  mapName: 'AN Carrion' # LuaM: ELH 'Carrion' > 'AN Carrion'
   mapPath: /Maps/_Mono/Shuttles/BlackMarket/carrion.yml
   minPlayers: 0
   stations:

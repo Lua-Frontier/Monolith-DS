@@ -3,7 +3,7 @@
 - type: vessel
   id: Neptune
   parent: BaseVesselAntag
-  name: PDW Neptune
+  name: AN Neptune # LuaM: PDW Neptune > AN Neptune
   description: Equipped with heavy frontal armor, 6 Fang heavy 90mms, and 2 Trident torpedoes. Good for dealing with heavier targets in head on brawls, but it lacks capabilities to fight nimble and small targets.
   price: 153555 #126k appraisal
   purchasable: false # voucher only
@@ -21,7 +21,7 @@
 
 - type: gameMap
   id: Neptune
-  mapName: 'PDV Neptune'
+  mapName: 'AN Neptune' # LuaM: 'PDW Neptune' > 'AN Neptune'
   mapPath: /Maps/_Mono/Shuttles/BlackMarket/neptune.yml
   minPlayers: 0
   stations:

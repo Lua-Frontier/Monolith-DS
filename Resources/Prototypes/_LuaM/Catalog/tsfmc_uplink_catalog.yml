@@ -15,3 +15,20 @@
     whitelist:
       tags:
       - SecurityUplink
+
+# T3
+
+- type: listing
+  id: UplinkSecurityT3VoucherRising
+  name:  uplink-security-t3-rising-voucher-name
+  description: uplink-security-t3-rising-voucher-desc
+  productEntity: ShipVoucherRising
+  cost:
+    FederationMilitaryCredit: 350
+  categories:
+  - UplinkSecurityVouchers
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink

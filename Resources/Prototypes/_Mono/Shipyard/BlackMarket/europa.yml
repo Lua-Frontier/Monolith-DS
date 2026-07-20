@@ -3,7 +3,7 @@
 - type: vessel
   id: Europa
   parent: BaseVesselAntag
-  name: IDY Europa
+  name: AN Europa # LuaM: IDY Europa > AN Europa
   description: A repurposed interdyne medical frigate, with a focus on broadside firepower and armor.
   limit: 3
   price: 280650
@@ -18,10 +18,11 @@
   - frigate
   engine:
   - AME
+  - Uranium # LuaM add
 
 - type: gameMap
   id: Europa
-  mapName: 'PDV Europa'
+  mapName: 'AN Europa' # LuaM: 'IDY Europa' > AN 'Europa'
   mapPath: /Maps/_LuaM/Shuttles/PDV/europaLuaM.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/europa.yml -> /Maps/_LuaM/Shuttles/PDV/europaLuaM.yml
   minPlayers: 0
   stations:

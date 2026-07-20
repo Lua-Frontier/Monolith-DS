@@ -103,6 +103,7 @@
     - id: ClothingNeckIFFCyan
       prob: 0.1
     # Bonus Loot T1
+    - id: SpaceCash5000 # LuaM
     - id: SpaceCash500
       prob: 0.9
     - id: SpawnDungeonLootMaterialsBasicFull
@@ -143,6 +144,7 @@
     - id: ClothingNeckIFFCyan
       prob: 0.1
     # Bonus Loot T1
+    - id: SpaceCash5000 # LuaM
     - id: SpaceCash500
       prob: 0.9
     - id: SpaceCash1000
@@ -183,6 +185,7 @@
     - id: ClothingNeckIFFCyan
       prob: 0.1
     # Bonus Loot T2
+    - id: SpaceCash7500 # LuaM
     - id: SpaceCash1000
       prob: 0.9
     - id: SpawnDungeonLootMaterialsBasicFull
@@ -231,6 +234,7 @@
     - id: ClothingNeckIFFCyan
       prob: 0.1
     # Bonus Loot T2
+    - id: SpaceCash7500 # LuaM
     - id: SpaceCash1000
       prob: 0.9
     - id: SpaceCash1000
@@ -283,6 +287,7 @@
     - id: ClothingNeckIFFCyan
       prob: 0.1
     # Bonus Loot T3
+    - id: SpaceCash10000 # LuaM
     - id: SpaceCash1000
       prob: 0.9
     - id: SpaceCash500

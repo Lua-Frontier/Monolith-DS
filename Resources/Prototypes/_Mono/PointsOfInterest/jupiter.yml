@@ -12,8 +12,8 @@
   id: Jupiter
   parent: [BaseMobilePOI, BaseRepairablePOI]
   name: 'Крейсер AN-474 «Юпитер»' # LuaM: 'PDV Jupiter Class Carrier' > 'Крейсер AN-474 «Юпитер»'
-  minimumDistance: 17000
-  maximumDistance: 19000
+  minimumDistance: 10000 # LuaM : 17000 > 10000
+  maximumDistance: 12000 # LuaM : 19000 > 12000
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoRogueUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
   spawnGroup: Required
   gridPath: /Maps/_LuaM/POI/JupiterLuaM.yml # LuaM: /Maps/_Mono/POI/jupiter.yml > /Maps/_LuaM/POI/JupiterLuaM.yml

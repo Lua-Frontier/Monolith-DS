@@ -241,7 +241,7 @@
   parent: SpawnDroneBase
   components:
   - type: GridSpawner
-    path: /Maps/_Mono/Shuttles/World/gust.yml
+    path: /Maps/_LuaM/Shuttles/World/gust.yml # LuaM: /Maps/_Mono/Shuttles/World/gust.yml > /Maps/_LuaM/Shuttles/World/gust.yml
     addComponents:
     - type: RandomMetadata
       nameSeparator: ""
@@ -363,7 +363,7 @@
   parent: SpawnDroneBase
   components:
   - type: GridSpawner
-    path: /Maps/_Mono/Shuttles/World/bracket.yml
+    path: /Maps/_LuaM/Shuttles/World/bracket.yml # LuaM: /Maps/_Mono/Shuttles/World/bracket.yml > /Maps/_LuaM/Shuttles/World/bracket.yml
     addComponents:
     - type: RandomMetadata
       nameSeparator: ""
@@ -405,7 +405,7 @@
   parent: SpawnDroneBase
   components:
   - type: GridSpawner
-    path: /Maps/_Mono/Shuttles/World/quake.yml
+    path: /Maps/_LuaM/Shuttles/World/quake.yml # LuaM: /Maps/_Mono/Shuttles/World/quake.yml > /Maps/_LuaM/Shuttles/World/quake.yml
     addComponents:
     - type: RandomMetadata
       nameSeparator: ""

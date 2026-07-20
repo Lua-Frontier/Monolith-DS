@@ -3,7 +3,7 @@
 - type: vessel
   id: MotleyAnne
   parent: BaseVesselAntag
-  name: PDV-IED Motley Anne
+  name: AN-IED Motley Anne # LuaM: PDV-IED Motley Anne > AN-IED Motley Anne
   description: A support mothership designed to reinforce an engagements back-line with mech and drone ensemble or closer resupplies.
   price: 280000
   limit: 2
@@ -21,7 +21,7 @@
 
 - type: gameMap
   id: MotleyAnne
-  mapName: 'PDV Motley Anne'
+  mapName: 'AN Motley Anne' # LuaM: 'PDV-IED Motley Anne' > 'AN-IED Motley Anne'
   mapPath: /Maps/_Mono/Shuttles/BlackMarket/motleyanne.yml
   minPlayers: 0
   stations:

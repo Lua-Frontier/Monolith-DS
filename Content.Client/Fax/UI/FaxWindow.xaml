@@ -6,7 +6,7 @@
                Title="{Loc 'fax-machine-ui-window'}"
                SetWidth="250"
                SetHeight="250"
-               Resizable="False">
+               Resizable="True">
     <BoxContainer Orientation="Vertical" VerticalExpand="True">
         <PanelContainer VerticalExpand="True" HorizontalExpand="True">
             <PanelContainer.PanelOverride>

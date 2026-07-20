@@ -836,9 +836,9 @@
   description: A suit originally made by the cutting edge R&D department at cybersun to be hyper resilient, now recycled and used by the Phaethon Dynasty. Hefty and durable, but not fully insulated.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
+    sprite: _LuaM/Clothing/OuterClothing/Hardsuits/cybersun.rsi # LuaM: Clothing/OuterClothing/Hardsuits/cybersun.rsi -> _LuaM/Clothing/OuterClothing/Hardsuits/cybersun.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
+    sprite: _LuaM/Clothing/OuterClothing/Hardsuits/cybersun.rsi # LuaM: Clothing/OuterClothing/Hardsuits/cybersun.rsi -> _LuaM/Clothing/OuterClothing/Hardsuits/cybersun.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000

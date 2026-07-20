@@ -3,7 +3,7 @@
 - type: vessel
   id: Garm
   parent: BaseVesselAntag
-  name: WEN Garm
+  name: AN Garm # LuaM: WEN Garm > AN Garm
   description: Gruff hull with 3 GPOL's and long-range Bofors artillery for station bombardments and fleet support.
   price: 105200 # 86700 appraisegrid
   purchasable: false # voucher only
@@ -19,7 +19,7 @@
 
 - type: gameMap
   id: Garm
-  mapName: 'WEN Garm'
+  mapName: 'AN Garm' # LuaM: 'WEN Garm' > 'AN Garm'
   mapPath: /Maps/_Mono/Shuttles/BlackMarket/garm.yml
   minPlayers: 0
   stations:

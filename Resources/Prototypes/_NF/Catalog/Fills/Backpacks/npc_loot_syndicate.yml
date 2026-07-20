@@ -78,6 +78,7 @@
       - id: SpeedLoader45_magnumAP
       - id: SpaceCash5000
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -108,6 +109,7 @@
       - id: SpeedLoader45_magnumFMJ
       - id: SpaceCash2500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -136,6 +138,7 @@
       - id: SpeedLoader45_magnumFMJ
       - id: SpaceCash2500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -163,6 +166,7 @@
     items:
       - id: SpaceCash2500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -194,6 +198,7 @@
       - id: PowerCellHyperPrinted
       - id: SpaceCash2500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -223,6 +228,7 @@
       - id: PowerCellHighPrinted
       - id: SpaceCash2500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -251,6 +257,7 @@
       - id: PowerCellHighPrinted
       - id: SpaceCash2500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -279,6 +286,7 @@
       - id: SpaceCash1000
       - id: SpaceCash500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -311,6 +319,7 @@
       - id: ClothingShoesBootsMagSyndie
       - id: SpaceCash10000
       # Bonus Loot T4
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash2500
         prob: 0.9
       - id: SpawnDungeonLootFlatpacks
@@ -340,6 +349,7 @@
       - id: ClothingShoesBootsMagSyndie
       - id: SpaceCash10000
       # Bonus Loot T4
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash2500
         prob: 0.9
       - id: SpawnDungeonLootFlatpacks
@@ -368,6 +378,7 @@
       - id: ClothingShoesBootsMagSyndie
       - id: SpaceCash10000
       # Bonus Loot T4
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash2500
         prob: 0.9
       - id: SpawnDungeonLootFlatpacks
@@ -393,6 +404,7 @@
     items:
       - id: SpaceCash10000
       # Bonus Loot T4
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash2500
         prob: 0.9
       - id: SpawnDungeonLootFlatpacks
@@ -423,6 +435,7 @@
       - id: SpaceCash1000
       - id: SpaceCash1000
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -455,6 +468,7 @@
       - id: SpaceCash1000
       - id: SpaceCash500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -487,6 +501,7 @@
       - id: SpaceCash1000
       - id: SpaceCash500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -517,6 +532,7 @@
       - id: SpaceCash1000
       - id: SpaceCash500
       # Bonus Loot T3
+      - id: SpaceCash10000 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash500
@@ -548,6 +564,7 @@
       - id: Magazine9x19mmPistolFMJ
       - id: SpaceCash1000
       # Bonus Loot T1
+      - id: SpaceCash5000 # LuaM
       - id: SpaceCash500
         prob: 0.9
       - id: SpaceCash1000
@@ -568,6 +585,7 @@
       - id: Magazine9x19mmPistolFMJ
       - id: SpaceCash1000
       # Bonus Loot T1
+      - id: SpaceCash5000 # LuaM
       - id: SpaceCash500
         prob: 0.9
       - id: SpaceCash1000
@@ -588,6 +606,7 @@
       - id: Magazine9x19mmPistolFMJ
       - id: SpaceCash1000
       # Bonus Loot T1
+      - id: SpaceCash5000 # LuaM
       - id: SpaceCash500
         prob: 0.9
       - id: SpaceCash1000
@@ -606,6 +625,7 @@
     items:
       - id: SpaceCash1000
       # Bonus Loot T1
+      - id: SpaceCash5000 # LuaM
       - id: SpaceCash500
         prob: 0.9
       - id: SpaceCash1000
@@ -654,6 +674,7 @@
       - id: Stimpack
       - id: SpaceCash1000
       # Bonus Loot T1
+      - id: SpaceCash5000 # LuaM
       - id: SpaceCash500
         prob: 0.9
       - id: SpaceCash1000
@@ -676,6 +697,7 @@
       - id: MedicatedSuture
       - id: SpaceCash1000
       # Bonus Loot T1
+      - id: SpaceCash5000 # LuaM
       - id: SpaceCash500
         prob: 0.9
       - id: SpaceCash1000
@@ -697,6 +719,7 @@
       - id: MedicatedSuture
       - id: SpaceCash1000
       # Bonus Loot T1
+      - id: SpaceCash5000 # LuaM
       - id: SpaceCash500
         prob: 0.9
       - id: SpaceCash1000
@@ -717,6 +740,7 @@
       - id: MedicatedSuture
       - id: SpaceCash1000
       # Bonus Loot T1
+      - id: SpaceCash5000 # LuaM
       - id: SpaceCash500
         prob: 0.9
       - id: SpaceCash1000
@@ -743,6 +767,7 @@
       - id: SpaceCash1000
       - id: SpaceCash1000
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpawnDungeonLootMaterialsBasicFull
@@ -770,6 +795,7 @@
       - id: JawsOfLife
       - id: SpaceCash1000
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash1000
@@ -796,6 +822,7 @@
       - id: JawsOfLife
       - id: SpaceCash1000
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpawnDungeonLootMaterialsBasicFull
@@ -821,6 +848,7 @@
     items:
       - id: SpaceCash1000
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash1000
@@ -853,6 +881,7 @@
       - id: Stimpack
       - id: SpaceCash2500
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpawnDungeonLootMaterialsBasicFull
@@ -880,6 +909,7 @@
       - id: Stimpack
       - id: SpaceCash2500
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash1000
@@ -906,6 +936,7 @@
       - id: WeaponWaterBlaster
       - id: SpaceCash2500
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpawnDungeonLootMaterialsBasicFull
@@ -932,6 +963,7 @@
       - id: WeaponWaterPistol
       - id: SpaceCash2500
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash1000
@@ -960,6 +992,7 @@
         amount: 4
       - id: SpaceCash5000
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpawnDungeonLootMaterialsBasicFull
@@ -987,6 +1020,7 @@
         amount: 2
       - id: SpaceCash2500
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash1000
@@ -1014,6 +1048,7 @@
         amount: 4
       - id: SpaceCash2500
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpawnDungeonLootMaterialsBasicFull
@@ -1041,6 +1076,7 @@
         amount: 2
       - id: SpaceCash2500
       # Bonus Loot T2
+      - id: SpaceCash7500 # LuaM
       - id: SpaceCash1000
         prob: 0.9
       - id: SpaceCash1000

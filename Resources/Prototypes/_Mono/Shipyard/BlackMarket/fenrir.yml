@@ -3,7 +3,7 @@
 - type: vessel
   id: Fenrir
   parent: BaseVesselAntag
-  name: BT-Y Fenrir
+  name: AN Fenrir # LuaM: BT-Y Fenrir > AN Fenrir
   description: A versalite support destroyer armed with an M381 Mass Driver, 2 Dravons, 2 Scattercannons, 4 20mm autocannons and outfitted with 2 Medium Size Mechbays capable of deploying S-2 and S-1 Mechs but does not come with Mechs. Well armored but slow.
   price: 150750
   purchasable: false # voucher only
@@ -20,7 +20,7 @@
 
 - type: gameMap
   id: Fenrir
-  mapName: 'PDV Fenrir'
+  mapName: 'AN Fenrir' # LuaM: 'BT-Y Fenrir' > 'AN Fenrir'
   mapPath: /Maps/_LuaM/Shuttles/PDV/FenrirLuaM.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/Fenrir.yml -> /Maps/_LuaM/Shuttles/PDV/FenrirLuaM.yml
   minPlayers: 0
   stations:

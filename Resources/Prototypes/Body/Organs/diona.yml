@@ -55,6 +55,21 @@
         reagents:
         - ReagentId: GreyMatter
           Quantity: 5
+  - type: OutOfContainerGrant # LuaM
+    components:
+    - type: RadarBlip
+      radarColor: "#E0FFFF"
+      scale: 3
+      shape: Star
+      maxDistance: 512
+      requireNoGrid: true
+      visibleFromOtherGrids: true
+      gridConfig:
+        color: "#E0FFFF"
+        shape: Star
+        respectZoom: true
+        rotate: true
+        bounds: "-0.5,-0.5,0.5,0.5"
 
 - type: entity
   id: OrganDionaEyes

@@ -20,6 +20,9 @@ using Content.Server.Materials.Components; // Frontier
 using Content.Server._Mono.VendingMachine; // Mono
 using System.Linq;
 using Content.Shared.Research.Prototypes;
+using Content.Shared.Body.Organ; // LuaM
+using Content.Shared.Body.Part; // LuaM
+
 
 namespace Content.Server.Cargo.Systems;
 
@@ -276,6 +279,10 @@ public sealed partial class PricingSystem : EntitySystem
             {
                 foreach (var ent in container.ContainedEntities)
                 {
+                    // LuaM-start:
+                    if (HasComp<OrganComponent>(ent) && HasComp<BodyPartComponent>(uid)) // Skip organs
+                        continue;
+                    // LuaM-end
                     price += GetPrice(ent);
                 }
             }
@@ -321,6 +328,10 @@ public sealed partial class PricingSystem : EntitySystem
             {
                 foreach (var ent in container.ContainedEntities)
                 {
+                    // LuaM-start:
+                    if (HasComp<OrganComponent>(ent) && HasComp<BodyPartComponent>(uid)) // Skip organs
+                        continue;
+                    // LuaM-end
                     price += GetPriceWithVendingDiscount(ent, currentGrid);
                 }
             }
@@ -350,6 +361,10 @@ public sealed partial class PricingSystem : EntitySystem
             {
                 foreach (var ent in container.ContainedEntities)
                 {
+                    // LuaM-start:
+                    if (HasComp<OrganComponent>(ent) && HasComp<BodyPartComponent>(uid)) // Skip organs
+                        continue;
+                    // LuaM-end:
                     price += GetPriceConditional(ent, true, predicate);
                 }
             }

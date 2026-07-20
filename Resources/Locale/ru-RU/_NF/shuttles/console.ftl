@@ -45,3 +45,13 @@ shuttle-console-device-button-5 = Кн. 5
 shuttle-console-device-button-6 = Кн. 6
 shuttle-console-device-button-7 = Кн. 7
 shuttle-console-device-button-8 = Кн. 8
+
+# NF map target system
+
+shuttle-console-target = Метка радара
+shuttle-console-set-target = Цель
+shuttle-console-set-target-description = Устанавливает целевые координаты.
+shuttle-console-hide-target = Показ
+shuttle-console-hide-target-description = Переключает видимость целевой точки на радаре.
+shuttle-console-target-name = Цель
+shuttle-console-map-track = ⌖

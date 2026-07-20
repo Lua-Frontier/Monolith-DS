@@ -1,10 +1,10 @@
-# Автор: almaz3200(discord) 
+# Автор: almaz3200(discord)
 # Вдохновлён шаттлом "scorpion" от Starch
 
 - type: vessel
   id: Scorpion
   parent: BaseVesselAntag
-  name: PDV Scorpion
+  name: AN Scorpion # LuaM: PDV Scorpion > AN Scorpion
   description: Широко распространенный вариант маневренного судна для групповой работы по крупной цели, благодаря хорошо защищенным двигателям, дает шанс успешно слинять от противника в любой момент боя. # LuaM An unusual variant from the same shipyards manufacturing Anacondas, using a mix of missile pods and 2 large-caliber cannons. > Широко распространенный вариант маневренного судна для групповой работы по крупной цели, благодаря хорошо защищенным двигателям, дает шанс успешно слинять от противника в любой момент боя.
   price: 113200
   purchasable: false # voucher only
@@ -22,7 +22,7 @@
 
 - type: gameMap
   id: Scorpion
-  mapName: 'PDV Scorpion'
+  mapName: 'AN Scorpion' # LuaM: 'PDV Scorpion' > 'AN Scorpion'
   mapPath: /Maps/_LuaM/Shuttles/PDV/Scorpion.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/skorpion.yml -> /Maps/_LuaM/Shuttles/PDV/Scorpion.yml
   minPlayers: 0
   stations:

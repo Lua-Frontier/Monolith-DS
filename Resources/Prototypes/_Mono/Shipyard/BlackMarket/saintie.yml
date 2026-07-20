@@ -3,7 +3,7 @@
 - type: vessel
   id: Saintie
   parent: BaseVesselAntag
-  name: PDW Saintie
+  name: AN Saintie # LuaM: PDW Saintie > AN Saintie
   description: An expensive Frigate designed by the Phaethon Divine Shipworks, utilised by imperial vanguard for swift ambush attacks against enemy fleets.
   limit: 2
   price: 345000
@@ -16,11 +16,11 @@
   - Pirate
   - Frigate
   engine:
-  - AME
+  - Plasma # LuaM: AME > Plasma
 
 - type: gameMap
   id: Saintie
-  mapName: 'Saintie'
+  mapName: 'AN Saintie' # LuaM: 'PDW Saintie' > 'AN Saintie'
   mapPath: /Maps/_LuaM/Shuttles/PDV/santieLuaM.yml # LuaM: /Maps/_Mono/Shuttles/BlackMarket/santie.yml -> /Maps/_LuaM/Shuttles/PDV/santieLuaM.yml
   minPlayers: 0
   stations:

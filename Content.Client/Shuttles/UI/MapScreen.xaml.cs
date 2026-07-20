@@ -55,12 +55,13 @@ public sealed partial class MapScreen : BoxContainer
     private bool _autopilotTargeting = false;
 
     private float _minMapDequeue = 0.05f;
-    private float _maxMapDequeue = 0.25f;
+    private float _maxMapDequeue = 0.10f; // Frontier: 0.25 -> 0.10
 
     private StyleBoxFlat _ftlStyle;
 
     public event Action<MapCoordinates, Angle>? RequestFTL;
     public event Action<NetEntity, Angle>? RequestBeaconFTL;
+    public event Action<NetEntity?, NetEntity>? RequestTrackEntity; // Frontier
 
     // Mono
     public event Action<MapCoordinates, Angle>? RequestAutopilot;
@@ -498,6 +499,16 @@ public sealed partial class MapScreen : BoxContainer
         MapRadar.SetMap(coordinates.MapId, coordinates.Position, recentering: true);
     }
 
+    // Frontier: entity tracking
+    private void OnMapObjectTrackPress(IMapObject mapObject)
+    {
+        if (mapObject is not GridMapObject gridObj)
+            return;
+
+        RequestTrackEntity?.Invoke(_shuttleEntity is null ? null : _entManager.GetNetEntity(_shuttleEntity.Value), _entManager.GetNetEntity(gridObj.Entity));
+    }
+    // End Frontier: entity tracking
+
     public void SetMap(MapId mapId, Vector2 position)
     {
         MapRadar.SetMap(mapId, position);
@@ -518,6 +529,7 @@ public sealed partial class MapScreen : BoxContainer
         {
             Text = mapObj.Name,
             HorizontalExpand = true,
+            SizeFlagsStretchRatio = 4, // Frontier
         };
 
         var gridContainer = new BoxContainer()
@@ -539,6 +551,23 @@ public sealed partial class MapScreen : BoxContainer
         {
             OnMapObjectPress(mapObj);
         };
+
+        // Frontier: tracking button handler
+        if (mapObj is GridMapObject gridObj)
+        {
+            var trackButton = new Button()
+            {
+                Text = Loc.GetString("shuttle-console-map-track"),
+                HorizontalExpand = true,
+                SizeFlagsStretchRatio = 1,
+            };
+            trackButton.OnPressed += args =>
+            {
+                OnMapObjectTrackPress(mapObj);
+            };
+            gridContainer.AddChild(trackButton);
+        }
+        // End Frontier: tracking button handler
 
         if (gridContents.ChildCount > 1)
         {

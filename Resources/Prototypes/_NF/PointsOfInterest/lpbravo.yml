@@ -12,8 +12,8 @@
   id: LPBravo
   parent: BasePOI
   name: 'Прослушка «Браво»' # LuaM: 'Listening Point Bravo' > 'Прослушка «Браво»'
-  minimumDistance: 10000
-  maximumDistance: 13000
+  minimumDistance: 15000 # LuaM: 10000 > 15000
+  maximumDistance: 17000 # LuaM : 13000 > 17000
   spawnGroup: SyndicateFOB
   gridPath: /Maps/_NF/POI/lpbravo.yml
   hideWarp: true
