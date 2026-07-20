@@ -7,7 +7,7 @@ using Content.Shared.PowerCell;
 using Content.Shared.Movement.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
-using Content.Server.Shuttles.Components;
+using Content.Server.Shuttles.Components; // Frontier
 using Content.Shared.PowerCell;
 using Content.Shared.Movement.Components;
 

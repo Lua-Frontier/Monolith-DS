@@ -1,6 +1,6 @@
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
-using System.Numerics;
+using System.Numerics; // Frontier
 using Content.Shared._NF.Shuttles.Events; // Frontier - InertiaDampeningMode access
 using Content.Shared._Crescent.ShipShields; // Forge-add
 
