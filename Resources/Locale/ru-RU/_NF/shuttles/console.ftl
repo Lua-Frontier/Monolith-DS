@@ -17,11 +17,6 @@ shuttle-console-service-flag-Social-shortform = ☺
 shuttle-console-service-flag-Services-description = Услуги (например, медицинские, питание, инженерия), предлагаемые на борту.
 shuttle-console-service-flag-Trade-description = Товары, продаваемые на борту.
 shuttle-console-service-flag-Social-description = Место для общения и отдыха.
-shuttle-console-target = Цель
-shuttle-console-set-target-description = Устанавливает целевую точку на консоли управления шаттлом.
-shuttle-console-hide-target-description = Переключает видимость целевой точки на консоли управления шаттлом.
-shuttle-console-target-name = Цель
-shuttle-console-map-track = ⌖
 
 shuttle-console-force-anchored = Вы не можете совершить FTL-переход на аванпосте.
 shuttle-console-signature-infrared = Тепловая сигнатура
