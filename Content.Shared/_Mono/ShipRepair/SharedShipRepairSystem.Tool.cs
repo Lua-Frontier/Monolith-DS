@@ -26,8 +26,8 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
         var clickPos = args.ClickLocation;
         var userXform = Transform(args.User); // LuaM
         var clickWorld = _transform.ToWorldPosition(clickPos);
-        var userWorld = _transform.ToWorldPosition(userXform.Coordinates);
 // LuaM-start:
+        var userWorld = _transform.ToWorldPosition(userXform.Coordinates);
         if ((clickWorld - userWorld).Length() > ent.Comp.MaxRepairDistance)
             return;
 // LuaM-end.
