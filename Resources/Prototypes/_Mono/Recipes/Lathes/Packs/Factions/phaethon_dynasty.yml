@@ -37,10 +37,12 @@
   - WeaponLauncherPanzeroRogue
   - WeaponShotgunBulldogRogue
   - WeaponSniperHristovRogue
-  - WeaponLightMachineGunL6 #LuaM
   - WeaponSubMachineGunMla73Rogue
   - WeaponDEWBasilisk
   - WeaponShotgunSultanPulsar
+  - WeaponLightMachineGunL6Rogue
+  - WeaponRifleBurnerRogue
+
 
 - type: latheRecipePack
   id: MonoRogueVouchersDynamic

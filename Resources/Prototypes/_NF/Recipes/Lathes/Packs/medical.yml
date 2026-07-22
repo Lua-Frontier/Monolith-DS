@@ -37,6 +37,7 @@
   - ReinforcedJug
   - VialBluespace
   - ClothingOuterHardsuitMedical
+  - MedicalPouch
 
 - type: latheRecipePack
   id: NFMedicalBoards
