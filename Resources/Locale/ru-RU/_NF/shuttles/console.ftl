@@ -17,7 +17,7 @@ shuttle-console-service-flag-Social-shortform = ☺
 shuttle-console-service-flag-Services-description = Услуги (например, медицинские, питание, инженерия), предлагаемые на борту.
 shuttle-console-service-flag-Trade-description = Товары, продаваемые на борту.
 shuttle-console-service-flag-Social-description = Место для общения и отдыха.
-shuttle-console-maximum-speed = Maximum Shuttle Speed = Лимит скорости шаттла
+shuttle-console-maximum-speed = Лимит скорости шаттла
 
 shuttle-console-force-anchored = Вы не можете совершить FTL-переход на аванпосте.
 shuttle-console-signature-infrared = Тепловая сигнатура
