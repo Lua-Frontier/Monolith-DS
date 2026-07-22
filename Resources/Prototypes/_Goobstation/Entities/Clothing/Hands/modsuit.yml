@@ -110,9 +110,9 @@
   - type: Sprite
     sprite: _Goobstation/Clothing/Hands/Modsuits/paramedic.rsi
   - type: MeleeWeapon # Mono edit
-    canWideSwing: True #LuaM
+    canWideSwing: True #LuaM False -> true
     autoAttack: true
-    attackRate: 6 #LuaM
+    attackRate: 6 #LuaM 3 -> 6
     damage:
       groups:
         Burn: -4

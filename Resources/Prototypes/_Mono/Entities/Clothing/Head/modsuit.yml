@@ -213,17 +213,17 @@
         Piercing: 0.90
         Heat: 0.90
         Radiation: 0.5
-  - type: ThermalVision
+  - type: ThermalVision #LuaM added
     flashDurationMultiplier: 2
     pulseTime: 2
     isEquipment: true
     toggleAction: PulseThermalVision
-  - type: NightVision
+  - type: NightVision #LuaM added
     flashDurationMultiplier: 3.5
     isEquipment: true
   - type: ComponentToggler
     components:
-    - type: FlashImmunity
+    - type: FlashImmunity #LuaM added
     - type: BreathMask
     - type: EyeProtection
     - type: PressureProtection
