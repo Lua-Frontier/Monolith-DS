@@ -35,11 +35,14 @@ public sealed partial class ShipRepairToolComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public int TileRepairCost = 1;
+
+// LuaM-start:
     /// <summary>
     /// Max distance to repair a tile, ignores obstructions.
     /// </summary>
     [DataField, AutoNetworkedField]
     public float MaxRepairDistance = 3f;
+// LuaM-end.
 
     /// <summary>
     /// In what radius to search for entities to repair on click.
