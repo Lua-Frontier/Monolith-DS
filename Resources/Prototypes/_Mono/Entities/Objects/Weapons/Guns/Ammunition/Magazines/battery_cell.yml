@@ -17,9 +17,12 @@
   - type: Battery
     maxCharge: 3000
     startingCharge: 3000
+  - type: BatterySelfRecharger #LuaM added
+    autoRechargeRate: 50
+    autoRecharge: true
   - type: HitscanBatteryAmmoProvider
     proto: PulsedPlasma
-    fireCost: 3000
+    fireCost: 1000 #LuaM 3000 -> 1000
   - type: StaticPrice
     price: 1000
   - type: Tag
@@ -35,7 +38,8 @@
       Uranium: 150
     chemicalComposition:
       Zinc: 20
-
+  - type: EmpResistance #LuaM added
+    coefficient: 0.000001
 # tsf
 
 - type: entity
