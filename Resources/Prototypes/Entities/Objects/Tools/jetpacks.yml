@@ -277,6 +277,13 @@
       - Back
       - suitStorage
       - Belt
+  # LuaM start
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      # 13 minutes of thrust
+      volume: 50
+  # LuaM end
 
 # Filled void
 - type: entity
@@ -286,11 +293,11 @@
   suffix: Filled
   components:
   - type: GasTank
-    outputPressure: 42.6
+    outputPressure: 21.3 # LuaM: 42.6 > 21.3
     air:
       # 13 minutes of thrust
-      volume: 5
+      volume: 50 # LuaM: 5 > 50
       temperature: 293.15
       moles:
-        Oxygen: 1.025689525 # oxygen
-        Nitrogen: 1.025689525 # nitrogen
+        Oxygen: 4.36 # oxygen # LuaM: 1.025689525 > 4.36
+        Nitrogen: 16.42 # nitrogen # LuaM: 1.025689525 > 16.42

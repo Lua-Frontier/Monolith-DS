@@ -26,7 +26,7 @@
     maxAngle: 45
     angleIncrease: 3
     angleDecay: 20
-    fireRate: 8
+    fireRate: 11 # LuaM: 8 > 11
     projectileSpeed: 55 # Mono
     selectedMode: FullAuto
     availableModes:
@@ -70,7 +70,7 @@
       nfsd: 0.2
   - type: SpeedModifiedOnWield # Mono
     walkModifier: 0.9
-    sprintModifier: 0.75
+    sprintModifier: 0.9 # LuaM: 0.75 > 0.9
   - type: GunRequiresWield # Mono
   - type: WieldedCrosshair
     rsi:
@@ -96,7 +96,7 @@
   name: PA L6B SAW (7.62x39mm)
   id: WeaponLightMachineGunL6
   parent: BaseWeaponLightMachineGun
-  description: A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses 7.62x39mm ammo. No longer in production, it serves as a remnant of humanity's greed and ambition during The Fracture.
+  description: A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses 7.62x39mm ammo. it serves as a remnant of humanity's greed and ambition during The Fracture.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/LMGs/l6.rsi

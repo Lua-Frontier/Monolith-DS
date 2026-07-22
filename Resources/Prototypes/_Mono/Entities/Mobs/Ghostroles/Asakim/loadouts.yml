@@ -2,7 +2,7 @@
   id: AsakimGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNinja
-    back: ClothingBackpackERTLeader
+    back: ClothingBackpackSatchelHolding # LuaM: ClothingBackpackERTLeader > ClothingBackpackSatchelHolding
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitAsakimUnremoveable
     shoes: ClothingShoesBootsMagAsakim
@@ -10,25 +10,37 @@
     pocket2: DoubleEmergencyOxygenTankFilled
     belt: ClothingBeltWebbingsBigBlack
     suitStorage: OxygenTankFilled
+    ears: ClothingHeadsetChameleon # LuaM add
   inhand:
   - WeaponRifleAsakimAutopulser
   - WeaponPhaseBlade
   storage:
     back:
     - DoubleEmergencyOxygenTankFilled
-    - MedkitCombatFilled
-    - MedkitCombatFilled
-    - SyringeCaseAltFilled
-    - JetpackMiniFilled
+  #  - MedkitCombatFilled # Commented by LuaM
+  #  - MedkitCombatFilled # Commented by LuaM
+  #  - SyringeCaseAltFilled # Commented by LuaM
+    - JetpackADMFilled # LuaM: JetpackMiniFilled > JetpackADMFilled
     - FreedomImplanter
     - CognizineChemistryBottle
     - Syringe
     - RadioHandheldNF
+    - Hypospray # LuaM add
+    - MedicalPouchFilledERT # LuaM add
+    - MonoMRE # LuaM add
+    - MonoMRE # LuaM add
+    - MonoMRE # LuaM add
+    - MonoMRE # LuaM add
+    - OmnimedTool # LuaM add
+    - ClothingHandsGlovesSurgical # LuaM add
+    - PinpointerUniversal # LuaM add
+    - EnergyShield # LuaM add
+    - ScramImplanter # LuaM add
     belt:
-    - CombatMedipen
-    - CombatMedipen
-    - CombatMedipen
-    - CombatMedipen
+   # - CombatMedipen # Commented by LuaM
+   # - CombatMedipen # Commented by LuaM
+   # - CombatMedipen # Commented by LuaM
+   # - CombatMedipen # Commented by LuaM
     - HandHeldMassScannerBorg
     - PowerDrill
     - JawsOfLife
