@@ -346,7 +346,7 @@
 
 - type: loadout #MK58 / Knallstock Ammo
   id: MercenaryAcpPistolAmmoLoadout
-  price: 1000 # LuaM: 500 > 1000 
+  price: 1000 # LuaM: 500 > 1000
   storage:
     back:
     - BoxMagazine45_ACPFMJ
@@ -511,6 +511,27 @@
 
 # Rifles
 
+- type: loadout #Riversong
+  id: FactionRiversongLoadout
+  price: 0
+  storage:
+    back:
+    - WeaponRifleRiversong
+
+- type: loadout #Dragonfang
+  id: FactionDragonfangLoadout
+  price: 0
+  storage:
+    back:
+    - WeaponRifleDragonfang
+
+- type: loadout #M90
+  id: FactionM90Loadout
+  price: 0
+  storage:
+    back:
+    - WeaponRifleM90
+
 - type: loadout #Lecter
   id: FactionLecterLoadout
   price: 0
@@ -518,7 +539,14 @@
     back:
     - WeaponRifleLecter
 
-- type: loadout #C20r
+- type: loadout #Lecter
+  id: FactionWSPRLoadout
+  price: 0
+  storage:
+    back:
+    - WeaponRifleWSPR
+
+- type: loadout #Vympel
   id: FactionVympelLoadout
   price: 0
   storage:
@@ -580,6 +608,13 @@
   storage:
     back:
     - BoxMagazine762x39mmFMJ
+
+- type: loadout #Wespr
+  id: Faction762x39mmSubsonicAmmoLoadout
+  price: 0
+  storage:
+    back:
+    - BoxMagazine762x39mmSubsonic
 
 - type: loadout #Mosin
   id: FactionMosinLoadout
@@ -722,7 +757,7 @@
     back:
     - BoxMagazine45_ACPFMJ
 
-- type: loadout #MK58 Ammo
+- type: loadout
   id: FactionHawk4Pistol
   price: 0
   storage:

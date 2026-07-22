@@ -12,6 +12,16 @@
   - FactionFrostLoadout
 
 - type: loadoutGroup
+  id: TsfmcFirearmCommand
+  name: loadout-group-weapon
+  minLimit: 0
+  loadouts:
+  - FactionRiversongLoadout
+  - FactionDrozdLoadout
+  - FactionDragonfangLoadout
+  - SecurityGuardEnforcerLoadout
+
+- type: loadoutGroup
   id: TsfmcFirearm
   name: loadout-group-weapon
   minLimit: 0 # LuaM: 1 > 0
