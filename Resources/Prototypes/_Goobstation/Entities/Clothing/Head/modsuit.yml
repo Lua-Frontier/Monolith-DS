@@ -275,6 +275,9 @@
         minValue: 0.1
         maxValue: 2.0
         isLooped: true
+  - type: NightVision # LuaM - added
+    flashDurationMultiplier: 3.5
+    isEquipment: true
 
 - type: entity
   parent: BaseClothingModsuitHelmetHideIdentity
@@ -325,6 +328,9 @@
         minValue: 0.1
         maxValue: 2.0
         isLooped: true
+  - type: NightVision # LuaM - added
+    flashDurationMultiplier: 3.5
+    isEquipment: true
 
 - type: entity
   parent: BaseClothingModsuitHelmet

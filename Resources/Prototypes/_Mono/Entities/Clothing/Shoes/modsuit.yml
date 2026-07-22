@@ -68,9 +68,12 @@
   components:
   - type: Sprite
     sprite: _Mono/Clothing/Shoes/Modsuits/tsfmc-volta.rsi
+  - type: Magboots  #LuaM added
+    requiresGrid: false
+    enabledPrefix: null
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1.1 #LuaM 0.9 -> 1.1
+    sprintModifier: 1.1 #LuaM 0.9 -> 1.1
   - type: NoSlip
   - type: SealableClothingVisuals
     spriteLayer: sealed

@@ -213,8 +213,17 @@
         Piercing: 0.90
         Heat: 0.90
         Radiation: 0.5
+  - type: ThermalVision
+    flashDurationMultiplier: 2
+    pulseTime: 2
+    isEquipment: true
+    toggleAction: PulseThermalVision
+  - type: NightVision
+    flashDurationMultiplier: 3.5
+    isEquipment: true
   - type: ComponentToggler
     components:
+    - type: FlashImmunity
     - type: BreathMask
     - type: EyeProtection
     - type: PressureProtection
