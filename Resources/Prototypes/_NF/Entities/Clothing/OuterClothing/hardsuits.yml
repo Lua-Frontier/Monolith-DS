@@ -36,7 +36,7 @@
       helmetcover: ClothingHeadHelmetCoverBlock
       helmetattachment: ClothingHeadHelmetAttachmentBlock
 #  - type: PirateBountyItem # Mono # Commented by LuaM
-    id: ClothingOuterHardsuitTacsuit
+#    id: ClothingOuterHardsuitTacsuit
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.65
 

@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseFactionGearPDVT1, BaseItem ]
+  parent: BaseItem # LuaM: removed BaseFactionGearPDVT1
   id: EmagUnlimited
   suffix: Unlimited
   name: cryptographic sequencer
