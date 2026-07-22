@@ -2,12 +2,11 @@
 # GitHub: UnicornOnLSD
 # Discord: unicornonlsd
 
-
 - type: vessel
   id: Olympus
   parent: BaseVessel
-  name: DIS Olympus
-  description: A massive cargo freighter, the pride and joy of DIS. Furnished with an 185 tile dedicated cargo space, a 50 type drive and dedicated shield & point defense system. In sum all you need to run smooth, large scale transport operations.
+  name: vessel-olympus-name # LuaM: DIS Olympus > vessel-olympus-name
+  description: vessel-olympus-desc # LuaM: A massive cargo freighter, the pride and joy of DIS. Furnished with an 185 tile dedicated cargo space, a 50 type drive and dedicated shield & point defense system. In sum all you need to run smooth, large scale transport operations. > vessel-olympus-desc
   price: 225500
   category: Large
   group: Shipyard

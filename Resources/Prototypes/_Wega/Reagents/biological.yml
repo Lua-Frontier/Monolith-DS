@@ -13,48 +13,69 @@
     params:
       volume: 6
   metabolisms:
+#    Medicine: # Commented by LuaM
+#      effects:
+#      - !type:HealthChange
+#        damage:
+#          types:
+#            Blunt: -1
+#            Slash: -1
+#            Piercing: -1
+#            Poison: -1
+#            Heat: -1
+#            Shock: -1
+#            Cold: -1
+#            Caustic: -1
+#           Asphyxiation: -1
+#           Bloodloss: -1
+#       conditions:
+# LuaM-start:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1.0
+        conditions:
+          - !type:OrganType
+            type: Human
+            shouldHave: false
+    Food:
+      effects:
+        - !type:AdjustReagent
+          reagent: UncookedAnimalProteins
+          amount: 0.15
     Medicine:
       effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Blunt: -1
-            Slash: -1
-            Piercing: -1
-            Poison: -1
-            Heat: -1
-            Shock: -1
-            Cold: -1
-            Caustic: -1
-            Asphyxiation: -1
-            Bloodloss: -1
+      - !type:EvenHealthChange
         conditions:
         - !type:OrganType
-          type: Demon
-          shouldHave: false
+          type: Bloodsucker
+        damage:
+          Brute: -0.5
+          Burn: -0.25
+# LuaM-end.
       - !type:HealthChange
         damage:
           types:
-            Poison: 1
+            Poison: 2 # LuaM: 1 > 2
         conditions:
         - !type:OrganType
           type: Demon
           shouldHave: true
       - !type:ChemVomit
-        probability: 0.5
+        probability: 0.75 # LuaM: 0.5 > 0.75
         conditions:
         - !type:OrganType
           type: Demon
           shouldHave: true
-      - !type:SatiateThirst
-        factor: 4
-        conditions:
-        - !type:OrganType
-          type: Demon
-          shouldHave: false
-      - !type:ModifyBloodLevel
-        amount: 4
-        conditions:
-        - !type:OrganType
-          type: Demon
-          shouldHave: false
+#      - !type:SatiateThirst # Commented by LuaM
+#        factor: 4
+#        conditions:
+#        - !type:OrganType
+#          type: Demon
+#          shouldHave: false
+#      - !type:ModifyBloodLevel # Commented by LuaM
+#        amount: 4
+#        conditions:
+#        - !type:OrganType
+#          type: Demon
+#          shouldHave: false

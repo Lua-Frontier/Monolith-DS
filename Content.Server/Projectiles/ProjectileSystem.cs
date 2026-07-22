@@ -134,6 +134,11 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
             if (projectileComp.ProjectileSpent || TerminatingOrDeleted(uid))
                 continue;
 
+// LuaM-start:
+            if (projectileComp is { Weapon: null, OnlyCollideWhenShot: true })
+                continue;
+// LuaM-end.
+
             var xform = Transform(uid);
             var currentVelocity = projectileComp.RaycastResetVelocity ?? _physics.GetMapLinearVelocity(uid, physicsComp, xform);
             var velLen = currentVelocity.Length();

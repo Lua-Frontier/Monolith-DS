@@ -7,8 +7,8 @@
 - type: vessel
   id: Leaf
   parent: BaseVessel
-  name: PTR Leaf
-  description: A retired warship, the majority of it's hull is carved out to live it's twilight years as a botany/chemistry ship.
+  name: vessel-leaf-name # LuaM: PTR Leaf > vessel-leaf-name
+  description: vessel-leaf-desc # LuaM: A retired warship, the majority of it's hull is carved out to live it's twilight years as a botany/chemistry ship. > vessel-leaf-desc
   price: 69500
   category: Medium
   group: Medical

@@ -7,8 +7,8 @@
 - type: vessel
   id: Sakuratsu
   parent: BaseVessel
-  name: SKR Sakuratsu
-  description: A xenoarcheology ship with a dedicated, reinforced chamber. Contains mining equipment too.
+  name: vessel-sakuratsu-name # LuaM: SKR Sakuratsu > vessel-sakuratsu-name
+  description: vessel-sakuratsu-desc # LuaM: A xenoarcheology ship with a dedicated, reinforced chamber. Contains mining equipment too. > vessel-sakuratsu-desc
   price: 58250
   category: Medium
   group: Shipyard

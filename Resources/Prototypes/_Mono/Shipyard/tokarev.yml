@@ -7,8 +7,8 @@
 - type: vessel
   id: Tokarev
   parent: BaseVessel
-  name: VIN Tokarev
-  description: A multipurpose ship that can acompany medical staff in exploring the new frontier in research while allways being ready to help those in need.
+  name: vessel-tokarev-name # LuaM: VIN Tokarev > vessel-tokarev-name
+  description: vessel-tokarev-desc # LuaM: A multipurpose ship that can acompany medical staff in exploring the new frontier in research while allways being ready to help those in need. > vessel-tokarev-desc
   price: 120000
   category: Large
   group: Medical

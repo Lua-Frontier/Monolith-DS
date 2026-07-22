@@ -8,8 +8,8 @@
 - type: vessel
   id: Sellsword
   parent: BaseVessel
-  name: UW Sellsword
-  description: An escort picket comprising a claustrophobic, cast-plastitanium coffin enrobing a 255mm gun and VESPERA missile pod. Combat life expectancy of 4 minutes. Has a military IFF designation.
+  name: vessel-sellsword-name # LuaM: UW Sellsword > vessel-sellsword-name
+  description: vessel-sellsword-desc # LuaM: An escort picket comprising a claustrophobic, cast-plastitanium coffin enrobing a 255mm gun and VESPERA missile pod. Combat life expectancy of 4 minutes. Has a military IFF designation. > vessel-sellsword-desc
   price: 56000 # markup 15% from 48600. 
   category: Small
   group: Shipyard

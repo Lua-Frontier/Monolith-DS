@@ -7,8 +7,8 @@
 - type: vessel
   id: Archer
   parent: BaseVessel
-  name: TSF-SKR Archer
-  description: A combat ship outfitted with 4 plasma turrets and 6 light autocannons. This ship has a military IFF designation.
+  name: vessel-archer-name # LuaM: TSF-SKR Archer > vessel-archer-name
+  description: vessel-archer-desc # LuaM: A combat ship outfitted with 4 plasma turrets and 6 light autocannons. This ship has a military IFF designation. > vessel-archer-desc
   price: 85200 # the plasma and plastitanium tax is real...
   category: Medium
   group: Shipyard

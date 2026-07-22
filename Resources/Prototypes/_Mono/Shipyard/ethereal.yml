@@ -6,8 +6,8 @@
 - type: vessel
   id: Ethereal
   parent: BaseVessel
-  name: NS Ethereal
-  description: A science vessel shaped like a butterfly. Comes facilities to accomodate botany and artifact research, as well as chemistry. Comes with a pool & bar. 
+  name: vessel-ethereal-name # LuaM: NS Ethereal > vessel-ethereal-name
+  description: vessel-ethereal-desc # LuaM: A science vessel shaped like a butterfly. Comes facilities to accomodate botany and artifact research, as well as chemistry. Comes with a pool & bar. > vessel-ethereal-desc
   price: 120000
   category: Large
   group: Shipyard
@@ -21,7 +21,6 @@
   addComponents:
   - type: SolarPoweredGrid
     doNotCull: true
-
 
 - type: gameMap
   id: Ethereal

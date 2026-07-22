@@ -13,6 +13,11 @@ public sealed partial class FrenchAccentSystem : EntitySystem
     private static readonly Regex RegexTh = new(@"th", RegexOptions.IgnoreCase);
     private static readonly Regex RegexStartH = new(@"(?<!\w)h", RegexOptions.IgnoreCase);
     private static readonly Regex RegexSpacePunctuation = new(@"(?<=\w\w)[!?;:](?!\w)", RegexOptions.IgnoreCase);
+// LuaM-start:
+    private static readonly Regex RegexRussianH = new(@"х", RegexOptions.IgnoreCase);
+    private static readonly Regex RegexRussianR = new(@"р", RegexOptions.IgnoreCase);
+    private static readonly Regex RegexRussianSoftSign = new(@"ь", RegexOptions.IgnoreCase);
+// LuaM-end.
 
     public override void Initialize()
     {
@@ -35,6 +40,12 @@ public sealed partial class FrenchAccentSystem : EntitySystem
 
         // spaces out ! ? : and ;.
         msg = RegexSpacePunctuation.Replace(msg, " $&");
+
+// LuaM-start:
+        msg = RegexRussianH.Replace(msg, "г");
+        msg = RegexRussianR.Replace(msg, "рр");
+        msg = RegexRussianSoftSign.Replace(msg, "");
+// LuaM-end.
 
         return msg;
     }

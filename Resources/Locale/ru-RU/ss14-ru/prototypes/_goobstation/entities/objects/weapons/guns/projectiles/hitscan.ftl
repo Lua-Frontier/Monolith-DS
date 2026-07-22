@@ -1,0 +1,16 @@
+ent-SmallRedLaser = малый красный лазерный заряд
+    .desc = { ent-BaseBullet.desc }
+ent-SmallXrayLaser = малый рентгеновский лазерный заряд
+    .desc = { ent-BaseBullet.desc }
+ent-SmallOverchargedLaser = малый перезаряженный лазерный заряд
+    .desc = { ent-BaseBullet.desc }
+ent-SmallPulseLaser = малый импульсный лазерный заряд
+    .desc = { ent-BaseBullet.desc }
+ent-MediumRedLaser = средний красный лазерный заряд
+    .desc = { ent-BaseBullet.desc }
+ent-MediumXrayLaser = средний рентгеновский лазерный заряд
+    .desc = { ent-BaseBullet.desc }
+ent-MediumOverchargedLaser = средний перезаряженный лазерный заряд
+    .desc = { ent-BaseBullet.desc }
+ent-MediumPulseLaser = средний импульсный лазерный заряд
+    .desc = { ent-BaseBullet.desc }

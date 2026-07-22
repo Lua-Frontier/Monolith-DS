@@ -9,8 +9,8 @@
 - type: vessel
   id: Spessbite
   parent: BaseVessel
-  name: PTI Spessbite
-  description: A food truck, equipped with all manners of amenities cramped into an almost claustrophobic interior. Very cozy, though.
+  name: vessel-spessbite-name # LuaM: PTI Spessbite > vessel-spessbite-name
+  description: vessel-spessbite-desc # LuaM: A food truck, equipped with all manners of amenities cramped into an almost claustrophobic interior. Very cozy, though. > vessel-spessbite-desc
   price: 35000
   category: Small
   group: Shipyard

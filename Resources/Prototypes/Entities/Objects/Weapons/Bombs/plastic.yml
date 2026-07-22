@@ -92,7 +92,7 @@
     - state: icon
       map: ["base"]
   - type: OnUseTimerTrigger
-    delay: 3
+    delay: 5 # LuaM: 3 > 5
     delayOptions: [3, 5, 10, 15, 20]
     initialBeepDelay: 0
     beepSound:
@@ -107,8 +107,8 @@
     - Timer
   - type: Explosive
     explosionType: Cryo
-    totalIntensity: 120
-    intensitySlope: 2
-    maxIntensity: 30
+    totalIntensity: 220 # LuaM: 120 > 220
+    intensitySlope: 3 # LuaM: 2 > 3
+    maxIntensity: 200 # LuaM: 30 > 90
     canCreateVacuum: false
   - type: ExplodeOnTrigger

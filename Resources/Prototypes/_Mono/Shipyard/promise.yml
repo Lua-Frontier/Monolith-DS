@@ -7,8 +7,8 @@
 - type: vessel
   id: Promise
   parent: BaseVessel
-  name: DFNT Promise
-  description: An old Medical Ship design dating back from the fracture era. It comes equipped with everything a hospital ship would want, as well as a spacious crew accomodations for long term shifts.
+  name: vessel-promise-name # LuaM: DFNT Promise > vessel-promise-name
+  description: vessel-promise-desc # LuaM: An old Medical Ship design dating back from the fracture era. It comes equipped with everything a hospital ship would want, as well as a spacious crew accomodations for long term shifts. > vessel-promise-desc
   price: 106500
   category: Medium
   group: Medical

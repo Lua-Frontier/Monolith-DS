@@ -124,7 +124,7 @@ uplink-security-68x52mm-box-desc = Используется для переза�
 
 # Скафандры
 uplink-security-hardsuit-m82b-name = Скафандр M82B
-uplink-security-hardsuit-m82b-desc = Вариант M-82C для защиты от ОМП, обычно используется
+uplink-security-hardsuit-m82b-desc = Вариант M-82C для защиты от ОМП, обычно используется врачами и фельдшерами в условиях биологической опасности.
 
 uplink-security-hardsuit-m82c-name = Скафандр M-82C
 uplink-security-hardsuit-m82c-desc = Базовая защитная система для опасных сред (например, космоса). Выполняет роль бронежилета в оснащении почти каждого морпеха ТСФ.

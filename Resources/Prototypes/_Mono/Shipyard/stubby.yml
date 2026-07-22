@@ -8,8 +8,8 @@
 - type: vessel
   id: Stubby
   parent: BaseVessel
-  name: UW Stubby
-  description: An armored light transport fitted with minimal medical equipment. Cramped, but nimble and tough like a dog.
+  name: vessel-stubby-name # LuaM: UW Stubby > vessel-stubby-name
+  description: vessel-stubby-desc # LuaM: An armored light transport fitted with minimal medical equipment. Cramped, but nimble and tough like a dog. > vessel-stubby-desc
   price: 31000 # appraised at ~25000 
   category: Small
   group: Medical

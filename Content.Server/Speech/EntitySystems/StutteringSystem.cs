@@ -1,19 +1,20 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
+using Content.Shared.Speech; // LuaM
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Random;
 
-namespace Content.Server.Speech.EntitySystems
+namespace Content.Server.Speech.EntitySystems 
 {
-    public sealed partial class StutteringSystem : SharedStutteringSystem
+    public sealed class StutteringSystem : SharedStutteringSystem // LuaM: public sealed partiral class > public sealed class
     {
-        [Dependency] private StatusEffectsSystem _statusEffectsSystem = default!;
-        [Dependency] private IRobustRandom _random = default!;
+        [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!; // LuaM: private > private readonly
+        [Dependency] private readonly IRobustRandom _random = default!; // LuaM: private > private readonly
 
         // Regex of characters to stutter.
-        private static readonly Regex Stutter = new(@"[b-df-hj-np-tv-wxyz]",
+        private static readonly Regex Stutter = new(@"[b-df-hj-np-tv-wxyz-б-вд-к-лмн-прст]", // LuaM: added б-вд-к-лмн-прст
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         public override void Initialize()
@@ -26,8 +27,14 @@ namespace Content.Server.Speech.EntitySystems
             if (!Resolve(uid, ref status, false))
                 return;
 
-            _statusEffectsSystem.TryAddStatusEffect<StutteringAccentComponent>(uid, StutterKey, time, refresh, status);
+//            _statusEffectsSystem.TryAddStatusEffect<StutteringAccentComponent>(uid, StutterKey, time, refresh, status); // Commented by LuaM
+// LuaM-start:
+            if (Terminating(uid)) // LuaM
+                return;
+
+            _statusEffectsSystem.TryAddStatusEffect(uid, "Stuttering", time, refresh);
         }
+// LuaM-end.
 
         private void OnAccent(EntityUid uid, StutteringAccentComponent component, AccentGetEvent args)
         {

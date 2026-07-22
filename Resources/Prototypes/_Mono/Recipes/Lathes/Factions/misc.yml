@@ -221,8 +221,9 @@
   - Explosive
   completetime: 2
   materials:
-    Plastic: 100
-    Plasma: 200
+    Plastic: 500 # LuaM: 100 > 500
+    Plasma: 200 # LuaM: 200 > 250
+    Silver: 100 # LuaM
 
 - type: latheRecipe
   parent: BaseToolRecipe

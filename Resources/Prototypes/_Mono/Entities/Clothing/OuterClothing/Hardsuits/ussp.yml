@@ -41,8 +41,8 @@
   - type: StaticPrice
     price: 1250
     vendPrice: 7500
-  - type: PirateBountyItem # Mono
-    id: ClothingOuterHardsuitTacsuit
+#  - type: PirateBountyItem # Mono # Commented by LuaM
+#    id: ClothingOuterHardsuitTacsuit
 
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseFactionGearOtherFactionT0 ]
@@ -87,8 +87,8 @@
   - type: StaticPrice
     price: 420
     vendPrice: 2500
-  - type: PirateBountyItem # Mono
-    id: ClothingOuterHardsuitTacsuit
+#  - type: PirateBountyItem # Mono # Commented by LuaM
+#    id: ClothingOuterHardsuitTacsuit
 
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseFactionGearOtherFactionT0 ]
@@ -133,8 +133,8 @@
   - type: StaticPrice
     price: 500
     vendPrice: 3000
-  - type: PirateBountyItem # Mono
-    id: ClothingOuterHardsuitTacsuit
+#  - type: PirateBountyItem # Mono # Commented by LuaM
+#    id: ClothingOuterHardsuitTacsuit
 
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseFactionGearOtherFactionT0 ]

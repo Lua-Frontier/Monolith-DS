@@ -7,8 +7,8 @@
 - type: vessel
   id: Praetorian
   parent: BaseVessel
-  name: TSF-SKR Praetorian
-  description: A more compact and advanced Archer, outfitted with a shield gen, 4 AK570s, 2 L85s, and 2 MARAUDERS. This ship has a military IFF designation.
+  name: vessel-praetorian-name # LuaM: TSF-SKR Praetorian > vessel-praetorian-name
+  description: vessel-praetorian-desc # LuaM: A more compact and advanced Archer, outfitted with a shield gen, 4 AK570s, 2 L85s, and 2 MARAUDERS. This ship has a military IFF designation. > vessel-praetorian-desc
   price: 101520
   category: Medium
   group: Shipyard

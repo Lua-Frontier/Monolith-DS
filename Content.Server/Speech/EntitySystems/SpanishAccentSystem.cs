@@ -14,6 +14,7 @@ namespace Content.Server.Speech.EntitySystems
         {
             // Insert E before every S
             message = InsertS(message);
+            message = InsertRussianS(message);  // LuaM
             // If a sentence ends with ?, insert a reverse ? at the beginning of the sentence
             message = ReplacePunctuation(message);
             return message;
@@ -21,7 +22,7 @@ namespace Content.Server.Speech.EntitySystems
 
         private string InsertS(string message)
         {
-            // Replace every new Word that starts with s/S
+			// Replace every new Word that starts with s/S
             var msg = message.Replace(" s", " es").Replace(" S", " Es");
 
             // Still need to check if the beginning of the message starts
@@ -36,6 +37,24 @@ namespace Content.Server.Speech.EntitySystems
 
             return msg;
         }
+
+// LuaM-start
+        private string InsertRussianS(string message)
+        {
+            var msg = message.Replace(" с", " эс").Replace(" С", " Эс");
+
+            if (msg.StartsWith("с", StringComparison.Ordinal))
+            {
+                return msg.Remove(0, 1).Insert(0, "эс");
+            }
+            else if (msg.StartsWith("С", StringComparison.Ordinal))
+            {
+                return msg.Remove(0, 1).Insert(0, "Эс");
+            }
+
+            return msg;
+        }
+// LuaM-end
 
         private string ReplacePunctuation(string message)
         {

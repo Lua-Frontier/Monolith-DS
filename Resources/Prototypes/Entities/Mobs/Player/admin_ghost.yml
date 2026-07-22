@@ -115,9 +115,12 @@
     - Biological
     - Inorganic
   - type: ShowSyndicateIcons # Monolith
-  - type: MovementSpeedModifier # LuaM
+# LuaM-start:
+  - type: MovementSpeedModifier
     baseWalkSpeed: 35 
     baseSprintSpeed: 15 
+  - type: SurgeryIgnoreClothing
+# LuaM-end.
 
 - type: entity
   id: ActionAGhostShowSolar

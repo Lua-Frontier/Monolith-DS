@@ -1,4 +1,4 @@
-ent-BaseImplantOnlyImplanterCentcomm = имплантер Центкома
+ent-BaseImplantOnlyImplanterCentcomm = имплантер УСФ
     .desc = Компактный одноразовый шприц для введения подкожных имплантов. Игла покрыта анестетиком.
 
 ent-BluespaceLifelineImplanter = имплантер «блюспейс-страховка»

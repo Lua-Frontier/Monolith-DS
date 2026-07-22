@@ -7,8 +7,8 @@
 - type: vessel
   id: Notch
   parent: BaseVessel
-  name: DIS Notch
-  description: A small salvage shuttle featuring the bare minimum for any fresh aspiring scavenger in the sector. Fast and compact. A proud piece of Drake Industries' civilian spacecrafts collection.
+  name: vessel-notch-name # LuaM: DIS Notch > vessel-notch-name
+  description: vessel-notch-desc # LuaM: A small salvage shuttle featuring the bare minimum for any fresh aspiring scavenger in the sector. Fast and compact. A proud piece of Drake Industries' civilian spacecrafts collection. > vessel-notch-desc
   price: 25900
   category: Small
   group: Shipyard

@@ -1,12 +1,13 @@
 using System.Text;
 using Content.Server.Speech.Components;
+using Content.Shared.Speech; // LuaM
 using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed partial class MonkeyAccentSystem : EntitySystem
+public sealed class MonkeyAccentSystem : EntitySystem
 {
-    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // LuaM: private > private readonly
 
     public override void Initialize()
     {
@@ -28,23 +29,23 @@ public sealed partial class MonkeyAccentSystem : EntitySystem
                 {
                     foreach (var _ in word)
                     {
-                        accentedMessage.Append('O');
+						accentedMessage.Append('У'); // LuaM: O > У
                     }
 
                     if (_random.NextDouble() >= 0.3)
-                        accentedMessage.Append('K');
+						accentedMessage.Append('К'); // LuaM: K > К
                 }
                 else
-                    accentedMessage.Append('O');
+                    accentedMessage.Append('У'); // LuaM: O > У
             }
             else
             {
                 foreach (var _ in word)
                 {
                     if (_random.NextDouble() >= 0.8)
-                        accentedMessage.Append('H');
+						accentedMessage.Append('Г'); // LuaM: H > Г
                     else
-                        accentedMessage.Append('A');
+						accentedMessage.Append('А'); // LuaM: A > А
                 }
 
             }

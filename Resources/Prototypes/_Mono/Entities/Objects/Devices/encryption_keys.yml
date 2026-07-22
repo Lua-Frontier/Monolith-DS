@@ -15,8 +15,8 @@
     layers:
     - state: crypt_rusted
     - state: sec_label
-  - type: PirateBountyItem
-    id: EncryptionKeyFaction
+#  - type: PirateBountyItem # Commented by LuaM
+#    id: EncryptionKeyFaction
 
 - type: entity
   parent: EncryptionKey
@@ -35,8 +35,8 @@
     layers:
     - state: crypt_blue
     - state: sec_label
-  - type: PirateBountyItem
-    id: EncryptionKeyFaction
+#  - type: PirateBountyItem # Commented by LuaM
+#    id: EncryptionKeyFaction
 
 - type: entity
   parent: EncryptionKey

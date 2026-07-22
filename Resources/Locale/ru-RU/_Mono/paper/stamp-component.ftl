@@ -7,5 +7,5 @@ stamp-component-stamped-name-ussp-taccomm = ТАККОМ СССП
 stamp-component-stamped-name-ussp = Союз Советских Социалистических Планет
 stamp-component-stamped-name-pdv-overwatch = Локальное наблюдение авангарда Нордфолла
 stamp-component-stamped-name-pdv-vizier = Командор Авангарда
-stamp-component-stamped-name-pdv-asvaran = Асваран Авангарда
+stamp-component-stamped-name-pdv-asvaran = Полевой командир Авангарда
 stamp-component-stamped-name-pdv-spasaka = Медик Авангарда

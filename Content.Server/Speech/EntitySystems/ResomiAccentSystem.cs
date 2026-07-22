@@ -12,6 +12,11 @@ public sealed partial class ResomiAccentSystem : EntitySystem
     private static readonly Regex RegexLowerSilly = new Regex("silly");
     private static readonly Regex RegexFirstCapSilly = new Regex("Silly");
     private static readonly Regex RegexUpperSilly = new Regex("SILLY");
+// LuaM-start
+    private static readonly Regex RegexLowerRussianSilly = new Regex("глупый");
+    private static readonly Regex RegexFirstCapRussianSilly = new Regex("Глупый");
+    private static readonly Regex RegexUpperRussianSilly = new Regex("ГЛУПЫЙ");
+// LuaM-end
 
     public override void Initialize()
     {
@@ -28,10 +33,13 @@ public sealed partial class ResomiAccentSystem : EntitySystem
 
             // bawk
             message = RegexLowerSilly.Replace(message, "silly... bawk");
-            // Bawk
             message = RegexFirstCapSilly.Replace(message, "Silly... Bawk");
-            // BAWK
             message = RegexUpperSilly.Replace(message, "SILLY... BAWK");
+// LuaM-start
+            message = RegexLowerRussianSilly.Replace(message, "глупый... бяк");
+            message = RegexFirstCapRussianSilly.Replace(message, "Глупый... Бяк");
+            message = RegexUpperRussianSilly.Replace(message, "ГЛУПЫЙ... БЯК");
+// LuaM-end
         }
 
         args.Message = message;

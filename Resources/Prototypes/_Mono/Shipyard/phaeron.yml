@@ -10,8 +10,8 @@
 - type: vessel
   id: Phaeron
   parent: BaseVessel
-  name: HES Phaeron
-  description: Part of Horizon Energy's latest gas mining initiative, this gigantic gas tanker is able to harvest and store a frightening amount of gas. Perfect for plasma harvesting in the Colossus sector.
+  name: vessel-phaeron-name # LuaM: HES Phaeron > vessel-phaeron-name
+  description: vessel-phaeron-desc # LuaM: Part of Horizon Energy's latest gas mining initiative, this gigantic gas tanker is able to harvest and store a frightening amount of gas. Perfect for plasma harvesting in the Colossus sector. > vessel-phaeron-desc
   price: 52450
   category: Medium
   group: Shipyard

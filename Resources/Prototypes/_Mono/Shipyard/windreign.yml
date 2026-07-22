@@ -1,8 +1,8 @@
 - type: vessel
   id: Windreign
   parent: BaseVessel
-  name: HES Windreign
-  description: A massive, high-end Horizon Energy vessel built for long-term atmospheric work and gas mining. Carrier-capable with a small fleet of gas mining and salvage shuttles. Features a large, luxurious crew area. Recommended crew is 2-6.
+  name: vessel-windreign-name # LuaM: HES Windreign > vessel-windreign-name
+  description: vessel-windreign-desc # LuaM: A massive, high-end Horizon Energy vessel built for long-term atmospheric work and gas mining. Carrier-capable with a small fleet of gas mining and salvage shuttles. Features a large, luxurious crew area. Recommended crew is 2-6. > vessel-windreign-desc
   price: 250000
   category: Large
   group: Shipyard

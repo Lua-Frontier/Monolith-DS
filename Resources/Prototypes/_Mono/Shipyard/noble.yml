@@ -6,8 +6,8 @@
 - type: vessel
   id: Noble
   parent: BaseVessel
-  name: SKR Noble
-  description: A salvage vessel outfitted with both a scrap and ore processor, plus 4 mining pulsers. Outside of that, its quite lacking, outside of a highly efficient pinch-fusion generator.
+  name: vessel-noble-name # LuaM: SKR Noble > vessel-noble-name
+  description: vessel-noble-desc # LuaM: A salvage vessel outfitted with both a scrap and ore processor, plus 4 mining pulsers. Outside of that, its quite lacking, outside of a highly efficient pinch-fusion generator. > vessel-noble-desc
   price: 52100
   category: Medium
   group: Shipyard

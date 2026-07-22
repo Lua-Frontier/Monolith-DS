@@ -7,8 +7,8 @@
 - type: vessel
   id: MClass
   parent: BaseVessel
-  name: TSF-SKR M-Class Salvage Carrier
-  description: A large salvage carrier with space for 2 salvage microshuttles to dock.
+  name: vessel-mclass-name # LuaM: TSF-SKR M-Class Salvage Carrier > vessel-mclass-name
+  description: vessel-mclass-desc # LuaM: A large salvage carrier with space for 2 salvage microshuttles to dock. > vessel-mclass-desc
   price: 155000
   category: Large
   group: Shipyard

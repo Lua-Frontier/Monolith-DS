@@ -13,8 +13,8 @@ highlights-janitor = "Jani", "Janitor", "КЦ", "Колосс"
 highlights-mail-carrier = "Посылка", "Почтальон", "Почта", "Письмо", "КЦ", "Колосс"
 highlights-cyborg = "борг", "киборг", "робот", "КЦ", "Колосс"
 
-highlights-pdv-grand-vizier = "Старший", "Визарь", "СВ", Юпитер, Авангард
-highlights-pdv-asvaran = Асваран, Юпитер, Авангард
+highlights-pdv-grand-vizier = "Командор", "Визарь", "СВ", Юпитер, Авангард
+highlights-pdv-asvaran = "Командир", "Полевой", "Полевой Командир", Юпитер, Авангард
 highlights-pdv-denasvar = Преторианец, Претор, Прет, Юпитер, Авангард
 highlights-pdv-spasaka = Медик, Юпитер, Авангард
 highlights-pdv-rahkshan = Оперативник, Опер, Юпитер, Авангард

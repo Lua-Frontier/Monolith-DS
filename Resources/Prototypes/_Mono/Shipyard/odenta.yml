@@ -8,8 +8,8 @@
 - type: vessel
   id: Odenta
   parent: BaseVessel
-  name: MI-COR Odenta 
-  description: The Odenta is a heavily armored Medical Destroyer built for high-risk rescues and medical work. Armed with dual Prometheus Laser Cannons, a 255mm Bofors,a Draupnir 30mm Chaingun, 20mm, and PD lasers to shield its onboard Chemical Bay and Cryonics suite. Has MIL IFF.
+  name: vessel-odenta-name # LuaM: MI-COR Odenta > vessel-odenta-name
+  description: vessel-odenta-desc # LuaM: The Odenta is a heavily armored Medical Destroyer built for high-risk rescues and medical work. Armed with dual Prometheus Laser Cannons, a 255mm Bofors, a Draupnir 30mm Chaingun, 20mm, and PD lasers to shield its onboard Chemical Bay and Cryonics suite. Has MIL IFF. > vessel-odenta-desc
   price: 112000 # 98K base + markup
   category: Medium
   group: Medical

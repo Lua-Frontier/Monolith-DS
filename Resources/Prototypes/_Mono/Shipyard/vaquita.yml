@@ -7,8 +7,8 @@
 - type: vessel
   id: Vaquita
   parent: BaseVessel
-  name: DIS Vaquita
-  description: A small craft equipped with all the necessary gear for optimal lone salvaging. Including camera mounted mining pulsers and a large thrusters for those quick getaways. "Mine from the cockpit without lifting a finger !" or at least, that's how the DIS advertises it.
+  name: vessel-vaquita-name # LuaM: DIS Vaquita > vessel-vaquita-name
+  description: vessel-vaquita-desc # LuaM: A small craft equipped with all the necessary gear for optimal lone salvaging. Including camera mounted mining pulsers and a large thrusters for those quick getaways. "Mine from the cockpit without lifting a finger !" or at least, that's how the DIS advertises it. > vessel-vaquita-desc
   price: 37900
   category: Small
   group: Shipyard

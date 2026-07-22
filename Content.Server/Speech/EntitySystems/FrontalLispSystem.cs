@@ -1,5 +1,7 @@
 using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
+using Robust.Shared.Random; // LuaM
+using Content.Shared.Speech; // LuaM
 
 namespace Content.Server.Speech.EntitySystems;
 
@@ -11,6 +13,8 @@ public sealed class FrontalLispSystem : EntitySystem
     private static readonly Regex RegexUpperEcks = new(@"[E]+[Xx]+[Cc]*|[X]+");
     private static readonly Regex RegexLowerEcks = new(@"[e]+[x]+[c]*|[x]+");
     // @formatter:on
+
+    [Dependency] private readonly IRobustRandom _random = default!; // LuaM
 
     public override void Initialize()
     {
@@ -28,6 +32,19 @@ public sealed class FrontalLispSystem : EntitySystem
         // handles ex(c), x
         message = RegexUpperEcks.Replace(message, "Ekth");
         message = RegexLowerEcks.Replace(message, "ekth");
+
+// LuaM-start:
+        message = Regex.Replace(message, @"с", _random.Prob(0.90f) ? "ш" : "с");
+        message = Regex.Replace(message, @"С", _random.Prob(0.90f) ? "Ш" : "С");
+        message = Regex.Replace(message, @"ч", _random.Prob(0.90f) ? "ш" : "ч");
+        message = Regex.Replace(message, @"Ч", _random.Prob(0.90f) ? "Ш" : "Ч");
+        message = Regex.Replace(message, @"ц", _random.Prob(0.90f) ? "ч" : "ц");
+        message = Regex.Replace(message, @"Ц", _random.Prob(0.90f) ? "Ч" : "Ц");
+        message = Regex.Replace(message, @"\B[т](?![АЕЁИОУЫЭЮЯаеёиоуыэюя])", _random.Prob(0.90f) ? "ч" : "т");
+        message = Regex.Replace(message, @"\B[Т](?![АЕЁИОУЫЭЮЯаеёиоуыэюя])", _random.Prob(0.90f) ? "Ч" : "Т");
+        message = Regex.Replace(message, @"з", _random.Prob(0.90f) ? "ж" : "з");
+        message = Regex.Replace(message, @"З", _random.Prob(0.90f) ? "Ж" : "З");
+// LuaM-end.
 
         args.Message = message;
     }

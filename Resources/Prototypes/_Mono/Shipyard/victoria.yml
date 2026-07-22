@@ -7,8 +7,8 @@
 - type: vessel
   id: Victoria
   parent: BaseVessel
-  name: IHR Victoria
-  description: A reworked hull from an unknown salvage ship manufacturer refitted for xenoarcheology that still holds onto some of its mining and salvaging capabilities.
+  name: vessel-victoria-name # LuaM: IHR Victoria > vessel-victoria-name
+  description: vessel-victoria-desc # LuaM: A reworked hull from an unknown salvage ship manufacturer refitted for xenoarcheology that still holds onto some of its mining and salvaging capabilities. > vessel-victoria-desc
   price: 45000
   category: Medium
   group: Shipyard

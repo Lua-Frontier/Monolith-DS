@@ -7,8 +7,8 @@
 - type: vessel
   id: Brute
   parent: BaseVessel
-  name: DIS Brute
-  description: What is essentially a heavy-class cargo freighter is being advertised by the DIS marketing department as a new wonder of cargo transportation. With quadruple the layer of walls to protect your precious cargo while drunk driving.
+  name: vessel-brute-name # LuaM: DIS Brute > vessel-brute-name
+  description: vessel-brute-desc # LuaM: What is essentially a heavy-class cargo freighter is being advertised by the DIS marketing department as a new wonder of cargo transportation. With quadruple the layer of walls to protect your precious cargo while drunk driving. > vessel-brute-desc
   price: 77850
   category: Medium
   group: Shipyard

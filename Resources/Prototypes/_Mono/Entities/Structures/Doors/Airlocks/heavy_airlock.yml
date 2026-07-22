@@ -58,10 +58,10 @@
   - type: Sprite
     sprite: _Mono/Structures/Doors/HeavyAirlocks/Glass/standard.rsi
   - type: Door
-    closeTimeOne: 0.1
-    closeTimeTwo: 0.2
-    openTimeOne: 0.1
-    openTimeTwo: 0.2
+#    closeTimeOne: 0.1 # Commented by LuaM
+#    closeTimeTwo: 0.2
+#    openTimeOne: 0.1
+#    openTimeTwo: 0.2
     crushDamage:
       types:
         Blunt: 30 # Troll

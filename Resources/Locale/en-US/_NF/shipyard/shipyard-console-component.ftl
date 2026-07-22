@@ -97,3 +97,6 @@ shipyard-console-engine-Bananium = Bananium
 # Mono start
 shipyard-console-engine-NFR = NFR
 # Mono end
+
+shipyard-console-rename-placeholder = Name
+shipyard-console-rename-button = Rename

@@ -146,7 +146,7 @@
   parent: MonkeyCube
   id: ProtogenCube
   name: protogen cube
-  suffix: DO NOT MAP #mono: retired
+#  suffix: DO NOT MAP #mono: retired # Commented by LuaM
   components:
   - type: Rehydratable
     possibleSpawns:

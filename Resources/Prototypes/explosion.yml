@@ -66,9 +66,9 @@
   id: Cryo
   damagePerIntensity:
     types:
-      Cold: 5
-      Blunt: 2
-      Structural: 20
+      Cold: 0.7 # LuaM: 5 > 0.7
+      Blunt: 0.3 # LuaM: 2 > 0.3
+      Structural: 55 # LuaM: 20 > 55
   tileBreakChance: [0]
   tileBreakIntensity: [0]
   lightColor: Blue

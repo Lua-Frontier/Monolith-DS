@@ -7,8 +7,8 @@
 - type: vessel
   id: Twilight
   parent: BaseVessel
-  name: SKR Twilight
-  description: A small, fast jump-capable cargo transport with light rear-facing defensive armament.
+  name: vessel-twilight-name # LuaM: SKR Twilight > vessel-twilight-name
+  description: vessel-twilight-desc # LuaM: A small, fast jump-capable cargo transport with light rear-facing defensive armament. > vessel-twilight-desc
   price: 50000
   category: Small
   group: Shipyard

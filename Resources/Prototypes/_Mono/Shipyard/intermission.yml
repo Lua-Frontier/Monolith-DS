@@ -9,8 +9,8 @@
 - type: vessel
   id: Intermission
   parent: BaseVessel
-  name: WA Intermission
-  description: A large medical vessel with a lobby, bar, food, and medical care facilities, Capable of saving lives and then saving appetites all in one go.
+  name: vessel-intermission-name # LuaM: WA Intermission > vessel-intermission-name
+  description: vessel-intermission-desc # LuaM: A large medical vessel with a lobby, bar, food, and medical care facilities, Capable of saving lives and then saving appetites all in one go. > vessel-intermission-desc
   price: 134750
   category: Large
   group: Medical

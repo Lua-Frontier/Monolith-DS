@@ -9,8 +9,10 @@
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic # Nothing else because Rouge said she was adding a language for Oni
+    - Kelael # LuaM
     understands:
     - TauCetiBasic
+    - Kelael # LuaM
   - type: HumanoidAppearance
     species: Oni
   - type: Sprite

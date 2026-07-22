@@ -7,8 +7,8 @@
 - type: vessel
   id: Tiger
   parent: BaseVessel
-  name: NSK Tiger
-  description: A retired racing ship, the Tiger hull has been found in use by the Nova Sharks as both a hotrod, as well as a ludicriously fast haulcraft. 
+  name: vessel-tiger-name # LuaM: NSK Tiger > vessel-tiger-name
+  description: vessel-tiger-desc # LuaM: A retired racing ship, the Tiger hull has been found in use by the Nova Sharks as both a hotrod, as well as a ludicriously fast haulcraft. > vessel-tiger-desc
   price: 32000 # race ship tax since its gonna be used for smuggling. 
   category: Small
   group: Shipyard

@@ -1,0 +1,9 @@
+ent-ClothingHandsGlovesHeavyGoldenTrim = тяжёлые перчатки с золотой отделкой
+    .desc = Пара перчаток с золотой отделкой и от электрического тока.
+ent-ClothingHandsGlovesChronoLegioneer = футуристические перчатки
+    .desc = Футуристические перчатки из неизвестного материала, не оставляющего следов.
+ent-ClothingHandsGlovesChronoLegioneerUnremoveable = футуристические перчатки
+    .suffix = Неснимаемый
+    .desc = { ent-ClothingHandsGlovesChronoLegioneer.desc }
+ent-ClothingHandsGlovesGoldenTrim = перчатки с золотой окантовкой
+    .desc = Пара перчаток с золотой окантовкой для персонала УСФ. Не изолированы.

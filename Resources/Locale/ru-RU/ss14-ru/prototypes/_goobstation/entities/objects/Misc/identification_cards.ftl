@@ -1,0 +1,17 @@
+ent-ChronoIDCard = ID-карта будущего
+    .desc = Карта, при помощи которой изначально можно было получить доступ ко всему во вселенной.
+ent-ExecutiveIDCard = карта доступа руководителя
+    .desc = Сотрудники федерации, по закону, обязаны прослушивать сообщения пользователей при помощи одного из этих устройств. Кроме того, программа способна переопределять блокировки доступа на большинстве устройств.
+ent-ExecutiveIDCardChameleon = карта доступа руководителя
+    .desc = Те же функции, что и в оригинальной версии, но внешний вид может быть изменен.
+    .suffix = Хамелеон
+ent-CentcomIDCardNavyCaptain = ID-карта капитана УСФ
+    .desc = { ent-IDCardStandard.desc }
+ent-CentcomIDCardNavyOfficer = ID-карта офицера УСФ
+    .desc = { ent-CentcomIDCardNavyCaptain.desc }
+ent-CentcomIDCardSpecialOperationsOfficer = ID-карта ОСО
+    .desc = { ent-CentcomIDCardNavyCaptain.desc }
+ent-CentcomIDCardDiplomat = ID-карта дипломата ТСФ
+    .desc = { ent-CentcomIDCardNavyCaptain.desc }
+ent-GmanIDCard = странная ID-карта
+    .desc = Карта, с помощью которой изначально можно было получить доступ ко всему в этой вселенной.

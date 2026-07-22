@@ -28,6 +28,7 @@
   id: ClothingOuterArmourInvisibleChameleon
   name: covert armor
   description: An armored vest that utilizes bluespace technology. Capable of being completely invisible, or appearing as any other outer clothing.
+  suffix: Chameleon # LuaM
   components:
   - type: ChameleonClothing
     slot: [ outerClothing ]

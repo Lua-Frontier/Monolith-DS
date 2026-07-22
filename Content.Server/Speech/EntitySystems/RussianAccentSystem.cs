@@ -1,3 +1,5 @@
+/*
+// Commented by LuaM
 using System.Text;
 using Content.Server.Speech.Components;
 
@@ -47,3 +49,4 @@ public sealed partial class RussianAccentSystem : EntitySystem
         args.Message = Accentuate(args.Message);
     }
 }
+*/

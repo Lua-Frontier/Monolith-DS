@@ -11,8 +11,8 @@
 - type: vessel
   id: Framework
   parent: BaseVessel
-  name: UNJ Framework
-  description: The cheapest hunk of junk this side of the Rogue. Not meant to last, but has the potential to be anything.
+  name: vessel-framework-name # LuaM: UNJ Framework > vessel-framework-name
+  description: vessel-framework-desc # LuaM: The cheapest hunk of junk this side of the Rogue. Not meant to last, but has the potential to be anything. > vessel-framework-desc
   price: 10000
   category: Small
   group: Shipyard

@@ -5,12 +5,11 @@
 # Shuttle Notes:
 #
 #
-
 - type: vessel
   id: Jitterbug
   parent: BaseVessel
-  name: SE Jitterbug
-  description: A Botanical shuttle, comes with ten trays and some supplies to get you going. Comes in the unique shape of a bug, how cute.
+  name: vessel-jitterbug-name # LuaM: SE Jitterbug > vessel-jitterbug-name
+  description: vessel-jitterbug-desc # LuaM: A Botanical shuttle, comes with ten trays and some supplies to get you going. Comes in the unique shape of a bug, how cute. > vessel-jitterbug-desc
   price: 36050
   category: Small
   group: Shipyard
