@@ -119,6 +119,7 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
 
             if (running)
             {
+                shield.Runtime.Recovering = false; // LuaM AutoRecover
                 shield.Runtime.Form = MathF.Min(shield.Runtime.Form + step, 1f);
 
                 shield.Runtime.Charge = shield.Runtime.Form < 1f
@@ -130,6 +131,19 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
                 shield.Runtime.Shatter = float.Epsilon;
                 shield.Runtime.Charge = 0f;
             }
+
+            // LuaM AutoRecover Start:
+
+            else if (shield.Runtime.Recovering && TryDrawPower(ent, frameTime))
+            {
+                shield.Runtime.Form = MathF.Max(shield.Runtime.Form - step, 0f);
+                shield.Runtime.Charge = cfg.MaxCharge * shield.Runtime.Form;
+
+                _toggle.TryActivate(uid);
+            }
+
+            // LuaM AutoRecover End.
+
             else if (shield.Runtime.Form > 0f)
             {
                 shield.Runtime.Form = MathF.Max(shield.Runtime.Form - step, 0f);
@@ -154,6 +168,7 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
         ent.Comp.Runtime.Shatter = float.Epsilon;
         ent.Comp.Runtime.Charge = 0f;
         ent.Comp.Runtime.Offline = ent.Comp.Shield.BreakCooldown;
+        ent.Comp.Runtime.Recovering = true; // LuaM AutoRecover
         Dirty(ent, ent.Comp);
         _toggle.TryDeactivate(ent.Owner);
     }
@@ -164,7 +179,8 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
         if (MathHelper.CloseTo(before.Form, now.Form)
             && MathHelper.CloseTo(before.Shatter, now.Shatter)
             && MathHelper.CloseTo(before.Charge, now.Charge)
-            && MathHelper.CloseTo(before.Offline, now.Offline))
+            && MathHelper.CloseTo(before.Offline, now.Offline)
+            && before.Recovering == now.Recovering) // LuaM AutoRecover
         {
             return;
         }

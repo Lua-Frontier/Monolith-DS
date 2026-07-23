@@ -161,4 +161,14 @@ public struct PersonalShieldRuntime
     /// Seconds left before a fractured shield may start spinning up again.
     /// </summary>
     public float Offline;
+
+    // LuaM AutoRecover start:
+
+    /// <summary>
+    /// Активна, пока щит заряжается после разрушения. Если выключить вручную, то проверки не будет.
+    /// </summary>
+    public bool Recovering;
+
+    // LuaM AutoRecover end.
+
 }
