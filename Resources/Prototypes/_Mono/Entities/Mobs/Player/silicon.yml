@@ -128,7 +128,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    # - Syndicate # Commented by LuaM
     - SiliconsExpeditionNF
   - type: Access
     tags:

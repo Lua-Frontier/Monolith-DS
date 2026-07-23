@@ -1,23 +1,24 @@
 using System.Text;
 using Content.Server.Speech.Components;
 using Content.Shared.Drunk;
+using Content.Shared.Speech; // LuaM
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.StatusEffect;
+using Robust.Shared.Prototypes; // LuaM
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed partial class SlurredSystem : SharedSlurredSystem
+public sealed class SlurredSystem : SharedSlurredSystem // LuaM: public sealed partiral class > public sealed class
 {
-    [Dependency] private StatusEffectsSystem _statusEffectsSystem = default!;
-    [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!; // LuaM: private > private readonly
+    [Dependency] private readonly IRobustRandom _random = default!; // LuaM: private > private readonly
+    [Dependency] private readonly IGameTiming _timing = default!; // LuaM: private > private readonly
 
-
-
-    [ValidatePrototypeId<StatusEffectPrototype>]
-    private const string SlurKey = "SlurredSpeech";
+//    [ValidatePrototypeId<StatusEffectPrototype>] // Commented by LuaM
+//    private const string SlurKey = "SlurredSpeech";
+    private static readonly ProtoId<StatusEffectPrototype> SlurKey = "SlurredSpeech"; // LuaM
 
     public override void Initialize()
     {
@@ -71,6 +72,12 @@ public sealed partial class SlurredSystem : SharedSlurredSystem
                     'a' => "ah",
                     'u' => "oo",
                     'c' => "k",
+// LuaM-start:
+                    'о' => "а",
+                    'к' => "кх",
+                    'щ' => "шч",
+                    'ц' => "тс",
+// LuaM-end.
                     _ => $"{character}",
                 };
 

@@ -53,6 +53,7 @@
   id: ExecutiveIDCardChameleon
   name: executive access card
   description: Flash this, and any TSF employee is legally obligated to listen to you. Capable of changing appearance if you want to go incognito.
+  suffix: Chameleon # LuaM
   components:
   - type: AgentIDCard
   - type: ActivatableUI

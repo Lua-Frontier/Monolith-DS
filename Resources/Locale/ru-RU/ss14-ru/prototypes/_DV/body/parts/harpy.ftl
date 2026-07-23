@@ -1,6 +1,6 @@
 ent-PartHarpy = часть тела гарпии
     .desc = { ent-BaseItem.desc }
-ent-TorsoHarpy = торс гарпии
+ent-TorsoHarpy = туловище гарпии
     .desc = { ent-PartHarpy.desc }
 ent-HeadHarpy = голова гарпии
     .desc = { ent-PartHarpy.desc }

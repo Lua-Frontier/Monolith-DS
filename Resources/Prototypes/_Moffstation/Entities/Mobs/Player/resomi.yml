@@ -1,6 +1,7 @@
 - type: entity
   save: false
   name: Urist McChicken
+  suffix: Reosmi # LuaM
   parent: BaseMobResomi
   id: MobResomi
   # Monolith - Start - Mono/EE Languages

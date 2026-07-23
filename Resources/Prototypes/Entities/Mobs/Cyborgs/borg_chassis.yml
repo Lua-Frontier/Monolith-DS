@@ -69,6 +69,13 @@
     selectedBorgType: engineering
   - type: BorgSwitchableSubtype # Goobstation
     borgSubtype: engineer_default
+  - type: Access # LuaM
+    tags:
+     - External
+     - Mercenary
+     - Atmospherics
+     - Engineering
+     - Captain
 
 - type: entity
   id: BorgChassisJanitor

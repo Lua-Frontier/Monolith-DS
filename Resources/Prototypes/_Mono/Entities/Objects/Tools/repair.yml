@@ -87,7 +87,7 @@
     maxCharges: 800
     charges: 50
   - type: AutoRecharge
-    rechargeDuration: 2
+    rechargeDuration: 1 # LuaM: 2 > 1
   - type: Tag
     tags:
     - ShipRepairTool

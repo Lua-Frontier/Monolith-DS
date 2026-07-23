@@ -24,7 +24,7 @@
     - state: closed_unlit
       shader: unshaded
       map: ["enum.DoorVisualLayers.BaseUnlit"]
-      visible: false
+      visible: true # LuaM: Port-airlocks-resprite: false > true
     - state: welded
       map: ["enum.WeldableLayers.BaseWelded"]
     - state: bolted_unlit
@@ -40,11 +40,11 @@
       shader: unshaded
       visible: false
       map: ["enum.ElectrifiedLayers.HUD"]
-    - state: electrified
-      sprite: Effects/electricity.rsi
-      shader: unshaded
-      visible: false
-      map: ["enum.ElectrifiedLayers.Sparks"]
+#    - state: electrified # Commented by LuaM: Port-airlocks-resprite
+#      sprite: Effects/electricity.rsi
+#      shader: unshaded
+#      visible: false
+#      map: ["enum.ElectrifiedLayers.Sparks"]
   - type: AnimationPlayer
   - type: Physics
   - type: Fixtures
@@ -83,15 +83,16 @@
     fuel: 5
     time: 3
   - type: Airlock
+    openUnlitVisible: true # LuaM: Port-airlocks-resprite
   - type: NavMapDoor
   - type: DoorBolt
   - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.ElectrifiedVisuals.ShowSparks:
-        enum.ElectrifiedLayers.Sparks:
-          True: { visible: True }
-          False: { visible: False }
+#  - type: GenericVisualizer # Commented by LuaM: Port-airlocks-resprite
+#    visuals:
+#      enum.ElectrifiedVisuals.ShowSparks:
+#        enum.ElectrifiedLayers.Sparks:
+#          True: { visible: True }
+#          False: { visible: False }
   - type: WiresVisuals
   - type: ElectrocutionHUDVisuals
   - type: ApcPowerReceiver
@@ -164,7 +165,7 @@
   - type: PlacementReplacement
     key: walls
   - type: IconSmooth
-    key: airlocks # Mono
+    key: walls # Mono # LuaM: Port-airlocks-resprite: airlocks > walls
     mode: NoSprite
   - type: PaintableAirlock
     group: Standard

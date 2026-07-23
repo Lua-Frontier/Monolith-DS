@@ -165,10 +165,14 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
             var vesselEntry = new VesselRow
             {
                 Vessel = prototype,
-                VesselName = { Text = prototype!.Name },
-                VesselDescription = { Text = prototype!.Description }, // Mono
+//                VesselName = { Text = prototype!.Name }, // Commented by LuaM
+//                VesselDescription = { Text = prototype!.Description }, // Mono // Commented by LuaM
+// LuaM-start:
+                VesselName = { Text = GetLocalizedVesselName(prototype!) },
+                VesselDescription = { Text = GetLocalizedVesselDescription(prototype!) },
+// LuaM-end.
                 Purchase = { Text = Loc.GetString("shipyard-console-purchase-available"), Disabled = !canPurchase },
-                Guidebook = { Disabled = prototype.GuidebookPage is null, TooltipDelay = 0.2f, ToolTip = prototype.Description },
+                Guidebook = { Disabled = prototype?.GuidebookPage is null, TooltipDelay = 0.2f, ToolTip = prototype?.Description ?? string.Empty }, // LuaM: prototype.Description > prototype?.Description ?? string.Empty
                 Price = { Text = priceText },
             };
             vesselEntry.Purchase.OnPressed += (args) => { OnOrderApproved?.Invoke(args); };
@@ -325,10 +329,40 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
         }
         else
         {
-            DeedTitle.Text = $"None";
+            DeedTitle.Text = Loc.GetString("shipyard-console-no-deed"); //  LuaM: $"None" > Loc.GetString("shipyard-console-no-deed")
         }
         _freeListings = state.FreeListings;
         _validId = state.IsTargetIdPresent;
         PopulateProducts(_lastAvailableProtos, _lastUnavailableProtos, _freeListings, _validId);
     }
+
+// LuaM-start:
+    /// <summary>
+    /// Getting localized shuttle name
+    /// </summary>
+    private string GetLocalizedVesselName(VesselPrototype vessel)
+    {
+        if (!string.IsNullOrEmpty(vessel.LocName))
+            return Loc.GetString(vessel.LocName);
+        
+        if (!string.IsNullOrEmpty(vessel.Name) && vessel.Name.StartsWith("vessel-"))
+            return Loc.GetString(vessel.Name);
+        
+        return vessel.Name;
+    }
+
+    /// <summary>
+    /// Getting localized shuttle description
+    /// </summary>
+    private string GetLocalizedVesselDescription(VesselPrototype vessel)
+    {
+        if (!string.IsNullOrEmpty(vessel.LocDescription))
+            return Loc.GetString(vessel.LocDescription);
+        
+        if (!string.IsNullOrEmpty(vessel.Description) && vessel.Description.StartsWith("vessel-"))
+            return Loc.GetString(vessel.Description);
+        
+        return vessel.Description;
+    }
+// LuaM-end.
 }

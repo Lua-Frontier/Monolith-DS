@@ -3,4 +3,4 @@ ent-PowerCellCombat = боевая батарея
     .suffix = Полная
 ent-PowerCellCombatPrinted = боевая батарея
     .desc = { ent-PowerCellCombat.desc }
-    .suffix = Пустрая
+    .suffix = Пустая

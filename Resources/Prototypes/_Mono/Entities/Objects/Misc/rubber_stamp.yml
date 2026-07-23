@@ -124,22 +124,22 @@
     tags:
     - PDVAsvaranStamp
 
-- type: entity
-  name: PDV spasaka's rubber stamp
-  parent: RubberStampBase
-  id: RubberStampPDVSpasaka
-  categories: [ DoNotMap ]
-  components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-pdv-spasaka
-    stampedColor: "#533980"
-    stampState: "paper_stamp-mono-spasaka"
-  - type: Sprite
-    state: stamp-wizard
-    protected: True
-  - type: Tag
-    tags:
-    - PDVSpasakaStamp
+#- type: entity # Commented by LuaM
+#  name: PDV spasaka's rubber stamp
+#  parent: RubberStampBase
+#  id: RubberStampPDVSpasaka 
+#  categories: [ DoNotMap ]
+#  components:
+#  - type: Stamp
+#    stampedName: stamp-component-stamped-name-pdv-spasaka
+#    stampedColor: "#533980"
+#    stampState: "paper_stamp-mono-spasaka"
+#  - type: Sprite
+#    state: stamp-wizard
+#    protected: True
+#  - type: Tag
+#    tags:
+#    - PDVSpasakaStamp
 
 # USSP
 

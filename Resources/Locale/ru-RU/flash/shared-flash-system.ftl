@@ -1,0 +1,1 @@
+flash-protection = Защита от вспышек

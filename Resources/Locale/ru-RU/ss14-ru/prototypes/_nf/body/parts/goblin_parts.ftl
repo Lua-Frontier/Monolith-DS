@@ -1,6 +1,6 @@
 ent-PartGoblin = часть тела гоблина
     .desc = { ent-BasePart.desc }
-ent-TorsoGoblin = торс гоблина
+ent-TorsoGoblin = туловище гоблина
     .desc = { ent-BaseTorso.desc }
 ent-HeadGoblin = голова гоблина
     .desc = { ent-BaseHead.desc }

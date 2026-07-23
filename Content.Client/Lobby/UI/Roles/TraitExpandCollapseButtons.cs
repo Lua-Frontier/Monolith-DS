@@ -24,7 +24,7 @@ public sealed class TraitExpandCollapseButtons : PanelContainer
         // Create the expand all button
         var expandAllButton = new Button
         {
-            Text = "Expand All",
+            Text = Loc.GetString("traits-expand-all-button"), // LuaM: "Expand All" > Loc.GetString("traits-expand-all-button")
             StyleClasses = { "OpenRight" },
             HorizontalExpand = true,
             VerticalExpand = true,
@@ -35,7 +35,7 @@ public sealed class TraitExpandCollapseButtons : PanelContainer
         // Create the collapse all button
         var collapseAllButton = new Button
         {
-            Text = "Collapse All",
+            Text = Loc.GetString("traits-collapse-all-button"), // LuaM: "Collapse All" > Loc.GetString("traits-collapse-all-button")
             StyleClasses = { "OpenLeft" },
             HorizontalExpand = true,
             VerticalExpand = true,

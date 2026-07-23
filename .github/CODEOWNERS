@@ -2,6 +2,3 @@
 
 # Ping for all PRs
 * @Pcolik505 @Covral
-
-#  Ping for .cs files
-*.cs @Pcolik505 @HacksLua

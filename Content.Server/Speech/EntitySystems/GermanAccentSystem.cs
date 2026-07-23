@@ -12,6 +12,10 @@ public sealed partial class GermanAccentSystem : EntitySystem
 
     private static readonly Regex RegexTh = new(@"(?<=\s|^)th", RegexOptions.IgnoreCase);
     private static readonly Regex RegexThe = new(@"(?<=\s|^)the(?=\s|$)", RegexOptions.IgnoreCase);
+// LuaM-start:
+    private static readonly Regex RegexRussianTh = new(@"(?<=\s|^)т", RegexOptions.IgnoreCase);
+    private static readonly Regex RegexRussianVowel = new(@"[аоуыэ]", RegexOptions.IgnoreCase);
+// LuaM-end.
 
     public override void Initialize()
     {
@@ -23,7 +27,7 @@ public sealed partial class GermanAccentSystem : EntitySystem
         var msg = message;
 
         // rarely, "the" should become "das" instead of "ze"
-        // TODO: The ReplacementAccentSystem should have random replacements this built-in.
+		// TODO: The ReplacementAccentSystem should have random replacements this built-in.
         foreach (Match match in RegexThe.Matches(msg))
         {
             if (_random.Prob(0.3f))
@@ -47,8 +51,14 @@ public sealed partial class GermanAccentSystem : EntitySystem
             // just shift the T over to a Z to preserve capitalization
             msgBuilder[match.Index] = (char) (msgBuilder[match.Index] + 6);
         }
-
         // Random Umlaut Time! (The joke outweighs the emotional damage this inflicts on actual Germans)
+        // LuaM-start:
+        foreach (Match match in RegexRussianTh.Matches(msg))
+        {
+            msgBuilder[match.Index] = msgBuilder[match.Index] == 'Т' ? 'Ц' : 'ц';
+        }
+        // LuaM-end.
+
         var umlautCooldown = 0;
         for (var i = 0; i < msgBuilder.Length; i++)
         {
@@ -64,6 +74,16 @@ public sealed partial class GermanAccentSystem : EntitySystem
                         'o' => 'ö',
                         'U' => 'Ü',
                         'u' => 'ü',
+// LuaM-start:
+                        'А' => 'Я',
+                        'а' => 'я',
+                        'О' => 'Ё',
+                        'о' => 'ё',
+                        'Ы' => 'И',
+                        'ы' => 'и',
+                        'Э' => 'Е',
+                        'э' => 'е',
+// LuaM-end.
                         _ => msgBuilder[i]
                     };
                     umlautCooldown = 4;

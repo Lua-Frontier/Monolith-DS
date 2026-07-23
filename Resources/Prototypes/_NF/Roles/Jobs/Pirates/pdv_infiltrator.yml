@@ -60,4 +60,4 @@
   storage:
     back:
     - RadioHandheldNF
-    - RubberStampPDVSpasaka
+#    - RubberStampPDVSpasaka # Commented by LuaM

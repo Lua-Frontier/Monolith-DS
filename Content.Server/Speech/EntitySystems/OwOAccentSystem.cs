@@ -1,11 +1,12 @@
 using Content.Server.Speech.Components;
+using Content.Shared.Speech; // LuaM
 using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems
 {
-    public sealed partial class OwOAccentSystem : EntitySystem
+    public sealed class OwOAccentSystem : EntitySystem // LuaM: public partial sealed class > public sealed class
     {
-        [Dependency] private IRobustRandom _random = default!;
+        [Dependency] private readonly IRobustRandom _random = default!; // LuaM: private > private readonly
 
         private static readonly IReadOnlyList<string> Faces = new List<string>{
             " (•`ω´•)", " ;;w;;", " owo", " UwU", " >w<", " ^w^"
@@ -14,6 +15,7 @@ namespace Content.Server.Speech.EntitySystems
         private static readonly IReadOnlyDictionary<string, string> SpecialWords = new Dictionary<string, string>()
         {
             { "you", "wu" },
+            { "ты", "ти" }, // LuaM
         };
 
         public override void Initialize()
@@ -30,7 +32,11 @@ namespace Content.Server.Speech.EntitySystems
 
             return message.Replace("!", _random.Pick(Faces))
                 .Replace("r", "w").Replace("R", "W")
-                .Replace("l", "w").Replace("L", "W");
+                .Replace("l", "w").Replace("L", "W")
+                // LuaM-start
+                .Replace("р", "в").Replace("Р", "В")
+                .Replace("л", "в").Replace("Л", "В");
+                // LuaM-end
         }
 
         private void OnAccent(EntityUid uid, OwOAccentComponent component, AccentGetEvent args)

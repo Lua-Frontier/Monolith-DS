@@ -15,3 +15,6 @@ ent-WeaponRevolverPythonGatfruit = { ent-WeaponRevolverPython}
 ent-WeaponRevolverPythonAP = { ent-WeaponRevolverPython }
     .desc = { ent-WeaponRevolverPython.desc }
     .suffix = Револьвер, Бронебойные
+ent-WeaponRevolverMatebaAP = { ent-WeaponRevolverMateba }
+    .suffix = Бронебойные
+    .desc = { ent-WeaponRevolverMateba.desc }

@@ -7,8 +7,8 @@
 - type: vessel
   id: twilightmk2
   parent: BaseVessel
-  name: ZOB Twilight MkII
-  description: A CIV-Twilight hull modified with ill-advised retrofits to be a combat capable ship. Mostly used by the desperate and the cheap. EVA protection is required.
+  name: vessel-twilightmk2-name # LuaM: ZOB Twilight MkII > vessel-twilightmk2-name
+  description: vessel-twilightmk2-desc # LuaM: A CIV-Twilight hull modified with ill-advised retrofits to be a combat capable ship. Mostly used by the desperate and the cheap. EVA protection is required. > vessel-twilightmk2-desc
   price: 59000 # its not more expensive because 2/3s of the ship is actively spaced.
   category: Medium
   group: Expedition

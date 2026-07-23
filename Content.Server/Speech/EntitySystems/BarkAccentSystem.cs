@@ -17,6 +17,12 @@ namespace Content.Server.Speech.EntitySystems
             { "Ah", "Arf" },
             { "oh", "oof" },
             { "Oh", "Oof" },
+// LuaM-start:
+            { "га", "гаф" },
+            { "Га", "Гаф" },
+            { "угу", "вуф" },
+            { "Угу", "Вуф" },
+// LuaM-end.
         };
 
         public override void Initialize()
@@ -32,7 +38,11 @@ namespace Content.Server.Speech.EntitySystems
             }
 
             return message.Replace("!", _random.Pick(Barks))
-                .Replace("l", "r").Replace("L", "R");
+                .Replace("l", "r").Replace("L", "R")
+// LuaM-start:
+                .Replace("l", "r").Replace("L", "R")
+                .Replace("л", "р").Replace("Л", "Р");
+// LuaM-end.
         }
 
         private void OnAccent(EntityUid uid, BarkAccentComponent component, AccentGetEvent args)

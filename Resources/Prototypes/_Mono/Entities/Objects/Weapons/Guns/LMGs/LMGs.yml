@@ -224,10 +224,10 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: GunWieldBonus
-    minAngle: 0
-    maxAngle: 0
+    minAngle: 1 # LuaM: 0 -> 1 Fix
+    maxAngle: 1.5 # LuaM: 0 -> 1.5 Fix
   - type: Gun
-    minAngle: 0 # forcewield anyways
+    minAngle: 1 # forcewield anyways # LuaM: 0 -> 1 Fix
     maxAngle: 12
     angleIncrease: 1
     angleDecay: 12

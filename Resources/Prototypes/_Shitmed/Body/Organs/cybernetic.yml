@@ -149,6 +149,8 @@
   - type: Item
     size: Small
     heldPrefix: heart
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics
 
 - type: entity
   parent: BasicCyberneticHeart
@@ -173,6 +175,8 @@
       rateModifier: 2.8
     - id: Narcotic
       rateModifier: 1.6
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics
 
 # Liver
 
@@ -199,6 +203,8 @@
     tags:
     - Organ
     - Liver
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics
 
 # Lungs
 
@@ -234,6 +240,8 @@
   - type: Tag
     tags:
     - Organ
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics
 
 - type: entity
   parent: BasicCyberneticLungs
@@ -249,4 +257,6 @@
     slotId: lungs
     onAdd:
     - type: BreathingImmunity # LuaM
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics
 # LuaM-end.

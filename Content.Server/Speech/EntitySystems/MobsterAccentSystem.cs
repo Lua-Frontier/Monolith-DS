@@ -14,6 +14,10 @@ public sealed partial class MobsterAccentSystem : EntitySystem
     private static readonly Regex RegexUpperAr = new(@"(?<=\w)A[Rr](?=\w)");
     private static readonly Regex RegexFirstWord = new(@"^(\S+)");
     private static readonly Regex RegexLastWord = new(@"(\S+)$");
+// LuaM-start:
+    private static readonly Regex RegexRussianIng = new(@"(?<=\w\w)(ов)а(?!\w)", RegexOptions.IgnoreCase);
+    private static readonly Regex RegexRussianVowel = new(@"[аоуыэ]", RegexOptions.IgnoreCase);
+// LuaM-end.
 
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ReplacementAccentSystem _replacement = default!;
@@ -38,12 +42,28 @@ public sealed partial class MobsterAccentSystem : EntitySystem
         // king -> king
         //Uses captures groups to make sure the captialization of IN is kept
         msg = RegexIng.Replace(msg, "$1'");
+// LuaM-start:
+        msg = RegexRussianIng.Replace(msg, "$1$2");
+// LuaM-end.
 
         // or -> uh and ar -> ah in the middle of words (fuhget, tahget)
         msg = RegexLowerOr.Replace(msg, "uh");
         msg = RegexUpperOr.Replace(msg, "UH");
         msg = RegexLowerAr.Replace(msg, "ah");
         msg = RegexUpperAr.Replace(msg, "AH");
+// LuaM-start:
+        for (var i = 0; i < msg.Length; i++)
+        {
+            if (RegexRussianVowel.IsMatch(msg[i].ToString()))
+            {
+                if (_random.Prob(0.3f))
+                {
+                    msg = msg.Remove(i, 1);
+                    i--;
+                }
+            }
+        }
+// LuaM-end.
 
         // Prefix
         if (_random.Prob(0.15f))

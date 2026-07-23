@@ -163,14 +163,14 @@
         Blunt: 0.35 # LuaM: 0.25 > 0.35
         Slash: 0.35 # LuaM: 0.25 > 0.35
         Piercing: 0.25
-        Heat: 0.5 # LuaM: 0.25 > 0.5
+        Heat: 0.25
         Radiation: 0.25
         Caustic: 0.5
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
-    walkModifier: 1.05 # LuaM: 1.0 > 1.05
-    sprintModifier: 1.05 # LuaM: 1.0 > 1.05
+    walkModifier: 1.0
+    sprintModifier: 1.0
 # LuaM-end.
   - type: Tag
     tags:

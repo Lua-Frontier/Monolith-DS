@@ -60,6 +60,15 @@
     selectedBorgType: pdvengineer
   - type: BorgSwitchableSubtype
     borgSubtype: pdvengineer_default
+  - type: Access # LuaM
+    tags:
+    - Pirate
+    - PDVCommand
+    - GrandVizier
+    - Mercenary
+    - Atmospherics
+    - Engineering
+    - Captain
 
 - type: entity
   id: PDVBorgChassisMedical
@@ -110,6 +119,17 @@
     - Common
     - Traffic
     - Nfsd
+  - type: Access # LuaM
+    tags:
+     - External
+     - Mercenary
+     - HeadOfSecurity
+     - Bailiff
+     - Sergeant
+     - Frontier
+     -  Security
+     - Detective
+     - Armory
 
 - type: entity
   id: TSFBorgChassisAssault
@@ -123,6 +143,17 @@
   - type: Damageable
     damageContainer: Silicon
     damageModifierSet: FactionBorgChassis
+  - type: Access # LuaM
+    tags:
+     - External
+     - Mercenary
+     - HeadOfSecurity
+     - Bailiff
+     - Sergeant
+     - Frontier
+     - Security
+     - Detective
+     - Armory
 
 - type: entity
   id: TSFBorgChassisEngineer
@@ -133,6 +164,21 @@
     selectedBorgType: tsfengineer
   - type: BorgSwitchableSubtype
     borgSubtype: tsfengineer_default
+  - type: Access # LuaM
+    tags:
+     - External
+     - Mercenary
+     - Atmospherics
+     - Engineering
+     - Captain
+     - TsfmcEngineering
+     - HeadOfSecurity
+     - Bailiff
+     - Sergeant
+     - Frontier
+     - Security
+     - Detective
+     - Armory
 
 - type: entity
   id: TSFBorgChassisMedical
@@ -143,3 +189,14 @@
     selectedBorgType: tsfmedical
   - type: BorgSwitchableSubtype
     borgSubtype: tsfmedical_default
+  - type: Access # LuaM
+    tags:
+     - External
+     - Mercenary
+     - HeadOfSecurity
+     - Bailiff
+     - Sergeant
+     - Frontier
+     - Security
+     - Detective
+     - Armory

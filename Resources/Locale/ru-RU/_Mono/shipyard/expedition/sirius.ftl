@@ -1,2 +1,2 @@
-vessel-sirius-name = ТСФ-СКР «Сириус»
+vessel-sirius-name = SKR «Сириус»
 vessel-sirius-desc = Экспедиционное судно: четыре 57-мм, два 90-мм и полноценная химлаборатория.

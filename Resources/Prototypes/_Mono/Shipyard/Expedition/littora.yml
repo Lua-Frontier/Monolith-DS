@@ -7,8 +7,8 @@
 - type: vessel
   id: Littora
   parent: BaseVessel
-  name: SKR Littora
-  description: A medium-to-large sized expedition ship with salvage equipment.
+  name: vessel-littora-name # LuaM: SKR Littora > vessel-littora-name
+  description: vessel-littora-desc # LuaM: A medium-to-large sized expedition ship with salvage equipment. > vessel-littora-desc
   price: 76000
   category: Large
   group: Expedition

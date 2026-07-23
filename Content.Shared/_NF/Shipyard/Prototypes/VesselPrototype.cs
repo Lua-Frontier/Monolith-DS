@@ -24,6 +24,14 @@ public sealed partial class VesselPrototype : IPrototype, IInheritingPrototype
     /// </summary>
     [DataField] public string Name = string.Empty;
 
+// LuaM-start:
+    /// <summary>
+    ///     Localized vessel name key.
+    /// </summary>
+    [DataField]
+    public string LocName = string.Empty;
+// LuaM-end.
+
     /// <summary>
     ///     The amount of this ship that can active at any given time.
     ///     0 for unlimited.
@@ -34,6 +42,14 @@ public sealed partial class VesselPrototype : IPrototype, IInheritingPrototype
     ///     Short description of the vessel.
     /// </summary>
     [DataField] public string Description = string.Empty;
+
+// LuaM-start:
+    /// <summary>
+    ///     Localized vessel description key.
+    /// </summary>
+    [DataField]
+    public string LocDescription = string.Empty;
+// LuaM-end.
 
     /// <summary>
     ///     The price of the vessel

@@ -1,0 +1,12 @@
+ent-LeftHandDwarf = левая кисть дворфа
+    .desc = { ent-PartHuman.desc }
+ent-RightHandDwarf = правая кисть дворфа
+    .desc = { ent-PartHuman.desc }
+ent-LeftHandFelinid = левая кисть фелинида
+    .desc = { ent-PartHuman.desc }
+ent-RightHandFelinid = правая кисть фелинида
+    .desc = { ent-PartHuman.desc }
+ent-RightArmYowie = правая рука йови
+    .desc = { ent-PartYowie.desc }
+ent-LeftHandYowie = левая кисть йови
+    .desc = { ent-PartYowie.desc }

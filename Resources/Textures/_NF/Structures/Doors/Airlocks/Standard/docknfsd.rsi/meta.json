@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from CEV-Eris at commit https://github.com/discordia-space/CEV-Eris/commit/14517938186858388656a6aee14bf47af9e9649f - then modified by 20kdc & AJCM-git, recolored by MagnusCrowe for Frontier Station",
+  "copyright": "Taken from CEV-Eris at commit https://github.com/discordia-space/CEV-Eris/commit/14517938186858388656a6aee14bf47af9e9649f - then modified by 20kdc & AJCM-git, recolored by MagnusCrowe for Frontier Station. Recolored by  kukoldun. (discord) for Sector Colossus",
   "size": {
     "x": 32,
     "y": 32
@@ -14,55 +14,54 @@
       "name": "bolted_unlit"
     },
     {
+      "name": "bolted_open_unlit"
+    },
+    {
       "name": "closed"
     },
     {
       "name": "closed_unlit"
     },
     {
+      "name": "open_unlit"
+    },
+    {
       "name": "closing",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
           0.2
+        ]
       ]
-    ]
     },
     {
       "name": "closing_unlit",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
           0.2
+        ]
       ]
-    ]
     },
     {
       "name": "deny_unlit",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
       ]
-    ]
     },
     {
       "name": "open"
@@ -71,64 +70,60 @@
       "name": "opening",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
           0.2
+        ]
       ]
-    ]
     },
     {
       "name": "opening_unlit",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
           0.2
+        ]
       ]
-    ]
     },
     {
       "name": "panel_closing",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
           0.2
+        ]
       ]
-    ]
     },
     {
-      "name": "panel_open"
+      "name": "panel_closed"
     },
     {
       "name": "panel_opening",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
+          0.1,
+          0.1,
+          0.07,
+          0.07,
+          0.07,
           0.2
+        ]
       ]
-    ]
+    },
+
+    {
+      "name": "panel_open"
     },
     {
       "name": "welded"
@@ -137,10 +132,13 @@
       "name": "emergency_unlit",
       "delays": [
         [
-          0.4,
-          0.4
+          1.2,
+          1.2
         ]
       ]
+    },
+    {
+      "name": "emergency_open_unlit"
     }
   ]
 }

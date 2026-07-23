@@ -180,7 +180,7 @@
   id: LockerNfsdSheriff
   parent: [NFLockerBaseSecure, LockerHeadOfSecurity]
   name: TSFMC locker
-  suffix: Colonel
+#  suffix: Colonel # Commented by LuaM
   components:
   - type: EntityStorageVisuals
     stateBaseClosed: nfsd_sheriff

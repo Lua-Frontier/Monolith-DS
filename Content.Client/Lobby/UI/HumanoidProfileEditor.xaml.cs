@@ -739,7 +739,7 @@ namespace Content.Client.Lobby.UI
                                     names.Add($"[color=#ADD8E6]{Loc.GetString(exProto.Name)}[/color]");
                             }
                             if (names.Count > 0)
-                                tooltipParts.Add($"You must not have one of these traits: {string.Join(", ", names)}");
+                                tooltipParts.Add(Loc.GetString("trait-mutually-exclusive", ("traits", string.Join(", ", names)))); // LuaM: $"You must not have one of these traits: {string.Join(", ", names)}" > Loc.GetString("trait-mutually-exclusive", ("traits", string.Join(", ", names)))
                         }
 
                         if (trait.SpeciesBlacklist.Count > 0)
@@ -751,7 +751,7 @@ namespace Content.Client.Lobby.UI
                                     names.Add($"[color=#087209]{Loc.GetString(speciesProto.Name)}[/color]");
                             }
                             if (names.Count > 0)
-                                tooltipParts.Add($"You must not be: {string.Join(", ", names)}");
+                                tooltipParts.Add(Loc.GetString("trait-species-blacklist", ("species", string.Join(", ", names)))); // LuaM: $"You must not be: {string.Join(", ", names)}" > Loc.GetString("trait-species-blacklist", ("species", string.Join(", ", names)))
                         }
 
                         if (tooltipParts.Count > 0)

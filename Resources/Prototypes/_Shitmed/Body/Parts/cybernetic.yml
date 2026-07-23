@@ -114,6 +114,8 @@
       pryPowered: true
     - type: UseDelay # For insta prying
       delay: 1 # whoever ported the hands didnt see this part so theyre technically already insta prying, lmao
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics
 
 - type: entity
   parent: RightArmCyberneticBase
@@ -142,6 +144,8 @@
     onAdd:
     - type: NoSlip
     - type: ProtectedFromStepTriggers
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics
 
 - type: entity
   parent: RightLegCyberneticBase
@@ -156,6 +160,8 @@
     onAdd:
     - type: NoSlip
     - type: ProtectedFromStepTriggers
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics
 
 - type: entity
   id: DexLeftHand
@@ -165,6 +171,8 @@
   components:
   - type: DoAfterDelayMultiplier
     multiplier: 0.8
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics
 
 - type: entity
   id: DexRightHand
@@ -174,3 +182,5 @@
   components:
   - type: DoAfterDelayMultiplier
     multiplier: 0.8
+  - type: PirateBountyItem # LuaM
+    id: PirateBountyCybernetics

@@ -44,10 +44,11 @@
   result: SeismicCharge
   categories:
   - Tools
-  completetime: 1
+  completetime: 2 # LuaM: 1 > 2
   materials:
-    Plastic: 1500
-    Steel: 100
+    Plastic: 1500 # LuaM: 1500 > 500
+#    Steel: 100 # Commented by LuaM
+    Plasma: 200 # LuaM
     Silver: 100
 
 - type: latheRecipe

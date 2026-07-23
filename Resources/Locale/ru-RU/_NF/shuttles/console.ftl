@@ -17,6 +17,7 @@ shuttle-console-service-flag-Social-shortform = ☺
 shuttle-console-service-flag-Services-description = Услуги (например, медицинские, питание, инженерия), предлагаемые на борту.
 shuttle-console-service-flag-Trade-description = Товары, продаваемые на борту.
 shuttle-console-service-flag-Social-description = Место для общения и отдыха.
+shuttle-console-maximum-speed = Лимит скорости шаттла
 
 shuttle-console-force-anchored = Вы не можете совершить FTL-переход на аванпосте.
 shuttle-console-signature-infrared = Тепловая сигнатура
@@ -31,6 +32,10 @@ shuttle-console-signature-unknown =
         [supermassive] Гигантский Неизвестный Объект
        *[other] Неизвестный Объект
     }
+
+# Network Port Buttons
+shuttle-console-network-ports = Связанные порты
+shuttle-console-network-connect-tooltip = Используя мультитул, вы можете привязать данную кнопку на консоли к устройству (например, к корабельному орудию).
 
 shuttle-console-device-button-1 = Кн. 1
 shuttle-console-device-button-2 = Кн. 2

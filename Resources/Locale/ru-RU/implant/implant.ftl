@@ -34,4 +34,5 @@ scramble-implant-activated-popup = Ваша внешность меняется!
 ## Сообщения имплантов
 
 deathrattle-implant-dead-message = {$user} погиб. Место: {$grid} {$position}.
+deathrattle-implant-revive-message = {$user} был реанимирован и сейчас в критическом состоянии. Место: {$grid}{$position}.
 deathrattle-implant-critical-message = {$user}: жизненные показатели критические, требуется немедленная помощь. Место: {$grid} {$position}.

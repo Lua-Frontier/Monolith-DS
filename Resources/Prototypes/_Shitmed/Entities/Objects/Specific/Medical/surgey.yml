@@ -25,6 +25,7 @@
     speed: 10
   - type: Tending
     speed: 10
+  - type: SurgeryIgnoreClothing # LuaM
 
 - type: entity
   name: bone multitool

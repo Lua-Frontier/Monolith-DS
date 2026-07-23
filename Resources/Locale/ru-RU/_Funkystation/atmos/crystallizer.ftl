@@ -21,7 +21,7 @@ crystallizer-ui-endothermic = Реакция эндотермическая.
 # Рецепты
 crystallizer-recipe-PlasticRecipe = Пластик (10)
 crystallizer-recipe-Iridite = Иридит (1)
-crystallizer-recipe-Plastitanium = Пластитаний (10)
+crystallizer-recipe-Plastitanium = Пластитан (10)
 crystallizer-recipe-Plasteel = Пласталь (10)
 crystallizer-recipe-Plasma = Плазма (1)
 crystallizer-recipe-Telecrystal = Телекристалл (1)

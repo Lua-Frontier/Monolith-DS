@@ -51,7 +51,7 @@
 - type: latheRecipe
   parent: BaseWeaponRecipeLong
   id: WeaponRifleVulcanMerc
-  result: WeaponRifleVulcanRegistered
+  result: WeaponRifleVulcan # LuaM: WeaponRifleVulcanRegistered > WeaponRifleVulcan
   categories:
   - Rifles
   - Ballistic
@@ -64,7 +64,7 @@
 - type: latheRecipe
   parent: BaseWeaponRecipeLong
   id: WeaponShotgunEnforcerMerc
-  result: WeaponShotgunEnforcerRegistered
+  result: WeaponShotgunEnforcer # LuaM: WeaponShotgunEnforcerRegistered > WeaponShotgunEnforcer
   categories:
   - Shotguns
   - Ballistic
@@ -117,7 +117,7 @@
 - type: latheRecipe
   id: WeaponSubMachineGunVector9x19mm
   parent: BaseWeaponRecipeLong
-  result: WeaponSubMachineGunVector9x19mmRegistered
+  result: WeaponSubMachineGunVector9x19mm # LuaM: WeaponSubMachineGunVector9x19mmRegistered > WeaponSubMachineGunVector9x19mm
   categories:
   - SMGs
   - Ballistic

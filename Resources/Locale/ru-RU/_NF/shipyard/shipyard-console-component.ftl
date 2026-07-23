@@ -83,7 +83,8 @@ shipyard-console-sell-button = Продать
 shipyard-console-guidebook = Документация
 shipyard-console-registered-none = Нет
 shipyard-console-rename-button = Переименовать
-shipyard-console-rename-placeholder = Название
+shipyard-console-rename-placeholder = Название...
+shipyard-console-sell = Продать
 shipyard-console-confirm-unassign = Вы уверены?
 
 shipyard-console-contraband-onboard = На борту обнаружена контрабанда.
@@ -93,5 +94,5 @@ shipyard-console-invalid-voucher-type = Этот ваучер не может б
 shipyard-console-fallback-prevent-sale = Обнаружены ошибки класса YML на борту. Пожалуйста, отправьте отчет об ошибке, когда это возможно.
 
 # Mono start
-shipyard-console-engine-NFR = NFR
+shipyard-console-engine-NFR = Ядерное
 # Mono end

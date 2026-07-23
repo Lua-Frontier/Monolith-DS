@@ -136,7 +136,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             return;
         }
 
-        var name = vessel.Name;
+        var name = GetLocalizedVesselName(vessel); // LuaM: vessel.Name > GetLocalizedVesselName(vessel)
 
         if (vessel.Price <= 0)
             return;
@@ -1013,6 +1013,36 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         return 0;
     }
     #endregion Ship Pricing
+
+// LuaM-start:
+    /// <summary>
+    /// Getting localized shuttle name
+    /// </summary>
+    private string GetLocalizedVesselName(VesselPrototype vessel)
+    {
+        if (!string.IsNullOrEmpty(vessel.LocName))
+            return Loc.GetString(vessel.LocName);
+        
+        if (!string.IsNullOrEmpty(vessel.Name) && vessel.Name.StartsWith("vessel-"))
+            return Loc.GetString(vessel.Name);
+        
+        return vessel.Name;
+    }
+
+    /// <summary>
+    /// Getting localized shuttle desc
+    /// </summary>
+    private string GetLocalizedVesselDescription(VesselPrototype vessel)
+    {
+        if (!string.IsNullOrEmpty(vessel.LocDescription))
+            return Loc.GetString(vessel.LocDescription);
+        
+        if (!string.IsNullOrEmpty(vessel.Description) && vessel.Description.StartsWith("vessel-"))
+            return Loc.GetString(vessel.Description);
+        
+        return vessel.Description;
+    }
+// LuaM-end.
 
     public void OnRenameMessage(EntityUid uid, ShipyardConsoleComponent component, ShipyardConsoleRenameMessage args)
     {

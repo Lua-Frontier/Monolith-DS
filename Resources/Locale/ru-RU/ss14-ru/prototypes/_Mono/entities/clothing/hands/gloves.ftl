@@ -1,5 +1,5 @@
-ent-ClothingHandsGlovesMopp = перчатки MOPP
-    .desc = Качественные резиновые перчатки с изоляцией для защиты от РХБ.
+ent-ClothingHandsGlovesMopp = защитные перчатки ТСФ
+    .desc = Качественные резиновые перчатки с изоляцией для защиты от РХБ-угроз.
 ent-ClothingHandsGlovesTacticalCombatTan = тактические перчатки (хаки)
     .desc = Тактические перчатки огнестойкие и ударопрочные.
 ent-ClothingHandsGlovesTacticalCombatBlack = тактические перчатки (чёрные)

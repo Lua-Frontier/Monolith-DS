@@ -16,5 +16,5 @@ ent-Cartridge45_magnumHP = патрон (.45 магнум экспансивны
     .desc = { ent-BaseCartridge45_magnum.desc }
 ent-Cartridge45_magnumRIP = патрон (.45 магнум RIP)
     .desc = { ent-BaseCartridge45_magnum.desc }
-ent-Cartridge45_magnumPlasteelAP = патрон (.45 магнум бронебойный пласталевый)
+ent-Cartridge45_magnumPlasteelAP = патрон (.45 магнум бронебойный)
     .desc = { ent-BaseCartridge45_magnum.desc }

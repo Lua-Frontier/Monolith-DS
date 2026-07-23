@@ -1,6 +1,6 @@
-ent-DataFarmCryptoCircuitboard = плата фермы данных (исследования)
-    .desc = Энергоёмкий сервер, предназначенный для извлечения данных… откуда-то. Генерирует 200 исследовательских очков в секунду. Похоже, он прикручен к полу.
-    .suffix = машинная плата
-ent-DataFarmResearchCircuitboard = плата фермы данных (криптовалюта)
-    .desc = Энергоёмкий сервер, предназначенный для извлечения данных… откуда-то. Генерирует ценную, но случайную криптовалюту со скоростью одной единицы каждые 10 минут
-    .suffix = машинная плата
+ent-DataFarmCryptoCircuitboard = ферма данных (машинная плата)
+    .desc = Печатная плата для фермы данных.
+    .suffix =  { ent-BaseMachineCircuitboard.suffix }
+ent-DataFarmResearchCircuitboard = криптоферма (машинная плата)
+    .desc = Печатная плата для криптофермы.
+    .suffix =  { ent-BaseMachineCircuitboard.suffix }
