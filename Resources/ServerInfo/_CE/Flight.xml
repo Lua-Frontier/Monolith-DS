@@ -5,7 +5,7 @@
     <GuideEntityEmbed Entity="CEActionZFlightToggle" Caption="The flight action"/>
   </Box>
 
-  Certain winged specieses are capable of flying on planets. This allows them to somewhat freely move up and down the planet's air, at the cost of significant stamina draw.
+  Некоторые крылатые расы способны летать на планетах. Это позволяет им в некоторой степени свободно перемещаться вверх и вниз в атмосфере планеты, однако при этом значительно расходуется выносливость.
 
-  The stamina draw of flight can be described with the following function: [bold]baseDrain * (mass / 70)[/bold] (where baseDrain is your species's base stamina drain and mass is your own weight).
+  Расход выносливости при полете можно описать следующей формулой: [bold]baseDrain * (mass / 70)[/bold] (где baseDrain — базовый расход выносливости вашей расы, а масса — ваш собственный вес).
 </Document>
