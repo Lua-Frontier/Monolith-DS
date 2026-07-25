@@ -96,4 +96,5 @@
   - TelecomServerCircuitboard
   - SMESAdvancedMachineCircuitboard
   - CrystallizerMachineCircuitboard # Mono/Funky
+  - FanElectronics # LuaM
   # - HolopadMachineCircuitboard # Frontier: use NF variant
