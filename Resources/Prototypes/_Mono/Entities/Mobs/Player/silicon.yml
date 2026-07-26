@@ -504,7 +504,10 @@
     - state: ai
       shader: unshaded
   - type: Anchorable
-  - type: Destructible # LuaM add start:
+  - type: Damageable # LuaM add start:
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
@@ -601,7 +604,10 @@
     - state: ai
       shader: unshaded
   - type: Anchorable
-  - type: Destructible # LuaM add start:
+  - type: Damageable # LuaM add start:
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
