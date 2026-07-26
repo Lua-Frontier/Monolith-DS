@@ -67,7 +67,7 @@ ent-CrateAmmoBox30mmHE = ящик с барабаном для 30мм Draupnir
 ent-CrateAmmoBox57mmSmart = ящик с барабаном Самонаводящихся снарядов для AK-570 57мм.
     .desc = Содержит одну коробку с 600 57мм Самонаводящихся снарядов.
 
-ent-CrateAmmoBoxTovek = ящик с барабаном SACLOS снарядов для AK-570 57мм.
+ent-CrateAmmoBox57mmSACLOS = ящик с барабаном SACLOS снарядов для AK-570 57мм.
     .desc = Содержит одну коробку с 600 57мм SACLOS снарядов.
 
 # 90mm
