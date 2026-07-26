@@ -504,6 +504,17 @@
     - state: ai
       shader: unshaded
   - type: Anchorable
+  - type: Destructible # LuaM add start:
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10 # Ибо нехуй
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ] # LuaM add end.
 
 - type: entity
   id: StationAiBrainTSFMC
@@ -590,6 +601,17 @@
     - state: ai
       shader: unshaded
   - type: Anchorable
+  - type: Destructible # LuaM add start:
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10 # Ибо нехуй
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ] # LuaM add end.
 
 - type: entity
   id: StationAiBrainPDV
