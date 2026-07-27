@@ -433,6 +433,8 @@
     price: 50 # Mono
   - type: ArmorThickness
     canBePierced: false
+  - type: Occluder # LuaM add
+    enabled: false
 
 - type: entity
   parent: BaseWallTierTwo # Mono
@@ -686,6 +688,8 @@
     fx: EffectRCDDeconstruct8 #Frontier
   - type: StaticPrice
     price: 95 # This shit is decorative anyways
+  - type: Occluder # LuaM add
+    enabled: false
 
 - type: entity
   parent: BaseWallTierTwo # Mono
