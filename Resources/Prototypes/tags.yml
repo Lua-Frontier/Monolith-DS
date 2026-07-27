@@ -563,9 +563,6 @@
 - type: Tag
   id: FreezerElectronics
 
-- type: Tag # LuaM
-  id: FanElectronics
-
 - type: Tag
   id: Fruit
 

@@ -121,7 +121,6 @@ construction-graph-tag-wallmount-substation-circuit-board = настенная �
 construction-graph-tag-surveillance-camera-monitor-board = плата монитора камер наблюдения
 construction-graph-tag-television-board = плата телевизора
 construction-graph-tag-freezer-electronics = электроника морозильника
-construction-graph-tag-fan-electronics = микросхему вентилятора
 
 # Кристаллы
 construction-graph-tag-cyan-crystal-shard = бирюзовый осколок кристалла

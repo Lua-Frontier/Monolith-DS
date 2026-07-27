@@ -1,0 +1,1 @@
+construction-graph-tag-fan-electronics = микросхему вентилятора
