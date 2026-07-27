@@ -45,7 +45,7 @@ public sealed partial class PryingComponent : Component
     public bool InstaPry = false; // LuaM true > false
 }
 
-/// <summary>false
+/// <summary>
 /// Raised directed on an entity before prying it.
 /// Cancel to stop the entity from being pried open.
 /// </summary>
