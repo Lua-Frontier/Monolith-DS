@@ -108,6 +108,14 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
             if (shield.Runtime.Offline > 0f)
             {
                 shield.Runtime.Offline = MathF.Max(shield.Runtime.Offline - frameTime, 0f);
+
+                // LuaM add start:
+
+                if (shield.Runtime.Offline <= 0f && shield.Runtime.Recovering)
+                    _toggle.TryActivate(uid);
+
+                // LuaM add end.
+
                 DirtyIfChanged(ent, before);
                 continue;
             }
@@ -131,19 +139,6 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
                 shield.Runtime.Shatter = float.Epsilon;
                 shield.Runtime.Charge = 0f;
             }
-
-            // LuaM AutoRecover Start:
-
-            else if (shield.Runtime.Recovering && TryDrawPower(ent, frameTime))
-            {
-                shield.Runtime.Form = MathF.Max(shield.Runtime.Form - step, 0f);
-                shield.Runtime.Charge = cfg.MaxCharge * shield.Runtime.Form;
-
-                _toggle.TryActivate(uid);
-            }
-
-            // LuaM AutoRecover End.
-
             else if (shield.Runtime.Form > 0f)
             {
                 shield.Runtime.Form = MathF.Max(shield.Runtime.Form - step, 0f);
