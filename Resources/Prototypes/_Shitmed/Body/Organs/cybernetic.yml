@@ -161,6 +161,7 @@
   - type: Sprite
     state: heart-u-on
   - type: Organ
+    slotId: heart
     onAdd:
     - type: StaminaModifier
       modifier: 1.7
@@ -253,6 +254,7 @@
       - state: lung-u-l
       - state: lung-u-r
   - type: Organ
+    slotId: lungs
     onAdd:
     - type: BreathingImmunity # LuaM
   - type: PirateBountyItem # LuaM
