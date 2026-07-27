@@ -35,14 +35,17 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: ToolTileCompatible
+    delay: 2 # LuaM
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
   - type: StaticPrice
     price: 22
   - type: Prying
-  - type: UseDelay # Goobstation - For insta prying
-    delay: 1
+# LuaM start
+# - type: UseDelay # Goobstation - For insta prying
+#   delay: 1
+# LuaM end
   - type: Sprite
     sprite: _NF/Objects/Tools/crowbar.rsi # Frontier: _NF prefix
   - type: Clothing
