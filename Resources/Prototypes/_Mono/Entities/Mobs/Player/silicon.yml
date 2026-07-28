@@ -511,7 +511,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 10 # Ибо нехуй
+        damage: 2500
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -611,7 +611,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 10 # Ибо нехуй
+        damage: 2500
       behaviors:
       - !type:PlaySoundBehavior
         sound:
