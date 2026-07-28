@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.TheManWhoSoldTheWorld;
-using Content.Goobstation.Shared.Weapons.Multishot;
+using Content.Shared._Goobstation.Weapons.Multishot;
 using Content.Shared._Goobstation.Weapons.Ranged;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
