@@ -1,0 +1,12 @@
+- type: entity
+  parent: CrateGenericSteel 
+  id: CrateBlueSpace
+  name: Blue Space crate
+  description: A white and blue crate with the Nanotrasen Symbol.
+  components:
+  - type: Icon
+    sprite: _LuaM/Structures/Storage/Crates/bscrates.rsi
+  - type: Sprite
+    sprite: _LuaM/Structures/Storage/Crates/bscrates.rsi
+  - type: EntityStorage
+    capacity: 120
