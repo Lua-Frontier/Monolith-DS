@@ -42,7 +42,7 @@ public sealed partial class PryingComponent : Component
     /// Whether the tool is able to instantly pry unpowered unbolted doors and firelocks
     /// </summary>
     [DataField]
-    public bool InstaPry = false; // LuaM true > false
+    public bool InstaPry = true;
 }
 
 /// <summary>
