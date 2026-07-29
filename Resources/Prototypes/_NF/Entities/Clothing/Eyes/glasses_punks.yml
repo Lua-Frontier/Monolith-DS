@@ -11,16 +11,16 @@
     layers:
     - state: icon_base_glasses_01 # LuaM base_glasses_01 > icon_base_glasses_01
       map: [ "glasses_main" ]
-      # LuaM start:
+      # LuaM-start:
       # scale: 2.5, 2.5
       # offset: 0,-0.6
-      # LuaM end
+      # LuaM-end
     - state: icon_decor_base_glasses_01 # LuaM decor_base_glasses_01 > icon_decor_base_glasses_01
       map: [ "glasses_decor" ]
-      # LuaM start:
+# LuaM-comment-start:
       # scale: 2.5, 2.5
       # offset: 0,-0.6
-      # LuaM end
+# LuaM-comment-end.
       shader: unshaded
   - type: Clothing
     sprite: _NF/Clothing/Eyes/Glasses/punk_glasses.rsi
@@ -32,25 +32,24 @@
         map: [ "clothing_glasses_decor" ] # LuaM glasses_decor > clothing_glasses_decor
         shader: unshaded
   - type: RandomSprite
-  # LuaM start:
-    # available:
-    #   - glasses_main:
-    #       base_glasses_01: CyberpunkDark
-    #     glasses_decor:
-    #       decor_base_glasses_01: CyberpunkDark
     available:
       - glasses_main:
+#            base_glasses_01: CyberpunkDark # Commented by LuaM
+# LuaM-start:
           icon_base_glasses_01: Base
         clothing_glasses_main:
           base_glasses_01: Base
+# LuaM-end.
         glasses_decor:
+#          decor_base_glasses_01: CyberpunkDark # Commented by LuaM
+# LuaM-start:
           icon_decor_base_glasses_01: Decor
         clothing_glasses_decor:
           decor_base_glasses_01: Decor
     mappedColors:
       Base: CyberpunkDark
       Decor: CyberpunkDark
-  # LuaM end
+  # LuaM-end
 
 # HUDs
 - type: entity
@@ -60,23 +59,27 @@
   description: How can you see anything in this with all the lights?
   components:
   - type: VisionCorrection
-  # LuaM start:
+# LuaM-comment-start:
   # - type: Item
   #   shape:
   #   - 0,0,1,0
   #   storedOffset: -20,-20
-  # LuaM end
+# LuaM-comment-end.
   - type: Sprite
     sprite: _NF/Clothing/Eyes/Glasses/punk_glasses.rsi
     layers:
     - state: icon_base_glasses_02 # LuaM base_glasses_02 > icon_base_glasses_02
       map: [ "infoshades_main" ]
+# LuaM-comment-start:
       # scale: 2.5, 2.5
       # offset: 0,-0.6
+# LuaM-comment-end.
     - state: icon_decor_base_glasses_02 # LuaM decor_base_glasses_02 > icon_decor_base_glasses_02
       map: [ "infoshades_decor" ]
+# LuaM-comment-start:
       # scale: 2.5, 2.5
       # offset: 0,-0.6
+# LuaM-comment-end.
       shader: unshaded
   - type: Clothing
     sprite: _NF/Clothing/Eyes/Glasses/punk_glasses.rsi
@@ -87,27 +90,25 @@
       - state: decor_base_glasses_02
         map: [ "clothing_infoshades_decor" ] # LuaM infoshades_decor > clothing_infoshades_decor
         shader: unshaded
-  # LuaM start:
-  # - type: RandomSprite
-  #   available:
-  #     - infoshades_main:
-  #         base_glasses_02: CyberpunkNeon
-  #       infoshades_decor:
-  #         decor_base_glasses_02: CyberpunkNeon
   - type: RandomSprite
     available:
       - infoshades_main:
+#           base_glasses_02: CyberpunkNeon # Commented by LuaM
+# LuaM-start:
           icon_base_glasses_02: Base
         clothing_infoshades_main:
           base_glasses_02: Base
+# LuaM-end.
         infoshades_decor:
+#           decor_base_glasses_02: CyberpunkNeon # Commented by LuaM
+# LuaM-start:
           icon_decor_base_glasses_02: Decor
         clothing_infoshades_decor:
           decor_base_glasses_02: Decor
     mappedColors:
       Base: CyberpunkNeon
       Decor: CyberpunkNeon
-  # LuaM end    
+  # LuaM-end    
   - type: ShowHealthBars
     damageContainers:
     - Inorganic
