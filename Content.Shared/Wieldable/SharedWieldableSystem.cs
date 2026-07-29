@@ -1,7 +1,7 @@
 using System.Linq;
 using Content.Shared.Camera;
-using Content.Shared._Goobstation.Common.TheManWhoSoldTheWorld; // GoobStation
-using Content.Shared._Goobstation.Common.Weapons.NoWieldNeeded; // GoobStation
+using Content.Shared._Goobstation.TheManWhoSoldTheWorld; // GoobStation
+using Content.Shared._Goobstation.Weapons.NoWieldNeeded; // GoobStation
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;

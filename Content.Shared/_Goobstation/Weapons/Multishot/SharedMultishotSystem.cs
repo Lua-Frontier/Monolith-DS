@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Shared._Goobstation.Common.Weapons.Multishot; // LuaM renamed
+using Content.Shared._Goobstation.Weapons.Multishot; // LuaM renamed
 using Content.Shared._Goobstation.Weapons.MissChance; // LuaM renamed
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Part;

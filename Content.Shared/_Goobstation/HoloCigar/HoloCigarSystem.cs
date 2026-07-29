@@ -5,9 +5,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Goobstation.Common.TheManWhoSoldTheWorld; // LuaM renamed
-using Content.Shared._Goobstation.Common.Weapons.Multishot; // LuaM renamed
-using Content.Shared._Goobstation.Common.Weapons.NoWieldNeeded; // LuaM renamed
+using Content.Shared._Goobstation.TheManWhoSoldTheWorld; // LuaM renamed
+using Content.Shared._Goobstation.Weapons.Multishot; // LuaM renamed
+using Content.Shared._Goobstation.Weapons.NoWieldNeeded; // LuaM renamed
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Interaction.Events;

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Goobstation.Common.Weapons.NoWieldNeeded; // LuaM renamed
+using Content.Shared._Goobstation.Weapons.NoWieldNeeded; // LuaM renamed
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable;

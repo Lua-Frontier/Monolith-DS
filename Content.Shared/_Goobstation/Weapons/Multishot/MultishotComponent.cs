@@ -2,7 +2,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Goobstation.Common.Weapons.Multishot; // LuaM renamed: namespace Content.Goobstation.Common.Weapons.Multishot; -> namespace Content.Shared._Goobstation.Common.Weapons.Multishot;
+namespace Content.Shared._Goobstation.Weapons.Multishot; // LuaM renamed: namespace Content.Goobstation.Common.Weapons.Multishot; -> namespace Content.Shared._Goobstation.Weapons.Multishot;
 
 /// <summary>
 /// This component allows guns to be shot with another such gun at the same time by holding them in both hands.

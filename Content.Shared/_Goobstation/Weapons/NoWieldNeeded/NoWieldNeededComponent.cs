@@ -8,7 +8,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Goobstation.Common.Weapons.NoWieldNeeded; // LuaM renamed: namespace Content.Goobstation.Common.Weapons.NoWieldNeeded; -> namespace Content.Shared._Goobstation.Common.Weapons.NoWieldNeeded;
+namespace Content.Shared._Goobstation.Weapons.NoWieldNeeded; // LuaM renamed: namespace Content.Goobstation.Common.Weapons.NoWieldNeeded; -> namespace Content.Shared._Goobstation.Weapons.NoWieldNeeded;
 
 /// <summary>
 /// Indicates that this gun user does not need to wield.
