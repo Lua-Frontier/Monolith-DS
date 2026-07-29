@@ -1,5 +1,5 @@
 # Author Info
-# GitHub:Rubeebeebee 
+# GitHub:Rubeebeebee
 # Discord: rubeebee
 
 # Shuttle Notes:
@@ -8,8 +8,8 @@
 - type: vessel
   id: Claymore
   parent: BaseVessel
-  name: vessel-claymore-name # LuaM: ZOB Claymore > vessel-claymore-name
-  description: vessel-claymore-desc # LuaM: A full frontal assault ship, made by the Zealots of Balaam in order to enact the will of their prophet. Features a devastating front facing armnament, much to the detriment of everything else. Any mercenary looking to unleash an awesome frontal barrage can use this ship for their own purposes. Has a MIL designation. > vessel-claymore-desc
+  name: ZOB Claymore
+  description: A full frontal assault ship, made by the Zealots of Balaam in order to enact the will of their prophet. Features a devastating front facing armnament, much to the detriment of everything else. Any mercenary looking to unleash an awesome frontal barrage can use this ship for their own purposes. Has a MIL designation.
   price: 200000 # BIG BOI TAX
   category: Large
   group: Shipyard
@@ -29,7 +29,7 @@
   minPlayers: 0
   stations:
     Claymore:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Claymore MIL{1}'

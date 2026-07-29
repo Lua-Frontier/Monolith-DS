@@ -46,7 +46,7 @@
     - RogueHardsuit
 
 - type: entity
-  parent: [ ClothingOuterHardsuitSyndie, BaseFactionGearPDVT2 ]
+  parent: [ ClothingOuterHardsuitSyndie, BaseFactionGearPDVT2, MonoEnergyShieldClothing ] # LuaM add: MonoEnergyShieldClothing 
   id: ClothingOuterHardsuitAshen
   name: PDV CV-32 combat hardsuit
   description: A combat hardsuit designed by the Phaethon Dynasty. A heavier but still general-purpose hardsuit, effective but not stellar against most damage types.
@@ -86,6 +86,22 @@
   - type: Tag
     tags:
     - RogueHardsuit
+# LuaM-start:
+  - type: PersonalShield 
+    color: "#ff0000"
+    shield:
+      maxCharge: 400 
+      regenRate: 6
+      spinupTime: 5 
+      breakCooldown: 30
+      powerDraw: 0.5
+  - type: Battery
+    maxCharge: 60
+    startingCharge: 60
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 0.1
+# LuaM-end.
 
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseFactionGearPDVT2 ]
@@ -135,7 +151,7 @@
     - RogueHardsuit
 
 - type: entity
-  parent: ClothingOuterHardsuitSyndieCommander
+  parent: [ClothingOuterHardsuitSyndieCommander, MonoEnergyShieldClothing] #LuaM add: MonoEnergyShieldClothing
   id: ClothingOuterHardsuitVizier
   name: PDV CV-67 combat tacsuit
   description: An adorned tacsuit designed with an imperfect nanolaminate composition. High maneuverability, sturdy armor.
@@ -175,9 +191,26 @@
   - type: Tag
     tags:
     - RogueHardsuit
+# # LuaM-start:
+  - type: PersonalShield 
+    color: "#ff0000"
+    shield:
+      maxCharge: 450 
+      regenRate: 6
+      spinupTime: 5 
+      breakCooldown: 30
+      powerDraw: 0.5
+  - type: Battery
+    maxCharge: 60
+    startingCharge: 60
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 0.1
+# LuaM-end.
+
 
 - type: entity
-  parent: ClothingOuterHardsuitSyndieElite # LuaM: removed EnergyShieldClothing
+  parent: [ClothingOuterHardsuitSyndieElite, MonoEnergyShieldClothing ] # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
   id: ClothingOuterHardsuitAshenElite
   name: PDV CV-53 combat tacsuit
   description: Originally based off of the CV-32 hardsuit, the CV-53 tacsuit sacrifices conventional armor plating for environmental protection, and a rechargeable hard-shield.
@@ -215,6 +248,22 @@
   - type: Tag
     tags:
     - RogueHardsuit
+# LuaM-start:
+  - type: PersonalShield 
+    color: "#ff0000"
+    shield:
+      maxCharge: 350 #LuaM 600 < 500
+      regenRate: 6
+      spinupTime: 5 #LuaM 1 < 5
+      breakCooldown: 30
+      powerDraw: 0.5
+  - type: Battery
+    maxCharge: 60
+    startingCharge: 60
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 0.1
+# LuaM-end.
   # Shielding
 #  - type: Blocking # Commented by LuaM
 #    passiveBlockModifier:

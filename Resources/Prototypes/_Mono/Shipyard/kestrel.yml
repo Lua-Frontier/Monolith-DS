@@ -7,8 +7,8 @@
 - type: vessel
   id: Kestrel
   parent: BaseVessel
-  name: vessel-kestrel-name # LuaM: SKR Kestrel > vessel-kestrel-name
-  description: vessel-kestrel-desc # LuaM: A small jump-capable science vessel meant for long-term missions. Comes with a living suite and a decent defensive armament for its size, though it is without much maneuvering performance. > vessel-kestrel-desc
+  name: SKR Kestrel
+  description: A small jump-capable science vessel meant for long-term missions. Comes with a living suite and a decent defensive armament for its size, though it is without much maneuvering performance.
   price: 57500
   category: Small
   group: Shipyard
@@ -26,7 +26,7 @@
   minPlayers: 0
   stations:
     Kestrel:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Kestrel CIV{1}'

@@ -7,8 +7,8 @@
 - type: vessel
   id: Shareholder
   parent: BaseVessel
-  name: vessel-shareholder-name # LuaM: DME Shareholder > vessel-shareholder-name
-  description: vessel-shareholder-desc # LuaM: Cheap and affordable salvage vessel that comes with a comfortable lounge at the cost of leaving no budget for the rest. > vessel-shareholder-desc
+  name: DME Shareholder
+  description: Cheap and affordable salvage vessel that comes with a comfortable lounge at the cost of leaving no budget for the rest.
   price: 19000
   category: Small
   group: Shipyard
@@ -26,7 +26,7 @@
   minPlayers: 0
   stations:
     Shareholder:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Shareholder CIV{1}'

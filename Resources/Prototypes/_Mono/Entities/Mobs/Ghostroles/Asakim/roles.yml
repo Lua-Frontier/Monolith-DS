@@ -28,7 +28,8 @@
     - NamesLastMilitary
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - SiliconsExpeditionNF # LuaM add
+    # - Syndicate # Commented by LuaM
   - type: SurgerySpeedModifier
     speedModifier: 1.5
   - type: IntrinsicRadioReceiver

@@ -6,7 +6,7 @@
       edges:
         - to: assembly
           steps:
-            - material: Steel
+            - material: Plasteel # LuaM Steel > Plasteel
               amount: 2
               doAfter: 2.0
 
@@ -21,7 +21,7 @@
         - to: start
           completed:
             - !type:SpawnPrototype
-              prototype: SheetSteel1
+              prototype: SheetPlasteel1 # LuaM SheetSteel1 > SheetPlasteel1
               amount: 2
             - !type:DeleteEntity {}
           steps:
@@ -48,7 +48,7 @@
             - !type:WirePanel {}
           completed:
             - !type:SpawnPrototype
-              prototype: SheetSteel1
+              prototype: SheetPlasteel1 # LuaM SheetSteel1 > SheetPlasteel1
               amount: 2
             - !type:DeleteEntity {}
           steps:

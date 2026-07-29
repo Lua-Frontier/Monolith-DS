@@ -7,8 +7,8 @@
 - type: vessel
   id: Phantom
   parent: BaseVessel
-  name: vessel-phantom-name # LuaM: IB Phantom > vessel-phantom-name
-  description: vessel-phantom-desc # LuaM: Experimental ship with enormous thruster power. CTLA-25s included. > vessel-phantom-desc
+  name: IB Phantom
+  description: Experimental ship with enormous thruster power. CTLA-25s included.
   price: 90000
   category: Small
   group: Medical
@@ -28,7 +28,7 @@
   minPlayers: 0
   stations:
     Phantom:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Phantom MED{1}'

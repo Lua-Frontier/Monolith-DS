@@ -7,8 +7,8 @@
 - type: vessel
   id: Sakuratsu
   parent: BaseVessel
-  name: vessel-sakuratsu-name # LuaM: SKR Sakuratsu > vessel-sakuratsu-name
-  description: vessel-sakuratsu-desc # LuaM: A xenoarcheology ship with a dedicated, reinforced chamber. Contains mining equipment too. > vessel-sakuratsu-desc
+  name: SKR Sakuratsu
+  description: A xenoarcheology ship with a dedicated, reinforced chamber. Contains mining equipment too.
   price: 58250
   category: Medium
   group: Shipyard
@@ -27,7 +27,7 @@
   minPlayers: 0
   stations:
     Sakuratsu:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Sakuratsu CIV{1}'

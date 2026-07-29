@@ -146,6 +146,7 @@
   recipeUnlocks:
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
+  - FanElectronics # LuaM
   technologyPrerequisites:
   - BasicParts
   position: -2, 1

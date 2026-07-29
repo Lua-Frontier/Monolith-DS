@@ -9,8 +9,8 @@
 - type: vessel
   id: Kuldi
   parent: BaseVessel
-  name: vessel-kuldi-name # LuaM: DWI Kuldi > vessel-kuldi-name
-  description: vessel-kuldi-desc # LuaM: Equipped with a full chemistry lab and cryogenics, this ship is Dornan-Weryl Industrial's solution to most medical care. > vessel-kuldi-desc
+  name: DWI Kuldi
+  description: Equipped with a full chemistry lab and cryogenics, this ship is Dornan-Weryl Industrial's solution to most medical care.
   price: 95000 # A bit higher than the grid appraisal +vendors
   category: Medium
   group: Medical
@@ -29,7 +29,7 @@
   minPlayers: 0
   stations:
     Kuldi:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Kuldi MED{1}'

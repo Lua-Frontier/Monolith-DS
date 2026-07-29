@@ -7,8 +7,8 @@
 - type: vessel
   id: Notch
   parent: BaseVessel
-  name: vessel-notch-name # LuaM: DIS Notch > vessel-notch-name
-  description: vessel-notch-desc # LuaM: A small salvage shuttle featuring the bare minimum for any fresh aspiring scavenger in the sector. Fast and compact. A proud piece of Drake Industries' civilian spacecrafts collection. > vessel-notch-desc
+  name: DIS Notch
+  description: A small salvage shuttle featuring the bare minimum for any fresh aspiring scavenger in the sector. Fast and compact. A proud piece of Drake Industries' civilian spacecrafts collection.
   price: 25900
   category: Small
   group: Shipyard
@@ -26,7 +26,7 @@
   minPlayers: 0
   stations:
     Notch:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Notch CIV{1}'

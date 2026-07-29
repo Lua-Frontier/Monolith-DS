@@ -7,8 +7,8 @@
 - type: vessel
   id: Plutomkii
   parent: BaseVessel
-  name: vessel-plutomkii-name # LuaM: DIS Pluto MK. II > vessel-plutomkii-name
-  description: vessel-plutomkii-desc # LuaM: A light-weight cargo runner manufactured by DIS. The replacement of the venerable Pluto. Performing better than it's predecessor in every way. Larger cargo bay, tougher hull, faster top speed and sleeker design. > vessel-plutomkii-desc
+  name: DIS Pluto MK. II
+  description: A light-weight cargo runner manufactured by DIS. The replacement of the venerable Pluto. Performing better than it's predecessor in every way. Larger cargo bay, tougher hull, faster top speed and sleeker design.
   price: 32900
   category: Small
   group: Shipyard
@@ -26,7 +26,7 @@
   minPlayers: 0
   stations:
     Plutomkii:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Pluto MK. II CIV{1}'
