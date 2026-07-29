@@ -44,7 +44,7 @@
   description: uplink-holo-cigar-desc
   productEntity: HoloCigar
   cost:
-    Telecrystal: 35
+    Telecrystal: 500 # LuaM 35 -> 500
   categories:
   - UplinkWearables
   conditions:
