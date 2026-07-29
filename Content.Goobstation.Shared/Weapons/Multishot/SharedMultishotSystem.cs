@@ -30,7 +30,7 @@ public sealed class SharedMultishotSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly MissChanceSystem _miss = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!; // LuaM - SharedStaminaSystem not ported yet
+    [Dependency] private readonly StaminaSystem _stamina = default!; // LuaM - SharedStaminaSystem not ported
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
 
     public override void Initialize()
@@ -68,7 +68,7 @@ public sealed class SharedMultishotSystem : EntitySystem
             if (gunComp.Target == null || !gunComp.BurstActivated || !gunComp.LockOnTargetBurst)
                 gunComp.Target = target;
 
-            _gunSystem.AttemptShoot(user.Value, (gunEnt, gunComp), shootCoords);
+            _gunSystem.AttemptShoot(user.Value, gunEnt, gunComp, shootCoords); // LuaM fix goob code port: _gunSystem.AttemptShoot(user.Value, (gunEnt, gunComp), shootCoords); -> _gunSystem.AttemptShoot(user.Value, gunEnt, gunComp, shootCoords);
         }
     }
 
@@ -94,7 +94,7 @@ public sealed class SharedMultishotSystem : EntitySystem
         if (component.StaminaDamage == 0)
             return;
 
-        _staminaSystem.TakeStaminaDamage(target, component.StaminaDamage, source: target, with: weapon, visual: false);
+        _stamina.TakeStaminaDamage(target, component.StaminaDamage, source: target, with: weapon, visual: false); // LuaM - SharedStaminaSystem not ported: _staminaSystem -> _stamina
     }
 
     private void DamageHands(EntityUid weapon, MultishotComponent component, EntityUid target)
@@ -102,12 +102,11 @@ public sealed class SharedMultishotSystem : EntitySystem
         if (component.HandDamageAmount == 0)
             return;
 
-        if (!_handsSystem.IsHolding(target, weapon, out var handId)
-            || !_handsSystem.TryGetHand(target, handId, out var hand))
+        if (!_handsSystem.IsHolding(target, weapon, out var hand))
             return;
 
         // I didn't find better way to get hand
-        var bodySymmetry = hand.Value.Location switch
+        var bodySymmetry = hand.Location switch
         {
             HandLocation.Left => BodyPartSymmetry.Left,
             HandLocation.Right => BodyPartSymmetry.Right,
