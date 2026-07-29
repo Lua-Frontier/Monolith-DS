@@ -129,6 +129,9 @@
     - back
   - type: Storage # LuaM extra space
     grid:
+#    - 0,0,1,3
+#    - 3,0,6,3
+#    - 8,0,9,3
     - 0,0,10,6
     maxItemSize: Huge
   - type: ContainerContainer
