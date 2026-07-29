@@ -159,7 +159,7 @@
   components:
   - type: Sprite
     sprite: _Mono/Clothing/Back/Modsuits/mercenary.rsi
-  - type: Storage # Extra space - LuaM
+  - type: Storage # Extra space - Mono
     grid:
     - 0,0,8,4 # LuaM: 0,0,7,3 > 0,0,8,4
     maxItemSize: Huge
