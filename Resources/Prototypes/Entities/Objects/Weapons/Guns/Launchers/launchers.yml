@@ -23,6 +23,9 @@
     rsi:
       sprite: _RMC14/Interface/MousePointer/explosive_mouse.rsi
       state: all
+  - type: Multishot # LuaM
+    spreadMultiplier: 1
+    handDamageAmount: 999
 
 - type: entity
   name: PA china lake
