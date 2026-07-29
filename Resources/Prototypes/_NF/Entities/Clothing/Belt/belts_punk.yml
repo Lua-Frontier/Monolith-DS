@@ -37,9 +37,9 @@
         map: [ "clothing_belt_overlay" ] # LuaM: belt_overlay > clothing_belt_overlay
   - type: RandomSprite
     available:
+      - belt_main:
 #           base_belt_01: CyberpunkDark # Commented by LuaM
 # LuaM-start:
-      - belt_main:
           icon_belt_01: Base
         clothing_belt_main:
           base_belt_01: Base
