@@ -11,10 +11,10 @@
     layers:
     - state: icon_base_glasses_01 # LuaM base_glasses_01 > icon_base_glasses_01
       map: [ "glasses_main" ]
-      # LuaM-start:
+# LuaM-comment-start:
       # scale: 2.5, 2.5
       # offset: 0,-0.6
-      # LuaM-end
+# LuaM-comment-end.
     - state: icon_decor_base_glasses_01 # LuaM decor_base_glasses_01 > icon_decor_base_glasses_01
       map: [ "glasses_decor" ]
 # LuaM-comment-start:
