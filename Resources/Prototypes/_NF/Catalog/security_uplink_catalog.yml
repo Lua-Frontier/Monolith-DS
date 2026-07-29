@@ -1079,21 +1079,21 @@
         tags:
           - SecurityUplink
 
-- type: listing
-  id: UplinkSecurityCash7500
-  name: uplink-security-cash7500-name
-  description: uplink-security-cash7500-desc
-  productEntity: SpaceCash7500 # Mono: Changed the exchange rate from 1000 to 5000 to 7500
-  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000000 }
-  cost:
-    FederationMilitaryCredit: 5
-  categories:
-    - UplinkSecurityUtility
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - SecurityUplink
+#- type: listing # Commented by LuaM
+#  id: UplinkSecurityCash7500
+#  name: uplink-security-cash7500-name
+#  description: uplink-security-cash7500-desc
+#  productEntity: SpaceCash7500 # Mono: Changed the exchange rate from 1000 to 5000 to 7500
+#  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000000 }
+#  cost:
+#    FederationMilitaryCredit: 5
+#  categories:
+#    - UplinkSecurityUtility
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      whitelist:
+#        tags:
+#          - SecurityUplink
 
 - type: listing
   id: UplinkSecuritySmokeGrenadeBox

@@ -24,7 +24,7 @@
   minPlayers: 0
   stations:
     Remontnik:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Remontnik MIL{1}'

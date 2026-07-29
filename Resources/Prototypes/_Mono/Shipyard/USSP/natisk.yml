@@ -23,7 +23,7 @@
   minPlayers: 0
   stations:
     Natisk:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Natisk MIL{1}'

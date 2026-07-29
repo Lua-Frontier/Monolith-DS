@@ -9,35 +9,68 @@
   - type: Sprite
     sprite: _NF/Clothing/Shoes/Boots/punk.rsi
     layers:
-    - state: base_boots_01
+    - state: icon_base_boots_01 # LuaM base_boots_01 > icon_base_boots_01
       map: [ "boots_main" ]
-      scale: 2, 2
-      offset: 0,0.6
-    - state: decor_base_boots_01
+      # LuaM-comment-start:
+      # scale: 2, 2
+      # offset: 0,0.6
+      # LuaM-comment-end.
+    - state: icon_decor_base_boots_01 # LuaM decor_base_boots_01 > icon_decor_base_boots_01
       map: [ "boots_decor" ]
-      scale: 2, 2
-      offset: 0,0.6
-    - state: mask_null
-      map: [ "boots_overlay" ]
-      scale: 2, 2
-      offset: 0,0.6
+    # LuaM-comment-start:
+    #   scale: 2, 2
+    #   offset: 0,0.6
+    # - state: mask_null
+    #   map: [ "boots_overlay" ]
+    #   scale: 2, 2
+    #   offset: 0,0.6
+    # LuaM-comment-end.
   - type: Clothing
     sprite: _NF/Clothing/Shoes/Boots/punk.rsi
     clothingVisuals:
       shoes:
       - state: base_boots_01
-        map: [ "boots_main" ]
+        map: [ "clothing_boots_main" ] # LuaM: boots_main > clothing_boots_main
       - state: mask_null
-        map: [ "boots_decor" ]
+        map: [ "clothing_boots_decor" ] # LuaM: boots_decor > clothing_boots_decor
       - state: mask_null
-        map: [ "boots_overlay" ]
+        map: [ "clothing_boots_overlay" ] # LuaM: boots_overlay > clothing_boots_overlay
   - type: RandomSprite
     available:
-    - boots_main:
-        base_boots_01: Cyberpunk
+# LuaM-comment-start:
+#     - boots_main:
+#       base_boots_01: Cyberpunk
+# LuaM-comment-end.
+  # LuaM-start:
+    - boots_main: &bootsMain
+        icon_base_boots_01: Base
+      clothing_boots_main: &clothingBootsMain
+        base_boots_01: Base
+  # LuaM-end.
       boots_decor:
-        decor_base_boots_01: Cyberpunk
-        mask_null: ""
-      boots_overlay:
+# LuaM-comment-start:
+#
+#         decor_base_boots_01: Cyberpunk
+#       mask_null: ""
+#     boots_overlay:
+# LuaM-comment-end.
+# LuaM-start:
+        icon_decor_base_boots_01: Decor
+      clothing_boots_decor:
+        decor_base_boots_01: Decor
+      clothing_boots_overlay: &bootsOverlay
+# LuaM-end.
         decor_base_boots_02: Cyberpunk
         mask_null: ""
+# LuaM-comment-start:
+    - boots_main: *bootsMain
+      clothing_boots_main: *clothingBootsMain
+      boots_decor:
+        mask_null: ""
+      clothing_boots_decor:
+        mask_null: ""
+      clothing_boots_overlay: *bootsOverlay
+    mappedColors:
+      Base: Cyberpunk
+      Decor: Cyberpunk
+  # LuaM end

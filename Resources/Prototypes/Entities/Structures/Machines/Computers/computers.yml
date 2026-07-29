@@ -1181,7 +1181,7 @@
 
 - type: entity
   id: ComputerSalvageExpedition
-  parent: BaseComputerAiAccess
+  parent: [ BaseComputerAiAccess , BaseStructureDisableAnchoring ] # LuaM add: BaseStructureDisableAnchoring
   name: salvage expeditions computer
   description: Used to accept salvage missions, if you're tough enough.
   components:
@@ -1235,6 +1235,7 @@
     - type: ShipRepairable
       repairTime: 4
       repairCost: 8
+
 
 - type: entity
   parent: BaseComputer

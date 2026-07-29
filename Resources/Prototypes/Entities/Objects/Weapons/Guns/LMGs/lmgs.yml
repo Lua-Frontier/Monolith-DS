@@ -19,11 +19,11 @@
   - type: Wieldable
     unwieldOnUse: false
   - type: GunWieldBonus # Mono
-    minAngle: -22
-    maxAngle: -20
+    minAngle: -17 # LuaM: -22 > -17
+    maxAngle: -15 # LuaM: -20 > -15
   - type: Gun # L6 LMG stats adjusted
-    minAngle: 24
-    maxAngle: 45
+    minAngle: 35 # LuaM: 24 > 35
+    maxAngle: 55 # LuaM: 45 > 55
     angleIncrease: 3
     angleDecay: 20
     fireRate: 11 # LuaM: 8 > 11
@@ -76,10 +76,10 @@
     rsi:
       sprite: _RMC14/Interface/MousePointer/lmg_mouse.rsi
       state: all
-  - type: WieldDelay # Mono
-    baseDelay: 1
-    modifiedDelay: 1
-    preventFiring: true
+  #- type: WieldDelay # Mono # Commented by LuaM
+  #  baseDelay: 1
+  #  modifiedDelay: 1
+  #  preventFiring: true
   # Goobstation edit start
   - type: EmitSoundOnPickup
     sound:

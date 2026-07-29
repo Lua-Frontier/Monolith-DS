@@ -29,7 +29,7 @@
   minPlayers: 0
   stations:
     Serkesh:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Serkesh MIL{1}'

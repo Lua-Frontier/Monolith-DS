@@ -8,11 +8,11 @@
       path: /Audio/Announcements/attention.ogg
     warningAnnouncement: station-event-bluespace-cache-warning-announcement
     endAnnouncement: station-event-bluespace-cache-end-announcement
-    earliestStart: 60 # Mono
+    earliestStart: 40 # Mono # LuaM: 60 > 40
     weight: 5
     duration: 1350
     maxDuration: 1560
-    reoccurrenceDelay: 240 # Mono: From 8 to 4 hours
+    reoccurrenceDelay: 120 # Mono: From 8 to 4 hours # LuaM: 240 > 120
     #requiredJobs: Mono - Remove Sheriff/Colonel requirement
     #  Sheriff: 1
   - type: BluespaceErrorRule
@@ -36,7 +36,7 @@
         - type: ForceAnchor # Added post-FTL, so anchoring is fine.
         - type: ClaimableGrid # Mono
         paths:
-        - /Maps/_NF/Bluespace/cache.yml
+        - /Maps/_LuaM/Bluespace/syndieasteroid.yml # LuaM: /Maps/_NF/Bluespace/cache.yml > /Maps/_LuaM/Bluespace/syndieasteroid.yml
     rewardAccounts:
       Nfsd: 1.0
 

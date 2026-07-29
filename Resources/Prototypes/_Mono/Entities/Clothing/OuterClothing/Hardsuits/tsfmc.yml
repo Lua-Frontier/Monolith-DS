@@ -69,7 +69,7 @@
     sprintModifier: 0.95
 
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseFactionGearTSFT3]
+  parent: [ClothingOuterHardsuitBase, MonoEnergyShieldClothing, BaseFactionGearTSFT3] # LuaM add: MonoEnergyShieldClothing
   id: ClothingOuterHardsuitM86
   name: M86 Mk.3(R) hardsuit
   description: An armored hardsuit, designed to be an upgrade for the M82 series. The extra general armor gives it significant weight to move around.
@@ -112,9 +112,25 @@
   - type: StaticPrice
     price: 7500
     vendPrice: 1000
+# LuaM-start:
+  - type: PersonalShield
+    color: "#FF00FFFF"
+    shield:
+      maxCharge: 450
+      regenRate: 6
+      spinupTime: 5
+      breakCooldown: 30
+      powerDraw: 0.5
+  - type: Battery
+    maxCharge: 60
+    startingCharge: 60
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 0.1
+# LuaM-end.
 
 - type: entity
-  parent: ClothingOuterHardsuitBaseNFNfsd
+  parent: [ClothingOuterHardsuitBaseNFNfsd, MonoEnergyShieldClothing] #LuaM add: MonoEnergyShieldClothing
   id: ClothingOuterHardsuitNfsdSheriff
   name: TSFMC M92 colonel tacsuit
   description: A heavy, gilded tacsuit, stripped of its shield but now capable of taking a lot of physical damage. Usually assigned to commanding officers of TSF flagships.
@@ -152,9 +168,25 @@
     coefficient: 0.55 # LuaM: 0.35 > 0.55
   - type: PirateBountyItem # Mono
     id: ClothingOuterHardsuitTacsuitHighValue
+# LuaM-start:
+  - type: PersonalShield
+    color: "#FF00FFFF"
+    shield:
+      maxCharge: 350
+      regenRate: 6
+      spinupTime: 5
+      breakCooldown: 30
+      powerDraw: 0.5
+  - type: Battery
+    maxCharge: 60
+    startingCharge: 60
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 0.1
+# LuaM-end.
 
 - type: entity
-  parent: [ClothingOuterHardsuitJuggernaut, BaseFactionGearTSFT3 ] # Jugger Suit # LuaM: removed EnergyShieldClothing
+  parent: [ClothingOuterHardsuitJuggernaut, MonoEnergyShieldClothing, BaseFactionGearTSFT3 ] # Jugger Suit # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
   id: ClothingOuterHardsuitNfsdExperimental
   name: TSFMC M92-X tacsuit
   description: An experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Durable, and comes with an integrated soft-shield along with numerous gadgets at the cost of insulation and solid armor.
@@ -200,6 +232,23 @@
   - type: FootstepModifier # LuaM
     footstepSoundCollection:
       collection: FootstepHeavySuit
+# LuaM-start:
+  - type: PersonalShield
+    color: "#FF00FFFF"
+    shield:
+      maxCharge: 500
+      regenRate: 6
+      spinupTime: 5
+      breakCooldown: 30
+      powerDraw: 0.5
+  - type: Battery
+    maxCharge: 60
+    startingCharge: 60
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 0.1
+# LuaM-end.
+
 #  - type: Blocking # Commented by LuaM
 #    passiveBlockModifier:
 #      coefficients:
@@ -234,7 +283,7 @@
 # MARSOC only
 
 - type: entity
-  parent: [ClothingOuterHardsuitM86, BaseFactionGearTSFT3] # LuaM: removed EnergyShieldClothing
+  parent: [ClothingOuterHardsuitM86, BaseFactionGearTSFT3, MonoEnergyShieldClothing] # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
   id: ClothingOuterHardsuitM86Mk4
   name: M86 Mk.4(B) hardsuit
   description: A limited-production redesign proposal for the M86 Mk.3(R), outfitted with an inbuilt personal shield generator.
@@ -262,3 +311,19 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.1 # LuaM: 0.9 > 1.1
     sprintModifier: 1.1 # LuaM: 0.875 > 1.1
+# LuaM-start:
+  - type: PersonalShield
+    color: "#FF00FFFF"
+    shield:
+      maxCharge: 500
+      regenRate: 6
+      spinupTime: 5
+      breakCooldown: 30
+      powerDraw: 0.5
+  - type: Battery
+    maxCharge: 60
+    startingCharge: 60
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 0.1
+# LuaM-end.

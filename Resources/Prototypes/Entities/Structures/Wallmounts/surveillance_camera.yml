@@ -4,6 +4,7 @@
   name: camera
   description: A surveillance camera. It's watching you. Kinda.
   components:
+  - type: RequireProjectileTarget # LuaM
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -94,6 +95,8 @@
               collection: MetalBreak
               params:
                 volume: -8
+  - type: ExplosionResistance # LuaM
+    damageCoefficient: 0.04 
   # Mono
   - type: ShipRepairable
     repairTime: 2

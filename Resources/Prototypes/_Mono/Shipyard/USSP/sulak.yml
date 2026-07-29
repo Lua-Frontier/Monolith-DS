@@ -5,7 +5,7 @@
   parent: BaseVesselAntag
   name: NCS Sulak
   description: A medium sized destroyer armed with a Charon Massdriver for taking down large targets.
-  price: 142500
+  price: 212000 # LuaM: 142500 > 212000
   category: Medium
   group: Ussp
   access: Mercenary
@@ -24,7 +24,7 @@
   minPlayers: 0
   stations:
     Sulak:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Sulak MIL{1}'
