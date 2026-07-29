@@ -32,3 +32,20 @@
     whitelist:
       tags:
       - SecurityUplink
+
+# Utilities
+
+- type: listing
+  id: UplinkSecurityFactionHoloCigar
+  name: uplink-holo-cigar-name
+  description: uplink-holo-cigar-desc
+  productEntity: HoloCigar
+  cost:
+    FederationMilitaryCredit: 777
+  categories:
+    - UplinkSecurityUtility
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
