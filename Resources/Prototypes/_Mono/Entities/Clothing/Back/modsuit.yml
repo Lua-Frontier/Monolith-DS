@@ -161,7 +161,7 @@
     sprite: _Mono/Clothing/Back/Modsuits/mercenary.rsi
   - type: Storage # Extra space - LuaM
     grid:
-    - 0,0,8,4
+    - 0,0,8,4 # LuaM: 0,0,7,3 > 0,0,8,4
     maxItemSize: Huge
   - type: ToggleableClothing
     clothingPrototypes:
