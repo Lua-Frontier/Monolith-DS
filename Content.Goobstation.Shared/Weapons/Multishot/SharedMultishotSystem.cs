@@ -1,7 +1,9 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Goobstation.Common.Weapons.Multishot;
 using Content.Goobstation.Shared.Weapons.MissChance;
+using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
 using Content.Shared.CombatMode;
@@ -18,7 +20,7 @@ using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._Goobstation.Weapons.Multishot;
+namespace Content.Goobstation.Shared.Weapons.Multishot;
 
 public sealed class SharedMultishotSystem : EntitySystem
 {
@@ -28,7 +30,8 @@ public sealed class SharedMultishotSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly MissChanceSystem _miss = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly StaminaSystem _staminaSystem = default!;
+    [Dependency] private readonly StaminaSystem _stamina = default!; // LuaM - SharedStaminaSystem not ported yet
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
 
     public override void Initialize()
     {
@@ -65,7 +68,7 @@ public sealed class SharedMultishotSystem : EntitySystem
             if (gunComp.Target == null || !gunComp.BurstActivated || !gunComp.LockOnTargetBurst)
                 gunComp.Target = target;
 
-            _gunSystem.AttemptShoot(user.Value, gunEnt, gunComp, shootCoords);
+            _gunSystem.AttemptShoot(user.Value, (gunEnt, gunComp), shootCoords);
         }
     }
 
@@ -99,11 +102,12 @@ public sealed class SharedMultishotSystem : EntitySystem
         if (component.HandDamageAmount == 0)
             return;
 
-        if (!_handsSystem.IsHolding(target, weapon, out var hand))
+        if (!_handsSystem.IsHolding(target, weapon, out var handId)
+            || !_handsSystem.TryGetHand(target, handId, out var hand))
             return;
 
         // I didn't find better way to get hand
-        var bodySymmetry = hand.Location switch
+        var bodySymmetry = hand.Value.Location switch
         {
             HandLocation.Left => BodyPartSymmetry.Left,
             HandLocation.Right => BodyPartSymmetry.Right,
@@ -113,9 +117,7 @@ public sealed class SharedMultishotSystem : EntitySystem
         var bodyPart = _bodySystem.GetTargetBodyPart(BodyPartType.Hand, bodySymmetry);
 
         var damage = new DamageSpecifier(_proto.Index<DamageTypePrototype>(component.HandDamageType), component.HandDamageAmount);
-        var handsDamageEv = new TryChangePartDamageEvent(damage, target, bodyPart, true);
-
-        RaiseLocalEvent(target, ref handsDamageEv);
+        _damageableSystem.TryChangeDamage(target, damage, targetPart: bodyPart);
     }
 
     private void OnRefreshModifiers(EntityUid uid, MultishotComponent comp, ref GunRefreshModifiersEvent args)
@@ -165,7 +167,7 @@ public sealed class SharedMultishotSystem : EntitySystem
     {
         var message = new FormattedMessage();
         var chance = (MathF.Round(ent.Comp.MissChance * 100f)).ToString();
-        message.AddText(Loc.GetString(MultishotComponent.ExamineMessage, ("chance", chance)));
+        message.AddText(Loc.GetString(ent.Comp.ExamineMessage, ("chance", chance)));
         args.PushMessage(message);
     }
 

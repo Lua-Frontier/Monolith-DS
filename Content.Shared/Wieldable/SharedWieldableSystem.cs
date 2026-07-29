@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared.Camera;
 using Content.Goobstation.Common.TheManWhoSoldTheWorld;
+using Content.Goobstation.Common.Weapons.NoWieldNeeded;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
