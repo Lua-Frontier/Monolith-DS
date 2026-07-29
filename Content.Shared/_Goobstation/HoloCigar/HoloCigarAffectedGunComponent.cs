@@ -5,7 +5,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Goobstation.Shared.HoloCigar;
+namespace Content.Shared._Goobstation.HoloCigar; // LuaM renamed: namespace Content.Goobstation.Shared.HoloCigar; -> namespace Content.Shared._Goobstation.HoloCigar;
 
 /// <summary>
 /// This is used for tracking affected HoloCigar weapons.

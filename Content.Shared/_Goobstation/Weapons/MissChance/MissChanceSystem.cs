@@ -6,7 +6,7 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Goobstation.Shared.Weapons.MissChance;
+namespace Content.Shared._Goobstation.Weapons.MissChance; // LuaM renamed: namespace Content.Goobstation.Shared.Weapons.MissChance; -> namespace Content.Shared._Goobstation.Weapons.MissChance;
 
 public sealed class MissChanceSystem : EntitySystem
 {
@@ -22,7 +22,7 @@ public sealed class MissChanceSystem : EntitySystem
     private void PreventCollide(Entity<MissChanceComponent> ent, ref PreventCollideEvent args)
     {
         // This piece of goidacode guarantees synchronized random
-        var random = new Random((int) _timing.CurTick.Value + (int) GetNetEntity(ent));
+        var random = new System.Random((int) _timing.CurTick.Value + (int) GetNetEntity(ent));
 
         if (args.Cancelled
         || !HasComp<MobStateComponent>(args.OtherEntity)

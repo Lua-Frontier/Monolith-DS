@@ -7,7 +7,7 @@
 
 using Robust.Shared.Audio;
 
-namespace Content.Goobstation.Common.TheManWhoSoldTheWorld;
+namespace Content.Shared._Goobstation.Common.TheManWhoSoldTheWorld; // LuaM renamed: namespace Content.Goobstation.Common.TheManWhoSoldTheWorld; -> namespace Content.Shared._Goobstation.Common.TheManWhoSoldTheWorld;
 
 /// <summary>
 /// This is used to identify a Holo Cigar User

@@ -5,9 +5,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.TheManWhoSoldTheWorld;
-using Content.Goobstation.Common.Weapons.Multishot;
-using Content.Goobstation.Common.Weapons.NoWieldNeeded;
+using Content.Shared._Goobstation.Common.TheManWhoSoldTheWorld; // LuaM renamed
+using Content.Shared._Goobstation.Common.Weapons.Multishot; // LuaM renamed
+using Content.Shared._Goobstation.Common.Weapons.NoWieldNeeded; // LuaM renamed
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Interaction.Events;
@@ -25,7 +25,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Goobstation.Shared.HoloCigar;
+namespace Content.Shared._Goobstation.HoloCigar; // LuaM renamed: namespace Content.Goobstation.Shared.HoloCigar; -> namespace Content.Shared._Goobstation.HoloCigar;
 
 /// <summary>
 /// This is the system for the Holo-Cigar. - pure unadulterated shitcode below beware

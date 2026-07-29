@@ -3,7 +3,7 @@
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
-namespace Content.Goobstation.Shared.Weapons.MissChance;
+namespace Content.Shared._Goobstation.Weapons.MissChance; // LuaM renamed: namespace Content.Goobstation.Shared.Weapons.MissChance; -> namespace Content.Shared._Goobstation.Weapons.MissChance;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class MissChanceComponent : Component

@@ -9,7 +9,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Goobstation.Shared.HoloCigar;
+namespace Content.Shared._Goobstation.HoloCigar; // LuaM renamed: namespace Content.Goobstation.Shared.HoloCigar; -> namespace Content.Shared._Goobstation.HoloCigar;
 
 /// <summary>
 /// This is used for...

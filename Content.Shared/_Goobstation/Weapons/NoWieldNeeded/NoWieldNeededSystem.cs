@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.Weapons.NoWieldNeeded;
+using Content.Shared._Goobstation.Common.Weapons.NoWieldNeeded; // LuaM renamed
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable;
 using Robust.Shared.Containers;
 
-namespace Content.Goobstation.Shared.Weapons.NoWieldNeeded;
+namespace Content.Shared._Goobstation.Weapons.NoWieldNeeded; // LuaM renamed: namespace Content.Goobstation.Shared.Weapons.NoWieldNeeded; -> namespace Content.Shared._Goobstation.Weapons.NoWieldNeeded;
 
 public sealed class NoWieldNeededSystem : EntitySystem
 {

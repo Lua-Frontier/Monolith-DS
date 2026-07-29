@@ -41,7 +41,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Spawners; // Mono
-using Content.Goobstation.Common.Weapons.Multishot; // GoobStation
+using Content.Shared._Goobstation.Common.Weapons.Multishot; // GoobStation
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 

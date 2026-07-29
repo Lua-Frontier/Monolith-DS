@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Goobstation.Common.Weapons.Multishot;
-using Content.Goobstation.Shared.Weapons.MissChance;
+using Content.Shared._Goobstation.Common.Weapons.Multishot; // LuaM renamed
+using Content.Shared._Goobstation.Weapons.MissChance; // LuaM renamed
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
@@ -20,7 +20,7 @@ using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Goobstation.Shared.Weapons.Multishot;
+namespace Content.Shared._Goobstation.Weapons.Multishot; // LuaM renamed: namespace Content.Goobstation.Shared.Weapons.Multishot; -> namespace Content.Shared._Goobstation.Weapons.Multishot;
 
 public sealed class SharedMultishotSystem : EntitySystem
 {
