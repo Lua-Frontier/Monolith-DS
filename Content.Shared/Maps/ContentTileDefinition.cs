@@ -53,7 +53,7 @@ namespace Content.Shared.Maps
         /// Monolith - Goobstation
         /// Tile deconstruct do-after time multiplier
         [DataField]
-        public float DeconstructTimeMultiplier { get; private set; } = 1f; // LuaM default value
+        public float DeconstructTimeMultiplier { get; private set; } = 1f; // LuaM added default value (1f)
 
         // Delta V
         // [DataField("canShovel")] public bool CanShovel { get; private set; }
