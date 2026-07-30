@@ -25,6 +25,9 @@
   - type: Tag
     tags:
       - SpreaderIgnore
+  - type: Construction # LuaM construction recipe
+    graph: AtmosDeviceFanTiny 
+    node: AtmosDeviceFanTiny
   - type: Destructible # Mono - destructible tiny/directional fans
     thresholds:
     - trigger:
@@ -73,6 +76,9 @@
   - type: Tag
     tags:
       - SpreaderIgnore
+  - type: Construction # LuaM construction recipe
+    graph: AtmosDeviceFanDirectional
+    node: AtmosDeviceFanDirectional
   - type: Destructible # Mono - destructible tiny/directional fans
     thresholds:
     - trigger:

@@ -12,8 +12,11 @@
       gloves: ClothingModsuitGauntletsUSSPVaryag
       outerClothing: ClothingModsuitChestplateUSSPVaryag
       shoes: ClothingModsuitBootsUSSPVaryag
-#  - type: PirateBountyItem # Mono # Commented by LuaM
-#    id: ClothingOuterHardsuitTacsuit
+  - type: PirateBountyItem # Mono
+    id: ClothingOuterHardsuitTacsuit
+  - type: Storage # Extra space - LuaM
+    grid:
+    - 0,0,8,6
 
 - type: entity
   parent: ClothingModsuitUSSPVaryag
@@ -45,6 +48,9 @@
       shoes: ClothingModsuitBootsUSSPZastavnik
   - type: PirateBountyItem # Mono
     id: ClothingOuterHardsuitTacsuitHighValue
+  - type: Storage # Extra space - LuaM
+    grid:
+    - 0,0,8,6
 
 - type: entity
   parent: ClothingModsuitUSSPZastavnik
@@ -110,7 +116,7 @@
     sprite: _Mono/Clothing/Back/Modsuits/tsfmc-volta.rsi
   - type: Storage # Extra space - Mono
     grid:
-    - 0,0,7,3
+    - 0,0,12,6 # LuaM: 0,0,7,3 > 0,0,12,6
     maxItemSize: Huge
   - type: ToggleableClothing
     clothingPrototypes:
@@ -155,7 +161,7 @@
     sprite: _Mono/Clothing/Back/Modsuits/mercenary.rsi
   - type: Storage # Extra space - Mono
     grid:
-    - 0,0,7,3
+    - 0,0,8,4 # LuaM: 0,0,7,3 > 0,0,8,4
     maxItemSize: Huge
   - type: ToggleableClothing
     clothingPrototypes:
@@ -187,3 +193,4 @@
         whitelist:
           components:
             - PowerCell
+

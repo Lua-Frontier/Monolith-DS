@@ -28,7 +28,7 @@
   minPlayers: 0
   stations:
     Ledokol:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       gridComponents:
       - type: VesselInfo
         description: "Why did I come to this sector?"

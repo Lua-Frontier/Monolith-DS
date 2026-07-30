@@ -2,7 +2,7 @@
 # GitHub: UnicornOnLSD
 # Discord: unicornonlsd
 
-# Shuttle Notes: base is around 59K with 12K added markup 
+# Shuttle Notes: base is around 59K with 12K added markup
 #
 - type: vessel
   id: caracara
@@ -27,7 +27,7 @@
   minPlayers: 0
   stations:
     caracara:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Caracara CIV{1}'

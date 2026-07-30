@@ -26,7 +26,7 @@
   minPlayers: 0
   stations:
     Tiger:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Tiger CIV{1}'

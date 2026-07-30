@@ -28,7 +28,7 @@
   minPlayers: 0
   stations:
     Vrikaash:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Vrikaash MIL-SRP{1}'

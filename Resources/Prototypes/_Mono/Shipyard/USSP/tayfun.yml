@@ -25,7 +25,7 @@
   minPlayers: 0
   stations:
     Tayfun:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Tayfun MIL{1}'
