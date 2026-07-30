@@ -74,35 +74,35 @@ uplink-security-medical-assembler-name = Упакованный Мед-О-Мат
 uplink-security-medical-assembler-desc = Специальный станок, который можно использовать для производства медицинских расходников.
 
 
-uplink-security-t0-voucher-name = Ваучер ТСФ на небольшой шаттл
+uplink-security-t0-voucher-name = Ваучер на небольшой шаттл
 uplink-security-t0-voucher-desc = Одноразовый ваучер на любой малый шаттл.
 
-uplink-security-t1-spica-voucher-name = Ваучер ТСФ на «Spica»
-uplink-security-t1-spica-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Spica» из резервов флагмана.
+uplink-security-t1-spica-voucher-name = Ваучер на «Шпика»
+uplink-security-t1-spica-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Шпика» из резервов флагмана.
 
-uplink-security-t1-dagger-voucher-name = Ваучер ТСФ на «Dagger»
-uplink-security-t1-dagger-voucher-desc = Небольшая карта, содержащая данные для получения эсминца с рельсотроном класса «Dagger» из резервов флагмана.
+uplink-security-t1-dagger-voucher-name = Ваучер на «Даггер»
+uplink-security-t1-dagger-voucher-desc = Небольшая карта, содержащая данные для получения эсминца с рельсотроном класса «Даггер» из резервов флагмана.
 
-uplink-security-t1-tarantula-voucher-name = Ваучер ТСФ на «Tarantula»
-uplink-security-t1-tarantula-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Tarantula» из резервов флагмана.
+uplink-security-t1-tarantula-voucher-name = Ваучер на «Тарантула»
+uplink-security-t1-tarantula-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Тарантула» из резервов флагмана.
 
-uplink-security-t1-sentinel-voucher-name = Ваучер ТСФ на «Sentinel»
-uplink-security-t1-sentinel-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Sentinel» из резервов флагмана.
+uplink-security-t1-sentinel-voucher-name = Ваучер на «Сентител»
+uplink-security-t1-sentinel-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Сентител» из резервов флагмана.
 
-uplink-security-t1-mercury-voucher-name = Ваучер ТСФ на «Mercury»
-uplink-security-t1-mercury-voucher-desc = Небольшая карта, содержащая данные для получения корвета класса «Mercury» из резервов флагмана.
+uplink-security-t1-mercury-voucher-name = Ваучер на «Меркурий»
+uplink-security-t1-mercury-voucher-desc = Небольшая карта, содержащая данные для получения корвета класса «Меркурий» из резервов флагмана.
 
-uplink-security-t1-aldebaran-voucher-name = Ваучер ТСФ на «Aldebaran»
-uplink-security-t1-aldebaran-voucher-desc = Небольшая карта, содержащая данные для получения фрегата класса «Aldebaran» из резервов флагмана.
+uplink-security-t1-aldebaran-voucher-name = Ваучер на «Альдебаран»
+uplink-security-t1-aldebaran-voucher-desc = Небольшая карта, содержащая данные для получения фрегата класса «Альдебаран» из резервов флагмана.
 
-uplink-security-t2-andromeda-voucher-name = Ваучер ТСФ на «Andromeda»
-uplink-security-t2-andromeda-voucher-desc = Небольшая карта, содержащая данные для получения крейсера класса «Andromeda» из резервов флагмана.
+uplink-security-t2-andromeda-voucher-name = Ваучер на «Андромеда»
+uplink-security-t2-andromeda-voucher-desc = Небольшая карта, содержащая данные для получения крейсера класса «Андромеда» из резервов флагмана.
 
-uplink-security-t3-altair-voucher-name = Ваучер ТСФ на «Altair»
-uplink-security-t3-altair-voucher-desc = Небольшая карта, содержащая данные для получения фрегата класса «Altair» из резервов флагмана.
+uplink-security-t3-altair-voucher-name = Ваучер на «Альтаир»
+uplink-security-t3-altair-voucher-desc = Небольшая карта, содержащая данные для получения фрегата класса «Альтаир» из резервов флагмана.
 
-uplink-security-flyssa-voucher-name = Ваучер ТСФ на «Flyssa»
-uplink-security-flyssa-voucher-desc = Небольшая карта, содержащая данные для получения эсминца класса «Flyssa» из резервов флагмана.
+uplink-security-flyssa-voucher-name = Ваучер на «Флисса»
+uplink-security-flyssa-voucher-desc = Небольшая карта, содержащая данные для получения эсминца класса «Флисса» из резервов флагмана.
 
 
 # Боеприпасы

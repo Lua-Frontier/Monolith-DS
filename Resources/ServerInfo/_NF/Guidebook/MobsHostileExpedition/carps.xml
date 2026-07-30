@@ -121,7 +121,7 @@
   [color=#a4885c]Летающее существо[/color]: парит над землёй, может преодолевать низкие препятствия (столы, каркасы, перила) без замедления.
 
   <Box>
-  <GuideEntityEmbed Entity="NFMobDragonDungeon"/>
+  <GuideEntityEmbed Entity="MobDragonDungeon"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 200 (смерть)
   - [bold][color=#a4885c]Скорость бега:[/color][/bold] 5 м/с
@@ -134,7 +134,7 @@
   # Цели миссий
   ## Устранение
   <Box>
-  <GuideEntityEmbed Entity="NFMobDragonDungeon"/>
+  <GuideEntityEmbed Entity="MobDragonDungeon"/>
   </Box>
   Устраните крупное и опасное существо — [color=#a4885c]космического дракона[/color] в отведённое время, чтобы получить денежное вознаграждение.
 

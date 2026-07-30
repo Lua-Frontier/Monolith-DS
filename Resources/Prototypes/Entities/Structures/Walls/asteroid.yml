@@ -60,13 +60,13 @@
         - WallLayer
         density: 2000
   - type: SoundOnGather # Frontier
-  - type: Gatherable # Frontier
-    toolWhitelist: # Frontier
-      tags: # Frontier
-      - Pickaxe # Frontier
-      components: # Frontier
-      - MiningGatheringHard # Frontier
-      - MiningGatheringSoft # Frontier
+#  - type: Gatherable # Frontier # Commented by LuaM
+#    toolWhitelist: # Frontier
+#      tags: # Frontier
+#      - Pickaxe # Frontier
+#      components: # Frontier
+#      - MiningGatheringHard # Frontier
+#      - MiningGatheringSoft # Frontier
 
 # Ore veins
 - type: entity

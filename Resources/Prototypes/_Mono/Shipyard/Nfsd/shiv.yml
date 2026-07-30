@@ -3,8 +3,8 @@
 - type: vessel
   id: Shiv
   parent: BaseVesselAntag
-  name: TSF-PIN Shiv
-  description: The workhorse of industry of the Solarian fleets, comes with an artifact research bay and good mining capabilities.
+  name: vessel-shiv-name # LuaM-locale
+  description: vessel-shiv-desc # LuaM-locale
   price: 60000
   category: Small
   group: Security

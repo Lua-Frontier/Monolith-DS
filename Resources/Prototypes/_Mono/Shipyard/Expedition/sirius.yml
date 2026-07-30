@@ -7,8 +7,8 @@
 - type: vessel
   id: Sirius
   parent: BaseVessel
-  name: vessel-sirius-name # LuaM: SKR Sirius > vessel-sirius-name
-  description: vessel-sirius-desc # LuaM: An expedition ship outfitted with 4 57mms, 2 90mms, and a full chemistry setup. > vessel-sirius-desc
+  name: vessel-sirius-name # LuaM-locale
+  description: vessel-sirius-desc # LuaM-locale
   price: 80750
   category: Medium
   group: Expedition

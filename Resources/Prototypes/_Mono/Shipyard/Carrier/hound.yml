@@ -9,8 +9,8 @@
 - type: vessel
   id: Hound
   parent: BaseVessel
-  name: Hound
-  description: A security drone equiped with a prometheus cannon. 
+  name: vessel-hound-name # LuaM-locale
+  description: vessel-hound-desc # LuaM-locale
   price: 35000
   category: Small
   group: Custom

@@ -15,13 +15,22 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
     [Dependency] private INetManager _net = default!;
     [Dependency] private ItemToggleSystem _toggle = default!;
 
+    [Dependency] private EntityQuery<ItemToggleComponent> _itemToggleQuery = default!;
+    [Dependency] private EntityQuery<BatteryComponent> _batteryQuery = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<PersonalShieldComponent, PersonalShieldActionEvent>(OnAction);
         SubscribeLocalEvent<PersonalShieldComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnDamageModify);
         SubscribeLocalEvent<PersonalShieldComponent, ItemToggleActivateAttemptEvent>(OnActivateAttempt);
         SubscribeLocalEvent<PersonalShieldComponent, ExaminedEvent>(OnExamined);
+    }
+
+    private void OnAction(Entity<PersonalShieldComponent> ent, ref PersonalShieldActionEvent ev)
+    {
+        _toggle.Toggle((ent, _itemToggleQuery.Comp(ent)), ev.Performer);
     }
 
     private void OnDamageModify(Entity<PersonalShieldComponent> ent, ref InventoryRelayedEvent<DamageModifyEvent> args)
@@ -30,7 +39,9 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
         if (!shield.IsUp || shield.Runtime.Charge <= 0f)
             return;
 
-        var incoming = args.Args.Damage.GetTotal().Float();
+        var modified = DamageSpecifier.ApplyModifierSet(args.Args.Damage, shield.Shield.BlockDamageModifier);
+
+        var incoming = modified.GetTotal().Float();
         if (incoming <= 0f)
             return;
 
@@ -41,8 +52,6 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
 
         if (shield.Runtime.Charge <= 0f)
             Fracture(ent); // Uh oh.
-        else
-            Dirty(ent, shield);
     }
 
     private void OnActivateAttempt(Entity<PersonalShieldComponent> ent, ref ItemToggleActivateAttemptEvent args)
@@ -108,17 +117,26 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
             if (shield.Runtime.Offline > 0f)
             {
                 shield.Runtime.Offline = MathF.Max(shield.Runtime.Offline - frameTime, 0f);
+
+                // LuaM add start:
+
+                if (shield.Runtime.Offline <= 0f && shield.Runtime.Recovering)
+                    _toggle.TryActivate(uid);
+
+                // LuaM add end.
+
                 DirtyIfChanged(ent, before);
                 continue;
             }
 
-            var running = (!TryComp<ItemToggleComponent>(uid, out var toggle) || toggle.Activated)
+            var running = (!_itemToggleQuery.TryComp(uid, out var toggle) || toggle.Activated)
                           && TryDrawPower(ent, frameTime);
 
             var step = frameTime / MathF.Max(cfg.SpinupTime, 0.01f);
 
             if (running)
             {
+                shield.Runtime.Recovering = false; // LuaM AutoRecover
                 shield.Runtime.Form = MathF.Min(shield.Runtime.Form + step, 1f);
 
                 shield.Runtime.Charge = shield.Runtime.Form < 1f
@@ -142,7 +160,7 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
 
     private bool TryDrawPower(Entity<PersonalShieldComponent> ent, float frameTime)
     {
-        if (ent.Comp.Shield.PowerDraw <= 0f || !HasComp<BatteryComponent>(ent))
+        if (ent.Comp.Shield.PowerDraw <= 0f || !_batteryQuery.HasComp(ent))
             return true;
 
         return _battery.TryUseCharge(ent, ent.Comp.Shield.PowerDraw * frameTime);
@@ -154,6 +172,7 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
         ent.Comp.Runtime.Shatter = float.Epsilon;
         ent.Comp.Runtime.Charge = 0f;
         ent.Comp.Runtime.Offline = ent.Comp.Shield.BreakCooldown;
+        ent.Comp.Runtime.Recovering = true; // LuaM AutoRecover
         Dirty(ent, ent.Comp);
         _toggle.TryDeactivate(ent.Owner);
     }
@@ -164,7 +183,8 @@ public sealed partial class SharedPersonalShieldSystem : EntitySystem
         if (MathHelper.CloseTo(before.Form, now.Form)
             && MathHelper.CloseTo(before.Shatter, now.Shatter)
             && MathHelper.CloseTo(before.Charge, now.Charge)
-            && MathHelper.CloseTo(before.Offline, now.Offline))
+            && MathHelper.CloseTo(before.Offline, now.Offline)
+            && before.Recovering == now.Recovering) // LuaM AutoRecover
         {
             return;
         }

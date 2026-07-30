@@ -239,6 +239,7 @@
       - id: DrinkTeaJug
       - id: DrinkTonicWaterBottleFull
       - id: DrinkWaterMelonJuiceJug
+      - id: DrinkJuiceAppleCartonXL # CorvaxGoob
 
 - type: entity
   id: CrateServiceBoozeDispenser

@@ -8,8 +8,8 @@
 - type: vessel
   id: Mock
   parent: BaseVessel
-  name: IED Brawler Drone 'Mock'
-  description: A lightly armored fighter equipped with 2 90mm autocannons for harassing targets and taking down enemy fighters.
+  name: vessel-mock-name # LuaM-locale
+  description: vessel-mock-desc # LuaM-locale
   limit: 4
   price: 13500
   purchasable: false #voucher only

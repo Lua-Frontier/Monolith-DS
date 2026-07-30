@@ -41125,7 +41125,7 @@ entities:
     - type: Transform
       pos: 4.5,52.5
       parent: 1
-- proto: KitchenDeepFryerCauldronPOI
+- proto: KitchenDeepFryerPOI
   entities:
   - uid: 2328
     components:

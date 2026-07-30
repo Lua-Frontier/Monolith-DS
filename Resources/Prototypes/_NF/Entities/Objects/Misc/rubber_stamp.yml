@@ -25,20 +25,20 @@
     sprite: _NF/Objects/Misc/stamps.rsi
     state: stamp-stc
 
-- type: entity
-  name: colonel's rubber stamp
-  parent: RubberStampBase
-  id: RubberStampSheriff
-  categories: [ DoNotMap ]
-  components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-hos
-    stampedColor: "#4c653a"
-    stampState: "paper_stamp-nf-sheriff"
-    protected: True
-  - type: Sprite
-    sprite: _NF/Objects/Misc/stamps.rsi
-    state: stamp-sheriff
+#- type: entity # Commented by LuaM
+#  name: colonel's rubber stamp
+#  parent: RubberStampBase
+#  id: RubberStampSheriff
+#  categories: [ DoNotMap ]
+#  components:
+#  - type: Stamp
+#    stampedName: stamp-component-stamped-name-hos
+#    stampedColor: "#4c653a"
+#    stampState: "paper_stamp-nf-sheriff"
+#    protected: True
+#  - type: Sprite
+#    sprite: _NF/Objects/Misc/stamps.rsi
+#    state: stamp-sheriff
 
 - type: entity
   name: doctor's rubber stamp
@@ -94,16 +94,16 @@
     sprite: _NF/Objects/Misc/stamps.rsi
     state: stamp-doc
 
-- type: entity
-  name: bailiff's rubber stamp
-  parent: RubberStampBase
-  id: RubberStampBailiff
-  categories: [ DoNotMap ]
-  components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-bailiff
-    stampedColor: "#51703b"
-    stampState: "paper_stamp-nf-bailiff"
-  - type: Sprite
-    sprite: _NF/Objects/Misc/stamps.rsi
-    state: stamp-bailiff
+#- type: entity # Commented by LuaM
+#  name: bailiff's rubber stamp
+#  parent: RubberStampBase
+#  id: RubberStampBailiff
+#  categories: [ DoNotMap ]
+#  components:
+#  - type: Stamp
+#    stampedName: stamp-component-stamped-name-bailiff
+#    stampedColor: "#51703b"
+#    stampState: "paper_stamp-nf-bailiff"
+#  - type: Sprite
+#    sprite: _NF/Objects/Misc/stamps.rsi
+#    state: stamp-bailiff

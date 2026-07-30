@@ -127,11 +127,12 @@
     quickEquip: false
     slots:
     - back
-  - type: Storage
+  - type: Storage # LuaM extra space
     grid:
-    - 0,0,1,3
-    - 3,0,6,3
-    - 8,0,9,3
+#    - 0,0,1,3
+#    - 3,0,6,3
+#    - 8,0,9,3
+    - 0,0,10,6
     maxItemSize: Huge
   - type: ContainerContainer
     containers:
@@ -206,6 +207,9 @@
   - type: Construction
     graph: Modsuit
     node: headofsecurity
+  - type: Storage #LuaM - extra Space
+    grid:
+    - 0,0,10,6
 
 - type: entity
   parent: ClothingModsuitHeadOfSecurity
@@ -242,6 +246,10 @@
   - type: Construction
     graph: Modsuit
     node: paramedic
+  - type: Storage # Extra space - LuaM
+    grid:
+    - 0,0,9,4
+
 
 - type: entity
   parent: ClothingModsuitParamedic

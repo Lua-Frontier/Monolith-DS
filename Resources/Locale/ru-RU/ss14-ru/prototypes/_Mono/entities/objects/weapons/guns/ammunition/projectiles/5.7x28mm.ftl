@@ -1,6 +1,6 @@
 ﻿ent-Bullet57x28mmFMJ = пуля (5.7x28мм FMJ)
 ent-Bullet57x28mmPractice = пуля (5.7x28mm учебный)
-ent-Bullet57x28mmRubber = пуля (5.7x28mm резиновый)
+ent-Bullet57x28mmRubber = пуля (5.7x28mm травматическиий)
 ent-Bullet57x28mmIncendiary = пуля (5.7x28mm зажигательный)
 ent-Bullet57x28mmUranium = пуля (5.7x28mm урановый)
 ent-Bullet57x28mmEmp = пуля (5.7x28mm ЭМИ)
