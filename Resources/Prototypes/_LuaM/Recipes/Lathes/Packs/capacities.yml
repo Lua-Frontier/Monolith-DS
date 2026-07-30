@@ -1,0 +1,7 @@
+- type: latheRecipePack
+  id: Capacities
+  recipes:
+    - FireExtinguisher
+    - FireExtinguisherMini
+    - JerryCan
+    - CustomDrinkJug

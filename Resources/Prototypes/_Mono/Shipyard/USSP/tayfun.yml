@@ -3,8 +3,8 @@
 - type: vessel
   id: Tayfun
   parent: BaseVesselAntag
-  name: NCS Tayfun
-  description: An armored gunship with 4 90mms, 2 30mms, and 2 VESPERA missile pods.
+  name: vessel-tayfun-name # LuaM-locale
+  description: vessel-tayfun-desc # LuaM-locale
   price: 74200
   category: Medium
   group: Ussp

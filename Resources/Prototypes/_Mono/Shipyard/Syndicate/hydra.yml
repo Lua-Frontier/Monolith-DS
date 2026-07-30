@@ -1,8 +1,8 @@
 - type: vessel
   id: Hydra
   parent: BaseVesselAntag
-  name: Hydra
-  description: A syndicate missile corvette meant for stealthy hit and runs and harassment.
+  name: vessel-hydra-name # LuaM-locale
+  description: vessel-hydra-desc # LuaM-locale
   price: 135000
   category: Medium
   group: Syndicate

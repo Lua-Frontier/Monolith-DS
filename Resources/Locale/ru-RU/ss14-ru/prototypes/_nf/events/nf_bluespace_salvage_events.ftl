@@ -1,1 +1,1 @@
-ent-BluespaceSalvage = Мониторинг юлюспейс-активности
+ent-BluespaceSalvage = Мониторинг блюспейс-активности

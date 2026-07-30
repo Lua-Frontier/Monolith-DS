@@ -1,9 +1,9 @@
 ent-BlueprintLauncherRocket = чертёж RPG-7
-    .desc = Чертеж со схемой RPG-7 и боеприпасов к нему. Может быть вставлен в автолат или техфаб.
+    .desc = Чертеж со схемой RPG-7 и боеприпасов к нему. Может быть вставлен в автолат или ТехФаб.
 ent-BlueprintWeaponRifleNtsfLtr = чертёж NTSF-LTR-556
-    .desc = Чертеж рецепта NTSF-LTR-556. Может быть вставлен в автолат или техфаб.
+    .desc = Чертеж рецепта NTSF-LTR-556. Может быть вставлен в автолат или ТехФаб.
 ent-BlueprintWeaponSubMachineGunVectorNtsfHclm = чертёж AP-26 "Вектор" (.45 магнум)
-    .desc = Чертеж рецепта NTSF-HCLM-45. Может быть вставлен в автолат или техфаб.
+    .desc = Чертеж рецепта NTSF-HCLM-45. Может быть вставлен в автолат или ТехФаб.
 ent-BlueprintAmmoPPLCCell = чертёж контейнера фазовой плазменной лазерной пушки
     .desc = Чертеж для производства контейнеров для винтовки NT-WS PPLC.
 ent-BlueprintAmmoMPSSMMissile = чертёж ракеты MPSSM

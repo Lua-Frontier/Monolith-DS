@@ -1,8 +1,8 @@
 - type: vessel
   id: Solarsail
   parent: BaseVessel
-  name: Solarsail
-  description: A personal transport and mobile office for the Overseer. Part of the combined service ship.
+  name: vessel-solarsail-name # LuaM-locale
+  description: vessel-solarsail-desc # LuaM-locale
   price: 25500
   category: Small
   group: Sr

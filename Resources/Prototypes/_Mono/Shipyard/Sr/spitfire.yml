@@ -5,8 +5,8 @@
 - type: vessel
   id: Spitfire
   parent: BaseVessel
-  name: Spitfire
-  description: Small fighter designed with escorting larger vessels in mind, Utilzing its large amount of flares to ward off incoming missles. It is equiped with two RAC-30s and a rubicon, alongside rear mounted flare launchers.
+  name: vessel-spitfire-name # LuaM-locale
+  description: vessel-spitfire-desc # LuaM-locale
   price: 27000
   category: Small
   group: Sr

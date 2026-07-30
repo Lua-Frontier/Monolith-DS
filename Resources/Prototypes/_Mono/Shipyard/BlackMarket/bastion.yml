@@ -3,8 +3,8 @@
 - type: vessel
   id: Bastion
   parent: BaseVesselAntag
-  name: AN Bastion # LuaM: PDV Bastion > AN Bastion
-  description: A long ranged design using 2 Hydra 220mm Cannons and 4 AK570 57mm autocannons, stand firm and sink the invaders.
+  name: vessel-bastion-name # LuaM-locale
+  description: vessel-bastion-desc # LuaM-locale
   price: 95500
   purchasable: false # voucher only
   category: Medium

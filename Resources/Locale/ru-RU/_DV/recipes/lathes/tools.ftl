@@ -1,0 +1,1 @@
+lathe-recipe-FireExtinguisherBluespace-name = блюспейс-огнетушитель (пустой)

@@ -1,2 +1,2 @@
-﻿ent-WeaponPistolUllmanSmartMagnumMK5 = умный пистолет U.I. MK5 (.55 SAM)
+﻿ent-WeaponPistolUllmanSmartMagnumMK5 = SP-129 «Нейронв»
     .desc = Прототип умного пистолета, разработанный Ullman Industries, использующий .55 Smart Action Magnum, предназначенный для точности и адаптивности в боевых ситуациях. Оснащён продвинутыми системами наведения и элегантным дизайном.

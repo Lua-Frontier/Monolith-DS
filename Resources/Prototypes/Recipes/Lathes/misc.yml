@@ -85,7 +85,8 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: FireExtinguisher
-  result: FireExtinguisher
+  result: FireExtinguisherEmpty # LuaM: FireExtinguisher > FireExtinguisherEmpty
+  name: lathe-recipe-FireExtinguisher-name # LuaM
   materials:
     Steel: 200
 

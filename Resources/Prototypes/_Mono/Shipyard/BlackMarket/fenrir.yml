@@ -3,8 +3,8 @@
 - type: vessel
   id: Fenrir
   parent: BaseVesselAntag
-  name: AN Fenrir # LuaM: BT-Y Fenrir > AN Fenrir
-  description: A versalite support destroyer armed with an M381 Mass Driver, 2 Dravons, 2 Scattercannons, 4 20mm autocannons and outfitted with 2 Medium Size Mechbays capable of deploying S-2 and S-1 Mechs but does not come with Mechs. Well armored but slow.
+  name: vessel-fenrir-name # LuaM-locale
+  description: vessel-fenrir-desc # LuaM-locale
   price: 150750
   purchasable: false # voucher only
   category: Medium

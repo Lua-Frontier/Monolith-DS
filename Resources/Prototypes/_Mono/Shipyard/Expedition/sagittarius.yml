@@ -3,8 +3,8 @@
 - type: vessel
   id: Sagittarius
   parent: BaseVessel
-  name: vessel-sagittarius-name # LuaM: HT Sagittarius > vessel-sagittarius-name
-  description: vessel-sagittarius-desc #LuaM: The Sagittarius is the sirius' big brother, heavier firepower and more space while maintaing its chemistry bay. > vessel-sagittarius-desc
+  name: vessel-sagittarius-name # LuaM-locale
+  description: vessel-sagittarius-desc # LuaM-locale
   price: 165000
   category: Large
   group: Expedition

@@ -1,1 +1,1 @@
-ent-ContractorStampsApprovedDenied = штампы «Одобрено» и «Отклонено»
+ent-ContractorStampsApprovedDenied = печати «Одобрено» и «Отклонено»

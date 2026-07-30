@@ -24,11 +24,11 @@ ent-MetalBarrelBlack = { ent-BaseBarrel }
 
 ent-ChemicalBarrelExplosiveEmpty = взрывоопасная бочка
     .desc = Считается, что древний и загадочный символ на лицевой стороне этой бочки когда-то означал "Используй меня в качестве прикрытия!".
-    .suffix = Пустая
+    .suffix = Пустой
 
 ent-ChemicalBarrelExplosiveFilled = { ent-ChemicalBarrelExplosiveEmpty }
     .desc = { ent-ChemicalBarrelExplosiveEmpty.desc }
-    .suffix = Заполненная
+    .suffix = Заполненный
 
 ent-LabelWeldingFuel = { ent-Paper }
     .desc = { ent-Paper.desc }

@@ -1,6 +1,6 @@
-ent-CentrifugeLatheMiniCircuitboard = плата миниатюрной центрифуги
-    .desc = Печатная плата для миниатюрной центрифуги.
-    .suffix = машинная плата
-ent-IndustrialLatheEconomyMachineCircuitboard = плата промышленного токарного станка
+ent-CentrifugeLatheMiniCircuitboard = лабораторная центрифуга (машинная плата)
+    .desc = Печатная плата для лабораторной центрифуги.
+    .suffix = Машинная плата
+ent-IndustrialLatheEconomyMachineCircuitboard = промышленный токарный станок (машинная плата)
     .desc = Печатная плата для промышленного токарного станка.
-    .suffix = машинная плата
+    .suffix = Машинная плата

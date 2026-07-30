@@ -5,8 +5,8 @@
 - type: vessel
   id: Siebel
   parent: BaseVessel
-  name: vessel-siebel-name # LuaM: MI Siebel > vessel-siebel-name
-  description: vessel-siebel-desc # LuaM: The Siebel is a militia owned and designed ship, designed with Chimera combat in mind, however; many use it for expeditionary exploration and combat. > vessel-siebel-desc
+  name: vessel-siebel-name # LuaM-locale
+  description: vessel-siebel-desc # LuaM-locale
   price: 175000
   category: Medium
   group: Expedition

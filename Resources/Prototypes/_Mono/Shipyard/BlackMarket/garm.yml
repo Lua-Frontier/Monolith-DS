@@ -3,8 +3,8 @@
 - type: vessel
   id: Garm
   parent: BaseVesselAntag
-  name: AN Garm # LuaM: WEN Garm > AN Garm
-  description: Gruff hull with 3 GPOL's and long-range Bofors artillery for station bombardments and fleet support.
+  name: vessel-garm-name # LuaM-locale
+  description: vessel-garm-desc # LuaM-locale
   price: 105200 # 86700 appraisegrid
   purchasable: false # voucher only
   category: Medium

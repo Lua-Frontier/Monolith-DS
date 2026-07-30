@@ -3,8 +3,8 @@
 - type: vessel
   id: Ledokol
   parent: BaseVesselAntag
-  name: BYP Ledokol
-  description: A massive shuttle originally made for ramming through compact debris fields. Trades off fire-power for thrust-power.
+  name: vessel-ledokol-name # LuaM-locale
+  description: vessel-ledokol-desc # LuaM-locale
   # limit: 1 # Commented by LuaM
   price: 300000 # LuaM 425000 > 300000
   purchasable: true # voucher only # LuaM: false > true

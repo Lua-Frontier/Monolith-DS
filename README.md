@@ -8,7 +8,7 @@ Monolith-DS — это форк [Monolith](https://github.com/Monolith-Station/M
 
 ## Ссылки
 
-[Discord](https://discord.gg/PFMc8FENR) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Вики](https://wiki.deadspace14.net/Фронтир:Заглавная_страница)
+[Discord](https://discord.gg/sector-colossus) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Steam (альт.)](https://store.steampowered.com/app/3731580/Space_Station_Beyond/) | [Вики](https://wiki.deadspace14.net/Фронтир:Заглавная_страница)
 
 
 ## Документация

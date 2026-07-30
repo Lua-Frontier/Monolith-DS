@@ -1,8 +1,8 @@
 - type: vessel
   id: Comet
   parent: BaseVessel
-  name: vessel-comet-name # LuaM: CDM Comet > vessel-comet-name
-  description: vessel-comet-desc # LuaM: A de-militarized, jack-of-all-trades, utility vessel with expeditionary functionality. > vessel-comet-desc
+  name: vessel-comet-name # LuaM-locale
+  description: vessel-comet-desc # LuaM-locale
   price: 120000
   category: Large
   group: Expedition

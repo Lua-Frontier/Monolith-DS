@@ -8,8 +8,8 @@
 - type: vessel
   id: Svinya
   parent: BaseVessel
-  name: UW Svinya
-  description: A compact attack craft, bristling with small caliber armament.
+  name: vessel-svinya-name # LuaM-locale
+  description: vessel-svinya-desc # LuaM-locale
   price: 39000 # appraised at ~33200
   category: Small
   group: Ussp

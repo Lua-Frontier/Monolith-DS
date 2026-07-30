@@ -1,2 +1,2 @@
-vessel-antlion-name = ДИС «Антлион»
-vessel-antlion-desc = Шахтёрский дрон по заказу Horizon Energy у DIS. По сути кусок металла с прицепленным шахтёрским пульсером. Скафандр и кислород в комплект не входят.
+vessel-antlion-name = ДИ «Антлион»
+vessel-antlion-desc = Шахтёрский мини-шаттл от Drake Industries для добычи ресурсов. Снабжён одним M-25 «Шахтёр».

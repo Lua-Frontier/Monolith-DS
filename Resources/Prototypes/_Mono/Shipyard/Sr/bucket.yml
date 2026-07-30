@@ -1,8 +1,8 @@
 - type: vessel
   id: Bucket
   parent: BaseVessel
-  name: Bucket
-  description: The janitorial wing of the combined service ship.
+  name: vessel-bucket-name # LuaM-locale
+  description: vessel-bucket-desc # LuaM-locale
   price: 18000
   category: Micro
   group: Sr

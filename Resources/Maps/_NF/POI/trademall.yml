@@ -31423,7 +31423,7 @@ entities:
     - type: Transform
       pos: -13.5,7.5
       parent: 1
-- proto: KitchenDeepFryerCauldronPOI
+- proto: KitchenDeepFryerPOI
   entities:
   - uid: 4299
     components:

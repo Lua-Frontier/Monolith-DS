@@ -3,8 +3,8 @@
 - type: vessel
   id: Natisk
   parent: BaseVesselAntag
-  name: NCS Natisk
-  description: A tank with a layer of reinforced walls under its exterior hull, ensuring its able to send out obscene amounts of firepower.
+  name: vessel-natisk-name # LuaM-locale
+  description: vessel-natisk-desc # LuaM-locale
   price: 53500
   category: Medium
   group: Ussp

@@ -7,8 +7,8 @@
 - type: vessel
   id: Tzipora
   parent: BaseVessel
-  name: SKR Tzipora
-  description: An advanced medical ship, outfitted with cryo, chem, and surgical capabilities.
+  name: vessel-tzipora-name # LuaM-locale
+  description: vessel-tzipora-desc # LuaM-locale
   price: 145530
   category: Large
   group: Medical

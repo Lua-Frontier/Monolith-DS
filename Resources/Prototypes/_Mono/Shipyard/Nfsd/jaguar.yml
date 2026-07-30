@@ -3,8 +3,8 @@
 - type: vessel
   id: Jaguar
   parent: BaseVesselAntag
-  name: TSF-SKR Jaguar
-  description: A support fighter to assist other ships in combat, armed with TARYNX EMP cannon for disabling ships and 4 L-1 phalanxes to shred anything that gets too close.
+  name: vessel-jaguar-name # LuaM-locale
+  description: vessel-jaguar-desc # LuaM-locale
   price: 58500
   category: Small
   group: Security

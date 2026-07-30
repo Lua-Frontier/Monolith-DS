@@ -1,6 +1,6 @@
 ﻿ent-Bullet45_ACPFMJ = пуля (.45 ACP FMJ)
 ent-Bullet45_ACPPractice = пуля (.45 ACP учебный)
-ent-Bullet45_ACPRubber = пуля (.45 ACP резиновый)
+ent-Bullet45_ACPRubber = пуля (.45 ACP травматические)
 ent-Bullet45_ACPIncendiary = пуля (.45 ACP зажигательный)
 ent-Bullet45_ACPUranium = пуля (.45 ACP урановый)
 ent-Bullet45_ACPEmp = пуля (.45 ACP ЭМИ)

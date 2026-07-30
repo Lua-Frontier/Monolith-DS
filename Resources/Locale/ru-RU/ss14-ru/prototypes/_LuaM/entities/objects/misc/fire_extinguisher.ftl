@@ -1,0 +1,9 @@
+ent-FireExtinguisherEmpty = огнетушитель
+    .suffix = Пустой
+    .desc = { ent-FireExtinguisher.desc }
+ent-FireExtinguisherMiniEmpty = карманный огнетушитель
+    .suffix = Пустой
+    .desc = { ent-FireExtinguisherMini.desc }
+ent-FireExtinguisherBluespaceEmpty = блюспейс-огнетушитель
+    .suffix = Пустой
+    .desc = { ent-FireExtinguisherBluespace.desc }

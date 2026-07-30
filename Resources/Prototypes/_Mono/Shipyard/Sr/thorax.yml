@@ -5,8 +5,8 @@
 - type: vessel
   id: Thorax
   parent: BaseVessel
-  name: Thorax
-  description: A light mech carrier and factory, including 4 different docks for assistance.
+  name: vessel-thorax-name # LuaM-locale
+  description: vessel-thorax-desc # LuaM-locale
   price: 63450
   category: Medium
   group: Sr

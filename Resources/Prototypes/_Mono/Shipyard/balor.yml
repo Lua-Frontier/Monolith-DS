@@ -1,8 +1,8 @@
 - type: vessel
   id: Balor
   parent: BaseVessel
-  name: Z-22 Balor
-  description: Directly translated to the common tongue, the 'Evil Eye' is a drone hunter, meant to patrol the deep periphery until its prey reveals itself, then parks and unleashes its malicious intent. EVA is required to access the core.
+  name: vessel-balor-name # LuaM-locale
+  description: vessel-balor-desc # LuaM-locale
   price: 188000
   category: Large
   group: Shipyard

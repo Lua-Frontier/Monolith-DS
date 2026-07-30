@@ -3,8 +3,8 @@
 - type: vessel
   id: Zephyr
   parent: BaseVesselAntag
-  name: TSF-SKR Zephyr
-  description: A fighter refurbished from recovered remnant Razor hulls.
+  name: vessel-zephyr-name # LuaM-locale
+  description: vessel-zephyr-desc # LuaM-locale
   price: 16400
   category: Small
   group: Custom

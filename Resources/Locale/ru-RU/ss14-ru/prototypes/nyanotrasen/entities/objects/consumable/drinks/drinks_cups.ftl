@@ -1,6 +1,6 @@
 ent-DrinkSakeCupEmpty = сакадзуки
     .desc = Церемониальная белая чашка для питья сакэ.
-    .suffix = Пустая
+    .suffix = Пустой
 ent-DrinkSakeCup = сакадзуки
     .desc = Церемониальная белая чашка для питья сакэ.
-    .suffix = Полная
+    .suffix = Полный

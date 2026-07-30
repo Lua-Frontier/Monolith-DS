@@ -7,8 +7,8 @@
 - type: vessel
   id: Borer
   parent: BaseVessel
-  name: SHS-DIS Borer
-  description: designed by SHM and produced in cooperation with DI, the borer is a cost effective ship for salvaging and derilect scrapping.
+  name: vessel-borer-name # LuaM-locale
+  description: vessel-borer-desc # LuaM-locale
   price: 20525
   category: Small
   group: Shipyard

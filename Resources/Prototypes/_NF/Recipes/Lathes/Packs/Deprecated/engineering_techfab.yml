@@ -56,6 +56,10 @@
     - GasDepositLocator
     - RPED # Mono
     - MetalFoamGrenade #Mono
+# LuaM-start:
+    - FireExtinguisherMiniEmpty
+    - JerryCan
+# LuaM-end.
   ## Parts
     - MicroManipulatorStockPart
     - MatterBinStockPart
@@ -143,4 +147,4 @@
     - ClothingOuterHardsuitEngineering
     - ClothingOuterHardsuitEngineeringWhite
     - ConstructionBagOfHolding
-    # - FireExtinguisherBluespace # DeltaV
+    - FireExtinguisherBluespace # DeltaV # Uncommented by LuaM

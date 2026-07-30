@@ -1,8 +1,8 @@
 - type: vessel
   id: Infiltrator
   parent: BaseVesselAntag
-  name: Infiltrator
-  description: A light syndicate frigate meant for raiding enemy stations. Armed to the teeth with missiles and Hydras.
+  name: vessel-infiltrator-name # LuaM-locale
+  description: vessel-infiltrator-desc # LuaM-locale
   price: 275000
   category: Large
   group: Syndicate
