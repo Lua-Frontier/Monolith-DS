@@ -166,7 +166,6 @@ namespace Content.Shared.Atmos
         public static Dictionary<Gas, string> GasAbbreviations = new Dictionary<Gas, string>()
         {
             [Gas.Ammonia] = Loc.GetString("gas-ammonia-abbreviation"),
-            [Gas.InfectionDeadSpace] = Loc.GetString("gas-unknown-abbreviation"), // LuaM - Dead Space
             [Gas.BZ] = Loc.GetString("gas-bz-abbreviation"), // Funky/Goob - Ported gas
             [Gas.CarbonDioxide] = Loc.GetString("gas-carbon-dioxide-abbreviation"),
             [Gas.Frezon] = Loc.GetString("gas-frezon-abbreviation"),
@@ -188,7 +187,6 @@ namespace Content.Shared.Atmos
         public static Dictionary<Gas, string> GasNames = new Dictionary<Gas, string>()
         {
             [Gas.Ammonia] = Loc.GetString("gases-ammonia"),
-            [Gas.InfectionDeadSpace] = Loc.GetString("gases-infectionDeadSpace"), // LuaM - Dead Space
             [Gas.BZ] = Loc.GetString("gases-bz"), // Funky/Goob - Ported gas
             [Gas.CarbonDioxide] = Loc.GetString("gases-co2"),
             [Gas.Frezon] = Loc.GetString("gases-frezon"),
@@ -432,6 +430,5 @@ namespace Content.Shared.Atmos
         Healium = 10, //Funky/Goob
         Nitrium = 11, //Funky/Goob
 		Pluoxium = 12, //Funky/Goob
-        InfectionDeadSpace = 13, // LuaM - Dead Space
     }
 }

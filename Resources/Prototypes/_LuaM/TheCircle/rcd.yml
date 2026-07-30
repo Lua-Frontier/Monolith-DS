@@ -1,0 +1,27 @@
+- type: entity
+  parent: RCDRecharging
+  id: RCDTheCircleEngineer
+  name: экспериментальный РСУ Круга
+  description: Экспериментальный инструмент для быстрого строительства.
+  components:
+  - type: RCD
+    availablePrototypes:
+    - WallSolid
+    - FloorSteel
+    - Plating
+    - Catwalk
+    - Grille
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    - Deconstruct

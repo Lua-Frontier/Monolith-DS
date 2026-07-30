@@ -26,7 +26,6 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
             Gas.BZ, //Funky/Goob
             Gas.Healium, //Funky/Goob
             Gas.Nitrium, //Funky/Goob
-            Gas.InfectionDeadSpace // LuaM - Dead Space
         };
 
         // Presets for 'dumb' air alarm modes

@@ -1,0 +1,754 @@
+## Гипоспрей медика
+- type: entity
+  parent: BaseItem
+  id: UnitologyMedicHypospray
+  name: модифицированный гипоспрей «Aokigahara»
+  description: Лимитированный гипоспрей с ускоренным временем впрыска и повышенным объемом, разработанный исключительно для службы серафима.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/tools/hypo_2.rsi
+    layers:
+      - state: hypo
+        map: ["enum.SolutionContainerLayers.Base"]
+      - state: hypo_fill1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/tools/hypo_2.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 40
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+    exactVolume: true
+  - type: Injector
+    solutionName: hypospray
+    ignoreClosed: false
+    activeModeProtoId: HyposprayDynamicMode
+    allowedModes:
+    - HyposprayDynamicMode
+    - HyposprayInjectMode
+  - type: UseDelay
+    delay: 0.5
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 8
+    fillBaseName: hypo_fill
+    solutionName: hypospray
+
+## Общий гипоспрей
+- type: entity
+  parent: BaseItem
+  id: UnitologyRegularHypospray
+  name: тактический гипоспрей «Beherit»
+  description: Помоги мне в последний раз. Помоги мне в последний раз. Помоги мне в последний раз. Помоги мне... Помо-помоги мне.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/tools/hypo_1.rsi
+    layers:
+      - state: hypo
+        map: ["enum.SolutionContainerLayers.Base"]
+      - state: hypo_fill1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/tools/hypo_1.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 30
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+    exactVolume: true
+  - type: Injector
+    solutionName: hypospray
+    ignoreClosed: false
+    activeModeProtoId: HyposprayDynamicMode
+    allowedModes:
+    - HyposprayDynamicMode
+    - HyposprayInjectMode
+  - type: UseDelay
+    delay: 1.25
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: hypo_fill
+    solutionName: hypospray
+
+## КПК
+- type: entity
+  parent: BasePDA
+  id: UnitologyPDA
+  name: тактический планшет «uniPod»
+  description: В теории, на нём можно запустить DOOM1984-...
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Pda
+    id: UnitologyCommanderIDCard
+  - type: PdaBorderColor
+    borderColor: "#6f695b"
+  - type: Icon
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/pda.rsi
+    state: pda
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - BankCartridge
+      - AstroNavCartridge
+
+- type: entity
+  parent: UnitologyPDA
+  id: UnitologyCommanderPDA
+  components:
+  - type: Pda
+    id: UnitologyCommanderIDCard
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - BankCartridge
+      - AstroNavCartridge
+      - MedTekCartridge
+
+- type: entity
+  parent: UnitologyPDA
+  id: UnitologyHeavyPDA
+  suffix: Штурмовик
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Pda
+    id: UnitologyHeavyIDCard
+
+- type: entity
+  parent: UnitologyPDA
+  id: UnitologyLightPDA
+  suffix: Егерь
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Pda
+    id: UnitologyLightIDCard
+
+- type: entity
+  parent: UnitologyPDA
+  id: UnitologyEngineerPDA
+  suffix: Инженер
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Pda
+    id: UnitologyEngineerIDCard
+  - type: Emag
+    emagType: Access
+  - type: LimitedCharges
+  - type: AutoRecharge
+
+- type: entity
+  parent: UnitologyCommanderPDA
+  id: UnitologyMedicPDA
+  suffix: Медик
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Pda
+    id: UnitologyMedicIDCard
+
+- type: entity
+  parent: UnitologyPDA
+  id: UnitologyGeistPDA
+  suffix: Гейст
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Pda
+    id: UnitologyGeistIDCard
+
+- type: entity
+  parent: SyndicateIDCard
+  id: UnitologyIDCard
+  description: ID-карта, которая может воровать доступы с другой ID-карты.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IdCard
+    jobIcon: JobIconUnitologyLead
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+    - NuclearOperative
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/id.rsi 
+    layers:
+    - state: circle
+  - type: AgentIDCard
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: UnitologyIDCard
+  id: UnitologyCommanderIDCard
+  name: ID-карта
+  suffix: Командир
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IdCard
+    jobIcon: JobIconUnitologyLead
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+    - NuclearOperative
+
+- type: entity
+  parent: UnitologyIDCard
+  id: UnitologyHeavyIDCard
+  name: ID-карта
+  suffix: Штурмовик
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IdCard
+    jobIcon: JobIconUnitologyHeavy
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+    - NuclearOperative
+
+- type: entity
+  parent: UnitologyIDCard
+  id: UnitologyLightIDCard
+  name: ID-карта
+  suffix: Егерь
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IdCard
+    jobIcon: JobIconUnitologyLight
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+    - NuclearOperative
+
+- type: entity
+  parent: UnitologyIDCard
+  id: UnitologyEngineerIDCard
+  name: ID-карта
+  suffix: Инженер
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IdCard
+    jobIcon: JobIconUnitologyEngineer
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+    - NuclearOperative
+
+- type: entity
+  parent: UnitologyIDCard
+  id: UnitologyMedicIDCard
+  name: ID-карта
+  suffix: Медик
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IdCard
+    jobIcon: JobIconUnitologyMedic
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+    - NuclearOperative
+
+- type: entity
+  parent: UnitologyIDCard
+  id: UnitologyGeistIDCard
+  name: ID-карта
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IdCard
+    jobIcon: JobIconUnitologyGeist
+  - type: Access
+    tags:
+    - Maintenance
+    - SyndicateAgent
+    - NuclearOperative
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnitology
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+    state: circle
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnitologyLead
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+    state: circle_lead
+  allowSelection: false
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnitologyHeavy
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+    state: circle_heavy
+  allowSelection: false
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnitologyLight
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+    state: circle_light
+  allowSelection: false    
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnitologyMedic
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+    state: circle_medic
+  allowSelection: false
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnitologyEngineer
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+    state: circle_engineer
+  allowSelection: false
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconUnitologyGeist
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+    state: circle_geist
+  allowSelection: false
+
+## РПС
+- type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltUnitologyCommanderWebbing
+  name: РПС «Прометей»
+  description: Изношенная ременно-плечевая система, специализированная под нужды кардинала.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/commander-webbing.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/commander-webbing.rsi
+  - type: Tag
+    tags: []
+
+- type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltUnitologyHeavyWebbing
+  name: РПС «Артемида»
+  description: Изношенная ременно-плечевая система, специализированная под суд диакона.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/heavy-webbing.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/heavy-webbing.rsi
+  - type: Tag
+    tags: []
+
+- type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltUnitologyLightWebbing
+  name: РПС «Гермес»
+  description: Изношенная ременно-плечевая система, специализированная под быстрый доступ к снаряжению для вестника.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/light-webbing.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/light-webbing.rsi
+  - type: Tag
+    tags: []
+
+- type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltUnitologyEngineerWebbing
+  name: РПС «Гефест»
+  description: Изношенная ременно-плечевая система, специализированная под требования зодчего.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/engi-webbing.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/engi-webbing.rsi
+  - type: Tag
+    tags: []
+
+- type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltUnitologyMedicWebbing
+  name: РПС «Асклепий»
+  description: Изношенная ременно-плечевая система, специализированная под работу серафима.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/medic-webbing.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/medic-webbing.rsi
+  - type: Tag
+    tags: []
+
+- type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltUnitologyGeistWebbing
+  name: РПС «Морс»
+  description: Облегчённая ременно-плечевая система Гейста.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/giest-webbing.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/webbings/giest-webbing.rsi
+  - type: Tag
+    tags: []
+
+## Визор
+- type: entity
+  parent: ClothingEyesHudSyndicateAgent
+  id: ClothingEyesHudUnitologyVisor
+  name: тактический визор «Око луны»
+  description: Глаза сокрыты за мрачной вуалью. За ней виднеется лишь пустота.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/hud.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/hud.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: Tag
+    tags: []
+
+## Противогаз
+- type: entity
+  parent: ClothingMaskGasSyndicate
+  id: ClothingMaskGasUnitology
+  name: модифицированный респиратор «Полнолуние»
+  description: Плотно прилегающий тактический респиратор, который можно подключить к баллону с воздухом.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/gasmask.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/gasmask.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.95
+
+## Магнитные сапоги
+- type: entity
+  parent: ClothingShoesBootsMagBase
+  id: ClothingShoesMagBootsUnitology
+  name: трекинговые магнитные ботинки
+  description: Трекинговые ботинки с интегрированной магнитной подошвой для работы в условиях нулевой гравитации или на скользких поверхностях.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/magboots.rsi
+    layers:
+    - state: icon
+    - state: icon-on
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/magboots.rsi
+    clothingVisuals:
+      feet:
+      - state: equipped-FEET
+      - state: on-equipped-FEET
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/magboots.rsi
+    size: Normal
+  - type: Tag
+    tags: []
+
+## Комбинезон
+- type: entity
+  parent: UnsensoredClothingUniformBase
+  id: ClothingUniformJumpsuitUnitology
+  name: роба послушника
+  description: Дополнительно уплотнённый комплект рабочей одежды, не сковывающий движений.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/jumpsuit.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/jumpsuit.rsi
+  - type: Tag
+    tags: []
+
+## Боевые перчатки
+- type: entity
+  parent: ClothingHandsGlovesCombat
+  id: ClothingHandsGlovesCombatUnitology
+  name: тактические перчатки «Mechanix»
+  description: Не позволят обжечься ещё раз.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/gloves.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/gloves.rsi
+  - type: Tag
+    tags: []
+
+## Сумка
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackUnitology
+  name: штурмовой рюкзак «Спаситель»
+  description: Компактный, но вместительный рюкзак для оперативных задач.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/backpack.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/backpack.rsi
+  - type: Storage
+    grid:
+    - 0,0,1,5
+    - 3,0,6,5
+    - 8,0,9,5
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: Tag
+    tags: []
+
+## Заполненные сумки
+- type: entity
+  parent: ClothingBackpackUnitology
+  id: ClothingBackpackUnitologyFilled
+  name: штурмовой рюкзак
+  suffix: Заполенная
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxMRE
+
+- type: entity
+  parent: ClothingBackpackUnitology
+  id: ClothingBackpackUnitologyEngineerFilled
+  name: штурмовой рюкзак
+  suffix: Заполненная, Зодчий
+  components:
+  - type: StorageFill
+    contents:
+      - id: C4
+        amount: 6
+      - id: RCDTheCircleEngineer
+      - id: MobTheCircleRemoteCar
+        amount: 2
+      - id: TheCircleRemoteCarController
+      - id: BoxMRE
+
+- type: entity
+  parent: ClothingBackpackUnitology
+  id: ClothingBackpackUnitologyGeistFilled
+  name: штурмовой рюкзак
+  suffix: Заполненная, Гейст
+  components:
+  - type: StorageFill
+    contents:
+      - id: BearTrap
+        amount: 2
+      - id: C4
+        amount: 4
+      - id: TripwireStack
+      - id: TheCircleRemoteCarController
+
+## Мантия штурмовика
+- type: entity
+  parent: [ ClothingNeckBase, BaseCommandContraband ]
+  id: ClothingNeckUnitologyHeavyMantle
+  name: трофейная накидка
+  description: Убивать — это работа, Богу служить — это забота, а колоться метом — долг.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/heavy-mantle.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/heavy-mantle.rsi
+
+## Мантия гейста
+
+- type: entity
+  parent: [ ClothingNeckBase, BaseCommandContraband ]
+  id: ClothingNeckUnitologyGeistMantle
+  name: порваный плащ
+  description: Конченый! Меня прозвали "Конченый". Отче мой, мне нечем тебя потчевать.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/geist-mantle.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Gear/accessories/geist-mantle.rsi
+
+## Имплант удержания оружия
+- type: entity
+  id: UnitologyWeaponRetentionImplanter
+  parent: BaseImplantOnlyImplanterSyndi
+  name: имплантер удержания оружия
+  description: Имплантер с системой фиксации предметов в руках владельца.
+  components:
+  - type: Implanter
+    implant: UnitologyWeaponRetentionImplant
+
+- type: entity
+  id: UnitologyWeaponRetentionImplant
+  parent: BaseSubdermalImplant
+  name: имплант удержания оружия
+  description: Не позволяет выбить предметы из рук владельца при падении.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantComponents:
+    - type: WeaponRetention
+    whitelist:
+      components:
+      - Hands
+
+## Радиоуправляемая машинка Круга
+- type: entity
+  id: MobTheCircleRemoteCar
+  parent: MobSiliconBase
+  name: штурмовая машинка
+  description: Быстрая радиоуправляемая машинка с камерой и креплением для взрывчатки.
+  components:
+  - type: Item
+    size: Small
+  - type: Drone
+    isFPV: true
+    wattage: 5
+    actionsToDrone:
+    - ToyCarHorn
+  - type: Eye
+    drawFov: true
+  - type: ContentEye
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+        whitelist:
+          tags:
+          - PowerCell
+          - PowerCellSmall
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - honk
+    sound:
+      path: /Audio/Effects/Vehicle/carhorn.ogg
+      params:
+        volume: -5
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepBorg
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/car.rsi
+    layers:
+    - state: base
+  - type: RandomSprite
+    available: []
+  - type: DetonateAttachedExplosives
+    explosiveWhitelist:
+      components:
+      - Explosive
+  - type: StickySurfaceOverride
+  - type: Access
+    groups:
+    - AllAccess
+    - Silicon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 20
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      20: Dead
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4.5
+    baseSprintSpeed: 4.5
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - SiliconEmotes
+    - Unimplantable
+    - FootstepSound
+    - ToyCarCamera
+    - TheCircleRemoteCar
+
+- type: entity
+  id: TheCircleRemoteCarController
+  parent: BaseItem
+  name: пульт штурмовой машинки Круга
+  description: Пульт с защищённым каналом управления на дистанции до ста тайлов.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/signaller.rsi
+    state: signaller
+  - type: DroneRemoteController
+    isFPV: true
+    range: 100
+    warningRange: 90
+    connectWhitelist:
+      tags:
+      - TheCircleRemoteCar
+  - type: UseDelay
+  - type: StaticPrice
+    price: 120
+
+- type: entity
+  id: TheCircleRemoteCarKit
+  parent: ToolboxElectrical
+  name: комплект штурмовой машинки Круга
+  description: Машинка с камерой и пульт управления дальнего действия.
+  components:
+  - type: StorageFill
+    contents:
+    - id: MobTheCircleRemoteCar
+    - id: TheCircleRemoteCarController
+
+- type: Tag
+  id: TheCircleRemoteCar

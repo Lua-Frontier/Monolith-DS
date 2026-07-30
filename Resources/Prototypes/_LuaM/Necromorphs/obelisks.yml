@@ -1,16 +1,17 @@
+# LuaM: The necromorph mechanics were removed. Obelisks now serve unitology only.
 - type: entity
   parent: BaseStructure
   id: StructureObelisk
+  name: обелиск
+  description: Загадочный монолит, вызывающий тревожное чувство.
   components:
   - type: RangedDamageSound
     soundGroups:
       Brute:
-        collection:
-          MetalBulletImpact
+        collection: MetalBulletImpact
     soundTypes:
       Heat:
-        collection:
-          MetalLaserImpact
+        collection: MetalLaserImpact
   - type: Tag
     tags:
     - Wall
@@ -44,11 +45,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          ObeliskSplinter:
-            min: 3
-            max: 3
   - type: Appearance
   - type: DamageVisuals
     thresholds: [4, 8, 12]
@@ -56,14 +52,14 @@
     trackAllDamage: true
     damageOverlay:
       sprite: _LuaM/Structures/obelisk_cracks.rsi
-  - type: Necroobelisk
-    endAfterDestroy: true
+  - type: UnitologyObelisk
   - type: WarpPoint
     follow: true
 
 - type: entity
   parent: StructureObelisk
   id: StructureBlackObelisk
+  name: чёрный обелиск
   components:
   - type: Sprite
     noRot: true
@@ -71,292 +67,14 @@
     layers:
     - state: active
       map: [ "enum.DamageStateVisualLayers.Base" ]
-  - type: Necroobelisk
-    sound: /Audio/_LuaM/Necromorfs/marker_black.ogg
-    stoper: false
-    rangeSanity: 30
-    endAfterDestroy: true
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 3000
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          ObeliskSplinter:
-            min: 3
-            max: 3
 
 - type: entity
-  parent: StructureObelisk
+  parent: StructureBlackObelisk
   id: StructureBlackObelisk2
-  suffix: без предупреждения
-  components:
-  - type: Sprite
-    noRot: true
-    sprite: _LuaM/Necromorfs/blackobelisk.rsi
-    layers:
-    - state: active
-      map: [ "enum.DamageStateVisualLayers.Base" ]
-  - type: Necroobelisk
-    sound: /Audio/_LuaM/Necromorfs/marker_black.ogg
-    stoper: false
-    warn: false
-    endAfterDestroy: false
 
 - type: entity
   parent: StructureObelisk
   id: StructureObelisk2
-  suffix: без предупреждения
-  components:
-  - type: Sprite
-    noRot: true
-    sprite: _LuaM/Necromorfs/obelisk.rsi
-    layers:
-    - state: active
-      map: [ "enum.DamageStateVisualLayers.Base" ]
-  - type: Necroobelisk
-    warn: false
-    endAfterDestroy: false
-
-- type: entity
-  id: UnitologyLighthouse
-  parent: BaseStructureDynamic
-  name: маяк
-  description: Маяк для приема чего-то?
-  components:
-  - type: Physics
-    bodyType: Dynamic
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.3
-        density: 100
-        mask:
-        - Impassable
-  - type: Clickable
-  - type: InteractionOutline
-  - type: Sprite
-    sprite: Objects/Tools/fulton.rsi
-    drawdepth: SmallObjects
-    noRot: true
-    layers:
-      - state: extraction_point
-
-- type: entity
-  parent: BaseAnomalyCore
-  id: AnomalyCoreNecro
-  description: Ядро уничтоженной некроморфной аномалии.
-  suffix: Necro
-  components:
-  - type: Sprite
-    sprite: _LuaM/Items/necro_core.rsi
-    layers:
-    - state: core
-    - state: pulse
-      map: ["decay"]
-  - type: PointLight
-    radius: 1.5
-    energy: 3.5
-    color: "#2F4F4F"
-    castShadows: false
-
-- type: entity
-  parent: BaseAnomalyInertCore
-  id: AnomalyCoreNecroInert
-  description: Ядро уничтоженной некроморфной аномалии.
-  suffix: Necro, Inert
-  components:
-  - type: Sprite
-    sprite: _LuaM/Items/necro_core.rsi
-    layers:
-    - state: core
-    - state: pulse
-      map: ["decay"]
-  - type: PointLight
-    radius: 1.5
-    energy: 3.5
-    color: "#800000"
-    castShadows: false
-
-- type: entity
-  id: AnomalyNecro
-  name: некроморфная аномалия
-  parent: BaseAnomaly
-  suffix: Некро
-  components:
-  - type: Anomaly
-    corePrototype: AnomalyCoreNecro
-    coreInertPrototype: AnomalyCoreNecroInert
-    minPulseLength: 180
-    maxPulseLength: 300
-  - type: Sprite
-    sprite: _LuaM/Necromorfs/anomaly.rsi
-    layers:
-    - state: anom
-      map: ["enum.AnomalyVisualLayers.Base"]
-    - state: anom-pulse
-      map: ["enum.AnomalyVisualLayers.Animated"]
-      visible: false
-  - type: PointLight
-    radius: 2.0
-    energy: 7.5
-    color: "#800000"
-    castShadows: false
-  - type: EntitySpawnAnomaly
-    entries:
-    - settings:
-        spawnOnPulse: true
-        minAmount: 1
-        maxAmount: 4
-        minRange: 1
-        maxRange: 6
-      spawns:
-      - NecroKudzu
-    - settings:
-        spawnOnPulse: true
-        maxAmount: 3
-        minRange: 2
-        maxRange: 3
-      spawns:
-      - InfectorNecromorfSpawner
-      - PukerNecro
-      - WeaponTentacleNecro
-      - WeaponBoneTentacleNecro
-    - settings:
-        spawnOnSuperCritical: true
-        minAmount: 10
-        maxAmount: 15
-        minRange: 5
-        maxRange: 15
-      spawns:
-      - NecroKudzu
-      - WeaponTentacleNecro
-      - WeaponBoneTentacleNecro
-    - settings:
-        spawnOnSuperCritical: true
-        minAmount: 5
-        maxAmount: 10
-        maxRange: 8
-      spawns:
-      - InfectorNecromorfSpawner
-      - PukerNecro
-      - WeaponTentacleNecro
-      - WeaponBoneTentacleNecro
-    - settings:
-        spawnOnSuperCritical: true
-        minAmount: 5
-        maxAmount: 8
-        maxRange: 10
-      spawns:
-      - NecroKudzu
-    - settings:
-        spawnOnShutdown: true
-        maxAmount: 6
-        maxRange: 1
-      spawns:
-      - InfectorNecromorfSpawner
-      - PukerNecro
-      - WeaponTentacleNecro
-      - WeaponBoneTentacleNecro
-      - NecroKudzu
-
-- type: entity
-  parent: [ BaseXenoArtifact, BaseStructureDynamic ]
-  id: ComplexNecroObeliskArtifact
-  name: артефакт-обелиск
-  description: Хрупкий на вид, лучше лишний раз его не бить.
-  suffix: сложный артефакт
-  components:
-  - type: Necroobelisk
-    warn: false
-    cudzu: false
-    active: false
-  - type: Sprite
-    noRot: true
-    sprite: _LuaM/Necromorfs/obelisk.rsi
-    layers:
-    - state: unactive
-      map: [ "enum.DamageStateVisualLayers.Base" ]
-    scale: 0.8, 0.8
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.45
-        density: 75
-        layer: # doesn't collide with artifact storage
-        - Opaque
-        mask:
-        - MachineMask
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 2250
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          ObeliskSplinter:
-            min: 3
-            max: 3
-  - type: Appearance
-  - type: DamageVisuals
-    thresholds: [4, 8, 12]
-    damageDivisor: 100
-    trackAllDamage: true
-    damageOverlay:
-      sprite: _LuaM/Structures/obelisk_cracks.rsi
-  - type: RangedDamageSound
-    soundGroups:
-      Brute:
-        collection:
-          MetalBulletImpact
-    soundTypes:
-      Heat:
-        collection:
-          MetalLaserImpact
-  - type: Tag
-    tags:
-    - Wall
-  - type: WarpPoint
-    follow: true
-    location: Артефакт-Обелиск
-    blacklist:
-      tags:
-      - GhostOnlyWarp
-
-- type: entity
-  id: CrateArtifactContainerNecroobelisk
-  parent: CrateArtifactContainer
-  name: контейнер c артефактом обелиск
-  description: Используется для безопасного хранения и перемещения артефактов.
-  components:
-  - type: StorageFill
-    contents:
-    - id: ComplexNecroObeliskArtifact
-      amount: 1
-
-- type: cargoProduct
-  id: ArtifactContainerNecroobelisk
-  icon:
-    sprite: Structures/Storage/Crates/artifact.rsi
-    state: artifact_container_icon
-  product: CrateArtifactContainerNecroobelisk
-  cost: 9999999
-  category: cargoproduct-category-name-science
-  group: science
 
 - type: entity
   parent: BaseStructure
@@ -367,21 +85,7 @@
   - type: Sprite
     noRot: true
     sprite: _LuaM/Necromorfs/obelisk.rsi
-    layers:
-    - state: active
-      map: [ "enum.DamageStateVisualLayers.Base" ]
-  - type: RangedDamageSound
-    soundGroups:
-      Brute:
-        collection:
-          MetalBulletImpact
-    soundTypes:
-      Heat:
-        collection:
-          MetalLaserImpact
-  - type: Tag
-    tags:
-    - Wall
+    state: active
   - type: Physics
     bodyType: Static
   - type: Damageable
@@ -398,99 +102,4 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SheetSteel1:
-            min: 5
-            max: 10
   - type: Anchorable
-  - type: Construction
-    graph: ObeliskNonReal
-    node: obeliskNonReal
-
-- type: entity
-  parent: BaseStructure
-  id: SMObelisk
-  name: обелиск
-  suffix: Суперматерия
-  description: Обелиск или суперматерия?
-  components:
-  - type: RangedDamageSound
-    soundGroups:
-      Brute:
-        collection:
-          MetalBulletImpact
-    soundTypes:
-      Heat:
-        collection:
-          MetalLaserImpact
-  - type: Tag
-    tags:
-    - Wall
-  - type: Physics
-    bodyType: Static
-  - type: Sprite
-    noRot: true
-    sprite: _LuaM/Necromorfs/obelisk.rsi
-    layers:
-    - state: unactive
-      map: [ "enum.DamageStateVisualLayers.Base" ]
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,-1,0.45,0.50"
-        density: 85
-        mask:
-        - FullTileMask
-        layer:
-        - WallLayer
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1500
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SuperObeliskSplinter:
-            min: 1
-            max: 1
-  - type: Appearance
-  - type: DamageVisuals
-    thresholds: [4, 8, 12]
-    damageDivisor: 100
-    trackAllDamage: true
-    damageOverlay:
-      sprite: _LuaM/Structures/obelisk_cracks.rsi
-  - type: SuperMatterialNecroObelisk
-    endAfterDestroy: true
-    warn: false
-    cudzu: false
-    active: false
-  - type: WarpPoint
-    follow: true
-    location: Обелиск - Супер материя
-    blacklist:
-      tags:
-      - GhostOnlyWarp
-  - type: NodeContainer
-    examinable: true
-    nodes:
-      output:
-        !type:CableDeviceNode
-        nodeGroupID: HVPower
-  - type: PowerSupplier
-    supplyRate: 10000
-    supplyRampRate: 500
-    supplyRampTolerance: 500
-  - type: Anchorable
-  - type: Electrified
-    onHandInteract: false
-    onInteractUsing: false
-    onBump: false
-    requirePower: true
-    highVoltageNode: output
