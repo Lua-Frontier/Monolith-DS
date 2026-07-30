@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: MobileEmpGeneratorMachineCircuitboard
+  name: mobile EMP generator machine board
+  description: A machine printed circuit board for a mobile EMP generator.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Misc/module.rsi
+    state: nfsd
+  - type: MachineBoard
+    prototype: MobileEmpGenerator
+    requirements:
+      Capacitor: 4
+    stackRequirements:
+      Steel: 5
+      Cable: 2

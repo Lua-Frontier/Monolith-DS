@@ -25,6 +25,7 @@ public sealed partial class PowerChargeWindow : FancyWindow
 
         OnButton.OnPressed += _ => bui.SetPowerSwitch(true);
         OffButton.OnPressed += _ => bui.SetPowerSwitch(false);
+        ActionButton.OnPressed += _ => bui.ActionButton(); // MLua Frontier
 
         EntityView.SetEntity(bui.Owner);
     }
@@ -35,6 +36,8 @@ public sealed partial class PowerChargeWindow : FancyWindow
             OnButton.Pressed = true;
         else
             OffButton.Pressed = true;
+
+        ActionButton.Disabled = !state.ActionUnlocked; // MLua Frontier
 
         PowerLabel.Text = Loc.GetString(
             "power-charge-window-power-label",
@@ -69,4 +72,13 @@ public sealed partial class PowerChargeWindow : FancyWindow
 
         EtaLabel.SetOnlyStyleClass(state.EtaSeconds >= 0 ? "Caution" : "Disabled");
     }
+
+    // MLua Frontier: action button
+    public void SetActionUI(bool actionUI)
+    {
+        MinSize = new(MinSize.X, Math.Max(MinSize.Y, actionUI ? 210 : 180));
+        ActionButton.Visible = actionUI;
+        ActionButtonText.Visible = actionUI;
+    }
+    // MLua End Frontier: action button
 }
