@@ -5,7 +5,7 @@
   parent: BaseVesselAntag
   name: NCS Drakon
   description: A fast brawler with heavy armor and ballistic armaments.
-  price: 85290
+  price: 134550 # LuaM: 85290 > 134550
   category: Medium
   group: Ussp
   access: Mercenary
@@ -24,7 +24,7 @@
   minPlayers: 0
   stations:
     Drakon:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Drakon MIL{1}'

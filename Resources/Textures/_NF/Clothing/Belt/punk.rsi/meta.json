@@ -1,4 +1,4 @@
-{
+{ 
     "version": 1,
     "license": "CC-BY-SA-3.0",
     "copyright": "Sprited by erhardsteinhauer (discord/github)",
@@ -42,6 +42,12 @@
         {
             "name": "mask_null",
             "directions": 4
+        },
+        {
+            "name": "icon_belt_01"
+        },
+        {
+            "name": "icon_decor_base_belt_01"
         }
     ]
 }

@@ -25,7 +25,7 @@
   minPlayers: 0
   stations:
     Sekunda:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Sekunda MIL{1}'

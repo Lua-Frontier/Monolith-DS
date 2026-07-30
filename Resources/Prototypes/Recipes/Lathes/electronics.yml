@@ -533,6 +533,11 @@
   id: GasRecyclerMachineCircuitboard
   result: GasRecyclerMachineCircuitboard
 
+- type: latheRecipe # LuaM
+  parent: BaseCircuitboardRecipe
+  id: FanElectronics
+  result: FanElectronics
+
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
   id: SeedExtractorMachineCircuitboard

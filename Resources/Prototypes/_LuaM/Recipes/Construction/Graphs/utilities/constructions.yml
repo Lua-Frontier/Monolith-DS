@@ -1,0 +1,79 @@
+- type: constructionGraph
+  id: AtmosDeviceFanDirectional
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: AtmosDeviceFanDirectional
+      steps:
+      - material: Steel
+        amount: 10
+      - material: Cable
+        amount: 5
+        doAfter: 3
+      - tag: FanElectronics
+        name: construction-graph-tag-fan-electronics
+        icon:
+          sprite: Objects/Misc/module.rsi
+          state: door_electronics
+
+  - node: AtmosDeviceFanDirectional
+    entity: AtmosDeviceFanDirectional
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 5
+      - tool: Welding
+        doAfter: 15
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 10
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 5
+      - !type:SpawnPrototype
+        prototype: FanElectronics
+        amount: 1
+      - !type:DeleteEntity
+
+- type: constructionGraph
+  id: AtmosDeviceFanTiny
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: AtmosDeviceFanTiny
+      steps:
+      - material: Steel
+        amount: 20
+      - material: Cable
+        amount: 10
+        doAfter: 5
+      - tag: FanElectronics
+        name: construction-graph-tag-fan-electronics
+        icon:
+          sprite: Objects/Misc/module.rsi
+          state: door_electronics
+
+  - node: AtmosDeviceFanTiny
+    entity: AtmosDeviceFanTiny
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 10
+      - tool: Welding
+        doAfter: 25
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 20
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 10
+      - !type:SpawnPrototype
+        prototype: FanElectronics
+        amount: 1
+      - !type:DeleteEntity

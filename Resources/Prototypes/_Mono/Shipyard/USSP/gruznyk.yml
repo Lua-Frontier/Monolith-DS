@@ -24,7 +24,7 @@
   minPlayers: 0
   stations:
     Gruznyk:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Gruznyk MIL{1}'

@@ -1,5 +1,7 @@
 using System.Numerics;
+using Content.Shared.Damage;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Mono.PersonalShield;
@@ -122,6 +124,12 @@ public sealed partial class PersonalShieldSettings
     public float RegenRate = 2f;
 
     /// <summary>
+    /// The damage modifier for shield.
+    /// </summary>
+    [DataField("blockModifier")]
+    public DamageModifierSet BlockDamageModifier = new DamageModifierSet();
+
+    /// <summary>
     /// How long the shield takes to spin up.
     /// </summary>
     [DataField]
@@ -161,4 +169,14 @@ public struct PersonalShieldRuntime
     /// Seconds left before a fractured shield may start spinning up again.
     /// </summary>
     public float Offline;
+
+    // LuaM AutoRecover start:
+
+    /// <summary>
+    /// Активна, пока щит заряжается после разрушения. Если выключить вручную, то проверки не будет.
+    /// </summary>
+    public bool Recovering;
+
+    // LuaM AutoRecover end.
+
 }
