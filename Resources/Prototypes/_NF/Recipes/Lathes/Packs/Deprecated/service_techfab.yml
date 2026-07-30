@@ -132,7 +132,7 @@
     - DeskBell
     - BrbSign
 # LuaM-start:
-    - FireExtinguisherMiniEmpty
+    - FireExtinguisherMini
     - JerryCan
 # LuaM-end.
 

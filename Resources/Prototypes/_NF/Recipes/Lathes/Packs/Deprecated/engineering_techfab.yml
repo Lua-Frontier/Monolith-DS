@@ -57,7 +57,7 @@
     - RPED # Mono
     - MetalFoamGrenade #Mono
 # LuaM-start:
-    - FireExtinguisherMiniEmpty
+    - FireExtinguisherMini
     - JerryCan
 # LuaM-end.
   ## Parts
