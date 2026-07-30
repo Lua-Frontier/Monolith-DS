@@ -1,7 +1,7 @@
 - type: material
   id: Bluespace
-  name: bluespace
-  unit: materials-unit-crystal
+  name: materials-bluespace # LuaM  bluespace > materials-bluespace
+  unit: materials-unit-piece # LuaM  crystal > piece
   icon: { sprite: /Textures/Nyanotrasen/Objects/Materials/materials.rsi, state: bluespace }
   color: "#53a9ff"
   stackEntity: MaterialBluespace

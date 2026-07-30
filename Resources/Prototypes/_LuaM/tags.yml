@@ -1,2 +1,5 @@
 - type: Tag 
   id: FanElectronics
+  
+- type: Tag
+  id: CrateBluespaceElectronics

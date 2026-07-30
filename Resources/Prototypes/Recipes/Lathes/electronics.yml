@@ -538,6 +538,11 @@
   id: FanElectronics
   result: FanElectronics
 
+- type: latheRecipe # LuaM
+  parent: BaseBluespaceCircuitboardRecipe
+  id: CrateBluespaceElectronics
+  result: CrateBluespaceElectronics
+
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
   id: SeedExtractorMachineCircuitboard

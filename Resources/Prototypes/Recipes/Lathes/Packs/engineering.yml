@@ -97,4 +97,5 @@
   - SMESAdvancedMachineCircuitboard
   - CrystallizerMachineCircuitboard # Mono/Funky
   - FanElectronics # LuaM
+  - CrateBluespaceElectronics # LuaM
   # - HolopadMachineCircuitboard # Frontier: use NF variant
