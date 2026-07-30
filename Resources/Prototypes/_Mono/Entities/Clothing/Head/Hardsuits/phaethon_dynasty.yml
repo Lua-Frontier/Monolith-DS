@@ -9,15 +9,15 @@
     sprite: _LuaM/Clothing/Head/Hardsuits/syndicate.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/syndicate.rsi -> _LuaM/Clothing/Head/Hardsuits/syndicate.rsi
   - type: Clothing
     sprite: _LuaM/Clothing/Head/Hardsuits/syndicate.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/syndicate.rsi -> _LuaM/Clothing/Head/Hardsuits/syndicate.rsi
-  - type: NightVision # Gen 4 monotube
+  - type: NightVision # LuaM edit start:
     relayOverlay: true
     goggleEffect: true
-    action: ActionToggleNightVision
-    viewCircleRadius: 450
+    viewCircleRadius: 880
     viewCircleCount: 1
-    viewCircleSpacing: 280
-    phosphorColor: "#41D7D9"
-    lightingColor: "#FFFFFF32"
+    viewCircleSpacing: 1
+    action: ActionToggleNightVision
+    phosphorColor: "#317d9d"
+    lightingColor: "#ffffff25" #LuaM edit end.
 
 - type: entity
   parent: [ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, ShowMedicalIcons, ShowSecurityIcons]
@@ -66,15 +66,15 @@
     sprite: _LuaM/Clothing/Head/Hardsuits/syndieelite.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/syndieelite.rsi -> _LuaM/Clothing/Head/Hardsuits/syndieelite.rsi
   - type: Clothing
     sprite: _LuaM/Clothing/Head/Hardsuits/syndieelite.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/syndieelite.rsi -> _LuaM/Clothing/Head/Hardsuits/syndieelite.rsi
-  - type: NightVision # Gen 4 quadtube
+  - type: NightVision # LuaM edit start:
     relayOverlay: true
     goggleEffect: true
+    viewCircleRadius: 880
+    viewCircleCount: 1
+    viewCircleSpacing: 1
     action: ActionToggleNightVision
-    viewCircleRadius: 400
-    viewCircleCount: 4
-    viewCircleSpacing: 260
-    phosphorColor: "#41D7D9"
-    lightingColor: "#FFFFFF32"
+    phosphorColor: "#317d9d"
+    lightingColor: "#ffffff25" #LuaM edit end.
 
 - type: entity
   parent: [ClothingHeadHelmetHardsuitSyndieElite, ShowSecurityIcons, ShowMedicalIcons ] # LuaM add ShowMedicalIcons
@@ -87,12 +87,12 @@
     sprite: _LuaM/Clothing/Head/Hardsuits/pdv_vizier.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/pdv_vizier.rsi -> _LuaM/Clothing/Head/Hardsuits/pdv_vizier.rsi
   - type: Clothing
     sprite: _LuaM/Clothing/Head/Hardsuits/pdv_vizier.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/pdv_vizier.rsi -> _LuaM/Clothing/Head/Hardsuits/pdv_vizier.rsi
-  - type: NightVision # Gen 4 dualtube
+  - type: NightVision # LuaM edit start:
     relayOverlay: true
     goggleEffect: true
+    viewCircleRadius: 880
+    viewCircleCount: 1
+    viewCircleSpacing: 1
     action: ActionToggleNightVision
-    viewCircleRadius: 450
-    viewCircleCount: 2
-    viewCircleSpacing: 280
-    phosphorColor: "#41D7D9"
-    lightingColor: "#FFFFFF32"
+    phosphorColor: "#317d9d"
+    lightingColor: "#ffffff25" #LuaM edit end.

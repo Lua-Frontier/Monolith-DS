@@ -360,15 +360,15 @@
     highPressureMultiplier: 0.60
     lowPressureMultiplier: 1000
     # Mono - remove light, replace with NVG
-  - type: NightVision # Gen 4 quadtube-wide
+  - type: NightVision # LuaM edit start:
     relayOverlay: true
     goggleEffect: true
-    viewCircleRadius: 450
-    viewCircleCount: 4
-    viewCircleSpacing: 280
+    viewCircleRadius: 880
+    viewCircleCount: 1
+    viewCircleSpacing: 1
     action: ActionToggleNightVision
-    phosphorColor: "#41D7D9"
-    lightingColor: "#FFFFFF32"
+    phosphorColor: "#317d9d"
+    lightingColor: "#ffffff25" #LuaM edit end.
 
 #Head of Security's hardsuit
 - type: entity
@@ -503,9 +503,15 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-  - type: NightVision # LuaM add
-    flashDurationMultiplier: 2.25
-    isEquipment: true
+  - type: NightVision # LuaM edit start:
+    relayOverlay: true
+    goggleEffect: true
+    viewCircleRadius: 880
+    viewCircleCount: 1
+    viewCircleSpacing: 1
+    action: ActionToggleNightVision
+    phosphorColor: "#317d9d"
+    lightingColor: "#ffffff25" #LuaM edit end.
 
 #Syndicate Commander Hardsuit
 - type: entity

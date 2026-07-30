@@ -39,7 +39,7 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
-  # - type: NightVision # Gen 3 wide-quadtube # Commented by LuaM
+  # - type: NightVision # Gen 3 wide-quadtube # LuaM deleted
   #   relayOverlay: false
   #   goggleEffect: true
   #   viewCircleRadius: 450

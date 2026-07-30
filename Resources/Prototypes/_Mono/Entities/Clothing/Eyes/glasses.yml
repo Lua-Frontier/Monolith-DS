@@ -173,12 +173,12 @@
     isEquipment: true
     color: "#FFFFFFFF"
     lightRadius: 45
-  - type: NightVision # Gen 3 wide-quadtube
+  - type: NightVision # LuaM edit start:
     relayOverlay: true
     goggleEffect: true
-    viewCircleRadius: 450
-    viewCircleCount: 4
-    viewCircleSpacing: 280
+    viewCircleRadius: 880
+    viewCircleCount: 1
+    viewCircleSpacing: 1
     action: ActionToggleNightVision
-    phosphorColor: "#00FF00"
-    lightingColor: "#FFFFFF32"
+    phosphorColor: "#317d9d"
+    lightingColor: "#ffffff25" #LuaM edit end.

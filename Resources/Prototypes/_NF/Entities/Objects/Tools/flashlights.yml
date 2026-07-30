@@ -38,7 +38,7 @@
     sprite: _NF/Objects/Tools/nfsdlite.rsi
   - type: PointLight
     enabled: false
-    radius: 8
+    radius: 25 # LuaM 8 -> 25
   - type: Clothing
     sprite: _NF/Objects/Tools/nfsdlite.rsi
     quickEquip: false

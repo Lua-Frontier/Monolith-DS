@@ -62,7 +62,7 @@
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-    radius: 6
+    radius: 20 # LuaM 6 -> 20
     netsync: false
   - type: Appearance
   - type: StaticPrice
@@ -119,7 +119,7 @@
     sprite: Objects/Tools/seclite.rsi
   - type: PointLight
     enabled: false
-    radius: 8
+    radius: 25 # LuaM 8 -> 25
   - type: Clothing
     sprite: Objects/Tools/seclite.rsi
     quickEquip: false

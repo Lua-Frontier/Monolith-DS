@@ -105,7 +105,7 @@
       enabled: false
       mask: /Textures/Effects/LightMasks/cone.png
       autoRot: true
-      radius: 6
+      radius: 25 # LuaM 6 -> 20
       netsync: true
     - type: ItemToggle # No sfx because its annoying (it triggers it when u wield)
       predictable: true

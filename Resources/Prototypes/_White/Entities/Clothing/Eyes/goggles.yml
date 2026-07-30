@@ -10,15 +10,15 @@
     sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
   - type: Clothing
     sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
-  - type: NightVision # Mono - Wizden NV
+  - type: NightVision # LuaM edit start:
     relayOverlay: true
     goggleEffect: true
+    viewCircleRadius: 880
+    viewCircleCount: 1
+    viewCircleSpacing: 1
     action: ActionToggleNightVision
-    viewCircleRadius: 350
-    viewCircleCount: 2
-    viewCircleSpacing: 280
-    phosphorColor: "#00FF00"
-    lightingColor: "#FFFFFF32"
+    phosphorColor: "#317d9d"
+    lightingColor: "#ffffff25" #LuaM edit end.
   - type: IdentityBlocker
     coverage: EYES
 
