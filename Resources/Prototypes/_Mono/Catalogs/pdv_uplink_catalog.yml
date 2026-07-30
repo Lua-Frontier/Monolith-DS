@@ -443,39 +443,39 @@
       tags:
       - PirateUplink
 
-- type: listing
-  id: UplinkPirateCash10000
-  name: uplink-pirate-cash10000-name
-  description: uplink-pirate-cash10000-desc
-  productEntity: SpaceCash10000
-  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000000 }
-  cost:
-    Doubloon: 5
-  categories:
-  - UplinkPirateUtility
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - PirateUplink
+#- type: listing # Commented by LuaM
+#  id: UplinkPirateCash10000
+#  name: uplink-pirate-cash10000-name
+#  description: uplink-pirate-cash10000-desc
+#  productEntity: SpaceCash10000
+#  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000000 }
+#  cost:
+#    Doubloon: 5
+#  categories:
+#  - UplinkPirateUtility
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - PirateUplink
+
+#- type: listing # Commented by LuaM
+#  id: UplinkPirateCash100000
+#  name: uplink-pirate-cash100000-name
+#  description: uplink-pirate-cash100000-desc
+#  productEntity: SpaceCash100000
+#  icon: { sprite: _NF/Objects/Economy/cash.rsi, state: cash_100000 }
+#  cost:
+#    Doubloon: 50
+#  categories:
+#  - UplinkPirateUtility
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - PirateUplink
 
 - type: listing
-  id: UplinkPirateCash100000
-  name: uplink-pirate-cash100000-name
-  description: uplink-pirate-cash100000-desc
-  productEntity: SpaceCash100000
-  icon: { sprite: _NF/Objects/Economy/cash.rsi, state: cash_100000 }
-  cost:
-    Doubloon: 50
-  categories:
-  - UplinkPirateUtility
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - PirateUplink
-
-- type: listing 
   id: UplinkPirateSyndicateApplicator
   name: uplink-syndicate-applicator-name
   description: uplink-syndicate-applicator-desc

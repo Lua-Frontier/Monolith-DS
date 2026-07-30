@@ -28,7 +28,7 @@
   minPlayers: 0
   stations:
     Sellsword:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Sellsword MIL{1}'

@@ -10,6 +10,7 @@
   description: "An always powered light."
   suffix: Always powered
   components:
+  - type: RequireProjectileTarget #LuaM
   - type: MeleeSound
     soundGroups:
       Brute:

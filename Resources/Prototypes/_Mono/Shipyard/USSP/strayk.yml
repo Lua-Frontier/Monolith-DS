@@ -24,7 +24,7 @@
   minPlayers: 0
   stations:
     Strayk:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Strayk MIL{1}'

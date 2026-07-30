@@ -38,7 +38,7 @@
   minPlayers: 0
   stations:
     Bratan:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Bratan CIV{1}'

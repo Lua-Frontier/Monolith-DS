@@ -23,7 +23,7 @@
   minPlayers: 0
   stations:
     Buran:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
       gridComponents:
       - type: VesselInfo
         description: "Outdated, yet still reliable."

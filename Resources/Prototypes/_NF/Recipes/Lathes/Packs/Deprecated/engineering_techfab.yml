@@ -92,6 +92,7 @@
     - GyroscopeMachineCircuitboard
     - MiniGravityGeneratorCircuitboard
     - MiniStationAnchorCircuitboard
+    - FanElectronics # LuaM
   ## Clothing
     - UtilityBelt
     - ConstructionBag
