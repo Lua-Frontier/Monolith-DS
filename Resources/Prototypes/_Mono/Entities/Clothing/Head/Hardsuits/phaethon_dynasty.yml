@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingHeadHelmetHardsuitSyndie, ShowSecurityIcons]
+  parent: [ClothingHeadHelmetHardsuitSyndie, ShowSecurityIcons, NightVisionComfortGreen] # LuaM add NightVisionComfortGreen
   id: ClothingHeadHelmetHardsuitAshen
   name: PDV CV-32 combat hardsuit helmet
   description: A combat hardsuit helmet designed by the Phaethon Dynasty. A basic monotube night vision system is installed.
@@ -9,15 +9,6 @@
     sprite: _LuaM/Clothing/Head/Hardsuits/syndicate.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/syndicate.rsi -> _LuaM/Clothing/Head/Hardsuits/syndicate.rsi
   - type: Clothing
     sprite: _LuaM/Clothing/Head/Hardsuits/syndicate.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/syndicate.rsi -> _LuaM/Clothing/Head/Hardsuits/syndicate.rsi
-  - type: NightVision # LuaM edit start:
-    relayOverlay: true
-    goggleEffect: true
-    viewCircleRadius: 880
-    viewCircleCount: 1
-    viewCircleSpacing: 1
-    action: ActionToggleNightVision
-    phosphorColor: "#317d9d"
-    lightingColor: "#ffffff25" #LuaM edit end.
 
 - type: entity
   parent: [ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, ShowMedicalIcons, ShowSecurityIcons]
@@ -56,7 +47,7 @@
     - HeadSide
 
 - type: entity
-  parent: [ClothingHeadHelmetHardsuitSyndieElite, ShowSecurityIcons, ShowMedicalIcons ] # LuaM add ShowMedicalIcons
+  parent: [ClothingHeadHelmetHardsuitSyndieElite, ShowSecurityIcons, ShowMedicalIcons, NightVisionComfortGreen ] # LuaM add ShowMedicalIcons, NightVisionComfortGreen
   id: ClothingHeadHelmetHardsuitAshenElite
   name: PDV CV-53 combat tacsuit helmet
   description: Based off of the CV-32 hardsuit, this tacsuit sacrifices heavy armor plates for environmental protection, and an advanced NVD suite.
@@ -66,18 +57,9 @@
     sprite: _LuaM/Clothing/Head/Hardsuits/syndieelite.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/syndieelite.rsi -> _LuaM/Clothing/Head/Hardsuits/syndieelite.rsi
   - type: Clothing
     sprite: _LuaM/Clothing/Head/Hardsuits/syndieelite.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/syndieelite.rsi -> _LuaM/Clothing/Head/Hardsuits/syndieelite.rsi
-  - type: NightVision # LuaM edit start:
-    relayOverlay: true
-    goggleEffect: true
-    viewCircleRadius: 880
-    viewCircleCount: 1
-    viewCircleSpacing: 1
-    action: ActionToggleNightVision
-    phosphorColor: "#317d9d"
-    lightingColor: "#ffffff25" #LuaM edit end.
 
 - type: entity
-  parent: [ClothingHeadHelmetHardsuitSyndieElite, ShowSecurityIcons, ShowMedicalIcons ] # LuaM add ShowMedicalIcons
+  parent: [ClothingHeadHelmetHardsuitSyndieElite, ShowSecurityIcons, ShowMedicalIcons, NightVisionComfortGreen ] # LuaM add ShowMedicalIcons, NightVisionComfortGreen
   id: ClothingHeadHelmetHardsuitVizier
   name: PDV CV-67 combat hardsuit helmet
   description: An adorned tacsuit designed with an imperfect nanolaminate composition. High maneuverability, sturdy armor.
@@ -87,12 +69,3 @@
     sprite: _LuaM/Clothing/Head/Hardsuits/pdv_vizier.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/pdv_vizier.rsi -> _LuaM/Clothing/Head/Hardsuits/pdv_vizier.rsi
   - type: Clothing
     sprite: _LuaM/Clothing/Head/Hardsuits/pdv_vizier.rsi # LuaM: _Mono/Clothing/Head/Hardsuits/pdv_vizier.rsi -> _LuaM/Clothing/Head/Hardsuits/pdv_vizier.rsi
-  - type: NightVision # LuaM edit start:
-    relayOverlay: true
-    goggleEffect: true
-    viewCircleRadius: 880
-    viewCircleCount: 1
-    viewCircleSpacing: 1
-    action: ActionToggleNightVision
-    phosphorColor: "#317d9d"
-    lightingColor: "#ffffff25" #LuaM edit end.

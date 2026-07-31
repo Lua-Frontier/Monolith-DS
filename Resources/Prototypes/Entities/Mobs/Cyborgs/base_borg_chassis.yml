@@ -144,8 +144,8 @@
     viewCircleCount: 1
     viewCircleSpacing: 1
     action: ActionToggleNightVision
-    phosphorColor: "#317d9d"
-    lightingColor: "#ffffff25" #LuaM edit end.
+    phosphorColor: "#337a98"
+    lightingColor: "#ffffff52" #LuaM edit end.
   - type: AccessToggle
   # TODO: refactor movement to just be based on toggle like speedboots but for the boots themselves
   # TODO: or just have sentient speedboots be fast idk

@@ -23,8 +23,8 @@
       viewCircleCount: 1
       viewCircleSpacing: 1
       action: ActionToggleNightVision
-      phosphorColor: "#317d9d"
-      lightingColor: "#ffffff25" #LuaM edit end.
+      phosphorColor: "#337a98"
+      lightingColor: "#ffffff52" #LuaM edit end.
 
 - type: entity
   id: OrganAsakimHeart

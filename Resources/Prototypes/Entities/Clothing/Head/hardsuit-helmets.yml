@@ -347,7 +347,7 @@
 
 #Research Director's Hardsuit
 - type: entity
-  parent: ClothingHeadHardsuitBase # Mono - remove light, replace with NVG
+  parent: [ClothingHeadHardsuitBase, NightVisionComfortBlue] # Mono - remove light, replace with NVG # LuaM add NightVisionComfortBlue
   id: ClothingHeadHelmetHardsuitRd
   name: experimental research hardsuit helmet
   description: Lightweight hardsuit helmet that doesn't restrict your head movements.
@@ -360,15 +360,6 @@
     highPressureMultiplier: 0.60
     lowPressureMultiplier: 1000
     # Mono - remove light, replace with NVG
-  - type: NightVision # LuaM edit start:
-    relayOverlay: true
-    goggleEffect: true
-    viewCircleRadius: 880
-    viewCircleCount: 1
-    viewCircleSpacing: 1
-    action: ActionToggleNightVision
-    phosphorColor: "#317d9d"
-    lightingColor: "#ffffff25" #LuaM edit end.
 
 #Head of Security's hardsuit
 - type: entity
@@ -476,7 +467,7 @@
 
 #Syndicate Elite Hardsuit
 - type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, ShowMedicalIcons, ShowSecurityIcons ] # LuaM add ShowMedicalIcons ShowSecurityIcons
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase, ShowMedicalIcons, ShowSecurityIcons, NightVisionComfortGreen ] # LuaM add ShowMedicalIcons ShowSecurityIcons NightVisionComfortGreen
   id: ClothingHeadHelmetHardsuitSyndieElite
   name: syndicate elite helmet
   description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
@@ -503,15 +494,6 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-  - type: NightVision # LuaM edit start:
-    relayOverlay: true
-    goggleEffect: true
-    viewCircleRadius: 880
-    viewCircleCount: 1
-    viewCircleSpacing: 1
-    action: ActionToggleNightVision
-    phosphorColor: "#317d9d"
-    lightingColor: "#ffffff25" #LuaM edit end.
 
 #Syndicate Commander Hardsuit
 - type: entity

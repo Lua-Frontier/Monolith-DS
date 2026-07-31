@@ -257,7 +257,7 @@
       coverage: EYES
 
 - type: entity
-  parent: [ClothingEyesBase]
+  parent: [ClothingEyesBase, NightVisionComfortBlue] # LuaM add NightVisionComfortBlue
   id: ClothingEyesVisorNinja
   name: ninja visor
   description: An advanced visor protecting a ninja's eyes from flashing lights.
@@ -267,12 +267,3 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
-  - type: NightVision # LuaM edit start:
-    relayOverlay: true
-    goggleEffect: true
-    viewCircleRadius: 880
-    viewCircleCount: 1
-    viewCircleSpacing: 1
-    action: ActionToggleNightVision
-    phosphorColor: "#317d9d"
-    lightingColor: "#ffffff25" #LuaM edit end.

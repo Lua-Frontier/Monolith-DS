@@ -118,7 +118,7 @@
         isLooped: true
 
 - type: entity
-  parent: [BaseClothingModsuitHelmet, ShowMedicalIcons, ShowSecurityIcons]
+  parent: [BaseClothingModsuitHelmet, ShowMedicalIcons, ShowSecurityIcons, NightVisionComfortGreen] # LuaM add NightVisionComfortGreen
   id: ClothingModsuitHelmetRogue
   name: RX-01 modsuit helmet
   description: Does not currently feature an AI companion- note to self, sell helmet AI as separate purchase.
@@ -139,15 +139,6 @@
     pulseTime: 2
     isEquipment: true
     toggleAction: PulseThermalVision
-  - type: NightVision # LuaM edit start:
-    relayOverlay: true
-    goggleEffect: true
-    viewCircleRadius: 880
-    viewCircleCount: 1
-    viewCircleSpacing: 1
-    action: ActionToggleNightVision
-    phosphorColor: "#317d9d"
-    lightingColor: "#ffffff25" #LuaM edit end.
   - type: ComponentToggler
     components:
     - type: FlashImmunity
