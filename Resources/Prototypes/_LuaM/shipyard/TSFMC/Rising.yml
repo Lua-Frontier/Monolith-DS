@@ -31,7 +31,7 @@
         description: "Бесславный Ублюдок"
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Восход TSF{1}'
+        mapNameTemplate: '«Восход» ТСФ{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

@@ -1,0 +1,15 @@
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: FireExtinguisherMini
+  result: FireExtinguisherMiniEmpty
+  name: lathe-recipe-FireExtinguisherMini-name
+  materials:
+    Steel: 150
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: JerryCan
+  result: JerryCan
+  name: lathe-recipe-JerryCan-name
+  materials:
+    Plastic: 250

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from Baystation 12.",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/tree/727eb0a445bccbdc2d472e158e96b87fc0e997a1. Rad, toxin, o2, fire and adv by peptide. blackkit-inhand-left and right by JoeHammad. multikit taken from Baystation 12.",
   "size": {
     "x": 32,
     "y": 32
@@ -33,6 +33,9 @@
     },
     {
       "name": "multikit"
+    },
+    {
+      "name": "purplekit"
     },
     {
       "name": "firstaid-inhand-left",
@@ -104,6 +107,14 @@
     },
     {
       "name": "multikit-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "purplekit-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "purplekit-inhand-right",
       "directions": 4
     }
   ]

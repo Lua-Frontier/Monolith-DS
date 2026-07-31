@@ -1,0 +1,29 @@
+- type: entity
+  parent: FireExtinguisher
+  id: FireExtinguisherEmpty
+  suffix: Empty
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      spray:
+        maxVol: 100
+
+- type: entity
+  parent: FireExtinguisherMini
+  id: FireExtinguisherMiniEmpty
+  suffix: Empty
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      spray:
+        maxVol: 30
+
+- type: entity
+  parent: FireExtinguisherBluespace
+  id: FireExtinguisherBluespaceEmpty
+  suffix: Empty
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      spray:
+        maxVol: 200

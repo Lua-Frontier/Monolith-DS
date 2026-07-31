@@ -1,8 +1,8 @@
 - type: vessel
   id: StratoRat
   parent: BaseVessel
-  name: HES Strato-Rat
-  description: A extremley basic, cost cutting gas mining vessel. Features a 120 KMol gas chamber, and single M25 Mining Pulser.
+  name: vessel-stratorat-name # LuaM-locale
+  description: vessel-stratorat-desc # LuaM-locale
   price: 15000
   category: Micro
   group: Custom

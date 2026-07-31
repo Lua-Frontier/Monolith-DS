@@ -1,8 +1,8 @@
 - type: vessel
   id: Bow-Man
   parent: BaseVessel
-  name: Z-22 Bow-Man
-  description: An assault drone with a mounted 90mm autocannon for long range fire.
+  name: vessel-bowman-name # LuaM-locale
+  description: vessel-bowman-desc # LuaM-locale
   price: 23000
   category: Micro
   group: Custom

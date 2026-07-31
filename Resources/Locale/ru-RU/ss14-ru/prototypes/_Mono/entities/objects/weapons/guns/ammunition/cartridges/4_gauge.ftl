@@ -1,6 +1,6 @@
 ent-BaseShellShotgun23x75mm = дробовой патрон (4 калибр)
     .desc = Крупный дробовой патрон. Отдача как у мула, и вырвет кусок из всего, что не защищено бронёй.
-ent-ShellShotgun23x75mmBeanbag = патрон дробовика (4 калибр резиновый)
+ent-ShellShotgun23x75mmBeanbag = патрон дробовика (4 калибр травматическиий)
     .desc = { ent-BaseShellShotgun23x75mm.desc }
 ent-ShellShotgun23x75mmDozd = shotgun shell (4 калибр Dozd)
     .desc = { ent-BaseShellShotgun23x75mm.desc }

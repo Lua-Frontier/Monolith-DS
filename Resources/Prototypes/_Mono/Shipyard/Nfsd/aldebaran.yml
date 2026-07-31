@@ -3,8 +3,8 @@
 - type: vessel
   id: Aldebaran
   parent: BaseVesselAntag
-  name: TSF-PIN Aldebaran
-  description: A frontal up-puncher corvette equipped with two cyrexas for long range engagements and torpedoes for heavier targets and close range.
+  name: vessel-aldebaran-name # LuaM-locale
+  description: vessel-aldebaran-desc # LuaM-locale
   price: 160200
   purchasable: false # voucher only
   category: Medium

@@ -3,8 +3,8 @@
 - type: vessel
   id: Hazel
   parent: BaseVesselAntag
-  name: AN Hazel # LuaM: BT-Y Hazel > AN Hazel
-  description: A small, cramped shuttle featuring a Syndicate 3 barreled 220mm Battery and 2 ASM-302s, well armored for its size. Does not have an FTL drive. A cheap option but realiability is questionable.
+  name: vessel-hazel-name # LuaM-locale
+  description: vessel-hazel-desc # LuaM-locale
   price: 67000
   category: Small
   group: BlackMarket

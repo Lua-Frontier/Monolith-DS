@@ -1,3 +1,3 @@
 defaultWindowTitle: Monolith
 windowIconSet: /Textures/_Mono/Logo/icon
-splashLogo: /Textures/_Mono/Logo/logo.png
+splashLogo: /Textures/_LuaM/Logo/logo.png # LuaM: _Mono > _LuaM

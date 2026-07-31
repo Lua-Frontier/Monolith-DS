@@ -255,40 +255,36 @@ uplink-pirate-syndisupersurplus-name = Ящик суперприпасов Си�
 uplink-pirate-syndisupersurplus-desc = Содержит огромное количество импортных товаров от компании, поддерживающей династию Фаэтон. Этот предмет не подлежит возврату, не спорьте с нашими юристами.
 
 
-# Vouchers
-# Vouchers
-uplink-pdv-t0-voucher-name = Ваучер Авангарда на небольшой шаттл
+# Ваучеры
+uplink-pdv-t0-voucher-name = Ваучер на небольшой шаттл
 uplink-pdv-t0-voucher-desc = Одноразовый ваучер на любой малый корабль.
 
-uplink-pdv-t1-hourglass-voucher-name = Ваучер Авангарда на «Hourglass»
-uplink-pdv-t1-hourglass-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Hourglass» из резервов флагмана.
+uplink-pdv-t1-garm-voucher-name = Ваучер на «Гарм»
+uplink-pdv-t1-garm-voucher-desc = Небольшая карта, содержащая данные для получения корабля поддержки класса «Гарм» из резервов флагмана.
 
-uplink-pdv-t1-garm-voucher-name = Ваучер Авангарда на «Garm»
-uplink-pdv-t1-garm-voucher-desc = Небольшая карта, содержащая данные для получения корабля поддержки класса «Garm» из резервов флагмана.
+uplink-pdv-t1-fenrir-voucher-name = Ваучер на «Фенрир»
+uplink-pdv-t1-fenrir-voucher-desc = Небольшая карта, содержащая данные для получения эсминца с рельсотроном класса «Фенрир» из резервов флагмана.
 
-uplink-pdv-t1-fenrir-voucher-name = Ваучер Авангарда на «Fenrir»
-uplink-pdv-t1-fenrir-voucher-desc = Небольшая карта, содержащая данные для получения эсминца с рельсотроном класса «Fenrir» из резервов флагмана.
+uplink-pdv-t1-scorpion-voucher-name = Ваучер на «Скорпион»
+uplink-pdv-t1-scorpion-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Скорпион» из резервов флагмана.
 
-uplink-pdv-t1-scorpion-voucher-name = Ваучер Авангарда на «Scorpion»
-uplink-pdv-t1-scorpion-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Scorpion» из резервов флагмана.
+uplink-pdv-t1-bastion-voucher-name = Ваучер на «Бастион»
+uplink-pdv-t1-bastion-voucher-desc = Небольшая карта, содержащая данные для получения штурмового корабля класса «Бастион» из резервов флагмана.
 
-uplink-pdv-t1-bastion-voucher-name = Ваучер Авангарда на «Bastion»
-uplink-pdv-t1-bastion-voucher-desc = Небольшая карта, содержащая данные для получения штурмового корабля класса «Bastion» из резервов флагмана.
+uplink-pdv-t1-neptune-voucher-name = Ваучер на «Нептун»
+uplink-pdv-t1-neptune-voucher-desc = Небольшая карта, содержащая данные для получения фрегата класса «Нептун» из резервов флагмана.
 
-uplink-pdv-t1-neptune-voucher-name = Ваучер Авангарда на «Neptune»
-uplink-pdv-t1-neptune-voucher-desc = Небольшая карта, содержащая данные для получения фрегата класса «Neptune» из резервов флагмана.
+uplink-pdv-t2-europa-voucher-name = Ваучер на «Европа»
+uplink-pdv-t2-europa-voucher-desc = Небольшая карта, содержащая данные для получения крейсера класса «Европа» из резервов флагмана.
 
-uplink-pdv-t2-europa-voucher-name = Ваучер Авангарда на «Europa»
-uplink-pdv-t2-europa-voucher-desc = Небольшая карта, содержащая данные для получения крейсера класса «Europa» из резервов флагмана.
+uplink-pdv-t2-vulture-voucher-name = Ваучер на «Вультур»
+uplink-pdv-t2-vulture-voucher-desc = Небольшая карта, содержащая данные для получения шахтёрского корабля класса «Вультур» из резервов флагмана.
 
-uplink-pdv-t2-vulture-voucher-name = Ваучер Авангарда на «Vulture»
-uplink-pdv-t2-vulture-voucher-desc = Небольшая карта, содержащая данные для получения шахтёрского корабля класса «Vulture» из резервов флагмана.
+uplink-pdv-t2-motleyanne-voucher-name = Ваучер на «Пёстрая Энн»
+uplink-pdv-t2-motleyanne-voucher-desc = Небольшая карта, содержащая данные для получения авианосца класса «Пёстрая Энн» из резервов флагмана.
 
-uplink-pdv-t2-motleyanne-voucher-name = Ваучер Авангарда на «Motley Anne»
-uplink-pdv-t2-motleyanne-voucher-desc = Небольшая карта, содержащая данные для получения авианосца класса «Motley Anne» из резервов флагмана.
+uplink-pdv-t3-saintie-voucher-name = Ваучер на «Сенти»
+uplink-pdv-t3-saintie-voucher-desc = Небольшая карта, содержащая данные для получения крейсера класса «Сенти» из резервов флагмана.
 
-uplink-pdv-t3-saintie-voucher-name = Ваучер Авангарда на «Saintie»
-uplink-pdv-t3-saintie-voucher-desc = Небольшая карта, содержащая данные для получения крейсера класса «Saintie» из резервов флагмана.
-
-uplink-pdv-t4-saturn-voucher-name = Ваучер Авангарда на «Saturn»
-uplink-pdv-t4-saturn-voucher-desc = Небольшая карта, авторизующая получение «Saturn».
+uplink-pdv-t4-saturn-voucher-name = Ваучер на «Сатурн»
+uplink-pdv-t4-saturn-voucher-desc = Небольшая карта, авторизующая получение эсминца «Сатурн».

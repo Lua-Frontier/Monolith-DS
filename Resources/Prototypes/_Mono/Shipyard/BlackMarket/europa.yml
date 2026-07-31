@@ -3,8 +3,8 @@
 - type: vessel
   id: Europa
   parent: BaseVesselAntag
-  name: AN Europa # LuaM: IDY Europa > AN Europa
-  description: A repurposed interdyne medical frigate, with a focus on broadside firepower and armor.
+  name: vessel-europa-name # LuaM-locale
+  description: vessel-europa-desc # LuaM-locale
   limit: 3
   price: 280650
   purchasable: false # voucher only

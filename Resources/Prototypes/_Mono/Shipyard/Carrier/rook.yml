@@ -9,8 +9,8 @@
 - type: vessel
   id: Rook
   parent: BaseVessel
-  name: Rook
-  description: Micro-fighter equipped with two dravons and a single 30mm chaingun.
+  name: vessel-rook-name # LuaM-locale
+  description: vessel-rook-desc # LuaM-locale
   price: 15000
   category: Small
   group: Custom

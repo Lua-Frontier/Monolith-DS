@@ -7861,7 +7861,7 @@ entities:
     - type: Transform
       pos: -3.5,8.5
       parent: 1
-- proto: KitchenDeepFryerCauldron
+- proto: KitchenDeepFryer
   entities:
   - uid: 1108
     components:

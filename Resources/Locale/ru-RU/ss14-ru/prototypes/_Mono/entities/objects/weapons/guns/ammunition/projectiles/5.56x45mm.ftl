@@ -1,6 +1,6 @@
 ﻿ent-Bullet556x45mmFMJ = пуля (5.56x45мм FMJ)
 ent-Bullet556x45mmPractice = пуля (5.56x45mm учебный)
-ent-Bullet556x45mmRubber = пуля (5.56x45mm резиновый)
+ent-Bullet556x45mmRubber = пуля (5.56x45mm травматическиий)
 ent-Bullet556x45mmIncendiary = пуля (5.56x45mm зажигательный)
 ent-Bullet556x45mmUranium = пуля (5.56x45mm урановый)
 ent-Bullet556x45mmHP = пуля (5.56x45mm экспансивный)

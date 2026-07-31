@@ -31,6 +31,7 @@
       - id: TechDiskCivCTLA50
       - id: TechDiskCivShipComps
       - id: TechDiskCivBackpackWaterTank
+      - id: TechDiskZookeeperTranslatorImplanter # LuaM
     - !type:NestedSelector
       weight: 3
       tableId: SpawnLootTechDisksT1RareBranch
@@ -46,7 +47,10 @@
     - id: TechDiskCivMicroreactors
     - id: TechDiskCivAdvancedTools
     - id: TechDiskCivTranslationBasic
-    - id: TechDiskCombatSilicon # LuaM
+# LuaM-start:
+    - id: TechDiskCombatSilicon
+    - id: TechDiskZookeeperTranslatorImplanter
+# LuaM-end.
 
 #T2 TECH DISKS
 - type: entity

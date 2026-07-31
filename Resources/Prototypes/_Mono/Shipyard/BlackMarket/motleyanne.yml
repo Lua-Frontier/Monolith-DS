@@ -3,8 +3,8 @@
 - type: vessel
   id: MotleyAnne
   parent: BaseVesselAntag
-  name: AN-IED Motley Anne # LuaM: PDV-IED Motley Anne > AN-IED Motley Anne
-  description: A support mothership designed to reinforce an engagements back-line with mech and drone ensemble or closer resupplies.
+  name: vessel-motleyanne-name # LuaM-locale
+  description: vessel-motleyanne-desc # LuaM-locale
   price: 280000
   limit: 2
   purchasable: false
