@@ -560,6 +560,7 @@
   - Woodblock
   - ElectricGuitar
   - BassGuitar
+  - FretlessBassGuitar # LuaM
   - RockGuitar
   - AcousticGuitar
   - Banjo

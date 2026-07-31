@@ -1375,6 +1375,8 @@
       orGroup: Instrument
     - id: BassGuitarInstrument
       orGroup: Instrument
+    - id: FretlessBassGuitarInstrument # LuaM
+      orGroup: Instrument
     - id: RockGuitarInstrument
       orGroup: Instrument
     - id: BanjoInstrument

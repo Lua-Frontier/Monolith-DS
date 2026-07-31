@@ -9,6 +9,7 @@
     AcousticGuitarInstrument: 2
     ElectricGuitarInstrument: 2
     BassGuitarInstrument: 2
+    FretlessBassGuitarInstrument: 2 # LuaM
     RockGuitarInstrument: 2
     BanjoInstrument: 2
     ViolinInstrument: 2
