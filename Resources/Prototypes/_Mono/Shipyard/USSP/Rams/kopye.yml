@@ -7,7 +7,7 @@
   purchasable: true # voucher only # LuaM: false > true
   category: Large
   group: Custom
-  access: Mercenary
+  access: Mercenary #LuaM fix
   shuttlePath: /Maps/_Mono/Shuttles/USSP/Ledokol/Attatchments/kopye.yml
   guidebookPage: Null
 
