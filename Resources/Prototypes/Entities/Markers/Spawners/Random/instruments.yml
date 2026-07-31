@@ -26,6 +26,7 @@
       - id: KalimbaInstrument
       - id: MicrophoneInstrument
       - id: BassGuitarInstrument
+      - id: FretlessBassGuitarInstrument
       - id: OcarinaInstrument
       - id: PanFluteInstrument
     - !type:GroupSelector
