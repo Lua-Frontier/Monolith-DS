@@ -271,6 +271,7 @@
   - type: Repairable
     qualities:
     - Applicating
+  - type: GravityAffected # LuaM 
 
 - type: entity
   id: BallisticArtilleryMagazine
