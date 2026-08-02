@@ -30,6 +30,10 @@
         path: /Audio/Machines/Nuke/general_beep.ogg
         params:
           volume: -2
+  - type: PhysicalComposition # LuaM recyclable
+    materialComposition:
+      Steel: 300
+      Plastic: 200
 
 - type: entity
   parent: TimerTrigger
@@ -72,3 +76,7 @@
   - type: PayloadTrigger
     components:
     - type: TriggerOnVoice
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 300
+      Plastic: 200

@@ -10,5 +10,9 @@
   - type: Tag
     tags:
       - ProximitySensor
+  - type: PhysicalComposition # LuaM recyclable
+    materialComposition:
+      Steel: 200
+      Glass: 300    
   - type: StaticPrice
     price: 40

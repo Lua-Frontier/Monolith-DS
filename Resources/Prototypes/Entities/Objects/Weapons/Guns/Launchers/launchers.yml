@@ -301,6 +301,11 @@
     - type: Tag # Frontier
       tags: # Frontier
       - Sidearm # Frontier
+    - type: PhysicalComposition # LuaM recyclable
+      materialComposition:
+        Steel: 500
+        Glass: 400
+        Gold: 100
 
 # Admeme
 - type: entity

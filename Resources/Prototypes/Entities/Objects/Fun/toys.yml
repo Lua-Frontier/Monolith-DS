@@ -1355,6 +1355,7 @@
   - type: Tag
     tags:
     - Balloon
+    - Recyclable # LuaM 
 
 - type: entity
   parent: BaseItem

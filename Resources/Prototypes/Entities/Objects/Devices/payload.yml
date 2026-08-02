@@ -48,6 +48,13 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: PhysicalComposition # LuaM recyclable
+    materialComposition:
+      Steel: 100
+      Plastic: 100
+      Glass: 50
+      Plasma: 50
+      Silver: 50
 
 - type: entity
   name: chemical payload
@@ -84,6 +91,12 @@
       BeakerSlotB: !type:ContainerSlot
   - type: StaticPrice
     price: 60
+  - type: PhysicalComposition # LuaM recyclable
+    materialComposition:
+      Steel: 200
+      Plastic: 300
+      
+  
 
 - type: entity
   name: flash payload
@@ -100,3 +113,8 @@
     - type: EmitSoundOnTrigger
       sound:
         path: "/Audio/Effects/flash_bang.ogg"
+    - type: PhysicalComposition # LuaM recyclable
+      materialComposition:
+        Steel: 50
+        Plastic: 100
+        Glass: 50

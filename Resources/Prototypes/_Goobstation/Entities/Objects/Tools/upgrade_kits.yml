@@ -22,7 +22,12 @@
     - type: DeviceNetwork
       deviceNetId: Wireless
       receiveFrequencyId: BasicDevice
-
+    - type: PhysicalComposition # LuaM recyclable
+      materialComposition:
+        Glass: 500
+        Steel: 200
+        Silver: 300
+   
 # for entities that come pre-automated
 - type: entity
   abstract: true

@@ -18,4 +18,9 @@
     node: start #Frontier
     deconstructionTarget: null #Frontier
   - type: Wieldable # Frontier
-  # todo: add clothingcomponent with clothingVisuals states using unused texture and animations assets in kinetic_accelerator.rsi
+  # todo: add clothingcomponent with clothingVisuals states using unused texture and animations assets in kinetic_accelerator.rsi'
+  - type: PhysicalComposition # LuaM recyclable
+    materialComposition:
+      Steel: 1000
+      Glass: 500
+      Silver: 100

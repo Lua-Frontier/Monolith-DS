@@ -23,3 +23,8 @@
   - type: Tag
     tags:
     - Igniter
+  - type: PhysicalComposition # LuaM recyclable
+    materialComposition:
+      Steel: 300
+      Plastic: 100
+      Glass: 100

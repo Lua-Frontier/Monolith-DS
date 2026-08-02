@@ -14,6 +14,12 @@
       components:
       - UpgradedMachine
     # ALWAYS add UpgradedMachine to components in inheritors
+  - type: PhysicalComposition # LuaM recyclable
+    materialComposition:
+      Glass: 800
+      Steel: 600
+      Plastic: 400
+      Gold: 200
 
 - type: entity
   parent: BaseLatheUpgradeKit
