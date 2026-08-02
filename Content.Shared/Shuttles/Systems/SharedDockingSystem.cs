@@ -8,7 +8,7 @@ public abstract partial class SharedDockingSystem : EntitySystem
     [Dependency] protected SharedTransformSystem XformSystem = default!;
 
     public const float DockingHiglightRange = 4f;
-    public const float DockRange = 1f + 0.2f;
+    public const float DockRange = 2f + 2f; // LuaM 1f + 0.2f > 2f + 2f
     public static readonly double AlignmentTolerance = Angle.FromDegrees(15).Theta;
 
     public bool CanShuttleDock(EntityUid? shuttle, SharedDockingComponent dockComp) //Mono, I trust the null check in DockingSystem.cs
