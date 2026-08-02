@@ -13,5 +13,5 @@ ent-BluespaceClosetDark = тёмный блюспейс шкаф
 ent-CrateCult = ящик культа 
     .desc = От него несёт кровью и жертвоприношениями.
 
-ent-CrateBluespaceElectronics = плата блюспейс хранилищ
-    .desc = Плата, используемая в блюспейс хранилищах.
+ent-CrateBluespaceElectronics = плата блюспейс-хранилищ
+    .desc = Плата, используемая в блюспейс-хранилищах.

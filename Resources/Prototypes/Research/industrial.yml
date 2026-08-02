@@ -221,19 +221,6 @@
   - SuperParts
   position: -1, 18
 
-- type: technology # LuaM 
-  id: CrateBluespaceTechnology
-  name: research-technology-crate-bluespace
-  entityIcon: CrateBlueSpace
-  discipline: Industrial
-  tier: 2
-  cost: 25000
-  recipeUnlocks:
-  - CrateBluespaceElectronics
-  technologyPrerequisites:
-  - AdvancedToolsTechnology
-  position: -1, 19
-
 - type: technology
   id: MassExcavation
   name: research-technology-excavation

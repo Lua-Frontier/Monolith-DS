@@ -2,4 +2,4 @@ research-technology-implants = Продвинутое протезировани
 research-technology-cybernetic-organs = Усиления организма
 research-technology-cybernetic-liver = Искусственная фильтрация
 research-technology-upgraded-cybernetic-organs = Выживание в вакууме
-research-technology-crate-bluespace = Блюспейс контейнеры
+research-technology-crate-bluespace = Блюспейс-контейнеры

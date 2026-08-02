@@ -1,0 +1,12 @@
+- type: technology 
+  id: CrateBluespaceTechnology
+  name: research-technology-crate-bluespace
+  entityIcon: CrateBlueSpace
+  discipline: Industrial
+  tier: 2
+  cost: 25000
+  recipeUnlocks:
+  - CrateBluespaceElectronics
+  technologyPrerequisites:
+  - AdvancedToolsTechnology
+  position: -1, 19
