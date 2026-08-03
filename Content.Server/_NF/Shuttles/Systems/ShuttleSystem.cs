@@ -10,6 +10,7 @@ using Content.Server._Mono.Shuttles.Components; // Mono
 using Content.Shared.Shuttles.Components;
 using Robust.Shared.Physics; // Mono
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Timing; // LuaM
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -20,6 +21,9 @@ public sealed partial class ShuttleSystem
     private const float SpaceFrictionStrength = 0.0075f;
     private const float DampenDampingStrength = 0.25f;
     private const float AnchorDampingStrength = 2.5f;
+    private readonly Dictionary<EntityUid, TimeSpan> _unmannedSince = new(); // LuaM
+    private static readonly TimeSpan UnmannedGracePeriod = TimeSpan.FromSeconds(3); // LuaM
+    private static readonly TimeSpan UnmannedDampenPeriod = TimeSpan.FromSeconds(5); // LuaM
     private void NfInitialize()
     {
         SubscribeLocalEvent<ShuttleConsoleComponent, SetInertiaDampeningRequest>(OnSetInertiaDampening);
@@ -148,7 +152,41 @@ public sealed partial class ShuttleSystem
             }
         }
     }
+    // LuaM Stop shuttles without control
+    private void UpdateUnmannedShuttles()
+    {
+        var now = _gameTiming.CurTime;
+        var query = AllEntityQuery<ShuttleComponent, PhysicsComponent, TransformComponent>();
 
+        while (query.MoveNext(out var uid, out var shuttle, out var physics, out var xform))
+        {
+            if (_console.IsGridManned(uid))
+            {
+                _unmannedSince.Remove(uid);
+                continue;
+            }
+
+            if (!_unmannedSince.TryGetValue(uid, out var since))
+            {
+                _unmannedSince[uid] = now;
+                continue;
+            }
+
+            var elapsed = now - since;
+
+            if (elapsed < UnmannedGracePeriod)
+                continue;
+
+            var targetMode = elapsed < UnmannedGracePeriod + UnmannedDampenPeriod
+                ? InertiaDampeningMode.Dampen
+                : InertiaDampeningMode.Anchor;
+
+            if (NfGetInertiaDampeningMode(uid) == targetMode)
+                continue;
+
+            SetInertiaDampening(uid, physics, shuttle, xform, targetMode);
+        }
+    }
     public void NfSetTargetCoordinates(EntityUid uid, ShuttleConsoleComponent component, SetTargetCoordinatesRequest args)
     {
         if (!TryComp<RadarConsoleComponent>(uid, out var radarConsole))

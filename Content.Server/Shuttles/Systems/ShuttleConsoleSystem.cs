@@ -33,6 +33,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using Content.Shared._Crescent.ShipShields; // Forge
 using Robust.Shared.Timing; // Forge
+using Content.Server._Mono.NPC.HTN; // LuaM
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -461,6 +462,24 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     private void OnConsoleShutdown(EntityUid uid, ShuttleConsoleComponent component, ComponentShutdown args)
     {
         ClearPilots(component);
+    }
+
+    // LuaM Check for pilot or autopilot
+    public bool IsGridManned(EntityUid gridUid)
+    {
+        var consoles = new HashSet<Entity<ShuttleConsoleComponent>>();
+        _lookup.GetChildEntities(gridUid, consoles);
+
+        foreach (var console in consoles)
+        {
+            if (console.Comp.SubscribedPilots.Count > 0)
+                return true;
+
+            if (HasComp<ShipSteererComponent>(console.Owner))
+                return true;
+        }
+
+        return false;
     }
 
     public void AddPilot(EntityUid uid, EntityUid entity, ShuttleConsoleComponent component)
