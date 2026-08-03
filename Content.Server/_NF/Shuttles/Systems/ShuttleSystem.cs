@@ -99,6 +99,7 @@ public sealed partial class ShuttleSystem
             maxSpeed = Math.Max(speed, 0f);
 
         pilot.SetMaxVelocity = maxSpeed;
+        component.AutopilotMaxSpeed = maxSpeed; // LuaM sync speeds
 
         // Refresh the shuttle consoles to update the UI
         _console.RefreshShuttleConsoles(xform.GridUid.Value);

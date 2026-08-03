@@ -45,6 +45,12 @@ public sealed partial class ShipMoveToOperator : HTNOperator, IHtnConditionalShu
     public string AngleKey = "ShipTargetAngle";
 
     /// <summary>
+    /// LuaM  save autopilot speed
+    /// <summary>
+    [DataField]
+    public string MaxSpeedKey = "ShipMaxSpeed"; 
+
+    /// <summary>
     /// Whether to keep facing target if backing off due to RangeTolerance.
     /// </summary>
     [DataField]
@@ -217,6 +223,11 @@ public sealed partial class ShipMoveToOperator : HTNOperator, IHtnConditionalShu
         comp.Range = Range;
         comp.RangeTolerance = RangeTolerance;
         comp.TargetRotation = TargetRotation;
+        // LuaM-start: 
+        comp.MaxVelocity = blackboard.TryGetValue<float?>(MaxSpeedKey, out var maxSpeed, _entManager) 
+            ? maxSpeed
+            : null;
+        // LuaM-end
     }
 
     public override HTNOperatorStatus Update(NPCBlackboard blackboard, float frameTime)

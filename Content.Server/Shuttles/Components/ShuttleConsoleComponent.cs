@@ -67,6 +67,12 @@ namespace Content.Server.Shuttles.Components
         public SoundSpecifier? AutopilotDoneSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/radar_ping.ogg");
         // </Mono>
 
+        /// <summary>
+        /// LuaM autopilot speed limit.
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
+        public float? AutopilotMaxSpeed;
+
         // Network Port Button Source Ports
         [DataField]
         public List<ProtoId<SourcePortPrototype>> SourcePorts = new()
