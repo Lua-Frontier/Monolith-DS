@@ -43,9 +43,6 @@ public sealed partial class FireControlWindow : FancyWindow
 
         IFFToggle.OnToggled += OnIFFTogglePressed;
         IFFToggle.Pressed = NavRadar.ShowIFF;
-
-        DockToggle.OnToggled += OnDockTogglePressed;
-        DockToggle.Pressed = NavRadar.ShowDocks;
     }
 
     private void SelectAllWeapons(BaseButton.ButtonEventArgs args)
@@ -147,13 +144,8 @@ public sealed partial class FireControlWindow : FancyWindow
     private void OnIFFTogglePressed(BaseButton.ButtonEventArgs args)
     {
         NavRadar.ShowIFF ^= true;
+        NavRadar.ShowDocks = NavRadar.ShowIFF;
         args.Button.Pressed = NavRadar.ShowIFF;
-    }
-
-    private void OnDockTogglePressed(BaseButton.ButtonEventArgs args)
-    {
-        NavRadar.ShowDocks ^= true;
-        args.Button.Pressed = NavRadar.ShowDocks;
     }
 
     /// <summary>
