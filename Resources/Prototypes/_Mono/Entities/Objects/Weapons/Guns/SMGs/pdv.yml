@@ -16,14 +16,14 @@
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/SMGs/mla73.rsi
   - type: GunWieldBonus
-    minAngle: -20
-    maxAngle: -34
+    minAngle: -21 # LuaM: -20 > -21
+    maxAngle: -30 # LuaM: -34 > -30
   - type: Gun
     minAngle: 22
     maxAngle: 40
     angleIncrease: 5
     angleDecay: 20
-    fireRate: 8
+    fireRate: 10 # LuaM 8 > 10
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/mla_fire.ogg
   - type: ChamberMagazineAmmoProvider
@@ -31,22 +31,22 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine635x40mmCaseless
+        startingItem: Magazine68x52mmCaseless # LuaM Magazine635x40mmCaseless > Magazine68x52mmCaseless
         insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-          - Magazine635x40mmCaseless
-          - Magazine9x19mmSubMachineGunFMJ
+          - Magazine68x52mmCaseless # LuaM Magazine635x40mmCaseless > Magazine68x52mmCaseless
+          # - Magazine9x19mmSubMachineGunFMJ # LuaM delete
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: Cartridge635x40mmCaseless
+        startingItem: Cartridge68x52mmCaseless # LuaM: Cartridge635x40mmCaseless > Cartridge68x52mmCaseless
         priority: 1
         whitelist:
           tags:
-          - Cartridge635x40mmCaseless
+          - Cartridge68x52mmCaseless # LuaM: Cartridge635x40mmCaseless > Cartridge68x52mmCaseless
       attachment_grip:
         insertSound: /Audio/Items/screwdriver2.ogg
         ejectSound: /Audio/Items/screwdriver2.ogg

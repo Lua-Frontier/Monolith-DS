@@ -1,7 +1,7 @@
 # Corpo War .45 Mag Vector
 - type: entity
   name: NTSF-HCLM-45 (.45 magnum)
-  parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
+  parent: BaseWeaponSubMachineGun # LuaM: removed BaseGunWieldable
   id: WeaponSubMachineGunVectorNtsfHclm
   description: The NTSF Heavy Caliber Light Machinegun. A very high-quality heavy SMG chambered in .45 magnum for use for the Nano Trasen Security Force and NT spec-ops, from the corporate war.
   components:
@@ -12,12 +12,16 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: GunWieldBonus
-    minAngle: -5
-    maxAngle: -5
+  # - type: GunWieldBonus # Commented by LuaM
+  #   minAngle: -5
+  #   maxAngle: -5
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/SMGs/ntsf_hclm_45.rsi
   - type: Gun
+    # LuaM start:
+    minAngle: 2
+    maxAngle: 12
+    # LuaM end.
     fireRate: 6
     selectedMode: FullAuto
     soundGunshot:
