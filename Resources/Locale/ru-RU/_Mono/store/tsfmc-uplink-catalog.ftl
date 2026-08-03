@@ -2,10 +2,10 @@
 uplink-security-eg4-name = EG-4 «Шериф»
 uplink-security-eg4-desc = Само-заряжаемое энергетическое оружие, способное стрелять как оглушающими, так и летальными зарядами.
 
-uplink-security-annie-name = R-5 «Энни»
+uplink-security-annie-name = TCA QBZ-430 «Энни»
 uplink-security-annie-desc = Субзвуковое оружие калибра 7.62x39мм, созданное чтобы выдерживать бремя невозможных операций.
 
-uplink-security-mr8c-name = MR-8C «Егерь»
+uplink-security-mr8c-name = VFD QBU-243 «Ксиянь»
 uplink-security-mr8c-desc = Полуавтоматическая винтовка, стреляющая патронами 8x65мм SKR, специально созданная для использования MARSOC. Вам повезло, морпех.
 
 uplink-security-mr8b-name = MR-8B «Матрос»
