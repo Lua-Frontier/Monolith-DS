@@ -1,4 +1,4 @@
-ent-WeaponSubMachineGunDrozdRubber = L-4 «Дрозд»
+ent-WeaponSubMachineGunDrozdRubber = TCA CS/LR-8 «Дрозд»
     .suffix = Травматический
     .desc = { ent-WeaponSubMachineGunDrozd.desc }
 ent-WeaponSubMachineGunTypewriter = L-19 «Пишущая машинка»
