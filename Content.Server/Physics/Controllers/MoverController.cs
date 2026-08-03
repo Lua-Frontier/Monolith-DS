@@ -440,7 +440,13 @@ public sealed partial class MoverController : SharedMoverController
             dir = dir - dirCompVel + scaledComp;
         }
 
-        return dir * shuttle.AccelerationMultiplier;
+        // return dir * shuttle.AccelerationMultiplier; // LuaM comented
+        // LuaM-start | resistance compensation
+        var thrust = dir * shuttle.AccelerationMultiplier;
+        if (MathHelper.CloseTo(shuttle.BodyModifier, 0.25f))
+            thrust *= 1.4f;
+        return thrust;
+        //LuaM-end
     }
 
     /// <summary>
