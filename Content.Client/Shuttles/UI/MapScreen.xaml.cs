@@ -22,6 +22,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Client.Stylesheets; // LuaM
 
 namespace Content.Client.Shuttles.UI;
 
@@ -345,15 +346,19 @@ public sealed partial class MapScreen : BoxContainer
 
             heading.MinHeight = 32f;
             heading.AddStyleClass(ContainerButton.StyleClassButton);
+            heading.AddStyleClass(StyleBase.ButtonSquare); // LuaM
             heading.HorizontalAlignment = HAlignment.Stretch;
             heading.Label.HorizontalAlignment = HAlignment.Center;
             heading.Label.HorizontalExpand = true;
             heading.HorizontalExpand = true;
+            heading.Margin = new Thickness(0, 4, 0, 0); // LuaM
 
             var gridContents = new BoxContainer()
             {
                 Orientation = LayoutOrientation.Vertical,
                 VerticalExpand = true,
+                Margin = new Thickness(2, 2, 2, 2), // LuaM      
+                SeparationOverride = 2, // LuaM
             };
 
             var body = new CollapsibleBody()
@@ -531,15 +536,19 @@ public sealed partial class MapScreen : BoxContainer
             HorizontalExpand = true,
             SizeFlagsStretchRatio = 4, // Frontier
         };
+        gridButton.AddStyleClass(StyleBase.ButtonSquare); // LuaM 
 
         var gridContainer = new BoxContainer()
         {
+            Margin = new Thickness(2, 2), // LuaM
             Children =
             {
-                new Control()
-                {
-                    MinWidth = 32f,
-                },
+                // LuaM-comented-start:
+                // new Control()
+                // {
+                //     MinWidth = 32f,
+                // },
+                // LuaM-comented-end
                 gridButton
             }
         };
@@ -561,6 +570,7 @@ public sealed partial class MapScreen : BoxContainer
                 HorizontalExpand = true,
                 SizeFlagsStretchRatio = 1,
             };
+            trackButton.AddStyleClass(StyleBase.ButtonSquare); //  LuaM
             trackButton.OnPressed += args =>
             {
                 OnMapObjectTrackPress(mapObj);

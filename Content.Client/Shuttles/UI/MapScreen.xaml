@@ -12,7 +12,7 @@
                              VerticalAlignment="Stretch"/>
             <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
                 <controls:PanelContainer.PanelOverride>
-                    <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#525252" BackgroundColor="#3d474d"/>
+                    <graphics:StyleBoxFlat BorderThickness="0" BackgroundColor="Transparent"/>
                 </controls:PanelContainer.PanelOverride>
                 <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 2 2 2">
                     <controls:PanelContainer.PanelOverride>

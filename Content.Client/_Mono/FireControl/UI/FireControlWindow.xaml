@@ -7,13 +7,13 @@
             xmlns:ui="clr-namespace:Content.Client._Mono.FireControl.UI"
             xmlns:shields="clr-namespace:Content.Client._Crescent.ShipShields.UI"
             Title="{Loc 'gunnery-window-title'}"
-            SetSize="1000 800"
-            MinSize="1000 800">
+            SetSize="950 676"
+            MinSize="950 676">
     <BoxContainer Name="RootBox" Orientation="Horizontal">
         <BoxContainer Orientation="Vertical" MinWidth="300" MaxWidth="300" HorizontalExpand="False" Margin="5 0 5 5">
             <PanelContainer VerticalExpand="True" HorizontalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BorderThickness="3" BorderColor="#35434d" BackgroundColor="#696969"/>
+                    <gfx:StyleBoxFlat BorderThickness="0" BackgroundColor="Transparent"/>
                 </PanelContainer.PanelOverride>
         <BoxContainer Orientation="Vertical" MinWidth="290" MaxWidth="290" HorizontalExpand="False" Margin="0 2.5 0 2.5">
             <PanelContainer VerticalExpand="True" HorizontalExpand="True">
@@ -55,9 +55,9 @@
             </controls:StripeBack>
             <BoxContainer Orientation="Horizontal" Margin="0 0">
                 <Button Name="SelectAllButton" Access="Public" Text="{Loc 'gunnery-select-all'}"
-                        StyleClasses="OpenRight" HorizontalExpand="True"/>
+                        StyleClasses="ButtonSquare" HorizontalExpand="True"/>
                 <Button Name="UnselectAllButton" Access="Public" Text="{Loc 'gunnery-unselect-all'}"
-                        StyleClasses="OpenLeft" HorizontalExpand="True"/>
+                        StyleClasses="ButtonSquare" HorizontalExpand="True"/>
             </BoxContainer>
             <PanelContainer VerticalExpand="False" HorizontalExpand="True">
                 <PanelContainer.PanelOverride>

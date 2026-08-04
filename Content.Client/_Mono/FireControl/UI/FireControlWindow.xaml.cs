@@ -278,9 +278,9 @@ public sealed partial class FireControlWindow : FancyWindow
                 {
                     ToggleMode = true,
                     Text = controllable.Name,
-                    StyleClasses = { "ButtonSquare OpenRight" },
+                    StyleClasses = { "ButtonSquare" },// LuaM "ButtonSquare OpenRight" > "ButtonSquare"
                     HorizontalExpand = true,
-                    Margin = new Thickness(4, 1)
+                    Margin = new Thickness(4, 2) // LuaM (4, 1) > (4, 2)
                 };
 
                 button.OnToggled += _ =>

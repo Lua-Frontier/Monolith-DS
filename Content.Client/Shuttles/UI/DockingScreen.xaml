@@ -12,7 +12,7 @@
                        Margin="5 4 10 5"/>
     <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
         <controls:PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#525252" BackgroundColor="#3d474d"/>
+            <graphics:StyleBoxFlat BorderThickness="0" BackgroundColor="Transparent"/>
         </controls:PanelContainer.PanelOverride>
         <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 2 2 2">
             <controls:PanelContainer.PanelOverride>
@@ -39,12 +39,12 @@
                              Text="{controls:Loc 'shuttle-console-ftl-lock-enabled'}"
                              ToggleMode="True"
                              HorizontalExpand="True"
-                             StyleClasses="OpenRight"/>
+                             StyleClasses="ButtonSquare"/>
             <controls:Button Name="FTLLockDisabledButton"
                              Text="{controls:Loc 'shuttle-console-ftl-lock-disabled'}"
                              ToggleMode="True"
                              HorizontalExpand="True"
-                             StyleClasses="OpenLeft"/>
+                             StyleClasses="ButtonSquare"/>
         </controls:BoxContainer>
         </controls:PanelContainer>
 

@@ -16,7 +16,7 @@
                 <!-- Nav controls -->
                 <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
                     <controls:PanelContainer.PanelOverride>
-                        <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#525252" BackgroundColor="#3d474d"/>
+                        <graphics:StyleBoxFlat BorderThickness="0" BackgroundColor="Transparent"/>
                     </controls:PanelContainer.PanelOverride>
                     <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 2 2 2">
                         <controls:PanelContainer.PanelOverride>
@@ -26,8 +26,8 @@
                       VerticalAlignment="Top"
                       HorizontalAlignment="Center"
                       VerticalExpand="True"
-                      MinWidth="256"
-                      MaxWidth="256"
+                      MinWidth="266"
+                      MaxWidth="266"
                       Margin="5 5 5 5"
                       Orientation="Vertical">
                     <controls1:StripeBack
@@ -125,12 +125,6 @@
                         </controls:BoxContainer>
                     </controls:PanelContainer>
                     <!-- Forge-Change-End -->
-                    <controls1:StripeBack
-                        MinSize="48 48">
-                        <controls:Label Name="NavSettingsLabel" Text="{controls:Loc 'shuttle-console-nav-settings'}"
-                               VerticalExpand="True"
-                               HorizontalAlignment="Center"/>
-                    </controls1:StripeBack>
                     <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
                         <controls:PanelContainer.PanelOverride>
                             <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#333333" BackgroundColor="#181818"/>
@@ -212,20 +206,20 @@
                             <controls:LineEdit Name="TargetX" Access="Public" HorizontalExpand="True"/>
                             <controls:LineEdit Name="TargetY" Access="Public" HorizontalExpand="True"/>
                             <controls:Button Name="TargetSet"
-                                             Text="{controls:Loc 'shuttle-console-set-target'}"
-                                             TextAlign="Center"
-                                             MinWidth="20"
-                                             ToolTip="{controls:Loc 'shuttle-console-set-target-description'}"
-                                             StyleClasses="OpenRight"
-                                             Margin="0"/>
+                                            Text="{controls:Loc 'shuttle-console-set-target'}"
+                                            TextAlign="Center"
+                                            MinWidth="20"
+                                            ToolTip="{controls:Loc 'shuttle-console-set-target-description'}"
+                                            StyleClasses="OpenRight"
+                                            Margin="0"/>
                             <controls:Button Name="TargetHide"
-                                             Text="{controls:Loc 'shuttle-console-hide-target'}"
-                                             TextAlign="Center"
-                                             ToggleMode="True"
-                                             MinWidth="20"
-                                             ToolTip="{controls:Loc 'shuttle-console-hide-target-description'}"
-                                             StyleClasses="OpenLeft"
-                                             Margin="0"/>
+                                            Text="{controls:Loc 'shuttle-console-hide-target'}"
+                                            TextAlign="Center"
+                                            ToggleMode="True"
+                                            MinWidth="20"
+                                            ToolTip="{controls:Loc 'shuttle-console-hide-target-description'}"
+                                            StyleClasses="OpenLeft"
+                                            Margin="0"/>
                         </controls:BoxContainer>
                     </controls:BoxContainer>
                     </controls:PanelContainer>
@@ -280,12 +274,14 @@
                                 MinHeight="80"
                                 MaxHeight="80">
                                 <controls:GridContainer
-                                             Columns="8"
-                                             Rows="2"
-                                             HorizontalExpand="False"
-                                             HorizontalAlignment="Center"
-                                             Name="NetworkPortsBox"
-                                             Margin="0 6 0 6">
+                                    Columns="8"
+                                    Rows="2"
+                                    HorizontalExpand="False"
+                                    HorizontalAlignment="Center"
+                                    Name="NetworkPortsBox"
+                                    Margin="0 6 0 6"
+                                    HSeparationOverride="4"
+                                    VSeparationOverride="4">
                                     <controls:Button Name="DeviceButton1"
                                                      Text="{controls:Loc 'shuttle-console-device-button-1'}"
                                                      TextAlign="Center"
@@ -345,3 +341,4 @@
                 </controls:PanelContainer>
                 </controls:BoxContainer>
 
+                
