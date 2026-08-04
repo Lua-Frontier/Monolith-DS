@@ -399,6 +399,7 @@
   - type: Anchorable
     flags:
     - Anchorable
+    - Unanchorable # LuaM
   - type: Rotatable
   #- type: WarpPoint # Mono - comment out
   #  blacklist:
