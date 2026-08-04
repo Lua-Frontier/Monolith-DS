@@ -330,6 +330,6 @@
   - type: AccessReader
     access: [["Pirate"]]
   - type: CompanyAccessReader
+    popupMessage: company-pdv-access-denied # LuaM
     requiredCompanies:
     - PDV
-  popupMessage: company-pdv-access-denied # LuaM
