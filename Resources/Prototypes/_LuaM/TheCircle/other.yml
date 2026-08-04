@@ -61,12 +61,18 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: Beaker
-          amount: 2
-        - id: ClothingEyesGlassesChemical
-        - id: TheCircleMedicPaper
-        - id: ExtraborilVial
-          amount: 5
+        - !type:EntSelector
+          id: Beaker
+          amount: !type:ConstantNumberSelector
+            value: 2
+        - !type:EntSelector
+          id: ClothingEyesGlassesChemical
+        - !type:EntSelector
+          id: TheCircleMedicPaper
+        - !type:EntSelector
+          id: ExtraborilVial
+          amount: !type:ConstantNumberSelector
+            value: 5
 
 - type: entity
   parent: Paper

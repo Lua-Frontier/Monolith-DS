@@ -10,7 +10,7 @@
     Medicine:
       metabolismRate: 0.85
       effects:
-      - !type:ModifyBleed
+      - !type:ModifyBleedAmount
         amount: -1.8
       - !type:HealthChange
         damage:
@@ -19,7 +19,7 @@
             Slash: -1
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: Punturil
           min: 6
         damage:
@@ -38,13 +38,13 @@
     Narcotic:
       metabolismRate: 0.72
       effects:
-      - !type:MovementSpeedModifier
+      - !type:MovespeedModifier
         walkSpeedModifier: 1.4
         sprintSpeedModifier: 1.4
       - !type:Jitter
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: Depotojil
           min: 14
         damage:
@@ -52,16 +52,17 @@
             Cellular: 1.5
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: ChloralHydrate
           min: 1
         reagent: ChloralHydrate
         amount: -10
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectStunned
+      - !type:GenericStatusEffect
+        key: Stun
         time: 3
         type: Remove
-      - !type:ModifyKnockdown
+      - !type:GenericStatusEffect
+        key: KnockedDown
         time: 3
         type: Remove
       - !type:GenericStatusEffect
@@ -69,16 +70,16 @@
         component: StaminaModifier
         time: 3
         type: Add
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectForcedSleeping
+      - !type:GenericStatusEffect
+        key: ForcedSleep
         time: 3
         type: Remove
-      - !type:ModifyStatusEffect
+      - !type:GenericStatusEffect
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: Haloperidol
           max: 0.01
-        effectProto: StatusEffectDrowsiness
+        key: Drowsiness
         time: 10
         type: Remove
     Medicine:
@@ -87,7 +88,7 @@
       - !type:ResetNarcolepsy
       - !type:HealthChange
         conditions:
-        - !type:TotalDamageCondition
+        - !type:TotalDamage
           min: 70 
         damage:
           groups:
@@ -111,7 +112,7 @@
             Heat: -5.5
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: Ferratid
           min: 6
         damage:
@@ -138,7 +139,7 @@
           Brute: -4.2
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: Ferotohil
           min: 9
         damage:

@@ -37,13 +37,6 @@
           Slash: 0.8
           Piercing: 0.8
           Heat: 0.8
-    - type: ShieldDash
-      damage: 
-        types:
-          Blunt: 25
-      damageToShield: 
-        types:
-            Blunt: 55
       staminaDamage: 60
       staminaDamageToUser: 30  
 
@@ -414,14 +407,13 @@
   description: Выпустить или убрать встроенный фазовый клинок.
   categories: [ HideSpawnMenu ]
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 1
     raiseOnAction: true
     itemIconStyle: BigAction
     icon:
       sprite: _LuaM/Necromorfs/BSAA/weapons/phase_blade.rsi
       state: action
-  - type: InstantAction
     event: !type:OnRetractableItemActionEvent
   - type: RetractableItemAction
     spawnedPrototype: WeaponBSAAPhaseBlade
