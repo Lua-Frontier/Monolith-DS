@@ -5,6 +5,7 @@
                       Title="{Loc 'shuttle-console-window-title'}"
                       SetSize="1000 994"
                       MinSize="1000 994">
+
     <BoxContainer Orientation="Vertical">
         <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="0 8 0 2">
             <PanelContainer.PanelOverride>
