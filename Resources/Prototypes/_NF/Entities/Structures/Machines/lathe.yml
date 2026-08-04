@@ -222,6 +222,11 @@
     - SecurityEquipment
     - SmartGun #Smart SMG
     # Mono end
+# LuaM-start:
+    - ArmorBasic
+    - ArmorAdvanced
+    - PunkGear
+# LuaM-end.
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFMercenaryTechfabDeprecatedEmag

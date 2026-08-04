@@ -96,7 +96,7 @@
     guides:
     - Science
   - type: ResearchPointSource
-    pointsPerSecond: 20
+    pointsPerSecond: 10 # LuaM: 20 > 10
     active: true
 
 - type: entity
@@ -107,7 +107,7 @@
   components:
   - type: ResearchClient
   - type: ResearchPointSource
-    pointsPerSecond: 200
+    pointsPerSecond: 50 # LuaM: 200 > 50
     active: true
   - type: ApcPowerReceiver
     powerLoad: 10000

@@ -9,7 +9,7 @@
     1: 0
     2: 0.5
     3: 0.5
-  uiName: MCH
+  uiName: research-discipline-mechs # LuaM: MCH > research-discipline-mechs
 
 - type: techDiscipline
   id: FactionUniversal
@@ -22,7 +22,7 @@
     1: 0
     2: 0.75
     3: 0.75
-  uiName: UNV
+  uiName: research-discipline-faction-universal # LuaM: UNV > research-discipline-faction-universal
 
 - type: techDiscipline
   id: TsfmcWeaponry
@@ -35,7 +35,7 @@
     1: 0
     2: 0.75
     3: 0.75
-  uiName: TSF-WP
+  uiName: research-discipline-tsfmc-weaponry # LuaM: TSF-WP > research-discipline-tsfmc-weaponry
 
 - type: techDiscipline
   id: TsfmcGear
@@ -48,7 +48,7 @@
     1: 0
     2: 0.5
     3: 0.5
-  uiName: TSF-GR
+  uiName: research-discipline-tsfmc-gear # LuaM: TSF-GR > research-discipline-tsfmc-gear
 
 - type: techDiscipline
   id: TsfmcEquipment
@@ -61,7 +61,7 @@
     1: 0
     2: 0.5
     3: 0.5
-  uiName: TSF-EQ
+  uiName: research-discipline-tsfmc-equipment # LuaM: TSF-EQ > research-discipline-tsfmc-equipment
 
 - type: techDiscipline
   id: TsfmcShipyard
@@ -74,7 +74,7 @@
     1: 0
     2: 0.5
     3: 0.5
-  uiName: TSF-HI
+  uiName: research-discipline-tsfmc-shipyard # LuaM: TSF-HI > research-discipline-tsfmc-shipyard
 
 - type: techDiscipline
   id: RogueWeaponry
@@ -87,7 +87,7 @@
     1: 0
     2: 0.75
     3: 0.75
-  uiName: PDV-WP
+  uiName: research-discipline-rogue-weaponry # LuaM: PDV-WP > research-discipline-rogue-weaponry
 
 - type: techDiscipline
   id: RogueGear
@@ -100,7 +100,7 @@
     1: 0
     2: 0.5
     3: 0.5
-  uiName: PDV-GR
+  uiName: research-discipline-rogue-gear # LuaM: PDV-GR > research-discipline-rogue-gear
 
 - type: techDiscipline
   id: RogueEquipment
@@ -113,7 +113,7 @@
     1: 0
     2: 0.5
     3: 0.5
-  uiName: PDV-EQ
+  uiName: research-discipline-rogue-equipment # LuaM: PDV-EQ > research-discipline-rogue-equipment
 
 - type: techDiscipline
   id: RogueShipyard
@@ -126,7 +126,7 @@
     1: 0
     2: 0.5
     3: 0.
-  uiName: PDV-HI
+  uiName: research-discipline-rogue-shipyard # LuaM: PDV-HI > research-discipline-rogue-shipyard
 
 - type: techDiscipline
   id: Ussp
@@ -139,7 +139,7 @@
     1: 0
     2: 0.50
     3: 0.50
-  uiName: USSP
+  uiName: research-discipline-ussp # LuaM: USSP > research-discipline-ussp
 
 - type: techDiscipline
   id: UsspShipyard
@@ -152,7 +152,7 @@
     1: 0
     2: 0.50
     3: 0.50
-  uiName: USSP-HI
+  uiName: research-discipline-ussp-shipyard # LuaM: USSP-HI > research-discipline-ussp-shipyard
 
 - type: techDiscipline
   id: UsspEquipment
@@ -165,7 +165,7 @@
     1: 0
     2: 0.50
     3: 0.50
-  uiName: USSP-EQ
+  uiName: research-discipline-ussp-equipment # LuaM: USSP-EQ > research-discipline-ussp-equipment
 
 - type: techDiscipline
   id: UsspWeapons
@@ -178,7 +178,7 @@
     1: 0
     2: 0.75
     3: 0.75
-  uiName: USSP-WP
+  uiName: research-discipline-ussp-weaponry # LuaM: USSP-WP > research-discipline-ussp-weaponry
 
 - type: techDiscipline
   id: ViperGroup
@@ -191,4 +191,4 @@
     1: 0
     2: 0.5
     3: 0.5
-  uiName: VG
+  uiName: research-discipline-viper-group #LuaM: VG > research-discipline-viper-group

@@ -55171,7 +55171,7 @@ entities:
       parent: 1
     - type: DeltaPressure
       gridUid: 1
-- proto: ResearchAndDevelopmentServerUssp
+- proto: ResearchAndDevelopmentServer
   entities:
   - uid: 8556
     components:
