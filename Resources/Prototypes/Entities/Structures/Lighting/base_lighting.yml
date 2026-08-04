@@ -10,7 +10,7 @@
   description: "An always powered light."
   suffix: Always powered
   components:
-  - type: RequireProjectileTarget #LuaM
+  # - type: RequireProjectileTarget #LuaM NVG port: Удалено так-как невозможно нормально создать "Blackout" зону игроками для пнв.
   - type: MeleeSound
     soundGroups:
       Brute:
