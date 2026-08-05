@@ -76,7 +76,7 @@
   - type: PayloadTrigger
     components:
     - type: TriggerOnVoice
-  - type: PhysicalComposition
+  - type: PhysicalComposition # LuaM recyclable
     materialComposition:
       Steel: 300
       Plastic: 200

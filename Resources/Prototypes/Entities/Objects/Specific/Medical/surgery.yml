@@ -3,7 +3,7 @@
 # Base
 
 - type: entity
-  parent: [BaseItem, RecyclableItemSteelMedium] # LuaM recyclable
+  parent: [BaseItem, RecyclableItemSteelMedium] # LuaM RecyclableItemSteelMedium
   id: BaseToolSurgery
   abstract: true
   components:

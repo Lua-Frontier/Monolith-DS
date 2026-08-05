@@ -43,6 +43,10 @@ public sealed partial class FireControlWindow : FancyWindow
 
         IFFToggle.OnToggled += OnIFFTogglePressed;
         IFFToggle.Pressed = NavRadar.ShowIFF;
+        // LuaM-comented-start:
+        // DockToggle.OnToggled += OnDockTogglePressed;
+        // DockToggle.Pressed = NavRadar.ShowDocks;
+        // LuaM-comented-end
     }
 
     private void SelectAllWeapons(BaseButton.ButtonEventArgs args)
@@ -144,7 +148,7 @@ public sealed partial class FireControlWindow : FancyWindow
     private void OnIFFTogglePressed(BaseButton.ButtonEventArgs args)
     {
         NavRadar.ShowIFF ^= true;
-        NavRadar.ShowDocks = NavRadar.ShowIFF;
+        NavRadar.ShowDocks = NavRadar.ShowIFF; // LuaM ShowDocks
         args.Button.Pressed = NavRadar.ShowIFF;
     }
 

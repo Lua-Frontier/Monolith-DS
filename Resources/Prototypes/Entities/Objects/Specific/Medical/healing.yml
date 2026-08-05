@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseItem, RecyclableItemSteelTiny] # LuaM recyclable
+  parent: [BaseItem, RecyclableItemSteelTiny] # LuaM RecyclableItemSteelTiny
   id: BaseHealingItem
   abstract: true
   components:

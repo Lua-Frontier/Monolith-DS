@@ -283,7 +283,6 @@ public sealed partial class DockingScreen : BoxContainer
         {
             if (!_ourDockButtons.TryGetValue(dock.Entity, out var button))
                 continue;
-
             // LuaM-comented-start:
             // // Find the lock indicator label in the button's children
             // if (button.ChildCount == 0)
@@ -292,27 +291,22 @@ public sealed partial class DockingScreen : BoxContainer
             // var buttonContainer = button.GetChild(0) as BoxContainer;
             // if (buttonContainer == null)
             //     continue;
-
-            // // Only update if connected to another grid
-            // if (!dock.Connected || dock.GridDockedWith == null)
-            // {
-            //     // If there's a lock indicator but no connection anymore, remove it
-            //     if (buttonContainer.ChildCount > 1)
-            //     {
-            //         var existingIndicator = buttonContainer.GetChild(1);
-            //         if (existingIndicator != null)
-            //         {
-            //             buttonContainer.RemoveChild(existingIndicator);
-            //         }
-            //     }
-            //     continue;
-            // }
             // LuaM-comented-end
 
-            // Only color if connected to another grid
             if (!dock.Connected || dock.GridDockedWith == null)
             {
-                button.ModulateSelfOverride = null; // Mono: сброс цвета, если не состыкован
+                // LuaM-comented-start:
+                // // If there's a lock indicator but no connection anymore, remove it
+                // if (buttonContainer.ChildCount > 1)
+                // {
+                //     var existingIndicator = buttonContainer.GetChild(1);
+                //     if (existingIndicator != null)
+                //     {
+                //         buttonContainer.RemoveChild(existingIndicator);
+                //     }
+                // }
+                // LuaM-comented-end
+                button.ModulateSelfOverride = null; // LuaM return color
                 continue;
             }
 
@@ -425,6 +419,7 @@ public sealed partial class DockingScreen : BoxContainer
                 {
                     Logger.DebugS("shuttle", $"Dock {dock.Name} connected to entity {dockedEntity}: Component says FTLLock.Enabled = {lockComp.Enabled}, UI button state = {isLocked}");
                 }
+                // LuaM-comented-start:
                 // // Add a lock icon/indicator for the connected grid
                 // var lockIndicator = new Label
                 // {
@@ -436,6 +431,7 @@ public sealed partial class DockingScreen : BoxContainer
                 //     MinWidth = 70
                 // };
                 // buttonContainer.AddChild(lockIndicator);
+                // LuaM-comented-end
             }
 
             var button = new Button()
@@ -447,12 +443,13 @@ public sealed partial class DockingScreen : BoxContainer
                 StyleClasses = { "ButtonSquare" } // LuaM square button
             };
 
-            // LuaM painting button
+            // LuaM-start: | painting button
             if (dock.Connected && dock.GridDockedWith != null)
             {
                 bool isLocked = FTLLockEnabledButton.Pressed;
                 button.ModulateSelfOverride = isLocked ? Color.Red : null;
             }
+            // Lua-end
 
             // Add the container with text and lock indicator to the button
             button.AddChild(buttonContainer);

@@ -1,7 +1,7 @@
 - type: entity
   name: handheld crew monitor
   # categories: [ DoNotMap ] # Frontier
-  parent: [BaseHandheldComputer, RecyclableItemDeviceSmall] # LuaM recyclable
+  parent: [BaseHandheldComputer, RecyclableItemDeviceSmall] # LuaM RecyclableItemDeviceSmall
   # CMO-only bud, don't add more.
   id: HandheldCrewMonitor
   description: A hand-held crew monitor displaying the status of suit sensors.
