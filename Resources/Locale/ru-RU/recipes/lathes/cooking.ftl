@@ -1,0 +1,1 @@
+lathe-recipe-CustomDrinkJug-name = кувшин для напитков (пустой)

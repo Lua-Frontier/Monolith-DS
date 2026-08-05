@@ -3,8 +3,8 @@
 - type: vessel
   id: Veska
   parent: BaseVesselAntag
-  name: RG Veska
-  description: A modified Ample that tears out the mining equipment and installs a light autocannon.
+  name: vessel-veska-name # LuaM-locale
+  description: vessel-veska-desc # LuaM-locale
   price: 6500
   category: Micro
   group: Custom

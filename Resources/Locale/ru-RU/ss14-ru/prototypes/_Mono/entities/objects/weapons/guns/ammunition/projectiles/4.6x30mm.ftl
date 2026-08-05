@@ -1,6 +1,6 @@
 ﻿ent-Bullet46x30mm = пуля (4.6x30мм FMJ)
 ent-Bullet46x30mmPractice = пуля (4.6x30mm учебный)
-ent-Bullet46x30mmRubber = пуля (4.6x30mm резиновый)
+ent-Bullet46x30mmRubber = пуля (4.6x30mm травматическиий)
 ent-Bullet46x30mmIncendiary = пуля (4.6x30mm зажигательный)
 ent-Bullet46x30mmUranium = пуля (4.6x30mm урановый)
 ent-Bullet46x30mmEmp = пуля (4.6x30mm emp)

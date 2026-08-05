@@ -1,8 +1,8 @@
 - type: vessel
   id: Kupol
   parent: BaseVesselAntag
-  name: BYP Kupol
-  description: A gunnery unit made to make up for the lacking fire-power of the Ledokol.
+  name: vessel-kupol-name # LuaM-locale
+  description: vessel-kupol-desc # LuaM-locale
   limit: 1
   price: 90000
   category: Small

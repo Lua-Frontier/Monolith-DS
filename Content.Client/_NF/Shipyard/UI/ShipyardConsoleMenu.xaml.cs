@@ -151,9 +151,18 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
                 continue;
             if (_engine != null && !prototype!.Engines.Contains(_engine.Value))
                 continue;
-            if (search.Length > 0 && !prototype!.Name.ToLowerInvariant().Contains(search))
+//            if (search.Length > 0 && !prototype!.Name.ToLowerInvariant().Contains(search)) // Commented by LuaM
+//                continue;
+// LuaM-start:
+            if (search.Length > 0)
+            {
+                var localizedName = GetLocalizedVesselName(prototype!).ToLowerInvariant();
+                var protoId = prototype!.ID.ToLowerInvariant();
+    
+            if (!localizedName.Contains(search) && !protoId.Contains(search))
                 continue;
-
+            }
+// LuaM-end.
             string priceText;
             if (free)
                 priceText = Loc.GetString("shipyard-console-menu-listing-free");

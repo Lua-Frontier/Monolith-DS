@@ -1,6 +1,6 @@
 ent-BaseAmmoBox635x40mmCaseless = коробка боеприпасов (635x40мм безгильзовые)
 ent-AmmoBox635x40mmCaseless = коробка боеприпасов (635x40мм безгильзовые)
 ent-AmmoBox635x40mmCaselessPractice = коробка боеприпасов (635x40мм безгильзовые учебные)
-ent-AmmoBox635x40mmCaselessBigRubber = большая коробка боеприпасов (635x40мм безгильзовые резиновые)
-ent-AmmoBox635x40mmCaselessRubber = коробка боеприпасов (635x40мм безгильзовые резиновые)
+ent-AmmoBox635x40mmCaselessBigRubber = большая коробка боеприпасов (635x40мм безгильзовые травматические)
+ent-AmmoBox635x40mmCaselessRubber = коробка боеприпасов (635x40мм безгильзовые травматические)
 ent-AmmoBox635x40mmCaselessBig = большая коробка боеприпасов (635x40мм безгильзовые)

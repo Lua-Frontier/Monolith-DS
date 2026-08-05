@@ -2,8 +2,8 @@
 - type: vessel
   id: Hoplite
   parent: BaseVesselAntag
-  name: TSF-PIN Hoplite
-  description: A patrol craft meant to intercept smugglers and light enemy craft with powerful engines and EMPs. It is equipped with 2 RUBICON, two plasma pulsers and two MARAUDER plasma cannons
+  name: vessel-hoplite-name # LuaM-locale
+  description: vessel-hoplite-desc # LuaM-locale
   price: 78500
   category: Small
   group: Security

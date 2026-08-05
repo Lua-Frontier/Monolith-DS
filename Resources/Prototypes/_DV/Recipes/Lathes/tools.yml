@@ -1,8 +1,9 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: FireExtinguisherBluespace
-  result: FireExtinguisherBluespace
+  result: FireExtinguisherBluespaceEmpty # LuaM:FireExtinguisherBluespace > FireExtinguisherBluespaceEmpty
   completetime: 6
+  name: lathe-recipe-FireExtinguisherBluespace-name
   materials:
     Steel: 1000
     Silver: 250

@@ -3,8 +3,8 @@
 - type: vessel
   id: Andromeda
   parent: BaseVesselAntag
-  name: TSF-CRSW Andromeda
-  description: A experimental heavy frigate, with heavy burst frontal firepower and fast maneuveability.
+  name: vessel-andromeda-name # LuaM-locale
+  description: vessel-andromeda-desc # LuaM-locale
   limit: 2 # LuaM 3 > 2
   price: 320000
   purchasable: false # voucher only

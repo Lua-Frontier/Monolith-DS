@@ -3,8 +3,8 @@
 - type: vessel
   id: Syringe
   parent: BaseVesselAntag
-  name: TSF-SKR Syringe
-  description: A small ship meant as an escort and render aid to other TSF vessels. It has a small interior and is lightly armed.
+  name: vessel-syringe-name # LuaM-locale
+  description: vessel-syringe-desc # LuaM-locale
   price: 58500
   category: Small
   group: Security

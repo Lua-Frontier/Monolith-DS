@@ -3,8 +3,8 @@
 - type: vessel
   id: Welder
   parent: BaseVesselAntag
-  name: TSF-ENG Welder
-  description: A multipurpose, utilitarian but cramped vessel envisioned as an all-in-one multitool for ship repair and resource extraction. Capable of detecting cloaked vessels.
+  name: vessel-welder-name # LuaM-locale
+  description: vessel-welder-desc # LuaM-locale
   price: 78200
   category: Small
   group: Security

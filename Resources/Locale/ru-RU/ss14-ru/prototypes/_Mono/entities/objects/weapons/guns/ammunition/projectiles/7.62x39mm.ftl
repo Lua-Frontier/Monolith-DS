@@ -1,6 +1,6 @@
 ﻿ent-Bullet762x39mmFMJ = пуля (7.62x39мм FMJ)
 ent-Bullet762x39mmPractice = пуля (7.62x39мм учебный)
-ent-Bullet762x39mmRubber = пуля (7.62x39мм резиновый)
+ent-Bullet762x39mmRubber = пуля (7.62x39мм травматическиий)
 ent-Bullet762x39mmIncendiary = пуля (7.62x39мм зажигательный)
 ent-Bullet762x39mmUranium = пуля (7.62x39мм урановый)
 ent-Bullet762x39mmSubsonic = пуля (7.62x39мм дозвуковая)

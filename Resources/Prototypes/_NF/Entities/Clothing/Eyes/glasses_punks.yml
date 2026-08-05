@@ -9,30 +9,47 @@
   - type: Sprite
     sprite: _NF/Clothing/Eyes/Glasses/punk_glasses.rsi
     layers:
-    - state: base_glasses_01
+    - state: icon_base_glasses_01 # LuaM base_glasses_01 > icon_base_glasses_01
       map: [ "glasses_main" ]
-      scale: 2.5, 2.5
-      offset: 0,-0.6
-    - state: decor_base_glasses_01
+# LuaM-comment-start:
+      # scale: 2.5, 2.5
+      # offset: 0,-0.6
+# LuaM-comment-end.
+    - state: icon_decor_base_glasses_01 # LuaM decor_base_glasses_01 > icon_decor_base_glasses_01
       map: [ "glasses_decor" ]
-      scale: 2.5, 2.5
-      offset: 0,-0.6
+# LuaM-comment-start:
+      # scale: 2.5, 2.5
+      # offset: 0,-0.6
+# LuaM-comment-end.
       shader: unshaded
   - type: Clothing
     sprite: _NF/Clothing/Eyes/Glasses/punk_glasses.rsi
     clothingVisuals:
       eyes:
       - state: base_glasses_01
-        map: [ "glasses_main" ]
+        map: [ "clothing_glasses_main" ] # LuaM glasses_main > clothing_glasses_main
       - state: decor_base_glasses_01
-        map: [ "glasses_decor" ]
+        map: [ "clothing_glasses_decor" ] # LuaM glasses_decor > clothing_glasses_decor
         shader: unshaded
   - type: RandomSprite
     available:
       - glasses_main:
-          base_glasses_01: CyberpunkDark
+#            base_glasses_01: CyberpunkDark # Commented by LuaM
+# LuaM-start:
+          icon_base_glasses_01: Base
+        clothing_glasses_main:
+          base_glasses_01: Base
+# LuaM-end.
         glasses_decor:
-          decor_base_glasses_01: CyberpunkDark
+#          decor_base_glasses_01: CyberpunkDark # Commented by LuaM
+# LuaM-start:
+          icon_decor_base_glasses_01: Decor
+        clothing_glasses_decor:
+          decor_base_glasses_01: Decor
+    mappedColors:
+      Base: CyberpunkDark
+      Decor: CyberpunkDark
+  # LuaM-end
 
 # HUDs
 - type: entity
@@ -42,37 +59,56 @@
   description: How can you see anything in this with all the lights?
   components:
   - type: VisionCorrection
-  - type: Item
-    shape:
-    - 0,0,1,0
-    storedOffset: -20,-20
+# LuaM-comment-start:
+  # - type: Item
+  #   shape:
+  #   - 0,0,1,0
+  #   storedOffset: -20,-20
+# LuaM-comment-end.
   - type: Sprite
     sprite: _NF/Clothing/Eyes/Glasses/punk_glasses.rsi
     layers:
-    - state: base_glasses_02
+    - state: icon_base_glasses_02 # LuaM base_glasses_02 > icon_base_glasses_02
       map: [ "infoshades_main" ]
-      scale: 2.5, 2.5
-      offset: 0,-0.6
-    - state: decor_base_glasses_02
+# LuaM-comment-start:
+      # scale: 2.5, 2.5
+      # offset: 0,-0.6
+# LuaM-comment-end.
+    - state: icon_decor_base_glasses_02 # LuaM decor_base_glasses_02 > icon_decor_base_glasses_02
       map: [ "infoshades_decor" ]
-      scale: 2.5, 2.5
-      offset: 0,-0.6
+# LuaM-comment-start:
+      # scale: 2.5, 2.5
+      # offset: 0,-0.6
+# LuaM-comment-end.
       shader: unshaded
   - type: Clothing
     sprite: _NF/Clothing/Eyes/Glasses/punk_glasses.rsi
     clothingVisuals:
       eyes:
       - state: base_glasses_02
-        map: [ "infoshades_main" ]
+        map: [ "clothing_infoshades_main" ] # LuaM infoshades_main > clothing_infoshades_main
       - state: decor_base_glasses_02
-        map: [ "infoshades_decor" ]
+        map: [ "clothing_infoshades_decor" ] # LuaM infoshades_decor > clothing_infoshades_decor
         shader: unshaded
   - type: RandomSprite
     available:
       - infoshades_main:
-          base_glasses_02: CyberpunkNeon
+#           base_glasses_02: CyberpunkNeon # Commented by LuaM
+# LuaM-start:
+          icon_base_glasses_02: Base
+        clothing_infoshades_main:
+          base_glasses_02: Base
+# LuaM-end.
         infoshades_decor:
-          decor_base_glasses_02: CyberpunkNeon
+#           decor_base_glasses_02: CyberpunkNeon # Commented by LuaM
+# LuaM-start:
+          icon_decor_base_glasses_02: Decor
+        clothing_infoshades_decor:
+          decor_base_glasses_02: Decor
+    mappedColors:
+      Base: CyberpunkNeon
+      Decor: CyberpunkNeon
+  # LuaM-end    
   - type: ShowHealthBars
     damageContainers:
     - Inorganic

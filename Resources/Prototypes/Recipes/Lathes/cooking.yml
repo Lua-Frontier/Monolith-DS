@@ -57,8 +57,9 @@
   result: CustomDrinkJug
   categories: [KitchenNF] # Frontier
   completetime: 2
+  name: lathe-recipe-CustomDrinkJug-name # LuaM
   materials:
-    Plastic: 200
+    Plastic: 150 # LuaM: 200 > 150
 
 - type: latheRecipe
   parent: BaseGlasswareRecipe

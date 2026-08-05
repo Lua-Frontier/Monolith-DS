@@ -51997,7 +51997,7 @@ entities:
     - type: Transform
       pos: 8.488646,9.544061
       parent: 1
-- proto: KitchenDeepFryerCauldronPOI
+- proto: KitchenDeepFryerPOI
   entities:
   - uid: 7756
     components:

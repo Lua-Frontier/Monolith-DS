@@ -2,8 +2,8 @@
 - type: vessel
   id: Altair
   parent: BaseVesselAntag
-  name: TSF-PIN Altair
-  description: A heavily-armed frigate with 4 cyrexa, laser cannons and its main armament, a CHARON mass driver. Made as a heavy frontline brawler and to serve as a fleet anchor for smaller forces.
+  name: vessel-altair-name # LuaM-locale
+  description: vessel-altair-desc # LuaM-locale
   limit: 1 # LuaM 2 > 1
   price: 425000
   purchasable: false # voucher only

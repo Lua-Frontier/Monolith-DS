@@ -1,0 +1,1 @@
+lathe-recipe-FireExtinguisher-name = fire extinguisher (empty)

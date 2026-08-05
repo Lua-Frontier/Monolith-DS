@@ -3,8 +3,8 @@
 - type: vessel
   id: SpyglassMKII
   parent: BaseVesselAntag
-  name: AN Spyglass MKII # LuaM: PDV Spyglass MKII > AN Spyglass MKII
-  description: One of salvage ships you'll see from the Phaethon Dynasty. This baby is capable of Xenoarcheology and salvage work.
+  name: vessel-spyglassmkii-name # LuaM-locale
+  description: vessel-spyglassmkii-desc # LuaM-locale
   price: 62500
   category: Small
   group: BlackMarket

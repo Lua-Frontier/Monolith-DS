@@ -3,8 +3,8 @@
 - type: vessel
   id: Saintie
   parent: BaseVesselAntag
-  name: AN Saintie # LuaM: PDW Saintie > AN Saintie
-  description: An expensive Frigate designed by the Phaethon Divine Shipworks, utilised by imperial vanguard for swift ambush attacks against enemy fleets.
+  name: vessel-saintie-name # LuaM-locale
+  description: vessel-saintie-desc # LuaM-locale
   limit: 2
   price: 345000
   purchasable: false # Voucher only

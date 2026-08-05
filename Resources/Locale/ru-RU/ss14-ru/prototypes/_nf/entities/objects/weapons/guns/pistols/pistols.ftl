@@ -1,7 +1,7 @@
 ent-WeaponPistolMk58Nonlethal = { ent-WeaponPistolMk58 }
     .suffix = Травматический
     .desc = { ent-WeaponPistolMk58.desc }
-ent-WeaponPistolN1984Nonlethal = N1984
+ent-WeaponPistolN1984Nonlethal = N-1984 «Бюрократ»
     .suffix = Травматический
     .desc = { ent-WeaponPistolN1984.desc }
 ent-WeaponPistolPollock = P-12 «Сайра»

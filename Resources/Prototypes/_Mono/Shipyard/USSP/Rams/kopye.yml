@@ -1,8 +1,8 @@
 - type: vessel
   id: Kopye
   parent: BaseVesselAntag
-  name: BYP Kopye
-  description: A thin, pointed ram made to fit the connection port of the Ledokol.
+  name: vessel-kopye-name # LuaM-locale
+  description: vessel-kopye-desc # LuaM-locale
   price: 45000
   purchasable: true # voucher only # LuaM: false > true
   category: Large

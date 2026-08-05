@@ -1,6 +1,6 @@
 ﻿ent-Bullet9x19mmFMJ = пуля (9x19мм FMJ)
 ent-Bullet9x19mmPractice = пуля (9x19мм учебный)
-ent-Bullet9x19mmRubber = пуля (9x19мм резиновый)
+ent-Bullet9x19mmRubber = пуля (9x19мм травматическииq)
 ent-Bullet9x19mmIncendiary = пуля (9x19мм зажигательный)
 ent-Bullet9x19mmUranium = пуля (9x19мм урановый)
 ent-Bullet9x19mmEmp = пуля (9x19мм emp)

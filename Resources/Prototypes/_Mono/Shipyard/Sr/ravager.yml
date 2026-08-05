@@ -5,8 +5,8 @@
 - type: vessel
   id: Ravager
   parent: BaseVessel
-  name: Ravager
-  description: Capital class security mothership made for fast neutralization of civilian threats.
+  name: vessel-ravager-name # LuaM-locale
+  description: vessel-ravager-desc # LuaM-locale
   price: 875800
   purchasable: false # voucher only
   category: Large
