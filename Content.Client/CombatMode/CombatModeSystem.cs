@@ -2,13 +2,13 @@ using Content.Client.Hands.Systems;
 using Content.Client.NPC.HTN;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
-using Content.Shared.StatusIcon.Components;
-using Robust.Client.GameObjects;
+using Content.Shared.StatusIcon.Components; // Europa
+using Robust.Client.GameObjects; // Europa
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
-using Robust.Shared.Utility;
+using Robust.Shared.Utility; // Europa
 
 namespace Content.Client.CombatMode;
 

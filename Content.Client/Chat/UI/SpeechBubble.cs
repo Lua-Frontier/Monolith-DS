@@ -127,8 +127,9 @@ namespace Content.Client.Chat.UI
             _revealTime = GetRevealTime(_maxRevealWeight);
             _deathTime = _creationTime + TotalTime + _revealTime;
             UpdateTextReveal();
-            _verticalOffsetAchieved = -ContentSize.Y;
             // Arcane-end
+            _verticalOffsetAchieved = -ContentSize.Y;
+            // _deathTime = _timing.RealTime + TotalTime; Arcane delete
         }
 
         protected abstract Control BuildBubble(ChatMessage message, string speechStyleClass, Color? fontColor = null);
@@ -414,7 +415,7 @@ namespace Content.Client.Chat.UI
                 MaxWidth = SpeechMaxWidth,
             };
 
-            SetRevealedMessage(label, FormatSpeech(message.WrappedMessage, fontColor)); // Arcane
+            SetRevealedMessage(label, FormatSpeech(message.WrappedMessage, fontColor)); // Arcane label.SetMessage(FormatSpeech(message.WrappedMessage, fontColor)); -> SetRevealedMessage(label, FormatSpeech(message.WrappedMessage, fontColor));
 
             var panel = new PanelContainer
             {
@@ -444,7 +445,7 @@ namespace Content.Client.Chat.UI
                     MaxWidth = SpeechMaxWidth
                 };
 
-                SetRevealedMessage(label, ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor)); // Arcane
+                SetRevealedMessage(label, ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor)); // Arcane label.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor)); -> SetRevealedMessage(label, ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor));
 
                 var unfanciedPanel = new PanelContainer
                 {
@@ -465,13 +466,13 @@ namespace Content.Client.Chat.UI
             {
                 ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleTextOpacity)),
                 MaxWidth = SpeechMaxWidth,
-                Margin = new Thickness(2, 2, 2, 2),
+                Margin = new Thickness(2, 2, 2, 2), // LuaM Margin = new Thickness(2, 6, 2, 2), -> Margin = new Thickness(2, 2, 2, 2),
                 StyleClasses = { "bubbleContent" },
             };
 
             //We'll be honest. *Yes* this is hacky. Doing this in a cleaner way would require a bottom-up refactor of how saycode handles sending chat messages. -Myr
             bubbleHeader.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleHeader", fontColor));
-            SetRevealedMessage(bubbleContent, ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor)); // Arcane
+            SetRevealedMessage(bubbleContent, ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor)); // Arcane bubbleContent.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor)); -> SetRevealedMessage(bubbleContent, ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor));
 
             //As for below: Some day this could probably be converted to xaml. But that is not today. -Myr
             var mainPanel = new PanelContainer
@@ -480,7 +481,8 @@ namespace Content.Client.Chat.UI
                 Children = { bubbleContent },
                 ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleBackgroundOpacity)),
                 HorizontalAlignment = HAlignment.Center,
-                Margin = new Thickness(4, 0, 4, 2) // Arcane
+                // VerticalAlignment = VAlignment.Bottom, Arcane delete
+                Margin = new Thickness(4, 0, 4, 2) // Arcane Margin = new Thickness(4, 14, 4, 2) -> Margin = new Thickness(4, 0, 4, 2)
             };
 
             var headerPanel = new PanelContainer
@@ -491,6 +493,8 @@ namespace Content.Client.Chat.UI
                 HorizontalAlignment = HAlignment.Center,
                 VerticalAlignment = VAlignment.Top
             };
+
+            //var panel = new PanelContainer Arcane delete
 
             // Arcane-start
             var panel = new BoxContainer
