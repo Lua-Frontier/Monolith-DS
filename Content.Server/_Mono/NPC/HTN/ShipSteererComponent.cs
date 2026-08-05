@@ -139,12 +139,6 @@ public sealed partial class ShipSteererComponent : Component
     public float? MaxRotateRate = null;
 
     /// <summary>
-    /// LuaM autopilot speed limit 
-    /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
-    public float? MaxVelocity = null;
-
-    /// <summary>
     /// Check for obstacles for collision avoidance at most this far.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]

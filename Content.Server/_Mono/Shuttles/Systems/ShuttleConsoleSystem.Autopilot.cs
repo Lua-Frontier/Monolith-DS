@@ -30,12 +30,6 @@ public sealed partial class ShuttleConsoleAutopilotSystem : EntitySystem
         var blackboard = htn.Blackboard;
         blackboard.SetValue(ent.Comp.AutopilotTargetKey, _transform.ToCoordinates(args.Coordinates));
         blackboard.SetValue(ent.Comp.AutopilotRotationKey, args.Angle + MathF.PI);
-        // LuaM-start: | save speed limit for autopilot
-        if (ent.Comp.AutopilotMaxSpeed is { } speed)
-            blackboard.SetValue("ShipMaxSpeed", speed);
-        else
-            blackboard.Remove<float>("ShipMaxSpeed");
-        // LuaM-end
     }
 
     private void OnSteeringDone(Entity<ShuttleConsoleComponent> ent, ref SteeringDoneEvent args)

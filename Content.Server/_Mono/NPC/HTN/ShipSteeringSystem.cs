@@ -156,7 +156,6 @@ public sealed partial class ShipSteeringSystem : EntitySystem
         };
 
         args.Input = ProcessMovement(ref context, config);
-        args.SetMaxVelocity = ent.Comp.MaxVelocity; // LuaM apply autopilot speed limit
     }
 
     /// <summary>
