@@ -93,15 +93,15 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
-  - type: NightVision # Gen 3 wide-quadtube
-    relayOverlay: false
+  - type: NightVision # LuaM edit start:
+    relayOverlay: true
     goggleEffect: true
-    viewCircleRadius: 450
-    viewCircleCount: 4
-    viewCircleSpacing: 280
+    viewCircleRadius: 880
+    viewCircleCount: 1
+    viewCircleSpacing: 1
     action: ActionToggleNightVision
-    phosphorColor: "#00FF00"
-    lightingColor: "#FFFFFF32"
+    phosphorColor: "#986033"
+    lightingColor: "#ffffff52" #LuaM edit end.
 
 - type: entity
   parent: BaseMobCarp

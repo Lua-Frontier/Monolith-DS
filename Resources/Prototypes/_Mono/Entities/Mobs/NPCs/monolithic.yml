@@ -226,7 +226,7 @@
     viewCircleCount: 1
     viewCircleSpacing: 1
     action: ActionToggleNightVision
-    phosphorColor: "#337a98"
+    phosphorColor: "#986033"
     lightingColor: "#ffffff52" #LuaM edit end.
   - type: CollectiveMind
     channels:
