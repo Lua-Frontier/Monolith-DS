@@ -293,6 +293,7 @@ public sealed partial class DockingScreen : BoxContainer
             //     continue;
             // LuaM-comented-end
 
+            // Only update if connected to another grid
             if (!dock.Connected || dock.GridDockedWith == null)
             {
                 // LuaM-comented-start:
