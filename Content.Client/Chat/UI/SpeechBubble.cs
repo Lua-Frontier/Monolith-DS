@@ -494,16 +494,12 @@ namespace Content.Client.Chat.UI
                 VerticalAlignment = VAlignment.Top
             };
 
-            //var panel = new PanelContainer Arcane delete
-
-            // Arcane-start
-            var panel = new BoxContainer
+            var panel = new BoxContainer // Arcane var panel = new PanelContainer -> var panel = new BoxContainer
             {
-                Orientation = BoxContainer.LayoutOrientation.Vertical,
-                HorizontalAlignment = HAlignment.Center,
+                Orientation = BoxContainer.LayoutOrientation.Vertical, // Arcane
+                HorizontalAlignment = HAlignment.Center, // Arcane
                 Children = { headerPanel, mainPanel }
             };
-            // Arcane-end
 
             return panel;
         }
