@@ -240,6 +240,7 @@
     - ChemistryStatic
     - SurgeryStatic
     - PartsStatic
+    - ScienceBag # LuaM
     dynamicPacks:
     - AdvancedTools
     - ScienceEquipment
@@ -273,6 +274,12 @@
     - SmartGun # Goobstation
     # Einstein Engines Packs
     - Translators
+# LuaM-start:
+    - BluespaceAirTanks
+    - GasDepositLocator
+    - ZookeeperTranslatorImplant
+    - PortableScreenTimer
+# LuaM-end.
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - DynamicAmmoRecipePack
@@ -347,6 +354,7 @@
     - S2MechBoards
     - EngineeringBoardsGoob #Goob Factorio port
     - ReactorCircuitboards # FH edit
+    - DataFarmResearchCryptoCircuitboard # LuaM
   - type: MaterialStorage
     whitelist:
       tags:
@@ -629,6 +637,8 @@
     - CyberLiver
     - CyberOrgans
     - UpgradedCyberOrgans
+    - AdvMeds
+    - Hyposprays
     # LuaM-end.
   - type: Machine
     board: MedicalTechFabCircuitboard

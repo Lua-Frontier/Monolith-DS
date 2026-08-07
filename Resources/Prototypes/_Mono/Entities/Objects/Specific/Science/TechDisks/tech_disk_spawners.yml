@@ -102,6 +102,10 @@
     - id: TechDiskHristov
     - id: SpawnLootTechDisksT3Fracture
     - id: TechDiskUniversalShipAmmoAdvanced
+# LuaM-start:
+    - id: TechDiskCombatSilicon
+    - id: TechDiskDataFarm
+# LuaM-end.
 
 #T2 TECH MECH DISKS
 - type: entity
@@ -139,7 +143,10 @@
       - id: TechDiskMechWeaponsLight
       - id: TechDiskMechWeaponsMedium
       - id: TechDiskMechWeaponsHeavy
-      - id: TechDiskCombatSilicon # LuaM
+# LuaM-start:
+      - id: TechDiskCombatSilicon
+      - id: TechDiskDataFarm
+# LuaM-end.
       - !type:GroupSelector
         weight: 3
         children:
@@ -210,3 +217,4 @@
     - id: TechDiskShields
     - id: TechDiskFtl
     - id: TechDiskTranslationPreFracture
+    - id: TechDiskDataFarm # LuaM

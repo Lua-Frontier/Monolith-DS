@@ -10,7 +10,7 @@
   - ClothingOuterHardsuitCarp
   technologyPrerequisites:
   - BasicParts
-  position: 1, -5
+  position: 5, 12 # LuaM: 1, -5 > 5, 12
 
 - type: technology
   id: BluespaceTethering
@@ -23,7 +23,7 @@
   - ClothingShoesBootsMagVoid
   technologyPrerequisites:
   - MagnetsTech
-  position: -2, -2
+  position: 7, 6 # LuaM: -2, -2 > 7, 6
 
 - type: technology
   id: BasicResearch
@@ -46,7 +46,7 @@
   - ProximitySensor
   technologyPrerequisites:
   - BasicParts
-  position: -1, -1
+  position: 10, 12 # LuaM: -1, -1 > 10, 12
 
 - type: technology
   id: BasicParts
@@ -55,7 +55,7 @@
   discipline: Experimental
   tier: 1
   cost: 5000
-  position: 0, 0
+  position: 8, 13 # LuaM: 0, 0 > 8, 13
 
 - type: technology
   id: AdvancedResearch
@@ -72,7 +72,7 @@
   - AnomalyVesselExperimentalCircuitboard
   technologyPrerequisites:
   - BasicResearch
-  position: -1, -2
+  position: 10, 11 # LuaM: -1, -2 > 10, 11
 
 - type: technology
   id: DataFarmingTechnology
@@ -82,7 +82,7 @@
   tier: 3
   cost: 25000
   recipeUnlocks:
-  - DataFarmResearchCircuitboard
+  - DataFarmCryptoCircuitboard # LuaM: DataFarmResearchCircuitboard > DataFarmCryptoCircuitboard
   technologyPrerequisites:
   - SuperParts
-  position: 1, 18
+  position: 7, 3 # LuaM: 1, 18 > 7, 3

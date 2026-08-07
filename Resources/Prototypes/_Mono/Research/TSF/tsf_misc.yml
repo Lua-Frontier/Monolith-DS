@@ -4,16 +4,17 @@
   entityIcon: ForensicScanner
   discipline: TsfmcGear
   tier: 1
-  cost: 5000
+  cost: 15000 # LuaM: 5000 > 15000
   recipeUnlocks:
   - ForensicsScannerTSF
   - DemagTSF
-  - ClothingEyesNightVisionGoggles
+#  - ClothingEyesNightVisionGoggles # Commented by LuaM
   - MotionDetectorTSF
   - CrowbarPocketTSF
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 12, -1
+  - SuperParts # LuaM
+  position: 6, 13 # LuaM: 12, -1 > 6, 13
 
 - type: technology
   id: TsfmcMopp
@@ -27,7 +28,7 @@
   - ClothingHandsGlovesMoppTsf
   technologyPrerequisites:
   - TsfmcAdvancedEquipment
-  position: 13, 7
+  position: 10, 10 # LuaM: 13, 7 > 10, 10
 
 - type: technology
   id: TsfEshield
@@ -38,9 +39,14 @@
   cost: 30000
   recipeUnlocks:
   - EnergyShieldTSF
+  - EnergySwordTSF # LuaM
   technologyPrerequisites:
   - UniversalMaterialResearchT2
-  position: 12, 9
+# LuaM-start:
+  - TsfAdvancedWeapons
+  - AdvancedRiotControl
+# LuaM-end.
+  position: 10, 10 # LuaM: 12, 9 > 10, 10
 
 - type: technology
   id: TsfTierOneVouchers
@@ -54,7 +60,8 @@
   - ShipVoucherTsfT1RandomRecipe
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 11, 1
+  - Shuttlecraft # LuaM
+  position: 8, 13 # LuaM: 11, 1 > 8, 13
 
 - type: technology
   id: TsfTierTwoVouchers
@@ -68,7 +75,8 @@
   technologyPrerequisites:
   - TsfTierOneVouchers
   - UniversalMaterialResearchT2
-  position: 11, 7
+  - ShuttleAdvancedComponents # LuaM
+  position: 8, 11 # LuaM: 11, 7 > 8, 11
 
 - type: technology
   id: TsfTierThreeVouchers
@@ -83,13 +91,14 @@
   technologyPrerequisites:
   - TsfTierTwoVouchers
   - UniversalMaterialResearchT3
-  position: 11, 12
+  - ShuttleCtlaAdvancedDriveResearch # LuaM
+  position: 8, 9 # LuaM: 11, 12 > 8, 9
 
 - type: technology
   id: TsfMeds
   name: research-technology-tsfmc-advanced-meds
   entityIcon: MedkitCombatFilled
-  discipline: TsfmcGear
+  discipline: CivilianServices # LuaM: TsfmcGear > CivilianServices
   tier: 2
   cost: 20000
   recipeUnlocks:
@@ -97,7 +106,8 @@
   - MeshTSF
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 12, -2
+  - AdvancedTreatment # LuaM
+  position: 4, 9 # LuaM: 12, -2 > 4, 9
 
 - type: technology
   id: TsfNanofoam
@@ -110,7 +120,8 @@
   - NanolaminateFoamGrenadeTSF
   technologyPrerequisites:
   - UniversalMaterialResearchT2
-  position: 12, 10
+  - AdvancedToolsTechnology # LuaM
+  position: 4, 12 # LuaM: 12, 10 > 4, 12
 
 - type: technology
   id: TsfPortableRecharger
@@ -120,10 +131,11 @@
   tier: 1
   cost: 15000
   recipeUnlocks:
-    - PortableRecharger
+  - PortableRecharger
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 12, -3
+  - PowerGeneration # LuaM
+  position: 8, 13 # LuaM: 12, -3 > 8, 13
 
 - type: technology
   id: TSFBasicBorgModule
@@ -136,7 +148,8 @@
   - BasicBorgCombatModuleTSF
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 12, -4
+  - TsfPortableRecharger # LuaM
+  position: 8, 11 # LuaM: 12, -4 > 8, 11
 
 - type: technology
   id: TSFAdvancedBorgModule
@@ -144,10 +157,11 @@
   entityIcon: BorgModuleTSFAdvancedWeapon
   discipline: TsfmcGear
   tier: 3
-  cost: 65000
+  cost: 35000 # LuaM: 65000 > 35000
   recipeUnlocks:
   - AdvancedBorgCombatModuleTSF
   technologyPrerequisites:
   - UniversalMaterialResearchT3
   - TSFBasicBorgModule
-  position: 12, 14
+  - MechBasic # LuaM
+  position: 8, 9 # LuaM: 12, 14 > 8, 9

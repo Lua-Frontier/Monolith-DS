@@ -47,4 +47,25 @@
   completetime: 3
   materials:
     Steel: 400
-    Glass: 100
+    Plastic: 250 # LuaM
+    Glass: 150 # LuaM: 100 > 150
+
+- type: latheRecipe
+  id: BluespaceAirTank
+  result: BluespaceAirTank
+  completetime: 5
+  materials:
+    Steel: 2000
+    Silver: 750
+    Plasma: 1000
+    Bluespace: 400 # LuaM: 200 > 400
+
+- type: latheRecipe
+  id: SmallBluespaceAirTank
+  result: SmallBluespaceAirTank
+  completetime: 5
+  materials:
+    Steel: 1000
+    Silver: 750
+    Plasma: 500
+    Bluespace: 200 # LuaM: 100 > 200

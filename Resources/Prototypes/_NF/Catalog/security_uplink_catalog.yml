@@ -734,8 +734,8 @@
   id: UplinkSecurityHypo
   name:  uplink-security-hypo-name
   description: uplink-security-hypo-desc
-  productEntity: HypoBrigmedic
-  icon: { sprite: _NF/Objects/Specific/Medical/hypobrigmedic.rsi, state: hypo }
+  productEntity: HypoMiniLimitedEdition # LuaM: HypoBrigmedic > HypoMiniLimitedEdition
+  icon: { sprite: _NF/Objects/Specific/Medical/hypominilimitededition.rsi, state: hypo } # LuaM: hypobrigmedic.rsi > hypominilimitededition.rsi
   cost:
     FederationMilitaryCredit: 5
   categories:

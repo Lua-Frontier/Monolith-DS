@@ -9,7 +9,8 @@
   - UllmanWeaponPulsePistol
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 16, 2
+  - PortableMicrofusionWeaponry # LuaM
+  position: 8, 8 # LuaM: 16, 2 > 8, 8
 
 - type: technology
   id: UllmanWeaponHiEnd
@@ -28,7 +29,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT2
   - UllmanPulseAdv
-  position: 16, 8
+  position: 8, 7 # LuaM: 16, 8 > 8, 7
 
 - type: technology
   id: UllmanHardsuitBasic
@@ -42,8 +43,8 @@
   - UllmanHardsuitEngineer
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 16, 1
-
+  - HardsuitsArmoredAdvanced # LuaM
+  position: 2, 7 # LuaM: 16, 1 > 2, 7
 
 - type: technology
   id: UllmanHardsuitHiEnd
@@ -57,7 +58,8 @@
   - UllmanHardsuitEnforcerMKII
   technologyPrerequisites:
   - UniversalMaterialResearchT2
-  position: 16, 7
+  - UllmanHardsuitBasic # LuaM
+  position: 2, 6 # LuaM: 16, 7 > 2, 6
 
 
 

@@ -99,7 +99,7 @@
   - APECircuitboard
   - ArtifactAnalyzerMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard
-  - DataFarmResearchCircuitboard
+#  - DataFarmResearchCircuitboard # Commented by LuaM
 
 - type: latheRecipePack
   id: CameraBoards

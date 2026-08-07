@@ -2,36 +2,37 @@
   id: UsspMediumGuns
   name: research-technology-ussp-guns-medium
   entityIcon: WeaponRifleAK502
-  discipline: UsspWeapons
+  discipline: Arsenal # LuaM: UsspWeapons > Arsenal
   tier: 2
   cost: 35000
   recipeUnlocks:
   - WeaponRifleAK502USSP
   - WeaponRevolverMatebaUSSP
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  position: 12, 2
+  - UniversalMaterialResearchT2 # LuaM: UniversalMaterialResearchT1 > UniversalMaterialResearchT2
+  - MercArmementAdvanced # LuaM
+  position: 12, 7 # LuaM: 12, 2 > 12, 7
 
 - type: technology
   id: UsspAk410
   name: research-technology-ussp-guns-ak410
   entityIcon: WeaponRifleAK410
-  discipline: UsspWeapons
+  discipline: Arsenal # LuaM: UsspWeapons > Arsenal
   tier: 2
   cost: 25000
   recipeUnlocks:
   - WeaponRifleAK410USSP
   - AmmoBox762x39mmSubsonic
   technologyPrerequisites:
-  - UsspMediumGuns
-  - UniversalMaterialResearchT2
-  position: 12, 8
+  - MercArmementSimple # LuaM: UsspMediumGuns > MercArmementSimple
+#  - UniversalMaterialResearchT2 # Commented by LuaM
+  position: 13, 11 # LuaM: 12, 8 > 13, 11
 
 - type: technology
   id: UsspAdvancedGuns
   name: research-technology-ussp-guns-advanced
   entityIcon: WeaponDP29
-  discipline: UsspWeapons
+  discipline: Arsenal # LuaM: UsspWeapons > Arsenal
   tier: 3
   cost: 80000
   recipeUnlocks:
@@ -39,6 +40,6 @@
   - MagazineDP29
   - WeaponShotgunBigLeadyUSSP
   technologyPrerequisites:
-  - UsspMediumGuns
-  - UniversalMaterialResearchT3
-  position: 12, 13
+  - UsspAk410 # LuaM: UsspMediumGuns > UsspAk410
+  - UniversalMaterialResearchT1 # LuaM: UniversalMaterialResearchT3 > UniversalMaterialResearchT1
+  position: 14, 11 # LuaM: 12, 13 > 14, 11

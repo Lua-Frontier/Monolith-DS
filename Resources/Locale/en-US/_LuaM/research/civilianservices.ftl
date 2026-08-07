@@ -1,0 +1,9 @@
+research-technology-implants = Advanced Prosthetics
+research-technology-cybernetic-organs = Organ Enhancements
+research-technology-cybernetic-liver = Artificial Filtration
+research-technology-upgraded-cybernetic-organs = Vacuum Survival
+research-technology-advanced-hydroponics = Advanced Hydroponics
+research-technology-mini-hypo = Basic Injectors
+research-technology-hypo-brigmedic = Advanced Injectors
+research-technology-mini-hypo-lim = Pocket Injectors
+research-technology-timer = Timekeeping

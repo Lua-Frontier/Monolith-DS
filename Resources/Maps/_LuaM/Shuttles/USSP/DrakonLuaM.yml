@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/26/2026 13:08:54
-  entityCount: 803
+  time: 07/17/2026 09:07:02
+  entityCount: 804
 maps: []
 grids:
 - 1
@@ -373,10 +373,10 @@ entities:
             134: -1,3
     - type: SpreaderGrid
       spreadQueues:
-        Kudzu: []
         MetalFoam: []
         Puddle: []
         Smoke: []
+        Kudzu: []
     - type: GridAtmosphere
       version: 2
       data:
@@ -390,8 +390,8 @@ entities:
             1: 128
           -2,-1:
             1: 16
-            2: 32
-            0: 8200
+            2: 8224
+            0: 8
           -2,-3:
             1: 4352
             2: 8706
@@ -433,8 +433,7 @@ entities:
             2: 8706
             1: 17408
           1,-1:
-            2: 32
-            0: 8192
+            2: 8224
             1: 192
           1,0:
             1: 4102
@@ -2904,6 +2903,13 @@ entities:
       - 6
     - type: AtmosPipeColor
       color: '#DD0075FF'
+- proto: GravityGeneratorMini
+  entities:
+  - uid: 804
+    components:
+    - type: Transform
+      pos: -3.5,-8.5
+      parent: 1
 - proto: GreebleAntenna1
   entities:
   - uid: 206

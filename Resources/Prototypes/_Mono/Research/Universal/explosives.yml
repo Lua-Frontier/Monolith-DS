@@ -3,9 +3,9 @@
   id: PrintableExplosives
   name: research-technology-printable-explosives
   entityIcon: C4
-  discipline: FactionUniversal
+  discipline: Arsenal # LuaM: FactionUniversal > Arsenal
   tier: 2
-  cost: 7500
+  cost: 40000 # LuaM: 7500 > 40000
   recipeUnlocks:
   - PrintableC4
   - PrintableEmpGrenade
@@ -15,4 +15,5 @@
   - PrintableBombCollarSealer
   technologyPrerequisites:
   - UniversalPlastitaniumCore
-  position: 7, 7
+  - ExplosiveTechnology # LuaM
+  position: 9, 11 # LuaM: 7,7 > 9, 11

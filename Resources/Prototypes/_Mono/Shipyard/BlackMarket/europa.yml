@@ -19,7 +19,9 @@
   engine:
   - AME
   - Uranium # LuaM add
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#E03131FF"
 - type: gameMap
   id: Europa
   mapName: 'AN Europa' # LuaM: 'IDY Europa' > AN 'Europa'
@@ -33,7 +35,7 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Europa PDV{1}'
+          mapNameTemplate: 'Europa AN{1}' # LuaM: PDV > AN
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

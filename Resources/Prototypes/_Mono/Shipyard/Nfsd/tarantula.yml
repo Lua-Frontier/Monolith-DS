@@ -19,7 +19,9 @@
   - Pursuit
   engine:
   - AME
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Tarantula
   mapName: 'Tarantula'

@@ -1,2 +1,2 @@
-vessel-rosetta-name = А
-vessel-rosetta-desc = А
+vessel-rosetta-name = НОВ «Росетта»
+vessel-rosetta-desc = Тяжелый научный комплекс на большую группу рабочих. Снабжён одним L-20 «Аполлон» и L-1 «Фаланга», а также двумя T-135 «Мародёр».

@@ -18,4 +18,4 @@
   parent: BaseVessel
   addComponents:
   - type: IFF
-    flags: [IsPlayerShuttle, HideLabel]
+    flags: [IsPlayerShuttle, HideLabel, AlwaysShowColor] # LuaM add: AlwaysShowColor

@@ -5,11 +5,11 @@
   parent: BaseVesselAntag
   name: vessel-tayfun-name # LuaM-locale
   description: vessel-tayfun-desc # LuaM-locale
-  price: 74200
+  price: 138000 # LuaM: 74200 > 138000 Я ОСТАПА РОТ ЭБАЛ
   category: Medium
   group: Ussp
   access: Mercenary
-  shuttlePath: /Maps/_Mono/Shuttles/USSP/tayfun.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/USSP/TayfunLuaM.yml # LuaM: /Maps/_Mono/Shuttles/USSP/tayfun.yml > /Maps/_LuaM/Shuttles/USSP/TayfunLuaM.yml
   guidebookPage: Null
   class:
   - Pursuit
@@ -21,7 +21,7 @@
 - type: gameMap
   id: Tayfun
   mapName: 'Tayfun'
-  mapPath: /Maps/_Mono/Shuttles/USSP/tayfun.yml
+  mapPath: /Maps/_LuaM/Shuttles/USSP/TayfunLuaM.yml # LuaM: /Maps/_Mono/Shuttles/USSP/tayfun.yml > /Maps/_LuaM/Shuttles/USSP/TayfunLuaM.yml
   minPlayers: 0
   stations:
     Tayfun:

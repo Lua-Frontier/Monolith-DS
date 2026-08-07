@@ -157,9 +157,9 @@ loadout-group-paramedic-shoes = Парамедик, обувь
 loadout-group-reporter-jumpsuit = Репортёр, комбинезон
 loadout-group-boxer-jumpsuit = Боксёр, комбинезон
 loadout-group-boxer-gloves = Боксёр, перчатки
-loadout-group-EVA-tank = Аварийный баллон
-loadout-group-vox-tank = Аварийный баллон вокса
-loadout-group-pocket-tank-double = Двойной аварийный баллон
+loadout-group-EVA-tank = Карманный баллон
+loadout-group-vox-tank = Карманный баллон вокса
+loadout-group-pocket-tank-double = Двойной карманный баллон
 loadout-group-survival-mime = Аварийный запас(мим)
 
 # Command
