@@ -1,3 +1,50 @@
+# Tier1
+- type: technology
+  id: PortableScreenTimer
+  name: research-technology-timer
+  entityIcon: PortableScreenTimer
+  discipline: CivilianServices
+  tier: 1
+  cost: 8500
+  recipeUnlocks:
+  - PortableScreenTimer
+  technologyPrerequisites:
+  - AudioVisualCommunication
+  position: 6, 12
+
+# Tier 2
+- type: technology
+  id: AdvancedHydroponics
+  name: research-technology-advanced-hydroponics
+  entityIcon: PlantAnalyzer
+  discipline: CivilianServices
+  tier: 2
+  cost: 25000
+  recipeUnlocks:
+  - PlantAnalyzer
+  - PlantBagOfHolding
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  - NFBlueprintPlantAnalyzer
+  - NFBlueprintPlantBagOfHolding
+  technologyPrerequisites:
+  - Hydroponics
+  - AdvancedParts
+  position: 4, 11
+
+- type: technology
+  id: HypoMini
+  name: research-technology-mini-hypo
+  entityIcon: HypoMini
+  discipline: CivilianServices
+  tier: 2
+  cost: 12500
+  recipeUnlocks:
+  - HypoMini
+  technologyPrerequisites:
+  - IndustrialMedicine
+  position: 10, 12
+
 # Tier 3
 - type: technology
   id: Implants
@@ -15,7 +62,7 @@
   - DexRightHand
   technologyPrerequisites:
   - CyberneticEnhancements
-  position: -2, 13
+  position: 6, 7
 
 - type: technology
   id: CyberneticOrgans
@@ -29,7 +76,7 @@
   - BasicCyberneticLungs
   technologyPrerequisites:
   - Implants
-  position: -2, 14
+  position: 6, 6
 
 - type: technology
   id: CyberneticLiver
@@ -42,7 +89,7 @@
   - BasicCyberneticLiver
   technologyPrerequisites:
   - CyberneticOrgans
-  position: -3, 14
+  position: 5, 6
 
 - type: technology
   id: UpgradedCyberneticOrgans
@@ -57,4 +104,32 @@
   technologyPrerequisites:
   - CyberneticOrgans
   - HighEndSurgery
-  position: -2, 15
+  position: 6, 5
+
+- type: technology
+  id: HypoBrigmedic
+  name: research-technology-hypo-brigmedic
+  entityIcon: HypoBrigmedic
+  discipline: CivilianServices
+  tier: 3
+  cost: 25000
+  recipeUnlocks:
+  - HypoBrigmedic
+  technologyPrerequisites:
+  - HypoMini
+  position: 10, 9
+
+- type: technology
+  id: HypoMiniLimitedEdition
+  name: research-technology-mini-hypo-lim
+  entityIcon: HypoMiniLimitedEdition
+  discipline: CivilianServices
+  tier: 3
+  cost: 35000
+  recipeUnlocks:
+  - HypoMiniLimitedEdition
+  technologyPrerequisites:
+  - HypoBrigmedic
+  - SuperParts
+  - BluespaceChemistry
+  position: 10, 8

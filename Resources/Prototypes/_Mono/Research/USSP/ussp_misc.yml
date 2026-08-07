@@ -3,14 +3,14 @@
   id: UsspMediumExplosives
   name: research-technology-ussp-explosives-medium
   entityIcon: GrenadeShrapnel
-  discipline: Ussp
+  discipline: Arsenal # LuaM: Ussp > Arsenal
   tier: 1
   cost: 60000
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
+  - PrintableExplosives # LuaM: UniversalMaterialResearchT1 > PrintableExplosives
   recipeUnlocks:
   - GrenadeShrapnelUSSP
   - GrenadeIncendiaryUSSP
   - SeismicChargeUSSP
   - TearGasGrenadeUSSP
-  position: 12, 3
+  position: 9, 10 # LuaM: 12, 3 > 9, 10

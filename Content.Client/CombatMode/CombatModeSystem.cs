@@ -2,10 +2,13 @@ using Content.Client.Hands.Systems;
 using Content.Client.NPC.HTN;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
+using Content.Shared.StatusIcon.Components; // Europa
+using Robust.Client.GameObjects; // Europa
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Utility; // Europa
 
 namespace Content.Client.CombatMode;
 
@@ -21,14 +24,18 @@ public sealed partial class CombatModeSystem : SharedCombatModeSystem
     /// Raised whenever combat mode changes.
     /// </summary>
     public event Action<bool>? LocalPlayerCombatModeUpdated;
+    private EntityQuery<SpriteComponent> _spriteQuery; // Europa
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CombatModeComponent, AfterAutoHandleStateEvent>(OnHandleState);
-
+        SubscribeLocalEvent<CombatModeComponent, GetStatusIconsEvent>(UpdateCombatModeIndicator); // Europa
         Subs.CVar(_cfg, CCVars.CombatModeIndicatorsPointShow, OnShowCombatIndicatorsChanged, true);
+        Subs.CVar(_cfg, CCVars.CombatIndicator, (bool value) => OnShowCombatIndicatorChanged(value), true); // Europa
+
+        _spriteQuery = GetEntityQuery<SpriteComponent>(); // Europa
     }
 
     private void OnHandleState(EntityUid uid, CombatModeComponent component, ref AfterAutoHandleStateEvent args)
@@ -91,4 +98,47 @@ public sealed partial class CombatModeSystem : SharedCombatModeSystem
             _overlayManager.RemoveOverlay<CombatModeIndicatorsOverlay>();
         }
     }
+
+    // Europa-Start
+    private bool _combatIndicatorEnabled = false;
+
+    private void OnShowCombatIndicatorChanged(bool value)
+    {
+        _combatIndicatorEnabled = value;
+    }
+
+    private void UpdateCombatModeIndicator(EntityUid uid, CombatModeComponent comp, ref GetStatusIconsEvent _)
+    {
+        if (!_combatIndicatorEnabled)
+        {
+            if (_spriteQuery.TryComp(uid, out var sprite) && sprite.LayerMapTryGet("combat_mode_indicator", out var layerToRemove))
+            {
+                sprite.RemoveLayer(layerToRemove);
+            }
+            return;
+        }
+
+        if (comp.IsInCombatMode)
+        {
+            if (!_spriteQuery.TryComp(uid, out var sprite))
+                return;
+
+            if (!sprite.LayerMapTryGet("combat_mode_indicator", out var layer))
+            {
+                if (!_spriteQuery.TryComp(uid, out var sprite2))
+                    return;
+
+                layer = sprite2.AddLayer(new SpriteSpecifier.Rsi(new ResPath("_Europa/Effects/combat_mode.rsi"), "combat_mode"));
+                sprite2.LayerMapSet("combat_mode_indicator", layer);
+            }
+        }
+        else
+        {
+            if (_spriteQuery.TryComp(uid, out var sprite) && sprite.LayerMapTryGet("combat_mode_indicator", out var layerToRemove))
+            {
+                sprite.RemoveLayer(layerToRemove);
+            }
+        }
+    }
+    // Europa-End
 }

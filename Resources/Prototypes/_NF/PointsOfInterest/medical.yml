@@ -15,7 +15,7 @@
   minimumDistance: 1650
   maximumDistance: 2700
   spawnGroup: Required
-  gridPath: /Maps/_NF/POI/medical.yml
+  gridPath: /Maps/_LuaM/POI/MedicalLuaM.yml # LuaM: /Maps/_NF/POI/medical.yml > /Maps/_LuaM/POI/MedicalLuaM.yml
   addComponents:
   - type: IFF
     color: "#00b7eb"
@@ -24,7 +24,7 @@
 - type: gameMap
   id: Medical
   mapName: 'Medical Dispatch'
-  mapPath: /Maps/_NF/POI/medical.yml
+  mapPath: /Maps/_LuaM/POI/MedicalLuaM.yml # LuaM: /Maps/_NF/POI/medical.yml > /Maps/_LuaM/POI/MedicalLuaM.yml
   minPlayers: 0
   stations:
     Medical:

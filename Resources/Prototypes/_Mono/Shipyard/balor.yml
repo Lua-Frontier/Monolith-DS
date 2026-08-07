@@ -22,7 +22,7 @@
   minPlayers: 0
   stations:
     Balor:
-      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
+      stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Balor MIL{1}'

@@ -91,7 +91,7 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    fireRate: 8.5
+    fireRate: 10 # LuaM: 8.5 > 10
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/atreides_fire.ogg
   - type: MagazineVisuals
@@ -101,6 +101,8 @@
   - type: Appearance
   - type: StaticPrice # Mono
     price: 2000
+  - type: ChamberMagazineAmmoProvider # LuaM add
+    autoEject: true
   - type: ItemSlots
     slots:
        gun_magazine:

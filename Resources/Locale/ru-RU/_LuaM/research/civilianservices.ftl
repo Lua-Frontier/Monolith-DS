@@ -1,0 +1,9 @@
+research-technology-implants = Продвинутое протезирование
+research-technology-cybernetic-organs = Усиления организма
+research-technology-cybernetic-liver = Искусственная фильтрация
+research-technology-upgraded-cybernetic-organs = Выживание в вакууме
+research-technology-advanced-hydroponics = Продвинутая гидропоника
+research-technology-mini-hypo = Простейшие инъекторы
+research-technology-hypo-brigmedic = Продвинутые инъекторы
+research-technology-mini-hypo-lim = Карманные инъекторы
+research-technology-timer = Отсчёт времени

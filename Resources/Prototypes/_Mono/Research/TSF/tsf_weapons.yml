@@ -12,7 +12,8 @@
   - WeaponRifleMR3CTSF
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 12, 2
+  - MercArmementSimple # LuaM
+  position: 8, 13 # LuaM: 12, 2 > 8, 13
 
 - type: technology
   id: TsfAdvancedWeapons
@@ -20,7 +21,7 @@
   entityIcon: WeaponRifleAnnie
   discipline: TsfmcWeaponry
   tier: 2
-  cost: 30000
+  cost: 50000 # LuaM: 30000 > 50000
   recipeUnlocks:
   - WeaponRifleAnnieTSF
   - WeaponLMGGrizzlyTSF
@@ -32,7 +33,7 @@
   technologyPrerequisites:
   - TsfBasicGuns
   - UniversalMaterialResearchT2
-  position: 12, 8
+  position: 8, 10 # LuaM: 12, 8 > 8, 10
 
 - type: technology
   id: TsfSuperWeapons
@@ -40,7 +41,7 @@
   entityIcon: WeaponRifleXlr556
   discipline: TsfmcWeaponry
   tier: 3
-  cost: 30000
+  cost: 75000 # LuaM: 30000 > 75000
   recipeUnlocks:
   - WeaponRifleXlr556Tsf
   - WeaponRifleMR8CTSF
@@ -55,4 +56,4 @@
   technologyPrerequisites:
   - TsfAdvancedWeapons
   - UniversalMaterialResearchT3
-  position: 12, 13
+  position: 8, 7 # LuaM: 12, 13 > 8, 7

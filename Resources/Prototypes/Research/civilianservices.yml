@@ -6,17 +6,17 @@
   entityIcon: hydroponicsTray
   discipline: CivilianServices
   tier: 1
-  cost: 5000
+  cost: 10000 # LuaM: 5000 > 10000
   recipeUnlocks:
-  - BorgModuleGardening
-  - BorgModuleHarvesting
-  - PlantBagOfHolding
+#  - BorgModuleGardening # Commented by LuaM
+#  - BorgModuleHarvesting # Commented by LuaM
+#  - PlantBagOfHolding # Commented by LuaM
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
-  - PlantAnalyzer # Frontier
-  - NFBlueprintPlantAnalyzer # Frontier
-  - NFBlueprintPlantBagOfHolding # Frontier
+#  - PlantAnalyzer # Frontier # Commented by LuaM
+#  - NFBlueprintPlantAnalyzer # Frontier # Commented by LuaM
+#  - NFBlueprintPlantBagOfHolding # Frontier # Commented by LuaM
   # Mono edit start
   - FauxTileAstroGrass
   - FauxTileMowedAstroGrass
@@ -25,16 +25,16 @@
   - FauxTileAstroSnow
   - FauxTileAstroAsteroidSand
   technologyPrerequisites:
-  - BasicParts
-  position: 3, -1
+  - FoodService # LuaM: BasicParts > FoodService
+  position: 4, 12 # LuaM: 3, -1 > 4, 12
 
 - type: technology
   id: CritterMechs
   name: research-technology-critter-mechs
   entityIcon: MechHamtrBattery
-  discipline: CivilianServices
+  discipline: MechaEngineering # LuaM: CivilianServices > MechaEngineering
   tier: 1
-  cost: 5000
+  cost: 15000 # LuaM: 5000 > 15000
   recipeUnlocks:
   - HamtrHarness
   - HamtrLArm
@@ -47,7 +47,7 @@
   - VimHarness
   technologyPrerequisites:
   - MechBasic
-  position: 3, 10
+  position: 6, 12 # LuaM: 3, 10 > 6, 12
 
 - type: technology
   id: AudioVisualCommunication
@@ -74,7 +74,7 @@
   # Mono edit end
   technologyPrerequisites:
   - BasicParts
-  position: 2, -2
+  position: 6, 13 # LuaM: 2, -2 > 6, 13
 
 # Mono edit - research consolidation
 # - type: technology
@@ -159,7 +159,7 @@
   - SyringeCryostasis
   technologyPrerequisites:
   - IndustrialMedicine
-  position: -4, 11
+  position: 8, 10 # LuaM: -4, 11 > 8, 10
 
 # Shitmed Change Start
 - type: technology
@@ -180,8 +180,8 @@
   - DefibrillatorCompact # Mono
   technologyPrerequisites:
   - SuperParts
-  - IndustrialMedicine
-  position: -2, 11
+  - BiochemicalStasis # LuaM: IndustrialMedicine > BiochemicalStasis
+  position: 7, 9 # LuaM: -2, 11 > 7, 9
 
 - type: technology
   id: CyberneticEnhancements
@@ -203,7 +203,7 @@
   - DiagnosticCyberneticEyes # LuaM
   technologyPrerequisites:
   - AdvancedTreatment
-  position: -2, 12
+  position: 6, 8 # LuaM: -2, 12 > 6, 8
 # Shitmed Change End
 
 # Mono edit
@@ -224,16 +224,16 @@
   - ClothingBackpackWaterTank
   - JanicartFlatpack
   technologyPrerequisites:
-  - BasicParts
-  position: 2, -3
+  - AdvancedParts # LuaM: BasicParts > AdvancedParts
+  position: 2, 11 # LuaM: 2, -3 > 2, 11
 
 - type: technology
   id: HONKMech
   name: research-technology-honk-mech
   entityIcon: MechHonkerFilled
-  discipline: CivilianServices
+  discipline: MechaEngineering # LuaM: CivilianServices > MechaEngineering
   tier: 2
-  cost: 15000
+  cost: 25000 # LuaM: 15000 > 25000
   recipeUnlocks:
   - HonkerHarness
   - HonkerLArm
@@ -248,7 +248,7 @@
   - MechEquipmentHonkerMousetrapMortar
   technologyPrerequisites:
   - CritterMechs
-  position: 4, 10
+  position: 6, 10 # LuaM: 4, 10> 6, 10
 
 # Mono edit - research consolidation
 # - type: technology
@@ -309,6 +309,6 @@
   - NFBlueprintJugBluespace # Frontier
   - NFBlueprintVialBluespace # Frontier
   technologyPrerequisites:
-  - SuperParts
+#  - SuperParts # Commented by LuaM
   - BiochemicalStasis
-  position: -4, 12
+  position: 8, 8 # LuaM: -4, 12 > 8, 8

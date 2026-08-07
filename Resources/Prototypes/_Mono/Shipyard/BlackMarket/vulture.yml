@@ -18,7 +18,9 @@
   - Frigate
   engine:
   - AME
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#E03131FF"
 - type: gameMap
   id: Vulture
   mapName: 'AN Vulture' # LuaM: 'UI Vulture' > 'AN Vulture'
@@ -32,7 +34,7 @@
         description: "Its rumored that a Vulture razed a small planet on its own. Now its your turn to find out for yourself."
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Vulture PDV{1}'
+          mapNameTemplate: 'Vulture AN{1}' # LuaM: PDV > AN
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

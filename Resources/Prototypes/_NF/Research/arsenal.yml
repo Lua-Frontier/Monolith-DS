@@ -4,7 +4,7 @@
 - type: technology
   id: BountyHunting
   name: research-technology-bounty-hunting
-  entityIcon: ClothingOuterCoatBHTrench
+  entityIcon: Bola # LuaM: ClothingOuterCoatBHTrench > Bola
   discipline: Arsenal
   tier: 1
   cost: 10000
@@ -12,8 +12,8 @@
   - Stunbaton
   - BolaNF
   - Handcuffs
-  - ClothingOuterArmorBulletproofNF
-  - ClothingOuterCoatBHTrench
+#  - ClothingOuterArmorBulletproofNF # Commented by LuaM
+#  - ClothingOuterCoatBHTrench # Commented by LuaM
   - PinpointerUniversalNF
   - ClothingEyesHudBountyHunter
   # - WeaponShotgunKammererNF # _Mono: Moved to merc weapon research
@@ -22,26 +22,26 @@
   - KatanaNF
   - KukriKnifeNF
   - MacheteNF
-  - ClothingEyesPunkInfoShades
-  - ClothingOuterArmorPunkRandomized
-  - ClothingOuterArmorPunkRed
-  - ClothingOuterArmorPunkGreen
-  - ClothingOuterArmorPunkOrange
-  - ClothingOuterArmorElitePunkRandomized
-  - ClothingBeltPunkRandomized
-  - ClothingShoesBootsPunkRandomized
-  - ClothingEyesPunkGoggles
-  - ClothingEyesPunkInfoShades
-  - ClothingMaskPunkHalf
-  - ClothingUniformRandomPunkTanktop
-  - ClothingUniformRandomPunkTanktopShorts
-  - ClothingUniformRandomPunkCroptop
-  - ClothingUniformRandomPunkCroptopShorts
-  - ClothingOuterCoatLettermanRandomized
-  - ClothingOuterCoatBomberRandomized
+#  - ClothingEyesPunkInfoShades # Commented by LuaM
+#  - ClothingOuterArmorPunkRandomized # Commented by LuaM
+#  - ClothingOuterArmorPunkRed # Commented by LuaM
+#  - ClothingOuterArmorPunkGreen # Commented by LuaM
+#  - ClothingOuterArmorPunkOrange # Commented by LuaM
+#  - ClothingOuterArmorElitePunkRandomized # Commented by LuaM
+#  - ClothingBeltPunkRandomized # Commented by LuaM
+#  - ClothingShoesBootsPunkRandomized # Commented by LuaM
+#  - ClothingEyesPunkGoggles # Commented by LuaM
+#  - ClothingEyesPunkInfoShades # Commented by LuaM
+#  - ClothingMaskPunkHalf # Commented by LuaM
+#  - ClothingUniformRandomPunkTanktop # Commented by LuaM
+#  - ClothingUniformRandomPunkTanktopShorts # Commented by LuaM
+#  - ClothingUniformRandomPunkCroptop # Commented by LuaM
+#  - ClothingUniformRandomPunkCroptopShorts # Commented by LuaM
+#  - ClothingOuterCoatLettermanRandomized # Commented by LuaM 
+#  - ClothingOuterCoatBomberRandomized # Commented by LuaM
   technologyPrerequisites:
   - AdvancedRiotControl
-  position: 3, 2
+  position: 7, 12 # LuaM: 3, 2 > 7, 12
 
 # Tier 2
 
@@ -49,7 +49,7 @@
   id: MagnetsTechCombat
   name: research-technology-magnets-tech-combat
   entityIcon: ClothingShoesBootsMagSecurity
-  discipline: Experimental
+  discipline: Arsenal # LuaM: Experimental > Arsenal
   tier: 1
   cost: 10000
   recipeUnlocks:
@@ -57,8 +57,8 @@
   - ClothingShoesBootsMagMercenary
   technologyPrerequisites:
   - MagnetsTech
-  - AdvancedParts
-  position: -3, -1
+#  - AdvancedParts # Commented by LuaM
+  position: 4, 13 # LuaM: -3, -1 > 4, 13
 
 - type: technology
   id: HardsuitsArmored
@@ -71,9 +71,10 @@
   - ClothingOuterHardsuitMercenary
   - ClothingOuterHardsuitPrivateSecurity
   technologyPrerequisites:
-  - HardsuitsSpecialized
+  - MagnetsTechCombat # LuaM: HardsuitsSpecialized > MagnetsTechCombat
   - HardsuitsAdvanced
-  position: 2, 8
+  - ArmorAdvanced # LuaM
+  position: 4, 10 # LuaM: 2, 8 > 4, 10
 
 # Mono edit - research consolidation
 # - type: technology
@@ -124,4 +125,4 @@
   technologyPrerequisites:
   - HardsuitsArmored
   - SuperParts
-  position: 3, 7
+  position: 4, 7 # LuaM: 3, 7 > 4, 7

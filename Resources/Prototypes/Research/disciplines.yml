@@ -9,7 +9,7 @@
     1: 0
     2: 0.75
     3: 0.75
-  uiName: IND  # Goobstation
+  uiName: research-discipline-industrial # Goobstation # LuaM: IND > research-discipline-industrial
 
 - type: techDiscipline
   id: Arsenal
@@ -22,7 +22,7 @@
     1: 0
     2: 0.75
     3: 0.75
-  uiName: SEC  # Goobstation
+  uiName: research-discipline-arsenal  # Goobstation # LuaM: SEC > research-discipline-arsenal
 
 - type: techDiscipline
   id: Experimental
@@ -35,7 +35,7 @@
     1: 0
     2: 0.75
     3: 0.75
-  uiName: EXP  # Goobstation
+  uiName: research-discipline-experimental # Goobstation # LuaM: EXP > research-discipline-experimental
 
 - type: techDiscipline
   id: CivilianServices
@@ -48,4 +48,4 @@
     1: 0
     2: 0.75
     3: 0.75
-  uiName: SRV  # Goobstation
+  uiName: research-discipline-civilian-services  # Goobstation # LuaM: SRV > research-discipline-civilian-services

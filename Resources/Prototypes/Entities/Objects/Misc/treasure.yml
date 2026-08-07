@@ -18,6 +18,9 @@
     color: "#0000ff"
   - type: StaticPrice
     price: 500
+  - type: Tag # LuaM
+    tags:
+    - DatadiskEncrypted
 
 - type: entity
   parent: BaseItem

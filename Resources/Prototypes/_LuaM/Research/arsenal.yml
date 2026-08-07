@@ -1,0 +1,79 @@
+- type: technology
+  id: ArmorBasic
+  name: research-technology-armor-basic
+  entityIcon: ClothingOuterArmorBasic
+  discipline: Arsenal
+  tier: 1
+  cost: 8500
+  recipeUnlocks:
+  - ClothingOuterVestWebMercenaryBlack
+  - ClothingOuterVestWebMercenary
+  - ClothingOuterArmorBasic
+  - ClothingOuterArmorBasicSlim
+  - ClothingHeadHelmetMercenary
+  - ClothingHeadHelmetMercenaryBlack
+  - ClothingHeadHelmetBasic
+  technologyPrerequisites:
+  - BasicParts
+  position: 2, 13
+
+- type: technology
+  id: PunkGear
+  name: research-technology-punk-gear
+  entityIcon: ClothingOuterCoatBomberPunkRed
+  discipline: Arsenal
+  tier: 1
+  cost: 12500
+  recipeUnlocks:
+  - ClothingEyesPunkInfoShades
+  - ClothingOuterArmorPunkRandomized
+  - ClothingOuterArmorPunkRed
+  - ClothingOuterArmorPunkGreen
+  - ClothingOuterArmorPunkOrange
+  - ClothingOuterArmorElitePunkRandomized
+  - ClothingBeltPunkRandomized
+  - ClothingShoesBootsPunkRandomized
+  - ClothingEyesPunkGoggles
+  - ClothingEyesPunkInfoShades
+  - ClothingMaskPunkHalf
+  - ClothingUniformRandomPunkTanktop
+  - ClothingUniformRandomPunkTanktopShorts
+  - ClothingUniformRandomPunkCroptop
+  - ClothingUniformRandomPunkCroptopShorts
+  - ClothingOuterCoatLettermanRandomized
+  - ClothingOuterCoatBomberRandomized
+  technologyPrerequisites:
+  - ArmorBasic
+  position: 1, 12
+
+- type: technology
+  id: ArmorAdvanced
+  name: research-technology-armor-advanced
+  entityIcon: ClothingOuterArmorBulletproof
+  discipline: Arsenal
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - ClothingOuterArmorBulletproofNF
+  - ClothingOuterArmorRiot
+  - ClothingOuterArmorReflective
+  - ClothingOuterCoatBHTrench
+  - ClothingHeadHelmetRiot
+  technologyPrerequisites:
+  - ArmorBasic
+  position: 2, 10
+
+- type: technology
+  id: GlassesContractor
+  name: research-technology-glasses-contractor
+  entityIcon: ClothingEyesGlassesContractor
+  discipline: Arsenal
+  tier: 3
+  cost: 50000
+  recipeUnlocks:
+  - ClothingEyesGlassesContractor
+  technologyPrerequisites:
+  - HardsuitsArmoredAdvanced
+  - ThermalVisionTech
+  - CyberneticEnhancements
+  position: 4, 5

@@ -1,0 +1,6 @@
+- type: entity
+  parent: EdibleBase
+  id: FoodBaseNorot
+  abstract: true
+  components:
+  - type: SpaceGarbage

@@ -117,8 +117,8 @@
   - MediumMechCoilgun
   - MediumMechTOW
   - HeavyMechRPG
-  - HeavyMechCannon
-  - HeavyMechProjector
+#  - HeavyMechCannon # Commented by LuaM
+#  - HeavyMechProjector # Commented by LuaM
   - EWACMechaJammer
   - EWACMechaFlares
 

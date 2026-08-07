@@ -14,6 +14,7 @@
   recipes:
   - EnergyShieldTSF
   - CrowbarPocketTSF
+  - EnergySwordTSF # LuaM
 
 - type: latheRecipePack
   id: MonoTSFWeaponsDynamicRanged
@@ -47,10 +48,11 @@
   recipes:
   - ForensicsScannerTSF
   - DemagTSF
-  - SutureTSF
-  - MeshTSF
+#  - SutureTSF # Commented by LuaM
+#  - MeshTSF # Commented by LuaM
   - NanolaminateFoamGrenadeTSF
   - PortableRecharger
   - MotionDetectorTSF
   - BasicBorgCombatModuleTSF
   - AdvancedBorgCombatModuleTSF
+  - Hypospray # LuaM

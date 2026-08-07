@@ -111,21 +111,21 @@
 - type: entity
   id: 120mmBulletHE
   name: 120mm Shell
-  parent: BulletRocket
+  parent: ShipLeviathanProjectile # LuaM: BulletRocket > ShipLeviathanProjectile
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 60
-        Blunt: 50
-        Structural: 250
+        Piercing: 240 # LuaM: 60 > 240
+        Blunt: 200 # LuaM: 50 > 200
+        Structural: 750 # LuaM: 250 > 750
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    maxIntensity: 15
+    maxIntensity: 60 # LuaM: 15 > 60
     intensitySlope: 20
-    totalIntensity: 15
+    totalIntensity: 60 # LuaM: 15 > 60
     maxTileBreak: 1
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/630_armorpiercing_shell_casing.rsi
@@ -322,9 +322,9 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 25
-        Structural: 400
-        Heat: 50
+        Radiation: 100 # LuaM: 25 > 100
+        Structural: 1200 # LuaM: 400 > 1200
+        Heat: 200 # LuaM: 50 > 200
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -337,13 +337,13 @@
     scale: 2.5
     shape: triangle
   - type: TimedDespawn
-    lifetime: 8
+    lifetime: 4 # LuaM: 8 > 4
   - type: PointLight
     color: "#FF0040"
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 25
+    totalIntensity: 100 # LuaM: 25 > 100
     intensitySlope: 12
-    maxIntensity: 15
+    maxIntensity: 60 # LuaM: 15 > 60
     maxTileBreak: 1

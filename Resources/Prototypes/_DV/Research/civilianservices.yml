@@ -10,4 +10,4 @@
     - MiniSyringe
   technologyPrerequisites:
   - IndustrialMedicine
-  position: -5, 11
+  position: 9, 11 # LuaM: -5, 11 > 9, 11

@@ -1,4 +1,4 @@
-research-technology-broadsword = S2 Мехи
-research-technology-broadsword-subtypes = Продвинутые S2 Мехи
-research-technology-flail = S4 Мехи
-research-technology-flail-subtypes = S4 Боевые мехи
+research-technology-broadsword = Производство S2-механоидов
+research-technology-broadsword-subtypes = Производство продвинутых S2-механоидов
+research-technology-flail = Производство S4-механоидов
+research-technology-flail-subtypes = Производство продвинутых S4-механоидов

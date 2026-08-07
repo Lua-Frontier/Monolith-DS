@@ -26,7 +26,7 @@
   - MechEquipmentKineticAccelerator # Goobstation
   technologyPrerequisites:
   - BasicParts
-  position: -1, 1
+  position: 4, 13 # LuaM: -1, 1 > 4, 13
 
 - type: technology
   id: SpaceScanning
@@ -40,8 +40,8 @@
   - HandHeldMassScanner
   - BorgModuleGPS
   technologyPrerequisites:
-  - BasicParts
-  position: -2, 0
+  - SalvageEquipment # LuaM: BasicParts > SalvageEquipment
+  position: 3, 12 # LuaM: -2, 0 > 3, 12
 
 # - type: technology
 #   id: AdvancedPowercells
@@ -76,7 +76,7 @@
   - NFBlueprintRped
   technologyPrerequisites:
   - AdvancedParts
-  position: -1, 8
+  position: 1, 11 # LuaM: -1, 8 > 1, 11 
 # Mono edit end
 
 - type: technology
@@ -106,7 +106,7 @@
   - SheetifierMachineCircuitboard
   technologyPrerequisites:
   - MechanicalCompression
-  position: -1, 7
+  position: 2, 10 # LuaM: -1, 7 > 2, 10 
 
 # Mono edit
 - type: technology
@@ -134,7 +134,8 @@
   - PowerCageRechargerCircuitboard # Mono
   technologyPrerequisites:
   - AdvancedParts
-  position: -2, 8
+  - SpaceScanning
+  position: 13, 10 # LuaM: -2, 8 > 13, 10
 
 - type: technology
   id: AtmosphericTech
@@ -148,8 +149,8 @@
   - GasRecyclerMachineCircuitboard
   - FanElectronics # LuaM
   technologyPrerequisites:
-  - BasicParts
-  position: -2, 1
+  - PowerGeneration # LuaM: BasicParts > PowerGeneration
+  position: 14, 9 # LuaM: -2, 1 > 14, 9
 
 # Tier 2
 
@@ -169,8 +170,12 @@
   - SmallThrusterMachineCircuitboard # Frontier
   - SmallGyroscopeMachineCircuitboard # Frontier
   technologyPrerequisites:
-  - AdvancedParts
-  position: -5, 7
+#  - AdvancedParts # Commented by LuaM
+# LuaM-start:
+  - SpaceScanning
+  - PowerGeneration
+# LuaM-end.
+  position: 6, 12 # LuaM: -5, 7 > 6, 12
 
 - type: technology
   id: AdvancedAtmospherics
@@ -187,7 +192,7 @@
   #  - FireExtinguisherBluespace # DeltaV
   technologyPrerequisites:
   - AtmosphericTech
-  position: -2, 2
+  position: 14, 8 # LuaM: -2, 2 > 14, 8
 
 - type: technology
   id: AdvancedToolsTechnology
@@ -195,7 +200,7 @@
   entityIcon: WelderExperimental
   discipline: Industrial
   tier: 2
-  cost: 23500
+  cost: 25000 # LuaM: 23500 > 25000
   recipeUnlocks:
   - WelderExperimental
   - PowerDrill
@@ -218,8 +223,9 @@
   - NFBlueprintRCDAmmo
   # Mono edit end 
   technologyPrerequisites:
-  - SuperParts
-  position: -1, 18
+  - SuperParts 
+  - MassExcavation # LuaM
+  position: 4, 6 # LuaM: -1, 18 > 4, 6
 
 - type: technology
   id: MassExcavation
@@ -227,7 +233,7 @@
   entityIcon: MiningDrillDiamond
   discipline: Industrial
   tier: 2
-  cost: 15000 # aint that good tbh.
+  cost: 25000 # aint that good tbh. # LuaM: 15000 > 25000
   recipeUnlocks:
   - OreBagOfHolding
   - MiningDrillDiamond
@@ -238,9 +244,9 @@
   - BorgModuleAdvancedMining # Frontier
   - MechEquipmentDrillDiamond
   technologyPrerequisites:
-  - SalvageEquipment
+  - SpaceScanning # LuaM: SalvageEquipment > SpaceScanning
   - AdvancedParts
-  position: -1, 2
+  position: 4, 11 # LuaM: -1, 2 > 4, 11
 
 # Tier 3
 
@@ -279,7 +285,7 @@
   technologyPrerequisites:
   - PowerGeneration
   - SuperParts
-  position: -2, 7
+  position: 12, 7 # LuaM: -2, 7 > 12, 7
 
 # Mono edit - research consolidation
 # - type: technology

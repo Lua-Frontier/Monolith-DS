@@ -149,6 +149,7 @@
     - TechDiskBulldog
     - TechDiskShields
     - TechDiskFtl
+    - TechDiskDataFarm # LuaM
     chance: 0.95
     offset: 0.0
     rarePrototypes:
@@ -175,6 +176,7 @@
     - TechDiskHristov
     - TechDiskMla73
     - TechDiskUniversalShipAmmoAdvanced
+    - TechDiskDataFarm # LuaM
     chance: 0.95
     offset: 0.0
     rarePrototypes:
@@ -198,6 +200,7 @@
     prototypes:
     - TechDiskBluespaceBags
     - TechDiskTranslationPreFracture
+    - TechDiskDataFarm # LuaM
     chance: 0.95
     offset: 0.0
     rarePrototypes:

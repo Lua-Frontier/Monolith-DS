@@ -13,3 +13,13 @@
   name: lathe-recipe-JerryCan-name
   materials:
     Plastic: 250
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: PortableScreenTimer
+  result: PortableScreenTimer
+  materials:
+    Wood: 300
+    Steel: 100
+    Glass: 200
+    Silver: 50

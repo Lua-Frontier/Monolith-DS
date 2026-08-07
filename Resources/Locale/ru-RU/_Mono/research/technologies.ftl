@@ -1,5 +1,5 @@
-research-technology-merc-armement-simple = Простое производство наёмнического оружия
-research-technology-merc-armement-advanced = Продвинутое производство наёмнического оружия
+research-technology-merc-armement-simple = Производство простого вооружения
+research-technology-merc-armement-advanced = Производство продвинутого вооружения
 
 research-technology-printable-explosives = Взрывчатые устройства
 
@@ -12,8 +12,10 @@ research-technology-ullmansuits-high-end = U.I. Высококачественн
 
 research-technology-advanced-melee-combat-options = Расширенные возможности ведения ближнего боя
 
-research-technology-mechs-base = Базовое производство мехов
-research-technology-mechs-combat = Производство боевых мехов
+research-technology-mechs-base = Базовое производство механоидов
+research-technology-mechs-combat = Производство боевых механоидов
 
-research-technology-basic-economy = Портативное технологическое оборудование
+research-technology-basic-economy = Базовая переработка урана
 research-technology-uranium-processing-advanced = Усовершенствованная переработка урана
+
+research-technology-drones-1 = Работа с дронами

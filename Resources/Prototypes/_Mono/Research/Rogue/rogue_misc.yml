@@ -14,7 +14,8 @@
   - SnakeletVoucherRogue
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 11, 1
+  - Shuttlecraft # LuaM
+  position: 8, 13 # LuaM: 11, 1 > 8, 13
 
 - type: technology
   id: PdvTierTwoVouchers
@@ -28,7 +29,8 @@
   technologyPrerequisites:
   - PdvTierOneVouchers
   - UniversalMaterialResearchT2
-  position: 11, 7
+  - ShuttleAdvancedComponents # LuaM
+  position: 8, 11 # LuaM: 11, 7 > 8, 11
 
 - type: technology
   id: PdvTierThreeVouchers
@@ -43,34 +45,37 @@
   technologyPrerequisites:
   - PdvTierTwoVouchers
   - UniversalMaterialResearchT3
-  position: 11, 12
+  - ShuttleCtlaAdvancedDriveResearch # LuaM
+  position: 8, 9 # LuaM: 11, 12 > 8, 9
 
 - type: technology
   id: RogueJaws
   name: research-technology-rogue-jaws
-  entityIcon: JawsOfLife
+  entityIcon: SyndicateJawsOfLife # LuaM: JawsOfLife > SyndicateJawsOfLife
   discipline: RogueGear
   tier: 1
   cost: 10000
   recipeUnlocks:
   - JawsOfLifeRogue
-  # - NaniteApplicatorSyndicate Commented by LuaM  
+  # - NaniteApplicatorSyndicate Commented by LuaM
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 12, -1
+  - AdvancedToolsTechnology # LuaM
+  position: 8, 13 # LuaM: 12, -1 > 8, 13
 
 - type: technology
   id: RogueHypospray
   name: research-technology-rogue-hypospray
-  entityIcon: Hypospray
+  entityIcon: SyndiHypo # LuaM: Hypospray > SyndiHypo
   discipline: RogueGear
   tier: 2
-  cost: 10000
+  cost: 25000 # LuaM: 10000 > 25000
   recipeUnlocks:
   - HyposprayRogue
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 12, -2
+  - HypoMiniLimitedEdition # LuaM
+  position: 10, 13 # LuaM: 12, -2 > 10, 13
 
 - type: technology
   id: RogueEmag
@@ -84,20 +89,22 @@
   - AccessBreakerRogue
   technologyPrerequisites:
   - UniversalMaterialResearchT2
-  position: 12, 10
+  - SuperParts # LuaM
+  position: 6, 13 # LuaM: 12, 10 > 6, 13
 
-- type: technology
-  id: RogueThermals
-  name: research-technology-rogue-thermals
-  entityIcon: ClothingEyesThermalVisionGoggles
-  discipline: RogueGear
-  tier: 1
-  cost: 15000
-  recipeUnlocks:
-  - ClothingEyesThermalVisionGoggles
-  technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  position: 12, -3
+# Commented by LuaM
+#- type: technology
+#  id: RogueThermals
+#  name: research-technology-rogue-thermals
+#  entityIcon: ClothingEyesThermalVisionGoggles
+#  discipline: RogueGear
+#  tier: 1
+#  cost: 15000
+#  recipeUnlocks:
+#  - ClothingEyesThermalVisionGoggles
+#  technologyPrerequisites:
+#  - UniversalMaterialResearchT1
+#  position: 12, -3
 
 - type: technology
   id: PDVBasicBorgModule
@@ -110,7 +117,8 @@
   - BasicBorgCombatModulePDV
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 12, -4
+  - RogueJaws # LuaM
+  position: 8, 11 # LuaM: 12, -4 > 8, 11
 
 - type: technology
   id: PDVAdvancedBorgModule
@@ -118,10 +126,11 @@
   entityIcon: BorgModulePDVAdvancedWeapon
   discipline: RogueGear
   tier: 3
-  cost: 65000
+  cost: 35000 # LuaM: 65000 > 35000
   recipeUnlocks:
   - AdvancedBorgCombatModulePDV
   technologyPrerequisites:
   - UniversalMaterialResearchT3
   - PDVBasicBorgModule
-  position: 12, 15
+  - MechBasic # LuaM
+  position: 8, 9 # LuaM: 12, 15 > 8, 9

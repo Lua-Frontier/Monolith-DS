@@ -20,7 +20,9 @@
   - Patrol
   engine:
   - Plasma # LuaM: AME > Plasma
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Flyssa
   mapName: 'TSF-SKR Flyssa-K'

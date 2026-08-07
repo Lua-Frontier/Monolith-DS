@@ -18,7 +18,9 @@
   - Corvette
   engine:
   - Uranium
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#E03131FF"
 - type: gameMap
   id: Neptune
   mapName: 'AN Neptune' # LuaM: 'PDW Neptune' > 'AN Neptune'
@@ -29,7 +31,7 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Neptune PDV{1}'
+          mapNameTemplate: 'Neptune AN{1}' # LuaM: PDV > AN
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

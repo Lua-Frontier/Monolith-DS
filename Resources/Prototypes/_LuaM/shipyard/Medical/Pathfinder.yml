@@ -1,0 +1,41 @@
+# Author Info
+# Discord: Beresta (discord: karate7079)
+
+
+- type: vessel
+  id: Pathfinder
+  parent: BaseVessel
+  name: vessel-Pathfinder-name
+  description: vessel-Pathfinder-desc
+  limit: 2
+  price: 264000
+  category: Medium
+  group: Medical
+  shuttlePath: /Maps/_LuaM/Shuttles/Medical/Pathfinder.yml
+  guidebookPage: null
+  class:
+  - Medical
+  - Chemistry
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Pathfinder
+  mapName: 'MED-MIL Pathfinder'
+  mapPath: /Maps/_LuaM/Shuttles/Medical/Pathfinder.yml
+  minPlayers: 0
+  stations:
+    Pathfinder:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Pathfinder MIL{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            MdMedic: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

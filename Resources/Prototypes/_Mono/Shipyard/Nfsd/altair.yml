@@ -18,11 +18,13 @@
   - Patrol
   engine:
   - Plasma
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Altair
   mapName: 'Altair'
-  mapPath: /Maps/_LuaM/Shuttles/TSFMC/altair.yml # LuaM: /Maps/_Mono/Shuttles/Nfsd/altair.yml > /Maps/_LuaM/Shuttles/TSFMC/altair.yml 
+  mapPath: /Maps/_LuaM/Shuttles/TSFMC/altair.yml # LuaM: /Maps/_Mono/Shuttles/Nfsd/altair.yml > /Maps/_LuaM/Shuttles/TSFMC/altair.yml
   minPlayers: 0
   stations:
     Altair:
