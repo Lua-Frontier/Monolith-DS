@@ -1,3 +1,32 @@
+# Tier 1
+- type: technology
+  id: GasDepositLocator
+  name: research-technology-gas-locator
+  entityIcon: GasDepositLocator
+  discipline: Industrial
+  tier: 1
+  cost: 6500
+  recipeUnlocks:
+  - GasDepositLocator
+  technologyPrerequisites:
+  - AtmosphericTech
+  position: 12, 9
+
+# Tier 2
+- type: technology 
+  id: CrateBluespaceTechnology
+  name: research-technology-crate-bluespace
+  entityIcon: CrateBlueSpace
+  discipline: Industrial
+  tier: 2
+  cost: 25000
+  recipeUnlocks:
+  - CrateBluespaceElectronics
+  technologyPrerequisites:
+  - ConstructionBags
+  position: 6, 3
+
+# Tier 3
 - type: technology
   id: BlueSpaceAirTanks
   name: research-technology-bs-air-tanks
@@ -12,16 +41,3 @@
   - HardsuitsAdvanced
   - AdvancedAtmospherics
   position: 10, 5
-
-- type: technology
-  id: GasDepositLocator
-  name: research-technology-gas-locator
-  entityIcon: GasDepositLocator
-  discipline: Industrial
-  tier: 1
-  cost: 6500
-  recipeUnlocks:
-  - GasDepositLocator
-  technologyPrerequisites:
-  - AtmosphericTech
-  position: 12, 9

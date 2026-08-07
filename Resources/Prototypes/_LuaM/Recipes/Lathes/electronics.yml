@@ -2,3 +2,13 @@
   parent: BaseGoldCircuitboardRecipe
   id: DataFarmCryptoCircuitboard
   result: DataFarmCryptoCircuitboard
+
+- type: latheRecipe 
+  parent: BaseCircuitboardRecipe
+  id: FanElectronics
+  result: FanElectronics
+
+- type: latheRecipe 
+  parent: BaseBluespaceCircuitboardRecipe
+  id: CrateBluespaceElectronics
+  result: CrateBluespaceElectronics

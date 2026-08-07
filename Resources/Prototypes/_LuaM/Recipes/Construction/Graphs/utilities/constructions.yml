@@ -17,7 +17,6 @@
         icon:
           sprite: Objects/Misc/module.rsi
           state: door_electronics
-
   - node: AtmosDeviceFanDirectional
     entity: AtmosDeviceFanDirectional
     edges:
@@ -57,7 +56,6 @@
         icon:
           sprite: Objects/Misc/module.rsi
           state: door_electronics
-
   - node: AtmosDeviceFanTiny
     entity: AtmosDeviceFanTiny
     edges:
@@ -98,7 +96,6 @@
         icon:
           sprite: _LuaM/Objects/Misc/module.rsi
           state: bluespace_electronics
-
   - node: done
     entity: CrateBlueSpace
     edges:
@@ -142,7 +139,6 @@
         icon:
           sprite: _LuaM/Objects/Misc/module.rsi
           state: bluespace_electronics
-
   - node: done
     entity: CrateBlueSpaceDark
     edges:
@@ -186,7 +182,6 @@
         icon:
           sprite: _LuaM/Objects/Misc/module.rsi
           state: bluespace_electronics
-
   - node: done
     entity: BluespaceCloset
     edges:
@@ -230,7 +225,6 @@
         icon:
           sprite: _LuaM/Objects/Misc/module.rsi
           state: bluespace_electronics
-
   - node: done
     entity: BluespaceClosetDark
     edges:

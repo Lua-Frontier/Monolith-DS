@@ -28,7 +28,7 @@ materials-bones = кости
 materials-coal = уголь
 materials-diamond = очищенные бриллианты
 materials-gunpowder = чёрный порох
-materials-bluespace = блюспейс кристаллы
+materials-bluespace = блюспейс-кристаллы
 # Ores
 materials-raw-magmite = магмитовая руда
 materials-raw-iron = руда железа

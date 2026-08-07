@@ -7,7 +7,6 @@
   - type: Icon
     sprite: _LuaM/Structures/Storage/Crates/bscrates.rsi
     state: icon
-
   - type: Sprite
     sprite: _LuaM/Structures/Storage/Crates/bscrates.rsi
     layers:
@@ -22,15 +21,12 @@
       sprite: Structures/Storage/Crates/labels.rsi
       offset: "-0.5,0"
       map: ["enum.PaperLabelVisuals.Layer"]
-
   - type: EntityStorage
     capacity: 120
-
   - type: EntityStorageVisuals
     stateBaseClosed: base
     stateDoorClosed: closed
     stateDoorOpen: open
-
   - type: Destructible
     thresholds:
     - trigger:
@@ -49,9 +45,8 @@
           SheetPlasteel1:
             min: 2
             max: 3
-
   - type: StaticPrice
-    price: 7250
+    price: 625
 
 - type: entity
   parent: CrateBlueSpace
@@ -61,7 +56,6 @@
   components:
   - type: Icon
     state: icon_dark
-
   - type: Sprite
     layers:
     - state: base_dark
@@ -75,12 +69,10 @@
       sprite: Structures/Storage/Crates/labels.rsi
       offset: "-0.5,0"
       map: ["enum.PaperLabelVisuals.Layer"]
-
   - type: EntityStorageVisuals
     stateBaseClosed: base_dark
     stateDoorClosed: closed_dark
     stateDoorOpen: open_dark
-
   - type: Destructible
     thresholds:
     - trigger:
@@ -99,10 +91,7 @@
           SheetPlastitanium1:
             min: 2
             max: 3
-  - type: StaticPrice
-    price: 7250
   
-
 - type: entity
   parent: CrateGenericSteel
   id: CrateCult
@@ -112,7 +101,6 @@
   - type: Icon
     sprite: _LuaM/Structures/Storage/Crates/cult.rsi
     state: icon
-
   - type: Sprite
     sprite: _LuaM/Structures/Storage/Crates/cult.rsi
     layers:
@@ -127,7 +115,6 @@
       sprite: Structures/Storage/Crates/labels.rsi
       offset: "-0.5,0"
       map: ["enum.PaperLabelVisuals.Layer"]
-      
   - type: EntityStorageVisuals
     stateBaseClosed: base
     stateDoorClosed: closed
