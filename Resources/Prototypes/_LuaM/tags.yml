@@ -1,2 +1,18 @@
+# В алфавитном порядке!!!
+- type: Tag 
+  id: AnomalyCore
+
+- type: Tag 
+  id: CrateBluespaceElectronics
+
+- type: Tag 
+  id: DatadiskEncrypted
+
 - type: Tag 
   id: FanElectronics
+
+- type: Tag 
+  id: ScienceDevice
+
+- type: Tag 
+  id: XenoArtifact

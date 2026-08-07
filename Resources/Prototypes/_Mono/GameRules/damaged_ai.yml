@@ -82,15 +82,15 @@
   id: UnknownShuttleRazorN
   components:
   - type: StationEvent
-    startAnnouncement: station-event-ai-shuttle-detected
+    startAnnouncement: station-event-ai-razor-detected # LuaM: station-event-ai-shuttle-detected > station-event-ai-razor-detected
     startAudio:
       path: /Audio/Misc/delta_alt.ogg # LuaM: /Audio/Misc/notice1.ogg > /Audio/Misc/delta_alt.ogg
     weight: 2 # rare but not too rare since it's in the T2 spawner
-    maxOccurrences: 2
+    maxOccurrences: 1 # LuaM: 2 > 1
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 40 # LuaM: 15 > 40
   - type: LoadMapRule
-    gridPath: /Maps/_Mono/ShuttleEvent/razorn.yml
+    gridPath: /Maps/_LuaM/ShuttleEvent/razorn.yml # LuaM: /Maps/_Mono/ShuttleEvent/razorn.yml > /Maps/_LuaM/ShuttleEvent/razorn.yml
 
 - type: entity
   parent: BaseRandomShuttleRule
@@ -103,6 +103,6 @@
     weight: 1.5
     maxOccurrences: 1
   - type: GameRule
-    minPlayers: 60
+    minPlayers: 40 # LuaM: 60 > 40
   - type: LoadMapRule
-    gridPath: /Maps/_Mono/ShuttleEvent/wyvern.yml
+    gridPath: /Maps/_LuaM/ShuttleEvent/WyvernLuaM.yml # LuaM: /Maps/_Mono/ShuttleEvent/Wyvern.yml > /Maps/_LuaM/ShuttleEvent/WyvernLuaM.yml

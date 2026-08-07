@@ -5,3 +5,4 @@ research-console-menu-recenter-button = Центрировать
 research-console-menu-server-researched-button = Изученные
 research-console-tech-progress-rp = { $percent }% ОИ
 research-console-tech-progress-prereqs = { $percent }%
+research-console-menu-back-button = Назад

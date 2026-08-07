@@ -2,7 +2,7 @@
   id: ShuttleAdvancedComponents
   name: research-technology-shuttle-advanced-components
   entityIcon: ComputerAdvancedRadar
-  discipline: CivilianServices
+  discipline: Industrial # LuaM: CivilianServices > Industrial
   tier: 3
   cost: 55000
   recipeUnlocks:
@@ -19,14 +19,13 @@
   technologyPrerequisites:
   - Shuttlecraft
   - SuperParts
-  position: -6, 7
-
+  position: 6, 11 # LuaM: -6, 7 > 6, 11
 
 - type: technology
   id: ShuttleCtlaAdvancedDriveResearch
   name: research-technology-bluespace-drive-ctla-advanced
   entityIcon: MachineFTLDrive50
-  discipline: Experimental
+  discipline: Industrial # LuaM: CivilianServices > Industrial
   tier: 3
   cost: 45000
   recipeUnlocks:
@@ -34,5 +33,5 @@
   - MachineDriveCTLA50Circuitboard
   technologyPrerequisites:
   - ShuttleAdvancedComponents
-  - PortableFission
-  position: -6, 9
+#  - PortableFission # Commented by LuaM
+  position: 6, 10 # LuaM: -6, 9 > 6, 10

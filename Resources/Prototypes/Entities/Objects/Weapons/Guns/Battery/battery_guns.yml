@@ -847,6 +847,9 @@
     node: start
   - type: StaticPrice
     price: 100
+  - type: Tag # LuaM
+    tags:
+    - ScienceDevice
 
 - type: entity
   name: experimental C.H.I.M.P. handcannon

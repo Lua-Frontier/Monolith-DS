@@ -2,9 +2,9 @@
                  xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                  xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                  xmlns:goob="clr-namespace:Content.Client._Goobstation.Research.UI"
-                 Margin="4"
-                 HorizontalExpand="False">  <!-- Frontier: Margin="5" < Margin="4" -->
-    <BoxContainer Orientation="Vertical" SetSize="64 64"> <!-- Frontier: "80 80" < "64 64" -->
+                 Margin="6"
+                 HorizontalExpand="False">  <!-- Frontier: Margin="5" < Margin="4" --> <!-- LuaM: Margin="4" > Margin="6" -->
+    <BoxContainer Orientation="Vertical" SetSize="51 51"> <!-- Frontier: "80 80" < "64 64" --> <!-- LuaM: "64 64" > "51 51" -->
         <PanelContainer VerticalExpand="True"
                         HorizontalExpand="True"
                         Name="Panel">
@@ -13,10 +13,10 @@
                              ModulateSelfOverride="#00000000"
                              HorizontalExpand="True"/>
             <EntityPrototypeView
-                Name="ResearchDisplay"
-                Scale="1.75 1.75"
-                SetSize="56 56">
-            </EntityPrototypeView> <!-- Frontier: "2" < "1.75", "64 64" < "56 56" -->
+                Name="ResearchDisplay" 
+                Scale="1.42 1.42"
+                SetSize="46 46">
+            </EntityPrototypeView> <!-- Frontier: "2" < "1.75", "64 64" < "56 56" --> <!-- LuaM: "1.75" 1.75" > "1.42 1.42", "64 64" > "46 46" -->
         </PanelContainer>
     </BoxContainer>
 </LayoutContainer>

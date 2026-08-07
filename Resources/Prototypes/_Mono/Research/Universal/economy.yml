@@ -10,7 +10,7 @@
   - CentrifugeLatheMiniCircuitboard
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 9, 1
+  position: 6, 11 # LuaM: 9, 1 > 6, 11
 
 - type: entity
   id: UraniumProcessingIcon
@@ -32,7 +32,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT2
   - BasicProcessing
-  position: 9, 7
+  position: 6, 10 # LuaM: 9,7 > 6, 10
 
 - type: entity
   id: UraniumEnrichedProcessingIcon

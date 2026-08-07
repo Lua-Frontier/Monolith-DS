@@ -9,6 +9,7 @@
     pocket1: MedicalPouchFilledERT # LuaM: CrowbarPocket > MedicalPouchFilledERT
     pocket2: Hypospray # LuaM: DoubleEmergencyOxygenTankFilled > Hypospray
     belt: ClothingBeltWebbingsBigBlack
+    id: ADSAsakimIDCard # LuaM add
     suitStorage: OxygenTankFilled
     ears: ClothingHeadsetChameleon # LuaM add
   inhand:

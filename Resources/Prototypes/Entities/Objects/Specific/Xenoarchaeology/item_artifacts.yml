@@ -65,6 +65,9 @@
   - type: GuideHelp
     guides:
     - Xenoarchaeology
+  - type: Tag
+    tags:
+    - XenoArtifact
 
 - type: entity
   parent: BaseXenoArtifactItem

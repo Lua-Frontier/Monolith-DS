@@ -1,0 +1,26 @@
+- type: entity
+  parent: IDCardStandard
+  id: ADSAsakimIDCard
+  name: Pre-fracture id card
+  suffix: Asakim
+  description: ID card pre-fracture Warrior Asakim. Has the ability to copy access rights
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcontractor
+      sprite: _NF/Objects/Misc/id_cards.rsi
+  - type: Access
+    tags:
+    - Maintenance
+    - NuclearOperative
+    - SyndicateAgent
+    - Mercenary
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+  - type: AgentIDCard
+  - type: UserInterface
+    interfaces:
+      enum.AgentIDCardUiKey.Key:
+        type: AgentIDCardBoundUserInterface

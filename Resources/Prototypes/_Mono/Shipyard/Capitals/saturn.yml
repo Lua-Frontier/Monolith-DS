@@ -29,7 +29,9 @@
   - Patrol
   engine:
   - AME
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#E03131FF"
 - type: gameMap
   id: Saturn
   mapName: 'AN-HSS Saturn' # LuaM: 'PDW-HSS Saturn' > 'AN-HSS Saturn'

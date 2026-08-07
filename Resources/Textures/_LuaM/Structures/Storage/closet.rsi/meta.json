@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by MrFolium (github) for Space Station 14.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "welded"
+    },
+    {
+      "name": "sparking"
+    },
+    {
+      "name": "bluespace",
+      "delays": [
+        [0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12]
+      ]
+    },
+    {
+      "name": "bluespace_dark",
+      "delays": [
+        [0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12]
+      ]
+    },
+    {
+      "name": "bluespace_open"
+    },     
+    {
+      "name": "bluespace_open_dark"
+    },
+    {
+      "name": "bluespace_door",
+      "delays": [
+        [0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12]
+      ]
+    },
+    {
+      "name": "bluespace_door_dark",
+      "delays": [
+        [0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12]
+      ]
+    },
+    {
+      "name": "bluespace_icon"
+    },
+    {
+      "name": "bluespace_dark_icon"
+    }
+  ]
+}

@@ -16,7 +16,9 @@
   - Patrol
   engine:
   - Uranium
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Tumour
   mapName: 'Tumour'

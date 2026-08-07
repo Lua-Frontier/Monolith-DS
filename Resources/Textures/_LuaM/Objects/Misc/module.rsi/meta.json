@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Original sprite taken from https://github.com/tgstation/tgstation, modified by MrFolium",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "bluespace_electronics",
+      "delays": [
+        [0.12, 0.12, 0.12, 0.12]
+      ]
+    }
+  ]  
+}

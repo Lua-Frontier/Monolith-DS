@@ -48,8 +48,8 @@
   parent: BaseToolRecipe
   id: SutureTSF
   result: MedicatedSuture
-  categories:
-  - FactionEquipment
+#  categories: # Commented by LuaM
+#  - FactionEquipment
   completetime: 15
   materials:
     Steel: 50
@@ -61,8 +61,8 @@
   parent: BaseToolRecipe
   id: MeshTSF
   result: RegenerativeMesh
-  categories:
-  - FactionEquipment
+#  categories: # Commented by LuaM
+#  - FactionEquipment
   completetime: 15
   materials:
     Steel: 50
@@ -73,7 +73,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: HyposprayRogue
-  result: Hypospray
+  result: SyndiHypo # LuaM: Hypospray > SyndiHypo
   categories:
   - Tools
   - FactionEquipment

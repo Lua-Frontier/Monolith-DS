@@ -26,8 +26,9 @@ materials-meat = мясо
 materials-web = шёлк
 materials-bones = кости
 materials-coal = уголь
-materials-diamond = алмазы
+materials-diamond = очищенные бриллианты
 materials-gunpowder = чёрный порох
+materials-bluespace = блюспейс-кристаллы
 # Ores
 materials-raw-magmite = магмитовая руда
 materials-raw-iron = руда железа

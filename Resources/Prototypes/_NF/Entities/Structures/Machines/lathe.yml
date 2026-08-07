@@ -44,6 +44,7 @@
     - NFServiceTechfabDeprecatedStatic
     dynamicPacks:
     - NFServiceTechfabDeprecated
+    - PortableScreenTimer # LuaM
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFServiceTechfabDeprecatedEmagStatic
@@ -84,6 +85,10 @@
     dynamicPacks:
     - NFEngineeringTechfabDeprecated
     - RCD # Mono
+# LuaM-start:
+    - BluespaceAirTanks
+    - PortableScreenTimer
+# LuaM-end.
   - type: PirateBountyItem # Mono
     id: Techfab
 
@@ -116,6 +121,11 @@
     - NFSalvageTechfabDeprecatedStatic
     dynamicPacks:
     - NFSalvageTechfabDeprecated
+# LuaM-start:
+    - BluespaceAirTanks
+    - GasDepositLocator
+    - PortableScreenTimer
+# LuaM-end.
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFSalvageTechfabDeprecatedEmag
@@ -164,6 +174,13 @@
     - UniversalOrdinance
     - ResearchedExplosives
     # Mono end
+# LuaM-start:
+    - ArmorBasic
+    - ArmorAdvanced
+    - PunkGear
+    - BluespaceAirTanks
+    - GlassesContractor
+# LuaM-end.
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFNfsdTechfabDeprecatedEmag
@@ -222,6 +239,13 @@
     - SecurityEquipment
     - SmartGun #Smart SMG
     # Mono end
+# LuaM-start:
+    - ArmorBasic
+    - ArmorAdvanced
+    - PunkGear
+    - BluespaceAirTanks
+    - GlassesContractor
+# LuaM-end.
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFMercenaryTechfabDeprecatedEmag

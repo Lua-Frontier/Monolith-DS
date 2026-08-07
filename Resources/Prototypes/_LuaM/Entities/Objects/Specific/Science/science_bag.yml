@@ -1,0 +1,58 @@
+- type: entity
+  name: science bag
+  id: ScienceBag
+  parent: BaseStorageItem
+  description: A sturdy bag designed for field researchers. Features reinforced compartments for sample storage and secure pockets for research disks.
+  components:
+    - type: Sprite
+      sprite: _LuaM/Objects/Specific/Science/Equipment/science_bag.rsi
+      layers:
+      - state: icon
+      - state: icon-on
+        visible: False
+        map: [ "enum.ToggleableVisuals.Layer" ]
+    - type: Clothing
+      sprite: _LuaM/Objects/Specific/Science/Equipment/science_bag.rsi
+      quickEquip: false
+      slots:
+        - belt
+    - type: Item
+      size: Ginormous
+    - type: Storage
+      grid:
+      - 0,0,7,5
+      quickInsert: true
+      areaInsert: true
+      whitelist:
+        tags:
+          - XenoArtifact
+          - ArtifactFragment
+          - PointDisk
+          - TechDiskMono
+          - AnomalyCore
+          - ScienceDevice
+          - DatadiskEncrypted
+    - type: Dumpable
+    - type: MagnetPickup
+      magnetEnabled: false
+      magnetCanBeEnabled: false
+    - type: ItemToggle
+      soundActivate: &soundActivate
+        collection: sparks
+        params:
+          variation: 0.25
+      soundDeactivate: *soundActivate
+      onUse: false
+      onAltUse: true
+      onActivate: false
+    - type: ItemToggleExamine
+      on: item-toggle-examine-magnet-on
+      off: item-toggle-examine-magnet-off
+    - type: Appearance
+    - type: ScienceBag
+    - type: GenericVisualizer
+      visuals:
+        enum.ToggleableVisuals.Enabled:
+          enum.ToggleableVisuals.Layer:
+            True: { visible: True }
+            False: { visible: False }

@@ -1,4 +1,4 @@
-# FAN
+# FANS
 - type: construction
   name: directional fan
   id: AtmosDeviceFanDirectional
@@ -24,5 +24,62 @@
   startNode: start
   targetNode: AtmosDeviceFanTiny
   category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+# STORAGES
+- type: construction
+  name: bluespace crate
+  id: CrateBlueSpace
+  description: It's bigger on the inside.
+  icon:
+    sprite: _LuaM/Structures/Storage/Crates/bscrates.rsi
+    state: icon
+  graph: CrateBlueSpace
+  startNode: start
+  targetNode: done
+  category: construction-category-storage
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  name: dark bluespace crate
+  id: CrateBlueSpaceDark
+  description: It's bigger on the inside.
+  icon:
+    sprite: _LuaM/Structures/Storage/Crates/bscrates.rsi
+    state: icon_dark
+  graph: CrateBlueSpaceDark
+  startNode: start
+  targetNode: done
+  category: construction-category-storage
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  name: bluespace closet
+  id: BluespaceCloset
+  description: It's bigger on the inside.
+  icon:
+    sprite: _LuaM/Structures/Storage/closet.rsi
+    state: bluespace_icon
+  graph: BluespaceCloset
+  startNode: start
+  targetNode: done
+  category: construction-category-storage
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  name: dark bluespace closet
+  id: BluespaceClosetDark
+  description: It's bigger on the inside.
+  icon:
+    sprite: _LuaM/Structures/Storage/closet.rsi
+    state: bluespace_dark_icon
+  graph: BluespaceClosetDark
+  startNode: start
+  targetNode: done
+  category: construction-category-storage
   placementMode: SnapgridCenter
   canBuildInImpassable: false

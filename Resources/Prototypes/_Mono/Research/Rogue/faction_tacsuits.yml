@@ -11,7 +11,8 @@
   - ClothingOuterVestWebRogue
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 12, 1
+  - HardsuitsArmored # LuaM
+  position: 8, 13 # LuaM: 12, 1 > 8, 13 
 
 - type: technology
   id: RogueAdvancedEquipment
@@ -28,7 +29,7 @@
   technologyPrerequisites:
   - RogueBasicEquipment
   - UniversalMaterialResearchT2
-  position: 12, 7
+  position: 8, 10 # LuaM: 12, 7 > 8, 10
 
 - type: technology
   id: RogueSyndicateTacsuits
@@ -43,7 +44,7 @@
   technologyPrerequisites:
   - RogueAdvancedEquipment
   - UniversalMaterialResearchT3
-  position: 12, 12
+  position: 8, 7 # LuaM: 12, 12 > 8, 7
 
 - type: technology
   id: RogueSuperArmor
@@ -51,11 +52,11 @@
   entityIcon: ClothingOuterHardsuitCybersunStealth
   discipline: RogueEquipment
   tier: 2
-  cost: 20000
+  cost: 40000 # LuaM: 20000 > 40000
   recipeUnlocks:
   - ClothingOuterHardsuitCybersunStealthRogue
   - ClothingOuterHardsuitJuggernautRogue
   technologyPrerequisites:
-  - RogueSyndicateTacsuits
-  position: 13, 12
+  - RogueAdvancedEquipment # LuaM: RogueSyndicateTacsuits > RogueAdvancedEquipment
+  position: 10, 10 # LuaM: 13, 12 > 10, 10
 

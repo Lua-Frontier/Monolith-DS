@@ -1,3 +1,4 @@
+# FANS
 - type: constructionGraph
   id: AtmosDeviceFanDirectional
   start: start
@@ -16,7 +17,6 @@
         icon:
           sprite: Objects/Misc/module.rsi
           state: door_electronics
-
   - node: AtmosDeviceFanDirectional
     entity: AtmosDeviceFanDirectional
     edges:
@@ -56,7 +56,6 @@
         icon:
           sprite: Objects/Misc/module.rsi
           state: door_electronics
-
   - node: AtmosDeviceFanTiny
     entity: AtmosDeviceFanTiny
     edges:
@@ -76,4 +75,177 @@
       - !type:SpawnPrototype
         prototype: FanElectronics
         amount: 1
+      - !type:DeleteEntity
+
+# STORAGES
+- type: constructionGraph
+  id: CrateBlueSpace
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - material: Plasteel
+        amount: 5
+      - material: Cable
+        amount: 2
+        doAfter: 5
+      - tag: CrateBluespaceElectronics
+        name: crate-bluespace-electronics
+        icon:
+          sprite: _LuaM/Objects/Misc/module.rsi
+          state: bluespace_electronics
+  - node: done
+    entity: CrateBlueSpace
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 5
+      conditions:
+      - !type:StorageWelded
+        welded: false
+      - !type:Locked
+        locked: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlasteel1
+        amount: 5
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: CrateBluespaceElectronics
+        amount: 1
+      - !type:EmptyAllContainers
+      - !type:DeleteEntity
+
+- type: constructionGraph
+  id: CrateBlueSpaceDark
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - material: Plastitanium
+        amount: 5
+      - material: Cable
+        amount: 2
+        doAfter: 5
+      - tag: CrateBluespaceElectronics
+        name: crate-bluespace-electronics
+        icon:
+          sprite: _LuaM/Objects/Misc/module.rsi
+          state: bluespace_electronics
+  - node: done
+    entity: CrateBlueSpaceDark
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 5
+      conditions:
+      - !type:StorageWelded
+        welded: false
+      - !type:Locked
+        locked: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlastitanium1
+        amount: 5
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: CrateBluespaceElectronics
+        amount: 1
+      - !type:EmptyAllContainers
+      - !type:DeleteEntity
+
+- type: constructionGraph
+  id: BluespaceCloset
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - material: Plasteel
+        amount: 4
+      - material: Cable
+        amount: 2
+        doAfter: 5
+      - tag: CrateBluespaceElectronics
+        name: crate-bluespace-electronics
+        icon:
+          sprite: _LuaM/Objects/Misc/module.rsi
+          state: bluespace_electronics
+  - node: done
+    entity: BluespaceCloset
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 5
+      conditions:
+      - !type:StorageWelded
+        welded: false
+      - !type:Locked
+        locked: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlasteel1
+        amount: 4
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: CrateBluespaceElectronics
+        amount: 1
+      - !type:EmptyAllContainers
+      - !type:DeleteEntity
+
+- type: constructionGraph
+  id: BluespaceClosetDark
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - material: Plastitanium
+        amount: 4
+      - material: Cable
+        amount: 2
+        doAfter: 5
+      - tag: CrateBluespaceElectronics
+        name: crate-bluespace-electronics
+        icon:
+          sprite: _LuaM/Objects/Misc/module.rsi
+          state: bluespace_electronics
+  - node: done
+    entity: BluespaceClosetDark
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 5
+      conditions:
+      - !type:StorageWelded
+        welded: false
+      - !type:Locked
+        locked: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlastitanium1
+        amount: 4
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: CrateBluespaceElectronics
+        amount: 1
+      - !type:EmptyAllContainers
       - !type:DeleteEntity

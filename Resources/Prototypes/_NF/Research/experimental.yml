@@ -33,7 +33,7 @@
   - NFBlueprintSuperMatterBinStockPart
   technologyPrerequisites:
   - AdvancedParts
-  position: 0, 16
+  position: 8, 4 # LuaM: 0, 16 > 8, 4
 
 - type: technology
   id: MagnetsTechAdvanced
@@ -46,9 +46,9 @@
   - ClothingShoesBootsMagAdv
   - NFBlueprintClothingShoesBootsMagAdv
   technologyPrerequisites:
-  - MagnetsTechCombat
+  - MagnetsTech # LuaM: MagnetsTechCombat > MagnetsTech
   - SuperParts
-  position: -4, -1
+  position: 5, 6 # LuaM: -4, -1 > 5, 6
 
 # Mono edit - research consolidation
 # - type: technology

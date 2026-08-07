@@ -18,7 +18,9 @@
   cloakHunter: true
   company:
   - TSF
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Ocelot
   mapName: 'Ocelot'

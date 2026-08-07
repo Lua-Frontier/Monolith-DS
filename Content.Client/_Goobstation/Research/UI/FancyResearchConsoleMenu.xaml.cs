@@ -56,28 +56,35 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     /// <summary>
     /// Is tech currently being dragged
     /// </summary>
-    private bool _draggin;
+//    private bool _draggin; // Commented by LuaM
+
+// LuaM-start:
+    /// <summary>
+    /// If the branch is null, the user is on the branch selection screen.
+    /// </summary>
+    private ProtoId<TechDisciplinePrototype>? _selectedDiscipline;
+// LuaM-end.
 
     /// <summary>
     /// Global position that all tech relates to.
-    /// For dragging mostly
+	/// For dragging mostly
     /// </summary>
     private Vector2 _position = DefaultPosition;
 
     /// <summary>
-    /// Captures the initial position to use with recenter button
+	/// Captures the initial position to use with recenter button
     /// </summary>
-    private Vector2 _initialViewPosition;
+//    private Vector2 _initialViewPosition; // Commented by LuaM
 
     /// <summary>
     /// Tracks if first initialization has happened
     /// </summary>
-    private bool _firstInitialization = true;
+//    private bool _firstInitialization = true; // Commented by LuaM
 
     /// <summary>
     /// Frontier: the distance between elements on the grid.
     /// </summary>
-    private const int GridSize = 90;
+    private const int GridSize = 64; // LuaM: 90 > 64
 
     /// <summary>
     /// Frontier: technology cards size.
@@ -102,14 +109,27 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         _accessReader = _entity.System<AccessReaderSystem>();
 
         // Frontier: Initialize parallax background
+//        _parallaxControl = new ParallaxControl // Commented by LuaM
+        var disciplineParallax = new ParallaxControl // LuaM
+        {
+            ParallaxPrototype = "Default",
+            HorizontalExpand = true,
+            VerticalExpand = true,
+        };
+// LuaM-start:
+        DisciplineSelectionScreen.AddChild(disciplineParallax);
+        disciplineParallax.SetPositionInParent(0);
+// LuaM-end.
+
+        // Add the parallax control to the ResearchesContainer at the beginning (bottom layer)
+// LuaM-start:
         _parallaxControl = new ParallaxControl
         {
             ParallaxPrototype = "Default",
             HorizontalExpand = true,
             VerticalExpand = true,
         };
-
-        // Add the parallax control to the ResearchesContainer at the beginning (bottom layer)
+// LuaM-end.
         ResearchesContainer.AddChild(_parallaxControl);
 
         // Set the proper rendering order by adjusting positions in the parent's child list
@@ -120,13 +140,17 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         // The drag container should be in the middle
         DragContainer.SetPositionInParent(1);
 
+        ServerButton.OnPressed += _ => OnServerButtonPressed?.Invoke();
         // The recenter button should be at the top of the z-order (drawn last)
+// Commented by LuaM
+/*
         RecenterButton.SetPositionInParent(2);
 
-        ServerButton.OnPressed += _ => OnServerButtonPressed?.Invoke();
         DragContainer.OnKeyBindDown += OnKeybindDown;
         DragContainer.OnKeyBindUp += OnKeybindUp;
         RecenterButton.OnPressed += _ => Recenter();
+*/
+        BackToDisciplinesButton.OnPressed += _ => ShowDisciplineSelection(); // LuaM
 
         // Empty initialization
         UpdatePanels(List);
@@ -137,9 +161,12 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
 
     public void UpdatePanels(Dictionary<string, ResearchAvailability> dict)
     {
-        DragContainer.RemoveAllChildren();
+//        DragContainer.RemoveAllChildren(); // Commented by LuaM
         List = dict;
+        BuildDisciplineGrid(); // LuaM
 
+// Commented by LuaM
+/*
         foreach (var tech in List)
         {
             var proto = _prototype.Index<TechnologyPrototype>(tech.Key);
@@ -155,6 +182,11 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
             if (tech.Key == CurrentTech)
                 SelectTech(proto, tech.Value);
         }
+*/
+// LuaM-start:
+        if (_selectedDiscipline != null)
+            PopulateResearchField();
+// LuaM-end.
     }
 
     public void UpdateInformationPanel(int points)
@@ -201,6 +233,8 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         }
     }
 
+// Commented by LuaM
+/*
     #region Drag handle
     protected override void MouseMove(GUIMouseMoveEventArgs args)
     {
@@ -218,33 +252,181 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
 
         // Move all tech
         foreach (var child in DragContainer.Children)
-        {
+            {
             LayoutContainer.SetPosition(child, child.Position + diff); // Frontier: args.Relative<diff
         }
     }
+*/
 
+// LuaM-start:
+    private void BuildDisciplineGrid()
+    {
+        DisciplineGrid.RemoveAllChildren();
+
+        if (!_entity.TryGetComponent(Entity, out TechnologyDatabaseComponent? database))
+            return;
+
+        foreach (var disciplineId in database.SupportedDisciplines)
+        {
+            var discipline = _prototype.Index<TechDisciplinePrototype>(disciplineId);
+            var tier = _research.GetTierCompletionPercentage(database, discipline, _prototype);
+
+            var button = new Button
+            {
+                MinSize = new Vector2(240, 35),
+                HorizontalExpand = false,
+                Margin = new Thickness(8)
+            };
+
+            var container = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                HorizontalExpand = true,
+                VerticalExpand = true,
+                Align = BoxContainer.AlignMode.Center
+            };
+
+            var texture = new TextureRect
+            {
+                Texture = _sprite.Frame0(discipline.Icon),
+                TextureScale = new Vector2(2.5f, 2.5f),
+                VerticalAlignment = VAlignment.Center,
+                Margin = new Thickness(8, 0, 8, 0)
+            };
+            container.AddChild(texture);
+
+            var separator = new Label
+            {
+                Text = "|",
+                VerticalAlignment = VAlignment.Center,
+                Margin = new Thickness(0, 0, 8, 0)
+            };
+            container.AddChild(separator);
+
+            var progressLabel = new Label
+            {
+                Text = tier + "%",
+                VerticalAlignment = VAlignment.Center,
+                MinWidth = 50,
+                Margin = new Thickness(0, 0, 8, 0)
+            };
+            container.AddChild(progressLabel);
+
+            var nameLabel = new Label
+            {
+                Text = Loc.GetString(discipline.UiName),
+                VerticalAlignment = VAlignment.Center,
+                HorizontalExpand = true
+            };
+            container.AddChild(nameLabel);
+
+            button.AddChild(container);
+
+            var capturedDisciplineId = disciplineId;
+            button.OnPressed += _ => OnDisciplineSelected(capturedDisciplineId);
+
+            DisciplineGrid.AddChild(button);
+        }
+    }
+// LuaM-end.
+
+// Commented by LuaM
     /// <summary>
     /// Raised when LMB is pressed at <see cref="DragContainer"/>
     /// </summary>
+/*
     private void OnKeybindDown(GUIBoundKeyEventArgs args)
     {
         if (args.Function == EngineKeyFunctions.Use)
             _draggin = true;
     }
+*/
 
+// LuaM-start:
+    private void OnDisciplineSelected(ProtoId<TechDisciplinePrototype> disciplineId)
+    {
+        _selectedDiscipline = disciplineId;
+        DisciplineSelectionScreen.Visible = false;
+        ResearchFieldScreen.Visible = true;
+        PopulateResearchField();
+    }
+// LuaM-end.
+
+// Commented by LuaM
     /// <summary>
     /// Raised when LMB is unpressed at <see cref="DragContainer"/>
     /// </summary>
+/*
     private void OnKeybindUp(GUIBoundKeyEventArgs args)
     {
         if (args.Function == EngineKeyFunctions.Use)
             _draggin = false;
     }
+*/
 
+// LuaM-start:
+    private void ShowDisciplineSelection()
+    {
+        _selectedDiscipline = null;
+        CurrentTech = null;
+        DisciplineSelectionScreen.Visible = true;
+        ResearchFieldScreen.Visible = false;
+        DragContainer.RemoveAllChildren();
+        InfoContainer.RemoveAllChildren();
+        InfoContainer.AddChild(new Control
+        {
+            Margin = new Thickness(5),
+            MinWidth = 450,
+            VerticalExpand = true,
+            HorizontalExpand = true
+        });
+// LuaM-end.
+    }
+
+// Commented by LuaM
+/*
     protected override DragMode GetDragModeFor(Vector2 relativeMousePos)
         => _draggin ? DragMode.None : base.GetDragModeFor(relativeMousePos);
     #endregion
+*/
 
+// LuaM-start:
+    private void PopulateResearchField()
+    {
+        DragContainer.RemoveAllChildren();
+        InfoContainer.RemoveAllChildren();
+        InfoContainer.AddChild(new Control
+        {
+            Margin = new Thickness(5),
+            MinWidth = 450,
+            VerticalExpand = true,
+            HorizontalExpand = true
+        });
+
+        if (_selectedDiscipline == null)
+            return;
+
+        _position = DefaultPosition;
+
+        foreach (var tech in List)
+        {
+            var proto = _prototype.Index<TechnologyPrototype>(tech.Key);
+
+            if (proto.Discipline != _selectedDiscipline.Value)
+                continue;
+
+            var control = new FancyResearchConsoleItem(proto, _sprite, tech.Value);
+            DragContainer.AddChild(control);
+
+            var uiPosition = _position + proto.Position * GridSize;
+            LayoutContainer.SetPosition(control, uiPosition);
+            control.SelectAction += SelectTech;
+
+            if (tech.Key == CurrentTech)
+                SelectTech(proto, tech.Value);
+        }
+    }
+// LuaM-end.
     /// <summary>
     /// Selects a tech prototype and opens info panel
     /// </summary>
@@ -262,6 +444,8 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         InfoContainer.AddChild(control);
     }
 
+// Commented by LuaM
+/*
     /// <summary>
     /// Resets the view exactly to the initial position when the UI was first opened
     /// </summary>
@@ -279,6 +463,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
             LayoutContainer.SetPosition(child, child.Position + diff);
         }
     }
+*/
 
     public override void Close()
     {
@@ -286,7 +471,10 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
 
         DragContainer.RemoveAllChildren();
         InfoContainer.RemoveAllChildren();
-        _firstInitialization = true;
+//	      _firstInitialization = true; // Commented by LuaM
+        _selectedDiscipline = null;
+        DisciplineSelectionScreen.Visible = true;
+        ResearchFieldScreen.Visible = false;
     }
 
     private sealed partial class DisciplineButton(TechDisciplinePrototype proto) : Button
