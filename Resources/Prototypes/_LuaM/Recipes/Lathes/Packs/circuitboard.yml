@@ -1,4 +1,5 @@
 - type: latheRecipePack
-  id: DataFarmResearchCircuitboard
+  id: DataFarmResearchCryptoCircuitboard
   recipes:
   - DataFarmResearchCircuitboard
+  - DataFarmCryptoCircuitboard

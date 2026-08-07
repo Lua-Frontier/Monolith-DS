@@ -354,10 +354,7 @@
     - S2MechBoards
     - EngineeringBoardsGoob #Goob Factorio port
     - ReactorCircuitboards # FH edit
-# LuaM-start:
-    - DataFarmResearchCircuitboard
-    - DataFarmCryptoCircuitboard
-# LuaM-end.
+    - DataFarmResearchCryptoCircuitboard # LuaM
   - type: MaterialStorage
     whitelist:
       tags:
