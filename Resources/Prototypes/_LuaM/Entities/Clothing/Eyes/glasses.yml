@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingEyesGlassesSecurity, ShowMedicalIcons]
+  parent: [ClothingEyesGlassesSecurity, ShowMedicalIcons, NightVisionComfortOrange]
   id: ClothingEyesGlassesContractor
   name: contractor glasses
   description: Advanced tactical goggles with multiple visor modes. The lens layer seems so thick that even the stars look blurry through it.
@@ -8,9 +8,6 @@
     sprite:  _LuaM/Clothing/Eyes/Glasses/contractor_glasses.rsi
   - type: Clothing
     sprite: _LuaM/Clothing/Eyes/Glasses/contractor_glasses.rsi
-  - type: NightVision
-    flashDurationMultiplier: 2
-    isEquipment: true
   - type: IdentityBlocker
     coverage: EYES
   - type: ThermalVision
