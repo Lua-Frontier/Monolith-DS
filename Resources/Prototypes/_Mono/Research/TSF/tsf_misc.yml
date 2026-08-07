@@ -14,7 +14,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - SuperParts # LuaM
-  position: 6, 13
+  position: 6, 13 # LuaM: 12, -1 > 6, 13
 
 - type: technology
   id: TsfmcMopp
@@ -28,7 +28,7 @@
   - ClothingHandsGlovesMoppTsf
   technologyPrerequisites:
   - TsfmcAdvancedEquipment
-  position: 10, 10
+  position: 10, 10 # LuaM: 13, 7 > 10, 10
 
 - type: technology
   id: TsfEshield
@@ -46,7 +46,7 @@
   - TsfAdvancedWeapons
   - AdvancedRiotControl
 # LuaM-end.
-  position: 10, 10
+  position: 10, 10 # LuaM: 12, 9 > 10, 10
 
 - type: technology
   id: TsfTierOneVouchers
@@ -61,7 +61,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - Shuttlecraft # LuaM
-  position: 8, 13
+  position: 8, 13 # LuaM: 11, 1 > 8, 13
 
 - type: technology
   id: TsfTierTwoVouchers
@@ -76,7 +76,7 @@
   - TsfTierOneVouchers
   - UniversalMaterialResearchT2
   - ShuttleAdvancedComponents # LuaM
-  position: 8, 11
+  position: 8, 11 # LuaM: 11, 7 > 8, 11
 
 - type: technology
   id: TsfTierThreeVouchers
@@ -92,7 +92,7 @@
   - TsfTierTwoVouchers
   - UniversalMaterialResearchT3
   - ShuttleCtlaAdvancedDriveResearch # LuaM
-  position: 8, 9
+  position: 8, 9 # LuaM: 11, 12 > 8, 9
 
 - type: technology
   id: TsfMeds
@@ -107,7 +107,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - AdvancedTreatment # LuaM
-  position: 4, 9
+  position: 4, 9 # LuaM: 12, -2 > 4, 9
 
 - type: technology
   id: TsfNanofoam
@@ -121,7 +121,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT2
   - AdvancedToolsTechnology # LuaM
-  position: 4, 12
+  position: 4, 12 # LuaM: 12, 10 > 4, 12
 
 - type: technology
   id: TsfPortableRecharger
@@ -135,7 +135,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - PowerGeneration # LuaM
-  position: 8, 13
+  position: 8, 13 # LuaM: 12, -3 > 8, 13
 
 - type: technology
   id: TSFBasicBorgModule
@@ -149,7 +149,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - TsfPortableRecharger # LuaM
-  position: 8, 11
+  position: 8, 11 # LuaM: 12, -4 > 8, 11
 
 - type: technology
   id: TSFAdvancedBorgModule
@@ -164,4 +164,4 @@
   - UniversalMaterialResearchT3
   - TSFBasicBorgModule
   - MechBasic # LuaM
-  position: 8, 9
+  position: 8, 9 # LuaM: 12, 14 > 8, 9

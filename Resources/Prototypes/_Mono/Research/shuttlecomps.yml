@@ -19,7 +19,7 @@
   technologyPrerequisites:
   - Shuttlecraft
   - SuperParts
-  position: 6, 11
+  position: 6, 11 # LuaM: -6, 7 > 6, 11
 
 - type: technology
   id: ShuttleCtlaAdvancedDriveResearch
@@ -34,4 +34,4 @@
   technologyPrerequisites:
   - ShuttleAdvancedComponents
 #  - PortableFission # Commented by LuaM
-  position: 6, 10
+  position: 6, 10 # LuaM: -6, 9 > 6, 10

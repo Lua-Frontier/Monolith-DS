@@ -26,7 +26,7 @@
   - FauxTileAstroAsteroidSand
   technologyPrerequisites:
   - FoodService # LuaM: BasicParts > FoodService
-  position: 4, 12
+  position: 4, 12 # LuaM: 3, -1 > 4, 12
 
 - type: technology
   id: CritterMechs
@@ -47,7 +47,7 @@
   - VimHarness
   technologyPrerequisites:
   - MechBasic
-  position: 6, 12
+  position: 6, 12 # LuaM: 3, 10 > 6, 12
 
 - type: technology
   id: AudioVisualCommunication
@@ -74,7 +74,7 @@
   # Mono edit end
   technologyPrerequisites:
   - BasicParts
-  position: 6, 13
+  position: 6, 13 # LuaM: 2, -2 > 6, 13
 
 # Mono edit - research consolidation
 # - type: technology
@@ -159,7 +159,7 @@
   - SyringeCryostasis
   technologyPrerequisites:
   - IndustrialMedicine
-  position: 8, 10
+  position: 8, 10 # LuaM: -4, 11 > 8, 10
 
 # Shitmed Change Start
 - type: technology
@@ -181,7 +181,7 @@
   technologyPrerequisites:
   - SuperParts
   - BiochemicalStasis # LuaM: IndustrialMedicine > BiochemicalStasis
-  position: 7, 9
+  position: 7, 9 # LuaM: -2, 11 > 7, 9
 
 - type: technology
   id: CyberneticEnhancements
@@ -203,7 +203,7 @@
   - DiagnosticCyberneticEyes # LuaM
   technologyPrerequisites:
   - AdvancedTreatment
-  position: 6, 8
+  position: 6, 8 # LuaM: -2, 12 > 6, 8
 # Shitmed Change End
 
 # Mono edit
@@ -225,7 +225,7 @@
   - JanicartFlatpack
   technologyPrerequisites:
   - AdvancedParts # LuaM: BasicParts > AdvancedParts
-  position: 2, 11
+  position: 2, 11 # LuaM: 2, -3 > 2, 11
 
 - type: technology
   id: HONKMech
@@ -248,7 +248,7 @@
   - MechEquipmentHonkerMousetrapMortar
   technologyPrerequisites:
   - CritterMechs
-  position: 6, 10
+  position: 6, 10 # LuaM: 4, 10> 6, 10
 
 # Mono edit - research consolidation
 # - type: technology
@@ -311,4 +311,4 @@
   technologyPrerequisites:
 #  - SuperParts # Commented by LuaM
   - BiochemicalStasis
-  position: 8, 8
+  position: 8, 8 # LuaM: -4, 12 > 8, 8

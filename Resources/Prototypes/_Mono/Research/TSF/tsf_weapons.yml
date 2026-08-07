@@ -13,7 +13,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - MercArmementSimple # LuaM
-  position: 8, 13
+  position: 8, 13 # LuaM: 12, 2 > 8, 13
 
 - type: technology
   id: TsfAdvancedWeapons
@@ -33,7 +33,7 @@
   technologyPrerequisites:
   - TsfBasicGuns
   - UniversalMaterialResearchT2
-  position: 8, 10
+  position: 8, 10 # LuaM: 12, 8 > 8, 10
 
 - type: technology
   id: TsfSuperWeapons
@@ -56,4 +56,4 @@
   technologyPrerequisites:
   - TsfAdvancedWeapons
   - UniversalMaterialResearchT3
-  position: 8, 7
+  position: 8, 7 # LuaM: 12, 13 > 8, 7

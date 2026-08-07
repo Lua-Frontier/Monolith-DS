@@ -1,6 +1,6 @@
 - type: technology
   id: Hypospray
-  name: research-technology-rogue-hypospray
+  name: research-technology-rogue-hypospray # Дубль названия
   entityIcon: Hypospray
   discipline: TsfmcGear
   tier: 2
@@ -9,5 +9,5 @@
   - Hypospray
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  - AdvancedTreatment # LuaM
+  - HypoMiniLimitedEdition
   position: 10, 13

@@ -9,7 +9,7 @@
   - CharonSlugUniversal
   technologyPrerequisites:
   - UniversalPlastitaniumCore
-  position: 4, 5
+  position: 4, 5 # LuaM: 7, 8 > 4, 5
 
 - type: technology
   id: UniversalSubnuclearRailgunAmmo
@@ -23,7 +23,7 @@
   technologyPrerequisites:
   - UniversalRailgunAmmo
   - UniversalMaterialResearchT3
-  position: 8, 3
+  position: 8, 3 # LuaM: 10, 15 > 8, 3
 
 - type: technology
   id: UniversalTorpedoAmmo
@@ -37,7 +37,7 @@
   - ASM220TorpedoECMUniversal
   technologyPrerequisites:
   - UniversalPlastitaniumCore
-  position: 6, 5
+  position: 6, 5 # LuaM: 8, 8 > 6, 5
 
 - type: technology
   id: UniversalTorpedoAmmoAdvanced
@@ -50,7 +50,7 @@
   - ASM220TorpedoLOSATUniversal
   technologyPrerequisites:
   - UniversalTorpedoAmmo
-  position: 6, 4
+  position: 6, 4 # LuaM: 8, 9 > 6, 4
 
 - type: technology
   id: Universal150mmAmmo
@@ -64,7 +64,7 @@
   - 150mmEmpShellUniversal
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 4, 12
+  position: 4, 12 # LuaM: 7, 2 > 4, 12
 
 - type: technology
   id: UniversalLightFighterOrdinance
@@ -78,7 +78,7 @@
   - ZenithRocketUniversal
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 3, 12
+  position: 3, 12 # LuaM: 6, 2 > 3, 12
 
 - type: technology
   id: UniversalAdvancedLightFighterOrdinance
@@ -92,4 +92,4 @@
   technologyPrerequisites:
   - UniversalLightFighterOrdinance
   - UniversalRailgunAmmo # LuaM: UniversalPlastitaniumCore > UniversalRailgunAmmo
-  position: 3, 5
+  position: 3, 5 # LuaM: 6, 5 > 3, 5

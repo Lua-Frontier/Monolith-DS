@@ -19,7 +19,7 @@
   - ElectricRangeMachineCircuitboard # Mono
   technologyPrerequisites:
   - BasicParts
-  position: 3, 13
+  position: 3, 13 # LuaM: -3, -2 > 3, 13
 
 - type: technology
   id: MiscellaneousItemsOrganization
@@ -50,7 +50,7 @@
   - MedicalPouch # LuaM add
   technologyPrerequisites:
   - BasicParts
-  position: 12, 13
+  position: 12, 13 # LuaM: 3, -3 > 12, 13
 
 # Tier 2
 
@@ -88,7 +88,7 @@
   - BiomassReclaimerMachineCircuitboard
   technologyPrerequisites:
   - AdvancedParts
-  position: 8, 12
+  position: 8, 12 # LuaM: -2, 10 > 8, 12
 
 - type: technology
   id: AdvancedPersonalPropulsion
@@ -102,7 +102,7 @@
   technologyPrerequisites:
   - Shuttlecraft
   - HardsuitsSpecialized # LuaM
-  position: 7, 9
+  position: 7, 9 # LuaM: -4, 7 > 7, 9
 
 # Mono edit - research consolidation
 # - type: technology

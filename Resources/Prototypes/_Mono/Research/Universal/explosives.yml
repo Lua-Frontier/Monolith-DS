@@ -16,4 +16,4 @@
   technologyPrerequisites:
   - UniversalPlastitaniumCore
   - ExplosiveTechnology # LuaM
-  position: 9, 11
+  position: 9, 11 # LuaM: 7,7 > 9, 11

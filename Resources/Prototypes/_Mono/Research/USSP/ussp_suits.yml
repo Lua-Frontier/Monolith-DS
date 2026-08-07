@@ -11,7 +11,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - HardsuitsArmoredAdvanced # LuaM
-  position: 6, 7
+  position: 6, 7 # LuaM: 12, 1 > 6, 7
 
 - type: technology
   id: UsspMediumSuits
@@ -26,7 +26,7 @@
   technologyPrerequisites:
   - UsspBasicSuits
   - UniversalMaterialResearchT2
-  position: 6, 6
+  position: 6, 6 # LuaM: 12, 7 > 6, 6
 
 - type: technology
   id: UsspAdvancedSuits
@@ -41,4 +41,4 @@
   technologyPrerequisites:
   - UsspMediumSuits
   - UniversalMaterialResearchT3
-  position: 6, 5
+  position: 6, 5 # LuaM: 12, 12 > 6, 5

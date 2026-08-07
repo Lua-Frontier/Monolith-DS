@@ -11,7 +11,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT2 # LuaM: UniversalMaterialResearchT1 > UniversalMaterialResearchT2
   - MercArmementAdvanced # LuaM
-  position: 12, 7
+  position: 12, 7 # LuaM: 12, 2 > 12, 7
 
 - type: technology
   id: UsspAk410
@@ -26,7 +26,7 @@
   technologyPrerequisites:
   - MercArmementSimple # LuaM: UsspMediumGuns > MercArmementSimple
 #  - UniversalMaterialResearchT2 # Commented by LuaM
-  position: 13, 11
+  position: 13, 11 # LuaM: 12, 8 > 13, 11
 
 - type: technology
   id: UsspAdvancedGuns
@@ -42,4 +42,4 @@
   technologyPrerequisites:
   - UsspAk410 # LuaM: UsspMediumGuns > UsspAk410
   - UniversalMaterialResearchT1 # LuaM: UniversalMaterialResearchT3 > UniversalMaterialResearchT1
-  position: 14, 11
+  position: 14, 11 # LuaM: 12, 13 > 14, 11

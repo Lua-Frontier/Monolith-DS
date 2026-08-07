@@ -38,3 +38,8 @@
   - ClothingUniformRandomPunkCroptopShorts
   - ClothingOuterCoatLettermanRandomized
   - ClothingOuterCoatBomberRandomized
+
+- type: latheRecipePack
+  id: GlassesContractor
+  recipes:
+  - ClothingEyesGlassesContractor

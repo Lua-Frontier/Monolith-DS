@@ -12,7 +12,7 @@
   - ClothingHelmetAttachmentNVGsBasic
   technologyPrerequisites:
   - SuperParts
-  position: 10, 4
+  position: 10, 4 # LuaM: 1, 15 > 10, 4
 
 - type: technology
   id: ThermalVisionTech
@@ -26,4 +26,4 @@
   - ClothingHelmetAttachmentInfraredBasic
   technologyPrerequisites:
   - NightVisionTech
-  position: 11, 4
+  position: 11, 4 # LuaM: 2, 15 > 11, 4

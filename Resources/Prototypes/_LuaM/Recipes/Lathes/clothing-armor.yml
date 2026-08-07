@@ -53,3 +53,17 @@
     Durathread: 100
     Steel: 250
     Plastic: 850
+
+# Eyes
+- type: latheRecipe
+  id: ClothingEyesGlassesContractor
+  parent: NFBaseArmorRecipe
+  result: ClothingEyesGlassesContractor
+  materials:
+    Durathread: 150
+    Plastic: 500
+    Gold: 300
+    Silver: 300
+    Plasteel: 50
+    Uranium: 100
+    Bluespace: 150

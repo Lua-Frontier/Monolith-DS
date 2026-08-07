@@ -17,4 +17,4 @@
   technologyPrerequisites:
   - AdvancedTreatment # LuaM
   - CyberneticOrgans # LuaM: CyberneticEnhancements > CyberneticOrgans
-  position: 7, 5
+  position: 7, 5 # LuaM: -2, 13 > 7, 5

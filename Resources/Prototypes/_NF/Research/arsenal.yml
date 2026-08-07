@@ -41,7 +41,7 @@
 #  - ClothingOuterCoatBomberRandomized # Commented by LuaM
   technologyPrerequisites:
   - AdvancedRiotControl
-  position: 7, 12
+  position: 7, 12 # LuaM: 3, 2 > 7, 12
 
 # Tier 2
 
@@ -58,7 +58,7 @@
   technologyPrerequisites:
   - MagnetsTech
 #  - AdvancedParts # Commented by LuaM
-  position: 4, 13
+  position: 4, 13 # LuaM: -3, -1 > 4, 13
 
 - type: technology
   id: HardsuitsArmored
@@ -74,7 +74,7 @@
   - MagnetsTechCombat # LuaM: HardsuitsSpecialized > MagnetsTechCombat
   - HardsuitsAdvanced
   - ArmorAdvanced # LuaM
-  position: 4, 10
+  position: 4, 10 # LuaM: 2, 8 > 4, 10
 
 # Mono edit - research consolidation
 # - type: technology
@@ -125,4 +125,4 @@
   technologyPrerequisites:
   - HardsuitsArmored
   - SuperParts
-  position: 4, 7
+  position: 4, 7 # LuaM: 3, 7 > 4, 7

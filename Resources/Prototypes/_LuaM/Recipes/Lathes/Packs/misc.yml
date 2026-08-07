@@ -1,0 +1,9 @@
+- type: latheRecipePack
+  id: PortableScreenTimer
+  recipes:
+  - PortableScreenTimer
+
+- type: latheRecipePack
+  id: ScienceBag
+  recipes:
+  - ScienceBag

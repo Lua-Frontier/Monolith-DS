@@ -59,7 +59,7 @@
   - TechDiskComputerCircuitboard
   technologyPrerequisites:
   - BasicParts
-  position: 7, 12
+  position: 7, 12 # LuaM: 1, -6 > 7, 12
 
 - type: technology
   id: MagnetsTech
@@ -73,7 +73,7 @@
   - NFClothingShoesBootsMoon # Frontier ClothingShoesBootsMoon<NFClothingShoesBootsMoon
   technologyPrerequisites:
   - AdvancedParts # LuaM: BasicParts > AdvancedParts
-  position: 6, 7
+  position: 6, 7 # LuaM: -2, -1 > 6, 7
 
 # Mono edit - research consolidation
 # - type: technology
@@ -105,7 +105,7 @@
   - NanoManipulatorStockPart
   technologyPrerequisites:
   - BasicParts
-  position: 8, 7
+  position: 8, 7 # LuaM: 0, 9 > 8, 7
 
 # Mono edit - research consolidation
 # - type: technology
@@ -150,7 +150,7 @@
   - HoloprojectorField
   technologyPrerequisites:
   - BasicParts
-  position: 4, 13
+  position: 4, 13 # LuaM: 2, -1 > 4, 13
 
 - type: technology
   id: AiTechnology
@@ -163,7 +163,7 @@
   - AiCoreElectronics
   technologyPrerequisites:
   - SuperParts
-  position: 8, 2
+  position: 8, 2 # LuaM: -4, 18 > 8, 2
 
 # Tier 3
 

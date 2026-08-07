@@ -1,0 +1,27 @@
+- type: technology
+  id: BlueSpaceAirTanks
+  name: research-technology-bs-air-tanks
+  entityIcon: BluespaceAirTank
+  discipline: Industrial
+  tier: 3
+  cost: 35000
+  recipeUnlocks:
+  - BluespaceAirTank
+  - SmallBluespaceAirTank
+  technologyPrerequisites:
+  - HardsuitsAdvanced
+  - AdvancedAtmospherics
+  position: 10, 5
+
+- type: technology
+  id: GasDepositLocator
+  name: research-technology-gas-locator
+  entityIcon: GasDepositLocator
+  discipline: Industrial
+  tier: 1
+  cost: 6500
+  recipeUnlocks:
+  - GasDepositLocator
+  technologyPrerequisites:
+  - AtmosphericTech
+  position: 12, 9

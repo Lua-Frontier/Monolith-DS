@@ -10,7 +10,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - PortableMicrofusionWeaponry # LuaM
-  position: 8, 8
+  position: 8, 8 # LuaM: 16, 2 > 8, 8
 
 - type: technology
   id: UllmanWeaponHiEnd
@@ -29,7 +29,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT2
   - UllmanPulseAdv
-  position: 8, 7
+  position: 8, 7 # LuaM: 16, 8 > 8, 7
 
 - type: technology
   id: UllmanHardsuitBasic
@@ -44,7 +44,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - HardsuitsArmoredAdvanced # LuaM
-  position: 2, 7
+  position: 2, 7 # LuaM: 16, 1 > 2, 7
 
 - type: technology
   id: UllmanHardsuitHiEnd
@@ -59,7 +59,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT2
   - UllmanHardsuitBasic # LuaM
-  position: 2, 6
+  position: 2, 6 # LuaM: 16, 7 > 2, 6
 
 
 

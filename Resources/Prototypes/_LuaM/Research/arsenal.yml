@@ -18,23 +18,6 @@
   position: 2, 13
 
 - type: technology
-  id: ArmorAdvanced
-  name: research-technology-armor-advanced
-  entityIcon: ClothingOuterArmorBulletproof
-  discipline: Arsenal
-  tier: 2
-  cost: 15000
-  recipeUnlocks:
-  - ClothingOuterArmorBulletproofNF
-  - ClothingOuterArmorRiot
-  - ClothingOuterArmorReflective
-  - ClothingOuterCoatBHTrench
-  - ClothingHeadHelmetRiot
-  technologyPrerequisites:
-  - ArmorBasic
-  position: 2, 10
-
-- type: technology
   id: PunkGear
   name: research-technology-punk-gear
   entityIcon: ClothingOuterCoatBomberPunkRed
@@ -62,3 +45,35 @@
   technologyPrerequisites:
   - ArmorBasic
   position: 1, 12
+
+- type: technology
+  id: ArmorAdvanced
+  name: research-technology-armor-advanced
+  entityIcon: ClothingOuterArmorBulletproof
+  discipline: Arsenal
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - ClothingOuterArmorBulletproofNF
+  - ClothingOuterArmorRiot
+  - ClothingOuterArmorReflective
+  - ClothingOuterCoatBHTrench
+  - ClothingHeadHelmetRiot
+  technologyPrerequisites:
+  - ArmorBasic
+  position: 2, 10
+
+- type: technology
+  id: GlassesContractor
+  name: research-technology-glasses-contractor
+  entityIcon: ClothingEyesGlassesContractor
+  discipline: Arsenal
+  tier: 3
+  cost: 50000
+  recipeUnlocks:
+  - ClothingEyesGlassesContractor
+  technologyPrerequisites:
+  - HardsuitsArmoredAdvanced
+  - ThermalVisionTech
+  - CyberneticEnhancements
+  position: 4, 5

@@ -3,3 +3,10 @@
   recipes:
   - SutureTSF
   - MeshTSF
+
+- type: latheRecipePack
+  id: Hyposprays
+  recipes:
+  - HypoMini
+  - HypoBrigmedic
+  - HypoMiniLimitedEdition

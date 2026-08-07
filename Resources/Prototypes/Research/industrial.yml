@@ -26,7 +26,7 @@
   - MechEquipmentKineticAccelerator # Goobstation
   technologyPrerequisites:
   - BasicParts
-  position: 4, 13
+  position: 4, 13 # LuaM: -1, 1 > 4, 13
 
 - type: technology
   id: SpaceScanning
@@ -41,7 +41,7 @@
   - BorgModuleGPS
   technologyPrerequisites:
   - SalvageEquipment # LuaM: BasicParts > SalvageEquipment
-  position: 3, 12
+  position: 3, 12 # LuaM: -2, 0 > 3, 12
 
 # - type: technology
 #   id: AdvancedPowercells
@@ -76,7 +76,7 @@
   - NFBlueprintRped
   technologyPrerequisites:
   - AdvancedParts
-  position: 1, 11
+  position: 1, 11 # LuaM: -1, 8 > 1, 11 
 # Mono edit end
 
 - type: technology
@@ -106,7 +106,7 @@
   - SheetifierMachineCircuitboard
   technologyPrerequisites:
   - MechanicalCompression
-  position: 2, 10
+  position: 2, 10 # LuaM: -1, 7 > 2, 10 
 
 # Mono edit
 - type: technology
@@ -135,7 +135,7 @@
   technologyPrerequisites:
   - AdvancedParts
   - SpaceScanning
-  position: 13, 10
+  position: 13, 10 # LuaM: -2, 8 > 13, 10
 
 - type: technology
   id: AtmosphericTech
@@ -150,7 +150,7 @@
   - FanElectronics # LuaM
   technologyPrerequisites:
   - PowerGeneration # LuaM: BasicParts > PowerGeneration
-  position: 14, 9
+  position: 14, 9 # LuaM: -2, 1 > 14, 9
 
 # Tier 2
 
@@ -175,7 +175,7 @@
   - SpaceScanning
   - PowerGeneration
 # LuaM-end.
-  position: 6, 12
+  position: 6, 12 # LuaM: -5, 7 > 6, 12
 
 - type: technology
   id: AdvancedAtmospherics
@@ -192,7 +192,7 @@
   #  - FireExtinguisherBluespace # DeltaV
   technologyPrerequisites:
   - AtmosphericTech
-  position: 14, 8
+  position: 14, 8 # LuaM: -2, 2 > 14, 8
 
 - type: technology
   id: AdvancedToolsTechnology
@@ -225,7 +225,7 @@
   technologyPrerequisites:
   - SuperParts 
   - MassExcavation # LuaM
-  position: 4, 6
+  position: 4, 6 # LuaM: -1, 18 > 4, 6
 
 - type: technology
   id: MassExcavation
@@ -246,7 +246,7 @@
   technologyPrerequisites:
   - SpaceScanning # LuaM: SalvageEquipment > SpaceScanning
   - AdvancedParts
-  position: 4, 11
+  position: 4, 11 # LuaM: -1, 2 > 4, 11
 
 # Tier 3
 
@@ -285,7 +285,7 @@
   technologyPrerequisites:
   - PowerGeneration
   - SuperParts
-  position: 12, 7
+  position: 12, 7 # LuaM: -2, 7 > 12, 7
 
 # Mono edit - research consolidation
 # - type: technology

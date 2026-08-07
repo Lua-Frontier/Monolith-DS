@@ -63,6 +63,9 @@
     - ArmorAdvanced
     - PunkGear
     - AdvMeds
+    - BluespaceAirTanks
+    - Hyposprays
+    - GlassesContractor
 # LuaM-end.
   - type: MaterialStorage
     whitelist:

@@ -13,4 +13,4 @@
   - GrenadeIncendiaryUSSP
   - SeismicChargeUSSP
   - TearGasGrenadeUSSP
-  position: 9, 10
+  position: 9, 10 # LuaM: 12, 3 > 9, 10

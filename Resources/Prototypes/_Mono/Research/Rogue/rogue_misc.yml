@@ -15,7 +15,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - Shuttlecraft # LuaM
-  position: 8, 13
+  position: 8, 13 # LuaM: 11, 1 > 8, 13
 
 - type: technology
   id: PdvTierTwoVouchers
@@ -30,7 +30,7 @@
   - PdvTierOneVouchers
   - UniversalMaterialResearchT2
   - ShuttleAdvancedComponents # LuaM
-  position: 8, 11
+  position: 8, 11 # LuaM: 11, 7 > 8, 11
 
 - type: technology
   id: PdvTierThreeVouchers
@@ -46,7 +46,7 @@
   - PdvTierTwoVouchers
   - UniversalMaterialResearchT3
   - ShuttleCtlaAdvancedDriveResearch # LuaM
-  position: 8, 9
+  position: 8, 9 # LuaM: 11, 12 > 8, 9
 
 - type: technology
   id: RogueJaws
@@ -57,11 +57,11 @@
   cost: 10000
   recipeUnlocks:
   - JawsOfLifeRogue
-  # - NaniteApplicatorSyndicate Commented by LuaM  
+  # - NaniteApplicatorSyndicate Commented by LuaM
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - AdvancedToolsTechnology # LuaM
-  position: 8, 13
+  position: 8, 13 # LuaM: 12, -1 > 8, 13
 
 - type: technology
   id: RogueHypospray
@@ -74,8 +74,8 @@
   - HyposprayRogue
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  - AdvancedTreatment # LuaM
-  position: 10, 13
+  - HypoMiniLimitedEdition # LuaM
+  position: 10, 13 # LuaM: 12, -2 > 10, 13
 
 - type: technology
   id: RogueEmag
@@ -90,7 +90,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT2
   - SuperParts # LuaM
-  position: 6, 13
+  position: 6, 13 # LuaM: 12, 10 > 6, 13
 
 # Commented by LuaM
 #- type: technology
@@ -118,7 +118,7 @@
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - RogueJaws # LuaM
-  position: 8, 11
+  position: 8, 11 # LuaM: 12, -4 > 8, 11
 
 - type: technology
   id: PDVAdvancedBorgModule
@@ -133,4 +133,4 @@
   - UniversalMaterialResearchT3
   - PDVBasicBorgModule
   - MechBasic # LuaM
-  position: 8, 9
+  position: 8, 9 # LuaM: 12, 15 > 8, 9
