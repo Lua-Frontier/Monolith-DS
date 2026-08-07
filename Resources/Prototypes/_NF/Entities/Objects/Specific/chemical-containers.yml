@@ -102,6 +102,7 @@
   id: JerryCan
   #description: A plastic jerry can with a spill-proof nozzle. #Mono out
   description: A plastic jerry can fitted with a specialized hot-refill outlet allowing risk-free refueling. #Mono in
+  suffix: Empty # LuaM
   components:
   - type: SolutionContainerManager
     solutions:

@@ -7,8 +7,8 @@
 - type: vessel
   id: Phantom
   parent: BaseVessel
-  name: IB Phantom
-  description: Experimental ship with enormous thruster power. CTLA-25s included.
+  name: vessel-phantom-name # LuaM-locale
+  description: vessel-phantom-desc # LuaM-locale
   price: 90000
   category: Small
   group: Medical

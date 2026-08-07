@@ -19,9 +19,9 @@
     - state: protect
     - state: holo
       shader: unshaded
-    - type: Tag
-      tags:
-      - TechDiskMono
+  - type: Tag
+    tags:
+    - TechDiskMono
 
 - type: weightedRandom
   id: TechDiskTierWeightsNormal

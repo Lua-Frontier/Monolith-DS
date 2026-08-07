@@ -9,8 +9,8 @@
 - type: vessel
   id: Taser
   parent: BaseVessel
-  name: Taser
-  description: Micro-fighter equipped with EMP Launcher. Drone server included.
+  name: vessel-taser-name # LuaM-locale
+  description: vessel-taser-desc # LuaM-locale
   price: 12500
   category: Small
   group: Custom

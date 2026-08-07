@@ -58,6 +58,15 @@
     - ResearchedExplosives
     - SecurityEquipment
     - SmartGun
+# LuaM-start:
+    - ArmorBasic
+    - ArmorAdvanced
+    - PunkGear
+    - AdvMeds
+    - BluespaceAirTanks
+    - Hyposprays
+    - GlassesContractor
+# LuaM-end.
   - type: MaterialStorage
     whitelist:
       tags:

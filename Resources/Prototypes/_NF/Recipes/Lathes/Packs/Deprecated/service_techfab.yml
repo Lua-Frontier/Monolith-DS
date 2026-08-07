@@ -131,6 +131,10 @@
     - WetFloorSign
     - DeskBell
     - BrbSign
+# LuaM-start:
+    - FireExtinguisherMini
+    - JerryCan
+# LuaM-end.
 
 - type: latheRecipePack
   id: NFServiceTechfabDeprecated
@@ -161,7 +165,7 @@
       - PlantBagOfHolding
       - PlantAnalyzer
       - JanicartFlatpack
-      # - FireExtinguisherBluespace # DeltaV
+      - FireExtinguisherBluespace # DeltaV # Uncommented by LuaM
 
 - type: latheRecipePack
   id: NFServiceTechfabDeprecatedEmagStatic

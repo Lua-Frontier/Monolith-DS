@@ -5,8 +5,8 @@
 - type: vessel
   id: Tarantula
   parent: BaseVesselAntag
-  name: TSF-SVE Tarantula
-  description: A durable ship built for sustained close-range engagements, equipped with 4 Cerberus plasma scattercannons and 2 Marauders to melt ships away.
+  name: vessel-tarantula-name # LuaM-locale
+  description: vessel-tarantula-desc # LuaM-locale
   price: 140850
   purchasable: false # voucher only
   category: Medium
@@ -19,7 +19,9 @@
   - Pursuit
   engine:
   - AME
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Tarantula
   mapName: 'Tarantula'

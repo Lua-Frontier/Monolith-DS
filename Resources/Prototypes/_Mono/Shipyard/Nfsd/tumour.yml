@@ -3,8 +3,8 @@
 - type: vessel
   id: Tumour
   parent: BaseVesselAntag
-  name: TSF-SKR Tumour
-  description: A ugly potato of a carrier. Little armament to defend itself, but carries lathes to support its fighters and other ships.
+  name: vessel-tumour-name # LuaM-locale
+  description: vessel-tumour-desc # LuaM-locale
   price: 68250
   category: Medium
   group: Security
@@ -16,7 +16,9 @@
   - Patrol
   engine:
   - Uranium
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Tumour
   mapName: 'Tumour'

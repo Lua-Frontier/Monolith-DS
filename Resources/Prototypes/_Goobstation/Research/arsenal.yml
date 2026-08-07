@@ -11,5 +11,6 @@
   - MagazineSmartLMG
   - ASMGTUniversallyHostile
   technologyPrerequisites:
-  - BasicParts
-  position: 2, 4
+  - SuperParts # LuaM: BasicParts > SuperParts
+  - MercArmementAdvanced # LuaM
+  position: 13, 9 # LuaM: 2, 4 > 13, 9

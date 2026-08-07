@@ -1,8 +1,8 @@
 - type: vessel
   id: Ample
   parent: BaseVessel
-  name: SKR Ample
-  description: A very light mining shuttle equipped with a PTK-1500e
+  name: vessel-ample-name # LuaM-locale
+  description: vessel-ample-desc # LuaM-locale
   price: 6250
   category: Micro
   group: Custom

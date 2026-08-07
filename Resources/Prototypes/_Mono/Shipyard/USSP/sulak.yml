@@ -3,8 +3,8 @@
 - type: vessel
   id: Sulak
   parent: BaseVesselAntag
-  name: NCS Sulak
-  description: A medium sized destroyer armed with a Charon Massdriver for taking down large targets.
+  name: vessel-sulak-name # LuaM-locale
+  description: vessel-sulak-desc # LuaM-locale
   price: 212000 # LuaM: 142500 > 212000
   category: Medium
   group: Ussp

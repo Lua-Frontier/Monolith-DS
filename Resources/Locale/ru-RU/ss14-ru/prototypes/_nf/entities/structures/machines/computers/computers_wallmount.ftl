@@ -4,9 +4,9 @@ ent-ComputerWallmountRadar = { ent-ComputerRadar }
 ent-ComputerWallmountAdvancedRadar = { ent-ComputerAdvancedRadar }
   .suffix = Настенный
   .desc = { ent-ComputerAdvancedRadar.desc }
-
-ent-ComputerWallmountComputerIFF = Консоль системы опознавания
+ent-ComputerWallmountCrewMonitoring = { ent-ComputerCrewMonitoring }
   .suffix = Настенный
-  .desc = { ent-ComputerRadar.desc }
-ent-ComputerWallmountCrewMonitoring = ComputerWallmountCrewMonitoring
-ent-ComputerWallmountStationRecords = ComputerWallmountStationRecords
+  .desc = { ent-ComputerCrewMonitoring.desc }
+ent-ComputerWallmountStationRecords = { ent-ComputerStationRecords }
+  .suffix = Настенный
+  .desc = { ent-ComputerStationRecords.desc }

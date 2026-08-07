@@ -41,7 +41,7 @@
   - type: SolutionContainerManager # Mono
     solutions:
       hypospray:
-        maxVol: 20 # why is a lawenforcement version the same as a civilian version? # LuaM: 25 > 20
+        maxVol: 15 # why is a lawenforcement version the same as a civilian version? # LuaM: 25 > 15
   - type: RefillableSolution
     solution: hypospray
   - type: ExaminableSolution
@@ -72,7 +72,7 @@
   - type: SolutionContainerManager # LuaM
     solutions:
       hypospray:
-        maxVol: 15
+        maxVol: 20 # LuaM: 15 > 20
 
 - type: entity
   name: empty medipen

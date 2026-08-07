@@ -1,8 +1,8 @@
 - type: vessel
   id: Hermes
   parent: BaseVessel
-  name: Hermes
-  description: The mailing segment of the combined service ship, designed for speed above all. This one is designed and produced by The Pantheon Collective.
+  name: vessel-hermes-name # LuaM-locale
+  description: vessel-hermes-desc # LuaM-locale
   price: 37500
   category: Small
   group: Sr

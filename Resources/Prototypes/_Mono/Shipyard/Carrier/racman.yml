@@ -1,8 +1,8 @@
 - type: vessel
   id: Rac-Man
   parent: BaseVessel
-  name: Z-22 Rac-Man
-  description: An assault drone with two forward mounted 30mm rotary autocannons.
+  name: vessel-racman-name # LuaM-locale
+  description: vessel-racman-desc # LuaM-locale
   price: 22000
   category: Micro
   group: Custom

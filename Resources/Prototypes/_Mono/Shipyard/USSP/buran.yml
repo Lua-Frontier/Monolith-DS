@@ -3,8 +3,8 @@
 - type: vessel
   id: Buran
   parent: BaseVesselAntag
-  name: VEF Buran
-  description: USSP capital-sized frigate with tremendous broadside firepower and thick armor. Glory to commissariat.
+  name: vessel-buran-name # LuaM-locale
+  description: vessel-buran-desc # LuaM-locale
   price: 410000 # LuaM: 320000 > 410000
   category: Large
   group: Ussp

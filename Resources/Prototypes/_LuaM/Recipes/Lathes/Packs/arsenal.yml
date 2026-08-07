@@ -1,0 +1,45 @@
+- type: latheRecipePack
+  id: ArmorBasic
+  recipes:
+  - ClothingOuterVestWebMercenaryBlack
+  - ClothingOuterVestWebMercenary
+  - ClothingOuterArmorBasic
+  - ClothingOuterArmorBasicSlim
+  - ClothingHeadHelmetMercenary
+  - ClothingHeadHelmetMercenaryBlack
+  - ClothingHeadHelmetBasic
+
+- type: latheRecipePack
+  id: ArmorAdvanced
+  recipes:
+  - ClothingOuterArmorBulletproofNF
+  - ClothingOuterArmorRiot
+  - ClothingOuterArmorReflective
+  - ClothingOuterCoatBHTrench
+  - ClothingHeadHelmetRiot
+
+- type: latheRecipePack
+  id: PunkGear
+  recipes:
+  - ClothingEyesPunkInfoShades
+  - ClothingOuterArmorPunkRandomized
+  - ClothingOuterArmorPunkRed
+  - ClothingOuterArmorPunkGreen
+  - ClothingOuterArmorPunkOrange
+  - ClothingOuterArmorElitePunkRandomized
+  - ClothingBeltPunkRandomized
+  - ClothingShoesBootsPunkRandomized
+  - ClothingEyesPunkGoggles
+  - ClothingEyesPunkInfoShades
+  - ClothingMaskPunkHalf
+  - ClothingUniformRandomPunkTanktop
+  - ClothingUniformRandomPunkTanktopShorts
+  - ClothingUniformRandomPunkCroptop
+  - ClothingUniformRandomPunkCroptopShorts
+  - ClothingOuterCoatLettermanRandomized
+  - ClothingOuterCoatBomberRandomized
+
+- type: latheRecipePack
+  id: GlassesContractor
+  recipes:
+  - ClothingEyesGlassesContractor

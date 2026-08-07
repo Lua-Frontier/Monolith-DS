@@ -1,5 +1,8 @@
 using Content.Shared.Actions;
+using Content.Shared.Bed.Sleep; // Europa
 using Content.Shared.Mind;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems; // Europa
 using Content.Shared.MouseRotator;
 using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
@@ -11,9 +14,10 @@ namespace Content.Shared.CombatMode;
 public abstract partial class SharedCombatModeSystem : EntitySystem
 {
     [Dependency] protected IGameTiming Timing = default!;
-    [Dependency] private   SharedActionsSystem _actionsSystem = default!;
-    [Dependency] private   SharedPopupSystem _popup = default!;
-    [Dependency] private   SharedMindSystem  _mind = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedMindSystem  _mind = default!;
+    [Dependency] private MobStateSystem _mobState = default!; // Europa
 
     public override void Initialize()
     {
@@ -45,8 +49,8 @@ public abstract partial class SharedCombatModeSystem : EntitySystem
         args.Handled = true;
         SetInCombatMode(uid, !component.IsInCombatMode, component);
 
-        var msg = component.IsInCombatMode ? "action-popup-combat-enabled" : "action-popup-combat-disabled";
-        _popup.PopupClient(Loc.GetString(msg), args.Performer, args.Performer);
+//        var msg = component.IsInCombatMode ? "action-popup-combat-enabled" : "action-popup-combat-disabled"; // Europa-Remove
+//        _popup.PopupClient(Loc.GetString(msg), args.Performer, args.Performer); // Europa-Remove
     }
 
     public void SetCanDisarm(EntityUid entity, bool canDisarm, CombatModeComponent? component = null)
@@ -69,6 +73,14 @@ public abstract partial class SharedCombatModeSystem : EntitySystem
 
         if (component.IsInCombatMode == value)
             return;
+
+        // Europa-Start | Dont let entity gone postal when unconscious
+        if (_mobState.IsDead(entity) || _mobState.IsCritical(entity) || HasComp<SleepingComponent>(entity))
+        {
+            if (value)
+                return;
+        }
+        // Europa-End
 
         component.IsInCombatMode = value;
         Dirty(entity, component);

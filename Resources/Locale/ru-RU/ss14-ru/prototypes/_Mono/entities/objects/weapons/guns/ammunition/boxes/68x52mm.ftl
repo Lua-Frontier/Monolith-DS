@@ -1,7 +1,7 @@
 ent-BaseAmmoBox68x52mmCaseless = коробка боеприпасов (6.8x52мм STANAG безгильзовые)
 ent-AmmoBox68x52mmCaseless = коробка боеприпасов (6.8x52мм STANAG безгильзовые)
 ent-AmmoBox68x52mmCaselessPractice = коробка боеприпасов (6.8x52мм STANAG безгильзовые учебные)
-ent-AmmoBox68x52mmCaselessRubber = коробка боеприпасов (6.8x52мм STANAG безгильзовые резиновые)
+ent-AmmoBox68x52mmCaselessRubber = коробка боеприпасов (6.8x52мм STANAG безгильзовые травматические)
 ent-AmmoBox68x52mmCaselessBig = большая коробка боеприпасов (6.8x52мм STANAG безгильзовые)
 ent-AmmoBox68x52mmCaselessPlasteelAP = большая коробка боеприпасов (6.8x52мм STANAG безгильзовые бронебойные)
 ent-AmmoBox68x52mmCaselessHP = большая коробка боеприпасов (6.8x52мм STANAG безгильзовые экспансивные)

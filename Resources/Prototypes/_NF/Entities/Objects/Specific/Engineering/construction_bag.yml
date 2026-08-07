@@ -41,6 +41,7 @@
       - CableCoil
       components:
       - ConstructionMaterials
+      - FloorTile # LuaM
     blacklist:
       tags:
       - PrizeTicket

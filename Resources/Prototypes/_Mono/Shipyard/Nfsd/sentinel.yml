@@ -3,21 +3,23 @@
 - type: vessel
   id: Sentinel
   parent: BaseVesselAntag
-  name: TSF-SKR Sentinel
-  description: An armored and shielded corvette with 2 front facing Bofors cannons, 4 MARAUDER plasma cannons, and 2 rear L85 20mms for PD.
+  name: vessel-sentinel-name # LuaM-locale
+  description: vessel-sentinel-desc # LuaM-locale
   price: 210200 # Appraises around 100k, but marked up since appraisegrid is too stupid to realize the true value of my creations (plastitanium walls probably has their value set really low)
   purchasable: false # voucher only
   category: Medium
   group: Security
   access: Security
-  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/sentinel.yml # LuaM: /Maps/_Mono/Shuttles/Nfsd/sentinel.yml > /Maps/_LuaM/Shuttles/TSFMC/sentinel.yml 
+  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/sentinel.yml # LuaM: /Maps/_Mono/Shuttles/Nfsd/sentinel.yml > /Maps/_LuaM/Shuttles/TSFMC/sentinel.yml
   guidebookPage: Null
   class:
   - Patrol
   - Corvette
   engine:
   - AME
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Sentinel
   mapName: 'Sentinel'

@@ -3,8 +3,8 @@
 - type: vessel
   id: TSFMCArrow
   parent: BaseVesselAntag
-  name: TSF-VSK Стрела
-  description: Необычный шаттл, вобравший в себя черты Стража и Флиссы, пусть и не может похвастаться богатым вооружением, но по праву занимает своё место во флоте.
+  name: vessel-arrow-name
+  description: vessel-arrow-desc
   limit: 2
   price: 320000
   purchasable: false # voucher only
@@ -17,7 +17,9 @@
   - Frigate
   engine:
   - Plasma
-
+  addComponents:
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: TSFMCArrow
   mapName: 'Arrow'
@@ -28,10 +30,10 @@
       stationProto: StandardFrontierSecurityVessel
       gridComponents:
       - type: VesselInfo
-        description: "Че"
+        description: "Чё?.."
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'Стрела TSF{1}'
+        mapNameTemplate: '«Стрела» ТСФ{1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'

@@ -3,8 +3,8 @@
 - type: vessel
   id: Dagger
   parent: BaseVesselAntag
-  name: TSF-SKR Dagger
-  description: Straight from the shipyards of Sol, this ship is equipped with a mass driver as its main armament for long-range fire support.
+  name: vessel-dagger-name # LuaM-locale
+  description: vessel-dagger-desc # LuaM-locale
   price: 120000
   purchasable: false # voucher only
   category: Medium
@@ -17,7 +17,9 @@
   - Pursuit
   engine:
   - AME
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Dagger
   mapName: 'Dagger'

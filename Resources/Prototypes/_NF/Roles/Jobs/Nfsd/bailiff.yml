@@ -54,6 +54,6 @@
 #    - Magazine45_ACPPistolFMJ # Mono
     - BaseSecurityUplinkRadioCaptain
 #    - ShipVoucherNfsdBailiff # Mono
-    - RubberStampBailiff
+#    - RubberStampBailiff # Commented by LuaM
     - RadioHandheldNF # Mono
     - RubberStampTSFCaptain # Mono

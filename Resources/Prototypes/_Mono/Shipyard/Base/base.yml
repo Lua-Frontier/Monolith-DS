@@ -2,8 +2,8 @@
 - type: vessel
   id: BaseVessel
   abstract: true
-  name: AAA Bikeshed
-  description: Questionably spaceworthy.
+  name: vessel-base-name # LuaM-locale
+  description: vessel-base-desc # LuaM-locale
   price: 50000
   category: Medium
   group: Shipyard
@@ -18,4 +18,4 @@
   parent: BaseVessel
   addComponents:
   - type: IFF
-    flags: [IsPlayerShuttle, HideLabel]
+    flags: [IsPlayerShuttle, HideLabel, AlwaysShowColor] # LuaM add: AlwaysShowColor

@@ -1,0 +1,9 @@
+ent-ClothingBeltMilitaryWebbingCMOFilled = { ent-ClothingBeltMilitaryWebbingCMO }
+    .suffix = Заполненный
+    .desc = { ent-ClothingBeltMilitaryWebbingCMO.desc }
+ent-ClothingBeltHolsterFilledCentComm = { ent-ClothingBeltHolster }
+    .suffix = Заполненный, N-1984, Бюрократ
+    .desc = { ent-ClothingBeltHolster.desc }
+ent-ClothingBeltSheathFilledNavyOfficer = { ent-ClothingBeltSheath }
+    .suffix = Заполненный, Офицерская сабля
+    .desc = { ent-ClothingBeltSheath.desc }

@@ -1,0 +1,9 @@
+ent-ClothingBackpackSatchelLeatherFilledNavyOfficer = { ent-ClothingBackpackSatchelLeather }
+    .suffix = Заполненный, ОСО
+    .desc = { ent-ClothingBackpackSatchelLeather.desc }
+ent-ClothingBackpackSatchelLeatherFilledSpecOps = { ent-ClothingBackpackSatchelLeather }
+    .suffix = Заполненный, ОСО, Комплект ядерной аутентификации
+    .desc = { ent-ClothingBackpackSatchelLeather.desc }
+ent-ClothingBackpackChameleonFilledUndercover = { ent-ClothingBackpackChameleon }
+    .suffix = Заполненный, Хамелеон, ОСО
+    .desc = { ent-ClothingBackpackChameleon.desc }

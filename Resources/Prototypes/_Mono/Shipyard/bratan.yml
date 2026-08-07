@@ -12,8 +12,8 @@
 - type: vessel
   id: Bratan
   parent: BaseVessel
-  name: PB Bratan
-  description: A mobile nightclub, cafeteria, hydroponics, and secret drug lab and smuggling ship, all in one package! Brought to you by the Paycheck Bratva.
+  name: vessel-bratan-name # LuaM-locale
+  description: vessel-bratan-desc # LuaM-locale
   price: 142000
   category: Large
   group: Shipyard

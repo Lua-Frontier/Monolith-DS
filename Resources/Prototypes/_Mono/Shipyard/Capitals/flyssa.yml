@@ -1,8 +1,8 @@
 - type: vessel
   id: Flyssa
   parent: BaseVesselAntag
-  name: TSF-SKR Flyssa-K
-  description: Lended over from the TSFN for you marines. A one-ship fleet on this scale of combat.
+  name: vessel-flyssa-name # LuaM-locale
+  description: vessel-flyssa-desc # LuaM-locale
   limit: 1
   price: 1225950
   purchasable: false # voucher only
@@ -20,7 +20,9 @@
   - Patrol
   engine:
   - Plasma # LuaM: AME > Plasma
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Flyssa
   mapName: 'TSF-SKR Flyssa-K'

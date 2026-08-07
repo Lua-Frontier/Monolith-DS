@@ -56,6 +56,8 @@
 # Todo: Add/Change to PDV - Mono
 - type: npcFaction
   id: PirateNF
+  friendly: # LuaM
+  - SimpleNeutral
   defaultHostile: true
 
 - type: npcFaction

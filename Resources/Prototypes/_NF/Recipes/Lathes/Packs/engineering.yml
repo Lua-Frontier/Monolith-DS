@@ -17,7 +17,7 @@
   - ShipRepairDeviceAmmo #Mono
   - ConstructionBagOfHolding
   - UtilityBeltChiefEngineer
-  # - FireExtinguisherBluespace # Delta-V
+  - FireExtinguisherBluespace # Delta-V # Uncommented by LuaM
   - RPED
   - AdvancedCapacitorStockPart
   - AdvancedMatterBinStockPart

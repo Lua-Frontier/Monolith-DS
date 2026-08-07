@@ -7,5 +7,5 @@ research-technology-universal-150mm-ammo = Производство 150-мм с�
 research-technology-universal-light-fighter-ordinance = Производство боеголовок
 research-technology-universal-advanced-light-fighter-ordinance = Производство продвинутых боеголовок
 
-research-technology-universal-armorplates-1 = Баллистический композит
-research-technology-universal-armorplates-2 = Урановый композит
+research-technology-universal-armorplates-1 = Стандартные бронеплиты
+research-technology-universal-armorplates-2 = Продвинутые бронеплиты

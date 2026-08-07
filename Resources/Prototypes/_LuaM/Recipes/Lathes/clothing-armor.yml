@@ -1,0 +1,69 @@
+# Outer
+- type: latheRecipe
+  id: ClothingOuterArmorBasic
+  parent: NFBaseArmorRecipe
+  result: ClothingOuterArmorBasic
+  materials:
+    Durathread: 350
+    Steel: 500
+    Plasteel: 300
+
+- type: latheRecipe
+  id: ClothingOuterArmorBasicSlim
+  parent: NFBaseArmorRecipe
+  result: ClothingOuterArmorBasicSlim
+  materials:
+    Durathread: 350
+    Steel: 500
+    Plasteel: 300
+
+- type: latheRecipe
+  id: ClothingOuterArmorRiot
+  parent: NFBaseArmorRecipe
+  result: ClothingOuterArmorRiot
+  materials:
+    Durathread: 500
+    Steel: 900
+    Plasteel: 400
+    Plastic: 400
+
+- type: latheRecipe
+  id: ClothingOuterArmorReflective
+  parent: NFBaseArmorRecipe
+  result: ClothingOuterArmorReflective
+  materials:
+    Durathread: 200
+    Glass: 1000
+    Plastic: 500
+    Steel: 250
+    Plasteel: 250
+
+# Helmets
+- type: latheRecipe
+  id: ClothingHeadHelmetMercenaryBlack
+  parent: NFBaseHelmetRecipe
+  result: ClothingHeadHelmetMercenaryBlack
+
+- type: latheRecipe
+  id: ClothingHeadHelmetRiot
+  parent: NFBaseHelmetRecipe
+  result: ClothingHeadHelmetRiot
+  materials:
+    Cloth: 100
+    Durathread: 100
+    Steel: 250
+    Plastic: 850
+
+# Eyes
+- type: latheRecipe
+  id: ClothingEyesGlassesContractor
+  parent: NFBaseArmorRecipe
+  result: ClothingEyesGlassesContractor
+  materials:
+    Durathread: 150
+    Plastic: 500
+    Gold: 300
+    Silver: 300
+    Plasteel: 50
+    Uranium: 100
+    Bluespace: 150

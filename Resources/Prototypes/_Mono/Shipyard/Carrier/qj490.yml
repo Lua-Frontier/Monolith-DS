@@ -3,8 +3,8 @@
 - type: vessel
   id: QJ490
   parent: BaseVesselAntag
-  name: SKR QJ-490 Air Superiority Fighter
-  description: Equipped with 4 Type-54C autopulsers and a light munitions bay.
+  name: vessel-qj490-name # LuaM-locale
+  description: vessel-qj490-desc # LuaM-locale
   price: 36500
   category: Small
   group: Custom

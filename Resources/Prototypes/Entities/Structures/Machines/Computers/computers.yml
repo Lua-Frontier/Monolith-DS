@@ -1181,7 +1181,7 @@
 
 - type: entity
   id: ComputerSalvageExpedition
-  parent: [ BaseComputerAiAccess , BaseStructureDisableAnchoring ] # LuaM add: BaseStructureDisableAnchoring
+  parent: [ BaseComputerAiAccess , BaseStructureDisableToolUse ] # LuaM add: BaseStructureDisableToolUse
   name: salvage expeditions computer
   description: Used to accept salvage missions, if you're tough enough.
   components:

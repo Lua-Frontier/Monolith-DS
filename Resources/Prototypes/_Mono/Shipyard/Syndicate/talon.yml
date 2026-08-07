@@ -1,8 +1,8 @@
 - type: vessel
   id: Talon
   parent: BaseVesselAntag
-  name: Talon
-  description: A heavy syndicate interceptor, with 4 forward facing Fang autocannons and 2 sidemounted Adder scatter cannons
+  name: vessel-talon-name # LuaM-locale
+  description: vessel-talon-desc # LuaM-locale
   price: 45000
   category: Small
   group: Syndicate

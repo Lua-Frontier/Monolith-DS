@@ -3,8 +3,8 @@
 - type: vessel
   id: QJ340
   parent: BaseVesselAntag
-  name: GS QJ-340 Support Fighter
-  description: A frontloaded fighter with 2 L1 Phalanxes, a Vanyk Missile pod and a Rubicon EMP launcher.
+  name: vessel-qj340-name # LuaM-locale
+  description: vessel-qj340-desc # LuaM-locale
   price: 33600 #Rounded up to 28K, with a 20% tax
   category: Small
   group: Custom

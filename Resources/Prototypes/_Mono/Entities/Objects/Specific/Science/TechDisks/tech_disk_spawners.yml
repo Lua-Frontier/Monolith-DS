@@ -31,6 +31,7 @@
       - id: TechDiskCivCTLA50
       - id: TechDiskCivShipComps
       - id: TechDiskCivBackpackWaterTank
+      - id: TechDiskZookeeperTranslatorImplanter # LuaM
     - !type:NestedSelector
       weight: 3
       tableId: SpawnLootTechDisksT1RareBranch
@@ -46,7 +47,10 @@
     - id: TechDiskCivMicroreactors
     - id: TechDiskCivAdvancedTools
     - id: TechDiskCivTranslationBasic
-    - id: TechDiskCombatSilicon # LuaM
+# LuaM-start:
+    - id: TechDiskCombatSilicon
+    - id: TechDiskZookeeperTranslatorImplanter
+# LuaM-end.
 
 #T2 TECH DISKS
 - type: entity
@@ -98,6 +102,10 @@
     - id: TechDiskHristov
     - id: SpawnLootTechDisksT3Fracture
     - id: TechDiskUniversalShipAmmoAdvanced
+# LuaM-start:
+    - id: TechDiskCombatSilicon
+    - id: TechDiskDataFarm
+# LuaM-end.
 
 #T2 TECH MECH DISKS
 - type: entity
@@ -135,7 +143,10 @@
       - id: TechDiskMechWeaponsLight
       - id: TechDiskMechWeaponsMedium
       - id: TechDiskMechWeaponsHeavy
-      - id: TechDiskCombatSilicon # LuaM
+# LuaM-start:
+      - id: TechDiskCombatSilicon
+      - id: TechDiskDataFarm
+# LuaM-end.
       - !type:GroupSelector
         weight: 3
         children:
@@ -206,3 +217,4 @@
     - id: TechDiskShields
     - id: TechDiskFtl
     - id: TechDiskTranslationPreFracture
+    - id: TechDiskDataFarm # LuaM

@@ -3,8 +3,8 @@
 - type: vessel
   id: Sekunda
   parent: BaseVesselAntag
-  name: PPU Sekunda
-  description: A USSP corpsman and fire support ship, comes with an FTL drive, tiny medical and chemical bay, light armament and a cramped interior. Produced by People's Production Union.
+  name: vessel-sekunda-name # LuaM-locale
+  description: vessel-sekunda-desc # LuaM-locale
   price: 60000
   category: Medium
   group: Ussp
@@ -36,4 +36,4 @@
           availableJobs:
             Mercenary: [ 0, 0 ]
             Pilot: [ 0, 0 ]
-#Idfk what im doing I will not lie at all. What am I doing? Hello? Mooooooooooooom? AAAAAAAAAAAAAAAAA! *crashes your entire game and dies*
+#Idfk what im doing I will not lie at all. What am I doing? Hello? Mooooooooooooom? AAAAAAAAAAAAAAAAA! *crashes your entire game and dies* # Ты че ебанутый?

@@ -7,6 +7,8 @@
 
 - type: npcFaction
   id: TSFMC
+  friendly: # LuaM
+  - TSFMCTurret
   neutral:
   - CC
   - NanoTrasen
@@ -30,6 +32,8 @@
 
 - type: npcFaction
   id: USSP
+  friendly: # LuaM
+  - USSPTurret
   neutral:
   - CC
   - NanoTrasen

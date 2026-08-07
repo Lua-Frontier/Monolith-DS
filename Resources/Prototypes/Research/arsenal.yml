@@ -35,8 +35,8 @@
   - WeaponLaserSvalinn # Mono
   - NFBlueprintWeaponLaserSvalinn # Frontier
   technologyPrerequisites:
-  - BasicParts
-  position: 2, 3
+  - AdvancedRiotControl # LuaM: BasicParts > AdvancedRiotControl
+  position: 11, 12 # LuaM: 2, 3 > 11, 12
 
 # Mono edit - research consolidation
 # - type: technology
@@ -70,7 +70,7 @@
   - ClothingBackpackElectropack # Mono
   technologyPrerequisites:
   - BasicParts
-  position: 2, 2
+  position: 7, 13 # LuaM: 2, 2 > 7, 13
 
 - type: technology
   id: ExplosiveTechnology
@@ -89,8 +89,9 @@
   - ChemicalPayload
   - NFBlueprintSignallerAdvanced # Frontier
   technologyPrerequisites:
-  - SuperParts
-  position: 1, 14
+  - AdvancedParts # LuaM: SuperParts > AdvancedParts
+  - WeaponizedLaserManipulation # LuaM
+  position: 10, 11 # LuaM: 1, 14 > 10, 11
 
 # Mono edit - research consolidation
 # - type: technology
@@ -121,7 +122,7 @@
   - WeaponXrayCannon # Mono
   technologyPrerequisites:
   - WeaponizedLaserManipulation
-  position: 3, 3
+  position: 11, 10 # LuaM: 3, 3 > 11, 10
 
 # - type: technology
 #   id: WaveParticleHarnessing
@@ -160,7 +161,7 @@
   - PowerCageHigh
   technologyPrerequisites:
   - ExplosiveTechnology
-  position: -5, 8
+  position: 10, 9 # LuaM: -5, 8 > 10, 9
 
 # Tier 3
 
@@ -179,7 +180,7 @@
   technologyPrerequisites:
   - ConcentratedLaserWeaponry
   - SuperParts
-  position: 4, 3
+  position: 11, 8 # LuaM: 4, 3 > 11, 8
 
 # Mono edit - research consolidation
 # - type: technology
