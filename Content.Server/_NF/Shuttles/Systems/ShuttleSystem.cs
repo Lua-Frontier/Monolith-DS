@@ -18,7 +18,7 @@ public sealed partial class ShuttleSystem
     [Dependency] private readonly RadarConsoleSystem _radarConsole = default!;
 
     private const float SpaceFrictionStrength = 0.0075f;
-    private const float DampenDampingStrength = 0.25f;
+    public const float DampenDampingStrength = 0.25f; // LuaM  private > public
     private const float AnchorDampingStrength = 2.5f;
     private void NfInitialize()
     {
