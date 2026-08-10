@@ -1765,7 +1765,8 @@ namespace Content.Client.Stylesheets
                     {
                         Modulate = ButtonColorGoodDefault
                     }),
-            }).ToList());
+            // LuaM: register the Dead Space 14 AHelp visual rules in the legacy stylesheet pipeline.
+            }).Concat(DeadSpaceAHelpStyles.GetRules(resCache)).ToList());
         }
     }
 }

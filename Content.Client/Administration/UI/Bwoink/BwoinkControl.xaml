@@ -1,26 +1,40 @@
 ﻿<Control
     xmlns="https://spacestation14.io"
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls">
-    <PanelContainer StyleClasses="BackgroundDark">
-        <SplitContainer Orientation="Horizontal" VerticalExpand="True">
-            <cc:PlayerListControl Access="Public" Name="ChannelSelector" HorizontalExpand="True" SizeFlagsStretchRatio="1" />
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True" SizeFlagsStretchRatio="2">
-                <BoxContainer Access="Public" Name="BwoinkArea" VerticalExpand="True" />
-                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                    <CheckBox Name="AdminOnly" Access="Public" Text="{Loc 'admin-ahelp-admin-only'}" ToolTip="{Loc 'admin-ahelp-admin-only-tooltip'}" />
-                    <Control HorizontalExpand="True" MinWidth="5" />
-                    <CheckBox Name="PlaySound" Access="Public" Text="{Loc 'admin-bwoink-play-sound'}" Pressed="True" />
-                    <Control HorizontalExpand="True" MinWidth="5" />
-                    <Button Visible="True" Name="PopOut" Access="Public" Text="{Loc 'admin-logs-pop-out'}" StyleClasses="OpenBoth" HorizontalAlignment="Left" />
-                    <Control HorizontalExpand="True" />
-                    <Button Visible="False" Name="Bans" Text="{Loc 'admin-player-actions-bans'}" StyleClasses="OpenRight" />
-                    <Button Visible="False" Name="Notes" Text="{Loc 'admin-player-actions-notes'}" StyleClasses="OpenBoth" />
-                    <Button Visible="False" Name="Kick" Text="{Loc 'admin-player-actions-kick'}" StyleClasses="OpenBoth" />
-                    <Button Visible="False" Name="Ban" Text="{Loc 'admin-player-actions-ban'}" StyleClasses="OpenBoth" />
-                    <Button Visible="False" Name="Respawn" Text="{Loc 'admin-player-actions-respawn'}" StyleClasses="OpenBoth" />
-                    <Button Visible="False" Name="Follow" Text="{Loc 'admin-player-actions-follow'}" StyleClasses="OpenLeft" />
-                </BoxContainer>
+    <!-- LuaM-start: Dead Space 14 AHelp visual -->
+    <PanelContainer StyleClasses="DS14MenuShell">
+        <BoxContainer Orientation="Vertical"
+                      Margin="8"
+                      SeparationOverride="8">
+            <SplitContainer Orientation="Horizontal"
+                            VerticalExpand="True">
+                <cc:PlayerListControl Access="Public"
+                                      Name="ChannelSelector"
+                                      HorizontalExpand="True"
+                                      VerticalExpand="True"
+                                      SizeFlagsStretchRatio="2" />
+                <BoxContainer Access="Public"
+                              Name="BwoinkArea"
+                              Orientation="Vertical"
+                              HorizontalExpand="True"
+                              VerticalExpand="True"
+                              SizeFlagsStretchRatio="2" />
+            </SplitContainer>
+            <BoxContainer Orientation="Horizontal"
+                          SeparationOverride="6"
+                          MinHeight="32">
+                <CheckBox Name="AdminOnly" Access="Public" Text="{Loc 'admin-ahelp-admin-only'}" ToolTip="{Loc 'admin-ahelp-admin-only-tooltip'}" StyleClasses="DS14MenuProfileControl" />
+                <CheckBox Name="PlaySound" Access="Public" Text="{Loc 'admin-bwoink-play-sound'}" Pressed="True" StyleClasses="DS14MenuProfileControl" />
+                <Button Visible="True" Name="PopOut" Access="Public" Text="{Loc 'admin-logs-pop-out'}" StyleClasses="DS14MenuProfileControl" HorizontalAlignment="Left" />
+                <Control HorizontalExpand="True" />
+                <Button Visible="False" Name="Bans" Text="{Loc 'admin-player-actions-bans'}" StyleClasses="DS14MenuProfileControl" />
+                <Button Visible="False" Name="Notes" Text="{Loc 'admin-player-actions-notes'}" StyleClasses="DS14MenuProfileControl" />
+                <Button Visible="False" Name="Kick" Text="{Loc 'admin-player-actions-kick'}" StyleClasses="DS14MenuProfileControlDanger" />
+                <Button Visible="False" Name="Ban" Text="{Loc 'admin-player-actions-ban'}" StyleClasses="DS14MenuProfileControlDanger" />
+                <Button Visible="False" Name="Respawn" Text="{Loc 'admin-player-actions-respawn'}" StyleClasses="DS14MenuProfileControl" />
+                <Button Visible="False" Name="Follow" Text="{Loc 'admin-player-actions-follow'}" StyleClasses="DS14MenuProfileControl" />
             </BoxContainer>
-        </SplitContainer>
+        </BoxContainer>
     </PanelContainer>
+    <!-- LuaM-end -->
 </Control>

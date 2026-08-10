@@ -2,11 +2,14 @@
               xmlns:controls="using:Content.Client.UserInterface.Controls"
               Orientation="Vertical">
     <Control MinSize="0 5" />
+    <!-- LuaM-start: expose controls for context-specific admin UI styling. -->
     <LineEdit Name="FilterLineEdit"
+              Access="Public"
               MinSize="100 0"
               HorizontalExpand="True"
               PlaceHolder="{Loc player-list-filter}"/>
     <PanelContainer Name="BackgroundPanel"
+                    Access="Public"
                     VerticalExpand="True"
                     HorizontalExpand="True">
         <controls:ListContainer Name="PlayerListContainer"
@@ -15,4 +18,5 @@
                   Group="True"
                   MinSize="100 0"/>
     </PanelContainer>
+    <!-- LuaM-end -->
 </BoxContainer>
