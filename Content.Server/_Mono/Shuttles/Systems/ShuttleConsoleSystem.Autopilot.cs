@@ -5,6 +5,7 @@ using Content.Server.Shuttles.Components;
 using Content.Shared._Mono.Shuttles;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Content.Server._Mono.NPC.HTN; // LuaM
 
 namespace Content.Server._Mono.Shuttles;
 
@@ -30,6 +31,11 @@ public sealed partial class ShuttleConsoleAutopilotSystem : EntitySystem
         var blackboard = htn.Blackboard;
         blackboard.SetValue(ent.Comp.AutopilotTargetKey, _transform.ToCoordinates(args.Coordinates));
         blackboard.SetValue(ent.Comp.AutopilotRotationKey, args.Angle + MathF.PI);
+
+        // LuaM-start:
+        var steerer = EnsureComp<ShipSteererComponent>(ent.Owner);
+        steerer.MaxVelocity = ent.Comp.AutopilotMaxSpeed;
+        // LuaM-end
     }
 
     private void OnSteeringDone(Entity<ShuttleConsoleComponent> ent, ref SteeringDoneEvent args)
