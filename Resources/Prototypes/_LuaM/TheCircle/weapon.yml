@@ -545,7 +545,7 @@
       tags:
         - CartridgeBulletVSK
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Rifle/rifle_mag.rsi
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/vsk/rifle_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -556,6 +556,54 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+
+## AS VAL magazine
+
+- type: entity
+  id: BaseMagazineLightRifleAsVal
+  name: магазин для АС Вал
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - MagazineLightRifleAsVal
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+      - CartridgeLightRifle
+    proto: CartridgeLightRifle
+    capacity: 20
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/asval/mag.rsi
+    layers:
+    - state: base
+      map: [enum.GunVisualLayers.Base]
+    - state: mag-1
+      map: [enum.GunVisualLayers.Mag]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineLightRifleAsVal
+  name: магазин для АС Вал
+  parent: BaseMagazineLightRifleAsVal
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+      map: [enum.GunVisualLayers.Base]
+    - state: mag-1
+      map: [enum.GunVisualLayers.Mag]
 
 ## VAL
 
@@ -649,14 +697,13 @@
   description: Взовите их к своему Богу.
   categories: [ HideSpawnMenu ]
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 1
     raiseOnAction: true
     itemIconStyle: BigAction
     icon:
       sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/splinter-blade.rsi
       state: icon
-  - type: InstantAction
     event: !type:OnRetractableItemActionEvent
   - type: RetractableItemAction
     spawnedPrototype: WeaponUnitologySplinterBlade
@@ -755,14 +802,13 @@
   description: ТУШКУ МНЕ!!!
   categories: [ HideSpawnMenu ]
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 1
     raiseOnAction: true
     itemIconStyle: BigAction
     icon:
       sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/hand-hook.rsi
       state: icon
-  - type: InstantAction
     event: !type:OnRetractableItemActionEvent
   - type: RetractableItemAction
     spawnedPrototype: WeaponHandHook
@@ -935,6 +981,7 @@
   components:
   - type: Sprite
     sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/ks23/pump.rsi
+    state: icon
   - type: Item
     sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/ks23/pump_inhands_64x.rsi
   - type: Clothing
@@ -1044,14 +1091,13 @@
   description: Выпустить или убрать скрытый клинок.
   categories: [ HideSpawnMenu ]
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 1
     raiseOnAction: true
     itemIconStyle: BigAction
     icon:
       sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/strike-blade.rsi
       state: icon
-  - type: InstantAction
     event: !type:OnRetractableItemActionEvent
   - type: RetractableItemAction
     spawnedPrototype: WeaponUnitologyLethalBlade

@@ -307,7 +307,7 @@
 - type: listing
   id: UniPhoneUplinkMagazineVSK
   name: Магазин от VSK-94 
-  icon: { sprite: Objects/Weapons/Guns/Ammunition/Magazine/Rifle/rifle_mag.rsi, state: base }
+  icon: { sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/vsk/rifle_mag.rsi, state: base }
   description: Вмещает 22 патрона калибра 9х39 для VSK.
   productEntity: MagazineVSK
   cost:
@@ -518,17 +518,6 @@
    - UniPhoneUplinkGear
 
 # Имлпанты
-
-- type: listing
-  id: UniPhoneUplinkReviveAutosurgeon
-  name: uplink-revive-implanter-name
-  description: uplink-revive-implanter-desc
-  icon: { sprite: _LuaM/Objects/Specific/Autosurgeon/autosurgeon.rsi, state: iconBefore }
-  productEntity: AutosurgeonRevive
-  cost:
-    Telecrystal: 7
-  categories:
-    - UniPhoneUplinkImplants
 
 - type: listing
   id: UniPhoneUplinkDeathAcidifierImplanter

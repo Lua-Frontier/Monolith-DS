@@ -48,6 +48,7 @@
     tags:
     - ShellShotgun22MM
   - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/ammo/shotgun_shell.rsi
     layers:
     - state: slug
       map: [ "enum.AmmoVisualLayers.Base" ]
@@ -92,6 +93,7 @@
     steps: 3
     zeroVisible: false
   - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/ammo/shotgun.rsi
     layers:
     - state: base
       map: [ "enum.GunVisualLayers.Base" ]

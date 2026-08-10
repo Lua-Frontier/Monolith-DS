@@ -68,7 +68,8 @@
   - type: Clothing
     sprite: _LuaM/Necromorfs/BSAA/clothing/glass.rsi
   - type: ShowHealthBars
-  - type: PNV
+  - type: NightVision
+    isEquipment: true
     color: "#AFC4D111"
     activateSound:
       path: /Audio/_LuaM/NightVision/pnv.ogg

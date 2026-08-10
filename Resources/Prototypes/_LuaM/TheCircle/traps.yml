@@ -22,7 +22,7 @@
     nodes:
       cordage:
         !type:CableNode
-        nodeGroupID: ExCable
+        nodeGroupID: WireNet
   - type: CableVisualizer
     statePrefix: lvcable_
   - type: Tripwire
@@ -33,7 +33,7 @@
     attachedExplosiveFadeTime: 10
     detachExplosiveTime: 30
   - type: TrapIgnore
-    factions:
+    factions: []
   - type: DeviceLinkSource
     range: 3
     ports:
@@ -66,23 +66,19 @@
     stackType: Tripwire
     baseLayer: base
     layerStates:
-    - coilex-10
-    - coilex-20
-    - coilex-30
+    - coil-10
+    - coil-20
+    - coil-30
   - type: Sprite
-    state: coilex-30
+    state: coil-30
     layers:
-    - state: coilex-30
+    - state: coil-30
       map: ["base"]
   - type: Item
-    heldPrefix: coilex
+    heldPrefix: coil
   - type: CablePlacer
     cablePrototypeID: Tripwire
-    blockingWireType: ExCable
-    blacklist:
-      components:
-      - Tripwire
-    overTile: true
+    blockingWireType: Apc
   - type: Appearance
 
 - type: entity
@@ -104,8 +100,6 @@
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
-  - type: TimerTrigger
-    examinable: false
   - type: ExplodeOnTrigger
     keysIn:
     - timer
@@ -120,7 +114,7 @@
 - type: stack
   id: Tripwire
   name: stack-tripwire
-  icon: { sprite: "/Textures/Objects/Tools/cable-coils.rsi", state: coilex-30 }
+  icon: { sprite: "/Textures/Objects/Tools/cable-coils.rsi", state: coil-30 }
   spawn: TripwireStack1
 
 - type: entity
@@ -152,7 +146,7 @@
       types:
         Slash: 50
   - type: TrapIgnore
-    factions:
+    factions: []
   - type: Physics
     bodyType: Dynamic
     fixedRotation: true
