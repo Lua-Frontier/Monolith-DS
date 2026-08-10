@@ -122,6 +122,7 @@
   - type: CartridgeAmmo
     proto: BulletASh12
   - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
@@ -153,6 +154,7 @@
   - type: CartridgeAmmo
     proto: BulletRifleSCARAB
   - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
@@ -185,6 +187,7 @@
   - type: CartridgeAmmo
     proto: BulletVSK
   - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]

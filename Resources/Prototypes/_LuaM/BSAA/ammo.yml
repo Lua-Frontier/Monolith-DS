@@ -7,9 +7,9 @@
   components:
   - type: Sprite
     noRot: false
-    sprite: _LuaM/Necromorfs/BSAA/weapons/projectiles.rsi
     layers:
-    - state: bulletb
+    - sprite: _LuaM/Necromorfs/BSAA/weapons/projectiles.rsi
+      state: bulletb
       shader: unshaded
   - type: Projectile
     damage:
@@ -25,8 +25,9 @@
   components:
   - type: Sprite
     noRot: false
-    sprite: _LuaM/Necromorfs/BSAA/weapons/projectiles.rsi
-    state: bulletb
+    layers:
+    - sprite: _LuaM/Necromorfs/BSAA/weapons/projectiles.rsi
+      state: bulletb
   - type: Projectile
     damage:
       types:
