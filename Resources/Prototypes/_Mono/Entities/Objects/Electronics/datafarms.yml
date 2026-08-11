@@ -19,10 +19,10 @@
       ResearchDisk10000:
         amount: 2
         defaultPrototype: ResearchDisk10000
-  - type: Construction
-    deconstructionTarget: null
-    graph: Datafarm
-    node: research
+#  - type: Construction # Commented by LuaM
+#    deconstructionTarget: null
+#    graph: Datafarm
+#    node: research
 
 - type: entity
   id: DataFarmCryptoCircuitboard
@@ -45,7 +45,7 @@
       ResearchDisk10000:
         amount: 2
         defaultPrototype: ResearchDisk10000
-  - type: Construction
-    deconstructionTarget: null
-    graph: Datafarm
-    node: crypto
+#  - type: Construction # Commented by LuaM
+#    deconstructionTarget: null
+#    graph: Datafarm
+#    node: crypto

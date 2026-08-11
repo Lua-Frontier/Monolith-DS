@@ -1,0 +1,4 @@
+- type: latheRecipe
+  id: ScienceBag
+  parent: NFBaseToolsRecipe
+  result: ScienceBag

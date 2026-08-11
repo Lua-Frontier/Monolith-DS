@@ -244,10 +244,10 @@
     sprite: _Mono/Objects/Specific/Mech/tgmc_mecha_weapons.rsi
     state: heavycannon64x32
   - type: Gun
-    projectileSpeed: 300 # LuaM: 175 > 300
+    projectileSpeed: 200 # LuaM: 175 > 200
     fireRate: 10 # LuaM: 3 > 10
     burstFireRate: 9 # LuaM: 3 > 9
-    shotsPerBurst: 5 # LuaM: 3 > 5
+    shotsPerBurst: 3
     burstCooldown: 2 # LuaM: 5 > 2
     minAngle: 1 # LuaM: 0 > 1
     maxAngle: 2 # LuaM: 12 > 2
@@ -262,7 +262,7 @@
     maxCharge: 300
   - type: ProjectileBatteryAmmoProvider
     proto: 120mmBulletHE
-    fireCost: 100
+    fireCost: 175 # LuaM: 100 > 175
   - type: Appearance
   - type: AmmoCounter
 
@@ -294,7 +294,7 @@
     maxCharge: 300
   - type: ProjectileBatteryAmmoProvider
     proto: MechMediumPlasmaProjectile
-    fireCost: 100
+    fireCost: 200 # LuaM: 100 > 200
   - type: Appearance
   - type: AmmoCounter
 

@@ -52,3 +52,15 @@
   id: BiomeInnerRing
   name: Внутреннее кольцо # LuaM: Inner Ring > Внутреннее кольцо
   description: "Цивилизованная часть космоса. Созвездия, видимые отсюда, навсегда останутся в вашей памяти." # LuaM: "Civilised space. The constellations seen from here are burned into your memory." > "Цивилизованная часть космоса. Созвездия, видимые отсюда, навсегда останутся в вашей памяти."
+
+# clusters
+- type: ambientSpaceBiome
+  id: BiomeClusterA
+  name: INSO-357k
+  description: "Космическое кладбище обломков и дрейфующих астероидов." # LuaM translate
+
+- type: ambientSpaceBiome
+  id: BiomeWilds
+  name: Дикая местность # LuaM translate
+  description: "Будь осторожен." # LuaM translate
+

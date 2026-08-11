@@ -17,7 +17,9 @@
   - Corvette
   engine:
   - AME
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Mercury
   mapName: 'Mercury'

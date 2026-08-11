@@ -15,7 +15,9 @@
   - Pursuit
   engine:
   - Bananium
-
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#047ABDFF"
 - type: gameMap
   id: Hoplite
   mapName: 'Hoplite'

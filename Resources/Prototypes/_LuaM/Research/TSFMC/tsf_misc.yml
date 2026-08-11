@@ -1,0 +1,13 @@
+- type: technology
+  id: Hypospray
+  name: research-technology-rogue-hypospray # Дубль названия
+  entityIcon: Hypospray
+  discipline: TsfmcGear
+  tier: 2
+  cost: 25000
+  recipeUnlocks:
+  - Hypospray
+  technologyPrerequisites:
+  - UniversalMaterialResearchT1
+  - HypoMiniLimitedEdition
+  position: 10, 13

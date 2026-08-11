@@ -95,8 +95,8 @@
     disarmOnMapChange: true # no FTL divebombing
     disarmOnUnanchor: true # can't just ram with it
     announceSender: scuttle-device-razor-announcement-sender
-    timer: 20
-    minimumTime: 20
+    timer: 60 # LuaM: 20 > 60
+    minimumTime: 60 # LuaM: 20 > 60
     armDoafterLength: 1
     disarmDoafterLength: 1
   # calibrated to be able to blast capitals but not POI wall

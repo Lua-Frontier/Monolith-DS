@@ -95,8 +95,8 @@
 # Mercenary techfab
 ## Armor
   - TelescopicShield
-  - ClothingOuterArmorBulletproofNF
-  - ClothingOuterCoatBHTrench
+#  - ClothingOuterArmorBulletproofNF # Commented by LuaM
+#  - ClothingOuterCoatBHTrench # Commented by LuaM
 ## EVA / Hardsuits
   - ClothingOuterHardsuitCap
   - ClothingOuterHardsuitMercenary

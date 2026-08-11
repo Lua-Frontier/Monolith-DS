@@ -4,7 +4,7 @@
   entityIcon: NuclearReactorSmall # Mono
   discipline: Industrial
   tier: 1
-  cost: 7500
+  cost: 75000 # LuaM: 7500 > 75000
   recipeUnlocks:
   - NuclearFabricatorMachineCircuitboard
   - NuclearReactorMonitorComputerCircuitboard
@@ -23,10 +23,10 @@
   - PlasmaGlassReactorHeatExchanger
   technologyPrerequisites:
   - PowerGeneration
-  - AdvancedParts # Mono
+  - SuperParts # Mono # LuaM: AdvancedParts > SuperParts
   #radioChannels:
   #- Engineering
-  position: -3, 4 # Mono
+  position: 13, 6 # Mono # LuaM: -3, 4 > 13, 6
 
 - type: technology
   id: NuclearPowerRecycling
@@ -34,7 +34,7 @@
   entityIcon: NuclearCentrifuge # Mono
   discipline: Industrial
   tier: 2
-  cost: 12500
+  cost: 50000 # LuaM: 12500 > 50000
   recipeUnlocks:
   - NuclearCentrifugeMachineCircuitboard
   - PlutoniumReactorFuelRod
@@ -49,4 +49,4 @@
   - NuclearPowerGeneration
   #radioChannels:
   #- Engineering
-  position: -3, 5 # Mono
+  position: 14, 6 # Mono # LuaM: -3, 5 > 14, 6

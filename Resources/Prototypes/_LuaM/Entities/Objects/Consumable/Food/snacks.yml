@@ -1,0 +1,24 @@
+- type: entity
+  parent: [VendPriceFoodBase200, FoodBaseNorot]
+  id: FoodSnackBaseNorot
+  abstract: true
+  components:
+  - type: Food
+  - type: Tag
+    tags:
+      - FoodSnack
+  - type: Sprite
+    sprite: Objects/Consumable/Food/snacks.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+  - type: Item
+    sprite: Objects/Consumable/Food/snacks.rsi
+    heldPrefix: packet
+    size: Tiny
+  - type: StaticPrice
+    price: 1

@@ -1,0 +1,121 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateBlueSpace
+  name: bluespace crate
+  description: It's bigger on the inside.
+  components:
+  - type: Icon
+    sprite: _LuaM/Structures/Storage/Crates/bscrates.rsi
+    state: icon
+  - type: Sprite
+    sprite: _LuaM/Structures/Storage/Crates/bscrates.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: paper
+      visible: false
+      sprite: Structures/Storage/Crates/labels.rsi
+      offset: "-0.5,0"
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: EntityStorage
+    capacity: 120
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorClosed: closed
+    stateDoorOpen: open
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 2
+            max: 3
+  - type: StaticPrice
+    price: 625
+
+- type: entity
+  parent: CrateBlueSpace
+  id: CrateBlueSpaceDark
+  name: dark bluespace crate
+  description: It's bigger on the inside.
+  components:
+  - type: Icon
+    state: icon_dark
+  - type: Sprite
+    layers:
+    - state: base_dark
+    - state: closed_dark
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: paper
+      visible: false
+      sprite: Structures/Storage/Crates/labels.rsi
+      offset: "-0.5,0"
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: base_dark
+    stateDoorClosed: closed_dark
+    stateDoorOpen: open_dark
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlastitanium1:
+            min: 2
+            max: 3
+  
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateCult
+  name: cult crate
+  description: It reeks of blood and sacrifice.
+  components:
+  - type: Icon
+    sprite: _LuaM/Structures/Storage/Crates/cult.rsi
+    state: icon
+  - type: Sprite
+    sprite: _LuaM/Structures/Storage/Crates/cult.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: paper
+      visible: false
+      sprite: Structures/Storage/Crates/labels.rsi
+      offset: "-0.5,0"
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorClosed: closed
+    stateDoorOpen: open

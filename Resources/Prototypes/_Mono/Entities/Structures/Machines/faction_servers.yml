@@ -118,6 +118,7 @@
   parent: BaseRdServerFaction
   name: USSP R&D server
   description: Contains the collective knowledge of the USSP in this sector.
+  categories: [ HideSpawnMenu ] # LuaM
   components:
   - type: Sprite
     sprite: _Mono/Structures/Machines/server.rsi
@@ -161,10 +162,10 @@
     - RogueGear
     - RogueEquipment
     - RogueShipyard
-    - Ussp
-    - UsspShipyard
-    - UsspEquipment
-    - UsspWeapons
+#    - Ussp # Commented by LuaM
+#    - UsspShipyard # Commented by LuaM
+#    - UsspEquipment # Commented by LuaM
+#    - UsspWeapons # Commented by LuaM
     - FactionUniversal
     - MechaEngineering
 

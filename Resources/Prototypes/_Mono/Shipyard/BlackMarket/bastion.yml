@@ -16,6 +16,9 @@
   - Pirate
   engine:
   - AME # LuaM: Uranium > AME
+  addComponents: # LuaM add
+    - type: IFF
+      color: "#E03131FF"
 
 - type: gameMap
   id: Bastion
@@ -27,7 +30,7 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Bastion PDV{1}'
+          mapNameTemplate: 'Bastion AN{1}' # LuaM: PDV > AN
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

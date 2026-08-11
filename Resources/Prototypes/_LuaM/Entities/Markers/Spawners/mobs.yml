@@ -1,0 +1,14 @@
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobMoproach
+  name: Moproach Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _LuaM/Mobs/Animals/moproach.rsi
+      state: icon
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobMoproach

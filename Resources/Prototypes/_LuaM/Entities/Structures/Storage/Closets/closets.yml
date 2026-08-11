@@ -1,0 +1,94 @@
+- type: entity
+  id: BluespaceCloset
+  name: bluespace closet
+  parent: ClosetBase
+  description: It's bigger on the inside.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Storage/closet.rsi
+    noRot: true
+    layers:
+    - state: bluespace
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: bluespace_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: paper
+      visible: false
+      sprite: Structures/Storage/closet_labels.rsi
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: EntityStorage
+    capacity: 120
+  - type: EntityStorageVisuals
+    stateBaseClosed: bluespace
+    stateDoorOpen: bluespace_open
+    stateDoorClosed: bluespace_door
+  - type: Construction
+    graph: BluespaceCloset
+    node: done
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel1:
+            min: 1
+            max: 2
+  - type: StaticPrice
+    price: 625
+
+- type: entity
+  id: BluespaceClosetDark
+  name: dark bluespace closet
+  parent: BluespaceCloset
+  components:
+  - type: Sprite
+    layers:
+    - state: bluespace_dark
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: bluespace_door_dark
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: paper
+      visible: false
+      sprite: Structures/Storage/closet_labels.rsi
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: bluespace_dark
+    stateDoorOpen: bluespace_open_dark
+    stateDoorClosed: bluespace_door_dark
+  - type: Construction
+    graph: BluespaceClosetDark
+    node: done
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [Destruction]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlastitanium1:
+            min: 1
+            max: 2
