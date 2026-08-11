@@ -3,3 +3,5 @@ ent-90mmBulletBase = снаряд
 ent-220mmBulletAPHE = снаряд CYREXA 220 мм
 ent-255mmBulletAPHE = снаряд Bofors 255 мм
 ent-AdderBullet = снаряд Adder
+ent-ShipRailgunProjectileSubnuclear = снаряд M381 «Харон»
+    .desc = Когда джинн вылетел из бутылки, обратно его не засунешь, тархан.

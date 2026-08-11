@@ -504,7 +504,8 @@
     - state: ai
       shader: unshaded
   - type: Anchorable
-  - type: Damageable # LuaM add start:
+# LuaM-start:
+  - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
   - type: Destructible
@@ -517,7 +518,8 @@
         sound:
           collection: MetalBreak
       - !type:DoActsBehavior
-        acts: [ "Destruction" ] # LuaM add end.
+        acts: [ "Destruction" ]
+# LuaM-end.
 
 - type: entity
   id: StationAiBrainTSFMC
@@ -604,7 +606,8 @@
     - state: ai
       shader: unshaded
   - type: Anchorable
-  - type: Damageable # LuaM add start:
+# LuaM-start:
+  - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
   - type: Destructible
@@ -617,7 +620,8 @@
         sound:
           collection: MetalBreak
       - !type:DoActsBehavior
-        acts: [ "Destruction" ] # LuaM add end.
+        acts: [ "Destruction" ]
+# LuaM-end.
 
 - type: entity
   id: StationAiBrainPDV
