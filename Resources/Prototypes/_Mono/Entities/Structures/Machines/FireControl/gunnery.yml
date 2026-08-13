@@ -43,6 +43,8 @@
     id: GunneryServer
   - type: StaticPrice
     price: 200
+  - type: Anchorable # LuaM
+    delay: 15
 
 - type: entity
   id: GunneryServerLow
@@ -87,6 +89,9 @@
   - type: ShipRepairable
     repairTime: 13
     repairCost: 40
+  - type: ShipNpcTarget # LuaM
+    needPower: true
+  
 
 - type: entity
   id: GunneryServerHigh
@@ -109,6 +114,8 @@
   - type: ShipRepairable
     repairTime: 20
     repairCost: 70
+  - type: ShipNpcTarget # LuaM
+    needPower: true
 
 - type: entity
   id: GunneryServerUltra
@@ -133,6 +140,8 @@
   - type: ShipRepairable
     repairTime: 25
     repairCost: 100
+  - type: ShipNpcTarget # LuaM
+    needPower: true
 
 - type: entity
   id: GunneryServerOmega
@@ -157,6 +166,8 @@
   - type: ShipRepairable
     repairTime: 40
     repairCost: 150
+  - type: ShipNpcTarget # LuaM
+    needPower: true
 
 - type: entity
   id: GunneryServerStation
@@ -183,6 +194,8 @@
   - type: ShipRepairable
     repairTime: 40
     repairCost: 150
+  - type: ShipNpcTarget # LuaM
+    needPower: true
 
 - type: entity
   id: GunneryServerStationConsolesEnforced
@@ -210,6 +223,8 @@
   - type: ShipRepairable
     repairTime: 40
     repairCost: 150
+  - type: ShipNpcTarget # LuaM
+    needPower: true
 
 # Monolith : Gunnery Computer
 - type: entity
@@ -238,8 +253,10 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: FireControlConsole
-  - type: ShipNpcTarget
-    needPower: true
+  # LuaM-comented-start:
+  # - type: ShipNpcTarget
+  #   needPower: true
+  # LuaM-comented-end
   - type: TargetSeekingTarget
   - type: ActivatableUI
     key: enum.FireControlConsoleUiKey.Key

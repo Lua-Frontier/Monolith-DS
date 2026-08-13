@@ -329,6 +329,8 @@
     shape:
       - 0, 0, 4, 4
       - 0, 3, 6, 5
+  # LuaM-comented-start:    
   # Mono
-  - type: ShipNpcTarget
-    needGrid: NoGrid
+  # - type: ShipNpcTarget
+  #   needGrid: NoGrid
+  # LuaM-comented-end

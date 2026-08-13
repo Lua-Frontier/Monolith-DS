@@ -231,8 +231,10 @@
   - type: SurgeryTarget # Shitmed Change
   - type: ExaminableCharacter # WWDP
   # Mono
-  - type: ShipNpcTarget
-    needGrid: NoGrid
+  # LuaM-comented-start:
+  # - type: ShipNpcTarget
+  #   needGrid: NoGrid
+  # LuaM-comented-end
 
 - type: entity
   save: false

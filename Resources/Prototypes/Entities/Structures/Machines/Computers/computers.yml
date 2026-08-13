@@ -131,8 +131,10 @@
   components:
   - type: ShuttleConsole
   - type: TargetSeekingTarget # Mono
-  - type: ShipNpcTarget # Mono
-    needPower: true
+  # LuaM-comented-start:
+  # - type: ShipNpcTarget # Mono
+  #   needPower: true
+  # LuaM-comented-end
   - type: ShuttleConsoleLock
   - type: ActivatableUI
     key: enum.ShuttleConsoleUiKey.Key
