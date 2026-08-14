@@ -3,6 +3,8 @@ using Content.Server.Worldgen.Components;
 using Content.Server.Worldgen.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
+using Content.Server.NPC.Systems; // LuaM
+using Robust.Shared.Map; // LuaM
 
 namespace Content.Server.Worldgen.Systems.Biomes;
 
@@ -14,6 +16,7 @@ public sealed partial class BiomeSelectionSystem : BaseWorldSystem
     [Dependency] private NoiseIndexSystem _noiseIdx = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private ISerializationManager _ser = default!;
+    [Dependency] private NPCUtilitySystem _npcUtility = default!; // LuaM
 
     /// <inheritdoc />
     public override void Initialize()
@@ -25,8 +28,11 @@ public sealed partial class BiomeSelectionSystem : BaseWorldSystem
     private void OnWorldChunkAdded(EntityUid uid, BiomeSelectionComponent component, ref WorldChunkAddedEvent args)
     {
         var coords = args.Coords;
-        var lengthSquared = WorldGen.ChunkToWorldCoordsCentered(coords).LengthSquared(); // Frontier: cache world coords of center of chunk
-
+        // var lengthSquared = WorldGen.ChunkToWorldCoordsCentered(coords).LengthSquared(); // LuaM comented
+        // LuaM-start:
+        var worldPos = WorldGen.ChunkToWorldCoordsCentered(coords); 
+        var lengthSquared = worldPos.LengthSquared();
+        // LuaM-end
         foreach (var biomeId in component.Biomes)
         {
             var biome = _proto.Index<BiomePrototype>(biomeId);
@@ -38,6 +44,16 @@ public sealed partial class BiomeSelectionSystem : BaseWorldSystem
 
             if (!CheckBiomeValidity(args.Chunk, biome, coords))
                 continue;
+
+            // LuaM-start: 
+            if (biome.NeedDroneTarget)
+            {
+                var mapCoords = new MapCoordinates(worldPos, Transform(uid).MapID);
+
+                if (!_npcUtility.CheckDroneTarget(mapCoords, biome.DroneTargetRange))
+                    continue;
+            }
+            // LuaM-end
 
             biome.Apply(args.Chunk, _ser, EntityManager);
             return;

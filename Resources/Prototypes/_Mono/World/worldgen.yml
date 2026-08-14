@@ -14,3 +14,12 @@
     - MonoWorldgenVeryFarT2Inner
     - MonoWorldgenVeryFarT2Middle
     - MonoWorldgenVeryFarT2Far
+    # LuaM-start:
+    - MonoWildsCorePieceful
+    - MonoWildsPieceful
+    - MonoWildsOutskirtsPieceful
+    - MonoWorldgenVeryFarT1Pieceful
+    - MonoWorldgenVeryFarT2InnerPieceful
+    - MonoWorldgenVeryFarT2MiddlePieceful
+    - MonoWorldgenVeryFarT2FarPieceful
+    # LuaM-end

@@ -41,6 +41,7 @@ using Robust.Shared.Utility;
 using Content.Shared.Atmos.Components;
 using System.Linq;
 using Content.Shared.StatusEffect; // Frontier
+using Robust.Shared.Map; //LuaM
 
 namespace Content.Server.NPC.Systems;
 
@@ -567,6 +568,26 @@ public sealed partial class NPCUtilitySystem : EntitySystem
             RecursiveAdd(child, entities);
         }
     }
+    // LuaM-start: in range drone target check
+    public bool CheckDroneTarget(MapCoordinates coords, float range)
+    {
+        foreach (var (target, targetComp) in _lookup.GetEntitiesInRange<ShipNpcTargetComponent>(coords, range))
+        {
+            var targetXform = Transform(target);
+            var targetGrid = targetXform.GridUid;
+
+            if (targetComp.NeedGrid != NpcTargetGridMode.Either
+                && (targetComp.NeedGrid == NpcTargetGridMode.OnGrid) == (targetGrid == null))
+                continue;
+
+            if (targetComp.NeedPower && !this.IsPowered(target, EntityManager))
+                continue;
+
+            return true;
+        }
+        return false;
+    }
+    // LuaM-end
 
     private void Filter(NPCBlackboard blackboard, HashSet<EntityUid> entities, UtilityQueryFilter filter)
     {

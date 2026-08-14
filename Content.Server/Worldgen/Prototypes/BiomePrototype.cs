@@ -100,6 +100,20 @@ public sealed partial class BiomePrototype : IPrototype, IInheritingPrototype
     public int? MaxY;
     // Mono / EE end
 
+    // LuaM-start:
+    /// <summary>
+    ///     Drone target condition.
+    /// </summary>
+    [DataField("needDroneTarget")]
+    public bool NeedDroneTarget;
+
+    /// <summary>
+    ///     Search radius for the drone target.
+    /// </summary>
+    [DataField("droneTargetRange")]
+    public float DroneTargetRange = 1400f;
+    // LuaM-end
+
     //TODO: Get someone to make this a method on componentregistry that does it Correctly.
     /// <summary>
     ///     Applies the worldgen config to the given target (presumably a map.)
