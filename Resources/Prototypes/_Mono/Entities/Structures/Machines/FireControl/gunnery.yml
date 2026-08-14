@@ -28,7 +28,7 @@
           True: { visible: true }
           False: { visible: false }
   - type: Construction # Mono
-    graph: Machine
+    graph: MachineGunneryServer # LuaM Machine > MachineGunneryServer
     node: machine
     containers:
       - machine_board
