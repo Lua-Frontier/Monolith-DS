@@ -28,5 +28,5 @@ ent-WeaponRifleVulcanRegistered = R-11 «Вулкан» (зарегистр.)
     .desc = { ent-WeaponRifleVulcan.desc }
 ent-WeaponShotgunEnforcerRegistered = { ent-WeaponShotgunEnforcer } (зарегистр.)
     .desc = { ent-WeaponShotgunEnforcer.desc }
-ent-WeaponRifleMR3CRegistered = SKR-WS QBU-430 «Бандит» (зарегистр.)
+ent-WeaponRifleMR3CRegistered = { ent-WeaponRifleMR3C } (зарегистр.)
     .desc = { ent-WeaponRifleMR3C.desc }

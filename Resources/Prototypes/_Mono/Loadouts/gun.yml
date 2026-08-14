@@ -780,7 +780,7 @@
 
 - type: loadout #.45 Magnum Ammo
   id: FactionMagnum45Loadout
-  price: 0
+  price: 1000 # LuaM: 0 > 1000
   storage:
     back:
     - AmmoBox45_magnumFMJ
