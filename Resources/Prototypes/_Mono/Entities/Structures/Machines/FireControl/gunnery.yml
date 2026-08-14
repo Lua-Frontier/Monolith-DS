@@ -194,8 +194,6 @@
   - type: ShipRepairable
     repairTime: 40
     repairCost: 150
-  - type: ShipNpcTarget # LuaM
-    needPower: true
 
 - type: entity
   id: GunneryServerStationConsolesEnforced
@@ -223,8 +221,6 @@
   - type: ShipRepairable
     repairTime: 40
     repairCost: 150
-  - type: ShipNpcTarget # LuaM
-    needPower: true
 
 # Monolith : Gunnery Computer
 - type: entity

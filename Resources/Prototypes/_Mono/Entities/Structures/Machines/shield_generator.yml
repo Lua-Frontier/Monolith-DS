@@ -289,8 +289,6 @@
     toolWhitelist:
       tags:
       - ADSRepairTool
-  - type: ShipNpcTarget # LuaM
-    needPower: true
 
 # Medium-End
 - type: entity
@@ -379,8 +377,6 @@
   - type: ShipRepairable
     repairTime: 25
     repairCost: 200
-  - type: ShipNpcTarget # LuaM
-    needPower: true
 
 # Low-End
 - type: entity
