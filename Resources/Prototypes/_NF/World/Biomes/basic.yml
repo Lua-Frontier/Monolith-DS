@@ -90,7 +90,7 @@
 - type: spaceBiome
   id: NFAsteroidsMid
   parent: NFBiomeBase
-  priority: 1
+  priority: 2
   distanceRange: 5000, 9500
   chunkComponents:
   - type: SimpleDebrisSelector
@@ -243,6 +243,7 @@
   id: NFAsteroidsFar
   parent: NFBiomeBase
   priority: 0
+  needDroneTarget: true # LuaM
   distanceRange: 9500, 18000 # Mono
   noiseRanges: {}
   chunkComponents:
@@ -365,3 +366,128 @@
     - id: MonoDroneSpawnerT1 # Mono
       prob: 0.15
       orGroup: wreck
+
+# LuaM-start:
+- type: spaceBiome
+  id: NFAsteroidsFarPeaceful
+  parent: NFAsteroidsFar
+  priority: -1
+  needDroneTarget: False
+  chunkComponents:
+  - type: SimpleDebrisSelector
+    debrisTable:
+    # Medium (1.44)
+    - id: NFAsteroidDebrisMedium
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidAndesiteDebrisMedium
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidBasaltDebrisMedium
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidSandDebrisMedium
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidChromiteDebrisMedium
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidRockDebrisMedium
+      prob: 0.24
+      orGroup: debris
+    # Large (1.44)
+    - id: NFAsteroidDebrisLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidAndesiteDebrisLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidBasaltDebrisLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidSandDebrisLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidChromiteDebrisLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidRockDebrisLarge
+      prob: 0.24
+      orGroup: debris
+    # Extra Large (1.44)
+    - id: NFAsteroidDebrisExtraLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidAndesiteDebrisExtraLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidBasaltDebrisExtraLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidSandDebrisExtraLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidChromiteDebrisExtraLarge
+      prob: 0.24
+      orGroup: debris
+    - id: NFAsteroidRockDebrisExtraLarge
+      prob: 0.24
+      orGroup: debris
+    # Huge (.36)
+    - id: NFAsteroidDebrisHuge
+      prob: 0.06
+      orGroup: debris
+    - id: NFAsteroidAndesiteDebrisHuge
+      prob: 0.06
+      orGroup: debris
+    - id: NFAsteroidBasaltDebrisHuge
+      prob: 0.06
+      orGroup: debris
+    - id: NFAsteroidSandDebrisHuge
+      prob: 0.06
+      orGroup: debris
+    - id: NFAsteroidChromiteDebrisHuge
+      prob: 0.06
+      orGroup: debris
+    - id: NFAsteroidRockDebrisHuge
+      prob: 0.046
+      orGroup: debris
+    # Extra Enormous
+    - id: NFAsteroidIceDebrisExtraEnormous
+      prob: 0.3
+      orGroup: debris
+    # Massive
+    - id: NFAsteroidIceDebrisMassive
+      prob: 0.6
+      orGroup: debris
+    # Extra Massive
+    - id: NFAsteroidIceDebrisExtraMassive
+      prob: 1
+      orGroup: debris
+    # Gigantic
+    - id: NFAsteroidIceDebrisGigantic
+      prob: 0.6
+      orGroup: debris
+    # Extra Gigantic
+    - id: NFAsteroidIceDebrisExtraGigantic
+      prob: 0.3
+      orGroup: debris
+  - type: NoiseDrivenDebrisSelector
+    noiseChannel: Wreck
+    debrisTable:
+    - id: NFWreckDebrisSmall
+      prob: 1
+      orGroup: wreck
+    - id: NFWreckDebrisMedium
+      prob: 2
+      orGroup: wreck
+    - id: NFWreckDebrisLarge
+      prob: 1
+      orGroup: wreck
+    - id: NFWreckDebrisBrassLarge
+      prob: 0.3
+      orGroup: wreck
+    - id: NFWreckDebrisBrassExtraLarge
+      prob: 0.1
+      orGroup: wreck
+# LuaM-end
