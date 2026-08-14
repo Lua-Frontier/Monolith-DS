@@ -90,7 +90,7 @@
 - type: spaceBiome
   id: NFAsteroidsMid
   parent: NFBiomeBase
-  priority: 2
+  priority: 1
   distanceRange: 5000, 9500
   chunkComponents:
   - type: SimpleDebrisSelector
