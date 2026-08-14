@@ -17583,26 +17583,28 @@ entities:
     - type: Transform
       pos: 39.5,-1.5
       parent: 1
-- proto: NpcStationAiAttackerStaticSmart
-  entities:
-  - uid: 2584
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 46.5,-0.5
-      parent: 1
-  - uid: 2655
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,-19.5
-      parent: 1
-  - uid: 2795
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 18.5,1.5
-      parent: 1
+# Lua-comented-start:
+# - proto: NpcStationAiAttackerStaticSmart
+#   entities:
+#   - uid: 2584
+#     components:
+#     - type: Transform
+#       rot: 3.141592653589793 rad
+#       pos: 46.5,-0.5
+#       parent: 1
+#   - uid: 2655
+#     components:
+#     - type: Transform
+#       rot: 3.141592653589793 rad
+#       pos: -2.5,-19.5
+#       parent: 1
+#   - uid: 2795
+#     components:
+#     - type: Transform
+#       rot: 3.141592653589793 rad
+#       pos: 18.5,1.5
+#       parent: 1
+# Lua-comented-end
 - proto: OxygenCanister
   entities:
   - uid: 2449
