@@ -114,6 +114,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     {
         base.Update(frameTime);
         UpdateHyperspace();
+        UpdateUnmannedShuttles(); // LuaM stop uncontrolled shuttles
     }
 
     private void OnGridFixtureChange(EntityUid uid, FixturesComponent manager, GridFixtureChangeEvent args)

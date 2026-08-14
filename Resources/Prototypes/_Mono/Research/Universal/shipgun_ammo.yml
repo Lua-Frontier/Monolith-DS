@@ -7,6 +7,8 @@
   cost: 45000 # LuaM: 7500 > 45000
   recipeUnlocks:
   - CharonSlugUniversal
+  - CharonApheSlugUniversal
+  - CharonEmpSlugUniversal
   technologyPrerequisites:
   - UniversalPlastitaniumCore
   position: 4, 5 # LuaM: 7, 8 > 4, 5
@@ -34,6 +36,7 @@
   cost: 25000 # LuaM: 20000 > 25000
   recipeUnlocks:
   - ASM220TorpedoHEUniversal
+  - ASM220TorpedoHESACLOSUniversal
   - ASM220TorpedoECMUniversal
   technologyPrerequisites:
   - UniversalPlastitaniumCore
@@ -61,6 +64,7 @@
   cost: 35000 # LuaM: 5000 > 35000
   recipeUnlocks:
   - 150mmApShellUniversal
+  - 150mmApheShellUniversal
   - 150mmEmpShellUniversal
   technologyPrerequisites:
   - UniversalMaterialResearchT1

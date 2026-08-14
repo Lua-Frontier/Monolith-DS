@@ -204,6 +204,8 @@ public sealed partial class ShipSteererComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     public float TargetRotation = 0f;
+
+    public float? MaxVelocity = null; // LuaM
 }
 
 public enum ShipSteeringStatus : byte

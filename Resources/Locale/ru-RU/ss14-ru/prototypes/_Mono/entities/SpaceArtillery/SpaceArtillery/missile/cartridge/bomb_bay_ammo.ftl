@@ -1,10 +1,20 @@
-ent-LightFighterOrdinanceGPOProjectile = неуправляемая бомба GPO-L 50 кг
-    .desc = Свободнопадающая бомба для лёгких носителей.
-ent-LightFighterOrdinanceGPOItem = неуправляемая бомба GPO-L 50 кг
+ent-LightFighterOrdinanceGPOProjectile = неуправляемая бомба «ГПО-Л»
+ent-LightFighterOrdinanceGPOItem = неуправляемая бомба «ГПО-Л»
     .desc = Достаточно прочная и мощная фугасная боевая часть. В обычном космическом бою встречается редко, наследие наземных войн; бомбы могут нанести сокрушительный урон... если попадут. Помещается в лёгкий отсек GPOL.
-ent-LightFighterOrdinanceZenithProjectile = противокорабельная боеголовка ASM(LF) «Зенит»
-ent-LightFighterOrdinanceZenithItem = противокорабельная боеголовка ASM(LF) «Зенит»
+    .ammo-loader-type = Авиационный боеприпас (неуправляемая бомба)
+    .ammo-loader-caliber = «ГПО-Л»
+    .ammo-loader-weight = 50 кг
+
+ent-LightFighterOrdinanceZenithProjectile = противокорабельная ракета «ЗЕНИТ»
+ent-LightFighterOrdinanceZenithItem = противокорабельная ракета «ЗЕНИТ»
     .desc = Управляемая ракета военного класса, обычно применяемая с лёгких кораблей. Наносит существенный урон и попадать проще, чем бомбой; «Зенит» точный и быстрый, но не самый живучий. Помещается в лёгкий отсек GPOL.
-ent-LightFighterOrdinanceQuasarProjectile = гиперпроникатор QUASAR
-ent-LightFighterOrdinanceQuasarItem = одноразовый гиперпроникатор AD-901 «QUASAR»
-    .desc = Дорогой экспериментальный мини-гиперускоритель для малых кораблей. Гиперпроникатор «QUASAR» относительно слаб, но быстр и почти не поражается средствами ПВО. Помещается в лёгкий отсек GPOL.
+    .ammo-loader-type = Авиационный боеприпас (управляемая ракета)
+    .ammo-loader-caliber = «ЗЕНИТ»
+    .ammo-loader-weight = 11 кг
+
+ent-LightFighterOrdinanceQuasarProjectile = ракета «КВАЗАР»
+ent-LightFighterOrdinanceQuasarItem = одноразовая ракета «КВАЗАР»
+    .desc = Дорогой экспериментальный мини-гиперускоритель для малых кораблей. Ракета «КВАЗАР» относительно слаба, но быстра и почти не поражается средствами ПВО. Помещается в лёгкий отсек GPOL.
+    .ammo-loader-type = Авиационный боеприпас (ракета)
+    .ammo-loader-caliber = «КВАЗАР»
+    .ammo-loader-weight = 10 кг

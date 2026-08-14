@@ -396,6 +396,11 @@
   - AiHolder
   suffix: Empty
   components:
+# LuaM-start:
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+# LuaM-end.
   - type: Anchorable
     flags:
     - Anchorable

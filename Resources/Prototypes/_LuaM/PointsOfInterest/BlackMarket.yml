@@ -1,0 +1,30 @@
+- type: pointOfInterest
+  id: BlackMarket
+  parent: [BasePOI, BaseRepairablePOI]
+  name: 'Бар "Веселый Роджер"' # нету файла локаля оставлю на будущее: Bar "Jolly Roger"
+  minimumDistance: 6000
+  maximumDistance: 8000
+  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueUSSP, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
+  spawnGroup: Required
+  gridPath: /Maps/_LuaM/POI/BlackMarket.yml
+  addComponents:
+  - type: IFF
+    color: "#964b00"
+
+- type: gameMap
+  id: BlackMarket
+  mapName: 'Bar "Jolly Roger"'
+  mapPath: /Maps/_LuaM/POI/BlackMarket.yml
+  minPlayers: 0
+  stations:
+    BlackMarket:
+      stationProto: MarketFrontierOutpost
+      components:
+        - type: StationCargoOrderDatabase
+          capacity: 60
+        - type: StationNameSetup
+          mapNameTemplate: 'Bar "Jolly Roger"'
+        - type: StationDeadDrop
+          maxDeadDrops: 2
+        - type: TradeCrateDestination
+          destinationProto: Trade
