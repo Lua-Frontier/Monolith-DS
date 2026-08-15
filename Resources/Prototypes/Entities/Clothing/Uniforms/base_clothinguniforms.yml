@@ -60,10 +60,12 @@
   id: ClothingUniformBase
   components:
   - type: SuitSensor
+    randomMode: false # LuaM
+    mode: SensorCords # LuaM
   - type: ToggleableSignature
     blip:
       radarColor: Cyan
-      scale: 0.5
+      scale: 1 # LuaM 0.5 > 1
       requireNoGrid: true
   - type: DeviceNetwork
     deviceNetId: Wireless

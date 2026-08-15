@@ -14,7 +14,7 @@ public sealed partial class ToggleableSignatureComponent : Component
     public bool Examinable = true;
 
     [DataField]
-    public bool Enabled = false;
+    public bool Enabled = true;
 
     [DataField]
     public RadarBlipComponent Blip = new();
