@@ -4,8 +4,8 @@ meta:
   engineVersion: 271.2.0
   forkId: ""
   forkVersion: ""
-  time: 03/27/2026 19:43:44
-  entityCount: 10733
+  time: 08/15/2026 18:35
+  entityCount: 10734
 maps:
 - 1
 grids:
@@ -54608,11 +54608,6 @@ entities:
     - type: Transform
       pos: -14.5,68.5
       parent: 2
-  - uid: 7203
-    components:
-    - type: Transform
-      pos: -35.5,46.5
-      parent: 2
   - uid: 7204
     components:
     - type: Transform
@@ -55184,6 +55179,20 @@ entities:
     - type: Transform
       pos: 0.5,68.5
       parent: 2
+- proto: PacifiedZone100
+  entities:
+  - uid: 7203
+    components:
+    - type: Transform
+      pos: -12.5,45.5
+      parent: 2
+    - type: PacifiedZoneGenerator
+      radius: 86
+      immuneRoles:
+      - SecurityGuard
+      - StationTrafficController
+      - StationRepresentative
+      - DirectorOfCare
 - proto: PaintingFireaxeCabinet
   entities:
   - uid: 7274
@@ -60452,6 +60461,22 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: ShieldGeneratorPOI
+  entities:
+  - uid: 12346
+    components:
+    - type: Transform
+      pos: -35.5,46.5
+      parent: 2
+    - type: AmbientSound
+      range: 5
+    - type: ShipShieldEmitter
+      shieldColor: '#2ECC71FF'
+    - type: PointLight
+      falloff: 6
+      softness: 2
+      energy: 8
+      radius: 15
 - proto: ShuttersNormal
   entities:
   - uid: 8149
