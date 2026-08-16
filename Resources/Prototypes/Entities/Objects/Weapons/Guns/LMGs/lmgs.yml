@@ -65,8 +65,6 @@
     price: 500
   - type: UseDelay
     delay: 1
-  - type: Multishot # Goobstation V
-    missChance: 0.4
   - type: ItemTax # Mono
     taxAccounts:
       nfsd: 0.2

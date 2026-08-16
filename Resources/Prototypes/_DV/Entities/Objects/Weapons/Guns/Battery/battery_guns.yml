@@ -207,6 +207,5 @@
     - Sidearm
   - type: StaticPrice
     price: 750
-  - type: Multishot # LuaM
   - type: PirateBountyItem # Mono
     id: ExperimentalFactionWeapon

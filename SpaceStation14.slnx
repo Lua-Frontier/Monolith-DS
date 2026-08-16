@@ -39,11 +39,6 @@
   </Project>
   <Project Path="Content.Shared.Database/Content.Shared.Database.csproj" />
   <Project Path="Content.Shared/Content.Shared.csproj" />
-  <!-- <Goob Start> -->
-  <Project Path="Content.Goobstation.Shared/Content.Goobstation.Shared.csproj" />
-  <Project Path="Content.Goobstation.Common/Content.Goobstation.Common.csproj" />
-  <Project Path="Content.ModuleManager/Content.ModuleManager.csproj" />
-  <!-- </Goob End> -->
   <Project Path="Content.Tests/Content.Tests.csproj" />
   <Project Path="Content.Tools/Content.Tools.csproj" />
   <Project Path="Content.YAMLLinter/Content.YAMLLinter.csproj" />

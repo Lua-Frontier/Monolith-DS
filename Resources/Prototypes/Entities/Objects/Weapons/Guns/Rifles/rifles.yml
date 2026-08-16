@@ -68,10 +68,6 @@
   - type: EmitSoundOnLand
     sound:
       collection: RiflesDrop
-  - type: Multishot
-    missChance: 0.4
-    spreadMultiplier: 3
-    spreadAddition: 45 # LuaM: 60 > 45
   # Goobstation edit end
 
 - type: entity

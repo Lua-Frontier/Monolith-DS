@@ -37,17 +37,3 @@
     Telecrystal: 75
   categories:
   - UplinkWearables
-
-- type: listing
-  id: UplinkHoloCigar
-  name: uplink-holo-cigar-name
-  description: uplink-holo-cigar-desc
-  productEntity: HoloCigar
-  cost:
-    Telecrystal: 350 # LuaM 35 -> 350
-  categories:
-  - UplinkWearables
-  conditions:
-  - !type:BuyerSpeciesCondition
-    whitelist:
-    - Human

@@ -1,7 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 #nullable enable
-using System.Collections.Generic; // GoobStation
 using System.Linq;
 using System.Reflection;
 using Content.IntegrationTests.Pair;
@@ -99,15 +96,13 @@ public sealed class ContentPoolManager : PoolManager<TestPair>
     {
         DefaultCvars.AddRange(PoolManager.TestCvars);
 
-        // <Goob> - used discovered modules
-        PoolManager.DiscoverModules();
-        var shared = new List<Assembly>(extraAssemblies);
-        shared.AddRange(PoolManager.Shared);
-        shared.Add(PoolManager.CurrentAssembly);
+        var shared = extraAssemblies
+                .Append(typeof(Shared.Entry.EntryPoint).Assembly)
+                .Append(typeof(PoolManager).Assembly)
+                .ToArray();
 
-        base.Startup(PoolManager.Client.ToArray(),
-            PoolManager.Server.ToArray(),
-            shared.ToArray());
-        // </Goob>
+        Startup([typeof(Client.Entry.EntryPoint).Assembly],
+            [typeof(Server.Entry.EntryPoint).Assembly],
+            shared);
     }
 }

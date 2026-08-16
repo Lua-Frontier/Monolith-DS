@@ -76,10 +76,6 @@
     sound:
       collection: SMGDrop
   # Goobstation edit end
-  - type: Multishot # Goobstation V
-    missChance: 0.4
-    spreadMultiplier: 3
-    spreadAddition: 40 # LuaM: 50 > 40
 
 # Mono - moved Drozd, C-20, & Atreides to _Mono.
 
@@ -146,12 +142,6 @@
     steps: 6
     zeroVisible: true
   - type: Appearance
-  - type: Multishot # Goobstation
-    missChance: 0.3
-  # LuaM-start:
-    spreadMultiplier: 2.5
-    spreadAddition: 35
-  # LuaM-end.
   - type: StaticPrice # Mono
     price: 1000
   - type: PirateBountyItem # Mono
