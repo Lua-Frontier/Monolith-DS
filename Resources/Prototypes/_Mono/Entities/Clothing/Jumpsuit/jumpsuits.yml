@@ -11,6 +11,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -25,6 +27,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -52,6 +56,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -80,6 +86,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -94,6 +102,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -108,6 +118,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -122,6 +134,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -136,6 +150,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorOff
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -150,6 +166,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorOff
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -164,6 +182,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorOff
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -178,6 +198,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorOff
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -192,6 +214,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorOff
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 # Trauma Armed Forces
 - type: entity
@@ -207,6 +231,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 # Drake Industries
 
@@ -348,6 +374,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -365,6 +393,8 @@
   - type: SuitSensor
     randomMode: false
     mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 #PMC camo suits
 - type: entity
@@ -382,7 +412,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/CCE/CCE_base.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -399,7 +431,10 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/CCE/CCE_worn.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
+
 
 - type: entity
   parent: ClothingUniformBase
@@ -416,7 +451,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/CCE/CCE_bleached.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -433,7 +470,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/CCE/CCE_desert.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -450,7 +489,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/grassland.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -467,7 +508,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/mudland.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -484,7 +527,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/misko.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -501,7 +546,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/lampart_flag.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -518,7 +565,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/lampart.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -535,7 +584,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/summer_flora.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -552,7 +603,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/white_urban.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -574,7 +627,9 @@
         color: "#2F2F2F"
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -591,7 +646,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/Digital/digital_blue.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -608,7 +665,9 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/Digital/digital_red.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SensorVitals > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -625,4 +684,6 @@
     sprite: _Mono/Clothing/Uniforms/Jumpsuit/combat-suits/Digital/digital_green_and_tan.rsi
   - type: SuitSensor
     randomMode: false
-    mode: SensorVitals
+    mode: SensorCords # LuaM SuitSensor > SensorCords
+  - type: ToggleableSignature # LuaM
+    enabled: false

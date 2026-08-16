@@ -8,6 +8,11 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/arcadia.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpsuit/arcadia.rsi
+  - type: SuitSensor # LuaM
+    randomMode: false
+    mode: SensorVitals
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -86,6 +91,10 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_jump.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_jump.rsi
+  - type: SuitSensor # LuaM 
+    mode: SensorVitals 
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -97,6 +106,10 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_jump_short.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_jump_short.rsi
+  - type: SuitSensor # LuaM 
+    mode: SensorVitals 
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -108,6 +121,10 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_black.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_black.rsi
+  - type: SuitSensor # LuaM 
+    mode: SensorVitals 
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -119,6 +136,10 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_gray.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_gray.rsi
+  - type: SuitSensor # LuaM 
+    mode: SensorVitals 
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -130,6 +151,10 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_camo.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_camo.rsi
+  - type: SuitSensor # LuaM 
+    mode: SensorVitals 
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -143,7 +168,9 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/nfsd_tac_cream.rsi
   - type: SuitSensor #Mono
     randomMode: false
-    mode: SensorOff
+    mode: SensorVitals # LuaM SensorOff > SensorVital
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformBase
@@ -212,6 +239,10 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/private_security.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpsuit/private_security.rsi
+  - type: SuitSensor # LuaM 
+    mode: SensorCords 
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: ClothingUniformJumpsuitHoP

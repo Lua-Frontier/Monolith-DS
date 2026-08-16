@@ -869,6 +869,10 @@
     sprite: Clothing/Uniforms/Jumpsuit/mercenary.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/mercenary.rsi
+  - type: SuitSensor # LuaM 
+    mode: SensorCords 
+  - type: ToggleableSignature # LuaM
+    enabled: false
 
 - type: entity
   parent: UnsensoredClothingUniformBase
