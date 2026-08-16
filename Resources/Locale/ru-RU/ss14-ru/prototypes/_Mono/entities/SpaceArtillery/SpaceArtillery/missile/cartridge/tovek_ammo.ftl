@@ -36,3 +36,21 @@ ent-PaladinMagazineHVInfinite = автозарядник высокоскоро�
     .ammo-loader-type = Контейнер (высокоскоростные)
     .ammo-loader-caliber = 250 мм
     .ammo-loader-weight = 118 кг
+
+ent-TovekCartridge = управляемая ракета 250 мм (ЭМИ/ОФ)
+    .desc = Одиночная 250-мм управляемая ракета для корабельных пусковых установок.
+    .ammo-loader-type = Ракета (управляемая, ЭМИ/ОФ)
+    .ammo-loader-caliber = 250 мм
+    .ammo-loader-weight = 27 кг
+
+ent-MissileCartridge250mm = кумулятивная ракета 250 мм
+    .desc = Одиночная 250-мм кумулятивная ракета для корабельных пусковых установок.
+    .ammo-loader-type = Ракета (кумулятивная)
+    .ammo-loader-caliber = 250 мм
+    .ammo-loader-weight = 28 кг
+
+ent-MissileCartridge250mmHV = высокоскоростная ракета 250 мм
+    .desc = Одиночная 250-мм высокоскоростная ракета для корабельных пусковых установок.
+    .ammo-loader-type = Ракета (высокоскоростная)
+    .ammo-loader-caliber = 250 мм
+    .ammo-loader-weight = 26 кг
