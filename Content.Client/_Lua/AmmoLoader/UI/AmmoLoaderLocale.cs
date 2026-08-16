@@ -32,6 +32,8 @@ public static class AmmoLoaderLocale
         if (TryGetEntityAttribute(prototypeId, WeightAttr, out var value)) return value;
         return Loc.GetString("ammo-loader-item-weight-unknown");
     }
+// Commented by LuaM
+/*
     // Mono start
     private static string CompactAmmoLabel(string label)//shit code, mb any idea?
     {
@@ -56,17 +58,17 @@ public static class AmmoLoaderLocale
         return index >= 0 ? value.Remove(index, token.Length) : value;
     }
     // Mono end
-
+*/
     public static string FormatItemStats(string prototypeId, string displayName)
     {
         var type = GetAmmoType(prototypeId);
-        var caliber = CompactAmmoLabel(GetAmmoCaliber(prototypeId, displayName)); // Mono
+        var caliber = GetAmmoCaliber(prototypeId, displayName); // Mono // LuaM: removed CompactAmmoLabel
         var weight = GetAmmoWeight(prototypeId);
         var typeLine = Loc.GetString("ammo-loader-item-stats-type", ("value", type));
         var caliberLine = Loc.GetString("ammo-loader-item-stats-caliber", ("value", caliber));
         var weightLine = Loc.GetString("ammo-loader-item-stats-weight", ("value", weight));
-        // return typeLine + '\n' + caliberLine + '\n' + weightLine; // Mono - TODO make this not need locales to work then uncomment it
-        return caliberLine; // Mono
+        return typeLine + '\n' + caliberLine + '\n' + weightLine; // Mono - TODO make this not need locales to work then uncomment it // Uncommented by LuaM
+//        return caliberLine; // Mono // Commented by LuaM
     }
 
     private static bool TryGetEntityAttribute(string prototypeId, string attribute, out string value)

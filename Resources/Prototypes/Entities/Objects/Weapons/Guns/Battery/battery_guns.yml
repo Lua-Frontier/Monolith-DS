@@ -139,7 +139,7 @@
   - type: Multishot # Goobstation V
     missChance: 0.4
     spreadMultiplier: 2
-    spreadAddition: 40
+    spreadAddition: 35 # LuaM: 40 > 35
 
 - type: entity
   name: svalinn laser pistol

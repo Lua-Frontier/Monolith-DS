@@ -36,12 +36,12 @@
 # Utilities
 
 - type: listing
-  id: UplinkSecurityFactionHoloCigar
-  name: uplink-holo-cigar-name
-  description: uplink-holo-cigar-desc
-  productEntity: HoloCigar
+  id: UplinkSecurityFactionHoloCigarWestern
+  name: uplink-holo-cigar-tsf-name
+  description: uplink-holo-cigar-tsf-desc
+  productEntity: HoloCigarWestern
   cost:
-    FederationMilitaryCredit: 777
+    FederationMilitaryCredit: 350
   categories:
     - UplinkSecurityUtility
   conditions:
@@ -49,3 +49,6 @@
       whitelist:
         tags:
           - SecurityUplink
+    - !type:BuyerSpeciesCondition
+      whitelist:
+      - Human

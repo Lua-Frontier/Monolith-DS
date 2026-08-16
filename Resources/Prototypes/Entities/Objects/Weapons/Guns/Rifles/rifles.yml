@@ -51,10 +51,6 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
-  - type: Multishot # Goobstation V
-    missChance: 0.4
-    spreadMultiplier: 3
-    spreadAddition: 60
   - type: ItemTax # Mono
     taxAccounts:
       nfsd: 0.2
@@ -72,6 +68,10 @@
   - type: EmitSoundOnLand
     sound:
       collection: RiflesDrop
+  - type: Multishot
+    missChance: 0.4
+    spreadMultiplier: 3
+    spreadAddition: 45 # LuaM: 60 > 45
   # Goobstation edit end
 
 - type: entity

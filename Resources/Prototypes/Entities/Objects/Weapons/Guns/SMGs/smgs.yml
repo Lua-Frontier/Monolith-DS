@@ -79,7 +79,7 @@
   - type: Multishot # Goobstation V
     missChance: 0.4
     spreadMultiplier: 3
-    spreadAddition: 50
+    spreadAddition: 40 # LuaM: 50 > 40
 
 # Mono - moved Drozd, C-20, & Atreides to _Mono.
 

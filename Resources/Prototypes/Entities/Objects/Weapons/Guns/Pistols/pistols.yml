@@ -88,7 +88,7 @@
   - type: Multishot
     missChance: 0.4
     spreadMultiplier: 2
-    spreadAddition: 40
+    spreadAddition: 40 # LuaM: 40 > 30
   # Goobstation edit end
 
 - type: entity

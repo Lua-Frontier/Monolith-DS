@@ -22,7 +22,7 @@
   description: uplink-holo-cigar-desc
   productEntity: HoloCigar
   cost:
-    Doubloon: 777
+    Doubloon: 350
   categories:
   - UplinkPirateUtility
   conditions:
@@ -30,3 +30,6 @@
     whitelist:
       tags:
       - PirateUplink
+  - !type:BuyerSpeciesCondition
+    whitelist:
+    - Human
