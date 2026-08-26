@@ -24,6 +24,11 @@
   <Project Path="Content.Client/Content.Client.csproj">
     <BuildDependency Project="RobustToolbox/Lidgren.Network/Lidgren.Network.csproj" />
   </Project>
+  <!-- LuaM-start: Goob modular content roots used by release packaging. -->
+  <Project Path="Content.Goobstation.Client/Content.Goobstation.Client.csproj" />
+  <Project Path="Content.Goobstation.Server/Content.Goobstation.Server.csproj" />
+  <Project Path="Content.ModuleManager/Content.ModuleManager.csproj" />
+  <!-- LuaM-end -->
   <Project Path="Content.IntegrationTests/Content.IntegrationTests.csproj" />
   <Project Path="Content.MapRenderer/Content.MapRenderer.csproj" />
   <Project Path="Content.Packaging/Content.Packaging.csproj" />

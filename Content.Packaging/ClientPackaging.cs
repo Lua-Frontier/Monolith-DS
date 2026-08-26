@@ -25,7 +25,7 @@ public static class ClientPackaging
                 ArgumentList =
                 {
                     "build",
-                    Path.Combine("Content.Client", "Content.Client.csproj"),
+                    Path.Combine("Content.Goobstation.Client", "Content.Goobstation.Client.csproj"), // LuaM: build the Goob module root so its dependencies are published.
                     "-c", configuration,
                     "--nologo",
                     "/v:m",
@@ -71,11 +71,17 @@ public static class ClientPackaging
 
         var inputPass = graph.Input;
 
+        // LuaM-start: collect every assembly reachable from the Goob client module.
+        var sourcePath = Path.Combine(contentDir, "bin", "Content.Client");
+        var deps = DepsHandler.Load(Path.Combine(sourcePath, "Content.Goobstation.Client.deps.json"));
+        var contentAssemblies = ServerPackaging.GetContentAssemblyNamesToCopy(deps, "Client");
+        // LuaM-end
+
         await RobustSharedPackaging.WriteContentAssemblies(
             inputPass,
             contentDir,
             "Content.Client",
-            new[] { "Content.Client", "Content.Shared", "Content.Shared.Database" },
+            contentAssemblies, // LuaM: publish the complete Goob module dependency graph.
             cancel: cancel);
 
         await RobustClientPackaging.WriteClientResources(contentDir, inputPass, cancel);

@@ -98,7 +98,7 @@ public static class ServerPackaging
                 ArgumentList =
                 {
                     "build",
-                    Path.Combine("Content.Server", "Content.Server.csproj"),
+                    Path.Combine("Content.Goobstation.Server", "Content.Goobstation.Server.csproj"), // LuaM: build the Goob module root so its dependencies are published.
                     "-c", configuration,
                     "--nologo",
                     "/v:m",
@@ -169,7 +169,7 @@ public static class ServerPackaging
         // Additional assemblies that need to be copied such as EFCore.
         var sourcePath = Path.Combine(contentDir, "bin", "Content.Server");
 
-        var deps = DepsHandler.Load(Path.Combine(sourcePath, "Content.Server.deps.json"));
+        var deps = DepsHandler.Load(Path.Combine(sourcePath, "Content.Goobstation.Server.deps.json")); // LuaM: use the Goob module dependency graph.
 
         var contentAssemblies = GetContentAssemblyNamesToCopy(deps);
 
@@ -206,8 +206,15 @@ public static class ServerPackaging
     // This returns both content assemblies (e.g. Content.Server.dll) and dependencies (e.g. Npgsql)
     private static IEnumerable<string> GetContentAssemblyNamesToCopy(DepsHandler deps)
     {
-        var depsContent = deps.RecursiveGetLibrariesFrom("Content.Server").SelectMany(GetLibraryNames);
-        var depsRobust = deps.RecursiveGetLibrariesFrom("Robust.Server").SelectMany(GetLibraryNames);
+        // LuaM-start: share dependency discovery with client packaging and start at the Goob module root.
+        return GetContentAssemblyNamesToCopy(deps, "Server");
+    }
+
+    public static IEnumerable<string> GetContentAssemblyNamesToCopy(DepsHandler deps, string side)
+    {
+        var depsContent = deps.RecursiveGetLibrariesFrom($"Content.Goobstation.{side}").SelectMany(GetLibraryNames);
+        var depsRobust = deps.RecursiveGetLibrariesFrom($"Robust.{side}").SelectMany(GetLibraryNames);
+        // LuaM-end
 
         var depsContentExclusive = depsContent.Except(depsRobust).ToHashSet();
 
