@@ -1,0 +1,40 @@
+# Author Info
+# GitHub: Xapcyk
+# Discord: Xapcyk
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Beatle
+  parent: BaseVessel
+  name: vessel-beatle-name
+  description: vessel-beatle-desc
+  limit: 3
+  price: 305000
+  category: Medium
+  group: Syndicate
+  shuttlePath: /Maps/_LuaM/Shuttles/Syndicate/Beatle.yml
+  guidebookPage: Null
+  class:
+  - Syndicate
+  engine:
+  - AME
+
+- type: gameMap
+  id: Beatle
+  mapName: 'Beatle'
+  mapPath: /Maps/_LuaM/Shuttles/Syndicate/Beatle.yml
+  minPlayers: 0
+  stations:
+    Beatle:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Beatle SYN{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]
