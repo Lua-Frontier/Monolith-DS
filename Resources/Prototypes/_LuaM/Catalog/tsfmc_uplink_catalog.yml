@@ -32,3 +32,23 @@
     whitelist:
       tags:
       - SecurityUplink
+
+# Utilities
+
+- type: listing
+  id: UplinkSecurityFactionHoloCigarWestern
+  name: uplink-holo-cigar-tsf-name
+  description: uplink-holo-cigar-tsf-desc
+  productEntity: HoloCigarWestern
+  cost:
+    FederationMilitaryCredit: 350
+  categories:
+    - UplinkSecurityUtility
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerSpeciesCondition
+      whitelist:
+      - Human

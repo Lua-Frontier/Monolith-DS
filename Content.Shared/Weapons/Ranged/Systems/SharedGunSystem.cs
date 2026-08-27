@@ -41,6 +41,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Spawners; // Mono
+using Content.Goobstation.Common.Weapons.Multishot; // GoobStation
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -147,6 +148,12 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private void OnShootRequest(RequestShootEvent msg, EntitySessionEventArgs args)
     {
+        // Goobstation - Multishot - Ensures that guns shooting at same time.
+        var gunUid = GetEntity(msg.Gun);
+
+        if (HasComp<MultishotComponent>(gunUid))
+            return;
+        // Goobstation - End
         var user = args.SenderSession.AttachedEntity;
 
         if (user == null || !_combatMode.IsInCombatMode(user))
@@ -525,6 +532,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         RaiseLocalEvent(gunUid, ref shotEv);
 
         CauseImpulse(toCoordinates.Value, (gunUid, gun), ev.Ammo.Count);
+        UpdateAmmoCount(gunUid); //GoobStation - Multishot
     }
 
     public void Shoot(
