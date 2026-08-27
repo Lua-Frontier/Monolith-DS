@@ -1,0 +1,2 @@
+vessel-beatle-name = SYN "Beatle"
+vessel-beatle-desc = Previously, the USSP vessel, the plans and a few copies of which now belong to the remnants of the Syndicate. Equipped with one M-381 "Haron", two W-84 "Cyrexa", two L-65 "Longbow", two W-125 "Bofors", two ADBP-7 "Dravon", two RAC-30 "Draupnir", four L-108 "Adder" and four AK-800 "Fang".
