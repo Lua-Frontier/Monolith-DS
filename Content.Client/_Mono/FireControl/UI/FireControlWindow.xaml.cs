@@ -152,6 +152,14 @@ public sealed partial class FireControlWindow : FancyWindow
         args.Button.Pressed = NavRadar.ShowIFF;
     }
 
+// LuaM-comented-start:
+    private void OnDockTogglePressed(BaseButton.ButtonEventArgs args)
+    {
+        NavRadar.ShowDocks ^= true;
+        args.Button.Pressed = NavRadar.ShowDocks;
+    }
+// LuaM-comented-end
+
     /// <summary>
     /// Updates the text of a weapon button based on its selection state and manual reload status.
     /// </summary>
