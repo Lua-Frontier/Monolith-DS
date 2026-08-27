@@ -153,11 +153,13 @@ public sealed partial class FireControlWindow : FancyWindow
     }
 
 // LuaM-comented-start:
+/*
     private void OnDockTogglePressed(BaseButton.ButtonEventArgs args)
     {
         NavRadar.ShowDocks ^= true;
         args.Button.Pressed = NavRadar.ShowDocks;
     }
+*/
 // LuaM-comented-end
 
     /// <summary>
