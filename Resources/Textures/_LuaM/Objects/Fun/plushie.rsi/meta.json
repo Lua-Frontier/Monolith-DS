@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Made for LuaCorp, Lua ss14 frontier, ss14 Colossus frontier; Bomidor, HeadWalker, Kard, Purple Ghost, AziDragon, Meowonty Made by Discord:Maksimvini",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+        {
+      "name": "plushie_Bomidor"
+    },
+    {
+      "name": "plushie_HeadWalker"
+    },
+    {
+      "name": "plushie_Kard"
+    },
+    {
+      "name": "plushie_PurpleGhost"
+    },
+    {
+      "name": "plushie_AziDragon"
+    },
+    {
+      "name": "plushie_Meowonty"
+    },
+    {
+      "name": "plushie_maksimvini"
+    }
+  ]
+}

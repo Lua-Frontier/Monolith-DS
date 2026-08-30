@@ -260,3 +260,76 @@
   - type: Sprite
     sprite: _LuaM/Objects/Fun/seal.rsi
     state: seal_bread
+
+# Next Plushies below made by Maksimvini (Discord)
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMaksimvini22T
+  name: Плюшевый человек-пьяньчук
+  description: "Виски снова кончилось, несите добавки! - именно это можно прочесть на небольшой этикетке, прикреплённой к кимоно данной игрушки. Видимо, он очень обожает виски."
+  components:
+  - type: Sprite
+    sprite: _LuaM\Objects\Fun\plushie.rsi
+    state: plushie_maksimvini
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieAziDragon22T
+  name: Дешёво исполненный плюшевый Феленид
+  description: "При взгляде на эту плюшку, хочется мяукать. Так-же на одной из сторон одежды набито - Просто фелигнида. А ещё выглядит очень дёшево и низкокачественно"
+  components:
+  - type: Sprite
+    sprite: _LuaM\Objects\Fun\plushie.rsi
+    state: plushie_AziDragon
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMeowonty22T
+  name: Дёшево исполенная плюшевая Феленидка
+  description: "Довольно мягкая и нежная плюшка, вам хочется её потискать... Но почему от неё пахнет пластитаном и плассталью?.. А ещё выглядит очень дёшево и низкокачественно"
+  components:
+  - type: Sprite
+    sprite: _LuaM\Objects\Fun\plushie.rsi
+    state: plushie_Meowonty
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieBomidor22T
+  name: Плюшевый Вульпакин низкого качества
+  description: "При взгляде на это, Вас одолевают неопределённые чувства"
+  components:
+  - type: Sprite
+    sprite: _LuaM\Objects\Fun\plushie.rsi
+    state: plushie_Bomidor
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieKard22T
+  name: Плюшевый человек-изгой
+  description: "Смотря на него у вас возникает ощущение что перед Вами какая-то бедная игрушка изгоя-одиночки"
+  components:
+  - type: Sprite
+    sprite: _LuaM\Objects\Fun\plushie.rsi
+    state: plushie_Kard
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieHeadWalker22T
+  name: Плюшевый Ужасный Головоход
+  description: "Оно придёт за тобой. Или прикатится. Или приползёт. В любом случае, эта древняя миниатюрная машина для убийств - сделает Вам не до смеха, в момент, когда Вы окажетесь с ней наедине в переулке"
+  components:
+  - type: Sprite
+    sprite: _LuaM\Objects\Fun\plushie.rsi
+    state: plushie_HeadWalker
+
+- type: entity
+  parent: BasePlushie
+  id: PlushiePurpleGhost22T
+  name: Плюшевый Фиолетовый Призрак
+  description: "Вы точно его где-то видели, но не знаете где именно. Присмотревшись к этикетке вы видите надпись о пожелании к Удаче, больше сил и нервов.."
+  components:
+  - type: Sprite
+    sprite: _LuaM\Objects\Fun\plushie.rsi
+    state: plushie_PurpleGhost
+# Next Plushies above made by Maksimvini (Discord)

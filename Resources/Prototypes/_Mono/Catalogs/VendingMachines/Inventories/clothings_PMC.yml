@@ -17,6 +17,34 @@
     ClothingArmbandPurple: 4294967295 # Infinite
     ClothingArmbandDarkYellow: 4294967295 # Infinite
     ClothingArmbandYellow: 4294967295 # Infinite
+    # region Hats
+    ClothingHead22TBeretBlackish: 4294967295 # Infinite
+    ClothingHead22TBeretGreenish: 4294967295 # Infinite
+    ClothingHead22TBeretWhiteish: 4294967295 # Infinite
+    ClothingHead22TBHHatWhiteish: 4294967295 # Infinite
+    # region Mantles
+    ClothingNeckMantle22THOSBlueish: 4294967295 # Infinite
+    ClothingNeckMantle22THOSGreenish: 4294967295 # Infinite
+    ClothingNeckMantle22THOSOrangeish: 4294967295 # Infinite
+    ClothingNeckMantle22THOSPurplish: 4294967295 # Infinite
+    ClothingNeckMantle22THOSWhiteish: 4294967295 # Infinite
+    ClothingNeckMantle22THOSYellowish: 4294967295 # Infinite
+    ClothingNeckMantle22TBSGreenish: 4294967295 # Infinite
+    ClothingNeckMantle22TBSOrangeish: 4294967295 # Infinite
+    ClothingNeckMantle22TBSPurpleish: 4294967295 # Infinite
+    ClothingNeckMantle22TBSWhiteish: 4294967295 # Infinite
+    ClothingNeckMantle22TBSYellowish: 4294967295 # Infinite
+    ClothingNeckMantle22THOSBlueishCut: 4294967295 # Infinite
+    ClothingNeckMantle22THOSGreenishCut: 4294967295 # Infinite
+    ClothingNeckMantle22THOSOrangeishCut: 4294967295 # Infinite
+    ClothingNeckMantle22THOSPurplishCut: 4294967295 # Infinite
+    ClothingNeckMantle22THOSWhiteishCut: 4294967295 # Infinite
+    ClothingNeckMantle22THOSYellowishCut: 4294967295 # Infinite
+    ClothingNeckMantle22TBSGreenishCut: 4294967295 # Infinite
+    ClothingNeckMantle22TBSOrangeishCut: 4294967295 # Infinite
+    ClothingNeckMantle22TBSPurpleishCut: 4294967295 # Infinite
+    ClothingNeckMantle22TBSWhiteishCut: 4294967295 # Infinite
+    ClothingNeckMantle22TBSYellowishCut: 4294967295 # Infinite
     # region Balaclavas
     ClothingBalaclavaSkiMaskBlack: 4294967295 # Infinite
     ClothingBalaclavaSkiMaskGray: 4294967295 # Infinite
@@ -101,6 +129,12 @@
     ClothingEyesGlassesMercenary: 4294967295 # Infinite
     ClothingEyesGlassesSunglasses: 4294967295 # Infinite
     # region Gloves
+    ClothingHandsGloves22TCombatGreyish: 4294967295 # Infinite
+    ClothingHandsGloves22TCombatBlueish: 4294967295 # Infinite
+    ClothingHandsGloves22TCombatGreenish: 4294967295 # Infinite
+    ClothingHandsGloves22TCombatBattlecolored: 4294967295 # Infinite
+    ClothingHandsGloves22TCombatPinkish: 4294967295 # Infinite
+    ClothingHandsGloves22TCombatDesertyellow: 4294967295 # Infinite
     ClothingHandsGlovesTacticalCombatTan: 4294967295 # Infinite
     ClothingHandsGlovesTacticalCombatBlack: 4294967295 # Infinite
     ClothingHandsGlovesTacticalCombatRangerGreen: 4294967295 # Infinite
