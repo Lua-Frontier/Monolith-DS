@@ -131,12 +131,14 @@
     ClothingEyesGlassesMercenary: 4294967295 # Infinite
     ClothingEyesGlassesSunglasses: 4294967295 # Infinite
     # region Gloves
+# LuaM-start:
     ClothingHandsGloves22TCombatGreyish: 4294967295 # Infinite
     ClothingHandsGloves22TCombatBlueish: 4294967295 # Infinite
     ClothingHandsGloves22TCombatGreenish: 4294967295 # Infinite
     ClothingHandsGloves22TCombatBattlecolored: 4294967295 # Infinite
     ClothingHandsGloves22TCombatPinkish: 4294967295 # Infinite
     ClothingHandsGloves22TCombatDesertyellow: 4294967295 # Infinite
+ # LuaM-end.
     ClothingHandsGlovesTacticalCombatTan: 4294967295 # Infinite
     ClothingHandsGlovesTacticalCombatBlack: 4294967295 # Infinite
     ClothingHandsGlovesTacticalCombatRangerGreen: 4294967295 # Infinite
