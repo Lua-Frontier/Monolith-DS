@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/18/2026 03:44:54
-  entityCount: 4807
+  time: 08/04/2026 14:35:39
+  entityCount: 4808
 maps: []
 grids:
 - 1
@@ -29183,6 +29183,13 @@ entities:
     - type: Transform
       pos: 18.5,18.5
       parent: 1
+- proto: VendingMachineCentDrobe
+  entities:
+  - uid: 3717
+    components:
+    - type: Transform
+      pos: -16.5,34.5
+      parent: 1
 - proto: VendingMachineChefvend
   entities:
   - uid: 3718
@@ -29260,19 +29267,17 @@ entities:
     - type: Transform
       pos: 3.5,-1.5
       parent: 1
-- proto: VendingMachineExpeditionaryFlatpackVend
-  entities:
-  - uid: 3717
-    components:
-    - type: Transform
-      pos: 11.5,3.5
-      parent: 1
 - proto: VendingMachineFlatpackVend
   entities:
   - uid: 3729
     components:
     - type: Transform
       pos: -8.5,3.5
+      parent: 1
+  - uid: 3730
+    components:
+    - type: Transform
+      pos: 11.5,3.5
       parent: 1
 - proto: VendingMachineFuelVend
   entities:
@@ -29325,13 +29330,6 @@ entities:
     components:
     - type: Transform
       pos: -5.5,-9.5
-      parent: 1
-- proto: VendingMachineHydrobe
-  entities:
-  - uid: 352
-    components:
-    - type: Transform
-      pos: -16.5,34.5
       parent: 1
 - proto: VendingMachineJaniDrobe
   entities:
