@@ -181,13 +181,19 @@ entities:
     - type: ThermalSignature
     - type: SpreaderGrid
       spreadQueues:
+<<<<<<< HEAD
         Kudzu: []
         Puddle: []
         MetalFoam: []
         Smoke: []
+=======
+        Smoke: []
+        MetalFoam: []
+        Kudzu: []
+        Puddle: []
+>>>>>>> parent of 2ee024e3e7 (green zones)
     - type: Shuttle
-      dampingModifier: 2.5
-      bodyModifier: 2.5
+      dampingModifier: 0.25
     - type: ImplicitRoof
     - type: GridPathfinding
     - type: Gravity
@@ -4684,8 +4690,7 @@ entities:
           3,7:
             0: 65526
           3,8:
-            5: 4368
-            0: 61156
+            0: 65524
           4,4:
             0: 30464
             2: 8
@@ -6964,6 +6969,11 @@ entities:
       parent: 1
     - type: Physics
       bodyType: Static
+  - uid: 352
+    components:
+    - type: Transform
+      pos: -12.5,8.5
+      parent: 1
   - uid: 353
     components:
     - type: Transform
@@ -22953,17 +22963,17 @@ entities:
         immutable: False
         temperature: 293.14923
         moles:
-          Oxygen: 1.8856695
-          Nitrogen: 7.0937095
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
-          - 2770
-          - 2769
           - 2768
+          - 2769
+          - 2770
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -22981,8 +22991,8 @@ entities:
         immutable: False
         temperature: 293.14923
         moles:
-          Oxygen: 1.8856695
-          Nitrogen: 7.0937095
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -23009,17 +23019,17 @@ entities:
         immutable: False
         temperature: 293.14923
         moles:
-          Oxygen: 1.8856695
-          Nitrogen: 7.0937095
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
+          - 2776
           - 2777
           - 2778
-          - 2776
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -23648,15 +23658,11 @@ entities:
     - type: Transform
       pos: -1.5,4.5
       parent: 1
-    - type: AmbientSound
-      range: 2
   - uid: 2845
     components:
     - type: Transform
       pos: 2.5,4.5
       parent: 1
-    - type: AmbientSound
-      range: 2
 - proto: MaterialBiomass50
   entities:
   - uid: 1281
@@ -27861,22 +27867,11 @@ entities:
     - type: Transform
       pos: 0.5,4.5
       parent: 1
-    - type: AmbientSound
-      range: 2
-    - type: ShipShieldEmitter
-      shieldColor: '#1E90FFFF'
     - type: PointLight
       falloff: 6
       softness: 2
       energy: 8
       radius: 15
-    - type: PacifiedZoneGenerator
-      radius: 75
-      immuneRoles:
-      - SecurityGuard
-      - StationTrafficController
-      - StationRepresentative
-      - DirectorOfCare
 - proto: ShuttersNormalOpen
   entities:
   - uid: 3530
@@ -35274,7 +35269,6 @@ entities:
       parent: 2771
     - type: Physics
       canCollide: False
-    - type: PacifismAllowedGun
     - type: InsideEntityStorage
   - uid: 2773
     components:
@@ -35282,7 +35276,6 @@ entities:
       parent: 2771
     - type: Physics
       canCollide: False
-    - type: PacifismAllowedGun
     - type: InsideEntityStorage
   - uid: 2774
     components:
@@ -35290,7 +35283,6 @@ entities:
       parent: 2771
     - type: Physics
       canCollide: False
-    - type: PacifismAllowedGun
     - type: InsideEntityStorage
 - proto: WeaponShotgunEnforcerRegistered
   entities:
@@ -35300,7 +35292,6 @@ entities:
       parent: 2775
     - type: Physics
       canCollide: False
-    - type: PacifismAllowedGun
     - type: InsideEntityStorage
   - uid: 2777
     components:
@@ -35308,7 +35299,6 @@ entities:
       parent: 2775
     - type: Physics
       canCollide: False
-    - type: PacifismAllowedGun
     - type: InsideEntityStorage
   - uid: 2778
     components:
@@ -35316,7 +35306,6 @@ entities:
       parent: 2775
     - type: Physics
       canCollide: False
-    - type: PacifismAllowedGun
     - type: InsideEntityStorage
 - proto: WeaponSubMachineGunVector9x19mmRegistered
   entities:
@@ -35328,7 +35317,6 @@ entities:
       selectedMode: FullAuto
     - type: Physics
       canCollide: False
-    - type: PacifismAllowedGun
     - type: InsideEntityStorage
   - uid: 2769
     components:
@@ -35338,7 +35326,6 @@ entities:
       selectedMode: FullAuto
     - type: Physics
       canCollide: False
-    - type: PacifismAllowedGun
     - type: InsideEntityStorage
   - uid: 2770
     components:
@@ -35348,7 +35335,6 @@ entities:
       selectedMode: FullAuto
     - type: Physics
       canCollide: False
-    - type: PacifismAllowedGun
     - type: InsideEntityStorage
 - proto: WeaponXrayCannon
   entities:
