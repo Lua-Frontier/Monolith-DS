@@ -17,6 +17,7 @@
     ClothingArmbandPurple: 4294967295 # Infinite
     ClothingArmbandDarkYellow: 4294967295 # Infinite
     ClothingArmbandYellow: 4294967295 # Infinite
+# LuaM-start:
     # region Hats
     ClothingHead22TBeretBlackish: 4294967295 # Infinite
     ClothingHead22TBeretGreenish: 4294967295 # Infinite
@@ -45,6 +46,7 @@
     ClothingNeckMantle22TBSPurpleishCut: 4294967295 # Infinite
     ClothingNeckMantle22TBSWhiteishCut: 4294967295 # Infinite
     ClothingNeckMantle22TBSYellowishCut: 4294967295 # Infinite
+ # LuaM-end.
     # region Balaclavas
     ClothingBalaclavaSkiMaskBlack: 4294967295 # Infinite
     ClothingBalaclavaSkiMaskGray: 4294967295 # Infinite
