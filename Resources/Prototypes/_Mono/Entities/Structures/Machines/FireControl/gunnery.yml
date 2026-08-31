@@ -249,10 +249,8 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: FireControlConsole
-  # LuaM-comented-start:
-  # - type: ShipNpcTarget
+  # - type: ShipNpcTarget # Commented by LuaM
   #   needPower: true
-  # LuaM-comented-end
   - type: TargetSeekingTarget
   - type: ActivatableUI
     key: enum.FireControlConsoleUiKey.Key
