@@ -181,17 +181,10 @@ entities:
     - type: ThermalSignature
     - type: SpreaderGrid
       spreadQueues:
-<<<<<<< HEAD
-        Kudzu: []
-        Puddle: []
-        MetalFoam: []
-        Smoke: []
-=======
         Smoke: []
         MetalFoam: []
         Kudzu: []
         Puddle: []
->>>>>>> parent of 2ee024e3e7 (green zones)
     - type: Shuttle
       dampingModifier: 0.25
     - type: ImplicitRoof
