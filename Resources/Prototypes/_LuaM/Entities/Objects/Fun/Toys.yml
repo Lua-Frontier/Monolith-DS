@@ -270,7 +270,7 @@
   description: "Виски снова кончилось, несите добавки! - именно это можно прочесть на небольшой этикетке, прикреплённой к кимоно данной игрушки. Видимо, он очень обожает виски."
   components:
   - type: Sprite
-    sprite: _LuaM\Objects\Fun\plushie.rsi
+    sprite: _LuaM/Objects/Fun/plushie.rsi
     state: plushie_maksimvini
 
 - type: entity
@@ -280,7 +280,7 @@
   description: "При взгляде на эту плюшку, хочется мяукать. Так-же на одной из сторон одежды набито - Просто фелигнида. А ещё выглядит очень дёшево и низкокачественно"
   components:
   - type: Sprite
-    sprite: _LuaM\Objects\Fun\plushie.rsi
+    sprite: _LuaM/Objects/Fun/plushie.rsi
     state: plushie_AziDragon
 
 - type: entity
@@ -290,7 +290,7 @@
   description: "Довольно мягкая и нежная плюшка, вам хочется её потискать... Но почему от неё пахнет пластитаном и плассталью?.. А ещё выглядит очень дёшево и низкокачественно"
   components:
   - type: Sprite
-    sprite: _LuaM\Objects\Fun\plushie.rsi
+    sprite: _LuaM/Objects/Fun/plushie.rsi
     state: plushie_Meowonty
 
 - type: entity
@@ -300,7 +300,7 @@
   description: "При взгляде на это, Вас одолевают неопределённые чувства"
   components:
   - type: Sprite
-    sprite: _LuaM\Objects\Fun\plushie.rsi
+    sprite: _LuaM/Objects/Fun/plushie.rsi
     state: plushie_Bomidor
 
 - type: entity
@@ -310,7 +310,7 @@
   description: "Смотря на него у вас возникает ощущение что перед Вами какая-то бедная игрушка изгоя-одиночки"
   components:
   - type: Sprite
-    sprite: _LuaM\Objects\Fun\plushie.rsi
+    sprite: _LuaM/Objects/Fun/plushie.rsi
     state: plushie_Kard
 
 - type: entity
@@ -320,7 +320,7 @@
   description: "Оно придёт за тобой. Или прикатится. Или приползёт. В любом случае, эта древняя миниатюрная машина для убийств - сделает Вам не до смеха, в момент, когда Вы окажетесь с ней наедине в переулке"
   components:
   - type: Sprite
-    sprite: _LuaM\Objects\Fun\plushie.rsi
+    sprite: _LuaM/Objects/Fun/plushie.rsi
     state: plushie_HeadWalker
 
 - type: entity
@@ -330,6 +330,6 @@
   description: "Вы точно его где-то видели, но не знаете где именно. Присмотревшись к этикетке вы видите надпись о пожелании к Удаче, больше сил и нервов.."
   components:
   - type: Sprite
-    sprite: _LuaM\Objects\Fun\plushie.rsi
+    sprite: _LuaM/Objects/Fun/plushie.rsi
     state: plushie_PurpleGhost
 # Next Plushies above made by Maksimvini (Discord)
