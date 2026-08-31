@@ -266,8 +266,8 @@
 - type: entity
   parent: BasePlushie
   id: PlushieMaksimvini22T
-  name: Плюшевый человек-пьяньчук
-  description: "Виски снова кончилось, несите добавки! - именно это можно прочесть на небольшой этикетке, прикреплённой к кимоно данной игрушки. Видимо, он очень обожает виски."
+  name: plushie drunkman toy
+  description: "Whiskey empty again, bring me more! - this is what written on one of the side lables of it. Looks like, it will be a great company to any bar companies."
   components:
   - type: Sprite
     sprite: _LuaM/Objects/Fun/plushie.rsi
@@ -276,8 +276,8 @@
 - type: entity
   parent: BasePlushie
   id: PlushieAziDragon22T
-  name: Дешёво исполненный плюшевый Феленид
-  description: "При взгляде на эту плюшку, хочется мяукать. Так-же на одной из сторон одежды набито - Просто фелигнида. А ещё выглядит очень дёшево и низкокачественно"
+  name: plushie cheap-quality felinid-man
+  description: "Upon looking at it, you think how this bastard will behave. And you hate it. Also, its pretty cheap low-quality."
   components:
   - type: Sprite
     sprite: _LuaM/Objects/Fun/plushie.rsi
@@ -286,8 +286,8 @@
 - type: entity
   parent: BasePlushie
   id: PlushieMeowonty22T
-  name: Дёшево исполенная плюшевая Феленидка
-  description: "Довольно мягкая и нежная плюшка, вам хочется её потискать... Но почему от неё пахнет пластитаном и плассталью?.. А ещё выглядит очень дёшево и низкокачественно"
+  name: plushie cheap-quality felinid-girl
+  description: "Pretty squishy to hold, pretty cheap to amaze, just a felinid toy."
   components:
   - type: Sprite
     sprite: _LuaM/Objects/Fun/plushie.rsi
@@ -296,8 +296,8 @@
 - type: entity
   parent: BasePlushie
   id: PlushieBomidor22T
-  name: Плюшевый Вульпакин низкого качества
-  description: "При взгляде на это, Вас одолевают неопределённые чувства"
+  name: plushie low quality vulpakin toy
+  description: "Upon looking at it, you have uneasy and unsteady feelings. Maybe, getting rid of it is worth it?"
   components:
   - type: Sprite
     sprite: _LuaM/Objects/Fun/plushie.rsi
@@ -306,8 +306,8 @@
 - type: entity
   parent: BasePlushie
   id: PlushieKard22T
-  name: Плюшевый человек-изгой
-  description: "Смотря на него у вас возникает ощущение что перед Вами какая-то бедная игрушка изгоя-одиночки"
+  name: plushie homeless man
+  description: "Upon looking at that, you think of a bum, associating it with somewhat a Homeless cosmic guy will look like. Also on side of it texted ADOPT ME"
   components:
   - type: Sprite
     sprite: _LuaM/Objects/Fun/plushie.rsi
@@ -316,8 +316,8 @@
 - type: entity
   parent: BasePlushie
   id: PlushieHeadWalker22T
-  name: Плюшевый Ужасный Головоход
-  description: "Оно придёт за тобой. Или прикатится. Или приползёт. В любом случае, эта древняя миниатюрная машина для убийств - сделает Вам не до смеха, в момент, когда Вы окажетесь с ней наедине в переулке"
+  name: plushie horror headwalker abomination
+  description: "It definitely will come for you. And you will not be able to laugh and joke, when it gets to you in dead-end corner in some dark alley.."
   components:
   - type: Sprite
     sprite: _LuaM/Objects/Fun/plushie.rsi
@@ -326,8 +326,8 @@
 - type: entity
   parent: BasePlushie
   id: PlushiePurpleGhost22T
-  name: Плюшевый Фиолетовый Призрак
-  description: "Вы точно его где-то видели, но не знаете где именно. Присмотревшись к этикетке вы видите надпись о пожелании к Удаче, больше сил и нервов.."
+  name: plushie purple ghost-guy
+  description: "you`ve definitely seen it somewhere. Also he is pretty squishy. Squishy-squish.."
   components:
   - type: Sprite
     sprite: _LuaM/Objects/Fun/plushie.rsi
