@@ -7,7 +7,6 @@ using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Roles.Jobs;
 using Content.Server.Players.PlayTimeTracking;
-using Content.Shared.Mobs.Components; // LuaM
 
 namespace Content.Server._NF.PacifiedZone
 {
@@ -64,48 +63,27 @@ namespace Content.Server._NF.PacifiedZone
         private void UpdatePacifiedState(EntityUid genUid, PacifiedZoneGeneratorComponent component)
         {
             List<EntityUid> newEntities = new List<EntityUid>();
-            // var query = _lookup.GetEntitiesInRange<HumanoidAppearanceComponent>(Transform(genUid).Coordinates, component.Radius); // LuaM comented
-            var query = _lookup.GetEntitiesInRange<MobStateComponent>(Transform(genUid).Coordinates, component.Radius); // LuaM
+            var query = _lookup.GetEntitiesInRange<HumanoidAppearanceComponent>(Transform(genUid).Coordinates, component.Radius);
             foreach (var humanoidUid in query)
             {
-                // LuaM-comented-start:
-                // // Check preconditions for an entity to be pacified at all.
-                // // If player matches an immune role, or has playtime above a zone's threshold, it should not be pacified.
-                // if (!_mindSystem.TryGetMind(humanoidUid, out var mindId, out var mind))
-                //     continue;
+                // Check preconditions for an entity to be pacified at all.
+                // If player matches an immune role, or has playtime above a zone's threshold, it should not be pacified.
+                if (!_mindSystem.TryGetMind(humanoidUid, out var mindId, out var mind))
+                    continue;
 
-                // _jobSystem.MindTryGetJobId(mindId, out var jobId);
+                _jobSystem.MindTryGetJobId(mindId, out var jobId);
 
-                // if (jobId != null && component.ImmuneRoles.Contains(jobId.Value))
-                //     continue;
+                if (jobId != null && component.ImmuneRoles.Contains(jobId.Value))
+                    continue;
 
-                // if (component.ImmunePlaytime != null)
-                // {
-                //     var playerInfo = _admin.GetCachedPlayerInfo(mind?.UserId);
-                //     if (playerInfo != null && playerInfo.OverallPlaytime >= component.ImmunePlaytime)
-                //     {
-                //         continue;
-                //     }
-                // }
-                // LuaM-comented-end
-                // LuaM-start:
-                if (_mindSystem.TryGetMind(humanoidUid, out var mindId, out var mind))
+                if (component.ImmunePlaytime != null)
                 {
-                    _jobSystem.MindTryGetJobId(mindId, out var jobId);
-
-                    if (jobId != null && component.ImmuneRoles.Contains(jobId.Value))
-                        continue;
-
-                    if (component.ImmunePlaytime != null)
+                    var playerInfo = _admin.GetCachedPlayerInfo(mind?.UserId);
+                    if (playerInfo != null && playerInfo.OverallPlaytime >= component.ImmunePlaytime)
                     {
-                        var playerInfo = _admin.GetCachedPlayerInfo(mind?.UserId);
-                        if (playerInfo != null && playerInfo.OverallPlaytime >= component.ImmunePlaytime)
-                        {
-                            continue;
-                        }
+                        continue;
                     }
                 }
-                // LuaM-end
 
                 // Existing entity, note it still exists.
                 if (component.TrackedEntities.Contains(humanoidUid))
