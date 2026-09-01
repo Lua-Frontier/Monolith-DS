@@ -6,7 +6,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSBlueish
-  name: shoulder HOS Mantle
+  name: shoulder HOS mantle
   description: Shoulder Mantle with Blueish coloring. Looks pretty decent Blue.
   components:
   - type: Sprite
@@ -17,7 +17,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSGreenish
-  name: shoulder HOS Mantle
+  name: shoulder HOS mantle
   description: Shoulder Mantle with Greenish recoloring. Looks pretty decent Green.
   components:
   - type: Sprite
@@ -28,7 +28,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSOrangeish
-  name: shoulder HOS Mantle
+  name: shoulder HOS mantle
   description: Shoulder Mantle with Orange recoloring. Looks pretty decent Orange.
   components:
   - type: Sprite
@@ -39,7 +39,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSPurplish
-  name: shoulder HOS Mantle
+  name: shoulder HOS mantle
   description: Shoulder Mantle with Purplish recoloring. Looks pretty decent Purple.
   components:
   - type: Sprite
@@ -50,7 +50,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSWhiteish
-  name: shoulder HOS Mantle
+  name: shoulder HOS mantle
   description: Shoulder Mantle with Whiteish recoloring. Looks pretty decent White.
   components:
   - type: Sprite
@@ -61,7 +61,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSYellowish
-  name: shoulder HOS Mantle
+  name: shoulder HOS mantle
   description: Shoulder Mantle with Yellowish recoloring. Looks pretty decent Yellow.
   components:
   - type: Sprite
@@ -72,7 +72,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSGreenish
-  name: shoulder BS Mantle
+  name: shoulder BS mantle
   description: Shoulder Mantle with Greenish recoloring. Looks pretty decent Green.
   components:
   - type: Sprite
@@ -83,7 +83,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSOrangeish
-  name: shoulder BS Mantle
+  name: shoulder BS mantle
   description: Shoulder Mantle with Orangeish recoloring. Looks pretty decent Orange.
   components:
   - type: Sprite
@@ -94,7 +94,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSPurpleish
-  name: shoulder BS Mantle
+  name: shoulder BS mantle
   description: Shoulder Mantle with Purpleish recoloring. Looks pretty decent Purple.
   components:
   - type: Sprite
@@ -105,7 +105,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSWhiteish
-  name: shoulder BS Mantle
+  name: shoulder BS mantle
   description: Shoulder Mantle with Whiteish recoloring. Looks pretty decent White.
   components:
   - type: Sprite
@@ -116,7 +116,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSYellowish
-  name: shoulder BS Mantle
+  name: shoulder BS mantle
   description: Shoulder Mantle with Yellowish recoloring. Looks pretty decent Yellow.
   components:
   - type: Sprite
@@ -127,7 +127,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSBlueishCut
-  name: shoulder HOS Mantle cut-in-half
+  name: shoulder HOS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Blueish coloring. Looks pretty decent Blue.
   components:
   - type: Sprite
@@ -138,7 +138,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSGreenishCut
-  name: shoulder HOS Mantle cut-in-half
+  name: shoulder HOS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Greenish recoloring. Looks pretty decent Green.
   components:
   - type: Sprite
@@ -149,7 +149,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSOrangeishCut
-  name: shoulder HOS Mantle cut-in-half
+  name: shoulder HOS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Orange recoloring. Looks pretty decent Orange.
   components:
   - type: Sprite
@@ -160,7 +160,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSPurplishCut
-  name: shoulder HOS Mantle cut-in-half
+  name: shoulder HOS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Purplish recoloring. Looks pretty decent Purple.
   components:
   - type: Sprite
@@ -171,7 +171,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSWhiteishCut
-  name: shoulder HOS Mantle cut-in-half
+  name: shoulder HOS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Whiteish recoloring. Looks pretty decent White.
   components:
   - type: Sprite
@@ -182,7 +182,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22THOSYellowishCut
-  name: shoulder HOS Mantle cut-in-half
+  name: shoulder HOS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Yellowish recoloring. Looks pretty decent Yellow.
   components:
   - type: Sprite
@@ -193,7 +193,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSGreenishCut
-  name: shoulder BS Mantle cut-in-half
+  name: shoulder BS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Greenish recoloring. Looks pretty decent Green.
   components:
   - type: Sprite
@@ -204,7 +204,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSOrangeishCut
-  name: shoulder BS Mantle cut-in-half
+  name: shoulder BS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Orangeish recoloring. Looks pretty decent Orange.
   components:
   - type: Sprite
@@ -215,7 +215,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSPurpleishCut
-  name: shoulder BS Mantle cut-in-half
+  name: shoulder BS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Purpleish recoloring. Looks pretty decent Purple.
   components:
   - type: Sprite
@@ -226,7 +226,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSWhiteishCut
-  name: shoulder BS Mantle cut-in-half
+  name: shoulder BS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Whiteish recoloring. Looks pretty decent White.
   components:
   - type: Sprite
@@ -237,7 +237,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMantle22TBSYellowishCut
-  name: shoulder BS Mantle cut-in-half
+  name: shoulder BS mantle cut-in-half
   description: Shoulder Mantle with half-cut reduced lenght. This one with Yellowish recoloring. Looks pretty decent Yellow.
   components:
   - type: Sprite

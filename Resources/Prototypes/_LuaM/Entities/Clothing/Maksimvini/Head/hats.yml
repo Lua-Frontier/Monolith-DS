@@ -5,7 +5,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHead22TBeretBlackish
-  name: Grey-Black Beret
+  name: grey-black beret
   description: Not so big, not so small - just a Beret with a Black and Grey recolor.
   components:
   - type: Clothing
@@ -16,7 +16,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHead22TBeretGreenish
-  name: Green Beret
+  name: green beret
   description: Not so big, not so small - just a Beret with a Green recolor.
   components:
   - type: Clothing
@@ -27,7 +27,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHead22TBeretWhiteish
-  name: White Beret
+  name: white beret
   description: Not so big, not so small - just a Beret with a White recolor.
   components:
   - type: Clothing
@@ -39,7 +39,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHead22TBHHatWhiteish
-  name: Bounty Hunter White Hat
+  name: bounty hunter white hat
   description: Beloved by many Rich hunters, Mechants and style hunters - Bounty Hunter Hat, with a White Color now!.
   components:
   - type: Clothing
