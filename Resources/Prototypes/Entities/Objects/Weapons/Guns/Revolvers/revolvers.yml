@@ -69,9 +69,9 @@
     sound:
       collection: RevolversDrop
   - type: Multishot
-    missChance: 0.4
-    spreadMultiplier: 2.5 # LuaM: 3 > 2.5
-    spreadAddition: 35 # LuaM: 40 > 35
+    missChance: 0.25 # LuaM: 0.4 > 0.25
+    spreadMultiplier: 2 # LuaM: 3 > 2
+    spreadAddition: 25 # LuaM: 40 > 25
   # Goobstation edit end
 
 - type: entity

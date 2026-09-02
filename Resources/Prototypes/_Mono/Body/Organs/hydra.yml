@@ -23,6 +23,10 @@
           Quantity: 5
         - ReagentId: AmmoniaBlood
           Quantity: 5
+  - type: Tag # LuaM
+    tags:
+    - Meat
+    - TrashBagWhitelist
 
 - type: entity
   id: OrganHydrakinStomach

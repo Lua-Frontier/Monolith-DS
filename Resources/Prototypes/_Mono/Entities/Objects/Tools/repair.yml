@@ -105,8 +105,8 @@
       tags:
       - ShipRepairTool
   - type: Sprite
-    sprite: _NF/Objects/Tools/rcd.rsi
-    state: ammo-shipyard
+    sprite: _LuaM/Objects/Tools/rcd.rsi # LuaM: _NF/Objects/Tools/rcd.rsi > _LuaM/Objects/Tools/rcd.rsi
+    state: icon
   - type: Item
   - type: PhysicalComposition
     materialComposition:

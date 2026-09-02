@@ -43,14 +43,14 @@ uplink-security-puncturase-pen-desc = Быстрая доза пунктураз
 uplink-security-pyrazine-pen-name = Автоинъектор пиразина
 uplink-security-pyrazine-pen-desc = Быстрая доза пиразина и дермалина, предназначена для боевых применений.
 
-uplink-security-rad-pen-name = Автоинъектор от рад-повреждений
+uplink-security-rad-pen-name = Автоинъектор от радиационных повреждений
 uplink-security-rad-pen-desc = Быстрая доза противорадиационного препарата. Содержит аритразин и бикаридин.
 
-uplink-security-combat-pen-name = Боевой медипен
+uplink-security-combat-pen-name = Боевой автоинъектор
 uplink-security-combat-pen-desc = Универсальный автоинъектор омнизина.
 
-uplink-security-syringe-case-name = Футляр для медипенов
-uplink-security-syringe-case-desc = Карманный футляр с медипенами на разные случаи жизни.
+uplink-security-syringe-case-name = Футляр автоинъекторов
+uplink-security-syringe-case-desc = Карманный футляр с автоинъекторами на разные случаи жизни.
 
 uplink-security-compact-defibrillator-name = Компактный дефибриллятор
 uplink-security-compact-defibrillator-desc = Портативный дефибриллятор для полевой реанимации.
@@ -68,7 +68,7 @@ uplink-security-surgery-duffel-name = Продвинутый хирургиче�
 uplink-security-surgery-duffel-desc = Сумка с продвинутыми хирургическими инструментами, идеально подходящих для пришивания голов.
 
 uplink-security-omnizine-jug-name = Кувшин с омнизином
-uplink-security-omnizine-jug-desc = Кувшин омнизина, используемого для изготовления медипенов и оказание медицинской помощи. Импортировано из Harmony Medical Enterprises.
+uplink-security-omnizine-jug-desc = Кувшин омнизина, используемого для изготовления автоинъекторов и оказания медицинской помощи. Импортировано из Harmony Medical Enterprises.
 
 uplink-security-medical-assembler-name = Упакованный Мед-О-Мат
 uplink-security-medical-assembler-desc = Специальный станок, который можно использовать для производства медицинских расходников.

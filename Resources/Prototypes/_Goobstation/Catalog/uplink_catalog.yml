@@ -47,7 +47,7 @@
     Telecrystal: 350 # LuaM 35 -> 350
   categories:
   - UplinkWearables
-  conditions:
-  - !type:BuyerSpeciesCondition
-    whitelist:
-    - Human
+#  conditions: # Commented by LuaM
+#  - !type:BuyerSpeciesCondition
+#    whitelist:
+#    - Human

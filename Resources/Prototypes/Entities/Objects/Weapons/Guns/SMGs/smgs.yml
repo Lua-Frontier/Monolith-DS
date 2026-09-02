@@ -77,9 +77,9 @@
       collection: SMGDrop
   # Goobstation edit end
   - type: Multishot # Goobstation V
-    missChance: 0.4
-    spreadMultiplier: 3
-    spreadAddition: 40 # LuaM: 50 > 40
+    missChance: 0.3 # LuaM: 0.4 > 0.3
+    spreadMultiplier: 3 # LuaM: 3 > 2
+    spreadAddition: 35 # LuaM: 50 > 35
 
 # Mono - moved Drozd, C-20, & Atreides to _Mono.
 

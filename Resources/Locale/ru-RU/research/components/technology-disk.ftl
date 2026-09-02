@@ -2,8 +2,14 @@ tech-disk-inserted = Вы вставляете диск, добавляя на �
 tech-disk-examine-none = Этикетка пуста.
 tech-disk-examine = На этикетке имеется небольшое матричное изображение, представляющее { $result }.
 tech-disk-examine-more = Имеются и другие изображения, но они слишком малы, чтобы разглядеть их.
+
 tech-disk-ui-name = Терминал технологических дисков
 tech-disk-ui-total-label = На выбранном сервере имеется { $amount } очков
 tech-disk-ui-cost-label = Печать каждого диска стоит { $amount } очков
 tech-disk-ui-print-button = Напечать диск
 tech-disk-ui-print-rare-button = Напечатать особый диск ({ $amount })
+point-disk-ui-name = Терминал технологических дисков
+point-disk-ui-total-label = На выбранном сервере имеется { $amount } очков
+point-disk-ui-print-1k-button = Напечатать диск ({$amount})
+point-disk-ui-print-5k-button = Напечатать диск ({$amount})
+point-disk-ui-print-10k-button = Напечатать диск ({$amount})

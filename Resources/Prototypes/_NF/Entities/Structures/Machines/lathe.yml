@@ -82,6 +82,10 @@
     - GasMiningStatic
     - AutomationStatic
     # Mono End
+  # LuaM-start:
+    - ElectronicsStatic
+    - EngineeringBoardsStatic
+  # LuaM-end.
     dynamicPacks:
     - NFEngineeringTechfabDeprecated
     - RCD # Mono

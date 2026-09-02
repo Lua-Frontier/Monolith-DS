@@ -88,6 +88,7 @@
         maxDistance: 10
         variation: 0.05
   - type: SpamEmitSoundRequirePower # Goobstation
+  - type: OreSiloClient # LuaM
 
 # a lathe that can be sped up with space lube / slowed down with glue
 - type: entity
@@ -110,7 +111,7 @@
     solution: lube
   - type: ExaminableSolution
     solution: lube
-  - type: OreSiloClient
+#  - type: OreSiloClient # Commented by LuaM
 
 - type: entity
   abstract: true
@@ -785,7 +786,7 @@
     - RGlassSmelting
   - type: PlaceableSurface # DeltaV: Allow ore bags to dump into it directly
     isPlaceable: false # but not place on it if you just click it with a random item
-  - type: OreSiloClient #Gives silo access to ore holding
+ # - type: OreSiloClient #Gives silo access to ore holding # Commented by LuaM
 
 - type: entity
   parent: OreProcessor

@@ -25,6 +25,9 @@
   - type: FlavorProfile
     flavors:
     - people
+  - type: Tag # LuaM
+    tags:
+    - TrashBagWhitelist
 
 - type: entity
   id: OrganDionaBrain

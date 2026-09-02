@@ -27,6 +27,7 @@
   - type: Tag
     tags:
     - Meat
+    - TrashBagWhitelist # LuaM
 
 - type: entity
   id: BaseProtogenOrgan

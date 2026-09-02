@@ -142,7 +142,7 @@ public sealed class HoloCigarSystem : EntitySystem
 
     private void OnPickupAttempt(Entity<TheManWhoSoldTheWorldComponent> ent, ref PickupAttemptEvent args)
     {
-        if (!HasComp<GunComponent>(args.Item) || HasComp<HoloCigarAffectedGunComponent>(args.Item))
+        if (!HasComp<GunComponent>(args.Item) || HasComp<HoloCigarAffectedGunComponent>(args.Item) || HasComp<HoloCigarBlacklistComponent>(args.Item)) // LuaM add: HasComp<HoloCigarBlacklistComponent>(args.Item)
             return;
 
         var affected = EnsureComp<HoloCigarAffectedGunComponent>(args.Item);

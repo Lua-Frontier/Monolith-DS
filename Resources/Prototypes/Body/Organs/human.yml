@@ -38,6 +38,7 @@
   - type: Tag
     tags:
     - Meat
+    - TrashBagWhitelist # LuaM
 
 - type: entity
   id: BaseHumanOrgan
@@ -76,6 +77,7 @@
   - type: Tag
     tags:
     - Meat
+    - TrashBagWhitelist # LuaM
   - type: SolutionContainerManager
     solutions:
       organ:

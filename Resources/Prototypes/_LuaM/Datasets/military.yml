@@ -1,0 +1,17 @@
+- type: localizedDataset
+  id: NamesFirstMilitaryLeader
+  values:
+    prefix: names-military-leader-first-dataset-
+    count: 5
+
+- type: localizedDataset
+  id: NamesFirstMilitary
+  values:
+    prefix: names-military-first-dataset-
+    count: 5
+
+- type: localizedDataset
+  id: NamesLastMilitary
+  values:
+    prefix: names-military-last-dataset-
+    count: 44

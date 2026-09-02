@@ -885,6 +885,7 @@
   #- ContractorSoapNT
   # Frontier - try to mirror the upstream trinkets here, but only if they arent job role restricted in some weird way
   - PlushieLizard
+  - BlueLobsterUncursed # LuaM
   - ClothingNeckLGBTPin
   - ClothingNeckAllyPin
   - ClothingNeckAromanticPin
@@ -972,7 +973,7 @@
   - ContractorHandLabeler
 # - ContractorStampsApprovedDenied # Commented by LuaM
 # LuaM-start:
-  - ContractorRubberStampApproved 
+  - ContractorRubberStampApproved
   - ContractorRubberStampDenied
 # LuaM-end.
   - ContractorRubberStampCaptain

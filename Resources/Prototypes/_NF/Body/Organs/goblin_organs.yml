@@ -19,6 +19,7 @@
   - type: Tag
     tags:
       - Meat
+      - TrashBagWhitelist # LuaM
 
 - type: entity
   parent: OrganHumanEyes

@@ -1,4 +1,4 @@
-ent-StasiziumAutoInjector = футуристический медипен
+ent-StasiziumAutoInjector = футуристический автоинъектор
     .desc = Доза лекарственных веществ из будущего, способная поднять на ноги даже мёртвых.
 ent-CentcommStimpack = продвинутый стимулятор УСФ
     .suffix = НЕ МАППИТЬ

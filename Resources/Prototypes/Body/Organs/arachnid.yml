@@ -24,6 +24,7 @@
   - type: Tag
     tags:
     - Meat
+    - TrashBagWhitelist # LuaM
 
 - type: entity
   id: OrganArachnidStomach
@@ -114,6 +115,7 @@
     - Meat
     - Organ
     - Heart
+    - TrashBagWhitelist # LuaM
 
 - type: entity
   id: OrganArachnidLiver
@@ -142,6 +144,7 @@
     - Meat
     - Organ
     - Liver
+    - TrashBagWhitelist # LuaM
 
 - type: entity
   id: OrganArachnidKidneys
@@ -183,6 +186,7 @@
     - Meat
     - Organ
     - Eyes
+    - TrashBagWhitelist # LuaM
   - type: Item
     size: Small
     heldPrefix: eyeballs

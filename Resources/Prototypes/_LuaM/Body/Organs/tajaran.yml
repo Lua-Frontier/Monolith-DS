@@ -1,6 +1,6 @@
 - type: entity
   id: OrganTajaranEyes
-  parent: [ OrganHumanEyes ]
+  parent: OrganHumanEyes
   name: tajaran eyes
   description: They reflect off the darkness.
   components:

@@ -3,4 +3,4 @@
   id: DescriptionsATV
   values:
     prefix: descriptions-atv-dataset-
-    count: 16
+    count: 39 # LuaM: 16 > 39

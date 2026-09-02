@@ -23,20 +23,20 @@ uplink-pirate-rad-pen-desc = Быстрая доза противорадиац�
 uplink-pirate-combat-medkit-name = Боевая аптечка
 uplink-pirate-combat-medkit-desc = Аптечка, содержащая средства для лечения ушибов, ран и кровопотери.
 
-uplink-pirate-combat-pen-name = Боевой медипен
+uplink-pirate-combat-pen-name = Боевой автоинъектор
 uplink-pirate-combat-pen-desc = Универсальный автоинъектор омнизина.
 
-uplink-pirate-syringe-case-name = Футляр для медипенов
-uplink-pirate-syringe-case-desc = Карманный футляр с медипенами на разные случаи жизни.
+uplink-pirate-syringe-case-name = Футляр автоинъекторов
+uplink-pirate-syringe-case-desc = Карманный футляр с автоинъекторами на разные случаи жизни.
 
-uplink-pirate-hyperzine-name = Инъектор гиперзина
+uplink-pirate-hyperzine-name = Стимпак
 uplink-pirate-hyperzine-desc = Боевой стимулятор, предотвращающий оглушение и увеличивающий подвижность. Действует 30 секунд.
 
 uplink-pirate-surgery-name = Хирургический набор
 uplink-pirate-surgery-desc = Хирургический набор, содержащий необходимый минимум для спасения друзей или разделки врагов.
 
 uplink-pirate-omnizine-jug-name = Кувшин с омнизином
-uplink-pirate-omnizine-jug-desc = Кувшин омнизина, используемого для изготовления медипенов и оказание медицинской помощи. Импортировано из Harmony Medical Enterprises.
+uplink-pirate-omnizine-jug-desc = Кувшин омнизина, используемого для изготовления автоинъекторов и оказание медицинской помощи. Импортировано из Harmony Medical Enterprises.
 
 uplink-pirate-medical-assembler-name = Упакованный Мед-О-Мат
 uplink-pirate-medical-assembler-desc = Специальный станок, который можно использовать для производства медицинских расходников.
@@ -121,7 +121,7 @@ uplink-pirate-c20-name = Набор C-20r «Рейд»
 uplink-pirate-c20-desc = Лёгкий ПП калибра 9x19мм, упакованный с несколькими магазинами.
 
 uplink-pirate-atreides-name = Набор WT-312 «Атрейдс»
-uplink-pirate-atreides-desc = Одноручный лёгкий ПП калибра 5.7x28mm, а также три магазина к нему. 
+uplink-pirate-atreides-desc = Одноручный лёгкий ПП калибра 5.7x28mm, а также три магазина к нему.
 
 uplink-pirate-bulldog-name = Набор M-12 «Бульдог»
 uplink-pirate-bulldog-desc = Автоматический дробовик 12 калибра, упакованный с несколькими барабанами.

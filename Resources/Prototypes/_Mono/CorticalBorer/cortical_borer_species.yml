@@ -49,10 +49,10 @@
     thresholds:
       0: Alive
       20: Dead
-  - type: Barotrauma # take away space immunity but still not gasp
-    damage:
-      types:
-        Blunt: 0.15
+#  - type: Barotrauma # take away space immunity but still not gasp # Commented by LuaM
+#    damage:
+#      types:
+#        Blunt: 0.15
   - type: Bloodstream
     bloodlossDamage:
       types:
@@ -101,6 +101,7 @@
   - type: Body
     thermalVisibility: false
   - type: UniversalLanguageSpeaker
+  - type: PressureImmunity # LuaM
 
 - type: entity
   parent: BaseItem

@@ -1,6 +1,6 @@
 - type: guideEntry
   id: Factions
-  name: Factions
+  name: guide-entry-factions # LuaM: Factions > guide-entry-factions
   text: "/ServerInfo/_Mono/Guidebook/Factions/factions.xml"
   priority: 1
   children:
@@ -8,7 +8,7 @@
 
 - type: guideEntry
   id: TSFMC_Entry
-  name: TSFMC
+  name: guide-entry-tsf # LuaM: TSFMC > guide-entry-tsf
   text: "/ServerInfo/_Mono/Guidebook/Factions/TSFMC.xml"
   priority: 2
   children:
@@ -17,12 +17,12 @@
 
 - type: guideEntry
   id: Smuggling
-  name: Smuggling
+  name: guide-entry-nfsd-smuggling # LuaM: Smuggling > guide-entry-nfsd-smuggling
   text: "/ServerInfo/_NF/Guidebook/NFSD/Smuggling.xml"
   priority: 4
 
 - type: guideEntry
   id: Defusal
-  name: Defusal
+  name: guide-entry-defusal # LuaM: Defusal > guide-entry-defusal
   text: "/ServerInfo/Guidebook/Security/Defusal.xml"
   priority: 5

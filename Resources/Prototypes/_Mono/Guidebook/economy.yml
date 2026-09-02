@@ -1,21 +1,21 @@
 - type: guideEntry
   id: Economy
-  name: Economy
+  name: guide-entry-eco # LuaM: Economy > guide-entry-eco
   text: "/ServerInfo/_Mono/Guidebook/Economy/Economy.xml"
   priority: 1
   children:
-  - EconomyRecipes
+  - ArcFurnace # LuaM: EconomyRecipes > ArcFurnace
 
-- type: guideEntry
-  id: EconomyRecipes
-  name: Economy Recipes
-  text: "/ServerInfo/_Mono/Guidebook/Economy/EconomyRecipes.xml"
-  priority: 2
-  children:
-  - ArcFurnace
+#- type: guideEntry # Commented by LuaM
+#  id: EconomyRecipes
+#  name: Economy Recipes
+#  text: "/ServerInfo/_Mono/Guidebook/Economy/EconomyRecipes.xml"
+#  priority: 2
+#  children:
+#  - ArcFurnace
 
 - type: guideEntry
   id: ArcFurnace
-  name: Arc Furnace Recipes
+  name: guide-entry-arc-furnace # LuaM: Arc Furnace Recipes > guide-entry-arc-furnace
   text: "/ServerInfo/_Mono/Guidebook/Economy/ArcFurnace.xml"
-  priority: 3
+  priority: 2 # LuaM: 3 > 2

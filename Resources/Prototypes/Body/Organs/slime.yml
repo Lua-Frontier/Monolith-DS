@@ -40,7 +40,9 @@
   - type: Item
     size: Small
     heldPrefix: brain
-
+  - type: Tag # LuaM
+    tags:
+    - TrashBagWhitelist
 
 - type: entity
   id: OrganSlimeLungs

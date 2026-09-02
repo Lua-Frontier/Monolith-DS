@@ -510,3 +510,4 @@
     zeroVisible: true
   - type: Appearance
   - type: GunRequiresWield
+  - type: HoloCigarBlacklist # LuaM

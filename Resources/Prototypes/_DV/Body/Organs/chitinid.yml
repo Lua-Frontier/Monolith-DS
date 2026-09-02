@@ -48,6 +48,7 @@
     - Meat
     - Organ
     - Liver
+    - TrashBagWhitelist # LuaM
   - type: Item
     size: Small
     heldPrefix: liver

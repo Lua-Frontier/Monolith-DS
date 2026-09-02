@@ -24,6 +24,10 @@
           Quantity: 5
         - ReagentId: Slime
           Quantity: 5
+  - type: Tag # LuaM
+    tags:
+    - Meat
+    - TrashBagWhitelist
 
 - type: entity
   id: OrganChimeraStomach

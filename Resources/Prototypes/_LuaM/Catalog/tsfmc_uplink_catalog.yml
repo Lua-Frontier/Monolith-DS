@@ -49,6 +49,3 @@
       whitelist:
         tags:
           - SecurityUplink
-    - !type:BuyerSpeciesCondition
-      whitelist:
-      - Human

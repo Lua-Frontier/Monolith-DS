@@ -31,7 +31,7 @@
         - Sheet
         - RawMaterial
         - Ingot
-  - type: OreSiloClient
+#  - type: OreSiloClient # Commented by LuaM
   - type: Construction # Mono
     graph: Machine2x1
   - type: Lathe

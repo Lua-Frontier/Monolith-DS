@@ -16,6 +16,9 @@
         reagents:
         - ReagentId: Oil
           Quantity: 10
+  - type: Tag # LuaM
+    tags:
+    - TrashBagWhitelist
 
 - type: entity
   id: OrganIPCEyes

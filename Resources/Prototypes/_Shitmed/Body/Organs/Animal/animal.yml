@@ -18,6 +18,7 @@
   - type: Tag
     tags:
       - Meat
+      - TrashBagWhitelist # LuaM
   - type: SolutionContainerManager
     solutions:
       organ:

@@ -49,8 +49,8 @@
   id: ComputerShipyard
   components:
   - type: ShipyardConsole
-    newJobTitle: Captain
-  # - type: CompanyAccessReader # LuaM delete
+#    newJobTitle: Captain # Commented by LuaM
+  # - type: CompanyAccessReader # Commented by LuaM
   #   requiredCompanies:
   #   - TSF
   #   - PDV

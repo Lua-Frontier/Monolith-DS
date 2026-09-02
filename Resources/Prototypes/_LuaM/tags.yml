@@ -1,18 +1,24 @@
-# В алфавитном порядке!!!
-- type: Tag 
+# В АЛФАВИТНОМ ПОРЯДКЕ!!!
+- type: Tag
   id: AnomalyCore
 
-- type: Tag 
+- type: Tag
   id: CrateBluespaceElectronics
 
-- type: Tag 
+- type: Tag
   id: DatadiskEncrypted
 
-- type: Tag 
+- type: Tag
   id: FanElectronics
 
-- type: Tag 
+- type: Tag
+  id: GrenadeLauncher
+
+- type: Tag
   id: ScienceDevice
 
-- type: Tag 
+- type: Tag
+  id: TrashBagWhitelist
+
+- type: Tag
   id: XenoArtifact

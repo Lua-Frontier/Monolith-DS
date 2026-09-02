@@ -1,8 +1,8 @@
 ## RoundEndSystem
 
-round-end-system-shuttle-called-announcement = Запущены протоколы завршения смены. До окончания смены: { $time } { $units }.
+round-end-system-shuttle-called-announcement = Запущены протоколы завершения смены. До окончания смены: { $time } { $units }.
 round-end-system-shuttle-already-called-announcement = Завершение смены уже санкционирорвано.
-round-end-system-shuttle-auto-called-announcement = Запущены протоколы завршения смены. До окончания смены: { $time } { $units }.
+round-end-system-shuttle-auto-called-announcement = Запущены протоколы завершения смены. До окончания смены: { $time } { $units }.
 round-end-system-shuttle-recalled-announcement = Руководство сектора приняло решение увеличить длительность смены.
 round-end-system-round-restart-eta-announcement = Раунд перезапустится через { $time } { $units }...
 eta-units-minutes = минут

@@ -115,6 +115,7 @@
   - type: Gun # Mono change - Sound for L6 saw
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/l6_fire.ogg
+  - type: HoloCigarBlacklist # LuaM
 
 - type: entity
   name: PA L6C ROW (7.62x39mm)
@@ -158,3 +159,4 @@
       autoRecharge: true
       autoRechargeRate: 25
     - type: AmmoCounter
+    - type: HoloCigarBlacklist # LuaM

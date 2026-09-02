@@ -30,6 +30,3 @@
     whitelist:
       tags:
       - PirateUplink
-  - !type:BuyerSpeciesCondition
-    whitelist:
-    - Human

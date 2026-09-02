@@ -137,15 +137,38 @@
     activated: false # gets activated when a mind is added
     onUse: false # no item-borg toggling sorry
   #- type: ItemTogglePointLight # Mono - Light removal PR: Borg Adjustments
-  - type: NightVision # LuaM edit start:
-    relayOverlay: true
-    goggleEffect: true
-    viewCircleRadius: 880
-    viewCircleCount: 1
-    viewCircleSpacing: 1
-    action: ActionToggleNightVision
-    phosphorColor: "#337a98"
-    lightingColor: "#ffffff52" #LuaM edit end.
+# LuaM-start:
+  - type: HandheldLight
+    toggleOnInteract: false
+    wattage: 0.2
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: ItemTogglePointLight
+  - type: ToggleableVisuals
+    spriteLayer: light
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: radiating
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      startValue: 0.1
+      endValue: 2.0
+      isLooped: true
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 20
+    netsync: false
+# LuaM-end.
   - type: AccessToggle
   # TODO: refactor movement to just be based on toggle like speedboots but for the boots themselves
   # TODO: or just have sentient speedboots be fast idk

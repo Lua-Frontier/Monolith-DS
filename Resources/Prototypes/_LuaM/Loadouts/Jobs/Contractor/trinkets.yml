@@ -1,0 +1,6 @@
+- type: loadout
+  id: BlueLobsterUncursed
+  price: 500
+  storage:
+    back:
+    - BlueLobsterUncursed

@@ -32,7 +32,10 @@
     pvsIncrease: 0.7
   - type: StaticPrice
     price: 1250
-  - type: WieldDelay # LuaM add
+# LuaM-start:
+  - type: WieldDelay
     baseDelay: 3.5
     modifiedDelay: 3.5
     preventFiring: true
+  - type: HoloCigarBlacklist
+# LuaM-end.

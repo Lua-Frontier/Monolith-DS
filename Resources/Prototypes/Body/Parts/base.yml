@@ -26,9 +26,10 @@
         ents: []
   - type: StaticPrice
     price: 100
-#  - type: Tag # Commented by LuaM
-#    tags:
-#    - Trash
+  - type: Tag
+    tags:
+#    - Trash # Commented by LuaM
+    - TrashBagWhitelist
 
 - type: entity
   abstract: true

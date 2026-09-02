@@ -21,7 +21,7 @@
   - type: Loadout
     prototypes: [ MobClippyGear ]
   - type: RandomMetadata
-    nameSegments: [names_cat_clippy]
+    nameSegments: null # LuaM: [names_cat_clippy] > null
   - type: AutoImplant
     implants:
     - MindShieldImplant
@@ -74,7 +74,7 @@
   - type: ReplacementAccent
     accent: pirateCat
   - type: RandomMetadata
-    nameSegments: [names_cat_clarpy]
+    nameSegments: [ NamesCatClarpy ] # LuaM: [names_cat_clarpy] > [ NamesCatClarpy ]
   - type: AutoImplant
     implants:
     - FreelanceTrackingImplant
@@ -122,7 +122,7 @@
   - type: ReplacementAccent
     accent: nfsdCat
   - type: RandomMetadata
-    nameSegments: [names_cat_cappy]
+    nameSegments: null # LuaM: [names_cat_cappy] > null
   - type: AutoImplant
     implants:
     - MindShieldImplant
@@ -185,7 +185,7 @@
     rules: ghost-role-information-freeagent-rules
     mindRoles: [ MindRoleGhostRoleFreeAgent ]
   - type: RandomMetadata
-    nameSegments: [names_cat_elcapo]
+    nameSegments: null # LuaM: [names_cat_elcapo] > null
   - type: AutoImplant
     implants:
     - TrackingImplant
@@ -215,7 +215,7 @@
     rules: ghost-role-information-nonantagonist-rules
     mindRoles: [ MindRoleGhostRoleNeutral ]
   - type: RandomMetadata
-    nameSegments: [names_cat_clugg]
+    nameSegments: null # LuaM: [names_cat_clugg] > null
   - type: NpcFactionMember
     factions:
       - Cat # Everybody loves Clugg. Maybe not pitbulls.
@@ -249,7 +249,7 @@
   - type: ReplacementAccent
     accent: mistakeCat
   - type: RandomMetadata
-    nameSegments: [names_cat_mistake]
+    nameSegments: [ NamesCatMistake ] # LuaM: [names_cat_mistake] > [ NamesCatMistake ]
   - type: Vocal
     sounds:
       Male: CatMistake
@@ -317,7 +317,7 @@
     mindRoles: [ MindRoleGhostRoleFreeAgent ]
     prototype: CatBloodCult
   - type: RandomMetadata
-    nameSegments: [ names_cat_cult ]
+    nameSegments: [ NamesCatCult ] # LuaM: [ names_cat_cult ] > [ NamesCatCult ]
   - type: AutoImplant
     implants:
     - RedLightImplant

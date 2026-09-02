@@ -23,6 +23,7 @@
   - type: Tag
     tags:
     - Meat
+    - TrashBagWhitelist # LuaM
 
 - type: entity
   id: BaseAnimalOrgan
@@ -132,6 +133,7 @@
     - Meat
     - Organ
     - Liver
+    - TrashBagWhitelist # LuaM
   - type: Item
     size: Small
     heldPrefix: liver
@@ -160,6 +162,7 @@
     - Meat
     - Organ
     - Heart
+    - TrashBagWhitelist # LuaM
   - type: Item
     size: Small
     heldPrefix: heart

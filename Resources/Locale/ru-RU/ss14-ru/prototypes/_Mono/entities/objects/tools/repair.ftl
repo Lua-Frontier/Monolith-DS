@@ -8,5 +8,5 @@ ent-ShipRepairDeviceRecharging = перезаряжающееся УРК
 ent-ShipRepairDeviceAdmin = административное УРК
 ent-ShipRepairDeviceRedacted = перезаряжающееся УРК
     .desc = Таинственное ремонтное устройство, способное ремонтировать корабли АДС.
-ent-ShipRepairDeviceAmmo = ремонтная материя для УРК
+ent-ShipRepairDeviceAmmo = картридж УРК
     .desc = Картридж с ремонтной материей для устройства ремонта корабля.

@@ -73,7 +73,7 @@
   - type: Tag
     tags:
     - Organ
-
+    - TrashBagWhitelist # LuaM
 # Eyes
 
 - type: entity
@@ -94,6 +94,7 @@
   - type: Tag
     tags:
     - Eyes
+    - TrashBagWhitelist # LuaM
   - type: Eyes
   - type: PirateBountyItem # LuaM
     id: Cybernetics
@@ -146,6 +147,7 @@
     tags:
     - Organ
     - Heart
+    - TrashBagWhitelist # LuaM
   - type: Item
     size: Small
     heldPrefix: heart
@@ -203,6 +205,7 @@
     tags:
     - Organ
     - Liver
+    - TrashBagWhitelist # LuaM
   - type: PirateBountyItem # LuaM
     id: PirateBountyCybernetics
 
@@ -240,6 +243,7 @@
   - type: Tag
     tags:
     - Organ
+    - TrashBagWhitelist # LuaM
   - type: PirateBountyItem # LuaM
     id: PirateBountyCybernetics
 
