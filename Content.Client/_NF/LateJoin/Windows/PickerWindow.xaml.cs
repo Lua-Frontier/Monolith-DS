@@ -39,11 +39,13 @@ public sealed partial class PickerWindow : FancyWindow
         _gameTicker = _entitySystem.GetEntitySystem<ClientGameTicker>();
         _sawmill = Logger.GetSawmill("latejoin");
 
+/* Commented by LuaM
         CrewTabButton.OnPressed += _ =>
         {
             SetCurrentTab(PickerType.Crew);
             UpdateUi(_gameTicker.StationJobInformationList);
         };
+*/
 
         StationTabButton.OnPressed += _ =>
         {
@@ -61,7 +63,7 @@ public sealed partial class PickerWindow : FancyWindow
         // This is the place to change the default tab.
         if (_currentTab == null)
         {
-            SetCurrentTab(PickerType.StationOrCrewLarge);
+            SetCurrentTab(PickerType.Station); // LuaM: StationOrCrewLarge > Station
         }
     }
 
@@ -85,17 +87,21 @@ public sealed partial class PickerWindow : FancyWindow
 
         var stationJobs = availableJobs.Where(kvp => kvp.Value.IsLateJoinStation)
             .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+/* Commented by LuaM
         var crewJobs = availableJobs.Where(kvp => !kvp.Value.IsLateJoinStation)
             .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
+*/
         StationTabLabel.Text = _loc.GetString("frontier-lobby-station-title") + stationJobs.GetJobSumCountString();
         StationTabButton.Disabled = !StationJobInformationExtensions.IsAnyStationAvailable(availableJobs) ||
                                     _currentTab?.Type == PickerType.Station;
 
+/* Commented by LuaM
         CrewTabLabel.Text = _loc.GetString("frontier-lobby-crew-title") + crewJobs.GetJobSumCountString();
         CrewTabButton.Disabled = !StationJobInformationExtensions.IsAnyCrewJobAvailable(availableJobs) ||
                                  _currentTab?.Type == PickerType.Crew;
 
+*/
         _currentTab?.Control.UpdateUi(availableJobs);
     }
 
