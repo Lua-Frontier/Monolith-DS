@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/30/2026 10:49:54
-  entityCount: 2576
+  time: 09/03/2026 17:56:46
+  entityCount: 2577
 maps: []
 grids:
 - 1
@@ -123,8 +123,8 @@ entities:
     - type: SpreaderGrid
       spreadQueues:
         Puddle: []
-        Smoke: []
         Kudzu: []
+        Smoke: []
         MetalFoam: []
     - type: Shuttle
       dampingModifier: 2.5
@@ -7732,19 +7732,8 @@ entities:
   - uid: 1779
     components:
     - type: Transform
-      pos: 9.5,-8.5
+      pos: 8.5,-8.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - invalid
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
   - uid: 2151
     components:
     - type: Transform
@@ -16315,6 +16304,13 @@ entities:
     components:
     - type: Transform
       pos: 10.5,9.5
+      parent: 1
+- proto: VendingMachineClothingCapes
+  entities:
+  - uid: 2577
+    components:
+    - type: Transform
+      pos: -4.5,14.5
       parent: 1
 - proto: VendingMachineCoffee
   entities:

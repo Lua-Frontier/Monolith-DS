@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/27/2026 20:24:44
-  entityCount: 11201
+  time: 09/03/2026 15:17:41
+  entityCount: 11205
 maps: []
 grids:
 - 1
@@ -220,7 +220,8 @@ entities:
       id: Camelot
     - type: OccluderTree
     - type: Shuttle
-      dampingModifier: 0.25
+      dampingModifier: 2.5
+      bodyModifier: 2.5
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -3284,9 +3285,9 @@ entities:
     - type: SpreaderGrid
       spreadQueues:
         Puddle: []
-        MetalFoam: []
-        Smoke: []
         Kudzu: []
+        Smoke: []
+        MetalFoam: []
     - type: GridAtmosphere
       version: 2
       data:
@@ -60042,6 +60043,23 @@ entities:
     - type: Transform
       pos: -10.5,9.5
       parent: 1
+- proto: VendingMachineClothingCapes
+  entities:
+  - uid: 11202
+    components:
+    - type: Transform
+      pos: -3.5,10.5
+      parent: 1
+  - uid: 11203
+    components:
+    - type: Transform
+      pos: -13.5,-1.5
+      parent: 1
+  - uid: 11205
+    components:
+    - type: Transform
+      pos: -32.5,-27.5
+      parent: 1
 - proto: VendingMachineDinnerware
   entities:
   - uid: 9256
@@ -60132,6 +60150,13 @@ entities:
     components:
     - type: Transform
       pos: -10.5,-1.5
+      parent: 1
+- proto: VendingMachineSalvagePOI
+  entities:
+  - uid: 11204
+    components:
+    - type: Transform
+      pos: -13.5,-4.5
       parent: 1
 - proto: VendingMachineSeedsUnlocked
   entities:

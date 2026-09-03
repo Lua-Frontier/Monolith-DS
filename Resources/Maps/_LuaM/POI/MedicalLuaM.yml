@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/03/2026 03:54:12
-  entityCount: 4969
+  time: 09/03/2026 17:52:19
+  entityCount: 4972
 maps: []
 grids:
 - 1
@@ -182,10 +182,10 @@ entities:
     - type: ThermalSignature
     - type: SpreaderGrid
       spreadQueues:
-        MetalFoam: []
         Puddle: []
         Kudzu: []
         Smoke: []
+        MetalFoam: []
     - type: Shuttle
       dampingModifier: 2.5
       bodyModifier: 2.5
@@ -5210,6 +5210,13 @@ entities:
       - 4955
       - 4961
       - 4962
+- proto: Airlock
+  entities:
+  - uid: 64
+    components:
+    - type: Transform
+      pos: 13.5,-8.5
+      parent: 1
 - proto: AirlockCommandLocked
   entities:
   - uid: 2
@@ -5621,13 +5628,6 @@ entities:
     components:
     - type: Transform
       pos: -15.5,28.5
-      parent: 1
-- proto: AirlockJanitorLocked
-  entities:
-  - uid: 64
-    components:
-    - type: Transform
-      pos: 13.5,-8.5
       parent: 1
 - proto: AirlockMedical
   entities:
@@ -30703,6 +30703,23 @@ entities:
     components:
     - type: Transform
       pos: 10.5,-0.5
+      parent: 1
+- proto: VendingMachineClothingCapes
+  entities:
+  - uid: 4970
+    components:
+    - type: Transform
+      pos: -10.5,-15.5
+      parent: 1
+  - uid: 4971
+    components:
+    - type: Transform
+      pos: 12.5,-14.5
+      parent: 1
+  - uid: 4972
+    components:
+    - type: Transform
+      pos: -7.5,-8.5
       parent: 1
 - proto: VendingMachineClothingPunk
   entities:

@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/09/2026 06:47:48
-  entityCount: 3756
+  time: 09/03/2026 15:37:04
+  entityCount: 3759
 maps: []
 grids:
 - 1
@@ -136,11 +136,12 @@ entities:
     - type: SpreaderGrid
       spreadQueues:
         Puddle: []
+        Kudzu: []
         Smoke: []
         MetalFoam: []
-        Kudzu: []
     - type: Shuttle
-      dampingModifier: 0.25
+      dampingModifier: 2.5
+      bodyModifier: 2.5
     - type: ImplicitRoof
     - type: GridPathfinding
     - type: Gravity
@@ -2238,7 +2239,7 @@ entities:
       pos: 0.5,-1.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -4140.351
+      secondsUntilStateChange: -4201.1646
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13352,9 +13353,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 5
     - type: Battery
-      startingCharge: 25
-    - type: ApcPowerReceiverBattery
-      enabled: True
+      startingCharge: 0
   - uid: 2095
     components:
     - type: Transform
@@ -13364,9 +13363,7 @@ entities:
     - type: ApcPowerReceiver
       powerLoad: 5
     - type: Battery
-      startingCharge: 10
-    - type: ApcPowerReceiverBattery
-      enabled: True
+      startingCharge: 0
 - proto: ComputerTabletopPowerMonitoring
   entities:
   - uid: 2113
@@ -21258,6 +21255,23 @@ entities:
     components:
     - type: Transform
       pos: 38.5,-9.5
+      parent: 1
+- proto: VendingMachineClothingCapes
+  entities:
+  - uid: 3757
+    components:
+    - type: Transform
+      pos: 37.5,-19.5
+      parent: 1
+  - uid: 3758
+    components:
+    - type: Transform
+      pos: 25.5,-19.5
+      parent: 1
+  - uid: 3759
+    components:
+    - type: Transform
+      pos: 35.5,0.5
       parent: 1
 - proto: VendingMachineCuddlyCritterVend
   entities:
