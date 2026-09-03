@@ -263,4 +263,18 @@
   - type: StorageFill
     contents:
       - id: MobMothroach
-        amount: 4
+        amount: 2 #  LuaM: 4 > 2
+# LuaM-start:
+      - id: MobMothroachRosy
+        prob: 0.3
+      - id: MobMothroachMustard
+        prob: 0.3
+      - id: MobMothroachLeopard
+        prob: 0.3
+      - id: MobMothroachLunar
+        prob: 0.3
+      - id: MobMothroachCecropia
+        prob: 0.3
+      - id: MobMoproach
+        prob: 0.15
+# LuaM-end.

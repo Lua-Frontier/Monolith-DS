@@ -44,7 +44,7 @@
 - type: entity
   name: rosy mothroach
   parent: MobMothroach
-  id: MobRosyMothroach
+  id: MobMothroachRosy # LuaM: MobRosyMothroach > MobMothroachRosy
   description: This is the adorable by-product of mult- wait, why's this one pink?
   components:
   - type: FaxableObject

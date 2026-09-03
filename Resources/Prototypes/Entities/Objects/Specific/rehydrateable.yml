@@ -94,7 +94,19 @@
     - MobMothroach # Frontier: enforced rarity
     - MobMothroach # Frontier
     - MobMothroach # Frontier
-    - MobRosyMothroach # Frontier
+    - MobMothroachRosy # Frontier # LuaM: MobRosyMothroach > MobMothroachRosy
+# LuaM-start:
+    - MobMothroachRosy
+    - MobMothroachLeopard
+    - MobMothroachLeopard
+    - MobMothroachMustard
+    - MobMothroachMustard
+    - MobMothroachLunar
+    - MobMothroachLunar
+    - MobMothroachCecropia
+    - MobMothroachCecropia
+    - MobMoproach
+# LuaM-end.
 
 - type: entity
   parent: MonkeyCube

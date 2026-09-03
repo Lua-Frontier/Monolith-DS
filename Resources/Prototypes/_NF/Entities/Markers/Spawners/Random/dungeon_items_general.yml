@@ -535,6 +535,7 @@
     - VendingMachineGeneDrobe
     - VendingMachineViroDrobe
     - VendingMachineClothingPunk
+    - VendingMachineClothingCapes # LuaM
     chance: 1
     offset: 0.0
     rarePrototypes:

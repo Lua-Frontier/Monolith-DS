@@ -21,7 +21,7 @@
   group: Savory
   solids:
     FoodBreadBun: 1
-    MobRosyMothroach: 1
+    MobMothroachRosy: 1 # LuaM: MobRosyMothroach > MobMothroachRosy
   recipeType:
   #- Oven
   - Microwave # Mono: Deviating to match the item description and restore the humor

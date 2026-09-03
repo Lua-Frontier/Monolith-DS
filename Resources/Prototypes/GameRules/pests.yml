@@ -85,8 +85,20 @@
       prob: 0.05 # Mono
     - id: MobMothroach
       prob: 0.005 # Mono
-    - id: MobRosyMothroach # Frontier
+    - id: MobMothroachRosy # Frontier # LuaM: MobRosyMothroach > MobMothroachRosy
       prob: 0.005 # Mono
+# LuaM-start:
+    - id: MobMothroachMustard
+      prob: 0.005
+    - id: MobMothroachLeopard
+      prob: 0.005
+    - id: MobMothroachLunar
+      prob: 0.005
+    - id: MobMothroachCecropia
+      prob: 0.005
+    - id: MobMoproach
+      prob: 0.0025
+# LuaM-end.
     specialEntries: # Mono
     - id: MobCorticalBorer # Mono
       prob: 0.001 # Mono

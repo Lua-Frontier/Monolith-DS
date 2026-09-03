@@ -389,7 +389,7 @@
     - id: MobMothroach
       orGroup: fauna
       maxAmount: 2
-    - id: MobRosyMothroach # Frontier
+    - id: MobMothroachRosy # Frontier # LuaM: MobRosyMothroach > MobMothroachRosy
       orGroup: fauna # Frontier
       prob: 0.2 # Frontier
       maxAmount: 2 # Frontier

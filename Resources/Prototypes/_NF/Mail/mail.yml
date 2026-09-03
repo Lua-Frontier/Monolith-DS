@@ -1625,7 +1625,7 @@
         orGroup: Critter
         prob: 0.15
         # Rare
-      - id: MobRosyMothroach
+      - id: MobMothroachRosy # LuaM: MobRosyMothroach > MobMothroachRosy
         orGroup: Critter
         prob: 0.05
       - id: MobSnailMoth

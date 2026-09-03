@@ -21,9 +21,9 @@
       - state: equipped-NECK-on
         color: "#a9b6bd"
         shader: unshaded
-  - type: StaticPrice
-    price: 200
-    vendPrice: 19000
+#  - type: StaticPrice # Commented by LuaM
+#    price: 200
+#    vendPrice: 19000
 
 - type: entity
   parent: [ClothingNeckBase, BaseC2ContrabandUnredeemable]

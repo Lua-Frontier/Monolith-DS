@@ -1,77 +1,67 @@
 - type: vendingMachineInventory
   id: VendCapesInventory
   startingInventory:
-    ClothingNeckCloakTrans: 3
     ClothingNeckCloakAdmin: 3
-    ClothingNeckCloakNanotrasen: 3
-    ClothingNeckCloakAro: 3
     ClothingNeckCloakSanabi: 3
     ClothingNeckCloakHerald: 3
-    ClothingNeckCloakGoliathCloak: 3
-    ClothingNeckCloakCap: 3
-    ClothingNeckCloakPirateCap: 3
-    ClothingNeckCloakQm: 3
-    ClothingNeckCloakEnby: 3
     ClothingNeckCloakMoth: 3
-    ClothingNeckCloakRd: 3
-    ClothingNeckCloakAce: 3
-    ClothingNeckCloakLesbian: 3
-    ClothingNeckCloakVoid: 3
     ClothingNeckCloakRosy: 3
-    ClothingNeckCloakGay: 3
-    ClothingNeckCloakCe: 3
-    ClothingNeckCloakJanitor: 3
-    ClothingNeckCloakIntersex: 3
-    ClothingNeckCloakPan: 3
-    ClothingNeckCloakBi: 3
-    ClothingNeckMantle: 3
+    ClothingNeckCloakGoliathCloak: 3
+    ClothingNeckCloakVoid: 3
+    ClothingNeckCloakCapFormal: 3
+    ClothingNeckCloakCap: 3
     ClothingNeckMantleCap: 3
-    ClothingOuterCoatBishop: 3
+    ClothingNeckCloakHop: 3
+    ClothingNeckMantleHOP: 3
+    ClothingNeckCloakQm: 3
+    ClothingNeckMantleQM: 3
+    ClothingNeckCloakRd: 3
+    ClothingNeckCloakCe: 3
+    ClothingNeckMantleCE: 3
     ClothingNeckMantleRD: 3
+    ClothingNeckCloakJanitor: 3
+    ClothingNeckMantle: 3
+    ClothingOuterCoatBishop: 3
     ClothingNeckMantleBH: 3
     ClothingNeckCloakCOG: 3
     ClothingNeckCloakBlack: 3
     ClothingNeckUllimanOvercoat: 3
     ClothingNeckHeavyUllimanOvercoat: 3
-    ClothingNeckCloakCapFormal: 3
-    ClothingNeckMantleCE: 3
-    ClothingNeckMantleQM: 3
-  contrabandInventory:
-    ClothingNeckCloakUssp: 3
-    ClothingNeckCloakSr: 3
-    ClothingNeckMantleSr: 3
-    ClothingNeckCloakHop: 3
-    ClothingNeckMantleHOP: 3
-    ClothingNeckMantleSheriff: 3
-    ClothingNeckViperGroupMantle: 3
+    ClothingNeckCloakUllmanPoncho: 3
+    ClothingNeckMantleUI: 3
     ClothingNeckCloakEmpirePreafectDiplomacy: 3
     ClothingNeckCloakEmpirePreafect: 3
     ClothingNeckCloakEmpirePreafectOrange: 3
     ClothingNeckCloakEmpirePreafectViolet: 3
-    ClothingNeckCloakMarsh: 3
     ClothingNeckCloakDrakeIndustries: 3
-    ClothingNeckCloakDrakeIndustriesRipped: 3
     ClothingNeckCloakTTIParamedicAlt: 3
-    ClothingNeckCloakUllmanPoncho: 3
-    ClothingNeckMantleUI: 3
     ClothingNeckCloakBlueStarHoscloack: 3
     ClothingNeckCloakBlueStarRed: 3
     ClothingNeckCloakBlueStarWhite: 3
     ClothingNeckCloakBlueStarBlack: 3
     ClothingNeckCloakBlueStar: 3
+    ClothingNeckCloakTrans: 3
+    ClothingNeckCloakGay: 3
+    ClothingNeckCloakAro: 3
+    ClothingNeckCloakEnby: 3
+    ClothingNeckCloakIntersex: 3
+    ClothingNeckCloakPan: 3
+    ClothingNeckCloakBi: 3
+    ClothingNeckCloakAce: 3
+    ClothingNeckCloakLesbian: 3
+  contrabandInventory:
+    ClothingNeckCloakNanotrasen: 3
+    ClothingNeckCloakPirateCap: 3
+    ClothingNeckCloakUssp: 3
+    ClothingNeckCloakSr: 3
+    ClothingNeckMantleSr: 3
+    ClothingNeckMantleSheriff: 3
+    ClothingNeckMantleSheriffLight: 3
+    ClothingNeckCloakMarsh: 3
+    ClothingNeckCloakDrakeIndustriesRipped: 3
   emaggedInventory:
-    ClothingNeckCaptainCloak: 3
-    ClothingNeckColonelCloak: 3
-    ClothingCloakCmo: 3
-    ClothingNeckCloakPdvPurple: 3
-    ClothingNeckCloakVizier: 3
-    ClothingNeckCloakHos: 3
-    ClothingNeckCloakRogueCommander: 3
-    ClothingNeckMantleHOS: 3
-    ClothingNeckMantleVizier: 3
-    ClothingNeckMantleCMO: 3
+    ClothingNeckViperGroupMantle: 3
     ClothingNeckCloakRenegadeCaptain: 3
     ClothingNeckCloakRenegadePoncho: 3
     ClothingNeckCloakRenegade: 3
     ClothingNeckMantleRenegade: 3
-    ClothingNeckMantleSheriffLight: 3
