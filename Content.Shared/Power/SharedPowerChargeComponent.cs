@@ -11,4 +11,11 @@ public abstract partial class SharedPowerChargeComponent : Component
     [DataField]
     public LocId WindowTitle { get; set; } = string.Empty;
 
+    // MLua Frontier: actions
+    /// <summary>
+    /// Show a action button on UI
+    /// </summary>
+    [DataField]
+    public bool ActionUI { get; set; } = false;
+    // MLuaEnd Frontier: actions
 }

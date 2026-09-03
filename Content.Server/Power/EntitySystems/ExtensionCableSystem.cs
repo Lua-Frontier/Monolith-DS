@@ -3,12 +3,15 @@ using Content.Server.Power.Components;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Content.Server.Station.Systems; // MLua Frontier
+using Content.Shared._NF.BindToStation; // MLua Frontier
 
 namespace Content.Server.Power.EntitySystems
 {
     public sealed partial class ExtensionCableSystem : EntitySystem
     {
         [Dependency] private SharedMapSystem _map = default!;
+        [Dependency] private readonly StationSystem _station = default!; // MLua Frontier
 
         public override void Initialize()
         {
@@ -190,9 +193,16 @@ namespace Content.Server.Power.EntitySystems
             Disconnect(receiver);
         }
 
+
         private void OnReceiverAnchorStateChanged(Entity<ExtensionCableReceiverComponent> receiver, ref AnchorStateChangedEvent args)
         {
-            if (args.Anchored)
+            // Frontier - check for a grid bound lock on an entity, if it exists is not on the proper grid, don't connect
+            var gridBound = TryComp<StationBoundObjectComponent>(receiver, out var binding) &&
+                            binding.Enabled &&
+                            binding.BoundStation != null &&
+                             _station.GetOwningStation(receiver) != binding.BoundStation;
+
+            if (args.Anchored && !gridBound) //End Frontier
             {
                 Connect(receiver);
             }
@@ -208,7 +218,7 @@ namespace Content.Server.Power.EntitySystems
             Connect(receiver);
         }
 
-        private void Connect(Entity<ExtensionCableReceiverComponent> receiver)
+        public  void Connect(Entity<ExtensionCableReceiverComponent> receiver) // MLua Frontier
         {
             receiver.Comp.Connectable = true;
             if (receiver.Comp.Provider == null)
@@ -217,7 +227,7 @@ namespace Content.Server.Power.EntitySystems
             }
         }
 
-        private void Disconnect(Entity<ExtensionCableReceiverComponent> receiver)
+        public  void Disconnect(Entity<ExtensionCableReceiverComponent> receiver) // MLua Frontier
         {
             receiver.Comp.Connectable = false;
             RaiseLocalEvent(receiver, new ProviderDisconnectedEvent(receiver.Comp.Provider), broadcast: false);

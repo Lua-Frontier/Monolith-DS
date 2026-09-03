@@ -28,7 +28,7 @@ public sealed partial class EmpSystem : SharedEmpSystem
     [Dependency] private IConfigurationManager _cfg = default!; // Frontier: EMP Blast PVS
     [Dependency] private ExamineSystem _examine = default!; // Frontier: examine verb
 
-    public const string EmpPulseEffectPrototype = "EffectEmpBlast"; // Frontier: EffectEmpPulse
+    public new const string EmpPulseEffectPrototype = "EffectEmpBlast"; // MLua Frontier: EffectEmpPulse
 
     public override void Initialize()
     {
@@ -41,6 +41,138 @@ public sealed partial class EmpSystem : SharedEmpSystem
         SubscribeLocalEvent<EmpDisabledComponent, RadioReceiveAttemptEvent>(OnRadioReceiveAttempt);
     }
 
+    /// <summary>
+    /// MLua Start
+    ///  Triggers an EMP pulse at the given location, by first raising an <see cref="EmpAttemptEvent"/>, then a raising <see cref="EmpPulseEvent"/> on all entities in range.
+    /// </summary>
+    /// <param name="coordinates">The location to trigger the EMP pulse at.</param>
+    /// <param name="range">The range of the EMP pulse.</param>
+    /// <param name="energyConsumption">The amount of energy consumed by the EMP pulse.</param>
+    /// <param name="duration">The duration of the EMP effects.</param>
+    /// <param name="immuneGrids">Frontier: a list of the grids that should not be affected by the pulse.</param>
+    public void EmpPulse(MapCoordinates coordinates, float range, float energyConsumption, float duration, List<EntityUid>? immuneGrids = null, string? effectPrototype = null, bool bypassEmpImmunity = false)
+    {
+        foreach (var uid in _lookup.GetEntitiesInRange(coordinates, range))
+        {
+            // Frontier: Block EMP on grid
+            var gridUid = Transform(uid).GridUid;
+            if (gridUid != null &&
+                (immuneGrids != null && immuneGrids.Contains(gridUid.Value) ||
+                TryComp<ProtectedGridComponent>(gridUid, out var prot) && prot.PreventEmpEvents))
+                continue;
+            // End Frontier: block EMP on grid
+
+            if (bypassEmpImmunity)
+                DoEmpEffects(uid, energyConsumption, duration);
+            else
+                TryEmpEffects(uid, energyConsumption, duration);
+        }
+
+        var empBlast = Spawn(effectPrototype ?? EmpPulseEffectPrototype, coordinates); // Frontier: Added visual effect
+        EnsureComp<EmpBlastComponent>(empBlast, out var empBlastComp); // Frontier
+        empBlastComp.VisualRange = range; // Frontier
+
+        if (range > _cfg.GetCVar(CVars.NetMaxUpdateRange)) // Frontier
+            _pvs.AddGlobalOverride(empBlast); // Frontier
+
+        Dirty(empBlast, empBlastComp); // Frontier
+    }
+
+    /// <summary>
+    ///   Triggers an EMP pulse at the given location, by first raising an <see cref="EmpAttemptEvent"/>, then a raising <see cref="EmpPulseEvent"/> on all entities in range.
+    /// </summary>
+    /// <param name="coordinates">The location to trigger the EMP pulse at.</param>
+    /// <param name="range">The range of the EMP pulse.</param>
+    /// <param name="energyConsumption">The amount of energy consumed by the EMP pulse.</param>
+    /// <param name="duration">The duration of the EMP effects.</param>
+    public void EmpPulse(EntityCoordinates coordinates, float range, float energyConsumption, float duration)
+    {
+        foreach (var uid in _lookup.GetEntitiesInRange(coordinates, range))
+        {
+            TryEmpEffects(uid, energyConsumption, duration);
+        }
+        Spawn(EmpPulseEffectPrototype, coordinates);
+    }
+
+    /// <summary>
+    ///    Attempts to apply the effects of an EMP pulse onto an entity by first raising an <see cref="EmpAttemptEvent"/>, followed by raising a <see cref="EmpPulseEvent"/> on it.
+    /// </summary>
+    /// <param name="uid">The entity to apply the EMP effects on.</param>
+    /// <param name="energyConsumption">The amount of energy consumed by the EMP.</param>
+    /// <param name="duration">The duration of the EMP effects.</param>
+    public void TryEmpEffects(EntityUid uid, float energyConsumption, float duration)
+    {
+        var attemptEv = new EmpAttemptEvent();
+        RaiseLocalEvent(uid, ref attemptEv);
+        if (attemptEv.Cancelled)
+            return;
+
+        DoEmpEffects(uid, energyConsumption, duration);
+    }
+
+    /// <summary>
+    ///    Applies the effects of an EMP pulse onto an entity by raising a <see cref="EmpPulseEvent"/> on it.
+    /// </summary>
+    /// <param name="uid">The entity to apply the EMP effects on.</param>
+    /// <param name="energyConsumption">The amount of energy consumed by the EMP.</param>
+    /// <param name="duration">The duration of the EMP effects.</param>
+    public void DoEmpEffects(EntityUid uid, float energyConsumption, float duration)
+    {
+        var ev = new EmpPulseEvent(energyConsumption, false, false, TimeSpan.FromSeconds(duration), null);
+        RaiseLocalEvent(uid, ref ev);
+        if (ev.Affected)
+        {
+            Spawn(EmpDisabledEffectPrototype, Transform(uid).Coordinates);
+        }
+        if (ev.Disabled)
+        {
+            // Frontier: Upstream - #28984 start
+            //disabled.DisabledUntil = Timing.CurTime + TimeSpan.FromSeconds(duration);
+            var disabled = EnsureComp<EmpDisabledComponent>(uid);
+            if (disabled.DisabledUntil == TimeSpan.Zero)
+            {
+                disabled.DisabledUntil = Timing.CurTime;
+            }
+            disabled.DisabledUntil = disabled.DisabledUntil + TimeSpan.FromSeconds(duration);
+
+            /// i tried my best to go through the Pow3r server code but i literally couldn't find in relation to PowerNetworkBatteryComponent that uses the event system
+            /// the code is otherwise too esoteric for my innocent eyes
+            if (TryComp<PowerNetworkBatteryComponent>(uid, out var powerNetBattery))
+            {
+                powerNetBattery.CanCharge = false;
+            }
+            // Frontier: Upstream - #28984 end
+        }
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<EmpDisabledComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (comp.DisabledUntil < Timing.CurTime)
+            {
+                RemComp<EmpDisabledComponent>(uid);
+                var ev = new EmpDisabledRemovedEvent();
+                RaiseLocalEvent(uid, ref ev);
+
+                if (TryComp<PowerNetworkBatteryComponent>(uid, out var powerNetBattery)) // Frontier: Upstream - #28984
+                {
+                    powerNetBattery.CanCharge = true;
+                }
+            }
+        }
+    }
+
+    private void OnExamine(EntityUid uid, EmpDisabledComponent component, ExaminedEvent args)
+    {
+        args.PushMarkup(Loc.GetString("emp-disabled-comp-on-examine"));
+    }
+    /// <summary>
+    /// MLua End
+    /// <summary>
     // Frontier: examine EMP trigger objects
     private void OnEmpTriggerExamine(EntityUid uid, EmpOnTriggerComponent component, GetVerbsEvent<ExamineVerb> args)
     {
@@ -84,7 +216,7 @@ public sealed partial class EmpSystem : SharedEmpSystem
 
     private void HandleEmpTrigger(EntityUid uid, EmpOnTriggerComponent comp, TriggerEvent args)
     {
-        EmpPulse(_transform.GetMapCoordinates(uid), comp.Range, comp.EnergyConsumption, TimeSpan.FromSeconds(comp.DisableDuration));
+        EmpPulse(_transform.GetMapCoordinates(uid), comp.Range, comp.EnergyConsumption, comp.DisableDuration); // MLua
         args.Handled = true;
     }
 

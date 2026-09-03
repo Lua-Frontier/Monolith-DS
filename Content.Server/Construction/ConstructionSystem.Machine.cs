@@ -1,5 +1,7 @@
 using System.Linq; // Frontier
+using Content.Server._NF.BindToStation; // MLua Frontier
 using Content.Server.Construction.Components;
+using Content.Shared._NF.BindToStation; // MLua Frontier
 using Content.Shared.Construction.Components;
 using Content.Shared.Construction.Prototypes;
 using Robust.Shared.Containers;
@@ -7,11 +9,13 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes; // Frontier
 using Robust.Shared.Utility;
 
+
 namespace Content.Server.Construction;
 
 public sealed partial class ConstructionSystem
 {
     [Dependency] private IPrototypeManager _prototypeManager = default!; // Frontier
+      [Dependency] private readonly BindToStationSystem _bindToStation = default!; // MLua Frontier
     private void InitializeMachines()
     {
         SubscribeLocalEvent<MachineComponent, ComponentInit>(OnMachineInit);
@@ -22,6 +26,14 @@ public sealed partial class ConstructionSystem
     {
         component.BoardContainer = _container.EnsureContainer<Container>(uid, MachineFrameComponent.BoardContainerName);
         component.PartContainer = _container.EnsureContainer<Container>(uid, MachineFrameComponent.PartContainerName);
+
+        // MLua Frontier - we mirror the bind to grid component from any existing machine board onto the resultant machine to prevent high-grading
+        foreach (var board in component.BoardContainer.ContainedEntities)
+        {
+            if (TryComp<StationBoundObjectComponent>(board, out var binding))
+                _bindToStation.BindToStation(uid, binding.BoundStation, binding.Enabled);
+        }
+        // End MLua Frontier
     }
 
     private void OnMachineMapInit(EntityUid uid, MachineComponent component, MapInitEvent args)
