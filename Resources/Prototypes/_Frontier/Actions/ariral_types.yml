@@ -1,0 +1,31 @@
+- type: entity
+  id: ActionAriralLayEgg
+  name: Отложить яйцо
+  description: Это должно быть очень важно для вас
+  components:
+  - type: InstantAction
+    icon: { sprite: Objects/Consumable/Food/egg.rsi, state: icon }
+    useDelay: 500
+    event: !type:EggAriralLayInstantActionEvent
+
+- type: entity
+  parent: FoodEgg
+  id: FoodAriralEggLaid
+  name: странное яйцо
+  description: Вам вероятно не захочется пробовать это
+  components:
+  - type: Sprite
+    scale: 1.3, 1.4
+    sprite: Objects/Consumable/Food/egg.rsi
+  - type: BadFood
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Egg
+          Quantity: 6
+        - ReagentId: AriralBlood
+          Quantity: 6

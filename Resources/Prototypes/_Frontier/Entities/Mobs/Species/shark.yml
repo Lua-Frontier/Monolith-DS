@@ -1,0 +1,74 @@
+- type: entity
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobPlaf
+  abstract: true
+  components:
+  - type: Icon
+    sprite: _ADT/Mobs/Customization/Shark/parts.rsi
+    state: shark_m
+  - type: HumanoidAppearance
+    species: Shark
+    hideLayersOnEquip:
+    - Hair
+    - Head
+    - Snout
+    - HeadTop
+    - HeadSide
+    - Tail
+  - type: Body
+    prototype: ADTSharkBody
+    requiredLegs: 2
+  - type: RoarAccent
+  - type: Hunger
+  - type: Thirst
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 6.5
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Scale
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+    angle: 30
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Piercing: 5
+  - type: Temperature
+    heatDamageThreshold: 400
+    coldDamageThreshold: 200
+    currentTemperature: 310.15
+    specificHeat: 46
+    coldDamage:
+      types:
+        Cold : 0.2 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat : 0.1 #per second, scales with temperature & other constants
+  - type: Perishable
+  # Lua start
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Shark
+    understands:
+    - TauCetiBasic
+    - Shark
+  # Lua end
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobPlafDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: Shark
+    hideLayersOnEquip:
+    - Hair
+    - Head
+    - Snout
+    - HeadTop
+    - HeadSide
+    - Tail

@@ -1,0 +1,21 @@
+# Species languages ported from Lua-Frontier (Shark/Plaf, Ariral)
+
+- type: language
+  id: Shark
+  isVisibleLanguage: true
+  speech:
+    color: "#99E0FF"
+    allowRadio: true
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement: [ "грр", "клац", "клик", "хрр", "ррр", "рррр", "щелк", "цок", "чавк", "кхр", "кхрр", "ррх" ]
+
+- type: language
+  id: Ariral
+  isVisibleLanguage: true
+  speech:
+    color: "#B0E0FF"
+    allowRadio: true
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement: [ "шзо", "зоак", "ша", "сза", "ррх", "аак", "орх", "кзо", "жа", "лхз", "хра", "шрр" ]
