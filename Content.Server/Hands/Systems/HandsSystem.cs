@@ -8,6 +8,7 @@ using Content.Shared.Body.Systems; // Shitmed Change
 using Content.Shared._Shitmed.Body.Events; // Shitmed Change
 using Content.Shared.CombatMode;
 using Content.Shared.Damage.Systems;
+using Content.Shared._LuaM.TheCircle.Geist; // LuaM
 using Content.Shared.Explosion;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -62,7 +63,9 @@ namespace Content.Server.Hands.Systems
             SubscribeLocalEvent<HandsComponent, BodyPartEnabledEvent>(HandleBodyPartEnabled); // Shitmed Change
             SubscribeLocalEvent<HandsComponent, BodyPartDisabledEvent>(HandleBodyPartDisabled); // Shitmed Change
 
-            SubscribeLocalEvent<HandsComponent, DropHandItemsEvent>(OnDropHandItems);
+            // LuaM: retention has to cancel a forced drop before hands process it.
+            SubscribeLocalEvent<HandsComponent, DropHandItemsEvent>(OnDropHandItems,
+                after: [typeof(WeaponRetentionSystem)]);
 
             CommandBinds.Builder
                 .Bind(ContentKeyFunctions.ThrowItemInHand, new PointerInputCmdHandler(HandleThrowItem))
@@ -266,6 +269,10 @@ namespace Content.Server.Hands.Systems
 
         private void OnDropHandItems(Entity<HandsComponent> entity, ref DropHandItemsEvent args)
         {
+            // LuaM: only forced drops are blocked; regular hand interactions remain unchanged.
+            if (args.Cancelled || HasComp<WeaponRetentionComponent>(entity))
+                return;
+
             var direction = EntityManager.TryGetComponent(entity, out PhysicsComponent? comp) ? comp.LinearVelocity / 50 : Vector2.Zero;
             var dropAngle = _random.NextFloat(0.8f, 1.2f);
 

@@ -1,0 +1,13 @@
+circle-frontier-war-circle-arrival = В сектор Фронтира прибыл неизвестный шаттл. Каналы связи фиксируют активность Круга.
+circle-frontier-war-obelisk-awakened = Некрообелиск пробудился. Координаты боевого грида появились в навигационных системах.
+circle-frontier-war-point-captured = Точка {$point} захвачена стороной «{$side}».
+circle-frontier-war-side-circle = Круг
+circle-frontier-war-side-crew = экипаж
+circle-frontier-war-enter-verb = Войти на боевой грид
+circle-frontier-war-enter-warning = После входа покинуть боевой грид нельзя до полного поражения одной из сторон. Запрещённое снаряжение будет уничтожено.
+circle-frontier-war-forced-awakening = Обелиск принудительно пробудил половину неверующих.
+circle-frontier-war-collapse = Прорытые пути обрушились. Люди в тоннелях не засыпаны.
+circle-frontier-war-crew-victory = Экипаж уничтожил обелиск и остатки отряда Круга.
+circle-frontier-war-circle-victory = Круг истощил подкрепления экипажа и уничтожил его бойцов.
+circle-frontier-war-dreadnought-offer = Ваша сторона терпит поражение. Вы можете стать дредноутом — используйте появившееся действие, чтобы согласиться.
+circle-frontier-war-dreadnought-accepted = Вы стали дредноутом. До неизбежной смерти — 9 минут.
