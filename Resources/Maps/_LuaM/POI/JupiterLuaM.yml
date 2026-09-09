@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/08/2026 12:52:58
-  entityCount: 6239
+  time: 09/09/2026 15:45:39
+  entityCount: 6257
 maps: []
 grids:
 - 1
@@ -159,12 +159,13 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
       spreadQueues:
-        Smoke: []
         Kudzu: []
-        MetalFoam: []
+        Smoke: []
         Puddle: []
+        MetalFoam: []
     - type: Shuttle
-      dampingModifier: 0.25
+      dampingModifier: 2.5
+      bodyModifier: 2.5
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -5344,7 +5345,7 @@ entities:
   - uid: 406
     components:
     - type: Transform
-      pos: 20.5,16.5
+      pos: -19.5,58.5
       parent: 1
   - uid: 407
     components:
@@ -5580,11 +5581,6 @@ entities:
     components:
     - type: Transform
       pos: -23.5,15.5
-      parent: 1
-  - uid: 454
-    components:
-    - type: Transform
-      pos: -23.5,16.5
       parent: 1
   - uid: 455
     components:
@@ -5830,6 +5826,101 @@ entities:
     components:
     - type: Transform
       pos: 12.5,7.5
+      parent: 1
+  - uid: 4164
+    components:
+    - type: Transform
+      pos: -9.5,78.5
+      parent: 1
+  - uid: 6240
+    components:
+    - type: Transform
+      pos: 18.5,27.5
+      parent: 1
+  - uid: 6241
+    components:
+    - type: Transform
+      pos: 18.5,28.5
+      parent: 1
+  - uid: 6242
+    components:
+    - type: Transform
+      pos: 18.5,43.5
+      parent: 1
+  - uid: 6243
+    components:
+    - type: Transform
+      pos: 16.5,59.5
+      parent: 1
+  - uid: 6244
+    components:
+    - type: Transform
+      pos: 16.5,58.5
+      parent: 1
+  - uid: 6245
+    components:
+    - type: Transform
+      pos: 6.5,78.5
+      parent: 1
+  - uid: 6246
+    components:
+    - type: Transform
+      pos: 6.5,77.5
+      parent: 1
+  - uid: 6247
+    components:
+    - type: Transform
+      pos: -9.5,77.5
+      parent: 1
+  - uid: 6248
+    components:
+    - type: Transform
+      pos: -21.5,28.5
+      parent: 1
+  - uid: 6249
+    components:
+    - type: Transform
+      pos: -8.5,63.5
+      parent: 1
+  - uid: 6250
+    components:
+    - type: Transform
+      pos: -7.5,49.5
+      parent: 1
+  - uid: 6251
+    components:
+    - type: Transform
+      pos: -21.5,43.5
+      parent: 1
+  - uid: 6252
+    components:
+    - type: Transform
+      pos: -21.5,27.5
+      parent: 1
+  - uid: 6253
+    components:
+    - type: Transform
+      pos: 4.5,49.5
+      parent: 1
+  - uid: 6254
+    components:
+    - type: Transform
+      pos: 5.5,63.5
+      parent: 1
+  - uid: 6255
+    components:
+    - type: Transform
+      pos: -19.5,59.5
+      parent: 1
+  - uid: 6256
+    components:
+    - type: Transform
+      pos: -0.5,51.5
+      parent: 1
+  - uid: 6257
+    components:
+    - type: Transform
+      pos: -2.5,51.5
       parent: 1
 - proto: AtmosFixNitrogenMarker
   entities:
@@ -28157,9 +28248,9 @@ entities:
     - type: Transform
       pos: 2.5,30.5
       parent: 1
-- proto: GunneryServerStationConsolesEnforced
+- proto: GunneryServerOmega
   entities:
-  - uid: 4164
+  - uid: 454
     components:
     - type: Transform
       pos: -11.5,25.5
@@ -28167,7 +28258,7 @@ entities:
     - type: Battery
       startingCharge: 0
     - type: ApcPowerReceiver
-      powerLoad: 50
+      powerLoad: 100
 - proto: GunSafeBaseSecure
   entities:
   - uid: 4165
