@@ -272,7 +272,7 @@
       - sprite: _NF/Mobs/Species/Templates/human.rsi
         state: human
       - sprite: Clothing/Head/Hardsuits/syndicate.rsi
-        state: combat-equipped-HELMET
+        state: off-equipped-HELMET # LuaM: combat-equipped-HELMET > off-equipped-HELMET
       - sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
         state: equipped-OUTERCLOTHING
       - sprite: Objects/Weapons/Guns/Rifles/ak.rsi
