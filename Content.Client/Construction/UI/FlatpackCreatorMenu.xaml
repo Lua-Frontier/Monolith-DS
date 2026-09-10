@@ -4,7 +4,8 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:ui="clr-namespace:Content.Client.Materials.UI"
     Title="{Loc 'flatpacker-ui-title'}"
-    MinSize="550 350">
+    MinSize="550 350"
+    SetSize="750 500"> <!--LuaM-->
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True" Margin="10">
         <BoxContainer SizeFlagsStretchRatio="2" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
             <BoxContainer Orientation="Vertical">

@@ -648,12 +648,18 @@
     - VendingMachineGeneDrobe
     - VendingMachineViroDrobe
     - SpawnDungeonMachineFrame
+# LuaM-start:
+    - VendingMachineMedical
+    - VendingMachineCiviMedPlus
+    - VendingMachineChemicals
+# LuaM-end.
     chance: 1
     offset: 0.0
     rarePrototypes:
     - VendingMachineSyndieContraband
 #    - VendingMachineSyndieDrobe # A bit less Syndicate loot
     - VendingMachineRobotics
+    - VendingMachineChemicalsSyndicate # LuaM
     rareChance: 0.01
 
 # Other

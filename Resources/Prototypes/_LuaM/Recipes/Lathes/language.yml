@@ -1,6 +1,6 @@
 - type: latheRecipe
-  id: ZookeeperTranslatorImplant
-  result: ZookeeperTranslatorImplant
+  id: ZookeeperTranslatorImplanter
+  result: ZookeeperTranslatorImplanter
   completetime: 2
   materials:
     Steel: 500

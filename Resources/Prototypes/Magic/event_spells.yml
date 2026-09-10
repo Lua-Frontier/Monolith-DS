@@ -152,8 +152,8 @@
         orGroup: Guns
       - id: WeaponWaterBlaster
         orGroup: Guns
-      - id: WeaponWaterBlasterSuper
-        orGroup: Guns
+#      - id: WeaponWaterBlasterSuper # Commented by LuaM
+#        orGroup: Guns
       - id: RevolverCapGun
         orGroup: Guns
       - id: RevolverCapGunFake

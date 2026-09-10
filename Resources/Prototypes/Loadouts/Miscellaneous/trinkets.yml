@@ -37,6 +37,7 @@
 
 - type: loadout
   id: PlushieSpaceLizard
+  price: 350 # LuaM
   storage:
     back:
     - PlushieSpaceLizard
@@ -102,90 +103,105 @@
 # Pins
 - type: loadout
   id: ClothingNeckLGBTPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckLGBTPin
 
 - type: loadout
   id: ClothingNeckAllyPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckAllyPin
 
 - type: loadout
   id: ClothingNeckAromanticPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckAromanticPin
 
 - type: loadout
   id: ClothingNeckAsexualPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckAsexualPin
 
 - type: loadout
   id: ClothingNeckBisexualPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckBisexualPin
 
 - type: loadout
   id: ClothingNeckGayPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckGayPin
 
 - type: loadout
   id: ClothingNeckIntersexPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckIntersexPin
 
 - type: loadout
   id: ClothingNeckLesbianPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckLesbianPin
 
 - type: loadout
   id: ClothingNeckNonBinaryPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckNonBinaryPin
 
 - type: loadout
   id: ClothingNeckPansexualPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckPansexualPin
 
 - type: loadout
   id: ClothingNeckOmnisexualPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckOmnisexualPin
 
 - type: loadout
   id: ClothingNeckGenderqueerPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckGenderqueerPin
 
 - type: loadout
   id: ClothingNeckTransPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckTransPin
 
 - type: loadout
   id: ClothingNeckAutismPin
+  price: 75 # LuaM
   storage:
     back:
     - ClothingNeckAutismPin
 
 - type: loadout
   id: ClothingNeckGoldAutismPin
+  price: 5000 # LuaM
   storage:
     back:
     - ClothingNeckGoldAutismPin

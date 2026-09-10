@@ -84,7 +84,12 @@ ent-SpawnDungeonLootFlatpacks = случайная упаковка
 ent-SpawnDungeonLootVendingRestocks = случайный набор пополнения
     .suffix = Экспедиция
     .desc = { ent-MarkerBasePlaceFree.desc }
-
-ent-SpawnDungeonLootLawBoards = random law board
-ent-SpawnDungeonComputerFrame = random computer frame
-ent-SpawnDungeonCanisterBroken = random canister broken
+ent-SpawnDungeonLootLawBoards = случайная плата законов
+    .suffix = Экспедиция
+    .desc = { ent-MarkerBasePlaceFree.desc }
+ent-SpawnDungeonComputerFrame = случайный каркас консоли
+    .suffix = Экспедиция
+    .desc = { ent-MarkerBasePlaceFree.desc }
+ent-SpawnDungeonCanisterBroken = случайная сломанная канистра
+    .suffix = Экспедиция
+    .desc = { ent-MarkerBasePlaceFree.desc }

@@ -1,4 +1,4 @@
-- type: entity 
+- type: entity
   parent: TechDiskBase
   id: TechDiskCombatSilicon
   name: combat silicon technology tech disk
@@ -37,4 +37,4 @@
       shader: unshaded
   - type: TechnologyDisk
     recipes:
-    - ZookeeperTranslatorImplant
+    - ZookeeperTranslatorImplanter

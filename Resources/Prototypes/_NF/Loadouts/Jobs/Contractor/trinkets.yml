@@ -5,28 +5,28 @@
 #T0
 - type: loadout
   id: ContractorCigPackBlue
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   storage:
     back:
     - CigPackBlue
 
 - type: loadout
   id: ContractorCigPackRed
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   storage:
     back:
     - CigPackRed
 
 - type: loadout
   id: ContractorCigPackBlack
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   storage:
     back:
     - CigPackBlack
 
 - type: loadout
   id: ContractorCigPackGreen
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   storage:
     back:
     - CigPackGreen
@@ -38,7 +38,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 1250 # Mono # LuaM: 0 > 1250
   storage:
     back:
     - CigarCase
@@ -48,7 +48,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   storage:
     back:
     - NFAshtray
@@ -59,7 +59,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   storage:
     back:
     - SmokingPipeFilledTobacco
@@ -69,7 +69,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 1000 # Mono # LuaM: 0 > 1000
   storage:
     back:
     - TobaccoPouchBrownFilled
@@ -79,7 +79,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 1000 # Mono # LuaM: 0 > 1000
   storage:
     back:
     - TobaccoPouchBlueFilled
@@ -89,7 +89,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 1000 # Mono # LuaM: 0 > 1000
   storage:
     back:
     - TobaccoPouchRedFilled
@@ -99,7 +99,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 1000 # Mono # LuaM: 0 > 1000
   storage:
     back:
     - TobaccoPouchPurpleFilled
@@ -109,7 +109,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 750 # Mono # LuaM: 0 > 750
   storage:
     back:
     - Vape
@@ -129,7 +129,7 @@
 #T0
 - type: loadout
   id: ContractorMatchbox
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   storage:
     back:
     - Matchbox
@@ -140,7 +140,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   storage:
     back:
     - Lighter
@@ -151,7 +151,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 850 # Mono # LuaM: 0 > 850
   storage:
     back:
     - FlippoLighter
@@ -162,7 +162,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 5000 # Mono
+  price: 5000 # Mono # LuaM: 5000 > 7500
   storage:
     back:
     - FlippoEngravedLighter
@@ -171,10 +171,10 @@
 #T0
 - type: loadout
   id: ContractorDrinkFlaskOld
-  price: 0 # Mono
+  price: 750 # Mono
   storage:
     back:
-    - DrinkFlaskOld
+    - DrinkFlaskOld # LuaM: 0 > 750
 
 #T1
 - type: loadout
@@ -182,10 +182,10 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 750 # Mono
   storage:
     back:
-    - DrinkShinyFlask
+    - DrinkShinyFlask # LuaM: 0 > 750
 
 #T2
 - type: loadout
@@ -193,7 +193,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 850 # Mono # LuaM: 0 > 850
   storage:
     back:
     - DrinkFlask
@@ -204,7 +204,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 850 # Mono # LuaM: 0 > 850
   storage:
     back:
     - DrinkVacuumFlask
@@ -213,14 +213,14 @@
 #T0
 - type: loadout
   id: ContractorFlashlightLantern
-  price: 0 # Mono
+  price: 350 # Mono # LuaM: 0 > 350 
   storage:
     back:
     - FlashlightLantern
 
 - type: loadout
   id: ContractorWristwatch
-  price: 0 # Mono
+  price: 1500 # Mono # LuaM: 0  > 1500
   storage:
     back:
     - Wristwatch
@@ -231,7 +231,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   storage:
     back:
     - Basketball
@@ -241,7 +241,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   storage:
     back:
     - Football
@@ -251,7 +251,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 250 # Mono # LuaM: 0 > 250
   storage:
     back:
     - BeachBall
@@ -262,7 +262,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 600
+  price: 1500 # LuaM: 600 > 1500
   storage:
     back:
     - CrayonBox
@@ -274,7 +274,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono0
+  price: 750 # Mono0 # LuaM: 0 > 750
   storage:
     back:
     - CardBoxBlack
@@ -282,21 +282,21 @@
 #T3 for lols
 - type: loadout
   id: ContractorWristwatchGold
-  price: 2500
+  price: 7500 # LuaM: 2500 > 7500
   storage:
     back:
     - WristwatchGold
 
 - type: loadout
   id: ContractorSilverRing
-  price: 2750
+  price: 3500 # LuaM: 2750 > 3500
   storage:
     back:
     - SilverRing
 
 - type: loadout
   id: ContractorGoldRing
-  price: 3000
+  price: 6500 # LuaM: 3000 > 6500
   storage:
     back:
     - GoldRing

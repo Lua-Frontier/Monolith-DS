@@ -138,8 +138,8 @@
         scaleByQuantity: true
         damage:
           groups:
-            Burn: -2
-            Brute: -1.5
+            Burn: -1.5 # LuaM: -2 > -1.5
+            Brute: -1.25 # LuaM: -1.5 > -1.25
     - reagents: [Mesotaxinide]
       methods: [Touch]
       effects:
@@ -147,11 +147,11 @@
         scaleByQuantity: true
         damage:
           groups:
-            Burn: 6
-            Brute: 7
+            Burn: 3 # LuaM: 6 > 3
+            Brute: 3.5 # LuaM: 7 > 3.5
           types:
-            Caustic: 20
-            Cellular: 5
+            Caustic: 10 # LuaM: 20 > 10
+            Cellular: 2.5 # LuaM: 5 > 2.5
   - type: SurgeryTarget
   - type: Body
     prototype: ChimeraBeast

@@ -154,6 +154,6 @@
           - EncryptionKeyFreelance
           - EncryptionKeyCommon # Mono
     - type: Sprite
-      sprite: Clothing/Ears/Headsets/freelance.rsi
+      sprite: _LuaM/Clothing/Ears/Headsets/vanguard.rsi # LuaM: Clothing/Ears/Headsets/freelance.rsi > _LuaM/Clothing/Ears/Headsets/vanguard.rsi
     - type: Clothing
-      sprite: Clothing/Ears/Headsets/freelance.rsi
+      sprite: _LuaM/Clothing/Ears/Headsets/vanguard.rsi # LuaM: Clothing/Ears/Headsets/freelance.rsi > _LuaM/Clothing/Ears/Headsets/vanguard.rsi

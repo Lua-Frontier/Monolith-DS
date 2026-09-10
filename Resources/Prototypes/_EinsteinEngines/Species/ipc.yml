@@ -45,7 +45,16 @@
 
 - type: markingPoints
   id: MobIPCMarkingLimits
+  onlyWhitelisted: true # LuaM
   points:
+# LuaM-start:
+    Hair:
+      points: 0
+      required: false
+    FacialHair:
+      points: 0
+      required: false
+# LuaM-end.
     Head:
       points: 1
       required: true

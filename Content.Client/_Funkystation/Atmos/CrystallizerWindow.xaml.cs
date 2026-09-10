@@ -7,6 +7,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Atmos;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
+using Robust.Shared.Localization; // LuaM
 using System.Numerics;
 
 namespace Content.Client._Funkystation.Atmos
@@ -32,10 +33,30 @@ namespace Content.Client._Funkystation.Atmos
         {
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
+            ApplyLocalization(); // LuaM
             InitializeRecipeButtons();
 
             GasInput.OnValueChanged += args => OnGasInputChanged?.Invoke(args.Value);
         }
+
+        private void ApplyLocalization()
+        {
+// LuaM-start:
+            ControlsLabel.Text = Loc.GetString("crystallizer-ui-controls");
+            PowerLabel.Text = Loc.GetString("crystallizer-ui-power");
+            RecipeSelectLabel.Text = Loc.GetString("crystallizer-ui-recipe");
+            GasInputLabel.Text = Loc.GetString("crystallizer-ui-gas-input");
+            ProgressRequirementsLabel.Text = Loc.GetString("crystallizer-ui-progress-requirements");
+            ProgressLabel.Text = Loc.GetString("crystallizer-ui-progress");
+            TemperatureLabel.Text = Loc.GetString("crystallizer-ui-temperature");
+            GasesLabel.Text = Loc.GetString("crystallizer-ui-gases");
+            RecipePanelLabel.Text = Loc.GetString("crystallizer-ui-recipe-panel");
+            SelectRecipeLabel.Text = Loc.GetString("crystallizer-ui-select-recipe");
+        }
+
+        private static string GetRecipeName(CrystallizerRecipePrototype recipe) =>
+            Loc.GetString($"crystallizer-recipe-{recipe.ID}");
+// LuaM-end.
 
         public void SetActive(bool active)
         {
@@ -142,7 +163,7 @@ namespace Content.Client._Funkystation.Atmos
             RecipesContainer.Children.Clear();
             _buttonToRecipeId.Clear();
 
-            _nothingButton.Text = "Nothing";
+            _nothingButton.Text = Loc.GetString("crystallizer-ui-nothing"); // LuaM: "Nothing" > Loc.GetString("crystallizer-ui-nothing")
             _nothingButton.HorizontalExpand = true;
             _nothingButton.Pressed = true;
 
@@ -160,7 +181,7 @@ namespace Content.Client._Funkystation.Atmos
             {
                 var button = new Button
                 {
-                    Text = recipe.Name,
+                    Text = GetRecipeName(recipe), // LuaM: recipe.Name > GetRecipeName(recipe)
                     HorizontalExpand = true
                 };
 
@@ -209,20 +230,33 @@ namespace Content.Client._Funkystation.Atmos
 
             if (recipe == null)
             {
-                var selectMessage = new Label { Text = "Please select a recipe." };
+                var selectMessage = new Label { Text = Loc.GetString("crystallizer-ui-select-recipe") }; // LuaM: "Please select a recipe." > Loc.GetString("crystallizer-ui-select-recipe")
                 RequirementsContainer.AddChild(selectMessage);
                 GasList.Children.Clear();
                 return;
             }
 
-            var label = new Label { Text = $"Temperature:" };
+            var label = new Label { Text = Loc.GetString("crystallizer-ui-temperature") }; // LuaM: $"Temperature:" > crystallizer-ui-temperature
             RequirementsContainer.AddChild(label);
-            label = new Label { Text = $" - Minimum: {recipe.MinimumTemperature}K" };
+//			  label = new Label { Text = $" - Minimum: {recipe.MinimumTemperature}K" }; // Commented by LuaM
+// LuaM-start:
+            label = new Label
+            {
+                Text = Loc.GetString("crystallizer-ui-temp-minimum", ("temp", recipe.MinimumTemperature))
+            };
+// LuaM-end.
             RequirementsContainer.AddChild(label);
-            label = new Label { Text = $" - Maximum: {recipe.MaximumTemperature}K" };
+// 			  label = new Label { Text = $" - Maximum: {recipe.MaximumTemperature}K" }; // Commented by LuaM
+// LuaM-start:
+            label = new Label
+            {
+                Text = Loc.GetString("crystallizer-ui-temp-maximum", ("temp", recipe.MaximumTemperature))
+            };
+
+// LuaM-end.
             RequirementsContainer.AddChild(label);
 
-            label = new Label { Text = $"Gases:" };
+            label = new Label { Text = Loc.GetString("crystallizer-ui-gases") }; // LuaM: $"Gases:" > Loc.GetString("crystallizer-ui-gases"
             RequirementsContainer.AddChild(label);
             for (int i = 0; i < recipe.MinimumRequirements.Length && i < Atmospherics.TotalNumberOfGases; i++)
             {
@@ -231,7 +265,15 @@ namespace Content.Client._Funkystation.Atmos
                     var gas = (Gas) i;
                     if (Atmospherics.GasNames.TryGetValue(gas, out var gasName))
                     {
-                        var gasLabel = new Label { Text = $" - {gasName}: {recipe.MinimumRequirements[i]} moles" };
+//                        var gasLabel = new Label { Text = $" - {gasName}: {recipe.MinimumRequirements[i]} moles" }; // Commented by LuaM
+// LuaM-start:
+                        var gasLabel = new Label
+                        {
+                            Text = Loc.GetString("crystallizer-ui-gas-requirement",
+                                ("gas", gasName),
+                                ("amount", recipe.MinimumRequirements[i]))
+                        };
+// LuaM-end.
                         RequirementsContainer.AddChild(gasLabel);
                     }
                 }
@@ -239,7 +281,15 @@ namespace Content.Client._Funkystation.Atmos
 
             label = new Label { Text = $" " };
             RequirementsContainer.AddChild(label);
-            label = new Label { Text = recipe.EnergyRelease > 0 ? "This reaction will be exothermic." : "This reaction will be endothermic." };
+//            label = new Label { Text = recipe.EnergyRelease > 0 ? "This reaction will be exothermic." : "This reaction will be endothermic." }; // Commented by LuaM
+// LuaM-start:
+            label = new Label
+            {
+                Text = recipe.EnergyRelease > 0
+                    ? Loc.GetString("crystallizer-ui-exothermic")
+                    : Loc.GetString("crystallizer-ui-endothermic")
+            };
+// LuaM-end.
             RequirementsContainer.AddChild(label);
 
             // Update GasList
@@ -265,7 +315,14 @@ namespace Content.Client._Funkystation.Atmos
                         var moles = _gasMixture != null ? _gasMixture.GetMoles(i) : 0f;
                         var gasLabel = new Label { Text = gasName, Margin = new Thickness(5) };
                         var gasControl = new Control { HorizontalExpand = true };
-                        var molesLabel = new Label { Text = $"{moles:F2} moles", Margin = new Thickness(5) };
+//						  var molesLabel = new Label { Text = $"{moles:F2} moles", Margin = new Thickness(5) }; // Commented by LuaM
+// LuaM-start:
+                        var molesLabel = new Label
+                        {
+                            Text = Loc.GetString("crystallizer-ui-moles", ("amount", moles.ToString("F2"))),
+                            Margin = new Thickness(5)
+                        };
+// LuaM-end.
 
                         gasContainer.AddChild(gasLabel);
                         gasContainer.AddChild(gasControl);

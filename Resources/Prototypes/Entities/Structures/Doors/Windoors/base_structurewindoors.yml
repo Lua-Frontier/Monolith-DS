@@ -134,7 +134,7 @@
     animatePanel: false
     openUnlitVisible: true
     # needed so that windoors will close regardless of whether there are people in it; it doesn't crush after all
-    safety: false
+    safety: true # LuaM: false > true
   - type: NavMapDoor
   - type: DoorBolt
   - type: Electrified

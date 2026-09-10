@@ -564,6 +564,11 @@
     - VendingMachineBountyVend
     - VendingMachineAmmo
     - LessLethalVendingMachine
+# LuaM-start:
+    - VendingMachineSecDrobe
+    - VendingMachineSec
+    - VendingMachineDetDrobe
+# LuaM-end.
     chance: 1
     offset: 0.0
     rarePrototypes:
@@ -571,6 +576,7 @@
     #- VendingMachineSec
     #- VendingMachineSecDrobe
     - SpawnDungeonMachineFrame
+    - VendingMachineYarrrDrobe # LuaM
     rareChance: 0.01
 
 - type: entity

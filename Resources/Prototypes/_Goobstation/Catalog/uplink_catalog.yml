@@ -47,6 +47,7 @@
     Telecrystal: 350 # LuaM 35 -> 350
   categories:
   - UplinkWearables
+  restockTime: 12600
 #  conditions: # Commented by LuaM
 #  - !type:BuyerSpeciesCondition
 #    whitelist:

@@ -905,7 +905,7 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: WeaponWaterBlasterSuper
+#      - id: WeaponWaterBlasterSuper # Commented by LuaM
       - id: Stimpack
       - id: SpaceCash2500
       # Bonus Loot T2

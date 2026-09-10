@@ -354,6 +354,7 @@
     - FoodBreadMoldySlice
     - FoodBreadMoldy
     - FoodPizzaMoldySlice
+    - FoodMeatDragon # LuaM
     rareChance: 0.05
 
 - type: entity

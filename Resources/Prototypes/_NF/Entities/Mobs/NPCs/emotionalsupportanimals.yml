@@ -40,7 +40,7 @@
   abstract: true
   components:
   - type: RandomMetadata
-    nameSegments: [names_cat]
+    nameSegments: [ NamesCat ] # LuaM: [names_cat] > [ NamesCat ]
   - type: ReplacementAccent
     accent: cat
   - type: Vocal
@@ -61,7 +61,7 @@
   abstract: true
   components:
   - type: RandomMetadata
-    nameSegments: [names_dog]
+    nameSegments: [ NamesDog ] # LuaM: [names_dog] > [ NamesDog ]
   - type: ReplacementAccent
     accent: dog
   - type: Vocal
@@ -88,7 +88,7 @@
   id: MobCatCalicoGhost
   components:
   - type: RandomMetadata
-    nameSegments: [names_cat_calico]
+    nameSegments: [ NamesCatCalico ] # LuaM: [names_cat_calico] > [ NamesCatCalico ]
   - type: DamageStateVisuals
     states:
       Alive:
@@ -100,7 +100,7 @@
   id: MobBingusGhost
   components:
   - type: RandomMetadata
-    nameSegments: [names_cat_bingus]
+    nameSegments: [ NamesCatBingus ] # LuaM: [names_cat_bingus] > [ NamesCatBingus ]
   - type: DamageStateVisuals
     states:
       Alive:
@@ -112,7 +112,7 @@
   id: MobCatCaracalGhost
   components:
   - type: RandomMetadata
-    nameSegments: [names_cat_caracal]
+    nameSegments: [ NamesCatCaracal ] # LuaM: [names_cat_caracal] > [ NamesCatCaracal ]
   - type: DamageStateVisuals
     states:
       Alive:
@@ -126,7 +126,7 @@
   id: MobCatSpaceGhost
   components:
   - type: RandomMetadata
-    nameSegments: [names_cat_space]
+    nameSegments: [ NamesCatSpace ] # LuaM: [names_cat_space] > [ NamesCatSpace ]
   - type: DamageStateVisuals
     states:
       Alive:
@@ -155,7 +155,7 @@
   description: A stocky dog with a little smushed-in face. Adorable? # The default description doesn't really fit.
   components:
   - type: RandomMetadata
-    nameSegments: [names_dog_pug]
+    nameSegments: [ NamesDogPug ] # LuaM: [names_dog_pug] > [ NamesDogPug ]
   - type: Inventory
     speciesId: puppy
 
@@ -180,7 +180,7 @@
       Female: Chicken
       Unsexed: Chicken
   - type: RandomMetadata
-    nameSegments: [names_chicken]
+    nameSegments: [ NamesChicken ] # LuaM: [names_chicken] > [ NamesChicken ]
   - type: Inventory
     speciesId: chicken
 
@@ -197,6 +197,6 @@
       Female: Fox
       Unsexed: Fox
   - type: RandomMetadata
-    nameSegments: [names_fox]
+    nameSegments: [ NamesFox ] # LuaM: [names_fox] > [ NamesFox ]
   - type: Inventory
     speciesId: fox

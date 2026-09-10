@@ -4,7 +4,7 @@
                      xmlns:ui="clr-namespace:Content.Client.Materials.UI"
                      Title="{Loc 'ore-silo-ui-title'}"
                      MinSize="400 260"
-                     SetSize="400 460">
+                     SetSize="650 500">
     <BoxContainer Orientation="Vertical"
                   HorizontalExpand="True"
                   VerticalExpand="True"

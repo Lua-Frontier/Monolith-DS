@@ -111,7 +111,7 @@
           type: Yowie
           shouldHave: false
         - !type:ReagentThreshold
-          min: 17.5
+          min: 15 # LuaM: 17.5 > 15
         damage:
           types:
             Cellular: 2
@@ -119,18 +119,18 @@
       - !type:Jitter
         conditions:
         - !type:ReagentThreshold
-          min: 40
+          min: 15 # LuaM: 40 > 15
       - !type:RevertPolymorph
         prototype: LetoferolMutationNatural
         conditions:
         - !type:ReagentThreshold
-          min: 15
+          min: 25 # LuaM: 15 > 25
       - !type:AdjustReagent
         reagent: Letoferol
-        amount: -7.5
+        amount: -4 # LuaM: -7.5 > -4
       - !type:AdjustReagent
         reagent: NaturalLetoferol
-        amount: -7.5
+        amount: -4 # LuaM: -7.5 > -4
 
 # cheap alternative to mesotaxinide
 
@@ -151,13 +151,13 @@
         prototype: LetoferolMutationNatural
         conditions:
         - !type:ReagentThreshold
-          min: 40
+          min: 45 # LuaM: 40 > 45
       - !type:AdjustReagent
         reagent: Letoferol
-        amount: -3
+        amount: -2 # LuaM: -3 > -2
       - !type:AdjustReagent
         reagent: NaturalLetoferol
-        amount: -3
+        amount: -2 # LuaM: -3 > -2
 
 # Stable version of Leporazine
 

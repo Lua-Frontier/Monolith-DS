@@ -1,9 +1,11 @@
 - type: loadout
   id: USSPHeadset
+  price: 500 # LuaM
   equipment:
     ears: ClothingHeadsetUSSP
 
 - type: loadout
   id: USSPHeadsetCommand
+  price: 500 # LuaM
   equipment:
     ears: ClothingHeadsetUSSPCommand

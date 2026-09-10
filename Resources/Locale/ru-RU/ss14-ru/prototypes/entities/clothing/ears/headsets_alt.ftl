@@ -19,5 +19,5 @@ ent-ClothingHeadsetAltCargo = полноразмерная гарнитура К
     .desc = { ent-ClothingHeadsetAlt.desc }
 ent-ClothingHeadsetAltSyndicate = полноразмерная кроваво-красная гарнитура
     .desc = Модифицированный модульный интерком Синдиката, надеваемый на голову, и содержащий ключ шифрования. Имеет 5 ячеек для ключей шифрования.
-ent-ClothingHeadsetAltFreelancer = полноразмерная гарнитура фрилансера
+ent-ClothingHeadsetAltFreelancer = полноразмерная гарнитура Авангарда
     .desc = { ent-ClothingHeadsetAlt.desc }

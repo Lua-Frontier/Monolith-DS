@@ -78,7 +78,7 @@
   # Goobstation edit end
   - type: Multishot # Goobstation V
     missChance: 0.3 # LuaM: 0.4 > 0.3
-    spreadMultiplier: 3 # LuaM: 3 > 2
+    spreadMultiplier: 2 # LuaM: 3 > 2
     spreadAddition: 35 # LuaM: 50 > 35
 
 # Mono - moved Drozd, C-20, & Atreides to _Mono.
@@ -147,10 +147,10 @@
     zeroVisible: true
   - type: Appearance
   - type: Multishot # Goobstation
-    missChance: 0.3
+    missChance: 0.3 # LuaM: 0.3 > 0.2
   # LuaM-start:
-    spreadMultiplier: 2.5
-    spreadAddition: 35
+    spreadMultiplier: 1.5
+    spreadAddition: 30
   # LuaM-end.
   - type: StaticPrice # Mono
     price: 1000

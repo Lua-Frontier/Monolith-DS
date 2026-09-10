@@ -72,7 +72,7 @@
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
   - type: StaticPrice
-    price: 5000
+    price: 550 # LuaM: 5000 > 550
     vendPrice: 42300
   - type: LaserPointer
     targetedColor: "#FF0000"

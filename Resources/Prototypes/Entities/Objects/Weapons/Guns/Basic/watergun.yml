@@ -14,7 +14,7 @@
   - type: Gun
     clumsyProof: true
     cameraRecoilScalar: 0 #no recoil
-    fireRate: 2
+    fireRate: 1.25 # LuaM: 2 > 1.25
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -23,7 +23,7 @@
   - type: SolutionContainerManager
     solutions:
       chamber:
-        maxVol: 50 #10 shots
+        maxVol: 20 #10 shots # luaM: 50 > 20
   - type: SolutionAmmoProvider
     solutionId: chamber
     proto: BulletWaterShot
@@ -69,6 +69,12 @@
     available:
       - enum.DamageStateVisualLayers.Base:
           icon: Rainbow
+# LuaM-start:
+  - type: Multishot
+    missChance: 0.35
+    spreadMultiplier: 0.25
+    spreadAddition: 10
+# LuaM-end.
 
 - type: entity
   id: WeaponWaterBlaster
@@ -78,7 +84,7 @@
   components:
   - type: Gun
     cameraRecoilScalar: 0 #no recoil
-    fireRate: 3
+    fireRate: 2 # LuaM: 3 > 2
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -87,7 +93,7 @@
   - type: SolutionContainerManager
     solutions:
       chamber:
-        maxVol: 100 #20 shots
+        maxVol: 35 #20 shots # LuaM: 100 > 35
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/soaker.rsi
     layers:
@@ -106,6 +112,12 @@
           icon: Rainbow
       - enum.PowerDeviceVisualLayers.Powered:
           detail2: Sixteen
+# LuaM-start:
+  - type: Multishot
+    missChance: 0.4
+    spreadMultiplier: 0.75
+    spreadAddition: 15
+# LuaM-end.
 
 - type: entity
   id: WeaponWaterBlasterSuper

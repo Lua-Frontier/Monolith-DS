@@ -15,6 +15,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: Paper
+    contentSize: 20000 # LuaM
   - type: PaperLabelType
   - type: ActivatableUI
     key: enum.PaperUiKey.Key

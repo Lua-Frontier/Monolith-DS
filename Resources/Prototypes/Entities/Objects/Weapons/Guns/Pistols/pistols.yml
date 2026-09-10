@@ -86,9 +86,9 @@
     sound:
       collection: PistolsDrop
   - type: Multishot
-    missChance: 0.2 # LuaM: 0.4 > 0.2
-    spreadMultiplier: 1 # LuaM: 2 > 1
-    spreadAddition: 20 # LuaM: 40 > 20
+    missChance: 0.175 # LuaM: 0.4 > 0.175
+    spreadMultiplier: 0.75 # LuaM: 2 > 0.75
+    spreadAddition: 15 # LuaM: 40 > 15
   # Goobstation edit end
 
 - type: entity

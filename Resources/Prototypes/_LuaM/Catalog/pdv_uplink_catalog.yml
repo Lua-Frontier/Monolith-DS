@@ -25,6 +25,7 @@
     Doubloon: 350
   categories:
   - UplinkPirateUtility
+  restockTime: 12600
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:

@@ -278,7 +278,7 @@
 # LuaM-start:
     - BluespaceAirTanks
     - GasDepositLocator
-    - ZookeeperTranslatorImplant
+    - ZookeeperTranslatorImplanter
     - PortableScreenTimer
 # LuaM-end.
   - type: EmagLatheRecipes
@@ -634,7 +634,7 @@
     - TranslatorImplanters # Language
     # LuaM-start:
     - Implants
-    - ZookeeperTranslatorImplant
+    - ZookeeperTranslatorImplanter
     - CyberLiver
     - CyberOrgans
     - UpgradedCyberOrgans

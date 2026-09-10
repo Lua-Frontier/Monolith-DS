@@ -481,15 +481,16 @@
     - VendingMachinePottedPlantVend
     - WaterCooler
     - SpawnDungeonMachineFrame
-    #- VendingMachineChang # No food vendomats in expeds - buy from food ships or die
-    #- VendingMachineDonut
-    #- VendingMachineDiscount
-    #- VendingMachineSnack
-    #- VendingMachineSustenance
-    #- VendingMachineSnackBlue
-    #- VendingMachineSnackOrange
-    #- VendingMachineSnackGreen
-    #- VendingMachineSnackTeal
+    - VendingMachineChang # No food vendomats in expeds - buy from food ships or die # Uncommented by LuaM
+    - VendingMachineDonut
+    - VendingMachineDiscount
+    - VendingMachineSnack
+    - VendingMachineSustenance
+    - VendingMachineSnackBlue
+    - VendingMachineSnackOrange
+    - VendingMachineSnackGreen
+    - VendingMachineSnackTeal
+    - VendingMachineFuelVend # LuaM
     chance: 1
     offset: 0.0
     rarePrototypes:
@@ -545,6 +546,7 @@
     - VendingMachineSyndieDrobe #Mono in
     - VendingMachineSyndieContraband
     - SpawnDungeonMachineFrame
+    - VendingMachinePMCclothingsPOI # LuaM
     rareChance: 0.03
 
 - type: entity
@@ -568,6 +570,11 @@
     - VendingMachineRobotics
     - VendingMachineYouTool
     - VendingMachineSalvage
+# LuaM-start:
+    - VendingMachineEngivend
+    - VendingMachineAtmosDrobe
+    - VendingMachineFuelVend
+# LuaM-end.
     chance: 1
     offset: 0.0
     rarePrototypes:
@@ -579,6 +586,7 @@
     - VendingMachineSec
     - VendingMachineArcadia
     - SpawnDungeonMachineFrame
+    - VendingMachineBluespaceDrive # LuaM
     rareChance: 0.03
 
 - type: entity
@@ -737,6 +745,7 @@
     - ComputerIFFCircuitboard
     - SpawnDungeonLootFlatpacks
     - MercenaryTechFabCircuitboardNF
+    - OperatingTableCircuitboard # LuaM
     chance: 1
     offset: 0.0
     rarePrototypes:
@@ -771,6 +780,7 @@
     - SpaceCash1000
     - SpaceCash1000
     - SpaceCash2500
+    - SpaceCashCounterfeit # LuaM
     chance: 0.95
     offset: 0.0
     rarePrototypes:
@@ -778,7 +788,8 @@
     - SpaceCash10000
     - SpaceCash20000
     - SpaceCash30000
-    rareChance: 0.15 #0.05->0.15
+    - SpaceCashCounterfeit200000 # LuaM - trolling)
+    rareChance: 0.05 #0.05->0.15 # LuaM: 0.15 > 0.05
 
 - type: entity
   name: random materials
@@ -807,6 +818,12 @@
     - SheetPlasma
     - SheetUranium
     - MaterialCloth
+# LuaM-start:
+    - SheetCopper50
+    - SheetBrass
+    - SheetLithium10
+    - SheetLithium50
+# LuaM-end.
     chance: 1
     offset: 0.0
     rarePrototypes:
@@ -817,6 +834,11 @@
     - CableMVStack
     - CableApcStack
     - SheetRGlass
+# LuaM-start:
+    - SheetIridite1
+    - MaterialSheetMeat
+    - SheetUraniumDepleted1
+# LuaM-end.
     rareChance: 0.05
 
 - type: entity
@@ -846,6 +868,11 @@
     rarePrototypes:
     - MaterialDiamond1
     - MaterialBluespace1 #Mono in
+# LuaM-start:
+    - SheetIridite10
+    - SheetUraniumDepleted
+    - IngotPlutonium1
+# LuaM-end.
     rareChance: 0.01
 
 - type: entity
@@ -880,10 +907,18 @@
     - CableMVStack1
     - CableApcStack1
     - ShardGlass
+# LuaM-start:
+    - ShardGlassUranium
+    - ShardGlassPlasma
+    - ShardGlassClockwork
+    - SheetCopper1
+    - SheetClockworkGlass1
+# LuaM-end.
     chance: 0.95
     offset: 0.0
     rarePrototypes:
     - MaterialBananium1
+    - MaterialBluespace1 # LuaM
     #- MaterialBones1 #Mono out
     rareChance: 0.01
 
@@ -917,6 +952,10 @@
     - MaterialBananium1
     - MaterialBluespace1 #Mono in
 #    - MaterialBones1 #Mono out
+# LuaM-start:
+    - SheetIridite1
+    - IngotPlutonium1
+# LuaM-end.
     rareChance: 0.01
 
 - type: entity
@@ -1000,11 +1039,16 @@
   - type: RandomSpawner
     prototypes:
     - CrateFunATV
+# LuaM-start:
+    - VehicleSecway
+    - VehicleWheelchair
+# LuaM-end.
     chance: 1
     offset: 0.0
     rarePrototypes:
     - CrateFunHoverbikeNF
-    rareChance: 0.35
+    - CrateFunSyndicateSegway # LuaM
+    rareChance: 0.2 # LuaM: 0.35 > 0.2
 
 - type: entity
   name: random briefcase
@@ -1067,10 +1111,18 @@
     - ResearchAndDevelopmentServerFlatpack
     - MercenaryTechFabFlatpack
     - LaserDrillFlatpack
+# LuaM-start:
+    - ResearchAndDevelopmentServerFlatpack
+    - AutolatheFlatpack
+    - VibraphoneInstrumentFlatpack
+    - OreProcessorIndustrialFlatpack
+    - OreBoxFlatpack
+# LuaM-end.
     chance: 0.95
     offset: 0.0
     rarePrototypes:
     - AmmoTechFabFlatpack
+    - MedicalTechFabFlatpack # LuaM
 #    - VendingMachineSyndieContrabandFlatpack # A bit less Syndicate loot
     rareChance: 0.05
 

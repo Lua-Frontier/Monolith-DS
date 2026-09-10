@@ -11,6 +11,7 @@ using Robust.Shared.Utility;
 using Robust.Client.UserInterface.RichText;
 using Content.Client.UserInterface.RichText;
 using Robust.Shared.Input;
+using Content.Client.DeadSpace.UserInterface.RichText; // LuaM
 
 namespace Content.Client.Paper.UI
 {
@@ -46,7 +47,15 @@ namespace Content.Client.Paper.UI
             typeof(ColorTag),
             typeof(HeadingTag),
             typeof(ItalicTag),
-            typeof(MonoTag)
+            typeof(MonoTag),
+// LuaM-start:
+            typeof(ConfusionTag),
+            typeof(CyrillicConfusionTag),
+            typeof(CutTag),
+            typeof(ShiftTag),
+            typeof(SmallTag),
+            typeof(UnderlineTag),
+// LuaM-end.
         };
 
         public event Action<string>? OnSaved;

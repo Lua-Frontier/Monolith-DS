@@ -1,6 +1,6 @@
 ent-SalvageMaterialCrateSpawner = спавнер обломок ящик материалов
     .desc = { ent-MarkerBase.desc }
-ent-SalvageCanisterSpawner = спавнер обломок канистра
+ent-SalvageCanisterSpawner = спавнер случайной канистры
     .desc = { ent-MarkerBase.desc }
 ent-SalvageLootSpawner = спавнер обломок добыча
     .desc = { ent-MarkerBase.desc }

@@ -1,12 +1,12 @@
 - type: loadout
   id: ContractorClothingOuterSuitEmergency
-  price: 0 # Mono
+  price: 750 # Mono # LuaM: 0 > 750
   equipment:
     outerClothing: ClothingOuterSuitEmergency
 
 - type: loadout
   id: ContractorClothingOuterHardsuitEVA
-  price: 0 # Mono
+  price: 1250 # Mono # LuaM: 0 > 1250
   equipment:
     outerClothing: ClothingOuterHardsuitEVA
 
@@ -15,7 +15,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 2500 # Mono # LuaM: 0 > 2500
   equipment:
     outerClothing: ClothingOuterHardsuitBasic
 
@@ -24,7 +24,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 1750 # Mono # LuaM: 0 > 1750
   equipment:
     outerClothing: ClothingOuterHardsuitVoidParamed
 
@@ -33,7 +33,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 7500
+  price: 12500 # LuaM: 7500 > 12500
   equipment:
     outerClothing: ClothingOuterHardsuitUllmanEngineer
 
@@ -42,43 +42,43 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 7500
+  price: 12500 # LuaM: 7500 > 12500
   equipment:
     outerClothing: ClothingOuterHardsuitUIPilot
 
 - type: loadout
   id: ContractorClothingOuterHoodieGrey
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterHoodieGrey
 
 - type: loadout
   id: ContractorClothingOuterVestHazard
-  price: 0 # Mono
+  price: 500 # Mono # LuaM: 0 > 500
   equipment:
     outerClothing: ClothingOuterVestHazard
 
 - type: loadout
   id: ContractorClothingOuterApron
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterApron
 
 - type: loadout
   id: ContractorClothingOuterApronBar
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterApronBar
 
 - type: loadout
   id: ContractorClothingOuterApronBotanist
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterApronBotanist
 
 - type: loadout
   id: ContractorClothingOuterApronChef
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterApronChef
 
@@ -88,7 +88,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterHoodieBlack
 
@@ -97,7 +97,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatJensen
 
@@ -106,7 +106,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatGentle
 
@@ -115,7 +115,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterJacketChef
 
@@ -124,7 +124,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterHoodieChaplain
 
@@ -133,7 +133,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterNunRobe
 
@@ -142,7 +142,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatLab
 
@@ -151,7 +151,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatLabGene
 
@@ -160,7 +160,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatLabChem
 
@@ -179,7 +179,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatRobo
 
@@ -188,7 +188,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatLabViro
 
@@ -197,7 +197,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterBioScientist
 
@@ -206,7 +206,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterCoat
 
@@ -215,7 +215,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 750 # Mono # LuaM: 0 > 750
   equipment:
     outerClothing: ClothingOuterWinterCoatLong
 
@@ -224,7 +224,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterAtmos
 
@@ -233,7 +233,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterHydro
 
@@ -242,7 +242,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterBar
 
@@ -251,7 +251,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterChef
 
@@ -260,7 +260,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterCap
 
@@ -269,7 +269,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterMusician
 
@@ -278,7 +278,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterCargo
 
@@ -287,7 +287,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterMiner
 
@@ -296,7 +296,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterEngi
 
@@ -305,7 +305,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterMed
 
@@ -314,7 +314,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterChem
 
@@ -323,7 +323,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatParamedicWB
 
@@ -332,7 +332,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterPara
 
@@ -341,7 +341,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterGen
 
@@ -350,7 +350,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterSci
 
@@ -359,7 +359,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterRobo
 
@@ -368,7 +368,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterViro
 
@@ -378,7 +378,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterClown
 
@@ -387,7 +387,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterMime
 
@@ -396,7 +396,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterQM
 
@@ -405,7 +405,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterRD
 
@@ -414,7 +414,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterCMO
 
@@ -423,7 +423,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterCE
 
@@ -432,7 +432,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 750 # Mono # LuaM: 0 > 750
   equipment:
     outerClothing: ClothingOuterCoatLabCmo
 
@@ -441,7 +441,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatLabSeniorPhysician
 
@@ -450,7 +450,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatRD
 
@@ -459,7 +459,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatLabSeniorResearcher
 
@@ -468,7 +468,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterFlannelRed
 
@@ -477,7 +477,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterFlannelBlue
 
@@ -486,7 +486,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterFlannelGreen
 
@@ -495,7 +495,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatHyenhSweater
 
@@ -504,7 +504,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 2500 # Mono # LuaM: 0 > 2500
   equipment:
     outerClothing: ClothingOuterCoatDetectiveLoadout
 
@@ -513,7 +513,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatTrench
 
@@ -522,7 +522,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterDameDane
 
@@ -531,7 +531,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterWinterCoatPlaid
 
@@ -540,7 +540,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 650 # Mono # LuaM: 0 > 650
   equipment:
     outerClothing: ClothingOuterCoatBomber
 
@@ -549,7 +549,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterPlagueSuit
 
@@ -558,7 +558,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatBishop
 
@@ -567,7 +567,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterCoatWitchHunter
 
@@ -576,7 +576,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 300 # Mono # LuaM: 0 > 300
   equipment:
     outerClothing: ClothingOuterCoatCardinal
 
@@ -586,7 +586,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatBomberPunkRed
 
@@ -595,7 +595,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatJacketLeather
 
@@ -604,7 +604,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatJacketBiker
 
@@ -613,7 +613,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatJacketJamrock
 
@@ -622,7 +622,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatBomberAerostatic
 
@@ -631,7 +631,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatJacketLettermanBlue
 
@@ -640,7 +640,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatJacketLettermanBrown
 
@@ -649,7 +649,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatJacketLettermanRed
 
@@ -658,7 +658,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatJacketLettermanMagenta
 
@@ -667,7 +667,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatBomberPinkSleeves
 
@@ -677,7 +677,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatBomberRandomized
 
@@ -686,7 +686,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoat
 
@@ -695,7 +695,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoatBlue
 
@@ -704,7 +704,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoatGreen
 
@@ -713,7 +713,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoatMagenta
 
@@ -722,7 +722,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  price: 0 # Mono
+  price: 450 # Mono # LuaM: 0 > 450
   equipment:
     outerClothing: ClothingOuterCoatAcidRaincoatYellow
 
@@ -733,7 +733,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono
+  price: 600 # Mono # LuaM: 0 > 600
   equipment:
     outerClothing: WetFloorSign
 
@@ -742,7 +742,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono0
+  price: 8500 # Mono # LuaM: 0 > 8500
   equipment:
     outerClothing: ClothingOuterCoatExpensive
 
@@ -751,6 +751,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  price: 0 # Mono0
+  price: 2500 # Mono # LuaM: 0 > 2500
   equipment:
     outerClothing: ClothingOuterCoatSpaceAsshole
