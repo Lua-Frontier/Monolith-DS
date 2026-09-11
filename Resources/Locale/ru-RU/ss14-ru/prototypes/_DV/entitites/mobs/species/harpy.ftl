@@ -1,8 +1,10 @@
-ent-MobHarpyBase = Урист МакГарпия
+ent-MobHarpyBase = Урист МакБилан
+    .suffix = Гарпия
     .desc = { ent-BaseMobHuman.desc }
-ent-MobHarpyDummy = Урист МакГарпия
-    .desc = Кукла для кастомизации.
+ent-MobHarpyDummy = Урист МакБилан
+    .suffix = Гарпия
+    .desc = Тестовая гарпия, предназначенная для использования при создании персонажа.
 ent-ActionHarpyPlayMidi = Играть MIDI
-    .desc = Спой от всего сердца! ПКМ по себе, чтобы сменить музыкальный инструмент.
-ent-ActionSyrinxChangeVoiceMask = Сменить имя
-    .desc = Сменить своё имя, которое слышат окружающие.
+    .desc = Пойте во всю мощь! Нажмите ПКМ по себе, чтобы выбрать инструмент.
+ent-ActionSyrinxChangeVoiceMask = Задать имя
+    .desc = Измените имя, которое слышат другие, на что-то другое.

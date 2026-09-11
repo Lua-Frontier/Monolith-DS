@@ -1,1 +1,3 @@
-ent-MobRodentia = Урист МакРаткин
+ent-MobRodentia = Урист МакКрыс
+    .suffix = Раткин
+    .desc = { ent-BaseMobRodentia.desc }

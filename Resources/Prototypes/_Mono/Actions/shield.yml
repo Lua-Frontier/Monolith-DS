@@ -1,7 +1,7 @@
 - type: entity
   id: ActionActivatePersonalShield
-  name: Activate personal shield
-  description: "Activates suit's personal energy shield that slowly consumes battery charge."
+  name: personal-shield-action-activate-name # LuaM-locale
+  description: personal-shield-action-activate-desc # LuaM-locale
   components:
   - type: InstantAction
     event: !type:PersonalShieldActionEvent

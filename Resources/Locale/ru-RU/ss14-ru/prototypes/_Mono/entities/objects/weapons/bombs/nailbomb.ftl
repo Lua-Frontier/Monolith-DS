@@ -1,8 +1,10 @@
 ﻿ent-NailBomb = гвоздевая бомба
     .desc = Самодельное взрывное устройство из гвоздей и пороха.
-ent-NailBombGunpowder = { ent-NailBomb }
-    .desc = Самодельное взрывное устройство, изготовленное из гвоздей и пороха. В этом нет пороха.
+
+ent-NailBombGunpowder = гвоздевая бомба
     .suffix = Порох
-ent-NailBombCable = { ent-NailBomb }
-    .desc = Самодельное взрывчатое вещество, сделанное из гвоздей и пороха.
+    .desc = { ent-NailBomb.desc }
+
+ent-NailBombCable = гвоздевая бомба
     .suffix = Кабель
+    .desc = { ent-NailBomb.desc }

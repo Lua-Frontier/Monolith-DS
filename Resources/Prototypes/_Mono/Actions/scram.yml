@@ -1,8 +1,8 @@
 # fallback action
 - type: entity
   id: ActionScrammerScram
-  name: SCRAM!
-  description: Randomly teleports you.
+  name: scrammer-action-scram-name # LuaM-locale
+  description: scrammer-action-scram-desc # LuaM-locale
   components:
   - type: InstantAction
     useDelay: 60
@@ -15,8 +15,8 @@
 
 - type: entity
   id: ActionScrammerScramADM
-  name: SCRAM!
-  description: Randomly teleports you within a moderate distance.
+  name: scrammer-action-scram-adm-name # LuaM-locale
+  description: scrammer-action-scram-adm-desc # LuaM-locale
   components:
   - type: InstantAction
     useDelay: 60

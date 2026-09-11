@@ -1,2 +1,19 @@
-names-drone-title-dataset-1 = ЮНИТ
-names-drone-title-dataset-2 = ЭКЗЕМПЛЯР
+names-drone-title-1 = ЮНИТ
+names-drone-title-2 = ЕДИНИЦА
+
+names-drone-hex-1 = 0
+names-drone-hex-2 = 1
+names-drone-hex-3 = 2
+names-drone-hex-4 = 3
+names-drone-hex-5 = 4
+names-drone-hex-6 = 5
+names-drone-hex-7 = 6
+names-drone-hex-8 = 7
+names-drone-hex-9 = 8
+names-drone-hex-10 = 9
+names-drone-hex-11 = A
+names-drone-hex-12 = B
+names-drone-hex-13 = C
+names-drone-hex-14 = D
+names-drone-hex-15 = E
+names-drone-hex-16 = F

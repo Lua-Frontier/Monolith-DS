@@ -1,7 +1,7 @@
 - type: entity
   id: ActionCorticalBorerChemMenu
-  name: Chemicals
-  description: Open the chemicals menu.
+  name: borer-action-chem-menu-name # LuaM-locale
+  description: borer-action-chem-menu-desc # LuaM-locale
   components:
   - type: InstantAction
     icon: _Mono/Interface/Action/borer_chem.png
@@ -9,8 +9,8 @@
 
 - type: entity
   id: ActionCorticalBorerInfest
-  name: Infest
-  description: Infest target Humanoid. Target host must have a bloodstream.
+  name: borer-action-infest-name # LuaM-locale
+  description: borer-action-infest-desc # LuaM-locale
   components:
   - type: EntityTargetAction
     useDelay: 5
@@ -25,8 +25,8 @@
 
 - type: entity
   id: ActionCorticalBorerEject
-  name: Eject Host
-  description: Eject yourself from your host.
+  name: borer-action-eject-name # LuaM-locale
+  description: borer-action-eject-desc # LuaM-locale
   components:
   - type: InstantAction
     icon: _Mono/Interface/Action/borer_eject.png
@@ -35,8 +35,8 @@
 
 - type: entity
   id: ActionCheckBlood
-  name: Check Blood
-  description: Inspect the blood of your host to see how they are doing.
+  name: borer-action-check-blood-name # LuaM-locale
+  description: borer-action-check-blood-desc # LuaM-locale
   components:
   - type: InstantAction
     icon: _Mono/Interface/Action/borer_bloodcheck.png
@@ -45,8 +45,8 @@
 
 - type: entity
   id: ActionControlHost
-  name: Take Control
-  description: Take full control of your host, lasts for 40 seconds on awake hosts.
+  name: borer-action-control-host-name # LuaM-locale
+  description: borer-action-control-host-desc # LuaM-locale
   components:
   - type: InstantAction
     icon: _Mono/Interface/Action/borer_control.png
@@ -55,8 +55,8 @@
 
 - type: entity
   id: ActionEndControlHost
-  name: Relinquish Control
-  description: Give up hold of the host's body early.
+  name: borer-action-end-control-name # LuaM-locale
+  description: borer-action-end-control-desc # LuaM-locale
   components:
   - type: InstantAction
     icon: _Mono/Interface/Action/borer_eject.png
@@ -65,8 +65,8 @@
 
 - type: entity
   id: ActionLayEggHost
-  name: Lay Egg
-  description: Force your host to vomit an egg. Costs 200 chemicals. # needs to be changed if the base chem cost is changed
+  name: borer-action-lay-egg-name # LuaM-locale
+  description: borer-action-lay-egg-desc # LuaM-locale
   components:
   - type: InstantAction
     icon: _Mono/Interface/Action/borer_egg.png

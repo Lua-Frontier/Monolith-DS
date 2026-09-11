@@ -1,4 +1,4 @@
-ent-PartRodentia = часть тела Раткина
+ent-PartRodentia = часть тела раткина
     .desc = { ent-BasePart.desc }
 ent-TorsoRodentia = туловище раткина
     .desc = { ent-PartRodentia.desc }

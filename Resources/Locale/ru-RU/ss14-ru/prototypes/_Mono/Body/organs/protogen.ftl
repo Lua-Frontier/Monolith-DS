@@ -1,5 +1,3 @@
-ent-BaseProtogenOrganUnGibbable = BaseProtogenOrganUnGibbable
-ent-BaseProtogenOrgan = BaseProtogenOrgan
 ent-OrganProtogenBrain = мозг
     .desc = Источник невероятного, бесконечного интеллекта. 01001000 01101111 01101110 01101011 00101110
 ent-OrganProtogenEyes = глаза

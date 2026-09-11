@@ -1,11 +1,32 @@
-ent-PartAsakim = часть тела асакима
-ent-TorsoAsakim = торс асакима
-ent-HeadAsakim = голова асакима
-ent-LeftArmAsakim = левая рука асакима
-ent-RightArmAsakim = правая рука асакима
-ent-LeftHandAsakim = левая кисть асакима
-ent-RightHandAsakim = правая кисть асакима
-ent-LeftLegAsakim = левая нога асакима
-ent-RightLegAsakim = правая нога асакима
-ent-LeftFootAsakim = левая стопа асакима
-ent-RightFootAsakim = правая стопа асакима
+ent-PartAsakim = часть тела азакима
+    .desc = { ent-BaseItem.desc }
+
+ent-TorsoAsakim = торс азакима
+    .desc = { ent-PartAsakim.desc }
+
+ent-HeadAsakim = голова азакима
+    .desc = { ent-PartAsakim.desc }
+
+ent-LeftArmAsakim = левая рука азакима
+    .desc = { ent-PartAsakim.desc }
+
+ent-RightArmAsakim = правая рука азакима
+    .desc = { ent-PartAsakim.desc }
+
+ent-LeftHandAsakim = левая кисть азакима
+    .desc = { ent-PartAsakim.desc }
+
+ent-RightHandAsakim = правая кисть азакима
+    .desc = { ent-PartAsakim.desc }
+
+ent-LeftLegAsakim = левая нога азакима
+    .desc = { ent-PartAsakim.desc }
+
+ent-RightLegAsakim = правая нога азакима
+    .desc = { ent-PartAsakim.desc }
+
+ent-LeftFootAsakim = левая стопа азакима
+    .desc = { ent-PartAsakim.desc }
+
+ent-RightFootAsakim = правая стопа азакима
+    .desc = { ent-PartAsakim.desc }

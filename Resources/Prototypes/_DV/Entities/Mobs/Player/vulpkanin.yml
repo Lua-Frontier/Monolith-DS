@@ -3,6 +3,7 @@
   name: Urist McVulp
   parent: BaseMobVulpkanin
   id: MobVulpkanin
+  suffix: Vulpkanin # LuaM
   components:
     - type: CombatMode
     - type: InteractionPopup

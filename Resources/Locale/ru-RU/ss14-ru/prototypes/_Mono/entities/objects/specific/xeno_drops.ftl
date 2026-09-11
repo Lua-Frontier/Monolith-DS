@@ -1,4 +1,5 @@
-﻿ent-ResinJelly = смоляной гель
-    .desc = Странный гель, при нанесении быстро стимулирует восстановление конечностей ценой боли.
-ent-ChitinChunk = chitin chunk
-    .desc = A highly durable piece of chitin. Might fetch a rather high price.
+﻿ent-ResinJelly = смоляное желе
+    .desc = Странное желе. При нанесении быстро стимулирует заживление конечностей ценой боли.
+
+ent-ChitinChunk = кусок хитина
+    .desc = Очень прочный кусок хитина. Может стоить довольно дорого.

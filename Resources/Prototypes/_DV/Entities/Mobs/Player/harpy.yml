@@ -3,6 +3,7 @@
   name: Urist McHarpy
   parent: MobHarpyBase
   id: MobHarpy
+  suffix: Harpy # LuaM
   components:
   - type: CombatMode
   - type: InteractionPopup

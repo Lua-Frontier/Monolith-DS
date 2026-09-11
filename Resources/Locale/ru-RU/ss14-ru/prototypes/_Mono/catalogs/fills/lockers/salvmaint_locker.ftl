@@ -1,3 +1,9 @@
-ent-MonoMaintenanceFluffSpawner = Fluff+Clothes
-ent-MonoMaintenanceToolSpawner = Tools+Cells+Mats
-ent-MonoMaintenanceWeaponSpawner = Scrap+Weapons
+ent-MonoMaintenanceFluffSpawner = спавнер добычи техобслуживания
+    .suffix = Мелочёвка, Одежда
+    .desc = { ent-MarkerBase.desc }
+ent-MonoMaintenanceToolSpawner = спавнер добычи техобслуживания
+    .suffix = Инструменты, Батареи, Материалы
+    .desc = { ent-MarkerBase.desc }
+ent-MonoMaintenanceWeaponSpawner = спавнер добычи техобслуживания
+    .suffix = Лом, Оружие
+    .desc = { ent-MarkerBase.desc }

@@ -1,5 +1,8 @@
-﻿ent-ShotgunTrap = ловушка с дробовиком
-    .desc = Самодельный дробовик 4-го калибра, подключённый к дистанционному сигнализатору.
-ent-ShotgunTrapPacked = packed shotgun trap
-    .desc = A disassembled makeshift shotgun trap.
-ent-PressurePlate = pressure plate
+﻿ent-ShotgunTrap = самодельная ловушка с дробовиком
+    .desc = Самодельный дробовик 4 калибра, который можно подключить к дистанционному сигнальному устройству. Изучение стоит 125 скрапа.
+
+ent-ShotgunTrapPacked = разобранная ловушка с дробовиком
+    .desc = Разобранная самодельная ловушка с дробовиком. Изучение стоит 125 скрапа.
+
+ent-PressurePlate = нажимная плита
+    .desc = { ent-BaseItem.desc }

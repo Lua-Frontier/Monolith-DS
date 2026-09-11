@@ -1,15 +1,11 @@
-ent-BoxBaseSurvivalMono = ящик экстренного выживания
-    .desc = Стандартный аварийный ящик выживания для сектора «Колосс». Инструменты и снаряжение на случай чрезвычайной ситуации.
+ent-BoxBaseSurvivalMono = аварийная коробка выживания
     .suffix = Кислород
-ent-BoxSurvivalMonoNitrogenExtended = аварийный набор выживания
+    .desc = Стандартная аварийная коробка выживания для сектора Колосс. Содержит инструменты для выживания в чрезвычайной ситуации.
+
+ent-BoxSurvivalMonoOxygenExtended = аварийная коробка выживания
+    .suffix = Кислород
     .desc = { ent-BoxBaseSurvivalMono.desc }
+
+ent-BoxSurvivalMonoNitrogenExtended = аварийная коробка выживания
     .suffix = Азот
-ent-RenegateBoxSurvivalMonoNitrogenExtended = { ent-BoxSurvivalMonoNitrogenExtended }
     .desc = { ent-BoxBaseSurvivalMono.desc }
-    .suffix = Азот
-ent-BoxSurvivalMonoOxygenExtended = { ent-BoxSurvivalMonoNitrogenExtended }
-    .desc = { ent-BoxBaseSurvivalMono.desc }
-    .suffix = Кислород
-ent-RenegateBoxSurvivalMonoOxygenExtended = { ent-BoxSurvivalMonoNitrogenExtended }
-    .desc = { ent-BoxBaseSurvivalMono.desc }
-    .suffix = Кислород

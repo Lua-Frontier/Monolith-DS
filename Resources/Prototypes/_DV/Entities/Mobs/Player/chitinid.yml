@@ -3,3 +3,4 @@
   name: Urist McAnt
   parent: BaseMobChitinid  
   id: MobChitinid
+  suffix: Chitinid # LuaM

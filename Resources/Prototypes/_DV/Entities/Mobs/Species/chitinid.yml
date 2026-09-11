@@ -3,6 +3,7 @@
   name: Urist McAnt
   parent: BaseMobSpeciesOrganic
   id: BaseMobChitinid
+  suffix: Chitinid # LuaM
   abstract: true
   components:
 
@@ -159,6 +160,7 @@
 - type: entity
   parent: BaseSpeciesDummy
   id: MobChitinidDummy
+  suffix: Chitinid # LuaM
   categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance

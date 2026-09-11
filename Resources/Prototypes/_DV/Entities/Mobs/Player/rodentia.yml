@@ -3,3 +3,4 @@
   name: Urist McRat
   parent: BaseMobRodentia
   id: MobRodentia
+  suffix: Rodentia # LuaM

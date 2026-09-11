@@ -3,6 +3,7 @@
   name: Urist McRat
   parent: BaseMobSpeciesOrganic
   id: BaseMobRodentia
+  suffix: Rodentia # LuaM
   abstract: true
   components:
   - type: HumanoidAppearance
@@ -125,6 +126,7 @@
   save: false
   name: Rodentia Dummy
   parent: MobHumanDummy
+  suffix: Rodentia # LuaM
   id: MobRodentiaDummy
   categories: [ HideSpawnMenu ]
   description: A dummy rodentia meant to be used in character setup.

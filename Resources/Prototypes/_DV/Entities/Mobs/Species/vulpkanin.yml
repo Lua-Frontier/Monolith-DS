@@ -2,6 +2,7 @@
   save: false
   name: Urist McVulp
   parent: BaseMobSpeciesOrganic
+  suffix: Vulpkanin # LuaM
   id: BaseMobVulpkanin
   abstract: true
   components:
@@ -126,6 +127,7 @@
   name: Vulpkanin Dummy
   parent: MobHumanDummy
   id: MobVulpkaninDummy
+  suffix: Vulpkanin # LuaM
   categories: [ HideSpawnMenu ]
   description: A dummy vulpkanin meant to be used in character setup.
   components:

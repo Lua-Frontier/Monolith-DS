@@ -3,6 +3,7 @@
   name: Urist McHarpy
   parent: BaseMobHuman
   id: MobHarpyBase
+  suffix: Harpy # LuaM
   abstract: true
   components:
   - type: CEZFlyer # Mono: z-level flight
@@ -165,6 +166,7 @@
   save: false
   name: Urist McHands
   parent: MobHumanDummy
+  suffix: Harpy # LuaM
   id: MobHarpyDummy
   categories: [ HideSpawnMenu ]
   description: A dummy Harpy meant to be used in character setup.

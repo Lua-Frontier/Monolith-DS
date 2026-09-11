@@ -1,95 +1,126 @@
-- type: dataset
+
+- type: localizedDataset # LuaM
   id: MonoRemnantBorgTitle
   values:
-  - ADM
+    prefix: names-mono-remnant-borg-title-
+    count: 1
 
-- type: dataset
+- type: localizedDataset # LuaM
   id: MonoRemnantCoreTitle
   values:
-  - ADC
+    prefix: names-mono-remnant-core-title-
+    count: 1
 
-- type: dataset
+- type: localizedDataset # LuaM
   id: MonoRemnantAdjective
   values:
-  - Violet
-  - Red
-  - Purple
-  - Yellow
-  - Green
-  - Blue
-  - Cyan
-  - Crimson
-  - Steel
-  - Obsidian
-  - Prismatic
-  - Sudden
-  - Militant
-  - Void
-  - Lightspeed
-  - Cleansing
-  - Burning
-  - Frozen
-  - Molten
-  - Flying
-  - Marching
-  - Spectral
-  - Piercing
-  - Glass
+    prefix: names-mono-remnant-adjective-
+    count: 23
 
-- type: dataset
+- type: localizedDataset # LuaM
   id: MonoRemnantNoun
   values:
-  - Sword
-  - Strider
-  - Courser
-  - Patron
-  - Flood
-  - Weapon
-  - Static
-  - Signal
-  - Arrow
-  - Arbiter
-  - Protocol
-  - Titan
-  - Vector
-  - Requiem
-  - Watcher
-  - Eye
-  - Tower
-  - Terminal
-  - Sentinel
-  - Echo
-  - Nemesis
-  - Daemon # this one fits into modifiers too but sounds better here i think
-  - Locust
-  - Wraith
-  - Lens
-  - Prophet
+    prefix: names-mono-remnant-noun-
+    count: 26
 
-- type: dataset
+- type: localizedDataset # LuaM
   id: MonoRemnantModifier
   values:
-  - Adjunct
-  - Joint
-  - Mechanism
-  - Wire
-  - Cog
-  - Machine
-  - Relay
-  - Modem
-  - Node
-  - Unit
-  - Segment
-  - Index
-  - Branch
-  - Module
-  - Factor
-  - Scion
-  - Offset
-  - Fragment
-  - Routine
-  - Sector
-  - Link
-  - Process
-  - Servo
-  - Trait
+    prefix: names-mono-remnant-modifier-
+    count: 24
+
+#- type: dataset # Commented by LuaM
+#  id: MonoRemnantBorgTitle
+#  values:
+#  - ADM
+
+#- type: dataset # Commented by LuaM
+#  id: MonoRemnantCoreTitle
+#  values:
+#  - ADC
+
+#- type: dataset # Commented by LuaM
+#  id: MonoRemnantAdjective
+#  values:
+#  - Violet
+#  - Red
+#  - Purple
+#  - Yellow
+#  - Green
+#  - Blue
+#  - Cyan
+#  - Crimson
+#  - Steel
+#  - Obsidian
+#  - Prismatic
+#  - Sudden
+#  - Militant
+#  - Void
+#  - Lightspeed
+#  - Cleansing
+#  - Burning
+#  - Frozen
+#  - Molten
+#  - Flying
+#  - Marching
+#  - Spectral
+#  - Piercing
+#  - Glass
+
+#- type: dataset # Commented by LuaM
+#  id: MonoRemnantNoun
+#  values:
+#  - Sword
+#  - Strider
+#  - Courser
+#  - Patron
+#  - Flood
+#  - Weapon
+#  - Static
+#  - Signal
+#  - Arrow
+#  - Arbiter
+#  - Protocol
+#  - Titan
+#  - Vector
+#  - Requiem
+#  - Watcher
+#  - Eye
+#  - Tower
+#  - Terminal
+#  - Sentinel
+#  - Echo
+#  - Nemesis
+#  - Daemon
+#  - Locust
+#  - Wraith
+#  - Lens
+#  - Prophet
+
+#- type: dataset # Commented by LuaM
+#  id: MonoRemnantModifier
+#  values:
+#  - Adjunct
+#  - Joint
+#  - Mechanism
+#  - Wire
+#  - Cog
+#  - Machine
+#  - Relay
+#  - Modem
+#  - Node
+#  - Unit
+#  - Segment
+#  - Index
+#  - Branch
+#  - Module
+#  - Factor
+#  - Scion
+#  - Offset
+#  - Fragment
+#  - Routine
+#  - Sector
+#  - Link
+#  - Process
+#  - Servo
+#  - Trait

@@ -1,25 +1,37 @@
-- type: dataset
+- type: localizedDataset # LuaM
   id: DroneTitle
   values:
-  - UNIT
-  - INSTANCE
+    prefix: names-drone-title-
+    count: 2
 
-- type: dataset
+- type: localizedDataset # LuaM
   id: DroneHex
   values:
-  - 0
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
-  - A
-  - B
-  - C
-  - D
-  - E
-  - F
+    prefix: names-drone-hex-
+    count: 16
+
+#- type: dataset # Commented by LuaM
+#  id: DroneTitle
+#  values:
+#  - UNIT
+#  - INSTANCE
+
+#- type: dataset # Commented by LuaM
+#  id: DroneHex
+#  values:
+#  - 0
+#  - 1
+#  - 2
+#  - 3
+#  - 4
+#  - 5
+#  - 6
+#  - 7
+#  - 8
+#  - 9
+#  - A
+#  - B
+#  - C
+#  - D
+#  - E
+#  - F
