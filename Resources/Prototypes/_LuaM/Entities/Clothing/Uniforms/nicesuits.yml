@@ -5,9 +5,9 @@
   description: Тёмный комплект, из грубых тканей. Слишком груб для официальных визитов, но идеально подходит для неформального отдыха с алкоголем.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/ruggedcostume.rsi
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/ruggedcostume.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/ruggedcostume.rsi
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuits/ruggedcostume.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -16,9 +16,9 @@
   description: Дорогостоящий двубортный комплект. Носить такой станет только психопат, или какой-нибудь особо тщеславный вице-президент.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/expensivecostume.rsi
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/expensivecostume.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/expensivecostume.rsi
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/expensivecostume.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -27,9 +27,9 @@
   description: '"Яркий, далеко не новый костюм, созданный по прототипу костюма величайшего трагического комедианта, из когда-либо живших" — гласит рекламная бирка из внутреннего кармана.' 
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/goodclownsuit.rsi
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/goodclownsuit.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/goodclownsuit.rsi
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/goodclownsuit.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -38,6 +38,6 @@
   description: Неплохой на вид, текстурный серый комплект, с блестящим галстуком изумрудного цвета. Носить только с подобающим по стоимости верхом.
   components: 
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/emeraldcostume.rsi
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/emeraldcostume.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/emeraldcostume.rsi
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/emeraldcostume.rsi
