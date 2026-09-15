@@ -772,10 +772,18 @@ namespace Content.Shared.Preferences
             var groups = new Dictionary<string, int>();
             var result = new List<ProtoId<TraitPrototype>>();
 
-            foreach (var trait in traits)
+            var ordered = new List<TraitPrototype>(); // LuaM
+            foreach (var trait in traits) // LuaM
             {
-                if (!protoManager.TryIndex(trait, out var traitProto))
-                    continue;
+                if (protoManager.TryIndex(trait, out var indexed)) // LuaM
+                    ordered.Add(indexed); // LuaM
+            }
+
+            ordered.Sort((a, b) => a.Cost != b.Cost ? a.Cost.CompareTo(b.Cost) : string.CompareOrdinal(a.ID, b.ID)); // LuaM
+
+            foreach (var traitProto in ordered) // LuaM: traits > ordered
+            {
+                ProtoId<TraitPrototype> trait = traitProto.ID; // LuaM
 
                 // Always valid.
                 if (traitProto.Category == null)

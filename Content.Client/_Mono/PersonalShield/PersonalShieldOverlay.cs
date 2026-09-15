@@ -34,6 +34,7 @@ public sealed partial class PersonalShieldOverlay : Overlay
         _inventory = _entManager.System<InventorySystem>();
         var protoMan = IoCManager.Resolve<IPrototypeManager>();
         _shader = protoMan.Index(ShaderId).InstanceUnique();
+        ZIndex = -2; // LuaM
     }
 
     protected override void Draw(in OverlayDrawArgs args)

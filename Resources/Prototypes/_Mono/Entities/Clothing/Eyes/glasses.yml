@@ -172,4 +172,15 @@
   - type: ThermalVision
     isEquipment: true
     color: "#FFFFFFFF"
-    lightRadius: 45
+    lightRadius: 0 # LuaM: 45 > 0
+    drawOverlay: false # LuaM
+  - type: NightVision # LuaM
+    relayOverlay: true
+    goggleEffect: true
+    viewCircleRadius: 1000
+    viewCircleCount: 3
+    viewCircleSpacing: 280
+    action: ActionToggleNightVision
+    phosphorColor: "#337a98"
+    lightingColor: "#0EFFFFFF"
+    amplification: 1.0
