@@ -17,6 +17,12 @@ public sealed class PowerChargeBoundUserInterface : BoundUserInterface
         SendMessage(new SwitchChargingMachineMessage(on));
     }
 
+    // MLua Frontier: Add action
+    public void ActionButton()
+    {
+        SendMessage(new PowerChargeActionMessage());
+    }
+    // MLua Frontier End
     protected override void Open()
     {
         base.Open();
@@ -24,6 +30,7 @@ public sealed class PowerChargeBoundUserInterface : BoundUserInterface
             return;
 
         _window = this.CreateWindow<PowerChargeWindow>();
+        _window.SetActionUI(component.ActionUI); // MLua Frontier
         _window.UpdateWindow(this, Loc.GetString(component.WindowTitle));
     }
 

@@ -3,6 +3,12 @@
 namespace Content.Shared.Power;
 
 /// <summary>
+///     MLua Frontier: Sent to the server to perform some action with the charge in the machine.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class PowerChargeActionMessage : BoundUserInterfaceMessage { }
+
+/// <summary>
 ///     Sent to the server to set whether the machine should be on or off
 /// </summary>
 [Serializable, NetSerializable]
@@ -20,6 +26,7 @@ public sealed class SwitchChargingMachineMessage : BoundUserInterfaceMessage
 public sealed class PowerChargeState : BoundUserInterfaceState
 {
     public bool On;
+    public bool ActionUnlocked; // MLuaFrontier
     // 0 -> 255
     public byte Charge;
     public PowerChargePowerStatus PowerStatus;
@@ -29,6 +36,7 @@ public sealed class PowerChargeState : BoundUserInterfaceState
 
     public PowerChargeState(
         bool on,
+        bool actionUnlocked, // MLua Frontier
         byte charge,
         PowerChargePowerStatus powerStatus,
         short powerDraw,
@@ -36,6 +44,7 @@ public sealed class PowerChargeState : BoundUserInterfaceState
         short etaSeconds)
     {
         On = on;
+        ActionUnlocked = actionUnlocked; // MLuaFrontier
         Charge = charge;
         PowerStatus = powerStatus;
         PowerDraw = powerDraw;
