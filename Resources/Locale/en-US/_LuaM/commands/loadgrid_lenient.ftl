@@ -1,0 +1,11 @@
+cmd-loadgrid_lenient-desc = Loads a grid from a file, skipping entities whose prototypes this build does not have. Their contents are dropped next to them.
+cmd-loadgrid_lenient-help = loadgrid_lenient <MapID> <Path> [x y] [rotation] [storeUids]
+cmd-loadgrid_lenient-bad-map = { $value } is not a valid map ID.
+cmd-loadgrid_lenient-nullspace = Cannot load into nullspace.
+cmd-loadgrid_lenient-bad-path = The path cannot contain "..".
+cmd-loadgrid_lenient-bad-float = Coordinates and rotation must be numbers.
+cmd-loadgrid_lenient-bad-bool = { $value } is not true/false.
+cmd-loadgrid_lenient-map-created = Map { $map } did not exist, created without map init.
+cmd-loadgrid_lenient-failed = Failed to load the grid ({ $reason }). See the server log for details.
+cmd-loadgrid_lenient-missing-entry = Skipped prototype { $id } (entities: { $count })
+cmd-loadgrid_lenient-success = Grid { $grid } loaded. Skipped types: { $types }, removed entities: { $removed }, rescued items: { $rescued }.

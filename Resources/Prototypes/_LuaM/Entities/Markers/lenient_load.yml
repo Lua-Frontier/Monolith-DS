@@ -1,0 +1,8 @@
+# Stand-in for entities whose prototype is missing when a grid is loaded with loadgrid_lenient.
+# Its contents are dropped next to it and it is deleted right after the load.
+- type: entity
+  id: LuaMLenientLoadPlaceholder
+  name: missing prototype placeholder
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform

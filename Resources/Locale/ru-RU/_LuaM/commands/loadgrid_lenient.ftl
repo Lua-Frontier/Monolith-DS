@@ -1,0 +1,11 @@
+cmd-loadgrid_lenient-desc = Загружает грид из файла, пропуская сущности, прототипов которых нет в этом билде. Их содержимое выкладывается рядом.
+cmd-loadgrid_lenient-help = loadgrid_lenient <MapID> <Path> [x y] [вращение] [storeUids]
+cmd-loadgrid_lenient-bad-map = { $value } не является корректным ID карты.
+cmd-loadgrid_lenient-nullspace = Нельзя загружать в nullspace.
+cmd-loadgrid_lenient-bad-path = Путь не может содержать "..".
+cmd-loadgrid_lenient-bad-float = Координаты и вращение должны быть числами.
+cmd-loadgrid_lenient-bad-bool = { $value } не является true/false.
+cmd-loadgrid_lenient-map-created = Карта { $map } не существовала, создана без инициализации.
+cmd-loadgrid_lenient-failed = Не удалось загрузить грид ({ $reason }). Подробности в логе сервера.
+cmd-loadgrid_lenient-missing-entry = Пропущен прототип { $id } (сущностей: { $count })
+cmd-loadgrid_lenient-success = Грид { $grid } загружен. Пропущено типов: { $types }, удалено сущностей: { $removed }, спасено предметов: { $rescued }.
