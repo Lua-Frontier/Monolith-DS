@@ -71,7 +71,7 @@ public sealed partial class RandomSpriteSystem : SharedRandomSpriteSystem
             {
                 if (layer.Key is not { } strKey || !int.TryParse(strKey, out index))
                 {
-                    Log.Error($"Invalid key `{layer.Key}` for entity with random sprite {ToPrettyString(uid)}");
+                    // Log.Error($"Invalid key `{layer.Key}` for entity with random sprite {ToPrettyString(uid)}"); // Comented by LuaM
                     continue;
                 }
             }
