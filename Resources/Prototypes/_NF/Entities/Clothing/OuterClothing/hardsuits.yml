@@ -196,9 +196,9 @@
   - type: Armor # Remains perfectly clean of stains
     modifiers:
       coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
+        Blunt: 0.75 # LuaM: 0.9 > 0.75
+        Slash: 0.75 # LuaM: 0.9 > 0.75
+        Piercing: 0.75 # LuaM: 0.9 > 0.75
         Caustic: 0.05
   - type: ExplosionResistance
     damageCoefficient: 0.8
@@ -206,8 +206,8 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier # So many layers of stain protection makes it very heavy
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.85 # LuaM: 0.75 > 0.85
+    sprintModifier: 0.85 # LuaM: 0.75 > 0.85
   - type: HeldSpeedModifier
   - type: FootstepModifier
     footstepSoundCollection:
@@ -221,7 +221,10 @@
       helmetcover: ClothingHeadHelmetCoverBlock
       helmetattachment: ClothingHeadHelmetAttachmentBlock
   - type: StaminaDamageResistance # Mono - Stamres
-    coefficient: 0.4
+    coefficient: 0.75 # LuaM: 0.4 > 0.75
+  - type: StaticPrice # LuaM
+    price: 1500
+    vendPrice: 7500
 
 - type: entity
   parent: ClothingOuterHardsuitBaseNF

@@ -1,0 +1,13 @@
+- type: entity
+  id: SuitStorageDMC
+  parent: SuitStorageBase
+  suffix: DMC, Filled
+  components:
+  - type: AccessReader
+    access: [[ "ChiefMedicalOfficer" ]]
+  - type: StorageFill
+    contents:
+    - id: JetpackBlueFilled
+    - id: ClothingOuterHardsuitTraumaLeader
+    - id: ClothingShoesBootsMagAshen
+    - id: ClothingMaskBreathMedicalSecurity

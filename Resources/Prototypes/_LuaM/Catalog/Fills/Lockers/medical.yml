@@ -1,0 +1,20 @@
+- type: entity
+  parent: LockerChiefMedicalOfficer
+  id: LockerDMC
+  suffix: DMC, Filled
+  components:
+  - type: AccessReader
+    access: [["ChiefMedicalOfficer"]]
+  - type: StorageFill
+    contents:
+    - id: ClothingBackpackERTMedical
+    - id: ClothingBeltMilitaryWebbingCMOFilled
+    - id: ClothingUniformJumpsuitMilitaryCMO
+    - id: ClothingHandsGlovesSurgical
+    - id: HandheldCrewMonitor
+    - id: PhoneInstrumentHigh
+    - id: MMI
+    - id: RubberStampDoc
+    - id: MedicalTechFabCircuitboard
+    - id: MedTekCartridge
+    - id: Hypospray

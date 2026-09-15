@@ -1,0 +1,10 @@
+- type: entity
+  parent: GunSafe
+  id: GunSafeDMC
+  suffix: DMC, Filled
+  components:
+  - type: AccessReader
+    access: [["ChiefMedicalOfficer"]]
+  - type: StorageFill
+    contents:
+    - id: WeaponXrayCannon

@@ -34,6 +34,8 @@
     ClothingOuterEVASuitPilot: 5
     ClothingOuterHardsuitPilot: 3
     ClothingShoesBootsPilot: 3
+  emaggedInventory: # LuaM
+    ClothingHeadHatTacticalMaidHeadband: 1
 
 - type: vendingMachineInventory
   id: AstroVendPOIInventory
@@ -71,3 +73,5 @@
     ClothingOuterEVASuitPilot: 5
     ClothingOuterHardsuitPilot: 3
     ClothingShoesBootsPilot: 3
+  emaggedInventory: # LuaM
+    ClothingHeadHatTacticalMaidHeadband: 1
