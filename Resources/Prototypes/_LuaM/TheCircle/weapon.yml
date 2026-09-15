@@ -1,0 +1,1142 @@
+## Zastaba
+- type: entity
+  parent: BaseWeaponRifle
+  id: WeaponRifleZastaba
+  name: Zastaba Nosle CZN-M22
+  description: Штурмовой автомат специальных войск на утяжелённом калибре 5.7x39. Он отличается системой булл-пап, высоким темпом стрельбы и убойной пулей, буквально сбивающей врагов с ног.
+  suffix: Автомат
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/zastaba/zastaba-icon.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/zastaba/zastaba-inhands.rsi
+    size: Large
+    shape:
+      - 0,0,3,1
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/zastaba/zastaba-inhands.rsi
+  - type: Gun
+    fireRate: 8
+    minAngle: 21
+    maxAngle: 32
+    soundGunshot:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/zastaba-sfx/zastaba-shot.ogg
+      params:
+        volume: -3
+    soundMode: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/zastaba-sfx/zastaba-selector.ogg
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -16
+  - type: ChamberMagazineAmmoProvider
+    soundBoltOpened:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/zastaba-sfx/zastaba-boltopen.ogg
+      params:
+        volume: -5
+    soundBoltClosed:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/zastaba-sfx/zastaba-boltclose.ogg
+      params:
+        volume: -5
+    soundRack:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/zastaba-sfx/zastaba-chamber.ogg
+      params:
+        volume: -5
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagRifleZastaba
+        insertSound:
+          path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/zastaba-sfx/zastaba-insert.ogg
+          params:
+            volume: -3
+        ejectSound:
+          path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/zastaba-sfx/zastaba-eject.ogg
+          params:
+            volume: -3
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineZastabaNosle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifleZastaba
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeZastabaNosle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: UseDelay
+    delay: 1
+
+### Магазин Застабы
+- type: entity
+  parent: BaseItem
+  id: BaseMagRifleZastaba
+  name: ZASTABA 30 GEN M4
+  description: Вмещает 30 патронов 5.7х39 мм калибра.
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineZastabaNosle
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeZastabaNosle
+    proto: CartridgeRifleZastaba
+    capacity: 30
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/zastaba/zastaba-mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  parent: BaseMagRifleZastaba
+  id: MagRifleZastaba
+  name: ZASTABA 30 GEN M4
+  description:
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleZastaba
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+## РШ-12
+- type: entity
+  parent: BaseItem
+  id: WeaponRevolverRSh12
+  name: РШ-12
+  description: Мощный штурмовой револьвер под патрон 12.7x55 мм. Убойный калибр позволяет сильно пробивать структуры и небронированные цели. Встроенный фабрикатор восполняет боезапас каждые 3 секунды.
+  suffix: Револьвер
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/rsh12/rsh12.rsi
+    layers:
+    - state: icon
+  - type: Gun
+    fireRate: 2.5
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rsh12-sfx/rsh-shot.ogg
+      params:
+        volume: -3
+    soundEmpty:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rsh12-sfx/rsh-empty.ogg
+      params:
+        volume: -3
+  - type: BasicEntityAmmoProvider
+    proto: BulletRSh2
+    capacity: 5
+    count: 5
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 3
+    rechargeSound:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rsh12-sfx/rsh-reload.ogg
+      params:
+        volume: -3
+  - type: AmmoCounter
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_LuaM/Items/Handing/gun/ballistics/pistol/pistol_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_LuaM/Items/Handing/gun/ballistics/pistol/pistol_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_LuaM/Items/Handing/gun/ballistics/pistol/pistol_drop.ogg
+
+## РПЛ-20
+- type: entity
+  name: РПЛ-20
+  id: WeaponLightMachineGunRPL20
+  parent: BaseWeaponRifle
+  description: Пулемёт предназначен для поражения живой силы и небронированных транспортных средств противника.
+  suffix: Пулемёт
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/rpl20/rpl20.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/rpl20/rpl20.rsi
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/rpl20/rpl20.rsi
+    size: Huge
+    shape:
+    - 0,0,4,3
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Wieldable
+    unwieldOnUse: false
+    wieldSound: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rpl20-sfx/rpl-wield.ogg
+    unwieldSound: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rpl20-sfx/rpl-unwield.ogg
+  - type: Gun
+    minAngle: 35
+    maxAngle: 45
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 7.5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rpl20-sfx/rpl-shot.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: GunWieldBonus
+    minAngle: -32
+    maxAngle: -37
+  - type: ChamberMagazineAmmoProvider
+    soundBoltClosed:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rpl20-sfx/rpl-close.ogg
+    soundBoltOpened:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rpl20-sfx/rpl-open.ogg
+    soundRack:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rpl20-sfx/rpl-chamber.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRPL20
+        insertSound: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rpl20-sfx/rpl-magin.ogg
+        ejectSound: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/rpl20-sfx/rpl-magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRPL20
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRPL20
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeRPL20
+  - type: Appearance
+  - type: UseDelay
+    delay: 1
+
+### Магазин
+- type: entity
+  id: MagazineRPL20
+  parent: BaseMagazine556x45mm
+  description: Вмещает 85 патронов 5.45х39 мм калибра.
+  name: короб патронов РПЛ-20
+  components:
+  - type: Tag
+    tags:
+    - MagazineRPL20
+  - type: BallisticAmmoProvider
+    proto: CartridgeRPL20
+    capacity: 85
+    whitelist:
+      tags:
+        - CartridgeRPL20
+  - type: Item
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/rpl20/rpl20-drum.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+
+## АШ 12
+- type: entity
+  name: АШ-12
+  id: WeaponRifleASh12
+  parent: BaseWeaponRifle
+  description: Крупнокалиберный штурмовой автомат под патрон 12.7х55 мм. Оружие разрабатывалось с расчетом на сверхсильную останавливающую силу.
+  suffix: Автомат
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/ash12/ash12.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/ash12/ash12.rsi
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/ash12/ash12.rsi
+    size: Huge
+    shape:
+    - 0,0,3,2
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Gun
+    minAngle: 20
+    maxAngle: 25
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 4.5
+    soundGunshot:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/ash12-sfx/ash12-shot.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: GunRequiresWield
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -20
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineASh12
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineASh12
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeASh12
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeASh12
+  - type: Appearance
+  - type: UseDelay
+    delay: 1
+
+### Магазин
+- type: entity
+  id: MagazineASh12
+  name: магазин 12.7х55 АШ-12
+  description: Вмещает 20 патронов 12.7х55 калибра.
+  parent: BaseMagazine762x51mm
+  components:
+  - type: Tag
+    tags:
+    - MagazineASh12
+  - type: BallisticAmmoProvider
+    proto: CartridgeASh12
+    capacity: 20
+    whitelist:
+      tags:
+        - CartridgeASh12
+  - type: Item
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/ash12/ash12-mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+## Скараб
+- type: entity
+  name: SCARAB
+  parent: BaseWeaponRifle
+  id: WeaponRifleSCARAB
+  description: Штурмовой автомат из семейства FN SCAR, модифицированный под патрон 6.8х51 мм. На месте пулевых попаданий оставляет зверские порезы и впрыскивает в рану слабую кислоту.
+  suffix: Автомат
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/scarab/scarab.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/scarab/scarab.rsi
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/scarab/scarab.rsi
+  - type: Gun
+    fireRate: 6.5
+    soundGunshot:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/scarab-sfx/scarab-shot.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleSCARAB
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifleSCARAB
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifleSCARAB
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifleSCARAB
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1
+
+### Магазины
+- type: entity
+  id: MagazineRifleSCARAB
+  name: SCARAB POLYMAG 30 GEN2
+  parent: BaseMagazine68x52mmCaseless
+  description: Вмещает 30 патронов 6.8х51 мм калибра.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleSCARAB
+    capacity: 30
+    whitelist:
+      tags:
+        - CartridgeRifleSCARAB
+  - type: Sprite
+    scale: 1.1, 1.1 # DS-14
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/scarab/mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: Tag
+    tags:
+      - MagazineRifleSCARAB
+
+### VSK
+- type: entity
+  name: VSK-94
+  id: WeaponVSK
+  parent: BaseWeaponRifle
+  description: Точный винторез, что заточен под дальний бой и сбивание позиции врагов, нежели тупого штурма.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/vsk/big.rsi
+    scale: 0.8, 0.8
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/vsk/small.rsi
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/vsk/small.rsi
+    size: Large
+    shape:
+    - 0,0,4,1
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -30
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/vsk-sfx/vsk.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineVSK
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineVSK
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeBulletVSK
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+  - type: Appearance
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 4
+    pvsIncrease: 0.3
+  - type: UseDelay
+    delay: 1
+
+## Магазин VSK
+
+- type: entity
+  id: MagazineVSK
+  name: магазин от VSK-94
+  description: Вмещает 22 патрона калибра 9х39, для VSK.
+  parent: Magazine9x19mmSubMachineGunFMJ
+  components:
+  - type: Tag
+    tags:
+    - MagazineVSK
+  - type: BallisticAmmoProvider
+    capacity: 22
+    proto: CartridgeBulletVSK
+    whitelist:
+      tags:
+        - CartridgeBulletVSK
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/vsk/rifle_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+## AS VAL magazine
+
+- type: entity
+  id: BaseMagazineLightRifleAsVal
+  name: магазин для АС Вал
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - MagazineLightRifleAsVal
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+      - CartridgeLightRifle
+    proto: CartridgeLightRifle
+    capacity: 20
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/asval/mag.rsi
+    layers:
+    - state: base
+      map: [enum.GunVisualLayers.Base]
+    - state: mag-1
+      map: [enum.GunVisualLayers.Mag]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineLightRifleAsVal
+  name: магазин для АС Вал
+  parent: BaseMagazineLightRifleAsVal
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+      map: [enum.GunVisualLayers.Base]
+    - state: mag-1
+      map: [enum.GunVisualLayers.Mag]
+
+## VAL
+
+- type: entity
+  name: АС "Вал"
+  parent: BaseWeaponRifle
+  id: WeaponRifleAsVal
+  description: Бесшумный автомат, используется в ан-... Террористических операциях. Да, точно не украдено у СССП.
+  suffix: Автомат
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/asval/asval.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/asval/asval.rsi
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,2
+  - type: Gun
+    fireRate: 6.5
+    burstFireRate: 16
+    soundGunshot:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/asval-sfx/vss.ogg
+      params:
+        volume: -5
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleAsVal
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifleAsVal
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: UseDelay
+    delay: 1
+
+## Клинок-обелиск
+- type: entity
+  parent: BaseImplantOnlyImplanterSyndi
+  id: UnitologySplinterBladeImplanter
+  name: имплантер пробуждение клинка
+  description: Подозрительный имплант неизвестного происхождения.
+  components:
+  - type: Implanter
+    implant: UnitologySplinterBladeImplant
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: UnitologySplinterBladeImplant
+  name: имплантер пробуждение клинка
+  description: По всей видимости, вживляет в руку осколочный клинок.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionRetractableItemUnitologySplinterBladeImplant
+    whitelist:
+      components:
+      - Hands
+
+- type: entity
+  id: ActionRetractableItemUnitologySplinterBladeImplant
+  name: "[color=red]Освободить клинок[/color]"
+  description: Взовите их к своему Богу.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 1
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/splinter-blade.rsi
+      state: icon
+    event: !type:OnRetractableItemActionEvent
+  - type: RetractableItemAction
+    spawnedPrototype: WeaponUnitologySplinterBlade
+    summonSounds:
+      collection: splinter-blade-extend
+    retractSounds:
+      collection: splinter-blade-retract
+
+- type: entity
+  parent: BaseItem
+  id: WeaponUnitologySplinterBlade
+  name: осколочный клинок
+  description: Лезвием пройдусь я вдоль линии твоих вен.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/splinter-blade.rsi
+    state: icon
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/splinter-blade.rsi
+  - type: LimitedCharges
+    maxCharges: 1
+  - type: CollisionWake
+    enabled: false
+  - type: InteractionOutline
+  - type: AutoRecharge
+    rechargeDuration: 180
+  - type: MeleeWeapon
+    attackRate: 1.35
+    damage:
+      types:
+        Slash: 12
+        Caustic: 4
+        Structural: 20
+    soundHit:
+      collection: splinter-blade-attack
+    soundNoDamage:
+      collection: splinter-blade-miss
+  - type: Sharp
+  - type: ComponentToggler
+    components:
+    - type: PointLight
+      color: "#48141e"
+      radius: 6
+      energy: 2.5
+    - type: Reflect
+      inRightPlace: True
+      reflectProb: 0.15
+      spread: 90
+      soundOnReflect:
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      collection: splinter-blade-attack
+    activatedSoundOnHitNoDamage:
+      collection: splinter-blade-miss
+    activatedDamage:
+      types:
+        Slash: 20
+        Heat: 6
+        Structural: 35
+  - type: ItemToggle
+    onUse: false
+    onActivate: false
+  - type: Wieldable
+    useDelayOnWield: true
+  - type: UseDelay
+    delay: 1
+  - type: Execution
+    doAfterDuration: 4.0
+
+- type: entity
+  parent: BaseImplantOnlyImplanterSyndi
+  id: UnitologyWeaponHandHookImplanter
+  name: имплантер цепной руки
+  description: Подозрительный имплант неизвестного происхождения.
+  components:
+  - type: Implanter
+    implant: UnitologyWeaponHandHookImplant
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: UnitologyWeaponHandHookImplant
+  name: имплантер цепной руки
+  description: Подозрительный имплант неизвестного происхождения.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionRetractableItemUnitologyWeaponHandHookImplant
+    whitelist:
+      components:
+      - Hands
+
+- type: entity
+  id: ActionRetractableItemUnitologyWeaponHandHookImplant
+  name: "[color=red]Освободить цепную руку[/color]"
+  description: ТУШКУ МНЕ!!!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 1
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/hand-hook.rsi
+      state: icon
+    event: !type:OnRetractableItemActionEvent
+  - type: RetractableItemAction
+    spawnedPrototype: WeaponHandHook
+    summonSounds:
+      collection: splinter-blade-extend
+    retractSounds:
+      collection: splinter-blade-retract
+
+- type: entity
+  name: цепная рука
+  parent: BaseItem
+  categories: [ HideSpawnMenu ]
+  id: WeaponHandHook
+  description: ЭТО КТО ЗАШЁЛ НА УЖИН?!
+  components:
+    - type: MeleeWeapon
+      attackRate: 2
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 12
+          Structural: 20
+      soundHit:
+        collection: splinter-blade-attack
+      soundNoDamage:
+        collection: splinter-blade-miss
+    - type: Item
+      sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/hand-hook.rsi
+      size: Large
+      shape:
+      - 0,0,3,2
+    - type: AmmoCounter
+    - type: GrapplingGun
+      pullTargetToShooter: true 
+      reelRate: 175
+      cycleSound:
+        path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/hook-sfx/reload_hook.ogg
+      ropeSprite:
+        sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/hand-hook.rsi
+        state: rope
+    - type: Gun
+      soundGunshot: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/hook-sfx/shot_hook.ogg
+      fireRate: 0.5
+    - type: BasicEntityAmmoProvider
+      proto: HandHookProjectile
+      capacity: 1
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/hand-hook.rsi
+      layers:
+        - state: base
+        - state: base-unshaded
+          map: [ "unshaded" ]
+          visible: true
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.TetherVisualsStatus.Key:
+          unshaded:
+            True: { state: base-unshaded }
+            False: { state: base-unshaded-off }
+    - type: UseDelay
+      delay: 2
+    - type: AltFireMelee
+      attackType: Light
+
+- type: entity
+  id: HandHookProjectile
+  name: цепная ладонь
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: EmbeddableProjectile
+      deleteOnRemove: true
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Sprite
+      noRot: false
+      sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/hand-hook.rsi
+      layers:
+        - state: hook
+    - type: Physics
+      bodyType: Dynamic
+      linearDamping: 0
+      angularDamping: 0
+    - type: Projectile
+      deleteOnCollide: false
+      damage:
+        types:
+          Slash: 5
+      soundHit:
+        path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/hook-sfx/hit_hook.ogg
+    - type: GrapplingProjectile
+
+## Пулемёт «Вихрь»
+- type: entity
+  id: WeaponMachineGunWhirl
+  parent: [ BaseWeaponRifle, BaseGunWieldable ]
+  name: пулемёт «Вихрь»
+  description: Точно не украденный пулемёт на основе чертежей от Redline Cybernetik.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/whirl/Smerch.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-0
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/whirl/Smerch.rsi
+    size: Huge
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/whirl/Smerch.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Gun
+    minAngle: 2
+    maxAngle: 7
+    angleIncrease: 1
+    angleDecay: 12
+    fireRate: 8.5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/whirl-sfx/whirl.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  - type: GunWieldBonus
+    minAngle: -1
+    maxAngle: -3
+  - type: GunRequiresWield
+  - type: ChamberMagazineAmmoProvider
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineWhirl
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineWhirl
+        whitelistFailPopup: gun-magazine-whitelist-fail
+        insertSound: /Audio/Weapons/Guns/MagIn/lmg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/lmg_magout.ogg
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeWhirl
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeWhirl
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+
+## КС-23
+- type: entity
+  id: WeaponShotgunKS23
+  parent: [ BaseWeaponShotgun, BaseGunWieldable ]
+  name: КС-23
+  description: Удобно фотографировать врагов в техах.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/ks23/pump.rsi
+    state: icon
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/ks23/pump_inhands_64x.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/ks23/pump.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 1.8
+    soundGunshot:
+      path: /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/ks23-sfx/ks23.ogg
+  - type: GunSpreadModifier
+    spread: 0.7
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - ShellShotgun22MM
+    capacity: 4
+    proto: ShellShotgun22MM
+
+## Проклятый ВАНТ
+- type: entity
+  id: ShieldCursedVANT
+  parent: BaseShield
+  name: проклятый ВАНТ
+  description: Тяжёлый штурмовой щит Круга, что покрыт некро волокнами.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/vant/vant.rsi
+    state: icon
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/vant/vant.rsi
+    heldPrefix: icon
+  - type: ExclusiveHandUse
+    blockedItems:
+    - WeaponLightMachineGunRPL20
+  - type: CursedVant
+    speedModifier: 0.5
+  - type: MeleeWeapon
+    attackRate: 0.2
+    soundHit:
+      collection: MetalBreak
+    damage:
+      types:
+        Blunt: 20
+    angle: 0
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 10
+    stunTime: 0.1
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/vant/vant.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+  - type: Blocking
+    passiveBlockFraction: 0.8
+    activeBlockFraction: 0.8
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+
+## Имплант летального клинка
+- type: entity
+  id: UnitologyLethalBladeImplanter
+  parent: BaseImplantOnlyImplanterSyndi
+  name: имплантер летального клинка
+  description: Имплантер со скрытым боевым клинком Круга.
+  components:
+  - type: Implanter
+    implant: UnitologyLethalBladeImplant
+
+- type: entity
+  id: UnitologyLethalBladeImplant
+  parent: BaseSubdermalImplant
+  name: имплант летального клинка
+  description: Позволяет владельцу выпустить из руки скрытый клинок.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionRetractableUnitologyLethalBlade
+    whitelist:
+      components:
+      - Hands
+
+- type: entity
+  id: ActionRetractableUnitologyLethalBlade
+  name: выпустить летальный клинок
+  description: Выпустить или убрать скрытый клинок.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 1
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/strike-blade.rsi
+      state: icon
+    event: !type:OnRetractableItemActionEvent
+  - type: RetractableItemAction
+    spawnedPrototype: WeaponUnitologyLethalBlade
+    summonSounds:
+      collection: splinter-blade-extend
+    retractSounds:
+      collection: splinter-blade-retract
+
+- type: entity
+  id: WeaponUnitologyLethalBlade
+  parent: BaseItem
+  name: летальный клинок
+  description: Скрытый клинок для быстрых и смертельных ударов.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/strike-blade.rsi
+    state: icon
+  - type: Item
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/melee/strike-blade.rsi
+  - type: MeleeWeapon
+    attackRate: 1
+    damage:
+      types:
+        Slash: 18
+        Structural: 55
+    soundHit:
+      collection: splinter-blade-attack
+    soundNoDamage:
+      collection: splinter-blade-miss
+  - type: GeistLethalStrike
+    damage:
+      types:
+        # GeistLethalStrike adds bonus damage to the blade's regular hit.
+        Slash: 42
+        Structural: 380
+  - type: Reflect
+    reflectProb: 0.15
+    spread: 90
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4

@@ -1,6 +1,7 @@
 using System.Numerics;
 using System.Threading;
 using Content.Server.DoAfter;
+using Content.Server._LuaM.Carrying; // LuaM
 using Content.Server.Resist;
 using Content.Server.Popups;
 using Content.Server.Inventory;
@@ -252,6 +253,14 @@ namespace Content.Server.Carrying
                 _popupSystem.PopupEntity(Loc.GetString("carry-too-heavy"), carried, carrier, Shared.Popups.PopupType.SmallCaution);
                 return;
             }
+
+            // LuaM-start: Seraphim equipment grants immediate carrying.
+            if (HasComp<InstantCarryComponent>(carrier))
+            {
+                Carry(carrier, carried);
+                return;
+            }
+            // LuaM-end
 
             var length = component.PickupDuration // Frontier: removed outer TimeSpan.FromSeconds()
                         * _contests.MassContest(carriedPhysics, carrierPhysics, false, 4f)

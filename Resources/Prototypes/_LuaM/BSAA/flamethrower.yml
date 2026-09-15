@@ -1,0 +1,92 @@
+# SPDX-FileCopyrightText: 2026 LuaMonolith contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: Tag
+  id: FlamethrowerNozzle
+
+- type: Tag
+  id: FlamethrowerBackTank
+
+- type: entity
+  parent: BaseItem
+  id: SyndieFlamethrower
+  name: огнемёт
+  description: Пневматический огнемёт высокого давления.
+  components:
+  - type: Tag
+    tags:
+    - FlamethrowerNozzle
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Basic/syndie_flamethrower.rsi
+    state: icon
+  - type: Item
+    sprite: _LuaM/Objects/Weapons/Guns/Basic/syndie_flamethrower.rsi
+    size: Large
+    shape:
+    - 0,0,4,1
+  - type: ContinuousFlamethrower
+    shotSound:
+      path: /Audio/_LuaM/Weapons/Guns/Gunshots/flamethrower.ogg
+    ambientSound:
+      path: /Audio/_LuaM/Weapons/Guns/Gunshots/flamethrower_effect.ogg
+  - type: PointLight
+    enabled: false
+    color: "#FF4A08"
+    radius: 5
+    energy: 4
+    softness: 1
+    castShadows: false
+  - type: MultiHandedItem
+  - type: Appearance
+  - type: SlotBasedConnectedContainer
+    targetSlot: suitStorage
+    containerWhitelist:
+      tags:
+      - FlamethrowerBackTank
+
+- type: entity
+  parent: ClothingBackpackWaterTank
+  id: ClothingBackpackSyndieFlametank
+  name: огнемётный ранец
+  description: Комбинированный ранец с жидким топливом и встроенным кислородным баллоном.
+  components:
+  - type: Tag
+    tags:
+    - FlamethrowerBackTank
+  - type: FlamethrowerFuelTank
+  - type: Sprite
+    sprite: _LuaM/Objects/Tanks/Flamethrower/syndie_flametank.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    sprite: _LuaM/Objects/Tanks/Flamethrower/syndie_flametank.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+  - type: ItemSlots
+    slots:
+      item:
+        priority: 2
+        whitelist:
+          tags:
+          - FlamethrowerNozzle
+  - type: DrainableSolution
+    solution: tank
+  - type: Spillable
+    solution: tank
+
+- type: entity
+  parent: ClothingBackpackSyndieFlametank
+  id: ClothingBackpackSyndieFlametankFilled
+  suffix: Заполненный
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 1500
+        reagents:
+        - ReagentId: Phlogiston
+          Quantity: 150
+        - ReagentId: Napalm
+          Quantity: 1350

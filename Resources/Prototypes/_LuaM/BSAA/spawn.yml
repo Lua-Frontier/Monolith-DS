@@ -1,0 +1,413 @@
+# Гир наборы спавнов
+- type: startingGear
+  id: BSAALeaderGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBSAA
+    back: ClothingBSAABackpack
+    mask: ClothingMaskBSAA
+    eyes: ClothingEyesBSAA
+    ears: ClothingHeadsetAltAERT
+    neck: BSAALeaderShoulder
+    gloves: ClothingHandsGlovesBSAA
+    outerClothing: BSAALeaderHardSuit
+    shoes: ClothingShoesBootsMagBSAA
+    id: BSAALeaderPDA
+    belt: ClothingBeltBSAA
+    pocket1: BSAAHypo
+    pocket2: DoubleEmergencyOxygenTankFilled
+  storage:
+    back:
+    - MedkitCombatFilled
+    - InjectorCaseStimFilled
+    - InjectorCaseERTFilled
+    - BSAAloadout
+    - DoorRemoteCustom
+    - PinpointerNuclear
+    - CrowbarRed
+    - RCDRecharging
+    - WeaponPulsePistol
+    - EmergencyMedipen
+    - KukriKnife
+    - BoxMRE
+
+- type: startingGear
+  id: BSAAFighterGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBSAA
+    back: ClothingBSAABackpack
+    mask: ClothingMaskBSAA
+    eyes: ClothingEyesBSAA
+    ears: ClothingHeadsetAltAERT
+    gloves: ClothingHandsGlovesBSAA
+    outerClothing: BSAAFighterHardSuit
+    shoes: ClothingShoesBootsMagBSAA
+    id: BSAAFighterPDA
+    belt: ClothingBeltBSAA
+    pocket1: DoubleEmergencyOxygenTankFilled
+  storage:
+    back:
+    - MedkitCombatFilled
+    - InjectorCaseStimFilled
+    - InjectorCaseERTFilled
+    - BSAAloadout
+    - KukriKnife
+    - PinpointerNuclear
+    - CrowbarRed
+    - RCDRecharging
+    - WeaponPulsePistol
+    - EmergencyMedipen
+    - BoxMRE
+
+- type: startingGear
+  id: BSAAMedicGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBSAA
+    back: ClothingBSAABackpack
+    mask: ClothingMaskBSAA
+    eyes: ClothingEyesBSAA
+    ears: ClothingHeadsetAltAERT
+    gloves: ClothingHandsGlovesBSAA
+    outerClothing: BSAAMedicHardSuit
+    shoes: ClothingShoesBootsMagBSAA
+    id: BSAAMedicPDA
+    belt: ClothingBeltBSAAMedicFilled
+    pocket1: BSAAHypo
+    pocket2: DoubleEmergencyOxygenTankFilled
+  storage:
+    back:
+    - MedkitCombatFilled
+    - InjectorCaseERTFilled
+    - InjectorCaseStimFilled
+    - BSAAloadout
+    - KukriKnife
+    - PinpointerNuclear
+    - CrowbarRed
+    - DefibrillatorCompact
+    - WeaponPulsePistol
+    - EmergencyMedipen
+    - BoxMRE
+    - JugTheCircleOmnizine
+    - JugDexPlusSaline
+
+- type: startingGear
+  id: BSAASpecialistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBSAA
+    back: ClothingBSAABackpack
+    mask: ClothingMaskBSAA
+    eyes: ClothingEyesBSAA
+    ears: ClothingHeadsetAltAERT
+    gloves: ClothingHandsGlovesBSAA
+    outerClothing: BSAASpecialistHardSuit
+    shoes: ClothingShoesBootsMagBSAA
+    id: BSAASpecialistPDA
+    belt: ClothingBeltBSAA
+    pocket1: DoubleEmergencyOxygenTankFilled
+  storage:
+    back:
+    - MedkitCombatFilled
+    - InjectorCaseStimFilled
+    - InjectorCaseERTFilled
+    - BSAAloadout
+    - PinpointerNuclear
+    - CrowbarRed
+    - RCDRecharging
+    - WeaponPulsePistol
+    - EmergencyMedipen
+    - BoxMRE
+
+- type: startingGear
+  id: BSAAFlamerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBSAA
+    back: ClothingBSAABackpack
+    mask: ClothingMaskBSAA
+    eyes: ClothingEyesBSAA
+    ears: ClothingHeadsetAltAERT
+    gloves: ClothingHandsGlovesBSAA
+    outerClothing: BSAAFlamerHardSuit
+    shoes: ClothingShoesBootsMagBSAA
+    id: BSAAFlamerPDA
+    suitstorage: ClothingBackpackSyndieFlametankFilled
+    belt: ClothingBeltBSAA
+    pocket1: DoubleEmergencyOxygenTankFilled
+    pocket2: WeaponPulsePistol
+  storage:
+    back:
+    - MedkitCombatFilled
+    - InjectorCaseStimFilled
+    - InjectorCaseERTFilled
+    - BSAAloadout
+    - PinpointerNuclear
+    - CrowbarRed
+    - RCDRecharging
+    - BoxMRE
+    - SyndieFlamethrower
+    - BSAAJugFlame
+
+# Спавн
+- type: entity
+  id: RandomHumanoidSpawnerBSAALeader
+  parent: RandomHumanoidSpawnerERTLeader
+  name: АПБТ лидер
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+      state: l
+    - type: RandomHumanoidSpawner
+      settings: BSAALeader
+
+- type: entity
+  name: лидер АПБТ, spawner
+  id: BSAALeaderSpawner
+  categories: [ HideSpawnMenu ]
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+      state: l
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerBSAALeader
+
+- type: entity
+  id: RandomHumanoidSpawnerBSAAFighter
+  parent: RandomHumanoidSpawnerERTLeader
+  name: АПБТ боец
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+      state: b
+    - type: RandomHumanoidSpawner
+      settings: BSAAFighter
+
+- type: entity
+  name: боец АПБТ, spawner
+  categories: [ HideSpawnMenu ]
+  id: BSAAFighterSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+      state: b
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerBSAAFighter
+
+- type: entity
+  id: RandomHumanoidSpawnerBSAAMedic
+  parent: RandomHumanoidSpawnerERTLeader
+  name: АПБТ медик
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+      state: m
+    - type: RandomHumanoidSpawner
+      settings: BSAAMedic
+
+- type: entity
+  name: медик АПБТ, spawner
+  id: BSAAMedicSpawner
+  parent: MarkerBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+      state: m
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerBSAAMedic
+
+- type: entity
+  id: RandomHumanoidSpawnerBSAASpecialist
+  parent: RandomHumanoidSpawnerERTLeader
+  name: АПБТ специалист
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+    state: s
+  - type: RandomHumanoidSpawner
+    settings: BSAASpecialist
+
+- type: entity
+  name: специалист АПБТ, spawner
+  id: BSAASpecialistSpawner
+  parent: MarkerBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+      state: s
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerBSAASpecialist
+
+- type: entity
+  id: RandomHumanoidSpawnerBSAAFlamer
+  parent: RandomHumanoidSpawnerERTLeader
+  name: АПБТ флеймер
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+    state: f
+  - type: RandomHumanoidSpawner
+    settings: BSAAFlamer
+
+- type: entity
+  name: флеймер АПБТ, spawner
+  id: BSAAFlamerSpawner
+  parent: MarkerBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _LuaM/Necromorfs/BSAA/misc/misc.rsi
+      state: f
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerBSAAFlamer
+# Настройки спавна
+- type: randomHumanoidSettings
+  id: BSAALeader
+  parent: EventHumanoidMindShielded
+  components:
+    - type: GhostRole
+      name: Лидер АПБТ
+      description: ghost-role-information-cburn-leader-description
+      rules: ghost-role-information-nonantagonist-rules
+      category: ghost-role-information-centcomm-category
+      raffle:
+        settings: short
+      job: BSAALeaderJob
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirstERTLeader
+      - NamesLastERT
+      nameFormat: name-format-ert
+    - type: Loadout
+      prototypes: [ BSAALeaderGear ]
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+
+- type: randomHumanoidSettings
+  id: BSAAFighter
+  parent: EventHumanoidMindShielded
+  components:
+    - type: GhostRole
+      name: Боец АПБТ
+      description: ghost-role-information-cburn-agent-description
+      rules: ghost-role-information-nonantagonist-rules
+      category: ghost-role-information-centcomm-category
+      raffle:
+        settings: short
+      job: BSAAFighterJob
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirstERT
+      - NamesLastERT
+      nameFormat: name-format-ert
+    - type: Loadout
+      prototypes: [ BSAAFighterGear ]
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+
+- type: randomHumanoidSettings
+  id: BSAAMedic
+  parent: EventHumanoidMindShielded
+  components:
+    - type: GhostRole
+      name: Медик АПБТ
+      description: ghost-role-information-cburn-agent-description
+      rules: ghost-role-information-nonantagonist-rules
+      category: ghost-role-information-centcomm-category
+      raffle:
+        settings: short
+      job: BSAAMedicJob
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirstERT
+      - NamesLastERT
+      nameFormat: name-format-ert
+    - type: Loadout
+      prototypes: [ BSAAMedicGear ]
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+
+- type: randomHumanoidSettings
+  id: BSAASpecialist
+  parent: EventHumanoidMindShielded
+  components:
+  - type: GhostRole
+    name: Специалист АПБТ
+    description: Элита НТ, живой труп некроморфа, которого сами некроморфы не видят.
+    rules: ghost-role-information-nonantagonist-rules
+    category: ghost-role-information-centcomm-category
+    raffle:
+      settings: short
+    job: BSAASpecialistJob
+  - type: RandomMetadata
+    nameSegments:
+    - NamesFirstBSAASpec
+    - NamesLastERT
+    nameFormat: name-format-ert
+  - type: AutoImplant
+    implants:
+    - BSAAPhaseBladeImplant
+    - MindShieldImplant
+    - TrackingImplant
+  - type: Loadout
+    prototypes: [ BSAASpecialistGear ]
+
+- type: randomHumanoidSettings
+  id: BSAAFlamer
+  parent: EventHumanoidMindShielded
+  components:
+  - type: GhostRole
+    name: Флеймер АПБТ
+    description: Специалист по поджогу 5 точки врагов.
+    rules: ghost-role-information-nonantagonist-rules
+    category: ghost-role-information-centcomm-category
+    raffle:
+      settings: short
+    job: BSAAFlamerJob
+  - type: RandomMetadata
+    nameSegments:
+    - NamesFirstBSAAFlamer
+    - NamesLastERT
+    nameFormat: name-format-ert
+  - type: WeaponRetention
+  - type: Loadout
+    prototypes: [ BSAAFlamerGear ]
+  - type: AutoImplant
+    implants:
+    - MindShieldImplant
+    - TrackingImplant
+
+# Названия ролей
+
+- type: localizedDataset
+  id: NamesFirstBSAASpec
+  values:
+    prefix: names-bsaa-first-spec-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NamesFirstBSAAFlamer
+  values:
+    prefix: names-bsaa-first-flamer-dataset-
+    count: 1

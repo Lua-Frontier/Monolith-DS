@@ -3,6 +3,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Sticky.Components;
+using Content.Shared._LuaM.Sticky; // LuaM
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
@@ -68,7 +69,8 @@ public sealed partial class StickySystem : EntitySystem
 
         // check whitelist and blacklist
         if (_whitelist.IsWhitelistFail(comp.Whitelist, target) ||
-            _whitelist.IsBlacklistPass(comp.Blacklist, target))
+            _whitelist.IsBlacklistPass(comp.Blacklist, target) &&
+            !HasComp<StickySurfaceOverrideComponent>(target)) // LuaM
             return false;
 
         var attemptEv = new AttemptEntityStickEvent(target, user);

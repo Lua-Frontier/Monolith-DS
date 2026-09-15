@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2026 LuaMonolith contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: fpvIcon
+  id: FPVIcon
+  locationPreference: Right
+  isShaded: true
+  icon:
+    sprite: /Textures/_LuaM/Interface/Misc/drone.rsi
+    state: controling

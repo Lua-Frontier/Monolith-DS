@@ -1,0 +1,50 @@
+- type: Tag
+  id: MagazineZastabaNosle
+
+### Тэги РПЛ20
+- type: Tag
+  id: MagazineRPL20
+
+- type: Tag
+  id: BulletRPL20
+
+### Тэги АШ12
+- type: Tag
+  id: BulletASh12
+
+- type: Tag
+  id: MagazineASh12
+
+### Тэги СКАРАБ
+- type: Tag
+  id: BulletRifleSCARAB
+
+- type: Tag
+  id: MagazineRifleSCARAB
+
+### Тэги VSK
+- type: Tag
+  id: MagazineVSK
+
+- type: Tag
+  id: BulletVSK
+
+### Тэг VAL
+
+- type: Tag
+  id: MagazineLightRifleAsVal
+
+### Тэги пулемёта «Вихрь»
+- type: Tag
+  id: MagazineWhirl
+
+- type: Tag
+  id: CartridgeWhirl
+
+### Тэги КС-23
+- type: Tag
+  id: ShellShotgun22MM
+
+### Радиоуправляемая машинка
+- type: Tag
+  id: ToyCarCamera

@@ -1,0 +1,13 @@
+circle-frontier-war-circle-arrival = An unidentified shuttle has entered the Frontier sector. Circle activity has been detected on local channels.
+circle-frontier-war-obelisk-awakened = The necro-obelisk has awakened. Battlefield coordinates are now visible to navigation systems.
+circle-frontier-war-point-captured = Point {$point} has been captured by {$side}.
+circle-frontier-war-side-circle = the Circle
+circle-frontier-war-side-crew = the crew
+circle-frontier-war-enter-verb = Enter the battlefield
+circle-frontier-war-enter-warning = The battlefield cannot be left until one side is completely defeated. Forbidden equipment will be destroyed.
+circle-frontier-war-forced-awakening = The obelisk has forcibly awakened half of the non-believers.
+circle-frontier-war-collapse = The excavated tunnels have collapsed. People inside them were not buried.
+circle-frontier-war-crew-victory = The crew destroyed the obelisk and the remaining Circle squad.
+circle-frontier-war-circle-victory = The Circle exhausted the crew reinforcements and eliminated their fighters.
+circle-frontier-war-dreadnought-offer = Your side is losing. You may become a dreadnought; use the new action to accept.
+circle-frontier-war-dreadnought-accepted = You are now the dreadnought. You have nine minutes left to live.
