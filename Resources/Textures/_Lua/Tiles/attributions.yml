@@ -1,0 +1,4 @@
+- files: ["ne.png", "nw.png", "se.png", "sw.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by fox76055 (github) for LuaWorld" # Отдадим должное Еврею за эти великие укреплённые полы...
+  source: "https://github.com/Lua-Frontier/sector-frontier-14"

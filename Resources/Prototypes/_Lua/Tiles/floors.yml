@@ -1,0 +1,31 @@
+- type: tile
+  id: HullReinforcedCornerNE
+  parent: FloorHullReinforced
+  name: tiles-hull-reinforced-corner-ne
+  sprite: /Textures/_Lua/Tiles/hull_reinforced/ne.png
+  vertices: ["1, 0", "1, 1", "0, 1"]
+  baseTurf: PlatingCornerNE
+
+- type: tile
+  id: HullReinforcedCornerNW
+  parent: FloorHullReinforced
+  name: tiles-hull-reinforced-corner-nw
+  sprite: /Textures/_Lua/Tiles/hull_reinforced/nw.png
+  vertices: ["0, 0", "1, 1", "0, 1"]
+  baseTurf: PlatingCornerNW
+
+- type: tile
+  id: HullReinforcedCornerSE
+  parent: FloorHullReinforced
+  name: tiles-hull-reinforced-corner-se
+  sprite: /Textures/_Lua/Tiles/hull_reinforced/se.png
+  vertices: ["0, 0", "1, 0", "1, 1"]
+  baseTurf: PlatingCornerSE
+
+- type: tile
+  id: HullReinforcedCornerSW
+  parent: FloorHullReinforced
+  name: tiles-hull-reinforced-corner-sw
+  sprite: /Textures/_Lua/Tiles/hull_reinforced/sw.png
+  vertices: ["0, 0", "1, 0", "0, 1"]
+  baseTurf: PlatingCornerSW
