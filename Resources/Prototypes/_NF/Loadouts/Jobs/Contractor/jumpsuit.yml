@@ -744,6 +744,42 @@
     jumpsuit: ClothingUniformJumpskirtLawyerGood
 
 - type: loadout
+  id: ContractorClothingUniformJumpsuitRuggedCostume
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 150
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRuggedCostume
+
+- type: loadout
+  id: ContractorClothingUniformJumpsuitExpensiveCostume
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 450 
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitExpensiveCostume
+
+- type: loadout
+  id: ContractorClothingUniformJumpsuitGoodClownCostume
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 150
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitGoodClownCostume
+
+- type: loadout
+  id: ContractorClothingUniformJumpsuitEmeraldCostume
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 450 
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitEmeraldCostume
+
+- type: loadout
   id: ContractorClothingUniformJumpskirtBlackElegantDress
   name: black elegant dress
   effects:
@@ -1788,3 +1824,4 @@
   price: 100 # Mono # LuaM: 0 > 100
   equipment:
     jumpsuit: UniformJabroni
+

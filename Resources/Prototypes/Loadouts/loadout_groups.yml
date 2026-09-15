@@ -268,7 +268,7 @@
 - type: loadoutGroup
   id: ChefJumpsuit
   name: loadout-group-chef-jumpsuit
-  loadouts:
+  loadouts: 
   - ChefJumpsuit
   - ChefJumpskirt
 
