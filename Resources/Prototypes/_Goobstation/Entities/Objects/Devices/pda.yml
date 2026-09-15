@@ -43,6 +43,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - LogProbeCartridge
     - MedTekCartridge
