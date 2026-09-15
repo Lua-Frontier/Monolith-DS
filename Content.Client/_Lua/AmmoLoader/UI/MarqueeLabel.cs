@@ -1,9 +1,6 @@
-// LuaCorp - This file is licensed under AGPLv3
-// Copyright (c) 2026 LuaCorp Contributors
-// See AGPLv3.txt for details.
-
 using System;
 using System.Numerics;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
@@ -15,10 +12,26 @@ public sealed class MarqueeLabel : Control
     private const float ScrollSpeedPx = 28f;
     private const float EndPauseSeconds = 1.25f;
     private const float GapPx = 32f;
+    private const float StartPauseSeconds = 0.35f;
     private readonly Label _label;
     private float _offset;
     private float _pauseRemaining;
     private bool _scrollingForward = true;
+    private bool _scrollEnabled = true;
+    public bool ScrollEnabled
+    {
+        get => _scrollEnabled;
+        set
+        {
+            if (_scrollEnabled == value)
+                return;
+
+            _scrollEnabled = value;
+            ResetScroll();
+            if (value)
+                _pauseRemaining = StartPauseSeconds;
+        }
+    }
 
     public string? Text
     {
@@ -35,6 +48,12 @@ public sealed class MarqueeLabel : Control
     {
         get => _label.FontColorOverride;
         set => _label.FontColorOverride = value;
+    }
+
+    public Font? FontOverride
+    {
+        get => _label.FontOverride;
+        set => _label.FontOverride = value;
     }
 
     public MarqueeLabel()
@@ -78,6 +97,8 @@ public sealed class MarqueeLabel : Control
     protected override void FrameUpdate(FrameEventArgs args)
     {
         base.FrameUpdate(args);
+        if (!_scrollEnabled)
+            return;
         var avail = Size.X;
         var textWidth = _label.DesiredSize.X;
         if (textWidth <= avail + 0.5f)

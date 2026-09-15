@@ -1,9 +1,6 @@
-using Content.Client.UserInterface.Controls;
-using Content.Client.VendingMachines.UI;
+using Content.Client._Lua.VendingMachines; // LuaM
 using Content.Shared.VendingMachines;
 using Robust.Client.UserInterface;
-using Robust.Shared.Input;
-using System.Linq;
 using Robust.Client.GameObjects;
 using Content.Shared._NF.Bank.Components; // Frontier
 using Content.Shared.Containers.ItemSlots; // Frontier
@@ -14,7 +11,7 @@ namespace Content.Client.VendingMachines
     public sealed class VendingMachineBoundUserInterface : BoundUserInterface
     {
         [ViewVariables]
-        private VendingMachineMenu? _menu;
+        private LuaVendingMachineWindow? _menu; // LuaM: VendingMachineMenu > LuaVendingMachineWindow
 
         [ViewVariables]
         private List<VendingMachineInventoryEntry> _cachedInventory = new();
@@ -49,7 +46,7 @@ namespace Content.Client.VendingMachines
                 _mod = market.Mod;
             // End Frontier
 
-            _menu = this.CreateWindowCenteredLeft<VendingMachineMenu>();
+            _menu = this.CreateWindowCenteredLeft<LuaVendingMachineWindow>(); // LuaM: VendingMachineMenu > LuaVendingMachineWindow
             // Frontier: no exceptions
             if (EntMan.TryGetComponent(Owner, out MetaDataComponent? meta))
                 _menu.Title = meta.EntityName;
@@ -62,6 +59,9 @@ namespace Content.Client.VendingMachines
 
         public void Refresh()
         {
+            if (_menu == null || !EntMan.HasComponent<VendingMachineComponent>(Owner)) // LuaM
+                return; // LuaM
+
             var system = EntMan.System<VendingMachineSystem>();
             _cachedInventory = system.GetAllInventory(Owner);
 
@@ -86,26 +86,13 @@ namespace Content.Client.VendingMachines
             }
             // End Frontier
 
-            _menu?.Populate(_cachedInventory, _mod, _balance, cashSlotValue, _requiresCash); // Frontier: add _balance, mono: add _requiresCash
+            var enabled = vendingMachine is { Ejecting: false }; // LuaM
+            _menu?.Populate(_cachedInventory, enabled, _mod, _balance, cashSlotValue, _requiresCash); // Frontier: add _balance, mono: add _requiresCash // LuaM: add enabled
         }
 
-        private void OnItemSelected(GUIBoundKeyEventArgs args, ListData data)
+        private void OnItemSelected(InventoryType type, string id) // LuaM: GUIBoundKeyEventArgs, ListData > InventoryType, string
         {
-            if (args.Function != EngineKeyFunctions.UIClick)
-                return;
-
-            if (data is not VendorItemsListData { ItemIndex: var itemIndex })
-                return;
-
-            if (_cachedInventory.Count == 0)
-                return;
-
-            var selectedItem = _cachedInventory.ElementAtOrDefault(itemIndex);
-
-            if (selectedItem == null)
-                return;
-
-            SendMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
+            SendMessage(new VendingMachineEjectMessage(type, id));
         }
 
         protected override void Dispose(bool disposing)
