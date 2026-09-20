@@ -1,5 +1,5 @@
-ent-NFMagnetBoxConstruction = строительный ящик
-    .desc = Большой ящик для хранения строительных материалов
+ent-NFMagnetBoxConstruction = ящик материалов
+    .desc = Большой ящик для хранения материалов
 ent-NFMagnetBoxRubbish = мусорный контейнер
     .desc = Большой контейнер для мусора. Пахнет большим городом
 ent-NFMagnetBoxOre = ящик для руды
