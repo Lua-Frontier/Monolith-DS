@@ -10,6 +10,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Item; // Frontier
 using Content.Shared.Verbs; // Frontier
+using Robust.Shared.Audio.Systems; // LuaM
 
 namespace Content.Shared.Storage.EntitySystems;
 
@@ -26,6 +27,8 @@ public sealed partial class MagnetPickupSystem : EntitySystem
     [Dependency] private SharedStorageSystem _storage = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private SharedItemSystem _item = default!; // Frontier
+    [Dependency] private SharedAppearanceSystem _appearance = default!; // LuaM
+    [Dependency] private SharedAudioSystem _audio = default!; // LuaM
 
 
     private static readonly TimeSpan ScanDelay = TimeSpan.FromSeconds(1);
@@ -45,6 +48,7 @@ public sealed partial class MagnetPickupSystem : EntitySystem
     private void OnMagnetMapInit(EntityUid uid, MagnetPickupComponent component, MapInitEvent args)
     {
         component.NextScan = _timing.CurTime;
+        _appearance.SetData(uid, MagnetPickupVisuals.MagnetEnabled, component.MagnetEnabled); // LuaM
     }
 
 
@@ -65,7 +69,7 @@ public sealed partial class MagnetPickupSystem : EntitySystem
         {
             Act = () =>
             {
-                ToggleMagnet(uid, component);
+                ToggleMagnet(uid, component, args.User); // LuaM: pass user for sound prediction
             },
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
             Text = Loc.GetString("magnet-pickup-component-toggle-verb"),
@@ -89,13 +93,21 @@ public sealed partial class MagnetPickupSystem : EntitySystem
     }
 
     //Toggles the magnet on the ore bag/box
-    public void ToggleMagnet(EntityUid uid, MagnetPickupComponent comp)
+    public void ToggleMagnet(EntityUid uid, MagnetPickupComponent comp, EntityUid? user = null) // LuaM: pass user for sound
     {
         // Magnet run by other means (e.g. toggles)
         if (!comp.MagnetCanBeEnabled)
             return;
 
         comp.MagnetEnabled = !comp.MagnetEnabled;
+        // LuaM-start: Update appearance and play sparks sound
+        _appearance.SetData(uid, MagnetPickupVisuals.MagnetEnabled, comp.MagnetEnabled);
+
+        if (comp.SoundToggle != null)
+        {
+            _audio.PlayPredicted(comp.SoundToggle, uid, user);
+        }
+        // LuaM-end
         Dirty(uid, comp);
     }
     // End Frontier: togglable magnets

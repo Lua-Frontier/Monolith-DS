@@ -44,6 +44,9 @@
     - state: orebox-top
       map: [ top ]
       visible: true
+    - state: magnet-off # LuaM
+      map: [ magnet ]
+      shader: unshaded
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -51,6 +54,15 @@
         top:
           True: { visible: false }
           False: { visible: true }
+      # LuaM-start:
+        magnet:
+          True: { visible: false }
+          False: { visible: true }
+      enum.Content.Shared.Storage.Components.MagnetPickupVisuals.MagnetEnabled:
+        magnet:
+          True: { state: magnet-on }
+          False: { state: magnet-off }
+      # LuaM-end
   - type: Storage
     grid:
     - 0,0,19,9 # DeltaV: Expanded to ore bag of holding storage
