@@ -26,6 +26,9 @@
       - id: SpaceCash10
     sound:
       path: /Audio/Machines/windoor_open.ogg
+  - type: Tag
+    tags:
+    - ConstructionLoot # LuaM
 
 # ROGUE SILICON NPC LOOT
 ## TIER 0

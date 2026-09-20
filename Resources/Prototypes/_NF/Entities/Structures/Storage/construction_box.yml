@@ -57,6 +57,7 @@
       - RodMetal1
       - Sheet
       - CableCoil
+      - ConstructionLoot # LuaM
       components:
       - ConstructionMaterials
       - ResearchDisk # Mono
