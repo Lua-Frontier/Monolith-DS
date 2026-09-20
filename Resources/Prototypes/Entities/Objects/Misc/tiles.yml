@@ -43,6 +43,9 @@
   - type: GuideHelp
     guides:
     - ExpandingRepairingStation
+  - type: Tag
+    tags:
+    - ConstructionLoot # LuaM
 
 - type: entity
   name: steel dark checker tile
