@@ -19,7 +19,7 @@
   hideWarp: true
   addComponents:
   - type: IFF
-    color: "#C83737"
+    color: "#FF0040FF" # LuaM #C83737 > #FF0040FF
     flags: [HideLabel]
     readOnly: false
   - type: SyndicateFOB # For pinpointer
