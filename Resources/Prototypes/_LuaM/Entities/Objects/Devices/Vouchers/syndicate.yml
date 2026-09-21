@@ -1,0 +1,144 @@
+# Beatle
+- type: entity
+  parent: BaseShipLPC
+  id: ShipVoucherBeatle
+  name: Syndicate Beatle LPC
+  description: A small card that contains the data for the procurement of a Beatle-class medium vessel.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
+    layers:
+    - state: icon
+    - state: screen
+      color: "#eb0023"
+    - state: screen2
+      color: "#eb0023"
+      shader: unshaded
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: Syndicate
+    companyName: Syndicate
+    vessels:
+    - Beatle
+
+
+# Hunter
+- type: entity
+  parent: BaseShipLPC
+  id: ShipVoucherHunter
+  name: Syndicate Hunter LPC
+  description: A small card that contains the data for the procurement of a Hunter-class vessel.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
+    layers:
+    - state: icon
+    - state: screen
+      color: "#eb0023"
+    - state: screen6
+      color: "#eb0023"
+      shader: unshaded
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: Syndicate
+    companyName: Syndicate
+    vessels:
+    - Hunter
+
+
+# Hydra
+- type: entity
+  parent: BaseShipLPC
+  id: ShipVoucherHydra
+  name: Syndicate Hydra LPC
+  description: A small card that contains the data for the procurement of a Hydra-class medium vessel.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
+    layers:
+    - state: icon
+    - state: screen
+      color: "#eb0023"
+    - state: screen7
+      color: "#eb0023"
+      shader: unshaded
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: Syndicate
+    companyName: Syndicate
+    vessels:
+    - Hydra
+
+
+# Infiltrator
+- type: entity
+  parent: BaseShipLPC
+  id: ShipVoucherInfiltrator
+  name: Syndicate Infiltrator LPC
+  description: A small card that contains the data for the procurement of an Infiltrator-class large vessel.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
+    layers:
+    - state: icon_capital
+    - state: screen
+      color: "#eb0023"
+    - state: screen3
+      color: "#eb0023"
+      shader: unshaded
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: Syndicate
+    companyName: Syndicate
+    vessels:
+    - Infiltrator
+
+
+# Talon
+- type: entity
+  parent: BaseShipLPC
+  id: ShipVoucherTalon
+  name: Syndicate Talon LPC
+  description: A small card that contains the data for the procurement of a Talon-class vessel.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
+    layers:
+    - state: icon
+    - state: screen
+      color: "#eb0023"
+    - state: screen8
+      color: "#eb0023"
+      shader: unshaded
+  - type: ShipyardVoucher
+    destroyOnEmpty: true
+    consoleType: Syndicate
+    companyName: Syndicate
+    vessels:
+    - Talon
+
+
+# Random Syndicate voucher spawner
+- type: entity
+  id: ShipVoucherSyndicateRandom
+  name: random Syndicate LPC spawner
+  description: Spawns a random Syndicate ship voucher.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
+    layers:
+    - state: icon
+    - state: screen
+      color: "#eb0023"
+    - state: screen5
+      color: "#eb0023"
+      shader: unshaded
+  - type: RandomSpawner
+    offset: 0
+    deleteSpawnerAfterSpawn: true
+    prototypes:
+    - ShipVoucherBeatle
+    - ShipVoucherHunter
+    - ShipVoucherHydra
+    - ShipVoucherInfiltrator
+    - ShipVoucherTalon
