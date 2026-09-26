@@ -2,7 +2,7 @@
   id: TsfBasicGuns
   name: research-technology-tsfmc-guns
   entityIcon: WeaponRifleLecter
-  discipline: TsfmcWeaponry
+  discipline: TsfmcEquipment # LuaM TsfmcWeaponry > TsfmcEquipment
   tier: 1
   cost: 25000
   recipeUnlocks:
@@ -11,15 +11,15 @@
   - WeaponSubMachineGunDrozdTSF
   - WeaponRifleMR3CTSF
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  - MercArmementSimple # LuaM
-  position: 8, 13 # LuaM: 12, 2 > 8, 13
+  # - UniversalMaterialResearchT1 # Commented by LuaM
+  - TsfForensics # LuaM
+  position: 6, 8 # LuaM: 12, 2 > 6, 8
 
 - type: technology
   id: TsfAdvancedWeapons
   name: research-technology-tsfmc-advanced-weapons
   entityIcon: WeaponRifleAnnie
-  discipline: TsfmcWeaponry
+  discipline: TsfmcEquipment # LuaM TsfmcWeaponry > TsfmcEquipment
   tier: 2
   cost: 50000 # LuaM: 30000 > 50000
   recipeUnlocks:
@@ -34,14 +34,14 @@
   - AmmoBox57x28mmBigFMJ
   technologyPrerequisites:
   - TsfBasicGuns
-  - UniversalMaterialResearchT2
-  position: 8, 10 # LuaM: 12, 8 > 8, 10
+  # - UniversalMaterialResearchT2 # Commented by LuaM
+  position: 5, 9 # LuaM: 12, 8 > 5, 9
 
 - type: technology
   id: TsfSuperWeapons
   name: research-technology-tsfmc-super-weapons
   entityIcon: WeaponRifleXlr556
-  discipline: TsfmcWeaponry
+  discipline: TsfmcEquipment # LuaM TsfmcWeaponry > TsfmcEquipment
   tier: 3
   cost: 75000 # LuaM: 30000 > 75000
   recipeUnlocks:
@@ -57,5 +57,5 @@
   - AmmoBoxShenzhenBig
   technologyPrerequisites:
   - TsfAdvancedWeapons
-  - UniversalMaterialResearchT3
-  position: 8, 7 # LuaM: 12, 13 > 8, 7
+  # - UniversalMaterialResearchT3 # Commented by LuaM
+  position: 4, 10 # LuaM: 12, 13 > 4, 10

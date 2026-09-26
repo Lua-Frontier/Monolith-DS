@@ -37,7 +37,7 @@
 #  - ClothingUniformRandomPunkTanktopShorts # Commented by LuaM
 #  - ClothingUniformRandomPunkCroptop # Commented by LuaM
 #  - ClothingUniformRandomPunkCroptopShorts # Commented by LuaM
-#  - ClothingOuterCoatLettermanRandomized # Commented by LuaM 
+#  - ClothingOuterCoatLettermanRandomized # Commented by LuaM
 #  - ClothingOuterCoatBomberRandomized # Commented by LuaM
   technologyPrerequisites:
   - AdvancedRiotControl
@@ -55,9 +55,11 @@
   recipeUnlocks:
   - ClothingShoesBootsMagSecurity
   - ClothingShoesBootsMagMercenary
-  technologyPrerequisites:
-  - MagnetsTech
-#  - AdvancedParts # Commented by LuaM
+# LuaM-commented-start:
+#   technologyPrerequisites:
+#   - MagnetsTech
+#   - AdvancedParts
+# LuaM-commented-end
   position: 4, 13 # LuaM: -3, -1 > 4, 13
 
 - type: technology
@@ -72,7 +74,7 @@
   - ClothingOuterHardsuitPrivateSecurity
   technologyPrerequisites:
   - MagnetsTechCombat # LuaM: HardsuitsSpecialized > MagnetsTechCombat
-  - HardsuitsAdvanced
+  # - HardsuitsAdvanced # Commented by LuaM
   - ArmorAdvanced # LuaM
   position: 4, 10 # LuaM: 2, 8 > 4, 10
 
@@ -124,5 +126,5 @@
   - BlueprintClothingOuterHardsuitScaf
   technologyPrerequisites:
   - HardsuitsArmored
-  - SuperParts
+  # - SuperParts # Commented by LuaM
   position: 4, 7 # LuaM: 3, 7 > 4, 7

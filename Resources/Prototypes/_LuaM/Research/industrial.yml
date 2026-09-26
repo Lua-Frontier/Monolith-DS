@@ -10,10 +10,10 @@
   - GasDepositLocator
   technologyPrerequisites:
   - AtmosphericTech
-  position: 12, 9
+  position: 13, 9
 
 # Tier 2
-- type: technology 
+- type: technology
   id: CrateBluespaceTechnology
   name: research-technology-crate-bluespace
   entityIcon: CrateBlueSpace
@@ -39,5 +39,5 @@
   - SmallBluespaceAirTank
   technologyPrerequisites:
   - HardsuitsAdvanced
-  - AdvancedAtmospherics
-  position: 10, 5
+  - AdvancedPersonalPropulsion
+  position: 9, 7

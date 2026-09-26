@@ -2,7 +2,7 @@
   id: RogueEsword
   name: research-technology-rogue-energy-weapon
   entityIcon: EnergySword
-  discipline: RogueWeaponry
+  discipline: RogueEquipment # LuaM RogueWeaponry > RogueEquipment
   tier: 3
   cost: 30000 # LuaM: 25000 > 30000
   recipeUnlocks:
@@ -10,31 +10,28 @@
   - EnergySwordRogue
   - EnergyDaggerRogue
   technologyPrerequisites:
-  - UniversalMaterialResearchT2
-# LuaM-start:
-  - RogueAdvancedGuns
-  - AdvancedRiotControl
-# LuaM-end.
-  position: 10, 10 # LuaM: 12, 9 > 10, 10
+  # - UniversalMaterialResearchT2 # Commented by LuaM
+  - RogueAdvancedGuns # LuaM
+  position: 3, 6 # LuaM: 12, 9 > 3, 6
 
 - type: technology
   id: HFSwordTech
   name: research-technology-rogue-hf-sword
   entityIcon: WeaponVT7
-  discipline: RogueWeaponry
+  discipline: RogueEquipment # LuaM RogueWeaponry > RogueEquipment
   tier: 3
   cost: 45000
   recipeUnlocks:
   - HFSwordVT7
   technologyPrerequisites:
   - RogueEsword
-  position: 11, 10 # LuaM: 12, 14 > 11, 10
+  position: 2, 5 # LuaM: 12, 14 > 2, 5
 
 - type: technology
   id: RogueBasicGuns
   name: research-technology-rogue-basic-guns
   entityIcon: WeaponSubMachineGunC20r
-  discipline: RogueWeaponry
+  discipline: RogueEquipment # LuaM RogueWeaponry > RogueEquipment
   tier: 1
   cost: 25000 # LuaM: 15000 > 25000
   recipeUnlocks:
@@ -44,17 +41,17 @@
   - WeaponShotgunSultanPulsar
   - PrintableDirtyBomb
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  - MercArmementSimple # LuaM
-  position: 8, 13 # LuaM: 12, 2 > 8, 13
+  # - UniversalMaterialResearchT1 # Commented by LuaM
+  - RogueBasicEquipment # LuaM
+  position: 5, 6 # LuaM: 12, 2 > 5, 6
 
 - type: technology
   id: RogueAdvancedGuns
   name: research-technology-rogue-advanced-guns
   entityIcon: WeaponRifleM90
-  discipline: RogueWeaponry
+  discipline: RogueEquipment # LuaM RogueWeaponry > RogueEquipment
   tier: 2
-  cost: 50000 # LuaM: 55000 > 50000
+  cost: 55000
   recipeUnlocks:
   - WeaponSubMachineGunWt550Rogue
   - WeaponSubMachineGunAtreidesRogue
@@ -63,14 +60,14 @@
   - WeaponLauncherPanzeroRogue
   technologyPrerequisites:
   - RogueBasicGuns
-  - UniversalMaterialResearchT2
-  position: 8, 10 # LuaM: 12, 8 > 8, 10
+  # - UniversalMaterialResearchT2 # Commented by LuaM
+  position: 4, 5 # LuaM: 12, 8 > 4, 5
 
 - type: technology
   id: RogueHeavyWeapons
   name: research-technology-rogue-heavy-weapons
   entityIcon: WeaponLightMachineGunL6
-  discipline: RogueWeaponry
+  discipline: RogueEquipment # LuaM RogueWeaponry > RogueEquipment
   tier: 3
   cost: 75000
   recipeUnlocks:
@@ -87,14 +84,14 @@
   - AmmoBox10Phz # for basilisk
   technologyPrerequisites:
   - RogueAdvancedGuns
-  - UniversalMaterialResearchT3
-  position: 8, 7 # LuaM: 12, 13 > 8, 7
+  # - UniversalMaterialResearchT3 # Commented by LuaM
+  position: 4, 4 # LuaM: 12, 13 > 4, 4
 
 - type: technology
   id: RogueSubsonic
   name: research-technology-rogue-subsonic
   entityIcon: WeaponSubMachineGunMla73
-  discipline: RogueWeaponry
+  discipline: RogueEquipment # LuaM RogueWeaponry > RogueEquipment
   tier: 2
   cost: 35000
   recipeUnlocks:
@@ -108,4 +105,4 @@
   - AmmoBox635x40mmCaselessBig
   technologyPrerequisites:
   - RogueAdvancedGuns
-  position: 6, 10 # LuaM: 13, 8 > 6, 10
+  position: 3, 4 # LuaM: 13, 8 > 3, 4

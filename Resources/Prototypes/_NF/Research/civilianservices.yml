@@ -17,8 +17,8 @@
   - ServiceSelectiveDropper # Mono
   - KitchenAssemblerMachineCircuitboard # Mono
   - ElectricRangeMachineCircuitboard # Mono
-  technologyPrerequisites:
-  - BasicParts
+  # technologyPrerequisites: # Commented by LuaM
+  # - BasicParts
   position: 3, 13 # LuaM: -3, -2 > 3, 13
 
 - type: technology
@@ -48,8 +48,8 @@
   - NFPouchCaptain
   - NFPouchCargo
   - MedicalPouch # LuaM add
-  technologyPrerequisites:
-  - BasicParts
+  # technologyPrerequisites: # Commented by LuaM
+  # - BasicParts
   position: 12, 13 # LuaM: 3, -3 > 12, 13
 
 # Tier 2
@@ -86,8 +86,8 @@
   - BiogeneratorMachineCircuitboard
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
-  technologyPrerequisites:
-  - AdvancedParts
+  # technologyPrerequisites: # Commented by LuaM
+  # - AdvancedParts
   position: 8, 12 # LuaM: -2, 10 > 8, 12
 
 - type: technology
@@ -100,9 +100,9 @@
   recipeUnlocks:
   - JetpackVoid
   technologyPrerequisites:
-  - Shuttlecraft
-  - HardsuitsSpecialized # LuaM
-  position: 7, 9 # LuaM: -4, 7 > 7, 9
+  # - Shuttlecraft # Commented by LuaM
+  - AdvancedAtmospherics # LuaM
+  position: 10, 8 # LuaM: -4, 7 > 10, 8
 
 # Mono edit - research consolidation
 # - type: technology

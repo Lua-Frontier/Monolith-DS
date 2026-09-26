@@ -14,13 +14,13 @@
   entityIcon: ArmorPlateBlunt_Slash
   discipline: FactionUniversal
   tier: 1
-  cost: 10000
+  cost: 15000 # LuaM 10000 > 15000
   recipeUnlocks:
   - ArmorPlateBlunt_Slash
   - ArmorPlatePierce
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 10, 11 # LuaM: 8, 1 > 10, 11
+  position: 9, 10 # LuaM: 8, 1 > 9, 10
 
 - type: technology
   id: UniversalArmorPlatesT2
@@ -28,11 +28,11 @@
   entityIcon: ArmorPlateHeat
   discipline: FactionUniversal
   tier: 2
-  cost: 15000
+  cost: 25000 # LuaM 15000 > 25000
   recipeUnlocks:
   - ArmorPlateHeat
   - ArmorPlateSpeed
   technologyPrerequisites:
   - UniversalArmorPlatesT1
-  - UniversalMaterialResearchT2
+  # - UniversalMaterialResearchT2 # Commented by LuaM
   position: 10, 10 # LuaM: 8, 2 > 10, 10

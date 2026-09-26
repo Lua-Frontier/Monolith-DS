@@ -9,7 +9,7 @@
   - ClothingOuterHardsuitUsspL10USSP
   - ClothingOuterHardsuitUsspL10AUSSP
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
+  # - UniversalMaterialResearchT1 # Commented by LuaM
   - HardsuitsArmoredAdvanced # LuaM
   position: 6, 7 # LuaM: 12, 1 > 6, 7
 
@@ -25,7 +25,7 @@
   - ClothingOuterHardsuitUsspM10USSP
   technologyPrerequisites:
   - UsspBasicSuits
-  - UniversalMaterialResearchT2
+  # - UniversalMaterialResearchT2 # Commented by LuaM
   position: 6, 6 # LuaM: 12, 7 > 6, 6
 
 - type: technology
@@ -40,5 +40,5 @@
   - ClothingModsuitUSSPZastavnikUSSP
   technologyPrerequisites:
   - UsspMediumSuits
-  - UniversalMaterialResearchT3
+  # - UniversalMaterialResearchT3 # Commented by LuaM
   position: 6, 5 # LuaM: 12, 12 > 6, 5

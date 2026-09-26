@@ -26,19 +26,6 @@
   tier: 1
   cost: 25000 # LuaM: 5000 > 25000
   position: 8, 13 # LuaM: 10, 0 > 8, 13
-  technologyPrerequisites: # LuaM
-  - AdvancedParts
-
-- type: technology
-  id: UniversalMaterialResearchT2
-  name: research-technology-universal-engsci-2
-  entityIcon: SheetPlasteel
-  discipline: FactionUniversal
-  tier: 2
-  cost: 50000
-  technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  position: 8, 10 # LuaM: 10, 6 > 8, 10
   recipeUnlocks:
   - AmmoBox762x39mmBigFMJ
   - AmmoBox762x51mmBigFMJ
@@ -48,14 +35,38 @@
   - AmmoBox45_magnumBigFMJ
   - AmmoBox46x30mmBigFMJ
   - AmmoBox556x45mmBigFMJ
+  # technologyPrerequisites: # Commented by LuaM
+  # - AdvancedParts
 
-- type: technology
-  id: UniversalMaterialResearchT3
-  name: research-technology-universal-engsci-3
-  entityIcon: SheetPlastitanium
-  discipline: FactionUniversal
-  tier: 2
-  cost: 100000
-  technologyPrerequisites:
-  - UniversalMaterialResearchT2
-  position: 8, 7 # LuaM: 10, 11 > 8, 7
+# LuaM-commented-start:
+# - type: technology
+#   id: UniversalMaterialResearchT2
+#   name: research-technology-universal-engsci-2
+#   entityIcon: SheetPlasteel
+#   discipline: FactionUniversal
+#   tier: 2
+#   cost: 50000
+#   technologyPrerequisites:
+#   - UniversalMaterialResearchT1
+#   position: 8, 10 # LuaM: 10, 6 > 8, 10
+#   recipeUnlocks:
+#   - AmmoBox762x39mmBigFMJ
+#   - AmmoBox762x51mmBigFMJ
+#   - AmmoBox762x54mmRBigFMJ
+#   - AmmoBox9x19mmBigFMJ
+#   - AmmoBox45_ACPBigFMJ
+#   - AmmoBox45_magnumBigFMJ
+#   - AmmoBox46x30mmBigFMJ
+#   - AmmoBox556x45mmBigFMJ
+
+# - type: technology
+#   id: UniversalMaterialResearchT3
+#   name: research-technology-universal-engsci-3
+#   entityIcon: SheetPlastitanium
+#   discipline: FactionUniversal
+#   tier: 2
+#   cost: 100000
+#   technologyPrerequisites:
+#   - UniversalMaterialResearchT2
+#   position: 8, 7 # LuaM: 10, 11 > 8, 7
+# LuaM-commented-end

@@ -24,8 +24,8 @@
   # This is not roundstart since its a direct upgrade
   - WeaponCrusherGlaive
   - MechEquipmentKineticAccelerator # Goobstation
-  technologyPrerequisites:
-  - BasicParts
+  # technologyPrerequisites: # Commented by LuaM
+  # - BasicParts
   position: 4, 13 # LuaM: -1, 1 > 4, 13
 
 - type: technology
@@ -74,9 +74,9 @@
   - FlatpackerMachineCircuitboard
   - RPED
   - NFBlueprintRped
-  technologyPrerequisites:
-  - AdvancedParts
-  position: 1, 11 # LuaM: -1, 8 > 1, 11 
+  # technologyPrerequisites: # Commented by LuaM
+  # - AdvancedParts
+  position: 1, 11 # LuaM: -1, 8 > 1, 11
 # Mono edit end
 
 - type: technology
@@ -106,7 +106,7 @@
   - SheetifierMachineCircuitboard
   technologyPrerequisites:
   - MechanicalCompression
-  position: 2, 10 # LuaM: -1, 7 > 2, 10 
+  position: 2, 10 # LuaM: -1, 7 > 2, 10
 
 # Mono edit
 - type: technology
@@ -133,9 +133,9 @@
   - PowerCageHigh # Mono
   - PowerCageRechargerCircuitboard # Mono
   technologyPrerequisites:
-  - AdvancedParts
+  # - AdvancedParts # Commented by LuaM
   - SpaceScanning
-  position: 13, 10 # LuaM: -2, 8 > 13, 10
+  position: 7, 12 # LuaM: -2, 8 > 7, 12
 
 - type: technology
   id: AtmosphericTech
@@ -150,7 +150,7 @@
   - FanElectronics # LuaM
   technologyPrerequisites:
   - PowerGeneration # LuaM: BasicParts > PowerGeneration
-  position: 14, 9 # LuaM: -2, 1 > 14, 9
+  position: 12, 10 # LuaM: -2, 1 > 12, 10
 
 # Tier 2
 
@@ -171,11 +171,8 @@
   - SmallGyroscopeMachineCircuitboard # Frontier
   technologyPrerequisites:
 #  - AdvancedParts # Commented by LuaM
-# LuaM-start:
-  - SpaceScanning
-  - PowerGeneration
-# LuaM-end.
-  position: 6, 12 # LuaM: -5, 7 > 6, 12
+  - PowerGeneration # LuaM
+  position: 6, 11 # LuaM: -5, 7 > 6, 11
 
 - type: technology
   id: AdvancedAtmospherics
@@ -192,7 +189,7 @@
   #  - FireExtinguisherBluespace # DeltaV
   technologyPrerequisites:
   - AtmosphericTech
-  position: 14, 8 # LuaM: -2, 2 > 14, 8
+  position: 12, 8 # LuaM: -2, 2 > 12, 8
 
 - type: technology
   id: AdvancedToolsTechnology
@@ -221,9 +218,9 @@
   - ShipRepairDevice
   - ShipRepairDeviceAmmo
   - NFBlueprintRCDAmmo
-  # Mono edit end 
+  # Mono edit end
   technologyPrerequisites:
-  - SuperParts 
+  # - SuperParts # Commented by LuaM
   - MassExcavation # LuaM
   position: 4, 6 # LuaM: -1, 18 > 4, 6
 
@@ -245,7 +242,7 @@
   - MechEquipmentDrillDiamond
   technologyPrerequisites:
   - SpaceScanning # LuaM: SalvageEquipment > SpaceScanning
-  - AdvancedParts
+  # - AdvancedParts Commented by LuaM
   position: 4, 11 # LuaM: -1, 2 > 4, 11
 
 # Tier 3
@@ -284,8 +281,8 @@
   - NFBlueprintPortableGeneratorDKJr # Frontier
   technologyPrerequisites:
   - PowerGeneration
-  - SuperParts
-  position: 12, 7 # LuaM: -2, 7 > 12, 7
+  # - SuperParts # Commented by LuaM
+  position: 8, 11 # LuaM: -2, 7 > 8, 11
 
 # Mono edit - research consolidation
 # - type: technology
