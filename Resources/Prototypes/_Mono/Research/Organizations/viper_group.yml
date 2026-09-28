@@ -26,7 +26,7 @@
   - ClothingOuterHardsuitViperGroupMedic
   technologyPrerequisites:
   - ViperGroupApparel
-  - UniversalMaterialResearchT2
+  # - UniversalMaterialResearchT2 # Comented by LuaM: YAML Liner fix, select the prerequisites in the Viper update.
   position: 14, 7
 
 - type: technology
