@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-4.0",
-  "copyright": "Made for Frontier by gentlebutter, edited by dustylens(github)",
+  "copyright": "Made for Frontier by gentlebutter, edited by dustylens(github), added magnet state by defectiveth(discord)",
   "size": {
     "x": 32,
     "y": 32
@@ -12,6 +12,12 @@
     },
     {
       "name": "constructionbox-top"
+    },
+    {
+      "name": "magnet-on"
+    },
+    {
+      "name": "magnet-off"
     }
   ]
 }

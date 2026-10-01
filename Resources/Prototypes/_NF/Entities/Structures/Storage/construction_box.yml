@@ -34,6 +34,22 @@
     - state: constructionbox-top
       map: [ top ]
       visible: true
+    - state: magnet-off # LuaM
+      map: [ magnet ]
+      shader: unshaded
+  - type: GenericVisualizer # LuaM
+    visuals:
+      enum.StorageVisuals.Open:
+        top:
+          True: { visible: false }
+          False: { visible: true }
+        magnet:
+          True: { visible: false }
+          False: { visible: true }
+      enum.Content.Shared.Storage.Components.MagnetPickupVisuals.MagnetEnabled:
+        magnet:
+          True: { state: magnet-on }
+          False: { state: magnet-off }
   - type: Storage
     whitelist:
       tags:
@@ -41,6 +57,7 @@
       - RodMetal1
       - Sheet
       - CableCoil
+      - ConstructionLoot # LuaM
       components:
       - ConstructionMaterials
       - ResearchDisk # Mono

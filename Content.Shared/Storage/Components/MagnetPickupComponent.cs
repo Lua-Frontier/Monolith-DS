@@ -1,5 +1,7 @@
 using Content.Shared.Inventory;
 using Robust.Shared.GameStates; // Frontier
+using Robust.Shared.Audio; // LuaM
+using Robust.Shared.Serialization; // LuaM
 
 namespace Content.Shared.Storage.Components; // Frontier: Server<Shared
 
@@ -42,4 +44,20 @@ public sealed partial class MagnetPickupComponent : Component
     [ViewVariables(VVAccess.ReadWrite), DataField]
     public int MagnetTogglePriority = 3;
     // End Frontier: togglable magnets
+
+    // LuaM-start:
+    /// <summary>
+    /// Sound collection played when toggling the magnet state.
+    /// </summary>
+    [DataField("soundToggle")]
+    public SoundSpecifier? SoundToggle = new SoundCollectionSpecifier("sparks");
+    // LuaM-end
 }
+
+// LuaM-start:
+[Serializable, NetSerializable]
+public enum MagnetPickupVisuals : byte
+{
+    MagnetEnabled
+}
+// LuaM-end
