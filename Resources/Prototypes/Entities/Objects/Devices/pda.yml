@@ -80,6 +80,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
+      - YupiCartridge # LuaM
       - NewsReaderCartridge
       - BountyContractsCartridge # Frontier
       - AstroNavCartridge # Frontier
@@ -152,6 +153,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge # Frontier
     - AstroNavCartridge # Frontier
@@ -167,6 +169,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge # Frontier
     - AstroNavCartridge # Frontier
@@ -881,6 +884,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
@@ -949,6 +953,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
+      - YupiCartridge # LuaM
       - NewsReaderCartridge
       - MedTekCartridge
       - WantedListCartridge
@@ -980,6 +985,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
+      - YupiCartridge # LuaM
       - NewsReaderCartridge
       - LogProbeCartridge
       - WantedListCartridge
@@ -1103,6 +1109,7 @@
     uiKey: enum.PdaUiKey.Key
     preinstalled:
       - NotekeeperCartridge
+      - YupiCartridge # LuaM
       - AstroNavCartridge # Frontier
 
 - type: entity
@@ -1130,6 +1137,7 @@
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
+      - YupiCartridge # LuaM
       - NewsReaderCartridge
       - MedTekCartridge
       - WantedListCartridge
@@ -1312,6 +1320,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
@@ -1339,6 +1348,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - WantedListCartridge
     - MedTekCartridge
@@ -1491,6 +1501,7 @@
     uiKey: enum.PdaUiKey.Key
     preinstalled:
       - NotekeeperCartridge
+      - YupiCartridge # LuaM
       - MedTekCartridge
 
 - type: entity

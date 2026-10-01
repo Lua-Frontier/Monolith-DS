@@ -1,0 +1,49 @@
+<yupi:YupiUiFragment xmlns:yupi="clr-namespace:Content.Client._LuaM.Yupi"
+                     xmlns="https://spacestation14.io"
+                     Orientation="Vertical"
+                     HorizontalExpand="True"
+                     VerticalExpand="True">
+    <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
+            <Label Name="NoAccountLabel"
+                   Text="{Loc 'yupi-no-account'}"
+                   HorizontalAlignment="Center"
+                   Margin="0 20"
+                   Visible="False"/>
+
+            <BoxContainer Name="AccountBox" Orientation="Vertical" HorizontalExpand="True" Visible="False">
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'yupi-ui-own-code'}" Margin="0 0 5 0"/>
+                    <Button Name="CopyCodeButton" Text="------" ToolTip="{Loc 'yupi-ui-copy-tooltip'}"/>
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'yupi-ui-balance'}" Margin="0 0 5 0"/>
+                    <Label Name="BalanceLabel"/>
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'yupi-ui-low-rate-remaining'}" Margin="0 0 5 0"/>
+                    <Label Name="LowRateLabel"/>
+                </BoxContainer>
+
+                <BoxContainer Orientation="Horizontal" Margin="0 10 0 0">
+                    <Label Text="{Loc 'yupi-ui-target-code'}" MinWidth="120"/>
+                    <LineEdit Name="CodeInput" PlaceHolder="H2U2D8" HorizontalExpand="True"/>
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'yupi-ui-amount'}" MinWidth="120"/>
+                    <LineEdit Name="AmountInput" PlaceHolder="1000" HorizontalExpand="True"/>
+                </BoxContainer>
+                <RichTextLabel Name="CommissionLabel" HorizontalExpand="True"/>
+
+                <Button Name="SendButton" Text="{Loc 'yupi-ui-send'}" Margin="0 5 0 0" Disabled="True"/>
+            </BoxContainer>
+
+            <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" Margin="0 8 0 0">
+                <TextureRect TexturePath="/Textures/_LuaM/Yupi/bank_logo.png"
+                             Stretch="KeepAspectCentered"
+                             SetSize="96 96"/>
+                <Label Text="{Loc 'yupi-bank-name'}" HorizontalAlignment="Center" StyleClasses="LabelSubText"/>
+            </BoxContainer>
+        </BoxContainer>
+    </ScrollContainer>
+</yupi:YupiUiFragment>

@@ -8,6 +8,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge
@@ -38,6 +39,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge
@@ -188,6 +190,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - MedTekCartridge
     - WantedListCartridge
@@ -213,6 +216,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - MedTekCartridge
     - WantedListCartridge
@@ -235,6 +239,7 @@
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge
@@ -297,6 +302,7 @@
     - LedgerCartridge
     - CrewManifestCartridge
     - NotekeeperCartridge
+    - YupiCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge

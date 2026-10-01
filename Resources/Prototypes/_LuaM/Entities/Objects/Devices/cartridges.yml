@@ -1,0 +1,18 @@
+- type: entity
+  parent: NFBasePDACartridge
+  id: YupiCartridge
+  name: YUPI transfers cartridge
+  description: A program for transferring credits to other people by their YUPI code.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Devices/cartridge.rsi
+    state: cart-ledger
+  - type: Icon
+    sprite: _NF/Objects/Devices/cartridge.rsi
+    state: cart-ledger
+  - type: UIFragment
+    ui: !type:YupiUi
+  - type: Cartridge
+    programName: yupi-program-name
+    icon: { sprite: _NF/Interface/icons.rsi, state: ledger }
+  - type: YupiCartridge
