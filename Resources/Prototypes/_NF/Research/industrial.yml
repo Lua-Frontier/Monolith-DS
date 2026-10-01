@@ -52,9 +52,9 @@
   - ModsuitShell
   - ModsuitPlatingExternal
   - ModsuitCoreStandard
-  technologyPrerequisites:
-  - AdvancedParts
-  position: 8, 13 # LuaM: 1, 8 > 8, 13
+  # technologyPrerequisites: # Commented by LuaM
+  # - AdvancedParts
+  position: 8, 9 # LuaM: 1, 8 > 8, 13 8, 9
 
 # Tier 2
 

@@ -72,8 +72,8 @@
   - MassMediaCircuitboard
   - JukeboxCircuitBoard
   # Mono edit end
-  technologyPrerequisites:
-  - BasicParts
+  # technologyPrerequisites: # Commented by LuaM
+  # - BasicParts
   position: 6, 13 # LuaM: 2, -2 > 6, 13
 
 # Mono edit - research consolidation
@@ -179,7 +179,7 @@
   - BorgModuleAdvancedSurgery
   - DefibrillatorCompact # Mono
   technologyPrerequisites:
-  - SuperParts
+  # - SuperParts # Commented by LuaM
   - BiochemicalStasis # LuaM: IndustrialMedicine > BiochemicalStasis
   position: 7, 9 # LuaM: -2, 11 > 7, 9
 
@@ -223,8 +223,8 @@
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
   - JanicartFlatpack
-  technologyPrerequisites:
-  - AdvancedParts # LuaM: BasicParts > AdvancedParts
+  # technologyPrerequisites: # Commented by LuaM
+  # - BasicParts
   position: 2, 11 # LuaM: 2, -3 > 2, 11
 
 - type: technology

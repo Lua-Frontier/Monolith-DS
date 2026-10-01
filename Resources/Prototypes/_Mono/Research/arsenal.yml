@@ -34,9 +34,9 @@
   - WeaponRifleVulcanFCMC
   - WeaponShotgunKammererNF
   technologyPrerequisites:
-  - AdvancedParts # LuaM: BasicParts > AdvancedParts
+  # - BasicParts # Commented by LuaM
   - WeaponizedLaserManipulation # LuaM
-  position: 12, 11 # LuaM: 2, 1 > 12, 11 
+  position: 12, 11 # LuaM: 2, 1 > 12, 11
 
 - type: technology
   id: AdvancedMeleeCombatOptions
@@ -65,4 +65,4 @@
   - BalorDroneVoucherMerc
   technologyPrerequisites:
   - UniversalMaterialResearchT1
-  position: 10, 13 # LuaM: 9, -2 > 10, 13
+  position: 9, 12 # LuaM: 9, -2 > 9, 12

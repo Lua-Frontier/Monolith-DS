@@ -10,9 +10,9 @@
   - ClothingOuterHardsuitPirateScafRogue
   - ClothingOuterVestWebRogue
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  - HardsuitsArmored # LuaM
-  position: 8, 13 # LuaM: 12, 1 > 8, 13 
+  # - UniversalMaterialResearchT1 # Commented by LuaM
+  - RogueJaws # LuaM
+  position: 5, 7 # LuaM: 12, 1 > 5, 7
 
 - type: technology
   id: RogueAdvancedEquipment
@@ -28,8 +28,8 @@
   - MechIFFPDV
   technologyPrerequisites:
   - RogueBasicEquipment
-  - UniversalMaterialResearchT2
-  position: 8, 10 # LuaM: 12, 7 > 8, 10
+  # - UniversalMaterialResearchT2 # Commented by LuaM
+  position: 5, 10 # LuaM: 12, 7 > 5, 10
 
 - type: technology
   id: RogueSyndicateTacsuits
@@ -43,8 +43,8 @@
   - ClothingOuterHardsuitSyndieEliteRogue
   technologyPrerequisites:
   - RogueAdvancedEquipment
-  - UniversalMaterialResearchT3
-  position: 8, 7 # LuaM: 12, 12 > 8, 7
+  # - UniversalMaterialResearchT3 # Commented by LuaM
+  position: 4, 11 # LuaM: 12, 12 > 4, 11
 
 - type: technology
   id: RogueSuperArmor
@@ -58,5 +58,5 @@
   - ClothingOuterHardsuitJuggernautRogue
   technologyPrerequisites:
   - RogueAdvancedEquipment # LuaM: RogueSyndicateTacsuits > RogueAdvancedEquipment
-  position: 10, 10 # LuaM: 13, 12 > 10, 10
+  position: 4, 9 # LuaM: 13, 12 > 4, 9
 

@@ -6,7 +6,7 @@
   tier: 2
   cost: 20000
   technologyPrerequisites:
-  - UniversalMaterialResearchT2
+  - UniversalMaterialResearchT1 # LuaM UniversalMaterialResearchT2 > UniversalMaterialResearchT1
   position: 5, 8 # LuaM: 8, 6 > 5, 8
   recipeUnlocks:
   - Magazine762x51mmPlasteelAP

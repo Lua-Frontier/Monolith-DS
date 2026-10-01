@@ -9,7 +9,7 @@
   - WeaponRifleAK502USSP
   - WeaponRevolverMatebaUSSP
   technologyPrerequisites:
-  - UniversalMaterialResearchT2 # LuaM: UniversalMaterialResearchT1 > UniversalMaterialResearchT2
+  # - UniversalMaterialResearchT1 # Commented by LuaM
   - MercArmementAdvanced # LuaM
   position: 12, 7 # LuaM: 12, 2 > 12, 7
 
@@ -41,5 +41,5 @@
   - WeaponShotgunBigLeadyUSSP
   technologyPrerequisites:
   - UsspAk410 # LuaM: UsspMediumGuns > UsspAk410
-  - UniversalMaterialResearchT1 # LuaM: UniversalMaterialResearchT3 > UniversalMaterialResearchT1
+  # - UniversalMaterialResearchT1 # Commented by LuaM
   position: 14, 11 # LuaM: 12, 13 > 14, 11

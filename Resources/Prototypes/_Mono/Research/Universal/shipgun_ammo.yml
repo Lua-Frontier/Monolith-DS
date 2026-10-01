@@ -23,9 +23,11 @@
   recipeUnlocks:
   - CharonSubnuclearSlugUniversal
   technologyPrerequisites:
-  - UniversalRailgunAmmo
-  - UniversalMaterialResearchT3
-  position: 8, 3 # LuaM: 10, 15 > 8, 3
+  # - UniversalRailgunAmmo # Commented by LuaM
+  # - UniversalPlastitaniumCore # Commented by LuaM
+  - UniversalTorpedoAmmoAdvanced # LuaM
+  - UraniumProcessingAdvanced # LuaM
+  position: 7, 3 # LuaM: 10, 15 > 8, 3
 
 - type: technology
   id: UniversalTorpedoAmmo

@@ -3,7 +3,7 @@
   id: PdvTierOneVouchers
   name: research-technology-rogue-tier-one-vouchers
   entityIcon: ShipVoucherPdvT0
-  discipline: RogueShipyard
+  discipline: RogueEquipment # LuaM RogueShipyard > RogueEquipment
   tier: 1
   cost: 40000
   recipeUnlocks:
@@ -13,30 +13,29 @@
   - MockVoucherRogue
   - SnakeletVoucherRogue
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  - Shuttlecraft # LuaM
-  position: 8, 13 # LuaM: 11, 1 > 8, 13
+  # - UniversalMaterialResearchT1 # Commented by LuaM
+  - RogueJaws # LuaM
+  position: 9, 8 # LuaM: 11, 1 > 9, 8
 
 - type: technology
   id: PdvTierTwoVouchers
   name: research-technology-rogue-tier-two-vouchers
   entityIcon: ShipVoucherPdvT2Random
-  discipline: RogueShipyard
+  discipline: RogueEquipment # LuaM RogueShipyard > RogueEquipment
   tier: 1
   cost: 60000
   recipeUnlocks:
   - ShipVoucherPdvT2RandomRecipe
   technologyPrerequisites:
   - PdvTierOneVouchers
-  - UniversalMaterialResearchT2
-  - ShuttleAdvancedComponents # LuaM
-  position: 8, 11 # LuaM: 11, 7 > 8, 11
+  # - UniversalMaterialResearchT2 # Commented by LuaM
+  position: 9, 9 # LuaM: 11, 7 > 9, 9
 
 - type: technology
   id: PdvTierThreeVouchers
   name: research-technology-rogue-tier-three-vouchers
   entityIcon: ShipVoucherSaturn
-  discipline: RogueShipyard
+  discipline: RogueEquipment # LuaM RogueShipyard > RogueEquipment
   tier: 3
   cost: 80000
   recipeUnlocks:
@@ -44,53 +43,51 @@
   - SaturnVoucherRogue
   technologyPrerequisites:
   - PdvTierTwoVouchers
-  - UniversalMaterialResearchT3
-  - ShuttleCtlaAdvancedDriveResearch # LuaM
-  position: 8, 9 # LuaM: 11, 12 > 8, 9
+  # - UniversalMaterialResearchT3 # Commented by LuaM
+  position: 9, 10 # LuaM: 11, 12 > 9, 10
 
 - type: technology
   id: RogueJaws
   name: research-technology-rogue-jaws
   entityIcon: SyndicateJawsOfLife # LuaM: JawsOfLife > SyndicateJawsOfLife
-  discipline: RogueGear
+  discipline: RogueEquipment # LuaM RogueGear > RogueEquipment
   tier: 1
   cost: 10000
   recipeUnlocks:
   - JawsOfLifeRogue
   # - NaniteApplicatorSyndicate Commented by LuaM
-  technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  - AdvancedToolsTechnology # LuaM
-  position: 8, 13 # LuaM: 12, -1 > 8, 13
+  # technologyPrerequisites: # Commented by LuaM
+  # - UniversalMaterialResearchT1
+  position: 7, 7 # LuaM: 12, -1 > 7, 7
 
 - type: technology
   id: RogueHypospray
   name: research-technology-rogue-hypospray
   entityIcon: SyndiHypo # LuaM: Hypospray > SyndiHypo
-  discipline: RogueGear
+  discipline: RogueEquipment # LuaM RogueGear > RogueEquipment
   tier: 2
   cost: 25000 # LuaM: 10000 > 25000
   recipeUnlocks:
   - HyposprayRogue
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  - HypoMiniLimitedEdition # LuaM
-  position: 10, 13 # LuaM: 12, -2 > 10, 13
+  # - UniversalMaterialResearchT1 # Commented by LuaM
+  - RogueJaws # LuaM
+  position: 7, 6 # LuaM: 12, -2 > 7, 6
 
 - type: technology
   id: RogueEmag
   name: research-technology-rogue-emag
   entityIcon: Emag
-  discipline: RogueGear
+  discipline: RogueEquipment # LuaM RogueGear > RogueEquipment
   tier: 2
   cost: 25000
   recipeUnlocks:
   - EmagRogue
   - AccessBreakerRogue
   technologyPrerequisites:
-  - UniversalMaterialResearchT2
-  - SuperParts # LuaM
-  position: 6, 13 # LuaM: 12, 10 > 6, 13
+  # - UniversalMaterialResearchT2 # Commented by LuaM
+  - RogueJaws # LuaM
+  position: 7, 8 # LuaM: 12, 10 > 7, 8
 
 # Commented by LuaM
 #- type: technology
@@ -110,27 +107,26 @@
   id: PDVBasicBorgModule
   name: research-technology-pdv-basic-module
   entityIcon: BorgModulePDVStandardWeapon
-  discipline: RogueGear
+  discipline: RogueEquipment # LuaM RogueGear > RogueEquipment
   tier: 1
   cost: 10000
   recipeUnlocks:
   - BasicBorgCombatModulePDV
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
+  # - UniversalMaterialResearchT1 # Commented by LuaM
   - RogueJaws # LuaM
-  position: 8, 11 # LuaM: 12, -4 > 8, 11
+  position: 9, 6 # LuaM: 12, -4 > 9, 6
 
 - type: technology
   id: PDVAdvancedBorgModule
   name: research-technology-pdv-advanced-module
   entityIcon: BorgModulePDVAdvancedWeapon
-  discipline: RogueGear
+  discipline: RogueEquipment # LuaM RogueGear > RogueEquipment
   tier: 3
   cost: 35000 # LuaM: 65000 > 35000
   recipeUnlocks:
   - AdvancedBorgCombatModulePDV
   technologyPrerequisites:
-  - UniversalMaterialResearchT3
+  # - UniversalMaterialResearchT3 # Commented by LuaM
   - PDVBasicBorgModule
-  - MechBasic # LuaM
-  position: 8, 9 # LuaM: 12, 15 > 8, 9
+  position: 9, 5 # LuaM: 12, 15 > 9, 5

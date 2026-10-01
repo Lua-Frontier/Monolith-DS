@@ -8,7 +8,7 @@
   recipeUnlocks:
   - UllmanWeaponPulsePistol
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
+  # - UniversalMaterialResearchT1 # Comented by LuaM
   - PortableMicrofusionWeaponry # LuaM
   position: 8, 8 # LuaM: 16, 2 > 8, 8
 
@@ -27,7 +27,7 @@
   - MagazineSmartMagnum
   - MagazineSmartMagnumExt
   technologyPrerequisites:
-  - UniversalMaterialResearchT2
+  # - UniversalMaterialResearchT2 # Comented by LuaM
   - UllmanPulseAdv
   position: 8, 7 # LuaM: 16, 8 > 8, 7
 
@@ -42,7 +42,7 @@
   - UllmanHardsuitPilot
   - UllmanHardsuitEngineer
   technologyPrerequisites:
-  - UniversalMaterialResearchT1
+  # - UniversalMaterialResearchT1 # Comented by LuaM
   - HardsuitsArmoredAdvanced # LuaM
   position: 2, 7 # LuaM: 16, 1 > 2, 7
 
@@ -57,7 +57,7 @@
   - UllmanHardsuitEnforcer
   - UllmanHardsuitEnforcerMKII
   technologyPrerequisites:
-  - UniversalMaterialResearchT2
+  # - UniversalMaterialResearchT2 # Comented by LuaM
   - UllmanHardsuitBasic # LuaM
   position: 2, 6 # LuaM: 16, 7 > 2, 6
 

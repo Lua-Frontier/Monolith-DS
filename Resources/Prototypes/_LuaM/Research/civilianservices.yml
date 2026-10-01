@@ -29,7 +29,7 @@
   - NFBlueprintPlantBagOfHolding
   technologyPrerequisites:
   - Hydroponics
-  - AdvancedParts
+  # - AdvancedParts # Commented by LuaM
   position: 4, 11
 
 - type: technology
@@ -102,9 +102,8 @@
   - UpgradedCyberneticHeart
   - UpgradedCyberneticLungs
   technologyPrerequisites:
-  - CyberneticOrgans
   - HighEndSurgery
-  position: 6, 5
+  position: 6, 4
 
 - type: technology
   id: HypoBrigmedic
@@ -130,6 +129,5 @@
   - HypoMiniLimitedEdition
   technologyPrerequisites:
   - HypoBrigmedic
-  - SuperParts
   - BluespaceChemistry
   position: 10, 8

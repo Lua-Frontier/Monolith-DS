@@ -76,10 +76,10 @@
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: TechnologyDatabase
     supportedDisciplines:
-    - TsfmcWeaponry
-    - TsfmcGear # GEAR IS TOOLS!!
-    - TsfmcEquipment # EQUIPMENT IS ARMOR!!
-    - TsfmcShipyard
+    # - TsfmcWeaponry # LuaM: moved to TsfmcEquipment
+    # - TsfmcGear # LuaM: moved to TsfmcEquipment
+    - TsfmcEquipment
+    # - TsfmcShipyard # LuaM: moved to TsfmcEquipment
     - FactionUniversal
     - Industrial
     - Arsenal
@@ -102,10 +102,10 @@
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: TechnologyDatabase
     supportedDisciplines:
-    - RogueWeaponry
-    - RogueGear # GEAR IS TOOLS!!
-    - RogueEquipment # EQUIPMENT IS ARMOR!!
-    - RogueShipyard
+    # - RogueWeaponry # LuaM: moved to RogueEquipment
+    # - RogueGear # LuaM: moved to RogueEquipment
+    - RogueEquipment
+    # - RogueShipyard # LuaM: moved to RogueEquipment
     - FactionUniversal
     - Industrial
     - Arsenal
@@ -154,14 +154,14 @@
     - Arsenal
     - Experimental
     - CivilianServices
-    - TsfmcWeaponry
-    - TsfmcGear
+    # - TsfmcWeaponry # LuaM: moved to TsfmcEquipment
+    # - TsfmcGear # LuaM: moved to TsfmcEquipment
     - TsfmcEquipment
-    - TsfmcShipyard
-    - RogueWeaponry
-    - RogueGear
+    # - TsfmcShipyard # LuaM: moved to TsfmcEquipment
+    # - RogueWeaponry # LuaM: moved to RogueEquipment
+    # - RogueGear # LuaM: moved to RogueEquipment
     - RogueEquipment
-    - RogueShipyard
+    # - RogueShipyard # LuaM: moved to RogueEquipment
 #    - Ussp # Commented by LuaM
 #    - UsspShipyard # Commented by LuaM
 #    - UsspEquipment # Commented by LuaM
