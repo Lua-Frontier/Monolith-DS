@@ -112,11 +112,20 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 
     }
 
+    private const int UnmannedUpdateInterval = 30; // LuaM
+    private int _unmannedUpdateTicks; // LuaM
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
         UpdateHyperspace();
+        // LuaM-start:
+        _unmannedUpdateTicks++;
+        if (_unmannedUpdateTicks < UnmannedUpdateInterval)
+            return;
+        _unmannedUpdateTicks = 0;
         UpdateUnmannedShuttles(); // LuaM stop uncontrolled shuttles
+        // LuaM-end
     }
 
     private void OnGridFixtureChange(EntityUid uid, FixturesComponent manager, GridFixtureChangeEvent args)
