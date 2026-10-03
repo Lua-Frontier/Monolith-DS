@@ -7,3 +7,4 @@
     event: !type:PersonalShieldActionEvent
     useDelay: 1
     priority: 3
+    icon: _Lua/Interface/Actions/action_hardsuit_shield.png # LuaM

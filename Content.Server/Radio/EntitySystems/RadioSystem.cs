@@ -304,7 +304,7 @@ public sealed partial class RadioSystem : EntitySystem
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
-            ("message", message),
+            ("message", FormattedMessage.EscapeText(message)), // LuaM message > FormattedMessage.EscapeText(message)
             ("language", languageDisplay));
     }
     // Einstein Engines - Language end

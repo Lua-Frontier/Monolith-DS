@@ -53,15 +53,23 @@ public sealed partial class GridCleanupSystem : BaseCleanupSystem<MapGridCompone
 
         var parent = xform.ParentUid;
 
-        var state = EnsureComp<GridCleanupGridComponent>(uid);
+        // LuaM-start:
+        if (HasComp<MapComponent>(uid) // if we're a planetmap ignore
+            || HasComp<MapGridComponent>(parent) // do not delete anything on planetmaps either
+            || _immuneQuery.HasComp(uid))
+            return false;
 
         var tiles = body.FixturesMass / ShuttleSystem.TileDensityMultiplier;
         var scale = MathF.Min(tiles / _aggressiveTiles, 1f);
 
-        if (HasComp<MapComponent>(uid) // if we're a planetmap ignore
-            || HasComp<MapGridComponent>(parent) // do not delete anything on planetmaps either
-            || _immuneQuery.HasComp(uid)
-            || !state.IgnoreIFF && TryComp<IFFComponent>(uid, out var iff) && (iff.Flags & IFFFlags.HideLabel) == 0 // delete only if IFF off
+        // no fixtures yet or none left, nothing to scale by
+        if (scale <= 0f)
+            return false;
+
+        var state = EnsureComp<GridCleanupGridComponent>(uid);
+        // LuaM-end
+
+        if (!state.IgnoreIFF && TryComp<IFFComponent>(uid, out var iff) && (iff.Flags & IFFFlags.HideLabel) == 0 // delete only if IFF off
             || _cleanup.HasNearbyPlayers(xform.Coordinates, state.DistanceOverride ?? _maxDistance * scale * scale) // square it
             || !state.IgnorePowered && HasPoweredAPC((uid, xform)) // don't delete if it has powered APCs
             || !state.IgnorePrice && _pricing.AppraiseGrid(uid) > _maxValue) // expensive to run, put last

@@ -229,6 +229,8 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 
     private void OnShuttleShutdown(EntityUid uid, ShuttleComponent component, ComponentShutdown args)
     {
+        NfOnShuttleShutdown(uid); // LuaM
+
         // None of the below is necessary for any cleanup if we're just deleting.
         if (EntityManager.GetComponent<MetaDataComponent>(uid).EntityLifeStage >= EntityLifeStage.Terminating)
             return;

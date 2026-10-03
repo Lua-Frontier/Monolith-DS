@@ -103,15 +103,11 @@ namespace Content.Server.Research.Systems
         {
             var allServers = EntityQueryEnumerator<ResearchServerComponent>();
             var list = new List<string>();
-            var station = _station.GetOwningStation(gridUid);
 
-            if (station is { } stationUid)
+            while (allServers.MoveNext(out var uid, out var comp)) // LuaM: station-only > IsSameResearchNetwork
             {
-                while (allServers.MoveNext(out var uid, out var comp))
-                {
-                    if (_station.GetOwningStation(uid) == stationUid)
-                        list.Add(comp.ServerName);
-                }
+                if (IsSameResearchNetwork(gridUid, uid))
+                    list.Add(comp.ServerName);
             }
 
             var serverList = list.ToArray();
@@ -122,20 +118,26 @@ namespace Content.Server.Research.Systems
         {
             var allServers = EntityQueryEnumerator<ResearchServerComponent>();
             var list = new List<int>();
-            var station = _station.GetOwningStation(gridUid);
 
-            if (station is { } stationUid)
+            while (allServers.MoveNext(out var uid, out var comp)) // LuaM: station-only > IsSameResearchNetwork
             {
-                while (allServers.MoveNext(out var uid, out var comp))
-                {
-                    if (_station.GetOwningStation(uid) == stationUid)
-                        list.Add(comp.Id);
-                }
+                if (IsSameResearchNetwork(gridUid, uid))
+                    list.Add(comp.Id);
             }
 
             var serverList = list.ToArray();
             return serverList;
         }
+
+        // LuaM-start
+        private bool IsSameResearchNetwork(EntityUid client, EntityUid server)
+        {
+            if (_station.GetOwningStation(client) is { } station)
+                return _station.GetOwningStation(server) == station;
+
+            return Transform(client).GridUid is { } grid && Transform(server).GridUid == grid;
+        }
+        // LuaM-end
 
         public override void Update(float frameTime)
         {

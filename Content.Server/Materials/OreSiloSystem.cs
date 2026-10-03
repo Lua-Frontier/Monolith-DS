@@ -114,7 +114,7 @@ public sealed partial class OreSiloSystem : SharedOreSiloSystem
 
             foreach (var (uid, clientComp) in _silos)
             {
-                if (clientComp.Silo == null)
+                if (clientComp.Silo is not { } silo || TerminatingOrDeleted(silo)) // LuaM: Silo == null > also skip deleted silo
                     continue;
 
                 var clientXform = Transform(uid);
@@ -124,11 +124,11 @@ public sealed partial class OreSiloSystem : SharedOreSiloSystem
 
                 if ((actorXform.LocalPosition - clientXform.LocalPosition).LengthSquared() <= OreSiloPreloadRangeSquared)
                 {
-                    _silosToAdd.Add(clientComp.Silo.Value);
+                    _silosToAdd.Add(silo); // LuaM: clientComp.Silo.Value > silo
                 }
                 else
                 {
-                    _silosToRemove.Add(clientComp.Silo.Value);
+                    _silosToRemove.Add(silo); // LuaM: clientComp.Silo.Value > silo
                 }
             }
 

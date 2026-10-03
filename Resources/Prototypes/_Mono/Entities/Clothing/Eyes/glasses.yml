@@ -191,18 +191,20 @@
   - type: ThermalVision
     isEquipment: true
     color: "#FFFFFFFF"
-    lightRadius: 45
+    lightRadius: 0 # LuaM: 45 > 0
+    drawOverlay: false # LuaM
   - type: NightVision # Gen 4 wide-quadtube
     relayOverlay: true
     goggleEffect: true
-    viewCircleRadius: 450
-    viewCircleCount: 4
+    viewCircleRadius: 1000 # LuaM: 450 > 1000
+    viewCircleCount: 3 # LuaM: 4 > 3
     viewCircleSpacing: 280
     action: ActionToggleNightVision
-    phosphorColor: "#41D7D9"
-    lightingColor: "#FFFFFF32"
+    phosphorColor: "#337a98" # LuaM: "#41D7D9" > "#337a98"
+    lightingColor: "#0EFFFFFF" # LuaM: "#FFFFFF32" > "#0EFFFFFF"
+    amplification: 1.0 # LuaM
   - type: Tag
     tags:
     - PetWearable
     - SafetyDepositBlacklist
-    
+

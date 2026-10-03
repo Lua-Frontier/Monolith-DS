@@ -479,9 +479,12 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     }
 
     // LuaM-start: | check for pilot or autopilot
+    private readonly HashSet<Entity<ShuttleConsoleComponent>> _mannedConsoleCache = new(); // LuaM
+
     public bool IsGridManned(EntityUid gridUid)
     {
-        var consoles = new HashSet<Entity<ShuttleConsoleComponent>>();
+        var consoles = _mannedConsoleCache; // LuaM: new HashSet > reused buffer
+        consoles.Clear(); // LuaM
         _lookup.GetChildEntities(gridUid, consoles);
 
         foreach (var console in consoles)

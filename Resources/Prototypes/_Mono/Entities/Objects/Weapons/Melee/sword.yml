@@ -200,7 +200,7 @@
         Structural: 150 # LuaM 80 > 150
   - type: MeleeWeapon
     heavyStaminaCost: 1
-    wideAnimationRotation: -135
+    wideAnimationRotation: -60
     attackRate: 1.25
     damage:
       types:

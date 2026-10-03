@@ -52,6 +52,11 @@ public sealed partial class LatheMenu : FancyWindow
 
     public EntityUid Entity;
 
+    // LuaM-start
+    private readonly List<(string Id, RecipeControl Control)> _recipeControls = new();
+    private readonly List<(int Index, Label Label)> _queueRows = new();
+    // LuaM-end
+
     public LatheMenu()
     {
         RobustXamlLoader.Load(this);
@@ -144,9 +149,24 @@ public sealed partial class LatheMenu : FancyWindow
         if (!int.TryParse(AmountLineEdit.Text, out var quantity) || quantity <= 0)
             quantity = 1;
 
-        var sortedRecipesToShow = recipesToShow.OrderBy(_lathe.GetRecipeName);
-        RecipeList.Children.Clear();
+        var sortedRecipesToShow = recipesToShow.OrderBy(_lathe.GetRecipeName).ToList(); // LuaM: added ToList
         _entityManager.TryGetComponent(Entity, out LatheComponent? lathe);
+
+        // LuaM-start
+        if (sortedRecipesToShow.Count == _recipeControls.Count &&
+            sortedRecipesToShow.Select(p => p.ID).SequenceEqual(_recipeControls.Select(c => c.Id)))
+        {
+            for (var i = 0; i < sortedRecipesToShow.Count; i++)
+            {
+                _recipeControls[i].Control.SetCanProduce(_lathe.CanProduce(Entity, sortedRecipesToShow[i], quantity, component: lathe));
+            }
+
+            return;
+        }
+
+        _recipeControls.Clear();
+        // LuaM-end
+        RecipeList.Children.Clear();
 
         foreach (var prototype in sortedRecipesToShow)
         {
@@ -160,6 +180,7 @@ public sealed partial class LatheMenu : FancyWindow
                 RecipeQueueAction?.Invoke(s, amount);
             };
             RecipeList.AddChild(control);
+            _recipeControls.Add((prototype.ID, control)); // LuaM
         }
     }
 
@@ -297,6 +318,20 @@ public sealed partial class LatheMenu : FancyWindow
     /// <param name="queue"></param>
     public void PopulateQueueList(List<LatheRecipeBatch> queue) // Frontier: LatheRecipePrototype<LatheRecipeBatch
     {
+        // LuaM-start
+        if (queue.Count == _queueRows.Count &&
+            queue.Select(b => b.Index).SequenceEqual(_queueRows.Select(r => r.Index)))
+        {
+            for (var i = 0; i < queue.Count; i++)
+            {
+                _queueRows[i].Label.Text = GetQueueLabelText(i + 1, queue[i]);
+            }
+
+            return;
+        }
+
+        _queueRows.Clear();
+        // LuaM-end
         QueueList.DisposeAllChildren();
 
         var idx = 1;
@@ -309,10 +344,8 @@ public sealed partial class LatheMenu : FancyWindow
             queuedRecipeBox.AddChild(GetRecipeDisplayControl(batch.Recipe));
 
             var queuedRecipeLabel = new Label();
-            if (batch.ItemsRequested > 1)
-                queuedRecipeLabel.Text = $"{idx}. {_lathe.GetRecipeName(batch.Recipe)} ({batch.ItemsPrinted}/{batch.ItemsRequested})";
-            else
-                queuedRecipeLabel.Text = $"{idx}. {_lathe.GetRecipeName(batch.Recipe)}";
+            queuedRecipeLabel.Text = GetQueueLabelText(idx, batch); // LuaM: inline text > GetQueueLabelText
+            _queueRows.Add((batch.Index, queuedRecipeLabel)); // LuaM
             // End Frontier
             queuedRecipeBox.AddChild(queuedRecipeLabel);
             // <Mono>
@@ -326,6 +359,16 @@ public sealed partial class LatheMenu : FancyWindow
             idx++;
         }
     }
+
+    // LuaM-start
+    private string GetQueueLabelText(int idx, LatheRecipeBatch batch)
+    {
+        if (batch.ItemsRequested > 1)
+            return $"{idx}. {_lathe.GetRecipeName(batch.Recipe)} ({batch.ItemsPrinted}/{batch.ItemsRequested})";
+
+        return $"{idx}. {_lathe.GetRecipeName(batch.Recipe)}";
+    }
+    // LuaM-end
 
     public void SetQueueInfo(LatheRecipePrototype? recipe)
     {

@@ -27,6 +27,11 @@ public sealed partial class RecipeControl : Control
         };
     }
 
+    public void SetCanProduce(bool canProduce) // LuaM
+    {
+        Button.Disabled = !canProduce;
+    }
+
     private Control? SupplyTooltip(Control sender)
     {
         return new RecipeTooltip(TooltipTextSupplier());

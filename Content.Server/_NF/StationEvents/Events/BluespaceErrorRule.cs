@@ -218,23 +218,28 @@ public sealed partial class BluespaceErrorRule : StationEventSystem<BluespaceErr
         if (component.GridsUid == null)
             return;
 
+        var claimedMaps = new HashSet<MapId>(); // LuaM
+
         foreach (var componentGridUid in component.GridsUid)
         {
             if (!EntityManager.TryGetComponent<TransformComponent>(componentGridUid, out var gridTransform))
             {
                 Log.Error("bluespace error objective was missing transform component");
-                return;
+                continue; // LuaM: return > continue
             }
 
             if (gridTransform.GridUid is not EntityUid gridUid)
             {
                 Log.Error("bluespace error has no associated grid?");
-                return;
+                continue; // LuaM: return > continue
             }
 
             // don't delete it if claimed
             if (TryComp<ClaimableGridComponent>(componentGridUid, out var claimable) && claimable.Claimed)
-                return;
+            {
+                claimedMaps.Add(gridTransform.MapID); // LuaM
+                continue; // LuaM: return > continue
+            }
 
             if (component.DeleteGridsOnEnd)
             {
@@ -309,6 +314,9 @@ public sealed partial class BluespaceErrorRule : StationEventSystem<BluespaceErr
 
         foreach (MapId mapId in component.MapsUid)
         {
+            if (claimedMaps.Contains(mapId)) // LuaM
+                continue;
+
             if (_map.MapExists(mapId))
                 _map.DeleteMap(mapId);
         }

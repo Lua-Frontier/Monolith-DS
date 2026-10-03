@@ -478,17 +478,19 @@ public sealed partial class ChatSystem : SharedChatSystem
         var admins = _adminManager.ActiveAdmins
             .Select(p => p.Channel);
 
+        var escapedMessage = FormattedMessage.EscapeText(message); // LuaM
+
         string messageWrap = Loc.GetString("collective-mind-chat-wrap-message",
-            ("message", message),
+            ("message", escapedMessage), // LuaM message > escapedMessage
             ("channel", collectiveMind.LocalizedName),
             ("number", Number));
         string namedMessageWrap = Loc.GetString("collective-mind-chat-wrap-message-named",
             ("source", source),
-            ("message", message),
+            ("message", escapedMessage), // LuaM message > escapedMessage
             ("channel", collectiveMind.LocalizedName));
         string adminMessageWrap = Loc.GetString("collective-mind-chat-wrap-message-admin",
             ("source", source),
-            ("message", message),
+            ("message", escapedMessage), // LuaM message > escapedMessage
             ("channel", collectiveMind.LocalizedName),
             ("number", Number));
 
@@ -1121,7 +1123,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("verb", Loc.GetString(verbId)),
             ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
             ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize),
-            ("message", message),
+            ("message", FormattedMessage.EscapeText(message)), // LuaM message > FormattedMessage.EscapeText(message)
             ("language", languageDisplay));
     }
     // Einstein Engines - Language end
