@@ -38,3 +38,10 @@ ent-FoodDonkpocketCarpWarm = тёплый карп-покет
     .desc = { ent-FoodDonkpocketCarp.desc }
 ent-FoodDonkpocketDink = динк-покет
     .desc = Малоизвестный донк-покет для ящеров, с начинкой из маринованной моркови и обёрнутый морскими водорослями. Рекомендуется употреблять холодным, а ещё лучше вообще не есть.
+
+# Lua start
+ent-FoodDonkpocketMoth = молепокет
+    .desc = Жужжащее издание донк-покета, созданное во время массовых протестов против... да кого это волнует? Просто донк-покеты для молей.
+ent-FoodDonkpocketMothWarm = тёплый молепокет
+    .desc = { ent-FoodDonkpocketMoth.desc }
+# Lua end

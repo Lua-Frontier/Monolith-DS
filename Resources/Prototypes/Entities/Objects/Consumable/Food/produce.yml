@@ -2471,6 +2471,9 @@
     tags:
     - ClothMade
     - CottonBoll
+  - type: FoodSequenceElement # Lua
+    entries:
+      CottonBurger: CottonBol
   - type: MothFood # Frontier
 
 - type: entity
@@ -2505,6 +2508,9 @@
     - CottonBoll
   - type: Extractable
     grindableSolutionName: food
+  - type: FoodSequenceElement # Lua
+    entries:
+      CottonBurger: PyrottonBol
   - type: MothFood # Frontier
 
 - type: entity

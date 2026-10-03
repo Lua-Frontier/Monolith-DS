@@ -19,3 +19,11 @@ ent-DrinkBeesKnees = { ent-DrinkGlass }
 
 ent-CondimentCup = стаканчик для приправ
     .desc = Хлипкий стаканчик для приправ. Гарантия недействительна при наполнении чем-либо иным.
+
+# Lua start
+ent-DrinkDisposableMcCup = { ent-DrinkDisposableCup }
+    .desc = { ent-DrinkDisposableCup.desc }
+ent-TheMadgob = { ent-DrinkGlass }
+    .suffix = Безумный гоблин
+    .desc = { ent-DrinkGlass.desc }
+# Lua end

@@ -14,6 +14,8 @@
     layers:
     - state: tin
     - state: pearandcheese
+  - type: SliceableFood # Lua
+    slice: FoodTartPearCheeseSlice
   - type: Tag
     tags:
     - Fruit
@@ -75,3 +77,30 @@
     - Fruit
     - Pie
     - Slice
+
+# Lua start
+
+- type: entity
+  name: slice of pear and cheese tart
+  parent: FoodPieSliceBase
+  id: FoodTartPearCheeseSlice
+  description: A sweet and savory slice of pear and cheese tart.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - cheesy
+      - pear
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/Baked/pie.rsi
+    layers:
+    - state: pearandcheese-slice
+    - state: alpha-slice-filling
+      color: "#bf6000"
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+    - Slice
+
+# Lua end

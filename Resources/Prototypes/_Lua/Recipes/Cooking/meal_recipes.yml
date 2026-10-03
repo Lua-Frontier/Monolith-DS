@@ -1,0 +1,63 @@
+- type: microwaveMealRecipe
+  id: RecipeCakeSpaceman
+  name: cake spaceman
+  result: FoodCakeSpaceman
+  time: 5
+  solids:
+    FoodCakePlain: 1
+    FoodSpacemansTrumpet: 3
+  recipeType: Oven # Frontier
+
+- type: microwaveMealRecipe
+  id: RecipeMealOmelette
+  name: meal omelette
+  result: FoodMealOmelette
+  time: 10
+  reagents:
+    Egg: 1 #Lua 6 to 1
+    Milk: 5
+  solids:
+    FoodCheeseSlice: 1
+  recipeType: Oven # Frontier
+
+- type: microwaveMealRecipe
+  id: RecipeSoupMiso
+  name: soup miso recipe
+  result: FoodSoupMiso
+  time: 15
+  reagents:
+    Water: 5
+  solids:
+    FoodBowlBig: 1
+    FoodTofuSlice: 1
+    FoodSoybeans: 1
+    FoodLingzhi: 1
+    FoodOnionRedSlice: 2
+  recipeType: Oven # Frontier
+
+- type: microwaveMealRecipe
+  id: RecipeBakedCannoli
+  name: baked cannoli recipe
+  result: FoodBakedCannoli
+  time: 20
+  reagents:
+    Flour: 5
+    Sugar: 5
+  solids:
+    FoodSnackRaisins: 1
+    FoodChevreSlice: 2
+  recipeType: Oven # Frontier
+
+- type: microwaveMealRecipe
+  id: RecipeMashed
+  name: mashed recipe
+  result: FoodMashed
+  time: 15
+  reagents:
+    Water: 30
+    Milk: 10
+  solids:
+    FoodBowlBig: 1
+    FoodPotato: 2
+    FoodMeatMeatball: 2
+  recipeType: Oven # Frontier

@@ -28,6 +28,7 @@
     DrinkGrenadineBottleFull: 2
     DrinkJuiceLimeCarton: 3
     DrinkJuiceLemonCarton: 3
+    DrinkJuicePineappleCarton: 3 # Lua
     DrinkJuiceOrangeCarton: 3
     DrinkJuiceTomatoCarton: 3
     DrinkJuiceAppleCarton: 3 # CorvaxGoob
@@ -49,6 +50,8 @@
     DrinkSakeBottleFull: 3
     DrinkBeerCan: 5
     DrinkWineCan: 5
+    DrinkDisposableCup: 5 # Lua
+    NetscapeCan: 5 # Lua
   contrabandInventory:
     EthanolChemistryBottle: 3
     DrinkBottleOfNothingFull: 1

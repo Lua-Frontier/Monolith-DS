@@ -204,3 +204,58 @@
     - icecream
     - antiseptic
 
+# Lua start
+
+- type: entity
+  name: licorice creamsicle
+  parent: FoodFrozenBase
+  id: FoodFrozenPopsicleLicorice
+  description: Vanilla ice cream on a stick covered in a chewy licorice shell.
+  components:
+  - type: Sprite
+    layers:
+    - state: stick
+    - state: nogga # TODO: rename this or migrate & rename if deleted
+  - type: Food
+    trash:
+    - FoodFrozenPopsicleTrash
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - icecream
+    - licorice
+
+- type: entity
+  name: cinnamon mochi
+  parent: FoodFrozenBase
+  id: FoodFrozenMochiSpice
+  description: A delicious blorb of chewey sticky rice encapsulating a core of ice cream. It's spicy! Is that cinnamon?
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/frozen.rsi
+    layers:
+    - state: spicemochi
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Sugar
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - rice
+    - icecream
+    - cinnamon
+
+# Lua end

@@ -13,3 +13,12 @@ flavor-complex-wassail = warm and comforting
 flavor-complex-fine-noodles = like fine noodles
 flavor-complex-rich-broth = rich broth
 flavor-complex-tangy = tangy
+
+# Lua start
+flavor-complex-cinnamon = like cinnamon
+flavor-complex-hairy = hairy and pungent
+flavor-complex-licorice = like licorice
+flavor-complex-spices = like spices
+flavor-complex-texas = like texan ingenuity
+flavor-complex-creative = like mad creativity
+# Lua end

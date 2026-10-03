@@ -97,3 +97,34 @@
   - type: Tag
     tags:
     - Fruit
+
+# Lua start
+
+- type: entity
+  name: cinnamon roll
+  parent: FoodBakedBase
+  id: FoodBakedCinnamonRoll
+  description: I wonder how much more icing you could put on this.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - cinnamon
+      - bun
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/Baked/misc.rsi
+    layers:
+      - state: cinnamonroll
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Sugar
+          Quantity: 4
+        - ReagentId: Flavorol
+          Quantity: 2
+
+# Lua end

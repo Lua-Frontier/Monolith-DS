@@ -67,3 +67,37 @@
   id: tangy
   flavorType: Complex
   description: flavor-complex-tangy
+
+# Lua start
+
+- type: flavor
+  id: spices
+  flavorType: Complex
+  description: flavor-complex-spices
+
+- type: flavor
+  id: cinnamon
+  flavorType: Complex
+  description: flavor-complex-cinnamon
+
+- type: flavor
+  id: hairy
+  flavorType: Complex
+  description: flavor-complex-hairy
+
+- type: flavor
+  id: licorice
+  flavorType: Complex
+  description: flavor-complex-licorice
+
+- type: flavor
+  id: texas
+  flavorType: Complex
+  description: flavor-complex-texas
+
+- type: flavor
+  id: creative
+  flavorType: Complex
+  description: flavor-complex-creative
+
+# Lua end

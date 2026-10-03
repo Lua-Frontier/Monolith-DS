@@ -48,6 +48,12 @@
     },
     {
       "name": "plainwhite"
+    },
+    {
+      "name": "plaincotton"
+    },
+    {
+      "name": "cheesecotton"
     }
   ]
 }

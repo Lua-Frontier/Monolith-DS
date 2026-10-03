@@ -129,3 +129,19 @@
       amount: 1
   products:
     Eggnog: 4
+
+# Lua start
+
+- type: reaction
+  id: TheMadgob
+  reactants:
+    DoctorsDelight:
+      amount: 1
+    PumpkinFlesh:
+      amount: 3
+    JuiceThatMakesYouWeh:
+      amount: 1
+  products:
+    TheMadgob: 5
+
+# Lua end

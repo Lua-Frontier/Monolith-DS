@@ -19,3 +19,10 @@ botany-seed-jar-name = jar of {$seedName} {$seedNoun}
 
 # Missing upstream definitions
 seeds-lemoon-display-name = lemoon trees
+
+# Lua start
+seeds-everyspice-display-name = everyspice plants
+seeds-everyspice-name = everyspice
+seeds-monkanana-display-name = monkanana trees
+seeds-monkanana-name = monkanana
+# Lua end

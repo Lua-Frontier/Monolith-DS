@@ -16,6 +16,7 @@
     prototypes:
       - DrinkAbsintheGlass
       - DrinkAleGlass
+      - DrinkAlienBrainHemorrhage # Lua
       - DrinkAloe
       - DrinkAndalusia
       - DrinkAntifreeze
@@ -32,17 +33,21 @@
       - DrinkBloodyMaryGlass
       - DrinkBooger
       - DrinkBraveBullGlass
+      - DrinkBronxGlass # Lua
       - BudgetInsulsDrinkGlass
       - DrinkCarrotJuice
       - DrinkCoconutRum
       - DrinkChocolateGlass
       - DrinkCognacGlass
       - DrinkCosmopolitan
+      - DrinkCrushDepthGlass # Lua
       - DrinkCubaLibreGlass
+      - DrinkDarkandStormyGlass # Lua
       - DrinkDeadRumGlass
       - DrinkDevilsKiss
       - DrinkDriestMartiniGlass
       - DrinkDrGibbGlass
+      - DrinkElectricSharkGlass # Lua
       - DrinkErikaSurprise
       - DrinkFourteenLokoGlass
       - DrinkGargleBlasterGlass
@@ -62,6 +67,9 @@
       - DrinkIrishSlammer
       - DrinkIrishCoffeeGlass
       - DrinkLemonadeGlass
+      - DrinkJackRoseGlass # Lua
+      - DrinkJungleBirdGlass # Lua
+      - DrinkKalimotxoGlass # Lua
       - DrinkKiraSpecial
       - DrinkLongIslandIcedTeaGlass
       - DrinkManhattanGlass
@@ -71,11 +79,13 @@
       - DrinkMeadGlass
       - DrinkMilkshake
       - DrinkMojito
+      - DrinkMonkeyBusinessGlass # Lua
       - DrinkNTCahors
       - DrinkPainkillerGlass
       - DrinkPatronGlass
       - DrinkPinaColadaGlass
       - DrinkPoscaGlass
+      - DrinkRadlerGlass # Lua
       - DrinkRedMeadGlass
       - DrinkRewriter
       - DrinkRoyRogersGlass
@@ -92,7 +102,9 @@
       - DrinkSyndicatebomb
       - DrinkTequilaSunriseGlass
       - DrinkThreeMileIslandGlass
+      - DrinkTortugaGlass # Lua
       - DrinkToxinsSpecialGlass
+      - DrinkVampiroGlass # Lua
       - DrinkVodkaMartiniGlass
       - DrinkVodkaRedBool
       - DrinkVodkaTonicGlass
@@ -124,4 +136,5 @@
       - DrinkShakeRobo
       - DrinkHoochGlass
       - DrinkBeepskySmashGlass
+      - DrinkBacchusBlessing # Lua
     rareChance: 0.05

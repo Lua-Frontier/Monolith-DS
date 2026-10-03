@@ -237,3 +237,42 @@
   metamorphicMaxFillLevels: 8
   metamorphicFillBaseName: fill
   metamorphicChangeColor: false
+
+# Lua start
+
+- type: reagent
+  id: TheMadgob
+  name: reagent-name-the-madgob
+  parent: BaseDrink
+  desc: reagent-desc-the-madgob
+  physicalDesc: reagent-physical-desc-thick
+  flavor: creative
+  color: "#81b42f"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: PumpkinFlesh
+        amount: 1
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -1
+            Brute: -1
+            Airloss: -1
+            Toxin: -1
+      - !type:Emote
+          emote: Belch
+          showInChat: true
+          force: true
+          probability: 0.25
+  metamorphicSprite:
+    sprite: _NF/Objects/Consumable/Drinks/themadgob.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+# Lua end

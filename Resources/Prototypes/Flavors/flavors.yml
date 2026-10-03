@@ -1349,3 +1349,126 @@
   flavorType: Base
   description: flavor-base-trashy
 
+# Lua start
+
+- type: flavor
+  id: alienbrainhemorrhage
+  flavorType: Complex
+  description: flavor-complex-alien-brain-hemorrhage
+
+- type: flavor
+  id: electricshark
+  flavorType: Complex
+  description: flavor-complex-electric-shark
+
+- type: flavor
+  id: darkandstormy
+  flavorType: Complex
+  description: flavor-complex-dark-and-stormy
+
+- type: flavor
+  id: tortuga
+  flavorType: Complex
+  description: flavor-complex-tortuga
+
+- type: flavor
+  id: radler
+  flavorType: Complex
+  description: flavor-complex-radler
+
+- type: flavor
+  id: crushdepth
+  flavorType: Complex
+  description: flavor-complex-crush-depth
+
+- type: flavor
+  id: jackrose
+  flavorType: Complex
+  description: flavor-complex-jack-rose
+
+- type: flavor
+  id: junglebird
+  flavorType: Complex
+  description: flavor-complex-jungle-bird
+
+- type: flavor
+  id: kalimotxo
+  flavorType: Complex
+  description: flavor-complex-kalimotxo
+
+- type: flavor
+  id: vampiro
+  flavorType: Complex
+  description: flavor-complex-vampiro
+
+- type: flavor
+  id: bronx
+  flavorType: Complex
+  description: flavor-complex-bronx
+
+- type: flavor
+  id: eggnog
+  flavorType: Complex
+  description: flavor-complex-eggnog
+
+- type: flavor
+  id: monkeybusiness
+  flavorType: Complex
+  description: flavor-complex-monkey-business
+
+- type: flavor
+  id: caipirinha
+  flavorType: Complex
+  description: flavor-complex-caipirinha
+
+- type: flavor
+  id: deathintheafternoon
+  flavorType: Complex
+  description: flavor-complex-deathintheafternoon
+
+- type: flavor
+  id: empress75
+  flavorType: Complex
+  description: flavor-complex-empress75
+
+- type: flavor
+  id: espressomartini
+  flavorType: Complex
+  description: flavor-complex-espressomartini
+
+- type: flavor
+  id: mayojito
+  flavorType: Complex
+  description: flavor-complex-mayojito
+
+- type: flavor
+  id: mimeosa
+  flavorType: Complex
+  description: flavor-complex-mimeosa
+
+- type: flavor
+  id: mimosa
+  flavorType: Complex
+  description: flavor-complex-mimosa
+
+- type: flavor
+  id: moscowmule
+  flavorType: Complex
+  description: flavor-complex-moscowmule
+
+- type: flavor
+  id: thesunalsorises
+  flavorType: Complex
+  description: flavor-complex-thesunalsorises
+
+- type: flavor
+  id: whiskeysour
+  flavorType: Complex
+  description: flavor-complex-whiskeysour
+
+- type: flavor
+  id: bacchusblessing
+  flavorType: Complex
+  description: flavor-complex-bacchus-blessing
+
+# Lua end

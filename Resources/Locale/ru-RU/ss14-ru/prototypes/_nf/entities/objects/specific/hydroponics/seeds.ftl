@@ -13,3 +13,10 @@ ent-cucumber = seeds-cucumber-name
 ent-coffee = seeds-coffee-name
 ent-pear = seeds-pear-name
 ent-bees = seeds-bees-name
+
+# Lua start
+ent-EveryspiceSeeds = пакет семян всеспеции
+    .desc = Войны начинались и из-за меньшего.
+ent-MonkananaSeeds = пакет семян обезьянана
+    .desc = Почему они такие волосатые?
+# Lua end
