@@ -1,0 +1,43 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitRuggedCostume
+  name: rugged сostume
+  description: A dark outfit made of coarse fabrics. Too rough for formal visits, but perfect for a casual, alcohol-fueled get-together.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/ruggedcostume.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/ruggedcostume.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitExpensiveCostume
+  name: expensive сostume
+  description: An expensive two-button suit. Only a psychopath or a particularly vain vice president would wear such a thing.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/expensivecostume.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/expensivecostume.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGoodClownCostume
+  name: good clown costume
+  description: '"A striking, far-from-new costume, created after the prototype of the costume worn by the greatest tragic comedian who ever lived" — reads the promotional tag from the inside pocket.' 
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/goodclownsuit.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/goodclownsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitEmeraldCostume
+  name: emerald costume
+  description: A decent-looking, textured gray suit, with a shimmering emerald tie. Only to be worn with a matching top.
+  components: 
+  - type: Sprite
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/emeraldcostume.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/emeraldcostume.rsi

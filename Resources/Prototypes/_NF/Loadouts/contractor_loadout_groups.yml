@@ -99,6 +99,10 @@
   - ContractorClothingUniformJumpskirtLawyerBlack
   - ContractorClothingUniformJumpsuitLawyerGood
   - ContractorClothingUniformJumpskirtLawyerGood
+  - ContractorClothingUniformJumpsuitRuggedCostume # LuaM
+  - ContractorClothingUniformJumpsuitExpensiveCostume # LuaM
+  - ContractorClothingUniformJumpsuitGoodClownCostume # LuaM
+  - ContractorClothingUniformJumpsuitEmeraldCostume # LuaM
   - ContractorClothingUniformRandomPunkCroptop # Punkish (Randomized visuals)
   - ContractorClothingUniformRandomPunkTanktop # Punkish (Randomized visuals)
   - ContractorClothingUniformRandomArmlessNoSkirt # Punkish (Randomized visuals)
