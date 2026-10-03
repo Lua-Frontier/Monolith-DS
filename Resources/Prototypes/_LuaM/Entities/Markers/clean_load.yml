@@ -1,0 +1,6 @@
+- type: entity
+  id: LuaMCleanLoadPlaceholder
+  name: missing prototype placeholder
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
