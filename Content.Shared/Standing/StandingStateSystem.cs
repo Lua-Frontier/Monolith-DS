@@ -202,7 +202,11 @@ public sealed partial class StandingStateSystem : EntitySystem
 }
 
 [ByRefEvent]
-public record struct DropHandItemsEvent();
+public record struct DropHandItemsEvent
+{
+    // LuaM: Equipment such as the Circle weapon-retention implant can block forced drops.
+    public bool Cancelled;
+}
 
 /// <summary>
 /// Subscribe if you can potentially block a down attempt.
