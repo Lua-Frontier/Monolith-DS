@@ -1,0 +1,24 @@
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: Hitscan18x160mm
+  categories:
+  - MiscAmmo
+  - Ammo
+  result: AmmoBoxHitscan18x160mm
+  materials:
+    Plasteel: 2500
+    Plasma: 1700
+    Uranium: 1300
+    UraniumDepleted: 200
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: CartridgeBullet18x160mm
+  categories:
+  - MiscAmmo
+  - Ammo
+  result: AmmoBoxBullet18x160mm
+  materials:
+    Steel: 3500
+    Plasma: 1200
+    Uranium: 600

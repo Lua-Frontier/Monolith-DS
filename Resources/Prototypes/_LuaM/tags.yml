@@ -3,6 +3,9 @@
   id: AnomalyCore
 
 - type: Tag
+  id: Cartridge18x160mm
+
+- type: Tag
   id: CrateBluespaceElectronics
 
 - type: Tag

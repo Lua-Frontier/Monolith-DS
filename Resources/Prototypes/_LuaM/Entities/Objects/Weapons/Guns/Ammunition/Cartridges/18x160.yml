@@ -1,0 +1,42 @@
+- type: entity
+  parent: BaseCartridge
+  id: BaseCartridge18x160mm
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Casings/60_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: Tag
+    tags:
+    - Cartridge
+    - Cartridge18x160mm
+
+- type: entity
+  parent: BaseCartridge18x160mm
+  id: CartridgeBullet18x160mm
+  name: cartridge (18x160mm Bullet)
+  description:  A massive cartridge used in sniper rifles; this variant is a basic gunpowder-propelled round featuring a tungsten tip
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet18x160mm
+  - type: Sprite
+    scale: 1.2, 1.2
+  - type: SpentAmmoVisuals
+
+- type: entity
+  parent:
+  - BaseCartridge18x160mm
+  - Coilgun18x160mm
+  id: Hitscan18x160mm
+  name: cartridge (18x160mm Rod)
+  description: A massive cartridge used in sniper rifles; this variant contains an increased powder charge that propels a tungsten rod at tremendous speed.
+  components:
+  - type: Sprite
+    layers:
+    - state: hypercharged
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: HitscanAmmo
+    casingPrototype: ChemicalSlop

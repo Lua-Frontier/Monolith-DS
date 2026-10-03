@@ -1,0 +1,16 @@
+- type: entity
+  parent: NFBaseBlueprintArmory
+  id: Blueprint18x160mmAmmo
+  name: Sniper rifle "Hunter - 101" ammo
+  description: A blueprint with a schematic of sniper rifle "Hunter - 101" ammo. It can be inserted into an autolathe or a techfab.
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - CartridgeBullet18x160mm
+    - Hitscan18x160mm
+  - type: Tag 
+    tags: 
+      - Cartridge # Этот костыль нужен что-бы он лез в ящик для оружия.
+      - BlueprintAutolathe
+      - Document
+      - Paper

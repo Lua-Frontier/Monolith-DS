@@ -1,0 +1,51 @@
+- type: entity
+  id: Coilgun18x160mm
+  parent: BasicHitscan
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Piercing: 120
+        Structural: 1200
+    armorPenetration: 0.65
+#  - type: HitscanMultiRaycast # При появлении этой механики заменить этим "HitscanBasicRaycast"
+#    maxPierce: 5
+#    maxDistance: 800
+#    collisionMask:
+#    - Impassable
+#    - Opaque
+#    - HighImpassable
+  - type: HitscanBasicRaycast
+    maxDistance: 800
+    collisionMask:
+    - Impassable
+    - Opaque
+    - HighImpassable
+  - type: HitscanReflect
+    reflectiveType: None
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi
+      state: gauss_muzzle
+    travelFlash:
+      sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi
+      state: gauss_trail
+    impactFlash:
+      sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi
+      state: gauss_impact
+
+- type: entity
+  id: Bullet18x160mm
+  name: bullet (18x160mm)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 150
+    armorPenetration: 0.4
+    penetrationThreshold: 1
+    penetrationDamageTypeRequirement:
+    - Piercing
