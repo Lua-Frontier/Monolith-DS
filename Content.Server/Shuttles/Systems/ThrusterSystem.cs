@@ -246,7 +246,34 @@ public sealed partial class ThrusterSystem : EntitySystem
                 shuttleComponent.AngularThrusters.Add(uid);
                 return;
             }
+
+            // Lua: move the extra rotational thrust to the new grid as well
+            RemoveAngularThrustExtra(uid, component, oldShuttleComponent);
+            AddAngularThrustExtra(uid, component, shuttleComponent);
         }
+
+        // Lua start: omnidirectional thrusters don't care about rotation, only about the grid they're on
+        if (component.Type == ThrusterType.Omnidirectional)
+        {
+            if (!args.ParentChanged)
+                return;
+
+            for (var i = 0; i < 4; i++)
+            {
+                oldShuttleComponent.LinearThrust[i] -= component.Thrust;
+                oldShuttleComponent.BaseLinearThrust[i] -= component.BaseThrust;
+                DebugTools.Assert(oldShuttleComponent.LinearThrusters[i].Contains(uid));
+                oldShuttleComponent.LinearThrusters[i].Remove(uid);
+
+                shuttleComponent.LinearThrust[i] += component.Thrust;
+                shuttleComponent.BaseLinearThrust[i] += component.BaseThrust;
+                DebugTools.Assert(!shuttleComponent.LinearThrusters[i].Contains(uid));
+                shuttleComponent.LinearThrusters[i].Add(uid);
+            }
+
+            return;
+        }
+        // Lua end
 
         if (component.Type == ThrusterType.Linear)
         {
@@ -345,6 +372,7 @@ public sealed partial class ThrusterSystem : EntitySystem
                 shuttleComponent.BaseLinearThrust[direction] += component.BaseThrust;
                 DebugTools.Assert(!shuttleComponent.LinearThrusters[direction].Contains(uid));
                 shuttleComponent.LinearThrusters[direction].Add(uid);
+                AddAngularThrustExtra(uid, component, shuttleComponent); // Lua
 
                 // Don't just add / remove the fixture whenever the thruster fires because perf
                 if (EntityManager.TryGetComponent(uid, out PhysicsComponent? physicsComponent) &&
@@ -361,6 +389,28 @@ public sealed partial class ThrusterSystem : EntitySystem
                 DebugTools.Assert(!shuttleComponent.AngularThrusters.Contains(uid));
                 shuttleComponent.AngularThrusters.Add(uid);
                 break;
+            // Lua start
+            case ThrusterType.Omnidirectional:
+                for (var i = 0; i < 4; i++)
+                {
+                    shuttleComponent.LinearThrust[i] += component.Thrust;
+                    shuttleComponent.BaseLinearThrust[i] += component.BaseThrust;
+                    DebugTools.Assert(!shuttleComponent.LinearThrusters[i].Contains(uid));
+                    shuttleComponent.LinearThrusters[i].Add(uid);
+                }
+
+                AddAngularThrustExtra(uid, component, shuttleComponent);
+
+                if (EntityManager.TryGetComponent(uid, out PhysicsComponent? omniPhysics) &&
+                    component.BurnPoly.Count > 0)
+                {
+                    var shape = new PolygonShape();
+                    shape.Set(component.BurnPoly);
+                    _fixtureSystem.TryCreateFixture(uid, shape, BurnFixture, hard: false, collisionLayer: (int)CollisionGroup.FullTileMask, body: omniPhysics);
+                }
+
+                break;
+            // Lua end
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -378,6 +428,28 @@ public sealed partial class ThrusterSystem : EntitySystem
         _ambient.SetAmbience(uid, true);
         RefreshCenter(uid, shuttleComponent);
     }
+
+    // Lua start
+    private static void AddAngularThrustExtra(EntityUid uid, ThrusterComponent component, ShuttleComponent shuttle)
+    {
+        if (component.Type == ThrusterType.Angular || component.AngularThrustExtra <= 0f)
+            return;
+
+        shuttle.AngularThrust += component.AngularThrustExtra;
+        DebugTools.Assert(!shuttle.AngularThrusters.Contains(uid));
+        shuttle.AngularThrusters.Add(uid);
+    }
+
+    private static void RemoveAngularThrustExtra(EntityUid uid, ThrusterComponent component, ShuttleComponent shuttle)
+    {
+        if (component.Type == ThrusterType.Angular || component.AngularThrustExtra <= 0f)
+            return;
+
+        shuttle.AngularThrust -= component.AngularThrustExtra;
+        DebugTools.Assert(shuttle.AngularThrusters.Contains(uid));
+        shuttle.AngularThrusters.Remove(uid);
+    }
+    // Lua end
 
     /// <summary>
     /// Refreshes the center of thrust for movement calculations.
@@ -444,12 +516,26 @@ public sealed partial class ThrusterSystem : EntitySystem
                 shuttleComponent.BaseLinearThrust[direction] -= component.BaseThrust;
                 DebugTools.Assert(shuttleComponent.LinearThrusters[direction].Contains(uid));
                 shuttleComponent.LinearThrusters[direction].Remove(uid);
+                RemoveAngularThrustExtra(uid, component, shuttleComponent); // Lua
                 break;
             case ThrusterType.Angular:
                 shuttleComponent.AngularThrust -= component.Thrust;
                 DebugTools.Assert(shuttleComponent.AngularThrusters.Contains(uid));
                 shuttleComponent.AngularThrusters.Remove(uid);
                 break;
+            // Lua start
+            case ThrusterType.Omnidirectional:
+                for (var i = 0; i < 4; i++)
+                {
+                    shuttleComponent.LinearThrust[i] -= component.Thrust;
+                    shuttleComponent.BaseLinearThrust[i] -= component.BaseThrust;
+                    DebugTools.Assert(shuttleComponent.LinearThrusters[i].Contains(uid));
+                    shuttleComponent.LinearThrusters[i].Remove(uid);
+                }
+
+                RemoveAngularThrustExtra(uid, component, shuttleComponent);
+                break;
+            // Lua end
             default:
                 throw new ArgumentOutOfRangeException();
         }
