@@ -3,6 +3,9 @@
   id: AnomalyCore
 
 - type: Tag
+  id: ConstructionLoot
+  
+- type: Tag
   id: CrateBluespaceElectronics
 
 - type: Tag
@@ -23,5 +26,3 @@
 - type: Tag
   id: XenoArtifact
 
-- type: Tag
-  id: ConstructionLoot
