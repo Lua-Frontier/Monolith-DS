@@ -10,13 +10,13 @@
   parent: BaseVessel
   name: IED Brawler Drone 'Mock'
   description: A lightly armored fighter equipped with 2 57x460mm autocannons for harassing targets and taking down enemy fighters.
-  limit: 4
+  limit: 3
   price: 22618
   purchasable: false #voucher only
   category: Small
   group: Custom
   mapchecker_group_override: BlackMarket
-  shuttlePath: /SharedMaps/_Mono/Shuttles/PDV/MotleyAnne/mock.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/Carrier/Mock2.yml
   guidebookPage: Null
   class:
   - Pursuit
@@ -27,7 +27,7 @@
 - type: gameMap
   id: Mock
   mapName: 'Mock'
-  mapPath: /SharedMaps/_Mono/Shuttles/PDV/MotleyAnne/mock.yml
+  mapPath: /Maps/_LuaM/Shuttles/Carrier/Mock2.yml
   minPlayers: 0
   stations:
     Mock:

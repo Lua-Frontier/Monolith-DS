@@ -1,4 +1,4 @@
-#Author: Thoughtlessuser on Github, [I'M NOT SURE] on Discord.
+#Author: Xapcyc on Github, Xapcyc on Discord (Originally [I`M NOT SURE] on Discord)
 
 - type: vessel
   id: MotleyAnne
@@ -12,7 +12,7 @@
   category: Medium
   group: BlackMarket
   access: Pirate
-  shuttlePath: /SharedMaps/_Mono/Shuttles/PDV/motleyanne.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml
   guidebookPage: ShipyardMotleyAnne
   class:
   - Patrol
@@ -25,7 +25,7 @@
 - type: gameMap
   id: MotleyAnne
   mapName: 'PDV Motley Anne'
-  mapPath: /SharedMaps/_Mono/Shuttles/PDV/motleyanne.yml
+  mapPath: /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml
   minPlayers: 0
   stations:
     MotleyAnne:
