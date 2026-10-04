@@ -122,7 +122,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         if (_unmannedUpdateTicks < UnmannedUpdateInterval)
             return;
         _unmannedUpdateTicks = 0;
-        UpdateUnmannedShuttles(); // LuaM stop uncontrolled shuttles
+        UpdateUnmannedShuttles();
         // LuaM-end
     }
 
