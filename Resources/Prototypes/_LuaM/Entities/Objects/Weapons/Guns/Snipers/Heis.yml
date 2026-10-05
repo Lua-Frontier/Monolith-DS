@@ -1,0 +1,59 @@
+- type: entity
+  name: Sniper rifle "Hunter - 101"
+  parent: [ BaseItem, BaseGunWieldable ]
+  id: WeaponSniperHunter101
+  description: A high-precision weapon, custom-made for each owner. The pinnacle of Black Market engineering. This version lacks a magazine and bio-coding.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Snipers/Heis/heavensgate_icon_48x.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: _LuaM/Objects/Weapons/Guns/Snipers/Heis/heavensgate.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Appearance
+  - type: Item
+    sprite: _LuaM/Objects/Weapons/Guns/Snipers/Heis/heavensgate_icon_48x.rsi
+    size: Huge
+    shape:
+      - 0,0,7,2
+  - type: Gun
+    fireRate: 0.3
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/EmptyAlarm/lmg_empty_alarm.ogg
+    projectileSpeed: 85
+  - type: GunRequiresWield
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+    canRack: false
+    soundBoltClosed:
+      path: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg
+    soundBoltOpened:
+      path: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_chamber:
+        startingItem: CartridgeBullet18x160mm
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge18x160mm
+  - type: ContainerContainer
+    containers:
+      gun_chamber: !type:ContainerSlot
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.5
+    sprintModifier: 0.5
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 13
+    pvsIncrease: 9
+  - type: StaticPrice
+    price: 75000
+  - type: Execution

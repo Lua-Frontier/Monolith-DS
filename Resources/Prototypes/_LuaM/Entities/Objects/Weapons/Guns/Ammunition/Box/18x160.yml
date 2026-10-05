@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseAmmoBox145x114mm
+  id: AmmoBoxBullet18x160mm
+  name: ammunition box (Bullet 18x160mm)
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,1
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: CartridgeBullet18x160mm
+    whitelist:
+      tags:
+        - Cartridge18x160mm
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/18x160mm.rsi
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+
+- type: entity
+  parent: BaseAmmoBox145x114mm
+  id: AmmoBoxHitscan18x160mm
+  name: big ammunition box (18x160mm Rod)
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,1
+  - type: BallisticAmmoProvider
+    capacity: 10
+    proto: Hitscan18x160mm
+    whitelist:
+      tags:
+        - Cartridge18x160mm
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/18x160mm.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]

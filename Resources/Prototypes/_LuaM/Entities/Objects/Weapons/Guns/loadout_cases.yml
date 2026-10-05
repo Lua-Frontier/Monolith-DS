@@ -1,0 +1,15 @@
+- type: entity
+  parent: WeaponCaseHeavy
+  id: WeaponCaseHunter101Registered
+  suffix: Loadout, Hunter101
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSniperHunter101
+      amount: 1
+    - id: AmmoBoxBullet18x160mm
+      amount: 1
+    - id: AmmoBoxHitscan18x160mm
+      amount: 1
+    - id: Blueprint18x160mmAmmo
+      amount: 1
