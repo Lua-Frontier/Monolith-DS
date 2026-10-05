@@ -1,0 +1,105 @@
+# LuaM: The necromorph mechanics were removed. Obelisks now serve unitology only.
+- type: entity
+  parent: BaseStructure
+  id: StructureObelisk
+  name: обелиск
+  description: Загадочный монолит, вызывающий тревожное чувство.
+  components:
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection: MetalBulletImpact
+    soundTypes:
+      Heat:
+        collection: MetalLaserImpact
+  - type: Tag
+    tags:
+    - Wall
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    noRot: true
+    sprite: _LuaM/Necromorfs/obelisk.rsi
+    layers:
+    - state: active
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-1,0.45,0.50"
+        density: 85
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Appearance
+  - type: DamageVisuals
+    thresholds: [4, 8, 12]
+    damageDivisor: 100
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _LuaM/Structures/obelisk_cracks.rsi
+  - type: UnitologyObelisk
+  - type: WarpPoint
+    follow: true
+
+- type: entity
+  parent: StructureObelisk
+  id: StructureBlackObelisk
+  name: чёрный обелиск
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _LuaM/Necromorfs/blackobelisk.rsi
+    layers:
+    - state: active
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+
+- type: entity
+  parent: StructureBlackObelisk
+  id: StructureBlackObelisk2
+
+- type: entity
+  parent: StructureObelisk
+  id: StructureObelisk2
+
+- type: entity
+  parent: BaseStructure
+  id: StructureObeliskNonReal
+  name: красный обелиск
+  suffix: муляж
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _LuaM/Necromorfs/obelisk.rsi
+    state: active
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Anchorable
