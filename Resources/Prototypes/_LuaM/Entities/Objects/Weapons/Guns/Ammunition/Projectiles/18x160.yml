@@ -9,14 +9,8 @@
         Piercing: 120
         Structural: 1200
     armorPenetration: 0.65
-#  - type: HitscanMultiRaycast # При появлении этой механики заменить этим "HitscanBasicRaycast"
-#    maxPierce: 5
-#    maxDistance: 800
-#    collisionMask:
-#    - Impassable
-#    - Opaque
-#    - HighImpassable
-  - type: HitscanBasicRaycast
+  - type: HitscanMultiRaycast
+    maxPierce: 5
     maxDistance: 800
     collisionMask:
     - Impassable
