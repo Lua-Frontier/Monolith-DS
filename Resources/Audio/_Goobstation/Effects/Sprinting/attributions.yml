@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["sprint_puff.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Taken from Goonstation, made allegedly by Everett McCaffrey according to file metadata."
+  source: "https://github.com/goonstation/goonstation/blob/master/sound/effects/sprint_puff.ogg"

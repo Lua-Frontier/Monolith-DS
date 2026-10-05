@@ -117,6 +117,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction ShuttleRotateLeft = "ShuttleRotateLeft";
         public static readonly BoundKeyFunction ShuttleRotateRight = "ShuttleRotateRight";
         public static readonly BoundKeyFunction ShuttleBrake = "ShuttleBrake";
+        public static readonly BoundKeyFunction Sprint = "Sprint"; // Goobstation
         public static readonly BoundKeyFunction ShuttleAscend = "ShuttleAscend"; // Mono
         public static readonly BoundKeyFunction ShuttleDescend = "ShuttleDescend"; // Mono
 

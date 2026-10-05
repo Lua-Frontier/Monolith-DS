@@ -10,6 +10,7 @@
   id: BaseMobSpecies
   abstract: true
   components:
+  - type: Sprinter # Goobstation
   - type: Sprite
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
