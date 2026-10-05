@@ -128,3 +128,9 @@ food-sequence-taco-gen = taco with {$content}
 # SKEWER
 
 food-sequence-skewer-gen = {$content} kebab
+
+# Lua start
+food-sequence-cotton-burger-gen = {$content}burger
+food-sequence-cotton-burger-content-cotton-bol = cotton
+food-sequence-cotton-burger-content-pyrotton-bol = pyro
+# Lua end

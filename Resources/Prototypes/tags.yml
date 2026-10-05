@@ -1385,3 +1385,10 @@
   id: WriteIgnoreStamps
 
 # ALPHABETICAL
+
+# Lua start
+
+- type: Tag
+  id: CottonBurger
+
+# Lua end

@@ -80,3 +80,10 @@ ent-FoodCakeSuppermatter = суперматерия
     .desc = Чрезвычайно плотная и мощная пища.
 ent-FoodCakeSuppermatterSlice = осколок суперматерии
     .desc = Одна порция мощи.
+
+# Lua start
+ent-FoodCakeCotton = хлопковый торт
+    .desc = Торт с волокнистой глазурью и комком хлопка сверху.
+ent-FoodCakeCottonSlice = кусок хлопкового торта
+    .desc = Кусок хлопкового торта. Глазурь можно просто облизать, ничего страшного.
+# Lua end

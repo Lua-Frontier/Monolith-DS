@@ -242,8 +242,8 @@
         Base: dead-0
   - type: Butcherable
     spawned:
-    - id: FoodMeatChicken
-      amount: 2 # mono 1->2
+    - id: FoodMeatWholeChicken # Lua: FoodMeatChicken x2 > FoodMeatWholeChicken
+      amount: 1
   - type: InteractionPopup
     successChance: 0.8
     interactSuccessString: petting-success-bird
@@ -740,7 +740,7 @@
         Base: dead-0
   - type: Butcherable
     spawned:
-    - id: FoodMeatDuck
+    - id: FoodMeatWholeDuck # Lua: FoodMeatDuck > FoodMeatWholeDuck
       amount: 1
   - type: InteractionPopup
     successChance: 0.9
@@ -1200,8 +1200,8 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: FoodMeatChicken
-      amount: 2
+    - id: FoodMeatWholeChicken # Lua: FoodMeatChicken x2 > FoodMeatWholeChicken
+      amount: 1
   - type: InteractionPopup # TODO: Make it so there's a separate chance to make certain animals outright hostile towards you.
     successChance: 0.1 # Yeah, good luck with that.
     interactSuccessString: petting-success-goose
@@ -2432,8 +2432,8 @@
         Base: penguin_dead
   - type: Butcherable
     spawned:
-    - id: FoodMeatPenguin
-      amount: 3
+    - id: FoodMeatWholePenguin # Lua: FoodMeatPenguin x3 > FoodMeatWholePenguin
+      amount: 1
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-bird

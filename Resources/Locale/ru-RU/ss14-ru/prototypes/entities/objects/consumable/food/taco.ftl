@@ -16,3 +16,8 @@ ent-FoodTacoChickenSupreme = куриное тако суприм
     .desc = Это как обычное тако с курицей, только круче!
 ent-FoodMealSoftTaco = мягкая лепёшка тако
     .desc = Попробуйте кусочек!
+
+# Lua start
+ent-FoodTacoDragon = тако «Драко»
+    .desc = Острое тако с драконьей котлетой.
+# Lua end

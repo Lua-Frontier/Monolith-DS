@@ -30,3 +30,8 @@ reagent-desc-wassail = Hot mulled ale.
 
 reagent-name-eggnog = eggnog
 reagent-desc-eggnog = Creamy, sweet, and slightly boozy. Fully nogged.
+
+# Lua start
+reagent-desc-the-madgob = The Peaq of goblin drink mixing!
+reagent-name-the-madgob = the madgob
+# Lua end

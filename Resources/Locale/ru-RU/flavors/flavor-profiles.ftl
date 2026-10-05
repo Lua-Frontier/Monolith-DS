@@ -353,3 +353,9 @@ flavor-complex-eggnog = как растопленный заварной кре�
 flavor-complex-dark-and-stormy = как имбирный эль с ромом
 flavor-complex-radler = как шипучий лимонад
 flavor-complex-bacchus-blessing = как кирпичная стена
+
+# Lua start
+flavor-complex-texas = как Техас
+flavor-complex-ADTVodkaAntivirusFlavor = как дезинфекция
+flavor-complex-creative = креативно
+# Lua end

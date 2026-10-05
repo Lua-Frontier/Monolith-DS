@@ -133,3 +133,60 @@
   - type: Drink
   - type: Label
     currentLabel: reagent-name-soysauce
+
+# Lua start
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkMayoJug
+  name: mayonnaise jug
+  description: When this jug is emptied it will fall to you to fill it. Will you have the strength. Will you have the resolve.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: Mayo
+          Quantity: 150
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-mayo
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: JugCocoa
+  name: cocoa powder jug
+  suffix: For Drinks, Full
+  description: A jug of cocoa powder.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 50
+        reagents:
+        - ReagentId: CocoaPowder
+          Quantity: 50
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-cocoapowder
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: JugWater
+  name: water powder jug
+  suffix: For Drinks, Full
+  description: A jug of water. Also probably microplastics. 
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: Water
+          Quantity: 300
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-water
+
+# Lua end

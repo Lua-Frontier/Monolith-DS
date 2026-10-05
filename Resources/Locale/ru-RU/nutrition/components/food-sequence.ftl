@@ -162,3 +162,8 @@ food-sequence-cotton-burger-content-plushie-moth = моле
 food-sequence-cotton-burger-content-plushie-ian = иано
 food-sequence-cotton-burger-content-among-pequeno = амонго
 food-sequence-cotton-burger-content-plushie-goblin = гобля
+
+# Lua start
+food-sequence-content-everyspice = всеспеция
+food-sequence-content-monkanana = обезьянан
+# Lua end

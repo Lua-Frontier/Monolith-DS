@@ -73,3 +73,8 @@ ent-FoodBakedMuffinChocolate = шоколадный маффин
     .desc = Вкусный и нежный шоколадный кекс.
 ent-FoodBakedGrilledCheeseSandwich = жареный сырный сэндвич
     .desc = Хлеб с сыром, обжаренные на масле - идеально для холодного дня в космосе.
+
+# Lua start
+ent-FoodBakedGrilledCheeseSandwichCotton = хлопковый сэндвич с сыром на гриле
+    .desc = Хлопковый хлеб на сливочном масле, слегка поджаренный, с расплавленным сыром. Моли не могут устоять.
+# Lua end

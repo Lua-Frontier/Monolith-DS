@@ -61,3 +61,18 @@
     collection: FootstepSticky
     params:
       volume: 6
+
+# Lua start
+
+- type: reagent
+  id: Everyspice
+  name: reagent-name-everyspice
+  group: Foods
+  desc: reagent-desc-everyspice
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: spices
+  flavorMinimum: 0.05
+  color: "#7a481f"
+  recognizable: true
+
+# Lua end

@@ -50,6 +50,12 @@
     },
     {
       "name" : "sausageraw"
+    },
+    {
+      "name": "tofu-slice-battered"
+    },
+    {
+      "name": "tofu-slice-fried"
     }
   ]
 }

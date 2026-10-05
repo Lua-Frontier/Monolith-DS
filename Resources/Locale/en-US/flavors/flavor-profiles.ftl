@@ -320,3 +320,30 @@ flavor-complex-bottledlightning = like lightning in a bottle
 flavor-complex-punishment = like punishment
 flavor-weh = like weh
 flavor-hew = like hew
+
+# Lua start
+flavor-complex-alien-brain-hemorrhage = like an extraterrestrial injury
+flavor-complex-bacchus-blessing = like a wall of bricks
+flavor-complex-bronx = like mildly sweet, alcoholic fruit
+flavor-complex-caipirinha = like Brazil
+flavor-complex-crush-depth = like the Hadal Zone
+flavor-complex-dark-and-stormy = like ginger ale spiked with rum
+flavor-complex-deathintheafternoon = like anise and champagne
+flavor-complex-eggnog = like melted custard
+flavor-complex-electric-shark = like Shark Week in the tropics
+flavor-complex-empress75 = like tyrian purple
+flavor-complex-espressomartini = like vodka and coffee
+flavor-complex-jack-rose = like a testimony
+flavor-complex-jungle-bird = like you’re in a tropical aviary
+flavor-complex-kalimotxo = like fancy spiked cola
+flavor-complex-mayojito = like stomach turmoil
+flavor-complex-mimeosa = like silence and oranges
+flavor-complex-mimosa = like an early brunch
+flavor-complex-monkey-business = like going ape
+flavor-complex-moscowmule = like vodka and ginger ale
+flavor-complex-radler = like spiked lemonade
+flavor-complex-thesunalsorises = like an absinthe daiquiri
+flavor-complex-tortuga = like sweet tea
+flavor-complex-vampiro = fruity, savory, and spicy
+flavor-complex-whiskeysour = like sweetened whiskey and lemon
+# Lua end

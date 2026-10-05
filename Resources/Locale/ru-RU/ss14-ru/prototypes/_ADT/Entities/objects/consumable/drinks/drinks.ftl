@@ -1,0 +1,15 @@
+ent-ADTDrinkArmyFlask = армейская фляга
+    .desc = Потёртая армейская фляга. Повидала немало.
+ent-ADTDrinkTeacup = чашка
+    .desc = Простая белая фарфоровая чашка.
+ent-ADTDrinkTeapot = чайник
+    .desc = Элегантный чайник. Так и источает изысканность.
+ent-ADTDrinkJuiceBerryCarton = ягодный сок
+    .desc = Сок из смеси разных ягод.
+ent-ADTDrinkJuiceLemonCarton = лимонный сок
+    .desc = Сок из лимонов.
+ent-ADTDrinkVodkaAntivirusBottleFull = водка "Антивирус"
+    .desc = Крепкий напиток, который полезнее для зажигательных смесей, чем для питья.
+ent-ADTVodkaAntivirusGlass = { ent-DrinkGlass }
+    .suffix = Водка "Антивирус"
+    .desc = { ent-DrinkGlass.desc }

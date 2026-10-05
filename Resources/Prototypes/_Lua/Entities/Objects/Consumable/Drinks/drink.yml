@@ -1,0 +1,24 @@
+- type: entity
+  parent: DrinkCanBaseFull
+  id: NetscapeCan
+  name: банка Netscape
+  description: Погасли свечи, и ночь в окно твоё войдёт, в тот лунный вечер ты знаешь, что она придет
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 40
+        reagents:
+        - ReagentId: NetscapeDrink
+          Quantity: 40
+      grindable:
+        reagents:
+        - ReagentId: Aluminium
+          Quantity: 4
+        - ReagentId: Ichor
+          Quantity: 1
+  - type: Drink
+  - type: Sprite
+    sprite: _Lua/Objects/Consumable/Drinks/Netscape.rsi
+  - type: Item
+    sprite: _Lua/Objects/Consumable/Drinks/Netscape.rsi

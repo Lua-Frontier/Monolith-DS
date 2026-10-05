@@ -1,0 +1,14 @@
+- type: reagent
+  id: NetscapeDrink
+  name: reagent-name-netscape
+  group: Drinks
+  desc: reagent-desc-netscape
+  physicalDesc: reagent-physical-desc-frosty
+  flavor: tea
+  color: "#bde0ff"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 4
+  pricePerUnit: 0

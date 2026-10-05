@@ -212,6 +212,26 @@
     },
     {
       "name": "patty"
+    },
+    {
+      "name": "dragon-cooked"
+    },
+    {
+      "name": "dragon-cooked-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "dragon-cooked-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "dragoncutlet"
+    },
+    {
+      "name": "dragoncutlet_veins"
+    },
+    {
+      "name": "dragoncutlet-cooked"
     }
   ]
 }

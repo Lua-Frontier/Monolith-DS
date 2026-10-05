@@ -67,4 +67,5 @@
       - FoodBurgerCrazy
       - FoodPizzaArnoldSlice
       - FoodPizzaUraniumSlice
+      - FoodPizzaWorldpeasSlice # Lua
     rareChance: 0.05

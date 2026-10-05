@@ -52,3 +52,10 @@ ent-FoodMealHappyHonkClown = { ent-HappyHonk }
     .desc = { ent-HappyHonk.desc }
 ent-FoodBoxCloth = коробка ткани бренда FlutterSoft
     .desc = Волокно - это самая важная порция пищи для моли! Не пропускайте её и не используйте хлам из нижних ящиков, а покупайте высококачественную ткань бренда FlutterSoft.
+
+# Lua start
+ent-FoodBoxDonkpocketMoth = коробка молепокетов
+    .desc = Инструкция: разогреть в микроволновке. Продукт остынет, если его не съесть в течение семи минут.
+ent-FoodMealHappyHonkBigBite = Хэппи Хонк "Большой кус"
+    .desc = Кто-то заплатил хорошие деньги, чтобы этот фастфуд доставили сюда. Почему-то он пахнет свежим.
+# Lua end

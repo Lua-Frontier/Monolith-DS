@@ -11,3 +11,27 @@
   sprites:
   - sprite: Nyanotrasen/Objects/Specific/Species/felinid.rsi
     state: icon
+
+# Lua start
+
+- type: foodSequenceElement
+  id: Monkanana
+  scale: 0.8, 0.8
+  name: food-sequence-content-monkanana
+  sprites:
+  - sprite: _NF/Objects/Specific/Hydroponics/monkanana.rsi
+    state: produce
+  tags:
+  - Fruit
+
+- type: foodSequenceElement
+  id: Everyspice
+  scale: 0.8, 0.8
+  name: food-sequence-content-everyspice
+  sprites:
+  - sprite: _NF/Objects/Specific/Hydroponics/everyspice.rsi
+    state: produce-roasted
+  tags:
+  - Fruit
+
+# Lua end
