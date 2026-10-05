@@ -1,7 +1,7 @@
 - type: entity
-  name: Sniper rifle "Hunter - 101"
+  name: Sniper rifle "Hynter - 101"
   parent: [ BaseItem, BaseGunWieldable ]
-  id: WeaponSniperHunter101
+  id: WeaponSniperHynter101
   description: A high-precision weapon, custom-made for each owner. The pinnacle of Black Market engineering. This version lacks a magazine and bio-coding.
   components:
   - type: Sprite
