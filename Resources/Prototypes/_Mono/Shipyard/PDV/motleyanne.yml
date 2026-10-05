@@ -12,7 +12,7 @@
   category: Medium
   group: BlackMarket
   access: Pirate
-  shuttlePath: /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml # /SharedMaps/_Mono/Shuttles/PDV/motleyanne.yml > /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml #LuaM /SharedMaps/_Mono/Shuttles/PDV/motleyanne.yml > /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml
   guidebookPage: ShipyardMotleyAnne
   class:
   - Patrol
@@ -25,7 +25,7 @@
 - type: gameMap
   id: MotleyAnne
   mapName: 'PDV Motley Anne'
-  mapPath: /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml # /SharedMaps/_Mono/Shuttles/PDV/motleyanne.yml > /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml
+  mapPath: /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml #LuaM /SharedMaps/_Mono/Shuttles/PDV/motleyanne.yml > /Maps/_LuaM/Shuttles/PDV/MotleyAnneLuaM.yml
   minPlayers: 0
   stations:
     MotleyAnne:
