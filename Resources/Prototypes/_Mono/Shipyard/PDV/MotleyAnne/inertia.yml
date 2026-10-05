@@ -16,7 +16,7 @@
   category: Small
   group: Custom
   mapchecker_group_override: BlackMarket
-  shuttlePath: /Maps/_LuaM/Shuttles/Carrier/Inertia2.yml # /SharedMaps/_Mono/Shuttles/PDV/MotleyAnne/inertia.yml > /Maps/_LuaM/Shuttles/Carrier/Inertia2.yml
+  shuttlePath: /Maps/_LuaM/Shuttles/Carrier/Inertia2.yml #Luam /SharedMaps/_Mono/Shuttles/PDV/MotleyAnne/inertia.yml > /Maps/_LuaM/Shuttles/Carrier/Inertia2.yml
   guidebookPage: Null
   class:
   - Fighter
@@ -27,7 +27,7 @@
 - type: gameMap
   id: Inertia
   mapName: 'Inertia'
-  mapPath: /Maps/_LuaM/Shuttles/Carrier/Inertia2.yml # /SharedMaps/_Mono/Shuttles/PDV/MotleyAnne/inertia.yml > /Maps/_LuaM/Shuttles/Carrier/Inertia2.yml
+  mapPath: /Maps/_LuaM/Shuttles/Carrier/Inertia2.yml #Luam /SharedMaps/_Mono/Shuttles/PDV/MotleyAnne/inertia.yml > /Maps/_LuaM/Shuttles/Carrier/Inertia2.yml
   minPlayers: 0
   stations:
     Inertia:
