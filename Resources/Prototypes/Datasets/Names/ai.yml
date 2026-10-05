@@ -2,4 +2,4 @@
   id: NamesAI
   values:
     prefix: names-ai-dataset-
-    count: 109
+    count: 108 # LuaM: 109 > 108 (only 108 localized names exist)

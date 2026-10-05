@@ -33,6 +33,10 @@ public sealed partial class OutOfContainerGrantSystem : EntitySystem // this nam
 
     private void UpdateComp(EntityUid uid, OutOfContainerGrantComponent component)
     {
+        // Containers get emptied while their contents are being deleted; don't add components then.
+        if (TerminatingOrDeleted(uid))
+            return;
+
         if (_container.IsEntityInContainer(uid))
             RemoveComp(uid, component);
         else

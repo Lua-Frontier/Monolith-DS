@@ -1,0 +1,12 @@
+- type: entity
+  id: OmnidirectionalThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: omnidirectional thruster machine board
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MachineBoard
+    prototype: OmniThrusterLua
+    requirements:
+      Capacitor: 7
+    stackRequirements:
+      Steel: 8

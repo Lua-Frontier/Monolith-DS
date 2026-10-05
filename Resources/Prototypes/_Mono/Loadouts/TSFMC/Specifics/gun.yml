@@ -7,7 +7,6 @@
   - FactionDrozdLoadout
   - FactionRiversongLoadout
   - FactionDragonfangLoadout
-  - FactionBanditLoadout
   fallbacks:
   - FactionFrostLoadout
 
@@ -16,9 +15,8 @@
   name: loadout-group-weapon
   minLimit: 0
   loadouts:
-  - FactionLecterLoadout
+  - FactionRiversongLoadout
   - FactionDrozdLoadout
-  - FactionVulcanLoadout
   - SecurityGuardEnforcerLoadout
 
 - type: loadoutGroup
@@ -26,6 +24,7 @@
   name: loadout-group-weapon
   minLimit: 0
   loadouts:
+  - FactionLecterLoadout
   - FactionRiversongLoadout
   - FactionDrozdLoadout
   - FactionDragonfangLoadout
@@ -34,28 +33,25 @@
 - type: loadoutGroup
   id: TsfmcSidearm
   name: loadout-group-pistol
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - SecurityGuardMk58Loadout
   - FactionInspectorLoadout
   - FactionLaserPistolLoadout
   - ContractorDisablerLoadout
-  fallbacks:
-  - SecurityGuardMk58Loadout
 
 - type: loadoutGroup
   id: TsfmcMag
   name: loadout-group-magazine
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - TSFCaselessAmmoBoxLoadout # Lecter
   - FactionAcpSmgAmmoLoadout #Drozd
   - FactionAcpSmgEmpAmmoLoadout #Drozd EMP
   - Faction762x51mmAmmoLoadout #Vulcan
   - FactionRechargerLoadout #Energy
-  # - Faction8x65mmAmmoLoadout #Bandit
-  fallbacks:
-  - TSFCaselessAmmoBoxLoadout #Lecter
+  - SecurityGuardBeanbagAmmoLoadout # Buckshot, don't mind the weird naming.
+
 
 - type: loadout # Lecter ammo - putting it here because other factions shouldnt be using this
   id: TSFCaselessAmmoBoxLoadout
@@ -67,10 +63,8 @@
 - type: loadoutGroup
   id: TsfmcSidearmAmmo
   name: loadout-group-pistol-magazine
-  minLimit: 1
+  minLimit: 0
   loadouts:
   - FactionRechargerLoadout #Energy
-  - FactionMagnum45Loadout # Inspector/Python/Mateba
-  - FactionAcpPistolAmmoLoadout #MK58
-  fallbacks:
+  - FactionMagnum357Loadout # Inspector/Python/Mateba
   - FactionAcpPistolAmmoLoadout #MK58

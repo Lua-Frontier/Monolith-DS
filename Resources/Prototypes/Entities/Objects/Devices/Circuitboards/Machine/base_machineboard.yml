@@ -5,6 +5,9 @@
   abstract: true
   suffix: Machine Board
   components:
+    - type: Tag
+      tags:
+      - ConstructionLoot # LuaM
     - type: MachineBoard
     - type: Sprite
       sprite: Objects/Misc/module.rsi

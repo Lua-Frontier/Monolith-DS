@@ -5,6 +5,9 @@
   description: What?
   abstract: true
   components:
+    - type: Tag
+      tags:
+      - ConstructionLoot # LuaM
     # Goobstation edit start
     - type: EmitSoundOnPickup
       sound:
@@ -40,6 +43,7 @@
     - type: Tag
       tags:
         - CapacitorStockPart
+        - ConstructionLoot # LuaM
     - type: MachinePart # Frontier
       part: Capacitor # Frontier
       rating: 1 # Frontier

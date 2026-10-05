@@ -181,6 +181,7 @@
   - WeaponXrayCannon
 #Mono start
   - WeaponLMGRatel
+  - WeaponSniperRepeater
   - WeaponShotgunBigBuddy
   - WeaponShotgunBigJohnny
   - WeaponShotgunEnforcerMerc
@@ -208,8 +209,6 @@
   - UllmanWeaponPulseSniper
   - UllmanMeleePlasmaBlade
   - WeaponShotgunJack
-  ## LPC
-  - BalorDroneVoucherMerc
 #Mono end
 
 - type: latheRecipePack

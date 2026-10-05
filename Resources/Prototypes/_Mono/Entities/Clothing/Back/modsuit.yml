@@ -12,8 +12,6 @@
       gloves: ClothingModsuitGauntletsUSSPVaryag
       outerClothing: ClothingModsuitChestplateUSSPVaryag
       shoes: ClothingModsuitBootsUSSPVaryag
-  - type: PirateBountyItem # Mono
-    id: ClothingOuterHardsuitTacsuit
   - type: Storage # Extra space - LuaM
     grid:
     - 0,0,8,6
@@ -46,8 +44,6 @@
       gloves: ClothingModsuitGauntletsUSSPZastavnik
       outerClothing: ClothingModsuitChestplateUSSPZastavnik
       shoes: ClothingModsuitBootsUSSPZastavnik
-  - type: PirateBountyItem # Mono
-    id: ClothingOuterHardsuitTacsuitHighValue
   - type: Storage # Extra space - LuaM
     grid:
     - 0,0,8,6

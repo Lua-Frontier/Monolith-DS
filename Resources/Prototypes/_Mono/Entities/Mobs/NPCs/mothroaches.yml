@@ -1,0 +1,305 @@
+- type: entity
+  name: Boomroach
+  parent: MobMothroach
+  id: MobBoomroach
+  description: This little mothroach has a chinalake strapped to its back! Why and how?
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-boomroach-name
+    description: ghost-role-information-boomroach-description
+    rules: ghost-role-information-boomroach-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
+  - type: AutoImplant
+    implants:
+    - MindShieldImplant
+    - TrackingImplant
+    - RadioImplantTsf
+    - MicroBombImplant
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+    - Traffic
+    - Nfsd
+  - type: ActiveRadio
+    channels:
+    - Common
+    - Traffic
+    - Nfsd
+  - type: NpcFactionMember
+    factions:
+    - TSFMC
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 120
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: GhostTakeoverAvailable
+  - type: Speech
+    speechVerb: Moth
+    speechSounds: Squeak
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: FaxableObject
+    insertingState: inserting_mothroach
+  - type: MothAccent
+  - type: Sprite
+    sprite: Mobs/Animals/mothroach/boomroach.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: mothroach
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: mothroach-moving
+    noMovementLayers:
+      movement:
+        state: mothroach
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Animals/mothroach/boomroach.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: mothroach
+      Critical:
+        Base: mothroach_dead
+      Dead:
+        Base: mothroach_dead
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - Moffic
+    - TauCetiBasic
+    - SolCommon
+    understands:
+    - Moffic
+    - TauCetiBasic
+    - SolCommon
+  - type: Gun
+    fireRate: 2
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet40mmGrenadeEMP
+    fireCost: 500
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 10
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Critical
+      100: Dead
+  - type: Company
+    companyName: TSF
+
+- type: entity
+  name: ImperiRoach
+  parent: MobMothroach
+  id: MobImperiRoach
+  description: Repurposed and highly trained elite member of the PDV, bewarned explosive personallity
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-Imperiroach-name
+    description: ghost-role-information-Imperiroach-description
+    rules: ghost-role-information-Imperiroach-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+  - type: AutoImplant
+    implants:
+    - FreelanceTrackingImplant
+    - RadioImplantFreelance
+    - MicroBombImplant
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+    - Traffic
+    - Freelance
+  - type: ActiveRadio
+    channels:
+    - Common
+    - Traffic
+    - Freelance
+  - type: NpcFactionMember
+    factions:
+    - PirateNF
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 120
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: GhostTakeoverAvailable
+  - type: Speech
+    speechVerb: Moth
+    speechSounds: Squeak
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: FaxableObject
+    insertingState: inserting_mothroach
+  - type: MothAccent
+  - type: Sprite
+    sprite: Mobs/Animals/mothroach/imperiroach.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: mothroach
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: mothroach-moving
+    noMovementLayers:
+      movement:
+        state: mothroach
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Animals/mothroach/imperiroach.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: mothroach
+      Critical:
+        Base: mothroach_dead
+      Dead:
+        Base: mothroach_dead
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - Moffic
+    - TauCetiBasic
+    - Freespeak
+    understands:
+    - Moffic
+    - TauCetiBasic
+    - Freespeak
+
+- type: entity
+  name: OwOroach
+  parent: MobMothroach
+  id: MobOwORoach
+  description: Genetic Experimentionation between mothroaches and cats, too far or not far enough?
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-oworoach-name
+    description: ghost-role-information-oworoach-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+  - type: AutoImplant
+    implants:
+    - RadioImplantCivilian
+    - MicroBombImplant
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+    - Traffic
+  - type: ActiveRadio
+    channels:
+    - Common
+    - Traffic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 120
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: GhostTakeoverAvailable
+  - type: Speech
+    speechVerb: Moth
+    speechSounds: Squeak
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: FaxableObject
+    insertingState: inserting_mothroach
+  - type: MothAccent
+  - type: Sprite
+    sprite: Mobs/Animals/mothroach/oworoach.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: mothroach
+    - map: ["oworoach_tail"]
+      state: tail
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: mothroach-moving
+    noMovementLayers:
+      movement:
+        state: mothroach
+  - type: Item
+    size: Normal
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Animals/mothroach/oworoach.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Appearance
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: mothroach
+      Critical:
+        Base: mothroach_dead
+      Dead:
+        Base: mothroach_dead
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - Moffic
+    - TauCetiBasic
+    understands:
+    - Moffic
+    - TauCetiBasic
+  - type: AddAccentClothing
+    accent: OwOAccent
+  - type: OwOAccent

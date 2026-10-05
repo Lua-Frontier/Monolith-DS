@@ -14,7 +14,7 @@
   minimumDistance: 3500
   maximumDistance: 7500
   spawnGroup: Required
-  gridPath: /Maps/_LuaM/POI/DataLuaM.yml # LuaM: /Maps/_Mono/POI/sevastopol.yml > /Maps/_LuaM/POI/DataLuaM.yml
+  gridPath: /Maps/_Mono/POI/sevastopol.yml
   addComponents:
   - type: IFF
     color: "#009dff"
@@ -22,7 +22,7 @@
 - type: gameMap
   id: Sevastopol
   mapName: 'Sevastopol Data Storage Center'
-  mapPath: /Maps/_LuaM/POI/DataLuaM.yml # LuaM: /Maps/_Mono/POI/sevastopol.yml > /Maps/_LuaM/POI/DataLuaM.yml
+  mapPath: /Maps/_Mono/POI/sevastopol.yml
   minPlayers: 0
   stations:
     Sevastopol:

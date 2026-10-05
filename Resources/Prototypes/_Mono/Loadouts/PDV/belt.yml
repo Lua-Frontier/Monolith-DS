@@ -8,3 +8,8 @@
   price: 1250 # LuaM
   equipment:
     belt: ClothingBeltWebbingsBigBlack
+
+- type: loadout
+  id: PDVClothingBeltWebbingInfantry
+  equipment:
+    belt: ClothingBeltPDVInfantry

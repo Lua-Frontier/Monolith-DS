@@ -499,11 +499,11 @@
 
 # For the Python
 - type: listing
-  id: UplinkSpeedLoader45_magnumAP
+  id: UplinkSpeedLoader357_magnumAP
   name: uplink-speedloader-magnum-name # LuaM: uplink-speedloader-45_magnum-name > uplink-speedloader-magnum-name
   description: uplink-speedloader-magnum-desc # LuaM: uplink-speedloader-magnu-desc > uplink-speedloader-magnum-desc
-  icon: { sprite: /Textures/_Mono/Objects/Weapons/Guns/Ammunition/SpeedLoaders/45_magnum/45_magnum_speed_loader.rsi, state: icon }
-  productEntity: SpeedLoader45_magnumAP
+  icon: { sprite: /Textures/_Mono/Objects/Weapons/Guns/Ammunition/SpeedLoaders/357_magnum/357_magnum_speed_loader.rsi, state: icon }
+  productEntity: SpeedLoader357_magnumAP
   cost:
     Telecrystal: 15 # Mono
   categories:

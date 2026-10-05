@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 06/16/2026 14:33:57
-  entityCount: 1423
+  entityCount: 1422
 maps: []
 grids:
 - 1
@@ -8850,13 +8850,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -2.5,9.5
-      parent: 1
-- proto: WeaponCaseAnnie
-  entities:
-  - uid: 1403
-    components:
-    - type: Transform
-      pos: 1.5877162,1.5892885
       parent: 1
 - proto: WeaponLauncherNfsdLake
   entities:

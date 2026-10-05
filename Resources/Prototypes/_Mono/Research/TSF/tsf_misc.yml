@@ -17,20 +17,6 @@
   position: 6, 13 # LuaM: 12, -1 > 6, 13
 
 - type: technology
-  id: TsfmcMopp
-  name: research-technology-tsfmc-mopp-equipment
-  entityIcon: ClothingUniformTsfmcMopp
-  discipline: TsfmcEquipment
-  tier: 2
-  cost: 15000
-  recipeUnlocks:
-  - ClothingUniformTsfmcMoppTsf
-  - ClothingHandsGlovesMoppTsf
-  technologyPrerequisites:
-  - TsfmcAdvancedEquipment
-  position: 10, 10 # LuaM: 13, 7 > 10, 10
-
-- type: technology
   id: TsfEshield
   name: research-technology-tsfmc-eshield
   entityIcon: EnergyShield
@@ -57,7 +43,7 @@
   cost: 40000
   recipeUnlocks:
   - ShipVoucherTsfT0Recipe
-  - ShipVoucherTsfT1RandomRecipe
+  - ShipVoucherTsfT1Recipe
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - Shuttlecraft # LuaM
@@ -66,12 +52,12 @@
 - type: technology
   id: TsfTierTwoVouchers
   name: research-technology-tsfmc-tier-two-vouchers
-  entityIcon: ShipVoucherAndromeda
+  entityIcon: ShipVoucherTsfT2
   discipline: TsfmcShipyard
   tier: 2
   cost: 60000
   recipeUnlocks:
-  - ShipVoucherTsfT2RandomRecipe
+  - ShipVoucherTsfT2Recipe
   technologyPrerequisites:
   - TsfTierOneVouchers
   - UniversalMaterialResearchT2
@@ -81,16 +67,17 @@
 - type: technology
   id: TsfTierThreeVouchers
   name: research-technology-tsfmc-tier-three-vouchers
-  entityIcon: ShipVoucherFlyssa
+  entityIcon: ShipVoucherLuda
   discipline: TsfmcShipyard
   tier: 3
-  cost: 80000
+  cost: 150000
   recipeUnlocks:
-  - FlyssaVoucherTSF
-  - AltairVoucherTSF
+  - ShipVoucherLudaRecipe
+  - ShipVoucherPolarisRecipe
   technologyPrerequisites:
   - TsfTierTwoVouchers
   - UniversalMaterialResearchT3
+  - UniveralSandboxCruiseMissiles
   - ShuttleCtlaAdvancedDriveResearch # LuaM
   position: 8, 9 # LuaM: 11, 12 > 8, 9
 
@@ -146,6 +133,7 @@
   cost: 10000
   recipeUnlocks:
   - BasicBorgCombatModuleTSF
+  - BorgIFFTSF
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   - TsfPortableRecharger # LuaM
@@ -161,7 +149,33 @@
   recipeUnlocks:
   - AdvancedBorgCombatModuleTSF
   technologyPrerequisites:
-  - UniversalMaterialResearchT3
   - TSFBasicBorgModule
   - MechBasic # LuaM
   position: 8, 9 # LuaM: 12, 14 > 8, 9
+
+- type: technology
+  id: TSFAdvancedBionics
+  name: research-technology-tsfmc-sandevistan
+  entityIcon: OrganHeartTSFSandevistan
+  discipline: TsfmcGear
+  tier: 3
+  cost: 75000
+  recipeUnlocks:
+  - AutosurgeonSandevistanTSF
+  technologyPrerequisites:
+  - UniversalMaterialResearchT3
+  position: 2, -28
+
+#- type: technology
+#  id: TSFExperimentalBionics
+#  name: research-technology-tsfmc-shunt
+#  entityIcon: OrganHeartTSFShunt
+#  discipline: TsfmcGear
+#  tier: 3
+#  cost: 75000
+#  recipeUnlocks:
+#  - AutosurgeonShuntTSF
+#  technologyPrerequisites:
+#  - UniversalMaterialResearchT3
+#  - TSFAdvancedBionics
+#  position: 13, 15

@@ -33,6 +33,7 @@
   - WeaponRiflePrometheus
   - WeaponRifleVulcanFCMC
   - WeaponShotgunKammererNF
+  - WeaponSniperRepeater
   technologyPrerequisites:
   - AdvancedParts # LuaM: BasicParts > AdvancedParts
   - WeaponizedLaserManipulation # LuaM
@@ -53,16 +54,3 @@
   - MercArmementAdvanced # LuaM: AdvancedRiotControl > MercArmementAdvanced
   - PortableMicrofusionWeaponry # LuaM: SuperParts > PortableMicrofusionWeaponry
   position: 14, 8 # LuaM: 4, 2 >  14, 8
-
-- type: technology
-  id: DroneResearch
-  name: research-technology-drones-1
-  entityIcon: ShipVoucherTsfT0
-  discipline: FactionUniversal # LuaM: Arsenal > FactionUniversal
-  tier: 3
-  cost: 45000 # LuaM: 15000 > 45000
-  recipeUnlocks:
-  - BalorDroneVoucherMerc
-  technologyPrerequisites:
-  - UniversalMaterialResearchT1
-  position: 10, 13 # LuaM: 9, -2 > 10, 13

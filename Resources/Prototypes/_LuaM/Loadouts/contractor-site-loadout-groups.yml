@@ -1,0 +1,35 @@
+- type: loadout
+  id: ContractorClothingUniformJumpsuitRuggedCostume
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 100
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRuggedCostume
+
+- type: loadout
+  id: ContractorClothingUniformJumpsuitExpensiveCostume
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 100
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitExpensiveCostume
+
+- type: loadout
+  id: ContractorClothingUniformJumpsuitGoodClownCostume
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 100
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitGoodClownCostume
+
+- type: loadout
+  id: ContractorClothingUniformJumpsuitEmeraldCostume
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 100
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitEmeraldCostume

@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/26/2026 13:13:44
-  entityCount: 4383
+  entityCount: 4382
 maps: []
 grids:
 - 1
@@ -22112,8 +22112,6 @@ entities:
     - type: Transform
       pos: -6.5,-34.5
       parent: 1
-- proto: SuitStorageM86
-  entities:
   - uid: 3250
     components:
     - type: Transform
@@ -28519,14 +28517,6 @@ entities:
 - proto: WeaponPistolKuosame
   entities:
   - uid: 3243
-    components:
-    - type: Transform
-      parent: 3242
-    - type: Physics
-      canCollide: False
-- proto: WeaponRifleAnnie
-  entities:
-  - uid: 3244
     components:
     - type: Transform
       parent: 3242

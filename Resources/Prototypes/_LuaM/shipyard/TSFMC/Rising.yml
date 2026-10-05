@@ -2,7 +2,7 @@
 
 - type: vessel
   id: TSFMCRising
-  parent: BaseVesselAntag
+  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
   name: vessel-rising-name
   description: vessel-rising-desc
   limit: 1

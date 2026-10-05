@@ -32,6 +32,26 @@ Magazine90mm: 90mmMagazineHE
 ShipCyrexaProjectile: 220mmBulletAPHE
 ShipBoforsProjectile: 255mmBulletAPHE
 
+# 2026-05-10 - https://github.com/Monolith-Station/Monolith/pull/3951
+
+SpeedLoader45_magnumRubber: SpeedLoader357_magnumRubber
+SpeedLoader45_magnumFMJ: SpeedLoader357_magnumFMJ
+SpeedLoader45_magnumAP: SpeedLoader357_magnumAP
+SpeedLoader45_magnumPractice: SpeedLoader357_magnumPractice
+AmmoBox45_magnumFMJ: AmmoBox357_magnumFMJ
+AmmoBox45_magnumBigFMJ: AmmoBox357_magnumBigFMJ
+AmmoBox45_magnumPractice: AmmoBox357_magnumPractice
+BoxMagazine45_magnumFMJ: BoxMagazine357_magnumFMJ
+Magazine45_magnumPistolFMJ: null
+
+WeaponPistolN1984: WeaponRevolverMateba
+WeaponRevolverLucky: WeaponRevolverInspector
+WeaponRevolverFaith: WeaponRevolverInspector
+WeaponRevolverFitz: WeaponRevolverInspector
+WeaponRevolverDeckardExpeditionGrifty: WeaponRevolverInspector
+WeaponRevolverDeckard: WeaponRevolverInspector
+WeaponRevolverPirate: WeaponRevolverInspector
+
 # Hyperlink books
 
 HyperlinkBookSpaceLaw: null
@@ -40,3 +60,47 @@ HyperlinkBookNfsdSop: null
 
 # base planet water replaced by CE water (z-level safe landing + distortion)
 FloorWaterEntity: CEWater
+
+#hotplate -> thermobath
+ChemistryHotplate: MachineThermobath
+HotplateMachineCircuitboard: ThermobathMachineCircuitboard
+ChemistryHotplateFlatpack: MachineThermobathFlatpack
+
+# Shipyard culling
+MiningCarrierComputer: null
+HiveCarrierComputer: null
+TSFCarrierComputer: null
+LedokolAttachmentComputer: null
+WindreignCarrierComputer: null
+RavagerCarrierComputer: null
+BalorCarrierComputer: null
+
+# 25/09/2026 - Bounty rework
+ComputerPirateBountyRedemption: BaseComputer # no longer has a purpose
+ComputerPirateBountyRedemptionTabletop: ComputerTabletopFrame # ditto
+
+# LuaM: wallening (#4485) reverted - map new salvage airlocks back to pre-wallening ones
+AirlockSalvage: AirlockMining
+AirlockSalvageGlass: AirlockMiningGlass
+
+# LuaM: content removed upstream (Monolith #4624 shipyard refactor, #4018 USSP update)
+LedokolAttatchmentComputer: null
+SpawnPointUSSPCorporal: SpawnPointUSSPRifleman
+SpawnPointUSSPMedic: SpawnPointUSSPRifleman
+ShipVoucherEuropa: ShipVoucherEuropaT3
+ShipVoucherMercury: ShipVoucherTsfT1
+ShipVoucherTarantula: ShipVoucherTsfT1
+ShipVoucherNeptune: ShipVoucherPdvT1
+ShipVoucherAldebaran: ShipVoucherTsfT1
+ShipVoucherSentinel: ShipVoucherTsfT1
+ShipVoucherAndromeda: ShipVoucherTsfT2
+ShipVoucherBastion: ShipVoucherPdvT1
+ShipVoucherFenrir: ShipVoucherPdvT1
+ShipVoucherVulture: ShipVoucherPdvT2
+ShipVoucherScorpionART: ShipVoucherPdvT1
+ShipVoucherScorpionMSL: ShipVoucherPdvT1
+ShipVoucherArrow: ShipVoucherTsfT2
+# LuaM: disabled role spawn points are kept (HideSpawnMenu), so they are not migrated away
+# SpawnPointTSFCivilian:
+# SpawnPointPDVInfantry:
+# SpawnPointTsfInfantry:

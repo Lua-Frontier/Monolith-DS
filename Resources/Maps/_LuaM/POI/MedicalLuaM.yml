@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/15/2026 14:16:22
-  entityCount: 4956
+  entityCount: 4952
 maps: []
 grids:
 - 1
@@ -36534,28 +36534,6 @@ entities:
     components:
     - type: Transform
       pos: 11.596334,36.266335
-      parent: 1
-- proto: WeaponRifleAnnieRegistered
-  entities:
-  - uid: 4835
-    components:
-    - type: Transform
-      pos: 11.268209,33.891335
-      parent: 1
-  - uid: 4871
-    components:
-    - type: Transform
-      pos: 11.252584,33.453835
-      parent: 1
-  - uid: 4877
-    components:
-    - type: Transform
-      pos: 11.580709,33.672585
-      parent: 1
-  - uid: 4891
-    components:
-    - type: Transform
-      pos: 11.565084,33.25071
       parent: 1
 - proto: WeaponShotgunEnforcerRegistered
   entities:

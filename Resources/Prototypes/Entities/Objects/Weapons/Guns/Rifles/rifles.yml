@@ -8,6 +8,8 @@
   - type: Sprite
   - type: Item
     size: Huge
+    shape: # Mono
+    - 0,0,3,2 # 4x3
   - type: Clothing
     sprite: Objects/Weapons/Guns/Rifles/ak.rsi
     quickEquip: false
@@ -73,6 +75,21 @@
     spreadMultiplier: 3
     spreadAddition: 45 # LuaM: 60 > 45
   # Goobstation edit end
+  # Mono - Gun stock attack
+  - type: MeleeRequiresWield
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Blunt: 11
+    angle: 0
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: AltFireMelee
+    attackType: Light
+  # Mono end
 
 - type: entity
   name: LWC AKM (7.62x39mm)

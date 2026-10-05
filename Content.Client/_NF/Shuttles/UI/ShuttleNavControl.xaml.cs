@@ -18,6 +18,7 @@ namespace Content.Client.Shuttles.UI
         public InertiaDampeningMode DampeningMode { get; set; }
 
         public bool HideTarget { get; set; } = false;
+        public bool HideCoords { get; set; } = false; // LuaM: removed upstream in Mono #4368, still used by map target drawing
         public Vector2? Target { get; set; } = null;
         public NetEntity? TargetEntity { get; set; } = null;
 

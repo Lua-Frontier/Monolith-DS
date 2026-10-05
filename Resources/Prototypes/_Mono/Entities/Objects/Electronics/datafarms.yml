@@ -19,10 +19,12 @@
       ResearchDisk10000:
         amount: 2
         defaultPrototype: ResearchDisk10000
-#  - type: Construction # Commented by LuaM
-#    deconstructionTarget: null
-#    graph: Datafarm
-#    node: research
+      MicroprocessorEconomy1:
+        amount: 6
+        defaultPrototype: MicroprocessorEconomy1
+      RadioEconomy1:
+        amount: 1
+        defaultPrototype: RadioEconomy1
 
 - type: entity
   id: DataFarmCryptoCircuitboard
@@ -45,7 +47,9 @@
       ResearchDisk10000:
         amount: 2
         defaultPrototype: ResearchDisk10000
-#  - type: Construction # Commented by LuaM
-#    deconstructionTarget: null
-#    graph: Datafarm
-#    node: crypto
+      MicroprocessorEconomy1:
+        amount: 6
+        defaultPrototype: MicroprocessorEconomy1
+      RadioEconomy1:
+        amount: 1
+        defaultPrototype: RadioEconomy1

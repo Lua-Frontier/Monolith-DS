@@ -367,6 +367,8 @@
     - FootstepSound
     - Halberd
     - MilitaryMechBounty
+  - type: ShipNpcTarget # LuaM
+    needGrid: NoGrid
 
 #TSF Halberd
 - type: entity
@@ -503,6 +505,8 @@
     speedModifier: 5
     useSound:
       path: /Audio/Items/jaws_pry.ogg
+  - type: ShipNpcTarget # LuaM
+    needGrid: NoGrid
 
 - type: entity
   id: AFFlailTSF
@@ -604,6 +608,8 @@
     - FootstepSound
     - Spyglass
     - MilitaryMechBounty
+  - type: ShipNpcTarget # LuaM
+    needGrid: NoGrid
 
 - type: entity
   id: AFFlailETSF
@@ -679,6 +685,8 @@
     - FootstepSound
     - Mace
     - MilitaryMechBounty
+  - type: ShipNpcTarget # LuaM
+    needGrid: NoGrid
 
 - type: entity
   id: AFMaceTSF

@@ -1,5 +1,7 @@
 using Content.Shared.Shuttles.Components;
+using Content.Shared.Tag; // Lua
 using Robust.Client.GameObjects;
+using Robust.Shared.Prototypes; // Lua
 
 namespace Content.Client.Shuttles;
 
@@ -8,6 +10,11 @@ namespace Content.Client.Shuttles;
 /// </summary>
 public sealed class ThrusterSystem : VisualizerSystem<ThrusterComponent>
 {
+    [Dependency] private readonly TagSystem _tag = default!; // Lua
+
+    // Lua: omnidirectional thrusters keep their plume lit while they're on
+    private static readonly ProtoId<TagPrototype> OmniBurnAlwaysOnTag = "OmniBurnAlwaysOn";
+
     /// <summary>
     /// Updates whether or not the thruster is visibly active/thrusting.
     /// </summary>
@@ -23,6 +30,15 @@ public sealed class ThrusterSystem : VisualizerSystem<ThrusterComponent>
             state && AppearanceSystem.TryGetData<bool>(uid, ThrusterVisualState.Thrusting, out var thrusting, args.Component) && thrusting,
             args.Sprite
         );
+
+        // Lua start
+        if (state &&
+            _tag.HasTag(uid, OmniBurnAlwaysOnTag) &&
+            args.Sprite.LayerMapTryGet(ThrusterVisualLayers.ThrustingUnshaded, out var unshadedLayer))
+        {
+            args.Sprite.LayerSetVisible(unshadedLayer, true);
+        }
+        // Lua end
     }
 
     /// <summary>

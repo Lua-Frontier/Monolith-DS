@@ -1,6 +1,6 @@
 - type: vessel
   id: ShukraMk2
-  parent: BaseVesselAntag
+  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
   name: vessel-ShukraMk2-name
   description: vessel-ShukraMk2-desc
   price: 154000

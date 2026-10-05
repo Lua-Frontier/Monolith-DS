@@ -76,6 +76,21 @@
     sound:
       collection: SMGDrop
   # Goobstation edit end
+  # Mono - Gun stock attack
+  - type: MeleeRequiresWield
+  - type: MeleeWeapon
+    attackRate: 1.1
+    damage:
+      types:
+        Blunt: 9
+    angle: 0
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: AltFireMelee
+    attackType: Light
+  # Mono end
   - type: Multishot # Goobstation V
     missChance: 0.3 # LuaM: 0.4 > 0.3
     spreadMultiplier: 2 # LuaM: 3 > 2
@@ -107,7 +122,7 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 5.5
+    fireRate: 8 # Mono
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
@@ -115,7 +130,7 @@
     selectedMode: FullAuto
     shotsPerBurst: 5
     burstCooldown: 0.2
-    burstFireRate: 7
+    burstFireRate: 12 # Mono
     availableModes:
     - Burst
     - FullAuto

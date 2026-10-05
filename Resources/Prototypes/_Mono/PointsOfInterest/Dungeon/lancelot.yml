@@ -12,7 +12,7 @@
   parent: BasePOI
   name: 'Шахтёрский Аванпост «Ланцелот»' # LuaM: 'Lancelot Mining Outpost' > 'Шахтёрский Аванпост «Ланцелот»'
   minimumDistance: 10000
-  maximumDistance: 15000
+  maximumDistance: 20000
   spawnGroup: Optional
   gridPath: /Maps/_Mono/POI/Dungeons/lancelot.yml
   addComponents:

@@ -1,2 +1,2 @@
-ent-ConstructionBox = строительный ящик
+ent-ConstructionBox = ящик материалов
   .desc = Большой контейнер для хранения материалов.

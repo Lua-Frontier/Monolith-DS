@@ -19,22 +19,22 @@
 
 - type: ambientSpaceBiome
   id: BiomeFarReachesIV
-  name: Far Reaches IV
+  name: Outer Cloud IV
   description: "Is it really worth it?"
 
 - type: ambientSpaceBiome
   id: BiomeFarReachesIII
-  name: Far Reaches III
+  name: Outer Cloud III
   description: "Things have learnt to walk that ought to crawl."
 
 - type: ambientSpaceBiome
   id: BiomeFarReachesII
-  name: Far Reaches II
+  name: Outer Cloud II
   description: "There's nothing this far out anymore. Or that's what you would find yourself wishing."
 
 - type: ambientSpaceBiome
   id: BiomeFarReachesI
-  name: Far Reaches I
+  name: Outer Cloud I
   description: "You feel like the asteroids are moving even while you aren't. Or watching you. Or both."
 
 #actual biomes

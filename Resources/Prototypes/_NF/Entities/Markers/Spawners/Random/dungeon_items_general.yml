@@ -708,6 +708,7 @@
     - PortableGeneratorPacmanMachineCircuitboard
     - ReagentGrinderMachineCircuitboard
     - OreProcessorMachineCircuitboard
+    - OreMagnetMachineCircuitboard
     - MicrowaveMachineCircuitboard
     - SurveillanceWirelessCameraMovableCircuitboard
     - PowerComputerCircuitboard
@@ -824,6 +825,11 @@
     - SheetLithium10
     - SheetLithium50
 # LuaM-end.
+# LuaM-start:
+    - SheetIridite1
+    - MaterialSheetMeat
+    - SheetUraniumDepleted1
+# LuaM-end.
     chance: 1
     offset: 0.0
     rarePrototypes:
@@ -834,11 +840,6 @@
     - CableMVStack
     - CableApcStack
     - SheetRGlass
-# LuaM-start:
-    - SheetIridite1
-    - MaterialSheetMeat
-    - SheetUraniumDepleted1
-# LuaM-end.
     rareChance: 0.05
 
 - type: entity
@@ -863,16 +864,16 @@
     - SheetRUGlass
     - SheetPlasteel
     - MaterialDurathread
-    chance: 0.9
-    offset: 0.0
-    rarePrototypes:
-    - MaterialDiamond1
-    - MaterialBluespace1 #Mono in
 # LuaM-start:
     - SheetIridite10
     - SheetUraniumDepleted
     - IngotPlutonium1
 # LuaM-end.
+    chance: 0.9
+    offset: 0.0
+    rarePrototypes:
+    - MaterialDiamond1
+    - MaterialBluespace1 #Mono in
     rareChance: 0.01
 
 - type: entity
@@ -945,6 +946,10 @@
     - SheetPlasteel1
     - MaterialDurathread1
     - ShardGlass
+# LuaM-start:
+    - SheetIridite1
+    - IngotPlutonium1
+# LuaM-end.
     chance: 0.95
     offset: 0.0
     rarePrototypes:
@@ -952,10 +957,6 @@
     - MaterialBananium1
     - MaterialBluespace1 #Mono in
 #    - MaterialBones1 #Mono out
-# LuaM-start:
-    - SheetIridite1
-    - IngotPlutonium1
-# LuaM-end.
     rareChance: 0.01
 
 - type: entity

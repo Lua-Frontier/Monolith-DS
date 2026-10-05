@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/29/2026 12:56:14
-  entityCount: 903
+  entityCount: 901
 maps: []
 grids:
 - 1
@@ -5607,18 +5607,6 @@ entities:
     components:
     - type: Transform
       pos: -7.5,-1.5
-      parent: 1
-- proto: WeaponCaseAnnieRegistered
-  entities:
-  - uid: 874
-    components:
-    - type: Transform
-      pos: 6.534949,0.62821484
-      parent: 1
-  - uid: 875
-    components:
-    - type: Transform
-      pos: 6.597449,0.0032148361
       parent: 1
 - proto: WeaponCaseLongEnforcerRegistered
   entities:

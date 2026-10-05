@@ -25,7 +25,6 @@
   - MechIFFTSF
   technologyPrerequisites:
   - TsfmcBasicEquipment
-  - UniversalMaterialResearchT2
   position: 8, 10 # LuaM: 12, 7 > 8, 10
 
 - type: technology
@@ -39,5 +38,4 @@
   - ClothingOuterHardsuitM92XTsf
   technologyPrerequisites:
   - TsfmcAdvancedEquipment
-  - UniversalMaterialResearchT3
   position: 8, 7 # LuaM: 12, 12 > 8, 7

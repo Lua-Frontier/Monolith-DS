@@ -96,6 +96,14 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [DataField]
         public float HeatSignatureRatio = 40f;
+
+        // Lua start
+        /// <summary>
+        ///     Extra rotational thrust added to the shuttle while this (non-angular) thruster is on.
+        /// </summary>
+        [DataField]
+        public float AngularThrustExtra = 0f;
+        // Lua end
     }
 
     public enum ThrusterType
@@ -103,5 +111,7 @@ namespace Content.Server.Shuttles.Components
         Linear,
         // Angular meaning rotational.
         Angular,
+        // Lua: pushes in all four directions at once.
+        Omnidirectional,
     }
 }

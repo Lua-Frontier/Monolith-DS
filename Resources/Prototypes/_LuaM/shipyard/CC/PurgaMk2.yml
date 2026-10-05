@@ -1,6 +1,6 @@
 - type: vessel
   id: PurgaMk2
-  parent: BaseVesselAntag
+  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
   name: vessel-PurgaMk2-name
   description: vessel-PurgaMk2-desc
   price: 176000

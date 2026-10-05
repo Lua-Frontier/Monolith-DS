@@ -5,7 +5,7 @@
   playTimeTracker: MdMedic
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 54000 # 15 hrs
+      time: 14400 # 4 hours. It's a paramedic role dude.
   startingGear: MdMedicGear
   alwaysUseSpawner: true
   icon: "JobIconMedicalDoctor"
@@ -17,6 +17,10 @@
   accessGroups:
   - GeneralAccess
   - Medical
+  access:
+  - Medical
+  guides:
+  - Caelestinus
   special:
 #  - !type:AddImplantSpecial  # LuaM commented
 #    implants: [ MindShieldImplant, TrackingImplant ]
@@ -27,6 +31,8 @@
         - MD
       - type: SurgerySpeedModifier
         SpeedModifier: 1.75
+      - type: ChatRank
+        rank: md-medic
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
@@ -45,3 +51,4 @@
     back:
     - RubberStampDoctor
     - BoxFolderMedicalDoctor
+    - EncryptionKeyService

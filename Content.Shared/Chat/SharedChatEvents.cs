@@ -16,6 +16,7 @@ public sealed class TransformSpeakerNameEvent : EntityEventArgs, IInventoryRelay
     public EntityUid Sender;
     public string VoiceName;
     public ProtoId<SpeechVerbPrototype>? SpeechVerb;
+    public bool FromRadio = false; // Mono/Crescent - Chatranks
 
     public TransformSpeakerNameEvent(EntityUid sender, string name)
     {

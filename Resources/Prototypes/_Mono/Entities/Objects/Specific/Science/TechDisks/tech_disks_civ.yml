@@ -245,6 +245,7 @@
   - type: TechnologyDisk
     recipes:
     - RCD
+    - RPD
     - RCDAmmo
     - NFBlueprintRCDAmmo
 

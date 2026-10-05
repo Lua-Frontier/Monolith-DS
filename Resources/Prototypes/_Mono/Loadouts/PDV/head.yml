@@ -4,7 +4,6 @@
   equipment:
     head: ClothingHeadHatNfsdBeretBrown
 
-
 - type: loadout
   id: PDVCommanderBeret
   price: 100 # LuaM
@@ -22,3 +21,8 @@
   price: 100 # LuaM
   equipment:
     head: ClothingHeadHatCapVizierPurple
+
+- type: loadout
+  id: PDVInfantryHelmet
+  equipment:
+    head: ClothingHeadHelmetCombatPDV

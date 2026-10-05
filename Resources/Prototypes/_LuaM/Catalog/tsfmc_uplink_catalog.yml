@@ -1,21 +1,4 @@
 # Vouchers
-# T2
-
-- type: listing
-  id: UplinkSecurityT2VoucherArrow
-  name:  uplink-security-t2-Arrow-voucher-name
-  description: uplink-security-t2-Arrow-voucher-desc
-  productEntity: ShipVoucherArrow
-  cost:
-    FederationMilitaryCredit: 175
-  categories:
-  - UplinkSecurityVouchers
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - SecurityUplink
-
 # T3
 
 - type: listing

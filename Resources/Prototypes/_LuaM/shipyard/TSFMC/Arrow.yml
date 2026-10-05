@@ -2,7 +2,7 @@
 
 - type: vessel
   id: TSFMCArrow
-  parent: BaseVesselAntag
+  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
   name: vessel-arrow-name
   description: vessel-arrow-desc
   limit: 2

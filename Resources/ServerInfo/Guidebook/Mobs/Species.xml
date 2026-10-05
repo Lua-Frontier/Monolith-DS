@@ -29,6 +29,7 @@
     <GuideEntityEmbed Entity="MobHarpy" Caption="Гарпия"/>
     <GuideEntityEmbed Entity="MobOni" Caption="Они"/>
     <GuideEntityEmbed Entity="MobChitinid" Caption="Хитинид"/>
+    <GuideEntityEmbed Entity="MobFeroxi" Caption="Ферокси"/>
   </Box>
 
   # Виды из сборки «Монолит»

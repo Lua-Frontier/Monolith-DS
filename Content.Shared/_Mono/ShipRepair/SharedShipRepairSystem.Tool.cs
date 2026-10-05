@@ -32,7 +32,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
             return;
 // LuaM-end.
         var grids = new List<Entity<MapGridComponent>>();
-        _mapMan.FindGridsIntersecting(ourXform.MapID, Box2.CenteredAround(clickWorld, new Vector2(1f, 1f)), ref grids, false, false);
+        _mapMan.FindGridsIntersecting(ourXform.MapID, Box2.CenteredAround(clickWorld, new Vector2(1.5f, 1.5f)), ref grids, false, false);
         if (grids.Count == 0 && ourXform.GridUid == null)
             return;
 
@@ -74,6 +74,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
 
         var alreadyExists = false;
         var notEnoughCharges = false;
+        var mostCharges = 0;
         // try entity repair if we haven't done tile repair
         if (ent.Comp.EnableEntityRepair)
         {
@@ -156,10 +157,13 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
                     StartRepair(ent, args.User, targetGrid, gridIndices, delay, cost, id);
                     return;
                 }
+
+                if (cost > mostCharges)
+                    mostCharges = cost;
             }
         }
         if (notEnoughCharges)
-            _popup.PopupClient(Loc.GetString("ship-repair-tool-insufficient-ammo"), ent, args.User);
+            _popup.PopupClient(Loc.GetString("ship-repair-tool-insufficient-ammo", ("cost", mostCharges)), ent, args.User);
         else if (alreadyExists && _net.IsServer && ent.Comp.CheckPreExistingEntities) // else we show it once or twice depending on whether it's in PVS
             _popup.PopupEntity(Loc.GetString("ship-repair-tool-entity-exists"), ent, args.User, PopupType.SmallCaution);
     }
@@ -170,13 +174,15 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
         {
             TargetGridIndices = tileIndices,
             RepairId = repairId,
-            Cost = cost
+            Cost = cost,
+            TargetGrid = grid
         };
 
-        var args = new DoAfterArgs(EntityManager, user, delay, ev, tool, grid)
+        var args = new DoAfterArgs(EntityManager, user, delay, ev, tool)
         {
             BreakOnMove = true,
             BreakOnDamage = true,
+            MovementThreshold = 0.5f,
             // only block if we're trying the exact same
             DuplicateCondition = DuplicateConditions.SameEvent
         };
@@ -202,7 +208,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
         if (args.Cancelled || args.Handled)
             return;
 
-        if (args.Target is not { } targetGrid || !TryComp<ShipRepairDataComponent>(targetGrid, out var repairData))
+        if (args.TargetGrid is not { } targetGrid || !TryComp<ShipRepairDataComponent>(targetGrid, out var repairData))
             return;
 
         if (!TryGetChunk(repairData, args.TargetGridIndices, out var chunk))
@@ -210,7 +216,7 @@ public abstract partial class SharedShipRepairSystem : EntitySystem
 
         if (_charges.HasInsufficientCharges(ent, args.Cost))
         {
-            _popup.PopupEntity(Loc.GetString("ship-repair-tool-insufficient-ammo"), ent, args.User);
+            _popup.PopupEntity(Loc.GetString("ship-repair-tool-insufficient-ammo", ("cost", args.Cost)), ent, args.User);
             return;
         }
 

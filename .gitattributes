@@ -62,3 +62,14 @@ Resources/Maps/**.yml merge=mapping-merge-driver
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# LuaM: upstream changelogs are frozen here. Keep our version on every merge so
+# upstream (Monolith/Frontier/wizden) entries never reach our changelog/Discord.
+# Requires once per clone: git config merge.ours.driver true
+# (.github/workflows/no-upstream-changelog.yml blocks PRs that still change them)
+###############################################################################
+Resources/Changelog/Admin.yml     merge=ours
+Resources/Changelog/Changelog.yml merge=ours
+Resources/Changelog/Frontier.yml  merge=ours
+Resources/Changelog/Monolith.yml  merge=ours

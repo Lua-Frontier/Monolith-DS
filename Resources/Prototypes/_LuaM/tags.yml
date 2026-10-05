@@ -6,6 +6,9 @@
   id: Cartridge18x160mm
 
 - type: Tag
+  id: ConstructionLoot
+
+- type: Tag
   id: CrateBluespaceElectronics
 
 - type: Tag
@@ -25,3 +28,4 @@
 
 - type: Tag
   id: XenoArtifact
+

@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseMachinePowered , BaseStructureDisableAnchoring ] # LuaM add BaseStructureDisableAnchoring
+  parent: [BaseMachinePowered, BaseStructureDisableToolUse, BaseStructureDisableAnchoring] # LuaM add BaseStructureDisableAnchoring
   id: DroneController
   name: drone control server
   description: Pilots the drone it's on, if controlled by a drone control console.

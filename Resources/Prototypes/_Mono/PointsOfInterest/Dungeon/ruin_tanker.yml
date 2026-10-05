@@ -12,7 +12,7 @@
   parent: BaseMobilePOI
   name: 'Автоматический Секториальный Танкер' # LuaM: 'Automated Inter Sector Tanker' > 'Автоматический Секториальный Танкер'
   minimumDistance: 10000
-  maximumDistance: 15000
+  maximumDistance: 20000
   spawnGroup: Optional
   gridPath: /Maps/_Mono/POI/Dungeons/ruin_tanker.yml
   addComponents:

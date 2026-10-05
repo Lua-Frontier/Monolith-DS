@@ -58,12 +58,11 @@
     modifiers:
       coefficients:
         Blunt: 0.6
-        Slash: 0.6
+        Slash: 0.5
         Piercing: 0.7
         Heat: 0.6
         Radiation: 0.2
         Caustic: 0.5
-        Poison: 0.9
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
@@ -114,7 +113,8 @@
     vendPrice: 1000
 # LuaM-start:
   - type: PersonalShield
-    color: "#FF00FFFF"
+    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
+      color: "#FF00FFFF"
     shield:
       maxCharge: 450
       regenRate: 6
@@ -162,7 +162,6 @@
         Heat: 0.45
         Radiation: 0.4
         Caustic: 0.5
-        Poison: 0.8 # Mono
   - type: ClothingSpeedModifier # Mono - Armor Value Changes
     walkModifier: 1.1 # LuaM: 0.9 > 1.1
     sprintModifier: 1.1 # LuaM: 1 > 1.1
@@ -172,7 +171,8 @@
     id: ClothingOuterHardsuitTacsuitHighValue
 # LuaM-start:
   - type: PersonalShield
-    color: "#FF00FFFF"
+    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
+      color: "#FF00FFFF"
     shield:
       maxCharge: 350
       regenRate: 6
@@ -190,10 +190,10 @@
 # LuaM-end.
 
 - type: entity
-  parent: [ClothingOuterHardsuitJuggernaut, MonoEnergyShieldClothing, BaseFactionGearTSFT3 ] # Jugger Suit # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
+  parent: [ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing, BaseFactionGearTSFT3] # Jugger Suit # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
   id: ClothingOuterHardsuitNfsdExperimental
   name: TSFMC M92-X tacsuit
-  description: An experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Durable, and comes with an integrated soft-shield along with numerous gadgets at the cost of insulation and solid armor.
+  description: An experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Durable, and comes with an integrated hard-shield along with numerous gadgets at the cost of insulation and solid armor.
   components:
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_experimental.rsi # Mono
@@ -214,6 +214,9 @@
     reduction: 0.6
   - type: ExplosionResistance
     damageCoefficient: 0.4
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
   - type: Armor # Mono - Armor Value Changes
     modifiers:
       coefficients:
@@ -223,10 +226,10 @@
         Heat: 0.3 # LuaM: 0.7 > 0.3
         Radiation: 0.3 # LuaM: 0.5 > 0.3
         Caustic: 0.3 # LuaM: 0.8 > 0.3
-        Poison: 0.8 # Mono
   - type: ClothingSpeedModifier # Mono - Armor Value Changes
     walkModifier: 0.75 # LuaM: 0.7 > 0.75
     sprintModifier: 0.75 # LuaM: 0.65 > 0.75
+  - type: HeldSpeedModifier
   - type: FactionClothing
     faction: NanoTrasen
   - type: StaminaDamageResistance # Mono - Stamres
@@ -238,21 +241,23 @@
       collection: FootstepHeavySuit
 # LuaM-start:
   - type: PersonalShield
-    color: "#FF00FFFF"
+    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
+      color: "#FF00FFFF"
     shield:
       maxCharge: 500
       regenRate: 6
       spinupTime: 0.5
       breakCooldown: 20
       powerDraw: 0.5
+  # Mono - Shielding comps
   - type: Battery
     maxCharge: 100
     startingCharge: 100
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargePause: true
-    autoRechargePauseTime: 8
-    autoRechargeRate: 100
+    autoRechargePauseTime: 5
+    autoRechargeRate: 5
 # LuaM-end.
 
 #  - type: Blocking # Commented by LuaM
@@ -285,11 +290,19 @@
 #  - type: RechargeableBlocking
 #  - type: UseDelay
 #    delay: 10
+  - type: ExtendDescription
+    descriptionList:
+    - description: Alt-click or otherwise interact to toggle additional shielding.
+      color: "#4f94ad"
+      requireDetailRange: true
+    - description: The M92-x shield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
+      color: "#94768c"
+      requireDetailRange: true
 
 # MARSOC only
 
 - type: entity
-  parent: [ClothingOuterHardsuitM86, BaseFactionGearTSFT3, MonoEnergyShieldClothing] # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
+  parent: [MonoEnergyShieldClothing, ClothingOuterHardsuitBaseNoPlateholder, BaseFactionGearTSFT3] # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
   id: ClothingOuterHardsuitM86Mk4
   name: M86 Mk.4(B) hardsuit
   description: A limited-production redesign proposal for the M86 Mk.3(R), outfitted with an inbuilt personal shield generator.
@@ -311,12 +324,14 @@
         Piercing: 0.3 #LuaM: 0.45 > 0.3
         Shock: 0.95
         Heat: 0.3 # LuaM: 0.7 > 0.3
-        Poison: 0.825
         Radiation: 0.3 # LuaM: 0.5 > 0.3
         Caustic: 0.6
+  - type: StaminaDamageResistance
+    coefficient: 0.2
   - type: ClothingSpeedModifier
     walkModifier: 1.1 # LuaM: 0.9 > 1.1
     sprintModifier: 1.1 # LuaM: 0.875 > 1.1
+  - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
@@ -327,7 +342,8 @@
       helmetattachment: ClothingHeadHelmetAttachmentBlock
 # LuaM-start:
   - type: PersonalShield
-    color: "#FF00FFFF"
+    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
+      color: "#FF00FFFF"
     shield:
       maxCharge: 500
       regenRate: 6
@@ -337,9 +353,15 @@
   - type: Battery
     maxCharge: 100
     startingCharge: 100
+# LuaM-end.
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargePause: true
-    autoRechargePauseTime: 8
-    autoRechargeRate: 100
-# LuaM-end.
+    autoRechargeRate: 5
+    autoRechargePauseTime: 5
+  - type: EmpResistance
+    coefficient: 0.0001
+  - type: ExtendDescription
+    descriptionList:
+    - description: Alt-click or otherwise interact to toggle additional shielding.
+      color: "#4f94ad"
+      requireDetailRange: true

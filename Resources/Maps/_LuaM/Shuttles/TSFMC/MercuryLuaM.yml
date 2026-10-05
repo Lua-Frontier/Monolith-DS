@@ -6679,8 +6679,6 @@ entities:
     - type: Transform
       pos: 4.5,-5.5
       parent: 1
-- proto: SuitStorageM86
-  entities:
   - uid: 872
     components:
     - type: Transform

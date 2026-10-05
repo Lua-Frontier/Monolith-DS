@@ -8,3 +8,8 @@
   price: 2000 # LuaM
   equipment:
     outerClothing: ClothingOuterArmorBPVestMedium
+
+- type: loadout
+  id: TsfmcClothingOuterHardsuitColonel
+  equipment:
+    outerClothing: ClothingOuterHardsuitNfsdSheriff

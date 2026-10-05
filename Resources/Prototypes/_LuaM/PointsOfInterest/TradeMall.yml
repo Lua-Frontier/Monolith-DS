@@ -1,0 +1,41 @@
+- type: pointOfInterest
+  id: TradeMall
+  parent: [BasePOI, BaseRepairablePOI]
+  name: Торговый Центр
+  minimumDistance: 3500
+  maximumDistance: 6500
+  spawnGroup: MarketStation
+  gridPath: /Maps/_LuaM/POI/TradeMallLuaM.yml
+  addComponents:
+  - type: IFF
+    color: "#37C837"
+  - type: StationTransit
+  - type: ProtectedGrid
+    preventArtifactTriggers: true
+  - type: SolarPoweredGrid
+    trackOnInit: true
+    doNotCull: true
+  - type: WorldGenDistanceCarver
+    distanceThresholds:
+      - maxDistance: 500
+        prob: 0.0
+      - maxDistance: 1000
+        prob: 0.3
+
+- type: gameMap
+  id: TradeMall
+  mapName: 'Trade Mall'
+  mapPath: /Maps/_LuaM/POI/TradeMallLuaM.yml
+  minPlayers: 0
+  stations:
+    TradeMall:
+      stationProto: MarketFrontierOutpost
+      components:
+        - type: StationCargoOrderDatabase
+          capacity: 60
+        - type: StationNameSetup
+          mapNameTemplate: 'Trade Mall'
+        - type: StationDeadDrop
+          maxDeadDrops: 2
+        - type: TradeCrateDestination
+          destinationProto: Trade

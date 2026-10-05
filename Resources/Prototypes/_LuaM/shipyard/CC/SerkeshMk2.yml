@@ -1,6 +1,6 @@
 - type: vessel
   id: SerkeshMK2
-  parent: BaseVesselAntag
+  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
   name: vessel-SerkeshMk2-name
   description: vessel-SerkeshMk2-desc
   price: 218000

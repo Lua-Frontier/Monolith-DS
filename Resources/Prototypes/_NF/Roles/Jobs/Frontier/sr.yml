@@ -30,9 +30,15 @@
   - AllAccessMono #Mono
   access:
   - HeadOfPersonnel #Mono
+  guides:
+  - Caelestinus
   special:
-  - !type:AddImplantSpecial
-    implants: [ FreelanceTrackingImplant , TrackingImplant ] # Mono - remove TSFMC implant # LuaM: MindShieldImplant > FreelanceTrackingImplant , TrackingImplant
+  - !type:AddComponentSpecial
+    components:
+    - type: ChatRank
+      rank: cc-overseer
+#   - !type:AddImplantSpecial
+#     implants: [ MindShieldImplant ] # Mono - remove TSFMC implants
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
@@ -59,9 +65,7 @@
     - Flash
     - RubberStampSr
     - DoorRemoteCommand
-    - EncryptionKeyCentCom
     - EncryptionKeyStationMasterSR #Mono start
-    - EncryptionKeyDiplomacy
-    - ShipVoucherFrontierGuard
+  # - ShipVoucherFrontierGuard # Mono
     - PhoneInstrumentHigh
     - CCHandheldOverwatchConsole

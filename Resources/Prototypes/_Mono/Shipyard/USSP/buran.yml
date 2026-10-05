@@ -2,39 +2,42 @@
 
 - type: vessel
   id: Buran
-  parent: BaseVesselAntag
-  name: vessel-buran-name # LuaM-locale
-  description: vessel-buran-desc # LuaM-locale
-  price: 410000 # LuaM: 320000 > 410000
+  parent: BaseVesselIFFDisabled
+  name: VEF Buran
+  description: USSP capital-sized frigate with tremendous broadside firepower and thick armor. Glory to commissariat.
+  limit: 2
+  price: 330809
+  purchasable: false # voucher only
   category: Large
   group: Ussp
-  access: Mercenary
-  shuttlePath: /Maps/_LuaM/Shuttles/USSP/BuranLuaM.yml # LuaM: /Maps/_Mono/Shuttles/USSP/buran.yml > /Maps/_LuaM/Shuttles/USSP/BuranLuaM.yml
+  access: USSP
+  shuttlePath: /SharedMaps/_Mono/Shuttles/USSP/buran.yml
   guidebookPage: ShipyardNFROperation
   class:
   - Frigate
+  - Brawler
   engine:
-  - AME # LuaM: NFR > AME
+  - NFR
 
 - type: gameMap
   id: Buran
   mapName: 'Buran'
-  mapPath: /Maps/_LuaM/Shuttles/USSP/BuranLuaM.yml # LuaM: /Maps/_Mono/Shuttles/USSP/buran.yml > /Maps/_LuaM/Shuttles/USSP/BuranLuaM.yml
+  mapPath: /SharedMaps/_Mono/Shuttles/USSP/buran.yml
   minPlayers: 0
   stations:
     Buran:
-      stationProto: StandardFrontierExpeditionVessel # LuaM: StandardFrontierVessel > StandardFrontierExpeditionVessel
+      stationProto: StandardFrontierVessel
       gridComponents:
       - type: VesselInfo
         description: "Outdated, yet still reliable."
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Buran MIL{1}'
+          mapNameTemplate: 'Buran USSP{1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            Mercenary: [ 0, 0 ]
-            Pilot: [ 0, 0 ]
+           USSPSergeant: [ 0, 0 ]
+           USSPRifleman: [ 0, 0 ]
 

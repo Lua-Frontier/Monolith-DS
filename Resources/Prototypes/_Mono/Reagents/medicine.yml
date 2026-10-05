@@ -121,10 +121,20 @@
         - !type:ReagentThreshold
           min: 15 # LuaM: 40 > 15
       - !type:RevertPolymorph
+        prototype: LetoferolMutation
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+      - !type:RevertPolymorph
         prototype: LetoferolMutationNatural
         conditions:
         - !type:ReagentThreshold
           min: 25 # LuaM: 15 > 25
+      - !type:RevertPolymorph
+        prototype: LetoferolMutationBeastNatural
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
       - !type:AdjustReagent
         reagent: Letoferol
         amount: -4 # LuaM: -7.5 > -4
@@ -148,10 +158,20 @@
       metabolismRate: 1
       effects:
       - !type:RevertPolymorph
+        prototype: LetoferolMutation
+        conditions:
+        - !type:ReagentThreshold
+          min: 40
+      - !type:RevertPolymorph
         prototype: LetoferolMutationNatural
         conditions:
         - !type:ReagentThreshold
           min: 45 # LuaM: 40 > 45
+      - !type:RevertPolymorph
+        prototype: LetoferolMutationBeastNatural
+        conditions:
+        - !type:ReagentThreshold
+          min: 40
       - !type:AdjustReagent
         reagent: Letoferol
         amount: -2 # LuaM: -3 > -2

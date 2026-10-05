@@ -6,8 +6,8 @@
   - ClothingOuterHardsuitM86Tsf
   - ClothingOuterHardsuitM92XTsf
   - ClothingEyesNightVisionGoggles
-  - ClothingUniformTsfmcMoppTsf
-  - ClothingHandsGlovesMoppTsf
+# - ClothingUniformTsfmcMoppTsf
+# - ClothingHandsGlovesMoppTsf
 
 - type: latheRecipePack
   id: MonoTSFWeaponsDynamicMelee
@@ -20,9 +20,7 @@
   id: MonoTSFWeaponsDynamicRanged
   recipes:
   - WeaponRifleLecterTSF
-  - WeaponRifleVulcanTSF
   - WeaponSubMachineGunDrozdTSF
-  - WeaponRifleMR3CTSF
   - WeaponRifleAnnieTSF
   #- WeaponLMGMR8BTSF
   - WeaponRifleMR8CTSF
@@ -30,7 +28,7 @@
   - WeaponLMGGrizzlyTSF
   - WeaponDEWCalico
   - WeaponDEWSmilodon
-  - WeaponLauncherTSFOsiris
+  #- WeaponLauncherTSFOsiris
   - WeaponLauncherTSFAnubis
   - WeaponAMRShenzhenTSF
   - WeaponRifleRiversongTSF
@@ -39,11 +37,11 @@
 - type: latheRecipePack
   id: MonoTSFVouchersDynamic
   recipes:
-  - FlyssaVoucherTSF
-  - AltairVoucherTSF
   - ShipVoucherTsfT0Recipe
-  - ShipVoucherTsfT1RandomRecipe
-  - ShipVoucherTsfT2RandomRecipe
+  - ShipVoucherTsfT1Recipe
+  - ShipVoucherTsfT2Recipe
+  - ShipVoucherPolarisRecipe
+  - ShipVoucherLudaRecipe
 
 - type: latheRecipePack
   id: MonoTSFMiscDynamic
@@ -57,4 +55,6 @@
   - MotionDetectorTSF
   - BasicBorgCombatModuleTSF
   - AdvancedBorgCombatModuleTSF
+  - AutosurgeonSandevistanTSF
+#  - AutosurgeonShuntTSF
   - Hypospray # LuaM

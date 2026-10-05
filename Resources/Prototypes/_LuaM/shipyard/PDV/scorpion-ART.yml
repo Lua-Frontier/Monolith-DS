@@ -2,7 +2,7 @@
 
 - type: vessel
   id: ScorpionART
-  parent: BaseVesselAntag
+  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
   name: vessel-scorpionART-name
   description: vessel-scorpionART-desc
   price: 193200

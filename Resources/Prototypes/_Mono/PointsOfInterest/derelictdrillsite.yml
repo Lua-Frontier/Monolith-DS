@@ -14,15 +14,22 @@
   minimumDistance: 5500
   maximumDistance: 9500
   spawnGroup: Required
-  gridPath: /Maps/_LuaM/POI/derelictdrillsite.yml  # LuaM: /Maps/_Mono/POI/derelictdrillsite.yml > /Maps/_LuaM/POI/derelictdrillsite.yml
+  gridPath: /Maps/_Mono/POI/derelictdrillsite.yml
   addComponents:
   - type: IFF
     color: "#ccaa55"
+  - type: WorldGenDistanceCarver
+    distanceThresholds:
+    # Dead zone
+    - maxDistance: 800
+      prob: 0.0
+    - maxDistance: 1500
+      prob: 0.3
 
 - type: gameMap
   id: Mining
   mapName: 'Derelict Drillsite'
-  mapPath: /Maps/_LuaM/POI/derelictdrillsite.yml  # LuaM: /Maps/_Mono/POI/derelictdrillsite.yml > /Maps/_LuaM/POI/derelictdrillsite.yml
+  mapPath: /Maps/_Mono/POI/derelictdrillsite.yml
   minPlayers: 0
   stations:
     Mining:

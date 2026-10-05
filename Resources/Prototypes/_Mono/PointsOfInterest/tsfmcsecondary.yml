@@ -8,52 +8,45 @@
 
 # Notes: Wow.
 #
-- type: pointOfInterest
-  id: TSFMCOutpost
-  parent: [BaseMobilePOI, BaseRepairablePOI] # LuaM: BasePOI > BaseMobilePOI
-  name: 'Крейсер TSFMC-113 Арктурус' # LuaM: 'TSFMC Secondary Outpost' > 'Крейсер TSFMC-113 Арктурус'
-  minimumDistance: 4500 # LuaM: 11000 > 4500
-  maximumDistance: 5500 # LuaM: 14000 > 5500
-  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
-  spawnGroup: Required
-  gridPath: /Maps/_LuaM/POI/ArcturusPOI.yml  # LuaM: /Maps/_Mono/POI/tsfmcoutpost.yml > /Maps/_LuaM/POI/ArcturusPOI.yml
-  addComponents:
-  - type: IFF
-    color: "#047abd"
-    flags: [HideLabel]
-    readOnly: false # mono # LuaM: true > false
+#- type: pointOfInterest
+#  id: TSFMCOutpost
+#  parent: [BasePOI, BaseRepairablePOI]
+#  name: 'TSFMC Secondary Outpost'
+#  minimumDistance: 11000
+#  maximumDistance: 14000
+#  spawnGamePreset: []
+#  spawnGroup: Required
+#  gridPath: /Maps/_Mono/POI/tsfmcoutpost.yml
+#  addComponents:
+#  - type: IFF
+#    color: "#047abd"
+#    flags: [HideLabel]
+#    readOnly: true # mono
 
-- type: gameMap
-  id: TSFMCOutpost
-  mapName: 'TSFMC-113 Arcturus Class Carrier' # LuaM: 'TSFMC Secondary Outpost' > 'TSFMC-113 Arcturus Class Carrier'
-  mapPath: /Maps/_LuaM/POI/ArcturusPOI.yml  # LuaM: /Maps/_Mono/POI/tsfmcoutpost.yml > /Maps/_LuaM/POI/ArcturusPOI.yml
-  minPlayers: 0
-  stations:
-    TSFMCOutpost:
-      stationProto: SecurityFrontierOutpost
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: 'TSFMC-113 Arcturus Class Carrier' # LuaM: 'TSFMC Secondary Outpost' > 'TSFMC-113 Arcturus Class Carrier'
-        - type: ExtraStationInformation
-          icon:
-            sprite: _NF/Structures/Decoration/banner.rsi
-            state: nfsd-banner
-          stationSubtext: 'frontier-lobby-tsfmc-secondary-subtext'
-          stationDescription: 'frontier-lobby-tsfmc-secondary-description'
-          lobbySortOrder: 2
-        - type: StationJobs
-          availableJobs:
-            Bailiff: [1, 1 ] # LuaM add
-            SeniorOfficer: [ 0, 3 ]
-            Brigmedic: [ 0, 1 ]
-            Deputy: [ 4, 4 ] # LuaM Deputy: [ -1, -1 ] > Deputy: [ 4, 4 ]
-            TsfEngineer: [ 1, 1 ] # LuaM add
-            TsfBorg: [ 1, 1 ] # LuaM add
-          tags:
-          - HeadOfPersonnel
-          - HeadOfSecurity
-        - type: StationDeadDropHintExempt
-      # LuaM start
-        - type: StationDeadDropReporting
-          messageSet: Nfsd
-      # LuaM end
+#- type: gameMap
+#  id: TSFMCOutpost
+#  mapName: 'TSFMC Secondary Outpost'
+#  mapPath: /Maps/_Mono/POI/tsfmcoutpost.yml
+#  minPlayers: 0
+#  stations:
+#    TSFMCOutpost:
+#      stationProto: SecurityFrontierOutpost
+#      components:
+#        - type: StationNameSetup
+#          mapNameTemplate: 'TSFMC Secondary Outpost'
+#        - type: ExtraStationInformation
+#          icon:
+#            sprite: _NF/Structures/Decoration/banner.rsi
+#            state: nfsd-banner
+#          stationSubtext: 'frontier-lobby-tsfmc-secondary-subtext'
+#          stationDescription: 'frontier-lobby-tsfmc-secondary-description'
+#          lobbySortOrder: 2
+#        - type: StationJobs
+#          availableJobs:
+#            SeniorOfficer: [ 0, 3 ]
+#            Brigmedic: [ 0, 1 ]
+#            Deputy: [ -1, -1 ]
+#          tags:
+#          - HeadOfPersonnel
+#          - HeadOfSecurity
+#        - type: StationDeadDropHintExempt

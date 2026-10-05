@@ -1,0 +1,47 @@
+- type: pointOfInterest
+  id: TSFMCOutpost
+  parent: [BaseMobilePOI, BaseRepairablePOI]
+  name: 'Крейсер TSFMC-113 «Арктурус»'
+  minimumDistance: 4500
+  maximumDistance: 5500
+  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
+  spawnGroup: Required
+  gridPath: /Maps/_LuaM/POI/ArcturusPOI.yml
+  addComponents:
+  - type: IFF
+    color: "#047abd"
+    flags: [HideLabel]
+    readOnly: true
+
+- type: gameMap
+  id: TSFMCOutpost
+  mapName: 'TSFMC-113 Arcturus Class Carrier'
+  mapPath: /Maps/_LuaM/POI/ArcturusPOI.yml
+  minPlayers: 0
+  stations:
+    TSFMCOutpost:
+      stationProto: SecurityFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'TSFMC-113 Arcturus Class Carrier'
+        - type: ExtraStationInformation
+          icon:
+            sprite: _NF/Structures/Decoration/banner.rsi
+            state: nfsd-banner
+          stationSubtext: 'frontier-lobby-tsfmc-secondary-subtext'
+          stationDescription: 'frontier-lobby-tsfmc-secondary-description'
+          lobbySortOrder: 2
+        - type: StationJobs
+          availableJobs:
+            Bailiff: [1, 1 ]
+            SeniorOfficer: [ 0, 3 ]
+            Brigmedic: [ 0, 1 ]
+            Deputy: [ 4, 4 ]
+            TsfEngineer: [ 1, 1 ]
+            TsfBorg: [ 1, 1 ]
+          tags:
+          - HeadOfPersonnel
+          - HeadOfSecurity
+        - type: StationDeadDropHintExempt
+        - type: StationDeadDropReporting
+          messageSet: Nfsd

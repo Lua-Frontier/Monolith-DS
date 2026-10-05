@@ -40,5 +40,4 @@
   - ClothingModsuitUSSPZastavnikUSSP
   technologyPrerequisites:
   - UsspMediumSuits
-  - UniversalMaterialResearchT3
   position: 6, 5 # LuaM: 12, 12 > 6, 5

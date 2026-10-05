@@ -19,6 +19,10 @@
         conditions:
         - !type:OrganType
           type: Hydrakin
+      - !type:Oxygenate # Mono - IAS
+        conditions:
+        - !type:OrganType
+          type: IAS
       - !type:Oxygenate
         conditions:
         - !type:OrganType # Goobstation - Yowie
@@ -36,6 +40,10 @@
         - !type:OrganType
           type: Plant
       # LuaM-port-original-Shitmed-content-start:
+      - !type:Oxygenate # DeltaV - Feroxi Still need to breathe
+        conditions:
+        - !type:OrganType
+          type: Feroxi
       - !type:Oxygenate
         conditions:
         - !type:OrganType
@@ -125,6 +133,10 @@
         conditions:
         - !type:OrganType
           type: Hydrakin
+      - !type:Oxygenate # Mono - IAS
+        conditions:
+        - !type:OrganType
+          type: IAS
       - !type:HealthChange
         conditions:
         - !type:OrganType # Goobstation - Yowie
@@ -138,6 +150,9 @@
           type: Cybernetic
           shouldHave: false
         # LuaM-port-original-Shitmed-content-end.
+        - !type:OrganType
+          type: IAS
+          shouldHave: false
         scaleByQuantity: true
         ignoreResistances: true
         damage:
@@ -288,6 +303,10 @@
         conditions:
         - !type:OrganType
           type: Hydrakin
+      - !type:Oxygenate # Mono - IAS
+        conditions:
+        - !type:OrganType
+          type: IAS
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -298,6 +317,9 @@
           shouldHave: false
         - !type:OrganType
           type: Hydrakin
+          shouldHave: false
+        - !type:OrganType
+          type: IAS
           shouldHave: false
         - !type:OrganType # Goobstation - Yowie
           type: Yowie
@@ -358,6 +380,10 @@
         conditions:
         - !type:OrganType
           type: Hydrakin
+      - !type:Oxygenate # Mono - IAS
+        conditions:
+        - !type:OrganType
+          type: IAS
       - !type:Oxygenate
         conditions:
         - !type:OrganType
@@ -409,6 +435,10 @@
         conditions:
         - !type:OrganType
           type: Hydrakin
+      - !type:Oxygenate # Mono - IAS
+        conditions:
+        - !type:OrganType
+          type: IAS
       - !type:MovespeedModifier # Mono - Hydrakin
         walkSpeedModifier: 1.15
         sprintSpeedModifier: 1.15
@@ -468,6 +498,9 @@
           type: Cybernetic
           shouldHave: false
         # LuaM-port-original-Shitmed-content-end.
+        - !type:OrganType
+          type: IAS
+          shouldHave: false
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
       - !type:GenericStatusEffect
@@ -489,6 +522,9 @@
           type: Cybernetic
           shouldHave: false
         # LuaM-port-original-Shitmed-content-end.
+        - !type:OrganType
+          type: IAS
+          shouldHave: false
         key: ForcedSleep
         component: ForcedSleeping
         time: 200 # This reeks, but I guess it works LMAO
@@ -512,6 +548,9 @@
           type: Cybernetic
           shouldHave: false
         # LuaM-port-original-Shitmed-content-end.
+        - !type:OrganType
+          type: IAS
+          shouldHave: false
         ignoreResistances: true
         damage:
           types:
@@ -551,7 +590,10 @@
           type: Yowie
           shouldHave: false
         - !type:OrganType # Mono - Hydrakin
-          type: Hydrakin 
+          type: Hydrakin
+          shouldHave: false
+        - !type:OrganType
+          type: IAS
           shouldHave: false
        # LuaM-port-original-Shitmed-content-start:
         - !type:OrganType
@@ -612,6 +654,9 @@
           type: Cybernetic
           shouldHave: false
         # LuaM-port-original-Shitmed-content-end.
+        - !type:OrganType
+          type: IAS
+          shouldHave: false
       - !type:PopupMessage
         type: Local
         messages: [ "frezon-lungs-cold" ]
@@ -628,6 +673,9 @@
           type: Cybernetic
           shouldHave: false
         # LuaM-port-original-Shitmed-content-end.
+        - !type:OrganType
+          type: IAS
+          shouldHave: false
       - !type:PopupMessage
         type: Local
         visualType: Medium
@@ -645,6 +693,9 @@
           type: Cybernetic
           shouldHave: false
         # LuaM-port-original-Shitmed-content-end.
+        - !type:OrganType
+          type: IAS
+          shouldHave: false
       - !type:AdjustTemperature # Mono - Hydrakin
         conditions:
         - !type:ReagentThreshold

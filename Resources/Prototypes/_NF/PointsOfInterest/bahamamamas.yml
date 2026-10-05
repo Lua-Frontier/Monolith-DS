@@ -8,8 +8,6 @@
 
 # Notes:
 # I want to lie, shipwrecked and comatose, drinking fresh mango juice.
-
-#LuaM commented
 #- type: pointOfInterest
 #  id: Bahama
 #  parent: [BasePOI, BaseRepairablePOI]

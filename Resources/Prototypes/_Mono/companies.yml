@@ -16,9 +16,23 @@
   companyUplinkCurrency: FederationMilitaryCredit
 
 - type: company
+  id: TSFCivilian
+  name: Trans-Solarian Federation
+  color: "#047ABD"
+  disabled: true
+  companyUplinkCurrency: FederationMilitaryCredit
+
+- type: company
   id: PDV
   name: Авангард «Нордфолл» # LuaM: PDV > Vanguard Nordfall Locale: «Авангард Нордфолл»
   color: "#E03131FF" # LuaM: #D2B48C > #E03131FF
+  disabled: true
+  companyUplinkCurrency: Doubloon
+
+- type: company
+  id: PDVCivilian
+  name: Phaethon Dynasty
+  color: "#D2B48C"
   disabled: true
   companyUplinkCurrency: Doubloon
 
@@ -39,6 +53,14 @@
   name: Winter Solstice
   description: winter-solstice-description
   color: "#008CE3"
+  disabled: true
+  whitelisted: true
+
+- type: company
+  id: PDVHighComm
+  name: Dynasty High Command
+  description: pdv-highcomm-description
+  color: "#D2B48C"
   disabled: true
   whitelisted: true
 # DO NOT TOUCH
@@ -79,7 +101,7 @@
   id: USSP
   name: USSP
   color: "#B01340"
-  disabled: false # Mercs are now USSP-pilled.
+  disabled: true # USSP are now USSP-pilled.
   description: ussp-description
   image: /Textures/_Mono/Companies/USSP.png
 
@@ -201,4 +223,12 @@
   description: redsail-corsairs-description
   color: "#930000"
   image: /Textures/_Mono/Companies/redsailcorsairs.png
+  whitelisted: true
+
+- type: company
+  id: PLXCOR
+  name: PLXCOR
+  description: plxcor-description
+  color: "#B500B5"
+  image: /Textures/_Mono/Companies/PLXCOR.png
   whitelisted: true

@@ -36,6 +36,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Maps;
+using Content.Shared.Shuttles.Components;
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -99,6 +100,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 
         SubscribeLocalEvent<ShuttleComponent, ComponentStartup>(OnShuttleStartup);
         SubscribeLocalEvent<ShuttleComponent, ComponentShutdown>(OnShuttleShutdown);
+        SubscribeLocalEvent<IFFComponent, ComponentStartup>(OnShuttleIFFStartup); // Mono
         SubscribeLocalEvent<ShuttleComponent, TileFrictionEvent>(OnTileFriction);
         SubscribeLocalEvent<ShuttleComponent, FTLStartedEvent>(OnFTLStarted);
         SubscribeLocalEvent<ShuttleComponent, FTLCompletedEvent>(OnFTLCompleted);
@@ -110,11 +112,20 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 
     }
 
+    private const int UnmannedUpdateInterval = 30; // LuaM
+    private int _unmannedUpdateTicks; // LuaM
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
         UpdateHyperspace();
-        UpdateUnmannedShuttles(); // LuaM stop uncontrolled shuttles
+        // LuaM-start:
+        _unmannedUpdateTicks++;
+        if (_unmannedUpdateTicks < UnmannedUpdateInterval)
+            return;
+        _unmannedUpdateTicks = 0;
+        UpdateUnmannedShuttles();
+        // LuaM-end
     }
 
     private void OnGridFixtureChange(EntityUid uid, FixturesComponent manager, GridFixtureChangeEvent args)
@@ -158,6 +169,22 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         }
 
         component.DampingModifier = component.BodyModifier;
+    }
+
+    // Mono - track ID
+    private void OnShuttleIFFStartup(EntityUid uid, IFFComponent component, ComponentStartup args)
+    {
+        if (!EntityManager.HasComponent<MapGridComponent>(uid))
+        {
+            return;
+        }
+
+        if (!EntityManager.TryGetComponent(uid, out PhysicsComponent? physicsComponent))
+        {
+            return;
+        }
+        var num = _random.Next();
+        component.Address = $" {num >> 16:X4}-{num & 0xFFFF:X4}";
     }
 
     public void Toggle(EntityUid uid, ShuttleComponent component,

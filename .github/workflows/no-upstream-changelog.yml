@@ -1,0 +1,24 @@
+# LuaM: upstream changelogs (Monolith, Frontier, wizden) are frozen in this repo.
+# Anything that edits them (usually an upstream merge) would make the changelog bot
+# announce upstream entries in our Discord, so such PRs are blocked here.
+name: No Upstream Changelog
+
+on:
+  pull_request:
+    types: [ opened, reopened, synchronize, ready_for_review ]
+    paths:
+      - 'Resources/Changelog/Admin.yml'
+      - 'Resources/Changelog/Changelog.yml'
+      - 'Resources/Changelog/Frontier.yml'
+      - 'Resources/Changelog/Monolith.yml'
+
+jobs:
+  check:
+    name: Upstream changelogs untouched
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail on upstream changelog edits
+        run: |
+          echo "::error::This PR changes an upstream changelog in Resources/Changelog (Admin/Changelog/Frontier/Monolith.yml)."
+          echo "::error::Restore it to the master version: git checkout origin/master -- Resources/Changelog/<file>"
+          exit 1

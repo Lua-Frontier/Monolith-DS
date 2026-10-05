@@ -53,6 +53,20 @@
     sound:
       collection: LasersDrop
   # Goobstation edit end
+  # Mono - Gun stock attack
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Blunt: 10
+    angle: 0
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: AltFireMelee
+    attackType: Light
+  # Mono end
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -97,6 +111,21 @@
   - type: SurgeryTool # Shitmed
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  # Mono - Gun stock attack
+  - type: MeleeRequiresWield
+  - type: MeleeWeapon
+    attackRate: 0.9
+    damage:
+      types:
+        Blunt: 12
+    angle: 0
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: AltFireMelee
+    attackType: Light
+  # Mono end
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -120,6 +149,20 @@
     slots:
     - Belt
     - suitStorage
+  # Mono - Gun stock attack
+  - type: MeleeWeapon
+    attackRate: 1.1
+    damage:
+      types:
+        Blunt: 8
+    angle: 0
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: AltFireMelee
+    attackType: Light
+  # Mono end
 
 - type: entity
   id: BaseWeaponPowerCellSmall
@@ -136,6 +179,21 @@
     quickEquip: false
     slots:
     - Belt
+  # Mono - Gun stock attack
+  - type: MeleeRequiresWield
+  - type: MeleeWeapon
+    attackRate: 1.1
+    damage:
+      types:
+        Blunt: 8
+    angle: 0
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: AltFireMelee
+    attackType: Light
+  # Mono end
   - type: Multishot # Goobstation V
     missChance: 0.4
     spreadMultiplier: 2
@@ -305,13 +363,13 @@
     - FullAuto
 
 - type: entity
-  name: LWC pulse pistol
-  parent: BaseWeaponBatterySmall
+  name: VCD QSH-13 Pulse Pistol
+  parent: [BaseWeaponBatterySmall, BaseFactionGearTSFT3] # Mono
   id: WeaponPulsePistol
-  description: A state of the art energy pistol favoured as a sidearm by the TSFN and TSFMC. # Mono
+  description: The pulse pistol is a compact version of the TSF pulse rifle. Though it uses the same self-recharging technology, it has a smaller battery that makes it impractical for sustained battlefield use. Nevertheless, it has found a niche in the hands of TSFN and TSFMC officers as a defensive sidearm. # Mono
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+    sprite: _Mono/Objects/Weapons/Guns/Battery/pulse_pistol.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -324,7 +382,7 @@
     zeroVisible: false
   - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+    sprite: _Mono/Objects/Weapons/Guns/Battery/pulse_pistol.rsi
   - type: Gun
     selectedMode: SemiAuto
     availableModes:
@@ -348,13 +406,13 @@
   # End Mono
 
 - type: entity
-  name: LWC pulse carbine
-  parent: [BaseWeaponBattery, BaseGunWieldable]
+  name: VCD QBH-12 Pulse Carbine
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseFactionGearTSFT3] # Mono
   id: WeaponPulseCarbine
-  description: A common sight in the hands of higher ranked TSF, the pulse carbine is a punchy laser weapon salvaged from the remnants of Nanotrasen. # Mono
+  description: The pulse carbine is a slightly more compact version of the TSF pulse rifle that combines self-recharging technology with an even faster rate of fire meant to terrify enemies on the battlefield. Though known to overheat occasionally in prolonged battle, this does not stop the Marine special forces who favor them. # Mono
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi
+    sprite: _Mono/Objects/Weapons/Guns/Battery/pulse_carbine.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -367,7 +425,7 @@
     zeroVisible: false
   - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi
+    sprite: _Mono/Objects/Weapons/Guns/Battery/pulse_carbine.rsi
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 3
@@ -397,13 +455,13 @@
   # End Mono
 
 - type: entity
-  name: NT pulse rifle
-  parent: [BaseWeaponBattery, BaseGunWieldable]
+  name: VCD QBH-11 Pulse Rifle
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseFactionGearTSFT3] # Mono
   id: WeaponPulseRifle
-  description: A weapon that used to be used by the special operations units of NT, but now commonly seen in the hands of the TSF. # Mono
+  description: The first pulse model reproduced since the technology fell into TSF hands after the end of the Corporate War, this rifle defines cutting edge technology in the hands of elite TSF military troops and the officers that command them.  # Mono
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi
+    sprite: _Mono/Objects/Weapons/Guns/Battery/pulse_rifle.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -416,7 +474,7 @@
     zeroVisible: false
   - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi
+    sprite: _Mono/Objects/Weapons/Guns/Battery/pulse_rifle.rsi
   - type: Gun
     fireRate: 1.5
     availableModes:
@@ -452,7 +510,7 @@
   description: A weapon that used to be used by the special operations units of NT, but mounted onto a silicon. # Mono
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi
+    sprite: _Mono/Objects/Weapons/Guns/Battery/pulse_rifle.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -465,7 +523,7 @@
     zeroVisible: false
   - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi
+    sprite: _Mono/Objects/Weapons/Guns/Battery/pulse_rifle.rsi
   - type: Gun
     fireRate: 1.5
     availableModes:
@@ -765,7 +823,8 @@
   - type: StaticPrice
     price: 750
   - type: StealTarget
-    stealGroup: WeaponAntiqueLaser
+    stealGroup:
+    - WeaponAntiqueLaser
   - type: SentienceTarget # I hope this is only the captain's gun
     flavorKind: station-event-random-sentience-flavor-inanimate
     weight: 0.0002 # 5,000 times less likely than 1 regular animal
@@ -948,7 +1007,8 @@
     tags:
     - HighRiskItem
   - type: StealTarget
-    stealGroup: WeaponEnergyShotgun
+    stealGroup:
+    - WeaponEnergyShotgun
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Battery
     maxCharge: 1200
@@ -958,3 +1018,35 @@
     autoRechargeRate: 24
     autoRechargePause: true
     autoRechargePauseTime: 30
+
+- type: entity
+  parent: WeaponAdvancedLaser
+  id: WeaponLaserGunXenoborg
+  name: xenoborg laser gun
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/xenoborg_laser_gun.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-unshaded-4
+      map: [ "enum.GunVisualLayers.MagUnshaded" ]
+
+- type: entity
+  parent: WeaponLaserCannon
+  id: WeaponLaserCannonXenoborg
+  name: xenoborg laser cannon
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 200
+    autoRechargePause: true
+    autoRechargePauseTime: 5
+  # "remove" wield bonus and penalty so borgs can use it
+  - type: GunWieldBonus
+    minAngle: 0
+    maxAngle: 0
+  - type: Gun
+    fireRate: 2
+    minAngle: 1
+    maxAngle: 2
