@@ -637,8 +637,7 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: ResearchClient
-  - type: AnalysisConsole
-    reportEntityId: PaperArtifactAnalyzer
+  - type: AnalysisConsole # Lua: removed reportEntityId
   - type: DeviceList
   - type: DeviceNetwork
     deviceNetId: Wired
@@ -647,10 +646,10 @@
     ports:
       - ArtifactAnalyzerSender
   - type: ActivatableUI
-    key: enum.ArtifactAnalzyerUiKey.Key
+    key: enum.ArtifactAnalyzerUiKey.Key # Lua: ArtifactAnalzyerUiKey > ArtifactAnalyzerUiKey
   - type: UserInterface
     interfaces:
-      enum.ArtifactAnalzyerUiKey.Key:
+      enum.ArtifactAnalyzerUiKey.Key: # Lua: ArtifactAnalzyerUiKey > ArtifactAnalyzerUiKey
         type: AnalysisConsoleBoundUserInterface
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface

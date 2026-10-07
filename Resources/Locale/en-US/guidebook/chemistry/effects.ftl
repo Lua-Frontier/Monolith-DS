@@ -441,3 +441,14 @@ reagent-effect-guidebook-add-to-chemicals =
         [1] to
         *[-1] from
     } the solution
+
+# Lua start
+reagent-effect-guidebook-artifact-unlock =
+    { $chance ->
+        [1] Helps
+        *[other] help
+        } unlock an alien artifact.
+
+reagent-effect-guidebook-artifact-durability-restore =
+    Restores {$restored} durability in active alien artifact nodes.
+# Lua end

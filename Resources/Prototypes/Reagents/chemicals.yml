@@ -81,10 +81,29 @@
     Acidic:
       methods: [ Touch ]
       effects:
-      - !type:NFActivateArtifact # Frontier: ActivateArtifact<NFActivateArtifact
+      - !type:ArtifactUnlock # Lua: NFActivateArtifact > ArtifactUnlock
         conditions:
         - !type:ReagentThreshold
           min: 5
+
+# Lua start
+- type: reagent
+  parent: Artifexium
+  id: ArtifactGlue
+  name: reagent-name-artifact-glue
+  desc: reagent-desc-artifact-glue
+  flavor: artifactglue
+  physicalDesc: reagent-physical-desc-sticky
+  color: "#827394"
+  reactiveEffects:
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:ArtifactDurabilityRestore
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+# Lua end
 
 - type: reagent
   id: Benzene

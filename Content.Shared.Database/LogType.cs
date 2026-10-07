@@ -482,6 +482,13 @@ public enum LogType
     /// </summary>
     ShuttleImpact = 102,
 
+    // Lua start
+    /// <summary>
+    /// Artifact node got activated.
+    /// </summary>
+    ArtifactNode = 101,
+    // Lua end
+
     // <Mono>
     ShipgunFired = 150,
 

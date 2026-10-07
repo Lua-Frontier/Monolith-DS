@@ -353,3 +353,4 @@ flavor-complex-eggnog = как растопленный заварной кре�
 flavor-complex-dark-and-stormy = как имбирный эль с ромом
 flavor-complex-radler = как шипучий лимонад
 flavor-complex-bacchus-blessing = как кирпичная стена
+flavor-complex-artifact-glue = как толчёные артефакты

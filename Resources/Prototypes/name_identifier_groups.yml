@@ -37,3 +37,10 @@
   id: Bounty
   minValue: 0
   maxValue: 999
+
+# Lua start
+- type: nameIdentifierGroup
+  id: XenoArtifactNode
+  minValue: 0
+  maxValue: 999
+# Lua end

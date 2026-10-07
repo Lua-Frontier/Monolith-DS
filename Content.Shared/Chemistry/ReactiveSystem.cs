@@ -38,6 +38,11 @@ public sealed partial class ReactiveSystem : EntitySystem
         if (!TryComp(uid, out ReactiveComponent? reactive))
             return;
 
+        // Lua start: custom event for bypassing reactivecomponent stuff
+        var ev = new ReactionEntityEvent(method, proto, reagentQuantity, source);
+        RaiseLocalEvent(uid, ref ev);
+        // Lua end
+
         // If we have a source solution, use the reagent quantity we have left. Otherwise, use the reaction volume specified.
         var args = new EntityEffectReagentArgs(uid, EntityManager, null, source, source?.GetReagentQuantity(reagentQuantity.Reagent) ?? reagentQuantity.Quantity, proto, method, 1f);
 
@@ -107,3 +112,13 @@ Touch,
 Injection,
 Ingestion,
 }
+
+// Lua start
+[ByRefEvent]
+public readonly record struct ReactionEntityEvent(
+    ReactionMethod Method,
+    ReagentPrototype Reagent,
+    ReagentQuantity ReagentQuantity,
+    Solution? Source
+);
+// Lua end

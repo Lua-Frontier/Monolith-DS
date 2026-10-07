@@ -18,7 +18,7 @@
       - AnomalyGenerator
       - TegGenerator
       - TegCirculator
-      - Artifact
+      - XenoArtifact # Lua: Artifact > XenoArtifact
     canTargetSelf: false
     interactOnMiss: false
     sound: !type:SoundPathSpecifier

@@ -30,3 +30,5 @@ reagent-desc-cellulose = A crystaline polydextrose polymer, plants swear by this
 
 reagent-name-rororium = rororium
 reagent-desc-rororium = A strange substance which fills the cores of the hivelords that roam the mining asteroid. Thought to be the source of their regenerative powers.
+reagent-name-artifact-glue = artifact glue
+reagent-desc-artifact-glue = Mixture of glue and artifexium. It can restore durability of nodes in artifact on touch.

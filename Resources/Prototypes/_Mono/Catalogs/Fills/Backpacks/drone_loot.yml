@@ -49,11 +49,13 @@
     # rare shard drop even from T1
     - id: WeaponTurretShardFlatpack
       prob: 0.5
-    # Research disk, expected value ~30k/drone
+    # Research disk, expected value ~30k/drone # LuaM: ~20k/drone, disk chances x0.67
     - id: RogueSiliconResearchDisk5000
+      prob: 0.67 # LuaM
     - id: RogueSiliconResearchDisk10000
+      prob: 0.67 # LuaM
     - id: RogueSiliconResearchDisk25000
-      prob: 0.6
+      prob: 0.4 # LuaM: 0.6 > 0.4
     # Tech disk
     - id: SpawnLootTechDisksT1
       prob: 0.5
@@ -101,12 +103,15 @@
     # free shard
     - id: WeaponTurretShardFlatpack
     # no flatpacks or boards, just gamble scrap
-    # Research disk, expected value ~80k/drone
+    # Research disk, expected value ~80k/drone # LuaM: ~53k/drone, disk chances x0.67
     - id: RogueSiliconResearchDisk5000
+      prob: 0.67 # LuaM
     - id: RogueSiliconResearchDisk10000
+      prob: 0.67 # LuaM
     - id: RogueSiliconResearchDisk25000
-      prob: 0.6
+      prob: 0.4 # LuaM: 0.6 > 0.4
     - id: RogueSiliconResearchDisk50000
+      prob: 0.67 # LuaM
     # Tech disk
     - id: SpawnLootTechDisksT2Mech
       prob: 0.5
@@ -160,10 +165,11 @@
       maxAmount: 2
     - id: WeaponTurretPinholeFlatpack
     # no flatpacks or boards, just gamble scrap
-    # Research disk, expected value 200k/drone
+    # Research disk, expected value 200k/drone # LuaM: ~117k/drone, 3-4 disks (avg 3.5) > 2 + 35% for a third (avg 2.35)
     - id: RogueSiliconResearchDisk50000
-      amount: 3
-      maxAmount: 5
+      amount: 2 # LuaM: 3 > 2, removed maxAmount 5
+    - id: RogueSiliconResearchDisk50000 # LuaM
+      prob: 0.35 # LuaM
     # Tech disk
     - id: SpawnLootTechDisksT3Mech
       prob: 0.6

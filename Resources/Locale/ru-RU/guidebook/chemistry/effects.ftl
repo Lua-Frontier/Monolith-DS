@@ -367,3 +367,8 @@ reagent-effect-guidebook-plant-seeds-remove = { $chance ->
 [1] Удаляет
 *[other] удаляют
 } семена растения
+
+# Lua start
+reagent-effect-guidebook-artifact-durability-restore =
+    Восстанавливает {$restored} ед. прочности активных узлов инопланетного артефакта.
+# Lua end

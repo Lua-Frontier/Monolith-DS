@@ -158,8 +158,14 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
 
         var severityValue = 1 / (1 + MathF.Pow(MathF.E, -7 * (component.Severity - 0.5f)));
 
-        return (int) ((component.MaxPointsPerSecond - component.MinPointsPerSecond) * severityValue * multiplier) + component.MinPointsPerSecond;
+        var points = ((component.MaxPointsPerSecond - component.MinPointsPerSecond) * severityValue * multiplier) + component.MinPointsPerSecond; // LuaM: return (int) (...) > var points
+        return (int) (points * AnomalyPointMultiplier); // LuaM
     }
+
+    /// <summary>
+    /// Global multiplier for the research points anomalies give.
+    /// </summary>
+    private const float AnomalyPointMultiplier = 2.5f; // LuaM
 
     /// <summary>
     /// Gets the localized name of a particle.
