@@ -39,7 +39,7 @@ show_ooc_patron_color = false
 discord_channel_id = 1331042209172164639
 
 [shuttle]
-auto_call_time = 360
+auto_call_time = 470 # LuaM: 360 > 470
 mass_limit = 0
 
 [surgery]

@@ -22,6 +22,9 @@
     title: comms-console-announcement-title-station
     canShuttle: false
     global: true #SR WILL NOT BE IGNORED
+  - type: ConsoleWarDeclarator # LuaM
+    faction: TSF
+    warDeclarationMessage: comms-console-war-declaration-tsf
   - type: DeviceNetwork
     deviceNetId: Wireless # Frontier
     transmitFrequencyId: ShuttleTimer

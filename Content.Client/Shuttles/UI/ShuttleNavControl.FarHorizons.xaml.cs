@@ -24,7 +24,7 @@ public partial class ShuttleNavControl
         var starPos = Vector2.Transform(starSystem.StarSystem.Star.Position, worldToView);
         var starRadius = Star.NAV_PIXEL_SIZE * starSystem.StarSystem.Star.Radius * viewScale;
 
-        handle.DrawCircle(starPos, starRadius, starSystem.StarSystem.Star.Color.WithAlpha(0.5f));
+        handle.DrawCircle(starPos, starRadius, starSystem.StarSystem.Star.Color.WithAlpha(0.15f)); // LuaM: 0.5 > 0.15
 
         foreach (var planet in starSystem.StarSystem.Planets)
         {

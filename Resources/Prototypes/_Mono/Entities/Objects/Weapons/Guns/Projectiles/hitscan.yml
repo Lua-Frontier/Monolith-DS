@@ -126,14 +126,6 @@
     armorPenetration: 0.8
   - type: HitscanStaminaDamage
     staminaDamage: 40
-  - type: HitscanBasicRaycast
-    maxDistance: 200
-    collisionMask:
-    - Impassable
-    - Opaque
-    - HighImpassable
-  - type: HitscanReflect
-    reflectiveType: None
   - type: HitscanBasicVisuals
     muzzleFlash:
       sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi

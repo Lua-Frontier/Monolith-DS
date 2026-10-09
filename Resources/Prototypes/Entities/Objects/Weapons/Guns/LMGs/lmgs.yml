@@ -19,14 +19,14 @@
   - type: Wieldable
     unwieldOnUse: false
   - type: GunWieldBonus # Mono
-    minAngle: -17 # LuaM: -22 > -17
-    maxAngle: -15 # LuaM: -20 > -15
+    minAngle: -24
+    maxAngle: -20
   - type: Gun # L6 LMG stats adjusted
-    minAngle: 35 # LuaM: 24 > 35
-    maxAngle: 55 # LuaM: 45 > 55
+    minAngle: 24
+    maxAngle: 45
     angleIncrease: 2 # Mono
     angleDecay: 20
-    fireRate: 11 # LuaM: 8 > 11
+    fireRate: 8.5 # Mono
     projectileSpeed: 60 # Mono
     selectedMode: FullAuto
     availableModes:
@@ -72,7 +72,7 @@
       nfsd: 0.2
   - type: SpeedModifiedOnWield # Mono
     walkModifier: 0.9
-    sprintModifier: 0.9 # LuaM: 0.75 > 0.9
+    sprintModifier: 0.75
   - type: GunRequiresWield # Mono
   - type: WieldedCrosshair
     rsi:

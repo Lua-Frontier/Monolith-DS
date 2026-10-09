@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/26/2026 13:13:44
-  entityCount: 4382
+  entityCount: 4391
 maps: []
 grids:
 - 1
@@ -17578,6 +17578,62 @@ entities:
     components:
     - type: Transform
       pos: 7.5,-39.5
+      parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 4384
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,-18.5
+      parent: 1
+  - uid: 4385
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-13.5
+      parent: 1
+  - uid: 4386
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 8.5,-18.5
+      parent: 1
+  - uid: 4387
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,-10.5
+      parent: 1
+  - uid: 4388
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,-10.5
+      parent: 1
+  - uid: 4389
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -8.5,-24.5
+      parent: 1
+  - uid: 4390
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 9.5,-24.5
+      parent: 1
+  - uid: 4391
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 10.5,-30.5
+      parent: 1
+  - uid: 4392
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -9.5,-30.5
       parent: 1
 - proto: HighSecTSFMCLocked
   entities:

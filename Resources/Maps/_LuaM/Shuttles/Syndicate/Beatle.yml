@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/25/2026 06:04:26
-  entityCount: 1752
+  entityCount: 1759
 maps: []
 grids:
 - 1
@@ -7121,6 +7121,48 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,9.5
+      parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 1753
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 19.5,5.5
+      parent: 1
+  - uid: 1754
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,5.5
+      parent: 1
+  - uid: 1755
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 9.5,11.5
+      parent: 1
+  - uid: 1756
+    components:
+    - type: Transform
+      pos: 19.5,-7.5
+      parent: 1
+  - uid: 1757
+    components:
+    - type: Transform
+      pos: -0.5,-7.5
+      parent: 1
+  - uid: 1758
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,17.5
+      parent: 1
+  - uid: 1759
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 11.5,17.5
       parent: 1
 - proto: HospitalCurtains
   entities:

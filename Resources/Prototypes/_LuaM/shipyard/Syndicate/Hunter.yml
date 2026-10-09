@@ -1,0 +1,33 @@
+- type: vessel
+  id: Hunter
+  parent: BaseVessel
+  name: vessel-hunter-name
+  description: vessel-hunter-desc
+  price: 62802
+  category: Small
+  group: Syndicate
+  shuttlePath: /SharedMaps/_LuaM/Syndicate/hunter.yml
+  guidebookPage: Null
+  class:
+  - Syndicate
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Hunter
+  mapName: 'Hunter'
+  mapPath: /SharedMaps/_LuaM/Syndicate/hunter.yml
+  minPlayers: 0
+  stations:
+    Hunter:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Hunter SYN{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

@@ -37,7 +37,7 @@
           !type:PhysShapeCircle
           radius: 0.35
         # they r smaller
-        density: 120
+        density: 317 # LuaM: 120 > 317, same mass as an oni
         restitution: 0.0
         mask:
         - MobMask

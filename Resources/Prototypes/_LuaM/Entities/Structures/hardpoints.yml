@@ -1,0 +1,14 @@
+- type: entity
+  id: HardpointUniversalSuperheavy
+  parent: BaseHardpoint
+  name: superheavy universal hardpoint
+  components:
+  - type: Hardpoint
+    class: Universal
+    size: Superheavy
+  - type: Sprite
+    sprite: _Crescent/Structures/hardpoints.rsi
+    state: medium
+  - type: ShipRepairable
+    repairTime: 100
+    repairCost: 30

@@ -75,4 +75,4 @@
     - RubberStampTSFColonel #Mono. Look, it had comments on the Bailiff/Captain file.
     - TSFHandheldOverwatchConsole
     - BookTSFSOP
-    - WarDeclaratorTsf
+#    - WarDeclaratorTsf # LuaM: war is declared from the communications console

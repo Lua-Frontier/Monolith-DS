@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/11/2026 23:02:01
-  entityCount: 1578
+  entityCount: 1576
 maps: []
 grids:
 - 1
@@ -5348,20 +5348,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -16.5,-3.5
-      parent: 1
-- proto: IndustrialPressEconomyElectronics
-  entities:
-  - uid: 851
-    components:
-    - type: Transform
-      pos: 2.5,-6.5
-      parent: 1
-- proto: IndustrialPressEconomyPlates
-  entities:
-  - uid: 852
-    components:
-    - type: Transform
-      pos: 0.5,-6.5
       parent: 1
 - proto: LargeAPC
   entities:

@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/25/2026 21:36:04
-  entityCount: 2809
+  entityCount: 2799
 maps: []
 grids:
 - 1
@@ -12713,88 +12713,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 10.5,-39.5
       parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 2800
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 10.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2801
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2802
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,-24.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2803
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,-22.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2804
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 14.5,-24.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2805
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 14.5,-22.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2806
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 14.5,-40.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2807
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 14.5,-42.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2808
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,-42.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2809
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,-40.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: HighSecDoor
   entities:
   - uid: 1900

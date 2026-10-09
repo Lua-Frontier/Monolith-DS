@@ -71,6 +71,6 @@
     - PDVHandheldOverwatchConsole
     - RubberStampPDVVizier # mono
     - PhoneInstrumentHigh
-    - WarDeclaratorPdv
+#    - WarDeclaratorPdv # LuaM: war is declared from the communications console
     - ClothingBeltSheathVizierFilled
     - PDVHandheldOverwatchConsole

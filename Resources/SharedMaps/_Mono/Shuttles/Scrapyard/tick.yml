@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/31/2026 21:59:22
-  entityCount: 142
+  entityCount: 139
 maps: []
 grids:
 - 1
@@ -634,34 +634,6 @@ entities:
       startingCharge: 0
     - type: ApcPowerReceiver
       powerLoad: 5
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 141
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,-0.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 142
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,-0.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointMissileLight
-  entities:
-  - uid: 140
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,3.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: LightFighterOrdinanceGPOItem
   entities:
   - uid: 79

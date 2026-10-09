@@ -215,7 +215,7 @@
   description: viper-group-description
   color: "#B82121"
   image: /Textures/_Mono/Companies/thevipergroup.png # Example
-  whitelisted: false # LuaM: true > false
+  disabled: true # LuaM: true > false # LuaM change whitelisted: false > disabled: true
 
 - type: company
   id: RedSailCorsairs

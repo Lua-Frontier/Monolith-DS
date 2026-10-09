@@ -65,353 +65,373 @@
     tags:
     - Structure
 
-- type: entity
-  id: HardpointDebugSuperlight
-  parent: BaseHardpoint
-  name: debug hardpoint superlight universal
-  suffix: DO NOT MAP
-  components:
-  - type: Hardpoint
-    class: Universal
-    size: Superlight
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 1
-    repairCost: 0
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointDebugSuperlight
+#   parent: BaseHardpoint
+#   name: debug hardpoint superlight universal
+#   suffix: DO NOT MAP
+#   components:
+#   - type: Hardpoint
+#     class: Universal
+#     size: Superlight
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 1
+#     repairCost: 0
 
-- type: entity
-  id: HardpointDebugLight
-  parent: BaseHardpoint
-  name: debug hardpoint light universal
-  suffix: DO NOT MAP
-  components:
-  - type: Hardpoint
-    class: Universal
-    size: Light
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 1
-    repairCost: 0
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointDebugLight
+#   parent: BaseHardpoint
+#   name: debug hardpoint light universal
+#   suffix: DO NOT MAP
+#   components:
+#   - type: Hardpoint
+#     class: Universal
+#     size: Light
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 1
+#     repairCost: 0
 
-- type: entity
-  id: HardpointDebugMedium
-  parent: BaseHardpoint
-  name: debug hardpoint medium universal
-  suffix: DO NOT MAP
-  components:
-  - type: Hardpoint
-    class: Universal
-    size: Medium
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 1
-    repairCost: 0
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointDebugMedium
+#   parent: BaseHardpoint
+#   name: debug hardpoint medium universal
+#   suffix: DO NOT MAP
+#   components:
+#   - type: Hardpoint
+#     class: Universal
+#     size: Medium
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 1
+#     repairCost: 0
 
-- type: entity
-  id: HardpointDebugHeavy
-  parent: BaseHardpoint
-  name: debug hardpoint heavy universal
-  suffix: DO NOT MAP
-  components:
-  - type: Hardpoint
-    class: Universal
-    size: Heavy
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 1
-    repairCost: 0
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointDebugHeavy
+#   parent: BaseHardpoint
+#   name: debug hardpoint heavy universal
+#   suffix: DO NOT MAP
+#   components:
+#   - type: Hardpoint
+#     class: Universal
+#     size: Heavy
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 1
+#     repairCost: 0
 
-- type: entity
-  id: HardpointDebugSuperheavy
-  parent: BaseHardpoint
-  name: debug hardpoint superheavy universal
-  suffix: DO NOT MAP
-  components:
-  - type: Hardpoint
-    class: Universal
-    size: Superheavy
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 1
-    repairCost: 0
+# Commented by LuaM: replaced with HardpointUniversalSuperheavy
+# - type: entity
+#   id: HardpointDebugSuperheavy
+#   parent: BaseHardpoint
+#   name: debug hardpoint superheavy universal
+#   suffix: DO NOT MAP
+#   components:
+#   - type: Hardpoint
+#     class: Universal
+#     size: Superheavy
+#   # - type: ApcPowerReceiver # Commented by LuaM: hardpoints draw no power
+#   #   powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 1
+#     repairCost: 0
 
 # Ballistic
 
-- type: entity
-  id: HardpointBallisticSuperlight
-  parent: BaseHardpoint
-  name: superlight ballistic hardpoint
-  components:
-  - type: Hardpoint
-    class: Ballistic
-    size: Superlight
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 20
-    repairCost: 10
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointBallisticSuperlight
+#   parent: BaseHardpoint
+#   name: superlight ballistic hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Ballistic
+#     size: Superlight
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 20
+#     repairCost: 10
 
-- type: entity
-  id: HardpointBallisticLight
-  parent: BaseHardpoint
-  name: light ballistic hardpoint
-  components:
-  - type: Hardpoint
-    class: Ballistic
-    size: Light
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 40
-    repairCost: 15
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointBallisticLight
+#   parent: BaseHardpoint
+#   name: light ballistic hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Ballistic
+#     size: Light
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 40
+#     repairCost: 15
 
-- type: entity
-  id: HardpointBallisticMedium
-  parent: BaseHardpoint
-  name: medium ballistic hardpoint
-  components:
-  - type: Hardpoint
-    class: Ballistic
-    size: Medium
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 60
-    repairCost: 20
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointBallisticMedium
+#   parent: BaseHardpoint
+#   name: medium ballistic hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Ballistic
+#     size: Medium
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 60
+#     repairCost: 20
 
-- type: entity
-  id: HardpointBallisticHeavy
-  parent: BaseHardpoint
-  name: heavy ballistic hardpoint
-  components:
-  - type: Hardpoint
-    class: Ballistic
-    size: Heavy
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 80
-    repairCost: 25
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointBallisticHeavy
+#   parent: BaseHardpoint
+#   name: heavy ballistic hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Ballistic
+#     size: Heavy
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 80
+#     repairCost: 25
 
-- type: entity
-  id: HardpointBallisticSuperheavy
-  parent: BaseHardpoint
-  name: superheavy ballistic hardpoint
-  components:
-  - type: Hardpoint
-    class: Ballistic
-    size: Superheavy
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 100
-    repairCost: 30
+# Commented by LuaM: replaced with HardpointUniversalSuperheavy
+# - type: entity
+#   id: HardpointBallisticSuperheavy
+#   parent: BaseHardpoint
+#   name: superheavy ballistic hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Ballistic
+#     size: Superheavy
+#   # - type: ApcPowerReceiver # Commented by LuaM: hardpoints draw no power
+#   #   powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 100
+#     repairCost: 30
 
 # Energy
 
-- type: entity
-  id: HardpointEnergySuperlight
-  parent: BaseHardpoint
-  name: superlight energy hardpoint
-  components:
-  - type: Hardpoint
-    class: Energy
-    size: Superlight
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 20
-    repairCost: 10
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointEnergySuperlight
+#   parent: BaseHardpoint
+#   name: superlight energy hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Energy
+#     size: Superlight
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 20
+#     repairCost: 10
 
-- type: entity
-  id: HardpointEnergyLight
-  parent: BaseHardpoint
-  name: light energy hardpoint
-  components:
-  - type: Hardpoint
-    class: Energy
-    size: Light
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 40
-    repairCost: 15
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointEnergyLight
+#   parent: BaseHardpoint
+#   name: light energy hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Energy
+#     size: Light
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 40
+#     repairCost: 15
 
-- type: entity
-  id: HardpointEnergyMedium
-  parent: BaseHardpoint
-  name: medium energy hardpoint
-  components:
-  - type: Hardpoint
-    class: Energy
-    size: Medium
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 60
-    repairCost: 20
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointEnergyMedium
+#   parent: BaseHardpoint
+#   name: medium energy hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Energy
+#     size: Medium
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 60
+#     repairCost: 20
 
-- type: entity
-  id: HardpointEnergyHeavy
-  parent: BaseHardpoint
-  name: heavy energy hardpoint
-  components:
-  - type: Hardpoint
-    class: Energy
-    size: Heavy
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 80
-    repairCost: 25
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointEnergyHeavy
+#   parent: BaseHardpoint
+#   name: heavy energy hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Energy
+#     size: Heavy
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 80
+#     repairCost: 25
 
-- type: entity
-  id: HardpointEnergySuperheavy
-  parent: BaseHardpoint
-  name: superheavy energy hardpoint
-  components:
-  - type: Hardpoint
-    class: Energy
-    size: Superheavy
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 100
-    repairCost: 30
+# Commented by LuaM: replaced with HardpointUniversalSuperheavy
+# - type: entity
+#   id: HardpointEnergySuperheavy
+#   parent: BaseHardpoint
+#   name: superheavy energy hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Energy
+#     size: Superheavy
+#   # - type: ApcPowerReceiver # Commented by LuaM: hardpoints draw no power
+#   #   powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 100
+#     repairCost: 30
 
 # Missile
 
-- type: entity
-  id: HardpointMissileSuperlight
-  parent: BaseHardpoint
-  name: superlight missile hardpoint
-  components:
-  - type: Hardpoint
-    class: Missile
-    size: Superlight
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 20
-    repairCost: 10
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointMissileSuperlight
+#   parent: BaseHardpoint
+#   name: superlight missile hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Missile
+#     size: Superlight
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 20
+#     repairCost: 10
 
-- type: entity
-  id: HardpointMissileLight
-  parent: BaseHardpoint
-  name: light missile hardpoint
-  components:
-  - type: Hardpoint
-    class: Missile
-    size: Light
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 40
-    repairCost: 15
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointMissileLight
+#   parent: BaseHardpoint
+#   name: light missile hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Missile
+#     size: Light
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 40
+#     repairCost: 15
 
-- type: entity
-  id: HardpointMissileMedium
-  parent: BaseHardpoint
-  name: medium missile hardpoint
-  components:
-  - type: Hardpoint
-    class: Missile
-    size: Medium
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 60
-    repairCost: 20
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointMissileMedium
+#   parent: BaseHardpoint
+#   name: medium missile hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Missile
+#     size: Medium
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 60
+#     repairCost: 20
 
-- type: entity
-  id: HardpointMissileHeavy
-  parent: BaseHardpoint
-  name: heavy missile hardpoint
-  components:
-  - type: Hardpoint
-    class: Missile
-    size: Heavy
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 80
-    repairCost: 25
+# Commented by LuaM: only superheavy hardpoints are kept
+# - type: entity
+#   id: HardpointMissileHeavy
+#   parent: BaseHardpoint
+#   name: heavy missile hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Missile
+#     size: Heavy
+#   - type: ApcPowerReceiver
+#     powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 80
+#     repairCost: 25
 
-- type: entity
-  id: HardpointMissileSuperheavy
-  parent: BaseHardpoint
-  name: superheavy missile hardpoint
-  components:
-  - type: Hardpoint
-    class: Missile
-    size: Superheavy
-  - type: ApcPowerReceiver
-    powerLoad: 10000
-  - type: Sprite
-    sprite: _Crescent/Structures/hardpoints.rsi
-    state: medium
-  - type: ShipRepairable
-    repairTime: 100
-    repairCost: 30
+# Commented by LuaM: replaced with HardpointUniversalSuperheavy
+# - type: entity
+#   id: HardpointMissileSuperheavy
+#   parent: BaseHardpoint
+#   name: superheavy missile hardpoint
+#   components:
+#   - type: Hardpoint
+#     class: Missile
+#     size: Superheavy
+#   # - type: ApcPowerReceiver # Commented by LuaM: hardpoints draw no power
+#   #   powerLoad: 10000
+#   - type: Sprite
+#     sprite: _Crescent/Structures/hardpoints.rsi
+#     state: medium
+#   - type: ShipRepairable
+#     repairTime: 100
+#     repairCost: 30

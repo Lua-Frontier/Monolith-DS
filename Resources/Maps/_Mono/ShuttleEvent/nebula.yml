@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/25/2026 21:29:47
-  entityCount: 497
+  entityCount: 489
 maps: []
 grids:
 - 1
@@ -1575,73 +1575,7 @@ entities:
     - type: Transform
       pos: -1.5,-9.5
       parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 490
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,0.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 491
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,0.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 496
-    components:
-    - type: Transform
-      pos: 0.5,-20.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 497
-    components:
-    - type: Transform
-      pos: -1.5,-20.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointEnergyHeavy
-  entities:
-  - uid: 492
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,-8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 493
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 6.5,-9.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 494
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -5.5,-8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 495
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -7.5,-9.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointEnergySuperheavy
+- proto: HardpointUniversalSuperheavy
   entities:
   - uid: 489
     components:

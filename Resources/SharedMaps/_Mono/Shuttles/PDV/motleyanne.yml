@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/24/2026 22:37:31
-  entityCount: 2399
+  entityCount: 2391
 maps: []
 grids:
 - 1
@@ -9050,72 +9050,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,6.5
       parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 847
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 6.5,8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 854
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -21.5,42.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 880
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -22.5,8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 883
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 6.5,41.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 845
-    components:
-    - type: Transform
-      pos: 0.5,-3.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 861
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,51.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 872
-    components:
-    - type: Transform
-      pos: -14.5,-4.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 2399
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -12.5,52.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: LockableButtonPirate
   entities:
   - uid: 1332

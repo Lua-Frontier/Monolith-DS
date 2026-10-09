@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/26/2026 09:16:34
-  entityCount: 117
+  entityCount: 115
 maps: []
 grids:
 - 1
@@ -359,24 +359,6 @@ entities:
     - type: Transform
       pos: -1.5,1.5
       parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 116
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 117
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: SpawnMobAttackerCore
   entities:
   - uid: 49

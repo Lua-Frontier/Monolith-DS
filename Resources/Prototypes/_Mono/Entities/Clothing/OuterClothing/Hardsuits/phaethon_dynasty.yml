@@ -46,7 +46,7 @@
     - RogueHardsuit
 
 - type: entity
-  parent: [ ClothingOuterHardsuitSyndie, BaseFactionGearPDVT2, MonoEnergyShieldClothing ] # LuaM add: MonoEnergyShieldClothing
+  parent: [ ClothingOuterHardsuitSyndie, BaseFactionGearPDVT2 ]
   id: ClothingOuterHardsuitAshen
   name: PDV CV-32 combat hardsuit
   description: A combat hardsuit designed by the Phaethon Dynasty. A heavier but still general-purpose hardsuit. Sacrifices most of its protection for reinforced ballistic platings.
@@ -63,11 +63,6 @@
       head: ClothingHeadHelmetHardsuitAshen
       helmetcover: ClothingHeadHelmetCoverBlock
       helmetattachment: ClothingHeadHelmetAttachmentBlock
-# LuaM-start:
-  - type: ExplosionResistance
-    damageCoefficient: 0.35
-  - type: FireProtection
-    reduction: 0.5
   - type: Armor
     modifiers:
       coefficients:
@@ -77,36 +72,16 @@
         Heat: 0.75
         Radiation: 0.7
         Caustic: 0.9
-  - type: Item
-    size: Huge
-# LuaM-end.
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
   - type: Tag
     tags:
     - RogueHardsuit
-# LuaM-start:
   - type: StaminaDamageResistance
     coefficient: 0.75
-  - type: PersonalShield
-    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
-      color: "#ff0000"
-    shield:
-      maxCharge: 400
-      regenRate: 6
-      spinupTime: 0.5
-      breakCooldown: 25
-      powerDraw: 0.5
-  - type: Battery
-    maxCharge: 100
-    startingCharge: 100
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargePause: true
-    autoRechargePauseTime: 8
-    autoRechargeRate: 100
-# LuaM-end.
 
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseFactionGearPDVT3 ]
@@ -156,7 +131,7 @@
     - RogueHardsuit
 
 - type: entity
-  parent: [ClothingOuterHardsuitSyndieCommander, MonoEnergyShieldClothing] #LuaM add: MonoEnergyShieldClothing
+  parent: ClothingOuterHardsuitSyndieCommander
   id: ClothingOuterHardsuitVizier
   name: PDV CV-67 combat tacsuit
   description: An adorned tacsuit designed with an imperfect nanolaminate composition. High maneuverability, sturdy armor.
@@ -173,52 +148,12 @@
       head: ClothingHeadHelmetHardsuitVizier
       helmetcover: ClothingHeadHelmetCoverBlock
       helmetattachment: ClothingHeadHelmetAttachmentBlock
-# LuaM-start:
-  - type: ExplosionResistance
-    damageCoefficient: 0.2
-  - type: FireProtection
-    reduction: 0.5
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.35 # LuaM: 0.25 > 0.35
-        Slash: 0.35 # LuaM: 0.25 > 0.35
-        Piercing: 0.25
-        Heat: 0.25
-        Radiation: 0.25
-        Caustic: 0.5
-  - type: Item
-    size: Huge
-  - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
-# LuaM-end.
   - type: Tag
     tags:
     - RogueHardsuit
-# # LuaM-start:
-  - type: PersonalShield
-    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
-      color: "#ff0000"
-    shield:
-      maxCharge: 450
-      regenRate: 6
-      spinupTime: 0.5
-      breakCooldown: 25
-      powerDraw: 0.5
-  - type: Battery
-    maxCharge: 100
-    startingCharge: 100
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargePause: true
-    autoRechargePauseTime: 8
-    autoRechargeRate: 100
-# LuaM-end.
-
 
 - type: entity
-  parent: [ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing] # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
+  parent: [ ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing ]
   id: ClothingOuterHardsuitAshenElite
   name: PDV CV-53 combat tacsuit
   description: Originally based off of the CV-32 hardsuit, the CV-53 tacsuit sacrifices conventional armor plating for environmental protection, and a rechargeable hard-shield.
@@ -245,83 +180,58 @@
       helmetcover: ClothingHeadHelmetCoverBlock
       helmetattachment: ClothingHeadHelmetAttachmentBlock
   - type: ExplosionResistance
-    damageCoefficient: 0.15 # LuaM: 0.3 > 0.15
+    damageCoefficient: 0.2
   - type: FireProtection
     reduction: 0.8
   - type: Armor # Mono - Armor Value Changes
     modifiers:
       coefficients:
-        Blunt: 0.4 # LuaM: 0.75 > 0.4
-        Slash: 0.4 # LuaM: 0.75 > 0.4
-        Piercing: 0.4 # LuaM: 0.7 > 0.4
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.65
         Heat: 0.2
         Radiation: 0.1
-        Caustic: 0.4 # LuaM: 0.5 > 0.4
+        Caustic: 0.5
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
-    walkModifier: 1.05 # LuaM: 1.0 > 1.05
-    sprintModifier: 1.05 # 0.9-> 1 Mono # LuaM: 1.0 > 1.05
+    walkModifier: 1.0
+    sprintModifier: 0.9
   - type: Tag
     tags:
     - RogueHardsuit
-# LuaM-start:
-  - type: PersonalShield
-    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
-      color: "#ff0000"
-    shield:
-      maxCharge: 350
-      regenRate: 6
-      spinupTime: 0.5
-      breakCooldown: 20
-      powerDraw: 0.5
   # Shielding
+  - type: PersonalShield
+    visuals:
+      color: "#FF5F1F"
+      scale: 2
+      fillLevel: 0.1
+      coreFade: 0.85
+    shield:
+      maxCharge: 200
+      regenRate: 5
+      spinupTime: 0.5
+      breakCooldown: 17
+      powerDraw: 1
+      blockModifier:
+        coefficients:
+          Piercing: 0.5
+          Heat: 1.5
+          Radiation: 2.5
+          Shock: 2.5
   - type: Battery
     maxCharge: 100
     startingCharge: 100
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargePause: true
-    autoRechargePauseTime: 8
     autoRechargeRate: 5
-# LuaM-end.
-  # Shielding
-#  - type: Blocking # Commented by LuaM
-#    passiveBlockModifier:
-#      coefficients:
-#        Blunt: 0.1
-#        Slash: 0.1
-#        Piercing: 0.1
-#        Heat: 0.1
-#    activeBlockModifier:
-#      coefficients:
-#        Blunt: 0.1
-#        Slash: 0.1
-#        Piercing: 0.1
-#        Heat: 0.1
-#      flatReductions:
-#        Heat: 5
-#    passiveBlockFraction: 1.0
-#    activeBlockFraction: 1.0
-#    isClothing: true
-#  - type: Damageable
-#    damageContainer: Shield
-#  - type: Battery
-#    maxCharge: 30 # LuaM: 10 > 30
-#    startingCharge: 30 # LuaM: 10 > 30
-#  - type: BatterySelfRecharger
-#    autoRecharge: true
-#    autoRechargeRate: 1
-#  - type: RechargeableBlocking
-#    chargedRechargeRate: 0.5 # LuaM: 0 > 0.5
-#    dischargedRechargeRate: 1 # LuaM: 0.3 > 1
-#  - type: UseDelay
-#    delay: 10
-#  - type: PointLight
-#    enabled: false
-#    radius: 1.4
-#    energy: 2
-#    color: "#5dd439"
+  - type: UseDelay
+    delay: 10
+  - type: PointLight
+    enabled: false
+    radius: 1.4
+    energy: 2
+    color: "#5dd439"
   - type: ExtendDescription
     descriptionList:
     - description: Alt-click or otherwise interact to toggle additional shielding.

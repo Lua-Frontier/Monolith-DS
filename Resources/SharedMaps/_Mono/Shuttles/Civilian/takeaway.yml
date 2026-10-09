@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/05/2026 04:47:55
-  entityCount: 1128
+  entityCount: 1123
 maps: []
 grids:
 - 1
@@ -4678,36 +4678,6 @@ entities:
     components:
     - type: Transform
       pos: -3.5,-1.5
-      parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 1124
-    components:
-    - type: Transform
-      pos: -8.5,-18.5
-      parent: 1
-  - uid: 1125
-    components:
-    - type: Transform
-      pos: 9.5,-18.5
-      parent: 1
-  - uid: 1126
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,2.5
-      parent: 1
-  - uid: 1127
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,5.5
-      parent: 1
-  - uid: 1128
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,-9.5
       parent: 1
 - proto: hydroponicsTray
   entities:

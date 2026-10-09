@@ -13,13 +13,13 @@
       Manipulator: 5
     stackRequirements:
       Glass: 3
-    tagRequirements:
-      MotorEconomy1: # Mono - scary giant spinny lathe
-        amount: 1
-        defaultPrototype: MotorEconomy1
-      ComponentBrickEconomy1: # Mono
-        amount: 1
-        defaultPrototype: ComponentBrickEconomy1
+    # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+      # MotorEconomy1: # Mono - scary giant spinny lathe # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: MotorEconomy1
+      # ComponentBrickEconomy1: # Mono # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ComponentBrickEconomy1
 
 - type: entity
   id: NuclearCentrifugeMachineCircuitboard
@@ -35,10 +35,10 @@
       Manipulator: 5
     stackRequirements:
       Plasteel: 5
-    tagRequirements: # Mono
-      ArmorPlateEconomy1: # Reinforcement. Things that spin very heavy things very fast are very dangerous.
-        amount: 2 # 0.5x as much as the economy centrifuge.
-        defaultPrototype: ArmorPlateEconomy1
-      ComponentBrickEconomy1:
-        amount: 1
-        defaultPrototype: ComponentBrickEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # ArmorPlateEconomy1: # Reinforcement. Things that spin very heavy things very fast are very dangerous. # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2 # 0.5x as much as the economy centrifuge.
+      #   defaultPrototype: ArmorPlateEconomy1
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ComponentBrickEconomy1

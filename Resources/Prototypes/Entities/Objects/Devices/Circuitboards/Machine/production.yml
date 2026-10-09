@@ -211,13 +211,13 @@
     prototype: ResearchAndDevelopmentServer
     stackRequirements:
       Plasma: 5
-    tagRequirements: # Mono
-      MicroprocessorEconomy1:
-        amount: 3
-        defaultPrototype: MicroprocessorEconomy1
-      RadioEconomy1:
-        amount: 1
-        defaultPrototype: RadioEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 3
+      #   defaultPrototype: MicroprocessorEconomy1
+      # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: RadioEconomy1
 
 - type: entity
   id: BiogeneratorMachineCircuitboard
@@ -370,13 +370,13 @@
       Cable: 5
       PlasmaGlass: 15
       MetalRod: 4
-    tagRequirements: # Mono
-      MicroprocessorEconomy3:
-        amount: 2
-        defaultPrototype: MicroprocessorEconomy3
-      RadioEconomy1:
-        amount: 1
-        defaultPrototype: RadioEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # MicroprocessorEconomy3: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: MicroprocessorEconomy3
+      # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: RadioEconomy1
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -466,13 +466,13 @@
       Capacitor: 2 # Frontier stackRequirements<requirements
     stackRequirements:
       Plasma: 1
-    tagRequirements: # Mono
-      MotorEconomy1:
-        amount: 2
-        defaultPrototype: MotorEconomy1
-      ComponentBrickEconomy1:
-        amount: 1
-        defaultPrototype: ComponentBrickEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # MotorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: MotorEconomy1
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ComponentBrickEconomy1
   - type: Construction
     deconstructionTarget: null
     graph: ThermomachineBoard
@@ -493,13 +493,13 @@
       Capacitor: 2 # Frontier stackRequirements<requirements
     stackRequirements:
       Plasma: 1
-    tagRequirements: # Mono
-      MotorEconomy1:
-        amount: 2
-        defaultPrototype: MotorEconomy1
-      ComponentBrickEconomy1:
-        amount: 1
-        defaultPrototype: ComponentBrickEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # MotorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: MotorEconomy1
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ComponentBrickEconomy1
   - type: Construction
     graph: ThermomachineBoard
     deconstructionTarget: null
@@ -569,13 +569,13 @@
       stackRequirements:
         Glass: 1
         Cable: 1
-      tagRequirements: # Mono
-        ComponentBrickEconomy2:
-          amount: 1
-          defaultPrototype: ComponentBrickEconomy2
-        RadioEconomy1:
-          amount: 1
-          defaultPrototype: RadioEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # ComponentBrickEconomy2: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: ComponentBrickEconomy2
+        # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: RadioEconomy1
 
 - type: entity
   id: MedicalScannerMachineCircuitboard
@@ -592,13 +592,13 @@
       stackRequirements:
         Glass: 5
         Cable: 1
-      tagRequirements: # Mono
-        CameraEconomy1:
-          amount: 4
-          defaultPrototype: CameraEconomy1
-        RadioEconomy1:
-          amount: 1
-          defaultPrototype: RadioEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # CameraEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 4
+        #   defaultPrototype: CameraEconomy1
+        # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: RadioEconomy1
 
 - type: entity
   id: CrewMonitoringServerMachineCircuitboard
@@ -611,13 +611,13 @@
       stackRequirements:
         Steel: 1
         Cable: 2
-      tagRequirements: # Mono
-        MicroprocessorEconomy1:
-          amount: 2
-          defaultPrototype: MicroprocessorEconomy1
-        RadioEconomy1:
-          amount: 1
-          defaultPrototype: RadioEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 2
+        #   defaultPrototype: MicroprocessorEconomy1
+        # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: RadioEconomy1
 
 - type: entity
   id: CryoPodMachineCircuitboard
@@ -632,13 +632,13 @@
       stackRequirements:
         Glass: 5
         Cable: 1
-      tagRequirements: # Mono
-        MicroprocessorEconomy1:
-          amount: 2
-          defaultPrototype: MicroprocessorEconomy1
-        ComponentBrickEconomy1:
-          amount: 1
-          defaultPrototype: ComponentBrickEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 2
+        #   defaultPrototype: MicroprocessorEconomy1
+        # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: ComponentBrickEconomy1
 
 - type: entity
   id: ChemMasterMachineCircuitboard
@@ -875,13 +875,13 @@
       Capacitor: 2 # Frontier stackRequirements<requirements
     stackRequirements:
       CableMV: 5
-    tagRequirements: # Mono
-      ComponentBrickEconomy1:
-        amount: 1
-        defaultPrototype: ComponentBrickEconomy1
-      ElectromagnetEconomy2:
-        amount: 1
-        defaultPrototype: ElectromagnetEconomy2
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ComponentBrickEconomy1
+      # ElectromagnetEconomy2: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ElectromagnetEconomy2
   - type: PhysicalComposition
     materialComposition:
       Steel: 30
@@ -955,10 +955,10 @@
         Capacitor: 1 # Frontier stackRequirements<requirements
       stackRequirements:
         CableHV: 5
-      tagRequirements: # Mono
-        MotorEconomy1: # Stator!
-          amount: 1
-          defaultPrototype: MotorEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MotorEconomy1: # Stator! # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MotorEconomy1
     - type: PhysicalComposition
       materialComposition:
         Glass: 200
@@ -1005,10 +1005,10 @@
         Capacitor: 2 # Frontier stackRequirements<requirements
       stackRequirements:
         CableHV: 10
-      tagRequirements: # Mono
-        MotorEconomy1: # Stator!
-          amount: 1
-          defaultPrototype: MotorEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MotorEconomy1: # Stator! # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MotorEconomy1
     - type: PhysicalComposition
       materialComposition:
         Glass: 200
@@ -1125,13 +1125,13 @@
       MatterBin: 4 # Frontier stackRequirements<requirements
     stackRequirements:
       Cable: 1
-    tagRequirements: # Mono
-      MicroprocessorEconomy1:
-        amount: 1
-        defaultPrototype: MicroprocessorEconomy1
-      ComponentBrickEconomy1:
-        amount: 4
-        defaultPrototype: ComponentBrickEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: MicroprocessorEconomy1
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 4
+      #   defaultPrototype: ComponentBrickEconomy1
 
 - type: entity
   id: CentrifugeMachineCircuitboard
@@ -1177,19 +1177,19 @@
       Manipulator: 3 # Frontier stackRequirements<requirements
     stackRequirements:
       Glass: 1
-    tagRequirements: # Mono
-      MicroprocessorEconomy1:
-        amount: 2
-        defaultPrototype: MicroprocessorEconomy1
-      ComponentBrickEconomy1:
-        amount: 1
-        defaultPrototype: ComponentBrickEconomy1
-      ElectromagnetEconomy1:
-        amount: 1
-        defaultPrototype: ElectromagnetEconomy1
-      ArmorPlateEconomy3:
-        amount: 1
-        defaultPrototype: ArmorPlateEconomy3
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: MicroprocessorEconomy1
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ComponentBrickEconomy1
+      # ElectromagnetEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ElectromagnetEconomy1
+      # ArmorPlateEconomy3: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ArmorPlateEconomy3
 
 - type: entity
   id: SheetifierMachineCircuitboard
@@ -1277,13 +1277,13 @@
       stackRequirements:
         CableHV: 5
         Glass: 2
-      tagRequirements: # Mono
-        MicroprocessorEconomy1:
-          amount: 2
-          defaultPrototype: MicroprocessorEconomy1
-        ComponentBrickEconomy1:
-          amount: 1
-          defaultPrototype: ComponentBrickEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 2
+        #   defaultPrototype: MicroprocessorEconomy1
+        # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: ComponentBrickEconomy1
 
 - type: entity
   id: SurveillanceCameraRouterCircuitboard
@@ -1295,13 +1295,13 @@
       prototype: SurveillanceCameraRouterConstructed
       stackRequirements:
         Cable: 1
-      tagRequirements: # Mono
-        MicroprocessorEconomy1:
-          amount: 2
-          defaultPrototype: MicroprocessorEconomy1
-        RadioEconomy1:
-          amount: 1
-          defaultPrototype: RadioEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 2
+        #   defaultPrototype: MicroprocessorEconomy1
+        # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: RadioEconomy1
 
 - type: entity
   id: SurveillanceCameraWirelessRouterCircuitboard
@@ -1314,13 +1314,13 @@
       stackRequirements:
         Cable: 2
         Glass: 1
-      tagRequirements: # Mono
-        MicroprocessorEconomy1:
-          amount: 2
-          defaultPrototype: MicroprocessorEconomy1
-        RadioEconomy1:
-          amount: 1
-          defaultPrototype: RadioEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 2
+        #   defaultPrototype: MicroprocessorEconomy1
+        # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: RadioEconomy1
 
 - type: entity
   id: SurveillanceWirelessCameraMovableCircuitboard
@@ -1333,13 +1333,13 @@
       stackRequirements:
         Glass: 2
         Cable: 2
-      tagRequirements: # Mono
-        RadioEconomy1:
-          amount: 1
-          defaultPrototype: RadioEconomy1
-        CameraEconomy1:
-          amount: 1
-          defaultPrototype: CameraEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: RadioEconomy1
+        # CameraEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: CameraEconomy1
 
 - type: entity
   id: SurveillanceWirelessCameraAnchoredCircuitboard
@@ -1432,13 +1432,13 @@
       stackRequirements:
         Steel: 1
         Cable: 2
-      tagRequirements: # Mono
-        MicroprocessorEconomy1:
-          amount: 2
-          defaultPrototype: MicroprocessorEconomy1
-        RadioEconomy1:
-          amount: 1
-          defaultPrototype: RadioEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 2
+        #   defaultPrototype: MicroprocessorEconomy1
+        # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: RadioEconomy1
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1472,13 +1472,13 @@
       Steel: 5
       CableHV: 5
       Uranium: 5
-    tagRequirements: # Mono
-      ComponentBrickEconomy1:
-        amount: 2
-        defaultPrototype: ComponentBrickEconomy1
-      ElectromagnetEconomy1:
-        amount: 1
-        defaultPrototype: ElectromagnetEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: ComponentBrickEconomy1
+      # ElectromagnetEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ElectromagnetEconomy1
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1509,10 +1509,10 @@
       Manipulator: 3 # Frontier stackRequirements<requirements
     stackRequirements:
       Glass: 1
-    tagRequirements: # Mono
-      MotorEconomy1:
-        amount: 4
-        defaultPrototype: MotorEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # MotorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 4
+      #   defaultPrototype: MotorEconomy1
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -1575,16 +1575,16 @@
     stackRequirements:
       Steel: 5
       Glass: 5
-    tagRequirements: # Mono
-      ComponentBrickEconomy1:
-        amount: 2
-        defaultPrototype: ComponentBrickEconomy1
-      MicroprocessorEconomy1:
-        amount: 4
-        defaultPrototype: MicroprocessorEconomy1
-      MotorEconomy1:
-        amount: 1
-        defaultPrototype: MotorEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: ComponentBrickEconomy1
+      # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 4
+      #   defaultPrototype: MicroprocessorEconomy1
+      # MotorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: MotorEconomy1
 # Assmos Change End
 
 # Xenoborg
@@ -1601,10 +1601,10 @@
     stackRequirements:
       Cable: 2
       Glass: 1
-    tagRequirements: # Mono
-      MicroprocessorEconomy1:
-        amount: 2
-        defaultPrototype: MicroprocessorEconomy1
-      RadioEconomy1:
-        amount: 1
-        defaultPrototype: RadioEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: MicroprocessorEconomy1
+      # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: RadioEconomy1

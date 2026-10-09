@@ -1,0 +1,38 @@
+- type: pointOfInterest
+  id: ZvezdaLuaM
+  parent: [BasePOI, BaseRepairablePOI]
+  name: 'Орбитальный Комплекс «Звезда»'
+  minimumDistance: 4000
+  maximumDistance: 10000
+  spawnGroup: Required
+  gridPath: /Maps/_LuaM/POI/Dungeons/ZvezdaLuaM.yml
+  addComponents:
+  - type: IFF
+    color: "#17bf65"
+    readOnly: true
+  - type: WorldGenDistanceCarver
+    distanceThresholds:
+    - maxDistance: 800
+      prob: 0.0
+    - maxDistance: 1500
+      prob: 0.3
+
+- type: gameMap
+  id: ZvezdaLuaM
+  mapName: 'Орбитальный Комплекс «Звезда»'
+  mapPath: /Maps/_LuaM/POI/Dungeons/ZvezdaLuaM.yml
+  minPlayers: 0
+  stations:
+    ZvezdaLuaM:
+      stationProto: StandardFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Орбитальный Комплекс «Звезда»'
+        - type: StationJobs
+          availableJobs: {}
+        - type: StationDeadDropHintExempt
+      gridComponents:
+      - type: VesselInfo
+        description: "A half-abandoned decaying station. Sometimes you can hear the hull bend."
+      - type: VesselMusic
+        ambientMusicPrototype: CamelotMusic

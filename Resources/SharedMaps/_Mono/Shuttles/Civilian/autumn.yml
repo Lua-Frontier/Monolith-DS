@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/06/2026 07:19:32
-  entityCount: 1978
+  entityCount: 1974
 maps: []
 grids:
 - 1
@@ -9098,30 +9098,6 @@ entities:
     components:
     - type: Transform
       pos: 8.5,11.5
-      parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 1975
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -11.5,27.5
-      parent: 1
-  - uid: 1976
-    components:
-    - type: Transform
-      pos: -12.5,9.5
-      parent: 1
-  - uid: 1977
-    components:
-    - type: Transform
-      pos: 11.5,9.5
-      parent: 1
-  - uid: 1978
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 10.5,27.5
       parent: 1
 - proto: JanitorialTrolley
   entities:

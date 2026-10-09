@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/24/2026 22:40:45
-  entityCount: 151
+  entityCount: 149
 maps: []
 grids:
 - 1
@@ -567,24 +567,6 @@ entities:
     - type: Transform
       pos: 5.5,5.5
       parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 148
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,7.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 149
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,7.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: RadarEdgeMarkerDiagonal
   entities:
   - uid: 62

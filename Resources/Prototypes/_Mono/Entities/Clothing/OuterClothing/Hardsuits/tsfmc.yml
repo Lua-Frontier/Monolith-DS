@@ -27,8 +27,8 @@
   - type: StaminaDamageResistance
     coefficient: 0.25
   - type: ClothingSpeedModifier
-    walkModifier: 1.05 # LuaM: 0.95 > 1.05
-    sprintModifier: 1.05 # LuaM: 0.95 > 1.05
+    walkModifier: 0.95
+    sprintModifier: 0.95
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -68,7 +68,7 @@
     sprintModifier: 0.95
 
 - type: entity
-  parent: [ClothingOuterHardsuitBase, MonoEnergyShieldClothing, BaseFactionGearTSFT3] # LuaM add: MonoEnergyShieldClothing
+  parent: [ClothingOuterHardsuitBase, BaseFactionGearTSFT3]
   id: ClothingOuterHardsuitM86
   name: M86 Mk.3(R) hardsuit
   description: An armored hardsuit, designed to be an upgrade for the M82 series. The extra general armor gives it significant weight to move around.
@@ -83,23 +83,23 @@
     highPressureMultiplier: 0.03
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.2 # LuaM: 0.3 > 0.2
+    damageCoefficient: 0.3
   - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.4
         Slash: 0.4
         Piercing: 0.4
-#       Shock: 0.8 # Commented by LuaM
+        Shock: 0.8
         Heat: 0.5
-        Radiation: 0.4 # LuaM: 0.5 > 0.4
-        Caustic: 0.4 # LuaM: 0.6 > 0.4
-  - type: ClothingSpeedModifier
-    walkModifier: 1.1 # LuaM: 0.8 > 1.1
-    sprintModifier: 1.1 # LuaM: 0.8 > 1.1
-#  - type: HeldSpeedModifier # Commented by LuaM
+        Radiation: 0.5
+        Caustic: 0.6
   - type: StaminaDamageResistance
     coefficient: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
@@ -111,28 +111,9 @@
   - type: StaticPrice
     price: 7500
     vendPrice: 1000
-# LuaM-start:
-  - type: PersonalShield
-    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
-      color: "#FF00FFFF"
-    shield:
-      maxCharge: 450
-      regenRate: 6
-      spinupTime: 0.5
-      breakCooldown: 25
-      powerDraw: 0.5
-  - type: Battery
-    maxCharge: 100
-    startingCharge: 100
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargePause: true
-    autoRechargePauseTime: 8
-    autoRechargeRate: 100
-# LuaM-end.
 
 - type: entity
-  parent: [ClothingOuterHardsuitBaseNFNfsd, MonoEnergyShieldClothing] #LuaM add: MonoEnergyShieldClothing
+  parent: ClothingOuterHardsuitBaseNFNfsd
   id: ClothingOuterHardsuitNfsdSheriff
   name: TSFMC M92 colonel tacsuit
   description: A heavy, gilded tacsuit, stripped of its shield but now capable of taking a lot of physical damage. Usually assigned to commanding officers of TSF flagships.
@@ -152,45 +133,26 @@
   - type: FireProtection # Mono
     reduction: 0.5
   - type: ExplosionResistance
-    damageCoefficient: 0.2 # LuaM: 0.5 > 0.2
+    damageCoefficient: 0.3
   - type: Armor # Mono - Armor Value Changes
     modifiers:
       coefficients:
-        Blunt: 0.35 # LuaM: 0.4 > 0.35
-        Slash: 0.35 # LuaM: 0.4 > 0.35
-        Piercing: 0.35 # LuaM: 0.4 > 0.35
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
         Heat: 0.45
         Radiation: 0.4
         Caustic: 0.5
   - type: ClothingSpeedModifier # Mono - Armor Value Changes
-    walkModifier: 1.1 # LuaM: 0.9 > 1.1
-    sprintModifier: 1.1 # LuaM: 1 > 1.1
+    walkModifier: 0.9
+    sprintModifier: 1
   - type: StaminaDamageResistance # Mono - Stamres
-    coefficient: 0.55 # LuaM: 0.35 > 0.55
+    coefficient: 0.35
   - type: PirateBountyItem # Mono
     id: ClothingOuterHardsuitTacsuitHighValue
-# LuaM-start:
-  - type: PersonalShield
-    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
-      color: "#FF00FFFF"
-    shield:
-      maxCharge: 350
-      regenRate: 6
-      spinupTime: 0.5
-      breakCooldown: 25
-      powerDraw: 0.5
-  - type: Battery
-    maxCharge: 100
-    startingCharge: 100
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargePause: true
-    autoRechargePauseTime: 8
-    autoRechargeRate: 100
-# LuaM-end.
 
 - type: entity
-  parent: [ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing, BaseFactionGearTSFT3] # Jugger Suit # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
+  parent: [ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing, BaseFactionGearTSFT3 ] # Jugger Suit
   id: ClothingOuterHardsuitNfsdExperimental
   name: TSFMC M92-X tacsuit
   description: An experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Durable, and comes with an integrated hard-shield along with numerous gadgets at the cost of insulation and solid armor.
@@ -220,15 +182,15 @@
   - type: Armor # Mono - Armor Value Changes
     modifiers:
       coefficients:
-        Blunt: 0.3 # LuaM: 0.5 > 0.3
-        Slash: 0.3 # LuaM: 0.5 > 0.3
-        Piercing: 0.3 # LuaM: 0.6 > 0.3
-        Heat: 0.3 # LuaM: 0.7 > 0.3
-        Radiation: 0.3 # LuaM: 0.5 > 0.3
-        Caustic: 0.3 # LuaM: 0.8 > 0.3
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.8
   - type: ClothingSpeedModifier # Mono - Armor Value Changes
-    walkModifier: 0.75 # LuaM: 0.7 > 0.75
-    sprintModifier: 0.75 # LuaM: 0.65 > 0.75
+    walkModifier: 0.7
+    sprintModifier: 0.6
   - type: HeldSpeedModifier
   - type: FactionClothing
     faction: NanoTrasen
@@ -236,60 +198,38 @@
     coefficient: 0.25
   - type: PirateBountyItem # Mono
     id: ClothingOuterHardsuitTacsuitHighValue
-  - type: FootstepModifier # LuaM
-    footstepSoundCollection:
-      collection: FootstepHeavySuit
-# LuaM-start:
+  # Mono - Shielding comps
   - type: PersonalShield
-    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
-      color: "#FF00FFFF"
+    visuals:
+      fillLevel: 0.2
+      hexDensity: 6
+      pixelGrid: 192
+      color: "#E0FFFF"
+      scale: 2.3
     shield:
-      maxCharge: 500
-      regenRate: 6
-      spinupTime: 0.5
+      maxCharge: 400
+      regenRate: 5
+      spinupTime: 2.5
       breakCooldown: 20
       powerDraw: 0.5
-  # Mono - Shielding comps
+      blockModifier:
+        coefficients:
+          Piercing: 0.5
+          Heat: 1.5
+          Radiation: 2.5
+          Shock: 2.5
   - type: Battery
     maxCharge: 100
     startingCharge: 100
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargePause: true
-    autoRechargePauseTime: 5
     autoRechargeRate: 5
-# LuaM-end.
-
-#  - type: Blocking # Commented by LuaM
-#    passiveBlockModifier:
-#      coefficients:
-#        Blunt: 0.5
-#        Slash: 0.5
-#        Piercing: 0.5
-#        Heat: 0.5
-#    activeBlockModifier:
-#      coefficients:
-#        Blunt: 0.5
-#        Slash: 0.5
-#        Piercing: 0.5
-#        Heat: 0.5
-#      flatReductions:
-#        Heat: 5
-#        Piercing: 5
-#    passiveBlockFraction: 0.6
-#    activeBlockFraction: 0.6
-#    isClothing: true
-#  - type: Damageable
-#    damageContainer: Shield
-#  - type: Battery
-#    maxCharge: 150
-#    startingCharge: 150
-#  - type: BatterySelfRecharger
-#    autoRecharge: true
-#    autoRechargeRate: 1.5
-#  - type: RechargeableBlocking
-#  - type: UseDelay
-#    delay: 10
+    autoRechargePauseTime: 5
+  - type: UseDelay
+    delay: 10
+  - type: FootstepModifier # LuaM
+    footstepSoundCollection:
+      collection: FootstepHeavySuit # LuaM: sound_mecha_powerloader_step > FootstepHeavySuit
   - type: ExtendDescription
     descriptionList:
     - description: Alt-click or otherwise interact to toggle additional shielding.
@@ -302,7 +242,7 @@
 # MARSOC only
 
 - type: entity
-  parent: [MonoEnergyShieldClothing, ClothingOuterHardsuitBaseNoPlateholder, BaseFactionGearTSFT3] # LuaM: EnergyShieldClothing > MonoEnergyShieldClothing
+  parent: [MonoEnergyShieldClothing, ClothingOuterHardsuitBaseNoPlateholder, BaseFactionGearTSFT3] #WORK ON THIS ONE NEXT POOP POOP
   id: ClothingOuterHardsuitM86Mk4
   name: M86 Mk.4(B) hardsuit
   description: A limited-production redesign proposal for the M86 Mk.3(R), outfitted with an inbuilt personal shield generator.
@@ -315,22 +255,22 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.15 # LuaM: 0.4 > 0.15
+    damageCoefficient: 0.4
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.3 # LuaM: 0.55 > 0.3
-        Slash: 0.3 # LuaM: 0.45 > 0.3
-        Piercing: 0.3 #LuaM: 0.45 > 0.3
+        Blunt: 0.55
+        Slash: 0.45
+        Piercing: 0.45
         Shock: 0.95
-        Heat: 0.3 # LuaM: 0.7 > 0.3
-        Radiation: 0.3 # LuaM: 0.5 > 0.3
+        Heat: 0.7
+        Radiation: 0.5
         Caustic: 0.6
   - type: StaminaDamageResistance
     coefficient: 0.2
   - type: ClothingSpeedModifier
-    walkModifier: 1.1 # LuaM: 0.9 > 1.1
-    sprintModifier: 1.1 # LuaM: 0.875 > 1.1
+    walkModifier: 0.9
+    sprintModifier: 0.875
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -340,20 +280,26 @@
       head: ClothingHeadHelmetHardsuitM86Mk4
       helmetcover: ClothingHeadHelmetCoverBlock
       helmetattachment: ClothingHeadHelmetAttachmentBlock
-# LuaM-start:
   - type: PersonalShield
-    visuals: # LuaM: color moved into visuals (upstream PersonalShield refactor)
-      color: "#FF00FFFF"
+    visuals:
+      fillLevel: 0.15
+      hexDensity: 3
+      pixelGrid: 96
+      color: "#7F00FF"
+      scale: 2.0
     shield:
-      maxCharge: 500
-      regenRate: 6
-      spinupTime: 0.5
+      maxCharge: 250
+      regenRate: 5
+      spinupTime: 0.75
       breakCooldown: 20
       powerDraw: 0.5
+      blockModifier:
+        coefficients:
+          Heat: 1.25
+          Radiation: 1.5
   - type: Battery
     maxCharge: 100
     startingCharge: 100
-# LuaM-end.
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 5

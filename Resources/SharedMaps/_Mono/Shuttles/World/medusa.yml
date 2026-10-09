@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/26/2026 09:19:00
-  entityCount: 188
+  entityCount: 184
 maps: []
 grids:
 - 1
@@ -594,36 +594,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 5.5,-3.5
       parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 185
-    components:
-    - type: Transform
-      pos: 8.5,-3.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 186
-    components:
-    - type: Transform
-      pos: 6.5,-4.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 187
-    components:
-    - type: Transform
-      pos: -5.5,-4.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 188
-    components:
-    - type: Transform
-      pos: -7.5,-3.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: SmallGyroscope
   entities:
   - uid: 93

@@ -37,8 +37,8 @@
     targetedColor: "#8cfc03"
     defaultColor: "#fc0324"
   - type: WieldDelay
-    baseDelay: 3.5 # LuaM: 0.5 > 3.5
-    modifiedDelay: 3.5 # LuaM: 0.5 > 3.5
+    baseDelay: 0.5
+    modifiedDelay: 0.5
     preventFiring: true
   - type: MeleeRequiresWield
   - type: MeleeWeapon

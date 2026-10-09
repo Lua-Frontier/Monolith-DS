@@ -284,6 +284,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
         _viewportExclusions.Clear();
 
         DrawStarSystem(handle, matty);
+        DrawRadiusIndicators(handle, matty, viewBox); // LuaM
 
         // Draw our FTL range + no FTL zones
         // Do it up here because we want this layered below most things.

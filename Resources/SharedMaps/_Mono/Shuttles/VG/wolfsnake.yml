@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/24/2026 22:51:13
-  entityCount: 1119
+  entityCount: 1114
 maps: []
 grids:
 - 1
@@ -5584,57 +5584,13 @@ entities:
     - type: Transform
       pos: -1.5,10.5
       parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 409
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.5,3.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 412
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 6.5,3.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 413
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -6.5,-2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1119
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 7.5,-2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointBallisticSuperheavy
+- proto: HardpointUniversalSuperheavy
   entities:
   - uid: 1118
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,13.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointMissileMedium
-  entities:
-  - uid: 410
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -4.5,18.5
       parent: 1
     - type: Physics
       canCollide: False

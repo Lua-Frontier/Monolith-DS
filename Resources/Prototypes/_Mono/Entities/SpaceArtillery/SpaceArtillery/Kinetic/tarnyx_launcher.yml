@@ -55,9 +55,9 @@
   - type: ShipRepairable
     repairTime: 30
     repairCost: 100
-  - type: HardpointAnchorableOnly
-    class: Ballistic
-    size: Medium
+  # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
+  #   class: Ballistic
+  #   size: Medium
 
 # limited ammo for ships
 
@@ -114,9 +114,9 @@
   - type: ShipRepairable
     repairTime: 30
     repairCost: 100
-  - type: HardpointAnchorableOnly
-    class: Ballistic
-    size: Medium
+  # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
+  #   class: Ballistic
+  #   size: Medium
 
 - type: entity
   id: WeaponTurretTarnyxReloadAP
@@ -142,6 +142,6 @@
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
   - type: ShipGunType
     shipType: Ballistic
-  - type: HardpointAnchorableOnly
-    class: Ballistic
-    size: Medium
+  # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
+  #   class: Ballistic
+  #   size: Medium

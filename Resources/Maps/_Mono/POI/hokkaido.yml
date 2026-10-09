@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/24/2026 22:48:16
-  entityCount: 6269
+  entityCount: 6259
 maps: []
 grids:
 - 1
@@ -18800,6 +18800,78 @@ entities:
     - type: Transform
       pos: -5.5,1.5
       parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 4045
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 33.5,27.5
+      parent: 1
+  - uid: 4046
+    components:
+    - type: Transform
+      pos: -4.5,-5.5
+      parent: 1
+  - uid: 4047
+    components:
+    - type: Transform
+      pos: -6.5,-5.5
+      parent: 1
+  - uid: 4048
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 11.5,12.5
+      parent: 1
+  - uid: 4049
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 47.5,8.5
+      parent: 1
+  - uid: 4050
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 32.5,-27.5
+      parent: 1
+  - uid: 4051
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 32.5,-29.5
+      parent: 1
+  - uid: 4052
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -40.5,-17.5
+      parent: 1
+  - uid: 4053
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -45.5,5.5
+      parent: 1
+  - uid: 4054
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -45.5,8.5
+      parent: 1
+  - uid: 4055
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -32.5,29.5
+      parent: 1
+  - uid: 4056
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -30.5,29.5
+      parent: 1
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 2758
@@ -29668,134 +29740,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 4035
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 14.5,15.5
-      parent: 1
-  - uid: 4036
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 17.5,16.5
-      parent: 1
-  - uid: 4037
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,16.5
-      parent: 1
-  - uid: 4038
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -20.5,16.5
-      parent: 1
-  - uid: 4039
-    components:
-    - type: Transform
-      pos: -18.5,-4.5
-      parent: 1
-  - uid: 4040
-    components:
-    - type: Transform
-      pos: -13.5,-4.5
-      parent: 1
-  - uid: 4041
-    components:
-    - type: Transform
-      pos: -8.5,-4.5
-      parent: 1
-  - uid: 4043
-    components:
-    - type: Transform
-      pos: 14.5,-9.5
-      parent: 1
-  - uid: 4044
-    components:
-    - type: Transform
-      pos: 21.5,-4.5
-      parent: 1
-  - uid: 5930
-    components:
-    - type: Transform
-      pos: 10.5,-9.5
-      parent: 1
-- proto: HardpointBallisticSuperheavy
-  entities:
-  - uid: 4045
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 33.5,27.5
-      parent: 1
-  - uid: 4046
-    components:
-    - type: Transform
-      pos: -4.5,-5.5
-      parent: 1
-  - uid: 4047
-    components:
-    - type: Transform
-      pos: -6.5,-5.5
-      parent: 1
-  - uid: 4048
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 11.5,12.5
-      parent: 1
-  - uid: 4049
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 47.5,8.5
-      parent: 1
-  - uid: 4050
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 32.5,-27.5
-      parent: 1
-  - uid: 4051
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 32.5,-29.5
-      parent: 1
-  - uid: 4052
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -40.5,-17.5
-      parent: 1
-  - uid: 4053
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -45.5,5.5
-      parent: 1
-  - uid: 4054
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -45.5,8.5
-      parent: 1
-  - uid: 4055
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -32.5,29.5
-      parent: 1
-  - uid: 4056
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -30.5,29.5
-      parent: 1
 - proto: HospitalCurtainsOpen
   entities:
   - uid: 4057

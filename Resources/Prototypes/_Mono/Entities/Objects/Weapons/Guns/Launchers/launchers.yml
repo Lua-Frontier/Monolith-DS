@@ -297,7 +297,7 @@
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg
-    autoCycle: True # LuaM False > True
+    autoCycle: false
   - type: Appearance
   - type: Wieldable
   - type: GunRequiresWield
@@ -338,8 +338,8 @@
     maxOffset: 1.5
     pvsIncrease: 0.2
   - type: SpeedModifiedOnWield
-    walkModifier: 0.8 # LuaM 0.5 > 0.8
-    sprintModifier: 0.8 # LuaM 0.5 > 0.8
+    walkModifier: 0.5
+    sprintModifier: 0.5
   - type: PirateBountyItem
     id: ExperimentalFactionWeapon
   - type: LaserPointer

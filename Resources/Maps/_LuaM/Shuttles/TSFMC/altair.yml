@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 07/20/2026 13:14:08
-  entityCount: 1776
+  entityCount: 1781
 maps: []
 grids:
 - 1
@@ -6476,6 +6476,38 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 3.5,36.5
+      parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 1777
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,33.5
+      parent: 1
+  - uid: 1778
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 8.5,36.5
+      parent: 1
+  - uid: 1779
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,40.5
+      parent: 1
+  - uid: 1780
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,40.5
+      parent: 1
+  - uid: 1781
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,36.5
       parent: 1
 - proto: KitchenElectricRange
   entities:

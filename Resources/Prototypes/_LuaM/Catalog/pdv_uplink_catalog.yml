@@ -13,21 +13,3 @@
     whitelist:
       tags:
       - PirateUplink
-
-# Utilities
-
-- type: listing
-  id: UplinkPirateFactionHoloCigar
-  name: uplink-holo-cigar-name
-  description: uplink-holo-cigar-desc
-  productEntity: HoloCigar
-  cost:
-    Doubloon: 350
-  categories:
-  - UplinkPirateUtility
-  restockTime: 12600
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - PirateUplink

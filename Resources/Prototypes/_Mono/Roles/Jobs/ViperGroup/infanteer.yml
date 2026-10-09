@@ -4,6 +4,11 @@
   description: job-description-vg-infanteer
   playTimeTracker: JobVGInfanteer
   whitelisted: false # LuaM: true > false
+  requirements: # LuaM
+  - !type:SpeciesRequirement
+    species:
+    - Human
+    - Dwarf
   startingGear: ViperRadioGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/22/2026 22:07:27
-  entityCount: 1404
+  entityCount: 1398
 maps: []
 grids:
 - 1
@@ -4039,6 +4039,32 @@ entities:
     - type: Transform
       pos: -2.5,-2.5
       parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 949
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 8.5,-22.5
+      parent: 1
+  - uid: 950
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -9.5,-22.5
+      parent: 1
+  - uid: 951
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,-8.5
+      parent: 1
+  - uid: 952
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,-8.5
+      parent: 1
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 634
@@ -6549,70 +6575,6 @@ entities:
     components:
     - type: Transform
       pos: -0.5,-23.5
-      parent: 1
-- proto: HardpointBallisticSuperheavy
-  entities:
-  - uid: 949
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,-22.5
-      parent: 1
-  - uid: 950
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,-22.5
-      parent: 1
-  - uid: 951
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,-8.5
-      parent: 1
-  - uid: 952
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,-8.5
-      parent: 1
-- proto: HardpointBallisticSuperlight
-  entities:
-  - uid: 953
-    components:
-    - type: Transform
-      pos: -5.5,-28.5
-      parent: 1
-  - uid: 954
-    components:
-    - type: Transform
-      pos: 4.5,-28.5
-      parent: 1
-- proto: HardpointEnergyMedium
-  entities:
-  - uid: 611
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,-20.5
-      parent: 1
-  - uid: 613
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,-6.5
-      parent: 1
-  - uid: 1403
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,-6.5
-      parent: 1
-  - uid: 1404
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,-20.5
       parent: 1
 - proto: KitchenAssembler
   entities:

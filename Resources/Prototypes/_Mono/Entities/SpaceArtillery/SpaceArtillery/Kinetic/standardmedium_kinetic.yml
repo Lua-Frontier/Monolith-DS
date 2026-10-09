@@ -73,9 +73,9 @@
   - type: ShipRepairable
     repairTime: 15
     repairCost: 60
-  - type: HardpointAnchorableOnly
-    class: Ballistic
-    size: Light
+  # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
+  #   class: Ballistic
+  #   size: Light
 
 # Dravon
 
@@ -141,9 +141,9 @@
   - type: ShipRepairable
     repairTime: 15
     repairCost: 60
-  - type: HardpointAnchorableOnly
-    class: Ballistic
-    size: Medium
+  # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
+  #   class: Ballistic
+  #   size: Medium
 
 - type: entity
   id: WeaponTurretDravonFlak
@@ -228,6 +228,6 @@
   - type: ShipRepairable
     repairTime: 22
     repairCost: 90
-  - type: HardpointAnchorableOnly
-    class: Ballistic
-    size: Medium
+  # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
+  #   class: Ballistic
+  #   size: Medium

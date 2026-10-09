@@ -19,6 +19,12 @@ namespace Content.Shared.Communications
         public string CurrentAlert;
         public float CurrentAlertDelay;
 
+        // LuaM start: war declaration
+        public bool ShowWarDeclaration;
+        public bool WarDeclared;
+        public TimeSpan WarDeclarationAvailableAt;
+        // LuaM end
+
         public CommunicationsConsoleInterfaceState(bool canAnnounce, bool canCall, List<string>? alertLevels, string currentAlert, float currentAlertDelay, TimeSpan? expectedCountdownEnd = null)
         {
             CanAnnounce = canAnnounce;

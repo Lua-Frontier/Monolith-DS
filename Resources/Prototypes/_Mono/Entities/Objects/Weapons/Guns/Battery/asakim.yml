@@ -18,7 +18,7 @@
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/Battery/asakimrifle.rsi
   - type: GunWieldBonus
-    minAngle: -17 # LuaM: -18 > -17
+    minAngle: -18
     maxAngle: -14
   - type: Gun
     minAngle: 18

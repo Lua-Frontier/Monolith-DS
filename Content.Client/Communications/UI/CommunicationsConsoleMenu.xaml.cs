@@ -72,12 +72,15 @@ namespace Content.Client.Communications.UI
 
             EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke();
             EmergencyShuttleButton.Disabled = !CanCall;
+
+            InitializeWarDeclaration(); // LuaM
         }
 
         protected override void FrameUpdate(FrameEventArgs args)
         {
             base.FrameUpdate(args);
             UpdateCountdown();
+            UpdateWarDeclaration(); // LuaM
         }
 
         // The current alert could make levels unselectable, so we need to ensure that the UI reacts properly.

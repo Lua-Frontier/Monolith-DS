@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/20/2026 10:10:56
-  entityCount: 1557
+  entityCount: 1543
 maps: []
 grids:
 - 1
@@ -6951,14 +6951,8 @@ entities:
     - type: Transform
       pos: -7.5,-16.5
       parent: 1
-- proto: HardpointBallisticHeavy
+- proto: HardpointUniversalSuperheavy
   entities:
-  - uid: 1003
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,8.5
-      parent: 1
   - uid: 1004
     components:
     - type: Transform
@@ -6971,64 +6965,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 6.5,4.5
       parent: 1
-  - uid: 1006
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,8.5
-      parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 1007
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,13.5
-      parent: 1
-  - uid: 1008
-    components:
-    - type: Transform
-      pos: 6.5,-21.5
-      parent: 1
-  - uid: 1009
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,13.5
-      parent: 1
-  - uid: 1010
-    components:
-    - type: Transform
-      pos: -6.5,-21.5
-      parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 1011
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,1.5
-      parent: 1
-  - uid: 1012
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,-8.5
-      parent: 1
-  - uid: 1013
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,1.5
-      parent: 1
-  - uid: 1014
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,-8.5
-      parent: 1
-- proto: HardpointBallisticSuperheavy
-  entities:
   - uid: 1015
     components:
     - type: Transform
@@ -7040,32 +6976,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -7.5,2.5
-      parent: 1
-- proto: HardpointMissileMedium
-  entities:
-  - uid: 1017
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 7.5,-5.5
-      parent: 1
-  - uid: 1018
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 7.5,-6.5
-      parent: 1
-  - uid: 1019
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.5,-5.5
-      parent: 1
-  - uid: 1020
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.5,-6.5
       parent: 1
 - proto: HospitalCurtainsOpen
   entities:

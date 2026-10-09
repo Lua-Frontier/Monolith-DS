@@ -1,0 +1,33 @@
+- type: vessel
+  id: Hydra
+  parent: BaseVessel
+  name: vessel-hydra-name
+  description: vessel-hydra-desc
+  price: 135000
+  category: Medium
+  group: Syndicate
+  shuttlePath: /SharedMaps/_LuaM/Syndicate/hydra.yml
+  guidebookPage: Null
+  class:
+  - Syndicate
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Hydra
+  mapName: 'Hydra'
+  mapPath: /SharedMaps/_LuaM/Syndicate/hydra.yml
+  minPlayers: 0
+  stations:
+    Hydra:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Hydra SYN{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

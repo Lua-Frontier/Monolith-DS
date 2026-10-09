@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/21/2026 17:28:11
-  entityCount: 194
+  entityCount: 192
 maps: []
 grids:
 - 1
@@ -675,22 +675,6 @@ entities:
       startingCharge: 0
     - type: ApcPowerReceiver
       powerLoad: 10
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 149
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 2.5,0.5
-      parent: 1
-- proto: HardpointEnergyMedium
-  entities:
-  - uid: 29
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,0.5
-      parent: 1
 - proto: LockerWallMaterialsFuelUraniumFilled
   entities:
   - uid: 148

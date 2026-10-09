@@ -4,7 +4,7 @@
   name: 'Крейсер TSFMC-113 «Арктурус»'
   minimumDistance: 4500
   maximumDistance: 5500
-  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
+  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce, MonoChimeraTsfPdv ]
   spawnGroup: Required
   gridPath: /Maps/_LuaM/POI/ArcturusPOI.yml
   addComponents:

@@ -70,17 +70,17 @@
     - suitStorage
     - Belt
   - type: Gun
-    fireRate: 2.5 # LuaM: 1.5 > 2.5
-    projectileSpeed: 55 # LuaM: 75 > 55
-    # burstCooldown: 0.75 # Commented by LuaM
-    # burstFireRate: 12 # Commented by LuaM
-    # shotsPerBurst: 2 # Commented by LuaM
+    fireRate: 1.5
+    projectileSpeed: 75
+    burstCooldown: 0.75
+    burstFireRate: 12
+    shotsPerBurst: 2
     selectedMode: SemiAuto
     minAngle: 1
     maxAngle: 8
     availableModes:
     - SemiAuto
-    # - Burst # Commented by LuaM
+    - Burst
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
   - type: BasicEntityAmmoProvider
@@ -111,5 +111,4 @@
     damage:
       types:
         Piercing: 50
-        Structural: 150
-    # armorPenetration: 0.20 # Commented by LuaM
+    armorPenetration: 0.20

@@ -17,6 +17,7 @@
 - type: entity
   parent: BaseFactionWarDeclarator
   id: WarDeclaratorTsf
+  categories: [ HideSpawnMenu ] # LuaM
   name: TSFMC war declarator
   components:
   - type: FactionWarDeclarator
@@ -26,6 +27,7 @@
 - type: entity
   parent: BaseFactionWarDeclarator
   id: WarDeclaratorPdv
+  categories: [ HideSpawnMenu ] # LuaM
   name: PDV war declarator
   components:
   - type: FactionWarDeclarator

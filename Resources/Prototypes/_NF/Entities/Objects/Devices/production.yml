@@ -205,13 +205,13 @@
         Capacitor: 2
       stackRequirements:
         CableHV: 10
-      tagRequirements:
-        MotorEconomy1: # Stator!
-          amount: 1
-          defaultPrototype: MotorEconomy1
-        MicroprocessorEconomy1:
-          amount: 1
-          defaultPrototype: MicroprocessorEconomy1
+      # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+        # MotorEconomy1: # Stator! # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MotorEconomy1
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MicroprocessorEconomy1
     - type: PhysicalComposition
       materialComposition:
         Glass: 200
@@ -234,13 +234,13 @@
         Capacitor: 2
       stackRequirements:
         CableHV: 10
-      tagRequirements:
-        MotorEconomy1: # Stator!
-          amount: 1
-          defaultPrototype: MotorEconomy1
-        MicroprocessorEconomy1:
-          amount: 1
-          defaultPrototype: MicroprocessorEconomy1
+      # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+        # MotorEconomy1: # Stator! # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MotorEconomy1
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MicroprocessorEconomy1
     - type: PhysicalComposition
       materialComposition:
         Glass: 200

@@ -68,9 +68,9 @@
   - type: ShipRepairable
     repairTime: 10
     repairCost: 30
-  - type: HardpointAnchorableOnly
-    class: Ballistic
-    size: Light
+  # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
+  #   class: Ballistic
+  #   size: Light
 
 - type: entity
   id: WeaponTurretFang
@@ -151,9 +151,9 @@
   - type: ShipRepairable
     repairTime: 20
     repairCost: 80
-  - type: HardpointAnchorableOnly
-    class: Ballistic
-    size: Heavy
+  # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
+  #   class: Ballistic
+  #   size: Heavy
 
 - type: entity
   id: WeaponTurretHydra
@@ -252,7 +252,7 @@
     repairCost: 250
   - type: HardpointAnchorableOnly
     class: Ballistic
-    size: Heavy
+    size: Superheavy # LuaM: Heavy > Superheavy
 
 - type: entity
   id: WeaponTurretLeviathan
@@ -263,6 +263,11 @@
   - BallisticArtilleryTier5HP
   description: A heavy artillery gun of syndicate origin, the leviathan is tyrannic testiment of Syndicate ingenuity, designed to send a message. Able to crack NanoTrasen battleships, and small fighters in a single shell. Loads with a similar mechanism as the anaconda handgun.
   components:
+# LuaM-start: can be unanchored
+  - type: Anchorable
+    delay: 30
+  - type: Pullable
+# LuaM-end
   - type: StaticPrice
     price: 35000
   - type: Sprite

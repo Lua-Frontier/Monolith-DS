@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 07/20/2026 13:18:25
-  entityCount: 1174
+  entityCount: 1176
 maps: []
 grids:
 - 1
@@ -4413,6 +4413,20 @@ entities:
     components:
     - type: Transform
       pos: -1.5,-0.5
+      parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 1175
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -14.5,1.5
+      parent: 1
+  - uid: 1176
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 15.5,1.5
       parent: 1
 - proto: JukeboxShip
   entities:

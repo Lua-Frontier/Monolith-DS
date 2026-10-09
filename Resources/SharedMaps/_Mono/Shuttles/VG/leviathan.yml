@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/21/2026 15:11:26
-  entityCount: 3127
+  entityCount: 3123
 maps: []
 grids:
 - 1
@@ -14479,33 +14479,7 @@ entities:
     - type: Transform
       pos: -2.4789164,-19.635044
       parent: 1
-- proto: HardpointBallisticHeavy
-  entities:
-  - uid: 957
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.5,-5.5
-      parent: 1
-  - uid: 966
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -8.5,14.5
-      parent: 1
-  - uid: 1379
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 9.5,14.5
-      parent: 1
-  - uid: 2654
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 8.5,-5.5
-      parent: 1
-- proto: HardpointBallisticSuperheavy
+- proto: HardpointUniversalSuperheavy
   entities:
   - uid: 313
     components:
@@ -14531,15 +14505,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 8.5,34.5
       parent: 1
-- proto: HardpointMissileHeavy
-  entities:
-  - uid: 46
+  - uid: 3128
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -7.5,1.5
       parent: 1
-  - uid: 103
+  - uid: 3129
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -20785,32 +20757,24 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 9.5,-25.5
       parent: 1
-    - type: HardpointAnchorableOnly
-      size: Medium
   - uid: 1377
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -8.5,-25.5
       parent: 1
-    - type: HardpointAnchorableOnly
-      size: Medium
   - uid: 2648
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -7.5,34.5
       parent: 1
-    - type: HardpointAnchorableOnly
-      size: Medium
   - uid: 2649
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 8.5,34.5
       parent: 1
-    - type: HardpointAnchorableOnly
-      size: Medium
 - proto: WeaponTurretVanquisher
   entities:
   - uid: 1387

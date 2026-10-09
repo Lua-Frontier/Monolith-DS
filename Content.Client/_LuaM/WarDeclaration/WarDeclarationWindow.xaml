@@ -1,0 +1,31 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'comms-console-war-declaration-window-title'}"
+    MinSize="400 220">
+
+    <BoxContainer Orientation="Vertical"
+        VerticalExpand="True"
+        Margin="6 6 6 5"
+        SeparationOverride="6">
+
+        <Label Text="{Loc 'comms-console-war-declaration-window-label'}"/>
+
+        <TextEdit Name="ReasonInput"
+            VerticalExpand="True"
+            HorizontalExpand="True"
+            MinHeight="100"/>
+
+        <BoxContainer Orientation="Horizontal"
+            HorizontalAlignment="Right"
+            SeparationOverride="4">
+
+            <Button Name="CancelButton"
+                Text="{Loc 'comms-console-war-declaration-window-cancel'}"/>
+
+            <Button Name="ConfirmButton"
+                StyleClasses="Caution"
+                Disabled="True"
+                Text="{Loc 'comms-console-war-declaration-window-confirm'}"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

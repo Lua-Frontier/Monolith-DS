@@ -25,6 +25,8 @@
   recipeUnlocks:
   - IndustrialPressEconomyElectronicsMMCMachineCircuitboard
   - IndustrialPressEconomyPlatesMMCMachineCircuitboard
+  - IndustrialFurnaceEconomyCompactCircuitboard # LuaM
+  - PrecisionAssemblerEconomyCompactCircuitboard # LuaM
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   position: -6, -8

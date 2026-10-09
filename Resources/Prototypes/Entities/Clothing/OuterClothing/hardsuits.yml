@@ -678,9 +678,9 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.45 # LuaM: 0.5 > 0.45
-        Slash: 0.45 # LuaM: 0.5 > 0.45
-        Piercing: 0.4 # LuaM: 0.5 > 0.4
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
         Heat: 0.5
         Radiation: 0.5
         Caustic: 0.5
@@ -718,15 +718,15 @@
   - type: Armor # Mono
     modifiers:
       coefficients:
-        Blunt: 0.5 # LuaM: 0.55 > 0.5
-        Slash: 0.5 # LuaM: 0.55 > 0.5
-        Piercing: 0.45 # LuaM: 0.5 > 0.45
-        Heat: 0.4 # LuaM: 0.5 > 0.4
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.5
+        Heat: 0.5
         Radiation: 0.35
         Caustic: 0.2
   - type: ClothingSpeedModifier # Mono
-    walkModifier: 1.0 # LuaM: 0.93 > 1.0
-    sprintModifier: 1.0 # LuaM: 0.93 > 1.0
+    walkModifier: 0.93
+    sprintModifier: 0.93
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
@@ -764,17 +764,17 @@
   - type: Armor # Mono - Armor Value Changes
     modifiers:
       coefficients:
-        Blunt: 0.5 # LuaM: 0.6 > 0.5
-        Slash: 0.5 # LuaM: 0.6 > 0.5
-        Piercing: 0.5 # LuaM: 0.6 > 0.5
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
         Heat: 0.35
         Radiation: 0.1 # Mono: 0.01 -> 0.1
         Caustic: 0.5
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
-    walkModifier: 1.1 # LuaM: 1.0 > 1.1
-    sprintModifier: 1.1 # 0.9-> 1 Mono # LuaM: 1.0 > 1.1
+    walkModifier: 1.0
+    sprintModifier: 1.0 # 0.9-> 1 Mono
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.45

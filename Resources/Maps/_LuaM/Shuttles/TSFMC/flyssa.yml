@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/28/2026 08:58:38
-  entityCount: 3069
+  entityCount: 3077
 maps: []
 grids:
 - 1
@@ -11850,6 +11850,56 @@ entities:
     components:
     - type: Transform
       pos: -10.5,13.5
+      parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 3070
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 10.5,20.5
+      parent: 1
+  - uid: 3071
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 12.5,17.5
+      parent: 1
+  - uid: 3072
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -11.5,20.5
+      parent: 1
+  - uid: 3073
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -13.5,17.5
+      parent: 1
+  - uid: 3074
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,30.5
+      parent: 1
+  - uid: 3075
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,49.5
+      parent: 1
+  - uid: 3076
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -4.5,49.5
+      parent: 1
+  - uid: 3077
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,30.5
       parent: 1
 - proto: HarmonicaInstrument
   entities:

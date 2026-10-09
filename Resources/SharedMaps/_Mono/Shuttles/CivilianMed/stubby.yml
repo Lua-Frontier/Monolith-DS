@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/03/2026 16:09:30
-  entityCount: 295
+  entityCount: 292
 maps: []
 grids:
 - 1
@@ -1196,24 +1196,6 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-4.5
-      parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 105
-    components:
-    - type: Transform
-      pos: -3.5,-5.5
-      parent: 1
-  - uid: 106
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,2.5
-      parent: 1
-  - uid: 294
-    components:
-    - type: Transform
-      pos: 5.5,-5.5
       parent: 1
 - proto: LockerWallChemistryFilled
   entities:

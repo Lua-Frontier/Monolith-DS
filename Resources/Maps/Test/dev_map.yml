@@ -5428,7 +5428,7 @@ entities:
     - type: Transform
       pos: -0.982072,-3.4785347
       parent: 2
-- proto: HardpointDebugSuperheavy
+- proto: HardpointUniversalSuperheavy
   entities:
   - uid: 1001
     components:

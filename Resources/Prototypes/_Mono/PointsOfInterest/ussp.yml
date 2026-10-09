@@ -14,7 +14,7 @@
   name: 'Станция «Камелот»' # LuaM: 'Camelot Station' > 'Станция «Камелот»'
   minimumDistance: 10650
   maximumDistance: 12400
-  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueUSSP, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce, MonoChimeraTsf, MonoChimeraPdv ]
+  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueUSSP, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce, MonoChimeraTsfPdv ] # LuaM: MonoChimeraTsf/MonoChimeraPdv > MonoChimeraTsfPdv
   spawnGroup: Required
   gridPath: /Maps/_Mono/POI/camelot.yml
   addComponents:
@@ -60,7 +60,7 @@
             VGCommander: [1, 1]
             VGLieutenant: [2, 2]
             VGInfanteer: [-1, -1]
-            Contractor: [-1, -1]
+#            Contractor: [-1, -1] # Commented by LuaM
             #Pilot: [0, -1]
             #Mercenary: [0, -1]
           tags:

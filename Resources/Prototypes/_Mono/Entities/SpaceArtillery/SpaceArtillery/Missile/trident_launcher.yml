@@ -49,7 +49,7 @@
     repairCost: 100
   - type: HardpointAnchorableOnly
     class: Missile
-    size: Heavy
+    size: Superheavy # LuaM: Heavy > Superheavy
 
 - type: entity
   id: WeaponTurretASM220Station

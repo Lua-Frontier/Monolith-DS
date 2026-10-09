@@ -1,0 +1,33 @@
+- type: vessel
+  id: Infiltrator
+  parent: BaseVessel
+  name: vessel-infiltrator-name
+  description: vessel-infiltrator-desc
+  price: 275000
+  category: Large
+  group: Syndicate
+  shuttlePath: /SharedMaps/_LuaM/Syndicate/infiltrator.yml
+  guidebookPage: Null
+  class:
+  - Syndicate
+  engine:
+  - AME
+
+- type: gameMap
+  id: Infiltrator
+  mapName: 'Infiltrator'
+  mapPath: /SharedMaps/_LuaM/Syndicate/infiltrator.yml
+  minPlayers: 0
+  stations:
+    Infiltrator:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Infiltrator SYN{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

@@ -16,14 +16,14 @@
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/SMGs/mla73.rsi
   - type: GunWieldBonus
-    minAngle: -21 # LuaM: -20 > -21
-    maxAngle: -30 # LuaM: -34 > -30
+    minAngle: -22
+    maxAngle: -34
   - type: Gun
     minAngle: 22
     maxAngle: 40
     angleIncrease: 5
     angleDecay: 20
-    fireRate: 10 # LuaM 8 > 10
+    fireRate: 8
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/mla_fire.ogg
   - type: ChamberMagazineAmmoProvider
@@ -136,7 +136,7 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    fireRate: 10 # LuaM: 8.5 > 10
+    fireRate: 8.5
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/atreides_fire.ogg
   - type: MagazineVisuals
@@ -146,8 +146,6 @@
   - type: Appearance
   - type: StaticPrice # Mono
     price: 2000
-  - type: ChamberMagazineAmmoProvider # LuaM add
-    autoEject: true
   - type: ItemSlots
     slots:
       gun_magazine:

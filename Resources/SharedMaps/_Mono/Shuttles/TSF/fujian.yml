@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/19/2026 22:51:59
-  entityCount: 2568
+  entityCount: 2554
 maps: []
 grids:
 - 1
@@ -10410,96 +10410,6 @@ entities:
     components:
     - type: Transform
       pos: -14.5,2.5
-      parent: 1
-- proto: HardpointBallisticHeavy
-  entities:
-  - uid: 1586
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 17.5,14.5
-      parent: 1
-  - uid: 1587
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -16.5,14.5
-      parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 1588
-    components:
-    - type: Transform
-      pos: -18.5,1.5
-      parent: 1
-  - uid: 1589
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 19.5,4.5
-      parent: 1
-  - uid: 1590
-    components:
-    - type: Transform
-      pos: 19.5,1.5
-      parent: 1
-  - uid: 1591
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -18.5,4.5
-      parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 1592
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 17.5,22.5
-      parent: 1
-  - uid: 1593
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,22.5
-      parent: 1
-  - uid: 1594
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,41.5
-      parent: 1
-  - uid: 1595
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 6.5,47.5
-      parent: 1
-  - uid: 1596
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,47.5
-      parent: 1
-  - uid: 1597
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,36.5
-      parent: 1
-- proto: HardpointMissileMedium
-  entities:
-  - uid: 1598
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,29.5
-      parent: 1
-  - uid: 1599
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,29.5
       parent: 1
 - proto: KitchenMicrowave
   entities:

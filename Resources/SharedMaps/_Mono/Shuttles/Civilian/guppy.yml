@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/20/2026 07:31:39
-  entityCount: 256
+  entityCount: 254
 maps: []
 grids:
 - 1
@@ -940,20 +940,6 @@ entities:
     components:
     - type: Transform
       pos: 13.5,13.5
-      parent: 1
-- proto: HardpointEnergyLight
-  entities:
-  - uid: 151
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,7.5
-      parent: 1
-  - uid: 152
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 16.5,7.5
       parent: 1
 - proto: JukeboxWallmountShip
   entities:

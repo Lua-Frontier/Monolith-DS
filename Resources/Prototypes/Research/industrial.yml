@@ -98,8 +98,8 @@
   - LatheUpgradeKitCryo
   # End DeltaV Additions
   # Begin Mono Additions
-  - IndustrialPressEconomyElectronicsMachineCircuitboard
-  - IndustrialPressEconomyPlatesMachineCircuitboard
+  # - IndustrialPressEconomyElectronicsMachineCircuitboard # Commented by LuaM: industry machines are only for MMC
+  # - IndustrialPressEconomyPlatesMachineCircuitboard
   # End Mono Additions
   # Begin Goobstation Additions
   - UpgradeKitAutomation

@@ -10,16 +10,16 @@
       Cable: 3
       Manipulator: 4
       Steel: 10
-    tagRequirements: # Mono
-      ComponentBrickEconomy1:
-        amount: 2
-        defaultPrototype: ComponentBrickEconomy1
-      MicroprocessorEconomy3:
-        amount: 1
-        defaultPrototype: MicroprocessorEconomy3
-      MotorEconomy1:
-        amount: 4
-        defaultPrototype: MotorEconomy1
+    # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: ComponentBrickEconomy1
+      # MicroprocessorEconomy3: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: MicroprocessorEconomy3
+      # MotorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 4
+      #   defaultPrototype: MotorEconomy1
 
 - type: entity
   parent: AutodocCircuitboard

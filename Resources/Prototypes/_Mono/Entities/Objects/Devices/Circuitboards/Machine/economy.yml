@@ -16,13 +16,13 @@
     stackRequirements:
       Glass: 5
       CableHV: 5
-    tagRequirements:
-      ArmorPlateEconomy1: # Reinforcement. Things that spin very heavy things very fast are very dangerous.
-        amount: 2
-        defaultPrototype: ArmorPlateEconomy1
-      ComponentBrickEconomy1:
-        amount: 1
-        defaultPrototype: ComponentBrickEconomy1
+    # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+      # ArmorPlateEconomy1: # Reinforcement. Things that spin very heavy things very fast are very dangerous. # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: ArmorPlateEconomy1
+      # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ComponentBrickEconomy1
 
 - type: entity
   id: IndustrialFurnaceEconomyCompactCircuitboard
@@ -39,13 +39,13 @@
       Manipulator: 3
     stackRequirements:
       CableHV: 5
-    tagRequirements:
-      ArmorPlateEconomy3:
-        amount: 1
-        defaultPrototype: ArmorPlateEconomy3
-      ElectromagnetEconomy1:
-        amount: 2
-        defaultPrototype: ElectromagnetEconomy1
+    # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+      # ArmorPlateEconomy3: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ArmorPlateEconomy3
+      # ElectromagnetEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: ElectromagnetEconomy1
 
 - type: entity
   id: PrecisionAssemblerEconomyCompactCircuitboard
@@ -62,13 +62,13 @@
       Manipulator: 3
     stackRequirements:
       CableHV: 5
-    tagRequirements:
-      MicroprocessorEconomy1:
-        amount: 2
-        defaultPrototype: MicroprocessorEconomy1
-      MotorEconomy1:
-        amount: 4
-        defaultPrototype: MotorEconomy1
+    # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+      # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 2
+      #   defaultPrototype: MicroprocessorEconomy1
+      # MotorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 4
+      #   defaultPrototype: MotorEconomy1
 
 - type: entity
   id: IndustrialPressEconomyPlatesMachineCircuitboard
@@ -110,10 +110,10 @@
     stackRequirements: # faster mmc variant
       Lithium: 10
       CableHV: 20
-    tagRequirements:
-      ArmorPlateEconomy1:
-        amount: 1
-        defaultPrototype: ArmorPlateEconomy1
+    # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+      # ArmorPlateEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ArmorPlateEconomy1
   - type: Construction
     deconstructionTarget: null
     graph: IndustrialPressMMC
@@ -159,10 +159,10 @@
     stackRequirements: # faster mmc variant
       Lithium: 10
       CableHV: 20
-    tagRequirements:
-      ArmorPlateEconomy1:
-        amount: 1
-        defaultPrototype: ArmorPlateEconomy1
+    # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+      # ArmorPlateEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ArmorPlateEconomy1
   - type: Construction
     deconstructionTarget: null
     graph: IndustrialPressMMC

@@ -4,6 +4,11 @@
   description: job-description-vg-commander
   playTimeTracker: JobVGCommander
   whitelisted: false # LuaM: true > false
+  requirements: # LuaM
+  - !type:SpeciesRequirement
+    species:
+    - Human
+    - Dwarf
   startingGear: ViperCommanderGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

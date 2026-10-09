@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 07/20/2026 13:17:01
-  entityCount: 1625
+  entityCount: 1630
 maps: []
 grids:
 - 1
@@ -5072,6 +5072,38 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 1626
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 6.5,-0.5
+      parent: 1
+  - uid: 1627
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -7.5,-0.5
+      parent: 1
+  - uid: 1628
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -8.5,-8.5
+      parent: 1
+  - uid: 1629
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 7.5,-8.5
+      parent: 1
+  - uid: 1630
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,4.5
+      parent: 1
 - proto: computerBodyScanner
   entities:
   - uid: 814

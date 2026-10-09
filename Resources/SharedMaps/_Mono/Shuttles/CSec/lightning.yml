@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/14/2026 00:21:13
-  entityCount: 267
+  entityCount: 261
 maps: []
 grids:
 - 1
@@ -1351,46 +1351,6 @@ entities:
     components:
     - type: Transform
       pos: 2.5,-3.5
-      parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 25
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,2.5
-      parent: 1
-  - uid: 26
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,2.5
-      parent: 1
-- proto: HardpointMissileMedium
-  entities:
-  - uid: 8
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,-1.5
-      parent: 1
-  - uid: 9
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 6.5,-1.5
-      parent: 1
-  - uid: 10
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -4.5,-1.5
-      parent: 1
-  - uid: 11
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -5.5,-1.5
       parent: 1
 - proto: LockerWallMaterialsFuelPlasmaFilled
   entities:

@@ -17,14 +17,15 @@
   - type: Organ
     onAdd:
     - type: NightVision # LuaM edit start:
-      relayOverlay: true
+      relayOverlay: false # LuaM: true > false, it is an organ, not worn
       goggleEffect: true
-      viewCircleRadius: 880
+      viewCircleRadius: 1000 # LuaM: 880 > 1000
       viewCircleCount: 1
       viewCircleSpacing: 1
       action: ActionToggleNightVision
-      phosphorColor: "#986033"
-      lightingColor: "#ffffff52" #LuaM edit end.
+      phosphorColor: "#b4b4b4" # LuaM: #986033 > #b4b4b4
+      lightingColor: "#ffffff52"
+      amplification: 1 #LuaM edit end.
 
 - type: entity
   id: OrganAsakimHeart

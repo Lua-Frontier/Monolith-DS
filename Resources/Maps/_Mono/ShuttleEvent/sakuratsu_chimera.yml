@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/25/2026 21:37:51
-  entityCount: 623
+  entityCount: 621
 maps: []
 grids:
 - 1
@@ -2979,24 +2979,6 @@ entities:
     - type: Transform
       pos: -2.5,-7.5
       parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 622
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 623
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -4.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: LockerResearchDirectorFilled
   entities:
   - uid: 410

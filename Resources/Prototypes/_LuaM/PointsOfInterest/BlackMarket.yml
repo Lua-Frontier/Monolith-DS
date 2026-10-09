@@ -4,7 +4,7 @@
   name: 'Бар "Веселый Роджер"' # нету файла локаля оставлю на будущее: Bar "Jolly Roger"
   minimumDistance: 6000
   maximumDistance: 8000
-  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueUSSP, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce ]
+  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueUSSP, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce, MonoChimeraTsfPdv ]
   spawnGroup: Required
   gridPath: /Maps/_LuaM/POI/BlackMarket.yml
   addComponents:

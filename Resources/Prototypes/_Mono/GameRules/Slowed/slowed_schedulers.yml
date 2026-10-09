@@ -7,8 +7,8 @@
       tableId: DamagedAIShipsTable
     minimumTimeUntilFirstEvent: 3600 # 1 hour
     minMaxEventTiming:
-      min: 8100 # 135 minutes between events
-      max: 10800 # 180 minutes between events
+      min: 3600 # 60 minutes between events # LuaM: 8100 > 3600
+      max: 3600 # 60 minutes between events # LuaM: 10800 > 3600
 
 - type: entity
   id: MonoAISTCShuttleSpawnerSchedulerTier2Slow
@@ -17,7 +17,7 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: DamagedAIShipsTableT2
-    minimumTimeUntilFirstEvent: 14400 # 4 hours
+    minimumTimeUntilFirstEvent: 10800 # 3 hours # LuaM: 14400 > 10800
     minMaxEventTiming:
       min: 5400 # 90 minutes between events
       max: 5400 # 90 minutes between events
@@ -29,7 +29,7 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: AsakimShipsTable
-    minimumTimeUntilFirstEvent: 7200 # 2 hours
+    minimumTimeUntilFirstEvent: 5400 # 1 hour 30 minutes # LuaM: 7200 > 5400
     minMaxEventTiming:
       min: 5400 # 90 minutes between events
       max: 10800 # 180 minutes between events
@@ -41,7 +41,7 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: ChimeraShipsTableT1
-    minimumTimeUntilFirstEvent: 10800 # 3 hours
-    minMaxEventTiming:
-      min: 5400 # 90 minutes between events
-      max: 5400 # 90 minutes between events
+    minimumTimeUntilFirstEvent: 6300 # 1 hour 45 minutes # LuaM: 10800 > 6300
+    minMaxEventTiming: # LuaM: 3 chimeras per shift: 1:45, 4:15 and 6:45
+      min: 9000 # 2.5 hours between events # LuaM: 5400 > 9000
+      max: 9000 # 2.5 hours between events # LuaM: 5400 > 9000

@@ -381,7 +381,9 @@ namespace Content.Server.PDA
             var station = _sectorService.GetServiceEntity();
             if (!TryComp(station, out WarLevelComponent? warComp))
                 return;
-            pda.WarLevel = warComp.PostWar ? Loc.GetString("comp-pda-ui-station-war-level-post") : Loc.GetString("comp-pda-ui-station-war-level-pre");
+            pda.WarLevel = warComp.PostWar ? Loc.GetString("comp-pda-ui-station-war-level-post")
+                : warComp.Pending ? Loc.GetString("comp-pda-ui-station-war-level-pending") // LuaM
+                : Loc.GetString("comp-pda-ui-station-war-level-pre");
         }
 
         private string? GetDeviceNetAddress(EntityUid uid)

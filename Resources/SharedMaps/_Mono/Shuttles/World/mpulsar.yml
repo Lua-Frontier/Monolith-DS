@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/26/2026 09:19:33
-  entityCount: 95
+  entityCount: 93
 maps: []
 grids:
 - 1
@@ -374,24 +374,6 @@ entities:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
-- proto: HardpointEnergyLight
-  entities:
-  - uid: 94
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,-0.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 95
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -4.5,-0.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: RustedThruster
   entities:
   - uid: 48

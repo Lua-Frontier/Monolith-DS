@@ -12,6 +12,7 @@
     - type: GoblinAccent # Frontier
     - type: LizardAccent
     - type: MothAccent
+    - type: OwOAccent # LuaM
     - type: ReplacementAccent
       accent: dwarf
 

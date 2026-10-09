@@ -19,10 +19,6 @@
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/SMGs/vector.rsi
   - type: Gun
-  # LuaM start
-    minAngle: 2
-    maxAngle: 12
-  # LuaM end
     fireRate: 7.5
     damageModifier: 0.8
     selectedMode: Burst
@@ -149,10 +145,6 @@
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/SMGs/vector.rsi
   - type: Gun
-  # LuaM start
-    minAngle: 2
-    maxAngle: 12
-  # LuaM end
     fireRate: 6
     selectedMode: Burst
     soundGunshot:

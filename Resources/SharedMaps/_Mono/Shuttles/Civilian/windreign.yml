@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/24/2026 14:25:40
-  entityCount: 1894
+  entityCount: 1886
 maps: []
 grids:
 - 1
@@ -9195,54 +9195,6 @@ entities:
     components:
     - type: Transform
       pos: -10.5,27.5
-      parent: 1
-- proto: HardpointBallisticHeavy
-  entities:
-  - uid: 1110
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,39.5
-      parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 1108
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -12.5,33.5
-      parent: 1
-  - uid: 1112
-    components:
-    - type: Transform
-      pos: -8.5,3.5
-      parent: 1
-  - uid: 1113
-    components:
-    - type: Transform
-      pos: 9.5,3.5
-      parent: 1
-  - uid: 1114
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 10.5,38.5
-      parent: 1
-  - uid: 1115
-    components:
-    - type: Transform
-      pos: 16.5,10.5
-      parent: 1
-  - uid: 1116
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 18.5,22.5
-      parent: 1
-  - uid: 1117
-    components:
-    - type: Transform
-      pos: -15.5,10.5
       parent: 1
 - proto: HeatExchangerInline
   entities:

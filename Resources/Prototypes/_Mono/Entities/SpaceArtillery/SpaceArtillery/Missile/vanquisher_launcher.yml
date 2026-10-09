@@ -77,7 +77,7 @@
         - MachineLayer
   - type: HardpointAnchorableOnly
     class: Missile
-    size: Heavy
+    size: Superheavy # LuaM: Heavy > Superheavy
 
 - type: entity
   id: WeaponTurretVanquisherInfinite

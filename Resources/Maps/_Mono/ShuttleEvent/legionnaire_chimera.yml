@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/25/2026 21:28:44
-  entityCount: 574
+  entityCount: 566
 maps: []
 grids:
 - 1
@@ -2121,76 +2121,6 @@ entities:
     - type: Transform
       pos: -1.5,-10.5
       parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 573
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 11.5,-12.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 574
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -12.5,-12.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointEnergyLight
-  entities:
-  - uid: 571
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 572
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointEnergyMedium
-  entities:
-  - uid: 567
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 568
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,-6.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 569
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,-6.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 570
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -5.5,2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: KitchenAssembler
   entities:
   - uid: 301

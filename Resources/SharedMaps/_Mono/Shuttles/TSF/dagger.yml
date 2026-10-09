@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/19/2026 19:18:23
-  entityCount: 778
+  entityCount: 774
 maps: []
 grids:
 - 1
@@ -2669,6 +2669,14 @@ entities:
     - type: Transform
       pos: -2.5,-8.5
       parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 497
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -5.5,-17.5
+      parent: 1
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 369
@@ -3725,64 +3733,6 @@ entities:
     - type: Transform
       pos: -0.5,-14.5
       parent: 1
-- proto: HardpointBallisticSuperheavy
-  entities:
-  - uid: 497
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -5.5,-17.5
-      parent: 1
-- proto: HardpointEnergyLight
-  entities:
-  - uid: 498
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,-16.5
-      parent: 1
-    - type: Repairable
-      qualities:
-      - Welding
-      - Applicating
-    - type: Tag
-      tags: []
-  - uid: 499
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,-20.5
-      parent: 1
-    - type: Repairable
-      qualities:
-      - Welding
-      - Applicating
-    - type: Tag
-      tags: []
-  - uid: 500
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,-9.5
-      parent: 1
-    - type: Repairable
-      qualities:
-      - Welding
-      - Applicating
-    - type: Tag
-      tags: []
-  - uid: 501
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 6.5,-23.5
-      parent: 1
-    - type: Repairable
-      qualities:
-      - Welding
-      - Applicating
-    - type: Tag
-      tags: []
 - proto: KitchenMicrowave
   entities:
   - uid: 115

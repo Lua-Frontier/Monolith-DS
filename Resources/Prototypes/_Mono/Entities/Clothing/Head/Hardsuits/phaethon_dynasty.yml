@@ -116,12 +116,15 @@
     sprite: _Mono/Clothing/Head/Hardsuits/basilisk.rsi
   - type: Clothing
     sprite: _Mono/Clothing/Head/Hardsuits/basilisk.rsi
-  - type: NightVision # Gen 4 quadtube-wide
+# LuaM start
+  - type: NightVision
     relayOverlay: true
     goggleEffect: true
-    viewCircleRadius: 450
-    viewCircleCount: 4
+    viewCircleRadius: 1000
+    viewCircleCount: 3
     viewCircleSpacing: 280
     action: ActionToggleNightVision
-    phosphorColor: "#41D7D9"
-    lightingColor: "#FFFFFF32"
+    phosphorColor: "#c2ffc2"
+    lightingColor: "#0EFFFFFF"
+    amplification: 1.0
+# LuaM end

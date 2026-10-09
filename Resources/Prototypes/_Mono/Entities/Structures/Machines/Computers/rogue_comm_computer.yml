@@ -25,6 +25,9 @@
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
     sound: /Audio/Announcements/announce.ogg
+  - type: ConsoleWarDeclarator # LuaM
+    faction: PDV
+    warDeclarationMessage: comms-console-war-declaration-pdv
   - type: Computer
     board: RogueCommsComputerCircuitboard
   - type: PointLight

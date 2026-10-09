@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 11/22/2025 06:41:34
-  entityCount: 1682
+  entityCount: 1685
 maps:
 - 182
 grids:
@@ -5163,6 +5163,26 @@ entities:
       parent: 1
     - type: FaxMachine
       name: TSF HiCom
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 1683
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,16.5
+      parent: 1
+  - uid: 1684
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -11.5,5.5
+      parent: 1
+  - uid: 1685
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -10.5,-0.5
+      parent: 1
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 120

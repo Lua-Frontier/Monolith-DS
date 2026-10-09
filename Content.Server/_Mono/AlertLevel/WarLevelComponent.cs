@@ -7,4 +7,9 @@ namespace Content.Server._Mono.AlertLevel;
 public sealed partial class WarLevelComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite)] public bool PostWar = false;
+
+    /// <summary>
+    /// LuaM: one side has declared war and the others have not answered yet (yellow war level).
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)] public bool Pending = false;
 }

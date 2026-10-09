@@ -1,0 +1,33 @@
+- type: vessel
+  id: SyndicateTalon
+  parent: BaseVessel
+  name: vessel-syndicate-talon-name
+  description: vessel-syndicate-talon-desc
+  price: 68579
+  category: Small
+  group: Syndicate
+  shuttlePath: /SharedMaps/_LuaM/Syndicate/talon.yml
+  guidebookPage: Null
+  class:
+  - Syndicate
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: SyndicateTalon
+  mapName: 'Talon'
+  mapPath: /SharedMaps/_LuaM/Syndicate/talon.yml
+  minPlayers: 0
+  stations:
+    SyndicateTalon:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Talon SYN{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

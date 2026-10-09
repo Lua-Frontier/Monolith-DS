@@ -13,6 +13,9 @@
     color: "#ccaa55"
   - type: SolarPoweredGrid
     doNotCull: true
+  - type: MapRadiusIndicator # LuaM: asteroid spawn area on the shuttle map
+    center: 5120, 4544
+    radius: 960
 
 - type: gameMap
   id: BeaconClusterA
@@ -41,6 +44,9 @@
     color: "#ccaa55"
   - type: SolarPoweredGrid
     doNotCull: true
+  - type: MapRadiusIndicator # LuaM: asteroid spawn area on the shuttle map
+    center: 9024, -7488
+    radius: 2112
 
 - type: gameMap
   id: BeaconWilds

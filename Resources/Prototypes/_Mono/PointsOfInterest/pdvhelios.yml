@@ -11,7 +11,7 @@
   name: 'Крепость «Гелиос»' # LuaM: 'PDV Helios Fortress' > 'Крепость «Гелиос»'
   minimumDistance: 22000
   maximumDistance: 27000 # somewhere in far reaches 1 or 2
-  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoRogueUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce, MonoChimeraPdv ]
+  spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoRogueUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce, MonoChimeraTsfPdv ] # LuaM: MonoChimeraPdv > MonoChimeraTsfPdv
   spawnGroup: Required
   gridPath: /Maps/_Mono/POI/pdvhelios.yml
   addComponents:
@@ -62,6 +62,7 @@
             # PdvCivilian: [ -1, -1 ]
             PirateCaptain: [ 1, 1 ]
             PirateFirstMate: [ 1, 1 ]
+            PDVTarkhan: [ 1, 1 ] # LuaM
             PDVDenasvar: [ 3, 3 ]
             # PDVInfiltrator: [ 2, 2 ]
             Pirate: [ -1, -1 ]

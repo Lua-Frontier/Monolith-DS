@@ -11,13 +11,13 @@
       requirements: # Frontier
         MatterBin: 2 # Frontier stackRequirements<requirements
         Manipulator: 2 # Frontier stackRequirements<requirements
-      tagRequirements: # Mono
-        MicroprocessorEconomy1:
-          amount: 1
-          defaultPrototype: MicroprocessorEconomy1
-        MotorEconomy1:
-          amount: 1
-          defaultPrototype: MotorEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MicroprocessorEconomy1
+        # MotorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MotorEconomy1
 
 - type: entity
   id: ServiceTechFabCircuitboard
@@ -32,13 +32,13 @@
       requirements: # Frontier
         MatterBin: 2 # Frontier stackRequirements<requirements
         Manipulator: 2 # Frontier stackRequirements<requirements
-      tagRequirements: # Mono
-        MicroprocessorEconomy1:
-          amount: 1
-          defaultPrototype: MicroprocessorEconomy1
-        MotorEconomy1:
-          amount: 1
-          defaultPrototype: MotorEconomy1
+      # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
+        # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MicroprocessorEconomy1
+        # MotorEconomy1: # Commented by LuaM: industry parts are only for MMC
+        #   amount: 1
+        #   defaultPrototype: MotorEconomy1
 
 - type: entity
   id: DeepFryerMachineCircuitboard

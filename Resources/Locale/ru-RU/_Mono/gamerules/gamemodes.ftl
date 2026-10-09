@@ -9,7 +9,7 @@ mono-mixed-title = Смешанный
 mono-mixed-description = Конфликт между ТСФ и Синдикатом развивается во время череды разных непредсказуемых угроз.
 
 # Неактуальные
-mono-standard-title = Стандартный
+mono-standard-title = Стандарт
 mono-standard-description = Местные силы Синдиката угрожают колонизации ТСФ в секторе.
 
 mono-roguetsf-title = Гонка вооружений

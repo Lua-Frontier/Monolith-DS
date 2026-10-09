@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/25/2026 22:47:31
-  entityCount: 1116
+  entityCount: 1114
 maps: []
 grids:
 - 1
@@ -3038,6 +3038,22 @@ entities:
     - type: Transform
       pos: 2.5,-13.5
       parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 1115
+    components:
+    - type: Transform
+      pos: 10.5,-18.5
+      parent: 1
+    - type: Physics
+      canCollide: False
+  - uid: 1116
+    components:
+    - type: Transform
+      pos: -8.5,-20.5
+      parent: 1
+    - type: Physics
+      canCollide: False
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 430
@@ -5218,40 +5234,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: HardpointBallisticHeavy
-  entities:
-  - uid: 1115
-    components:
-    - type: Transform
-      pos: 10.5,-18.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1116
-    components:
-    - type: Transform
-      pos: -8.5,-20.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 1113
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 6.5,9.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1114
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,9.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: HospitalCurtains
   entities:
   - uid: 687

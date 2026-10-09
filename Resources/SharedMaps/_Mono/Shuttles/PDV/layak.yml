@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/19/2026 23:37:36
-  entityCount: 888
+  entityCount: 878
 maps: []
 grids:
 - 1
@@ -2858,6 +2858,20 @@ entities:
     - type: Transform
       pos: -3.5,2.5
       parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 883
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 5.5,9.5
+      parent: 1
+  - uid: 884
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.5,9.5
+      parent: 1
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 435
@@ -4085,84 +4099,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5,16.5
-      parent: 1
-- proto: HardpointBallisticHeavy
-  entities:
-  - uid: 883
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 5.5,9.5
-      parent: 1
-  - uid: 884
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -4.5,9.5
-      parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 885
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,17.5
-      parent: 1
-  - uid: 886
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -4.5,17.5
-      parent: 1
-  - uid: 887
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,5.5
-      parent: 1
-  - uid: 888
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -6.5,5.5
-      parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 348
-    components:
-    - type: Transform
-      pos: -3.5,-6.5
-      parent: 1
-  - uid: 349
-    components:
-    - type: Transform
-      pos: 4.5,-6.5
-      parent: 1
-  - uid: 351
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,23.5
-      parent: 1
-  - uid: 352
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,23.5
-      parent: 1
-- proto: HardpointBallisticSuperlight
-  entities:
-  - uid: 419
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.5,11.5
-      parent: 1
-  - uid: 420
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 6.5,11.5
       parent: 1
 - proto: KitchenMicrowave
   entities:

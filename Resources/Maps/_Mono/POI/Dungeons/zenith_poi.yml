@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/25/2026 22:04:21
-  entityCount: 656
+  entityCount: 646
 maps: []
 grids:
 - 1
@@ -2243,23 +2243,7 @@ entities:
       parent: 1
     - type: Thruster
       baseThrust: 4000
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 655
-    components:
-    - type: Transform
-      pos: 6.5,-10.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 656
-    components:
-    - type: Transform
-      pos: -7.5,-10.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointBallisticSuperheavy
+- proto: HardpointUniversalSuperheavy
   entities:
   - uid: 650
     components:
@@ -2269,92 +2253,18 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-- proto: HardpointEnergyMedium
-  entities:
-  - uid: 644
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,7.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 647
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,10.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 648
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,10.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 649
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,7.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointMissileHeavy
-  entities:
   - uid: 651
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,-2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 652
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -9.5,-2.5
       parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointMissileMedium
-  entities:
-  - uid: 645
+  - uid: 652
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -4.5,3.5
+      rot: 3.141592653589793 rad
+      pos: 8.5,-2.5
       parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 646
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 3.5,3.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 653
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 6.5,-7.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 654
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.5,-7.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: MachineFTLDrive25S
   entities:
   - uid: 383

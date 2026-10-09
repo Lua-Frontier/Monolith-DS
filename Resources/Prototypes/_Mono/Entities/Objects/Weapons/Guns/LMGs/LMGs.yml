@@ -78,8 +78,8 @@
   - type: StaticPrice
     price: 2500
   - type: SpeedModifiedOnWield
-    walkModifier: 0.8 # LuaM: 0.6 > 0.8
-    sprintModifier: 0.8 # lower firerate than grizzly but more accurate and bit more damage # LuaM: 0.5 > 0.8
+    walkModifier: 0.6
+    sprintModifier: 0.5 # lower firerate than grizzly but more accurate and bit more damage
   #- type: WieldDelay # Commented by LuaM
   #  baseDelay: 0.8
   #  modifiedDelay: 0.8

@@ -49,6 +49,6 @@
   - type: ShipRepairable
     repairTime: 35
     repairCost: 120
-  - type: HardpointAnchorableOnly
-    class: Missile
-    size: Medium
+  # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
+  #   class: Missile
+  #   size: Medium

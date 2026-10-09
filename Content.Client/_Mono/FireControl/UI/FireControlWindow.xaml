@@ -99,7 +99,7 @@
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BorderThickness="4" BorderColor="#2e2e2e" BackgroundColor="#1c1c1c" />
                         </PanelContainer.PanelOverride>
-                        <Button Name="IFFToggle" Access="Public" Text="{Loc 'shuttle-console-iff-toggle'}"
+                        <Button Name="IFFToggle" Access="Public" Text="{Loc 'gunnery-iff-short'}"
                                 StyleClasses="ButtonSquare" HorizontalExpand="True" Margin="4 4" ToggleMode="True"/>
                     </PanelContainer>
                     <PanelContainer VerticalExpand="False" HorizontalExpand="True">

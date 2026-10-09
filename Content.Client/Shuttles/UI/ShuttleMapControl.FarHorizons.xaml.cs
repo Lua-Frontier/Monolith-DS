@@ -20,7 +20,7 @@ public sealed partial class ShuttleMapControl
         starPos = ScalePosition(starPos);
         var starRadius = Star.MAP_PIXEL_SIZE * starSystem.StarSystem.Star.Radius * MinimapScale;
 
-        handle.DrawCircle(starPos, starRadius, starSystem.StarSystem.Star.Color);
+        handle.DrawCircle(starPos, starRadius, starSystem.StarSystem.Star.Color.WithAlpha(0.15f)); // LuaM: full > 15% alpha
 
         foreach (var planet in starSystem.StarSystem.Planets)
         {

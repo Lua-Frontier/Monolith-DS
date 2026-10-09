@@ -63,6 +63,8 @@ namespace Content.Server.Communications
 
             // On console init, set cooldown
             SubscribeLocalEvent<CommunicationsConsoleComponent, MapInitEvent>(OnCommunicationsConsoleMapInit);
+
+            InitializeWarDeclaration(); // LuaM
         }
 
         public override void Update(float frameTime)
@@ -167,14 +169,16 @@ namespace Content.Server.Communications
                 }
             }
 
-            _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, new CommunicationsConsoleInterfaceState(
+            var state = new CommunicationsConsoleInterfaceState( // LuaM
                 CanAnnounce(comp),
                 CanCallOrRecall(comp),
                 levels,
                 currentLevel,
                 currentDelay,
                 _roundEndSystem.ExpectedCountdownEnd
-            ));
+            );
+            FillWarDeclarationState(uid, state); // LuaM
+            _uiSystem.SetUiState(uid, CommunicationsConsoleUiKey.Key, state); // LuaM
         }
 
         private static bool CanAnnounce(CommunicationsConsoleComponent comp)

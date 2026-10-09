@@ -79,15 +79,15 @@
   - type: LitOnPowered
   - type: PowerSwitch
   - type: ApcPowerReceiver
-    powerLoad: 240000 # LuaM: 60000 > 240000
+    powerLoad: 60000
   - type: Appearance
   - type: ShipShieldEmitter
-    damageLimit: 240000 # LuaM: 60000 > 240000
+    damageLimit: 60000
     damageOverloadTimePunishment: 40
-    healPerSecond: 3000 # Base is 250 # LuaM: 600 > 3000
+    healPerSecond: 600 # Base is 250
     damageExp: 1.05 # Base is 1.1
-    baseDraw: 20000 # Base is 50000 # LuaM: 40000 > 20000
-    maxDraw: 400000 # Base is 150000 # LuaM: 100000 > 400000
+    baseDraw: 40000 # Base is 50000
+    maxDraw: 100000 # Base is 150000
     unpoweredBonus: 7 # Base is 6
     shieldColor: "#FF3333"
     collisionResistanceMultiplier: 1.0
@@ -123,11 +123,11 @@
   suffix: POI ONLY
   components:
   - type: ShipShieldEmitter
-    damageLimit: 2500000 # LuaM: 250000 > 2500000
-    healPerSecond: 15000 # LuaM: 1000 > 15000
+    damageLimit: 500000
+    healPerSecond: 2000
     damageExp: 1
-    baseDraw: 80000 # LuaM: 80000 > 40000
-    maxDraw: 1500000 # LuaM: 150000 > 1500000
+    baseDraw: 80000
+    maxDraw: 150000
     unpoweredBonus: 7
     powerModifier: 0.1
     damageOverloadTimePunishment: 30
@@ -178,7 +178,7 @@
     intensitySlope: 4
     totalIntensity: 1000
   - type: ApcPowerReceiver
-    powerLoad: 800000 # LuaM: 80000 > 800000
+    powerLoad: 80000
   - type: PointLight
     enabled: false
     castShadows: true
@@ -270,11 +270,11 @@
   suffix: TSF CAPITAL ONLY
   components:
   - type: ShipShieldEmitter
-    damageLimit: 340000 # LuaM: 85000 > 340000
-    healPerSecond: 3200 # LuaM: 800 > 3200
+    damageLimit: 85000
+    healPerSecond: 800
     damageExp: 1
-    baseDraw: 30000 # LuaM: 60000 > 30000
-    maxDraw: 400000 # LuaM: 100000 > 400000
+    baseDraw: 60000
+    maxDraw: 100000
     unpoweredBonus: 6
     damageOverloadTimePunishment: 35
     shieldColor: "#FF0A70"
@@ -344,12 +344,12 @@
   suffix: ADS ONLY
   components:
   - type: ShipShieldEmitter
-    damageLimit: 300000 # LuaM: 75000 > 300000
+    damageLimit: 75000
     damageOverloadTimePunishment: 40
-    healPerSecond: 3800 # Base is 250 # LuaM: 950 > 3800
+    healPerSecond: 950 # Base is 250
     damageExp: 1.05 # Base is 1.1
-    baseDraw: 20000 # Base is 50000 # LuaM: 40000 > 20000
-    maxDraw: 400000 # Base is 150000 # LuaM: 100000 > 400000
+    baseDraw: 40000 # Base is 50000
+    maxDraw: 100000 # Base is 150000
     unpoweredBonus: 6 # Base is 6
     shieldColor: "#FF3333"
     collisionResistanceMultiplier: 0.05
@@ -370,11 +370,11 @@
   suffix: ADS/TSF ONLY, SCI VOUCHER SHIPS ONLY
   components:
   - type: ShipShieldEmitter
-    damageLimit: 720000 # LuaM: 180000 > 720000
-    healPerSecond: 3000 # Base is 250 # LuaM: 750 > 3000
+    damageLimit: 180000
+    healPerSecond: 750 # Base is 250
     damageExp: 1.05 # Base is 1.1
-    baseDraw: 15000 # Base is 50000 # LuaM: 30000 > 15000
-    maxDraw: 300000 # Base is 150000 # LuaM: 75000 > 300000
+    baseDraw: 30000 # Base is 50000
+    maxDraw: 75000 # Base is 150000
     unpoweredBonus: 4 # Base is 6
     damageOverloadTimePunishment: 100
     shieldColor: "#9933FF"
@@ -457,11 +457,11 @@
   description: The Sentinel. A good, reliable shield.
   components:
   - type: ShipShieldEmitter
-    damageLimit: 260000 # Mono # LuaM: 65000 > 260000
-    healPerSecond: 2000 # Mono # LuaM: 500 > 2000
+    damageLimit: 65000 # Mono
+    healPerSecond: 500 # Mono
     damageExp: 1.05 # Mono
-    baseDraw: 10000 # LuaM: 20000 > 10000
-    maxDraw: 240000 # LuaM: 60000 > 240000
+    baseDraw: 20000
+    maxDraw: 60000
     unpoweredBonus: 3 # Mono
     damageOverloadTimePunishment: 80
     shieldColor: "#3399FF"

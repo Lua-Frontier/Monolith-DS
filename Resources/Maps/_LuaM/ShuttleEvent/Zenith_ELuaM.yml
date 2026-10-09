@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 07/01/2026 12:21:30
-  entityCount: 663
+  entityCount: 664
 maps: []
 grids:
 - 1
@@ -2556,6 +2556,14 @@ entities:
       parent: 1
     - type: Thruster
       baseThrust: 4000
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 664
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,11.5
+      parent: 1
 - proto: MachineFTLDrive25S
   entities:
   - uid: 402

@@ -10,10 +10,10 @@
     requirements:
       Capacitor: 2
       Manipulator: 2
-    tagRequirements:
-      RadioEconomy1: # Lag prevention, I guess?
-        amount: 1
-        defaultPrototype: RadioEconomy1
+    # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+      # RadioEconomy1: # Lag prevention, I guess? # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: RadioEconomy1
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -28,10 +28,10 @@
       Capacitor: 4
     stackRequirements:
       Plasteel: 4
-    tagRequirements:
-      ElectromagnetEconomy1:
-        amount: 1
-        defaultPrototype: ElectromagnetEconomy1
+    # tagRequirements: # Commented by LuaM: industry parts are only for MMC
+      # ElectromagnetEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: ElectromagnetEconomy1
 
 - type: entity
   parent: BaseMachineCircuitboard

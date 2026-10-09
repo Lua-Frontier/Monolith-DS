@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/25/2026 17:29:38
-  entityCount: 10506
+  entityCount: 10468
 maps: []
 grids:
 - 1
@@ -47639,213 +47639,7 @@ entities:
     - type: Transform
       pos: 8.5,-46.5
       parent: 1
-- proto: HardpointBallisticHeavy
-  entities:
-  - uid: 10469
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 34.5,28.5
-      parent: 1
-  - uid: 10474
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -4.5,44.5
-      parent: 1
-  - uid: 10476
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 12.5,44.5
-      parent: 1
-  - uid: 10483
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,24.5
-      parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 10441
-    components:
-    - type: Transform
-      pos: -12.5,-49.5
-      parent: 1
-  - uid: 10445
-    components:
-    - type: Transform
-      pos: -3.5,-50.5
-      parent: 1
-  - uid: 10447
-    components:
-    - type: Transform
-      pos: 6.5,-48.5
-      parent: 1
-  - uid: 10449
-    components:
-    - type: Transform
-      pos: 15.5,-49.5
-      parent: 1
-  - uid: 10453
-    components:
-    - type: Transform
-      pos: 26.5,-26.5
-      parent: 1
-  - uid: 10454
-    components:
-    - type: Transform
-      pos: 21.5,-30.5
-      parent: 1
-  - uid: 10457
-    components:
-    - type: Transform
-      pos: 35.5,-32.5
-      parent: 1
-  - uid: 10459
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 35.5,-11.5
-      parent: 1
-  - uid: 10462
-    components:
-    - type: Transform
-      pos: 48.5,-3.5
-      parent: 1
-  - uid: 10463
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,2.5
-      parent: 1
-  - uid: 10468
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 33.5,25.5
-      parent: 1
-  - uid: 10471
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 39.5,37.5
-      parent: 1
-  - uid: 10473
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 17.5,37.5
-      parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 10437
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -16.5,13.5
-      parent: 1
-  - uid: 10439
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -16.5,-21.5
-      parent: 1
-  - uid: 10452
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 18.5,-39.5
-      parent: 1
-  - uid: 10461
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 44.5,-4.5
-      parent: 1
-  - uid: 10464
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 44.5,3.5
-      parent: 1
-- proto: HardpointBallisticSuperheavy
-  entities:
-  - uid: 10466
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 34.5,17.5
-      parent: 1
-- proto: HardpointEnergyLight
-  entities:
-  - uid: 10442
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -17.5,-33.5
-      parent: 1
-  - uid: 10455
-    components:
-    - type: Transform
-      pos: 24.5,-28.5
-      parent: 1
-  - uid: 10456
-    components:
-    - type: Transform
-      pos: 36.5,-32.5
-      parent: 1
-  - uid: 10465
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 24.5,37.5
-      parent: 1
-  - uid: 10467
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 33.5,20.5
-      parent: 1
-  - uid: 10472
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 21.5,37.5
-      parent: 1
-  - uid: 10479
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,51.5
-      parent: 1
-  - uid: 10480
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,51.5
-      parent: 1
-  - uid: 10482
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -12.5,27.5
-      parent: 1
-- proto: HardpointEnergyMedium
-  entities:
-  - uid: 10443
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -14.5,-46.5
-      parent: 1
-  - uid: 10450
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 17.5,-46.5
-      parent: 1
-- proto: HardpointEnergySuperheavy
+- proto: HardpointUniversalSuperheavy
   entities:
   - uid: 10438
     components:
@@ -47869,11 +47663,35 @@ entities:
     - type: Transform
       pos: 43.5,-23.5
       parent: 1
+  - uid: 10466
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 34.5,17.5
+      parent: 1
+  - uid: 10469
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 34.5,28.5
+      parent: 1
   - uid: 10470
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 36.5,37.5
+      parent: 1
+  - uid: 10474
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.5,44.5
+      parent: 1
+  - uid: 10476
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,44.5
       parent: 1
   - uid: 10477
     components:
@@ -47887,42 +47705,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,49.5
       parent: 1
-- proto: HardpointMissileLight
-  entities:
-  - uid: 10444
-    components:
-    - type: Transform
-      pos: -6.5,-55.5
-      parent: 1
-  - uid: 10446
-    components:
-    - type: Transform
-      pos: 9.5,-55.5
-      parent: 1
-  - uid: 10475
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 14.5,40.5
-      parent: 1
-- proto: HardpointMissileMedium
-  entities:
-  - uid: 10451
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 40.5,5.5
-      parent: 1
-  - uid: 10460
-    components:
-    - type: Transform
-      pos: 40.5,-6.5
-      parent: 1
-  - uid: 10481
+  - uid: 10483
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -10.5,37.5
+      pos: -13.5,24.5
       parent: 1
 - proto: HarmonicaInstrument
   entities:
@@ -48086,27 +47873,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 1.5,-45.5
-      parent: 1
-- proto: IndustrialFurnaceEconomyCompact
-  entities:
-  - uid: 7155
-    components:
-    - type: Transform
-      pos: -22.5,-0.5
-      parent: 1
-- proto: IndustrialPressEconomyElectronics
-  entities:
-  - uid: 7156
-    components:
-    - type: Transform
-      pos: -20.5,-5.5
-      parent: 1
-- proto: IndustrialPressEconomyPlates
-  entities:
-  - uid: 7157
-    components:
-    - type: Transform
-      pos: -22.5,-5.5
       parent: 1
 - proto: JanitorialTrolley
   entities:
@@ -51350,13 +51116,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -10.5,-29.5
       parent: 1
-- proto: PrecisionAssemblerEconomyCompact
-  entities:
-  - uid: 7657
-    components:
-    - type: Transform
-      pos: -20.5,-0.5
-      parent: 1
 - proto: PrefilledSyringe
   entities:
   - uid: 7658
@@ -53896,6 +53655,13 @@ entities:
     components:
     - type: Transform
       pos: 17.5,3.5
+      parent: 1
+- proto: SpawnPointTsfMarsoc
+  entities:
+  - uid: 10508
+    components:
+    - type: Transform
+      pos: -4.5,19.5
       parent: 1
 - proto: SpeedLoader357_magnumFMJ
   entities:

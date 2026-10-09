@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/01/2026 09:18:33
-  entityCount: 961
+  entityCount: 953
 maps: []
 grids:
 - 1
@@ -3680,74 +3680,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-17.5
       parent: 1
-- proto: HardpointEnergyLight
-  entities:
-  - uid: 411
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,-13.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 412
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,-13.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointEnergyMedium
-  entities:
-  - uid: 413
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 414
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 415
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 416
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -5.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 847
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -6.5,-5.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 939
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,-5.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: LargeAPC
   entities:
   - uid: 418

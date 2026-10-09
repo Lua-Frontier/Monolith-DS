@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/22/2026 08:45:17
-  entityCount: 1556
+  entityCount: 1544
 maps: []
 grids:
 - 1
@@ -4358,6 +4358,56 @@ entities:
     - type: Transform
       pos: 6.5,-12.5
       parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 694
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 2.5,8.5
+      parent: 1
+    - type: Physics
+      canCollide: False
+  - uid: 1075
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,8.5
+      parent: 1
+    - type: Physics
+      canCollide: False
+  - uid: 1539
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,2.5
+      parent: 1
+    - type: Physics
+      canCollide: False
+  - uid: 1540
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,4.5
+      parent: 1
+    - type: Physics
+      canCollide: False
+  - uid: 1541
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 6.5,4.5
+      parent: 1
+    - type: Physics
+      canCollide: False
+  - uid: 1542
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,2.5
+      parent: 1
+    - type: Physics
+      canCollide: False
 - proto: MachineThermobath
   entities:
   - uid: 659
@@ -6952,158 +7002,6 @@ entities:
     - type: Transform
       pos: -7.5,-16.5
       parent: 1
-- proto: HardpointBallisticHeavy
-  entities:
-  - uid: 1540
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -6.5,4.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1541
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 6.5,4.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 697
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,13.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 703
-    components:
-    - type: Transform
-      pos: 6.5,-21.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1534
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,13.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1536
-    components:
-    - type: Transform
-      pos: -6.5,-21.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 706
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 707
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,-8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1543
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1544
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,-8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointBallisticSuperheavy
-  entities:
-  - uid: 694
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1075
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,8.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1539
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1542
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -7.5,2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointMissileMedium
-  entities:
-  - uid: 1552
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 7.5,-5.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1553
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 7.5,-6.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1554
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.5,-5.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 1555
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.5,-6.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: HospitalCurtainsOpen
   entities:
   - uid: 1009

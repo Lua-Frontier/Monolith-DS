@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/26/2026 09:20:04
-  entityCount: 110
+  entityCount: 107
 maps: []
 grids:
 - 1
@@ -312,7 +312,7 @@ entities:
     - type: Transform
       pos: 0.5,0.5
       parent: 1
-- proto: DebugThrusterSecurity
+- proto: ThrusterSecurity
   entities:
   - uid: 41
     components:
@@ -359,32 +359,6 @@ entities:
     - type: Transform
       pos: 0.5,-1.5
       parent: 1
-- proto: HardpointBallisticLight
-  entities:
-  - uid: 108
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,-1.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 109
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,-2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 110
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,-2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
 - proto: PoweredlightRed
   entities:
   - uid: 49

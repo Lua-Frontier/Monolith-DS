@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 06/24/2026 10:54:51
-  entityCount: 1417
+  entityCount: 1418
 maps: []
 grids:
 - 1
@@ -5797,6 +5797,14 @@ entities:
     components:
     - type: Transform
       pos: 5.5,-0.5
+      parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 1418
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,10.5
       parent: 1
 - proto: JerryCanNaniteFuel
   entities:

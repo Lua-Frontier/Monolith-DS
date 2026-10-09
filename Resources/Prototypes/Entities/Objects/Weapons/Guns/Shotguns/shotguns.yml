@@ -118,7 +118,6 @@
   - type: Gun
     fireRate: 4 # Mono
     damageModifier: 1.1 # Mono - More powerful than enforcer yes, but this is a T2
-    projectileSpeed: 40 # LuaM
     selectedMode: FullAuto
     availableModes:
     - FullAuto

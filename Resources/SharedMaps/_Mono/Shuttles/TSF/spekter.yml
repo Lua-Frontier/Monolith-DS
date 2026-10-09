@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/19/2026 22:13:53
-  entityCount: 1035
+  entityCount: 1027
 maps: []
 grids:
 - 1
@@ -4884,93 +4884,43 @@ entities:
     - type: Transform
       pos: -6.5,-11.5
       parent: 1
-- proto: HardpointBallisticLight
+- proto: HardpointUniversalSuperheavy
   entities:
-  - uid: 364
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,11.5
-      parent: 1
-  - uid: 365
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.5,-0.5
-      parent: 1
-  - uid: 367
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 6.5,-0.5
-      parent: 1
-  - uid: 368
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,11.5
-      parent: 1
-  - uid: 407
-    components:
-    - type: Transform
-      pos: 10.5,-10.5
-      parent: 1
-  - uid: 408
-    components:
-    - type: Transform
-      pos: -9.5,-10.5
-      parent: 1
-- proto: HardpointBallisticSuperlight
-  entities:
-  - uid: 366
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,14.5
-      parent: 1
-  - uid: 369
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,14.5
-      parent: 1
-- proto: HardpointMissileHeavy
-  entities:
-  - uid: 1030
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 5.5,3.5
-      parent: 1
-  - uid: 1031
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 5.5,2.5
-      parent: 1
-  - uid: 1032
+  - uid: 1037
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 5.5,1.5
       parent: 1
-  - uid: 1033
+  - uid: 1038
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -4.5,3.5
+      pos: -4.5,1.5
       parent: 1
-  - uid: 1034
+  - uid: 1039
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 5.5,2.5
+      parent: 1
+  - uid: 1040
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -4.5,2.5
       parent: 1
-  - uid: 1035
+  - uid: 1041
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 5.5,3.5
+      parent: 1
+  - uid: 1042
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -4.5,1.5
+      pos: -4.5,3.5
       parent: 1
 - proto: KitchenMicrowave
   entities:

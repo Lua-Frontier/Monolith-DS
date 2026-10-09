@@ -14,7 +14,7 @@ public sealed partial class AdminTestArenaSystem : EntitySystem
     [Dependency] private MetaDataSystem _metaDataSystem = default!;
     [Dependency] private SharedMapSystem _maps = default!;
 
-    public const string ArenaMapPath = "/Maps/_NF/Test/admin_test_zone.yml"; // Frontier: Map edit, swap /Maps/Test/admin_test_arena.yml
+    public const string ArenaMapPath = "/Maps/_LuaM/Test/admin_test_zone.yml"; // Frontier: Map edit, swap /Maps/Test/admin_test_arena.yml, LuaM: /Maps/_NF/Test/admin_test_zone.yml > /Maps/_LuaM/Test/admin_test_zone.yml
 
     public Dictionary<NetUserId, EntityUid> ArenaMap { get; private set; } = new();
     public Dictionary<NetUserId, EntityUid?> ArenaGrid { get; private set; } = new();

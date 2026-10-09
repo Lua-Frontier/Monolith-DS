@@ -19,12 +19,12 @@
       ResearchDisk10000:
         amount: 2
         defaultPrototype: ResearchDisk10000
-      MicroprocessorEconomy1:
-        amount: 6
-        defaultPrototype: MicroprocessorEconomy1
-      RadioEconomy1:
-        amount: 1
-        defaultPrototype: RadioEconomy1
+      # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 6
+      #   defaultPrototype: MicroprocessorEconomy1
+      # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: RadioEconomy1
 
 - type: entity
   id: DataFarmCryptoCircuitboard
@@ -47,9 +47,9 @@
       ResearchDisk10000:
         amount: 2
         defaultPrototype: ResearchDisk10000
-      MicroprocessorEconomy1:
-        amount: 6
-        defaultPrototype: MicroprocessorEconomy1
-      RadioEconomy1:
-        amount: 1
-        defaultPrototype: RadioEconomy1
+      # MicroprocessorEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 6
+      #   defaultPrototype: MicroprocessorEconomy1
+      # RadioEconomy1: # Commented by LuaM: industry parts are only for MMC
+      #   amount: 1
+      #   defaultPrototype: RadioEconomy1

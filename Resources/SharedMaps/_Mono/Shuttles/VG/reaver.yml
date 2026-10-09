@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/24/2026 22:48:52
-  entityCount: 334
+  entityCount: 331
 maps: []
 grids:
 - 1
@@ -1422,48 +1422,20 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,-0.5
       parent: 1
-- proto: HardpointEnergyLight
+- proto: HardpointUniversalSuperheavy
   entities:
-  - uid: 139
-    components:
-    - type: Transform
-      pos: 6.5,-4.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 140
-    components:
-    - type: Transform
-      pos: -5.5,-4.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 334
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,2.5
-      parent: 1
-    - type: Physics
-      canCollide: False
-- proto: HardpointMissileHeavy
-  entities:
-  - uid: 136
+  - uid: 333
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,3.5
       parent: 1
-    - type: Physics
-      canCollide: False
-  - uid: 333
+  - uid: 334
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,3.5
       parent: 1
-    - type: Physics
-      canCollide: False
 - proto: LockableButtonUSSP
   entities:
   - uid: 175

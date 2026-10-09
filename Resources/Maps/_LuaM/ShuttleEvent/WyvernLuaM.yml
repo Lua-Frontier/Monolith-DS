@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 08/05/2026 04:48:10
-  entityCount: 8521
+  entityCount: 8526
 maps: []
 grids:
 - 1
@@ -25774,6 +25774,38 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,28.5
+      parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 8522
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,117.5
+      parent: 1
+  - uid: 8523
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,119.5
+      parent: 1
+  - uid: 8524
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,119.5
+      parent: 1
+  - uid: 8525
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 11.5,125.5
+      parent: 1
+  - uid: 8526
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -10.5,125.5
       parent: 1
 - proto: HeavyMechCannon
   entities:

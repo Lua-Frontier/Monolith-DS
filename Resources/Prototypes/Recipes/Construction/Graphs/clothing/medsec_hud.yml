@@ -24,11 +24,11 @@
             - material: Capacitor
               amount: 1
               doAfter: 5
-            - tag: MicroprocessorEconomy1
-              name: microprocessor
-              icon:
-                sprite: _Mono/Objects/Materials/bayponents.rsi
-                state: "microprocessor1"
-              doAfter: 5
+            # - tag: MicroprocessorEconomy1 # Commented by LuaM: industry parts are only for MMC
+            #   name: microprocessor
+            #   icon:
+            #     sprite: _Mono/Objects/Materials/bayponents.rsi
+            #     state: "microprocessor1"
+            #   doAfter: 5
     - node: medsecHud
       entity: ClothingEyesHudMedSec

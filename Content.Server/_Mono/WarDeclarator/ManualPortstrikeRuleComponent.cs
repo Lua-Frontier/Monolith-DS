@@ -18,4 +18,18 @@ public sealed partial class ManualPortstrikeRuleComponent : Component
     /// </summary>
     [DataField]
     public bool WarLevel = true;
+
+    // LuaM start: automatic declaration for the side that did not answer
+    /// <summary>
+    /// If one side declared war and the others did not within this time, war is declared for them automatically.
+    /// </summary>
+    [DataField]
+    public TimeSpan AutoDeclareDelay = TimeSpan.FromMinutes(30);
+
+    /// <summary>
+    /// When the first side declared war.
+    /// </summary>
+    [ViewVariables]
+    public TimeSpan? FirstDeclarationTime;
+    // LuaM end
 }

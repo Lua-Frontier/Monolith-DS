@@ -1,0 +1,21 @@
+- type: gamePreset
+  id: MonoChimeraTsfPdv
+  weight: 0.5
+  name: mono-chimera-tsf-pdv-title
+  description: mono-chimera-tsf-pdv-description
+  showInVote: true
+  rules:
+  - NFAdventure
+  - BasicStationEventScheduler
+  - BluespaceEventScheduler
+  - BluespaceDungeonEventScheduler
+  - BluespaceSalvageEventScheduler
+  - SmugglingEventScheduler
+  - FrontierRoundstartVariation
+  - LuaMChimeraSTCShuttleSpawnerSchedulerHalf
+  - LuaMChimeraSTCShuttleSpawnerSchedulerTier2Half
+  - MonoMonolithicEventsScheduler
+  - ManualPortstrikeTsfPdv
+  - HalcyonBiodome
+  - HeliosBiodome
+  - StarSystemKyphrus

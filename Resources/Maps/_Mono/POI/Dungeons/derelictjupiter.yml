@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/25/2026 13:03:03
-  entityCount: 3427
+  entityCount: 3424
 maps: []
 grids:
 - 1
@@ -15597,26 +15597,6 @@ entities:
     components:
     - type: Transform
       pos: 12.482976,16.812925
-      parent: 1
-- proto: HardpointBallisticMedium
-  entities:
-  - uid: 6195
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -0.5,50.5
-      parent: 1
-  - uid: 6196
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.5,50.5
-      parent: 1
-  - uid: 6198
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,62.5
       parent: 1
 - proto: HolopadJupiter
   entities:

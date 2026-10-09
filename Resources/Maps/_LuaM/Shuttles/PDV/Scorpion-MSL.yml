@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/15/2026 11:52:39
-  entityCount: 949
+  entityCount: 951
 maps: []
 grids:
 - 1
@@ -3534,6 +3534,20 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-7.5
+      parent: 1
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 950
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,3.5
+      parent: 1
+  - uid: 951
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,3.5
       parent: 1
 - proto: LockerEngineerFilled
   entities:
