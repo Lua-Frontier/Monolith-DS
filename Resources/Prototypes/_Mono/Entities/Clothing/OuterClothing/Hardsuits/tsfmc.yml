@@ -307,6 +307,13 @@
   name: M86 Mk.4(B) hardsuit
   description: A limited-production redesign proposal for the M86 Mk.3(R), outfitted with an inbuilt personal shield generator.
   components:
+  - type: CritInjectorClothing # LuaM
+    solution:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 15
+      - ReagentId: PolypyryliumOligomers
+        Quantity: 15
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Hardsuits/m86_mk4.rsi
   - type: Clothing

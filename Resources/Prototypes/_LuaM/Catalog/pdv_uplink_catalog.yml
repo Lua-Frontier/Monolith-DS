@@ -31,3 +31,35 @@
     whitelist:
       tags:
       - PirateUplink
+
+# Implants
+
+- type: listing
+  id: UplinkPirateCombatMedipenImplanter
+  name: uplink-combat-medipen-implanter-name
+  description: uplink-combat-medipen-implanter-desc
+  productEntity: CombatMedipenImplanter
+  cost:
+    Doubloon: 50
+  categories:
+  - UplinkPirateMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - PirateUplink
+
+- type: listing
+  id: UplinkPirateStimulantImplanter
+  name: uplink-stimulant-implanter-name
+  description: uplink-stimulant-implanter-desc
+  productEntity: StimulantImplanter
+  cost:
+    Doubloon: 50
+  categories:
+  - UplinkPirateMedical
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - PirateUplink

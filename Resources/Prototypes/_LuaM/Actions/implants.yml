@@ -1,0 +1,29 @@
+- type: entity
+  id: ActionActivateCombatMedipenImplant
+  name: Inject Combat Medipen
+  description: Injects a dose of the combat medipen. Each charge recharges in 40 seconds.
+  components:
+  - type: InstantAction
+    charges: 3
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Objects/Specific/Medical/medipen.rsi
+      state: morphen
+    event: !type:UseInjectorImplantEvent
+
+- type: entity
+  id: ActionActivateStimulantImplant
+  name: Inject Stimulants
+  description: Injects a dose of stimulants. Each charge recharges in 40 seconds.
+  components:
+  - type: InstantAction
+    charges: 3
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Objects/Specific/Medical/medipen.rsi
+      state: stimpen
+    event: !type:UseInjectorImplantEvent

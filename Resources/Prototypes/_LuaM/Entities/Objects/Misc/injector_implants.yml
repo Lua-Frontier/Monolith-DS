@@ -1,0 +1,74 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: CombatMedipenImplant
+  name: combat medipen implant
+  description: Injects a combat medipen dose on demand and automatically when the owner goes critical.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateCombatMedipenImplant
+  - type: InjectorImplant
+    solution:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 25
+      - ReagentId: TranexamicAcid
+        Quantity: 5
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: StimulantImplant
+  name: stimulant implant
+  description: Injects a dose of stimulants on demand and automatically when the owner goes critical.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateStimulantImplant
+  - type: InjectorImplant
+    solution:
+      reagents:
+      - ReagentId: Stimulants
+        Quantity: 30
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: BaseInjectorImplantImplanter
+  abstract: true
+  components:
+  - type: Item
+    sprite: Objects/Specific/Medical/syndi_implanter.rsi
+  - type: Sprite
+    sprite: Objects/Specific/Medical/syndi_implanter.rsi
+    state: implanter1
+    layers:
+    - state: implanter0
+      map: [ "implantFull" ]
+      visible: true
+    - state: implanter1
+      map: [ "implantOnly" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.ImplanterVisuals.Full:
+        implantFull:
+          True: {visible: true}
+          False: {visible: false}
+      enum.ImplanterImplantOnlyVisuals.ImplantOnly:
+        implantOnly:
+          True: {state: broken}
+          False: {state: implanter1}
+
+- type: entity
+  parent: BaseInjectorImplantImplanter
+  id: CombatMedipenImplanter
+  suffix: combat medipen
+  components:
+  - type: Implanter
+    implant: CombatMedipenImplant
+
+- type: entity
+  parent: BaseInjectorImplantImplanter
+  id: StimulantImplanter
+  suffix: stimulant
+  components:
+  - type: Implanter
+    implant: StimulantImplant

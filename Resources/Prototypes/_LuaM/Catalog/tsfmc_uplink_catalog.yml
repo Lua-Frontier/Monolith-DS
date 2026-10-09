@@ -33,3 +33,35 @@
       whitelist:
         tags:
           - SecurityUplink
+
+# Implants
+
+- type: listing
+  id: UplinkSecurityCombatMedipenImplanter
+  name: uplink-combat-medipen-implanter-name
+  description: uplink-combat-medipen-implanter-desc
+  productEntity: CombatMedipenImplanter
+  cost:
+    FederationMilitaryCredit: 50
+  categories:
+  - UplinkSecurityUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink
+
+- type: listing
+  id: UplinkSecurityStimulantImplanter
+  name: uplink-stimulant-implanter-name
+  description: uplink-stimulant-implanter-desc
+  productEntity: StimulantImplanter
+  cost:
+    FederationMilitaryCredit: 50
+  categories:
+  - UplinkSecurityUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink

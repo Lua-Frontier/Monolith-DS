@@ -5,6 +5,19 @@
   description: An advanced exoskeleton harness of cutting edge, corporate-era technology. It connects itself directly to the brain of the wearer, and requires advanced brain augmentation and cybernetics to function. Incredibly rare, and practically alien in technology compared to modern tacsuits. Once equipped, the armor cannot be removed without external release.
   suffix: SelfUnremovable
   components:
+  - type: CritInjectorClothing # LuaM
+    solution:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 15
+      - ReagentId: PolypyryliumOligomers
+        Quantity: 15
+      - ReagentId: Stimulants
+        Quantity: 15
+      - ReagentId: Puncturase
+        Quantity: 10
+      - ReagentId: Pyrazine
+        Quantity: 10
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Hardsuits/asakim.rsi
   - type: Clothing

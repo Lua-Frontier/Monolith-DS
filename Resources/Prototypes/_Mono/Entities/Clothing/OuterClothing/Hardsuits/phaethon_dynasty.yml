@@ -337,6 +337,13 @@
   name: "PDV CV-280 'Basilisk' combat hardsuit"
   description: A combat hardsuit designed by the Phaethon Dynasty for Tarkhans. Utilizes an imperfect nanolaminate composition like the CV-67 to save weight, and an installed hydraulic rig for more mobility, and painted in a royal Tarkhan white palette. A rare sight.
   components:
+  - type: CritInjectorClothing # LuaM
+    solution:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 15
+      - ReagentId: PolypyryliumOligomers
+        Quantity: 15
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Hardsuits/basilisk.rsi
   - type: Clothing
