@@ -5,6 +5,8 @@ using Content.Server._NF.Shipyard;
 using Content.Shared._Mono.Ships.Components;
 using Content.Shared._Mono.Shipyard;
 using Content.Shared._NF.Shipyard;
+using Content.Shared._NF.Shipyard.Prototypes; // Lua
+using Robust.Shared.Prototypes; // Lua
 using Robust.Shared.Timing;
 
 namespace Content.Server._Mono.Ships.Systems;
@@ -18,6 +20,7 @@ public sealed partial class ShuttleRestrictionsSystem : EntitySystem
     [Dependency] private IGameTiming _gameTiming = default!;
     [Dependency] private ShuttleDeedSystem _shuttleDeed = default!;
     [Dependency] private HyperwarRuleSystem _hyperwar = default!;
+    [Dependency] private IPrototypeManager _proto = default!; // Lua
 
     private TimeSpan _lastUpdate = TimeSpan.Zero;
     private readonly TimeSpan _interval = TimeSpan.FromMinutes(1);
@@ -109,6 +112,39 @@ public sealed partial class ShuttleRestrictionsSystem : EntitySystem
             ev.Cancel();
         }
     }
+
+    // Lua start
+    /// <summary>
+    /// Whether the hyperwar limits are currently used instead of the regular ones.
+    /// </summary>
+    public bool HyperwarLimitsActive => _hyperwar.HyperwarActive;
+
+    /// <summary>
+    /// Counts active shuttles of every limited vessel type, the same way purchases are checked.
+    /// </summary>
+    public Dictionary<ProtoId<VesselPrototype>, int> GetLimitedVesselCounts()
+    {
+        var limited = new Dictionary<ProtoId<VesselPrototype>, int>();
+        var query = EntityQueryEnumerator<VesselComponent>();
+
+        while (query.MoveNext(out var uid, out var vessel))
+        {
+            if (!_proto.TryIndex<VesselPrototype>(vessel.VesselId, out var proto))
+                continue;
+
+            var limitActive = _hyperwar.HyperwarActive ? proto.HyperwarLimitActive : proto.LimitActive;
+            if (limitActive <= 0)
+                continue;
+
+            if (!TryComp<ShipActivityComponent>(uid, out var inactivity) || inactivity.InactivePastThreshold)
+                continue;
+
+            limited[vessel.VesselId] = limited.GetValueOrDefault(vessel.VesselId) + 1;
+        }
+
+        return limited;
+    }
+    // Lua end
 
     private bool IsActive(Entity<VesselComponent?> vessel)
     {

@@ -30,6 +30,9 @@ public partial class MapGridControl : LayoutContainer
     /* Dragging */
     protected virtual bool Draggable { get; set; } = false; // Mono - make settable
 
+    protected virtual bool ScaleWithControlSize => false; // Lua
+    protected virtual bool AllowResize => false; // Lua
+
     /// <summary>
     /// Control offset from whatever is being tracked.
     /// </summary>
@@ -79,11 +82,34 @@ public partial class MapGridControl : LayoutContainer
 
     public Vector2 MaxRadarRangeVector => new Vector2(MaxRadarRange, MaxRadarRange);
 
-    protected Vector2 MidPointVector => new Vector2(MidPoint, MidPoint);
+    protected virtual Vector2 MidPointVector => new Vector2(MidPoint, MidPoint); // Lua: virtual
 
     protected int MidPoint => SizeFull / 2;
-    protected int SizeFull => (int)((UIDisplayRadius + MinimapMargin) * 2 * UIScale);
-    protected int ScaledMinimapRadius => (int)(UIDisplayRadius * UIScale);
+    // Lua start
+    protected int SizeFull
+    {
+        get
+        {
+            if (ScaleWithControlSize)
+            {
+                var px = Math.Min(PixelWidth, PixelHeight);
+                if (px > 0)
+                    return px;
+            }
+            return (int)((UIDisplayRadius + MinimapMargin) * 2 * UIScale);
+        }
+    }
+
+    protected int ScaledMinimapRadius
+    {
+        get
+        {
+            if (!ScaleWithControlSize)
+                return (int)(UIDisplayRadius * UIScale);
+            return Math.Max(0, MidPoint - (int)(MinimapMargin * UIScale));
+        }
+    }
+    // Lua end
     protected float MinimapScale => WorldRange != 0 ? ScaledMinimapRadius / WorldRange : 0f;
 
     public event Action<float>? WorldRangeChanged;
@@ -96,7 +122,10 @@ public partial class MapGridControl : LayoutContainer
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-        SetSize = new Vector2(SizeFull, SizeFull);
+        if (AllowResize) // Lua
+            MinSize = new Vector2((UIDisplayRadius + MinimapMargin) * 2, (UIDisplayRadius + MinimapMargin) * 2);
+        else
+            SetSize = new Vector2(SizeFull, SizeFull);
         RectClipContent = true;
         MouseFilter = MouseFilterMode.Stop;
         ActualRadarRange = WorldRange;

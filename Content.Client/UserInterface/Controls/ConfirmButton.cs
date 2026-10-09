@@ -30,6 +30,11 @@ public sealed partial class ConfirmButton : Button
     /// </summary>
     public new event Action<ButtonEventArgs>? OnPressed;
 
+    /// <summary>
+    /// Fired when the button was pressed and starts confirming
+    /// </summary>
+    public event Action<ButtonEventArgs>? OnConfirming; // Lua
+
     /// <inheritdoc cref="Button.Text"/>
     /// <remarks>
     /// Hides the buttons text property to be able to sanely replace the button text with
@@ -129,6 +134,7 @@ public sealed partial class ConfirmButton : Button
                 _nextCooldown  = _gameTiming.CurTime + CooldownTime;
                 _nextReset = _gameTiming.CurTime + ResetTime;
                 Disabled = true;
+                OnConfirming?.Invoke(buttonEvent); // Lua
                 break;
             case true:
                 OnPressed?.Invoke(buttonEvent);
@@ -139,4 +145,20 @@ public sealed partial class ConfirmButton : Button
 
         IsConfirming = !IsConfirming;
     }
+
+    // Lua start
+    /// <summary>
+    /// Stops waiting for confirmation and restores the button text.
+    /// </summary>
+    public void ClearIsConfirming()
+    {
+        if (!IsConfirming)
+            return;
+
+        IsConfirming = false;
+        Disabled = false;
+        base.Text = Text;
+        DrawModeChanged();
+    }
+    // Lua end
 }

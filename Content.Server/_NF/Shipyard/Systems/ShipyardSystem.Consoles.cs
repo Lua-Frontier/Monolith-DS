@@ -55,6 +55,7 @@ using Content.Shared._Mono.Shipyard;
 using Content.Shared.Tag;
 using Robust.Shared.Timing;
 using Content.Server._Mono.Detection;
+using Content.Server._Mono.Ships.Systems; // Lua
 
 namespace Content.Server._NF.Shipyard.Systems;
 
@@ -83,6 +84,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private TagSystem _tagSystem = default!;
     [Dependency] private GridModifierSystem _hullmods = default!;
+    [Dependency] private ShuttleRestrictionsSystem _shuttleRestrictions = default!; // Lua
 
     private static readonly ProtoId<TagPrototype> CrewedShuttleTag = "CrewedShuttle";
     private static readonly Regex DeedRegex = new(@"\s*\([^()]*\)");
@@ -160,7 +162,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             return;
         }
 
-        if (!TryPurchaseShuttle(station, vessel.ShuttlePath, out var shuttleUidOut))
+        if (!TryPurchaseShuttleToDock(shipyardConsoleUid, station, vessel.ShuttlePath, out var shuttleUidOut)) // Lua: TryPurchaseShuttle > TryPurchaseShuttleToDock
         {
             PlayDenySound(player, shipyardConsoleUid, component);
             return;
@@ -949,9 +951,11 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             GetAvailableShuttles(uid, uiKey, targetId: targetId),
             uiKey.ToString(),
             freeListings,
-            CalculateSellRate(uid));
+            CalculateSellRate(uid),
+            _shuttleRestrictions.GetLimitedVesselCounts(), // Lua
+            _shuttleRestrictions.HyperwarLimitsActive); // Lua
 
-        _ui.SetUiState(uid, uiKey, newState);
+        _ui.SetUiState(uid, uiKey, ExtendUiStateLua(uid, newState)); // Lua: newState > ExtendUiStateLua(uid, newState)
     }
 
     #region Deed Assignment
@@ -1104,7 +1108,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
         // Preserve the original sell value from the current UI state
         int originalSellValue = 0;
-        if (_ui.TryGetUiState<ShipyardConsoleInterfaceState>(uid, (ShipyardConsoleUiKey)args.UiKey, out var currentState))
+        if (TryGetShipyardState(uid, args.UiKey, out var currentState)) // Lua: _ui.TryGetUiState<ShipyardConsoleInterfaceState> > TryGetShipyardState
         {
             originalSellValue = currentState.ShipSellValue;
         }
