@@ -32,6 +32,7 @@ using Content.Server._Mono.Persistence; // Mono
 using Content.Server._NF.Bank; // Frontier
 using Content.Server.Preferences.Managers; // Frontier
 using System.Linq;
+using Content.Server._LuaM.Loadouts; // LuaM
 using Content.Shared.NameIdentifier; // Frontier
 using Content.Server._EinsteinEngines.Silicon.IPC;
 using Content.Shared.Radio.Components; // Goobstation
@@ -62,6 +63,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private BankSystem _bank = default!; // Frontier
     [Dependency] private MonoCoinsManager _coins = default!; // Mono
     [Dependency] private PersistentProfileSystem _persistence = default!; // Mono
+    [Dependency] private LoadoutAutoUseSystem _loadoutAutoUse = default!; // LuaM
     private bool _randomizeCharacters;
 
     /// <inheritdoc/>
@@ -187,6 +189,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
 
 
 
+        List<EntityUid> loadoutAutoUseItems = new(); // LuaM: loadout cartridges/implanters to use after spawn
         if (loadout != null)
         {
             /// Frontier: overwriting EquipRoleLoadout
@@ -226,7 +229,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
                     if (loadoutProto.Price <= bankBalance && (loadoutProto.Price <= 0 || hasBalance))
                     {
                         bankBalance -= int.Max(0, loadoutProto.Price); // Treat negatives as zero.
-                        EquipStartingGear(entity.Value, loadoutProto, raiseEvent: false);
+                        EquipStartingGear(entity.Value, loadoutProto, raiseEvent: false, spawnedStorageItems: loadoutAutoUseItems); // LuaM: spawnedStorageItems
                         equippedItems.Add(loadoutProto.ID);
 
                         // Add support for IPC encryption keys from loadout headsets
@@ -261,7 +264,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
                             continue;
                         }
 
-                        EquipStartingGear(entity.Value, loadoutProto, raiseEvent: false);
+                        EquipStartingGear(entity.Value, loadoutProto, raiseEvent: false, spawnedStorageItems: loadoutAutoUseItems); // LuaM: spawnedStorageItems
                         equippedItems.Add(fallback);
 
                         // Add support for IPC encryption keys from loadout headsets
@@ -308,6 +311,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
 
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
         RaiseLocalEvent(entity.Value, ref gearEquippedEv);
+        _loadoutAutoUse.UseLoadoutItems(entity.Value, loadoutAutoUseItems); // LuaM
 
         if (profile != null)
         {

@@ -126,10 +126,10 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
         }
     }
 
-    public void EquipStartingGear(EntityUid entity, LoadoutPrototype loadout, bool raiseEvent = true)
+    public void EquipStartingGear(EntityUid entity, LoadoutPrototype loadout, bool raiseEvent = true, List<EntityUid>? spawnedStorageItems = null) // LuaM: spawnedStorageItems
     {
         EquipStartingGear(entity, loadout.StartingGear, raiseEvent);
-        EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent);
+        EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent, spawnedStorageItems); // LuaM: spawnedStorageItems
 
         // Mono - loadout comps
         EntityManager.AddComponents(entity, loadout.Components);
@@ -158,7 +158,8 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
     /// <param name="entity">Entity to load out.</param>
     /// <param name="startingGear">Starting gear to use.</param>
     /// <param name="raiseEvent">Should we raise the event for equipped. Set to false if you will call this manually</param>
-    public void EquipStartingGear(EntityUid entity, IEquipmentLoadout? startingGear, bool raiseEvent = true)
+    /// <param name="spawnedStorageItems">LuaM: if set, gets every entity spawned from the gear's storage list, even ones that did not fit into the storage.</param>
+    public void EquipStartingGear(EntityUid entity, IEquipmentLoadout? startingGear, bool raiseEvent = true, List<EntityUid>? spawnedStorageItems = null) // LuaM: spawnedStorageItems
     {
         if (startingGear == null)
             return;
@@ -211,6 +212,7 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
                     foreach (var entProto in entProtos)
                     {
                         var spawnedEntity = Spawn(entProto, coords);
+                        spawnedStorageItems?.Add(spawnedEntity); // LuaM
 
                         _storage.Insert(slotEnt.Value, spawnedEntity, out _, storageComp: storage, playSound: false);
                     }
