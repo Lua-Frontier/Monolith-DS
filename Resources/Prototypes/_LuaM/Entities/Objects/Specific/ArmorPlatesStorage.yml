@@ -1,0 +1,389 @@
+# Base
+- type: entity
+  parent: BaseItem
+  id: ArmorPlateStorageT1
+  name: armor‑plate storage box
+  suffix: 4 plates
+  description: A storage box for armor plates, holds 4 plates.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/StoragePlate.rsi
+    state: icon
+  - type: Item
+    sprite: _LuaM/Objects/Specific/StoragePlate.rsi
+    size: Normal
+    shape:
+    - 0,0,3,3
+  - type: Matchbox # LuaM
+  - type: ItemSlots # LuaM
+    slots:
+      plate1:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate2:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem 
+      plate3:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate4:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+- type: entity
+  parent: ArmorPlateStorageT1
+  id: ArmorPlateStorageT2
+  name: armor‑plate storage box
+  suffix: 6 plates
+  description: A storage box for armor plates, holds 6 plates.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/StoragePlate.rsi
+    state: icon-RND
+  - type: ItemSlots # LuaM
+    slots:
+      plate1:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate2:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem 
+      plate3:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate4:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate5:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate6:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+- type: entity
+  parent: ArmorPlateStorageT1
+  id: ArmorPlateStorageT3
+  name: armor‑plate storage box
+  suffix: 8 plates
+  description: A storage box for armor plates, holds 8 plates.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/StoragePlate.rsi
+    state: icon-CS
+  - type: ItemSlots # LuaM
+    slots:
+      plate1:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate2:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem 
+      plate3:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate4:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate5:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate6:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate7:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate8:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+- type: entity
+  parent: ArmorPlateStorageT1
+  id: ArmorPlateStorageT4TSF
+  name: armor‑plate storage box
+  suffix: 10 plates
+  description: A storage box for armor plates, holds 10 plates.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/StoragePlate.rsi
+    state: icon-TSF
+  - type: ItemSlots # LuaM
+    slots:
+      plate1:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate2:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem 
+      plate3:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate4:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate5:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate6:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate7:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate8:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate9:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate10:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+- type: entity
+  parent: ArmorPlateStorageT4TSF
+  id: ArmorPlateStorageT4PDV
+  name: armor‑plate storage box
+  suffix: 10 plates
+  description: A storage box for armor plates, holds 10 plates.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/StoragePlate.rsi
+    state: icon-NF
+- type: entity
+  parent: ArmorPlateStorageT1
+  id: ArmorPlateStorageT5
+  name: armor‑plate storage box
+  suffix: 12 plates
+  description: A storage box for armor plates, holds 12 plates.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/StoragePlate.rsi
+    state: icon-ASAKIM
+  - type: ItemSlots # LuaM
+    slots:
+      plate1:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate2:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem 
+      plate3:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate4:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate5:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate6:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate7:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate8:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate9:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate10:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate11:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate12:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+- type: entity
+  parent: ArmorPlateStorageT1
+  id: ArmorPlateStorageBlueSpace
+  name: armor‑plate storage box
+  suffix: 20 plates
+  description: A storage box for armor plates, holds 20 plates.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/StoragePlate.rsi
+    state: icon-BS
+  - type: ItemSlots # LuaM
+    slots:
+      plate1:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate2:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem 
+      plate3:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate4:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate5:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate6:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate7:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate8:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate9:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate10:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate11:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate12:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate13:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate14:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem 
+      plate15:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate16:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate17:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate18:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate19:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem
+      plate20:
+        name: armor-plate
+        whitelist:
+          components:
+          - ArmorPlateItem

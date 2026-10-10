@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprite by almaz3200 (discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "icon-CS"
+    },
+    {
+      "name": "icon-TSF"
+    },
+    {
+      "name": "icon-NF"
+    },
+    {
+      "name": "icon-ASAKIM"
+    },
+    {
+      "name": "icon-BS"
+    },
+    {
+      "name": "icon-RND"
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}
