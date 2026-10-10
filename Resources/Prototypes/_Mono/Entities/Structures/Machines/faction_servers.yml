@@ -13,6 +13,7 @@
     - state: server_o
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: ResearchServer
+  - type: ResearchServerMagnet # LuaM
   - type: ResearchPointSource
     pointsPerSecond: 30
     active: true
