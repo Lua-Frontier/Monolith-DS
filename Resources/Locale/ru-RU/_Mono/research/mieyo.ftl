@@ -1,0 +1,14 @@
+research-discipline-mieyo = Производственный концерн «Мийо»
+research-technology-mieyo-press = ПКМ | Гидравлика
+research-technology-mieyo-goods = ПКМ | Торговые товары
+research-technology-mieyo-breaching-gear = ПКМ | Пробивное снаряжение
+research-technology-mieyo-meds = ПКМ | Лечение ран
+research-technology-mieyo-srd = ПКМ | Корабельное оборудование
+research-technology-mieyo-lpc-1 = ПКМ | Базовое шаттлостроение
+research-technology-mieyo-smart-guns = ПКМ | Смарт-оружие
+research-technology-mieyo-corpsec-gear = ПКМ | Снаряжение охраны активов
+research-technology-mieyo-corpsec-rifles = ПКМ | Огнестрельное оружие охраны активов
+research-technology-mieyo-bionics-basic = ПКМ | Базовые бионические протезы
+research-technology-mieyo-bionics-advanced = ПКМ | Продвинутые бионические протезы
+research-technology-mieyo-bionics-lotus = ПКМ | EVT-002 «Лотос»
+research-technology-mieyo-bionics-sakimoto = ПКМ | EVT-001 «Сакимото»

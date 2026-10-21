@@ -80,3 +80,4 @@ loadout-tsfmc-headset-senior = старшая гарнитура ТСФ
 loadout-tsfmc-iff-orange = IFF-лента (оранжевая)
 loadout-tsfmc-iff-white = IFF-лента (белая)
 loadout-tsfmc-ammo-68x52 = коробка боеприпасов 6.8x52мм
+loadout-group-chatrank = Ранг

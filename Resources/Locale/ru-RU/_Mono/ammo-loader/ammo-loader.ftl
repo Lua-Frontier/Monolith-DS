@@ -24,3 +24,5 @@ ammo-loader-item-weight-unknown = неизвестно
 ammo-loader-item-stats-type = [color=#8a93a3]Тип:[/color] { $value }
 ammo-loader-item-stats-caliber = [color=#8a93a3]Калибр:[/color] { $value }
 ammo-loader-item-stats-weight = [color=#8a93a3]Вес (шт.):[/color] { $value }
+
+ammo-loader-flush-verb = Промыть

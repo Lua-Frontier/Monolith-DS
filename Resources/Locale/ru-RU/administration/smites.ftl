@@ -139,3 +139,5 @@ admin-smite-omni-accent-name = Омни-акцент
 
 ## Smite descriptions
 admin-smite-omni-accent-description = Заставляет цель говорить почти со всеми возможными акцентами.
+admin-smite-blunt-gib-name = Гибнуть
+admin-smite-blunt-gib-description = Разрушает игрока до состояния кровавой лужи.

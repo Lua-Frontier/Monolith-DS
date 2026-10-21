@@ -6,3 +6,9 @@ gas-deposit-drill-system-examined-amount = Экстрактор сообщает
         *[other] [color={$statusColor}]{GASQUANTITY($value)}[/color] осталось.
     }
 gas-deposit-extraction-rate = скорость извлечения
+
+gas-deposit-drill-system-examined-yield = Экстрактор сообщает, что осталось [color={ $statusColor }]{ NATURALFIXED($yield, 1) }%[/color]{
+    $hitMinimum ->
+        [false] запасов.
+        *[other] запасов, и достигнуты глубокие резервы.
+    }

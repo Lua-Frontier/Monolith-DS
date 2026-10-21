@@ -1,0 +1,14 @@
+thermobath-menu-current-temperature = ПЛИТА (K)
+thermobath-menu-solution-temperature = РАСТВОР (K)
+thermobath-menu-setpoint = УСТАВКА (K)
+thermobath-menu-operation-mode = ВЫБОР РЕЖИМА
+thermobath-menu-mode-cooling = ОХЛАЖДЕНИЕ
+thermobath-menu-mode-auto = АВТО
+thermobath-menu-mode-heating = НАГРЕВ
+thermobath-menu-no-beaker = МЕНЗУРКА НЕ ОБНАРУЖЕНА
+thermobath-menu-status-cooling = ОХЛАЖДЕНИЕ
+thermobath-menu-status-heating = НАГРЕВ
+thermobath-menu-status-power = ПИТАНИЕ
+thermobath-menu-temperature-adjust = РЕГУЛИРОВКА
+thermobath-menu-footer-warning = ОПАСНО: ГОРЯЧО!
+thermobath-menu-footer-manufacturer = Лабораторное оборудование NanoTrasen

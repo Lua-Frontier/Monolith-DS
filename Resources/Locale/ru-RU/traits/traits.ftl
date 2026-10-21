@@ -45,3 +45,5 @@ trait-clumsy-name = Неуклюжий
 trait-clumsy-desc = Ты очень неуклюжий! Некоторые действия, например стрельба, даются сложнее.
 trait-painnumbness-name = Невосприимчивость к боли
 trait-painnumbness-desc = Вы не чувствуете боли и не осознаёте, насколько вы ранены.
+trait-russian-name = Russian accent
+trait-russian-desc = You reek of vodka smell.

@@ -1,0 +1,13 @@
+user-action-control-nothing = Здесь пока нечего отображать.
+user-action-control-tab-status = Статус
+user-action-control-tab-emote = Эмоции
+user-action-control-tab-verbs = Действия
+user-action-control-tab-actions = Способности
+user-action-control-tab-config = Настройки
+ui-config-menu-disconnect = Отключиться
+ui-config-menu-quit = Выйти
+ui-config-menu-options = Опции
+ui-config-menu-crafting = Крафт
+ui-config-menu-admin = Админ
+ui-config-menu-sandbox = Песочница
+ui-config-menu-ahelp = Админ-помощь

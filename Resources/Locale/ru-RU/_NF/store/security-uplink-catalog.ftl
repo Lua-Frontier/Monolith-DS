@@ -6,6 +6,7 @@ store-category-secammo = Боеприпасы
 store-category-secexplosives = Взрывчатка
 store-category-secbundles = Наборы
 store-category-secvouchers = Ваучеры
+store-category-secmaterials = Материалы
 
 # Скафандры
 uplink-security-hardsuit-name = Бронзовый Патрульный Скафандр ТСФ
@@ -174,3 +175,9 @@ uplink-security-nonlethalarmory-name = Ящик нелетального воо�
 uplink-security-nonlethalarmory-desc = Для тех, кто предпочитает усмирять, а не устранять. В набор входит 4 "Охотника, 5 "Станнеров", 5 "Станнеров-пулемётов", 4 "Пульса", 4 "Силовика", 4 "Лектера" и 4 "Вулкана". Всё оружие в наборе использует травматические патроны.
 uplink-security-trackingdart-bundle-name = Набор Отслеживания
 uplink-security-trackingdart-bundle-desc = В комплект входит гранатомёт типа «Chine Lake», 3 отслеживающих дротиков и 5 пинпоинтера к ним.
+
+
+uplink-security-implanter-tsf-name = Имплантер радио ТСФ
+uplink-security-implanter-tsf-desc = Вживляет имплант радио ТСФ, позволяя вести скрытую связь без гарнитуры.
+uplink-security-MobBoomroach-name = Радио подкрепления Бумракана
+uplink-security-MobBoomroach-desc = Ваш собственный друг Бумракан, присланный Высшим Командованием и оснащённый ЭМИ-China.

@@ -73,15 +73,16 @@ cargo-funding-alloc-console-label-help-non-adjustible = Карго получа�
 cargo-funding-alloc-console-label-help-adjustible = Остаток от источников не из ящиков отделов распределяется как указано ниже:
 cargo-funding-alloc-console-button-save = Сохранить изменения
 cargo-funding-alloc-console-label-save-fail = [bold]Распределение доходов недействительно![/bold] [color=red]({$positive ->
-[1] +
-*[-1] -
+    [1] +
+    *[-1] -
 }{$val}%)[/color]
 cargo-acquisition-slip-body = [head=3]Детали заказа[/head]
-{"[bold]Продукт:[/bold]"} {$product}
-{"[bold]Описание:[/bold]"} {$description}
-{"[bold]Цена за единицу:[/bold"}] ${$unit}
-{"[bold]Количество:[/bold]"} {$amount}
-{"[bold]Стоимость:[/bold]"} ${$cost}
-{"[head=3]Детали покупки[/head]"}
-{"[bold]Заказчик:[/bold]"} {$orderer}
-{"[bold]Причина:[/bold]"} {$reason}
+    {"[bold]Продукт:[/bold]"} {$product}
+    {"[bold]Описание:[/bold]"} {$description}
+    {"[bold]Цена за единицу:[/bold"}] ${$unit}
+    {"[bold]Количество:[/bold]"} {$amount}
+    {"[bold]Стоимость:[/bold]"} ${$cost}
+    {"[head=3]Детали покупки[/head]"}
+    {"[bold]Заказчик:[/bold]"} {$orderer}
+    {"[bold]Причина:[/bold]"} {$reason}
+cargo-console-nf-no-bank-account = Банковский счёт не найден

@@ -55,3 +55,4 @@ shuttle-console-hide-target = Показ
 shuttle-console-hide-target-description = Переключает видимость целевой точки на радаре.
 shuttle-console-target-name = Цель
 shuttle-console-map-track = ⌖
+shuttle-console-company-unknown = НЕПРИВЯЗАННЫЙ К КОМПАНИИ

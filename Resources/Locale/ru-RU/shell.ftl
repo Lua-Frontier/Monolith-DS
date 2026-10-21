@@ -55,3 +55,6 @@ shell-argument-number-invalid = Аргумент { $index } должен быт�
 # Hints
 shell-argument-username-hint = <username>
 shell-argument-username-optional-hint = [username]
+shell-need-exactly-zero-arguments = Эта команда не принимает аргументов.
+shell-missing-required-permission = Для этой команды вам нужно разрешение { $perm }!
+shell-entity-target-lacks-component = У целевой сущности нет компонента { INDEFINITE($componentName) } { $componentName }

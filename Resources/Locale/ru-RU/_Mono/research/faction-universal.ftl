@@ -9,3 +9,9 @@ research-technology-universal-advanced-light-fighter-ordinance = Произво�
 
 research-technology-universal-armorplates-1 = Стандартные бронеплиты
 research-technology-universal-armorplates-2 = Продвинутые бронеплиты
+
+
+
+
+research-technology-universal-sandbox-missiles = Производство крылатых ракет
+research-technology-universal-90mm-ammo = Производство сверхкрупных снарядов

@@ -31,5 +31,7 @@ ui-vote-trusted-users-notice = Этот тип голосования досту
 # Warning to not abuse a specific vote option.
 ui-vote-abuse-warning = Внимание!
   Злоупотребление голосованием за кик может привести к бессрочному бану!
+cmd-votemenu-desc = Открывает меню голосования.
+cmd-votemenu-help = Использование: votemenu
 
 # Hue hue hue

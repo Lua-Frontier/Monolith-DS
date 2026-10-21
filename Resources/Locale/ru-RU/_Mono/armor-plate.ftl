@@ -32,3 +32,10 @@ armor-plate-ratios-display =
         *[other] Для {$dmgType} не должно быть такого значения поглощения!
     }
 armor-plate-stamina-value = Наносит [color=yellow]{$multiplier}%[/color] поглощённого урона как урон по выносливости.
+
+armor-plate-multiplier-display = и вычитает [color=yellow]{ $multiplier }%[/color] от исходного значения урона из прочности.
+armor-plate-multiplier-none = и не повреждает пластину.
+armor-plate-stamina-source-absorb = [color=cyan]Поглощённый[/color]
+armor-plate-stamina-concat = и
+armor-plate-stamina-source-amplified = [color=fuchsia]Усиленный[/color]
+armor-plate-stamina-source-raw = [color=red]Весь входящий[/color]

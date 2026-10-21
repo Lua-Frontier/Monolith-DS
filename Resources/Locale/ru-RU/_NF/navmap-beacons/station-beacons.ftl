@@ -42,3 +42,4 @@ station-beacon-break-room = Комната отдыха
 station-beacon-power-nexus = Энергоузел
 station-beacon-decommissioned-reactor = Списанный реактор
 station-beacon-gas-sale = Продажа газа
+station-beacon-dock = Док

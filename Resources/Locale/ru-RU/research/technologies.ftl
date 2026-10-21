@@ -79,3 +79,4 @@ research-technology-bluespace-time-manipulation = Блюспейс манипу�
 research-technology-launcher-syringe = Шприцемёт
 research-technology-clowning-utilities = Клоунские принадлежности
 research-technology-ai = Программирование ИИ
+research-technology-ore-silo = Менеджмент материалов

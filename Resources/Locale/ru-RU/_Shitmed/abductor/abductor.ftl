@@ -6,3 +6,4 @@ abductors-weapon-restricted-4 = Вы нюхаете инопланетное о�
 abductors-gizmo-restricted-1 = Вы крутите гаджет в руках.
 abductors-gizmo-restricted-2 = Вы понятия не имеете, как эта штука работает.
 abductor-gun-restricted-1 = Вы пытаетесь нажать на спусковой крючок, но палец не влезает.
+abductors-gizmo-restricted = Крутит гаджет в руке.

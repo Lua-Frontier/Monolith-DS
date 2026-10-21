@@ -1,0 +1,1 @@
+health-analyzer-window-entity-uncloneable-text = [color=yellow]Обнаружена неизвестная генетическая последовательность! Пациента невозможно клонировать.[/color]

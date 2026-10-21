@@ -89,3 +89,6 @@ research-technology-turret-two-ap = Бронебойные миномётные 
 research-technology-turret-two-he = Фугасные миномётные снаряды
 research-technology-turret-two-pf = Бесконтактные миномётные снаряды
 research-technology-turret-teslalaser = Компактное хранение энергии
+
+gunnery-server-examine-pacifist-grid = [color=crimson]Объект, к которому он прикреплён, не может использовать корабельное оружие![/color]
+gunnery-hardpoint-examine-detail = Требуется [color={ $sizeColor }]{ $size }[/color] [color={ $typeColor }]{ $type }

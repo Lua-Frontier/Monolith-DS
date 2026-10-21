@@ -196,3 +196,4 @@ guide-entry-thieves = Воры
 guide-entry-wizard = Волшебник
 guide-entry-rules-mrp-m0 = Правила MRP
 guide-entry-rules-m1 = M1
+guide-entry-ressureregulator = Регулятор давления

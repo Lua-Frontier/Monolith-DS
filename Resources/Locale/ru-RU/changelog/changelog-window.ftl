@@ -12,3 +12,5 @@ changelog-tab-title-Changelog = Список изменений
 changelog-tab-title-Admin = Админское
 changelog-version-unknown = Неизвестная версия
 changelog-tab-title-Maps = Карты
+cmd-changelog-desc = Открывает список изменений.
+cmd-changelog-help = Использование: changelog

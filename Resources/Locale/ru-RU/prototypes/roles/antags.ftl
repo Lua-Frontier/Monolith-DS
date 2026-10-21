@@ -29,3 +29,4 @@ roles-antag-generic-team-antagonist-name = Командный антагонис
 roles-antag-generic-silicon-antagonist-name = дефектный
 roles-antag-paradox-clone-name = Парадокс клон
 roles-antag-paradox-clone-objective = Пространственно-временная аномалия телепортировала вас в другую реальность! Теперь вы должны найти своего аналога, убить и заменить его.
+roles-antag-generic-solo-antagonist-name = Одиночный антагонист

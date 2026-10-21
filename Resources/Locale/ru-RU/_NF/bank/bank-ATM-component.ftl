@@ -37,3 +37,4 @@ bank-atm-menu-withdraw-amount = Введите сумму
 
 bank-ATM-cashSlot = Купюроприёмник
 station-bank-ATM-cashSlot = Купюроприёмник
+bank-atm-menu-untaxed = Без налога!

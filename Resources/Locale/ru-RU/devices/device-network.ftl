@@ -49,3 +49,7 @@ device-frequency-prototype-name-mothership = Материнский корабл
 
 ## camera frequencies
 device-address-prefix-turret = ТРЛ-
+device-frequency-prototype-name-surveillance-camera-tsf = TSFMC Cameras
+device-frequency-prototype-name-surveillance-camera-Rogue = PDV Cameras
+device-frequency-prototype-name-surveillance-camera-USSP = USSP Cameras
+device-frequency-prototype-name-surveillance-camera-xenoborgs = Xenoborg camera

@@ -29,3 +29,5 @@ traitor-role-codewords-short = Кодовые слова: { $codewords }.
 traitor-role-uplink-code-short = Ваш код аплинка: { $code }. Установите его в качестве рингтона КПК для доступа к аплинку.
 traitor-role-uplink-implant = Ваш имплант аплинка активирован, откройте его через панель быстрого доступа.
 traitor-role-uplink-implant-short = Ваш аплинк имплантирован. Откройте его через панель быстрого доступа.
+objective-issuer-pdv = [color=tan]Военное командование Нордфолла[/color]
+objective-issuer-tsf = [color=cornflowerblue]УСФ[/color]

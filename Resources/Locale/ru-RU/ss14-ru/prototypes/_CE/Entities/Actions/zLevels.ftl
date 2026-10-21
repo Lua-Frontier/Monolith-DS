@@ -1,8 +1,8 @@
 ent-CEActionZLevelUp = Подняться вверх
-    .desc = Перейти на один Z уровень выше
+    .desc = Перейти на один уровень выше
 
-ent-CEActionZLevelDowne = опуститься вниз
-    .desc = Перейти на один Z уровень ниже
+ent-CEActionZLevelDown = опуститься вниз
+    .desc = Перейти на один уровень ниже
 
 ent-CEActionToggleLookUp = Посмотреть вверх
     .desc = Ты поднимаешь голову и смотришь в небо.

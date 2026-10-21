@@ -11,3 +11,4 @@ contraband-examine-text-PirateTarget = [color=yellow]Этот предмет м�
 contraband-examine-text-Class3MobHuman =  [color=magenta]Этот человек считается слишком опасным для содержания в неволе и считается контрабандой 3-го класса. Содержать его живым или мертвым в неволе незаконно.[/color]
 contraband-examine-text-Class3MobCreature = [color=magenta]Это существо считается слишком опасным для содержания в неволе и считается контрабандой 3-го класса. Содержать его живым или мертвым в неволе незаконно.[/color]
 contraband-examine-text-Class3MobConstruct = [color=magenta]Этот искуственный интеллект считается слишком опасным для содержания в неволе и считается контрабандой 3-го класса. Содержать его живым или мертвым в неволе незаконно.[/color]
+contraband-examine-text-Class3PirateHighValue = [color=crimson] Этот предмет Авангарда Нордфолла считается особо ценным контрабандным товаром класса 3, и его хранение незаконно.[/color]

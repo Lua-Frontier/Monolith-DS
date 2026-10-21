@@ -366,5 +366,18 @@ accent-bogan-words-replace-77 = завали хлебало
 
 accent-bogan-words-78 = уйди
 accent-bogan-words-78-2 = свали
+
 accent-bogan-words-78-3 = вали отсюда
 accent-bogan-words-replace-78 = отвали
+
+accent-bogan-words-29 = сигарета
+accent-bogan-words-replace-29 = сига
+
+accent-bogan-words-33 = косяк
+accent-bogan-words-replace-33 = дымок
+
+accent-bogan-words-71 = правда?
+accent-bogan-words-replace-71 = серьёзно?
+
+accent-bogan-words-79 = сб
+accent-bogan-words-replace-79 = мент

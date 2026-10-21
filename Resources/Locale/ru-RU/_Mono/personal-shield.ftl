@@ -4,3 +4,4 @@ personal-shield-examine-broken = Щит [color=red]выключается[/color
 personal-shield-examine-offline = Щит [color=red]разрушен[/color]. { $seconds } секунд до перезапуска.
 personal-shield-examine-down = Щит [color=darkgray]выключен[/color].
 personal-shield-toggle-fractured = Щит перезаряжается. осталось { $seconds } секунд.
+personal-shield-toggle-not-equipped = Щит должен быть экипирован, прежде чем его можно будет включить.

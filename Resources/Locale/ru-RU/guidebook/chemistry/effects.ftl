@@ -352,18 +352,51 @@ reagent-effect-guidebook-plant-robust-harvest =
        *[other] повышают
     } потенцию растения путём { $increase } до максимума в { $limit }. Приводит к тому, что растение теряет свои семена, когда потенция достигает { $seedlesstreshold }. Попытка повысить потенцию свыше { $limit } может вызвать снижение урожайности с вероятностью 10%
 reagent-effect-guidebook-flash-reaction-effect = { $chance ->
-[1] Вызывает
-*[other] вызывают
+    [1] Вызывает
+    *[other] вызывают
 } ослепляющую вспышку
 reagent-effect-guidebook-artifact-unlock = { $chance ->
-[1] Помогает
-*[other] помогают
+    [1] Помогает
+    *[other] помогают
 } открыть инопланетный артефакт.
 reagent-effect-guidebook-plant-seeds-add = { $chance ->
-[1] Восстанавливает
-*[other] восстанавливают
+    [1] Восстанавливает
+    *[other] восстанавливают
 } семена растения
 reagent-effect-guidebook-plant-seeds-remove = { $chance ->
-[1] Удаляет
-*[other] удаляют
+    [1] Удаляет
+    *[other] удаляют
 } семена растения
+reagent-effect-guidebook-even-health-change =
+    { $chance ->
+        [1] { $healsordeals ->
+            [heals] Равномерно лечит
+            [deals] Равномерно наносит
+            *[both] Равномерно изменяет здоровье на
+        }
+        *[other] { $healsordeals ->
+            [heals] равномерно лечит
+            [deals] равномерно наносит
+            *[both] равномерно изменяет здоровье на
+        }
+    } { $changes }
+reagent-effect-guidebook-revert-polymorph =
+    { $chance ->
+        [1] Возвращает
+        *[other] возвращает
+    } метаболизатору облик из { $entityname }
+reagent-effect-guidebook-add-to-chemicals =
+    { $chance ->
+        [1] { $deltasign ->
+                [1] Добавляет
+                *[-1] Удаляет
+            }
+        *[other]
+            { $deltasign ->
+                [1] добавляет
+                *[-1] удаляет
+            }
+    } { NATURALFIXED($amount, 2) }ед. { $reagent } { $deltasign ->
+        [1] в
+        *[-1] из
+    } раствор

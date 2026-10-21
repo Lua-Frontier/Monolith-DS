@@ -272,3 +272,21 @@ ghost-role-information-gingerbread-name = Пряничный человечек
 ghost-role-information-gingerbread-description = Существо чисто праздничного духа.
 ghost-role-information-wizard-name = Волшебник
 ghost-role-information-wizard-desc = ТЫ ВОЛШЕБНИК! Покажите станции, на что способна ваша магия.
+ghost-role-information-moproach-name = Швабромоль
+ghost-role-information-moproach-description = Милая тараканомоль, на лапках которой ещё более милые башмачки в виде швабр.
+ghost-role-information-oworoach-name = OwOмоль
+ghost-role-information-oworoach-description = Очень милая, но озорная тараканомоль. Взрывной характер.
+ghost-role-information-imperiroach-name = ИмпериМоль
+ghost-role-information-imperiroach-description = Высокотренированный и преданный питомец оперативника Авангарда Нордфолла, оснащённый микробомбой. Служи своему хозяину до смерти!
+ghost-role-information-imperiroach-rules = Вы — [color=red][bold]Команда Авангарда Нордфолла[/bold][/color], работайте с агентом, который вас призвал.
+ghost-role-information-boomroach-name = БумМоль
+ghost-role-information-boomroach-description = Последняя разработка Высшего командования ТСФ, а возможно, и клоун с бутылкой клея.
+ghost-role-information-boomroach-rules = Вы — [color=red][bold]Команда ТСФ[/bold][/color], вместе с агентом, который вас призвал.
+ghost-role-information-mothroachmustard-name = Горчичная тараканомоль
+ghost-role-information-mothroachmustard-description = Восхитительный результат скрещивания мировыми поварами мяса с соусом.
+ghost-role-information-mothroachleopard-name = Леопардовая тараканомоль
+ghost-role-information-mothroachleopard-description = Очаровательный результат многочисленных попыток скрестить насекомых с хищниками.
+ghost-role-information-mothroachcecropia-name = Цекропиевая тараканомоль
+ghost-role-information-mothroachcecropia-description = Очаровательный результат многочисленных попыток скрестить род семейства крапивных с тараканами.
+ghost-role-information-mothroachlunar-name = Лунная тараканомоль
+ghost-role-information-mothroachlunar-description = Кто-то оставил моль под лунным светом.

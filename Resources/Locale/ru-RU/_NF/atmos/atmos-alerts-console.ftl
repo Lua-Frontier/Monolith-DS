@@ -1,0 +1,11 @@
+atmos-alerts-window-tab-gaslocks = Газовые шлюзы
+atmos-alerts-window-direction-label = Направление
+atmos-alerts-window-direction-outwards = Наружу
+atmos-alerts-window-direction-inwards = Внутрь
+atmos-alerts-window-enabled-label = Состояние
+atmos-alerts-window-enabled-on = Работает
+atmos-alerts-window-enabled-off = Выкл.
+atmos-alerts-window-docked-label = Пристыкован?
+atmos-alerts-window-docked-on = Отстыковать
+atmos-alerts-window-docked-off = Нет
+atmos-alerts-window-gaslock-gases-label = Внутренние газы

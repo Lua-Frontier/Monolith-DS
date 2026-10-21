@@ -59,6 +59,11 @@ ghost-role-information-sigmis-rules = Ты, созданный Синдикат�
 
 ghost-role-information-cult-cat-name = Кот культа крови
 ghost-role-information-cult-cat-description = Основал Кровавый культ от скуки.
+ghost-role-information-cult-cat-rules = Вы — [color=yellow][bold]Свободный агент[/bold][/color] и вольны выбирать свои действия.
+                                        Учтите, что [color=yellow]все правила сервера по-прежнему действуют.[/color] Кроме того:
+                                        - [color=red]НЕ[/color] повреждайте шаттлы игроков и их содержимое.
+                                        - [color=red]НЕ[/color] превращайте игроков в фарш. Когда они мертвы, оставьте их в покое.
+
 ghost-role-information-elcapo-name = Эль Капо
 ghost-role-information-elcapo-description = Оказался в тюрьме после многолетних кошачьих преступлений.
 
@@ -80,3 +85,4 @@ ghost-role-information-one-star-unit-dungeon-description = [11201010111002] Ра
 
 nf-ghost-role-information-buddy-name = Друг
 nf-ghost-role-information-buddy-description = Вы были созданы из набора "Собери друга". Станьте чьим-то лучшим другом сегодня!
+

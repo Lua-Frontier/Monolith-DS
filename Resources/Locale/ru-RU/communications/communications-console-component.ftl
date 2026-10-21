@@ -28,3 +28,4 @@ comms-console-announcement-title-wizard = Волшебник
 
 # Mono
 comms-console-announcement-title-rogue = Авангард Нордфолла
+comms-console-announcement-title-mieyo = Производственный концерн «Мийо»

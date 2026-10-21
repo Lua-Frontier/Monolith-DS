@@ -27,3 +27,7 @@ lathe-menu-silo-linked-message = Связано с хранилищем мате
 lathe-menu-fabricating-message = Производится...
 lathe-menu-materials-title = Материалы
 lathe-menu-queue-title = Очередь производства
+lathe-reagent-dispense-no-container = Жидкость выливается из { THE($name) } на пол!
+lathe-menu-result-reagent-display = { $reagent } ({ $amount }ед.)
+lathe-menu-entity-amount-missing = { $amount } { $material } ([color=red]не хватает { $missingAmount }[/color])
+lathe-menu-reagent-amount-missing = { $amount }ед. { $material } ([color=red]не хватает { $missingAmount }ед.[/color])

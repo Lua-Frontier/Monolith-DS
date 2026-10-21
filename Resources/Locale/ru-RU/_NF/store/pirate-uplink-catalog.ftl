@@ -6,6 +6,7 @@ store-category-pirateammo = Боеприпасы
 store-category-pirateexplosives = Взрывчатка
 store-category-pdvvouchers = Ваучеры
 store-category-pirategambling = Казино
+store-category-pdvmaterials = Материалы
 
 # Скафандры
 uplink-pirate-hardsuit-name = Пиратский Скафандр

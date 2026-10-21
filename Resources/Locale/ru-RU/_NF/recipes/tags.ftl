@@ -12,3 +12,4 @@ construction-graph-tag-ore = руда
 construction-graph-tag-crystal-orange = оранжевый кристалл
 construction-graph-tag-mothroach-hide = шкура таракамоли
 construction-graph-tag-syringe = шприц
+construction-graph-tag-hotdog = хотдог

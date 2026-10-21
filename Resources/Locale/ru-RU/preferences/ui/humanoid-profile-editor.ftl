@@ -60,3 +60,7 @@ humanoid-profile-editor-trait-count-hint = Доступно очков: [{ $curr
 trait-category-disabilities = Ограничения
 trait-category-speech = Акцент
 trait-category-quirks = Причуды
+humanoid-profile-editor-saved-items-tab = Постоянство
+humanoid-profile-editor-saved-items-header = У вашего персонажа сохранены следующие предметы:
+humanoid-profile-editor-saved-item-sticky = Этот предмет липкий и останется сохранённым после спавна.
+humanoid-profile-editor-saved-item-round-end = Этот предмет будет сохранён снова, если он останется у вас к концу раунда.

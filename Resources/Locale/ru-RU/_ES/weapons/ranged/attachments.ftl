@@ -14,3 +14,7 @@ es-gun-attachments-inspect-modifier-recovery = Влияет на восстан�
 es-gun-attachments-inspect-modifier-recoil = Влияет на увеличение отдачи: [bold][color={$color}]{NATURALFIXED($modifier, 2)}x[/color][/bold].
 es-gun-attachments-inspect-modifier-minspread = Влияет на минимальный разлёт: [bold][color={$color}]{NATURALFIXED($modifier, 2)}x[/color][/bold].
 es-gun-attachments-inspect-modifier-maxspread = Влияет на максимальный разлёт: [bold][color={$color}]{NATURALFIXED($modifier, 2)}x[/color][/bold].
+es-gun-attachments-inspect-modifier-recovery-wield = - Влияет на бонус восстановления отдачи в руках на [bold][color={ $color }]{ NATURALFIXED($modifier, 2) }x[/color][/bold].
+es-gun-attachments-inspect-modifier-recoil-wield = - Влияет на бонус увеличения отдачи в руках на [bold][color={ $color }]{ NATURALFIXED($modifier, 2) }x[/color][/bold].
+es-gun-attachments-inspect-modifier-minspread-wield = - Влияет на бонус минимального разброса в руках на [bold][color={ $color }]{ NATURALFIXED($modifier, 2) }x[/color][/bold].
+es-gun-attachments-inspect-modifier-maxspread-wield = - Влияет на бонус максимального разброса в руках на [bold][color={ $color }]{ NATURALFIXED($modifier, 2) }x[/color][/bold].

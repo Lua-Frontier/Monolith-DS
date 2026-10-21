@@ -28,3 +28,5 @@ role-subtype-survivor = Выживший
 role-subtype-subverted = Дефектный
 role-subtype-paradox-clone = Парадокс
 role-subtype-wizard = Маг
+role-subtype-xenoborg = Ксеноборг
+role-subtype-xenoborg-core = Ядро ксеноборгов

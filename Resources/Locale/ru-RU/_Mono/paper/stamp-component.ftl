@@ -9,3 +9,4 @@ stamp-component-stamped-name-pdv-overwatch = Локальное наблюден
 stamp-component-stamped-name-pdv-vizier = Командор Авангарда
 stamp-component-stamped-name-pdv-asvaran = Полевой командир Авангарда
 stamp-component-stamped-name-pdv-spasaka = Медик Авангарда
+stamp-component-stamped-name-mmc-liason = Связной «Мийо»

@@ -383,3 +383,5 @@ ui-options-combat-music-label = Боевая музыка
 ui-options-combat-music-volume = Громкость боевой музыки:
 ui-options-combat-music-windup = Задержка активации боевой музыки:
 ui-options-combat-music-winddown = Задержка деактивации боевой музыки:
+ui-options-combat-music-sec-format = { $value } сек.
+ui-options-combat-music = Музыка боя

@@ -1,0 +1,11 @@
+cmd-ftldisk-desc = Создаёт диск FTL-координат для полёта к карте, на которой находится указанный EntityID
+cmd-ftldisk-help = ftldisk [EntityID]
+cmd-ftldisk-no-transform = У сущности { $destination } нет компонента Transform!
+cmd-ftldisk-no-map = Сущность { $destination } не находится на карте!
+cmd-ftldisk-no-map-comp = Сущность { $destination } почему-то находится на карте { $map } без компонента карты.
+cmd-ftldisk-map-not-init = Сущность { $destination } находится на карте { $map }, которая не инициализирована! Проверьте, безопасно ли её инициализировать, затем инициализируйте карту, иначе игроки застрянут на месте!
+cmd-ftldisk-map-paused = Сущность { $desintation } находится на карте { $map }, которая приостановлена! Сначала снимите паузу с карты, иначе игроки застрянут на месте.
+cmd-ftldisk-planet = Сущность { $desintation } находится на планетарной карте { $map }, и ей потребуется точка FTL. Возможно, она уже существует.
+cmd-ftldisk-already-dest-not-enabled = Сущность { $destination } находится на карте { $map }, у которой уже есть FTLDestinationComponent, но он не включён! Установите это вручную для безопасности.
+cmd-ftldisk-requires-ftl-point = Сущность { $destination } находится на карте { $map }, для полёта к которой требуется точка FTL! Возможно, она уже существует.
+cmd-ftldisk-hint = Сетевой ID карты

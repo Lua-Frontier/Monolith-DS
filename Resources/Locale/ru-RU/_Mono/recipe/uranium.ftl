@@ -1,8 +1,8 @@
 recipe-uranium-processing-name = обработка урана
-recipe-uranium-processing-description = Отделение делящихся изотопов из урановых слитков. Высокая вероятность получения обеднённого урана.
+recipe-uranium-processing-description = Отделение делящихся изотопов из урана для получения объединённого, а также минимального количества обогащённого урана.
 
-recipe-uranium-processing-advanced-name = обработка урана и обогащенние плазмой
-recipe-uranium-processing-advanced-description = Использование смеси урана и плазмы для получения делящегося урана с повышенной вероятностью.
+recipe-uranium-processing-advanced-name = обогащенние урана
+recipe-uranium-processing-advanced-description = Использование смеси урана и плазмы для получения объединённого, а также небольшого количества обогащённого урана.
 
-recipe-uranium-reprocessing-name = переработка урана
-recipe-uranium-reprocessing-description = Использование обеднённого урана для получения неочищенного урана.
+recipe-uranium-reprocessing-name = разложение урана
+recipe-uranium-reprocessing-description = Использование объединённого урана для получения неочищенного урана.

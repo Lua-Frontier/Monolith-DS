@@ -22,3 +22,17 @@ uplink-faction-lathe-desc = Станок, способный создавать 
 # Обман 
 uplink-letoferol-name = Шприц летоферола
 uplink-letoferol-desc = Один шприц способен уничтожить целый сектор... Задумайся... Может не стоит этого делать?
+
+
+
+uplink-faction-materials-basic-name = Ящик базовых материалов
+uplink-faction-materials-basic-desc = Ящик, содержащий по 50 листов стали, пластика, стекла и ткани.
+
+uplink-faction-materials-industrial-name = Ящик промышленных материалов
+uplink-faction-materials-industrial-desc = Ящик, содержащий по 50 листов пластали, плазмы, урана и дюрткани.
+
+uplink-faction-materials-advanced-name = Ящик продвинутых материалов
+uplink-faction-materials-advanced-desc = Ящик, содержащий по 50 листов плазмы, урана, золота и серебра.
+
+uplink-faction-materials-exotic-name = Ящик экзотических материалов
+uplink-faction-materials-exotic-desc = Ящик, содержащий 10 листов пластитана, 5 слитков объединённого урана и 3 пластины обогащённого урана.

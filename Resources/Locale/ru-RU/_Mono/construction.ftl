@@ -1,0 +1,1 @@
+construction-fissile-deconstruction-warning = Вы чувствуете, как ваша кожа начинает гореть. Это не лучшая идея ни в малейшей степени.

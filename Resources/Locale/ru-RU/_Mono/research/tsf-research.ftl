@@ -26,3 +26,11 @@ research-technology-tsfmc-super-weapons = Современное вооруже�
 research-technology-tsfmc-synthalloy = Экспериментальное материаловедение
 research-technology-tsfmc-advanced-module = Разработка продвинутых модулей киборгов ТСФ
 research-technology-tsfmc-experimental-equipment = Экспериментальное снаряжение ТСФ
+
+
+
+research-technology-tsfmc-motion-detector = Продвинутое сканирование радаров
+research-technology-tsfmc-super-ballistics = Модернизация вооружения
+research-technology-tsfmc-sandevistan = Сердечно-сосудистая модифиакция
+research-technology-tsfmc-shunt = Продвинутая кибернетика
+research-technology-tsfmc-large-explosives = Тяжёлые бомбы ТСФ

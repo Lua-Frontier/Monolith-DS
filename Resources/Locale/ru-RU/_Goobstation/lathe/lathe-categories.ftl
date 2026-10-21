@@ -8,3 +8,4 @@ lathe-category-mechs-durand = Дюранж
 lathe-category-mechs-equipment = Оборудование для механоидов
 lathe-category-mechs-weapons = Оружие для механоидов
 lathe-category-modsuit = МОДы
+lathe-category-mechs-hamptr = Х.О.М.Я.К.

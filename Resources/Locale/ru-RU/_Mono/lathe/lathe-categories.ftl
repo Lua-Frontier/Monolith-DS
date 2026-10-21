@@ -44,3 +44,9 @@ lathe-category-guns-energy = Энергетическое оружие
 lathe-category-guns-explosive = Взрывчатка
 lathe-category-guns-antitank = Противотанковое оружие
 lathe-category-attachments = Навесное оборудование
+
+
+lathe-category-componentmaterials = Упакованные компоненты
+lathe-category-components = Промышленные компоненты
+lathe-category-altrecipes = Альтернативные рецепты
+lathe-category-tradecrates = Торговые ящики

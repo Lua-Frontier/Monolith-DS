@@ -1,4 +1,4 @@
-﻿# Poggers examine system
+# Poggers examine system
 
 examine-name = Это же [bold]{$name}[/bold]!
 examine-can-see = Осмотрев {OBJECT($ent)}, вы можете увидеть:
@@ -46,3 +46,4 @@ comp-hands-examine-empty-selfaware = Вы ничего не держите.
 comp-hands-examine-selfaware = Вы держите { $items }.
 
 humanoid-appearance-component-examine-selfaware = Вы - { $species } { $age }.
+id-card-examine-full = • { CAPITALIZE(POSS-ADJ($wearer)) } ID: [bold]{ $nameAndJob }[/bold].

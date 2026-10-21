@@ -5,3 +5,6 @@ device-frequency-prototype-name-surveillance-camera-interdyne = Камеры н�
 
 ## управление дронами
 device-frequency-prototype-name-drone-control = Управление дронами
+device-frequency-prototype-name-surveillance-camera-vanguard = Камеры наблюдения Авангарда
+device-frequency-prototype-name-surveillance-camera-solarian = Камеры наблюдения Солариан
+device-frequency-prototype-name-surveillance-camera-mieyo = Камеры наблюдения Миейо

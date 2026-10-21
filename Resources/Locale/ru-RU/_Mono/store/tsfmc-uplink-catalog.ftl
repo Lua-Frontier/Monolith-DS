@@ -129,5 +129,8 @@ uplink-security-hardsuit-m82b-desc = Вариант M-82C для защиты о
 uplink-security-hardsuit-m82c-name = Скафандр M-82C
 uplink-security-hardsuit-m82c-desc = Базовая защитная система для опасных сред (например, космоса). Выполняет роль бронежилета в оснащении почти каждого морпеха ТСФ.
 
-uplink-exosuit-aurora-name = M-320X «Аврора»
-uplink-exosuit-aurora-desc = Прототип экзоскелета для будущего ведения войны. Использует наномашины в базовом объеме для защиты владельца от вакуума и очень хорошо защищает от ВЧ-лезвий, при этом повышая мобильность владельца.
+uplink-security-wearable-cameratsf-name = Бодикамера
+uplink-security-wearable-cameratsf-desc = Камера, созданная для того, чтобы превратить ваше сражение за сектор в эпичный блокбастер на экранах начальства.
+
+uplink-HardBomb-TSF-name = Бомба «Хиросима»
+uplink-HardBomb-TSF-desc = Ответ ТСФ на недостаток взрывов.

@@ -8,7 +8,7 @@
 highlights-overseer = "Надзиратель", "КЦ", "Колосс"
 highlights-station-traffic-controller = "Дисп", "Трафик", "Диспатч", "КЦ", "Колосс", Диспетчер
 highlights-judge = "Judge", "Contraband", "КЦ", "Колосс"
-#highlights-service-worker = "Service", "Worker", "КЦ", "Колосс"
+highlights-service-worker = "Service", "Worker", "КЦ", "Колосс"
 highlights-janitor = "Jani", "Janitor", "КЦ", "Колосс"
 highlights-mail-carrier = "Посылка", "Почтальон", "Почта", "Письмо", "КЦ", "Колосс"
 highlights-cyborg = "борг", "киборг", "робот", "КЦ", "Колосс"

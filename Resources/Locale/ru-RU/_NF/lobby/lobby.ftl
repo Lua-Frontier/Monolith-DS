@@ -59,3 +59,5 @@ frontier-lobby-crew-class-prefix = [bold][color=#A88B5E]Тип:[/color][/bold]{"
 frontier-lobby-crew-size = [bold][color=#A88B5E]Размер:[/color][/bold] {$size}
 frontier-lobby-crew-class-advertisement = [bold][color=#A88B5E]Реклама:[/color][/bold]
 frontier-lobby-crew-only-hide-jobless = Скрыть суда без работы
+monolith-lobby-tsf-industry-subtext = Центр гражданских операций ТСФ
+monolith-lobby-tsf-industry-description = «Звёздное Благословение» — небольшой колониальный корабль, заполненный гражданскими старателями, желающими заработать на жизнь. Появляйтесь здесь как гражданский и зарабатывайте на жизнь, подчиняясь власти вашего правительства.

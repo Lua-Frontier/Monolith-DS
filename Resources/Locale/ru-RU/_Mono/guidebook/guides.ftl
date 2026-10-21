@@ -36,3 +36,7 @@ guide-entry-mechs = Механоиды
 guide-entry-s1mechs = Механоиды серии 1
 guide-entry-s2mechs = Механоиды серии 2
 guide-entry-s4mechs = Механоиды серии 4
+
+
+
+guide-entry-xenoborgs = Ксеноборги

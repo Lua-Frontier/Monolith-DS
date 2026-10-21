@@ -1,5 +1,3 @@
-# Contractor
-
 loadout-group-contractor-gloves = Перчатки
 loadout-group-contractor-head = Головные уборы
 loadout-group-contractor-jumpsuit = Униформа
@@ -25,6 +23,5 @@ loadout-group-contractor-pda = КПК
 loadout-group-contractor-backpack-items = Предметы в рюкзаке
 loadout-group-contractor-hand-items = Предметы в руке
 loadout-group-contractor-armorplates = Бронеплиты
-
-# Forge-add Merc
 loadout-group-merc-utility = Вооружение
+loadout-group-mieyo-products = Продукция ПКМ

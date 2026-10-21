@@ -14,3 +14,17 @@ job-description-tsf-borg = Наполовину человек, наполови
 
 # MARK: Авангард
 job-description-pdv-borg = Наполовину человек, наполовину машина. Следуйте своим законам, служите Авангарду и умоляйте инженеров об улучшениях.
+job-description-tsf-civilian = Survive in the Colossus sector, do what your government tells you and watch out for the opposition.
+job-description-pdv-civilian = Survive in the Colossus sector, obey the Sultanate and bring success to the Dynasty through your work.
+job-description-pdv-ambassador = Высокопоставленный сотрудник Авангарда.
+job-description-pdv-prince = Один из члена руководства Нордфолла. Обладает высокой властью.
+
+job-description-vg-infanteer = Выполняйте приказы сверху. Завершайте контракты. Получайте оплату.
+job-description-vg-lieutenant = Управляйте отрядами пехотинцев. Следите за соблюдением стандартов. Добивайтесь процветания и богатства.
+job-description-vg-commander = Ведите группировку к славе и богатству. Создавайте новые деловые связи. Покажите сектору, что ваши клыки не затупились.
+
+job-description-mmc-liason = Обеспечивайте прибыль для своих корпоративных руководителей, держите сотрудников в узде и обеспечивайте защиту активов ПКМ в секторе.
+job-description-mmc-security = Защищайте активы и сотрудников ПКМ в регионе от любых угроз.
+job-description-mmc-employee = Работайте под началом своего связного ради совета директоров компании ПКМ. Зарабатывайте деньги, отдавайте их компании и повторяйте.
+
+job-description-crocus-dockworker = Постарайтесь выжить под перекрёстным огнём двух сторон. У вас есть только базовое рабочее снаряжение.

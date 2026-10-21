@@ -1,0 +1,1 @@
+pacified-cannot-throw-hairball = Я ни за что не брошу { THE($projectile) }, вдруг кого-то стошнит?

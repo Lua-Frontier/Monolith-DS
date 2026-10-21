@@ -19,3 +19,4 @@ health-analyzer-window-scan-mode-active = АКТИВЕН
 health-analyzer-window-scan-mode-inactive = НЕАКТИВЕН
 health-analyzer-popup-scan-target = { CAPITALIZE($user) } пытается просканировать вас!
 health-analyzer-window-entity-unrevivable-text = [color=red]Обнаружено уникальное строение тела! Пациент не может быть реанимирован стандартными средствами![/color]
+health-analyzer-window-return-button-text = < Вернуться

@@ -19,3 +19,8 @@ research-technology-basic-economy = Базовая переработка ура
 research-technology-uranium-processing-advanced = Усовершенствованная переработка урана
 
 research-technology-drones-1 = Работа с дронами
+
+
+
+
+research-technology-processing-advanced = Продвинутая обработка материалов

@@ -28,3 +28,7 @@ nukeops-role-commander = Командир
 nukeops-role-agent = Агент
 nukeops-role-operator = Оператор
 nukeops-briefing = Ваша задача проста. Доставьте ядерную боеголовку и уйдите до её подрыва. Начать выполнение миссии.
+nukeops-tsfmajor = [color=cornflowerblue]ТСФ взорвали бомбу на станции Авангарда Нордфолла![/color]
+nukeops-pdvmajor = [color=goldenrod]Авангард Нордфолла взорвали бомбу на станции ТСФ![/color]
+nukeops-cond-nukeexplodedontsfstation = Ядерная бомба была взорвана на станции Авангарда Нордфолла.
+nukeops-cond-nukeexplodedonpdvstation = Ядерная бомба была взорвана на станции ТСФ.

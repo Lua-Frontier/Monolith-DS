@@ -7,3 +7,5 @@ melee-battery-examine =
         [few] удара
        *[other] ударов
     }.
+melee-inject-failed-armor = Ваш { $weapon } не может ввести инъекцию через броню!
+melee-inject-failed-jumpsuit = Вы не можете ввести инъекцию через его защитный костюм!

@@ -93,3 +93,12 @@ mono-tile-se-n-upper-half-tilt-plating = покрытие: SE-N, верхнее 
 mono-tile-se-w-upper-half-tilt-plating = покрытие: SE-W, верхнее полунаклонное
 mono-tile-sw-e-upper-half-tilt-plating = покрытие: SW-E, верхнее полунаклонное
 mono-tile-sw-n-upper-half-tilt-plating = покрытие: SW-N, верхнее полунаклонное
+
+
+tiles-bedrock-crocus = скальная порода Кросуса
+tiles-dirt-crocus = земля Кросуса
+tiles-grass-crocus = трава Кросуса
+tiles-redgrass-crocus = красная трава Кросуса
+tiles-concrete-crocus = бетон Кросуса
+tiles-concrete-smooth-crocus = гладкий бетон Кросуса
+tiles-concrete-mono-crocus = бетонная плита Кросуса

@@ -47,3 +47,5 @@ nf-pirate-description = Банда пиратов на свободе! Будь�
 
 nf-test-title = Тест
 nf-test-description = Режим, предназначенный для тестирования. Нет точек интереса и блюспейс-ивентов.
+adventure-webhook-list-no-entries = Записи не найдены.
+public-transit-instant = Прибытие в { $destination }. Следующий пункт назначения через { $waittime } секунд.

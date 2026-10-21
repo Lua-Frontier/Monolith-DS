@@ -106,3 +106,59 @@ marking-ChitinidLArmSpotted = Левая рука (Пятнистая)
 
 marking-ChitinidRArmSpotted-spotted_r_arm = Правая рука
 marking-ChitinidRArmSpotted = Правая рука (Пятнистая)
+
+
+
+marking-ChitinidAntennasDefault-default = Антенны
+marking-ChitinidAntennasDefault = Антенны (Стандартные)
+
+marking-ChitinidAntennasCurly-curly = Антенны
+marking-ChitinidAntennasCurly = Антенны (Кудрявые)
+
+marking-ChitinidAntennasGray-gray = Антенны
+marking-ChitinidAntennasGray = Антенны (Серые)
+
+marking-ChitinidAntennasSlick-slick = Антенны
+marking-ChitinidAntennasSlick = Антенны (Гладкие)
+
+marking-ChitinidAntennasShort-short = Антенны
+marking-ChitinidAntennasShort = Антенны (Короткие)
+
+marking-ChitinidAntennasLong-long = Антенны
+marking-ChitinidAntennasLong = Антенны (Длинные)
+
+marking-ChitinidAntennasBee-bee = Антенны
+marking-ChitinidAntennasBee = Антенны (Пчелиные)
+
+marking-ChitinidAntennasFirefly-firefly_primary = Основной
+marking-ChitinidAntennasFirefly-firefly_secondary = Вторичный
+marking-ChitinidAntennasFirefly = Антенны (Светлячок)
+
+marking-ChitinidAntennasRadar-radar = Антенны
+marking-ChitinidAntennasRadar = Антенны (Радарные)
+
+marking-ChitinidAntennasSpeed-speed = Антенны
+marking-ChitinidAntennasSpeed = Антенны (Скоростные)
+
+
+
+marking-ChitinidWingsDefault-default = Крыло
+marking-ChitinidWingsDefault = Хвост (Стандартный)
+
+marking-ChitinidWingsSmooth-smooth = Крыло
+marking-ChitinidWingsSmooth = Хвост (Гладкий)
+
+marking-ChitinidWingsHoneypot-honeypot_primary = Основной
+marking-ChitinidWingsHoneypot-honeypot_secondary = Вторичный
+marking-ChitinidWingsHoneypot = Хвост (Медовый)
+
+marking-ChitinidWingsStubby-stubby = Крыло
+marking-ChitinidWingsStubby = Хвост (Короткий)
+
+marking-ChitinidWingsBee-bee_primary = Основной
+marking-ChitinidWingsBee-bee_secondary = Вторичный
+marking-ChitinidWingsBee = Хвост (Пчелиный)
+
+marking-ChitinidWingsFirefly-firefly_primary = Основной
+marking-ChitinidWingsFirefly-firefly_secondary = Вторичный
+marking-ChitinidWingsFirefly = Хвост (Светлячок)

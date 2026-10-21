@@ -135,3 +135,7 @@ guide-entry-weapons-color-codes-ammo = Цветовые коды боеприп�
 
 # Expedition faction entries
 guide-entry-frontier-rule-zero-tolerance = Нулевая терпимость
+guide-entry-basics = Начальное руководство
+guide-entry-safety-deposit-box = Система сейфовых ячеек
+guide-entry-gas-mining = Газодобыча
+guide-entry-shipyard-gourd = Gourd

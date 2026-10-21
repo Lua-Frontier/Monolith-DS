@@ -29,3 +29,7 @@ comp-pda-ui-unknown = Неизвестно
 comp-pda-ui-unassigned = Не назначено
 pda-notification-message = [font size=12][bold]КПК[/bold] { $header }: [/font]
     "{ $message }"
+comp-pda-ui-owner-with-company = Владелец: [color=white]{ $actualOwnerName }[/color] [color={ $companyColor }]({ $companyName })[/color]
+comp-pda-ui-station-war-level-pre = УРОВЕНЬ ВОЙНЫ: [color=cornflowerblue]ХОЛОДНЫЙ[/color]
+comp-pda-ui-station-war-level-post = УРОВЕНЬ ВОЙНЫ: [color=crimson]ГОРЯЧИЙ[/color]
+comp-pda-ui-station-war-level-unknown = УРОВЕНЬ ВОЙНЫ: [color=white]НЕИЗВЕСТЕН[/color]

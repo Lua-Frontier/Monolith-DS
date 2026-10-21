@@ -14,3 +14,7 @@ job-supervisors-freebooters-union = союзу фриланса
 job-supervisors-nf-pirate = пирату
 job-supervisors-nf-pirate-captain = капитану
 job-supervisors-plant-manager = менеджеру Электростанции
+job-supervisors-pdv-denasvar = Асварана и Командора Авангарда
+job-supervisors-pdv-civ = Имперского Авангарда
+job-supervisors-pirate-first-mate = Командора Авангарда
+job-supervisors-ws = Winter Solstice

@@ -4,3 +4,4 @@ blocking-examinable-verb-message = Изучить показатели защи�
 blocking-fraction = Блокируется [color=lightblue]{ $value }%[/color] входящего урона и:
 blocking-coefficient-value = - Получает [color=lightblue]{ $value }%[/color] [color=yellow]{ $type }[/color] урона.
 blocking-reduction-value = - Получает на [color=lightblue]{ $value }[/color] меньше [color=yellow]{ $type }[/color] урона.
+blocking-fraction-armor = Встроенная защита брони блокирует [color=lightblue]{ $value }%[/color] входящего урона и:

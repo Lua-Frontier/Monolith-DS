@@ -17,3 +17,5 @@ research-technology-excavation = Массовая экскавация
 research-technology-advanced-food-service = Современное ресторанное обслуживание
 research-technology-industrial-medicine = Промышленная медицина
 research-technology-personal-storage-solutions = Компактное хранение
+research-technology-mobile-sanitation = Мобильная санитария
+research-technology-chemical-dispensary = Химический диспенсер

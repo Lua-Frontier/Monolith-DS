@@ -17,3 +17,4 @@ reagent-desc-honey = Густой, золотистый и липкий, ори�
 reagent-desc-honey-iced-tea = Чай с капелькой меда.
 reagent-name-wassail = Вассейл
 reagent-desc-wassail = Горячий, пряный эль. Рождество!
+reagent-name-honey-iced-tea = холодный чай с мёдом

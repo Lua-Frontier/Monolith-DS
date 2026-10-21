@@ -42,3 +42,15 @@ ledger-entry-type-StationWithdrawalBounty = Награды
 ledger-entry-type-StationWithdrawalOther = Прочее
 # Fallback, if this displays, something's wrong.
 ledger-entry-type-PowerTransmission = Экспорт энергии
+ledger-tab-BlackMarket = Чёрный рынок
+ledger-tab-Mieyo = ПКМ
+ledger-entry-type-AtmTax = Налоги банкоматов
+ledger-entry-type-ShipyardTax = Налоги верфей
+ledger-entry-type-BlackMarketSales = Продажи контрабанды
+ledger-entry-type-ColonialOutpostSales = Налоги на грузовые ящики
+ledger-entry-type-TSFMCSales = Налоги на продажу оружия
+ledger-entry-type-MedicalSales = Налоги на медицинские продажи
+ledger-entry-type-BlackMarketPenalties = Изъятие активов
+ledger-entry-type-ColonialOutpostPenalties = Незаконно проданная контрабанда
+ledger-entry-type-TSFMCPenalties = Незаконно проданная контрабанда
+ledger-entry-type-MedicalPenalties = Штрафы за контроль наркотиков

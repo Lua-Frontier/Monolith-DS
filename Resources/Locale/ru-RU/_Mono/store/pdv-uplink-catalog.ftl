@@ -202,7 +202,7 @@ uplink-pirate-blast-grenade-desc = Чрезвычайно смертоносна
 
 
 # Экипировка
-uplink-pirate-combat-hardsuit-name = Классический скафандр Авангарда
+uplink-pirate-combat-hardsuit-name = Скафандр CV-11
 uplink-pirate-combat-hardsuit-desc = Базовая защитная экипировка военных подразделений Авангарда.
 
 uplink-pirate-viper-group-standard-hardsuit-name = Скафандр Viper Group JACKAL
@@ -288,3 +288,116 @@ uplink-pdv-t3-saintie-voucher-desc = Небольшая карта, содерж
 
 uplink-pdv-t4-saturn-voucher-name = Ваучер на «Сатурн»
 uplink-pdv-t4-saturn-voucher-desc = Небольшая карта, авторизующая получение эсминца «Сатурн».
+
+
+uplink-pirate-vestine-vial-name = Пробирка вестина
+uplink-pirate-vestine-vial-desc = Флакон дорогой аномальной жидкости, синтезированной из местной фауны Пизта. Полезен для продвинутого химического производства.
+
+uplink-pirate-wearable-camerapdv-name = Бодикамера
+uplink-pirate-wearable-camerapdv-desc = Камера, созданная для того, чтобы превратить ваше сражение за сектор в эпичный блокбастер на экранах начальства.
+
+uplink-pirate-teleshield-name = Телескопический щит
+uplink-pirate-teleshield-desc = Раскладываемый ручной щит, обеспечивающий отличную защиту.
+
+uplink-pirate-overwatch-jammer-name = Глушилка
+uplink-pirate-overwatch-jammer-desc = Это устройство не даёт обнаруживать труп, к которому оно прикреплено.
+
+uplink-pirate-voicemask-name = Голосовая маска
+uplink-pirate-voicemask-desc = Маска для подрывной деятельности и озорства... или просто чтобы скрыть свою личность. Настоятельно рекомендуется искажать голос при разговоре по рации Авангарда.
+
+uplink-pirate-blank-id-name = Пустая ID-карта
+uplink-pirate-blank-id-desc = Пустая ID-карта без опознавательных знаков. Можно настроить по своему вкусу на консоли ID-карт.
+
+uplink-pirate-chameleon-pda-name = КПК «Хамелеон»
+uplink-pirate-chameleon-pda-desc = КПК со встроенной технологией «Хамелеон», позволяющей скрыть вашу истинную принадлежность.
+
+uplink-pirate-chameleon-headset-name = Гарнитура «Хамелеон»
+uplink-pirate-chameleon-headset-desc = Гарнитура со встроенной технологией «Хамелеон», позволяющей скрыть вашу истинную принадлежность.
+uplink-pirate-chameleon-backpack-name = Рюкзак «Хамелеон»
+uplink-pirate-chameleon-backpack-desc = Рюкзак со встроенной технологией «Хамелеон», позволяющей скрыть вашу истинную принадлежность. Внутри ничего нет.
+
+uplink-pirate-dna-scrambler-name = Имплантер «Миксер ДНК»
+uplink-pirate-dna-scrambler-desc = Относительно редкий имплант, позволяющий один раз полностью изменить свою личность.
+uplink-pirate-vympel-name = M-32 «Вымпел»
+uplink-pirate-vympel-desc = Дешёвая винтовка компоновки буллпап под патрон 5.56x45мм.
+
+uplink-pirate-sultan-pulsar-name = PD-6 «Пульсар Султана»
+uplink-pirate-sultan-pulsar-desc = Дробовик 4 калибра с невероятно кучной стрельбой.
+
+uplink-pirate-m90-name = M-90 «Экспедитор»
+uplink-pirate-m90-desc = Компактная боевая винтовка компоновки буллпап под патрон 7.62x51мм, спроектированная для стрельбы с темпом штурмовой винтовки.
+
+uplink-pirate-mla73-name = MLA-73 «Стабильность»
+uplink-pirate-mla73-desc = Дозвуковой, точный ПП под безгильзовый патрон 6.35x40мм, эффективен против брони. В крайнем случае принимает и 9x19мм.
+
+uplink-pirate-basilisk-name = DEW-15XXR «Василиск»
+uplink-pirate-basilisk-desc = Винтовка обратной разработки на основе радиационного оружия. Иммунна к ЭМИ, а её лучи невидимы невооружённым глазом.
+
+uplink-pirate-hristov-name = Набор снайпера
+uplink-pirate-hristov-desc = Неприметный чемодан, в котором находятся S-14 «Христов», 10 запасных патронов и удобная маскировка. Использует калибр 14.5x114mm.
+
+uplink-pirate-magazine-box-357_magnum-name = Коробка спидлоадеров .357 магнум
+uplink-pirate-magazine-box-357_magnum-desc = Коробка, содержащая 4 спидлоадера .357 магнум.
+
+uplink-pirate-shell-box-4g-name = Коробка патронов 4 калибра
+uplink-pirate-shell-box-4g-desc = Коробка, содержащая 32 патрона 4 калибра для дробовика.
+
+uplink-pirate-box-5-7x28mm-smg-name = Коробка магазинов для ПП 5.7x28мм
+uplink-pirate-box-5-7x28mm-smg-desc = Коробка, заполненная 4 магазинами 5.7x28мм для «Атрейдса», очень эффективными против брони.
+
+uplink-pirate-7-62x51mmMagazine-name = Магазины 7.62x51мм
+uplink-pirate-7-62x51mmMagazine-desc = Коробка, содержащая 4 снаряжённых магазина 7.62x51мм.
+
+uplink-pirate-6-35x40mm-magazine-name = Магазин 6.35x40мм безгильзовый
+uplink-pirate-6-35x40mm-magazine-desc = Дозвуковой магазин для MLA-73, эффективный против брони.
+
+uplink-pirate-10phz-magazine-name = Магазин DEW 10Phz
+uplink-pirate-10phz-magazine-desc = Радиоактивный магазин DEW для «Василиска».
+
+uplink-pirate-cv32-hardsuit-name = Скафандр CV-32
+uplink-pirate-cv32-hardsuit-desc = Скафандр, оснащённый исключительной баллистической защитой, но заметно уступающий во всех остальных параметрах.
+uplink-pirate-cv53-tacsuit-name = Скафандр CV-53
+uplink-pirate-cv53-tacsuit-desc = Тактический скафандр со встроенным генератором щита, а также прекрасной защитой от окружающей среды и лазеров. Однако сам щит слаб против лазеров, а броня слаба против баллистики.
+
+uplink-pirate-cv82-tacsuit-name = Скафандр CV-82
+uplink-pirate-cv82-tacsuit-desc = Проворный тактический скафандр со встроенным предсказанием движений, позволяющим ускорять передвижение владельца.
+uplink-pirate-juggernaut-hardsuit-name = Скафандр джаггернаута CyberSun
+uplink-pirate-juggernaut-hardsuit-desc = Сверхпрочная броня из материалов, испытанных в хромосферном комплексе Тау. Единственное, что сможет вас удержать - этот костюм... и тазеры.
+
+uplink-pirate-stealth-hardsuit-name = Стелс-скафандр CyberSun
+uplink-pirate-stealth-hardsuit-desc = Разработанный на основе технологий Клана Паука, этот скафандр оснащён стелс-бронёй для специальных операций. Немного медленнее и имеет меньшую защиту, чем стандартные скафандры.
+
+uplink-pirate-elite-webvest-name = Элитный тактический жилет
+uplink-pirate-elite-webvest-desc = Модифицированный тактический жилет, специализированный против энергетического оружия TSFMC. Отличная защита от тепла, слабая защита от пробития.
+
+uplink-pirate-flashbanggrenade-name = Светошумовая граната
+uplink-pirate-flashbanggrenade-desc = Граната, создающая ослепляющую вспышку.
+uplink-pirate-smokegrenade-name = Дымовая граната
+uplink-pirate-smokegrenade-desc = Граната, создающая большое облако дыма, скрывающее всё внутри и прячущее его от тепловизоров.
+
+uplink-pirate-MobImperiroach-name = Телепорт империракана
+uplink-pirate-MobImperiroach-desc = Вызывает верно обученную имперскую тараканомоль с имплантом микробомбы. Взрывается при серьёзных ранениях. Умеет злобно ругаться.
+
+uplink-pirate-empgrenade-name = ЭМИ-граната
+uplink-pirate-empgrenade-desc = Ручная граната, испускающая мощный энергетический импульс, нарушающий работу электроники и энергосистем в довольно большом радиусе.
+
+uplink-pirate-incendiarygrenade-name = Зажигательная граната
+uplink-pirate-incendiarygrenade-desc = Граната, выпускающая рой зажигательных гранул.
+
+uplink-pirate-shrapnelgrenade-name = Осколочная граната
+uplink-pirate-shrapnelgrenade-desc = Граната, выпускающая большой залп смертоносной шрапнели.
+
+uplink-pirate-explosivegrenade-name = Взрывная граната
+uplink-pirate-explosivegrenade-desc = Граната, вызывающая крупный взрыв, повреждающий инфраструктуру и персонал поблизости.
+
+uplink-pdv-t1-voucher-name = Ваучер на простой шаттл
+uplink-pdv-t1-voucher-desc = Небольшая карта, позволяющая получить любой корабль простой шаттл Авангарда из резервов империи.
+
+uplink-pdv-t2-voucher-name = Ваучер на продвинутый шаттл
+uplink-pdv-t2-voucher-desc = Небольшая карта, позволяющая получить любой корабль продвинутый шаттл Авангарда из резервов империи.
+
+uplink-pdv-t3-voucher-name = Ваучер на элитный шаттл
+uplink-pdv-t3-voucher-desc = Небольшая карта, позволяющая получить любой корабль элитный шаттл Авангарда из резервов империи.
+
+uplink-HardBomb-PDV-name = Бомба «Адам»
+uplink-HardBomb-PDV-desc = Ответ Авангарда на недостаток взрывов.

@@ -1,0 +1,15 @@
+ai-wire-snipped = Провод перерезан в { $coords }.
+wire-name-ai-vision-light = ИИЗ
+wire-name-ai-act-light = ИИД
+station-ai-takeover = Захват ИИ
+ai-open = Открыть действия
+ai-close = Закрыть действия
+bolt-close = Закрыть болт
+bolt-open = Открыть болт
+emergency-access-on = Включить аварийный доступ
+emergency-access-off = Отключить аварийный доступ
+electrify-door-on = Включить электрификацию
+electrify-door-off = Отключить электрификацию
+toggle-light = Переключить свет
+ai-device-not-responding = Устройство не отвечает
+ai-consciousness-download-warning = Ваше сознание загружается.

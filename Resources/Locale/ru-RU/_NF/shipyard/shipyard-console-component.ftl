@@ -95,4 +95,16 @@ shipyard-console-fallback-prevent-sale = Обнаружены ошибки кл�
 
 # Mono start
 shipyard-console-engine-NFR = Ядерное
+shipyard-console-no-unassign = С этой карты нельзя снять право собственности.
+shipyard-console-timelock = В данный момент вы не можете развернуть это судно.
+shipyard-console-armament-default = Не указано
+shipyard-console-class-Escort = Эскорт
+shipyard-console-class-Brawler = Браулер
+shipyard-console-class-MissileCarrier = Носитель ракет
+shipyard-console-class-AntiShipMissileCarrier = Носитель противокорабельных ракет
+shipyard-console-class-Carrier = Авианосец
+shipyard-console-class-DroneCarrier = Носитель дронов
+shipyard-console-class-MechCarrier = Носитель механоидов
+shipyard-console-class-EarlyWarning = Раннее предупреждение
+shipyard-console-class-Stealth = Скрытность
 # Mono end

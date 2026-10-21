@@ -79,3 +79,10 @@ marking-TajaranEarsTorn-torn_inner = Внутреннее ухо
 marking-TajaranEarsWide = Широкие уши
 marking-TajaranEarsWide-wide_outer = Наружное ухо
 marking-TajaranEarsWide-wide_inner = Внутреннее ухо
+
+marking-TajaranLeopardTail = Леопардовый хвост
+marking-TajaranLeopardTail-m_tail_leopard_primary = Основной
+marking-TajaranLeopardTail-m_tail_leopard_tertiary = Пятна
+marking-TajaranLeopardWag = Леопардовый хвост (Анимированный)
+marking-TajaranLeopardWag-m_tail_leopard_primary_wag = Основной
+marking-TajaranLeopardWag-m_tail_leopard_tertiary_wag = Пятна

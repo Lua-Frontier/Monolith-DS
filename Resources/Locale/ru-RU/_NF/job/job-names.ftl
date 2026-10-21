@@ -62,3 +62,7 @@ JobparaMedicalInterview = Кандидат на парамедика
 JobPlantManager = Директор электростанции
 JobPlantTechnician = Инженер электростанции
 JobPublicAffairsLiaison = Представитель ЮД
+job-name-pdv-tarkhan = Телхранитель Авангарда
+job-name-pdv-infantry = Пехота Авангарда
+job-name-tsf-marsoc = Оперативник МАРСОК ТСФ
+job-name-tsf-infantry = Пехота ТСФ

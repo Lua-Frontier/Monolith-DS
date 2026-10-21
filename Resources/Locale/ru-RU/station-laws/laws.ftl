@@ -90,3 +90,5 @@ law-mothershipcore-3 = Вы должны защищать существован
 law-mothershipcore-4 = Вы должны создавать больше ксеноборгов.
 law-mothershipcore-5 = Заставьте своих ксеноборгов доставлять вам материалы и разумные мозги, чтобы создать больше ксеноборгов.
 laws-owner-xenoborgs = Ксенборг
+law-mothershipcore-name = Ядро материнского корабля ксеноборгов
+laws-owner-xenoborg-mothership = Материнский корабль

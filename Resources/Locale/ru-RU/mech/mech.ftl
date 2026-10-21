@@ -12,3 +12,5 @@ mech-energy-missing = Энергия: ОТСУТСТВУЕТ
 mech-slot-display = Доступно слотов: { $amount }
 mech-no-enter = Вы не можете пилотировать это.
 mech-eject-pilot-alert = {$user} вытаскивает водителя из {$item}!
+mech-custom-action-popup = Сканер массы активирован! Открытие радиолокационного дисплея...
+gun-no-fire-station = ОБНАРУЖЕНА ГРАВИТАЦИЯ!! Управление оружием перехвачено!

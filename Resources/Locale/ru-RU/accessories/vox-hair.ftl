@@ -22,3 +22,7 @@ marking-VoxHairTielQuills = Вокс, Тилские перья
 marking-VoxHairYasu = Вокс, Ясухиро
 marking-VoxHairWiseBraid = Мудрые косы Вокса
 marking-VoxHairSpotty = Пятнистые волосы Вокса
+marking-VoxHairMadScientist = Вокс, Безумный учёный
+marking-VoxHairHedgehog = Вокс, Ёж
+marking-VoxHairBushy = Вокс, Пышные иглы
+marking-VoxHairSlick = Вокс, Гладкие иглы
