@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "created by andrew_fenriz (discord) for DS14; ertchaplain created by thezuti (discord) for DS14",
+  "size": {
+    "x": 8,
+    "y": 8
+  },
+  "states": [
+    {
+      "name": "atmosphericengineer"
+    },
+    {
+      "name": "borg"
+    },
+    {
+      "name": "botanist"
+    },
+    {
+      "name": "cargotechnician"
+    },
+    {
+      "name": "chef"
+    },
+    {
+      "name": "communicationofficer"
+    },
+    {
+      "name": "medic"
+    },
+    {
+      "name": "technician"
+    },
+    {
+      "name": "paramedic"
+    },
+    {
+      "name": "recruit"
+    },
+    {
+      "name": "researchdirector"
+    },
+    {
+      "name": "researcher"
+    },
+    {
+      "name": "technicalsupervisor"
+    },
+    {
+      "name": "ertchaplain"
+    }
+  ]
+}

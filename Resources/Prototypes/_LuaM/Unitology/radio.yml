@@ -1,0 +1,8 @@
+# LuaM-start: Unitology private radio channel.
+- type: radioChannel
+  id: Unitolog
+  name: chat-radio-unitology
+  keycode: 'ю'
+  frequency: 1441
+  color: "#8f1d1d"
+# LuaM-end.

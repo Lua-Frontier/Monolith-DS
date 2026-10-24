@@ -298,6 +298,20 @@ public sealed partial class MobThresholdSystem : EntitySystem
         VerifyThresholds(target, threshold);
     }
 
+    // LuaM-start: Circle dreadnought last stand replaces the complete threshold table.
+    public void SetMobStateThresholds(EntityUid target,
+        SortedDictionary<FixedPoint2, MobState> thresholds,
+        MobThresholdsComponent? component = null)
+    {
+        if (!Resolve(target, ref component))
+            return;
+
+        component.Thresholds = thresholds;
+        Dirty(target, component);
+        VerifyThresholds(target, component);
+    }
+    // LuaM-end
+
     /// <summary>
     /// Checks to see if we should change states based on thresholds.
     /// Call this if you change the amount of damagable without triggering a damageChangedEvent or if you change

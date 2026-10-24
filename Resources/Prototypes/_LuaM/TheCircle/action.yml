@@ -1,0 +1,72 @@
+- type: entity
+  id: ActionObeliskActivate
+  name: Начать активацию обелиска
+  description: Провести ритуал активации обелиска.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    useDelay: 3
+    icon: /Textures/_LuaM/Interface/Actions/obelisk.png
+    checkCanAccess: false
+    range: 2
+    event: !type:ObeliskActivateActionEvent
+
+- type: entity
+  id: ActionSummonUnitologyObelisk
+  name: Призвать обелиск
+  description: Использовать осколок в активной руке, чтобы призвать обелиск после выполнения целей.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 3
+    icon: /Textures/_LuaM/Interface/Actions/obelisk.png
+    event: !type:ObeliskActionEvent
+
+- type: entity
+  id: ActionTheCircleGeistInvisibility
+  name: Войти в невидимость
+  description: Вы способны ненадолго стать невидимым для других, с возможостью самому выбрать тип невидимости для вашей ситуации.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon: _LuaM/Demons/ability_icons/shadowling_ghost_action.png
+    itemIconStyle: BigAction
+    event: !type:OpenGeistInvisibilityMenuEvent
+
+- type: entity
+  id: ActionDreadnoughtLastStand
+  name: Последний рубеж Дредноута
+  description: В течении 5 минут вы теряете критическое и пред-критическое состояния, но взамен получаете порог в жизни до 165, а не 100, а также +30% к скорости, но когда проходит 5 минут после активации, вы умираете от передоза фентанила в организме.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Interface/Actions/actions_crit.rsi
+      state: lastwords
+    itemIconStyle: BigAction
+    event: !type:DreadnoughtLastStandActionEvent
+- type: entity
+  id: ToyCarDetonateAttachedExplosives
+  name: Подорвать закреплённую взрывчатку
+  description: Моментально активирует взрывные устройства, закреплённые на машинке.
+  components:
+  - type: InstantAction
+    icon: Interface/Alerts/Fire/fire.png
+    itemIconStyle: BigAction
+    event: !type:DetonateAttachedExplosivesActionEvent
+
+- type: entity
+  id: ToyCarHorn
+  name: погудеть
+  description: Подать звуковой сигнал машинки.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Objects/Fun/bikehorn.rsi
+      state: icon
+    itemIconStyle: BigAction
+    useDelay: 3
+    event: !type:TriggerActionEvent
+  - type: TriggerOnAction
+    keyOut: honk

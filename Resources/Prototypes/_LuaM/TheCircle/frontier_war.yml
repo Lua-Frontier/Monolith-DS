@@ -1,0 +1,337 @@
+- type: entity
+  id: CircleFrontierWar
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 20
+  - type: CircleFrontierWar
+    circleArrivalDelay: 01:00:00
+    battlefieldRevealDelay: 00:45:00
+    battlefieldPreparationTime: 00:10:00
+    forcedAwakeningDelay: 01:00:00
+    startingReinforcements: 1500
+    capturePointDrain: 5
+    capturePointDrainInterval: 00:00:05
+    killDrain: 1
+    respawnDelay: 00:00:45
+    collapseInterval: 00:07:00
+    dreadnoughtThreshold: 0.4
+    dreadnoughtLifetime: 00:09:00
+    battlefieldRadius: 145
+    battlefieldAssembly: CircleFrontierWarVgroidAssembly
+    forbiddenEquipment: []
+    collapseRock: CircleFrontierWarCollapsibleBasalt
+    dreadnoughtGear: CircleFrontierWarDreadnoughtGear
+    dreadnoughtOfferAction: ActionCircleFrontierWarAcceptDreadnought
+    navigationAction: ActionCircleFrontierWarToggleNavigation
+    battlefieldRevealSound:
+      path: /Audio/_LuaM/Necromorfs/Obelisk2.ogg
+    circleGhostRoles:
+      SpawnPointCircleCommander: 1
+      SpawnPointCircleEngineer: 2
+      SpawnPointCircleGeist: 1
+      SpawnPointCircleFighterLight: 4
+      SpawnPointCircleFighterHeavy: 4
+      SpawnPointCircleMedic: 2
+
+- type: entity
+  id: CircleFrontierWarCircleAnchor
+  parent: MarkerBase
+  name: Circle squad arrival anchor
+  suffix: Circle, frontier war
+  components:
+  - type: CircleFrontierWarCircleAnchor
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+      state: commander
+
+- type: entity
+  id: CircleFrontierWarBattlefieldAnchor
+  parent: MarkerBase
+  name: battlefield grid placeholder
+  suffix: Circle, replace with map
+  components:
+  - type: CircleFrontierWarBattlefieldAnchor
+  - type: Sprite
+    layers:
+    - state: red
+  - type: RadarBlip
+    enabled: false
+    visibleFromOtherGrids: true
+    radarColor: "#635BFF"
+    scale: 3
+    shape: diamond
+
+- type: entity
+  id: CircleFrontierWarCrewDockPlaceholder
+  parent: MarkerBase
+  name: crew base placeholder
+  suffix: Circle, crew respawn
+  components:
+  - type: CircleFrontierWarCrewSpawn
+  - type: CircleFrontierWarNavigationTarget
+    label: BASE
+    side: 1
+    kind: 1
+
+- type: entity
+  id: CircleFrontierWarCircleSpawnPlaceholder
+  parent: MarkerBase
+  name: Circle base placeholder
+  suffix: Circle, Circle respawn
+  components:
+  - type: CircleFrontierWarCircleSpawn
+  - type: CircleFrontierWarNavigationTarget
+    label: BASE
+    side: 2
+    kind: 1
+
+- type: entity
+  id: CircleFrontierWarGate
+  parent: BaseStructure
+  name: battlefield entry terminal
+  description: Entry is irreversible until the battle ends. Forbidden equipment will be destroyed.
+  components:
+  - type: CircleFrontierWarGate
+  - type: Sprite
+    sprite: Structures/Machines/computers.rsi
+    state: computer
+  - type: InteractionOutline
+
+- type: entity
+  id: CircleFrontierWarCapturePointAPlaceholder
+  parent: MarkerBase
+  name: capture point A placeholder
+  suffix: Circle, capture point
+  components:
+  - type: CircleFrontierWarCapturePoint
+    id: A
+    radius: 4
+    captureTime: 00:00:20
+  - type: CircleFrontierWarNavigationTarget
+    label: A
+
+- type: entity
+  id: CircleFrontierWarCapturePointBPlaceholder
+  parent: CircleFrontierWarCapturePointAPlaceholder
+  name: capture point B placeholder
+  components:
+  - type: CircleFrontierWarCapturePoint
+    id: B
+  - type: CircleFrontierWarNavigationTarget
+    label: B
+
+- type: entity
+  id: CircleFrontierWarCapturePointCPlaceholder
+  parent: CircleFrontierWarCapturePointAPlaceholder
+  name: capture point C placeholder
+  components:
+  - type: CircleFrontierWarCapturePoint
+    id: C
+  - type: CircleFrontierWarNavigationTarget
+    label: C
+
+- type: entity
+  id: CircleFrontierWarObeliskPlaceholder
+  parent: StructureObelisk
+  name: battlefield obelisk placeholder
+  suffix: Circle, battlefield center
+  components:
+  - type: CircleFrontierWarObelisk
+  - type: CircleFrontierWarNavigationTarget
+    label: OBELISK
+    kind: 2
+
+- type: entity
+  id: CircleFrontierWarCollapsibleBasalt
+  parent: NFWallRockBasaltOre
+  name: unstable basalt
+  suffix: Circle, collapsible
+  components:
+  - type: CircleFrontierWarCollapsibleRock
+  - type: OreVein
+    oreChance: 0.25
+    oreRarityPrototypeId: RandomOreDistributionStandard
+
+- type: dungeonConfig
+  id: CircleFrontierWarVgroid
+  layers:
+  - !type:PrototypeDunGen
+    proto: NFVGRoidBlobBasalt
+  - !type:BiomeDunGen
+    biomeTemplate: CircleFrontierWarBasaltBiome
+    tileMask:
+    - FloorBasalt
+
+- type: gridAssembly
+  id: CircleFrontierWarVgroidAssembly
+  dungeon: CircleFrontierWarVgroid
+  worldOffset: 2500, 2500
+  moduleFloorTile: FloorSteel
+  connectionFloorTile: FloorBasalt
+  placementAttempts: 500
+  clearPadding: 1
+  clearEntityPrototypes:
+  - CircleFrontierWarCollapsibleBasalt
+  modules:
+  - id: Center
+    halfSize: 9, 9
+    entities:
+    - prototype: CircleFrontierWarBattlefieldAnchor
+      globalPvs: true
+    - prototype: CircleFrontierWarObeliskPlaceholder
+      globalPvs: true
+    - prototype: CircleFrontierWarCircleSpawnPlaceholder
+      offset: 0, -4
+      globalPvs: true
+  - id: Crew
+    halfSize: 12, 9
+    offset: -110, 0
+    entities:
+    - prototype: CircleFrontierWarCrewDockPlaceholder
+      globalPvs: true
+  - id: A
+    halfSize: 6, 6
+    randomPlacement:
+      origin: Center
+      minimumRadius: 38
+      maximumRadius: 88
+      minimumDistances:
+        Crew: 45
+    entities:
+    - prototype: CircleFrontierWarCapturePointAPlaceholder
+      globalPvs: true
+  - id: B
+    halfSize: 6, 6
+    randomPlacement:
+      origin: Center
+      minimumRadius: 38
+      maximumRadius: 88
+      minimumDistances:
+        Crew: 45
+        A: 42
+    entities:
+    - prototype: CircleFrontierWarCapturePointBPlaceholder
+      globalPvs: true
+  - id: C
+    halfSize: 6, 6
+    randomPlacement:
+      origin: Center
+      minimumRadius: 38
+      maximumRadius: 88
+      minimumDistances:
+        Crew: 45
+        A: 42
+        B: 42
+    entities:
+    - prototype: CircleFrontierWarCapturePointCPlaceholder
+      globalPvs: true
+  connections:
+  - from: Center
+    to: Crew
+    width: 3
+  - from: Center
+    to: A
+    width: 3
+  - from: Center
+    to: B
+    width: 3
+  - from: Center
+    to: C
+    width: 3
+
+- type: biomeTemplate
+  id: CircleFrontierWarBasaltBiome
+  layers:
+  - !type:BiomeEntityLayer
+    threshold: 0.9
+    noise:
+      frequency: 1
+      seed: 2
+    allowedTiles:
+    - FloorBasalt
+    entities:
+    - BasaltOne
+    - BasaltTwo
+    - BasaltThree
+    - BasaltFour
+    - BasaltFive
+  - !type:BiomeDecalLayer
+    allowedTiles:
+    - FloorBasalt
+    threshold: 0.9
+    divisions: 1
+    noise:
+      seed: 1
+      frequency: 1
+    decals:
+    - Basalt1
+    - Basalt2
+    - Basalt3
+    - Basalt4
+    - Basalt5
+    - Basalt6
+    - Basalt7
+    - Basalt8
+    - Basalt9
+  - !type:BiomeEntityLayer
+    allowedTiles:
+    - FloorBasalt
+    threshold: -0.30
+    noise:
+      seed: 0
+      noiseType: Cellular
+      frequency: 0.05
+      lacunarity: 2
+      fractalType: FBm
+      octaves: 5
+      cellularDistanceFunction: Euclidean
+      cellularReturnType: Distance2
+    entities:
+    - CircleFrontierWarCollapsibleBasalt
+  - !type:BiomeTileLayer
+    threshold: -1
+    tile: FloorBasalt
+
+- type: startingGear
+  id: CircleFrontierWarDreadnoughtGear
+  equipment:
+    back: ClothingBackpack
+    outerClothing: ClothingOuterHardsuitUnitologyDreadnought
+    pocket1: DeathAcidifierImplanter
+    pocket2: UnitologyWeaponRetentionImplanter
+  inhand:
+  - WeaponMachineGunWhirl
+  storage:
+    back:
+    - MagazineWhirl
+    - MagazineWhirl
+    - MagazineWhirl
+
+- type: entity
+  id: ActionCircleFrontierWarAcceptDreadnought
+  name: Accept the dreadnought role
+  description: Receive the dreadnought kit and die after nine minutes. Your team's reinforcements cannot decrease while you live.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon:
+      sprite: Interface/Actions/actions_crit.rsi
+      state: lastwords
+    itemIconStyle: BigAction
+  - type: InstantAction
+    event: !type:CircleFrontierWarAcceptDreadnoughtEvent
+
+- type: entity
+  id: ActionCircleFrontierWarToggleNavigation
+  name: Toggle battlefield pointers
+  description: Show or hide the capture-point and base pointers.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: Interface/VerbIcons/point.svg.192dpi.png
+    itemIconStyle: BigAction
+  - type: InstantAction
+    event: !type:CircleFrontierWarToggleNavigationEvent

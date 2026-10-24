@@ -1,0 +1,210 @@
+# Ballistic ammunition used by Unitology (The Circle).
+# These prototypes intentionally use Monolith's physical projectile pipeline.
+
+- type: Tag
+  id: CartridgeZastabaNosle
+
+- type: Tag
+  id: CartridgeRPL20
+
+- type: Tag
+  id: CartridgeASh12
+
+- type: Tag
+  id: CartridgeRifleSCARAB
+
+- type: Tag
+  id: CartridgeBulletVSK
+
+- type: entity
+  id: BaseCartridgeRifleZastaba
+  name: cartridge (5.7x39 mm)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeZastabaNosle
+  - type: CartridgeAmmo
+    proto: BulletRifleZastaba
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/zastaba/zastaba-casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: CartridgeRifleZastaba
+  name: cartridge (5.7x39 mm)
+  parent: BaseCartridgeRifleZastaba
+
+- type: entity
+  id: BulletRifleZastaba
+  name: bullet (5.7x39 mm)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Weapon/weapons/zastaba/zastaba-projectile.rsi
+    layers:
+    - state: heavy-bullet-5.7
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 15
+        Blunt: 4
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+  - type: StaminaDamageOnCollide
+    damage: 15
+
+- type: entity
+  id: BulletRSh2
+  name: bullet (12.7x55 mm caseless)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 28
+        Structural: 50
+
+- type: entity
+  id: BaseCartridgeRPL20
+  name: cartridge (5.45x39 mm)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeRPL20
+  - type: CartridgeAmmo
+    proto: BulletRPL20
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  id: CartridgeRPL20
+  name: cartridge (5.45x39 mm)
+  parent: BaseCartridgeRPL20
+
+- type: entity
+  id: BulletRPL20
+  name: bullet (5.45x39 mm)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 18
+
+- type: entity
+  id: CartridgeASh12
+  name: cartridge (12.7x55 mm)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeASh12
+  - type: CartridgeAmmo
+    proto: BulletASh12
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+    - state: tip
+      map: ["enum.AmmoVisualLayers.Tip"]
+      color: "#000000"
+
+- type: entity
+  id: BulletASh12
+  name: bullet (12.7x55 mm)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 30
+        Structural: 10
+
+- type: entity
+  id: CartridgeRifleSCARAB
+  name: cartridge (6.8x51 mm)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeRifleSCARAB
+  - type: CartridgeAmmo
+    proto: BulletRifleSCARAB
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+    - state: tip
+      map: ["enum.AmmoVisualLayers.Tip"]
+      color: "#ff6e52"
+
+- type: entity
+  id: BulletRifleSCARAB
+  name: bullet (6.8x51 mm)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 14
+        Slash: 2
+        Caustic: 4
+
+- type: entity
+  id: CartridgeBulletVSK
+  name: cartridge (9x39 mm)
+  parent: BaseCartridge
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeBulletVSK
+  - type: CartridgeAmmo
+    proto: BulletVSK
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+    - state: tip
+      map: ["enum.AmmoVisualLayers.Tip"]
+      color: "#ff6e52"
+
+- type: entity
+  id: BulletVSK
+  name: bullet (9x39 mm)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 18
+        Structural: 35
+  - type: TimedDespawn
+    lifetime: 4

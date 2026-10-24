@@ -1,0 +1,251 @@
+# Айди
+- type: entity
+  parent: CBURNIDcard
+  id: BSAAIDLeader
+  name: ID карта Лидера АПБТ
+  components:
+  - type: PresetIdCard
+    job: BSAALeaderJob
+
+- type: entity
+  parent: CBURNIDcard
+  id: BSAAIDFighter
+  name: ID карта Бойца АПБТ
+  components:
+  - type: PresetIdCard
+    job: BSAAFighterJob
+
+- type: entity
+  parent: CBURNIDcard
+  id: BSAAIDMedic
+  name: ID карта Медика АПБТ
+  components:
+  - type: PresetIdCard
+    job: BSAAMedicJob
+
+- type: entity
+  parent: CBURNIDcard
+  id: BSAAIDSpecialist
+  name: ID карта специалиста АПБТ
+  components:
+  - type: PresetIdCard
+    job: BSAASpecialistJob
+
+- type: entity
+  parent: CBURNIDcard
+  id: BSAAIDFlamer
+  name: ID карта флеймера АПБТ
+  components:
+  - type: PresetIdCard
+    job: BSAAFlamerJob
+
+# КПК
+- type: entity
+  parent: CentcomPDA
+  id: BSAALeaderPDA
+  name: КПК Лидера АПБТ
+  suffix: лидер
+  description: "Боевой образец КПК с предустановленным MedTek"
+  components:
+  - type: Pda
+    id: BSAAIDLeader
+
+- type: entity
+  parent: CentcomPDA
+  id: BSAAFighterPDA
+  name: КПК Бойца АПБТ
+  suffix: боец
+  description: "Боевой образец КПК с предустановленным MedTek"
+  components:
+  - type: Pda
+    id: BSAAIDFighter
+
+- type: entity
+  parent: CentcomPDA
+  id: BSAAMedicPDA
+  name: КПК Медика АПБТ
+  suffix: медик
+  description: "Боевой образец КПК с предустановленным MedTek"
+  components:
+  - type: Pda
+    id: BSAAIDMedic
+
+- type: entity
+  parent: CentcomPDA
+  id: BSAASpecialistPDA
+  name: КПК Специалиста АПБТ
+  suffix: специалист
+  components:
+  - type: Pda
+    id: BSAAIDSpecialist
+
+- type: entity
+  parent: CentcomPDA
+  id: BSAAFlamerPDA
+  name: КПК Флеймера АПБТ
+  suffix: флеймер
+  description: Боевой КПК АПБТ в корпусе офицера специальных операций.
+  components:
+  - type: Pda
+    id: BSAAIDFlamer
+
+# Джобка
+
+- type: job
+  id: BSAAFighterJob
+  name: Боец АПБТ
+  description: "Штурмовая единица альянса повышенной эффективности КСО"
+  playTimeTracker: JobBSAA
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 50400 # 14 hours
+  icon: "JobIconBSAAFighter"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: job
+  id: BSAALeaderJob
+  name: Лидер АПБТ
+  description: "Командир альянса повышенной эффективности КСО"
+  playTimeTracker: JobBSAALeader
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 36000 # 10 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 72000 # 20 hours
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 36000 # 10 hours
+  icon: "JobIconBSAALeader"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: job
+  id: BSAAMedicJob
+  name: Медик АПБТ
+  description: "Полевой спаситель альянса повышенной эффективности КСО"
+  playTimeTracker: JobBSAAMedic
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 50400 # 14 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 50400 # 14 hours
+  icon: "JobIconBSAAMedic"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: job
+  id: BSAASpecialistJob
+  name: Специалист АПБТ
+  description: "Специалист АПБТ, живой ходячий труп некроморфа."
+  playTimeTracker: JobBSAASpecialist
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 50400 # 14 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 360000 # doxuia
+    - !type:OverallPlaytimeRequirement
+      time: 1296000 # 360 hours
+  icon: "JobIconBSAASpecialist"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: job
+  id: BSAAFlamerJob
+  name: Флеймер АПБТ
+  description: "Огнемётчик АПБТ, что потерял рассудок в порыке поджёгов."
+  playTimeTracker: JobBSAAFlamer
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 50400 # 14 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 360000 # doxuia
+    - !type:OverallPlaytimeRequirement
+      time: 1296000 # 360 hours
+  icon: "JobIconBSAAFlamer"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: playTimeTracker
+  id: JobBSAA
+
+- type: playTimeTracker
+  id: JobBSAALeader
+  
+- type: playTimeTracker
+  id: JobBSAAMedic
+
+- type: playTimeTracker
+  id: JobBSAASpecialist
+
+- type: playTimeTracker
+  id: JobBSAAFlamer
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBSAALeader
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/BSAA/jobicon.rsi
+    state: leader
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBSAAMedic
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/BSAA/jobicon.rsi
+    state: medic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBSAAFighter
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/BSAA/jobicon.rsi
+    state: fighter
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBSAASpecialist
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/BSAA/jobicon.rsi
+    state: spec
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconBSAAFlamer
+  icon:
+    sprite: /Textures/_LuaM/Necromorfs/BSAA/jobicon.rsi
+    state: flame

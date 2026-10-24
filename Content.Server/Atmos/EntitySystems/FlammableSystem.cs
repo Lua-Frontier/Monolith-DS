@@ -30,6 +30,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
+using Content.Shared._LuaM.Flamethrower; // LuaM
 using Content.Server._NF.Atmos.Components; // Frontier
 using Robust.Shared.Timing;
 
@@ -437,8 +438,14 @@ namespace Content.Server.Atmos.EntitySystems
             var curTime = _timing.CurTime;
 
             // TODO: This needs cleanup to take off the crust from TemperatureComponent and shit.
+            // LuaM-start: fire processing may add/remove components, so enumerate a stable snapshot.
+            var flammableEntities = new List<(EntityUid Uid, FlammableComponent Flammable)>();
             var query = EntityQueryEnumerator<FlammableComponent, TransformComponent>();
-            while (query.MoveNext(out var uid, out var flammable, out _))
+            while (query.MoveNext(out var queryUid, out var queryFlammable, out _))
+                flammableEntities.Add((queryUid, queryFlammable));
+
+            foreach (var (uid, flammable) in flammableEntities)
+            // LuaM-end
             {
                 if (curTime < flammable.NextUpdate)
                     continue;
@@ -468,7 +475,8 @@ namespace Content.Server.Atmos.EntitySystems
                     var air = _atmosphereSystem.GetContainingMixture(uid);
 
                     // If we're in an oxygenless environment, put the fire out.
-                    if (air == null || air.GetMoles(Gas.Oxygen) < 1f)
+                    if ((air == null || air.GetMoles(Gas.Oxygen) < 1f) &&
+                        !HasComp<FlamethrowerBurningComponent>(uid)) // LuaM
                     {
                         Extinguish(uid, flammable);
                         continue;
