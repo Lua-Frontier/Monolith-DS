@@ -1,7 +1,7 @@
 - type: entity
   id: WeaponMechCombatPulseRifle
   name: eZ-14 mk2 Heavy pulse rifle
-  description: Fires a heavy pulse laser.
+  description: fires powerful pulsed laser charges with a high rate of fire. It is characterized by high accuracy, a rapid fire rate, and combat reliability. A solid choice for suppressing targets at medium range.
   suffix: Mech Weapon, Gun, Combat, Pulse
   parent: [ BaseMechWeaponRange, CombatMechEquipment ]
   components:
@@ -9,22 +9,25 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_pulse
   - type: Gun
-    fireRate: 1.5
-    selectedMode: SemiAuto
+    fireRate: 4.5 # LuaM 1.5 > 4.5
+    selectedMode: FullAuto #LuaM SemiAuto > FullAuto
     availableModes:
-      - SemiAuto
+      - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: Pulse
-    fireCost: 40
+    fireCost: 10 #LuaM 40 > 10
   - type: Appearance
   - type: AmmoCounter
+  - type: Battery # LuaM
+    maxCharge: 100
+    startingCharge: 100
 
 - type: entity
   id: WeaponMechCombatImmolationGun
   name: ZFI Immolation Beam Gun
-  description: A mech-mounted Xray cannon. # Mono
+  description: A weapon for a mechanoid. A lightweight X-ray rifle. It generates a directed beam of radiation outside the visible spectrum. Highly effective against Chimeras and other living targets vulnerable to ionizing radiation.
   suffix: Mech Weapon, Gun, Combat, Laser
   parent: [ BaseMechWeaponRange, CombatMechEquipment ]
   components:
@@ -32,22 +35,25 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_laser
   - type: Gun
-    fireRate: 2 # Mono
-    selectedMode: SemiAuto
+    fireRate: 5 #LuaM 2 > 5
+    selectedMode: FullAuto #LuaM Semi to full
     availableModes:
-      - SemiAuto
+      - FullAuto #LuaM Semi to full
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
-    proto: XrayLaser # Mono
+    proto: Hitscan10Phz #LuaM XrayLaser > Hitscan10Phz
     fireCost: 30 # Mono
   - type: Appearance
   - type: AmmoCounter
+  - type: Battery # LuaM
+    maxCharge: 100
+    startingCharge: 100
 
 - type: entity
   id: WeaponMechCombatSolarisLaser
   name: CH-LC "Solaris" laser cannon
-  description: A mech-mounted Laser Cannon. # Mono
+  description: A weapon for a mechanoid. A light laser cannon that fires focused, medium-power beams. Designed for the rapid suppression of enemy personnel.
   suffix: Mech Weapon, Gun, Combat, Laser
   parent: [ BaseMechWeaponRange, CombatMechEquipment ]
   components:
@@ -55,22 +61,25 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_laser
   - type: Gun
-    fireRate: 1.5 # Mono
-    selectedMode: SemiAuto
+    fireRate: 5 #LuaM 1.5 > 5
+    selectedMode: FullAuto #LuaM Semi to Full
     availableModes:
-      - SemiAuto
+      - FullAuto #LuaM Semi to Full
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
   - type: HitscanBatteryAmmoProvider
-    proto: RedHeavyLaser # Mono
+    proto: Hitscan700Thz #LuaM RedHeavyLaser > Hitscan700Thz
     fireCost: 25 # Mono
   - type: Appearance
   - type: AmmoCounter
+  - type: Battery #LuaM
+    maxCharge: 100
+    startingCharge: 100
 
 - type: entity
   id: WeaponMechCombatFiredartLaser
   name: CH-PS "Firedart" Laser
-  description: A fast-firing mech-mounted laser rifle. # Mono
+  description: A heavy plasma rifle with a low rate of fire. Designed for the pinpoint suppression of adversaries.
   suffix: Mech Weapon, Gun, Combat, Laser
   parent: [ BaseMechWeaponRange, CombatMechEquipment ]
   components:
@@ -78,17 +87,20 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_laser
   - type: Gun
-    fireRate: 2 # Mono
-    selectedMode: SemiAuto
+    fireRate: 0.5 #LuaM 2 > 0.5
+    selectedMode: FullAuto #LuaM Semi to full
     availableModes:
-      - SemiAuto
+      - FullAuto #LuaM Semi to Full
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
   - type: HitscanBatteryAmmoProvider
-    proto: RedMediumLaser # Mono
-    fireCost: 15 # Mono
+    proto: PulsedPlasma #LuaM RedMediumLaser > PulsedPlasma
+    fireCost: 500 #LuaM 15 > 500
   - type: Appearance
   - type: AmmoCounter
+  - type: Battery #LuaM
+    maxCharge: 1000
+    startingCharge: 1000
 
 - type: entity
   id: WeaponMechCombatTeslaCannon
@@ -112,9 +124,12 @@
         variation: 0.2
   - type: ProjectileBatteryAmmoProvider
     proto: TeslaGunBullet
-    fireCost: 99
+    fireCost: 25 #LuaM 99 > 25
   - type: Appearance
   - type: AmmoCounter
+  - type: Battery #LuaM
+    maxCharge: 100
+    startingCharge: 100
 
 - type: entity
   id: WeaponMechCombatDisabler
@@ -127,17 +142,21 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_disabler
   - type: Gun
-    fireRate: 1
-    selectedMode: SemiAuto
+    fireRate: 8 #LuaM 1 > 8
+    selectedMode: FullAuto #LuaM Semi to Full
     availableModes:
-      - SemiAuto
+      - FullAuto #LuaM Semi to Full
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 29
+    fireCost: 1 #LuaM 29 > 1
   - type: Appearance
   - type: AmmoCounter
+  - type: Battery #LuaM
+    maxCharge: 100
+    startingCharge: 100
+
 
 - type: entity
   id: WeaponMechCombatTaser
@@ -161,59 +180,73 @@
     fireCost: 19
   - type: Appearance
   - type: AmmoCounter
+  - type: Battery #LuaM
+    maxCharge: 100
+    startingCharge: 100
 
 - type: entity
   id: WeaponMechCombatShotgun
   name: LBX AC 10 "Scattershot"
-  description: A mech mounted shotgun for room clearing.
-  suffix: Mech Weapon, Gun, Combat, Shotgun
+  description: A mech mounted shotgun for room clearing. Firing 12 gauge from internal storage . #LuaM
+  suffix: Mech Weapon, Gun, Combat, Shotgun 12 gauge
   parent: [ BaseMechWeaponRange, CombatMechEquipment ]
   components:
   - type: Sprite
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_scatter
   - type: Gun
-    fireRate: 1.5 # 0.5->1.5 Mono
-    projectileSpeed: 40 # Mono
-    selectedMode: SemiAuto
+    fireRate: 4.5 #Mono 0.5 > 1.5, LuaM 1.5 > 4.5
+    projectileSpeed: 65 #LuaM
+    selectedMode: FullAuto #LuaM Semi to Full
     availableModes:
-      - SemiAuto
+      - FullAuto #LuaM Semi to Full
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
-  - type: ProjectileBatteryAmmoProvider
+  - type: BallisticAmmoProvider #LuaM
     proto: ShellShotgun12_gaugeBuckshot
-    fireCost: 35 # 99->35 Mono
+    capacity: 200
+    whitelist:
+      tags:
+      - ShellShotgun12_gaugeBuckshot
   - type: Appearance
   - type: AmmoCounter
+  - type: GunSpreadModifier #LuaM
+    spread: 0.6
+
 
 - type: entity
   id: WeaponMechCombatShotgunIncendiary
   name: FNX-99 "Hades" Carbine
-  description: Mounted carbine, firing incendiary cartridges.
-  suffix: Mech Weapon, Gun, Combat, Shotgun, Incendiary
+  description: Mounted carbine, firing 4 gauge cartridges from internal storage. #LuaM
+  suffix: Mech Weapon, Gun, Combat, Shotgun, 4 gauge #LuaM
   parent: [ BaseMechWeaponRange, CombatMechEquipment ]
   components:
   - type: Sprite
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_carbine
   - type: Gun
-    fireRate: 1.8 # 1.2->1.8 Mono
-    projectileSpeed: 40 # Mono
-    selectedMode: SemiAuto
+    fireRate: 3.5 # 1.2 -> 1.8 Mono, LuaM 1.8 > 3.5
+    projectileSpeed: 65 #LuaM
+    selectedMode: FullAuto #LuaM Semi to Full
     availableModes:
-      - SemiAuto
+      - FullAuto #LuaM Semi to Full
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: ShellShotgun12_gaugeIncendiary
-    fireCost: 35 # 99->35 Mono
+  - type: BallisticAmmoProvider #LuaM
+    proto: ShellShotgun23x75mmBuckshot
+    capacity: 200
+    whitelist:
+      tags:
+      - ShellShotgun23x75mmBuckshot
   - type: Appearance
   - type: AmmoCounter
+  - type: GunSpreadModifier #LuaM
+    spread: 0.8
 
 - type: entity
   id: WeaponMechCombatUltraRifle
   name: Ultra AC-2
-  description: Mounted carbine, firing incendiary cartridges.
+  description: Mounted carbine, firing 7.62x51mm Cartridges from internal storage #LuaM
   suffix: Mech Weapon, Gun, Combat, Rifle
   parent: [ BaseMechWeaponRange, CombatMechEquipment ]
   components:
@@ -221,45 +254,49 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_uac2
   - type: Gun
-    fireRate: 4.5 # 3->4.5 Mono
-    projectileSpeed: 55 # Mono
+    fireRate: 7 # 3->4.5 Mono, LuaM 4.5 > 7
+    projectileSpeed: 105 #LuaM 55 > 105
     selectedMode: FullAuto
     availableModes:
       - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: Cartridge762x39mmFMJ
-    fireCost: 10 # 15->10 Mono
+      path: /Audio/_DV/Weapons/Guns/Gunshots/typewriter.ogg
+  - type: BallisticAmmoProvider #LuaM
+    proto: Cartridge762x51mmFMJ
+    capacity: 600
+    whitelist:
+      tags:
+      - Cartridge762x51mmFMJ
   - type: Appearance
   - type: AmmoCounter
 
 - type: entity
   id: WeaponMechCombatMissileRack8
   name: SRM-8 Light Missile Rack
-  description: Launches low-explosive breaching missiles designed to explode only when striking a sturdy target.
-  suffix: Mech Weapon, Gun, Combat, Light Missile
+  description: Launches 40mm Grenades #LuaM
+  suffix: Mech Weapon, Gun, Combat, 40mm Grenade #LuaM
   parent: [ BaseMechWeaponRange, CombatMechEquipment ]
   components:
   - type: Sprite
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_missilerack
   - type: Gun
-  # Mono start
-    fireRate: 1
-    projectileSpeed: 18 # Mono
+    fireRate: 1.5 #LuaM 1 > 1.5
+    projectileSpeed: 35 #LuaM 18 > 35
     burstFireRate: 3
     shotsPerBurst: 6
     burstCooldown: 5
-    selectedMode: Burst
+    selectedMode: SemiAuto #LuaM Burst to Semi
     availableModes:
-      - Burst
-  # Mono end
+      - SemiAuto #LuaM Burst to Semi
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: BulletWeakRocket
-    fireCost: 100 # 25->100 Mono
+  - type: BallisticAmmoProvider #LuaM
+    proto: 40mmGrenadeThermobaric
+    capacity: 20
+    whitelist:
+      tags:
+      - Grenade
   - type: Appearance
   - type: AmmoCounter
 
@@ -274,21 +311,21 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_missilerack_six
   - type: Gun
-    fireRate: 0.2 # 1->0.2 Mono
-    projectileSpeed: 18 # Mono
+    fireRate: 1 # 1->0.2 Mono, 0.2 > 1 LuaM
+    projectileSpeed: 75 #LuaM 18 > 75
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
-  - type: ProjectileBatteryAmmoProvider
-    proto: 40mmGrenadeThermobaric
-    fireCost: 250 # mono 100 -> 250
+  - type: BallisticAmmoProvider #LuaM
+    proto: Cartridge35mmGrenadeSAPHE
+    capacity: 10
+    whitelist:
+      tags:
+      - Cartridge35mmGrenade
   - type: Appearance
   - type: AmmoCounter
-  - type: Battery # mono
-    maxCharge: 250
-    startingCharge: 250
 
 - type: entity
   id: WeaponMechCombatFlashbangLauncher
@@ -314,3 +351,6 @@
     fireCost: 30
   - type: Appearance
   - type: AmmoCounter
+  - type: Battery #LuaM
+    maxCharge: 100
+    startingCharge: 100

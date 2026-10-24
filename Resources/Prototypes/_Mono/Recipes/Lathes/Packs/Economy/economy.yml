@@ -37,6 +37,28 @@
   - ComponentBrickEconomy2
   - ArmorPlate4
   - ArmorPlate4Alt
+  #LuaM Start
+  - DurandHarnessMMC
+  - DurandRArmMMC
+  - DurandLArmMMC
+  - DurandRLegMMC
+  - DurandLLegMMC
+  - DurandHeadMMC
+  - DurandArmorPlateMMC
+  - GygaxHarnessMMC
+  - GygaxRArmMMC
+  - GygaxLArmMMC
+  - GygaxRLegMMC
+  - GygaxLLegMMC
+  - GygaxHeadMMC
+  - GygaxArmorPlateMMC
+  - BroadswordHarnessMMC
+  - BroadswordRArmMMC
+  - BroadswordLArmMMC
+  - BroadswordRLegMMC
+  - BroadswordLLegMMC
+  - BroadswordHeadMMC
+  #LuaM end
   # Commented out materials until we give them a use
   #- MaterialIndustryElectronics
   #- MaterialIndustryElectronicsAdvanced

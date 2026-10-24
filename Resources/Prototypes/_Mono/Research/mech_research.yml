@@ -47,26 +47,28 @@
   tier: 2
   cost: 35000 # LuaM: 32500 > 35000
   recipeUnlocks:
-  - GygaxHarness
-  - GygaxArmor
-  - GygaxHead
-  - GygaxLArm
-  - GygaxLLeg
-  - GygaxRArm
-  - GygaxRLeg
   - GygaxCentralElectronics
   - GygaxPeripheralsElectronics
   - GygaxTargetingElectronics
   - WeaponMechCombatUltraRifle
   - WeaponMechCombatMissileRack8
   - WeaponMechCombatFlashbangLauncher
-  - DurandHarness
-  - DurandArmor
-  - DurandHead
-  - DurandLArm
-  - DurandLLeg
-  - DurandRArm
-  - DurandRLeg
+  #LuaM - start
+  # - GygaxHarness
+  # - GygaxArmor
+  # - GygaxHead
+  # - GygaxLArm
+  # - GygaxLLeg
+  # - GygaxRArm
+  # - GygaxRLeg
+  # - DurandHarness
+  # - DurandArmor
+  # - DurandHead
+  # - DurandLArm
+  # - DurandLLeg
+  # - DurandRArm
+  # - DurandRLeg
+  #LuaM - end
   - DurandCentralElectronics
   - DurandPeripheralsElectronics
   - DurandTargetingElectronics
@@ -86,12 +88,14 @@
   tier: 2
   cost: 50000
   recipeUnlocks:
-  - BroadswordHarness
-  - BroadswordHead
-  - BroadswordLArm
-  - BroadswordLLeg
-  - BroadswordRArm
-  - BroadswordRLeg
+  #LuaM - start
+  # - BroadswordHarness
+  # - BroadswordHead
+  # - BroadswordLArm
+  # - BroadswordLLeg
+  # - BroadswordRArm
+  # - BroadswordRLeg
+  #LuaM - end
   - BroadswordCentralElectronics
   - BroadswordPeripheralsElectronics
   - BroadswordTargetingElectronics
@@ -123,7 +127,7 @@
   tier: 1
   cost: 35000
   recipeUnlocks:
-  - HalberdHarness
+  # - HalberdHarness #LuaM commented
   - MediumMechDMR
   - MediumMechCoilgun
   - MediumMechTOW

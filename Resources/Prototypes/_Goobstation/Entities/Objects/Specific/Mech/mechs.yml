@@ -238,7 +238,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 750
+        damage: 4750 # LuaM
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -253,7 +253,7 @@
     brokenState: gygax-broken
     mechToPilotDamageMultiplier: 0.1 # Mono
     criticalPowerStateSpeedPenalty: 0.5 # Mono
-    maxIntegrity: 500 # Mono
+    maxIntegrity: 1800 # LuaM
     airtight: true
     pilotWhitelist:
       components:
@@ -271,8 +271,8 @@
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: MovementSpeedModifier # Mono
-    baseWalkSpeed: 3
-    baseSprintSpeed: 4.5
+    baseWalkSpeed: 2 # LuaM
+    baseSprintSpeed: 3.5 # LuaM
     baseWeightlessModifier: 7.5
   - type: StaticPrice
     price: 3000
@@ -293,6 +293,25 @@
     speedModifier: 3
     useSound:
       path: /Audio/Items/jaws_pry.ogg
+  - type: DamageProtectionBuff # LuaM
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 15
+          Slash: 30
+          Piercing: 35
+          Heat: 10
+          Structural: 32
+  - type: PlateletFactories # LuaM
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -0.3
+          Slash: -0.3
+          Piercing: -0.3
+          Heat: -0.3
+          Structural: -0.4
 
 - type: entity
   id: MechGygaxBattery
@@ -328,7 +347,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1750
+        damage: 4750
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -341,9 +360,9 @@
     baseState: durand
     openState: durand-open
     brokenState: durand-broken
-    mechToPilotDamageMultiplier: 0.25
+    mechToPilotDamageMultiplier: 0.15
     airtight: true
-    maxIntegrity: 1350
+    maxIntegrity: 1950
     maxEquipmentAmount: 3
     pilotWhitelist:
       components:
@@ -354,11 +373,11 @@
     attackRate: 1
     damage:
       types:
-        Blunt: 60
-        Structural: 250
+        Blunt: 120
+        Structural: 550
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.5
-    baseSprintSpeed: 2
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 1.5
     baseWeightlessModifier: 4.5 # Mono
   - type: Damageable
     damageModifierSet: MechArmorHeavy
@@ -385,6 +404,25 @@
     speedModifier: 3
     useSound:
       path: /Audio/Items/jaws_pry.ogg
+  - type: DamageProtectionBuff # LuaM
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 25
+          Slash: 60
+          Piercing: 35
+          Heat: 15
+          Structural: 50
+  - type: PlateletFactories # LuaM
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -0.3
+          Slash: -0.6
+          Piercing: -0.3
+          Heat: -0.3
+          Structural: -0.4
 
 - type: entity
   id: MechDurandBattery
@@ -403,6 +441,7 @@
   id: MechMarauder
   parent: [ BaseMech, CombatMech ]
   name: Marauder
+  suffix: Only for ERT or Events.
   description: Looks like we're all saved. # ERT mech
   components:
   - type: Sprite
@@ -422,7 +461,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1600
+        damage: 9600
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -437,7 +476,7 @@
     brokenState: marauder-broken
     mechToPilotDamageMultiplier: 0.1
     airtight: true
-    maxIntegrity: 1200
+    maxIntegrity: 3400
     maxEquipmentAmount: 4
     pilotWhitelist:
       components:
@@ -445,11 +484,11 @@
         - BorgChassis # Goobstation - Let borgs pilot mechs
   - type: MeleeWeapon
     hidden: true
-    attackRate: 1
+    attackRate: 1.3
     damage:
       types:
-        Blunt: 40
-        Structural: 200
+        Blunt: 160
+        Structural: 900
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
     baseSprintSpeed: 1.5
@@ -478,6 +517,25 @@
     speedModifier: 3
     useSound:
       path: /Audio/Items/jaws_pry.ogg
+  - type: DamageProtectionBuff
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 55
+          Slash: 80
+          Piercing: 35
+          Heat: 15
+          Structural: 70
+  - type: PlateletFactories
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -1
+          Slash: -1
+          Piercing: -1
+          Heat: -1
+          Structural: -1.4
 
 - type: entity
   id: MechMarauderBattery
@@ -487,7 +545,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCageMedium # Mono
+      - PowerCageMech # LuaM
 
 - type: entity
   id: MechMarauderFilled
@@ -496,15 +554,17 @@
   components:
   - type: Mech
     startingEquipment:
-      - WeaponMechChainSword
       - WeaponMechCombatPulseRifle
       - WeaponMechCombatUltraRifle
       - WeaponMechCombatMissileRack8
+      - WeaponMechCombatShotgun
+      - WeaponMechCombatMissileRack6
 
 # Seraph
 - type: entity
   id: MechSeraph
   parent: [ BaseMech, CombatMech ]
+  suffix: too OP, only events
   name: Seraph
   description: That's the last thing you'll see. # Death Squad mech
   components:
@@ -525,7 +585,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1800
+        damage: 21800
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -540,8 +600,8 @@
     brokenState: seraph-broken
     mechToPilotDamageMultiplier: 0.05
     airtight: true
-    maxIntegrity: 1200
-    maxEquipmentAmount: 5
+    maxIntegrity: 8200
+    maxEquipmentAmount: 15
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -551,12 +611,12 @@
     attackRate: 1
     damage:
       types:
-        Blunt: 60
-        Structural: 400
+        Blunt: 190
+        Structural: 4600
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.2
-    baseSprintSpeed: 3.7
-    baseWeightlessModifier: 4.5 # Mono
+    baseWalkSpeed: 3.2
+    baseSprintSpeed: 4.7
+    baseWeightlessModifier: 14.5 # Mono
   - type: Damageable
     damageModifierSet: MechArmorHeavy
   - type: CanMoveInAir
@@ -581,21 +641,41 @@
     speedModifier: 3
     useSound:
       path: /Audio/Items/jaws_pry.ogg
+  - type: DamageProtectionBuff
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 130
+          Slash: 120
+          Piercing: 75
+          Heat: 25
+          Structural: 120
+  - type: PlateletFactories
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -2
+          Slash: -2
+          Piercing: -2
+          Heat: -2
+          Structural: -3
+
 
 - type: entity
   id: MechSeraphBattery
   parent: MechSeraph
-  suffix: Battery
+  suffix: Battery, too OP, only events
   components:
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellAntiqueProto
+      - PowerCageMech
 
 - type: entity
   id: MechSeraphFilled
   parent: MechSeraphBattery
-  suffix: Battery, Filled
+  suffix: Battery, Filled, too OP, only events
   components:
   - type: Mech
     startingEquipment:
@@ -631,7 +711,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1250
+        damage: 5250
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -646,8 +726,8 @@
     brokenState: darkgygax-broken
     mechToPilotDamageMultiplier: 0.15
     airtight: true
-    maxIntegrity: 900
-    maxEquipmentAmount: 4
+    maxIntegrity: 1200
+    maxEquipmentAmount: 2
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -660,8 +740,8 @@
         Blunt: 30
         Structural: 200
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3.5 # Mono
-    baseSprintSpeed: 5.5 # Mono
+    baseWalkSpeed: 1.5 # LuaM
+    baseSprintSpeed: 3.5 # LuaM
     baseWeightlessModifier: 10.5 # Mono
   - type: Damageable
     damageModifierSet: MechArmorLight
@@ -669,7 +749,7 @@
   - type: MovementAlwaysTouching
   - type: Repairable
     fuelCost: 40
-    doAfterDelay: 20
+    doAfterDelay: 5
   - type: StaticPrice
     price: 15000 # Some respect if you steal one of these.
   - type: Tag
@@ -687,6 +767,25 @@
     speedModifier: 3
     useSound:
       path: /Audio/Items/jaws_pry.ogg
+  - type: DamageProtectionBuff
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 15
+          Slash: 30
+          Piercing: 15
+          Heat: 10
+          Structural: 22
+  - type: PlateletFactories
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -0.3
+          Slash: -0.3
+          Piercing: -0.3
+          Heat: -0.3
+          Structural: -0.4
 
 - type: entity
   id: MechGygaxSyndieBattery
@@ -705,10 +804,8 @@
   components:
   - type: Mech
     startingEquipment:
-      - WeaponMechChainSword
+      - WeaponMechCombatUltraRifle
       - WeaponMechCombatShotgun
-      - WeaponMechCombatMissileRack8
-      - WeaponMechCombatTeslaCannon
 
 # Mauler
 - type: entity
@@ -734,7 +831,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1800 # Mono
+        damage: 5800 # Mono
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -749,8 +846,8 @@
     brokenState: mauler-broken
     mechToPilotDamageMultiplier: 0.1
     airtight: true
-    maxIntegrity: 1300
-    maxEquipmentAmount: 5
+    maxIntegrity: 2200
+    maxEquipmentAmount: 3
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -760,8 +857,8 @@
     attackRate: 1
     damage:
       types:
-        Blunt: 60
-        Structural: 400
+        Blunt: 140
+        Structural: 800
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
     baseSprintSpeed: 1.5
@@ -789,6 +886,27 @@
     speedModifier: 3
     useSound:
       path: /Audio/Items/jaws_pry.ogg
+  - type: DamageProtectionBuff
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 25
+          Slash: 60
+          Piercing: 35
+          Heat: 15
+          Structural: 50
+  - type: PlateletFactories
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -0.4
+          Slash: -0.6
+          Piercing: -0.4
+          Heat: -0.4
+          Structural: -0.5
+
+
 
 - type: entity
   id: MechMaulerSyndieBattery
@@ -807,8 +925,6 @@
   components:
   - type: Mech
     startingEquipment:
-      - WeaponMechChainSword
       - WeaponMechCombatUltraRifle
       - WeaponMechCombatShotgun
       - WeaponMechCombatMissileRack6
-      - WeaponMechCombatTeslaCannon

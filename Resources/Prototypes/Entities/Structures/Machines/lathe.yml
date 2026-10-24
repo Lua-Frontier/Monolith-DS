@@ -418,13 +418,13 @@
     - Modsuits
     # Mono - Mechs
     - ClarkeMechParts
-    - DurandMechParts
-    - GygaxMechParts
+#    - DurandMechParts #LuaM: disabled due to the shift of production to MMC
+#    - GygaxMechParts #LuaM: disabled due to the shift of production to MMC
     - MechWeapons
     - RipleyUpgrade
     - WeaponMechCombatArsenal
     # Mono - Space Mecha
-    - S2Mechs
+#    - S2Mechs #LuaM: disabled due to the shift of production to MMC
     - SpaceMechaWeapons
     - SpaceMechaIFF
     # LuaM-start:

@@ -79,6 +79,7 @@
     baseState: tsfgygax
     openState: tsfgygax-open
     brokenState: tsfgygax-broken
+    maxIntegrity: 1500 # LuaM
   - type: RadarBlip # Mono
     radarColor: "#028EDE"
     scale: 1.5
@@ -106,6 +107,7 @@
     baseState: pdvgygax
     openState: pdvgygax-open
     brokenState: pdvgygax-broken
+    maxIntegrity: 1500  # LuaM
   - type: RadarBlip # Mono
     radarColor: "#ffde21"
     scale: 1.5
@@ -133,6 +135,7 @@
     baseState: tsfdurand
     openState: tsfdurand-open
     brokenState: tsfdurand-broken
+    maxIntegrity: 2400  # LuaM
   - type: RadarBlip # Mono
     radarColor: "#028EDE"
     scale: 1.5
@@ -160,6 +163,7 @@
     baseState: pdvdurand
     openState: pdvdurand-open
     brokenState: pdvdurand-broken
+    maxIntegrity: 2400  # LuaM
   - type: RadarBlip # Mono
     radarColor: "#ffde21"
     scale: 1.5
@@ -167,7 +171,7 @@
     shape: square
 
 
-# S2 Mechas
+#region S2 Mechas
 - type: entity
   id: BaseAFInterceptor
   parent: [ BaseMech, LightMechMount ]
@@ -210,7 +214,7 @@
     criticalPowerStateSpeedPenalty: 0.75
     maxEquipmentAmount: 3
     airtight: true
-    maxIntegrity: 1750
+    maxIntegrity: 9250  # LuaM 1750 > 9250
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -221,13 +225,13 @@
     attackRate: 1
     damage:
       types:
-        Blunt: 25
-        Structural: 260
+        Blunt: 180  # LuaM 25 > 180
+        Structural: 2600  # LuaM 260 > 2600
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 5000
+        damage: 9270 # LuaM 5000 > 9270
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -236,15 +240,22 @@
         node: start
       - !type:DoActsBehavior
         acts: ["Destruction"]
+      - !type:ExplodeBehavior # LuaM
+  - type: Explosive # LuaM
+    explosionType: HardBombShipGun
+    totalIntensity: 3700.0
+    intensitySlope: 40
+    maxIntensity: 2400
+    canCreateVacuum: False
   - type: RadarConsole
     followEntity: true
   - type: Appearance
   - type: GenericVisualizer
   # EXTREMELY slow in gravity. Only really good to taxi, and that's about it.
   - type: MovementSpeedModifier
-    baseWalkSpeed: 0.75
-    baseSprintSpeed: 1.33
-    baseWeightlessModifier: 60
+    baseWalkSpeed: 0.5 # LuaM 0.75 > 0.5
+    baseSprintSpeed: 1 # LuaM 1.33 > 1
+    baseWeightlessModifier: 30 # LuaM 60 > 30
   - type: RadarBlip
     radarColor: "#E3E3E3"
     scale: 3
@@ -267,6 +278,26 @@
     speedModifier: 3
     useSound:
       path: /Audio/Items/jaws_pry.ogg
+  - type: DamageProtectionBuff  # LuaM
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 35
+          Slash: 120
+          Piercing: 35
+          Heat: 20
+          Structural: 52
+  - type: PlateletFactories  # LuaM
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -2.3
+          Slash: -2.3
+          Piercing: -2.3
+          Heat: -2.3
+          Structural: -2.4
+
 
 - type: entity
   id: AFInterceptor
@@ -301,6 +332,25 @@
     scale: 3
     requireNoGrid: true
     shape: square
+  - type: DamageProtectionBuff # LuaM
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 35
+          Slash: 120
+          Piercing: 35
+          Heat: 20
+          Structural: 72
+  - type: PlateletFactories # LuaM
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -2.3
+          Slash: -2.3
+          Piercing: -2.3
+          Heat: -2.3
+          Structural: -2.4
 
 #PDV Broadsword
 - type: entity
@@ -318,6 +368,25 @@
     scale: 3
     requireNoGrid: true
     shape: square
+  - type: DamageProtectionBuff # LuaM
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 35
+          Slash: 120
+          Piercing: 35
+          Heat: 20
+          Structural: 72
+  - type: PlateletFactories # LuaM
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -2.3
+          Slash: -2.3
+          Piercing: -2.3
+          Heat: -2.3
+          Structural: -2.4
 
 #Halberd
 
@@ -332,20 +401,27 @@
     openState: broadsword-open
     brokenState: broadsword-broken
     mechToPilotDamageMultiplier: 0
-    criticalPowerStateSpeedPenalty: 0.85
+    criticalPowerStateSpeedPenalty: 0.35 # LuaM 0.85 > 0.35
     maxEquipmentAmount: 3
     airtight: true
-    maxIntegrity: 2150
+    maxIntegrity: 12750 # LuaM 2150 > 12750
     pilotWhitelist:
       components:
         - HumanoidAppearance
         - BorgChassis
-    zoom: 1.75, 1.75
+    zoom: 1.5, 1.5  # LuaM 1.75, 1.75 > 1.5, 1.5
+  - type: MeleeWeapon # LuaM
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 235
+        Structural: 2845
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 3000
+        damage: 12770  # LuaM 3000 > 12770
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -354,11 +430,18 @@
         node: start
       - !type:DoActsBehavior
         acts: ["Destruction"]
+      - !type:ExplodeBehavior # LuaM
+  - type: Explosive # LuaM
+    explosionType: HardBombShipGun
+    totalIntensity: 3700.0
+    intensitySlope: 40
+    maxIntensity: 2400
+    canCreateVacuum: False
   # EXTREMELY slow in gravity. Only really good to taxi, and that's about it.
   - type: MovementSpeedModifier
-    baseWalkSpeed: 0.75
-    baseSprintSpeed: 1.33
-    baseWeightlessModifier: 50
+    baseWalkSpeed: 0.4 # LuaM 0.75 > 0.4
+    baseSprintSpeed: 0.6 # LuaM 1.33 > 0.6
+    baseWeightlessModifier: 20 # LuaM 50 > 20
   - type: Damageable
     damageModifierSet: MechArmorHeavy
   - type: Tag
@@ -369,6 +452,25 @@
     - MilitaryMechBounty
   - type: ShipNpcTarget # LuaM
     needGrid: NoGrid
+  - type: DamageProtectionBuff # LuaM
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 35
+          Slash: 120
+          Piercing: 45
+          Heat: 30
+          Structural: 92
+  - type: PlateletFactories  # LuaM
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -2.3
+          Slash: -2.3
+          Piercing: -2.3
+          Heat: -2.3
+          Structural: -2.4
 
 #TSF Halberd
 - type: entity
@@ -386,7 +488,25 @@
     scale: 3
     requireNoGrid: true
     shape: square
-
+  - type: DamageProtectionBuff # LuaM
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 35
+          Slash: 120
+          Piercing: 35
+          Heat: 20
+          Structural: 72
+  - type: PlateletFactories # LuaM
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -3.3
+          Slash: -3.3
+          Piercing: -3.3
+          Heat: -3.3
+          Structural: -3.4
 #PDV Halberd
 - type: entity
   id: AFInterceptorMPDV
@@ -403,7 +523,25 @@
     scale: 3
     requireNoGrid: true
     shape: square
-
+  - type: DamageProtectionBuff # LuaM
+    modifiers:
+      dermal:
+        id: MechProtection
+        flatReductions:
+          Blunt: 35
+          Slash: 120
+          Piercing: 35
+          Heat: 20
+          Structural: 72
+  - type: PlateletFactories # LuaM
+    intervalSeconds: 0.1
+    damagePerInterval:
+      types:
+          Blunt: -3.3
+          Slash: -3.3
+          Piercing: -3.3
+          Heat: -3.3
+          Structural: -3.4
 #4x4 mechas
 - type: entity
   id: AFFlail

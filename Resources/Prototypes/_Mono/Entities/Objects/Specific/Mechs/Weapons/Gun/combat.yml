@@ -10,18 +10,22 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_pulse
   - type: Gun
-    fireRate: 1.5
-    selectedMode: SemiAuto
+    selectedMode: Burst #LuaM Semi to Burst
     availableModes:
-      - SemiAuto
+      - Burst #LuaM Semi to Burst
+    shotsPerBurst: 3 #LuaM
+    burstCooldown: 0.7 #LuaM
+    burstFireRate: 6 #LuaM
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RiflePulse # Pulse Rifle
-    fireCost: 30
+    fireCost: 150 #LuaM 30 > 150
   - type: Appearance
   - type: AmmoCounter
-
+  - type: Battery #LuaM
+    maxCharge: 900
+    startingCharge: 900
 #Light Weapons
 - type: entity
   id: LightMechaAutocannon

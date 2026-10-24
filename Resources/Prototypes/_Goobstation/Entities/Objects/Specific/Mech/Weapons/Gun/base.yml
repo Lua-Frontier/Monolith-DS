@@ -3,9 +3,9 @@
   parent: BaseMechEquipment
   abstract: true
   components:
-  - type: Battery
-    maxCharge: 100 # Battery is charged by mech
-    startingCharge: 100
+#  - type: Battery # LuaM commented
+#    maxCharge: 100 # Battery is charged by mech
+#    startingCharge: 100
   - type: Appearance
   - type: StaticPrice
     price: 1
