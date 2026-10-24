@@ -56,3 +56,27 @@
     Plastic: 1000
     Silver: 500
     Gold: 250
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponRifleACRRecipe
+  result: WeaponRifleACR
+  categories:
+  - Rifles
+  - Ballistic
+  - Weapons
+  materials:
+    Steel: 1600
+    Plasteel: 2000
+    Plastic: 1000
+    Plastitanium: 400
+    Silver: 500
+    Gold: 250
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponRifleACRRecipeAlternative
+  result: WeaponRifleACR
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 3
