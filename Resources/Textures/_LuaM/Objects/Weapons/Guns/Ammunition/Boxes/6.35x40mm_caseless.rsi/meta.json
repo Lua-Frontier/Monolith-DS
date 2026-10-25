@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from _Mono Edited by Donevinoll (Discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "base-b"
+    },
+    {
+      "name": "practice"
+    },
+    {
+      "name": "rubber"
+    },
+    {
+      "name": "Plasma"
+    },
+    {
+      "name": "HP"
+    },
+    {
+      "name": "RIP"
+    },
+    {
+      "name": "AP"
+    }
+  ]
+}

@@ -5,19 +5,155 @@
   id: Magazine635x40mmCaseless
   result: Magazine635x40mmCaseless
 
+#LuaM Add:
+- type: latheRecipe
+  parent: BaseAmmoFMJIntermediateMagazineRecipe
+  id: BaseMagazine635x40mmCaseless
+  categories:
+  - Ammo
+  materials:
+    Steel: 1000
+  result: Magazine635x40mmCaseless
+
+- type: latheRecipe
+  parent: BaseAmmoFMJIntermediateMagazineRecipe
+  id: Magazine635x40mmCaselessPlasma
+  categories:
+  - Ammo
+  materials:
+    Steel: 500
+    UraniumDepleted: 150
+  reagents:
+    Plasma: 60
+  result: Magazine635x40mmCaselessPlasma
+  
+- type: latheRecipe
+  parent: BaseAmmoRubberIntermediateMagazineRecipe
+  id: Magazine635x40mmCaselessRubber
+  categories:
+  - Ammo
+  materials:
+    Steel: 10
+  result: Magazine635x40mmCaselessRubber
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeIntermediateMagazineRecipe
+  id: Magazine635x40mmCaselessPractice
+  categories:
+  - Ammo
+  materials:
+    Steel: 10
+  result: Magazine635x40mmCaselessPractice
+
+- type: latheRecipe
+  parent: BaseAmmoHPIntermediateMagazineRecipe
+  id: Magazine635x40mmCaselessHP
+  categories:
+  - Ammo
+  materials:
+    Steel: 700
+  result: Magazine635x40mmCaselessHP
+
+- type: latheRecipe
+  parent: BaseAmmoRIPIntermediateMagazineRecipe
+  id: Magazine635x40mmCaselessRIP
+  categories:
+  - Ammo
+  materials:
+    Steel: 500
+    UraniumDepleted: 150
+  reagents:
+    Plasma: 60
+  result: Magazine635x40mmCaselessRIP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPIntermediateMagazineRecipe
+  id: Magazine635x40mmCaselessAP
+  categories:
+  - Ammo
+  materials:
+    Steel: 500
+    Plasteel: 500
+  result: Magazine635x40mmCaselessAP
+#Luam end
+
 #Ammo boxes
 
 - type: latheRecipe
   parent: BaseAmmoFMJPistolCaliberAmmoBoxRecipe
   id: AmmoBox635x40mmCaseless
+  categories:
+  - Ammo
+  materials:
+    Steel: 1000
   result: AmmoBox635x40mmCaseless
 
 - type: latheRecipe
   parent: BaseAmmoFMJPistolCaliberAmmoBoxRecipe
   id: MagazineAsmgtUniversal635x40mm
+  categories:
+  - Ammo
+  materials:
+    Steel: 5
   result: MagazineAsmgtUniversal635x40mm
 
 - type: latheRecipe
   parent: BaseAmmoFMJPistolCaliberAmmoBoxRecipe
   id: AmmoBox635x40mmCaselessBig
+  categories:
+  - Ammo
+  materials:
+    Steel: 2000
   result: AmmoBox635x40mmCaselessBig
+
+#LuaM Add:
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: AmmoBox635x40mmCaselessPlasma
+  categories:
+  - Ammo
+  materials:
+    Steel: 1000
+    UraniumDepleted: 300
+  reagents:
+    Plasma: 120
+  result: AmmoBox635x40mmCaselessPlasma
+  
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: AmmoBox635x40mmCaselessHP
+  categories:
+  - Ammo
+  materials:
+    Steel: 1000
+  result: AmmoBox635x40mmCaselessHP
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: AmmoBox635x40mmCaselessRIP
+  categories:
+  - Ammo
+  materials:
+    Steel: 1000
+    UraniumDepleted: 300
+  result: AmmoBox635x40mmCaselessRIP
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: AmmoBox635x40mmCaselessAP
+  categories:
+  - Ammo
+  materials:
+    Steel: 1000
+    plasteel: 200
+  result: AmmoBox635x40mmCaselessAP
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: AmmoBox635x40mmCaselessRubber
+  categories:
+  - Ammo
+  materials:
+    Steel: 100
+  result: AmmoBox635x40mmCaselessRubber
+#Luam end

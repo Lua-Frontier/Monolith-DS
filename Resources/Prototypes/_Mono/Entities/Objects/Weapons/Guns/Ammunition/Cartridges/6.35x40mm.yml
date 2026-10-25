@@ -53,3 +53,67 @@
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#dbdbdb"
 
+#LuaM add:
+
+- type: entity
+  id: Cartridge635x40mmCaselessPlasma
+  name: cartridge (6.35x40mm caseless Plasma)
+  parent: BaseCartridge635x40mmCaseless
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet635x40mmCaselessPlasma
+  - type: Sprite
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#b30077"
+
+- type: entity
+  id: Cartridge635x40mmCaselessHP
+  name: cartridge (6.35x40mm caseless HP)
+  parent: BaseCartridge635x40mmCaseless
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet635x40mmCaselessHP
+  - type: Sprite
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#90EE90"
+
+- type: entity
+  id: Cartridge635x40mmCaselessRIP
+  name: cartridge (6.35x40mm caseless RIP)
+  parent: BaseCartridge635x40mmCaseless
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet635x40mmCaselessRIP
+  - type: Sprite
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#C04000"
+
+
+- type: entity
+  id: Cartridge635x40mmCaselessAP
+  name: cartridge (6.35x40mm caseless AP)
+  parent: BaseCartridge635x40mmCaseless
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet635x40mmCaselessPlasteelAP
+  - type: Sprite
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#888888"
+
+#LuaM end

@@ -104,3 +104,63 @@
     layers:
     - state: base-b
       map: ["enum.GunVisualLayers.Base"]
+
+#LuaM Add:
+
+- type: entity
+  parent: BaseAmmoBox635x40mmCaseless
+  id: AmmoBox635x40mmCaselessPlasma
+  name: ammunition box (6.35x40mm Caseless Plasma)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge635x40mmCaselessPlasma
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/6.35x40mm_caseless.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: Plasma
+  
+- type: entity
+  parent: BaseAmmoBox635x40mmCaseless
+  id: AmmoBox635x40mmCaselessHP
+  name: ammunition box (6.35x40mm Caseless HP)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge635x40mmCaselessHP
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/6.35x40mm_caseless.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: HP
+
+- type: entity
+  parent: BaseAmmoBox635x40mmCaseless
+  id: AmmoBox635x40mmCaselessRIP
+  name: ammunition box (6.35x40mm Caseless RIP)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge635x40mmCaselessRIP
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/6.35x40mm_caseless.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: RIP
+
+- type: entity
+  parent: BaseAmmoBox635x40mmCaseless
+  id: AmmoBox635x40mmCaselessAP
+  name: ammunition box (6.35x40mm Caseless AP)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge635x40mmCaselessAP
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/6.35x40mm_caseless.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: AP
+
+#LuaM end

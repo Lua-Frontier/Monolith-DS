@@ -20,7 +20,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Magazine/6.35x40mm_caseless/6.35x40mm_caseless_rifle_mag.rsi
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Magazines/6.35x40mm_caseless_rifle_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -207,3 +207,78 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+#LuaM add:
+
+- type: entity
+  id: Magazine635x40mmCaselessPlasma
+  name: "magazine (6.35x40mm STANAG caseless plasma)"
+  parent: BaseMagazine635x40mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge635x40mmCaselessPlasma
+  - type: Sprite
+    layers:
+    - state: pink
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine635x40mmCaselessBigPlasma
+  name: "box magazine (6.35x40mm Caseless plasma)"
+  parent: BaseMagazine635x40mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge635x40mmCaselessPlasma
+    capacity: 99
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Magazine/6.35x40mm_caseless/6.35x40mm_caseless_lmg_mag-plasma.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 8
+    zeroVisible: false
+
+- type: entity
+  id: Magazine635x40mmCaselessHP
+  name: "magazine (6.35x40mm STANAG caseless HP)"
+  parent: BaseMagazine635x40mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge635x40mmCaselessHP
+  - type: Sprite
+    layers:
+    - state: HP
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine635x40mmCaselessRIP
+  name: "magazine (6.35x40mm STANAG caseless RIP)"
+  parent: BaseMagazine635x40mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge635x40mmCaselessRIP
+  - type: Sprite
+    layers:
+    - state: RIP
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine635x40mmCaselessAP
+  name: "magazine (6.35x40mm STANAG caseless AP)"
+  parent: BaseMagazine635x40mmCaseless
+  components:
+  - type: BallisticAmmoProvider
+    proto: Bullet635x40mmCaselessPlasteelAP
+  - type: Sprite
+    layers:
+    - state: AP
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+#LuaM end

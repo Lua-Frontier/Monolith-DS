@@ -22,7 +22,7 @@
     maxAngle: 58
     angleIncrease: 1.5
     angleDecay: 20
-    fireRate: 9
+    fireRate: 8.6
     selectedMode: FullAuto
     damageModifier: 1.0 # Brings it down to 152.95 DPS from 161 DPS (assuming perfect accuracy with FMJ on an unarmored target); Lecter has less DPS, but Lecter also has really fucking good accuracy and is free roundstart. # LuaM: 0.95 > 1.0
     availableModes:
@@ -41,14 +41,14 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine556x45mmFMJ
+        startingItem: Magazine635x40mmCaseless
         insertSound: /Audio/_Mono/Weapons/Guns/SmallArms/MagIn/m16_magin.ogg
         ejectSound: /Audio/_Mono/Weapons/Guns/SmallArms/MagOut/skm_magout.ogg
         priority: 2
         whitelist:
           tags:
-          - Magazine556x45mmFMJ
-          - Magazine68x52mmCaseless
+          - Magazine635x40mmCaseless
+          - Magazine635x40mmCaselessBig
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -56,7 +56,7 @@
         priority: 1
         whitelist:
           tags:
-          - Cartridge556x45mmFMJ
+          - Cartridge635x40mmCaseless
       attachment_grip:
         priority: 0
         insertSound: /Audio/Items/screwdriver2.ogg

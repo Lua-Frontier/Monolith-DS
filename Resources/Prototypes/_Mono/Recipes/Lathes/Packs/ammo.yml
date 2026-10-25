@@ -285,7 +285,17 @@
   - AmmoBoxShenzhen
   - AmmoBoxShenzhenBig
   - Magazine127x99mm
-  - AmmoBox127x99mm
+  - AmmoBox127x99m
+  - AmmoBox635x40mmCaselessAP
+  - Magazine635x40mmCaselessAP
+  - Magazine635x40mmCaselessPractice
+  - Magazine635x40mmCaselessRubber
+  - AmmoBox635x40mmCaselessRubber
+  - AmmoBox635x40mmCaseless
+  - Magazine635x40mmCaseless
+  - AmmoBox635x40mmCaselessHP
+  - Magazine635x40mmCaselessHP
+
 
 #Uranium recipes
 
@@ -316,6 +326,7 @@
   - Magazine45_ACPPistolUranium
   - Magazine45_ACPSubMachineGunUranium
   - AmmoBox45_ACPUranium
+
 
 #Empty recipes
 
@@ -376,6 +387,7 @@
   - Magazine45_ACPPistolPractice
   - Magazine45_ACPSubMachineGunPractice
   - AmmoBox45_ACPPractice
+  - Magazine635x40mmCaselessPractice
 
 #Incendiary recipes
 
@@ -443,6 +455,8 @@
   - AmmoBox23x75mmBeanbag
   - Magazine12_gaugeBeanbag
   - AmmoBox12_gaugeBeanbag
+  - Magazine635x40mmCaselessRubber
+  - AmmoBox635x40mmCaselessRubber
 
 #FMJ recipes
 
@@ -490,6 +504,8 @@
   - MagazineAsmgtUniversal9x19mm
   - MagazineAsmgtUniversal762x39mm
   - MagazineAsmgtUniversal556x45mm
+  - AmmoBox635x40mmCaseless
+  - Magazine635x40mmCaseless
 
 #Plasteel AP recipes
 
@@ -523,33 +539,37 @@
   - AmmoBox23x75mmFlechette
   - Magazine12_gaugeFlechette
   - AmmoBox12_gaugeFlechette
+  - AmmoBox635x40mmCaselessAP
+  - Magazine635x40mmCaselessAP
 
 #HP recipes
 
-#  - Magazine762x51mmHP
-#  - AmmoBox762x51mmHP
-#  - Magazine762x54mmRHP
-#  - AmmoBox762x54mmRHP
-#  - Magazine556x45mmHP
-#  - AmmoBox556x45mmHP
-#  - Magazine762x39mmHP
-#  - AmmoBox762x39mmHP
-#  - SpeedLoader357_magnumHP
-#  - AmmoBox357_magnumHP
-#  - Magazine68x52mmHP
-#  - AmmoBox68x52mmHP
-#  - Magazine46x30mmPistolHP
-#  - Magazine46x30mmSubMachineGunHP
-#  - AmmoBox46x30mmHP
-#  - Magazine57x28mmPistolHP
-#  - Magazine57x28mmSubMachineGunHP
-#  - AmmoBox57x28mmHP
-#  - Magazine9x19mmPistolHP
-#  - Magazine9x19mmSubMachineGunHP
-#  - AmmoBox9x19mmHP
-#  - Magazine45_ACPPistolHP
-#  - Magazine45_ACPSubMachineGunHP
-#  - AmmoBox45_ACPHP
+  - Magazine762x51mmHP
+  - AmmoBox762x51mmHP
+  - Magazine762x54mmRHP
+  - AmmoBox762x54mmRHP
+  - Magazine556x45mmHP
+  - AmmoBox556x45mmHP
+  - Magazine762x39mmHP
+  - AmmoBox762x39mmHP
+  - SpeedLoader357_magnumHP
+  - AmmoBox357_magnumHP
+  - Magazine68x52mmHP
+  - AmmoBox68x52mmHP
+  - Magazine46x30mmPistolHP
+  - Magazine46x30mmSubMachineGunHP
+  - AmmoBox46x30mmHP
+  - Magazine57x28mmPistolHP
+  - Magazine57x28mmSubMachineGunHP
+  - AmmoBox57x28mmHP
+  - Magazine9x19mmPistolHP
+  - Magazine9x19mmSubMachineGunHP
+  - AmmoBox9x19mmHP
+  - Magazine45_ACPPistolHP
+  - Magazine45_ACPSubMachineGunHP
+  - AmmoBox45_ACPHP
+  - AmmoBox635x40mmCaselessHP
+  - Magazine635x40mmCaselessHP
 
 #RIP recipes
 
@@ -635,6 +655,8 @@
   - MagazineAsmgtUniversal556x45mm
   - MagazineShenzhen
   - AmmoBoxShenzhen
+  - AmmoBox635x40mmCaseless
+  - BaseMagazine635x40mmCaseless
 
 #SKR
 
@@ -674,7 +696,8 @@
   - Magazine45_ACPPistolPractice
   - Magazine45_ACPSubMachineGunPractice
   - AmmoBox45_ACPPractice
-
+  - Magazine635x40mmCaselessPractice
+  
 #Empty recipes
 
   - Magazine4_gaugeEmpty
@@ -734,39 +757,45 @@
   - AmmoBox23x75mmBeanbag
   - Magazine12_gaugeBeanbag
   - AmmoBox12_gaugeBeanbag
+  - Magazine635x40mmCaselessRubber
+  - AmmoBox635x40mmCaselessRubber
 
 #HP recipes
 
-#  - Magazine762x51mmHP
-#  - AmmoBox762x51mmHP
-#  - Magazine762x54mmRHP
-#  - AmmoBox762x54mmRHP
-#  - Magazine556x45mmHP
-#  - AmmoBox556x45mmHP
-#  - Magazine762x39mmHP
-#  - AmmoBox762x39mmHP
-#  - SpeedLoader357_magnumHP
-#  - AmmoBox357_magnumHP
-#  - Magazine46x30mmPistolHP
-#  - Magazine46x30mmSubMachineGunHP
-#  - AmmoBox46x30mmHP
-#  - Magazine57x28mmPistolHP
-#  - Magazine57x28mmSubMachineGunHP
-#  - AmmoBox57x28mmHP
-#  - Magazine9x19mmPistolHP
-#  - Magazine9x19mmSubMachineGunHP
-#  - AmmoBox9x19mmHP
-#  - Magazine45_ACPPistolHP
-#  - Magazine45_ACPSubMachineGunHP
-#  - AmmoBox45_ACPHP
-#  - Magazine68x52mmHP
-#  - AmmoBox68x52mmHP
+  - Magazine762x51mmHP
+  - AmmoBox762x51mmHP
+  - Magazine762x54mmRHP
+  - AmmoBox762x54mmRHP
+  - Magazine556x45mmHP
+  - AmmoBox556x45mmHP
+  - Magazine762x39mmHP
+  - AmmoBox762x39mmHP
+  - SpeedLoader357_magnumHP
+  - AmmoBox357_magnumHP
+  - Magazine46x30mmPistolHP
+  - Magazine46x30mmSubMachineGunHP
+  - AmmoBox46x30mmHP
+  - Magazine57x28mmPistolHP
+  - Magazine57x28mmSubMachineGunHP
+  - AmmoBox57x28mmHP
+  - Magazine9x19mmPistolHP
+  - Magazine9x19mmSubMachineGunHP
+  - AmmoBox9x19mmHP
+  - Magazine45_ACPPistolHP
+  - Magazine45_ACPSubMachineGunHP
+  - AmmoBox45_ACPHP
+  - Magazine68x52mmHP
+  - AmmoBox68x52mmHP
+  - Magazine635x40mmCaselessHP
+  - AmmoBox635x40mmCaselessHP
 
 # Energy
   - Magazine700Thz
   - AmmoBox700Thz
   - Magazine10Phz
   - AmmoBox10Phz
+  - AmmoBox635x40mmCaselessPlasma
+  - Magazine635x40mmCaselessPlasma
 
 #advanced = Uranium + Incendiary + Plasteel AP + Synth AP + RIP
 # MARK: Dynamic
@@ -870,6 +899,8 @@
   - AmmoBox23x75mmFlechette
   - Magazine12_gaugeFlechette
   - AmmoBox12_gaugeFlechette
+  - Magazine635x40mmCaselessAP
+  - AmmoBox635x40mmCaselessAP
 
 #RIP recipes
 
@@ -969,4 +1000,5 @@
   - LargePowerCell700Thz
   - LargePowerCellPlasma68x52mm
   - Magazine68x52mmCaselessPlasma
-  - AmmoBox68x52mmCaselessPlasma
+  - Magazine635x40mmCaselessPlasma
+  - AmmoBox635x40mmCaselessPlasma

@@ -57,6 +57,8 @@
     Silver: 500
     Gold: 250
 
+#LuaM Add
+
 - type: latheRecipe
   parent: BaseWeaponRecipeLong
   id: WeaponRifleACRRecipe
@@ -80,3 +82,21 @@
   completetime: 30 # faster for your trouble
   entities:
     MonolithicCrystalSmall: 3
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: Magazine635x40mmCaselessBigRecipe
+  result: Magazine635x40mmCaselessBig
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 2
+
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: Magazine635x40mmCaselessBigPlasmarecipe
+  result: Magazine635x40mmCaselessBigPlasma
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 4
+#Luam end
