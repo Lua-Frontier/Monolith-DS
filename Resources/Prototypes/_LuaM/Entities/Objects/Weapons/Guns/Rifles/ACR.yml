@@ -48,7 +48,6 @@
         whitelist:
           tags:
           - Magazine635x40mmCaseless
-          - Magazine635x40mmCaselessBig
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber: 
         name: Chamber
