@@ -13,6 +13,7 @@
       map: ["enum.GunVisualLayers.Mag"]
     - map: ["gripAttachment"]
     - map: ["barrelAttachment"]
+      offset: 0, 0 # Reduce by 0.0005 to prevent gaps
     - map: ["opticAttachment"]
   - type: GunWieldBonus
     minAngle: -20 # LuaM: -21 > -20
