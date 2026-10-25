@@ -39,6 +39,8 @@
   - AmmoBox23x75mmFlechette
   - Magazine12_gaugeFlechette
   - AmmoBox12_gaugeFlechette
+  - Magazine635x40mmCaselessAP
+  - AmmoBox635x40mmCaselessAP
 
 #- type: technology
 #  id: UniversalSynthalloyCore

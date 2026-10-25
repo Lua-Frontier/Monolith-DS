@@ -50,9 +50,9 @@
           - Magazine635x40mmCaseless
           - Magazine635x40mmCaselessBig
         whitelistFailPopup: gun-magazine-whitelist-fail
-      gun_chamber:
+      gun_chamber: 
         name: Chamber
-        startingItem: Cartridge556x45mmFMJ
+        startingItem: Cartridge635x40mmCaseless
         priority: 1
         whitelist:
           tags:

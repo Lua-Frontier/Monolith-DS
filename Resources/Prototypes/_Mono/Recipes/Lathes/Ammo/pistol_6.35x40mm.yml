@@ -145,7 +145,7 @@
   - Ammo
   materials:
     Steel: 1000
-    plasteel: 200
+    Plasteel: 375
   result: AmmoBox635x40mmCaselessAP
 
 - type: latheRecipe
