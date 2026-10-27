@@ -4,7 +4,7 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/23/2026 15:02:25
+  time: 10/27/2026 10:21:02
   entityCount: 11888
 maps: []
 grids:
@@ -264,10 +264,10 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
       spreadQueues:
-        Smoke: []
-        Puddle: []
         Kudzu: []
         MetalFoam: []
+        Puddle: []
+        Smoke: []
     - type: Shuttle
       dampingModifier: 2.5
       bodyModifier: 2.5
@@ -7757,7 +7757,7 @@ entities:
       pos: 1.5,2.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -21878.447
+      secondsUntilStateChange: -22044.395
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7799,7 +7799,7 @@ entities:
       pos: -30.5,38.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -65072.133
+      secondsUntilStateChange: -65238.08
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -29939,7 +29939,7 @@ entities:
       pos: 22.5,53.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -60265.902
+      secondsUntilStateChange: -60431.848
       state: Closing
   - uid: 3525
     components:
@@ -29954,7 +29954,7 @@ entities:
       pos: 22.5,55.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -60267.902
+      secondsUntilStateChange: -60433.848
       state: Closing
   - uid: 3527
     components:
@@ -59527,7 +59527,7 @@ entities:
     - type: Transform
       pos: 2.5,44.5
       parent: 1
-- proto: KitchenDeepFryerPOI
+- proto: KitchenDeepFryerCauldronPOI
   entities:
   - uid: 7587
     components:
@@ -68364,9 +68364,9 @@ entities:
     - type: Transform
       pos: -36.5,-0.5
       parent: 1
-- proto: USSPLatheImmmovable
+- proto: USSPLathe
   entities:
-  - uid: 8874
+  - uid: 7524
     components:
     - type: Transform
       pos: 12.5,-7.5
@@ -68682,9 +68682,9 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
-- proto: ViperLatheImmmovable
+- proto: ViperLathe
   entities:
-  - uid: 8921
+  - uid: 7525
     components:
     - type: Transform
       pos: 17.5,13.5
