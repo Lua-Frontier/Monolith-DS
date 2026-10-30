@@ -1,0 +1,23 @@
+# Rosa
+- type: entity
+  parent: BaseShipLPCOneUse
+  id: ShipVoucherRosa
+  name: Rosa ship voucher
+  description: Allows for one Rosa ship purchase.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
+    layers:
+    - state: icon
+    - state: screen
+      color: "#2f6f9c"
+    - state: screen7
+      color: "#3a8cc4"
+      shader: unshaded
+  - type: ShipyardVoucher
+    destroyOnEmpty: false
+    cooldown: 1800 # 30 minutes
+    consoleType: Sr
+    companyName: Colonial
+    vessels:
+    - Rosa
