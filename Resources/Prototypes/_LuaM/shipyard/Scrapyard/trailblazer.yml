@@ -1,0 +1,41 @@
+# Author Info
+# GitHub: pumpikk
+# Discord: Pupmik
+
+# Shuttle Notes:
+- type: vessel
+  id: Trailblazer
+  parent: BaseVessel
+  name: vessel-trailblazer-name
+  description: vessel-trailblazer-desc
+  price: 109338
+  category: Medium
+  group: Scrap
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Scrapyard/trailblazer.yml
+  guidebookPage: Null
+  class:
+  - Expedition
+  - Scrapyard
+  - Pursuit
+  engine:
+  - Plasma # Pinch fusion gen kind, not the pacman kind.
+
+- type: gameMap
+  id: Trailblazer
+  mapName: 'HLB Trailblazer'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Scrapyard/trailblazer.yml
+  minPlayers: 0
+  stations:
+    Trailblazer:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Trailblazer EXP-MIL{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            # Pilot: [ 0, 0 ]
+            # Mercenary: [ 0, 0 ]
