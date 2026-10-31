@@ -8,10 +8,10 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._Lua.Damage;
 
-public sealed class DamageOnHoldingAliveOnlySystem : EntitySystem
+public sealed partial class DamageOnHoldingAliveOnlySystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
 
     public override void Update(float frameTime)
     {

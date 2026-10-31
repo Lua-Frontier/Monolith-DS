@@ -27,7 +27,6 @@ public sealed partial class EventHorizonSystem : SharedEventHorizonSystem
     #region Dependencies
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IMapManager _mapMan = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
     [Dependency] private SharedContainerSystem _containerSystem = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
@@ -135,7 +134,7 @@ public sealed partial class EventHorizonSystem : SharedEventHorizonSystem
             _adminLogger.Add(LogType.EntityDelete, LogImpact.Extreme, $"{ToPrettyString(morsel)} entered the event horizon of {ToPrettyString(hungry)} and was deleted");
         }
 
-        EntityManager.QueueDeleteEntity(morsel);
+        QueueDel(morsel);
         var evSelf = new EntityConsumedByEventHorizonEvent(morsel, hungry, eventHorizon, outerContainer);
         var evEaten = new EventHorizonConsumedEntityEvent(morsel, hungry, eventHorizon, outerContainer);
         RaiseLocalEvent(hungry, ref evSelf);
@@ -312,7 +311,7 @@ public sealed partial class EventHorizonSystem : SharedEventHorizonSystem
         var box = Box2.CenteredAround(mapPos.Position, new Vector2(range, range));
         var circle = new Circle(mapPos.Position, range);
         var grids = new List<Entity<MapGridComponent>>();
-        _mapMan.FindGridsIntersecting(mapPos.MapId, box, ref grids);
+        _mapSystem.FindGridsIntersecting(mapPos.MapId, box, ref grids);
 
         foreach (var grid in grids)
         {
@@ -458,14 +457,14 @@ public sealed partial class EventHorizonSystem : SharedEventHorizonSystem
     private void OnEventHorizonContained(EventHorizonContainedEvent args)
     {
         var uid = args.Entity;
-        if (!EntityManager.EntityExists(uid))
+        if (!Exists(uid))
             return;
         var comp = args.EventHorizon;
         if (comp.BeingConsumedByAnotherEventHorizon)
             return;
 
         var containerEntity = args.Args.Container.Owner;
-        if (!EntityManager.EntityExists(containerEntity))
+        if (!Exists(containerEntity))
             return;
         if (AttemptConsumeEntity(uid, containerEntity, comp))
             return; // If we consume the entity we also consume everything in the containers it has.

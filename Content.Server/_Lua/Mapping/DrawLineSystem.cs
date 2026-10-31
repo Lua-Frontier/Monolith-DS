@@ -10,11 +10,11 @@ using Content.Shared.Administration.Managers;
 
 namespace Content.Server._Lua.Mapping;
 
-public sealed class DrawLineSystem : EntitySystem
+public sealed partial class DrawLineSystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
-	[Dependency] private readonly SharedMapSystem _mapSystem = default!; // LuaM
-    [Dependency] private readonly ISharedAdminManager _admins = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
+	[Dependency] private SharedMapSystem _mapSystem = default!; // LuaM
+    [Dependency] private ISharedAdminManager _admins = default!;
 
     private readonly HashSet<ICommonSession> _active = new();
 

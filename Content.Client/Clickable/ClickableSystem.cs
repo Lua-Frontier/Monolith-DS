@@ -1,4 +1,6 @@
 using System.Numerics;
+using Content.Client.Sprite;
+using Content.Shared.Sprite;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Utility;
@@ -17,12 +19,16 @@ public sealed partial class ClickableSystem : EntitySystem
 
     private EntityQuery<ClickableComponent> _clickableQuery;
     private EntityQuery<TransformComponent> _xformQuery;
+    private EntityQuery<FadingSpriteComponent> _fadingSpriteQuery;
+    private EntityQuery<SpriteFadeComponent> _spriteFadeQuery;
 
     public override void Initialize()
     {
         base.Initialize();
         _clickableQuery = GetEntityQuery<ClickableComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
+        _fadingSpriteQuery = GetEntityQuery<FadingSpriteComponent>();
+        _spriteFadeQuery = GetEntityQuery<SpriteFadeComponent>();
     }
 
     /// <summary>
@@ -34,7 +40,7 @@ public sealed partial class ClickableSystem : EntitySystem
     /// The draw depth for the sprite that captured the click.
     /// </param>
     /// <returns>True if the click worked, false otherwise.</returns>
-    public bool CheckClick(Entity<ClickableComponent?, SpriteComponent, TransformComponent?> entity, Vector2 worldPos, IEye eye, out int drawDepth, out uint renderOrder, out float bottom)
+    public bool CheckClick(Entity<ClickableComponent?, SpriteComponent, TransformComponent?, FadingSpriteComponent?> entity, Vector2 worldPos, IEye eye, bool excludeFaded, out int drawDepth, out uint renderOrder, out float bottom)
     {
         if (!_clickableQuery.Resolve(entity.Owner, ref entity.Comp1, false))
         {
@@ -54,6 +60,16 @@ public sealed partial class ClickableSystem : EntitySystem
 
         var sprite = entity.Comp2;
         var transform = entity.Comp3;
+
+        if (excludeFaded
+            && _fadingSpriteQuery.Resolve(entity.Owner, ref entity.Comp4, false)
+            && (!_spriteFadeQuery.TryComp(entity.Owner, out var spriteFade) || spriteFade.ClickThrough))
+        {
+            drawDepth = default;
+            renderOrder = default;
+            bottom = default;
+            return false;
+        }
 
         if (!sprite.Visible)
         {

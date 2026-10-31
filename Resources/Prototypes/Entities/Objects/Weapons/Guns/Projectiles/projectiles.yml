@@ -7,10 +7,16 @@
   - type: Sprite
     drawdepth: BelowMobs
     layers:
+    # LuaM: muzzle flash and powder smoke from Hullrot, was _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi kinetic
+    # The offset is per layer, a sprite offset would also move the flashes of the guns inheriting from this one.
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi #imp
-      state: kinetic #imp
+      sprite: _Crescent/Objects/Effects/Muzzleflash/medium.rsi
+      state: flash
+      offset: 0.15, 0
+    - sprite: _Crescent/Objects/Effects/Muzzleflash/medium.rsi
+      state: smoke
+      offset: 0.15, 0
   - type: EffectVisuals
   - type: PointLight
     enabled: true

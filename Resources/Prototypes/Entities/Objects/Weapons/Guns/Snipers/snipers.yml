@@ -5,6 +5,9 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  - type: ParticleOnGunShot # LuaM: powder smoke particles from Hullrot
+    effect: MuzzleSmoke
+    inheritAngle: true
   - type: Sprite
     layers:
     - state: base

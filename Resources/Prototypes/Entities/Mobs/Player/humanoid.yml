@@ -6,6 +6,29 @@
   speciesBlacklist:
   - Monkey
   - Kobold
+  - Vulpkanin
+  - Felinid
+  - Demon
+  - Vox
+  - Arachnid
+  - Ariral
+  - Avali
+  - Chitinid
+  - Diona
+  - Dwarf
+  - Feroxi
+  - Goblin
+  - Hydrakin
+  - Tajaran
+  - SlimePerson
+  - IPC
+  - Oni
+  - Moth
+  - Harpy
+  - Protogen
+  - Rodentia
+  - Reptilian
+  - Shark
   # end-backmen: species
   components:
     - type: RandomHumanoidAppearance

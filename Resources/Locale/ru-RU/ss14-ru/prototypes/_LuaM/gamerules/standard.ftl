@@ -1,0 +1,15 @@
+ent-LuaMStandardBluespaceExtraEventScheduler = { ent-BluespaceEventScheduler }
+ent-LuaMBluespaceCacheErrorExtra = { ent-BluespaceCacheError }
+    .desc = { ent-BluespaceCacheError.desc }
+ent-LuaMBluespaceVaultErrorExtra = { ent-BluespaceVaultError }
+    .desc = { ent-BluespaceVaultError.desc }
+ent-LuaMBluespaceVaultSmallErrorExtra = { ent-BluespaceVaultSmallError }
+    .desc = { ent-BluespaceVaultSmallError.desc }
+ent-LuaMBluespaceSyndicateFTLInterceptionExtra = { ent-BluespaceSyndicateFTLInterception }
+    .desc = { ent-BluespaceSyndicateFTLInterception.desc }
+ent-LuaMBluespacePreFractureFTLInterceptionExtra = { ent-BluespacePreFractureFTLInterception }
+    .desc = { ent-BluespacePreFractureFTLInterception.desc }
+ent-LuaMStandardMonolithicExtraEventsScheduler = { ent-MonoMonolithicEventsScheduler }
+    .desc = { ent-MonoMonolithicEventsScheduler.desc }
+ent-LuaMMonolithFragmentSmallAppearanceExtra = { ent-MonolithFragmentSmallAppearance }
+    .desc = { ent-MonolithFragmentSmallAppearance.desc }

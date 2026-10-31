@@ -15,7 +15,7 @@ namespace Content.Shared.Strip.Components
         public TimeSpan HandStripDelay = TimeSpan.FromSeconds(4f);
 
         [DataField]
-        public float HandInsertDelayMultiplier = 0.4f; // LuaM
+        public float HandInsertDelayMultiplier = 0.5f; // LuaM
     }
 
     [NetSerializable, Serializable]

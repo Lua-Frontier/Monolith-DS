@@ -50,7 +50,7 @@ public abstract partial class SharedGunSystem : EntitySystem
 {
     [Dependency] private   ActionBlockerSystem _actionBlockerSystem = default!;
     [Dependency] protected IGameTiming Timing = default!;
-    [Dependency] protected IMapManager MapManager = default!;
+    [Dependency] protected SharedMapSystem MapManager = default!;
     [Dependency] private   INetManager _netManager = default!;
     [Dependency] protected IPrototypeManager ProtoManager = default!;
     [Dependency] protected IRobustRandom Random = default!;
@@ -143,7 +143,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (melee.NextAttack > component.NextFire)
         {
             component.NextFire = melee.NextAttack;
-            EntityManager.DirtyField(uid, component, nameof(GunComponent.NextFire));
+            DirtyField(uid, component, nameof(GunComponent.NextFire));
         }
     }
 
@@ -266,7 +266,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             return true;
         }
 
-        if (EntityManager.TryGetComponent(entity, out HandsComponent? hands) &&
+        if (TryComp(entity, out HandsComponent? hands) &&
             hands.ActiveHandEntity is { } held &&
             TryComp(held, out GunComponent? gun))
         {
@@ -323,7 +323,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         gun.ShootCoordinates = toCoordinates;
         AttemptShoot(user, gunUid, gun);
         gun.ShotCounter = 0;
-        EntityManager.DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
+        DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
     }
 
     // Goobstation - Crawling turret fix
@@ -416,7 +416,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         gun.NextFire += fireRate * shots;
 
         // NextFire has been touched regardless so need to dirty the gun.
-        EntityManager.DirtyField(gunUid, gun, nameof(GunComponent.NextFire));
+        DirtyField(gunUid, gun, nameof(GunComponent.NextFire));
 
         // Get how many shots we're actually allowed to make, due to clip size or otherwise.
         // Don't do this in the loop so we still reset NextFire.
@@ -474,7 +474,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         // Even if we don't actually shoot update the ShotCounter. This is to avoid spamming empty sounds
         // where the gun may be SemiAuto or Burst.
         gun.ShotCounter += shots;
-        EntityManager.DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
+        DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
 
         if (ev.Ammo.Count <= 0)
         {
@@ -786,7 +786,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (Containers.TryGetContainingContainer(ent.Owner, out var container))
             impulseCoord = TransformSystem.WithEntityId(impulseCoord, container.Owner);
         else if (selfXform.Anchored && selfXform.ParentUid != selfXform.MapUid)
-            impulseCoord = TransformSystem.WithEntityId(impulseCoord, selfXform.ParentUid);
+            return; // LuaM: impulseCoord = TransformSystem.WithEntityId(impulseCoord, selfXform.ParentUid) > return, anchored guns (ship weapons) don't push their ship
 
         var toEnt = impulseCoord.EntityId;
         if (!_physQuery.TryComp(toEnt, out var toBody))

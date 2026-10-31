@@ -47,6 +47,9 @@ binds:
 - function: ToggleStanding
   type: State
   key: R
+- function: Sprint # Goobstation
+  type: State
+  key: Alt
 - function: ToggleFocus
   type: State
   key: Space

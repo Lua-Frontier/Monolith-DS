@@ -10,7 +10,7 @@ namespace Content.Server._LuaM.FireControl;
 /// Remembers when gunnery-controlled weapons fire and refreshes their consoles,
 /// so the console can show each weapon's reload until it may fire again.
 /// </summary>
-public sealed class ShipGunReloadSystem : EntitySystem
+public sealed partial class ShipGunReloadSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private FireControlSystem _fireControl = default!;

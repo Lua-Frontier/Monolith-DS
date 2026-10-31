@@ -12,6 +12,22 @@ namespace Content.Server.Chemistry.Containers.EntitySystems;
 [Obsolete("This is being depreciated. Use SharedSolutionContainerSystem instead!")]
 public sealed partial class SolutionContainerSystem : SharedSolutionContainerSystem
 {
+    // LuaM-start: solution entities dumped out of their solution@ slot (destruction, deconstruction, gibbing) outlive the owner
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<ContainedSolutionComponent, EntGotRemovedFromContainerMessage>(OnSolutionRemovedFromContainer);
+    }
+
+    private void OnSolutionRemovedFromContainer(Entity<ContainedSolutionComponent> ent, ref EntGotRemovedFromContainerMessage args)
+    {
+        if (args.Container.ID != $"solution@{ent.Comp.ContainerName}" || TerminatingOrDeleted(ent))
+            return;
+
+        QueueDel(ent);
+    }
+    // LuaM-end
+
     [Obsolete("This is being depreciated. Use the ensure methods in SharedSolutionContainerSystem instead!")]
     public Solution EnsureSolution(Entity<MetaDataComponent?> entity, string name)
         => EnsureSolution(entity, name, out _);

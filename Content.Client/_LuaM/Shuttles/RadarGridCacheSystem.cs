@@ -1,4 +1,5 @@
 using Content.Client.Shuttles.UI;
+using Content.Shared._LuaM.Shuttles;
 
 namespace Content.Client._LuaM.Shuttles;
 
@@ -15,6 +16,8 @@ public sealed class RadarGridCacheSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<GridRemovalEvent>(OnGridRemoved);
+        SubscribeLocalEvent<RadarGridEdgesComponent, AfterAutoHandleStateEvent>(OnEdgesState);
+        SubscribeLocalEvent<RadarGridEdgesComponent, ComponentShutdown>(OnEdgesShutdown);
     }
 
     public override void Shutdown()
@@ -27,5 +30,15 @@ public sealed class RadarGridCacheSystem : EntitySystem
     private void OnGridRemoved(GridRemovalEvent ev)
     {
         GridData.Remove(ev.EntityUid);
+    }
+
+    private void OnEdgesState(Entity<RadarGridEdgesComponent> ent, ref AfterAutoHandleStateEvent args)
+    {
+        GridData.Remove(ent);
+    }
+
+    private void OnEdgesShutdown(Entity<RadarGridEdgesComponent> ent, ref ComponentShutdown args)
+    {
+        GridData.Remove(ent);
     }
 }

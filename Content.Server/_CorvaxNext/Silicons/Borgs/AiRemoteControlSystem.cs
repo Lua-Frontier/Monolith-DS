@@ -32,7 +32,7 @@ public sealed partial class AiRemoteControlSystem : SharedAiRemoteControlSystem
     [Dependency] private UserInterfaceSystem _userInterface = default!;
     [Dependency] private SharedTransformSystem _xformSystem = default!;
 
-    [Dependency] private IMapManager _map = default!; // Mono
+    [Dependency] private SharedMapSystem _map = default!; // Mono
 
     public override void Initialize()
     {
@@ -149,7 +149,7 @@ public sealed partial class AiRemoteControlSystem : SharedAiRemoteControlSystem
         _userInterface.TryToggleUi(uid, RemoteDeviceUiKey.Key, actor.PlayerSession);
 
         var aiGrid = Transform(uid).GridUid; // Mono
-        var query = EntityManager.EntityQueryEnumerator<AiRemoteControllerComponent>();
+        var query = EntityQueryEnumerator<AiRemoteControllerComponent>();
         var remoteDevices = new List<RemoteDevicesData>();
 
         while (query.MoveNext(out var queryUid, out var comp))

@@ -1,0 +1,15 @@
+ent-SmallFloorLightMiddleEmpty = маленький напольный светильник
+    .desc = Маленький напольный светильник. Что ты ищешь тут? Тут не на что смотреть!
+    .suffix = Пустой
+ent-FloorLightMiddleEmpty = длинный напольный светильник (центр)
+    .desc = Длинный напольный светильник. Что ты ищешь тут? Тут не на что смотреть!
+    .suffix = Пустой
+ent-FloorLightSideEmpty = длинный напольный светильник (края)
+    .desc = Длинный напольный светильник. Что ты ищешь тут? Тут не на что смотреть!
+    .suffix = Пустой
+ent-SmallFloorLightMiddle = { ent-SmallFloorLightMiddleEmpty }
+    .desc = { ent-SmallFloorLightMiddleEmpty.desc }
+ent-FloorLightMiddle = { ent-FloorLightMiddleEmpty }
+    .desc = { ent-FloorLightMiddleEmpty.desc }
+ent-FloorLightSide = { ent-FloorLightSideEmpty }
+    .desc = { ent-FloorLightSideEmpty.desc }

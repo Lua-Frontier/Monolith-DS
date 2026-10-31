@@ -54,7 +54,7 @@ public sealed partial class BluespaceErrorRuleComponent : Component
     /// Prevents it being deleted from under you.
     /// </summary>
     [DataField]
-    public bool ExtendIfPopulated = true;
+    public bool ExtendIfPopulated = false; // LuaM: true > false, event grids disappear on time even with people on them, the people stay
 
     [DataField]
     /// <summary>

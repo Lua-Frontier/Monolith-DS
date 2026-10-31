@@ -65,7 +65,7 @@ public sealed partial class HealingSystem : EntitySystem
 
         if (healing.DamageContainers is not null &&
             entity.Comp.DamageContainerID is not null &&
-            !healing.DamageContainers.Contains(entity.Comp.DamageContainerID))
+            !healing.DamageContainers.Contains(entity.Comp.DamageContainerID.Value))
         {
             return;
         }
@@ -114,12 +114,12 @@ public sealed partial class HealingSystem : EntitySystem
         if (entity.Owner != args.User)
         {
             _adminLogger.Add(LogType.Healed,
-                $"{EntityManager.ToPrettyString(args.User):user} healed {EntityManager.ToPrettyString(entity.Owner):target} for {total:damage} damage");
+                $"{ToPrettyString(args.User):user} healed {ToPrettyString(entity.Owner):target} for {total:damage} damage");
         }
         else
         {
             _adminLogger.Add(LogType.Healed,
-                $"{EntityManager.ToPrettyString(args.User):user} healed themselves for {total:damage} damage");
+                $"{ToPrettyString(args.User):user} healed themselves for {total:damage} damage");
         }
 
         _audio.PlayPvs(healing.HealingEndSound, entity.Owner);
@@ -188,7 +188,7 @@ public sealed partial class HealingSystem : EntitySystem
 
         if (component.DamageContainers is not null &&
             targetDamage.DamageContainerID is not null &&
-            !component.DamageContainers.Contains(targetDamage.DamageContainerID))
+            !component.DamageContainers.Contains(targetDamage.DamageContainerID.Value))
         {
             return false;
         }

@@ -43,8 +43,9 @@
   - ContractorBureaucracy
   - NFSpeciesSpecific
   - MercenaryBalaclava # Mono
-  - ContractorFirearm # Mono
-  - ContractorMag # Mono
+  - ContractorFullFirearm # LuaM: ContractorFirearm > ContractorFullFirearm, full mercenary weapon choice
+  - ContractorFullPistol # LuaM
+  - ContractorFullMag # LuaM: ContractorMag > ContractorFullMag
   - CivGunCaseSpecial # Mono
   - ContractorArmorPlates # Mono
 

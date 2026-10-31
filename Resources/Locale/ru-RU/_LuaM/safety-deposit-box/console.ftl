@@ -1,0 +1,17 @@
+safety-deposit-console-box-label = Ячейка { $id }
+safety-deposit-popup-invalid-size = Ошибка: неверный размер ячейки.
+safety-deposit-popup-no-character = Ошибка: не удалось загрузить данные персонажа.
+safety-deposit-popup-no-bank = Ошибка: банковский счёт не найден.
+safety-deposit-popup-insufficient-funds = Недостаточно средств. Нужно ${ $cost }, а у вас ${ $bank } на банковском счёте и ${ $savings } на сберегательном.
+safety-deposit-popup-transaction-failed = Транзакция не прошла.
+safety-deposit-popup-purchased = Сейфовая ячейка куплена! ID ячейки: { $id }...
+safety-deposit-popup-insert-box = Вставьте сейфовую ячейку.
+safety-deposit-popup-invalid-box = Неподходящая сейфовая ячейка.
+safety-deposit-popup-not-owner = Эта ячейка вам не принадлежит.
+safety-deposit-popup-no-storage = Ошибка: у ячейки нет хранилища.
+safety-deposit-popup-stored = Содержимое ячейки сохранено, ячейка сдана на хранение.
+safety-deposit-popup-not-found = Ячейка не найдена.
+safety-deposit-popup-not-lost = Эта ячейка не утеряна, вернуть её нельзя.
+safety-deposit-popup-reclaimed = Утерянная ячейка возвращена! Выдана новая пустая ячейка.
+safety-deposit-popup-already-withdrawn = Ячейка уже выдана и находится в мире.
+safety-deposit-popup-retrieved = Сейфовая ячейка выдана.

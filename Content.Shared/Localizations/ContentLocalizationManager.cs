@@ -35,7 +35,7 @@ namespace Content.Shared.Localizations
             _loc.LoadCulture(culture);
 // LuaM-start:
             _loc.LoadCulture(fallbackCulture);
-            _loc.SetFallbackCluture(fallbackCulture);
+            _loc.SetFallbackCulture(fallbackCulture);
             _loc.AddFunction(culture, "MANY", FormatMany);
 // LuaM-end.
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);

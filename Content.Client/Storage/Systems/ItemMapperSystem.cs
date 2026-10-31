@@ -22,7 +22,8 @@ public sealed partial class ItemMapperSystem : SharedItemMapperSystem
     {
         if (TryComp<SpriteComponent>(uid, out var sprite))
         {
-            component.RSIPath ??= sprite.BaseRSI!.Path;
+            // LuaM: BaseRSI! > BaseRSI?, client-side entities (e.g. the shipyard preview grid) may not have it yet, it is taken in InitLayers then
+            component.RSIPath ??= sprite.BaseRSI?.Path;
         }
     }
 
@@ -44,6 +45,12 @@ public sealed partial class ItemMapperSystem : SharedItemMapperSystem
         var (owner, component, spriteComponent, appearance) = ent;
         if (!_appearance.TryGetData<ShowLayerData>(owner, StorageMapVisuals.InitLayers, out var wrapper, appearance))
             return;
+
+        // LuaM start: the base RSI may have been missing on startup
+        component.RSIPath ??= spriteComponent.BaseRSI?.Path;
+        if (component.RSIPath == null)
+            return;
+        // LuaM end
 
         component.SpriteLayers.AddRange(wrapper.QueuedEntities);
 

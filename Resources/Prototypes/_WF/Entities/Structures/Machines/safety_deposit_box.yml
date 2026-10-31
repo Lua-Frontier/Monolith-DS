@@ -41,6 +41,7 @@
       tags:
       - Unstashable
       - SafetyDepositBlacklist
+      - MailCapsule # LuaM: mail capsules can not be stashed
   - type: SafetyDepositBox
   - type: Appearance
   - type: Tag

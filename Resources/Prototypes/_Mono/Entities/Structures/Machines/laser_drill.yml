@@ -59,11 +59,18 @@
   id: LaserDrill
   name: automated laser drill
   parent: LaserDrillBase
-  description: A large automated drill that digs up random materials when powered with 50 kW of HV. Only works on expedition planets.
+  description: A large automated drill that digs up random materials when powered with 100 kW of HV. Only works on expedition planets. # LuaM: 50 kW > 100 kW
   components:
   - type: PlanetMiner
     requireExpedition: true
     requireGround: false # works just fine on lattice
+  # LuaM start: five times slower mining, twice the power draw
+  - type: ItemMiner
+    interval: 50 # LuaM: 10 > 50
+  - type: PowerConsumer
+    voltage: High
+    drawRate: 100000 # LuaM: 50000 > 100000
+  # LuaM end
 
 - type: entity
   id: StationLaserDrill

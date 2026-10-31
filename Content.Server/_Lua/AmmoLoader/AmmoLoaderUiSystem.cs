@@ -18,12 +18,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Lua.AmmoLoader;
 
-public sealed class AmmoLoaderUiSystem : EntitySystem
+public sealed partial class AmmoLoaderUiSystem : EntitySystem
 {
-    [Dependency] private readonly AmmoLoaderSystem _ammoLoader = default!;
-    [Dependency] private readonly SharedContainerSystem _containers = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private AmmoLoaderSystem _ammoLoader = default!;
+    [Dependency] private SharedContainerSystem _containers = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
 
     public SoundSpecifier ActionSound = new SoundPathSpecifier("/Audio/_Mono/Weapons/Guns/autoloader.ogg");

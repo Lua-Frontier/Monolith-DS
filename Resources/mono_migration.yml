@@ -126,3 +126,6 @@ HardpointDebugSuperheavy: HardpointUniversalSuperheavy
 HardpointBallisticSuperheavy: HardpointUniversalSuperheavy
 HardpointEnergySuperheavy: HardpointUniversalSuperheavy
 HardpointMissileSuperheavy: HardpointUniversalSuperheavy
+
+# LuaM: the old wall pirate flag is replaced by the pirate banner
+PirateFlag: BannerPirates

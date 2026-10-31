@@ -1,0 +1,73 @@
+# Lua: basilisk, taken from sector-frontier-14 (wizden #37135)
+- type: entity
+  id: MobBasilisk
+  parent: [ BaseMobAsteroid, MobBloodstream ]
+  name: basilisk
+  description: A territorial beast, covered in a thick shell that absorbs energy. Its stare causes victims to freeze from the inside.
+  components:
+  - type: Sprite
+    sprite: _Lua/Mobs/Aliens/Asteroid/basilisk.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: basilisk
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: basilisk
+      Dead:
+        Base: basilisk_dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 3 # Lua: baseRunningSpeed > baseSprintSpeed, the field is named so here
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead #Lua 45<150
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 7
+        Piercing: 5
+  - type: Gun
+    fireRate: 0.75
+    projectileSpeed: 10.0 # When we get predicted guns and projectiles this should be raised to like 15, 15 mis-predicts too much right now unfortunately.
+    selectedMode: SemiAuto
+    showExamineText: false
+    availableModes: [ SemiAuto ]
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/syringe_gun.ogg
+  - type: RechargeBasicEntityAmmo
+    showExamineText: false
+    rechargeCooldown: 0
+    rechargeSound: null
+  - type: BasicEntityAmmoProvider
+    proto: BasiliskRay
+    capacity: 1
+    count: 1
+  - type: Bloodstream
+    bloodMaxVolume: 200
+    chemicalMaxVolume: 0
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: BasiliskCompound
+    blackboard:
+      VisionRadius: !type:Single
+        7
+      AggroVisionRadius: !type:Single
+        12
+      NavSmash: !type:Bool
+        true
+  - type: Reflect
+    reflectProb: 1
+    reflects:
+    - Energy
+  - type: Butcherable # LuaM: was commented out in sector-frontier-14, two diamond ores when butchered
+    spawned:
+    - id: DiamondOre1
+      amount: 2

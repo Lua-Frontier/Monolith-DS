@@ -26,8 +26,8 @@
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.95
   - type: ClothingSpeedModifier
-    walkModifier: 0.92
-    sprintModifier: 0.92
+    walkModifier: 0.82 # LuaM: 0.92 > 0.82, all suits are 0.1 slower
+    sprintModifier: 0.82 # LuaM: 0.92 > 0.82, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing

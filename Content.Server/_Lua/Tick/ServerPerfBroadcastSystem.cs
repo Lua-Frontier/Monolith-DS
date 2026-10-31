@@ -5,10 +5,10 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Lua.Tick;
 
-public sealed class ServerPerfBroadcastSystem : EntitySystem
+public sealed partial class ServerPerfBroadcastSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _time = default!;
-    [Dependency] private readonly IPlayerManager _players = default!;
+    [Dependency] private IGameTiming _time = default!;
+    [Dependency] private IPlayerManager _players = default!;
 
     private TimeSpan _lastSent;
 

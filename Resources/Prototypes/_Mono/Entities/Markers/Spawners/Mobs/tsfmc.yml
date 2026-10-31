@@ -14,6 +14,9 @@
   - MobHumanoidHostileBase
   id: MobTSFMCBase
   components:
+  - type: HTN # LuaM: SimpleRangedHostileCompound > LuaMInnateRangedHostileCompound, no weapon pickup, a held gun replaced their own one
+    rootTask:
+      task: LuaMInnateRangedHostileCompound
   - type: Body
     prototype: HumanSyntheticOrgans # New set of synthetic organs grants faster removal of toxins from bloodstream
     requiredLegs: 2
@@ -62,14 +65,14 @@
         path: /Audio/_NF/Effects/silence.ogg
     - type: BasicEntityAmmoProvider
       proto: Bullet68x52mmCaseless
-      capacity: 1
-      count: 1
+      capacity: 5 # LuaM: 1 > 5, an empty gun made the AI drop to melee after every shot
+      count: 5 # LuaM: 1 > 5
     - type: Gun
       minAngle: 5
       maxAngle: 20
       damageModifier: 0.8
       showExamineText: false
-      fireRate: 8
+      fireRate: 4 # LuaM: 8 > 4, same as the recharge (0.25), so the gun never runs dry
       selectedMode: FullAuto
       availableModes:
       - FullAuto

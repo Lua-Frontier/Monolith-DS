@@ -13,7 +13,7 @@ namespace Content.Client._LuaM.HUD;
 /// Puts <see cref="ShiftInfoPanel"/> on the gameplay screen and feeds it the round end countdown
 /// and the expedition of the map the player is on.
 /// </summary>
-public sealed class ShiftInfoUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
+public sealed partial class ShiftInfoUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
     [Dependency] private IEntityManager _entMan = default!;
     [Dependency] private IPlayerManager _player = default!;

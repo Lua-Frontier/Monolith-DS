@@ -16,7 +16,7 @@
   - TearGasGrenadeUSSP
   - GrenadeShrapnelUSSP
   - GrenadeIncendiaryUSSP
-
+  
 - type: latheRecipePack
   id: MonoUSSPArmorDynamic
   recipes:

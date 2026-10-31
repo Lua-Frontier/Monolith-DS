@@ -1,2 +1,2 @@
-ent-LockerSyndicateNordfall = шкаф Синдиката
+ent-LockerSyndicateSecure = шкаф Синдиката
     .desc = { ent-LockerBaseSecure.desc }

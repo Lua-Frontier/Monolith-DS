@@ -1,0 +1,9 @@
+- type: entity
+  parent: PosterBase
+  id: PosterLegitSerpent
+  name: "Fascinating Aerodynamics"
+  description: "How to take the Serpent supersonic and not lose your mind."
+  components:
+  - type: Sprite
+    sprite: Structures/Wallmounts/posters.rsi
+    state: serpent

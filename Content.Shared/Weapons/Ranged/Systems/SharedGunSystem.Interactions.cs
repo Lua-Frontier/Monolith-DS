@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Weapons; // LuaM
 using Content.Shared.Actions;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
@@ -11,6 +12,10 @@ public abstract partial class SharedGunSystem
 {
     private void OnExamine(EntityUid uid, GunComponent component, ExaminedEvent args)
     {
+        // LuaM: lets the traits of the one examining add their own lines, e.g. the cowboy trait
+        var examinedBy = new GunExaminedByEvent(uid, args);
+        RaiseLocalEvent(args.Examiner, ref examinedBy);
+
         if (!args.IsInDetailsRange || !component.ShowExamineText)
             return;
 

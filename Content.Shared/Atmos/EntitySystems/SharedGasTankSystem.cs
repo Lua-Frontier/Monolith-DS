@@ -88,6 +88,10 @@ public abstract partial class SharedGasTankSystem : EntitySystem
         if (args.Handled)
             return;
 
+        // LuaM: items with a tank and another toggle (jet magboots) share ToggleActionEvent, only our own action toggles internals
+        if (args.Action.Owner != gasTank.Comp.ToggleActionEntity)
+            return;
+
         ToggleInternals(gasTank, user: args.Performer);
         args.Handled = true;
     }

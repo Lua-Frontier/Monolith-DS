@@ -6,3 +6,8 @@
     Heat: 1.5
     Shock: 2.5
     Radiation: 0.5 # RIP
+    # LuaM start: 15% resistance to mechanical damage
+    Blunt: 0.85
+    Slash: 0.85
+    Piercing: 0.85
+    # LuaM end

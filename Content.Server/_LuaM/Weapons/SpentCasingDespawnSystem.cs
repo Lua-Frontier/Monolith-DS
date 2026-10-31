@@ -10,7 +10,7 @@ namespace Content.Server._LuaM.Weapons;
 /// A casing deleted from a chamber or a cylinder jams the gun for good, so the timer stops when the casing is put in
 /// and starts when it is taken out.
 /// </summary>
-public sealed class SpentCasingDespawnSystem : EntitySystem
+public sealed partial class SpentCasingDespawnSystem : EntitySystem
 {
     [Dependency] private GunSystem _gun = default!;
 

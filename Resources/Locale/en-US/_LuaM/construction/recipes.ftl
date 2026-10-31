@@ -1318,3 +1318,9 @@ construction-N14DoorWood-desc = A primitive door with manual operation like the 
 
 construction-WallTorch = wall torch
 construction-WallTorch-desc = A wooden stake on the wall you can light
+construction-BannerNordfallVanguard = Nordfall Vanguard banner
+construction-BannerNordfallVanguard-desc = A black banner bearing the red eagle of the Nordfall Vanguard.
+construction-NordfallVanguardFlag = Nordfall Vanguard flag
+construction-NordfallVanguardFlag-desc = A black flag bearing the red eagle of the Nordfall Vanguard.
+construction-BannerPirates = pirate banner
+construction-BannerPirates-desc = A black banner with a skull and crossbones. Nothing good flies under it.

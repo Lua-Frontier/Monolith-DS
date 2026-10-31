@@ -5,6 +5,8 @@
   description: An advanced exoskeleton harness of cutting edge, corporate-era technology. It connects itself directly to the brain of the wearer, and requires advanced brain augmentation and cybernetics to function. Incredibly rare, and practically alien in technology compared to modern tacsuits. Once equipped, the armor cannot be removed without external release.
   suffix: SelfUnremovable
   components:
+  - type: SpeedTieredFootsteps # LuaM: always heavy steps, whatever the slowdown
+    forcedTier: Heavy
   - type: CritInjectorClothing # LuaM
     solution:
       reagents:
@@ -56,8 +58,8 @@
         Shock: 0.8
         Caustic: 0.4
   - type: ClothingSpeedModifier
-    walkModifier: 0.9 # LuaM 0.8 > 0.9
-    sprintModifier: 0.9 # LuaM 0.8 > 0.9
+    walkModifier: 0.8 # LuaM 0.8 > 0.9 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # LuaM 0.8 > 0.9 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing

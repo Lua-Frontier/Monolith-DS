@@ -49,8 +49,7 @@ public sealed partial class RadarConsoleComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public Vector2? Target;
 
-    [DataField("targetEntity")]
-    [ViewVariables(VVAccess.ReadWrite)]
+    [ViewVariables(VVAccess.ReadWrite)] // LuaM: runtime only, an entity uid must not be saved
     public EntityUid TargetEntity = EntityUid.Invalid;
     // End Frontier
 

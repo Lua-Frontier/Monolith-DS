@@ -19,7 +19,7 @@ namespace Content.Server._Mono.Shipyard;
 /// <summary>
 /// This handles preview map and preview observer.
 /// </summary>
-public sealed class ShipyardPreviewSystem : SharedShipyardPreviewSystem
+public sealed partial class ShipyardPreviewSystem : SharedShipyardPreviewSystem
 {
     [Dependency] private MapSystem _map = default!;
     [Dependency] private MetaDataSystem _meta = default!;
@@ -31,7 +31,7 @@ public sealed class ShipyardPreviewSystem : SharedShipyardPreviewSystem
         base.Initialize();
 
         SubscribeLocalEvent<PostGameMapLoad>(OnPostGameMapLoad);
-        SubscribeLocalEvent<ShipyardConsoleComponent, ShipyardConsolePreviewMessage>(OnPreview);
+        // SubscribeLocalEvent<ShipyardConsoleComponent, ShipyardConsolePreviewMessage>(OnPreview); // LuaM: ship preview disabled
         SubscribeLocalEvent<ShipyardPreviewExitMessage>(OnDispose);
     }
 

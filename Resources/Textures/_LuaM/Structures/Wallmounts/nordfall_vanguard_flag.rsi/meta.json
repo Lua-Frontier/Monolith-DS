@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Nordfall Vanguard emblem drawn for Monolith-DS on the shape of blank_flag from Structures/Wallmounts/flags.rsi (derived from tgstation at https://github.com/tgstation/tgstation/commit/d0d81185f09ca30d3b0856d476544240dba0de53)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "flag"
+    }
+  ]
+}

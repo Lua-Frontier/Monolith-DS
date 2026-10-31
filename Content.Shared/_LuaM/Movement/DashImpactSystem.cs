@@ -10,11 +10,11 @@ namespace Content.Shared._LuaM.Movement;
 /// <summary>
 /// Stops jumps and dashes on the first creature in the way and knocks that creature down.
 /// </summary>
-public sealed class DashImpactSystem : EntitySystem
+public sealed partial class DashImpactSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
 
     public override void Initialize()
     {

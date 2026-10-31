@@ -14,6 +14,8 @@ using Content.Shared.Radio.EntitySystems;
 using Content.Shared._LuaM.Radio; // LuaM
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+using System.Linq;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -55,7 +57,7 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
         if (channels.Count == 0)
             RemComp<ActiveRadioComponent>(uid);
         else
-            EnsureComp<ActiveRadioComponent>(uid).Channels = channels;
+            EnsureComp<ActiveRadioComponent>(uid).Channels = channels.Select(c => new ProtoId<RadioChannelPrototype>(c)).ToHashSet();
         // LuaM end
     }
 

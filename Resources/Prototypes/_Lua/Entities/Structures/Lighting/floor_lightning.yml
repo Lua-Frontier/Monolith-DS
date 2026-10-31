@@ -1,0 +1,88 @@
+- type: entity
+  name: reinforced floor light middle
+  description: What are you looking for? It's just a floor light!
+  id: SmallFloorLightMiddleEmpty
+  suffix: Empty
+  parent: PoweredSmallLightEmpty
+  components:
+  - type: Sprite
+    sprite: _Lua/Structures/Wallmounts/Lightning/floor_light_bulb_middle.rsi
+    drawdepth: FloorObjects
+  - type: PointLight
+    offset: "0, 0"
+  - type: Construction
+    graph: LightFixture
+    node: bulbFloorLight
+
+- type: entity
+  name: reinforced glowing line middle
+  description: What are you looking for? It's just a floor light!
+  id: FloorLightMiddleEmpty
+  suffix: Empty
+  parent: PoweredlightEmpty
+  components:
+  - type: Sprite
+    sprite: _Lua/Structures/Wallmounts/Lightning/floor_light_middle.rsi
+    drawdepth: FloorObjects
+  - type: PointLight
+    offset: "0, 0"
+  - type: Construction
+    graph: LightFixture
+    node: tubeFloorLightMiddle
+
+- type: entity
+  name: reinforced glowing line side
+  description: What are you looking for? It's just a floor light!
+  id: FloorLightSideEmpty
+  suffix: Empty
+  parent: PoweredlightEmpty
+  components:
+  - type: Sprite
+    sprite: _Lua/Structures/Wallmounts/Lightning/floor_light_side.rsi
+    drawdepth: FloorObjects
+  - type: Construction
+    graph: LightFixture
+    node: tubeFloorLightSide
+
+- type: entity
+  name: reinforced floor light middle
+  description: What are you looking for? It's just a floor light!
+  id: SmallFloorLightMiddle
+  parent: PoweredSmallLight
+  components:
+  - type: Sprite
+    sprite: _Lua/Structures/Wallmounts/Lightning/floor_light_bulb_middle.rsi
+    drawdepth: FloorObjects
+  - type: PointLight
+    offset: "0, 0"
+  - type: Construction
+    graph: LightFixture
+    node: bulbFloorLight
+
+- type: entity
+  name: reinforced glowing line middle
+  description: What are you looking for? It's just a floor light!
+  id: FloorLightMiddle
+  parent: Poweredlight
+  components:
+  - type: Sprite
+    sprite: _Lua/Structures/Wallmounts/Lightning/floor_light_middle.rsi
+    drawdepth: FloorObjects
+  - type: PointLight
+    offset: "0, 0"
+  - type: Construction
+    graph: LightFixture
+    node: tubeFloorLightMiddle
+
+- type: entity
+  name: reinforced glowing line side
+  description: What are you looking for? It's just a floor light!
+  id: FloorLightSide
+  parent: Poweredlight
+  components:
+  - type: Sprite
+    sprite: _Lua/Structures/Wallmounts/Lightning/floor_light_side.rsi
+    drawdepth: FloorObjects
+  - type: Construction
+    graph: LightFixture
+    node: tubeFloorLightSide

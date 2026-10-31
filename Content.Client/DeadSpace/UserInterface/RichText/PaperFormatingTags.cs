@@ -30,12 +30,12 @@ public sealed class ShiftTag : IMarkupTagHandler
     }
 }
 
-public sealed class SmallTag : IMarkupTagHandler
+public sealed partial class SmallTag : IMarkupTagHandler
 {
     private const int MaxDecrease = 6;
 
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     public string Name => "small";
 
@@ -246,7 +246,37 @@ internal sealed class PaperFormattingFont : Font
             return plainAdvance;
         }
 
-        var variation = GetHandwritingVariation(rune, _sequence.DrawRuneIndex++);
+        var advance = DrawWithHandwriting(handle, rune, baseline, scale, _sequence.DrawRuneIndex++,
+            (h, pos) => _inner.DrawChar(h, rune, pos, scale, color, fallback));
+        DrawDecorations(handle, baseline, advance, scale, color);
+        return advance;
+    }
+
+    public override float DrawCharOutline(
+        DrawingHandleBase handle,
+        Rune rune,
+        Vector2 baseline,
+        float scale,
+        TextOutline outline,
+        bool fallback = true)
+    {
+        if (_effects.ConfusionStrength <= 0 || rune.Value == '\n' || rune.Value == '\r')
+            return _inner.DrawCharOutline(handle, rune, baseline, scale, outline, fallback);
+
+        // Outlines are drawn in their own pass, so they keep their own counter to match the fill jitter.
+        return DrawWithHandwriting(handle, rune, baseline, scale, _sequence.OutlineRuneIndex++,
+            (h, pos) => _inner.DrawCharOutline(h, rune, pos, scale, outline, fallback));
+    }
+
+    private float DrawWithHandwriting(
+        DrawingHandleBase handle,
+        Rune rune,
+        Vector2 baseline,
+        float scale,
+        int runeIndex,
+        Func<DrawingHandleBase, Vector2, float> draw)
+    {
+        var variation = GetHandwritingVariation(rune, runeIndex);
         var drawOffset = new Vector2(
             MathF.Round(variation.OffsetX * scale),
             MathF.Round(variation.OffsetY * scale));
@@ -262,7 +292,7 @@ internal sealed class PaperFormattingFont : Font
         float advance;
         try
         {
-            advance = _inner.DrawChar(handle, rune, drawPosition, scale, color, fallback);
+            advance = draw(handle, drawPosition);
         }
         finally
         {
@@ -276,7 +306,6 @@ internal sealed class PaperFormattingFont : Font
                 MathF.Round(advance * widthScale) + MathF.Round(variation.Spacing * scale));
         }
 
-        DrawDecorations(handle, baseline, advance, scale, color);
         return advance;
     }
 
@@ -409,6 +438,7 @@ internal sealed class PaperFormattingFont : Font
     private sealed class HandwritingSequence
     {
         public int DrawRuneIndex;
+        public int OutlineRuneIndex;
         public int MeasureRuneIndex;
     }
 }

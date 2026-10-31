@@ -13,7 +13,6 @@ namespace Content.Client.Sandbox
     {
         [Dependency] private IClientAdminManager _adminManager = default!;
         [Dependency] private IClientConsoleHost _consoleHost = default!;
-        [Dependency] private IMapManager _map = default!;
         [Dependency] private IPlacementManager _placement = default!;
         [Dependency] private ContentEyeSystem _contentEye = default!;
         [Dependency] private SharedTransformSystem _transform = default!;
@@ -90,7 +89,7 @@ namespace Content.Client.Sandbox
 
             // Try copy entity.
             if (uid.IsValid()
-                && EntityManager.TryGetComponent(uid, out MetaDataComponent? comp)
+                && TryComp(uid, out MetaDataComponent? comp)
                 && !comp.EntityDeleted)
             {
                 if (comp.EntityPrototype == null || comp.EntityPrototype.HideSpawnMenu || comp.EntityPrototype.Abstract)
@@ -111,7 +110,7 @@ namespace Content.Client.Sandbox
 
             // Try copy tile.
 
-            if (!_map.TryFindGridAt(_transform.ToMapCoordinates(coords), out var gridUid, out var grid) || !_mapSystem.TryGetTileRef(gridUid, grid, coords, out var tileRef))
+            if (!_mapSystem.TryFindGridAt(_transform.ToMapCoordinates(coords), out var gridUid, out var grid) || !_mapSystem.TryGetTileRef(gridUid, grid, coords, out var tileRef))
                 return false;
 
             if (_placement.Eraser)

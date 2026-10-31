@@ -281,6 +281,9 @@ public sealed partial class ToggleableClothingSystem : EntitySystem
         if (comp.LifeStage > ComponentLifeStage.Running)
             return;
 
+        if (TerminatingOrDeleted(comp.AttachedUid)) // LuaM
+            return;
+
         if (!TryComp(comp.AttachedUid, out ToggleableClothingComponent? toggleableComp))
             return;
 

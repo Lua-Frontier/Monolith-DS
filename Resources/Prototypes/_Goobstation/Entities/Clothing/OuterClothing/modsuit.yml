@@ -59,8 +59,8 @@
       outerClothing-vox:
       - state: equipped-OUTERCLOTHING-sealed-vox
   - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1
+    walkModifier: 0.9 # LuaM: 1 > 0.9, all suits are 0.1 slower
+    sprintModifier: 0.9 # LuaM: 1 > 0.9, all suits are 0.1 slower
   - type: StaminaDamageResistance
     coefficient: 0.9
   - type: Armor
@@ -94,8 +94,8 @@
       outerClothing-vox:
       - state: equipped-OUTERCLOTHING-sealed-vox
   - type: ClothingSpeedModifier
-    walkModifier: 0.87
-    sprintModifier: 0.87
+    walkModifier: 0.77 # LuaM: 0.87 > 0.77, all suits are 0.1 slower
+    sprintModifier: 0.77 # LuaM: 0.87 > 0.77, all suits are 0.1 slower
   - type: ExplosionResistance
     damageCoefficient: 0.4
   - type: StaminaDamageResistance
@@ -143,8 +143,8 @@
       outerClothing-vox:
       - state: equipped-OUTERCLOTHING-sealed-vox
   - type: ClothingSpeedModifier
-    walkModifier: 0.90
-    sprintModifier: 0.90
+    walkModifier: 0.8 # LuaM: 0.90 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # LuaM: 0.90 > 0.8, all suits are 0.1 slower
   - type: ExplosionResistance
     damageCoefficient: 0.4
   - type: StaminaDamageResistance
@@ -191,8 +191,8 @@
       outerClothing-vox:
       - state: equipped-OUTERCLOTHING-sealed-vox
   - type: ClothingSpeedModifier
-    walkModifier: 1.05
-    sprintModifier: 1.05
+    walkModifier: 0.95 # LuaM: 1.05 > 0.95, all suits are 0.1 slower
+    sprintModifier: 0.95 # LuaM: 1.05 > 0.95, all suits are 0.1 slower
   - type: ExplosionResistance
     damageCoefficient: 1
   - type: Armor
@@ -230,8 +230,8 @@
       outerClothing-vox:
       - state: equipped-OUTERCLOTHING-sealed-vox
   - type: ClothingSpeedModifier
-    walkModifier: 0.95 # Mono
-    sprintModifier: 0.95 # Mono
+    walkModifier: 0.85 # Mono # LuaM: 0.95 > 0.85, all suits are 0.1 slower
+    sprintModifier: 0.85 # Mono # LuaM: 0.95 > 0.85, all suits are 0.1 slower
   - type: ExplosionResistance
     damageCoefficient: 0.25 # Mono
   - type: Armor
@@ -269,8 +269,8 @@
       outerClothing-vox:
       - state: equipped-OUTERCLOTHING-sealed-vox
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
+    sprintModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
   - type: ExplosionResistance
     damageCoefficient: 0.6
   - type: Armor
@@ -308,8 +308,8 @@
       outerClothing-vox:
       - state: equipped-OUTERCLOTHING-sealed-vox
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
+    sprintModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: Armor
@@ -347,8 +347,8 @@
       outerClothing-vox:
       - state: equipped-OUTERCLOTHING-sealed-vox
   - type: ClothingSpeedModifier
-    walkModifier: 0.90
-    sprintModifier: 0.90
+    walkModifier: 0.8 # LuaM: 0.90 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # LuaM: 0.90 > 0.8, all suits are 0.1 slower
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: Armor

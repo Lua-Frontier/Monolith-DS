@@ -1,0 +1,159 @@
+- type: entity
+  parent: ClothingOuterHardsuitBaseNFNfsd
+  id: ClothingHeadHardsuitM92
+  name: M92 colonia tacsuit
+  description: A heavy, gilded tacsuit, stripped of its shield but now capable of taking a lot of physical damage. Usually assigned to commanding officers of TSF flagships.
+  components:
+  - type: Sprite
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92-outer.rsi # Lua
+  - type: Clothing
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92-outer.rsi # Lua
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitM92
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: FireProtection # Mono
+    reduction: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Armor # Mono - Armor Value Changes
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.45
+        Radiation: 0.4
+        Caustic: 0.5
+  - type: ClothingSpeedModifier # Mono - Armor Value Changes
+    walkModifier: 0.7 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
+    sprintModifier: 0.75 # LuaM: 1 > 0.9, TSF and PDV suits are 10% slower
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.35
+
+
+- type: entity
+  parent: ClothingOuterHardsuitBaseNFNfsd
+  id: ClothingHeadHardsuitM92x
+  name: Colonia M92x tacsuit
+  description: A heavy, gilded tacsuit, stripped of its shield but now capable of taking a lot of physical damage. Usually assigned to commanding officers of TSF flagships.
+  components:
+  - type: Sprite
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92x-outer.rsi # Lua
+  - type: Clothing
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92x-outer.rsi # Lua
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head:  ClothingHeadHelmetHardsuitM92x
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: FireProtection # Mono
+    reduction: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: Armor # Mono - Armor Value Changes
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.25
+        Heat: 0.45
+        Radiation: 0.4
+        Caustic: 0.5
+  - type: ClothingSpeedModifier # Mono - Armor Value Changes
+    walkModifier: 0.6 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
+    sprintModifier: 0.7 # LuaM: 1 > 0.9, TSF and PDV suits are 10% slower
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.35
+
+- type: entity
+  parent: [ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing, BaseFactionGearTSFT3 ] # Jugger Suit
+  id: ClothingOuterHardsuitM93
+  name: Colonia M93 tacsuit
+  description: An experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Durable, and comes with an integrated hard-shield along with numerous gadgets at the cost of insulation and solid armor.
+  components:
+  - type: Sprite
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M93-outer.rsi
+  - type: Clothing
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M93-outer.rsi
+  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head: ClothingHeadHelmetHardsuitM93
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: FireProtection # Mono
+    reduction: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
+  - type: Armor # Mono - Armor Value Changes
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.8
+  - type: ClothingSpeedModifier # Mono - Armor Value Changes
+    walkModifier: 0.6 # LuaM: 0.7 > 0.6, TSF and PDV suits are 10% slower
+    sprintModifier: 0.5 # LuaM: 0.6 > 0.5, TSF and PDV suits are 10% slower
+  - type: HeldSpeedModifier
+  - type: FactionClothing
+    faction: NanoTrasen
+  - type: StaminaDamageResistance # Mono - Stamres
+    coefficient: 0.25
+  - type: PirateBountyItem # Mono
+    id: ClothingOuterHardsuitTacsuitHighValue
+  # Mono - Shielding comps
+  - type: PersonalShield
+    visuals:
+      fillLevel: 0.2
+      hexDensity: 6
+      pixelGrid: 192
+      color: "#08862e"
+      scale: 2.3
+    shield:
+      maxCharge: 300
+      regenRate: 5
+      spinupTime: 2.5
+      breakCooldown: 20
+      powerDraw: 0.5
+      blockModifier:
+        coefficients:
+          Piercing: 0.5
+          Heat: 1.5
+          Radiation: 2.5
+          Shock: 2.5
+  - type: Battery
+    maxCharge: 100
+    startingCharge: 100
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 5
+    autoRechargePauseTime: 5
+  - type: UseDelay
+    delay: 10
+  - type: ExtendDescription
+    descriptionList:
+    - description: Alt-click or otherwise interact to toggle additional shielding.
+      color: "#4f94ad"
+      requireDetailRange: true
+    - description: The M92-x shield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
+      color: "#94768c"
+      requireDetailRange: true

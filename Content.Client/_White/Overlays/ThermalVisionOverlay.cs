@@ -10,6 +10,7 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes; // LuaM
 using Robust.Shared.Timing;
 
 namespace Content.Client._White.Overlays;
@@ -19,11 +20,15 @@ public sealed partial class ThermalVisionOverlay : Overlay
     [Dependency] private IEntityManager _entity = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _prototype = default!; // LuaM
 
     private readonly TransformSystem _transform;
     private readonly StealthSystem _stealth;
     private readonly ContainerSystem _container;
     private readonly SharedPointLightSystem _light;
+    private readonly SpriteSystem _sprite; // LuaM
+
+    private static readonly ProtoId<ShaderPrototype> ThermalShader = "ThermalVision"; // LuaM: Goobstation thermal shader
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
@@ -44,6 +49,7 @@ public sealed partial class ThermalVisionOverlay : Overlay
         _transform = _entity.System<TransformSystem>();
         _stealth = _entity.System<StealthSystem>();
         _light = _entity.System<SharedPointLightSystem>();
+        _sprite = _entity.System<SpriteSystem>(); // LuaM
 
         ZIndex = -1;
     }
@@ -92,7 +98,7 @@ public sealed partial class ThermalVisionOverlay : Overlay
 
             // Mono - teargas hides you from smoke
             if (_entity.HasComponent<SmokeAffectedComponent>(uid))
-                return;
+                continue; // LuaM: return > continue, one entity in smoke hid everyone from thermals
 
             var entity = uid;
 
@@ -143,16 +149,44 @@ public sealed partial class ThermalVisionOverlay : Overlay
         var rotation = _transform.GetWorldRotation(xform);
 
 
+        // LuaM start: Goobstation thermal shader instead of a flat tint
+        // Layer shaders reset the handle shader, so they are taken off for the draw. Displaced clothing layers
+        // need their shader to render right, those are hidden instead.
         var originalColor = sprite.Color;
-        sprite.Color = color.WithAlpha(alpha);
-        sprite.Render(handle, eyeRot, rotation, position: position);
-        sprite.Color = originalColor;
+        var layerData = new Dictionary<int, (ShaderInstance? Shader, Color Color)>();
+        var allLayers = sprite.AllLayers.ToList();
+        for (var i = 0; i < allLayers.Count; i++)
+        {
+            if (allLayers[i] is not SpriteComponent.Layer { Visible: true } layer)
+                continue;
+
+            if (layer.ShaderPrototype?.Id is "DisplacedDraw" or "DisplacedStencilDraw")
+                _sprite.LayerSetVisible((uid, sprite), i, false);
+
+            layerData[i] = (layer.Shader, layer.Color);
+            layer.Shader = null;
+            _sprite.LayerSetColor(layer, Color.White.WithAlpha(layer.Color.A));
+        }
+
+        _sprite.SetColor((uid, sprite), Color.White.WithAlpha(alpha));
+        handle.UseShader(_prototype.Index(ThermalShader).Instance());
+        _sprite.RenderSprite((uid, sprite), handle, eyeRot, rotation, position);
+        handle.UseShader(null);
+        _sprite.SetColor((uid, sprite), originalColor);
+
+        foreach (var (index, data) in layerData)
+        {
+            ((SpriteComponent.Layer) sprite[index]).Shader = data.Shader;
+            _sprite.LayerSetColor((uid, sprite), index, data.Color);
+            _sprite.LayerSetVisible((uid, sprite), index, true);
+        }
+        // LuaM end
     }
 
     private bool CanSee(EntityUid uid, SpriteComponent sprite)
     {
-        return sprite.Visible && (!_entity.TryGetComponent(uid, out StealthComponent? stealth) ||
-                                  _stealth.GetVisibility(uid, stealth) > 0.5f);
+        // LuaM: thermals see the body heat of stealthed people too, the stealth visibility check was removed
+        return sprite.Visible;
     }
 
     public void ResetLight(bool checkFirstTimePredicted = true)

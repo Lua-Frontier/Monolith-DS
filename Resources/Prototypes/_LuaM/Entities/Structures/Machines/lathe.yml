@@ -29,6 +29,7 @@
     - StaticGrenades
     - MonoAttachmentsStatic
     - PDVLatheStatic
+    - StaticAmmoRecipePack # LuaM
     dynamicPacks:
     - MonoRogueWeaponsDynamicMelee
     - MonoRogueWeaponsDynamicRanged
@@ -40,6 +41,12 @@
     - NFMercenaryTechfabDeprecated
     - SecurityEquipment
     - SmartGun
+    - ResearchedExplosives
+    - DynamicAmmoRecipePack
+    - UniversalShellAmmo
+    - UniversalRailgunAmmo
+    - UniversalMissileAmmo
+    - UniversalOrdinance
     - ResearchedExplosives
   - type: MaterialStorage
     whitelist:

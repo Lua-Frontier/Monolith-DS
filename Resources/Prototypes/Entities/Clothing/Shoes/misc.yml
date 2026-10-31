@@ -134,8 +134,8 @@
   - type: ToggleClothing
     action: ActionToggleSpeedBoots
   - type: ClothingSpeedModifier
-    walkModifier: 1.20 # Mono
-    sprintModifier: 1.20 # Mono
+    walkModifier: 1.10 # Mono # LuaM: 1.20 > 1.10
+    sprintModifier: 1.10 # Mono # LuaM: 1.20 > 1.10
   - type: Appearance
   - type: GenericVisualizer
     visuals:

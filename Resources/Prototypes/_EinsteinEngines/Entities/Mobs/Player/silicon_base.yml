@@ -28,8 +28,8 @@
     damageModifierSet: IPC
   - type: InteractionOutline
   - type: MovementSpeedModifier
-    baseWalkSpeed: 4
-    baseSprintSpeed: 3
+    baseWalkSpeed: 4.4 # LuaM: 4 > 4.4
+    baseSprintSpeed: 3.3 # LuaM: 3 > 3.3
   - type: ZombieImmune
   - type: DoAfter
   - type: RotationVisuals

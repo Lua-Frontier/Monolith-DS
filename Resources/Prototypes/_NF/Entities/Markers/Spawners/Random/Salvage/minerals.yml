@@ -82,6 +82,8 @@
       weight: 0.001
     - id: NFWallCobblebrickBluespace
       weight: 0.0003
+    - id: SalvageSpawnerMobMiningAsteroid # Lua: goliaths, hivelords and basilisks on asteroids, as in sector-frontier-14
+      weight: 0.011 # LuaM: 0.1 > 0.011, about 4-5 mobs on a big (ExtraMassive) asteroid instead of ~24
 
 - type: entity
   id: NFRockMineralHard

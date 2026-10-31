@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "by Litogin, hips edited for Ariral",
+  "copyright": "by Litogin, hips edited for Ariral. outerClothing combined from the jumpsuit and shoes states of _White/Mobs/Species/displacement.rsi, head moves helmets over the snout, by c_quarian (discord)",
   "size": {
     "x": 32,
     "y": 32
@@ -16,6 +16,14 @@
     },
     {
       "name": "jumpsuit-female",
+      "directions": 4
+    },
+    {
+      "name": "outerClothing",
+      "directions": 4
+    },
+    {
+      "name": "head",
       "directions": 4
     }
   ]

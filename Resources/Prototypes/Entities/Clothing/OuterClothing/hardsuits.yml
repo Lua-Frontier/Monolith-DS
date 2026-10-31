@@ -23,8 +23,8 @@
         Piercing: 0.85
         Caustic: 0.9
   - type: ClothingSpeedModifier
-    walkModifier: 0.9 # Mono
-    sprintModifier: 0.9 # Mono
+    walkModifier: 0.8 # Mono # LuaM: 0.9 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # Mono # LuaM: 0.9 > 0.8, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaticPrice # Frontier
     price: 20 # Frontier
@@ -70,8 +70,8 @@
         Heat: 0.75
         Radiation: 0.35
   - type: ClothingSpeedModifier
-    walkModifier: 0.85 # Mono
-    sprintModifier: 0.85 # Mono
+    walkModifier: 0.75 # Mono # LuaM: 0.85 > 0.75, all suits are 0.1 slower
+    sprintModifier: 0.75 # Mono # LuaM: 0.85 > 0.75, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.6
@@ -110,8 +110,8 @@
         Caustic: 0.5
         Radiation: 0.2
   - type: ClothingSpeedModifier
-    walkModifier: 0.85 # Mono
-    sprintModifier: 0.85 # Mono
+    walkModifier: 0.75 # Mono # LuaM: 0.85 > 0.75, all suits are 0.1 slower
+    sprintModifier: 0.75 # Mono # LuaM: 0.85 > 0.75, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -147,8 +147,8 @@
         Radiation: 0.25 #salv is supposed to have radiation hazards in the future
         Caustic: 0.45
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.87
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
+    sprintModifier: 0.77 # LuaM: 0.87 > 0.77, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: Tag
     tags:
@@ -191,8 +191,8 @@
         Radiation: 0.15
         Caustic: 0.85
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
-    sprintModifier: 0.80
+    walkModifier: 0.7 # LuaM: 0.80 > 0.7, all suits are 0.1 slower
+    sprintModifier: 0.7 # LuaM: 0.80 > 0.7, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.55
@@ -231,8 +231,8 @@
         Radiation: 0.3
         Caustic: 0.8
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
+    sprintModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -263,8 +263,8 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
+    walkModifier: 0.9 # LuaM: 1.0 > 0.9, all suits are 0.1 slower
+    sprintModifier: 0.9 # LuaM: 1.0 > 0.9, all suits are 0.1 slower
   - type: Armor
     modifiers:
       coefficients:
@@ -314,8 +314,8 @@
         Caustic: 0.8
         Heat: 0.7 # Goobstation
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
+    sprintModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.4
@@ -351,8 +351,8 @@
         Caustic: 0.3
         Heat: 0.75 # Goobstation
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -390,8 +390,8 @@
         Caustic: 0.7
         Heat: 0.55 # Goobstation
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.6 # LuaM: 0.7 > 0.6, all suits are 0.1 slower
+    sprintModifier: 0.6 # LuaM: 0.7 > 0.6, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.3
@@ -430,8 +430,8 @@
         Radiation: 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.9 # Mono
-    sprintModifier: 0.9 # Mono
+    walkModifier: 0.8 # Mono # LuaM: 0.9 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # Mono # LuaM: 0.9 > 0.8, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.3
@@ -472,8 +472,8 @@
         Radiation: 0.1 # Mono 0.0 -> 0.1
         Caustic: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
+    sprintModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.45
@@ -508,8 +508,8 @@
         Piercing: 0.9
         Caustic: 0.1
   - type: ClothingSpeedModifier
-    walkModifier: 1.10 # 0.9-> 1.10 - Mono
-    sprintModifier: 1.10 # 0.95-> 1.10 - Mono
+    walkModifier: 1 # 0.9-> 1.10 - Mono # LuaM: 1.10 > 1, all suits are 0.1 slower
+    sprintModifier: 1 # 0.95-> 1.10 - Mono # LuaM: 1.10 > 1, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.7
@@ -548,8 +548,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.65 # LuaM: 0.75 > 0.65, all suits are 0.1 slower
+    sprintModifier: 0.65 # LuaM: 0.75 > 0.65, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: Item
     size: Huge
@@ -603,8 +603,8 @@
         Caustic: 0.6
         Heat: 0.55 # Goobstation
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
+    sprintModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.4
@@ -642,8 +642,8 @@
         Radiation: 0.35
         Caustic: 0.75
   - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1
+    walkModifier: 0.9 # LuaM: 1 > 0.9, all suits are 0.1 slower
+    sprintModifier: 0.9 # LuaM: 1 > 0.9, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -685,8 +685,8 @@
         Radiation: 0.5
         Caustic: 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -725,8 +725,8 @@
         Radiation: 0.35
         Caustic: 0.2
   - type: ClothingSpeedModifier # Mono
-    walkModifier: 0.93
-    sprintModifier: 0.93
+    walkModifier: 0.83 # LuaM: 0.93 > 0.83, all suits are 0.1 slower
+    sprintModifier: 0.83 # LuaM: 0.93 > 0.83, all suits are 0.1 slower
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
@@ -773,8 +773,8 @@
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1 # 0.9-> 1 Mono
+    walkModifier: 1 # LuaM: 1.1 > 1, all suits are 0.1 slower
+    sprintModifier: 1 # 0.9-> 1 Mono # LuaM: 1.1 > 1, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.45
@@ -794,6 +794,8 @@
   name: syndicate commander hardsuit
   description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
   components:
+  - type: SpeedTieredFootsteps # LuaM: always heavy steps, whatever the slowdown
+    forcedTier: Heavy
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
   - type: Clothing
@@ -813,8 +815,8 @@
         Radiation: 0.25
         Caustic: 0.4
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
+    walkModifier: 0.9 # LuaM: 1.0 > 0.9, all suits are 0.1 slower
+    sprintModifier: 0.9 # LuaM: 1.0 > 0.9, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -856,8 +858,8 @@
         Radiation: 0.2
         Caustic: 0.2
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.6 # 0.65-> 0.6 Mono
+    walkModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.5 # 0.65-> 0.6 Mono # LuaM: 0.6 > 0.5, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -869,9 +871,6 @@
 #      helmetattachment: ClothingHeadHelmetAttachmentBlock # Commented by LuaM
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.6
-  - type: FootstepModifier # LuaM
-    footstepSoundCollection:
-      collection: FootstepHeavySuit
 
 #Wizard Hardsuit
 - type: entity
@@ -899,8 +898,8 @@
         Radiation: 0.25
         Caustic: 0.75
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
+    sprintModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -937,8 +936,8 @@
         Piercing: 1
         Heat: 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
+    sprintModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.5 # its just skin....
@@ -1016,8 +1015,8 @@
         Heat: 0.4
         Caustic: 0.75
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
+    sprintModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -1040,6 +1039,8 @@
   name: ERT leader's hardsuit
   description: A protective hardsuit worn by the leader of an emergency response team.
   components:
+  - type: SpeedTieredFootsteps # LuaM: always heavy steps, whatever the slowdown
+    forcedTier: Heavy
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
   - type: Clothing
@@ -1189,8 +1190,8 @@
         Radiation: 0.1
         Caustic: 0.1
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
+    walkModifier: 0.9 # LuaM: 1.0 > 0.9, all suits are 0.1 slower
+    sprintModifier: 0.9 # LuaM: 1.0 > 0.9, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0
@@ -1234,8 +1235,8 @@
         Radiation: 0.1
         Caustic: 0.1
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
+    walkModifier: 0.9 # LuaM: 1.0 > 0.9, all suits are 0.1 slower
+    sprintModifier: 0.9 # LuaM: 1.0 > 0.9, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.15
@@ -1273,8 +1274,8 @@
         Piercing: 0.9
         Caustic: 0.8
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: Construction
     graph: ClownHardsuit
@@ -1339,8 +1340,8 @@
         Piercing: 0.85
         Caustic: 0.8
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.8

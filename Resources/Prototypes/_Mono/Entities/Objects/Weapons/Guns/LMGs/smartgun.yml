@@ -26,7 +26,7 @@
     availableModes:
     - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/m41.ogg
+      path: /Audio/_RMC14/Weapons/Guns/Gunshots/gun_ml66a.ogg
   - type: ChamberMagazineAmmoProvider
   - type: ItemSlots
     slots:

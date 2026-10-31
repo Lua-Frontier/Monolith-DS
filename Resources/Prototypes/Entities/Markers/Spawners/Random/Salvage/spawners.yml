@@ -509,4 +509,6 @@
         weight: 65
       - id: MobHivelord
         weight: 35
+      - id: MobBasilisk # Lua: basilisk from sector-frontier-14
+        weight: 35
 

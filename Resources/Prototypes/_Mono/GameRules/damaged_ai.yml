@@ -18,7 +18,7 @@
     - id: UnknownShuttleNebula
 
 - type: entity
-  parent: BaseRandomShuttleRule
+  parent: [ BaseRandomShuttleRule, LuaMShuttleRuleCleanup ] # LuaM: AI shuttle wrecks get cleaned up
   id: UnknownShuttleZenith
   components:
   - type: StationEvent
@@ -33,7 +33,7 @@
     gridPath: /Maps/_LuaM/ShuttleEvent/ZenithLuaM.yml # LuaM: /Maps/_Mono/ShuttleEvent/zenith.yml > /Maps/_LuaM/ShuttleEvent/ZenithLuaM.yml
 
 - type: entity
-  parent: BaseRandomShuttleRule
+  parent: [ BaseRandomShuttleRule, LuaMShuttleRuleCleanup ] # LuaM: AI shuttle wrecks get cleaned up
   id: UnknownShuttleZenithE
   components:
   - type: StationEvent
@@ -48,7 +48,7 @@
     gridPath: /Maps/_LuaM/ShuttleEvent/Zenith_ELuaM.yml # LuaM: /Maps/_Mono/ShuttleEvent/zenith_e.yml > /Maps/_LuaM/ShuttleEvent/Zenith_ELuaM.yml
 
 - type: entity
-  parent: BaseRandomShuttleRule
+  parent: [ BaseRandomShuttleRule, LuaMShuttleRuleCleanup ] # LuaM: AI shuttle wrecks get cleaned up
   id: UnknownShuttleNebula
   components:
   - type: StationEvent
@@ -63,7 +63,7 @@
     gridPath: /Maps/_LuaM/ShuttleEvent/NebulaLuaM.yml # LuaM: /Maps/_Mono/ShuttleEvent/nebula.yml > /Maps/_LuaM/ShuttleEvent/NebulaLuaM.yml
 
 - type: entity
-  parent: BaseRandomShuttleRule
+  parent: [ BaseRandomShuttleRule, LuaMShuttleRuleCleanup ] # LuaM: AI shuttle wrecks get cleaned up
   id: UnknownShuttleWyrm
   components:
   - type: StationEvent
@@ -78,7 +78,7 @@
     gridPath: /Maps/_LuaM/ShuttleEvent/WyrmLuaM.yml # LuaM: /Maps/_Mono/ShuttleEvent/wyrm.yml > /Maps/_LuaM/ShuttleEvent/WyrmLuaM.yml
 
 - type: entity
-  parent: BaseRandomShuttleRule
+  parent: [ BaseRandomShuttleRule, LuaMShuttleRuleCleanup ] # LuaM: AI shuttle wrecks get cleaned up
   id: UnknownShuttleRazorN
   components:
   - type: StationEvent
@@ -93,7 +93,7 @@
     gridPath: /Maps/_LuaM/ShuttleEvent/razorn.yml # LuaM: /Maps/_Mono/ShuttleEvent/razorn.yml > /Maps/_LuaM/ShuttleEvent/razorn.yml
 
 - type: entity
-  parent: BaseRandomShuttleRule
+  parent: [ BaseRandomShuttleRule, LuaMShuttleRuleCleanup ] # LuaM: AI shuttle wrecks get cleaned up
   id: UnknownShuttleWyvern
   components:
   - type: StationEvent

@@ -51,6 +51,10 @@ public sealed partial class ToggleClothingSystem : EntitySystem
 
     private void OnToggleAction(Entity<ToggleClothingComponent> ent, ref ToggleActionEvent args)
     {
+        // LuaM: items with a tank and another toggle (jet magboots) share ToggleActionEvent, only our own action toggles the clothing
+        if (args.Handled || args.Action.Owner != ent.Comp.ActionEntity)
+            return;
+
         args.Handled = _toggle.Toggle(ent.Owner, args.Performer);
     }
 

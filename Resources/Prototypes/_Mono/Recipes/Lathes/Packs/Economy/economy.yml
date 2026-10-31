@@ -58,6 +58,7 @@
   - BroadswordRLegMMC
   - BroadswordLLegMMC
   - BroadswordHeadMMC
+  - ComponentBrickEconomy3Recipe
   #LuaM end
   # Commented out materials until we give them a use
   #- MaterialIndustryElectronics

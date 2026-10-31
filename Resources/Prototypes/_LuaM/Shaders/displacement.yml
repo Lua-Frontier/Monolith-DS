@@ -1,6 +1,0 @@
-- type: shader
-  id: DisplacedNoStencilDraw
-  kind: source
-  path: "/Textures/Shaders/displacement.swsl"
-  params:
-    displacementSize: 127

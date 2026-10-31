@@ -7,3 +7,6 @@ shuttle-console-map-search = Search objects
 shuttle-radar-menu-follow = Follow
 shuttle-radar-menu-call = Call
 shuttle-radar-menu-unreachable = Unable to connect
+shuttle-console-hints-nav = SPACE - brake   ·   LMB - fire selected weapons   ·   Hold RMB - pan the radar   ·   Wheel - zoom   ·   Alt + RMB on a grid - context menu
+shuttle-console-hints-map = Object in the list - show it on the map   ·   Hold RMB - pan the map   ·   Wheel - zoom   ·   FTL / autopilot: LMB - destination, wheel - rotate
+shuttle-console-hints-dock = SPACE - brake   ·   Wheel - zoom

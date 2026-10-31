@@ -10,11 +10,11 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed class SlurredSystem : SharedSlurredSystem // LuaM: public sealed partiral class > public sealed class
+public sealed partial class SlurredSystem : SharedSlurredSystem // LuaM: public sealed partiral class > public sealed class
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!; // LuaM: private > private readonly
-    [Dependency] private readonly IRobustRandom _random = default!; // LuaM: private > private readonly
-    [Dependency] private readonly IGameTiming _timing = default!; // LuaM: private > private readonly
+    [Dependency] private StatusEffectsSystem _statusEffectsSystem = default!; // LuaM: private > private readonly
+    [Dependency] private IRobustRandom _random = default!; // LuaM: private > private readonly
+    [Dependency] private IGameTiming _timing = default!; // LuaM: private > private readonly
 
 //    [ValidatePrototypeId<StatusEffectPrototype>] // Commented by LuaM
 //    private const string SlurKey = "SlurredSpeech";

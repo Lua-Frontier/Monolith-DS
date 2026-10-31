@@ -9,12 +9,12 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Xenoborgs;
 
-public sealed class XenoborgCoreSystem : EntitySystem
+public sealed partial class XenoborgCoreSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ExplosionSystem _explosion = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ExplosionSystem _explosion = default!;
+    [Dependency] private ChatSystem _chat = default!;
 
     private TimeSpan? _soundTime;
     private TimeSpan? _wipeTime;

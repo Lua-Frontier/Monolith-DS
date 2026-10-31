@@ -19,7 +19,8 @@ namespace Content.Client.Shuttles.UI;
 public sealed partial class ShuttleDockControl : BaseShuttleControl
 {
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private IEntityManager _entManagerForMaps = default!;
+    private SharedMapSystem _mapManager => _entManagerForMaps.System<SharedMapSystem>();
     private readonly DockingSystem _dockSystem;
     private readonly SharedShuttleSystem _shuttles;
     private readonly SharedTransformSystem _xformSystem;
@@ -330,11 +331,11 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
         var invertedPosition = Vector2.Zero;
         invertedPosition.Y = -invertedPosition.Y;
         var rotation = Matrix3Helpers.CreateRotation(-_angle.Value + MathF.PI);
-        var ourDockConnection = new UIBox2(
+        var ourDockConnection = SortedBox( // LuaM
             ScalePosition(Vector2.Transform(new Vector2(-0.2f, -0.7f), rotation)),
             ScalePosition(Vector2.Transform(new Vector2(0.2f, -0.5f), rotation)));
 
-        var ourDock = new UIBox2(
+        var ourDock = SortedBox( // LuaM
             ScalePosition(Vector2.Transform(new Vector2(-0.5f, 0.5f), rotation)),
             ScalePosition(Vector2.Transform(new Vector2(0.5f, -0.5f), rotation)));
 
@@ -475,5 +476,11 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
                 _dockContainers[dock] = panel;
             }
         }
+    }
+
+    // LuaM: UIBox2 no longer accepts flipped corners
+    private static UIBox2 SortedBox(Vector2 a, Vector2 b)
+    {
+        return new UIBox2(Vector2.Min(a, b), Vector2.Max(a, b));
     }
 }

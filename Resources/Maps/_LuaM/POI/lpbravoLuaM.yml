@@ -33362,7 +33362,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: LockerSyndicateNordfall
+- proto: LockerSyndicateSecure
   entities:
   - uid: 1756
     components:

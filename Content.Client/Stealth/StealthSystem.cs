@@ -1,3 +1,4 @@
+using Content.Client.Graphics;
 using Content.Client.Interactable.Components;
 using Content.Client.StatusIcon;
 using Content.Shared.Stealth;
@@ -12,6 +13,7 @@ public sealed partial class StealthSystem : SharedStealthSystem
 {
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private SpriteSystem _sprite = default!; // LuaM
 
     private ShaderInstance _shader = default!;
 
@@ -40,10 +42,22 @@ public sealed partial class StealthSystem : SharedStealthSystem
         if (!Resolve(uid, ref component, ref sprite, false))
             return;
 
-        sprite.Color = Color.White;
-        sprite.PostShader = enabled ? _shader : null;
-        sprite.GetScreenTexture = enabled;
-        sprite.RaiseShaderEvent = enabled;
+        _sprite.SetColor((uid, sprite), Color.White);
+        // LuaM start: per-id post shaders since RT 286, the legacy flags are not read anymore
+        if (enabled)
+        {
+            _sprite.SetPostShader((uid, sprite), new SpriteComponent.PostShaderArgs(ContentPostShaderIds.Stealth, _shader)
+            {
+                GetScreenTexture = true,
+                RaiseShaderEvent = true,
+                Before = ContentPostShaderIds.BeforeOutlines,
+            });
+        }
+        else
+        {
+            _sprite.RemovePostShader((uid, sprite), ContentPostShaderIds.Stealth);
+        }
+        // LuaM end
 
         if (!enabled)
         {
@@ -94,6 +108,6 @@ public sealed partial class StealthSystem : SharedStealthSystem
         _shader.SetParameter("visibility", visibility);
 
         visibility = MathF.Max(0, visibility);
-        args.Sprite.Color = new Color(visibility, visibility, 1, 1);
+        _sprite.SetColor((uid, args.Sprite), new Color(visibility, visibility, 1, 1));
     }
 }

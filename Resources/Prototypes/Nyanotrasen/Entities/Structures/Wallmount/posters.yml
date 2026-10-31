@@ -168,6 +168,36 @@
     sprite: Nyanotrasen/Structures/Wallmounts/Posters/Hyenh.rsi
     state: shoukouposter
 
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandAyaya
+  name: "Ayaya"
+  description: "Ayayayaya."
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Structures/Wallmounts/Posters/misc.rsi
+    state: poster_ayaya
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitChknDnnr
+  name: "Winner Winner Chicken Dinner"
+  description: "An advertisement for crispy fried chicken."
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Structures/Wallmounts/Posters/CerebralError.rsi
+    state: poster_ChknDnnr
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitCornzza
+  name: "Corncob Crust!"
+  description: "NEW Cornzza! Corn pizza, with a corncob crust that'll make you say 'why does this exist?'."
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Structures/Wallmounts/Posters/rosysyntax.rsi
+    state: poster_corncobpizza
+
 # SAFETY MOTH
 # Actual original art credit to AspEv
 - type: entity

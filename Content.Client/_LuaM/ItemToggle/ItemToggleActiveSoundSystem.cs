@@ -3,7 +3,7 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Client._LuaM.ItemToggle;
 
-public sealed class ItemToggleActiveSoundSystem : EntitySystem
+public sealed partial class ItemToggleActiveSoundSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
 

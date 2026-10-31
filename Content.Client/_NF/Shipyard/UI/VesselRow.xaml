@@ -26,8 +26,10 @@
                                 MinWidth="130"
                                 HorizontalAlignment="Right" />
         <!-- Lua: Guidebook button replaced with Preview -->
+        <!-- LuaM: ship preview disabled -->
         <Button Name="Preview"
                 Access="Public"
+                Visible="False"
                 Text="{Loc 'shipyard-console-preview'}"
                 StyleClasses="ButtonSquare"
                 MinWidth="130"

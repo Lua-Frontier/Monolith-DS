@@ -4,10 +4,10 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._LuaM.Sandevistan;
 
-public sealed class SandevistanGunBlockSystem : EntitySystem
+public sealed partial class SandevistanGunBlockSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {

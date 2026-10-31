@@ -94,7 +94,7 @@
   - AnalysisComputerCircuitboard
   - AnomalyVesselCircuitboard
   - AnomalyVesselExperimentalCircuitboard
-  - AnomalySynchronizerCircuitboard
+  # - AnomalySynchronizerCircuitboard # LuaM
   - APECircuitboard
   - ArtifactAnalyzerMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard

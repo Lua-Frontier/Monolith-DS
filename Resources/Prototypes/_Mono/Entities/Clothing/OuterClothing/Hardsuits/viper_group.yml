@@ -27,8 +27,8 @@
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.8 # LuaM: 0.9 > 0.8, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -74,8 +74,8 @@
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.67
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
+    sprintModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -123,8 +123,8 @@
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.34
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.65 # LuaM: 0.75 > 0.65, all suits are 0.1 slower
+    sprintModifier: 0.65 # LuaM: 0.75 > 0.65, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -147,6 +147,8 @@
   name: MEDUSA mk.VI viper hardsuit
   description: A heavy combat hardsuit adorned with signature markings of the Viper Group. The armor features a personal shield projector integrated into the suit.
   components:
+  - type: SpeedTieredFootsteps # LuaM: always heavy steps, whatever the slowdown
+    forcedTier: Heavy
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Hardsuits/viper_group_shield.rsi
   - type: Item
@@ -172,8 +174,8 @@
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.34
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.65 # LuaM: 0.75 > 0.65, all suits are 0.1 slower
+    sprintModifier: 0.65 # LuaM: 0.75 > 0.65, all suits are 0.1 slower
   - type: HeldSpeedModifier
   # Mono - Shielding comps
   - type: PersonalShield
@@ -205,9 +207,10 @@
     autoRechargePauseTime: 10
   - type: UseDelay
     delay: 10
-  - type: FootstepModifier # Mono
-    footstepSoundCollection:
-      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  # LuaM: footsteps come from SpeedTieredFootsteps, the own heavy step sound is removed
+  # - type: FootstepModifier # Mono
+  #   footstepSoundCollection:
+  #     path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
   - type: ExtendDescription
     descriptionList:
     - description: Alt-click or otherwise interact to toggle additional shielding.
@@ -260,8 +263,8 @@
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.67
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
+    sprintModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing

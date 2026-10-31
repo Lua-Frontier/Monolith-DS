@@ -17,3 +17,12 @@
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
+
+- type: trait
+  id: Cowboy
+  name: trait-luam-cowboy-name
+  description: trait-luam-cowboy-desc
+  category: Physical
+  cost: 0
+  components:
+  - type: Cowboy

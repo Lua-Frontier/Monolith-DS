@@ -23,8 +23,8 @@
         Radiation: 0.4
         Caustic: 0.4
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
+    sprintModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     requiredSlot: outerclothing
@@ -64,8 +64,8 @@
         Radiation: 0.8
         Caustic: 0.8
   - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1
+    walkModifier: 0.9 # LuaM: 1 > 0.9, all suits are 0.1 slower
+    sprintModifier: 0.9 # LuaM: 1 > 0.9, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     requiredSlot: outerclothing

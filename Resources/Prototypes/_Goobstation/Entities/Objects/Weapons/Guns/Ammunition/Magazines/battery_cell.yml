@@ -13,14 +13,14 @@
     intensitySlope: 1.5
   - type: Sprite
     sprite: Objects/Power/power_cells.rsi
-  - type: SolutionContainerManager
-    solutions:
-      battery:
-        maxVol: 5
-  - type: InjectableSolution
-    solution: battery
-  - type: DrawableSolution
-    solution: battery
+#  - type: SolutionContainerManager # военные батареи должны по логике иметь защиту от такого..
+#    solutions:
+#      battery:
+#        maxVol: 5
+#  - type: InjectableSolution
+#    solution: battery
+#  - type: DrawableSolution
+#    solution: battery
   - type: Appearance
   - type: PowerCellVisuals
   - type: Riggable

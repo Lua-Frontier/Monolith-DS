@@ -42,7 +42,7 @@ public sealed partial class MappingState : GameplayStateBase
     [Dependency] private IEntityNetworkManager _entityNetwork = default!;
     [Dependency] private IInputManager _input = default!;
     [Dependency] private ILogManager _log = default!;
-    [Dependency] private IMapManager _mapMan = default!;
+    private SharedMapSystem _mapMan => _entityManager.System<SharedMapSystem>();
     [Dependency] private MappingManager _mapping = default!;
     [Dependency] private IOverlayManager _overlays = default!;
     [Dependency] private IPlacementManager _placement = default!;

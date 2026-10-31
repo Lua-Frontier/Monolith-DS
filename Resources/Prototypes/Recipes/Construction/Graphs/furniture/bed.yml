@@ -16,6 +16,16 @@
             - material: Cloth
               amount: 2
               doAfter: 1
+        - to: bed_army
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 2
+              doAfter: 1
         - to: dogbed
           completed:
             - !type:SnapToGrid { }
@@ -37,6 +47,72 @@
       entity: Bed
       edges:
         - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+        # Orion-Start
+        - to: double_bed_complete
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 2
+              doAfter: 1
+        # Orion-End
+    # Orion-Start
+    - node: double_bed_complete
+      entity: DoubleBed
+      edges:
+        - to: bed
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+    # Orion-End
+    - node: bed_army
+      entity: BedArmy
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+        - to: double_bed_army_complete
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 2
+              doAfter: 1
+    - node: double_bed_army_complete
+      entity: DoubleBedArmy
+      edges:
+        - to: bed_army
           completed:
             - !type:SpawnPrototype
               prototype: SheetSteel1

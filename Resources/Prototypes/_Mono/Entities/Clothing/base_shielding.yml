@@ -42,6 +42,7 @@
   id: ClothingOuterHardsuitBaseNoPlateholder
   name: base hardsuit no plateholder
   components:
+  - type: SpeedTieredFootsteps # LuaM: light, medium or heavy steps from Hullrot by the suit's slowdown
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000

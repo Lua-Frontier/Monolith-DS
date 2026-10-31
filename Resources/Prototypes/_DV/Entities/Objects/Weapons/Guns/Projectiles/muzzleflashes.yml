@@ -7,10 +7,13 @@
     drawdepth: BelowMobs
     offset: 0.15, 0
     layers:
+    # LuaM: muzzle flash and powder smoke from Hullrot, was _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi kineticsmall
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
-      state: kineticsmall
+      sprite: _Crescent/Objects/Effects/Muzzleflash/light.rsi
+      state: flash
+    - sprite: _Crescent/Objects/Effects/Muzzleflash/light.rsi
+      state: smoke
 
 - type: entity
   parent: MuzzleFlashEffect

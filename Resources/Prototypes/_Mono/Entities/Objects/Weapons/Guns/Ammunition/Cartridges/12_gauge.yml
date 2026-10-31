@@ -10,6 +10,7 @@
     - Cartridge
     - ShellShotgun12_gaugeBuckshot
   - type: CartridgeAmmo
+    muzzleFlash: MuzzleFlashEffectShotgun # LuaM: powder smoke flash from Hullrot
     soundEject:
       collection: ShellEject
       params:

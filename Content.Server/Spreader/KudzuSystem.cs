@@ -3,6 +3,7 @@ using Content.Shared.Spreader;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Spreader;
 
@@ -14,8 +15,7 @@ public sealed partial class KudzuSystem : EntitySystem
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private DamageableSystem _damageable = default!;
 
-    [ValidatePrototypeId<EdgeSpreaderPrototype>]
-    private const string KudzuGroup = "Kudzu";
+    private static readonly ProtoId<EdgeSpreaderPrototype> KudzuGroup = "Kudzu";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -36,7 +36,7 @@ public sealed partial class KudzuSystem : EntitySystem
                 component.GrowthLevel = 3;
 
             component.GrowthLevel = Math.Max(1, component.GrowthLevel - growthDamage);
-            if (EntityManager.TryGetComponent<AppearanceComponent>(uid, out var appearance))
+            if (TryComp<AppearanceComponent>(uid, out var appearance))
             {
                 _appearance.SetData(uid, KudzuVisuals.GrowthLevel, component.GrowthLevel, appearance);
             }
@@ -79,7 +79,7 @@ public sealed partial class KudzuSystem : EntitySystem
 
     private void SetupKudzu(EntityUid uid, KudzuComponent component, ComponentStartup args)
     {
-        if (!EntityManager.TryGetComponent<AppearanceComponent>(uid, out var appearance))
+        if (!TryComp<AppearanceComponent>(uid, out var appearance))
         {
             return;
         }

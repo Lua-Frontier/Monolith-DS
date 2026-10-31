@@ -7,7 +7,7 @@
                          HorizontalExpand="True"
                          Margin="2"
                          MinHeight="100"
-                         HScrollEnabled="False">
+                         HScrollEnabled="True">
             <BoxContainer Orientation="Vertical"
                           HorizontalExpand="True"
                           Margin="2">

@@ -158,21 +158,22 @@ public abstract partial class SharedEventHorizonSystem : EntitySystem
             return;
 
         // Update both fixtures the event horizon is associated with:
+        var fixtureRadius = MathF.Max(0f, eventHorizon.Radius);
         var consumer = _fixtures.GetFixtureOrNull(uid, consumerId, fixtures);
         if (consumer != null)
         {
-            _physics.SetRadius(uid, consumerId, consumer, consumer.Shape, eventHorizon.Radius, fixtures);
+            _physics.SetRadius(uid, consumerId, consumer, consumer.Shape, fixtureRadius, fixtures);
             _physics.SetHard(uid, consumer, false, fixtures);
         }
 
         var collider = _fixtures.GetFixtureOrNull(uid, colliderId, fixtures);
         if (collider != null)
         {
-            _physics.SetRadius(uid, colliderId, collider, collider.Shape, eventHorizon.Radius, fixtures);
+            _physics.SetRadius(uid, colliderId, collider, collider.Shape, fixtureRadius, fixtures);
             _physics.SetHard(uid, collider, true, fixtures);
         }
 
-        EntityManager.Dirty(uid, fixtures);
+        Dirty(uid, fixtures);
     }
 
     #endregion Getters/Setters

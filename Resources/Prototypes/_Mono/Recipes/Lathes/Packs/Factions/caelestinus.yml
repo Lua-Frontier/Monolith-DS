@@ -10,5 +10,17 @@
   - WeaponRifleACRRecipeAlternative
   - Magazine635x40mmCaselessBigRecipe
   - Magazine635x40mmCaselessBigPlasmarecipe
+  - Blueprint18x160mmAmmo
+  - WeaponSniperHunter101
+  - WeaponRifleFPDMR
+  - WeaponPistolCCTCGalactica
+  - ClothingHeadHardsuitM92
+  - ClothingHeadHardsuitM92x
+  - ClothingOuterHardsuitM93
+  - ArmorPlateBlunt_Slash 
+  - ArmorPlatePierce 
+  - ArmorPlateHeat 
+  - ArmorPlateSpeed 
+  - WeaponSmartLmg
 # LuaM end
 

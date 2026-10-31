@@ -5,7 +5,7 @@ using Content.Shared.Speech; // LuaM
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed class LizardAccentSystem : EntitySystem
+public sealed partial class LizardAccentSystem : EntitySystem
 {
     private static readonly Regex RegexLowerS = new("s+");
     private static readonly Regex RegexUpperS = new("S+");
@@ -13,7 +13,7 @@ public sealed class LizardAccentSystem : EntitySystem
     private static readonly Regex RegexLowerEndX = new(@"\bx([\-|r|R]|\b)");
     private static readonly Regex RegexUpperEndX = new(@"\bX([\-|r|R]|\b)");
 
-    [Dependency] private readonly IRobustRandom _random = default!; // LuaM
+    [Dependency] private IRobustRandom _random = default!; // LuaM
 
     public override void Initialize()
     {

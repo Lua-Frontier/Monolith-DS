@@ -1,0 +1,4 @@
+ent-WeaponSmartLmgRosenkavalier = MLA-79 Rosenkavalier
+    .desc = Необычная версия  MLA-79, специально для коменданта
+ent-WeaponCaseMla79Rosenkavalier = MLA-79 Rosenkavalier кейс
+    .desc = Кейс с необычной версией MLA-79, специально для коменданта

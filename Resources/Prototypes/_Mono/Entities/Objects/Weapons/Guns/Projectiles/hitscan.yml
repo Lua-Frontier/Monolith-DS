@@ -160,8 +160,6 @@
         Piercing: 105
         Structural: 650
     armorPenetration: 0.9
-  - type: HitscanStaminaDamage
-    staminaDamage: 250
   - type: HitscanMultiRaycast
     maxPierce: 10 # This is going to be so fucking funny
     maxDistance: 200
@@ -182,8 +180,6 @@
         Blunt: 15
         Structural: 350
     armorPenetration: 0
-  - type: HitscanStaminaDamage
-    staminaDamage: 250
   - type: HitscanSpawnEntity
     spawnedEntity: 145x114mmEMPExplosion
 
@@ -193,13 +189,13 @@
   components:
   - type: TriggerOnSpawn
   - type: EmpOnTrigger
-    range: 5
-    disableDuration: 15
-    energyConsumption: 1400000 # 1/2 EMP grenade
+    range: 3
+    disableDuration: 25
+    energyConsumption: 540000000 # как сотня ЭМИ грен разом, что-бы наверняка.
   - type: ExplodeOnTrigger
-  - type: Explosive # 1/8 of an explosive grenade
+  - type: Explosive
     explosionType: Default
-    maxIntensity: 2
-    intensitySlope: 3
-    totalIntensity: 20
+    maxIntensity: 30
+    intensitySlope: 5
+    totalIntensity: 30
     canCreateVacuum: false

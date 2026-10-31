@@ -27,7 +27,6 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 {
     [Dependency] private IConfigurationManager _configManager = default!;
     [Dependency] private IConsoleHost _console = default!;
-    [Dependency] private IMapManager _mapManager = default!;
     [Dependency] private IParallelManager _parallel = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
@@ -181,6 +180,20 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             return;
         _updateTimer = 0f;
 
+        // LuaM-start: always clean up, an exception left _activeChunks filled and broke every next update
+        try
+        {
+            UpdateBiomes(frameTime);
+        }
+        finally
+        {
+            CleanupUpdateCycle();
+        }
+    }
+
+    private void UpdateBiomes(float frameTime)
+    {
+        // LuaM-end
         var biomes = AllEntityQuery<BiomeComponent>();
 
         while (biomes.MoveNext(out var biome))
@@ -196,10 +209,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
         // Early exit if no players around chunk
         if (_handledEntities.Count == 0)
-        {
-            CleanupUpdateCycle();
-            return;
-        }
+            return; // LuaM: cleanup moved to finally in Update
 
         var loadBiomes = AllEntityQuery<BiomeComponent, MapGridComponent>();
 
@@ -227,8 +237,6 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
         if (shouldUnload)
             _unloadTimer = 0f;
-
-        CleanupUpdateCycle();
     }
 
     private void CleanupUpdateCycle()

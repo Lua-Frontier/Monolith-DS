@@ -18,6 +18,9 @@
   id: FanElectronics
 
 - type: Tag
+  id: Fence
+
+- type: Tag
   id: GrenadeLauncher
 
 - type: Tag

@@ -1,0 +1,75 @@
+# Standard has no outside threat, so some of its events run twice as often:
+# the TSF vaults, the syndicate weapon cache, the unidentified shuttles (syndicate and pre-fracture) and the monolith fragments.
+# Each of them gets a second stream: an extra scheduler with the same timings that runs copies of these events.
+# The copies are separate events, so they don't share the repeat delay with the originals and can run alongside them.
+# The normal schedulers stay as they are, so the rest of the events keep their usual rate.
+
+- type: entity
+  id: LuaMStandardBluespaceExtraEventScheduler
+  parent: BluespaceEventScheduler
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: LuaMStandardBluespaceExtraEventsTable
+    minimumTimeUntilFirstEvent: 2400 # 40 minutes, same as BluespaceEventScheduler
+    minMaxEventTiming:
+      min: 1800 # 30 minutes between events
+      max: 3000 # 50 minutes between events
+
+- type: entityTable
+  id: LuaMStandardBluespaceExtraEventsTable
+  table: !type:AllSelector
+    children:
+    - id: LuaMBluespaceCacheErrorExtra
+    - id: LuaMBluespaceVaultErrorExtra
+    - id: LuaMBluespaceVaultSmallErrorExtra
+    - id: LuaMBluespaceSyndicateFTLInterceptionExtra
+    - id: LuaMBluespacePreFractureFTLInterceptionExtra
+
+- type: entity
+  id: LuaMBluespaceCacheErrorExtra
+  parent: BluespaceCacheError
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: LuaMBluespaceVaultErrorExtra
+  parent: BluespaceVaultError
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: LuaMBluespaceVaultSmallErrorExtra
+  parent: BluespaceVaultSmallError
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: LuaMBluespaceSyndicateFTLInterceptionExtra
+  parent: BluespaceSyndicateFTLInterception
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: LuaMBluespacePreFractureFTLInterceptionExtra
+  parent: BluespacePreFractureFTLInterception
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: LuaMStandardMonolithicExtraEventsScheduler
+  parent: MonoMonolithicEventsScheduler
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: LuaMStandardMonolithicExtraEventsTable
+    minimumTimeUntilFirstEvent: 900 # 15 minutes, 5 later than MonoMonolithicEventsScheduler so two fragments don't appear at once
+    minMaxEventTiming:
+      min: 420 # 7 minutes between events
+      max: 1200 # 20 minutes between events
+
+- type: entityTable
+  id: LuaMStandardMonolithicExtraEventsTable
+  table: !type:AllSelector
+    children:
+    - id: LuaMMonolithFragmentSmallAppearanceExtra
+
+- type: entity
+  id: LuaMMonolithFragmentSmallAppearanceExtra
+  parent: MonolithFragmentSmallAppearance
+  categories: [ HideSpawnMenu ]

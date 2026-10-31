@@ -1,0 +1,16 @@
+- type: construction
+  id: DoubleBed
+  name: double bed
+  description: A large, wide bed.
+  graph: bed
+  startNode: start
+  targetNode: double_bed_complete
+  category: construction-category-furniture
+  icon:
+    sprite: _ADT/Structures/Furniture/doublebed.rsi
+    state: splitbed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

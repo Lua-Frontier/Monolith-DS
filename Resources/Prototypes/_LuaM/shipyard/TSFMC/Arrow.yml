@@ -11,7 +11,7 @@
   category: Large
   group: Security
   access: Armory
-  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/Arrow.yml
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/TSFMC/Arrow.yml
   guidebookPage: Null
   class:
   - Frigate
@@ -23,7 +23,7 @@
 - type: gameMap
   id: TSFMCArrow
   mapName: 'Arrow'
-  mapPath: /Maps/_LuaM/Shuttles/TSFMC/Arrow.yml
+  mapPath: /SharedMaps/_LuaM/Shuttles/TSFMC/Arrow.yml
   minPlayers: 0
   stations:
     TSFMCArrow:

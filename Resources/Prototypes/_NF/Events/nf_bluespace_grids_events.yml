@@ -10,8 +10,8 @@
     endAnnouncement: station-event-bluespace-cache-end-announcement
     earliestStart: 40 # Mono # LuaM: 60 > 40
     weight: 5
-    duration: 1350
-    maxDuration: 1560
+    duration: 2400 # LuaM: 1350 > 2400, all event grids last 40 minutes
+    maxDuration: 2400 # LuaM: 1560 > 2400, all event grids last 40 minutes
     reoccurrenceDelay: 120 # Mono: From 8 to 4 hours # LuaM: 240 > 120
     #requiredJobs: Mono - Remove Sheriff/Colonel requirement
     #  Sheriff: 1
@@ -52,8 +52,8 @@
     endAnnouncement: station-event-bluespace-vault-end-announcement
     earliestStart: 60 # Mono
     weight: 5
-    duration: 1020
-    maxDuration: 1350
+    duration: 2400 # LuaM: 1020 > 2400, all event grids last 40 minutes
+    maxDuration: 2400 # LuaM: 1350 > 2400, all event grids last 40 minutes
     reoccurrenceDelay: 240 # Mono: From 8 to 4 hours
     #requiredJobs: Mono - Remove Sheriff/Colonel requirement
     #  Sheriff: 1
@@ -99,8 +99,8 @@
     earliestStart: 60 # Mono
     maximumPlayers: 0 # Mono
     weight: 5
-    duration: 590
-    maxDuration: 780
+    duration: 2400 # LuaM: 590 > 2400, all event grids last 40 minutes
+    maxDuration: 2400 # LuaM: 780 > 2400, all event grids last 40 minutes
     reoccurrenceDelay: 240 # Mono: From 8 to 4 hours
     #requiredJobs: Mono - Remove Sheriff/Colonel requirement
     #  Sheriff: 1
@@ -144,7 +144,7 @@
     earliestStart: 80
     minimumPlayers: 1
     weight: 1
-    duration: 1800
+    duration: 2400 # LuaM: 1800 > 2400, all event grids last 40 minutes
     maxDuration: 2400
     reoccurrenceDelay: 240 # Mono: From 8 to 4 hours
   - type: BluespaceErrorRule
@@ -184,7 +184,7 @@
     earliestStart: 100
     minimumPlayers: 1
     weight: 1
-    duration: 1800
+    duration: 2400 # LuaM: 1800 > 2400, all event grids last 40 minutes
     maxDuration: 2400
     reoccurrenceDelay: 240 # Mono: From 8 to 4 hours
   - type: BluespaceErrorRule

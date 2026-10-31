@@ -10,7 +10,7 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
 {
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private IUserInterfaceManager _ui = default!;
-	[Dependency] private readonly SpriteSystem _sprite = default!; // LuaM
+	[Dependency] private SpriteSystem _sprite = default!; // LuaM
 
     private bool _showAll;
 

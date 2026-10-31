@@ -1,9 +1,14 @@
 using Content.Client.Gameplay;
 using Content.Shared.Sprite;
 using Robust.Client.GameObjects;
+using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Client.State;
+using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.CustomControls;
+using Robust.Shared.Map;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Systems;
 
 namespace Content.Client.Sprite;
 
@@ -17,12 +22,18 @@ public sealed partial class SpriteFadeSystem : EntitySystem
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IStateManager _stateManager = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private FixtureSystem _fixtures = default!;
+    [Dependency] private IUserInterfaceManager _uiManager = default!;
+    [Dependency] private IInputManager _inputManager = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
 
+    private readonly List<(MapCoordinates Point, bool ExcludeBoundingBox)> _points = new();
     private readonly HashSet<FadingSpriteComponent> _comps = new();
 
     private EntityQuery<SpriteComponent> _spriteQuery;
     private EntityQuery<SpriteFadeComponent> _fadeQuery;
     private EntityQuery<FadingSpriteComponent> _fadingQuery;
+    private EntityQuery<FixturesComponent> _fixturesQuery;
 
     private const float TargetAlpha = 0.4f;
     private const float ChangeRate = 1f;
@@ -34,6 +45,7 @@ public sealed partial class SpriteFadeSystem : EntitySystem
         _spriteQuery = GetEntityQuery<SpriteComponent>();
         _fadeQuery = GetEntityQuery<SpriteFadeComponent>();
         _fadingQuery = GetEntityQuery<FadingSpriteComponent>();
+        _fixturesQuery = GetEntityQuery<FixturesComponent>();
 
         SubscribeLocalEvent<FadingSpriteComponent, ComponentShutdown>(OnFadingShutdown);
     }
@@ -46,21 +58,29 @@ public sealed partial class SpriteFadeSystem : EntitySystem
         sprite.Color = sprite.Color.WithAlpha(component.OriginalAlpha);
     }
 
-    public override void FrameUpdate(float frameTime)
+    private void FadeIn(float change)
     {
-        base.FrameUpdate(frameTime);
-
         var player = _playerManager.LocalEntity;
-        var change = ChangeRate * frameTime;
+        _points.Clear();
 
-        if (TryComp(player, out TransformComponent? playerXform) &&
-            _stateManager.CurrentState is GameplayState state &&
-            _spriteQuery.TryGetComponent(player, out var playerSprite))
+        if (_uiManager.CurrentlyHovered is IViewportControl vp
+            && _inputManager.MouseScreenPosition.IsValid)
         {
-            var mapPos = _transform.GetMapCoordinates(_playerManager.LocalEntity!.Value, xform: playerXform);
+            _points.Add((vp.PixelToMap(_inputManager.MouseScreenPosition.Position), true));
+        }
 
+        if (TryComp(player, out TransformComponent? playerXform))
+        {
+            _points.Add((_transform.GetMapCoordinates(player.Value, xform: playerXform), false));
+        }
+
+        if (_stateManager.CurrentState is not GameplayState state || !_spriteQuery.TryGetComponent(player, out var playerSprite))
+            return;
+
+        foreach (var (mapPos, excludeBB) in _points)
+        {
             // Also want to handle large entities even if they may not be clickable.
-            foreach (var ent in state.GetClickableEntities(mapPos))
+            foreach (var ent in state.GetClickableEntities(mapPos, excludeFaded: false))
             {
                 if (ent == player ||
                     !_fadeQuery.HasComponent(ent) ||
@@ -69,6 +89,9 @@ public sealed partial class SpriteFadeSystem : EntitySystem
                 {
                     continue;
                 }
+
+                if (excludeBB && IsPointInHardFixture(ent, mapPos))
+                    continue;
 
                 if (!_fadingQuery.TryComp(ent, out var fading))
                 {
@@ -85,7 +108,26 @@ public sealed partial class SpriteFadeSystem : EntitySystem
                 }
             }
         }
+    }
 
+    private bool IsPointInHardFixture(EntityUid uid, MapCoordinates mapPos)
+    {
+        if (!_fixturesQuery.TryComp(uid, out var body))
+            return false;
+
+        var transform = _physics.GetPhysicsTransform(uid);
+
+        foreach (var fixture in body.Fixtures.Values)
+        {
+            if (fixture.Hard && _fixtures.TestPoint(fixture.Shape, transform, mapPos.Position))
+                return true;
+        }
+
+        return false;
+    }
+
+    private void FadeOut(float change)
+    {
         var query = AllEntityQuery<FadingSpriteComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
@@ -108,5 +150,15 @@ public sealed partial class SpriteFadeSystem : EntitySystem
         }
 
         _comps.Clear();
+    }
+
+    public override void FrameUpdate(float frameTime)
+    {
+        base.FrameUpdate(frameTime);
+
+        var change = ChangeRate * frameTime;
+
+        FadeIn(change);
+        FadeOut(change);
     }
 }

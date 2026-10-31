@@ -10,6 +10,7 @@
     - Cartridge
     - ShellShotgun23x75mmBuckshot
   - type: CartridgeAmmo
+    muzzleFlash: MuzzleFlashEffectShotgun # LuaM: powder smoke flash from Hullrot
     soundEject:
       collection: ShellEject
       params:

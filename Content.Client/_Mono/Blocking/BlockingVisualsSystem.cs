@@ -1,4 +1,5 @@
 using Content.Client._Mono.Blocking.Components;
+using Content.Client.Graphics;
 using Content.Shared._Mono.Blocking;
 using Robust.Shared.Prototypes;
 using Robust.Client.GameObjects;
@@ -9,6 +10,7 @@ namespace Content.Client._Mono.Blocking;
 public sealed partial class BlockingVisualsSystem : SharedBlockingSystem
 {
     [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private SpriteSystem _sprite = default!; // LuaM
 
     private ShaderInstance _shader = default!;
 
@@ -36,9 +38,21 @@ public sealed partial class BlockingVisualsSystem : SharedBlockingSystem
         if (!Resolve(uid, ref component, ref sprite, false))
             return;
 
-        sprite.PostShader = enabled ? _shader : null;
-        sprite.GetScreenTexture = enabled;
-        sprite.RaiseShaderEvent = enabled;
+        // LuaM start: per-id post shaders since RT 286, the legacy flags are not read anymore
+        if (enabled)
+        {
+            _sprite.SetPostShader((uid, sprite), new SpriteComponent.PostShaderArgs(ContentPostShaderIds.Blocking, _shader)
+            {
+                GetScreenTexture = true,
+                RaiseShaderEvent = true,
+                After = ContentPostShaderIds.AfterBaseEffects,
+            });
+        }
+        else
+        {
+            _sprite.RemovePostShader((uid, sprite), ContentPostShaderIds.Blocking);
+        }
+        // LuaM end
     }
     private void OnStartup(EntityUid uid, BlockingVisualsComponent component, ComponentStartup args)
     {

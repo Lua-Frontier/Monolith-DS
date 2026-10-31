@@ -1,0 +1,93 @@
+# A huge monolith fragment: an NFSD outpost swallowed by the Monolith, with hostile void marines and monolithic turrets.
+# It comes once per shift at 1:30. Standard has no outside threat, so there it comes twice: at 1:30 and at 6:00.
+
+- type: entity
+  id: LuaMMonolithFragmentLargeAppearance
+  parent: BaseStationEventShortDelay
+  name: huge monolith fragment
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    announceSender: luam-monolithic-event-large-fragment-sender
+    startAnnouncement: luam-monolithic-event-large-fragment-start-announcement
+    startAnnouncementColor: "#c06bff"
+    startAudio:
+      path: /Audio/Announcements/intercept.ogg
+    warningAnnouncement: luam-monolithic-event-large-fragment-warning-announcement
+    warningAnnouncementColor: "#c06bff"
+    warningAudio:
+      path: /Audio/Announcements/attention.ogg
+    endAnnouncement: luam-monolithic-event-large-fragment-end-announcement
+    endAnnouncementColor: "#c06bff"
+    weight: 5
+    duration: 2400 # 40 minutes, like all event grids, even with people on it
+    maxDuration: 2400
+    maxOccurrences: 1 # once per shift, LuaMMonolithFragmentLargeScheduler starts it at 1:30
+  - type: BluespaceErrorRule
+    groups:
+      grid: !type:GridSpawnGroup
+        nameLoc:
+        - luam-monolithic-event-name-large-fragment
+        minCount: 1
+        maxCount: 1
+        minimumDistance: 2000
+        maximumDistance: 4000
+        addComponents:
+        - type: Gravity
+          enabled: true
+          inherent: true
+        - type: IFF
+          color: "#a20fe1"
+        - type: Shuttle
+        - type: LinkedLifecycleGridParent
+        - type: ProtectedGrid
+          preventArtifactTriggers: true
+        - type: PreventPilot
+        - type: ForceAnchor
+        - type: ClaimableGrid
+        paths:
+        - /Maps/_LuaM/Monolithic/monolithicnfsdoutpost.yml
+
+- type: entity
+  id: LuaMMonolithFragmentLargeAppearanceStandard
+  parent: LuaMMonolithFragmentLargeAppearance
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    maxOccurrences: 2 # twice per shift in Standard, LuaMStandardMonolithFragmentLargeScheduler starts it at 1:30 and 6:00
+
+- type: entityTable
+  id: LuaMMonolithFragmentLargeTable
+  table: !type:AllSelector
+    children:
+    - id: LuaMMonolithFragmentLargeAppearance
+
+- type: entity
+  id: LuaMMonolithFragmentLargeScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: LuaMMonolithFragmentLargeTable
+    minimumTimeUntilFirstEvent: 5400 # 1 hour 30 minutes
+    minMaxEventTiming: # doesn't matter, the event runs only once
+      min: 16200 # 4 hours 30 minutes
+      max: 16200
+
+- type: entityTable
+  id: LuaMStandardMonolithFragmentLargeTable
+  table: !type:AllSelector
+    children:
+    - id: LuaMMonolithFragmentLargeAppearanceStandard
+
+- type: entity
+  id: LuaMStandardMonolithFragmentLargeScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: LuaMStandardMonolithFragmentLargeTable
+    minimumTimeUntilFirstEvent: 5400 # 1 hour 30 minutes
+    minMaxEventTiming: # the second one comes 4 hours 30 minutes later, at 6:00
+      min: 16200
+      max: 16200

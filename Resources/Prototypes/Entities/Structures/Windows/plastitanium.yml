@@ -61,12 +61,12 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plastitanium_window.rsi
+    sprite: _NF/Structures/Windows/plastitanium_window.rsi
   - type: Icon
-    sprite: Structures/Windows/plastitanium_window.rsi
+    sprite: _NF/Structures/Windows/plastitanium_window.rsi
     state: full
   - type: IconSmooth
-    key: plastitaniumwindows # Mono
+    key: walls
     base: ptwindow
   - type: Airtight
   - type: Fixtures
@@ -145,17 +145,17 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plastitanium_window_diagonal.rsi
+    sprite: _NF/Structures/Windows/plastitanium_window_diagonal.rsi
     state: state0
   - type: Tag
     tags:
     - Diagonal
   - type: Icon
-    sprite: Structures/Windows/plastitanium_window_diagonal.rsi
+    sprite: _NF/Structures/Windows/plastitanium_window_diagonal.rsi
     state: state0
   - type: IconSmooth
     mode: Diagonal
-    key: plastitaniumwindows # Mono
+    key: walls
     base: state
   - type: Fixtures
     fixtures:

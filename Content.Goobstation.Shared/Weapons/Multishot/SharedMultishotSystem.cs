@@ -3,6 +3,7 @@
 using System.Linq;
 using Content.Goobstation.Common.Weapons.Multishot;
 using Content.Goobstation.Shared.Weapons.MissChance;
+using Content.Shared._LuaM.Cowboy; // LuaM
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
@@ -22,16 +23,17 @@ using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Shared.Weapons.Multishot;
 
-public sealed class SharedMultishotSystem : EntitySystem
+public sealed partial class SharedMultishotSystem : EntitySystem
 {
-    [Dependency] private readonly SharedBodySystem _bodySystem = default!;
-    [Dependency] private readonly SharedCombatModeSystem _combatSystem = default!;
-    [Dependency] private readonly SharedGunSystem _gunSystem = default!;
-    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
-    [Dependency] private readonly MissChanceSystem _miss = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!; // LuaM - SharedStaminaSystem not ported
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private SharedBodySystem _bodySystem = default!;
+    [Dependency] private SharedCombatModeSystem _combatSystem = default!;
+    [Dependency] private SharedGunSystem _gunSystem = default!;
+    [Dependency] private SharedHandsSystem _handsSystem = default!;
+    [Dependency] private MissChanceSystem _miss = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private StaminaSystem _stamina = default!; // LuaM - SharedStaminaSystem not ported
+    [Dependency] private DamageableSystem _damageableSystem = default!;
+    [Dependency] private CowboySystem _cowboy = default!; // LuaM
 
     public override void Initialize()
     {
@@ -74,7 +76,7 @@ public sealed class SharedMultishotSystem : EntitySystem
 
     private void OnGunShot(EntityUid uid, MultishotComponent comp, ref GunShotEvent args)
     {
-        if (!comp.MultishotAffected)
+        if (!comp.MultishotAffected || _cowboy.IgnoresMultishotDebuffs(uid)) // LuaM: cowboy trait, no penalties for pistols
             return;
 
         DamageHands(uid, comp, args.User);
@@ -83,7 +85,7 @@ public sealed class SharedMultishotSystem : EntitySystem
 
     private void OnAmmoShot(EntityUid uid, MultishotComponent comp, ref AmmoShotEvent args)
     {
-        if (!comp.MultishotAffected)
+        if (!comp.MultishotAffected || _cowboy.IgnoresMultishotDebuffs(uid)) // LuaM: cowboy trait, no penalties for pistols
             return;
 
         args.FiredProjectiles.ForEach(ent => _miss.ApplyMissChance(ent, comp.MissChance));
@@ -121,7 +123,7 @@ public sealed class SharedMultishotSystem : EntitySystem
 
     private void OnRefreshModifiers(EntityUid uid, MultishotComponent comp, ref GunRefreshModifiersEvent args)
     {
-        if (!comp.MultishotAffected)
+        if (!comp.MultishotAffected || _cowboy.IgnoresMultishotDebuffs(uid)) // LuaM: cowboy trait, no penalties for pistols
             return;
 
         args.MaxAngle = args.MaxAngle * comp.SpreadMultiplier + Angle.FromDegrees(comp.SpreadAddition);
@@ -164,6 +166,10 @@ public sealed class SharedMultishotSystem : EntitySystem
 
     private void OnExamined(Entity<MultishotComponent> ent, ref ExaminedEvent args)
     {
+        // LuaM: a cowboy has no penalties with pistols and can't fire forbidden guns, the cowboy trait tells it instead
+        if (_cowboy.HidesMultishotExamine(args.Examiner, ent))
+            return;
+
         var message = new FormattedMessage();
         var chance = (MathF.Round(ent.Comp.MissChance * 100f)).ToString();
         message.AddText(Loc.GetString(ent.Comp.ExamineMessage, ("chance", chance)));

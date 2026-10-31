@@ -5,10 +5,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Goobstation.Dash;
 
-public sealed class DashActionChatSystem : EntitySystem
+public sealed partial class DashActionChatSystem : EntitySystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {

@@ -10,7 +10,7 @@
   category: Medium
   group: BlackMarket
   access: Pirate
-  shuttlePath: /Maps/_LuaM/Shuttles/PDV/Scorpion-MSL.yml
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/PDV/Scorpion-MSL.yml
   guidebookPage: Null
   class:
   - Pirate
@@ -24,7 +24,7 @@
 - type: gameMap
   id: ScorpionMSL
   mapName: 'AN Scorpion-MSL'
-  mapPath: /Maps/_LuaM/Shuttles/PDV/Scorpion-MSL.yml
+  mapPath: /SharedMaps/_LuaM/Shuttles/PDV/Scorpion-MSL.yml
   minPlayers: 0
   stations:
     ScorpionMSL:

@@ -315,7 +315,7 @@ public sealed partial class SalvageSystem
             SalvageJobTime,
             EntityManager,
             _timing,
-            _mapManager,
+            _mapSystem,
             _prototypeManager,
             _anchorable,
             _biome,

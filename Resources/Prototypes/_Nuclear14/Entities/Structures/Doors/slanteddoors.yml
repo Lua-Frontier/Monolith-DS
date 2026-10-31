@@ -140,6 +140,10 @@
   suffix: Slanted, fence
   description: A metal fence gate.
   components:
+  - type: Tag # LuaM: chameleon projector can not copy fences
+    tags:
+    - Structure
+    - Fence
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/SlantedDoors/fence.rsi
     layers:
@@ -156,6 +160,10 @@
   suffix: Slanted, fence barbed
   description: A metal barbed fence gate.
   components:
+  - type: Tag # LuaM: chameleon projector can not copy fences
+    tags:
+    - Structure
+    - Fence
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/SlantedDoors/fence_barbed.rsi
     layers:

@@ -8,7 +8,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._LuaM.Clothing;
 
-public sealed class CritInjectorClothingSystem : EntitySystem
+public sealed partial class CritInjectorClothingSystem : EntitySystem
 {
     [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private IGameTiming _timing = default!;

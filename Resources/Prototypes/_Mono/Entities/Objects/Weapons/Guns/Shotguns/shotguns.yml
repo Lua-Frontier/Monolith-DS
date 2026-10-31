@@ -170,6 +170,9 @@
   id: WeaponShotgunJack
   description: An incredibly heavy automated fire 23x75mm shotgun that loads from a belt and a specialized backpack.
   components:
+  - type: ParticleOnGunShot # LuaM: powder smoke particles from Hullrot, this gun is not made from the gun bases
+    effect: MuzzleSmoke
+    inheritAngle: true
   - type: Sprite
     sprite: _Mono/Objects/Weapons/Guns/Shotguns/jack.rsi
     layers:
@@ -193,14 +196,14 @@
     maxAngle: 60
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 2
+    fireRate: 4
     selectedMode: FullAuto
     availableModes:
     - FullAuto
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/bigshotgun_fire.ogg
   - type: GunSpreadModifier
-    spread: 1.5
+    spread: 0.8
   - type: LaserPointer
     targetedColor: "#FF0000"
     defaultColor: "#FF0000"
@@ -218,7 +221,9 @@
     - Back
     - suitStorage
   - type: ClothingSlotAmmoProvider
-    targetSlot: BACK
+    targetSlot:
+    - Back
+    - suitStorage
     providerWhitelist:
       tags:
       - JackShotgunBackpack

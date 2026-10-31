@@ -1,5 +1,5 @@
 - type: entity
-  id: LockerSyndicateNordfall
+  id: LockerSyndicateSecure
   parent: LockerBaseSecure
   name: syndicate locker
   components:

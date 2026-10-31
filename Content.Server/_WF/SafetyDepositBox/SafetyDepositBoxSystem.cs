@@ -178,7 +178,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         }
         else
         {
-            ConsolePopup(player, "Error: Invalid box size.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-invalid-size")); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
@@ -187,7 +187,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         // Create the box in the database
         if (!_prefsManager.TryGetCachedPreferences(userId, out var prefs) || !_playerManager.TryGetSessionByEntity(player, out var session) || prefs.SelectedCharacter is not HumanoidCharacterProfile profile)
         {
-            ConsolePopup(player, "Error: Could not load character data.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-no-character")); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
@@ -195,7 +195,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         // Check bank account
         if (!TryComp<BankAccountComponent>(player, out var bank))
         {
-            ConsolePopup(player, "Error: No bank account found.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-no-bank")); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
@@ -207,7 +207,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
 
         if (initialBankBalance < cost)
         {
-            ConsolePopup(player, $"Insufficient funds. You need ${cost:N0}, but only have ${bank.Balance:N0} in bank and ${initialBankBalance-bank.Balance:N0} in savings.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-insufficient-funds", ("cost", $"{cost:N0}"), ("bank", $"{bank.Balance:N0}"), ("savings", $"{initialBankBalance - bank.Balance:N0}"))); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
@@ -215,7 +215,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         // Withdraw from bank
         if (!_bankSystem.TryBankWithdraw(session!, prefs!, profile, (int)(initialBankBalance - bankBalance), out var newBalance, true))
         {
-            ConsolePopup(player, "Transaction failed.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-transaction-failed")); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
@@ -268,7 +268,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         // Mark the box as withdrawn so it shows "In World" in the UI
         await _dbManager.ClearSafetyDepositBoxItems(box.BoxId, _gameTicker.RoundId);
 
-        ConsolePopup(player, $"Safety deposit box purchased! Box ID: {box.BoxId.ToString()[..8]}...");
+        ConsolePopup(player, Loc.GetString("safety-deposit-popup-purchased", ("id", box.BoxId.ToString()[..8]))); // LuaM: localized
         PlayConfirmSound(consoleUid, component);
 
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
@@ -289,14 +289,14 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         var boxEntity = component.BoxSlot.Item;
         if (boxEntity == null)
         {
-            ConsolePopup(player, "Please insert a safety deposit box.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-insert-box")); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
 
         if (!TryComp<SafetyDepositBoxComponent>(boxEntity.Value, out var boxComp) || !boxComp.BoxId.HasValue)
         {
-            ConsolePopup(player, "Invalid safety deposit box.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-invalid-box")); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
@@ -305,7 +305,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         var userId = actor.PlayerSession.UserId;
         if (!_prefsManager.TryGetCachedPreferences(userId, out var prefs))
         {
-            ConsolePopup(player, "Error: Could not load character data.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-no-character")); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
@@ -313,7 +313,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         var characterIndex = prefs.SelectedCharacterIndex;
         if (boxComp.OwnerId != userId.UserId || boxComp.CharacterIndex != characterIndex)
         {
-            ConsolePopup(player, "This box does not belong to you.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-not-owner")); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
@@ -321,7 +321,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         // Serialize the contents
         if (!TryComp<StorageComponent>(boxEntity.Value, out var storageComp))
         {
-            ConsolePopup(player, "Error: Box has no storage.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-no-storage")); // LuaM: localized
             PlayDenySound(uid, component);
             return;
         }
@@ -382,7 +382,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         // Delete the physical box
         QueueDel(boxEntity);
 
-        ConsolePopup(player, "Safety deposit box contents saved. The box has been stored.");
+        ConsolePopup(player, Loc.GetString("safety-deposit-popup-stored")); // LuaM: localized
         PlayConfirmSound(consoleUid, component);
 
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
@@ -438,7 +438,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
 
         if (box == null)
         {
-            ConsolePopup(player, "Box not found.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-not-found")); // LuaM: localized
             PlayDenySound(consoleUid, component);
             return;
         }
@@ -446,7 +446,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         // Verify ownership
         if (box.OwnerUserId != userId || box.CharacterIndex != characterIndex)
         {
-            ConsolePopup(player, "This box does not belong to you.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-not-owner")); // LuaM: localized
             PlayDenySound(consoleUid, component);
             return;
         }
@@ -459,7 +459,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
 
         if (!isLost)
         {
-            ConsolePopup(player, "This box is not lost and cannot be reclaimed.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-not-lost")); // LuaM: localized
             PlayDenySound(consoleUid, component);
             return;
         }
@@ -501,7 +501,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
             _transform.SetLocalRotation(boxEntity, Angle.Zero);
         }
 
-        ConsolePopup(player, "Lost box reclaimed! A new empty box has been issued.");
+        ConsolePopup(player, Loc.GetString("safety-deposit-popup-reclaimed")); // LuaM: localized
         PlayConfirmSound(consoleUid, component);
 
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
@@ -523,14 +523,14 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
 
         if (box == null)
         {
-            ConsolePopup(player, "Box not found.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-not-found")); // LuaM: localized
             PlayDenySound(consoleUid, component);
             return;
         }
 
         if (box.LastWithdrawn != null) // Check to make sure it isn't already deposited.
         {
-            ConsolePopup(player, "Box already withdrawn in world.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-already-withdrawn")); // LuaM: localized
             PlayDenySound(consoleUid, component);
             return;
         }
@@ -540,7 +540,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         // Verify ownership
         if (box.OwnerUserId != userId || box.CharacterIndex != characterIndex)
         {
-            ConsolePopup(player, "This box does not belong to you.");
+            ConsolePopup(player, Loc.GetString("safety-deposit-popup-not-owner")); // LuaM: localized
             PlayDenySound(consoleUid, component);
             return;
         }
@@ -603,7 +603,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
             _transform.SetLocalRotation(boxEntity, Angle.Zero);
         }
 
-        ConsolePopup(player, "Safety deposit box retrieved.");
+        ConsolePopup(player, Loc.GetString("safety-deposit-popup-retrieved")); // LuaM: localized
         PlayConfirmSound(consoleUid, component);
 
         _adminLogger.Add(LogType.Action, LogImpact.Medium,

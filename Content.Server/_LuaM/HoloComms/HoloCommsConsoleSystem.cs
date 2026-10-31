@@ -30,7 +30,7 @@ namespace Content.Server._LuaM.HoloComms;
 /// The comms window of the shuttle consoles. The calls go through a hidden holopad attached to the console,
 /// the window shows the other side through its hologram, and the hologram of the other side shows the one closest to the console.
 /// </summary>
-public sealed class HoloCommsConsoleSystem : EntitySystem
+public sealed partial class HoloCommsConsoleSystem : EntitySystem
 {
     [Dependency] private TelephoneSystem _telephone = default!;
     [Dependency] private HolopadSystem _holopad = default!;

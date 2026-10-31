@@ -1,0 +1,34 @@
+# Muzzle flashes with powder smoke from Hullrot, for shotgun shells and heavy calibers.
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectShotgun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: BelowMobs
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Crescent/Objects/Effects/Muzzleflash/shotgun.rsi
+      state: flash
+      offset: 0.15, 0
+    - sprite: _Crescent/Objects/Effects/Muzzleflash/shotgun.rsi
+      state: smoke
+      offset: 0.15, 0
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectHeavy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: BelowMobs
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Crescent/Objects/Effects/Muzzleflash/heavy.rsi
+      state: flash
+      offset: 0.15, 0
+    - sprite: _Crescent/Objects/Effects/Muzzleflash/heavy.rsi
+      state: smoke
+      offset: 0.15, 0

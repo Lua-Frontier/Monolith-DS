@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from  at commit https://github.com/tgstation/tgstation/commit/f01de25493e2bd2706ef9b0303cb0d7b5e3e471b. poster55_legit by FairlySadPanda (Github), based on art and a character owned by Vytian (Discord).",
+  "copyright": "Taken from  at commit https://github.com/tgstation/tgstation/commit/f01de25493e2bd2706ef9b0303cb0d7b5e3e471b. poster55_legit by FairlySadPanda (Github), based on art and a character owned by Vytian (Discord). poster54_legit by hex_reject on Discord, poster64_contraband, poster65_contraband, poster66_contraband by JuneSzalkowska (Discord), serpent taken from sector-frontier-14.",
   "size": {
     "x": 32,
     "y": 32
@@ -437,6 +437,24 @@
     },
     {
       "name": "waystationmap"
+    },
+    {
+      "name": "poster64_contraband"
+    },
+    {
+      "name": "poster65_contraband"
+    },
+    {
+      "name": "poster66_contraband"
+    },
+    {
+      "name": "poster54_legit"
+    },
+    {
+      "name": "poster55_legit"
+    },
+    {
+      "name": "serpent"
     }
   ]
 }

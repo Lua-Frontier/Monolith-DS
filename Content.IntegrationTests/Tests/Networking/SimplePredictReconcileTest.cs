@@ -36,7 +36,7 @@ namespace Content.IntegrationTests.Tests.Networking
             var server = pair.Server;
             var client = pair.Client;
 
-            var sMapManager = server.ResolveDependency<IMapManager>();
+            var sMapManager = server.System<SharedMapSystem>();
             var sEntityManager = server.ResolveDependency<IEntityManager>();
             var cEntityManager = client.ResolveDependency<IEntityManager>();
             var sGameTiming = server.ResolveDependency<IGameTiming>();
@@ -389,7 +389,7 @@ namespace Content.IntegrationTests.Tests.Networking
             await pair.CleanReturnAsync();
         }
 
-        public sealed class PredictionTestEntitySystem : EntitySystem
+        public sealed partial class PredictionTestEntitySystem : EntitySystem
         {
             public bool Allow { get; set; } = true;
 
@@ -410,7 +410,7 @@ namespace Content.IntegrationTests.Tests.Networking
             {
                 var uid = GetEntity(message.Uid);
 
-                var component = EntityManager.GetComponent<PredictionTestComponent>(uid);
+                var component = Comp<PredictionTestComponent>(uid);
                 var old = component.Foo;
                 if (Allow)
                 {

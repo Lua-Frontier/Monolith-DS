@@ -260,8 +260,7 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
                 // Lua start
                 CategoryLabel = { Text = Loc.GetString($"shipyard-console-category-{prototype.Category}") },
                 LimitedCount = { Visible = limit > 0, Text = $"{Math.Max(limitRemain, 0)}/{limit}" },
-                Purchase = { Disabled = purchaseDisabled },
-                Preview = { TooltipDelay = 0.2f, ToolTip = GetLocalizedVesselDescription(prototype) },
+                Purchase = { Disabled = purchaseDisabled, TooltipDelay = 0.2f, ToolTip = GetLocalizedVesselDescription(prototype) }, // LuaM: description moved from the disabled Preview button
                 // Lua end
                 Price = { Text = priceText },
             };

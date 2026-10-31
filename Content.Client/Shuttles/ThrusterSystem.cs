@@ -8,9 +8,9 @@ namespace Content.Client.Shuttles;
 /// <summary>
 /// Handles making a thruster visibly turn on/emit an exhaust plume according to its state. 
 /// </summary>
-public sealed class ThrusterSystem : VisualizerSystem<ThrusterComponent>
+public sealed partial class ThrusterSystem : VisualizerSystem<ThrusterComponent>
 {
-    [Dependency] private readonly TagSystem _tag = default!; // Lua
+    [Dependency] private TagSystem _tag = default!; // Lua
 
     // Lua: omnidirectional thrusters keep their plume lit while they're on
     private static readonly ProtoId<TagPrototype> OmniBurnAlwaysOnTag = "OmniBurnAlwaysOn";

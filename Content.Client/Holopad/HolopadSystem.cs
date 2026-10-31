@@ -1,3 +1,4 @@
+using Content.Client.Graphics;
 using Content.Shared.Chat.TypingIndicator;
 using Content.Shared.Holopad;
 using Robust.Client.GameObjects;
@@ -50,7 +51,7 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
 
     private void OnShaderRender(Entity<HolopadHologramComponent> entity, ref BeforePostShaderRenderEvent ev)
     {
-        if (ev.Sprite.PostShader == null)
+        if (ev.Id != ContentPostShaderIds.Holopad) // LuaM: per-id post shaders since RT 286
             return;
 
         // LuaM-start
@@ -146,7 +147,7 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
         // LuaM - drawn only through a UI with its own shader, copying the sprite of the target makes it visible again
         if (holopadhologram.HideInWorld)
         {
-            hologramSprite.PostShader = null;
+            _sprite.ClearPostShaders((hologram, hologramSprite)); // LuaM: per-id post shaders since RT 286
             _sprite.SetVisible((hologram, hologramSprite), false);
             return;
         }
@@ -185,7 +186,20 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
         instance.SetParameter("texHeight", texHeight);
         instance.SetParameter("t", (float)_timing.CurTime.TotalSeconds * holopadHologram.ScrollRate);
 
-        sprite.PostShader = instance;
-        sprite.RaiseShaderEvent = true;
+        // LuaM start: per-id post shaders since RT 286, the hologram keeps only its own shader like the legacy single PostShader did
+        if (_sprite.TryGetPostShader((uid, sprite), ContentPostShaderIds.Holopad, out var entry)
+            && entry.Shader == instance
+            && _sprite.GetPostShaders((uid, sprite)).Count == 1)
+        {
+            return;
+        }
+
+        _sprite.ClearPostShaders((uid, sprite));
+        _sprite.SetPostShader((uid, sprite), new SpriteComponent.PostShaderArgs(ContentPostShaderIds.Holopad, instance)
+        {
+            RaiseShaderEvent = true,
+            Before = ContentPostShaderIds.BeforeOutlines,
+        });
+        // LuaM end
     }
 }

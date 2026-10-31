@@ -5,7 +5,7 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using System.Linq;
 using Content.Client._Mono.Economy;
-using Content.Shared._Mono.Economy.Component; // Mono
+using Content.Shared._Mono.Economy.Components; // Mono
 using Robust.Client.GameObjects;
 using Content.Shared._NF.Bank.Components; // Frontier
 using Content.Shared.Containers.ItemSlots; // Frontier
@@ -13,7 +13,7 @@ using Content.Shared.Stacks; // Frontier
 
 namespace Content.Client.VendingMachines
 {
-    public sealed class VendingMachineBoundUserInterface : BoundUserInterface
+    public sealed partial class VendingMachineBoundUserInterface : BoundUserInterface
     {
         [Dependency] private CreditReceiverSystem _credit = default!; // Mono
 

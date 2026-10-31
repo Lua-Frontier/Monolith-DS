@@ -1366,3 +1366,9 @@ construction-N14DoorWood-desc = { ent-N14DoorMakeshift.desc }
 
 construction-WallTorch = { ent-N14TorchWall }
 construction-WallTorch-desc = { ent-N14TorchWall.desc }
+construction-BannerNordfallVanguard = { ent-BannerNordfallVanguard }
+construction-BannerNordfallVanguard-desc = { ent-BannerNordfallVanguard.desc }
+construction-NordfallVanguardFlag = { ent-NordfallVanguardFlag }
+construction-NordfallVanguardFlag-desc = { ent-NordfallVanguardFlag.desc }
+construction-BannerPirates = { ent-BannerPirates }
+construction-BannerPirates-desc = { ent-BannerPirates.desc }

@@ -1,0 +1,12 @@
+- type: entity
+  id: ClothingBackpackSatchelmilirarybig
+  name: Big Military satchel
+  parent: [ ClothingBackpackSatchel ]
+  description: A satchel produced by Arcadia Industries.
+  components:
+  - type: Sprite
+    sprite: _Corvax/back/military.rsi
+  - type: Storage 
+    grid:
+    - 0,0,15,5
+    maxItemSize: Huge

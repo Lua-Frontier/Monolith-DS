@@ -5,9 +5,9 @@ using Content.Shared._Lua.Mapping;
 using Robust.Client.Graphics;
 
 namespace Content.Client._Lua.Mapping;
-public sealed class DrawLineSystem : EntitySystem
+public sealed partial class DrawLineSystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlay = default!;
+    [Dependency] private IOverlayManager _overlay = default!;
     private DrawLineOverlay? _overlayInst;
     private bool _visible;
 

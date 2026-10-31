@@ -30,10 +30,6 @@ namespace Content.Client.Examine
         [Dependency] private IPlayerManager _playerManager = default!;
         [Dependency] private IEyeManager _eyeManager = default!;
         [Dependency] private VerbSystem _verbSystem = default!;
-        [Dependency] private SpriteSystem _sprite = default!; // LuaM
-
-        private const string DisplacedStencilShader = "DisplacedStencilDraw"; // LuaM
-        private const string DisplacedNoStencilShader = "DisplacedNoStencilDraw"; // LuaM
 
         public const string StyleClassEntityTooltip = "entity-tooltip";
 
@@ -42,7 +38,6 @@ namespace Content.Client.Examine
         private Popup? _examineTooltipOpen;
         private ScreenCoordinates _popupPos;
         private CancellationTokenSource? _requestCancelTokenSource;
-        private EntityUid? _tooltipSpriteCopy; // LuaM
         private int _idCounter;
 
         public override void Initialize()
@@ -114,7 +109,7 @@ namespace Content.Client.Examine
         {
             var entity = args.EntityUid;
 
-            if (!args.EntityUid.IsValid() || !EntityManager.EntityExists(entity))
+            if (!args.EntityUid.IsValid() || !Exists(entity))
             {
                 return false;
             }
@@ -229,14 +224,14 @@ namespace Content.Client.Examine
 
             vBox.AddChild(hBox);
 
-            if (TryComp<SpriteComponent>(target, out var targetSprite))
+            if (HasComp<SpriteComponent>(target))
             {
                 var spriteView = new SpriteView
                 {
                     OverrideDirection = Direction.South,
                     SetSize = new Vector2(32, 32)
                 };
-                spriteView.SetEntity(GetTooltipSpriteEntity((target, targetSprite))); // LuaM
+                spriteView.SetEntity(target);
                 hBox.AddChild(spriteView);
             }
 
@@ -383,45 +378,8 @@ namespace Content.Client.Examine
             _lastExaminedEntity = entity;
         }
 
-        // LuaM -- тест трафарета обрезает изогнутую одежду в интерфейсе, поэтому подсказка рисует копию без него
-        private EntityUid GetTooltipSpriteEntity(Entity<SpriteComponent> target)
-        {
-            if (!HasDisplacedStencilLayer(target.Comp))
-                return target;
-
-            var copy = Spawn(null, MapCoordinates.Nullspace);
-            _tooltipSpriteCopy = copy;
-            var copySprite = AddComp<SpriteComponent>(copy);
-            _sprite.CopySprite((target, target.Comp), (copy, copySprite));
-
-            for (var i = 0; i < copySprite.AllLayers.Count(); i++)
-            {
-                if (copySprite.TryGetLayer(i, out var layer) && layer.ShaderPrototype == DisplacedStencilShader)
-                    copySprite.LayerSetShader(i, DisplacedNoStencilShader);
-            }
-
-            return copy;
-        }
-
-        private static bool HasDisplacedStencilLayer(SpriteComponent sprite)
-        {
-            for (var i = 0; i < sprite.AllLayers.Count(); i++)
-            {
-                if (sprite.TryGetLayer(i, out var layer) && layer.ShaderPrototype == DisplacedStencilShader)
-                    return true;
-            }
-
-            return false;
-        }
-
         private void CloseTooltip()
         {
-            if (_tooltipSpriteCopy is { } copy) // LuaM
-            {
-                QueueDel(copy);
-                _tooltipSpriteCopy = null;
-            }
-
             if (_examineTooltipOpen != null)
             {
                 foreach (var control in _examineTooltipOpen.Children)

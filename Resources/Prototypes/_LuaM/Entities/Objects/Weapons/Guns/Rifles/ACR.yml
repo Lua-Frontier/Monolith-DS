@@ -16,12 +16,12 @@
       offset: 0, 0 # Reduce by 0.0005 to prevent gaps
     - map: ["opticAttachment"]
   - type: GunWieldBonus
-    minAngle: -20 # LuaM: -21 > -20
-    maxAngle: -56 # LuaM: -47 > -56
+    minAngle: -18 
+    maxAngle: -17 
   - type: Gun
     minAngle: 21
-    maxAngle: 58
-    angleIncrease: 1.5
+    maxAngle: 35
+    angleIncrease: 1
     angleDecay: 20
     fireRate: 8.6
     selectedMode: FullAuto

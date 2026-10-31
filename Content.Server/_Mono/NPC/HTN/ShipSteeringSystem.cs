@@ -23,7 +23,7 @@ namespace Content.Server._Mono.NPC.HTN;
 public sealed partial class ShipSteeringSystem : EntitySystem
 {
     [Dependency] private EntityLookupSystem _lookup = default!;
-    [Dependency] private IMapManager _mapMan = default!;
+    [Dependency] private SharedMapSystem _mapMan = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private MoverController _mover = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
@@ -52,9 +52,30 @@ public sealed partial class ShipSteeringSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ShipSteererComponent, GetShuttleInputsEvent>(OnSteererGetInputs);
+        SubscribeLocalEvent<ShipSteererComponent, GetShuttleInputsEvent>(OnSteererGetInputsSafe); // LuaM
         SubscribeLocalEvent<ShipSteererComponent, PilotedShuttleRelayedEvent<StartCollideEvent>>(OnShuttleStartCollide);
     }
+
+    // LuaM-start: this runs inside the physics step, an exception here stops movement for the whole server
+    private readonly HashSet<EntityUid> _steeringErrorLogged = new();
+
+    private void OnSteererGetInputsSafe(Entity<ShipSteererComponent> ent, ref GetShuttleInputsEvent args)
+    {
+        try
+        {
+            OnSteererGetInputs(ent, ref args);
+        }
+        catch (Exception e)
+        {
+            ent.Comp.RotationCompensation = 0f;
+            args.GotInput = true; // keep the steerer attached, just skip this tick
+            args.Input = null;
+
+            if (_steeringErrorLogged.Add(ent.Owner))
+                Log.Error($"Ship steering failed for {ToPrettyString(ent)}, input skipped: {e}");
+        }
+    }
+    // LuaM-end
 
     private void OnSteererGetInputs(Entity<ShipSteererComponent> ent, ref GetShuttleInputsEvent args)
     {
@@ -604,9 +625,20 @@ public sealed partial class ShipSteeringSystem : EntitySystem
             wishAngleActual = (ctx.DestMapPos.Position - ctx.ShipPos.Position).ToWorldAngle();
 
         wishAngleActual += config.TargetAngleOffset;
-        var wishAngle = wishAngleActual + ctx.RotationCompensation;
 
+        // LuaM-start: a single NaN stored in RotationCompensation made Math.Sign throw every tick and froze all physics
         var angAccel = _mover.GetAngularAcceleration(ctx.Shuttle, ctx.ShipBody);
+        if (!float.IsFinite(angAccel) || angAccel < 0f)
+            angAccel = 0f;
+
+        if (!float.IsFinite(ctx.RotationCompensation))
+            ctx.RotationCompensation = 0f;
+
+        if (!double.IsFinite(wishAngleActual.Theta) || !double.IsFinite(ctx.ShipNorthAngle.Theta))
+            return new RotationResult(0f, 0f);
+        // LuaM-end
+
+        var wishAngle = wishAngleActual + ctx.RotationCompensation;
 
         // process the PID
         var wishRotateByActual = ShortestAngleDistance(ctx.ShipNorthAngle + new Angle(Math.PI), wishAngleActual);
@@ -625,6 +657,14 @@ public sealed partial class ShipSteeringSystem : EntitySystem
         var wishDeltaAngleVel = wishAngleVel - ctx.ShipBody.AngularVelocity;
         // this is clamped to [-1, 1] downstream, but need to invert input
         var rotationInput = angAccel == 0f ? 0f : -wishDeltaAngleVel / angAccel / ctx.FrameTime;
+
+        // LuaM-start: never keep or output a non-finite value
+        if (!float.IsFinite(ctx.RotationCompensation))
+            ctx.RotationCompensation = 0f;
+
+        if (!float.IsFinite(rotationInput) || !float.IsFinite(wishAngleVel))
+            return new RotationResult(0f, 0f);
+        // LuaM-end
 
         return new RotationResult(rotationInput, wishAngleVel);
     }

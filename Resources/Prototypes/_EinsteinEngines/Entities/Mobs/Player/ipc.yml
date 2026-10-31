@@ -31,6 +31,8 @@
         type: StrippableBoundUserInterface
       enum.SurgeryUIKey.Key: # Shitmed
         type: SurgeryBui
+      enum.HeadsetChannelsUiKey.Key: # LuaM
+        type: HeadsetChannelsBoundUserInterface
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: true
@@ -85,11 +87,12 @@
         damage: 400
       behaviors:
       - !type:GibBehavior { }
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      90: 0.8 # LuaM 60 -> 90 / 0.7 -> 0.8
-      115: 0.5 # LuaM 90 -> 115
-      140: 0.3 # LuaM 120 -> 140
+  # LuaM: IPCs are not slowed down by damage
+  # - type: SlowOnDamage
+  #   speedModifierThresholds:
+  #     90: 0.8 # LuaM 60 -> 90 / 0.7 -> 0.8
+  #     115: 0.5 # LuaM 90 -> 115
+  #     140: 0.3 # LuaM 120 -> 140
   - type: SiliconDownOnDead
   - type: Inventory
     templateId: ipc
@@ -118,6 +121,10 @@
   - type: ActiveRadio
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
+  # LuaM start: same channels UI and built-in tunable radio as headsets
+  - type: HeadsetChannelToggle
+  - type: HeadsetTunableRadio
+  # LuaM end
   - type: DeadStartupButton
     sound:
       path: /Audio/_EinsteinEngines/Effects/Silicon/startup.ogg

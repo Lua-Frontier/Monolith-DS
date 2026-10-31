@@ -9,3 +9,6 @@ shuttle-console-iff-detailed-short = D.IFF
 shuttle-radar-menu-follow = Следовать
 shuttle-radar-menu-call = Позвонить
 shuttle-radar-menu-unreachable = Невозможно связаться
+shuttle-console-hints-nav = ПРОБЕЛ - торможение   ·   ЛКМ - огонь выбранными орудиями   ·   Зажать ПКМ - сдвиг радара   ·   Колесо - масштаб   ·   Alt + ПКМ по гриду - контекстное меню
+shuttle-console-hints-map = Объект в списке - показать на карте   ·   Зажать ПКМ - сдвиг карты   ·   Колесо - масштаб   ·   FTL / автопилот: ЛКМ - точка назначения, колесо - поворот
+shuttle-console-hints-dock = ПРОБЕЛ - торможение   ·   Колесо - масштаб

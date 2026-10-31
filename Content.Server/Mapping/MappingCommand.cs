@@ -18,7 +18,7 @@ namespace Content.Server.Mapping
     sealed partial class MappingCommand : IConsoleCommand
     {
         [Dependency] private IEntityManager _entities = default!;
-        [Dependency] private IMapManager _map = default!;
+        private SharedMapSystem _map => _entities.System<SharedMapSystem>();
         [Dependency] private IConfigurationManager _cfg = default!;
 
         public string Command => "mapping";
@@ -153,7 +153,7 @@ namespace Content.Server.Mapping
 
             // map successfully created. run misc helpful mapping commands
             if (player.AttachedEntity is { Valid: true } playerEntity &&
-                _entities.GetComponent<MetaDataComponent>(playerEntity).EntityPrototype?.ID != GameTicker.AdminObserverPrototypeName)
+                _entities.GetComponent<MetaDataComponent>(playerEntity).EntityPrototype?.ID != GameTicker.AdminObserverPrototypeName.Id)
             {
                 shell.ExecuteCommand("aghost");
             }

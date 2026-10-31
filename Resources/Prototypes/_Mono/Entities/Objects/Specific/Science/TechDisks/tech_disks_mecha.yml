@@ -77,13 +77,13 @@
     - state: sec
   - type: TechnologyDisk
     recipes:
-    - GygaxHarness
-    - GygaxArmor
-    - GygaxHead
-    - GygaxLArm
-    - GygaxLLeg
-    - GygaxRArm
-    - GygaxRLeg
+#    - GygaxHarness
+#    - GygaxArmor
+#    - GygaxHead
+#    - GygaxLArm
+#    - GygaxLLeg
+#    - GygaxRArm
+#    - GygaxRLeg
     - GygaxCentralElectronics
     - GygaxPeripheralsElectronics
     - GygaxTargetingElectronics
@@ -214,12 +214,12 @@
     - state: sec
   - type: TechnologyDisk
     recipes:
-    - BroadswordHarness
-    - BroadswordHead
-    - BroadswordLArm
-    - BroadswordLLeg
-    - BroadswordRArm
-    - BroadswordRLeg
+  #  - BroadswordHarness
+  #  - BroadswordHead
+  #  - BroadswordLArm
+  #  - BroadswordLLeg
+  #  - BroadswordRArm
+  #  - BroadswordRLeg
     - BroadswordCentralElectronics
     - BroadswordPeripheralsElectronics
     - BroadswordTargetingElectronics

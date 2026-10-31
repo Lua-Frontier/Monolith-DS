@@ -1,0 +1,44 @@
+# Lua: basilisk AI, taken from sector-frontier-14 (wizden #37135)
+- type: htnCompound
+  id: BasiliskCompound
+  branches:
+  - tasks:
+    - !type:HTNCompoundTask
+      task: BasiliskMeleeCombatCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: InnateRangedCombatCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: IdleCompound
+
+- type: htnCompound
+  id: BasiliskMeleeCombatCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: NearbyColdMeleeTargets
+    - !type:HTNCompoundTask
+      task: BeforeMeleeAttackTargetCompound
+
+- type: utilityQuery
+  id: NearbyColdMeleeTargets
+  query:
+  - !type:NearbyHostilesQuery
+  considerations:
+  - !type:TargetLowTempCon
+    curve: !type:BoolCurve
+    minTemp: 250
+  - !type:TargetIsAliveCon
+    curve: !type:BoolCurve
+  - !type:TargetDistanceCon
+    curve: !type:PresetCurve
+      preset: TargetDistance
+  - !type:TargetHealthCon
+    curve: !type:PresetCurve
+      preset: TargetHealth
+  - !type:TargetAccessibleCon
+    curve: !type:BoolCurve
+  - !type:TargetInLOSOrCurrentCon
+    curve: !type:BoolCurve

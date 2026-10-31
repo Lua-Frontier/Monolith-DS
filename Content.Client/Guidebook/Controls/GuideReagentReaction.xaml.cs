@@ -21,8 +21,7 @@ namespace Content.Client.Guidebook.Controls;
 [UsedImplicitly, GenerateTypedNameReferences]
 public sealed partial class GuideReagentReaction : BoxContainer, ISearchableControl
 {
-    [ValidatePrototypeId<MixingCategoryPrototype>]
-    private const string DefaultMixingCategory = "DummyMix";
+    private static readonly ProtoId<MixingCategoryPrototype> DefaultMixingCategory = "DummyMix";
 
     private readonly IPrototypeManager _protoMan;
 
@@ -36,9 +35,9 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
     {
         // Lua start: containers of reagent links instead of labels
         Container container = ReactantsContainer;
-        SetReagents(prototype.Reactants, ref container, protoMan);
+        SetReagents(prototype.Reactants.ToDictionary(x => x.Key.Id, x => x.Value), ref container, protoMan);
         Container productContainer = ProductsContainer;
-        var products = new Dictionary<string, FixedPoint2>(prototype.Products);
+        var products = prototype.Products.ToDictionary(x => x.Key.Id, x => x.Value);
         foreach (var (reagent, reactantProto) in prototype.Reactants)
         {
             if (reactantProto.Catalyst)

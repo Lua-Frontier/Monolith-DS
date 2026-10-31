@@ -4,6 +4,9 @@
   name: LWC Anaconda
   description: A heavy pistol capable of supplying itself with the ammo on the way using a built-in fabricator. Technology once belonging to Cybersun now supplies the Imperial forces of the Phaethon Dynasty.
   components:
+  - type: ParticleOnGunShot # LuaM: powder smoke particles from Hullrot, this gun is not made from the gun bases
+    effect: MuzzleSmoke
+    inheritAngle: true
   - type: Item
     size: Small
     shape:

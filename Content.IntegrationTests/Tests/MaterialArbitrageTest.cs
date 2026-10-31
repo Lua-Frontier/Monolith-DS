@@ -18,6 +18,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -38,7 +39,7 @@ public sealed class MaterialArbitrageTest
         await server.WaitIdleAsync();
 
         var entManager = server.ResolveDependency<IEntityManager>();
-        var mapManager = server.ResolveDependency<IMapManager>();
+        var mapManager = server.System<SharedMapSystem>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
 
         var pricing = entManager.System<PricingSystem>();
@@ -313,8 +314,8 @@ public sealed class MaterialArbitrageTest
             foreach (var (id, compositionComponent) in physicalCompositions)
             {
                 // Check cargo sell price
-                var materialPrice = await GetDeconstructedPrice(compositionComponent.MaterialComposition);
-                var chemicalPrice = await GetChemicalCompositionPrice(compositionComponent.ChemicalComposition);
+                var materialPrice = await GetDeconstructedPrice(compositionComponent.MaterialComposition.ToDictionary(x => x.Key.Id, x => x.Value));
+                var chemicalPrice = await GetChemicalCompositionPrice(compositionComponent.ChemicalComposition.ToDictionary(x => x.Key.Id, x => x.Value));
                 var sumPrice = materialPrice + chemicalPrice;
                 var price = await GetPrice(id);
                 if (sumPrice > 0 && price > 0)

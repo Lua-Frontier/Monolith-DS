@@ -11,7 +11,7 @@
   category: Large
   group: Security
   access: Armory
-  shuttlePath: /Maps/_LuaM/Shuttles/TSFMC/Rising.yml
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/TSFMC/Rising.yml
   guidebookPage: Null
   class:
   - Frigate
@@ -23,7 +23,7 @@
 - type: gameMap
   id: TSFMCRising
   mapName: 'Rising'
-  mapPath: /Maps/_LuaM/Shuttles/TSFMC/Rising.yml
+  mapPath: /SharedMaps/_LuaM/Shuttles/TSFMC/Rising.yml
   minPlayers: 0
   stations:
     TSFMCRising:

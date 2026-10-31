@@ -9,6 +9,7 @@
     species:
     - Human
     - Dwarf
+    - IPC # LuaM
   - !type:TraitsRequirement # LuaM: heretics can't take this job
     inverted: true
     traits:

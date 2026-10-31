@@ -16,7 +16,7 @@ namespace Content.Server._LuaM.HoloComms;
 /// Relays the emotes of everyone a holopad in a call can hear, the typed ones included, through the holograms on the other end.
 /// The holopads used to relay only the picked emotes of the one shown on the hologram.
 /// </summary>
-public sealed class HolopadEmoteRelaySystem : EntitySystem
+public sealed partial class HolopadEmoteRelaySystem : EntitySystem
 {
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private SharedInteractionSystem _interaction = default!;

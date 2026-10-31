@@ -1,0 +1,17 @@
+safety-deposit-console-box-label = Box { $id }
+safety-deposit-popup-invalid-size = Error: Invalid box size.
+safety-deposit-popup-no-character = Error: Could not load character data.
+safety-deposit-popup-no-bank = Error: No bank account found.
+safety-deposit-popup-insufficient-funds = Insufficient funds. You need ${ $cost }, but only have ${ $bank } in bank and ${ $savings } in savings.
+safety-deposit-popup-transaction-failed = Transaction failed.
+safety-deposit-popup-purchased = Safety deposit box purchased! Box ID: { $id }...
+safety-deposit-popup-insert-box = Please insert a safety deposit box.
+safety-deposit-popup-invalid-box = Invalid safety deposit box.
+safety-deposit-popup-not-owner = This box does not belong to you.
+safety-deposit-popup-no-storage = Error: Box has no storage.
+safety-deposit-popup-stored = Safety deposit box contents saved. The box has been stored.
+safety-deposit-popup-not-found = Box not found.
+safety-deposit-popup-not-lost = This box is not lost and cannot be reclaimed.
+safety-deposit-popup-reclaimed = Lost box reclaimed! A new empty box has been issued.
+safety-deposit-popup-already-withdrawn = Box already withdrawn in world.
+safety-deposit-popup-retrieved = Safety deposit box retrieved.

@@ -14,7 +14,7 @@ namespace Content.Server._LuaM.Telephone;
 /// Where the hearing of two of them overlaps, everybody gets the line in the chat once, the other copy only shows its speech bubble,
 /// and a microphone that heard one copy does not pass on the other.
 /// </summary>
-public sealed class TelephoneRelayChatSystem : EntitySystem
+public sealed partial class TelephoneRelayChatSystem : EntitySystem
 {
     [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] private ExamineSystemShared _examine = default!;

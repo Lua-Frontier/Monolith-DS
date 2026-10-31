@@ -1,0 +1,52 @@
+- type: constructionGraph
+  id: NordfallVanguardFlagsGraph
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: BannerNode
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 2
+              doAfter: 1
+        - to: FlagNode
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: Cloth
+              amount: 2
+              doAfter: 1
+
+    - node: BannerNode
+      entity: BannerNordfallVanguard
+      edges:
+      - to: start
+        completed:
+        - !type:SpawnPrototype
+          prototype: SheetSteel1
+          amount: 2
+        - !type:SpawnPrototype
+          prototype: MaterialCloth1
+          amount: 2
+        steps:
+        - tool: Screwing
+          doAfter: 1
+
+    - node: FlagNode
+      entity: NordfallVanguardFlag
+      edges:
+      - to: start
+        completed:
+        - !type:SpawnPrototype
+          prototype: MaterialCloth1
+          amount: 2
+        steps:
+        - tool: Screwing
+          doAfter: 1

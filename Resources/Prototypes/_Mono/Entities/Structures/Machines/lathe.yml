@@ -24,9 +24,9 @@
     idleState: icon
     runningState: icon
     staticPacks:
-    # - StaticAmmoRecipePack # Commented by LuaM
+   # - StaticAmmoRecipePack # Commented by LuaM
     - NFMercenaryTechfabDeprecatedStatic
-    # - RoundstartShipgunAmmo # Commented by LuaM
+   # - RoundstartShipgunAmmo # Commented by LuaM
     - StaticGrenades
     - MonoAttachmentsStatic
     dynamicPacks:
@@ -53,11 +53,11 @@
     # - MonoViperGroupDynamic
     # Universal shit (stuff like shipgun ammo)
     # LuaM-comment-start:
-    # - UniversalRailgunAmmo
-    # - UniversalMissileAmmo
-    # - UniversalShellAmmo
-    # - UniversalOrdinance
-    # - DynamicAmmoRecipePack
+    #- UniversalRailgunAmmo
+    #- UniversalMissileAmmo
+    #- UniversalShellAmmo
+    #- UniversalOrdinance
+    #- DynamicAmmoRecipePack
     # LuaM-comment-end
     - NFMercenaryTechfabDeprecated
     # Civ military tech
@@ -617,7 +617,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "1.4,0.4,-0.4,-0.4"
+          bounds: "-0.4,-0.4,1.4,0.4"
         density: 190
         mask:
         - MachineMask
@@ -682,7 +682,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "0.5,0.5,-0.5,-0.5"
+          bounds: "-0.5,-0.5,0.5,0.5"
         density: 190
         mask:
         - MachineMask
@@ -757,7 +757,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "1.4,0.4,-0.4,-0.4"
+          bounds: "-0.4,-0.4,1.4,0.4"
         density: 190
         mask:
         - MachineMask
@@ -818,7 +818,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "0.5,0.5,-0.5,-0.5"
+          bounds: "-0.5,-0.5,0.5,0.5"
         density: 190
         mask:
         - MachineMask
@@ -869,7 +869,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.5,1.5,1.2,-0.5"
+          bounds: "-0.5,-0.5,1.2,1.5"
         density: 1500
         mask:
         - MachineMask
@@ -914,14 +914,17 @@
     staticPacks:
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
-    # - StaticAmmoRecipePack
-    # - StaticGrenades
+    #- StaticAmmoRecipePack
+    - StaticGrenades
     - SecurityWeaponsStatic
     - MonoCaelestinusVouchersStatic
+#LuaM Add:
+    - MonoAttachmentsStatic
+#LuaM End
     dynamicPacks:
     - SecurityEquipment
     - SecurityExplosives
-    # - DynamicAmmoRecipePack
+    - DynamicAmmoRecipePack
     - SecurityWeapons
     - SecurityDisablers
     - SMCybernetics
@@ -937,9 +940,9 @@
     # - MonoRogueMiscDynamic
     # - UniversalShellAmmo
     - ResearchedExplosives
-    # - UniversalRailgunAmmo
-    # - UniversalMissileAmmo
-    # - UniversalOrdinance
+    - UniversalRailgunAmmo
+    - UniversalMissileAmmo
+    - UniversalOrdinance
     - TechDiskRecipes
     - NFMercenaryTechfabDeprecated
     # Mono end

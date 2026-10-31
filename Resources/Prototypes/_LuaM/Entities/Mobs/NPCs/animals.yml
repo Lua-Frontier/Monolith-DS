@@ -9,8 +9,6 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: mothroach
-  - type: FaxableObject
-    insertingState: inserting_mothroach_mustard
   - type: Clothing
     quickEquip: false
     sprite: _LuaM/Mobs/Animals/mustard_mothroach.rsi
@@ -29,8 +27,6 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: mothroach
-  - type: FaxableObject
-    insertingState: inserting_mothroach_leopard
   - type: Clothing
     quickEquip: false
     sprite: _LuaM/Mobs/Animals/leopard_mothroach.rsi
@@ -49,8 +45,6 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: mothroach
-  - type: FaxableObject
-    insertingState: inserting_mothroach_cecropia
   - type: Clothing
     quickEquip: false
     sprite: _LuaM/Mobs/Animals/cecropia_mothroach.rsi
@@ -69,8 +63,6 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: mothroach
-  - type: FaxableObject
-    insertingState: inserting_mothroach_lunar
   - type: Clothing
     quickEquip: false
     sprite: _LuaM/Mobs/Animals/lunar_mothroach.rsi

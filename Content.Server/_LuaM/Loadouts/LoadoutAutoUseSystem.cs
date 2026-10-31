@@ -11,7 +11,7 @@ namespace Content.Server._LuaM.Loadouts;
 /// Uses cartridges and implanters picked in the character loadout right after spawning:
 /// cartridges get installed into the PDA, implanters get injected into their owner.
 /// </summary>
-public sealed class LoadoutAutoUseSystem : EntitySystem
+public sealed partial class LoadoutAutoUseSystem : EntitySystem
 {
     [Dependency] private InventorySystem _inventory = default!;
     [Dependency] private CartridgeLoaderSystem _cartridgeLoader = default!;

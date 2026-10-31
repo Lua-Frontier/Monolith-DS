@@ -1,0 +1,33 @@
+- type: construction
+  id: BedArmy
+  name: army bunk
+  description: An ascetic bunk on a bare metal frame. Standard issue for barracks.
+  graph: bed
+  startNode: start
+  targetNode: bed_army
+  category: construction-category-furniture
+  icon:
+    sprite: _Orion/Structures/Furniture/army_bed.rsi
+    state: bed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: DoubleBedArmy
+  name: double army bunk
+  description: A wide ascetic bunk on a bare metal frame. Standard issue for barracks.
+  graph: bed
+  startNode: start
+  targetNode: double_bed_army_complete
+  category: construction-category-furniture
+  icon:
+    sprite: _Orion/Structures/Furniture/double_bed.rsi
+    state: bed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

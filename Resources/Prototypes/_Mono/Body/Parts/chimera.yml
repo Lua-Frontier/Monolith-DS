@@ -8,6 +8,8 @@
     sprite: Mobs/Species/Skeleton/parts.rsi
   - type: Icon
     sprite: Mobs/Species/Skeleton/parts.rsi
+  - type: BodyPart # LuaM: limbs are severed at 400 instead of 160 (arms, legs) and 130 (hands, feet), the head already has 400
+    severIntegrity: 400
   - type: Destructible # Shitmed Change: Let blunt weapons break bones
     thresholds:
     - trigger: !type:DamageTypeTrigger

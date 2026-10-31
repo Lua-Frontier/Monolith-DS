@@ -92,7 +92,7 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
 
     public void FadeOut(EntityUid? stream, AudioComponent? component = null, float duration = DefaultDuration)
     {
-        if (stream == null || duration <= 0f || !Resolve(stream.Value, ref component))
+        if (stream == null || duration <= 0f || !Resolve(stream.Value, ref component, false)) // LuaM: the stream may have already ended
             return;
 
         // Just in case
@@ -104,7 +104,7 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
 
     public void FadeIn(EntityUid? stream, AudioComponent? component = null, float duration = DefaultDuration)
     {
-        if (stream == null || duration <= 0f || !Resolve(stream.Value, ref component) || component.Volume < MinVolume)
+        if (stream == null || duration <= 0f || !Resolve(stream.Value, ref component, false) || component.Volume < MinVolume) // LuaM
             return;
 
         _fadingOut.Remove(stream.Value);

@@ -16,7 +16,7 @@ namespace Content.Server.Shuttles.Systems;
 
 public sealed partial class ShuttleSystem
 {
-    [Dependency] private readonly RadarConsoleSystem _radarConsole = default!;
+    [Dependency] private RadarConsoleSystem _radarConsole = default!;
 
     private const float SpaceFrictionStrength = 0.0075f;
     public const float DampenDampingStrength = 0.25f; // LuaM  private > public
@@ -85,10 +85,10 @@ public sealed partial class ShuttleSystem
     private void OnSetInertiaDampening(EntityUid uid, ShuttleConsoleComponent component, SetInertiaDampeningRequest args)
     {
         // Ensure that the entity requested is a valid shuttle (stations should not be togglable)
-        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform) ||
+        if (!TryComp(uid, out TransformComponent? transform) ||
             !transform.GridUid.HasValue ||
-            !EntityManager.TryGetComponent(transform.GridUid, out PhysicsComponent? physicsComponent) ||
-            !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))
+            !TryComp(transform.GridUid, out PhysicsComponent? physicsComponent) ||
+            !TryComp(transform.GridUid, out ShuttleComponent? shuttleComponent))
         {
             return;
         }
@@ -121,14 +121,14 @@ public sealed partial class ShuttleSystem
 
     public InertiaDampeningMode NfGetInertiaDampeningMode(EntityUid entity)
     {
-        if (!EntityManager.TryGetComponent<TransformComponent>(entity, out var xform))
+        if (!TryComp<TransformComponent>(entity, out var xform))
             return InertiaDampeningMode.Dampen;
 
         // Not a shuttle, shouldn't be togglable // Mono - remove shuttle deed requirement, kill StationDampening
         if (TryComp<PhysicsComponent>(xform.GridUid, out var body) && (body.BodyType & BodyType.Static) != 0)
             return InertiaDampeningMode.Station;
 
-        if (!EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttle))
+        if (!TryComp(xform.GridUid, out ShuttleComponent? shuttle))
             return InertiaDampeningMode.Dampen;
 
         if (shuttle.BodyModifier >= AnchorDampingStrength)
@@ -142,10 +142,10 @@ public sealed partial class ShuttleSystem
     public void NfSetPowered(EntityUid uid, ShuttleConsoleComponent component, bool powered)
     {
         // Ensure that the entity requested is a valid shuttle (stations should not be togglable)
-        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform) ||
+        if (!TryComp(uid, out TransformComponent? transform) ||
             !transform.GridUid.HasValue ||
-            !EntityManager.TryGetComponent(transform.GridUid, out PhysicsComponent? physicsComponent) ||
-            !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))
+            !TryComp(transform.GridUid, out PhysicsComponent? physicsComponent) ||
+            !TryComp(transform.GridUid, out ShuttleComponent? shuttleComponent))
         {
             return;
         }

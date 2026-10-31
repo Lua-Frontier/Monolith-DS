@@ -15,7 +15,7 @@ namespace Content.Server._LuaM.HoloComms;
 /// A call to the ship rings every point of it, once someone answers every point of both ships joins the call,
 /// and hanging up anywhere hangs up the whole ship. Stations and POI holopads stand on their own.
 /// </summary>
-public sealed class ShipCommsLineSystem : EntitySystem
+public sealed partial class ShipCommsLineSystem : EntitySystem
 {
     [Dependency] private TelephoneSystem _telephone = default!;
     [Dependency] private HolopadSystem _holopad = default!;

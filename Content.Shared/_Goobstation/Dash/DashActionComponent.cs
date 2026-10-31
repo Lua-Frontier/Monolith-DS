@@ -40,6 +40,10 @@ public sealed partial class DashActionEvent : WorldTargetActionEvent
     [DataField]
     public bool AffectedBySpeed = true;
 
+    // LuaM: the first creature hit by the dash is knocked down, only the mantis blade dash has it
+    [DataField]
+    public bool Impact;
+
     /// <summary>
     /// Animated emote to play on successful dash.
     /// </summary>

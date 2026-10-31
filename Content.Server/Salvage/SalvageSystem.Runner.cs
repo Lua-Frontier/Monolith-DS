@@ -81,7 +81,7 @@ public sealed partial class SalvageSystem
             ChatChannel.Radio,
             text,
             text,
-            _mapManager.GetMapEntityId(mapId),
+            _mapSystem.GetMapOrInvalid(mapId),
             false,
             true,
             null);
@@ -132,7 +132,7 @@ public sealed partial class SalvageSystem
     {
         // Started a mining mission so work out exempt entities
         if (TryComp<SalvageMiningExpeditionComponent>(
-                _mapManager.GetMapEntityId(ev.TargetCoordinates.ToMap(EntityManager, _transform).MapId),
+                _mapSystem.GetMapOrInvalid(ev.TargetCoordinates.ToMap(EntityManager, _transform).MapId),
                 out var mining))
         {
             var ents = new List<EntityUid>();
@@ -233,7 +233,7 @@ public sealed partial class SalvageSystem
 
                             // Get a list of all grid positions on the destination map
                             List<Vector2> gridCoords = new();
-                            var gridQuery = EntityManager.AllEntityQueryEnumerator<MapGridComponent, TransformComponent>();
+                            var gridQuery = AllEntityQuery<MapGridComponent, TransformComponent>();
                             while (gridQuery.MoveNext(out var _, out _, out var xform))
                             {
                                 if (xform.MapID == mapId)

@@ -15,6 +15,7 @@
     BoxForensicPad: 6
     LogProbeCartridge: 3
     ContrabandAppraisalTool: 10
+    BlueprintWarlordSuit: 3 # LuaM: the WL-01 blueprint, the POI version already has it
 #Bounty hunter
     ClothingOuterEVASuitMercenary: 4
     ClothingOuterEVASuitPrivateSec: 4

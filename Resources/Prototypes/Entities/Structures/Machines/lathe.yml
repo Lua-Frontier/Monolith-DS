@@ -687,6 +687,7 @@
     - Scarves
     - Carpets
     - Bedsheets
+    - DoubleBedsheets # Orion
     - NFFloorTilesCarpet # Frontier
     - NFWallets # Frontier
     dynamicPacks: # Frontier

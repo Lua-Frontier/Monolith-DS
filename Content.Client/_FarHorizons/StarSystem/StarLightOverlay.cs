@@ -28,7 +28,7 @@ public sealed class StarLightOverlay : Overlay
     private const float ShadowBleed = 0.05f;
 
     private readonly IEntityManager _entMan;
-    private readonly IMapManager _mapMan;
+    private readonly SharedMapSystem _mapMan;
     private readonly IPrototypeManager _protoMan;
     private readonly IOverlayManager _overlayMan;
     private readonly ITileDefinitionManager _tileDefMan;
@@ -65,7 +65,7 @@ public sealed class StarLightOverlay : Overlay
 
     public StarLightOverlay(
         IEntityManager entMan,
-        IMapManager mapMan,
+        SharedMapSystem mapMan,
         IPrototypeManager protoMan,
         IOverlayManager overlayMan,
         ITileDefinitionManager tileDefMan,

@@ -14,7 +14,7 @@ namespace Content.Server._LuaM.Research;
 /// <summary>
 /// Handles <see cref="ResearchServerMagnetComponent"/>: research disks on the floor near the server get absorbed into it.
 /// </summary>
-public sealed class ResearchServerMagnetSystem : EntitySystem
+public sealed partial class ResearchServerMagnetSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;

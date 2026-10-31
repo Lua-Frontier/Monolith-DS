@@ -38,7 +38,7 @@ public sealed partial class SiliconLawSystem : SharedSiliconLawSystem
     [Dependency] private UserInterfaceSystem _userInterface = default!;
     [Dependency] private EmagSystem _emag = default!;
     [Dependency] private TagSystem _tagSystem = default!; // Corvax-Next-AiRemoteControl
-    [Dependency] private IMapManager _map = default!; // Mono - Law update is grid-only now.
+    [Dependency] private SharedMapSystem _map = default!; // Mono - Law update is grid-only now.
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -119,7 +119,7 @@ public sealed partial class SiliconLawSystem : SharedSiliconLawSystem
         TryComp(uid, out IntrinsicRadioTransmitterComponent? intrinsicRadio);
         var radioChannels = intrinsicRadio?.Channels;
 
-        var state = new SiliconLawBuiState(GetLaws(uid).Laws, radioChannels);
+        var state = new SiliconLawBuiState(GetLaws(uid).Laws, radioChannels?.Select(c => c.Id).ToHashSet());
         _userInterface.SetUiState(args.Entity, SiliconLawsUiKey.Key, state);
     }
 

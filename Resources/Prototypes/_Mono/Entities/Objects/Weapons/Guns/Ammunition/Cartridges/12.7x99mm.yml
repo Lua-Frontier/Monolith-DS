@@ -9,6 +9,7 @@
     - Cartridge
     - Cartridge127x99mm
   - type: CartridgeAmmo
+    muzzleFlash: MuzzleFlashEffectHeavy # LuaM: powder smoke flash from Hullrot
     proto: Bullet127x99mm
   - type: Sprite
     sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/big_ammo_casing.rsi
@@ -30,6 +31,7 @@
     - Cartridge
     - Cartridge127x99mm
   - type: CartridgeAmmo
+    muzzleFlash: MuzzleFlashEffectHeavy # LuaM: powder smoke flash from Hullrot
     proto: Bullet127x99mmExplosive
   - type: Sprite
     sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/big_ammo_casing_steel.rsi

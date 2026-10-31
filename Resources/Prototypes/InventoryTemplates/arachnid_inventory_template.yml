@@ -165,7 +165,7 @@
       slotTexture: wallet
       slotFlags: WALLET
       stripTime: 6
-      uiWindowPos: 3,1
+      uiWindowPos: 1,0 # LuaM: 3,1 > 1,0, same layout as humans
       strippingWindowPos: 3,5
       dependsOn: jumpsuit
       displayName: Wallet

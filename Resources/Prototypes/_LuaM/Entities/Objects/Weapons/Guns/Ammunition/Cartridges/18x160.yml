@@ -21,6 +21,7 @@
   description:  A massive cartridge used in sniper rifles; this variant is a basic gunpowder-propelled round featuring a tungsten tip
   components:
   - type: CartridgeAmmo
+    muzzleFlash: MuzzleFlashEffectHeavy
     proto: Bullet18x160mm
   - type: Sprite
     scale: 1.2, 1.2

@@ -132,6 +132,7 @@
   id: ClothingOuterHardsuitBase
   name: base hardsuit
   components:
+  - type: SpeedTieredFootsteps # LuaM: light, medium or heavy steps from Hullrot by the suit's slowdown
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
@@ -204,6 +205,7 @@
   id: ClothingOuterEVASuitBase
   name: base EVA Suit
   components:
+  - type: SpeedTieredFootsteps # LuaM: light, medium or heavy steps from Hullrot by the suit's slowdown
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
@@ -211,8 +213,8 @@
     heatingCoefficient: 0.01 # Not complete protection from fire
     coolingCoefficient: 0.01
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
+    sprintModifier: 0.7 # LuaM: 0.8 > 0.7, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: Item
     size: Huge

@@ -197,6 +197,7 @@
   speciesBlacklist:
    - Felinid
    - Tajaran
+   - IPC # LuaM: IPCs are not slowed down by damage
   components:
     - type: SlowOnDamage
       speedModifierThresholds:
@@ -282,6 +283,7 @@
   speciesBlacklist:
   - Felinid
   - Tajaran
+  - IPC # LuaM: IPCs are not slowed down by damage
   blacklist:
     components:
     - BorgChassis

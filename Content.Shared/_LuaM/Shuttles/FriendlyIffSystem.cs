@@ -9,7 +9,7 @@ namespace Content.Shared._LuaM.Shuttles;
 /// Factions are matched by <see cref="CompanyPrototype.FriendlyIffGroup"/> of the viewer's and the grid's company,
 /// or by <see cref="FriendlyIffComponent"/> on the grid.
 /// </summary>
-public sealed class FriendlyIffSystem : EntitySystem
+public sealed partial class FriendlyIffSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private ISharedPlayerManager _player = default!;

@@ -10,6 +10,7 @@ using Content.Shared.CombatMode;
 using Content.Shared.Damage;
 using Content.Shared.Hands.Components;
 using Content.Shared._Mono.FireControl;
+using Content.Shared._LuaM.Weapons; // LuaM
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Mech.Components;
 using Content.Shared.Projectiles;
@@ -113,7 +114,7 @@ public sealed partial class GunSystem : SharedGunSystem
         // If the gun is being held, its parent will be a hand container, and the hand container's parent will be the holder
         EntityUid? holder = null;
 
-        if (EntityManager.TryGetComponent(gunUid, out TransformComponent? gunXform) && gunXform.ParentUid != EntityUid.Invalid)
+        if (TryComp(gunUid, out TransformComponent? gunXform) && gunXform.ParentUid != EntityUid.Invalid)
         {
             var parent = gunXform.ParentUid;
             // Check if the parent has HandsComponent (it's the holder)
@@ -218,7 +219,7 @@ public sealed partial class GunSystem : SharedGunSystem
         if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down && !gun.BurstActivated)
         {
             if (gun.ShotCounter != 0)
-                EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
+                RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
             return;
         }
 
@@ -230,7 +231,7 @@ public sealed partial class GunSystem : SharedGunSystem
         if (mousePos.MapId == MapId.Nullspace)
         {
             if (gun.ShotCounter != 0)
-                EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
+                RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });
 
             return;
         }
@@ -249,7 +250,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
         var projectiles = ShootRequested(GetNetEntity(gunUid), GetNetCoordinates(coordinates), target, null, (Robust.Shared.Player.ICommonSession)session);
 
-        EntityManager.RaisePredictiveEvent(new RequestShootEvent()
+        RaisePredictiveEvent(new RequestShootEvent()
         {
             Target = target,
             Coordinates = GetNetCoordinates(coordinates),
@@ -407,6 +408,11 @@ public sealed partial class GunSystem : SharedGunSystem
         };
 
         _animPlayer.Play(ent, anim, "muzzle-flash");
+
+        // LuaM: lets client effects follow the shot, e.g. the powder smoke particles
+        var flashed = new GunMuzzleFlashedEvent(message.Angle);
+        RaiseLocalEvent(gunUid, ref flashed);
+
         if (!TryComp(gunUid, out PointLightComponent? light))
         {
             light = Factory.GetComponent<PointLightComponent>();

@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._LuaM.Radio;
 
-public sealed class HeadsetChannelsWindow : FancyWindow
+public sealed partial class HeadsetChannelsWindow : FancyWindow
 {
     [Dependency] private IPrototypeManager _proto = default!;
 

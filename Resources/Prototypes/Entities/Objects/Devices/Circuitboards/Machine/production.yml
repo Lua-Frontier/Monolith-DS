@@ -383,6 +383,7 @@
   id: AnomalySynchronizerCircuitboard
   name: anomaly synchronizer machine board
   description: A machine printed circuit board for an anomaly synchronizer.
+  categories: [ HideSpawnMenu ] # LuaM
   components:
     - type: Sprite
       state: science

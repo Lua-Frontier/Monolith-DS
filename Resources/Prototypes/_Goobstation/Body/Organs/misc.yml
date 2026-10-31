@@ -12,5 +12,6 @@
   - type: Organ
     onAdd:
     - type: SandevistanUser
+      movementSpeedModifier: 1.5 # LuaM: 2 > 1.5
       safeDuration: 10 # LuaM: activeDuration 8 > safeDuration 10
       rechargeDuration: 40

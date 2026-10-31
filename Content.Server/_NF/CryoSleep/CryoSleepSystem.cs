@@ -52,7 +52,7 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
     [Dependency] private ContainerSystem _container = default!;
     [Dependency] private ClimbSystem _climb = default!;
     [Dependency] private GameTicker _gameTicker = default!;
-    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private SharedMapSystem _mapManager = default!;
     [Dependency] private EuiManager _euiManager = null!;
     [Dependency] private MindSystem _mind = default!;
     [Dependency] private InteractionSystem _interaction = default!;
@@ -98,8 +98,8 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
         if (Deleted(_storageMap))
         {
             var map = _mapManager.CreateMap();
-            _storageMap = _mapManager.GetMapEntityId(map);
-            _mapManager.SetMapPaused(map, true);
+            _storageMap = map;
+            _mapManager.SetPaused(map, true);
         }
 
         return _storageMap.Value;
@@ -324,7 +324,7 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
                     // Check if any of the station's grids have ForceAnchor
                     bool stationHasForceAnchor = false;
 
-                    if (playerStation != null && EntityManager.EntityExists(playerStation.Value) &&
+                    if (playerStation != null && Exists(playerStation.Value) &&
                         _entityManager.TryGetComponent<StationDataComponent>(playerStation.Value, out var stationData))
                     {
                         foreach (var gridUid in stationData.Grids)
@@ -344,7 +344,7 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
                     }
 
                     // Only proceed if we found a valid station for this player and it has ForceAnchor
-                    if (playerStation != null && EntityManager.EntityExists(playerStation.Value) &&
+                    if (playerStation != null && Exists(playerStation.Value) &&
                         _entityManager.TryGetComponent<StationJobsComponent>(playerStation.Value, out var stationJobs) &&
                         stationHasForceAnchor)
                     {

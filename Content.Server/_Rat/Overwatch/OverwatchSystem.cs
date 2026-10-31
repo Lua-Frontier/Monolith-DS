@@ -30,7 +30,7 @@ namespace Content.Server._Rat.Overwatch;
 /// <summary>
 /// Система для управления Overwatch.
 /// </summary>
-public sealed class OverwatchSystem : EntitySystem
+public sealed partial class OverwatchSystem : EntitySystem
 {
     /// <summary>
     /// Интервал инвалидации кэша в секундах.

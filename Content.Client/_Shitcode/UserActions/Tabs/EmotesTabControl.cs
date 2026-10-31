@@ -21,10 +21,10 @@ namespace Content.Client._Shitcode.UserActions.Tabs;
 [GenerateTypedNameReferences]
 public sealed partial class EmotesTabControl : BaseTabControl
 {
-    [Dependency] private readonly EntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private EntityManager _entManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private ISharedPlayerManager _playerManager = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
 
     private TimeSpan _lastEmoteTime;
     private static readonly TimeSpan EmoteCooldown = TimeSpan.FromSeconds(0);
@@ -107,20 +107,7 @@ public sealed partial class EmotesTabControl : BaseTabControl
         _entManager.RaisePredictiveEvent(new PlayEmoteMessage(protoId));
     }
 
-    // LuaM start
-    private const float GridPadding = 20f;
-    private float _gridWidth;
-
     protected override void Resized()
     {
-        base.Resized();
-
-        var width = Width - GridPadding;
-        if (width <= 0 || MathHelper.CloseTo(width, _gridWidth))
-            return;
-
-        _gridWidth = width;
-        EmotesList.MaxGridWidth = width;
     }
-    // LuaM end
 }

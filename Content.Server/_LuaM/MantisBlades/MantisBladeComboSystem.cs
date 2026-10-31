@@ -11,11 +11,11 @@ namespace Content.Server._LuaM.MantisBlades;
 /// <summary>
 /// Gives the dash action and enables reflection while the user holds enough mantis blades.
 /// </summary>
-public sealed class MantisBladeComboSystem : EntitySystem
+public sealed partial class MantisBladeComboSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {

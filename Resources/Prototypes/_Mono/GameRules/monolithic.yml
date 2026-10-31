@@ -11,8 +11,8 @@
     endAnnouncement: mono-monolithic-event-fragment-end-announcement
     earliestStart: 10
     weight: 5
-    duration: 1350
-    maxDuration: 1560
+    duration: 2400 # LuaM: 1350 > 2400, all event grids last 40 minutes
+    maxDuration: 2400 # LuaM: 1560 > 2400, all event grids last 40 minutes
     reoccurrenceDelay: 15
   - type: BluespaceErrorRule
     groups:

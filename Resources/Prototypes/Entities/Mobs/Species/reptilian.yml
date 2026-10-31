@@ -90,6 +90,11 @@
           32:
             sprite: _White/Mobs/Species/displacement.rsi
             state: shoes
+      outerClothing: # Lua
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Reptilian/displacement.rsi
+            state: outerClothing
     displacements:
       jumpsuit:
         sizeMaps:
@@ -101,6 +106,11 @@
           32:
             sprite: _White/Mobs/Species/displacement.rsi
             state: shoes
+      outerClothing: # Lua
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Reptilian/displacement.rsi
+            state: outerClothing
     # WWDP-Edit-End
   - type: Tag # Mono/Goobstation
     tags:
@@ -182,6 +192,11 @@
           32:
             sprite: _White/Mobs/Species/displacement.rsi
             state: shoes
+      outerClothing: # Lua
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Reptilian/displacement.rsi
+            state: outerClothing
     displacements:
       jumpsuit:
         sizeMaps:
@@ -193,6 +208,11 @@
           32:
             sprite: _White/Mobs/Species/displacement.rsi
             state: shoes
+      outerClothing: # Lua
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Reptilian/displacement.rsi
+            state: outerClothing
     # WWDP-Edit-End
 
 #Weh

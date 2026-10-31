@@ -1,10 +1,6 @@
 ﻿- type: shader
-  id: DisplacedStencilDraw
+  id: DisplacedStencilDraw # LuaM -- без теста трафарета: маска StencilMask не показывается, а в интерфейсах тест обрезал одежду
   kind: source
   path: "/Textures/Shaders/displacement.swsl"
-  stencil:
-    ref: 1
-    op: Keep
-    func: NotEqual
   params:
     displacementSize: 127

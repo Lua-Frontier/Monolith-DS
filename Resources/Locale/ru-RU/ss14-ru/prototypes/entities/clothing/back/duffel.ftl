@@ -46,3 +46,5 @@ ent-ClothingBackpackDuffelHolding = блюспейс-вещмешок
     .desc = Вещмешок, открывающийся в локальный карман блюспейса.
 ent-ClothingBackpackDuffelCBURN = вещмешок отряда РХБЗЗ
     .desc = Вещмешок, содержащий различное оборудование для сдерживания биологической угрозы.
+ent-ClothingBackpackSatchelmilirarybig = Военная сумка
+    .desc = Увеличенная военная сумка для хранения предметов

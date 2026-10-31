@@ -4,9 +4,9 @@ using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems
 {
-    public sealed class OwOAccentSystem : EntitySystem // LuaM: public partial sealed class > public sealed class
+    public sealed partial class OwOAccentSystem : EntitySystem // LuaM: public partial sealed class > public sealed partial class
     {
-        [Dependency] private readonly IRobustRandom _random = default!; // LuaM: private > private readonly
+        [Dependency] private IRobustRandom _random = default!; // LuaM: private > private readonly
 
         private static readonly IReadOnlyList<string> Faces = new List<string>{
             " (•`ω´•)", " ;;w;;", " owo", " UwU", " >w<", " ^w^"

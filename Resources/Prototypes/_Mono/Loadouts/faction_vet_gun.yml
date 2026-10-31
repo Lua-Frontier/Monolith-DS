@@ -5,7 +5,7 @@
   maxLimit: 1
   loadouts:
   # TSF playtime guns
-  #- ContractorSpecialGunEg4
+  - ContractorSpecialGunEg4 # LuaM: returned
   #- ContractorSpecialGunAnnie
   #- ContractorSpecialGunVulcan
   - ContractorSpecialGunEnforcer

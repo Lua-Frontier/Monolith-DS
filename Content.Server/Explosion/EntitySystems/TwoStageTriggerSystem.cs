@@ -32,11 +32,11 @@ public sealed partial class TwoStageTriggerSystem : EntitySystem
             var comp = (Component) Factory.GetComponent(name);
             var temp = (object)comp;
 
-            if (EntityManager.TryGetComponent(uid, entry.Component.GetType(), out var c))
+            if (TryComp(uid, entry.Component.GetType(), out var c))
                 RemComp(uid, c);
 
             _serializationManager.CopyTo(entry.Component, ref temp);
-            EntityManager.AddComponent(uid, comp);
+            AddComp(uid, comp);
         }
         component.ComponentsIsLoaded = true;
     }

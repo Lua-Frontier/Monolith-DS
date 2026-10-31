@@ -1,8 +1,10 @@
 using System.Linq;
+using Content.Server._EinsteinEngines.Radio;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared._LuaM.Radio;
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Item;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Verbs;
@@ -13,10 +15,11 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._LuaM.Radio;
 
-public sealed class HeadsetChannelToggleSystem : EntitySystem
+public sealed partial class HeadsetChannelToggleSystem : EntitySystem
 {
     [Dependency] private UserInterfaceSystem _ui = default!;
     [Dependency] private HeadsetSystem _headset = default!;
+    [Dependency] private IntrinsicRadioKeySystem _intrinsicKeys = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IRobustRandom _random = default!;
 
@@ -59,6 +62,10 @@ public sealed class HeadsetChannelToggleSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract)
             return;
 
+        // A built-in radio (e.g. an IPC) is tuned only by its owner, a headset by anyone holding it.
+        if (!IsHeadsetItem(ent) && args.User != ent.Owner)
+            return;
+
         var user = args.User;
         args.Verbs.Add(new Verb
         {
@@ -92,6 +99,7 @@ public sealed class HeadsetChannelToggleSystem : EntitySystem
 
         Dirty(ent);
         _headset.RefreshRadioChannels(ent);
+        _intrinsicKeys.Refresh(ent);
         UpdateUi(ent);
     }
 
@@ -115,6 +123,10 @@ public sealed class HeadsetChannelToggleSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
+        // the frequency of a built-in radio is only known to its owner
+        if (!IsHeadsetItem(ent) && args.Examiner != ent.Owner)
+            return;
+
         args.PushMarkup(Loc.GetString("headset-tunable-radio-examine", ("frequency", ent.Comp.Frequency)));
     }
 
@@ -132,6 +144,11 @@ public sealed class HeadsetChannelToggleSystem : EntitySystem
         tunable.Frequency = args.Frequency;
         Dirty(ent.Owner, tunable);
         UpdateUi(ent);
+    }
+
+    private bool IsHeadsetItem(EntityUid uid)
+    {
+        return HasComp<ItemComponent>(uid);
     }
 
     private void UpdateUi(Entity<HeadsetChannelToggleComponent> ent)

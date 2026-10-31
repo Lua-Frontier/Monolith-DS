@@ -1,0 +1,53 @@
+- type: construction
+  name: reinforced glowing line middle
+  id: tubeFloorLightMiddleFixture
+  graph: LightFixture
+  startNode: start
+  targetNode: tubeFloorLightMiddle
+  category: construction-category-structures
+  description: A floor light fixture. Use light tubes.
+  icon:
+    sprite: _Lua/Structures/Wallmounts/Lightning/floor_light_middle.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: reinforced glowing line side
+  id: tubeFloorLightSideFixture
+  graph: LightFixture
+  startNode: start
+  targetNode: tubeFloorLightSide
+  category: construction-category-structures
+  description: A floor light fixture. Use light tubes.
+  icon:
+    sprite: _Lua/Structures/Wallmounts/Lightning/floor_light_side.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: reinforced floor light middle
+  id: bulbFloorLightFixture
+  graph: LightFixture
+  startNode: start
+  targetNode: bulbFloorLight
+  category: construction-category-structures
+  description: A floor light fixture. Use light bulbs.
+  icon:
+    sprite: _Lua/Structures/Wallmounts/Lightning/floor_light_bulb_middle.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

@@ -1,0 +1,12 @@
+# Added to the AI shuttle rules: the shuttle and every piece it breaks into get cleaned up
+# once no player has been near (mono.cleanup.grid.distance) for ~10 minutes, whatever their IFF, value or power.
+# Otherwise the shuttle with its IFF label and the expensive or powered pieces stayed in space forever.
+- type: entity
+  id: LuaMShuttleRuleCleanup
+  abstract: true
+  components:
+  - type: RuleGridsCleanup
+    cleanupAcceleration: 3 # mono.grid_cleanup_duration is 30 minutes, 3 times faster is 10
+    ignoreIFF: true
+    ignorePrice: true
+    ignorePowered: true

@@ -14,7 +14,7 @@ public sealed partial class DeepFryerSystem
         {
             base.Update(frameTime);
 
-            foreach (var component in EntityManager.EntityQuery<DeepFryerComponent>())
+            foreach (var component in EntityQuery<DeepFryerComponent>())
             {
                 var uid = component.Owner;
 

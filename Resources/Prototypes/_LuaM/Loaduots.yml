@@ -36,7 +36,6 @@
   - MercenaryKnallstockLoadout
   - MercenaryKeyboardLoadout
   - MercenaryPrometheusLoadout
-  - MercenaryIrohLoadout
   - MercenaryLeeEnfieldLoadout
   - MercenaryVulcanCLoadout
   - MercenaryMosinLoadout
@@ -52,3 +51,78 @@
   - ContractorSvalinnLoadout
   - ContractorDoubleBarreledLoadout
   - ContractorAkmLoadout
+
+# Contractor weapons: the full choice of the old mercenary role plus the contractor self-defense guns.
+# The pistol and ammo lists come in as subgroups, so they stay in sync with the mercenary role.
+# MercenaryFirearm is copied without the Iroh, the contractor gets it only as a special weapon.
+- type: loadoutGroup
+  id: ContractorFullFirearm
+  name: loadout-group-weapon
+  minLimit: 0
+  loadouts:
+  - MercenaryGestioLoadout
+  - MercenaryNovaliteLoadout
+  - MercenaryAk220Loadout
+  - MercenaryKnallstockLoadout
+  - MercenaryKeyboardLoadout
+  - MercenaryPrometheusLoadout
+  - MercenaryLeeEnfieldLoadout
+  - MercenaryVulcanCLoadout
+  - MercenaryMosinLoadout
+  - MercenarySvsLoadout
+  - MercenaryKammererLoadout
+  - MercenaryDisablerSMGLoadout
+  - MercenaryLaserCarbineLoadout
+  - MercenaryEnergyGunLoadout
+  - MercenaryLeverActionloadout
+  - ContractorDoubleBarreledLoadout
+  - ContractorAkmLoadout
+
+- type: loadoutGroup
+  id: ContractorFullPistol
+  name: loadout-group-pistol
+  minLimit: 0
+  loadouts:
+  - ContractorMk32Loadout
+  - ContractorSvalinnLoadout
+  - ContractorSurvivalKnifeLoadout
+  subgroups:
+  - MercenaryPistol
+
+- type: loadoutGroup
+  id: ContractorFullMag
+  name: loadout-group-magazine
+  minLimit: 0
+  loadouts:
+  - ContractorBeanbagAmmoLoadout # the 9x19mm box is already in the mercenary list
+  subgroups:
+  - MercenaryMag
+
+# USSP shoes and masks: the TSFMC lists (shared with the TSFMC jobs) plus the mercenary ones
+- type: loadoutGroup
+  id: USSPShoes
+  name: loadout-group-contractor-shoes
+  minLimit: 1
+  maxLimit: 1
+  loadouts: []
+  subgroups:
+  - TsfmcShoes
+  - MercenaryShoes
+  - PilotShoes
+  - ContractorShoes
+  fallbacks:
+  - TsfmcCombatBoots
+
+- type: loadoutGroup
+  id: USSPFace
+  name: loadout-group-contractor-face
+  minLimit: 0
+  maxLimit: 1
+  loadouts: []
+  subgroups:
+  - TsfmcFace
+  - MercenaryFace
+  - PilotFace
+  - ContractorFace
+  fallbacks:
+  - TsfmcGaiter

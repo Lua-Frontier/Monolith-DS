@@ -163,24 +163,22 @@
     runningState: icon
     staticPacks:
     - NFNfsdTechfabDeprecatedStatic
-    # - StaticAmmoRecipePack # Commented by LuaM
+    # - StaticAmmoRecipePack
     # - RoundstartShipgunAmmo # Mono # Commented by LuaM
     - StaticGrenades
     - MonoAttachmentsStatic # Mono
     - ReportingStatic # DeltaV
     dynamicPacks:
     - NFNfsdTechfabDeprecated
-    # - DynamicAmmoRecipePack # Commented by LuaM
+    # - DynamicAmmoRecipePack
     # Mono start
     - MonoTSFWeaponsDynamicMelee
     - MonoTSFWeaponsDynamicRanged
     - MonoTSFMiscDynamic
-    # LuaM-comment-start:
-    # - UniversalShellAmmo
-    # - UniversalRailgunAmmo
-    # - UniversalMissileAmmo
-    # - UniversalOrdinance
-    # LuaM-comment-end
+    - UniversalShellAmmo
+    - UniversalRailgunAmmo
+    - UniversalMissileAmmo
+    - UniversalOrdinance
     - ResearchedExplosives
     # Mono end
 # LuaM-start:
@@ -231,15 +229,14 @@
     runningState: icon
     staticPacks:
     - NFMercenaryTechfabDeprecatedStatic
-    # - StaticAmmoRecipePack # Commented by LuaM
+    #- StaticAmmoRecipePack # Commented by LuaM
     - MonoRestraintsStatic # Mono
-    # - RoundstartShipgunAmmo # Mono # Commented by LuaM
+    #- RoundstartShipgunAmmo # Mono # Commented by LuaM
     - StaticGrenades
     - MonoAttachmentsStatic # Mono
     dynamicPacks:
     - NFMercenaryTechfabDeprecated
-    # LuaM-comment-start:
-    # - DynamicAmmoRecipePack
+    #- DynamicAmmoRecipePack
     # Mono start
     # - MonoTSFWeaponsDynamicMelee
     # # - MonoTSFWeaponsDynamicRanged
@@ -247,10 +244,9 @@
     # - MonoRogueWeaponsDynamicMelee
     # - MonoRogueWeaponsDynamicRanged
     # - MonoRogueMiscDynamic
-    # Universal shit (stuff like shipgun ammo)
-    # - UniversalRailgunAmmo
-    # - UniversalMissileAmmo
-    # - UniversalShellAmmo
+    #- UniversalRailgunAmmo
+    #- UniversalMissileAmmo
+    #- UniversalShellAmmo
     # - UniversalOrdinance
     # LuaM-comment-end
     - SecurityEquipment
@@ -310,14 +306,14 @@
     runningState: icon
     staticPacks:
     - NFHackedMercenaryTechfabDeprecatedStatic
-    - StaticAmmoRecipePack
+    #- StaticAmmoRecipePack
     - MonoRestraintsStatic
-    - RoundstartShipgunAmmo # Mono
+    #- RoundstartShipgunAmmo # Mono
     - StaticGrenades
     - MonoAttachmentsStatic # Mono
     dynamicPacks:
     - NFHackedMercenaryTechfabDeprecated
-    - DynamicAmmoRecipePack
+   # - DynamicAmmoRecipePack
     - SmartGun # Goobstation
     # Mono start
     - MonoTSFWeaponsDynamicMelee
@@ -327,9 +323,9 @@
     - MonoRogueWeaponsDynamicRanged
     - MonoRogueMiscDynamic
     # Universal shit (stuff like shipgun ammo)
-    - UniversalRailgunAmmo
-    - UniversalMissileAmmo
-    - UniversalShellAmmo
+   # - UniversalRailgunAmmo
+   # - UniversalMissileAmmo
+    #- UniversalShellAmmo
     - UniversalOrdinance
     # Mono end
   - type: PirateBountyItem # Mono

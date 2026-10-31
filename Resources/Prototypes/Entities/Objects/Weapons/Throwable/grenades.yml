@@ -371,7 +371,7 @@
     sprite: Objects/Weapons/Grenades/empgrenade.rsi
   - type: EmpOnTrigger
     range: 5.5
-    energyConsumption: 2700000 # Frontier: Upstream - #28984, 50000<2700000
+    energyConsumption: 5400000
   - type: DeleteOnTrigger
   - type: Appearance
   - type: TimerTriggerVisuals

@@ -94,3 +94,7 @@
   - type: Tag # LuaM
     tags:
     - SafetyDepositBlacklist # LuaM: can't be kept in safety deposit boxes
+  - type: Multishot # боргам уже надоело то насколько оно косое
+    missChance: 0
+    spreadAddition: 0
+    spreadMultiplier: 0

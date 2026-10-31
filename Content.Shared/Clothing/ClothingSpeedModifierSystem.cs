@@ -26,7 +26,7 @@ public sealed partial class ClothingSpeedModifierSystem : EntitySystem
         SubscribeLocalEvent<ClothingSpeedModifierComponent, ComponentHandleState>(OnHandleState);
         SubscribeLocalEvent<ClothingSpeedModifierComponent, InventoryRelayedEvent<RefreshMovementSpeedModifiersEvent>>(OnRefreshMoveSpeed);
         SubscribeLocalEvent<ClothingSpeedModifierComponent, InventoryRelayedEvent<RefreshFrictionModifiersEvent>>(OnRefreshFriction); // Mono
-        SubscribeLocalEvent<ClothingSpeedModifierComponent, InventoryRelayedEvent<RefreshWeightlessModifiersEvent>>(OnRefreshWeightless); // Mono
+        // SubscribeLocalEvent<ClothingSpeedModifierComponent, InventoryRelayedEvent<RefreshWeightlessModifiersEvent>>(OnRefreshWeightless); // Mono // Commented by LuaM: clothing slowdown doesn't slow jetpack acceleration
         SubscribeLocalEvent<ClothingSpeedModifierComponent, GetVerbsEvent<ExamineVerb>>(OnClothingVerbExamine);
         SubscribeLocalEvent<ClothingSpeedModifierComponent, ItemToggledEvent>(OnToggled);
     }
@@ -94,6 +94,7 @@ public sealed partial class ClothingSpeedModifierSystem : EntitySystem
     }
 
     // Mono
+    // LuaM: unused, its subscription is commented out, clothing slowdown doesn't slow jetpack acceleration
     private void OnRefreshWeightless(Entity<ClothingSpeedModifierComponent> ent, ref InventoryRelayedEvent<RefreshWeightlessModifiersEvent> args)
     {
         if (!_toggle.IsActivated(ent.Owner))

@@ -7,17 +7,9 @@
   - FactionMosinLoadout
   - FactionSvsLoadout
   - FactionDp29Loadout
-# LuaM-start: the mercenary self-defense guns
-  - ContractorMk32Loadout
-  - ContractorSurvivalKnifeLoadout
-  - ContractorDisablerLoadout
-  - ContractorSvalinnLoadout
-  - ContractorDoubleBarreledLoadout
-  - MercenaryKammererLoadout
-  - MercenaryPrometheusLoadout
-  - MercenaryGestioLoadout
-  - ContractorAkmLoadout
-  - MercenaryNovaliteLoadout
+# LuaM-start: the full mercenary weapon list, the pistols and knives are in ContractorFullPistol
+  subgroups:
+  - ContractorFullFirearm
 # LuaM-end
   fallbacks:
   - FactionAk502Loadout
@@ -42,6 +34,11 @@
   - Faction762x39mmAmmoLoadout #AK502
   - Faction762x54mmRAmmoLoadout #Mosin / SVS42
   - FactionDp29AmmoLoadout #DP29
+# LuaM-start: the mercenary ammo as well
+  subgroups:
+  - ContractorFullMag
+  - MercenaryMag
+# LuaM-end
   fallbacks:
   - Faction762x39mmAmmoLoadout #AK502
 

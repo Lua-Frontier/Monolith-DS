@@ -8,8 +8,8 @@ namespace Content.Shared._LuaM.Container.Systems; // idk how name that.
 // Following the example of goob <see cref="Content.Shared._Goobstation.Clothing.Systems.ClothingGrantingSystem"/>
 public sealed partial class OutOfContainerGrantSystem : EntitySystem // this name is suck, i know
 {
-    [Dependency] private readonly ISerializationManager _serializationManager = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private ISerializationManager _serializationManager = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
 
     public override void Initialize()
     {
@@ -60,7 +60,7 @@ public sealed partial class OutOfContainerGrantSystem : EntitySystem // this nam
 
             object? temp = newComp;
             _serializationManager.CopyTo(data.Component, ref temp);
-            EntityManager.AddComponent(uid, (Component)temp!);
+            AddComp(uid, (Component)temp!);
 
             component.Active[name] = true;
         }

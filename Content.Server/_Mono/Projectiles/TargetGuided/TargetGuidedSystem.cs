@@ -197,7 +197,7 @@ public sealed partial class TargetGuidedSystem : EntitySystem
         // Check if controlling console still exists
         if (component.ControllingConsole.HasValue)
         {
-            if (!EntityManager.EntityExists(component.ControllingConsole.Value))
+            if (!Exists(component.ControllingConsole.Value))
                 return true;
 
 // Lua-start: a shuttle console guides while its grid still has fire control

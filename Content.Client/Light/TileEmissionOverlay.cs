@@ -11,7 +11,8 @@ public sealed partial class TileEmissionOverlay : Overlay
 {
     public override OverlaySpace Space => OverlaySpace.BeforeLighting;
 
-    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private IEntityManager _entManagerForMaps = default!;
+    private SharedMapSystem _mapManager => _entManagerForMaps.System<SharedMapSystem>();
     [Dependency] private IOverlayManager _overlay = default!;
 
     private SharedMapSystem _mapSystem;

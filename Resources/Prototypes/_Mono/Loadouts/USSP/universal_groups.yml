@@ -6,6 +6,13 @@
   - USSPBackpack
   - USSPDuffel
   - USSPSatchel
+# LuaM-start: the mercenary list as well
+  subgroups:
+  - MercenaryBackpack
+  - MonoMercenaryBackpack
+  - PilotBackpack
+  - ContractorBackpack
+# LuaM-end
   fallbacks:
   - USSPBackpack
 
@@ -18,12 +25,18 @@
   - USSPCombatWebbing
   - USSPCombatWebbingLarge
   - USSPCombatWebbingMedical
-  - MercenaryClothingBeltWebbingsNormalBlack
-  - MercenaryClothingBeltWebbingsBigBlack
-  - MercenaryClothingBeltWebbingsNormalRangerGreen
-  - MercenaryClothingBeltWebbingsBigRangerGreen
-  - MercenaryClothingBeltWebbingsNormalTan
-  - MercenaryClothingBeltWebbingsBigTan
+# LuaM-start: the mercenary list as well, the webbings below come from it
+#  - MercenaryClothingBeltWebbingsNormalBlack
+#  - MercenaryClothingBeltWebbingsBigBlack
+#  - MercenaryClothingBeltWebbingsNormalRangerGreen
+#  - MercenaryClothingBeltWebbingsBigRangerGreen
+#  - MercenaryClothingBeltWebbingsNormalTan
+#  - MercenaryClothingBeltWebbingsBigTan
+  subgroups:
+  - MercenaryBelt
+  - MonoMercenaryChestrig
+  - ContractorBelt
+# LuaM-end
   fallbacks:
   - USSPCombatWebbing
 
@@ -32,11 +45,18 @@
   name: loadout-group-contractor-belt
   minLimit: 1
   maxLimit: 1
-  loadouts:
-  - ContractorClothingBeltHolster
-  - MercenaryClothingBeltSecurityEmpty
+  loadouts: [] # LuaM: both come from the mercenary list now
+#  - ContractorClothingBeltHolster # Commented by LuaM
+#  - MercenaryClothingBeltSecurityEmpty # Commented by LuaM
   subgroups:
   - USSPBelt
+# LuaM-start: the mercenary list as well
+  - MercenaryBelt
+  - MonoMercenaryChestrig
+  - ContractorBelt
+  fallbacks:
+  - ContractorClothingBeltHolster # it was the first item, so the default
+# LuaM-end
 
 - type: loadoutGroup
   id: USSPOuterClothingOfficer
@@ -47,6 +67,12 @@
   subgroups:
   - TsfmcOuterClothing
   - USSPOuterClothing
+# LuaM-start: the mercenary list as well
+  - MercenaryOuterClothing
+  - MonoMercenaryOuterClothing
+  - PilotOuterClothing
+  - ContractorOuterClothing
+# LuaM-end
 
 - type: loadoutGroup
   id: USSPOuterClothing
@@ -55,14 +81,27 @@
   - USSPClothingL10
   subgroups:
   - TsfmcOuterClothing
+# LuaM-start: the mercenary list as well
+  - MercenaryOuterClothing
+  - MonoMercenaryOuterClothing
+  - PilotOuterClothing
+  - ContractorOuterClothing
+# LuaM-end
 
 - type: loadoutGroup
   id: USSPJumpsuit
   name: loadout-group-contractor-jumpsuit
-  hidden: true # No point in showing this, it gets auto-selected.
+  hidden: false # No point in showing this, it gets auto-selected. # LuaM: true > false, the mercenary jumpsuits can be picked
   minLimit: 1
   loadouts:
   - USSPClothingJumpsuit
+# LuaM-start: the mercenary list as well
+  subgroups:
+  - MercenaryJumpsuit
+  - MonoMercenaryJumpsuit
+  - PilotJumpsuit
+  - ContractorJumpsuit
+# LuaM-end
   fallbacks:
   - USSPClothingJumpsuit
 
@@ -73,6 +112,13 @@
   loadouts:
   - USSPClothingServiceDress
   - USSPClothingJumpsuit
+# LuaM-start: the mercenary list as well
+  subgroups:
+  - MercenaryJumpsuit
+  - MonoMercenaryJumpsuit
+  - PilotJumpsuit
+  - ContractorJumpsuit
+# LuaM-end
   fallbacks:
   - USSPClothingJumpsuit
 
@@ -82,9 +128,16 @@
   minLimit: 1
   loadouts:
   - USSPMedHud
-  - MercenaryClothingEyesBallisticGogglesGreen
-  - MercenaryClothingEyesBallisticGogglesRed
-  - MercenaryClothingEyesGlassesSunglasses
+# LuaM-start: the mercenary list as well, the glasses below come from it
+#  - MercenaryClothingEyesBallisticGogglesGreen
+#  - MercenaryClothingEyesBallisticGogglesRed
+#  - MercenaryClothingEyesGlassesSunglasses
+  subgroups:
+  - MercenaryGlasses
+  - MonoMercenaryBallisticGoggles
+  - PilotGlasses
+  - ContractorGlasses
+# LuaM-end
 
 - type: loadoutGroup
   id: USSPHead
@@ -93,7 +146,14 @@
   - USSPHelmet
   - USSPHeavyHelmet
   - USSPBeret
-  - ContractorClothingHeadHatUshanka
+#  - ContractorClothingHeadHatUshanka # Commented by LuaM: comes from the mercenary list
+# LuaM-start: the mercenary list as well
+  subgroups:
+  - MercenaryHead
+  - PilotHead
+  - ContractorHead
+  - MonoMercenaryHead
+# LuaM-end
 
 - type: loadoutGroup
   id: USSPEars
@@ -120,7 +180,14 @@
   name: loadout-group-contractor-head
   loadouts:
   - USSPCommissarCap
-  - ContractorClothingHeadHatUshanka
+#  - ContractorClothingHeadHatUshanka # Commented by LuaM: comes from the mercenary list
+# LuaM-start: the mercenary list as well
+  subgroups:
+  - MercenaryHead
+  - PilotHead
+  - ContractorHead
+  - MonoMercenaryHead
+# LuaM-end
 
 - type: loadoutGroup
   id: USSPHeadOfficer
@@ -129,21 +196,43 @@
   - USSPOfficerCap
   subgroups:
   - USSPHead
+# LuaM-start: the mercenary list as well
+  - MercenaryHead
+  - PilotHead
+  - ContractorHead
+  - MonoMercenaryHead
+# LuaM-end
 
 - type: loadoutGroup
   id: USSPGloves
   name: loadout-group-contractor-gloves
-  loadouts:
-  - MercenaryClothingHandsGlovesTacticalCombatBlack
-  - MercenaryClothingHandsGlovesTacticalCombatRangerGreen
-  - MercenaryClothingHandsGlovesTacticalCombatTan
+  loadouts: [] # LuaM: all three come from the mercenary list now
+#  - MercenaryClothingHandsGlovesTacticalCombatBlack # Commented by LuaM
+#  - MercenaryClothingHandsGlovesTacticalCombatRangerGreen # Commented by LuaM
+#  - MercenaryClothingHandsGlovesTacticalCombatTan # Commented by LuaM
+# LuaM-start: the mercenary list as well
+  subgroups:
+  - MercenaryGloves
+  - MonoMercenaryGloves
+  - PilotGloves
+  - ContractorGloves
+  fallbacks:
+  - MercenaryClothingHandsGlovesTacticalCombatBlack # it was the first item, so the default
+# LuaM-end
 
 - type: loadoutGroup
   id: USSPCommissarGloves
   name: loadout-group-contractor-gloves
-  hidden: true # No point in showing this, it gets auto-selected.
-  loadouts:
-  - MercenaryClothingHandsGlovesTacticalCombatWhite
+  hidden: false # No point in showing this, it gets auto-selected. # LuaM: true > false, the mercenary gloves can be picked
+  loadouts: [] # LuaM: the white gloves come from the mercenary list now
+#  - MercenaryClothingHandsGlovesTacticalCombatWhite # Commented by LuaM
+# LuaM-start: the mercenary list as well
+  subgroups:
+  - MercenaryGloves
+  - MonoMercenaryGloves
+  - PilotGloves
+  - ContractorGloves
+# LuaM-end
   fallbacks:
   - MercenaryClothingHandsGlovesTacticalCombatWhite
 
@@ -152,23 +241,27 @@
   name: loadout-group-contractor-balaclava
   minLimit: 0
   maxLimit: 1
-  loadouts:
-  - MercenaryClothingBalaclavaSkiMaskBlack
-  - MercenaryClothingBalaclavaSkiMaskRangerGreen
-  - MercenaryClothingBalaclavaSkiMaskTan
+  loadouts: [] # LuaM: all three come from the mercenary list now
+#  - MercenaryClothingBalaclavaSkiMaskBlack # Commented by LuaM
+#  - MercenaryClothingBalaclavaSkiMaskRangerGreen # Commented by LuaM
+#  - MercenaryClothingBalaclavaSkiMaskTan # Commented by LuaM
+  subgroups: # LuaM
+  - MercenaryBalaclava # LuaM
 
 - type: loadoutGroup
   id: USSPNeck
   name: loadout-group-contractor-neck
   minLimit: 0
   maxLimit: 1
-  loadouts:
-  - ContractorCDDogtags
-  - ContractorClothingNeckStethoscope
-  - ContractorClothingNeckIFFRed
-  - ContractorClothingNeckPonchoBlack
-  - ContractorClothingNeckPonchoSmallBlack
-  - ContractorClothingNeckPonchoSmallWhite
+  loadouts: [] # LuaM: all of them come from the mercenary list now
+#  - ContractorCDDogtags # Commented by LuaM
+#  - ContractorClothingNeckStethoscope # Commented by LuaM
+#  - ContractorClothingNeckIFFRed # Commented by LuaM
+#  - ContractorClothingNeckPonchoBlack # Commented by LuaM
+#  - ContractorClothingNeckPonchoSmallBlack # Commented by LuaM
+#  - ContractorClothingNeckPonchoSmallWhite # Commented by LuaM
+  subgroups: # LuaM
+  - ContractorNeck # LuaM
 
 - type: loadoutGroup
   id: USSPBureaucracy

@@ -1,0 +1,32 @@
+- type: construction
+  id: BannerNordfallVanguard
+  name: Nordfall Vanguard banner
+  description: A black banner bearing the red eagle of the Nordfall Vanguard.
+  graph: NordfallVanguardFlagsGraph
+  startNode: start
+  targetNode: BannerNode
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Decoration/nordfall_vanguard_banner.rsi
+    state: banner
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# hangs on the wall itself, like mapped flags
+- type: construction
+  id: NordfallVanguardFlag
+  name: Nordfall Vanguard flag
+  description: A black flag bearing the red eagle of the Nordfall Vanguard.
+  graph: NordfallVanguardFlagsGraph
+  startNode: start
+  targetNode: FlagNode
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Wallmounts/nordfall_vanguard_flag.rsi
+    state: flag
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true

@@ -13,7 +13,7 @@ namespace Content.Server._LuaM.Salvage;
 /// Keeps <see cref="ExpeditionHudComponent"/> of expedition maps up to date. Called by the salvage system when the
 /// expedition is generated, when its objectives change and when it is finished early.
 /// </summary>
-public sealed class ExpeditionHudSystem : EntitySystem
+public sealed partial class ExpeditionHudSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IComponentFactory _factory = default!;

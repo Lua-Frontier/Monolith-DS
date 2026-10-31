@@ -1,0 +1,25 @@
+- type: entity
+  parent: BaseWallLocker
+  id: LockerWallEvacRepair
+  name: emergency shuttle emergency wall locker
+  description: It's emergencies all the way down.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Storage/wall_locker_evac.rsi
+    layers:
+    - state: eng
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: eng_evac_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: eng
+    stateDoorOpen: eng_open
+    stateDoorClosed: eng_evac_door
+  - type: AccessReader

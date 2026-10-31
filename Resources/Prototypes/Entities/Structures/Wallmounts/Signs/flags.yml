@@ -45,14 +45,15 @@
   - type: Sprite
     state: lgbtq_flag
     
-- type: entity
-  parent: BaseFlag
-  id: PirateFlag
-  name: pirate flag
-  description: Raise the jolly roger, scallywags!
-  components:
-  - type: Sprite
-    state: pirate_flag
+# LuaM: replaced by the pirate banner (BannerPirates), see mono_migration.yml
+#- type: entity
+#  parent: BaseFlag
+#  id: PirateFlag
+#  name: pirate flag
+#  description: Raise the jolly roger, scallywags!
+#  components:
+#  - type: Sprite
+#    state: pirate_flag
 
 - type: entity
   parent: BaseFlag

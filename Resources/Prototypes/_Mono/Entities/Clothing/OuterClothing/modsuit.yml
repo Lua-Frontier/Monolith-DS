@@ -8,8 +8,8 @@
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Modsuits/ussp-varyag.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.90
-    sprintModifier: 0.85
+    walkModifier: 0.8 # LuaM: 0.90 > 0.8, all suits are 0.1 slower
+    sprintModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaDamageResistance
@@ -36,8 +36,8 @@
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Modsuits/ussp-zastavnik.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.65 # LuaM: 0.75 > 0.65, all suits are 0.1 slower
+    sprintModifier: 0.65 # LuaM: 0.75 > 0.65, all suits are 0.1 slower
   - type: ExplosionResistance
     damageCoefficient: 0.3
   - type: StaminaDamageResistance
@@ -70,8 +70,8 @@
   - type: FireProtection
     reduction: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 1.1 # LuaM: 0.95 > 1.1
-    sprintModifier: 1.1 # LuaM: 0.95 > 1.1
+    walkModifier: 1 # LuaM: 0.95 > 1.1 > 1, TSF and PDV suits are 10% slower
+    sprintModifier: 1 # LuaM: 0.95 > 1.1 > 1, TSF and PDV suits are 10% slower
 
   - type: Armor
     modifiers:
@@ -97,8 +97,8 @@
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Modsuits/tsfmc-volta.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
+    sprintModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
   - type: SealableClothingVisuals
     spriteLayer: sealed
     clothingVisuals:
@@ -133,6 +133,9 @@
   description: A well rounded modsuit that focuses on mobility with its Actuator Enhancement System allowing its wearer to leap across the battlefield for rapid redeployment.
   categories: [ HideSpawnMenu ]
   components:
+  - type: ClothingSpeedModifier # LuaM: all suits are 0.1 slower, it had none (1.0) > 0.9
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Modsuits/mercenary.rsi
     layers:

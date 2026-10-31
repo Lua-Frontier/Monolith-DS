@@ -13,7 +13,7 @@
   price: 315000 # LuaM: 305000<315000, appraised at ~312000
   category: Medium
   group: Syndicate
-  shuttlePath: /Maps/_LuaM/Shuttles/Syndicate/Beatle.yml
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Syndicate/Beatle.yml
   guidebookPage: Null
   class:
   - Syndicate
@@ -23,7 +23,7 @@
 - type: gameMap
   id: Beatle
   mapName: 'Beatle'
-  mapPath: /Maps/_LuaM/Shuttles/Syndicate/Beatle.yml
+  mapPath: /SharedMaps/_LuaM/Shuttles/Syndicate/Beatle.yml
   minPlayers: 0
   stations:
     Beatle:

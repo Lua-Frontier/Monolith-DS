@@ -8,7 +8,7 @@ namespace Content.Shared._LuaM.Shuttles;
 /// <summary>
 /// Radar-side checks for <see cref="RadarStealthFieldComponent"/>.
 /// </summary>
-public sealed class RadarStealthFieldSystem : EntitySystem
+public sealed partial class RadarStealthFieldSystem : EntitySystem
 {
     [Dependency] private FriendlyIffSystem _friendlyIff = default!;
     [Dependency] private ISharedPlayerManager _player = default!;

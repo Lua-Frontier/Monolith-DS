@@ -1,0 +1,54 @@
+# Like SimpleRangedHostileCompound, but the melee fallback never picks weapons up.
+# Mobs with an innate gun (the void marines and guardsmen) would grab guns from the floor there,
+# and a held gun is used instead of their own one: often a two-handed or empty one they can't fire.
+- type: htnCompound
+  id: LuaMInnateRangedHostileCompound
+  branches:
+  - tasks:
+    - !type:HTNCompoundTask
+      task: InnateRangedCombatCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: LuaMMeleeCombatNoPickupCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: IdleCompound
+
+# MeleeCombatCompound without the weapon pickup
+- type: htnCompound
+  id: LuaMMeleeCombatNoPickupCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: NearbyMeleeTargets
+    - !type:HTNCompoundTask
+      task: LuaMBeforeMeleeAttackNoPickupCompound
+
+# BeforeMeleeAttackTargetCompound without the weapon pickup
+- type: htnCompound
+  id: LuaMBeforeMeleeAttackNoPickupCompound
+  branches:
+  - preconditions:
+    - !type:BuckledPrecondition
+      isBuckled: true
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UnbuckleOperator
+        shutdownState: TaskFinished
+  - preconditions:
+    - !type:PulledPrecondition
+      isPulled: true
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UnPullOperator
+        shutdownState: TaskFinished
+  - preconditions:
+    - !type:InContainerPrecondition
+      isInContainer: true
+    tasks:
+    - !type:HTNCompoundTask
+      task: EscapeCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: MeleeAttackTargetCompound

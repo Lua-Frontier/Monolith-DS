@@ -1,4 +1,3 @@
-using Content.Shared._LuaM.Movement; // LuaM
 using Content.Shared.Gravity;
 using Content.Shared.Movement.Components;
 using Content.Shared.Throwing;
@@ -11,7 +10,6 @@ public sealed partial class SharedJumpAbilitySystem : EntitySystem
     [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedGravitySystem _gravity = default!;
-    [Dependency] private DashImpactSystem _dashImpact = default!; // LuaM
 
     public override void Initialize()
     {
@@ -31,7 +29,6 @@ public sealed partial class SharedJumpAbilitySystem : EntitySystem
 
 
         _throwing.TryThrow(args.Performer, direction, entity.Comp.JumpThrowSpeed);
-        _dashImpact.StartImpact(args.Performer); // LuaM
 
         _audio.PlayPredicted(entity.Comp.JumpSound, args.Performer, args.Performer);
         args.Handled = true;

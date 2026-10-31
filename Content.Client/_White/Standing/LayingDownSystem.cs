@@ -48,15 +48,16 @@ public sealed partial class LayingDownSystem : SharedLayingDownSystem
 
         var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
 
-        if (rotation.GetDir() is Direction.SouthEast or Direction.East or Direction.NorthEast or Direction.North)
-        {
-            rotationVisuals.HorizontalRotation = Angle.FromDegrees(270);
-            sprite.Rotation = Angle.FromDegrees(270);
-            return;
-        }
+        var horizontal = rotation.GetDir() is Direction.SouthEast or Direction.East or Direction.NorthEast or Direction.North
+            ? Angle.FromDegrees(270)
+            : Angle.FromDegrees(90);
 
-        rotationVisuals.HorizontalRotation = Angle.FromDegrees(90);
-        sprite.Rotation = Angle.FromDegrees(90);
+        rotationVisuals.HorizontalRotation = horizontal;
+
+        if (sprite.Rotation.EqualsApprox(rotationVisuals.VerticalRotation))
+            return;
+
+        sprite.Rotation = horizontal;
     }
 
     private void OnCheckAutoGetUp(CheckAutoGetUpEvent ev, EntitySessionEventArgs args)

@@ -201,3 +201,21 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+# Lua
+- type: construction
+  id: BannerPirates
+  name: pirate banner
+  description: A black banner with a skull and crossbones. Nothing good flies under it.
+  graph: LuaBannersGraph
+  startNode: start
+  targetNode: BannerPiratesNode
+  category: construction-category-furniture
+  icon:
+    sprite: _Lua/Structures/Decoration/banner.rsi
+    state: banner_pirates
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

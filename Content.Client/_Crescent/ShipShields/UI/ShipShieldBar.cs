@@ -11,9 +11,9 @@ namespace Content.Client._Crescent.ShipShields.UI;
 /// Horizontal HP bar for the ship shield emitter. Shows the shield charge percentage
 /// while online, and a real-time countdown to recharge while offline.
 /// </summary>
-public sealed class ShipShieldBar : Control
+public sealed partial class ShipShieldBar : Control
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private readonly Font _font;
 

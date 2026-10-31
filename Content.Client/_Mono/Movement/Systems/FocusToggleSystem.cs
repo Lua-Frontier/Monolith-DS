@@ -40,7 +40,7 @@ using Robust.Shared.Player;
 
 namespace Content.Client._Mono.Movement.Systems;
 
-public sealed class FocusToggleSystem : EntitySystem
+public sealed partial class FocusToggleSystem : EntitySystem
 {
     [Dependency] private IEyeManager _eyeManager = default!;
     [Dependency] private IInputManager _inputManager = default!;

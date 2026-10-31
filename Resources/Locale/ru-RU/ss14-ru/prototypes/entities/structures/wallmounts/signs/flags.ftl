@@ -8,7 +8,5 @@ ent-SyndieFlag = флаг Синдиката
     .desc = Пахнет кровью. Смерть Nanotrasen!
 ent-LGBTQFlag = разноцветный флаг
     .desc = Кусок разноцветной ткани.
-ent-PirateFlag = пиратский флаг
-    .desc = Поднять Весёлого Роджера, ублюдки!
 ent-UNSAFlag = UNSA flag
     .desc = Flag of the Universal States of America. Yeehaw.

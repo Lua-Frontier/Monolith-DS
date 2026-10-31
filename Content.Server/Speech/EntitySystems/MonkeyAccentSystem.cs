@@ -5,9 +5,9 @@ using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed class MonkeyAccentSystem : EntitySystem
+public sealed partial class MonkeyAccentSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!; // LuaM: private > private readonly
+    [Dependency] private IRobustRandom _random = default!; // LuaM: private > private readonly
 
     public override void Initialize()
     {

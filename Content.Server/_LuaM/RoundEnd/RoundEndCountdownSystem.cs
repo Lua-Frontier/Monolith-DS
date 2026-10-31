@@ -8,7 +8,7 @@ namespace Content.Server._LuaM.RoundEnd;
 /// <summary>
 /// Tells clients when the round ends once the round end countdown is called, for the HUD timer.
 /// </summary>
-public sealed class RoundEndCountdownSystem : EntitySystem
+public sealed partial class RoundEndCountdownSystem : EntitySystem
 {
     [Dependency] private RoundEndSystem _roundEnd = default!;
     [Dependency] private ISharedPlayerManager _player = default!;

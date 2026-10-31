@@ -47,8 +47,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/eva_emergency.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.6 # LuaM: 0.7 > 0.6, all suits are 0.1 slower
+    sprintModifier: 0.6 # LuaM: 0.7 > 0.6, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: TemperatureProtection
     heatingCoefficient: 0.75
@@ -86,8 +86,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/ancient_voidsuit.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
+    sprintModifier: 0.75 # LuaM: 0.85 > 0.75, all suits are 0.1 slower
   - type: HeldSpeedModifier
 
 #Paramedic Voidsuit
@@ -109,8 +109,8 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 1 # Mono 0.9 -> 1
-    sprintModifier: 1 # Mono 0.9 -> 1
+    walkModifier: 0.9 # Mono 0.9 -> 1 # LuaM: 1 > 0.9, all suits are 0.1 slower
+    sprintModifier: 0.9 # Mono 0.9 -> 1 # LuaM: 1 > 0.9, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: TemperatureProtection
     heatingCoefficient: 0.1

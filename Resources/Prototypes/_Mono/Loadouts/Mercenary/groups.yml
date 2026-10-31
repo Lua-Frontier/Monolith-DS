@@ -69,7 +69,7 @@
  # - MercenaryClothingOuterArmorBPVestStabproof
  # - MercenaryClothingOuterHardsuitMercenary
  # - MercenaryClothingOuterHardsuitPrivateSecurity
- # - MercenaryClothingOuterHardsuitMercenaryWarlord
+  - MercenaryClothingOuterHardsuitMercenaryWarlord # LuaM: uncommented, WL-01 is back in the mercenary loadout
 
 - type: loadoutGroup
   id: MonoMercenaryGloves # ONLY TO BE USED AS A SUBGROUP FOR _NF MERCENARY GROUPS

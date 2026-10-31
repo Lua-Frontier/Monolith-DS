@@ -71,8 +71,8 @@ public sealed partial class WeldingHealableSystem : SharedWeldingHealableSystem
     private async void Repair(EntityUid uid, WeldingHealableComponent healableComponent, InteractUsingEvent args)
     {
         if (args.Handled
-            || !EntityManager.TryGetComponent(args.Used, out WeldingHealingComponent? component)
-            || !EntityManager.TryGetComponent(args.Target, out DamageableComponent? damageable)
+            || !TryComp(args.Used, out WeldingHealingComponent? component)
+            || !TryComp(args.Target, out DamageableComponent? damageable)
             || damageable.DamageContainerID is null
             || !component.DamageContainers.Contains(damageable.DamageContainerID)
             || !HasDamage((args.Target, damageable), component, args.User)
@@ -105,7 +105,7 @@ public sealed partial class WeldingHealableSystem : SharedWeldingHealableSystem
         var component = ent.Comp;
 
         if (args.Handled
-            || !EntityManager.TryGetComponent(args.User, out DamageableComponent? damageable)
+            || !TryComp(args.User, out DamageableComponent? damageable)
             || damageable.DamageContainerID is null
             || !component.DamageContainers.Contains(damageable.DamageContainerID)
             || !HasDamage((args.User, damageable), component, args.User)

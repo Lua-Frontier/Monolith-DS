@@ -29,8 +29,8 @@
         Radiation: 0.05
         Caustic: 0.05
   - type: ClothingSpeedModifier
-    walkModifier: 0.70
-    sprintModifier: 0.70
+    walkModifier: 0.6 # LuaM: 0.70 > 0.6, all suits are 0.1 slower
+    sprintModifier: 0.6 # LuaM: 0.70 > 0.6, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: StasisProtection
   - type: StasisBlinkProvider
@@ -80,8 +80,8 @@
         Radiation: 0.2
         Caustic: 0.3
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
+    sprintModifier: 0.85 # LuaM: 0.95 > 0.85, all suits are 0.1 slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing

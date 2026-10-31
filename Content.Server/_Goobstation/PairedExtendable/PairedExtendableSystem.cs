@@ -12,10 +12,10 @@ using Content.Shared.Popups;
 
 namespace Content.Server._Goobstation.PairedExtendable;
 
-public sealed class PairedExtendableSystem : EntitySystem
+public sealed partial class PairedExtendableSystem : EntitySystem
 {
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     /// <summary>
     /// Tries to extend or retract an extendable out from the user.

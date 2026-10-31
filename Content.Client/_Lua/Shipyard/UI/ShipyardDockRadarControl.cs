@@ -17,10 +17,11 @@ namespace Content.Client._Lua.Shipyard.UI;
 /// <summary>
 /// Radar of the shipyard console grid used to pick the docking port for purchased shuttles.
 /// </summary>
-public sealed class ShipyardDockRadarControl : BaseShuttleControl
+public sealed partial class ShipyardDockRadarControl : BaseShuttleControl
 {
     [Dependency] private IPlayerManager _player = default!;
-    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private IEntityManager _entManagerForMaps = default!;
+    private SharedMapSystem _mapManager => _entManagerForMaps.System<SharedMapSystem>();
 
     private readonly SharedTransformSystem _transform;
 

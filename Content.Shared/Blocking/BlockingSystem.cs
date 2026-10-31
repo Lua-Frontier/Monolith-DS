@@ -215,7 +215,7 @@ public sealed partial class BlockingSystem : SharedBlockingSystem // Mono
         var msgUser = Loc.GetString("action-popup-blocking-user", ("shield", shieldName));
         var msgOther = Loc.GetString("action-popup-blocking-other", ("blockerName", blockerName), ("shield", shieldName));
 
-        if (component.BlockingToggleAction != null)
+        if (!string.IsNullOrEmpty(component.BlockingToggleAction))
         {
             //Don't allow someone to block if they're not parented to a grid
             if (xform.GridUid != xform.ParentUid)
@@ -314,7 +314,7 @@ public sealed partial class BlockingSystem : SharedBlockingSystem // Mono
         //If the component blocking toggle isn't null, grab the users SharedBlockingUserComponent and PhysicsComponent
         //then toggle the action to false, unanchor the user, remove the hard fixture
         //and set the users bodytype back to their original type
-        if (component.BlockingToggleAction != null && TryComp<BlockingUserComponent>(user, out var blockingUserComponent)
+        if (!string.IsNullOrEmpty(component.BlockingToggleAction) && TryComp<BlockingUserComponent>(user, out var blockingUserComponent)
                                                      && TryComp<PhysicsComponent>(user, out var physicsComponent))
         {
             if (xform.Anchored)

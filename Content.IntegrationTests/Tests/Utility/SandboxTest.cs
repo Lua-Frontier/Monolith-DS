@@ -1,3 +1,5 @@
+using System.Reflection;
+using System.Linq;
 using Content.Client.IoC;
 using Content.Client.Parallax.Managers;
 using Robust.Client;
@@ -24,11 +26,8 @@ public sealed class SandboxTest
         {
             ContentStart = true,
             OverrideLogHandler = () => logHandler,
-            ContentAssemblies = new[]
-            {
-                typeof(Shared.Entry.EntryPoint).Assembly,
-                typeof(Client.Entry.EntryPoint).Assembly
-            },
+            // Sprite layers of all prototypes are resolved on startup, so module enums must be loaded too.
+            ContentAssemblies = ModuleAssemblies(),
             Options = new GameControllerOptions { LoadConfigAndUserData = false }
         };
 
@@ -50,5 +49,16 @@ public sealed class SandboxTest
         await client.WaitIdleAsync();
         await client.CheckSandboxed(typeof(Client.Entry.EntryPoint).Assembly);
         await client.CheckSandboxed(typeof(Shared.IoC.SharedContentIoC).Assembly);
+    }
+
+    private static Assembly[] ModuleAssemblies()
+    {
+        PoolManager.DiscoverModules();
+        return PoolManager.Shared
+            .Append(typeof(Shared.Entry.EntryPoint).Assembly)
+            .Concat(PoolManager.Client)
+            .Append(typeof(Client.Entry.EntryPoint).Assembly)
+            .Distinct()
+            .ToArray();
     }
 }

@@ -19,7 +19,7 @@ namespace Content.Client.Administration.UI.SpawnExplosion;
 public sealed partial class SpawnExplosionWindow : DefaultWindow
 {
     [Dependency] private IClientConsoleHost _conHost = default!;
-    [Dependency] private IMapManager _mapManager = default!;
+    private SharedMapSystem _mapManager => _entMan.System<SharedMapSystem>();
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IEntityManager _entMan = default!;

@@ -32,7 +32,7 @@ public sealed partial class MapScreen : BoxContainer
 {
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IMapManager _mapManager = default!;
+    private SharedMapSystem _mapManager => _entManager.System<SharedMapSystem>();
     [Dependency] private IRobustRandom _random = default!;
     private readonly DetectionSystem _detection; // Mono
     private readonly FriendlyIffSystem _friendlyIff; // LuaM

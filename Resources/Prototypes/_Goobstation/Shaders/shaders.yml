@@ -9,3 +9,10 @@
   path: "/Textures/_Goobstation/Shaders/sandevistan_glitch.swsl"
   params:
     intensity: 1.0
+
+- type: shader # Goobstation port, thermal vision
+  id: ThermalVision
+  kind: source
+  path: "/Textures/_Goobstation/Shaders/thermal.swsl"
+  params:
+    pixelSize: 32.0

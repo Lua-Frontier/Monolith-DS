@@ -116,7 +116,9 @@
     zeroVisible: true
     zeroNoAmmo: true
   - type: Clothing
-    slots: BACK
+    slots:
+    - BACK
+    - suitStorage
     sprite: _Mono/Clothing/Back/Backpacks/jack_backpack.rsi
     clothingVisuals:
       back:

@@ -45,8 +45,8 @@
     Narcotic:
       effects:
       - !type:MovespeedModifier
-        walkSpeedModifier: 1.25
-        sprintSpeedModifier: 1.25
+        walkSpeedModifier: 1.15 # LuaM: 1.25 > 1.15
+        sprintSpeedModifier: 1.15 # LuaM: 1.25 > 1.15
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
@@ -108,8 +108,8 @@
             Cold: -0.5
             Radiation: -0.5
       - !type:MovespeedModifier
-        walkSpeedModifier: 1.15
-        sprintSpeedModifier: 1.15
+        walkSpeedModifier: 1.05 # LuaM: 1.15 > 1.05
+        sprintSpeedModifier: 1.05 # LuaM: 1.15 > 1.05
       - !type:HealthChange
         conditions:
         - !type:OrganType # Goobstation - Yowie
@@ -185,8 +185,8 @@
             Cold: -0.5
             Radiation: -0.5
       - !type:MovespeedModifier
-        walkSpeedModifier: 1.2 # Mono
-        sprintSpeedModifier: 1.2 # Mono
+        walkSpeedModifier: 1.1 # Mono # LuaM: 1.2 > 1.1
+        sprintSpeedModifier: 1.1 # Mono # LuaM: 1.2 > 1.1
       - !type:HealthChange
         conditions:
         - !type:OrganType # Goobstation - Yowie

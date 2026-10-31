@@ -1,0 +1,297 @@
+#region Гигакс
+
+
+- type: latheRecipe
+  id: GygaxHarnessMMC
+  result: GygaxHarness
+  categories:
+  - Mechs
+  completetime: 45
+  entities:
+    ArmorPlateEconomy3: 7
+    ComponentBrickEconomy3: 3
+    ElectromagnetEconomy2: 2
+    MicroprocessorEconomy3: 3
+    MotorEconomy1: 4
+    RadioEconomy2: 1
+    CapacitorEconomy3: 2
+
+- type: latheRecipe
+  id: GygaxRArmMMC
+  result: GygaxRArm
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy3: 2
+    ComponentBrickEconomy3: 1
+    ElectromagnetEconomy2: 1
+    MotorEconomy1: 6
+
+- type: latheRecipe
+  id: GygaxLArmMMC
+  result: GygaxLArm
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy3: 2
+    ComponentBrickEconomy3: 1
+    ElectromagnetEconomy2: 1
+    MotorEconomy1: 6
+
+- type: latheRecipe
+  id: GygaxLLegMMC
+  result: GygaxLLeg
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy3: 2
+    ComponentBrickEconomy3: 1
+    ElectromagnetEconomy2: 1
+    MotorEconomy1: 6
+
+- type: latheRecipe
+  id: GygaxRLegMMC
+  result: GygaxRLeg
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy3: 2
+    ComponentBrickEconomy3: 1
+    ElectromagnetEconomy2: 1
+    MotorEconomy1: 6
+
+- type: latheRecipe
+  id: GygaxHeadMMC
+  result: GygaxHead
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy3: 4
+    ComponentBrickEconomy3: 3
+    ElectromagnetEconomy2: 1
+    MicroprocessorEconomy3: 4
+    MotorEconomy1: 2
+    RadioEconomy2: 2
+    OpticsEconomy2: 2
+
+- type: latheRecipe
+  id: GygaxArmorPlateMMC
+  result: GygaxArmorPlate
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy3: 7
+    ElectromagnetEconomy2: 3
+    MotorEconomy1: 4
+#endregion
+
+#region Дюранд
+
+- type: latheRecipe
+  id: DurandHarnessMMC
+  result: DurandHarness
+  categories:
+  - Mechs
+  completetime: 45
+  entities:
+    ArmorPlateEconomy2: 15
+    ComponentBrickEconomy3: 3
+    ElectromagnetEconomy2: 4
+    MicroprocessorEconomy3: 2
+    MotorEconomy1: 8
+    RadioEconomy2: 3
+    CapacitorEconomy3: 4
+
+- type: latheRecipe
+  id: DurandRArmMMC
+  result: DurandRArm
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 5
+    ComponentBrickEconomy3: 1
+    ElectromagnetEconomy2: 2
+    MotorEconomy1: 8
+
+- type: latheRecipe
+  id: DurandLArmMMC
+  result: DurandLArm
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 5
+    ComponentBrickEconomy3: 1
+    ElectromagnetEconomy2: 2
+    MotorEconomy1: 8
+
+- type: latheRecipe
+  id: DurandLLegMMC
+  result: DurandLLeg
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 5
+    ComponentBrickEconomy3: 1
+    ElectromagnetEconomy2: 2
+    MotorEconomy1: 8
+
+- type: latheRecipe
+  id: DurandRLegMMC
+  result: DurandRLeg
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 4
+    ComponentBrickEconomy3: 1
+    ElectromagnetEconomy2: 2
+    MotorEconomy1: 7
+
+- type: latheRecipe
+  id: DurandHeadMMC
+  result: DurandHead
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 4
+    ComponentBrickEconomy3: 1
+    ElectromagnetEconomy2: 1
+    MicroprocessorEconomy3: 2
+    MotorEconomy1: 3
+    RadioEconomy2: 2
+    OpticsEconomy2: 4
+
+- type: latheRecipe
+  id: DurandArmorPlateMMC
+  result: DurandArmorPlate
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 8
+    ElectromagnetEconomy2: 1
+    MotorEconomy1: 3
+
+#endregion
+
+#region S2
+
+
+
+- type: latheRecipe
+  id: BroadswordHarnessMMC
+  result: BroadswordHarness
+  categories:
+  - Mechs
+  completetime: 55
+  entities:
+    ArmorPlateEconomy4: 7
+    ArmorPlateEconomy2: 18
+    ComponentBrickEconomy3: 2
+    ElectromagnetEconomy2: 4
+    MicroprocessorEconomy3: 5
+    MotorEconomy1: 22
+    RadioEconomy2: 3
+    CapacitorEconomy3: 5
+
+- type: latheRecipe
+  id: HalberdHarnessMMC
+  result: HalberdHarness
+  categories:
+  - Mechs
+  completetime: 55
+  entities:
+    ArmorPlateEconomy4: 7
+    ArmorPlateEconomy2: 21
+    ComponentBrickEconomy3: 2
+    ElectromagnetEconomy2: 4
+    MicroprocessorEconomy3: 6
+    MotorEconomy1: 18
+    RadioEconomy2: 3
+    CapacitorEconomy3: 5
+
+- type: latheRecipe
+  id: BroadswordRArmMMC
+  result: BroadswordRArm
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 8
+    ComponentBrickEconomy3: 2
+    ElectromagnetEconomy2: 5
+    MotorEconomy1: 8
+
+- type: latheRecipe
+  id: BroadswordLArmMMC
+  result: BroadswordLArm
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 8
+    ComponentBrickEconomy3: 2
+    ElectromagnetEconomy2: 5
+    MotorEconomy1: 8
+
+- type: latheRecipe
+  id: BroadswordLLegMMC
+  result: BroadswordLLeg
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 8
+    ComponentBrickEconomy3: 2
+    ElectromagnetEconomy2: 5
+    MotorEconomy1: 8
+
+- type: latheRecipe
+  id: BroadswordRLegMMC
+  result: BroadswordRLeg
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 8
+    ComponentBrickEconomy3: 2
+    ElectromagnetEconomy2: 5
+    MotorEconomy1: 8
+
+- type: latheRecipe
+  id: BroadswordHeadMMC
+  result: BroadswordHead
+  categories:
+  - Mechs
+  completetime: 15
+  entities:
+    ArmorPlateEconomy2: 16
+    ComponentBrickEconomy3: 2
+    ElectromagnetEconomy2: 4
+    MicroprocessorEconomy3: 3
+    MotorEconomy1: 7
+    RadioEconomy2: 4
+    OpticsEconomy2: 8
+#endregion
+#region Т3 кирпич
+
+- type: latheRecipe # НУ А ХУЛИ ЕГО НЕТУ?
+  id: ComponentBrickEconomy3Recipe
+  result: ComponentBrickEconomy3
+  categories:
+  - Components
+  completetime: 3
+  entities:
+    ComponentBrickEconomy2: 2
+    CapacitorEconomy3: 1
+#endregion

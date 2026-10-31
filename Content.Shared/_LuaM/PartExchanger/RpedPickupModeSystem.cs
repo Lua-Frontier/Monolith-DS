@@ -10,7 +10,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._LuaM.PartExchanger;
 
-public sealed class RpedPickupModeSystem : EntitySystem
+public sealed partial class RpedPickupModeSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedContainerSystem _container = default!;

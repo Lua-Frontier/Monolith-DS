@@ -141,7 +141,7 @@ public sealed partial class SpaceCleanupSystem : BaseCleanupSystem<PhysicsCompon
             var xf = _physics.GetLocalPhysicsTransform(anch, xform);
             var shape = fix.Shape;
 
-            if ((bool?)_testOverlap.Invoke(_manifold, [shape, 0, shapeB, 0, xf, xfB]) ?? false)
+            if ((bool?)_testOverlap.Invoke(_manifold, [shape, 0, shapeB, 0, xf, xfB, false]) ?? false) // LuaM: RT 288 added ignoreShapeSkin
                 return true;
         }
 

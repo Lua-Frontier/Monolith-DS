@@ -150,10 +150,10 @@
   - type: Item
     size: Normal
   - type: Battery
-    maxCharge: 12000
-    startingCharge: 12000
+    maxCharge: 15000
+    startingCharge: 15000
   - type: HitscanBatteryAmmoProvider
-    proto: Bullet68x52mmCaselessPlasma
+    proto: Cartridge68x52mmCaselessPlasma
     fireCost: 200
   - type: Tag
     tags:

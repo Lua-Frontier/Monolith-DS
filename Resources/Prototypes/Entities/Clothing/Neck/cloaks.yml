@@ -43,7 +43,7 @@
   - type: Sprite
     sprite: _Corvax/Forge/Clothing/Neck/Cloaks/hos.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup: [ HeadCloak ]
 
 - type: entity
   parent: ClothingNeckBase

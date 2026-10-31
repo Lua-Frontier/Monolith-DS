@@ -1,3 +1,4 @@
+using Content.Server._Lua.NPC.Queries.Considerations; // Lua
 using Content.Server.Atmos.Components;
 using Content.Server.Destructible; // Mono
 using Content.Server.Fluids.EntitySystems;
@@ -433,6 +434,14 @@ public sealed partial class NPCUtilitySystem : EntitySystem
             case TargetIsAliveOrNACon:
             {
                 return !TryComp<MobStateComponent>(targetUid, out var mobState) || _mobState.IsAlive(targetUid, mobState) ? 1f : 0f;
+            }
+            // Lua: basilisk prefers frozen targets for melee
+            case TargetLowTempCon con:
+            {
+                if (!TryComp<TemperatureComponent>(targetUid, out var temperature))
+                    return 0f;
+
+                return temperature.CurrentTemperature <= con.MinTemp ? 1f : 0f;
             }
             default:
                 throw new NotImplementedException();

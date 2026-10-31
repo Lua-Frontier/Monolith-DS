@@ -1,6 +1,6 @@
 headset-channels-verb = Configure channels
-headset-channels-window-title = Headset channels
-headset-channels-window-empty = The headset has no encryption keys.
+headset-channels-window-title = Radio channels
+headset-channels-window-empty = No encryption keys installed.
 headset-tunable-radio-frequency = Radio frequency:
 headset-tunable-radio-set = Set
 headset-tunable-radio-range = ({ $min }–{ $max })

@@ -144,6 +144,7 @@
       puddle:
         maxVol: 1000
   - type: Puddle
+  - type: PuddleDrying # LuaM: everything but water dries out 2 minutes after being spilled
   - type: MixableSolution
     solution: puddle
   - type: Appearance

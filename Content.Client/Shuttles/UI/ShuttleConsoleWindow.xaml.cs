@@ -151,6 +151,8 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
             default:
                 throw new NotImplementedException();
         }
+
+        UpdateHints(mode); // LuaM
     }
 
     public void SwitchMode(ShuttleConsoleMode mode)

@@ -74,7 +74,6 @@
     Gold: 250
 
 - type: latheRecipe
-  parent: BaseWeaponRecipeLong
   id: WeaponRifleACRRecipeAlternative
   result: WeaponRifleACR
   completetime: 30 # faster for your trouble
@@ -82,7 +81,6 @@
     MonolithicCrystalSmall: 3
 
 - type: latheRecipe
-  parent: BaseWeaponRecipeLong
   id: Magazine635x40mmCaselessBigRecipe
   result: Magazine635x40mmCaselessBig
   completetime: 30 # faster for your trouble
@@ -91,9 +89,78 @@
 
 
 - type: latheRecipe
-  parent: BaseWeaponRecipeLong
   id: Magazine635x40mmCaselessBigPlasmarecipe
   result: Magazine635x40mmCaselessBigPlasma
   completetime: 30 # faster for your trouble
   entities:
     MonolithicCrystalSmall: 4
+
+- type: latheRecipe
+  id: Blueprint18x160mmAmmo
+  result: Blueprint18x160mmAmmo
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 2
+
+- type: latheRecipe
+  id: WeaponSniperHunter101
+  result: WeaponSniperHunter101
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 4
+
+- type: latheRecipe
+  id: WeaponRifleFPDMR
+  result: WeaponRifleFPDMR
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 3
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponPistolCCTCGalactica
+  result: WeaponPistolCCTCGalactica
+  completetime: 30 # faster for your trouble
+  materials:
+    Steel: 900
+    Plastic: 400
+    Silver: 200
+    Gold: 100
+
+- type: latheRecipe
+  id: ClothingHeadHardsuitM92
+  result: ClothingHeadHardsuitM92
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 2
+
+- type: latheRecipe
+  id: ClothingHeadHardsuitM92x
+  result: ClothingHeadHardsuitM92x
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 3
+  
+- type: latheRecipe
+  id: ClothingOuterHardsuitM93
+  result: ClothingOuterHardsuitM93
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 4
+
+- type: latheRecipe
+  id: WeaponSmartLmg
+  result: WeaponSmartLmg
+  completetime: 30 # faster for your trouble
+  entities:
+    MonolithicCrystalSmall: 6
+
+- type: latheRecipe
+  id: ClothingBackpackSatchelmilirarybig
+  result: ClothingBackpackSatchelmilirarybig
+  completetime: 5 # faster for your trouble
+  materials:
+    Steel: 2000
+    Silver: 750
+    Plasma: 1250 #Higher Plasma due to it needing less bluespace
+    Bluespace: 300 #DeltaV: Bluespace Exists

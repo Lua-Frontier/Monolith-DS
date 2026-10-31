@@ -27,8 +27,8 @@
   - type: StaminaDamageResistance
     coefficient: 0.25
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, TSF and PDV suits are 10% slower
+    sprintModifier: 0.85 # LuaM: 0.95 > 0.85, TSF and PDV suits are 10% slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -64,8 +64,8 @@
         Radiation: 0.2
         Caustic: 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, TSF and PDV suits are 10% slower
+    sprintModifier: 0.85 # LuaM: 0.95 > 0.85, TSF and PDV suits are 10% slower
 
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseFactionGearTSFT3]
@@ -97,8 +97,8 @@
   - type: StaminaDamageResistance
     coefficient: 0.2
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.7 # LuaM: 0.8 > 0.7, TSF and PDV suits are 10% slower
+    sprintModifier: 0.7 # LuaM: 0.8 > 0.7, TSF and PDV suits are 10% slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -118,6 +118,8 @@
   name: TSFMC M92 colonel tacsuit
   description: A heavy, gilded tacsuit, stripped of its shield but now capable of taking a lot of physical damage. Usually assigned to commanding officers of TSF flagships.
   components:
+  - type: SpeedTieredFootsteps # LuaM: always heavy steps, whatever the slowdown
+    forcedTier: Heavy
   - type: Sprite
     sprite: _Mono/Clothing/OuterClothing/Hardsuits/tsfmc_colonel.rsi # Mono
   - type: Clothing
@@ -144,8 +146,8 @@
         Radiation: 0.4
         Caustic: 0.5
   - type: ClothingSpeedModifier # Mono - Armor Value Changes
-    walkModifier: 0.9
-    sprintModifier: 1
+    walkModifier: 0.8 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
+    sprintModifier: 0.9 # LuaM: 1 > 0.9, TSF and PDV suits are 10% slower
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.35
   - type: PirateBountyItem # Mono
@@ -189,8 +191,8 @@
         Radiation: 0.5
         Caustic: 0.8
   - type: ClothingSpeedModifier # Mono - Armor Value Changes
-    walkModifier: 0.7
-    sprintModifier: 0.6
+    walkModifier: 0.6 # LuaM: 0.7 > 0.6, TSF and PDV suits are 10% slower
+    sprintModifier: 0.5 # LuaM: 0.6 > 0.5, TSF and PDV suits are 10% slower
   - type: HeldSpeedModifier
   - type: FactionClothing
     faction: NanoTrasen
@@ -227,9 +229,10 @@
     autoRechargePauseTime: 5
   - type: UseDelay
     delay: 10
-  - type: FootstepModifier # LuaM
-    footstepSoundCollection:
-      collection: FootstepHeavySuit # LuaM: sound_mecha_powerloader_step > FootstepHeavySuit
+  # LuaM: footsteps come from SpeedTieredFootsteps, the own heavy step sound is removed
+  # - type: FootstepModifier # LuaM
+  #   footstepSoundCollection:
+  #     collection: FootstepHeavySuit # LuaM: sound_mecha_powerloader_step > FootstepHeavySuit
   - type: ExtendDescription
     descriptionList:
     - description: Alt-click or otherwise interact to toggle additional shielding.
@@ -276,8 +279,8 @@
   - type: StaminaDamageResistance
     coefficient: 0.2
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.875
+    walkModifier: 0.8 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
+    sprintModifier: 0.775 # LuaM: 0.875 > 0.775, TSF and PDV suits are 10% slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing

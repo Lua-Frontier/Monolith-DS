@@ -5,6 +5,9 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  - type: ParticleOnGunShot # LuaM: powder smoke particles from Hullrot
+    effect: MuzzleSmoke
+    inheritAngle: true
   - type: Sprite
     layers:
       - state: base
@@ -211,6 +214,9 @@
   id: WeaponPistolEchis
   description: A viper for use by cyborgs. Creates 9x19mm on the fly from an internal ammo fabricator, which slowly self-charges.
   components:
+  - type: ParticleOnGunShot # LuaM: powder smoke particles from Hullrot, this gun is not made from the gun bases
+    effect: MuzzleSmoke
+    inheritAngle: true
   - type: Gun
     fireRate: 5
     selectedMode: SemiAuto
@@ -246,6 +252,9 @@
   id: WeaponPistolMercenaryEchis
   description: A viper for use by cyborgs, redesigned for mercenary use. Creates 9x19mm on the fly from an internal ammo fabricator, which slowly self-charges.
   components:
+  - type: ParticleOnGunShot # LuaM: powder smoke particles from Hullrot, this gun is not made from the gun bases
+    effect: MuzzleSmoke
+    inheritAngle: true
   - type: Gun
     fireRate: 5
     selectedMode: SemiAuto

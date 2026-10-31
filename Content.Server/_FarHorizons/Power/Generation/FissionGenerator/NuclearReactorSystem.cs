@@ -139,8 +139,7 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
         if (!_prototypes.TryIndex(protoID, out var entProto)
                 || !entProto.TryGetComponent<ReactorPartComponent>(compName, out var comp))
             return new();
-        comp.ProtoId = protoID;
-        return comp;
+        return new ReactorPartComponent(comp) { ProtoId = protoID }; // LuaM: prototype components are shared now
     }
 
     private Dictionary<Vector2i, ReactorPartComponent> GetPrefabFromProto(NuclearReactorComponent comp)
@@ -158,8 +157,7 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
                 || !entProto.TryGetComponent<ReactorPartComponent>(compName, out var reactorPart))
                 continue;
 
-            reactorPart.ProtoId = pair.Value;
-            exportDict.Add(pair.Key, reactorPart);
+            exportDict.Add(pair.Key, new ReactorPartComponent(reactorPart) { ProtoId = pair.Value }); // LuaM
         }
 
         return exportDict;

@@ -38,6 +38,7 @@ public abstract partial class SharedPoweredLightSystem : EntitySystem
     [Dependency] private SharedPointLightSystem _pointLight = default!;
     [Dependency] private SharedStorageSystem _storage = default!;
     [Dependency] private SharedDeviceLinkSystem _deviceLink = default!;
+    [Dependency] private SharedMapSystem _map = default!;
 
     private static readonly TimeSpan ThunkDelay = TimeSpan.FromSeconds(2);
     public const string LightBulbContainer = "light_bulb";
@@ -292,7 +293,7 @@ public abstract partial class SharedPoweredLightSystem : EntitySystem
         switch (lightBulb.State)
         {
             case LightBulbState.Normal:
-                if (powerReceiver.Powered && light.On)
+                if ((powerReceiver.Powered || !_map.IsInitialized(Transform(uid).MapUid)) && light.On)
                 {
                     SetLight(uid, true, lightBulb.Color, light, lightBulb.LightRadius, lightBulb.LightEnergy, lightBulb.LightSoftness);
                     _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);

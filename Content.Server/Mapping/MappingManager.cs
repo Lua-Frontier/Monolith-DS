@@ -19,7 +19,7 @@ public sealed partial class MappingManager : IPostInjectInit
 {
     [Dependency] private IAdminManager _admin = default!;
     [Dependency] private ILogManager _log = default!;
-    [Dependency] private IMapManager _map = default!;
+    private SharedMapSystem _map => _ent.System<SharedMapSystem>();
     [Dependency] private IServerNetManager _net = default!;
     [Dependency] private IPlayerManager _players = default!;
     [Dependency] private IEntitySystemManager _systems = default!;

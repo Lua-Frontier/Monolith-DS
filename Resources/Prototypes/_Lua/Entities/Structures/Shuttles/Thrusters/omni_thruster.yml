@@ -24,11 +24,11 @@
     baseThrust: 1000
     thrust: 2400
     angularThrustExtra: 2850
-    burnShape: ["-0.3,0.5","0.7,2.2","1.7,2.2","2.3,0.5"]
-    damage:
-      types:
-        Heat: 120
-        Structural: 120
+    burnShape: [] # LuaM: ["-0.3,0.5","0.7,2.2","1.7,2.2","2.3,0.5"] > [], no burn zone, it doesn't burn entities
+#    damage: # Commented by LuaM: it doesn't burn entities
+#      types:
+#        Heat: 120
+#        Structural: 120
   - type: Fixtures
     fixtures:
       fix1:

@@ -470,11 +470,13 @@ public sealed partial class HoloCommsHologramView : Control
         scale = MathF.Max(1f, MathF.Floor(scale * IconScale));
 
         // The icons go at the sides of the one shown, kept on the screen
+        var boxLeft = MathF.Max(spriteBox.Left, 0f);
+        var boxTop = MathF.Max(spriteBox.Top, 0f) + 4f;
         spriteBox = new UIBox2(
-            MathF.Max(spriteBox.Left, 0f),
-            MathF.Max(spriteBox.Top, 0f) + 4f,
-            MathF.Min(spriteBox.Right, size.X),
-            spriteBox.Bottom);
+            boxLeft,
+            boxTop,
+            MathF.Max(boxLeft, MathF.Min(spriteBox.Right, size.X)),
+            MathF.Max(boxTop, spriteBox.Bottom));
 
         foreach (var icon in icons)
         {

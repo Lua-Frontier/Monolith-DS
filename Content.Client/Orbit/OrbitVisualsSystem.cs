@@ -63,7 +63,7 @@ public sealed partial class OrbitVisualsSystem : EntitySystem
     {
         base.FrameUpdate(frameTime);
 
-        foreach (var (orbit, sprite) in EntityManager.EntityQuery<OrbitVisualsComponent, SpriteComponent>())
+        foreach (var (orbit, sprite) in EntityQuery<OrbitVisualsComponent, SpriteComponent>())
         {
             var progress = (float)(_timing.CurTime.TotalSeconds / orbit.OrbitLength) % 1;
             var angle = new Angle(Math.PI * 2 * progress);

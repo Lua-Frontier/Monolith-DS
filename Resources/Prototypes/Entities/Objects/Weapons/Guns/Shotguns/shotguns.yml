@@ -5,6 +5,9 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  - type: ParticleOnGunShot # LuaM: powder smoke particles from Hullrot
+    effect: MuzzleSmoke
+    inheritAngle: true
   - type: Sprite
     layers:
     - state: icon
@@ -98,6 +101,9 @@
   id: WeaponShotgunBulldog
   description: An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids. Uses 12 gauge shotgun shells.
   components:
+  - type: ParticleOnGunShot # LuaM: powder smoke particles from Hullrot, this gun is not made from the gun bases
+    effect: MuzzleSmoke
+    inheritAngle: true
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
     layers:

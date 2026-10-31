@@ -1,0 +1,81 @@
+- type: entity
+  parent: [NFClothingHeadHardsuitWithLightBaseNfsd, ShowMedicalIcons, ShowSecurityIcons]
+  id: ClothingHeadHelmetHardsuitM92
+  name: Colonia M92 tacsuit helmet
+  description: An armored tacsuit helmet used by the TSFMC.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lua/Clothing/Head/SDHardsuits/M92-helmet.rsi
+  - type: Clothing
+    sprite: _Lua/Clothing/Head/SDHardsuits/M92-helmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: EyeProtection
+    protectionTime: 15
+  - type: NightVision
+    relayOverlay: true
+    goggleEffect: true
+    viewCircleRadius: 1000
+    viewCircleCount: 3
+    viewCircleSpacing: 280
+    action: ActionToggleNightVision
+    phosphorColor: "#337a98"
+    lightingColor: "#0EFFFFFF"
+    amplification: 2.0
+
+- type: entity
+  parent: [NFClothingHeadHardsuitWithLightBaseNfsd, ShowMedicalIcons, ShowSecurityIcons]
+  id: ClothingHeadHelmetHardsuitM92x
+  name: Colonia M92 tacsuit helmet
+  description: An armored tacsuit helmet used by the TSFMC.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lua/Clothing/Head/SDHardsuits/M92x-helmet.rsi
+  - type: Clothing
+    sprite: _Lua/Clothing/Head/SDHardsuits/M92x-helmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: EyeProtection
+    protectionTime: 15
+  - type: NightVision
+    relayOverlay: true
+    goggleEffect: true
+    viewCircleRadius: 1000
+    viewCircleCount: 3
+    viewCircleSpacing: 280
+    action: ActionToggleNightVision
+    phosphorColor: "#337a98"
+    lightingColor: "#0EFFFFFF"
+    amplification: 2.0
+
+
+- type: entity
+  parent: [NFClothingHeadHardsuitWithLightBaseNfsd, ShowMedicalIcons, ShowSecurityIcons]
+  id: ClothingHeadHelmetHardsuitM93
+  name: Colonia M93 tacsuit helmet
+  description: An armored tacsuit helmet used by the TSFMC.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lua/Clothing/Head/SDHardsuits/M92-helmet.rsi
+  - type: Clothing
+    sprite: _Lua/Clothing/Head/SDHardsuits/M93-helmet.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.3
+    lowPressureMultiplier: 1000
+  - type: EyeProtection
+    protectionTime: 15
+  - type: NightVision
+    relayOverlay: true
+    goggleEffect: true
+    viewCircleRadius: 1000
+    viewCircleCount: 3
+    viewCircleSpacing: 280
+    action: ActionToggleNightVision
+    phosphorColor: "#337a98"
+    lightingColor: "#0EFFFFFF"
+    amplification: 2.0

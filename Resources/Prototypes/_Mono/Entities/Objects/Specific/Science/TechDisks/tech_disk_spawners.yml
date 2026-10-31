@@ -187,7 +187,7 @@
       - id: TechDiskMechS4Base
       - id: TechDiskMechS4Spec
       - id: TechDiskMechS2Base
-      - id: TechDiskMechS2Spec
+#      - id: TechDiskMechS2Spec #commented by LuaM
       - !type:NestedSelector
         weight: 100
         tableId: SpawnLootTechDisksT3FractureTrunk

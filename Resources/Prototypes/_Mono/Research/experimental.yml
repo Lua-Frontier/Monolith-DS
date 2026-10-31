@@ -68,7 +68,7 @@
   - WeaponGauntletGorilla
   - ArtifactCrusherMachineCircuitboard
   - WeaponPistolCHIMP
-  - AnomalySynchronizerCircuitboard
+  # - AnomalySynchronizerCircuitboard # LuaM
   - AnomalyVesselExperimentalCircuitboard
   technologyPrerequisites:
   - BasicResearch

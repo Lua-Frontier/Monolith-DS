@@ -17,9 +17,10 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHeavySuit
+  # LuaM: the own heavy step sound is removed, so it does not override the suit steps
+  # - type: FootstepModifier
+  #   footstepSoundCollection:
+  #     collection: FootstepHeavySuit
   - type: ClothingSlowOnDamageModifier # Mono
     modifier: 0.25 # Mono
 

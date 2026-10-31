@@ -332,4 +332,14 @@
   - type: Sprite
     sprite: _LuaM/Objects/Fun/plushie.rsi
     state: plushie_PurpleGhost
+   
+- type: entity
+  parent: BasePlushie
+  id: PlushieXapcMoth
+  name: plushie moth tkach
+  description: "This toy emits a strong aroma of premium cigars and a powerful energy of Communism. Made in the USSP."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Fun/plushie.rsi
+    state: plushie_WeaverUSSP
 # Next Plushies above made by Maksimvini (Discord)

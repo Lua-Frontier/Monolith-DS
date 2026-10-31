@@ -1,0 +1,13 @@
+# Lua: pirate banner, sprite from sector-frontier-14
+- type: entity
+  id: BannerPirates
+  parent: BannerBase
+  name: pirate banner
+  description: A black banner with a skull and crossbones. Nothing good flies under it.
+  components:
+  - type: Sprite
+    sprite: _Lua/Structures/Decoration/banner.rsi
+    state: banner_pirates
+  - type: Construction
+    graph: LuaBannersGraph
+    node: BannerPiratesNode

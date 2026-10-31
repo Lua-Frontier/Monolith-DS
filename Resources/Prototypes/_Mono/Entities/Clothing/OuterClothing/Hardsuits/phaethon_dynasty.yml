@@ -27,8 +27,8 @@
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.3
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.85 # LuaM: 0.95 > 0.85, TSF and PDV suits are 10% slower
+    sprintModifier: 0.85 # LuaM: 0.95 > 0.85, TSF and PDV suits are 10% slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -73,8 +73,8 @@
         Radiation: 0.7
         Caustic: 0.9
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
+    sprintModifier: 0.8 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: Tag
@@ -112,8 +112,8 @@
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.67
   - type: ClothingSpeedModifier
-    walkModifier: 1.15
-    sprintModifier: 1.15
+    walkModifier: 1.05 # LuaM: 1.15 > 1.05, TSF and PDV suits are 10% slower
+    sprintModifier: 1.05 # LuaM: 1.15 > 1.05, TSF and PDV suits are 10% slower
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
     requiredSlot: outerclothing
@@ -136,6 +136,11 @@
   name: PDV CV-67 combat tacsuit
   description: An adorned tacsuit designed with an imperfect nanolaminate composition. High maneuverability, sturdy armor.
   components:
+  - type: SpeedTieredFootsteps # LuaM: always heavy steps, whatever the slowdown
+    forcedTier: Heavy
+  - type: ClothingSpeedModifier # LuaM: TSF and PDV suits are 10% slower, inherited 1.0 > 0.9
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: Sprite
     sprite: _LuaM/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi # LuaM: _Mono/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi -> _LuaM/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi
   - type: Clothing
@@ -195,8 +200,8 @@
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 0.9
+    walkModifier: 0.9 # LuaM: 1.0 > 0.9, TSF and PDV suits are 10% slower
+    sprintModifier: 0.8 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
   - type: Tag
     tags:
     - RogueHardsuit
@@ -276,8 +281,8 @@
         Radiation: 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 1.05
-    sprintModifier: 1.05 # powered rig instead of shield
+    walkModifier: 0.95 # LuaM: 1.05 > 0.95, TSF and PDV suits are 10% slower
+    sprintModifier: 0.95 # powered rig instead of shield # LuaM: 1.05 > 0.95, TSF and PDV suits are 10% slower
   - type: ToggleableClothing
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Nordfall Vanguard emblem drawn for Monolith-DS on the frame of ngc-banner from _Mono/Structures/Decoration/banner.rsi (taken from Paradise13)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "banner"
+    }
+  ]
+}

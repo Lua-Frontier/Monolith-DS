@@ -10,6 +10,7 @@ using Content.Shared.Popups;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
 using Robust.Shared.Prototypes;
+using System.Linq;
 
 namespace Content.Server._LuaM.Research;
 
@@ -17,7 +18,7 @@ namespace Content.Server._LuaM.Research;
 /// Handles the "research everything" buttons of the R&amp;D console: unlocks a whole discipline with all of its
 /// prerequisites, or every discipline, in one go if the server has the points for all of it.
 /// </summary>
-public sealed class ResearchUnlockAllSystem : EntitySystem
+public sealed partial class ResearchUnlockAllSystem : EntitySystem
 {
     [Dependency] private ResearchSystem _research = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
@@ -37,7 +38,7 @@ public sealed class ResearchUnlockAllSystem : EntitySystem
     {
         var discipline = args.Discipline;
         TryUnlockPlan(ent, args.Actor, discipline?.Id ?? "all disciplines",
-            database => ResearchUnlockAll.Plan(_prototypes, database.UnlockedTechnologies, database.SupportedDisciplines, discipline));
+            database => ResearchUnlockAll.Plan(_prototypes, database.UnlockedTechnologies.Select(t => t.Id).ToList(), database.SupportedDisciplines.Select(d => d.Id).ToList(), discipline));
     }
 
     private void OnUnlockWithPrerequisites(Entity<ResearchConsoleComponent> ent, ref ConsoleUnlockWithPrerequisitesMessage args)
@@ -46,7 +47,7 @@ public sealed class ResearchUnlockAllSystem : EntitySystem
             return;
 
         TryUnlockPlan(ent, args.Actor, $"{technology.ID} with prerequisites",
-            database => ResearchUnlockAll.PlanFor(_prototypes, database.UnlockedTechnologies, database.SupportedDisciplines, technology));
+            database => ResearchUnlockAll.PlanFor(_prototypes, database.UnlockedTechnologies.Select(t => t.Id).ToList(), database.SupportedDisciplines.Select(d => d.Id).ToList(), technology));
     }
 
     /// <summary>

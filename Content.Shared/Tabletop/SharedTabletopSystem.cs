@@ -17,7 +17,7 @@ namespace Content.Shared.Tabletop
         [Dependency] private SharedInteractionSystem _interactionSystem = default!;
         [Dependency] private SharedAppearanceSystem _appearance = default!;
         [Dependency] protected SharedTransformSystem Transforms = default!;
-        [Dependency] private IMapManager _mapMan = default!;
+        [Dependency] private SharedMapSystem _mapMan = default!;
 
         public override void Initialize()
         {
@@ -40,8 +40,8 @@ namespace Content.Shared.Tabletop
                 return;
 
             // Move the entity and dirty it (we use the map ID from the entity so noone can try to be funny and move the item to another map)
-            var transform = EntityManager.GetComponent<TransformComponent>(moved);
-            Transforms.SetParent(moved, transform, _mapMan.GetMapEntityId(transform.MapID));
+            var transform = Comp<TransformComponent>(moved);
+            Transforms.SetParent(moved, transform, _mapMan.GetMapOrInvalid(transform.MapID));
             Transforms.SetLocalPositionNoLerp(transform, msg.Coordinates.Position);
         }
 

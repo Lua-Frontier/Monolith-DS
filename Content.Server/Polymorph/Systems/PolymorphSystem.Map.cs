@@ -32,7 +32,7 @@ public sealed partial class PolymorphSystem
             return;
 
         var newmap = _mapManager.CreateMap();
-        _mapManager.SetMapPaused(newmap, true);
-        PausedMap = _mapManager.GetMapEntityId(newmap);
+        _mapManager.SetPaused(newmap, true);
+        PausedMap = newmap;
     }
 }

@@ -62,6 +62,6 @@ public sealed partial class MechAssemblySystem : EntitySystem
                 return;
         }
         Spawn(component.FinishedPrototype, Transform(uid).Coordinates);
-        EntityManager.DeleteEntity(uid);
+        Del(uid);
     }
 }

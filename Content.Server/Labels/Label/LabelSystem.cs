@@ -9,6 +9,7 @@ using Content.Shared.Paper;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
+using Robust.Shared.Prototypes; // LuaM
 
 namespace Content.Server.Labels
 {
@@ -23,8 +24,7 @@ namespace Content.Server.Labels
         [Dependency] private TagSystem _tagSystem = default!; // Frontier
 
         public const string ContainerName = "paper_label";
-        [ValidatePrototypeId<TagPrototype>] // Frontier: label prevention
-        private const string PreventTag = "PreventLabel"; // Frontier: label prevention
+        private static readonly ProtoId<TagPrototype> PreventTag = "PreventLabel"; // Frontier: label prevention
 
         public override void Initialize()
         {
@@ -82,7 +82,7 @@ namespace Content.Server.Labels
                     return;
                 }
 
-                if (!EntityManager.TryGetComponent(item, out PaperComponent? paper))
+                if (!TryComp(item, out PaperComponent? paper))
                     // Assuming yaml has the correct entity whitelist, this should not happen.
                     return;
 

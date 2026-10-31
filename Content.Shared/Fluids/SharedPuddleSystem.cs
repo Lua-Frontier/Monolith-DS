@@ -11,6 +11,8 @@ using Content.Shared.StepTrigger.Components;
 using Content.Shared.Atmos;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Content.Shared._LuaM.Fluids; // LuaM
+using Robust.Shared.Timing; // LuaM
 
 namespace Content.Shared.Fluids;
 
@@ -19,6 +21,7 @@ public abstract partial class SharedPuddleSystem : EntitySystem
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private IGameTiming _gameTiming = default!; // LuaM
 
     /// <summary>
     /// The lowest threshold to be considered for puddle sprite states as well as slipperiness of a puddle.
@@ -98,6 +101,19 @@ public abstract partial class SharedPuddleSystem : EntitySystem
                 args.PushMarkup(Loc.GetString("puddle-component-examine-is-slippery-text"));
             }
 
+            // LuaM-start: puddles that don't fully evaporate on their own dry out some time after being spilled
+            if (TryComp<PuddleDryingComponent>(entity, out var drying) &&
+                _solutionContainerSystem.ResolveSolution(entity.Owner, entity.Comp.SolutionName,
+                    ref entity.Comp.Solution, out var dryingSolution) &&
+                !CanFullyEvaporate(dryingSolution))
+            {
+                var left = drying.DryingStart - _gameTiming.CurTime;
+                args.PushMarkup(left > TimeSpan.Zero
+                    ? Loc.GetString("luam-puddle-examine-drying-soon", ("seconds", (int) System.Math.Ceiling(left.TotalSeconds)))
+                    : Loc.GetString("luam-puddle-examine-drying"));
+            }
+            else
+            // LuaM-end
             if (HasComp<EvaporationComponent>(entity) &&
                 _solutionContainerSystem.ResolveSolution(entity.Owner, entity.Comp.SolutionName,
                     ref entity.Comp.Solution, out var solution))

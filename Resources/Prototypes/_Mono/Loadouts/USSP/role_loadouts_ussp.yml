@@ -7,8 +7,8 @@
   - USSPGloves
   - USSPBackpack
   - USSPOuterClothing
-  - TsfmcShoes
-  - TsfmcFace
+  - USSPShoes # LuaM: TsfmcShoes > USSPShoes, the mercenary shoes as well
+  - USSPFace # LuaM: TsfmcFace > USSPFace, the mercenary masks as well
   - USSPBalaclava
   - USSPGlasses
   - USSPBelt
@@ -21,10 +21,12 @@
   - ContractorImplanter
   - ContractorUtility
   - ContractorTrinkets
+  - ContractorFun # LuaM
   - USSPBureaucracy
   - NfsdSpeciesSpecific
   - ContractorArmorPlates
   - UsspFirearm
+  - ContractorFullPistol # LuaM
   - UsspMag
   - CivGunCaseSpecial # LuaM
 #  - UsspRanksRifleman # Commented by LuaM: chat ranks are off for now
@@ -38,8 +40,8 @@
   - USSPGloves
   - USSPBackpack
   - USSPOuterClothingOfficer
-  - TsfmcShoes
-  - TsfmcFace
+  - USSPShoes # LuaM: TsfmcShoes > USSPShoes, the mercenary shoes as well
+  - USSPFace # LuaM: TsfmcFace > USSPFace, the mercenary masks as well
   - USSPBalaclava
   - USSPGlasses
   - USSPBeltOfficer
@@ -52,10 +54,12 @@
   - ContractorImplanter
   - ContractorUtility
   - ContractorTrinkets
+  - ContractorFun # LuaM
   - USSPBureaucracy
   - NfsdSpeciesSpecific
   - ContractorArmorPlates
   - UsspFirearm
+  - ContractorFullPistol # LuaM
   - UsspMag
   - CivGunCaseSpecial # LuaM
 #  - UsspRanksSerzhant # Commented by LuaM: chat ranks are off for now
@@ -69,8 +73,8 @@
   - USSPCommissarGloves
   - USSPBackpack
   - USSPOuterClothingOfficer
-  - TsfmcShoes
-  - TsfmcFace
+  - USSPShoes # LuaM: TsfmcShoes > USSPShoes, the mercenary shoes as well
+  - USSPFace # LuaM: TsfmcFace > USSPFace, the mercenary masks as well
   - USSPBalaclava
   - USSPGlasses
   - USSPBeltOfficer
@@ -83,10 +87,12 @@
   - ContractorImplanter
   - ContractorUtility
   - ContractorTrinkets
+  - ContractorFun # LuaM
   - USSPBureaucracy
   - NfsdSpeciesSpecific
   - ContractorArmorPlates
   - UsspFirearm
+  - ContractorFullPistol # LuaM
   - UsspMag
   - CivGunCaseSpecial # LuaM
 #  - UsspRanksCommissar # Commented by LuaM: chat ranks are off for now

@@ -1,3 +1,4 @@
+using Content.Client.Graphics;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
@@ -12,25 +13,27 @@ namespace Content.Client.Interactable.Components
 
         private const float DefaultWidth = 1;
 
-        [ValidatePrototypeId<ShaderPrototype>]
-        private const string ShaderInRange = "SelectionOutlineInrange";
+        private static readonly ProtoId<ShaderPrototype> ShaderInRange = "SelectionOutlineInrange";
 
-        [ValidatePrototypeId<ShaderPrototype>]
-        private const string ShaderOutOfRange = "SelectionOutline";
+        private static readonly ProtoId<ShaderPrototype> ShaderOutOfRange = "SelectionOutline";
 
         private bool _inRange;
         private ShaderInstance? _shader;
         private int _lastRenderScale;
 
+        // LuaM: per-id post shaders since RT 286, the legacy single PostShader wiped the other effects
+        private SpriteSystem Sprite => _entMan.System<SpriteSystem>();
+
         public void OnMouseEnter(EntityUid uid, bool inInteractionRange, int renderScale)
         {
             _lastRenderScale = renderScale;
             _inRange = inInteractionRange;
-            if (_entMan.TryGetComponent(uid, out SpriteComponent? sprite) && sprite.PostShader == null)
+            if (_entMan.TryGetComponent(uid, out SpriteComponent? sprite)
+                && !Sprite.HasPostShader((uid, sprite), ContentPostShaderIds.InteractionOutline)) // LuaM
             {
                 // TODO why is this creating a new instance of the outline shader every time the mouse enters???
                 _shader = MakeNewShader(inInteractionRange, renderScale);
-                sprite.PostShader = _shader;
+                SetOutline((uid, sprite), _shader); // LuaM
             }
         }
 
@@ -38,8 +41,7 @@ namespace Content.Client.Interactable.Components
         {
             if (_entMan.TryGetComponent(uid, out SpriteComponent? sprite))
             {
-                if (sprite.PostShader == _shader)
-                    sprite.PostShader = null;
+                Sprite.RemovePostShader((uid, sprite), ContentPostShaderIds.InteractionOutline); // LuaM
                 sprite.RenderOrder = 0;
             }
 
@@ -50,16 +52,26 @@ namespace Content.Client.Interactable.Components
         public void UpdateInRange(EntityUid uid, bool inInteractionRange, int renderScale)
         {
             if (_entMan.TryGetComponent(uid, out SpriteComponent? sprite)
-                && sprite.PostShader == _shader
+                && Sprite.HasPostShader((uid, sprite), ContentPostShaderIds.InteractionOutline) // LuaM
                 && (inInteractionRange != _inRange || _lastRenderScale != renderScale))
             {
                 _inRange = inInteractionRange;
                 _lastRenderScale = renderScale;
 
                 _shader = MakeNewShader(_inRange, _lastRenderScale);
-                sprite.PostShader = _shader;
+                SetOutline((uid, sprite), _shader); // LuaM
             }
         }
+
+        // LuaM start
+        private void SetOutline(Entity<SpriteComponent?> sprite, ShaderInstance shader)
+        {
+            Sprite.SetPostShader(sprite, new SpriteComponent.PostShaderArgs(ContentPostShaderIds.InteractionOutline, shader)
+            {
+                After = ContentPostShaderIds.AfterBaseEffects,
+            });
+        }
+        // LuaM end
 
         private ShaderInstance MakeNewShader(bool inRange, int renderScale)
         {

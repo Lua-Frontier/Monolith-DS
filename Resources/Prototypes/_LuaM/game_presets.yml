@@ -15,6 +15,7 @@
   - LuaMChimeraSTCShuttleSpawnerSchedulerHalf
   - LuaMChimeraSTCShuttleSpawnerSchedulerTier2Half
   - MonoMonolithicEventsScheduler
+  - LuaMMonolithFragmentLargeScheduler # the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - HalcyonBiodome
   - HeliosBiodome

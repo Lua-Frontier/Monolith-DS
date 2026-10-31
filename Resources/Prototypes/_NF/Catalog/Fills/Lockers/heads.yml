@@ -83,7 +83,7 @@
     - id: WeaponCaseHeavyCdet
 #    - id: WeaponPistolMk58
     - id: WeaponCaseHeavyAsmgt # Mono
-    - id: WeaponCaseMla79Registered # Mono - might be so wrong for ts LMAO
+    - id: WeaponCaseMla79Rosenkavalier #LuaM Edited
       amount: 1
     # - id: Magazine45_ACPPistolFMJ
     #   amount: 2

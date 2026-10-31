@@ -10,7 +10,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._LuaM.Implants;
 
-public sealed class InjectorImplantSystem : EntitySystem
+public sealed partial class InjectorImplantSystem : EntitySystem
 {
     [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private IGameTiming _timing = default!;

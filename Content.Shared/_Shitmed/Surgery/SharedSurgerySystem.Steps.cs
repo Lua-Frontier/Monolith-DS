@@ -97,7 +97,7 @@ public abstract partial class SharedSurgerySystem
                 // LuaM-start
                 // --  у органов и частей тела Used означает другое, их не расходуем
                 if (_net.IsServer &&
-                    EntityManager.TryGetComponent(tool, reg.Component.GetType(), out var usedComp) &&
+                    TryComp(tool, reg.Component.GetType(), out var usedComp) &&
                     usedComp is ISurgeryToolComponent { Used: true } and not OrganComponent and not BodyPartComponent)
                 {
                     if (TryComp<StackComponent>(tool, out var stack))
@@ -568,9 +568,9 @@ public abstract partial class SharedSurgerySystem
             return;
 
         // Adding organs is generally done for a single one at a time, so we only need to check for the first.
-        var firstOrgan = organComp.Organ.Values.FirstOrDefault();
-        if (firstOrgan == default)
+        if (organComp.Organ.Count == 0)
             return;
+        var firstOrgan = organComp.Organ.Values.First();
 
         foreach (var tool in args.Tools)
         {
@@ -687,9 +687,9 @@ public abstract partial class SharedSurgerySystem
             || ent.Comp.Organ == null)
             return;
 
-        var organType = ent.Comp.Organ.Values.FirstOrDefault();
-        if (organType == default)
+        if (ent.Comp.Organ.Count == 0)
             return;
+        var organType = ent.Comp.Organ.Values.First();
 
         var markingCategory = MarkingCategoriesConversion.FromHumanoidVisualLayers(ent.Comp.MarkingCategory);
         foreach (var tool in args.Tools)
@@ -951,7 +951,7 @@ public abstract partial class SharedSurgerySystem
     {
         foreach (var tool in tools)
         {
-            if (EntityManager.TryGetComponent(tool, component.GetType(), out var found) && found is ISurgeryToolComponent toolComp)
+            if (TryComp(tool, component.GetType(), out var found) && found is ISurgeryToolComponent toolComp)
             {
                 withComp = tool;
                 speed = toolComp.Speed;

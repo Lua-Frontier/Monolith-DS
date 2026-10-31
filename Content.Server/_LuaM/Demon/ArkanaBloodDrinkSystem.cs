@@ -19,7 +19,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._LuaM.Demon;
 
-public sealed class ArkanaBloodDrinkSystem : EntitySystem
+public sealed partial class ArkanaBloodDrinkSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SharedBodySystem _body = default!;

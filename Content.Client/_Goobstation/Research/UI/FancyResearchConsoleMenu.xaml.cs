@@ -433,9 +433,9 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
             return false;
 
         // The console's database can lag a tick behind the interface state, so count both as researched.
-        researched.UnionWith(database.UnlockedTechnologies);
+        researched.UnionWith(database.UnlockedTechnologies.Select(t => t.Id));
         researched.UnionWith(List.Where(t => t.Value == ResearchAvailability.Researched).Select(t => t.Key));
-        supported.AddRange(database.SupportedDisciplines);
+        supported.AddRange(database.SupportedDisciplines.Select(d => d.Id));
         return true;
     }
 
