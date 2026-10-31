@@ -16,7 +16,7 @@
   alternateRequirementSets:
     longerPlaytimeLessEmployee:
     - !type:OverallPlaytimeRequirement
-      time: 108000 # 30 hours
+      time: 1080000 # 300 hours
     - !type:TraitsRequirement # LuaM: heretics can't take this job
       inverted: true
       traits:
