@@ -6,7 +6,7 @@
   requirements:
   - !type:DepartmentTimeRequirement
      department: MieyoManufacturingConcern
-     time: 144000 # 40 hours
+     time: 144000 # LuaM 20 > 40 hours
   - !type:OverallPlaytimeRequirement
     time: 144000 # 40 hrs
   - !type:TraitsRequirement # LuaM: heretics can't take this job
