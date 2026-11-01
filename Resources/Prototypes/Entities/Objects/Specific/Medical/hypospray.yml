@@ -35,7 +35,7 @@
   id: SyndiHypo
   components:
   - type: Sprite
-    sprite: _LuaM/Objects/Specific/Medical/syndihypo.rsi #LuaM edited
+    sprite: _LuaM/Objects/Specific/Medical/syndihypo.rsi # LuaM Objects/Specific/Medical/syndihypo.rsi > _LuaM/Objects/Specific/Medical/syndihypo.rsi
     state: hypo
   - type: Item
     sprite: _LuaM/Objects/Specific/Medical/syndihypo.rsi #LuaM edited
