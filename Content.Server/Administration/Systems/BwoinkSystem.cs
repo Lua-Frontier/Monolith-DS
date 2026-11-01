@@ -284,17 +284,26 @@ namespace Content.Server.Administration.Systems
             }
 
             // Send to Discord chat link (thread-based integration)
-            // Fire and forget - don't block the main thread
-            _ = Task.Run(async () =>
-            {
-                var lookup = await _playerLocator.LookupIdAsync(session.UserId);
-                var playerName = lookup?.Username ?? "Unknown";
-                var roundId = _gameTicker.RoundId;
-                var characterName = _minds.GetCharacterName(session.UserId);
-                var discordMessage = $"{session.Name} {message}";
-                _discordChatLink.SendAhelpMessage(session.UserId, playerName, "System", discordMessage, true, roundId, characterName);
-            });
+            SendAhelpToChatLink(session.UserId, "System", $"{session.Name} {message}", true); // LuaM
         }
+
+        // LuaM-start: no Task.Run, minds and _ahelpThreads must only be touched on the main thread
+        private async void SendAhelpToChatLink(NetUserId userId, string author, string text, bool adminOnly)
+        {
+            try
+            {
+                var roundId = _gameTicker.RoundId;
+                var characterName = _minds.GetCharacterName(userId);
+                var lookup = await _playerLocator.LookupIdAsync(userId);
+                var playerName = lookup?.Username ?? "Unknown";
+                _discordChatLink.SendAhelpMessage(userId, playerName, author, text, adminOnly, roundId, characterName);
+            }
+            catch (Exception e)
+            {
+                _sawmill.Error($"Error while relaying ahelp to Discord chat link: {e}");
+            }
+        }
+        // LuaM-end
 
         private void OnGameRunLevelChanged(GameRunLevelChangedEvent args)
         {
@@ -841,15 +850,7 @@ namespace Content.Server.Administration.Systems
             // Send to Discord chat link (thread-based integration)
             if (sendWebhook && !fromWebhook)
             {
-                // Fire and forget - don't block the main thread
-                _ = Task.Run(async () =>
-                {
-                    var lookup = await _playerLocator.LookupIdAsync(message.UserId);
-                    var playerName = lookup?.Username ?? "Unknown";
-                    var roundId = _gameTicker.RoundId;
-                    var characterName = _minds.GetCharacterName(message.UserId);
-                    _discordChatLink.SendAhelpMessage(message.UserId, playerName, senderName, message.Text, message.AdminOnly, roundId, characterName);
-                });
+                SendAhelpToChatLink(message.UserId, senderName, message.Text, message.AdminOnly); // LuaM
             }
 
             if (admins.Count != 0 || sendsWebhook)

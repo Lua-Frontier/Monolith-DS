@@ -1,0 +1,5 @@
+# RMC explosion visuals from forky-station #136
+- type: shader
+  id: ShockWave
+  kind: source
+  path: "/Textures/_Funkystation/Shaders/shock_wave.swsl"

@@ -31,7 +31,7 @@ public sealed partial class ShipyardPreviewSystem : SharedShipyardPreviewSystem
         base.Initialize();
 
         SubscribeLocalEvent<PostGameMapLoad>(OnPostGameMapLoad);
-        SubscribeLocalEvent<ShipyardConsoleComponent, ShipyardConsolePreviewMessage>(OnPreview);
+        // SubscribeLocalEvent<ShipyardConsoleComponent, ShipyardConsolePreviewMessage>(OnPreview); // LuaM: ship preview disabled
         SubscribeLocalEvent<ShipyardPreviewExitMessage>(OnDispose);
     }
 

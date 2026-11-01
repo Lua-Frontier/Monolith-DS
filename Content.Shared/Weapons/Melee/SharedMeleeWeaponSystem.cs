@@ -645,7 +645,13 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         if (!TryComp(user, out TransformComponent? userXform))
             return false;
 
-        var targetMap = TransformSystem.ToMapCoordinates(GetCoordinates(ev.Coordinates));
+        // LuaM-start: client coordinates can point at an entity that is already deleted on the server
+        var targetCoords = GetCoordinates(ev.Coordinates);
+        if (!Exists(targetCoords.EntityId))
+            return false;
+
+        var targetMap = TransformSystem.ToMapCoordinates(targetCoords);
+        // LuaM-end
 
         if (targetMap.MapId != userXform.MapID)
             return false;

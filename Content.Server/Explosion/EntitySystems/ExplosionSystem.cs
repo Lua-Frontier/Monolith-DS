@@ -1,3 +1,5 @@
+using Content.Server._Funkystation.Explosion.EntitySystems; // LuaM: RMC explosion visuals
+using Content.Shared._LuaM.Explosion; // LuaM
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Logs;
@@ -52,6 +54,7 @@ namespace Content.Server.Explosion.EntitySystems;
 public sealed partial class ExplosionSystem : SharedExplosionSystem
 {
     [Dependency] private IRobustRandom _robustRandom = default!;
+    [Dependency] private ExplosionEffectSystem _explosionEffect = default!; // LuaM: RMC explosion visuals
     [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
@@ -442,6 +445,15 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         // Frontier - Block explosions on safe zone
 
         var visualEnt = CreateExplosionVisualEntity(pos, queued.Proto.ID, spaceMatrix, spaceData, gridData.Values, iterationIntensity);
+
+        // LuaM start: RMC explosion visuals from forky-station #136 for every explosion with the plain fire, ship shells included.
+        // The fire tiles of such an explosion are hidden, so the two animations don't stack. Coloured fire (radioactive, cryo) stays.
+        if (queued.Proto.FireColor == null)
+        {
+            AddComp<ExplosionHideFireComponent>(visualEnt);
+            _explosionEffect.SpawnEffects(pos);
+        }
+        // LuaM end
 
         // camera shake
         CameraShake(iterationIntensity.Count * 4f, pos, queued.TotalIntensity);

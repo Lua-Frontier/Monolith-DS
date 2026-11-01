@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Explosion; // LuaM
 using System.Numerics;
 using Content.Shared.Explosion.Components;
 using JetBrains.Annotations;
@@ -42,6 +43,10 @@ public sealed partial class ExplosionOverlay : Overlay
         while (query.MoveNext(out var uid, out var visuals, out var textures))
         {
             if (visuals.Epicenter.MapId != args.MapId)
+                continue;
+
+            // LuaM: this explosion uses the RMC visuals instead of the fire tiles
+            if (_entMan.HasComponent<ExplosionHideFireComponent>(uid))
                 continue;
 
             if (!_appearance.TryGetData(uid, ExplosionAppearanceData.Progress, out int index))

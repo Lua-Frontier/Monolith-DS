@@ -180,8 +180,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             return;
         _updateTimer = 0f;
 
-        // Mono - always reset the per-cycle state. If anything below throws, the next cycle
-        // would otherwise fail on _activeChunks.Add forever ("same key has already been added").
+        // LuaM-start: always clean up, an exception left _activeChunks filled and broke every next update
         try
         {
             UpdateBiomes(frameTime);
@@ -194,6 +193,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
     private void UpdateBiomes(float frameTime)
     {
+        // LuaM-end
         var biomes = AllEntityQuery<BiomeComponent>();
 
         while (biomes.MoveNext(out var biome))
@@ -209,7 +209,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
         // Early exit if no players around chunk
         if (_handledEntities.Count == 0)
-            return;
+            return; // LuaM: cleanup moved to finally in Update
 
         var loadBiomes = AllEntityQuery<BiomeComponent, MapGridComponent>();
 
