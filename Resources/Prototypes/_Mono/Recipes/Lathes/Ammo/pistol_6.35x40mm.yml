@@ -23,7 +23,7 @@
   materials:
     Steel: 500
     UraniumDepleted: 150
-    Plasma: 600
+    Plasma: 500
   result: Magazine635x40mmCaselessPlasma
   
 - type: latheRecipe
