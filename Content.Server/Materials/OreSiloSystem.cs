@@ -1,8 +1,10 @@
+using System.Numerics; // LuaM
 using Content.Server.Pinpointer;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Materials.OreSilo;
 using Robust.Server.GameStates;
 using Robust.Shared.Player;
+using Robust.Shared.Utility; // LuaM
 
 namespace Content.Server.Materials;
 
@@ -19,10 +21,11 @@ public sealed partial class OreSiloSystem : SharedOreSiloSystem
     private readonly HashSet<Entity<OreSiloClientComponent>> _clientLookup = new();
     private readonly HashSet<(NetEntity, string, string)> _clientInformation = new();
     private readonly HashSet<EntityUid> _silosToAdd = new();
-    private readonly HashSet<EntityUid> _silosToRemove = new();
 
-    // Mono
-    private readonly List<Entity<OreSiloClientComponent>> _silos = new();
+    // LuaM-start
+    private readonly Dictionary<EntityUid, List<(EntityUid Silo, Vector2 Position)>> _clientsByGrid = new();
+    private readonly Dictionary<ICommonSession, HashSet<EntityUid>> _overriddenSilos = new();
+    // LuaM-end
 
     // Mono
     private float _updateAccumulator = 0f;
@@ -97,49 +100,70 @@ public sealed partial class OreSiloSystem : SharedOreSiloSystem
         // Things don't start wildly mispredicting. We do this as cheaply as possible via grid-based local-pos checks.
         // Sloth okay-ed this in the interim until a better solution comes around.
 
-        _silos.Clear();
-        var clientQuery = EntityQueryEnumerator<OreSiloClientComponent>();
-        while (clientQuery.MoveNext(out var uid, out var siloComp))
+        // LuaM-start: grouped by grid instead of players * clients, overrides are removed when a player leaves the grid
+        _clientsByGrid.Clear();
+        var clientQuery = EntityQueryEnumerator<OreSiloClientComponent, TransformComponent>();
+        while (clientQuery.MoveNext(out var clientComp, out var clientXform))
         {
-            _silos.Add((uid, siloComp));
+            if (clientComp.Silo is not { } silo || TerminatingOrDeleted(silo) || clientXform.GridUid is not { } grid)
+                continue;
+
+            _clientsByGrid.GetOrNew(grid).Add((silo, clientXform.LocalPosition));
         }
 
-        var actorQuery = EntityQueryEnumerator<ActorComponent>();
-        while (actorQuery.MoveNext(out var actorUid, out var actorComp))
+        var actorQuery = EntityQueryEnumerator<ActorComponent, TransformComponent>();
+        while (actorQuery.MoveNext(out var actorComp, out var actorXform))
         {
             _silosToAdd.Clear();
-            _silosToRemove.Clear();
 
-            var actorXform = Transform(actorUid);
-
-            foreach (var (uid, clientComp) in _silos)
+            // We limit it to same-grid checks only for peak perf
+            if (actorXform.GridUid is { } grid && _clientsByGrid.TryGetValue(grid, out var clients))
             {
-                if (clientComp.Silo is not { } silo || TerminatingOrDeleted(silo)) // LuaM: Silo == null > also skip deleted silo
-                    continue;
-
-                var clientXform = Transform(uid);
-                // We limit it to same-grid checks only for peak perf
-                if (actorXform.GridUid != clientXform.GridUid)
-                    continue;
-
-                if ((actorXform.LocalPosition - clientXform.LocalPosition).LengthSquared() <= OreSiloPreloadRangeSquared)
+                foreach (var (silo, position) in clients)
                 {
-                    _silosToAdd.Add(silo); // LuaM: clientComp.Silo.Value > silo
-                }
-                else
-                {
-                    _silosToRemove.Add(silo); // LuaM: clientComp.Silo.Value > silo
+                    if ((actorXform.LocalPosition - position).LengthSquared() <= OreSiloPreloadRangeSquared)
+                        _silosToAdd.Add(silo);
                 }
             }
 
-            foreach (var toRemove in _silosToRemove)
+            var session = actorComp.PlayerSession;
+            if (_overriddenSilos.TryGetValue(session, out var overridden))
             {
-                _pvsOverride.RemoveSessionOverride(toRemove, actorComp.PlayerSession);
+                foreach (var silo in overridden)
+                {
+                    if (!_silosToAdd.Contains(silo))
+                        _pvsOverride.RemoveSessionOverride(silo, session);
+                }
+
+                overridden.Clear();
             }
-            foreach (var toAdd in _silosToAdd)
+
+            if (_silosToAdd.Count == 0)
             {
-                _pvsOverride.AddSessionOverride(toAdd, actorComp.PlayerSession);
+                _overriddenSilos.Remove(session);
+                continue;
+            }
+
+            overridden ??= _overriddenSilos[session] = new();
+            foreach (var silo in _silosToAdd)
+            {
+                _pvsOverride.AddSessionOverride(silo, session);
+                overridden.Add(silo);
             }
         }
+
+        foreach (var (session, overridden) in _overriddenSilos)
+        {
+            if (session.AttachedEntity != null)
+                continue;
+
+            foreach (var silo in overridden)
+            {
+                _pvsOverride.RemoveSessionOverride(silo, session);
+            }
+
+            _overriddenSilos.Remove(session);
+        }
+        // LuaM-end
     }
 }

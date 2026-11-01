@@ -2,6 +2,7 @@ using Content.Shared._LuaM.Materials;
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Item.ItemToggle;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Materials;
 using Content.Shared.Materials.OreSilo;
 using Content.Shared.Power.EntitySystems;
@@ -9,6 +10,7 @@ using Content.Shared.Stacks;
 using Content.Shared.Whitelist;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Server._LuaM.Materials;
@@ -19,6 +21,8 @@ namespace Content.Server._LuaM.Materials;
 public sealed partial class SiloMagnetPickupSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
     [Dependency] private ItemToggleSystem _toggle = default!;
@@ -27,14 +31,18 @@ public sealed partial class SiloMagnetPickupSystem : EntitySystem
     [Dependency] private SharedPowerReceiverSystem _power = default!;
 
     private static readonly TimeSpan ScanDelay = TimeSpan.FromSeconds(1);
+    private static readonly TimeSpan IdleScanDelay = TimeSpan.FromSeconds(5);
 
     /// <summary>
     /// The same cap as the other magnets have, so a big pile of ore doesn't take a whole tick.
     /// </summary>
     private const int MaxEntitiesPerScan = 15;
 
+    private readonly HashSet<EntityUid> _nearby = new();
+
     private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<MaterialStorageComponent> _storageQuery;
+    private EntityQuery<MaterialComponent> _materialQuery;
     private EntityQuery<PhysicalCompositionComponent> _compositionQuery;
 
     public override void Initialize()
@@ -43,15 +51,23 @@ public sealed partial class SiloMagnetPickupSystem : EntitySystem
 
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
         _storageQuery = GetEntityQuery<MaterialStorageComponent>();
+        _materialQuery = GetEntityQuery<MaterialComponent>();
         _compositionQuery = GetEntityQuery<PhysicalCompositionComponent>();
 
         SubscribeLocalEvent<SiloMagnetPickupComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SiloMagnetPickupComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<SiloMagnetPickupComponent, ItemToggledEvent>(OnToggled);
     }
 
     private void OnMapInit(Entity<SiloMagnetPickupComponent> ent, ref MapInitEvent args)
     {
-        ent.Comp.NextScan = _timing.CurTime;
+        ent.Comp.NextScan = _timing.CurTime + _random.NextFloat() * ScanDelay;
+    }
+
+    private void OnToggled(Entity<SiloMagnetPickupComponent> ent, ref ItemToggledEvent args)
+    {
+        if (args.Activated)
+            ent.Comp.NextScan = _timing.CurTime;
     }
 
     private void OnExamined(Entity<SiloMagnetPickupComponent> ent, ref ExaminedEvent args)
@@ -79,7 +95,7 @@ public sealed partial class SiloMagnetPickupSystem : EntitySystem
             if (magnet.NextScan > now)
                 continue;
 
-            magnet.NextScan = now + ScanDelay;
+            magnet.NextScan = now + IdleScanDelay;
 
             if (!_toggle.IsActivated(uid) || !_power.IsPowered(uid))
                 continue;
@@ -87,13 +103,20 @@ public sealed partial class SiloMagnetPickupSystem : EntitySystem
             if (!TryGetSilo(uid, client, out var silo))
                 continue;
 
+            var position = _transform.GetWorldPosition(xform);
+            var rangeSquared = magnet.Range * magnet.Range;
+
+            // --  Approximate убирает точную проверку фикстур у всего подряд в радиусе, расстояние считаем сами и только для подошедших
+            _nearby.Clear();
+            _lookup.GetEntitiesInRange(uid, magnet.Range, _nearby, LookupFlags.Approximate | LookupFlags.Dynamic | LookupFlags.Sundries);
+
             var count = 0;
-            foreach (var near in _lookup.GetEntitiesInRange(uid, magnet.Range, LookupFlags.Dynamic | LookupFlags.Sundries))
+            foreach (var near in _nearby)
             {
                 if (count >= MaxEntitiesPerScan)
                     break;
 
-                if (near == xform.ParentUid)
+                if (near == xform.ParentUid || !_materialQuery.HasComp(near))
                     continue;
 
                 // Only items lying around, not ones in flight or in someone's hands.
@@ -103,9 +126,15 @@ public sealed partial class SiloMagnetPickupSystem : EntitySystem
                 if (_whitelist.IsWhitelistFail(magnet.Whitelist, near))
                     continue;
 
+                if ((_transform.GetWorldPosition(near) - position).LengthSquared() > rangeSquared)
+                    continue;
+
                 if (TryInsertIntoSilo(silo, near))
                     count++;
             }
+
+            if (count > 0)
+                magnet.NextScan = now + ScanDelay;
         }
     }
 
