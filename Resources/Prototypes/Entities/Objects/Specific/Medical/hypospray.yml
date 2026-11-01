@@ -8,7 +8,7 @@
     sprite: _LuaM/Objects/Specific/Medical/hypospray.rsi # LuaM Objects/Specific/Medical/hypospray.rsi > _LuaM/Objects/Specific/Medical/hypospray.rsi
     state: hypo
   - type: Item
-    sprite: _LuaM/Objects/Specific/Medical/hypospray.rsi #LuaM edited
+    sprite: _LuaM/Objects/Specific/Medical/hypospray.rsi # LuaM Objects/Specific/Medical/hypospray.rsi > _LuaM/Objects/Specific/Medical/hypospray.rsi
   - type: SolutionContainerManager
     solutions:
       hypospray:
