@@ -1,3 +1,4 @@
+using Content.Client._Funkystation.Explosion; // LuaM: RMC explosion visuals
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -170,6 +171,7 @@ namespace Content.Client.Entry
 
             _overlayManager.AddOverlay(new SingularityOverlay());
             _overlayManager.AddOverlay(new RadiationPulseOverlay());
+            _overlayManager.AddOverlay(new ExplosionShockWaveOverlay()); // LuaM: RMC explosion visuals from forky-station #136
             _overlayManager.AddOverlay(new EmpBlastOverlay()); // Frontier
             _chatManager.Initialize();
             _clientPreferencesManager.Initialize();
