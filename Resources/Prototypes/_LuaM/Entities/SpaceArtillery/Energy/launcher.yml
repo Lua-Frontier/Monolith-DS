@@ -1,0 +1,176 @@
+# Moros
+
+- type: entity
+  parent: Pulse
+  id: MorosLaserHitscan
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicRaycast
+    maxDistance: 512
+  - type: HitscanRadarSignature
+    radarColor: "#00BFFF"
+
+- type: entity
+  id: WeaponTurretMoros
+  name: SL-170 «Moros»
+  parent:
+  - BallisticArtilleryTier2HP
+  - BallisticArtilleryBase
+  description: A laser weapon that engages targets with rapid, precise shots.
+  components:
+  - type: StaticPrice
+    price: 2500
+  - type: Sprite
+    sprite: _LuaM/Objects/ShuttleWeapons/moros.rsi
+    layers:
+    - state: space_artillery
+  - type: Appearance
+  - type: AmmoCounter
+  - type: Battery
+    maxCharge: 15000
+    startingCharge: 15000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 500
+  - type: ExaminableBattery
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: Gun
+    fireRate: 25
+    recoil: 2
+    minAngle: 0
+    maxAngle: 0
+    shootThermalSignature: 2000000
+    soundGunshot:
+      path: /Audio/_Mono/Weapons/Guns/Gunshots/laserfire.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
+  - type: SpaceArtillery
+    powerChargeRate: 200
+    powerUsePassive: 300
+    powerUseActive: 0
+  - type: FireControlRotate
+  - type: Actions
+  - type: HitscanBatteryAmmoProvider
+    proto: MorosLaserHitscan
+    fireCost: 25
+  - type: RadarBlip
+    radarColor: "#035EFC"
+    scale: 1.5
+    visibleFromOtherGrids: true
+    gridConfig:
+      color: "#035EFC"
+      shape: Square
+      respectZoom: true
+      rotate: true
+      bounds: "-0.75,-0.75,0.75,0.75"
+  - type: HitscanRadar
+    radarColor: "#00BFFF"
+  - type: ShipGunType
+    shipType: Energy
+  - type: ShipGunClass
+    shipClass: Medium
+  - type: ShipRepairable
+    repairTime: 15
+    repairCost: 80
+
+# Shkval
+
+- type: entity
+  parent: Pulse
+  id: ShkvalLaserHitscan
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Structural: 600
+        Heat: 200
+  - type: HitscanBasicRaycast
+    maxDistance: 1000
+  - type: HitscanRadarSignature
+    radarColor: "#00BFFF"
+
+- type: entity
+  id: WeaponTurretShkval
+  name: HL-220 «Shkval»
+  parent:
+  - BallisticArtilleryUnanchorable
+  - BallisticArtilleryTier4HP
+  description: A heavy laser weapon that unleashes a barrage of shots, destroying everything in its path.
+  components:
+  - type: StaticPrice
+    price: 25000
+  - type: Sprite
+    sprite: _LuaM/Objects/ShuttleWeapons/shkval.rsi
+    offset: 0, -0.45
+    layers:
+    - state: space_artillery
+  - type: Appearance
+  - type: FireControlRotate
+  - type: AmmoCounter
+  - type: Battery
+    maxCharge: 2250
+    startingCharge: 2250
+  - type: ExaminableBattery
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: Gun
+    fireRate: 0.2
+    recoil: 50
+    minAngle: 0
+    maxAngle: 0
+    burstCooldown: 45
+    burstFireRate: 15
+    shotsPerBurst: 90
+    selectedMode: Burst
+    availableModes: Burst
+    shootThermalSignature: 180000000
+    soundGunshot:
+      path: /Audio/_Mono/Weapons/Guns/Gunshots/glassing.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 75
+  - type: SpaceArtillery
+    powerChargeRate: 75
+    powerUsePassive: 1000
+    powerUseActive: 0
+  - type: Actions
+  - type: HitscanBatteryAmmoProvider
+    proto: ShkvalLaserHitscan
+    fireCost: 25
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 1500
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: RadarBlip
+    radarColor: "#035EFC"
+    scale: 2.5
+    visibleFromOtherGrids: true
+    gridConfig:
+      color: "#035EFC"
+      shape: Square
+      respectZoom: true
+      rotate: true
+      bounds: "-1.25,-1.25,1.25,1.25"
+  - type: HitscanRadar
+    radarColor: "#00BFFF"
+  - type: ShipGunType
+    shipType: Energy
+  - type: ShipGunClass
+    shipClass: Superheavy
+  - type: ShipRepairable
+    repairTime: 60
+    repairCost: 300
+  - type: HardpointAnchorableOnly
+    class: Energy
+    size: Superheavy

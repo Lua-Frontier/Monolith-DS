@@ -1,0 +1,33 @@
+- type: vessel
+  id: Rosa
+  parent: BaseVessel
+  name: vessel-rosa-name
+  description: vessel-rosa-name
+  price: 212000
+  purchasable: false
+  category: Medium
+  group: Sr
+  access: Brig
+  mapchecker_group_override: Security
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/CC/Rosa.yml
+  guidebookPage: Null
+  class:
+  - Patrol
+  - Corvette
+  engine:
+  - plasma
+
+- type: gameMap
+  id: Rosa
+  mapName: 'Rosa'
+  mapPath: /SharedMaps/_LuaM/Shuttles/CC/Rosa.yml
+  minPlayers: 0
+  stations:
+    Rosa:
+      stationProto: StandardFrontierVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Rosa CC{1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
