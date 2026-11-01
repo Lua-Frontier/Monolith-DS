@@ -8,6 +8,6 @@ ent-ClothingHeadHelmetHardsuitM92x = шлем скафандра СБКЦ-102-X 
     .desc = Шлем среднего скафандра СБКЦ-102-X «Страж»
 ent-ClothingOuterHardsuitM93 =  тяжёлый скафандр СБКЦ-103 «Заслон»
     .desc = Тяжёлый тактический скафандр, разработанный для сотрудников Службы безопасности Колосса. Оснащен энергощитом.
-ent-ClothingHeadHelmetHardsuitM93 = Шлем заслона
+ent-ClothingHeadHelmetHardsuitM93 = шлем скафандра СБКЦ-103 «Заслон»
     .desc = Шлем тяжёлого скафандра СБ-КЦ "Заслон"
 
