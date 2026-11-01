@@ -273,7 +273,7 @@
   parent: BaseMagazine635x40mmCaseless
   components:
   - type: BallisticAmmoProvider
-    proto: Bullet635x40mmCaselessPlasteelAP
+    proto: Cartridge635x40mmCaselessAP
   - type: Sprite
     layers:
     - state: AP
