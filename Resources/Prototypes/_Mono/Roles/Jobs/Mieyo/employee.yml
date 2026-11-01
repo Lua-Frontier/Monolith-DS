@@ -4,6 +4,8 @@
   description: job-description-mmc-employee
   playTimeTracker: JobMMCEmployee
   requirements: # LuaM
+  - !type:OverallPlaytimeRequirement # LuaM
+    time: 72000 # 20 hrs
   - !type:TraitsRequirement # LuaM: heretics can't take this job
     inverted: true
     traits:

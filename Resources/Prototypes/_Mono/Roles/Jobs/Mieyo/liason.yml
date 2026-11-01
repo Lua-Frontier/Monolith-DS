@@ -6,21 +6,19 @@
   requirements:
   - !type:DepartmentTimeRequirement
      department: MieyoManufacturingConcern
-     time: 72000 # 20 hours
+     time: 144000 # LuaM 20 > 40 hours
   - !type:OverallPlaytimeRequirement
     time: 144000 # 40 hrs
   - !type:TraitsRequirement # LuaM: heretics can't take this job
     inverted: true
     traits:
     - Heretic
-  alternateRequirementSets:
-    longerPlaytimeLessEmployee:
-    - !type:OverallPlaytimeRequirement
-      time: 216000 # 60 hours
-    - !type:TraitsRequirement # LuaM: heretics can't take this job
-      inverted: true
-      traits:
-      - Heretic
+  # LuaM-commented-start:
+  # alternateRequirementSets:
+  #   longerPlaytimeLessEmployee:
+  #   - !type:OverallPlaytimeRequirement
+  #     time: 216000 # 60 hours
+  # LuaM-commented-end
   startingGear: MMCLiasonGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true
