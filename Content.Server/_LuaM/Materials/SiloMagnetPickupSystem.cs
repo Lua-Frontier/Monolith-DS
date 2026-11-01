@@ -31,7 +31,7 @@ public sealed partial class SiloMagnetPickupSystem : EntitySystem
     [Dependency] private SharedPowerReceiverSystem _power = default!;
 
     private static readonly TimeSpan ScanDelay = TimeSpan.FromSeconds(1);
-    private static readonly TimeSpan IdleScanDelay = TimeSpan.FromSeconds(5);
+    private static readonly TimeSpan IdleScanDelay = TimeSpan.FromSeconds(1.5);
 
     /// <summary>
     /// The same cap as the other magnets have, so a big pile of ore doesn't take a whole tick.

@@ -33,7 +33,7 @@ public sealed partial class MaterialStorageMagnetPickupSystem : EntitySystem
     // LuaM-end
 
     private static readonly TimeSpan ScanDelay = TimeSpan.FromSeconds(1);
-    private static readonly TimeSpan IdleScanDelay = TimeSpan.FromSeconds(5); // LuaM
+    private static readonly TimeSpan IdleScanDelay = TimeSpan.FromSeconds(1.5); // LuaM
     private const int MaxEntitiesToInsert = 15; // Mono
 
     private readonly HashSet<Entity<MaterialComponent>> _nearby = new(); // LuaM
