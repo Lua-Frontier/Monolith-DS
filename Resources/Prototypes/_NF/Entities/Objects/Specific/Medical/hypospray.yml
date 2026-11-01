@@ -60,7 +60,7 @@
   id: HypoMiniLimitedEdition
   components:
   - type: Sprite
-    sprite: _LuaM/Objects/Specific/Medical/hypominilimitededition.rsi #LuaM Edited
+    sprite: _LuaM/Objects/Specific/Medical/hypominilimitededition.rsi # LuaM _NF/Objects/Specific/Medical/hypominilimitededition.rsi > _LuaM/Objects/Specific/Medical/hypominilimitededition.rsi
     state: hypo
   - type: Item
     sprite: _LuaM/Objects/Specific/Medical/hypominilimitededition.rsi #LuaM Edited
