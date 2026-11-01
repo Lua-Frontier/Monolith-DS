@@ -1,4 +1,4 @@
-ent-ClothingHeadHardsuitM92 = СБ-КЦ Немезида 102
+ent-ClothingHeadHardsuitM92 = лёгкий скафандр СБКЦ-102 «Немезида»
     .desc = Лёгкий скафандр СБ-КЦ "Немизида"
 ent-ClothingHeadHelmetHardsuitM92 = Шлем немезиды
     .desc = Шлем лёгкого скафандра СБ-КЦ "Немезида"
