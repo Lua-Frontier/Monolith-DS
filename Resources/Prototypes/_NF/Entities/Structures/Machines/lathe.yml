@@ -139,7 +139,7 @@
 
 - type: entity
   id: NfsdTechFab
-  parent: [ BlueprintReceiverBase, SecurityTechFab ]
+  parent: [ BlueprintReceiverBase, SecurityTechFab, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
   name: TSFMC techfab
   description: Prints equipment for use by TSFMC.
   components:
@@ -163,14 +163,18 @@
     runningState: icon
     staticPacks:
     - NFNfsdTechfabDeprecatedStatic
-    # - StaticAmmoRecipePack
-    # - RoundstartShipgunAmmo # Mono # Commented by LuaM
+    - StaticAmmoRecipePack
+    - RoundstartShipgunAmmo # Mono
     - StaticGrenades
     - MonoAttachmentsStatic # Mono
     - ReportingStatic # DeltaV
+    # LuaM-start:
+    - NFMercenaryTechfabDeprecatedStatic
+    - MonoRestraintsStatic
+    # LuaM-end
     dynamicPacks:
     - NFNfsdTechfabDeprecated
-    # - DynamicAmmoRecipePack
+    - DynamicAmmoRecipePack
     # Mono start
     - MonoTSFWeaponsDynamicMelee
     - MonoTSFWeaponsDynamicRanged
@@ -192,6 +196,7 @@
     - NFMercenaryTechfabDeprecated
     - SecurityEquipment
     - SmartGun
+    - PunkGear
 # LuaM-end.
   - type: EmagLatheRecipes
     emagStaticPacks:
@@ -205,7 +210,7 @@
 
 - type: entity
   id: MercenaryTechFab
-  parent: [ BlueprintReceiverBase, BaseLatheLube ]
+  parent: [ BlueprintReceiverBase, BaseLatheLube, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
   name: mercenary techfab
   description: Prints the bare minimum of tools of the trade that any budget mercenary or private security could need. Nothing fancy.
   components:
