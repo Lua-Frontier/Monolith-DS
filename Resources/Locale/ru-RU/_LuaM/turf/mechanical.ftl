@@ -1,14 +1,14 @@
-tiles-mechanical-floor-panel = механическая панельная плитка
-tiles-mechanical-floor-plate = механическая плита
-tiles-mechanical-floor-tread = механическая рифлёная плитка
+tiles-mechanical-floor-panel = механический пол
+tiles-mechanical-floor-plate = утилитарный пол
+tiles-mechanical-floor-tread = штампованный пол
 
-stack-mechanical-panel-tile = механическая панельная плитка
-stack-mechanical-plate-tile = механическая плита
-stack-mechanical-tread-tile = механическая рифлёная плитка
+stack-mechanical-panel-tile = механический пол
+stack-mechanical-plate-tile = утилитарный пол
+stack-mechanical-tread-tile = штампованный пол
 
-ent-FloorTileItemMechanicalPanel = механическая панельная плитка
+ent-FloorTileItemMechanicalPanel = механический пол
     .desc = { ent-FloorTileItemBase.desc }
-ent-FloorTileItemMechanicalPlate = механическая плита
+ent-FloorTileItemMechanicalPlate = утилитарный пол
     .desc = { ent-FloorTileItemBase.desc }
-ent-FloorTileItemMechanicalTread = механическая рифлёная плитка
+ent-FloorTileItemMechanicalTread = штампованный пол
     .desc = { ent-FloorTileItemBase.desc }

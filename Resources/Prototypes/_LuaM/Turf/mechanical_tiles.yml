@@ -11,7 +11,7 @@
   heatCapacity: 10000
 
 - type: entity
-  name: mechanical panel tile
+  name: mechanical floor tile
   parent: FloorTileItemBase
   id: FloorTileItemMechanicalPanel
   components:
@@ -46,7 +46,7 @@
   heatCapacity: 10000
 
 - type: entity
-  name: mechanical plate tile
+  name: utility floor tile
   parent: FloorTileItemBase
   id: FloorTileItemMechanicalPlate
   components:
@@ -81,7 +81,7 @@
   heatCapacity: 10000
 
 - type: entity
-  name: mechanical tread tile
+  name: stamped floor tile
   parent: FloorTileItemBase
   id: FloorTileItemMechanicalTread
   components:
@@ -102,3 +102,18 @@
   name: stack-mechanical-tread-tile
   spawn: FloorTileItemMechanicalTread
   maxCount: 30
+
+- type: latheRecipe
+  parent: BaseTileRecipe
+  id: FloorTileItemMechanicalPanel
+  result: FloorTileItemMechanicalPanel
+
+- type: latheRecipe
+  parent: BaseTileRecipe
+  id: FloorTileItemMechanicalPlate
+  result: FloorTileItemMechanicalPlate
+
+- type: latheRecipe
+  parent: BaseTileRecipe
+  id: FloorTileItemMechanicalTread
+  result: FloorTileItemMechanicalTread
