@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Ammo by Paradoxmi (Discord), taken from sector-frontier-14 Objects/Tools/spray_painter.rsi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "ammo"
+    },
+    {
+      "name": "ammo-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "ammo-inhand-right",
+      "directions": 4
+    }
+  ]
+}

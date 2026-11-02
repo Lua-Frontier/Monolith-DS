@@ -1,4 +1,4 @@
 - files: [ "mechanical_panel.png", "mechanical_plate.png", "mechanical_tread.png" ]
   license: "CC-BY-SA-3.0"
-  copyright: "Made for Monolith-DS in the style of the AME sprites by Onezero00"
+  copyright: "Made by c_quarian (discord) for Monolith-DS"
   source: "https://github.com/Monolith-Station/Monolith/tree/main/Resources/Textures/Structures/Power/Generation/ame.rsi"

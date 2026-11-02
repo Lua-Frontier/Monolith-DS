@@ -32,3 +32,8 @@
       mix: '#947507'
   - type: StaticPrice
     price: 20 # Frontier 40<20
+  # LuaM-start
+  - type: LimitedCharges
+    maxCharges: 15
+    charges: 15
+  # LuaM-end
