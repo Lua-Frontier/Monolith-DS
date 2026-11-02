@@ -54,6 +54,9 @@ public sealed partial class RpInteractionCategoryPrototype : IPrototype
 
     [DataField]
     public SpriteSpecifier Icon = SpriteSpecifier.Invalid;
+
+    [DataField]
+    public int Order;
 }
 
 [Prototype]

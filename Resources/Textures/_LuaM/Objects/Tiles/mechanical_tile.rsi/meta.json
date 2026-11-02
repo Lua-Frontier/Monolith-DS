@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made for Monolith-DS in the style of the AME sprites by Onezero00",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "mechanical-panel"
+    },
+    {
+      "name": "mechanical-plate"
+    },
+    {
+      "name": "mechanical-tread"
+    }
+  ]
+}

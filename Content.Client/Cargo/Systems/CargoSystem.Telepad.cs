@@ -59,6 +59,9 @@ public sealed partial class CargoSystem
 
     private void OnCargoAnimComplete(EntityUid uid, CargoTelepadComponent component, AnimationCompletedEvent args)
     {
+        if (!args.Finished) // LuaM
+            return;
+
         OnChangeData(uid);
     }
 

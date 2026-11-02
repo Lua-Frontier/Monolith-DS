@@ -1,3 +1,3 @@
-ent-ADTSMESIndustrial = Индустриальный СМЭС
-    .suffix = 80МДж
+ent-SMESIndustrial = Индустриальный СМЭС
+    .suffix = 20МДж
     .desc = { ent-BaseSMES.desc }

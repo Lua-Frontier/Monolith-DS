@@ -85,3 +85,4 @@ rp-panel-category-back-name = Спина
 rp-panel-category-hands-name = Руки
 rp-panel-category-tail-name = Хвост
 rp-panel-category-wings-name = Крылья
+rp-panel-category-chassis-name = Корпус

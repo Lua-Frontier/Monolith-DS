@@ -44,20 +44,22 @@
                 </Button>
             </BoxContainer>
 
+            <Label Name="ResultsLabel"
+                   StyleClasses="RpPanelMuted"
+                   HorizontalAlignment="Center"/>
+
             <BoxContainer Orientation="Horizontal" SeparationOverride="6">
-                <Label Name="ResultsLabel"
-                       StyleClasses="RpPanelMuted"
-                       ClipText="True"
-                       HorizontalExpand="True"
-                       VerticalAlignment="Center"/>
                 <Button Name="CreateEmoteButton"
                         StyleClasses="DS14MenuProfileControl"
+                        HorizontalExpand="True"
                         Text="{Loc rp-panel-custom-create}"/>
                 <Button Name="ExpandAllButton"
                         StyleClasses="DS14MenuProfileControl"
+                        HorizontalExpand="True"
                         Text="{Loc rp-panel-expand-all}"/>
                 <Button Name="CollapseAllButton"
                         StyleClasses="DS14MenuProfileControl"
+                        HorizontalExpand="True"
                         Text="{Loc rp-panel-collapse-all}"/>
             </BoxContainer>
 

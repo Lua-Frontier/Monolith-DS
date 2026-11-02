@@ -28,3 +28,41 @@
   icon: _LuaM/Interface/RpPanel/push_ups.png
   targetRequirements:
   - !type:TargetOnFloorRequirement
+
+- type: rpInteraction
+  id: HoldHand
+  category: Hands
+  kind: Soft
+  range: 1.5
+  sound:
+    collection: RpHandshake
+  messages: RpHoldHandMessages
+  icon: _LuaM/Interface/RpPanel/friendly.png
+
+- type: rpInteraction
+  id: FistBump
+  category: Hands
+  kind: Soft
+  range: 1.5
+  sound:
+    collection: RpBang
+  messages: RpFistBumpMessages
+  icon: _LuaM/Interface/RpPanel/high_five.png
+
+- type: rpInteraction
+  id: Applaud
+  category: Hands
+  kind: Soft
+  sound:
+    collection: RpClick
+  selfMessages: RpApplaudSelfMessages
+  icon: _LuaM/Interface/RpPanel/high_five.png
+
+- type: rpInteraction
+  id: Salute
+  category: Hands
+  kind: Soft
+  sound:
+    collection: RpClick
+  selfMessages: RpSaluteSelfMessages
+  icon: _LuaM/Interface/RpPanel/cool_pose.png

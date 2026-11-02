@@ -66,9 +66,9 @@
       visible: false
     - map: [ "id" ]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
+    - map: [ "shoes" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "back" ]
@@ -87,9 +87,9 @@
       state: "creampie_human"
       visible: false
     - map: [ "enum.HumanoidVisualLayers.RArmExtension" ] # Frontier
+    - map: [ "mask" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-    - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ enum.InstrumentVisuals.Layer ]
       sprite: _DV/Effects/harpysinger.rsi
@@ -206,9 +206,9 @@
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: [ "id" ]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
+    - map: [ "shoes" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "neck" ]
@@ -228,8 +228,8 @@
       state: "creampie_human"
       visible: false
     - map: [ "enum.HumanoidVisualLayers.RArmExtension" ] # Frontier
-    - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "mask" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "head" ]
 
 - type: entity

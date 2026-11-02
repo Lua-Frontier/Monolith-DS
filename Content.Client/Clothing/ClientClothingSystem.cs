@@ -108,8 +108,10 @@ public sealed partial class ClientClothingSystem : ClothingSystem
         List<PrototypeLayerData>? layers = null;
 
         // first attempt to get species specific data.
-        if (inventory.SpeciesId != null)
-            item.ClothingVisuals.TryGetValue($"{args.Slot}-{inventory.SpeciesId}", out layers);
+        if (inventory.SpeciesId != null
+            && item.ClothingVisuals.TryGetValue($"{args.Slot}-{inventory.SpeciesId}", out var speciesLayers)
+            && HasLayerStates(uid, speciesLayers)) // LuaM
+            layers = speciesLayers;
 
         // if that returned nothing, attempt to find generic data
         if (layers == null && !item.ClothingVisuals.TryGetValue(args.Slot, out layers))
@@ -135,6 +137,32 @@ public sealed partial class ClientClothingSystem : ClothingSystem
             args.Layers.Add((key, layer));
         }
     }
+
+    // LuaM-start
+    /// <summary>
+    ///     Checks that every state of species specific layers exists, so a suit without that species' sprites falls back to generic ones.
+    /// </summary>
+    public bool HasLayerStates(EntityUid uid, List<PrototypeLayerData> layers)
+    {
+        if (!TryComp(uid, out SpriteComponent? sprite))
+            return true;
+
+        foreach (var layer in layers)
+        {
+            if (layer.State == null || layer.TexturePath != null)
+                continue;
+
+            var rsi = layer.RsiPath != null
+                ? _cache.GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / layer.RsiPath).RSI
+                : sprite.BaseRSI;
+
+            if (rsi != null && !rsi.TryGetState(layer.State, out _))
+                return false;
+        }
+
+        return true;
+    }
+    // LuaM-end
 
     /// <summary>
     ///     If no explicit clothing visuals were specified, this attempts to populate with default values.

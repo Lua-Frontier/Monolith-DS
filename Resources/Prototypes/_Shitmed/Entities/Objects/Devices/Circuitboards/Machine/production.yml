@@ -6,9 +6,10 @@
   components:
   - type: MachineBoard
     prototype: Autodoc
+    requirements: # LuaM: stack parts with MachinePart are only accepted here
+      Manipulator: 4
     stackRequirements:
       Cable: 3
-      Manipulator: 4
       Steel: 10
     # tagRequirements: # Mono # Commented by LuaM: industry parts are only for MMC
       # ComponentBrickEconomy1: # Commented by LuaM: industry parts are only for MMC

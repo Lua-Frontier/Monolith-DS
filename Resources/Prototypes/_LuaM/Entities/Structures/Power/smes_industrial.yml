@@ -1,19 +1,19 @@
 - type: entity
   parent: BaseSMES
-  id: ADTSMESIndustrial
+  id: SMESIndustrial
   name: industrial SMES
-  suffix: 80MJ
+  suffix: 20MJ
   components:
   - type: Sprite
     sprite: _LuaM/Structures/Power/smes_industrial.rsi
   - type: Battery
-    maxCharge: 80000000
-    startingCharge: 80000000
+    maxCharge: 20000000
+    startingCharge: 20000000
   - type: UpgradeBattery
     maxChargeMultiplier: 2
-    baseMaxCharge: 80000000
+    baseMaxCharge: 20000000
   - type: PowerNetworkBattery
-    maxSupply: 150000
+    maxSupply: 100000
     maxChargeRate: 5000
     supplyRampTolerance: 50000
     supplyRampRate: 10000

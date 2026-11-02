@@ -1,0 +1,133 @@
+- type: rpInteraction
+  id: WipeScreen
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpFriction
+  messages: RpWipeScreenMessages
+  icon: _LuaM/Interface/RpPanel/cheeks_pat.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: TapChassis
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpBang
+  messages: RpTapChassisMessages
+  icon: _LuaM/Interface/RpPanel/friendly_finger_tap.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: PolishChassis
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpFriction
+  messages: RpPolishChassisMessages
+  icon: _LuaM/Interface/RpPanel/friendly.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: OilJoint
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpMechanic
+  messages: RpOilJointMessages
+  icon: _LuaM/Interface/RpPanel/shoulder_massage.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: CheckWiring
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpMechanic
+  messages: RpCheckWiringMessages
+  icon: _LuaM/Interface/RpPanel/pat_neck.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: DataHandshake
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpDiagnostic
+  messages: RpDataHandshakeMessages
+  icon: _LuaM/Interface/RpPanel/friendly.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+  targetRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: RunDiagnostics
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpDiagnostic
+  selfMessages: RpRunDiagnosticsSelfMessages
+  icon: Interface/VerbIcons/settings.svg.192dpi.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: CycleScreen
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpDiagnostic
+  selfMessages: RpCycleScreenSelfMessages
+  icon: Interface/VerbIcons/settings.svg.192dpi.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: SpinFans
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpMechanic
+  selfMessages: RpSpinFansSelfMessages
+  icon: Interface/VerbIcons/settings.svg.192dpi.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: FlexServos
+  category: Chassis
+  kind: Soft
+  sound:
+    collection: RpMechanic
+  selfMessages: RpFlexServosSelfMessages
+  icon: _LuaM/Interface/RpPanel/stretch_full_body.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
