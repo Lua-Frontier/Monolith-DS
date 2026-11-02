@@ -23,8 +23,7 @@
   materials:
     Steel: 500
     UraniumDepleted: 150
-  reagents:
-    Plasma: 60
+    Plasma: 500
   result: Magazine635x40mmCaselessPlasma
   
 - type: latheRecipe
