@@ -22,7 +22,7 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 80
-      Bluespace: 20
+      # LuaM: Bluespace: 20 removed, bluespace is not reclaimed
   - type: SolutionRegeneration
     solution: spray
     generated:

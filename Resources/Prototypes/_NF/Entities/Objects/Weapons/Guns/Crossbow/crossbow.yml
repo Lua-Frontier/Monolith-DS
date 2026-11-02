@@ -283,6 +283,9 @@
   parent: BaseCrossbowWieldable
   name: impovised crossbow
   components:
+  - type: PhysicalComposition # LuaM: half of the crafting cost
+    materialComposition:
+      Steel: 150
   - type: UseDelay
     delay: 2
   - type: Sprite

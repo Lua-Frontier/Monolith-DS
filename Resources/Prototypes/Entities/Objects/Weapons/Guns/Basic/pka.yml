@@ -21,6 +21,6 @@
   # todo: add clothingcomponent with clothingVisuals states using unused texture and animations assets in kinetic_accelerator.rsi'
   - type: PhysicalComposition # LuaM recyclable
     materialComposition:
-      Steel: 1000
-      Glass: 500
-      Silver: 100
+      Steel: 500 # LuaM 1000 > 500
+      Glass: 250 # LuaM 500 > 250
+      Silver: 50 # LuaM 100 > 50

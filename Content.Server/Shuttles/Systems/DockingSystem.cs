@@ -10,6 +10,7 @@ using Content.Shared.Shuttles.Events;
 using Content.Shared.Shuttles.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics; // LuaM
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics.Joints;
 using Robust.Shared.Physics.Systems;
@@ -36,10 +37,12 @@ namespace Content.Server.Shuttles.Systems
 
         private readonly HashSet<Entity<DockingComponent>> _dockingSet = new();
         private readonly HashSet<Entity<DockingComponent, DoorBoltComponent>> _dockingBoltSet = new();
+        private readonly HashSet<EntityUid> _undockedGrids = new(); // LuaM
 
         public override void Initialize()
         {
             base.Initialize();
+            UpdatesAfter.Add(typeof(SharedJointSystem)); // LuaM
             _gridQuery = GetEntityQuery<MapGridComponent>();
             _physicsQuery = GetEntityQuery<PhysicsComponent>();
             _xformQuery = GetEntityQuery<TransformComponent>();
@@ -126,6 +129,21 @@ namespace Content.Server.Shuttles.Systems
             Cleanup(uid, component);
         }
 
+        // LuaM-start
+        public override void Update(float frameTime)
+        {
+            base.Update(frameTime);
+
+            foreach (var grid in _undockedGrids)
+            {
+                if (!TerminatingOrDeleted(grid))
+                    EnsureComp<JointComponent>(grid);
+            }
+
+            _undockedGrids.Clear();
+        }
+        // LuaM-end
+
         private void Cleanup(EntityUid dockAUid, DockingComponent dockA)
         {
             _pathfinding.RemovePortal(dockA.PathfindHandle);
@@ -157,6 +175,11 @@ namespace Content.Server.Shuttles.Systems
             var gridAUid = Comp<TransformComponent>(dockAUid).GridUid;
             var gridBUid = Comp<TransformComponent>(dockBUid.Value).GridUid;
 
+            // LuaM-start
+            _undockedGrids.Add(gridAUid!.Value);
+            _undockedGrids.Add(gridBUid!.Value);
+            // LuaM-end
+
             var msg = new UndockEvent
             {
                 DockA = dockA,
@@ -178,6 +201,11 @@ namespace Content.Server.Shuttles.Systems
             // Use startup so transform already initialized
             if (!Comp<TransformComponent>(uid).Anchored)
                 return;
+
+            // LuaM-start
+            if (Comp<TransformComponent>(uid).GridUid is { } grid)
+                EnsureComp<JointComponent>(grid);
+            // LuaM-end
 
             // This little gem is for docking deserialization
             if (component.DockedWith != null)

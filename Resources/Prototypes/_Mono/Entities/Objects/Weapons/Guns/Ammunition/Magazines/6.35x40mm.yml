@@ -155,6 +155,9 @@
   name: "magazine (6.35x40mm Caseless)"
   parent: BaseMagazine635x40mmCaseless
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Steel: 5
   - type: BallisticAmmoProvider
     proto: Cartridge635x40mmCaselessRubber
   - type: Sprite
@@ -169,6 +172,9 @@
   name: "magazine (6.35x40mm Caseless practice)"
   parent: BaseMagazine635x40mmCaseless
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Steel: 5
   - type: BallisticAmmoProvider
     proto: Cartridge635x40mmCaselessPractice
   - type: Sprite

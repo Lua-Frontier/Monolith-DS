@@ -8,6 +8,7 @@ using Content.Shared.Hands.Components;  // Frontier
 using Content.Shared.Verbs;     // Frontier
 using Robust.Shared.Utility;    // Frontier
 // LuaM-start
+using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -28,6 +29,7 @@ public sealed partial class MaterialStorageMagnetPickupSystem : EntitySystem
     [Dependency] private INetManager _net = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedPowerReceiverSystem _power = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     // LuaM-end
@@ -37,6 +39,7 @@ public sealed partial class MaterialStorageMagnetPickupSystem : EntitySystem
     private const int MaxEntitiesToInsert = 15; // Mono
 
     private readonly HashSet<Entity<MaterialComponent>> _nearby = new(); // LuaM
+    private readonly HashSet<string> _popups = new(); // LuaM
     private EntityQuery<PhysicsComponent> _physicsQuery;
 
     public override void Initialize()
@@ -123,6 +126,7 @@ public sealed partial class MaterialStorageMagnetPickupSystem : EntitySystem
 
             // LuaM-start: reused set, only entities that can be inserted at all
             _nearby.Clear();
+            _popups.Clear();
             _lookup.GetEntitiesInRange(_transform.GetMapCoordinates(uid, xform), comp.Range, _nearby, LookupFlags.Dynamic | LookupFlags.Sundries);
 
             foreach (var (near, material) in _nearby)
@@ -137,8 +141,15 @@ public sealed partial class MaterialStorageMagnetPickupSystem : EntitySystem
                 if (!_physicsQuery.TryGetComponent(near, out var physics) || physics.BodyStatus != BodyStatus.OnGround)
                     continue;
 
+                var popup = Loc.GetString("machine-insert-item", ("user", uid), ("machine", uid), ("item", near)); // LuaM
+
                 if (!_storage.TryInsertMaterialEntity(uid, near, uid, storage, material)) // LuaM: + material
                     continue;
+
+                // LuaM-start: one popup per kind of item in a scan
+                if (_popups.Add(popup))
+                    _popup.PopupEntity(popup, uid);
+                // LuaM-end
 
                 count++; // Mono
             }

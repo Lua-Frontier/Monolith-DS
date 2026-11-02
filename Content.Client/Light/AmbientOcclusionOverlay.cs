@@ -92,7 +92,29 @@ public sealed partial class AmbientOcclusionOverlay : Overlay
 
                     worldHandle.SetTransform(localMatrix);
                     // 4 pixels
-                    worldHandle.DrawRect(Box2.UnitCentered.Enlarged(distance / EyeManager.PixelsPerMeter), Color.White);
+                    // LuaM start: non-square occluders (diagonal walls) don't shade their empty part
+                    var polygon = entry.Component.Polygon;
+                    if (polygon.Length == 4)
+                    {
+                        worldHandle.DrawRect(Box2.UnitCentered.Enlarged(distance / EyeManager.PixelsPerMeter), Color.White);
+                        continue;
+                    }
+
+                    var center = Vector2.Zero;
+                    foreach (var vertex in polygon)
+                    {
+                        center += vertex;
+                    }
+                    center /= polygon.Length;
+
+                    var vertices = new Vector2[polygon.Length];
+                    for (var i = 0; i < polygon.Length; i++)
+                    {
+                        vertices[i] = polygon[i] + Vector2.Normalize(polygon[i] - center) * MathF.Sqrt(2f) * distance / EyeManager.PixelsPerMeter;
+                    }
+
+                    worldHandle.DrawPrimitives(DrawPrimitiveTopology.TriangleFan, vertices, Color.White);
+                    // LuaM end
                 }
             }, Color.Transparent);
 

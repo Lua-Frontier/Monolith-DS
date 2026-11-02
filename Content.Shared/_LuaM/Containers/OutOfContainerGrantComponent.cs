@@ -13,7 +13,7 @@ namespace Content.Shared._LuaM.Container.Components
         [AlwaysPushInheritance]
         public ComponentRegistry Components { get; private set; } = new();
 
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
         public Dictionary<string, bool> Active = new();
     }
 }

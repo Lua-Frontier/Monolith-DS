@@ -6,6 +6,7 @@ using Content.Shared.Database;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
+using Content.Shared.Lathe; // LuaM
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Whitelist;
@@ -29,6 +30,7 @@ public abstract partial class SharedMaterialReclaimerSystem : EntitySystem
     [Dependency] protected SharedAudioSystem _audio = default!; // Frontier: private<protected
     [Dependency] protected SharedContainerSystem Container = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] protected SharedLatheSystem Lathe = default!; // LuaM
     //[Dependency] private EmagSystem _emag = default!; // Frontier: no point
 
     public const string ActiveReclaimerContainerId = "active-material-reclaimer-container";
@@ -91,6 +93,14 @@ public abstract partial class SharedMaterialReclaimerSystem : EntitySystem
     /// <summary>
     /// Tries to start processing an item via a <see cref="MaterialReclaimerComponent"/>.
     /// </summary>
+    public bool ReturnsRecipe(EntityUid item, MaterialReclaimerComponent component) // LuaM
+    {
+        if (component.RecipeReturn <= 0f || Prototype(item)?.ID is not { } id || !Lathe.InverseRecipes.ContainsKey(id))
+            return false;
+
+        return !TryComp<PhysicalCompositionComponent>(item, out var composition) || composition.MaterialComposition.Count == 0;
+    }
+
     public bool TryStartProcessItem(EntityUid uid, EntityUid item, MaterialReclaimerComponent? component = null, EntityUid? user = null, bool predictSound = true) // Frontier: add predictSound
     {
         if (!Resolve(uid, ref component))
@@ -102,7 +112,7 @@ public abstract partial class SharedMaterialReclaimerSystem : EntitySystem
         if (HasComp<MobStateComponent>(item) && !CanGib(uid, item, component)) // whitelist? We be gibbing, boy!
             return false;
 
-        if (_whitelistSystem.IsWhitelistFail(component.Whitelist, item) ||
+        if (_whitelistSystem.IsWhitelistFail(component.Whitelist, item) && !ReturnsRecipe(item, component) || // LuaM: && !ReturnsRecipe(item, component)
             _whitelistSystem.IsBlacklistPass(component.Blacklist, item))
             return false;
 

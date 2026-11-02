@@ -324,9 +324,9 @@
       - Sidearm # Frontier
     - type: PhysicalComposition # LuaM recyclable
       materialComposition:
-        Steel: 500
-        Glass: 400
-        Gold: 100
+        Steel: 250 # LuaM 500 > 250
+        Glass: 200 # LuaM 400 > 200
+        Gold: 50 # LuaM 100 > 50
 
 # Admeme
 - type: entity

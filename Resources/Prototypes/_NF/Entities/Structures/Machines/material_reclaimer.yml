@@ -92,8 +92,22 @@
         loop: true
     useOldSolutionLogic: true
     solutionContainerId: output
+    storeMaterials: true # LuaM
+    recipeReturn: 0.5 # LuaM
+    recipeReturnBlacklist: # LuaM
+    - Bluespace
   - type: MaterialStorage
     insertOnInteract: false
+  # LuaM start: stored materials are ejected from the UI and can be shared with a material silo
+  - type: OreSiloClient
+  - type: ActivatableUI
+    key: enum.MaterialReclaimerUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.MaterialReclaimerUiKey.Key:
+        type: MaterialReclaimerBoundUserInterface
+  # LuaM end
   - type: ContainerContainer
     containers:
       active-material-reclaimer-container: !type:Container

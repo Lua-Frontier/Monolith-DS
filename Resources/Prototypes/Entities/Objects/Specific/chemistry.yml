@@ -388,6 +388,10 @@
   parent: BaseSyringe
   id: Syringe
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Plastic: 50
+      Steel: 12
   - type: Injector
     transferAmount: 15
     toggleState: Draw
@@ -402,6 +406,10 @@
   description: A regular syringe, reshaped to fit inside of a gun.
   id: MiniSyringe
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Plastic: 75
+      Steel: 25
   - type: Sprite
     sprite: Objects/Specific/Chemistry/syringe.rsi
     layers:
@@ -478,6 +486,10 @@
   name: bluespace syringe
   description: Injecting with advanced bluespace technology.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Plastic: 62
+      Steel: 25
   - type: Sprite
     layers:
     - state: syringe1
@@ -510,6 +522,10 @@
   name: cryostasis syringe
   description: A syringe used to contain chemicals or solutions without reactions.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Plastic: 25
+      Steel: 25
   - type: Sprite
     layers:
     - state: syringe1

@@ -185,7 +185,7 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         Dirty(uid, component);
 
         // scales the output if the process was interrupted.
-        var completion = 1f - Math.Clamp((float) Math.Round((active.EndTime - Timing.CurTime) / active.Duration),
+        var completion = 1f - Math.Clamp((float) ((active.EndTime - Timing.CurTime) / active.Duration), // LuaM: removed Math.Round
             0f,
             1f);
         Reclaim(uid, item, completion, component);
@@ -233,14 +233,33 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         if (!Resolve(reclaimer, ref storage, ref xform, false))
             return;
 
+        // LuaM-start
+        if (TryComp<MaterialReclaimerComponent>(reclaimer, out var reclaimerComp) && ReturnsRecipe(item, reclaimerComp))
+        {
+            foreach (var (material, amount) in Lathe.InverseRecipes[Prototype(item)!.ID][0].Materials)
+            {
+                if (!reclaimerComp.RecipeReturnBlacklist.Contains(material))
+                    _materialStorage.TryChangeMaterialAmount(reclaimer, material, (int) (amount * reclaimerComp.RecipeReturn * efficiency), storage);
+            }
+
+            return;
+        }
+        // LuaM-end
+
         if (!Resolve(item, ref composition, false))
             return;
 
+        var stackCount = CompOrNull<StackComponent>(item)?.Count ?? 1; // LuaM
         foreach (var (material, amount) in composition.MaterialComposition)
         {
-            var outputAmount = (int) (amount * efficiency);
+            var outputAmount = (int) (amount * stackCount * efficiency); // LuaM: + stackCount
             _materialStorage.TryChangeMaterialAmount(reclaimer, material, outputAmount, storage);
         }
+
+        // LuaM-start
+        if (CompOrNull<MaterialReclaimerComponent>(reclaimer)?.StoreMaterials == true)
+            return;
+        // LuaM-end
 
         foreach (var (storedMaterial, storedAmount) in storage.Storage)
         {
@@ -315,10 +334,11 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
 
         if (Resolve(item, ref composition, false))
         {
+            var stackCount = CompOrNull<StackComponent>(item)?.Count ?? 1; // LuaM
             foreach (var (key, value) in composition.ChemicalComposition)
             {
                 // TODO use ReagentQuantity
-                totalChemicals.AddReagent(key, value * efficiency, false);
+                totalChemicals.AddReagent(key, value * stackCount * efficiency, false); // LuaM: + stackCount
             }
         }
 
