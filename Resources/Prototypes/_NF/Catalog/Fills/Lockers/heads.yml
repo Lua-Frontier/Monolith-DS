@@ -50,6 +50,7 @@
       - id: WeaponOverseerMace # Mono
       - id: PhoneInstrumentHigh # Mono
       - id: WeaponCaseShortBombCollar # Mono
+      - id: ShipVoucherRosa # LuaM
 
 - type: entity
   id: LockerNfsdSheriffFilled
