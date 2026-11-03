@@ -31,7 +31,7 @@
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
   - type: StaticPrice
-    price: 5000
+    price: 550 # LuaM: 5000 > 550
     vendPrice: 42300
 
 - type: entity
@@ -161,7 +161,7 @@
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
   - type: StaticPrice
-    price: 5000
+    price: 550 # LuaM: 5000 > 550
     vendPrice: 42300
 
 - type: entity
@@ -209,7 +209,7 @@
     defaultColor: "#FF0000"
   - type: AmmoCounter
   - type: StaticPrice
-    price: 5000
+    price: 550 # LuaM: 5000 > 550
     vendPrice: 42300
   - type: ItemTax
     taxAccounts:

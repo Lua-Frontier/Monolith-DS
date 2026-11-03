@@ -14,15 +14,15 @@
       maxOffset: 1
       pvsIncrease: 0.3
   - type: ESGunRecoilAttachment # Bonuses only apply on wield.
-    recoilRecoveryModifier: 1
+    recoilRecoveryModifier: 0.4
     recoilIncreaseModifier: 1
     minSpreadModifier: 1
-    maxSpreadModifier: 1.1
+    maxSpreadModifier: 1
   - type: ESGunWieldRecoilAttachment
-    wieldRecoilRecoveryModifier: 0.5
+    wieldRecoilRecoveryModifier: 1.5
     wieldRecoilIncreaseModifier: 1
-    wieldMinSpreadModifier: 1
-    wieldMaxSpreadModifier: 0.9
+    wieldMinSpreadModifier: 1.4
+    wieldMaxSpreadModifier: 1.4
   - type: Tag
     tags:
     - MonoOptic
@@ -45,15 +45,15 @@
       maxOffset: 3
       pvsIncrease: 0.5
   - type: ESGunRecoilAttachment # Bonuses only apply on wield.
-    recoilRecoveryModifier: 1
-    recoilIncreaseModifier: 2
+    recoilRecoveryModifier: 0.4
+    recoilIncreaseModifier: 1
     minSpreadModifier: 1
     maxSpreadModifier: 1
   - type: ESGunWieldRecoilAttachment
-    wieldRecoilRecoveryModifier: 0.95
-    wieldRecoilIncreaseModifier: 0.5
-    wieldMinSpreadModifier: 1.05
-    wieldMaxSpreadModifier: 1
+    wieldRecoilRecoveryModifier: 2.0
+    wieldRecoilIncreaseModifier: 1
+    wieldMinSpreadModifier: 1.4
+    wieldMaxSpreadModifier: 1.4
   - type: Tag
     tags:
     - MonoOptic

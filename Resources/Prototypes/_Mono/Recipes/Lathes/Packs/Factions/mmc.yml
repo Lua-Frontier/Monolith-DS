@@ -25,6 +25,7 @@
   recipes:
   - WeaponSubMachineGunMasamuneMMC
   - WeaponPistolKuosameMMC
+  - BaseMagazine57x28mmPistolHighCapacityFMJ # LuaM add
   - ClothingOuterHardsuitMieyoMiningMMC
 
 - type: latheRecipePack

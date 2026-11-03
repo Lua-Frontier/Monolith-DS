@@ -277,7 +277,7 @@
     whitelist:
       tags:
         - Cartridge57x28mmFMJ
-    capacity: 30
+    capacity: 35 #LuaM: 30 > 35
   - type: Item
     size: Small
     storedRotation: 45

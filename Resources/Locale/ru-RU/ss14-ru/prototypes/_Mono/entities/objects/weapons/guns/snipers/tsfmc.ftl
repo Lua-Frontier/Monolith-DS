@@ -1,5 +1,5 @@
-ent-WeaponAMRShenzhen = TCA QBU-284 'Shenzhen' coilgun AMR
-    .desc = Magazine-fed AMR, utilizing electromagnets to fire 13.4x92mm DU-APFSDS rounds with extreme velocity.
-ent-WeaponAMRShenzhenEmpty = TCA QBU-284 'Shenzhen' coilgun AMR
-    .desc = Magazine-fed AMR, utilizing electromagnets to fire 13.4x92mm DU-APFSDS rounds with extreme velocity.
+ent-WeaponAMRShenzhen = TCA QBU-284 'ЖеньШень' coilgun AMR
+    .desc = Снайперская винтовка с магазинным питанием, использующий электромагниты для стрельбы патронами DU-APFSDS калибра 13,4х92 мм с предельной скоростью..
+ent-WeaponAMRShenzhenEmpty = TCA QBU-284 'ЖеньШень' coilgun AMR
+    .desc = Снайперская винтовка с магазинным питанием, использующий электромагниты для стрельбы патронами DU-APFSDS калибра 13,4х92 мм с предельной скоростью..
     .suffix = Empty

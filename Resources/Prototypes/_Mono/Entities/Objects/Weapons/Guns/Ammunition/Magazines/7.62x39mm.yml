@@ -14,7 +14,7 @@
       tags:
         - Cartridge762x39mmFMJ
     proto: Cartridge762x39mmFMJ
-    capacity: 30
+    capacity: 35 # LuaM 30 > 35
   - type: Item
     size: Small
   - type: ContainerContainer

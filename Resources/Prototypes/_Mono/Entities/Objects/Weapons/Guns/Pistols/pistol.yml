@@ -90,13 +90,14 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Magazine57x28mmPistolFMJ
+        startingItem: Magazine57x28mmPistolHighCapacityFMJ # LuaM Magazine57x28mmPistolFMJ > Magazine57x28mmPistolHighCapacityFMJ
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
           - Magazine57x28mmPistolFMJ
+          - Magazine57x28mmPistolHighCapacityFMJ # LuaM add
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
