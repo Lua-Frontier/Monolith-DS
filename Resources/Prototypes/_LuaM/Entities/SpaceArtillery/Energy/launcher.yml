@@ -15,7 +15,7 @@
   name: SL-170 «Moros»
   parent:
   - BallisticArtilleryTier2HP
-  - BallisticArtilleryBase
+  - BallisticArtillery
   description: A laser weapon that engages targets with rapid, precise shots.
   components:
   - type: StaticPrice
@@ -95,7 +95,7 @@
   id: WeaponTurretShkval
   name: HL-220 «Shkval»
   parent:
-  - BallisticArtilleryUnanchorable
+  - BallisticArtillery
   - BallisticArtilleryTier4HP
   description: A heavy laser weapon that unleashes a barrage of shots, destroying everything in its path.
   components:
