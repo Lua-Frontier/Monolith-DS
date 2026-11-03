@@ -93,6 +93,14 @@ marking-AriralTailFluff-tail_overlay = Fluff
 marking-AriralTailBigFluff = Ariral Tail (Big Fluffy)
 marking-AriralTailBigFluff-tail = Tail
 marking-AriralTailBigFluff-tail_long = Fluff
+marking-AriralTailAnimated = Ariral Tail (Wagging)
+marking-AriralTailFluffAnimated = Ariral Tail (Fluffy, Wagging)
+marking-AriralTailFluffAnimated-tail_wagging = Tail
+marking-AriralTailFluffAnimated-tail_overlay_wagging = Fluff
+marking-AriralTailBigFluffAnimated = Ariral Tail (Big Fluffy, Wagging)
+marking-AriralTailBigFluffAnimated-tail_wagging = Tail
+marking-AriralTailBigFluffAnimated-tail_long_wagging = Fluff
+marking-AriralEyeWhites = Eye Whites
 
 language-Avali-name = Avali
 language-Avali-description = Chirps and short trills.

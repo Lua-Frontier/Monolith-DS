@@ -152,7 +152,7 @@ marking-VulpTailCoyoteWag-coyote_wag = Coyote Tail
 marking-VulpTailCoyoteWag = Vulpkanin Coyote (Wag)
 
 marking-VulpTailCorgiWag-corgi_wag = Corgi Tail
-marking-VulpTailCorgiWag = Vulpkanin Corgi (Wag)
+marking-VulpTailCorgiWag = Vulpkanin Corgi
 
 marking-VulpTailHusky-husky-inner = Husky Tail (Inner)
 marking-VulpTailHusky-husky-outer = Husky Tail (Outer)
@@ -178,7 +178,7 @@ marking-VulpTailFluffy-fluffy = Fluffy Tail
 marking-VulpTailFluffy = Vulpkanin Fluffy
 
 marking-VulpTailDalmatianWag-dalmatian_wag = Dalmatian Tail
-marking-VulpTailDalmatianWag = Vulpkanin Dalmatian (Wag)
+marking-VulpTailDalmatianWag = Vulpkanin Dalmatian
 
 
 marking-VulpBellyCrest-belly_crest = Belly
@@ -253,3 +253,42 @@ marking-VulpFacialHairRuff = Ruff
 marking-VulpFacialHairElder = Elder
 marking-VulpFacialHairElderChin = Elder Chin
 marking-VulpFacialHairKita = Kita
+
+# LuaM start
+marking-VulpTailWag-vulp = Vulpkanin Tail (Base)
+marking-VulpTailWag-vulp-tip = Vulpkanin Tail (Tip)
+marking-VulpTailWagTip-vulp = Vulpkanin Tail (Base)
+marking-VulpTailWagTip-vulp-tip = Vulpkanin Tail (Tip)
+marking-VulpTailFoxWag-fox = Vulpkanin Fox Tail (Base)
+marking-VulpTailFoxWag-fox-fade = Vulpkanin Fox Tail (Fade)
+marking-VulpTailFoxWagTip-fox = Vulpkanin Fox Tail (Base)
+marking-VulpTailFoxWagTip-fox-tip = Vulpkanin Fox Tail (Tip)
+marking-VulpTailBushyWag-bushfluff = Bushfluff Tail
+marking-VulpTailCoyoteWag-coyote = Coyote Tail
+marking-VulpTailCorgiWag-corgi = Corgi Tail
+marking-VulpTailDalmatianWag-dalmatian = Dalmatian Tail
+marking-VulpTailAnimated = Vulpkanin (Wagging)
+marking-VulpTailTipAnimated = Vulpkanin (Tip) (Wagging)
+marking-VulpTailWagAnimated = Vulpkanin (Wag) (Wagging)
+marking-VulpTailWagTipAnimated = Vulpkanin (Wag, Tip) (Wagging)
+marking-VulpTailAltAnimated = Vulpkanin (Alt) (Wagging)
+marking-VulpTailAltTipAnimated = Vulpkanin (Alt, Tip) (Wagging)
+marking-VulpTailLongAnimated = Vulpkanin Long (Wagging)
+marking-VulpTailFoxAnimated = Vulpkanin Fox (Wagging)
+marking-VulpTailFoxTipAnimated = Vulpkanin Fox (Tip) (Wagging)
+marking-VulpTailFoxWagAnimated = Vulpkanin Fox (Wag) (Wagging)
+marking-VulpTailFoxWagTipAnimated = Vulpkanin Fox (Wag, Tip) (Wagging)
+marking-VulpTailBushyAnimated = Vulpkanin Bush (Wagging)
+marking-VulpTailBushyWagAnimated = Vulpkanin Bush (Wag) (Wagging)
+marking-VulpTailCoyoteAnimated = Vulpkanin Coyote (Wagging)
+marking-VulpTailCoyoteWagAnimated = Vulpkanin Coyote (Wag) (Wagging)
+marking-VulpTailCorgiWagAnimated = Vulpkanin Corgi (Wagging)
+marking-VulpTailHuskyAnimated = Vulpkanin Husky (Wagging)
+marking-VulpTailHuskyAltAnimated = Vulpkanin Husky (Alt) (Wagging)
+marking-VulpTailFox2Animated = Vulpkanin Fox 2 (Wagging)
+marking-VulpTailFox3Animated = Vulpkanin Fox 3 (Wagging)
+marking-VulpTailFennecAnimated = Vulpkanin Fennec (Wagging)
+marking-VulpTailOtieAnimated = Vulpkanin Otie (Wagging)
+marking-VulpTailFluffyAnimated = Vulpkanin Fluffy (Wagging)
+marking-VulpTailDalmatianWagAnimated = Vulpkanin Dalmatian (Wagging)
+# LuaM end

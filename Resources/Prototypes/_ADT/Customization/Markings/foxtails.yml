@@ -13,9 +13,9 @@
           category: FacialHair
         - !type:SkinColoring
   sprites:
-  - sprite: _ADT/Mobs/Customization/fox_parts.rsi
-    state: tail_fox_wag_stripes_prime
-  - sprite: _ADT/Mobs/Customization/fox_parts.rsi
-    state: tail_fox_wag_stripes_second
-  - sprite: _ADT/Mobs/Customization/fox_parts.rsi
-    state: tail_fox_wag_stripes_third
+  - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi # LuaM
+    state: tail_fox_stripes_prime # LuaM
+  - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi # LuaM
+    state: tail_fox_stripes_second # LuaM
+  - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi # LuaM
+    state: tail_fox_stripes_third # LuaM

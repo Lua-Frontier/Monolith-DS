@@ -1,0 +1,26 @@
+- type: marking
+  id: ProtogenTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: _LuaM/Mobs/Customization/Protogen/tail_markings.rsi
+    state: tail_protogen_wag
+
+- type: marking
+  id: ProtogenTailBushyAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: _LuaM/Mobs/Customization/Protogen/tail_markings.rsi
+    state: bushy_tail_protogen_wag
+
+- type: marking
+  id: ProtogenTailSharkAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: _LuaM/Mobs/Customization/Protogen/tail_markings.rsi
+    state: shark_tail_protogen_wag

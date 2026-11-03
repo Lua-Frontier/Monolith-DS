@@ -8,6 +8,7 @@
   - type: Hunger
   - type: Thirst
   - type: Carriable
+  - type: Wagging
   - type: Icon
     sprite: _LuaM/Mobs/Species/Ariral/parts.rsi
     state: full

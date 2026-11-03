@@ -3,7 +3,7 @@
   id: Hiss
   category: Vocal
   name: chat-emote-name-hiss # LuaM: Hiss > chat-emote-name-hiss
-  icon: Interface/Actions/scream.png
+  icon: _LuaM/Interface/Emotes/hiss.png # LuaM: Interface/Actions/scream.png > hiss.png
   available: false
   whitelist:
     components:
@@ -27,7 +27,7 @@
   id: Meow
   category: Vocal
   name: chat-emote-name-meow # LuaM: Meow > chat-emote-name-meow
-  icon: Interface/Actions/scream.png
+  icon: _LuaM/Interface/Emotes/meow.png # LuaM: Interface/Actions/scream.png > meow.png
   available: false
   whitelist:
     components:
@@ -69,7 +69,7 @@
   id: Mew
   category: Vocal
   name: chat-emote-name-mew # LuaM: Mew > chat-emote-name-mew
-  icon: Interface/Actions/scream.png
+  icon: _LuaM/Interface/Emotes/mew.png # LuaM: Interface/Actions/scream.png > mew.png
   available: false
   whitelist:
     components:
@@ -88,7 +88,7 @@
   id: Growl
   category: Vocal
   name: chat-emote-name-growl # LuaM: Growl > chat-emote-name-growl
-  icon: Interface/Actions/scream.png
+  icon: _LuaM/Interface/Emotes/growl.png # LuaM: Interface/Actions/scream.png > growl.png
   available: false
   whitelist:
     components:
@@ -107,7 +107,7 @@
   id: Purr
   category: Vocal
   name: chat-emote-name-purr # LuaM: Purr > chat-emote-name-purr
-  icon: Interface/Actions/scream.png
+  icon: _LuaM/Interface/Emotes/purr.png # LuaM: Interface/Actions/scream.png > purr.png
   available: false
   whitelist:
     components:

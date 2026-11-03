@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Wagging generated for Monolith-DS from _Mono protogen_parts.rsi tails (Bushy + normal tail from https://github.com/ParadiseSS13/Paradise edited by Floofers and SuperJoelD00D, shark tail by BlitzTheSquishy)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "tail_protogen_wag",
+            "directions": 4,
+            "delays": [
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
+            ]
+        },
+        {
+            "name": "bushy_tail_protogen_wag",
+            "directions": 4,
+            "delays": [
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
+            ]
+        },
+        {
+            "name": "shark_tail_protogen_wag",
+            "directions": 4,
+            "delays": [
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
+                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+marking-ADTFoxTailAnimated = Striped Fox Tail (Wagging)
+marking-FelinidTailFoxtailAnimated = Fox Tail (Wagging)
+marking-ProtogenTailAnimated = Tail (Wagging)
+marking-ProtogenTailBushyAnimated = Bushy Tail (Wagging)
+marking-ProtogenTailSharkAnimated = Shark Tail (Wagging)
