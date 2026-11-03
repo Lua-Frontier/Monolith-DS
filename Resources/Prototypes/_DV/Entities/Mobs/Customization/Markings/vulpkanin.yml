@@ -567,10 +567,10 @@
   markingCategory: Tail
   speciesRestriction: []
   sprites:
-    - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_alt_wag
-    - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_alt_wag-fade
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-fade
 
 - type: marking
   id: VulpTailAltTipAnimated
@@ -578,10 +578,10 @@
   markingCategory: Tail
   speciesRestriction: []
   sprites:
-    - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_alt_wag
-    - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_alt_wag-tip
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-tip
 
 - type: marking
   id: VulpTailLongAnimated
@@ -710,7 +710,7 @@
   speciesRestriction: []
   sprites:
     - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: fox2_wag
+      state: fennec-wagging
 
 - type: marking
   id: VulpTailFox3Animated
@@ -718,10 +718,10 @@
   markingCategory: Tail
   speciesRestriction: []
   sprites:
-    - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: fox3_wag
-    - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: fox3_wag-tip
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-tip
 
 - type: marking
   id: VulpTailFennecAnimated
@@ -738,8 +738,8 @@
   markingCategory: Tail
   speciesRestriction: []
   sprites:
-    - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: otie_wag
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fox_wag
 
 - type: marking
   id: VulpTailFluffyAnimated

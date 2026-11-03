@@ -99,6 +99,7 @@ public abstract partial class SwitchableOverlaySystem<TComp, TEvent> : EntitySys
             DeactivateSound = component.DeactivateSound,
             ToggleAction = component.ToggleAction,
             LightRadius = component is ThermalVisionComponent thermal ? thermal.LightRadius : 0f,
+            PulseTime = component.PulseTime, // LuaM
         };
     }
 
@@ -111,6 +112,14 @@ public abstract partial class SwitchableOverlaySystem<TComp, TEvent> : EntitySys
         component.FlashDurationMultiplier = state.FlashDurationMultiplier;
         component.ActivateSound = state.ActivateSound;
         component.DeactivateSound = state.DeactivateSound;
+
+        // LuaM start
+        if (component.PulseTime != state.PulseTime)
+        {
+            component.PulseTime = state.PulseTime;
+            component.PulseAccumulator = state.PulseTime;
+        }
+        // LuaM end
 
         if (component.ToggleAction != state.ToggleAction)
         {

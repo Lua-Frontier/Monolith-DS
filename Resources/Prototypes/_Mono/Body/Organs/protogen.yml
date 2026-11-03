@@ -97,7 +97,7 @@
     onAdd:
     - type: ThermalVision # LuaM
       flashDurationMultiplier: 1
-      pulseTime: 2
+      pulseTime: 1 # LuaM: 2 > 1
       isEquipment: false
       toggleAction: PulseVulpkaninThermalVision
       color: "#da4260"

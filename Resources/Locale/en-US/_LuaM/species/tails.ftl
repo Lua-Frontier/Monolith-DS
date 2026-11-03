@@ -3,3 +3,4 @@ marking-FelinidTailFoxtailAnimated = Fox Tail (Wagging)
 marking-ProtogenTailAnimated = Tail (Wagging)
 marking-ProtogenTailBushyAnimated = Bushy Tail (Wagging)
 marking-ProtogenTailSharkAnimated = Shark Tail (Wagging)
+marking-ProtogenTailBushy-fluffy = Tail

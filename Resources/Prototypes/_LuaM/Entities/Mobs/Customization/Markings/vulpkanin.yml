@@ -26,7 +26,7 @@
   markingCategory: Tail
   speciesRestriction: []
   sprites:
-  - sprite: _LuaM/Mobs/Customization/Felinid/foxtail.rsi
-    state: base_fox_tail_wag
-  - sprite: _LuaM/Mobs/Customization/Felinid/foxtail.rsi
-    state: base_fox_tail_tip_wag
+  - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag
+  - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag-tip

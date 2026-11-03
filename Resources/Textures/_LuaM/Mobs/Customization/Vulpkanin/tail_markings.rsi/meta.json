@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "husky, fennec, long, fluffy and their wagging taken from https://github.com/space-wizards/space-station-14 (DeltaV sprites, wagging animations by TiniestShark). corgi, dalmatian are first frames of _DV corgi_wag/dalmatian_wag. vulp_alt_wag, fox2_wag, fox3_wag, otie_wag are generated from _DV tail_markings.rsi statics for Monolith-DS. tail_fox_stripes_* are still frames of _ADT fox_parts.rsi tail_fox_wag_stripes_*",
+    "copyright": "husky, fennec, long, fluffy and their wagging taken from https://github.com/space-wizards/space-station-14 (DeltaV sprites, wagging animations by TiniestShark). corgi, dalmatian are first frames of _DV corgi_wag/dalmatian_wag. tail_fox_stripes_* are still frames of _ADT fox_parts.rsi tail_fox_wag_stripes_*",
     "size": {
         "x": 32,
         "y": 32
@@ -97,76 +97,6 @@
         },
         {
             "name": "fluffy-wagging",
-            "directions": 4,
-            "delays": [
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
-            ]
-        },
-        {
-            "name": "vulp_alt_wag",
-            "directions": 4,
-            "delays": [
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
-            ]
-        },
-        {
-            "name": "vulp_alt_wag-fade",
-            "directions": 4,
-            "delays": [
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
-            ]
-        },
-        {
-            "name": "vulp_alt_wag-tip",
-            "directions": 4,
-            "delays": [
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
-            ]
-        },
-        {
-            "name": "fox2_wag",
-            "directions": 4,
-            "delays": [
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
-            ]
-        },
-        {
-            "name": "fox3_wag",
-            "directions": 4,
-            "delays": [
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
-            ]
-        },
-        {
-            "name": "fox3_wag-tip",
-            "directions": 4,
-            "delays": [
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],
-                [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ]
-            ]
-        },
-        {
-            "name": "otie_wag",
             "directions": 4,
             "delays": [
                 [ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1 ],

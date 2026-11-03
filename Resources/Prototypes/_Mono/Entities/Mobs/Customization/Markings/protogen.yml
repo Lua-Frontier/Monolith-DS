@@ -13,8 +13,8 @@
   markingCategory: Tail
   speciesRestriction: [Protogen]
   sprites:
-  - sprite: _Mono/Mobs/Customization/protogen_parts.rsi
-    state: bushy_tail_protogen
+  - sprite: _LuaM/Mobs/Customization/Vulpkanin/tail_markings.rsi # LuaM
+    state: fluffy # LuaM: bushy_tail_protogen > fluffy
 
 - type: marking
   id: ProtogenTailShark

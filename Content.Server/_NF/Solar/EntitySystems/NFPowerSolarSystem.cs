@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Power.Components;
 using Content.Server._NF.Solar.Components;
+using Content.Shared._LuaM.SectorAnomaly; // LuaM
 using Content.Shared.GameTicking;
 using Content.Shared.Light.Components; // Mono
 using Content.Shared.Light.EntitySystems; // Mono
@@ -181,6 +182,10 @@ internal sealed partial class NFPowerSolarSystem : EntitySystem
         // and that's expected behavior.
         float coverage = (float)Math.Max(0, Math.Cos(panelRelativeToSun));
 
+        var bright = HasComp<SectorBrightnessComponent>(xform.MapUid); // LuaM
+        if (bright) // LuaM
+            coverage = 1f; // LuaM
+
         // Mono
         var gridUid = xform.GridUid;
         if (TryComp<RoofComponent>(gridUid, out var roofComp) && TryComp<MapGridComponent>(gridUid, out var gridComp))
@@ -191,7 +196,7 @@ internal sealed partial class NFPowerSolarSystem : EntitySystem
                 coverage = 0f;
         }
 
-        if (coverage > 0)
+        if (coverage > 0 && !bright) // LuaM: && !bright
         {
             // Determine if the solar panel is occluded, and zero out coverage if so.
             var ray = new CollisionRay(_transformSystem.GetWorldPosition(xform), TowardsSun.ToWorldVec(), (int)CollisionGroup.Opaque);

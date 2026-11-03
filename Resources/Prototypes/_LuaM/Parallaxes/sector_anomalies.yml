@@ -1,0 +1,28 @@
+- type: parallax
+  id: SectorDarkness
+  layers:
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_LuaM/Parallaxes/sector_darkness.png"
+    slowness: 0.998046875
+
+- type: parallax
+  id: SectorBrightness
+  layers:
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_LuaM/Parallaxes/sector_brightness.png"
+    slowness: 0.998046875
+    scrolling: "0.004, 0.002"
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_LuaM/Parallaxes/parallax_noise_opacity.png"
+    slowness: 0.995
+    scale: 1.5, 1.5
+    scrolling: "0.004, 0.002"
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_LuaM/Parallaxes/Tortuga/AsteroidsBack.png"
+    slowness: 0.967
+    scale: 0.8, 0.8
+    scrolling: "-0.0005, -0.0009"
