@@ -2,25 +2,23 @@
   id: MonoCaelestinusVouchersStatic
   recipes:
   - ShipVoucherCaelestinusT0Recipe
-  - ShipVoucherCaelestinusT0RecipeAlternative
+  # - ShipVoucherCaelestinusT0RecipeAlternative # Commented by LuaM
   - ShipVoucherCaelestinusT1Recipe
-  - ShipVoucherCaelestinusT1RecipeAlternative
+  # - ShipVoucherCaelestinusT1RecipeAlternative # Commented by LuaM
 # LuaM Start
   - WeaponRifleACRRecipe
-  - WeaponRifleACRRecipeAlternative
   - Magazine635x40mmCaselessBigRecipe
   - Magazine635x40mmCaselessBigPlasmarecipe
-  - Blueprint18x160mmAmmo
   - WeaponSniperHunter101
   - WeaponRifleFPDMR
   - WeaponPistolCCTCGalactica
   - ClothingHeadHardsuitM92
   - ClothingHeadHardsuitM92x
   - ClothingOuterHardsuitM93
-  - ArmorPlateBlunt_Slash 
-  - ArmorPlatePierce 
-  - ArmorPlateHeat 
-  - ArmorPlateSpeed 
+  - ArmorPlateBlunt_Slash
+  - ArmorPlatePierce
+  - ArmorPlateHeat
+  - ArmorPlateSpeed
   - WeaponSmartLmg
 # LuaM end
 

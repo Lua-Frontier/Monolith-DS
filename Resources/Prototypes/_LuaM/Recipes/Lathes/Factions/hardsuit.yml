@@ -1,0 +1,15 @@
+# CC
+- type: latheRecipe
+  id: ClothingHeadHardsuitM92
+  parent: MonoHardsuitT2Recipe
+  result: ClothingHeadHardsuitM92
+
+- type: latheRecipe
+  id: ClothingHeadHardsuitM92x
+  parent: MonoHardsuitT2Recipe
+  result: ClothingHeadHardsuitM92x
+
+- type: latheRecipe
+  id: ClothingOuterHardsuitM93
+  parent: MonoHardsuitT3TsfRecipe
+  result: ClothingOuterHardsuitM93
