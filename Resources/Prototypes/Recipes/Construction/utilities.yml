@@ -182,6 +182,20 @@
     state: conpipe-tagger
 
 - type: construction
+  name: disposal signaller
+  description: A pipe that sends a signal when an item passes through it.
+  id: DisposalSignaller
+  graph: DisposalPipe
+  startNode: start
+  targetNode: signaller
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/disposal.rsi
+    state: conpipe-signaller
+
+- type: construction
   name: disposal trunk
   description: A pipe trunk used as an entry point for disposal systems.
   id: DisposalTrunk
@@ -301,6 +315,20 @@
   icon:
     sprite: Structures/Piping/disposal.rsi
     state: conpipe-y
+
+- type: construction
+  name: disposal four-way junction
+  description: A four-way junction for disposal pipes.
+  id: DisposalXJunction
+  graph: DisposalPipe
+  startNode: start
+  targetNode: xJunction
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Piping/disposal.rsi
+    state: conpipe-x
 
 - type: construction
   name: disposal bend
