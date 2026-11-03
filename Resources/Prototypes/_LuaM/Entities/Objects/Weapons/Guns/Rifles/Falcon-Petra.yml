@@ -25,6 +25,7 @@
     angleDecay: 2
     fireRate: 3
     damageModifier: 1.5 # Brings it down to 152.95 DPS from 161 DPS (assuming perfect accuracy with FMJ on an unarmored target); Lecter has less DPS, but Lecter also has really fucking good accuracy and is free roundstart. # LuaM: 0.95 > 1.0
+    selectedMode: SemiAuto
     availableModes:
     - SemiAuto
     soundGunshot:

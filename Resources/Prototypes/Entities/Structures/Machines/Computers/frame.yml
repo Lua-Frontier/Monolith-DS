@@ -77,7 +77,23 @@
   - type: Sprite
     sprite: Structures/Machines/computers.rsi
     drawdepth: Objects
-    state: broken
+    layers: # LuaM: state > layers
+    - map: [ "computerLayerBody" ]
+      state: broken
+  # LuaM-start
+  - type: EdgeConnection
+    connectionKey: computer-console
+    allowedDirections: East, West
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        computerLayerBody:
+          None: { state: broken, sprite: Structures/Machines/computers.rsi }
+          West: { state: computer_r-broken, sprite: _LuaM/Structures/Machines/computer_edges.rsi }
+          East: { state: computer_l-broken, sprite: _LuaM/Structures/Machines/computer_edges.rsi }
+          East, West: { state: computer_l_r-broken, sprite: _LuaM/Structures/Machines/computer_edges.rsi }
+  # LuaM-end
   - type: Destructible
     thresholds:
     - trigger:

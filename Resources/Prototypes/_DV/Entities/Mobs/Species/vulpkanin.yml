@@ -45,11 +45,6 @@
           32:
             sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
             state: mask
-      head:
-        sizeMaps:
-          32:
-            sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
-            state: head
     displacements:
       jumpsuit:
         sizeMaps:
@@ -71,11 +66,6 @@
           32:
             sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
             state: mask
-      head:
-        sizeMaps:
-          32:
-            sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
-            state: head
     # LuaM end
   - type: Thirst
   - type: Icon
@@ -237,11 +227,6 @@
           32:
             sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
             state: mask
-      head:
-        sizeMaps:
-          32:
-            sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
-            state: head
     displacements:
       jumpsuit:
         sizeMaps:
@@ -263,9 +248,4 @@
           32:
             sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
             state: mask
-      head:
-        sizeMaps:
-          32:
-            sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
-            state: head
     # LuaM end

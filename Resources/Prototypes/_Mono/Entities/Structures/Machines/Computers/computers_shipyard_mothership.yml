@@ -62,9 +62,11 @@
     sprite: _NF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
-      state: computer_blackmarket
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: computer # LuaM
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: generic_keyboard # LuaM
     - map: ["computerLayerScreen"]
       state: shipyard_pdv
     - map: ["computerLayerKeys"]
@@ -93,9 +95,11 @@
     sprite: _NF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
-      state: computer_blackmarket
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: computer # LuaM
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: generic_keyboard # LuaM
     - map: ["computerLayerScreen"]
       state: shipyard_blackmarket
     - map: ["computerLayerKeys"]

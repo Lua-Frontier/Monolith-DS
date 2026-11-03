@@ -5,7 +5,7 @@
   description: A cartridge of highly compressed paint, commonly used in spray painters.
   components:
   - type: LimitedChargesAmmo
-    charges: 15
+    charges: 10
     whitelist:
       components:
       - SprayPainter

@@ -325,6 +325,11 @@
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
+      outerClothing: # LuaM
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Harpy/displacement.rsi
+            state: outerClothing
     femaleDisplacements: {} # Frontier: female jumpsuit displacement
   - type: HarpyVisuals
   - type: UltraVision
@@ -353,6 +358,11 @@
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
+      outerClothing: # LuaM
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Harpy/displacement.rsi
+            state: outerClothing
     femaleDisplacements: {} # Frontier: female jumpsuit displacement
   - type: Sprite
     scale: 0.9, 0.9

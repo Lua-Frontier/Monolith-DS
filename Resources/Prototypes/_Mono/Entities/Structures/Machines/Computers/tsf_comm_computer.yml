@@ -25,6 +25,7 @@
   - type: ConsoleWarDeclarator # LuaM
     faction: TSF
     warDeclarationMessage: comms-console-war-declaration-tsf
+    warDeclarationSound: /Audio/_LuaM/WarDeclaration/war-tsf.ogg
   - type: DeviceNetwork
     deviceNetId: Wireless # Frontier
     transmitFrequencyId: ShuttleTimer

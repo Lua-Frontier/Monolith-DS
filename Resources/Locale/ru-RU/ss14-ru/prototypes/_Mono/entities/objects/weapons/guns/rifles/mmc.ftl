@@ -1,4 +1,4 @@
-ent-WeaponRifleOsaka = MMC V/78 "Osaka" (5.56x45mm)
-    .desc = An accurate and cheap rifle produced by MMC. Fires 5.56x45mm.
-ent-WeaponRifleIzumo = MMC V/79P "Izumo" (5.56x45mm)
-    .desc = An even more accurate and much less cheap rifle produced by MMC, selected out of the highest-performing V/78 rifles and converted to a DMR role. An Erebus railmount is present on the reciever for optics.
+ent-WeaponRifleOsaka = ММС V/78 "Осака" (5.56x45мм)
+    .desc = Точная и дешёвая винтовка производства ММС. Стреляет патронами 5.56x45мм.
+ent-WeaponRifleIzumo = ММС V/79P "Идзумо" (5.56x45мм)
+    .desc = Ещё более точная и куда менее дешёвая винтовка ММС: лучшие из V/78, переделанные в марксманские. На ствольной коробке есть планка Erebus для оптики.

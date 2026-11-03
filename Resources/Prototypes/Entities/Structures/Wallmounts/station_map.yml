@@ -43,6 +43,8 @@
   placement:
     mode: SnapgridCenter
   components:
+    - type: EdgeConnection # LuaM
+      allowedDirections: None
     - type: StationMap
     - type: Transform
       anchored: true

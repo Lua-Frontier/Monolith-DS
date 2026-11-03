@@ -1,0 +1,17 @@
+- type: construction
+  id: PlastitaniumWindowDirectional
+  name: directional plastitanium window
+  description: A sturdy plastitanium-framed directional window.
+  graph: PlastitaniumWindowDirectional
+  startNode: start
+  targetNode: plastitaniumWindowDirectional
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+    - !type:EmptyOrWindowValidInTile
+    - !type:NoWindowsInTile
+  icon:
+    sprite: _LuaM/Structures/Windows/directional_plastitanium.rsi
+    state: plastitanium_window
+  objectType: Structure
+  placementMode: SnapgridCenter

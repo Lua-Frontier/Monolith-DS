@@ -1,4 +1,5 @@
 using Content.Shared.Bed.Sleep;
+using Content.Shared.Humanoid; // LuaM
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
@@ -92,7 +93,16 @@ public sealed partial class InteractionPopupSystem : EntitySystem
         if (_netMan.IsClient && !predict)
             return;
 
-        if (_random.Prob(component.SuccessChance))
+        // LuaM start
+        var successChance = component.SuccessChance;
+        if (component.SuccessForSameSpecies
+            && TryComp<HumanoidAppearanceComponent>(user, out var userHumanoid)
+            && TryComp<HumanoidAppearanceComponent>(uid, out var targetHumanoid)
+            && userHumanoid.Species == targetHumanoid.Species)
+            successChance = 1f;
+        // LuaM end
+
+        if (_random.Prob(successChance))
         {
             if (component.InteractSuccessString != null)
                 msg = Loc.GetString(component.InteractSuccessString, ("target", Identity.Entity(uid, EntityManager))); // Success message (localized).

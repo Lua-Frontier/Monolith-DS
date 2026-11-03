@@ -1,4 +1,4 @@
-ent-ClothingOuterHardsuitMieyoMining = MMC mining suit
-    .desc = A basic EVA suit for MMC employees and non-combat use.
-ent-ClothingOuterHardsuitMieyoCombat = MMC kurogane tacsuit
-    .desc = A tactical combat suit for MMC asset protection & corporate security. It's very light, but not too defensive.
+ent-ClothingOuterHardsuitMieyoMining = шахтёрский скафандр ММС
+    .desc = Простой скафандр для ВКД сотрудников ММС, не предназначенный для боя.
+ent-ClothingOuterHardsuitMieyoCombat = тактический скафандр ММС "Куроган"
+    .desc = Тактический боевой скафандр охраны активов и корпоративной безопасности ММС. Очень лёгкий, но защищает слабо.

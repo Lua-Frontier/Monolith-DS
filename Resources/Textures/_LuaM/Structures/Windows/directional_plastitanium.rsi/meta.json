@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by c_quarian (discord) from the smoothing edge of _NF/Structures/Windows/plastitanium_window.rsi (Paradise, modified by FoxxoTrystan) in the layout of Structures/Windows/directional.rsi",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "plastitanium_window",
+            "directions": 4
+        }
+    ]
+}

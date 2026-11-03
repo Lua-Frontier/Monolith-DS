@@ -27,6 +27,8 @@
   id: ComputerTabletopShuttleTSFNVWS
   suffix: Tabletop, TSFN/TSFMC VWS
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -95,6 +97,8 @@
   id: ComputerTabletopShuttleKPV63RWR
   suffix: Tabletop, PDV/USSP KPV-63 RWR
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -162,6 +166,8 @@
   id: ComputerTabletopShuttleANALR67RWR
   suffix: Tabletop, alt AN/ALR-67
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:

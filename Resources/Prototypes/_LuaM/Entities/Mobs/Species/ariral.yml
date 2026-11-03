@@ -25,6 +25,7 @@
       Unsexed: FemaleAriral
   - type: InteractionPopup
     successChance: 0.1
+    successForSameSpecies: true # LuaM
     interactFailureString: petting-failure-ariral
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg

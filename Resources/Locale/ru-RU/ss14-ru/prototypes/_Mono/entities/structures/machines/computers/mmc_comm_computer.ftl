@@ -1,2 +1,2 @@
-ent-MieyoComputerComms = mieyo communications computer
-    .desc = The primary communications computer for issuing MMC announcements.
+ent-MieyoComputerComms = консоль связи Миейо
+    .desc = Основная консоль связи для объявлений ММС.

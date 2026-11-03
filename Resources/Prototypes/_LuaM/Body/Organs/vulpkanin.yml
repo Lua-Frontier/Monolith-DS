@@ -8,7 +8,7 @@
     onAdd:
     - type: ThermalVision
       flashDurationMultiplier: 1
-      pulseTime: 1
+      pulseTime: 0.7
       isEquipment: false
       toggleAction: PulseVulpkaninThermalVision
       color: "#DC143C"

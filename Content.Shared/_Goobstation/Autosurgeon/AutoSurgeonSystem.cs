@@ -171,11 +171,17 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
                     .FirstOrDefault(organ => organ.Component.SlotId == newOrganComp.SlotId)
                     .Id;
 
-                if (!_body.AddOrganToFirstValidSlot(parent, newPart) && oldOrgan.Valid)
-                {
+                // LuaM start
+                if (oldOrgan.Valid)
                     _body.RemoveOrgan(oldOrgan);
-                    _body.InsertOrgan(parent, newPart, newOrganComp.SlotId);
+
+                if (!_body.InsertOrgan(parent, newPart, newOrganComp.SlotId))
+                {
+                    Del(newPart);
+                    _audio.Stop(ent.Comp.ActiveSound);
+                    return;
                 }
+                // LuaM end
             }
 
             _audio.Stop(ent.Comp.ActiveSound);

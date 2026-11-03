@@ -96,7 +96,7 @@ public sealed partial class SectorAnomalySystem : EntitySystem
         if (_sources == 0 && _anomaly == Anomaly.None)
             return;
 
-        var map = CompOrNull<TransformComponent>(_player.LocalEntity)?.MapUid;
+        var map = _player.LocalEntity is { } local ? CompOrNull<TransformComponent>(local)?.MapUid ?? _map : null;
         var target = GetAnomaly(map);
 
         if (target != _anomaly && (_anomaly == Anomaly.None || _strength <= 0f || map != _map))

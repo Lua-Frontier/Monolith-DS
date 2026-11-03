@@ -1250,10 +1250,6 @@ entities:
       parent: 1
     - type: AmeController
       injecting: True
-    - type: UserInterface
-      actors:
-        enum.AmeControllerUiKey.Key:
-        - invalid
     - type: ContainerContainer
       containers:
         fuelSlot: !type:ContainerSlot

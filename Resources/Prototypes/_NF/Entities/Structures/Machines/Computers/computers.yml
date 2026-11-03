@@ -109,9 +109,11 @@
     sprite: _NF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
-      state: computer
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: computer # LuaM
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: generic_keyboard # LuaM
     - map: ["computerLayerScreen"]
       state: contraband
     - map: ["computerLayerKeys"]
@@ -240,9 +242,11 @@
     sprite: _NF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
-      state: computer_blackmarket
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: computer # LuaM
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: generic_keyboard # LuaM
     - map: ["computerLayerScreen"]
       state: piratebounty
     - map: ["computerLayerKeys"]
@@ -277,9 +281,11 @@
     sprite: _NF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
-      state: computer_blackmarket
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: computer # LuaM
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: generic_keyboard # LuaM
     - map: ["computerLayerScreen"]
       state: contraband # TODO: replace this
     - map: ["computerLayerKeys"]
@@ -301,9 +307,11 @@
     sprite: _NF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
-      state: computer_blackmarket
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: computer # LuaM
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: generic_keyboard # LuaM
     - map: ["computerLayerScreen"]
       state: piratebounty_pad
     - map: ["computerLayerKeys"]
@@ -342,9 +350,11 @@
     sprite: _NF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
-      state: computer
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: computer # LuaM
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: generic_keyboard # LuaM
     - map: ["computerLayerScreen"]
       state: gas_sale_point
     - map: ["computerLayerKeys"]

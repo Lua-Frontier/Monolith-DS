@@ -129,7 +129,7 @@ public sealed partial class CommunicationsConsoleSystem
         if (autoDeclareDelay is { } delay)
             msg += "\n" + Loc.GetString("comms-console-war-declaration-auto-warning", ("minutes", (int) Math.Ceiling(delay.TotalMinutes)));
 
-        _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: comp.Sound, colorOverride: comp.Color);
+        _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: declarator.WarDeclarationSound ?? comp.Sound, colorOverride: comp.Color);
         _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has declared war for {declarator.Faction}: {reason}");
 
         UpdateCommsConsoleInterface();

@@ -1,3 +1,4 @@
+using Content.Server._LuaM.Audio; // LuaM
 using System.Linq;
 using Content.Server.Chat.Systems;
 using Content.Server.Station.Systems;
@@ -21,6 +22,7 @@ public sealed partial class AlertLevelSystem : EntitySystem
     [Dependency] private StationSystem _stationSystem = default!;
     [Dependency] private GameTicker _ticker = default!; // Frontier
     [Dependency] private SectorServiceSystem _sectorService = default!;
+    [Dependency] private AnnouncementAudioSystem _announcementAudio = default!; // LuaM
 
     // Until stations are a prototype, this is how it's going to have to be.
     public const string DefaultAlertLevelSet = "stationAlerts";
@@ -223,7 +225,7 @@ public sealed partial class AlertLevelSystem : EntitySystem
                 //var filter = _stationSystem.GetInOwningStation(station); // Frontier: global alerts
                 var filter = Filter.Empty(); // Frontier
                 filter.AddInMap(_ticker.DefaultMap, EntityManager); // Frontier
-                _audio.PlayGlobal(detail.Sound, filter, true, detail.Sound.Params);
+                _announcementAudio.Mark(_audio.PlayGlobal(detail.Sound, filter, true, detail.Sound.Params)); // LuaM
             }
             else
             {

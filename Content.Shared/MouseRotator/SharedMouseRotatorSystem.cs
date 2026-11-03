@@ -50,7 +50,8 @@ public abstract partial class SharedMouseRotatorSystem : EntitySystem
         if (args.SenderSession.AttachedEntity is not { } ent
             || !TryComp<MouseRotatorComponent>(ent, out var rotator))
         {
-            Log.Error($"User {args.SenderSession.Name} ({args.SenderSession.UserId}) tried setting local rotation directly without a valid mouse rotator component attached!");
+            // -- Клиент шлёт поворот, пока до него не дошло состояние с удалённым MouseRotator (рассинхрон предсказания боевого режима)
+            Log.Debug($"User {args.SenderSession.Name} ({args.SenderSession.UserId}) tried setting local rotation directly without a valid mouse rotator component attached!"); // LuaM: Error > Debug
             return;
         }
 

@@ -3,6 +3,8 @@
   parent: [BaseStructureComputerWallmount, ComputerRadar]
   id: ComputerWallmountRadar
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: _NF/Structures/Machines/computer_wallmount.rsi
@@ -16,6 +18,8 @@
   parent: [BaseStructureComputerWallmount, ComputerAdvancedRadar]
   id: ComputerWallmountAdvancedRadar
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: _NF/Structures/Machines/computer_wallmount.rsi
@@ -29,6 +33,8 @@
   parent: [BaseStructureComputerWallmount, ComputerStationRecords]
   id: ComputerWallmountStationRecords
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: _NF/Structures/Machines/computer_wallmount.rsi
@@ -42,6 +48,8 @@
   parent: [BaseStructureComputerWallmount, ComputerCrewMonitoring]
   id: ComputerWallmountCrewMonitoring
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: _NF/Structures/Machines/computer_wallmount.rsi

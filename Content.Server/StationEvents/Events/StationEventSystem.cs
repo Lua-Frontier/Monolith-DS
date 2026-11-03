@@ -1,3 +1,4 @@
+using Content.Server._LuaM.Audio; // LuaM
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
@@ -26,6 +27,7 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
     [Dependency] protected StationSystem StationSystem = default!;
     [Dependency] protected RadioSystem RadioSystem = default!; // Frontier
     [Dependency] protected MapSystem MapSystem = default!; // Frontier
+    [Dependency] protected AnnouncementAudioSystem AnnouncementAudio = default!; // LuaM
 
     protected ISawmill Sawmill = default!;
 
@@ -60,7 +62,7 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
             RadioSystem.SendRadioMessage(uid, message, stationEvent.StartRadioAnnouncementChannel, mapUid, escapeMarkup: false);
         }
 
-        Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
+        AnnouncementAudio.Mark(Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true)); // LuaM
     }
 
     /// <inheritdoc/>
@@ -108,7 +110,7 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
         }
         // End Frontier
 
-        Audio.PlayGlobal(stationEvent.EndAudio, allPlayersInGame, true);
+        AnnouncementAudio.Mark(Audio.PlayGlobal(stationEvent.EndAudio, allPlayersInGame, true)); // LuaM
     }
 
     /// <summary>
@@ -146,7 +148,7 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
                     var mapUid = MapSystem.GetMap(GameTicker.DefaultMap); // Hack: need a reference to a valid entity on the default map - the map itself works.
                     RadioSystem.SendRadioMessage(uid, message, stationEvent.WarningRadioAnnouncementChannel, mapUid, escapeMarkup: false);
                 }
-                Audio.PlayGlobal(stationEvent.WarningAudio, allPlayersInGame, true);
+                AnnouncementAudio.Mark(Audio.PlayGlobal(stationEvent.WarningAudio, allPlayersInGame, true)); // LuaM
                 stationEvent.WarningAnnounced = true;
             }
             // End Frontier

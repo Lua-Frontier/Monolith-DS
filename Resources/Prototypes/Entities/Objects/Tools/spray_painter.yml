@@ -34,6 +34,6 @@
     price: 20 # Frontier 40<20
   # LuaM-start
   - type: LimitedCharges
-    maxCharges: 15
-    charges: 15
+    maxCharges: 10
+    charges: 10
   # LuaM-end

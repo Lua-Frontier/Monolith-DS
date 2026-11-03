@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "jumpsuit maps based on _White/Mobs/Species/displacement.rsi, adjusted for digitigrade vulpkanin; mask, head and hair made for Monolith-DS",
+    "copyright": "jumpsuit maps based on _White/Mobs/Species/displacement.rsi, adjusted for digitigrade vulpkanin; mask and hair made for Monolith-DS",
     "size": {
         "x": 32,
         "y": 32
@@ -18,10 +18,6 @@
         },
         {
             "name": "mask",
-            "directions": 4
-        },
-        {
-            "name": "head",
             "directions": 4
         },
         {

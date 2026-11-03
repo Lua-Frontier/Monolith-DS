@@ -99,10 +99,14 @@
   id: ComputerTabletopBroken
   suffix: Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     sprite: _NF/Structures/Machines/computer_tabletop.rsi
-    state: broken_tabletop
+    layers: # LuaM: state > layers
+    - map: [ "computerLayerBody" ]
+      state: broken_tabletop
   - type: Fixtures
     fixtures:
       fix1:

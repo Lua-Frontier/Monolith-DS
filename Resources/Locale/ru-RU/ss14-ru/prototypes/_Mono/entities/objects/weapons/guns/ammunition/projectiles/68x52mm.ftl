@@ -1,11 +1,11 @@
 ent-Bullet68x52mmCaseless = пуля (6.8x52мм безгильзовая)
 ent-Bullet68x52mmCaselessPractice = пуля (6.8x52mm безгильзовая учебный)
 ent-Bullet68x52mmCaselessRubber = пуля (6.8x52mm безгильзовая травматическиий)
-ent-Bullet68x52mmCaselessHP = bullet (6.8x52mm Caseless HP)
+ent-Bullet68x52mmCaselessHP = пуля (6.8x52мм безгильзовая экспансивная)
     .desc = { ent-BaseBullet.desc }
-ent-Bullet68x52mmCaselessRIP = bullet (6.8x52mm Caseless RIP)
+ent-Bullet68x52mmCaselessRIP = пуля (6.8x52мм безгильзовая RIP)
     .desc = { ent-BaseBullet.desc }
-ent-Bullet68x52mmCaselessPlasteelAP = bullet (6.8x52mm Caseless AP)
+ent-Bullet68x52mmCaselessPlasteelAP = пуля (6.8x52мм безгильзовая бронебойная)
     .desc = { ent-BaseBullet.desc }
-ent-Bullet68x52mmCaselessPlasma = bullet (6.8x52mm Caseless Plasma)
+ent-Bullet68x52mmCaselessPlasma = пуля (6.8x52мм безгильзовая плазменная)
     .desc = { ent-BaseBulletTrigger.desc }
