@@ -13,5 +13,5 @@ ent-UllmanPlasmaBlade = U.I. нестабильный плазменный ме�
     .desc = Уникальное оружие: горючее для сварки как катализатор воспламенения. Нестабильная плазма даёт мощное пламя и временно повышает урон.
 ent-WeaponVizierShamshir = офицерский шамшир
     .desc = Изогнутый клинок в старом стиле из бледного пластитана. Готов рубить и резать.
-ent-WeaponMieyoHFBlade = mieyo high-frequency blade
-    .desc = A high-frequency blade. It's manufactured to an ungodly level of precision.
+ent-WeaponMieyoHFBlade = высокочастотный клинок Миейо
+    .desc = Высокочастотный клинок, изготовленный с невероятной точностью.

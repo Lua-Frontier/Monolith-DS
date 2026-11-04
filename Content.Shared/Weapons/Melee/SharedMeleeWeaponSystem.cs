@@ -890,14 +890,17 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
     {
         var target = GetEntity(ev.Target);
 
-        if (Deleted(target) ||
-            user == target)
-        {
+        // LuaM-start
+        if (user == target)
             return false;
-        }
 
         // Play a sound to give instant feedback; same with playing the animations
         _meleeSound.PlaySwingSound(user, meleeUid, component);
+
+        if (Deleted(target))
+            return false;
+        // LuaM-end
+
         return true;
     }
 

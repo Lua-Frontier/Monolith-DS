@@ -173,6 +173,9 @@ public abstract partial class SharedMaterialStorageSystem : EntitySystem
         if (!IsMaterialWhitelisted((uid, component), materialId))
             return false;
 
+        if (volume >= 0) // LuaM
+            return component.Storage.GetValueOrDefault(materialId) + volume >= 0; // LuaM
+
         var amount = GetMaterialAmount(uid, materialId, component, localOnly);
         return amount + volume >= 0;
     }

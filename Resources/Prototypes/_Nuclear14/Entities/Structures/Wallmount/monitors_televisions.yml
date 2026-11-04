@@ -4,6 +4,8 @@
   name: VDU
   description: A wall mounted video display unit.
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: Overdoors
     sprite: _Nuclear14/Structures/Wallmounts/vdu.rsi

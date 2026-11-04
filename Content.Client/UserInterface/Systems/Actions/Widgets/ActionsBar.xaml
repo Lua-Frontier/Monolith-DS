@@ -9,11 +9,11 @@
 >
     <BoxContainer Orientation="Vertical">
         <controls:ActionButtonContainer
-            HorizontalAlignment="Center"
+            HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            MaxSize="64 9999"
             Name="ActionsContainer"
             Access="Public"
-            Rows="1"/>
+            Rows="10"/>
+        <controls:ActionPageButtons Name="PageButtons" Access="Public" />
     </BoxContainer>
 </widgets:ActionsBar>

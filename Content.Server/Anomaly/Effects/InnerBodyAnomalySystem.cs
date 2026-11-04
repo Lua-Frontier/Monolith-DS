@@ -210,7 +210,7 @@ public sealed partial class InnerBodyAnomalySystem : SharedInnerBodyAnomalySyste
 
     private void RemoveAnomalyFromBody(Entity<InnerBodyAnomalyComponent> ent)
     {
-        if (!ent.Comp.Injected)
+        if (!ent.Comp.Injected || TerminatingOrDeleted(ent)) // LuaM
             return;
 
         if (_proto.TryIndex(ent.Comp.InjectionProto, out var injectedAnom))

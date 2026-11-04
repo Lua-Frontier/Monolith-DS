@@ -70,7 +70,11 @@
   id: ComputerWallmountBroken
   suffix: Wallmount
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: _NF/Structures/Machines/computer_wallmount.rsi
-    state: broken_wallmount
+    layers: # LuaM: state > layers
+    - map: [ "computerLayerBody" ]
+      state: broken_wallmount

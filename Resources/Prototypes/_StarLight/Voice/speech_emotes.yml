@@ -2,6 +2,7 @@
   id: Whine
   name: chat-emote-name-whine
   category: Vocal
+  icon: _LuaM/Interface/Emotes/whine.png # LuaM
   available: false
   chatMessages: ["chat-emote-msg-whine"]
   whitelist:
@@ -18,6 +19,7 @@
   id: Yip
   name: chat-emote-name-yip
   category: Vocal
+  icon: _LuaM/Interface/Emotes/bark.png # LuaM
   available: false
   chatMessages: ["chat-emote-msg-yip"]
   whitelist:
@@ -29,3 +31,8 @@
   chatTriggers:
   - yip
   - yips
+  # LuaM start
+  - тяв
+  - тявк
+  - тявкнуть
+  # LuaM end

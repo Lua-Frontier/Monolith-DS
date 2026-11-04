@@ -9,9 +9,11 @@
     sprite: _NF/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
-      state: computer
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: computer # LuaM
     - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: generic_keyboard # LuaM
     - map: ["computerLayerScreen"]
       state: shuttle_records
     - map: ["computerLayerKeys"]

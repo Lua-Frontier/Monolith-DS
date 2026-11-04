@@ -13,6 +13,8 @@
   id: LuaMComputerTabletopPalletConsoleStationMarket
   suffix: Station 0.75, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:

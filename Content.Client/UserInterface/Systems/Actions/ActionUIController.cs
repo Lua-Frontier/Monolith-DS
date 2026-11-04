@@ -83,6 +83,8 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
     {
         base.Initialize();
 
+        InitializeLayout(); // LuaM
+
         var gameplayStateLoad = UIManager.GetUIController<GameplayStateLoadController>();
         gameplayStateLoad.OnScreenLoad += OnScreenLoad;
         gameplayStateLoad.OnScreenUnload += OnScreenUnload;
@@ -353,7 +355,7 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
     private void TriggerAction(int index)
     {
         if (_actionsSystem == null ||
-            !_actions.TryGetValue(index, out var actionId) ||
+            !_actions.TryGetValue(CurrentPresetStart + index, out var actionId) || // LuaM
             !_actionsSystem.TryGetActionData(actionId, out var baseAction))
         {
             return;
@@ -380,7 +382,10 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
         if (_actions.Contains(actionId))
             return;
 
-        _actions.Add(actionId);
+        // LuaM-start
+        RebuildLayout();
+        UpdateActionBar();
+        // LuaM-end
     }
 
     private void OnActionRemoved(EntityUid actionId)
@@ -391,15 +396,20 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
         if (actionId == SelectingTargetFor)
             StopTargeting();
 
-        _actions.RemoveAll(x => x == actionId);
+        // LuaM-start
+        RebuildLayout();
+        UpdateActionBar();
+        // LuaM-end
     }
 
     private void OnActionsUpdated()
     {
         QueueWindowUpdate();
 
-        if (_actionsSystem != null)
-            _container?.SetActionData(_actionsSystem, _actions.ToArray());
+        // LuaM-start
+        RebuildLayout();
+        UpdateActionBar();
+        // LuaM-end
     }
 
     private void ActionButtonPressed(ButtonEventArgs args)
@@ -546,7 +556,7 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
         PopulateActions(actions);
     }
 
-    private void SetAction(ActionButton button, EntityUid? actionId, bool updateSlots = true)
+    private void SetAction(ActionButton button, EntityUid? actionId, bool updateSlots = true, bool hide = true) // LuaM: hide
     {
         if (_actionsSystem == null)
             return;
@@ -555,29 +565,36 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
 
         if (actionId == null)
         {
+            var oldAction = button.ActionId; // LuaM
             button.ClearData();
             if (_container?.TryGetButtonIndex(button, out position) ?? false)
             {
-                if (_actions.Count > position && position >= 0)
-                    _actions.RemoveAt(position);
+                // LuaM-start
+                var globalIndex = CurrentPresetStart + position;
+                if (_actions.Count > globalIndex && globalIndex >= 0)
+                    _actions[globalIndex] = null;
+
+                if (hide)
+                    HideAction(oldAction);
+                // LuaM-end
             }
         }
         else if (button.TryReplaceWith(actionId.Value, _actionsSystem) &&
             _container != null &&
             _container.TryGetButtonIndex(button, out position))
         {
-            if (position >= _actions.Count)
-            {
-                _actions.Add(actionId);
-            }
-            else
-            {
-                _actions[position] = actionId;
-            }
+            // LuaM-start
+            var globalIndex = CurrentPresetStart + position;
+            while (_actions.Count <= globalIndex)
+                _actions.Add(null);
+
+            _actions[globalIndex] = actionId;
+            ReserveSlot(globalIndex, actionId.Value);
+            // LuaM-end
         }
 
         if (updateSlots)
-            _container?.SetActionData(_actionsSystem, _actions.ToArray());
+            CommitLayout(); // LuaM
     }
 
     private void DragAction()
@@ -597,10 +614,9 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
         }
 
         if (dragged.Parent is ActionButtonContainer)
-            SetAction(dragged, swapAction, false);
+            SetAction(dragged, swapAction, false, currentlyHovered is not Controls.ActionButton); // LuaM: hide
 
-        if (_actionsSystem != null)
-            _container?.SetActionData(_actionsSystem, _actions.ToArray());
+        CommitLayout(); // LuaM
 
         _menuDragHelper.EndDrag();
     }
@@ -755,6 +771,11 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
             return;
         }
 
+        // LuaM-start
+        ActionsBar.PageButtons.LeftArrow.OnPressed -= OnLeftArrowPressed;
+        ActionsBar.PageButtons.RightArrow.OnPressed -= OnRightArrowPressed;
+        // LuaM-end
+
         if (_window != null)
         {
             _window.OnOpen -= OnWindowOpened;
@@ -785,6 +806,12 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
             return;
         }
 
+        // LuaM-start
+        ActionsBar.PageButtons.LeftArrow.OnPressed += OnLeftArrowPressed;
+        ActionsBar.PageButtons.RightArrow.OnPressed += OnRightArrowPressed;
+        UpdatePresetLabel();
+        // LuaM-end
+
         RegisterActionContainer(ActionsBar.ActionsContainer);
 
         _actionsSystem?.LinkAllActions();
@@ -813,13 +840,14 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
         if (_actionsSystem == null)
             return;
 
-        _actions.Clear();
+        // LuaM-start
         foreach (var assign in assignments)
         {
-            _actions.Add(assign.ActionId);
+            ReserveSlot(assign.Hotbar * ActionButtonContainer.SlotsPerLine + assign.Slot, assign.ActionId);
         }
 
-        _container?.SetActionData(_actionsSystem, _actions.ToArray());
+        CommitLayout();
+        // LuaM-end
     }
 
     public void RemoveActionContainer()
@@ -855,13 +883,24 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
         if (_actionsSystem == null)
             return;
 
+        // LuaM-start
+        _currentProfileKey = GetMobProfileKey();
         LoadDefaultActions();
-        _container?.SetActionData(_actionsSystem, _actions.ToArray());
+        LoadLayout();
+        RebuildLayout();
+        UpdatePresetLabel();
+        UpdateActionBar();
+        // LuaM-end
         QueueWindowUpdate();
     }
 
     private void OnComponentUnlinked()
     {
+        // LuaM-start
+        SaveLayout();
+        _layoutLoaded = false;
+        _currentProfileKey = null;
+        // LuaM-end
         _container?.ClearActionData();
         QueueWindowUpdate();
         StopTargeting();

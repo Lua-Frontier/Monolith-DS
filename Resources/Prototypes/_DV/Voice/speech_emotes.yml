@@ -3,6 +3,7 @@
   id: HarpyHonk
   name: delta-chat-emote-name-honk
   category: Vocal
+  icon: Interface/Emotes/honk.png # LuaM
   available: false
   whitelist:
     components:
@@ -21,6 +22,7 @@
   id: HarpyRing
   name: delta-chat-emote-name-ring
   category: Vocal
+  icon: _LuaM/Interface/Emotes/ring.png # LuaM
   available: false
   whitelist:
     components:
@@ -40,6 +42,7 @@
   id: HarpyPew
   name: delta-chat-emote-name-pew
   category: Vocal
+  icon: _LuaM/Interface/Emotes/pew.png # LuaM
   available: false
   whitelist:
     components:
@@ -57,6 +60,7 @@
   id: HarpyBang
   name: delta-chat-emote-name-bang
   category: Vocal
+  icon: _LuaM/Interface/Emotes/bang.png # LuaM
   available: false
   whitelist:
     components:
@@ -75,6 +79,7 @@
   id: HarpyBeep
   name: delta-chat-emote-name-beep
   category: Vocal
+  icon: Interface/Emotes/beep.png # LuaM
   available: false
   whitelist:
     components:
@@ -93,6 +98,7 @@
   id: HarpyRev
   name: delta-chat-emote-name-rev
   category: Vocal
+  icon: _LuaM/Interface/Emotes/rev.png # LuaM
   available: false
   whitelist:
     components:
@@ -111,6 +117,7 @@
   id: HarpyCaw
   name: delta-chat-emote-name-caw
   category: Vocal
+  icon: _Goobstation/Interface/Emotes/caw.png # LuaM
   available: false
   whitelist:
     components:
@@ -130,6 +137,7 @@
   id: Bark
   name: delta-chat-emote-name-bark
   category: Vocal
+  icon: _LuaM/Interface/Emotes/bark.png # LuaM
   available: false
   whitelist:
     components:
@@ -148,6 +156,7 @@
   id: Snarl
   name: delta-chat-emote-name-snarl
   category: Vocal
+  icon: _LuaM/Interface/Emotes/snarl.png # LuaM
   available: false
   whitelist:
     components:
@@ -166,6 +175,7 @@
   id: Whimper # Starlight / Monolith: Renamed to whimper
   name: delta-chat-emote-name-whine
   category: Vocal
+  icon: _LuaM/Interface/Emotes/whine.png # LuaM
   available: false
   whitelist:
     components:
@@ -184,6 +194,7 @@
   id: Howl
   name: delta-chat-emote-name-howl
   category: Vocal
+  icon: _LuaM/Interface/Emotes/howl.png # LuaM
   available: false
   whitelist:
     components:
@@ -202,6 +213,7 @@
   id: Awoo
   name: delta-chat-emote-name-awoo
   category: Vocal
+  icon: _LuaM/Interface/Emotes/awoo.png # LuaM
   available: false
   whitelist:
     components:
@@ -221,6 +233,7 @@
   id: Gnash
   name: chat-emote-name-gnash
   category: Vocal
+  icon: _LuaM/Interface/Emotes/snarl.png # LuaM
   available: false
   whitelist:
     components:

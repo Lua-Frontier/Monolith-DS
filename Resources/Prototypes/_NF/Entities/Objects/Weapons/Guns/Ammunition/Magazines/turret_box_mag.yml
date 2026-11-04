@@ -70,5 +70,8 @@
   name: "ASMGT-compatible ammo box (6.35x40mm)"
   suffix: Loaded
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Steel: 2
   - type: BallisticAmmoProvider
     proto: Cartridge635x40mmCaseless

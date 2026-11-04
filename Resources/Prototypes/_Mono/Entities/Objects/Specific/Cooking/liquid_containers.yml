@@ -64,7 +64,7 @@
     # inHandsFillBaseName: -fill-
   - type: PhysicalComposition
     materialComposition:
-      Paper: 50
+      Paper: 25 # LuaM: 50 > 25, half of the crafting cost
   - type: StaticPrice
     price: 1
 

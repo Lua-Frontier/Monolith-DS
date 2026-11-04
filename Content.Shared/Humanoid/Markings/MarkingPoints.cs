@@ -45,6 +45,15 @@ public sealed partial class MarkingPointsPrototype : IPrototype
     /// </summary>
     [DataField("onlyWhitelisted")] public bool OnlyWhitelisted;
 
+    // LuaM-start
+    [DataField] public HashSet<MarkingCategories> WhitelistExemptCategories = new();
+
+    public bool RequiresWhitelist(MarkingCategories category)
+    {
+        return OnlyWhitelisted && !WhitelistExemptCategories.Contains(category);
+    }
+    // LuaM-end
+
     [DataField("points", required: true)]
     public Dictionary<MarkingCategories, MarkingPoints> Points { get; private set; } = default!;
 }

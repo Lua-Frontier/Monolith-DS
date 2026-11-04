@@ -11,6 +11,13 @@ namespace Content.Client.UserInterface.Systems.Actions.Controls;
 [Virtual]
 public partial class ActionButtonContainer : GridContainer
 {
+    // LuaM-start
+    public const int SlotsPerLine = 10;
+    public const int LinesPerPreset = 2;
+    public const int SlotsPerPreset = SlotsPerLine * LinesPerPreset;
+    private const float ButtonSize = 64f;
+    // LuaM-end
+
     [Dependency] private IEntityManager _entity = default!;
     [Dependency] private IInputManager _input = default!;
 
@@ -30,7 +37,7 @@ public partial class ActionButtonContainer : GridContainer
 
     public void SetActionData(ActionsSystem system, params EntityUid?[] actionTypes)
     {
-        var uniqueCount = Math.Min(system.GetClientActions().Count(), actionTypes.Length + 1);
+        var uniqueCount = Math.Max(SlotsPerPreset, actionTypes.Length); // LuaM
         var keys = ContentKeyFunctions.GetHotbarBoundKeys();
 
         for (var i = 0; i < uniqueCount; i++)
@@ -66,6 +73,18 @@ public partial class ActionButtonContainer : GridContainer
             return button;
         }
     }
+
+    // LuaM-start
+    public void SetFixedLayout(float maxLength, bool vertical)
+    {
+        var perLine = maxLength >= SlotsPerLine * ButtonSize ? SlotsPerLine : SlotsPerLine / 2;
+
+        if (vertical)
+            Rows = perLine;
+        else
+            Columns = perLine;
+    }
+    // LuaM-end
 
     public void ClearActionData()
     {

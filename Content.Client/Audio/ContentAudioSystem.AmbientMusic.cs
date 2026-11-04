@@ -419,6 +419,14 @@ public sealed partial class ContentAudioSystem
     /// <param name="fadein"> Seconds for the music to fade in. Put 0 for no fadein. </param>
     private void PlayMusicTrack(string path, float volume, float fadein, bool combatMode)
     {
+        // LuaM start
+        if (_musicSuppressed)
+        {
+            DisableAmbientMusic();
+            return;
+        }
+        // LuaM end
+
         _isCombatMusicPlaying = combatMode;
         FadeOut(_ambientMusicStream);
 
@@ -560,5 +568,34 @@ public sealed partial class ContentAudioSystem
         FadeOut(_ambientMusicStream);
         _ambientMusicStream = null;
     }
+
+    // LuaM start
+    private readonly HashSet<string> _musicSuppressors = new();
+    private bool _musicSuppressed => _musicSuppressors.Count > 0;
+
+    public void SetMusicSuppressed(string source, bool suppressed)
+    {
+        var wasSuppressed = _musicSuppressed;
+        if (suppressed)
+            _musicSuppressors.Add(source);
+        else
+            _musicSuppressors.Remove(source);
+
+        if (_musicSuppressed == wasSuppressed)
+            return;
+
+        if (suppressed)
+        {
+            DisableAmbientMusic();
+            return;
+        }
+
+        if (_state.CurrentState is not GameplayState)
+            return;
+
+        ReplayAmbientMusic();
+        _replayAmbientMusicTimer = 0;
+    }
+    // LuaM end
 
 }

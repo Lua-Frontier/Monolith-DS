@@ -1,7 +1,6 @@
 using Content.Shared.Directions;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
-using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -18,7 +17,6 @@ public sealed partial class GoliathTentacleSystem : EntitySystem
     [Dependency] private SharedStunSystem _stun = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private TurfSystem _turf = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -33,7 +31,6 @@ public sealed partial class GoliathTentacleSystem : EntitySystem
 
         // TODO: animation
 
-        _popup.PopupPredicted(Loc.GetString("tentacle-ability-use-popup", ("entity", args.Performer)), args.Performer, args.Performer, type: PopupType.SmallCaution);
         _stun.TryStun(args.Performer, TimeSpan.FromSeconds(0.8f), false);
 
         List<EntityCoordinates> spawnPos = new();

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client.DisplacementMap; // LuaM
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -16,6 +17,7 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
     private const string AnimatedMarkingSuffix = "Animated"; // Forge-Change
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private MarkingManager _markingManager = default!;
+    [Dependency] private DisplacementMapSystem _displacement = default!; // LuaM
 
     public override void Initialize()
     {
@@ -303,6 +305,15 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
 
             spriteComp.LayerMapRemove(layerId);
             spriteComp.RemoveLayer(index);
+
+            // LuaM start
+            var displacementKey = $"{layerId}-displacement";
+            if (spriteComp.LayerMapTryGet(displacementKey, out var displacementIndex))
+            {
+                spriteComp.LayerMapRemove(displacementKey);
+                spriteComp.RemoveLayer(displacementIndex);
+            }
+            // LuaM end
         }
     }
 
@@ -321,6 +332,9 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
         visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
            && setting.AllowsMarkings;
 
+        humanoid.MarkingsDisplacement.TryGetValue(markingPrototype.BodyPart, out var displacement); // LuaM
+        var displacementLayers = 0; // LuaM
+
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)
         {
             var markingSprite = markingPrototype.Sprites[j];
@@ -334,9 +348,17 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
 
             if (!sprite.LayerMapTryGet(layerId, out _))
             {
-                var layer = sprite.AddLayer(markingSprite, targetLayer + j + 1);
+                var layer = sprite.AddLayer(markingSprite, targetLayer + j + 1 + displacementLayers); // LuaM: + displacementLayers
                 sprite.LayerMapSet(layerId, layer);
                 sprite.LayerSetSprite(layerId, rsi);
+
+                // LuaM start
+                if (displacement != null
+                    && _displacement.TryAddDisplacement(displacement, sprite, layer, layerId, new HashSet<string>()))
+                {
+                    displacementLayers++;
+                }
+                // LuaM end
             }
 		    // impstation edit begin - check if there's a shader defined in the markingPrototype's shader datafield, and if there is...
 			if (markingPrototype.Shader != null)

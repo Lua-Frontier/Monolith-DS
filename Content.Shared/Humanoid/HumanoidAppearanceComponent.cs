@@ -1,4 +1,5 @@
 using Content.Shared.Corvax.TTS;
+using Content.Shared.DisplacementMap; // LuaM
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Inventory;
@@ -102,6 +103,9 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField]
     public HashSet<HumanoidVisualLayers> HideLayersOnEquip = [HumanoidVisualLayers.Hair];
+
+    [DataField] // LuaM
+    public Dictionary<HumanoidVisualLayers, DisplacementData> MarkingsDisplacement = new(); // LuaM
 }
 
 [DataDefinition]

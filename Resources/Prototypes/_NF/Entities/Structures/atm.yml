@@ -81,6 +81,8 @@
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerBankATMDeposit]
   id: ComputerBankATM
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     netsync: false
     noRot: true
@@ -96,6 +98,8 @@
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, ComputerBankATMDepositFree]
   id: ComputerBankATMFree
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     netsync: false
     noRot: true
@@ -110,6 +114,8 @@
   parent: ComputerBankATMWithdraw
   id: ComputerWithdrawBankATM
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     netsync: false
     noRot: true
@@ -127,6 +133,8 @@
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseStructureComputerWallmount, ComputerBankATMDeposit]
   id: ComputerWallmountBankATM
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     netsync: false
     sprite: _NF/Structures/Machines/atm/wall_atm.rsi
@@ -141,6 +149,8 @@
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseStructureComputerWallmount, ComputerBankATMDepositFree]
   id: ComputerWallmountBankATMFree
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     netsync: false
     sprite: _NF/Structures/Machines/atm/wall_atm.rsi
@@ -155,6 +165,8 @@
   parent: [BaseStructureComputerWallmount, ComputerBankATMWithdraw]
   id: ComputerWallmountWithdrawBankATM
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     netsync: false
     sprite: _NF/Structures/Machines/atm/wall_atm.rsi
@@ -173,6 +185,8 @@
   name: phaethon treasury ATM #mono
   description: An ATM connected to the Phaethon Dynasties treasury. There is a 5% deposit fee. #mono
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     netsync: false
     noRot: true
@@ -199,6 +213,8 @@
   name: phaethon treasury ATM #mono
   description: An ATM connected to the Phaethon Dynasties treasury. There is a 5% deposit fee. #mono
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     netsync: false
     sprite: _NF/Structures/Machines/atm/wall_illegal_atm.rsi

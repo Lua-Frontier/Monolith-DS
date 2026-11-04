@@ -12,5 +12,5 @@ ent-Cartridge68x52mmCaselessRIP = патрон (6.8x52мм STANAG безгиль
     .desc = { ent-BaseCartridge68x52mmCaseless.desc }
 ent-Cartridge68x52mmCaselessPlasteelAP = патрон (6.8x52мм STANAG безгильзовый бронебойный)
     .desc = { ent-BaseCartridge68x52mmCaseless.desc }
-ent-Cartridge68x52mmCaselessPlasma = cartridge (6.8x52mm STANAG Plasma)
+ent-Cartridge68x52mmCaselessPlasma = патрон (6.8x52мм STANAG безгильзовый плазменный)
     .desc = { ent-BaseCartridge68x52mmCaseless.desc }

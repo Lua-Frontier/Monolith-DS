@@ -1522,8 +1522,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
   - uid: 315
     components:
     - type: Transform
@@ -1532,8 +1530,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
   - uid: 316
     components:
     - type: Transform
@@ -1542,8 +1538,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
   - uid: 317
     components:
     - type: Transform
@@ -1552,8 +1546,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
   - uid: 318
     components:
     - type: Transform
@@ -1562,8 +1554,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
   - uid: 319
     components:
     - type: Transform
@@ -1572,8 +1562,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
   - uid: 320
     components:
     - type: Transform
@@ -1582,8 +1570,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
 - proto: GasMixerFlipped
   entities:
   - uid: 311
@@ -2087,8 +2073,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0000FFFF'
   - uid: 293
@@ -2099,8 +2083,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0000FFFF'
   - uid: 294
@@ -2119,8 +2101,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0000FFFF'
   - uid: 296
@@ -2132,8 +2112,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0000FFFF'
 - proto: GasVentScrubber
@@ -2155,8 +2133,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
@@ -2170,8 +2146,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
@@ -2185,8 +2159,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
@@ -2200,8 +2172,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 313
-      configurators:
-      - invalid
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor

@@ -2,6 +2,9 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Construction;
 using Content.Shared.Construction.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Markdown.Mapping;
+using Robust.Shared.Serialization.Markdown.Sequence;
+using Robust.Shared.Serialization.Markdown.Value;
 
 namespace Content.Shared._LuaM.Construction;
 
@@ -32,6 +35,8 @@ public sealed partial class ConstructionLocalizationSystem : EntitySystem
 
     private void Localize()
     {
+        var fromEntity = new List<(ConstructionPrototype Recipe, EntityPrototype Target)>();
+
         foreach (var recipe in _proto.EnumeratePrototypes<ConstructionPrototype>())
         {
             var key = $"construction-{recipe.ID}";
@@ -40,12 +45,28 @@ public sealed partial class ConstructionLocalizationSystem : EntitySystem
             if (Loc.TryGetString(key, out var name))
                 recipe.Name = name;
             else if (target != null)
+            {
                 recipe.Name = target.Name;
+                fromEntity.Add((recipe, target));
+            }
 
             if (Loc.TryGetString($"{key}-desc", out var desc))
                 recipe.Description = desc;
             else if (target != null)
                 recipe.Description = target.Description;
+        }
+
+        // -- части одной мебели часто зовутся одинаково и различаются только суффиксом, а меню строительства ищет кнопки по имени
+        var counts = new Dictionary<string, int>();
+        foreach (var recipe in _proto.EnumeratePrototypes<ConstructionPrototype>())
+        {
+            counts[recipe.Name] = counts.GetValueOrDefault(recipe.Name) + 1;
+        }
+
+        foreach (var (recipe, target) in fromEntity)
+        {
+            if (counts[recipe.Name] > 1 && !string.IsNullOrEmpty(target.EditorSuffix))
+                recipe.Name = $"{recipe.Name} ({target.EditorSuffix})";
         }
     }
 
@@ -59,7 +80,26 @@ public sealed partial class ConstructionLocalizationSystem : EntitySystem
             !graph.Nodes.TryGetValue(recipe.TargetNode, out var node))
             return false;
 
-        var id = node.Entity.GetId(null, null, new GraphNodeEntityArgs(EntityManager));
+        var id = node.Entity.GetId(null, null, new GraphNodeEntityArgs(EntityManager))
+                 ?? GetRawNodeEntity(recipe.Graph, recipe.TargetNode);
         return id != null && _proto.TryIndex(id, out target);
+    }
+
+    // -- поле entity у узла графа serverOnly, на клиенте его можно достать только из YAML
+    private string? GetRawNodeEntity(string graphId, string nodeId)
+    {
+        if (!_proto.TryGetMapping<ConstructionGraphPrototype>(graphId, out var mapping) ||
+            !mapping.TryGet<SequenceDataNode>("graph", out var nodes))
+            return null;
+
+        foreach (var raw in nodes)
+        {
+            if (raw is MappingDataNode node &&
+                node.TryGet<ValueDataNode>("node", out var name) && name.Value == nodeId &&
+                node.TryGet<ValueDataNode>("entity", out var entity))
+                return entity.Value;
+        }
+
+        return null;
     }
 }

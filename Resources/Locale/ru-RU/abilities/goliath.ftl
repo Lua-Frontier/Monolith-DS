@@ -1,1 +1,0 @@
-tentacle-ability-use-popup = { CAPITALIZE(THE($entity)) } вонзает свои щупальца под землю!

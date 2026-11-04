@@ -239,9 +239,11 @@
     sprite: _Mono/Structures/Machines/computers.rsi
     layers:
     - map: ["computerLayerBody"]
-      state: computer_not_rot
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: computer # LuaM
     - map: ["computerLayerKeyboard"]
-      state: gunnery_keyboard
+      sprite: Structures/Machines/computers.rsi # LuaM
+      state: generic_keyboard # LuaM
     - map: ["computerLayerScreen"]
       state: gunnery_screen
     - map: ["computerLayerKeys"]
@@ -290,6 +292,8 @@
   parent: [BaseStructureComputerTabletop, ComputerGunneryConsole]
   id: ComputerTabletopGunneryConsole
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:

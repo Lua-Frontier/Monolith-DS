@@ -1,5 +1,6 @@
 using Content.Shared.Body.Part;
 using Content.Shared.DoAfter;
+using Content.Shared.Tools; // LuaM
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -86,7 +87,25 @@ public sealed partial class AutoSurgeonComponent : Component
 
     [ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? ActiveSound;
+
+    // LuaM-start
+    [DataField]
+    public ProtoId<ToolQualityPrototype> DisassembleQuality = "Screwing";
+
+    [DataField]
+    public float DisassembleTime = 5f;
+
+    [DataField]
+    public Dictionary<EntProtoId, int> DisassembleMaterials = new()
+    {
+        ["SheetSteel1"] = 5,
+        ["SheetPlastic1"] = 5,
+    };
+    // LuaM-end
 }
 
 [Serializable, NetSerializable]
 public sealed partial class AutoSurgeonDoAfterEvent : SimpleDoAfterEvent;
+
+[Serializable, NetSerializable]
+public sealed partial class AutoSurgeonDisassembleDoAfterEvent : SimpleDoAfterEvent; // LuaM

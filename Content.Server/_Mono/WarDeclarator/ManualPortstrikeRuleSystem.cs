@@ -110,7 +110,7 @@ public sealed partial class ManualPortstrikeRuleSystem : GameRuleSystem<ManualPo
             declared = true;
 
             if (!comp.SectorStatus.ContainsValue(false))
-                _warLevelSystem.SetLevel(comp.WarLevel);
+                _warLevelSystem.SetLevel(comp.WarLevel, playSound: false); // LuaM: the declaration announcement plays the faction sound
             else
             {
                 autoDeclareDelay = comp.FirstDeclarationTime + comp.AutoDeclareDelay - Timing.CurTime;

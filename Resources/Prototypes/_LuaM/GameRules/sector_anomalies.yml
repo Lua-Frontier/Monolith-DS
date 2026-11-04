@@ -1,0 +1,88 @@
+- type: entity
+  id: LuaMSectorAnomalyScheduler
+  parent: BaseGameRule
+  components:
+  - type: SectorAnomalyScheduler
+    chance: 0.3 # about once per 3-4 shifts
+    startTime:
+      min: 3600 # 1 hour
+      max: 21600 # 6 hours
+    anomalies: !type:NestedSelector
+      tableId: LuaMSectorAnomaliesTable
+
+- type: entityTable
+  id: LuaMSectorAnomaliesTable
+  table: !type:AllSelector
+    children:
+    - id: SectorDarkness
+    - id: SectorBrightness
+
+- type: entity
+  parent: BaseGameRule
+  id: SectorDarkness
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-sector-darkness-start-announcement
+    endAnnouncement: station-event-sector-darkness-end-announcement
+    startAudio:
+      path: /Audio/_LuaM/Events/sectordarkness_start.ogg
+    endAudio:
+      path: /Audio/_LuaM/Events/sectordarkness_start.ogg
+    earliestStart: 60
+    minimumPlayers: 10
+    reoccurrenceDelay: 120
+    duration: 540
+    maxDuration: 660
+  - type: SectorDarknessRule
+    lightBreakChancePerSecond: 0.0001
+    doorToggleChancePerSecond: 0.001
+    lightFlickerChancePerSecond: 0.0005
+    messageChancePerSecond: 0.005
+    messages:
+    - station-event-sector-darkness-message-1
+    - station-event-sector-darkness-message-2
+    - station-event-sector-darkness-message-3
+    - station-event-sector-darkness-message-4
+    - station-event-sector-darkness-message-5
+    - station-event-sector-darkness-message-6
+    - station-event-sector-darkness-message-7
+    - station-event-sector-darkness-message-8
+    music:
+      path: /Audio/_LuaM/Events/sectordarkness.ogg
+      params:
+        volume: -2
+
+- type: entity
+  parent: BaseGameRule
+  id: SectorBrightness
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-sector-brightness-start-announcement
+    endAnnouncement: station-event-sector-brightness-end-announcement
+    startAudio:
+      path: /Audio/Ambience/ambiholy.ogg
+    endAudio:
+      path: /Audio/Ambience/ambiholy.ogg
+    earliestStart: 60
+    minimumPlayers: 10
+    reoccurrenceDelay: 120
+    duration: 540
+    maxDuration: 660
+  - type: SectorBrightnessRule
+    ambientColor: "#8C98AA"
+    lightEnergyMultiplier: 1.15
+    lightSaturationMultiplier: 1.2
+    messageChancePerSecond: 0.003
+    messages:
+    - station-event-sector-brightness-message-1
+    - station-event-sector-brightness-message-2
+    - station-event-sector-brightness-message-3
+    - station-event-sector-brightness-message-4
+    - station-event-sector-brightness-message-5
+    - station-event-sector-brightness-message-6
+    - station-event-sector-brightness-message-7
+    - station-event-sector-brightness-message-8
+    music:
+      path: /Audio/_LuaM/Events/sectorbrightness.ogg
+      params:
+        volume: -4

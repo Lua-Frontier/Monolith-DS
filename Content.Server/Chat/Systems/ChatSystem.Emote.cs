@@ -158,7 +158,7 @@ public partial class ChatSystem
         }
 
         // optional override params > general params for all sounds in set > individual sound params
-        var param = audioParams ?? proto.GeneralParams ?? sound.Params;
+        var param = audioParams ?? proto.GeneralParams?.AddVolume(sound.Params.Volume) ?? sound.Params; // LuaM
         _audio.PlayPvs(sound, uid, param);
         return true;
     }

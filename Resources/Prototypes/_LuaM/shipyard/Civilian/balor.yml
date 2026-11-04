@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: vessel-balor-name # LuaM-locale
   description: vessel-balor-desc # LuaM-locale
-  price: 92660
+  price: 92780 # LuaM
   category: Large
   group: Shipyard
   access: Mercenary

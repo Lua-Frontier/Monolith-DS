@@ -30,21 +30,21 @@
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "id" ] # Mono - move from between belt and back
     - map: [ "outerClothing" ] # mono - i hate you upstream
+    - map: [ "shoes" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "balaclava" ]
+    - map: [ "mask" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "enum.HumanoidVisualLayers.Wings" ] # For IPC wings porting from SimpleStation
-    - map: [ "balaclava" ]
-    - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "neck" ]
     - map: [ "neck2" ]
@@ -253,6 +253,7 @@
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
+  - type: CritCrying # LuaM
   - type: Barotrauma
     damage:
       types:
@@ -363,22 +364,22 @@
       state: body-overlay-2
       visible: false
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ] # mono - i hate you upstream
+    - map: [ "shoes" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "mask" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "helmetcover" ]
     - map: [ "helmetattachment" ]
-    - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]

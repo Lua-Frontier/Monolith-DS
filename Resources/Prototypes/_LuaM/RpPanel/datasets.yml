@@ -267,3 +267,183 @@
   values:
     prefix: rp-interaction-pet-wings-
     count: 6
+
+- type: localizedDataset
+  id: RpWinkMessages
+  values:
+    prefix: rp-interaction-wink-
+    count: 4
+
+- type: localizedDataset
+  id: RpWipeTearsMessages
+  values:
+    prefix: rp-interaction-wipe-tears-
+    count: 4
+
+- type: localizedDataset
+  id: RpYawnSelfMessages
+  values:
+    prefix: rp-interaction-yawn-self-
+    count: 4
+
+- type: localizedDataset
+  id: RpForeheadTouchMessages
+  values:
+    prefix: rp-interaction-forehead-touch-
+    count: 4
+
+- type: localizedDataset
+  id: RpScratchHeadSelfMessages
+  values:
+    prefix: rp-interaction-scratch-head-self-
+    count: 4
+
+- type: localizedDataset
+  id: RpWhisperInEarMessages
+  values:
+    prefix: rp-interaction-whisper-in-ear-
+    count: 4
+
+- type: localizedDataset
+  id: RpAdjustCollarMessages
+  values:
+    prefix: rp-interaction-adjust-collar-
+    count: 4
+
+- type: localizedDataset
+  id: RpLeanOnShoulderMessages
+  values:
+    prefix: rp-interaction-lean-on-shoulder-
+    count: 4
+
+- type: localizedDataset
+  id: RpBrushShoulderMessages
+  values:
+    prefix: rp-interaction-brush-shoulder-
+    count: 4
+
+- type: localizedDataset
+  id: RpShrugSelfMessages
+  values:
+    prefix: rp-interaction-shrug-self-
+    count: 4
+
+- type: localizedDataset
+  id: RpHugMessages
+  values:
+    prefix: rp-interaction-hug-
+    count: 4
+
+- type: localizedDataset
+  id: RpElbowNudgeMessages
+  values:
+    prefix: rp-interaction-elbow-nudge-
+    count: 4
+
+- type: localizedDataset
+  id: RpBowSelfMessages
+  values:
+    prefix: rp-interaction-bow-self-
+    count: 4
+
+- type: localizedDataset
+  id: RpPatBackMessages
+  values:
+    prefix: rp-interaction-pat-back-
+    count: 4
+
+- type: localizedDataset
+  id: RpBackRubMessages
+  values:
+    prefix: rp-interaction-back-rub-
+    count: 4
+
+- type: localizedDataset
+  id: RpShoveBackMessages
+  values:
+    prefix: rp-interaction-shove-back-
+    count: 4
+
+- type: localizedDataset
+  id: RpHoldHandMessages
+  values:
+    prefix: rp-interaction-hold-hand-
+    count: 4
+
+- type: localizedDataset
+  id: RpFistBumpMessages
+  values:
+    prefix: rp-interaction-fist-bump-
+    count: 4
+
+- type: localizedDataset
+  id: RpApplaudSelfMessages
+  values:
+    prefix: rp-interaction-applaud-self-
+    count: 4
+
+- type: localizedDataset
+  id: RpSaluteSelfMessages
+  values:
+    prefix: rp-interaction-salute-self-
+    count: 4
+
+- type: localizedDataset
+  id: RpWipeScreenMessages
+  values:
+    prefix: rp-interaction-wipe-screen-
+    count: 4
+
+- type: localizedDataset
+  id: RpTapChassisMessages
+  values:
+    prefix: rp-interaction-tap-chassis-
+    count: 4
+
+- type: localizedDataset
+  id: RpPolishChassisMessages
+  values:
+    prefix: rp-interaction-polish-chassis-
+    count: 4
+
+- type: localizedDataset
+  id: RpOilJointMessages
+  values:
+    prefix: rp-interaction-oil-joint-
+    count: 4
+
+- type: localizedDataset
+  id: RpCheckWiringMessages
+  values:
+    prefix: rp-interaction-check-wiring-
+    count: 4
+
+- type: localizedDataset
+  id: RpDataHandshakeMessages
+  values:
+    prefix: rp-interaction-data-handshake-
+    count: 4
+
+- type: localizedDataset
+  id: RpRunDiagnosticsSelfMessages
+  values:
+    prefix: rp-interaction-run-diagnostics-self-
+    count: 4
+
+- type: localizedDataset
+  id: RpCycleScreenSelfMessages
+  values:
+    prefix: rp-interaction-cycle-screen-self-
+    count: 4
+
+- type: localizedDataset
+  id: RpSpinFansSelfMessages
+  values:
+    prefix: rp-interaction-spin-fans-self-
+    count: 4
+
+- type: localizedDataset
+  id: RpFlexServosSelfMessages
+  values:
+    prefix: rp-interaction-flex-servos-self-
+    count: 4

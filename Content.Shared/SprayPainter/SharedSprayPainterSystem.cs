@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.SprayPainter; // LuaM
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -6,6 +7,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.SprayPainter.Components;
 using Content.Shared.SprayPainter.Prototypes;
+using Content.Shared.Verbs; // LuaM
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using System.Linq;
@@ -42,7 +44,14 @@ public abstract partial class SharedSprayPainterSystem : EntitySystem
         {
             subs.Event<SprayPainterSpritePickedMessage>(OnSpritePicked);
             subs.Event<SprayPainterColorPickedMessage>(OnColorPicked);
+            // LuaM-start
+            subs.Event<SprayPainterSetDecalMessage>(OnSetDecal);
+            subs.Event<SprayPainterSetDecalColorMessage>(OnSetDecalColor);
+            subs.Event<SprayPainterSetDecalAngleMessage>(OnSetDecalAngle);
+            subs.Event<SprayPainterSetDecalSnapMessage>(OnSetDecalSnap);
+            // LuaM-end
         });
+        SubscribeLocalEvent<SprayPainterComponent, GetVerbsEvent<AlternativeVerb>>(OnPainterGetAltVerbs); // LuaM
 
         SubscribeLocalEvent<PaintableAirlockComponent, InteractUsingEvent>(OnAirlockInteract);
 
@@ -66,6 +75,9 @@ public abstract partial class SharedSprayPainterSystem : EntitySystem
             return;
 
         if (!TryComp<PaintableAirlockComponent>(target, out var airlock))
+            return;
+
+        if (!TryUsePaint(ent, ent.Comp.AirlockChargeCost)) // LuaM
             return;
 
         airlock.Department = args.Department;
@@ -116,6 +128,12 @@ public abstract partial class SharedSprayPainterSystem : EntitySystem
         if (!TryComp<SprayPainterComponent>(args.Used, out var painter))
             return;
 
+        if (!HasPaint(args.Used, painter.AirlockChargeCost, args.User)) // LuaM
+        {
+            args.Handled = true;
+            return;
+        }
+
         var group = Proto.Index<AirlockGroupPrototype>(ent.Comp.Group);
 
         var style = Styles[painter.Index];
@@ -145,6 +163,8 @@ public abstract partial class SharedSprayPainterSystem : EntitySystem
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
     {
+        OnDecalPrototypesReloaded(args); // LuaM
+
         if (!args.WasModified<AirlockGroupPrototype>() && !args.WasModified<AirlockDepartmentsPrototype>())
             return;
 

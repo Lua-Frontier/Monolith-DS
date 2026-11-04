@@ -1,0 +1,237 @@
+- type: construction
+  id: LuaMChairPizzeria
+  name: pizzeria chair
+  description: It looks spooky.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairpizzeria
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: pizza_chair
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairRed
+  name: red chair
+  description: It looks comfy.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairred
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: red_chair
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairWhite
+  name: white chair
+  description: It looks comfy.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairwhite
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: white_chair
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairBarStool
+  name: bar stool
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairbarstool
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: bar-stool
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairBarStool2
+  name: swivel bar stool
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairbarstool2
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: bar-stool2
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairComfyBlack
+  name: comfy black chair
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchaircomfyblack
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: comfy_black
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairComfyMaroon
+  name: comfy maroon chair
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchaircomfymaroon
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: comfy_maroon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairComfyWhite
+  name: comfy white chair
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchaircomfywhite
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: comfy_white
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairKing
+  name: king chair
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairking
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: king
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairRich
+  name: rich chair
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairrich
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: rich
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairRichWhite
+  name: rich white chair
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairrichwhite
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: rich_white
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairStyle
+  name: style chair
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairstyle
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: style
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairWoodenStool
+  name: wooden stool
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairwoodenstool
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: wooden-stool
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMChairWoodenStool2
+  name: small wooden chair
+  description: This is a chair.
+  graph: LuaMSeat
+  startNode: start
+  targetNode: luamchairwoodenstool2
+  category: construction-category-furniture
+  icon:
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: wooden-stool2
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

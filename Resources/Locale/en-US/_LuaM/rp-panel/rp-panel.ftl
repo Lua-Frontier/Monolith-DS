@@ -84,3 +84,4 @@ rp-panel-category-back-name = Back
 rp-panel-category-hands-name = Hands
 rp-panel-category-tail-name = Tail
 rp-panel-category-wings-name = Wings
+rp-panel-category-chassis-name = Chassis

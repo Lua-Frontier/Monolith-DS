@@ -276,7 +276,7 @@
         acts: ["Destruction"]
 
 - type: entity
-  parent: WallShuttleDiagonal
+  parent: WallReinforcedDiagonal # LuaM: WallShuttleDiagonal > WallReinforcedDiagonal
   id: WallReinforcedDiagonalOutpost
   name: reinforced wall
   suffix: diagonal, OUTPOST ONLY

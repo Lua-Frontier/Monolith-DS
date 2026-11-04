@@ -31,6 +31,11 @@
   parent: [ClothingOuterArmorBase, ClothingArmorPlate] # Mono - armor plates
   id: ClothingOuterArmorBasic
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Durathread: 175
+      Plasteel: 150
+      Steel: 100
   - type: Tag  # Mono
     tags:
     - Kevlar
@@ -106,6 +111,11 @@
   name: reflective vest
   description: An armored vest with advanced shielding to protect against energy weapons.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Durathread: 100
+      Plasteel: 125
+      Steel: 100
   - type: Sprite
     sprite: Clothing/OuterClothing/Armor/armor_reflec.rsi
   - type: Clothing

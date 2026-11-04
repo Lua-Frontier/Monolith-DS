@@ -1,0 +1,4 @@
+- files: ["Asteroids.png", "AsteroidsBack.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by BrennNight for Lua-Frontier sector-frontier-14 (PR #166)"
+  source: "https://github.com/Lua-Frontier/sector-frontier-14"

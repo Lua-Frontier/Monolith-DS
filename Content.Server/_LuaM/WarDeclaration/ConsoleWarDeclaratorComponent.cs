@@ -1,4 +1,5 @@
 using Content.Shared._Mono.Company;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._LuaM.WarDeclaration;
@@ -20,6 +21,9 @@ public sealed partial class ConsoleWarDeclaratorComponent : Component
     /// </summary>
     [DataField(required: true)]
     public LocId WarDeclarationMessage;
+
+    [DataField]
+    public SoundSpecifier? WarDeclarationSound;
 
     /// <summary>
     /// How long the round has to last before war can be declared.

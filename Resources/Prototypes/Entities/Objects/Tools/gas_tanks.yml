@@ -13,7 +13,7 @@
     tags:
     - GasTank
   - type: Clothing
-    quickEquip: false
+    quickEquip: true # LuaM: false > true
     sprite: Objects/Tanks/generic.rsi
     slots:
     - Back
@@ -24,6 +24,7 @@
         length: 1.0
   - type: ActivatableUI
     key: enum.SharedGasTankUiKey.Key
+    verbOnly: true # LuaM
   - type: UserInterface
     interfaces:
       enum.SharedGasTankUiKey.Key:

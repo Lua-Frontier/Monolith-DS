@@ -106,4 +106,5 @@ shipyard-console-class-DroneCarrier = Носитель дронов
 shipyard-console-class-MechCarrier = Носитель механоидов
 shipyard-console-class-EarlyWarning = Раннее предупреждение
 shipyard-console-class-Stealth = Скрытность
+shipyard-console-class-Mercenary = Наёмнический
 # Mono end

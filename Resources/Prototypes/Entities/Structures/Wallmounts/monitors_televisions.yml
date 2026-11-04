@@ -4,6 +4,8 @@
   name: wooden television
   description: Finally, some decent reception around here...
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     noRot: true
     drawdepth: SmallObjects
@@ -36,6 +38,8 @@
   name: telescreen frame
   description: Finally, some decent reception around here...
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Construction
     graph: WallmountTelescreen
     node: TelescreenFrame
@@ -122,6 +126,8 @@
   name: television frame
   description: Finally, some decent reception around here...
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Fixtures
     fixtures:
       fix1:

@@ -20,7 +20,9 @@ using Content.Shared.Materials;
 using Content.Shared.Mind;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Power;
+using Content.Shared.Stacks; // LuaM
 using Robust.Server.GameObjects;
+using Robust.Shared.Map; // LuaM
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -43,6 +45,12 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
     [Dependency] private StackSystem _stack = default!;
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!; // LuaM
+
+    // LuaM-start
+    private const float StackMergeRange = 0.3f;
+    private readonly HashSet<Entity<StackComponent>> _nearbyStacks = new();
+    // LuaM-end
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -177,7 +185,7 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         Dirty(uid, component);
 
         // scales the output if the process was interrupted.
-        var completion = 1f - Math.Clamp((float) Math.Round((active.EndTime - Timing.CurTime) / active.Duration),
+        var completion = 1f - Math.Clamp((float) ((active.EndTime - Timing.CurTime) / active.Duration), // LuaM: removed Math.Round
             0f,
             1f);
         Reclaim(uid, item, completion, component);
@@ -225,18 +233,38 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         if (!Resolve(reclaimer, ref storage, ref xform, false))
             return;
 
+        // LuaM-start
+        if (TryComp<MaterialReclaimerComponent>(reclaimer, out var reclaimerComp) && ReturnsRecipe(item, reclaimerComp))
+        {
+            foreach (var (material, amount) in Lathe.InverseRecipes[Prototype(item)!.ID][0].Materials)
+            {
+                if (!reclaimerComp.RecipeReturnBlacklist.Contains(material))
+                    _materialStorage.TryChangeMaterialAmount(reclaimer, material, (int) (amount * reclaimerComp.RecipeReturn * efficiency), storage);
+            }
+
+            return;
+        }
+        // LuaM-end
+
         if (!Resolve(item, ref composition, false))
             return;
 
+        var stackCount = CompOrNull<StackComponent>(item)?.Count ?? 1; // LuaM
         foreach (var (material, amount) in composition.MaterialComposition)
         {
-            var outputAmount = (int) (amount * efficiency);
+            var outputAmount = (int) (amount * stackCount * efficiency); // LuaM: + stackCount
             _materialStorage.TryChangeMaterialAmount(reclaimer, material, outputAmount, storage);
         }
 
+        // LuaM-start
+        if (CompOrNull<MaterialReclaimerComponent>(reclaimer)?.StoreMaterials == true)
+            return;
+        // LuaM-end
+
         foreach (var (storedMaterial, storedAmount) in storage.Storage)
         {
-            var stacks = _materialStorage.SpawnMultipleFromMaterial(storedAmount,
+            var merged = MergeIntoNearbyStacks(storedMaterial, storedAmount, xform.Coordinates); // LuaM
+            var stacks = _materialStorage.SpawnMultipleFromMaterial(storedAmount - merged, // LuaM: storedAmount > storedAmount - merged
                 storedMaterial,
                 xform.Coordinates,
                 out var materialOverflow);
@@ -248,6 +276,46 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
             }
         }
     }
+
+    // LuaM-start
+    private int MergeIntoNearbyStacks(string material, int amount, EntityCoordinates coordinates)
+    {
+        if (!_prototype.TryIndex<MaterialPrototype>(material, out var materialProto) || materialProto.StackEntity == null)
+            return 0;
+
+        var stackProto = _prototype.Index<EntityPrototype>(materialProto.StackEntity);
+        if (!stackProto.TryGetComponent<PhysicalCompositionComponent>(out var composition, EntityManager.ComponentFactory)
+            || !stackProto.TryGetComponent<StackComponent>(out var stackComp, EntityManager.ComponentFactory))
+            return 0;
+
+        var materialPerStack = composition.MaterialComposition[materialProto.ID];
+        var sheets = amount / materialPerStack;
+        if (sheets <= 0)
+            return 0;
+
+        _nearbyStacks.Clear();
+        _lookup.GetEntitiesInRange(coordinates, StackMergeRange, _nearbyStacks, LookupFlags.Dynamic | LookupFlags.Sundries);
+
+        var merged = 0;
+        foreach (var (uid, stack) in _nearbyStacks)
+        {
+            if (stack.StackTypeId != stackComp.StackTypeId || TerminatingOrDeleted(uid) || EntityManager.IsQueuedForDeletion(uid))
+                continue;
+
+            var toAdd = Math.Min(sheets - merged, _stack.GetAvailableSpace(stack));
+            if (toAdd <= 0)
+                continue;
+
+            _stack.SetCount(uid, stack.Count + toAdd, stack);
+            merged += toAdd;
+
+            if (merged == sheets)
+                break;
+        }
+
+        return merged * materialPerStack;
+    }
+    // LuaM-end
 
     private void SpawnChemicalsFromComposition(EntityUid reclaimer,
         EntityUid item,
@@ -266,10 +334,11 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
 
         if (Resolve(item, ref composition, false))
         {
+            var stackCount = CompOrNull<StackComponent>(item)?.Count ?? 1; // LuaM
             foreach (var (key, value) in composition.ChemicalComposition)
             {
                 // TODO use ReagentQuantity
-                totalChemicals.AddReagent(key, value * efficiency, false);
+                totalChemicals.AddReagent(key, value * stackCount * efficiency, false); // LuaM: + stackCount
             }
         }
 

@@ -1,10 +1,13 @@
+using Content.Shared._LuaM.SprayPainter; // LuaM
+using Content.Shared.Decals; // LuaM
 using Content.Shared.DoAfter;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes; // LuaM
 
 namespace Content.Shared.SprayPainter.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)] // LuaM: raise AfterAutoHandleStateEvent
 public sealed partial class SprayPainterComponent : Component
 {
     [DataField]
@@ -34,4 +37,42 @@ public sealed partial class SprayPainterComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public int Index;
+
+    // LuaM-start
+    /// <summary>
+    /// Whether clicking the floor paints decals, removes them, or does nothing.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public DecalPaintMode DecalMode = DecalPaintMode.Off;
+
+    [DataField, AutoNetworkedField]
+    public ProtoId<DecalPrototype> SelectedDecal = "Arrows";
+
+    /// <summary>
+    /// Color to paint the decal in, null keeps the decal's own color.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Color? SelectedDecalColor;
+
+    [DataField, AutoNetworkedField]
+    public int SelectedDecalAngle;
+
+    [DataField, AutoNetworkedField]
+    public bool SnapDecals = true;
+
+    /// <summary>
+    /// Charges of paint spent per airlock, pipe and decal.
+    /// </summary>
+    [DataField]
+    public int AirlockChargeCost = 1;
+
+    [DataField]
+    public int PipeChargeCost = 1;
+
+    [DataField]
+    public int DecalChargeCost = 1;
+
+    [DataField]
+    public SoundSpecifier SoundSwitchDecalMode = new SoundPathSpecifier("/Audio/Machines/quickbeep.ogg", AudioParams.Default.WithVolume(1.5f));
+    // LuaM-end
 }

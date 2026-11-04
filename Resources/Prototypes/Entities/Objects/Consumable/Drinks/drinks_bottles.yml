@@ -1006,6 +1006,9 @@
   name: beverage jug
   description: A jug for storing custom made drinks.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Plastic: 75
   - type: SolutionContainerManager
     solutions:
       drink:

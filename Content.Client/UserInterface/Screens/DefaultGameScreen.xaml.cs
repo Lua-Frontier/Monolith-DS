@@ -17,6 +17,10 @@ public sealed partial class DefaultGameScreen : InGameScreen
         SetAnchorPreset(MainViewport, LayoutPreset.Wide);
         SetAnchorPreset(ViewportContainer, LayoutPreset.Wide);
         SetAnchorAndMarginPreset(TopLeft, LayoutPreset.TopLeft, margin: 10);
+        // LuaM-start
+        SetAnchorAndMarginPreset(VoteMenu, LayoutPreset.CenterTop, margin: 10);
+        SetGrowHorizontal(VoteMenu, GrowDirection.Both);
+        // LuaM-end
         SetAnchorAndMarginPreset(Ghost, LayoutPreset.BottomWide, margin: 80);
         SetAnchorAndMarginPreset(Inventory, LayoutPreset.BottomLeft, margin: 5);
         SetAnchorAndMarginPreset(Hotbar, LayoutPreset.BottomWide, margin: 5);
@@ -34,7 +38,7 @@ public sealed partial class DefaultGameScreen : InGameScreen
     private void ResizeActionContainer()
     {
         float indent = Inventory.Size.Y + TopBar.Size.Y + 40;
-        Actions.ActionsContainer.MaxGridHeight = MainViewport.Size.Y - indent;
+        Actions.ActionsContainer.SetFixedLayout(MainViewport.Size.Y - indent, true); // LuaM
     }
 
     private void ResizeAlertsContainer()

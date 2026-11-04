@@ -89,6 +89,7 @@ shipyard-console-class-DroneCarrier = Drone Carrier
 shipyard-console-class-MechCarrier = Mech Carrier
 shipyard-console-class-EarlyWarning = Early Warning
 shipyard-console-class-Stealth = Stealth
+shipyard-console-class-Mercenary = Mercenary
 # Mono changes end
 
 shipyard-console-engine-All = All

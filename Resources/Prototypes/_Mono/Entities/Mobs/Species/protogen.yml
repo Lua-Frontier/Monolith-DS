@@ -22,6 +22,7 @@
         type: StrippableBoundUserInterface
       enum.SurgeryUIKey.Key: # Shitmed
         type: SurgeryBui
+  - type: Wagging # LuaM
   - type: Hunger
   - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
     sprite: Mobs/Species/Human/parts.rsi
@@ -58,6 +59,19 @@
           32:
             sprite: _Mono/Mobs/Species/Protogen/displacement.rsi
             state: jumpsuit-female
+      mask: # LuaM
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
+            state: mask
+    # LuaM start
+    displacements:
+      mask:
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
+            state: mask
+    # LuaM end
   - type: Carriable # Frontier: Carrying system from nyanotrasen.
   - type: Speech # Frontier
     allowedEmotes: ['Belch', 'Beep', 'Ping', 'Buzz'] # Frontier + Protogen stuff
@@ -93,3 +107,16 @@
           32:
             sprite: _Mono/Mobs/Species/Protogen/displacement.rsi
             state: jumpsuit-female
+      mask: # LuaM
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
+            state: mask
+    # LuaM start
+    displacements:
+      mask:
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
+            state: mask
+    # LuaM end

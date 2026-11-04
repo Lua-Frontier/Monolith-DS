@@ -297,7 +297,7 @@ public sealed partial class ActionContainerSystem : EntitySystem
         if (args.Container.ID != ActionsContainerComponent.ContainerId)
             return;
 
-        if (!_actions.TryGetActionData(args.Entity, out var data))
+        if (!_actions.TryGetActionData(args.Entity, out var data, !_timing.ApplyingState)) // LuaM: !_timing.ApplyingState
             return;
 
         if (data.Container != uid)

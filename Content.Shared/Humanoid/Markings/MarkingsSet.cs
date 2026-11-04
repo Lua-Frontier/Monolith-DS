@@ -152,7 +152,7 @@ public sealed partial class MarkingSet
 
         var toRemove = new List<(MarkingCategories category, string id)>();
         var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
-        var onlyWhitelisted = prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
+        var markingPoints = prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints); // LuaM
 
         foreach (var (category, list) in Markings)
         {
@@ -164,7 +164,7 @@ public sealed partial class MarkingSet
                     continue;
                 }
 
-                if (onlyWhitelisted && prototype.SpeciesRestrictions == null)
+                if (markingPoints.RequiresWhitelist(category) && prototype.SpeciesRestrictions == null) // LuaM
                 {
                     toRemove.Add((category, marking.MarkingId));
                 }

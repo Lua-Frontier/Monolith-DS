@@ -26,6 +26,9 @@
   parent: BaseToolSurgery
   description: A surgical tool used to cauterize open wounds.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Steel: 100
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
@@ -54,6 +57,9 @@
   parent: BaseToolSurgery
   description: A surgical drill for making holes into hard material.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Steel: 100
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
     state: drill
@@ -84,6 +90,9 @@
   parent: BaseToolSurgery
   description: A surgical tool used to make incisions into flesh.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Steel: 100
   - type: Sharp
     butcherDelayModifier: 1.5 # Butchering with a scalpel, regardless of the type, will take 50% longer
   - type: Tool
@@ -175,6 +184,9 @@
   parent: BaseToolSurgery
   description: A surgical tool used to hold open incisions.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Steel: 100
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
     state: retractor
@@ -197,6 +209,9 @@
   parent: BaseToolSurgery # Shitmed Change
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Steel: 100
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi # Shitmed Change
     state: hemostat
@@ -253,6 +268,9 @@
   parent: BaseToolSurgery
   description: For cutting wood and other objects to pieces. Or sawing bones, in case of emergency.
   components:
+  - type: PhysicalComposition # LuaM
+    materialComposition:
+      Steel: 100
   - type: Sharp
   - type: Utensil
     types:

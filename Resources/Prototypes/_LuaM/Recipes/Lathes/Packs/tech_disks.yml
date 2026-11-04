@@ -9,13 +9,13 @@
   - BasicGalaticCommonTranslatorImplanter
   - BluespaceBeaker
   - BroadswordCentralElectronics
-  - BroadswordHarness
-  - BroadswordHead
-  - BroadswordLArm
-  - BroadswordLLeg
+  # - BroadswordHarness # Commented by LuaM
+  # - BroadswordHead # Commented by LuaM
+  # - BroadswordLArm # Commented by LuaM
+  # - BroadswordLLeg # Commented by LuaM
   - BroadswordPeripheralsElectronics
-  - BroadswordRArm
-  - BroadswordRLeg
+  # - BroadswordRArm # Commented by LuaM
+  # - BroadswordRLeg # Commented by LuaM
   - BroadswordTargetingElectronics
   - BubblishTranslator
   - BubblishTranslatorImplanter
@@ -59,15 +59,15 @@
   - FlailTargetingElectronics
   - GaryTranslator
   - GaryTranslatorImplanter
-  - GygaxArmor
+  # - GygaxArmor # Commented by LuaM
   - GygaxCentralElectronics
-  - GygaxHarness
-  - GygaxHead
-  - GygaxLArm
-  - GygaxLLeg
+  # - GygaxHarness # Commented by LuaM
+  # - GygaxHead # Commented by LuaM
+  # - GygaxLArm # Commented by LuaM
+  # - GygaxLLeg # Commented by LuaM
   - GygaxPeripheralsElectronics
-  - GygaxRArm
-  - GygaxRLeg
+  # - GygaxRArm # Commented by LuaM
+  # - GygaxRLeg # Commented by LuaM
   - GygaxTargetingElectronics
   - HalberdHarness
   - HeavyBallisticShield

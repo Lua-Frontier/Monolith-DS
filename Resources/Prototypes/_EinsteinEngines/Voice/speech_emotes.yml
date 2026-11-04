@@ -14,6 +14,7 @@
   id: Whirr
   name: chat-emote-name-whirr
   category: Vocal
+  icon: Interface/Emotes/buzz.png # LuaM
   chatMessages: ["chat-emote-msg-whirr"]
   whitelist: # Mono - IPC's, borgs, protogens
     components:
@@ -27,6 +28,7 @@
   id: Boop
   name: chat-emote-name-boop
   category: Vocal
+  icon: Interface/Emotes/beep.png # LuaM
   chatMessages: ["chat-emote-msg-boop"]
   whitelist: # Mono - IPC's, borgs, protogens
     components:

@@ -20,7 +20,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      Cardboard: 100
+      Cardboard: 50 # LuaM: 100 > 50, half of the crafting cost
 
 # Paper
 - type: entity # Books

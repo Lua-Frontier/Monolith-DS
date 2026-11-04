@@ -202,6 +202,9 @@
       - FullAuto #LuaM Semi to Full
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+  - type: ContainerContainer # LuaM
+    containers:
+      ballistic-ammo: !type:Container
   - type: BallisticAmmoProvider #LuaM
     proto: ShellShotgun12_gaugeBuckshot
     capacity: 200
@@ -232,6 +235,9 @@
       - FullAuto #LuaM Semi to Full
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+  - type: ContainerContainer # LuaM
+    containers:
+      ballistic-ammo: !type:Container
   - type: BallisticAmmoProvider #LuaM
     proto: ShellShotgun23x75mmBuckshot
     capacity: 200
@@ -261,6 +267,9 @@
       - FullAuto
     soundGunshot:
       path: /Audio/_DV/Weapons/Guns/Gunshots/typewriter.ogg
+  - type: ContainerContainer # LuaM
+    containers:
+      ballistic-ammo: !type:Container
   - type: BallisticAmmoProvider #LuaM
     proto: Cartridge762x51mmFMJ
     capacity: 600
@@ -291,6 +300,9 @@
       - SemiAuto #LuaM Burst to Semi
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: ContainerContainer # LuaM
+    containers:
+      ballistic-ammo: !type:Container
   - type: BallisticAmmoProvider #LuaM
     proto: 40mmGrenadeThermobaric
     capacity: 20
@@ -318,6 +330,9 @@
       - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: ContainerContainer # LuaM
+    containers:
+      ballistic-ammo: !type:Container
   - type: BallisticAmmoProvider #LuaM
     proto: Cartridge35mmGrenadeSAPHE
     capacity: 10

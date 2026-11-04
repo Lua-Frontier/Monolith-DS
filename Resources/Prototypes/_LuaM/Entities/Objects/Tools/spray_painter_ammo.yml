@@ -1,0 +1,31 @@
+- type: entity
+  parent: BaseItem
+  id: SprayPainterAmmo
+  name: compressed paint
+  description: A cartridge of highly compressed paint, commonly used in spray painters.
+  components:
+  - type: LimitedChargesAmmo
+    charges: 10
+    whitelist:
+      components:
+      - SprayPainter
+  - type: Sprite
+    sprite: _LuaM/Objects/Tools/spray_painter_ammo.rsi
+    state: ammo
+  - type: Item
+    sprite: _LuaM/Objects/Tools/spray_painter_ammo.rsi
+    heldPrefix: ammo
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 10
+      Plastic: 10
+  - type: StaticPrice
+    price: 30
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: SprayPainterAmmo
+  result: SprayPainterAmmo
+  materials:
+    Steel: 150
+    Plastic: 50

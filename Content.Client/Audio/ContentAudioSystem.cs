@@ -98,20 +98,31 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
         // Just in case
         // TODO: Maybe handle the removals by making it seamless?
         _fadingIn.Remove(stream.Value);
-        var diff = component.Volume - MinVolume;
-        _fadingOut.Add(stream.Value, diff / duration);
+        // LuaM start
+        var diff = component.Params.Volume - MinVolume;
+        if (!float.IsFinite(diff) || diff <= 0f)
+        {
+            _fadingOut.Remove(stream.Value);
+            _audio.Stop(stream);
+            return;
+        }
+
+        _fadingOut[stream.Value] = diff / duration;
+        // LuaM end
     }
 
     public void FadeIn(EntityUid? stream, AudioComponent? component = null, float duration = DefaultDuration)
     {
-        if (stream == null || duration <= 0f || !Resolve(stream.Value, ref component, false) || component.Volume < MinVolume) // LuaM
+        // LuaM start
+        if (stream == null || duration <= 0f || !Resolve(stream.Value, ref component, false) || !float.IsFinite(component.Params.Volume) || component.Params.Volume <= MinVolume)
             return;
 
         _fadingOut.Remove(stream.Value);
-        var curVolume = component.Volume;
+        var curVolume = component.Params.Volume;
         var change = (MinVolume - curVolume) / duration;
-        _fadingIn.Add(stream.Value, (change, component.Volume));
-        component.Volume = MinVolume;
+        _fadingIn[stream.Value] = (change, curVolume);
+        _audio.SetVolume(stream, MinVolume, component);
+        // LuaM end
     }
 
     private void UpdateFades(float frameTime)
@@ -126,11 +137,11 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
                 continue;
             }
 
-            var volume = component.Volume - change * frameTime;
-            volume = MathF.Max(MinVolume, volume);
+            var volume = component.Params.Volume - change * frameTime; // LuaM
+            volume = float.IsFinite(volume) ? MathF.Max(MinVolume, volume) : MinVolume; // LuaM
             _audio.SetVolume(stream, volume, component);
 
-            if (component.Volume.Equals(MinVolume))
+            if (volume <= MinVolume) // LuaM
             {
                 _audio.Stop(stream);
                 _fadeToRemove.Add(stream);
@@ -153,11 +164,11 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
                 continue;
             }
 
-            var volume = component.Volume - change * frameTime;
-            volume = MathF.Min(target, volume);
+            var volume = component.Params.Volume - change * frameTime; // LuaM
+            volume = float.IsFinite(volume) ? MathF.Min(target, volume) : target; // LuaM
             _audio.SetVolume(stream, volume, component);
 
-            if (component.Volume.Equals(target))
+            if (volume >= target) // LuaM
             {
                 _fadeToRemove.Add(stream);
             }

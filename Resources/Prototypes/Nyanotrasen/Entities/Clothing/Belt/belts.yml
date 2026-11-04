@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingBeltBase
+  parent: NFClothingBeltStorageBase # LuaM: ClothingBeltBase > NFClothingBeltStorageBase
   id: ClothingBeltMartialBlack
   name: black belt
   description: This is the most martial of all the belts.
@@ -11,8 +11,6 @@
       types:
         Blunt: 1
         Slash: 1
-  - type: Item
-    size: Small
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Belt/Martial/black.rsi
   - type: Clothing

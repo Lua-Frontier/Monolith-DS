@@ -129,6 +129,9 @@ public sealed partial class SprinterComponent : Component
     /// </summary>
     [DataField]
     public float StaminaPenaltyOnShove = 25f;
+
+    [ViewVariables]
+    public bool FallWarned; // LuaM
 }
 
 [Serializable, NetSerializable]

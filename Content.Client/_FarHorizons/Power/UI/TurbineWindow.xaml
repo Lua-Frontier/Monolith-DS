@@ -83,7 +83,9 @@
 				<PanelContainer StyleClasses="Inset" HorizontalExpand="True" Margin="4">
 					<BoxContainer Name="BladeInfo" Orientation="Vertical" HorizontalExpand="True" Margin="4">
 						<Label Name="BladeInfoName" Text="{Loc 'comp-turbine-ui-blade'}" StyleClasses="LabelKeyText" HorizontalAlignment="Center" HorizontalExpand="True"/>
-						
+
+						<BoxContainer VerticalExpand="True"/>
+
 						<TextureRect Name="BladeTexture" SetSize="128 128" TextureScale="2 2" HorizontalAlignment="Center"
 									 TexturePath="/Textures/_FarHorizons/Structures/Power/Generation/FissionGenerator/turbine_parts/blade.png"/>
 
@@ -101,7 +103,9 @@
 				<PanelContainer StyleClasses="Inset" HorizontalExpand="True" Margin="4">
 					<BoxContainer Name="StatorInfo" Orientation="Vertical" HorizontalExpand="True" Margin="4">
 						<Label Name="StatorInfoName" Text="{Loc 'comp-turbine-ui-stator'}" StyleClasses="LabelKeyText" HorizontalAlignment="Center" HorizontalExpand="True"/>
-						
+
+						<BoxContainer VerticalExpand="True"/>
+
 						<TextureRect Name="StatorTexture" SetSize="128 128" TextureScale="2 2" HorizontalAlignment="Center"
 									 TexturePath="/Textures/_FarHorizons/Structures/Power/Generation/FissionGenerator/turbine_parts/stator.png"/>
 

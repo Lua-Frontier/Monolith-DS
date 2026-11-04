@@ -1,39 +1,54 @@
 - type: rpInteractionCategory
   id: Face
   icon: _LuaM/Interface/RpPanel/cheeks_pat.png
+  order: 0
 
 - type: rpInteractionCategory
   id: Head
   icon: _LuaM/Interface/RpPanel/pet_head.png
+  order: 1
 
 - type: rpInteractionCategory
   id: Ears
   icon: _LuaM/Interface/RpPanel/pat_ears.png
+  order: 2
 
 - type: rpInteractionCategory
   id: Neck
   icon: _LuaM/Interface/RpPanel/bite_neck.png
+  order: 3
 
 - type: rpInteractionCategory
   id: Shoulders
   icon: _LuaM/Interface/RpPanel/pat_shoulder.png
+  order: 4
 
 - type: rpInteractionCategory
   id: Torso
   icon: _LuaM/Interface/RpPanel/hug-wings.png
+  order: 5
 
 - type: rpInteractionCategory
   id: Back
   icon: _LuaM/Interface/RpPanel/stretch_full_body.png
+  order: 6
 
 - type: rpInteractionCategory
   id: Hands
   icon: _LuaM/Interface/RpPanel/kiss_hand.png
+  order: 7
 
 - type: rpInteractionCategory
   id: Tail
   icon: _LuaM/Interface/RpPanel/pat_tail.png
+  order: 8
 
 - type: rpInteractionCategory
   id: Wings
   icon: _LuaM/Interface/RpPanel/pat-wings.png
+  order: 9
+
+- type: rpInteractionCategory
+  id: Chassis
+  icon: Interface/VerbIcons/settings.svg.192dpi.png
+  order: 10

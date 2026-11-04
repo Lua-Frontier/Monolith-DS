@@ -1,5 +1,5 @@
-ent-MMCIndustrialCredit = MMC industrial credit
-    .desc = A ticket for use at the MMC requisitions kiosk. Have a pheno-Mieyo day!
+ent-MMCIndustrialCredit = промышленный кредит ММС
+    .desc = Талон для киоска снабжения ММС. Хорошего вам Миейо-дня!
     .suffix = 100 MIC
 ent-MMCIndustrialCredit1 = { ent-MMCIndustrialCredit }
     .desc = { ent-MMCIndustrialCredit.desc }
@@ -13,5 +13,5 @@ ent-MMCIndustrialCredit25 = { ent-MMCIndustrialCredit }
 ent-MMCIndustrialCredit50 = { ent-MMCIndustrialCredit }
     .desc = { ent-MMCIndustrialCredit.desc }
     .suffix = 50 MIC
-ent-VendingMachineRestockMMC = MMC Vendor Restock
-    .desc = A box filled with MMC corporate supplies. Load it into a MMC Automated Vendor to restock. A label reads "FOR AUTHORIZED EMPLOYEES ONLY. HANDLE WITH CARE."
+ent-VendingMachineRestockMMC = набор пополнения автомата ММС
+    .desc = Ящик с корпоративными припасами ММС. Загрузите его в автомат снабжения ММС, чтобы пополнить запас. На этикетке написано: "ТОЛЬКО ДЛЯ УПОЛНОМОЧЕННЫХ СОТРУДНИКОВ. ОБРАЩАТЬСЯ ОСТОРОЖНО".

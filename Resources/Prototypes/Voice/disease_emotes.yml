@@ -2,6 +2,7 @@
   id: Sneeze
   name: chat-emote-name-sneeze
   category: Vocal
+  icon: Interface/Emotes/cough.png # LuaM
   chatMessages: ["chat-emote-msg-sneeze"]
 
 - type: emote

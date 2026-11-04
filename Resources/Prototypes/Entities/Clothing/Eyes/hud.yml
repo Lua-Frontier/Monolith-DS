@@ -179,6 +179,9 @@
   name: medsec hud
   description: An eye display that looks like a mixture of medical and security huds.
   components:
+  - type: PhysicalComposition # LuaM: half of the crafting cost
+    materialComposition:
+      Steel: 40
   - type: Sprite
     sprite: Clothing/Eyes/Hud/medsec.rsi
   - type: Clothing

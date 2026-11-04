@@ -8,6 +8,7 @@
   - type: Hunger
   - type: Thirst
   - type: Carriable
+  - type: Wagging
   - type: Icon
     sprite: _LuaM/Mobs/Species/Ariral/parts.rsi
     state: full
@@ -24,6 +25,7 @@
       Unsexed: FemaleAriral
   - type: InteractionPopup
     successChance: 0.1
+    successForSameSpecies: true # LuaM
     interactFailureString: petting-failure-ariral
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg

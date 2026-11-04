@@ -11,8 +11,11 @@ using Content.Shared.Examine;
 using Content.Shared.Forensics;
 using Content.Shared.Implants; // LuaM
 using Content.Shared.Implants.Components; // LuaM
+using Content.Shared.Interaction; // LuaM
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Popups; // LuaM
+using Content.Shared.Stacks; // LuaM
+using Content.Shared.Tools.Systems; // LuaM
 using Content.Shared.Whitelist; // LuaM
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers; // LuaM
@@ -35,6 +38,8 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private INetManager _netManager = default!;
     [Dependency] private ISerializationManager _serializationManager = default!;
+    [Dependency] private SharedStackSystem _stack = default!; // LuaM
+    [Dependency] private SharedToolSystem _tool = default!; // LuaM
 
     public override void Initialize()
     {
@@ -43,7 +48,43 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
         SubscribeLocalEvent<AutoSurgeonComponent, ItemToggleActivateAttemptEvent>(OnActivated);
         SubscribeLocalEvent<AutoSurgeonComponent, AutoSurgeonDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<AutoSurgeonComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<AutoSurgeonComponent, InteractUsingEvent>(OnInteractUsing); // LuaM
+        SubscribeLocalEvent<AutoSurgeonComponent, AutoSurgeonDisassembleDoAfterEvent>(OnDisassembleDoAfter); // LuaM
     }
+
+    // LuaM-start
+    private void OnInteractUsing(Entity<AutoSurgeonComponent> ent, ref InteractUsingEvent args)
+    {
+        if (args.Handled || !ent.Comp.Used)
+            return;
+
+        args.Handled = _tool.UseTool(args.Used,
+            args.User,
+            ent,
+            ent.Comp.DisassembleTime,
+            ent.Comp.DisassembleQuality,
+            new AutoSurgeonDisassembleDoAfterEvent());
+    }
+
+    private void OnDisassembleDoAfter(Entity<AutoSurgeonComponent> ent, ref AutoSurgeonDisassembleDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled || !ent.Comp.Used)
+            return;
+
+        args.Handled = true;
+
+        if (_netManager.IsClient)
+            return;
+
+        foreach (var (material, amount) in ent.Comp.DisassembleMaterials)
+        {
+            var stack = SpawnNextToOrDrop(material, ent);
+            _stack.SetCount(stack, amount);
+        }
+
+        QueueDel(ent);
+    }
+    // LuaM-end
 
     private void OnActivated(Entity<AutoSurgeonComponent> ent, ref ItemToggleActivateAttemptEvent args)
     {
@@ -229,12 +270,18 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
                 }
 
                 // LuaM-start: the organ goes into its own slot, not into the first free one
-                if (!_body.InsertOrgan(parent, newPart, newOrganComp.SlotId)
-                    && _container.TryGetContainer(parent, SharedBodySystem.GetOrganContainerId(newOrganComp.SlotId), out var slotContainer)
-                    && slotContainer.ContainedEntities.FirstOrDefault() is { Valid: true } oldOrgan)
+                if (!_body.InsertOrgan(parent, newPart, newOrganComp.SlotId))
                 {
-                    _body.RemoveOrgan(oldOrgan);
-                    _body.InsertOrgan(parent, newPart, newOrganComp.SlotId);
+                    if (_container.TryGetContainer(parent, SharedBodySystem.GetOrganContainerId(newOrganComp.SlotId), out var slotContainer)
+                        && slotContainer.ContainedEntities.FirstOrDefault() is { Valid: true } oldOrgan)
+                        _body.RemoveOrgan(oldOrgan);
+
+                    if (!_body.InsertOrgan(parent, newPart, newOrganComp.SlotId))
+                    {
+                        Del(newPart);
+                        _audio.Stop(ent.Comp.ActiveSound);
+                        return;
+                    }
                 }
                 // LuaM-end
             }
@@ -361,8 +408,13 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
             organEffectComp.Active.TryAdd(name, data);
     }
 
-    private void OnExamined(Entity<AutoSurgeonComponent> ent, ref ExaminedEvent args) =>
+    private void OnExamined(Entity<AutoSurgeonComponent> ent, ref ExaminedEvent args)
+    {
         args.PushMarkup(ent.Comp.Used ? Loc.GetString("gun-cartridge-spent") : Loc.GetString("gun-cartridge-unspent")); // Yes gun locale, and?
+
+        if (ent.Comp.Used) // LuaM
+            args.PushMarkup(Loc.GetString("autosurgeon-disassemble-examine"));
+    }
 
     private ComponentRegistry? AddComponents(EntityUid ent, ComponentRegistry? comps) // Returns actually added components
     {

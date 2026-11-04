@@ -14,6 +14,11 @@
     - Rodentia
     - Tajaran
     - Vulpkanin
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: PatEars
@@ -40,6 +45,11 @@
     collection: RpFriction
   messages: RpPatEarsHumanMessages
   icon: _LuaM/Interface/RpPanel/pat_ears_human.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: ScratchingEars
@@ -49,3 +59,22 @@
     collection: RpFriction
   selfMessages: RpScratchingEarsSelfMessages
   icon: _LuaM/Interface/RpPanel/pat_ears_human.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: WhisperInEar
+  category: Ears
+  kind: Soft
+  sound:
+    collection: RpFriction
+  messages: RpWhisperInEarMessages
+  icon: _LuaM/Interface/RpPanel/pat_ears_human.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC

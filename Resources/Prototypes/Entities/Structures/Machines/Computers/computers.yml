@@ -20,6 +20,12 @@
       state: generic_panel_open
   - type: GenericVisualizer
     visuals:
+      enum.EdgeConnectionVisuals.ConnectionMask: # LuaM
+        computerLayerBody:
+          None: { state: computer, sprite: Structures/Machines/computers.rsi }
+          West: { state: computer_r, sprite: _LuaM/Structures/Machines/computer_edges.rsi }
+          East: { state: computer_l, sprite: _LuaM/Structures/Machines/computer_edges.rsi }
+          East, West: { state: computer_l_r, sprite: _LuaM/Structures/Machines/computer_edges.rsi }
       enum.ComputerVisuals.Powered:
         computerLayerScreen:
           True: { visible: true, shader: unshaded }
@@ -1206,6 +1212,12 @@
     - type: Appearance
     - type: GenericVisualizer
       visuals:
+        enum.EdgeConnectionVisuals.ConnectionMask: # LuaM
+          computerLayerBody:
+            None: { state: computer, sprite: Structures/Machines/computers.rsi }
+            West: { state: computer_r, sprite: _LuaM/Structures/Machines/computer_edges.rsi }
+            East: { state: computer_l, sprite: _LuaM/Structures/Machines/computer_edges.rsi }
+            East, West: { state: computer_l_r, sprite: _LuaM/Structures/Machines/computer_edges.rsi }
         enum.ComputerVisuals.Powered:
           computerLayerScreen:
             True: { visible: true, shader: unshaded }

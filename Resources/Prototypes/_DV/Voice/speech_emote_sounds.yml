@@ -13,7 +13,7 @@
     Cough:
       collection: MaleCoughs
     Sigh:
-      collection: MaleSigh
+      collection: HarpySigh # LuaM: MaleSigh > HarpySigh
     Crying:
       collection: HarpyCry
     Whistle:
@@ -84,6 +84,14 @@
       collection: Belch # Frontier
     Squish: # Frontier
       collection: HarpySquishes # Frontier
+    # LuaM start
+    Yawn:
+      collection: HarpyYawns
+    Snore:
+      collection: Snores
+    HarpyToy:
+      collection: ToySqueak
+    # LuaM end
 
 - type: emoteSounds
   id: MaleVulpkanin
@@ -91,11 +99,11 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: MaleScreams
+      collection: VulpkaninMaleScreams # LuaM: MaleScreams > VulpkaninMaleScreams
     Laugh:
-      collection: MaleLaugh
+      collection: VulpkaninLaugh # LuaM: MaleLaugh > VulpkaninLaugh
     Sneeze:
-      collection: MaleSneezes
+      collection: VulpkaninSneezes # LuaM: MaleSneezes > VulpkaninSneezes
     Cough:
       collection: MaleCoughs
     Yawn:
@@ -107,7 +115,7 @@
     Sigh:
       collection: MaleSigh
     Crying:
-      collection: MaleCry
+      collection: VulpkaninCry # LuaM: MaleCry > VulpkaninCry
     Whistle:
       collection: Whistles
     Weh:
@@ -136,6 +144,8 @@
       collection: VulpkaninYips
     Whine:
       collection: VulpkaninWhines  # Starlight / Monolith - yip & whine ]
+    fox_trill: # LuaM
+      collection: VulpkaninTrill # LuaM
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -143,11 +153,11 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: FemaleScreams
+      collection: VulpkaninFemaleScreams # LuaM: FemaleScreams > VulpkaninFemaleScreams
     Laugh:
-      collection: FemaleLaugh
+      collection: VulpkaninLaugh # LuaM: FemaleLaugh > VulpkaninLaugh
     Sneeze:
-      collection: FemaleSneezes
+      collection: VulpkaninSneezes # LuaM: FemaleSneezes > VulpkaninSneezes
     Cough:
       collection: FemaleCoughs
     Yawn:
@@ -159,7 +169,7 @@
     Sigh:
       collection: FemaleSigh
     Crying:
-      collection: FemaleCry
+      collection: VulpkaninCry # LuaM: FemaleCry > VulpkaninCry
     Whistle:
       collection: Whistles
     Weh:
@@ -188,6 +198,8 @@
       collection: VulpkaninYips
     Whine:
       collection: VulpkaninWhines  # Starlight / Monolith - yip & whine ]
+    fox_trill: # LuaM
+      collection: VulpkaninTrill # LuaM
 
 - type: emoteSounds
   id: MobDog

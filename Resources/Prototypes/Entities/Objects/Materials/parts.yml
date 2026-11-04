@@ -28,7 +28,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      Steel: 50 #Half of a regular steel sheet to reflect the crafting recipe
+      Steel: 25 # LuaM: 50 > 25, half of the crafting cost
   - type: Stack
     stackType: MetalRod
     baseLayer: base

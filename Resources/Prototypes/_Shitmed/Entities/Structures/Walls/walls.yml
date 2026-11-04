@@ -9,6 +9,22 @@
     snap:
     - Wall
   components:
+  # LuaM start: occlusion and shadow follow the wall sprite
+  - type: Occluder
+    polygon:
+    - "-0.5,-0.5"
+    - "-0.5,-0.25"
+    - "0.25,0.5"
+    - "0.5,0.5"
+    - "0.5,-0.5"
+  - type: SunShadowCast
+    points:
+    - "-0.5,-0.5"
+    - "0.5,-0.5"
+    - "0.5,0.5"
+    - "0.25,0.5"
+    - "-0.5,-0.25"
+  # LuaM end
   - type: Transform
     anchored: true
   - type: Clickable
@@ -58,8 +74,10 @@
       fix1:
         shape:
           !type:PolygonShape
-            vertices:
+            vertices: # LuaM: follows the sprite
             - "-0.5,-0.5"
+            - "-0.5,-0.25"
+            - "0.25,0.5"
             - "0.5,0.5"
             - "0.5,-0.5"
         mask:

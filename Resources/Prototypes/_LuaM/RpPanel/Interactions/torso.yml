@@ -21,3 +21,31 @@
     species:
     - Harpy
     - Moth
+
+- type: rpInteraction
+  id: Hug
+  category: Torso
+  kind: Soft
+  range: 1.5
+  sound:
+    collection: RpPat
+  messages: RpHugMessages
+  icon: _LuaM/Interface/RpPanel/hug-wings.png
+
+- type: rpInteraction
+  id: ElbowNudge
+  category: Torso
+  kind: Soft
+  sound:
+    collection: RpPat
+  messages: RpElbowNudgeMessages
+  icon: _LuaM/Interface/RpPanel/friendly_finger_tap.png
+
+- type: rpInteraction
+  id: Bow
+  category: Torso
+  kind: Soft
+  sound:
+    collection: RpClick
+  selfMessages: RpBowSelfMessages
+  icon: _LuaM/Interface/RpPanel/cool_pose.png

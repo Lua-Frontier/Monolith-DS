@@ -1,0 +1,41 @@
+- type: decal
+  id: PrintTech1
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/print_tech.rsi
+    state: printtech1
+
+- type: decal
+  id: PrintTech2
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/print_tech.rsi
+    state: printtech2
+
+- type: decal
+  id: PrintTech3
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/print_tech.rsi
+    state: printtech3
+
+- type: decal
+  id: PrintTech4
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/print_tech.rsi
+    state: printtech4
+
+- type: decal
+  id: PrintTech5
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/print_tech.rsi
+    state: printtech5
+
+- type: decal
+  id: PrintTech6
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/print_tech.rsi
+    state: printtech6

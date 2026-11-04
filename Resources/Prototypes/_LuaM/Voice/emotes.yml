@@ -1,0 +1,47 @@
+- type: emote
+  id: fox_trill
+  name: chat-emote-name-fox-trill
+  category: Vocal
+  icon: _LuaM/Interface/Emotes/awoo.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-fox-trill"]
+  chatTriggers:
+  - trills
+  - издаёт трель
+
+- type: emote
+  id: HarpyToy
+  name: chat-emote-name-harpy-toy
+  category: Vocal
+  available: false
+  icon:
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_h
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-harpy-toy"]
+  chatTriggers:
+  - toysqueak
+  - пищит как игрушка
+  - пищит игрушкой
+
+- type: soundCollection
+  id: VulpkaninTrill
+  files:
+  - /Audio/_LuaM/Voice/Vulpkanin/fox_ururur.ogg
+
+- type: soundCollection
+  id: HarpyYawns
+  files:
+  - /Audio/Voice/Human/male_yawn_1.ogg
+  - /Audio/Voice/Human/female_yawn_1.ogg

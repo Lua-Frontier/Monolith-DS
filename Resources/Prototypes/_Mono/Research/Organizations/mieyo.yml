@@ -9,8 +9,8 @@
   cost: 5000
   recipeUnlocks:
   - HyposprayMMC
-  # - SutureMMC # Commented by LuaM
-  # - MeshMMC # Commented by LuaM
+  - SutureMMC
+  - MeshMMC
   technologyPrerequisites:
   # - UniversalMaterialResearchT1 # Commented by LuaM
   - MieyoManufacturingGoods # LuaM

@@ -1,0 +1,256 @@
+- type: constructionGraph
+  id: LuaMSeat
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: luamchairpizzeria
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: luamchairred
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: luamchairwhite
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: luamchairbarstool
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: luamchairbarstool2
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: luamchaircomfyblack
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: luamchaircomfymaroon
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: luamchaircomfywhite
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: luamchairking
+          steps:
+            - material: Gold
+              amount: 3
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+              doAfter: 1
+        - to: luamchairrich
+          steps:
+            - material: Gold
+              amount: 3
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+              doAfter: 1
+        - to: luamchairrichwhite
+          steps:
+            - material: Gold
+              amount: 3
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+              doAfter: 1
+        - to: luamchairstyle
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: luamchairwoodenstool
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: luamchairwoodenstool2
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+
+    - node: luamchairpizzeria
+      entity: LuaMChairPizzeria
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairred
+      entity: LuaMChairRed
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairwhite
+      entity: LuaMChairWhite
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairbarstool
+      entity: LuaMChairBarStool
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairbarstool2
+      entity: LuaMChairBarStool2
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchaircomfyblack
+      entity: LuaMChairComfyBlack
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchaircomfymaroon
+      entity: LuaMChairComfyMaroon
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchaircomfywhite
+      entity: LuaMChairComfyWhite
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairking
+      entity: LuaMChairKing
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: IngotGold1
+              amount: 3
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairrich
+      entity: LuaMChairRich
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: IngotGold1
+              amount: 3
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairrichwhite
+      entity: LuaMChairRichWhite
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: IngotGold1
+              amount: 3
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairstyle
+      entity: LuaMChairStyle
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairwoodenstool
+      entity: LuaMChairWoodenStool
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+          steps:
+            - tool: Screwing
+              doAfter: 2
+
+    - node: luamchairwoodenstool2
+      entity: LuaMChairWoodenStool2
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+          steps:
+            - tool: Screwing
+              doAfter: 2

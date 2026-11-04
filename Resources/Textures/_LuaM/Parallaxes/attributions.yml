@@ -1,0 +1,9 @@
+- files: ["sector_darkness.png", "sector_brightness.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Procedurally generated for the sector darkness and sector brightness events of Monolith-DS"
+  source: "https://github.com/Lua-Frontier/Monolith-DS"
+
+- files: ["parallax_noise_opacity.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from Lua-Frontier sector-frontier-14 (PR #631)"
+  source: "https://github.com/Lua-Frontier/sector-frontier-14"

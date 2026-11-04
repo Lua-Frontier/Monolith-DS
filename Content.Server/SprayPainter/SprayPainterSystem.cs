@@ -22,6 +22,7 @@ public sealed partial class SprayPainterSystem : SharedSprayPainterSystem
         SubscribeLocalEvent<SprayPainterComponent, SprayPainterPipeDoAfterEvent>(OnPipeDoAfter);
 
         SubscribeLocalEvent<AtmosPipeColorComponent, InteractUsingEvent>(OnPipeInteract);
+        SubscribeLocalEvent<SprayPainterComponent, AfterInteractEvent>(OnFloorAfterInteract); // LuaM
     }
 
     private void OnPipeDoAfter(Entity<SprayPainterComponent> ent, ref SprayPainterPipeDoAfterEvent args)
@@ -33,6 +34,9 @@ public sealed partial class SprayPainterSystem : SharedSprayPainterSystem
             return;
 
         if (!TryComp<AtmosPipeColorComponent>(target, out var color))
+            return;
+
+        if (!TryUsePaint(ent, ent.Comp.PipeChargeCost)) // LuaM
             return;
 
         Audio.PlayPvs(ent.Comp.SpraySound, ent);
@@ -52,6 +56,14 @@ public sealed partial class SprayPainterSystem : SharedSprayPainterSystem
 
         if (!painter.ColorPalette.TryGetValue(colorName, out var color))
             return;
+
+        // LuaM-start
+        if (!HasPaint(args.Used, painter.PipeChargeCost, args.User, predicted: false))
+        {
+            args.Handled = true;
+            return;
+        }
+        // LuaM-end
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, painter.PipeSprayTime, new SprayPainterPipeDoAfterEvent(color), args.Used, target: ent, used: args.Used)
         {

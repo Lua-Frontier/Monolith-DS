@@ -66,3 +66,15 @@
   id: RpVineBoom
   files:
   - /Audio/_LuaM/RpPanel/vine_boom.ogg
+
+- type: soundCollection
+  id: RpDiagnostic
+  files:
+  - /Audio/_LuaM/RpPanel/diagnostic.ogg
+
+- type: soundCollection
+  id: RpMechanic
+  files:
+  - /Audio/_LuaM/RpPanel/mechanic1.ogg
+  - /Audio/_LuaM/RpPanel/mechanic2.ogg
+  - /Audio/_LuaM/RpPanel/mechanic3.ogg

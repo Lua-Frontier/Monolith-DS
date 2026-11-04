@@ -29,6 +29,12 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("forcedColoring")]
         public bool ForcedColoring { get; private set; } = false;
 
+        // LuaM start
+        // --  Скрыт из выбора в лобби, но остаётся валидным для уже созданных персонажей.
+        [DataField]
+        public bool Hidden { get; private set; }
+        // LuaM end
+
         [DataField("coloring")]
         public MarkingColors Coloring { get; private set; } = new();
 

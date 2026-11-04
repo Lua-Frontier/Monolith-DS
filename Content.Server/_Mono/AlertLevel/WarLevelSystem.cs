@@ -17,7 +17,7 @@ public sealed partial class WarLevelSystem : EntitySystem
         return alert.PostWar;
     }
 
-    public void SetLevel(bool level, WarLevelComponent? component = null)
+    public void SetLevel(bool level, WarLevelComponent? component = null, bool playSound = true) // LuaM: playSound
     {
         EntityUid sectorEnt = _sectorService.GetServiceEntity();
         if (!TryComp<WarLevelComponent>(sectorEnt, out component))
@@ -33,7 +33,7 @@ public sealed partial class WarLevelSystem : EntitySystem
             _chatSystem.DispatchGlobalAnnouncement(
                 level ? Loc.GetString("war-level-announcement-post") :  Loc.GetString("war-level-announcement-pre"),
                 sender: Loc.GetString("war-level-announcement-sender"),
-                playSound: level,
+                playSound: level && playSound, // LuaM
                 announcementSound: level ? new SoundPathSpecifier("/Audio/Misc/gamma.ogg") : new SoundPathSpecifier("/Audio/Announcements/notice2.ogg"),
                 colorOverride: level ? Color.Crimson : Color.CornflowerBlue);
 

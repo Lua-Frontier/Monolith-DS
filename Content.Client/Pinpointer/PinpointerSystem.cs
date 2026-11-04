@@ -18,12 +18,10 @@ public sealed partial class PinpointerSystem : SharedPinpointerSystem
 
         // because eye can change it rotation anytime
         // we need to update this arrow in a update loop
+        var eye = _eyeManager.CurrentEye; // LuaM
         var query = EntityQueryEnumerator<PinpointerComponent, SpriteComponent>();
         while (query.MoveNext(out var uid, out var pinpointer, out var sprite))
         {
-            if (!pinpointer.HasTarget)
-                continue;
-            var eye = _eyeManager.CurrentEye;
             var angle = pinpointer.ArrowAngle + eye.Rotation;
 
             switch (pinpointer.DistanceToTarget)
