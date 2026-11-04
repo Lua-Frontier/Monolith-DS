@@ -84,7 +84,9 @@ public sealed class GuidebookCatalogTests
         await pair.Client.WaitAssertion(() =>
         {
             Assert.That(system.Catalog, Is.Not.Null);
-            Assert.That(system.Catalog!.Vessels, Has.Count.EqualTo(122));
+            Assert.That(system.Catalog!.Vessels.Select(v => v.Id), Is.EquivalentTo(
+                pair.Client.ResolveDependency<IPrototypeManager>().EnumeratePrototypes<VesselPrototype>().Select(v => v.ID)),
+                "The catalogue follows current vessel prototypes, including newly added ships.");
             Assert.That(system.Catalog.Equipment.Any(e => e.Kind == "server"), Is.True);
             Assert.That(system.Catalog.Ammunition, Is.Not.Empty);
             Assert.That(system.Catalog.Ammunition, Does.Not.Contain("CartridgePistol"));
