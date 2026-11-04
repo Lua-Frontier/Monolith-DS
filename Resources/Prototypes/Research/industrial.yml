@@ -214,8 +214,8 @@
   - UtilityBeltChiefEngineer
   - BorgModuleAdvancedTool
   - ExperimentalNaniteApplicator # Monolith
-  - Fulton
-  - FultonBeacon
+    # - Fulton # Commented by LuaM
+    # - FultonBeacon # Commented by LuaM
   - BorgModuleJetpack # Frontier
   #- NFBlueprintPowerDrill # Frontier
   #- NFBlueprintJawsOfLife # Frontier

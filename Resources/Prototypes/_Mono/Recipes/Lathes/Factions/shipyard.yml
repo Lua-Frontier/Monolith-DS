@@ -428,13 +428,15 @@
     Glass: 5000
     Plasma: 2500
 
-- type: latheRecipe
-  parent: BaseVoucherRecipe
-  id: ShipVoucherCaelestinusT0RecipeAlternative
-  result: ShipVoucherCaelestinusT0
-  completetime: 15 # faster for your trouble
-  entities:
-    MonolithicCrystalSmall: 1
+# LuaM-commented-start:
+# - type: latheRecipe
+#   parent: BaseVoucherRecipe
+#   id: ShipVoucherCaelestinusT0RecipeAlternative
+#   result: ShipVoucherCaelestinusT0
+#   completetime: 15 # faster for your trouble
+#   entities:
+#     MonolithicCrystalSmall: 1
+# LuaM-commented-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -452,10 +454,12 @@
     Gold: 4000
     Silver: 4000
 
-- type: latheRecipe
-  parent: BaseVoucherRecipe
-  id: ShipVoucherCaelestinusT1RecipeAlternative
-  result: ShipVoucherCaelestinusT1
-  completetime: 30 # faster for your trouble
-  entities:
-    MonolithicCrystalSmall: 4
+# LuaM-commented-start:
+# - type: latheRecipe
+#   parent: BaseVoucherRecipe
+#   id: ShipVoucherCaelestinusT1RecipeAlternative
+#   result: ShipVoucherCaelestinusT1
+#   completetime: 30 # faster for your trouble
+#   entities:
+#     MonolithicCrystalSmall: 4
+# LuaM-commented-end

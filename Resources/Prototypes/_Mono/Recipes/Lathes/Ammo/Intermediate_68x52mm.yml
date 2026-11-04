@@ -43,9 +43,8 @@
   materials:
     Steel: 500
     UraniumDepleted: 150
-    Plasma: 500 # LuaM
-  # reagents: # Commented by LuaM
-  #   Plasma: 60
+  reagents:
+    Plasma: 60
   result: Magazine68x52mmCaselessPlasma
 
 #Boxes
@@ -88,9 +87,8 @@
   materials:
     Steel: 1000
     UraniumDepleted: 300
-    Plasma: 1200
-  # reagents: # Commented by LuaM
-  #   Plasma: 120
+  reagents:
+    Plasma: 120
   result: AmmoBox68x52mmCaselessPlasma
 
 #big box
