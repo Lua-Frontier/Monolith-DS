@@ -13,7 +13,7 @@
     whitelist:
       tags:
         - Cartridge8x65mmSKR
-    capacity: 25
+    capacity: 20 # LuaM: 25 > 20
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -103,7 +103,7 @@
     whitelist:
       tags:
       - Cartridge8x65mmSKR
-    capacity: 100
+    capacity: 80 # LuaM: 100 > 80
   - type: Item
     size: Small
   - type: ContainerContainer

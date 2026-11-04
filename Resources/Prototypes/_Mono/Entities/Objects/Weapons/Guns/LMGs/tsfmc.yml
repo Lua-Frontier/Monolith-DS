@@ -13,7 +13,7 @@
     - map: ["gripAttachment"]
     - map: ["opticAttachment"]
   - type: GunWieldBonus
-    minAngle: -54
+    minAngle: -53 # LuaM: -54 > -53
     maxAngle: -72
   - type: Gun
     minAngle: 54

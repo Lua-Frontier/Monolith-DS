@@ -1,10 +1,10 @@
 ent-BaseWeaponRevolver = Дебаг-револьвер
     .desc = Дерзай — налетай, целься и стреляй.
-ent-WeaponRevolverInspector = RNT-3 "Инспектор"
-    .desc = Лучший друг детектива. Использует патроны калибра .45 магнум.
+ent-WeaponRevolverInspector = RNT-3 «Инспектор» (.357 магнум)
+    .desc = Лучший друг детектива. Использует патроны калибра .357 магнум.
     .suffix = Револьвер
-ent-WeaponRevolverPython = R-2 «Питон»
-    .desc = Надёжный револьвер, предпочитаемый агентами Синдиката. Использует патроны калибра .45 магнум.
+ent-WeaponRevolverPython = R-2 «Питон» (.357 магнум)
+    .desc = Надёжный револьвер, предпочитаемый агентами Синдиката. Использует патроны калибра .357 магнум.
     .suffix = Револьвер
 ent-WeaponRevolverPythonGatfruit = { ent-WeaponRevolverPython}
     .desc = { ent-WeaponRevolverPython.desc }
