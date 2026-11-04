@@ -45,6 +45,11 @@
           32:
             sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
             state: mask
+      balaclava:
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
+            state: mask
     displacements:
       jumpsuit:
         sizeMaps:
@@ -62,6 +67,11 @@
             sprite: _LuaM/Mobs/Species/Reptilian/displacement.rsi
             state: outerClothing
       mask:
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
+            state: mask
+      balaclava:
         sizeMaps:
           32:
             sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
@@ -227,6 +237,11 @@
           32:
             sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
             state: mask
+      balaclava:
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
+            state: mask
     displacements:
       jumpsuit:
         sizeMaps:
@@ -244,6 +259,11 @@
             sprite: _LuaM/Mobs/Species/Reptilian/displacement.rsi
             state: outerClothing
       mask:
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi
+            state: mask
+      balaclava:
         sizeMaps:
           32:
             sprite: _LuaM/Mobs/Species/Vulpkanin/displacement.rsi

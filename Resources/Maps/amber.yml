@@ -135649,7 +135649,7 @@ entities:
     - type: Transform
       pos: -15.5,-29.5
       parent: 2
-- proto: VendingMachinePride
+- proto: VendingMachineClothingCapes
   entities:
   - uid: 17094
     components:
