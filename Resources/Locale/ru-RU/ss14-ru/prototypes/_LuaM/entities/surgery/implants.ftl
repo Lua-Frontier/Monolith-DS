@@ -1,0 +1,16 @@
+ent-SurgeryRemoveCNS = Извлечение импланта ЦНС
+    .desc = { ent-SurgeryBase.desc }
+ent-SurgeryInsertCNS = Установка импланта ЦНС
+    .desc = { ent-SurgeryBase.desc }
+ent-SurgeryRemoveMantisBlade = Извлечение клинка богомола
+    .desc = { ent-SurgeryBase.desc }
+ent-SurgeryInsertMantisBlade = Установка клинка богомола
+    .desc = { ent-SurgeryBase.desc }
+ent-SurgeryRemoveHumanityChip = Извлечение нейрочипа
+    .desc = { ent-SurgeryBase.desc }
+ent-SurgeryInsertHumanityChip = Установка нейрочипа
+    .desc = { ent-SurgeryBase.desc }
+ent-SurgeryRemoveSubdermalArmor = Извлечение подкожной брони
+    .desc = { ent-SurgeryBase.desc }
+ent-SurgeryInsertSubdermalArmor = Установка подкожной брони
+    .desc = { ent-SurgeryBase.desc }

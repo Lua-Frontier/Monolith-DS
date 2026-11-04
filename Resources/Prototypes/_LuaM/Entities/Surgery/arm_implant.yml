@@ -1,0 +1,37 @@
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveMantisBlade
+  name: Remove Mantis Blade
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Arm
+  - type: SurgeryOrganCondition
+    organ:
+    - type: MantisBladeImplant
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertMantisBlade
+  name: Insert Mantis Blade
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertOrgan
+    - SurgeryStepSealOrganWound
+  - type: SurgeryOrganSlotCondition
+    organSlot: armimplant
+  - type: SurgeryPartCondition
+    part: Arm
+  - type: SurgeryOrganCondition
+    organ:
+    - type: MantisBladeImplant
+    inverse: true
+    reattaching: true

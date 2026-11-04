@@ -146,8 +146,11 @@
   tier: 2
   cost: 50000
   recipeUnlocks:
-  - AutosurgeonRightMantisBladeMMC
-  - AutosurgeonLeftMantisBladeMMC
+  - AutosurgeonMantisBladesMMC # LuaM: right and left merged
+  # LuaM-start: humanity chips
+  - AutosurgeonHumanityChipMk3Recipe
+  - AutosurgeonPlateletFactoriesRecipe
+  # LuaM-end
   technologyPrerequisites:
   # - UniversalMaterialResearchT2 # Commented by LuaM
   - MieyoMedicalGear # LuaM
@@ -157,7 +160,7 @@
 - type: technology
   id: MieyoBionicsSandevistan
   name: research-technology-mieyo-bionics-lotus
-  entityIcon: OrganHeartSandevistan
+  entityIcon: OrganCNSSandevistan
   discipline: Mieyo
   tier: 3
   cost: 75000
@@ -171,7 +174,7 @@
 - type: technology
   id: MieyoBionicsBlackFlash
   name: research-technology-mieyo-bionics-sakimoto
-  entityIcon: OrganHeartMMCSakimoto
+  entityIcon: OrganCNSMMCSakimoto
   discipline: Mieyo
   tier: 3
   cost: 75000

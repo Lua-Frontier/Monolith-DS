@@ -1,0 +1,6 @@
+- type: shader
+  id: CyberpsychosisGlitch
+  kind: source
+  path: "/Textures/_LuaM/Shaders/cyberpsychosis_glitch.swsl"
+  params:
+    intensity: 1.0

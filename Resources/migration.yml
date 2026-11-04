@@ -571,3 +571,32 @@ SimpleXenoArtifactItem: ComplexXenoArtifactItem
 MediumXenoArtifactItem: ComplexXenoArtifactItem
 VariedXenoArtifactItem: ComplexXenoArtifactItem
 # Lua end
+
+# LuaM start: heart cyberware moved to the CNS slot
+OrganHeartSandevistan: OrganCNSSandevistan
+OrganHeartTSFSandevistan: OrganCNSTSFSandevistan
+OrganHeartMMCSandevistan: OrganCNSMMCSandevistan
+OrganHeartTSFShunt: OrganCNSTSFShunt
+OrganHeartMMCSakimoto: OrganCNSMMCSakimoto
+# LuaM end
+
+# LuaM start: injector implants come in autosurgeons now
+CombatMedipenImplanter: AutosurgeonCombatMedipenFlatpack
+StimulantImplanter: AutosurgeonStimulantFlatpack
+# LuaM end
+
+# LuaM start: mantis blades go into the arm implant slot, one autosurgeon for both arms
+AutosurgeonRightMantisBlade: AutosurgeonMantisBlades
+AutosurgeonLeftMantisBlade: AutosurgeonMantisBlades
+AutosurgeonRightMantisBladeMieyo: AutosurgeonMantisBladesMieyo
+AutosurgeonLeftMantisBladeMieyo: AutosurgeonMantisBladesMieyo
+AutosurgeonRightMantisBladeMieyoFlatpack: AutosurgeonMantisBladesMieyoFlatpack
+AutosurgeonLeftMantisBladeMieyoFlatpack: AutosurgeonMantisBladesMieyoFlatpack
+# LuaM end
+
+# LuaM start: implanters replaced by autosurgeons
+EmpImplanter: AutosurgeonImplantEmpFlatpack
+FreedomImplanter: AutosurgeonImplantFreedomFlatpack
+ScramImplanter: AutosurgeonImplantScramFlatpack
+StorageImplanter: AutosurgeonImplantStorageFlatpack
+# LuaM end

@@ -251,6 +251,13 @@
                     <Label Text="{Loc 'health-analyzer-window-entity-damage-total-text'}"/>
                     <Label Name="DamageLabel"
                            FontColorOverride="#ff9100"/>
+                    <!-- LuaM: humanity, only shown when scanning yourself -->
+                    <Label Name="HumanityTextLabel"
+                           Text="{Loc 'health-analyzer-window-entity-humanity-text'}"
+                           Visible="False"/>
+                    <Label Name="HumanityLabel"
+                           FontColorOverride="#ff9100"
+                           Visible="False"/>
                 </GridContainer>
                     </PanelContainer>
                 </PanelContainer>

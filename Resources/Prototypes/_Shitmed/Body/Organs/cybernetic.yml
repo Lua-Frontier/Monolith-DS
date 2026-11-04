@@ -68,6 +68,8 @@
   abstract: true
   components:
   - type: Cybernetics
+  - type: CyberwareHumanity # LuaM
+    cost: 1
   - type: Sprite
     sprite: _Shitmed/Mobs/Species/Misc/Cybernetics/organs.rsi
   - type: Tag

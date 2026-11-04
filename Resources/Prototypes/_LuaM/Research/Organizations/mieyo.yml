@@ -6,8 +6,8 @@
   tier: 2
   cost: 50000
   recipeUnlocks:
-  - CombatMedipenImplanterRecipe
-  - StimulantImplanterRecipe
+  - AutosurgeonCombatMedipenRecipe
+  - AutosurgeonStimulantRecipe
   technologyPrerequisites:
   - MieyoMedicalGear
   position: 2, 6

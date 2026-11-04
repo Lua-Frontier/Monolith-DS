@@ -56,12 +56,13 @@
   - WeaponShotgunMayonakaMMC
   - AutosurgeonSandevistanMMC
   - AutosurgeonAdvHeartMMC
-  - AutosurgeonRightMantisBladeMMC
-  - AutosurgeonLeftMantisBladeMMC
+  - AutosurgeonMantisBladesMMC # LuaM: right and left merged
   - ShipVoucherMieyoYukikaze
   - ShipVoucherMieyoSenkusha
   # LuaM-start:
-  - CombatMedipenImplanterRecipe
-  - StimulantImplanterRecipe
+  - AutosurgeonCombatMedipenRecipe
+  - AutosurgeonStimulantRecipe
+  - AutosurgeonHumanityChipMk3Recipe
+  - AutosurgeonPlateletFactoriesRecipe
   # LuaM-end
 

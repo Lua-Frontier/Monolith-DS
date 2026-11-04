@@ -31,6 +31,6 @@ research-technology-tsfmc-experimental-equipment = Эксперименталь�
 
 research-technology-tsfmc-motion-detector = Продвинутое сканирование радаров
 research-technology-tsfmc-super-ballistics = Модернизация вооружения
-research-technology-tsfmc-sandevistan = Сердечно-сосудистая модификация
+research-technology-tsfmc-sandevistan = Нейромодификация ЦНС
 research-technology-tsfmc-shunt = Продвинутая кибернетика
 research-technology-tsfmc-large-explosives = Тяжёлые бомбы ТСФ

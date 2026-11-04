@@ -1,0 +1,34 @@
+# Mantis blade that lives in the arm implant slot.
+# Every arm gets its own blade, one action toggles all of them.
+- type: entity
+  parent: BaseItem
+  id: OrganArmMantisBlade
+  name: mantis blade implant
+  description: A covert deployable mantis blade that hides inside the arm.
+  components:
+  - type: Tag
+    tags:
+    - SafetyDepositBlacklist # can not be carried between shifts
+  - type: EmitSoundOnPickup
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnLand
+    sound:
+      collection: OrganInteraction
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Melee/mantis_blade.rsi
+    state: icon
+  - type: Organ
+    slotId: armimplant
+  - type: MantisBladeImplant
+  - type: Cybernetics
+  - type: CyberwareHumanity
+    cost: 1
+  - type: Gibbable
+  - type: Item
+    size: Normal
+  - type: StaticPrice
+    price: 1250

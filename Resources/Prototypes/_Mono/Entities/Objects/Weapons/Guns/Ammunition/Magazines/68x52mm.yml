@@ -56,6 +56,10 @@
   name: "box magazine (6.8x52mm STANAG Caseless)"
   parent: BaseMagazine68x52mmCaseless
   components:
+  - type: Tag # LuaM: can not be stashed in a safety deposit box
+    tags:
+      - Magazine68x52mmCaseless
+      - SafetyDepositBlacklist
   - type: BallisticAmmoProvider
     proto: Cartridge68x52mmCaseless
     capacity: 99
@@ -206,6 +210,10 @@
   name: "magazine (6.8x52mm STANAG caseless plasma)"
   parent: BaseMagazine68x52mmCaseless
   components:
+  - type: Tag # LuaM: can not be stashed in a safety deposit box
+    tags:
+      - Magazine68x52mmCaseless
+      - SafetyDepositBlacklist
   - type: BallisticAmmoProvider
     proto: Cartridge68x52mmCaselessPlasma
   - type: Sprite

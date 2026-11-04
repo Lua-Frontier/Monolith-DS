@@ -1,0 +1,60 @@
+# Autosurgeons that give the effect of physical traits.
+
+# Dermal armor, regular R&D. Goes into the subdermal armor slot, like the PDV E-SAPI armor.
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonDermalArmor
+  name: autosurgeon (dermal armor)
+  description: Replaces the skin with a flexible but durable polymer carapace. Flat damage reduction against blunt, slash and piercing, but more damage from shock.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Torso
+    targetOrgan: Subdermal
+    newPartProto: OrganDermalArmor
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonDermalArmorFlatpack
+  name: autosurgeon (dermal armor) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonDermalArmor
+  - type: StaticPrice
+    price: 2500
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+# Platelet factories, MMC R&D.
+- type: entity
+  parent: BaseAutosurgeonMieyo
+  id: AutosurgeonPlateletFactoriesMieyo
+  name: MMC autosurgeon (platelet factories)
+  description: Implants a set of bioengineered organs that slowly heal blunt damage and burns and try to keep you alive even when badly hurt.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Torso
+    humanityCost: 1
+    componentsToUser:
+    - type: PlateletFactories
+      intervalSeconds: 1
+      damagePerInterval:
+        groups:
+          Brute: -1.5
+          Burn: -2
+      critMultiplier: .25
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonPlateletFactoriesMieyoFlatpack
+  name: MMC autosurgeon (platelet factories) flatpack
+  description: A flatpack used for constructing a MMC autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonPlateletFactoriesMieyo
+  - type: StaticPrice
+    price: 3000
+  - type: Sprite
+    layers:
+    - state: medical_lathe
