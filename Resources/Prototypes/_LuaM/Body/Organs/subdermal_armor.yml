@@ -6,6 +6,11 @@
   id: BaseOrganSubdermalArmor
   abstract: true
   components:
+  # LuaM-start: contextual cybernetics guide.
+  - type: GuideHelp
+    guides:
+    - ColossusImplantProtection
+  # LuaM-end
   - type: EmitSoundOnPickup
     sound:
       collection: OrganInteraction

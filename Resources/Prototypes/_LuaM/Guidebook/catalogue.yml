@@ -112,4 +112,6 @@
   name: guide-entry-colossus-surgery
   text: "/ServerInfo/_LuaM/Guidebook/Medicine/Surgery.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Surgery.xml > /ServerInfo/_LuaM/Guidebook/Medicine/Surgery.xml
   priority: 10 # LuaM: 0 > 10 (section order)
+  children:
+  - ColossusCyberneticOrgans
 # LuaM-end

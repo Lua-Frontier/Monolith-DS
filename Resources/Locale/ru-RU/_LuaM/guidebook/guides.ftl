@@ -28,4 +28,4 @@ guide-entry-colossus-equipment = Корабельное вооружение
 
 guide-entry-colossus-personal-combat = Бой и снаряжение
 
-guide-entry-colossus-mmc-faction = ММС: фракция
+guide-entry-colossus-mmc-faction = ММС

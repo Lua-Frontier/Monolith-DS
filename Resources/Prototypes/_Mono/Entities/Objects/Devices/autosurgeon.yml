@@ -204,6 +204,11 @@
   name: MMC autosurgeon (mantis blades)
   description: Implants a pair of covert deployable mantis blades into both of your arms. That's really cool.
   components:
+  # LuaM-start: contextual cybernetics guide.
+  - type: GuideHelp
+    guides:
+    - ColossusMantisBlades
+  # LuaM-end
   - type: AutoSurgeon
     targetBodyPart: Arm
     organForEachPart: OrganArmMantisBlade
