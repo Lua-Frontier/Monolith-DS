@@ -60,6 +60,23 @@ public sealed partial class ShipSteererComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public float AnchorMaxVelocity = 5f;
 
+    // LuaM-start
+    [ViewVariables]
+    public bool AnchorBraking;
+
+    [ViewVariables]
+    public TimeSpan NextDampeningChange;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    public bool AnchorInRange;
+
+    [ViewVariables]
+    public TimeSpan? InRangeSince;
+
+    [ViewVariables]
+    public bool ForceArrive;
+    // LuaM-end
+
     /// <summary>
     /// How unwilling we are to use brake to adjust our velocity. Higher means less willing.
     /// </summary>

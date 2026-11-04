@@ -15,3 +15,21 @@
     state: plastitanium_window
   objectType: Structure
   placementMode: SnapgridCenter
+
+- type: construction
+  id: WindowWallReinforcedDirectional
+  name: directional reinforced-frame window
+  description: A directional window set in a reinforced wall frame.
+  graph: WindowWallReinforcedDirectional
+  startNode: start
+  targetNode: windowWallReinforcedDirectional
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+    - !type:EmptyOrWindowValidInTile
+    - !type:NoWindowsInTile
+  icon:
+    sprite: _LuaM/Structures/Windows/directional_reinforced.rsi
+    state: reinforced_window
+  objectType: Structure
+  placementMode: SnapgridCenter

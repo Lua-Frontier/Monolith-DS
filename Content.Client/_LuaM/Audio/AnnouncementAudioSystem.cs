@@ -1,5 +1,6 @@
 using Content.Shared._LuaM.Audio;
 using Content.Shared._LuaM.CCVar;
+using Robust.Client.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -19,22 +20,21 @@ public sealed partial class AnnouncementAudioSystem : EntitySystem
     {
         base.Initialize();
 
+        UpdatesBefore.Add(typeof(AudioSystem));
+
         SubscribeLocalEvent<AnnouncementAudioComponent, ComponentStartup>(OnStartup);
-        Subs.CVar(_cfg, LuaMCVars.AnnouncementVolume, OnVolumeChanged, true);
+        Subs.CVar(_cfg, LuaMCVars.AnnouncementVolume, value => _volume = SharedAudioSystem.GainToVolume(value), true);
     }
 
     private void OnStartup(Entity<AnnouncementAudioComponent> ent, ref ComponentStartup args)
     {
-        if (!TryComp<AudioComponent>(ent, out var audio))
-            return;
-
-        ent.Comp.BaseVolume = audio.Params.Volume;
-        _audio.SetVolume(ent, ent.Comp.BaseVolume + _volume, audio);
+        if (TryComp<AudioComponent>(ent, out var audio))
+            ent.Comp.BaseVolume = audio.Params.Volume;
     }
 
-    private void OnVolumeChanged(float value)
+    public override void FrameUpdate(float frameTime)
     {
-        _volume = SharedAudioSystem.GainToVolume(value);
+        base.FrameUpdate(frameTime);
 
         var query = EntityQueryEnumerator<AnnouncementAudioComponent, AudioComponent>();
         while (query.MoveNext(out var uid, out var announcement, out var audio))

@@ -377,3 +377,5 @@
         maxRotateRate: 0.01
         requireSolo: true
         alwaysFaceTarget: true
+        anchorInRange: true # LuaM
+        rotationTolerance: 0.1 # LuaM

@@ -16,4 +16,7 @@ public sealed class LuaMCVars
 
     public static readonly CVarDef<float> AnnouncementVolume =
         CVarDef.Create("luam.announcement_volume", 1f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<int> ActionsActivePreset =
+        CVarDef.Create("luam.actions_active_preset", 0, CVar.ARCHIVE | CVar.CLIENTONLY);
 }

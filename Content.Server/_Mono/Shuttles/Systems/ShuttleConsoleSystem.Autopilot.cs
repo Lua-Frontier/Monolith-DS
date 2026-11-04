@@ -8,6 +8,9 @@ using Robust.Shared.Audio.Systems;
 using Content.Server._Mono.NPC.HTN; // LuaM
 using Content.Shared.Shuttles.Components; // LuaM
 using Robust.Shared.Map; // LuaM
+using Content.Server.Shuttles.Systems; // LuaM
+using Content.Shared._NF.Shuttles.Events; // LuaM
+using Robust.Shared.Physics.Components; // LuaM
 
 namespace Content.Server._Mono.Shuttles;
 
@@ -16,6 +19,7 @@ public sealed partial class ShuttleConsoleAutopilotSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private ShuttleSystem _shuttle = default!; // LuaM
 
     public override void Initialize()
     {
@@ -54,6 +58,17 @@ public sealed partial class ShuttleConsoleAutopilotSystem : EntitySystem
     {
         if (ent.Comp.AutopilotStopping) // LuaM: stopped, not arrived
             return;
+
+        // LuaM-start
+        var xform = Transform(ent);
+        if (xform.GridUid is { } grid
+            && TryComp<PhysicsComponent>(grid, out var body)
+            && TryComp<ShuttleComponent>(grid, out var shuttle)
+            && _shuttle.SetInertiaDampening(ent, body, shuttle, xform, InertiaDampeningMode.Anchor))
+        {
+            ent.Comp.DampeningMode = InertiaDampeningMode.Anchor;
+        }
+        // LuaM-end
 
         _audio.PlayPvs(ent.Comp.AutopilotDoneSound, ent);
         _popup.PopupEntity(Loc.GetString("shuttle-console-autopilot-popup-done"), ent, PopupType.Medium);

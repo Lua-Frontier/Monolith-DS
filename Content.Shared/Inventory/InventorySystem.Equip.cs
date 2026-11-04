@@ -401,11 +401,12 @@ public abstract partial class InventorySystem
         ClothingComponent? clothing = null,
         bool reparent = true,
         bool checkDoafter = false,
-        bool child = false) // Frontier: raise DroppedEvent on all children
+        bool child = false, // Frontier: raise DroppedEvent on all children
+        bool keepDependents = false) // LuaM
     {
         var itemsDropped = 0;
         return TryUnequip(actor, target, slot, out removedItem, ref itemsDropped,
-            silent, force, predicted, inventory, clothing, reparent, checkDoafter, child); // Frontier: add child
+            silent, force, predicted, inventory, clothing, reparent, checkDoafter, child, keepDependents); // Frontier: add child // LuaM: keepDependents
     }
 
     private bool TryUnequip(
@@ -421,7 +422,8 @@ public abstract partial class InventorySystem
         ClothingComponent? clothing = null,
         bool reparent = true,
         bool checkDoafter = false,
-        bool child = false) // Frontier: raise DroppedEvent on all children
+        bool child = false, // Frontier: raise DroppedEvent on all children
+        bool keepDependents = false) // LuaM
     {
         removedItem = null;
 
@@ -489,7 +491,7 @@ public abstract partial class InventorySystem
 
         foreach (var slotDef in inventory.Slots)
         {
-            if (slotDef != slotDefinition && slotDef.DependsOn == slotDefinition.Name)
+            if (!keepDependents && slotDef != slotDefinition && slotDef.DependsOn == slotDefinition.Name) // LuaM: keepDependents
             {
                 //this recursive call might be risky
                 TryUnequip(actor, target, slotDef.Name, out _, ref itemsDropped, true, true, predicted, inventory, reparent: reparent, child: true); // Frontier: add child

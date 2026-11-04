@@ -66,11 +66,23 @@ public abstract partial class ClothingSystem : EntitySystem
                 if (TryComp(slotEntity, out ClothingComponent? item) && !item.QuickEquip)
                     continue;
 
-                if (!_invSystem.TryUnequip(userEnt, slotDef.Name, true, inventory: userEnt, checkDoafter: true))
+                if (!_invSystem.TryUnequip(userEnt, userEnt, slotDef.Name, out _, true, inventory: userEnt, checkDoafter: true, keepDependents: true)) // LuaM: keepDependents
                     continue;
 
-                if (!_invSystem.TryEquip(userEnt, toEquipEnt, slotDef.Name, true, inventory: userEnt, clothing: toEquipEnt, checkDoafter: true))
+                // LuaM start
+                var equipped = _invSystem.TryEquip(userEnt, toEquipEnt, slotDef.Name, true, inventory: userEnt, clothing: toEquipEnt, checkDoafter: true);
+
+                foreach (var dependent in userEnt.Comp1.Slots)
+                {
+                    if (dependent.DependsOn == slotDef.Name &&
+                        _invSystem.TryGetSlotEntity(userEnt, dependent.Name, out var dependentEnt, userEnt) &&
+                        !_invSystem.CanEquip(userEnt, dependentEnt.Value, dependent.Name, out _, dependent, userEnt))
+                        _invSystem.TryUnequip(userEnt, dependent.Name, true, true, inventory: userEnt);
+                }
+
+                if (!equipped)
                     continue;
+                // LuaM end
 
                 _handsSystem.PickupOrDrop(userEnt, slotEntity.Value, handsComp: userEnt);
             }

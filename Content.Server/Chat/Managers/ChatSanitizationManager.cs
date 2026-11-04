@@ -14,6 +14,33 @@ public sealed partial class ChatSanitizationManager : IChatSanitizationManager
 {
     private static readonly (Regex regex, string emoteKey)[] ShorthandToEmote =
     [
+        // LuaM-start
+        Entry("хд", "chatsan-laughs"),
+        Entry("о-о", "chatsan-wide-eyed"),
+        Entry("о.о", "chatsan-wide-eyed"),
+        Entry("0_о", "chatsan-wide-eyed"),
+        Entry("о/", "chatsan-waves"),
+        Entry("о7", "chatsan-salutes"),
+        Entry("лмао", "chatsan-laughs"),
+        Entry("рофл", "chatsan-laughs"),
+        Entry("яхз", "chatsan-shrugs"),
+        Entry(":О", "chatsan-surprised"),
+        Entry("кек", "chatsan-laughs"),
+        Entry("Т_Т", "chatsan-cries"),
+        Entry("T_T", "chatsan-cries"),
+        Entry("0_o", "chatsan-wide-eyed"),
+        Entry("=_(", "chatsan-cries"),
+        Entry("!с", "chatsan-laughs"),
+        Entry("!в", "chatsan-sighs"),
+        Entry("!х", "chatsan-claps"),
+        Entry("!щ", "chatsan-snaps"),
+        Entry("))", "chatsan-smiles-widely"),
+        Entry(")", "chatsan-smiles"),
+        Entry("((", "chatsan-sad-deeply"),
+        Entry("(", "chatsan-sad"),
+        Entry("??", "chatsan-questioning"),
+        Entry("?", "chatsan-questioning"),
+        // LuaM-end
         Entry(":)", "chatsan-smiles"),
         Entry(":]", "chatsan-smiles"),
         Entry("=)", "chatsan-smiles"),

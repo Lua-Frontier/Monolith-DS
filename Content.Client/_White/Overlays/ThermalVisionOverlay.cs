@@ -4,6 +4,7 @@ using Content.Client.Stealth;
 using Content.Shared._White.Overlays;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Mobs.Components; // LuaM
 using Content.Shared.Stealth.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -90,41 +91,22 @@ public sealed partial class ThermalVisionOverlay : Overlay
         var eyeRot = eye.Rotation;
 
         _entries.Clear();
+        var visibilityMask = _entity.TryGetComponent<EyeComponent>(player, out var playerEye) ? playerEye.VisibilityMask : EyeComponent.DefaultVisibilityMask; // LuaM
         var entities = _entity.EntityQueryEnumerator<BodyComponent, SpriteComponent, TransformComponent>();
         while (entities.MoveNext(out var uid, out var body, out var sprite, out var xform))
         {
-            if (!CanSee(uid, sprite) || !body.ThermalVisibility)
-                continue;
-
-            // Mono - teargas hides you from smoke
-            if (_entity.HasComponent<SmokeAffectedComponent>(uid))
-                continue; // LuaM: return > continue, one entity in smoke hid everyone from thermals
-
-            var entity = uid;
-
-            if (_container.TryGetOuterContainer(uid, xform, out var container))
-            {
-                continue; // Mono
-
-                // Mono edit, Thermals don't reveal people in lockers
-                /*
-                var owner = container.Owner;
-                if (_entity.TryGetComponent<SpriteComponent>(owner, out var ownerSprite)
-                    && _entity.TryGetComponent<TransformComponent>(owner, out var ownerXform))
-                {
-                    entity = owner;
-                    sprite = ownerSprite;
-                    xform = ownerXform;
-                }
-                */
-                // Mono End
-            }
-
-            if (_entries.Any(e => e.Ent.Owner == entity))
-                continue;
-
-            _entries.Add(new ThermalVisionRenderEntry((entity, sprite, xform), mapId, eyeRot));
+            if (body.ThermalVisibility) // LuaM
+                TryAddEntry(uid, sprite, xform, mapId, eyeRot, visibilityMask);
         }
+
+        // LuaM start
+        var mobs = _entity.EntityQueryEnumerator<MobStateComponent, SpriteComponent, TransformComponent>();
+        while (mobs.MoveNext(out var uid, out _, out var sprite, out var xform))
+        {
+            if (!_entity.HasComponent<BodyComponent>(uid))
+                TryAddEntry(uid, sprite, xform, mapId, eyeRot, visibilityMask);
+        }
+        // LuaM end
 
         foreach (var entry in _entries)
         {
@@ -132,6 +114,44 @@ public sealed partial class ThermalVisionOverlay : Overlay
         }
 
         worldHandle.SetTransform(Matrix3x2.Identity);
+    }
+
+    private void TryAddEntry(EntityUid uid, SpriteComponent sprite, TransformComponent xform, MapId mapId, Angle eyeRot, int visibilityMask)
+    {
+        if (!CanSee(uid, sprite))
+            return;
+
+        if (_entity.TryGetComponent<VisibilityComponent>(uid, out var visibility) && (visibility.Layer & visibilityMask) == 0) // LuaM
+            return;
+
+        // Mono - teargas hides you from smoke
+        if (_entity.HasComponent<SmokeAffectedComponent>(uid))
+            return; // LuaM: return > continue, one entity in smoke hid everyone from thermals
+
+        var entity = uid;
+
+        if (_container.TryGetOuterContainer(uid, xform, out var container))
+        {
+            return; // Mono
+
+            // Mono edit, Thermals don't reveal people in lockers
+            /*
+            var owner = container.Owner;
+            if (_entity.TryGetComponent<SpriteComponent>(owner, out var ownerSprite)
+                && _entity.TryGetComponent<TransformComponent>(owner, out var ownerXform))
+            {
+                entity = owner;
+                sprite = ownerSprite;
+                xform = ownerXform;
+            }
+            */
+            // Mono End
+        }
+
+        if (_entries.Any(e => e.Ent.Owner == entity))
+            return;
+
+        _entries.Add(new ThermalVisionRenderEntry((entity, sprite, xform), mapId, eyeRot));
     }
 
     private void Render(Entity<SpriteComponent, TransformComponent> ent,

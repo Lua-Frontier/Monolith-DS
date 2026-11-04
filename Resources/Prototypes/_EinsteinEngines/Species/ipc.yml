@@ -31,7 +31,7 @@
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
-    Hair: MobHumanoidMarkingMatchSkin
+    Hair: MobHumanoidAnyMarking # LuaM
     Chest: MobIPCTorso
     LArm: MobIPCLArm
     RArm: MobIPCRArm
@@ -46,10 +46,11 @@
 - type: markingPoints
   id: MobIPCMarkingLimits
   onlyWhitelisted: true # LuaM
+  whitelistExemptCategories: [ Hair ] # LuaM
   points:
 # LuaM-start:
     Hair:
-      points: 0
+      points: 1
       required: false
     FacialHair:
       points: 0
