@@ -121,6 +121,11 @@
   name: USSP field assembler
   description: Capable of manufacturing equipment to USSP design specifications. Often issued throughout the Armed Forces to support the inherent industrial tendencies of its service members.
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - IndustryFabricators
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Structures/Machines/techfab.rsi
     layers:
@@ -204,6 +209,11 @@
   name: Viper Group precision lathe
   description: Capable of producing equipment to Viper Group standards. The parts making up the lathe are stamped with the logos of long-forgotten brands from the corporate era.
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - IndustryFabricators
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Structures/Machines/techfab.rsi
     layers:
@@ -286,6 +296,11 @@
   name: MMC multipurpose assembler
   description: Capable of manufacturing equipment from MMC design patterns. Sent to anywhere that needs a large-scale industrial startup.
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - IndustryFabricators
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Structures/Machines/techfab.rsi
     layers:
@@ -575,6 +590,11 @@
   name: industrial arc furnace
   description: An advanced arc furnace capable of melting ore and refining material through heat. Essential for creating advanced alloys.
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - ArcFurnace
+  # LuaM-end
   - type: Animateable
   - type: Transform
     noRot: false
@@ -714,6 +734,11 @@
   name: precision assembler
   description: A high-accuracy microfabricator capable of manipulating almost all forms of matter in the right circumstances. Astoundingly useful for creating advanced components of all kinds.
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - Economy
+  # LuaM-end
   - type: Appearance
   - type: Animateable
   - type: Transform

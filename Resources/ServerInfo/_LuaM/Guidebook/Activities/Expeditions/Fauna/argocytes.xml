@@ -1,0 +1,194 @@
+<Document>
+# Аргоциты
+
+  Далёкие родственники ксеносов, аргоциты известны в секторе своей способностью поедать и переваривать практически всё — от органики до стен из армированного пластитания. Как и ксеносы, этот вид прекрасно приспособлен к враждебной среде: ни вакуум, ни жара и давление планеты, охваченной плазменным пожаром, не способны их убить.
+
+  По наблюдениям, аргоциты живут в больших ульях и имеют два специализированных морфотипа: "Охотники" и "Стражи". Охотники — разведчики и рабочие улья, охотятся за пищей и роют туннели острыми когтями и зубами. Стражи — строители и солдаты, защищают и обслуживают улей, сопровождают охотников при освоении новых территорий.
+
+  У этого вида кровь — фторосерная кислота. Аргоцитов можно разделывать на ксеномясо (на любителя), а в их желудках можно найти пригодные для переработки строительные материалы.
+
+
+  # Известные варианты
+  # "Слурва"
+
+  Первая стадия жизненного цикла морфотипа Охотник. Жалкое существо, почти ни на что не способно. Лучше убить его сразу, пока не выросло.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteSlurvaExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 15 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3 м/с (3 м/с)[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 3 [color=red]режущий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+
+
+  # "Скиттер"
+
+  Вторая стадия жизненного цикла Охотника. Всё ещё небольшие, обычно держатся в стайках для безопасности.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteSkitterExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]режущий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Свайпер"
+
+  Третья стадия жизненного цикла Охотника. Бродячие падальщики, обычно занимаются разведкой или сбором материалов.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteSwiperExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 40 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]режущий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Глайдер"
+
+  Четвёртая стадия жизненного цикла Охотника. Прирождённые охотники, выслеживают и нападают на мелкую живность.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteGliderExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (4.5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10 [color=red]режущий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Краулер"
+
+  Пятая стадия жизненного цикла Охотника. Опасные стайные животные, устраивают засады на путников.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteCrawlerExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 60 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 5 м/с (5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]режущий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Основатель"
+
+  Последняя известная стадия жизненного цикла Охотника. Обычно встречается в зрелых ульях, готовящихся к расширению.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteFounderExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 150 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (4.5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=red]режущий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Барьер"
+
+  Первая стадия жизненного цикла морфотипа Страж. Такой же беспомощный, как и "Слурва". Щиты ещё мягкие.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteBarrierExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 35 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 3 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Формовщик"
+
+  Вторая стадия жизненного цикла Стража. Обычно строит и ремонтирует конструкции в улье.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteMolderExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Прыгун"
+
+  Третья стадия жизненного цикла Стража. Быстро реагирует на мелкие угрозы улью.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocytePouncerExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Сборщик"
+
+  Мутация, развивающаяся на третьей стадии жизненного цикла Стража. "Сборщики" используют едкую слюну для переработки материалов для улья.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteHarvesterExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 90 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=orange]едкий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Надзиратель"
+
+  Четвёртая стадия жизненного цикла Стража. Главные охранники улья, отражают атаки врагов.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteEnforcerExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 140 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Левиафинг"
+
+  Финальная известная стадия жизненного цикла Стража. Эти гиганты возглавляют атаки на врагов улья.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteLeviathingExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 500 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 25 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # Цели миссий
+  ## Устранение
+  <Box>
+  <GuideEntityEmbed Entity="MobArgocyteLeviathingExpeditions"/>
+  </Box>
+  Устраните крупное и опасное существо — [color=#a4885c]левиафинга[/color] в отведённое время, чтобы получить денежное вознаграждение.
+
+  ## Уничтожение
+  <Box>
+  <GuideEntityEmbed Entity="ArgocyteEgg"/>
+  </Box>
+  Уничтожьте определённое количество [color=#a4885c]яиц аргоцитов[/color] в отведённое время, чтобы получить денежное вознаграждение.
+</Document>

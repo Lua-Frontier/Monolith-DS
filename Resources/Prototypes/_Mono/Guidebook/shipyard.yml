@@ -1,30 +1,30 @@
 - type: guideEntry
   id: Shipyard
   name: guide-entry-shipyard
-  text: "/ServerInfo/_NF/Guidebook/Shipyard.xml"
-  priority: 6
-  children:
-  - ShipyardNFROperation
-  - ShipyardTakeaway
-  - ShipyardMotleyAnne
-  - ShipyardFenrir # LuaM: kept Lua ship
+  text: "/ServerInfo/_LuaM/Guidebook/Ships/Shipyard.xml" # LuaM: "/ServerInfo/_NF/Guidebook/Shipyard.xml" > "/ServerInfo/_LuaM/Guidebook/Ships/Shipyard.xml"
+  priority: 10 # LuaM: 6 > 10 (section order)
+  # LuaM: per-ship examples are replaced by the complete console catalogue.
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ShipyardTakeaway
   name: guide-entry-shipyard-takeaway
-  text: "/ServerInfo/_Mono/Guidebook/Shipyard/Takeaway.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Catalogue/Shipyards.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Ships.xml > /ServerInfo/_LuaM/Guidebook/Catalogue/Shipyards.xml
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ShipyardMotleyAnne
   name: guide-entry-shipyard-motley-anne
-  text: "/ServerInfo/_Mono/Guidebook/Shipyard/MotleyAnne.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Catalogue/Shipyards.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Ships.xml > /ServerInfo/_LuaM/Guidebook/Catalogue/Shipyards.xml
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ShipyardNFROperation
   name: guide-entry-shipyard-nfr
-  text: "/ServerInfo/_Mono/Guidebook/Shipyard/NFRManual.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/ShipyardNFROperation.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/ShipyardNFROperation.xml > /ServerInfo/_LuaM/Guidebook/Engineering/ShipyardNFROperation.xml
+  priority: 20 # LuaM: 0 > 20 (section order)
 
-- type: guideEntry # LuaM: kept Lua ship
-  id: ShipyardFenrir
-  name: guide-entry-shipyard-fenrir
-  text: "/ServerInfo/_Mono/Guidebook/Shipyard/Fenrir.xml"
+# LuaM: retired ShipyardFenrir; no consumers other than this former table-of-contents entry
+# LuaM-end

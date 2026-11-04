@@ -13,6 +13,10 @@ namespace Content.IntegrationTests;
 // The static class exist to avoid breaking changes
 public static partial class PoolManager
 {
+    // LuaM-start: standalone renderer resource mounts.
+    // Used only by the standalone MapRenderer when shipped alongside a server.
+    public static List<string> ResourceMounts { get; } = new();
+    // LuaM-end
     public static readonly ContentPoolManager Instance = new();
     public const string TestMap = "Empty";
 

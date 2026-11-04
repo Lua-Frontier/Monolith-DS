@@ -1,0 +1,18 @@
+# LuaCorp - AGPLv3. See AGPLv3.txt.
+- type: guideEntry
+  id: ColossusHandheldWeapons
+  name: guide-entry-colossus-handheld-weapons
+  text: /ServerInfo/_LuaM/Guidebook/Combat/AcquiredWeapons.xml
+  priority: 30 # LuaM: 0 > 30 (section order)
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusFactionUplinks
+  name: guide-entry-colossus-faction-uplinks
+  text: "/ServerInfo/_LuaM/Guidebook/Catalogue/Uplinks.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Combat/FactionUplinks.xml > /ServerInfo/_LuaM/Guidebook/Catalogue/Uplinks.xml
+# LuaM-end
+
+- type: guideEntry
+  id: ColossusPersonalAmmo
+  name: guide-entry-colossus-personal-ammo
+  text: /ServerInfo/_LuaM/Guidebook/Combat/PersonalAmmo.xml
+  priority: 20 # LuaM: 0 > 20 (section order)

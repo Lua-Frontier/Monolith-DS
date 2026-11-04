@@ -1,0 +1,16 @@
+<Document>
+# Бой и снаряжение
+- [textlink="Как проходит урон" link="ArmorExplanation"] — плита, сопротивления и бронепробитие.
+- [textlink="Каталог брони" link="ColossusCatalogueArmor"] — сравнение защиты и замедления.
+- [textlink="Бронеплиты" link="ColossusArmorPlates"] — поглощение, износ и замена.
+
+[textlink="Личное оружие" link="ColossusHandheldWeapons"] · [textlink="Аплинки фракций" link="ColossusCatalogueUplinks"].
+
+## Патроны
+[textlink="Как устроены патроны и урон" link="ColossusPersonalAmmo"].
+
+[textlink="Каталог боеприпасов" link="ColossusCatalogueAmmo"]. В таблицах — прямой урон, AP и особые свойства, включая плазменные варианты.
+
+## Другие системы
+[textlink="Корабельное вооружение" link="WeaponsSystems"] · [textlink="Существа сектора" link="Creatures"] · [textlink="Обезвреживание большой бомбы" link="Defusal"].
+</Document>

@@ -1,0 +1,15 @@
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ChimeraPracticalGuide
+  name: guide-entry-chimera-practical
+  text: "/ServerInfo/_LuaM/Guidebook/References/Creatures/Chimera.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Creatures/Chimera.xml > /ServerInfo/_LuaM/Guidebook/References/Creatures/Chimera.xml
+  priority: 20 # LuaM: 30 > 20 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: CorticalBorerPracticalGuide
+  name: guide-entry-cortical-borer-practical
+  text: "/ServerInfo/_LuaM/Guidebook/References/Creatures/CorticalBorer.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Creatures/CorticalBorer.xml > /ServerInfo/_LuaM/Guidebook/References/Creatures/CorticalBorer.xml
+  priority: 10 # LuaM: 31 > 10 (section order)
+# LuaM-end

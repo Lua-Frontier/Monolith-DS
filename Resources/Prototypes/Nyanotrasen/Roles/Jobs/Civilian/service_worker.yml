@@ -1,5 +1,9 @@
 - type: job
   id: CCServiceWorker
+  # LuaM-start: faction guide for the selectable lobby role.
+  guides:
+  - Caelestinus
+  # LuaM-end
   name: job-name-service-worker
   description: job-description-service-worker
   playTimeTracker: JobCCServiceWorker

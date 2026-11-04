@@ -1,0 +1,31 @@
+guide-entry-colossus-home = Начало и деньги
+guide-entry-colossus-first-trip = Первый выход
+guide-entry-colossus-ships = Корабль и полёт
+guide-entry-colossus-work = Виды заработка
+guide-entry-colossus-combat = Бой и безопасность
+guide-entry-colossus-sector = Фракции и служба
+guide-entry-colossus-basics = Общие механики SS14
+guide-entry-colossus-crew = Организация экипажа
+guide-entry-colossus-service = Кухня, ботаника и уборка
+guide-entry-colossus-science = Исследования и робототехника
+guide-entry-colossus-mining = Добыча и переработка руды
+guide-entry-colossus-tsf-sop = Служба и снабжение ТСФ
+guide-entry-colossus-tsf-structure = Командование и должности ТСФ
+guide-entry-colossus-tsf-brigade = 21-я бригада
+guide-entry-colossus-tsf-ranks = Звания и обращение
+guide-entry-colossus-tsf-culture = Федерация: общество и культура
+guide-entry-colossus-pdv = Авангард Нордфолла
+guide-entry-colossus-ussp-remnants = Остатки сил СССП
+guide-entry-colossus-ussp-sop = Служба и снабжение СССП
+guide-entry-colossus-ussp = Союз Советских Социалистических Планет
+guide-entry-colossus-viper = ЧВК «Вайпер»
+guide-entry-colossus-flight = Полёт
+guide-entry-colossus-production = Промышленное производство
+guide-entry-colossus-furnace = Дуговая печь
+guide-entry-colossus-fire-control = Серверы управления вооружением
+guide-entry-colossus-procedures = Энергия и атмос
+guide-entry-colossus-equipment = Корабельное вооружение
+
+guide-entry-colossus-personal-combat = Бой и снаряжение
+
+guide-entry-colossus-mmc-faction = ММС: фракция

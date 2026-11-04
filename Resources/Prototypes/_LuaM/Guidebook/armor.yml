@@ -1,0 +1,12 @@
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusArmorSuits
+  name: guide-entry-colossus-armor-suits
+  text: "/ServerInfo/_LuaM/Guidebook/Catalogue/Armor.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Combat/ArmorSuits.xml > /ServerInfo/_LuaM/Guidebook/Catalogue/Armor.xml
+# LuaM-end
+
+- type: guideEntry
+  id: ColossusArmorPlates
+  name: guide-entry-colossus-armor-plates
+  text: "/ServerInfo/_LuaM/Guidebook/Combat/ArmorPlates.xml"
+  priority: 10 # LuaM: 0 > 10 (section order)

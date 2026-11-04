@@ -1,0 +1,9 @@
+<Document>
+# Каталог боеприпасов
+
+Показаны получаемые на сервере личные патроны. Урон дроби указан на одну дробину.
+
+<GuideAutoCatalogue Kind="ammo"/>
+
+[textlink="Броня и пробитие" link="ArmorExplanation"].
+</Document>

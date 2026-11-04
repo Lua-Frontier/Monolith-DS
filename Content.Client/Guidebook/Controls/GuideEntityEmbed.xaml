@@ -1,6 +1,9 @@
 ﻿<BoxContainer xmlns="https://spacestation14.io"
               Orientation="Vertical"
-              Margin="5 5 5 5">
-    <SpriteView Name="View"/>
-    <Label Name="Caption" HorizontalAlignment="Center"/>
+              Margin="5 5 5 5"
+              SetWidth="170"
+              VerticalAlignment="Top">
+    <!-- LuaM: equal image slots align captions; long localized names wrap without abbreviations. -->
+    <SpriteView Name="View" SetSize="96 96" HorizontalAlignment="Center"/>
+    <RichTextLabel Name="Caption" HorizontalExpand="True"/>
 </BoxContainer>

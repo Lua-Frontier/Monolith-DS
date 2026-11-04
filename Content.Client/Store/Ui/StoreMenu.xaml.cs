@@ -33,6 +33,21 @@ public sealed partial class StoreMenu : DefaultWindow
     public string CurrentCategory = string.Empty;
 
     private List<ListingDataWithCostModifiers> _cachedListings = new();
+    // LuaM-start: guidebook controls and lifecycle.
+    private bool _guidebookReadOnly; // LuaM
+
+    // LuaM: same store UI, with no BUI and no transaction controls.
+    public void SetGuidebookReadOnly()
+    {
+        _guidebookReadOnly = true;
+        WithdrawButton.Visible = false;
+        RefundButton.Visible = false;
+        WithdrawButton.Disabled = true;
+        RefundButton.Disabled = true;
+        TraitorFooter.Visible = false;
+        BalanceInfo.SetMessage("Справочник снабжения");
+    }
+    // LuaM-end
 
     public StoreMenu()
     {
@@ -70,7 +85,7 @@ public sealed partial class StoreMenu : DefaultWindow
             }
         }
 
-        WithdrawButton.Disabled = disabled;
+        WithdrawButton.Disabled = _guidebookReadOnly || disabled; // LuaM
     }
 
     public void UpdateListing(List<ListingDataWithCostModifiers> listings)
@@ -101,6 +116,7 @@ public sealed partial class StoreMenu : DefaultWindow
 
     private void OnWithdrawButtonDown(BaseButton.ButtonEventArgs args)
     {
+        if (_guidebookReadOnly) return; // LuaM
         // check if window is already open
         if (_withdrawWindow != null && _withdrawWindow.IsOpen)
         {
@@ -118,6 +134,7 @@ public sealed partial class StoreMenu : DefaultWindow
 
     private void OnRefundButtonDown(BaseButton.ButtonEventArgs args)
     {
+        if (_guidebookReadOnly) return; // LuaM
         OnRefundAttempt?.Invoke(args);
     }
 
@@ -126,7 +143,7 @@ public sealed partial class StoreMenu : DefaultWindow
         if (!listing.Categories.Contains(CurrentCategory))
             return;
 
-        var hasBalance = listing.CanBuyWith(Balance);
+        var hasBalance = !_guidebookReadOnly && listing.CanBuyWith(Balance); // LuaM
 
         var spriteSys = _entityManager.EntitySysManager.GetEntitySystem<SpriteSystem>();
 
@@ -139,7 +156,7 @@ public sealed partial class StoreMenu : DefaultWindow
             if (texture == null)
                 texture = spriteSys.GetPrototypeIcon(listing.ProductEntity).Default;
         }
-        else if (listing.ProductAction != null)
+        else if (listing.ProductAction != null && !_guidebookReadOnly) // LuaM: no action entities in a guide
         {
             var actionId = _entityManager.Spawn(listing.ProductAction);
             if (_entityManager.System<ActionsSystem>().TryGetActionData(actionId, out var action) &&
@@ -153,8 +170,10 @@ public sealed partial class StoreMenu : DefaultWindow
         var discount = GetDiscountString(listing);
 
         var newListing = new StoreListingControl(listing, listingInStock, discount, hasBalance, texture);
-        newListing.StoreItemBuyButton.OnButtonDown += args
-            => OnListingButtonPressed?.Invoke(args, listing);
+        // LuaM-start: guidebook controls and lifecycle.
+        newListing.StoreItemBuyButton.OnButtonDown += args =>
+        { if (!_guidebookReadOnly) OnListingButtonPressed?.Invoke(args, listing); }; // LuaM
+        // LuaM-end
 
         StoreListingsContainer.AddChild(newListing);
     }
@@ -232,7 +251,7 @@ public sealed partial class StoreMenu : DefaultWindow
 
     private void ClearListings()
     {
-        StoreListingsContainer.Children.Clear();
+        foreach (var child in StoreListingsContainer.Children.ToArray()) child.Dispose(); // LuaM: release old controls
     }
 
     public void PopulateStoreCategoryButtons(HashSet<ListingDataWithCostModifiers> listings)
@@ -287,7 +306,7 @@ public sealed partial class StoreMenu : DefaultWindow
 
     public void UpdateRefund(bool allowRefund)
     {
-        RefundButton.Visible = allowRefund;
+        RefundButton.Visible = allowRefund && !_guidebookReadOnly; // LuaM
     }
 
     private sealed class StoreCategoryButton : Button

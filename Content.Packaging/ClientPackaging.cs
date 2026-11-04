@@ -66,8 +66,12 @@ public static class ClientPackaging
             Name = "DropSvgPass",
         };
         dropSvgPass.AddDependency(graph.Input).AddBefore(graph.PresetPasses);
-
-        AssetGraph.CalculateGraph([pass, dropSvgPass, ..graph.AllPasses], logger);
+        // LuaM-start: exclude generated PNGs from client downloads.
+        // These PNGs are served on demand by the server, not downloaded at connection.
+        var dropGuidebookRenders = new AssetPassFilterDrop(f => f.Path.StartsWith("GuidebookRenders/", StringComparison.Ordinal)) { Name = "DropGuidebookRenders" };
+        dropGuidebookRenders.AddDependency(graph.Input).AddBefore(graph.PresetPasses);
+        // LuaM-end
+        AssetGraph.CalculateGraph([pass, dropSvgPass, dropGuidebookRenders, ..graph.AllPasses], logger); // LuaM: exclude generated PNGs from client downloads.
 
         var inputPass = graph.Input;
 

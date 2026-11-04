@@ -40,6 +40,13 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     /// Console entity
     /// </summary>
     public EntityUid Entity;
+    // LuaM-start: read-only research browsing and safe window closure.
+
+    // LuaM: isolated guidebook previews can browse cards before a player has spawned.
+    // They always remain read-only, regardless of the local player's access.
+    public bool GuidebookReadOnly;
+    public HashSet<string>? GuidebookDisciplines;
+    // LuaM-end
 
     /// <summary>
     /// Currently selected tech
@@ -227,6 +234,12 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         TierDisplayContainer.RemoveAllChildren();
         foreach (var disciplineId in database.SupportedDisciplines)
         {
+            // LuaM-start: read-only research browsing and safe window closure.
+            if (GuidebookReadOnly && GuidebookDisciplines != null && !GuidebookDisciplines.Contains(disciplineId.Id)) continue;
+            // LuaM: empty branches have no field to show, including disabled faction branches.
+            if (!_prototype.EnumeratePrototypes<TechnologyPrototype>().Any(t => !t.Hidden && t.HasDiscipline(disciplineId)))
+                continue;
+            // LuaM-end
             var discipline = _prototype.Index<TechDisciplinePrototype>(disciplineId);
             var tier = _research.GetTierCompletionPercentage(database, discipline, _prototype);
 
@@ -291,6 +304,10 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
 
         foreach (var disciplineId in database.SupportedDisciplines)
         {
+            // LuaM-start: read-only research browsing and safe window closure.
+            if (GuidebookReadOnly && (GuidebookDisciplines != null && !GuidebookDisciplines.Contains(disciplineId.Id)
+                || !_prototype.EnumeratePrototypes<TechnologyPrototype>().Any(t => !t.Hidden && t.HasDiscipline(disciplineId)))) continue;
+            // LuaM-end
             var discipline = _prototype.Index<TechDisciplinePrototype>(disciplineId);
             var tier = _research.GetTierCompletionPercentage(database, discipline, _prototype);
 
@@ -374,6 +391,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         UnlockAllButton.Visible = false; // the field has its own "research the whole branch" button
         PopulateResearchField();
         UpdateUnlockAllButtons();
+        if (DragContainer.VisibleInTree) DragContainer.GrabKeyboardFocus(); // LuaM
     }
 
     /// <summary>
@@ -441,7 +459,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
 
     private bool CanUnlock(List<TechnologyPrototype> plan, int cost)
     {
-        return plan.Count > 0
+        return !GuidebookReadOnly && plan.Count > 0 // LuaM: read-only research browsing and safe window closure.
                && cost <= Points
                && _player.LocalEntity is { } user
                && _accessReader.IsAllowed(user, Entity);
@@ -554,11 +572,11 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     {
         InfoContainer.RemoveAllChildren();
         _infoPanel = null; // LuaM
-        if (!_player.LocalEntity.HasValue)
+        if (!_player.LocalEntity.HasValue && !GuidebookReadOnly)
             return;
 
         CurrentTech = proto.ID;
-        var control = new FancyTechnologyInfoPanel(proto, _accessReader.IsAllowed(_player.LocalEntity.Value, Entity), availability, _sprite);
+        var control = new FancyTechnologyInfoPanel(proto, !GuidebookReadOnly && _player.LocalEntity is { } user && _accessReader.IsAllowed(user, Entity), availability, _sprite); // LuaM: read-only research browsing and safe window closure.
         control.BuyAction += args => OnTechnologyCardPressed?.Invoke(args.ID);
         control.PrerequisiteSelected += GoToTechnology; // LuaM
         control.UnlockWithPrerequisitesAction += args => OnUnlockWithPrerequisitesPressed?.Invoke(args.ID); // LuaM
@@ -624,8 +642,10 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
 
     public override void Close()
     {
-        base.Close();
-
+        // LuaM-start: read-only research browsing and safe window closure.
+        // LuaM: OnClose listeners may dispose this teaching window synchronously.
+        // Finish touching children before BaseWindow invokes those listeners.
+        // LuaM-end
         DragContainer.RemoveAllChildren();
         InfoContainer.RemoveAllChildren();
         _infoPanel = null; // LuaM
@@ -634,6 +654,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         DisciplineSelectionScreen.Visible = true;
         ResearchFieldScreen.Visible = false;
         UnlockAllButton.Visible = true; // LuaM
+        base.Close();
     }
 
     private sealed partial class DisciplineButton(TechDisciplinePrototype proto) : Button

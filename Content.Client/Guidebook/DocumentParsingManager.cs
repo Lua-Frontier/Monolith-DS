@@ -101,7 +101,19 @@ public sealed partial class DocumentParsingManager
                             return new GuidebookError(args.ToString() ?? tagId, $"Failed to parse {tagId} args");
                         }
 
-                        foreach (var child in controls)
+                        // LuaM-start: wrap legacy image galleries without changing text columns.
+                        var children = controls.ToArray();
+                        // Legacy guides use horizontal Box for image galleries. Upgrade only
+                        // pure galleries, leaving text columns and explicit vertical boxes alone.
+                        if (control is Box box && box.Orientation == Robust.Client.UserInterface.Controls.BoxContainer.LayoutOrientation.Horizontal
+                            && children.Length > 1 && children.All(c => c is GuideEntityEmbed))
+                        {
+                            var gallery = new Content.Client._LuaM.Guidebook.GuideEntityCards { Margin = box.Margin };
+                            box.Dispose();
+                            control = gallery;
+                        }
+                        foreach (var child in children)
+                        // LuaM-end
                         {
                             control.AddChild(child);
                         }

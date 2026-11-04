@@ -120,10 +120,11 @@
     interfaces:
       enum.NuclearReactorUiKey.Key:
         type: NuclearReactorBoundUserInterface
+  # LuaM-start: contextual help uses the Colossus guide.
   - type: GuideHelp
     guides:
-    - NuclearReactor
-    - Power
+    - ShipyardNFROperation
+  # LuaM-end
   - type: PassiveThermalSignature # Mono
     signature: 5000000
   # Mono
@@ -159,10 +160,11 @@
   #  blacklist:
   #    tags:
   #    - GhostOnlyWarp
+  # LuaM-start: contextual help uses the Colossus guide.
   - type: GuideHelp
     guides:
-    - NuclearReactor
-    - Power
+    - ShipyardNFROperation
+  # LuaM-end
 
 - type: entity
   id: NuclearReactorNormal

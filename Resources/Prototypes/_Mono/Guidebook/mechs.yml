@@ -1,24 +1,36 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MechsBase
   name: guide-entry-mechs
-  text: "/ServerInfo/_Mono/Guidebook/Robotics/mechs.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/MechsBase.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Mechs/Index.xml
+  priority: 40 # LuaM: 0 > 40 (section order)
   children:
   #TODO: Industrial Mechs, when those have anything other than hydraulic clamps.
   - S1Mechs
   - S2Mechs
   - S4Mechs
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: S1Mechs
   name: guide-entry-s1mechs
-  text: "/ServerInfo/_Mono/Guidebook/Robotics/s1mechs.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S1Mechs.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/S1Mechs.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S1Mechs.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: S2Mechs
   name: guide-entry-s2mechs
-  text: "/ServerInfo/_Mono/Guidebook/Robotics/s2mechs.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S2Mechs.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/S2Mechs.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S2Mechs.xml
+  priority: 20 # LuaM: 0 > 20 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: S4Mechs
   name: guide-entry-s4mechs
-  text: "/ServerInfo/_Mono/Guidebook/Robotics/s4mechs.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S4Mechs.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/S4Mechs.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S4Mechs.xml
+  priority: 30 # LuaM: 0 > 30 (section order)
+# LuaM-end

@@ -1,5 +1,6 @@
 ﻿#nullable enable
 using System.Collections.Generic;
+using System.Linq; // LuaM: explicit resource mounts for the isolated renderer.
 using Content.Client.IoC;
 using Content.Client.Parallax.Managers;
 using Content.IntegrationTests.Tests.Destructible;
@@ -91,6 +92,11 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
         opts.Options = new()
         {
             LoadConfigAndUserData = false,
+            // LuaM-start: explicit resource mounts for the isolated renderer.
+            LoadContentResources = PoolManager.ResourceMounts.Count == 0,
+            ResourceMountDisabled = PoolManager.ResourceMounts.Count > 0,
+            MountOptions = new Robust.Shared.MountOptions(new(), PoolManager.ResourceMounts.AsEnumerable().Reverse().ToList()),
+            // LuaM-end
         };
 
         opts.BeforeStart += () =>
@@ -112,6 +118,11 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
         opts.Options = new()
         {
             LoadConfigAndUserData = false,
+            // LuaM-start: explicit resource mounts for the isolated renderer.
+            LoadContentResources = PoolManager.ResourceMounts.Count == 0,
+            ResourceMountDisabled = PoolManager.ResourceMounts.Count > 0,
+            MountOptions = new Robust.Shared.MountOptions(new(), PoolManager.ResourceMounts.AsEnumerable().Reverse().ToList()),
+            // LuaM-end
         };
 
         opts.BeforeStart += () =>

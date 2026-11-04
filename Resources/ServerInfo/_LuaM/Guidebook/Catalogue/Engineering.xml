@@ -1,0 +1,13 @@
+<Document>
+# Генераторы и СУО
+
+## Источники питания
+
+<GuideAutoCatalogue Kind="generators"/>
+
+## Серверы управления орудиями
+
+<GuideCatalog Kind="server"/>
+
+[textlink="Электропитание" link="ColossusPower"] · [textlink="Корабельные системы" link="WeaponsSystems"].
+</Document>

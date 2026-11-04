@@ -1,11 +1,7 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Jobs
-  name: guide-entry-jobs
-  text: "/ServerInfo/Guidebook/Jobs.xml"
-  children:
-  - Service
-  # - Cargo # Frontier: irrelevant
-  - Medical
-  - Science
-  - Engineering
-  - Command
+  name: guide-entry-colossus-work # LuaM: guide-entry-jobs > guide-entry-colossus-work
+  text: "/ServerInfo/_LuaM/Guidebook/Start/Activities.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Work.xml > /ServerInfo/_LuaM/Guidebook/Start/Activities.xml
+  priority: 60 # LuaM: 2 > 60 (section order)
+# LuaM-end

@@ -5,7 +5,7 @@
                       MinSize="1210 675">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal" Margin="3 0" HorizontalExpand="True" VerticalExpand="True">
-            <BoxContainer Orientation="Vertical" Margin="2 3 0 3">
+            <BoxContainer Name="ShipManagement" Orientation="Vertical" Margin="2 3 0 3">
                 <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="3 0">
                     <BoxContainer Orientation="Horizontal">
                         <Label Text="{Loc 'bank-atm-menu-balance-label'}" FontColorOverride="Silver"/>

@@ -1,8 +1,9 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Expeditions
   name: guide-entry-expeditions
-  text: "/ServerInfo/_NF/Guidebook/Expeditions.xml"
-  priority: 5
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/Expeditions.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Index.xml
+  priority: 60 # LuaM: 5 > 60 (section order)
   children:
   - MobsExpeditionGuideAberrantFlesh
   - MobsExpeditionGuideArgocytes
@@ -15,58 +16,92 @@
   - MobsExpeditionGuideSilicons
   - MobsExpeditionGuideSyndicate
   - MobsExpeditionGuideXenos
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideAberrantFlesh
   name: guide-entry-expedition-aberrant-flesh
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/aberrant_flesh.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/aberrant_flesh.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/aberrant_flesh.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/aberrant_flesh.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideArgocytes
   name: guide-entry-expedition-argocytes
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/argocytes.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/argocytes.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/argocytes.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/argocytes.xml
+  priority: 20 # LuaM: 0 > 20 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideBloodCult
   name: guide-entry-expedition-blood-cultists
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/blood_cultists.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/blood_cultists.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/blood_cultists.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/blood_cultists.xml
+  priority: 30 # LuaM: 0 > 30 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideCarps
   name: guide-entry-expedition-carps
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/carps.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/carps.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/carps.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/carps.xml
+  priority: 40 # LuaM: 0 > 40 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideDinosaurs
   name: guide-entry-expedition-dinosaurs
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/dinosaurs.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/dinosaurs.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/dinosaurs.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/dinosaurs.xml
+  priority: 50 # LuaM: 0 > 50 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideExplorers
   name: guide-entry-expedition-explorers
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/explorers.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/explorers.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/explorers.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/explorers.xml
+  priority: 60 # LuaM: 0 > 60 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideMercenaries
   name: guide-entry-expedition-mercenaries
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/mercenaries.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/mercenaries.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/mercenaries.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/mercenaries.xml
+  priority: 70 # LuaM: 0 > 70 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideGangers
   name: guide-entry-expedition-gangers
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/punk_gangers.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/punk_gangers.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/punk_gangers.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/punk_gangers.xml
+  priority: 80 # LuaM: 0 > 80 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideSilicons
   name: guide-entry-expedition-silicons
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/rogue_silicons.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/rogue_silicons.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/rogue_silicons.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/rogue_silicons.xml
+  priority: 90 # LuaM: 0 > 90 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideSyndicate
   name: guide-entry-expedition-syndicate-naval-forces
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/syndicate.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/syndicate.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/syndicate.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/syndicate.xml
+  priority: 100 # LuaM: 0 > 100 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideXenos
   name: guide-entry-expedition-xenos
-  text: "/ServerInfo/_NF/Guidebook/MobsHostileExpedition/xenos.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/xenos.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/xenos.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/xenos.xml
+  priority: 110 # LuaM: 0 > 110 (section order)
+# LuaM-end

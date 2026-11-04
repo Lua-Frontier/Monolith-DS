@@ -1,0 +1,10 @@
+guide-entry-luam-stations = Станции и события сектора
+guide-entry-luam-colossus-central = Колосс Централл
+guide-entry-luam-medical = Медицинский Центр
+guide-entry-luam-camelot = Камелот
+guide-entry-luam-halicon = Халикон
+guide-entry-luam-arcturus = Арктурус
+guide-entry-luam-trade-mall = Торговый Центр
+guide-entry-luam-bravo = Прослушка «Браво»
+guide-entry-luam-monolith-wreck = Крупный обломок Монолита
+guide-entry-luam-game-modes = Режимы и события смены

@@ -1,0 +1,16 @@
+guide-entry-colossus-catalogue = Каталог
+guide-entry-catalogue-shipyards = Каталог верфей
+guide-entry-catalogue-armor = Каталог брони
+guide-entry-catalogue-weapons = Каталог оружия
+guide-entry-catalogue-ammo = Каталог боеприпасов
+guide-entry-catalogue-shipweapons = Корабельное вооружение
+guide-entry-catalogue-engineering = Генераторы и СУО
+guide-entry-catalogue-uplinks = Каталог аплинков
+guide-entry-catalogue-research = Окно исследований
+guide-entry-catalogue-objects = Каталог объектов сектора
+guide-entry-catalogue-drones = Дроны и регистраторы
+guide-entry-catalogue-ores = Породы и руда
+guide-entry-catalogue-species = Характеристики рас
+guide-entry-catalogue-prices = Цены газов и реагентов
+guide-entry-colossus-botany = Ботаника
+guide-entry-colossus-surgery = Хирургия и органы

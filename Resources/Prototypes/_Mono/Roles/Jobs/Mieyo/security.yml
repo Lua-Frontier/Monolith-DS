@@ -35,8 +35,11 @@
   access:
   - Mieyo
   - MieyoSecurity
+  # LuaM-start: faction overview first, production guides remain available.
   guides:
+  - ColossusMMCFaction
   - MMC
+  # LuaM-end
   special:
   - !type:AddImplantSpecial
     implants: [ MieyoTrackingImplant ]

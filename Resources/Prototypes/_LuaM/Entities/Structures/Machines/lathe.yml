@@ -5,6 +5,11 @@
   name: PDV TechFab
   description: Capable of manufacturing equipment to PDV design specifications.
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - IndustryFabricators
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Structures/Machines/techfab.rsi
     layers:

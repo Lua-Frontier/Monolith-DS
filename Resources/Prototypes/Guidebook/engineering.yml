@@ -1,14 +1,17 @@
-﻿- type: guideEntry
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
   id: Engineering
-  name: guide-entry-engineering
-  text: "/ServerInfo/Guidebook/Engineering/Engineering.xml"
-  children:
-  - Construction
-  - Power
-  - Atmospherics
-  - ShuttleCraft
-  - Networking
-  - Automation
+  name: guide-entry-colossus-procedures # LuaM: guide-entry-engineering > guide-entry-colossus-procedures
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Engineering.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Index.xml
+  priority: 6
+  bookRoot: true # LuaM: curated server guidebook
+  children: # LuaM: energy, atmosphere, then mechs
+  - ColossusPower
+  - ShipyardNFROperation
+  - ColossusAtmos
+  - MechsBase
+  - ColossusCommodities
+# LuaM-end
 
 - type: guideEntry
   id: Construction
@@ -144,10 +147,13 @@
   name: guide-entry-passivegate
   text: "/ServerInfo/Guidebook/Engineering/PassiveGate.xml"
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: PressureRegulator
   name: guide-entry-ressureregulator
-  text: "/ServerInfo/Guidebook/Engineering/PressureRegulator.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/PressureRegulator.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/PressureRegulator.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/PressureRegulator.xml
+  priority: 120 # LuaM: 0 > 120 (section order)
+# LuaM-end
 
 - type: guideEntry
   id: MixingAndFiltering
@@ -191,14 +197,17 @@
   name: guide-entry-pipenetworks
   text: "/ServerInfo/Guidebook/Engineering/PipeNetworks.xml"
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: DeviceMonitoringAndControl
   name: guide-entry-devicemonitoringandcontrol
-  text: "/ServerInfo/Guidebook/Engineering/DeviceMonitoringAndControl.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/DeviceControl.xml" # LuaM: /ServerInfo/Guidebook/Engineering/DeviceMonitoringAndControl.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/DeviceControl.xml
+  priority: 140 # LuaM: 0 > 140 (section order)
   children:
   - AirAlarms
   - AtmosphericAlertsComputer
   - AtmosphericNetworkMonitor
+# LuaM-end
 
 - type: guideEntry
   id: AirAlarms
@@ -210,10 +219,13 @@
   name: guide-entry-atmosphericalertscomputer
   text: "/ServerInfo/Guidebook/Engineering/AtmosphericAlertsComputer.xml"
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: AtmosphericNetworkMonitor
   name: guide-entry-atmosphericnetworkmonitor
-  text: "/ServerInfo/Guidebook/Engineering/AtmosphericNetworkMonitor.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/NetworkMonitor.xml" # LuaM: /ServerInfo/Guidebook/Engineering/AtmosphericNetworkMonitor.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/NetworkMonitor.xml
+  priority: 30 # LuaM: 0 > 30 (section order)
+# LuaM-end
 
 - type: guideEntry
   id: FireAndGasControl
@@ -291,10 +303,13 @@
   name: guide-entry-powerstorage
   text: "/ServerInfo/Guidebook/Engineering/PowerStorage.xml"
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Ramping
   name: guide-entry-ramping
-  text: "/ServerInfo/Guidebook/Engineering/Ramping.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Power/LoadResponse.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Ramping.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Power/LoadResponse.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
 
 - type: guideEntry
   id: VoltageNetworks

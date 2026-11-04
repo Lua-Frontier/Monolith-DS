@@ -1,0 +1,16 @@
+# LuaCorp - AGPLv3. See AGPLv3.txt.
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusActivities
+  name: guide-entry-colossus-activities
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/Activities.xml > /ServerInfo/_LuaM/Guidebook/Activities/Index.xml
+  priority: 4
+  bookRoot: true
+  children:
+  - ColossusMining
+  - ColossusBotany
+  - CargoHauling
+  - LuaMContraband
+  - LuaMDroneLoot
+  - Expeditions
+# LuaM-end

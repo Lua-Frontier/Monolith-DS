@@ -762,6 +762,11 @@
   name: ore processor
   description: It produces sheets and ingots using ores.
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - ColossusMining
+  # LuaM-end
   - type: Sprite
     sprite: Structures/Machines/ore_processor.rsi
     layers:

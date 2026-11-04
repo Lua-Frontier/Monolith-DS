@@ -1,4 +1,7 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: GasMining
   name: guide-entry-gas-mining
-  text: "/ServerInfo/_NF/Guidebook/Engineering/GasMining.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasMining.xml" # LuaM: /ServerInfo/_NF/Guidebook/Engineering/GasMining.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasMining.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end

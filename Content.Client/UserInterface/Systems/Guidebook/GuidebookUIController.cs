@@ -184,6 +184,8 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
         {
             guides = _prototypeManager.EnumeratePrototypes<GuideEntryPrototype>()
                 .ToDictionary(x => new ProtoId<GuideEntryPrototype>(x.ID), x => (GuideEntry) x);
+            // LuaM: the full dictionary still supports contextual links; only the main contents are curated.
+            rootEntries ??= Content.Shared._LuaM.Guidebook.GuidebookNavigation.GetBookRoots(guides);
         }
         else if (includeChildren)
         {

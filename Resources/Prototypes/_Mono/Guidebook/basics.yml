@@ -1,5 +1,7 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: BeginnerGuide
-  name: Beginner's Guide
-  text: "/ServerInfo/_Mono/Guidebook/BeginnerGuide.xml"
-  priority: 2
+  name: guide-entry-colossus-first-trip # LuaM: Beginner's Guide > guide-entry-colossus-first-trip
+  text: "/ServerInfo/_LuaM/Guidebook/Start/BeginnerGuide.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/BeginnerGuide.xml > /ServerInfo/_LuaM/Guidebook/Start/BeginnerGuide.xml
+  priority: 10 # LuaM: 2 > 10 (section order)
+# LuaM-end

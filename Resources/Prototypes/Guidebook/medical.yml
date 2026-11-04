@@ -1,15 +1,17 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Medical
   name: guide-entry-medical
-  text: "/ServerInfo/Guidebook/Medical/Medical.xml"
-  children:
-  - DirectorOfCare # Frontier
-  - MedicalDoctor
-  - Chemist
+  text: "/ServerInfo/_LuaM/Guidebook/Medicine/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Medical.xml > /ServerInfo/_LuaM/Guidebook/Medicine/Index.xml
+  priority: 9
+  bookRoot: true
+  children: # LuaM: purpose-based guidebook navigation
+  - ColossusSurgery
+  - MedicalBounties
+  - Cryogenics
   - Cloning
-  - Cryogenics # Note: Frontier changes inside
-  - Surgery # Shitmed Change
-  - MedicalBounties # Frontier
+  - Letoferol
+# LuaM-end
 
 - type: guideEntry
   id: MedicalDoctor

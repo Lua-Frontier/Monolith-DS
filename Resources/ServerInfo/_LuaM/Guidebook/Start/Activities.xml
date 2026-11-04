@@ -1,0 +1,14 @@
+<Document>
+# Виды заработка
+
+- [textlink="Добыча руды" link="ColossusMining"] — астероиды, переработка и продажа материалов.
+- [textlink="Грузоперевозки" link="CargoHauling"] — торговые заказы и доставка ящиков.
+- [textlink="Экспедиции" link="Expeditions"] — задания на отдельных картах и вывоз трофеев.
+- [textlink="ИИ-дроны" link="LuaMDroneLoot"] — ядра, чёрные ящики и трофейные контейнеры.
+- [textlink="Контрабанда" link="LuaMContraband"] — сдача ТСФ и перевозка для Авангарда.
+- [textlink="Атмос" link="ColossusAtmos"] — синтез газа; [textlink="цены газов и веществ" link="ColossusCataloguePrices"].
+- [textlink="РНД" link="IndustryResearch"] — очки с артефактов и аномалий, исследования для производства.
+- [textlink="Производство ММС" link="MMC"] — компоненты и промышленные заказы.
+
+[textlink="Все полевые руководства" link="ColossusActivities"] · [textlink="Счета и сохранение денег" link="Bank"]
+</Document>

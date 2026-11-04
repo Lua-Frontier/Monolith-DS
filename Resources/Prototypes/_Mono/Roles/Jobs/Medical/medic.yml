@@ -24,7 +24,7 @@
   access:
   - Medical
   guides:
-  - Caelestinus
+  - ColossusMedicalFaction # LuaM: Caelestinus > ColossusMedicalFaction
   special:
 #  - !type:AddImplantSpecial  # LuaM commented
 #    implants: [ MindShieldImplant, TrackingImplant ]

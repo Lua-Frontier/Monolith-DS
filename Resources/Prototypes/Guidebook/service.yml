@@ -1,14 +1,11 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Service
-  name: guide-entry-service
-  text: "/ServerInfo/Guidebook/Service/Service.xml"
+  name: guide-entry-colossus-service # LuaM: guide-entry-service > guide-entry-colossus-service
+  text: "/ServerInfo/_LuaM/Guidebook/Start/Activities.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Service.xml > /ServerInfo/_LuaM/Guidebook/Start/Activities.xml
   filterEnabled: True
-  children:
-  - Bartender
-  - Botany
-  - Chef
-  - Janitorial
-  
+# LuaM-end
+
 - type: guideEntry
   id: Bartender
   name: guide-entry-bartender

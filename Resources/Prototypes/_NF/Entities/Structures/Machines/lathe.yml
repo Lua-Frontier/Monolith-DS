@@ -143,6 +143,11 @@
   name: TSFMC techfab
   description: Prints equipment for use by TSFMC.
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - IndustryFabricators
+  # LuaM-end
   - type: Sprite
     sprite: _NF/Structures/Machines/techfab.rsi
     layers:

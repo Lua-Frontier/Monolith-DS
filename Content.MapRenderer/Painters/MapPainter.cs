@@ -18,6 +18,11 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+// LuaM-start: isolated guidebook rendering; keep ordinary map rendering unchanged.
+using Robust.Shared.Serialization.Markdown.Sequence;
+using Robust.Shared.Serialization.Markdown.Mapping;
+using Robust.Shared.Serialization.Markdown.Value;
+// LuaM-end
 using Robust.UnitTesting.Pool;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
@@ -49,7 +54,13 @@ namespace Content.MapRenderer.Painters
         }
 
         // Mono
-        public static async IAsyncEnumerable<RenderedGridImage<Rgba32>> PaintGrid(string path)
+        // LuaM-start: isolated guidebook rendering; keep ordinary map rendering unchanged.
+        public static IAsyncEnumerable<RenderedGridImage<Rgba32>> PaintGrid(string path) => PaintGridInternal(path, false);
+
+        public static IAsyncEnumerable<RenderedGridImage<Rgba32>> PaintGuidebookGrid(string path) => PaintGridInternal(path, true);
+
+        private static async IAsyncEnumerable<RenderedGridImage<Rgba32>> PaintGridInternal(string path, bool guidebook)
+        // LuaM-end
         {
             var stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -85,6 +96,18 @@ namespace Content.MapRenderer.Painters
             {
                 var mapId = sEntityManager.System<GameTicker>().DefaultMap;
 
+                // LuaM-start: isolated guidebook rendering; keep ordinary map rendering unchanged.
+                if (guidebook)
+                {
+                    if (!mapLoader.TryReadFile(new(path), out var saved)) throw new InvalidOperationException("Cannot read guidebook map " + path);
+                    RepairSavedContainers(saved, server.ResolveDependency<IPrototypeManager>());
+                    // Unlike TryLoadGrid, this also accepts station files containing several grids.
+                    if (!mapLoader.TryLoadGeneric(saved, path, out _, new MapLoadOptions { MergeMap = mapId }))
+                        throw new InvalidOperationException("Cannot load guidebook map " + path);
+                    return;
+                }
+
+                // LuaM-end
                 try
                 {
                     mapLoader.TryLoadGrid(mapId, new(path), out _);
@@ -102,6 +125,53 @@ namespace Content.MapRenderer.Painters
             await foreach (var image in RenderPair(stopwatch, pair))
                 yield return image;
         }
+        // LuaM-start: isolated guidebook rendering; keep ordinary map rendering unchanged.
+
+        // Some mapped containers contain `ent: invalid`, and some saved actions
+        // lack their owner. Repair only the renderer's in-memory copy: neither
+        // game loading nor source YAML is changed, and stored items stay hidden.
+        private static void RepairSavedContainers(MappingDataNode saved, IPrototypeManager prototypes)
+        {
+            if (!saved.TryGet("entities", out SequenceDataNode? groups)) return;
+            var entities = new Dictionary<string, (MappingDataNode Data, string Proto)>();
+            foreach (var group in groups.Cast<MappingDataNode>())
+            {
+                var proto = group.Get<ValueDataNode>("proto").Value;
+                foreach (var entity in group.Get<SequenceDataNode>("entities").Cast<MappingDataNode>())
+                    entities[entity.Get<ValueDataNode>("uid").Value] = (entity, proto);
+            }
+            foreach (var (owner, (entity, _)) in entities)
+            {
+                if (!entity.TryGet("components", out SequenceDataNode? components)) continue;
+                foreach (var component in components.Cast<MappingDataNode>().ToArray())
+                {
+                    if (component.Get<ValueDataNode>("type").Value != "ContainerContainer"
+                        || !component.TryGet("containers", out MappingDataNode? containers)) continue;
+                    foreach (var (_, node) in containers)
+                        if (node is MappingDataNode slot && slot.TryGet("ent", out ValueDataNode? contents) && contents.Value == "invalid")
+                            slot["ent"] = ValueDataNode.Null();
+                    if (!containers.TryGet("actions", out MappingDataNode? actions)
+                        || !actions.TryGet("ents", out SequenceDataNode? ids)) continue;
+                    foreach (var id in ids.Cast<ValueDataNode>())
+                    {
+                        if (!entities.TryGetValue(id.Value, out var action)
+                            || !prototypes.TryIndex<EntityPrototype>(action.Proto, out var prototype)) continue;
+                        var type = prototype.Components.Keys.FirstOrDefault(k => k is "InstantAction" or "EntityTargetAction" or "WorldTargetAction" or "EntityWorldTargetAction");
+                        if (type == null) continue;
+                        if (!action.Data.TryGet("components", out SequenceDataNode? actionComponents))
+                            action.Data["components"] = actionComponents = new SequenceDataNode();
+                        var data = actionComponents.OfType<MappingDataNode>().FirstOrDefault(c => c.Get<ValueDataNode>("type").Value == type);
+                        if (data == null)
+                        {
+                            data = new MappingDataNode { { "type", new ValueDataNode(type) } };
+                            actionComponents.Add(data);
+                        }
+                        data["container"] = new ValueDataNode(owner);
+                    }
+                }
+            }
+        }
+        // LuaM-end
 
         // Mono - separate into its own method
         private static async IAsyncEnumerable<RenderedGridImage<Rgba32>> RenderPair(Stopwatch stopwatch, TestPair pair)

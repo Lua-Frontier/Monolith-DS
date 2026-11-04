@@ -1,0 +1,9 @@
+guide-entry-luamlore = Лор сектора
+guide-entry-luamloresector = Колосс и циклы Харибды
+guide-entry-luamloremonolith = Монолит
+guide-entry-luamloretsf = Транс-Солнечная Федерация
+guide-entry-luamlorean = Авангард Нордфолла
+guide-entry-luamlorecoloss = Колосс
+guide-entry-luamloremmc = ММС
+guide-entry-luamloreussp = СССП
+guide-entry-luamloreviper = ЧВК «Вайпер»

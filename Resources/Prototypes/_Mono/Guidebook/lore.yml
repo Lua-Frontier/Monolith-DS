@@ -1,11 +1,16 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: BasicLore
-  name: guide-entry-lore # LuaM: Lore > guide-entry-lore
-  text: "/ServerInfo/_Mono/Guidebook/Lore/Primer.xml"
-  children:
-  - Timeline
+  name: guide-entry-colossus-sector # LuaM: guide-entry-lore > guide-entry-colossus-sector
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Sector.xml > /ServerInfo/_LuaM/Guidebook/Factions/Index.xml
+  priority: 2 # LuaM: curated server guidebook
+  bookRoot: false # LuaM: practical faction roles belong under the sector index
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Timeline
   name: guide-entry-timeline # LuaM: Quick Timeline > guide-entry-timeline
-  text: "/ServerInfo/_Mono/Guidebook/Lore/Timeline.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Lore/History.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/Timeline.xml > /ServerInfo/_LuaM/Guidebook/Lore/History.xml
+  priority: 20 # LuaM: 0 > 20 (section order)
+# LuaM-end

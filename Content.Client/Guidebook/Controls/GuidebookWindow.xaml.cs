@@ -19,6 +19,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
 {
     [Dependency] private DocumentParsingManager _parsingMan = default!;
     [Dependency] private IResourceManager _resourceManager = default!;
+    [Dependency] private IPrototypeManager _prototypes = default!; // LuaM: resolve links outside a contextual help window.
 
     private Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> _entries = new();
 
@@ -33,6 +34,13 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         _sawmill = Logger.GetSawmill("Guidebook");
 
         Tree.OnSelectedItemChanged += OnSelectionChanged;
+        // LuaM-start: one home handler for the lifetime of the window.
+        HomeButton.OnPressed += _ =>
+        {
+            if (Tree.SelectedItem?.Metadata is GuideEntry entry)
+                ShowGuide(entry);
+        };
+        // LuaM-end
 
         SearchBar.OnTextChanged += _ =>
         {
@@ -43,7 +51,14 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
     public void HandleClick(string link)
     {
         if (!_entries.TryGetValue(link, out var entry))
-            return;
+        {
+            // LuaM-start: role/item help starts with a limited dictionary, but its links may lead to any guide.
+            if (!_prototypes.TryIndex<GuideEntryPrototype>(link, out var prototype))
+                return;
+            entry = prototype;
+            _entries[link] = entry;
+            // LuaM-end
+        }
 
         if (Tree.TryGetIndexFromMetadata(entry, out var index))
         {
@@ -90,14 +105,9 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
 
     private void OnSelectionChanged(TreeItem? item)
     {
+        // LuaM: ShowGuide updates the return button for both tree selection and direct links.
         if (item != null && item.Metadata is GuideEntry entry)
-        {
             ShowGuide(entry);
-
-            var isRulesEntry = entry.RuleEntry;
-            ReturnContainer.Visible = isRulesEntry;
-            HomeButton.OnPressed += _ => ShowGuide(entry);
-        }
         else
             ClearSelectedGuide();
     }
@@ -107,7 +117,8 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         Placeholder.Visible = true;
         EntryContainer.Visible = false;
         SearchContainer.Visible = false;
-        EntryContainer.RemoveAllChildren();
+        ReturnContainer.Visible = false; // LuaM
+        DisposeEntryContents(); // LuaM: document controls own local sprites and subscriptions.
     }
 
     private void ShowGuide(GuideEntry entry)
@@ -115,8 +126,9 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         Scroll.SetScrollValue(default);
         Placeholder.Visible = false;
         EntryContainer.Visible = true;
+        ReturnContainer.Visible = entry.RuleEntry; // LuaM
         SearchBar.Text = "";
-        EntryContainer.RemoveAllChildren();
+        DisposeEntryContents(); // LuaM
         using var file = _resourceManager.ContentFileReadText(entry.Text);
 
         SearchContainer.Visible = entry.FilterEnabled;
@@ -150,6 +162,15 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         // Lua end
     }
 
+    // LuaM-start: guidebook controls and lifecycle.
+    // LuaM: removing children alone detaches controls without releasing their client entities.
+    private void DisposeEntryContents()
+    {
+        foreach (var child in EntryContainer.Children.ToArray())
+            child.Dispose();
+    }
+
+    // LuaM-end
     public void UpdateGuides(
         Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> entries,
         List<ProtoId<GuideEntryPrototype>>? rootEntries = null,
@@ -177,10 +198,15 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         {
             var item = Tree.Items.FirstOrDefault(x => x.Metadata is GuideEntry entry && entry.Id == selected);
             Tree.SetSelectedIndex(item?.Index);
+            // LuaM-start: guidebook controls and lifecycle.
+            // LuaM: a linked/contextual page need not occupy a permanent place in the main contents.
+            if (item == null && _entries.TryGetValue(selected.Value, out var selectedEntry))
+                ShowGuide(selectedEntry);
         }
+            // LuaM-end
         else
         {
-            var item = Tree.Items.First();
+            var item = Tree.Items.FirstOrDefault(); // LuaM: an empty/invalid contextual list has no first entry.
             Tree.SetSelectedIndex(item?.Index);
         }
     }

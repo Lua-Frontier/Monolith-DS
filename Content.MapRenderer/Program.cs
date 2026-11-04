@@ -1,4 +1,4 @@
-﻿#nullable enable
+#nullable enable
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.IntegrationTests;
 using Content.MapRenderer.Painters;
+using Content.MapRenderer._LuaM; // LuaM: isolated guidebook render tool
 using Content.Shared.Maps;
 using Newtonsoft.Json;
 using Robust.Shared.Prototypes;
@@ -27,6 +28,32 @@ namespace Content.MapRenderer
 
         internal static async Task Main(string[] args)
         {
+            // LuaM-start: guidebook catalogue export and disabled-by-default rendering.
+            if (args.Contains("--guidebook-catalog"))
+            {
+                Environment.SetEnvironmentVariable("COLOSS_GUIDEBOOK_WORKER", "1");
+                PoolManager.Startup();
+                var context = new ExternalTestContext("Guidebook.Catalogue.Export", Console.Out);
+                await using (var pair = await PoolManager.GetServerClient(null, context))
+                {
+                    await pair.Server.WaitPost(() =>
+                    {
+                        var catalogue = pair.Server.ResolveDependency<Robust.Shared.GameObjects.IEntityManager>()
+                            .System<Content.Server._LuaM.Guidebook.GuidebookCatalogSystem>().BuildSnapshot();
+                        File.WriteAllText(args[Array.IndexOf(args, "--guidebook-catalog") + 1],
+                            System.Text.Json.JsonSerializer.Serialize(catalogue, new System.Text.Json.JsonSerializerOptions { IncludeFields = true, WriteIndented = true }));
+                    });
+                    await pair.CleanReturnAsync();
+                }
+                PoolManager.Shutdown();
+                return;
+            }
+            if (args.Contains("--guidebook"))
+            {
+                Environment.ExitCode = await GuidebookImageBuilder.Run(args);
+                return;
+            }
+            // LuaM-end
 
             if (!CommandLineArguments.TryParse(args, out var arguments))
                 return;

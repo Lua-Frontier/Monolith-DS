@@ -4,6 +4,11 @@
   name: RPED
   description: A Rapid Part Exchange Device, perfect for quickly upgrading machines.
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - IndustryMachineParts
+  # LuaM-end
   - type: Sprite
     sprite: _NF/Objects/Specific/Research/rped.rsi
     state: icon

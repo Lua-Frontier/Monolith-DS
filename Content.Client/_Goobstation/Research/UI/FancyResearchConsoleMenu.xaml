@@ -87,7 +87,7 @@
                         HorizontalExpand="True"
                         VerticalExpand="True"
                         Name="DragContainer"
-                        MouseFilter="Pass"
+                        MouseFilter="Stop"
                         RectClipContent="True">
 					<!-- There lives all of technologies -->
                     </goob:ResearchesContainerPanel>

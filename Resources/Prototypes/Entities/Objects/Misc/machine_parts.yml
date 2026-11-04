@@ -23,9 +23,11 @@
       sprite: _NF/Objects/Misc/stock_parts.rsi # Frontier
     - type: Item
       size: Tiny
+    # LuaM-start: contextual help uses the Colossus guide.
     - type: GuideHelp
       guides:
-      - MachineUpgrading
+      - IndustryMachineParts
+    # LuaM-end
     - type: Stack
       count: 1
 

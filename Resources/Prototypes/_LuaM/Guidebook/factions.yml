@@ -1,0 +1,15 @@
+# LuaCorp - AGPLv3. See AGPLv3.txt.
+# LuaM-start: separate Medical Center faction guide.
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusMedicalFaction
+  name: guide-entry-colossus-medical-faction
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/Medical/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Factions/Medical.xml > /ServerInfo/_LuaM/Guidebook/Factions/Medical/Index.xml
+  priority: 40 # LuaM: 5 > 40 (section order)
+# LuaM-end
+
+- type: guideEntry
+  id: ColossusMMCFaction
+  name: guide-entry-colossus-mmc-faction
+  text: /ServerInfo/_LuaM/Guidebook/Factions/MMC/Index.xml
+  priority: 0

@@ -1,28 +1,32 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: WeaponsSystems
-  name: guide-entry-gunnery
-  text: "/ServerInfo/_Mono/Guidebook/ShipCombat.xml"
-  priority: 7
-  children:
-  - BallisticsTable
-  - EnergyTable
-  - MissilesTable
+  name: guide-entry-colossus-equipment # LuaM: guide-entry-gunnery > guide-entry-colossus-equipment
+  text: "/ServerInfo/_LuaM/Guidebook/Ships/WeaponsSystems.xml" # LuaM: "/ServerInfo/_Mono/Guidebook/ShipCombat.xml" > "/ServerInfo/_LuaM/Guidebook/Ships/WeaponsSystems.xml"
+  priority: 50 # LuaM: 1 > 50 (section order)
+  bookRoot: false
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: BallisticsTable
   name: guide-entry-ballistics
-  text: "/ServerInfo/_Mono/Guidebook/Specifications/ballistics.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Catalogue/ShipWeapons.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Ships/BallisticsTable.xml > /ServerInfo/_LuaM/Guidebook/Catalogue/ShipWeapons.xml
   priority: 1
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: EnergyTable
   name: guide-entry-energy
-  text: "/ServerInfo/_Mono/Guidebook/Specifications/energy.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Catalogue/ShipWeapons.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Ships/EnergyTable.xml > /ServerInfo/_LuaM/Guidebook/Catalogue/ShipWeapons.xml
   priority: 2
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MissilesTable
   name: guide-entry-missiles
-  text: "/ServerInfo/_Mono/Guidebook/Specifications/missiles.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Catalogue/ShipWeapons.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Ships/MissilesTable.xml > /ServerInfo/_LuaM/Guidebook/Catalogue/ShipWeapons.xml
   priority: 3
-
+# LuaM-end
