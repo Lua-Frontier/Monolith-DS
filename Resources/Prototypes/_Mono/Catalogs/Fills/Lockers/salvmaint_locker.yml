@@ -698,6 +698,6 @@
           - id: Emag
           - id: ChameleonProjector
           - id: RadioJammer
-          - id: StorageImplanter
+          - id: AutosurgeonImplantStorageFlatpack
       - id: ClothingHeadHatCatEarsValid #most vile and powerful
         weight: 0.01

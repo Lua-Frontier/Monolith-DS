@@ -1,5 +1,7 @@
 using Content.Server.CartridgeLoader;
+using Content.Shared._Goobstation.Autosurgeon;
 using Content.Shared.CartridgeLoader;
+using Content.Shared.Construction.Components;
 using Content.Shared.Implants;
 using Content.Shared.Implants.Components;
 using Content.Shared.Inventory;
@@ -9,13 +11,15 @@ namespace Content.Server._LuaM.Loadouts;
 
 /// <summary>
 /// Uses cartridges and implanters picked in the character loadout right after spawning:
-/// cartridges get installed into the PDA, implanters get injected into their owner.
+/// cartridges get installed into the PDA, implanters and implant autosurgeons get injected into their owner.
 /// </summary>
 public sealed partial class LoadoutAutoUseSystem : EntitySystem
 {
     [Dependency] private InventorySystem _inventory = default!;
     [Dependency] private CartridgeLoaderSystem _cartridgeLoader = default!;
     [Dependency] private SharedSubdermalImplantSystem _subdermalImplant = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IComponentFactory _factory = default!;
 
     private const string IdSlot = "id";
 
@@ -47,14 +51,25 @@ public sealed partial class LoadoutAutoUseSystem : EntitySystem
         // Implant straight from the implanter's prototype, the same way job starting implants are given,
         // instead of relying on the implanter's slot being already filled.
         if (TryComp<ImplanterComponent>(item, out var implanter) && implanter.Implant is { } implantId)
-        {
-            if (HasImplant(mob, implantId))
-                return false;
+            return TryImplant(mob, implantId);
 
-            return _subdermalImplant.AddImplant(mob, implantId) != null;
-        }
+        // Implants also come as flatpacked autosurgeons now.
+        if (TryComp<FlatpackComponent>(item, out var flatpack)
+            && flatpack.Entity is { } packed
+            && _proto.TryIndex(packed, out var packedProto)
+            && packedProto.TryGetComponent<AutoSurgeonComponent>(out var autosurgeon, _factory)
+            && autosurgeon.Implant is { } autosurgeonImplant)
+            return TryImplant(mob, autosurgeonImplant);
 
         return false;
+    }
+
+    private bool TryImplant(EntityUid mob, EntProtoId implantId)
+    {
+        if (HasImplant(mob, implantId))
+            return false;
+
+        return _subdermalImplant.AddImplant(mob, implantId) != null;
     }
 
     private bool HasImplant(EntityUid mob, EntProtoId implantId)

@@ -10,6 +10,8 @@
   - type: Damageable
     damageContainer: Silicon
   - type: Cybernetics
+  - type: CyberwareHumanity # LuaM
+    cost: 0.5
   - type: PirateBountyItem # Mono
     id: Cybernetics
 

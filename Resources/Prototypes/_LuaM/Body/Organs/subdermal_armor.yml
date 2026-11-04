@@ -1,0 +1,73 @@
+# Armor for the subdermal armor slot of the chest. Only one fits.
+# Both use the "dermal" key, the same as the dermal armor trait: while installed they replace
+# the trait's protection, which comes back when the armor is removed.
+- type: entity
+  parent: BaseItem
+  id: BaseOrganSubdermalArmor
+  abstract: true
+  components:
+  - type: EmitSoundOnPickup
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnLand
+    sound:
+      collection: OrganInteraction
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/cybernetics.rsi
+    state: armor-chest
+  - type: Organ
+    slotId: subdermal
+  - type: Cybernetics
+  - type: Gibbable
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - SafetyDepositBlacklist # can not be carried between shifts
+
+- type: entity
+  parent: BaseOrganSubdermalArmor
+  id: OrganDermalArmor
+  name: dermal armor
+  description: A flexible but durable polymer carapace that goes under the skin. Flat damage reduction against blunt, slash and piercing, but more damage from shock.
+  components:
+  - type: SubdermalArmor
+    modifiers:
+      dermal:
+        id: DermalArmorTrait
+        coefficients:
+          Shock: 1.25
+        flatReductions:
+          Blunt: 3.5
+          Slash: 3.5
+          Piercing: 3.5
+  - type: CyberwareHumanity
+    cost: 1
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseOrganSubdermalArmor
+  id: OrganDermalArmorPDV
+  name: PD-VI E-SAPI armor plates
+  description: An array of E-SAPI armor plates that go under the skin. More vulnerable to heat and shock, but more resistant to bullets.
+  components:
+  - type: Sprite
+    color: "#c41e24" # red and black, like the PDV hardsuits
+  - type: SubdermalArmor
+    modifiers:
+      dermal:
+        id: DermalArmorCybernetics
+        coefficients:
+          Shock: 1.25
+          Heat: 1.1
+          Piercing: 0.85
+          Blunt: 0.9
+          Slash: 0.9
+  - type: CyberwareHumanity
+    cost: 2
+  - type: StaticPrice
+    price: 1500

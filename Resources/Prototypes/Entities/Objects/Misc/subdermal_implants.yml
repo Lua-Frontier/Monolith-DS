@@ -114,6 +114,8 @@
   description: This implant grants hidden storage within a person's body using bluespace technology.
   categories: [ HideSpawnMenu ]
   components:
+    - type: CyberwareHumanity # LuaM: installed by an autosurgeon, costs humanity
+      cost: 1
     - type: SubdermalImplant
       implantAction: ActionOpenStorageImplant
       whitelist:
@@ -138,6 +140,8 @@
   description: This implant lets the user break out of hand restraints up to three times before ceasing to function anymore.
   categories: [ HideSpawnMenu ]
   components:
+    - type: CyberwareHumanity # LuaM: installed by an autosurgeon, costs humanity
+      cost: 1
     - type: SubdermalImplant
       implantAction: ActionActivateFreedomImplant
       whitelist:
@@ -183,6 +187,8 @@
   description: This implant creates a 2.75 m, 10 s, 2.7 MJ electromagnetic pulse when activated. # Frontier: add units
   categories: [ HideSpawnMenu ]
   components:
+    - type: CyberwareHumanity # LuaM: installed by an autosurgeon, costs humanity
+      cost: 1
     - type: SubdermalImplant
       implantAction: ActionActivateEmpImplant
     - type: TriggerImplantAction
@@ -198,6 +204,8 @@
   description: This implant randomly teleports the user within a large radius when activated.
   categories: [ HideSpawnMenu ]
   components:
+    - type: CyberwareHumanity # LuaM: installed by an autosurgeon, costs humanity
+      cost: 2
     - type: SubdermalImplant
       implantAction: ActionActivateScramImplant
     - type: TriggerImplantAction

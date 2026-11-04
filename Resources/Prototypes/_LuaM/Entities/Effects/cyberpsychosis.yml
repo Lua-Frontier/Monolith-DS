@@ -1,0 +1,11 @@
+# The player watches through this while their body is in cyberpsychosis.
+# It is parented to the body and has nothing to control.
+- type: entity
+  id: CyberpsychosisViewer
+  name: cyberpsychosis
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Eye
+  - type: ContentEye
+  - type: CyberpsychosisGlitch

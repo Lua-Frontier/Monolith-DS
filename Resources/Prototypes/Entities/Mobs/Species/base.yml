@@ -11,6 +11,9 @@
   abstract: true
   components:
   - type: Sprinter # Goobstation
+  - type: Humanity # LuaM: cyberware limit and cyberpsychosis
+    speciesBonus:
+      Human: 1 # racial feature of humans
   - type: Sprite
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]

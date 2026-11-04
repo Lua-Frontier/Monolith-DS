@@ -1,0 +1,103 @@
+# LuaM: every implant that used to come in an implanter now comes in an autosurgeon.
+# Generated from the old implanters, which were removed. Translators still use implanters.
+
+- type: entity
+  parent: [ BaseAutosurgeon, BaseFactionGearOtherFactionT2 ]
+  id: AutosurgeonImplantEmp
+  name: autosurgeon (EMP implant)
+  description: Installs the EMP implant into whoever is buckled to it, or into whoever turns it on.
+  components:
+  - type: Sprite
+    state: icon-syndie
+  - type: AutoSurgeon
+    implant: EmpImplant
+
+- type: entity
+  parent: [ BaseNFFlatpack, BaseFactionGearOtherFactionT2 ]
+  id: AutosurgeonImplantEmpFlatpack
+  name: autosurgeon (EMP implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonImplantEmp
+  - type: StaticPrice
+    price: 35
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: [ BaseAutosurgeon, BaseFactionGearOtherFactionT2 ]
+  id: AutosurgeonImplantFreedom
+  name: autosurgeon (freedom implant)
+  description: Installs the freedom implant into whoever is buckled to it, or into whoever turns it on.
+  components:
+  - type: Sprite
+    state: icon-syndie
+  - type: AutoSurgeon
+    implant: FreedomImplant
+
+- type: entity
+  parent: [ BaseNFFlatpack, BaseFactionGearOtherFactionT2 ]
+  id: AutosurgeonImplantFreedomFlatpack
+  name: autosurgeon (freedom implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonImplantFreedom
+  - type: StaticPrice
+    price: 35
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: [ BaseAutosurgeon, BaseFactionGearOtherFactionT2 ]
+  id: AutosurgeonImplantScram
+  name: autosurgeon (scram implant)
+  description: Installs the scram implant into whoever is buckled to it, or into whoever turns it on.
+  components:
+  - type: Sprite
+    state: icon-syndie
+  - type: AutoSurgeon
+    implant: ScramImplant
+
+- type: entity
+  parent: [ BaseNFFlatpack, BaseFactionGearOtherFactionT2 ]
+  id: AutosurgeonImplantScramFlatpack
+  name: autosurgeon (scram implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonImplantScram
+  - type: StaticPrice
+    price: 35
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: [ BaseAutosurgeon, BaseFactionGearOtherFactionT2 ]
+  id: AutosurgeonImplantStorage
+  name: autosurgeon (storage implant)
+  description: Installs the storage implant into whoever is buckled to it, or into whoever turns it on.
+  components:
+  - type: Sprite
+    state: icon-syndie
+  - type: AutoSurgeon
+    implant: StorageImplant
+
+- type: entity
+  parent: [ BaseNFFlatpack, BaseFactionGearOtherFactionT2 ]
+  id: AutosurgeonImplantStorageFlatpack
+  name: autosurgeon (storage implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonImplantStorage
+  - type: StaticPrice
+    price: 35
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+

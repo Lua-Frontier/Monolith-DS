@@ -1,8 +1,8 @@
 - type: entity
-  parent: OrganHumanHeart #, BaseSyndicateContraband ]
-  id: OrganHeartSandevistan
+  parent: BaseOrganCNSImplant # LuaM: OrganHumanHeart > BaseOrganCNSImplant, no longer works as a heart
+  id: OrganCNSSandevistan
   name: Sandevistan
-  description: Advanced cyberware that replaces the user's heart and allows them to greatly increase their agility for a short period, at the cost of their endurance.
+  description: Advanced cyberware that is wired into the user's central nervous system and allows them to greatly increase their agility for a short period, at the cost of their endurance.
   components:
   - type: Cybernetics
   - type: Sprite

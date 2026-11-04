@@ -22,7 +22,7 @@
   #  - MedkitCombatFilled # Commented by LuaM
   #  - SyringeCaseAltFilled # Commented by LuaM
     - JetpackADMFilled # LuaM: JetpackMiniFilled > JetpackADMFilled
-    - FreedomImplanter
+    - AutosurgeonImplantFreedomFlatpack
     - CognizineChemistryBottle
   #  - Syringe # Commented by LuaM
     - RadioHandheldNF
@@ -35,7 +35,7 @@
     - ClothingHandsGlovesSurgical
     - PinpointerUniversal
     - EnergyShield
-    - ScramImplanter
+    - AutosurgeonImplantScramFlatpack
     - MedkitCombatFilled
     - MedkitCombatFilled
     - MedkitCombatFilled

@@ -86,6 +86,10 @@
   name: "box magazine (6.35x40mm Caseless)"
   parent: BaseMagazine635x40mmCaseless
   components:
+  - type: Tag # LuaM: can not be stashed in a safety deposit box
+    tags:
+      - Magazine635x40mmCaseless
+      - SafetyDepositBlacklist
   - type: BallisticAmmoProvider
     proto: Cartridge635x40mmCaseless
     capacity: 99
@@ -215,6 +219,10 @@
   name: "magazine (6.35x40mm STANAG caseless plasma)"
   parent: BaseMagazine635x40mmCaseless
   components:
+  - type: Tag # LuaM: can not be stashed in a safety deposit box
+    tags:
+      - Magazine635x40mmCaseless
+      - SafetyDepositBlacklist
   - type: BallisticAmmoProvider
     proto: Cartridge635x40mmCaselessPlasma
   - type: Sprite
@@ -229,6 +237,10 @@
   name: "box magazine (6.35x40mm Caseless plasma)"
   parent: BaseMagazine635x40mmCaseless
   components:
+  - type: Tag # LuaM: can not be stashed in a safety deposit box
+    tags:
+      - Magazine635x40mmCaseless
+      - SafetyDepositBlacklist
   - type: BallisticAmmoProvider
     proto: Cartridge635x40mmCaselessPlasma
     capacity: 99

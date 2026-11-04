@@ -47,8 +47,8 @@
         amount: 4
       - id: MedkitCombatStasiziumFilled
       - id: StasisBaton
-      - id: FreedomImplanter
-      - id: ScramImplanter
+      - id: AutosurgeonImplantFreedomFlatpack
+      - id: AutosurgeonImplantScramFlatpack
       - id: MindShieldImplanter
       - id: RCDChrono
       - id: ChronoTeleporter

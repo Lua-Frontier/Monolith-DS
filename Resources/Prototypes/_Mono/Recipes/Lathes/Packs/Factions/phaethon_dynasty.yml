@@ -76,4 +76,7 @@
   - PrintableDirtyBomb
   - AutosurgeonIASPDV
   - AutosurgeonAdvHeartPDV
+  # LuaM-start: humanity chips
+  - AutosurgeonHumanityChipMk2Recipe
+  # LuaM-end
   - AutosurgeonDermalArmorPDV

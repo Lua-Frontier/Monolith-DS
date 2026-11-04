@@ -837,6 +837,12 @@ namespace Content.Shared.Preferences
 //                    continue; // Commented by LuaM
                 ProtoId<TraitPrototype> trait = traitProto.ID; // LuaM
 
+                // LuaM-start: a trait the species can't have is dropped, so it gives no trait points either
+                if (traitProto.SpeciesBlacklist.Contains(Species)
+                    || traitProto.SpeciesWhitelist.Count > 0 && !traitProto.SpeciesWhitelist.Contains(Species))
+                    continue;
+                // LuaM-end
+
                 // Always valid.
                 if (traitProto.Category == null)
                 {

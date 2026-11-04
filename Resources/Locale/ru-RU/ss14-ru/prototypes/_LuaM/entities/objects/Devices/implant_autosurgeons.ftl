@@ -1,0 +1,16 @@
+ent-AutosurgeonImplantEmp = автохирург ({ ent-EmpImplant })
+    .desc = Устанавливает имплант тому, кто пристёгнут к автохирургу, или тому, кто его включил.
+ent-AutosurgeonImplantEmpFlatpack = упакованный автохирург ({ ent-EmpImplant })
+    .desc = Упаковка, при помощи которой можно создать автохирург.
+ent-AutosurgeonImplantFreedom = автохирург ({ ent-FreedomImplant })
+    .desc = Устанавливает имплант тому, кто пристёгнут к автохирургу, или тому, кто его включил.
+ent-AutosurgeonImplantFreedomFlatpack = упакованный автохирург ({ ent-FreedomImplant })
+    .desc = Упаковка, при помощи которой можно создать автохирург.
+ent-AutosurgeonImplantScram = автохирург ({ ent-ScramImplant })
+    .desc = Устанавливает имплант тому, кто пристёгнут к автохирургу, или тому, кто его включил.
+ent-AutosurgeonImplantScramFlatpack = упакованный автохирург ({ ent-ScramImplant })
+    .desc = Упаковка, при помощи которой можно создать автохирург.
+ent-AutosurgeonImplantStorage = автохирург ({ ent-StorageImplant })
+    .desc = Устанавливает имплант тому, кто пристёгнут к автохирургу, или тому, кто его включил.
+ent-AutosurgeonImplantStorageFlatpack = упакованный автохирург ({ ent-StorageImplant })
+    .desc = Упаковка, при помощи которой можно создать автохирург.

@@ -17,10 +17,10 @@
 # Implants
 
 - type: listing
-  id: UplinkPirateCombatMedipenImplanter
-  name: uplink-combat-medipen-implanter-name
-  description: uplink-combat-medipen-implanter-desc
-  productEntity: CombatMedipenImplanter
+  id: UplinkPirateCombatMedipenAutosurgeon
+  name: uplink-combat-medipen-autosurgeon-name
+  description: uplink-combat-medipen-autosurgeon-desc
+  productEntity: AutosurgeonCombatMedipenFlatpack
   cost:
     Doubloon: 20
   categories:
@@ -32,10 +32,10 @@
       - PirateUplink
 
 - type: listing
-  id: UplinkPirateStimulantImplanter
-  name: uplink-stimulant-implanter-name
-  description: uplink-stimulant-implanter-desc
-  productEntity: StimulantImplanter
+  id: UplinkPirateStimulantAutosurgeon
+  name: uplink-stimulant-autosurgeon-name
+  description: uplink-stimulant-autosurgeon-desc
+  productEntity: AutosurgeonStimulantFlatpack
   cost:
     Doubloon: 20
   categories:
