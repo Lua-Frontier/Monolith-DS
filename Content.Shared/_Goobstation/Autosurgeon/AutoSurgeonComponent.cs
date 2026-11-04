@@ -51,6 +51,28 @@ public sealed partial class AutoSurgeonComponent : Component
     [DataField]
     public string? NewPartProto;
 
+    // LuaM-start
+    /// <summary>
+    /// If not null, installs this subdermal implant into the user instead of touching body parts or organs.
+    /// </summary>
+    [DataField]
+    public EntProtoId? Implant;
+
+    /// <summary>
+    /// If not null, puts a new organ of this prototype into every body part of <see cref="TargetBodyPart"/> type,
+    /// like a mantis blade into both arms. Parts that already have their slot taken are skipped.
+    /// </summary>
+    [DataField]
+    public EntProtoId? OrganForEachPart;
+
+    /// <summary>
+    /// Humanity cost of an upgrade that only adds components, like dermal armor.
+    /// Installed organs, parts and implants have their own cost instead.
+    /// </summary>
+    [DataField]
+    public float HumanityCost;
+    // LuaM-end
+
     [DataField]
     public bool OneTimeUse = true;
 

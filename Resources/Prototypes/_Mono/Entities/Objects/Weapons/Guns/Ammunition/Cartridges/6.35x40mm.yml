@@ -60,6 +60,11 @@
   name: cartridge (6.35x40mm caseless Plasma)
   parent: BaseCartridge635x40mmCaseless
   components:
+  - type: Tag # LuaM: can not be stashed in a safety deposit box
+    tags:
+      - Cartridge
+      - Cartridge635x40mmCaseless
+      - SafetyDepositBlacklist
   - type: CartridgeAmmo
     proto: Bullet635x40mmCaselessPlasma
   - type: Sprite

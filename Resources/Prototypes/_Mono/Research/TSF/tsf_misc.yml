@@ -168,12 +168,15 @@
 - type: technology
   id: TSFAdvancedBionics
   name: research-technology-tsfmc-sandevistan
-  entityIcon: OrganHeartTSFSandevistan
+  entityIcon: OrganCNSTSFSandevistan
   discipline: TsfmcEquipment # LuaM TsfmcGear > TsfmcEquipment
   tier: 3
   cost: 75000
   recipeUnlocks:
   - AutosurgeonSandevistanTSF
+  # LuaM-start: humanity chips
+  - AutosurgeonHumanityChipMk2Recipe
+  # LuaM-end
   technologyPrerequisites:
   # - UniversalMaterialResearchT3
   - Hypospray # LuaM
@@ -183,7 +186,7 @@
 #- type: technology
 #  id: TSFExperimentalBionics
 #  name: research-technology-tsfmc-shunt
-#  entityIcon: OrganHeartTSFShunt
+#  entityIcon: OrganCNSTSFShunt
 #  discipline: TsfmcGear
 #  tier: 3
 #  cost: 75000

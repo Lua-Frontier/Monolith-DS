@@ -19,10 +19,10 @@
 # Implants
 
 - type: listing
-  id: UplinkSecurityCombatMedipenImplanter
-  name: uplink-combat-medipen-implanter-name
-  description: uplink-combat-medipen-implanter-desc
-  productEntity: CombatMedipenImplanter
+  id: UplinkSecurityCombatMedipenAutosurgeon
+  name: uplink-combat-medipen-autosurgeon-name
+  description: uplink-combat-medipen-autosurgeon-desc
+  productEntity: AutosurgeonCombatMedipenFlatpack
   cost:
     FederationMilitaryCredit: 20
   categories:
@@ -34,10 +34,10 @@
       - SecurityUplink
 
 - type: listing
-  id: UplinkSecurityStimulantImplanter
-  name: uplink-stimulant-implanter-name
-  description: uplink-stimulant-implanter-desc
-  productEntity: StimulantImplanter
+  id: UplinkSecurityStimulantAutosurgeon
+  name: uplink-stimulant-autosurgeon-name
+  description: uplink-stimulant-autosurgeon-desc
+  productEntity: AutosurgeonStimulantFlatpack
   cost:
     FederationMilitaryCredit: 20
   categories:

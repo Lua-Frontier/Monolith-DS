@@ -181,6 +181,17 @@ namespace Content.Client.HealthAnalyzer.UI
 
             DamageLabel.Text = damageable.TotalDamage.ToString();
 
+            // LuaM-start: humanity, the server only sends it when you scan yourself
+            var showHumanity = msg.HumanityLeft != null && msg.HumanityMax != null;
+            HumanityTextLabel.Visible = showHumanity;
+            HumanityLabel.Visible = showHumanity;
+            if (showHumanity)
+            {
+                HumanityLabel.Text = $"{msg.HumanityLeft:0.#}/{msg.HumanityMax:0.#}";
+                HumanityLabel.FontColorOverride = msg.HumanityLeft < 0 ? Color.Red : Color.FromHex("#ff9100");
+            }
+            // LuaM-end
+
             // Alerts
 
             var showAlerts = msg.Unrevivable == true || msg.Uncloneable == true || msg.Bleeding == true; // Frontier: add Uncloneable

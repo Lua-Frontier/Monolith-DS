@@ -1,0 +1,130 @@
+# Head chips that raise the humanity limit. Only one fits into the head.
+- type: entity
+  parent: BaseItem
+  id: BaseOrganHumanityChip
+  abstract: true
+  components:
+  - type: EmitSoundOnPickup
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnLand
+    sound:
+      collection: OrganInteraction
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/cybernetics.rsi
+    state: circuit
+  - type: Organ
+    slotId: chip
+  - type: HumanityChip
+  - type: Cybernetics
+  - type: Gibbable
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - SafetyDepositBlacklist # can not be carried between shifts
+
+- type: entity
+  parent: BaseOrganHumanityChip
+  id: OrganHumanityChipMk1
+  name: neural stabilizer chip Mk I
+  description: A head chip that helps the mind cope with cyberware. Raises the humanity limit by 2.
+  components:
+  - type: HumanityChip
+    bonus: 2
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseOrganHumanityChip
+  id: OrganHumanityChipMk2
+  name: neural stabilizer chip Mk II
+  description: A head chip that helps the mind cope with cyberware. Raises the humanity limit by 3.
+  components:
+  - type: Sprite
+    color: "#7fd4ff"
+  - type: HumanityChip
+    bonus: 3
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  parent: BaseOrganHumanityChip
+  id: OrganHumanityChipMk3
+  name: neural stabilizer chip Mk III
+  description: A head chip that helps the mind cope with cyberware. Raises the humanity limit by 4.
+  components:
+  - type: Sprite
+    color: "#d68cff"
+  - type: HumanityChip
+    bonus: 4
+  - type: StaticPrice
+    price: 3500
+
+# Autosurgeons
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonHumanityChipMk1
+  name: autosurgeon (neural stabilizer chip Mk I)
+  description: Puts a neural stabilizer chip into the head, replacing the old one. Raises the humanity limit by 2.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Head
+    targetOrgan: Chip
+    newPartProto: OrganHumanityChipMk1
+
+- type: entity
+  parent: AutosurgeonHumanityChipMk1
+  id: AutosurgeonHumanityChipMk2
+  name: autosurgeon (neural stabilizer chip Mk II)
+  description: Puts a neural stabilizer chip into the head, replacing the old one. Raises the humanity limit by 3.
+  components:
+  - type: AutoSurgeon
+    newPartProto: OrganHumanityChipMk2
+
+- type: entity
+  parent: AutosurgeonHumanityChipMk1
+  id: AutosurgeonHumanityChipMk3
+  name: autosurgeon (neural stabilizer chip Mk III)
+  description: Puts a neural stabilizer chip into the head, replacing the old one. Raises the humanity limit by 4.
+  components:
+  - type: AutoSurgeon
+    newPartProto: OrganHumanityChipMk3
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonHumanityChipMk1Flatpack
+  name: autosurgeon (neural stabilizer chip Mk I) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonHumanityChipMk1
+  - type: StaticPrice
+    price: 2000
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: AutosurgeonHumanityChipMk1Flatpack
+  id: AutosurgeonHumanityChipMk2Flatpack
+  name: autosurgeon (neural stabilizer chip Mk II) flatpack
+  components:
+  - type: Flatpack
+    entity: AutosurgeonHumanityChipMk2
+  - type: StaticPrice
+    price: 4000
+
+- type: entity
+  parent: AutosurgeonHumanityChipMk1Flatpack
+  id: AutosurgeonHumanityChipMk3Flatpack
+  name: autosurgeon (neural stabilizer chip Mk III) flatpack
+  components:
+  - type: Flatpack
+    entity: AutosurgeonHumanityChipMk3
+  - type: StaticPrice
+    price: 7000

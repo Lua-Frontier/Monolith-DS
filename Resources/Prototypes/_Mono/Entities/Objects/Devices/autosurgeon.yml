@@ -4,12 +4,12 @@
   parent: BaseAutosurgeon
   id: AutosurgeonSandevistanTSF
   name: TSF autosurgeon (WJY-21X sandevistan)
-  description: Replaces the heart with a reverse-engineered MMC Sandevistan. Doesn't cool down as fast as the real thing.
+  description: Wires a reverse-engineered MMC Sandevistan into the central nervous system. Doesn't cool down as fast as the real thing.
   components:
   - type: AutoSurgeon
     targetBodyPart: Torso
-    targetOrgan: Heart
-    newPartProto: OrganHeartTSFSandevistan
+    targetOrgan: Cns # LuaM: Heart > Cns
+    newPartProto: OrganCNSTSFSandevistan
 
 - type: entity
   parent: BaseNFFlatpack
@@ -29,12 +29,12 @@
   parent: BaseAutosurgeon
   id: AutosurgeonShuntTSF
   name: TSF autosurgeon (KR-22 shunt device)
-  description: Replaces the heart with a highly experimental shunt device. Thats some scary tech.
+  description: Wires a highly experimental shunt device into the central nervous system. Thats some scary tech.
   components:
   - type: AutoSurgeon
     targetBodyPart: Torso
-    targetOrgan: Heart
-    newPartProto: OrganHeartTSFShunt
+    targetOrgan: Cns # LuaM: Heart > Cns
+    newPartProto: OrganCNSTSFShunt
 
 - type: entity
   parent: BaseNFFlatpack
@@ -86,19 +86,10 @@
   name: PDV autosurgeon (E-SAPI dermal armor)
   description: Implants an array of E-SAPI armor plates into the body. Makes you more vulnerable to heat and shock, but makes you more resistant to bullets.
   components:
-  - type: AutoSurgeon
+  - type: AutoSurgeon # LuaM: the armor is an organ in the subdermal armor slot now
     targetBodyPart: Torso
-    componentsToUser:
-    - type: DamageProtectionBuff
-      modifiers:
-        dermal:
-          id: DermalArmorCybernetics
-          coefficients:
-            Shock: 1.25
-            Heat: 1.1
-            Piercing: 0.85
-            Blunt: 0.9
-            Slash: 0.9
+    targetOrgan: Subdermal
+    newPartProto: OrganDermalArmorPDV
 
 - type: entity
   parent: BaseNFFlatpack
@@ -153,12 +144,12 @@
   parent: BaseAutosurgeonMieyo
   id: AutosurgeonAdvHeartMMC
   name: MMC autosurgeon (EVT-001 Sakimoto)
-  description: Replaces the heart with a more strange one. The exact manner of how is unknown, but it allows the user to channel a form of latent energy into a single hit.
+  description: Wires a strange implant into the central nervous system. The exact manner of how is unknown, but it allows the user to channel a form of latent energy into a single hit.
   components:
   - type: AutoSurgeon
     targetBodyPart: Torso
-    targetOrgan: Heart
-    newPartProto: OrganHeartMMCSakimoto
+    targetOrgan: Cns # LuaM: Heart > Cns
+    newPartProto: OrganCNSMMCSakimoto
 
 - type: entity
   parent: BaseNFFlatpack
@@ -185,6 +176,7 @@
   components:
   - type: AutoSurgeon
     targetBodyPart: Torso
+    humanityCost: 1 # LuaM
     componentsToUser:
     - type: DashAction
       actionProto: ActionDashMuscleFibersImplant
@@ -203,60 +195,29 @@
     layers:
     - state: medical_lathe
 
-# Right mantis blade
+# Mantis blades
+# LuaM: the right and left autosurgeons are merged, the blades now go into the arm implant slot of both arms
 
 - type: entity
   parent: BaseAutosurgeonMieyo
-  id: AutosurgeonRightMantisBladeMieyo
-  name: MMC autosurgeon (right mantis blade)
-  description: Implants a covert deployable mantis blade into your right arm. That's really cool.
+  id: AutosurgeonMantisBladesMieyo
+  name: MMC autosurgeon (mantis blades)
+  description: Implants a pair of covert deployable mantis blades into both of your arms. That's really cool.
   components:
   - type: AutoSurgeon
     targetBodyPart: Arm
-    targetBodyPartSymmetry: Right
-    componentsToPart:
-    - type: MantisBladeArm
-      actionProto: ActionToggleRightMantisBlade
+    organForEachPart: OrganArmMantisBlade
 
 - type: entity
   parent: BaseNFFlatpack
-  id: AutosurgeonRightMantisBladeMieyoFlatpack
-  name: MMC autosurgeon (right mantis blade) flatpack
+  id: AutosurgeonMantisBladesMieyoFlatpack
+  name: MMC autosurgeon (mantis blades) flatpack
   description: A flatpack used for constructing a MMC autosurgeon.
   components:
   - type: Flatpack
-    entity: AutosurgeonRightMantisBladeMieyo
+    entity: AutosurgeonMantisBladesMieyo
   - type: StaticPrice
-    price: 2500
-  - type: Sprite
-    layers:
-    - state: medical_lathe
-
-# Left mantis blade
-
-- type: entity
-  parent: BaseAutosurgeonMieyo
-  id: AutosurgeonLeftMantisBladeMieyo
-  name: MMC autosurgeon (left mantis blade)
-  description: Implants a covert deployable mantis blade into your left arm. That's really cool.
-  components:
-  - type: AutoSurgeon
-    targetBodyPart: Arm
-    targetBodyPartSymmetry: Left
-    componentsToPart:
-    - type: MantisBladeArm
-      actionProto: ActionToggleLeftMantisBlade
-
-- type: entity
-  parent: BaseNFFlatpack
-  id: AutosurgeonLeftMantisBladeMieyoFlatpack
-  name: MMC autosurgeon (left mantis blade) flatpack
-  description: A flatpack used for constructing a MMC autosurgeon.
-  components:
-  - type: Flatpack
-    entity: AutosurgeonLeftMantisBladeMieyo
-  - type: StaticPrice
-    price: 2500
+    price: 5000
   - type: Sprite
     layers:
     - state: medical_lathe
@@ -267,12 +228,12 @@
   parent: BaseAutosurgeonMieyo
   id: AutosurgeonSandevistanMieyo
   name: MMC autosurgeon (EVT-002 Lotus)
-  description: Replaces the heart with a more strange one. It's a sterile bag full of a series of autoinjectors, electroneural/cardiovascular links, and thermomachines designed to allow the user to push themselves to the limit.
+  description: Wires a strange implant into the central nervous system. It's a sterile bag full of a series of autoinjectors, electroneural links, and thermomachines designed to allow the user to push themselves to the limit.
   components:
   - type: AutoSurgeon
     targetBodyPart: Torso
-    targetOrgan: Heart
-    newPartProto: OrganHeartMMCSandevistan
+    targetOrgan: Cns # LuaM: Heart > Cns
+    newPartProto: OrganCNSMMCSandevistan
 
 - type: entity
   parent: BaseNFFlatpack

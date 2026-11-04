@@ -72,6 +72,10 @@
         id: liver
       kidneys:
         id: kidneys
+      cns: # LuaM: central nervous system implants
+        id: cns
+      subdermal: # LuaM: subdermal armor
+        id: subdermal
   - type: ContainerContainer
     containers:
       torso_slot: !type:ContainerSlot {}
@@ -97,6 +101,8 @@
         id: brain
       eyes:
         id: eyes
+      chip: # LuaM: humanity chips
+        id: chip
   - type: Input
     context: "ghost"
   - type: Tag
@@ -150,6 +156,9 @@
       left hand:
         id: left hand
         type: Hand
+    organs: # LuaM: arm implants, like the mantis blade
+      armimplant:
+        id: armimplant
 
 - type: entity
   abstract: true
@@ -169,6 +178,9 @@
       right hand:
         id: right hand
         type: Hand
+    organs: # LuaM: arm implants, like the mantis blade
+      armimplant:
+        id: armimplant
     severIntegrity: 160 # Mono
 
 - type: entity

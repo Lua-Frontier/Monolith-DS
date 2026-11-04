@@ -1,10 +1,10 @@
 # Implants
 
 - type: listing
-  id: UplinkContrabandCombatMedipenImplanter
-  name: uplink-combat-medipen-implanter-name
-  description: uplink-combat-medipen-implanter-desc
-  productEntity: CombatMedipenImplanter
+  id: UplinkContrabandCombatMedipenAutosurgeon
+  name: uplink-combat-medipen-autosurgeon-name
+  description: uplink-combat-medipen-autosurgeon-desc
+  productEntity: AutosurgeonCombatMedipenFlatpack
   cost:
     Telecrystal: 25
   categories:
@@ -16,10 +16,10 @@
       - VendingMachine
 
 - type: listing
-  id: UplinkContrabandStimulantImplanter
-  name: uplink-stimulant-implanter-name
-  description: uplink-stimulant-implanter-desc
-  productEntity: StimulantImplanter
+  id: UplinkContrabandStimulantAutosurgeon
+  name: uplink-stimulant-autosurgeon-name
+  description: uplink-stimulant-autosurgeon-desc
+  productEntity: AutosurgeonStimulantFlatpack
   cost:
     Telecrystal: 25
   categories:
