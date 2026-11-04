@@ -8,7 +8,7 @@
       contents:
         - id: EmpGrenade
           amount: 3
-        - id: EmpImplanter
+        - id: AutosurgeonImplantEmpFlatpack
           amount: 1
 
 - type: entity

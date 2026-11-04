@@ -118,6 +118,10 @@
   id: AmmoBox68x52mmCaselessPlasma
   name: ammunition box (6.8x52mm STANAG caseless plasma)
   components:
+  - type: Tag # LuaM: can not be stashed in a safety deposit box
+    tags:
+      - Magazine68x52mmCaselessBoxSmall
+      - SafetyDepositBlacklist
   - type: BallisticAmmoProvider
     proto: Cartridge68x52mmCaselessPlasma
   - type: Sprite

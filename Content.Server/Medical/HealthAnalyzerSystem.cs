@@ -19,6 +19,8 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Server._NF.Traits.Assorted; // Frontier
+using Content.Server._LuaM.Cyberware; // LuaM
+using Content.Shared._LuaM.Cyberware; // LuaM
 
 // Shitmed Change
 using Content.Shared.Body.Part;
@@ -40,6 +42,8 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
     [Dependency] private TransformSystem _transformSystem = default!;
     [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private HumanitySystem _humanity = default!; // LuaM
+    [Dependency] private SharedContainerSystem _container = default!; // LuaM
 
     public override void Initialize()
     {
@@ -273,7 +277,7 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
         if (TryComp<UncloneableComponent>(target, out var uncloneableComp) && uncloneableComp.Analyzable) // Frontier
             uncloneable = true; // Frontier
 
-        _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
+        var message = new HealthAnalyzerScannedUserMessage( // LuaM: kept in a variable to add humanity
             GetNetEntity(target),
             bodyTemperature,
             bloodAmount,
@@ -284,6 +288,19 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
             // Shitmed Change
             body,
             part != null ? GetNetEntity(part) : null
-        ));
+        );
+
+        // LuaM-start: you only see your humanity when you scan yourself
+        if (TryComp<HumanityComponent>(target, out var humanity)
+            && _container.TryGetContainingContainer((healthAnalyzer, null, null), out var holder)
+            && holder.Owner == target)
+        {
+            var max = _humanity.GetMaxHumanity((target, humanity));
+            message.HumanityMax = max;
+            message.HumanityLeft = max - _humanity.GetUsedHumanity(target);
+        }
+        // LuaM-end
+
+        _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, message);
     }
 }

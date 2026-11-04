@@ -1,0 +1,29 @@
+# Cyberware for the central nervous system slot. It does not replace any vital organ.
+- type: entity
+  parent: BaseItem
+  id: BaseOrganCNSImplant
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - SafetyDepositBlacklist # can not be carried between shifts
+  - type: EmitSoundOnPickup
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnLand
+    sound:
+      collection: OrganInteraction
+  - type: Organ
+    slotId: cns
+  - type: CentralNervousSystem
+  - type: Cybernetics
+  - type: CyberwareHumanity
+    cost: 3
+  - type: Gibbable
+  - type: Item
+    size: Small
+  - type: StaticPrice
+    price: 1500

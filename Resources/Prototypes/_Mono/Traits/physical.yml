@@ -396,7 +396,7 @@
   name: trait-nanite-repair-drones-name
   description: trait-nanite-repair-drones-desc
   category: Physical
-  cost: 8
+  cost: 6 # LuaM: 8 > 6
   speciesBlacklist:
   - Human
   - Chitinid

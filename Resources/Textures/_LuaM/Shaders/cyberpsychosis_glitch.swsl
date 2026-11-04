@@ -1,0 +1,125 @@
+// Screen effect of cyberpsychosis. Built on the Sandevistan glitch, but much heavier:
+// more and wider tears, screen shake, vertical block shifts, inversion flashes and a pulsing red vignette.
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float intensity;
+
+highp float hash(highp float n)
+{
+    return fract(sin(n) * 43758.5453);
+}
+
+highp float hash2(highp vec2 p)
+{
+    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+}
+
+void fragment()
+{
+    highp vec2 uv = UV;
+    highp float t = TIME;
+    highp float i = intensity;
+
+    highp vec3 base = texture2D(SCREEN_TEXTURE, uv).rgb;
+
+    // Whole screen shake, a lot more often than the Sandevistan.
+    highp float jSeed = floor(t * 20.0);
+    highp float shakeOn = step(0.75, hash(jSeed));
+    highp vec2 jolt = vec2(hash(jSeed + 5.0) - 0.5, hash(jSeed + 9.0) - 0.5) * vec2(0.05, 0.02) * i * shakeOn;
+
+    highp float tClock = floor(t * 12.0);
+
+    // Wide tears.
+    highp float wBand = floor(uv.y * 12.0);
+    highp float wH = hash(wBand + tClock * 3.1);
+    highp float wTear = step(0.72, wH) * (wH - 0.5) * 0.22 * i;
+
+    // Medium tears.
+    highp float mBand = floor(uv.y * 45.0);
+    highp float mH = hash(mBand + tClock * 4.7);
+    highp float mTear = step(0.80, mH) * (mH - 0.5) * 0.09 * i;
+
+    // Fine ripples.
+    highp float fBand = floor(uv.y * 140.0);
+    highp float fH = hash(fBand + floor(t * 24.0) * 2.3);
+    highp float fTear = step(0.93, fH) * (fH - 0.5) * 0.035 * i;
+
+    highp float totalTear = wTear + mTear + fTear;
+    highp float tearStr = abs(totalTear);
+
+    // Corrupted blocks, bigger and shifting both ways.
+    highp vec2 bG = floor(uv * vec2(16.0, 10.0));
+    highp float bS = hash2(bG + floor(t * 8.0));
+    highp float bActive = step(0.80, bS);
+    highp float bShiftX = bActive * (hash2(bG * 2.0 + floor(t * 8.0)) - 0.5) * 0.09 * i;
+    highp float bShiftY = bActive * (hash2(bG * 3.0 + floor(t * 8.0)) - 0.5) * 0.04 * i;
+
+    highp float corruption = clamp(smoothstep(0.0, 0.01, tearStr) + bActive, 0.0, 1.0) * i;
+
+    highp vec2 uvD = uv + jolt + vec2(totalTear + bShiftX, bShiftY);
+    highp float ab = (0.009 + tearStr * 0.06) * i;
+
+    highp float cr = texture2D(SCREEN_TEXTURE, vec2(uvD.x + ab, uvD.y - ab * 0.5)).r;
+    highp float cg = texture2D(SCREEN_TEXTURE, uvD).g;
+    highp float cb = texture2D(SCREEN_TEXTURE, vec2(uvD.x - ab, uvD.y + ab * 0.5)).b;
+    highp vec3 rgbCorrupt = vec3(cr, cg, cb);
+
+    if (bActive > 0.5)
+    {
+        highp float ch = hash(bG.x * 7.0 + bG.y * 11.0 + floor(t * 8.0));
+        if (ch < 0.2)
+            rgbCorrupt = vec3(rgbCorrupt.r * 2.5, 0.0, 0.0);
+        else if (ch < 0.4)
+            rgbCorrupt = vec3(0.0, rgbCorrupt.g * 2.0, 0.0);
+        else if (ch < 0.6)
+            rgbCorrupt = vec3(0.0, 0.0, rgbCorrupt.b * 2.0);
+        else if (ch < 0.8)
+            rgbCorrupt = vec3(1.0) - rgbCorrupt;
+        else
+            rgbCorrupt = rgbCorrupt.gbr * 1.8;
+    }
+
+    highp float tearEdge = smoothstep(0.004, 0.03, tearStr);
+    if (tearEdge > 0.01)
+    {
+        highp float ePick = hash(floor(uv.y * 30.0) + floor(t * 6.0));
+        highp vec3 eColor = ePick < 0.5
+            ? vec3(1.0, 0.0, 0.05)
+            : (ePick < 0.75 ? vec3(0.0, 1.0, 0.0) : vec3(0.0, 0.0, 1.0));
+        rgbCorrupt = mix(rgbCorrupt, eColor, tearEdge * 0.4);
+    }
+
+    // Ghost copies of the screen.
+    highp float ghostOn = step(0.78, hash(floor(t * 9.0)));
+    highp float gOff = (hash(floor(t * 9.0) + 3.0) - 0.5) * 0.07 * i * ghostOn;
+    rgbCorrupt.r += texture2D(SCREEN_TEXTURE, vec2(uv.x + gOff, uv.y)).r * 0.3 * ghostOn;
+    rgbCorrupt.b += texture2D(SCREEN_TEXTURE, vec2(uv.x - gOff, uv.y)).b * 0.3 * ghostOn;
+
+    highp float alpha = corruption * 0.75;
+    highp vec3 color = mix(base, rgbCorrupt, alpha);
+
+    // Rolling scanlines.
+    highp float scan = step(0.5, fract(uv.y * 220.0 + t * 25.0));
+    color *= 1.0 - 0.08 * i * scan;
+
+    // Pulsing red rage around the edges.
+    highp float pulse = 0.5 + 0.5 * sin(t * 6.0);
+    highp float vig = smoothstep(0.3, 0.85, length(uv - vec2(0.5)));
+    color = mix(color, vec3(0.8, 0.0, 0.05), vig * (0.25 + 0.2 * pulse) * i);
+
+    // Short inversion flashes.
+    highp float flash = step(0.96, hash(floor(t * 10.0) + 17.0));
+    color = mix(color, vec3(1.0) - color.gbr, flash * 0.55 * i);
+
+    // Dense static.
+    highp float sp = hash2(floor(uv * 350.0) + t * 20.0);
+    if (sp > 0.994)
+    {
+        highp float sH = hash(sp * 50.0);
+        highp vec3 spC = sH < 0.5
+            ? vec3(1.0, 0.0, 0.05)
+            : (sH < 0.75 ? vec3(0.0, 1.0, 0.0) : vec3(1.0, 1.0, 1.0));
+        color = mix(color, spC, 0.6 * i);
+    }
+
+    COLOR = vec4(clamp(color, 0.0, 1.0), 1.0);
+}

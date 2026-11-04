@@ -1,23 +1,18 @@
 - type: latheRecipe
   parent: BaseToolRecipe
-  id: AutosurgeonRightMantisBladeMMC
-  result: AutosurgeonRightMantisBladeMieyoFlatpack
+  id: AutosurgeonMantisBladesMMC # LuaM: right and left recipes merged, costs doubled
+  result: AutosurgeonMantisBladesMieyoFlatpack
   materialDiscountScale: 0
   materials:
-    Steel: 3000
-    Plastic: 2500
-    Glass: 400
-    Plasteel: 3500
-    Plasma: 750
-    Gold: 1000
-    Lithium: 750
-    Copper: 750
-    Iridite: 20 # Skillcheck
-
-- type: latheRecipe
-  parent: AutosurgeonRightMantisBladeMMC
-  id: AutosurgeonLeftMantisBladeMMC
-  result: AutosurgeonLeftMantisBladeMieyoFlatpack
+    Steel: 6000
+    Plastic: 5000
+    Glass: 800
+    Plasteel: 7000
+    Plasma: 1500
+    Gold: 2000
+    Lithium: 1500
+    Copper: 1500
+    Iridite: 40 # Skillcheck
 
 - type: latheRecipe
   parent: BaseToolRecipe

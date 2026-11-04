@@ -195,22 +195,6 @@
 #Traitor implanters
 
 - type: entity
-  id: StorageImplanter
-  suffix: storage
-  parent: BaseImplantOnlyImplanterSyndi
-  components:
-    - type: Implanter
-      implant: StorageImplant
-
-- type: entity
-  id: FreedomImplanter
-  suffix: freedom
-  parent: BaseImplantOnlyImplanterSyndi
-  components:
-    - type: Implanter
-      implant: FreedomImplant
-
-- type: entity
   id: RadioImplanter
   suffix: radio Syndicate
   parent: BaseImplantOnlyImplanterSyndi
@@ -225,22 +209,6 @@
   components:
   - type: Implanter
     implant: UplinkImplant
-
-- type: entity
-  id: EmpImplanter
-  suffix: EMP
-  parent: BaseImplantOnlyImplanterSyndi
-  components:
-    - type: Implanter
-      implant: EmpImplant
-
-- type: entity
-  id: ScramImplanter
-  suffix: scram
-  parent: BaseImplantOnlyImplanterSyndi
-  components:
-    - type: Implanter
-      implant: ScramImplant
 
 - type: entity
   id: DnaScramblerImplanter

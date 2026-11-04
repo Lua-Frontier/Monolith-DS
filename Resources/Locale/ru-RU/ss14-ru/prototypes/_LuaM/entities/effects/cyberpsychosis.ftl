@@ -1,0 +1,2 @@
+ent-CyberpsychosisViewer = киберпсихоз
+    .desc = { "" }

@@ -7,6 +7,8 @@
   components:
   - type: SubdermalImplant
     implantAction: ActionActivateCombatMedipenImplant
+  - type: CyberwareHumanity
+    cost: 1
   - type: InjectorImplant
     solution:
       reagents:
@@ -24,6 +26,8 @@
   components:
   - type: SubdermalImplant
     implantAction: ActionActivateStimulantImplant
+  - type: CyberwareHumanity
+    cost: 1
   - type: InjectorImplant
     solution:
       reagents:
@@ -31,44 +35,47 @@
         Quantity: 30
 
 - type: entity
-  parent: BaseImplantOnlyImplanter
-  id: BaseInjectorImplantImplanter
-  abstract: true
+  parent: BaseAutosurgeon
+  id: AutosurgeonCombatMedipen
+  name: autosurgeon (combat medipen implant)
+  description: Installs an implant that injects a combat medipen dose on demand and automatically when the owner goes critical.
   components:
-  - type: Item
-    sprite: Objects/Specific/Medical/syndi_implanter.rsi
-  - type: Sprite
-    sprite: Objects/Specific/Medical/syndi_implanter.rsi
-    state: implanter1
-    layers:
-    - state: implanter0
-      map: [ "implantFull" ]
-      visible: true
-    - state: implanter1
-      map: [ "implantOnly" ]
-  - type: GenericVisualizer
-    visuals:
-      enum.ImplanterVisuals.Full:
-        implantFull:
-          True: {visible: true}
-          False: {visible: false}
-      enum.ImplanterImplantOnlyVisuals.ImplantOnly:
-        implantOnly:
-          True: {state: broken}
-          False: {state: implanter1}
-
-- type: entity
-  parent: BaseInjectorImplantImplanter
-  id: CombatMedipenImplanter
-  name: combat medipen implanter
-  components:
-  - type: Implanter
+  - type: AutoSurgeon
     implant: CombatMedipenImplant
 
 - type: entity
-  parent: BaseInjectorImplantImplanter
-  id: StimulantImplanter
-  name: stimulant implanter
+  parent: BaseNFFlatpack
+  id: AutosurgeonCombatMedipenFlatpack
+  name: autosurgeon (combat medipen implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
   components:
-  - type: Implanter
+  - type: Flatpack
+    entity: AutosurgeonCombatMedipen
+  - type: StaticPrice
+    price: 5000
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonStimulant
+  name: autosurgeon (stimulant implant)
+  description: Installs an implant that injects a dose of stimulants on demand and automatically when the owner goes critical.
+  components:
+  - type: AutoSurgeon
     implant: StimulantImplant
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonStimulantFlatpack
+  name: autosurgeon (stimulant implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonStimulant
+  - type: StaticPrice
+    price: 5000
+  - type: Sprite
+    layers:
+    - state: medical_lathe

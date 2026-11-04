@@ -19,6 +19,11 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public bool? Unrevivable;
     public bool? Uncloneable; // Frontier
 
+    // LuaM-start: humanity left and the humanity limit, only sent when you scan yourself
+    public float? HumanityLeft;
+    public float? HumanityMax;
+    // LuaM-end
+
     public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, bool? uncloneable, Dictionary<TargetBodyPart, TargetIntegrity>? body, NetEntity? part = null) // Shitmed Change
     {
         TargetEntity = targetEntity;

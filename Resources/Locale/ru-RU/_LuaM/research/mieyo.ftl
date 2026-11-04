@@ -1,1 +1,1 @@
-research-technology-combat-implanters = ММС | Боевые имплантеры
+research-technology-combat-implanters = ММС | Боевые импланты

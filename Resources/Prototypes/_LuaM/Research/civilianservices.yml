@@ -101,6 +101,8 @@
   recipeUnlocks:
   - UpgradedCyberneticHeart
   - UpgradedCyberneticLungs
+  - AutosurgeonHumanityChipMk1Recipe
+  - AutosurgeonDermalArmorRecipe
   technologyPrerequisites:
   - HighEndSurgery
   position: 6, 4

@@ -312,24 +312,10 @@
       - MMCUplink
 
 - type: listing
-  id: MMCAutosurgeonLeftMantisBladeMieyoFlatpack
-  productEntity: AutosurgeonLeftMantisBladeMieyoFlatpack
+  id: MMCAutosurgeonMantisBladesMieyoFlatpack # LuaM: right and left merged
+  productEntity: AutosurgeonMantisBladesMieyoFlatpack
   cost:
-    MMCIndustrialCredit: 200
-  categories:
-  - UplinkMmcCorporateSuppliesFlatpacks
-  - UplinkMmcFlatpacks
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - MMCUplink
-
-- type: listing
-  id: MMCAutosurgeonRightMantisBladeMieyoFlatpack
-  productEntity: AutosurgeonRightMantisBladeMieyoFlatpack
-  cost:
-    MMCIndustrialCredit: 200
+    MMCIndustrialCredit: 400
   categories:
   - UplinkMmcCorporateSuppliesFlatpacks
   - UplinkMmcFlatpacks

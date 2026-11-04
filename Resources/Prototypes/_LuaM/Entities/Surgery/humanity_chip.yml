@@ -1,0 +1,39 @@
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveHumanityChip
+  name: Remove Neural Chip
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: HumanityChip
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertHumanityChip
+  name: Insert Neural Chip
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertOrgan
+    - SurgeryStepSealOrganWound
+  - type: SurgeryOrganSlotCondition
+    organSlot: chip
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: HumanityChip
+    inverse: true
+    reattaching: true

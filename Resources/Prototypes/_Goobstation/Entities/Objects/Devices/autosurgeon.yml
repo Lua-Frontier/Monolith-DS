@@ -76,29 +76,15 @@
 
 # SYNDICATE
 
+# LuaM: the right and left autosurgeons are merged, the blades now go into the arm implant slot of both arms
 - type: entity
   parent: BaseAutosurgeonSyndicate
-  id: AutosurgeonRightMantisBlade
-  name: syndicate autosurgeon (right mantis blade)
+  id: AutosurgeonMantisBlades
+  name: syndicate autosurgeon (mantis blades)
   components:
   - type: AutoSurgeon
     targetBodyPart: Arm
-    targetBodyPartSymmetry: Right
-    componentsToPart:
-    - type: MantisBladeArm
-      actionProto: ActionToggleRightMantisBlade
-
-- type: entity
-  parent: BaseAutosurgeonSyndicate
-  id: AutosurgeonLeftMantisBlade
-  name: syndicate autosurgeon (left mantis blade)
-  components:
-  - type: AutoSurgeon
-    targetBodyPart: Arm
-    targetBodyPartSymmetry: Left
-    componentsToPart:
-    - type: MantisBladeArm
-      actionProto: ActionToggleLeftMantisBlade
+    organForEachPart: OrganArmMantisBlade
 
 - type: entity
   parent: BaseAutosurgeonSyndicate
@@ -107,5 +93,5 @@
   components:
   - type: AutoSurgeon
     targetBodyPart: Torso
-    targetOrgan: Heart
-    newPartProto: OrganHeartSandevistan
+    targetOrgan: Cns # LuaM: Heart > Cns
+    newPartProto: OrganCNSSandevistan

@@ -1,0 +1,109 @@
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: AutosurgeonCombatMedipenRecipe
+  result: AutosurgeonCombatMedipenFlatpack
+  materialDiscountScale: 0
+  materials:
+    Steel: 600
+    Plastic: 250
+    Glass: 200
+    Plasteel: 500
+    Plasma: 1500
+    Gold: 2000
+    Lithium: 5000
+    Copper: 5000
+    UraniumFissile: 150
+    Iridite: 500
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: AutosurgeonStimulantRecipe
+  result: AutosurgeonStimulantFlatpack
+  materialDiscountScale: 0
+  materials:
+    Steel: 600
+    Plastic: 250
+    Glass: 200
+    Plasteel: 500
+    Plasma: 1500
+    Gold: 2000
+    Lithium: 5000
+    Copper: 5000
+    UraniumFissile: 150
+    Iridite: 500
+
+# Humanity chips
+# Mk I: regular R&D, priced like the upgraded cybernetic heart.
+# Mk II: TSF and PDV, priced like the PDV dermal armor.
+# Mk III: MMC, priced like the mantis blades.
+
+- type: latheRecipe
+  id: AutosurgeonHumanityChipMk1Recipe
+  result: AutosurgeonHumanityChipMk1Flatpack
+  completetime: 35
+  materials:
+    Plasteel: 3000
+    Glass: 1500
+    Plastic: 2500
+    Gold: 1000
+    Plasma: 2500
+    Bluespace: 400
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: AutosurgeonHumanityChipMk2Recipe
+  result: AutosurgeonHumanityChipMk2Flatpack
+  materialDiscountScale: 0
+  materials:
+    Steel: 4000
+    Plastic: 2500
+    Glass: 400
+    Plasteel: 10000
+    Durathread: 1000
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: AutosurgeonHumanityChipMk3Recipe
+  result: AutosurgeonHumanityChipMk3Flatpack
+  materialDiscountScale: 0
+  materials:
+    Steel: 6000
+    Plastic: 5000
+    Glass: 800
+    Plasteel: 7000
+    Plasma: 1500
+    Gold: 2000
+    Lithium: 1500
+    Copper: 1500
+    Iridite: 40
+
+# Trait autosurgeons
+# Dermal armor: regular R&D. Platelet factories: MMC, priced like the Sakimoto.
+
+- type: latheRecipe
+  id: AutosurgeonDermalArmorRecipe
+  result: AutosurgeonDermalArmorFlatpack
+  completetime: 35
+  materials:
+    Plasteel: 6000
+    Plastic: 3000
+    Glass: 1500
+    Silver: 1500
+    Plasma: 2500
+    Bluespace: 400
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: AutosurgeonPlateletFactoriesRecipe
+  result: AutosurgeonPlateletFactoriesMieyoFlatpack
+  materialDiscountScale: 0
+  materials:
+    Steel: 300
+    Plastic: 5000
+    Glass: 1500
+    Plasteel: 2500
+    Plasma: 5000
+    Lithium: 800
+    Copper: 800
+    Durathread: 1000
+    UraniumFissile: 750

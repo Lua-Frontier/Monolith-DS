@@ -112,6 +112,9 @@
   id: AmmoBox635x40mmCaselessPlasma
   name: ammunition box (6.35x40mm Caseless Plasma)
   components:
+  - type: Tag # LuaM: can not be stashed in a safety deposit box
+    tags:
+      - SafetyDepositBlacklist
   - type: BallisticAmmoProvider
     proto: Cartridge635x40mmCaselessPlasma
   - type: Sprite

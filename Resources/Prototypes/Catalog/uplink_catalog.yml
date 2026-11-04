@@ -1276,7 +1276,7 @@
   name: uplink-storage-implanter-name
   description: uplink-storage-implanter-desc
   icon: { sprite: /Textures/Clothing/Back/Backpacks/backpack.rsi, state: icon }
-  productEntity: StorageImplanter
+  productEntity: AutosurgeonImplantStorageFlatpack
   discountCategory: rareDiscounts
   discountDownTo:
     Telecrystal: 20 # Mono
@@ -1295,7 +1295,7 @@
   name: uplink-freedom-implanter-name
   description: uplink-freedom-implanter-desc
   icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: freedom }
-  productEntity: FreedomImplanter
+  productEntity: AutosurgeonImplantFreedomFlatpack
   discountCategory: veryRareDiscounts
   discountDownTo:
     Telecrystal: 15 # Mono
@@ -1309,7 +1309,7 @@
   name: uplink-scram-implanter-name
   description: uplink-scram-implanter-desc
   icon: { sprite: /Textures/Structures/Specific/anomaly.rsi, state: anom4 }
-  productEntity: ScramImplanter
+  productEntity: AutosurgeonImplantScramFlatpack
   discountCategory: veryRareDiscounts
   discountDownTo:
     Telecrystal: 20 # Mono
@@ -1337,7 +1337,7 @@
   name: uplink-emp-implanter-name
   description: uplink-emp-implanter-desc
   icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
-  productEntity: EmpImplanter
+  productEntity: AutosurgeonImplantEmpFlatpack
   discountCategory: veryRareDiscounts
   discountDownTo:
     Telecrystal: 5 # Mono

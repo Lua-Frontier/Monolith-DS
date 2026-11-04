@@ -1,0 +1,32 @@
+- type: trait
+  id: ChromeIntolerance
+  name: trait-luam-chrome-intolerance-name
+  description: trait-luam-chrome-intolerance-desc
+  category: Physical
+  cost: -3
+  mutuallyExclusiveTraits:
+  - ChromeLoyalty
+  speciesBlacklist:
+  - IPC
+  whitelist:
+    components:
+    - Humanity
+  components:
+  - type: ChromeIntolerance
+
+- type: trait
+  id: ChromeLoyalty
+  name: trait-luam-chrome-loyalty-name
+  description: trait-luam-chrome-loyalty-desc
+  category: Physical
+  cost: 5
+  mutuallyExclusiveTraits:
+  - ChromeIntolerance
+  speciesBlacklist:
+  - IPC
+  whitelist:
+    components:
+    - Humanity
+  components:
+  - type: ChromeLoyalty
+    bonus: 2
