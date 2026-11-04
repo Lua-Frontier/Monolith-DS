@@ -246,62 +246,67 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         message = SanitizeInGameICMessage(source, message, out var emoteStr, shouldCapitalize, shouldPunctuate, shouldCapitalizeTheWordI);
 
-        // Was there an emote in the message? If so, send it.
-        if (player != null && emoteStr != message && emoteStr != null)
+        // LuaM-start
+        var sendShorthandEmote = player != null && emoteStr != message && emoteStr != null;
+        try
         {
-            SendEntityEmote(source, emoteStr, range, nameOverride, language, ignoreActionBlocker); // Einstein Engines - Language
-        }
+            // This can happen if the entire string is sanitized out.
+            if (string.IsNullOrEmpty(message))
+                return;
 
-        // This can happen if the entire string is sanitized out.
-        if (string.IsNullOrEmpty(message))
-            return;
+            // This is really terrible. I hate myself for doing this. [-] Einstein Engines - Languages
+            if (language.SpeechOverride.ChatTypeOverride is { } chatTypeOverride)
+                desiredType = chatTypeOverride;
+            // Mono Change: Is this being sent direct
+            var targetEv = new CheckTargetedSpeechEvent();
+            RaiseLocalEvent(source, targetEv);
 
-        // This is really terrible. I hate myself for doing this. [-] Einstein Engines - Languages
-        if (language.SpeechOverride.ChatTypeOverride is { } chatTypeOverride)
-            desiredType = chatTypeOverride;
-        // Mono Change: Is this being sent direct
-        var targetEv = new CheckTargetedSpeechEvent();
-        RaiseLocalEvent(source, targetEv);
-
-        if (targetEv.Targets.Count > 0 && !targetEv.ChatTypeIgnore.Contains(desiredType))
-        {
-            SendEntityDirect(source, message, range, nameOverride, targetEv.Targets, language);
-            return;
-        }
-
-        // This message may have a radio prefix, and should then be whispered to the resolved radio channel
-        if (checkRadioPrefix)
-        {
-            if (TryProccessRadioMessage(source, message, out var modMessage, out var channel))
+            if (targetEv.Targets.Count > 0 && !targetEv.ChatTypeIgnore.Contains(desiredType))
             {
-                SendEntityWhisper(source, modMessage, range, channel, nameOverride, language, hideLog, ignoreActionBlocker); // Einstein Engines - Language
+                SendEntityDirect(source, message, range, nameOverride, targetEv.Targets, language);
                 return;
             }
-        }
 
-        // Goobstation - Starlight collective mind port
-        if (desiredType == InGameICChatType.CollectiveMind)
-        {
-            if (TryProccessCollectiveMindMessage(source, message, out var modMessage, out var channel))
+            // This message may have a radio prefix, and should then be whispered to the resolved radio channel
+            if (checkRadioPrefix)
             {
-                SendCollectiveMindChat(source, modMessage, channel);
-                return;
+                if (TryProccessRadioMessage(source, message, out var modMessage, out var channel))
+                {
+                    SendEntityWhisper(source, modMessage, range, channel, nameOverride, language, hideLog, ignoreActionBlocker); // Einstein Engines - Language
+                    return;
+                }
+            }
+
+            // Goobstation - Starlight collective mind port
+            if (desiredType == InGameICChatType.CollectiveMind)
+            {
+                if (TryProccessCollectiveMindMessage(source, message, out var modMessage, out var channel))
+                {
+                    SendCollectiveMindChat(source, modMessage, channel);
+                    return;
+                }
+            }
+
+            // Otherwise, send whatever type.
+            switch (desiredType)
+            {
+                case InGameICChatType.Speak:
+                    SendEntitySpeak(source, message, range, nameOverride, language, hideLog, ignoreActionBlocker); // Einstein Engines - Language
+                    break;
+                case InGameICChatType.Whisper:
+                    SendEntityWhisper(source, message, range, null, nameOverride, language, hideLog, ignoreActionBlocker); // Einstein Engines - Language
+                    break;
+                case InGameICChatType.Emote:
+                    SendEntityEmote(source, message, range, nameOverride, language, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker); // Einstein Engines - Language
+                    break;
             }
         }
-
-        // Otherwise, send whatever type.
-        switch (desiredType)
+        finally
         {
-            case InGameICChatType.Speak:
-                SendEntitySpeak(source, message, range, nameOverride, language, hideLog, ignoreActionBlocker); // Einstein Engines - Language
-                break;
-            case InGameICChatType.Whisper:
-                SendEntityWhisper(source, message, range, null, nameOverride, language, hideLog, ignoreActionBlocker); // Einstein Engines - Language
-                break;
-            case InGameICChatType.Emote:
-                SendEntityEmote(source, message, range, nameOverride, language, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker); // Einstein Engines - Language
-                break;
+            if (sendShorthandEmote)
+                SendEntityEmote(source, emoteStr!, range, nameOverride, language, ignoreActionBlocker); // Einstein Engines - Language
         }
+        // LuaM-end
     }
 
     public void TrySendInGameOOCMessage(

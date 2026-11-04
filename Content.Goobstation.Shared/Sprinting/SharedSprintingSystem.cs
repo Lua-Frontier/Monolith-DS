@@ -5,6 +5,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components; // LuaM
 using Content.Shared.Damage.Systems;
 using Content.Shared.Gravity;
 using Content.Shared.Input;
@@ -87,15 +88,46 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        var query = EntityQueryEnumerator<SprinterComponent>();
-        while (query.MoveNext(out var uid, out var sprinter))
+        var query = EntityQueryEnumerator<SprinterComponent, InputMoverComponent>(); // LuaM: InputMoverComponent
+        while (query.MoveNext(out var uid, out var sprinter, out var mover)) // LuaM: mover
         {
             if (!sprinter.IsSprinting)
                 continue;
 
-            _staminaSystem.TakeStaminaDamage(uid, sprinter.StaminaDrainRate * frameTime, visual: false);
+            // LuaM-start
+            if ((mover.HeldMoveButtons & MoveButtons.AnyDirection) == MoveButtons.None)
+                continue;
+
+            if (!TryComp<StaminaComponent>(uid, out var stamina))
+            {
+                _staminaSystem.TakeStaminaDamage(uid, sprinter.StaminaDrainRate * frameTime, visual: false);
+                continue;
+            }
+
+            var before = stamina.StaminaDamage;
+            _staminaSystem.TakeStaminaDamage(uid, sprinter.StaminaDrainRate * frameTime, stamina, visual: false);
+            var drained = stamina.StaminaDamage - before;
+
+            if (stamina.Critical || drained <= 0f)
+                continue;
+
+            var timeToFall = (stamina.CritThreshold - stamina.StaminaDamage) / drained * frameTime;
+            if (timeToFall > FallWarningTime)
+            {
+                sprinter.FallWarned = false;
+                continue;
+            }
+
+            if (sprinter.FallWarned)
+                continue;
+
+            sprinter.FallWarned = true;
+            _popupSystem.PopupEntity(Loc.GetString("sprint-fall-warning"), uid, uid, PopupType.MediumCaution);
+            // LuaM-end
         }
     }
+
+    private const float FallWarningTime = 1.5f; // LuaM
 
     private void OnRefreshSpeed(Entity<SprinterComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {
@@ -142,6 +174,7 @@ public abstract partial class SharedSprintingSystem : EntitySystem
 
         component.LastSprint = _timing.CurTime;
         component.IsSprinting = newSprintState;
+        component.FallWarned = false; // LuaM
 
         if (newSprintState)
         {

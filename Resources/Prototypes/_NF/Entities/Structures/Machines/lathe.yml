@@ -143,6 +143,12 @@
   name: TSFMC techfab
   description: Prints equipment for use by TSFMC.
   components:
+  - type: ContainerContainer # LuaM
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+      beaker_slot: !type:ContainerSlot
   - type: Sprite
     sprite: _NF/Structures/Machines/techfab.rsi
     layers:
@@ -214,6 +220,12 @@
   name: mercenary techfab
   description: Prints the bare minimum of tools of the trade that any budget mercenary or private security could need. Nothing fancy.
   components:
+  - type: ContainerContainer # LuaM
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+      beaker_slot: !type:ContainerSlot
   - type: Sprite
     sprite: _NF/Structures/Machines/techfab.rsi
     layers:

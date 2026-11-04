@@ -8,6 +8,7 @@ using Content.Shared.CCVar;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map.Components;
@@ -71,7 +72,8 @@ public sealed partial class SectorAnomalySystem : EntitySystem
     {
         base.Shutdown();
 
-        Switch(Anomaly.None, null);
+        _overlays.RemoveOverlay(_darkness);
+        _overlays.RemoveOverlay(_backdrop);
     }
 
     private void OnStartup(EntityUid uid, IComponent component, ComponentStartup args)
@@ -87,8 +89,13 @@ public sealed partial class SectorAnomalySystem : EntitySystem
     private void OnMusicVolumeChanged(float value)
     {
         _sliderVolume = SharedAudioSystem.GainToVolume(value);
-        if (_music != null)
-            _audio.SetVolume(_music, GetMusicVolume());
+        UpdateMusicVolume();
+    }
+
+    private void UpdateMusicVolume()
+    {
+        if (TryComp<AudioComponent>(_music, out var audio))
+            _audio.SetVolume(_music, GetMusicVolume(), audio);
     }
 
     public override void FrameUpdate(float frameTime)
@@ -197,8 +204,7 @@ public sealed partial class SectorAnomalySystem : EntitySystem
         _darkness.Strength = _strength;
         _backdrop.Strength = _strength;
 
-        if (_music != null)
-            _audio.SetVolume(_music, GetMusicVolume());
+        UpdateMusicVolume();
 
         switch (_anomaly)
         {
