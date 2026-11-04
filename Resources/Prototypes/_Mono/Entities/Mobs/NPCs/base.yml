@@ -36,6 +36,7 @@
       params:
         maxDistance: 8
         variation: 0.05
+        volume: -6
   - type: Sprite
     sprite: _Mono/Mobs/monolithic.rsi
     layers:
