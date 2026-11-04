@@ -26,7 +26,7 @@
   reagents:
     Plasma: 60
   result: Magazine635x40mmCaselessPlasma
-  
+
 - type: latheRecipe
   parent: BaseAmmoRubberIntermediateMagazineRecipe
   id: Magazine635x40mmCaselessRubber
@@ -105,55 +105,3 @@
   materials:
     Steel: 2000
   result: AmmoBox635x40mmCaselessBig
-
-#LuaM Add:
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: AmmoBox635x40mmCaselessPlasma
-  categories:
-  - Ammo
-  materials:
-    Steel: 1000
-    UraniumDepleted: 300
-  reagents:
-    Plasma: 120
-  result: AmmoBox635x40mmCaselessPlasma
-  
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: AmmoBox635x40mmCaselessHP
-  categories:
-  - Ammo
-  materials:
-    Steel: 1000
-  result: AmmoBox635x40mmCaselessHP
-
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: AmmoBox635x40mmCaselessRIP
-  categories:
-  - Ammo
-  materials:
-    Steel: 1000
-    UraniumDepleted: 300
-  result: AmmoBox635x40mmCaselessRIP
-
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: AmmoBox635x40mmCaselessAP
-  categories:
-  - Ammo
-  materials:
-    Steel: 1000
-    Plasteel: 375
-  result: AmmoBox635x40mmCaselessAP
-
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: AmmoBox635x40mmCaselessRubber
-  categories:
-  - Ammo
-  materials:
-    Steel: 100
-  result: AmmoBox635x40mmCaselessRubber
-#Luam end

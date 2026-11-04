@@ -1,7 +1,27 @@
+# Base abstract
+- type: entity
+  id: BaseLatheBeakerSlot
+  abstract: true
+  components:
+  - type: ItemSlots
+    slots:
+      beaker_slot:
+        name: lathe-component-output-slot-beaker-name
+        whitelist:
+          components:
+          - DrainableSolution
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      beaker_slot: !type:ContainerSlot
+  - type: Lathe
+    reagentOutputSlotId: beaker_slot
+
 # PDV
 - type: entity
   id: PDVLathe
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseLatheBeakerSlot]
   name: PDV TechFab
   description: Capable of manufacturing equipment to PDV design specifications.
   components:
@@ -34,7 +54,10 @@
     - StaticGrenades
     - MonoAttachmentsStatic
     - PDVLatheStatic
-    - StaticAmmoRecipePack # LuaM
+    # Ammo static
+    - RoundstartShipgunAmmo
+    - StaticAmmoRecipePack
+    - MonoRestraintsStatic
     dynamicPacks:
     - MonoRogueWeaponsDynamicMelee
     - MonoRogueWeaponsDynamicRanged
@@ -47,12 +70,17 @@
     - SecurityEquipment
     - SmartGun
     - ResearchedExplosives
-    - DynamicAmmoRecipePack
-    - UniversalShellAmmo
+    - ArmorBasic
+    - ArmorAdvanced
+    - PunkGear
+    - BluespaceAirTanks
+    - GlassesContractor
+    # Ammo dynamic
     - UniversalRailgunAmmo
     - UniversalMissileAmmo
+    - UniversalShellAmmo
     - UniversalOrdinance
-    - ResearchedExplosives
+    - DynamicAmmoRecipePack
   - type: MaterialStorage
     whitelist:
       tags:

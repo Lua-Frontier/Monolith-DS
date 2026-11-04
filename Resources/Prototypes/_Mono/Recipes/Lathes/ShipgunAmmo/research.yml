@@ -62,9 +62,8 @@
     Silver: 500
     Copper: 800
     Lithium: 800
-    UraniumFissile: 200 # LuaM
-  # reagents: # Commented by LuaM
-  #   ChlorineTrifluoride: 20
+  reagents:
+    ChlorineTrifluoride: 20
 
 - type: latheRecipe
   id: 150mmApShellUniversal

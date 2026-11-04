@@ -550,7 +550,7 @@
 
 - type: entity
   id: AmmoTechFab
-  parent: [BlueprintReceiverBase, BaseLatheLube] # Frontier: added BlueprintReceiverBase
+  parent: [BlueprintReceiverBase, BaseLatheLube, BaseLatheBeakerSlot] # Frontier: added BlueprintReceiverBase # LuaM: added BaseLatheBeakerSlot
   name: ammo techfab
   description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
   components:
@@ -572,6 +572,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
+    materialUseMultiplier: 0.75 # LuaM
     staticPacks:
     - StaticAmmoRecipePack
     # - StaticGrenades # Commented by LuaM

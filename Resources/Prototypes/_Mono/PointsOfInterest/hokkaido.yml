@@ -8,7 +8,7 @@
   minimumDistance: 2000
   maximumDistance: 8000
   spawnGroup: Required
-  gridPath: /Maps/_Mono/POI/hokkaido.yml
+  gridPath: /Maps/_LuaM/POI/hokkaidoLuaM.yml # LuaM: /Maps/_Mono/POI/hokkaido.yml > /Maps/_LuaM/POI/hokkaidoLuaM.yml
   addComponents:
   - type: IFF
     color: "#fca503" # LuaM: #EEEEEE > #fca503 (MMC color)
@@ -26,7 +26,7 @@
 - type: gameMap
   id: Hokkaido
   mapName: 'ММС «Хоккайдо»' # LuaM: 'MMC Hokkaido' > 'ММС «Хоккайдо»'
-  mapPath: /Maps/_Mono/POI/hokkaido.yml
+  mapPath: /Maps/_LuaM/POI/hokkaidoLuaM.yml # LuaM: /Maps/_Mono/POI/hokkaido.yml > /Maps/_LuaM/POI/hokkaidoLuaM.yml
   minPlayers: 0
   stations:
     Hokkaido:

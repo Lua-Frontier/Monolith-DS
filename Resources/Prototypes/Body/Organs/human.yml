@@ -47,7 +47,7 @@
   components:
   - type: Gibbable
   - type: StaticPrice
-    price: 4500
+    price: 1500 # LuaM: 4500 > 1500
 
 - type: entity
   id: OrganHumanBrain
