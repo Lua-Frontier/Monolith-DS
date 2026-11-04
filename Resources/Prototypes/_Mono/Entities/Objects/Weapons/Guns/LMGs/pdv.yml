@@ -52,7 +52,7 @@
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/Rifles/wspr_tarkhan_inhands_32x.rsi
   - type: GunWieldBonus
-    minAngle: -14
+    minAngle: -13 # LuaM: -14 > -13
     maxAngle: -47
   - type: Gun
     minAngle: 14
@@ -65,7 +65,7 @@
     burstCooldown: 0.6
     projectileSpeed: 45
     fireRate: 9
-    damageModifier: 0.9
+    damageModifier: 1.0 # LuaM: 0.9 > 1.0
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/wspr_fire.ogg
   - type: ItemSlots

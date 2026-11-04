@@ -184,7 +184,7 @@
     whitelist:
       tags:
         - Cartridge9x19mmFMJ
-    capacity: 34
+    capacity: 27 # LuaM: 34 > 27
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -277,7 +277,7 @@
     whitelist:
       tags:
         - Cartridge9x19mmFMJ
-    capacity: 35
+    capacity: 40 # LuaM: 35 > 40
   - type: Item
     size: Small
     storedRotation: -65

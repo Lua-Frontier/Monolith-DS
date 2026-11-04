@@ -1,4 +1,4 @@
-ent-WeaponPistolUllmanSmartMagnumMK5 = SP-129 «Нейронв»
+ent-WeaponPistolUllmanSmartMagnumMK5 = SP-129 «Нейрон»
     .desc = Прототип умного пистолета, разработанный Ullman Industries, использующий .55 Smart Action Magnum, предназначенный для точности и адаптивности в боевых ситуациях. Оснащён продвинутыми системами наведения и элегантным дизайном.
 ent-WeaponPistolKuosame = ММС VMK "Куосамэ" (5.7x28мм)
     .desc = Простой базовый пистолет для сотрудников ММС. Выдаётся только в зонах повышенного риска.

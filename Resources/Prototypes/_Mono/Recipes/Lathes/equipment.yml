@@ -97,6 +97,8 @@
     Plasma: 1500
     Gold: 1000
     Diamond: 300
-  entities:
-    MonolithicCrystalSmall: 1
+  # LuaM-commented-start:
+  # entities:
+  #   MonolithicCrystalSmall: 1
+  # LuaM-commented-end
 

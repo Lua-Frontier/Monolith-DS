@@ -94,6 +94,8 @@
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
+  - type: Wieldable # LuaM add
+    unwieldOnUse: true
   - type: GunWieldBonus
     minAngle: -18
     maxAngle: -17

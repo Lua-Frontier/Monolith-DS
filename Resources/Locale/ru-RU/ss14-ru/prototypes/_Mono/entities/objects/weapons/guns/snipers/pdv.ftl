@@ -1,6 +1,6 @@
-ent-WeaponSniperHristovEmpty = SKR-WS M96 Hristov (14.5x114mm)
-    .desc = A portable, 3-round anti-material rifle. Fires high velocity 14.5mm shells. Uses 14.5x114mm ammo.
+ent-WeaponSniperHristovEmpty = SKR-WS M96 Христов (14.5x114mm)
+    .desc = Портативная противотанковая винтовка с 3 патронами. Стреляет скорострельными снарядами калибра 14,5 мм. Использует патроны размером 14,5х114 мм.
     .suffix = Empty
-ent-WeaponSniperHristovEMPHE = SKR-WS M96 Hristov (14.5x114mm)
-    .desc = A portable, 3-round anti-material rifle. Fires high velocity 14.5mm shells. Uses 14.5x114mm ammo.
+ent-WeaponSniperHristovEMPHE = SKR-WS M96 Христов (14.5x114mm)
+    .desc = Портативная противотанковая винтовка с 3 патронами. Стреляет скорострельными снарядами калибра 14,5 мм. Использует патроны размером 14,5х114 мм.
     .suffix = EMPHE

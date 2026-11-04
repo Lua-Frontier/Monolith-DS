@@ -14,7 +14,7 @@
       tags:
         - Cartridge762x54mmRFMJ
     proto: Cartridge762x54mmRFMJ
-    capacity: 10
+    capacity: 15 # LuaM: 10 > 15
   - type: Item
     size: Small
   - type: ContainerContainer

@@ -1,6 +1,6 @@
 - type: entity
   id: FactionLathe
-  parent: BaseLatheAssembler
+  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
   name: military multi-purpose assembler
   description: Capable of producing a wide variety of things. Compatible with all kinds of fabrication template encryptions.
   components:
@@ -24,11 +24,12 @@
     idleState: icon
     runningState: icon
     staticPacks:
-   # - StaticAmmoRecipePack # Commented by LuaM
+    - StaticAmmoRecipePack
     - NFMercenaryTechfabDeprecatedStatic
-   # - RoundstartShipgunAmmo # Commented by LuaM
+    - RoundstartShipgunAmmo
     - StaticGrenades
     - MonoAttachmentsStatic
+    - MonoRestraintsStatic # LuaM
     dynamicPacks:
     # rogue start
     # LuaM-comment-start:
@@ -39,7 +40,7 @@
     # - MonoRogueGearDynamic
     # - MonoRogueGearProDynamic
     # TSF start
-    # - MonoTSFWeaponsDynamicMelee`
+    # - MonoTSFWeaponsDynamicMelee
     # - MonoTSFWeaponsDynamicRanged
     # - MonoTSFVouchersDynamic
     # - MonoTSFMiscDynamic
@@ -52,19 +53,24 @@
     # Viper Group start
     # - MonoViperGroupDynamic
     # Universal shit (stuff like shipgun ammo)
-    # LuaM-comment-start:
-    #- UniversalRailgunAmmo
-    #- UniversalMissileAmmo
-    #- UniversalShellAmmo
-    #- UniversalOrdinance
-    #- DynamicAmmoRecipePack
-    # LuaM-comment-end
+    - UniversalRailgunAmmo
+    - UniversalMissileAmmo
+    - UniversalShellAmmo
+    - UniversalOrdinance
+    - DynamicAmmoRecipePack
     - NFMercenaryTechfabDeprecated
     # Civ military tech
     - ResearchedExplosives
     - SecurityEquipment
     - SmartGun
-    - TechDiskRecipes # LuaM
+    # LuaM-start:
+    - TechDiskRecipes
+    - ArmorBasic
+    - ArmorAdvanced
+    - PunkGear
+    - BluespaceAirTanks
+    - GlassesContractor
+    # LuaM-end
   - type: MaterialStorage
     whitelist:
       tags:
@@ -117,7 +123,7 @@
 
 - type: entity
   id: USSPLathe
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
   name: USSP field assembler
   description: Capable of manufacturing equipment to USSP design specifications. Often issued throughout the Armed Forces to support the inherent industrial tendencies of its service members.
   components:
@@ -141,13 +147,14 @@
     idleState: icon
     runningState: icon
     staticPacks:
-    # - StaticAmmoRecipePack # Commented by LuaM
+    - StaticAmmoRecipePack
     - NFMercenaryTechfabDeprecatedStatic
-    # - RoundstartShipgunAmmo # Commented by LuaM
+    - RoundstartShipgunAmmo
     - StaticGrenades
     - MonoAttachmentsStatic
     - MonoUSSPStatic
     - MonoViperGroupStatic # LuaM
+    - MonoRestraintsStatic # LuaM
     dynamicPacks:
     # USSP start
     - MonoUSSPArmorDynamic
@@ -155,13 +162,11 @@
     - MonoUSSPWeaponsDynamicRanged
     - MonoUSSPVouchersDynamic
     # Universal shit (stuff like shipgun ammo)
-    # LuaM-comment-start:
-    # - UniversalRailgunAmmo
-    # - UniversalMissileAmmo
-    # - UniversalShellAmmo
-    # - UniversalOrdinance
-    # - DynamicAmmoRecipePack
-    # LuaM-comment-end
+    - UniversalRailgunAmmo
+    - UniversalMissileAmmo
+    - UniversalShellAmmo
+    - UniversalOrdinance
+    - DynamicAmmoRecipePack
     - NFMercenaryTechfabDeprecated
     # Civ military tech
     - ResearchedExplosives
@@ -200,7 +205,7 @@
 
 - type: entity
   id: ViperLathe
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
   name: Viper Group precision lathe
   description: Capable of producing equipment to Viper Group standards. The parts making up the lathe are stamped with the logos of long-forgotten brands from the corporate era.
   components:
@@ -224,30 +229,29 @@
     idleState: icon
     runningState: icon
     staticPacks:
-    # - StaticAmmoRecipePack # Commented by LuaM
+    - StaticAmmoRecipePack
     - NFMercenaryTechfabDeprecatedStatic
-    # - RoundstartShipgunAmmo # Commented by LuaM
+    - RoundstartShipgunAmmo
     - MonoUSSPStatic # LuaM
     - StaticGrenades
     - MonoAttachmentsStatic
     - MonoViperGroupStatic
+    - MonoRestraintsStatic # LuaM
     dynamicPacks:
     # Viper Group start
     - MonoViperGroupDynamic
     # Universal shit (stuff like shipgun ammo)
-    # LuaM-comment-start:
-    # - UniversalRailgunAmmo
-    # - UniversalMissileAmmo
-    # - UniversalShellAmmo
-    # - UniversalOrdinance
-    # - DynamicAmmoRecipePack
-    # LuaM-comment-end
+    - UniversalRailgunAmmo
+    - UniversalMissileAmmo
+    - UniversalShellAmmo
+    - UniversalOrdinance
+    - DynamicAmmoRecipePack
     - NFMercenaryTechfabDeprecated
     # Civ military tech
     - ResearchedExplosives
     - SecurityEquipment
     - SmartGun
-# LuaM-start:
+    # LuaM-start:
     - ArmorBasic
     - ArmorAdvanced
     - PunkGear
@@ -260,7 +264,7 @@
     - MonoUSSPMiscDynamic
     - MonoUSSPWeaponsDynamicRanged
     - MonoUSSPVouchersDynamic
-# LuaM-end.
+    # LuaM-end.
   - type: MaterialStorage
     whitelist:
       tags:
@@ -282,7 +286,7 @@
 
 - type: entity
   id: MMCLathe
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
   name: MMC multipurpose assembler
   description: Capable of manufacturing equipment from MMC design patterns. Sent to anywhere that needs a large-scale industrial startup.
   components:
@@ -306,23 +310,24 @@
     idleState: icon
     runningState: icon
     staticPacks:
-    - NFMercenaryTechfabDeprecatedStatic # LuaM
-    - MonoAttachmentsStatic # LuaM
-    # - StaticAmmoRecipePack # Commented by LuaM
-    # - RoundstartShipgunAmmo # Commented by LuaM
+    - StaticAmmoRecipePack
+    - RoundstartShipgunAmmo
     - StaticGrenades
     - MonoMMCUtilityStatic
     # - MonoMMCProductionStatic # Commented by LuaM
     - MonoMMCGearStatic
+    # LuaM-start:
+    - MonoRestraintsStatic
+    - NFMercenaryTechfabDeprecatedStatic
+    - MonoAttachmentsStatic
+    # LuaM-end
     dynamicPacks:
     # Universal shit (stuff like shipgun ammo)
-    # LuaM-comment-start:
-    # - UniversalRailgunAmmo
-    # - UniversalMissileAmmo
-    # - UniversalShellAmmo
-    # - UniversalOrdinance
-    # - DynamicAmmoRecipePack
-    # LuaM-comment-end
+    - UniversalRailgunAmmo
+    - UniversalMissileAmmo
+    - UniversalShellAmmo
+    - UniversalOrdinance
+    - DynamicAmmoRecipePack
     # main
     - MonoMMCUtilityResearch
     - MonoMMCProductionResearch
@@ -334,6 +339,11 @@
     - NFMercenaryTechfabDeprecated
     - ResearchedExplosives
     - TechDiskRecipes
+    - ArmorBasic
+    - ArmorAdvanced
+    - PunkGear
+    - BluespaceAirTanks
+    - GlassesContractor
     # LuaM-end
   - type: MaterialStorage
     whitelist:
@@ -903,7 +913,7 @@
   - type: OreSiloClient
 
 - type: entity
-  parent: BaseLatheAssembler # caelestinus ASMGTs require small monocrystals now.
+  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM BaseLatheAssembler > BaseLatheLube, BaseLatheBeakerSlot | Crafting only with materials and reagents.
   id: SecurityTechFabCaelestinus # Exists because anything given to the regular secfab is also given to the TSFMCfab.
   name: caelestinus security techfab
   description: A techfab used by members of the Caelestinus Security Detachment.
@@ -914,13 +924,16 @@
     staticPacks:
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
-    #- StaticAmmoRecipePack
+    - StaticAmmoRecipePack
     - StaticGrenades
     - SecurityWeaponsStatic
     - MonoCaelestinusVouchersStatic
-#LuaM Add:
+    # LuaM-start:
     - MonoAttachmentsStatic
-#LuaM End
+    - RoundstartShipgunAmmo
+    - NFMercenaryTechfabDeprecatedStatic
+    - MonoRestraintsStatic
+    # LuaM-end
     dynamicPacks:
     - SecurityEquipment
     - SecurityExplosives
@@ -938,14 +951,21 @@
     # - MonoRogueWeaponsDynamicMelee
     # - MonoRogueWeaponsDynamicRanged
     # - MonoRogueMiscDynamic
-    # - UniversalShellAmmo
+    - UniversalShellAmmo
     - ResearchedExplosives
     - UniversalRailgunAmmo
     - UniversalMissileAmmo
     - UniversalOrdinance
-    - TechDiskRecipes
     - NFMercenaryTechfabDeprecated
     # Mono end
+    # LuaM-start:
+    - TechDiskRecipes
+    - ArmorBasic
+    - ArmorAdvanced
+    - PunkGear
+    - BluespaceAirTanks
+    - GlassesContractor
+    # LuaM-end
   - type: MaterialStorage
     whitelist:
       tags:

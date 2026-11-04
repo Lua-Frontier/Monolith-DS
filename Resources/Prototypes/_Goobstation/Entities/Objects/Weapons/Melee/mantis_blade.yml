@@ -19,9 +19,9 @@
     heavyPartDamageMultiplier: 1
     damage:
       types:
-        Slash: 14
-        Piercing: 7
-        Structural: 20
+        Slash: 26 # LuaM: 14 > 26
+        Piercing: 11 # LuaM: 7 > 11
+        Structural: 50 #LuaM: 20 > 50
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: SolutionContainerManager

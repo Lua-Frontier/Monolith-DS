@@ -185,7 +185,7 @@
     unwieldOnUse: false
   - type: GunWieldBonus
     minAngle: -19
-    maxAngle: -16
+    maxAngle: -27 # LuaM: -16 > -27
   - type: Gun
     minAngle: 21
     maxAngle: 43
