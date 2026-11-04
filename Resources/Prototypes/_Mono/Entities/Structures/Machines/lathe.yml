@@ -1,6 +1,6 @@
 - type: entity
   id: FactionLathe
-  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
+  parent: [BaseLatheBeakerSlot, BaseLatheLube] # LuaM: added BaseLatheBeakerSlot
   name: military multi-purpose assembler
   description: Capable of producing a wide variety of things. Compatible with all kinds of fabrication template encryptions.
   components:
@@ -123,7 +123,7 @@
 
 - type: entity
   id: USSPLathe
-  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
+  parent: [BaseLatheBeakerSlot, BaseLatheLube] # LuaM: added BaseLatheBeakerSlot
   name: USSP field assembler
   description: Capable of manufacturing equipment to USSP design specifications. Often issued throughout the Armed Forces to support the inherent industrial tendencies of its service members.
   components:
@@ -210,7 +210,7 @@
 
 - type: entity
   id: ViperLathe
-  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
+  parent: [BaseLatheBeakerSlot, BaseLatheLube] # LuaM: added BaseLatheBeakerSlot
   name: Viper Group precision lathe
   description: Capable of producing equipment to Viper Group standards. The parts making up the lathe are stamped with the logos of long-forgotten brands from the corporate era.
   components:
@@ -296,7 +296,7 @@
 
 - type: entity
   id: MMCLathe
-  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM: added BaseLatheBeakerSlot
+  parent: [BaseLatheBeakerSlot, BaseLatheLube] # LuaM: added BaseLatheBeakerSlot
   name: MMC multipurpose assembler
   description: Capable of manufacturing equipment from MMC design patterns. Sent to anywhere that needs a large-scale industrial startup.
   components:
@@ -938,7 +938,7 @@
   - type: OreSiloClient
 
 - type: entity
-  parent: [BaseLatheLube, BaseLatheBeakerSlot] # LuaM BaseLatheAssembler > BaseLatheLube, BaseLatheBeakerSlot | Crafting only with materials and reagents.
+  parent: [BaseLatheBeakerSlot, BaseLatheLube] # LuaM BaseLatheAssembler > BaseLatheLube, BaseLatheBeakerSlot | Crafting only with materials and reagents.
   id: SecurityTechFabCaelestinus # Exists because anything given to the regular secfab is also given to the TSFMCfab.
   name: caelestinus security techfab
   description: A techfab used by members of the Caelestinus Security Detachment.

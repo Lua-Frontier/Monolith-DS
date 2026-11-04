@@ -6,6 +6,16 @@
     collection: RpPat
   messages: RpBiteNeckMessages
   icon: _LuaM/Interface/RpPanel/bite_neck.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: StretchNeck
@@ -15,6 +25,11 @@
     collection: RpStretchNeck
   selfMessages: RpStretchNeckSelfMessages
   icon: _LuaM/Interface/RpPanel/pat_neck.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: GrabsNeck
@@ -35,3 +50,12 @@
   icon: _LuaM/Interface/RpPanel/step_on_neck.png
   targetRequirements:
   - !type:TargetOnFloorRequirement
+
+- type: rpInteraction
+  id: AdjustCollar
+  category: Neck
+  kind: Soft
+  sound:
+    collection: RpFriction
+  messages: RpAdjustCollarMessages
+  icon: _LuaM/Interface/RpPanel/pat_neck.png

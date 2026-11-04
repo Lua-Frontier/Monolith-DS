@@ -1,5 +1,7 @@
+using Content.Shared.Clothing; // LuaM
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
+using Content.Shared.Item.ItemToggle; // LuaM
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Client.GameObjects;
@@ -14,6 +16,7 @@ public sealed partial class JetpackSystem : SharedJetpackSystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private ClothingSystem _clothing = default!;
+    [Dependency] private ItemToggleSystem _toggle = default!; // LuaM
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
 
@@ -32,6 +35,7 @@ public sealed partial class JetpackSystem : SharedJetpackSystem
     private void OnJetpackAppearance(EntityUid uid, JetpackComponent component, ref AppearanceChangeEvent args)
     {
         Appearance.TryGetData<bool>(uid, JetpackVisuals.Enabled, out var enabled, args.Component);
+        enabled |= HasComp<MagbootsComponent>(uid) && _toggle.IsActivated(uid); // LuaM
 
         var state = "icon" + (enabled ? "-on" : "");
         args.Sprite?.LayerSetState(0, state);

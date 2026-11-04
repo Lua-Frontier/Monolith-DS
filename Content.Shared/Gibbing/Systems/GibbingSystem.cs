@@ -5,6 +5,7 @@ using Content.Shared.Gibbing.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Physics.Components; // LuaM
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -316,10 +317,13 @@ public sealed partial class GibbingSystem : EntitySystem
     private void FlingDroppedEntity(EntityUid target, Vector2? direction, float impulse, float impulseVariance,
         Angle scatterConeAngle)
     {
+        if (!TryComp<PhysicsComponent>(target, out var body)) // LuaM
+            return;
+
         var scatterAngle = direction?.ToAngle() ?? _random.NextAngle();
         var scatterVector = _random.NextAngle(scatterAngle - scatterConeAngle / 2, scatterAngle + scatterConeAngle / 2)
             .ToVec() * (impulse + _random.NextFloat(impulseVariance));
-        _physicsSystem.ApplyLinearImpulse(target, scatterVector);
+        _physicsSystem.ApplyLinearImpulse(target, scatterVector, body: body); // LuaM: body
     }
 
     private bool TryCreateRandomGiblet(GibbableComponent gibbable, EntityCoordinates coords,

@@ -108,6 +108,7 @@ public sealed partial class AmeControllerSystem : EntitySystem
                 if (TryComp<PowerSupplierComponent>(uid, out var powerOutlet))
                     powerOutlet.MaxSupply = powerOutput;
                 fuelContainer.FuelAmount -= availableInject;
+                Dirty(controller.FuelSlot.Item!.Value, fuelContainer); // LuaM
                 // only play audio if we actually had an injection
                 if (availableInject > 0)
                     _audioSystem.PlayPvs(controller.InjectSound, uid, AudioParams.Default.WithVolume(overloading ? 5f : -5f));

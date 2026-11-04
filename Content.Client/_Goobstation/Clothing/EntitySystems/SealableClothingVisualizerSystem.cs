@@ -12,6 +12,7 @@ namespace Content.Client._Goobstation.Clothing.EntitySystems;
 public sealed partial class SealableClothingVisualizerSystem : VisualizerSystem<SealableClothingVisualsComponent>
 {
     [Dependency] private SharedItemSystem _itemSystem = default!;
+    [Dependency] private ClientClothingSystem _clothing = default!; // LuaM
 
     public override void Initialize()
     {
@@ -46,7 +47,8 @@ public sealed partial class SealableClothingVisualizerSystem : VisualizerSystem<
         // attempt to get species specific data || if none found will use generic data instead
         if (TryComp(args.Equipee, out InventoryComponent? inventory) &&
             inventory.SpeciesId != null &&
-            comp.ClothingVisuals.TryGetValue($"{args.Slot}-{inventory.SpeciesId}", out var speciesLayers))
+            comp.ClothingVisuals.TryGetValue($"{args.Slot}-{inventory.SpeciesId}", out var speciesLayers) &&
+            _clothing.HasLayerStates(uid, speciesLayers)) // LuaM
             layers = speciesLayers;
 
         var i = 0;

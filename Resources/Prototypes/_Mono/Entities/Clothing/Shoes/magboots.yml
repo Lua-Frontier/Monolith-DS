@@ -58,6 +58,10 @@
     state: icon
   - type: Clothing
     sprite: _Mono/Clothing/Shoes/Boots/magboots-ashen.rsi
+    quickEquip: true # LuaM
+  - type: ActivatableUI
+    key: enum.SharedGasTankUiKey.Key # LuaM
+    verbOnly: true # LuaM
   # LuaM: the own heavy step sound is removed, so it does not override the suit steps
   # - type: FootstepModifier
   #   footstepSoundCollection:

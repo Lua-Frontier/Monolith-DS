@@ -25,6 +25,6 @@
     - Igniter
   - type: PhysicalComposition # LuaM recyclable
     materialComposition:
-      Steel: 300
-      Plastic: 100
-      Glass: 100
+      Steel: 150 # LuaM 300 > 150
+      Plastic: 50 # LuaM 100 > 50
+      Glass: 50 # LuaM 100 > 50

@@ -1,4 +1,4 @@
-ent-ClothingHelmetHardsuitMieyoMining = MMC mining suit helmet
-    .desc = A basic EVA helmet designed for complex industrial operations in space.
-ent-ClothingHelmetHardsuitMieyoCombat = MMC kurogane tacsuit helmet
-    .desc = A sensor suite disguised as a helmet. Great NVGs, average protection.
+ent-ClothingHelmetHardsuitMieyoMining = шлем шахтёрского скафандра ММС
+    .desc = Простой шлем для ВКД, рассчитанный на сложные промышленные работы в космосе.
+ent-ClothingHelmetHardsuitMieyoCombat = шлем тактического скафандра ММС "Курогане"
+    .desc = Сенсорный комплекс, замаскированный под шлем. Отличный ПНВ, средняя защита.

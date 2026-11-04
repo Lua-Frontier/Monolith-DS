@@ -24,6 +24,6 @@
       - entity_storage
   - type: PhysicalComposition
     materialComposition:
-      Cardboard: 100
+      Cardboard: 50 # LuaM: 100 > 50, half of the crafting cost
   - type: StaticPrice
     price: 10

@@ -60809,7 +60809,7 @@ entities:
     - type: Transform
       pos: 1.5,5.5
       parent: 2
-- proto: VendingMachinePride
+- proto: VendingMachineClothingCapes
   entities:
   - uid: 7918
     components:

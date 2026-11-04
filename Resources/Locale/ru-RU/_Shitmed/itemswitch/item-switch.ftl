@@ -39,6 +39,6 @@ itemswitch-component-state-bonesaw = пила
 itemswitch-component-state-bonegel = костный гель
 itemswitch-component-state-bonesetter = установщик костей
 itemswitch-component-state-cautery = термокаутер
-itemswitch-component-state-drill = дрель
+itemswitch-component-state-drill = хирургическая дрель
 
 

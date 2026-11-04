@@ -32,8 +32,8 @@
           volume: -2
   - type: PhysicalComposition # LuaM recyclable
     materialComposition:
-      Steel: 300
-      Plastic: 200
+      Steel: 150 # LuaM 300 > 150
+      Plastic: 100 # LuaM 200 > 100
 
 - type: entity
   parent: TimerTrigger
@@ -78,5 +78,5 @@
     - type: TriggerOnVoice
   - type: PhysicalComposition # LuaM recyclable
     materialComposition:
-      Steel: 300
-      Plastic: 200
+      Steel: 150 # LuaM 300 > 150
+      Plastic: 100 # LuaM 200 > 100

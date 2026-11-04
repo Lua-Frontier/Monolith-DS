@@ -15,6 +15,7 @@
   - LuaMChimeraSTCShuttleSpawnerSchedulerHalf
   - LuaMChimeraSTCShuttleSpawnerSchedulerTier2Half
   - MonoMonolithicEventsScheduler
+  - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
   - LuaMMonolithFragmentLargeScheduler # the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - HalcyonBiodome

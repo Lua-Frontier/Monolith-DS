@@ -50,11 +50,11 @@
         acts: [ "Destruction" ]
   - type: PhysicalComposition # LuaM recyclable
     materialComposition:
-      Steel: 100
-      Plastic: 100
-      Glass: 50
-      Plasma: 50
-      Silver: 50
+      Steel: 50 # LuaM 100 > 50
+      Plastic: 50 # LuaM 100 > 50
+      Glass: 25 # LuaM 50 > 25
+      Plasma: 25 # LuaM 50 > 25
+      Silver: 25 # LuaM 50 > 25
 
 - type: entity
   name: chemical payload
@@ -93,8 +93,8 @@
     price: 60
   - type: PhysicalComposition # LuaM recyclable
     materialComposition:
-      Steel: 200
-      Plastic: 300
+      Steel: 100 # LuaM 200 > 100
+      Plastic: 150 # LuaM 300 > 150
       
   
 
@@ -115,6 +115,6 @@
         path: "/Audio/Effects/flash_bang.ogg"
     - type: PhysicalComposition # LuaM recyclable
       materialComposition:
-        Steel: 50
-        Plastic: 100
-        Glass: 50
+        Steel: 25 # LuaM 50 > 25
+        Plastic: 50 # LuaM 100 > 50
+        Glass: 25 # LuaM 50 > 25

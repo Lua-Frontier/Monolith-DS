@@ -297,7 +297,7 @@ public sealed partial class RpPanelWindow : DefaultWindow
                 grid.AddChild(PrepareCustomEmoteButton(emote, CustomCategoryId));
         }
 
-        foreach (var category in _prototypeManager.EnumeratePrototypes<RpInteractionCategoryPrototype>())
+        foreach (var category in _prototypeManager.EnumeratePrototypes<RpInteractionCategoryPrototype>().OrderBy(category => category.Order))
         {
             if (!interactionsByCategory.TryGetValue(category.ID, out var categoryInteractions))
                 continue;

@@ -55,8 +55,12 @@ namespace Content.Server.Bed
 
         private void OnUnstrapped(Entity<HealOnBuckleComponent> bed, ref UnstrappedEvent args)
         {
-            _actionsSystem.RemoveAction(args.Buckle, bed.Comp.SleepAction);
-            _sleepingSystem.TryWaking(args.Buckle.Owner);
+            if (!Terminating(args.Buckle.Owner)) // LuaM
+            {
+                _actionsSystem.RemoveAction(args.Buckle, bed.Comp.SleepAction);
+                _sleepingSystem.TryWaking(args.Buckle.Owner);
+            }
+
             RemComp<HealOnBuckleHealingComponent>(bed);
         }
 

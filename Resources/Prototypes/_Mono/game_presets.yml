@@ -17,6 +17,7 @@
   - SmugglingEventScheduler
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
+  - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
 # LuaM-start: Standard has no outside threat, so the vaults, the syndicate cache, the unidentified shuttles and the monolith fragments run twice as often
@@ -40,6 +41,7 @@
   - SmugglingEventScheduler
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
+  - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
@@ -59,6 +61,7 @@
   - SmugglingEventScheduler
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
+  - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - StarSystemKyphrus
 #  - PortstrikeAnnounceRuleHour3 # LuaM: auto portstrike removed, manual only (faction heads)
@@ -77,6 +80,7 @@
   - SmugglingEventScheduler
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
+  - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - StarSystemKyphrus
 #  - PortstrikeAnnounceRuleHour3 # LuaM: auto portstrike removed, manual only (faction heads)
@@ -98,6 +102,7 @@
   - MonoAISTCShuttleSpawnerSchedulerTier2
   - MonoAsakimSTCShuttleSpawnerScheduler # LuaM: uncommented
   - MonoMonolithicEventsScheduler
+  - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
@@ -119,6 +124,7 @@
   - FrontierRoundstartVariation
   - MonoChimeraSTCShuttleSpawnerScheduler
   - MonoMonolithicEventsScheduler
+  - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
@@ -188,6 +194,7 @@
   - MonoAISTCShuttleSpawnerSchedulerTier2Slow
   - MonoAsakimSTCShuttleSpawnerSchedulerSlow # LuaM: uncommented
   - MonoMonolithicEventsScheduler
+  - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
@@ -211,6 +218,7 @@
   - MonoAISTCShuttleSpawnerSchedulerApocalypse
   #- MonoAsakimSTCShuttleSpawnerSchedulerApocalypse
   - MonoMonolithicEventsScheduler
+  - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - RoundEndRuleHour3
   - ManualPortstrikeTsfPdv

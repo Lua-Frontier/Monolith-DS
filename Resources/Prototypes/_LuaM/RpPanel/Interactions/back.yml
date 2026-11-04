@@ -16,3 +16,30 @@
     collection: RpStretchBody
   selfMessages: RpStretchBodySelfMessages
   icon: _LuaM/Interface/RpPanel/stretch_full_body.png
+
+- type: rpInteraction
+  id: PatBack
+  category: Back
+  kind: Soft
+  sound:
+    collection: RpPat
+  messages: RpPatBackMessages
+  icon: _LuaM/Interface/RpPanel/friendly_finger_tap.png
+
+- type: rpInteraction
+  id: BackRub
+  category: Back
+  kind: Soft
+  sound:
+    collection: RpFriction
+  messages: RpBackRubMessages
+  icon: _LuaM/Interface/RpPanel/friendly_finger_tap.png
+
+- type: rpInteraction
+  id: ShoveBack
+  category: Back
+  kind: Harmful
+  sound:
+    collection: RpBang
+  messages: RpShoveBackMessages
+  icon: _LuaM/Interface/RpPanel/slap_back_of_head.png

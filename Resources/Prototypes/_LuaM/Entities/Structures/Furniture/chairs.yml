@@ -1,0 +1,194 @@
+- type: entity
+  id: LuaMChairPizzeria
+  parent: ChairBase
+  name: pizzeria chair
+  description: It looks spooky.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: pizza_chair
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairpizzeria
+
+- type: entity
+  id: LuaMChairRed
+  parent: ChairBase
+  name: red chair
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: red_chair
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairred
+
+- type: entity
+  id: LuaMChairWhite
+  parent: ChairBase
+  name: white chair
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: white_chair
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairwhite
+
+- type: entity
+  id: LuaMChairRusty
+  parent: ChairBase
+  name: rusty chair
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: rusty_chair
+
+- type: entity
+  id: LuaMChairBarStool
+  parent: ChairBase
+  name: bar stool
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: bar-stool
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairbarstool
+
+- type: entity
+  id: LuaMChairBarStool2
+  parent: ChairBase
+  name: swivel bar stool
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: bar-stool2
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairbarstool2
+
+- type: entity
+  id: LuaMChairComfyBlack
+  parent: ChairBase
+  name: comfy black chair
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: comfy_black
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchaircomfyblack
+
+- type: entity
+  id: LuaMChairComfyMaroon
+  parent: ChairBase
+  name: comfy maroon chair
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: comfy_maroon
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchaircomfymaroon
+
+- type: entity
+  id: LuaMChairComfyWhite
+  parent: ChairBase
+  name: comfy white chair
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: comfy_white
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchaircomfywhite
+
+- type: entity
+  id: LuaMChairKing
+  parent: ChairBase
+  name: king chair
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: king
+  - type: StaticPrice
+    price: 300
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairking
+
+- type: entity
+  id: LuaMChairRich
+  parent: ChairBase
+  name: rich chair
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: rich
+  - type: StaticPrice
+    price: 260
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairrich
+
+- type: entity
+  id: LuaMChairRichWhite
+  parent: ChairBase
+  name: rich white chair
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: rich_white
+  - type: StaticPrice
+    price: 260
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairrichwhite
+
+- type: entity
+  id: LuaMChairStyle
+  parent: ChairBase
+  name: style chair
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: style
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairstyle
+
+- type: entity
+  id: LuaMChairWoodenStool
+  parent: ChairBase
+  name: wooden stool
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: wooden-stool
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairwoodenstool
+
+- type: entity
+  id: LuaMChairWoodenStool2
+  parent: ChairBase
+  name: small wooden chair
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Furniture/Chairs/chairs.rsi
+    state: wooden-stool2
+  - type: Construction
+    graph: LuaMSeat
+    node: luamchairwoodenstool2

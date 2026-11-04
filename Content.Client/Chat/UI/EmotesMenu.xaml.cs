@@ -1,5 +1,7 @@
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
+using Content.Shared._LuaM.Emotes; // LuaM
+using Content.Shared._LuaM.HarpyMimicry; // LuaM
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
 using Content.Shared.Whitelist;
@@ -50,20 +52,28 @@ public sealed partial class EmotesMenu : RadialMenu
 
             var parent = FindControl<RadialContainer>(emote.Category.ToString());
 
+            // LuaM start
+            var icon = _entManager.TryGetComponent<EmoteIconOverrideComponent>(player.Value, out var iconOverride)
+                && iconOverride.Icons.TryGetValue(emote.ID, out var customIcon)
+                    ? customIcon
+                    : emote.Icon;
+
             var button = new EmoteMenuButton
             {
                 SetSize = new Vector2(64f, 64f),
                 ToolTip = Loc.GetString(emote.Name),
                 ProtoId = emote.ID,
+                TargetLayer = TryAddMimicryLayer(player.Value, emote, icon, spriteSystem) ?? string.Empty,
             };
 
             var tex = new TextureRect
             {
                 VerticalAlignment = VAlignment.Center,
                 HorizontalAlignment = HAlignment.Center,
-                Texture = spriteSystem.Frame0(emote.Icon),
+                Texture = spriteSystem.Frame0(icon),
                 TextureScale = new Vector2(2f, 2f),
             };
+            // LuaM end
 
             button.AddChild(tex);
             parent.AddChild(button);
@@ -100,6 +110,9 @@ public sealed partial class EmotesMenu : RadialMenu
             if (child is not EmoteMenuButton castChild)
                 continue;
 
+            if (castChild.TargetLayer != string.Empty) // LuaM
+                continue;
+
             castChild.OnButtonUp += _ =>
             {
                 OnPlayEmote?.Invoke(castChild.ProtoId);
@@ -107,6 +120,84 @@ public sealed partial class EmotesMenu : RadialMenu
             };
         }
     }
+
+    // LuaM start
+    private string? TryAddMimicryLayer(EntityUid player, EmotePrototype emote, SpriteSpecifier icon, SpriteSystem spriteSystem)
+    {
+        if (!_entManager.TryGetComponent<HarpyMimicryComponent>(player, out var mimicry))
+            return null;
+
+        var mimicrySystem = _entManager.System<SharedHarpyMimicrySystem>();
+        var options = mimicrySystem.GetOptions((player, mimicry), emote);
+        if (options.Count == 0)
+            return null;
+
+        var layer = new RadialContainer
+        {
+            Name = $"Mimicry{emote.ID}",
+            VerticalExpand = true,
+            HorizontalExpand = true,
+            InitialRadius = 100,
+        };
+
+        var own = mimicrySystem.GetOwnVoice((player, mimicry), emote, options);
+        if (own.Files.Count > 0)
+        {
+            var ownButton = CreateMimicryButton(Loc.GetString("harpy-mimicry-own-voice"));
+            ownButton.AddChild(new TextureRect
+            {
+                VerticalAlignment = VAlignment.Center,
+                HorizontalAlignment = HAlignment.Center,
+                Texture = spriteSystem.Frame0(icon),
+                TextureScale = new Vector2(2f, 2f),
+            });
+
+            if (own.Files.Count == own.Total)
+                ownButton.OnButtonUp += _ => PlayAndClose(() => OnPlayEmote?.Invoke(emote.ID));
+            else
+                ownButton.OnButtonUp += _ => PlayAndClose(() => _entManager.RaisePredictiveEvent(new PlayHarpyMimicEmoteMessage(emote.ID, null, SharedHarpyMimicrySystem.OwnVoiceIndex)));
+
+            layer.AddChild(ownButton);
+        }
+
+        foreach (var option in options)
+        {
+            var button = CreateMimicryButton(Loc.GetString(option.Name));
+            var view = new EntityPrototypeView
+            {
+                Scale = new Vector2(2f, 2f),
+                Stretch = SpriteView.StretchMode.Fill,
+                OverrideDirection = Direction.South,
+                MouseFilter = MouseFilterMode.Ignore,
+            };
+            view.SetPrototype(option.Icon);
+            button.AddChild(view);
+
+            var species = option.Species;
+            var index = option.SoundIndex;
+            button.OnButtonUp += _ => PlayAndClose(() => _entManager.RaisePredictiveEvent(new PlayHarpyMimicEmoteMessage(emote.ID, species, index)));
+            layer.AddChild(button);
+        }
+
+        AddChild(layer);
+        return layer.Name;
+    }
+
+    private static RadialMenuTextureButtonWithSector CreateMimicryButton(string tooltip)
+    {
+        return new RadialMenuTextureButtonWithSector
+        {
+            SetSize = new Vector2(64f, 64f),
+            ToolTip = tooltip,
+        };
+    }
+
+    private void PlayAndClose(Action play)
+    {
+        play();
+        Close();
+    }
+    // LuaM end
 }
 
 

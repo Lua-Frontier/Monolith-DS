@@ -10,6 +10,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Item; // Frontier
 using Content.Shared.Verbs; // Frontier
+using Robust.Shared.Random; // LuaM
 
 namespace Content.Shared.Storage.EntitySystems;
 
@@ -26,11 +27,13 @@ public sealed partial class MagnetPickupSystem : EntitySystem
     [Dependency] private SharedStorageSystem _storage = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private SharedItemSystem _item = default!; // Frontier
+    [Dependency] private IRobustRandom _random = default!; // LuaM
 
 
     private static readonly TimeSpan ScanDelay = TimeSpan.FromSeconds(1);
     private const int MaxEntitiesToInsert = 15; // Frontier
 
+    private readonly HashSet<Entity<ItemComponent>> _nearby = new(); // LuaM
     private EntityQuery<PhysicsComponent> _physicsQuery;
 
     public override void Initialize()
@@ -44,7 +47,7 @@ public sealed partial class MagnetPickupSystem : EntitySystem
 
     private void OnMagnetMapInit(EntityUid uid, MagnetPickupComponent component, MapInitEvent args)
     {
-        component.NextScan = _timing.CurTime;
+        component.NextScan = _timing.CurTime + _random.NextFloat() * ScanDelay; // LuaM: + _random.NextFloat() * ScanDelay
     }
 
 
@@ -147,22 +150,24 @@ public sealed partial class MagnetPickupSystem : EntitySystem
             var moverCoords = _transform.GetMoverCoordinates(uid, xform);
             var count = 0; // Frontier
 
-            foreach (var near in _lookup.GetEntitiesInRange(uid, comp.Range, LookupFlags.Dynamic | LookupFlags.Sundries))
+            // LuaM-start: reused set, only entities that can be inserted at all
+            _nearby.Clear();
+            _lookup.GetEntitiesInRange(_transform.GetMapCoordinates(uid, xform), comp.Range, _nearby, LookupFlags.Dynamic | LookupFlags.Sundries);
+
+            foreach (var (near, item) in _nearby)
+            // LuaM-end
             {
                 // Frontier: stop spamming bags
                 if (count >= MaxEntitiesToInsert)
                     break;
 
-                if (near == parentUid)
+                if (near == uid || near == parentUid) // LuaM: near == uid ||
                     continue;
 
                 if (!_physicsQuery.TryGetComponent(near, out var physics) || physics.BodyStatus != BodyStatus.OnGround)
                     continue;
 
                 if (_whitelistSystem.IsWhitelistFail(storage.Whitelist, near))
-                    continue;
-
-                if (!TryComp<ItemComponent>(near, out var item))
                     continue;
 
                 var itemSize = _item.GetItemShape((near, item)).GetArea();

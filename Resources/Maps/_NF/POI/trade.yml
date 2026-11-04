@@ -28281,7 +28281,7 @@ entities:
     - type: Transform
       pos: 6.5,-4.5
       parent: 1
-- proto: VendingMachinePride
+- proto: VendingMachineClothingCapes
   entities:
   - uid: 4095
     components:

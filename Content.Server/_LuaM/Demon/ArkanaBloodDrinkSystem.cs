@@ -1,5 +1,6 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Server.Nutrition.EntitySystems;
 using Content.Server.Popups;
 using Content.Shared._LuaM.Demon;
 using Content.Shared.Body.Systems;
@@ -24,6 +25,7 @@ public sealed partial class ArkanaBloodDrinkSystem : EntitySystem
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SharedBodySystem _body = default!;
     [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private FoodSystem _food = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private SharedSolutionContainerSystem _solutions = default!;
@@ -73,6 +75,15 @@ public sealed partial class ArkanaBloodDrinkSystem : EntitySystem
 
     private void StartDrink(EntityUid user, EntityUid target)
     {
+        if (TryComp<BloodstreamComponent>(target, out var bloodstream) && bloodstream.BloodReagent == AriralBlood)
+        {
+            _popup.PopupEntity(Loc.GetString("arkana-drink-fail-ariral"), user, user);
+            return;
+        }
+
+        if (_food.IsMouthBlocked(user, user))
+            return;
+
         var args = new DoAfterArgs(EntityManager, user, DrinkDelay, new ArkanaBloodDrinkDoAfterEvent(), user, target)
         {
             BreakOnDamage = true,
@@ -97,11 +108,8 @@ public sealed partial class ArkanaBloodDrinkSystem : EntitySystem
         if (!CanDrink(user, target) || !TryComp<BloodstreamComponent>(target, out var bloodstream))
             return;
 
-        if (bloodstream.BloodReagent == AriralBlood)
-        {
-            _popup.PopupEntity(Loc.GetString("arkana-drink-fail-ariral"), user, user);
+        if (bloodstream.BloodReagent == AriralBlood || _food.IsMouthBlocked(user, user))
             return;
-        }
 
         if (!_solutions.ResolveSolution(target, bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var blood))
             return;

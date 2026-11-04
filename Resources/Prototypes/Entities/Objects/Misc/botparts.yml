@@ -12,7 +12,7 @@
       - ProximitySensor
   - type: PhysicalComposition # LuaM recyclable
     materialComposition:
-      Steel: 200
-      Glass: 300    
+      Steel: 100 # LuaM 200 > 100
+      Glass: 150 # LuaM 300 > 150
   - type: StaticPrice
     price: 40

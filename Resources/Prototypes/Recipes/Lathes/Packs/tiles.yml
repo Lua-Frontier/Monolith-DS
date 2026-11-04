@@ -49,3 +49,6 @@
   - FloorTileItemOldConcrete
   - FloorTileItemOldConcreteMono
   - FloorTileItemOldConcreteSmooth
+  - FloorTileItemMechanicalPanel # LuaM
+  - FloorTileItemMechanicalPlate # LuaM
+  - FloorTileItemMechanicalTread # LuaM

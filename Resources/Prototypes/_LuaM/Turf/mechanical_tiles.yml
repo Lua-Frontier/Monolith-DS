@@ -1,0 +1,119 @@
+- type: tile
+  id: FloorMechanicalPanel
+  name: tiles-mechanical-floor-panel
+  sprite: /Textures/_LuaM/Tiles/mechanical_panel.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemMechanicalPanel
+  heatCapacity: 10000
+
+- type: entity
+  name: mechanical floor tile
+  parent: FloorTileItemBase
+  id: FloorTileItemMechanicalPanel
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tiles/mechanical_tile.rsi
+    state: mechanical-panel
+  - type: Item
+    heldPrefix: dark
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorMechanicalPanel
+  - type: Stack
+    stackType: FloorTileMechanicalPanel
+
+- type: stack
+  id: FloorTileMechanicalPanel
+  name: stack-mechanical-panel-tile
+  spawn: FloorTileItemMechanicalPanel
+  maxCount: 30
+
+- type: tile
+  id: FloorMechanicalPlate
+  name: tiles-mechanical-floor-plate
+  sprite: /Textures/_LuaM/Tiles/mechanical_plate.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemMechanicalPlate
+  heatCapacity: 10000
+
+- type: entity
+  name: utility floor tile
+  parent: FloorTileItemBase
+  id: FloorTileItemMechanicalPlate
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tiles/mechanical_tile.rsi
+    state: mechanical-plate
+  - type: Item
+    heldPrefix: dark
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorMechanicalPlate
+  - type: Stack
+    stackType: FloorTileMechanicalPlate
+
+- type: stack
+  id: FloorTileMechanicalPlate
+  name: stack-mechanical-plate-tile
+  spawn: FloorTileItemMechanicalPlate
+  maxCount: 30
+
+- type: tile
+  id: FloorMechanicalTread
+  name: tiles-mechanical-floor-tread
+  sprite: /Textures/_LuaM/Tiles/mechanical_tread.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemMechanicalTread
+  heatCapacity: 10000
+
+- type: entity
+  name: stamped floor tile
+  parent: FloorTileItemBase
+  id: FloorTileItemMechanicalTread
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tiles/mechanical_tile.rsi
+    state: mechanical-tread
+  - type: Item
+    heldPrefix: dark
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorMechanicalTread
+  - type: Stack
+    stackType: FloorTileMechanicalTread
+
+- type: stack
+  id: FloorTileMechanicalTread
+  name: stack-mechanical-tread-tile
+  spawn: FloorTileItemMechanicalTread
+  maxCount: 30
+
+- type: latheRecipe
+  parent: BaseTileRecipe
+  id: FloorTileItemMechanicalPanel
+  result: FloorTileItemMechanicalPanel
+
+- type: latheRecipe
+  parent: BaseTileRecipe
+  id: FloorTileItemMechanicalPlate
+  result: FloorTileItemMechanicalPlate
+
+- type: latheRecipe
+  parent: BaseTileRecipe
+  id: FloorTileItemMechanicalTread
+  result: FloorTileItemMechanicalTread

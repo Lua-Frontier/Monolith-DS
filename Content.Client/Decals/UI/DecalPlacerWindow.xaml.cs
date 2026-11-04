@@ -160,14 +160,18 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
         var filter = Search.Text;
         foreach (var (decal, tex) in _decals)
         {
-            if (!decal.ToLowerInvariant().Contains(filter.ToLowerInvariant()))
+            // LuaM-start
+            var name = Loc.TryGetString($"decal-name-{decal}", out var locName) ? locName : decal;
+            if (!decal.ToLowerInvariant().Contains(filter.ToLowerInvariant())
+                && !name.ToLowerInvariant().Contains(filter.ToLowerInvariant()))
                 continue;
+            // LuaM-end
 
             var button = new TextureButton
             {
                 TextureNormal = tex,
                 Name = decal,
-                ToolTip = decal,
+                ToolTip = name, // LuaM
                 Modulate = _useColor ? _color : Color.White
             };
             button.OnPressed += ButtonOnPressed;

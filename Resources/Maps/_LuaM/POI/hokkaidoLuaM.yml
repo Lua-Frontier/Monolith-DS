@@ -19381,8 +19381,6 @@ entities:
       pos: -28.5,-12.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19
       - 2893
@@ -19395,8 +19393,6 @@ entities:
       pos: -28.5,-13.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19
       - 2893
@@ -19409,8 +19405,6 @@ entities:
       pos: -28.5,-8.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19
       - 2893
@@ -19423,8 +19417,6 @@ entities:
       pos: -28.5,-7.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19
       - 2893
@@ -19858,8 +19850,6 @@ entities:
       pos: -35.5,-10.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19
       - 2892

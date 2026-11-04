@@ -1,0 +1,8 @@
+ent-Cartridge635x40mmCaselessPlasma = патрон (6.35x40мм безгильзовый плазменный)
+ent-Cartridge635x40mmCaselessHP = патрон (6.35x40мм безгильзовый экспансивный)
+ent-Cartridge635x40mmCaselessRIP = патрон (6.35x40мм безгильзовый RIP)
+ent-Cartridge635x40mmCaselessAP = патрон (6.35x40мм безгильзовый бронебойный)
+ent-Bullet635x40mmCaselessPlasma = пуля (6.35x40мм безгильзовая плазменная)
+ent-Bullet635x40mmCaselessHP = пуля (6.35x40мм безгильзовая экспансивная)
+ent-Bullet635x40mmCaselessRIP = пуля (6.35x40мм безгильзовая RIP)
+ent-Bullet635x40mmCaselessPlasteelAP = пуля (6.35x40мм безгильзовая бронебойная)

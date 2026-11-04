@@ -5,6 +5,8 @@
   name: research disk terminal # mono
   description: A terminal used to print out research point disks. # mono
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/tech_disk_printer.rsi

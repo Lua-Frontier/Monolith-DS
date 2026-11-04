@@ -182,12 +182,41 @@ public partial class SharedBodySystem
             _humanoid.SetLayerVisibility((target, bodyAppearance), visualLayer, true, null);
             foreach (var marking in markingList)
             {
+                if (HasMarkingVariant(bodyAppearance, marking.MarkingId)) // LuaM
+                    continue;
+
                 _humanoid.AddMarking(target, marking.MarkingId, marking.MarkingColors, true, true, bodyAppearance);
             }
         }
 
         Dirty(target, bodyAppearance);
     }
+
+    // LuaM start
+    private const string AnimatedMarkingSuffix = "Animated";
+
+    private static string StaticMarkingId(string markingId)
+    {
+        return markingId.EndsWith(AnimatedMarkingSuffix, StringComparison.Ordinal)
+            ? markingId[..^AnimatedMarkingSuffix.Length]
+            : markingId;
+    }
+
+    private static bool HasMarkingVariant(HumanoidAppearanceComponent humanoid, string markingId)
+    {
+        var staticId = StaticMarkingId(markingId);
+        foreach (var markings in humanoid.MarkingSet.Markings.Values)
+        {
+            foreach (var existing in markings)
+            {
+                if (StaticMarkingId(existing.MarkingId) == staticId)
+                    return true;
+            }
+        }
+
+        return false;
+    }
+    // LuaM end
 
     protected void RemoveAppearance(EntityUid entity, BodyPartAppearanceComponent component, EntityUid partEntity)
     {

@@ -4,8 +4,8 @@
   - CentrifugeLatheMiniCircuitboard
   - IndustrialFurnaceEconomyCompactCircuitboard
   - PrecisionAssemblerEconomyCompactCircuitboard
-  - IndustrialPressEconomyElectronicsMachineCircuitboard
-  - IndustrialPressEconomyPlatesMachineCircuitboard
+  # - IndustrialPressEconomyElectronicsMachineCircuitboard # Commented by LuaM: industry machines are only for MMC
+  # - IndustrialPressEconomyPlatesMachineCircuitboard # Commented by LuaM
   - IndustrialPressEconomyElectronicsMMCMachineCircuitboard
   - IndustrialPressEconomyPlatesMMCMachineCircuitboard
   # - IndustrialLatheMachineCircuitboard

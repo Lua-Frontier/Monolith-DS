@@ -39,3 +39,50 @@
     state: tail
   - sprite: _LuaM/Mobs/Species/Ariral/tail_markings.rsi
     state: tail_long
+
+- type: marking
+  id: AriralTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  followSkinColor: true
+  speciesRestriction: []
+  sprites:
+  - sprite: _LuaM/Mobs/Species/Ariral/tail_markings.rsi
+    state: tail_wagging
+
+- type: marking
+  id: AriralTailFluffAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: _LuaM/Mobs/Species/Ariral/tail_markings.rsi
+    state: tail_wagging
+  - sprite: _LuaM/Mobs/Species/Ariral/tail_markings.rsi
+    state: tail_overlay_wagging
+
+- type: marking
+  id: AriralTailBigFluffAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: _LuaM/Mobs/Species/Ariral/tail_markings.rsi
+    state: tail_wagging
+  - sprite: _LuaM/Mobs/Species/Ariral/tail_markings.rsi
+    state: tail_long_wagging
+
+- type: marking
+  id: AriralEyeWhites
+  bodyPart: Eyes
+  markingCategory: Special
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  speciesRestriction: [Ariral]
+  sprites:
+  - sprite: _LuaM/Mobs/Species/Ariral/eye_markings.rsi
+    state: eye_whites

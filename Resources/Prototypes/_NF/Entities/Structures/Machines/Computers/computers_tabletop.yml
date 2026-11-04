@@ -3,6 +3,8 @@
   parent: [BaseStructureComputerTabletop, ComputerAlert]
   id: ComputerTabletopAlert
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -23,6 +25,8 @@
   parent: [BaseStructureComputerTabletop, ComputerShuttle] # Shuttle
   id: ComputerTabletopShuttle
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: &NFTabletopShuttleConsoleVisuals
@@ -43,6 +47,8 @@
   parent: [BaseStructureComputerTabletop, ComputerShuttleAntag] # Shuttle
   id: ComputerTabletopShuttleAntag
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -63,6 +69,8 @@
   parent: [BaseStructureComputerTabletop, ComputerIFF]
   id: ComputerTabletopIFF
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -84,6 +92,8 @@
   id: ComputerTabletopIFFSyndicate
   suffix: Syndicate, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -104,6 +114,8 @@
   parent: [BaseStructureComputerTabletop, ComputerPowerMonitoring]
   id: ComputerTabletopPowerMonitoring
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -124,6 +136,8 @@
   parent: [BaseStructureComputerTabletop, ComputerMedicalRecords]
   id: ComputerTabletopMedicalRecords
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -144,6 +158,8 @@
   parent: [BaseStructureIndestructible, BaseStructureComputerTabletop, ComputerCriminalRecords]
   id: ComputerTabletopCriminalRecords
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -164,6 +180,8 @@
   parent: [BaseStructureComputerTabletop, ComputerStationRecords]
   id: ComputerTabletopStationRecords
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -184,6 +202,8 @@
   parent: [BaseStructureComputerTabletop, ComputerCrewMonitoring]
   id: ComputerTabletopCrewMonitoring
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -204,6 +224,8 @@
   parent: [BaseStructureComputerTabletop, ComputerResearchAndDevelopment]
   id: ComputerTabletopResearchAndDevelopment
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -224,6 +246,8 @@
   parent: [BaseStructureComputerTabletop, ComputerAnalysisConsole]
   id: ComputerTabletopAnalysisConsole
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -244,6 +268,8 @@
   parent: [BaseStructureIndestructible, BaseStructureComputerTabletop, ComputerId]
   id: ComputerTabletopId
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -264,6 +290,8 @@
   parent: [BaseStructureComputerTabletop, computerBodyScanner]
   id: ComputerTabletopBodyScanner
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     sprite: _NF/Structures/Machines/computer_tabletop.rsi
     drawdepth: SmallObjects
@@ -283,6 +311,8 @@
   parent: [BaseStructureIndestructible, BaseStructureComputerTabletop, ComputerComms]
   id: ComputerTabletopComms
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -303,6 +333,8 @@
   parent: [BaseStructureComputerTabletop, SyndicateComputerComms]
   id: SyndicateComputerTabletopComms
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -323,6 +355,8 @@
   parent: [BaseStructureComputerTabletop, ComputerSolarControl]
   id: ComputerTabletopSolarControl
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -343,6 +377,8 @@
   parent: [BaseStructureComputerTabletop, ComputerRadar]
   id: ComputerTabletopRadar
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -363,6 +399,8 @@
   parent: [BaseStructureComputerTabletop, ComputerAdvancedRadar]
   id: ComputerTabletopAdvancedRadar
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -383,6 +421,8 @@
   parent: [BaseStructureIndestructible, BaseStructureComputerTabletop, ComputerCargoOrders]
   id: ComputerTabletopCargoOrders
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -403,6 +443,8 @@
   parent: [BaseStructureComputerTabletop, ComputerCargoBounty]
   id: ComputerTabletopCargoBounty
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -423,6 +465,8 @@
   parent: [BaseStructureComputerTabletop, ComputerCloningConsole]
   id: ComputerTabletopCloningConsole
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -443,6 +487,8 @@
   parent: [BaseStructureComputerTabletop, ComputerSalvageExpedition]
   id: ComputerTabletopSalvageExpedition
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -463,6 +509,8 @@
   parent: [BaseStructureComputerTabletop, ComputerSurveillanceCameraMonitor]
   id: ComputerTabletopSurveillanceCameraMonitor
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -483,6 +531,8 @@
   parent: [BaseStructureComputerTabletop, ComputerSurveillanceWirelessCameraMonitor]
   id: ComputerTabletopSurveillanceWirelessCameraMonitor
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -503,6 +553,8 @@
   parent: [BaseStructureComputerTabletop, ComputerMassMedia]
   id: ComputerTabletopMassMedia
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -526,6 +578,8 @@
   id: ComputerTabletopMarketConsoleNFLow
   suffix: Low, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: &cargoMarketSprite
@@ -547,6 +601,8 @@
   id: ComputerTabletopMarketConsoleNFNormal
   suffix: Normal, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: *cargoMarketSprite
@@ -556,6 +612,8 @@
   id: ComputerTabletopMarketConsoleNFHigh
   suffix: High, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: *cargoMarketSprite
@@ -565,6 +623,8 @@
   id: ComputerTabletopPalletConsoleNFHighMarket
   suffix: High, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: &cargoPalletSprite
@@ -586,6 +646,8 @@
   id: ComputerTabletopPalletConsoleNFNormalMarket
   suffix: Normal, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: *cargoPalletSprite
@@ -595,6 +657,8 @@
   id: ComputerTabletopPalletConsoleNFLowMarket
   suffix: Low, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: *cargoPalletSprite
@@ -604,6 +668,8 @@
   id: ComputerTabletopPalletConsoleNFVeryLowMarket
   suffix: VeryLow, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: *cargoPalletSprite
@@ -614,6 +680,8 @@
   id: BaseComputerTabletopStationAdminBankATM
   abstract: true
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -676,6 +744,8 @@
   parent: [BaseStructureIndestructible, BaseStructureComputerTabletop, ComputerContrabandPalletConsole]
   id: ComputerTabletopContrabandPalletConsole
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -697,6 +767,8 @@
   id: ComputerTabletopIFFPOI
   suffix: POI, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -718,6 +790,8 @@
   id: ComputerTabletopPirateBounty
   suffix: Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -739,6 +813,8 @@
   id: ComputerTabletopContrabandPalletConsolePirate
   suffix: Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -760,6 +836,8 @@
   id: ComputerTabletopPirateBountyRedemption
   suffix: Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers:
@@ -781,6 +859,8 @@
   id: ComputerTabletopShuttleFrontierOutpostLocal
   suffix: Local, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: *NFTabletopShuttleConsoleVisuals
@@ -790,6 +870,8 @@
   id: ComputerTabletopShuttleFrontierOutpostRemote
   suffix: Remote, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: *NFTabletopShuttleConsoleVisuals
@@ -799,6 +881,8 @@
   id: ComputerTabletopShuttleTradeOutpostLocal
   suffix: Local, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: *NFTabletopShuttleConsoleVisuals
@@ -808,6 +892,8 @@
   id: ComputerTabletopShuttleTradeOutpostRemote
   suffix: Remote, Tabletop
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     drawdepth: SmallObjects
     layers: *NFTabletopShuttleConsoleVisuals

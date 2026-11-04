@@ -95,6 +95,10 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
+    quickEquip: true # LuaM
+  - type: ActivatableUI
+    key: enum.SharedGasTankUiKey.Key # LuaM
+    verbOnly: true # LuaM
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9

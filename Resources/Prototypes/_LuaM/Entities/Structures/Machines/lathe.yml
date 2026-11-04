@@ -21,7 +21,7 @@
 # PDV
 - type: entity
   id: PDVLathe
-  parent: [BaseLatheLube, BaseLatheBeakerSlot]
+  parent: [BaseLatheBeakerSlot, BaseLatheLube]
   name: PDV TechFab
   description: Capable of manufacturing equipment to PDV design specifications.
   components:

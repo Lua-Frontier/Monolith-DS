@@ -38,6 +38,11 @@
     collection: RpFriction
   messages: RpRuffleHairMessages
   icon: _LuaM/Interface/RpPanel/ruffle_head.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: TapCrown
@@ -46,4 +51,22 @@
   sound:
     collection: RpFriction
   messages: RpTapCrownMessages
+  icon: _LuaM/Interface/RpPanel/pat_back_of_head.png
+
+- type: rpInteraction
+  id: ForeheadTouch
+  category: Head
+  kind: Soft
+  sound:
+    collection: RpPat
+  messages: RpForeheadTouchMessages
+  icon: _LuaM/Interface/RpPanel/cheeks_press.png
+
+- type: rpInteraction
+  id: ScratchHead
+  category: Head
+  kind: Soft
+  sound:
+    collection: RpFriction
+  selfMessages: RpScratchHeadSelfMessages
   icon: _LuaM/Interface/RpPanel/pat_back_of_head.png

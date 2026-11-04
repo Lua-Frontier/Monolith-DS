@@ -43,7 +43,7 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
     private void UpdateRadioChannels(EntityUid uid, HeadsetComponent headset, EncryptionKeyHolderComponent? keyHolder = null)
     {
         // make sure to not add ActiveRadioComponent when headset is being deleted
-        if (!headset.Enabled || MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating)
+        if (!headset.Enabled || !headset.IsEquipped || MetaData(uid).EntityLifeStage >= EntityLifeStage.Terminating) // LuaM: !headset.IsEquipped
             return;
 
         if (!Resolve(uid, ref keyHolder))

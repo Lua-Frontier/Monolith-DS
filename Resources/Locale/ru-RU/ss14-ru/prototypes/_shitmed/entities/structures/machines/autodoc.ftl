@@ -1,5 +1,5 @@
 ent-Autodoc = автодок Марк.XIV
-    .desc = Программируемый робот-хирург, способный автоматически оперировать пациентов.
+    .desc = Это автодок. Он пустой. Вы его собрали. Зачем?
 ent-AutodocSyndie = { ent-Autodoc }
     .suffix = Синдикат
     .desc = { ent-Autodoc.desc }

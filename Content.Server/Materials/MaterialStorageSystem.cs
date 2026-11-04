@@ -146,23 +146,22 @@ public sealed partial class MaterialStorageSystem : SharedMaterialStorageSystem
             return false;
         if (!base.TryInsertMaterialEntity(user, toInsert, receiver, storage, material, composition))
             return false;
-        _audio.PlayPvs(storage.InsertingSound, receiver);
-        _popup.PopupEntity(Loc.GetString("machine-insert-item",
-                ("user", user),
-                ("machine", receiver),
-                ("item", toInsert)),
-            receiver);
+        // LuaM-start: the magnet (user == receiver) moves up to 15 items per scan, no sound, popup and log for each one
         if (user != receiver) // Goobstation - for automation to not spam popups
+        {
+            _audio.PlayPvs(storage.InsertingSound, receiver);
             _popup.PopupEntity(Loc.GetString("machine-insert-item", ("user", user), ("machine", receiver),
                 ("item", toInsert)), receiver);
-        //QueueDel(toInsert); // Frontier
 
-        // Logging
-        TryComp<StackComponent>(toInsert, out var stack);
-        var count = stack?.Count ?? 1;
-        _adminLogger.Add(LogType.Action,
-            LogImpact.Low,
-            $"{ToPrettyString(user):player} inserted {count} {ToPrettyString(toInsert):inserted} into {ToPrettyString(receiver):receiver}");
+            // Logging
+            TryComp<StackComponent>(toInsert, out var stack);
+            var count = stack?.Count ?? 1;
+            _adminLogger.Add(LogType.Action,
+                LogImpact.Low,
+                $"{ToPrettyString(user):player} inserted {count} {ToPrettyString(toInsert):inserted} into {ToPrettyString(receiver):receiver}");
+        }
+        // LuaM-end
+        //QueueDel(toInsert); // Frontier
         Del(toInsert); // Frontier: delete immediately, don't queue
         return true;
     }

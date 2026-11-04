@@ -93,6 +93,8 @@
           SheetPlastitanium1:
             min: 2
             max: 3
+  - type: StaticPrice
+    price: 3000 # LuaM: 5 plastitanium sheets
   
 - type: entity
   parent: CrateGenericSteel

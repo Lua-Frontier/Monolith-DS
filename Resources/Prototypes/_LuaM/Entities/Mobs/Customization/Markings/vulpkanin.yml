@@ -1,0 +1,32 @@
+- type: marking
+  id: ADTFoxTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+  sprites:
+  - sprite: _ADT/Mobs/Customization/fox_parts.rsi
+    state: tail_fox_wag_stripes_prime
+  - sprite: _ADT/Mobs/Customization/fox_parts.rsi
+    state: tail_fox_wag_stripes_second
+  - sprite: _ADT/Mobs/Customization/fox_parts.rsi
+    state: tail_fox_wag_stripes_third
+
+- type: marking
+  id: FelinidTailFoxtailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag
+  - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag-tip

@@ -1376,3 +1376,6 @@ construction-NordfallVanguardFlag = { ent-NordfallVanguardFlag }
 construction-NordfallVanguardFlag-desc = { ent-NordfallVanguardFlag.desc }
 construction-BannerPirates = { ent-BannerPirates }
 construction-BannerPirates-desc = { ent-BannerPirates.desc }
+
+construction-PlastitaniumWindowDirectional-desc = Прочное направленное окно в пластитановой раме.
+construction-WindowWallReinforcedDirectional-desc = Направленное окно в раме укреплённой стены.

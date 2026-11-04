@@ -13,6 +13,7 @@ using Content.Shared.Projectiles;
 using Content.Shared.Rotation;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network; // LuaM
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
@@ -30,6 +31,7 @@ public sealed partial class StandingStateSystem : EntitySystem
     [Dependency] private SharedBuckleSystem _buckle = default!; // WD EDIT
     [Dependency] private SharedTransformSystem _transform = default!; // Mono
     [Dependency] private IRobustRandom _random = default!; // Mono
+    [Dependency] private INetManager _net = default!; // LuaM
 
     // If StandingCollisionLayer value is ever changed to more than one layer, the logic needs to be edited.
     private const int StandingCollisionLayer = (int) CollisionGroup.MidImpassable;
@@ -127,9 +129,9 @@ public sealed partial class StandingStateSystem : EntitySystem
         if (standingState.LifeStage <= ComponentLifeStage.Starting)
             return true;
 
-        if (playSound)
+        if (playSound && _net.IsServer) // LuaM
         {
-            _audio.PlayPredicted(standingState.DownSound, uid, null);
+            _audio.PlayPvs(standingState.DownSound, uid); // LuaM
         }
 
         _movement.RefreshMovementSpeedModifiers(uid); // WD EDIT

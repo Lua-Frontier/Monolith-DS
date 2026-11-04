@@ -12,8 +12,7 @@ public sealed class HoloCigarBlacklistSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<HoloCigarBlacklistComponent, ComponentAdd>(OnBlacklistAdded);
-        SubscribeLocalEvent<HoloCigarBlacklistComponent, ComponentInit>(OnBlacklistInit);
+        SubscribeLocalEvent<HoloCigarBlacklistComponent, MapInitEvent>(OnBlacklistMapInit); // LuaM
         SubscribeLocalEvent<HoloCigarAffectedGunComponent, ComponentAdd>(OnAffectedGunAdded);
         SubscribeLocalEvent<HoloCigarBlacklistComponent, ExaminedEvent>(OnExamined);
     }
@@ -23,12 +22,7 @@ public sealed class HoloCigarBlacklistSystem : EntitySystem
         args.PushMarkup(Loc.GetString("holocigar-blacklist-examine"));
     }
 
-    private void OnBlacklistAdded(Entity<HoloCigarBlacklistComponent> ent, ref ComponentAdd args)
-    {
-        RemoveHoloCigarEffects(ent);
-    }
-
-    private void OnBlacklistInit(Entity<HoloCigarBlacklistComponent> ent, ref ComponentInit args)
+    private void OnBlacklistMapInit(Entity<HoloCigarBlacklistComponent> ent, ref MapInitEvent args) // LuaM
     {
         RemoveHoloCigarEffects(ent);
     }

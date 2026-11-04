@@ -41,7 +41,7 @@
           length: 1.0
     - type: Clothing
       sprite: _DV/Objects/Tanks/Jetpacks/blue.rsi # DeltaV - Modified sprites to allow SUITSTORAGE use.
-      quickEquip: false
+      quickEquip: true # LuaM: false > true
       slots:
         - Back
         - SuitStorage # DeltaV - Allow all jetpacks to fit in the suit storage slot

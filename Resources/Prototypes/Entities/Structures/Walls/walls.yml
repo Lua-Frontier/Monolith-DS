@@ -445,6 +445,31 @@
     snap:
     - Wall
   components:
+  # LuaM start: occlusion, shadow and hitbox follow the wall sprite
+  - type: Occluder
+    polygon:
+    - "-0.5,-0.5"
+    - "0.5,0.5"
+    - "0.5,-0.5"
+  - type: SunShadowCast
+    points:
+    - "-0.5,-0.5"
+    - "0.5,-0.5"
+    - "0.5,0.5"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+          vertices:
+          - "-0.5,-0.5"
+          - "0.5,0.5"
+          - "0.5,-0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - DiagonalWallLayer
+  # LuaM end
   - type: RCDDeconstructable # Frontier
     deconstructable: false # Frontier
   - type: StaticPrice
@@ -463,6 +488,31 @@
     snap:
     - Wall
   components:
+  # LuaM start: occlusion, shadow and hitbox follow the wall sprite
+  - type: Occluder
+    polygon:
+    - "-0.5,-0.5"
+    - "0.5,0.5"
+    - "0.5,-0.5"
+  - type: SunShadowCast
+    points:
+    - "-0.5,-0.5"
+    - "0.5,-0.5"
+    - "0.5,0.5"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+          vertices:
+          - "-0.5,-0.5"
+          - "0.5,0.5"
+          - "0.5,-0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - DiagonalWallLayer
+  # LuaM end
   - type: Transform
     anchored: true
   - type: Clickable
@@ -488,19 +538,6 @@
     airBlockedDirection:
     - South
     - East
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PolygonShape
-          vertices:
-          - "-0.5,-0.5"
-          - "0.5,0.5"
-          - "0.5,-0.5"
-        mask:
-        - FullTileMask
-        layer:
-        - DiagonalWallLayer # Mono WallLayer->DiagonalWallLayer
   - type: StaticPrice
     price: 50 # Mono
   - type: ArmorThickness
@@ -588,6 +625,32 @@
     snap:
     - Wall
   components:
+  # LuaM start: occlusion, shadow and hitbox follow the wall sprite
+  - type: Occluder
+    polygon:
+    - "-0.5,-0.5"
+    - "0.5,0.5"
+    - "0.5,-0.5"
+  - type: SunShadowCast
+    points:
+    - "-0.5,-0.5"
+    - "0.5,-0.5"
+    - "0.5,0.5"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+          vertices:
+          - "-0.5,-0.5"
+          - "0.5,0.5"
+          - "0.5,-0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - DiagonalWallLayer
+        density: 2000
+  # LuaM end
   - type: Tag
     tags:
     - Diagonal
@@ -711,6 +774,38 @@
     snap:
     - Wall
   components:
+  # LuaM start: occlusion, shadow and hitbox follow the wall sprite
+  - type: Occluder
+    polygon:
+    - "-0.5,-0.5"
+    - "-0.5,-0.22"
+    - "0.22,0.5"
+    - "0.5,0.5"
+    - "0.5,-0.5"
+  - type: SunShadowCast
+    points:
+    - "-0.5,-0.5"
+    - "0.5,-0.5"
+    - "0.5,0.5"
+    - "0.22,0.5"
+    - "-0.5,-0.22"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+          vertices:
+          - "-0.5,-0.5"
+          - "-0.5,-0.22"
+          - "0.22,0.5"
+          - "0.5,0.5"
+          - "0.5,-0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - DiagonalWallLayer
+        density: 2000
+  # LuaM end
   - type: Transform
     anchored: true
   - type: Clickable
@@ -737,20 +832,6 @@
     airBlockedDirection:
     - South
     - East
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PolygonShape
-          vertices:
-          - "-0.5,-0.5"
-          - "0.5,0.5"
-          - "0.5,-0.5"
-        mask:
-        - FullTileMask
-        layer:
-        - DiagonalWallLayer # Mono WallLayer->DiagonalWallLayer
-        density: 2000
   - type: Physics
     bodyType: Static
   - type: Construction
@@ -873,6 +954,32 @@
     snap:
     - Wall
   components:
+  # LuaM start: occlusion, shadow and hitbox follow the wall sprite
+  - type: Occluder
+    polygon:
+    - "-0.5,-0.5"
+    - "0.5,0.5"
+    - "0.5,-0.5"
+  - type: SunShadowCast
+    points:
+    - "-0.5,-0.5"
+    - "0.5,-0.5"
+    - "0.5,0.5"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+          vertices:
+          - "-0.5,-0.5"
+          - "0.5,0.5"
+          - "0.5,-0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - DiagonalWallLayer
+        density: 2000
+  # LuaM end
   - type: Sprite
     drawdepth: Walls
     sprite: Structures/Walls/solid_diagonal.rsi
@@ -1178,6 +1285,38 @@
     snap:
     - Wall
   components:
+  # LuaM start: occlusion, shadow and hitbox follow the wall sprite
+  - type: Occluder
+    polygon:
+    - "-0.5,-0.5"
+    - "-0.5,-0.34"
+    - "0.34,0.5"
+    - "0.5,0.5"
+    - "0.5,-0.5"
+  - type: SunShadowCast
+    points:
+    - "-0.5,-0.5"
+    - "0.5,-0.5"
+    - "0.5,0.5"
+    - "0.34,0.5"
+    - "-0.5,-0.34"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+          vertices:
+          - "-0.5,-0.5"
+          - "-0.5,-0.34"
+          - "0.34,0.5"
+          - "0.5,0.5"
+          - "0.5,-0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - DiagonalWallLayer
+        density: 2000
+  # LuaM end
   - type: Sprite
     drawdepth: Walls
     sprite: Structures/Walls/mining_diagonal.rsi

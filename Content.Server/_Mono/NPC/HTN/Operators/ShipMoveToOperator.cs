@@ -137,6 +137,14 @@ public sealed partial class ShipMoveToOperator : HTNOperator, IHtnConditionalShu
     [DataField]
     public bool RequireAnchored = true;
 
+    // LuaM-start
+    [DataField]
+    public bool AnchorInRange;
+
+    [DataField]
+    public float? RotationTolerance;
+    // LuaM-end
+
     /// <summary>
     /// Whether to require us to be powered, if we have ApcPowerReceiver.
     /// </summary>
@@ -217,6 +225,11 @@ public sealed partial class ShipMoveToOperator : HTNOperator, IHtnConditionalShu
         comp.Range = Range;
         comp.RangeTolerance = RangeTolerance;
         comp.TargetRotation = TargetRotation;
+        // LuaM-start
+        comp.AnchorInRange = AnchorInRange;
+        if (RotationTolerance is { } rotationTolerance)
+            comp.RotationTolerance = rotationTolerance;
+        // LuaM-end
     }
 
     public override HTNOperatorStatus Update(NPCBlackboard blackboard, float frameTime)

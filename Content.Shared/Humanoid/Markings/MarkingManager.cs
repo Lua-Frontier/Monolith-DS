@@ -62,7 +62,7 @@ namespace Content.Shared.Humanoid.Markings
             string species)
         {
             var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = _prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var onlyWhitelisted = _prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).RequiresWhitelist(category); // LuaM
             var res = new Dictionary<string, MarkingPrototype>();
 
             foreach (var (key, marking) in MarkingsByCategory(category))
@@ -125,7 +125,7 @@ namespace Content.Shared.Humanoid.Markings
             string species, Sex sex)
         {
             var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = _prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var onlyWhitelisted = _prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).RequiresWhitelist(category); // LuaM
             var res = new Dictionary<string, MarkingPrototype>();
 
             foreach (var (key, marking) in MarkingsByCategory(category))
@@ -197,14 +197,14 @@ namespace Content.Shared.Humanoid.Markings
             IoCManager.Resolve(ref prototypeManager);
 
             var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var markingPoints = prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints); // LuaM
 
             if (!TryGetMarking(marking, out var prototype))
             {
                 return false;
             }
 
-            if (onlyWhitelisted && prototype.SpeciesRestrictions == null)
+            if (markingPoints.RequiresWhitelist(prototype.MarkingCategory) && prototype.SpeciesRestrictions == null) // LuaM
             {
                 return false;
             }
@@ -228,7 +228,7 @@ namespace Content.Shared.Humanoid.Markings
             IoCManager.Resolve(ref prototypeManager);
 
             var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var onlyWhitelisted = prototypeManager.Index<MarkingPointsPrototype>(speciesProto.MarkingPoints).RequiresWhitelist(prototype.MarkingCategory); // LuaM
 
             if (onlyWhitelisted && prototype.SpeciesRestrictions == null)
             {

@@ -28,6 +28,8 @@
   - type: Construction
     graph: BluespaceCloset
     node: done
+    containers: # LuaM
+    - entity_storage
   - type: Destructible
     thresholds:
     - trigger:
@@ -74,6 +76,8 @@
   - type: Construction
     graph: BluespaceClosetDark
     node: done
+    containers: # LuaM
+    - entity_storage
   - type: Destructible
     thresholds:
     - trigger:
@@ -92,3 +96,5 @@
           SheetPlastitanium1:
             min: 1
             max: 2
+  - type: StaticPrice
+    price: 2400 # LuaM: 4 plastitanium sheets

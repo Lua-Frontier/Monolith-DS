@@ -26,6 +26,9 @@ public sealed partial class LoadoutContainer : BoxContainer
         IoCManager.InjectDependencies(this);
 
         SelectButton.Disabled = disabled;
+        SelectButton.Label.Visible = false; // LuaM
+        SelectButton.OnMouseEntered += _ => NameLabel.Hovered = true; // LuaM
+        SelectButton.OnMouseExited += _ => NameLabel.Hovered = false; // LuaM
 
         if (disabled && reason != null)
         {
@@ -79,7 +82,7 @@ public sealed partial class LoadoutContainer : BoxContainer
 
     public string? Text
     {
-        get => SelectButton.Text;
-        set => SelectButton.Text = value;
+        get => NameLabel.Text; // LuaM
+        set => NameLabel.Text = value ?? string.Empty; // LuaM
     }
 }

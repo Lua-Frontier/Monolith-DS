@@ -36,6 +36,7 @@
       params:
         maxDistance: 8
         variation: 0.05
+        volume: -6
   - type: Sprite
     sprite: _Mono/Mobs/monolithic.rsi
     layers:
@@ -54,21 +55,21 @@
     - state: shade
     - map: ["jumpsuit"]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "id" ] # Mono - move from between belt and back
     - map: [ "outerClothing" ] # mono - i hate you upstream
+    - map: [ "shoes" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "balaclava" ]
+    - map: [ "mask" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "enum.HumanoidVisualLayers.Wings" ] # For IPC wings porting from SimpleStation
-    - map: [ "balaclava" ]
-    - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "neck" ]
     - map: [ "helmetcover" ]

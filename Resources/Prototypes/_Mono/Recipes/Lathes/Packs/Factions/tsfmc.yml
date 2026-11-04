@@ -10,8 +10,8 @@
   - ArmorPlateStorageT4TSFRecipe
   - ClothingBackpackERTLeaderRecipe
   # LuaM-end
-# - ClothingUniformTsfmcMoppTsf
-# - ClothingHandsGlovesMoppTsf
+  - ClothingUniformTsfmcMoppTsf # LuaM
+  - ClothingHandsGlovesMoppTsf # LuaM
 
 - type: latheRecipePack
   id: MonoTSFWeaponsDynamicMelee

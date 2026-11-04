@@ -15,13 +15,13 @@ public sealed partial class OutOfContainerGrantSystem : EntitySystem // this nam
     {
         base.Initialize();
 
-        SubscribeLocalEvent<OutOfContainerGrantComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<OutOfContainerGrantComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<OutOfContainerGrantComponent, EntGotInsertedIntoContainerMessage>(OnContainerChanged);
         SubscribeLocalEvent<OutOfContainerGrantComponent, EntGotRemovedFromContainerMessage>(OnContainerChanged);
     }
 
-    private void OnStartup(EntityUid uid, OutOfContainerGrantComponent component, ComponentStartup args)
+    private void OnMapInit(EntityUid uid, OutOfContainerGrantComponent component, MapInitEvent args)
     {
         UpdateComp(uid, component);
     }

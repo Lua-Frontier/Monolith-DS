@@ -59,6 +59,8 @@
   name: space villain arcade
   parent: ArcadeBase
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     sprite: Structures/Machines/arcade.rsi
     layers:
@@ -200,6 +202,8 @@
   name: NT block game
   parent: ArcadeBase
   components:
+  - type: EdgeConnection # LuaM
+    allowedDirections: None
   - type: Sprite
     sprite: Structures/Machines/arcade.rsi
     layers:

@@ -25,3 +25,30 @@
     collection: RpPat
   messages: RpHugShouldersMessages
   icon: _LuaM/Interface/RpPanel/pat_shoulders.png
+
+- type: rpInteraction
+  id: LeanOnShoulder
+  category: Shoulders
+  kind: Soft
+  sound:
+    collection: RpPat
+  messages: RpLeanOnShoulderMessages
+  icon: _LuaM/Interface/RpPanel/pat_shoulder.png
+
+- type: rpInteraction
+  id: BrushShoulder
+  category: Shoulders
+  kind: Soft
+  sound:
+    collection: RpFriction
+  messages: RpBrushShoulderMessages
+  icon: _LuaM/Interface/RpPanel/pat_shoulders.png
+
+- type: rpInteraction
+  id: Shrug
+  category: Shoulders
+  kind: Soft
+  sound:
+    collection: RpFriction
+  selfMessages: RpShrugSelfMessages
+  icon: _LuaM/Interface/RpPanel/pat_shoulders.png

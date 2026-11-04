@@ -37,6 +37,25 @@ public sealed partial class MaterialReclaimerComponent : Component
     public bool Broken;
 
     /// <summary>
+    /// LuaM: reclaimed materials stay in the material storage (or a linked silo) instead of dropping as stacks.
+    /// </summary>
+    [DataField]
+    public bool StoreMaterials;
+
+    /// <summary>
+    /// LuaM: items without a material composition return this part of their lathe recipe.
+    /// 0 disables it, such items are not accepted unless the whitelist allows them.
+    /// </summary>
+    [DataField]
+    public float RecipeReturn;
+
+    /// <summary>
+    /// LuaM: materials never returned from a lathe recipe.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<MaterialPrototype>> RecipeReturnBlacklist = new();
+
+    /// <summary>
     /// How efficiently the materials are reclaimed.
     /// In practice, a multiplier per material when calculating the output of the reclaimer.
     /// </summary>
@@ -151,6 +170,12 @@ public sealed partial class MaterialReclaimerComponent : Component
     [DataField]
     public bool UseOldSolutionLogic = false;
     // End Frontier
+}
+
+[NetSerializable, Serializable]
+public enum MaterialReclaimerUiKey : byte // LuaM
+{
+    Key
 }
 
 [NetSerializable, Serializable]

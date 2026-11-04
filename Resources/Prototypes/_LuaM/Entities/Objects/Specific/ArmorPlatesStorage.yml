@@ -15,6 +15,12 @@
     shape:
     - 0,0,3,3
   - type: Matchbox # LuaM
+  - type: ContainerContainer # LuaM
+    containers:
+      plate1: !type:ContainerSlot
+      plate2: !type:ContainerSlot
+      plate3: !type:ContainerSlot
+      plate4: !type:ContainerSlot
   - type: ItemSlots # LuaM
     slots:
       plate1:
@@ -47,6 +53,14 @@
   - type: Sprite
     sprite: _LuaM/Objects/Specific/StoragePlate.rsi
     state: icon-RND
+  - type: ContainerContainer # LuaM
+    containers:
+      plate1: !type:ContainerSlot
+      plate2: !type:ContainerSlot
+      plate3: !type:ContainerSlot
+      plate4: !type:ContainerSlot
+      plate5: !type:ContainerSlot
+      plate6: !type:ContainerSlot
   - type: ItemSlots # LuaM
     slots:
       plate1:
@@ -89,6 +103,16 @@
   - type: Sprite
     sprite: _LuaM/Objects/Specific/StoragePlate.rsi
     state: icon-CS
+  - type: ContainerContainer # LuaM
+    containers:
+      plate1: !type:ContainerSlot
+      plate2: !type:ContainerSlot
+      plate3: !type:ContainerSlot
+      plate4: !type:ContainerSlot
+      plate5: !type:ContainerSlot
+      plate6: !type:ContainerSlot
+      plate7: !type:ContainerSlot
+      plate8: !type:ContainerSlot
   - type: ItemSlots # LuaM
     slots:
       plate1:
@@ -141,6 +165,18 @@
   - type: Sprite
     sprite: _LuaM/Objects/Specific/StoragePlate.rsi
     state: icon-TSF
+  - type: ContainerContainer # LuaM
+    containers:
+      plate1: !type:ContainerSlot
+      plate2: !type:ContainerSlot
+      plate3: !type:ContainerSlot
+      plate4: !type:ContainerSlot
+      plate5: !type:ContainerSlot
+      plate6: !type:ContainerSlot
+      plate7: !type:ContainerSlot
+      plate8: !type:ContainerSlot
+      plate9: !type:ContainerSlot
+      plate10: !type:ContainerSlot
   - type: ItemSlots # LuaM
     slots:
       plate1:
@@ -213,6 +249,20 @@
   - type: Sprite
     sprite: _LuaM/Objects/Specific/StoragePlate.rsi
     state: icon-ASAKIM
+  - type: ContainerContainer # LuaM
+    containers:
+      plate1: !type:ContainerSlot
+      plate2: !type:ContainerSlot
+      plate3: !type:ContainerSlot
+      plate4: !type:ContainerSlot
+      plate5: !type:ContainerSlot
+      plate6: !type:ContainerSlot
+      plate7: !type:ContainerSlot
+      plate8: !type:ContainerSlot
+      plate9: !type:ContainerSlot
+      plate10: !type:ContainerSlot
+      plate11: !type:ContainerSlot
+      plate12: !type:ContainerSlot
   - type: ItemSlots # LuaM
     slots:
       plate1:
@@ -285,6 +335,28 @@
   - type: Sprite
     sprite: _LuaM/Objects/Specific/StoragePlate.rsi
     state: icon-BS
+  - type: ContainerContainer # LuaM
+    containers:
+      plate1: !type:ContainerSlot
+      plate2: !type:ContainerSlot
+      plate3: !type:ContainerSlot
+      plate4: !type:ContainerSlot
+      plate5: !type:ContainerSlot
+      plate6: !type:ContainerSlot
+      plate7: !type:ContainerSlot
+      plate8: !type:ContainerSlot
+      plate9: !type:ContainerSlot
+      plate10: !type:ContainerSlot
+      plate11: !type:ContainerSlot
+      plate12: !type:ContainerSlot
+      plate13: !type:ContainerSlot
+      plate14: !type:ContainerSlot
+      plate15: !type:ContainerSlot
+      plate16: !type:ContainerSlot
+      plate17: !type:ContainerSlot
+      plate18: !type:ContainerSlot
+      plate19: !type:ContainerSlot
+      plate20: !type:ContainerSlot
   - type: ItemSlots # LuaM
     slots:
       plate1:

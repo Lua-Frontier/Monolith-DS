@@ -95,20 +95,20 @@
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "gloves" ]
-      - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "id" ] # Mono - move from between belt and back
       - map: [ "outerClothing" ] # mono - i hate you upstream
+      - map: [ "shoes" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renaming lol.
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+      - map: [ "balaclava" ]
+      - map: [ "mask" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ] # Do these need to be here? (arachnid hair arachnid hair)
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-      - map: [ "balaclava" ]
-      - map: [ "mask" ]
       - map: [ "head" ]
       - map: [ "neck" ]
       - map: [ "neck2" ]

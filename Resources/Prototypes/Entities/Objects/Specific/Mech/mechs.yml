@@ -201,6 +201,7 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+    - FootstepSound # LuaM
     - CivilianMechBounty # Mono
   - type: Prying # Mono
     pryPowered: true
@@ -250,6 +251,7 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+    - FootstepSound # LuaM
     - CivilianMechBounty # Mono
   - type: Prying # Mono
     pryPowered: true

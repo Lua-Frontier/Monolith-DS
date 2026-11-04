@@ -1,0 +1,38 @@
+- type: constructionGraph
+  id: PlastitaniumWindowDirectional
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: plastitaniumWindowDirectional
+          steps:
+            - material: ReinforcedGlass
+              amount: 1
+              doAfter: 2
+            - material: Plastitanium
+              amount: 1
+              doAfter: 3
+
+    - node: plastitaniumWindowDirectional
+      entity: PlastitaniumWindowDirectional
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetRGlass1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: SheetPlastitanium1
+              amount: 1
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Welding
+              doAfter: 4
+            - tool: Screwing
+              doAfter: 2
+            - tool: Prying
+              doAfter: 3
+            - tool: Welding
+              doAfter: 4
+            - tool: Anchoring
+              doAfter: 3

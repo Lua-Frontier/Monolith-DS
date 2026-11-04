@@ -22,11 +22,31 @@
           - !type:OrganType
             type: Human
             shouldHave: false
+      - !type:SatiateThirst # LuaM
+        factor: 1.5
+        conditions:
+          - !type:OrganType
+            type: Demon
+      - !type:ModifyBloodLevel # LuaM
+        amount: 1
+        conditions:
+          - !type:OrganType
+            type: Demon
     Food:
       effects:
         - !type:AdjustReagent
           reagent: UncookedAnimalProteins
           amount: 0.1
+          conditions: # LuaM
+          - !type:OrganType
+            type: Demon
+            shouldHave: false
+        - !type:AdjustReagent # LuaM
+          reagent: Protein
+          amount: 0.1
+          conditions:
+          - !type:OrganType
+            type: Demon
     Medicine:
       effects:
       - !type:EvenHealthChange

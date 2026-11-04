@@ -578,6 +578,9 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     // Mono
     private void OnTileFriction(Entity<ProjectileComponent> ent, ref TileFrictionEvent args)
     {
+        if (ent.Comp.OnlyCollideWhenShot && (ent.Comp.Weapon == null || ent.Comp.ProjectileSpent)) // LuaM
+            return;
+
         args.Modifier = ent.Comp.LinearDampening;
     }
 

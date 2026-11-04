@@ -185,6 +185,9 @@
   name: security glasses
   description: Upgraded sunglasses that provide flash immunity and a security HUD.
   components:
+  - type: PhysicalComposition # LuaM: half of the crafting cost
+    materialComposition:
+      Steel: 35
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/secglasses.rsi
   - type: Clothing

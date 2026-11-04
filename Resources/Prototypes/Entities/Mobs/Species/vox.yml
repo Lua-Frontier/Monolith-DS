@@ -79,10 +79,10 @@
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "id" ] # Mono - move from between belt and back
     - map: [ "outerClothing" ] # mono - i hate you upstream
+    - map: [ "shoes" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "back" ]
@@ -90,12 +90,12 @@
     - map: [ "neck2" ]
     - map: [ "neck3" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "mask" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "suitstorage" ] # This is not in the default order
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "helmetcover" ]
     - map: [ "helmetattachment" ]

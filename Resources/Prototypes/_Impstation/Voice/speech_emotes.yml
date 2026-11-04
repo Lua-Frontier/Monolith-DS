@@ -20,6 +20,11 @@
     - bubbling
     - bubbled
     # End Frontier: emote consistency
+    # LuaM start
+    - булькает
+    - булькать
+    - бульк
+    # LuaM end
 
 - type: emote
   id: Pop
@@ -42,6 +47,11 @@
     - popping
     - popped
     # End Frontier: emote consistency
+    # LuaM start
+    - чпокает
+    - чпокнуть
+    - чпок
+    # LuaM end
 
 - type: emote
   id: ReptilianHiss

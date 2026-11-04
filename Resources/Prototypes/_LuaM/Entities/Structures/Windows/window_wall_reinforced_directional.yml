@@ -1,0 +1,80 @@
+- type: entity
+  id: WindowWallReinforcedDirectional
+  parent: WindowDirectionalRCDResistant
+  name: directional reinforced-frame window
+  description: A directional window set in a reinforced wall frame. Almost as tough as the wall itself.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Windows/directional_reinforced.rsi
+    state: reinforced_window
+  - type: Icon
+    sprite: _LuaM/Structures/Windows/directional_reinforced.rsi
+    state: reinforced_window
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,-0.25"
+        density: 3000
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: RGlass
+  - type: Construction
+    graph: WindowWallReinforcedDirectional
+    node: windowWallReinforcedDirectional
+  - type: Appearance
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    damageDivisor: 6
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks_directional.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlassReinforced:
+            min: 1
+            max: 1
+          PartRodMetal:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Repairable
+    qualities:
+    - Welding
+    - Applicating
+    fuelCost: 10
+    doAfterDelay: 2
+  - type: DeltaPressure
+    minPressure: 45000
+    minPressureDelta: 30000
+    scalingType: Threshold
+  - type: StaticPrice
+    price: 60
+  - type: ShipRepairable
+    repairTime: 8
+    repairCost: 8

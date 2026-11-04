@@ -6,6 +6,11 @@
     collection: RpPat
   messages: RpCheeksPatMessages
   icon: _LuaM/Interface/RpPanel/cheeks_pat.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: CheeksPress
@@ -15,6 +20,16 @@
     collection: RpPat
   messages: RpCheeksPressMessages
   icon: _LuaM/Interface/RpPanel/cheeks_press.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: Mewing
@@ -24,6 +39,11 @@
     collection: RpFriction
   selfMessages: RpMewingSelfMessages
   icon: _LuaM/Interface/RpPanel/mewing.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: SuspiciousLook
@@ -33,6 +53,11 @@
     collection: RpVineBoom
   selfMessages: RpSuspiciousLookSelfMessages
   icon: _LuaM/Interface/RpPanel/heart_icon.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: FriendlyNoseBoop
@@ -42,6 +67,11 @@
     collection: RpPat
   messages: RpFriendlyNoseBoopMessages
   icon: _LuaM/Interface/RpPanel/friendly_nose_boop.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: Kitty
@@ -58,6 +88,11 @@
     - Rodentia
     - Tajaran
     - Vulpkanin
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: BlowSlap
@@ -76,6 +111,11 @@
     collection: RpBang
   selfMessages: RpBlowSlapUsersSelfMessages
   icon: _LuaM/Interface/RpPanel/blow_slap.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: HittingFace
@@ -94,6 +134,11 @@
     collection: RpDisappointment
   messages: RpShedTearMessages
   icon: _LuaM/Interface/RpPanel/cry.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
 
 - type: rpInteraction
   id: Kiss
@@ -103,3 +148,56 @@
     collection: RpKiss
   messages: RpKissMessages
   icon: _LuaM/Interface/RpPanel/kiss.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: Wink
+  category: Face
+  kind: Soft
+  range: 2.0
+  sound:
+    collection: RpClick
+  messages: RpWinkMessages
+  icon: _LuaM/Interface/RpPanel/heart_icon.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: WipeTears
+  category: Face
+  kind: Soft
+  sound:
+    collection: RpPat
+  messages: RpWipeTearsMessages
+  icon: _LuaM/Interface/RpPanel/cry.png
+  targetRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+
+- type: rpInteraction
+  id: Yawn
+  category: Face
+  kind: Soft
+  sound:
+    collection: RpFriction
+  selfMessages: RpYawnSelfMessages
+  icon: _LuaM/Interface/RpPanel/mewing.png
+  userRequirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC

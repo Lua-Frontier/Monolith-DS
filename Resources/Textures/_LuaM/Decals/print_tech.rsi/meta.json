@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by c_quarian (discord) for Monolith-DS",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "printtech1"
+    },
+    {
+      "name": "printtech2"
+    },
+    {
+      "name": "printtech3"
+    },
+    {
+      "name": "printtech4"
+    },
+    {
+      "name": "printtech5"
+    },
+    {
+      "name": "printtech6"
+    }
+  ]
+}

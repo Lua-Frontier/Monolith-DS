@@ -1,6 +1,5 @@
 using Content.Shared.Interaction;
 using Content.Shared.Pinpointer;
-using System.Linq;
 using System.Numerics;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Events;
@@ -114,9 +113,9 @@ public sealed partial class PinpointerSystem : SharedPinpointerSystem
         if (transform == null)
             return null;
 
-        // sort all entities in distance increasing order
         var mapId = transform.MapID;
-        var l = new SortedList<float, EntityUid>();
+        EntityUid? closest = null; // LuaM
+        var closestDist = float.MaxValue; // LuaM
         var worldPos = _transform.GetWorldPosition(transform);
 
         foreach (var (otherUid, _) in EntityManager.GetAllComponents(whitelist))
@@ -125,11 +124,15 @@ public sealed partial class PinpointerSystem : SharedPinpointerSystem
                 continue;
 
             var dist = (_transform.GetWorldPosition(compXform) - worldPos).LengthSquared();
-            l.TryAdd(dist, otherUid);
+            if (dist >= closestDist) // LuaM
+                continue;
+
+            closest = otherUid; // LuaM
+            closestDist = dist; // LuaM
         }
 
         // return uid with a smallest distance
-        return l.Count > 0 ? l.First().Value : null;
+        return closest; // LuaM
     }
 
     /// <summary>
@@ -143,25 +146,23 @@ public sealed partial class PinpointerSystem : SharedPinpointerSystem
         if (!pinpointer.IsActive)
             return;
 
+        var oldDist = pinpointer.DistanceToTarget; // LuaM
         var target = pinpointer.Target;
-        if (target == null || !Exists(target.Value))
+        if (target != null && !Exists(target.Value)) // LuaM
         {
-            SetDistance(uid, Distance.Unknown, pinpointer);
+            SetTarget(uid, null, pinpointer);
             return;
         }
 
-        var dirVec = CalculateDirection(uid, target.Value);
-        var oldDist = pinpointer.DistanceToTarget;
+        var dirVec = target == null ? null : CalculateDirection(uid, target.Value); // LuaM
 
         // Frontier: if the pinpointer has a max range and the distance to target is greater than the max range, set the distance to unknown
         if (pinpointer.MaxRange > 0 && dirVec != null && dirVec.Value.LengthSquared() > pinpointer.MaxRange * pinpointer.MaxRange)
         {
             SetDistance(uid, Distance.Unknown, pinpointer);
             TrySetArrowAngle(uid, Angle.Zero, pinpointer);
-            return;
         }
-
-        if (dirVec != null)
+        else if (dirVec != null) // LuaM
         {
             var angle = dirVec.Value.ToWorldAngle();
             TrySetArrowAngle(uid, angle, pinpointer);
@@ -182,12 +183,10 @@ public sealed partial class PinpointerSystem : SharedPinpointerSystem
     /// <returns>Null if failed to calculate distance between two entities</returns>
     private Vector2? CalculateDirection(EntityUid pinUid, EntityUid trgUid)
     {
-        var xformQuery = GetEntityQuery<TransformComponent>();
-
         // check if entities have transform component
-        if (!xformQuery.TryGetComponent(pinUid, out var pin))
+        if (!_xformQuery.TryGetComponent(pinUid, out var pin)) // LuaM
             return null;
-        if (!xformQuery.TryGetComponent(trgUid, out var trg))
+        if (!_xformQuery.TryGetComponent(trgUid, out var trg)) // LuaM
             return null;
 
         // check if they are on same map
@@ -195,7 +194,7 @@ public sealed partial class PinpointerSystem : SharedPinpointerSystem
             return null;
 
         // get world direction vector
-        var dir = _transform.GetWorldPosition(trg, xformQuery) - _transform.GetWorldPosition(pin, xformQuery);
+        var dir = _transform.GetWorldPosition(trg, _xformQuery) - _transform.GetWorldPosition(pin, _xformQuery); // LuaM
         return dir;
     }
 
