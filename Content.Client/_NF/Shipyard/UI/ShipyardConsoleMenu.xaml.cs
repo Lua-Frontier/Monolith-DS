@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._LuaM.Guidebook; // LuaM: guidebook rendering pause
 using Content.Client.UserInterface.Controls;
 using Content.Client._NF.Shipyard.BUI;
 using Content.Shared._NF.Bank;
@@ -25,7 +26,7 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     public event Action<string>? OnRenameShip;
     public event Action<VesselPrototype>? OnPreviewShip; // Lua: ButtonEventArgs > VesselPrototype
     public event Action<NetEntity?>? OnDockPortSelected; // Lua
-    private readonly ShipyardConsoleBoundUserInterface _menu;
+    private bool _guidebookReadOnly; // LuaM: reuse the shipyard UI without a BUI or transactions.
     private readonly List<VesselSize> _categoryStrings = new();
     private readonly List<VesselClass> _classStrings = new();
     private readonly List<VesselEngine> _engineStrings = new();
@@ -48,12 +49,11 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     private bool _hyperwarLimits;
     private ConfirmButton? _currentlyConfirmingButton;
     // Lua end
-
-    public ShipyardConsoleMenu(ShipyardConsoleBoundUserInterface owner)
+    public ShipyardConsoleMenu(ShipyardConsoleBoundUserInterface? owner = null) // LuaM: reuse the shipyard UI without a BUI or transactions.
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-        _menu = owner;
+        // Removed upstream code/entries replaced by the Coloss guidebook flow. // LuaM: reuse the shipyard UI without a BUI or transactions.
         _xform = _entManager.System<SharedTransformSystem>(); // Lua
         Title = Loc.GetString("shipyard-console-menu-title");
         SearchBar.OnTextChanged += OnSearchBarTextChanged;
@@ -65,6 +65,23 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
         RenameButton.OnPressed += OnRenameButtonPressed;
         DockRadar.OnRadarClick += OnDockRadarClick; // Lua
     }
+    // LuaM-start: reuse the shipyard UI without a BUI or transactions.
+
+    /// <summary>A local reference window, without a bound interface or transaction handlers.</summary>
+    public void SetGuidebookReadOnly(string name, List<string> vessels)
+    {
+        _guidebookReadOnly = true;
+        Title = name;
+        ShipManagement.Visible = false;
+        MinSize = new(600, 440);
+        _freeListings = false;
+        _validId = false;
+        PopulateCategories(vessels, new());
+        PopulateClasses(vessels, new());
+        PopulateEngines(vessels, new());
+        PopulateProducts(vessels, new(), false, false);
+    }
+    // LuaM-end
 
     // Lua start
     public void UpdateDockSelect(NavInterfaceState? nav, NetEntity? selectedPort)
@@ -186,7 +203,7 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     /// </summary>
     public void PopulateProducts(List<string> availablePrototypes, List<string> unavailablePrototypes, bool free, bool canPurchase)
     {
-        Vessels.RemoveAllChildren();
+        foreach (var child in Vessels.Children.ToArray()) child.Dispose(); // LuaM: reuse the shipyard UI without a BUI or transactions.
         _currentlyConfirmingButton = null; // Lua
 
         var search = SearchBar.Text.Trim().ToLowerInvariant();
@@ -250,7 +267,7 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
             // Lua start
             var limit = _hyperwarLimits ? prototype.HyperwarLimitActive : prototype.LimitActive;
             var limitRemain = limit - _limitedCounts.GetValueOrDefault((ProtoId<VesselPrototype>) prototype.ID);
-            var purchaseDisabled = !canPurchase || limit > 0 && limitRemain <= 0;
+            var purchaseDisabled = _guidebookReadOnly || !canPurchase || limit > 0 && limitRemain <= 0; // LuaM: reuse the shipyard UI without a BUI or transactions.
             // Lua end
 
             var vesselEntry = new VesselRow
@@ -263,12 +280,16 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
                 Purchase = { Disabled = purchaseDisabled, TooltipDelay = 0.2f, ToolTip = GetLocalizedVesselDescription(prototype) }, // LuaM: description moved from the disabled Preview button
                 // Lua end
                 Price = { Text = priceText },
+                // LuaM-start: reuse the shipyard UI without a BUI or transactions.
+                Preview = { Visible = _guidebookReadOnly, Disabled = !GuidebookMapRendering.Enabled,
+                    ToolTip = "Просмотр планов временно отключён." }, // LuaM: pause preview only; live console behavior stays unchanged
+                // LuaM-end
             };
             vesselEntry.Purchase.OnConfirming += OnStartConfirmingPurchase; // Lua
             vesselEntry.Purchase.OnPressed += _ =>
             {
                 _currentlyConfirmingButton = null; // Lua
-                OnOrderApproved?.Invoke(prototype);
+                if (!_guidebookReadOnly) OnOrderApproved?.Invoke(prototype); // LuaM: reuse the shipyard UI without a BUI or transactions.
             };
             vesselEntry.Preview.OnPressed += _ => OnPreviewShip?.Invoke(prototype);
             Vessels.AddChild(vesselEntry);

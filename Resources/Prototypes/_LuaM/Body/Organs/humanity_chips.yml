@@ -4,6 +4,11 @@
   id: BaseOrganHumanityChip
   abstract: true
   components:
+  # LuaM-start: contextual cybernetics guide.
+  - type: GuideHelp
+    guides:
+    - ColossusHumanity
+  # LuaM-end
   - type: EmitSoundOnPickup
     sound:
       collection: OrganInteraction

@@ -99,10 +99,11 @@
   #  access: [["Engineering"]]
   - type: Lock
     unlockOnClick: false
+  # LuaM-start: contextual help uses the Colossus guide.
   - type: GuideHelp
     guides:
-    - NuclearReactor
-    - Power
+    - ShipyardNFROperation
+  # LuaM-end
   # Mono
   - type: RequiresGrid
   - type: ShipRepairable

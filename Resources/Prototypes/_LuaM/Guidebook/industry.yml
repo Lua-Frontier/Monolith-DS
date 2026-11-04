@@ -1,0 +1,43 @@
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: IndustryMachineParts
+  name: guide-entry-industry-machine-parts
+  text: "/ServerInfo/_LuaM/Guidebook/MMC/MachineParts.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/MachineParts.xml > /ServerInfo/_LuaM/Guidebook/MMC/MachineParts.xml
+  priority: 20 # LuaM: 10 > 20 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: IndustryDrilling
+  name: guide-entry-industry-drilling
+  text: "/ServerInfo/_LuaM/Guidebook/MMC/Drilling.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Drilling.xml > /ServerInfo/_LuaM/Guidebook/MMC/Drilling.xml
+  priority: 40 # LuaM: 11 > 40 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: IndustryFabricators
+  name: guide-entry-industry-fabricators
+  text: "/ServerInfo/_LuaM/Guidebook/MMC/Fabricators.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Fabricators.xml > /ServerInfo/_LuaM/Guidebook/MMC/Fabricators.xml
+  priority: 30 # LuaM: 12 > 30 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: IndustryResearch
+  name: guide-entry-industry-research
+  text: "/ServerInfo/_LuaM/Guidebook/Research/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Research.xml > /ServerInfo/_LuaM/Guidebook/Research/Index.xml
+  priority: 7
+  bookRoot: true
+  children:
+  - ColossusArtifacts
+  - ColossusAnomalies
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: IndustryAutomation
+  name: guide-entry-industry-automation
+  text: "/ServerInfo/_LuaM/Guidebook/MMC/Automation.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Automation.xml > /ServerInfo/_LuaM/Guidebook/MMC/Automation.xml
+  priority: 60 # LuaM: 14 > 60 (section order)
+# LuaM-end

@@ -1,0 +1,17 @@
+<Document>
+# Остатки экспедиционных сил СССП
+СССП использует [textlink="станцию «Камелот»" link="LuaMCamelot"] как базу оставшегося в секторе контингента. На той же станции начинает [textlink="ЧВК «Вайпер»" link="Viper_Group"], у которой собственные должности и верфь.
+
+## Должности «Камелота»
+- [bold]Комиссар СССП[/bold] — 1 — руководит контингентом и поддерживает порядок среди подчинённых.
+- [bold]Сержант СССП[/bold] — 3 — организует действия стрелков.
+- [bold]Стрелок СССП[/bold] — 5 — выполняет приказы командования и задачи подразделения.
+
+Число обозначает общий штат. Отдельные прототипы ефрейтора и медика не добавляют должности в обычное лобби «Камелота».
+
+<GuideEntityCards><GuideEntityEmbed Entity="WeaponRifleAK502"/><GuideEntityEmbed Entity="ClothingOuterHardsuitUsspL27"/></GuideEntityCards>
+
+[textlink="Оборудование Камелота" link="LuaMCamelot"] · [textlink="Правила сервера" link="LuaMRuleset"]
+
+[textlink="Служба и снабжение" link="USSP_SoP"] · [textlink="История Союза" link="LuaMLoreUSSP"]
+</Document>

@@ -1,10 +1,9 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Economy
-  name: guide-entry-eco # LuaM: Economy > guide-entry-eco
-  text: "/ServerInfo/_Mono/Guidebook/Economy/Economy.xml"
-  priority: 1
-  children:
-  - ArcFurnace # LuaM: EconomyRecipes > ArcFurnace
+  name: guide-entry-colossus-production # LuaM: guide-entry-eco > guide-entry-colossus-production
+  text: "/ServerInfo/_LuaM/Guidebook/MMC/Economy.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/Economy.xml > /ServerInfo/_LuaM/Guidebook/MMC/Economy.xml
+  priority: 10 # LuaM: 1 > 10 (section order)
 
 #- type: guideEntry # Commented by LuaM
 #  id: EconomyRecipes
@@ -13,9 +12,12 @@
 #  priority: 2
 #  children:
 #  - ArcFurnace
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ArcFurnace
-  name: guide-entry-arc-furnace # LuaM: Arc Furnace Recipes > guide-entry-arc-furnace
-  text: "/ServerInfo/_Mono/Guidebook/Economy/ArcFurnace.xml"
-  priority: 2 # LuaM: 3 > 2
+  name: guide-entry-colossus-furnace # LuaM: guide-entry-arc-furnace > guide-entry-colossus-furnace
+  text: "/ServerInfo/_LuaM/Guidebook/MMC/ArcFurnace.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/ArcFurnace.xml > /ServerInfo/_LuaM/Guidebook/MMC/ArcFurnace.xml
+  priority: 50 # LuaM: 2 > 50 (section order)
+# LuaM-end

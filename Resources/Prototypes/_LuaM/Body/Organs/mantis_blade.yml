@@ -6,6 +6,11 @@
   name: mantis blade implant
   description: A covert deployable mantis blade that hides inside the arm.
   components:
+  # LuaM-start: contextual cybernetics guide.
+  - type: GuideHelp
+    guides:
+    - ColossusMantisBlades
+  # LuaM-end
   - type: Tag
     tags:
     - SafetyDepositBlacklist # can not be carried between shifts

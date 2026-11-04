@@ -1,54 +1,62 @@
 - type: guideEntry
   id: NF14
-  name: guide-entry-nf14
-  text: "/ServerInfo/_NF/Guidebook/NewFrontier14.xml"
-  priority: -1
-  children: # note: children may be in other files. When adding to this, update the priority of anything after.
-  - Bank
-  - SafetyDepositBox
-  - Hiring
-  - Piloting
-  - Survival # Moved out from Station and Shifts section (upstream file)
-  - SectorTopology
-  - Expeditions
-  - CargoHauling # TODO: separate this out along with salvage and mining into some NF_Cargo section
+  # LuaM-start: curated Coloss guidebook navigation.
+  name: guide-entry-colossus-ships # LuaM: guide-entry-nf14 > guide-entry-colossus-ships
+  text: "/ServerInfo/_LuaM/Guidebook/Ships/Index.xml" # LuaM: "/ServerInfo/_NF/Guidebook/NewFrontier14.xml" > "/ServerInfo/_LuaM/Guidebook/Ships/Index.xml"
+  priority: 1 # LuaM: -1 > 1
+  bookRoot: true # LuaM: curated server guidebook
+  children:
   - Shipyard
-  - WeaponsSystems # mono
-  - Creatures # mono
-  - MonoMisc # mono
+  # LuaM-end
+  - Piloting
+  # LuaM-start: curated Coloss guidebook navigation.
+  - ColossusOrientation
+  - GridClaimer
+  - WeaponsSystems
+  # LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Bank
   name: guide-entry-bank
-  text: "/ServerInfo/_NF/Guidebook/Bank.xml"
-  priority: 0
+  text: "/ServerInfo/_LuaM/Guidebook/Start/Bank.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/Bank.xml > /ServerInfo/_LuaM/Guidebook/Start/Bank.xml
+  priority: 30 # LuaM: 0 > 30 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: SafetyDepositBox
   name: guide-entry-safety-deposit-box
-  text: "/ServerInfo/_NF/Guidebook/SafetyDepositBox.xml"
-  priority: 0
+  text: "/ServerInfo/_LuaM/Guidebook/Start/SafetyDepositBox.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/SafetyDepositBox.xml > /ServerInfo/_LuaM/Guidebook/Start/SafetyDepositBox.xml
+  priority: 40 # LuaM: 0 > 40 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Hiring
   name: guide-entry-hiring
-  text: "/ServerInfo/_NF/Guidebook/Hiring.xml"
-  priority: 1
+  text: "/ServerInfo/_LuaM/Guidebook/Start/Crew.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/Hiring.xml > /ServerInfo/_LuaM/Guidebook/Start/Crew.xml
+  priority: 50 # LuaM: 1 > 50 (section order)
+# LuaM-end
 
 - type: guideEntry
   id: Piloting
   name: guide-entry-piloting
-  text: "/ServerInfo/_NF/Guidebook/Piloting.xml"
-  priority: 2
+  text: "/ServerInfo/_LuaM/Guidebook/Ships/Piloting.xml" # LuaM: "/ServerInfo/_NF/Guidebook/Piloting.xml" > "/ServerInfo/_LuaM/Guidebook/Ships/Piloting.xml"
+  priority: 20 # LuaM: 2 > 20 (section order)
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: SectorTopology
   name: guide-entry-sector-topology
-  text: "/ServerInfo/_NF/Guidebook/SectorTopology.xml"
-  priority: 6
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Topology.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Ships/SectorTopology.xml > /ServerInfo/_LuaM/Guidebook/Sector/Topology.xml
+  priority: 30 # LuaM: 6 > 30 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: CargoHauling
   name: guide-entry-cargo-hauling
-  text: "/ServerInfo/_NF/Guidebook/CargoHauling.xml"
-  priority: 6
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/CargoHauling.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/CargoHauling.xml > /ServerInfo/_LuaM/Guidebook/Activities/CargoHauling.xml
+  priority: 30 # LuaM: 6 > 30 (section order)
+# LuaM-end

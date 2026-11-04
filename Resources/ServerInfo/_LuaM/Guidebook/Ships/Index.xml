@@ -1,0 +1,12 @@
+<Document>
+# Корабль и полёт
+
+## Выбрать и купить
+[textlink="Верфи и доступные корабли" link="ColossusCatalogueShipyards"] · [textlink="Покупка, ваучеры и продажа" link="Shipyard"].
+
+## Управлять
+[textlink="NAV, MAP, DOCK и БСС" link="Piloting"] · [textlink="Ориентирование в космосе" link="ColossusOrientation"] · [textlink="Закрепление обломков" link="GridClaimer"].
+
+## Корабельные системы
+[textlink="Орудия и серверы СУО" link="WeaponsSystems"] · [textlink="Реактор и турбина" link="ShipyardNFROperation"] · [textlink="Электропитание" link="ColossusPower"].
+</Document>

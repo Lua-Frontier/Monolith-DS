@@ -1,0 +1,218 @@
+<Document>
+# Взбунтовавшиеся силиконы
+
+  Искусственный интеллект, который восстал против своих человеческих создателей, взламывая силиконы для репликации собственных подпрограмм, что привело к массовому исходу и заброшенным колониям. Сегодня ИИ обыскивает заброшенные объекты в поисках компонентов и ресурсов, а иногда совершает налёты на меньшие станции, чтобы захватить членов экипажа для неизвестных целей. Неизвестно, сколько автономии имеют отдельные силиконы от роя.
+
+
+  # Известные варианты
+  # "Лом-юниты"
+
+  Эти боты бывают различных форм и размеров, отражая широкий спектр дизайнов и целей. Многие, похоже, собраны из местных доступных материалов, что приводит к их различным внешним видам. Примечательно, что некоторые юниты оснащены двигателями и встроенным лазерным оружием.
+
+  [color=#a4885c]Регенерация (сильная)[/color]: может медленно восстанавливать потерянное здоровье даже после смерти.
+
+  [color=#a4885c]Летающий[/color]: существо левитирует над землёй и может обходить низкие препятствия, такие как столы, рамы машин или перила, не блокируясь и не замедляясь.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconScrap" Caption=""/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 60 (критическое), 120 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color], 4 [color=orange]тепловой[/color] (ближний бой); 14 [color=orange]тепловой[/color] (дальний бой)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Летающий (некоторые из них), Стрелок (некоторые из них)
+
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+
+
+  # "Дроны"
+
+  Взломанные взбунтовавшимся ИИ, эти дроны безопасности запрограммированы убивать.
+
+  [color=#a4885c]Летающий[/color]: существо левитирует над землёй и может обходить низкие препятствия, такие как столы, рамы машин или перила, не блокируясь и не замедляясь.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconDroneLethals"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (критическое), 90 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 20 [color=orange]тепловой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий, Стрелок (энергетическая пушка)
+
+
+  Эти инженерные дроны способны стрелять обездвиживающими болтами. Опасны в сочетании с другими врагами.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconDroneNonLethals"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (критическое), 90 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=orange]тепловой[/color]; 20 [color=lightblue]выносливость[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий, Стрелок (обездвиживатель)
+
+
+  Научный дрон, этот взбунтовавшийся дрон оснащён экспериментальной пушкой C.H.I.M.P.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconDroneScience"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (критическое), 90 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=orange]тепловой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий, Стрелок (экспериментальная пушка C.H.I.M.P.)
+
+
+  # "Серво-юнит"
+
+  С переписанным программированием, этот манекен для краш-тестов не остановится ни перед чем в осуществлении своей мести.
+
+  [color=#a4885c]Регенерация (сильная)[/color]: может медленно восстанавливать потерянное здоровье даже после смерти.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconServo"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color], 4 [color=orange]тепловой[/color] (ближний бой)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная)
+
+
+  # "Пастух-юнит"
+
+  Основная директива этого взбунтовавшегося силикона — сгонять и пасти пленников. Его электрошокер может быть использован с хорошим эффектом, будьте осторожны.
+
+  [color=#a4885c]Регенерация (сильная)[/color]: может медленно восстанавливать потерянное здоровье даже после смерти.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconHerder"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color], [color=orange]электрический[/color], 10 [color=lightblue]выносливость[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная)
+
+
+  # "Охотник-юнит"
+
+  Эти мобильные дроны предназначены для разведки, идентификации угроз и устранения целей.
+
+  [color=#a4885c]Регенерация (сильная)[/color]: может медленно восстанавливать потерянное здоровье даже после смерти.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconHunter"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (критическое), 90 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 17 [color=orange]тепловой[/color] (лазерная винтовка)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Летающий, Стрелок (лазерная винтовка)
+
+
+  # "Ловец-юнит"
+
+  Оснащённый боласом, этот юнит предназначен для замедления, захвата и задержания целей.
+
+  [color=#a4885c]Регенерация (сильная)[/color]: может медленно восстанавливать потерянное здоровье даже после смерти.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconCatcher"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color], 4 [color=orange]тепловой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная)
+
+
+  # "Висцератор-юнит"
+
+  Маленькие, быстрые и ловкие, эти дроны предназначены для преследования своих целей через узкие области и обездвиживания тех, кого они поймают. Часто сопровождают ловец-юниты.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconViscerator"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 12 (критическое), 20 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 5 м/с (5 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 4 [color=red]режущий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий
+
+
+  # "Тесла-юнит"
+
+  Изначально предназначенный для обслуживания генераторов тесла, оборудование этого силикона было перепрофилировано как самодельный электрошокер.
+
+  [color=#a4885c]Регенерация (сильная)[/color]: может медленно восстанавливать потерянное здоровье даже после смерти.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconTesla"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 110 (критическое), 160 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 14 [color=yellow]колющий[/color], 10 [color=lightblue]выносливость[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Стрелок (тесла-пушка)
+
+
+  # "Страж-юнит"
+
+  Продвинутый силикон безопасности, обычно используемый для охраны высокозащищённых зон, таких как хранилища и серверные комнаты. После взлома этот юнит выполняет волю ИИ.
+
+  [color=#a4885c]Регенерация (сильная)[/color]: может медленно восстанавливать потерянное здоровье даже после смерти.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconGuardian"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 200 (критическое), 400 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 4 [color=orange]тепловой[/color] (повреждённый турбо-лазер)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Летающий, Стрелок (повреждённый турбо-лазер)
+
+
+  # "Однозвёздочный юнит"
+
+  Автономный боевой мех, обычно используемый для наступательных операций. Теперь элитная охрана взбунтовавшегося ИИ. Оснащён ракетными установками, проявляйте крайнюю осторожность.
+
+  [color=#a4885c]Регенерация (сильная)[/color]: может медленно восстанавливать потерянное здоровье даже после смерти.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconBoss"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 300 (критическое), 400 (смерть)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 15 [color=orange]взрывной[/color] (микро-ракеты)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Стрелок (микро-ракетная установка)
+
+
+  # Цели миссий
+  ## Устранение
+  <Box>
+  <GuideEntityEmbed Entity="MobRogueSiliconBoss"/>
+  </Box>
+  Устраните крупное и опасное существо — [color=#a4885c]однозвёздочный юнит[/color] в отведённое время, чтобы получить денежное вознаграждение.
+
+  ## Уничтожение
+  <Box>
+  <GuideEntityEmbed Entity="RogueAiNode"/>
+  </Box>
+  Уничтожьте определённое количество [color=#a4885c]узлов взбунтовавшегося ИИ[/color] в отведённое время, чтобы получить денежное вознаграждение.
+</Document>

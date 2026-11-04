@@ -1,38 +1,46 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Factions
   name: guide-entry-factions # LuaM: Factions > guide-entry-factions
-  text: "/ServerInfo/_Mono/Guidebook/Factions/factions.xml"
-  priority: 1
-  children:
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Factions.xml > /ServerInfo/_LuaM/Guidebook/Factions/Index.xml
+  priority: 3 # LuaM: 1 > 3
+  bookRoot: true
+  children: # LuaM: purpose-based guidebook navigation
   - TSFMC_Entry
   - PDV_Entry
   - Caelestinus
+  - ColossusMedicalFaction
   - USSP_Entry
   - Viper_Group
-  - MMC
+  - ColossusMMCFaction # LuaM: MMC faction overview
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: TSFMC_Entry
   name: guide-entry-tsf # LuaM: TSFMC > guide-entry-tsf
-  text: "/ServerInfo/_Mono/Guidebook/Factions/TSFMC.xml"
-  priority: 2
-  children:
-  - Smuggling
-  - TSFMC_SOP
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/TSF/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/TSFMC_Entry.xml > /ServerInfo/_LuaM/Guidebook/Factions/TSF/Index.xml
+  priority: 10 # LuaM: 2 > 10 (section order)
+  children: # LuaM: purpose-based guidebook navigation
   - TSFMC_org
-  - TSFMC_Culture
+  - TSFMC_SOP
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: PDV_Entry
-  name: PDV
-  text: "/ServerInfo/_Mono/Guidebook/Factions/PDV.xml"
-  priority: 3
+  name: guide-entry-colossus-pdv # LuaM: PDV > guide-entry-colossus-pdv
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/PDV/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/PDV_Entry.xml > /ServerInfo/_LuaM/Guidebook/Factions/PDV/Index.xml
+  priority: 20 # LuaM: 3 > 20 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Smuggling
   name: guide-entry-nfsd-smuggling # LuaM: Smuggling > guide-entry-nfsd-smuggling
-  text: "/ServerInfo/_NF/Guidebook/NFSD/Smuggling.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Contraband.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/Smuggling.xml > /ServerInfo/_LuaM/Guidebook/Activities/Contraband.xml
   priority: 4
+# LuaM-end
 
 - type: guideEntry
   id: Defusal
@@ -40,74 +48,100 @@
   text: "/ServerInfo/Guidebook/Security/Defusal.xml"
   priority: 5
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: TSFMC_SOP
-  name: S.O.P.
-  text: "/ServerInfo/_Mono/Guidebook/Factions/TSFMC_SOP.xml"
-  priority: 0
+  name: guide-entry-colossus-tsf-sop # LuaM: S.O.P. > guide-entry-colossus-tsf-sop
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/TSF/Service.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/TSFMC_SOP.xml > /ServerInfo/_LuaM/Guidebook/Factions/TSF/Service.xml
+  priority: 20 # LuaM: 0 > 20 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: TSFMC_org
-  name: Structure
-  text: "/ServerInfo/_Mono/Guidebook/Factions/TSFMC_org.xml"
-  priority: 3
-  children:
-  - TSFMC_Brigade
-  - TSFMC_Ranks
+  name: guide-entry-colossus-tsf-structure # LuaM: Structure > guide-entry-colossus-tsf-structure
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/TSF/Command.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/TSFMC_org.xml > /ServerInfo/_LuaM/Guidebook/Factions/TSF/Command.xml
+  priority: 10 # LuaM: 3 > 10 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: TSFMC_Brigade
-  name: 21st Brigade
-  text: "/ServerInfo/_Mono/Guidebook/Factions/TSFMC_Brigade.xml"
-  priority: 0
+  name: guide-entry-colossus-tsf-brigade # LuaM: 21st Brigade > guide-entry-colossus-tsf-brigade
+  text: "/ServerInfo/_LuaM/Guidebook/Lore/TSF/Brigade.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/TSFMC_Brigade.xml > /ServerInfo/_LuaM/Guidebook/Lore/TSF/Brigade.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: TSFMC_Ranks
-  name: Ranks
-  text: "/ServerInfo/_Mono/Guidebook/Factions/TSFMC_Ranks.xml"
+  name: guide-entry-colossus-tsf-ranks # LuaM: Ranks > guide-entry-colossus-tsf-ranks
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/TSF/Command.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/TSFMC_Ranks.xml > /ServerInfo/_LuaM/Guidebook/Factions/TSF/Command.xml
   priority: 0
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: TSFMC_Culture
-  name: Culture
-  text: "/ServerInfo/_Mono/Guidebook/Factions/TSFMC_Culture.xml"
+  name: guide-entry-colossus-tsf-culture # LuaM: Culture > guide-entry-colossus-tsf-culture
+  text: "/ServerInfo/_LuaM/Guidebook/Lore/TSF/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/TSFMC_Culture.xml > /ServerInfo/_LuaM/Guidebook/Lore/TSF/Index.xml
   priority: 0
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: USSP_Entry
-  name: USSP
-  text: "/ServerInfo/_Mono/Guidebook/Factions/USSP_Remnants.xml"
-  priority: 7
-  children:
+  name: guide-entry-colossus-ussp-remnants # LuaM: USSP > guide-entry-colossus-ussp-remnants
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/USSP/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/USSP_Entry.xml > /ServerInfo/_LuaM/Guidebook/Factions/USSP/Index.xml
+  priority: 50 # LuaM: 7 > 50 (section order)
+  children: # LuaM: purpose-based guidebook navigation
   - USSP_SoP
-  - USSP_Overview
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: USSP_SoP
-  name: S.O.P
-  text: "/ServerInfo/_Mono/Guidebook/Factions/USSP_SOP.xml"
-  priority: 8
+  name: guide-entry-colossus-ussp-sop # LuaM: S.O.P > guide-entry-colossus-ussp-sop
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/USSP/Service.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/USSP_SoP.xml > /ServerInfo/_LuaM/Guidebook/Factions/USSP/Service.xml
+  priority: 10 # LuaM: 8 > 10 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: USSP_Overview
-  name: Union of Soviet Socialist Planets
-  text: "/ServerInfo/_Mono/Guidebook/Factions/USSP.xml"
+  name: guide-entry-colossus-ussp # LuaM: Union of Soviet Socialist Planets > guide-entry-colossus-ussp
+  text: "/ServerInfo/_LuaM/Guidebook/Lore/USSP/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/USSP_Overview.xml > /ServerInfo/_LuaM/Guidebook/Lore/USSP/Index.xml
   priority: 9
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Viper_Group
-  name: The Viper Group
-  text: "/ServerInfo/_Mono/Guidebook/Factions/viper_group.xml"
-  priority: 11
+  name: guide-entry-colossus-viper # LuaM: The Viper Group > guide-entry-colossus-viper
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/Viper/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Setting/Viper_Group.xml > /ServerInfo/_LuaM/Guidebook/Factions/Viper/Index.xml
+  priority: 60 # LuaM: 11 > 60 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MMC
   name: guide-entry-mmc # LuaM: Mieyo Manufacturing Concern > guide-entry-mmc
-  text: "/ServerInfo/_LuaM/Guidebook/Factions/mmc.xml" # LuaM: _Mono > _LuaM, russian page
-  priority: 12
+  text: "/ServerInfo/_LuaM/Guidebook/MMC/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Factions/mmc.xml > /ServerInfo/_LuaM/Guidebook/MMC/Index.xml
+  priority: 8 # LuaM: 12 > 8
+  bookRoot: true
+  children:
+  - Economy
+  - IndustryMachineParts
+  - IndustryFabricators
+  - IndustryDrilling
+  - ArcFurnace
+  - IndustryAutomation
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Caelestinus
   name: guide-entry-caelestinus # LuaM: Caelestinus > guide-entry-caelestinus
-  text: "/ServerInfo/_LuaM/Guidebook/Factions/caelestinus.xml" # LuaM: _Mono > _LuaM, russian page
-  priority: 4
+  text: "/ServerInfo/_LuaM/Guidebook/Factions/Coloss/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Factions/caelestinus.xml > /ServerInfo/_LuaM/Guidebook/Factions/Coloss/Index.xml
+  priority: 30 # LuaM: 4 > 30 (section order)
+# LuaM-end

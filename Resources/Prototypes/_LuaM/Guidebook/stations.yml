@@ -1,0 +1,93 @@
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMStations
+  name: guide-entry-luam-stations
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Stations.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Index.xml
+  priority: 10 # LuaM: 1 > 10 (section order)
+  children:
+  - LuaMColossusCentral
+  - LuaMMedical
+  - LuaMCamelot
+  - LuaMHalicon
+  - LuaMHelios
+  - LuaMArcturus
+  - LuaMTradeMall
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMColossusCentral
+  name: guide-entry-luam-colossus-central
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/ColossusCentral.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/ColossusCentral.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/ColossusCentral.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMMedical
+  name: guide-entry-luam-medical
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Medical.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Medical.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Medical.xml
+  priority: 20 # LuaM: 0 > 20 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMCamelot
+  name: guide-entry-luam-camelot
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Camelot.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Camelot.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Camelot.xml
+  priority: 30 # LuaM: 0 > 30 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMHalicon
+  name: guide-entry-luam-halicon
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Halicon.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Halicon.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Halicon.xml
+  priority: 40 # LuaM: 0 > 40 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMArcturus
+  name: guide-entry-luam-arcturus
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Arcturus.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Arcturus.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Arcturus.xml
+  priority: 60 # LuaM: 0 > 60 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMTradeMall
+  name: guide-entry-luam-trade-mall
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/TradeMall.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/TradeMall.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/TradeMall.xml
+  priority: 70 # LuaM: 0 > 70 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMMonolithWreck
+  name: guide-entry-luam-monolith-wreck
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/MonolithWreck.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/MonolithWreck.xml > /ServerInfo/_LuaM/Guidebook/Sector/MonolithWreck.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMGameModes
+  name: guide-entry-luam-game-modes
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/GameModes.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/GameModes.xml > /ServerInfo/_LuaM/Guidebook/Sector/GameModes.xml
+  priority: 50 # LuaM: 0 > 50 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: LuaMHelios
+  name: guide-entry-luam-helios
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Helios.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Helios.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Helios.xml
+  priority: 50 # LuaM: 0 > 50 (section order)
+# LuaM-end
+
+- type: guideEntry
+  id: ColossusOrientation
+  name: guide-entry-colossus-orientation
+  text: /ServerInfo/_LuaM/Guidebook/Ships/Orientation.xml
+  priority: 30 # LuaM: 0 > 30 (section order)

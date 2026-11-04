@@ -1,0 +1,11 @@
+guide-entry-colossus-atmos = Атмос: смеси и синтез газа
+guide-entry-colossus-power = Электропитание и ТЭГ
+guide-entry-colossus-commodities = Цены газов и химикатов
+guide-entry-colossus-artifacts = Артефакты: узлы и стимулы
+guide-entry-colossus-anomalies = Аномалии: очки и сдерживание
+guide-entry-colossus-gas-tritium = Тритий
+guide-entry-colossus-gas-frezon = Фрезон
+guide-entry-colossus-gas-bz = BZ
+guide-entry-colossus-gas-healium = Хилиум
+guide-entry-colossus-gas-nitrium = Нитриум
+guide-entry-colossus-gas-pluoxium = Плюоксий

@@ -1,0 +1,36 @@
+# LuaCorp - AGPLv3. See AGPLv3.txt.
+
+- type: guideEntry
+  id: ColossusCyberneticOrgans
+  name: guide-entry-colossus-organs
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Organs.xml
+
+- type: guideEntry
+  id: ColossusCybernetics
+  name: guide-entry-colossus-implants
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/Index.xml
+  children:
+  - ColossusHumanity
+  - ColossusMantisBlades
+  - ColossusCNSImplants
+  - ColossusImplantProtection
+
+- type: guideEntry
+  id: ColossusHumanity
+  name: guide-entry-colossus-humanity
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/Humanity.xml
+
+- type: guideEntry
+  id: ColossusMantisBlades
+  name: guide-entry-colossus-mantis-blades
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/MantisBlades.xml
+
+- type: guideEntry
+  id: ColossusCNSImplants
+  name: guide-entry-colossus-cns
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/CNS.xml
+
+- type: guideEntry
+  id: ColossusImplantProtection
+  name: guide-entry-colossus-implant-protection
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/Protection.xml

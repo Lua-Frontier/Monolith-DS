@@ -1,5 +1,9 @@
 - type: job
   id: Contractor
+  # LuaM-start: faction guide for the selectable lobby role.
+  guides:
+  - BeginnerGuide
+  # LuaM-end
   name: job-name-contractor
   description: job-description-contractor
   playTimeTracker: JobPassenger

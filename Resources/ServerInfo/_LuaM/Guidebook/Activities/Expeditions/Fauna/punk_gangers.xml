@@ -1,0 +1,100 @@
+<Document>
+# Панки
+
+  Нежелательные сквоттеры в заброшенной собственности NT, эти панки сеют хаос, засоряют окрестности, злоупотребляют веществами и вообще повреждают имущество во имя хорошего времяпрепровождения.
+
+
+  # Известные варианты
+  # "Панки"
+
+  "Лица с преступными наклонностями", как их называют документы Службы Безопасности NT, вооружены различными оружиями. Эти оружия варьируются от самодельных заточек и обработанных дубинок до ржавых пистолетов и дробовиков. Некоторые могут быть в броне, так что планируйте соответственно.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobPunkGangerMeleeT1" Caption=""/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+
+
+  <Box>
+  <GuideEntityEmbed Entity="MobPunkGangerMeleeT2" Caption=""/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=orange]взрывной[/color] 10% (броня панков)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  <Box>
+  <GuideEntityEmbed Entity="MobPunkGangerMeleeT3" Caption=""/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 18 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] 10%; [color=yellow]колющий[/color] 60%; [color=orange]тепловой[/color] 10%; [color=orange]взрывной[/color] 20% (тяжёлая броня панков)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  <Box>
+  <GuideEntityEmbed Entity="MobPunkGangerPistol" Caption=""/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=yellow]колющий[/color] (.35 патрон)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (mk 58)
+
+
+  <Box>
+  <GuideEntityEmbed Entity="MobPunkGangerShotgun" Caption=""/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10-60 [color=yellow]колющий[/color] (10 за дробинку)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (дробовик)
+
+
+  <Box>
+  <GuideEntityEmbed Entity="MobPunkGangerSmg" Caption=""/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=yellow]колющий[/color] (.35 патрон)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=orange]взрывной[/color] 10% (броня панков)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (дрозд)
+
+
+  # "Лидер банды панков"
+
+  Требуется внушительная фигура, чтобы вести стаю уличного мусора. Эти лидеры обычно владеют собранными пистолетами-пулемётами и носят броню, взятую у несчастных сил безопасности. Обычно под метом и бухлом.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobPunkGangerLeader" Caption=""/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 17 [color=orange]тепловой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] 10%; [color=yellow]колющий[/color] 60%; [color=orange]тепловой[/color] 10%; [color=orange]взрывной[/color] 20% (тяжёлая броня панков)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (лазерная винтовка)
+
+
+  # Цели миссий
+  ## Устранение
+  <Box>
+  <GuideEntityEmbed Entity="MobPunkGangerLeader"/>
+  </Box>
+  Устраните крупное и опасное существо — [color=#a4885c]лидера банды панков[/color] в отведённое время, чтобы получить денежное вознаграждение.
+
+  ## Уничтожение
+  <Box>
+  <GuideEntityEmbed Entity="PunkPartySupplies"/>
+  </Box>
+  Уничтожьте определённое количество [color=#a4885c]припасов для вечеринок[/color] в отведённое время, чтобы получить денежное вознаграждение.
+</Document>

@@ -1,0 +1,13 @@
+<Document>
+# Дроны и регистраторы
+
+## Типы и области появления
+
+<GuideAutoCatalogue Kind="drones"/>
+
+## Состав регистраторов
+
+<GuideAutoCatalogue Kind="loot"/>
+
+[textlink="Охота на дронов" link="LuaMDroneLoot"].
+</Document>

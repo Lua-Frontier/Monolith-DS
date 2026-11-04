@@ -1,0 +1,33 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusCombat
+  name: guide-entry-colossus-personal-combat
+  text: "/ServerInfo/_LuaM/Guidebook/Combat/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Combat.xml > /ServerInfo/_LuaM/Guidebook/Combat/Index.xml
+  priority: 5
+  bookRoot: true
+  children:
+  - ArmorExplanation
+  - ColossusPersonalAmmo
+  - ColossusHandheldWeapons
+  - Defusal
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusMining
+  name: guide-entry-colossus-mining
+  text: "/ServerInfo/_LuaM/Guidebook/Activities/Mining.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/Mining.xml > /ServerInfo/_LuaM/Guidebook/Activities/Mining.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusFireControl
+  name: guide-entry-colossus-fire-control
+  text: "/ServerInfo/_LuaM/Guidebook/Ships/WeaponsSystems.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/FireControl.xml > /ServerInfo/_LuaM/Guidebook/Ships/WeaponsSystems.xml
+  filterEnabled: false
+# LuaM-end

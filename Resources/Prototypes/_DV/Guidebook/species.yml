@@ -28,7 +28,10 @@
   name: species-name-chitinid
   text: "/ServerInfo/Guidebook/Mobs/_DV/Chitinid.xml"
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Feroxi
   name: species-name-feroxi
-  text: "/ServerInfo/Guidebook/Mobs/_DV/Feroxi.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Feroxi.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Feroxi.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Feroxi.xml
+  priority: 210 # LuaM: 0 > 210 (section order)
+# LuaM-end

@@ -4,6 +4,11 @@
   id: BaseOrganCNSImplant
   abstract: true
   components:
+  # LuaM-start: contextual cybernetics guide.
+  - type: GuideHelp
+    guides:
+    - ColossusCNSImplants
+  # LuaM-end
   - type: Tag
     tags:
     - SafetyDepositBlacklist # can not be carried between shifts

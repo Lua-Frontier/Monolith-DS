@@ -1,4 +1,6 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Command
-  name: guide-entry-command
-  text: "/ServerInfo/Guidebook/Command.xml"
+  name: guide-entry-colossus-crew # LuaM: guide-entry-command > guide-entry-colossus-crew
+  text: "/ServerInfo/_LuaM/Guidebook/Start/Crew.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Command.xml > /ServerInfo/_LuaM/Guidebook/Start/Crew.xml
+# LuaM-end

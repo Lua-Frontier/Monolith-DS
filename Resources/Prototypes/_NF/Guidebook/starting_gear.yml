@@ -1,4 +1,7 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: StartingGear
   name: guide-entry-startinggear
-  text: "/ServerInfo/_NF/Guidebook/StartingGear.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/Start/Equipment.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/StartingGear.xml > /ServerInfo/_LuaM/Guidebook/Start/Equipment.xml
+  priority: 20 # LuaM: 0 > 20 (section order)
+# LuaM-end

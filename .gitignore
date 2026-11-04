@@ -300,6 +300,7 @@ desktop.ini
 
 # Images generated using the MapRenderer
 Resources/MapImages
+Resources/GuidebookRenders
 
 ## Docfx stuff
 /Content.Docfx/api/

@@ -1,0 +1,145 @@
+<Document>
+# Аномальная плоть
+
+  Блуждающие массы плоти, оживлённые аномальной энергией. Аномалия, породившая их, давно исчезла, но эти существа достаточно живучи, чтобы выживать самостоятельно. Их жизненный цикл и строение малоизвестны; ясно лишь, что они нападают и пытаются ассимилировать любые биологические формы жизни. Крайне агрессивны и атакуют всё, что считают угрозой — будьте осторожны.
+
+  Обычно монстры аномальной плоти используют грубую силу и численное преимущество для устранения угроз. Некоторые из них эволюционировали и могут атаковать на расстоянии.
+
+  Можно разделывать на мясо. Съедобно, если сможете удержать в желудке.
+
+
+  # Известные варианты
+  # "Джаред"
+
+  "Джареды" — безмозглые мясные щиты, которые бегут на угрозу, не заботясь о собственной безопасности. Они кажутся более хрупкими, чем обычный человек.
+
+  <GuideEntityCards>
+  <GuideEntityEmbed Entity="MobFleshJaredExpeditions"/>
+  <GuideEntityEmbed Entity="MobFleshJaredOldExpeditions"/>
+  </GuideEntityCards>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+
+
+  # "Голем"
+
+  "Големы" — безмозглые громилы, похожие на "Джаредов", но более массивные. Это делает их чуть выносливее, но менее ловкими.
+
+  <GuideEntityCards>
+  <GuideEntityEmbed Entity="MobFleshGolemExpeditions"/>
+  <GuideEntityEmbed Entity="MobFleshGolemAltExpeditions"/>
+  <GuideEntityEmbed Entity="MobFleshGolemOldExpeditions"/>
+  </GuideEntityCards>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 70 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Клешня"
+
+  "Клешни" — летающие мутанты, стреляющие биологическими снарядами: [color=#a4885c]костяными шипами[/color] с [color=lime]гастротоксином[/color] или маленькими живыми существами — [color=#a4885c]"пастями"[/color].
+
+  [color=#a4885c]Летающее существо[/color]: парит над землёй, может преодолевать низкие препятствия (столы, каркасы, перила) без замедления.
+
+  <GuideEntityCards>
+  <GuideEntityEmbed Entity="MobFleshClampExpeditions"/>
+  <GuideEntityEmbed Entity="DartAberrantFleshHorrorSpikeGuidebook"/>
+  </GuideEntityCards>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 40 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=yellow]колющий[/color], 6 [color=lime]токсичный[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее, стреляет: костяной шип / пасть
+
+  <GuideReagentEmbed Reagent="GastroToxin"/>
+
+
+  <GuideEntityCards>
+  <GuideEntityEmbed Entity="MobFleshClampOldExpeditions"/>
+  <GuideEntityEmbed Entity="MobMawExpeditionsGuidebook"/>
+  </GuideEntityCards>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 40 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 4 [color=red]режущий[/color] (пасть)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее, стреляет: костяной шип / пасть
+
+
+  # "Пасть"
+
+  Неподвижные существа, запускаемые в жертву. Вцепляются зубами и кусают, пока их не убьют или не стряхнут.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobMawExpeditionsGuidebook"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 8 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 0 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 4 [color=red]режущий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Лавер"
+
+  "Лавер" похож на "Джареда" и "Голема". Лёгкое телосложение делает его хрупким, но он умеет летать.
+
+  [color=#a4885c]Летающее существо[/color]: парит над землёй, может преодолевать низкие препятствия (столы, каркасы, перила) без замедления.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobFleshLoverExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 5 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее
+
+
+  # "Частично ассимилированный шахтёр"
+
+  Несчастный шахтёр, "заражённый" при контакте с аномальной плотью и медленно ассимилированный.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobFleshAssimilatedMiner"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+
+  # "Ужас"
+
+  Более крепкий и живучий, чем обычные монстры аномальной плоти, "Ужас" обладает острыми костяными шипами и мощной мускулатурой, позволяющей разрывать плоть жертв и пробивать броню.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobHorrorExpeditions"/>
+  </Box>
+  - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 200 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.6 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]режущий[/color]
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] залп костяных шипов (роль для призрака)
+
+
+  # Цели миссий
+  ## Устранение
+  <Box>
+  <GuideEntityEmbed Entity="MobHorrorExpeditions"/>
+  </Box>
+  Устраните крупное и опасное существо — [color=#a4885c]ужас аномальной плоти[/color] в отведённое время, чтобы получить денежное вознаграждение.
+
+  ## Уничтожение
+  <Box>
+  <GuideEntityEmbed Entity="AberrantFleshDigestiveSack"/>
+  </Box>
+  Уничтожьте определённое количество [color=#a4885c]мешков ассимиляции[/color] в отведённое время, чтобы получить денежное вознаграждение. [bold][color=#a4885c]Примечание[/color][/bold]: каждый мешок ассимиляции периодически порождает несколько новорождённых монстров аномальной плоти. Новорождённые менее опасны, чем взрослые особи.
+</Document>

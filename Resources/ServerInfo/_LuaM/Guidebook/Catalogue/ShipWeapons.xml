@@ -1,0 +1,19 @@
+<Document>
+# Корабельное вооружение
+
+Орудия, установленные на доступных кораблях и объектах сектора.
+
+## Баллистика
+
+<GuideCatalog Kind="ballistic"/>
+
+## Энергетическое оружие
+
+<GuideCatalog Kind="energy"/>
+
+## Ракетные установки
+
+<GuideCatalog Kind="missile"/>
+
+[textlink="Управление огнём" link="WeaponsSystems"].
+</Document>

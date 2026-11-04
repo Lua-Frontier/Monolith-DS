@@ -4,6 +4,11 @@
   description: A single-use autosurgeon for replacing or upgrading your parts with cybernetic implants. Rip that station apart and make it a part of you.
   abstract: true
   components:
+  # LuaM-start: contextual cybernetics guide.
+  - type: GuideHelp
+    guides:
+    - ColossusCybernetics
+  # LuaM-end
   - type: Sprite
     sprite: _Goobstation/Objects/Devices/autosurgeon.rsi
     state: icon

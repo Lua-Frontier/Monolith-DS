@@ -1,13 +1,9 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Science
-  name: guide-entry-science
-  text: "/ServerInfo/Guidebook/Science/Science.xml"
-  children:
-  - Technologies
-  - AnomalousResearch
-  - Xenoarchaeology
-  - Robotics
-  - MachineUpgrading
+  name: guide-entry-colossus-science # LuaM: guide-entry-science > guide-entry-colossus-science
+  text: "/ServerInfo/_LuaM/Guidebook/Research/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Science.xml > /ServerInfo/_LuaM/Guidebook/Research/Index.xml
+# LuaM-end
 
 - type: guideEntry
   id: Technologies

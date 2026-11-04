@@ -1,0 +1,8 @@
+<Document>
+# Объекты сектора
+Выберите объект: под списком — план, оборудование, обитатели и находки.
+
+[textlink="Каталог объектов сектора" link="ColossusCatalogueObjects"].
+
+[textlink="Станции" link="LuaMStations"] · [textlink="События" link="LuaMGameModes"] · [textlink="Дроны" link="LuaMDroneLoot"] · [textlink="Экспедиции" link="Expeditions"]
+</Document>

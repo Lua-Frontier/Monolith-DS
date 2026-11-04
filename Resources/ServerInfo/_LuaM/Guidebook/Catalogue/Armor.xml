@@ -1,0 +1,9 @@
+<Document>
+# Каталог брони
+
+Защита, скорость и доступное снабжение. Общее снаряжение находится в группе «Наёмники».
+
+<GuideAcquisitions Kind="armor"/>
+
+[textlink="Как работает защита" link="ArmorExplanation"].
+</Document>

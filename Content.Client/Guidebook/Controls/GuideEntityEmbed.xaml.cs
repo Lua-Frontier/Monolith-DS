@@ -64,7 +64,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         View.SetEntity(ent);
 
         if (caption)
-            Caption.Text = _entityManager.GetComponent<MetaDataComponent>(ent).EntityName;
+            Caption.SetMessage(FormattedMessage.FromUnformatted(_entityManager.GetComponent<MetaDataComponent>(ent).EntityName)); // LuaM: preserve literal localized names
     }
 
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
@@ -149,7 +149,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
             caption = _entityManager.GetComponent<MetaDataComponent>(ent).EntityName;
 
         if (!string.IsNullOrEmpty(caption))
-            Caption.Text = caption;
+            Caption.SetMessage(FormattedMessage.FromUnformatted(caption)); // LuaM: wrap the complete caption, without parsing item names as markup
         // else:
         //   caption text already defaults to null
 

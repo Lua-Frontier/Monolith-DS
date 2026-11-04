@@ -1,0 +1,10 @@
+guide-entry-industry-machine-parts = Детали машин и УМЗД
+guide-entry-industry-drilling = Бурение: корабль и лазерная установка
+guide-entry-industry-fabricators = Как выбрать фабрикатор
+guide-entry-industry-research = РНД: технологии и исследования
+guide-entry-industry-automation = Автоматизация производства
+industry-research-search = Технология, ветка или открываемое изделие…
+industry-research-page = { $page }/{ $pages } · технологий: { $count }
+industry-research-row = { $name } · { $discipline } · ур. { $tier } · { $cost } ОИ
+industry-research-all-disciplines = Все ветки
+industry-research-details = { $cost } ОИ · ур. { $tier } · { $discipline }

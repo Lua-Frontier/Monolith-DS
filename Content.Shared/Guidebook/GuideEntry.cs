@@ -46,4 +46,9 @@ public partial class GuideEntry
     ///     If the guide is the child of some other guide, the order simply determined by the order of children in <see cref="Children"/>.
     /// </summary>
     [DataField] public int Priority = 0;
+    // LuaM-start: guidebook controls and lifecycle.
+
+    // LuaM: opt-in roots keep contextual/upstream guides out of the server's main contents.
+    [DataField] public bool BookRoot;
 }
+    // LuaM-end

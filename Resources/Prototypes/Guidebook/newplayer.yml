@@ -1,13 +1,18 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: NewPlayer
-  name: guide-entry-newplayer
-  priority: -3 # Frontier: 0<-3
-  text: "/ServerInfo/Guidebook/NewPlayer/NewPlayer.xml"
-  children:
-  - Controls
-  - CharacterCreation
-  - StartingGear # Frontier
-  - BeginnerGuide # Mono
+  name: guide-entry-colossus-home # LuaM: guide-entry-newplayer > guide-entry-colossus-home
+  priority: 0 # LuaM: -3 > 0
+  text: "/ServerInfo/_LuaM/Guidebook/Start/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/NewPlayer.xml > /ServerInfo/_LuaM/Guidebook/Start/Index.xml
+  bookRoot: true
+  children: # LuaM: purpose-based guidebook navigation
+  - BeginnerGuide
+  - StartingGear
+  - Bank
+  - SafetyDepositBox
+  - Hiring
+  - Jobs
+# LuaM-end
 
 - type: guideEntry
   id: Controls
@@ -21,13 +26,12 @@
   name: guide-entry-radio
   text: "/ServerInfo/Guidebook/NewPlayer/Controls/Radio.xml"
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: CharacterCreation
   name: guide-entry-charactercreation
-  text: "/ServerInfo/Guidebook/NewPlayer/CharacterCreation.xml"
-  children:
-  - YourFirstCharacter
-  - Species
+  text: "/ServerInfo/_LuaM/Guidebook/Start/Equipment.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/CharacterCreation.xml > /ServerInfo/_LuaM/Guidebook/Start/Equipment.xml
+# LuaM-end
 
 - type: guideEntry
   id: YourFirstCharacter

@@ -1,0 +1,105 @@
+# LuaCorp - AGPLv3. Copyright (c) 2026 LuaCorp Contributors. See AGPLv3.txt.
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusAtmos
+  name: guide-entry-colossus-atmos
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Atmos.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/Index.xml
+  priority: 30 # LuaM: 0 > 30 (section order)
+  children: # LuaM: purpose-based guidebook navigation
+  - GasMining
+  - Pipes
+  - Pumps
+  - MixingAndFiltering
+  - Thermomachines
+  - ColossusGasTritium
+  - ColossusGasFrezon
+  - ColossusGasBZ
+  - ColossusGasHealium
+  - ColossusGasNitrium
+  - ColossusGasPluoxium
+  - PressureRegulator
+  - DeviceMonitoringAndControl
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusPower
+  name: guide-entry-colossus-power
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Power/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Power.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Power/Index.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+
+  children: # LuaM: purpose-based guidebook navigation
+  - Ramping
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusCommodities
+  name: guide-entry-colossus-commodities
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Commodities.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Commodities.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Commodities.xml
+  priority: 50 # LuaM: 0 > 50 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusArtifacts
+  name: guide-entry-colossus-artifacts
+  text: "/ServerInfo/_LuaM/Guidebook/Research/Artifacts.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Artifacts.xml > /ServerInfo/_LuaM/Guidebook/Research/Artifacts.xml
+  priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusAnomalies
+  name: guide-entry-colossus-anomalies
+  text: "/ServerInfo/_LuaM/Guidebook/Research/Anomalies.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Anomalies.xml > /ServerInfo/_LuaM/Guidebook/Research/Anomalies.xml
+  priority: 20 # LuaM: 0 > 20 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusGasTritium
+  name: guide-entry-colossus-gas-tritium
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasTritium.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/GasTritium.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasTritium.xml
+  priority: 60 # LuaM: 0 > 60 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusGasFrezon
+  name: guide-entry-colossus-gas-frezon
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasFrezon.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/GasFrezon.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasFrezon.xml
+  priority: 70 # LuaM: 0 > 70 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusGasBZ
+  name: guide-entry-colossus-gas-bz
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasBZ.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/GasBZ.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasBZ.xml
+  priority: 80 # LuaM: 0 > 80 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusGasHealium
+  name: guide-entry-colossus-gas-healium
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasHealium.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/GasHealium.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasHealium.xml
+  priority: 90 # LuaM: 0 > 90 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusGasNitrium
+  name: guide-entry-colossus-gas-nitrium
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasNitrium.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/GasNitrium.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasNitrium.xml
+  priority: 100 # LuaM: 0 > 100 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook page and navigation.
+- type: guideEntry
+  id: ColossusGasPluoxium
+  name: guide-entry-colossus-gas-pluoxium
+  text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasPluoxium.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/GasPluoxium.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasPluoxium.xml
+  priority: 110 # LuaM: 0 > 110 (section order)
+# LuaM-end

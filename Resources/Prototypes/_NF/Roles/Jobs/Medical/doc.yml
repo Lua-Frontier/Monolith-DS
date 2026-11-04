@@ -35,7 +35,7 @@
   access:
   - ChiefMedicalOfficer #Mono
   guides:
-  - Caelestinus
+  - ColossusMedicalFaction # LuaM: Caelestinus > ColossusMedicalFaction
   special:
 # - !type:AddImplantSpecial
 #   implants: [ MindShieldImplant ] # Mono - remove TSFMC implants

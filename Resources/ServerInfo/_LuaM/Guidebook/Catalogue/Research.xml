@@ -1,0 +1,11 @@
+<Document>
+# Окно исследований
+
+В учебном окне показаны актуальные непустые ветки, поддерживаемые исследовательскими серверами сектора. Выберите исследование, чтобы увидеть стоимость, предшественников и открытия.
+
+<GuideNavigationUI Mode="research"/>
+
+[textlink="Как открывать технологии" link="IndustryResearch"].
+
+Получение очков: [textlink="артефакты" link="ColossusArtifacts"] и [textlink="аномалии" link="ColossusAnomalies"].
+</Document>

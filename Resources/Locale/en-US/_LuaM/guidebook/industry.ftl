@@ -1,0 +1,10 @@
+guide-entry-industry-machine-parts = Machine parts and RPED
+guide-entry-industry-drilling = Ship and laser drilling
+guide-entry-industry-fabricators = Choosing a fabricator
+guide-entry-industry-research = R&D: branches, costs and unlocks
+guide-entry-industry-automation = Production automation
+industry-research-search = Technology, discipline or unlocked product…
+industry-research-page = { $page }/{ $pages } · technologies: { $count }
+industry-research-row = { $name } · { $discipline } · tier { $tier } · { $cost } RP
+industry-research-all-disciplines = All disciplines
+industry-research-details = { $cost } RP · tier { $tier } · { $discipline }

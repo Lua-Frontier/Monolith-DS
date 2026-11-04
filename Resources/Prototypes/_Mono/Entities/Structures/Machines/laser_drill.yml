@@ -4,6 +4,11 @@
   parent: BaseMachine
   abstract: true
   components:
+  # LuaM-start: contextual equipment guide.
+  - type: GuideHelp
+    guides:
+    - IndustryDrilling
+  # LuaM-end
   - type: ItemMiner
     proto: SpawnLootOres15
     interval: 10

@@ -1,33 +1,42 @@
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Creatures
   name: guide-entry-creatures
-  text: "/ServerInfo/_Mono/Guidebook/Creatures/Creatures.xml"
-  priority: 8
+  text: "/ServerInfo/_LuaM/Guidebook/References/Creatures/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Creatures.xml > /ServerInfo/_LuaM/Guidebook/References/Creatures/Index.xml
+  priority: 60 # LuaM: 8 > 60 (section order)
   children:
-  - CorticalBorerGuide
-  - Letoferol
+  - CorticalBorerPracticalGuide
+  - ChimeraPracticalGuide
   #- Asakim
   - Xenoborgs
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: CorticalBorerGuide
   name: guide-entry-cortical-borer
-  text: "/ServerInfo/_Mono/Guidebook/Creatures/CorticalBorer.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/References/Creatures/CorticalBorer.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/CorticalBorerGuide.xml > /ServerInfo/_LuaM/Guidebook/References/Creatures/CorticalBorer.xml
   priority: 1
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Letoferol
   name: guide-entry-letoferol
-  text: "/ServerInfo/_Mono/Guidebook/Creatures/Chimera.xml"
-  priority: 1
+  text: "/ServerInfo/_LuaM/Guidebook/Medicine/Letoferol.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Letoferol.xml > /ServerInfo/_LuaM/Guidebook/Medicine/Letoferol.xml
+  priority: 50 # LuaM: 1 > 50 (section order)
 
 #- type: guideEntry
 #  id: Asakim
 #  name: guide-entry-asakim
 #  text: "/ServerInfo/_Mono/Guidebook/Creatures/Asakim.xml"
 #  priority: 1
+# LuaM-end
 
+# LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Xenoborgs
   name: guide-entry-xenoborgs
-  text: "/ServerInfo/_Mono/Guidebook/Creatures/Xenoborgs.xml"
+  text: "/ServerInfo/_LuaM/Guidebook/References/Creatures/Xenoborgs.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Xenoborgs.xml > /ServerInfo/_LuaM/Guidebook/References/Creatures/Xenoborgs.xml
+  priority: 30 # LuaM: 0 > 30 (section order)
+# LuaM-end

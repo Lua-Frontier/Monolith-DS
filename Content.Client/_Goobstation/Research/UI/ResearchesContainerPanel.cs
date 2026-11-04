@@ -1,4 +1,8 @@
 using Robust.Client.Graphics;
+// LuaM-start: allow panning the research field.
+using Robust.Client.UserInterface;
+using Robust.Shared.Input;
+// LuaM-end
 using Robust.Client.UserInterface.Controls;
 using Content.Shared._Goobstation.Research;
 using Content.Shared.Research.Prototypes;
@@ -14,8 +18,42 @@ public sealed partial class ResearchesContainerPanel : LayoutContainer
 {
     public ResearchesContainerPanel()
     {
-
+        CanKeyboardFocus = true; // LuaM: right-drag must not be routed to a previous search field.
+        KeyboardFocusOnClick = true; // LuaM: focus the pannable research field.
     }
+
+    // LuaM-start: allow panning the research field.
+    // LuaM: pan the technology field, including rows beyond the clipped lower edge.
+    private bool _panning;
+    protected override void KeyBindDown(GUIBoundKeyEventArgs args)
+    {
+        if (args.Function == EngineKeyFunctions.Use || args.Function == EngineKeyFunctions.UseSecondary || args.Function == EngineKeyFunctions.UIClick)
+        { _panning = true; args.Handle(); }
+        else base.KeyBindDown(args);
+    }
+    protected override void KeyBindUp(GUIBoundKeyEventArgs args)
+    {
+        _panning = false;
+        base.KeyBindUp(args);
+    }
+    protected override void MouseMove(GUIMouseMoveEventArgs args)
+    {
+        base.MouseMove(args);
+        if (!_panning) return;
+        Pan(args.Relative);
+        args.Handle();
+    }
+    protected override void MouseWheel(GUIMouseWheelEventArgs args)
+    {
+        Pan(new Vector2(args.Delta.X * 48, args.Delta.Y * 48));
+        args.Handle();
+    }
+    private void Pan(Vector2 delta)
+    {
+        foreach (var child in Children)
+            SetPosition(child, child.Position + delta);
+    }
+    // LuaM-end
 
     protected override void Draw(DrawingHandleScreen handle)
     {
