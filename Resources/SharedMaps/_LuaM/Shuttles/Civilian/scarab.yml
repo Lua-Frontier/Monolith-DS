@@ -4,8 +4,8 @@ meta:
   engineVersion: 291.0.2
   forkId: ""
   forkVersion: ""
-  time: 11/04/2026 09:36:12
-  entityCount: 2973
+  time: 11/04/2026 18:06:00
+  entityCount: 2986
 maps: []
 grids:
 - 1
@@ -1202,6 +1202,75 @@ entities:
       lastUpdateTime: 0
     - type: ShipGridLock
       locked: False
+- proto: AirAlarm
+  entities:
+  - uid: 9830
+    components:
+    - type: Transform
+      pos: 6.5,5.5
+      parent: 1
+    - type: DeviceList
+      devices:
+      - 9170
+      - 8927
+      - 8929
+      - 9172
+      - 8928
+      - 9171
+      - 8926
+      - 9173
+  - uid: 9831
+    components:
+    - type: Transform
+      pos: 3.5,16.5
+      parent: 1
+    - type: DeviceList
+      devices:
+      - 8933
+      - 9166
+      - 8932
+      - 9351
+      - 8938
+      - 9313
+  - uid: 9832
+    components:
+    - type: Transform
+      pos: 15.5,13.5
+      parent: 1
+    - type: DeviceList
+      devices:
+      - 9169
+      - 8936
+  - uid: 9833
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -15.5,11.5
+      parent: 1
+    - type: DeviceList
+      devices:
+      - 8935
+      - 9164
+  - uid: 9834
+    components:
+    - type: Transform
+      pos: 5.5,22.5
+      parent: 1
+    - type: DeviceList
+      devices:
+      - 9436
+      - 9437
+      - 9165
+      - 9435
+  - uid: 9835
+    components:
+    - type: Transform
+      pos: -4.5,-17.5
+      parent: 1
+    - type: DeviceList
+      devices:
+      - 9174
+      - 8925
 - proto: Airlock
   entities:
   - uid: 9762
@@ -3932,6 +4001,31 @@ entities:
     - type: Transform
       pos: -21.5,-21.5
       parent: 1
+  - uid: 9838
+    components:
+    - type: Transform
+      pos: 20.5,9.5
+      parent: 1
+  - uid: 9839
+    components:
+    - type: Transform
+      pos: -21.5,-22.5
+      parent: 1
+  - uid: 9840
+    components:
+    - type: Transform
+      pos: -23.5,0.5
+      parent: 1
+  - uid: 9841
+    components:
+    - type: Transform
+      pos: -23.5,3.5
+      parent: 1
+  - uid: 9842
+    components:
+    - type: Transform
+      pos: 24.5,0.5
+      parent: 1
 - proto: AtmosFixFreezerMarker
   entities:
   - uid: 9731
@@ -4365,6 +4459,13 @@ entities:
     components:
     - type: Transform
       pos: -3.5,-3.5
+      parent: 1
+- proto: BlueLobster
+  entities:
+  - uid: 9837
+    components:
+    - type: Transform
+      pos: 18.5,-2.5
       parent: 1
 - proto: BoozeDispenser
   entities:
@@ -11070,6 +11171,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9835
   - uid: 8926
     components:
     - type: Transform
@@ -11080,6 +11184,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9830
   - uid: 8927
     components:
     - type: Transform
@@ -11090,6 +11197,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9830
   - uid: 8928
     components:
     - type: Transform
@@ -11100,6 +11210,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9830
   - uid: 8929
     components:
     - type: Transform
@@ -11110,6 +11223,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9830
   - uid: 8932
     components:
     - type: Transform
@@ -11120,6 +11236,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9831
   - uid: 8933
     components:
     - type: Transform
@@ -11130,6 +11249,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9831
   - uid: 8935
     components:
     - type: Transform
@@ -11140,6 +11262,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9833
   - uid: 8936
     components:
     - type: Transform
@@ -11150,6 +11275,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9832
   - uid: 8938
     components:
     - type: Transform
@@ -11159,6 +11287,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9831
   - uid: 9435
     components:
     - type: Transform
@@ -11168,6 +11299,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9834
   - uid: 9436
     components:
     - type: Transform
@@ -11177,6 +11311,9 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#0055CCFF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9834
 - proto: GasVentScrubber
   entities:
   - uid: 9164
@@ -11189,6 +11326,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9833
   - uid: 9165
     components:
     - type: Transform
@@ -11198,6 +11338,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9834
   - uid: 9166
     components:
     - type: Transform
@@ -11208,6 +11351,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9831
   - uid: 9169
     components:
     - type: Transform
@@ -11218,6 +11364,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9832
   - uid: 9170
     components:
     - type: Transform
@@ -11228,6 +11377,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9830
   - uid: 9171
     components:
     - type: Transform
@@ -11238,6 +11390,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9830
   - uid: 9172
     components:
     - type: Transform
@@ -11248,6 +11403,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9830
   - uid: 9173
     components:
     - type: Transform
@@ -11258,6 +11416,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9830
   - uid: 9174
     components:
     - type: Transform
@@ -11268,6 +11429,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9835
   - uid: 9313
     components:
     - type: Transform
@@ -11278,6 +11442,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9831
   - uid: 9351
     components:
     - type: Transform
@@ -11288,6 +11455,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9831
   - uid: 9437
     components:
     - type: Transform
@@ -11297,6 +11467,9 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#990000FF'
+    - type: DeviceNetwork
+      deviceLists:
+      - 9834
 - proto: GravityGeneratorMini
   entities:
   - uid: 9429
@@ -13149,6 +13322,11 @@ entities:
     components:
     - type: Transform
       pos: -5.5,12.5
+      parent: 1
+  - uid: 9836
+    components:
+    - type: Transform
+      pos: 18.5,13.5
       parent: 1
 - proto: PoweredWarmSmallLight
   entities:
