@@ -38,3 +38,7 @@ see_own_notes = true
 
 [mono]
 company_whitelist = false
+
+# LuaM: no watchdog locally, a shutdown at round end would just close the server
+[server]
+restart_on_round_end = false

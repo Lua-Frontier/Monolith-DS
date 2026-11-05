@@ -5,15 +5,13 @@
   playTimeTracker: JobVGInfanteer
   whitelisted: false # LuaM: true > false
   requirements: # LuaM
+  - !type:OverallPlaytimeRequirement # LuaM
+    time: 54000 # 15 hours
   - !type:SpeciesRequirement
     species:
     - Human
     - Dwarf
     - IPC # LuaM
-  - !type:TraitsRequirement # LuaM: heretics can't take this job
-    inverted: true
-    traits:
-    - Heretic
   startingGear: ViperRadioGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

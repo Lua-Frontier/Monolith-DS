@@ -84,7 +84,7 @@
   parent: BaseAutosurgeonMieyo
   id: AutosurgeonDermalArmorPDV
   name: PDV autosurgeon (E-SAPI dermal armor)
-  description: Implants an array of E-SAPI armor plates into the body. Makes you more vulnerable to heat and shock, but makes you more resistant to bullets.
+  description: Implants an array of E-SAPI armor plates into the body. Makes you more vulnerable to shock and a bit slower, but makes you more resistant to bullets and heat. # LuaM: heat moved to the resistances, 5% slowdown
   components:
   - type: AutoSurgeon # LuaM: the armor is an organ in the subdermal armor slot now
     targetBodyPart: Torso

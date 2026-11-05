@@ -1,0 +1,38 @@
+- type: vessel
+  id: VGMars
+  parent: BaseVessel
+  name: vessel-vg-mars-name
+  description: vessel-vg-mars-desc
+  limit: 1
+  price: 210000 # rough appraisal ~121000, other VG T2 ships are priced at 1.7-1.9 of it
+  purchasable: false # voucher only, ShipVoucherVGMars [T2]
+  category: Medium
+  group: Viper
+  access: Viper
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/VG/Mars.yml
+  guidebookPage: Null
+  class:
+  - Corvette
+  - Pursuit
+  engine:
+  - AME
+
+- type: gameMap
+  id: VGMars
+  mapName: 'VG Mars'
+  mapPath: /SharedMaps/_LuaM/Shuttles/VG/Mars.yml
+  minPlayers: 0
+  stations:
+    VGMars:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Mars VG{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            VGInfanteer: [ 0, 0 ]
+            VGLieutenant: [ 0, 0 ]
+            VGCommander: [ 0, 0 ]

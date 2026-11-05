@@ -27243,7 +27243,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -12.5,-19.5
       parent: 1
-- proto: WeaponTurretFang
+- proto: ImpulseLaserBase
   entities:
   - uid: 4367
     components:
