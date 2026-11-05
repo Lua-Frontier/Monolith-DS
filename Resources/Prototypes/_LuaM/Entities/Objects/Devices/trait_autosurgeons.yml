@@ -35,7 +35,6 @@
   components:
   - type: AutoSurgeon
     targetBodyPart: Torso
-    humanityCost: 1
     componentsToUser:
     - type: PlateletFactories
       intervalSeconds: 1
