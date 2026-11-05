@@ -957,7 +957,7 @@ namespace Content.Server.GameTicking
             ReplayEndRound();
 
             // Handle restart for server update
-            if (_serverUpdates.RoundEnded())
+            if (_serverUpdates.RoundEnded(_postInitialized && _runLevel != GameRunLevel.PreRoundLobby)) // LuaM: not on startup or from the lobby
                 return;
 
             // Check if the GamePreset needs to be reset

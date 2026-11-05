@@ -74,7 +74,8 @@ public sealed partial class ServerUpdateManager : IPostInjectInit
     /// Notify that the round just ended, which is a great time to restart if necessary!
     /// </summary>
     /// <returns>True if the server is going to restart.</returns>
-    public bool RoundEnded()
+    /// <param name="roundWasPlayed">False on server startup, which also goes through RestartRound to reach the lobby.</param>
+    public bool RoundEnded(bool roundWasPlayed = true) // LuaM
     {
         if (_updateOnRoundEnd || ShouldShutdownDueToUptime())
         {
@@ -83,7 +84,7 @@ public sealed partial class ServerUpdateManager : IPostInjectInit
         }
 
         // LuaM-start: restart the whole server process every round, the watchdog starts it again
-        if (_restartOnRoundEnd)
+        if (_restartOnRoundEnd && roundWasPlayed)
         {
             _sawmill.Info("Shutting down at round end, server.restart_on_round_end is enabled");
             _server.Shutdown(Loc.GetString("server-updates-shutdown-round-end"));
