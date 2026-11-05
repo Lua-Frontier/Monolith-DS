@@ -12,10 +12,6 @@
   #   time: 10800 # 3 hrs
   - !type:OverallPlaytimeRequirement
     time: 144000 # 40 hrs
-  - !type:TraitsRequirement # LuaM: heretics can't take this job
-    inverted: true
-    traits:
-    - Heretic
   startingGear: USSPCommissarGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

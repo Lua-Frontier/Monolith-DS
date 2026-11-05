@@ -5,15 +5,14 @@
   playTimeTracker: JobVGLieutenant
   whitelisted: false # LuaM: true > false
   requirements: # LuaM
+  - !type:RoleTimeRequirement # LuaM: 10 hours as a VG infanteer
+    role: JobVGInfanteer
+    time: 36000 # 10 hours
   - !type:SpeciesRequirement
     species:
     - Human
     - Dwarf
     - IPC # LuaM
-  - !type:TraitsRequirement # LuaM: heretics can't take this job
-    inverted: true
-    traits:
-    - Heretic
   startingGear: ViperRadioGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

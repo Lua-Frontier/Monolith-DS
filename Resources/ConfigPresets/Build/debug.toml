@@ -4,3 +4,7 @@ enabled = false
 
 [shuttle]
 auto_call_time = 0
+
+# LuaM: no watchdog locally, a shutdown at round end would just close the server
+[server]
+restart_on_round_end = false

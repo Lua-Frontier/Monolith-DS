@@ -58,17 +58,22 @@
   parent: BaseOrganSubdermalArmor
   id: OrganDermalArmorPDV
   name: PD-VI E-SAPI armor plates
-  description: An array of E-SAPI armor plates that go under the skin. More vulnerable to heat and shock, but more resistant to bullets.
+  description: An array of E-SAPI armor plates that go under the skin. More vulnerable to shock and a bit heavy to move in, but more resistant to bullets and heat.
   components:
   - type: Sprite
     color: "#c41e24" # red and black, like the PDV hardsuits
+  - type: Organ
+    onAdd:
+    - type: CyberwareSpeedModifier # 5% slower while the plates are installed
+      walkModifier: 0.95
+      sprintModifier: 0.95
   - type: SubdermalArmor
     modifiers:
       dermal:
         id: DermalArmorCybernetics
         coefficients:
           Shock: 1.25
-          Heat: 1.1
+          Heat: 0.85
           Piercing: 0.85
           Blunt: 0.9
           Slash: 0.9

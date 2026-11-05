@@ -37,6 +37,8 @@ public sealed partial class ServerUpdateManager : IPostInjectInit
 
     private TimeSpan _uptimeRestart;
 
+    private bool _restartOnRoundEnd; // LuaM
+
     public void Initialize()
     {
         _watchdog.UpdateReceived += WatchdogOnUpdateReceived;
@@ -46,6 +48,8 @@ public sealed partial class ServerUpdateManager : IPostInjectInit
             CCVars.ServerUptimeRestartMinutes,
             minutes => _uptimeRestart = TimeSpan.FromMinutes(minutes),
             true);
+
+        _cfg.OnValueChanged(CCVars.ServerRestartOnRoundEnd, value => _restartOnRoundEnd = value, true); // LuaM
     }
 
     public void Update()
@@ -77,6 +81,15 @@ public sealed partial class ServerUpdateManager : IPostInjectInit
             DoShutdown();
             return true;
         }
+
+        // LuaM-start: restart the whole server process every round, the watchdog starts it again
+        if (_restartOnRoundEnd)
+        {
+            _sawmill.Info("Shutting down at round end, server.restart_on_round_end is enabled");
+            _server.Shutdown(Loc.GetString("server-updates-shutdown-round-end"));
+            return true;
+        }
+        // LuaM-end
 
         return false;
     }

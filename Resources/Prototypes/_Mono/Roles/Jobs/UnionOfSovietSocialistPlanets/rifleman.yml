@@ -6,10 +6,6 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 32400 # 9 hrs
-  - !type:TraitsRequirement # LuaM: heretics can't take this job
-    inverted: true
-    traits:
-    - Heretic
   startingGear: USSPRiflemanGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true
