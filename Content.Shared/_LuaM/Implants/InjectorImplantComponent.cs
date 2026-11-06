@@ -30,6 +30,15 @@ public sealed partial class InjectorImplantComponent : Component
     public bool InjectOnCritical = true;
 
     /// <summary>
+    /// Put the dose into the stomach instead of the blood, like food and drinks.
+    /// </summary>
+    [DataField]
+    public bool IntoStomach;
+
+    [DataField]
+    public LocId UsedPopup = "injector-implant-used";
+
+    /// <summary>
     /// Minimum time between automatic injections, so repeated crits do not drain every charge.
     /// </summary>
     [DataField]

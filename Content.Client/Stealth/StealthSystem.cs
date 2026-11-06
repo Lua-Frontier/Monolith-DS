@@ -5,7 +5,9 @@ using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Client.Player; // LuaM
 using Robust.Shared.Prototypes;
+using Content.Shared._LuaM.Cyberware; // LuaM
 
 namespace Content.Client.Stealth;
 
@@ -14,6 +16,7 @@ public sealed partial class StealthSystem : SharedStealthSystem
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private SpriteSystem _sprite = default!; // LuaM
+    [Dependency] private IPlayerManager _player = default!; // LuaM
 
     private ShaderInstance _shader = default!;
 
@@ -43,8 +46,15 @@ public sealed partial class StealthSystem : SharedStealthSystem
             return;
 
         _sprite.SetColor((uid, sprite), Color.White);
+
+        // LuaM-start: optical camo is plain transparency without the distortion, the owner sees a faint outline of themselves
+        var camo = enabled ? CompOrNull<OpticalCamoComponent>(uid) : null;
+        if (camo != null)
+            _sprite.SetColor((uid, sprite), Color.White.WithAlpha(uid == _player.LocalEntity ? camo.SelfAlpha : 0f));
+        // LuaM-end
+
         // LuaM start: per-id post shaders since RT 286, the legacy flags are not read anymore
-        if (enabled)
+        if (enabled && camo == null) // LuaM: no distortion for optical camo
         {
             _sprite.SetPostShader((uid, sprite), new SpriteComponent.PostShaderArgs(ContentPostShaderIds.Stealth, _shader)
             {

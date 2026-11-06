@@ -13,7 +13,7 @@
     Lithium: 5000
     Copper: 4500 # A little less copper than the MMC one, maybe say it has smaller heatsinks or something.
     UraniumFissile: 150
-    Iridite: 500 # It felt fitting. Just a high cost via the problem of obtaining it, not the problem of making it in bulk. No point making it cost 5 or 20 or whatever when its made in crystalizer.
+    Plastitanium: 500 # LuaM: Iridite 500 > Plastitanium 500
 
 - type: latheRecipe
   parent: BaseToolRecipe

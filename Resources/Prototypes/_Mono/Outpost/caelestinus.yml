@@ -23,6 +23,7 @@
         destinationProto: Trade
       - type: VesselMusic
         ambientMusicPrototype: ColossusCentralMusic
+      - type: CyberpsychosisBlocker # LuaM: no cyberpsychosis on the station
       - type: VesselInfo
         description: "Это одно из самых цивилизованных мест в секторе. Здесь безопасно. Почти." # LuaM: "The closest thing to civilization in this sector. You almost feel safe." > "Это одно из самых цивилизованных мест в секторе. Здесь безопасно. Почти."
       components:

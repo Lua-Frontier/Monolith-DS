@@ -1,0 +1,30 @@
+# Combat implants of the USSP, shared with the Viper Group through the USSP research.
+- type: technology
+  id: UsspCombatImplants
+  name: research-technology-ussp-combat-implants
+  entityIcon: OrganCNSKerenzikov
+  discipline: Ussp
+  tier: 3
+  cost: 75000
+  recipeUnlocks:
+  - AutosurgeonKerenzikovUSSPRecipe
+  - AutosurgeonHumanityChipMk2Recipe
+  - AutosurgeonDermalArmorHeavyUSSPRecipe
+  technologyPrerequisites:
+  - UsspMediumSuits
+  position: 4, 7
+
+# Service implants: food and drink on demand, no humanity cost.
+- type: technology
+  id: UsspServiceImplants
+  name: research-technology-ussp-service-implants
+  entityIcon: AutosurgeonNutrientInjector
+  discipline: Ussp
+  tier: 1
+  cost: 15000
+  recipeUnlocks:
+  - AutosurgeonNutrientInjectorRecipe
+  - AutosurgeonWaterInjectorRecipe
+  - AutosurgeonBeerInjectorRecipe
+  - AutosurgeonVodkaInjectorRecipe
+  position: 5, 7

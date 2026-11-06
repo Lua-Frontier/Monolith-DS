@@ -1,0 +1,73 @@
+# Max-Tac mantis blades: a bit stronger than the regular ones, spawn menu only.
+
+- type: entity
+  categories: [ DoNotMap ]
+  parent: BaseMantisBlade # no chemical injector, does not set targets on fire
+  id: MantisBladeMaxTac
+  name: Max-Tac mantis blade
+  description: Standard issue of the Max-Tac cyberpsycho squad. By the time you see the blue lights, it is already over.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Melee/mantis_blade_maxtac.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 31
+        Piercing: 13
+        Structural: 60
+    armorPenetration: 0.3 # click attacks only
+    heavyArmorPenetration: 0
+  - type: MantisBladeCombo
+    reflectProb: 0.45
+    dashAction: ActionMantisBladeDashMaxTac
+
+- type: entity
+  parent: OrganArmMantisBlade
+  id: OrganArmMantisBladeMaxTac
+  name: Max-Tac mantis blade implant
+  description: A covert deployable Max-Tac mantis blade that hides inside the arm.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Melee/mantis_blade_maxtac.rsi
+    state: icon
+  - type: MantisBladeImplant
+    bladeProto: MantisBladeMaxTac
+    actionProto: ActionToggleMantisBladesMaxTac
+  - type: CyberwareHumanity
+    cost: 2
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonMantisBladesMaxTac
+  name: Max-Tac autosurgeon (mantis blades)
+  description: Implants a pair of covert deployable Max-Tac mantis blades into both of your arms.
+  components:
+  - type: GuideHelp
+    guides:
+    - ColossusMantisBlades
+  - type: AutoSurgeon
+    targetBodyPart: Arm
+    organForEachPart: OrganArmMantisBladeMaxTac
+
+- type: entity
+  parent: ActionToggleMantisBlades
+  id: ActionToggleMantisBladesMaxTac
+  name: Toggle Max-Tac Mantis Blades
+  description: Extend or retract the Max-Tac mantis blades in both of your arms.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon: { sprite: _LuaM/Objects/Weapons/Melee/mantis_blade_maxtac.rsi, state: icon }
+
+- type: entity
+  parent: ActionMantisBladeDash
+  id: ActionMantisBladeDashMaxTac
+  name: Max-Tac mantis blade dash
+  description: Dash forward with both Max-Tac mantis blades extended.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: _LuaM/Objects/Weapons/Melee/mantis_blade_maxtac.rsi, state: icon }

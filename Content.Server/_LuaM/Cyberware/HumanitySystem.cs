@@ -62,8 +62,25 @@ public sealed partial class HumanitySystem : EntitySystem
         while (query.MoveNext(out var uid, out var psychosis))
         {
             if (_timing.CurTime >= psychosis.EndTime)
+            {
                 RemCompDeferred<CyberpsychosisComponent>(uid);
+                continue;
+            }
+
+            if (_timing.CurTime >= psychosis.NextImplantUse)
+                UseImplants((uid, psychosis));
         }
+    }
+
+    /// <summary>
+    /// The psycho turns on every implant that is off and ready, like extending the mantis blades or starting the sandevistan.
+    /// </summary>
+    private void UseImplants(Entity<CyberpsychosisComponent> ent)
+    {
+        ent.Comp.NextImplantUse = _timing.CurTime + ent.Comp.ImplantUseInterval;
+
+        var ev = new CyberpsychosisUseImplantsEvent();
+        RaiseLocalEvent(ent, ref ev);
     }
 
     /// <summary>
@@ -149,6 +166,10 @@ public sealed partial class HumanitySystem : EntitySystem
 
         var over = GetUsedHumanity(ent) - GetMaxHumanity(ent);
         if (over <= 0)
+            return;
+
+        // No cyberpsychosis on stations like Colossus Central or the medical center.
+        if (HasComp<CyberpsychosisBlockerComponent>(Transform(ent).GridUid))
             return;
 
         if (!_random.Prob(Math.Min(1f, over * ent.Comp.ChancePerPoint)))

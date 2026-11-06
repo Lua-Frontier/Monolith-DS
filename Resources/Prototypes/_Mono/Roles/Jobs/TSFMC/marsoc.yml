@@ -68,5 +68,8 @@
     pocket2: RadioHandheldNF
     belt: ClothingBeltWebbingsNormalTSFMC
     neck: ClothingNeckIFFCyan
+  storage: # LuaM: the same uplink as the TSF colonel
+    back:
+    - BaseSecurityUplinkRadioSheriff
   inhand:
   - UndeterminedTSFMarsocKit

@@ -149,7 +149,7 @@
   - AutosurgeonMantisBladesMMC # LuaM: right and left merged
   # LuaM-start: humanity chips
   - AutosurgeonHumanityChipMk3Recipe
-  - AutosurgeonPlateletFactoriesRecipe
+  - AutosurgeonPlateletFactoriesMk2Recipe
   # LuaM-end
   technologyPrerequisites:
   # - UniversalMaterialResearchT2 # Commented by LuaM

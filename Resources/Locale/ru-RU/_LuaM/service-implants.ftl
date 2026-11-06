@@ -1,0 +1,40 @@
+service-implant-nutrient-used = Имплант вводит питательные вещества в желудок.
+service-implant-water-used = Имплант вводит воду в желудок.
+service-implant-beer-used = Имплант вводит пиво в желудок.
+service-implant-vodka-used = Имплант вводит водку в желудок.
+injector-implant-stomach-full = Желудок переполнен.
+
+ent-NutrientInjectorImplant = имплант-инъектор питательных веществ
+    .desc = Вводит дозу питательных веществ прямо в желудок по команде.
+ent-WaterInjectorImplant = имплант-инъектор воды
+    .desc = Вводит дозу воды прямо в желудок по команде.
+ent-BeerInjectorImplant = имплант-инъектор пива
+    .desc = Вводит дозу пива прямо в желудок по команде.
+ent-VodkaInjectorImplant = имплант-инъектор водки
+    .desc = Вводит дозу водки прямо в желудок по команде.
+
+ent-ActionActivateNutrientInjectorImplant = Ввести питательные вещества
+    .desc = Вводит дозу питательных веществ в желудок. Каждый заряд восстанавливается за 3 минуты.
+ent-ActionActivateWaterInjectorImplant = Ввести воду
+    .desc = Вводит дозу воды в желудок. Каждый заряд восстанавливается за 3 минуты.
+ent-ActionActivateBeerInjectorImplant = Ввести пиво
+    .desc = Вводит дозу пива в желудок. Каждый заряд восстанавливается за 3 минуты.
+ent-ActionActivateVodkaInjectorImplant = Ввести водку
+    .desc = Вводит дозу водки в желудок. Каждый заряд восстанавливается за 3 минуты.
+
+ent-AutosurgeonNutrientInjector = автохирург (инъектор питательных веществ)
+    .desc = Устанавливает имплант, который по команде вводит дозу питательных веществ в желудок.
+ent-AutosurgeonNutrientInjectorFlatpack = упакованный автохирург (инъектор питательных веществ)
+    .desc = Упаковка, при помощи которой можно создать автохирург.
+ent-AutosurgeonWaterInjector = автохирург (инъектор воды)
+    .desc = Устанавливает имплант, который по команде вводит дозу воды в желудок.
+ent-AutosurgeonWaterInjectorFlatpack = упакованный автохирург (инъектор воды)
+    .desc = Упаковка, при помощи которой можно создать автохирург.
+ent-AutosurgeonBeerInjector = автохирург (инъектор пива)
+    .desc = Устанавливает имплант, который по команде вводит дозу пива в желудок.
+ent-AutosurgeonBeerInjectorFlatpack = упакованный автохирург (инъектор пива)
+    .desc = Упаковка, при помощи которой можно создать автохирург.
+ent-AutosurgeonVodkaInjector = автохирург (инъектор водки)
+    .desc = Устанавливает имплант, который по команде вводит дозу водки в желудок.
+ent-AutosurgeonVodkaInjectorFlatpack = упакованный автохирург (инъектор водки)
+    .desc = Упаковка, при помощи которой можно создать автохирург.

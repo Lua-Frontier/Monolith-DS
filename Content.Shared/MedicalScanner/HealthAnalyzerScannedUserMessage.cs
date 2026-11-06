@@ -19,7 +19,7 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public bool? Unrevivable;
     public bool? Uncloneable; // Frontier
 
-    // LuaM-start: humanity left and the humanity limit, only sent when you scan yourself
+    // LuaM-start: humanity left and the humanity limit of the scanned person
     public float? HumanityLeft;
     public float? HumanityMax;
     // LuaM-end

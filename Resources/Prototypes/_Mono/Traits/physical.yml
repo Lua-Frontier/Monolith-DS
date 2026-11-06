@@ -4,6 +4,8 @@
   description: trait-prybar-prosthetics-desc
   category: Physical
   cost: 2
+  mutuallyExclusiveTraits: # LuaM: no chrome with chrome intolerance
+  - ChromeIntolerance
   components:
   - type: PrybarProsthetics
 
@@ -118,6 +120,8 @@
   description: trait-bionic-legs-desc
   category: Physical
   cost: 2
+  mutuallyExclusiveTraits: # LuaM: no chrome with chrome intolerance
+  - ChromeIntolerance
   components:
   - type: BionicLegs
 
@@ -299,6 +303,8 @@
   description: trait-dermal-armor-desc
   category: Physical
   cost: 6
+  mutuallyExclusiveTraits: # LuaM: no chrome with chrome intolerance
+  - ChromeIntolerance
   components:
   - type: DamageProtectionBuff
     modifiers:

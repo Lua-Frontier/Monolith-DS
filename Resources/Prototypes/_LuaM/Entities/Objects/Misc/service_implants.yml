@@ -1,0 +1,243 @@
+# Service implants: USSP and Viper Group R&D. No humanity cost.
+# They put the dose straight into the stomach, like eating or drinking.
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: BaseServiceInjectorImplant
+  abstract: true
+  components:
+  - type: InjectorImplant
+    injectOnCritical: false
+    intoStomach: true
+    rechargeTime: 180
+    solution: {}
+
+# Nutrients
+
+- type: entity
+  parent: BaseServiceInjectorImplant
+  id: NutrientInjectorImplant
+  name: nutrient injector implant
+  description: Puts a dose of nutrients straight into the stomach on demand.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateNutrientInjectorImplant
+  - type: InjectorImplant
+    usedPopup: service-implant-nutrient-used
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 15
+
+- type: entity
+  id: ActionActivateNutrientInjectorImplant
+  name: Inject Nutrients
+  description: Puts a dose of nutrients into your stomach. Each charge recharges in 3 minutes.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    charges: 3
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Objects/Consumable/Food/mre.rsi
+      state: paste
+    event: !type:UseInjectorImplantEvent
+
+# Water
+
+- type: entity
+  parent: BaseServiceInjectorImplant
+  id: WaterInjectorImplant
+  name: water injector implant
+  description: Puts a dose of water straight into the stomach on demand.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateWaterInjectorImplant
+  - type: InjectorImplant
+    usedPopup: service-implant-water-used
+    solution:
+      reagents:
+      - ReagentId: Water
+        Quantity: 30
+
+- type: entity
+  id: ActionActivateWaterInjectorImplant
+  name: Inject Water
+  description: Puts a dose of water into your stomach. Each charge recharges in 3 minutes.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    charges: 3
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Objects/Consumable/Drinks/waterbottle.rsi
+      state: icon
+    event: !type:UseInjectorImplantEvent
+
+# Beer
+
+- type: entity
+  parent: BaseServiceInjectorImplant
+  id: BeerInjectorImplant
+  name: beer injector implant
+  description: Puts a dose of beer straight into the stomach on demand.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateBeerInjectorImplant
+  - type: InjectorImplant
+    usedPopup: service-implant-beer-used
+    solution:
+      reagents:
+      - ReagentId: Beer
+        Quantity: 20
+
+- type: entity
+  id: ActionActivateBeerInjectorImplant
+  name: Inject Beer
+  description: Puts a dose of beer into your stomach. Each charge recharges in 3 minutes.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    charges: 3
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Objects/Consumable/Drinks/beer.rsi
+      state: icon
+    event: !type:UseInjectorImplantEvent
+
+# Vodka
+
+- type: entity
+  parent: BaseServiceInjectorImplant
+  id: VodkaInjectorImplant
+  name: vodka injector implant
+  description: Puts a dose of vodka straight into the stomach on demand.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateVodkaInjectorImplant
+  - type: InjectorImplant
+    usedPopup: service-implant-vodka-used
+    solution:
+      reagents:
+      - ReagentId: Vodka
+        Quantity: 10
+
+- type: entity
+  id: ActionActivateVodkaInjectorImplant
+  name: Inject Vodka
+  description: Puts a dose of vodka into your stomach. Each charge recharges in 3 minutes.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    charges: 3
+    checkCanInteract: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Objects/Consumable/Drinks/vodkabottle.rsi
+      state: icon
+    event: !type:UseInjectorImplantEvent
+
+# Autosurgeons
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonNutrientInjector
+  name: autosurgeon (nutrient injector implant)
+  description: Installs an implant that puts a dose of nutrients into the stomach on demand.
+  components:
+  - type: AutoSurgeon
+    implant: NutrientInjectorImplant
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonNutrientInjectorFlatpack
+  name: autosurgeon (nutrient injector implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonNutrientInjector
+  - type: StaticPrice
+    price: 750
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonWaterInjector
+  name: autosurgeon (water injector implant)
+  description: Installs an implant that puts a dose of water into the stomach on demand.
+  components:
+  - type: AutoSurgeon
+    implant: WaterInjectorImplant
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonWaterInjectorFlatpack
+  name: autosurgeon (water injector implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonWaterInjector
+  - type: StaticPrice
+    price: 750
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonBeerInjector
+  name: autosurgeon (beer injector implant)
+  description: Installs an implant that puts a dose of beer into the stomach on demand.
+  components:
+  - type: AutoSurgeon
+    implant: BeerInjectorImplant
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonBeerInjectorFlatpack
+  name: autosurgeon (beer injector implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonBeerInjector
+  - type: StaticPrice
+    price: 750
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonVodkaInjector
+  name: autosurgeon (vodka injector implant)
+  description: Installs an implant that puts a dose of vodka into the stomach on demand.
+  components:
+  - type: AutoSurgeon
+    implant: VodkaInjectorImplant
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonVodkaInjectorFlatpack
+  name: autosurgeon (vodka injector implant) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonVodkaInjector
+  - type: StaticPrice
+    price: 750
+  - type: Sprite
+    layers:
+    - state: medical_lathe

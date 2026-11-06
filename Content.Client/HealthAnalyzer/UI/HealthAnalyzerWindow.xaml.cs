@@ -181,7 +181,7 @@ namespace Content.Client.HealthAnalyzer.UI
 
             DamageLabel.Text = damageable.TotalDamage.ToString();
 
-            // LuaM-start: humanity, the server only sends it when you scan yourself
+            // LuaM-start: humanity, the server only sends it for bodies that have it
             var showHumanity = msg.HumanityLeft != null && msg.HumanityMax != null;
             HumanityTextLabel.Visible = showHumanity;
             HumanityLabel.Visible = showHumanity;
