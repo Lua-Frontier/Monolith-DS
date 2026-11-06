@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 10/23/2026 15:19:59
-  entityCount: 10397
+  entityCount: 10402
 maps:
 - 1
 grids:
@@ -47389,7 +47389,7 @@ entities:
     - type: Transform
       pos: -7.3454695,24.916986
       parent: 2
-- proto: MailTeleporter
+- proto: DeliveryTelepad
   entities:
   - uid: 6017
     components:
@@ -58250,6 +58250,33 @@ entities:
       pos: 11.5,11.5
       parent: 2
   - uid: 7622
+    components:
+    - type: Transform
+      pos: 14.5,11.5
+      parent: 2
+- proto: SpawnPointDeliveryCourier
+  entities:
+  - uid: 10401
+    components:
+    - type: Transform
+      pos: 14.5,5.5
+      parent: 2
+  - uid: 10402
+    components:
+    - type: Transform
+      pos: 17.5,5.5
+      parent: 2
+  - uid: 10403
+    components:
+    - type: Transform
+      pos: 17.5,11.5
+      parent: 2
+  - uid: 10404
+    components:
+    - type: Transform
+      pos: 11.5,11.5
+      parent: 2
+  - uid: 10405
     components:
     - type: Transform
       pos: 14.5,11.5

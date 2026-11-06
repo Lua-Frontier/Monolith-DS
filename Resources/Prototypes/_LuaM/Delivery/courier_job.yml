@@ -1,0 +1,112 @@
+- type: job
+  id: DeliveryCourier
+  guides:
+  - Caelestinus
+  name: job-name-delivery-courier
+  description: job-description-delivery-courier
+  playTimeTracker: JobDeliveryCourier
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800
+  startingGear: DeliveryCourierGear
+  alwaysUseSpawner: true
+  icon: "JobIconDeliveryCourier"
+  supervisors: job-supervisors-sr
+  weight: 60
+  displayWeight: 10
+  assignedCompany: Colonial
+  canBeAntag: false
+  access:
+  - Maintenance
+  - External
+  - Service
+  - Frontier
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: DeliveryCourier
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+
+# -- LuaM: ваучер «Газели» вместо сервисного, когда будет шаттл
+- type: startingGear
+  id: DeliveryCourierGear
+  equipment:
+    head: ClothingHeadHatBellhop
+    gloves: ClothingHandsGlovesColorWhite
+    id: DeliveryCourierPDA
+  storage:
+    back:
+    - EncryptionKeyService
+    - ShipVoucherFrontierService
+
+- type: playTimeTracker
+  id: JobDeliveryCourier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDeliveryCourier
+  icon:
+    sprite: /Textures/_NF/Interface/Misc/job_icons.rsi
+    state: valet
+  jobName: job-name-delivery-courier
+
+- type: roleLoadout
+  id: JobDeliveryCourier
+  groups:
+  - ContractorNeck
+  - ValetJumpsuit
+  - ContractorBackpack
+  - ValetOuterClothing
+  - ContractorShoes
+  - ContractorFace
+  - ContractorGlasses
+  - ContractorBelt
+  - ContractorEars
+  - ContractorEncryptionKey
+  - ContractorBoxSurvival
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorUtility
+  - ContractorFun
+  - ContractorTrinkets
+  - ContractorBureaucracy
+  - NFSpeciesSpecific
+  - ContractorFirearm
+  - ContractorMag
+  - ContractorArmorPlates
+
+- type: entity
+  parent: CCServiceWorkerNFIDCard
+  id: DeliveryCourierIDCard
+  categories: [ HideSpawnMenu ]
+  name: courier ID card
+  description: An identification card belonging to a delivery service courier.
+  components:
+  - type: PresetIdCard
+    job: DeliveryCourier
+
+- type: entity
+  parent: CCServiceWorkerPDA
+  id: DeliveryCourierPDA
+  name: courier PDA
+  description: A personal digital assistant belonging to a delivery service courier.
+  components:
+  - type: Pda
+    id: DeliveryCourierIDCard
+
+- type: entity
+  id: SpawnPointDeliveryCourier
+  parent: SpawnPointJobBase
+  name: courier
+  components:
+  - type: SpawnPoint
+    job_id: DeliveryCourier
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger

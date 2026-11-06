@@ -1,0 +1,134 @@
+- type: deliveryCatalog
+  id: Default
+  markup: 2.25
+  exclude:
+  - BoxAgrichem
+  - WeaponSubMachineGunAK220
+  excludeParents:
+  - Jug
+  - BaseChemistryBottleFilled
+  excludeComponents:
+  - Hypospray
+  - Flatpack
+  excludeInventories:
+  - TraderBaikal
+  - TraderDepot
+  - TraderDepotAlt
+  - TraderTradeMall
+  - CrocusPDVArmory
+  - CrocusTSFArmory
+  - BlueSpaceVendInventory
+  - MieyoAutomatedTrader
+  - EmptyVendingMachineInventory
+  - FlatpackVendInventory
+  - ExpeditionaryFlatpackVendInventory
+  - FlatpackVendPremiumInventory
+  categories:
+  - name: delivery-category-exclusive
+    items:
+    - FoodLuaMDubaiPancakes
+  - name: delivery-category-engineering
+    inventories:
+    - EngiVendInventory
+    - EngiVendPOIInventory
+    - YouToolInventory
+    - YouToolPOIInventory
+    - VendomatInventory
+    - VendomatPOIInventory
+    - TankDispenserEngineeringInventory
+  - name: delivery-category-salvage
+    inventories:
+    - NFSalvageEquipmentInventory
+    - NFSalvageEquipmentPOIInventory
+    - AstroVendInventory
+    - AstroVendPOIInventory
+    - TankDispenserEVAInventory
+    - TankDispenserEVAPOIInventory
+  - name: delivery-category-fuel
+    inventories:
+    - VendingMachineFuelVendInventory
+  - name: delivery-category-medical
+    inventories:
+    - NanoMedPlusInventory
+    - NanoMedInventory
+    - ChemVendInventory
+  - name: delivery-category-science
+    inventories:
+    - RoboticsInventory
+  - name: delivery-category-weapons
+    inventories:
+    - WeaponryWorksVendInventory
+    - WeaponryWorksVendPOIInventory
+    - LessLethalVendInventory
+    - LessLethalVendPOIInventory
+    - NonLethalVendInventory
+    - BountyVendInventory
+    - BountyVendPOIInventory
+    - VendingMachineBountyVendPunkInventory
+  - name: delivery-category-botany
+    inventories:
+    - MegaSeedServitorInventory
+    - NutriMaxInventory
+  - name: delivery-category-kitchen
+    inventories:
+    - ChefvendInventory
+    - CondimentInventory
+    - DinnerwareInventory
+  - name: delivery-category-food
+    inventories:
+    - GetmoreChocolateCorpInventory
+    - ChangInventory
+    - DiscountDansInventory
+    - DonutInventory
+    - HappyHonkDispenserInventory
+    - SustenanceInventory
+  - name: delivery-category-drinks
+    inventories:
+    - RobustSoftdrinksInventory
+    - SodaInventory
+    - SpaceUpInventory
+    - StarkistInventory
+    - ShamblersJuiceInventory
+    - DrGibbInventory
+    - SmiteInventory
+    - BodaInventory
+    - HotDrinksMachineInventory
+    - BaristaVendInventory
+    - BoozeOMatInventory
+  - name: delivery-category-leisure
+    inventories:
+    - GoodCleanFunInventory
+    - PwrGameInventory
+    - CuddlyCritterVendInventory
+    - AutoTuneVendInventory
+    - CigaretteMachineInventory
+    - MagiVendInventory
+    - PietyVendInventory
+    - PottedPlantVendInventory
+  - name: delivery-category-clothing
+    inventories:
+    - ClothesMateInventory
+    - WinterDrobeInventory
+    - VendCapesInventory
+    - AutoDrobeInventory
+    - VendingMachineClothingPunkInventory
+    - YarrrDrobeInventory
+    - ArcadiaDrobeInventory
+    - EngiDrobeInventory
+    - AtmosDrobeInventory
+    - CargoDrobeInventory
+    - ChefDrobeInventory
+    - BarDrobeInventory
+    - ChemDrobeInventory
+    - CuraDrobeInventory
+    - DetDrobeInventory
+    - GeneDrobeInventory
+    - HyDrobeInventory
+    - JaniDrobeInventory
+    - LawDrobeInventory
+    - MediDrobeInventory
+    - RoboDrobeInventory
+    - SciDrobeInventory
+    - ViroDrobeInventory
+    - RepDrobeInventory
+    - BoxingDrobeInventory

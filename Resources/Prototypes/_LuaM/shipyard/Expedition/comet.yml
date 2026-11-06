@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: vessel-comet-name # LuaM-locale
   description: vessel-comet-desc # LuaM-locale
-  price: 115330
+  price: 130000 # LuaM: 115330 > 130000, appraisal with random loot reached the price
   category: Large
   group: Expedition
   shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/comet.yml

@@ -46,6 +46,7 @@
             #StationTrafficController: [ 2, 2 ]
             SecurityGuard: [ 6, 6 ] # LuaM: 3, 3 > 6, 6
             CCServiceWorker: [ 2, 2 ] # LuaM: returned after the upstream removal
+            DeliveryCourier: [ 3, 3 ] # LuaM
             #NFJanitor: [ 2, 2 ]
             #MailCarrier: [ 2, 2 ]
             # DirectorOfCare: [ 1, 1 ] # Commented by LuaM

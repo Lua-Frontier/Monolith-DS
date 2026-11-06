@@ -1,0 +1,57 @@
+<delivery:DeliveryUiFragment xmlns:delivery="clr-namespace:Content.Client._LuaM.Delivery"
+                             xmlns:luam="clr-namespace:Content.Client._LuaM.UserInterface"
+                             xmlns="https://spacestation14.io"
+                             Orientation="Vertical"
+                             HorizontalExpand="True"
+                             VerticalExpand="True">
+    <luam:HazardBanner Name="BannerBox" Visible="False"/>
+
+    <BoxContainer Name="ShopBox" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="5" Visible="False">
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc 'delivery-program-name'}" StyleClasses="LabelHeading" HorizontalExpand="True"/>
+            <Label Name="ShopBalanceLabel" VerticalAlignment="Center"/>
+        </BoxContainer>
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 4 0 0">
+            <Button Name="CatalogTabButton" Text="{Loc 'delivery-ui-tab-catalog'}" ToggleMode="True" StyleClasses="OpenRight" HorizontalExpand="True"/>
+            <Button Name="OrdersTabButton" ToggleMode="True" StyleClasses="OpenLeft" HorizontalExpand="True"/>
+        </BoxContainer>
+        <BoxContainer Name="CatalogPanel" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 4">
+            <OptionButton Name="CategorySelect" MinWidth="180"/>
+            <LineEdit Name="SearchInput" PlaceHolder="{Loc 'delivery-ui-search'}" HorizontalExpand="True" Margin="4 0 0 0"/>
+        </BoxContainer>
+        <Label Name="CatalogStatusLabel" FontColorOverride="#A0A0A0" Visible="False"/>
+        <ScrollContainer Name="CatalogScroll" HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" MinHeight="160">
+            <BoxContainer Name="CatalogList" Orientation="Vertical" HorizontalExpand="True"/>
+        </ScrollContainer>
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 2">
+            <Button Name="PrevPageButton" Text="&lt;" MinWidth="28"/>
+            <Label Name="PageLabel" VerticalAlignment="Center" Margin="8 0"/>
+            <Button Name="NextPageButton" Text="&gt;" MinWidth="28"/>
+        </BoxContainer>
+        <RichTextLabel Name="CartSummary" HorizontalExpand="True" Margin="0 4 0 0"/>
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="ClearButton" Text="{Loc 'delivery-ui-clear'}" Margin="0 0 4 0"/>
+            <Button Name="OrderButton" Text="{Loc 'delivery-ui-order'}" Disabled="True"/>
+        </BoxContainer>
+        </BoxContainer>
+        <ScrollContainer Name="OrdersPanel" HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" Visible="False" Margin="0 4 0 0">
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                <Label Name="NoMyOrdersLabel" Text="{Loc 'delivery-ui-no-orders'}" FontColorOverride="#A0A0A0"/>
+                <BoxContainer Name="MyOrdersList" Orientation="Vertical" HorizontalExpand="True"/>
+            </BoxContainer>
+        </ScrollContainer>
+    </BoxContainer>
+
+    <ScrollContainer Name="CourierBox" HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" Visible="False">
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
+            <Label Text="{Loc 'delivery-ui-courier-profile'}" StyleClasses="LabelSubText"/>
+            <Label Name="CourierNameLabel" StyleClasses="LabelHeading"/>
+            <Label Name="CourierStatsLabel"/>
+            <Label Name="CourierBalanceLabel"/>
+            <Label Text="{Loc 'delivery-ui-active-orders'}" StyleClasses="LabelSubText" Margin="0 8 0 0"/>
+            <Label Name="NoCourierOrdersLabel" Text="{Loc 'delivery-ui-no-orders'}" FontColorOverride="#A0A0A0"/>
+            <BoxContainer Name="CourierOrdersList" Orientation="Vertical" HorizontalExpand="True"/>
+        </BoxContainer>
+    </ScrollContainer>
+</delivery:DeliveryUiFragment>

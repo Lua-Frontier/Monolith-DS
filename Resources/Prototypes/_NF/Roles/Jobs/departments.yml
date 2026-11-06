@@ -20,6 +20,7 @@
   - StationRepresentative
   - StationTrafficController
   - CCServiceWorker # nyano
+  - DeliveryCourier # LuaM
   - NFJanitor
   - MailCarrier # nyano
   - SecurityGuard

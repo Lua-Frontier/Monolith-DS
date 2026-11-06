@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: vessel-balor-name # LuaM-locale
   description: vessel-balor-desc # LuaM-locale
-  price: 92780 # LuaM
+  price: 93800 # LuaM: 92780 > 93800, appraisal with random loot reached the price
   category: Large
   group: Shipyard
   access: Mercenary

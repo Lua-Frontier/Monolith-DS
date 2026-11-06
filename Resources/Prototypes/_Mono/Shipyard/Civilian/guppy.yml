@@ -9,7 +9,7 @@
   parent: BaseVessel
   name: SHM Guppy
   description: A small mining vessel straight from the outer Perseus arm. Reliable, rugged, but rudimentary, the Guppy is a prime vessel for a novice contractor.
-  price: 22000
+  price: 25500 # LuaM: 22000 > 25500, appraisal with random loot reached the price
   category: Small
   group: Shipyard
   shuttlePath: /SharedMaps/_Mono/Shuttles/Civilian/guppy.yml

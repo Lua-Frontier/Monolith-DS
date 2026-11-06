@@ -9,7 +9,7 @@
   parent: BaseVessel
   name: vessel-magus-name # LuaM-locale
   description: vessel-magus-desc # LuaM-locale
-  price: 55830
+  price: 56500 # LuaM: 55830 > 56500, appraisal with random loot reached the price
   category: Medium
   group: Expedition
   shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/magus.yml

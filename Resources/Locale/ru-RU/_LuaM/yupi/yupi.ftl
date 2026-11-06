@@ -29,3 +29,5 @@ yupi-error-target-unavailable = Получатель сейчас недосту
 yupi-error-insufficient-funds = Недостаточно средств.
 yupi-error-cooldown = Следующий перевод будет доступен через минуту.
 yupi-error-disabled = Переводы временно недоступны.
+yupi-ui-blocked = АККАУНТ ЗАБЛОКИРОВАН
+yupi-ui-blocked-hint = Банковские операции недоступны для этого персонажа.

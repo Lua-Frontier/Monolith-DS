@@ -81,6 +81,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - YupiCartridge # LuaM
+      - DeliveryCartridge # LuaM
       - NewsReaderCartridge
       - BountyContractsCartridge # Frontier
       - AstroNavCartridge # Frontier
@@ -154,6 +155,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - YupiCartridge # LuaM
+    - DeliveryCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge # Frontier
     - AstroNavCartridge # Frontier
@@ -170,6 +172,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - YupiCartridge # LuaM
+    - DeliveryCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge # Frontier
     - AstroNavCartridge # Frontier
@@ -885,6 +888,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - YupiCartridge # LuaM
+    - DeliveryCartridge # LuaM
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
@@ -954,6 +958,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - YupiCartridge # LuaM
+      - DeliveryCartridge # LuaM
       - NewsReaderCartridge
       - MedTekCartridge
       - WantedListCartridge
@@ -986,6 +991,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - YupiCartridge # LuaM
+      - DeliveryCartridge # LuaM
       - NewsReaderCartridge
       - LogProbeCartridge
       - WantedListCartridge
@@ -1110,6 +1116,7 @@
     preinstalled:
       - NotekeeperCartridge
       - YupiCartridge # LuaM
+      - DeliveryCartridge # LuaM
       - AstroNavCartridge # Frontier
 
 - type: entity
@@ -1138,6 +1145,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - YupiCartridge # LuaM
+      - DeliveryCartridge # LuaM
       - NewsReaderCartridge
       - MedTekCartridge
       - WantedListCartridge
@@ -1321,6 +1329,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - YupiCartridge # LuaM
+    - DeliveryCartridge # LuaM
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
@@ -1349,6 +1358,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - YupiCartridge # LuaM
+    - DeliveryCartridge # LuaM
     - NewsReaderCartridge
     - WantedListCartridge
     - MedTekCartridge
@@ -1502,6 +1512,7 @@
     preinstalled:
       - NotekeeperCartridge
       - YupiCartridge # LuaM
+      - DeliveryCartridge # LuaM
       - MedTekCartridge
 
 - type: entity

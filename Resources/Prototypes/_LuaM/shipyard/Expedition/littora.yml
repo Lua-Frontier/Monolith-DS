@@ -9,7 +9,7 @@
   parent: BaseVessel
   name: vessel-littora-name # LuaM-locale
   description: vessel-littora-desc # LuaM-locale
-  price: 64020
+  price: 64700 # LuaM: 64020 > 64700, appraisal with random loot reached the price
   category: Large
   group: Expedition
   shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/littora.yml

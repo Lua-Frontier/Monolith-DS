@@ -1,0 +1,12 @@
+ent-DeliveryTelepad = телепад доставки
+    .desc = Принимает посылки, заказанные через сервис доставки.
+ent-DeliveryParcel = сумка доставки
+    .desc = Запечатанная сумка доставки. Открыть её может только заказчик своей ID-картой.
+ent-DeliveryCartridge = картридж ColossDelivery
+    .desc = Программа для заказа доставки и работы курьеров.
+ent-DeliveryCourierIDCard = ID-карта курьера
+    .desc = Идентификационная карта курьера службы доставки.
+ent-DeliveryCourierPDA = КПК курьера
+    .desc = Карманный персональный компьютер курьера службы доставки.
+ent-SpawnPointDeliveryCourier = курьер
+    .desc = { ent-SpawnPointJobBase.desc }
