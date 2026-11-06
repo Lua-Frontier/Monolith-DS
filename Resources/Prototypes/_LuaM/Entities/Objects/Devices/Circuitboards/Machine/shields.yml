@@ -1,0 +1,18 @@
+- type: entity
+  id: MachineShieldCIC150Circuitboard
+  parent: BaseMachineCircuitboard
+  name: CIC-150 shield generator board
+  description: A machine board for a shield generator.
+  suffix: Cicads
+  components:
+    - type: Sprite
+      sprite: _LuaM/Objects/Misc/module_cicads.rsi
+      state: shield_cicads
+    - type: MachineBoard
+      prototype: ShieldGeneratorSmallCicads
+      flatpackable: true
+      stackRequirements:
+        Glass: 10
+        Steel: 10
+        Plasma: 30
+        Plasteel: 10
