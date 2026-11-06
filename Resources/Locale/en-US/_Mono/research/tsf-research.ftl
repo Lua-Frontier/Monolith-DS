@@ -29,6 +29,6 @@ research-technology-tsfmc-super-weapons = State-of-the-art Weapons Manufacturing
 research-technology-tsfmc-super-ballistics = Weapon Modernization
 research-technology-tsfmc-synthalloy = Experimental Material Science
 research-technology-tsfmc-advanced-module = TSFMC Advanced Cyborg Module Developpment
-research-technology-tsfmc-sandevistan = TSFMC Sandevistan Reverse Engineering
+research-technology-tsfmc-sandevistan = TSFMC Combat Cybernetics
 research-technology-tsfmc-shunt = TSFMC Blacksite Cybernetics
 research-technology-tsfmc-large-explosives = TSFMC Hardbombs

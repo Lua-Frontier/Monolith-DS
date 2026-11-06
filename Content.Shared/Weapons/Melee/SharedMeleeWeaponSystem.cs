@@ -765,7 +765,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             RaiseLocalEvent(entity, attackedEvent);
             var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
 
-            var damageResult = Damageable.TryChangeDamage(entity, modifiedDamage, origin: user, armorPenetration: component.ArmorPenetration, partMultiplier: component.HeavyPartDamageMultiplier); // Shitmed Change
+            var damageResult = Damageable.TryChangeDamage(entity, modifiedDamage, origin: user, armorPenetration: component.HeavyArmorPenetration ?? component.ArmorPenetration, partMultiplier: component.HeavyPartDamageMultiplier); // Shitmed Change, LuaM: HeavyArmorPenetration
 
             if (damageResult != null && damageResult.GetTotal() > FixedPoint2.Zero)
             {

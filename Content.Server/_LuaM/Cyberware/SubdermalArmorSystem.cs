@@ -19,6 +19,10 @@ public sealed partial class SubdermalArmorSystem : EntitySystem
 
     private void OnAddedToBody(Entity<SubdermalArmorComponent> ent, ref OrganAddedToBodyEvent args)
     {
+        // Armor that only gives other effects, like reflection, leaves damage protection alone.
+        if (ent.Comp.Modifiers.Count == 0)
+            return;
+
         ent.Comp.AddedProtection = !EnsureComp<DamageProtectionBuffComponent>(args.Body, out var protection);
         ent.Comp.Replaced.Clear();
 
@@ -35,6 +39,9 @@ public sealed partial class SubdermalArmorSystem : EntitySystem
 
     private void OnRemovedFromBody(Entity<SubdermalArmorComponent> ent, ref OrganRemovedFromBodyEvent args)
     {
+        if (ent.Comp.Modifiers.Count == 0)
+            return;
+
         if (TerminatingOrDeleted(args.OldBody)
             || !TryComp<DamageProtectionBuffComponent>(args.OldBody, out var protection))
         {

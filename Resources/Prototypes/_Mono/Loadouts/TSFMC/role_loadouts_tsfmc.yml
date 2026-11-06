@@ -180,6 +180,7 @@
   - TsfmcMag
   - TsfmcSidearmAmmo
   - FactionArmorPlates
+  - TSFColonelImplants # LuaM: reflective dermal armor autosurgeon
 #  - TsfmcRanksColonel # Commented by LuaM: chat ranks are off for now
   canCustomizeName: true
 

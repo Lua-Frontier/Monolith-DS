@@ -1,0 +1,86 @@
+# Negative IPC traits.
+
+- type: trait
+  id: IpcCorrosionVulnerability
+  name: trait-luam-ipc-corrosion-name
+  description: trait-luam-ipc-corrosion-desc
+  category: Physical
+  cost: -2
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: DamageProtectionBuff
+    modifiers:
+      corrosion:
+        id: IpcCorrosionVulnerability
+        coefficients:
+          Caustic: 1.5
+  - type: ReagentTouchDamage # 5 shock for every 5u of water
+    reagent: Water
+    damagePerUnit:
+      types:
+        Shock: 1
+
+- type: trait
+  id: IpcUnstableWiring
+  name: trait-luam-ipc-unstable-wiring-name
+  description: trait-luam-ipc-unstable-wiring-desc
+  category: Physical
+  cost: -4
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: UnstableWiring
+    damage:
+      types:
+        Shock: 15
+
+- type: trait
+  id: IpcPowerHungry
+  name: trait-luam-ipc-power-hungry-name
+  description: trait-luam-ipc-power-hungry-desc
+  category: Physical
+  cost: -3
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: SiliconDrainOverride # more than a microreactor cell recharges (12 per second)
+    drainPerSecond: 15
+
+- type: trait
+  id: IpcFragileChassis
+  name: trait-luam-ipc-fragile-chassis-name
+  description: trait-luam-ipc-fragile-chassis-desc
+  category: Physical
+  cost: -6
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: MobThresholdsDecrease
+    amount: 75
+
+- type: trait
+  id: IpcComplexDesign
+  name: trait-luam-ipc-complex-design-name
+  description: trait-luam-ipc-complex-design-desc
+  category: Physical
+  cost: -6
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: HealingModifier
+    multiplier: 0.5
+    repairTimeMultiplier: 2
+
+- type: trait
+  id: IpcAncientServos
+  name: trait-luam-ipc-ancient-servos-name
+  description: trait-luam-ipc-ancient-servos-desc
+  category: Physical
+  cost: -3
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: TraitSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9

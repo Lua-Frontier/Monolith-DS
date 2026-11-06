@@ -1,4 +1,5 @@
 using Content.Shared._Shitmed.Targeting;
+using Content.Shared._LuaM.Traits; // LuaM
 // Shitmed Change
 using Content.Shared.Body.Systems;
 using Content.Shared.CCVar;
@@ -36,6 +37,7 @@ namespace Content.Shared.Damage
 
         private EntityQuery<AppearanceComponent> _appearanceQuery;
         private EntityQuery<DamageableComponent> _damageableQuery;
+        private EntityQuery<HealingModifierComponent> _healingModifierQuery; // LuaM
 
         public float UniversalAllDamageModifier { get; private set; } = 1f;
         public float UniversalAllHealModifier { get; private set; } = 1f;
@@ -58,6 +60,7 @@ namespace Content.Shared.Damage
 
             _appearanceQuery = GetEntityQuery<AppearanceComponent>();
             _damageableQuery = GetEntityQuery<DamageableComponent>();
+            _healingModifierQuery = GetEntityQuery<HealingModifierComponent>(); // LuaM
 
             // Damage modifier CVars are updated and stored here to be queried in other systems.
             // Note that certain modifiers requires reloading the guidebook.
@@ -175,6 +178,25 @@ namespace Content.Shared.Damage
             Barotrauma // flag set by BarotraumaSystem
         }
 
+        // LuaM-start
+        /// <summary>
+        /// Multiplies only the healing part of the damage, the rest stays as it is.
+        /// </summary>
+        private static DamageSpecifier ScaleHealing(DamageSpecifier damage, float multiplier)
+        {
+            if (multiplier == 1f || !damage.DamageDict.Values.Any(value => value < 0))
+                return damage;
+
+            var scaled = new DamageSpecifier();
+            foreach (var (type, value) in damage.DamageDict)
+            {
+                scaled.DamageDict[type] = value < 0 ? value * multiplier : value;
+            }
+
+            return scaled;
+        }
+        // LuaM-end
+
         /// <summary>
         ///     Applies damage specified via a <see cref="DamageSpecifier"/>.
         /// </summary>
@@ -213,6 +235,11 @@ namespace Content.Shared.Damage
 
             if (before.Cancelled)
                 return null;
+
+            // LuaM-start: some bodies heal worse from any source, like IPCs with the complex construction trait
+            if (_healingModifierQuery.TryComp(uid.Value, out var healingModifier))
+                damage = ScaleHealing(damage, healingModifier.Multiplier);
+            // LuaM-end
 
             // Shitmed Change Start
             var partDamage = new TryChangePartDamageEvent(damage, origin, targetPart, ignoreResistances, canSever ?? true, canEvade ?? false, partMultiplier ?? 1.00f);

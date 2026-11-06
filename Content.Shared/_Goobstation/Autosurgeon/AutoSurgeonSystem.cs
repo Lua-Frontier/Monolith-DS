@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._LuaM.Autosurgeon; // LuaM
 using Content.Shared._LuaM.Cyberware; // LuaM
 using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared.Body.Organ;
@@ -319,13 +320,24 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
             return;
         }
 
+        var applied = true; // LuaM
         if (ent.Comp.TargetOrgan == null)
-            HandleBodyPart(args.Target.Value, part, ent.Comp.ComponentsToUser);
+            applied = HandleBodyPart(args.Target.Value, part, ent.Comp.ComponentsToUser, ent.Comp.ReplaceUserComponents, ent.Comp.UpgradeTier); // LuaM: replace, tier
         else
             HandleOrgan(args.Target.Value, part, ent.Comp.ComponentsToUser);
 
+        // LuaM-start: nothing to upgrade, the user already has it or something better, so the autosurgeon is not used up
+        if (!applied)
+        {
+            _audio.Stop(ent.Comp.ActiveSound);
+            if (!_netManager.IsClient)
+                _popup.PopupEntity(Loc.GetString("autosurgeon-implant-already"), args.Target.Value, args.Target.Value);
+            return;
+        }
+        // LuaM-end
+
         // LuaM-start: humanity cost of the upgrade, stored on the part so a repeated upgrade doesn't count twice
-        if (ent.Comp.HumanityCost > 0 && Prototype(ent)?.ID is { } upgradeId)
+        if (ent.Comp.HumanityCost > 0 && (ent.Comp.HumanityKey ?? Prototype(ent)?.ID) is { } upgradeId)
             EnsureComp<CyberwareHumanityComponent>(part).Upgrades[upgradeId] = ent.Comp.HumanityCost;
         // LuaM-end
 
@@ -348,34 +360,68 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
     }
     // LuaM-end
 
-    private void HandleBodyPart(EntityUid user, EntityUid part, ComponentRegistry? comps)
+    private bool HandleBodyPart(EntityUid user, EntityUid part, ComponentRegistry? comps, bool replace = false, int tier = 0) // LuaM: replace, tier, returns whether anything was applied
     {
         if (!TryComp<BodyPartComponent>(part, out var partComp)
         || comps == null)
-            return;
+            return true;
+
+        TryComp<AutoSurgeonUpgradeTiersComponent>(part, out var tiers); // LuaM
 
         var addedToOnAdd = new ComponentRegistry();
         foreach (var (name, data) in comps)
         {
+            // LuaM: the part already has this upgrade at the same or a higher tier
+            if (tier > 0 && tiers != null && tiers.Tiers.TryGetValue(name, out var oldTier) && oldTier >= tier)
+                continue;
+
             if (partComp.OnAdd != null)
             {
                 if (partComp.OnAdd.TryAdd(name, data))
                     addedToOnAdd.Add(name, data);
+                // LuaM-start: an improved version takes the old one's place
+                else if (replace)
+                {
+                    partComp.OnAdd[name] = data;
+                    addedToOnAdd.Add(name, data);
+                }
+                // LuaM-end
             }
             else
             {
-                partComp.OnAdd = comps;
-                addedToOnAdd = comps;
+                // LuaM: a registry of its own, so later components of this autosurgeon go through the same checks
+                partComp.OnAdd = new ComponentRegistry { { name, data } };
+                addedToOnAdd.Add(name, data);
             }
         }
 
-        var addedToUser = AddComponents(user, addedToOnAdd);
+        var addedToUser = AddComponents(user, addedToOnAdd, replace); // LuaM: replace
         if (addedToUser == null)
-            return;
+            return true;
+
+        // LuaM-start
+        if (addedToUser.Count == 0)
+            return false;
+
+        if (tier > 0)
+        {
+            tiers ??= EnsureComp<AutoSurgeonUpgradeTiersComponent>(part);
+            foreach (var name in addedToUser.Keys)
+                tiers.Tiers[name] = tier;
+        }
+        // LuaM-end
 
         var partEffectComp = EnsureComp<BodyPartEffectComponent>(part);
         foreach (var (name, data) in addedToUser)
-            partEffectComp.Active.TryAdd(name, data);
+        {
+            // LuaM: keep the newest version, so it is the one put back if the component gets lost
+            if (replace)
+                partEffectComp.Active[name] = data;
+            else
+                partEffectComp.Active.TryAdd(name, data);
+        }
+
+        return true; // LuaM
     }
 
     private void HandleOrgan(EntityUid user, EntityUid organ, ComponentRegistry? comps)
@@ -416,7 +462,7 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
             args.PushMarkup(Loc.GetString("autosurgeon-disassemble-examine"));
     }
 
-    private ComponentRegistry? AddComponents(EntityUid ent, ComponentRegistry? comps) // Returns actually added components
+    private ComponentRegistry? AddComponents(EntityUid ent, ComponentRegistry? comps, bool replace = false) // Returns actually added components // LuaM: replace
     {
         if (comps == null)
             return null;
@@ -431,6 +477,16 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
                 // LuaM: implanted damage protection replaces the same one from a trait instead of being skipped
                 if (newComp is DamageProtectionBuffComponent && MergeDamageProtection(ent, newComp, data))
                     result.Add(name, data);
+                // LuaM-start: an improved version overwrites the values of the one the user has
+                else if (replace)
+                {
+                    object? existing = EntityManager.GetComponent(ent, newComp.GetType());
+                    _serializationManager.CopyTo(data.Component, ref existing);
+                    if (existing is Component { NetSyncEnabled: true } synced)
+                        Dirty(ent, synced);
+                    result.Add(name, data);
+                }
+                // LuaM-end
                 continue;
             }
 

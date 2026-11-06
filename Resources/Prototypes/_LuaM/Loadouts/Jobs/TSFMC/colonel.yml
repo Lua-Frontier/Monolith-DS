@@ -1,0 +1,15 @@
+# Implants the TSF colonel can bring
+- type: loadoutGroup
+  id: TSFColonelImplants
+  name: loadout-group-tsf-colonel-implants
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - TSFReflectiveDermalArmorLoadout
+
+- type: loadout
+  id: TSFReflectiveDermalArmorLoadout
+  price: 1000000
+  storage:
+    back:
+    - AutosurgeonDermalArmorReflectiveFlatpack

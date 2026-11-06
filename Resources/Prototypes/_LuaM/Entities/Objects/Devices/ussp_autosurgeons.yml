@@ -1,0 +1,50 @@
+# USSP and Viper Group autosurgeons.
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonKerenzikovUSSP
+  name: USSP autosurgeon (Kerenzikov)
+  description: Wires a USSP Kerenzikov reflex booster into the central nervous system. Lets you shoot while it runs, but hurts you every second, and three times harder after 10 seconds.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Torso
+    targetOrgan: Cns
+    newPartProto: OrganCNSKerenzikov
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonKerenzikovUSSPFlatpack
+  name: USSP autosurgeon (Kerenzikov) flatpack
+  description: A flatpack used for constructing a USSP autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonKerenzikovUSSP
+  - type: StaticPrice
+    price: 15000
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonDermalArmorHeavyUSSP
+  name: USSP autosurgeon (ultra-durable armor plate base)
+  description: Puts a heavy USSP armor plate base under the skin. Every 20 seconds it fully stops one bullet, but you are 10% slower.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Torso
+    targetOrgan: Subdermal
+    newPartProto: OrganDermalArmorHeavyUSSP
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonDermalArmorHeavyUSSPFlatpack
+  name: USSP autosurgeon (ultra-durable armor plate base) flatpack
+  description: A flatpack used for constructing a USSP autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonDermalArmorHeavyUSSP
+  - type: StaticPrice
+    price: 4000
+  - type: Sprite
+    layers:
+    - state: medical_lathe

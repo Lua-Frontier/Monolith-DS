@@ -36,4 +36,13 @@ public sealed partial class CyberpsychosisComponent : Component
 
     [ViewVariables]
     public HashSet<ProtoId<NpcFactionPrototype>> OldFactions = new();
+
+    /// <summary>
+    /// When the psycho tries to turn its implants on again.
+    /// </summary>
+    [ViewVariables]
+    public TimeSpan NextImplantUse;
+
+    [DataField]
+    public TimeSpan ImplantUseInterval = TimeSpan.FromSeconds(1);
 }

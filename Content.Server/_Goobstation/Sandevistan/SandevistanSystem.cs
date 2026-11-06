@@ -3,6 +3,7 @@ using Content.Shared._Goobstation.Wizard.Projectiles;
 using Content.Shared._Goobstation.Sandevistan; // LuaM
 using Content.Shared._LuaM.Sandevistan; // LuaM
 using Content.Shared.Damage; // LuaM
+using Content.Server._LuaM.Cyberware; // LuaM
 using Content.Shared.Abilities;
 using Content.Shared.Actions;
 using Content.Shared.Mobs;
@@ -34,7 +35,26 @@ public sealed partial class SandevistanSystem : EntitySystem
         SubscribeLocalEvent<SandevistanUserComponent, MeleeAttackEvent>(OnMeleeAttack);
         SubscribeLocalEvent<SandevistanUserComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<SandevistanUserComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<SandevistanUserComponent, CyberpsychosisUseImplantsEvent>(OnPsychosisUse); // LuaM
     }
+
+    // LuaM-start: the psycho starts the sandevistan once it is recharged, but never turns it off
+    private void OnPsychosisUse(Entity<SandevistanUserComponent> ent, ref CyberpsychosisUseImplantsEvent args)
+    {
+        if (ent.Comp.Active != null)
+            return;
+
+        if (ent.Comp.RechargeAt != null)
+        {
+            if (ent.Comp.RechargeAt > _timing.CurTime)
+                return;
+
+            ent.Comp.RechargeAt = null;
+        }
+
+        Activate(ent);
+    }
+    // LuaM-end
 
     public override void Update(float frameTime)
     {
@@ -55,7 +75,18 @@ public sealed partial class SandevistanSystem : EntitySystem
                 continue;
 
             // LuaM start: no automatic shutdown, the user takes damage after the safe running time
-            if (!comp.PreOverloadWarned
+            if (comp.HeavyOverloadDamage != null
+                && comp.HeavyOverloadWarning is { } heavyWarning
+                && !comp.HeavyOverloadWarned
+                && _timing.CurTime >= comp.ActivatedAt + comp.HeavyOverloadAfter - comp.OverloadWarningTime)
+            {
+                comp.HeavyOverloadWarned = true;
+                _popup.PopupEntity(Loc.GetString(heavyWarning), uid, uid, PopupType.LargeCaution);
+                _audio.PlayEntity(comp.OverloadWarningSound, uid, uid);
+            }
+
+            if (comp.OverloadWarnings // LuaM
+                && !comp.PreOverloadWarned
                 && comp.OverloadAt != null
                 && _timing.CurTime >= comp.OverloadAt - comp.OverloadWarningTime)
             {
@@ -68,7 +99,7 @@ public sealed partial class SandevistanSystem : EntitySystem
             if (comp.OverloadAt != null
                 && _timing.CurTime >= comp.OverloadAt)
             {
-                if (!comp.OverloadWarned)
+                if (!comp.OverloadWarned && comp.OverloadWarnings) // LuaM: && comp.OverloadWarnings
                 {
                     comp.OverloadWarned = true;
                     _popup.PopupEntity(Loc.GetString("sandevistan-overload"), uid, uid, PopupType.LargeCaution);
@@ -79,7 +110,11 @@ public sealed partial class SandevistanSystem : EntitySystem
                 if (_timing.CurTime >= comp.NextOverloadDamage)
                 {
                     comp.NextOverloadDamage = _timing.CurTime + comp.OverloadInterval;
-                    _damageable.TryChangeDamage(uid, comp.OverloadDamage, ignoreResistances: true, interruptsDoAfters: false, canSever: false);
+                    // LuaM: heavier damage after running for a while, if the implant has it
+                    var damage = comp.HeavyOverloadDamage != null && _timing.CurTime >= comp.ActivatedAt + comp.HeavyOverloadAfter
+                        ? comp.HeavyOverloadDamage
+                        : comp.OverloadDamage;
+                    _damageable.TryChangeDamage(uid, damage, ignoreResistances: true, interruptsDoAfters: false, canSever: false);
 
                     // The damage may have put the user into crit, which shuts the Sandevistan down.
                     if (comp.Active == null)
@@ -141,11 +176,14 @@ public sealed partial class SandevistanSystem : EntitySystem
             EnsureComp<ActiveSandevistanUserComponent>(ent);
 
         // LuaM start
+        ent.Comp.ActivatedAt = _timing.CurTime;
+        ent.Comp.HeavyOverloadWarned = false;
         ent.Comp.OverloadAt = _timing.CurTime + ent.Comp.SafeDuration;
         ent.Comp.NextOverloadDamage = ent.Comp.OverloadAt.Value + ent.Comp.OverloadInterval;
         ent.Comp.OverloadWarned = false;
         ent.Comp.PreOverloadWarned = false;
-        EnsureComp<SandevistanGunBlockComponent>(ent);
+        if (ent.Comp.BlockGuns)
+            EnsureComp<SandevistanGunBlockComponent>(ent);
         SetGlitch(ent, ent.Comp.GlitchIntensity);
         // LuaM end
 

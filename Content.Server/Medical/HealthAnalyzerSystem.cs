@@ -43,7 +43,6 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
     [Dependency] private TransformSystem _transformSystem = default!;
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private HumanitySystem _humanity = default!; // LuaM
-    [Dependency] private SharedContainerSystem _container = default!; // LuaM
 
     public override void Initialize()
     {
@@ -290,10 +289,8 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
             part != null ? GetNetEntity(part) : null
         );
 
-        // LuaM-start: you only see your humanity when you scan yourself
-        if (TryComp<HumanityComponent>(target, out var humanity)
-            && _container.TryGetContainingContainer((healthAnalyzer, null, null), out var holder)
-            && holder.Owner == target)
+        // LuaM-start: humanity of the scanned person
+        if (TryComp<HumanityComponent>(target, out var humanity))
         {
             var max = _humanity.GetMaxHumanity((target, humanity));
             message.HumanityMax = max;

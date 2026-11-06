@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server._Goobstation.PairedExtendable;
+using Content.Server._LuaM.Cyberware;
 using Content.Shared._LuaM.MantisBlades;
 using Content.Shared.Actions;
 using Content.Shared.Body.Events;
@@ -37,6 +38,20 @@ public sealed partial class MantisBladeImplantSystem : EntitySystem
         SubscribeLocalEvent<MantisBladeImplantComponent, EmpPulseEvent>(OnEmpPulse);
         SubscribeLocalEvent<MantisBladeImplantUserComponent, ToggleMantisBladesEvent>(OnToggle);
         SubscribeLocalEvent<MantisBladeImplantUserComponent, ComponentShutdown>(OnUserShutdown);
+        SubscribeLocalEvent<MantisBladeImplantUserComponent, CyberpsychosisUseImplantsEvent>(OnPsychosisUse);
+    }
+
+    // The psycho pulls the blades out, but never puts them away.
+    private void OnPsychosisUse(Entity<MantisBladeImplantUserComponent> ent, ref CyberpsychosisUseImplantsEvent args)
+    {
+        foreach (var implant in _body.GetBodyOrganEntityComps<MantisBladeImplantComponent>(ent.Owner))
+        {
+            if (implant.Comp1.BladeUid is { } blade && !TerminatingOrDeleted(blade))
+                return;
+        }
+
+        var toggle = new ToggleMantisBladesEvent();
+        OnToggle(ent, ref toggle);
     }
 
     private void OnAddedToBody(Entity<MantisBladeImplantComponent> ent, ref OrganAddedToBodyEvent args)
