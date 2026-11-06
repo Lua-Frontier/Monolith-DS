@@ -1,0 +1,6 @@
+- type: lobbyTrack
+  id: LuaMFrontier
+  path: /Audio/_LuaM/Lobby/LuaMFrontier.ogg
+  title: "Frontier"
+  artist: "Unknown"
+  default: true

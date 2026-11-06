@@ -159,10 +159,10 @@ public sealed partial class ContentAudioSystem
     /// <param name="playlist">Array of soundtrack filenames for lobby playlist.</param>
     private void StartLobbyMusic(string[] playlist)
     {
+        _lobbyPlaylist = playlist; // LuaM
         if (_lobbySoundtrackInfo != null || !_configManager.GetCVar(CCVars.LobbyMusicEnabled))
             return;
 
-        _lobbyPlaylist = playlist;
         if (_lobbyPlaylist.Length == 0)
         {
             return;
@@ -206,7 +206,8 @@ public sealed partial class ContentAudioSystem
             return;
         }
 
-        _audio.Stop(_lobbySoundtrackInfo.MusicStreamEntityUid);
+        if (Exists(_lobbySoundtrackInfo.MusicStreamEntityUid)) // LuaM: _audio.Stop > Del
+            Del(_lobbySoundtrackInfo.MusicStreamEntityUid);
         _lobbySoundtrackInfo = null;
         var lobbySongChangedEvent = new LobbySoundtrackChangedEvent();
         _lobbySoundtrackChanged?.Invoke(lobbySongChangedEvent);
@@ -244,12 +245,11 @@ public sealed partial class ContentAudioSystem
     {
         if (
             _lobbySoundtrackInfo != null
-            && _timing.CurTime >= _lobbySoundtrackInfo.NextTrackOn
+            && (_timing.CurTime >= _lobbySoundtrackInfo.NextTrackOn || !Exists(_lobbySoundtrackInfo.MusicStreamEntityUid)) // LuaM
             && _lobbyPlaylist?.Length > 0
             )
         {
-            var nextSoundtrackFilename = GetNextSoundtrackFromPlaylist(_lobbySoundtrackInfo.Filename, _lobbyPlaylist);
-            PlaySoundtrack(nextSoundtrackFilename);
+            SkipLobbyTrack(1); // LuaM
         }
     }
 
@@ -271,6 +271,28 @@ public sealed partial class ContentAudioSystem
     /// <param name="MusicStreamEntityUid">
     /// EntityUid of launched soundtrack (from <see cref="SharedAudioSystem.PlayGlobal(string,Robust.Shared.Player.Filter,bool,System.Nullable{Robust.Shared.Audio.AudioParams})"/>).
     /// </param>
+    // LuaM-start
+    public void SkipLobbyTrack(int delta)
+    {
+        if (_lobbyPlaylist is not { Length: > 0 } playlist || !_configManager.GetCVar(CCVars.LobbyMusicEnabled))
+            return;
+
+        var index = _lobbySoundtrackInfo == null ? -1 : Array.IndexOf(playlist, _lobbySoundtrackInfo.Filename);
+        if (index < 0 && delta < 0)
+            index = 0;
+
+        if (_lobbySoundtrackInfo != null && Exists(_lobbySoundtrackInfo.MusicStreamEntityUid))
+            Del(_lobbySoundtrackInfo.MusicStreamEntityUid);
+        _lobbySoundtrackInfo = null;
+
+        for (var i = 0; i < playlist.Length && _lobbySoundtrackInfo == null; i++)
+        {
+            index = ((index + delta) % playlist.Length + playlist.Length) % playlist.Length;
+            PlaySoundtrack(playlist[index]);
+        }
+    }
+    // LuaM-end
+
     private sealed record LobbySoundtrackInfo(string Filename, TimeSpan NextTrackOn, EntityUid MusicStreamEntityUid);
 }
 

@@ -383,6 +383,12 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
             return;
 
         // LuaM-start
+        if (!_advancedHotbar)
+        {
+            _actions.Add(actionId);
+            return;
+        }
+
         RebuildLayout();
         UpdateActionBar();
         // LuaM-end
@@ -397,6 +403,12 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
             StopTargeting();
 
         // LuaM-start
+        if (!_advancedHotbar)
+        {
+            _actions.RemoveAll(x => x == actionId);
+            return;
+        }
+
         RebuildLayout();
         UpdateActionBar();
         // LuaM-end
@@ -406,10 +418,7 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
     {
         QueueWindowUpdate();
 
-        // LuaM-start
-        RebuildLayout();
-        UpdateActionBar();
-        // LuaM-end
+        RefreshActionBar(); // LuaM
     }
 
     private void ActionButtonPressed(ButtonEventArgs args)
@@ -570,12 +579,20 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
             if (_container?.TryGetButtonIndex(button, out position) ?? false)
             {
                 // LuaM-start
-                var globalIndex = CurrentPresetStart + position;
-                if (_actions.Count > globalIndex && globalIndex >= 0)
-                    _actions[globalIndex] = null;
+                if (!_advancedHotbar)
+                {
+                    if (_actions.Count > position && position >= 0)
+                        _actions.RemoveAt(position);
+                }
+                else
+                {
+                    var globalIndex = CurrentPresetStart + position;
+                    if (_actions.Count > globalIndex && globalIndex >= 0)
+                        _actions[globalIndex] = null;
 
-                if (hide)
-                    HideAction(oldAction);
+                    if (hide)
+                        HideAction(oldAction);
+                }
                 // LuaM-end
             }
         }
@@ -584,17 +601,27 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
             _container.TryGetButtonIndex(button, out position))
         {
             // LuaM-start
-            var globalIndex = CurrentPresetStart + position;
-            while (_actions.Count <= globalIndex)
-                _actions.Add(null);
+            if (!_advancedHotbar)
+            {
+                if (position >= _actions.Count)
+                    _actions.Add(actionId);
+                else
+                    _actions[position] = actionId;
+            }
+            else
+            {
+                var globalIndex = CurrentPresetStart + position;
+                while (_actions.Count <= globalIndex)
+                    _actions.Add(null);
 
-            _actions[globalIndex] = actionId;
-            ReserveSlot(globalIndex, actionId.Value);
+                _actions[globalIndex] = actionId;
+                ReserveSlot(globalIndex, actionId.Value);
+            }
             // LuaM-end
         }
 
         if (updateSlots)
-            CommitLayout(); // LuaM
+            CommitActionBar(); // LuaM
     }
 
     private void DragAction()
@@ -616,7 +643,7 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
         if (dragged.Parent is ActionButtonContainer)
             SetAction(dragged, swapAction, false, currentlyHovered is not Controls.ActionButton); // LuaM: hide
 
-        CommitLayout(); // LuaM
+        CommitActionBar(); // LuaM
 
         _menuDragHelper.EndDrag();
     }
@@ -810,6 +837,7 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
         ActionsBar.PageButtons.LeftArrow.OnPressed += OnLeftArrowPressed;
         ActionsBar.PageButtons.RightArrow.OnPressed += OnRightArrowPressed;
         UpdatePresetLabel();
+        ApplyHotbarMode();
         // LuaM-end
 
         RegisterActionContainer(ActionsBar.ActionsContainer);
@@ -841,6 +869,18 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
             return;
 
         // LuaM-start
+        if (!_advancedHotbar)
+        {
+            _actions.Clear();
+            foreach (var assign in assignments)
+            {
+                _actions.Add(assign.ActionId);
+            }
+
+            _container?.SetActionData(_actionsSystem, _actions.ToArray());
+            return;
+        }
+
         foreach (var assign in assignments)
         {
             ReserveSlot(assign.Hotbar * ActionButtonContainer.SlotsPerLine + assign.Slot, assign.ActionId);
@@ -884,12 +924,16 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
             return;
 
         // LuaM-start
-        _currentProfileKey = GetMobProfileKey();
         LoadDefaultActions();
-        LoadLayout();
-        RebuildLayout();
-        UpdatePresetLabel();
-        UpdateActionBar();
+        if (_advancedHotbar)
+        {
+            _currentProfileKey = GetMobProfileKey();
+            LoadLayout();
+            RebuildLayout();
+            UpdatePresetLabel();
+        }
+
+        RefreshActionBar();
         // LuaM-end
         QueueWindowUpdate();
     }

@@ -105,7 +105,11 @@ public abstract partial class SharedHumanoidAppearanceSystem : EntitySystem
         if (string.IsNullOrEmpty(humanoid.Initial)
             || !_proto.TryIndex(humanoid.Initial, out HumanoidProfilePrototype? startingSet))
         {
-            LoadProfile(uid, HumanoidCharacterProfile.DefaultWithSpecies(humanoid.Species), humanoid);
+            var defaultProfile = HumanoidCharacterProfile.DefaultWithSpecies(humanoid.Species);
+            if (TryComp<TTSComponent>(uid, out var tts) && tts.VoicePrototypeId is { } voice) // LuaM
+                defaultProfile = defaultProfile.WithVoice(voice);
+
+            LoadProfile(uid, defaultProfile, humanoid);
             return;
         }
 

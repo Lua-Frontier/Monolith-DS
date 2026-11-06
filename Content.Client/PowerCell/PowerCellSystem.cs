@@ -50,14 +50,14 @@ public sealed partial class PowerCellSystem : SharedPowerCellSystem
 
         if (_appearance.TryGetData<byte>(uid, PowerCellVisuals.ChargeLevel, out var level, args.Component))
         {
-            if (level == 0)
+            if (level == 0 || !component.ChargeBars && level == 1) // LuaM
             {
                 _sprite.LayerSetVisible((uid, args.Sprite), PowerCellVisualLayers.Unshaded, false);
                 return;
             }
 
-            _sprite.LayerSetVisible((uid, args.Sprite), PowerCellVisualLayers.Unshaded, false);
-            _sprite.LayerSetRsiState((uid, args.Sprite), PowerCellVisualLayers.Unshaded, $"o{level}");
+            _sprite.LayerSetVisible((uid, args.Sprite), PowerCellVisualLayers.Unshaded, true); // LuaM: false > true
+            _sprite.LayerSetRsiState((uid, args.Sprite), PowerCellVisualLayers.Unshaded, component.ChargeBars ? $"o{level}" : $"o{level - 2}"); // LuaM
         }
     }
 

@@ -1,0 +1,62 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodLuaMDubaiPancakesTrash
+  name: dubai chocolate pancakes wrapper
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/dubai_pancakes.rsi
+    state: trash
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: BaseItem
+  id: FoodLuaMDubaiPancakesPack
+  name: dubai chocolate pancakes
+  description: Premium pancakes with "Dubai chocolate" filling. Nobody knows what Dubai is, but the pistachios are real.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/dubai_pancakes.rsi
+    state: pack
+  - type: Item
+    size: Small
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodLuaMDubaiPancakesTrash
+    - id: FoodLuaMDubaiPancakes
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodLuaMDubaiPancakes
+  name: dubai chocolate pancakes
+  description: Two rolled pancakes stuffed with pistachio cream and kataifi, drizzled with milk chocolate. Suspiciously crunchy.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - chocolate
+    - nutty
+    - sweet
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/dubai_pancakes.rsi
+    state: pancakes
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: CocoaPowder
+          Quantity: 2
+        - ReagentId: Theobromine
+          Quantity: 2
+  - type: Tag
+    tags:
+    - FoodSnack

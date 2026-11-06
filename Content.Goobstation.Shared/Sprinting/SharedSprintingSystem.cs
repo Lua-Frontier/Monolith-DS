@@ -23,6 +23,7 @@ using Robust.Shared.Input.Binding;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using System.Diagnostics.CodeAnalysis; // LuaM
 using System.Numerics;
 
 namespace Content.Goobstation.Shared.Sprinting;
@@ -91,27 +92,28 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         var query = EntityQueryEnumerator<SprinterComponent, InputMoverComponent>(); // LuaM: InputMoverComponent
         while (query.MoveNext(out var uid, out var sprinter, out var mover)) // LuaM: mover
         {
-            if (!sprinter.IsSprinting)
-                continue;
-
             // LuaM-start
-            if ((mover.HeldMoveButtons & MoveButtons.AnyDirection) == MoveButtons.None)
-                continue;
-
-            if (!TryComp<StaminaComponent>(uid, out var stamina))
+            if (!sprinter.IsSprinting)
             {
-                _staminaSystem.TakeStaminaDamage(uid, sprinter.StaminaDrainRate * frameTime, visual: false);
+                if (sprinter.PendingStaminaDrain > 0f)
+                    ApplySprintDrain(uid, sprinter);
+
                 continue;
             }
 
-            var before = stamina.StaminaDamage;
-            _staminaSystem.TakeStaminaDamage(uid, sprinter.StaminaDrainRate * frameTime, stamina, visual: false);
-            var drained = stamina.StaminaDamage - before;
-
-            if (stamina.Critical || drained <= 0f)
+            if ((mover.HeldMoveButtons & MoveButtons.AnyDirection) == MoveButtons.None)
                 continue;
 
-            var timeToFall = (stamina.CritThreshold - stamina.StaminaDamage) / drained * frameTime;
+            sprinter.PendingStaminaDrain += sprinter.StaminaDrainRate * frameTime;
+            sprinter.PendingDrainTime += frameTime;
+            if (sprinter.PendingDrainTime < StaminaDrainInterval)
+                continue;
+
+            var interval = sprinter.PendingDrainTime;
+            if (!ApplySprintDrain(uid, sprinter, out var stamina, out var drained) || stamina.Critical || drained <= 0f)
+                continue;
+
+            var timeToFall = (stamina.CritThreshold - stamina.StaminaDamage) / drained * interval;
             if (timeToFall > FallWarningTime)
             {
                 sprinter.FallWarned = false;
@@ -127,7 +129,31 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         }
     }
 
-    private const float FallWarningTime = 1.5f; // LuaM
+    // LuaM-start
+    private const float FallWarningTime = 1.5f;
+    private const float StaminaDrainInterval = 0.5f;
+
+    private void ApplySprintDrain(EntityUid uid, SprinterComponent sprinter)
+    {
+        ApplySprintDrain(uid, sprinter, out _, out _);
+    }
+
+    private bool ApplySprintDrain(EntityUid uid, SprinterComponent sprinter, [NotNullWhen(true)] out StaminaComponent? stamina, out float drained)
+    {
+        var amount = sprinter.PendingStaminaDrain;
+        sprinter.PendingStaminaDrain = 0f;
+        sprinter.PendingDrainTime = 0f;
+        drained = 0f;
+
+        if (!TryComp(uid, out stamina))
+            return false;
+
+        var before = stamina.StaminaDamage;
+        _staminaSystem.TakeStaminaDamage(uid, amount, stamina, visual: false, log: false);
+        drained = stamina.StaminaDamage - before;
+        return true;
+    }
+    // LuaM-end
 
     private void OnRefreshSpeed(Entity<SprinterComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {

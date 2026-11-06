@@ -19,4 +19,10 @@ public sealed class LuaMCVars
 
     public static readonly CVarDef<int> ActionsActivePreset =
         CVarDef.Create("luam.actions_active_preset", 0, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<bool> AdvancedHotbar =
+        CVarDef.Create("luam.advanced_hotbar", false, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<bool> SpaceWindVisuals =
+        CVarDef.Create("luam.space_wind_visuals", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 }

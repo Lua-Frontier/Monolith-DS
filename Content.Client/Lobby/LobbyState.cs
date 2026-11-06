@@ -67,6 +67,7 @@ namespace Content.Client.Lobby
             var width = _cfg.GetCVar(CCVars.ServerLobbyRightPanelWidth);
             Lobby.RightSide.SetWidth = width;
 
+            InitializeLuaMLobby(); // LuaM
             UpdateLobbyUi();
 
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
@@ -92,6 +93,7 @@ namespace Content.Client.Lobby
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
+            ShutdownLuaMLobby(); // LuaM
 
             Lobby = null;
         }
@@ -216,14 +218,15 @@ namespace Content.Client.Lobby
                 )
             {
                 var lobbyStream = lobbySongResource.AudioStream;
+                var track = GetLobbyTrack(ev.SoundtrackFilename); // LuaM
 
-                var title = string.IsNullOrEmpty(lobbyStream.Title)
+                var title = track?.Title ?? (string.IsNullOrEmpty(lobbyStream.Title) // LuaM: track?.Title
                     ? Loc.GetString("lobby-state-song-unknown-title")
-                    : lobbyStream.Title;
+                    : lobbyStream.Title);
 
-                var artist = string.IsNullOrEmpty(lobbyStream.Artist)
+                var artist = track?.Artist ?? (string.IsNullOrEmpty(lobbyStream.Artist) // LuaM: track?.Artist
                     ? Loc.GetString("lobby-state-song-unknown-artist")
-                    : lobbyStream.Artist;
+                    : lobbyStream.Artist);
 
                 var markup = Loc.GetString("lobby-state-song-text",
                     ("songTitle", title),
@@ -235,14 +238,7 @@ namespace Content.Client.Lobby
 
         private void UpdateLobbyBackground()
         {
-            if (_gameTicker.LobbyBackground != null)
-            {
-                Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>(_gameTicker.LobbyBackground );
-            }
-            else
-            {
-                Lobby!.Background.Texture = null;
-            }
+            SetStaticLobbyBackground(_gameTicker.LobbyBackground); // LuaM
 
         }
 

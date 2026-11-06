@@ -1,0 +1,8 @@
+- type: shader
+  id: LuaMBloodloss
+  kind: source
+  path: "/Textures/_LuaM/Shaders/bloodloss.swsl"
+  params:
+    intensityPower: 0.5
+    blurStrength: 0.12
+    sharpStrength: 0.9

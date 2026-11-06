@@ -1,0 +1,48 @@
+- type: animatedLobbyBackground
+  id: LuaMGalaxy1
+  path: /Textures/_LuaM/LobbyScreens/LuaMGalaxy1/
+  frames: 14
+  frameTime: 0.15
+  default: true
+
+- type: animatedLobbyBackground
+  id: LuaMSky1
+  path: /Textures/_LuaM/LobbyScreens/LuaMSky1/
+  frames: 10
+  frameTime: 0.1
+
+- type: animatedLobbyBackground
+  id: LuaMPlanets2
+  path: /Textures/_LuaM/LobbyScreens/LuaMPlanets2/
+  frames: 15
+  frameTime: 0.1
+
+- type: animatedLobbyBackground
+  id: LuaMPlanets1
+  path: /Textures/_LuaM/LobbyScreens/LuaMPlanets1/
+  frames: 20
+  frameTime: 0.2
+
+- type: animatedLobbyBackground
+  id: LuaMSpace1
+  path: /Textures/_LuaM/LobbyScreens/LuaMSpace1/
+  frames: 20
+  frameTime: 0.1
+
+- type: animatedLobbyBackground
+  id: LuaMSpace2
+  path: /Textures/_LuaM/LobbyScreens/LuaMSpace2/
+  frames: 24
+  frameTime: 0.1
+
+- type: animatedLobbyBackground
+  id: LuaMSpace3
+  path: /Textures/_LuaM/LobbyScreens/LuaMSpace3/
+  frames: 20
+  frameTime: 0.1
+
+- type: animatedLobbyBackground
+  id: LuaMSky2
+  path: /Textures/_LuaM/LobbyScreens/LuaMSky2/
+  frames: 10
+  frameTime: 0.08

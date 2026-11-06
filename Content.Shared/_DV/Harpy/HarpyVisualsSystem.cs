@@ -23,6 +23,9 @@ public sealed partial class HarpyVisualsSystem : EntitySystem
 
     private void OnDidEquipEvent(EntityUid uid, HarpySingerComponent component, DidEquipEvent args)
     {
+        if (!IsHarpy(uid)) // LuaM
+            return;
+
         if (args.Slot == "outerClothing" && HasComp<HarpyHideWingsComponent>(args.Equipment)) // Frontier: Swap tag to comp
         {
             _humanoidSystem.SetLayerVisibility(uid, HumanoidVisualLayers.RArmExtension, false); // Frontier: RArm<RArmExtension
@@ -30,8 +33,18 @@ public sealed partial class HarpyVisualsSystem : EntitySystem
         }
     }
 
+    // LuaM-start
+    private bool IsHarpy(EntityUid uid)
+    {
+        return TryComp<HumanoidAppearanceComponent>(uid, out var humanoid) && humanoid.Species == "Harpy";
+    }
+    // LuaM-end
+
     private void OnDidUnequipEvent(EntityUid uid, HarpySingerComponent component, DidUnequipEvent args)
     {
+        if (!IsHarpy(uid)) // LuaM
+            return;
+
         if (args.Slot == "outerClothing" && HasComp<HarpyHideWingsComponent>(args.Equipment)) // Frontier: Swap tag to comp
         {
             _humanoidSystem.SetLayerVisibility(uid, HumanoidVisualLayers.RArmExtension, true); // Frontier: RArm<RArmExtension

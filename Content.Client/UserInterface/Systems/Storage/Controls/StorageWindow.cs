@@ -371,9 +371,23 @@ public sealed partial class StorageWindow : BaseWindow
     {
         draggingGhost.OnPiecePressed += OnPiecePressed;
         draggingGhost.OnPieceUnpressed += OnPieceUnpressed;
-        _pieces[draggingGhost.Entity] = (location, draggingGhost);
         draggingGhost.Location = location;
         var controlIndex = GetGridIndex(draggingGhost);
+
+        // LuaM-start
+        if (location.Position.X < 0 || location.Position.X >= _pieceGrid.Columns
+            || controlIndex < 0 || controlIndex >= _controlGrid.Count)
+        {
+            draggingGhost.OnPiecePressed -= OnPiecePressed;
+            draggingGhost.OnPieceUnpressed -= OnPieceUnpressed;
+            draggingGhost.Orphan();
+            _pieces.Remove(draggingGhost.Entity);
+            FlagDirty();
+            return;
+        }
+        // LuaM-end
+
+        _pieces[draggingGhost.Entity] = (location, draggingGhost);
         _controlGrid[controlIndex].AddChild(draggingGhost);
     }
 

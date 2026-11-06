@@ -308,7 +308,7 @@ public sealed class ActionButton : Control, IEntityControl
     {
         _controller ??= UserInterfaceManager.GetUIController<ActionUIController>();
         if (_action != null ||
-            _controller.IsDragging && Parent is ActionButtonContainer) // LuaM
+            _controller.IsDragging && (Parent is ActionButtonContainer { Advanced: true } || GetPositionInParent() == Parent?.ChildCount - 1)) // LuaM
         {
             Button.Texture = _buttonBackgroundTexture;
         }

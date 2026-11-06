@@ -31,6 +31,9 @@
                 <CheckBox Name="ViewportVerticalFitCheckBox"
                           Text="{Loc 'ui-options-vp-vertical-fit'}"
                           ToolTip="{Loc 'ui-options-vp-vertical-fit-tooltip'}" />
+                <CheckBox Name="AdvancedHotbarCheckBox"
+                          Text="{Loc 'ui-options-advanced-hotbar'}"
+                          ToolTip="{Loc 'ui-options-advanced-hotbar-tooltip'}" /> <!-- LuaM -->
 
                 <!-- Misc -->
                 <Label Text="{Loc 'ui-options-misc-label'}" StyleClasses="LabelKeyText"/>

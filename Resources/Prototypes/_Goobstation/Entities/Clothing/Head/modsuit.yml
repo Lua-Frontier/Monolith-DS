@@ -34,6 +34,8 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-hydrakin
   - type: SealableClothingVisuals
     spriteLayer: sealed
     clothingVisuals:
@@ -43,6 +45,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-sealed-hydrakin
   - type: ComponentToggler
     components:
     - type: BreathMask
@@ -104,6 +108,10 @@
       - state: equipped-HEAD-sealed
       head-vox:
       - state: equipped-HEAD-sealed-vox
+      head-vulpkanin:
+      - state: equipped-HEAD-sealed-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-sealed-hydrakin
   - type: Armor
     modifiers:
       coefficients:
@@ -158,6 +166,10 @@
       - state: equipped-HEAD
       head-vox:
       - state: equipped-HEAD-vox
+      head-vulpkanin:
+      - state: equipped-HEAD-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-hydrakin
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/security.rsi
   - type: SealableClothingVisuals
@@ -167,6 +179,10 @@
       - state: equipped-HEAD-sealed
       head-vox:
       - state: equipped-HEAD-sealed-vox
+      head-vulpkanin:
+      - state: equipped-HEAD-sealed-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-sealed-hydrakin
   - type: Armor
     modifiers:
       coefficients:
@@ -221,6 +237,12 @@
       - state: equipped-HEAD
       head-vox:
       - state: equipped-HEAD-vox
+      head-vulpkanin:
+      - state: equipped-HEAD-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-hydrakin
+      head-resomi:
+      - state: equipped-HEAD-resomi
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/headofsecurity.rsi
   - type: SealableClothingVisuals
@@ -230,6 +252,12 @@
       - state: equipped-HEAD-sealed
       head-vox:
       - state: equipped-HEAD-sealed-vox
+      head-vulpkanin:
+      - state: equipped-HEAD-sealed-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-sealed-hydrakin
+      head-resomi:
+      - state: equipped-HEAD-sealed-resomi
   - type: Armor
     modifiers:
       coefficients:
@@ -386,6 +414,10 @@
       - state: equipped-HEAD
       head-vox:
       - state: equipped-HEAD-vox
+      head-vulpkanin:
+      - state: equipped-HEAD-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-hydrakin
   - type: SealableClothingVisuals
     spriteLayer: sealed
     clothingVisuals:
@@ -393,6 +425,10 @@
       - state: equipped-HEAD-sealed
       head-vox:
       - state: equipped-HEAD-sealed-vox
+      head-vulpkanin:
+      - state: equipped-HEAD-sealed-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-sealed-hydrakin
   - type: Armor
     modifiers:
       coefficients:
@@ -497,6 +533,8 @@
       - state: equipped-HEAD
       head-vox:
       - state: equipped-HEAD-vox
+      head-hydrakin:
+      - state: equipped-HEAD-hydrakin
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/captain.rsi
   - type: SealableClothingVisuals
@@ -508,6 +546,8 @@
       - state: equipped-HEAD-sealed-vox
       head-vulpkanin:
       - state: equipped-HEAD-sealed-vulpkanin
+      head-hydrakin:
+      - state: equipped-HEAD-sealed-hydrakin
   - type: Armor
     modifiers:
       coefficients:

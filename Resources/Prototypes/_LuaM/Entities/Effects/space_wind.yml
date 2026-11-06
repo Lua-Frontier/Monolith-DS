@@ -1,0 +1,16 @@
+- type: entity
+  id: SpaceWindVisual
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _LuaM/Effects/spacewind.rsi
+    drawdepth: Effects
+    noRot: false
+    layers:
+    - state: spacewind
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+    - HideContextMenu

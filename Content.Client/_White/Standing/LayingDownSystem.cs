@@ -67,6 +67,9 @@ public sealed partial class LayingDownSystem : SharedLayingDownSystem
 
         var uid = GetEntity(ev.User);
 
+        if (_buckle.IsBuckled(uid)) // LuaM
+            return;
+
         if (!TryComp<TransformComponent>(uid, out var transform) || !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
             return;
 

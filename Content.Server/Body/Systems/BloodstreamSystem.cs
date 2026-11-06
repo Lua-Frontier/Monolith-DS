@@ -10,7 +10,7 @@ using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Drunk;
+using Content.Shared._LuaM.Body; // LuaM
 using Content.Shared.FixedPoint;
 using Content.Shared.Forensics;
 using Content.Shared.Forensics.Components;
@@ -21,6 +21,7 @@ using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Speech.EntitySystems;
 using Robust.Server.Audio;
+using Robust.Shared.Player; // LuaM
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -37,7 +38,6 @@ public sealed partial class BloodstreamSystem : EntitySystem
     [Dependency] private PopupSystem _popupSystem = default!;
     [Dependency] private PuddleSystem _puddleSystem = default!;
     [Dependency] private MobStateSystem _mobStateSystem = default!;
-    [Dependency] private SharedDrunkSystem _drunkSystem = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private SharedStutteringSystem _stutteringSystem = default!;
     [Dependency] private AlertsSystem _alertsSystem = default!;
@@ -140,6 +140,7 @@ public sealed partial class BloodstreamSystem : EntitySystem
 
             // deal bloodloss damage if their blood level is below a threshold.
             var bloodPercentage = GetBloodLevelPercentage(uid, bloodstream);
+            UpdateBloodlossVisuals(uid, bloodstream, bloodPercentage); // LuaM
             if (bloodPercentage < bloodstream.BloodlossThreshold && !_mobStateSystem.IsDead(uid))
             {
                 // bloodloss damage is based on the base value, and modified by how low your blood level is.
@@ -148,13 +149,6 @@ public sealed partial class BloodstreamSystem : EntitySystem
                 _damageableSystem.TryChangeDamage(uid, amt,
                     ignoreResistances: false, interruptsDoAfters: false);
 
-                // Apply dizziness as a symptom of bloodloss.
-                // The effect is applied in a way that it will never be cleared without being healthy.
-                // Multiplying by 2 is arbitrary but works for this case, it just prevents the time from running out
-                _drunkSystem.TryApplyDrunkenness(
-                    uid,
-                    (float) bloodstream.UpdateInterval.TotalSeconds * 2,
-                    applySlur: false);
                 _stutteringSystem.DoStutter(uid, bloodstream.UpdateInterval * 2, refresh: false);
 
                 // storing the drunk and stutter time so we can remove it independently from other effects additions
@@ -168,14 +162,46 @@ public sealed partial class BloodstreamSystem : EntitySystem
                     bloodstream.BloodlossHealDamage * bloodPercentage,
                     ignoreResistances: true, interruptsDoAfters: false);
 
-                // Remove the drunk effect when healthy. Should only remove the amount of drunk and stutter added by low blood level
-                _drunkSystem.TryRemoveDrunkenessTime(uid, bloodstream.StatusTime.TotalSeconds);
                 _stutteringSystem.DoRemoveStutterTime(uid, bloodstream.StatusTime.TotalSeconds);
                 // Reset the drunk and stutter time to zero
                 bloodstream.StatusTime = TimeSpan.Zero;
             }
         }
     }
+
+    // LuaM-start
+    private void UpdateBloodlossVisuals(EntityUid uid, BloodstreamComponent bloodstream, float bloodPercentage)
+    {
+        if (!HasComp<ActorComponent>(uid))
+            return;
+
+        var intensity = _mobStateSystem.IsDead(uid) || bloodstream.BloodlossThreshold <= 0f
+            ? 0f
+            : Math.Clamp(1f - bloodPercentage / bloodstream.BloodlossThreshold, 0f, 1f);
+
+        var color = _prototypeManager.TryIndex(bloodstream.BloodReagent, out var reagent)
+            ? reagent.SubstanceColor
+            : Color.FromHex("#800000");
+
+        if (!TryComp<BloodlossVisualsComponent>(uid, out var visuals))
+        {
+            if (intensity <= 0f)
+                return;
+
+            visuals = AddComp<BloodlossVisualsComponent>(uid);
+        }
+        else if (MathF.Abs(visuals.Intensity - intensity) < 0.01f
+                 && (intensity > 0f || visuals.Intensity == 0f)
+                 && visuals.BloodColor == color)
+        {
+            return;
+        }
+
+        visuals.Intensity = intensity;
+        visuals.BloodColor = color;
+        Dirty(uid, visuals);
+    }
+    // LuaM-end
 
     private void OnComponentInit(Entity<BloodstreamComponent> entity, ref ComponentInit args)
     {

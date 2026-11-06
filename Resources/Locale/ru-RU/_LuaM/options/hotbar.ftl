@@ -8,3 +8,5 @@ ui-options-function-hotbar-shift7 = Shift+7 слот хотбара
 ui-options-function-hotbar-shift8 = Shift+8 слот хотбара
 ui-options-function-hotbar-shift9 = Shift+9 слот хотбара
 ui-options-function-hotbar-shift0 = Shift+0 слот хотбара
+ui-options-advanced-hotbar = Продвинутый хотбар (меню быстрого действия)
+ui-options-advanced-hotbar-tooltip = 10 пресетов по 2 ряда, Shift+цифра для второго ряда, раскладка сохраняется

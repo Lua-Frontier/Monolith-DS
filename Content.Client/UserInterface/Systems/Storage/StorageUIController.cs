@@ -294,15 +294,47 @@ public sealed partial class StorageUIController : UIController, IOnSystemChanged
         control.MouseFilter = Control.MouseFilterMode.Pass;
 
         var localPlayer = _player.LocalEntity;
+        var originalLocation = GetStoredLocation(window, control); // LuaM
         window.RemoveGrid(control);
         window.FlagDirty();
 
+        // LuaM-start
+        try
+        {
+            HandlePieceRelease(args, window, control, targetControl, targetStorage, localPlayer, originalLocation);
+        }
+        finally
+        {
+            _menuDragHelper.EndDrag();
+        }
+    }
+
+    private ItemStorageLocation GetStoredLocation(StorageWindow window, ItemGridPiece control)
+    {
+        if (EntityManager.TryGetComponent<StorageComponent>(window.StorageEntity, out var storage)
+            && storage.StoredItems.TryGetValue(control.Entity, out var location))
+        {
+            return location;
+        }
+
+        return control.Location;
+    }
+
+    private void HandlePieceRelease(
+        GUIBoundKeyEventArgs args,
+        StorageWindow window,
+        ItemGridPiece control,
+        Control? targetControl,
+        StorageWindow? targetStorage,
+        EntityUid? localPlayer,
+        ItemStorageLocation originalLocation)
+    {
+        // LuaM-end
         // If we tried to drag it on top of another grid piece then cancel out.
         if (targetControl is ItemGridPiece || window.StorageEntity is not { } sourceStorage || localPlayer == null)
         {
-            window.Reclaim(control.Location, control);
+            window.Reclaim(originalLocation, control); // LuaM: control.Location > originalLocation
             args.Handle();
-            _menuDragHelper.EndDrag();
             return;
         }
 
@@ -318,12 +350,21 @@ public sealed partial class StorageUIController : UIController, IOnSystemChanged
                 var position = targetStorage.GetMouseGridPieceLocation(dragEnt, dragLoc);
                 var newLocation = new ItemStorageLocation(DraggingRotation, position);
 
-                EntityManager.RaisePredictiveEvent(new StorageSetItemLocationEvent(
-                    EntityManager.GetNetEntity(draggingGhost.Entity),
-                    EntityManager.GetNetEntity(sourceStorage),
-                    newLocation));
+                // LuaM-start
+                if (!_storage.ItemFitsInGridLocation((dragEnt, null), (sourceStorage, null), newLocation))
+                {
+                    window.Reclaim(originalLocation, control);
+                }
+                else
+                {
+                    EntityManager.RaisePredictiveEvent(new StorageSetItemLocationEvent(
+                        EntityManager.GetNetEntity(draggingGhost.Entity),
+                        EntityManager.GetNetEntity(sourceStorage),
+                        newLocation));
 
-                window.Reclaim(newLocation, control);
+                    window.Reclaim(newLocation, control);
+                }
+                // LuaM-end
             }
             // Dragging to new storage
             else if (targetStorage?.StorageEntity != null && targetStorage != window)
@@ -349,9 +390,15 @@ public sealed partial class StorageUIController : UIController, IOnSystemChanged
                 else
                 {
                     // Cancel it (rather than dropping).
-                    window.Reclaim(dragLoc, control);
+                    window.Reclaim(originalLocation, control); // LuaM: dragLoc > originalLocation
                 }
             }
+            // LuaM-start
+            else
+            {
+                window.Reclaim(originalLocation, control);
+            }
+            // LuaM-end
 
             targetStorage?.FlagDirty();
         }
@@ -363,8 +410,7 @@ public sealed partial class StorageUIController : UIController, IOnSystemChanged
                 EntityManager.GetNetEntity(sourceStorage)));
         }
 
-        _menuDragHelper.EndDrag();
-        args.Handle();
+        args.Handle(); // LuaM: EndDrag moved to finally
     }
 
     private bool OnMenuBeginDrag()

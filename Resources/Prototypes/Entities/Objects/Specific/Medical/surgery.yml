@@ -510,3 +510,25 @@
   - type: Item
     size: Small
     heldPrefix: evil
+  # LuaM-start
+  - type: Hemostat
+    speed: 3.6
+  - type: Scalpel
+    speed: 3.6
+  - type: Drill
+    speed: 3.6
+  - type: BoneSetter
+    speed: 3.6
+  - type: Retractor
+    speed: 3.6
+  - type: Cautery
+    speed: 3.6
+  - type: BoneGel
+    speed: 3.6
+  - type: BoneSaw
+    speed: 3.6
+  - type: Tweezers
+    speed: 3.6
+  - type: Tending
+    speed: 3.6
+  # LuaM-end

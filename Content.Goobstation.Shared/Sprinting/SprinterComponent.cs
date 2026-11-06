@@ -132,6 +132,14 @@ public sealed partial class SprinterComponent : Component
 
     [ViewVariables]
     public bool FallWarned; // LuaM
+
+    // LuaM-start
+    [ViewVariables]
+    public float PendingStaminaDrain;
+
+    [ViewVariables]
+    public float PendingDrainTime;
+    // LuaM-end
 }
 
 [Serializable, NetSerializable]
