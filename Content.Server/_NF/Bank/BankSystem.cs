@@ -203,7 +203,7 @@ public sealed partial class BankSystem : SharedBankSystem
         if (spendLongTerm)
         {
             var longTermBank = _coins.GetMonoCoinsBalance(session.UserId);
-            totalBalance += longTermBank ?? 0l;
+            totalBalance += longTermBank ?? 0L;
         }
 
         if (totalBalance < amount)
@@ -308,7 +308,7 @@ public sealed partial class BankSystem : SharedBankSystem
         // Update preferences in cache if the player data exists
         if (_prefsManager.TryGetCachedPreferences(userId, out var cachedPrefs))
         {
-            _prefsManager.SetProfile(userId, index, newProfile);
+            _ = _prefsManager.SetProfile(userId, index, newProfile);
         }
         else
         {
@@ -350,7 +350,7 @@ public sealed partial class BankSystem : SharedBankSystem
         // Update preferences in cache if the player data exists
         if (_prefsManager.TryGetCachedPreferences(userId, out var cachedPrefs))
         {
-            _prefsManager.SetProfile(userId, index, newProfile);
+            _ = _prefsManager.SetProfile(userId, index, newProfile);
         }
         else
         {

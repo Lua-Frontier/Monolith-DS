@@ -692,7 +692,6 @@ namespace Content.Server.GameTicking
                 const int MaxEmbedCharacters = 6000;
                 const int MaxFieldsPerEmbed = 25;
                 const int MaxFieldValueLength = 1024;
-                const int MaxFieldNameLength = 256;
 
                 var webhookUrl = _cfg.GetCVar(CCVars.DiscordCrewManifestWebhook);
                 if (string.IsNullOrEmpty(webhookUrl))

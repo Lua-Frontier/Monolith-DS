@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.Controls;
 namespace Content.Client._LuaM.Guidebook;
 
 /// <summary>Only mapped shipyards, using the live console layout without a bound interface.</summary>
-public sealed class GuideShipyardPreview : BoxContainer
+public sealed partial class GuideShipyardPreview : BoxContainer
 {
     [Dependency] private IEntityManager _entities = default!;
     private readonly GuidebookCatalogClientSystem _catalog;
@@ -23,7 +23,7 @@ public sealed class GuideShipyardPreview : BoxContainer
 
     private void Rebuild()
     {
-        foreach (var child in Children.ToArray()) child.Dispose();
+        RemoveAllChildren();
         if (_catalog.Catalog is not { } data)
         {
             Close();
@@ -58,10 +58,8 @@ public sealed class GuideShipyardPreview : BoxContainer
         if (window == null) return;
         window.OnClose -= Close;
         if (window.Parent != null) window.Close();
-        window.Dispose();
     }
 
     protected override void EnteredTree() { base.EnteredTree(); _catalog.Updated += Rebuild; Rebuild(); _catalog.Request(); }
     protected override void ExitedTree() { _catalog.Updated -= Rebuild; Close(); base.ExitedTree(); }
-    protected override void Dispose(bool disposing) { _catalog.Updated -= Rebuild; Close(); base.Dispose(disposing); }
 }

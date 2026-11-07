@@ -778,7 +778,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
     /// <summary>
     /// Draw the coordinate data with a custom color.
     /// </summary>
-    protected void DrawData(DrawingHandleScreen handle, string text, Color color)
+    private void DrawData(DrawingHandleScreen handle, string text, Color color)
     {
         var margin = 15f; // Lua: 5 > 15
         var font = _font;

@@ -36,7 +36,7 @@ public sealed class GuideCatalogList : BoxContainer
 
     private void Show(int index)
     {
-        foreach (var child in _details.Children.ToArray()) child.Dispose();
+        _details.RemoveAllChildren();
         if (index >= 0 && index < _fill.Count) _fill[index](_details);
     }
 }

@@ -61,18 +61,31 @@ namespace Content.Client.LateJoin
 
             Contents.AddChild(_base);
 
-            _jobRequirements.Updated += RebuildUI;
             RebuildUI();
 
             SelectedId += x =>
             {
                 var (station, jobId) = x;
-                Logger.InfoS("latejoin", $"Late joining as ID: {jobId}");
+                Logger.GetSawmill("latejoin").Info($"Late joining as ID: {jobId}");
                 _consoleHost.ExecuteCommand($"joingame {CommandParsing.Escape(jobId)} {station}");
                 Close();
             };
+        }
 
+        // The window only follows job updates while it is open and rebuilds itself when reopened.
+        protected override void EnteredTree()
+        {
+            base.EnteredTree();
+            _jobRequirements.Updated += RebuildUI;
             _gameTicker.LobbyJobsAvailableUpdated += JobsAvailableUpdated;
+            RebuildUI();
+        }
+
+        protected override void ExitedTree()
+        {
+            base.ExitedTree();
+            _jobRequirements.Updated -= RebuildUI;
+            _gameTicker.LobbyJobsAvailableUpdated -= JobsAvailableUpdated;
         }
 
         private void RebuildUI()
@@ -83,7 +96,7 @@ namespace Content.Client.LateJoin
             _jobCategories.Clear();
 
             if (!_gameTicker.DisallowedLateJoin && _gameTicker.StationNames.Count == 0)
-                Logger.Warning("No stations exist, nothing to display in late-join GUI");
+                Logger.GetSawmill("late_join").Warning("No stations exist, nothing to display in late-join GUI");
 
             foreach (var (id, name) in _gameTicker.StationNames)
             {
@@ -318,18 +331,6 @@ namespace Content.Client.LateJoin
             }
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (disposing)
-            {
-                _jobRequirements.Updated -= RebuildUI;
-                _gameTicker.LobbyJobsAvailableUpdated -= JobsAvailableUpdated;
-                _jobButtons.Clear();
-                _jobCategories.Clear();
-            }
-        }
     }
 
     sealed class JobButton : ContainerButton

@@ -41,7 +41,7 @@ public sealed class ShuttleRecordsConsoleBoundUserInterface(
         base.Dispose(disposing);
         if (!disposing)
             return;
-        _window?.Dispose();
+        _window?.Orphan();
     }
 
     private void CopyDeed(ShuttleRecord shuttleRecord)

@@ -99,22 +99,6 @@ public sealed partial class PlayerTab : Control
         RefreshPlayerList(_players);
     }
 
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (disposing)
-        {
-            _adminSystem.PlayerListChanged -= RefreshPlayerList;
-            _adminSystem.OverlayEnabled -= OverlayEnabled;
-            _adminSystem.OverlayDisabled -= OverlayDisabled;
-
-            OverlayButton.OnPressed -= OverlayButtonPressed;
-
-            ListHeader.OnHeaderClicked -= HeaderClicked;
-        }
-    }
-
     #region ListContainer
 
     private void RoleSettingChanged(string s)

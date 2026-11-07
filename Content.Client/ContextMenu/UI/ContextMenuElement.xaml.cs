@@ -56,10 +56,11 @@ namespace Content.Client.ContextMenu.UI
                 Text = text;
         }
 
-        protected override void Dispose(bool disposing)
+        // Sub-menus live in the modal root, so they have to be removed together with their element.
+        protected override void ExitedTree()
         {
-            base.Dispose(disposing);
-            _subMenu?.Dispose();
+            base.ExitedTree();
+            _subMenu?.Orphan();
             _subMenu = null;
             ParentMenu = null;
         }

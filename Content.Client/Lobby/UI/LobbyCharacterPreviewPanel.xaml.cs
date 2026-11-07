@@ -69,7 +69,7 @@ public sealed partial class LobbyCharacterPreviewPanel : Control
 
         _previewDummy = uid;
 
-        ViewBox.DisposeAllChildren();
+        ViewBox.RemoveAllChildren();
         var spriteView = new SpriteView
         {
             OverrideDirection = Direction.South,
@@ -79,12 +79,5 @@ public sealed partial class LobbyCharacterPreviewPanel : Control
         };
         spriteView.SetEntity(uid);
         ViewBox.AddChild(spriteView);
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-        _entManager.DeleteEntity(_previewDummy);
-        _previewDummy = null;
     }
 }

@@ -14,14 +14,16 @@ public sealed class IgnoreHumanoidsOverlay : Overlay
 {
     private readonly IEntityManager _entManager;
     private readonly SharedTransformSystem _transform;
+    private readonly SpriteSystem _sprite;
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
-    private Dictionary<EntityUid, EntityUid> _effectList = new();
+    private readonly Dictionary<EntityUid, EntityUid> _effectList = new();
 
     public IgnoreHumanoidsOverlay(IEntityManager entManager, IPrototypeManager protoManager)
     {
         _entManager = entManager;
-        _transform = _entManager.EntitySysManager.GetEntitySystem<SharedTransformSystem>();
+        _transform = _entManager.System<SharedTransformSystem>();
+        _sprite = _entManager.System<SpriteSystem>();
     }
 
     /// <summary>
@@ -30,26 +32,16 @@ public sealed class IgnoreHumanoidsOverlay : Overlay
     /// </summary>
     protected override void Draw(in OverlayDrawArgs args)
     {
-        var spriteQuery = _entManager.GetEntityQuery<SpriteComponent>();
         var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
 
-        foreach (var humanoid in _entManager.EntityQuery<HumanoidAppearanceComponent>(true))
+        var humanoids = _entManager.AllEntityQueryEnumerator<HumanoidAppearanceComponent, SpriteComponent, TransformComponent>();
+        while (humanoids.MoveNext(out var uid, out _, out var sprite, out var xform))
         {
-            if (!spriteQuery.TryGetComponent(humanoid.Owner, out var sprite))
+            if (sprite.Visible && !_effectList.ContainsKey(uid))
             {
-                continue;
-            }
-
-            if (!xformQuery.TryGetComponent(humanoid.Owner, out var xform))
-            {
-                continue;
-            }
-
-            if (sprite.Visible && !_effectList.ContainsKey(humanoid.Owner))
-            {
-                sprite.Visible = false;
+                _sprite.SetVisible((uid, sprite), false);
                 var effect = _entManager.SpawnEntity("EffectUnknownHumanoid", xform.Coordinates);
-                _effectList.Add(humanoid.Owner, effect);
+                _effectList.Add(uid, effect);
             }
         }
 
@@ -69,7 +61,7 @@ public sealed class IgnoreHumanoidsOverlay : Overlay
             if (!xformQuery.TryGetComponent(effect, out var effectxform))
                 continue;
 
-            _transform.SetLocalPositionRotation(effectxform, underlyingxform.LocalPosition, underlyingxform.LocalRotation);
+            _transform.SetLocalPositionRotation(effect, underlyingxform.LocalPosition, underlyingxform.LocalRotation, effectxform);
         }
     }
 
@@ -81,7 +73,7 @@ public sealed class IgnoreHumanoidsOverlay : Overlay
             _effectList.Remove(underlying);
 
             if (_entManager.TryGetComponent<SpriteComponent>(underlying, out var sprite))
-                sprite.Visible = true;
+                _entManager.System<SpriteSystem>().SetVisible((underlying, sprite), true);
         }
     }
 }

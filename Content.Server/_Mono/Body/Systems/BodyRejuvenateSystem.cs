@@ -314,7 +314,7 @@ public sealed partial class BodyRejuvenateSystem : EntitySystem
         if (!parentEntity.Valid || TerminatingOrDeleted(parentEntity))
             return null;
 
-        if (!TryComp<TransformComponent>(parentEntity, out var parentTransform))
+        if (!TryComp(parentEntity, out TransformComponent? parentTransform))
             return null;
 
         // Spawn the new part
@@ -350,7 +350,7 @@ public sealed partial class BodyRejuvenateSystem : EntitySystem
         if (!TryComp<BodyPartComponent>(partEntity, out var partComponent))
             return;
 
-        if (!TryComp<TransformComponent>(partEntity, out var partTransform))
+        if (!TryComp(partEntity, out TransformComponent? partTransform))
             return;
 
         foreach (var (organSlotId, organPrototype) in requiredOrgans)

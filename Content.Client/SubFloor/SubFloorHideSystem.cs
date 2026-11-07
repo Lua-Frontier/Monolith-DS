@@ -76,7 +76,7 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
         var hasVisibleLayer = false;
         foreach (var layerKey in component.VisibleLayers)
         {
-            if (!args.Sprite.LayerMapTryGet(layerKey, out var layerIndex))
+            if (!_sprite.LayerMapTryGet((uid, args.Sprite), layerKey, out var layerIndex, false))
                 continue;
 
             var layer = args.Sprite[layerIndex];
@@ -85,7 +85,7 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
             hasVisibleLayer = true;
         }
 
-        args.Sprite.Visible = hasVisibleLayer || revealed;
+        _sprite.SetVisible((uid, args.Sprite), hasVisibleLayer || revealed);
 
 // Commented by LuaM
         // allows a t-ray to show wires/pipes above carpets/puddles

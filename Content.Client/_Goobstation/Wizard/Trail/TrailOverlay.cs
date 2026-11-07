@@ -106,11 +106,12 @@ public sealed class TrailOverlay : Overlay
 
                         var originalColor = sprite.Color;
                         var originalScale = sprite.Scale;
-                        sprite.Color = data.Color;
-                        sprite.Scale *= data.Scale;
-                        sprite.Render(handle, eyeRot, rot, direction, worldPosition);
-                        sprite.Color = originalColor;
-                        sprite.Scale = originalScale;
+                        Entity<SpriteComponent> renderedSprite = (trail.RenderedEntity.Value, sprite);
+                        _sprite.SetColor(renderedSprite.AsNullable(), data.Color);
+                        _sprite.SetScale(renderedSprite.AsNullable(), originalScale * data.Scale);
+                        _sprite.RenderSprite(renderedSprite, handle, eyeRot, rot, worldPosition, direction);
+                        _sprite.SetColor(renderedSprite.AsNullable(), originalColor);
+                        _sprite.SetScale(renderedSprite.AsNullable(), originalScale);
                     }
                 }
                 continue;

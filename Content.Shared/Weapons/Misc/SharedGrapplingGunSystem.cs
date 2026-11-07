@@ -22,7 +22,6 @@ using Robust.Shared.Timing;
 // Mono
 using Robust.Shared.Player;
 using Robust.Shared.GameStates;
-using System.Numerics;
 
 namespace Content.Shared.Weapons.Misc;
 

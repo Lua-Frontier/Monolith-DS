@@ -17,7 +17,7 @@ public sealed partial class ViewportUIController : UIController
     [Dependency] private IPlayerManager _playerMan = default!;
     [Dependency] private IEntityManager _entMan = default!;
     [Dependency] private IConfigurationManager _configurationManager = default!;
-    [UISystemDependency] private readonly SharedTransformSystem? _transformSystem = default!;
+
     public static readonly Vector2i ViewportSize = (EyeManager.PixelsPerMeter * 21, EyeManager.PixelsPerMeter * 15);
     public const int ViewportHeight = 15;
     private MainViewport? Viewport => UIManager.ActiveScreen?.GetWidget<MainViewport>();
@@ -104,6 +104,6 @@ public sealed partial class ViewportUIController : UIController
 
         // Currently, this shouldn't happen. This likely happened because the main eye was set to null. When this
         // does happen it can create hard to troubleshoot bugs, so lets print some helpful warnings:
-        Logger.Warning($"Main viewport's eye is in nullspace (main eye is null?). Attached entity: {_entMan.ToPrettyString(ent.Value)}. Entity has eye comp: {eye != null}");
+        Logger.GetSawmill("user_interface").Warning($"Main viewport's eye is in nullspace (main eye is null?). Attached entity: {_entMan.ToPrettyString(ent.Value)}. Entity has eye comp: {eye != null}");
     }
 }

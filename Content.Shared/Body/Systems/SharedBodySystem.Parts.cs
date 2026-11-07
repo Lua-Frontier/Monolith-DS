@@ -20,11 +20,14 @@ using Content.Shared.Random;
 
 // Mono
 using Content.Shared._White.Standing;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
 {
+    private static readonly ProtoId<DamageTypePrototype> BloodlossId = "Bloodloss";
+
     [Dependency] private RandomHelperSystem _randomHelper = default!; // Shitmed Change
 
     private void InitializeParts()
@@ -402,7 +405,7 @@ public partial class SharedBodySystem
             && !GetBodyChildrenOfType(bodyEnt, partEnt.Comp.PartType, bodyEnt.Comp).Any()
         )
         {
-            var damage = new DamageSpecifier(Prototypes.Index<DamageTypePrototype>("Bloodloss"), partEnt.Comp.VitalDamage); // Shitmed Change
+            var damage = new DamageSpecifier(Prototypes.Index<DamageTypePrototype>(BloodlossId), partEnt.Comp.VitalDamage); // Shitmed Change
             Damageable.TryChangeDamage(bodyEnt, damage, partMultiplier: 0f); // Shitmed Change
         }
     }

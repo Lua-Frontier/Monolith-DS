@@ -32,7 +32,7 @@ public sealed partial class FelinidSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
     [Dependency] private HungerSystem _hungerSystem = default!;
     [Dependency] private VomitSystem _vomitSystem = default!;
-    [Dependency] private SolutionContainerSystem _solutionSystem = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionSystem = default!;
     [Dependency] private IRobustRandom _robustRandom = default!;
     [Dependency] private PopupSystem _popupSystem = default!;
     [Dependency] private InventorySystem _inventorySystem = default!;
@@ -63,15 +63,16 @@ public sealed partial class FelinidSystem : EntitySystem
         }
         RemQueue.Clear();
 
-        foreach (var (hairballComp, catComp) in EntityQuery<CoughingUpHairballComponent, FelinidComponent>())
+        var query = EntityQueryEnumerator<CoughingUpHairballComponent, FelinidComponent>();
+        while (query.MoveNext(out var catUid, out var hairballComp, out var catComp))
         {
             hairballComp.Accumulator += frameTime;
             if (hairballComp.Accumulator < hairballComp.CoughUpTime.TotalSeconds)
                 continue;
 
             hairballComp.Accumulator = 0;
-            SpawnHairball(hairballComp.Owner, catComp);
-            RemQueue.Enqueue(hairballComp.Owner);
+            SpawnHairball(catUid, catComp);
+            RemQueue.Enqueue(catUid);
         }
     }
 
@@ -116,7 +117,7 @@ public sealed partial class FelinidSystem : EntitySystem
         }
 
         _popupSystem.PopupEntity(Loc.GetString("hairball-cough", ("name", Identity.Entity(uid, EntityManager))), uid);
-        _audio.PlayPvs("/Audio/Nyanotrasen/Effects/Species/hairball.ogg", uid, AudioHelpers.WithVariation(0.15f));
+        _audio.PlayPvs(new ResolvedPathSpecifier("/Audio/Nyanotrasen/Effects/Species/hairball.ogg"), uid, AudioParams.Default.WithVariation(0.15f));
 
         EnsureComp<CoughingUpHairballComponent>(uid);
         args.Handled = true;
@@ -152,7 +153,7 @@ public sealed partial class FelinidSystem : EntitySystem
         Del(component.EatActionTarget.Value);
         component.EatActionTarget = null;
 
-        _audio.PlayPvs("/Audio/_DV/Items/eatfood.ogg", uid, AudioHelpers.WithVariation(0.15f));
+        _audio.PlayPvs(new ResolvedPathSpecifier("/Audio/_DV/Items/eatfood.ogg"), uid, AudioParams.Default.WithVariation(0.15f));
 
         _hungerSystem.ModifyHunger(uid, 50f, hunger);
 

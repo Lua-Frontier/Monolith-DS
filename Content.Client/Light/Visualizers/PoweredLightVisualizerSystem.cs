@@ -59,7 +59,7 @@ public sealed partial class PoweredLightVisualizerSystem : VisualizerSystem<Powe
         if (!comp.IsBlinking)
             return;
 
-        AnimationSystem.Play(uid, Comp<AnimationPlayerComponent>(uid), BlinkingAnimation(comp), PoweredLightVisualsComponent.BlinkingAnimationKey);
+        AnimationSystem.Play((uid, Comp<AnimationPlayerComponent>(uid)), BlinkingAnimation(comp), PoweredLightVisualsComponent.BlinkingAnimationKey);
     }
 
     /// <summary>
@@ -76,7 +76,7 @@ public sealed partial class PoweredLightVisualizerSystem : VisualizerSystem<Powe
         var animationPlayer = EnsureComp<AnimationPlayerComponent>(uid);
         if (shouldBeBlinking)
         {
-            AnimationSystem.Play(uid, animationPlayer, BlinkingAnimation(comp), PoweredLightVisualsComponent.BlinkingAnimationKey);
+            AnimationSystem.Play((uid, animationPlayer), BlinkingAnimation(comp), PoweredLightVisualsComponent.BlinkingAnimationKey);
         }
         else if (AnimationSystem.HasRunningAnimation(uid, animationPlayer, PoweredLightVisualsComponent.BlinkingAnimationKey))
         {

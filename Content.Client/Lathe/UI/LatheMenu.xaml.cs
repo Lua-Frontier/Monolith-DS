@@ -332,7 +332,7 @@ public sealed partial class LatheMenu : FancyWindow
 
         _queueRows.Clear();
         // LuaM-end
-        QueueList.DisposeAllChildren();
+        QueueList.RemoveAllChildren();
 
         var idx = 1;
         foreach (var batch in queue) // Frontier: recipe<batch

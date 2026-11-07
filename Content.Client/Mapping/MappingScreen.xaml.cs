@@ -11,6 +11,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using Robust.Client.Placement;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client.Mapping;
@@ -19,6 +20,7 @@ namespace Content.Client.Mapping;
 public sealed partial class MappingScreen : InGameScreen
 {
     [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IPlacementManager _placement = default!;
 
     public DecalPlacementSystem DecalSystem = default!;
 
@@ -89,9 +91,10 @@ public sealed partial class MappingScreen : InGameScreen
             UpdateDecal();
         };
 
-        for (var i = 0; i < EntitySpawnWindow.InitOpts.Length; i++)
+        var modeNames = _placement.AllModeNames;
+        for (var i = 0; i < modeNames.Length; i++)
         {
-            EntityPlacementMode.AddItem(EntitySpawnWindow.InitOpts[i], i);
+            EntityPlacementMode.AddItem(modeNames[i], i);
         }
 
         Pick.Texture.TexturePath = "/Textures/Interface/eyedropper.svg.png";

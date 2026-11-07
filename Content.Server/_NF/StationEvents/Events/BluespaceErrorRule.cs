@@ -250,7 +250,7 @@ public sealed partial class BluespaceErrorRule : StationEventSystem<BluespaceErr
             if (TerminatingOrDeleted(componentGridUid)) // LuaM: a piece of the event grid can be destroyed before the event ends
                 continue;
 
-            if (!TryComp<TransformComponent>(componentGridUid, out var gridTransform))
+            if (!TryComp(componentGridUid, out TransformComponent? gridTransform))
             {
                 Log.Error("bluespace error objective was missing transform component");
                 continue; // LuaM: return > continue

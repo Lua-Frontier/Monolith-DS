@@ -16,7 +16,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._LuaM.Guidebook;
 
 /// <summary>Displays real MapRenderer PNGs. Never loads YAML, spawns entities or changes the player's eye.</summary>
-public sealed class GuidebookMapPreviewSystem : EntitySystem
+public sealed partial class GuidebookMapPreviewSystem : EntitySystem
 {
     [Dependency] private IClientNetManager _net = default!;
     private GuidebookMapPreviewWindow? _window;
@@ -144,7 +144,7 @@ public sealed class GuidebookMapPreviewSystem : EntitySystem
         ClearTexture(); _view = null; _status = null; _parts = null;
         if (window == null) return;
         window.OnClose -= Close; window.Removed -= Close;
-        if (window.Parent != null) window.Close(); window.Dispose();
+        if (window.Parent != null) window.Close();
     }
 }
 

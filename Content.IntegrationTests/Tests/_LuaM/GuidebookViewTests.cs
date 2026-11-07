@@ -8,6 +8,7 @@ using Content.Client._LuaM.Guidebook;
 using Content.Client.Guidebook.Controls;
 using Content.Shared._LuaM.Guidebook;
 using Content.Shared.Guidebook;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 using Robust.Shared.GameObjects;
@@ -142,7 +143,6 @@ public sealed class GuidebookViewTests
             using var tag = new GuideCatalog();
             Assert.That(tag.TryParseTag(new() { ["Kind"] = "ships" }, out var control), Is.True);
             Assert.That(control, Is.TypeOf<GuideShipyardPreview>());
-            control!.Dispose();
             var proto = pair.Client.ResolveDependency<IPrototypeManager>()
                 .EnumeratePrototypes<Content.Shared._NF.Shipyard.Prototypes.VesselPrototype>().First();
             using var live = new Content.Client._NF.Shipyard.UI.ShipyardConsoleMenu();
@@ -170,15 +170,17 @@ public sealed class GuidebookViewTests
         await pair.Client.WaitAssertion(() =>
         {
             var entities = pair.Client.ResolveDependency<IEntityManager>();
+            var root = pair.Client.ResolveDependency<IUserInterfaceManager>().RootControl;
             foreach (var mode in new[] { "reactor", "turbine" })
             {
                 var before = entities.EntityCount;
                 var example = new GuideReactorUI();
                 Assert.That(example.TryParseTag(new Dictionary<string, string> { ["Mode"] = mode }, out _), Is.True);
+                root.AddChild(example);
                 typeof(GuideReactorUI).GetMethod("OpenExample", BindingFlags.NonPublic | BindingFlags.Instance)!.Invoke(example, null);
                 Assert.That(entities.EntityCount, Is.GreaterThan(before));
-                example.Dispose();
-                Assert.That(entities.EntityCount, Is.EqualTo(before), "Closing a teaching example removes its isolated entity.");
+                example.Orphan();
+                Assert.That(entities.EntityCount, Is.EqualTo(before), "Leaving the UI tree closes the teaching example and removes its isolated entity.");
             }
         });
         await pair.CleanReturnAsync();

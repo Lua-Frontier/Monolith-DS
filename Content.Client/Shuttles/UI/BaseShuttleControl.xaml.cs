@@ -429,7 +429,7 @@ public partial class BaseShuttleControl : MapGridControl
 
     protected void DrawGrid(DrawingHandleScreen handle, Matrix3x2 gridToView, Entity<MapGridComponent> grid, Color color, float alpha = 0.01f, bool drawFill = false)
     {
-        var rator = Maps.GetAllTilesEnumerator(grid.Owner, grid.Comp);
+        var rator = Maps.GetAllTiles(grid.Owner, grid.Comp);
         var minimapScale = MinimapScale;
         var midpoint = MidPointVector; // LuaM: new Vector2(MidPoint, MidPoint) > MidPointVector, the radar can be non-square now
         var tileSize = grid.Comp.TileSize;

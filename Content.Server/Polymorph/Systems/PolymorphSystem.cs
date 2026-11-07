@@ -13,7 +13,6 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Nutrition;
 using Content.Shared.Polymorph;
 using Content.Shared.Popups;
 using Robust.Server.Audio;
@@ -228,7 +227,6 @@ public sealed partial class PolymorphSystem : EntitySystem
                 continue;
 
             var copy = _serialization.CreateCopy(comp, notNullableOverride: true);
-            copy.Owner = child;
             AddComp(child, copy, true);
         }
         // Einstein Engines - Language end

@@ -8,6 +8,8 @@ namespace Content.Client._Scp.RetroMonitor;
 
 public sealed partial class RetroMonitorOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> CrtVhsShader = "crt_vhs";
+
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!; // Mono
     [Dependency] IEntityManager _entityManager = default!; // Mono
@@ -20,7 +22,7 @@ public sealed partial class RetroMonitorOverlay : Overlay
     public RetroMonitorOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _retroShader = _prototypeManager.Index<ShaderPrototype>("crt_vhs").InstanceUnique();
+        _retroShader = _prototypeManager.Index<ShaderPrototype>(CrtVhsShader).InstanceUnique();
     }
 
     // Mono start

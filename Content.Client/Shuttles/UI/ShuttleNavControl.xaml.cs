@@ -1398,7 +1398,7 @@ public partial class ShuttleNavControl : BaseShuttleControl // Mono
         return coords;
     }
 
-    public class BlipData
+    public sealed class BlipData
     {
         public bool IsOutsideRadarCircle { get; set; }
         public Vector2 UiPosition { get; set; }
@@ -1422,16 +1422,18 @@ public partial class ShuttleNavControl : BaseShuttleControl // Mono
                 continue;
 
             // Don't draw shields when in FTL
-            if (EntManager.HasComponent<FTLComponent>(parentXform.Owner))
+            var parentUid = xform.GridUid!.Value;
+
+            if (EntManager.HasComponent<FTLComponent>(parentUid))
                 continue;
 
             // LuaM: shields of grids hidden from radar (IFF hide, cloak, stealth fields) are hidden with them
-            if (parentXform.Owner != consoleXform.GridUid
-                && (!_shuttles.CanDraw(parentXform.Owner)
-                    || _stealthField.IsHiddenFromLocalPlayer(parentXform.Owner, radarPos)))
+            if (parentUid != consoleXform.GridUid
+                && (!_shuttles.CanDraw(parentUid)
+                    || _stealthField.IsHiddenFromLocalPlayer(parentUid, radarPos)))
                 continue;
 
-            var detectionLevel = _consoleEntity == null ? DetectionLevel.Detected : GetGridDetected(parentXform.Owner);
+            var detectionLevel = _consoleEntity == null ? DetectionLevel.Detected : GetGridDetected(parentUid);
             if (detectionLevel != DetectionLevel.Detected)
                 continue;
 
@@ -1450,12 +1452,12 @@ public partial class ShuttleNavControl : BaseShuttleControl // Mono
             for (int i = 1; i < count; i++)
             {
                 var v1 = Vector2.Add(center, verticies[i - 1]);
-                v1 = Vector2.Transform(v1, parentXform.WorldMatrix); // transform to world matrix
+                v1 = Vector2.Transform(v1, _transform.GetWorldMatrix(parentXform)); // transform to world matrix
                 v1 = Vector2.Transform(v1, matrix); // get back to local matrix for drawing
                 v1.Y = -v1.Y;
                 v1 = ScalePosition(v1);
                 var v2 = Vector2.Add(center, verticies[i]);
-                v2 = Vector2.Transform(v2, parentXform.WorldMatrix);
+                v2 = Vector2.Transform(v2, _transform.GetWorldMatrix(parentXform));
                 v2 = Vector2.Transform(v2, matrix);
                 v2.Y = -v2.Y;
                 v2 = ScalePosition(v2);

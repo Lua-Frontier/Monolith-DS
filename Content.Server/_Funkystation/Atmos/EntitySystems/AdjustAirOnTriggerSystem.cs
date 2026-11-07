@@ -30,7 +30,7 @@ public sealed partial class AdjustAirOnTriggerSystem : EntitySystem
         if (!_random.Prob(component.Probability))
             return;
 
-        if (!TryComp<TransformComponent>(uid, out var xform))
+        if (!TryComp(uid, out TransformComponent? xform))
             return;
 
         var coords = xform.Coordinates;

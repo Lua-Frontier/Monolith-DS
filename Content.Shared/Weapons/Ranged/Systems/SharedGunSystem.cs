@@ -74,7 +74,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] protected ThrowingSystem ThrowingSystem = default!;
     [Dependency] private   UseDelaySystem _useDelay = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] protected SharedGunPredictionSystem? _gunPrediction = default!;
+    [Dependency] protected SharedGunPredictionSystem _gunPrediction = default!;
 
     protected EntityQuery<PhysicsComponent> _physQuery; // Mono
     protected EntityQuery<ProjectileComponent> _projQuery; // Mono
@@ -618,7 +618,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     // Mono
     public EntityPrototype GetBulletPrototype(EntityPrototype cartridge)
     {
-        if (cartridge.TryGetComponent<CartridgeAmmoComponent>(out var cartComp, Factory))
+        if (cartridge.TryComp<CartridgeAmmoComponent>(out var cartComp, Factory))
         {
             return ProtoManager.Index(cartComp.Prototype);
         }
@@ -638,9 +638,9 @@ public abstract partial class SharedGunSystem : EntitySystem
     public DamageSpecifier GetBulletDamage(EntityPrototype bullet)
     {
         var shoot = GetBulletPrototype(bullet);
-        if (shoot.TryGetComponent<HitscanBasicDamageComponent>(out var hitscan, Factory))
+        if (shoot.TryComp<HitscanBasicDamageComponent>(out var hitscan, Factory))
             return hitscan.Damage;
-        if (shoot.TryGetComponent<ProjectileComponent>(out var proj, Factory))
+        if (shoot.TryComp<ProjectileComponent>(out var proj, Factory))
             return proj.Damage;
         return new();
     }
@@ -708,7 +708,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         var coordinates = xform.Coordinates;
         coordinates = coordinates.Offset(offsetPos);
 
-        TransformSystem.SetLocalRotation(xform, Random.NextAngle());
+        TransformSystem.SetLocalRotation(entity, Random.NextAngle(), xform);
         TransformSystem.SetCoordinates(entity, xform, coordinates);
 
         // decides direction the casing ejects and only when not cycling

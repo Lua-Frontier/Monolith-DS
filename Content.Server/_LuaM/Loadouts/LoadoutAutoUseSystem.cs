@@ -57,7 +57,7 @@ public sealed partial class LoadoutAutoUseSystem : EntitySystem
         if (TryComp<FlatpackComponent>(item, out var flatpack)
             && flatpack.Entity is { } packed
             && _proto.TryIndex(packed, out var packedProto)
-            && packedProto.TryGetComponent<AutoSurgeonComponent>(out var autosurgeon, _factory)
+            && packedProto.TryComp<AutoSurgeonComponent>(out var autosurgeon, _factory)
             && autosurgeon.Implant is { } autosurgeonImplant)
             return TryImplant(mob, autosurgeonImplant);
 

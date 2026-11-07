@@ -55,7 +55,7 @@ public sealed partial class InfoUIController : UIController, IOnStateExited<Game
         if (_infoWindow == null)
             return;
 
-        _infoWindow.Dispose();
+        _infoWindow.Orphan();
         _infoWindow = null;
     }
 

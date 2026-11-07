@@ -18,7 +18,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
             RobustXamlLoader.Load(this);
 
             var message = new FormattedMessage();
-            message.AddMarkup(Loc.GetString("ghost-respawn-rules-window-rules"));
+            message.AddMarkupOrThrow(Loc.GetString("ghost-respawn-rules-window-rules"));
             RulesLabel.SetMessage(message);
             RulesContainer.AddChild(RulesLabel);
             RulesLabel.SetPositionFirst();

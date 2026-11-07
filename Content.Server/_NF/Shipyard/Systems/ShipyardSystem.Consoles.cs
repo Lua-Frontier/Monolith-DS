@@ -302,7 +302,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         EnsureComp<FTLLockComponent>(shuttleUid);
 
         // Get the ShuttleConsoleSystem which has proper access to modify FTLLockComponent.Enabled
-        var shuttleConsoleSystem = Get<ShuttleConsoleSystem>();
+        var shuttleConsoleSystem = EntityManager.System<ShuttleConsoleSystem>();
         var dockedEntities = new List<NetEntity>();
         shuttleConsoleSystem.ToggleFTLLock(shuttleUid, dockedEntities, true);
 

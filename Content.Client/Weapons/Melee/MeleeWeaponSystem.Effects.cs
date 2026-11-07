@@ -11,6 +11,7 @@ namespace Content.Client.Weapons.Melee;
 
 public sealed partial class MeleeWeaponSystem
 {
+    [Dependency] private SpriteSystem _sprite = default!;
     private const string FadeAnimationKey = "melee-fade";
     private const string SlashAnimationKey = "melee-slash";
     private const string ThrustAnimationKey = "melee-thrust";
@@ -54,7 +55,7 @@ public sealed partial class MeleeWeaponSystem
         {
             if (user != weapon
                 && TryComp(weapon, out SpriteComponent? weaponSpriteComponent))
-                sprite.CopyFrom(weaponSpriteComponent);
+                _sprite.CopySprite((weapon, weaponSpriteComponent), (animationUid, sprite));
 
             spriteRotation = meleeWeaponComponent.WideAnimationRotation;
 //            var distance = Math.Clamp(localPos.Length() / 2f, 0.2f, 1f); // Commented by LuaM
@@ -66,7 +67,7 @@ public sealed partial class MeleeWeaponSystem
             offset = meleeWeaponComponent.AnimationOffset;
 // LuaM-end.
         }
-        sprite.Rotation = localPos.ToWorldAngle();
+        _sprite.SetRotation((animationUid, sprite), localPos.ToWorldAngle());
 
         var xform = _xformQuery.GetComponent(animationUid);
         TrackUserComponent track;
@@ -83,7 +84,7 @@ public sealed partial class MeleeWeaponSystem
             case WeaponArcAnimation.Thrust:
                 track = EnsureComp<TrackUserComponent>(animationUid);
                 track.User = user;
-                _animation.Play(animationUid, GetThrustAnimation(sprite, offset, spriteRotation, length), ThrustAnimationKey); // LuaM: removed distance, added length, offset
+                _animation.Play(animationUid, GetThrustAnimation((animationUid, sprite), offset, spriteRotation, length), ThrustAnimationKey); // LuaM: removed distance, added length, offset
                 if (arcComponent.Fadeout)
                     _animation.Play(animationUid, GetFadeAnimation(sprite, length * 0.5f, length + 0.15f), FadeAnimationKey); // LuaM: sprite, 0.05f, 0.15f > sprite, length * 0.5f, length + 0.15f
                 break;
@@ -154,7 +155,7 @@ public sealed partial class MeleeWeaponSystem
         };
     }
 
-    private Animation GetThrustAnimation(SpriteComponent sprite, float offset, Angle spriteRotation, float length) // LuaM: added offset, float length. Removed distance
+    private Animation GetThrustAnimation(Entity<SpriteComponent> sprite, float offset, Angle spriteRotation, float length) // LuaM: added offset, float length. Removed distance
     {
 //        const float thrustEnd = 0.05f; // Commented by LuaM
 //        const float length = 0.15f; // Commented by LuaM
@@ -162,9 +163,9 @@ public sealed partial class MeleeWeaponSystem
 //        var endOffset = sprite.Rotation.RotateVec(new Vector2(0f, -distance)); // Commented by LuaM
 // LuaM-start:
         var startOffset = Vector2.Zero;
-        var endOffset = sprite.Rotation.RotateVec(new Vector2(0f, -offset * 1.2f));
+        var endOffset = sprite.Comp.Rotation.RotateVec(new Vector2(0f, -offset * 1.2f));
 // LuaM-end.
-        sprite.Rotation += spriteRotation;
+        _sprite.SetRotation(sprite.AsNullable(), sprite.Comp.Rotation + spriteRotation);
 
         return new Animation()
         {

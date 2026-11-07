@@ -39,6 +39,9 @@ namespace Content.Server.Forensics
 {
     public sealed partial class ForensicScannerSystem : EntitySystem
     {
+        private static readonly ProtoId<StackPrototype> FederationMilitaryCreditId = "FederationMilitaryCredit";
+        private static readonly ProtoId<RadioChannelPrototype> NfsdId = "Nfsd";
+
         [Dependency] private IGameTiming _gameTiming = default!;
         [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
         [Dependency] private UserInterfaceSystem _uiSystem = default!;
@@ -103,7 +106,7 @@ namespace Content.Server.Forensics
         private void GiveReward(EntityUid uidOrigin, EntityUid target, int spesoAmount, FixedPoint2 fmcAmount, string msg)
         {
             SoundSpecifier confirmSound = new SoundPathSpecifier("/Audio/Effects/Cargo/ping.ogg");
-            _audioSystem.PlayPvs(_audioSystem.GetSound(confirmSound), uidOrigin);
+            _audioSystem.PlayPvs(confirmSound, uidOrigin);
 
             if (spesoAmount > 0)
                 _bank.TrySectorDeposit(SectorBankAccount.Nfsd, spesoAmount, LedgerEntryType.AntiSmugglingBonus);
@@ -122,7 +125,7 @@ namespace Content.Server.Forensics
                         int payout = sectorDD.FMCAccumulator.Int();
                         sectorDD.FMCAccumulator -= payout;
 
-                        var stackPrototype = _prototypeManager.Index<StackPrototype>("FederationMilitaryCredit");
+                        var stackPrototype = _prototypeManager.Index<StackPrototype>(FederationMilitaryCreditId);
                         _stackSystem.Spawn(payout, stackPrototype, Transform(target).Coordinates);
                     }
                 }
@@ -130,7 +133,7 @@ namespace Content.Server.Forensics
             else
                 fmcAmount = 0;
 
-            var channel = _prototypeManager.Index<RadioChannelPrototype>("Nfsd");
+            var channel = _prototypeManager.Index<RadioChannelPrototype>(NfsdId);
             string msgString = Loc.GetString(msg);
             if (fmcAmount >= 1)
             {

@@ -7,7 +7,7 @@ using Content.Shared.Mobs.Systems;
 
 namespace Content.Server._Shitmed.DelayedDeath;
 
-public partial class DelayedDeathSystem : EntitySystem
+public sealed partial class DelayedDeathSystem : EntitySystem
 {
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private MobStateSystem _mobState = default!;

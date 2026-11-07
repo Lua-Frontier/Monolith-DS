@@ -17,8 +17,13 @@ namespace Content.Client.Construction.UI
     /// UI controls and just provide higher level operations on the entire window. This View is completely passive and
     /// just raises events to the outside world. This class is controlled by the <see cref="ConstructionMenuPresenter"/>.
     /// </summary>
-    public interface IConstructionMenuView : IDisposable
+    public interface IConstructionMenuView
     {
+        /// <summary>
+        /// Removes the view from the UI tree.
+        /// </summary>
+        void Orphan();
+
         // It isn't optimal to expose UI controls like this, but the UI control design is
         // questionable so it can't be helped.
         string[] Categories { get; set; }

@@ -314,7 +314,7 @@ public sealed partial class HoloCommsHologramView : Control
     {
         spriteSize = default;
 
-        var bubble = shown.Comp1.LayerMapTryGet(TypingIndicatorLayers.Base, out var bubbleLayer) &&
+        var bubble = _sprite.LayerMapTryGet((shown.Owner, shown.Comp1), TypingIndicatorLayers.Base, out var bubbleLayer, false) &&
                      shown.Comp1[bubbleLayer].Visible;
 
         if (bubble)

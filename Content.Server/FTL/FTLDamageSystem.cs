@@ -52,7 +52,7 @@ public sealed partial class FTLDamageSystem : EntitySystem
             }
             
             // Check if transform component still exists
-            if (!TryComp<TransformComponent>(entity, out var transform))
+            if (!TryComp(entity, out TransformComponent? transform))
             {
                 toRemove.Add(entity);
                 continue;

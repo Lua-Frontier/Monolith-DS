@@ -262,7 +262,7 @@ public sealed partial class RpPanelWindow : DefaultWindow
 
     private void ReloadInteractions(List<RpInteractionPrototype> interactions)
     {
-        ButtonsContainer.DisposeAllChildren();
+        ButtonsContainer.RemoveAllChildren();
         _categoryControls.Clear();
         _interactionButtons.Clear();
 

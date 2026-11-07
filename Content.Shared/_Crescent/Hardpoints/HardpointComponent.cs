@@ -36,13 +36,13 @@ public enum weaponSizes
     Superheavy = 5
 }
 
-public class HardpointCannonAnchoredEvent : EntityEventArgs
+public sealed class HardpointCannonAnchoredEvent : EntityEventArgs
 {
     public EntityUid cannonUid;
     public EntityUid gridUid;
 }
 
-public class HardpointCannonDeanchoredEvent : EntityEventArgs
+public sealed class HardpointCannonDeanchoredEvent : EntityEventArgs
 {
     public EntityUid CannonUid;
     public EntityUid gridUid;

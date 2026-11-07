@@ -94,20 +94,4 @@ public sealed partial class AdminNotesLinePopup : Popup
         DeleteButton.Text = Loc.GetString("admin-notes-delete");
         DeleteButton.ModulateSelfOverride = null;
     }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (!disposing)
-        {
-            return;
-        }
-
-        EditButton.OnPressed -= EditPressed;
-        DeleteButton.OnPressed -= DeletePressed;
-
-        OnEditPressed = null;
-        OnDeletePressed = null;
-    }
 }

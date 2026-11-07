@@ -37,6 +37,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.DeviceNetwork.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -334,7 +335,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
                 playDefaultSound: false);
 
             // TODO: Need filter extensions or something don't blame me.
-            _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
+            _audio.PlayGlobal(new ResolvedPathSpecifier("/Audio/Misc/notice1.ogg"), Filter.Broadcast(), true);
             return;
         }
 
@@ -393,7 +394,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             : "/Audio/Announcements/shuttle_dock.ogg";
 
         // TODO: Need filter extensions or something don't blame me.
-        _audio.PlayGlobal(audioFile, Filter.Broadcast(), true);
+        _audio.PlayGlobal(new ResolvedPathSpecifier(audioFile), Filter.Broadcast(), true);
     }
 
     private void OnStationInit(EntityUid uid, StationCentcommComponent component, MapInitEvent args)

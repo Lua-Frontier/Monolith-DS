@@ -15,8 +15,10 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._LuaM.Guidebook;
 
 /// <summary>Unmodified playable species, measured against the human prototype.</summary>
-public sealed class GuideSpeciesStats : BoxContainer, IDocumentTag
+public sealed partial class GuideSpeciesStats : BoxContainer, IDocumentTag
 {
+    private static readonly EntProtoId MobHumanProto = "MobHuman";
+
     [Dependency] private IPrototypeManager _prototypes = default!;
     public GuideSpeciesStats()
     { IoCManager.InjectDependencies(this); Orientation = LayoutOrientation.Vertical; HorizontalExpand = true; SeparationOverride = 6; }
@@ -24,7 +26,7 @@ public sealed class GuideSpeciesStats : BoxContainer, IDocumentTag
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
         control = this;
-        if (!_prototypes.TryIndex<EntityPrototype>("MobHuman", out var human)) return true;
+        if (!_prototypes.TryIndex(MobHumanProto, out var human)) return true;
         foreach (var species in _prototypes.EnumeratePrototypes<SpeciesPrototype>().Where(s => s.RoundStart).OrderBy(s => Loc.GetString(s.Name)))
         {
             if (!_prototypes.TryIndex(species.Prototype, out var mob)) continue;

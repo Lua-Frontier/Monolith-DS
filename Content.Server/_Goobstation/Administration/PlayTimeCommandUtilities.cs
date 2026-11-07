@@ -13,6 +13,10 @@ public static class PlayTimeCommandUtilities
     /// </summary>
     /// <param name="timeString">Time string in a format like "1d 2h 30m" or "90m" or "1.5h"</param>
     /// <returns>The total number of minutes represented by the string</returns>
+    private static readonly Regex DayRegex = new(@"(\d+\.?\d*)d");
+    private static readonly Regex HourRegex = new(@"(\d+\.?\d*)h");
+    private static readonly Regex MinuteRegex = new(@"(\d+\.?\d*)m");
+
     public static double CountMinutes(string timeString)
     {
         if (string.IsNullOrWhiteSpace(timeString))
@@ -21,9 +25,9 @@ public static class PlayTimeCommandUtilities
         double totalMinutes = 0;
 
         // Match patterns like "1d", "2h", "30m", "1.5h", etc.
-        var dayMatch = Regex.Match(timeString, @"(\d+\.?\d*)d");
-        var hourMatch = Regex.Match(timeString, @"(\d+\.?\d*)h");
-        var minuteMatch = Regex.Match(timeString, @"(\d+\.?\d*)m");
+        var dayMatch = DayRegex.Match(timeString);
+        var hourMatch = HourRegex.Match(timeString);
+        var minuteMatch = MinuteRegex.Match(timeString);
 
         // Parse days
         if (dayMatch.Success && double.TryParse(dayMatch.Groups[1].Value, out var days))

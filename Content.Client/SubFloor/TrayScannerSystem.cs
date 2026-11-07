@@ -20,6 +20,7 @@ public sealed partial class TrayScannerSystem : SharedTrayScannerSystem
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private TrayScanRevealSystem _trayScanReveal = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     private const string TRayAnimationKey = "trays";
     private const double AnimationLength = 0.3;
@@ -102,7 +103,7 @@ public sealed partial class TrayScannerSystem : SharedTrayScannerSystem
                 if ((!_appearance.TryGetData(uid, SubFloorVisuals.ScannerRevealed, out bool value) || !value) &&
                     sprite.Color.A > SubfloorRevealAlpha)
                 {
-                    sprite.Color = sprite.Color.WithAlpha(0f);
+                    _sprite.SetColor((uid, sprite), sprite.Color.WithAlpha(0f));
                 }
 
                 SetRevealed(uid, true);
@@ -136,7 +137,7 @@ public sealed partial class TrayScannerSystem : SharedTrayScannerSystem
                 {
                     SetRevealed(uid, false);
                     RemCompDeferred<TrayRevealedComponent>(uid);
-                    sprite.Color = sprite.Color.WithAlpha(1f);
+                    _sprite.SetColor((uid, sprite), sprite.Color.WithAlpha(1f));
                     continue;
                 }
 

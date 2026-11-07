@@ -195,7 +195,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
             /// Frontier: overwriting EquipRoleLoadout
             //EquipRoleLoadout(entity.Value, loadout, roleProto!);
             long initialBankBalance = profile!.BankBalance; //Frontier
-            initialBankBalance += session == null ? 0l : _coins.GetMonoCoinsBalance(session.UserId) ?? 0l;
+            initialBankBalance += session == null ? 0L : _coins.GetMonoCoinsBalance(session.UserId) ?? 0L;
             var bankBalance = initialBankBalance; //Frontier
             bool hasBalance = false; // Frontier
 

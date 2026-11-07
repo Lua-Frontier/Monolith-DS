@@ -74,7 +74,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     [Dependency] private SharedContainerSystem _containerSystem = default!;
     [Dependency] private SharedHandsSystem _handsSystem = default!;
     [Dependency] private MobStateSystem _mobStateSystem = default!;
-    [Dependency] private SolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private SolutionTransferSystem _solutionTransferSystem = default!;
     [Dependency] private PuddleSystem _puddleSystem = default!;
     [Dependency] private TemperatureSystem _temperature = default!;
@@ -433,8 +433,8 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
             _sawmill.Warning(
                 $"{ToPrettyString(uid)} did not have a {component.StorageName} container. It has been created.");
 
-        component.Solution =
-            _solutionContainerSystem.EnsureSolution(uid, component.SolutionName, out var solutionExisted);
+        _solutionContainerSystem.EnsureSolution(uid, component.SolutionName, out var solutionExisted, out var fryerSolution);
+        component.Solution = fryerSolution!;
 
         if (!solutionExisted)
             _sawmill.Warning(
@@ -602,7 +602,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
             _audioSystem.PlayPvs(component.SoundRemoveItem, uid, AudioParamsInsertRemove);
 
-            UpdateUserInterface(component.Owner, component);
+            UpdateUserInterface(uid, component);
         }
     }
 
@@ -648,12 +648,11 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     {
         var user = args.Actor;
 
-        if (user == null ||
-            !TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
+        if (!TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
                 out var transferAmount))
             return;
 
-        if (!_solutionContainerSystem.TryGetSolution(component.Owner, component.Solution.Name, out var solution))
+        if (!_solutionContainerSystem.TryGetSolution(uid, component.Solution.Name, out var solution))
             return;
 
         _solutionTransferSystem.Transfer(user,

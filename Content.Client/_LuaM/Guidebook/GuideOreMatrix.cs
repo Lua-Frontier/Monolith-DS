@@ -12,10 +12,11 @@ using Robust.Shared.Utility;
 namespace Content.Client._LuaM.Guidebook;
 
 /// <summary>Only mineral tables reachable through the configured world generation.</summary>
-public sealed class GuideOreMatrix : BoxContainer, IDocumentTag
+public sealed partial class GuideOreMatrix : BoxContainer, IDocumentTag
 {
     [Dependency] private IPrototypeManager _prototypes = default!;
     [Dependency] private IEntityManager _entities = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
     private readonly GuidebookCatalogClientSystem _catalog;
     private readonly OptionButton _grade = new() { HorizontalExpand = true };
     private readonly ScrollContainer _scroll = new() { HorizontalExpand = true, SetHeight = 350, HScrollEnabled = true };
@@ -34,10 +35,9 @@ public sealed class GuideOreMatrix : BoxContainer, IDocumentTag
     { control = this; Rebuild(); return true; }
     protected override void EnteredTree() { base.EnteredTree(); _catalog.Updated += Rebuild; _catalog.Request(); Rebuild(); }
     protected override void ExitedTree() { _catalog.Updated -= Rebuild; base.ExitedTree(); }
-    protected override void Dispose(bool disposing) { _catalog.Updated -= Rebuild; base.Dispose(disposing); }
     private void Rebuild()
     {
-        foreach (var child in _table.Children.ToArray()) child.Dispose();
+        _table.RemoveAllChildren();
         if (_catalog.Catalog is not { } data) { _table.Columns = 1; Cell("Загрузка…"); _catalog.Request(); return; }
         _grades = data.OreTables.Select(t => t.Grade).Distinct().OrderBy(g => g == "Soft" ? 0 : g == "Hard" ? 1 : 2).ToList();
         _grade.Clear();
@@ -56,10 +56,10 @@ public sealed class GuideOreMatrix : BoxContainer, IDocumentTag
             foreach (var table in tables) Cell((table.Probabilities.GetValueOrDefault(ore) * 100).ToString("0.#", CultureInfo.CurrentCulture) + "%");
         }
     }
-    private string Name(string id)
+    private new string Name(string id)
     {
         if (id.Length == 0) return "Пустая порода";
-        if (Loc.TryGetString("guide-ore-" + id, out var localized)) return localized;
+        if (_loc.TryGetString("guide-ore-" + id, out var localized)) return localized;
         // OreVein refers to an ore prototype, not necessarily to an entity ID.
         // Newly connected ores inherit the localization of their actual mining yield.
         if (_prototypes.TryIndex<OrePrototype>(id, out var ore) && ore.OreEntity is { } entity)

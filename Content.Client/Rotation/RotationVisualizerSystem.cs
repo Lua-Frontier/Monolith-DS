@@ -52,7 +52,7 @@ public sealed partial class RotationVisualizerSystem : SharedRotationVisualsSyst
         // Stop the current rotate animation and then start a new one
         if (_animation.HasRunningAnimation(animationComp, animationKey))
         {
-            _animation.Stop(animationComp, animationKey);
+            _animation.Stop((uid, animationComp), animationKey);
         }
 
         var animation = new Animation

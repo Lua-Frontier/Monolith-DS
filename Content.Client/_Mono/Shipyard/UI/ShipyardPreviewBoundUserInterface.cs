@@ -31,7 +31,7 @@ public sealed partial class ShipyardPreviewBoundUserInterface : BoundUserInterfa
         if (!disposing)
             return;
         _preview.GridLoaded -= OnGridLoaded; // LuaM
-        _menu?.Dispose();
+        _menu?.Orphan();
     }
 
     // LuaM

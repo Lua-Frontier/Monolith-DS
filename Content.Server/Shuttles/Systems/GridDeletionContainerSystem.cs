@@ -39,11 +39,11 @@ public sealed partial class GridDeletionContainerSystem : EntitySystem
             // to avoid cycles and redundant work within the recursive calls.
             var processedEntities = new HashSet<EntityUid>();
 
-            Logger.Debug($"Grid {ToPrettyString(uid)} is terminating. Ensuring all child entities are deleted recursively.");
+            Log.Debug($"Grid {ToPrettyString(uid)} is terminating. Ensuring all child entities are deleted recursively.");
 
             // Start the recursive deletion process for all direct transform children of the grid.
             // We don't process the grid itself (uid) initially because it's already terminating.
-            if (TryComp<TransformComponent>(uid, out var gridXform))
+            if (TryComp(uid, out TransformComponent? gridXform))
             {
                 // Get the children of the transform using ChildEnumerator
                 var childEnumerator = gridXform.ChildEnumerator;
@@ -62,7 +62,7 @@ public sealed partial class GridDeletionContainerSystem : EntitySystem
                 }
             }
 
-            Logger.Debug($"Finished recursive deletion processing for terminating grid {ToPrettyString(uid)}. Processed entity count (excluding grid): {processedEntities.Count - 1}"); // Exclude the grid itself if it got added
+            Log.Debug($"Finished recursive deletion processing for terminating grid {ToPrettyString(uid)}. Processed entity count (excluding grid): {processedEntities.Count - 1}"); // Exclude the grid itself if it got added
         }
         finally
         {
@@ -107,7 +107,7 @@ public sealed partial class GridDeletionContainerSystem : EntitySystem
         }
 
         // 3. Recursively process transform children SECOND.
-        if (TryComp<TransformComponent>(entity, out var xform))
+        if (TryComp(entity, out TransformComponent? xform))
         {
             // Get the children of the transform using ChildEnumerator
             var childEnumerator = xform.ChildEnumerator;

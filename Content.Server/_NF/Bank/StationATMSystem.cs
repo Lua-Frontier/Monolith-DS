@@ -15,7 +15,6 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Database;
 using Robust.Shared.Containers;
 using System.Linq;
-using Content.Shared._NF.Bank.BUI;
 
 namespace Content.Server._NF.Bank;
 
@@ -323,11 +322,11 @@ public sealed partial class BankSystem
 
     private void PlayDenySound(EntityUid uid, StationBankATMComponent component)
     {
-        _audio.PlayPvs(_audio.GetSound(component.ErrorSound), uid);
+        _audio.PlayPvs(component.ErrorSound, uid);
     }
 
     private void PlayConfirmSound(EntityUid uid, StationBankATMComponent component)
     {
-        _audio.PlayPvs(_audio.GetSound(component.ConfirmSound), uid);
+        _audio.PlayPvs(component.ConfirmSound, uid);
     }
 }

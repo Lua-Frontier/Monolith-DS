@@ -36,7 +36,7 @@ public sealed partial class TurbineSystem : SharedTurbineSystem
     [Dependency] private DeviceLinkSystem _signal = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
-    public event Action<string>? TurbineRepairMessage;
+
 
     private readonly List<string> _damageSoundList = [
         "/Audio/_FarHorizons/Effects/engine_grump1.ogg",

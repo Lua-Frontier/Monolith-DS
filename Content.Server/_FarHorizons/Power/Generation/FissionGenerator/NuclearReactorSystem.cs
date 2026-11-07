@@ -133,11 +133,10 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
 
     private ReactorPartComponent RandomComponent()
     {
-        var compName = Factory.GetComponentName<ReactorPartComponent>();
         var source = "NuclearReactorRandomParts";
         var protoID = _prototypes.Index<WeightedRandomPrototype>(source).Pick(_random);
         if (!_prototypes.TryIndex(protoID, out var entProto)
-                || !entProto.TryGetComponent<ReactorPartComponent>(compName, out var comp))
+                || !entProto.TryComp<ReactorPartComponent>(out var comp, Factory))
             return new();
         return new ReactorPartComponent(comp) { ProtoId = protoID }; // LuaM: prototype components are shared now
     }
@@ -149,12 +148,10 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
         if (!_prototypes.TryIndex<NuclearReactorPrefabPrototype>(comp.Prefab, out var proto) || proto.ReactorComponents == null)
             return exportDict;
 
-        var compName = Factory.GetComponentName<ReactorPartComponent>();
-
         foreach (var pair in proto.ReactorComponents)
         {
             if (!_prototypes.TryIndex(pair.Value, out var entProto)
-                || !entProto.TryGetComponent<ReactorPartComponent>(compName, out var reactorPart))
+                || !entProto.TryComp<ReactorPartComponent>(out var reactorPart, Factory))
                 continue;
 
             exportDict.Add(pair.Key, new ReactorPartComponent(reactorPart) { ProtoId = pair.Value }); // LuaM

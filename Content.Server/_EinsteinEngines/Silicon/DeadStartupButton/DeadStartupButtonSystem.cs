@@ -12,6 +12,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
+using Robust.Shared.Audio;
 
 namespace Content.Server._EinsteinEngines.Silicon.DeadStartupButton;
 
@@ -62,7 +63,7 @@ public sealed partial class DeadStartupButtonSystem : SharedDeadStartupButtonSys
             return;
         }
 
-        _audio.PlayPvs(comp.BuzzSound, uid, AudioHelpers.WithVariation(0.05f, _robustRandom));
+        _audio.PlayPvs(comp.BuzzSound, uid, AudioParams.Default.WithVariation(0.05f));
         _popup.PopupEntity(Loc.GetString("dead-startup-system-reboot-failed", ("target", MetaData(uid).EntityName)), uid);
         Spawn("EffectSparks", Transform(uid).Coordinates);
     }

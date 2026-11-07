@@ -7,6 +7,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
 using Robust.Shared.Utility;
+using Robust.Client.GameObjects;
 
 namespace Content.Client.Examine;
 
@@ -50,7 +51,7 @@ public sealed class ExamineButton : ContainerButton
 
         if (verb.Icon != null)
         {
-            Icon.Texture = verb.Icon.Frame0();
+            Icon.Texture = IoCManager.Resolve<IEntityManager>().System<SpriteSystem>().Frame0(verb.Icon);
             Icon.Stretch = TextureRect.StretchMode.KeepAspectCentered;
 
             AddChild(Icon);
