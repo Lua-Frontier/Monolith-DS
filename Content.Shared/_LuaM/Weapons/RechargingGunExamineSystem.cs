@@ -31,7 +31,7 @@ public sealed partial class RechargingGunExamineSystem : EntitySystem
         if (!HasComp<RechargeBasicEntityAmmoComponent>(ent)
             || string.IsNullOrEmpty(provider.Proto.Id)
             || !_proto.TryIndex<EntityPrototype>(provider.Proto, out var bullet)
-            || !bullet.TryGetComponent<ProjectileComponent>(out var projectile, _factory)
+            || !bullet.TryComp<ProjectileComponent>(out var projectile, _factory)
             || projectile.Damage.Empty)
             return;
 
