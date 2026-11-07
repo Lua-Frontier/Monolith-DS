@@ -278,3 +278,23 @@
       - id: MobMoproach
         prob: 0.15
 # LuaM-end.
+
+- type: entity
+  id: CrateNPCScurret
+  parent: CrateLivestock
+  name: scurret crate
+  description: A crate containing a single scurret. Wawa!
+  components:
+  - type: StorageFill
+    contents:
+      - id: MobScurret
+
+- type: entity
+  id: CrateNPCEmotionalSupportScurret
+  parent: CrateLivestock
+  name: emotional support scurret crate
+  description: A crate containing a single emotional support scurret, ready for work. Wawa!
+  components:
+  - type: StorageFill
+    contents:
+      - id: MobEmotionalSupportScurret
