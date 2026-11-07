@@ -290,3 +290,6 @@ ghost-role-information-mothroachcecropia-name = Цекропиевая тара�
 ghost-role-information-mothroachcecropia-description = Очаровательный результат многочисленных попыток скрестить род семейства крапивных с тараканами.
 ghost-role-information-mothroachlunar-name = Лунная тараканомоль
 ghost-role-information-mothroachlunar-description = Кто-то оставил моль под лунным светом.
+
+ghost-role-information-emotional-support-scurret-name = Скуррет эмоциональной поддержки
+ghost-role-information-emotional-support-scurret-description = Поддерживайте экипаж, будьте милашкой и почаще говорите «ва».
