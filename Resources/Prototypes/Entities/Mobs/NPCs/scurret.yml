@@ -194,14 +194,14 @@
     - CanPilot
     - VimPilot
     - AnomalyHost
+    - Scurret
 
 # Spawnable scurrets have a random name and colour.
 
 - type: entity
-  name: scurret
-  description: Commonly known as Wawa, from the wetlands of Planet Wawa, these critters make up the bulk of Arnolds's Pizza's "loyal workforce".
-  id: MobScurret
+  id: MobBaseScurretRandom
   parent: MobBaseScurret
+  abstract: true
   components:
   # The have a rich culture
   - type: RandomMetadata
@@ -219,6 +219,33 @@
     attributes:
       gender: epicene
       proper: true
+
+# Regular scurrets breed when two of them are left together. Player-controlled ones never do.
+
+- type: entity
+  name: scurret
+  description: Commonly known as Wawa, from the wetlands of Planet Wawa, these critters make up the bulk of Arnolds's Pizza's "loyal workforce".
+  id: MobScurret
+  parent: MobBaseScurretRandom
+  components:
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Scurret
+    offspring:
+    - id: MobScurret
+  - type: ReproductivePartner
+
+# A scurret pup: half the size, can't breed, and grows into an adult scurret.
+
+- type: entity
+  name: scurret
+  description: Commonly known as Wawa, from the wetlands of Planet Wawa. This one is still a pup.
+  id: MobScurretPup
+  parent: MobScurret
+  suffix: Pup
+  components:
+  - type: Infant
 
 # Emotional Support Scurrets have a ghost role and equipment. At the moment, these are intended to be used for admemes, but
 # feel free to hook them into random content.
@@ -248,5 +275,5 @@
 - type: entity
   name: Emotional Support Scurret
   id: MobEmotionalSupportScurret
-  parent: [MobScurret, MobBaseEmotionalSupportScurret]
+  parent: [MobBaseScurretRandom, MobBaseEmotionalSupportScurret]
   description: Commonly known as Wawa, from the wetlands of Planet Wawa, these critters make up the bulk of Arnold's Pizza's "loyal workforce". This one is here as a temp.
