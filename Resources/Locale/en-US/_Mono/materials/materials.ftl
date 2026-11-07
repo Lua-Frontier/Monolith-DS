@@ -30,6 +30,7 @@ materials-components-steriles = sterilized parts
 
 # Sheets
 materials-iridite-slag = iridite slag
+materials-pyrogel = pyrogel
 materials-lithium = lithium
 stack-lithium = lithium
 materials-copper = copper

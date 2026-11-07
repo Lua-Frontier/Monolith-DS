@@ -44,9 +44,3 @@ ent-ClothingBeltChefFilled = { ent-ClothingBeltChef }
     .suffix = Заполненный
     .desc = { ent-ClothingBeltChef.desc }
 
-ent-ClothingBeltMilitaryWebbingSyndicateGrenadeFilled = тактический жилет гренадёра
-    .suffix = Заполненный
-    .desc = { ent-ClothingBeltMilitaryWebbingSyndicate.desc }
-ent-ClothingBeltMilitaryWebbingSyndicateMedFilled = { ent-ClothingBeltMilitaryWebbingSyndicateMed }
-    .suffix = Заполненный
-    .desc = { ent-ClothingBeltMilitaryWebbingSyndicateMed.desc }

@@ -11,4 +11,4 @@ ent-AmmoBox12_gaugeSlugRIP = коробка пуль (12 калибр RIP)
 ent-AmmoBox12_gaugeSlugAP = коробка пуль (12 калибр бронебойный)
 ent-AmmoBox12_gaugeFlechette = коробка дроби (12 калибр флешетта)
 ent-AmmoBox12_gaugeBlank = shotgun shell box (12 gauge blanks)
-    .desc = { ent-AmmoProvider12_gaugeShotgunShell.desc }
+    .desc = { ent-BaseItem.desc }

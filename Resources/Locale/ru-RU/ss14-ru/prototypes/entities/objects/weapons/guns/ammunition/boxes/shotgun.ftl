@@ -1,5 +1,3 @@
-ent-AmmoProviderShotgunShell = { ent-BaseAmmoProvider }
-    .desc = { ent-BaseAmmoProvider.desc }
 ent-BoxBeanbag = раздатчик ружейных патронов (травматические)
     .desc = Полная коробка травматических ружейных патронов.
 ent-BoxLethalshot = раздатчик ружейных патронов (летальные)

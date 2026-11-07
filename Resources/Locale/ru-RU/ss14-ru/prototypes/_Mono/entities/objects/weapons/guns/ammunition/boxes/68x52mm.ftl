@@ -7,4 +7,4 @@ ent-AmmoBox68x52mmCaselessPlasteelAP = большая коробка боепр�
 ent-AmmoBox68x52mmCaselessHP = большая коробка боеприпасов (6.8x52мм STANAG безгильзовые экспансивные)
 ent-AmmoBox68x52mmCaselessRIP = большая коробка боеприпасов (6.8x52мм STANAG безгильзовые RIP)
 ent-AmmoBox68x52mmCaselessPlasma = коробка патронов (6.8x52мм STANAG безгильзовые плазменные)
-    .desc = { ent-BaseAmmoBox68x52mmCaseless.desc }
+    .desc = { ent-BaseItem.desc }

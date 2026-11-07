@@ -31,3 +31,4 @@ materials-components-sensors = сенсоры
 materials-components-ship = корабельные компоненты
 materials-components-steriles = стерилизованные детали
 materials-iridite-slag = иридиевый шлак
+materials-pyrogel = пирогель

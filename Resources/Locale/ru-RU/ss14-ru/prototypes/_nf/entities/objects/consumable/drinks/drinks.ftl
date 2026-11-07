@@ -22,7 +22,7 @@ ent-CondimentCup = стаканчик для приправ
 
 # Lua start
 ent-DrinkDisposableMcCup = { ent-DrinkDisposableCup }
-    .desc = { ent-DrinkDisposableCup.desc }
+    .desc = { ent-DrinkBase.desc }
 ent-TheMadgob = { ent-DrinkGlass }
     .suffix = Безумный гоблин
     .desc = { ent-DrinkGlass.desc }

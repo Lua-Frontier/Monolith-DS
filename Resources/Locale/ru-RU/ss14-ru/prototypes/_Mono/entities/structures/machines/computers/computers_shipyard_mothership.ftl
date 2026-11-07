@@ -1,5 +1,6 @@
 ent-BaseCarrierComputer = консоль авианосца
     .desc = Используется на авианосцах для покупки и продажи кораблей без возврата на станцию.
+    .suffix = Авианосец
 ent-SellOnlyCarrierComputer = консоль верфи только для продажи
 ent-MiningCarrierComputer = консоль добывающего авианосца
 ent-HiveCarrierComputer = консоль авианосца «Зефир»
