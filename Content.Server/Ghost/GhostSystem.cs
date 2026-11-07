@@ -46,6 +46,8 @@ namespace Content.Server.Ghost
 {
     public sealed partial class GhostSystem : SharedGhostSystem
     {
+        private static readonly ProtoId<DamageTypePrototype> AsphyxiationId = "Asphyxiation";
+
         [Dependency] private SharedActionsSystem _actions = default!;
         [Dependency] private IAdminLogManager _adminLog = default!;
         [Dependency] private SharedEyeSystem _eye = default!;
@@ -525,7 +527,7 @@ namespace Content.Server.Ghost
             if (spawnPosition?.IsValid(EntityManager) != true)
                 return false;
 
-            var mapUid = spawnPosition?.GetMapUid(EntityManager);
+            var mapUid = _transformSystem.GetMap(spawnPosition.Value);
             var gridUid = spawnPosition?.EntityId;
             // Test if the map is being deleted
             if (mapUid == null || TerminatingOrDeleted(mapUid.Value))
@@ -713,7 +715,7 @@ namespace Content.Server.Ghost
                         dealtDamage = playerDeadThreshold - damageable.TotalDamage;
                     }
 
-                    DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>("Asphyxiation"), dealtDamage);
+                    DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>(AsphyxiationId), dealtDamage);
 
                     _damageable.TryChangeDamage(playerEntity, damage, true);
                 }

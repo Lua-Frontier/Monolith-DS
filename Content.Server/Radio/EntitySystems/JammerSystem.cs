@@ -114,7 +114,7 @@ public sealed partial class JammerSystem : SharedJammerSystem
     private void OnRadioSendAttempt(ref RadioSendAttemptEvent args)
     {
         
-    if (!TryComp<TransformComponent>(args.RadioSource, out var sourceTransform))
+    if (!TryComp(args.RadioSource, out TransformComponent? sourceTransform))
         return;
 
     var source = sourceTransform.Coordinates;

@@ -24,6 +24,7 @@ using Content.Shared.Station.Components;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Server._NF.SectorServices; // Frontier
 using Content.Shared.GameTicking.Components; // Mono
+using Robust.Shared.Audio;
 
 namespace Content.Server.RoundEnd
 {
@@ -193,7 +194,7 @@ namespace Content.Server.RoundEnd
                 null,
                 Color.Gold);
 
-            _announcementAudio.Mark(_audio.PlayGlobal("/Audio/Announcements/shuttlecalled.ogg", Filter.Broadcast(), true)); // LuaM
+            _announcementAudio.Mark(_audio.PlayGlobal(new ResolvedPathSpecifier("/Audio/Announcements/shuttlecalled.ogg"), Filter.Broadcast(), true)); // LuaM
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -241,7 +242,7 @@ namespace Content.Server.RoundEnd
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
                 Loc.GetString("Station"), false, colorOverride: Color.Gold);
 
-            _announcementAudio.Mark(_audio.PlayGlobal("/Audio/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), true)); // LuaM
+            _announcementAudio.Mark(_audio.PlayGlobal(new ResolvedPathSpecifier("/Audio/Announcements/shuttlerecalled.ogg"), Filter.Broadcast(), true)); // LuaM
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;

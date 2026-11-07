@@ -43,7 +43,7 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     {
         if (LanguageWindow != null)
         {
-            LanguageWindow.Dispose();
+            LanguageWindow.Orphan();
             LanguageWindow = null;
         }
 

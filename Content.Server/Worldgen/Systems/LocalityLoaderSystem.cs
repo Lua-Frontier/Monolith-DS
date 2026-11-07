@@ -87,7 +87,7 @@ public sealed partial class LocalityLoaderSystem : BaseWorldSystem
     // Frontier
     private void OnDebrisDespawn(EntityUid entity, SpaceDebrisComponent component, EntityTerminatingEvent e)
     {
-        if (entity != null)
+        if (entity.IsValid())
         {
             // Handle mobrestrictions getting deleted
             var query = AllEntityQuery<NFSalvageMobRestrictionsComponent>();

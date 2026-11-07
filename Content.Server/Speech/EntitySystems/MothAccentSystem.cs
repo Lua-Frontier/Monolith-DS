@@ -9,6 +9,16 @@ public sealed partial class MothAccentSystem : EntitySystem
 {
     private static readonly Regex RegexLowerBuzz = new Regex("z{1,3}");
     private static readonly Regex RegexUpperBuzz = new Regex("Z{1,3}");
+    // LuaM-start
+    private static readonly Regex RegexRuLowerZh = new("ж+");
+    private static readonly Regex RegexRuUpperZh = new("Ж+");
+    private static readonly Regex RegexRuLowerZ = new("з+");
+    private static readonly Regex RegexRuUpperZ = new("З+");
+    private static readonly string[] RuLowerZh = ["жж", "жжж"];
+    private static readonly string[] RuUpperZh = ["ЖЖ", "ЖЖЖ"];
+    private static readonly string[] RuLowerZ = ["зз", "ззз"];
+    private static readonly string[] RuUpperZ = ["ЗЗ", "ЗЗЗ"];
+    // LuaM-end
 
     [Dependency] private IRobustRandom _random = default!; // LuaM
 
@@ -28,26 +38,10 @@ public sealed partial class MothAccentSystem : EntitySystem
         message = RegexUpperBuzz.Replace(message, "ZZZ");
 
 // LuaM-start:
-        message = Regex.Replace(
-            message,
-            "ж+",
-            _random.Pick(new List<string>() { "жж", "жжж" })
-        );
-        message = Regex.Replace(
-            message,
-            "Ж+",
-            _random.Pick(new List<string>() { "ЖЖ", "ЖЖЖ" })
-        );
-        message = Regex.Replace(
-            message,
-            "з+",
-            _random.Pick(new List<string>() { "зз", "ззз" })
-        );
-        message = Regex.Replace(
-            message,
-            "З+",
-            _random.Pick(new List<string>() { "ЗЗ", "ЗЗЗ" })
-        );
+        message = RegexRuLowerZh.Replace(message, _random.Pick(RuLowerZh));
+        message = RegexRuUpperZh.Replace(message, _random.Pick(RuUpperZh));
+        message = RegexRuLowerZ.Replace(message, _random.Pick(RuLowerZ));
+        message = RegexRuUpperZ.Replace(message, _random.Pick(RuUpperZ));
 // LuaM-end.
 
         args.Message = message;

@@ -112,9 +112,9 @@ namespace Content.MapRenderer.Painters
                 {
                     mapLoader.TryLoadGrid(mapId, new(path), out _);
                 }
-                catch (Exception e) // we probably tried to load a map
+                catch (Exception) // we probably tried to load a map
                 {
-                    Logger.Info($"Failed to load as grid, rendering as map...");
+                    Logger.GetSawmill("map_renderer").Info("Failed to load as grid, rendering as map...");
                     sMapManager.DeleteMap(mapId);
                     var opts = new DeserializationOptions();
                     opts.InitializeMaps = true;
@@ -190,7 +190,7 @@ namespace Content.MapRenderer.Painters
             {
                 if (cEntityManager.TryGetComponent(cPlayerManager.LocalEntity, out SpriteComponent? sprite))
                 {
-                    sprite.Visible = false;
+                    cEntityManager.System<SpriteSystem>().SetVisible((cPlayerManager.LocalEntity.Value, sprite), false);
                 }
             });
 

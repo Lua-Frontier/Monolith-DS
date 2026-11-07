@@ -116,7 +116,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
     {
         if (_escapeWindow != null)
         {
-            _escapeWindow.Dispose();
+            _escapeWindow.Orphan();
             _escapeWindow = null;
         }
 

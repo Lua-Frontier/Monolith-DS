@@ -15,6 +15,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Input;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Guidebook.Controls;
@@ -29,12 +30,20 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
     [Dependency] private IEntityManager _entityManager = default!;
     [Dependency] private IEntitySystemManager _systemManager = default!;
     [Dependency] private IUserInterfaceManager _ui = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     private readonly TagSystem _tagSystem;
     private readonly ExamineSystem _examineSystem;
     private readonly GuidebookSystem _guidebookSystem;
 
     public bool Interactive;
+
+    // The preview entity is only spawned while the embed is in the UI tree.
+    private EntProtoId? _entityProto;
+    private bool _tagEntity;
+    private bool _mapInitEntity;
+
+    public EntProtoId? EntityPrototypeId => _entityProto;
 
     public Entity<SpriteComponent>? Sprite => View.Entity == null || View.Sprite == null
         ? null
@@ -59,12 +68,34 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
     public GuideEntityEmbed(string proto, bool caption, bool interactive) : this()
     {
         Interactive = interactive;
-
-        var ent = _entityManager.SpawnEntity(proto, MapCoordinates.Nullspace);
-        View.SetEntity(ent);
+        _entityProto = proto;
 
         if (caption)
-            Caption.SetMessage(FormattedMessage.FromUnformatted(_entityManager.GetComponent<MetaDataComponent>(ent).EntityName)); // LuaM: preserve literal localized names
+            Caption.SetMessage(FormattedMessage.FromUnformatted(_prototype.Index<EntityPrototype>(proto).Name)); // LuaM: preserve literal localized names
+    }
+
+    protected override void EnteredTree()
+    {
+        base.EnteredTree();
+
+        if (_entityProto == null || View.Entity != null)
+            return;
+
+        var ent = _entityManager.SpawnEntity(_entityProto, MapCoordinates.Nullspace);
+        if (_tagEntity)
+            _tagSystem.AddTag(ent, GuidebookSystem.GuideEmbedTag);
+        View.SetEntity(ent);
+        if (_mapInitEntity)
+            _entityManager.RunMapInit(ent, _entityManager.GetComponent<MetaDataComponent>(ent));
+    }
+
+    protected override void ExitedTree()
+    {
+        base.ExitedTree();
+
+        var ent = View.Entity;
+        View.SetEntity(null);
+        _entityManager.DeleteEntity(ent);
     }
 
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
@@ -123,30 +154,28 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         }
     }
 
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (Sprite is not null)
-            _entityManager.DeleteEntity(Sprite);
-    }
 
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
         if (!args.TryGetValue("Entity", out var proto))
         {
-            Logger.Error("Entity embed tag is missing entity prototype argument");
+            Logger.GetSawmill("guidebook").Error("Entity embed tag is missing entity prototype argument");
             control = null;
             return false;
         }
 
-        var ent = _entityManager.SpawnEntity(proto, MapCoordinates.Nullspace);
+        if (!_prototype.TryIndex<EntityPrototype>(proto, out var entityProto))
+        {
+            Logger.GetSawmill("guidebook").Error($"Entity embed tag has an unknown entity prototype: {proto}");
+            control = null;
+            return false;
+        }
 
-        _tagSystem.AddTag(ent, GuidebookSystem.GuideEmbedTag);
-        View.SetEntity(ent);
+        _entityProto = proto;
+        _tagEntity = true;
 
         if (!args.TryGetValue("Caption", out var caption))
-            caption = _entityManager.GetComponent<MetaDataComponent>(ent).EntityName;
+            caption = entityProto.Name;
 
         if (!string.IsNullOrEmpty(caption))
             Caption.SetMessage(FormattedMessage.FromUnformatted(caption)); // LuaM: wrap the complete caption, without parsing item names as markup
@@ -181,8 +210,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         }
 
         // By default, we will map-initialize guidebook entities.
-        if (!args.TryGetValue("Init", out var mapInit) || !bool.Parse(mapInit))
-            _entityManager.RunMapInit(ent, _entityManager.GetComponent<MetaDataComponent>(ent));
+        _mapInitEntity = !args.TryGetValue("Init", out var mapInit) || !bool.Parse(mapInit);
 
         control = this;
         return true;

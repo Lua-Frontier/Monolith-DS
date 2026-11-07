@@ -93,7 +93,7 @@ public abstract partial class SharedBuckleSystem
                         {
                             var worldPos = _transform.GetWorldPosition(uid);
                             _transform.SetWorldPosition(entity, worldPos);
-                            entityXform.AttachParent(strapXform.ParentUid);
+                            _transform.SetParent(entity, entityXform, strapXform.ParentUid);
                         }
 
                         // Reset other states

@@ -62,6 +62,6 @@ public sealed class SafetyDepositConsoleBoundUserInterface : BoundUserInterface
         base.Dispose(disposing);
 
         if (disposing)
-            _window?.Dispose();
+            _window?.Orphan();
     }
 }

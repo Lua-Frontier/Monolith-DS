@@ -11,6 +11,8 @@ namespace Content.Client.Flash
 {
     public sealed partial class FlashOverlay : Overlay
     {
+        private static readonly ProtoId<ShaderPrototype> FlashedEffectShader = "FlashedEffect";
+
         [Dependency] private IPrototypeManager _prototypeManager = default!;
         [Dependency] private IEntityManager _entityManager = default!;
         [Dependency] private IPlayerManager _playerManager = default!;
@@ -27,7 +29,7 @@ namespace Content.Client.Flash
         public FlashOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _shader = _prototypeManager.Index<ShaderPrototype>("FlashedEffect").InstanceUnique();
+            _shader = _prototypeManager.Index<ShaderPrototype>(FlashedEffectShader).InstanceUnique();
             _flash = _entityManager.System<SharedFlashSystem>();
             _statusSys = _entityManager.System<StatusEffectsSystem>();
         }

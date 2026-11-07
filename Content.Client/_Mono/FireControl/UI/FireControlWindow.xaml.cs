@@ -310,7 +310,7 @@ public sealed partial class FireControlWindow : FancyWindow
             WeaponsList.Clear();
             _reloadBars.Clear(); // LuaM
             _reloads.Clear(); // LuaM
-            ControllablesBox.DisposeAllChildren();
+            ControllablesBox.RemoveAllChildren();
             _weaponNameToEntity.Clear();
             _weaponTypes.Clear();
             return;

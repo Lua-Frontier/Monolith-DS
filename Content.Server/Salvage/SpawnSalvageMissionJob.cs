@@ -45,6 +45,8 @@ namespace Content.Server.Salvage;
 
 public sealed class SpawnSalvageMissionJob : Job<bool>
 {
+    private static readonly ProtoId<LocalizedDatasetPrototype> NamesBorerId = "NamesBorer";
+
     private readonly IEntityManager _entManager;
     private readonly IGameTiming _timing;
     private readonly SharedMapSystem _mapManager;
@@ -131,7 +133,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
             ExpeditionSpawnCompleteEvent ev = new(Station, success, _missionParams.Index);
             _entManager.EventBus.RaiseLocalEvent(Station, ev);
             if (errorStackTrace != null)
-                Logger.ErrorS("salvage", $"Expedition generation failed with exception: {errorStackTrace}!");
+                Logger.GetSawmill("salvage").Error($"Expedition generation failed with exception: {errorStackTrace}!");
             if (!success)
             {
                 // Invalidate station, expedition cancellation will be handled by task handler
@@ -147,7 +149,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
 
     private async Task<bool> InternalProcess() // Frontier: make process an internal function (for a try block indenting an entire), add "out EntityUid mapUid" param
     {
-        Logger.DebugS("salvage", $"Spawning salvage mission with seed {_missionParams.Seed}");
+        Logger.GetSawmill("salvage").Debug($"Spawning salvage mission with seed {_missionParams.Seed}");
         var config = _missionParams.MissionType;
         mapUid = _map.CreateMap(out var mapId, runMapInit: false); // Frontier: remove "var"
         MetaDataComponent? metadata = null;
@@ -159,7 +161,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         destComp.Enabled = true;
         _metaData.SetEntityName(
             mapUid,
-            _entManager.System<SharedSalvageSystem>().GetFTLName(_prototypeManager.Index<LocalizedDatasetPrototype>("NamesBorer"), _missionParams.Seed));
+            _entManager.System<SharedSalvageSystem>().GetFTLName(_prototypeManager.Index<LocalizedDatasetPrototype>(NamesBorerId), _missionParams.Seed));
         _entManager.AddComponent<FTLBeaconComponent>(mapUid);
 
         // Saving the mission mapUid to a CD is made optional, in case one is somehow made in a process without a CD entity
@@ -445,7 +447,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
                 var spawnTile = validSpawns[^1];
                 validSpawns.RemoveAt(validSpawns.Count - 1);
 
-                if (!_anchorable.TileFree(grid, spawnTile, (int) CollisionGroup.MachineLayer,
+                if (!_anchorable.TileFree((gridUid, grid), spawnTile, (int) CollisionGroup.MachineLayer,
                         (int) CollisionGroup.MachineMask)) // Frontier: MachineLayer<MachineMask
                 {
                     continue;
@@ -519,7 +521,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
                         var spawnTile = validSpawns[^1];
                         validSpawns.RemoveAt(validSpawns.Count - 1);
 
-                        if (!_anchorable.TileFree(grid, spawnTile, (int)CollisionGroup.MachineLayer,
+                        if (!_anchorable.TileFree((mapUid, grid), spawnTile, (int)CollisionGroup.MachineLayer,
                                 (int)CollisionGroup.MachineLayer))
                         {
                             continue;

@@ -33,6 +33,8 @@ namespace Content.Shared._Shitmed.Medical.Surgery;
 
 public abstract partial class SharedSurgerySystem
 {
+    private static readonly ProtoId<DamageTypePrototype> PoisonId = "Poison";
+
 
     private EntityQuery<SurgeryIgnoreClothingComponent> _ignoreQuery; // LuaM-port-Shitmed-content.
 
@@ -196,7 +198,7 @@ public abstract partial class SharedSurgerySystem
         {
             if (!HasComp<SanitizedComponent>(args.User))
             {
-                var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 15);
+                var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>(PoisonId), 15);
                 var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 1.0f); // Mono - 0.5->1.0f - Mono Part surgery damage increase
                 RaiseLocalEvent(args.Body, ref ev);
             }
@@ -346,7 +348,7 @@ public abstract partial class SharedSurgerySystem
 
     private EntProtoId? GetProtoId(EntityUid entityUid)
     {
-        if (!TryComp<MetaDataComponent>(entityUid, out var metaData))
+        if (!TryComp(entityUid, out MetaDataComponent? metaData))
             return null;
 
         return metaData.EntityPrototype?.ID;

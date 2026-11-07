@@ -19,6 +19,7 @@ public sealed partial class CombatModeSystem : SharedCombatModeSystem
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IInputManager _inputManager = default!;
     [Dependency] private IEyeManager _eye = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     /// <summary>
     /// Raised whenever combat mode changes.
@@ -111,9 +112,9 @@ public sealed partial class CombatModeSystem : SharedCombatModeSystem
     {
         if (!_combatIndicatorEnabled)
         {
-            if (_spriteQuery.TryComp(uid, out var sprite) && sprite.LayerMapTryGet("combat_mode_indicator", out var layerToRemove))
+            if (_spriteQuery.TryComp(uid, out var sprite) && _sprite.LayerMapTryGet((uid, sprite), "combat_mode_indicator", out var layerToRemove, false))
             {
-                sprite.RemoveLayer(layerToRemove);
+                _sprite.RemoveLayer((uid, sprite), layerToRemove);
             }
             return;
         }
@@ -123,20 +124,20 @@ public sealed partial class CombatModeSystem : SharedCombatModeSystem
             if (!_spriteQuery.TryComp(uid, out var sprite))
                 return;
 
-            if (!sprite.LayerMapTryGet("combat_mode_indicator", out var layer))
+            if (!_sprite.LayerMapTryGet((uid, sprite), "combat_mode_indicator", out var layer, false))
             {
                 if (!_spriteQuery.TryComp(uid, out var sprite2))
                     return;
 
-                layer = sprite2.AddLayer(new SpriteSpecifier.Rsi(new ResPath("_Europa/Effects/combat_mode.rsi"), "combat_mode"));
-                sprite2.LayerMapSet("combat_mode_indicator", layer);
+                layer = _sprite.AddLayer((uid, sprite2), new SpriteSpecifier.Rsi(new ResPath("_Europa/Effects/combat_mode.rsi"), "combat_mode"));
+                _sprite.LayerMapSet((uid, sprite2), "combat_mode_indicator", layer);
             }
         }
         else
         {
-            if (_spriteQuery.TryComp(uid, out var sprite) && sprite.LayerMapTryGet("combat_mode_indicator", out var layerToRemove))
+            if (_spriteQuery.TryComp(uid, out var sprite) && _sprite.LayerMapTryGet((uid, sprite), "combat_mode_indicator", out var layerToRemove, false))
             {
-                sprite.RemoveLayer(layerToRemove);
+                _sprite.RemoveLayer((uid, sprite), layerToRemove);
             }
         }
     }

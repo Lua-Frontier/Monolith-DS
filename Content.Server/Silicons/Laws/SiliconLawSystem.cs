@@ -39,6 +39,7 @@ public sealed partial class SiliconLawSystem : SharedSiliconLawSystem
     [Dependency] private EmagSystem _emag = default!;
     [Dependency] private TagSystem _tagSystem = default!; // Corvax-Next-AiRemoteControl
     [Dependency] private SharedMapSystem _map = default!; // Mono - Law update is grid-only now.
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -317,7 +318,7 @@ public sealed partial class SiliconLawSystem : SharedSiliconLawSystem
             return;
 
         // Mono edit start - Law update is grid-only now.
-        if (!_map.TryFindGridAt(Transform(args.Entity).MapPosition, out var grid, out var component))
+        if (!_map.TryFindGridAt(_transform.GetMapCoordinates(args.Entity), out var grid, out var component))
             return;
 
         var lawset = GetLawset(provider.Laws).Laws;

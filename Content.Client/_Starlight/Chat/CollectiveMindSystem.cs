@@ -17,7 +17,7 @@ namespace Content.Client.Chat
             SubscribeLocalEvent<CollectiveMindComponent, ComponentRemove>(OnRemove);
         }
 
-        public bool IsCollectiveMind => CompOrNull<CollectiveMindComponent>(_playerManager.LocalPlayer?.ControlledEntity) != null;
+        public bool IsCollectiveMind => CompOrNull<CollectiveMindComponent>(_playerManager.LocalEntity) != null;
 
         private void OnInit(EntityUid uid, CollectiveMindComponent component, ComponentInit args)
         {

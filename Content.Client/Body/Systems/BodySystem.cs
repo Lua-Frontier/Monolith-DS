@@ -14,11 +14,12 @@ public sealed partial class BodySystem : SharedBodySystem
 {
     // Shitmed Change Start
     [Dependency] private MarkingManager _markingManager = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     private void ApplyMarkingToPart(MarkingPrototype markingPrototype,
         IReadOnlyList<Color>? colors,
         bool visible,
-        SpriteComponent sprite)
+        Entity<SpriteComponent> sprite)
     {
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)
         {
@@ -29,14 +30,14 @@ public sealed partial class BodySystem : SharedBodySystem
 
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
 
-            if (!sprite.LayerMapTryGet(layerId, out _))
+            if (!_sprite.LayerMapTryGet(sprite.AsNullable(), layerId, out _, false))
             {
-                var layer = sprite.AddLayer(markingSprite, j + 1);
-                sprite.LayerMapSet(layerId, layer);
-                sprite.LayerSetSprite(layerId, rsi);
+                var layer = _sprite.AddLayer(sprite.AsNullable(), markingSprite, j + 1);
+                _sprite.LayerMapSet(sprite.AsNullable(), layerId, layer);
+                _sprite.LayerSetSprite(sprite.AsNullable(), layerId, rsi);
             }
 
-            sprite.LayerSetVisible(layerId, visible);
+            _sprite.LayerSetVisible(sprite.AsNullable(), layerId, visible);
 
             if (!visible)
                 continue;
@@ -44,9 +45,9 @@ public sealed partial class BodySystem : SharedBodySystem
             // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
             // and we need to check the index is correct. So if that happens just default to white?
             if (colors != null && j < colors.Count)
-                sprite.LayerSetColor(layerId, colors[j]);
+                _sprite.LayerSetColor(sprite.AsNullable(), layerId, colors[j]);
             else
-                sprite.LayerSetColor(layerId, Color.White);
+                _sprite.LayerSetColor(sprite.AsNullable(), layerId, Color.White);
         }
     }
 
@@ -56,7 +57,7 @@ public sealed partial class BodySystem : SharedBodySystem
             return;
 
         if (component.Color != null)
-            sprite.Color = component.Color.Value;
+            _sprite.SetColor((target, sprite), component.Color.Value);
 
         foreach (var (visualLayer, markingList) in component.Markings)
             foreach (var marking in markingList)
@@ -64,7 +65,7 @@ public sealed partial class BodySystem : SharedBodySystem
                 if (!_markingManager.TryGetMarking(marking, out var markingPrototype))
                     continue;
 
-                ApplyMarkingToPart(markingPrototype, marking.MarkingColors, marking.Visible, sprite);
+                ApplyMarkingToPart(markingPrototype, marking.MarkingColors, marking.Visible, (target, sprite));
             }
     }
 

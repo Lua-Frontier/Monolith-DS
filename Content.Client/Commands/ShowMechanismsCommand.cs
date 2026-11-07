@@ -18,9 +18,10 @@ public sealed partial class ShowMechanismsCommand : LocalizedCommands
     {
         var query = _entManager.AllEntityQueryEnumerator<OrganComponent, SpriteComponent>();
 
-        while (query.MoveNext(out _, out var sprite))
+        var spriteSys = _entManager.System<SpriteSystem>();
+        while (query.MoveNext(out var uid, out _, out var sprite))
         {
-            sprite.ContainerOccluded = false;
+            spriteSys.SetContainerOccluded((uid, sprite), false);
         }
     }
 }

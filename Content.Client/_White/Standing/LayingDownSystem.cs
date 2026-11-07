@@ -14,7 +14,9 @@ public sealed partial class LayingDownSystem : SharedLayingDownSystem
     [Dependency] private IEyeManager _eyeManager = default!;
     [Dependency] private StandingStateSystem _standing = default!;
     [Dependency] private AnimationPlayerSystem _animation = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
     [Dependency] private SharedBuckleSystem _buckle = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -39,14 +41,14 @@ public sealed partial class LayingDownSystem : SharedLayingDownSystem
         if (_animation.HasRunningAnimation(uid, "rotate"))
             return;
 
-        if (!TryComp<TransformComponent>(uid, out var transform)
+        if (!TryComp(uid, out TransformComponent? transform)
             || !TryComp<SpriteComponent>(uid, out var sprite)
             || !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
         {
             return;
         }
 
-        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
+        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - _transform.GetWorldRotation(transform)));
 
         var horizontal = rotation.GetDir() is Direction.SouthEast or Direction.East or Direction.NorthEast or Direction.North
             ? Angle.FromDegrees(270)
@@ -57,7 +59,7 @@ public sealed partial class LayingDownSystem : SharedLayingDownSystem
         if (sprite.Rotation.EqualsApprox(rotationVisuals.VerticalRotation))
             return;
 
-        sprite.Rotation = horizontal;
+        _sprite.SetRotation((uid, sprite), horizontal);
     }
 
     private void OnCheckAutoGetUp(CheckAutoGetUpEvent ev, EntitySessionEventArgs args)
@@ -67,10 +69,10 @@ public sealed partial class LayingDownSystem : SharedLayingDownSystem
 
         var uid = GetEntity(ev.User);
 
-        if (!TryComp<TransformComponent>(uid, out var transform) || !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
+        if (!TryComp(uid, out TransformComponent? transform) || !TryComp<RotationVisualsComponent>(uid, out var rotationVisuals))
             return;
 
-        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - transform.WorldRotation));
+        var rotation = transform.LocalRotation + (_eyeManager.CurrentEye.Rotation - (transform.LocalRotation - _transform.GetWorldRotation(transform)));
 
         if (rotation.GetDir() is Direction.SouthEast or Direction.East or Direction.NorthEast or Direction.North)
         {

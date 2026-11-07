@@ -14,7 +14,7 @@ using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Serialization.Markdown.Value;
 using Robust.Shared.Utility;
 namespace Content.Client._LuaM.Guidebook;
-public sealed class GuideLoot : BoxContainer, IDocumentTag
+public sealed partial class GuideLoot : BoxContainer, IDocumentTag
 {
     [Dependency] private IPrototypeManager _prototypes = default!;
     [Dependency] private IEntityManager _entities = default!;

@@ -33,7 +33,7 @@ public sealed partial class CloakHeatServerSystem : EntitySystem
             return;
 
         // Get the grid this console is on
-        if (!TryComp<TransformComponent>(consoleUid, out var xform) || xform.GridUid == null)
+        if (!TryComp(consoleUid, out TransformComponent? xform) || xform.GridUid == null)
             return;
 
         var gridUid = xform.GridUid.Value;
@@ -52,7 +52,7 @@ public sealed partial class CloakHeatServerSystem : EntitySystem
             return;
 
         // Get the grid this console is on
-        if (!TryComp<TransformComponent>(uid, out var xform) || xform.GridUid == null)
+        if (!TryComp(uid, out TransformComponent? xform) || xform.GridUid == null)
             return;
 
         // Get the heat component from the grid

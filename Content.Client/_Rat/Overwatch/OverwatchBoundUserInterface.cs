@@ -42,7 +42,7 @@ public sealed class OverwatchBoundUserInterface : BoundUserInterface
     /// <inheritdoc/>
     protected override void Dispose(bool disposing)
     {
-        _window?.Dispose();
+        _window?.Orphan();
         _window = null;
         base.Dispose(disposing);
     }

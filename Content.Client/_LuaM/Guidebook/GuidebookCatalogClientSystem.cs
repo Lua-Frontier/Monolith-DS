@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._LuaM.Guidebook;
 
-public sealed class GuidebookCatalogClientSystem : EntitySystem
+public sealed partial class GuidebookCatalogClientSystem : EntitySystem
 {
     [Dependency] private IClientNetManager _net = default!;
     [Dependency] private IGameTiming _timing = default!;

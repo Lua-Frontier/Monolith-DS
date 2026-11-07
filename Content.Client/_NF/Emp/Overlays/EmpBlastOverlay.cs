@@ -12,6 +12,8 @@ namespace Content.Client._NF.Emp.Overlays
 {
     public sealed partial class EmpBlastOverlay : Overlay
     {
+        private static readonly ProtoId<ShaderPrototype> EmpShader = "Emp";
+
         [Dependency] private IEntityManager _entityManager = default!;
         [Dependency] private IPrototypeManager _prototypeManager = default!;
         [Dependency] private IGameTiming _gameTiming = default!;
@@ -28,7 +30,7 @@ namespace Content.Client._NF.Emp.Overlays
         public EmpBlastOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _baseShader = _prototypeManager.Index<ShaderPrototype>("Emp").Instance().Duplicate();
+            _baseShader = _prototypeManager.Index<ShaderPrototype>(EmpShader).Instance().Duplicate();
         }
 
         protected override bool BeforeDraw(in OverlayDrawArgs args)

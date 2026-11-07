@@ -11,6 +11,8 @@ namespace Content.Client.Mapping;
 
 public sealed partial class MappingOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
+
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
@@ -31,7 +33,7 @@ public sealed partial class MappingOverlay : Overlay
         IoCManager.InjectDependencies(this);
 
         _state = state;
-        _shader = _prototypes.Index<ShaderPrototype>("unshaded").Instance();
+        _shader = _prototypes.Index<ShaderPrototype>(UnshadedShader).Instance();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -42,7 +44,7 @@ public sealed partial class MappingOverlay : Overlay
                 continue;
 
             if (sprite.Color == DeleteColor || sprite.Color == PickColor)
-                sprite.Color = color;
+                _entities.System<SpriteSystem>().SetColor((id, sprite), color);
         }
 
         _oldColors.Clear();
@@ -61,7 +63,7 @@ public sealed partial class MappingOverlay : Overlay
                     _entities.TryGetComponent(entity, out SpriteComponent? sprite))
                 {
                     _oldColors[entity] = sprite.Color;
-                    sprite.Color = PickColor;
+                    _entities.System<SpriteSystem>().SetColor((entity, sprite), PickColor);
                 }
 
                 break;
@@ -72,7 +74,7 @@ public sealed partial class MappingOverlay : Overlay
                     _entities.TryGetComponent(entity, out SpriteComponent? sprite))
                 {
                     _oldColors[entity] = sprite.Color;
-                    sprite.Color = DeleteColor;
+                    _entities.System<SpriteSystem>().SetColor((entity, sprite), DeleteColor);
                 }
 
                 break;

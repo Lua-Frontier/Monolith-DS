@@ -23,6 +23,9 @@ namespace Content.Server.Gateway.Systems;
 /// </summary>
 public sealed partial class GatewayGeneratorSystem : EntitySystem
 {
+    private static readonly ProtoId<BiomeTemplatePrototype> ContinentalId = "Continental";
+    private static readonly ProtoId<DungeonConfigPrototype> ExperimentId = "Experiment";
+
     [Dependency] private IConfigurationManager _cfgManager = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPrototypeManager _protoManager = default!;
@@ -110,7 +113,7 @@ public sealed partial class GatewayGeneratorSystem : EntitySystem
         };
         AddComp(mapUid, restricted);
 
-        _biome.EnsurePlanet(mapUid, _protoManager.Index<BiomeTemplatePrototype>("Continental"), seed);
+        _biome.EnsurePlanet(mapUid, _protoManager.Index<BiomeTemplatePrototype>(ContinentalId), seed);
 
         var grid = Comp<MapGridComponent>(mapUid);
 
@@ -182,7 +185,7 @@ public sealed partial class GatewayGeneratorSystem : EntitySystem
         var dungeonRotation = _dungeon.GetDungeonRotation(seed);
         var dungeonPosition = (origin + dungeonRotation.RotateVec(new Vector2i(0, dungeonDistance))).Floored();
 
-        _dungeon.GenerateDungeon(_protoManager.Index<DungeonConfigPrototype>("Experiment"), "Experiment", args.MapUid, grid, dungeonPosition, seed); // Frontier: added "Experiment"
+        _dungeon.GenerateDungeon(_protoManager.Index<DungeonConfigPrototype>(ExperimentId), "Experiment", args.MapUid, grid, dungeonPosition, seed); // Frontier: added "Experiment"
 
         // TODO: Dungeon mobs + loot.
 

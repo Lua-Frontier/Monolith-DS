@@ -358,6 +358,11 @@ public readonly partial struct AlarmThresholdSetting: IEquatable<AlarmThresholdS
         return !lhs.Equals(rhs);
     }
 
+    public override bool Equals(object? obj)
+    {
+        return obj is AlarmThresholdSetting other && Equals(other);
+    }
+
     public override int GetHashCode()
     {
         return HashCode.Combine(Enabled, Value);

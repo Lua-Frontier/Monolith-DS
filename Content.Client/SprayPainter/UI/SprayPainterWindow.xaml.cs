@@ -52,7 +52,7 @@ public sealed partial class SprayPainterWindow : DefaultWindow
             return Loc.GetString("pipe-painter-no-color-selected");
         var locKey = colorLocKeyPrefix + colorKey;
 
-        if (!Loc.TryGetString(locKey, out var locString))
+        if (!IoCManager.Resolve<ILocalizationManager>().TryGetString(locKey, out var locString))
             locString = colorKey;
 
         return locString;

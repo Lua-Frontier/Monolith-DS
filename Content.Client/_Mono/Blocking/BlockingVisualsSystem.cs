@@ -9,6 +9,8 @@ namespace Content.Client._Mono.Blocking;
 
 public sealed partial class BlockingVisualsSystem : SharedBlockingSystem
 {
+    private static readonly ProtoId<ShaderPrototype> ShieldingOutlineShader = "ShieldingOutline";
+
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private SpriteSystem _sprite = default!; // LuaM
 
@@ -18,7 +20,7 @@ public sealed partial class BlockingVisualsSystem : SharedBlockingSystem
     {
         base.Initialize();
 
-        _shader = _protoMan.Index<ShaderPrototype>("ShieldingOutline").InstanceUnique();
+        _shader = _protoMan.Index<ShaderPrototype>(ShieldingOutlineShader).InstanceUnique();
 
         SubscribeLocalEvent<BlockingVisualsComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<BlockingVisualsComponent, ComponentShutdown>(OnShutdown);

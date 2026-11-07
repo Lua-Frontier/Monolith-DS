@@ -11,6 +11,9 @@ namespace Content.Server.StationEvents.Events;
 
 public sealed partial class RandomSentienceRule : StationEventSystem<RandomSentienceRuleComponent>
 {
+    private static readonly ProtoId<LocalizedDatasetPrototype> RandomSentienceEventDataId = "RandomSentienceEventData";
+    private static readonly ProtoId<LocalizedDatasetPrototype> RandomSentienceEventStrengthId = "RandomSentienceEventStrength";
+
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private IRobustRandom _random = default!;
     protected override void Started(EntityUid uid, RandomSentienceRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -75,8 +78,8 @@ public sealed partial class RandomSentienceRule : StationEventSystem<RandomSenti
                 station,
                 Loc.GetString("station-event-random-sentience-announcement",
                     ("kind1", kind1), ("kind2", kind2), ("kind3", kind3), ("amount", groupList.Count),
-                    ("data", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventData"))),
-                    ("strength", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>("RandomSentienceEventStrength")))
+                    ("data", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>(RandomSentienceEventDataId))),
+                    ("strength", _random.Pick(_prototype.Index<LocalizedDatasetPrototype>(RandomSentienceEventStrengthId)))
                 ),
                 playDefaultSound: false,
                 colorOverride: Color.Gold

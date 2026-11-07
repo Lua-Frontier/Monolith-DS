@@ -65,7 +65,7 @@ public sealed partial class FishingSystem : SharedFishingSystem
         var fish = spotComp.FishList.GetSpawns(_random.GetRandom(), EntityManager, _proto).First();
 
         // Get fish difficulty
-        _proto.Index(fish).TryGetComponent(out FishComponent? fishComp, _compFactory);
+        _proto.Index(fish).TryComp(out FishComponent? fishComp, _compFactory);
 
         // Assign things that depend on the fish
         var activeFishSpot = EnsureComp<ActiveFishingSpotComponent>(attachedEnt);

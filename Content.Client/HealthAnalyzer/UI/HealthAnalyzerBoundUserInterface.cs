@@ -47,7 +47,7 @@ namespace Content.Client.HealthAnalyzer.UI
             if (_window != null)
                 _window.OnBodyPartSelected -= SendBodyPartMessage;
 
-            _window?.Dispose();
+            _window?.Orphan();
         }
 
         // Shitmed Change End

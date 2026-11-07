@@ -72,7 +72,7 @@ public sealed partial class SalvageSystem
             }
 
             var xform = Transform(grid);
-            var bounds = xform.WorldMatrix.TransformBox(gridComp.LocalAABB).Enlarged(ShuttleFTLRange);
+            var bounds = _transform.GetWorldMatrix(xform).TransformBox(gridComp.LocalAABB).Enlarged(ShuttleFTLRange);
             var bodyQuery = GetEntityQuery<PhysicsComponent>();
             // Keep track of docked grids to exclude them from the proximity check
             var dockedGrids = new HashSet<EntityUid>();
@@ -86,7 +86,7 @@ public sealed partial class SalvageSystem
                     continue;
 
                 // If we have a docked entity, get its grid
-                if (TryComp<TransformComponent>(dock.DockedWith.Value, out var dockedXform) && dockedXform.GridUid != null)
+                if (TryComp(dock.DockedWith.Value, out TransformComponent? dockedXform) && dockedXform.GridUid != null)
                 {
                     dockedGrids.Add(dockedXform.GridUid.Value);
 
@@ -104,7 +104,7 @@ public sealed partial class SalvageSystem
                             continue;
 
                         // If we have a docked entity and it's not our grid, add its grid to the exclusion list
-                        if (TryComp<TransformComponent>(parentDock.DockedWith.Value, out var siblingDockedXform) &&
+                        if (TryComp(parentDock.DockedWith.Value, out TransformComponent? siblingDockedXform) &&
                             siblingDockedXform.GridUid != null &&
                             siblingDockedXform.GridUid != grid)
                         {
@@ -284,6 +284,6 @@ public sealed partial class SalvageSystem
 
     private void PlayDenySound(EntityUid uid, SalvageExpeditionConsoleComponent component)
     {
-        _audio.PlayPvs(_audio.GetSound(component.ErrorSound), uid);
+        _audio.PlayPvs(component.ErrorSound, uid);
     }
 }

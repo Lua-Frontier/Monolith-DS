@@ -21,6 +21,8 @@ namespace Content.Client.TurretController;
 [GenerateTypedNameReferences]
 public sealed partial class TurretControllerWindow : BaseWindow
 {
+    private static readonly ProtoId<AccessGroupPrototype> GeneralAccessId = "GeneralAccess";
+
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IPrototypeManager _protoManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
@@ -208,7 +210,7 @@ public sealed partial class TurretControllerWindow : BaseWindow
 
         // Ensure that the 'general' access group is added to handle
         // misc. access levels that aren't associated with any group
-        if (_protoManager.TryIndex<AccessGroupPrototype>("GeneralAccess", out var generalAccessProto)) // Mono
+        if (_protoManager.TryIndex<AccessGroupPrototype>(GeneralAccessId, out var generalAccessProto)) // Mono
             groupedAccessLevels.TryAdd(generalAccessProto, new());
 
         // Assign known access levels with their associated groups
@@ -240,8 +242,8 @@ public sealed partial class TurretControllerWindow : BaseWindow
         // Did something go wrong...?
         if (groupedAccessLevels.Count == 0)
         {
-            AccessGroupList.DisposeAllChildren();
-            AccessLevelGrid.DisposeAllChildren();
+            AccessGroupList.RemoveAllChildren();
+            AccessLevelGrid.RemoveAllChildren();
 
             return;
         }

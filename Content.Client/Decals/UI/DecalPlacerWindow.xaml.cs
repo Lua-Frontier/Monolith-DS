@@ -18,7 +18,7 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
 {
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private IEntityManager _e = default!;
-
+    [Dependency] private ILocalizationManager _loc = default!;
     private readonly DecalPlacementSystem _decalPlacementSystem;
 	private readonly DecalCopySystem _decalCopySystem; // Erida
 	private readonly SpriteSystem _spriteSystem; // LuaM
@@ -161,7 +161,7 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
         foreach (var (decal, tex) in _decals)
         {
             // LuaM-start
-            var name = Loc.TryGetString($"decal-name-{decal}", out var locName) ? locName : decal;
+            var name = _loc.TryGetString($"decal-name-{decal}", out var locName) ? locName : decal;
             if (!decal.ToLowerInvariant().Contains(filter.ToLowerInvariant())
                 && !name.ToLowerInvariant().Contains(filter.ToLowerInvariant()))
                 continue;

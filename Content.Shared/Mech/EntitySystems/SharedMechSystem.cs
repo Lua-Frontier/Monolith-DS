@@ -534,7 +534,7 @@ public abstract partial class SharedMechSystem : EntitySystem
             return;
         }
 
-        if (TryComp<TransformComponent>(uid, out var xform) && xform.GridUid != null && component.PreventFireOnGrid)
+        if (TryComp(uid, out TransformComponent? xform) && xform.GridUid != null && component.PreventFireOnGrid)
         {
             _popup.PopupEntity(Loc.GetString("gun-no-fire-station"), uid);
 

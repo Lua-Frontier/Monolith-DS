@@ -12,6 +12,8 @@ namespace Content.Shared.Humanoid
     /// </summary>
     public sealed partial class NamingSystem : EntitySystem
     {
+        private static readonly ProtoId<SpeciesPrototype> HumanId = "Human";
+
         [Dependency] private IRobustRandom _random = default!;
         [Dependency] private IPrototypeManager _prototypeManager = default!;
 
@@ -21,7 +23,7 @@ namespace Content.Shared.Humanoid
             // Some downstream is probably gonna have this eventually but then they can deal with fallbacks.
             if (!_prototypeManager.TryIndex(species, out SpeciesPrototype? speciesProto))
             {
-                speciesProto = _prototypeManager.Index<SpeciesPrototype>("Human");
+                speciesProto = _prototypeManager.Index<SpeciesPrototype>(HumanId);
                 Log.Warning($"Unable to find species {species} for name, falling back to Human");
             }
 

@@ -26,6 +26,7 @@ namespace Content.Client.Gameplay
         [Dependency] private IUserInterfaceManager _uiManager = default!;
         [Dependency] private ChangelogManager _changelog = default!;
         [Dependency] private IConfigurationManager _configurationManager = default!;
+        [Dependency] private IEntitySystemManager _entitySystems = default!;
 
         private Control _fpsCounter = default!; // Lua FpsCounter<Control
         private Label _version = default!;
@@ -51,7 +52,7 @@ namespace Content.Client.Gameplay
             // Add the hand-item overlay.
             _overlayManager.AddOverlay(new ShowHandItemOverlay());
 
-            _fpsCounter = new HudPerfLabel(_gameTiming, EntitySystem.Get<_Lua.Tick.ClientServerPerfSystem>()); // Lua fps mod
+            _fpsCounter = new HudPerfLabel(_gameTiming, _entitySystems.GetEntitySystem<_Lua.Tick.ClientServerPerfSystem>()); // Lua fps mod
             UserInterfaceManager.PopupRoot.AddChild(_fpsCounter);
             _fpsCounter.Visible = _configurationManager.GetCVar(CCVars.HudFpsCounterVisible);
             _configurationManager.OnValueChanged(CCVars.HudFpsCounterVisible, (show) => { _fpsCounter.Visible = show; });
@@ -82,7 +83,7 @@ namespace Content.Client.Gameplay
             base.Shutdown();
             // Clear viewport to some fallback, whatever.
             _eyeManager.MainViewport = UserInterfaceManager.MainViewport;
-            _fpsCounter.Dispose();
+            _fpsCounter.Orphan();
             _uiManager.ClearWindows();
             _configurationManager.UnsubValueChanged(CCVars.UILayout, ReloadMainScreenValueChange);
             UnloadMainScreen();

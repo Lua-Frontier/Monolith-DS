@@ -14,6 +14,8 @@ namespace Content.Client.Explosion;
 [UsedImplicitly]
 public sealed partial class ExplosionOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
+
     [Dependency] private IRobustRandom _robustRandom = default!;
     [Dependency] private IEntityManager _entMan = default!;
     [Dependency] private IPrototypeManager _proto = default!;
@@ -27,7 +29,7 @@ public sealed partial class ExplosionOverlay : Overlay
     public ExplosionOverlay(SharedAppearanceSystem appearanceSystem)
     {
         IoCManager.InjectDependencies(this);
-        _shader = _proto.Index<ShaderPrototype>("unshaded").Instance();
+        _shader = _proto.Index<ShaderPrototype>(UnshadedShader).Instance();
         _transformSystem = _entMan.System<SharedTransformSystem>();
         _appearance = appearanceSystem;
     }

@@ -66,17 +66,6 @@ namespace Content.Client.Administration.UI.Tabs.ObjectsTab
             HeaderClicked(args, Header.EntityID);
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (disposing)
-            {
-                ObjectNameLabel.OnKeyBindDown -= ObjectNameClicked;
-                EntityIDLabel.OnKeyBindDown -= EntityIDClicked;
-            }
-        }
-
         public enum Header
         {
             ObjectName,

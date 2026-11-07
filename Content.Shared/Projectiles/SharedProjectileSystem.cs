@@ -643,7 +643,7 @@ public record struct ProjectileCollisionAttemptEvent(EntityUid Projectile, Entit
 }
 
 // Parallel job implementation for processing projectile collisions
-public class ProjectileCollisionJob : IParallelRobustJob
+public sealed class ProjectileCollisionJob : IParallelRobustJob
 {
     public SharedProjectileSystem ParentSystem = default!;
     public List<(EntityUid Uid, ProjectileComponent Component, EntityUid Target)> ProjectileChecks = default!;

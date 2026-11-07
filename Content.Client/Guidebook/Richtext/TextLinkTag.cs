@@ -10,7 +10,7 @@ using Content.Client.UserInterface.ControlExtensions; // Lua
 namespace Content.Client.Guidebook.RichText;
 
 [UsedImplicitly]
-public sealed class TextLinkTag : IMarkupTag
+public sealed class TextLinkTag : IMarkupTagHandler
 {
     public static Color LinkColor => Color.CornflowerBlue; // Lua: shared with prototype links
 
@@ -19,7 +19,7 @@ public sealed class TextLinkTag : IMarkupTag
     public Control? Control;
 
     /// <inheritdoc/>
-    public bool TryGetControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
+    public bool TryCreateControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
     {
         if (!node.Value.TryGetString(out var text)
             || !node.Attributes.TryGetValue("link", out var linkParameter)
@@ -57,7 +57,7 @@ public sealed class TextLinkTag : IMarkupTag
         if (control.TryGetParentHandler<ILinkClickHandler>(out var handler))
             handler.HandleClick(link);
         else
-            Logger.Warning("Warning! No valid ILinkClickHandler found.");
+            Logger.GetSawmill("guidebook").Warning("Warning! No valid ILinkClickHandler found.");
     }
 }
 

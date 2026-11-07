@@ -114,7 +114,7 @@ public sealed partial class EmotesUIController : UIController, IOnStateChanged<G
         if (_menu == null)
             return;
 
-        _menu.Dispose();
+        _menu.Orphan();
         _menu = null;
     }
 

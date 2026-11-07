@@ -200,7 +200,7 @@ namespace Content.Client.HealthAnalyzer.UI
             AlertsContainer.Visible = showAlerts;
 
             if (showAlerts)
-                AlertsContainer.DisposeAllChildren();
+                AlertsContainer.RemoveAllChildren();
 
             if (msg.Unrevivable == true)
                 AlertsContainer.AddChild(new RichTextLabel
@@ -363,11 +363,11 @@ namespace Content.Client.HealthAnalyzer.UI
                 int enumValue = (int) integrity;
                 var rsi = new SpriteSpecifier.Rsi(new ResPath($"/Textures/_Shitmed/Interface/Targeting/Status/{enumName.ToLowerInvariant()}.rsi"), $"{enumName.ToLowerInvariant()}_{enumValue}");
                 // Shitcode with love from Russia :)
-                if (!sprite.TryGetLayer(layer, out _))
-                    sprite.AddLayer(_spriteSystem.Frame0(rsi));
+                if (!_entityManager.System<SpriteSystem>().TryGetLayer((_spriteViewEntity, sprite), layer, out _, false))
+                    _entityManager.System<SpriteSystem>().AddTextureLayer((_spriteViewEntity, sprite), _spriteSystem.Frame0(rsi));
                 else
-                    sprite.LayerSetTexture(layer, _spriteSystem.Frame0(rsi));
-                sprite.LayerSetScale(layer, new Vector2(3f, 3f));
+                    _entityManager.System<SpriteSystem>().LayerSetTexture((_spriteViewEntity, sprite), layer, _spriteSystem.Frame0(rsi));
+                _entityManager.System<SpriteSystem>().LayerSetScale((_spriteViewEntity, sprite), layer, new Vector2(3f, 3f));
                 layer++;
             }
             return _spriteViewEntity;

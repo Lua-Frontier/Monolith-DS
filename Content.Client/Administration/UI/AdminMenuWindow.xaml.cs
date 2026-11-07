@@ -8,8 +8,6 @@ namespace Content.Client.Administration.UI;
 [GenerateTypedNameReferences]
 public sealed partial class AdminMenuWindow : DefaultWindow
 {
-    public event Action? OnDisposed;
-
     public AdminMenuWindow()
     {
         MinSize = new Vector2(650, 250);
@@ -33,12 +31,6 @@ public sealed partial class AdminMenuWindow : DefaultWindow
             ObjectsTabControl.RefreshObjectList();
     }
 
-    protected override void Dispose(bool disposing)
-    {
-        OnDisposed?.Invoke();
-        base.Dispose(disposing);
-        OnDisposed = null;
-    }
 
     private enum TabIndex
     {

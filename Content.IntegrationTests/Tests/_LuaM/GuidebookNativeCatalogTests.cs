@@ -31,6 +31,7 @@ public sealed class GuidebookNativeCatalogTests
             var entities = pair.Client.ResolveDependency<IEntityManager>();
             var before = entities.EntityCount;
             using var browser = new GuideCatalogList();
+            pair.Client.ResolveDependency<IUserInterfaceManager>().RootControl.AddChild(browser);
             var released = 0;
             for (var i = 0; i < 24; i++) browser.AddEntry("Item " + i, "", null, body => body.AddChild(new OwnedDetail(() => released++)));
             browser.SelectFirst();
@@ -79,6 +80,6 @@ public sealed class GuidebookNativeCatalogTests
 
     private sealed class OwnedDetail(Action released) : Control
     {
-        protected override void Dispose(bool disposing) { if (disposing) released(); base.Dispose(disposing); }
+        protected override void ExitedTree() { released(); base.ExitedTree(); }
     }
 }

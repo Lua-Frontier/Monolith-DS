@@ -514,25 +514,4 @@ public sealed partial class AdminLogsControl : Control
             ("showing", ShownLogs), ("total", TotalLogs), ("round", RoundLogs)
         );
     }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        TypeSearch.OnTextChanged -= TypeSearchChanged;
-        PlayerSearch.OnTextChanged -= PlayerSearchChanged;
-        LogSearch.OnTextChanged -= LogSearchChanged;
-
-        SelectAllTypesButton.OnPressed -= SelectAllTypes;
-        SelectNoTypesButton.OnPressed -= SelectNoTypes;
-
-        IncludeNonPlayersButton.OnPressed -= IncludeNonPlayers;
-        SelectAllPlayersButton.OnPressed -= SelectAllPlayers;
-        SelectNoPlayersButton.OnPressed -= SelectNoPlayers;
-
-        RoundSpinBox.IsValid = null;
-        RoundSpinBox.ValueChanged -= RoundSpinBoxChanged;
-
-        ResetRoundButton.OnPressed -= ResetRoundPressed;
-    }
 }

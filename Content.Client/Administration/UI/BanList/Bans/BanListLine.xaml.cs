@@ -27,12 +27,4 @@ public sealed partial class BanListLine : BoxContainer, IBanListLine<SharedServe
     {
         IdsClicked?.Invoke(this);
     }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        IdsHidden.OnPressed -= IdsPressed;
-        IdsClicked = null;
-    }
 }

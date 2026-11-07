@@ -52,10 +52,10 @@ public sealed partial class GuidebookCatalogSystem
 
         GuidebookShipyardEntry? Yard(EntityPrototype prototype, SequenceDataNode? overrides)
         {
-            if (!prototype.TryGetComponent<ActivatableUIComponent>(out var ui, EntityManager.ComponentFactory)
+            if (!prototype.TryComp<ActivatableUIComponent>(out var ui, EntityManager.ComponentFactory)
                 || ui.Key is not ShipyardConsoleUiKey group)
                 return null;
-            var listing = prototype.TryGetComponent<ShipyardListingComponent>(out var list, EntityManager.ComponentFactory)
+            var listing = prototype.TryComp<ShipyardListingComponent>(out var list, EntityManager.ComponentFactory)
                 ? list.Shuttles.Select(id => id.Id).ToHashSet() : new HashSet<string>();
             if (overrides != null)
             foreach (var node in overrides.OfType<MappingDataNode>())

@@ -11,6 +11,7 @@ namespace Content.Client.Chasm;
 public sealed partial class ChasmFallingVisualsSystem : EntitySystem
 {
     [Dependency] private AnimationPlayerSystem _anim = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     private readonly string _chasmFallAnimationKey = "chasm_fall";
 
@@ -46,9 +47,9 @@ public sealed partial class ChasmFallingVisualsSystem : EntitySystem
 
         var player = EnsureComp<AnimationPlayerComponent>(uid);
         if (_anim.HasRunningAnimation(player, _chasmFallAnimationKey))
-            _anim.Stop(player, _chasmFallAnimationKey);
+            _anim.Stop((uid, player), _chasmFallAnimationKey);
 
-        sprite.Scale = component.OriginalScale;
+        _sprite.SetScale((uid, sprite), component.OriginalScale);
     }
 
     private Animation GetFallingAnimation(ChasmFallingComponent component)

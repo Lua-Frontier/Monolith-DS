@@ -203,7 +203,7 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     /// </summary>
     public void PopulateProducts(List<string> availablePrototypes, List<string> unavailablePrototypes, bool free, bool canPurchase)
     {
-        foreach (var child in Vessels.Children.ToArray()) child.Dispose(); // LuaM: reuse the shipyard UI without a BUI or transactions.
+        foreach (var child in Vessels.Children.ToArray()) child.Orphan(); // LuaM: reuse the shipyard UI without a BUI or transactions.
         _currentlyConfirmingButton = null; // Lua
 
         var search = SearchBar.Text.Trim().ToLowerInvariant();
