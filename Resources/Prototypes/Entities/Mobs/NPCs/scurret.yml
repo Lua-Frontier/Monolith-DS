@@ -1,16 +1,66 @@
 # Defines the scurret, a small, agile sapient species intended for players who want to play as something similar to an ewok.
-# Although based on MobBaseAncestor, this species does not have a "developed" playable species it is an ancestor to.
+# Mirrors MobBaseAncestor without its HumanoidAppearance: here that component draws a monkey body over the scurret sprite.
 
 - type: entity
   name: scurret
   id: MobBaseScurret
-  parent: MobBaseAncestor
+  parent: [SimpleMobBase, StripableInventoryBase]
   abstract: true
   components:
+  # Taken from MobBaseAncestor
+  - type: CombatMode
+  - type: SurgeryTarget
+  - type: Targeting
+  - type: Cuffable
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Stripping
+  - type: Carriable
+  - type: Hands
+  - type: ComplexInteraction
+  - type: Body
+    prototype: Monkey
+    requiredLegs: 2
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Monkey_burning
+  - type: Puller
+    needsHands: false
+  - type: CanHostGuardian
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: FactionException
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: IdExaminable
+  - type: LabGrown
   # Custom names
   - type: ReplacementAccent
     accent: scurret
   - type: Sprite
+    drawdepth: Mobs
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       sprite: Mobs/Animals/scurret/scurret.rsi
