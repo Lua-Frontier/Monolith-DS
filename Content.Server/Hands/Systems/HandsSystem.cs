@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Server.Inventory;
 using Content.Server.Stack;
 using Content.Server.Stunnable;
+using Content.Shared._LuaM.Throwing; // LuaM
 using Content.Shared.ActionBlocker;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems; // Shitmed Change
@@ -44,6 +45,7 @@ namespace Content.Server.Hands.Systems
         [Dependency] private PullingSystem _pullingSystem = default!;
         [Dependency] private ThrowingSystem _throwingSystem = default!;
         [Dependency] private SharedBodySystem _bodySystem = default!; // Shitmed Change
+        [Dependency] private PredictedThrowSystem _predictedThrow = default!; // LuaM
         public override void Initialize()
         {
             base.Initialize();
@@ -63,17 +65,7 @@ namespace Content.Server.Hands.Systems
             SubscribeLocalEvent<HandsComponent, BodyPartDisabledEvent>(HandleBodyPartDisabled); // Shitmed Change
 
             SubscribeLocalEvent<HandsComponent, DropHandItemsEvent>(OnDropHandItems);
-
-            CommandBinds.Builder
-                .Bind(ContentKeyFunctions.ThrowItemInHand, new PointerInputCmdHandler(HandleThrowItem))
-                .Register<HandsSystem>();
-        }
-
-        public override void Shutdown()
-        {
-            base.Shutdown();
-
-            CommandBinds.Unregister<HandsSystem>();
+            // LuaM: ThrowItemInHand moved to the shared PredictedThrowSystem
         }
 
         private void GetComponentState(EntityUid uid, HandsComponent hands, ref ComponentGetState args)
@@ -204,64 +196,12 @@ namespace Content.Server.Hands.Systems
 
         #region interactions
 
-        private bool HandleThrowItem(ICommonSession? playerSession, EntityCoordinates coordinates, EntityUid entity)
-        {
-            if (playerSession?.AttachedEntity is not {Valid: true} player || !Exists(player) || !coordinates.IsValid(EntityManager))
-                return false;
-
-            return ThrowHeldItem(player, coordinates);
-        }
-
         /// <summary>
         /// Throw the player's currently held item.
         /// </summary>
         public bool ThrowHeldItem(EntityUid player, EntityCoordinates coordinates, float minDistance = 0.1f)
         {
-            if (ContainerSystem.IsEntityInContainer(player) ||
-                !TryComp(player, out HandsComponent? hands) ||
-                hands.ActiveHandEntity is not { } throwEnt ||
-                !_actionBlockerSystem.CanThrow(player, throwEnt))
-                return false;
-
-            if (_timing.CurTime < hands.NextThrowTime)
-                return false;
-            hands.NextThrowTime = _timing.CurTime + hands.ThrowCooldown;
-
-            if (TryComp(throwEnt, out StackComponent? stack) && stack.Count > 1 && stack.ThrowIndividually)
-            {
-                var splitStack = _stackSystem.Split(throwEnt, 1, Comp<TransformComponent>(player).Coordinates, stack);
-
-                if (splitStack is not {Valid: true})
-                    return false;
-
-                throwEnt = splitStack.Value;
-            }
-
-            var direction = _transformSystem.ToMapCoordinates(coordinates).Position - _transformSystem.GetWorldPosition(player);
-            if (direction == Vector2.Zero)
-                return true;
-
-            var length = direction.Length();
-            var distance = Math.Clamp(length, minDistance, hands.ThrowRange);
-            direction *= distance / length;
-
-            var throwSpeed = hands.BaseThrowspeed;
-
-            // Let other systems change the thrown entity (useful for virtual items)
-            // or the throw strength.
-            var ev = new BeforeThrowEvent(throwEnt, direction, throwSpeed, player);
-            RaiseLocalEvent(player, ref ev);
-
-            if (ev.Cancelled)
-                return true;
-
-            // This can grief the above event so we raise it afterwards
-            if (IsHolding(player, throwEnt, out _, hands) && !TryDrop(player, throwEnt, handsComp: hands))
-                return false;
-
-            _throwingSystem.TryThrow(ev.ItemUid, ev.Direction, ev.ThrowSpeed, ev.PlayerUid, compensateFriction: !HasComp<LandAtCursorComponent>(ev.ItemUid));
-
-            return true;
+            return _predictedThrow.ThrowHeldItem(player, coordinates, minDistance); // LuaM
         }
 
         private void OnDropHandItems(Entity<HandsComponent> entity, ref DropHandItemsEvent args)

@@ -85,3 +85,10 @@ delivery-ui-status-reassign = Status: courier left, waiting for a new one
 delivery-ui-order-position-pending = Parcel: appears on the telepad once taken
 delivery-ui-courier-active = Orders taken: { $count }/{ $max }
 delivery-category-exclusive = ColossDelivery exclusives
+
+flavor-complex-luam-kvass = like bread kvass
+reagent-name-luam-kvass = kvass
+reagent-desc-luam-kvass = A refreshing live-fermented bread kvass. Sweet and sour, lightly fizzy.
+
+
+loadout-group-courier-kit = Courier kit

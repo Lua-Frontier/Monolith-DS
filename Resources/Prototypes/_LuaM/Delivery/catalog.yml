@@ -1,6 +1,14 @@
 - type: deliveryCatalog
   id: Default
   markup: 2.25
+  prices:
+    FoodLuaMDubaiPancakesPack: 2500
+    DrinkLuaMNeMolokoCarton: 1200
+    FoodLuaMBulmeniPack: 1800
+    FoodLuaMChebupeliPack: 1600
+    FoodLuaMSausagesPack: 2000
+    FoodLuaMMincePack: 1500
+    DrinkLuaMKvassBottle: 1000
   exclude:
   - BoxAgrichem
   - WeaponSubMachineGunAK220
@@ -26,7 +34,13 @@
   categories:
   - name: delivery-category-exclusive
     items:
-    - FoodLuaMDubaiPancakes
+    - FoodLuaMDubaiPancakesPack
+    - DrinkLuaMNeMolokoCarton
+    - FoodLuaMBulmeniPack
+    - FoodLuaMChebupeliPack
+    - FoodLuaMSausagesPack
+    - FoodLuaMMincePack
+    - DrinkLuaMKvassBottle
   - name: delivery-category-engineering
     inventories:
     - EngiVendInventory

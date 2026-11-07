@@ -20,7 +20,7 @@ public sealed partial class DeliveryUiFragment : BoxContainer
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPrototypeManager _proto = default!;
 
-    private const int SummaryItems = 4;
+    private const int SummaryItems = 6;
     private const int PageSize = 25;
     private const int AllCategory = 0;
     private const int CartCategory = 1;
@@ -527,13 +527,10 @@ public sealed partial class DeliveryUiFragment : BoxContainer
             box.AddChild(position);
         }
 
-        box.AddChild(new Label
-        {
-            Text = BuildItemsSummary(order.Items),
-            FontColorOverride = HintColor,
-            ClipText = true,
-            HorizontalExpand = true,
-        });
+        var items = new RichTextLabel { HorizontalExpand = true };
+        items.SetMessage(FormattedMessage.FromMarkupOrThrow(
+            $"[color={HintColor.ToHex()}]{FormattedMessage.EscapeText(BuildItemsSummary(order.Items))}[/color]"));
+        box.AddChild(items);
 
         if (courierView && order.Courier == null && !order.TakenByViewer)
         {

@@ -67,6 +67,8 @@ namespace Content.Client.Hands.Systems
             if (args.Current is not HandsComponentState state)
                 return;
 
+            component.NextThrowTime = state.NextThrowTime; // LuaM
+
             var handsModified = component.Hands.Count != state.Hands.Count;
             // we need to check that, even if we have the same amount, that the individual hands didn't change.
             if (!handsModified)

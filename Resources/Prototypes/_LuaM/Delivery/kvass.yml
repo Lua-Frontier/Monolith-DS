@@ -1,0 +1,30 @@
+- type: flavor
+  id: luamkvass
+  flavorType: Complex
+  description: flavor-complex-luam-kvass
+
+- type: reagent
+  id: LuaMKvass
+  name: reagent-name-luam-kvass
+  parent: BaseSoda
+  desc: reagent-desc-luam-kvass
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: luamkvass
+  color: "#7a3c12"
+  recognizable: true
+  fizziness: 0.4
+
+- type: reaction
+  id: LuaMKvass
+  reactants:
+    Water:
+      amount: 8
+    Flour:
+      amount: 1
+    Sugar:
+      amount: 1
+    Enzyme:
+      amount: 1
+      catalyst: true
+  products:
+    LuaMKvass: 10

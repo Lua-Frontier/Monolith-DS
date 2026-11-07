@@ -116,10 +116,13 @@ public sealed partial class ContentAudioSystem
         if (!_timing.IsFirstTimePredicted) //otherwise this will tick like 5x faster on client. thanks prediction
             return;
 
+        if (_state.CurrentState is not GameplayState) // LuaM
+            return;
+
         if (_initialStationMusicBool)
         {
             _initialStationMusicTimer += frameTime;
-            if (_replayAmbientMusicTimer > InitialStationMusicTimeToDrop)
+            if (_initialStationMusicTimer > InitialStationMusicTimeToDrop) // LuaM
             {
                 ReplayAmbientMusic();
                 _initialStationMusicBool = false;
@@ -420,7 +423,7 @@ public sealed partial class ContentAudioSystem
     private void PlayMusicTrack(string path, float volume, float fadein, bool combatMode)
     {
         // LuaM start
-        if (_musicSuppressed)
+        if (_musicSuppressed || _state.CurrentState is not GameplayState)
         {
             DisableAmbientMusic();
             return;
@@ -545,8 +548,26 @@ public sealed partial class ContentAudioSystem
     ///</summary>
     private void OnStateChange(StateChangedEventArgs obj)
     {
-        if (obj.NewState is not GameplayState)
-            DisableAmbientMusic();
+        // LuaM start
+        if (obj.NewState is GameplayState)
+        {
+            _initialStationMusicBool = true;
+            _initialStationMusicTimer = 0f;
+            return;
+        }
+
+        DisableAmbientMusic();
+        _replayAmbientMusicBool = false;
+        _replayAmbientMusicTimer = 0f;
+        _initialStationMusicBool = false;
+        _combatWindUpBool = false;
+        _combatWindDownBool = false;
+        _lastCombatState = false;
+        _isCombatMusicPlaying = false;
+        _currentlyPlaying = MusicType.None;
+        _lastGrid = null;
+        _lastBiome = null;
+        // LuaM end
     }
 
     private void OnRoundEndMessage(RoundEndMessageEvent ev)

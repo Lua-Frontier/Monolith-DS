@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._LuaM.Throwing; // LuaM
 using Content.Shared._CE.ZLevels.Core.EntitySystems; // CrystallEdge
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
@@ -9,6 +10,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Network; // LuaM
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Throwing
@@ -20,6 +22,7 @@ namespace Content.Shared.Throwing
     {
         [Dependency] private ISharedAdminLogManager _adminLogger = default!;
         [Dependency] private IGameTiming _gameTiming = default!;
+        [Dependency] private INetManager _net = default!; // LuaM
         [Dependency] private SharedBroadphaseSystem _broadphase = default!;
         [Dependency] private FixtureSystem _fixtures = default!;
         [Dependency] private SharedPhysicsSystem _physics = default!;
@@ -112,6 +115,9 @@ namespace Content.Shared.Throwing
 
             EntityManager.EventBus.RaiseLocalEvent(uid, new StopThrowEvent { User = thrownItemComponent.Thrower }, true);
             RemComp<ThrownItemComponent>(uid);
+
+            if (_net.IsServer) // LuaM
+                RemComp<PredictedThrownItemComponent>(uid); // LuaM
         }
 
         public void LandComponent(EntityUid uid, ThrownItemComponent thrownItem, PhysicsComponent physics, bool playSound)
@@ -157,6 +163,9 @@ namespace Content.Shared.Throwing
             var query = EntityQueryEnumerator<ThrownItemComponent, PhysicsComponent>();
             while (query.MoveNext(out var uid, out var thrown, out var physics))
             {
+                if (_net.IsClient && !physics.Predict) // LuaM
+                    continue; // LuaM
+
                 if (thrown.LandTime <= _gameTiming.CurTime)
                 {
                     LandComponent(uid, thrown, physics, thrown.PlayLandSound);

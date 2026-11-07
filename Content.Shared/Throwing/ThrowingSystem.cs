@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._LuaM.Throwing; // LuaM
 using Content.Shared.Administration.Logs;
 using Content.Shared.Buckle.Components; // Frontier: throwing on vehicles in space
 using Content.Shared.Camera;
@@ -11,6 +12,7 @@ using Content.Shared.Gravity;
 using Content.Shared.Projectiles;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
+using Robust.Shared.Network; // LuaM
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
@@ -38,6 +40,7 @@ public sealed partial class ThrowingSystem : EntitySystem
     private float _airDamping;
 
     [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private INetManager _net = default!; // LuaM
     [Dependency] private SharedGravitySystem _gravity = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
@@ -71,7 +74,8 @@ public sealed partial class ThrowingSystem : EntitySystem
         bool animated = true,
         bool playSound = true,
         bool doSpin = true,
-        ThrowingUnanchorStrength unanchor = ThrowingUnanchorStrength.None)
+        ThrowingUnanchorStrength unanchor = ThrowingUnanchorStrength.None,
+        bool predicted = false) // LuaM
     {
         var thrownPos = _transform.GetMapCoordinates(uid);
         var mapPos = _transform.ToMapCoordinates(coordinates);
@@ -79,7 +83,7 @@ public sealed partial class ThrowingSystem : EntitySystem
         if (mapPos.MapId != thrownPos.MapId)
             return;
 
-        TryThrow(uid, mapPos.Position - thrownPos.Position, baseThrowSpeed, user, pushbackRatio, friction, compensateFriction: compensateFriction, recoil: recoil, animated: animated, playSound: playSound, doSpin: doSpin, unanchor: unanchor);
+        TryThrow(uid, mapPos.Position - thrownPos.Position, baseThrowSpeed, user, pushbackRatio, friction, compensateFriction: compensateFriction, recoil: recoil, animated: animated, playSound: playSound, doSpin: doSpin, unanchor: unanchor, predicted: predicted); // LuaM
     }
 
     /// <summary>
@@ -104,7 +108,8 @@ public sealed partial class ThrowingSystem : EntitySystem
         bool animated = true,
         bool playSound = true,
         bool doSpin = true,
-        ThrowingUnanchorStrength unanchor = ThrowingUnanchorStrength.None)
+        ThrowingUnanchorStrength unanchor = ThrowingUnanchorStrength.None,
+        bool predicted = false) // LuaM
     {
         var physicsQuery = GetEntityQuery<PhysicsComponent>();
         if (!physicsQuery.TryGetComponent(uid, out var physics))
@@ -121,7 +126,7 @@ public sealed partial class ThrowingSystem : EntitySystem
             baseThrowSpeed,
             user,
             pushbackRatio,
-            friction, compensateFriction: compensateFriction, recoil: recoil, animated: animated, playSound: playSound, doSpin: doSpin, unanchor: unanchor);
+            friction, compensateFriction: compensateFriction, recoil: recoil, animated: animated, playSound: playSound, doSpin: doSpin, unanchor: unanchor, predicted: predicted); // LuaM
     }
 
     /// <summary>
@@ -149,7 +154,8 @@ public sealed partial class ThrowingSystem : EntitySystem
         bool animated = true,
         bool playSound = true,
         bool doSpin = true,
-        ThrowingUnanchorStrength unanchor = ThrowingUnanchorStrength.None)
+        ThrowingUnanchorStrength unanchor = ThrowingUnanchorStrength.None,
+        bool predicted = false) // LuaM
     {
         if (baseThrowSpeed <= 0 || direction == Vector2Helpers.Infinity || direction == Vector2Helpers.NaN || direction == Vector2.Zero || friction < 0)
             return;
@@ -232,8 +238,18 @@ public sealed partial class ThrowingSystem : EntitySystem
             _physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
         }
 
+        // LuaM start
+        if (predicted)
+            EnsureComp<PredictedThrownItemComponent>(uid);
+        // LuaM end
+
         if (user == null)
             return;
+
+        // LuaM start
+        if (predicted)
+            recoil &= _net.IsClient && _gameTiming.IsFirstTimePredicted;
+        // LuaM end
 
         if (recoil)
             _recoil.KickCamera(user.Value, -direction * 0.04f);

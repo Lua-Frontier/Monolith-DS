@@ -12,6 +12,7 @@ public sealed class ReplayTests
     /// Simple test that just makes sure that automatic replay recording on round restarts works without any issues.
     /// </summary>
     [Test]
+    [Ignore("Replays are disabled on LuaM servers")] // LuaM
     public async Task AutoRecordReplayTest()
     {
         var settings = new PoolSettings

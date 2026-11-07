@@ -1,7 +1,7 @@
 delivery-program-name = ColossDelivery
 
 job-name-delivery-courier = Курьер
-job-description-delivery-courier = Доставляйте заказы ColossDelivery жителям сектора. Получайте посылки на телепаде доставки «Колосс Централл» и несите их заказчикам.
+job-description-delivery-courier = Доставляйте заказы ColossDelivery жителям сектора. Получайте посылки на телепаде доставки "Колосс Централл" и несите их заказчикам.
 
 delivery-order-placed = Заказ №{ $id } оформлен и ждёт курьера.
 delivery-notify-new-order = Новый заказ №{ $id } для { $customer }. Оплата курьеру: { $payout } кр.
@@ -85,3 +85,10 @@ delivery-ui-status-reassign = Статус: курьер выбыл, ждёт н
 delivery-ui-order-position-pending = Посылка: появится на телепаде после взятия
 delivery-ui-courier-active = Взято заказов: { $count }/{ $max }
 delivery-category-exclusive = Эксклюзив ColossDelivery
+
+flavor-complex-luam-kvass = как хлебный квас
+reagent-name-luam-kvass = квас
+reagent-desc-luam-kvass = Освежающий хлебный квас живого брожения. Кисло-сладкий, с лёгкой газировкой.
+
+
+loadout-group-courier-kit = Снаряжение курьера

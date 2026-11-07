@@ -1,0 +1,138 @@
+- type: loadout
+  id: CourierClothingHeadHatCourier
+  price: 0
+  equipment:
+    head: ClothingHeadHatLuaMCourier
+
+- type: loadout
+  id: CourierClothingUniformJumpsuitCourier
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLuaMCourier
+
+- type: loadout
+  id: CourierClothingOuterCoatCourier
+  price: 0
+  equipment:
+    outerClothing: ClothingOuterCoatLuaMCourier
+
+- type: loadout
+  id: CourierClothingOuterArmorBasicSlim
+  price: 1500
+  equipment:
+    outerClothing: ClothingOuterArmorBasicSlim
+
+- type: loadout
+  id: CourierWeaponLaserGun
+  price: 1000
+  storage:
+    back:
+    - WeaponLaserGun
+
+- type: loadout
+  id: CourierFlashlightSeclite
+  price: 100
+  storage:
+    back:
+    - FlashlightSeclite
+
+- type: loadoutGroup
+  id: CourierHead
+  name: loadout-group-contractor-head
+  minLimit: 0
+  loadouts:
+  - CourierClothingHeadHatCourier
+  subgroups:
+  - ContractorHead
+  fallbacks:
+  - CourierClothingHeadHatCourier
+
+- type: loadoutGroup
+  id: CourierJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  loadouts:
+  - CourierClothingUniformJumpsuitCourier
+  subgroups:
+  - ContractorJumpsuit
+  fallbacks:
+  - CourierClothingUniformJumpsuitCourier
+
+- type: loadoutGroup
+  id: CourierOuterClothing
+  name: loadout-group-contractor-outerclothing
+  minLimit: 0
+  loadouts:
+  - CourierClothingOuterCoatCourier
+  - CourierClothingOuterArmorBasicSlim
+  - ContractorClothingOuterCoatAcidRaincoatYellow
+  - ContractorClothingOuterCoatAcidRaincoat
+  - ContractorClothingOuterCoatAcidRaincoatBlue
+  - ContractorClothingOuterCoatAcidRaincoatGreen
+  - ContractorClothingOuterCoatAcidRaincoatMagenta
+  fallbacks:
+  - CourierClothingOuterCoatCourier
+
+- type: loadoutGroup
+  id: CourierShoes
+  name: loadout-group-contractor-shoes
+  minLimit: 0
+  loadouts:
+  - MercenaryClothingShoesBootsJack
+  - MercenaryClothingShoesBootsCombat
+  - MercenaryClothingShoesBootsMercenary
+  - ContractorClothingShoesBootsWork
+  - ContractorClothingShoesBootsSalvage
+  - ContractorClothingShoesBootsMag
+  fallbacks:
+  - MercenaryClothingShoesBootsJack
+
+- type: loadoutGroup
+  id: CourierGloves
+  name: loadout-group-contractor-gloves
+  minLimit: 0
+  loadouts:
+  - MercenaryClothingHandsGlovesTacticalCombatBlack
+  - MercenaryClothingHandsGlovesCombat
+  - MercenaryClothingHandsMercenaryGlovesCombat
+  - MercenaryClothingHandsGlovesMercFingerless
+  - MercenaryClothingHandsGlovesTacticalCombatTan
+  - MercenaryClothingHandsGlovesTacticalCombatCoyoteBrown
+  - MercenaryClothingHandsGlovesTacticalCombatOlive
+  - MercenaryClothingHandsGlovesTacticalCombatRangerGreen
+  - MercenaryClothingHandsGlovesTacticalCombatWhite
+  fallbacks:
+  - MercenaryClothingHandsGlovesTacticalCombatBlack
+
+- type: loadoutGroup
+  id: CourierKit
+  name: loadout-group-courier-kit
+  minLimit: 0
+  loadouts:
+  - CourierFlashlightSeclite
+
+- type: loadoutGroup
+  id: CourierFirearm
+  name: loadout-group-weapon-civilian
+  minLimit: 0
+  loadouts:
+  - CourierWeaponLaserGun
+  subgroups:
+  - ContractorFirearm
+  fallbacks:
+  - CourierWeaponLaserGun
+
+- type: loadout
+  id: CourierClothingBackpackThermobag
+  price: 0
+  equipment:
+    back: ClothingBackpackLuaMCourierThermobag
+
+- type: loadoutGroup
+  id: CourierBackpack
+  name: loadout-group-contractor-backpack
+  loadouts:
+  - CourierClothingBackpackThermobag
+  subgroups:
+  - ContractorBackpack
+  fallbacks:
+  - CourierClothingBackpackThermobag

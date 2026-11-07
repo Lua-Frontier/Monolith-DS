@@ -54,7 +54,7 @@ public sealed partial class YupiUiFragment : BoxContainer
     public void UpdateState(YupiUiState state)
     {
         BlockedBanner.Visible = state.Blocked;
-        MainScroll.Visible = !state.Blocked;
+        MainBackground.Visible = !state.Blocked;
         if (state.Blocked)
         {
             BlockedBanner.SetAlert(Loc.GetString("yupi-ui-blocked"), Loc.GetString("yupi-ui-blocked-hint"));

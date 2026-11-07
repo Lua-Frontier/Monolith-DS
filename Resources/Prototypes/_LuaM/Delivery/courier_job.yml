@@ -31,12 +31,10 @@
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
 
-# -- LuaM: ваучер «Газели» вместо сервисного, когда будет шаттл
+# -- LuaM: ваучер "Газели" вместо сервисного, когда будет шаттл
 - type: startingGear
   id: DeliveryCourierGear
   equipment:
-    head: ClothingHeadHatBellhop
-    gloves: ClothingHandsGlovesColorWhite
     id: DeliveryCourierPDA
   storage:
     back:
@@ -57,11 +55,13 @@
 - type: roleLoadout
   id: JobDeliveryCourier
   groups:
+  - CourierHead
   - ContractorNeck
-  - ValetJumpsuit
-  - ContractorBackpack
-  - ValetOuterClothing
-  - ContractorShoes
+  - CourierJumpsuit
+  - CourierGloves
+  - CourierBackpack
+  - CourierOuterClothing
+  - CourierShoes
   - ContractorFace
   - ContractorGlasses
   - ContractorBelt
@@ -76,7 +76,8 @@
   - ContractorTrinkets
   - ContractorBureaucracy
   - NFSpeciesSpecific
-  - ContractorFirearm
+  - CourierKit
+  - CourierFirearm
   - ContractorMag
   - ContractorArmorPlates
 
