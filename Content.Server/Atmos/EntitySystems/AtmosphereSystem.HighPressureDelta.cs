@@ -101,7 +101,7 @@ namespace Content.Server.Atmos.EntitySystems
             {
                 var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
                 if (!string.IsNullOrEmpty(SpaceWindSound))
-                    _audio.PlayPvs(SpaceWindSound, coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
+                    _audio.PlayPvs(new ResolvedPathSpecifier(SpaceWindSound), coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
 
                 // LuaM-start
                 var rotation = tile.PressureDirection != AtmosDirection.Invalid

@@ -43,6 +43,7 @@ namespace Content.Server.Destructible
         [Dependency] public SharedContainerSystem ContainerSystem = default!;
         [Dependency] public IPrototypeManager PrototypeManager = default!;
         [Dependency] public IAdminLogManager _adminLogger = default!;
+        [Dependency] public SharedTransformSystem TransformSystem = default!;
 
         // Mono
         private EntityQuery<DestructibleComponent> _destructibleQuery;

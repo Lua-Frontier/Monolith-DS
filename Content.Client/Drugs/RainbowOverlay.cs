@@ -12,6 +12,8 @@ namespace Content.Client.Drugs;
 
 public sealed partial class RainbowOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> RainbowShader = "Rainbow";
+
     [Dependency] private IConfigurationManager _config = default!;
     [Dependency] private IEntityManager _entityManager = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
@@ -33,7 +35,7 @@ public sealed partial class RainbowOverlay : Overlay
     public RainbowOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _rainbowShader = _prototypeManager.Index<ShaderPrototype>("Rainbow").InstanceUnique();
+        _rainbowShader = _prototypeManager.Index<ShaderPrototype>(RainbowShader).InstanceUnique();
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

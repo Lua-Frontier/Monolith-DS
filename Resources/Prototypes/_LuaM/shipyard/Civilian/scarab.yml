@@ -1,0 +1,38 @@
+# Author Info
+# GitHub: pumpikk
+# Discord: Pumpik
+
+# Shuttle Notes:
+# boss ya ustal
+- type: vessel
+  id: Scarab
+  parent: BaseVessel
+  name: vessel-scarab-name
+  description: vessel-scarab-desc
+  price: 214185
+  category: Large
+  group: Shipyard
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Civilian/scarab.yml
+  guidebookPage: null
+  class:
+  - Atmospherics
+  engine:
+  - AME
+
+- type: gameMap
+  id: Scarab
+  mapName: 'HES Scarab'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Civilian/scarab.yml
+  minPlayers: 0
+  stations:
+    Scarab:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'HES Scarab CIV-{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]

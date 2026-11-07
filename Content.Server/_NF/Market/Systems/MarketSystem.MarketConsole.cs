@@ -185,7 +185,7 @@ public sealed partial class MarketSystem
                 continue;
 
             var entProto = _prototypeManager.Index<EntityPrototype>(material.StackEntity);
-            if (!entProto.TryGetComponent<PhysicalCompositionComponent>(out var composition))
+            if (!entProto.TryComp<PhysicalCompositionComponent>(out var composition, Factory))
                 continue;
 
             // LuaM: same market whitelist/blacklist as single sold items, e.g. no fissile uranium out of a sold silo
@@ -205,7 +205,7 @@ public sealed partial class MarketSystem
 
             // LuaM: use the stack prototype, not the sheet entity id, so buyback spawns proper stacks
             string? stackPrototypeId = null;
-            if (entProto.TryGetComponent<StackComponent>(out var stack))
+            if (entProto.TryComp<StackComponent>(out var stack, Factory))
                 stackPrototypeId = stack.StackTypeId;
 
             // Increase the count in the MarketData for this material
@@ -241,12 +241,12 @@ public sealed partial class MarketSystem
             }
         }
 
-        if (list.Sizes != null && proto.TryGetComponent<ItemComponent>(out var item) && list.Sizes.Contains(item.Size))
+        if (list.Sizes != null && proto.TryComp<ItemComponent>(out var item, Factory) && list.Sizes.Contains(item.Size))
             return true;
 
         if (list.Tags != null)
         {
-            var tags = proto.TryGetComponent<TagComponent>(out var tag) ? tag.Tags : new HashSet<ProtoId<TagPrototype>>();
+            var tags = proto.TryComp<TagComponent>(out var tag, Factory) ? tag.Tags : new HashSet<ProtoId<TagPrototype>>();
             return list.RequireAll
                 ? list.Tags.All(tags.Contains)
                 : list.Tags.Any(tags.Contains);

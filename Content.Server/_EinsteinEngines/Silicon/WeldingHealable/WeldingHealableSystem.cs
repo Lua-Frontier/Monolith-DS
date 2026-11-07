@@ -11,6 +11,7 @@ using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Systems;
 using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 using Content.Shared.Interaction.Events; // LuaM
+using Content.Shared._LuaM.Traits; // LuaM
 
 namespace Content.Server._EinsteinEngines.Silicon.WeldingHealable;
 
@@ -84,6 +85,7 @@ public sealed partial class WeldingHealableSystem : SharedWeldingHealableSystem
         float delay = args.User == args.Target
             ? component.DoAfterDelay * component.SelfHealPenalty 
             : component.DoAfterDelay ;
+        delay *= GetRepairTimeMultiplier(args.Target); // LuaM
 
         args.Handled = _toolSystem.UseTool
             (args.Used,
@@ -115,6 +117,7 @@ public sealed partial class WeldingHealableSystem : SharedWeldingHealableSystem
             return;
 
         float delay = component.DoAfterDelay * component.SelfHealPenalty;
+        delay *= GetRepairTimeMultiplier(args.User); // LuaM
 
         args.Handled = _toolSystem.UseTool(
             ent.Owner,
@@ -128,6 +131,12 @@ public sealed partial class WeldingHealableSystem : SharedWeldingHealableSystem
             },
             breakOnMove: component.BreakOnMove,
             breakOnDamage: component.BreakOnDamage);
+    }
+
+    // Some bodies take longer to repair, like IPCs with the complex construction trait.
+    private float GetRepairTimeMultiplier(EntityUid target)
+    {
+        return CompOrNull<HealingModifierComponent>(target)?.RepairTimeMultiplier ?? 1f;
     }
     //LuaM-end
 

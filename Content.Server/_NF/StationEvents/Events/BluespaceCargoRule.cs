@@ -2,7 +2,6 @@ using Content.Server.Station.Components;
 using Content.Shared.Station.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Physics;
-using Content.Shared.Station.Components;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics;
@@ -19,7 +18,7 @@ public sealed partial class BluespaceCargoRule : StationEventSystem<BluespaceCar
     [Dependency] private IConfigurationManager _configuration = default!;
     [Dependency] private AtmosphereSystem _atmosphere = default!;
     [Dependency] private SharedMapSystem _map = default!;
-    [Dependency] protected IRobustRandom _random = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     protected override void Added(EntityUid uid, BluespaceCargoRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {

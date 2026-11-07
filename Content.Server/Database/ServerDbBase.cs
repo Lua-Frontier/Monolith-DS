@@ -436,7 +436,7 @@ namespace Content.Server.Database
             var prefs = await db.DbContext.Preference
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
 
-            return prefs?.MonoCoins ?? 0l;
+            return prefs?.MonoCoins ?? 0L;
         }
 
         public async Task SetMonoCoinsAsync(NetUserId userId, long balance, CancellationToken cancel = default)
@@ -448,7 +448,7 @@ namespace Content.Server.Database
 
             if (prefs != null)
             {
-                prefs.MonoCoins = Math.Max(0l, balance); // Ensure balance is never negative
+                prefs.MonoCoins = Math.Max(0L, balance); // Ensure balance is never negative
                 await db.DbContext.SaveChangesAsync(cancel);
             }
         }
@@ -463,7 +463,7 @@ namespace Content.Server.Database
             if (prefs != null)
             {
                 prefs.MonoCoins += amount;
-                prefs.MonoCoins = Math.Max(0l, prefs.MonoCoins); // Ensure balance is never negative
+                prefs.MonoCoins = Math.Max(0L, prefs.MonoCoins); // Ensure balance is never negative
                 await db.DbContext.SaveChangesAsync(cancel);
                 return prefs.MonoCoins;
             }

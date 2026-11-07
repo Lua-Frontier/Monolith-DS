@@ -148,7 +148,7 @@ public abstract partial class SharedChameleonProjectorSystem : EntitySystem
 
         var xform = Transform(uid);
         _xform.SetLocalRotationNoLerp(uid, 0, xform);
-        xform.NoLocalRotation = !xform.NoLocalRotation;
+        _xform.SetNoLocalRotation(uid, !xform.NoLocalRotation, xform);
         args.Handled = true;
     }
 
@@ -253,7 +253,7 @@ public abstract partial class SharedChameleonProjectorSystem : EntitySystem
         }
 
         var xform = Transform(ent);
-        xform.NoLocalRotation = false;
+        _xform.SetNoLocalRotation(ent.Owner, false, xform);
         _xform.Unanchor(ent, xform);
 
         Del(ent.Comp.Disguise);
@@ -305,7 +305,7 @@ public abstract partial class SharedChameleonProjectorSystem : EntitySystem
         if (!_proto.TryIndex<EntityPrototype>(protoId, out var proto))
             return false;
 
-        return proto.TryGetComponent(out src, EntityManager.ComponentFactory);
+        return proto.TryComp(out src, EntityManager.ComponentFactory);
     }
 }
 

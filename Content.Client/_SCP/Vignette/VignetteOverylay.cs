@@ -7,6 +7,8 @@ namespace Content.Client._Scp.Vignette;
 
 public sealed partial class VignetteOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> VignetteShader = "Vignette";
+
     [Dependency] private IPrototypeManager _prototype = default!;
 
     private readonly ShaderInstance _shader;
@@ -15,7 +17,7 @@ public sealed partial class VignetteOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
-        _shader = _prototype.Index<ShaderPrototype>("Vignette").Instance().Duplicate();
+        _shader = _prototype.Index<ShaderPrototype>(VignetteShader).Instance().Duplicate();
     }
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;

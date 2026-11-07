@@ -120,7 +120,7 @@ public abstract partial class CESharedZLevelsRoofSystem : EntitySystem
                 continue;
 
             var otherRoof = EnsureComp<RoofComponent>(otherGrid);
-            var enumerator = Map.GetAllTilesEnumerator(otherGrid, otherMapGrid);
+            var enumerator = Map.GetAllTiles(otherGrid, otherMapGrid);
             while (enumerator.MoveNext(out var tileRef))
             {
                 var worldTile = ZLevel.GridTileToWorldTile(otherGrid, otherMapGrid, tileRef.Value.GridIndices);

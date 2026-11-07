@@ -49,6 +49,6 @@ public sealed class MedicalBountyRedemptionBoundUserInterface : BoundUserInterfa
         if (!disposing)
             return;
 
-        _menu?.Dispose();
+        _menu?.Orphan();
     }
 }

@@ -1,0 +1,49 @@
+# USSP Kerenzikov: a Sandevistan that lets its user shoot, but burns their cells the whole time it runs.
+- type: entity
+  parent: BaseOrganCNSImplant
+  id: OrganCNSKerenzikov
+  name: USSP "Kerenzikov" reflex booster
+  description: A crude USSP reflex booster wired into the central nervous system. Unlike the Sandevistan it lets you shoot while it runs, but it burns your cells and tears your body the whole time, and three times harder after 10 seconds.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/cybernetics.rsi
+    state: booster
+  - type: Organ
+    onAdd:
+    - type: SandevistanUser
+      actionProto: ActionToggleKerenzikov
+      movementSpeedModifier: 1.35
+      attackSpeedModifier: 1.5
+      safeDuration: 0 # hurts from the first second
+      rechargeDuration: 30
+      blockGuns: false
+      overloadWarnings: false
+      overloadGlitchIntensity: 0.4
+      overloadInterval: 1
+      overloadDamage: # every second from the start
+        types:
+          Cellular: 3
+          Piercing: 0.5
+          Blunt: 0.5
+          Slash: 0.5
+      heavyOverloadAfter: 10
+      heavyOverloadWarning: kerenzikov-cns-burn-soon # 2 seconds before the damage triples
+      heavyOverloadDamage: # after 10 seconds all the damage triples
+        types:
+          Cellular: 9
+          Piercing: 1.5
+          Blunt: 1.5
+          Slash: 1.5
+
+- type: entity
+  id: ActionToggleKerenzikov
+  name: Toggle Kerenzikov
+  description: Enable or disable your boosted reflexes. You can shoot while it runs, but it hurts you every second, three times harder after 10 seconds.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    useDelay: 8
+    icon: { sprite: _Mono/Objects/Misc/cybernetics.rsi, state: booster }
+    itemIconStyle: NoItem
+    event: !type:ToggleSandevistanEvent

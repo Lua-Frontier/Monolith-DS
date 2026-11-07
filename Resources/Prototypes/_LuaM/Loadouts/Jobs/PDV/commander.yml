@@ -1,0 +1,15 @@
+# Implants the Vanguard commander can bring
+- type: loadoutGroup
+  id: PDVCommanderImplants
+  name: loadout-group-pdv-commander-implants
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - PDVDermalArmorLoadout
+
+- type: loadout
+  id: PDVDermalArmorLoadout
+  price: 750000
+  storage:
+    back:
+    - AutosurgeonDermalArmorPDVFlatpack

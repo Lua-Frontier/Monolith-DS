@@ -3,6 +3,8 @@ using Content.Shared.Construction.Prototypes;
 using Robust.Client.Placement;
 using Robust.Client.Utility;
 using Robust.Shared.Map;
+using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 
 namespace Content.Client.Construction
 {
@@ -48,7 +50,8 @@ namespace Content.Client.Construction
         public override void StartHijack(PlacementManager manager)
         {
             base.StartHijack(manager);
-            manager.CurrentTextures = _prototype?.Layers.Select(sprite => sprite.DirFrame0()).ToList();
+            var spriteSystem = IoCManager.Resolve<IEntityManager>().System<SpriteSystem>();
+            manager.CurrentTextures = _prototype?.Layers.Select(sprite => (IDirectionalTextureProvider) spriteSystem.RsiStateLike(sprite)).ToList();
         }
     }
 }

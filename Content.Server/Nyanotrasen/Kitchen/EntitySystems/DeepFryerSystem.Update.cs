@@ -14,9 +14,9 @@ public sealed partial class DeepFryerSystem
         {
             base.Update(frameTime);
 
-            foreach (var component in EntityQuery<DeepFryerComponent>())
+            var query = EntityQueryEnumerator<DeepFryerComponent>();
+            while (query.MoveNext(out var uid, out var component))
             {
-                var uid = component.Owner;
 
                 if (_gameTimingSystem.CurTime < component.NextFryTime ||
                     !_powerReceiverSystem.IsPowered(uid))

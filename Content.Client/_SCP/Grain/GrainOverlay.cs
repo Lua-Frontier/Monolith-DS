@@ -6,6 +6,8 @@ namespace Content.Client._Scp.Grain;
 
 public sealed partial class GrainOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> GrainShader = "Grain";
+
     [Dependency] private IPrototypeManager _prototype = default!;
 
     private readonly ShaderInstance _shader;
@@ -14,7 +16,7 @@ public sealed partial class GrainOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
-        _shader = _prototype.Index<ShaderPrototype>("Grain").Instance().Duplicate();
+        _shader = _prototype.Index<ShaderPrototype>(GrainShader).Instance().Duplicate();
     }
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;

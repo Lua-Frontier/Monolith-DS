@@ -105,12 +105,5 @@ namespace Content.Client.Administration.UI.Bwoink
 
             UpdateTypingIndicator();
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            InputTextChanged = null;
-        }
     }
 }

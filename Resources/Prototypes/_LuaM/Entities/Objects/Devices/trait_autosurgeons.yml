@@ -26,16 +26,16 @@
     layers:
     - state: medical_lathe
 
-# Platelet factories, MMC R&D.
+# Platelet factories, regular R&D. Same healing as the trait.
 - type: entity
-  parent: BaseAutosurgeonMieyo
-  id: AutosurgeonPlateletFactoriesMieyo
-  name: MMC autosurgeon (platelet factories)
+  parent: BaseAutosurgeon
+  id: AutosurgeonPlateletFactories
+  name: autosurgeon (platelet factories)
   description: Implants a set of bioengineered organs that slowly heal blunt damage and burns and try to keep you alive even when badly hurt.
   components:
   - type: AutoSurgeon
     targetBodyPart: Torso
-    humanityCost: 1
+    upgradeTier: 1
     componentsToUser:
     - type: PlateletFactories
       intervalSeconds: 1
@@ -47,12 +47,110 @@
 
 - type: entity
   parent: BaseNFFlatpack
+  id: AutosurgeonPlateletFactoriesFlatpack
+  name: autosurgeon (platelet factories) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonPlateletFactories
+  - type: StaticPrice
+    price: 3000
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+# Platelet factories Mk II, MMC R&D. Heals a third more and replaces the regular ones or the trait.
+- type: entity
+  parent: BaseAutosurgeonMieyo
+  id: AutosurgeonPlateletFactoriesMieyo
+  name: MMC autosurgeon (platelet factories Mk II)
+  description: Implants an improved set of bioengineered organs that heal blunt damage and burns a third faster than the regular ones and try to keep you alive even when badly hurt.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Torso
+    replaceUserComponents: true # upgrades the regular factories or the trait
+    upgradeTier: 2
+    humanityCost: 1
+    humanityKey: PlateletFactories # an upgrade replaces the cost instead of adding to it
+    componentsToUser:
+    - type: PlateletFactories
+      intervalSeconds: 1
+      damagePerInterval:
+        groups:
+          Brute: -2 # 1.5 * 1.33
+          Burn: -2.66 # 2 * 1.33
+      critMultiplier: .25
+
+- type: entity
+  parent: BaseNFFlatpack
   id: AutosurgeonPlateletFactoriesMieyoFlatpack
-  name: MMC autosurgeon (platelet factories) flatpack
+  name: MMC autosurgeon (platelet factories Mk II) flatpack
   description: A flatpack used for constructing a MMC autosurgeon.
   components:
   - type: Flatpack
     entity: AutosurgeonPlateletFactoriesMieyo
+  - type: StaticPrice
+    price: 4500
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+# Platelet factories Mk III, Nordfall Vanguard (PDV) R&D. 30% stronger than the Mk II, replaces any weaker version or the trait.
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonPlateletFactoriesPDV
+  name: PDV autosurgeon (platelet factories Mk III)
+  description: Implants the Vanguard's best set of bioengineered organs, healing blunt damage and burns 30% faster than the Mk II and trying to keep you alive even when badly hurt.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Torso
+    replaceUserComponents: true # upgrades any weaker factories or the trait
+    upgradeTier: 3
+    humanityCost: 2
+    humanityKey: PlateletFactories # an upgrade replaces the cost instead of adding to it
+    componentsToUser:
+    - type: PlateletFactories
+      intervalSeconds: 1
+      damagePerInterval:
+        groups:
+          Brute: -2.6 # Mk II * 1.3
+          Burn: -3.46 # Mk II * 1.3
+      critMultiplier: .25
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonPlateletFactoriesPDVFlatpack
+  name: PDV autosurgeon (platelet factories Mk III) flatpack
+  description: A flatpack used for constructing a PDV autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonPlateletFactoriesPDV
+  - type: StaticPrice
+    price: 6000
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+# Reflective dermal armor, goes into the subdermal armor slot.
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonDermalArmorReflective
+  name: autosurgeon (reflective dermal armor)
+  description: Puts a mirror-polished carapace under the skin. A chance to bounce shots back, but 10% slower, no damage reduction and 25% more shock damage.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Torso
+    targetOrgan: Subdermal
+    newPartProto: OrganDermalArmorReflective
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonDermalArmorReflectiveFlatpack
+  name: autosurgeon (reflective dermal armor) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonDermalArmorReflective
   - type: StaticPrice
     price: 3000
   - type: Sprite

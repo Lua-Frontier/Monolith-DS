@@ -24,7 +24,7 @@ public sealed partial class ThrusterSystem : VisualizerSystem<ThrusterComponent>
         || !AppearanceSystem.TryGetData<bool>(uid, ThrusterVisualState.State, out var state, args.Component))
             return;
 
-        args.Sprite.LayerSetVisible(ThrusterVisualLayers.ThrustOn, state);
+        SpriteSystem.LayerSetVisible((uid, args.Sprite), ThrusterVisualLayers.ThrustOn, state);
         SetThrusting(
             uid,
             state && AppearanceSystem.TryGetData<bool>(uid, ThrusterVisualState.Thrusting, out var thrusting, args.Component) && thrusting,
@@ -34,9 +34,9 @@ public sealed partial class ThrusterSystem : VisualizerSystem<ThrusterComponent>
         // Lua start
         if (state &&
             _tag.HasTag(uid, OmniBurnAlwaysOnTag) &&
-            args.Sprite.LayerMapTryGet(ThrusterVisualLayers.ThrustingUnshaded, out var unshadedLayer))
+            SpriteSystem.LayerMapTryGet((uid, args.Sprite), ThrusterVisualLayers.ThrustingUnshaded, out var unshadedLayer, false))
         {
-            args.Sprite.LayerSetVisible(unshadedLayer, true);
+            SpriteSystem.LayerSetVisible((uid, args.Sprite), unshadedLayer, true);
         }
         // Lua end
     }
@@ -44,16 +44,16 @@ public sealed partial class ThrusterSystem : VisualizerSystem<ThrusterComponent>
     /// <summary>
     /// Sets whether or not the exhaust plume of the thruster is visible or not.
     /// </summary>
-    private static void SetThrusting(EntityUid _, bool value, SpriteComponent sprite)
+    private void SetThrusting(EntityUid uid, bool value, SpriteComponent sprite)
     {
-        if (sprite.LayerMapTryGet(ThrusterVisualLayers.Thrusting, out var thrustingLayer))
+        if (SpriteSystem.LayerMapTryGet((uid, sprite), ThrusterVisualLayers.Thrusting, out var thrustingLayer, false))
         {
-            sprite.LayerSetVisible(thrustingLayer, value);
+            SpriteSystem.LayerSetVisible((uid, sprite), thrustingLayer, value);
         }
 
-        if (sprite.LayerMapTryGet(ThrusterVisualLayers.ThrustingUnshaded, out var unshadedLayer))
+        if (SpriteSystem.LayerMapTryGet((uid, sprite), ThrusterVisualLayers.ThrustingUnshaded, out var unshadedLayer, false))
         {
-            sprite.LayerSetVisible(unshadedLayer, value);
+            SpriteSystem.LayerSetVisible((uid, sprite), unshadedLayer, value);
         }
     }
 }

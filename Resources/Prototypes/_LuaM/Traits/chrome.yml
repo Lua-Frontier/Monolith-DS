@@ -6,6 +6,11 @@
   cost: -3
   mutuallyExclusiveTraits:
   - ChromeLoyalty
+  # no chrome implants from traits
+  - PlasteelMantisBlades
+  - PrybarProsthetics
+  - BionicLegs
+  - DermalArmor
   speciesBlacklist:
   - IPC
   whitelist:
@@ -30,3 +35,15 @@
   components:
   - type: ChromeLoyalty
     bonus: 2
+
+- type: trait
+  id: PlasteelMantisBlades
+  name: trait-luam-plasteel-mantis-blades-name
+  description: trait-luam-plasteel-mantis-blades-desc
+  category: Physical
+  cost: 4
+  mutuallyExclusiveTraits:
+  - ChromeIntolerance
+  components:
+  - type: TraitOrganForEachPart
+    organ: OrganArmMantisBladePlasteel

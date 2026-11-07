@@ -9,7 +9,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 namespace Content.Client._LuaM.Guidebook;
-public sealed class GuideSites : BoxContainer, IDocumentTag
+public sealed partial class GuideSites : BoxContainer, IDocumentTag
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
@@ -24,12 +24,11 @@ public sealed class GuideSites : BoxContainer, IDocumentTag
     }
     protected override void EnteredTree() { base.EnteredTree(); _system.Updated += Rebuild; _system.Request(); }
     protected override void ExitedTree() { _system.Updated -= Rebuild; base.ExitedTree(); }
-    protected override void Dispose(bool disposing) { _system.Updated -= Rebuild; base.Dispose(disposing); }
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control) { control = this; Rebuild(); return true; }
-    private string Name(string id) => _prototypes.TryIndex<EntityPrototype>(id, out var p) ? p.Name : "";
+    private new string Name(string id) => _prototypes.TryIndex<EntityPrototype>(id, out var p) ? p.Name : "";
     private void Rebuild()
     {
-        foreach (var child in _rows.Children.ToArray()) child.Dispose();
+        _rows.RemoveAllChildren();
         if (_system.Catalog is not { } data) { _rows.AddChild(Text("Загрузка с сервера…")); return; }
         var query = _search.Text.Trim();
         var sites = data.Sites.OrderBy(s => s.Name).Where(s => query.Length == 0 || s.Name.Contains(query, StringComparison.CurrentCultureIgnoreCase)

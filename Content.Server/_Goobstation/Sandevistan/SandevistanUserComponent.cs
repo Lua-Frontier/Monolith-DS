@@ -77,6 +77,33 @@ public sealed partial class SandevistanUserComponent : Component
 
     [DataField]
     public TimeSpan OverloadInterval = TimeSpan.FromSeconds(1);
+
+    // LuaM-start
+    /// <summary>
+    /// If set, dealt instead of <see cref="OverloadDamage"/> once the implant has been running
+    /// for <see cref="HeavyOverloadAfter"/>.
+    /// </summary>
+    [DataField]
+    public DamageSpecifier? HeavyOverloadDamage;
+
+    [DataField]
+    public TimeSpan HeavyOverloadAfter = TimeSpan.FromSeconds(10);
+
+    /// <summary>
+    /// Shown to the user <see cref="OverloadWarningTime"/> before the heavy damage starts. No warning if null.
+    /// </summary>
+    [DataField]
+    public LocId? HeavyOverloadWarning;
+
+    [ViewVariables]
+    public bool HeavyOverloadWarned;
+
+    /// <summary>
+    /// When the implant was turned on.
+    /// </summary>
+    [ViewVariables]
+    public TimeSpan ActivatedAt;
+    // LuaM-end
     // LuaM end
 
     /// <summary>
@@ -101,6 +128,21 @@ public sealed partial class SandevistanUserComponent : Component
 
     [DataField]
     public string ActionProto = "ActionToggleSandevistan";
+
+    // LuaM-start
+    /// <summary>
+    /// Whether guns are blocked while running. The Kerenzikov lets its user shoot.
+    /// </summary>
+    [DataField]
+    public bool BlockGuns = true;
+
+    /// <summary>
+    /// Whether the user gets the "safe mode ends" and "overloaded" warnings.
+    /// Off for implants that hurt their user the whole time they run.
+    /// </summary>
+    [DataField]
+    public bool OverloadWarnings = true;
+    // LuaM-end
 
     [ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? ActionUid;

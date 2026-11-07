@@ -9,6 +9,8 @@ namespace Content.Client.Singularity
 {
     public sealed partial class SingularityOverlay : Overlay, IEntityEventSubscriber
     {
+        private static readonly ProtoId<ShaderPrototype> SingularityShader = "Singularity";
+
         [Dependency] private IEntityManager _entMan = default!;
         [Dependency] private IPrototypeManager _prototypeManager = default!;
         private SharedTransformSystem? _xformSystem = null;
@@ -29,7 +31,7 @@ namespace Content.Client.Singularity
         public SingularityOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _shader = _prototypeManager.Index<ShaderPrototype>("Singularity").Instance().Duplicate();
+            _shader = _prototypeManager.Index<ShaderPrototype>(SingularityShader).Instance().Duplicate();
             _shader.SetParameter("maxDistance", MaxDistance * EyeManager.PixelsPerMeter);
             _entMan.EventBus.SubscribeEvent<PixelToMapEvent>(EventSource.Local, this, OnProjectFromScreenToMap);
             ZIndex = 101; // Should be drawn after the placement overlay so admins placing items near the singularity can tell where they're going.

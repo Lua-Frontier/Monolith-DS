@@ -163,11 +163,10 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
     }
 
     // LuaM-start: guidebook controls and lifecycle.
-    // LuaM: removing children alone detaches controls without releasing their client entities.
+    // LuaM: embeds release their client entities when they leave the UI tree.
     private void DisposeEntryContents()
     {
-        foreach (var child in EntryContainer.Children.ToArray())
-            child.Dispose();
+        EntryContainer.RemoveAllChildren();
     }
 
     // LuaM-end
@@ -259,7 +258,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         {
             // TODO GUIDEBOOK Maybe allow duplicate entries?
             // E.g., for adding medicine under both chemicals & the chemist job
-            Logger.Error($"Adding duplicate guide entry: {id}");
+            Logger.GetSawmill("guidebook").Error($"Adding duplicate guide entry: {id}");
             return null;
         }
 

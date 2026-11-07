@@ -21,6 +21,7 @@ namespace Content.Server.Rotatable
         [Dependency] private PopupSystem _popup = default!;
         [Dependency] private ActionBlockerSystem _actionBlocker = default!;
         [Dependency] private SharedInteractionSystem _interaction = default!;
+        [Dependency] private SharedTransformSystem _transform = default!;
 
         public override void Initialize()
         {
@@ -71,7 +72,7 @@ namespace Content.Server.Rotatable
             Verb resetRotation = new()
             {
                 DoContactInteraction = true,
-                Act = () => Comp<TransformComponent>(uid).LocalRotation = Angle.Zero,
+                Act = () => _transform.SetLocalRotation(uid, Angle.Zero),
                 Category = VerbCategory.Rotate,
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/refresh.svg.192dpi.png")),
                 Text = "Reset",
@@ -83,7 +84,7 @@ namespace Content.Server.Rotatable
             // rotate clockwise
             Verb rotateCW = new()
             {
-                Act = () => Comp<TransformComponent>(uid).LocalRotation -= component.Increment,
+                Act = () => _transform.SetLocalRotation(uid, Transform(uid).LocalRotation - component.Increment),
                 Category = VerbCategory.Rotate,
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/rotate_cw.svg.192dpi.png")),
                 Priority = -1,
@@ -94,7 +95,7 @@ namespace Content.Server.Rotatable
             // rotate counter-clockwise
             Verb rotateCCW = new()
             {
-                Act = () => Comp<TransformComponent>(uid).LocalRotation += component.Increment,
+                Act = () => _transform.SetLocalRotation(uid, Transform(uid).LocalRotation + component.Increment),
                 Category = VerbCategory.Rotate,
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/rotate_ccw.svg.192dpi.png")),
                 Priority = 0,
@@ -111,8 +112,8 @@ namespace Content.Server.Rotatable
             var oldTransform = Comp<TransformComponent>(uid);
             var entity = Spawn(component.MirrorEntity, oldTransform.Coordinates);
             var newTransform = Comp<TransformComponent>(entity);
-            newTransform.LocalRotation = oldTransform.LocalRotation;
-            newTransform.Anchored = false;
+            _transform.SetLocalRotation(entity, oldTransform.LocalRotation, newTransform);
+            _transform.Unanchor(entity, newTransform);
             Del(uid);
         }
 
@@ -135,7 +136,7 @@ namespace Content.Server.Rotatable
                 return false;
             }
 
-            Transform(entity).LocalRotation -= rotatableComp.Increment;
+            _transform.SetLocalRotation(entity, Transform(entity).LocalRotation - rotatableComp.Increment);
             return true;
         }
 
@@ -158,7 +159,7 @@ namespace Content.Server.Rotatable
                 return false;
             }
 
-            Transform(entity).LocalRotation += rotatableComp.Increment;
+            _transform.SetLocalRotation(entity, Transform(entity).LocalRotation + rotatableComp.Increment);
             return true;
         }
 

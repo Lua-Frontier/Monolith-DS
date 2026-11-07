@@ -176,6 +176,14 @@ public sealed partial class MeleeWeaponComponent : Component
     public float ArmorPenetration;
     // Harmony End
 
+    // LuaM-start
+    /// <summary>
+    /// Armor penetration of wide attacks. Uses <see cref="ArmorPenetration"/> when not set.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float? HeavyArmorPenetration;
+    // LuaM-end
+
     // Shitmed Change Start
 
     /// <summary>

@@ -321,22 +321,4 @@ public sealed partial class NoteEdit : FancyWindow
         ExpiryLineEdit.ModulateSelfOverride = null;
         return true;
     }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (!disposing)
-        {
-            return;
-        }
-
-        PermanentCheckBox.OnPressed -= OnPermanentPressed;
-        SecretCheckBox.OnPressed -= OnSecretPressed;
-        SubmitButton.OnPressed -= OnSubmitButtonPressed;
-        SubmitButton.OnMouseEntered -= OnSubmitButtonMouseEntered;
-        SubmitButton.OnMouseExited -= OnSubmitButtonMouseExited;
-
-        SubmitPressed = null;
-    }
 }

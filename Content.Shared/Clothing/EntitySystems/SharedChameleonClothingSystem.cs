@@ -65,28 +65,28 @@ public abstract partial class SharedChameleonClothingSystem : EntitySystem
         // --  LuaM: одежду копировать до предмета, иначе перерисовка берёт новый RSI со старыми слоями
         // clothing sprite logic
         if (TryComp(uid, out ClothingComponent? clothing) &&
-            proto.TryGetComponent("Clothing", out ClothingComponent? otherClothing))
+            proto.TryComp(out ClothingComponent? otherClothing, Factory))
         {
             _clothingSystem.CopyVisuals(uid, otherClothing, clothing);
         }
 
         // item sprite logic
         if (TryComp(uid, out ItemComponent? item) &&
-            proto.TryGetComponent(out ItemComponent? otherItem, Factory))
+            proto.TryComp(out ItemComponent? otherItem, Factory))
         {
             _itemSystem.CopyVisuals(uid, otherItem, item);
         }
 
         // appearance data logic
         if (TryComp(uid, out AppearanceComponent? appearance) &&
-            proto.TryGetComponent("Appearance", out AppearanceComponent? appearanceOther))
+            proto.TryComp(out AppearanceComponent? appearanceOther, Factory))
         {
             _appearance.AppendData(appearanceOther, uid);
             Dirty(uid, appearance);
         }
 
         // properly mark contraband
-        if (proto.TryGetComponent("Contraband", out ContrabandComponent? contra))
+        if (proto.TryComp(out ContrabandComponent? contra, Factory))
         {
             EnsureComp<ContrabandComponent>(uid, out var current);
             _contraband.CopyDetails(uid, contra, current);
@@ -132,8 +132,8 @@ public abstract partial class SharedChameleonClothingSystem : EntitySystem
                 return false;
         }
 
-        return !proto.TryGetComponent<ChameleonClothingComponent>(out _, Factory)
-               && !proto.TryGetComponent<UnremoveableComponent>(out _, Factory);
+        return !proto.HasComp<ChameleonClothingComponent>(Factory)
+               && !proto.HasComp<UnremoveableComponent>(Factory);
     }
     // LuaM-end
 
@@ -147,7 +147,7 @@ public abstract partial class SharedChameleonClothingSystem : EntitySystem
             return false;
 
         // check if it is marked as valid chameleon target
-        proto.TryGetComponent(out TagComponent? tag, Factory); // LuaM
+        proto.TryComp(out TagComponent? tag, Factory); // LuaM
         if ((tag == null || !_tag.HasTag(tag, "WhitelistChameleon")) && !IsLuaMChameleonCandidate(proto)) // LuaM
             return false;
 
@@ -155,7 +155,7 @@ public abstract partial class SharedChameleonClothingSystem : EntitySystem
             return false;
 
         // check if it's valid clothing
-        if (!proto.TryGetComponent("Clothing", out ClothingComponent? clothing))
+        if (!proto.TryComp(out ClothingComponent? clothing, Factory))
             return false;
         if (!clothing.Slots.HasFlag(chameleonSlot))
             return false;

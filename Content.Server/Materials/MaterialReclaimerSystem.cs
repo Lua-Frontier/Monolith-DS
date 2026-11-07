@@ -284,8 +284,8 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
             return 0;
 
         var stackProto = _prototype.Index<EntityPrototype>(materialProto.StackEntity);
-        if (!stackProto.TryGetComponent<PhysicalCompositionComponent>(out var composition, EntityManager.ComponentFactory)
-            || !stackProto.TryGetComponent<StackComponent>(out var stackComp, EntityManager.ComponentFactory))
+        if (!stackProto.TryComp<PhysicalCompositionComponent>(out var composition, EntityManager.ComponentFactory)
+            || !stackProto.TryComp<StackComponent>(out var stackComp, EntityManager.ComponentFactory))
             return 0;
 
         var materialPerStack = composition.MaterialComposition[materialProto.ID];

@@ -11,6 +11,7 @@
   abstract: true
   components:
   - type: Sprinter # Goobstation
+    sprintSpeedMultiplier: 1.25 # LuaM: 1.45 > 1.25
   - type: Humanity # LuaM: cyberware limit and cyberpsychosis
     speciesBonus:
       Human: 1 # racial feature of humans

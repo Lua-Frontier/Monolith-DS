@@ -13,6 +13,7 @@ namespace Content.Client.Throwing;
 public sealed partial class ThrownItemVisualizerSystem : EntitySystem
 {
     [Dependency] private AnimationPlayerSystem _anim = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
     [Dependency] private IGameTiming _timing = default!; // LuaM
 
     private const string AnimationKey = "thrown-item";
@@ -84,7 +85,7 @@ public sealed partial class ThrownItemVisualizerSystem : EntitySystem
             return;
 
         if (TryComp<SpriteComponent>(uid, out var sprite) && component.OriginalScale != null)
-            sprite.Scale = component.OriginalScale.Value;
+            _sprite.SetScale((uid, sprite), component.OriginalScale.Value);
 
         _anim.Stop(uid, AnimationKey);
     }

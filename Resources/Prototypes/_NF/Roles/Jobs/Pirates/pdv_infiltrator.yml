@@ -68,4 +68,5 @@
   storage:
     back:
     - RadioHandheldNF
+    - BasePirateUplinkPirateCrew # LuaM: the same uplink as the PDV praetorian
 #    - RubberStampPDVSpasaka # Commented by LuaM

@@ -12,7 +12,7 @@ namespace Content.Server.CartridgeLoader.Cartridges;
 public sealed partial class AppraisalCartridgeSystem : EntitySystem
 {
     [Dependency] private CargoSystem _bountySystem = default!;
-    [Dependency] private CartridgeLoaderSystem? _cartridgeLoaderSystem = default!;
+    [Dependency] private CartridgeLoaderSystem _cartridgeLoaderSystem = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private PricingSystem _pricingSystem = default!;
     [Dependency] private SharedAudioSystem _audioSystem = default!;

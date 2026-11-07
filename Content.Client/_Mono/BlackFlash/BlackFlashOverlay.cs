@@ -11,6 +11,8 @@ namespace Content.Client._Mono.BlackFlash;
 
 public sealed partial class BlackFlashOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> BlackFlashShader = "BlackFlash";
+
     [Dependency] private IEntityManager _entity = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IGameTiming _timing = default!;
@@ -25,7 +27,7 @@ public sealed partial class BlackFlashOverlay : Overlay
     public BlackFlashOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _baseShader = _proto.Index<ShaderPrototype>("BlackFlash").Instance().Duplicate();
+        _baseShader = _proto.Index<ShaderPrototype>(BlackFlashShader).Instance().Duplicate();
     }
 
     protected override void Draw(in OverlayDrawArgs args)

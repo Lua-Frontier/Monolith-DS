@@ -12,7 +12,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._LuaM.Guidebook;
 
 /// <summary>Prices from the same prototypes used by cargo valuation.</summary>
-public sealed class GuideCommodityPrices : BoxContainer, IDocumentTag
+public sealed partial class GuideCommodityPrices : BoxContainer, IDocumentTag
 {
     [Dependency] private IPrototypeManager _prototypes = default!;
     private readonly OptionButton _type = new() { HorizontalExpand = true };
@@ -47,7 +47,7 @@ public sealed class GuideCommodityPrices : BoxContainer, IDocumentTag
 
     private void Rebuild()
     {
-        foreach (var child in _rows.Children.ToArray()) child.Dispose();
+        _rows.RemoveAllChildren();
         var prices = _reagents
             ? _prototypes.EnumeratePrototypes<ReagentPrototype>().Select(r => (Name: r.LocalizedName, Price: (double) r.PricePerUnit, Id: r.ID))
             : _prototypes.EnumeratePrototypes<GasPrototype>().Select(g => (Name: Loc.GetString(g.Name), Price: (double) g.PricePerMole, Id: g.ID));

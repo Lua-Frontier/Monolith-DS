@@ -251,7 +251,7 @@ public sealed partial class StoreMenu : DefaultWindow
 
     private void ClearListings()
     {
-        foreach (var child in StoreListingsContainer.Children.ToArray()) child.Dispose(); // LuaM: release old controls
+        foreach (var child in StoreListingsContainer.Children.ToArray()) child.Orphan(); // LuaM: release old controls
     }
 
     public void PopulateStoreCategoryButtons(HashSet<ListingDataWithCostModifiers> listings)

@@ -108,9 +108,6 @@ public sealed class DrawLineOverlay : Overlay
         var xformSys = _ent.System<SharedTransformSystem>();
         var (_, _, matrix, invMatrix) = xformSys.GetWorldPositionRotationMatrixWithInv(xform);
         var numbersMax = 1000;
-        const int microHalf = 4;
-        const int smallHalf = 10;
-        const int mediumHalf = 15;
         var gridLocalVisible = invMatrix.TransformBox(args.WorldBounds);
         void DrawNumAt(Vector2i tile, int val)
         {

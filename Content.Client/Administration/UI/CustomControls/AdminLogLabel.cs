@@ -15,19 +15,12 @@ public sealed class AdminLogLabel : RichTextLabel
         OnVisibilityChanged += VisibilityChanged;
     }
 
-    public SharedAdminLog Log { get; }
+    public new SharedAdminLog Log { get; }
 
     public HSeparator Separator { get; }
 
     private void VisibilityChanged(Control control)
     {
         Separator.Visible = Visible;
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        OnVisibilityChanged -= VisibilityChanged;
     }
 }

@@ -14,6 +14,8 @@ public sealed class TurretControllerBoundUserInterface : BoundUserInterface
 
     protected override void Open()
     {
+        base.Open();
+
         if (UiKey is not DeployableTurretControllerUiKey)
         {
             Close();

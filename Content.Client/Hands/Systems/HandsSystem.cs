@@ -265,7 +265,7 @@ namespace Content.Client.Hands.Systems
             if (component.RevealedLayers.TryGetValue(location, out var revealedLayers))
             {
                 foreach (var key in revealedLayers)
-                    sprite.RemoveLayer(key);
+                    _sprite.RemoveLayer((uid, sprite), key);
 
                 revealedLayers.Clear();
             }
@@ -387,12 +387,12 @@ namespace Content.Client.Hands.Systems
 
                 //Add displacement maps
                 if (hand.Location == HandLocation.Left && handComp.LeftHandDisplacement is not null)
-                    _displacement.TryAddDisplacement(handComp.LeftHandDisplacement, sprite, index, key, revealedLayers);
+                    _displacement.TryAddDisplacement(handComp.LeftHandDisplacement, (uid, sprite), index, key, revealedLayers);
                 else if (hand.Location == HandLocation.Right && handComp.RightHandDisplacement is not null)
-                    _displacement.TryAddDisplacement(handComp.RightHandDisplacement, sprite, index, key, revealedLayers);
+                    _displacement.TryAddDisplacement(handComp.RightHandDisplacement, (uid, sprite), index, key, revealedLayers);
                 //Fallback to default displacement map
                 else if (handComp.HandDisplacement is not null)
-                    _displacement.TryAddDisplacement(handComp.HandDisplacement, sprite, index, key, revealedLayers);
+                    _displacement.TryAddDisplacement(handComp.HandDisplacement, (uid, sprite), index, key, revealedLayers);
             }
 
             RaiseLocalEvent(held, new HeldVisualsUpdatedEvent(uid, revealedLayers), true);

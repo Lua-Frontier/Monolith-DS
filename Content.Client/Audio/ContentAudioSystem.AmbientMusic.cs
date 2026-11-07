@@ -28,6 +28,8 @@ namespace Content.Client.Audio;
 /// </summary>
 public sealed partial class ContentAudioSystem
 {
+    private static readonly ProtoId<AmbientMusicPrototype> CombatModeDefaultId = "CombatModeDefault";
+
     [Dependency] private IConfigurationManager _configManager = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPlayerManager _player = default!;
@@ -315,7 +317,7 @@ public sealed partial class ContentAudioSystem
                 if (_proto.TryIndex<AmbientMusicPrototype>("CombatMode" + combatFactionSuffix, out var factionCombatMusicPrototype))
                     _musicProto = factionCombatMusicPrototype;
                 else //if we don't ,set it to the default
-                    _musicProto = _proto.Index<AmbientMusicPrototype>("CombatModeDefault");
+                    _musicProto = _proto.Index<AmbientMusicPrototype>(CombatModeDefaultId);
 
                 _currentlyPlaying = MusicType.Combat;
 
@@ -450,7 +452,7 @@ public sealed partial class ContentAudioSystem
         }
 
         var strim = _audio.PlayGlobal(
-            path,
+            new ResolvedPathSpecifier(path),
             Filter.Local(),
             false,
             AudioParams.Default.WithVolume(volume))!;
@@ -460,7 +462,7 @@ public sealed partial class ContentAudioSystem
         if (fadein != 0)
             FadeIn(_ambientMusicStream, strim.Value.Component, fadein);
 
-        _timeUntilNextAmbientTrack = (float)_audio.GetAudioLength(path).TotalSeconds;
+        _timeUntilNextAmbientTrack = (float)_audio.GetAudioLength(new ResolvedPathSpecifier(path)).TotalSeconds;
     }
 
     /// <summary>

@@ -26,7 +26,7 @@ public sealed class BankATMMenuBoundUserInterface : BoundUserInterface
         base.Dispose(disposing);
         if (disposing)
         {
-            _menu?.Dispose();
+            _menu?.Orphan();
         }
     }
 

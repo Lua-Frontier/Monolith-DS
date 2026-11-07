@@ -41,6 +41,15 @@ public sealed partial class CCVars
     public static readonly CVarDef<int> ServerUptimeRestartMinutes =
         CVarDef.Create("server.uptime_restart_minutes", 0, CVar.SERVERONLY);
 
+    // LuaM-start
+    /// <summary>
+    ///     If true, shut the server down at round end instead of starting a new round.
+    ///     The watchdog then starts a fresh server process, so every round runs on a clean server.
+    /// </summary>
+    public static readonly CVarDef<bool> ServerRestartOnRoundEnd =
+        CVarDef.Create("server.restart_on_round_end", true, CVar.SERVERONLY);
+    // LuaM-end
+
     /// <summary>
     ///     This will be the title shown in the lobby
     ///     If empty, the title will be {ui-lobby-title} + the server's full name from the hub

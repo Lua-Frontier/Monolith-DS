@@ -1,4 +1,6 @@
+using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Shared.Body.Systems;
 using Content.Shared._LuaM.Implants;
 using Content.Shared.Actions;
 using Content.Shared.Implants;
@@ -17,6 +19,8 @@ public sealed partial class InjectorImplantSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedBodySystem _body = default!;
+    [Dependency] private StomachSystem _stomach = default!;
 
     public override void Initialize()
     {
@@ -61,12 +65,36 @@ public sealed partial class InjectorImplantSystem : EntitySystem
 
     private bool Inject(Entity<InjectorImplantComponent> ent, EntityUid user)
     {
-        if (!_bloodstream.TryAddToChemicals(user, ent.Comp.Solution.Clone()))
+        if (ent.Comp.IntoStomach)
+        {
+            if (!TryFeed(ent, user))
+                return false;
+        }
+        else if (!_bloodstream.TryAddToChemicals(user, ent.Comp.Solution.Clone()))
+        {
             return false;
+        }
 
         _audio.PlayPvs(ent.Comp.InjectSound, user);
-        _popup.PopupEntity(Loc.GetString("injector-implant-used"), user, user);
+        _popup.PopupEntity(Loc.GetString(ent.Comp.UsedPopup), user, user);
         return true;
+    }
+
+    // Food and drinks only work from the stomach.
+    private bool TryFeed(Entity<InjectorImplantComponent> ent, EntityUid user)
+    {
+        var dose = ent.Comp.Solution.Clone();
+        if (_body.TryGetBodyOrganEntityComps<StomachComponent>(user, out var stomachs))
+        {
+            foreach (var stomach in stomachs)
+            {
+                if (_stomach.TryTransferSolution(stomach.Owner, dose, stomach.Comp1))
+                    return true;
+            }
+        }
+
+        _popup.PopupEntity(Loc.GetString("injector-implant-stomach-full"), user, user);
+        return false;
     }
 
     public override void Update(float frameTime)

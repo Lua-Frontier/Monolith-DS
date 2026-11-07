@@ -1,9 +1,8 @@
+# LuaM-start: shared base without the chemical injector, so variants can go without it
 - type: entity
-  categories: [ DoNotMap ]
+  abstract: true
   parent: BaseItem
-  id: MantisBlade
-  name: mantis blade
-  description: They won’t see the steel until it’s too late.
+  id: BaseMantisBlade
   components:
   - type: Sharp
   - type: Execution
@@ -17,6 +16,7 @@
     attackRate: 1.5
     clickPartDamageMultiplier: 2
     heavyPartDamageMultiplier: 1
+    heavyStaminaCost: 0 # LuaM: wide swings don't cost stamina
     damage:
       types:
         Slash: 26 # LuaM: 14 > 26
@@ -24,17 +24,6 @@
         Structural: 50 #LuaM: 20 > 50
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        reagents:
-        - ReagentId: Phlogiston
-          Quantity: 2.5
-        - ReagentId: Napalm
-          Quantity: 2.5
-  - type: MeleeChemicalInjector
-    solution: melee
-    transferAmount: 1
   - type: Tag
     tags:
     - MantisBlade
@@ -59,3 +48,23 @@
     reflectProb: 0
   - type: MantisBladeCombo
   # LuaM end
+
+- type: entity
+  categories: [ DoNotMap ]
+  parent: BaseMantisBlade
+  id: MantisBlade
+  name: mantis blade
+  description: They won’t see the steel until it’s too late.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: Phlogiston
+          Quantity: 2.5
+        - ReagentId: Napalm
+          Quantity: 2.5
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 1
+# LuaM-end

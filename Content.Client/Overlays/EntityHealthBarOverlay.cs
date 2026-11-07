@@ -25,6 +25,7 @@ public sealed class EntityHealthBarOverlay : Overlay
     private readonly IPrototypeManager _prototype;
 
     private readonly SharedTransformSystem _transform;
+    private readonly SpriteSystem _sprite;
     private readonly MobStateSystem _mobStateSystem;
     private readonly MobThresholdSystem _mobThresholdSystem;
     private readonly StatusIconSystem _statusIconSystem;
@@ -40,6 +41,7 @@ public sealed class EntityHealthBarOverlay : Overlay
         _entManager = entManager;
         _prototype = prototype;
         _transform = _entManager.System<SharedTransformSystem>();
+        _sprite = _entManager.System<SpriteSystem>();
         _mobStateSystem = _entManager.System<MobStateSystem>();
         _mobThresholdSystem = _entManager.System<MobThresholdSystem>();
         _statusIconSystem = _entManager.System<StatusIconSystem>();
@@ -76,7 +78,7 @@ public sealed class EntityHealthBarOverlay : Overlay
                 continue;
 
             // we use the status icon component bounds if specified otherwise use sprite
-            var bounds = _entManager.GetComponentOrNull<StatusIconComponent>(uid)?.Bounds ?? spriteComponent.Bounds;
+            var bounds = _entManager.GetComponentOrNull<StatusIconComponent>(uid)?.Bounds ?? _sprite.GetLocalBounds((uid, spriteComponent));
             var worldPos = _transform.GetWorldPosition(xform, xformQuery);
 
             if (!bounds.Translated(worldPos).Intersects(args.WorldAABB))

@@ -55,7 +55,7 @@ public sealed partial class SprayPainterDecalsControl : Control
 
     private static string DecalName(string id)
     {
-        return Loc.TryGetString($"decal-name-{id}", out var name) ? name : id;
+        return IoCManager.Resolve<ILocalizationManager>().TryGetString($"decal-name-{id}", out var name) ? name : id;
     }
 
     private void RefreshGrid()

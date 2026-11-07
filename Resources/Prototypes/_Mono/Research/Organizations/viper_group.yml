@@ -72,6 +72,7 @@
   - ShipVoucherVGLeviathan
   - ShipVoucherVGKeelback
   - ShipVoucherVGLancehead
+  - ShipVoucherVGMars # LuaM
   technologyPrerequisites:
   - ViperGroupShipyardAdvanced
   # - UniversalMaterialResearchT3 # Commented by LuaM

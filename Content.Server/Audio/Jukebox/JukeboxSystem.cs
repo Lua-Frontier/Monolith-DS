@@ -17,6 +17,7 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
 {
     [Dependency] private IPrototypeManager _protoManager = default!;
     [Dependency] private AppearanceSystem _appearanceSystem = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -66,7 +67,7 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
 
                 if (TryComp<TransformComponent>(component.AudioStream, out var xform))
                 {
-                    xform.LocalPosition = component.AudioOffset;
+                    _transform.SetLocalPosition(audioStream.Value, component.AudioOffset, xform);
                 }
 
                 Dirty(uid, component);

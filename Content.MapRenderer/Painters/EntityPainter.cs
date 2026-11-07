@@ -21,12 +21,14 @@ public sealed class EntityPainter
     private readonly Image _errorImage;
 
     private readonly IEntityManager _sEntityManager;
+    private readonly SpriteSystem _sprite;
 
     public EntityPainter(ClientIntegrationInstance client, ServerIntegrationInstance server)
     {
         _resManager = client.ResolveDependency<IResourceManager>();
 
         _sEntityManager = server.ResolveDependency<IEntityManager>();
+        _sprite = client.System<SpriteSystem>();
 
         _images = new Dictionary<(string path, string state), Image>();
         _errorImage = Image.Load<Rgba32>(_resManager.ContentFileRead("/Textures/error.rsi/error.png"));
@@ -91,7 +93,7 @@ public sealed class EntityPainter
 
             image = image.CloneAs<Rgba32>();
 
-            static (int, int, int, int) GetRsiFrame(RSI? rsi, Image image, EntityData entity, ISpriteLayer layer, int direction)
+            (int, int, int, int) GetRsiFrame(RSI? rsi, Image image, EntityData entity, ISpriteLayer layer, int direction)
             {
                 if (rsi is null)
                     return (0, 0, EyeManager.PixelsPerMeter, EyeManager.PixelsPerMeter);
@@ -99,14 +101,14 @@ public sealed class EntityPainter
                 var statesX = image.Width / rsi.Size.X;
                 var statesY = image.Height / rsi.Size.Y;
                 var stateCount = statesX * statesY;
-                var frames = stateCount / entity.Sprite.GetLayerDirectionCount(layer);
+                var frames = stateCount / _sprite.LayerGetDirectionCount((SpriteComponent.Layer) layer);
                 var target = direction * frames;
                 var targetY = target / statesX;
                 var targetX = target % statesY;
                 return (targetX * rsi.Size.X, targetY * rsi.Size.Y, rsi.Size.X, rsi.Size.Y);
             }
 
-            var dir = entity.Sprite.GetLayerDirectionCount(layer) switch
+            var dir = _sprite.LayerGetDirectionCount((SpriteComponent.Layer) layer) switch
             {
                 0 => 0,
                 _ => (int) layer.EffectiveDirection(worldRotation)
@@ -124,7 +126,7 @@ public sealed class EntityPainter
             image.Mutate(o => o.Crop(rect));
 
             var spriteRotation = 0f;
-            if (!entity.Sprite.NoRotation && !entity.Sprite.SnapCardinals && entity.Sprite.GetLayerDirectionCount(layer) == 1)
+            if (!entity.Sprite.NoRotation && !entity.Sprite.SnapCardinals && _sprite.LayerGetDirectionCount((SpriteComponent.Layer) layer) == 1)
             {
                 spriteRotation = (float) worldRotation.Degrees;
             }

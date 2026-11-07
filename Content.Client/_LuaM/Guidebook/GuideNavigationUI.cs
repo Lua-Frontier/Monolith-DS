@@ -34,7 +34,7 @@ namespace Content.Client._LuaM.Guidebook;
 /// so their request events have no route to server-side ship or expedition systems.
 /// </summary>
 [UsedImplicitly]
-public sealed class GuideNavigationUI : BoxContainer, IDocumentTag
+public sealed partial class GuideNavigationUI : BoxContainer, IDocumentTag
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IGameTiming _timing = default!;
@@ -284,7 +284,6 @@ public sealed class GuideNavigationUI : BoxContainer, IDocumentTag
         {
             window.OnClose -= CloseExample;
             if (window.Parent != null) window.Close();
-            window.Dispose();
         }
 
         foreach (var dummy in _dummies)
@@ -300,13 +299,6 @@ public sealed class GuideNavigationUI : BoxContainer, IDocumentTag
         _entities.System<GuidebookCatalogClientSystem>().Updated -= ResearchDataChanged;
         CloseExample();
         base.ExitedTree();
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        _entities.System<GuidebookCatalogClientSystem>().Updated -= ResearchDataChanged;
-        CloseExample();
-        base.Dispose(disposing);
     }
 }
 

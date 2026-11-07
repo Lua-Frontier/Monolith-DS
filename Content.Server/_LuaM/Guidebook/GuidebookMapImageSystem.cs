@@ -13,7 +13,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._LuaM.Guidebook;
 
 /// <summary>Only cached PNGs leave this system. MapRenderer runs in its own process.</summary>
-public sealed class GuidebookMapImageSystem : EntitySystem
+public sealed partial class GuidebookMapImageSystem : EntitySystem
 {
     [Dependency] private IResourceManager _resources = default!;
     private const int ChunkSize = 32 * 1024;

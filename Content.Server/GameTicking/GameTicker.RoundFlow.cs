@@ -692,7 +692,6 @@ namespace Content.Server.GameTicking
                 const int MaxEmbedCharacters = 6000;
                 const int MaxFieldsPerEmbed = 25;
                 const int MaxFieldValueLength = 1024;
-                const int MaxFieldNameLength = 256;
 
                 var webhookUrl = _cfg.GetCVar(CCVars.DiscordCrewManifestWebhook);
                 if (string.IsNullOrEmpty(webhookUrl))
@@ -957,7 +956,7 @@ namespace Content.Server.GameTicking
             ReplayEndRound();
 
             // Handle restart for server update
-            if (_serverUpdates.RoundEnded())
+            if (_serverUpdates.RoundEnded(_postInitialized && _runLevel != GameRunLevel.PreRoundLobby)) // LuaM: not on startup or from the lobby
                 return;
 
             // Check if the GamePreset needs to be reset

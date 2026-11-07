@@ -19,6 +19,7 @@ public sealed partial class JetpackSystem : SharedJetpackSystem
     [Dependency] private ItemToggleSystem _toggle = default!; // LuaM
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -38,7 +39,8 @@ public sealed partial class JetpackSystem : SharedJetpackSystem
         enabled |= HasComp<MagbootsComponent>(uid) && _toggle.IsActivated(uid); // LuaM
 
         var state = "icon" + (enabled ? "-on" : "");
-        args.Sprite?.LayerSetState(0, state);
+        if (args.Sprite != null)
+            _sprite.LayerSetRsiState((uid, args.Sprite), 0, state);
 
         if (TryComp<ClothingComponent>(uid, out var clothing))
             _clothing.SetEquippedPrefix(uid, enabled ? "on" : null, clothing);

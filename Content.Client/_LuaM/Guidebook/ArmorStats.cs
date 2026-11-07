@@ -27,7 +27,7 @@ using Robust.Shared.Utility;
 namespace Content.Client._LuaM.Guidebook;
 
 /// <summary>Small comparison tables sourced from resolved prototypes, including inherited components.</summary>
-public sealed class ArmorStats : BoxContainer, IDocumentTag
+public sealed partial class ArmorStats : BoxContainer, IDocumentTag
 {
     [Dependency] private IPrototypeManager _prototypes = default!;
     [Dependency] private IComponentFactory _factory = default!;

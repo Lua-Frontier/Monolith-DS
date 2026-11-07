@@ -25,7 +25,7 @@ namespace Content.Client._LuaM.Guidebook;
 /// No bound interface is created: every subscribed action changes only demonstration state.
 /// </summary>
 [UsedImplicitly]
-public sealed class GuideReactorUI : BoxContainer, IDocumentTag
+public sealed partial class GuideReactorUI : BoxContainer, IDocumentTag
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
@@ -107,7 +107,7 @@ public sealed class GuideReactorUI : BoxContainer, IDocumentTag
     private ReactorSlotBUIData GetPart(EntProtoId id)
     {
         var proto = _prototypes.Index(id);
-        if (!proto.TryGetComponent<ReactorPartComponent>(_factory.GetComponentName<ReactorPartComponent>(), out var part))
+        if (!proto.TryComp<ReactorPartComponent>(out var part, _factory))
             throw new InvalidOperationException($"Reactor teaching part {id} has no ReactorPart component.");
 
         return new ReactorSlotBUIData
@@ -231,7 +231,6 @@ public sealed class GuideReactorUI : BoxContainer, IDocumentTag
         {
             window.OnClose -= CloseExample;
             window.Close();
-            window.Dispose();
         }
 
         if (_dummy is { } entity && !_entities.Deleted(entity))
@@ -243,11 +242,5 @@ public sealed class GuideReactorUI : BoxContainer, IDocumentTag
     {
         CloseExample();
         base.ExitedTree();
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        CloseExample();
-        base.Dispose(disposing);
     }
 }

@@ -124,9 +124,9 @@ namespace Content.Client.VendingMachines
             if (_menu == null)
                 return;
 
+            // The menu is registered through CreateWindow, the BUI disposes it on its own.
             _menu.OnItemSelected -= OnItemSelected;
             _menu.OnClose -= Close;
-            _menu.Dispose();
         }
     }
 }

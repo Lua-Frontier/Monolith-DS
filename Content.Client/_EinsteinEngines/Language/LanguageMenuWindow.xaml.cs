@@ -20,15 +20,19 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
     {
         RobustXamlLoader.Load(this);
         _clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
+    }
+
+    // Only listen for language changes while the window is open; Opened() refreshes the list anyway.
+    protected override void EnteredTree()
+    {
+        base.EnteredTree();
         _clientLanguageSystem.OnLanguagesChanged += UpdateState;
     }
 
-    protected override void Dispose(bool disposing)
+    protected override void ExitedTree()
     {
-        base.Dispose(disposing);
-
-        if (disposing)
-            _clientLanguageSystem.OnLanguagesChanged -= UpdateState;
+        base.ExitedTree();
+        _clientLanguageSystem.OnLanguagesChanged -= UpdateState;
     }
 
     protected override void Opened()

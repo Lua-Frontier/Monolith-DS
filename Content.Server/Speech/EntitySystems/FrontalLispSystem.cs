@@ -12,6 +12,10 @@ public sealed partial class FrontalLispSystem : EntitySystem
     private static readonly Regex RegexLowerTh = new(@"[t]+[s]+|[s]+[c]+(?=[iey]+)|[c]+(?=[iey]+)|[p][s]+|([s]+[t]+|[t]+)(?=[i]+[o]+[u]*[n]*)|[c]+[h]+(?=[i]*[e]*)|[z]+|[s]+|[x]+(?=[e]+)");
     private static readonly Regex RegexUpperEcks = new(@"[E]+[Xx]+[Cc]*|[X]+");
     private static readonly Regex RegexLowerEcks = new(@"[e]+[x]+[c]*|[x]+");
+    // LuaM-start
+    private static readonly Regex RegexRuLowerT = new(@"\B[т](?![АЕЁИОУЫЭЮЯаеёиоуыэюя])");
+    private static readonly Regex RegexRuUpperT = new(@"\B[Т](?![АЕЁИОУЫЭЮЯаеёиоуыэюя])");
+    // LuaM-end
     // @formatter:on
 
     [Dependency] private IRobustRandom _random = default!; // LuaM
@@ -34,16 +38,16 @@ public sealed partial class FrontalLispSystem : EntitySystem
         message = RegexLowerEcks.Replace(message, "ekth");
 
 // LuaM-start:
-        message = Regex.Replace(message, @"с", _random.Prob(0.90f) ? "ш" : "с");
-        message = Regex.Replace(message, @"С", _random.Prob(0.90f) ? "Ш" : "С");
-        message = Regex.Replace(message, @"ч", _random.Prob(0.90f) ? "ш" : "ч");
-        message = Regex.Replace(message, @"Ч", _random.Prob(0.90f) ? "Ш" : "Ч");
-        message = Regex.Replace(message, @"ц", _random.Prob(0.90f) ? "ч" : "ц");
-        message = Regex.Replace(message, @"Ц", _random.Prob(0.90f) ? "Ч" : "Ц");
-        message = Regex.Replace(message, @"\B[т](?![АЕЁИОУЫЭЮЯаеёиоуыэюя])", _random.Prob(0.90f) ? "ч" : "т");
-        message = Regex.Replace(message, @"\B[Т](?![АЕЁИОУЫЭЮЯаеёиоуыэюя])", _random.Prob(0.90f) ? "Ч" : "Т");
-        message = Regex.Replace(message, @"з", _random.Prob(0.90f) ? "ж" : "з");
-        message = Regex.Replace(message, @"З", _random.Prob(0.90f) ? "Ж" : "З");
+        message = message.Replace('с', _random.Prob(0.90f) ? 'ш' : 'с');
+        message = message.Replace('С', _random.Prob(0.90f) ? 'Ш' : 'С');
+        message = message.Replace('ч', _random.Prob(0.90f) ? 'ш' : 'ч');
+        message = message.Replace('Ч', _random.Prob(0.90f) ? 'Ш' : 'Ч');
+        message = message.Replace('ц', _random.Prob(0.90f) ? 'ч' : 'ц');
+        message = message.Replace('Ц', _random.Prob(0.90f) ? 'Ч' : 'Ц');
+        message = RegexRuLowerT.Replace(message, _random.Prob(0.90f) ? "ч" : "т");
+        message = RegexRuUpperT.Replace(message, _random.Prob(0.90f) ? "Ч" : "Т");
+        message = message.Replace('з', _random.Prob(0.90f) ? 'ж' : 'з');
+        message = message.Replace('З', _random.Prob(0.90f) ? 'Ж' : 'З');
 // LuaM-end.
 
         args.Message = message;

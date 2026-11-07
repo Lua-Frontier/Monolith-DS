@@ -13,7 +13,7 @@
     - type: SandevistanUser # This is worse than the mieyo one, because its reverse engineered or something. My secrets are propietary to my company. I mean, the only difference though is that it cools down a little bit slower.
       movementSpeedModifier: 1.5 # LuaM: 2 > 1.5
       safeDuration: 15 # LuaM: activeDuration 8 > safeDuration 15
-      rechargeDuration: 80
+      rechargeDuration: 50 # LuaM: 80 > 50
 
 - type: entity
   parent: BaseOrganCNSImplant # LuaM: OrganHumanHeart > BaseOrganCNSImplant, no longer works as a heart

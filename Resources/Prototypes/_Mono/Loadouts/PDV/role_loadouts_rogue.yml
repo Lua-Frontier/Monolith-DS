@@ -73,6 +73,7 @@
   - RogueSidearm
   - RogueCommandMag
   - FactionArmorPlates
+  - PDVCommanderImplants # LuaM: E-SAPI dermal armor autosurgeon
   canCustomizeName: true
 
 - type: roleLoadout

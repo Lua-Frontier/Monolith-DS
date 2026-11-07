@@ -13,6 +13,8 @@ namespace Content.Client._Mono.BlackFlash;
 /// </summary>
 public sealed partial class BlackFlashImpactOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> BlackFlashImpactShader = "BlackFlashImpact";
+
     [Dependency] private IEntityManager _entity = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IPrototypeManager _proto = default!;
@@ -26,7 +28,7 @@ public sealed partial class BlackFlashImpactOverlay : Overlay
     public BlackFlashImpactOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _shader = _proto.Index<ShaderPrototype>("BlackFlashImpact").InstanceUnique();
+        _shader = _proto.Index<ShaderPrototype>(BlackFlashImpactShader).InstanceUnique();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

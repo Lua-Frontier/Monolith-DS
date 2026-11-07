@@ -1,0 +1,86 @@
+# Plasteel mantis blades: half as strong as the regular ones, no injector and no armor penetration.
+# Civilian R&D and the trait.
+
+- type: entity
+  categories: [ DoNotMap ]
+  parent: BaseMantisBlade
+  id: MantisBladePlasteel
+  name: plasteel mantis blade
+  description: A cheap civilian take on the mantis blade. Plain plasteel, no heating, no tricks.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Melee/mantis_blade_plasteel.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 13
+        Piercing: 5.5
+        Structural: 25
+  - type: MantisBladeCombo
+    reflectProb: 0.175
+    dashAction: ActionMantisBladeDashPlasteel
+
+- type: entity
+  parent: OrganArmMantisBlade
+  id: OrganArmMantisBladePlasteel
+  name: plasteel mantis blade implant
+  description: A covert deployable plasteel mantis blade that hides inside the arm.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Melee/mantis_blade_plasteel.rsi
+    state: icon
+  - type: MantisBladeImplant
+    bladeProto: MantisBladePlasteel
+    actionProto: ActionToggleMantisBladesPlasteel
+  - type: CyberwareHumanity
+    cost: 0.5
+  - type: StaticPrice
+    price: 600
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonMantisBladesPlasteel
+  name: autosurgeon (plasteel mantis blades)
+  description: Implants a pair of covert deployable plasteel mantis blades into both of your arms.
+  components:
+  - type: GuideHelp
+    guides:
+    - ColossusMantisBlades
+  - type: AutoSurgeon
+    targetBodyPart: Arm
+    organForEachPart: OrganArmMantisBladePlasteel
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonMantisBladesPlasteelFlatpack
+  name: autosurgeon (plasteel mantis blades) flatpack
+  description: A flatpack used for constructing an autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonMantisBladesPlasteel
+  - type: StaticPrice
+    price: 2500
+  - type: Sprite
+    layers:
+    - state: medical_lathe
+
+- type: entity
+  parent: ActionToggleMantisBlades
+  id: ActionToggleMantisBladesPlasteel
+  name: Toggle Plasteel Mantis Blades
+  description: Extend or retract the plasteel mantis blades in both of your arms.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    icon: { sprite: _LuaM/Objects/Weapons/Melee/mantis_blade_plasteel.rsi, state: icon }
+
+- type: entity
+  parent: ActionMantisBladeDash
+  id: ActionMantisBladeDashPlasteel
+  name: plasteel mantis blade dash
+  description: Dash forward with both plasteel mantis blades extended.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: _LuaM/Objects/Weapons/Melee/mantis_blade_plasteel.rsi, state: icon }

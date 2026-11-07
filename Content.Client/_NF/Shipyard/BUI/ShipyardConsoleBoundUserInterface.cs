@@ -95,7 +95,7 @@ public sealed partial class ShipyardConsoleBoundUserInterface : BoundUserInterfa
 
         if (!disposing) return;
 
-        _menu?.Dispose();
+        _menu?.Orphan();
     }
 
     private void ApproveOrder(VesselPrototype vessel) // Lua: ButtonEventArgs > VesselPrototype

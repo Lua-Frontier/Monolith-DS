@@ -10,6 +10,9 @@ namespace Content.Client.Eye.Blinding
 {
     public sealed partial class BlurryVisionOverlay : Overlay
     {
+        private static readonly ProtoId<ShaderPrototype> CataractsShader = "Cataracts";
+        private static readonly ProtoId<ShaderPrototype> CircleMaskShader = "CircleMask";
+
         [Dependency] private IEntityManager _entityManager = default!;
         [Dependency] private IPlayerManager _playerManager = default!;
         [Dependency] private IPrototypeManager _prototypeManager = default!;
@@ -33,8 +36,8 @@ namespace Content.Client.Eye.Blinding
         public BlurryVisionOverlay()
         {
             IoCManager.InjectDependencies(this);
-            _cataractsShader = _prototypeManager.Index<ShaderPrototype>("Cataracts").InstanceUnique();
-            _circleMaskShader = _prototypeManager.Index<ShaderPrototype>("CircleMask").InstanceUnique();
+            _cataractsShader = _prototypeManager.Index<ShaderPrototype>(CataractsShader).InstanceUnique();
+            _circleMaskShader = _prototypeManager.Index<ShaderPrototype>(CircleMaskShader).InstanceUnique();
 
             _circleMaskShader.SetParameter("CircleMinDist", 0.0f);
             _circleMaskShader.SetParameter("CirclePow", NoMotion_Pow);

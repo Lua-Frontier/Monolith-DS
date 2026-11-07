@@ -109,7 +109,7 @@ public sealed partial class DocumentParsingManager
                             && children.Length > 1 && children.All(c => c is GuideEntityEmbed))
                         {
                             var gallery = new Content.Client._LuaM.Guidebook.GuideEntityCards { Margin = box.Margin };
-                            box.Dispose();
+                            box.Orphan();
                             control = gallery;
                         }
                         foreach (var child in children)

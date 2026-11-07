@@ -8,6 +8,7 @@ using Robust.Shared.Audio.Components;
 using Robust.Shared.Input;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Audio;
 using FancyWindow = Content.Client.UserInterface.Controls.FancyWindow;
 
 namespace Content.Client.Audio.Jukebox;
@@ -130,7 +131,7 @@ public sealed partial class JukeboxMenu : FancyWindow
 
         if (_entManager.TryGetComponent(_audio, out AudioComponent? audio))
         {
-            DurationLabel.Text = $@"{TimeSpan.FromSeconds(audio.PlaybackPosition):mm\:ss} / {_audioSystem.GetAudioLength(audio.FileName):mm\:ss}";
+            DurationLabel.Text = $@"{TimeSpan.FromSeconds(audio.PlaybackPosition):mm\:ss} / {_audioSystem.GetAudioLength(new ResolvedPathSpecifier(audio.FileName)):mm\:ss}";
         }
         else
         {

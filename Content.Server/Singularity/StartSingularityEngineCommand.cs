@@ -51,7 +51,7 @@ namespace Content.Server.Singularity
                 if (emitterXform.GridUid is not { } grid ||
                     !fieldTags.TryGetValue(grid, out var tags) ||
                     !_prototype.TryIndex<EntityPrototype>(emitterComponent.BoltType, out var bolt) ||
-                    !bolt.TryGetComponent<TagComponent>(out var boltTags, _componentFactory) ||
+                    !bolt.TryComp<TagComponent>(out var boltTags, _componentFactory) ||
                     !boltTags.Tags.Any(tag => tags.Contains(tag)))
                 {
                     continue;

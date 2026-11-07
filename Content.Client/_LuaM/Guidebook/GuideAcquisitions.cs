@@ -7,7 +7,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 namespace Content.Client._LuaM.Guidebook;
-public sealed class GuideAcquisitions : BoxContainer, IDocumentTag
+public sealed partial class GuideAcquisitions : BoxContainer, IDocumentTag
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
@@ -37,17 +37,16 @@ public sealed class GuideAcquisitions : BoxContainer, IDocumentTag
     }
     protected override void EnteredTree() { base.EnteredTree(); _system.Updated += Rebuild; _system.Request(); }
     protected override void ExitedTree() { _system.Updated -= Rebuild; base.ExitedTree(); }
-    protected override void Dispose(bool disposing) { _system.Updated -= Rebuild; base.Dispose(disposing); }
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
         _kind = args.GetValueOrDefault("Kind", "armor");
         if (_kind == "uplink") { control = new GuideStorePreview(); return true; }
         control = this; Rebuild(); return true;
     }
-    private string Name(string id) => _prototypes.TryIndex<EntityPrototype>(id, out var p) ? p.Name : id;
+    private new string Name(string id) => _prototypes.TryIndex<EntityPrototype>(id, out var p) ? p.Name : id;
     private void Rebuild()
     {
-        foreach (var child in _rows.Children.ToArray()) child.Dispose();
+        _rows.RemoveAllChildren();
         if (_system.Catalog is not { } data) { _status.Text = "Загрузка…"; _system.Request(); return; }
         var entries = data.Acquisitions.Where(e => e.Kind == _kind && e.Offers.Any(o => MatchesFaction(o.Faction))
             && Name(e.PrototypeId).Contains(_search.Text.Trim(), StringComparison.CurrentCultureIgnoreCase))

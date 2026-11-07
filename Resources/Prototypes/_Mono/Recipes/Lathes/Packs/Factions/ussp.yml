@@ -16,6 +16,13 @@
   - TearGasGrenadeUSSP
   - GrenadeShrapnelUSSP
   - GrenadeIncendiaryUSSP
+  - AutosurgeonKerenzikovUSSPRecipe # LuaM: USSP combat implants
+  - AutosurgeonHumanityChipMk2Recipe # LuaM: USSP combat implants
+  - AutosurgeonDermalArmorHeavyUSSPRecipe # LuaM: USSP combat implants
+  - AutosurgeonNutrientInjectorRecipe # LuaM: USSP service implants
+  - AutosurgeonWaterInjectorRecipe # LuaM: USSP service implants
+  - AutosurgeonBeerInjectorRecipe # LuaM: USSP service implants
+  - AutosurgeonVodkaInjectorRecipe # LuaM: USSP service implants
   
 - type: latheRecipePack
   id: MonoUSSPArmorDynamic

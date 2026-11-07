@@ -195,7 +195,7 @@ public abstract partial class CESharedZLevelsSystem
             var gridTile = _map.WorldToTile(gridUid, grid, worldPos);
 
             //Check all types of ZHeight entities
-            var query = _map.GetAnchoredEntitiesEnumerator(gridUid, grid, gridTile);
+            var query = _map.GetAnchoredEntities(gridUid, grid, gridTile);
             while (query.MoveNext(out var uid))
             {
                 if (!_zHighGroundQuery.TryComp(uid, out var heightComp))

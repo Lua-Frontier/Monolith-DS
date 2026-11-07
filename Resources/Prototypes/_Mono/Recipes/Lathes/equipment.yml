@@ -69,7 +69,7 @@
   materials:
     Copper: 600
     Durathread: 500
-    Iridite: 50
+    Plastitanium: 500 # LuaM: Iridite 50 > Plastitanium 500
 
 - type: latheRecipe
   id: ArmorPlateSpeed

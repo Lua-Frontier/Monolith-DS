@@ -1,0 +1,64 @@
+# Optical camo for the subdermal armor slot of the chest, takes the place of the dermal armor.
+
+- type: entity
+  parent: BaseOrganSubdermalArmor
+  id: OrganOpticalCamo
+  name: optical camo implant
+  description: A mesh of light-bending fibers under the skin. Makes you fully invisible for a few seconds, attacking or getting hurt breaks it.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Misc/optical_camo.rsi
+    state: icon
+  - type: Organ
+    onAdd:
+    - type: OpticalCamo
+      activateSound:
+        path: /Audio/Effects/stealthoff.ogg
+        params:
+          pitch: 1.4
+      deactivateSound:
+        path: /Audio/Effects/stealthoff.ogg
+  - type: SubdermalArmor # no damage modifiers, only marks the organ for surgeries
+  - type: CyberwareHumanity
+    cost: 2
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  id: ActionActivateOpticalCamo
+  name: Optical Camo
+  description: Turn fully invisible for 7 seconds and move 10% faster. Attacking or taking damage breaks the camo, the first hit deals 40% more damage.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    useDelay: 60
+    icon: { sprite: _LuaM/Objects/Misc/optical_camo.rsi, state: icon }
+    itemIconStyle: NoItem
+    event: !type:ActivateOpticalCamoEvent
+
+# PDV R&D
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonOpticalCamoPDV
+  name: PDV autosurgeon (optical camo)
+  description: Weaves a mesh of light-bending fibers under the skin. Goes into the subdermal armor slot.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Torso
+    targetOrgan: Subdermal
+    newPartProto: OrganOpticalCamo
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonOpticalCamoPDVFlatpack
+  name: PDV autosurgeon (optical camo) flatpack
+  description: A flatpack used for constructing a PDV autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonOpticalCamoPDV
+  - type: StaticPrice
+    price: 4000
+  - type: Sprite
+    layers:
+    - state: medical_lathe

@@ -19,7 +19,7 @@ namespace Content.Server.Power.EntitySystems
     [UsedImplicitly]
     public sealed partial class BatterySystem : SharedBatterySystem
     {
-        [Dependency] protected IGameTiming Timing = default!;
+        [Dependency] private IGameTiming Timing = default!;
 
         [Dependency] private SharedContainerSystem _containers = default!; // WD EDIT
 

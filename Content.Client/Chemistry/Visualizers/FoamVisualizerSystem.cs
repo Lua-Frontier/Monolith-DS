@@ -37,7 +37,7 @@ public sealed partial class FoamVisualizerSystem : VisualizerSystem<FoamVisualsC
             if (TryComp(uid, out AnimationPlayerComponent? animPlayer)
                 && !AnimationSystem.HasRunningAnimation(uid, animPlayer, FoamVisualsComponent.AnimationKey))
             {
-                AnimationSystem.Play(uid, animPlayer, comp.Animation, FoamVisualsComponent.AnimationKey);
+                AnimationSystem.Play((uid, animPlayer), comp.Animation, FoamVisualsComponent.AnimationKey);
             }
         }
     }
@@ -71,7 +71,7 @@ public sealed partial class FoamVisualizerSystem : VisualizerSystem<FoamVisualsC
             return;
 
         if (TryComp<SpriteComponent>(uid, out var sprite))
-            sprite.Visible = false;
+            SpriteSystem.SetVisible((uid, sprite), false);
     }
 }
 

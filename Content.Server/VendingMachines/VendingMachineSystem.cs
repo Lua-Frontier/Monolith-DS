@@ -296,7 +296,7 @@ namespace Content.Server.VendingMachines
             if (string.IsNullOrEmpty(entry.ID))
                 return false;
 
-            if (!TryComp<TransformComponent>(vendComponent.Owner, out var transformComp))
+            if (!TryComp(uid, out TransformComponent? transformComp))
                 return false;
 
             // Start Ejecting, and prevent users from ordering while anim playing
@@ -342,7 +342,7 @@ namespace Content.Server.VendingMachines
             if (price == 0)
                 price = 20;
 
-            if (TryComp<MarketModifierComponent>(component.Owner, out var modifier))
+            if (TryComp<MarketModifierComponent>(uid, out var modifier))
                 price *= modifier.Mod;
 
             var totalPrice = component.RequiresCash ? (int) price : 0;
@@ -455,7 +455,7 @@ namespace Content.Server.VendingMachines
 
             if (vendComponent.EjectRandomCounter < 1)
             {
-                _audioSystem.PlayPvs(_audioSystem.GetSound(vendComponent.SoundDeny), uid);
+                _audioSystem.PlayPvs(vendComponent.SoundDeny, uid);
                 _popupSystem.PopupEntity(Loc.GetString("vending-machine-component-try-eject-access-abused"), uid, PopupType.MediumCaution);
                 return;
             }

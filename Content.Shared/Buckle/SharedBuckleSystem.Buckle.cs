@@ -485,7 +485,7 @@ public abstract partial class SharedBuckleSystem
                 buckleXform.Coordinates = oldBuckledXform.Coordinates.Offset(oldBuckledXform.LocalRotation.RotateVec(slotOffset)); // LuaM
             else if (strap.Comp.BuckleOffset != Vector2.Zero) // LuaM: else
             {
-                buckleXform.Coordinates = oldBuckledXform.Coordinates.Offset(strap.Comp.BuckleOffset);
+                _transform.SetCoordinates(buckle, buckleXform, oldBuckledXform.Coordinates.Offset(strap.Comp.BuckleOffset));
             }
         }
 

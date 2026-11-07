@@ -71,14 +71,14 @@ public partial class ChatBox : UIWidget
 
     private void OnMessageAdded(ChatMessage msg)
     {
-        Logger.DebugS("chat", $"{msg.Channel}: {msg.Message}");
+        Logger.GetSawmill("chat").Debug($"{msg.Channel}: {msg.Message}");
         if (!ChatInput.FilterButton.Popup.IsActive(msg.Channel))
         {
             return;
         }
 
         if (msg is { Read: false, AudioPath: { } })
-            _entManager.System<AudioSystem>().PlayGlobal(msg.AudioPath, Filter.Local(), false, AudioParams.Default.WithVolume(msg.AudioVolume));
+            _entManager.System<AudioSystem>().PlayGlobal(new ResolvedPathSpecifier(msg.AudioPath), Filter.Local(), false, AudioParams.Default.WithVolume(msg.AudioVolume));
 
         msg.Read = true;
 
@@ -161,7 +161,7 @@ public partial class ChatBox : UIWidget
         {
             int displayRepeat = repeat + 1;
             int sizeIncrease = Math.Min(displayRepeat / 6, 5);
-            formatted.AddMarkup(_loc.GetString("chat-system-repeated-message-counter",
+            formatted.AddMarkupOrThrow(_loc.GetString("chat-system-repeated-message-counter",
                 ("count", displayRepeat),
                 ("size", 8+sizeIncrease)
             ));
@@ -249,18 +249,5 @@ public partial class ChatBox : UIWidget
     {
         // Warn typing indicator about focus
         _controller.NotifyChatFocus(false);
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (!disposing) return;
-        _controller.UnregisterChat(this);
-        ChatInput.Input.OnTextEntered -= OnTextEntered;
-        ChatInput.Input.OnKeyBindDown -= OnInputKeyBindDown;
-        ChatInput.Input.OnTextChanged -= OnTextChanged;
-        ChatInput.ChannelSelector.OnChannelSelect -= OnChannelSelect;
-        _cfg.UnsubValueChanged(CCVars.CoalesceIdenticalMessages, UpdateCoalescence); // WD EDIT
     }
 }

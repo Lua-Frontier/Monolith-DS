@@ -71,6 +71,27 @@ public sealed partial class AutoSurgeonComponent : Component
     /// </summary>
     [DataField]
     public float HumanityCost;
+
+    /// <summary>
+    /// Upgrades with the same key share one humanity cost, so a better version replaces the cost instead of adding to it.
+    /// The autosurgeon prototype is used if null.
+    /// </summary>
+    [DataField]
+    public string? HumanityKey;
+
+    /// <summary>
+    /// If the user already has one of <see cref="ComponentsToUser"/>, overwrite it with this autosurgeon's values
+    /// instead of skipping it. Used by improved versions, like platelet factories Mk II.
+    /// </summary>
+    [DataField]
+    public bool ReplaceUserComponents;
+
+    /// <summary>
+    /// Tier of this upgrade. A replacing upgrade only works if its tier is higher than the one already installed.
+    /// 0 means no tier.
+    /// </summary>
+    [DataField]
+    public int UpgradeTier;
     // LuaM-end
 
     [DataField]

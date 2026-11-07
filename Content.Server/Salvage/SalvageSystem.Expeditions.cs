@@ -361,7 +361,7 @@ public sealed partial class SalvageSystem
 
         foreach (var reward in comp.Rewards)
         {
-            Spawn(reward, (Transform(_random.Pick(palletList)).MapPosition));
+            Spawn(reward, _transform.GetMapCoordinates(_random.Pick(palletList)));
         }
     }
 

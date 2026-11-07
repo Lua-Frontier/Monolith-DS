@@ -171,7 +171,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         if (!TryComp<ActorComponent>(player, out var actor))
             return;
 
-        if (_prototypeManager.TryIndex(args.BoxProto, out var proto) && proto.TryGetComponent<SafetyDepositBoxComponent>(out var boxComponent, _componentFactory))
+        if (_prototypeManager.TryIndex(args.BoxProto, out var proto) && proto.TryComp<SafetyDepositBoxComponent>(out var boxComponent, _componentFactory))
         {
             cost = boxComponent.Cost;
             prototypeId = proto;
@@ -230,7 +230,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
     public int GetBoxCost(EntProtoId boxProto)
     {
         if (_prototypeManager.TryIndex(boxProto, out var proto) &&
-            proto.TryGetComponent<SafetyDepositBoxComponent>(out var boxComponent, _componentFactory))
+            proto.TryComp<SafetyDepositBoxComponent>(out var boxComponent, _componentFactory))
             return boxComponent.Cost;
         else
             return 0;
