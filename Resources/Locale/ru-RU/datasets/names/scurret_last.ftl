@@ -1,0 +1,54 @@
+# Вторая часть имени скуррета — «качественное» имя: черта болот планеты Ва-ва, с которой его связывает община.
+
+names-scurret-last-dataset-1 = Ва
+names-scurret-last-dataset-2 = Деревьев
+names-scurret-last-dataset-3 = Растений
+names-scurret-last-dataset-4 = Скал
+names-scurret-last-dataset-5 = Рек
+names-scurret-last-dataset-6 = Рощ
+names-scurret-last-dataset-7 = Озёр
+names-scurret-last-dataset-8 = Болот
+names-scurret-last-dataset-9 = Родников
+names-scurret-last-dataset-10 = Камышей
+names-scurret-last-dataset-11 = Солнца
+names-scurret-last-dataset-12 = Дождя
+names-scurret-last-dataset-13 = Облаков
+names-scurret-last-dataset-14 = Снегопадов
+names-scurret-last-dataset-15 = Камней
+names-scurret-last-dataset-16 = Галек
+names-scurret-last-dataset-17 = Рыб
+names-scurret-last-dataset-18 = Насекомых
+names-scurret-last-dataset-19 = Плодов
+names-scurret-last-dataset-20 = Цветов
+names-scurret-last-dataset-21 = Соцветий
+names-scurret-last-dataset-22 = Туманов
+names-scurret-last-dataset-23 = Ив
+names-scurret-last-dataset-24 = Ольх
+names-scurret-last-dataset-25 = Берёз
+names-scurret-last-dataset-26 = Тополей
+names-scurret-last-dataset-27 = Бархатцев
+names-scurret-last-dataset-28 = Рябин
+names-scurret-last-dataset-29 = Орхидей
+names-scurret-last-dataset-30 = Тростников
+names-scurret-last-dataset-31 = Лилий
+names-scurret-last-dataset-32 = Фиалок
+names-scurret-last-dataset-33 = Клёнов
+names-scurret-last-dataset-34 = Дубов
+names-scurret-last-dataset-35 = Орешников
+# И СЭР ГИДЕОН ОФНИР
+names-scurret-last-dataset-36 = Всеведущего
+names-scurret-last-dataset-37 = Омутов
+names-scurret-last-dataset-38 = Вод
+names-scurret-last-dataset-39 = Водохранилищ
+names-scurret-last-dataset-40 = Плотин
+names-scurret-last-dataset-41 = Пустошей
+names-scurret-last-dataset-42 = Топей
+names-scurret-last-dataset-43 = Храмов
+names-scurret-last-dataset-44 = Холмов
+names-scurret-last-dataset-45 = Перелесков
+names-scurret-last-dataset-46 = Полей
+names-scurret-last-dataset-47 = Предков
+names-scurret-last-dataset-48 = Лесов
+names-scurret-last-dataset-49 = Тайн
+# Никто толком не знает, как это попало в словарь.
+names-scurret-last-dataset-50 = Космического Хорька
