@@ -42,7 +42,18 @@ public sealed partial class AnimalHusbandrySystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ReproductiveComponent, MindAddedMessage>(OnMindAdded);
+        SubscribeLocalEvent<InfantComponent, MapInitEvent>(OnInfantMapInit);
         SubscribeLocalEvent<InfantComponent, RefreshNameModifiersEvent>(OnRefreshNameModifiers);
+    }
+
+    // Infants spawned straight from a prototype have no end time, since time offsets in prototypes are always zero.
+    private void OnInfantMapInit(Entity<InfantComponent> entity, ref MapInitEvent args)
+    {
+        if (entity.Comp.InfantEndTime != TimeSpan.Zero)
+            return;
+
+        entity.Comp.InfantEndTime = _timing.CurTime + entity.Comp.InfantDuration;
+        _nameMod.RefreshNameModifiers(entity.Owner);
     }
 
     // we express EZ-pass terminate the pregnancy if a player takes the role

@@ -1105,6 +1105,9 @@
 - type: Tag
   id: Screwdriver
 
+- type: Tag
+  id: Scurret
+
 - type: Tag # Flags items that scurrets can wear in their back and outerwear slots.
   id: ScurretWearable
 
