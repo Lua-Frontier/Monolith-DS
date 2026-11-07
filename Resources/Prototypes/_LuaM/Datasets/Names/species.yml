@@ -2,19 +2,19 @@
   id: NamesSharkFirstMale
   values:
     prefix: names-shark-first-male-dataset-
-    count: 324
+    count: 365
 
 - type: localizedDataset
   id: NamesSharkFirstFemale
   values:
     prefix: names-shark-first-female-dataset-
-    count: 320
+    count: 359
 
 - type: localizedDataset
   id: NamesSharkLast
   values:
     prefix: names-shark-last-dataset-
-    count: 313
+    count: 400
 
 - type: localizedDataset
   id: NamesAvaliMale

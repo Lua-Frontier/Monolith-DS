@@ -27,10 +27,14 @@ public sealed partial class DeliveryUiFragment : BoxContainer
     private const int FirstSectionCategory = 2;
 
     private static readonly Color HintColor = Color.FromHex("#A0A0A0");
-    private static readonly Color CardColor = Color.FromHex("#25252A");
-    private static readonly Color RowColor = Color.FromHex("#1C2029");
-    private static readonly Color RowAltColor = Color.FromHex("#222733");
-    private static readonly Color AccentColor = Color.FromHex("#F5C518");
+    private static readonly Color CardColor = Color.FromHex("#25231C");
+    private static readonly Color RowColor = Color.FromHex("#1B1A16");
+    private static readonly Color RowAltColor = Color.FromHex("#23211B");
+    private static readonly Color AccentColor = Color.FromHex("#F2C21B");
+    private static readonly Color AppBackgroundColor = Color.FromHex("#141310");
+    private static readonly Color InkColor = Color.FromHex("#141414");
+    private static readonly Color TabColor = Color.FromHex("#2B2820");
+    private static readonly Color DisabledColor = Color.FromHex("#3A372E");
 
     // -- Каталог кешируется на весь клиент: сервер шлёт его только по запросу при смене хеша
     private static int _cachedHash;
@@ -62,6 +66,15 @@ public sealed partial class DeliveryUiFragment : BoxContainer
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+
+        AppBackground.PanelOverride = new StyleBoxFlat { BackgroundColor = AppBackgroundColor };
+        var header = new StyleBoxFlat { BackgroundColor = AccentColor };
+        ShopHeader.PanelOverride = header;
+        CourierHeader.PanelOverride = header;
+        ShopTitleLabel.FontColorOverride = InkColor;
+        ShopBalanceLabel.FontColorOverride = InkColor;
+        CourierProfileLabel.FontColorOverride = InkColor;
+        CourierNameLabel.FontColorOverride = InkColor;
 
         CatalogTabButton.OnPressed += _ => SetOrdersTab(false);
         OrdersTabButton.OnPressed += _ => SetOrdersTab(true);
@@ -121,6 +134,7 @@ public sealed partial class DeliveryUiFragment : BoxContainer
         BannerBox.Visible = state.Mode is DeliveryUiMode.Maintenance or DeliveryUiMode.AccountUnavailable;
         ShopBox.Visible = state.Mode == DeliveryUiMode.Shop;
         CourierBox.Visible = state.Mode == DeliveryUiMode.Courier;
+        AppBackground.Visible = ShopBox.Visible || CourierBox.Visible;
 
         switch (state.Mode)
         {
@@ -149,6 +163,24 @@ public sealed partial class DeliveryUiFragment : BoxContainer
         OrdersPanel.Visible = orders;
         CatalogTabButton.Pressed = !orders;
         OrdersTabButton.Pressed = orders;
+        PaintButton(CatalogTabButton, !orders);
+        PaintButton(OrdersTabButton, orders);
+    }
+
+    private static void PaintButton(Button button, bool accent)
+    {
+        var color = button.Disabled ? DisabledColor : accent ? AccentColor : TabColor;
+        button.StyleBoxOverride = new StyleBoxFlat
+        {
+            BackgroundColor = color,
+            ContentMarginLeftOverride = 6,
+            ContentMarginRightOverride = 6,
+            ContentMarginTopOverride = 2,
+            ContentMarginBottomOverride = 2,
+        };
+        // -- Стиль кнопок перекрашивает их через modulate по состоянию: без белого оверрайда жёлтый становится зелёным
+        button.ModulateSelfOverride = Color.White;
+        button.Label.FontColorOverride = accent && !button.Disabled ? InkColor : null;
     }
 
     private void UpdateShop(DeliveryUiState state)
@@ -361,6 +393,7 @@ public sealed partial class DeliveryUiFragment : BoxContainer
 
         var canOrder = CanOrder(out var itemCount, out var total);
         OrderButton.Disabled = !canOrder;
+        PaintButton(OrderButton, true);
 
         var totalColor = total < DeliveryRules.MinOrderTotal || total > _balance ? "#E06060" : "#80E080";
         CartSummary.SetMessage(FormattedMessage.FromMarkupOrThrow(Loc.GetString("delivery-ui-cart-summary",
@@ -541,6 +574,7 @@ public sealed partial class DeliveryUiFragment : BoxContainer
             };
             var id = order.Id;
             take.OnPressed += _ => OnTake?.Invoke(id);
+            PaintButton(take, true);
             box.AddChild(take);
         }
 
@@ -548,7 +582,12 @@ public sealed partial class DeliveryUiFragment : BoxContainer
         {
             HorizontalExpand = true,
             Margin = new Thickness(0, 2),
-            PanelOverride = new StyleBoxFlat { BackgroundColor = CardColor },
+            PanelOverride = new StyleBoxFlat
+            {
+                BackgroundColor = CardColor,
+                BorderColor = AccentColor,
+                BorderThickness = new Thickness(3, 0, 0, 0),
+            },
         };
         panel.AddChild(box);
         return panel;

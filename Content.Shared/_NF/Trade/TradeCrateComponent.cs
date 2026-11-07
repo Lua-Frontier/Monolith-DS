@@ -1,4 +1,3 @@
-using System.Threading;
 using Content.Shared.Cargo;
 using Robust.Shared.GameStates;
 
@@ -51,9 +50,4 @@ public sealed partial class TradeCrateComponent : Component
     /// </summary>
     [ViewVariables]
     public EntityUid DestinationStation;
-
-    /// <summary>
-    /// Cancellation token used to disable the express marker on the crate.
-    /// </summary>
-    public CancellationTokenSource? ExpressCancelToken;
 }

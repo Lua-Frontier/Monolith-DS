@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 10/23/2026 15:19:59
-  entityCount: 10402
+  entityCount: 10398
 maps:
 - 1
 grids:
@@ -12833,23 +12833,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -22.505615,-5.795524
-      parent: 2
-- proto: BoxMailCapsulePrimed
-  entities:
-  - uid: 682
-    components:
-    - type: Transform
-      pos: -33.346157,28.35439
-      parent: 2
-  - uid: 683
-    components:
-    - type: Transform
-      pos: -33.361794,28.76064
-      parent: 2
-  - uid: 684
-    components:
-    - type: Transform
-      pos: -33.740406,28.626553
       parent: 2
 - proto: BoxPaper
   entities:
@@ -47394,7 +47377,7 @@ entities:
   - uid: 6017
     components:
     - type: Transform
-      pos: -31.5,27.5
+      pos: -33.5,28.5
       parent: 2
 - proto: MaintenanceInsulsSpawner
   entities:
@@ -50095,11 +50078,6 @@ entities:
     components:
     - type: Transform
       pos: -44.5,-10.5
-      parent: 2
-  - uid: 6353
-    components:
-    - type: Transform
-      pos: -33.5,28.5
       parent: 2
   - uid: 6354
     components:

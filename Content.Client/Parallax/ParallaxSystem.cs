@@ -24,6 +24,8 @@ public sealed partial class ParallaxSystem : SharedParallaxSystem
         _overlay.AddOverlay(new ParallaxOverlay());
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnReload);
         SubscribeLocalEvent<ParallaxComponent, AfterAutoHandleStateEvent>(OnAfterAutoHandleState);
+        // -- Карты без ParallaxComponent рисуют Fallback, а заранее грузился только Default: без этого фон чёрный
+        _ = _parallax.LoadParallaxByName(Fallback); // LuaM
     }
 
     private void OnReload(PrototypesReloadedEventArgs obj)
@@ -33,6 +35,7 @@ public sealed partial class ParallaxSystem : SharedParallaxSystem
 
         _parallax.UnloadParallax(Fallback);
         _parallax.LoadDefaultParallax();
+        _ = _parallax.LoadParallaxByName(Fallback); // LuaM
 
         foreach (var comp in EntityQuery<ParallaxComponent>(true))
         {

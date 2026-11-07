@@ -145,7 +145,7 @@ public static class SkinColor
         newColor.Y *= MaxTintedHuesSaturation;
         newColor.Z = MathHelper.Lerp(MinTintedHuesLightness, 1f, newColor.Z);
 
-        return Color.FromHsv(newColor);
+        return Color.FromHsl(newColor); // LuaM: FromHsv > FromHsl, the value is HSL and the HSV result failed VerifyTintedHues
     }
 
     /// <summary>

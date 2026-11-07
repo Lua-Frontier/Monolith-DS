@@ -21,6 +21,7 @@
   - External
   - Service
   - Frontier
+  - Mail
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

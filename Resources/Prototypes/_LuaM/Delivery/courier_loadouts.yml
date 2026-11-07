@@ -23,11 +23,18 @@
     outerClothing: ClothingOuterArmorBasicSlim
 
 - type: loadout
-  id: CourierWeaponLaserGun
-  price: 1000
+  id: CourierWeaponLaserGunCourier
+  price: 0
   storage:
     back:
-    - WeaponLaserGun
+    - WeaponLaserGunLuaMCourier
+
+- type: loadout
+  id: CourierSurvivalKnife
+  price: 650
+  storage:
+    back:
+    - SurvivalKnifeLuaMCourier
 
 - type: loadout
   id: CourierFlashlightSeclite
@@ -107,19 +114,21 @@
   id: CourierKit
   name: loadout-group-courier-kit
   minLimit: 0
+  maxLimit: 3
   loadouts:
+  - CourierWeaponLaserGunCourier
+  - CourierSurvivalKnife
   - CourierFlashlightSeclite
+  fallbacks:
+  - CourierWeaponLaserGunCourier
 
 - type: loadoutGroup
   id: CourierFirearm
   name: loadout-group-weapon-civilian
   minLimit: 0
-  loadouts:
-  - CourierWeaponLaserGun
+  loadouts: []
   subgroups:
   - ContractorFirearm
-  fallbacks:
-  - CourierWeaponLaserGun
 
 - type: loadout
   id: CourierClothingBackpackThermobag

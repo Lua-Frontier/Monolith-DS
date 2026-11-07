@@ -23,6 +23,7 @@
   - External # Frontier
   - Service
   - Frontier # Frontier
+  - Mail # LuaM
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

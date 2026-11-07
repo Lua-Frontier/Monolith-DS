@@ -65,4 +65,4 @@ names-arachnid-last-dataset-64 = Вириданс
 names-arachnid-last-dataset-65 = Валькенаери
 names-arachnid-last-dataset-66 = Валькенаериус
 names-arachnid-last-dataset-67 = Уишарти
-names-arachnid-last-dataset-68 = X-Нотата
+names-arachnid-last-dataset-68 = Х-Нотата

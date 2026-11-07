@@ -1,13 +1,15 @@
 using System.Numerics;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Utility;
 
 namespace Content.Client._LuaM.UserInterface;
 
 public sealed class HazardBanner : HazardBannerBackground
 {
-    private const string ConeTexture = "/Textures/Clothing/Head/Misc/cone.rsi/icon.png";
+    private static readonly SpriteSpecifier.Rsi ConeSprite = new(new ResPath("/Textures/Clothing/Head/Misc/cone.rsi"), "icon");
 
     public static readonly Color WarningColor = Color.FromHex("#F5C518");
     public static readonly Color AlertStripeColor = Color.FromHex("#D0453A");
@@ -100,9 +102,11 @@ public sealed class HazardBanner : HazardBannerBackground
 
     private static TextureRect CreateCone()
     {
+        // -- Путь к png внутри rsi есть только в распакованных ресурсах: у игроков со сборкой вместо конуса был Error
+        var sprites = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<SpriteSystem>();
         return new TextureRect
         {
-            TexturePath = ConeTexture,
+            Texture = sprites.Frame0(ConeSprite),
             Stretch = TextureRect.StretchMode.KeepAspectCentered,
             SetSize = new Vector2(48, 48),
         };

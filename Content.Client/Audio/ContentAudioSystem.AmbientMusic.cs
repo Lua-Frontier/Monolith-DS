@@ -124,7 +124,8 @@ public sealed partial class ContentAudioSystem
             _initialStationMusicTimer += frameTime;
             if (_initialStationMusicTimer > InitialStationMusicTimeToDrop) // LuaM
             {
-                ReplayAmbientMusic();
+                if (_currentlyPlaying != MusicType.Combat) // LuaM
+                    ReplayAmbientMusic();
                 _initialStationMusicBool = false;
                 _initialStationMusicTimer = 0;
                 _replayAmbientMusicTimer = 0;
@@ -228,7 +229,11 @@ public sealed partial class ContentAudioSystem
 
         string path = _random.Pick(soundcol.PickFiles).ToString(); //picks a random track. if someone really cared we could make it make sure it doesnt play the same track twice
 
-        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, _ambientMusicFadeInTime, false);
+        // LuaM start
+        // -- Перезапуск во время боя должен идти с громкостью боевой музыки, а не музыки окружения
+        var combat = _currentlyPlaying == MusicType.Combat;
+        PlayMusicTrack(path, _musicProto.Sound.Params.Volume, combat ? _combatMusicFadeInTime : _ambientMusicFadeInTime, combat);
+        // LuaM end
     }
 
     private void OnBiomeChange(ref SpaceBiomeSwapMessage ev)

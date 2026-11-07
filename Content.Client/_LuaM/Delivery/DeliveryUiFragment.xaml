@@ -6,11 +6,15 @@
                              VerticalExpand="True">
     <luam:HazardBanner Name="BannerBox" Visible="False"/>
 
+    <PanelContainer Name="AppBackground" HorizontalExpand="True" VerticalExpand="True">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
     <BoxContainer Name="ShopBox" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="5" Visible="False">
-        <BoxContainer Orientation="Horizontal">
-            <Label Text="{Loc 'delivery-program-name'}" StyleClasses="LabelHeading" HorizontalExpand="True"/>
-            <Label Name="ShopBalanceLabel" VerticalAlignment="Center"/>
-        </BoxContainer>
+        <PanelContainer Name="ShopHeader" HorizontalExpand="True">
+            <BoxContainer Orientation="Horizontal" Margin="6 2">
+                <Label Name="ShopTitleLabel" Text="{Loc 'delivery-program-name'}" StyleClasses="LabelHeading" HorizontalExpand="True"/>
+                <Label Name="ShopBalanceLabel" VerticalAlignment="Center"/>
+            </BoxContainer>
+        </PanelContainer>
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 4 0 0">
             <Button Name="CatalogTabButton" Text="{Loc 'delivery-ui-tab-catalog'}" ToggleMode="True" StyleClasses="OpenRight" HorizontalExpand="True"/>
             <Button Name="OrdersTabButton" ToggleMode="True" StyleClasses="OpenLeft" HorizontalExpand="True"/>
@@ -45,13 +49,19 @@
 
     <ScrollContainer Name="CourierBox" HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" Visible="False">
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
-            <Label Text="{Loc 'delivery-ui-courier-profile'}" StyleClasses="LabelSubText"/>
-            <Label Name="CourierNameLabel" StyleClasses="LabelHeading"/>
-            <Label Name="CourierStatsLabel"/>
+            <PanelContainer Name="CourierHeader" HorizontalExpand="True">
+                <BoxContainer Orientation="Vertical" Margin="6 2">
+                    <Label Name="CourierProfileLabel" Text="{Loc 'delivery-ui-courier-profile'}" StyleClasses="LabelSubText"/>
+                    <Label Name="CourierNameLabel" StyleClasses="LabelHeading"/>
+                </BoxContainer>
+            </PanelContainer>
+            <Label Name="CourierStatsLabel" Margin="0 4 0 0"/>
             <Label Name="CourierBalanceLabel"/>
             <Label Text="{Loc 'delivery-ui-active-orders'}" StyleClasses="LabelSubText" Margin="0 8 0 0"/>
             <Label Name="NoCourierOrdersLabel" Text="{Loc 'delivery-ui-no-orders'}" FontColorOverride="#A0A0A0"/>
             <BoxContainer Name="CourierOrdersList" Orientation="Vertical" HorizontalExpand="True"/>
         </BoxContainer>
     </ScrollContainer>
+    </BoxContainer>
+    </PanelContainer>
 </delivery:DeliveryUiFragment>

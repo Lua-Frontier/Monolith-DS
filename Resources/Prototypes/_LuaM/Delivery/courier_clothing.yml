@@ -48,4 +48,13 @@
     sprite: _LuaM/Clothing/Back/Backpacks/courier_thermobag.rsi
   - type: Clothing
     sprite: _LuaM/Clothing/Back/Backpacks/courier_thermobag.rsi
+  - type: Storage
+    maxItemSize: Huge
+    defaultStorageOrientation: Vertical
+    grid:
+    - 0,0,7,4
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,7,5
   - type: AntiRottingContainer

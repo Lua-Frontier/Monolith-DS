@@ -1,0 +1,38 @@
+- type: entity
+  parent: WeaponLaserGun
+  id: WeaponLaserGunLuaMCourier
+  name: courier laser blaster
+  description: A ColossDelivery self-defense blaster with a sturdier battery. A sticker on the grip reads "RETURN AT THE END OF THE SHIFT".
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Battery/courier_laser.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: HitscanBatteryAmmoProvider
+    proto: RedMediumLaser
+    fireCost: 25
+
+- type: entity
+  parent: SurvivalKnife
+  id: SurvivalKnifeLuaMCourier
+  name: courier knife
+  description: A ColossDelivery survival knife with a yellow and black handle. Sharper than it looks and great for slicing bread.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Melee/courier_knife.rsi
+    state: icon
+  - type: Item
+    sprite: _LuaM/Objects/Weapons/Melee/courier_knife.rsi
+    storedSprite:
+      state: storage
+      sprite: _LuaM/Objects/Weapons/Melee/courier_knife.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.2
+    damage:
+      types:
+        Slash: 22

@@ -16,6 +16,16 @@
           Quantity: 5
   - type: Sprite
     sprite: _LuaM/Objects/Consumable/Drinks/nemoloko.rsi
+    layers:
+    - state: icon
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "icon_open"}
+          False: {state: "icon"}
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -331,15 +341,15 @@
   parent: DrinkBottlePlasticBaseFull
   id: DrinkLuaMKvassBottle
   name: kvass barrel
-  description: A plastic barrel of live-fermented bread kvass, 1.5 litres.
+  description: A plastic barrel of live-fermented bread kvass.
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 150
+        maxVol: 120
         reagents:
         - ReagentId: LuaMKvass
-          Quantity: 150
+          Quantity: 120
   - type: Label
     currentLabel: reagent-name-luam-kvass
   - type: Sprite

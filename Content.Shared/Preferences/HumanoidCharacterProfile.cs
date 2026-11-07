@@ -29,7 +29,7 @@ namespace Content.Shared.Preferences
     public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
         private static readonly Regex RestrictedNameRegex = new("[^А-Яа-яёЁ0-9' -]"); // LuaM: (@"[^A-Za-z0-9 '\-]") > ("[^А-Яа-яёЁ0-9' -]")
-        private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
+        private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|(?<![\w'\-])(?<word>\w)(?=[\w'\-]*$)"); // LuaM: apostrophes and hyphens no longer split a word
 
         public const int MaxNameLength = 32;
         public const int MaxLoadoutNameLength = 32;
@@ -307,6 +307,11 @@ namespace Content.Shared.Preferences
             }
 
             var name = GetName(species, gender);
+            // LuaM start
+            // -- Слишком длинное имя сервер обрезает при сохранении: берём другое
+            for (var attempt = 0; attempt < 10 && name.Length > MaxNameLength; attempt++)
+                name = GetName(species, gender);
+            // LuaM end
 // Corvax-TTS-start:
             var voiceChoices = prototypeManager
                 .EnumeratePrototypes<TTSVoicePrototype>()

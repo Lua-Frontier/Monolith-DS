@@ -82,6 +82,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
         UpdateConsole(frameTime);
         UpdateTelepad(frameTime);
         UpdateBounty();
+        UpdateTradeCrates(); // LuaM
     }
 
     [PublicAPI]
