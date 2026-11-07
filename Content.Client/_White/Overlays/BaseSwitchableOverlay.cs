@@ -8,7 +8,8 @@ namespace Content.Client._White.Overlays;
 
 public sealed partial class BaseSwitchableOverlay<TComp> : Overlay where TComp : SwitchableVisionOverlayComponent
 {
-    private static readonly ProtoId<ShaderPrototype> WWDPNightVisionShader = "WWDPNightVision";
+    // Not static: static prototype id fields are not allowed inside generic types.
+    private readonly ProtoId<ShaderPrototype> _nightVisionShader = "WWDPNightVision";
 
     [Dependency] private IPrototypeManager _prototype = default!;
 
@@ -24,7 +25,7 @@ public sealed partial class BaseSwitchableOverlay<TComp> : Overlay where TComp :
     public BaseSwitchableOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _shader = _prototype.Index<ShaderPrototype>(WWDPNightVisionShader).InstanceUnique();
+        _shader = _prototype.Index<ShaderPrototype>(_nightVisionShader).InstanceUnique();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
