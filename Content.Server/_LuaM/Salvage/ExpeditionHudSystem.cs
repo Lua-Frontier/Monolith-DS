@@ -84,7 +84,7 @@ public sealed partial class ExpeditionHudSystem : EntitySystem
         foreach (var id in expedition.Rewards)
         {
             if (_proto.TryIndex<EntityPrototype>(id, out var proto)
-                && proto.TryGetComponent<StaticPriceComponent>(out var price, _factory))
+                && proto.TryComp<StaticPriceComponent>(out var price, _factory))
                 reward += price.Price;
         }
 

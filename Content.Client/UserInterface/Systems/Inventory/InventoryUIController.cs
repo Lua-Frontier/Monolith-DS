@@ -79,7 +79,7 @@ public sealed partial class InventoryUIController : UIController, IOnStateEntere
     {
         if (_strippingWindow != null)
         {
-            _strippingWindow.Dispose();
+            _strippingWindow.Orphan();
             _strippingWindow = null;
         }
 
@@ -243,7 +243,7 @@ public sealed partial class InventoryUIController : UIController, IOnStateEntere
     {
         if (_inventoryHotbar == null)
         {
-            Logger.Warning("Tried to toggle inventory bar when none are assigned");
+            Logger.GetSawmill("user_interface").Warning("Tried to toggle inventory bar when none are assigned");
             return;
         }
 
@@ -364,8 +364,9 @@ public sealed partial class InventoryUIController : UIController, IOnStateEntere
             }
         }
 
-        hoverSprite.CopyFrom(sprite);
-        hoverSprite.Color = fits ? new Color(0, 255, 0, 127) : new Color(255, 0, 0, 127);
+        var spriteSys = _entities.System<SpriteSystem>();
+        spriteSys.CopySprite((held, sprite), (hoverEntity, hoverSprite));
+        spriteSys.SetColor((hoverEntity, hoverSprite), fits ? new Color(0, 255, 0, 127) : new Color(255, 0, 0, 127));
 
         control.HoverSpriteView.SetEntity(hoverEntity);
     }

@@ -6,6 +6,7 @@ namespace Content.Shared.Weapons.Ranged.Events;
 /// <summary>
 /// Raised on a gun when it would like to take the specified amount of ammo.
 /// </summary>
+[Virtual]
 public class TakeAmmoEvent : EntityEventArgs // Mono: unseal
 {
     public readonly EntityUid? User;

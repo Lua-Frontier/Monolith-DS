@@ -113,15 +113,4 @@ public sealed partial class ArticleEditorPanel : Control
         ContentField.TextRope = Rope.Leaf.Empty;
         ArticleDraftUpdated?.Invoke(string.Empty, string.Empty);
     }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-        if (!disposing)
-            return;
-
-        ButtonPreview.OnPressed -= OnPreview;
-        ButtonCancel.OnPressed -= OnCancel;
-        ButtonPublish.OnPressed -= OnPublish;
-    }
 }

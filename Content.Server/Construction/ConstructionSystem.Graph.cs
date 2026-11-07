@@ -365,8 +365,12 @@ namespace Content.Server.Construction
             // Transform transferring.
             var newTransform = Transform(newUid);
             TransformSystem.AttachToGridOrMap(newUid, newTransform); // in case in hands or a container
-            newTransform.LocalRotation = transform.LocalRotation;
+            TransformSystem.SetLocalRotation(newUid, transform.LocalRotation, newTransform);
+            // The new entity is not initialized yet: the setter only stores the flag and the entity gets anchored
+            // during initialization. AnchorEntity would attach it to the grid before initialization.
+#pragma warning disable CS0618
             newTransform.Anchored = transform.Anchored;
+#pragma warning restore CS0618
 
             // Container transferring.
             if (containerManager != null)

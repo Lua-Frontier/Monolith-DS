@@ -78,7 +78,7 @@ public sealed partial class PlaceTileEntityEvent : WorldTargetActionEvent
 [Serializable, NetSerializable]
 public sealed partial class PlaceTileEntityDoAfterEvent : DoAfterEvent
 {
-    public NetCoordinates Target;
+    public new NetCoordinates Target;
 
     public EntProtoId? Entity;
 

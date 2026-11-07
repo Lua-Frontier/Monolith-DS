@@ -19,10 +19,11 @@ using Robust.Shared.Utility;
 namespace Content.Client._LuaM.Guidebook;
 
 /// <summary>Shipyards first; short comparisons first; technical details loaded on demand.</summary>
-public sealed class GuideCatalog : BoxContainer, IDocumentTag
+public sealed partial class GuideCatalog : BoxContainer, IDocumentTag
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
     private readonly GuidebookCatalogClientSystem _system;
     private readonly LineEdit _search = new() { PlaceHolder = "Поиск по названию…", HorizontalExpand = true };
     private readonly Label _status = new();
@@ -96,14 +97,14 @@ public sealed class GuideCatalog : BoxContainer, IDocumentTag
         return result;
     }
 
-    private string Name(string id) => _prototypes.TryIndex<EntityPrototype>(id, out var prototype) ? prototype.Name : id;
+    private new string Name(string id) => _prototypes.TryIndex<EntityPrototype>(id, out var prototype) ? prototype.Name : id;
     private bool Matches(params string[] values) => string.IsNullOrWhiteSpace(_search.Text)
         || values.Any(v => v.Contains(_search.Text.Trim(), StringComparison.CurrentCultureIgnoreCase));
     private static string Money(int value) => value.ToString("N0", CultureInfo.GetCultureInfo("ru-RU")) + " кр.";
 
     private void Rebuild()
     {
-        foreach (var child in _rows.Children.ToArray()) child.Dispose();
+        _rows.RemoveAllChildren();
         if (_system.Catalog is not { } data)
         {
             _status.Text = "Загрузка…";
@@ -148,7 +149,7 @@ public sealed class GuideCatalog : BoxContainer, IDocumentTag
             if (entry is GuidebookVesselEntry ship)
             {
                 var subtitle = (ship.Purchasable ? Money(ship.Price) : "Только ваучер") + " · " +
-                    string.Join(", ", ship.Engines.Select(e => Loc.TryGetString("shipyard-console-engine-" + e, out var term) ? term : e));
+                    string.Join(", ", ship.Engines.Select(e => _loc.TryGetString("shipyard-console-engine-" + e, out var term) ? term : e));
                 browser.AddEntry(ship.Name, subtitle, null, body => FillVessel(body, ship, data, equipment, selected?.ConsoleTypes));
             }
             else
@@ -191,7 +192,7 @@ public sealed class GuideCatalog : BoxContainer, IDocumentTag
     private void FillVessel(BoxContainer body, GuidebookVesselEntry vessel, GuidebookCatalog data,
         Dictionary<string, GuidebookEquipmentEntry> equipment, List<string>? consoleTypes)
     {
-        string Term(string type, string value) => Loc.TryGetString($"shipyard-console-{type}-{value}", out var localized) ? localized : value;
+        string Term(string type, string value) => _loc.TryGetString($"shipyard-console-{type}-{value}", out var localized) ? localized : value;
         Row(body, "Цена", vessel.Purchasable ? Money(vessel.Price) : "Только ваучер");
         Row(body, "Размер / класс", Term("category", vessel.Size) + " · " + string.Join(", ", vessel.Classes.Select(c => Term("class", c))));
         Row(body, "Энергетика", string.Join(", ", vessel.Engines.Select(e => Term("engine", e))));
@@ -291,11 +292,5 @@ public sealed class GuideCatalog : BoxContainer, IDocumentTag
         var icon = prototypeId != null && _prototypes.TryIndex<EntityPrototype>(prototypeId, out var prototype)
             ? _entities.System<SpriteSystem>().Frame0(prototype) : null;
         return new GuideCatalogHeader(caption, subtitle, icon);
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        if (disposing) _system.Updated -= Rebuild;
-        base.Dispose(disposing);
     }
 }

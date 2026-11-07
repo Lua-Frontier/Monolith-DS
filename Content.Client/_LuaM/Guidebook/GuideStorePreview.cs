@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._LuaM.Guidebook;
 
 /// <summary>Stock native store windows; never creates an activatable entity or a BUI.</summary>
-public sealed class GuideStorePreview : BoxContainer
+public sealed partial class GuideStorePreview : BoxContainer
 {
     [Dependency] private IPrototypeManager _prototypes = default!;
     [Dependency] private IEntityManager _entities = default!;
@@ -71,7 +71,6 @@ public sealed class GuideStorePreview : BoxContainer
         if (window == null) return;
         window.OnClose -= Close;
         if (window.Parent != null) window.Close();
-        window.Dispose();
     }
     private void UpdateButtons()
     {
@@ -81,5 +80,4 @@ public sealed class GuideStorePreview : BoxContainer
     }
     protected override void EnteredTree() { base.EnteredTree(); _catalog.Updated += UpdateButtons; UpdateButtons(); _catalog.Request(); }
     protected override void ExitedTree() { _catalog.Updated -= UpdateButtons; Close(); base.ExitedTree(); }
-    protected override void Dispose(bool disposing) { _catalog.Updated -= UpdateButtons; Close(); base.Dispose(disposing); }
 }

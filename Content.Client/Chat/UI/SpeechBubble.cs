@@ -59,6 +59,9 @@ namespace Content.Client.Chat.UI
 
         private readonly EntityUid _senderEntity;
 
+        // Die() can be queued from several frames before it runs, the bubble must only report its death once.
+        private bool _dead;
+
         /// <summary>
         /// The time at which this bubble will die.
         /// </summary>
@@ -160,7 +163,7 @@ namespace Content.Client.Chat.UI
                 _verticalOffsetAchieved = MathHelper.Lerp(_verticalOffsetAchieved, VerticalOffset, 10 * args.DeltaSeconds);
             }
 
-            if (!_entityManager.TryGetComponent<TransformComponent>(_senderEntity, out var xform) || xform.MapID != _eyeManager.CurrentMap)
+            if (!_entityManager.TryGetComponent<TransformComponent>(_senderEntity, out var xform) || xform.MapID != _eyeManager.CurrentEye.Position.MapId)
             {
                 Modulate = Color.White.WithAlpha(0);
                 return;
@@ -197,10 +200,12 @@ namespace Content.Client.Chat.UI
 
         private void Die()
         {
-            if (Disposed)
+            if (_dead)
             {
                 return;
             }
+
+            _dead = true;
 
             OnDied?.Invoke(_senderEntity, this);
         }

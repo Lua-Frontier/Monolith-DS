@@ -8,6 +8,8 @@ namespace Content.Client._Goobstation.ChronoLegionnaire;
 
 public sealed partial class StasisOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> WideColoredScreenBorderShader = "WideColoredScreenBorder";
+
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IEntityManager _entityManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
@@ -21,7 +23,7 @@ public sealed partial class StasisOverlay : Overlay
     public StasisOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _coloredScreenBorder = _prototypeManager.Index<ShaderPrototype>("WideColoredScreenBorder").InstanceUnique();
+        _coloredScreenBorder = _prototypeManager.Index<ShaderPrototype>(WideColoredScreenBorderShader).InstanceUnique();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

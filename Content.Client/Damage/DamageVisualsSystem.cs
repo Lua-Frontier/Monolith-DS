@@ -132,10 +132,12 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
 
     private void InitializeVisualizer(EntityUid entity, DamageVisualsComponent damageVisComp)
     {
-        if (!TryComp(entity, out SpriteComponent? spriteComponent)
+        if (!TryComp(entity, out SpriteComponent? spriteComp)
             || !TryComp<DamageableComponent>(entity, out var damageComponent)
             || !HasComp<AppearanceComponent>(entity))
             return;
+
+        Entity<SpriteComponent> spriteComponent = (entity, spriteComp);
 
         damageVisComp.Thresholds.Add(FixedPoint2.Zero);
         damageVisComp.Thresholds.Sort();
@@ -228,7 +230,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
             // the layer key just doesn't exist, we skip it.
             foreach (var key in damageVisComp.TargetLayers)
             {
-                if (!spriteComponent.LayerMapTryGet(key, out var index))
+                if (!SpriteSystem.LayerMapTryGet(spriteComponent.AsNullable(), key, out var index, false))
                 {
                     Log.Warning($"Layer at key {key} was invalid for entity {entity}.");
                     continue;
@@ -252,8 +254,8 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
             // and have valid state IDs, there should be no issues.
             foreach (var layer in damageVisComp.TargetLayerMapKeys)
             {
-                var layerCount = spriteComponent.AllLayers.Count();
-                var index = spriteComponent.LayerMapGet(layer);
+                var layerCount = spriteComponent.Comp.AllLayers.Count();
+                var index = SpriteSystem.LayerMapGet(spriteComponent.AsNullable(), layer);
                 // var layerState = spriteComponent.LayerGetState(index).ToString()!;
 
                 if (index + 1 != layerCount)
@@ -322,16 +324,16 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     /// <summary>
     ///     Adds a damage tracking layer to a given sprite component.
     /// </summary>
-    private void AddDamageLayerToSprite(SpriteComponent spriteComponent, DamageVisualizerSprite sprite, string state, string mapKey, int? index = null)
+    private void AddDamageLayerToSprite(Entity<SpriteComponent> spriteComponent, DamageVisualizerSprite sprite, string state, string mapKey, int? index = null)
     {
-        var newLayer = spriteComponent.AddLayer(
+        var newLayer = SpriteSystem.AddLayer(spriteComponent.AsNullable(),
             new SpriteSpecifier.Rsi(
                 new (sprite.Sprite), state
             ), index);
-        spriteComponent.LayerMapSet(mapKey, newLayer);
+        SpriteSystem.LayerMapSet(spriteComponent.AsNullable(), mapKey, newLayer);
         if (sprite.Color != null)
-            spriteComponent.LayerSetColor(newLayer, Color.FromHex(sprite.Color));
-        spriteComponent.LayerSetVisible(newLayer, false);
+            SpriteSystem.LayerSetColor(spriteComponent.AsNullable(), newLayer, Color.FromHex(sprite.Color));
+        SpriteSystem.LayerSetVisible(spriteComponent.AsNullable(), newLayer, false);
     }
 
     protected override void OnAppearanceChange(EntityUid uid, DamageVisualsComponent damageVisComp, ref AppearanceChangeEvent args)
@@ -354,9 +356,11 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
 
     private void HandleDamage(EntityUid uid, AppearanceComponent component, DamageVisualsComponent damageVisComp)
     {
-        if (!TryComp(uid, out SpriteComponent? spriteComponent)
+        if (!TryComp(uid, out SpriteComponent? spriteComp)
             || !TryComp(uid, out DamageableComponent? damageComponent))
             return;
+
+        Entity<SpriteComponent> spriteComponent = (uid, spriteComp);
 
         if (damageVisComp.TargetLayers != null && damageVisComp.DamageOverlayGroups != null)
             UpdateDisabledLayers(uid, spriteComponent, component, damageVisComp);
@@ -392,7 +396,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     ///     layer will no longer be visible, or obtain
     ///     any damage updates.
     /// </summary>
-    private void UpdateDisabledLayers(EntityUid uid, SpriteComponent spriteComponent, AppearanceComponent component, DamageVisualsComponent damageVisComp)
+    private void UpdateDisabledLayers(EntityUid uid, Entity<SpriteComponent> spriteComponent, AppearanceComponent component, DamageVisualsComponent damageVisComp)
     {
         foreach (var layer in damageVisComp.TargetLayerMapKeys)
         {
@@ -406,7 +410,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
             damageVisComp.DisabledLayers[layer] = disabled;
             if (damageVisComp.TrackAllDamage)
             {
-                spriteComponent.LayerSetVisible($"{layer}trackDamage", !disabled);
+                SpriteSystem.LayerSetVisible(spriteComponent.AsNullable(), $"{layer}trackDamage", !disabled);
                 continue;
             }
 
@@ -415,7 +419,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
 
             foreach (var damageGroup in damageVisComp.DamageOverlayGroups.Keys)
             {
-                spriteComponent.LayerSetVisible($"{layer}{damageGroup}", !disabled);
+                SpriteSystem.LayerSetVisible(spriteComponent.AsNullable(), $"{layer}{damageGroup}", !disabled);
             }
         }
     }
@@ -427,9 +431,9 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     ///     most layer doesn't match, the sprite
     ///     layers are recreated and placed on top.
     /// </summary>
-    private void CheckOverlayOrdering(SpriteComponent spriteComponent, DamageVisualsComponent damageVisComp)
+    private void CheckOverlayOrdering(Entity<SpriteComponent> spriteComponent, DamageVisualsComponent damageVisComp)
     {
-        if (spriteComponent[damageVisComp.TopMostLayerKey] != spriteComponent[spriteComponent.AllLayers.Count() - 1])
+        if (spriteComponent.Comp[damageVisComp.TopMostLayerKey] != spriteComponent.Comp[spriteComponent.Comp.AllLayers.Count() - 1])
         {
             if (!damageVisComp.TrackAllDamage && damageVisComp.DamageOverlayGroups != null)
             {
@@ -456,21 +460,21 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
         }
     }
 
-    private void ReorderOverlaySprite(SpriteComponent spriteComponent, DamageVisualsComponent damageVisComp, DamageVisualizerSprite sprite, string key, string statePrefix, FixedPoint2 threshold)
+    private void ReorderOverlaySprite(Entity<SpriteComponent> spriteComponent, DamageVisualsComponent damageVisComp, DamageVisualizerSprite sprite, string key, string statePrefix, FixedPoint2 threshold)
     {
-        spriteComponent.LayerMapTryGet(key, out var spriteLayer);
-        var visibility = spriteComponent[spriteLayer].Visible;
-        spriteComponent.RemoveLayer(spriteLayer);
+        SpriteSystem.LayerMapTryGet(spriteComponent.AsNullable(), key, out var spriteLayer, false);
+        var visibility = spriteComponent.Comp[spriteLayer].Visible;
+        SpriteSystem.RemoveLayer(spriteComponent.AsNullable(), spriteLayer);
         if (threshold == FixedPoint2.Zero) // these should automatically be invisible
             threshold = damageVisComp.Thresholds[1];
-        spriteLayer = spriteComponent.AddLayer(
+        spriteLayer = SpriteSystem.AddLayer(spriteComponent.AsNullable(),
             new SpriteSpecifier.Rsi(
                 new (sprite.Sprite),
                 $"{statePrefix}_{threshold}"
             ),
             spriteLayer);
-        spriteComponent.LayerMapSet(key, spriteLayer);
-        spriteComponent.LayerSetVisible(spriteLayer, visibility);
+        SpriteSystem.LayerMapSet(spriteComponent.AsNullable(), key, spriteLayer);
+        SpriteSystem.LayerSetVisible(spriteComponent.AsNullable(), spriteLayer, visibility);
         // this is somewhat iffy since it constantly reallocates
         damageVisComp.TopMostLayerKey = key;
     }
@@ -479,7 +483,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     ///     Updates damage visuals without tracking
     ///     any damage groups.
     /// </summary>
-    private void UpdateDamageVisuals(DamageableComponent damageComponent, SpriteComponent spriteComponent, DamageVisualsComponent damageVisComp)
+    private void UpdateDamageVisuals(DamageableComponent damageComponent, Entity<SpriteComponent> spriteComponent, DamageVisualsComponent damageVisComp)
     {
         if (!CheckThresholdBoundary(damageComponent.TotalDamage, damageVisComp.LastDamageThreshold, damageVisComp, out var threshold))
             return;
@@ -504,7 +508,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     ///     according to the list of damage groups
     ///     passed into it.
     /// </summary>
-    private void UpdateDamageVisuals(List<string> delta, DamageableComponent damageComponent, SpriteComponent spriteComponent, DamageVisualsComponent damageVisComp)
+    private void UpdateDamageVisuals(List<string> delta, DamageableComponent damageComponent, Entity<SpriteComponent> spriteComponent, DamageVisualsComponent damageVisComp)
     {
         foreach (var damageGroup in delta)
         {
@@ -567,7 +571,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     ///     Does different things depending on
     ///     the configuration of the visualizer.
     /// </summary>
-    private void ForceUpdateLayers(DamageableComponent damageComponent, SpriteComponent spriteComponent, DamageVisualsComponent damageVisComp)
+    private void ForceUpdateLayers(DamageableComponent damageComponent, Entity<SpriteComponent> spriteComponent, DamageVisualsComponent damageVisComp)
     {
         if (damageVisComp.DamageOverlayGroups != null)
         {
@@ -588,14 +592,14 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     ///     it assumes you're updating a layer that is tracking all
     ///     damage.
     /// </summary>
-    private void UpdateTargetLayer(SpriteComponent spriteComponent, DamageVisualsComponent damageVisComp, object layerMapKey, FixedPoint2 threshold)
+    private void UpdateTargetLayer(Entity<SpriteComponent> spriteComponent, DamageVisualsComponent damageVisComp, Enum layerMapKey, FixedPoint2 threshold)
     {
         if (damageVisComp.Overlay && damageVisComp.DamageOverlayGroups != null)
         {
             if (!damageVisComp.DisabledLayers[layerMapKey])
             {
                 var layerState = damageVisComp.LayerMapKeyStates[layerMapKey];
-                spriteComponent.LayerMapTryGet($"{layerMapKey}trackDamage", out var spriteLayer);
+                SpriteSystem.LayerMapTryGet(spriteComponent.AsNullable(), $"{layerMapKey}trackDamage", out var spriteLayer, false);
 
                 UpdateDamageLayerState(spriteComponent,
                     spriteLayer,
@@ -606,7 +610,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
         else if (!damageVisComp.Overlay)
         {
             var layerState = damageVisComp.LayerMapKeyStates[layerMapKey];
-            spriteComponent.LayerMapTryGet(layerMapKey, out var spriteLayer);
+            SpriteSystem.LayerMapTryGet(spriteComponent.AsNullable(), layerMapKey, out var spriteLayer, false);
 
             UpdateDamageLayerState(spriteComponent,
                 spriteLayer,
@@ -618,14 +622,14 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     /// <summary>
     ///     Updates a target layer by damage group.
     /// </summary>
-    private void UpdateTargetLayer(SpriteComponent spriteComponent, DamageVisualsComponent damageVisComp, object layerMapKey, string damageGroup, FixedPoint2 threshold)
+    private void UpdateTargetLayer(Entity<SpriteComponent> spriteComponent, DamageVisualsComponent damageVisComp, Enum layerMapKey, string damageGroup, FixedPoint2 threshold)
     {
         if (damageVisComp.Overlay && damageVisComp.DamageOverlayGroups != null)
         {
             if (damageVisComp.DamageOverlayGroups.ContainsKey(damageGroup) && !damageVisComp.DisabledLayers[layerMapKey])
             {
                 var layerState = damageVisComp.LayerMapKeyStates[layerMapKey];
-                spriteComponent.LayerMapTryGet($"{layerMapKey}{damageGroup}", out var spriteLayer);
+                SpriteSystem.LayerMapTryGet(spriteComponent.AsNullable(), $"{layerMapKey}{damageGroup}", out var spriteLayer, false);
 
                 UpdateDamageLayerState(spriteComponent,
                     spriteLayer,
@@ -636,7 +640,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
         else if (!damageVisComp.Overlay)
         {
             var layerState = damageVisComp.LayerMapKeyStates[layerMapKey];
-            spriteComponent.LayerMapTryGet(layerMapKey, out var spriteLayer);
+            SpriteSystem.LayerMapTryGet(spriteComponent.AsNullable(), layerMapKey, out var spriteLayer, false);
 
             UpdateDamageLayerState(spriteComponent,
                 spriteLayer,
@@ -648,9 +652,9 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     /// <summary>
     ///     Updates an overlay that is tracking all damage.
     /// </summary>
-    private void UpdateOverlay(SpriteComponent spriteComponent, FixedPoint2 threshold)
+    private void UpdateOverlay(Entity<SpriteComponent> spriteComponent, FixedPoint2 threshold)
     {
-        spriteComponent.LayerMapTryGet($"DamageOverlay", out var spriteLayer);
+        SpriteSystem.LayerMapTryGet(spriteComponent.AsNullable(), $"DamageOverlay", out var spriteLayer, false);
 
         UpdateDamageLayerState(spriteComponent,
             spriteLayer,
@@ -661,13 +665,13 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     /// <summary>
     ///     Updates an overlay based on damage group.
     /// </summary>
-    private void UpdateOverlay(SpriteComponent spriteComponent, DamageVisualsComponent damageVisComp, string damageGroup, FixedPoint2 threshold)
+    private void UpdateOverlay(Entity<SpriteComponent> spriteComponent, DamageVisualsComponent damageVisComp, string damageGroup, FixedPoint2 threshold)
     {
         if (damageVisComp.DamageOverlayGroups != null)
         {
             if (damageVisComp.DamageOverlayGroups.ContainsKey(damageGroup))
             {
-                spriteComponent.LayerMapTryGet($"DamageOverlay{damageGroup}", out var spriteLayer);
+                SpriteSystem.LayerMapTryGet(spriteComponent.AsNullable(), $"DamageOverlay{damageGroup}", out var spriteLayer, false);
 
                 UpdateDamageLayerState(spriteComponent,
                     spriteLayer,
@@ -683,19 +687,19 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
     ///     function calls it), and what threshold
     ///     was passed into it.
     /// </summary>
-    private void UpdateDamageLayerState(SpriteComponent spriteComponent, int spriteLayer, string statePrefix, FixedPoint2 threshold)
+    private void UpdateDamageLayerState(Entity<SpriteComponent> spriteComponent, int spriteLayer, string statePrefix, FixedPoint2 threshold)
     {
         if (threshold == 0)
         {
-            spriteComponent.LayerSetVisible(spriteLayer, false);
+            SpriteSystem.LayerSetVisible(spriteComponent.AsNullable(), spriteLayer, false);
         }
         else
         {
-            if (!spriteComponent[spriteLayer].Visible)
+            if (!spriteComponent.Comp[spriteLayer].Visible)
             {
-                spriteComponent.LayerSetVisible(spriteLayer, true);
+                SpriteSystem.LayerSetVisible(spriteComponent.AsNullable(), spriteLayer, true);
             }
-            spriteComponent.LayerSetState(spriteLayer, $"{statePrefix}_{threshold}");
+            SpriteSystem.LayerSetRsiState(spriteComponent.AsNullable(), spriteLayer, $"{statePrefix}_{threshold}");
         }
     }
 }

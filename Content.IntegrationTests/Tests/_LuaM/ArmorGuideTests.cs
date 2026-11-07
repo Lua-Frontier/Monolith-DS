@@ -72,7 +72,7 @@ public sealed class ArmorGuideTests
                 Assert.That(embeds, Has.Length.EqualTo(4));
                 foreach (var embed in embeds)
                 {
-                    var prototype = entities.GetComponent<MetaDataComponent>(embed.Sprite!.Value.Owner).EntityPrototype!;
+                    var prototype = prototypes.Index(embed.EntityPrototypeId!.Value);
                     Assert.That(embed.Children.OfType<RichTextLabel>().Single().GetMessage(), Is.EqualTo(prototype.Name));
                 }
                 var text = string.Join("\n", Labels(stats).Select(label => label.GetMessage()));

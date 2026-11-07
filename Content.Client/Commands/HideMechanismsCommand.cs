@@ -27,14 +27,14 @@ public sealed partial class HideMechanismsCommand : LocalizedCommands
                 continue;
             }
 
-            sprite.ContainerOccluded = false;
+            _entityManager.System<SpriteSystem>().SetContainerOccluded((uid, sprite), false);
 
             var tempParent = uid;
             while (containerSys.TryGetContainingContainer((tempParent, null, null), out var container))
             {
                 if (!container.ShowContents)
                 {
-                    sprite.ContainerOccluded = true;
+                    _entityManager.System<SpriteSystem>().SetContainerOccluded((uid, sprite), true);
                     break;
                 }
 

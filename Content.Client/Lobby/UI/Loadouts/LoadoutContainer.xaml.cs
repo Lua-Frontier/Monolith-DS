@@ -16,7 +16,8 @@ public sealed partial class LoadoutContainer : BoxContainer
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IPrototypeManager _protoManager = default!;
 
-    private readonly EntityUid? _entity;
+    private EntityUid? _entity;
+    private readonly EntProtoId? _previewProto;
 
     public Button Select => SelectButton;
 
@@ -52,11 +53,10 @@ public sealed partial class LoadoutContainer : BoxContainer
             var finalEnt = hasEntity ? loadProto.PreviewEntity : ent;
             if (finalEnt != null)
             {
-                _entity = _entManager.SpawnEntity(finalEnt, MapCoordinates.Nullspace);
-                Sprite.SetEntity(_entity);
+                _previewProto = finalEnt;
 
                 var spriteTooltip = new Tooltip();
-                var description = hasDescription ? loadProto.Description : _entManager.GetComponent<MetaDataComponent>(_entity.Value).EntityDescription; 
+                var description = hasDescription ? loadProto.Description : _protoManager.Index(finalEnt.Value).Description;
                 spriteTooltip.SetMessage(FormattedMessage.FromUnformatted(description));
                 Sprite.TooltipSupplier = _ => spriteTooltip; // Frontier: TooltipSupplier<Sprite.TooltipSupplier?
             }
@@ -64,14 +64,25 @@ public sealed partial class LoadoutContainer : BoxContainer
         }
     }
 
-    protected override void Dispose(bool disposing)
+    // The preview entity only exists while the container is in the UI tree.
+    protected override void EnteredTree()
     {
-        base.Dispose(disposing);
+        base.EnteredTree();
 
-        if (!disposing)
+        if (_previewProto == null || _entity != null)
             return;
 
+        _entity = _entManager.SpawnEntity(_previewProto, MapCoordinates.Nullspace);
+        Sprite.SetEntity(_entity);
+    }
+
+    protected override void ExitedTree()
+    {
+        base.ExitedTree();
+
+        Sprite.SetEntity(null);
         _entManager.DeleteEntity(_entity);
+        _entity = null;
     }
 
     public bool Pressed

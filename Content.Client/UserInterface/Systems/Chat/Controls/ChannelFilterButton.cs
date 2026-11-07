@@ -77,15 +77,4 @@ public sealed class ChannelFilterButton : ChatPopupButton<ChannelFilterPopup>
         base.StylePropertiesChanged();
         UpdateChildColors();
     }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (!disposing)
-            return;
-
-        _chatUIController.FilterableChannelsChanged -= Popup.SetChannels;
-        _chatUIController.UnreadMessageCountsUpdated -= Popup.UpdateUnread;
-    }
 }

@@ -15,6 +15,7 @@ namespace Content.Shared._Crescent.Hardpoints;
 /// <summary>
 /// This handles...
 /// </summary>
+[Virtual]
 public partial class SharedHardpointSystem : EntitySystem
 {
     [Dependency] private SharedTransformSystem _transformSystem = default!;

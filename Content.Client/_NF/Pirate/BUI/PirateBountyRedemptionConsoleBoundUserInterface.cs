@@ -34,7 +34,7 @@ public sealed class PirateBountyRedemptionConsoleBoundUserInterface : BoundUserI
         base.Dispose(disposing);
         if (disposing)
         {
-            _menu?.Dispose();
+            _menu?.Orphan();
         }
     }
 

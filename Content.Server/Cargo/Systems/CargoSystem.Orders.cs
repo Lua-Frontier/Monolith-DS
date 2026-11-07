@@ -365,7 +365,7 @@ namespace Content.Server.Cargo.Systems
 
             var data = GetOrderData(GetNetEntity(uid), args, product, GenerateOrderId(orderDatabase));
 
-            if (!TryAddOrder(orderDatabase.Owner, data, orderDatabase))
+            if (!TryAddOrder(dbUid!.Value, data, orderDatabase))
             {
                 PlayDenySound(uid, component);
                 return;

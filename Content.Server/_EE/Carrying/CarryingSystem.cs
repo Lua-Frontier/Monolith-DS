@@ -381,7 +381,7 @@ namespace Content.Server.Carrying
                 var xform = Transform(carried);
                 if (!xform.LocalPosition.Equals(Vector2.Zero))
                 {
-                    xform.LocalPosition = Vector2.Zero;
+                    _transform.SetLocalPosition(carried, Vector2.Zero, xform);
                 }
             }
             query.Dispose();

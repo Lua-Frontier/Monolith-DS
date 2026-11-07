@@ -17,7 +17,7 @@ using Robust.Shared.Utility;
 namespace Content.Client._LuaM.Guidebook;
 
 /// <summary>Native paged lists over the server's reachable reference data.</summary>
-public sealed class GuideAutoCatalogue : BoxContainer, IDocumentTag
+public sealed partial class GuideAutoCatalogue : BoxContainer, IDocumentTag
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
@@ -53,27 +53,30 @@ public sealed class GuideAutoCatalogue : BoxContainer, IDocumentTag
     { _kind = args.GetValueOrDefault("Kind", "ammo"); control = this; Rebuild(); return true; }
     protected override void EnteredTree() { base.EnteredTree(); _catalog.Updated += Rebuild; _catalog.Request(); Rebuild(); }
     protected override void ExitedTree() { _catalog.Updated -= Rebuild; base.ExitedTree(); }
-    protected override void Dispose(bool disposing) { _catalog.Updated -= Rebuild; base.Dispose(disposing); }
-    private string Name(string id) => _prototypes.TryIndex<EntityPrototype>(id, out var p) ? p.Name : id;
+    private new string Name(string id) => _prototypes.TryIndex<EntityPrototype>(id, out var p) ? p.Name : id;
     private string Caliber(string id)
     {
         if (!_prototypes.TryIndex<EntityPrototype>(id, out var proto) ||
             !_prototypes.GetPrototypeData(proto).TryGetValue("Tag", out var tag) ||
             !tag.TryGet("tags", out SequenceDataNode? tags)) return "";
         return tags.OfType<ValueDataNode>().Select(t => t.Value)
-            .Where(t => Regex.IsMatch(t, @"^(Cartridge|Shell).*\d"))
+            .Where(t => CaliberTagRegex.IsMatch(t))
             .OrderBy(t => t.Length).ThenBy(t => t).FirstOrDefault() ?? "";
     }
+    private static readonly Regex CaliberTagRegex = new(@"^(Cartridge|Shell).*\d");
+    private static readonly Regex CaliberPrefixRegex = new(@"^(Cartridge|Shell)");
+    private static readonly Regex CaliberValueRegex = new(@"\d+(?:[.,]\d+)?\s*[xх×]\s*\d+(?:[.,]\d+)?\s*(?:мм|mm)R?|\.?\d+(?:[.,]\d+)?\s*(?:калибр|gauge|ACP|SAM|Magnum)|\.\d+", RegexOptions.IgnoreCase);
+
     private string CaliberName(string key, string example)
     {
-        var match = Regex.Match(example, @"\d+(?:[.,]\d+)?\s*[xх×]\s*\d+(?:[.,]\d+)?\s*(?:мм|mm)R?|\.?\d+(?:[.,]\d+)?\s*(?:калибр|gauge|ACP|SAM|Magnum)|\.\d+", RegexOptions.IgnoreCase);
+        var match = CaliberValueRegex.Match(example);
         if (match.Success) return match.Value;
         // New cartridge tags remain filterable even before their names receive localization.
-        return Regex.Replace(key, @"^(Cartridge|Shell)", "").Replace("mm", " мм");
+        return CaliberPrefixRegex.Replace(key, "").Replace("mm", " мм");
     }
     private void Rebuild()
     {
-        foreach (var child in _body.Children.ToArray()) child.Dispose();
+        _body.RemoveAllChildren();
         if (_catalog.Catalog is not { } data) { _status.Text = "Загрузка…"; _previous.Disabled = _next.Disabled = true; _catalog.Request(); return; }
         _caliber.Visible = _kind == "ammo";
         if (_caliber.Visible && !ReferenceEquals(_filterCatalog, data))

@@ -131,9 +131,11 @@ namespace Content.Client.Shuttles.UI
         }
 
         // Frontier - Maximum Shuttle Speed
+        private static readonly Regex NonDigitRegex = new("[^0-9]");
+
         private void OnMaxSpeedChanged(LineEdit.LineEditEventArgs value)
         {
-            MaximumShuttleSpeedValue.Text = Regex.Replace(MaximumShuttleSpeedValue.Text, "[^0-9]", "");
+            MaximumShuttleSpeedValue.Text = NonDigitRegex.Replace(MaximumShuttleSpeedValue.Text, "");
             float.TryParse(MaximumShuttleSpeedValue.Text, out var speed);
             OnMaxShuttleSpeedChanged?.Invoke(MaximumShuttleSpeedValue.Text == "" ? null : speed);
         }

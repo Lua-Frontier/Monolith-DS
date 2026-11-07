@@ -43,6 +43,6 @@ public sealed class GasDepositScannerBoundUserInterface : BoundUserInterface
         base.Dispose(disposing);
 
         if (disposing)
-            _window?.Dispose();
+            _window?.Orphan();
     }
 }

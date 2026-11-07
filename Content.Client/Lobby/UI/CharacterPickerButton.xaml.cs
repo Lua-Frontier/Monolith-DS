@@ -23,6 +23,7 @@ public sealed partial class CharacterPickerButton : ContainerButton
     private IEntityManager _entManager;
 
     private EntityUid _previewDummy;
+    private readonly Func<EntityUid> _spawnPreview;
 
     /// <summary>
     /// Invoked if we should delete the attached character
@@ -45,11 +46,12 @@ public sealed partial class CharacterPickerButton : ContainerButton
 
         if (profile is not HumanoidCharacterProfile humanoid)
         {
-            _previewDummy = entityManager.SpawnEntity(prototypeManager.Index<SpeciesPrototype>(SharedHumanoidAppearanceSystem.DefaultSpecies).DollPrototype, MapCoordinates.Nullspace);
+            var doll = prototypeManager.Index<SpeciesPrototype>(SharedHumanoidAppearanceSystem.DefaultSpecies).DollPrototype;
+            _spawnPreview = () => entityManager.SpawnEntity(doll, MapCoordinates.Nullspace);
         }
         else
         {
-            _previewDummy = UserInterfaceManager.GetUIController<LobbyUIController>()
+            _spawnPreview = () => UserInterfaceManager.GetUIController<LobbyUIController>()
                 .LoadProfileEntity(humanoid, null, true);
 
             var highPriorityJob = humanoid.JobPriorities.SingleOrDefault(p => p.Value == JobPriority.High).Key;
@@ -64,7 +66,6 @@ public sealed partial class CharacterPickerButton : ContainerButton
         Pressed = isSelected;
         DeleteButton.Visible = !isSelected;
 
-        View.SetEntity(_previewDummy);
         DescriptionLabel.Text = description;
 
         ConfirmDeleteButton.OnPressed += _ =>
@@ -81,13 +82,25 @@ public sealed partial class CharacterPickerButton : ContainerButton
         };
     }
 
-    protected override void Dispose(bool disposing)
+    // The preview dummy only exists while the button is in the UI tree.
+    protected override void EnteredTree()
     {
-        base.Dispose(disposing);
-        if (!disposing)
+        base.EnteredTree();
+
+        if (_previewDummy.IsValid())
             return;
 
-        _entManager.DeleteEntity(_previewDummy);
+        _previewDummy = _spawnPreview();
+        View.SetEntity(_previewDummy);
+    }
+
+    protected override void ExitedTree()
+    {
+        base.ExitedTree();
+
+        View.SetEntity(null);
+        if (_previewDummy.IsValid())
+            _entManager.DeleteEntity(_previewDummy);
         _previewDummy = default;
     }
 }

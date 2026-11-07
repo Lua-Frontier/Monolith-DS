@@ -91,7 +91,7 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
 
         // Remove all sprite layers
         for (int i = hologramSprite.AllLayers.Count() - 1; i >= 0; i--)
-            hologramSprite.RemoveLayer(i);
+            _sprite.RemoveLayer((hologram, hologramSprite), i);
 
         if (TryComp<SpriteComponent>(target, out var targetSprite))
         {
@@ -102,14 +102,14 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
                 for (int i = 0; i < targetAvatar.LayerData.Length; i++)
                 {
                     var layer = targetAvatar.LayerData[i];
-                    hologramSprite.AddLayer(targetAvatar.LayerData[i], i);
+                    _sprite.AddLayer((hologram, hologramSprite), targetAvatar.LayerData[i], i);
                 }
             }
 
             // Otherwise copy the target's current physical appearance
             else
             {
-                hologramSprite.CopyFrom(targetSprite);
+                _sprite.CopySprite((target.Value, targetSprite), (hologram, hologramSprite));
             }
         }
 
@@ -123,13 +123,13 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
             layer.RsiPath = holopadhologram.RsiPath;
             layer.State = holopadhologram.RsiState;
 
-            hologramSprite.AddLayer(layer);
+            _sprite.AddLayer((hologram, hologramSprite), layer, null);
         }
 
         // Override specific values
-        hologramSprite.Color = Color.White;
-        hologramSprite.Offset = holopadhologram.Offset;
-        hologramSprite.DrawDepth = (int)DrawDepth.Mobs;
+        _sprite.SetColor((hologram, hologramSprite), Color.White);
+        _sprite.SetOffset((hologram, hologramSprite), holopadhologram.Offset);
+        _sprite.SetDrawDepth((hologram, hologramSprite), (int)DrawDepth.Mobs);
         hologramSprite.NoRotation = true;
         hologramSprite.DirectionOverride = Direction.South;
         hologramSprite.EnableDirectionOverride = true;
@@ -137,7 +137,7 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
         // Remove shading from all layers (except displacement maps)
         for (int i = 0; i < hologramSprite.AllLayers.Count(); i++)
         {
-            if (!hologramSprite.TryGetLayer(i, out var layer)) // LuaM
+            if (!_sprite.TryGetLayer((hologram, hologramSprite), i, out var layer, false)) // LuaM
                 continue;
 
             // LuaM - the bent clothes keep their bend without the stencil test, in the comms window it cut them off and the one shown looked naked

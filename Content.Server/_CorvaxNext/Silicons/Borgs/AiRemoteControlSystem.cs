@@ -107,7 +107,7 @@ public sealed partial class AiRemoteControlSystem : SharedAiRemoteControlSystem
         if (!TryComp<AiRemoteControllerComponent>(entity, out var aiRemoteComp))
             return;
 
-        if (!_map.TryFindGridAt(Transform(ai).MapPosition, out var grid, out var _) || Transform(entity).GridUid != grid)
+        if (!_map.TryFindGridAt(_xformSystem.GetMapCoordinates(ai), out var grid, out var _) || Transform(entity).GridUid != grid)
             return; // Mono no controlling borgs outside the ai's grid.
 
         if (TryComp(entity, out IntrinsicRadioTransmitterComponent? transmitter))

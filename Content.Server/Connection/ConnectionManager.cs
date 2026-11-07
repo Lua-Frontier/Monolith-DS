@@ -60,6 +60,7 @@ namespace Content.Server.Connection
         [Dependency] private ServerDbEntryManager _serverDbEntry = default!;
         [Dependency] private IPrototypeManager _prototypeManager = default!;
         [Dependency] private IGameTiming _gameTiming = default!;
+        [Dependency] private IEntitySystemManager _entitySystems = default!;
         [Dependency] private ILogManager _logManager = default!;
         [Dependency] private IChatManager _chatManager = default!;
         [Dependency] private IHttpClientHolder _http = default!;
@@ -245,7 +246,7 @@ namespace Content.Server.Connection
             var adminData = await _db.GetAdminDataForAsync(e.UserId);
             // New Frontiers - Session Respector - Checks that a player was connected before applying panic bunker/baby jail/no whitelist on low pop checks
             // This code is licensed under AGPLv3. See AGPLv3.txt
-            var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
+            var wasInGame = _entitySystems.TryGetEntitySystem<GameTicker>(out var ticker) &&
                             ticker.PlayerGameStatuses.ContainsKey(userId); // Frontier: remove status.JoinedGame check, TryGetValue<ContainsKey
 
             if (_cfg.GetCVar(CCVars.PanicBunkerEnabled) && adminData == null && !wasInGame) // Frontier: allow users who joined before panic bunker was enforced to reconnect

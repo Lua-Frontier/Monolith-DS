@@ -16,7 +16,7 @@ namespace Content.Server._Crescent.Hardpoint;
 /// <summary>
 /// This handles...
 /// </summary>
-public partial class HardpointSystem : SharedHardpointSystem
+public sealed partial class HardpointSystem : SharedHardpointSystem
 {
     [Dependency] private FireControlSystem _fcsSystem = default!;
     [Dependency] private IGameTiming _gameTiming = default!;

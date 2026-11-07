@@ -29,7 +29,7 @@ namespace Content.Client.IgnoreHumanoids
 
         private void OnInit(EntityUid uid, IgnoreHumanoidsOverlayComponent component, ComponentInit args)
         {
-            if (_player.LocalPlayer?.ControlledEntity == uid)
+            if (_player.LocalEntity == uid)
             {
                 _overlayMan.AddOverlay(_overlay);
             }
@@ -38,7 +38,7 @@ namespace Content.Client.IgnoreHumanoids
         }
         private void OnRemove(EntityUid uid, IgnoreHumanoidsOverlayComponent component, ComponentRemove args)
         {
-            if (_player.LocalPlayer?.ControlledEntity == uid)
+            if (_player.LocalEntity == uid)
             {
                 _overlay.Reset();
                 _overlayMan.RemoveOverlay(_overlay);

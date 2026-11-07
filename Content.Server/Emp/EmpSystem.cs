@@ -28,7 +28,7 @@ public sealed partial class EmpSystem : SharedEmpSystem
     [Dependency] private IConfigurationManager _cfg = default!; // Frontier: EMP Blast PVS
     [Dependency] private ExamineSystem _examine = default!; // Frontier: examine verb
 
-    public const string EmpPulseEffectPrototype = "EffectEmpBlast"; // Frontier: EffectEmpPulse
+    public new const string EmpPulseEffectPrototype = "EffectEmpBlast"; // Frontier: EffectEmpPulse
 
     public override void Initialize()
     {

@@ -7,15 +7,17 @@ using Robust.Shared.Localization; // LuaM
 
 namespace Content.Client._Lua.Mapping;
 
-public sealed class DrawLineClientCommand : IConsoleCommand
+public sealed partial class DrawLineClientCommand : IConsoleCommand
 {
+    [Dependency] private IEntityManager _entManager = default!;
+
     public string Command => "drawline";
     public string Description => IoCManager.Resolve<ILocalizationManager>().GetString("cmd-drawline-desc"); // LuaM: "Линейка и категории шаттлов"; > IoCManager.Resolve<ILocalizationManager>().GetString("cmd-drawline-desc")
     public string Help => "drawline";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        var sys = EntitySystem.Get<DrawLineSystem>();
+        var sys = _entManager.System<DrawLineSystem>();
         sys.SendDrawRequest();
     }
 }

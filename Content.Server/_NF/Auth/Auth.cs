@@ -50,7 +50,7 @@ public sealed partial class MiniAuthManager
                 }
             }
         }
-        catch (Exception e)
+        catch (Exception)
         {
         }
         return connected;

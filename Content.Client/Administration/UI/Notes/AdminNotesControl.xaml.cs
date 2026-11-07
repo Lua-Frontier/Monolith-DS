@@ -208,23 +208,10 @@ public sealed partial class AdminNotesControl : Control
         NewNoteButton.Disabled = !create;
     }
 
-    protected override void Dispose(bool disposing)
+    // The note popup lives in the popup root, so it has to go away together with the notes control.
+    protected override void ExitedTree()
     {
-        base.Dispose(disposing);
-
-        if (!disposing)
-        {
-            return;
-        }
-
-        Inputs.Clear();
-        NewNoteButton.OnPressed -= OnNewNoteButtonPressed;
-
-        if (_popup != null)
-        {
-            UserInterfaceManager.PopupRoot.RemoveChild(_popup);
-        }
-
-        NoteDeleted = null;
+        base.ExitedTree();
+        _popup?.Orphan();
     }
 }

@@ -57,7 +57,8 @@ public sealed partial class SurgeryToolExamineSystem : EntitySystem
         };
         var key = "surgery-tool-" + (comp.Used == true ? "used" : "unlimited");
         var speed = comp.Speed.ToString("N2"); // 2 decimal places to not get trolled by float
-        msg.PushMarkup(Loc.GetString(key, ("tool", Loc.GetString(comp.ToolName)), ("speed", speed), ("color", color))); // LuaM: added Loc.GetString for
+        msg.AddMarkupOrThrow(Loc.GetString(key, ("tool", Loc.GetString(comp.ToolName)), ("speed", speed), ("color", color))); // LuaM: added Loc.GetString for
+        msg.PushNewline();
     }
 }
 

@@ -268,7 +268,7 @@ public sealed partial class OverwatchWindow : FancyWindow
     /// <param name="squads">Словарь отрядов (ID -> Название).</param>
     private void UpdateSquadsList(Dictionary<int, string> squads)
     {
-        SquadsList.DisposeAllChildren();
+        SquadsList.RemoveAllChildren();
 
         foreach (var squad in squads.OrderBy(s => s.Value))
         {
@@ -417,7 +417,7 @@ public sealed partial class OverwatchWindow : FancyWindow
             }
         }
 
-        MembersGrid.DisposeAllChildren();
+        MembersGrid.RemoveAllChildren();
         _memberRows.Clear();
 
         foreach (var (member, isWatching) in oldWatchingStates)
@@ -503,15 +503,6 @@ public sealed partial class OverwatchWindow : FancyWindow
     }
 
     /// <inheritdoc/>
-    protected override void Dispose(bool disposing)
-    {
-        foreach (var row in _memberRows.Values)
-        {
-            row.Dispose();
-        }
-        _memberRows.Clear();
-        base.Dispose(disposing);
-    }
 }
 
 /// <summary>

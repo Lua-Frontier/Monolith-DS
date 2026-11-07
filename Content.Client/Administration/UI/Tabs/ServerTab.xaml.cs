@@ -15,9 +15,21 @@ namespace Content.Client.Administration.UI.Tabs
         {
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
+        }
 
+        // The CVar subscriptions only live while the tab is shown, the admin window is kept between rounds.
+        protected override void EnteredTree()
+        {
+            base.EnteredTree();
             _config.OnValueChanged(CCVars.OocEnabled, OocEnabledChanged, true);
             _config.OnValueChanged(CCVars.LoocEnabled, LoocEnabledChanged, true);
+        }
+
+        protected override void ExitedTree()
+        {
+            base.ExitedTree();
+            _config.UnsubValueChanged(CCVars.OocEnabled, OocEnabledChanged);
+            _config.UnsubValueChanged(CCVars.LoocEnabled, LoocEnabledChanged);
         }
 
         private void OocEnabledChanged(bool value)
@@ -28,17 +40,6 @@ namespace Content.Client.Administration.UI.Tabs
         private void LoocEnabledChanged(bool value)
         {
             SetLoocButton.Pressed = value;
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            if (disposing)
-            {
-                _config.UnsubValueChanged(CCVars.OocEnabled, OocEnabledChanged);
-                _config.UnsubValueChanged(CCVars.LoocEnabled, LoocEnabledChanged);
-            }
         }
     }
 }

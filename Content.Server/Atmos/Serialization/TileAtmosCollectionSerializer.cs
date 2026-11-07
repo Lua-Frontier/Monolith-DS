@@ -48,7 +48,7 @@ public sealed partial class TileAtmosCollectionSerializer : ITypeSerializer<Dict
                     }
                     catch (ArgumentOutOfRangeException)
                     {
-                        Logger.Error(
+                        Logger.GetSawmill("atmos").Error(
                             $"Error during atmos serialization! Tile at {indices} points to an unique mix ({mix}) out of range!");
                     }
                 }
@@ -91,7 +91,7 @@ public sealed partial class TileAtmosCollectionSerializer : ITypeSerializer<Dict
                                 }
                                 catch (ArgumentOutOfRangeException)
                                 {
-                                    Logger.Error(
+                                    Logger.GetSawmill("atmos").Error(
                                         $"Error during atmos serialization! Tile at {indices} points to an unique mix ({mix}) out of range!");
                                 }
                             }

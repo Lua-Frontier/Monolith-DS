@@ -91,15 +91,4 @@ public sealed partial class GhostGui : UIWidget
             GhostRespawnButton.Disabled = true;
         }
     }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (disposing)
-        {
-            TargetWindow.Dispose();
-            CryosleepWakeupWindow.Dispose(); // LuaM
-        }
-    }
 }

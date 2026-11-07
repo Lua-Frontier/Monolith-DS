@@ -30,7 +30,7 @@ public sealed partial class BluespaceLockerRule : StationEventSystem<BluespaceLo
         {
             if (HasComp<AccessReaderComponent>(potentialLink) ||
                 HasComp<BluespaceLockerComponent>(potentialLink) ||
-                !HasComp<StationMemberComponent>(potentialLink.ToCoordinates().GetGridUid(EntityManager)))
+                !HasComp<StationMemberComponent>(Transform(potentialLink).GridUid))
                 continue;
 
             var comp = AddComp<BluespaceLockerComponent>(potentialLink);

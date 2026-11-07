@@ -339,7 +339,7 @@ public sealed class StarLightOverlay : Overlay
         var tiles = cached.Tiles ?? new List<Vector2i>();
         tiles.Clear();
 
-        var rator = _mapSystem.GetAllTilesEnumerator(grid.Owner, grid.Comp);
+        var rator = _mapSystem.GetAllTiles(grid.Owner, grid.Comp);
 
         while (rator.MoveNext(out var tileRef))
         {

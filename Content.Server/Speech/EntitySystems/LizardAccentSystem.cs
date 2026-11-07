@@ -12,6 +12,22 @@ public sealed partial class LizardAccentSystem : EntitySystem
     private static readonly Regex RegexInternalX = new(@"(\w)x");
     private static readonly Regex RegexLowerEndX = new(@"\bx([\-|r|R]|\b)");
     private static readonly Regex RegexUpperEndX = new(@"\bX([\-|r|R]|\b)");
+    // LuaM-start
+    private static readonly Regex RegexRuLowerS = new("с+");
+    private static readonly Regex RegexRuUpperS = new("С+");
+    private static readonly Regex RegexRuLowerZ = new("з+");
+    private static readonly Regex RegexRuUpperZ = new("З+");
+    private static readonly Regex RegexRuLowerSh = new("ш+");
+    private static readonly Regex RegexRuUpperSh = new("Ш+");
+    private static readonly Regex RegexRuLowerCh = new("ч+");
+    private static readonly Regex RegexRuUpperCh = new("Ч+");
+    private static readonly string[] RuLowerHiss = ["сс", "ссс"];
+    private static readonly string[] RuUpperHiss = ["СС", "ССС"];
+    private static readonly string[] RuLowerShh = ["шш", "шшш"];
+    private static readonly string[] RuUpperShh = ["ШШ", "ШШШ"];
+    private static readonly string[] RuLowerShch = ["щщ", "щщщ"];
+    private static readonly string[] RuUpperShch = ["ЩЩ", "ЩЩЩ"];
+    // LuaM-end
 
     [Dependency] private IRobustRandom _random = default!; // LuaM
 
@@ -37,46 +53,14 @@ public sealed partial class LizardAccentSystem : EntitySystem
         message = RegexUpperEndX.Replace(message, "ECKS$1");
 
 // LuaM-start:
-        message = Regex.Replace(
-            message,
-            "с+",
-            _random.Pick(new List<string>() { "сс", "ссс" })
-        );
-        message = Regex.Replace(
-            message,
-            "С+",
-            _random.Pick(new List<string>() { "СС", "ССС" })
-        );
-        message = Regex.Replace(
-            message,
-            "з+",
-            _random.Pick(new List<string>() { "сс", "ссс" })
-        );
-        message = Regex.Replace(
-            message,
-            "З+",
-            _random.Pick(new List<string>() { "СС", "ССС" })
-        );
-        message = Regex.Replace(
-            message,
-            "ш+",
-            _random.Pick(new List<string>() { "шш", "шшш" })
-        );
-        message = Regex.Replace(
-            message,
-            "Ш+",
-            _random.Pick(new List<string>() { "ШШ", "ШШШ" })
-        );
-        message = Regex.Replace(
-            message,
-            "ч+",
-            _random.Pick(new List<string>() { "щщ", "щщщ" })
-        );
-        message = Regex.Replace(
-            message,
-            "Ч+",
-            _random.Pick(new List<string>() { "ЩЩ", "ЩЩЩ" })
-        );
+        message = RegexRuLowerS.Replace(message, _random.Pick(RuLowerHiss));
+        message = RegexRuUpperS.Replace(message, _random.Pick(RuUpperHiss));
+        message = RegexRuLowerZ.Replace(message, _random.Pick(RuLowerHiss));
+        message = RegexRuUpperZ.Replace(message, _random.Pick(RuUpperHiss));
+        message = RegexRuLowerSh.Replace(message, _random.Pick(RuLowerShh));
+        message = RegexRuUpperSh.Replace(message, _random.Pick(RuUpperShh));
+        message = RegexRuLowerCh.Replace(message, _random.Pick(RuLowerShch));
+        message = RegexRuUpperCh.Replace(message, _random.Pick(RuUpperShch));
 // LuaM-end.
 
         args.Message = message;

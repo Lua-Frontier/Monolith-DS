@@ -9,6 +9,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Robust.Client.GameObjects;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Humanoid;
@@ -18,6 +19,8 @@ public sealed partial class MarkingPicker : Control
 {
     [Dependency] private MarkingManager _markingManager = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    private SpriteSystem _sprite = default!;
 
     public Action<MarkingSet>? OnMarkingAdded;
     public Action<MarkingSet>? OnMarkingRemoved;
@@ -123,6 +126,7 @@ public sealed partial class MarkingPicker : Control
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+        _sprite = _entityManager.System<SpriteSystem>();
 
         CMarkingCategoryButton.OnItemSelected +=  OnCategoryChange;
         CMarkingsUnused.OnItemSelected += item =>
@@ -223,7 +227,7 @@ public sealed partial class MarkingPicker : Control
                 continue;
             }
 
-            var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", marking.Sprites[0].Frame0());
+            var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", _sprite.Frame0(marking.Sprites[0]));
             item.Metadata = marking;
         }
 
@@ -257,7 +261,7 @@ public sealed partial class MarkingPicker : Control
             var _item = new ItemList.Item(CMarkingsUsed)
             {
                 Text = text,
-                Icon = newMarking.Sprites[0].Frame0(),
+                Icon = _sprite.Frame0(newMarking.Sprites[0]),
                 Selectable = true,
                 Metadata = newMarking,
                 IconModulate = marking.MarkingColors[0]
@@ -399,7 +403,7 @@ public sealed partial class MarkingPicker : Control
 
         var stateNames = GetMarkingStateNames(prototype);
         _currentMarkingColors.Clear();
-        CMarkingColors.DisposeAllChildren();
+        CMarkingColors.RemoveAllChildren();
         List<ColorSelectorSliders> colorSliders = new();
         for (int i = 0; i < prototype.Sprites.Count; i++)
         {
@@ -514,7 +518,7 @@ public sealed partial class MarkingPicker : Control
         var item = new ItemList.Item(CMarkingsUsed)
         {
             Text = Loc.GetString("marking-used", ("marking-name", $"{GetMarkingName(marking)}"), ("marking-category", Loc.GetString($"markings-category-{marking.MarkingCategory}"))),
-            Icon = marking.Sprites[0].Frame0(),
+            Icon = _sprite.Frame0(marking.Sprites[0]),
             Selectable = true,
             Metadata = marking,
         };
@@ -538,7 +542,7 @@ public sealed partial class MarkingPicker : Control
 
         if (marking.MarkingCategory == _selectedMarkingCategory)
         {
-            var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", marking.Sprites[0].Frame0());
+            var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", _sprite.Frame0(marking.Sprites[0]));
             item.Metadata = marking;
         }
         _selectedMarking = null;

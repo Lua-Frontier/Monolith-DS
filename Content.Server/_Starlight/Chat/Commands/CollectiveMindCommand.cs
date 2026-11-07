@@ -8,8 +8,10 @@ using Robust.Shared.Enums;
 namespace Content.Server.Chat.Commands
 {
     [AnyCommand]
-    internal sealed class CollectiveMindCommand : IConsoleCommand
+    internal sealed partial class CollectiveMindCommand : IConsoleCommand
     {
+        [Dependency] private IEntityManager _entManager = default!;
+
         public string Command => "cmsay";
         public string Description => "Send chat messages to the collective mind.";
         public string Help => "cmsay <text>";
@@ -38,7 +40,7 @@ namespace Content.Server.Chat.Commands
             if (string.IsNullOrEmpty(message))
                 return;
 
-            EntitySystem.Get<ChatSystem>().TrySendInGameICMessage(playerEntity, message, InGameICChatType.CollectiveMind, ChatTransmitRange.Normal);
+            _entManager.System<ChatSystem>().TrySendInGameICMessage(playerEntity, message, InGameICChatType.CollectiveMind, ChatTransmitRange.Normal);
         }
     }
 }

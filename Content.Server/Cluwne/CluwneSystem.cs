@@ -23,6 +23,8 @@ namespace Content.Server.Cluwne;
 
 public sealed partial class CluwneSystem : EntitySystem
 {
+    private static readonly ProtoId<DamageGroupPrototype> GeneticId = "Genetic";
+
     [Dependency] private PopupSystem _popupSystem = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IRobustRandom _robustRandom = default!;
@@ -54,7 +56,7 @@ public sealed partial class CluwneSystem : EntitySystem
             RemComp<CluwneComponent>(uid);
             RemComp<ClumsyComponent>(uid);
             RemComp<AutoEmoteComponent>(uid);
-            var damageSpec = new DamageSpecifier(_prototypeManager.Index<DamageGroupPrototype>("Genetic"), 300);
+            var damageSpec = new DamageSpecifier(_prototypeManager.Index<DamageGroupPrototype>(GeneticId), 300);
             _damageableSystem.TryChangeDamage(uid, damageSpec);
         }
     }

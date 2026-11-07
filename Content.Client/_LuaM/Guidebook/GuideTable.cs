@@ -17,7 +17,7 @@ public sealed class GuideTable : Container, IDocumentTag
         if (int.TryParse(args.GetValueOrDefault("Columns"), out var count)) _columns = Math.Max(1, count);
         HorizontalExpand = true; control = this; return true;
     }
-    private float Width(float total, int col) => _columns == 2 ? total * (col == 0 ? 0.34f : 0.66f) : total / _columns;
+    private new float Width(float total, int col) => _columns == 2 ? total * (col == 0 ? 0.34f : 0.66f) : total / _columns;
     protected override Vector2 MeasureOverride(Vector2 availableSize)
     {
         var width = float.IsFinite(availableSize.X) ? availableSize.X : 540;

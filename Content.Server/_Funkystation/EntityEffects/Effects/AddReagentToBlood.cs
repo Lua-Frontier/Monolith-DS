@@ -11,7 +11,7 @@ namespace Content.Server.EntityEffects.Effects;
 
 public sealed partial class AddReagentToBlood : EntityEffect
 {
-    private readonly SharedSolutionContainerSystem _solutionContainers;
+
 
     [DataField]
     public ProtoId<ReagentPrototype>? Reagent = null;

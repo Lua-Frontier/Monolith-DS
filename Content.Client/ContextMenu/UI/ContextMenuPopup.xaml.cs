@@ -69,12 +69,5 @@ namespace Content.Client.ContextMenu.UI
                     _uiController.CloseSubMenus(ParentElement.ParentMenu);
             };
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            MenuBody.OnChildRemoved -= ctrl => _uiController.OnRemoveElement(this, ctrl);
-            ParentElement = null;
-            base.Dispose(disposing);
-        }
     }
 }

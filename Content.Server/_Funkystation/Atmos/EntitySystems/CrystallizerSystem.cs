@@ -279,7 +279,7 @@ namespace Content.Server._Funkystation.Atmos.Systems
 
             // Spawn products
             var mapCoords = _transform.GetMapCoordinates(uid);
-            if (TryComp<TransformComponent>(uid, out var transform) && transform.MapID != MapId.Nullspace)
+            if (TryComp(uid, out TransformComponent? transform) && transform.MapID != MapId.Nullspace)
             {
                 var gridUid = transform.GridUid;
                 if (gridUid != null && TryComp<MapGridComponent>(gridUid, out var mapGrid))

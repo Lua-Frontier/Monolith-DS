@@ -8,6 +8,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Mobs.Components;
+using Robust.Shared.Audio;
 
 namespace Content.Server._EinsteinEngines.Silicon.EmitBuzzOnCrit;
 
@@ -51,7 +52,7 @@ public sealed partial class EmitBuzzWhileDamagedSystem : EntitySystem
             emitBuzzOnCritComponent.LastBuzzPopupTime = _gameTiming.CurTime;
             _popupSystem.PopupEntity(Loc.GetString("silicon-behavior-buzz"), uid);
             Spawn("EffectSparks", Transform(uid).Coordinates);
-            _audio.PlayPvs(emitBuzzOnCritComponent.Sound, uid, AudioHelpers.WithVariation(0.05f, _robustRandom));
+            _audio.PlayPvs(emitBuzzOnCritComponent.Sound, uid, AudioParams.Default.WithVariation(0.05f));
         }
     }
 

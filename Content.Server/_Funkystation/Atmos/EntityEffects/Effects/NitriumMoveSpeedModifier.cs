@@ -55,6 +55,7 @@ public sealed partial class NitriumMovespeedModifier : EntityEffect
         status.SprintSpeedModifier = SprintSpeedModifier;
 
         SetTimer(status, StatusLifetime);
+        args.EntityManager.Dirty(args.TargetEntity, status);
 
         if (modified)
             args.EntityManager.System<MovementSpeedModifierSystem>().RefreshMovementSpeedModifiers(args.TargetEntity);
@@ -66,6 +67,5 @@ public sealed partial class NitriumMovespeedModifier : EntityEffect
         var offsetTime = Math.Max(status.ModifierTimer.TotalSeconds, gameTiming.CurTime.TotalSeconds);
 
         status.ModifierTimer = TimeSpan.FromSeconds(gameTiming.CurTime.TotalSeconds + time);
-        status.Dirty();
     }
 }

@@ -9,6 +9,8 @@ namespace Content.Client.Movement.Systems;
 
 public sealed partial class FloorOcclusionSystem : SharedFloorOcclusionSystem
 {
+    private static readonly ProtoId<ShaderPrototype> HorizontalCutShader = "HorizontalCut";
+
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SpriteSystem _sprite = default!; // LuaM
 
@@ -50,7 +52,7 @@ public sealed partial class FloorOcclusionSystem : SharedFloorOcclusionSystem
         if (!_spriteQuery.Resolve(sprite.Owner, ref sprite.Comp, false))
             return;
 
-        var shader = _proto.Index<ShaderPrototype>("HorizontalCut").Instance();
+        var shader = _proto.Index<ShaderPrototype>(HorizontalCutShader).Instance();
 
         // LuaM start: per-id post shaders since RT 286
         if (enabled)

@@ -29,6 +29,7 @@ namespace Content.Client.Construction
         [Dependency] private ExamineSystemShared _examineSystem = default!;
         [Dependency] private SharedTransformSystem _transformSystem = default!;
         [Dependency] private PopupSystem _popupSystem = default!;
+        [Dependency] private SpriteSystem _sprite = default!;
 
         private readonly Dictionary<int, EntityUid> _ghosts = new();
         private readonly Dictionary<string, ConstructionGuide> _guideCache = new();
@@ -212,17 +213,17 @@ namespace Content.Client.Construction
             var comp = Comp<ConstructionGhostComponent>(ghost.Value);
             comp.Prototype = prototype;
             comp.GhostId = ghost.GetHashCode();
-            Comp<TransformComponent>(ghost.Value).LocalRotation = dir.ToAngle();
+            _transformSystem.SetLocalRotation(ghost.Value, dir.ToAngle());
             _ghosts.Add(comp.GhostId, ghost.Value);
             var sprite = Comp<SpriteComponent>(ghost.Value);
-            sprite.Color = new Color(48, 255, 48, 128);
+            _sprite.SetColor((ghost.Value, sprite), new Color(48, 255, 48, 128));
 
             for (int i = 0; i < prototype.Layers.Count; i++)
             {
-                sprite.AddBlankLayer(i); // There is no way to actually check if this already exists, so we blindly insert a new one
-                sprite.LayerSetSprite(i, prototype.Layers[i]);
+                _sprite.AddBlankLayer((ghost.Value, sprite), i); // There is no way to actually check if this already exists, so we blindly insert a new one
+                _sprite.LayerSetSprite((ghost.Value, sprite), i, prototype.Layers[i]);
                 sprite.LayerSetShader(i, "unshaded");
-                sprite.LayerSetVisible(i, true);
+                _sprite.LayerSetVisible((ghost.Value, sprite), i, true);
             }
 
             if (prototype.CanBuildInImpassable)

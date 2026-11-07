@@ -62,6 +62,7 @@ public sealed partial class MovespeedModifier : EntityEffect
         }
 
         IncreaseTimer(status, statusLifetime);
+        args.EntityManager.Dirty(args.TargetEntity, status);
 
         if (modified)
             args.EntityManager.System<MovementSpeedModifierSystem>().RefreshMovementSpeedModifiers(args.TargetEntity);
@@ -73,6 +74,5 @@ public sealed partial class MovespeedModifier : EntityEffect
         var offsetTime = Math.Max(status.ModifierTimer.TotalSeconds, gameTiming.CurTime.TotalSeconds);
 
         status.ModifierTimer = TimeSpan.FromSeconds(offsetTime + time);
-        status.Dirty();
     }
 }

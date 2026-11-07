@@ -6,6 +6,8 @@ namespace Content.Shared._EinsteinEngines.Language.Systems;
 
 public abstract partial class SharedLanguageSystem : EntitySystem
 {
+    private static readonly ProtoId<LanguagePrototype> UniversalId = "Universal";
+
     /// <summary>
     ///     The language used as a fallback in cases where an entity suddenly becomes a Language Speaker (e.g. the usage of make-sentient).
     /// </summary>
@@ -36,7 +38,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
 
     public override void Initialize()
     {
-        Universal = _prototype.Index<LanguagePrototype>("Universal");
+        Universal = _prototype.Index<LanguagePrototype>(UniversalId);
          // Initialize the Psychomantic prototype
         Psychomantic = _prototype.Index<LanguagePrototype>(PsychomanticPrototype);
     }

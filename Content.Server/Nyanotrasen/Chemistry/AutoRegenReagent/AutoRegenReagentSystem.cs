@@ -3,12 +3,13 @@ using Content.Server.Popups;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Player;
+using Content.Shared.Chemistry.EntitySystems;
 
 namespace Content.Server.Chemistry.AutoRegenReagent
 {
     public sealed partial class AutoRegenReagentSystem : EntitySystem
     {
-        [Dependency] private SolutionContainerSystem _solutionSystem = default!;
+        [Dependency] private SharedSolutionContainerSystem _solutionSystem = default!;
         [Dependency] private PopupSystem _popups = default!;
 
         public override void Initialize()

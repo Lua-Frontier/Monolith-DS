@@ -108,10 +108,6 @@ public sealed partial class BatteryDrinkerSystem : EntitySystem
 
         TryComp<BatteryDrinkerSourceComponent>(source, out var sourceComp);
 
-        DebugTools.AssertNotNull(drinkerBattery);
-
-        if (drinkerBattery == null)
-            return;
 
         var amountToDrink = drinkerComp.DrinkMultiplier * 1000;
 

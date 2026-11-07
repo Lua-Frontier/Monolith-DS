@@ -32,7 +32,7 @@ public sealed class GasPressurePumpBoundUserInterface : BoundUserInterface
         Update();
     }
 
-    public void Update()
+    public new void Update()
     {
         if (_window == null)
             return;

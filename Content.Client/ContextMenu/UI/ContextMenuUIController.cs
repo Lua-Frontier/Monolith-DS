@@ -86,7 +86,7 @@ namespace Content.Client.ContextMenu.UI
 
             Close();
             RootMenu.OnPopupHide -= Close;
-            RootMenu.Dispose();
+            RootMenu.Orphan();
             RootMenu = default!;
         }
 
@@ -95,7 +95,7 @@ namespace Content.Client.ContextMenu.UI
         /// </summary>
         public void Close()
         {
-            RootMenu.MenuBody.DisposeAllChildren();
+            RootMenu.MenuBody.RemoveAllChildren();
             CancelOpen?.Cancel();
             CancelClose?.Cancel();
             OnContextClosed?.Invoke();
@@ -131,7 +131,7 @@ namespace Content.Client.ContextMenu.UI
         {
             if (!Menus.TryPeek(out var topMenu))
             {
-                Logger.Error("Context Menu: Mouse entered menu without any open menus?");
+                Logger.GetSawmill("context_menu").Error("Context Menu: Mouse entered menu without any open menus?");
                 return;
             }
 
@@ -181,7 +181,7 @@ namespace Content.Client.ContextMenu.UI
         {
             if (!Menus.TryPeek(out var topMenu))
             {
-                Logger.Error("Context Menu: Attempting to open sub menu without any open menus?");
+                Logger.GetSawmill("context_menu").Error("Context Menu: Attempting to open sub menu without any open menus?");
                 return;
             }
 
@@ -190,7 +190,7 @@ namespace Content.Client.ContextMenu.UI
                 return;
 
             // Was the parent menu closed or disposed before an open timer completed?
-            if (element.Disposed || element.ParentMenu == null || !element.ParentMenu.Visible)
+            if (element.ParentMenu == null || !element.ParentMenu.Visible)
                 return;
 
             // Close any currently open sub-menus up to this element's parent menu.
