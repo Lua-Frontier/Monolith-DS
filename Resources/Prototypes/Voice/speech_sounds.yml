@@ -186,3 +186,12 @@
     path: /Audio/Voice/Xenoborg/xenoborg_ask.ogg
   exclaimSound:
     path: /Audio/Voice/Xenoborg/xenoborg_exclaim.ogg
+
+- type: speechSounds
+  id: Wawa
+  saySound:
+    path: /Audio/Animals/wawa_statement.ogg
+  askSound:
+    path: /Audio/Animals/wawa_question.ogg
+  exclaimSound:
+    path: /Audio/Animals/wawa_exclaim.ogg

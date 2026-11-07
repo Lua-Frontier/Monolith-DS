@@ -699,6 +699,7 @@
   - type: Tag
     tags:
     - MonkeyWearable
+    - ScurretWearable
     - Hardsuit
     - WhitelistChameleon
   - type: StaminaDamageResistance # Mono - Stamres

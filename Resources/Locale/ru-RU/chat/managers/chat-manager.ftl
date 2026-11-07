@@ -142,3 +142,9 @@ chat-manager-send-hook-dead-wrap-message = АДМИН: [bold](ЧМ) { $senderNam
 chat-manager-send-collective-mind-chat-wrap-message = { $channel } коллективный разум: { $message }
 chat-manager-send-collective-mind-chat-wrap-message-admin = { $source } ({ $channel } коллективный разум): { $message }
 chat-manager-collective-mind-channel-name = коллективный разум
+
+chat-speech-verb-name-wawa = Ва-ва
+chat-speech-verb-wawa-1 = нараспев произносит
+chat-speech-verb-wawa-2 = заявляет
+chat-speech-verb-wawa-3 = провозглашает
+chat-speech-verb-wawa-4 = размышляет

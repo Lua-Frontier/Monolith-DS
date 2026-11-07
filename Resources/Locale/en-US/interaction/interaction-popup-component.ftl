@@ -102,3 +102,7 @@ hugging-success-generic-target = { CAPITALIZE(THE($user)) } pats you on the back
 
 petting-success-tesla = You pet {THE($target)}, violating the laws of nature and physics.
 petting-failure-tesla = You reach out towards {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BASIC($target, "zap", "zaps")} your hand away.
+
+petting-success-scurret = You pet {THE($target)} on {POSS-ADJ($target)} legally distinct head.
+
+petting-failure-scurret = You reach out to pet {THE($target)}, but {SUBJECT($target)} does a backflip!

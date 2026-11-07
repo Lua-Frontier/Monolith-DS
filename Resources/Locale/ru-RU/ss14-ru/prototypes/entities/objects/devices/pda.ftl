@@ -157,3 +157,6 @@ ent-VisitorPDA = { ent-ClearPDA }
 ent-ChameleonPDA = contractor PDA
     .desc = Why isn't it gray?
     .suffix = Chameleon
+
+ent-ScurretPDA = { ent-ClearPDA }
+    .desc = Временный КПК, выдаваемый скурретам на подработке. Умеет немного. Ва-ва!
