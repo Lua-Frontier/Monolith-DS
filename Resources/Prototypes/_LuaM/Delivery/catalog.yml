@@ -12,9 +12,19 @@
   exclude:
   - BoxAgrichem
   - WeaponSubMachineGunAK220
+  - ResearchAndDevelopmentServerMerc
+  - ClothingHandsConcussiveGauntlets
+  - BlueprintWarlordSuit
+  - WeaponHeavyMiningLaser
+  - WeaponRifleFoam
+  - WeaponRevolverArgentiNonlethal # duplicate of WeaponRevolverArgenti
+  - WeaponShotgunDoubleBarreledRubber # duplicate of WeaponShotgunDoubleBarreled
+  - WeaponLaserCarbinePractice
+  - WeaponDisablerPractice
   excludeParents:
   - Jug
   - BaseChemistryBottleFilled
+  - NFClothingOuterEVASuitBase
   excludeComponents:
   - Hypospray
   - Flatpack

@@ -2,3 +2,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from tgstation"
   source: "https://github.com/tgstation/tgstation/tree/423404b31e36c4605faacec881b324db8997b0a6"
+
+- files: ["dirt.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Dirt by Peptide, from Fortuna commit 2a9408a47e2f83d945335e4feeeeafb552173e6f"
+  source: "https://github.com/FortunaSS13/Fortuna"

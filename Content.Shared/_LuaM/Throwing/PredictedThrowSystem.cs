@@ -95,7 +95,11 @@ public sealed partial class PredictedThrowSystem : EntitySystem
         if (ev.Cancelled)
             return true;
 
-        if (_hands.IsHolding(player, throwEnt, out _, hands) && !_hands.TryDrop(player, throwEnt, handsComp: hands))
+        // -- После сброса предсказания руки клиента ещё "держат" предмет, который клиент уже выбросил из контейнера:
+        // -- TryDrop тогда падает, бросок обрывается до импульса, и предмет лежит у ног, пока не придёт сервер
+        if (_hands.IsHolding(player, throwEnt, out _, hands)
+            && _container.IsEntityInContainer(throwEnt)
+            && !_hands.TryDrop(player, throwEnt, handsComp: hands))
             return false;
 
         _throwing.TryThrow(ev.ItemUid,

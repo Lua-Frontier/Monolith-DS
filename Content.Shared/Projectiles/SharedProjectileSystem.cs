@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
+using Content.Shared._LuaM.Throwing; // LuaM
 using Content.Shared.Administration.Logs;
 using Content.Shared.Camera;
 using Content.Shared.CombatMode.Pacification;
@@ -463,7 +464,26 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (!embeddable.Comp.EmbedOnThrow)
             return;
 
-        EmbedAttach(embeddable, args.Target, null, embeddable.Comp);
+        // LuaM-start
+        // -- Сервер не играет звук бросившему, если его клиент предсказал бросок и уже сыграл звук сам
+        var soundUser = HasComp<PredictedThrownItemComponent>(embeddable) ? args.Component.Thrower : null;
+
+        // -- Клиент только останавливает нож у цели: полное втыкание повторялось при каждом перепредсказании,
+        // -- дублировало список воткнутого и ломало контакты физики, а привязку к цели всё равно присылает сервер
+        if (_net.IsClient)
+        {
+            if (TryComp<PhysicsComponent>(embeddable, out var body))
+            {
+                _physics.SetLinearVelocity(embeddable, Vector2.Zero, body: body);
+                _physics.SetAngularVelocity(embeddable, 0f, body: body);
+            }
+
+            _audio.PlayPredicted(embeddable.Comp.Sound, embeddable, soundUser);
+            return;
+        }
+        // LuaM-end
+
+        EmbedAttach(embeddable, args.Target, null, embeddable.Comp, soundUser); // LuaM: added soundUser
     }
 
     private void OnEmbedProjectileHit(Entity<EmbeddableProjectileComponent> embeddable, ref ProjectileHitEvent args)
@@ -478,7 +498,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         }
     }
 
-    private void EmbedAttach(EntityUid uid, EntityUid target, EntityUid? user, EmbeddableProjectileComponent component)
+    private void EmbedAttach(EntityUid uid, EntityUid target, EntityUid? user, EmbeddableProjectileComponent component, EntityUid? soundUser = null) // LuaM: added soundUser
     {
         TryComp<PhysicsComponent>(uid, out var physics);
         _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
@@ -494,7 +514,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             _transform.SetLocalPosition(uid, xform.LocalPosition + rotation.RotateVec(component.Offset), xform);
         }
 
-        _audio.PlayPredicted(component.Sound, uid, null);
+        _audio.PlayPredicted(component.Sound, uid, soundUser); // LuaM: null > soundUser
         component.EmbeddedIntoUid = target;
         var ev = new EmbedEvent(user, target);
         RaiseLocalEvent(uid, ref ev);

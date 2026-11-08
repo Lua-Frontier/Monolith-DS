@@ -29,6 +29,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Markdown.Sequence;
+using Robust.Shared.Serialization.Markdown.Value;
 using Robust.Shared.Timing;
 
 namespace Content.Server._LuaM.Delivery;
@@ -281,10 +283,31 @@ public sealed partial class DeliverySystem : EntitySystem
         if (catalog.ExcludeParents.Count == 0)
             return false;
 
-        foreach (var parent in _proto.EnumerateParents<EntityPrototype>(proto, true))
+        // -- EnumerateParents пропускает абстрактных родителей вместе с их предками, поэтому цепочку проходим по YAML
+        var queue = new Queue<string>(proto.Parents ?? Array.Empty<string>());
+        var seen = new HashSet<string>();
+        while (queue.TryDequeue(out var id))
         {
-            if (catalog.ExcludeParents.Contains(parent.ID))
+            if (!seen.Add(id))
+                continue;
+
+            if (catalog.ExcludeParents.Contains(id))
                 return true;
+
+            if (!_proto.TryGetMapping(typeof(EntityPrototype), id, out var mapping)
+                || !mapping.TryGet("parent", out var parents))
+                continue;
+
+            if (parents is ValueDataNode single)
+                queue.Enqueue(single.Value);
+            else if (parents is SequenceDataNode list)
+            {
+                foreach (var node in list)
+                {
+                    if (node is ValueDataNode value)
+                        queue.Enqueue(value.Value);
+                }
+            }
         }
 
         return false;

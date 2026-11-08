@@ -1,4 +1,5 @@
 ﻿using System.Linq; // LuaM
+using System.Numerics; // LuaM
 using Content.Shared.Throwing;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
@@ -18,7 +19,12 @@ public sealed partial class ThrownItemVisualizerSystem : EntitySystem
 
     private const string AnimationKey = "thrown-item";
 
-    private readonly Dictionary<EntityUid, TimeSpan?> _animatedThrows = new(); // LuaM
+    // LuaM start
+    // -- Предсказанный бросок анимируется один раз: состояния сервера и перепредсказание приходят с тем же ThrownTime.
+    // -- Исходный масштаб хранится здесь, а не в компоненте: после сброса предсказания компонент полёта приходит новым,
+    // -- и оборванная на увеличенном спрайте анимация иначе становилась новой базой, предмет рос с каждым броском
+    private readonly Dictionary<EntityUid, (TimeSpan? ThrownTime, Vector2 BaseScale)> _animated = new();
+    // LuaM end
 
     public override void Initialize()
     {
@@ -48,8 +54,7 @@ public sealed partial class ThrownItemVisualizerSystem : EntitySystem
             return;
 
         // LuaM start
-        // -- Предсказанный бросок уже анимирован; повторные состояния от сервера и перепредсказание не должны запускать его снова
-        if (_animatedThrows.TryGetValue(uid, out var animated) && animated == component.ThrownTime
+        if (_animated.TryGetValue(uid, out var animated) && animated.ThrownTime == component.ThrownTime
             || component.LandTime is { } land && land <= _timing.CurTime)
             return;
         // LuaM end
@@ -59,46 +64,45 @@ public sealed partial class ThrownItemVisualizerSystem : EntitySystem
         if (_anim.HasRunningAnimation(uid, animationPlayer, AnimationKey))
             return;
 
-        var anim = GetAnimation((uid, component, sprite));
+        var baseScale = _animated.TryGetValue(uid, out var previous) ? previous.BaseScale : sprite.Scale; // LuaM
+        var anim = GetAnimation(component, baseScale); // LuaM: (uid, component, sprite) > component, baseScale
         if (anim == null)
             return;
 
-        component.OriginalScale = sprite.Scale;
         // LuaM start
-        if (_animatedThrows.Count > 256)
+        if (_animated.Count > 256)
         {
-            foreach (var stale in _animatedThrows.Keys.Where(e => !Exists(e)).ToList())
-                _animatedThrows.Remove(stale);
+            foreach (var stale in _animated.Keys.Where(e => !Exists(e)).ToList())
+                _animated.Remove(stale);
         }
 
-        _animatedThrows[uid] = component.ThrownTime;
+        _animated[uid] = (component.ThrownTime, baseScale);
         // LuaM end
         _anim.Play((uid, animationPlayer), anim, AnimationKey);
     }
 
     private void OnShutdown(EntityUid uid, ThrownItemComponent component, ComponentShutdown args)
     {
-        if (_timing.ApplyingState && _animatedThrows.ContainsKey(uid) && component.LandTime > _timing.CurTime) // LuaM
-            return; // LuaM
-
-        if (!_anim.HasRunningAnimation(uid, AnimationKey))
+        // LuaM start
+        if (_timing.ApplyingState && _animated.ContainsKey(uid) && component.LandTime > _timing.CurTime)
             return;
 
-        if (TryComp<SpriteComponent>(uid, out var sprite) && component.OriginalScale != null)
-            _sprite.SetScale((uid, sprite), component.OriginalScale.Value);
+        if (_animated.Remove(uid, out var animated) && TryComp<SpriteComponent>(uid, out var sprite))
+            _sprite.SetScale((uid, sprite), animated.BaseScale);
 
-        _anim.Stop(uid, AnimationKey);
+        if (_anim.HasRunningAnimation(uid, AnimationKey))
+            _anim.Stop(uid, AnimationKey);
+        // LuaM end
     }
 
-    private static Animation? GetAnimation(Entity<ThrownItemComponent, SpriteComponent> ent)
+    private static Animation? GetAnimation(ThrownItemComponent component, Vector2 scale) // LuaM: Entity<ThrownItemComponent, SpriteComponent> > component, scale
     {
-        if (ent.Comp1.LandTime - ent.Comp1.ThrownTime is not { } length)
+        if (component.LandTime - component.ThrownTime is not { } length)
             return null;
 
         if (length <= TimeSpan.Zero)
             return null;
 
-        var scale = ent.Comp2.Scale;
         var lenFloat = (float) length.TotalSeconds;
 
         // TODO use like actual easings here

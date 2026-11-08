@@ -63,6 +63,13 @@ delivery-ui-cash-payout = Payouts: cash
 
 delivery-category-all = All items
 delivery-category-cart = Cart
+delivery-category-favorites = Favorites
+delivery-sort-name = By name
+delivery-sort-price-ascending = Price: low to high
+delivery-sort-price-descending = Price: high to low
+delivery-ui-favorites-empty = No favorites yet. Mark an item with the star.
+delivery-ui-favorite-add = Add to favorites
+delivery-ui-favorite-remove = Remove from favorites
 delivery-category-engineering = Engineering
 delivery-category-salvage = Salvage
 delivery-category-fuel = Fuel

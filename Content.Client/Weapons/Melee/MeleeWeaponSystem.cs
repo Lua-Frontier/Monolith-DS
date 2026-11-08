@@ -37,6 +37,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     private EntityQuery<TransformComponent> _xformQuery;
 
     private const string MeleeLungeKey = "melee-lunge";
+    private const float SelfClickRadius = 0.45f; // LuaM
 
     public override void Initialize()
     {
@@ -199,6 +200,14 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             if (HasComp<HandsComponent>(userOverride) && Interaction.CombatModeCanHandInteract(userOverride, target))
                 return;
 
+            // -- ЛКМ по себе: сервер такой удар не примет, а клиент проигрывал замах без звука
+            if (target == userOverride || target == entity) // LuaM
+                return; // LuaM
+
+            // -- Клик по прозрачной части своего спрайта давал промах кулаком прямо в себя: анимация удара по себе, её видели и другие
+            if (target == null && weaponUid == userOverride && (attackerPos.Position - mousePos.Position).Length() < SelfClickRadius) // LuaM
+                return; // LuaM
+
             RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
         }
 
@@ -303,6 +312,12 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         // Don't light-attack if interaction will be handling this instead // Mono - only if attacker has hands
         if (HasComp<HandsComponent>(attacker) && Interaction.CombatModeCanHandInteract(attacker, target))
             return;
+
+        if (target == attacker || target == _player.LocalEntity) // LuaM
+            return; // LuaM
+
+        if (target == null && weaponUid == attacker && (attackerPos.Position - mousePos.Position).Length() < SelfClickRadius) // LuaM
+            return; // LuaM
 
         RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
     }

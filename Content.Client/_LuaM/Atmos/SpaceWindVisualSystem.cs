@@ -8,7 +8,6 @@ namespace Content.Client._LuaM.Atmos;
 public sealed class SpaceWindVisualSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
-    [Dependency] private SharedTransformSystem _transform = default!;
 
     private static readonly EntProtoId VisualProto = "SpaceWindVisual";
 
@@ -30,7 +29,7 @@ public sealed class SpaceWindVisualSystem : EntitySystem
         if (!coordinates.IsValid(EntityManager))
             return;
 
-        var visual = Spawn(VisualProto, coordinates);
-        _transform.SetLocalRotation(visual, ev.Rotation);
+        // -- Угол сразу при создании: SetLocalRotation на клиенте интерполируется и для клиентской сущности застревает на полпути
+        SpawnAttachedTo(VisualProto, coordinates, rotation: ev.Rotation);
     }
 }

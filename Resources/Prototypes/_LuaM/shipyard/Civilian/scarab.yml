@@ -9,7 +9,7 @@
   parent: BaseVessel
   name: vessel-scarab-name
   description: vessel-scarab-desc
-  price: 214185
+  price: 222100 # LuaM: 214185 > 222100, appraisal 219867
   category: Large
   group: Shipyard
   shuttlePath: /SharedMaps/_LuaM/Shuttles/Civilian/scarab.yml

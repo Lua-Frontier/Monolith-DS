@@ -22,6 +22,7 @@
         <BoxContainer Name="CatalogPanel" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 4">
             <OptionButton Name="CategorySelect" MinWidth="180"/>
+            <OptionButton Name="SortSelect" MinWidth="130" Margin="4 0 0 0"/>
             <LineEdit Name="SearchInput" PlaceHolder="{Loc 'delivery-ui-search'}" HorizontalExpand="True" Margin="4 0 0 0"/>
         </BoxContainer>
         <Label Name="CatalogStatusLabel" FontColorOverride="#A0A0A0" Visible="False"/>

@@ -3,8 +3,10 @@ chat-emote-name-jump = Прыгнуть
 
 chat-emote-msg-spin = вращается!
 chat-emote-msg-jump = прыгает!
-chat-emote-name-flip = Сделать сальто
-chat-emote-msg-flip = делает сальто!
+# LuaM: flip emote removed
+# chat-emote-name-flip = Сделать сальто
+# LuaM: flip emote removed
+# chat-emote-msg-flip = делает сальто!
 chat-emote-name-trill = Трель
 chat-emote-name-warble = Рулада
 chat-emote-name-wurble = Бульканье

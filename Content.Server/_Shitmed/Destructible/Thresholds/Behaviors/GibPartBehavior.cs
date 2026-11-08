@@ -15,6 +15,10 @@ public sealed partial class GibPartBehavior : IThresholdBehavior
         if (!system.EntityManager.TryGetComponent(owner, out BodyPartComponent? part))
             return;
 
+        // -- Конечность отрубается почти у порога гиба, и первый же урон по ней на полу удалял её без гибов
+        if (part.Body == null) // LuaM
+            return; // LuaM
+
         system.BodySystem.GibPart(owner, part);
     }
 }

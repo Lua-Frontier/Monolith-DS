@@ -63,6 +63,13 @@ delivery-ui-cash-payout = Выплаты: наличными
 
 delivery-category-all = Все товары
 delivery-category-cart = Корзина
+delivery-category-favorites = Избранное
+delivery-sort-name = По алфавиту
+delivery-sort-price-ascending = Цена: по возрастанию
+delivery-sort-price-descending = Цена: по убыванию
+delivery-ui-favorites-empty = В избранном пока пусто. Отметьте товар звёздочкой.
+delivery-ui-favorite-add = Добавить в избранное
+delivery-ui-favorite-remove = Убрать из избранного
 delivery-category-engineering = Инженерные
 delivery-category-salvage = Утилизаторские
 delivery-category-fuel = Топливо

@@ -140,10 +140,18 @@ namespace Content.Client.Hands.Systems
 
         public override void DoDrop(EntityUid uid, Hand hand, bool doDropInteraction = true, HandsComponent? hands = null, bool log = true)
         {
+            var held = hand.HeldEntity; // LuaM
             base.DoDrop(uid, hand, doDropInteraction, hands, log);
 
-            if (TryComp(hand.HeldEntity, out SpriteComponent? sprite))
+            if (TryComp(held, out SpriteComponent? sprite)) // LuaM: hand.HeldEntity > held, the hand is already empty here
                 sprite.RenderOrder = EntityManager.CurrentTick.Value;
+
+            // LuaM-start
+            // -- Контейнер руки обнуляет угол без обновления цели интерполяции: у ножа там оставался угол броска,
+            // -- и после сброса клиент доворачивал его по диагонали. Задаём обе цели текущими значениями
+            if (held is { } dropped && TryComp(dropped, out TransformComponent? xform) && !TerminatingOrDeleted(dropped))
+                TransformSystem.SetLocalPositionRotation(dropped, xform.LocalPosition, xform.LocalRotation, xform);
+            // LuaM-end
         }
 
         public EntityUid? GetActiveHandEntity()

@@ -1,38 +1,24 @@
-<PanelContainer xmlns="https://spacestation14.io"
-                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-                HorizontalExpand="True">
+<ContainerButton xmlns="https://spacestation14.io"
+                 HorizontalExpand="True"
+                 ToggleMode="True"
+                 StyleClasses="button"
+                 Margin="0 0 0 2">
+    <!-- LuaM: the row only selects a vessel; purchase moved to the bottom bar of the console -->
     <BoxContainer Orientation="Horizontal"
-                  HorizontalExpand="True">
+                  HorizontalExpand="True"
+                  Margin="6 3">
         <Label Name="VesselName"
                Access="Public"
                ClipText="True"
-               HorizontalExpand="True"
-               Margin="6 0 0 0" />
-        <!-- Lua start -->
+               HorizontalExpand="True" />
+        <Label Name="LimitedCount"
+               Access="Public"
+               Visible="False"
+               Margin="6 0 0 0"
+               FontColorOverride="#D4B04C" />
         <Label Name="CategoryLabel"
                Access="Public"
-               HorizontalAlignment="Left"
-               HorizontalExpand="True"
-               Margin="6 0" />
-        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Right" HorizontalExpand="True" Margin="6 0 5 0">
-            <Label Name="LimitedCount" Access="Public" Visible="False" Margin="0 0 10 0"/>
-            <Label Name="Price" Access="Public" MinWidth="80" Align="Right"/>
-        </BoxContainer>
-        <!-- Lua end -->
-        <controls:ConfirmButton Name="Purchase"
-                                Access="Public"
-                                Text="{Loc 'shipyard-console-purchase-available'}"
-                                StyleClasses="ButtonSquare"
-                                MinWidth="130"
-                                HorizontalAlignment="Right" />
-        <!-- Lua: Guidebook button replaced with Preview -->
-        <!-- LuaM: ship preview disabled -->
-        <Button Name="Preview"
-                Access="Public"
-                Visible="False"
-                Text="{Loc 'shipyard-console-preview'}"
-                StyleClasses="ButtonSquare"
-                MinWidth="130"
-                HorizontalAlignment="Right" />
+               Margin="6 0 0 0"
+               FontColorOverride="#9BA6AD" />
     </BoxContainer>
-</PanelContainer>
+</ContainerButton>

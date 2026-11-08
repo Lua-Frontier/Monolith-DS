@@ -36,6 +36,8 @@ public static partial class PoolManager
         (CCVars.MovementMobPushing.Name, "false"),
         (CCVars.GameLobbyDefaultPreset.Name, "secret"), // Frontier: Adventure takes ages, default to secret
         (CCVars.StaticStorageUI.Name, "true"),// Frontier: causes storage test failures
+        // -- Иначе первый же рестарт сыгранного раунда выключает тестовый сервер и ломает пул пар
+        (CCVars.ServerRestartOnRoundEnd.Name, "false"), // LuaM
         (CCVars.StorageLimit.Name, "1")// Frontier: test failures with multiple storage 
     };
 }
