@@ -141,6 +141,7 @@ public sealed partial class DeliverySystem : EntitySystem
             _nextModeCheck = now + ModeCheckInterval;
 
         RefreshOpenApps(couriersOnly: true, checkModes: checkModes);
+        UpdateCourierTargets();
     }
 
     #region Catalog

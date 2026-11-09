@@ -28,4 +28,7 @@ public sealed class LuaMCVars
 
     public static readonly CVarDef<bool> SpaceWindVisuals =
         CVarDef.Create("luam.space_wind_visuals", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<bool> RoundIntroEnabled =
+        CVarDef.Create("luam.round_intro", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 }

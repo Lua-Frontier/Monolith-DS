@@ -39,6 +39,7 @@
     id: DeliveryCourierPDA
   storage:
     back:
+    - PaperLuaMCourierWelcome
     - EncryptionKeyService
     - ShipVoucherFrontierService
 
@@ -49,22 +50,22 @@
   parent: JobIcon
   id: JobIconDeliveryCourier
   icon:
-    sprite: /Textures/_NF/Interface/Misc/job_icons.rsi
-    state: valet
+    sprite: /Textures/_LuaM/Interface/Misc/job_icons.rsi
+    state: courier
   jobName: job-name-delivery-courier
 
 - type: roleLoadout
   id: JobDeliveryCourier
   groups:
   - CourierHead
-  - ContractorNeck
+  - CourierNeck
   - CourierJumpsuit
   - CourierGloves
   - CourierBackpack
   - CourierOuterClothing
   - CourierShoes
   - ContractorFace
-  - ContractorGlasses
+  - CourierGlasses
   - ContractorBelt
   - ContractorEars
   - ContractorEncryptionKey
@@ -91,6 +92,13 @@
   components:
   - type: PresetIdCard
     job: DeliveryCourier
+  - type: Sprite
+    sprite: _LuaM/Objects/Misc/courier_id_card.rsi
+    layers:
+    - state: courier
+    - state: idcourier
+  - type: Item
+    heldPrefix: courier
 
 - type: entity
   parent: CCServiceWorkerPDA
@@ -100,6 +108,23 @@
   components:
   - type: Pda
     id: DeliveryCourierIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-courier
+  - type: Sprite
+    sprite: _LuaM/Objects/Devices/courier_pda.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Devices/courier_pda.rsi
+  - type: Item
+    sprite: _LuaM/Objects/Devices/courier_pda.rsi
+  - type: Icon
+    sprite: _LuaM/Objects/Devices/courier_pda.rsi
+    state: pda-courier
+  - type: PdaBorderColor
+    borderColor: "#1E1D1B"
+    accentVColor: "#E9BC1D"
 
 - type: entity
   id: SpawnPointDeliveryCourier

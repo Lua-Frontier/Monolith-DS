@@ -27,7 +27,7 @@ namespace Content.Client.Voting.UI
             IoCManager.InjectDependencies(this);
             RobustXamlLoader.Load(this);
 
-            Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSpace;
+            Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetNano; // LuaM: SheetSpace
 
             if (_vote.TargetEntity != null && _vote.TargetEntity != 0)
             {
@@ -36,7 +36,7 @@ namespace Content.Client.Voting.UI
                 FollowVoteTarget.OnPressed += _ => AttemptFollowVoteEntity();
             }
 
-            Modulate = Color.White.WithAlpha(0.75f);
+            Modulate = Color.White.WithAlpha(0.92f); // LuaM: 0.75f
             _voteButtons = new Button[vote.Entries.Length];
             var group = new ButtonGroup();
 

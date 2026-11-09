@@ -58,6 +58,13 @@
                             <BoxContainer Orientation="Horizontal" SeparationOverride="4">
                                 <Button Name="PreviousSongButton" Access="Public" Text="&lt;" MinSize="28 28"
                                         ToolTip="{Loc 'ui-lobby-song-previous'}" />
+                                <Button Name="PauseSongButton" Access="Public" MinSize="28 28"
+                                        ToolTip="{Loc 'ui-lobby-song-pause'}">
+                                    <TextureRect Name="PauseSongIcon" Access="Public" SetSize="16 16"
+                                                 TexturePath="/Textures/Interface/AdminActions/pause.png"
+                                                 Stretch="KeepAspectCentered"
+                                                 HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Button>
                                 <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <Button Name="NextSongButton" Access="Public" Text="&gt;" MinSize="28 28"
                                         ToolTip="{Loc 'ui-lobby-song-next'}" />

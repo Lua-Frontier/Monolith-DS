@@ -53803,12 +53803,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -37.5,21.5
       parent: 2
-  - uid: 7026
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -34.5,30.5
-      parent: 2
   - uid: 7027
     components:
     - type: Transform
@@ -58237,27 +58231,7 @@ entities:
   - uid: 10401
     components:
     - type: Transform
-      pos: 14.5,5.5
-      parent: 2
-  - uid: 10402
-    components:
-    - type: Transform
-      pos: 17.5,5.5
-      parent: 2
-  - uid: 10403
-    components:
-    - type: Transform
-      pos: 17.5,11.5
-      parent: 2
-  - uid: 10404
-    components:
-    - type: Transform
-      pos: 11.5,11.5
-      parent: 2
-  - uid: 10405
-    components:
-    - type: Transform
-      pos: 14.5,11.5
+      pos: -34.5,30.5
       parent: 2
 - proto: SpawnPointContractor
   entities:
@@ -60761,7 +60735,7 @@ entities:
     - type: Transform
       pos: -5.5,27.5
       parent: 2
-- proto: VendingMachineMailDrobe
+- proto: VendingMachineLuaMCourierDrobe
   entities:
   - uid: 7909
     components:
@@ -70741,7 +70715,7 @@ entities:
     - type: Transform
       pos: -3.5,29.5
       parent: 2
-- proto: WeaponMailLake
+- proto: ClothingOuterCoatLuaMCourier
   entities:
   - uid: 9737
     components:

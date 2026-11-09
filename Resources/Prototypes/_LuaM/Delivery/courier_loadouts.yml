@@ -31,17 +31,17 @@
 
 - type: loadout
   id: CourierSurvivalKnife
-  price: 650
+  price: 0
   storage:
     back:
     - SurvivalKnifeLuaMCourier
 
 - type: loadout
   id: CourierFlashlightSeclite
-  price: 100
+  price: 0
   storage:
     back:
-    - FlashlightSeclite
+    - FlashlightLuaMCourier
 
 - type: loadoutGroup
   id: CourierHead
@@ -145,3 +145,42 @@
   - ContractorBackpack
   fallbacks:
   - CourierClothingBackpackThermobag
+
+- type: loadout
+  id: CourierClothingNeckCloakCourier
+  price: 0
+  equipment:
+    neck: ClothingNeckCloakLuaMCourier
+
+- type: loadout
+  id: CourierClothingNeckCloakCourierYellow
+  price: 0
+  equipment:
+    neck: ClothingNeckCloakLuaMCourierYellow
+
+- type: loadoutGroup
+  id: CourierNeck
+  name: loadout-group-contractor-neck
+  minLimit: 0
+  loadouts:
+  - CourierClothingNeckCloakCourier
+  - CourierClothingNeckCloakCourierYellow
+  subgroups:
+  - ContractorNeck
+
+- type: loadout
+  id: CourierClothingEyesHudCourier
+  price: 0
+  equipment:
+    eyes: ClothingEyesHudLuaMCourier
+
+- type: loadoutGroup
+  id: CourierGlasses
+  name: loadout-group-contractor-glasses
+  minLimit: 0
+  loadouts:
+  - CourierClothingEyesHudCourier
+  subgroups:
+  - ContractorGlasses
+  fallbacks:
+  - CourierClothingEyesHudCourier

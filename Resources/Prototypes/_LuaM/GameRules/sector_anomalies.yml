@@ -22,6 +22,7 @@
   id: SectorDarkness
   components:
   - type: StationEvent
+    weight: 5 # half of SectorBrightness
     startAnnouncement: station-event-sector-darkness-start-announcement
     endAnnouncement: station-event-sector-darkness-end-announcement
     startAudio:

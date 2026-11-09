@@ -20,6 +20,7 @@
   - MercenaryKammererLoadout
   - MercenaryDisablerSMGLoadout
   - MercenaryLaserCarbineLoadout
+  - MercenaryMercLaserCarbineLoadout # LuaM
   - MercenaryEnergyGunLoadout
   - MercenaryLeverActionloadout
 
@@ -36,6 +37,7 @@
   - MercenaryHelepolisLoadout
   - ContractorDisablerLoadout
   - MercenaryLaserPistolLoadout
+  - MercenaryMercLaserPistolLoadout # LuaM
   - MercenaryCombatKnifeLoadout
   - MercenaryKukriKnifeLoadout
   - MercenaryThrowingKnifeLoadout

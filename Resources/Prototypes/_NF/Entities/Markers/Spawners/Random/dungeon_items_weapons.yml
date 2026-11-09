@@ -57,6 +57,7 @@
     - WeaponCaseShortPollockExpedition
     - WeaponCaseShortArgentiExpedition
     - WeaponCaseShortLaserGunExpedition
+    - WeaponCaseShortMercLaserPistolExpedition # LuaM
     #- WeaponCaseShortHandmadeExpedition
     #- WeaponCaseLongShotgunDoubleBarreledExpedition
     - WeaponCaseShortSawnExpedition
@@ -239,6 +240,7 @@
     - WeaponCaseLongLecterExpedition
     - WeaponCaseLongIrohExpedition # Mono
     - WeaponCaseLongLaserCarbineExpedition
+    - WeaponCaseLongMercLaserCarbineExpedition # LuaM
     - WeaponCaseShortAdvancedLaserExpedition
     - WeaponCaseShortEg4 # Mono
     - WeaponCaseShortAnaconda # Mono

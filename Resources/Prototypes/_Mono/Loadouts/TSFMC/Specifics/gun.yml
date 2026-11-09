@@ -38,6 +38,7 @@
   - SecurityGuardMk58Loadout
   - FactionInspectorLoadout
   - FactionLaserPistolLoadout
+  - FactionMercLaserPistolLoadout # LuaM
   - ContractorDisablerLoadout
 
 - type: loadoutGroup

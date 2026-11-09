@@ -23,6 +23,7 @@ public sealed partial class LobbyState
         Lobby.NextBackgroundButton.OnPressed += OnNextBackground;
         Lobby.PreviousSongButton.OnPressed += OnPreviousSong;
         Lobby.NextSongButton.OnPressed += OnNextSong;
+        Lobby.PauseSongButton.OnPressed += OnPauseSong;
 
         _backgrounds.Clear();
         foreach (var proto in _prototype.EnumeratePrototypes<AnimatedLobbyBackgroundPrototype>())
@@ -46,6 +47,7 @@ public sealed partial class LobbyState
         Lobby.NextBackgroundButton.OnPressed -= OnNextBackground;
         Lobby.PreviousSongButton.OnPressed -= OnPreviousSong;
         Lobby.NextSongButton.OnPressed -= OnNextSong;
+        Lobby.PauseSongButton.OnPressed -= OnPauseSong;
     }
 
     private void SetStaticLobbyBackground(string? path)
@@ -85,6 +87,24 @@ public sealed partial class LobbyState
     private void OnPreviousSong(BaseButton.ButtonEventArgs args) => _contentAudioSystem.SkipLobbyTrack(-1);
 
     private void OnNextSong(BaseButton.ButtonEventArgs args) => _contentAudioSystem.SkipLobbyTrack(1);
+
+    private void OnPauseSong(BaseButton.ButtonEventArgs args)
+    {
+        _contentAudioSystem.ToggleLobbyMusicPause();
+        UpdatePauseButton();
+    }
+
+    private void UpdatePauseButton()
+    {
+        if (Lobby == null)
+            return;
+
+        var paused = _contentAudioSystem.LobbyMusicPaused;
+        Lobby.PauseSongIcon.TexturePath = paused
+            ? "/Textures/Interface/AdminActions/play.png"
+            : "/Textures/Interface/AdminActions/pause.png";
+        Lobby.PauseSongButton.ToolTip = Loc.GetString(paused ? "ui-lobby-song-resume" : "ui-lobby-song-pause");
+    }
 
     private LobbyTrackPrototype? GetLobbyTrack(string filename)
     {

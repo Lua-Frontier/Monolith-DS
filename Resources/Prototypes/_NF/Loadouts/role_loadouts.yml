@@ -117,10 +117,11 @@
 - type: roleLoadout
   id: JobCCServiceWorker # Mono
   groups:
+  - ContractorHead # LuaM
   - ContractorNeck
-  - ValetJumpsuit
+  - ColossusServiceJumpsuit # LuaM: ValetJumpsuit
   - ContractorBackpack
-  - ValetOuterClothing
+  - ContractorOuterClothing # LuaM: ValetOuterClothing
   - ContractorShoes
   - ContractorFace
   - ContractorGlasses

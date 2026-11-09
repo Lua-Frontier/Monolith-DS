@@ -107,12 +107,16 @@ public sealed partial class ClientClothingSystem : ClothingSystem
             return;
 
         List<PrototypeLayerData>? layers = null;
+        var speciesSpecific = false; // LuaM
 
         // first attempt to get species specific data.
         if (inventory.SpeciesId != null
             && item.ClothingVisuals.TryGetValue($"{args.Slot}-{inventory.SpeciesId}", out var speciesLayers)
             && HasLayerStates(uid, speciesLayers)) // LuaM
+        {
             layers = speciesLayers;
+            speciesSpecific = true; // LuaM
+        }
 
         // if that returned nothing, attempt to find generic data
         if (layers == null && !item.ClothingVisuals.TryGetValue(args.Slot, out layers))
@@ -121,6 +125,8 @@ public sealed partial class ClientClothingSystem : ClothingSystem
             if (!TryGetDefaultVisuals(uid, item, args.Slot, inventory.SpeciesId, out layers))
                 return;
         }
+        else if (!speciesSpecific && inventory.SpeciesId != null) // LuaM
+            layers = GetSpeciesStateLayers(item, layers, inventory.SpeciesId); // LuaM
 
         // add each layer to the visuals
         var i = 0;
@@ -140,6 +146,43 @@ public sealed partial class ClientClothingSystem : ClothingSystem
     }
 
     // LuaM-start
+    // -- явные clothingVisuals раньше никогда не брали состояния вида "equipped-BALACLAVA-vulpkanin", и одежду мяла карта смещения
+    private List<PrototypeLayerData> GetSpeciesStateLayers(ClothingComponent clothing, List<PrototypeLayerData> layers, string speciesId)
+    {
+        List<PrototypeLayerData>? result = null;
+        for (var i = 0; i < layers.Count; i++)
+        {
+            var layer = layers[i];
+            var rsiPath = layer.RsiPath ?? clothing.RsiPath;
+            if (layer.State == null || layer.TexturePath != null || rsiPath == null)
+                continue;
+
+            var speciesState = $"{layer.State}-{speciesId}";
+            if (!_cache.GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / rsiPath).RSI.TryGetState(speciesState, out _))
+                continue;
+
+            result ??= new List<PrototypeLayerData>(layers);
+            result[i] = new PrototypeLayerData
+            {
+                Shader = layer.Shader,
+                RsiPath = layer.RsiPath,
+                State = speciesState,
+                Scale = layer.Scale,
+                Rotation = layer.Rotation,
+                Offset = layer.Offset,
+                Visible = layer.Visible,
+                Color = layer.Color,
+                MapKeys = layer.MapKeys,
+                RenderingStrategy = layer.RenderingStrategy,
+                CopyToShaderParameters = layer.CopyToShaderParameters,
+                Cycle = layer.Cycle,
+                Loop = layer.Loop,
+            };
+        }
+
+        return result ?? layers;
+    }
+
     /// <summary>
     ///     Checks that every state of species specific layers exists, so a suit without that species' sprites falls back to generic ones.
     /// </summary>
@@ -300,6 +343,11 @@ public sealed partial class ClientClothingSystem : ClothingSystem
         // temporary, until layer draw depths get added. Basically: a layer with the key "slot" is being used as a
         // bookmark to determine where in the list of layers we should insert the clothing layers.
         bool slotLayerExists = _sprite.LayerMapTryGet((equipee, sprite), slot, out var index, false);
+        if (clothingComponent.RenderLayer is { } renderLayer && _sprite.LayerMapTryGet((equipee, sprite), renderLayer, out var renderIndex, false)) // LuaM
+        {
+            index = renderIndex; // LuaM
+            slotLayerExists = true; // LuaM
+        }
 
         // Select displacement maps
         var displacementData = inventory.Displacements.GetValueOrDefault(slot); //Default unsexed map

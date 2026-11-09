@@ -4,6 +4,8 @@
     SurvivalKnife: 1
     WeaponBrassKnuckles: 1
     WeaponLaserPistolNF: 1
+    WeaponMercLaserPistol: 1 # LuaM
+    WeaponMercLaserCarbine: 1 # LuaM
     WeaponRifleGestio: 1
     WeaponRifleNovaliteC1: 1
     WeaponShotgunDoubleBarreled: 1
@@ -35,6 +37,8 @@
     SurvivalKnife: 4294967295
     WeaponBrassKnuckles: 4294967295
     WeaponLaserPistolNF: 4294967295
+    WeaponMercLaserPistol: 4294967295 # LuaM
+    WeaponMercLaserCarbine: 4294967295 # LuaM
     WeaponRifleGestio: 4294967295
     WeaponRifleNovaliteC1: 4294967295
     WeaponShotgunDoubleBarreled: 4294967295
@@ -99,6 +103,8 @@
     WeaponDisablerSMGPMC: 4294967295
 # Sidearms
     WeaponLaserPistolNF: 4294967295
+    WeaponMercLaserPistol: 4294967295 # LuaM
+    WeaponMercLaserCarbine: 4294967295 # LuaM
     WeaponShotgunSawn: 4294967295
     WeaponRevolverArgenti: 4294967295
     WeaponPistolViperPMC: 4294967295

@@ -99,3 +99,37 @@ reagent-desc-luam-kvass = A refreshing live-fermented bread kvass. Sweet and sou
 
 
 loadout-group-courier-kit = Courier kit
+
+delivery-courier-welcome-content =
+    {"["}head=2]ColossDelivery[/head]
+    {"["}italic]Fast. Warm. Right into your hands.[/italic]
+
+    Dear courier,
+
+    Thank you for choosing ColossDelivery! If you are reading this letter, your shift has already started. Welcome to the team.
+
+    {"["}bold]Your workplace[/bold]
+    The mail office on "Colossus Central". The delivery telepad that receives parcels stands there. Your direct supervisor is the Station Representative of "Colossus Central", bring all work questions to them.
+
+    {"["}bold]How to work[/bold]
+    1. Open the ColossDelivery app on your PDA. It lists every open order from the residents of the sector.
+    2. Take an order right away. While you hesitate, another courier will grab it.
+    3. As soon as you accept an order, the parcel appears on the telepad in the mail office. You can carry at most two orders at once.
+    4. The delivery bag has a pinpointer that points at the customer.
+    5. Hand the bag to the customer. Only they can open it, with their ID card.
+
+    {"["}bold]Deadlines[/bold]
+    You have 30 minutes from the moment the order was placed. If time runs out, the bag self-destructs, the customer gets a refund and you get nothing.
+
+    {"["}bold]Payment[/bold]
+    You receive 30% of the order total up to 50,000 and 10% of everything above. The money reaches your account as soon as the customer opens the bag. Only the courier who accepted the order is paid.
+
+    {"["}bold]Equipment[/bold]
+    The thermobag, uniform and service blaster are issued to you for the shift. The blaster is for self-defense only.
+
+    At the end of your shift, return all equipment, including the blaster, to the mail office. Loss of or damage to company property is subject to a fine.
+
+    Smooth routes and generous tips!
+
+    Sincerely,
+    ColossDelivery HR department

@@ -174,7 +174,7 @@
     selectedMode: FullAuto
     availableModes:
       - FullAuto
-    soundGunshot: /Audio/Weapons/Guns/Gunshots/laser.ogg
+    soundGunshot: /Audio/_LuaM/Weapons/Guns/EG-P/shot.ogg
   - type: Battery
     maxCharge: 500
     startingCharge: 500

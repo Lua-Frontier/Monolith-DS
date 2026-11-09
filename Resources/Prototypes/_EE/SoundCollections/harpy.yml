@@ -129,7 +129,7 @@
     - /Audio/Weapons/Guns/Gunshots/silenced.ogg
     - /Audio/Weapons/Guns/Gunshots/taser.ogg
     - /Audio/Weapons/Guns/Gunshots/taser2.ogg
-    - /Audio/Weapons/Guns/Gunshots/laser.ogg
+    - /Audio/_LuaM/Weapons/Guns/EG-P/shot.ogg
     - /Audio/Weapons/Guns/Gunshots/laser3.ogg
     - /Audio/Weapons/emitter.ogg
     - /Audio/Effects/Arcade/player_attack.ogg

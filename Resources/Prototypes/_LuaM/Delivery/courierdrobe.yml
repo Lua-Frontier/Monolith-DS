@@ -1,0 +1,40 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineLuaMCourierDrobe
+  name: CourierDrobe
+  description: ColossDelivery uniform dispenser. Blasters are issued by the management, not by vending machines.
+  components:
+  - type: VendingMachine
+    pack: LuaMCourierDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Sprite
+    sprite: _LuaM/Structures/Machines/VendingMachines/courierdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#E9BC1D"
+  - type: AccessReader
+    access: [["Mail"]]
+
+- type: vendingMachineInventory
+  id: LuaMCourierDrobeInventory
+  startingInventory:
+    ClothingHeadHatLuaMCourier: 4
+    ClothingUniformJumpsuitLuaMCourier: 4
+    ClothingOuterCoatLuaMCourier: 4
+    ClothingBackpackLuaMCourierThermobag: 4
+    ClothingNeckCloakLuaMCourier: 2
+    ClothingNeckCloakLuaMCourierYellow: 2
+    SurvivalKnifeLuaMCourier: 4
+    FlashlightLuaMCourier: 4
+    ClothingEyesHudLuaMCourier: 4

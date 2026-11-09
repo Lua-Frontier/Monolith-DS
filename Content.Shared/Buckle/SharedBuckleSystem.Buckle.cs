@@ -22,6 +22,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
+using Robust.Shared.Physics; // LuaM
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
@@ -157,6 +158,11 @@ public abstract partial class SharedBuckleSystem
     {
         if (args.OtherEntity == component.BuckledTo && component.DontCollide)
             args.Cancelled = true;
+
+        // LuaM-start: -- смещённое место на двойной кровати у стены задевает стену, физика выталкивает и отстёгивает
+        if (args.OtherBody.BodyType == BodyType.Static && HasComp<_LuaM.Buckle.StrapSlotsComponent>(component.BuckledTo))
+            args.Cancelled = true;
+        // LuaM-end
     }
 
     private void OnBuckleDownAttempt(EntityUid uid, BuckleComponent component, DownAttemptEvent args)

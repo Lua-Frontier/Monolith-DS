@@ -36,3 +36,44 @@
     damage:
       types:
         Slash: 22
+
+- type: entity
+  parent: FlashlightSeclite
+  id: FlashlightLuaMCourier
+  name: courier seclite
+  description: A sturdy ColossDelivery flashlight in corporate yellow and black. Its warm beam makes dark corridors look a little friendlier.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tools/courier_seclite.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: seclite
+      - state: seclite-overlay
+        shader: unshaded
+        visible: false
+        map: [ "light" ]
+  - type: Item
+    sprite: _LuaM/Objects/Tools/courier_seclite.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Tools/courier_seclite.rsi
+    quickEquip: false
+    slots:
+      - Belt
+  - type: PointLight
+    enabled: false
+    radius: 25
+    color: "#FFEBBE"
+
+- type: entity
+  parent: Paper
+  id: PaperLuaMCourierWelcome
+  name: ColossDelivery welcome letter
+  description: A corporate letter on yellow ColossDelivery letterhead.
+  components:
+  - type: Paper
+    stampState: paper_stamp-generic
+    stampedBy:
+    - stampedColor: '#D4A010FF'
+      stampedName: ColossDelivery
+      stampType: RubberStamp
+    content: delivery-courier-welcome-content

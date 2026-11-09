@@ -8,6 +8,7 @@ using Robust.Client;
 using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Components; // LuaM
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -39,6 +40,8 @@ public sealed partial class ContentAudioSystem
     /// Short info about lobby soundtrack currently playing. Is null if soundtrack is not playing.
     /// </summary>
     private LobbySoundtrackInfo? _lobbySoundtrackInfo;
+
+    private TimeSpan? _lobbyPausedAt; // LuaM
 
     private Action<LobbySoundtrackChangedEvent>? _lobbySoundtrackChanged;
 
@@ -192,6 +195,7 @@ public sealed partial class ContentAudioSystem
             return;
         }
 
+        _lobbyPausedAt = null; // LuaM
         var nextTrackOn = _timing.CurTime + audio.AudioStream.Length;
         _lobbySoundtrackInfo = new LobbySoundtrackInfo(soundtrackFilename, nextTrackOn, playResult.Value.Entity);
 
@@ -209,6 +213,7 @@ public sealed partial class ContentAudioSystem
         if (Exists(_lobbySoundtrackInfo.MusicStreamEntityUid)) // LuaM: _audio.Stop > Del
             Del(_lobbySoundtrackInfo.MusicStreamEntityUid);
         _lobbySoundtrackInfo = null;
+        _lobbyPausedAt = null; // LuaM
         var lobbySongChangedEvent = new LobbySoundtrackChangedEvent();
         _lobbySoundtrackChanged?.Invoke(lobbySongChangedEvent);
     }
@@ -245,6 +250,7 @@ public sealed partial class ContentAudioSystem
     {
         if (
             _lobbySoundtrackInfo != null
+            && _lobbyPausedAt == null // LuaM
             && (_timing.CurTime >= _lobbySoundtrackInfo.NextTrackOn || !Exists(_lobbySoundtrackInfo.MusicStreamEntityUid)) // LuaM
             && _lobbyPlaylist?.Length > 0
             )
@@ -290,6 +296,25 @@ public sealed partial class ContentAudioSystem
             index = ((index + delta) % playlist.Length + playlist.Length) % playlist.Length;
             PlaySoundtrack(playlist[index]);
         }
+    }
+
+    public bool LobbyMusicPaused => _lobbyPausedAt != null;
+
+    public void ToggleLobbyMusicPause()
+    {
+        if (_lobbySoundtrackInfo is not { } info || !Exists(info.MusicStreamEntityUid))
+            return;
+
+        if (_lobbyPausedAt is { } pausedAt)
+        {
+            _audio.SetState(info.MusicStreamEntityUid, AudioState.Playing);
+            _lobbySoundtrackInfo = info with { NextTrackOn = info.NextTrackOn + (_timing.CurTime - pausedAt) };
+            _lobbyPausedAt = null;
+            return;
+        }
+
+        _audio.SetState(info.MusicStreamEntityUid, AudioState.Paused);
+        _lobbyPausedAt = _timing.CurTime;
     }
     // LuaM-end
 

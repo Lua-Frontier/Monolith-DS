@@ -1,4 +1,5 @@
 using Content.Client._FarHorizons.StarSystem;
+using Content.Client._Scp.Vignette;
 using Content.Client.Audio;
 using Content.Client.Parallax;
 using Content.Client.Parallax.Managers;
@@ -26,6 +27,7 @@ public sealed partial class SectorAnomalySystem : EntitySystem
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private ContentAudioSystem _contentAudio = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private VignetteOverlaySystem _vignette = default!;
 
     private const float FadeTime = 8f;
     private const float MusicFadeVolume = 32f;
@@ -53,6 +55,7 @@ public sealed partial class SectorAnomalySystem : EntitySystem
     private Color _baseAmbient;
     private float _baseStarIntensity;
     private Color _baseStarFloor;
+    private float _baseStarShadow;
 
     public override void Initialize()
     {
@@ -161,6 +164,9 @@ public sealed partial class SectorAnomalySystem : EntitySystem
                 var brightness = Comp<SectorBrightnessComponent>(map!.Value);
                 _ambientColor = brightness.AmbientColor;
                 _baseAmbient = CompOrNull<MapLightComponent>(map)?.AmbientLightColor ?? MapLightComponent.DefaultColor;
+                var brightStar = CompOrNull<StarLightComponent>(map);
+                _baseStarFloor = brightStar?.AmbientFloor ?? Color.Black;
+                _baseStarShadow = brightStar?.ShadowStrength ?? 0f;
                 SetBackdrop(BrightnessParallax, BrightnessBase, Color.White, BrightnessHaze);
                 StartMusic(brightness.Music);
                 break;
@@ -212,10 +218,20 @@ public sealed partial class SectorAnomalySystem : EntitySystem
                 star.Intensity = MathHelper.Lerp(_baseStarIntensity, _baseStarIntensity * DarkStarLight, _strength);
                 star.AmbientFloor = Color.InterpolateBetween(_baseStarFloor, Color.Black, _strength);
                 break;
-            case Anomaly.Brightness when TryComp(_map, out MapLightComponent? light):
-                light.AmbientLightColor = Color.InterpolateBetween(_baseAmbient, _ambientColor, _strength);
+            case Anomaly.Brightness:
+                if (TryComp(_map, out MapLightComponent? light))
+                    light.AmbientLightColor = Color.InterpolateBetween(_baseAmbient, _ambientColor, _strength);
+
+                // -- звезда перекрывает освещение карты своим светом и тенями гридов, без этого в тенях остаётся темнота
+                if (TryComp(_map, out StarLightComponent? brightStar))
+                {
+                    brightStar.AmbientFloor = Color.InterpolateBetween(_baseStarFloor, _ambientColor, _strength);
+                    brightStar.ShadowStrength = MathHelper.Lerp(_baseStarShadow, 0f, _strength);
+                }
                 break;
         }
+
+        _vignette.SetStrength(_anomaly == Anomaly.Brightness ? 1f - _strength : 1f);
     }
 
     private void SetStarSystemZIndex(bool raised, bool star)

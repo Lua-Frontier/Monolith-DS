@@ -66,7 +66,7 @@
     availableModes:
       - FullAuto #LuaM Semi to Full
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/_LuaM/Weapons/Guns/EG-P/shot.ogg
   - type: HitscanBatteryAmmoProvider
     proto: Hitscan700Thz #LuaM RedHeavyLaser > Hitscan700Thz
     fireCost: 25 # Mono
@@ -92,7 +92,7 @@
     availableModes:
       - FullAuto #LuaM Semi to Full
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/_LuaM/Weapons/Guns/EG-P/shot.ogg
   - type: HitscanBatteryAmmoProvider
     proto: PulsedPlasma #LuaM RedMediumLaser > PulsedPlasma
     fireCost: 500 #LuaM 15 > 500

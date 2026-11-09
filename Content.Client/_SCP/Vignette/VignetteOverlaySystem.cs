@@ -52,5 +52,10 @@ public sealed partial class VignetteOverlaySystem : EntitySystem
             _overlayManager.AddOverlay(_overlay);
     }
 
+    public void SetStrength(float strength) // LuaM
+    {
+        _overlay.Strength = strength;
+    }
+
     #endregion
 }

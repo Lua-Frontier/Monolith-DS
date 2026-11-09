@@ -12,7 +12,7 @@
   - type: Gun
     fireRate: 2
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/_LuaM/Weapons/Guns/EG-P/shot.ogg
       params:
         variation: 0.125
   - type: HitscanBatteryAmmoProvider

@@ -35,7 +35,7 @@
 - type: startingGear
   id: CCServiceWorkerGear
   equipment:
-    head: ClothingHeadHatBellhop
+#    head: ClothingHeadHatBellhop # LuaM: formal suit instead of the valet outfit
     gloves: ClothingHandsGlovesColorWhite
     id: CCServiceWorkerPDA
   storage:
