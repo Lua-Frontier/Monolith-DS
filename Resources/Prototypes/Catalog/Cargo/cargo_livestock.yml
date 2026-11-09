@@ -249,3 +249,23 @@
   cost: 5000
   category: cargoproduct-category-name-livestock
   group: market
+
+- type: cargoProduct
+  id: LivestockScurret
+  icon:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: scurret
+  product: CrateNPCScurret
+  cost: 3000
+  category: cargoproduct-category-name-livestock
+  group: market
+
+- type: cargoProduct
+  id: LivestockEmotionalSupportScurret
+  icon:
+    sprite: Mobs/Animals/scurret/scurret.rsi
+    state: scurret
+  product: CrateNPCEmotionalSupportScurret
+  cost: 10000
+  category: cargoproduct-category-name-livestock
+  group: market

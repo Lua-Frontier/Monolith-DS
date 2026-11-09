@@ -166,3 +166,17 @@ ent-MobReindeerBuck = reindeer buck
 ent-MobReindeerDoe = reindeer doe
     .desc = { ent-MobReindeerBuck.desc }
     .suffix = { ent-MobReindeerBuck.suffix }
+
+ent-MobBaseScurret = скуррет
+    .desc = { "" }
+ent-MobScurret = скуррет
+    .desc = Также известны как Ва-ва. Эти зверьки родом с болот планеты Ва-ва и составляют основу «верной рабочей силы» пиццерии Арнольда.
+ent-MobBaseEmotionalSupportScurret = скуррет эмоциональной поддержки
+    .desc = { "" }
+ent-MobEmotionalSupportScurret = скуррет эмоциональной поддержки
+    .desc = Также известны как Ва-ва. Эти зверьки родом с болот планеты Ва-ва и составляют основу «верной рабочей силы» пиццерии Арнольда. Этот здесь на подработке.
+ent-MobBaseScurretRandom = { ent-MobBaseScurret }
+    .desc = { ent-MobBaseScurret.desc }
+ent-MobScurretPup = скуррет
+    .desc = Также известны как Ва-ва, родом с болот планеты Ва-ва. Этот ещё совсем детёныш.
+    .suffix = Детёныш
