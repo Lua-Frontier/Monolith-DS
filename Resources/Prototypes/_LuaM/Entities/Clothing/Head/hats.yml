@@ -9,9 +9,9 @@
   description: Not so big, not so small - just a Beret with a Black and Grey recolor.
   components:
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Head/Hats/Blackish_ADTBeret.rsi
+    sprite: _LuaM/Clothing/Head/Hats/Blackish_ADTBeret.rsi
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Head/Hats/Blackish_ADTBeret.rsi
+    sprite: _LuaM/Clothing/Head/Hats/Blackish_ADTBeret.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -20,9 +20,9 @@
   description: Not so big, not so small - just a Beret with a Green recolor.
   components:
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Head/Hats/Greenish_ADTBeret.rsi
+    sprite: _LuaM/Clothing/Head/Hats/Greenish_ADTBeret.rsi
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Head/Hats/Greenish_ADTBeret.rsi
+    sprite: _LuaM/Clothing/Head/Hats/Greenish_ADTBeret.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -31,9 +31,9 @@
   description: Not so big, not so small - just a Beret with a White recolor.
   components:
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Head/Hats/Whiteish_ADTBeret.rsi
+    sprite: _LuaM/Clothing/Head/Hats/Whiteish_ADTBeret.rsi
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Head/Hats/Whiteish_ADTBeret.rsi
+    sprite: _LuaM/Clothing/Head/Hats/Whiteish_ADTBeret.rsi
 
 
 - type: entity
@@ -43,6 +43,6 @@
   description: Beloved by many Rich hunters, Mechants and style hunters - Bounty Hunter Hat, with a White Color now!.
   components:
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Head/Hats/Whiteish_BHHat.rsi
+    sprite: _LuaM/Clothing/Head/Hats/Whiteish_BHHat.rsi
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Head/Hats/Whiteish_BHHat.rsi
+    sprite: _LuaM/Clothing/Head/Hats/Whiteish_BHHat.rsi

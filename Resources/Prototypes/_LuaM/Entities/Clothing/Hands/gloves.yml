@@ -9,11 +9,11 @@
   description: Blood looks neater on them.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Greyish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Greyish_BattleGloves.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Greyish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Greyish_BattleGloves.rsi
   - type: Item
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Greyish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Greyish_BattleGloves.rsi
     inhandVisuals:
       left:
       - state: inhand-left
@@ -27,11 +27,11 @@
   description: Blood looks neater on them.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Blueish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Blueish_BattleGloves.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Blueish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Blueish_BattleGloves.rsi
   - type: Item
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Blueish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Blueish_BattleGloves.rsi
     inhandVisuals:
       left:
       - state: inhand-left
@@ -45,11 +45,11 @@
   description: Blood looks neater on them.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Greenish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Greenish_BattleGloves.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Greenish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Greenish_BattleGloves.rsi
   - type: Item
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Greenish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Greenish_BattleGloves.rsi
     inhandVisuals:
       left:
       - state: inhand-left
@@ -63,11 +63,11 @@
   description: Blood looks neater on them.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Legionish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Legionish_BattleGloves.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Legionish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Legionish_BattleGloves.rsi
   - type: Item
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Legionish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Legionish_BattleGloves.rsi
     inhandVisuals:
       left:
       - state: inhand-left
@@ -81,11 +81,11 @@
   description: Blood looks neater on them.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Pinkish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Pinkish_BattleGloves.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Pinkish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Pinkish_BattleGloves.rsi
   - type: Item
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Pinkish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Pinkish_BattleGloves.rsi
     inhandVisuals:
       left:
       - state: inhand-left
@@ -98,11 +98,11 @@
   description: Blood looks neater on them.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Yellowish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Yellowish_BattleGloves.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Yellowish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Yellowish_BattleGloves.rsi
   - type: Item
-    sprite: _LuaM/Clothing/Maksimvini/Hands/Gloves/Yellowish_BattleGloves.rsi
+    sprite: _LuaM/Clothing/Hands/Gloves/Yellowish_BattleGloves.rsi
     inhandVisuals:
       left:
       - state: inhand-left
