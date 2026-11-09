@@ -1,6 +1,7 @@
 using Content.Server.DeviceLinking.Systems;
 using Content.Server._Goobstation.Light.Components;
 using Content.Shared.DeviceLinking.Events;
+using Robust.Shared.Audio.Systems; // LuaM
 
 namespace Content.Server._Goobstation.Light.Systems;
 
@@ -11,6 +12,7 @@ public sealed partial class ToggleableOccluderSystem : EntitySystem
 {
     [Dependency] private DeviceLinkSystem _signalSystem = default!;
     [Dependency] private OccluderSystem _occluder = default!;
+    [Dependency] private SharedAudioSystem _audio = default!; // LuaM
 
     public override void Initialize()
     {
@@ -43,6 +45,7 @@ public sealed partial class ToggleableOccluderSystem : EntitySystem
             return;
 
         _occluder.SetEnabled(uid, !occluder.Enabled);
+        PlayToggleSound(uid); // LuaM
     }
 
     public void SetState(EntityUid uid, bool state, OccluderComponent? occluder = null)
@@ -50,7 +53,19 @@ public sealed partial class ToggleableOccluderSystem : EntitySystem
         if (!Resolve(uid, ref occluder))
             return;
 
+        if (occluder.Enabled == state) // LuaM
+            return; // LuaM
+
         _occluder.SetEnabled(uid, state);
+        PlayToggleSound(uid); // LuaM
     }
+
+    // LuaM-start
+    private void PlayToggleSound(EntityUid uid)
+    {
+        if (TryComp<ToggleableOccluderComponent>(uid, out var comp) && comp.ToggleSound != null)
+            _audio.PlayPvs(comp.ToggleSound, uid);
+    }
+    // LuaM-end
 
 }

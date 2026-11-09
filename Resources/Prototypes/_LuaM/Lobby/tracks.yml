@@ -1,6 +1,53 @@
 - type: lobbyTrack
-  id: LuaMFrontier
-  path: /Audio/_LuaM/Lobby/LuaMFrontier.ogg
-  title: "Frontier"
+  id: LuaMAndromeda
+  path: /Audio/_LuaM/Lobby/Andromeda.ogg
+  title: "Andromeda"
   artist: "Unknown"
-  default: true
+
+- type: lobbyTrack
+  id: LuaMTheExpanseMainTheme
+  path: /Audio/_LuaM/Lobby/TheExpanseMainTheme.ogg
+  title: "The Expanse - Main Theme"
+  artist: "Geek Music"
+
+- type: lobbyTrack
+  id: LuaMExecution
+  path: /Audio/_LuaM/Lobby/Execution.ogg
+  title: "Execution"
+  artist: "skyfall beats, silent anthem"
+
+- type: lobbyTrack
+  id: LuaMAtomicAmnesiaMMX
+  path: /Audio/_LuaM/Lobby/AtomicAmnesiaMMX.ogg
+  title: "Atomic Amnesia MMX"
+  artist: "Philip Dyer"
+
+- type: lobbyTrack
+  id: LuaMCometHalley
+  path: /Audio/_LuaM/Lobby/CometHaley.ogg
+  title: "Comet Halley"
+  artist: "Stellardrone"
+
+- type: lobbyTrack
+  id: LuaMEveryLightIsBlinkingAtOnce
+  path: /Audio/_LuaM/Lobby/EveryLightIsBlinkingAtOnce.ogg
+  title: "Every Light Is Blinking At Once"
+  artist: "Sunbeamstress"
+
+- type: lobbyTrack
+  id: LuaMLasersRipApartTheBulkhead
+  path: /Audio/_LuaM/Lobby/LasersRipApartTheBulkhead.ogg
+  title: "Lasers Rip Apart The Bulkhead"
+  artist: "Sunbeamstress"
+
+- type: lobbyTrack
+  id: LuaMSinguloose
+  path: /Audio/_LuaM/Lobby/Singuloose.ogg
+  title: "Singuloose"
+  artist: "Janis Schiedková"
+
+- type: lobbyTrack
+  id: LuaMPhoronWillMakeUsRichRemix
+  path: /Audio/_LuaM/Lobby/PhoronWillMakeUsRichRemix.ogg
+  title: "Phoron Will Make Us Rich (Remix)"
+  artist: "Sunbeamstress"

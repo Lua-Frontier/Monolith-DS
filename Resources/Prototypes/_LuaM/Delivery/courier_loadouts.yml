@@ -121,6 +121,8 @@
   - CourierFlashlightSeclite
   fallbacks:
   - CourierWeaponLaserGunCourier
+  - CourierSurvivalKnife
+  - CourierFlashlightSeclite
 
 - type: loadoutGroup
   id: CourierFirearm

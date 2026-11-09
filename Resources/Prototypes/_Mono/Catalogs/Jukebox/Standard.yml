@@ -67,19 +67,7 @@
     path: /Audio/Lobby/a_walk_in_the_woods.ogg
 
 - type: jukebox
-  id: at_any_cost
-  name: At Any Cost - Michael Salvatori and Martin O'Donnell
-  path:
-    path: /Audio/Lobby/at_any_cost.ogg
-
-- type: jukebox
   id: in_amber_clad
   name: In Amber Clad - Michael Salvatori and Martin O'Donnell
   path:
     path: /Audio/Lobby/in_amber_clad.ogg
-
-- type: jukebox
-  id: brothers_in_arms
-  name: Brothers In Arms - Michael Salvatori and Martin O'Donnell
-  path:
-    path: /Audio/Lobby/brothers_in_arms.ogg

@@ -132,6 +132,11 @@
   - type: StaticPrice
     price: 35 # Frontier: 70<35 - TODO: material rebalance
   - type: ToggleableOccluder # Goob
+    toggleSound: # LuaM
+      path: /Audio/_LuaM/Effects/tintedwindowswitch.ogg
+      params:
+        volume: -4
+        variation: 0.05
   - type: DeviceLinkSink # Goob
     ports:
     - On

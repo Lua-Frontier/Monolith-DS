@@ -102,7 +102,11 @@ namespace Content.Client.Tabletop
             if (clampedCoords.Equals(MapCoordinates.Nullspace)) return;
 
             // Move the entity locally every update
-            _transformSystem.SetWorldPosition(_draggedEntity.Value, clampedCoords.Position);
+            // LuaM-start: -- SetWorldPosition на клиенте запускает интерполяцию к точке, фигура дёргалась и потом уезжала к старой цели
+            var draggedXform = Transform(_draggedEntity.Value);
+            var localPosition = Vector2.Transform(clampedCoords.Position, _transformSystem.GetInvWorldMatrix(draggedXform.ParentUid));
+            _transformSystem.SetLocalPositionNoLerp(_draggedEntity.Value, localPosition, draggedXform);
+            // LuaM-end
 
             // Increment total time passed
             _timePassed += frameTime;

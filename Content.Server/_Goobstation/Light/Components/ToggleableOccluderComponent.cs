@@ -1,4 +1,5 @@
 using Content.Shared.DeviceLinking;
+using Robust.Shared.Audio; // LuaM
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Goobstation.Light.Components;
@@ -26,4 +27,10 @@ public sealed partial class ToggleableOccluderComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<SinkPortPrototype> TogglePort = "Toggle";
+
+    /// <summary>
+    ///     Played when the occluder actually changes state.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? ToggleSound; // LuaM
 }
