@@ -9,7 +9,7 @@
   parent: BaseVessel
   name: vessel-arkansaw-name # LuaM-locale
   description: vessel-arkansaw-desc # LuaM-locale
-  price: 200960
+  price: 203300 # LuaM: 200960 > 203300, appraisal with random loot reached the price
   category: Large
   group: Expedition
   shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/arkansaw.yml

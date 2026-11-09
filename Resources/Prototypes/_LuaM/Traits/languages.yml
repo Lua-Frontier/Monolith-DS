@@ -1,0 +1,168 @@
+- type: trait
+  id: LuaMLanguageCanilunzt
+  name: trait-language-luam-canilunzt-name
+  description: trait-language-luam-canilunzt-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Canilunzt
+  languagesUnderstood:
+  - Canilunzt
+
+- type: trait
+  id: LuaMLanguageAriral
+  name: trait-language-luam-ariral-name
+  description: trait-language-luam-ariral-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Ariral
+  languagesUnderstood:
+  - Ariral
+
+- type: trait
+  id: LuaMLanguageAvali
+  name: trait-language-luam-avali-name
+  description: trait-language-luam-avali-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Avali
+  languagesUnderstood:
+  - Avali
+
+- type: trait
+  id: LuaMLanguageShark
+  name: trait-language-luam-shark-name
+  description: trait-language-luam-shark-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Shark
+  languagesUnderstood:
+  - Shark
+
+- type: trait
+  id: LuaMLanguageHydraspeak
+  name: trait-language-luam-hydraspeak-name
+  description: trait-language-luam-hydraspeak-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Hydraspeak
+  languagesUnderstood:
+  - Hydraspeak
+
+- type: trait
+  id: LuaMLanguageDraconic
+  name: trait-language-luam-draconic-name
+  description: trait-language-luam-draconic-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Draconic
+  languagesUnderstood:
+  - Draconic
+
+- type: trait
+  id: LuaMLanguageMoffic
+  name: trait-language-luam-moffic-name
+  description: trait-language-luam-moffic-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Moffic
+  languagesUnderstood:
+  - Moffic
+
+- type: trait
+  id: LuaMLanguageChittin
+  name: trait-language-luam-chittin-name
+  description: trait-language-luam-chittin-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Chittin
+  languagesUnderstood:
+  - Chittin
+
+- type: trait
+  id: LuaMLanguageRootSpeak
+  name: trait-language-luam-rootspeak-name
+  description: trait-language-luam-rootspeak-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - RootSpeak
+  languagesUnderstood:
+  - RootSpeak
+
+- type: trait
+  id: LuaMLanguageBubblish
+  name: trait-language-luam-bubblish-name
+  description: trait-language-luam-bubblish-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Bubblish
+  languagesUnderstood:
+  - Bubblish
+
+- type: trait
+  id: LuaMLanguageNewKinPidgin
+  name: trait-language-luam-newkinpidgin-name
+  description: trait-language-luam-newkinpidgin-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - NewKinPidgin
+  languagesUnderstood:
+  - NewKinPidgin
+
+- type: trait
+  id: LuaMLanguageValyrianStandard
+  name: trait-language-luam-valyrianstandard-name
+  description: trait-language-luam-valyrianstandard-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - ValyrianStandard
+  languagesUnderstood:
+  - ValyrianStandard
+
+- type: trait
+  id: LuaMLanguageMouse
+  name: trait-language-luam-mouse-name
+  description: trait-language-luam-mouse-desc
+  category: LanguageTraits
+  cost: 1
+  components:
+  - type: LanguageSpeaker
+  languagesSpoken:
+  - Mouse
+  languagesUnderstood:
+  - Mouse

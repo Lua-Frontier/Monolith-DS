@@ -2,6 +2,7 @@ using Content.Shared.Access.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Contraband;
 using Content.Shared.Inventory;
+using Content.Shared.Interaction.Components; // LuaM
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Tag;
@@ -61,18 +62,19 @@ public abstract partial class SharedChameleonClothingSystem : EntitySystem
             _metaData.SetEntityDescription(uid, proto.Description, meta);
         }
 
-        // item sprite logic
-        if (TryComp(uid, out ItemComponent? item) &&
-            proto.TryComp(out ItemComponent? otherItem, Factory))
-        {
-            _itemSystem.CopyVisuals(uid, otherItem, item);
-        }
-
+        // --  LuaM: одежду копировать до предмета, иначе перерисовка берёт новый RSI со старыми слоями
         // clothing sprite logic
         if (TryComp(uid, out ClothingComponent? clothing) &&
             proto.TryComp(out ClothingComponent? otherClothing, Factory))
         {
             _clothingSystem.CopyVisuals(uid, otherClothing, clothing);
+        }
+
+        // item sprite logic
+        if (TryComp(uid, out ItemComponent? item) &&
+            proto.TryComp(out ItemComponent? otherItem, Factory))
+        {
+            _itemSystem.CopyVisuals(uid, otherItem, item);
         }
 
         // appearance data logic
@@ -113,6 +115,28 @@ public abstract partial class SharedChameleonClothingSystem : EntitySystem
 
     protected virtual void UpdateSprite(EntityUid uid, EntityPrototype proto) { }
 
+    // LuaM-start
+    private static readonly string[] ChameleonExcludedIdParts =
+    {
+        "Chameleon", "DeathSquad", "Deathsquad", "ERT", "Centcom", "CentCom", "Admin", "Debug", "Unremoveable",
+    };
+
+    private bool IsLuaMChameleonCandidate(EntityPrototype proto)
+    {
+        if (!proto.ID.StartsWith("Clothing", StringComparison.Ordinal))
+            return false;
+
+        foreach (var part in ChameleonExcludedIdParts)
+        {
+            if (proto.ID.Contains(part, StringComparison.Ordinal))
+                return false;
+        }
+
+        return !proto.HasComp<ChameleonClothingComponent>(Factory)
+               && !proto.HasComp<UnremoveableComponent>(Factory);
+    }
+    // LuaM-end
+
     /// <summary>
     ///     Check if this entity prototype is valid target for chameleon item.
     /// </summary>
@@ -123,10 +147,11 @@ public abstract partial class SharedChameleonClothingSystem : EntitySystem
             return false;
 
         // check if it is marked as valid chameleon target
-        if (!proto.TryComp(out TagComponent? tag, Factory) || !_tag.HasTag(tag, "WhitelistChameleon"))
+        proto.TryComp(out TagComponent? tag, Factory); // LuaM
+        if ((tag == null || !_tag.HasTag(tag, "WhitelistChameleon")) && !IsLuaMChameleonCandidate(proto)) // LuaM
             return false;
 
-        if (requiredTag != null && !_tag.HasTag(tag, requiredTag))
+        if (requiredTag != null && (tag == null || !_tag.HasTag(tag, requiredTag))) // LuaM: tag == null
             return false;
 
         // check if it's valid clothing

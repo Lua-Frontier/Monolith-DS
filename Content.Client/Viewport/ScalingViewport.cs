@@ -274,6 +274,17 @@ namespace Content.Client.Viewport
             InvalidateViewport();
         }
 
+        // LuaM-start
+        protected override void ExitedTree()
+        {
+            base.ExitedTree();
+
+            InvalidateViewport();
+            _transitViewport?.Dispose();
+            _transitViewport = null;
+        }
+        // LuaM-end
+
         private void InvalidateViewport()
         {
             _viewport?.Dispose();

@@ -64,6 +64,11 @@
           32:
             sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
             state: mask
+      head: # LuaM
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
+            state: head
     # LuaM start
     displacements:
       mask:
@@ -71,6 +76,11 @@
           32:
             sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
             state: mask
+      head: # LuaM
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
+            state: head
     # LuaM end
   - type: Carriable # Frontier: Carrying system from nyanotrasen.
   - type: Speech # Frontier
@@ -112,6 +122,11 @@
           32:
             sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
             state: mask
+      head: # LuaM
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
+            state: head
     # LuaM start
     displacements:
       mask:
@@ -119,4 +134,9 @@
           32:
             sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
             state: mask
+      head: # LuaM
+        sizeMaps:
+          32:
+            sprite: _LuaM/Mobs/Species/Protogen/displacement.rsi
+            state: head
     # LuaM end

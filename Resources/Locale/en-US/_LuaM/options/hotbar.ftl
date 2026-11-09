@@ -8,3 +8,5 @@ ui-options-function-hotbar-shift7 = Hotbar slot Shift+7
 ui-options-function-hotbar-shift8 = Hotbar slot Shift+8
 ui-options-function-hotbar-shift9 = Hotbar slot Shift+9
 ui-options-function-hotbar-shift0 = Hotbar slot Shift+0
+ui-options-advanced-hotbar = Advanced hotbar (quick action menu)
+ui-options-advanced-hotbar-tooltip = 10 presets of 2 rows, Shift+number for the second row, layout is saved

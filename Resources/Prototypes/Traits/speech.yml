@@ -113,7 +113,7 @@
   cost: 2
   components:
   - type: StutteringAccent
-    matchRandomProb: 0.1
+    matchRandomProb: 0.3 # LuaM: 0.1 > 0.3, only word starts
     fourRandomProb: 0
     threeRandomProb: 0
     cutRandomProb: 0

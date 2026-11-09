@@ -117,7 +117,7 @@ public sealed partial class IdentitySystem : SharedIdentitySystem
 
             // If presumed name is null and we're using that, we set proper noun to be false ("the old woman")
             if (name != representation.TrueName && representation.PresumedName == null)
-                _grammarSystem.SetProperNoun((uid, grammar), false);
+                _grammarSystem.SetProperNoun((ident, identityGrammar), false); // LuaM: uid > ident
 
             Dirty(ident, identityGrammar);
         }

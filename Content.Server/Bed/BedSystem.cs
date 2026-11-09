@@ -47,19 +47,34 @@ namespace Content.Server.Bed
         {
             EnsureComp<HealOnBuckleHealingComponent>(bed);
             bed.Comp.NextHealTime = _timing.CurTime + TimeSpan.FromSeconds(bed.Comp.HealTime);
-            _actionsSystem.AddAction(args.Buckle, ref bed.Comp.SleepAction, SleepingSystem.SleepActionId, bed);
-
-            // Single action entity, cannot strap multiple entities to the same bed.
-            DebugTools.AssertEqual(args.Strap.Comp.BuckledEntities.Count, 1);
+            // LuaM start
+            EntityUid? sleepAction = null;
+            _actionsSystem.AddAction(args.Buckle, ref sleepAction, SleepingSystem.SleepActionId, bed);
+            if (sleepAction is { } action)
+                bed.Comp.SleepActions[args.Buckle.Owner] = action;
+            // LuaM end
         }
 
         private void OnUnstrapped(Entity<HealOnBuckleComponent> bed, ref UnstrappedEvent args)
         {
+            bed.Comp.SleepActions.Remove(args.Buckle.Owner, out var sleepAction); // LuaM
             if (!Terminating(args.Buckle.Owner)) // LuaM
             {
-                _actionsSystem.RemoveAction(args.Buckle, bed.Comp.SleepAction);
+                if (sleepAction != default) // LuaM
+                    _actionsSystem.RemoveAction(args.Buckle, sleepAction); // LuaM
                 _sleepingSystem.TryWaking(args.Buckle.Owner);
             }
+
+            if (sleepAction != default && !TerminatingOrDeleted(sleepAction)) // LuaM
+                QueueDel(sleepAction); // LuaM
+
+            // LuaM start
+            foreach (var other in args.Strap.Comp.BuckledEntities)
+            {
+                if (other != args.Buckle.Owner)
+                    return;
+            }
+            // LuaM end
 
             RemComp<HealOnBuckleHealingComponent>(bed);
         }

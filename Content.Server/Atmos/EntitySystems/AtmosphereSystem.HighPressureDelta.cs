@@ -1,4 +1,5 @@
 using Content.Server.Atmos.Components;
+using Content.Shared._LuaM.Atmos; // LuaM
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Mobs.Components;
@@ -7,6 +8,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Player; // LuaM
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -95,13 +97,18 @@ namespace Content.Server.Atmos.EntitySystems
             // TODO ATMOS finish this
 
             // Don't play the space wind sound on tiles that are on fire...
-            if (tile.PressureDifference > 15 && !tile.Hotspot.Valid)
+            if (tile.PressureDifference > 15 && !tile.Hotspot.Valid && _spaceWindSoundCooldown == 0) // LuaM
             {
-                if (_spaceWindSoundCooldown == 0 && !string.IsNullOrEmpty(SpaceWindSound))
-                {
-                    var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
+                var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
+                if (!string.IsNullOrEmpty(SpaceWindSound))
                     _audio.PlayPvs(new ResolvedPathSpecifier(SpaceWindSound), coordinates, AudioParams.Default.WithVariation(0.125f).WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
-                }
+
+                // LuaM-start
+                var rotation = tile.PressureDirection != AtmosDirection.Invalid
+                    ? tile.PressureDirection.ToAngle() - Angle.FromDegrees(90)
+                    : _random.NextAngle();
+                RaiseNetworkEvent(new SpaceWindVisualEvent(GetNetCoordinates(coordinates), rotation), Filter.Pvs(coordinates, entityMan: EntityManager));
+                // LuaM-end
             }
 
 

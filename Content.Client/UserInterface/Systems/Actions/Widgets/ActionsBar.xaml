@@ -9,11 +9,12 @@
 >
     <BoxContainer Orientation="Vertical">
         <controls:ActionButtonContainer
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            MaxSize="64 9999"
             Name="ActionsContainer"
             Access="Public"
-            Rows="10"/>
-        <controls:ActionPageButtons Name="PageButtons" Access="Public" />
+            Rows="1"/>
+        <controls:ActionPageButtons Name="PageButtons" Access="Public" Visible="False" /> <!-- LuaM -->
     </BoxContainer>
 </widgets:ActionsBar>

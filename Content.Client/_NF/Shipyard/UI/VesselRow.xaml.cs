@@ -6,7 +6,7 @@ using Robust.Client.UserInterface.XAML;
 namespace Content.Client._NF.Shipyard.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class VesselRow : PanelContainer
+public sealed partial class VesselRow : ContainerButton // LuaM: PanelContainer > ContainerButton
 {
     public VesselPrototype? Vessel;
 

@@ -33,6 +33,7 @@
     - Hydrakin # Mono
     - Avali # LuaM
     - Ariral # LuaM
+    - Demon # LuaM
 
 - type: loadoutEffectGroup
   id: ShoesCapableNF

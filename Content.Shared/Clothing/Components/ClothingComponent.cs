@@ -55,6 +55,14 @@ public sealed partial class ClothingComponent : Component
     [DataField("equippedPrefix")]
     public string? EquippedPrefix;
 
+    // LuaM-start
+    /// <summary>
+    /// Sprite layer of another slot to draw this clothing at, e.g. a cloak under the backpack.
+    /// </summary>
+    [DataField]
+    public string? RenderLayer;
+    // LuaM-end
+
     /// <summary>
     /// Allows the equipped state to be directly overwritten.
     /// useful when prototyping INNERCLOTHING items into OUTERCLOTHING items without duplicating/modifying RSIs etc.

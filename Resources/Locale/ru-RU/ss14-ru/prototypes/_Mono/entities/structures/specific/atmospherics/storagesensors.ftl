@@ -1,5 +1,7 @@
-ent-AirSensorDistroStoreBase = Distro Storage
-ent-AirSensorIndustrialStoreBase = Industrial Storage
+ent-AirSensorDistroStoreBase = { "" }
+    .suffix = Хранилище распределения
+ent-AirSensorIndustrialStoreBase = { "" }
+    .suffix = Промышленное хранилище
 ent-AirSensorDistroStore = { ent-AirSensor }
     .desc = { ent-AirSensor.desc }
     .suffix = { ent-AirSensorDistroStoreBase.suffix }

@@ -14,5 +14,5 @@ ent-ShipVoucherFrontierGuard = ваучер охранного шаттла
     .desc = Позволяет бесплатно купить один шаттл ТСФ в консоли верфи. Уничтожается при продаже шаттла.
 ent-NfsdSergeantShipVoucher = Ваучер шаттла сержанта ТСФ
 ent-NfsdBailiffShipVoucher = Ваучер шаттла капитана ТСФ
-ent-ShipVoucherFrontierService = service ship voucher
-    .desc = Allows for one free, small service ship purchase from the Frontier Staff Shipyard. Destroyed on sale.
+ent-ShipVoucherFrontierService = ваучер сервисного шаттла
+    .desc = Позволяет бесплатно купить один малый сервисный шаттл на верфи персонала. Уничтожается при продаже шаттла.

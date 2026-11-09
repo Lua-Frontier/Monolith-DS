@@ -57,12 +57,13 @@ public sealed partial class MultipartMachineSystem : SharedMultipartMachineSyste
                 continue;
 
             var entityCoords = new EntityCoordinates(ent.Owner, part.Offset);
-            var ghostEnt = Spawn(_ghostPrototype, entityCoords);
+            // -- Угол сразу при создании: SetLocalRotation на клиенте интерполируется и для клиентского призрака застревает на полпути
+            var ghostEnt = SpawnAttachedTo(_ghostPrototype, entityCoords, rotation: part.Rotation); // LuaM: Spawn > SpawnAttachedTo
 
             if (!XformQuery.TryGetComponent(ghostEnt, out var xform))
                 break;
 
-            _transform.SetLocalRotation(ghostEnt, part.Rotation, xform);
+            // _transform.SetLocalRotation(ghostEnt, part.Rotation, xform); // LuaM
 
             Comp<MultipartMachineGhostComponent>(ghostEnt).LinkedMachine = ent;
 

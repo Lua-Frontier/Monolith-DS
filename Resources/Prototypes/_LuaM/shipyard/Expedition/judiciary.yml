@@ -9,7 +9,7 @@
   parent: BaseVessel
   name: vessel-judiciary-name # LuaM-locale
   description: vessel-judiciary-desc # LuaM-locale
-  price: 56340
+  price: 56900 # LuaM: 56340 > 56900, appraisal with random loot reached the price
   category: Medium
   group: Expedition
   shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/judiciary.yml

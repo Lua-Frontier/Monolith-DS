@@ -17,6 +17,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - YupiCartridge # LuaM
+      - DeliveryCartridge # LuaM
       - NewsReaderCartridge
       - BountyContractsCartridge
       - AstroNavCartridge
@@ -144,6 +145,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - YupiCartridge # LuaM
+    - DeliveryCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge
@@ -315,6 +317,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - YupiCartridge # LuaM
+    - DeliveryCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge
@@ -388,6 +391,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - YupiCartridge # LuaM
+    - DeliveryCartridge # LuaM
     - NewsReaderCartridge
     - BountyContractsCartridge
     - AstroNavCartridge

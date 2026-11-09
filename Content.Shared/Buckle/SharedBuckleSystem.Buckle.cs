@@ -22,6 +22,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
+using Robust.Shared.Physics; // LuaM
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
@@ -140,7 +141,7 @@ public abstract partial class SharedBuckleSystem
             return;
         }
 
-        var delta = (xform.LocalPosition - strapComp.BuckleOffset).LengthSquared();
+        var delta = (xform.LocalPosition - GetBuckleOffset(strapUid, strapComp, xform.LocalPosition)).LengthSquared(); // LuaM: strap slots
         if (delta > strapComp.UnbuckleDistanceSquared) // Frontier: 1e-5<strapComp.UnbuckleDistanceSquared
             Unbuckle(buckle, (strapUid, strapComp), null);
     }
@@ -157,6 +158,11 @@ public abstract partial class SharedBuckleSystem
     {
         if (args.OtherEntity == component.BuckledTo && component.DontCollide)
             args.Cancelled = true;
+
+        // LuaM-start: -- смещённое место на двойной кровати у стены задевает стену, физика выталкивает и отстёгивает
+        if (args.OtherBody.BodyType == BodyType.Static && HasComp<_LuaM.Buckle.StrapSlotsComponent>(component.BuckledTo))
+            args.Cancelled = true;
+        // LuaM-end
     }
 
     private void OnBuckleDownAttempt(EntityUid uid, BuckleComponent component, DownAttemptEvent args)
@@ -382,7 +388,7 @@ public abstract partial class SharedBuckleSystem
         _rotationVisuals.SetHorizontalAngle(buckle.Owner, strap.Comp.Rotation);
 
         var xform = Transform(buckle);
-        var coords = new EntityCoordinates(strap, strap.Comp.BuckleOffset);
+        var coords = new EntityCoordinates(strap, GetFreeBuckleOffset(strap, buckle)); // LuaM: strap slots
         _transform.SetCoordinates(buckle, xform, coords, rotation: Angle.Zero);
 
         _joints.SetRelay(buckle, strap);
@@ -473,6 +479,7 @@ public abstract partial class SharedBuckleSystem
 
         if (buckleXform.ParentUid == strap.Owner && !Terminating(buckleXform.ParentUid) && !Terminating(buckle))
         {
+            var slotOffset = GetBuckleOffset(strap, strap.Comp, buckleXform.LocalPosition); // LuaM
             _transform.PlaceNextTo((buckle, buckleXform), (strap.Owner, oldBuckledXform));
             buckleXform.ActivelyLerping = false;
 
@@ -480,7 +487,9 @@ public abstract partial class SharedBuckleSystem
             _transform.SetWorldRotationNoLerp((buckle, buckleXform), oldBuckledToWorldRot);
 
             // TODO: This is doing 4 moveevents this is why I left the warning in, if you're going to remove it make it only do 1 moveevent.
-            if (strap.Comp.BuckleOffset != Vector2.Zero)
+            if (HasComp<_LuaM.Buckle.StrapSlotsComponent>(strap)) // LuaM
+                buckleXform.Coordinates = oldBuckledXform.Coordinates.Offset(oldBuckledXform.LocalRotation.RotateVec(slotOffset)); // LuaM
+            else if (strap.Comp.BuckleOffset != Vector2.Zero) // LuaM: else
             {
                 _transform.SetCoordinates(buckle, buckleXform, oldBuckledXform.Coordinates.Offset(strap.Comp.BuckleOffset));
             }

@@ -62,7 +62,7 @@
     availableModes:
       - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+      path: /Audio/_LuaM/Weapons/Guns/EG-P/shot.ogg
   - type: AmmoCounter
 
 - type: entity

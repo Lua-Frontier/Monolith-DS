@@ -70,7 +70,14 @@ namespace Content.Server.Database
                 profiles[profile.Slot] = ConvertProfiles(profile);
             }
 
-            return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor));
+            // LuaM start
+            // -- Выбранный слот может указывать на несохранившегося персонажа: клиент тогда падает на SelectedCharacter
+            var selected = prefs.SelectedCharacterSlot;
+            if (!profiles.ContainsKey(selected) && profiles.Count > 0)
+                selected = profiles.Keys.Min();
+            // LuaM end
+
+            return new PlayerPreferences(profiles, selected, Color.FromHex(prefs.AdminOOCColor)); // LuaM: prefs.SelectedCharacterSlot > selected
         }
 
         public async Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index)

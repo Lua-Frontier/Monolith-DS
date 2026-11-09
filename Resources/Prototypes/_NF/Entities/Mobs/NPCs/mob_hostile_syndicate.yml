@@ -30,7 +30,7 @@
     #- DeathAcidifierImplant
     #- MicroBombImplant
   - type: TTS # LuaM: Они и так с голосом говорят стандартным, я просто заменил на другой подходящий ТТС.
-    voice: OlafLol
+    voice: Hagraven
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 1
     rechargeSound:

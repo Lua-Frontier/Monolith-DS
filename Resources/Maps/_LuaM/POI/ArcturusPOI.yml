@@ -21587,7 +21587,7 @@ entities:
         weapon3: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: invalid
+          ent: null
         weapon4: !type:ContainerSlot
           showEnts: False
           occludes: True

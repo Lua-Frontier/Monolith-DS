@@ -14,8 +14,11 @@ public sealed class YupiUiState : BoundUserInterfaceState
 
     public readonly TimeSpan NextTransfer;
 
-    public YupiUiState(string ownCode, int balance, int lowRateRemaining, TimeSpan nextTransfer)
+    public readonly bool Blocked;
+
+    public YupiUiState(string ownCode, int balance, int lowRateRemaining, TimeSpan nextTransfer, bool blocked = false)
     {
+        Blocked = blocked;
         OwnCode = ownCode;
         Balance = balance;
         LowRateRemaining = lowRateRemaining;

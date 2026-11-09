@@ -29,3 +29,5 @@ yupi-error-target-unavailable = The recipient is currently unavailable.
 yupi-error-insufficient-funds = Insufficient funds.
 yupi-error-cooldown = Your next transfer will be available in a minute.
 yupi-error-disabled = Transfers are temporarily unavailable.
+yupi-ui-blocked = ACCOUNT BLOCKED
+yupi-ui-blocked-hint = Banking is unavailable for this character.

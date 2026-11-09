@@ -28,12 +28,74 @@ public sealed partial class ActionUIController
     private bool _layoutLoaded;
     private string? _currentProfileKey;
     private int _currentPresetIndex;
+    private bool _advancedHotbar;
 
-    private int CurrentPresetStart => _currentPresetIndex * ButtonsPerPreset;
+    private int CurrentPresetStart => _advancedHotbar ? _currentPresetIndex * ButtonsPerPreset : 0;
 
     private void InitializeLayout()
     {
         _currentPresetIndex = Math.Clamp(_cfg.GetCVar(LuaMCVars.ActionsActivePreset), 0, PresetCount - 1);
+        _cfg.OnValueChanged(LuaMCVars.AdvancedHotbar, OnAdvancedHotbarChanged, true);
+    }
+
+    private void OnAdvancedHotbarChanged(bool advanced)
+    {
+        if (_advancedHotbar == advanced)
+            return;
+
+        _advancedHotbar = advanced;
+        ApplyHotbarMode();
+
+        if (_actionsSystem == null || _playerManager.LocalEntity == null)
+            return;
+
+        StopTargeting();
+
+        if (advanced)
+        {
+            _currentProfileKey = GetMobProfileKey();
+            LoadLayout();
+            RebuildLayout();
+            UpdatePresetLabel();
+        }
+        else
+        {
+            SaveLayout();
+            _layoutLoaded = false;
+            LoadDefaultActions();
+        }
+
+        RefreshActionBar();
+    }
+
+    private void ApplyHotbarMode()
+    {
+        if (ActionsBar is not { } bar)
+            return;
+
+        bar.PageButtons.Visible = _advancedHotbar;
+        bar.ActionsContainer.SetAdvanced(_advancedHotbar);
+    }
+
+    private void RefreshActionBar()
+    {
+        if (_advancedHotbar)
+        {
+            RebuildLayout();
+            UpdateActionBar();
+            return;
+        }
+
+        if (_actionsSystem != null)
+            _container?.SetActionData(_actionsSystem, _actions.ToArray());
+    }
+
+    private void CommitActionBar()
+    {
+        if (_advancedHotbar)
+            CommitLayout();
+        else if (_actionsSystem != null)
+            _container?.SetActionData(_actionsSystem, _actions.ToArray());
     }
 
     private void ChangePreset(int index)

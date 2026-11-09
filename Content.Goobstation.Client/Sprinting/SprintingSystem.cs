@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Sprinting;
+using Content.Shared.Movement.Components; // LuaM
+using Content.Shared.Movement.Systems; // LuaM
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -59,6 +61,10 @@ public sealed partial class SprintingSystem : SharedSprintingSystem
             if (!component.IsSprinting
                 || !_timing.IsFirstTimePredicted
                 || _timing.CurTime - component.LastStep < component.TimeBetweenSteps)
+                continue;
+
+            if (TryComp<InputMoverComponent>(uid, out var mover) // LuaM
+                && (mover.HeldMoveButtons & MoveButtons.AnyDirection) == MoveButtons.None)
                 continue;
 
             var ent = Spawn(component.StepAnimation, Transform(uid).Coordinates);

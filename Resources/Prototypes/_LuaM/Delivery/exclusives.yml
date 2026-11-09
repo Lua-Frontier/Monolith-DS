@@ -1,0 +1,367 @@
+- type: entity
+  parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
+  id: DrinkLuaMNeMolokoCarton
+  name: NeMoloko chocolate oat drink
+  description: An oat drink with chocolate flavour. Rumour has it this is the secret recipe of the milk arcana.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: MilkOat
+          Quantity: 40
+        - ReagentId: CocoaPowder
+          Quantity: 5
+        - ReagentId: Sugar
+          Quantity: 5
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Drinks/nemoloko.rsi
+    layers:
+    - state: icon
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "icon_open"}
+          False: {state: "icon"}
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodLuaMBulmeniTrash
+  name: bulmeni wrapper
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: bulmeni_trash
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: BaseItem
+  id: FoodLuaMBulmeniPack
+  name: bulmeni
+  description: Bulmeni dumplings with butter and broth inside. In the future they are sold already cooked and still warm.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: bulmeni_pack
+  - type: Item
+    size: Small
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodLuaMBulmeniTrash
+    - id: FoodBulmeni
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodBulmeni
+  name: bulmeni
+  description: Hot bulmeni dumplings with butter. Careful, there is broth inside!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - butter
+    - savory
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: bulmeni
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 15
+        - ReagentId: Butter
+          Quantity: 3
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodLuaMChebupeliTrash
+  name: chebupeli wrapper
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: chebupeli_trash
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: BaseItem
+  id: FoodLuaMChebupeliPack
+  name: chebupeli
+  description: Juicy chebupeli with meat. Bready, meaty, already fried and still warm.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: chebupeli_pack
+  - type: Item
+    size: Small
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodLuaMChebupeliTrash
+    - id: FoodChebupeli
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodChebupeli
+  name: chebupeli
+  description: Crispy fried pockets with a juicy meat filling. Bready and meaty!
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - bread
+    - savory
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: chebupeli
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: Fat
+          Quantity: 2
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodLuaMSausagesTrash
+  name: empty sausage tray
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: sausages_trash
+  - type: Item
+    size: Small
+
+- type: entity
+  parent: BaseItem
+  id: FoodLuaMSausagesPack
+  name: juicy sausages
+  description: Juicy sausages with a rich meaty taste and a light smoky note. Five in a pack.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: sausages_pack
+  - type: Item
+    size: Small
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodLuaMSausagesTrash
+    - id: ADTFoodSausageRaw
+      amount: 5
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodLuaMDubaiPancakesTrash
+  name: dubai chocolate pancakes wrapper
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: dubai_trash
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: BaseItem
+  id: FoodLuaMDubaiPancakesPack
+  name: dubai chocolate pancakes
+  description: Premium pancakes with "Dubai chocolate" filling. Nobody knows what Dubai is, but the pistachios are real.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: dubai_pack
+  - type: Item
+    size: Small
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodLuaMDubaiPancakesTrash
+    - id: FoodLuaMDubaiPancakes
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodLuaMDubaiPancakes
+  name: dubai chocolate pancakes
+  description: Two rolled pancakes stuffed with pistachio cream and kataifi, drizzled with milk chocolate. Suspiciously crunchy.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - chocolate
+    - nutty
+    - sweet
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: dubai_pancakes
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: CocoaPowder
+          Quantity: 2
+        - ReagentId: Theobromine
+          Quantity: 2
+  - type: Tag
+    tags:
+    - FoodSnack
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodLuaMMinceTrash
+  name: empty mince tray
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: mince_trash
+  - type: Item
+    size: Small
+
+- type: entity
+  parent: BaseItem
+  id: FoodLuaMMincePack
+  name: pork mince
+  description: Chilled minced pork, chopped from fresh pork without soy or artificial flavour enhancers.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: mince_pack
+  - type: Item
+    size: Small
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodLuaMMinceTrash
+    - id: FoodLuaMMinceRaw
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodLuaMMinceRaw
+  name: raw mince
+  description: Raw minced pork. Better fry it before eating.
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - Meat
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: mince_raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 8
+        - ReagentId: Fat
+          Quantity: 4
+  - type: InternalTemperature
+    conductivity: 0.43
+    thickness: 0.01
+    area: 0.01
+  - type: Construction
+    graph: LuaMMince
+    node: start
+    defaultTarget: cooked
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodLuaMMinceCooked
+  name: mince
+  description: Fried minced pork. Simple and filling.
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Food/coloss_delivery.rsi
+    state: mince_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 10
+  - type: Construction
+    graph: LuaMMince
+    node: cooked
+
+- type: constructionGraph
+  id: LuaMMince
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cooked
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 345
+  - node: cooked
+    entity: FoodLuaMMinceCooked
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkLuaMKvassBottle
+  name: kvass barrel
+  description: A plastic barrel of live-fermented bread kvass.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 120
+        reagents:
+        - ReagentId: LuaMKvass
+          Quantity: 120
+  - type: Label
+    currentLabel: reagent-name-luam-kvass
+  - type: Sprite
+    sprite: _LuaM/Objects/Consumable/Drinks/kvass.rsi
+    layers:
+    - state: icon
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "icon_open"}
+          False: {state: "icon"}
+  - type: Sealable

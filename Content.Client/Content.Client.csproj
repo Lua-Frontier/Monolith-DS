@@ -28,4 +28,9 @@
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\XamlIL.targets" />
+  <!-- LuaM: ship preview disabled since RT 291, its XAML is commented out and kept for reference -->
+  <ItemGroup>
+    <EmbeddedResource Remove="_Mono\Shipyard\UI\ShipyardPreviewMenu.xaml" />
+    <AdditionalFiles Remove="_Mono\Shipyard\UI\ShipyardPreviewMenu.xaml" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,79 @@
+- type: entity
+  parent: WeaponLaserGun
+  id: WeaponLaserGunLuaMCourier
+  name: courier laser blaster
+  description: A ColossDelivery self-defense blaster with a sturdier battery. A sticker on the grip reads "RETURN AT THE END OF THE SHIFT".
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Battery/courier_laser.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: HitscanBatteryAmmoProvider
+    proto: RedMediumLaser
+    fireCost: 25
+
+- type: entity
+  parent: SurvivalKnife
+  id: SurvivalKnifeLuaMCourier
+  name: courier knife
+  description: A ColossDelivery survival knife with a yellow and black handle. Sharper than it looks and great for slicing bread.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Melee/courier_knife.rsi
+    state: icon
+  - type: Item
+    sprite: _LuaM/Objects/Weapons/Melee/courier_knife.rsi
+    storedSprite:
+      state: storage
+      sprite: _LuaM/Objects/Weapons/Melee/courier_knife.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.2
+    damage:
+      types:
+        Slash: 22
+
+- type: entity
+  parent: FlashlightSeclite
+  id: FlashlightLuaMCourier
+  name: courier seclite
+  description: A sturdy ColossDelivery flashlight in corporate yellow and black. Its warm beam makes dark corridors look a little friendlier.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tools/courier_seclite.rsi
+    scale: 0.7, 0.7
+    layers:
+      - state: seclite
+      - state: seclite-overlay
+        shader: unshaded
+        visible: false
+        map: [ "light" ]
+  - type: Item
+    sprite: _LuaM/Objects/Tools/courier_seclite.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Tools/courier_seclite.rsi
+    quickEquip: false
+    slots:
+      - Belt
+  - type: PointLight
+    enabled: false
+    radius: 25
+    color: "#FFEBBE"
+
+- type: entity
+  parent: Paper
+  id: PaperLuaMCourierWelcome
+  name: ColossDelivery welcome letter
+  description: A corporate letter on yellow ColossDelivery letterhead.
+  components:
+  - type: Paper
+    stampState: paper_stamp-generic
+    stampedBy:
+    - stampedColor: '#D4A010FF'
+      stampedName: ColossDelivery
+      stampType: RubberStamp
+    content: delivery-courier-welcome-content

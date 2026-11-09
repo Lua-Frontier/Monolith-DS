@@ -1,0 +1,44 @@
+- files: ["Andromeda.ogg"]
+  license: "Custom"
+  copyright: "Andromeda, author unknown. Taken from the Sector Frontier 14 lobby music, converted to stereo."
+  source: "https://github.com/Roudenn/sector-frontier-14/blob/master/Resources/Audio/_Lua/Lobby/Andromeda.ogg"
+
+- files: ["TheExpanseMainTheme.ogg"]
+  license: "Custom"
+  copyright: "The Expanse - Main Theme, cover by Geek Music. Taken from the Sector Frontier 14 lobby music, converted to stereo."
+  source: "https://github.com/Roudenn/sector-frontier-14/blob/master/Resources/Audio/_Lua/Lobby/GeekMusic-TheExpanse-MainTheme.ogg"
+
+- files: ["Execution.ogg"]
+  license: "Custom"
+  copyright: "execution by skyfall beats and silent anthem. Taken from the Sector Frontier 14 lobby music, converted to stereo."
+  source: "https://github.com/Roudenn/sector-frontier-14/blob/master/Resources/Audio/_Lua/Lobby/skyfall_beats-silent_anthem_execution.ogg"
+
+- files: ["AtomicAmnesiaMMX.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Atomic Amnesia MMX by Philip Dyer."
+  source: "https://soundcloud.com/3kliksphilip/atomic-amnesia-mmx-1"
+
+- files: ["CometHaley.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Comet Haley by Stellardrone."
+  source: "https://stellardrone.bandcamp.com/track/comet-halley"
+
+- files: ["EveryLightIsBlinkingAtOnce.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "every light is blinking at once by Sunbeamstress/Lauren Loveless."
+  source: "https://soundcloud.com/sunbeamstress/every-light-is-blinking-at-once"
+
+- files: ["LasersRipApartTheBulkhead.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "lasers rip apart the bulkhead by Sunbeamstress/Lauren Loveless."
+  source: "https://soundcloud.com/sunbeamstress/lasers-rip-apart-the-bulkhead"
+
+- files: ["Singuloose.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Singuloose by Janis Schiedková."
+  source: "https://soundcloud.com/js_m/singuloose"
+
+- files: ["PhoronWillMakeUsRichRemix.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "phoron will make us rich by Sunbeamstress/Lauren Loveless, remix author unknown. Converted from M4A to OGG."
+  source: "https://soundcloud.com/sunbeamstress/phoron-will-make-us-rich"

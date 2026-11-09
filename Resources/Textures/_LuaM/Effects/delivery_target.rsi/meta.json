@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Delivery target ring by c_quarian (discord)",
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "outer",
+      "delays": [
+        [
+          0.18,
+          0.18,
+          0.18
+        ]
+      ]
+    },
+    {
+      "name": "inner"
+    }
+  ]
+}

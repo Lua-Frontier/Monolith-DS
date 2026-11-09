@@ -36,4 +36,4 @@ ent-CrateTechBoardRandom = излишки плат
     .desc = Откуда-то взятые излишки плат.
 ent-CrateRPD = ящик РПУ
     .desc = Ящик, содержащий одно ручное трубопрокладочное устройство.
-    .suffix = { ent-CrateEngineeringSecure.suffix }
+    .suffix = { ent-CrateBaseSecure.suffix }

@@ -1,22 +1,21 @@
-using System.Threading;
 using Content.Server._NF.Trade;
-using Content.Server.GameTicking;
 using Content.Shared._NF.Trade;
 using Content.Shared.Examine;
-using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server.Cargo.Systems; // Needs to collide with base namespace
 
 public sealed partial class CargoSystem
 {
-    [Dependency] private GameTicker _gameTicker = default!;
     private readonly List<EntityUid> _destinations = new();
+    // LuaM start
+    // -- Одна очередь по сроку вместо Timer.Spawn на каждый ящик: за тик проверяется только ближайший срок
+    private readonly PriorityQueue<EntityUid, TimeSpan> _expressQueue = new();
+    // LuaM end
 
     private void InitializeTradeCrates()
     {
         SubscribeLocalEvent<TradeCrateComponent, PriceCalculationEvent>(OnTradeCrateGetPriceEvent);
         SubscribeLocalEvent<TradeCrateComponent, ComponentInit>(OnTradeCrateInit);
-        SubscribeLocalEvent<TradeCrateComponent, ComponentRemove>(OnTradeCrateRemove);
         SubscribeLocalEvent<TradeCrateComponent, ExaminedEvent>(OnTradeCrateExamined);
 
         SubscribeLocalEvent<TradeCrateDestinationComponent, ComponentInit>(OnDestinationInit);
@@ -69,18 +68,37 @@ public sealed partial class CargoSystem
         {
             ent.Comp.ExpressDeliveryTime = _timing.CurTime + ent.Comp.ExpressDeliveryDuration;
             _appearance.SetData(ent, TradeCrateVisuals.IsPriority, true);
-
-            ent.Comp.ExpressCancelToken = new CancellationTokenSource();
-            Timer.Spawn((int)ent.Comp.ExpressDeliveryDuration.TotalMilliseconds,
-                () => DisableTradeCratePriority(ent),
-                ent.Comp.ExpressCancelToken.Token);
+            _expressQueue.Enqueue(ent, ent.Comp.ExpressDeliveryTime.Value); // LuaM
         }
     }
 
-    private void OnTradeCrateRemove(Entity<TradeCrateComponent> ent, ref ComponentRemove ev)
+    // LuaM start
+    private void UpdateTradeCrates()
     {
-        ent.Comp.ExpressCancelToken?.Cancel();
+        var now = _timing.CurTime;
+        while (_expressQueue.TryPeek(out var uid, out var due) && due <= now)
+        {
+            _expressQueue.Dequeue();
+            if (!TryComp<TradeCrateComponent>(uid, out var crate) || crate.ExpressDeliveryTime is not { } deadline)
+                continue;
+
+            // -- На паузе срок ещё не сдвинут: перепроверим позже, а после снятия паузы возьмём новый срок
+            if (MetaData(uid).EntityPaused)
+            {
+                _expressQueue.Enqueue(uid, now + TimeSpan.FromSeconds(10));
+                continue;
+            }
+
+            if (deadline > now)
+            {
+                _expressQueue.Enqueue(uid, deadline);
+                continue;
+            }
+
+            DisableTradeCratePriority(uid);
+        }
     }
+    // LuaM end
 
     // TODO: move to shared, share delivery time?
     private void OnTradeCrateExamined(Entity<TradeCrateComponent> ent, ref ExaminedEvent ev)
@@ -97,9 +115,21 @@ public sealed partial class CargoSystem
             Loc.GetString("trade-crate-priority-active") :
             Loc.GetString("trade-crate-priority-inactive"));
 
-        var shiftTime = ent.Comp.ExpressDeliveryTime - _gameTicker.RoundStartTimeSpan;
-        ev.PushMarkup(Loc.GetString("trade-crate-priority-time", ("time", shiftTime.Value.ToString(@"hh\:mm\:ss"))));
+        // LuaM start
+        // -- Показываем остаток или просрочку вместо момента от начала смены
+        var left = ent.Comp.ExpressDeliveryTime.Value - _timing.CurTime;
+        ev.PushMarkup(left >= TimeSpan.Zero
+            ? Loc.GetString("luam-trade-crate-time-left", ("time", FormatTradeCrateTime(left)))
+            : Loc.GetString("luam-trade-crate-past-due", ("time", FormatTradeCrateTime(-left))));
+        // LuaM end
     }
+
+    // LuaM start
+    private static string FormatTradeCrateTime(TimeSpan time)
+    {
+        return time.TotalHours >= 1 ? time.ToString(@"h\:mm\:ss") : time.ToString(@"mm\:ss");
+    }
+    // LuaM end
 
     private void DisableTradeCratePriority(EntityUid uid)
     {
@@ -120,5 +150,6 @@ public sealed partial class CargoSystem
     private void CleanupTradeCrateDestinations()
     {
         _destinations.Clear();
+        _expressQueue.Clear(); // LuaM
     }
 }

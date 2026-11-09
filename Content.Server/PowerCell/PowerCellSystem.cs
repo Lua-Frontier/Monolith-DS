@@ -66,8 +66,14 @@ public sealed partial class PowerCellSystem : SharedPowerCellSystem
             return;
         }
 
-        var frac = args.Charge / args.MaxCharge;
-        var level = (byte)ContentHelpers.RoundToNearestLevels(frac, 1, PowerCellComponent.PowerCellVisualsLevels);
+        // LuaM-start
+        var percent = args.MaxCharge > 0 ? Math.Round(args.Charge / args.MaxCharge * 100) : 0;
+        var level = (byte) (args.Charge <= 0 ? 0
+            : percent >= 75 ? 4
+            : percent >= 50 ? 3
+            : percent >= 25 ? 2
+            : 1);
+        // LuaM-end
         _sharedAppearanceSystem.SetData(uid, PowerCellVisuals.ChargeLevel, level);
 
         // If this power cell is inside a cell-slot, inform that entity that the power has changed (for updating visuals n such).

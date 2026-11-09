@@ -169,7 +169,7 @@
       - name: harpy-mimicry-laser
         icon: WeaponLaserCarbine
         sound:
-          path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+          path: /Audio/_LuaM/Weapons/Guns/EG-P/shot.ogg
           params:
             volume: -5
       - name: harpy-mimicry-laser-cannon

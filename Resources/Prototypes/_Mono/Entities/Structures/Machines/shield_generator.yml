@@ -232,6 +232,7 @@
     whitelist:
       tags:
         - Chimera
+  - type: BioShield # LuaM
 
 - type: entity
   id: ShieldGeneratorPOIBioTsf

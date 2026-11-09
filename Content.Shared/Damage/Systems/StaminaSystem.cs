@@ -272,7 +272,7 @@ public sealed partial class StaminaSystem : EntitySystem
 
     // goob edit - stunmeta
     public void TakeStaminaDamage(EntityUid uid, float value, StaminaComponent? component = null,
-        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null, bool immediate = true)
+        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null, bool immediate = true, bool log = true) // LuaM: log
     {
         if (!Resolve(uid, ref component, false)
         || value == 0) // no damage???
@@ -325,11 +325,11 @@ public sealed partial class StaminaSystem : EntitySystem
 
         if (value <= 0)
             return;
-        if (source != null)
+        if (log && source != null) // LuaM: log
         {
             _adminLogger.Add(LogType.Stamina, $"{ToPrettyString(source.Value):user} caused {value} stamina damage to {ToPrettyString(uid):target}{(with != null ? $" using {ToPrettyString(with.Value):using}" : "")}");
         }
-        else
+        else if (log) // LuaM: log
         {
             _adminLogger.Add(LogType.Stamina, $"{ToPrettyString(uid):target} took {value} stamina damage");
         }

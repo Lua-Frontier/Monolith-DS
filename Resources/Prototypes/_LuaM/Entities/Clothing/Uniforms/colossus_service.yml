@@ -1,0 +1,45 @@
+# Formal Colossus Central service uniform, replaces the valet outfit of CCServiceWorker.
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitLuaMColossusService
+  name: Colossus service suit
+  description: A navy formal suit with a golden tie, issued to the service staff of Colossus Central.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/colossus_service.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/colossus_service.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtLuaMColossusService
+  name: Colossus service suitskirt
+  description: A navy formal suitskirt with a golden tie, issued to the service staff of Colossus Central.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Uniforms/Jumpskirt/colossus_service.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Uniforms/Jumpskirt/colossus_service.rsi
+
+- type: loadout
+  id: ServiceClothingUniformJumpsuitColossus
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLuaMColossusService
+
+- type: loadout
+  id: ServiceClothingUniformJumpskirtColossus
+  price: 0
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtLuaMColossusService
+
+- type: loadoutGroup
+  id: ColossusServiceJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  loadouts:
+  - ServiceClothingUniformJumpsuitColossus
+  - ServiceClothingUniformJumpskirtColossus
+  fallbacks:
+  - ServiceClothingUniformJumpsuitColossus
+  - ServiceClothingUniformJumpskirtColossus

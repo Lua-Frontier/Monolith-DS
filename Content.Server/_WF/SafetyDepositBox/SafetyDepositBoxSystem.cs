@@ -1,4 +1,5 @@
 using System.IO;
+using System.Linq; // LuaM
 using Content.Server._Mono.MonoCoins;
 using Content.Server.Administration.Logs;
 using Content.Server.Database;
@@ -14,6 +15,7 @@ using Content.Shared._WF.SafetyDepositBox.Events;
 using Content.Shared.Database;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Timing; // LuaM
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Labels.Components;
 using Content.Shared.Labels.EntitySystems;
@@ -47,6 +49,7 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
     [Dependency] private MapLoaderSystem _loader = default!;
     [Dependency] private MonoCoinsManager _coinBase = default!; // I had to.
     [Dependency] private ISharedPlayerManager _playerManager = default!;
+    [Dependency] private UseDelaySystem _useDelay = default!; // LuaM
 
     public override void Initialize()
     {
@@ -571,10 +574,12 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
                 try
                 {
                     using var reader = new StringReader(itemData.EntityData);
+                    // -- return тут выходил из всей выдачи: ящик уже выдан, а запись в базе не очищена, и его можно было забрать повторно
                     if (!_loader.TryLoadEntity(reader, "safety deposit box", out var entity))
-                        return;
+                        continue; // LuaM: return > continue
 
                     var itemEntity = entity.Value.Owner;
+                    ResetStoredDelays(itemEntity); // LuaM
                     // Mark item as having been stored in a deposit box
                     EnsureComp<SafetyDepositStoredComponent>(itemEntity);
 
@@ -611,6 +616,23 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
 
         UpdateUI(consoleUid, component, player);
     }
+
+    // LuaM-start
+    // -- Задержки использования сохраняются абсолютным временем прошлого раунда, а время нового раунда начинается с нуля:
+    // -- без сброса предмет и его действия оставались "на кулдауне" столько, сколько длился прошлый раунд
+    private void ResetStoredDelays(EntityUid uid)
+    {
+        if (TryComp<UseDelayComponent>(uid, out var delay))
+        {
+            foreach (var id in delay.Delays.Keys.ToList())
+                _useDelay.CancelDelay((uid, delay), id);
+        }
+
+        var children = Transform(uid).ChildEnumerator;
+        while (children.MoveNext(out var child))
+            ResetStoredDelays(child);
+    }
+    // LuaM-end
 
     private void OnSlotChanged(EntityUid uid, SafetyDepositConsoleComponent component, ContainerModifiedMessage args)
     {

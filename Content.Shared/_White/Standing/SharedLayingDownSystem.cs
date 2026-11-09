@@ -21,10 +21,8 @@ public abstract partial class SharedLayingDownSystem : EntitySystem
     public override void Initialize()
     {
         CommandBinds.Builder
-            .Bind(ContentKeyFunctions.ToggleStanding, InputCmdHandler.FromDelegate(ToggleStanding))
+            .Bind(ContentKeyFunctions.ToggleStanding, InputCmdHandler.FromDelegate(ToggleStanding, handle: false, outsidePrediction: false)) // LuaM: predicted input instead of a network event
             .Register<SharedLayingDownSystem>();
-
-        SubscribeNetworkEvent<ChangeLayingDownEvent>(OnChangeState);
 
         SubscribeLocalEvent<StandingStateComponent, StandingUpDoAfterEvent>(OnStandingUpDoAfter);
         SubscribeLocalEvent<LayingDownComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
@@ -40,24 +38,15 @@ public abstract partial class SharedLayingDownSystem : EntitySystem
         CommandBinds.Unregister<SharedLayingDownSystem>();
     }
 
+    // LuaM: runs on the client as a predicted input and on the server, so lying down no longer snaps the camera back
     private void ToggleStanding(ICommonSession? session)
     {
-        if (session?.AttachedEntity == null ||
-            !HasComp<LayingDownComponent>(session.AttachedEntity) ||
-            !CanLieDown(session.AttachedEntity.Value)) // Mono
+        if (session?.AttachedEntity is not { } uid ||
+            !HasComp<LayingDownComponent>(uid) ||
+            !CanLieDown(uid)) // Mono
         {
             return;
         }
-
-        RaiseNetworkEvent(new ChangeLayingDownEvent());
-    }
-
-    private void OnChangeState(ChangeLayingDownEvent ev, EntitySessionEventArgs args)
-    {
-        if (!args.SenderSession.AttachedEntity.HasValue)
-            return;
-
-        var uid = args.SenderSession.AttachedEntity.Value;
 
         if (HasComp<LegsParalyzedComponent>(uid)) //Mono: Stop wheelchair user trait from standing
             return;
@@ -71,8 +60,6 @@ public abstract partial class SharedLayingDownSystem : EntitySystem
         {
             return;
         }
-
-        RaiseNetworkEvent(new CheckAutoGetUpEvent(GetNetEntity(uid)));
 
         if (HasComp<KnockedDownComponent>(uid) || !_mobState.IsAlive(uid))
             return;

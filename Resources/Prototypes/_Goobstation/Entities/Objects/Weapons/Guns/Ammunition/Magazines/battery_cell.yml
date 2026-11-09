@@ -23,6 +23,7 @@
 #    solution: battery
   - type: Appearance
   - type: PowerCellVisuals
+    chargeBars: true # LuaM
   - type: Riggable
   - type: HitscanBatteryAmmoProvider
     proto: SmallRedLaser

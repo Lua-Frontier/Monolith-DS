@@ -47,6 +47,8 @@ public sealed class MarqueeLabel : Control
         }
     }
 
+    public Label.AlignMode IdleAlign { get; set; } = Label.AlignMode.Center;
+
     public bool Hovered
     {
         get => _hovered;
@@ -108,7 +110,7 @@ public sealed class MarqueeLabel : Control
         }
         else
         {
-            _label.Align = Label.AlignMode.Center;
+            _label.Align = IdleAlign;
             _label.Text = _textWidth > Width ? Truncate(font, Width) : _text;
         }
 

@@ -1,9 +1,12 @@
 <yupi:YupiUiFragment xmlns:yupi="clr-namespace:Content.Client._LuaM.Yupi"
+                     xmlns:luam="clr-namespace:Content.Client._LuaM.UserInterface"
                      xmlns="https://spacestation14.io"
                      Orientation="Vertical"
                      HorizontalExpand="True"
                      VerticalExpand="True">
-    <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+    <luam:HazardBanner Name="BlockedBanner" Visible="False"/>
+    <yupi:UsspBankBackground Name="MainBackground" HorizontalExpand="True" VerticalExpand="True">
+    <ScrollContainer Name="MainScroll" HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
             <Label Name="NoAccountLabel"
                    Text="{Loc 'yupi-no-account'}"
@@ -41,9 +44,10 @@
             <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" Margin="0 8 0 0">
                 <TextureRect TexturePath="/Textures/_LuaM/Yupi/bank_logo.png"
                              Stretch="KeepAspectCentered"
-                             SetSize="96 96"/>
-                <Label Text="{Loc 'yupi-bank-name'}" HorizontalAlignment="Center" StyleClasses="LabelSubText"/>
+                             SetSize="56 56"/>
+                <Label Text="{Loc 'yupi-bank-name'}" HorizontalAlignment="Center" FontColorOverride="#E8C25A"/>
             </BoxContainer>
         </BoxContainer>
     </ScrollContainer>
+    </yupi:UsspBankBackground>
 </yupi:YupiUiFragment>

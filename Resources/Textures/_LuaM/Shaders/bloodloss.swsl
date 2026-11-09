@@ -1,0 +1,68 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float bloodlossIntensity;
+uniform highp vec3 bloodColor;
+uniform highp float intensityPower;
+uniform highp float blurStrength;
+uniform highp float sharpStrength;
+
+const highp float HueTolerance = 15.0;
+const highp float MinSaturation = 0.4;
+const highp int BlurSamples = 8;
+
+highp vec3 rgb2hsv(highp vec3 c) {
+    highp float xMax = max(c.r, max(c.g, c.b));
+    highp float xMin = min(c.r, min(c.g, c.b));
+    highp float delta = xMax - xMin;
+
+    highp float hue = 0.0;
+    if (delta > 0.0) {
+        if (xMax == c.r) {
+            hue = mod((c.g - c.b) / delta, 6.0);
+        } else if (xMax == c.g) {
+            hue = (c.b - c.r) / delta + 2.0;
+        } else {
+            hue = (c.r - c.g) / delta + 4.0;
+        }
+        hue *= 60.0;
+        if (hue < 0.0) hue += 360.0;
+    }
+
+    highp float sat = (xMax == 0.0) ? 0.0 : delta / xMax;
+    return vec3(hue, sat, xMax);
+}
+
+void fragment() {
+    highp vec2 uv = FRAGCOORD.xy * SCREEN_PIXEL_SIZE.xy;
+    highp float rampedIntensity = pow(bloodlossIntensity, intensityPower);
+
+    highp vec2 direction = vec2(0.5, 0.5) - uv;
+    highp float edge = smoothstep(0.08, 0.45, length(direction));
+    highp float blur = blurStrength * rampedIntensity * edge;
+
+    highp vec4 color = vec4(0.0);
+    for (int i = 0; i < BlurSamples; i++)
+    {
+        color += zTextureSpec(SCREEN_TEXTURE, uv + float(i) / float(BlurSamples) * blur * direction);
+    }
+    color = color / float(BlurSamples);
+
+    highp vec2 px = SCREEN_PIXEL_SIZE.xy;
+    highp vec3 center = zTextureSpec(SCREEN_TEXTURE, uv).rgb;
+    highp vec3 neighbours = zTextureSpec(SCREEN_TEXTURE, uv + vec2(px.x, 0.0)).rgb
+        + zTextureSpec(SCREEN_TEXTURE, uv - vec2(px.x, 0.0)).rgb
+        + zTextureSpec(SCREEN_TEXTURE, uv + vec2(0.0, px.y)).rgb
+        + zTextureSpec(SCREEN_TEXTURE, uv - vec2(0.0, px.y)).rgb;
+    highp float sharp = sharpStrength * rampedIntensity * (1.0 - edge);
+    color.rgb = clamp(color.rgb + sharp * (center - neighbours * 0.25), 0.0, 1.0);
+    highp vec3 gray = vec3(zGrayscale(color.rgb));
+    highp vec3 hsv = rgb2hsv(color.rgb);
+    highp vec3 bloodHsv = rgb2hsv(bloodColor);
+
+    highp float hueDiff = abs(hsv.x - bloodHsv.x);
+    bool hueMatch = min(hueDiff, 360.0 - hueDiff) < HueTolerance;
+    bool saturatedEnough = hsv.y > MinSaturation;
+
+    highp float effectiveIntensity = (hueMatch && saturatedEnough) ? 0.0 : rampedIntensity;
+
+    COLOR = vec4(mix(color.rgb, gray, effectiveIntensity), color.a);
+}

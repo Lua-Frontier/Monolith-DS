@@ -43,6 +43,7 @@
   - MercenaryKammererLoadout
   - MercenaryDisablerSMGLoadout
   - MercenaryLaserCarbineLoadout
+  - MercenaryMercLaserCarbineLoadout
   - MercenaryEnergyGunLoadout
   - MercenaryLeverActionloadout
   # From the mercenary self-defense list, the disabler is already in their pistol group
@@ -73,6 +74,7 @@
   - MercenaryKammererLoadout
   - MercenaryDisablerSMGLoadout
   - MercenaryLaserCarbineLoadout
+  - MercenaryMercLaserCarbineLoadout
   - MercenaryEnergyGunLoadout
   - MercenaryLeverActionloadout
   - ContractorDoubleBarreledLoadout

@@ -1,0 +1,139 @@
+- type: job
+  id: DeliveryCourier
+  guides:
+  - Caelestinus
+  name: job-name-delivery-courier
+  description: job-description-delivery-courier
+  playTimeTracker: JobDeliveryCourier
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800
+  startingGear: DeliveryCourierGear
+  alwaysUseSpawner: true
+  icon: "JobIconDeliveryCourier"
+  supervisors: job-supervisors-sr
+  weight: 60
+  displayWeight: 10
+  assignedCompany: Colonial
+  canBeAntag: false
+  access:
+  - Maintenance
+  - External
+  - Service
+  - Frontier
+  - Mail
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: DeliveryCourier
+  - !type:GiveItemOnHolidaySpecial
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+
+# -- LuaM: ваучер "Газели" вместо сервисного, когда будет шаттл
+- type: startingGear
+  id: DeliveryCourierGear
+  equipment:
+    id: DeliveryCourierPDA
+  storage:
+    back:
+    - PaperLuaMCourierWelcome
+    - EncryptionKeyService
+    - ShipVoucherFrontierService
+
+- type: playTimeTracker
+  id: JobDeliveryCourier
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDeliveryCourier
+  icon:
+    sprite: /Textures/_LuaM/Interface/Misc/job_icons.rsi
+    state: courier
+  jobName: job-name-delivery-courier
+
+- type: roleLoadout
+  id: JobDeliveryCourier
+  groups:
+  - CourierHead
+  - CourierNeck
+  - CourierJumpsuit
+  - CourierGloves
+  - CourierBackpack
+  - CourierOuterClothing
+  - CourierShoes
+  - ContractorFace
+  - CourierGlasses
+  - ContractorBelt
+  - ContractorEars
+  - ContractorEncryptionKey
+  - ContractorBoxSurvival
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorUtility
+  - ContractorFun
+  - ContractorTrinkets
+  - ContractorBureaucracy
+  - NFSpeciesSpecific
+  - CourierKit
+  - CourierFirearm
+  - ContractorMag
+  - ContractorArmorPlates
+
+- type: entity
+  parent: CCServiceWorkerNFIDCard
+  id: DeliveryCourierIDCard
+  categories: [ HideSpawnMenu ]
+  name: courier ID card
+  description: An identification card belonging to a delivery service courier.
+  components:
+  - type: PresetIdCard
+    job: DeliveryCourier
+  - type: Sprite
+    sprite: _LuaM/Objects/Misc/courier_id_card.rsi
+    layers:
+    - state: courier
+    - state: idcourier
+  - type: Item
+    heldPrefix: courier
+
+- type: entity
+  parent: CCServiceWorkerPDA
+  id: DeliveryCourierPDA
+  name: courier PDA
+  description: A personal digital assistant belonging to a delivery service courier.
+  components:
+  - type: Pda
+    id: DeliveryCourierIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-courier
+  - type: Sprite
+    sprite: _LuaM/Objects/Devices/courier_pda.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Devices/courier_pda.rsi
+  - type: Item
+    sprite: _LuaM/Objects/Devices/courier_pda.rsi
+  - type: Icon
+    sprite: _LuaM/Objects/Devices/courier_pda.rsi
+    state: pda-courier
+  - type: PdaBorderColor
+    borderColor: "#1E1D1B"
+    accentVColor: "#E9BC1D"
+
+- type: entity
+  id: SpawnPointDeliveryCourier
+  parent: SpawnPointJobBase
+  name: courier
+  components:
+  - type: SpawnPoint
+    job_id: DeliveryCourier
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger

@@ -14,7 +14,7 @@ namespace Content.Server.Speech.EntitySystems
         [Dependency] private IRobustRandom _random = default!; // LuaM: private > private readonly
 
         // Regex of characters to stutter.
-        private static readonly Regex Stutter = new(@"[b-df-hj-np-tv-wxyz-б-вд-к-лмн-прст]", // LuaM: added б-вд-к-лмн-прст
+        private static readonly Regex Stutter = new(@"[b-df-hj-np-tv-zбвгджзйклмнпрстфхцчшщ]", // LuaM: added Russian consonants
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         public override void Initialize()
@@ -32,7 +32,7 @@ namespace Content.Server.Speech.EntitySystems
             if (Terminating(uid)) // LuaM
                 return;
 
-            _statusEffectsSystem.TryAddStatusEffect(uid, "Stuttering", time, refresh);
+            _statusEffectsSystem.TryAddStatusEffect<StutteringAccentComponent>(uid, StutterKey, time, refresh, status); // LuaM: "Stuttering" key did not exist
         }
 // LuaM-end.
 
@@ -52,7 +52,8 @@ namespace Content.Server.Speech.EntitySystems
             for (var i = 0; i < length; i++)
             {
                 newLetter = message[i].ToString();
-                if (Stutter.IsMatch(newLetter) && _random.Prob(component.MatchRandomProb))
+                var wordStart = i == 0 || !char.IsLetter(message[i - 1]); // LuaM
+                if (wordStart && Stutter.IsMatch(newLetter) && _random.Prob(component.MatchRandomProb)) // LuaM: wordStart
                 {
                     if (_random.Prob(component.FourRandomProb))
                     {

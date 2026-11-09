@@ -4,8 +4,8 @@
   markingCategory: Tail
   speciesRestriction: []
   sprites:
-  - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_wag
+  - sprite: _LuaM/Mobs/Customization/Protogen/tail_markings.rsi
+    state: tail_protogen_wag
 
 - type: marking
   id: ProtogenTailBushyAnimated

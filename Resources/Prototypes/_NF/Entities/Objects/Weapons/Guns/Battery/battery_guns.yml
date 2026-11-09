@@ -147,6 +147,9 @@
     availableModes:
     - SemiAuto
     - Burst
+  - type: HitscanBatteryAmmoProvider # LuaM: 20 shots
+    proto: RedMediumLaser
+    fireCost: 50
   - type: StaticPrice # Mono
     price: 150
 

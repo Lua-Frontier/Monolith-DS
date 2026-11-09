@@ -26,5 +26,7 @@ namespace Content.Server.Bed.Components
         public TimeSpan NextHealTime = TimeSpan.Zero; //Next heal
 
         [DataField] public EntityUid? SleepAction;
+
+        [ViewVariables] public Dictionary<EntityUid, EntityUid> SleepActions = new(); // LuaM: one sleep action per sleeper on double beds
     }
 }

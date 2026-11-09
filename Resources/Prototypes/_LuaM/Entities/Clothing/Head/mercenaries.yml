@@ -1,0 +1,18 @@
+- type: entity
+  parent: ClothingHelmetHardsuitMercenaryWarlord
+  id: ClothingHelmetHardsuitMercenaryWarlordMk2
+  name: WL-02 helmet
+  description: The helmet of the experimental Warlord suit. Flash immunity and mass scanner support are kept, the plating is thicker.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Head/Hardsuits/merc_warlord_mk2.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Head/Hardsuits/merc_warlord_mk2.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8

@@ -9,7 +9,7 @@
   parent: BaseVessel
   name: vessel-twilightmk2-name # LuaM-locale
   description: vessel-twilightmk2-desc # LuaM-locale
-  price: 53760
+  price: 54300 # LuaM: 53760 > 54300, appraisal with random loot reached the price
   category: Medium
   group: Expedition
   access: Mercenary

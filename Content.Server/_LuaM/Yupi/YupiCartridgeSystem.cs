@@ -1,6 +1,7 @@
 using Content.Server._NF.Bank;
 using Content.Server.CartridgeLoader;
 using Content.Shared._LuaM.Yupi;
+using Content.Shared._Mono.Traits.Physical;
 using Content.Shared._NF.Bank.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Popups;
@@ -79,7 +80,13 @@ public sealed partial class YupiCartridgeSystem : EntitySystem
         var lowRateRemaining = 0;
         var nextTransfer = TimeSpan.Zero;
 
-        if (TryGetHolder(loader, out var holder))
+        if (TryGetHolder(loader, out var holder) && HasComp<IronmanComponent>(holder))
+        {
+            _cartridgeLoader.UpdateCartridgeUiState(loader, new YupiUiState(code, balance, lowRateRemaining, nextTransfer, true));
+            return;
+        }
+
+        if (holder != default)
         {
             code = _yupi.GetOrCreateCode(holder);
             _bank.TryGetBalance(holder, out balance);
@@ -113,7 +120,7 @@ public sealed partial class YupiCartridgeSystem : EntitySystem
         while (_container.TryGetContainingContainer((current, null, null), out var container))
         {
             current = container.Owner;
-            if (!HasComp<BankAccountComponent>(current))
+            if (!HasComp<BankAccountComponent>(current) && !HasComp<IronmanComponent>(current))
                 continue;
 
             holder = current;

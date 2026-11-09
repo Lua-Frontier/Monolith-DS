@@ -9,6 +9,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
+using Robust.Client.Timing;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Input;
@@ -25,7 +26,7 @@ namespace Content.Client.Tabletop
         [Dependency] private IInputManager _inputManager = default!;
         [Dependency] private IUserInterfaceManager _uiManger = default!;
         [Dependency] private IPlayerManager _playerManager = default!;
-        [Dependency] private IGameTiming _gameTiming = default!;
+        [Dependency] private IClientGameTiming _gameTiming = default!; // LuaM
         [Dependency] private AppearanceSystem _appearance = default!;
         [Dependency] private SharedTransformSystem _transformSystem = default!;
         [Dependency] private SpriteSystem _sprite = default!;
@@ -39,10 +40,20 @@ namespace Content.Client.Tabletop
         private DefaultWindow? _window; // Current open tabletop window (only allow one at a time)
         private EntityUid? _table; // The table entity of the currently open game session
 
+        // LuaM-start
+        private static readonly TimeSpan ReleaseHoldTime = TimeSpan.FromSeconds(1);
+        private EntityUid? _releasedEntity;
+        private EntityUid _releasedParent;
+        private Vector2 _releasedPosition;
+        private GameTick _releasedTick;
+        private TimeSpan _releasedUntil;
+        // LuaM-end
+
         public override void Initialize()
         {
             base.Initialize();
             UpdatesOutsidePrediction = true;
+            UpdatesAfter.Add(typeof(TransformSystem)); // LuaM
 
             CommandBinds.Builder
                 .Bind(EngineKeyFunctions.Use, new PointerInputCmdHandler(OnUse, false, true))
@@ -76,6 +87,8 @@ namespace Content.Client.Tabletop
                 return;
             }
 
+            UpdateReleased(); // LuaM
+
             // If no entity is being dragged or no viewport is clicked, return
             if (_draggedEntity == null || _viewport == null) return;
 
@@ -102,7 +115,11 @@ namespace Content.Client.Tabletop
             if (clampedCoords.Equals(MapCoordinates.Nullspace)) return;
 
             // Move the entity locally every update
-            _transformSystem.SetWorldPosition(_draggedEntity.Value, clampedCoords.Position);
+            // LuaM-start: -- SetWorldPosition на клиенте запускает интерполяцию к точке, фигура дёргалась и потом уезжала к старой цели
+            var draggedXform = Transform(_draggedEntity.Value);
+            var localPosition = Vector2.Transform(clampedCoords.Position, _transformSystem.GetInvWorldMatrix(draggedXform.ParentUid));
+            _transformSystem.SetLocalPositionNoLerp(_draggedEntity.Value, localPosition, draggedXform);
+            // LuaM-end
 
             // Increment total time passed
             _timePassed += frameTime;
@@ -157,6 +174,7 @@ namespace Content.Client.Tabletop
             }
 
             StopDragging();
+            _releasedEntity = null; // LuaM
             _window = null;
         }
 
@@ -247,6 +265,7 @@ namespace Content.Client.Tabletop
         {
             RaisePredictiveEvent(new TabletopDraggingPlayerChangedEvent(GetNetEntity(draggedEntity), true));
 
+            _releasedEntity = null; // LuaM
             _draggedEntity = draggedEntity;
             _viewport = viewport;
         }
@@ -262,11 +281,47 @@ namespace Content.Client.Tabletop
             {
                 RaisePredictiveEvent(new TabletopMoveEvent(GetNetEntity(_draggedEntity.Value), Transforms.GetMapCoordinates(_draggedEntity.Value), GetNetEntity(_table!.Value)));
                 RaisePredictiveEvent(new TabletopDraggingPlayerChangedEvent(GetNetEntity(_draggedEntity.Value), false));
+
+                // LuaM-start
+                var xform = Transform(_draggedEntity.Value);
+                _releasedEntity = _draggedEntity;
+                _releasedParent = xform.ParentUid;
+                _releasedPosition = xform.LocalPosition;
+                _releasedTick = _gameTiming.CurTick;
+                _releasedUntil = _gameTiming.RealTime + ReleaseHoldTime;
+                // LuaM-end
             }
 
             _draggedEntity = null;
             _viewport = null;
         }
+
+        // LuaM-start
+        private void UpdateReleased()
+        {
+            if (_releasedEntity is not { } released)
+                return;
+
+            if (_gameTiming.RealTime > _releasedUntil
+                || !TryComp(released, out TabletopDraggableComponent? draggable)
+                || draggable.DraggingPlayer is { } player && player != _playerManager.LocalSession?.UserId
+                || !TryComp(released, out TransformComponent? xform)
+                || xform.ParentUid != _releasedParent)
+            {
+                _releasedEntity = null;
+                return;
+            }
+
+            if (_gameTiming.LastRealTick >= _releasedTick
+                && (xform.NextPosition is not { } next || (next - _releasedPosition).LengthSquared() < 0.0001f))
+            {
+                _releasedEntity = null;
+                return;
+            }
+
+            _transformSystem.SetLocalPositionNoLerp(released, _releasedPosition, xform);
+        }
+        // LuaM-end
 
         /// <summary>
         /// Clamps coordinates within a viewport. ONLY WORKS FOR 90 DEGREE ROTATIONS!

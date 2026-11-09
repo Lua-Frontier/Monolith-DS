@@ -7,7 +7,7 @@
   parent: BaseVessel
   name: vessel-siebel-name # LuaM-locale
   description: vessel-siebel-desc # LuaM-locale
-  price: 149890
+  price: 151500 # LuaM: 149890 > 151500, appraisal with random loot reached the price
   category: Medium
   group: Expedition
   access: Mercenary

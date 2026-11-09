@@ -133,6 +133,9 @@ namespace Content.Client.GameTicking.Managers
 
         private void JoinGame(TickerJoinGameEvent message)
         {
+            if (LuaMJoinGameAttempt()) // LuaM
+                return; // LuaM
+
             _stateManager.RequestStateChange<GameplayState>();
         }
 

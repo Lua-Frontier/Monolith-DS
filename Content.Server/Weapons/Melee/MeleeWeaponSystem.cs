@@ -78,7 +78,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         // Could also check the arc though future effort + if they're aimbotting it's not really going to make a difference.
 
         // (This runs lagcomp internally and is what clickattacks use)
-        if (!Interaction.InRangeUnobstructed(ignore, targetUid, range + 0.1f, overlapCheck: false))
+        if (!InRange(ignore, targetUid, range + 0.1f, session)) // LuaM: InRangeUnobstructed without lag compensation > InRange
             return false;
 
         // TODO: Check arc though due to the aforementioned aimbot + damage split comments it's less important.
@@ -185,6 +185,9 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         return true;
     }
 
+    // -- Клиент видит цель с задержкой пинга и интерполяции, поэтому удар засчитывается и по прошлой, и по текущей позиции с небольшим запасом
+    private const float MeleeRangeLeniency = 0.4f; // LuaM
+
     protected override bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session)
     {
         EntityCoordinates targetCoordinates;
@@ -192,8 +195,12 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
 
         if (session is { } pSession)
         {
+            range += MeleeRangeLeniency; // LuaM
             (targetCoordinates, targetLocalAngle) = _lag.GetCoordinatesAngle(target, pSession);
-            return Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range, overlapCheck: false);
+            if (Interaction.InRangeUnobstructed(user, target, targetCoordinates, targetLocalAngle, range, overlapCheck: false)) // LuaM: return > if
+                return true; // LuaM
+
+            return Interaction.InRangeUnobstructed(user, target, range, overlapCheck: false); // LuaM
         }
 
         return Interaction.InRangeUnobstructed(user, target, range);

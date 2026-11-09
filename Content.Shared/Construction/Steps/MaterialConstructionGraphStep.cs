@@ -19,7 +19,7 @@ namespace Content.Shared.Construction.Steps
         {
             var material = IoCManager.Resolve<IPrototypeManager>().Index<StackPrototype>(MaterialPrototypeId);
 
-            examinedEvent.PushMarkup(Loc.GetString("construction-insert-material-entity", ("amount", Amount), ("materialName", material.Name)));
+            examinedEvent.PushMarkup(Loc.GetString("construction-insert-material-entity", ("amount", Amount), ("materialName", GetMaterialName(material)))); // LuaM: material.Name > GetMaterialName
         }
 
         public override bool EntityValid(EntityUid uid, IEntityManager entityManager, IComponentFactory compFactory)
@@ -37,6 +37,17 @@ namespace Content.Shared.Construction.Steps
             return stack != null;
         }
 
+        // LuaM-start
+        // -- Имена стаков заданы в прототипах английским текстом, поэтому берём локализованное имя предмета, который стак спавнит
+        private static string GetMaterialName(StackPrototype material)
+        {
+            if (IoCManager.Resolve<IPrototypeManager>().TryIndex(material.Spawn, out var item))
+                return item.Name;
+
+            return Loc.TryGetString(material.Name, out var localized) ? localized : material.Name;
+        }
+        // LuaM-end
+
         public override ConstructionGuideEntry GenerateGuideEntry()
         {
             var material = IoCManager.Resolve<IPrototypeManager>().Index<StackPrototype>(MaterialPrototypeId);
@@ -44,7 +55,7 @@ namespace Content.Shared.Construction.Steps
             return new ConstructionGuideEntry()
             {
                 Localization = "construction-presenter-material-step",
-                Arguments = new (string, object)[]{("amount", Amount), ("material", material.Name)},
+                Arguments = new (string, object)[]{("amount", Amount), ("material", GetMaterialName(material))}, // LuaM: material.Name > GetMaterialName
                 Icon = material.Icon,
             };
         }

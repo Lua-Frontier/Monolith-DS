@@ -155,10 +155,13 @@ public sealed class GuidebookViewTests
             }
             var liveRow = All(live).OfType<Content.Client._NF.Shipyard.UI.VesselRow>().Single();
             var guideRow = All(guide).OfType<Content.Client._NF.Shipyard.UI.VesselRow>().Single();
-            Assert.That(liveRow.Preview.Visible, Is.False);
-            Assert.That(guideRow.Preview.Visible, Is.True);
-            Assert.That(guideRow.Preview.Disabled, Is.EqualTo(!GuidebookMapRendering.Enabled));
-            Assert.That(guideRow.Purchase.Disabled, Is.True);
+            // LuaM start: rows only select a vessel; the window shows the live preview and buys from the bottom bar
+            Assert.That(liveRow.Vessel?.ID, Is.EqualTo(proto.ID));
+            Assert.That(guideRow.Vessel?.ID, Is.EqualTo(proto.ID));
+            Assert.That(guide.PreviewView.Vessel?.ID, Is.EqualTo(proto.ID));
+            Assert.That(live.PurchaseButton.Disabled, Is.False);
+            Assert.That(guide.PurchaseButton.Disabled, Is.True);
+            // LuaM end
         });
         await pair.CleanReturnAsync();
     }

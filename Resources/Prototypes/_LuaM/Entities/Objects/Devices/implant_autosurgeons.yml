@@ -18,6 +18,8 @@
   name: autosurgeon (EMP implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  - type: Item
+    size: Small
   - type: Flatpack
     entity: AutosurgeonImplantEmp
   - type: StaticPrice
@@ -43,6 +45,8 @@
   name: autosurgeon (freedom implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  - type: Item
+    size: Small
   - type: Flatpack
     entity: AutosurgeonImplantFreedom
   - type: StaticPrice
@@ -68,6 +72,8 @@
   name: autosurgeon (scram implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  - type: Item
+    size: Small
   - type: Flatpack
     entity: AutosurgeonImplantScram
   - type: StaticPrice
@@ -93,6 +99,8 @@
   name: autosurgeon (storage implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  - type: Item
+    size: Small
   - type: Flatpack
     entity: AutosurgeonImplantStorage
   - type: StaticPrice

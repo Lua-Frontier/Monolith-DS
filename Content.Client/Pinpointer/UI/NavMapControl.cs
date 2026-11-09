@@ -394,7 +394,7 @@ public partial class NavMapControl : MapGridControl
         {
             if (lit && value.Visible)
             {
-                var mapPos = _transformSystem.ToMapCoordinates(coord);
+                var mapPos = _transformSystem.ToMapCoordinates(coord, logError: false); // LuaM: added logError: false
 
                 if (mapPos.MapId != MapId.Nullspace)
                 {
@@ -415,7 +415,7 @@ public partial class NavMapControl : MapGridControl
             if (blip.Texture == null)
                 continue;
 
-            var mapPos = _transformSystem.ToMapCoordinates(blip.Coordinates);
+            var mapPos = _transformSystem.ToMapCoordinates(blip.Coordinates, logError: false); // LuaM: added logError: false
 
             if (mapPos.MapId != MapId.Nullspace)
             {

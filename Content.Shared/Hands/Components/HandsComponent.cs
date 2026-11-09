@@ -7,7 +7,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Hands.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
-[Access(typeof(SharedHandsSystem))]
+[Access(typeof(SharedHandsSystem), typeof(Content.Shared._LuaM.Throwing.PredictedThrowSystem))] // LuaM
 public sealed partial class HandsComponent : Component
 {
     /// <summary>
@@ -138,9 +138,11 @@ public sealed class HandsComponentState : ComponentState
     public readonly List<Hand> Hands;
     public readonly List<string> HandNames;
     public readonly string? ActiveHand;
+    public readonly TimeSpan NextThrowTime; // LuaM
 
     public HandsComponentState(HandsComponent handComp)
     {
+        NextThrowTime = handComp.NextThrowTime; // LuaM
         // cloning lists because of test networking.
         Hands = new(handComp.Hands.Values);
         HandNames = new(handComp.SortedHands);

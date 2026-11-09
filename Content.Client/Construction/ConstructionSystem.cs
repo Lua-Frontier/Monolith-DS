@@ -209,11 +209,13 @@ namespace Content.Client.Construction
             if (!CheckConstructionConditions(prototype, loc, dir, user, showPopup: true))
                 return false;
 
-            ghost = Spawn("constructionghost", loc);
+            // -- SetLocalRotation на клиенте идёт через интерполяцию, и у клиентского призрака она обрывалась на полпути:
+            // -- призрак (а по его углу и постройка на сервере) застывал под углом до 58 градусов. Угол задаём сразу при создании
+            ghost = SpawnAttachedTo("constructionghost", loc, rotation: dir.ToAngle()); // LuaM: Spawn > SpawnAttachedTo with rotation
             var comp = Comp<ConstructionGhostComponent>(ghost.Value);
             comp.Prototype = prototype;
             comp.GhostId = ghost.GetHashCode();
-            _transformSystem.SetLocalRotation(ghost.Value, dir.ToAngle());
+            // _transformSystem.SetLocalRotation(ghost.Value, dir.ToAngle()); // LuaM
             _ghosts.Add(comp.GhostId, ghost.Value);
             var sprite = Comp<SpriteComponent>(ghost.Value);
             _sprite.SetColor((ghost.Value, sprite), new Color(48, 255, 48, 128));

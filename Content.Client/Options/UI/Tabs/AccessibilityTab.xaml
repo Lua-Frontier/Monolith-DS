@@ -6,6 +6,7 @@
             <BoxContainer Orientation="Vertical" Margin="8">
                 <CheckBox Name="CombatIndicatorCheckBox" Text="{Loc 'ui-options-combat-indicator'}" /> <!-- Europa -->
                 <CheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
+                <CheckBox Name="RoundIntroCheckBox" Text="{Loc 'ui-options-luam-round-intro'}" /> <!-- LuaM -->
                 <CheckBox Name="EnableColorNameCheckBox" Text="{Loc 'ui-options-enable-color-name'}" />
                 <CheckBox Name="ColorblindFriendlyCheckBox" Text="{Loc 'ui-options-colorblind-friendly'}" />
                 <ui:OptionSlider Name="ScreenShakeIntensitySlider" Title="{Loc 'ui-options-screen-shake-intensity'}" />

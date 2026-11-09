@@ -428,6 +428,9 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                 if (weaponUid == target)
                     return false;
 
+                if (target == attacker || target == user) // LuaM
+                    return false; // LuaM
+
                 break;
             case DisarmAttackEvent disarm:
                 if (disarm.Target != null && !TryGetEntity(disarm.Target, out target))

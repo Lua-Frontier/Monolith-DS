@@ -2,4 +2,4 @@ ent-BaseAmmoBox145x114mm = коробка боеприпасов (14.5x114мм)
 ent-AmmoBox145x114mm = коробка боеприпасов (14.5x114мм)
 ent-AmmoBox145x114mmBig = большая коробка боеприпасов (14.5x114мм)
 ent-AmmoBox145x114mmEMP = ammunition box (14.5x114mm EMPHE)
-    .desc = { ent-BaseAmmoBox145x114mm.desc }
+    .desc = { ent-BaseItem.desc }

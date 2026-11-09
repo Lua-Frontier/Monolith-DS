@@ -10,9 +10,9 @@
   description: Shoulder Mantle with Blueish coloring. Looks pretty decent Blue.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Blueish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Blueish_HOSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Blueish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Blueish_HOSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -21,9 +21,9 @@
   description: Shoulder Mantle with Greenish recoloring. Looks pretty decent Green.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Greenish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Greenish_HOSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Greenish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Greenish_HOSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -32,9 +32,9 @@
   description: Shoulder Mantle with Orange recoloring. Looks pretty decent Orange.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Orangeish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Orangeish_HOSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Orangeish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Orangeish_HOSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -43,9 +43,9 @@
   description: Shoulder Mantle with Purplish recoloring. Looks pretty decent Purple.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Purplish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Purplish_HOSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Purplish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Purplish_HOSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -54,9 +54,9 @@
   description: Shoulder Mantle with Whiteish recoloring. Looks pretty decent White.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Whiteish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Whiteish_HOSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Whiteish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Whiteish_HOSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -65,9 +65,9 @@
   description: Shoulder Mantle with Yellowish recoloring. Looks pretty decent Yellow.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Yellowish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Yellowish_HOSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Yellowish_HOSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Yellowish_HOSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -76,9 +76,9 @@
   description: Shoulder Mantle with Greenish recoloring. Looks pretty decent Green.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Greenish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Greenish_BSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Greenish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Greenish_BSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -87,9 +87,9 @@
   description: Shoulder Mantle with Orangeish recoloring. Looks pretty decent Orange.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Orangeish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Orangeish_BSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Orangeish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Orangeish_BSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -98,9 +98,9 @@
   description: Shoulder Mantle with Purpleish recoloring. Looks pretty decent Purple.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Purplish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Purplish_BSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Purplish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Purplish_BSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -109,9 +109,9 @@
   description: Shoulder Mantle with Whiteish recoloring. Looks pretty decent White.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Whiteish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Whiteish_BSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Whiteish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Whiteish_BSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -120,9 +120,9 @@
   description: Shoulder Mantle with Yellowish recoloring. Looks pretty decent Yellow.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Yellowish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Yellowish_BSMantle.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Yellowish_BSMantle.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Yellowish_BSMantle.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -131,9 +131,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Blueish coloring. Looks pretty decent Blue.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Blueish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Blueish_HOSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Blueish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Blueish_HOSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -142,9 +142,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Greenish recoloring. Looks pretty decent Green.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Greenish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Greenish_HOSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Greenish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Greenish_HOSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -153,9 +153,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Orange recoloring. Looks pretty decent Orange.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Orangeish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Orangeish_HOSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Orangeish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Orangeish_HOSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -164,9 +164,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Purplish recoloring. Looks pretty decent Purple.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Purplish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Purplish_HOSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Purplish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Purplish_HOSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -175,9 +175,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Whiteish recoloring. Looks pretty decent White.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Whiteish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Whiteish_HOSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Whiteish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Whiteish_HOSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -186,9 +186,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Yellowish recoloring. Looks pretty decent Yellow.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Yellowish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Yellowish_HOSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Yellowish_HOSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Yellowish_HOSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -197,9 +197,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Greenish recoloring. Looks pretty decent Green.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Greenish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Greenish_BSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Greenish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Greenish_BSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -208,9 +208,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Orangeish recoloring. Looks pretty decent Orange.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Orangeish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Orangeish_BSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Orangeish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Orangeish_BSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -219,9 +219,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Purpleish recoloring. Looks pretty decent Purple.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Purplish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Purplish_BSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Purplish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Purplish_BSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -230,9 +230,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Whiteish recoloring. Looks pretty decent White.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Whiteish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Whiteish_BSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Whiteish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Whiteish_BSMantleCut.rsi
 
 - type: entity
   parent: ClothingNeckBase
@@ -241,9 +241,9 @@
   description: Shoulder Mantle with half-cut reduced lenght. This one with Yellowish recoloring. Looks pretty decent Yellow.
   components:
   - type: Sprite
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Yellowish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Yellowish_BSMantleCut.rsi
   - type: Clothing
-    sprite: _LuaM/Clothing/Maksimvini/Neck/mantles/Yellowish_BSMantleCut.rsi
+    sprite: _LuaM/Clothing/Neck/Mantles/Yellowish_BSMantleCut.rsi
 
 
 

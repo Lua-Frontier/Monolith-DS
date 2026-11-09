@@ -192,6 +192,13 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
                 break;
         }
 
+        // LuaM start
+        // -- Случайный вид должен проходить ту же проверку, что и сохранение на сервере: проверяем уже округлённый цвет, как его увидит сервер
+        newSkinColor = ClampColor(newSkinColor);
+        if (!Humanoid.SkinColor.VerifySkinColor(skinType, newSkinColor))
+            newSkinColor = ClampColor(Humanoid.SkinColor.ValidSkinTone(skinType, newSkinColor));
+        // LuaM end
+
         var newHeight = random.NextFloat(0.95f, 1.05f); // Random height between 95% and 105% of normal
         var newWidth = random.NextFloat(0.95f, 1.05f); // Random width between 95% and 105% of normal
         return new HumanoidCharacterAppearance(newHairStyle, newHairColor, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, new (), newHeight, newWidth);
@@ -204,7 +211,15 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
 
     public static Color ClampColor(Color color)
     {
-        return new(color.RByte, color.GByte, color.BByte);
+        // LuaM start
+        // -- RByte отбрасывает дробную часть: 42/255 давало 41, и каждое сохранение затемняло цвет на единицу
+        return new(ToByte(color.R), ToByte(color.G), ToByte(color.B));
+
+        static byte ToByte(float channel)
+        {
+            return (byte) Math.Clamp(MathF.Round(channel * byte.MaxValue), 0f, byte.MaxValue);
+        }
+        // LuaM end
     }
 
     public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, string species, Sex sex)

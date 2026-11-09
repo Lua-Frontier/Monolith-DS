@@ -1,4 +1,4 @@
-using Content.Client._Mono.Shipyard;
+// using Content.Client._Mono.Shipyard; // LuaM: ship preview disabled
 using Content.Client._NF.Shipyard.UI;
 using Content.Shared._Lua.Shipyard.BUIStates; // Lua
 using Content.Shared._Lua.Shipyard.Events; // Lua
@@ -14,7 +14,7 @@ public sealed partial class ShipyardConsoleBoundUserInterface : BoundUserInterfa
 {
     private ShipyardConsoleMenu? _menu;
     private ShipyardRulesPopup? _rulesWindow;
-    [Dependency] private ShipyardPreviewSystem _preview = default!;
+    // [Dependency] private ShipyardPreviewSystem _preview = default!; // LuaM: ship preview disabled
     public int Balance { get; private set; }
 
     public int? ShipSellValue { get; private set; }
@@ -46,7 +46,7 @@ public sealed partial class ShipyardConsoleBoundUserInterface : BoundUserInterfa
         _menu.OnRenameShip += RenameShip;
         _menu.OnDockPortSelected += SelectDockPort; // Lua
         _menu.TargetIdButton.OnPressed += _ => SendMessage(new ItemSlotButtonPressedEvent("ShipyardConsole-targetId"));
-        _menu.OnPreviewShip += PreviewShip;
+        // _menu.OnPreviewShip += PreviewShip; // LuaM: ship preview disabled
     }
 
     private void Populate(List<string> availablePrototypes, List<string> unavailablePrototypes, bool freeListings, bool validId)
@@ -124,9 +124,11 @@ public sealed partial class ShipyardConsoleBoundUserInterface : BoundUserInterfa
         SendMessage(new SelectDockPortMessage(port));
     }
 
-    private void PreviewShip(VesselPrototype vessel) // Lua: ButtonEventArgs > VesselPrototype
-    {
-        SendMessage(new ShipyardConsolePreviewMessage());
-        _preview.TryPreviewGrid(vessel);
-    }
+    // LuaM start: ship preview disabled
+    // private void PreviewShip(VesselPrototype vessel) // Lua: ButtonEventArgs > VesselPrototype
+    // {
+    //     SendMessage(new ShipyardConsolePreviewMessage());
+    //     _preview.TryPreviewGrid(vessel);
+    // }
+    // LuaM end
 }

@@ -1,9 +1,9 @@
 ent-MobBoomroach = Boomroach
     .desc = This little mothroach has a chinalake strapped to its back! Why and how?
-    .suffix = { ent-MobMothroach.suffix }
+    .suffix = { ent-SimpleMobBase.suffix }
 ent-MobImperiRoach = ImperiRoach
     .desc = Repurposed and highly trained elite member of the PDV, bewarned explosive personallity
-    .suffix = { ent-MobMothroach.suffix }
+    .suffix = { ent-SimpleMobBase.suffix }
 ent-MobOwORoach = OwOroach
     .desc = Genetic Experimentionation between mothroaches and cats, too far or not far enough?
-    .suffix = { ent-MobMothroach.suffix }
+    .suffix = { ent-SimpleMobBase.suffix }

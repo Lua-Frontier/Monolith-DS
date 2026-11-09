@@ -1,0 +1,56 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "bulmeni, chebupeli and dubai pancakes packs and wrappers recoloured by c_quarian (discord) from psb wrapper (Nyanotrasen, tgstation commit cf899a1821ee05318f75bc1d72240b2df51c0965, wrapper edit by FluffiestFloof); bulmeni recoloured by c_quarian (discord) from pelmeni by SonicDC#9046; dubai pancakes made by c_quarian (discord) from the pancake sprite (tgstation commit 40d75cc340c63582fb66ce15bf75a36115f6bdaa, modified by Swept) with pistachio and chocolate added; chebupeli, sausage tray and mince drawn by c_quarian (discord)",
+    "states": [
+        {
+            "name": "bulmeni_pack"
+        },
+        {
+            "name": "bulmeni_trash"
+        },
+        {
+            "name": "bulmeni"
+        },
+        {
+            "name": "chebupeli_pack"
+        },
+        {
+            "name": "chebupeli_trash"
+        },
+        {
+            "name": "chebupeli"
+        },
+        {
+            "name": "sausages_pack"
+        },
+        {
+            "name": "sausages_trash"
+        },
+        {
+            "name": "dubai_pack"
+        },
+        {
+            "name": "dubai_trash"
+        },
+        {
+            "name": "dubai_pancakes"
+        },
+        {
+            "name": "mince_pack"
+        },
+        {
+            "name": "mince_trash"
+        },
+        {
+            "name": "mince_raw"
+        },
+        {
+            "name": "mince_cooked"
+        }
+    ]
+}

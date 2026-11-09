@@ -1,0 +1,78 @@
+- type: entity
+  id: DeliveryTelepad
+  parent: BaseStructureIndestructible
+  name: delivery telepad
+  description: Receives parcels ordered through the delivery service.
+  components:
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Sprite
+    sprite: _LuaM/Structures/delivery_telepad.rsi
+    drawdepth: HighFloorObjects
+    layers:
+    - state: offline
+    - state: idle
+      shader: unshaded
+  - type: DeliveryTelepad
+
+- type: entity
+  id: DeliveryParcel
+  parent: BaseItem
+  name: delivery bag
+  description: A sealed delivery bag. Only the customer can open it with their ID card.
+  components:
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
+    sprite: _LuaM/Objects/Specific/Delivery/parcel.rsi
+    layers:
+    - state: icon
+    - state: pinonnull
+      map: [ "enum.PinpointerLayers.Screen" ]
+      offset: 0,-0.125
+      shader: unshaded
+      visible: false
+  - type: Item
+    size: Normal
+  - type: Pinpointer
+    canRetarget: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PinpointerVisuals.IsActive:
+        enum.PinpointerLayers.Screen:
+          True: { visible: True }
+          False: { visible: False }
+      enum.PinpointerVisuals.TargetDistance:
+        enum.PinpointerLayers.Screen:
+          Unknown: { state: pinonnull }
+          Reached: { state: pinondirect }
+          Close: { state: pinonclose }
+          Medium: { state: pinonmedium }
+          Far: { state: pinonfar }
+  - type: DeliveryParcel
+
+- type: entity
+  parent: NFBasePDACartridge
+  id: DeliveryCartridge
+  name: delivery service cartridge
+  description: A program for ordering deliveries and managing courier orders.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Devices/cartridge.rsi
+    state: cart-ledger
+  - type: Icon
+    sprite: _NF/Objects/Devices/cartridge.rsi
+    state: cart-ledger
+  - type: UIFragment
+    ui: !type:DeliveryUi
+  - type: Cartridge
+    programName: delivery-program-name
+    icon: { sprite: Objects/Devices/pinpointer.rsi, state: pinpointer-way }
+  - type: DeliveryCartridge

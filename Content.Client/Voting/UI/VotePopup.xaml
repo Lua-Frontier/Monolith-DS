@@ -1,14 +1,29 @@
-<Control xmlns="https://spacestation14.io" MinWidth="300" MaxWidth="500">
-    <PanelContainer StyleClasses="AngleRect" />
-    <BoxContainer Margin="4" Orientation="Vertical">
-        <Label Name="VoteCaller" />
+<Control xmlns="https://spacestation14.io"
+         xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+         MinWidth="300" MaxWidth="500">
+    <!-- LuaM-start: palette panel instead of grey AngleRect -->
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <gfx:StyleBoxFlat BackgroundColor="#111923" BorderColor="#2D4757" BorderThickness="1" />
+        </PanelContainer.PanelOverride>
+    </PanelContainer>
+    <BoxContainer Orientation="Vertical">
+        <PanelContainer>
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#202631" BorderColor="#2D4757" BorderThickness="1" />
+            </PanelContainer.PanelOverride>
+            <Label Name="VoteCaller" Margin="6 2" FontColorOverride="#4EC6E8" />
+        </PanelContainer>
+        <BoxContainer Margin="4" Orientation="Vertical">
+    <!-- LuaM-end -->
         <RichTextLabel Name="VoteTitle" />
         <Button Margin="4 4" Name="FollowVoteTarget" Text="{Loc 'ui-vote-follow-button-popup'}" Visible="False"></Button>
-        
+
         <GridContainer Columns="3" Name="VoteOptionsContainer"/>
         <BoxContainer Orientation="Horizontal">
             <ProgressBar Margin="4" HorizontalExpand="True" Name="TimeLeftBar" MinValue="0" MaxValue="1" />
             <Label Name="TimeLeftText" />
         </BoxContainer>
+        </BoxContainer> <!-- LuaM -->
     </BoxContainer>
 </Control>
