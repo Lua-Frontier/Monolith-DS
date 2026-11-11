@@ -1,0 +1,7 @@
+// A creature seen by a berserk in frenzy: only a black shadow of its shape.
+// The sprite's own alpha is kept, so anything invisible stays invisible.
+void fragment()
+{
+    highp vec4 sprite = zTexture(UV);
+    COLOR = vec4(0.0, 0.0, 0.0, sprite.a);
+}

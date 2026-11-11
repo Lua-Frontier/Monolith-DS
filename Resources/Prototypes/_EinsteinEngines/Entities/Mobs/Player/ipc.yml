@@ -43,6 +43,9 @@
         locked: true
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellMedium
+        blacklist: # LuaM: mech power cages are far too big for an IPC
+          tags:
+          - PowerCage
   - type: BatterySlotRequiresLock
     itemSlot: cell_slot
   - type: EncryptionHolderRequiresLock

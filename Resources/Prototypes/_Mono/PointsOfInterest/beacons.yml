@@ -1,7 +1,7 @@
 - type: pointOfInterest
   id: BeaconClusterA
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'INSO-357k Asteroid Cluster'
+  name: 'Астероидное скопление INSO-357k' # LuaM: 'INSO-357k Asteroid Cluster' > 'Астероидное скопление INSO-357k'
   minimumDistance: 0
   maximumDistance: 100
   posX: 5056
@@ -19,20 +19,23 @@
 
 - type: gameMap
   id: BeaconClusterA
-  mapName: 'INSO-357k Asteroid Cluster'
+  mapName: 'Астероидное скопление INSO-357k' # LuaM: 'INSO-357k Asteroid Cluster' > 'Астероидное скопление INSO-357k'
   mapPath: /Maps/_Mono/POI/beaconstation_a.yml
   minPlayers: 0
   stations:
     BeaconClusterA:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Богатое рудой скопление астероидов. Маяк помечает его для шахтёров сектора."
       stationProto: RecordsFrontierOutpost
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'INSO-357k Asteroid Cluster'
+        mapNameTemplate: 'Астероидное скопление INSO-357k' # LuaM: 'INSO-357k Asteroid Cluster' > 'Астероидное скопление INSO-357k'
 
 - type: pointOfInterest
   id: BeaconWilds
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'LINEAR-21 Asteroid Cluster'
+  name: 'Астероидное скопление LINEAR-21' # LuaM: 'LINEAR-21 Asteroid Cluster' > 'Астероидное скопление LINEAR-21'
   minimumDistance: 0
   maximumDistance: 100
   posX: 9088
@@ -50,15 +53,18 @@
 
 - type: gameMap
   id: BeaconWilds
-  mapName: 'LINEAR-21 Asteroid Cluster'
+  mapName: 'Астероидное скопление LINEAR-21' # LuaM: 'LINEAR-21 Asteroid Cluster' > 'Астероидное скопление LINEAR-21'
   mapPath: /Maps/_Mono/POI/beaconstation_wilds.yml
   minPlayers: 0
   stations:
     BeaconWilds:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Дикое скопление астероидов на окраине сектора. Руды здесь много, а охраны нет никакой."
       stationProto: RecordsFrontierOutpost
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'LINEAR-21 Asteroid Cluster'
+        mapNameTemplate: 'Астероидное скопление LINEAR-21' # LuaM: 'LINEAR-21 Asteroid Cluster' > 'Астероидное скопление LINEAR-21'
 
 - type: gameMap
   id: EmptyFrontierBeacon

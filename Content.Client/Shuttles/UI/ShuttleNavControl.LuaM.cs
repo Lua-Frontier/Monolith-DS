@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared._LuaM.Shuttles;
 using Robust.Client.Graphics;
+using Robust.Shared.Map;
 
 namespace Content.Client.Shuttles.UI;
 
@@ -15,24 +16,28 @@ public partial class ShuttleNavControl
         if (mapUid == null)
             return;
 
+        var indicators = EntManager.System<MapRadiusIndicatorSystem>();
         var viewScale = MathF.Sqrt((worldToView.M11 * worldToView.M11) + (worldToView.M12 * worldToView.M12));
         var radarRange = MaxRadarRangeVector.Length();
 
         var query = EntManager.EntityQueryEnumerator<MapRadiusIndicatorComponent, TransformComponent>();
-        while (query.MoveNext(out _, out var indicator, out var xform))
+        while (query.MoveNext(out var uid, out var indicator, out var xform))
         {
             if (xform.MapUid != mapUid)
                 continue;
 
-            var center = indicator.Center ?? _transform.GetWorldPosition(xform);
+            var center = indicators.GetCenter(uid, indicator, xform);
             if (Vector2.Distance(center, radarPos) > indicator.Radius + radarRange)
+                continue;
+
+            if (indicators.IsHiddenFromLocalPlayer(uid, indicator, new MapCoordinates(radarPos, xform.MapID)))
                 continue;
 
             var uiPos = Vector2.Transform(center, worldToView);
             var radius = indicator.Radius * viewScale;
 
-            handle.DrawCircle(uiPos, radius, indicator.Color.WithAlpha(0.03f));
-            handle.DrawCircle(uiPos, radius, indicator.Color.WithAlpha(0.3f), filled: false);
+            handle.DrawCircle(uiPos, radius, indicator.Color.WithAlpha(indicator.FillAlpha));
+            handle.DrawCircle(uiPos, radius, (indicator.OutlineColor ?? indicator.Color).WithAlpha(indicator.OutlineAlpha), filled: false);
         }
     }
 }

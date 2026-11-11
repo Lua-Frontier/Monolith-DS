@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Weapons; // LuaM
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
@@ -619,6 +620,11 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         if (damageResult?.GetTotal() > FixedPoint2.Zero)
         {
             DoDamageEffect(targets, playerUid, targetXform);
+
+            // LuaM-start: tell the attacker the hit landed
+            var userHitEv = new MeleeUserHitEvent(meleeUid, targets);
+            RaiseLocalEvent(user, ref userHitEv);
+            // LuaM-end
         }
     }
 
@@ -804,6 +810,11 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         if (appliedDamage.GetTotal() > FixedPoint2.Zero)
         {
             DoDamageEffect(targets, playerUid, Transform(targets[0]));
+
+            // LuaM-start: tell the attacker the hit landed
+            var userHitEv = new MeleeUserHitEvent(meleeUid, targets);
+            RaiseLocalEvent(user, ref userHitEv);
+            // LuaM-end
         }
 
         // goob edit - stunmeta

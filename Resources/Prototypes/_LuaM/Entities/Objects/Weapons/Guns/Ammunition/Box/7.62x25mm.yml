@@ -1,0 +1,166 @@
+- type: entity
+  abstract: true
+  parent: [BaseItem, RecyclableItemCardboard]
+  id: BaseAmmoBox762x25mm
+  name: ammunition box (7.62x25mm FMJ)
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge762x25mmFMJ
+    proto: Cartridge762x25mmFMJ
+    capacity: 80
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/7.62x25mm.rsi
+  - type: Tag
+    tags:
+    - Magazine762x25mmBox
+  - type: Appearance
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/ammobox_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/ammobox_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Goobstation/Items/handling/ammobox_drop.ogg
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmFMJ
+  name: ammunition box (7.62x25mm FMJ)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmFMJ
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmPractice
+  name: ammunition box (7.62x25mm practice)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmPractice
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: practice
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmIncendiary
+  name: ammunition box (7.62x25mm incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmIncendiary
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: incendiary
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmUranium
+  name: ammunition box (7.62x25mm uranium)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmUranium
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: uranium
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmRubber
+  name: ammunition box (7.62x25mm rubber)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmRubber
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: rubber
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmEmp
+  name: ammunition box (7.62x25mm emp)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmEmp
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: emp
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmHP
+  name: ammunition box (7.62x25mm hollow-point)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmHP
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: HP
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmRIP
+  name: ammunition box (7.62x25mm RIP)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmRIP
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: RIP
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmPlasteelAP
+  name: ammunition box (7.62x25mm AP)
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmPlasteelAP
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: plasteelAP
+
+- type: entity
+  parent: BaseAmmoBox762x25mm
+  id: AmmoBox762x25mmBigFMJ
+  name: big ammunition box (7.62x25mm FMJ)
+  suffix: Big
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,1
+  - type: BallisticAmmoProvider
+    capacity: 240 # 3x standard box
+    proto: Cartridge762x25mmFMJ
+  - type: Sprite
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]

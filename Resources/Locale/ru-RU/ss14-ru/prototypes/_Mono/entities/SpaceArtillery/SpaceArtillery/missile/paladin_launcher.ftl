@@ -1,6 +1,6 @@
-ent-WeaponTurretPaladin = MLRS-382 «Паладин»
+ent-WeaponTurretPaladin = ракетный контейнер MLRS-382 «Паладин»
     .suffix = Большой, Т4
-    .desc = Тяжёлая ракетная установка, стреляющая управляемыми ракетами калибра 250мм очередями по 4 штуки.
+    .desc = Тяжёлый ракетный контейнер, выпускающий управляемые 250-мм ракеты очередями по 4.
 ent-WeaponTurretPaladinInfinite = { ent-WeaponTurretPaladin }
     .desc = { ent-WeaponTurretPaladin.desc }
-    .suffix = Large, T4, Infinite
+    .suffix = Большой, Т4, Бесконечный

@@ -6,6 +6,9 @@
   id: Cartridge18x160mm
 
 - type: Tag
+  id: Cartridge762x25mmFMJ
+
+- type: Tag
   id: ConstructionLoot
 
 - type: Tag
@@ -22,6 +25,12 @@
 
 - type: Tag
   id: GrenadeLauncher
+
+- type: Tag
+  id: Magazine762x25mmBox
+
+- type: Tag
+  id: Magazine762x25mmDrum
 
 - type: Tag
   id: ScienceDevice

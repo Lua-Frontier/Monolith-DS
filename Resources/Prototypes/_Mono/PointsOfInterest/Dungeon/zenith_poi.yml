@@ -22,15 +22,18 @@
 
 - type: gameMap
   id: Zenith
-  mapName: 'ADS Zenith CK-395'
+  mapName: 'АСЗ СК-395 «Зенит»' # LuaM: 'ADS Zenith CK-395' > 'АСЗ СК-395 «Зенит»'
   mapPath: /Maps/_Mono/POI/Dungeons/zenith_poi.yml
   minPlayers: 0
   stations:
     Zenith:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Корабль автономных боевых машин сектора. Его системы всё ещё активны и не рады гостям."
       stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'ADS Zenith CK-395'
+          mapNameTemplate: 'АСЗ СК-395 «Зенит»' # LuaM: 'ADS Zenith CK-395' > 'АСЗ СК-395 «Зенит»'
         - type: StationJobs
           availableJobs: {}
         - type: StationDeadDropHintExempt

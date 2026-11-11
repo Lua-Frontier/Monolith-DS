@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Jupiter
   parent: BaseMobilePOI
-  name: 'PDV Jupiter Class Carrier'
+  name: 'Разрушенный Крейсер Юпитер' # LuaM: 'PDV Jupiter Class Carrier' > 'Разрушенный Крейсер Юпитер'
   minimumDistance: 15000
   maximumDistance: 17500
   spawnGroup: Optional
@@ -33,7 +33,7 @@
 
 - type: gameMap
   id: Jupiter
-  mapName: 'PDV Jupiter Class Carrier'
+  mapName: 'Разрушенный Крейсер Юпитер' # LuaM: 'PDV Jupiter Class Carrier' > 'Разрушенный Крейсер Юпитер'
   mapPath: /Maps/_Mono/POI/Dungeons/derelictjupiter.yml
   minPlayers: 0
   stations:
@@ -41,10 +41,10 @@
       stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'PDV Jupiter Class Carrier'
+          mapNameTemplate: 'Разрушенный Крейсер Юпитер' # LuaM: 'PDV Jupiter Class Carrier' > 'Разрушенный Крейсер Юпитер'
         - type: StationJobs
           availableJobs: {}
         - type: StationDeadDropHintExempt
       gridComponents:
       - type: VesselInfo
-        description: "The remains of the Vanguard's prestigious mech carrier, washed up months after it met its fate in the Outer Cloud. Is this really a good idea?"
+        description: "Останки прославленного крейсера Авангарда, некогда разрушенного в бою с Крейсером Арктурусом. Обломки годами дрейфуют в пустоте, и с тех пор на борт никто не возвращался живым. Вы уверены, что это хорошая идея?" # LuaM: rewritten

@@ -1,0 +1,101 @@
+# Berserk heart: replaces the heart. PDV R&D.
+
+- type: entity
+  parent: BaseItem
+  id: OrganBerserkHeart
+  name: berserk heart
+  description: A combat heart that floods the body with stimulants on demand. While it runs you are much harder to put down and every hit you land heals you, but it eats you alive, deafens you and after a while you stop telling friend from foe.
+  components:
+  - type: Tag
+    tags:
+    - SafetyDepositBlacklist # can not be carried between shifts
+  - type: EmitSoundOnPickup
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnLand
+    sound:
+      collection: OrganInteraction
+  - type: Sprite
+    sprite: _LuaM/Objects/Misc/berserk_heart.rsi
+    state: icon
+  - type: Organ
+    slotId: heart
+    onAdd:
+    - type: BerserkHeart
+      selfDamage: # every second while it runs
+        types:
+          Piercing: 1.5
+          Slash: 1.5
+          Blunt: 1.5
+      healOnHit: # for every melee attack that hits a living creature
+        types:
+          Piercing: -3.33
+          Slash: -3.33
+          Blunt: -3.33
+      activateSound:
+        path: /Audio/_Goobstation/Misc/sande_start.ogg
+        params:
+          pitch: 0.7
+      deactivateSound:
+        path: /Audio/_Goobstation/Misc/sande_end.ogg
+        params:
+          pitch: 0.7
+  - type: Heart
+  # Works as a regular heart for medicine and poison.
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [Human]
+    groups:
+    - id: Medicine
+    - id: Cryogenic
+    - id: Poison
+    - id: Narcotic
+  - type: Cybernetics
+  - type: CyberwareHumanity
+    cost: 4
+  - type: Gibbable
+  - type: Item
+    size: Small
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  id: ActionToggleBerserkHeart
+  name: Bloodlust
+  description: Turn the bloodlust of your berserk heart on or off. While it lasts you go critical at 150 damage and die at 250, are not slowed by damage, deal 20% more melee damage and heal from every hit, but you take damage every second, hear no speech or radio with all other sounds muffled, and can not use guns. After 30 seconds you stop telling friend from foe. Once it turns off, the heart needs 2 minutes to recover.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    useDelay: 2
+    icon: { sprite: _LuaM/Objects/Misc/berserk_heart.rsi, state: icon }
+    itemIconStyle: NoItem
+    event: !type:ToggleBerserkHeartEvent
+
+- type: entity
+  parent: BaseAutosurgeon
+  id: AutosurgeonBerserkHeartPDV
+  name: PDV autosurgeon (berserk heart)
+  description: Replaces the heart with a berserk heart. Turn it on and you are much harder to put down and heal from every melee hit, but it eats you alive, deafens you and makes you lose track of friend and foe.
+  components:
+  - type: AutoSurgeon
+    targetBodyPart: Torso
+    targetOrgan: Heart
+    newPartProto: OrganBerserkHeart
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: AutosurgeonBerserkHeartPDVFlatpack
+  name: PDV autosurgeon (berserk heart) flatpack
+  description: A flatpack used for constructing a PDV autosurgeon.
+  components:
+  - type: Flatpack
+    entity: AutosurgeonBerserkHeartPDV
+  - type: StaticPrice
+    price: 5000
+  - type: Sprite
+    layers:
+    - state: medical_lathe

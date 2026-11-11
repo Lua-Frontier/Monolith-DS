@@ -18,6 +18,9 @@
   minPlayers: 0
   stations:
     BlackMarket:
+      gridComponents:
+      - type: VesselInfo
+        description: "Бар на окраине сектора, где никто не задаёт лишних вопросов. Здесь торгуют тем, чего не найти на легальных рынках."
       stationProto: MarketFrontierOutpost
       components:
         - type: StationCargoOrderDatabase

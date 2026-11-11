@@ -44,6 +44,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Server._LuaM.Chat; // LuaM
+using Content.Shared._LuaM.Hearing; // LuaM
 
 namespace Content.Server.Chat.Systems;
 
@@ -673,6 +674,9 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 
+            if (listener != source && HasComp<DeafComponent>(listener)) // LuaM: deaf creatures hear no speech
+                continue;
+
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
@@ -766,6 +770,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         foreach (var (session, data) in GetRecipients(source, WhisperMuffledRange))
         {
             if (session.AttachedEntity is not { Valid: true } listener)
+                continue;
+
+            if (listener != source && HasComp<DeafComponent>(listener)) // LuaM: deaf creatures hear no speech
                 continue;
 
             // Einstein Engines - Language begin
@@ -977,6 +984,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (session.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
             EntityUid listener = session.AttachedEntity.Value;
+
+            // LuaM-start: deaf creatures hear no speech, emotes and LOOC still reach them
+            if ((channel is ChatChannel.Local or ChatChannel.Whisper) && listener != source && HasComp<DeafComponent>(listener))
+                continue;
+            // LuaM-end
 
             // If the channel does not support languages, or the entity can understand the message, send the original message, otherwise send the obfuscated version
             if (channel == ChatChannel.LOOC || channel == ChatChannel.Emotes || _language.CanUnderstand(listener, language.ID))

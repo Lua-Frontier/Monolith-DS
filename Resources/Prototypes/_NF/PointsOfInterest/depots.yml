@@ -44,24 +44,30 @@
 
 - type: gameMap
   id: CargoDepot
-  mapName: 'Cargo Depot' # Has a letter appended in PointOfInterestSystem
+  mapName: 'Торговый Аванпост' # Has a letter appended in PointOfInterestSystem # LuaM: 'Cargo Depot' > 'Торговый Аванпост'
   mapPath: /Maps/_NF/POI/cargodepotalt.yml
   minPlayers: 0
   stations:
     CargoDepot:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Торговый аванпост, принимающий грузы со всего сектора. Сюда везут товары по манифестам."
       stationProto: StandardFrontierOutpost
       components: &cargoStationComponents
         - type: StationNameSetup
-          mapNameTemplate: 'Cargo Depot' # Has a letter appended in PointOfInterestSystem
+          mapNameTemplate: 'Торговый Аванпост' # Has a letter appended in PointOfInterestSystem # LuaM: 'Cargo Depot' > 'Торговый Аванпост'
         - type: TradeCrateDestination
           destinationProto: CargoA # Redefined in PointOfInterestSystem
 
 - type: gameMap
   id: CargoDepotAlt
-  mapName: 'Cargo Depot' # Has a letter appended in PointOfInterestSystem
+  mapName: 'Торговый Аванпост' # Has a letter appended in PointOfInterestSystem # LuaM: 'Cargo Depot' > 'Торговый Аванпост'
   mapPath: /Maps/_NF/POI/cargodepotalt.yml
   minPlayers: 0
   stations:
     CargoDepotAlt:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Торговый аванпост, принимающий грузы со всего сектора. Сюда везут товары по манифестам."
       stationProto: StandardFrontierOutpost
       components: *cargoStationComponents

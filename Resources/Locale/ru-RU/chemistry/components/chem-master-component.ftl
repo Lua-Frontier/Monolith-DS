@@ -41,3 +41,4 @@ chem-master-window-beaker-empty-text = Мензурка пуста
 chem-master-window-beaker-low-text = Недостаточно раствора в мензурке
 chem-master-output-source = Источник упаковки:
 chem-master-no-source = Нет источника
+chem-master-window-search-placeholder = Поиск химиката по названию...

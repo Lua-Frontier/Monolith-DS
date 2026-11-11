@@ -1,5 +1,7 @@
 ﻿using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement.Components;
+using Content.Shared._LuaM.Cyberware; // LuaM
+using Content.Shared.Mobs.Components; // LuaM
 
 namespace Content.Shared.IdentityManagement;
 
@@ -21,6 +23,15 @@ public static class Identity
         //var meta = ent.GetComponent<MetaDataComponent>(uid); // Frontier: exception safety
         if (meta.EntityLifeStage <= EntityLifeStage.Initializing)
             return meta.EntityName; // Identity component and such will not yet have initialized and may throw NREs
+
+        // LuaM-start: a berserk in frenzy can not tell creatures apart
+        if (viewer != null
+            && viewer != uid
+            && ent.TryGetComponent<BerserkHeartComponent>(viewer.Value, out var berserk)
+            && berserk.Frenzy
+            && ent.HasComponent<MobStateComponent>(uid))
+            return Loc.GetString("berserk-heart-unknown-name");
+        // LuaM-end
 
         var uidName = meta.EntityName;
 

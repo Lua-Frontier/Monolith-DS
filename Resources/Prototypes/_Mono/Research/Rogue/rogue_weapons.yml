@@ -78,6 +78,8 @@
   - Magazine762x39mmBox
   - Magazine127x99mm
   - AmmoBox127x99mm
+  - Magazine127x99mmExplosive # LuaM
+  - AmmoBox127x99mmExplosive # LuaM
   - AmmoBox145x114mm
   - AmmoBox145x114mmEMP
   - AmmoBox145x114mmBig
