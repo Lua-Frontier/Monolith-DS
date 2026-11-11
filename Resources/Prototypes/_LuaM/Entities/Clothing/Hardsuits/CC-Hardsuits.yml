@@ -37,7 +37,7 @@
 
 
 - type: entity
-  parent: [ ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing ]
+  parent: [ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing ]
   id: ClothingHeadHardsuitM92x
   name: Colonia M92x tacsuit
   description: A heavy, gilded tacsuit, stripped of its shield but now capable of taking a lot of physical damage. Usually assigned to commanding officers of TSF flagships.
@@ -101,12 +101,13 @@
     sprintModifier: 0.8 # LuaM: 1 > 0.9, TSF and PDV suits are 10% slower
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.35
+  - type: ExtendDescription
     descriptionList:
     - description: Alt-click or otherwise interact to toggle additional shielding.
       color: "#4f94ad"
       requireDetailRange: true
-    - description: The CV-53 hardshield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
-      color: "#94768c"
+    - description: The 102x shield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
+      color: "#00ff0d"
       requireDetailRange: true
 
 
@@ -188,6 +189,6 @@
     - description: Alt-click or otherwise interact to toggle additional shielding.
       color: "#4f94ad"
       requireDetailRange: true
-    - description: The M92-x shield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
-      color: "#94768c"
+    - description: The 103 shield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
+      color: "#00ff15"
       requireDetailRange: true
