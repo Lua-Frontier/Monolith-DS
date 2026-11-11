@@ -1,0 +1,420 @@
+# Mercenary clothing for MMC roles, without weapons and armor
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubContractorBackpack
+  name: loadout-group-contractor-backpack
+  loadouts:
+  - ContractorClothingModsuitAtmostechPowerCell
+  - ContractorClothingModsuitCaptainPowerCell
+  - ContractorClothingModsuitEngineerPowerCell
+  - ContractorClothingBackpackCaptain
+  - ContractorClothingBackpackDuffelCaptain
+  - ContractorClothingBackpackSatchelCaptain
+  - ContractorClothingBackpackMessengerCaptain
+  - ContractorClothingBackpackSalvage
+  - ContractorClothingBackpackDuffelSalvage
+  - ContractorClothingBackpackSatchelSalvage
+  - ContractorClothingBackpackMessengerSalvage
+  - ContractorClothingBackpackCargo
+  - ContractorClothingBackpackDuffelCargo
+  - ContractorClothingBackpackSatchelCargo
+  - ContractorClothingBackpackMessengerCargo
+  - ContractorClothingBackpackHydroponics
+  - ContractorClothingBackpackDuffelHydroponics
+  - ContractorClothingBackpackSatchelHydroponics
+  - ContractorClothingBackpackMessengerHydroponics
+  - ContractorClothingBackpackScience
+  - ContractorClothingBackpackDuffelScience
+  - ContractorClothingBackpackSatchelScience
+  - ContractorClothingBackpackMessengerScience
+  - ContractorClothingBackpackMedical
+  - ContractorClothingBackpackDuffelMedical
+  - ContractorClothingBackpackSatchelMedical
+  - ContractorClothingBackpackMessengerMedical
+  - ContractorClothingBackpackChemistry
+  - ContractorClothingBackpackDuffelChemistry
+  - ContractorClothingBackpackSatchelChemistry
+  - ContractorClothingBackpackMessengerChemistry
+  - ContractorClothingBackpackGenetics
+  - ContractorClothingBackpackDuffelGenetics
+  - ContractorClothingBackpackSatchelGenetics
+  - ContractorClothingBackpackMessengerGenetics
+  - ContractorClothingBackpackVirology
+  - ContractorClothingBackpackDuffelVirology
+  - ContractorClothingBackpackSatchelVirology
+  - ContractorClothingBackpackMessengerVirology
+  - ContractorClothingBackpackEngineering
+  - ContractorClothingBackpackDuffelEngineering
+  - ContractorClothingBackpackSatchelEngineering
+  - ContractorClothingBackpackMessengerEngineering
+  - ContractorClothingBackpackMessengerChiefEngineer
+  - ContractorClothingBackpackAtmospherics
+  - ContractorClothingBackpackDuffelAtmospherics
+  - ContractorClothingBackpackSatchelAtmospherics
+  - ContractorClothingBackpackMessengerAtmospherics
+  - ContractorClothingBackpackMessengerChaplain
+  - ContractorClothingBackpackMessengerColorBlack
+  - ContractorClothingBackpackMessengerColorWhite
+  - ContractorClothingBackpackMessengerColorBlue
+  - ContractorClothingBackpackMessengerColorGreen
+  - ContractorClothingBackpackMessengerColorOrange
+  - ContractorClothingBackpackMessengerColorRed
+  - ContractorClothingBackpackMessengerColorPurple
+  - ContractorClothingBackpackMessengerColorBrownLight
+  - ContractorClothingBackpackMessengerColorBrown
+  - ContractorClothingBackpackDrakeIndustries
+  - ContractorClothingBackpackDuffelDrakeIndustries
+  - ContractorClothingBackpackSatchelDrakeIndustries
+  - ContractorClothingBackpackClown
+  - ContractorClothingBackpackDuffelClown
+  - ContractorClothingBackpackSatchelClown
+  - ContractorClothingBackpackMessengerClown
+  - ContractorClothingBackpackMime
+  - ContractorClothingBackpackDuffelMime
+  - ContractorClothingBackpackSatchelMime
+  - ContractorClothingBackpackMessengerMime
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubLuaMMercenaryOuterClothing
+  name: loadout-group-contractor-outerclothing
+  loadouts:
+  - MercenaryClothingOuterCoatPirate
+  - MercenaryClothingOuterCoatPirateCaptain
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubPilotOuterClothing
+  name: loadout-group-contractor-outerclothing
+  loadouts:
+  - PilotClothingOuterCoatBomber
+  - PilotClothingOuterDrakeIndustriesTruckerPuffyVest
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubContractorOuterClothing
+  name: loadout-group-contractor-outerclothing
+  loadouts:
+  - ContractorClothingOuterSuitEmergency
+  - ContractorClothingOuterHardsuitEVA
+  - ContractorClothingOuterHardsuitVoidParamed
+  - ContractorClothingOuterHoodieGrey
+  - ContractorClothingOuterVestHazard
+  - ContractorClothingOuterApron
+  - ContractorClothingOuterApronBar
+  - ContractorClothingOuterApronBotanist
+  - ContractorClothingOuterApronChef
+  - ContractorClothingOuterHoodieBlack
+  - ContractorClothingOuterCoatJensen
+  - ContractorClothingOuterCoatGentle
+  - ContractorClothingOuterJacketChef
+  - ContractorClothingOuterHoodieChaplain
+  - ContractorClothingOuterNunRobe
+  - ContractorClothingOuterCoatLab
+  - ContractorClothingOuterCoatLabGene
+  - ContractorClothingOuterCoatLabChem
+  - ContractorClothingOuterCoatRobo
+  - ContractorClothingOuterCoatLabViro
+  - ContractorClothingOuterBioScientist
+  - ContractorClothingOuterWinterCoat
+  - ContractorClothingOuterWinterCoatLong
+  - ContractorClothingOuterWinterAtmos
+  - ContractorClothingOuterWinterHydro
+  - ContractorClothingOuterWinterBar
+  - ContractorClothingOuterWinterChef
+  - ContractorClothingOuterWinterCap
+  - ContractorClothingOuterWinterMusician
+  - ContractorClothingOuterWinterCargo
+  - ContractorClothingOuterWinterMiner
+  - ContractorClothingOuterWinterEngi
+  - ContractorClothingOuterWinterMed
+  - ContractorClothingOuterWinterChem
+  - ContractorClothingOuterCoatParamedicWB
+  - ContractorClothingOuterWinterPara
+  - ContractorClothingOuterWinterGen
+  - ContractorClothingOuterWinterSci
+  - ContractorClothingOuterWinterRobo
+  - ContractorClothingOuterWinterViro
+  - ContractorClothingOuterWinterClown
+  - ContractorClothingOuterWinterMime
+  - ContractorClothingOuterWinterQM
+  - ContractorClothingOuterWinterRD
+  - ContractorClothingOuterWinterCE
+  - ContractorClothingOuterCoatLabSeniorPhysician
+  - ContractorClothingOuterCoatRD
+  - ContractorClothingOuterCoatLabSeniorResearcher
+  - ContractorClothingOuterFlannelRed
+  - ContractorClothingOuterFlannelBlue
+  - ContractorClothingOuterFlannelGreen
+  - ContractorClothingOuterCoatHyenhSweater
+  - ContractorClothingOuterCoatTrench
+  - ContractorClothingOuterDameDane
+  - ContractorClothingOuterWinterCoatPlaid
+  - ContractorClothingOuterCoatBomber
+  - ContractorClothingOuterCoatBomberPunkRed
+  - ContractorClothingOuterCoatJacketLeather
+  - ContractorClothingOuterCoatJacketBiker
+  - ContractorClothingOuterCoatJacketJamrock
+  - ContractorClothingOuterCoatBomberAerostatic
+  - ContractorClothingOuterCoatJacketLettermanBlue
+  - ContractorClothingOuterCoatJacketLettermanBrown
+  - ContractorClothingOuterCoatJacketLettermanRed
+  - ContractorClothingOuterCoatJacketLettermanMagenta
+  - ContractorClothingOuterCoatBomberPinkSleeves
+  - ContractorClothingOuterCoatBomberRandomized
+  - ContractorClothingOuterCoatAcidRaincoat
+  - ContractorClothingOuterCoatAcidRaincoatBlue
+  - ContractorClothingOuterCoatAcidRaincoatGreen
+  - ContractorClothingOuterCoatAcidRaincoatYellow
+  - ContractorClothingOuterCoatAcidRaincoatMagenta
+  - ContractorClothingOuterCoatBishop
+  - ContractorClothingOuterCoatWitchHunter
+  - ContractorClothingOuterCoatCardinal
+  - ContractorClothingOuterPlagueSuit
+  - ContractorWetFloorSign
+  - ContractorClothingOuterCoatExpensive
+  - ContractorClothingOuterCoatSpaceAsshole
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubContractorShoes
+  name: loadout-group-contractor-shoes
+  loadouts:
+  - ContractorClothingShoesClothwrap
+  - ContractorClothingShoesClothwrapBlack
+  - ContractorClothingShoesTourist
+  - ContractorClothingShoesChef
+  - ContractorClothingShoesColorBlue
+  - ContractorClothingShoesColorOrange
+  - ContractorClothingShoesColorPurple
+  - ContractorClothingShoesColorRed
+  - ContractorClothingShoesColorBrown
+  - ContractorClothingShoesColorGreen
+  - ContractorClothingShoesColorYellow
+  - ContractorClothingShoesColorWhite
+  - ContractorClothingShoesBootsMag
+  - ContractorClothingShoesBootsWinter
+  - ContractorClothingShoesBootsWinterAtmos
+  - ContractorClothingShoesBootsWinterHydro
+  - ContractorClothingShoesBootsWinterCap
+  - ContractorClothingShoesBootsWinterCargo
+  - ContractorClothingShoesBootsWinterChef
+  - ContractorClothingShoesBootsWinterChem
+  - ContractorClothingShoesBootsWinterEngi
+  - ContractorClothingShoesBootsWinterGenetics
+  - ContractorClothingShoesBootsWinterMiner
+  - ContractorClothingShoesBootsWinterParamedic
+  - ContractorClothingShoesBootsWinterRobo
+  - ContractorClothingShoesBootsWinterSci
+  - ContractorClothingShoesBootsWinterViro
+  - ContractorClothingShoesBootsJack
+  - ContractorClothingShoesLeather
+  - ContractorClothingShoesSlippers
+  - ContractorClothingShoeSlippersDuck
+  - ContractorClothingShoesFlippers
+  - ContractorClothingShoesBootsPunkRandomized
+  - ContractorClothingShoesDameDane
+  - ContractorClothingShoesBootsWork
+  - ContractorClothingShoesBootsCowboyBlack
+  - ContractorClothingShoesBootsCowboyBrown
+  - ContractorClothingShoesBootsCowboyWhite
+  - ContractorClothingShoesSnakeskinBoots
+  - ContractorClothingShoesHighheelBoots
+  - ContractorClothingShoesBootsCowboyFancy
+  - ContractorClothingShoesBootsWinterChiefEngineer
+  - ContractorClothingShoesBootsWinterQM
+  - ContractorClothingShoesBootsWinterRD
+  - ContractorClothingShoesBootsWinterClown
+  - ContractorClothingShoesBootsWinterMime
+  - ContractorClothingShoesClown
+  - ContractorClothingShoesJester
+  - ContractorClothingShoesBootsPerformer
+  - ContractorClothingShoesSkates
+  - ContractorClothingShoesClownLarge
+  - ContractorClothingShoesBling
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubMercenaryShoes
+  name: loadout-group-contractor-shoes
+  loadouts:
+  - MercenaryClothingShoesBootsMercenary
+  - MercenaryClothingShoesMagMercenary
+  - MercenaryClothingShoesMagSecurity
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubMercenaryBeltEmployee
+  name: loadout-group-contractor-belt
+  loadouts:
+  - MercenaryClothingBeltMercenaryWebbing
+  - MercenaryClothingBeltMilitaryWebbing
+  - MercenaryClothingBeltMilitaryWebbingMed
+  - MercenaryClothingBeltSecurityEmpty
+  - MercenaryClothingBeltBandolier
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubContractorBelt
+  name: loadout-group-contractor-belt
+  loadouts:
+  - ContractorClothingBeltPlant
+  - ContractorClothingBeltPlantFilled
+  - ContractorClothingBeltChef
+  - ContractorClothingBeltChefFilled
+  - ContractorClothingBeltStorageWaistbag
+  - ContractorClothingBeltMedical
+  - ContractorClothingBeltMedicalFilled
+  - ContractorClothingBeltMedicalEMT
+  - ContractorClothingBeltMedicalEMTFilled
+  - ContractorClothingBeltUtility
+  - ContractorClothingBeltSalvageWebbing
+  - ContractorClothingBeltSalvageWebbingFilledNF
+  - ContractorClothingBeltDrakeIndustries
+  - ContractorBoxFolderClipboard
+  - ContractorClothingBeltPilot
+  - ContractorClothingBeltPilotFilled
+  - ContractorClothingBeltBandolier
+  - ContractorClothingBeltHolster
+  - ContractorClothingBeltChaplainSash
+  - ContractorClothingBeltChaplainSashFilled
+  - ContractorBooksBag
+  - ContractorChemBag
+  - ContractorOreBag
+  - ContractorPlantBag
+  - ContractorConstructionBag
+  - ContractorClothingBeltMartialBlack
+  - ContractorClothingBeltPunkRandomized
+  - ContractorClothingBeltPunkRandomizedFilled
+  - ContractorClothingBeltSheathFilled
+  - ContractorClothingBeltChampion
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubMercenaryBeltCorpSec
+  name: loadout-group-contractor-belt
+  loadouts:
+  - MercenaryClothingBeltMercenaryWebbing
+  - MercenaryClothingBeltMilitaryWebbing
+  - MercenaryClothingBeltMilitaryWebbingMed
+  - MercenaryClothingBeltBandolier
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubMonoMercenaryChestrig
+  name: loadout-group-contractor-belt
+  loadouts:
+  - MercenaryClothingBeltWebbingsBigBase
+  - MercenaryClothingBeltWebbingsNormalTan
+  - MercenaryClothingBeltWebbingsBigTan
+  - MercenaryClothingBeltWebbingsNormalRangerGreen
+  - MercenaryClothingBeltWebbingsBigRangerGreen
+  - MercenaryClothingBeltWebbingsNormalOlive
+  - MercenaryClothingBeltWebbingsBigOlive
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubMercenaryGloves
+  name: loadout-group-contractor-gloves
+  loadouts:
+  - MercenaryClothingHandsGlovesMercFingerless
+  - MercenaryClothingHandsMercenaryGlovesCombat
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubMonoMercenaryGloves
+  name: loadout-group-contractor-gloves
+  loadouts:
+  - MercenaryClothingHandsGlovesTacticalCombatTan
+  - MercenaryClothingHandsGlovesTacticalCombatRangerGreen
+  - MercenaryClothingHandsGlovesTacticalCombatOlive
+  - MercenaryClothingHandsGlovesTacticalCombatCoyoteBrown
+  - MercenaryClothingHandsGlovesTacticalCombatWhite
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubContractorGloves
+  name: loadout-group-contractor-gloves
+  loadouts:
+  - ContractorClothingHandsGlovesColorYellow
+  - ContractorClothingHandsGlovesLeather
+  - ContractorClothingHandsGlovesLatex
+  - ContractorClothingHandsGlovesNitrile
+  - ContractorClothingHandsGlovesRobohands
+  - ContractorClothingHandsGlovesColorBlack
+  - ContractorClothingHandsGlovesColorBlue
+  - ContractorClothingHandsGlovesColorGreen
+  - ContractorClothingHandsGlovesColorGray
+  - ContractorClothingHandsGlovesColorBrown
+  - ContractorClothingHandsGlovesColorLightBrown
+  - ContractorClothingHandsGlovesColorOrange
+  - ContractorClothingHandsGlovesColorPurple
+  - ContractorClothingHandsGlovesColorRed
+  - ContractorClothingHandsGlovesBoxingGreen
+  - ContractorClothingHandsGlovesBoxingBlue
+  - ContractorClothingHandsGlovesBoxingRed
+  - ContractorClothingHandsGlovesBoxingYellow
+  - ContractorClothingHandsGlovesCaptain
+  - ContractorClothingHandsGlovesColorWhite
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubMercenaryBalaclava
+  name: loadout-group-contractor-balaclava
+  loadouts:
+  - MercenaryClothingBalaclavaSkiMaskGray
+  - MercenaryClothingBalaclavaSkiMaskWhite
+  - MercenaryClothingBalaclavaSkiMaskRed
+  - MercenaryClothingBalaclavaSkiMaskGreen
+  - MercenaryClothingBalaclavaSkiMaskBlue
+  - MercenaryClothingBalaclavaSkiMaskPurple
+  - MercenaryClothingBalaclavaSkiMaskYellow
+  - MercenaryClothingBalaclavaSkiMaskTan
+  - MercenaryClothingBalaclavaSkiMaskRangerGreen
+  - MercenaryClothingBalaclavaSkiMaskCoyoteBrown
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubMercenaryHead
+  name: loadout-group-contractor-head
+  loadouts:
+  - MercenaryClothingHeadBandMercenary
+  - MercenaryClothingHeadHatBeretMercenary
+  - MercenaryClothingHeadHatBeretCommander
+  - SecurityBeret
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR MMC GROUPS
+  id: MMCSubMonoMercenaryHead
+  name: loadout-group-contractor-head
+  loadouts:
+  - MercenaryClothingHeadHatBH
+
+- type: loadoutGroup
+  id: MMCMercenaryHead
+  name: loadout-group-contractor-head
+  minLimit: 0
+  loadouts: []
+  subgroups:
+  - MMCSubMercenaryHead
+  - PilotHead
+  - ContractorHead
+  - MMCSubMonoMercenaryHead
+  - LuaMMercenaryHead
+
+- type: loadoutGroup
+  id: MMCMercenaryFace
+  name: loadout-group-contractor-face
+  minLimit: 0
+  loadouts: []
+  subgroups:
+  - MercenaryFace
+  - PilotFace
+  - ContractorFace
+
+- type: loadoutGroup
+  id: MMCMercenaryGloves
+  name: loadout-group-contractor-gloves
+  minLimit: 0
+  loadouts: []
+  subgroups:
+  - MercenaryGloves
+  - MonoMercenaryGloves
+  - PilotGloves
+  - ContractorGloves
+
+- type: loadoutGroup
+  id: MMCMercenaryGlasses
+  name: loadout-group-contractor-glasses
+  minLimit: 0
+  loadouts: []
+  subgroups:
+  - MercenaryGlasses
+  - MonoMercenaryBallisticGoggles
+  - PilotGlasses
+  - ContractorGlasses
