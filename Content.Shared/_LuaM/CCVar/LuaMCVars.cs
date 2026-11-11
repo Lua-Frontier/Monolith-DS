@@ -31,4 +31,7 @@ public sealed class LuaMCVars
 
     public static readonly CVarDef<bool> RoundIntroEnabled =
         CVarDef.Create("luam.round_intro", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<bool> LobbyBackgroundParallax =
+        CVarDef.Create("luam.lobby_background_parallax", true, CVar.ARCHIVE | CVar.CLIENTONLY);
 }

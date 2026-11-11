@@ -1,4 +1,11 @@
 - type: lobbyTrack
+  id: LuaMFrontier
+  path: /Audio/_LuaM/Lobby/LuaMFrontier.ogg
+  title: "Frontier"
+  artist: "Snakez"
+  default: true
+
+- type: lobbyTrack
   id: LuaMAndromeda
   path: /Audio/_LuaM/Lobby/Andromeda.ogg
   title: "Andromeda"

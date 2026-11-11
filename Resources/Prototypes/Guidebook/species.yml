@@ -19,13 +19,14 @@
   - Felinid # DeltaV
   - Oni # DeltaV
   - Chitinid # DeltaV
-  - Resomi # Floof
   - Protogen # Mono
   - IPC # EE
   - Rodentia # DeltaV
   - Tajaran # Goobstation
   - Hydrakin # Monolith/Obelisk
-  - Feroxi
+  - Ariral # LuaM
+  - Avali # LuaM
+  - Plafeim # LuaM
   - Demon # Wega
   - Flight # CE
 # LuaM-end
@@ -96,14 +97,6 @@
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
-  id: Resomi
-  name: species-name-resomi
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Resomi.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Resomi.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Resomi.xml
-  priority: 150 # LuaM: 0 > 150 (section order)
-# LuaM-end
-
-# LuaM-start: maintained guidebook page and navigation.
-- type: guideEntry
   id: Protogen
   name: species-name-protogen
   text: "/ServerInfo/_LuaM/Guidebook/References/Species/Protogen.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Protogen.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Protogen.xml
@@ -132,4 +125,24 @@
   name: species-name-hydrakin
   text: "/ServerInfo/_LuaM/Guidebook/References/Species/Hydrakin.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Hydrakin.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Hydrakin.xml
   priority: 200 # LuaM: 0 > 200 (section order)
+# LuaM-end
+
+# LuaM-start
+- type: guideEntry
+  id: Ariral
+  name: species-name-ariral
+  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Ariral.xml"
+  priority: 210
+
+- type: guideEntry
+  id: Avali
+  name: species-name-avali
+  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Avali.xml"
+  priority: 220
+
+- type: guideEntry
+  id: Plafeim
+  name: species-name-shark
+  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Plafeim.xml"
+  priority: 230
 # LuaM-end

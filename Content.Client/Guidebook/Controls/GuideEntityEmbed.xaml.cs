@@ -74,6 +74,15 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
             Caption.SetMessage(FormattedMessage.FromUnformatted(_prototype.Index<EntityPrototype>(proto).Name)); // LuaM: preserve literal localized names
     }
 
+    // LuaM-start
+    public GuideEntityEmbed Compact()
+    {
+        SetWidth = float.NaN;
+        View.SetSize = new Vector2(float.NaN, float.NaN);
+        return this;
+    }
+    // LuaM-end
+
     protected override void EnteredTree()
     {
         base.EnteredTree();

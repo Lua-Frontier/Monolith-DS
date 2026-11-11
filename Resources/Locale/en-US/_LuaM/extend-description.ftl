@@ -1,0 +1,17 @@
+﻿extend-desc-dries-in-deposit-box = This item will dry up and become useless if it is left in a safety deposit box.
+extend-desc-throw-to-stick = Can be thrown to stick to targets.
+extend-desc-toggle-shielding = Alt-click or otherwise interact to toggle additional shielding.
+extend-desc-shield-m92x = The M92-x shield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
+extend-desc-shield-cv53 = The CV-53 hardshield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
+extend-desc-shield-medusa = The MEDUSA shield projector is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles and close-range directed force.
+extend-desc-point-blank-immune = This creature is unaffected by projectiles fired within half a tile
+extend-desc-overwatch-jammer = This item allows for the transport of corpses to Helios without revealing its coordinates to overwatch consoles.
+extend-desc-cut-four-fragments = Can be cut with a knife to create four fragments.
+extend-desc-pdv-objective = This is a potential objective for PDV infantry in the area!
+extend-desc-needs-flare-launcher = Usage requires a dedicated flare launcher.
+extend-desc-funds-pdv = Selling this item will fund the PDV.
+extend-desc-fire-over = You can fire over this if you stand near it.
+extend-desc-fits-tsf-gpmg = Fits into TSF ballistic & chemical laser GPMGs.
+extend-desc-accuracy-builds = Continued fire increases accuracy.
+extend-desc-lathe-components = Insert components for recipes by placing them on top of the lathe, then "open / close" inside its right-click menu.
+extend-desc-letoferol-shield = This one is an experimental prototype haphazardly rushed out due to the sudden Letoferol outbreak in the sector. It will require increasing amounts of power the longer it is kept active, meaning you eventually must decide between feeding it even more power or living without it.

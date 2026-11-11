@@ -87,7 +87,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
 
         RepresentedPrototype = entity; // Lua
 
-        IconContainer.AddChild(new GuideEntityEmbed(recipe.Result, false, false));
+        IconContainer.AddChild(new GuideEntityEmbed(recipe.Result, false, false).Compact()); // LuaM
         ResultName.SetMarkup(Loc.GetString("guidebook-microwave-recipe-name-display", ("amount", recipe.ResultCount), ("name", entity.Name))); // Mono
         ResultDescription.SetMarkup(entity.Description);
     }
@@ -98,7 +98,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
         {
             var ingredient = _prototype.Index<EntityPrototype>(product);
 
-            IngredientsGrid.AddChild(new GuideEntityEmbed(product, false, false));
+            IngredientsGrid.AddChild(new GuideEntityEmbed(product, false, false).Compact()); // LuaM
 
             // solid name
 

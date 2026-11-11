@@ -90,7 +90,7 @@
     coefficient: 0.45
   - type: ExtendDescription
     descriptionList:
-    - description: Alt-click or otherwise interact to toggle additional shielding.
+    - description: extend-desc-toggle-shielding # LuaM
       color: "#4f94ad"
       requireDetailRange: true
 

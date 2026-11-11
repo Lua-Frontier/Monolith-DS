@@ -178,6 +178,7 @@ public sealed partial class ContentAudioSystem
     {
         if (!_resourceCache.TryGetResource(new ResPath(soundtrackFilename), out AudioResource? audio))
         {
+            Log.Warning($"Failed to load lobby soundtrack {soundtrackFilename}"); // LuaM
             return;
         }
 

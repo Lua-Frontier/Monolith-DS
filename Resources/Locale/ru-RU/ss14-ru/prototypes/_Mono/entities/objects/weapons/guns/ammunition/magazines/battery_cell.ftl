@@ -6,5 +6,5 @@ ent-LargePowerCell400Thz = большой батарейный блок DEW-1R 4
     .desc = Крупный батарейный блок военного назначения для направленного энергетического оружия. Настроен на стрельбу низкочастотными лазерами, обладающими высокой ёмкостью, но низкой скоростью перезарядки. Обладает повышенной устойчивостью к ЭМИ.
 ent-LargePowerCell700Thz = большой батарейный блок DEW-VU 700Thz
     .desc = Крупный батарейный блок военного назначения для направленного энергетического оружия. Настроен на стрельбу высокочастотными лазерами с низкой ёмкостью и низкой скоростью перезарядки. Устойчив к ЭМИ.
-ent-LargePowerCellPlasma68x52mm = DEW-PLC plasma condenser (large)
-    .desc = A large and militarized power box for energy weapons, tweaked to function with ballistic firing mechanisms. Uses stored power to superheat particles into plasma before firing. Weak to EMP, but re-usable.
+ent-LargePowerCellPlasma68x52mm = большой плазменный конденсатор DEW-PLC
+    .desc = Крупный батарейный блок военного назначения для энергетического оружия, доработанный под баллистические механизмы стрельбы. Перед выстрелом раскаляет частицы запасённой энергией до состояния плазмы. Уязвим к ЭМИ, но многоразовый.
