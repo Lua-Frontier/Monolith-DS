@@ -10,6 +10,11 @@
   spawnGroup: Required
   gridPath: /Maps/_LuaM/POI/hokkaidoLuaM.yml # LuaM: /Maps/_Mono/POI/hokkaido.yml > /Maps/_LuaM/POI/hokkaidoLuaM.yml
   addComponents:
+  - type: MapRadiusIndicator # LuaM: faction zone on the shuttle map
+    radius: 500
+    color: "#fca503"
+    fillAlpha: 0.15
+    outlineAlpha: 0.35
   - type: IFF
     color: "#fca503" # LuaM: #EEEEEE > #fca503 (MMC color)
     readOnly: true # mono
@@ -30,6 +35,9 @@
   minPlayers: 0
   stations:
     Hokkaido:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Центр промышленной и торговой деятельности ММС в секторе. Здесь куют прибыль, а не войну."
       stationProto: RecordsFrontierOutpostCargo
       components:
         - type: StationNameSetup

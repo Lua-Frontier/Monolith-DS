@@ -9,6 +9,7 @@ public static class ContentPostShaderIds
     public const string TargetOutline = "target-outline";
     public const string DragDropOutline = "drag-drop-outline";
     public const string Blocking = "blocking"; // LuaM: Mono shield blocking visuals
+    public const string BerserkShadow = "berserk-shadow"; // LuaM: creatures seen by a berserk in frenzy
 
     public static readonly string[] BeforeOutlines =
     {

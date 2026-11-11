@@ -1,0 +1,315 @@
+# Loot boxes of the Vanguard and TSF fauna, worn instead of their empty backpacks.
+# Regular fauna: the syndicate operative loot boxes A-D (copied, the item list can not be extended by inheritance)
+# plus a 5% chance of a small monolith crystal.
+# Shielded fauna (CV-53 and M-92X): the syndicate operative loot A, a 5% chance of the ammo their own guns use,
+# 5% of a medium and 10% of a small monolith crystal.
+
+## Vanguard
+
+- type: entity
+  parent: ClothingBackpackSyndicateOperativeLootA
+  id: ClothingBackpackPDVLootA
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/Back/Backpacks/pdv.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: WeaponSubMachineGunAtreidesExpedition
+      - id: Magazine57x28mmSubMachineGunFMJ
+      - id: Magazine57x28mmSubMachineGunFMJ
+      - id: SpaceCash1000
+      - id: SpaceCash1000
+      # Bonus loot
+      - id: SpaceCash10000
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash500
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.7
+      - id: SpawnDungeonLootMaterialsValuableFull
+        prob: 0.7
+      - id: SpawnDungeonLootPartsEngi
+        amount: 2
+        prob: 0.7
+      - id: SpawnDungeonLootFlatpacks
+        prob: 0.5
+      - id: SpawnDungeonLootToolsAdvancedEngineering
+        prob: 0.4
+      - id: WeaponRifleMR8C
+        prob: 0.05
+      - id: MonolithicCrystalSmall
+        prob: 0.05
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+- type: entity
+  parent: ClothingBackpackSyndicateOperativeLootB
+  id: ClothingBackpackPDVLootB
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/Back/Backpacks/pdv.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: WeaponSubMachineGunWt550Expedition
+      - id: Magazine46x30mmSubMachineGunTopMountedFMJ
+      - id: SpaceCash1000
+      - id: SpaceCash500
+      # Bonus loot
+      - id: SpaceCash10000
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash500
+        prob: 0.9
+      - id: SpawnDungeonLootMaterialsBasicFull
+        prob: 0.7
+      - id: SpaceCash1000
+        prob: 0.7
+      - id: SpawnDungeonLootPartsEngi
+        amount: 2
+        prob: 0.7
+      - id: SpawnDungeonLootFlatpacks
+        prob: 0.5
+      - id: SpawnDungeonLootToolsAdvancedEngineering
+        prob: 0.4
+      - id: WeaponRifleMR8C
+        prob: 0.01
+      - id: MonolithicCrystalSmall
+        prob: 0.05
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+- type: entity
+  parent: ClothingBackpackSyndicateOperativeLootD
+  id: ClothingBackpackPDVLootD
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/Back/Backpacks/pdv.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: SpaceCash1000
+      - id: SpaceCash500
+      # Bonus loot
+      - id: SpaceCash10000
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash500
+        prob: 0.9
+      - id: SpawnDungeonLootMaterialsBasicFull
+        prob: 0.7
+      - id: SpaceCash1000
+        prob: 0.7
+      - id: SpawnDungeonLootPartsEngi
+        amount: 2
+        prob: 0.7
+      - id: SpawnDungeonLootFlatpacks
+        prob: 0.5
+      - id: SpawnDungeonLootToolsAdvancedEngineering
+        prob: 0.4
+      - id: MonolithicCrystalSmall
+        prob: 0.05
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+- type: entity
+  parent: ClothingBackpackPDVLootA
+  id: ClothingBackpackPDVShieldedLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: WeaponSubMachineGunAtreidesExpedition
+      - id: Magazine57x28mmSubMachineGunFMJ
+      - id: Magazine57x28mmSubMachineGunFMJ
+      - id: SpaceCash1000
+      - id: SpaceCash1000
+      # Bonus loot
+      - id: SpaceCash10000
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash500
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.7
+      - id: SpawnDungeonLootMaterialsValuableFull
+        prob: 0.7
+      - id: SpawnDungeonLootPartsEngi
+        amount: 2
+        prob: 0.7
+      - id: SpawnDungeonLootFlatpacks
+        prob: 0.5
+      - id: SpawnDungeonLootToolsAdvancedEngineering
+        prob: 0.4
+      - id: WeaponRifleMR8C
+        prob: 0.05
+      - id: AmmoBox127x99mmExplosive # the explosive rounds of their CS-12 "Burner"
+        prob: 0.05
+      - id: MonolithicCrystalMedium
+        prob: 0.05
+      - id: MonolithicCrystalSmall
+        prob: 0.1
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+## TSF
+
+- type: entity
+  parent: ClothingBackpackSyndicateOperativeLootA
+  id: ClothingBackpackTSFLootA
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/Back/Backpacks/tsfmc.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: WeaponSubMachineGunAtreidesExpedition
+      - id: Magazine57x28mmSubMachineGunFMJ
+      - id: Magazine57x28mmSubMachineGunFMJ
+      - id: SpaceCash1000
+      - id: SpaceCash1000
+      # Bonus loot
+      - id: SpaceCash10000
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash500
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.7
+      - id: SpawnDungeonLootMaterialsValuableFull
+        prob: 0.7
+      - id: SpawnDungeonLootPartsEngi
+        amount: 2
+        prob: 0.7
+      - id: SpawnDungeonLootFlatpacks
+        prob: 0.5
+      - id: SpawnDungeonLootToolsAdvancedEngineering
+        prob: 0.4
+      - id: WeaponRifleMR8C
+        prob: 0.05
+      - id: MonolithicCrystalSmall
+        prob: 0.05
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+- type: entity
+  parent: ClothingBackpackSyndicateOperativeLootB
+  id: ClothingBackpackTSFLootB
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/Back/Backpacks/tsfmc.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: WeaponSubMachineGunWt550Expedition
+      - id: Magazine46x30mmSubMachineGunTopMountedFMJ
+      - id: SpaceCash1000
+      - id: SpaceCash500
+      # Bonus loot
+      - id: SpaceCash10000
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash500
+        prob: 0.9
+      - id: SpawnDungeonLootMaterialsBasicFull
+        prob: 0.7
+      - id: SpaceCash1000
+        prob: 0.7
+      - id: SpawnDungeonLootPartsEngi
+        amount: 2
+        prob: 0.7
+      - id: SpawnDungeonLootFlatpacks
+        prob: 0.5
+      - id: SpawnDungeonLootToolsAdvancedEngineering
+        prob: 0.4
+      - id: WeaponRifleMR8C
+        prob: 0.01
+      - id: MonolithicCrystalSmall
+        prob: 0.05
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+- type: entity
+  parent: ClothingBackpackSyndicateOperativeLootC
+  id: ClothingBackpackTSFLootC
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Mono/Clothing/Back/Backpacks/tsfmc.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: AmmoBox9x19mmFMJ
+      - id: AmmoBox9x19mmFMJ
+      - id: SpaceCash1000
+      - id: SpaceCash500
+      # Bonus loot
+      - id: SpaceCash10000
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash500
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.7
+      - id: SpawnDungeonLootMaterialsValuableFull
+        prob: 0.7
+      - id: AmmoBox9x19mmBigFMJ
+        prob: 0.7 # the syndicate loot C has this prob as a separate empty entry
+      - id: SpawnDungeonLootPartsEngi
+        amount: 2
+        prob: 0.7
+      - id: SpawnDungeonLootFlatpacks
+        prob: 0.5
+      - id: SpawnDungeonLootToolsAdvancedEngineering
+        prob: 0.4
+      - id: MonolithicCrystalSmall
+        prob: 0.05
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+
+- type: entity
+  parent: ClothingBackpackTSFLootA
+  id: ClothingBackpackTSFShieldedLoot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: WeaponSubMachineGunAtreidesExpedition
+      - id: Magazine57x28mmSubMachineGunFMJ
+      - id: Magazine57x28mmSubMachineGunFMJ
+      - id: SpaceCash1000
+      - id: SpaceCash1000
+      # Bonus loot
+      - id: SpaceCash10000
+      - id: SpaceCash1000
+        prob: 0.9
+      - id: SpaceCash500
+        prob: 0.9
+      - id: SpaceCash1000
+        prob: 0.7
+      - id: SpawnDungeonLootMaterialsValuableFull
+        prob: 0.7
+      - id: SpawnDungeonLootPartsEngi
+        amount: 2
+        prob: 0.7
+      - id: SpawnDungeonLootFlatpacks
+        prob: 0.5
+      - id: SpawnDungeonLootToolsAdvancedEngineering
+        prob: 0.4
+      - id: WeaponRifleMR8C
+        prob: 0.05
+      - id: AmmoBox68x52mmCaselessPlasma # the 6.8x52mm plasma rounds their rifles use
+        prob: 0.05
+      - id: MonolithicCrystalMedium
+        prob: 0.05
+      - id: MonolithicCrystalSmall
+        prob: 0.1
+    sound:
+      path: /Audio/Items/jumpsuit_equip.ogg

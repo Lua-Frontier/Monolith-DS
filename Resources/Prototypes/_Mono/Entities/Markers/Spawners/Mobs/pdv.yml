@@ -96,6 +96,27 @@
     - type: Loadout
       prototypes:
         - PDVMobGearC
+    - type: NpcPersonalShieldUser # LuaM: turns on the energy shield of its hardsuit
+    # LuaM-start: shoots explosive 12.7x99mm like the CS-12 Burner
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 0.67 # same as the fire rate (1.5), so the gun never runs dry
+      rechargeSound:
+        path: /Audio/_NF/Effects/silence.ogg
+    - type: BasicEntityAmmoProvider
+      proto: Bullet127x99mmExplosive
+      capacity: 3
+      count: 3
+    - type: Gun
+      damageModifier: 0.8
+      minAngle: 5
+      maxAngle: 20
+      showExamineText: false
+      fireRate: 1.5
+      selectedMode: SemiAuto
+      availableModes:
+      - SemiAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+    # LuaM-end
 
 - type: entity
   parent: MobPDVBaseA
@@ -147,7 +168,7 @@
     neck: ClothingNeckIFFOrange
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterArmorBPVestMedium
-    back: ClothingBackpackPDV
+    back: ClothingBackpackPDVLootA # LuaM: ClothingBackpackPDV > ClothingBackpackPDVLootA, loot box
     pocket2: DoubleEmergencyAirTankFilled
 
 - type: startingGear
@@ -160,7 +181,7 @@
     neck: ClothingNeckIFFOrange
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitAshen
-    back: ClothingBackpackPDV
+    back: ClothingBackpackPDVLootB # LuaM: ClothingBackpackPDV > ClothingBackpackPDVLootB, loot box
     pocket2: DoubleEmergencyAirTankFilled
 
 - type: startingGear
@@ -173,7 +194,7 @@
     neck: ClothingNeckIFFOrange
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitAshenElite
-    back: ClothingBackpackPDV
+    back: ClothingBackpackPDVShieldedLoot # LuaM: ClothingBackpackPDV > ClothingBackpackPDVShieldedLoot, loot box
     pocket2: DoubleEmergencyAirTankFilled
 
 - type: startingGear
@@ -186,7 +207,7 @@
     neck: ClothingNeckIFFOrange
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitPDVMedic
-    back: ClothingBackpackPDV
+    back: ClothingBackpackPDVLootD # LuaM: ClothingBackpackPDV > ClothingBackpackPDVLootD, loot box
     pocket2: DoubleEmergencyAirTankFilled
 
 # Wayward Gear Loadouts
@@ -201,7 +222,7 @@
     neck: ClothingNeckIFFPurple
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterArmorBPVestMedium
-    back: ClothingBackpackPDV
+    back: ClothingBackpackPDVLootA # LuaM: ClothingBackpackPDV > ClothingBackpackPDVLootA, loot box
     pocket2: DoubleEmergencyAirTankFilled
 
 - type: startingGear
@@ -214,7 +235,7 @@
     neck: ClothingNeckIFFPurple
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitAshen
-    back: ClothingBackpackPDV
+    back: ClothingBackpackPDVLootB # LuaM: ClothingBackpackPDV > ClothingBackpackPDVLootB, loot box
     pocket2: DoubleEmergencyAirTankFilled
 
 - type: startingGear
@@ -227,7 +248,7 @@
     neck: ClothingNeckIFFPurple
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitAshenElite
-    back: ClothingBackpackPDV
+    back: ClothingBackpackPDVShieldedLoot # LuaM: ClothingBackpackPDV > ClothingBackpackPDVShieldedLoot, loot box
     pocket2: DoubleEmergencyAirTankFilled
 
 - type: startingGear
@@ -240,5 +261,5 @@
     neck: ClothingNeckIFFPurple
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitPDVMedic
-    back: ClothingBackpackPDV
+    back: ClothingBackpackPDVLootD # LuaM: ClothingBackpackPDV > ClothingBackpackPDVLootD, loot box
     pocket2: DoubleEmergencyAirTankFilled

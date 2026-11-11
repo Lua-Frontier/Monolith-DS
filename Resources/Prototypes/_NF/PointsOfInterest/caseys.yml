@@ -23,6 +23,9 @@
   minPlayers: 0
   stations:
     CaseysCasino:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Казино, где ставки высоки, а удача капризна. Кэсси всегда рада новым гостям и их кредитам."
       stationProto: DeadDropFrontierOutpost
       components:
         - type: StationNameSetup

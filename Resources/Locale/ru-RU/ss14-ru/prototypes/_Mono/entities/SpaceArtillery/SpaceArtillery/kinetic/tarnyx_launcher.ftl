@@ -1,9 +1,9 @@
-ent-WeaponTurretTarnyx = EMP-90 «Тарнух»
-    .desc = Тяжёлое ЭМИ-орудие производства Aetherion Dynamics. Предназначено для выведения из строя крупных секций вражеских кораблей одним мощным выстрелом. Эффективно в асимметричном бою. Может активироваться дистанционно или подключаться к GCS.
+ent-WeaponTurretTarnyx = 90-мм ЭМИ-орудие ADBX-31 «Тарникс»
+    .desc = Тяжёлое ЭМИ-орудие производства Aetherion Dynamics, созданное, чтобы одним мощным выстрелом выводить из строя крупные участки вражеских кораблей. Эффективно в асимметричном бою. Может активироваться дистанционно или подключаться к GCS.
     .suffix = Станционное, ЭМИ, Автозарядка
 ent-WeaponTurretTarnyxReload = { ent-WeaponTurretTarnyx }
     .desc = { ent-WeaponTurretTarnyx.desc }
     .suffix = Корабельное, ЭМИ, Ручная перезарядка
-ent-WeaponTurretTarnyxReloadAP = GS-001 EQUINOX 90mm AP Cannon
-    .desc = A knockoff heavy cannon made by GS, unlike the ABDX-31, it automatically loads AP shells. Effective in asymmetric combat. Can be remotely activated or linked up to a GCS.
-    .suffix = Ship, Infinite Standard AP Ammo
+ent-WeaponTurretTarnyxReloadAP = 90-мм бронебойное орудие GS-001 «Эквинокс»
+    .desc = Тяжёлое орудие, кустарная копия от GS. В отличие от ADBX-31, само заряжает бронебойные снаряды. Эффективно в асимметричном бою. Может активироваться дистанционно или подключаться к GCS.
+    .suffix = Корабельное, Бесконечные бронебойные

@@ -146,6 +146,7 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
         InitializeCommands();
         InitializeEmitters();
+        InitializeHitscan(); // LuaM
     }
 
     private void OnPreventCollide(EntityUid uid, ShipShieldComponent component, ref PreventCollideEvent args)
@@ -273,7 +274,7 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
         _fixtureSystem.TryCreateFixture(shield, internalPoly, "internalShield",
             hard: true,
-            collisionLayer: (int)CollisionGroup.BulletImpassable, // Mono - Only try to block bullets
+            collisionLayer: (int)CollisionGroup.BulletImpassable + (int)CollisionGroup.LaserImpassable, // Mono - Only try to block bullets AND LASERS
             body: shieldPhysics);
 
         _physicsSystem.WakeBody(shield, body: shieldPhysics);

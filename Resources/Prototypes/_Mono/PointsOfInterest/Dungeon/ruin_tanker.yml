@@ -23,15 +23,18 @@
 
 - type: gameMap
   id: AutomatedTanker
-  mapName: 'Automated Inter Sector Tanker'
+  mapName: 'Автоматический Секториальный Танкер' # LuaM: 'Automated Inter Sector Tanker' > 'Автоматический Секториальный Танкер'
   mapPath: /Maps/_Mono/POI/Dungeons/ruin_tanker.yml
   minPlayers: 0
   stations:
     AutomatedTanker:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Автоматический танкер, ходивший между секторами. Экипажа на борту нет и никогда не было, а вот груз ещё может найтись."
       stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Automated Inter Sector Tanker'
+          mapNameTemplate: 'Автоматический Секториальный Танкер' # LuaM: 'Automated Inter Sector Tanker' > 'Автоматический Секториальный Танкер'
         - type: StationJobs
           availableJobs: {}
         - type: StationDeadDropHintExempt

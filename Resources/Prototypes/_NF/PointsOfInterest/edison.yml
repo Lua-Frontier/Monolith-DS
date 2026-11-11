@@ -25,15 +25,18 @@
 
 - type: gameMap
   id: Edison
-  mapName: 'Edison Power Plant'
+  mapName: 'Электростанция Эдисона' # LuaM: 'Edison Power Plant' > 'Электростанция Эдисона'
   mapPath: /Maps/_NF/POI/edison.yml
   minPlayers: 0
   stations:
     Edison:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Электростанция, питающая окрестности сектора. Здесь генерируют, используют и продают огромные объёмы энергии."
       stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Edison Power Plant'
+          mapNameTemplate: 'Электростанция Эдисона' # LuaM: 'Edison Power Plant' > 'Электростанция Эдисона'
         # - type: StationJobs
           # availableJobs:
             # # Pilot: [ 0, 0 ]

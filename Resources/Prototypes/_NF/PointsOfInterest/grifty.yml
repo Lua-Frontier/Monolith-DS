@@ -29,6 +29,9 @@
   minPlayers: 0
   stations:
     Grifty:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Заправка с закусочной для уставших пилотов. Топливо, еда и минимум вопросов."
       stationProto: DeadDropRecordsFrontierOutpost
       components:
         - type: StationNameSetup

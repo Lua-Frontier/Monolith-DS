@@ -33,16 +33,16 @@
   result: ShipVoucherTsfT2
   completetime: 100
   materialDiscountScale: 0.2
-  materials:
-    Steel: 10000
-    Copper: 10000
-    Plasteel: 5000
-    Lithium: 10000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    Plastitanium: 1000
+  materials: # LuaM: -33%
+    Steel: 6700 # LuaM: 10000 > 6700
+    Copper: 6700 # LuaM: 10000 > 6700
+    Plasteel: 3350 # LuaM: 5000 > 3350
+    Lithium: 6700 # LuaM: 10000 > 6700
+    Glass: 3350 # LuaM: 5000 > 3350
+    Plasma: 3350 # LuaM: 5000 > 3350
+    Gold: 3350 # LuaM: 5000 > 3350
+    Silver: 3350 # LuaM: 5000 > 3350
+    Plastitanium: 670 # LuaM: 1000 > 670
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -65,18 +65,18 @@
   result: ShipVoucherPolaris
   completetime: 100
   materialDiscountScale: 0.2
-  materials:
-    Steel: 15000
-    Copper: 15000
-    Plasteel: 12000
-    Lithium: 15000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    Plastitanium: 2000
-    UraniumDepleted: 1000
-    UraniumFissile: 250
+  materials: # LuaM: -33%
+    Steel: 10050 # LuaM: 15000 > 10050
+    Copper: 10050 # LuaM: 15000 > 10050
+    Plasteel: 8040 # LuaM: 12000 > 8040
+    Lithium: 10050 # LuaM: 15000 > 10050
+    Glass: 3350 # LuaM: 5000 > 3350
+    Plasma: 3350 # LuaM: 5000 > 3350
+    Gold: 3350 # LuaM: 5000 > 3350
+    Silver: 3350 # LuaM: 5000 > 3350
+    Plastitanium: 1340 # LuaM: 2000 > 1340
+    UraniumDepleted: 670 # LuaM: 1000 > 670
+    UraniumFissile: 170 # LuaM: 250 > 170
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -84,18 +84,18 @@
   result: ShipVoucherLuda
   completetime: 240
   materialDiscountScale: 0.2
-  materials:
-    Steel: 30000
-    Copper: 15000
-    Plasteel: 25000
-    Lithium: 15000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    Plastitanium: 3000
-    UraniumDepleted: 3000
-    UraniumFissile: 1000
+  materials: # LuaM: -33%
+    Steel: 20100 # LuaM: 30000 > 20100
+    Copper: 10050 # LuaM: 15000 > 10050
+    Plasteel: 16750 # LuaM: 25000 > 16750
+    Lithium: 10050 # LuaM: 15000 > 10050
+    Glass: 3350 # LuaM: 5000 > 3350
+    Plasma: 3350 # LuaM: 5000 > 3350
+    Gold: 3350 # LuaM: 5000 > 3350
+    Silver: 3350 # LuaM: 5000 > 3350
+    Plastitanium: 2010 # LuaM: 3000 > 2010
+    UraniumDepleted: 2010 # LuaM: 3000 > 2010
+    UraniumFissile: 670 # LuaM: 1000 > 670
 
 # PDV
 
@@ -118,33 +118,36 @@
   result: ShipVoucherPdvT1
   completetime: 50
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherTsfT1Recipe
   materials:
-    Steel: 10000
-    Copper: 10000
-    Plasteel: 5000
-    Lithium: 5000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    UraniumDepleted: 1000
+    Steel: 5000
+    Copper: 5000
+    Plasteel: 2500
+    Lithium: 2500
+    Glass: 2500
+    Plasma: 2500
+    Gold: 2500
+    Silver: 2500
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
   id: ShipVoucherPdvT2Recipe
   result: ShipVoucherPdvT2
   completetime: 100
+  materialDiscountScale: 0.2 # LuaM
+  # LuaM-start: materials equalized with ShipVoucherTsfT2Recipe
   materials:
-    Steel: 10000
-    Copper: 10000
-    Plasteel: 5000
-    Lithium: 10000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    UraniumDepleted: 1000
-    UraniumFissile: 250
+    Steel: 6700
+    Copper: 6700
+    Plasteel: 3350
+    Lithium: 6700
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 670
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -152,16 +155,20 @@
   result: ShipVoucherKortikT3
   completetime: 100
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherPolarisRecipe
   materials:
-    Steel: 30000
-    Plasteel: 20000
-    Plastic: 30000
-    Glass: 5000
-    Plasma: 5000
-    UraniumFissile: 600
-    UraniumDepleted: 4000
-    Silver: 5000
-    Gold: 5000
+    Steel: 10050
+    Copper: 10050
+    Plasteel: 8040
+    Lithium: 10050
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 1340
+    UraniumDepleted: 670
+    UraniumFissile: 170
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -169,16 +176,20 @@
   result: ShipVoucherEuropaT3
   completetime: 100
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherPolarisRecipe
   materials:
-    Steel: 30000
-    Plasteel: 50000
-    Plastic: 20000
-    Glass: 5000
-    Plasma: 5000
-    UraniumFissile: 400
-    UraniumDepleted: 2000
-    Silver: 3000
-    Gold: 3000
+    Steel: 10050
+    Copper: 10050
+    Plasteel: 8040
+    Lithium: 10050
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 1340
+    UraniumDepleted: 670
+    UraniumFissile: 170
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -186,16 +197,20 @@
   result: ShipVoucherSaturn
   completetime: 240
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherLudaRecipe
   materials:
-    Steel: 60000
-    Plasteel: 85000
-    Plastic: 50000
-    Glass: 10000
-    Plasma: 7500
-    UraniumFissile: 1000
-    UraniumDepleted: 5000
-    Silver: 10000
-    Gold: 10000
+    Steel: 20100
+    Copper: 10050
+    Plasteel: 16750
+    Lithium: 10050
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 2010
+    UraniumDepleted: 2010
+    UraniumFissile: 670
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -257,16 +272,18 @@
   result: ShipVoucherDrakon
   completetime: 10
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherTsfT2Recipe
   materials:
-    Steel: 10000
-    Copper: 10000
-    Plasteel: 5000
-    Lithium: 5000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    UraniumDepleted: 1000
+    Steel: 6700
+    Copper: 6700
+    Plasteel: 3350
+    Lithium: 6700
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 670
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -274,16 +291,18 @@
   result: ShipVoucherTayfun
   completetime: 10
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherTsfT2Recipe
   materials:
-    Steel: 10000
-    Copper: 10000
-    Plasteel: 5000
-    Lithium: 5000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    UraniumDepleted: 1000
+    Steel: 6700
+    Copper: 6700
+    Plasteel: 3350
+    Lithium: 6700
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 670
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -291,17 +310,20 @@
   result: ShipVoucherBuran
   completetime: 25
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherPolarisRecipe
   materials:
-    Steel: 10000
-    Copper: 10000
-    Plasteel: 5000
-    Lithium: 10000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    UraniumDepleted: 1000
-    UraniumFissile: 250
+    Steel: 10050
+    Copper: 10050
+    Plasteel: 8040
+    Lithium: 10050
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 1340
+    UraniumDepleted: 670
+    UraniumFissile: 170
+  # LuaM-end
 
 # MMC
 
@@ -345,17 +367,18 @@
   result: ShipVoucherVGWolf
   completetime: 100
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherTsfT2Recipe
   materials:
-    Steel: 10000
-    Copper: 10000
-    Plasteel: 5000
-    Lithium: 10000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    UraniumDepleted: 1000
-    UraniumFissile: 250
+    Steel: 6700
+    Copper: 6700
+    Plasteel: 3350
+    Lithium: 6700
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 670
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -363,18 +386,18 @@
   result: ShipVoucherVGKeelback
   completetime: 180
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherTsfT2Recipe
   materials:
-    Steel: 15000
-    Copper: 10000
-    Plasteel: 24000
-    Lithium: 10000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    Plastitanium: 2000
-    UraniumDepleted: 1000
-    UraniumFissile: 250
+    Steel: 6700
+    Copper: 6700
+    Plasteel: 3350
+    Lithium: 6700
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 670
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -382,18 +405,18 @@
   result: ShipVoucherVGLancehead
   completetime: 180
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherTsfT2Recipe
   materials:
-    Steel: 15000
-    Copper: 20000
-    Plasteel: 12000
-    Lithium: 20000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    Plastitanium: 2000
-    UraniumDepleted: 1000
-    UraniumFissile: 250
+    Steel: 6700
+    Copper: 6700
+    Plasteel: 3350
+    Lithium: 6700
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 670
+  # LuaM-end
 
 - type: latheRecipe
   parent: BaseVoucherRecipe
@@ -401,18 +424,20 @@
   result: ShipVoucherVGLeviathan
   completetime: 240
   materialDiscountScale: 0.2
+  # LuaM-start: materials equalized with ShipVoucherPolarisRecipe
   materials:
-    Steel: 30000
-    Copper: 10000
-    Plasteel: 30000
-    Lithium: 10000
-    Glass: 5000
-    Plasma: 5000
-    Gold: 5000
-    Silver: 5000
-    Plastitanium: 5000
-    UraniumDepleted: 3000
-    UraniumFissile: 1000
+    Steel: 10050
+    Copper: 10050
+    Plasteel: 8040
+    Lithium: 10050
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 1340
+    UraniumDepleted: 670
+    UraniumFissile: 170
+  # LuaM-end
 
 # Caelestinus
 - type: latheRecipe

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Ghost;
+using Content.Shared._LuaM.Cyberware; // LuaM
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -102,6 +103,15 @@ namespace Content.Shared.Examine
             // Ghosts and admins skip examine checks.
             if (examinerComp.SkipChecks)
                 return true;
+
+            // LuaM-start: a berserk in frenzy sees creatures as shadows and can not make them out
+            if (examined != null
+                && examined != examiner
+                && TryComp<BerserkHeartComponent>(examiner, out var berserk)
+                && berserk.Frenzy
+                && HasComp<MobStateComponent>(examined))
+                return false;
+            // LuaM-end
 
             if (examined != null)
             {
