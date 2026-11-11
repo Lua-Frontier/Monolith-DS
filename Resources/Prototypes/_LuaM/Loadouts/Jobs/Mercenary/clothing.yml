@@ -1,0 +1,235 @@
+# Head
+- type: loadout
+  id: MercenaryClothingHeadHatPirates
+  price: 100
+  equipment:
+    head: ClothingHeadHatPirates
+
+- type: loadout
+  id: MercenaryClothingHeadHatPirate
+  price: 100
+  equipment:
+    head: ClothingHeadHatPirate
+
+- type: loadout
+  id: MercenaryClothingHeadHatPirateTricord
+  price: 100
+  equipment:
+    head: ClothingHeadHatPirateTricord
+
+- type: loadout
+  id: MercenaryClothingHeadHatPirateLuffy
+  price: 100
+  equipment:
+    head: ClothingHeadHatPirateLuffy
+
+# Neck
+- type: loadout
+  id: MercenaryClothingNeckCloakPirateCap
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakPirateCap
+
+- type: loadout
+  id: MercenaryClothingNeckCloakBlueStar
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakBlueStar
+
+- type: loadout
+  id: MercenaryClothingNeckCloakBlueStarRed
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakBlueStarRed
+
+- type: loadout
+  id: MercenaryClothingNeckCloakBlueStarBlack
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakBlueStarBlack
+
+- type: loadout
+  id: MercenaryClothingNeckCloakBlueStarWhite
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakBlueStarWhite
+
+- type: loadout
+  id: MercenaryClothingNeckCloakBlueStarHoscloack
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakBlueStarHoscloack
+
+- type: loadout
+  id: MercenaryClothingNeckCloakDrakeIndustries
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakDrakeIndustries
+
+- type: loadout
+  id: MercenaryClothingNeckCloakDrakeIndustriesRipped
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakDrakeIndustriesRipped
+
+- type: loadout
+  id: MercenaryClothingNeckCloakEmpirePreafect
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakEmpirePreafect
+
+- type: loadout
+  id: MercenaryClothingNeckCloakEmpirePreafectOrange
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakEmpirePreafectOrange
+
+- type: loadout
+  id: MercenaryClothingNeckCloakEmpirePreafectViolet
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakEmpirePreafectViolet
+
+- type: loadout
+  id: MercenaryClothingNeckCloakRenegade
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakRenegade
+
+- type: loadout
+  id: MercenaryClothingNeckCloakRenegadeCaptain
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakRenegadeCaptain
+
+- type: loadout
+  id: MercenaryClothingNeckCloakRenegadePoncho
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakRenegadePoncho
+
+- type: loadout
+  id: MercenaryClothingNeckMantleRenegade
+  price: 100
+  equipment:
+    neck: ClothingNeckMantleRenegade
+
+- type: loadout
+  id: MercenaryClothingNeckCloakRosy
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakRosy
+
+# Jumpsuit
+- type: loadout
+  id: MercenaryClothingUniformJumpsuitPirate
+  price: 150
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPirate
+
+- type: loadout
+  id: MercenaryClothingUniformJumpsuitPirateSlops
+  price: 150
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPirateSlops
+
+- type: loadout
+  id: MercenaryClothingUniformJumpsuitPirateLuffy
+  price: 150
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPirateLuffy
+
+# OuterClothing
+- type: loadout
+  id: MercenaryClothingOuterCoatPirate
+  price: 450
+  equipment:
+    outerClothing: ClothingOuterCoatPirate
+
+- type: loadout
+  id: MercenaryClothingOuterCoatPirateCaptain
+  price: 450
+  equipment:
+    outerClothing: ClothingOuterCoatPirateCaptain
+
+- type: loadout
+  id: MercenaryClothingOuterCoatArcadiaTrench
+  price: 1500
+  equipment:
+    outerClothing: ClothingOuterCoatArcadiaTrench
+
+# Shoes
+- type: loadout
+  id: MercenaryClothingShoesBootsPirate
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 50
+  equipment:
+    shoes: ClothingShoesBootsPirate
+
+- type: loadout
+  id: MercenaryClothingShoesBootsPirateLuffy
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  price: 50
+  equipment:
+    shoes: ClothingShoesBootsPirateLuffy
+
+# Groups
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR _NF MERCENARY GROUPS
+  id: LuaMMercenaryHead
+  name: loadout-group-contractor-head
+  loadouts:
+  - MercenaryClothingHeadHatPirates
+  - MercenaryClothingHeadHatPirate
+  - MercenaryClothingHeadHatPirateTricord
+  - MercenaryClothingHeadHatPirateLuffy
+
+- type: loadoutGroup
+  id: MercenaryNeck
+  name: loadout-group-contractor-neck
+  minLimit: 0
+  loadouts:
+  - MercenaryClothingNeckCloakPirateCap
+  - MercenaryClothingNeckCloakBlueStar
+  - MercenaryClothingNeckCloakBlueStarRed
+  - MercenaryClothingNeckCloakBlueStarBlack
+  - MercenaryClothingNeckCloakBlueStarWhite
+  - MercenaryClothingNeckCloakBlueStarHoscloack
+  - MercenaryClothingNeckCloakDrakeIndustries
+  - MercenaryClothingNeckCloakDrakeIndustriesRipped
+  - MercenaryClothingNeckCloakEmpirePreafect
+  - MercenaryClothingNeckCloakEmpirePreafectOrange
+  - MercenaryClothingNeckCloakEmpirePreafectViolet
+  - MercenaryClothingNeckCloakRenegade
+  - MercenaryClothingNeckCloakRenegadeCaptain
+  - MercenaryClothingNeckCloakRenegadePoncho
+  - MercenaryClothingNeckMantleRenegade
+  - MercenaryClothingNeckCloakRosy
+  subgroups:
+  - ContractorNeck
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR _NF MERCENARY GROUPS
+  id: LuaMMercenaryJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  loadouts:
+  - MercenaryClothingUniformJumpsuitPirate
+  - MercenaryClothingUniformJumpsuitPirateSlops
+  - MercenaryClothingUniformJumpsuitPirateLuffy
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR _NF MERCENARY GROUPS
+  id: LuaMMercenaryOuterClothing
+  name: loadout-group-contractor-outerclothing
+  loadouts:
+  - MercenaryClothingOuterCoatPirate
+  - MercenaryClothingOuterCoatPirateCaptain
+  - MercenaryClothingOuterCoatArcadiaTrench
+
+- type: loadoutGroup # ONLY TO BE USED AS A SUBGROUP FOR _NF MERCENARY GROUPS
+  id: LuaMMercenaryShoes
+  name: loadout-group-contractor-shoes
+  loadouts:
+  - MercenaryClothingShoesBootsPirate
+  - MercenaryClothingShoesBootsPirateLuffy

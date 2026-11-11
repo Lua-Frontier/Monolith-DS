@@ -85,7 +85,7 @@
   id: JobMercenary
   groups:
   - MercenaryHead
-  - ContractorNeck
+  - MercenaryNeck # LuaM: ContractorNeck > MercenaryNeck
   - MercenaryJumpsuit
   - MercenaryGloves
   - MercenaryBackpack
