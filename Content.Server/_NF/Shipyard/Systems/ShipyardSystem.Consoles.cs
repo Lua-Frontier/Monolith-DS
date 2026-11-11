@@ -162,6 +162,41 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             return;
         }
 
+        // LuaM-start
+        if (voucher is not null)
+        {
+            if (voucher.RedemptionsLeft <= 0)
+            {
+                ConsolePopup(player, Loc.GetString("shipyard-console-no-voucher-redemptions"));
+                PlayDenySound(player, shipyardConsoleUid, component);
+                if (voucher.DestroyOnEmpty)
+                    Del(targetId);
+                return;
+            }
+
+            if (voucher.ConsoleType != (ShipyardConsoleUiKey)args.UiKey)
+            {
+                ConsolePopup(player, Loc.GetString("shipyard-console-invalid-voucher-type"));
+                PlayDenySound(player, shipyardConsoleUid, component);
+                return;
+            }
+
+            if (_timing.CurTime < voucher.NextBuyAt)
+            {
+                var cooldownLeft = voucher.NextBuyAt - _timing.CurTime;
+                ConsolePopup(player, Loc.GetString("ship-voucher-cooldown-active", ("remainingTime", Math.Round(cooldownLeft.TotalMinutes))));
+                PlayDenySound(player, shipyardConsoleUid, component);
+                return;
+            }
+        }
+        else if (bank.Balance < vessel.Price)
+        {
+            ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price)));
+            PlayDenySound(player, shipyardConsoleUid, component);
+            return;
+        }
+        // LuaM-end
+
         if (!TryPurchaseShuttleToDock(shipyardConsoleUid, station, vessel.ShuttlePath, out var shuttleUidOut)) // Lua: TryPurchaseShuttle > TryPurchaseShuttleToDock
         {
             PlayDenySound(player, shipyardConsoleUid, component);
@@ -241,7 +276,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
         else
         {
-            if (bank.Balance <= vessel.Price)
+            if (bank.Balance < vessel.Price) // LuaM: <= > <
             {
                 Del(shuttleUid);
                 ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price)));
@@ -514,15 +549,14 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             return;
         }
 
+        GeneralStationRecord? transferRecord = null; // LuaM
         if (_station.GetOwningStation(shuttleUid) is { Valid: true } shuttleStation
             && TryComp<StationRecordKeyStorageComponent>(targetId, out var keyStorage)
             && keyStorage.Key != null
             && keyStorage.Key.Value.OriginStation == shuttleStation
             && _records.TryGetRecord<GeneralStationRecord>(keyStorage.Key.Value, out var record))
         {
-            //_records.RemoveRecord(keyStorage.Key.Value);
-            _records.AddRecordEntry(stationUid, record);
-            _records.Synchronize(stationUid);
+            transferRecord = record; // LuaM
         }
 
         var shuttleName = ToPrettyString(shuttleUid); // Grab the name before it gets 1984'd
@@ -561,6 +595,14 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
 
         RemComp<ShuttleDeedComponent>(targetId);
+
+        // LuaM-start
+        if (transferRecord != null)
+        {
+            _records.AddRecordEntry(stationUid, transferRecord);
+            _records.Synchronize(stationUid);
+        }
+        // LuaM-end
 
         if (!voucherUsed)
         {

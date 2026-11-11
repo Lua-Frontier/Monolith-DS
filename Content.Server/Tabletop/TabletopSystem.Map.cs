@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Server._Mono.Cleanup;
 using Content.Shared.GameTicking;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -51,6 +52,7 @@ namespace Content.Server.Tabletop
             var mapUid = _mapManager.CreateMap(out var tabletopMap);
             TabletopMap = tabletopMap;
             _tabletops = 0;
+            EnsureComp<CleanupImmuneComponent>(mapUid); // LuaM
 
             var mapComp = Comp<MapComponent>(mapUid);
 

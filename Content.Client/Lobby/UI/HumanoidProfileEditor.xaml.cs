@@ -500,7 +500,7 @@ namespace Content.Client.Lobby.UI
             // Add to TSF company dropdown
             for (var i = 0; i < companies.Count; i++)
             {
-                CompanyButton.AddItem(companies[i].Name, i);
+                CompanyButton.AddItem(GetCompanyName(companies[i]), i); // LuaM
                 //Logger.Debug($"Added company to dropdown: {i} - {companies[i].ID} - {companies[i].Name}");
             }
 
@@ -512,9 +512,7 @@ namespace Content.Client.Lobby.UI
                     var companyId = companies[args.Id].ID;
 
                     // Description of Company (pointed-to in prototype, defined in Locale)
-                    CompanyDescriptionLabel.SetMessage(!string.IsNullOrEmpty(companies[args.Id].Description)
-                        ? Loc.GetString(companies[args.Id].Description)
-                        : "N/A"); // Only if there's a description. If not, then set to N/A.
+                    CompanyDescriptionLabel.SetMessage(GetCompanyDescription(companies[args.Id])); // LuaM
 
                     // Display company image if available
                     if (!string.IsNullOrEmpty(companies[args.Id].Image))
@@ -2369,6 +2367,25 @@ namespace Content.Client.Lobby.UI
             ExportButton.Disabled = false;
         }
 
+        // LuaM start
+        private static string GetCompanyName(CompanyPrototype company)
+        {
+            return company.ID == CompanyPrototype.NoCompany.Id
+                ? Loc.GetString("humanoid-profile-editor-company-none")
+                : company.Name;
+        }
+
+        private static string GetCompanyDescription(CompanyPrototype company)
+        {
+            if (!string.IsNullOrEmpty(company.Description))
+                return Loc.GetString(company.Description);
+
+            return Loc.GetString(company.ID == CompanyPrototype.NoCompany.Id
+                ? "humanoid-profile-editor-company-none-description"
+                : "humanoid-profile-editor-company-no-description");
+        }
+        // LuaM end
+
         private void UpdateCompanyControls()
         {
             if (Profile is null)
@@ -2402,9 +2419,7 @@ namespace Content.Client.Lobby.UI
                 CompanyButton.SelectId(i);
 
                 // Description of Company (pointed-to in prototype, defined in Locale)
-                CompanyDescriptionLabel.SetMessage(!string.IsNullOrEmpty(companies[i].Description)
-                    ? Loc.GetString(companies[i].Description)
-                    : "N/A"); // Only if there's a description. If not, then set to N/A.
+                CompanyDescriptionLabel.SetMessage(GetCompanyDescription(companies[i])); // LuaM
 
                 // Display company image if available
                 if (!string.IsNullOrEmpty(companies[i].Image))
@@ -2427,6 +2442,9 @@ namespace Content.Client.Lobby.UI
                 //Logger.Debug($"Company {Profile.Company} not found in list, defaulting to None");
                 CompanyButton.SelectId(0);
                 CompanyImage.Visible = false;
+                // LuaM
+                if (companies.Count > 0)
+                    CompanyDescriptionLabel.SetMessage(GetCompanyDescription(companies[0]));
 
                 // Also reset the profile's company to None if the current one is disabled
                 if (_prototypeManager.TryIndex<CompanyPrototype>(Profile.Company, out var companyProto) && companyProto.Disabled)

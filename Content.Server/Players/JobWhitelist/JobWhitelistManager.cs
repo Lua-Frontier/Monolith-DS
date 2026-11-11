@@ -26,7 +26,7 @@ public sealed partial class JobWhitelistManager : IPostInjectInit
     [Dependency] private UserDbDataManager _userDb = default!;
     [Dependency] private ILogManager _log = default!;
 
-    private readonly ISawmill _sawmill = default!;
+    private ISawmill _sawmill = default!;
 
     private readonly Dictionary<NetUserId, HashSet<string>> _whitelists = new();
     private readonly Dictionary<NetUserId, bool> _globalWhitelists = new(); // Frontier
@@ -36,7 +36,7 @@ public sealed partial class JobWhitelistManager : IPostInjectInit
         _net.RegisterNetMessage<MsgJobWhitelist>();
         _net.RegisterNetMessage<MsgWhitelist>();
 
-        _log.GetSawmill(nameof(JobWhitelistManager));
+        _sawmill = _log.GetSawmill(nameof(JobWhitelistManager));
     }
 
     private async Task LoadData(ICommonSession session, CancellationToken cancel)

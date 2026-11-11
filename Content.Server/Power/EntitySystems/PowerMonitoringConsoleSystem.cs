@@ -2,6 +2,7 @@ using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Power.Nodes;
 using Content.Server.Power.NodeGroups;
+using Content.Server.Power.Pow3r;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Pinpointer;
@@ -26,6 +27,7 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
     // Note: this data does not need to be saved
     private Dictionary<EntityUid, Dictionary<Vector2i, PowerCableChunk>> _gridPowerCableChunks = new();
     private float _updateTimer = 1.0f;
+    private readonly HashSet<PowerState.NodeId> _countedApcNetworks = new(); // LuaM
 
     private const float UpdateTime = 1.0f;
     private const float RoguePowerConsumerThreshold = 100000;
@@ -46,6 +48,7 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
 
         // Grid events
         SubscribeLocalEvent<GridSplitEvent>(OnGridSplit);
+        SubscribeLocalEvent<GridRemovalEvent>(ev => _gridPowerCableChunks.Remove(ev.EntityUid)); // LuaM
         SubscribeLocalEvent<CableComponent, CableAnchorStateChangedEvent>(OnCableAnchorStateChanged);
         SubscribeLocalEvent<PowerMonitoringDeviceComponent, AnchorStateChangedEvent>(OnDeviceAnchoringChanged);
         SubscribeLocalEvent<PowerMonitoringDeviceComponent, NodeGroupsRebuilt>(OnNodeGroupRebuilt);
@@ -81,6 +84,13 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
     {
         var focus = GetEntity(args.FocusDevice);
         var group = args.FocusGroup;
+
+        // LuaM
+        if (focus != null &&
+            (!TryComp(focus, out TransformComponent? focusXform) || focusXform.GridUid != Transform(uid).GridUid))
+        {
+            focus = null;
+        }
 
         // Update this if the focus device has changed
         if (component.Focus != focus)
@@ -316,6 +326,7 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
         var sourcesForFocus = new List<PowerMonitoringConsoleEntry>();
         var loadsForFocus = new List<PowerMonitoringConsoleEntry>();
         var flags = component.Flags;
+        _countedApcNetworks.Clear(); // LuaM
 
         // Reset RoguePowerConsumer flag
         component.Flags &= ~PowerMonitoringFlags.RoguePowerConsumer;
@@ -472,7 +483,9 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
                 stats.BatteryUsage += Math.Max(battery.CurrentSupply - battery.CurrentReceiving, 0d);
 
                 // Records loads attached to APCs
-                if (device.Group == PowerMonitoringConsoleGroup.APC && battery.Enabled)
+                // LuaM: every APC on a shared LV network reports that network's whole demand, count it once
+                if (device.Group == PowerMonitoringConsoleGroup.APC && battery.Enabled &&
+                    _countedApcNetworks.Add(battery.NetworkBattery.LinkedNetworkDischarging))
                 {
                     stats.PowerUsage += battery.NetworkBattery.LoadingNetworkDemand;
                 }

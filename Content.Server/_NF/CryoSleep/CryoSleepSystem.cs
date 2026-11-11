@@ -74,6 +74,8 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
     [Dependency] private SharedTransformSystem _transform = default!;
 
     private readonly Dictionary<NetUserId, StoredBody?> _storedBodies = new();
+    private readonly Dictionary<EntityUid, uint> _expiryTokens = new(); // LuaM
+    private uint _nextExpiryToken; // LuaM
     private EntityUid? _storageMap;
 
     public override void Initialize()
@@ -470,8 +472,17 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
         }
 
         // Start a timer. When it ends, the body needs to be deleted.
+        var expiryToken = ++_nextExpiryToken; // LuaM
+        _expiryTokens[bodyId] = expiryToken; // LuaM
         Timer.Spawn(TimeSpan.FromSeconds(_configurationManager.GetCVar(NFCCVars.CryoExpirationTime)), () =>
         {
+            // LuaM-start
+            if (!_expiryTokens.TryGetValue(bodyId, out var currentToken) || currentToken != expiryToken)
+                return;
+
+            _expiryTokens.Remove(bodyId);
+            // LuaM-end
+
             if (id != null)
                 ResetCryosleepState(id.Value);
 
@@ -510,6 +521,7 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
     private void OnRoundEnded(RoundEndedEvent args)
     {
         _storedBodies.Clear();
+        _expiryTokens.Clear(); // LuaM
     }
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)

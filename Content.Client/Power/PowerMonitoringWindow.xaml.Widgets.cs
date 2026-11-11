@@ -466,6 +466,7 @@ public sealed class PowerMonitoringButton : Button
             HorizontalAlignment = HAlignment.Center,
             VerticalAlignment = VAlignment.Center,
             SetSize = new Vector2(32f, 32f),
+            Stretch = TextureRect.StretchMode.KeepAspectCentered, // LuaM
             Margin = new Thickness(0f, 0f, 5f, 0f),
         };
 
@@ -526,7 +527,7 @@ public sealed class PowerMonitoringButton : Button
         {
             HorizontalAlignment = HAlignment.Right,
             Align = Label.AlignMode.Right,
-            SetWidth = 80f,
+            SetWidth = 100f, // LuaM: 80 > 100
             Margin = new Thickness(10, 0, 0, 0),
             ClipText = true,
         };

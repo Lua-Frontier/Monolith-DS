@@ -65,3 +65,5 @@ comp-turbine-ui-power = { POWERWATTS($power) }
 comp-turbine-ui-locked-message = Controls locked.
 comp-turbine-ui-footer-left = Danger: fast-moving machinery.
 comp-turbine-ui-footer-right = 2.0 REV 1
+
+gas-turbine-monitor-not-linked = The monitor is not linked to a turbine. Link them with a multitool.

@@ -44,3 +44,5 @@ comp-nuclear-reactor-ui-therm-format = { POWERWATTS($power) }т
 
 comp-nuclear-reactor-ui-footer-left = Опасность: высокий уровень радиации.
 comp-nuclear-reactor-ui-footer-right = 0.8 REV 3
+
+nuclear-reactor-monitor-not-linked = Монитор не связан с реактором. Свяжите их мультитулом.
