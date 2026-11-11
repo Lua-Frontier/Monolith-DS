@@ -57,4 +57,3 @@ ent-AmmoBox762x25mmHP = коробка боеприпасов (7.62x25мм эк�
 ent-AmmoBox762x25mmRIP = коробка боеприпасов (7.62x25мм RIP)
 ent-AmmoBox762x25mmPlasteelAP = коробка боеприпасов (7.62x25мм бронебойные)
 ent-AmmoBox762x25mmBigFMJ = большая коробка боеприпасов (7.62x25мм FMJ)
-    .suffix = Большая
