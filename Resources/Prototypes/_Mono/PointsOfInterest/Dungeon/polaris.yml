@@ -23,15 +23,18 @@
 
 - type: gameMap
   id: Polaris
-  mapName: 'Polaris Bioresearch Center'
+  mapName: 'Центр Биологического Исследования «Полярис»' # LuaM: 'Polaris Bioresearch Center' > 'Центр Биологического Исследования «Полярис»'
   mapPath: /Maps/_Mono/POI/Dungeons/polaris.yml
   minPlayers: 0
   stations:
     Polaris:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Центр биологических исследований, покинутый персоналом. Входить сюда стоит только подготовленным."
       stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Polaris Bioresearch Center'
+          mapNameTemplate: 'Центр Биологического Исследования «Полярис»' # LuaM: 'Polaris Bioresearch Center' > 'Центр Биологического Исследования «Полярис»'
         - type: StationJobs
           availableJobs: {}
         - type: StationDeadDropHintExempt

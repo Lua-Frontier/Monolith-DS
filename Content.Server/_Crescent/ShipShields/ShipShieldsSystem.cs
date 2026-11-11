@@ -146,6 +146,7 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
         InitializeCommands();
         InitializeEmitters();
+        InitializeHitscan(); // LuaM
     }
 
     private void OnPreventCollide(EntityUid uid, ShipShieldComponent component, ref PreventCollideEvent args)

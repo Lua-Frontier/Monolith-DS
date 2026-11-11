@@ -32,11 +32,11 @@
 
 - type: entity
   id: ShipRepairDevice
-  description: A Ship Repair Device that can reconstruct destroyed sections of ships. Holds 300 charges.
+  description: A Ship Repair Device that can reconstruct destroyed sections of ships. Holds 500 charges. # LuaM: 300 > 500
   parent: ShipRepairDeviceBase
   components:
   - type: LimitedCharges
-    maxCharges: 300
+    maxCharges: 500 # LuaM: 300 > 500
     charges: 100
 
 - type: entity

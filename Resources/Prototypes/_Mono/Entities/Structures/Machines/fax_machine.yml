@@ -21,4 +21,4 @@
   suffix: POI, PDV Jupiter
   components:
   - type: FaxMachine
-    name: "PDV Jupiter-Class Carrier"
+    name: "Разрушенный Крейсер Юпитер" # LuaM: "PDV Jupiter-Class Carrier" > "Разрушенный Крейсер Юпитер"

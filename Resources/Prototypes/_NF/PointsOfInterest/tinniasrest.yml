@@ -29,6 +29,9 @@
   minPlayers: 0
   stations:
     Tinnia:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Уютный ресторан для путников, где можно перевести дух между перелётами."
       stationProto: DeadDropFrontierOutpost
       components:
         - type: StationNameSetup

@@ -23,12 +23,15 @@
 
 - type: gameMap
   id: ThePit
-  mapName: "The Pit"
+  mapName: "Бойцовская Яма" # LuaM: "The Pit" > "Бойцовская Яма"
   mapPath: /Maps/_NF/POI/arena.yml
   minPlayers: 0
   stations:
     ThePit:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Арена для боёв без правил. Зрители делают ставки, бойцы проливают кровь."
       stationProto: DeadDropFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: "The Pit"
+          mapNameTemplate: "Бойцовская Яма" # LuaM: "The Pit" > "Бойцовская Яма"

@@ -1,5 +1,55 @@
 # Vouchers
+# Prices match the Vanguard vouchers in the PDV uplink.
+# T1
+
+- type: listing
+  id: UplinkSecurityT1Voucher
+  name: uplink-security-t1-voucher-name
+  description: uplink-security-t1-voucher-desc
+  productEntity: ShipVoucherTsfT1
+  cost:
+    FederationMilitaryCredit: 36
+  categories:
+  - UplinkSecurityVouchers
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink
+
+# T2
+
+- type: listing
+  id: UplinkSecurityT2Voucher
+  name: uplink-security-t2-voucher-name
+  description: uplink-security-t2-voucher-desc
+  productEntity: ShipVoucherTsfT2
+  cost:
+    FederationMilitaryCredit: 105
+  categories:
+  - UplinkSecurityVouchers
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink
+
 # T3
+
+- type: listing
+  id: UplinkSecurityT3VoucherPolaris
+  name: uplink-security-t3-polaris-voucher-name
+  description: uplink-security-t3-polaris-voucher-desc
+  productEntity: ShipVoucherPolaris
+  cost:
+    FederationMilitaryCredit: 390
+  categories:
+  - UplinkSecurityVouchers
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink
 
 - type: listing
   id: UplinkSecurityT3VoucherRising
@@ -8,6 +58,23 @@
   productEntity: ShipVoucherRising
   cost:
     FederationMilitaryCredit: 350
+  categories:
+  - UplinkSecurityVouchers
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - SecurityUplink
+
+# T4
+
+- type: listing
+  id: UplinkSecurityT4VoucherLuda
+  name: uplink-security-t4-luda-voucher-name
+  description: uplink-security-t4-luda-voucher-desc
+  productEntity: ShipVoucherLuda
+  cost:
+    FederationMilitaryCredit: 750
   categories:
   - UplinkSecurityVouchers
   conditions:

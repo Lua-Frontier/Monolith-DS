@@ -7,7 +7,7 @@
 - type: pointOfInterest
   id: Chengdu
   parent: [BaseMobilePOI, BaseRepairablePOI]
-  name: 'TSFN Chengdu'
+  name: 'TSFN «Чэнду»' # LuaM: 'TSFN Chengdu' > 'TSFN «Чэнду»'
   minimumDistance: 4500
   maximumDistance: 5500
   spawnGamePreset: [ MonoRogueTSFHyperwar ]
@@ -21,7 +21,7 @@
 
 - type: gameMap
   id: Chengdu
-  mapName: 'TSFN Chengdu'
+  mapName: 'TSFN «Чэнду»' # LuaM: 'TSFN Chengdu' > 'TSFN «Чэнду»'
   mapPath: /Maps/_Mono/Supercapitals/chengdu.yml
   minPlayers: 0
   stations:
@@ -29,10 +29,10 @@
       stationProto: RecordsFrontierOutpostCargo
       gridComponents:
       - type: VesselInfo
-        description: "Enough heavy weapons to crack a planet."
+        description: "Тяжёлого вооружения на борту хватит, чтобы расколоть планету." # LuaM: translated
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'TSFN Chengdu'
+          mapNameTemplate: 'TSFN «Чэнду»' # LuaM: 'TSFN Chengdu' > 'TSFN «Чэнду»'
         - type: ExtraStationInformation
           icon:
             sprite: _NF/Structures/Decoration/banner.rsi

@@ -275,6 +275,7 @@
     - Osa
     - ScorpionART # LuaM
     - ScorpionMSL # LuaM
+    - Neptune # LuaM: moved from T2
 
 - type: entity
   parent: ShipVoucherPdvT0
@@ -298,7 +299,7 @@
     companyName: PDV
     vessels:
     - MotleyAnne
-    - Neptune
+#    - Neptune # LuaM: moved to T1
 
 - type: entity
   parent: ShipVoucherPdvT0

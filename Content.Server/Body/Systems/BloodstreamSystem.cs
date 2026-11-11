@@ -234,12 +234,36 @@ public sealed partial class BloodstreamSystem : EntitySystem
         bloodSolution.AddReagent(new ReagentId(entity.Comp.BloodReagent, GetEntityBloodData(entity.Owner)), entity.Comp.BloodMaxVolume - bloodSolution.Volume);
     }
 
+    // LuaM-start: damage that should not open wounds, like an implant burning its user from the inside
+    private EntityUid? _noBleedTarget;
+
+    /// <summary>
+    /// Runs the action. Damage the entity takes inside it does not cause bleeding.
+    /// </summary>
+    public void WithoutBleeding(EntityUid uid, Action action)
+    {
+        var old = _noBleedTarget;
+        _noBleedTarget = uid;
+        try
+        {
+            action();
+        }
+        finally
+        {
+            _noBleedTarget = old;
+        }
+    }
+    // LuaM-end
+
     private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChangedEvent args)
     {
         if (args.DamageDelta is null || !args.DamageIncreased)
         {
             return;
         }
+
+        if (_noBleedTarget == ent.Owner) // LuaM
+            return;
 
         // TODO probably cache this or something. humans get hurt a lot
         if (!_prototypeManager.TryIndex<DamageModifierSetPrototype>(ent.Comp.DamageBleedModifiers, out var modifiers))

@@ -1,6 +1,7 @@
 using Content.Shared._Mono.CorticalBorer;
 using Content.Shared.CCVar;
 using Content.Shared.Ghost;
+using Content.Shared._LuaM.Cyberware; // LuaM
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Content.Shared.Stealth.Components;
@@ -80,6 +81,11 @@ public sealed partial class StatusIconSystem : SharedStatusIconSystem
 
         if (data.VisibleToGhosts && HasComp<GhostComponent>(viewer))
             return true;
+
+        // LuaM-start: a berserk in frenzy can not tell who is who, so no job or other icons on others
+        if (TryComp<BerserkHeartComponent>(viewer, out var berserk) && berserk.Frenzy)
+            return false;
+        // LuaM-end
 
         if (data.HideInContainer && (ent.Comp.Flags & MetaDataFlags.InContainer) != 0)
             return false;

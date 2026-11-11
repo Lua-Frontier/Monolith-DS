@@ -445,8 +445,8 @@
   - type: HitscanBasicDamage
     damage:
      types:
-      Heat: 35
-      Structural: 35
+      Heat: 43.75 # LuaM: 35 > 43.75, +25% after shields started blocking lasers
+      Structural: 43.75 # LuaM: 35 > 43.75, +25% after shields started blocking lasers
   - type: HitscanBasicRaycast
     maxDistance: 512
 
@@ -472,8 +472,8 @@
   - type: HitscanBasicDamage
     damage:
      types:
-      Heat: 80
-      Structural: 35
+      Heat: 100 # LuaM: 80 > 100, +25% after shields started blocking lasers
+      Structural: 43.75 # LuaM: 35 > 43.75, +25% after shields started blocking lasers
   - type: HitscanBasicRaycast
     maxDistance: 600
   - type: HitscanGathering
@@ -488,8 +488,8 @@
   - type: HitscanBasicDamage
     damage:
      types:
-       Heat: 150
-       Structural: 500
+       Heat: 187.5 # LuaM: 150 > 187.5, +25% after shields started blocking lasers
+       Structural: 625 # LuaM: 500 > 625, +25% after shields started blocking lasers
   - type: HitscanRadarSignature
     radarColor: "#5d46e2"
   - type: HitscanSpawnEntity

@@ -24,17 +24,20 @@
 
 - type: gameMap
   id: TradeMall
-  mapName: 'Trade Mall'
+  mapName: 'Торговый Центр'
   mapPath: /Maps/_LuaM/POI/TradeMallLuaM.yml
   minPlayers: 0
   stations:
     TradeMall:
+      gridComponents:
+      - type: VesselInfo
+        description: "Торговый центр сектора: рынки, верфи и транзит. Здесь всегда кто-то продаёт, а кто-то покупает."
       stationProto: MarketFrontierOutpost
       components:
         - type: StationCargoOrderDatabase
           capacity: 60
         - type: StationNameSetup
-          mapNameTemplate: 'Trade Mall'
+          mapNameTemplate: 'Торговый Центр'
         - type: StationDeadDrop
           maxDeadDrops: 2
         - type: TradeCrateDestination

@@ -20,12 +20,15 @@
 
 - type: gameMap
   id: McHobo
-  mapName: "Derelict McCargo"
+  mapName: "Заброшенный МаКарго" # LuaM: "Derelict McCargo" > "Заброшенный МаКарго"
   mapPath: /Maps/_NF/POI/mchobo.yml
   minPlayers: 0
   stations:
     McHobo:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Заброшенная закусочная МаКарго. Когда-то здесь подавали лучшие бургеры сектора."
       stationProto: DeadDropRecordsFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Derelict McCargo"
+          mapNameTemplate: "Заброшенный МаКарго" # LuaM: "Derelict McCargo" > "Заброшенный МаКарго"

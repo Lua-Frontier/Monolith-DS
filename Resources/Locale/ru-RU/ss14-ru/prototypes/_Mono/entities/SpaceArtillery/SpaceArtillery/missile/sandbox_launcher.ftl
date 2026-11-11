@@ -1,3 +1,3 @@
-ent-WeaponTurretSandbox = SS-N-40 "Sandbox" launcher
-    .desc = A strategic cruise missile launcher, able to fire extremely fast, long-ranged and nuclear-capable SARH munitions. Born from an almost genetic fear from long ago, this weapon system has long brought peace... until now.
+ent-WeaponTurretSandbox = пусковая установка SS-N-40 «Сэндбокс»
+    .desc = Пусковая установка стратегических крылатых ракет, способная запускать сверхбыстрые дальнобойные боеприпасы с полуактивным радиолокационным наведением, в том числе в ядерном оснащении. Рождённая почти генетическим страхом из далёкого прошлого, эта система долго хранила мир... до сих пор.
     .suffix = { ent-BallisticArtilleryTier5HP.suffix }

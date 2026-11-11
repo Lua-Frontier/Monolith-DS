@@ -33,6 +33,6 @@
         - type: StationDeadDropHintExempt
       gridComponents:
       - type: VesselInfo
-        description: "A half-abandoned decaying station. Sometimes you can hear the hull bend."
+        description: "Полузаброшенная разрушающаяся станция. Иногда слышно, как гнётся корпус."
       - type: VesselMusic
         ambientMusicPrototype: CamelotMusic

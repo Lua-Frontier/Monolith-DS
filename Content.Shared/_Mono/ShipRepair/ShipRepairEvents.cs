@@ -1,3 +1,4 @@
+using System.Linq; // LuaM
 using Content.Shared._Mono.ShipRepair.Components;
 using Content.Shared.DoAfter;
 using Robust.Shared.Serialization;
@@ -22,7 +23,7 @@ public sealed partial class ShipRepairDoAfterEvent : SimpleDoAfterEvent
     public Vector2i TargetGridIndices;
     public int Cost;
     // if we're repairing an entity, store what we're repairing
-    public int? RepairId = null;
+    public List<int>? RepairId = null;
 
     [NonSerialized]
     public EntityUid? TargetGrid = null;
@@ -32,7 +33,11 @@ public sealed partial class ShipRepairDoAfterEvent : SimpleDoAfterEvent
         if (other is not ShipRepairDoAfterEvent cast)
             return false;
 
-        return TargetGridIndices == cast.TargetGridIndices && RepairId == cast.RepairId;
+        // LuaM: RepairId is a list now, compare the contents and not the references
+        return TargetGridIndices == cast.TargetGridIndices
+               && (RepairId == null
+                   ? cast.RepairId == null
+                   : cast.RepairId != null && RepairId.SequenceEqual(cast.RepairId));
     }
 }
 

@@ -1,13 +1,18 @@
 - type: pointOfInterest
   id: TSFMCOutpost
   parent: [BaseMobilePOI, BaseRepairablePOI]
-  name: 'Крейсер TSFMC-113 «Арктурус»'
+  name: 'Крейсер Арктурус'
   minimumDistance: 4500
   maximumDistance: 5500
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce, MonoChimeraTsfPdv ]
   spawnGroup: Required
   gridPath: /Maps/_LuaM/POI/ArcturusPOI.yml
   addComponents:
+  - type: MapRadiusIndicator
+    radius: 500
+    color: "#047abd"
+    fillAlpha: 0.15
+    outlineAlpha: 0.35
   - type: IFF
     color: "#047abd"
     flags: [HideLabel]
@@ -17,7 +22,7 @@
 
 - type: gameMap
   id: TSFMCOutpost
-  mapName: 'TSFMC-113 Arcturus Class Carrier'
+  mapName: 'Крейсер Арктурус'
   mapPath: /Maps/_LuaM/POI/ArcturusPOI.yml
   minPlayers: 0
   stations:
@@ -25,7 +30,7 @@
       stationProto: SecurityFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'TSFMC-113 Arcturus Class Carrier'
+          mapNameTemplate: 'Крейсер Арктурус'
         - type: ExtraStationInformation
           icon:
             sprite: _NF/Structures/Decoration/banner.rsi
@@ -47,3 +52,6 @@
         - type: StationDeadDropHintExempt
         - type: StationDeadDropReporting
           messageSet: Nfsd
+      gridComponents:
+      - type: VesselInfo
+        description: "Некогда главный аргумент ТСФ против Крейсера Юпитер. В том бою он лишился всего вооружения, но после ремонта и некой модификации системы электропитания вернулся в строй и снова служит Корпусу морской пехоты ТСФ в составе 113-й бригады."
