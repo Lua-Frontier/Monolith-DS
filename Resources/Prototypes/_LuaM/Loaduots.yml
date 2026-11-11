@@ -110,6 +110,7 @@
   - MercenaryShoes
   - PilotShoes
   - ContractorShoes
+  - LuaMMercenaryShoes # LuaM
   fallbacks:
   - TsfmcCombatBoots
 
