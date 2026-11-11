@@ -24,6 +24,7 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Content.Shared._Mono.Company;
 using Content.Server._Mono.Store; // Mono
+using Content.Server._LuaM.Contraband; // LuaM
 
 
 namespace Content.Server.Cargo.Systems;
@@ -38,6 +39,7 @@ public sealed partial class CargoSystem
     // The maximum distance from the console to look for pallets.
 
     [Dependency] private CurrencyInjectionSystem _currencyInjection = default!;
+    [Dependency] private TsfContrabandFineSystem _tsfFine = default!; // LuaM
     private const int DefaultPalletDistance = 8;
 
     private static readonly SoundPathSpecifier ApproveSound = new("/Audio/Effects/Cargo/ping.ogg");
@@ -530,11 +532,9 @@ public sealed partial class CargoSystem
             frontierTaxAmount = -frontierTaxAmount;
             _bank.TrySectorWithdraw(SectorBankAccount.Frontier, (int)frontierTaxAmount, LedgerEntryType.ColonialOutpostPenalties);
         }
+        // LuaM: the TSF fine goes through TsfContrabandFineSystem, it takes what's left if the budget is short and announces it on the TSF channel
         if (nfsdTaxAmount < 0)
-        {
-            nfsdTaxAmount = -nfsdTaxAmount;
-            _bank.TrySectorWithdraw(SectorBankAccount.Nfsd, (int)nfsdTaxAmount, LedgerEntryType.TSFMCPenalties);
-        }
+            _tsfFine.Fine(uid, (int)-nfsdTaxAmount, "luam-tsf-fine-cargo");
         if (medicalTaxAmount < 0)
         {
             medicalTaxAmount = -medicalTaxAmount;

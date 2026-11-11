@@ -1,4 +1,6 @@
 using Content.Server._NF.Contraband.Components;
+using Content.Server._LuaM.Contraband; // LuaM
+using Content.Shared._LuaM.Contraband; // LuaM
 using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
 using Content.Server.Stack;
@@ -27,6 +29,7 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
     [Dependency] private StackSystem _stack = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private TsfContrabandFineSystem _tsfFine = default!; // LuaM
 
     private EntityQuery<MobStateComponent> _mobQuery;
     private EntityQuery<TransformComponent> _xformQuery;
@@ -201,7 +204,18 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
             return;
         }
 
+        // LuaM-start: turning in here can fine the TSF budget (the Vanguard console, triple fine)
+        var tsfFine = 0;
+        if (TryComp<TsfContrabandFineComponent>(uid, out var fineComp))
+        {
+            GetPalletGoods(gridUid, component, out var goods, out _);
+            tsfFine = _tsfFine.GetFine(goods, fineComp.Multiplier);
+        }
+        // LuaM-end
+
         SellPallets(gridUid, component, null, out var price);
+
+        _tsfFine.Fine(uid, tsfFine, "luam-tsf-fine-vanguard"); // LuaM
 
         var stackPrototype = _protoMan.Index<StackPrototype>(component.RewardType);
         _stack.Spawn(price, stackPrototype, uid.ToCoordinates());

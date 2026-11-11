@@ -80,7 +80,7 @@
       FederationMilitaryCredit: 15
   - type: ItemTax # Mono
     taxAccounts:
-      nfsd: -0.05
+      nfsd: -0.15 # LuaM: -0.05 > -0.15, TSF contraband fines tripled
 
 - type: entity
   parent: BaseC3ContrabandUnredeemable
@@ -92,7 +92,7 @@
       FederationMilitaryCredit: 10
   - type: ItemTax # Mono
     taxAccounts:
-      nfsd: -0.05
+      nfsd: -0.15 # LuaM: -0.05 > -0.15, TSF contraband fines tripled
 
 - type: entity
   parent: BaseC3ContrabandUnredeemable
@@ -139,7 +139,7 @@
       FederationMilitaryCredit: 5
   - type: ItemTax # Mono
     taxAccounts:
-      nfsd: -0.1
+      nfsd: -0.3 # LuaM: -0.1 > -0.3, TSF contraband fines tripled
 
 - type: entity
   parent: BaseC3PirateContrabandNoValue
@@ -152,7 +152,7 @@
       FederationMilitaryCredit: 20
   - type: ItemTax # Mono
     taxAccounts:
-      nfsd: -0.1
+      nfsd: -0.3 # LuaM: -0.1 > -0.3, TSF contraband fines tripled
 
 - type: entity
   parent: BaseC3ContrabandUnredeemable
@@ -177,7 +177,7 @@
       FederationMilitaryCredit: 10
   - type: ItemTax # Mono
     taxAccounts:
-      nfsd: -0.2
+      nfsd: -0.6 # LuaM: -0.2 > -0.6, TSF contraband fines tripled
 
 - type: entity
   parent: BaseC3ContrabandUnredeemable

@@ -178,7 +178,7 @@
   id: MonoMixed
   name: mono-mixed-title
   description: mono-mixed-description
-  showInVote: true # it was just old-Biothreat and the deprecated Remnants in one # LuaM: false > true
+  showInVote: false # it was just old-Biothreat and the deprecated Remnants in one
   weight: 0.43 # LuaM: 0.35 > 0.43, needs ~70% of votes against a weight 1 mode
   rules:
   - NFAdventure
