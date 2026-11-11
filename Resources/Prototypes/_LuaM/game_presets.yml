@@ -3,7 +3,7 @@
   weight: 0.5
   name: mono-chimera-tsf-pdv-title
   description: mono-chimera-tsf-pdv-description
-  showInVote: true
+  showInVote: false # LuaM: true > false, chimeras are useless as antags, only Standard and Legacy go to the vote
   rules:
   - NFAdventure
   - BasicStationEventScheduler
