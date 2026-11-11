@@ -1,0 +1,31 @@
+# USSP PPSh: a drum-fed 7.62x25mm SMG that has to be wielded to fire.
+- type: technology
+  id: UsspPPSh
+  name: research-technology-ussp-ppsh
+  entityIcon: WeaponSubMachineGunPPSh
+  discipline: Ussp
+  tier: 2
+  cost: 30000
+  recipeUnlocks:
+  - WeaponSubMachineGunPPShUSSP
+  - Magazine762x25mmDrumFMJ
+  - Magazine762x25mmDrumEmpty
+  - Magazine762x25mmDrumPractice
+  - Magazine762x25mmDrumIncendiary
+  - Magazine762x25mmDrumUranium
+  - Magazine762x25mmDrumRubber
+  - Magazine762x25mmDrumHP
+  - Magazine762x25mmDrumRIP
+  - Magazine762x25mmDrumPlasteelAP
+  - AmmoBox762x25mmFMJ
+  - AmmoBox762x25mmPlasteelAP
+  - AmmoBox762x25mmRubber
+  - AmmoBox762x25mmIncendiary
+  - AmmoBox762x25mmPractice
+  - AmmoBox762x25mmUranium
+  - AmmoBox762x25mmHP
+  - AmmoBox762x25mmRIP
+  - AmmoBox762x25mmBigFMJ
+  technologyPrerequisites:
+  - UsspMediumGuns
+  position: 8, 7

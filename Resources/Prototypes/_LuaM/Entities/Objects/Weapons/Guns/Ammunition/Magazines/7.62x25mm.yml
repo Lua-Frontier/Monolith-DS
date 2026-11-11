@@ -1,0 +1,177 @@
+# 71-round drum magazines of the PPSh.
+- type: entity
+  id: BaseMagazine762x25mmDrum
+  name: drum magazine (7.62x25mm FMJ)
+  parent: [BaseItem, RecyclableItemSteelTiny]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Magazine762x25mmDrum
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge762x25mmFMJ
+    proto: Cartridge762x25mmFMJ
+    capacity: 71
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Item
+    size: Normal
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Magazines/7.62x25mm/7.62x25mm_drum_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine762x25mmDrumFMJ
+  name: drum magazine (7.62x25mm FMJ)
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmFMJ
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x25mmDrumEmpty
+  name: drum magazine (7.62x25mm any)
+  suffix: empty
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x25mmDrumPractice
+  name: drum magazine (7.62x25mm practice)
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmPractice
+  - type: Sprite
+    layers:
+    - state: practice
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x25mmDrumIncendiary
+  name: drum magazine (7.62x25mm incendiary)
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmIncendiary
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x25mmDrumUranium
+  name: drum magazine (7.62x25mm uranium)
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmUranium
+  - type: Sprite
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x25mmDrumRubber
+  name: drum magazine (7.62x25mm rubber)
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmRubber
+  - type: Sprite
+    layers:
+    - state: rubber
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x25mmDrumEmp
+  name: drum magazine (7.62x25mm emp)
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmEmp
+  - type: Sprite
+    layers:
+    - state: emp
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x25mmDrumHP
+  name: drum magazine (7.62x25mm hollow-point)
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmHP
+  - type: Sprite
+    layers:
+    - state: HP
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x25mmDrumRIP
+  name: drum magazine (7.62x25mm RIP)
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmRIP
+  - type: Sprite
+    layers:
+    - state: RIP
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine762x25mmDrumPlasteelAP
+  name: drum magazine (7.62x25mm AP)
+  parent: BaseMagazine762x25mmDrum
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge762x25mmPlasteelAP
+  - type: Sprite
+    layers:
+    - state: plasteelAP
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
