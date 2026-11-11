@@ -261,7 +261,7 @@
 #  - ContractorClothingNeckPonchoSmallBlack # Commented by LuaM
 #  - ContractorClothingNeckPonchoSmallWhite # Commented by LuaM
   subgroups: # LuaM
-  - ContractorNeck # LuaM
+  - MercenaryNeck # LuaM: ContractorNeck > MercenaryNeck
 
 - type: loadoutGroup
   id: USSPBureaucracy
