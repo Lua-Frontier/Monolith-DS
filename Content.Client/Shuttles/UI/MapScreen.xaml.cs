@@ -416,6 +416,8 @@ public sealed partial class MapScreen : BoxContainer
                     continue;
                 if (grid.Owner != _shuttleEntity && _stealthField.IsHiddenFromLocalPlayer(grid.Owner, _console ?? _shuttleEntity)) // LuaM
                     continue;
+                if (grid.Owner != _shuttleEntity && _entManager.HasComponent<Content.Shared._Lua.SpaceHazards.NebulaVeilTrackedComponent>(grid.Owner)) // Lua: veil nebula
+                    continue;
                 var name = hideLabel ?
                     detectionLevel == DetectionLevel.PartialDetected ?
                         Loc.GetString($"shuttle-console-signature-infrared")

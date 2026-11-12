@@ -1,0 +1,33 @@
+# LuaWorld - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaWorld Contributors
+# See AGPLv3.txt for details.
+
+# How a nebula is drawn. Three layers: lower is under the grids, mid and upper are over the floor of open space only.
+- type: ambientSpaceEffect
+  id: Nebula
+  shader: AmbientNebula
+  lowerOpacity: 0.16
+  midOpacity: 0.45
+  upperOpacity: 0.24
+  lowerParallax: 0.85
+  midParallax: 1.0
+  upperParallax: 1.15
+  particleScale: 1.0
+  flowSpeed: 0.20
+
+# Size, color and weather are rolled by AmbientSpaceFieldPlacerController, see the worldgen config.
+- type: entity
+  id: AmbientSpaceFieldNebula
+  name: ambient nebula field
+  description: Atmospheric dust cloud. Sometimes carries hazardous mid-layer weather.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+  - type: SpaceHazardActivity
+    activationRange: 1024
+    idleTimeout: 600
+  - type: AmbientSpaceField
+    effect: Nebula
+    radius: 900
+    density: 0.5
+    color: "#FFFFFFFF"
