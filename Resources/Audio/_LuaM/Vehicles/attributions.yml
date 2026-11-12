@@ -1,0 +1,22 @@
+- files:
+  - overdrive_activate.ogg
+  - sound_vehicles_humvee_horn.ogg
+  - sound_weapons_humvee_cannon.ogg
+  license: "MIT"
+  copyright: "RMC-14 contributors"
+  source: "https://github.com/RMC-14/RMC-14/pull/8791"
+
+- files:
+  - vehicle_idle.ogg
+  - vehicle_slow.ogg
+  - vehicle_med.ogg
+  - vehicle_fast.ogg
+  - vehicle_start.ogg
+  - vehicle_turned_off.ogg
+  - vehicle_crash_1.ogg
+  - vehicle_crash_2.ogg
+  - vehicle_skid_1.ogg
+  - vehicle_skid_2.ogg
+  license: "Custom"
+  copyright: "Taken from Project Zomboid by The Indie Stone, converted to mono ogg. vehicle_idle/slow/med/fast were zb_fb_idle/slow/med/fast, vehicle_crash_1/2 were VehicleCrash1/2"
+  source: "https://projectzomboid.com"

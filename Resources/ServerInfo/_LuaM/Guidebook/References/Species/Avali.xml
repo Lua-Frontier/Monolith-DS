@@ -1,8 +1,10 @@
 <Document>
 # Авали
-<GuideEntityCards>
-<GuideEntityEmbed Entity="MobAvaliDummy"/>
-</GuideEntityCards>
+
+  <Box>
+    <GuideEntityEmbed Entity="MobAvaliDummy" Caption=""/>
+  </Box>
+
 Авали — небольшие пернатые хищники, привычные к холодным мирам. Они заметно ниже людей, покрыты пухом и общаются щебетом и трелями.
 
 ## Питание

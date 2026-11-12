@@ -1,8 +1,10 @@
 <Document>
 # Плафеимы
-<GuideEntityCards>
-<GuideEntityEmbed Entity="MobPlafDummy"/>
-</GuideEntityCards>
+
+  <Box>
+    <GuideEntityEmbed Entity="MobPlafDummy" Caption=""/>
+  </Box>
+
 Плафеимы — акулоподобные гуманоиды с крепкой чешуёй, сильным укусом и жабрами. Их главная бытовая опасность — обезвоживание.
 
 ## Еда и вода

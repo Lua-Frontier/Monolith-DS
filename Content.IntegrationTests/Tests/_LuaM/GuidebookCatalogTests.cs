@@ -120,7 +120,7 @@ public sealed class GuidebookCatalogTests
             }
             Assert.That(entities.EntityCount, Is.EqualTo(before), "Closing catalogue pages releases their selected item sprites.");
         });
-        GuidebookCatalog? previous = null;
+        GuidebookCatalog previous = null;
         void ObserveRefresh() { }
         await pair.Client.WaitPost(() =>
         {

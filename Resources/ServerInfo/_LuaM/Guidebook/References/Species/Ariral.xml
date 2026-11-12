@@ -1,8 +1,10 @@
 <Document>
 # Арирал
-<GuideEntityCards>
-<GuideEntityEmbed Entity="MobAriralDummy"/>
-</GuideEntityCards>
+
+  <Box>
+    <GuideEntityEmbed Entity="MobAriralDummy" Caption=""/>
+  </Box>
+
 Арирал (произносится «а-ри-рал») — гуманоиды с кошачьими чертами. Они выше людей и поначалу могут пугать, но настоящая опасность — их природная токсичность: даже прикосновение к ним бывает опасным.
 
 ## Питание

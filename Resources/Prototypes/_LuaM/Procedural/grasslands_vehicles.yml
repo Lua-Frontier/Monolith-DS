@@ -1,0 +1,250 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+
+- type: zMap
+  id: GrasslandsVehicles
+  maps:
+    - /Maps/_LuaM/Test/grasslands_vehicles.yml
+    - /Maps/_CE/empty.yml
+    - /Maps/_CE/clouds.yml
+    - /Maps/_CE/empty.yml
+    - /Maps/_CE/empty.yml
+  components:
+    - type: MapAtmosphere
+      space: False
+      mixture:
+        volume: 2500
+        immutable: True
+        temperature: 293.15
+        moles:
+        - 21.824879
+        - 82.10312
+    - type: CEZLevelRoof
+    - type: MapLight
+      ambientLightColor: "#c8fdff"
+
+- type: biomeTemplate
+  id: LuaMGrasslandsVehicles
+  layers:
+    - !type:BiomeMetaLayer
+      template: LuaMVehicleGrass
+    - !type:BiomeMetaLayer
+      template: LuaMVehicleSteppe
+      threshold: 0.3
+      noise:
+        seed: 11
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.0035
+        octaves: 2
+        lacunarity: 2
+    - !type:BiomeMetaLayer
+      template: LuaMVehicleDesert
+      threshold: 0.5
+      noise:
+        seed: 23
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.003
+        octaves: 2
+        lacunarity: 2
+
+- type: biomeTemplate
+  id: LuaMVehicleGrass
+  layers:
+    - !type:BiomeDecalLayer
+      threshold: -0.5
+      divisions: 2
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 1
+      allowedTiles:
+        - FloorPlanetGrass
+      decals:
+        - BushDOne
+        - BushDTwo
+        - BushDThree
+    - !type:BiomeDecalLayer
+      noise:
+        seed: 0
+        frequency: 1
+      allowedTiles:
+        - FloorPlanetGrass
+      decals:
+        - FlowersBROne
+        - FlowersBRTwo
+        - FlowersBRThree
+    - !type:BiomeDecalLayer
+      threshold: -0.35
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      allowedTiles:
+        - FloorPlanetGrass
+      decals:
+        - BushAOne
+        - BushATwo
+        - BushAThree
+        - BushCOne
+        - BushCTwo
+        - BushCThree
+    - !type:BiomeEntityLayer
+      threshold: 0.8
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - FloorPlanetGrass
+      entities:
+        - FloraTree
+        - FloraTreeLarge
+    - !type:BiomeEntityLayer
+      threshold: 0.9
+      noise:
+        seed: 5
+        noiseType: OpenSimplex2
+        frequency: 0.07
+      allowedTiles:
+        - FloorPlanetGrass
+        - FloorPlanetDirt
+      entities:
+        - MonoPlanetmapOreBase
+    - !type:BiomeDummyLayer
+      id: Loot
+    - !type:BiomeEntityLayer
+      threshold: 0.93
+      noise:
+        seed: 7
+        noiseType: OpenSimplex2
+        frequency: 0.025
+      allowedTiles:
+        - FloorPlanetGrass
+        - FloorPlanetDirt
+      entities:
+        - CEWater
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorPlanetDirt
+    - !type:BiomeTileLayer
+      threshold: -0.9
+      tile: FloorPlanetGrass
+      noise:
+        seed: 0
+        frequency: 0.02
+        fractalType: None
+    - !type:BiomeTileLayer
+      threshold: 0.86
+      tile: FloorPlanetDirt
+      noise:
+        seed: 5
+        noiseType: OpenSimplex2
+        frequency: 0.07
+
+- type: biomeTemplate
+  id: LuaMVehicleSteppe
+  layers:
+    - !type:BiomeDecalLayer
+      threshold: -0.5
+      divisions: 2
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 1
+      allowedTiles:
+        - FloorPlanetGrass
+      decals:
+        - BushDOne
+        - BushDTwo
+        - BushDThree
+    - !type:BiomeDecalLayer
+      noise:
+        seed: 0
+        frequency: 1
+      allowedTiles:
+        - FloorPlanetGrass
+      decals:
+        - FlowersBROne
+        - FlowersBRTwo
+        - FlowersBRThree
+    - !type:BiomeDecalLayer
+      threshold: -0.35
+      noise:
+        seed: 0
+        noiseType: Cellular
+        frequency: 0.2
+        fractalType: FBm
+        octaves: 5
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance2
+      allowedTiles:
+        - FloorPlanetGrass
+      decals:
+        - BushAOne
+        - BushATwo
+        - BushAThree
+        - BushCOne
+        - BushCTwo
+        - BushCThree
+    - !type:BiomeEntityLayer
+      threshold: 0.92
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - FloorPlanetGrass
+      entities:
+        - FloraTree
+    - !type:BiomeEntityLayer
+      threshold: 0.97
+      noise:
+        seed: 9
+        noiseType: OpenSimplex2
+        frequency: 2
+      allowedTiles:
+        - FloorPlanetDirt
+      entities:
+        - FloraRockSolid
+    - !type:BiomeDummyLayer
+      id: Loot
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorPlanetDirt
+    - !type:BiomeTileLayer
+      threshold: -0.2
+      tile: FloorPlanetGrass
+      noise:
+        seed: 13
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.04
+        octaves: 3
+
+- type: biomeTemplate
+  id: LuaMVehicleDesert
+  layers:
+    - !type:BiomeEntityLayer
+      threshold: 0.96
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        frequency: 2
+      allowedTiles:
+        - FloorAsteroidSandPlanet
+      entities:
+        - FloraRockSolid
+    - !type:BiomeDummyLayer
+      id: Loot
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorAsteroidSandPlanet

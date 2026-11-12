@@ -81,7 +81,7 @@ public sealed class GuidebookViewTests
             using var window = new GuidebookWindow();
             var home = window.FindControl<Button>("HomeButton")!;
             var pressed = typeof(BaseButton).GetField("OnPressed", BindingFlags.Instance | BindingFlags.NonPublic)!;
-            var homeListeners = ((Delegate?) pressed.GetValue(home))?.GetInvocationList().Length ?? 0;
+            var homeListeners = ((Delegate) pressed.GetValue(home))?.GetInvocationList().Length ?? 0;
             var allGuides = prototypes.EnumeratePrototypes<GuideEntryPrototype>()
                 .ToDictionary(p => new ProtoId<GuideEntryPrototype>(p.ID), p => (GuideEntry) p);
             window.UpdateGuides(allGuides, GuidebookNavigation.GetBookRoots(allGuides), selected: "NewPlayer");
@@ -94,7 +94,7 @@ public sealed class GuidebookViewTests
                 window.HandleClick("NewPlayer");
             }
             Assert.That(entities.EntityCount, Is.EqualTo(beforePages), "Changing guides releases their client-side sprites.");
-            Assert.That(((Delegate?) pressed.GetValue(home))?.GetInvocationList().Length ?? 0, Is.EqualTo(homeListeners),
+            Assert.That(((Delegate) pressed.GetValue(home))?.GetInvocationList().Length ?? 0, Is.EqualTo(homeListeners),
                 "Selecting pages must not accumulate home-button callbacks.");
             window.UpdateGuides(new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>
             {
