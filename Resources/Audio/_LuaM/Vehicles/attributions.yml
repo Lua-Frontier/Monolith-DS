@@ -17,6 +17,13 @@
   - vehicle_crash_2.ogg
   - vehicle_skid_1.ogg
   - vehicle_skid_2.ogg
+  - vehicle_door_open.ogg
   license: "Custom"
-  copyright: "Taken from Project Zomboid by The Indie Stone, converted to mono ogg. vehicle_idle/slow/med/fast were zb_fb_idle/slow/med/fast, vehicle_crash_1/2 were VehicleCrash1/2"
+  copyright: "Taken from Project Zomboid by The Indie Stone, converted to mono ogg. vehicle_idle/slow/med/fast were zb_fb_idle/slow/med/fast, vehicle_crash_1/2 were VehicleCrash1/2, vehicle_door_open was dooropen"
   source: "https://projectzomboid.com"
+
+- files:
+  - vehicle_door_close.ogg
+  license: "Custom"
+  copyright: "\"Slammed the car door\" (2024), provided by c_quarian (Monolith-DS), converted to mono ogg"
+  source: "Not specified, the file was provided by c_quarian (Monolith-DS)"

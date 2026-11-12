@@ -429,7 +429,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                 if (weaponUid == target)
                     return false;
 
-                if (target == attacker || target == user) // LuaM
+                if (attacker != user && (target == attacker || target == user)) // LuaM
                     return false; // LuaM
 
                 break;
@@ -439,6 +439,9 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                     // Target was lightly attacked & deleted.
                     return false;
                 }
+
+                if (target == attacker || target == user) // LuaM
+                    return false; // LuaM
 
                 if (!Blocker.CanAttack(attacker, target, (weaponUid, weapon), true))
                     return false;

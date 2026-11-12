@@ -52,13 +52,13 @@ public sealed partial class VehicleEngineSystem : EntitySystem
             Dirty(uid, engine);
 
             if (TryComp<BuckleComponent>(exiting, out var buckle) && buckle.BuckledTo == uid)
-                _buckle.Unbuckle((exiting, buckle), exiting);
+                _buckle.Unbuckle((exiting, buckle), null);
         }
     }
 
     public bool CanDrive(VehicleEngineComponent engine)
     {
-        return engine.Running && engine.Exiting == null && _timing.CurTime >= engine.ReadyAt;
+        return engine.EngineOn && engine.Exiting == null && _timing.CurTime >= engine.ReadyAt;
     }
 
     private void OnSeatsChanged(Entity<VehicleEngineComponent> ent, ref VehicleSeatsChangedEvent args)
@@ -110,7 +110,7 @@ public sealed partial class VehicleEngineSystem : EntitySystem
             return;
         }
 
-        if (!ent.Comp.Running)
+        if (!ent.Comp.EngineOn)
             return;
 
         args.Cancelled = true;
@@ -124,10 +124,10 @@ public sealed partial class VehicleEngineSystem : EntitySystem
     // -- Уже работающий мотор повторно не заводим, иначе звук запуска ляжет поверх гула
     private void Start(Entity<VehicleEngineComponent> ent)
     {
-        if (_net.IsClient || ent.Comp.Running)
+        if (_net.IsClient || ent.Comp.EngineOn)
             return;
 
-        ent.Comp.Running = true;
+        ent.Comp.EngineOn = true;
         ent.Comp.Exiting = null;
         ent.Comp.ReadyAt = _timing.CurTime + GetLength(ent.Comp.StartSound);
         ent.Comp.StartStream = _audio.PlayPvs(ent.Comp.StartSound, ent)?.Entity;
@@ -136,10 +136,10 @@ public sealed partial class VehicleEngineSystem : EntitySystem
 
     private void Stop(Entity<VehicleEngineComponent> ent)
     {
-        if (!ent.Comp.Running)
+        if (!ent.Comp.EngineOn)
             return;
 
-        ent.Comp.Running = false;
+        ent.Comp.EngineOn = false;
         Dirty(ent);
 
         if (_net.IsClient)

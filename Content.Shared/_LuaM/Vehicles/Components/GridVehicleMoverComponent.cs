@@ -4,14 +4,12 @@
  * See AGPLv3.txt for details.
  */
 
-using System.Numerics;
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared._LuaM.Vehicles.Components;
 
 // -- Порт GridVehicleMover из RMC-14: машина двигается кинематически, проверяя корпус пробами по пути
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class GridVehicleMoverComponent : Component
 {
     [DataField, AutoNetworkedField]
@@ -48,46 +46,25 @@ public sealed partial class GridVehicleMoverComponent : Component
     public float ProbeStep = 0.1f;
 
     [DataField]
-    public bool CanSmashWalls;
+    public float RamMinSpeed = 3f;
 
     [DataField]
-    public float WallSmashMinSpeed = 7f;
+    public float RamStructureDamage = 12f;
 
     [DataField]
-    public float WallSmashDamageMultiplier = 4f;
+    public float RamHullDamage = 2f;
 
     [DataField]
-    public float WallSmashHullDamage = 18f;
+    public float MobRamDamage = 2.5f;
 
     [DataField]
-    public float WallSmashSlowdownMultiplier = 0.75f;
+    public float MobRamSpeedMultiplier = 0.9f;
 
     [DataField]
-    public float WallSmashSlowdownDuration = 0.25f;
-
-    [DataField]
-    public float MobCollisionDamage = 8f;
-
-    [DataField]
-    public float MobCollisionHullDamage = 8f;
+    public float MobCollisionHullDamage = 4f;
 
     [DataField]
     public float MobKnockdownTime = 1.5f;
-
-    [DataField]
-    public float MobMinImpactSpeed = 1f;
-
-    [DataField]
-    public float CrashImmobileDuration = 3f;
-
-    [DataField]
-    public float CrashImmobileMinSpeed = 8f;
-
-    [DataField]
-    public float MobCrashImmobileDuration = 4f;
-
-    [DataField]
-    public float MobCrashImmobileMinSpeed = 5f;
 
     [DataField]
     public float FullSpeedIntegrityFraction = 0.7f;
@@ -110,6 +87,22 @@ public sealed partial class GridVehicleMoverComponent : Component
     [DataField, AutoNetworkedField]
     public float DriftDrag = 10f;
 
+    // -- Ручник на кнопке ходьбы: тормозит и срывает машину в занос даже на небольшой скорости
+    [DataField, AutoNetworkedField]
+    public float HandbrakeDeceleration = 5f;
+
+    [DataField, AutoNetworkedField]
+    public float HandbrakeGripDegrees = 25f;
+
+    [DataField, AutoNetworkedField]
+    public float HandbrakeTurnMultiplier = 1.4f;
+
+    [DataField, AutoNetworkedField]
+    public float HandbrakeDriftMinSpeed = 2.5f;
+
+    [AutoNetworkedField]
+    public bool Handbrake;
+
     [AutoNetworkedField]
     public float CurrentSpeed;
 
@@ -123,18 +116,6 @@ public sealed partial class GridVehicleMoverComponent : Component
     [AutoNetworkedField]
     public bool IsMoving;
 
-    [AutoNetworkedField]
-    public float SmashSlowdownMultiplier = 1f;
-
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
-    public TimeSpan SmashSlowdownUntil;
-
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
-    public TimeSpan ImmobileUntil;
-
     [ViewVariables]
     public float Accumulator;
-
-    [ViewVariables]
-    public TimeSpan NextImmobilePopup;
 }

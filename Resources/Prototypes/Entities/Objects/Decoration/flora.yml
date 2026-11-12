@@ -38,6 +38,16 @@
   description: Yep, it's a tree.
   abstract: true
   components:
+  - type: VehicleCrushable # LuaM
+    minSpeed: 9 # LuaM
+    hullDamage: 40 # LuaM
+    speedMultiplier: 0.5 # LuaM
+    drop: Log # LuaM
+    sound: # LuaM
+      path: /Audio/Effects/tree_fell.ogg # LuaM
+      params: # LuaM
+        volume: 5 # LuaM
+        variation: 0.05 # LuaM
   - type: SpriteFade
   - type: Clickable
   - type: Sprite
@@ -149,6 +159,15 @@
   parent: BaseRock
   id: FloraRockSolid
   components:
+  - type: VehicleCrushable # LuaM
+    minSpeed: 9 # LuaM
+    hullDamage: 60 # LuaM
+    speedMultiplier: 0.5 # LuaM
+    sound: # LuaM
+      path: /Audio/Effects/break_stone.ogg # LuaM
+      params: # LuaM
+        volume: 5 # LuaM
+        variation: 0.05 # LuaM
   - type: Sprite
     layers:
     - state: rocksolid01

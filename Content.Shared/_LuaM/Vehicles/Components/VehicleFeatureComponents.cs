@@ -54,10 +54,20 @@ public sealed partial class VehicleEngineComponent : Component
     public SoundSpecifier? FastSound;
 
     [DataField]
+    public SoundSpecifier? SkidStartSound;
+
+    [DataField]
     public SoundSpecifier? SkidSound;
 
     [DataField]
-    public TimeSpan ExitDelay = TimeSpan.FromSeconds(1);
+    public TimeSpan ExitDelay = TimeSpan.Zero;
+
+    // -- После глушения гул ещё звучит и плавно затихает
+    [DataField]
+    public float StopFadeDelay = 1f;
+
+    [DataField]
+    public float StopFadeTime = 1f;
 
     [DataField]
     public float Volume = -3f;
@@ -75,7 +85,7 @@ public sealed partial class VehicleEngineComponent : Component
     public float SkidDegrees = 12f;
 
     [DataField, AutoNetworkedField]
-    public bool Running;
+    public bool EngineOn;
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
     public TimeSpan ReadyAt;

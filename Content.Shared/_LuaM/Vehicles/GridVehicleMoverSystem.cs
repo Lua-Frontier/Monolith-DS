@@ -8,16 +8,13 @@ using System.Numerics;
 using Content.Shared._LuaM.Vehicles.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
-using Content.Shared.Item;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Physics;
-using Content.Shared.Popups;
 using Content.Shared.Standing;
-using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
@@ -38,7 +35,6 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private ISharedPlayerManager _player = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private StandingStateSystem _standing = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
@@ -47,6 +43,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     private const int MaxStepsPerFrame = 6;
     private const float MinSpeed = 0.01f;
     private const float MinMove = 0.0001f;
+    private const float HardTurnFraction = 0.8f;
     private const float Clearance = PhysicsConstants.PolygonRadius * 0.75f;
     private const int MobPassMask = (int) CollisionGroup.MobMask;
     private const int MobPassLayer = (int) CollisionGroup.MobLayer;
@@ -98,13 +95,16 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             if (xform.GridUid is not { } grid || xform.ParentUid != grid)
                 continue;
 
-            var (throttle, steering) = GetInput(uid, seats);
+            var (throttle, steering, handbrake) = GetInput(uid, seats);
             var wasMoving = mover.IsMoving;
+            var wasDrifting = mover.DriftDegrees != 0f;
+            var handbrakeChanged = mover.Handbrake != handbrake;
+            mover.Handbrake = handbrake;
 
             mover.Accumulator = MathF.Min(mover.Accumulator + frameTime, FixedStep * MaxStepsPerFrame);
             while (mover.Accumulator >= FixedStep)
             {
-                Step((uid, mover, xform), seats, grid, throttle, steering, FixedStep);
+                Step((uid, mover, xform), seats, grid, throttle, steering, handbrake, FixedStep);
                 mover.Accumulator -= FixedStep;
             }
 
@@ -115,26 +115,24 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
                 RaiseLocalEvent(uid, ref ev);
             }
 
-            if (mover.IsMoving)
-                PlayRunningSound(uid);
-
-            Dirty(uid, mover);
+            if (mover.IsMoving || wasMoving || wasDrifting || handbrakeChanged || mover.AngularVelocityDegrees != 0f)
+                Dirty(uid, mover);
         }
     }
 
-    private (float Throttle, float Steering) GetInput(EntityUid uid, VehicleSeatsComponent seats)
+    private (float Throttle, float Steering, bool Handbrake) GetInput(EntityUid uid, VehicleSeatsComponent seats)
     {
         if (seats.Driver is not { } driver ||
             !TryComp<InputMoverComponent>(driver, out var input) ||
             !_actionBlocker.CanConsciouslyPerformAction(driver))
         {
-            return (0f, 0f);
+            return (0f, 0f, false);
         }
 
         var ev = new VehicleCanMoveEvent();
         RaiseLocalEvent(uid, ref ev);
         if (ev.Cancelled)
-            return (0f, 0f);
+            return (0f, 0f, false);
 
         var buttons = input.HeldMoveButtons;
         var throttle = 0f;
@@ -149,7 +147,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         if ((buttons & MoveButtons.Right) != 0)
             steering -= 1f;
 
-        return (throttle, steering);
+        return (throttle, steering, (buttons & MoveButtons.Walk) != 0);
     }
 
     private void Step(
@@ -158,21 +156,10 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         EntityUid grid,
         float throttle,
         float steering,
+        bool handbrake,
         float dt)
     {
         var (uid, mover, xform) = ent;
-
-        if (_timing.CurTime < mover.ImmobileUntil)
-        {
-            if ((throttle != 0f || steering != 0f) && seats.Driver is { } driver && _timing.CurTime >= mover.NextImmobilePopup)
-            {
-                mover.NextImmobilePopup = _timing.CurTime + TimeSpan.FromSeconds(2);
-                _popup.PopupClient(Loc.GetString("luam-vehicle-immobile"), uid, driver, PopupType.SmallCaution);
-            }
-
-            throttle = 0f;
-            steering = 0f;
-        }
 
         var rotation = xform.LocalRotation;
         var position = xform.LocalPosition;
@@ -181,6 +168,9 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         {
             var reversing = mover.CurrentSpeed < -MinSpeed;
             var target = (reversing ? -steering : steering) * mover.MaxRotationSpeedDegrees;
+            if (handbrake)
+                target *= mover.HandbrakeTurnMultiplier;
+
             var accel = steering == 0f ? mover.RotationDecelerationDegrees : mover.RotationAccelerationDegrees;
             mover.AngularVelocityDegrees = StepTowards(mover.AngularVelocityDegrees, target, accel * dt);
         }
@@ -189,7 +179,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             mover.AngularVelocityDegrees = 0f;
         }
 
-        if (steering == 0f && throttle != 0f && mover.AlignmentAssistDegrees > 0f &&
+        if (steering == 0f && throttle != 0f && mover.DriftDegrees == 0f && mover.AlignmentAssistDegrees > 0f &&
             MathF.Abs(mover.CurrentSpeed) > MinSpeed &&
             MathF.Abs(mover.CurrentSpeed) <= mover.AlignmentAssistMaxSpeed)
         {
@@ -198,11 +188,13 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
                 mover.AngularVelocityDegrees = (float) Math.Clamp(delta / dt, -30, 30);
         }
 
+        var turned = 0f;
         if (MathF.Abs(mover.AngularVelocityDegrees) > 0.001f)
         {
             var desired = rotation + Angle.FromDegrees(mover.AngularVelocityDegrees * dt);
             if (CanOccupy(uid, mover, seats, grid, position, desired, true))
             {
+                turned = mover.AngularVelocityDegrees * dt;
                 rotation = desired;
                 _transform.SetLocalRotationNoLerp(uid, rotation, xform);
             }
@@ -212,12 +204,19 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             }
         }
 
+        UpdateDrift(mover, steering, handbrake, turned, dt);
+
         var maxSpeed = GetMaxSpeed(uid, mover, false);
         var maxReverse = GetMaxSpeed(uid, mover, true);
 
         float targetSpeed;
         float rate;
-        if (throttle > 0f)
+        if (handbrake)
+        {
+            targetSpeed = 0f;
+            rate = mover.HandbrakeDeceleration;
+        }
+        else if (throttle > 0f)
         {
             targetSpeed = mover.CurrentSpeed < 0f ? 0f : maxSpeed;
             rate = mover.CurrentSpeed < 0f ? mover.Deceleration : mover.Acceleration;
@@ -233,21 +232,27 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             rate = mover.Deceleration;
         }
 
-        if (MathF.Abs(mover.CurrentSpeed) > MathF.Abs(targetSpeed) && throttle != 0f && MathF.Sign(mover.CurrentSpeed) == MathF.Sign(targetSpeed))
+        if (!handbrake && MathF.Abs(mover.CurrentSpeed) > MathF.Abs(targetSpeed) && throttle != 0f && MathF.Sign(mover.CurrentSpeed) == MathF.Sign(targetSpeed))
             rate = mover.Deceleration;
 
         mover.CurrentSpeed = StepTowards(mover.CurrentSpeed, targetSpeed, rate * dt);
+
+        if (mover.DriftDegrees != 0f)
+        {
+            var drag = mover.DriftDrag * MathF.Abs(MathF.Sin(MathHelper.DegreesToRadians(mover.DriftDegrees))) * dt;
+            mover.CurrentSpeed = StepTowards(mover.CurrentSpeed, 0f, drag);
+        }
 
         var travel = MathF.Abs(mover.CurrentSpeed) * dt;
         if (travel <= MinMove)
             return;
 
-        var forward = rotation.ToWorldVec() * MathF.Sign(mover.CurrentSpeed);
+        var heading = rotation - Angle.FromDegrees(mover.DriftDegrees);
+        var forward = heading.ToWorldVec() * MathF.Sign(mover.CurrentSpeed);
         var start = position;
         var steps = Math.Max(1, (int) MathF.Ceiling(travel / Math.Clamp(mover.ProbeStep, 0.02f, 0.5f)));
         var lastGood = start;
         var blocked = false;
-        var impactSpeed = MathF.Abs(mover.CurrentSpeed);
 
         for (var i = 1; i <= steps; i++)
         {
@@ -267,22 +272,35 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         if (blocked)
         {
             mover.CurrentSpeed = 0f;
-            if (mover.CrashImmobileDuration > 0f && impactSpeed >= mover.CrashImmobileMinSpeed)
-                SetImmobile(uid, mover, mover.CrashImmobileDuration);
+            mover.DriftDegrees = 0f;
         }
 
         _physics.WakeBody(uid);
     }
 
+    // -- Занос: при резком повороте на скорости или с ручником корпус поворачивается быстрее, чем меняется направление движения
+    private static void UpdateDrift(GridVehicleMoverComponent mover, float steering, bool handbrake, float turned, float dt)
+    {
+        var minSpeed = handbrake ? mover.HandbrakeDriftMinSpeed : mover.DriftMinSpeed;
+        var sliding = mover.DriftMinSpeed > 0f &&
+                      steering != 0f &&
+                      mover.CurrentSpeed >= minSpeed &&
+                      (handbrake || MathF.Abs(mover.AngularVelocityDegrees) >= mover.MaxRotationSpeedDegrees * HardTurnFraction);
+
+        if (!sliding && mover.DriftDegrees == 0f)
+            return;
+
+        var grip = !sliding ? mover.DriftRecoverDegrees : handbrake ? mover.HandbrakeGripDegrees : mover.DriftGripDegrees;
+        var drift = StepTowards(mover.DriftDegrees + turned, 0f, grip * dt);
+        mover.DriftDegrees = Math.Clamp(drift, -mover.DriftMaxDegrees, mover.DriftMaxDegrees);
+
+        if (mover.CurrentSpeed <= MinSpeed)
+            mover.DriftDegrees = 0f;
+    }
+
     private float GetMaxSpeed(EntityUid uid, GridVehicleMoverComponent mover, bool reverse)
     {
-        if (_timing.CurTime < mover.ImmobileUntil)
-            return 0f;
-
         var speed = reverse ? mover.MaxReverseSpeed : mover.MaxSpeed;
-
-        if (_timing.CurTime < mover.SmashSlowdownUntil)
-            speed *= mover.SmashSlowdownMultiplier;
 
         if (TryComp<VehicleOverchargeComponent>(uid, out var overcharge) && _timing.CurTime < overcharge.ActiveUntil)
             speed *= overcharge.SpeedMultiplier;
@@ -299,18 +317,15 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         return speed;
     }
 
-    private void SetImmobile(EntityUid uid, GridVehicleMoverComponent mover, float seconds)
+    // -- Машина двигается через трансформ, физической скорости у неё и пассажиров нет: эффектам отдаём её вручную
+    public Vector2 GetCarrierVelocity(EntityUid entity)
     {
-        var until = _timing.CurTime + TimeSpan.FromSeconds(seconds);
-        if (until <= mover.ImmobileUntil)
-            return;
+        var parent = Transform(entity).ParentUid;
+        if (!TryComp<GridVehicleMoverComponent>(parent, out var mover) || MathF.Abs(mover.CurrentSpeed) <= MinSpeed)
+            return Vector2.Zero;
 
-        mover.ImmobileUntil = until;
-        mover.CurrentSpeed = 0f;
-        mover.AngularVelocityDegrees = 0f;
-
-        if (TryComp<VehicleSeatsComponent>(uid, out var seats) && seats.Driver is { } driver)
-            _popup.PopupClient(Loc.GetString("luam-vehicle-crash"), uid, driver, PopupType.MediumCaution);
+        var heading = _transform.GetWorldRotation(parent) - Angle.FromDegrees(mover.DriftDegrees);
+        return heading.ToWorldVec() * mover.CurrentSpeed;
     }
 
     public void Stop(EntityUid uid, GridVehicleMoverComponent? mover = null)
@@ -320,6 +335,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
 
         mover.CurrentSpeed = 0f;
         mover.AngularVelocityDegrees = 0f;
+        mover.DriftDegrees = 0f;
         Dirty(uid, mover);
     }
 

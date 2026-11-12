@@ -3,8 +3,6 @@ luam-vehicle-seat-gunner = место стрелка
 luam-vehicle-seat-passenger = место пассажира { $number }
 luam-vehicle-verb-take-seat = Сесть: { $seat }
 luam-vehicle-verb-switch-seat = Пересесть: { $seat }
-luam-vehicle-immobile = Двигатель заглох, нужно подождать!
-luam-vehicle-crash = Удар! Двигатель заглох.
 luam-vehicle-deploying = Машина разворачивается...
 luam-vehicle-undeploying = Машина сворачивается...
 luam-vehicle-deployed = Машина развёрнута.
@@ -30,3 +28,4 @@ luam-hardpoint-type-wheel = Колёса
 luam-hardpoint-examine-empty = { $slot }: [color=gray]пусто[/color]
 luam-hardpoint-examine-installed = { $slot }: [color=lightblue]{ $item }[/color]{ $ammo }
 luam-hardpoint-examine-ammo = , боезапас { $count }/{ $capacity }
+luam-vehicle-engine-stopping = Двигатель заглох...

@@ -3,8 +3,6 @@ luam-vehicle-seat-gunner = gunner seat
 luam-vehicle-seat-passenger = passenger seat { $number }
 luam-vehicle-verb-take-seat = Take { $seat }
 luam-vehicle-verb-switch-seat = Move to { $seat }
-luam-vehicle-immobile = The engine stalled, wait a moment!
-luam-vehicle-crash = Crash! The engine stalled.
 luam-vehicle-deploying = Deploying the vehicle...
 luam-vehicle-undeploying = Packing up the vehicle...
 luam-vehicle-deployed = The vehicle is deployed.
@@ -30,3 +28,4 @@ luam-hardpoint-type-wheel = Wheels
 luam-hardpoint-examine-empty = { $slot }: [color=gray]empty[/color]
 luam-hardpoint-examine-installed = { $slot }: [color=lightblue]{ $item }[/color]{ $ammo }
 luam-hardpoint-examine-ammo = , ammo { $count }/{ $capacity }
+luam-vehicle-engine-stopping = You turn the engine off...

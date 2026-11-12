@@ -14,7 +14,7 @@
   - type: Sprite
     sprite: _Orion/Objects/Misc/bedsheets_double.rsi
     noRot: true
-    drawdepth: OverMobs
+    drawdepth: BelowMobs # LuaM
   - type: SpriteFade
     clickThrough: false
   - type: Item

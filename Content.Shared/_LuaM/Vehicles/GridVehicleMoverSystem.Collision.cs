@@ -30,14 +30,13 @@ public sealed partial class GridVehicleMoverSystem
     [Dependency] private TagSystem _tag = default!;
 
     private static readonly ProtoId<TagPrototype> SmashIgnoreTag = "VehicleSmashIgnore";
-    private static readonly TimeSpan MobHitCooldown = TimeSpan.FromSeconds(0.75);
+    private static readonly TimeSpan HitCooldown = TimeSpan.FromSeconds(0.75);
 
-    private readonly Dictionary<EntityUid, TimeSpan> _lastMobHit = new();
-    private readonly Dictionary<(EntityUid, EntityUid), TimeSpan> _smashCooldowns = new();
+    private readonly Dictionary<EntityUid, TimeSpan> _lastHit = new();
 
     private void InitializeCollision()
     {
-        SubscribeLocalEvent<GridVehicleMoverComponent, ComponentShutdown>((_, _, _) => _lastMobHit.Clear());
+        SubscribeLocalEvent<GridVehicleMoverComponent, ComponentShutdown>((_, _, _) => _lastHit.Clear());
     }
 
     private bool CanOccupy(
@@ -72,8 +71,11 @@ public sealed partial class GridVehicleMoverSystem
         var blocked = false;
         foreach (var (other, otherBody) in _intersecting)
         {
-            if (other == uid || other == grid || !otherBody.CanCollide || TerminatingOrDeleted(other))
+            if (other == uid || other == grid || !otherBody.CanCollide ||
+                TerminatingOrDeleted(other) || EntityManager.IsQueuedForDeletion(other))
+            {
                 continue;
+            }
 
             if (TryComp<VehicleOccupantComponent>(other, out var occupant) && occupant.Vehicle == uid)
                 continue;
@@ -90,16 +92,7 @@ public sealed partial class GridVehicleMoverSystem
 
             if (TryComp<MobStateComponent>(other, out var mobState))
             {
-                if (_mobState.IsDead(other, mobState) || _standing.IsDown(other))
-                    continue;
-
-                if (MathF.Abs(mover.CurrentSpeed) < mover.MobMinImpactSpeed)
-                {
-                    blocked = true;
-                    break;
-                }
-
-                if (applyEffects)
+                if (applyEffects && !_mobState.IsDead(other, mobState) && !_standing.IsDown(other))
                     HitMob(uid, mover, other, worldPos, worldRot);
 
                 continue;
@@ -117,12 +110,17 @@ public sealed partial class GridVehicleMoverSystem
                     _door.TryOpen(other, door, driver);
             }
 
-            if (applyEffects && TrySmash(uid, mover, other))
+            if (TryComp<VehicleCrushableComponent>(other, out var crushable) && MathF.Abs(mover.CurrentSpeed) >= crushable.MinSpeed)
+            {
+                if (applyEffects)
+                    Crush(uid, mover, (other, crushable));
+
                 continue;
+            }
 
             blocked = true;
             if (applyEffects)
-                PlayCollisionSound(uid);
+                Ram(uid, mover, other);
 
             break;
         }
@@ -130,45 +128,39 @@ public sealed partial class GridVehicleMoverSystem
         return !blocked;
     }
 
-    private bool TrySmash(EntityUid uid, GridVehicleMoverComponent mover, EntityUid target)
+    // -- Таран: строение получает урон по скорости, сама машина тоже, после чего она упирается и встаёт
+    private void Ram(EntityUid uid, GridVehicleMoverComponent mover, EntityUid target)
     {
         var speed = MathF.Abs(mover.CurrentSpeed);
-        if (!mover.CanSmashWalls || speed < mover.WallSmashMinSpeed ||
-            HasComp<GridVehicleMoverComponent>(target) ||
-            !HasComp<DamageableComponent>(target) ||
-            _tag.HasTag(target, SmashIgnoreTag))
+        if (_net.IsClient || speed < mover.RamMinSpeed || !TryStartHit(target))
+            return;
+
+        if (HasComp<DamageableComponent>(target) && !_tag.HasTag(target, SmashIgnoreTag))
         {
-            return false;
+            var damage = new DamageSpecifier();
+            damage.DamageDict["Structural"] = speed * mover.RamStructureDamage * _hardpoints.GetStructureDamageMultiplier(uid);
+            _damageable.TryChangeDamage(target, damage, true, origin: uid);
         }
 
+        DamageHull(uid, speed * mover.RamHullDamage, target);
+        PlayCollisionSound(uid);
+    }
+
+    // -- Деревья на скорости сносятся целиком: остаётся одно бревно, машина проезжает дальше, теряя скорость
+    private void Crush(EntityUid uid, GridVehicleMoverComponent mover, Entity<VehicleCrushableComponent> target)
+    {
         if (_net.IsClient)
-            return false;
+            return;
 
-        var now = _timing.CurTime;
-        if (_smashCooldowns.TryGetValue((uid, target), out var next) && now < next)
-            return false;
+        mover.CurrentSpeed *= target.Comp.SpeedMultiplier;
+        var coords = Transform(target).Coordinates;
+        _audio.PlayPvs(target.Comp.Sound, coords);
+        if (target.Comp.Drop is { } drop)
+            Spawn(drop, coords);
 
-        _smashCooldowns[(uid, target)] = now + TimeSpan.FromSeconds(0.5);
-
-        var multiplier = mover.WallSmashDamageMultiplier * _hardpoints.GetStructureDamageMultiplier(uid);
-        var damage = new DamageSpecifier();
-        damage.DamageDict["Structural"] = speed * speed * multiplier;
-        _damageable.TryChangeDamage(target, damage, true, origin: uid);
-
-        if (mover.WallSmashHullDamage > 0f)
-        {
-            var hull = new DamageSpecifier();
-            hull.DamageDict["Blunt"] = mover.WallSmashHullDamage;
-            _damageable.TryChangeDamage(uid, hull, true, origin: uid);
-        }
-
-        mover.SmashSlowdownMultiplier = mover.WallSmashSlowdownMultiplier;
-        mover.SmashSlowdownUntil = now + TimeSpan.FromSeconds(mover.WallSmashSlowdownDuration);
-        mover.CurrentSpeed *= mover.WallSmashSlowdownMultiplier;
+        QueueDel(target);
+        DamageHull(uid, target.Comp.HullDamage, target);
         PlayCollisionSound(uid, true);
-
-        return TerminatingOrDeleted(target) || EntityManager.IsQueuedForDeletion(target) ||
-               !_physicsQuery.TryComp(target, out var targetBody) || !targetBody.CanCollide;
     }
 
     private void HitMob(EntityUid uid, GridVehicleMoverComponent mover, EntityUid mob, Vector2 hullPos, Angle hullRot)
@@ -176,35 +168,48 @@ public sealed partial class GridVehicleMoverSystem
         if (_net.IsClient)
             return;
 
-        var now = _timing.CurTime;
-        if (_lastMobHit.TryGetValue(mob, out var last) && now < last + MobHitCooldown)
-            return;
-
-        _lastMobHit[mob] = now;
         var speed = MathF.Abs(mover.CurrentSpeed);
-
-        var damage = new DamageSpecifier();
-        damage.DamageDict["Blunt"] = mover.MobCollisionDamage;
-        _damageable.TryChangeDamage(mob, damage, origin: uid);
-        _stun.TryKnockdown(mob, TimeSpan.FromSeconds(mover.MobKnockdownTime), true);
-
-        if (mover.MobCollisionHullDamage > 0f)
+        if (speed >= mover.RamMinSpeed && TryStartHit(mob))
         {
-            var hull = new DamageSpecifier();
-            hull.DamageDict["Blunt"] = mover.MobCollisionHullDamage;
-            _damageable.TryChangeDamage(uid, hull, true, origin: mob);
-        }
+            var damage = new DamageSpecifier();
+            damage.DamageDict["Blunt"] = speed * mover.MobRamDamage;
+            _damageable.TryChangeDamage(mob, damage, origin: uid);
+            _stun.TryKnockdown(mob, TimeSpan.FromSeconds(mover.MobKnockdownTime), true);
 
-        if (TryComp<VehicleSoundComponent>(uid, out var sound) && sound.MobCollisionSound != null)
-            _audio.PlayPvs(sound.MobCollisionSound, uid);
+            DamageHull(uid, mover.MobCollisionHullDamage, mob);
+            mover.CurrentSpeed *= mover.MobRamSpeedMultiplier;
+
+            if (TryComp<VehicleSoundComponent>(uid, out var sound))
+                _audio.PlayPvs(sound.MobCollisionSound, uid);
+        }
 
         var mobPos = _transform.GetWorldPosition(mob);
         var right = hullRot.RotateVec(new Vector2(1f, 0f));
         var side = Vector2.Dot(mobPos - hullPos, right) >= 0f ? 1f : -1f;
         _transform.SetWorldPosition(mob, mobPos + right * side * 0.6f);
+    }
 
-        if (mover.MobCrashImmobileDuration > 0f && speed >= mover.MobCrashImmobileMinSpeed)
-            SetImmobile(uid, mover, mover.MobCrashImmobileDuration);
+    private bool TryStartHit(EntityUid target)
+    {
+        var now = _timing.CurTime;
+        if (_lastHit.TryGetValue(target, out var last) && now < last + HitCooldown)
+            return false;
+
+        if (_lastHit.Count > 256)
+            _lastHit.Clear();
+
+        _lastHit[target] = now;
+        return true;
+    }
+
+    private void DamageHull(EntityUid uid, float amount, EntityUid origin)
+    {
+        if (amount <= 0f)
+            return;
+
+        var hull = new DamageSpecifier();
+        hull.DamageDict["Blunt"] = amount;
+        _damageable.TryChangeDamage(uid, hull, true, origin: origin);
     }
 
     private void PlayCollisionSound(EntityUid uid, bool force = false)
@@ -218,19 +223,6 @@ public sealed partial class GridVehicleMoverSystem
 
         sound.NextCollisionSound = now + TimeSpan.FromSeconds(sound.CollisionSoundCooldown);
         _audio.PlayPvs(sound.CollisionSound, uid);
-    }
-
-    private void PlayRunningSound(EntityUid uid)
-    {
-        if (_net.IsClient || !TryComp<VehicleSoundComponent>(uid, out var sound) || sound.RunningSound == null)
-            return;
-
-        var now = _timing.CurTime;
-        if (now < sound.NextRunningSound)
-            return;
-
-        sound.NextRunningSound = now + TimeSpan.FromSeconds(sound.RunningSoundCooldown);
-        _audio.PlayPvs(sound.RunningSound, uid);
     }
 
     private static bool TryGetLocalBounds(FixturesComponent fixtures, out Box2 bounds)

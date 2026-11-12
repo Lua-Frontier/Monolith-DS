@@ -4,6 +4,7 @@
  * See AGPLv3.txt for details.
  */
 
+using System.Numerics;
 using Content.Shared.Actions;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -20,6 +21,9 @@ public sealed partial class VehicleSeatsComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? Driver;
+
+    [DataField]
+    public Vector2 Zoom = new(1.5f, 1.5f);
 
     [DataField, AutoNetworkedField]
     public EntityUid? Gunner;

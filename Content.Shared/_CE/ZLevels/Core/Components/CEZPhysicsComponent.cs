@@ -59,6 +59,9 @@ public sealed partial class CEZPhysicsComponent : Component
     [DataField]
     public int DrawDepthDefault;
 
+    [ViewVariables]
+    public int? AirborneDrawDepthOriginal; // LuaM
+
     /// <summary>
     /// When the mapinit entity is created, its initial Sprite Offset value is written here in order to apply an offset based on the Z position relative to this value.
     /// </summary>

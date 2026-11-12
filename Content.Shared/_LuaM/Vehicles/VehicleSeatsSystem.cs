@@ -10,7 +10,9 @@ using Content.Shared.Actions;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Hands.Components;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Projectiles;
 using Content.Shared.Verbs;
@@ -23,6 +25,7 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
 {
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedBuckleSystem _buckle = default!;
+    [Dependency] private SharedContentEyeSystem _eye = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedVirtualItemSystem _virtualItem = default!;
@@ -62,16 +65,18 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
         comp.Seat = seat;
         Dirty(occupant, comp);
         _physics.RegenerateContacts(occupant);
+        _eye.SetZoom(occupant, ent.Comp.Zoom, ignoreLimits: true);
 
         switch (role)
         {
             case VehicleSeatRole.Driver:
                 ent.Comp.Driver = occupant;
-                BlockHands(ent, occupant);
+                BlockHands(ent, occupant, 1);
                 AddActions(ent, occupant, ent.Comp.DriverActions);
                 break;
             case VehicleSeatRole.Gunner:
                 ent.Comp.Gunner = occupant;
+                BlockHands(ent, occupant, CompOrNull<HandsComponent>(occupant)?.Count ?? 0);
                 AddActions(ent, occupant, ent.Comp.GunnerActions);
                 break;
         }
@@ -100,20 +105,21 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
         Dirty(ent);
         RemComp<VehicleOccupantComponent>(occupant);
         _physics.RegenerateContacts(occupant);
+        _eye.ResetZoom(occupant);
 
         var ev = new VehicleSeatsChangedEvent(occupant, role, false);
         RaiseLocalEvent(ent, ref ev);
     }
 
-    private void BlockHands(EntityUid vehicle, EntityUid driver)
+    // -- Водитель держит руль одной рукой и второй может стрелять, у стрелка заняты обе; выбросить блокировку нельзя
+    private void BlockHands(EntityUid vehicle, EntityUid occupant, int count)
     {
-        if (!TryComp<HandsComponent>(driver, out var hands))
-            return;
-
-        for (var i = 0; i < hands.Count; i++)
+        for (var i = 0; i < count; i++)
         {
-            if (!_virtualItem.TrySpawnVirtualItemInHand(vehicle, driver))
+            if (!_virtualItem.TrySpawnVirtualItemInHand(vehicle, occupant, out var item, dropOthers: true))
                 break;
+
+            EnsureComp<UnremoveableComponent>(item.Value);
         }
     }
 
@@ -231,7 +237,7 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
 
     private void OnOccupantAttackAttempt(Entity<VehicleOccupantComponent> ent, ref AttackAttemptEvent args)
     {
-        if (ent.Comp.Role == VehicleSeatRole.Driver || args.Target == ent.Comp.Vehicle)
+        if (args.Target == ent.Comp.Vehicle)
             args.Cancel();
     }
 
