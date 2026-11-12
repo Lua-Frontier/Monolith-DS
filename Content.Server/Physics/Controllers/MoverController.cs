@@ -26,6 +26,7 @@ public sealed partial class MoverController : SharedMoverController
 
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private ThrusterSystem _thruster = default!;
+    [Dependency] private Content.Server._Lua.SpaceHazards.NebulaEnvironmentSystem _nebulaEnvironment = default!; // Lua
 
     private Dictionary<EntityUid, (ShuttleComponent, List<(EntityUid, PilotComponent, InputMoverComponent, TransformComponent)>)> _shuttlePilots = new();
 
@@ -588,7 +589,7 @@ public sealed partial class MoverController : SharedMoverController
 
                     }
 
-                    var impulse = force * brakeInput * ShuttleComponent.BrakeCoefficient;
+                    var impulse = force * brakeInput * ShuttleComponent.BrakeCoefficient * _nebulaEnvironment.GetThrustMultiplier(uid); // Lua: nebula thrust penalty
                     impulse = shuttleNorthAngle.RotateVec(impulse);
                     var maxForce = body.LinearVelocity.Length() * body.Mass / frameTime;
 
@@ -643,7 +644,7 @@ public sealed partial class MoverController : SharedMoverController
                 var linearDir = angle.GetDir();
                 var dockFlag = linearDir.AsFlag();
 
-                var totalForce = GetDirectionThrust(linearInput, shuttle, body, xform);
+                var totalForce = GetDirectionThrust(linearInput, shuttle, body, xform) * _nebulaEnvironment.GetThrustMultiplier(uid); // Lua: nebula thrust penalty
 
                 // Won't just do cardinal directions.
                 foreach (DirectionFlag dir in Enum.GetValues(typeof(DirectionFlag)))

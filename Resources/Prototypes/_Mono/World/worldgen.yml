@@ -31,3 +31,16 @@
     - MonoWorldgenVeryFarT2MiddlePieceful
     - MonoWorldgenVeryFarT2FarPieceful
     # LuaM-end
+  # Lua-start: nebulae
+  - type: AmbientSpaceFieldPlacerController
+    minCount: 80
+    maxCount: 110
+    minDistance: 2000
+    maxDistance: 28000
+    minGridClearance: 1000
+    minSpacingFactor: 1.0
+    minCenterSeparation: 2400
+    weatherChance: 0.3
+    minWeatherDistance: 5000
+    fieldPrototype: AmbientSpaceFieldNebula
+  # Lua-end
