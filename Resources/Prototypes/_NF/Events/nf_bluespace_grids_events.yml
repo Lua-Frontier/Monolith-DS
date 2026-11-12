@@ -38,7 +38,7 @@
         paths:
         - /Maps/_LuaM/Bluespace/syndieasteroid.yml # LuaM: /Maps/_NF/Bluespace/cache.yml > /Maps/_LuaM/Bluespace/syndieasteroid.yml
     rewardAccounts:
-      Nfsd: 1.0
+      Nfsd: 0.5 # LuaM: 1.0 > 0.5, TSF got 8-13M per shift from the event grids
 
 - type: entity
   id: BluespaceVaultError
@@ -78,7 +78,7 @@
         paths:
         - /Maps/_NF/Bluespace/vault.yml
     rewardAccounts:
-      Nfsd: 1.0
+      Nfsd: 0.5 # LuaM: 1.0 > 0.5, TSF got 8-13M per shift from the event grids
   - type: CurrencyInjectionOnBluespaceError # Mono: reward TSF with FMC for defending solarian vault
     company: TSF
     amount:
@@ -125,7 +125,7 @@
         paths:
         - /Maps/_NF/Bluespace/vaultsmall.yml
     rewardAccounts:
-      Nfsd: 1.0
+      Nfsd: 0.5 # LuaM: 1.0 > 0.5, TSF got 8-13M per shift from the event grids
   - type: CurrencyInjectionOnBluespaceError # Mono: reward TSF with FMC for defending solarian vault
     company: TSF
     amount:

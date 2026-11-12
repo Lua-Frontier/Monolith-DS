@@ -303,6 +303,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
         DrawStarSystem(handle, matty);
         DrawRadiusIndicators(handle, matty, viewBox); // LuaM
+        DrawNebulae(handle, matty, viewBox); // Lua
 
         // Draw our FTL range + no FTL zones
         // Do it up here because we want this layered below most things.
@@ -412,6 +413,9 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
             }
 
             if (grid.Owner != _shuttleEntity && _stealthField.IsHiddenFromLocalPlayer(grid.Owner, _console ?? _shuttleEntity)) // LuaM
+                continue;
+
+            if (grid.Owner != _shuttleEntity && EntManager.HasComponent<Content.Shared._Lua.SpaceHazards.NebulaVeilTrackedComponent>(grid.Owner)) // Lua: veil nebula
                 continue;
 
             // Mono

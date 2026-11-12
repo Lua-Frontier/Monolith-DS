@@ -150,7 +150,7 @@
   components:
   - type: ItemTax
     taxAccounts:
-      nfsd: -0.2
+      nfsd: -0.6 # LuaM: -0.2 > -0.6, TSF contraband fines tripled
 
 - type: entity
   parent: BaseFactionGearTaxedT0

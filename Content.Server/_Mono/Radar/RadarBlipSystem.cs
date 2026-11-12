@@ -47,6 +47,7 @@ public sealed partial class RadarBlipSystem : EntitySystem
         else
             _tempSourcesCache.Add(radarUid.Value);
 
+        CollectVeilFields(Transform(radarUid.Value).MapID); // Lua
         AssembleBlipsReport((EntityUid)radarUid, _tempSourcesCache, radar);
         AssembleHitscanReport((EntityUid)radarUid, _tempSourcesCache, radar);
 
@@ -89,6 +90,9 @@ public sealed partial class RadarBlipSystem : EntitySystem
                 continue;
 
             var blipGrid = blipXform.GridUid;
+
+            if (blipGrid == null && IsInNebulaVeil(_xform.GetWorldPosition(blipXform))) // Lua: a veil nebula hides what flies inside it
+                continue;
 
             if (blip.RequireNoGrid && blipGrid != null // if we want no grid but we are on a grid
                 || !blip.VisibleFromOtherGrids && blipGrid != radarGrid // or if we don't want to be visible from other grids but we're on another grid
@@ -193,6 +197,9 @@ public sealed partial class RadarBlipSystem : EntitySystem
                 continue;
 
             if (!NearAnySources(hitscan.StartPosition, sources, component.MaxRange) && NearAnySources(hitscan.EndPosition, sources, component.MaxRange))
+                continue;
+
+            if (IsInNebulaVeil(hitscan.StartPosition) || IsInNebulaVeil(hitscan.EndPosition)) // Lua
                 continue;
 
             _tempHitscansCache.Add(new(hitscan.StartPosition, hitscan.EndPosition, hitscan.LineThickness, hitscan.RadarColor));

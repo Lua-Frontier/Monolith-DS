@@ -46,7 +46,7 @@
   - type: ItemTax # Mono
     taxAccounts:
       Medical: -0.05
-      nfsd: -0.1
+      nfsd: -0.3 # LuaM: -0.1 > -0.3, TSF contraband fines tripled
       BlackMarket: 0.25
   - type: ExtendDescription
     descriptionList:

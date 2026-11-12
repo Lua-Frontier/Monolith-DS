@@ -131,7 +131,7 @@
   - type: ItemTax # Mono
     taxAccounts:
       BlackMarket: 0.3
-      nfsd: -0.075
+      nfsd: -0.225 # LuaM: -0.075 > -0.225, TSF contraband fines tripled
   - type: RadarBlip
     radarColor: "#cc4e0e"
     scale: 1.5

@@ -1,0 +1,14 @@
+<Control
+    xmlns="https://spacestation14.io"
+    Margin="4">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc luam-admin-bank-tab-header}" HorizontalExpand="True" />
+            <Button Name="RefreshButton" Text="{Loc luam-admin-bank-refresh}" />
+        </BoxContainer>
+        <Label Name="StatusLabel" Visible="False" />
+        <ScrollContainer VerticalExpand="True" HScrollEnabled="False" Margin="0 4 0 0">
+            <GridContainer Name="AccountsGrid" Columns="6" HSeparationOverride="8" VSeparationOverride="4" />
+        </ScrollContainer>
+    </BoxContainer>
+</Control>
