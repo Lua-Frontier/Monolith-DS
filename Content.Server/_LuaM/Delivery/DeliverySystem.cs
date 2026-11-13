@@ -172,11 +172,11 @@ public sealed partial class DeliverySystem : EntitySystem
         foreach (var proto in _proto.EnumeratePrototypes<EntityPrototype>())
         {
             if (proto.Abstract
-                || !proto.TryGetComponent<VendingMachineComponent>(out var vending, _factory)
+                || !proto.TryComp<VendingMachineComponent>(out var vending, _factory)
                 || proto.Components.ContainsKey(_factory.GetComponentName<AccessReaderComponent>()))
                 continue;
 
-            var modifier = proto.TryGetComponent<MarketModifierComponent>(out var market, _factory) ? market.Mod : 1f;
+            var modifier = proto.TryComp<MarketModifierComponent>(out var market, _factory) ? market.Mod : 1f;
             var pack = vending.PackPrototypeId.Id;
             publicInventories[pack] = publicInventories.TryGetValue(pack, out var current)
                 ? Math.Min(current, modifier)

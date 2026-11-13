@@ -6,8 +6,3 @@
   id: AmbientNebula
   kind: source
   path: "/Textures/_Lua/Shaders/ambient_nebula.swsl"
-
-- type: shader
-  id: AmbientNebulaMid
-  kind: source
-  path: "/Textures/_Lua/Shaders/ambient_nebula_mid.swsl"

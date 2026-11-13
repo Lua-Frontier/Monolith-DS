@@ -13,7 +13,7 @@ namespace Content.Server._LuaM.Contraband;
 /// <summary>
 /// Fines the TSF budget for contraband that got sold, and announces every fine on the TSF channel.
 /// </summary>
-public sealed class TsfContrabandFineSystem : EntitySystem
+public sealed partial class TsfContrabandFineSystem : EntitySystem
 {
     private static readonly ProtoId<RadioChannelPrototype> TsfChannel = "Nfsd";
 

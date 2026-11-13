@@ -144,7 +144,6 @@ public abstract partial class SharedStunSystem : EntitySystem
 
     private void OnKnockInit(EntityUid uid, KnockedDownComponent component, ComponentInit args)
     {
-        RaiseNetworkEvent(new CheckAutoGetUpEvent(GetNetEntity(uid))); // WD EDIT
         _layingDown.TryLieDown(uid, null, null, DropHeldItemsBehavior.DropIfStanding); // WD EDIT
     }
 
@@ -156,7 +155,7 @@ public abstract partial class SharedStunSystem : EntitySystem
 
         if (TryComp(uid, out LayingDownComponent? layingDown))
         {
-            if (layingDown.AutoGetUp && !_container.IsEntityInContainer(uid))
+            if (_layingDown.ShouldAutoGetUp(uid, layingDown) && !_container.IsEntityInContainer(uid)) // LuaM
                 _layingDown.TryStandUp(uid, layingDown);
             return;
         }

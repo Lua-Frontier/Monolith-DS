@@ -81,3 +81,6 @@ public record struct VehicleCanMoveEvent(bool Cancelled = false);
 
 [ByRefEvent]
 public record struct VehicleSeatsChangedEvent(EntityUid Occupant, VehicleSeatRole Role, bool Seated);
+
+[ByRefEvent]
+public readonly record struct HardpointsChangedEvent;

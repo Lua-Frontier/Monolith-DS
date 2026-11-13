@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Client.ContextMenu.UI;
+using Content.Shared._LuaM.HoloComms;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
@@ -66,6 +67,32 @@ public sealed class RadarContextMenu : Popup
         item.OnMouseEntered += _ => OpenSubMenu(item, fill);
         item.OnPressed += _ => OpenSubMenu(item, fill);
         _body.AddChild(item);
+    }
+
+    public void AddCallItem(List<HoloCommsContact> calls, Action<NetEntity> onCall)
+    {
+        if (!calls.Exists(call => !call.Busy))
+        {
+            AddItem(Loc.GetString("shuttle-radar-menu-unreachable"), null);
+            return;
+        }
+
+        if (calls.Count == 1 && calls[0].Kind == HoloCommsContactKind.Ship)
+        {
+            var target = calls[0].Target;
+            AddItem(Loc.GetString("shuttle-radar-menu-call"), () => onCall(target));
+            return;
+        }
+
+        AddSubMenu(Loc.GetString("shuttle-radar-menu-call"), subMenu =>
+        {
+            foreach (var call in calls)
+            {
+                var target = call.Target;
+                subMenu.AddItem(call.Name, call.Busy ? null : () => onCall(target),
+                    call.Busy ? Loc.GetString("shuttle-radar-menu-unreachable") : null);
+            }
+        });
     }
 
     private void OpenSubMenu(Control item, Action<RadarContextMenu> fill)

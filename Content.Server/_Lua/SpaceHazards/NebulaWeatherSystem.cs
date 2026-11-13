@@ -141,7 +141,7 @@ public sealed partial class NebulaWeatherSystem : EntitySystem
             ? ClosestPointOnGrid(gridUid, grid, fieldPos)
             : _transform.GetWorldPosition(gridUid);
         var normalized = (samplePos - fieldPos) / radius;
-        var intensity = AmbientSpaceNebulaNoise.SamplePresence(normalized, field.Seed, field.Density, 1f, radius);
+        var intensity = AmbientSpaceNebulaNoise.SamplePresence(normalized, field.Seed, field.Density, radius);
 
         if (!_weatherSnapshots.TryGetValue(gridUid, out var snapshot))
         {
@@ -298,6 +298,9 @@ public sealed partial class NebulaWeatherSystem : EntitySystem
 
     private void CleanupWeatherEventTimers()
     {
+        if (_nextWeatherEvents.Count == _weatherEventsSeenThisTick.Count)
+            return;
+
         foreach (var key in _nextWeatherEvents.Keys.ToArray())
         {
             if (!_weatherEventsSeenThisTick.Contains(key))

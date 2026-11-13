@@ -29,3 +29,4 @@ luam-hardpoint-examine-empty = { $slot }: [color=gray]empty[/color]
 luam-hardpoint-examine-installed = { $slot }: [color=lightblue]{ $item }[/color]{ $ammo }
 luam-hardpoint-examine-ammo = , ammo { $count }/{ $capacity }
 luam-vehicle-engine-stopping = You turn the engine off...
+luam-vehicle-cannot-pull-out = They hold on inside, you cannot pull them out like that.

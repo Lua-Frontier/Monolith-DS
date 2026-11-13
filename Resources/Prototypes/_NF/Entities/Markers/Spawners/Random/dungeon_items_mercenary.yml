@@ -344,6 +344,7 @@
     offset: 0.0
     rarePrototypes:
     - ClothingOuterHardsuitScaf
+    - ClothingOuterHardsuitLuaMAyaks # LuaM
     rareChance: 0.1
 
 # Furniture/Lockers

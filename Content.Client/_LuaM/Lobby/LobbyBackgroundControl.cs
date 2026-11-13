@@ -11,7 +11,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._LuaM.Lobby;
 
-public sealed class LobbyBackgroundControl : TextureRect
+public sealed partial class LobbyBackgroundControl : TextureRect
 {
     [Dependency] private IResourceCache _resourceCache = default!;
     [Dependency] private IConfigurationManager _configuration = default!;

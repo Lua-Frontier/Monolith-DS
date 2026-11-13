@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared._LuaM.Guidebook;
-using Robust.Shared.ContentPack;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -15,7 +14,6 @@ namespace Content.Server._LuaM.Guidebook;
 /// <summary>Only cached PNGs leave this system. MapRenderer runs in its own process.</summary>
 public sealed partial class GuidebookMapImageSystem : EntitySystem
 {
-    [Dependency] private IResourceManager _resources = default!;
     private const int ChunkSize = 32 * 1024;
     private const int MaxImageBytes = 48 * 1024 * 1024;
     private string? _root, _tools, _fallback;
@@ -69,12 +67,12 @@ public sealed partial class GuidebookMapImageSystem : EntitySystem
         // The renderer itself starts an isolated test server. Never recurse into another worker.
         if (Environment.GetEnvironmentVariable("COLOSS_GUIDEBOOK_WORKER") == "1"
             || AppDomain.CurrentDomain.GetAssemblies().Any(a => a.GetName().Name == "Content.IntegrationTests")) return;
-        var roots = _resources.GetContentRoots().Select(p => p.ToString()).Concat(new[]
+        var roots = new[]
         {
             Path.Combine(Directory.GetCurrentDirectory(), "Resources"),
             Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../Resources")),
             Path.Combine(AppContext.BaseDirectory, "Resources"),
-        });
+        };
         _root = roots.FirstOrDefault(p => Directory.Exists(Path.Combine(p, "Prototypes"))
             && (Directory.Exists(Path.Combine(p, "Maps")) || Directory.Exists(Path.Combine(p, "SharedMaps"))));
         if (_root == null) { Log.Error("Guidebook MapRender: resource directory not found."); return; }

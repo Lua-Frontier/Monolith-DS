@@ -33,6 +33,8 @@ public sealed partial class VehicleEngineSoundSystem : EntitySystem
     private sealed class EngineAudio
     {
         public readonly EntityUid?[] Layers = new EntityUid?[4];
+        public readonly float[] Volumes = { float.NaN, float.NaN, float.NaN, float.NaN };
+        public readonly float[] Pitches = { float.NaN, float.NaN, float.NaN, float.NaN };
         public EntityUid? Skid;
         public float Rpm;
         public float OffTime;
@@ -156,9 +158,20 @@ public sealed partial class VehicleEngineSoundSystem : EntitySystem
         if (audio.Layers[index] is not { } stream || !TryComp<AudioComponent>(stream, out var comp))
             return;
 
-        _audio.SetVolume(stream, weight > 0.001f ? engine.Volume + SharedAudioSystem.GainToVolume(weight) : float.NegativeInfinity, comp);
+        var volume = weight > 0.001f ? engine.Volume + SharedAudioSystem.GainToVolume(weight) : float.NegativeInfinity;
+        if (audio.Volumes[index] != volume)
+        {
+            audio.Volumes[index] = volume;
+            _audio.SetVolume(stream, volume, comp);
+        }
+
+        var pitch = Math.Clamp(1f + (audio.Rpm - Centers[index]) * engine.PitchRange * 2f, 0.7f, 1.5f);
+        if (MathHelper.CloseTo(audio.Pitches[index], pitch, 0.002f))
+            return;
+
+        audio.Pitches[index] = pitch;
         IAudioSource source = comp;
-        source.Pitch = Math.Clamp(1f + (audio.Rpm - Centers[index]) * engine.PitchRange * 2f, 0.7f, 1.5f);
+        source.Pitch = pitch;
     }
 
     private EntityUid? Play(EntityUid uid, SoundSpecifier? sound, float volume, float maxDistance)
@@ -172,6 +185,8 @@ public sealed partial class VehicleEngineSoundSystem : EntitySystem
         for (var i = 0; i < audio.Layers.Length; i++)
         {
             audio.Layers[i] = _audio.Stop(audio.Layers[i]);
+            audio.Volumes[i] = float.NaN;
+            audio.Pitches[i] = float.NaN;
         }
 
         audio.Skid = _audio.Stop(audio.Skid);

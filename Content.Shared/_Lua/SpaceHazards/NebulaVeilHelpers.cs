@@ -27,7 +27,7 @@ public static class NebulaVeilHelpers
         if (Contours.Count >= MaxCachedContours)
             Contours.Clear();
 
-        contour = AmbientSpaceNebulaNoise.BuildMidLayerContour(Vector2.Zero, radius, seed, density);
+        contour = AmbientSpaceNebulaNoise.BuildMidLayerContour(radius, seed, density);
         Contours[key] = contour;
         return contour;
     }

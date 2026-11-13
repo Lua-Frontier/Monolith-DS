@@ -1,21 +1,26 @@
-using Content.Server.Administration.Logs;
-using Content.Shared.Containers;
+using Content.Shared._LuaM.Throwing;
+using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Popups;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Random;
 
-namespace Content.Server.Containers;
+namespace Content.Shared.Containers;
 
+// LuaM: moved to Shared and predicted
 public sealed partial class ThrowInsertContainerSystem : EntitySystem
 {
-    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedContainerSystem _containerSystem = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
 
     public override void Initialize()
     {
@@ -37,17 +42,29 @@ public sealed partial class ThrowInsertContainerSystem : EntitySystem
         if (beforeThrowArgs.Cancelled)
             return;
 
-        if (_random.Prob(ent.Comp.Probability))
+        var thrower = HasComp<PredictedThrownItemComponent>(args.Thrown) ? args.Component.Thrower : null;
+        var feedback = _net.IsServer || thrower != null && thrower == _player.LocalEntity;
+
+        var seed = SharedRandomExtensions.HashCodeCombine(
+            GetNetEntity(args.Thrown).Id,
+            GetNetEntity(ent).Id,
+            (args.Component.ThrownTime ?? TimeSpan.Zero).GetHashCode());
+
+        if (new System.Random(seed).Prob(ent.Comp.Probability))
         {
-            _audio.PlayPvs(ent.Comp.MissSound, ent);
-            _popup.PopupEntity(Loc.GetString(ent.Comp.MissLocString), ent);
+            if (feedback)
+            {
+                _audio.PlayPredicted(ent.Comp.MissSound, ent, thrower);
+                _popup.PopupPredicted(Loc.GetString(ent.Comp.MissLocString), ent, thrower);
+            }
             return;
         }
 
         if (!_containerSystem.Insert(args.Thrown, container))
-            throw new InvalidOperationException("Container insertion failed but CanInsert returned true");
+            return;
 
-        _audio.PlayPvs(ent.Comp.InsertSound, ent);
+        if (feedback)
+            _audio.PlayPredicted(ent.Comp.InsertSound, ent, thrower);
 
         if (args.Component.Thrower != null)
             _adminLogger.Add(LogType.Landed, LogImpact.Low, $"{ToPrettyString(args.Thrown)} thrown by {ToPrettyString(args.Component.Thrower.Value):player} landed in {ToPrettyString(ent)}");

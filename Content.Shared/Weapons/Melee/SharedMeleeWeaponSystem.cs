@@ -470,7 +470,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         }
 
         if (weapon.SwingBeverage) // LuaM
-            weapon.SwingLeft = !weapon.SwingLeft; // LuaM
+            weapon.SwingFlipped = !weapon.SwingFlipped; // LuaM
 
         Dirty(weaponUid, weapon);
 

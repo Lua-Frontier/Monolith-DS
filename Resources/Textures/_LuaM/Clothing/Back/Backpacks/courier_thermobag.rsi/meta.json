@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Freezer backpack taken from tgstation at commit https://github.com/tgstation/tgstation/commit/547852588166c8e091b441e4e67169e156bb09c1, modified by not_so_big_chungus; reshaped into a square thermobag with a round ColossDelivery logo by c_quarian (discord); inhand sprites redrawn as a square box by c_quarian (discord)",
+  "copyright": "Freezer backpack taken from tgstation at commit https://github.com/tgstation/tgstation/commit/547852588166c8e091b441e4e67169e156bb09c1, modified by not_so_big_chungus; reshaped into a square thermobag with a round ColossDelivery logo by c_quarian (discord); inhand sprites redrawn as a square box by c_quarian (discord); redrawn with a zipped lid, reflective strip and side pocket by c_quarian (discord)",
   "size": {
     "x": 32,
     "y": 32

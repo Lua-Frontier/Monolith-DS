@@ -4,7 +4,7 @@ using Robust.Shared.Log;
 
 namespace Content.Client._LuaM.Console;
 
-public sealed class ConsoleErrorBufferSystem : EntitySystem
+public sealed partial class ConsoleErrorBufferSystem : EntitySystem
 {
     [Dependency] private IClientConsoleHost _consoleHost = default!;
 

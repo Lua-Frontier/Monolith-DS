@@ -15,6 +15,8 @@ dotnet build --configuration DebugOpt   # .NET SDK 10 (global.json)
 ./runclient.bat
 ```
 
+Dev-сборка стартует с пресетом Greenshift и выключенным worldgen: POI, астероиды и туманности не создаются. Чтобы проверить сектор, запускайте сервер с `--cvar worldgen.enabled=true --cvar game.defaultpreset=MonoStandard`.
+
 Собранное лежит в `bin/`. `bin/Content.Server/server_config.toml` перезаписывается копией из `RobustToolbox/Robust.Server/server_config.toml` при её изменении, поэтому свои cvars после обновления движка нужно вернуть.
 
 ## Тесты
@@ -51,6 +53,7 @@ runTestsYAML.bat                        # YAML-линтер, лог в Scripts/l
 - На клиенте `SetWorldPosition` / `SetLocalPosition` / `SetLocalRotation` запускают интерполяцию и оставляют устаревшую цель `NextPosition`/`NextRotation`. При ручном перемещении каждый кадр (перетаскивание, клиентские призраки) используйте `SetLocalPositionNoLerp`, иначе объект дёргается и потом уезжает к старой цели.
 - Свет с тенями, центр которого попал внутрь окклюдера (`IsLightEmbeddedInOccluder`), не рисуется — не ставьте `offset` ровно на край тайла.
 - `OccluderComponent` принимает `polygon`; у диагональных стен он обязателен.
+- Незаякоренная сущность, лежащая прямо на карте, перепривязывается к гриду, который пролетел над её точкой (grid traversal срабатывает и от движения грида, даже если у сущности нет физики), и дальше едет вместе с ним. Фоновым и служебным сущностям в космосе ставьте `gridTraversal: false` в `Transform`.
 
 ## Windows
 

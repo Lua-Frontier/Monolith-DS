@@ -19,6 +19,9 @@ public sealed partial class HardpointSlotsComponent : Component
 
     [DataField(required: true)]
     public List<HardpointSlot> Slots = new();
+
+    [ViewVariables]
+    public List<(EntityUid Holder, HardpointSlot Slot, EntityUid? Item)>? SlotCache;
 }
 
 [DataDefinition]

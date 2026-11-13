@@ -135,6 +135,9 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public float AnimationOffset = 1f; // LuaM
 
+    [AutoNetworkedField]
+    public bool SwingFlipped; // LuaM
+
 
     // Sounds
 

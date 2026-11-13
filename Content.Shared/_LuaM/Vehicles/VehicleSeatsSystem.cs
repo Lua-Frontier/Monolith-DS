@@ -4,6 +4,7 @@
  * See AGPLv3.txt for details.
  */
 
+using System.Numerics;
 using Content.Shared._LuaM.Buckle;
 using Content.Shared._LuaM.Vehicles.Components;
 using Content.Shared.Actions;
@@ -12,7 +13,10 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Projectiles;
 using Content.Shared.Verbs;
@@ -26,6 +30,8 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedBuckleSystem _buckle = default!;
     [Dependency] private SharedContentEyeSystem _eye = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedVirtualItemSystem _virtualItem = default!;
@@ -38,6 +44,7 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
         SubscribeLocalEvent<VehicleSeatsComponent, UnstrappedEvent>(OnUnstrapped);
         SubscribeLocalEvent<VehicleSeatsComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<VehicleSeatsComponent, PreventCollideEvent>(OnVehiclePreventCollide);
+        SubscribeLocalEvent<VehicleSeatsComponent, UnstrapAttemptEvent>(OnUnstrapAttempt);
 
         SubscribeLocalEvent<VehicleOccupantComponent, PreventCollideEvent>(OnOccupantPreventCollide);
         SubscribeLocalEvent<VehicleOccupantComponent, AttackAttemptEvent>(OnOccupantAttackAttempt);
@@ -65,7 +72,7 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
         comp.Seat = seat;
         Dirty(occupant, comp);
         _physics.RegenerateContacts(occupant);
-        _eye.SetZoom(occupant, ent.Comp.Zoom, ignoreLimits: true);
+        SetVehicleZoom(ent, occupant, comp);
 
         switch (role)
         {
@@ -103,12 +110,27 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
             ent.Comp.Gunner = null;
 
         Dirty(ent);
+        if (comp.PreviousMaxZoom is { } maxZoom)
+            _eye.SetMaxZoom(occupant, maxZoom);
+
+        _eye.ResetZoom(occupant);
         RemComp<VehicleOccupantComponent>(occupant);
         _physics.RegenerateContacts(occupant);
-        _eye.ResetZoom(occupant);
 
         var ev = new VehicleSeatsChangedEvent(occupant, role, false);
         RaiseLocalEvent(ent, ref ev);
+    }
+
+    // -- Предел зума поднимаем до машинного, иначе после ручного приближения отдалиться обратно уже нельзя
+    private void SetVehicleZoom(Entity<VehicleSeatsComponent> ent, EntityUid occupant, VehicleOccupantComponent comp)
+    {
+        if (!TryComp<ContentEyeComponent>(occupant, out var eye))
+            return;
+
+        comp.PreviousMaxZoom ??= eye.MaxZoom;
+        var max = Vector2.Max(comp.PreviousMaxZoom.Value, ent.Comp.Zoom);
+        _eye.SetMaxZoom(occupant, max, eye);
+        _eye.SetZoom(occupant, ent.Comp.Zoom, eye: eye);
     }
 
     // -- Водитель держит руль одной рукой и второй может стрелять, у стрелка заняты обе; выбросить блокировку нельзя
@@ -203,6 +225,18 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
                 },
             });
         }
+    }
+
+    // -- Из машины выходят сами: вытащить другого можно, только если он в крите или мёртв
+    private void OnUnstrapAttempt(Entity<VehicleSeatsComponent> ent, ref UnstrapAttemptEvent args)
+    {
+        var occupant = args.Buckle.Owner;
+        if (args.Cancelled || args.User is not { } user || user == occupant || _mobState.IsIncapacitated(occupant))
+            return;
+
+        args.Cancelled = true;
+        if (args.Popup)
+            _popup.PopupClient(Loc.GetString("luam-vehicle-cannot-pull-out"), ent, user);
     }
 
     private void OnVehiclePreventCollide(Entity<VehicleSeatsComponent> ent, ref PreventCollideEvent args)

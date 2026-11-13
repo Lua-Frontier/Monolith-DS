@@ -28,4 +28,5 @@ luam-hardpoint-type-wheel = Колёса
 luam-hardpoint-examine-empty = { $slot }: [color=gray]пусто[/color]
 luam-hardpoint-examine-installed = { $slot }: [color=lightblue]{ $item }[/color]{ $ammo }
 luam-hardpoint-examine-ammo = , боезапас { $count }/{ $capacity }
-luam-vehicle-engine-stopping = Двигатель заглох...
+luam-vehicle-engine-stopping = Двигатель заглох.
+luam-vehicle-cannot-pull-out = Персонаж пристёгнут, его не вытащить!

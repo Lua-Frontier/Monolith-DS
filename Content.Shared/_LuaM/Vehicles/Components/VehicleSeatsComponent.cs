@@ -54,4 +54,7 @@ public sealed partial class VehicleOccupantComponent : Component
 
     [DataField, AutoNetworkedField]
     public int Seat;
+
+    [DataField]
+    public Vector2? PreviousMaxZoom;
 }

@@ -5,6 +5,8 @@
   name: Star # Renamed at spawn
   categories: [ HideSpawnMenu ]
   components:
+    - type: Transform # LuaM
+      gridTraversal: false # LuaM -- иначе метку увозит пролетевший над ней шаттл
     - type: WarpPoint
     - type: FTLSmashImmune
     - type: FTLBeacon
@@ -16,6 +18,8 @@
   name: Planet # Renamed at spawn
   categories: [ HideSpawnMenu ]
   components:
+    - type: Transform # LuaM
+      gridTraversal: false # LuaM -- иначе метку увозит пролетевший над ней шаттл
     - type: WarpPoint
     - type: FTLSmashImmune
     - type: FTLBeacon

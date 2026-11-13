@@ -60,8 +60,8 @@ public sealed class GuidebookViewTests
             var longCaption = longItem.Children.OfType<RichTextLabel>().Single();
             Assert.That(shortCaption.Position.Y, Is.EqualTo(longCaption.Position.Y), "Sprite sizes must not shift caption baselines.");
             var prototypes = pair.Client.ResolveDependency<IPrototypeManager>();
-            Assert.That(shortCaption.GetMessage(), Is.EqualTo(prototypes.Index<EntityPrototype>("Wrench").Name));
-            Assert.That(longCaption.GetMessage(), Is.EqualTo(prototypes.Index<EntityPrototype>("IndustrialFurnaceEconomyCompact").Name));
+            Assert.That(shortCaption.GetMessage(), Is.EqualTo(prototypes.Index(new EntProtoId("Wrench")).Name));
+            Assert.That(longCaption.GetMessage(), Is.EqualTo(prototypes.Index(new EntProtoId("IndustrialFurnaceEconomyCompact")).Name));
 
             cards.Measure(new Vector2(190, 1000));
             cards.Arrange(new UIBox2(0, 0, 190, cards.DesiredSize.Y));
@@ -98,7 +98,7 @@ public sealed class GuidebookViewTests
                 "Selecting pages must not accumulate home-button callbacks.");
             window.UpdateGuides(new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>
             {
-                ["TSFMC_Entry"] = prototypes.Index<GuideEntryPrototype>("TSFMC_Entry"),
+                ["TSFMC_Entry"] = prototypes.Index(new ProtoId<GuideEntryPrototype>("TSFMC_Entry")),
             }, selected: "TSFMC_Entry");
             window.HandleClick("ColossusCatalogueUplinks");
             Assert.That(window.LastEntry, Is.EqualTo(new ProtoId<GuideEntryPrototype>("ColossusCatalogueUplinks")),

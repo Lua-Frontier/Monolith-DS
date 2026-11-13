@@ -15,7 +15,6 @@ using Robust.Client.Input;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
-using Robust.Shared.Containers;
 using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -39,6 +38,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
     private const float TurretVisualTurnSpeed = 6f;
     private const float TurretFadedAlpha = 0.6f;
     private const float HoverDelay = 0.15f;
+    private const float HoverSearchRange = 5f;
 
     private readonly Dictionary<EntityUid, VisualState> _states = new();
     private readonly HashSet<EntityUid> _hovered = new();
@@ -69,8 +69,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
 
         SubscribeLocalEvent<VehicleInteriorComponent, ComponentStartup>(OnInteriorStartup);
         SubscribeLocalEvent<VehicleInteriorComponent, ComponentShutdown>(OnInteriorShutdown);
-        SubscribeLocalEvent<HardpointSlotsComponent, EntInsertedIntoContainerMessage>(OnContainerChanged);
-        SubscribeLocalEvent<HardpointSlotsComponent, EntRemovedFromContainerMessage>(OnContainerChanged);
+        SubscribeLocalEvent<HardpointSlotsComponent, HardpointsChangedEvent>(OnHardpointsChanged);
         SubscribeLocalEvent<HardpointSlotsComponent, ComponentStartup>(OnHardpointsStartup);
     }
 
@@ -111,7 +110,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
         UpdateHullLayers(ent);
     }
 
-    private void OnContainerChanged<T>(Entity<HardpointSlotsComponent> ent, ref T args) where T : ContainerModifiedMessage
+    private void OnHardpointsChanged(Entity<HardpointSlotsComponent> ent, ref HardpointsChangedEvent args)
     {
         UpdateHullLayers(ent);
     }
@@ -303,7 +302,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
         }
 
         var coords = vp.PixelToMap(_input.MouseScreenPosition.Position);
-        if (coords.MapId == MapId.Nullspace)
+        if (coords.MapId == MapId.Nullspace || !IsVehicleNear(coords))
             return;
 
         foreach (var ent in gameplay.GetClickableEntities(coords, false))
@@ -311,6 +310,21 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
             if (_states.ContainsKey(ent))
                 _hovered.Add(ent);
         }
+    }
+
+    // -- Поиск кликабельных сущностей под курсором дорогой, без машины рядом с курсором он не нужен
+    private bool IsVehicleNear(MapCoordinates coords)
+    {
+        foreach (var uid in _states.Keys)
+        {
+            if (!TryComp(uid, out TransformComponent? xform) || xform.MapID != coords.MapId)
+                continue;
+
+            if ((_transform.GetWorldPosition(xform) - coords.Position).LengthSquared() <= HoverSearchRange * HoverSearchRange)
+                return true;
+        }
+
+        return false;
     }
 
     private void UpdateTurret(EntityUid vehicle, VisualState state, EntityUid turretEnt, Direction hullDir, float alpha, float frameTime)
@@ -357,8 +371,11 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
         var localOffset = (-hullDir.ToAngle()).RotateVec(offset);
 
         var xform = Transform(turretEnt);
-        _transform.SetLocalPositionNoLerp(turretEnt, localOffset, xform);
-        _transform.SetLocalRotationNoLerp(turretEnt, state.TurretRotation, xform);
+        if (!xform.LocalPosition.EqualsApprox(localOffset))
+            _transform.SetLocalPositionNoLerp(turretEnt, localOffset, xform);
+
+        if (!xform.LocalRotation.EqualsApprox(state.TurretRotation))
+            _transform.SetLocalRotationNoLerp(turretEnt, state.TurretRotation, xform);
 
         if (!MathHelper.CloseTo(sprite.Color.A, alpha))
             _sprite.SetColor((turretEnt, sprite), sprite.Color.WithAlpha(alpha));

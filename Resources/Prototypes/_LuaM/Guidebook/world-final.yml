@@ -11,6 +11,7 @@
   - LuaMWorldObjects
   - SectorTopology
   - LuaMAsteroids
+  - LuaMNebulae
   - LuaMGameModes
 # LuaM-end
 
@@ -31,6 +32,12 @@
   name: guide-entry-luamasteroids
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Asteroids.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/Asteroids.xml > /ServerInfo/_LuaM/Guidebook/Sector/Asteroids.xml
 # LuaM-end
+
+- type: guideEntry
+  id: LuaMNebulae
+  priority: 45
+  name: guide-entry-luamnebulae
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Nebulae.xml"
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry

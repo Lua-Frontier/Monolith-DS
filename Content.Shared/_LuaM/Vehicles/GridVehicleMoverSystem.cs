@@ -96,16 +96,30 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
                 continue;
 
             var (throttle, steering, handbrake) = GetInput(uid, seats);
+
+            // -- Стоящую машину без нажатых клавиш считать незачем
+            if (throttle == 0f && steering == 0f && handbrake == mover.Handbrake && !mover.IsMoving &&
+                mover.CurrentSpeed == 0f && mover.AngularVelocityDegrees == 0f && mover.DriftDegrees == 0f)
+            {
+                mover.Accumulator = 0f;
+                continue;
+            }
+
             var wasMoving = mover.IsMoving;
             var wasDrifting = mover.DriftDegrees != 0f;
             var handbrakeChanged = mover.Handbrake != handbrake;
             mover.Handbrake = handbrake;
 
             mover.Accumulator = MathF.Min(mover.Accumulator + frameTime, FixedStep * MaxStepsPerFrame);
-            while (mover.Accumulator >= FixedStep)
+            if (mover.Accumulator >= FixedStep)
             {
-                Step((uid, mover, xform), seats, grid, throttle, steering, handbrake, FixedStep);
-                mover.Accumulator -= FixedStep;
+                var hull = GetHull(uid, grid, xform);
+                var speedMultiplier = GetSpeedMultiplier(uid, mover);
+                while (mover.Accumulator >= FixedStep)
+                {
+                    Step((uid, mover, xform), seats, hull, speedMultiplier, throttle, steering, handbrake, FixedStep);
+                    mover.Accumulator -= FixedStep;
+                }
             }
 
             mover.IsMoving = MathF.Abs(mover.CurrentSpeed) > MinSpeed;
@@ -153,7 +167,8 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     private void Step(
         Entity<GridVehicleMoverComponent, TransformComponent> ent,
         VehicleSeatsComponent seats,
-        EntityUid grid,
+        in Hull hull,
+        float speedMultiplier,
         float throttle,
         float steering,
         bool handbrake,
@@ -192,7 +207,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         if (MathF.Abs(mover.AngularVelocityDegrees) > 0.001f)
         {
             var desired = rotation + Angle.FromDegrees(mover.AngularVelocityDegrees * dt);
-            if (CanOccupy(uid, mover, seats, grid, position, desired, true))
+            if (CanOccupy(uid, mover, seats, hull, position, desired, true))
             {
                 turned = mover.AngularVelocityDegrees * dt;
                 rotation = desired;
@@ -206,8 +221,8 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
 
         UpdateDrift(mover, steering, handbrake, turned, dt);
 
-        var maxSpeed = GetMaxSpeed(uid, mover, false);
-        var maxReverse = GetMaxSpeed(uid, mover, true);
+        var maxSpeed = mover.MaxSpeed * speedMultiplier;
+        var maxReverse = mover.MaxReverseSpeed * speedMultiplier;
 
         float targetSpeed;
         float rate;
@@ -257,7 +272,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         for (var i = 1; i <= steps; i++)
         {
             var candidate = start + forward * (travel * i / steps);
-            if (!CanOccupy(uid, mover, seats, grid, candidate, rotation, true))
+            if (!CanOccupy(uid, mover, seats, hull, candidate, rotation, true))
             {
                 blocked = true;
                 break;
@@ -298,9 +313,9 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             mover.DriftDegrees = 0f;
     }
 
-    private float GetMaxSpeed(EntityUid uid, GridVehicleMoverComponent mover, bool reverse)
+    private float GetSpeedMultiplier(EntityUid uid, GridVehicleMoverComponent mover)
     {
-        var speed = reverse ? mover.MaxReverseSpeed : mover.MaxSpeed;
+        var speed = 1f;
 
         if (TryComp<VehicleOverchargeComponent>(uid, out var overcharge) && _timing.CurTime < overcharge.ActiveUntil)
             speed *= overcharge.SpeedMultiplier;

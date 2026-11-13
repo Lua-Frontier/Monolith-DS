@@ -16,26 +16,23 @@ public sealed partial class AmbientSpaceEffectPrototype : IPrototype
     public string Shader { get; private set; } = "AmbientNebula";
 
     [DataField]
-    public float LowerOpacity { get; private set; } = 0.22f;
+    public float LowerOpacity { get; private set; } = 0.07f;
 
     [DataField]
-    public float MidOpacity { get; private set; } = 0.55f;
+    public float MidOpacity { get; private set; } = 0.16f;
 
     [DataField]
-    public float UpperOpacity { get; private set; } = 0.18f;
+    public float UpperOpacity { get; private set; } = 0.08f;
 
     [DataField]
-    public float LowerParallax { get; private set; } = 0.8f;
+    public float MaxOpacity { get; private set; } = 0.3f;
 
     [DataField]
-    public float MidParallax { get; private set; } = 1.0f;
+    public float LowerParallax { get; private set; } = 0.85f;
 
     [DataField]
-    public float UpperParallax { get; private set; } = 1.2f;
+    public float UpperParallax { get; private set; } = 1.15f;
 
     [DataField]
-    public float ParticleScale { get; private set; } = 1f;
-
-    [DataField]
-    public float FlowSpeed { get; private set; } = 1f;
+    public float FlowSpeed { get; private set; } = 0.2f;
 }

@@ -56,7 +56,7 @@ public sealed partial class NebulaWeatherSystem
     private bool TryDamageTile(EntityUid gridUid, MapGridComponent grid, Vector2i tile, DamageSpecifier damage)
     {
         var anyHit = false;
-        var enumerator = _maps.GetAnchoredEntitiesEnumerator(gridUid, grid, tile);
+        var enumerator = _maps.GetAnchoredEntities(gridUid, grid, tile);
         while (enumerator.MoveNext(out var ent))
         {
             if (!TryComp(ent, out DamageableComponent? damageable))
@@ -172,7 +172,6 @@ public sealed partial class NebulaWeatherSystem
                 (position - fog.Position) / radius,
                 fog.Field.Seed,
                 fog.Field.Density,
-                1f,
                 radius);
             strongest = MathF.Max(strongest, fog.Intensity * Math.Clamp(depth, 0.25f, 1f));
         }

@@ -110,7 +110,7 @@ public sealed class GuidebookCatalogTests
                 Assert.That(caliber.Visible, Is.True);
                 Assert.That(caliber.ItemCount, Is.GreaterThan(2), "Reachable ammunition supplies the caliber filter without a manual ID list.");
             }
-            foreach (var id in prototypes.Index<GuideEntryPrototype>("ColossusCatalogue").Children
+            foreach (var id in prototypes.Index(new ProtoId<GuideEntryPrototype>("ColossusCatalogue")).Children
                 .Concat(new ProtoId<GuideEntryPrototype>[] { "ColossusBotany", "ColossusSurgery", "ColossusPower", "MechsBase", "ColossusArtifacts", "ColossusAnomalies", "ColossusMedicalFaction", "ColossusHandheldWeapons", "ColossusPersonalAmmo" }))
             {
                 using var page = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };

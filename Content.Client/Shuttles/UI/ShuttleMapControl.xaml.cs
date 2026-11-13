@@ -141,6 +141,16 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
         base.MouseMove(args);
     }
 
+    // LuaM-start
+    protected override void KeyBindDown(GUIBoundKeyEventArgs args)
+    {
+        if (TryRequestMapMenu(args))
+            return;
+
+        base.KeyBindDown(args);
+    }
+    // LuaM-end
+
     protected override void KeyBindUp(GUIBoundKeyEventArgs args)
     {
         if (FtlMode && ViewingMap != MapId.Nullspace)
@@ -276,6 +286,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
     protected override void Draw(DrawingHandleScreen handle)
     {
         base.Draw(handle);
+        _mapMenuTargets.Clear(); // LuaM
 
         if (ViewingMap == MapId.Nullspace)
             return;
@@ -443,6 +454,8 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
             var mapObject = GetMapObject(gridRelativePos, Angle.Zero, scalePosition: true);
             AddMapObject(existingEdges, existingVerts, mapObject);
+            if (grid.Owner != _shuttleEntity && !blipOnly) // LuaM
+                _mapMenuTargets.Add((grid.Owner, gridUiPos));
 
             // Mono - now always has label
             // Text

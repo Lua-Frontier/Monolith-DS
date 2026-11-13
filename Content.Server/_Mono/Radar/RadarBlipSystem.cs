@@ -91,7 +91,7 @@ public sealed partial class RadarBlipSystem : EntitySystem
 
             var blipGrid = blipXform.GridUid;
 
-            if (blipGrid == null && IsInNebulaVeil(_xform.GetWorldPosition(blipXform))) // Lua: a veil nebula hides what flies inside it
+            if (blipGrid == null && _veilFields.Count > 0 && IsInNebulaVeil(_xform.GetWorldPosition(blipXform))) // Lua: a veil nebula hides what flies inside it
                 continue;
 
             if (blip.RequireNoGrid && blipGrid != null // if we want no grid but we are on a grid

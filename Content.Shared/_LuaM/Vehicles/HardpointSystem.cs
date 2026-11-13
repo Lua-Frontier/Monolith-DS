@@ -33,6 +33,8 @@ public sealed partial class HardpointSystem : EntitySystem
     private const string PryingQuality = "Prying";
     private const float RemoveDelay = 3f;
 
+    private static readonly List<(EntityUid Holder, HardpointSlot Slot, EntityUid? Item)> NoSlots = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -46,6 +48,21 @@ public sealed partial class HardpointSystem : EntitySystem
         SubscribeLocalEvent<HardpointSlotsComponent, HardpointRemoveDoAfterEvent>(OnRemoveDoAfter);
         SubscribeLocalEvent<HardpointSlotsComponent, VehicleAmmoLoadDoAfterEvent>(OnAmmoDoAfter);
         SubscribeLocalEvent<HardpointSlotsComponent, VehicleCanMoveEvent>(OnCanMove);
+        SubscribeLocalEvent<HardpointSlotsComponent, EntInsertedIntoContainerMessage>(OnContainerChanged);
+        SubscribeLocalEvent<HardpointSlotsComponent, EntRemovedFromContainerMessage>(OnContainerChanged);
+    }
+
+    // -- Список слотов кэшируется: его каждый тик спрашивает движение и каждый кадр отрисовка башни
+    private void OnContainerChanged<T>(Entity<HardpointSlotsComponent> ent, ref T args) where T : ContainerModifiedMessage
+    {
+        var uid = ent.Owner;
+        while (TryComp<HardpointSlotsComponent>(uid, out var comp))
+        {
+            comp.SlotCache = null;
+            var ev = new HardpointsChangedEvent();
+            RaiseLocalEvent(uid, ref ev);
+            uid = Transform(uid).ParentUid;
+        }
     }
 
     private void OnInit(Entity<HardpointSlotsComponent> ent, ref ComponentInit args)
@@ -77,35 +94,29 @@ public sealed partial class HardpointSystem : EntitySystem
         }
     }
 
-    public IEnumerable<(EntityUid Holder, HardpointSlot Slot, EntityUid? Item)> EnumerateSlots(EntityUid holder)
+    public List<(EntityUid Holder, HardpointSlot Slot, EntityUid? Item)> EnumerateSlots(EntityUid holder)
     {
         if (!TryComp<HardpointSlotsComponent>(holder, out var comp))
-            yield break;
+            return NoSlots;
 
-        foreach (var slot in comp.Slots)
-        {
-            var item = _container.TryGetContainer(holder, slot.Id, out var container) && container is ContainerSlot cs
-                ? cs.ContainedEntity
-                : null;
+        if (comp.SlotCache != null)
+            return comp.SlotCache;
 
-            yield return (holder, slot, item);
-
-            if (item is { } inner && HasComp<HardpointSlotsComponent>(inner))
-            {
-                foreach (var nested in EnumerateSlots(inner))
-                {
-                    yield return nested;
-                }
-            }
-        }
+        var slots = new List<(EntityUid Holder, HardpointSlot Slot, EntityUid? Item)>();
+        CollectSlots(holder, comp, slots);
+        comp.SlotCache = slots;
+        return slots;
     }
 
-    public IEnumerable<EntityUid> EnumerateInstalled(EntityUid vehicle)
+    private void CollectSlots(EntityUid holder, HardpointSlotsComponent comp, List<(EntityUid Holder, HardpointSlot Slot, EntityUid? Item)> slots)
     {
-        foreach (var (_, _, item) in EnumerateSlots(vehicle))
+        foreach (var slot in comp.Slots)
         {
-            if (item != null)
-                yield return item.Value;
+            var item = GetSlotItem(holder, slot.Id);
+            slots.Add((holder, slot, item));
+
+            if (item is { } inner && TryComp<HardpointSlotsComponent>(inner, out var innerComp))
+                CollectSlots(inner, innerComp, slots);
         }
     }
 
@@ -118,7 +129,7 @@ public sealed partial class HardpointSystem : EntitySystem
 
     public bool TryGetWeapon(EntityUid vehicle, HardpointType type, [NotNullWhen(true)] out EntityUid? weapon, [NotNullWhen(true)] out GunComponent? gun)
     {
-        foreach (var item in EnumerateInstalled(vehicle))
+        foreach (var (_, _, item) in EnumerateSlots(vehicle))
         {
             if (!TryComp<HardpointItemComponent>(item, out var hardpoint) || hardpoint.Type != type ||
                 !TryComp(item, out gun))
@@ -149,7 +160,7 @@ public sealed partial class HardpointSystem : EntitySystem
     public float GetStructureDamageMultiplier(EntityUid vehicle)
     {
         var multiplier = 1f;
-        foreach (var item in EnumerateInstalled(vehicle))
+        foreach (var (_, _, item) in EnumerateSlots(vehicle))
         {
             if (TryComp<HardpointItemComponent>(item, out var hardpoint))
                 multiplier *= hardpoint.StructureDamageMultiplier;
@@ -161,7 +172,7 @@ public sealed partial class HardpointSystem : EntitySystem
     public float GetSpotlightMultiplier(EntityUid vehicle)
     {
         var multiplier = 1f;
-        foreach (var item in EnumerateInstalled(vehicle))
+        foreach (var (_, _, item) in EnumerateSlots(vehicle))
         {
             if (TryComp<HardpointItemComponent>(item, out var hardpoint))
                 multiplier *= hardpoint.SpotlightRadiusMultiplier;
@@ -305,7 +316,7 @@ public sealed partial class HardpointSystem : EntitySystem
 
     private bool TryFindAmmoTarget(EntityUid vehicle, VehicleAmmoBoxComponent box, out Entity<BallisticAmmoProviderComponent> target)
     {
-        foreach (var item in EnumerateInstalled(vehicle))
+        foreach (var (_, _, item) in EnumerateSlots(vehicle))
         {
             if (!TryComp<HardpointItemComponent>(item, out var hardpoint) || hardpoint.AmmoType != box.AmmoType ||
                 !TryComp<BallisticAmmoProviderComponent>(item, out var ballistic) ||
@@ -314,7 +325,7 @@ public sealed partial class HardpointSystem : EntitySystem
                 continue;
             }
 
-            target = (item, ballistic);
+            target = (item.Value, ballistic);
             return true;
         }
 

@@ -39,34 +39,48 @@ public sealed partial class GridVehicleMoverSystem
         SubscribeLocalEvent<GridVehicleMoverComponent, ComponentShutdown>((_, _, _) => _lastHit.Clear());
     }
 
+    // -- То, что не меняется между пробами одного тика: считается один раз, а не на каждую пробу
+    private readonly record struct Hull(
+        FixturesComponent? Fixtures,
+        Box2 Bounds,
+        EntityUid Grid,
+        Vector2 GridPos,
+        Angle GridRot,
+        MapId Map);
+
+    private Hull GetHull(EntityUid uid, EntityUid grid, TransformComponent xform)
+    {
+        if (xform.MapID == MapId.Nullspace ||
+            !_physicsQuery.TryComp(uid, out var body) || !body.CanCollide ||
+            !_fixturesQuery.TryComp(uid, out var fixtures) ||
+            !TryGetLocalBounds(fixtures, out var localBounds))
+        {
+            return default;
+        }
+
+        var (gridPos, gridRot) = _transform.GetWorldPositionRotation(grid);
+        return new Hull(fixtures, localBounds.Enlarged(-Clearance), grid, gridPos, gridRot, xform.MapID);
+    }
+
     private bool CanOccupy(
         EntityUid uid,
         GridVehicleMoverComponent mover,
         VehicleSeatsComponent seats,
-        EntityUid grid,
+        in Hull hullData,
         Vector2 localPos,
         Angle localRot,
         bool applyEffects)
     {
-        if (!_physicsQuery.TryComp(uid, out var body) || !body.CanCollide ||
-            !_fixturesQuery.TryComp(uid, out var fixtures) ||
-            !TryGetLocalBounds(fixtures, out var localBounds))
-        {
-            return true;
-        }
-
-        var (gridPos, gridRot) = _transform.GetWorldPositionRotation(grid);
-        var worldRot = gridRot + localRot;
-        var worldPos = gridPos + gridRot.RotateVec(localPos);
-        var mapId = Transform(uid).MapID;
-        if (mapId == MapId.Nullspace)
+        if (hullData.Fixtures is not { } fixtures)
             return true;
 
-        var shrunk = localBounds.Enlarged(-Clearance);
-        var hull = new Box2Rotated(shrunk.Translated(worldPos), worldRot, worldPos);
+        var grid = hullData.Grid;
+        var worldRot = hullData.GridRot + localRot;
+        var worldPos = hullData.GridPos + hullData.GridRot.RotateVec(localPos);
+        var hull = new Box2Rotated(hullData.Bounds.Translated(worldPos), worldRot, worldPos);
 
         _intersecting.Clear();
-        _lookup.GetEntitiesIntersecting(mapId, hull, _intersecting, LookupFlags.Dynamic | LookupFlags.Static);
+        _lookup.GetEntitiesIntersecting(hullData.Map, hull, _intersecting, LookupFlags.Dynamic | LookupFlags.Static);
 
         var blocked = false;
         foreach (var (other, otherBody) in _intersecting)
