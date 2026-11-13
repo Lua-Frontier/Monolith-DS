@@ -188,7 +188,7 @@ public sealed partial class GunSystem
                             }),
                             (_noMagazineLabel = new Label
                             {
-                                Text = Loc.GetString("luam-gun-no-magazine"), // LuaM: "No Magazine!" > luam-gun-no-magazine
+                                Text = Robust.Shared.Localization.Loc.GetString("luam-gun-no-magazine"), // LuaM: "No Magazine!" > luam-gun-no-magazine
                                 StyleClasses = {StyleNano.StyleClassItemStatus}
                             })
                         }
