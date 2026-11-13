@@ -1,2 +1,2 @@
-ent-MachineThermobath = thermobath
-    .desc = A precision-controlled oil bath capable of both heating and cooling beakers.
+ent-MachineThermobath = термованна
+    .desc = Масляная ванна с точным контролем температуры, способная как нагревать, так и охлаждать мензурки.

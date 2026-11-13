@@ -1,5 +1,5 @@
-ent-MobHumanoidHostileBaseShade = wayward shade
-    .desc = Something great has been lost.
+ent-MobHumanoidHostileBaseShade = заблудшая тень
+    .desc = Утрачено нечто великое.
     .suffix = AI, Hostile, Shade
 ent-BaseMobSpeciesShade = { ent-BaseMobSpecies }
     .desc = { ent-BaseMobSpecies.desc }

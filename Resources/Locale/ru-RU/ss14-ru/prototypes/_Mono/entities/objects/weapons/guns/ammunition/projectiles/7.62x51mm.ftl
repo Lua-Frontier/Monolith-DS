@@ -6,5 +6,5 @@ ent-Bullet762x51mmUranium = пуля (7.62x51мм урановый)
 ent-Bullet762x51mmHP = пуля (7.62x51мм экспансивный)
 ent-Bullet762x51mmRIP = пуля (7.62x51мм RIP)
 ent-Bullet762x51mmPlasteelAP = пуля (7.62x51мм бронебойный)
-ent-Bullet762x51mmAntiMaterial = bullet (7.62x51mm Anti-Material)
+ent-Bullet762x51mmAntiMaterial = пуля (7.62x51мм противотехническая)
     .desc = { ent-BaseBullet.desc }

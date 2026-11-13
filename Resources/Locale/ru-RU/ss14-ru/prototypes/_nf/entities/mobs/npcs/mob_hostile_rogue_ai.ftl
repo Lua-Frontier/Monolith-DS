@@ -48,9 +48,9 @@ ent-MobRogueSiliconBoss = Мех One Star
     .desc = Автономный боевой мех, используемый для наступательных операций. Теперь он является элитной охраной Бешеного ИИ и оснащен ракетными установками. Проявите крайнюю осторожность.
 
 ent-MobRogueSiliconScrapThrustersRangedAsteroid = MobRogueSiliconScrapThrustersRangedAsteroid
-ent-MobRogueSiliconScrapThrustersAsteroid = malfunctionnig scrap unit
-ent-MobRogueSiliconScrapAsteroid = malfunctionnig scrap unit
-ent-MobRogueSiliconScrapThreadsAsteroid = malfunctionnig scrap unit
-ent-TeslaGunBulletRogueSilicon = tesla gun lightning
+ent-MobRogueSiliconScrapThrustersAsteroid = неисправный мусорный блок
+ent-MobRogueSiliconScrapAsteroid = неисправный мусорный блок
+ent-MobRogueSiliconScrapThreadsAsteroid = неисправный мусорный блок
+ent-TeslaGunBulletRogueSilicon = молния тесла-пушки
 ent-RogueSiliconT1LootLoadout = { "" }
     .desc = { "" }

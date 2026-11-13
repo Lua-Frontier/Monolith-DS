@@ -1,2 +1,2 @@
-ent-ReinforcementRadioTSFBoomRoach = BoomRoach Reinforcement Radio
-    .desc = Calls in a faithfully trained boomroach to assist you.
+ent-ReinforcementRadioTSFBoomRoach = рация подкрепления бумтаракамоли
+    .desc = Вызывает верно обученную бумтаракамоль вам на помощь.

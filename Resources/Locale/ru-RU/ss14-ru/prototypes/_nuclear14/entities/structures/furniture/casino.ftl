@@ -1,2 +1,2 @@
-ent-N14FurnitureCasinoRoulettetable = Roulette Table
-    .desc = An old casino roulette table. It still works.
+ent-N14FurnitureCasinoRoulettetable = стол для рулетки
+    .desc = Старый казино-стол для рулетки. Всё ещё работает.

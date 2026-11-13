@@ -22,5 +22,5 @@ ent-ProjectileIcicle = сосулька
     .desc = Бррррр.
 ent-ProjectilePolyboltBread = полизаряд хлеба
     .desc = Неееет, я не хочу быть хлебом!
-ent-ProjectileLocker = cursed locker
-    .desc = A cursed magical locker! Can you resist?
+ent-ProjectileLocker = проклятый шкаф
+    .desc = Проклятый магический шкаф! Сможете устоять?

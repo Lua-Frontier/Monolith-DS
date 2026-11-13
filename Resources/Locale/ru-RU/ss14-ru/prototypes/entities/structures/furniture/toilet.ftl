@@ -10,5 +10,5 @@ ent-ToiletGoldenEmpty = золотой туалет
 ent-ToiletGoldenDirtyWater = { ent-ToiletGoldenEmpty }
     .suffix = Грязная вода, ЦельКражи
     .desc = { ent-ToiletGoldenEmpty.desc }
-ent-BaseToilet = toilet
-    .desc = The HT-451, a torque rotation-based, waste disposal unit for small matter. This one seems remarkably clean.
+ent-BaseToilet = унитаз
+    .desc = HT-451 — устройство утилизации мелких отходов, работающее на вращении. Этот на удивление чистый.

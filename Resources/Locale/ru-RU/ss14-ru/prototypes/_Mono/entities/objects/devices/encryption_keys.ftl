@@ -9,10 +9,10 @@ ent-EncryptionKeyDiplomacy = дипломатический ключ шифро�
 # mono
 ent-EncryptionKeyVanguardCommand = ключ шифрования командования Vanguard
     .desc = Ключ шифрования, используемый офицерами Vanguard.
-ent-EncryptionKeyViper = ViperGroup encryption key
-    .desc = An encryption key for the Viper Group tactical-level communications channel.
-ent-EncryptionKeyFreeport = Freeport encryption key
-    .desc = A worn encryption key for Freeport communications, allowing the varied groups of Freeport to engage in diplomacy or yell insults, likely the latter.
+ent-EncryptionKeyViper = ключ шифрования «Вайпер»
+    .desc = Ключ шифрования для канала тактической связи «Вайпер».
+ent-EncryptionKeyFreeport = ключ шифрования Фрипорта
+    .desc = Потёртый ключ шифрования для связи Фрипорта. Позволяет разношёрстным группировкам Фрипорта вести дипломатию или обмениваться оскорблениями — скорее второе.
 ent-EncryptionKeyMieyo = ключ шифрования ММС
     .desc = Ключ шифрования корпоративной связи Миейо.
 ent-EncryptionKeyMieyoCommand = командный ключ шифрования ММС

@@ -1,4 +1,4 @@
-ent-InteractorCCTC = proprietary interactor
-    .desc = A proprietary, more efficient design of a robotic actuator specialized in interacting with objects using various other objects.
-ent-RoboticArmCCTC = proprietary robotic arm
-    .desc = A proprietary, more efficient design of a high-tech robotic arm capable of moving items to and from machines that have automation upgrades.
+ent-InteractorCCTC = фирменный интерактор
+    .desc = Фирменная, более эффективная конструкция роботизированного привода, предназначенного для взаимодействия с объектами с помощью других предметов.
+ent-RoboticArmCCTC = фирменный манипулятор
+    .desc = Фирменная, более эффективная конструкция высокотехнологичного манипулятора, способного перемещать предметы в машины с улучшениями автоматизации и из них.

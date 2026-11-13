@@ -6,5 +6,5 @@ ent-RailingCornerSmall = перила
     .desc = Простые перила, предназначенные для защиты таких идиотов как вы от падения.
 ent-RailingRound = перила
     .desc = Простые перила, предназначенные для защиты таких идиотов как вы от падения.
-ent-BaseRailing = railing
-    .desc = Basic railing meant to protect idiots like you from falling.
+ent-BaseRailing = перила
+    .desc = Простые перила, чтобы такие идиоты, как вы, не падали.

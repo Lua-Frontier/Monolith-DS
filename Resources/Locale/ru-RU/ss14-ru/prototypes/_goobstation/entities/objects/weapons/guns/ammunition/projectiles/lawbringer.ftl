@@ -1,2 +1,2 @@
-ent-BulletExplode = explode
+ent-BulletExplode = взрыв
     .desc = { ent-BaseBullet.desc }

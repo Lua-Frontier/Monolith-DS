@@ -56,9 +56,9 @@ ent-ActionToggleWagging = action-name-toggle-wagging
     .desc = action-description-toggle-wagging
 ent-ActionToggleParamedicSiren = Включить сирену парамедика
   .desc = Включает и выключает сирену парамедика. Вииу-вииу.
-ent-FakeMindShieldToggleAction = [color=green]Toggle Fake Mindshield[/color]
-    .desc = Turn the Fake Mindshield implant's transmission on/off
-ent-ActionGravityJump = Jump
-    .desc = Activating the advanced propulsion system, you propel yourself a short distance in the direction of your gaze.
-ent-ActionToggleNightVision = Toggle night vision
-    .desc = Toggles the night vision on and off.
+ent-FakeMindShieldToggleAction = [color=green]Переключить поддельный щит разума[/color]
+    .desc = Включает и выключает передачу сигнала импланта поддельного щита разума.
+ent-ActionGravityJump = Прыжок
+    .desc = Активировав продвинутую двигательную систему, вы совершаете короткий рывок в направлении взгляда.
+ent-ActionToggleNightVision = Переключить ночное зрение
+    .desc = Включает и выключает ночное зрение.

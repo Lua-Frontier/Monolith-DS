@@ -1,2 +1,2 @@
-ent-PDVThiefBeacon = PDV extraction beacon
-    .desc = A device that will extract materials placed around it at the end of the operation.
+ent-PDVThiefBeacon = маяк эвакуации Авангарда
+    .desc = Устройство, которое по окончании операции эвакуирует размещённые вокруг него материалы.

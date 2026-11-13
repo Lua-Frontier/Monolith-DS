@@ -1,4 +1,4 @@
-ent-BaseCartridgeShenzhen = cartridge (13.4x92mm DU-APFSDS caseless)
-    .desc = Large anti-material round, with high armor-penetration and structural damage.
-ent-CartridgeShenzhen = cartridge (13.4X92mm DU-APFSDS caseless)
+ent-BaseCartridgeShenzhen = патрон (13.4x92мм DU-APFSDS безгильзовый)
+    .desc = Крупный противотехнический патрон с высокой бронепробиваемостью и уроном по конструкциям.
+ent-CartridgeShenzhen = патрон (13.4x92мм DU-APFSDS безгильзовый)
     .desc = { ent-BaseCartridgeShenzhen.desc }

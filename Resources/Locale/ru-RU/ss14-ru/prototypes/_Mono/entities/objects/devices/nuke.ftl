@@ -1,3 +1,3 @@
-ent-NuclearBombHyperwar = nuclear fission explosive
-    .desc = You probably shouldn't stick around to see if this is armed. Detonate this on your opponent's main station to win!
+ent-NuclearBombHyperwar = ядерная бомба
+    .desc = Пожалуй, не стоит задерживаться, чтобы проверить, взведена ли она. Взорвите её на главной станции противника, чтобы победить!
     .suffix = Hyperwar

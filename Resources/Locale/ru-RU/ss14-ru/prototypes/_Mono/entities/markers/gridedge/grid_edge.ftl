@@ -1,6 +1,6 @@
 ﻿ent-RadarEdgeMarkerBase = маркер края сетки
-ent-RadarEdgeMarkerStraight = straight radar edge marker
-ent-RadarEdgeMarkerDiagonal = diagonal radar edge marker
-ent-RadarEdgeMarkerHalftiltLeft = left halftilt radar edge marker
-ent-RadarEdgeMarkerHalftiltRight = right halftilt radar edge marker
-ent-RadarEdgeMarkerCenter = central radar edge marker
+ent-RadarEdgeMarkerStraight = прямой маркер края радара
+ent-RadarEdgeMarkerDiagonal = диагональный маркер края радара
+ent-RadarEdgeMarkerHalftiltLeft = левый полунаклонный маркер края радара
+ent-RadarEdgeMarkerHalftiltRight = правый полунаклонный маркер края радара
+ent-RadarEdgeMarkerCenter = центральный маркер края радара

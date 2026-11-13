@@ -1,5 +1,5 @@
-ent-N14ClosetSafe = safe
-    .desc = Might be filled with valuables.
+ent-N14ClosetSafe = сейф
+    .desc = Может быть полон ценностей.
 ent-N14LootClosetSafe = { ent-N14ClosetSafe }
     .desc = { ent-N14ClosetSafe.desc }
     .suffix = Loot, Random Military

@@ -8,5 +8,5 @@ ent-ClothingOuterArmorBPVestPolyvalent = универсальный бронеж
     .desc = Простой кевларовый жилет неизвестного происхождения. Этот не предназначен для защиты от конкретного типа угрозы.
 ent-ClothingOuterArmorBPVestStabproof = антирежущий бронежилет
     .desc = Простой кевларовый жилет неизвестного происхождения. Этот усилен против режущих ударов.
-ent-ClothingOuterArmorBPVestMediumPDV = PD-VI STZ-M bulletproof vest
-    .desc = Part of the STZ armor system for PD infantry. Moderately reinforced against bullets.
+ent-ClothingOuterArmorBPVestMediumPDV = бронежилет PD-VI STZ-M
+    .desc = Часть системы бронезащиты STZ для пехоты Авангарда. Умеренно защищает от пуль.

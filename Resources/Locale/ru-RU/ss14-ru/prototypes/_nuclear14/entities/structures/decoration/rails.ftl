@@ -1,4 +1,4 @@
-ent-N14Rails = railway
+ent-N14Rails = железная дорога
     .desc = { "" }
 ent-N14RailsJunctionRightTop = { ent-N14Rails }
     .desc = { ent-N14Rails.desc }

@@ -25,13 +25,13 @@ public sealed partial class DockObject : PanelContainer
     {
         var dockLabel = new Label()
         {
-            Text = "external airlock",
+            Text = Loc.GetString("luam-shuttle-dock-external-airlock"), // LuaM: "external airlock" > luam-shuttle-dock-external-airlock
             HorizontalAlignment = HAlignment.Center,
         };
         
         var viewButton = new Button()
         {
-            Text = Loc.GetString("View"),
+            Text = Loc.GetString("luam-shuttle-dock-view"), // LuaM: "View" > luam-shuttle-dock-view
             StyleClasses = { ConsoleStyles.Button }, // LuaM
         };
 

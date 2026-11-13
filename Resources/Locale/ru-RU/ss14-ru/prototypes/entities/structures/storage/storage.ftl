@@ -1,4 +1,4 @@
 ent-Rack = стойка
     .desc = Стойка для хранения вещей.
-ent-RackBlack = rack
-    .desc = A rack for storing things on.
+ent-RackBlack = стеллаж
+    .desc = Стеллаж для хранения вещей.

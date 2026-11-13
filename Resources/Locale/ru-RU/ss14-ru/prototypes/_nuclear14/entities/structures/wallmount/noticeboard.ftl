@@ -1,2 +1,2 @@
-ent-N14NoticeBoard2 = notice board
-    .desc = Something important to post?
+ent-N14NoticeBoard2 = доска объявлений
+    .desc = Есть что-то важное для объявления?

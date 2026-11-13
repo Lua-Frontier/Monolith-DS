@@ -6,5 +6,5 @@ ent-EliteRadarCircuitboard = плата элитного радарного ко
     .desc = Печатная плата компьютера для элитного радарного компьютера.
 ent-StationRadarCircuitboard = плата компьютера радара наблюдения
     .desc = Печатная плата компьютера для станционного радарного компьютера.
-ent-ComputerXenoborgsControlCircuitboard = xenoborg control console board
-    .desc = A computer printed circuit board for a xenoborg control console.
+ent-ComputerXenoborgsControlCircuitboard = консоль управления ксеноборгами (компьютерная плата)
+    .desc = Печатная плата для консоли управления ксеноборгами.

@@ -1,5 +1,5 @@
-ent-RMCContainerBase = cargo container
-    .desc = A huge industrial shipping container.
+ent-RMCContainerBase = грузовой контейнер
+    .desc = Огромный промышленный транспортный контейнер.
 ent-RMCContainerBlueLeft = { ent-RMCContainerBase }
     .desc = { ent-RMCContainerBase.desc }
     .suffix = Blue, Left

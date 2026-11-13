@@ -1,2 +1,2 @@
-ent-MonkeyDemonCube = monkey demon cube
+ent-MonkeyDemonCube = кубик обезьяны-демона
     .desc = { ent-MonkeyCube.desc }

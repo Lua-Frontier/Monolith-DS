@@ -54,5 +54,5 @@ ent-FoodPieAppleHoneySlice = кусочек пирога с грушей и сы
     .desc = Ломтик яблока в медовой глазури, запеченный с рассыпчатой овсяной начинкой для штрейзеля.
 ent-FoodPiePumpkinSlice = кусок тыквенного пирога
     .desc = { ent-FoodPieSliceBase.desc }
-ent-FoodPiePumpkin = pumpkin pie
-    .desc = Someone should turn this into a latte!
+ent-FoodPiePumpkin = тыквенный пирог
+    .desc = Кто-нибудь, сделайте из него латте!

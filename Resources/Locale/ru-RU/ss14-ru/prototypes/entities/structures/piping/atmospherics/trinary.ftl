@@ -12,5 +12,5 @@ ent-GasMixerFlipped = газовый смеситель
     .desc = { ent-GasMixer.desc }
 ent-PressureControlledValve = пневматический клапан
     .desc = Клапан, регулируемый давлением.
-ent-GasFilterBase = gas filter
-    .desc = Very useful for filtering gases.
+ent-GasFilterBase = газовый фильтр
+    .desc = Очень полезен для фильтрации газов.

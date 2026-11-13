@@ -1,2 +1,2 @@
-ent-LockerATU = ATU wardrobe locker
+ent-LockerATU = шкаф с одеждой ATU
     .desc = { ent-LockerParamedic.desc }
