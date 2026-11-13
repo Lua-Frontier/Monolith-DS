@@ -6,6 +6,9 @@
   id: Cartridge18x160mm
 
 - type: Tag
+  id: Cartridge9x19mmRubber
+
+- type: Tag
   id: ConstructionLoot
 
 - type: Tag

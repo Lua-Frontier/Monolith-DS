@@ -1,0 +1,132 @@
+# Hardsuits
+- type: technology
+  id: ColossusBasicArmor
+  name: research-technology-colossus-basic-armor
+  entityIcon: ClothingHeadHardsuitM92
+  discipline: Colossus
+  tier: 1
+  cost: 20000
+  recipeUnlocks:
+  - ClothingHeadHardsuitM92
+  technologyPrerequisites:
+  - ColossusDefensiveSystems
+  position: 8, 6
+
+- type: technology
+  id: ColossusHeavyArmor
+  name: research-technology-colossus-heavy-armor
+  entityIcon: ClothingOuterHardsuitM93
+  discipline: Colossus
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - ClothingHeadHardsuitM92x
+  - ClothingOuterHardsuitM93
+  technologyPrerequisites:
+  - ColossusBasicArmor
+  position: 9, 6
+
+# Vouchers
+- type: technology
+  id: ColossusT0Vouchers
+  name: research-technology-colossus-t0-vouchers
+  entityIcon: ShipVoucherCaelestinusT0
+  discipline: Colossus
+  tier: 1
+  cost: 30000
+  recipeUnlocks:
+  - ShipVoucherCaelestinusT0Recipe
+  technologyPrerequisites:
+  - ColossusDefensiveSystems
+  position: 6, 8
+
+- type: technology
+  id: ColossusT1Vouchers
+  name: research-technology-colossus-t1-vouchers
+  entityIcon: ShipVoucherCaelestinusT1
+  discipline: Colossus
+  tier: 2
+  cost: 45000
+  recipeUnlocks:
+  - ShipVoucherCaelestinusT1Recipe
+  technologyPrerequisites:
+  - ColossusT0Vouchers
+  position: 6, 9
+
+# Weapons
+- type: technology
+  id: ColossusBasicWeapons
+  name: research-technology-colossus-basic-weapons
+  entityIcon: WeaponRifleACR
+  discipline: Colossus
+  tier: 1
+  cost: 45000
+  recipeUnlocks:
+  - WeaponRifleACRRecipe
+  - WeaponPistolCCTCGalactica
+  - Magazine635x40mmCaselessBigRecipe
+  - Magazine635x40mmCaselessBigPlasmarecipe
+  technologyPrerequisites:
+  - ColossusDefensiveSystems
+  position: 8, 8
+
+- type: technology
+  id: ColossusHeavyWeapons
+  name: research-technology-colossus-heavy-weapons
+  entityIcon: WeaponRifleFPDMR
+  discipline: Colossus
+  tier: 2
+  cost: 50000
+  recipeUnlocks:
+  - WeaponSniperHunter101
+  - WeaponSmartLmg
+  - WeaponRifleFPDMR
+  - Hitscan18x160mm
+  - CartridgeBullet18x160mm
+  technologyPrerequisites:
+  - ColossusBasicWeapons
+  position: 9, 8
+
+- type: technology
+  id: ColossusSpecialWeapons
+  name: research-technology-colossus-special-weapons
+  entityIcon: WeaponEnergyRevolver
+  discipline: Colossus
+  tier: 2
+  cost: 25000
+  recipeUnlocks:
+  - WeaponEnergyRevolverRecipe
+  - WeaponShotgunEnforcerRubberRecipe
+  technologyPrerequisites:
+  - ColossusBasicWeapons
+  position: 9, 9
+
+# Misc
+- type: technology
+  id: ColossusAdvancedStorage
+  name: research-technology-colossus-advanced-storage
+  entityIcon: ArmorPlateStorageT3
+  discipline: Colossus
+  tier: 2
+  cost: 30000
+  recipeUnlocks:
+  - ArmorPlateStorageT3Recipe
+  - ClothingBackpackERTSecurityRecipe
+  technologyPrerequisites:
+  - ColossusDefensiveSystems
+  position: 6, 6
+
+- type: technology
+  id: ColossusDefensiveSystems
+  name: research-technology-colossus-defensive-systems
+  entityIcon: DeployableBarrierPacked
+  discipline: Colossus
+  tier: 2
+  cost: 45000
+  recipeUnlocks:
+  - DeployableBarrier
+  - HoloprojectorSecurity
+  - PortableFlasher
+  - MagazineAsmgtUniversal9x19mmRubber
+  - ASMGTUniversallyHostile
+  position: 7, 7

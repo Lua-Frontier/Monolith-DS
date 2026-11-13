@@ -18,3 +18,18 @@
     entity: ComputerSalvageExpedition
   - type: StaticPrice
     price: 6000
+
+# Colossus R&D server flatpack
+- type: entity
+  parent: BaseNFFlatpack
+  id: RDServerColossusFlatpack
+  name: colossus research and development server flatpack
+  description: A flatpack used for constructing a Colossus research and development server.
+  components:
+  - type: Flatpack
+    entity: ResearchAndDevelopmentServerColossus
+  - type: StaticPrice
+    price: 1500
+  - type: Sprite
+    layers:
+    - state: science_server

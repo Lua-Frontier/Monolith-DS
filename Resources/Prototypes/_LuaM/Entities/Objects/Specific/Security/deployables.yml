@@ -1,0 +1,49 @@
+- type: entity
+  id: DeployableBarrierPacked
+  name: packed deployable barrier
+  description: A folded deployable barrier that can be unfolded in place.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Turrets/magazinefed.rsi
+    state: packed
+  - type: Item
+    size: Ginormous
+    shape:
+    - 0,0,3,3
+    sprite: _NF/Objects/Weapons/Guns/Turrets/magazinefed.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: MultiHandedItem
+  - type: SpawnAfterInteract
+    prototype: DeployableBarrier
+    doAfter: 5
+    removeOnInteract: true
+
+- type: entity
+  id: PortableFlasherPacked
+  name: packed portable flasher
+  description: A portable proximity flasher ready to be deployed.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Turrets/magazinefed.rsi
+    state: packed
+  - type: Item
+    size: Ginormous
+    shape:
+    - 0,0,3,3
+    sprite: _NF/Objects/Weapons/Guns/Turrets/magazinefed.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: MultiHandedItem
+  - type: SpawnAfterInteract
+    prototype: PortableFlasher
+    doAfter: 5
+    removeOnInteract: true

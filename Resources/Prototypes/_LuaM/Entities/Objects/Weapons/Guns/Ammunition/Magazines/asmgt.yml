@@ -1,0 +1,12 @@
+- type: entity
+  parent: MagazineAsmgtUniversalEmpty
+  id: MagazineAsmgtUniversal9x19mmRubber
+  name: "ASMGT-compatible ammo box (9x19mm rubber)"
+  suffix: Loaded, Rubber
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge9x19mmRubber
+    whitelist:
+      tags:
+      - Cartridge9x19mmRubber
+    capacity: 50

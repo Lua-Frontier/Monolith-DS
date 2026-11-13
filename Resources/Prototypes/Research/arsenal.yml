@@ -63,7 +63,7 @@
   recipeUnlocks:
   - Truncheon
   - TelescopicShield
-  - HoloprojectorSecurity
+  # - HoloprojectorSecurity # Commented by LuaM: moved to Colossus equipment
   - WeaponDisablerSMG
   - WeaponDisabler # Mono
   - WeaponMechCombatDisabler # Goobstation
