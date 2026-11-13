@@ -21,6 +21,7 @@ public sealed partial class DeliveryUiFragment : BoxContainer
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
     [Dependency] private IPrototypeManager _proto = default!;
 
     private const int SummaryItems = 6;
@@ -324,7 +325,7 @@ public sealed partial class DeliveryUiFragment : BoxContainer
         for (var i = 0; i < _cachedSections.Count; i++)
         {
             var name = _cachedSections[i];
-            CategorySelect.AddItem(Loc.TryGetString(name, out var localized) ? localized : name, FirstSectionCategory + i);
+            CategorySelect.AddItem(_loc.TryGetString(name, out var localized) ? localized : name, FirstSectionCategory + i);
         }
 
         if (_category >= FirstSectionCategory + _cachedSections.Count)

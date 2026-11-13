@@ -53,6 +53,7 @@ public sealed partial class AtmosMonitoringConsoleSystem : SharedAtmosMonitoring
 
         // Grid events
         SubscribeLocalEvent<GridSplitEvent>(OnGridSplit);
+        SubscribeLocalEvent<GridRemovalEvent>(ev => _gridAtmosPipeChunks.Remove(ev.EntityUid)); // LuaM
     }
 
     #region Event handling

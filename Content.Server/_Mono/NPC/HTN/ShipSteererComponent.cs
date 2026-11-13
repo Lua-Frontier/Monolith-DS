@@ -223,6 +223,26 @@ public sealed partial class ShipSteererComponent : Component
     public float TargetRotation = 0f;
 
     public float? MaxVelocity = null; // LuaM
+
+    // LuaM-start
+    [ViewVariables(VVAccess.ReadWrite)]
+    public bool AvoidNebulae;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    public bool StopAtNebulae;
+
+    [ViewVariables]
+    public Vector2? NebulaDetour;
+
+    [ViewVariables]
+    public Vector2? NebulaStopPoint;
+
+    public EntityUid? NebulaDetourField;
+
+    public int NebulaDetourSide;
+
+    public TimeSpan NextNebulaCheck;
+    // LuaM-end
 }
 
 public enum ShipSteeringStatus : byte

@@ -90,32 +90,29 @@ public sealed partial class DocumentParsingManager
             .Cast<Control>())
         .Labelled("richtext");
 
+    // LuaM-start
+    private static RichTextLabel HeadingLabel(string text, string styleClass)
+    {
+        var label = new RichTextLabel { StyleClasses = { styleClass } };
+        label.SetMessage(FormattedMessage.FromUnformatted(text));
+        return label;
+    }
+    // LuaM-end
+
     private static readonly Parser<char, Control> HeaderControlParser = Try(Char('#'))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelHeadingBigger" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelHeadingBigger"), // LuaM: Label > RichTextLabel
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("header");
 
     private static readonly Parser<char, Control> SubHeaderControlParser = Try(String("##"))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelHeading" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelHeading"), // LuaM: Label > RichTextLabel
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("subheader");
 
     private static readonly Parser<char, Control> TertiaryHeaderControlParser = Try(String("###"))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelKeyText" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelKeyText"), // LuaM: Label > RichTextLabel
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("tertiaryheader");

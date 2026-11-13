@@ -2,17 +2,16 @@
 # Copyright (c) 2026 LuaWorld Contributors
 # See AGPLv3.txt for details.
 
-# How a nebula is drawn. Three layers: lower is under the grids, mid and upper are over the floor of open space only.
+# How a nebula is drawn. Three layers, all of them under the grids.
 - type: ambientSpaceEffect
   id: Nebula
   shader: AmbientNebula
-  lowerOpacity: 0.16
-  midOpacity: 0.45
-  upperOpacity: 0.24
+  lowerOpacity: 0.07
+  midOpacity: 0.16
+  upperOpacity: 0.08
+  maxOpacity: 0.3
   lowerParallax: 0.85
-  midParallax: 1.0
   upperParallax: 1.15
-  particleScale: 1.0
   flowSpeed: 0.20
 
 # Size, color and weather are rolled by AmbientSpaceFieldPlacerController, see the worldgen config.
@@ -23,6 +22,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
+    gridTraversal: false # -- Иначе шаттл, пролетевший над центром, увозит туманность с собой
   - type: SpaceHazardActivity
     activationRange: 1024
     idleTimeout: 600
@@ -31,3 +31,17 @@
     radius: 900
     density: 0.5
     color: "#FFFFFFFF"
+  - type: NebulaDebris # LuaM
+    chance: 0.15
+    minCount: 1
+    maxCount: 2
+    debris:
+      NFAsteroidDebrisSmall: 1
+      NFAsteroidDebrisMedium: 1
+      NFAsteroidRockDebrisSmall: 0.6
+      NFAsteroidIceDebrisSmall: 0.6
+      NFAsteroidChromiteDebrisSmall: 0.4
+      NFAsteroidScrapDebrisSmall: 0.6
+      NFAsteroidScrapDebrisMedium: 0.4
+      NFWreckDebrisSmall: 0.5
+      NFWreckDebrisMedium: 0.3

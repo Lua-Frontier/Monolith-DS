@@ -3,7 +3,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._LuaM.Lobby;
 
-[Prototype("lobbyTrack")]
+[Prototype]
 public sealed partial class LobbyTrackPrototype : IPrototype
 {
     [IdDataField]

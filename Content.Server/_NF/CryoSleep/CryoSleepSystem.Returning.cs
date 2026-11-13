@@ -21,6 +21,13 @@ public sealed partial class CryoSleepSystem
         SubscribeNetworkEvent<GetStatusMessage>(OnGetStatusMessage);
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(e => ResetCryosleepState(e.PlayerSession.UserId));
         SubscribeLocalEvent<PlayerBeforeSpawnEvent>(e => ResetCryosleepState(e.Player.UserId));
+        // LuaM-start
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(_ =>
+        {
+            _storedBodies.Clear();
+            _expiryTokens.Clear();
+        });
+        // LuaM-end
     }
 
     private void OnWakeupMessage(WakeupRequestMessage message, EntitySessionEventArgs session)
@@ -83,6 +90,7 @@ public sealed partial class CryoSleepSystem
         }
 
         _storedBodies.Remove(id.Value);
+        _expiryTokens.Remove(body); // LuaM
         _mind.ControlMob(id.Value, body);
         // Force the mob to sleep
         var sleep = EnsureComp<SleepingComponent>(body);
@@ -102,12 +110,15 @@ public sealed partial class CryoSleepSystem
     /// </summary>
     public void ResetCryosleepState(NetUserId id)
     {
-        var body = _storedBodies.GetValueOrDefault(id, null);
+        // LuaM-start
+        if (!_storedBodies.Remove(id, out var stored) || stored is not { } body)
+            return;
 
-        if (body != null && _storedBodies.Remove(id) && Transform(body!.Value.Body).ParentUid == _storageMap)
-        {
-            QueueDel(body.Value.Body);
-        }
+        _expiryTokens.Remove(body.Body);
+
+        if (TryComp(body.Body, out TransformComponent? xform) && xform.ParentUid == _storageMap)
+            QueueDel(body.Body);
+        // LuaM-end
     }
 
     public bool HasCryosleepingBody(NetUserId id)

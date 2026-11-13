@@ -11,6 +11,6 @@
     blocking: 100
   - type: ExtendDescription
     descriptionList:
-    - description: This creature is unaffected by projectiles fired within half a tile
+    - description: extend-desc-point-blank-immune # LuaM
       color: "#4f94ad"
       requireDetailRange: true

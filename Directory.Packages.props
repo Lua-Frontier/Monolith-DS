@@ -18,5 +18,14 @@
     <PackageVersion Include="OpenTK" Version="4.9.4" />
     <PackageVersion Include="Veldrid" Version="4.8.0" />
     <PackageVersion Include="Veldrid.SPIRV" Version="1.0.15" />
+    <!-- LuaM-start -->
+    <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="9.0.23" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="9.0.23" />
+    <!-- LuaM-end -->
   </ItemGroup>
+  <!-- LuaM-start -->
+  <ItemGroup>
+    <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-v76p-62qx-wwq2" />
+  </ItemGroup>
+  <!-- LuaM-end -->
 </Project>

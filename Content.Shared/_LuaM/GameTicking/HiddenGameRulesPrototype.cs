@@ -7,7 +7,7 @@ namespace Content.Shared._LuaM.GameTicking;
 /// They are left out of the addgamerule list and the command refuses them.
 /// Code that starts them directly is not affected.
 /// </summary>
-[Prototype("hiddenGameRules")]
+[Prototype]
 public sealed partial class HiddenGameRulesPrototype : IPrototype
 {
     [IdDataField]

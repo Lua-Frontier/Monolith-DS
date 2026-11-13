@@ -66,7 +66,7 @@ internal static class GuidebookImageBuilder
                     if (!Directory.Exists(guides)) guides = Path.Combine(fallback, "ServerInfo");
                     if (Directory.Exists(guides))
                         foreach (var file in Directory.EnumerateFiles(guides, "*.xml", SearchOption.AllDirectories))
-                            foreach (Match match in Regex.Matches(File.ReadAllText(file), "<GuideMap\\s+Map=\"([^\"]+)\"")) maps.Add(match.Groups[1].Value);
+                            foreach (Match match in GuidebookRenderFiles.GuideMapRegex.Matches(File.ReadAllText(file))) maps.Add(match.Groups[1].Value);
                     index.Format = GuidebookRenderFiles.FormatVersion;
                     index.Assets = assets;
                     maps.RemoveWhere(p => p.StartsWith("/Maps/Test/", StringComparison.Ordinal));

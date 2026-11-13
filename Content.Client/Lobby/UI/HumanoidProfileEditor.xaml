@@ -165,12 +165,11 @@
                             <OptionButton Name="CompanyButton" HorizontalAlignment="Right" />
                         </BoxContainer>
                         <!-- Description -->
-                        <BoxContainer Margin="15,15,15,10" VerticalExpand="True">
-                            <PanelContainer StyleClasses="BackgroundDark" Margin="10,8,10,8" MaxWidth="1200">
+                        <BoxContainer Margin="15,15,15,10">
+                            <PanelContainer StyleClasses="BackgroundDark" Margin="10,8,10,8" MaxWidth="1200" HorizontalExpand="True">
                                 <RichTextLabel Name="CompanyDescriptionLabel"
                                                VerticalAlignment="Top"
                                                HorizontalExpand="True"
-                                               HorizontalAlignment="Right"
                                                Margin="5,5,5,5" />
                             </PanelContainer>
                         </BoxContainer>

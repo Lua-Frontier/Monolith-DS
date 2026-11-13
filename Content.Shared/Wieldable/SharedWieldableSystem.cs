@@ -136,7 +136,7 @@ public abstract partial class SharedWieldableSystem : EntitySystem
     // Mono - Needed for attachments.
     public void RefreshModifiers(Entity<GunWieldBonusComponent?> gun)
     {
-        if (!Resolve(gun, ref gun.Comp))
+        if (!Resolve(gun, ref gun.Comp, false)) // LuaM
             return;
 
         var comp = gun.Comp;

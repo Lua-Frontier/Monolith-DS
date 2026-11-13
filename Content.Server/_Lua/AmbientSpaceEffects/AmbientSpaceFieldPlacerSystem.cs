@@ -4,10 +4,13 @@
 
 using System.Numerics;
 using Content.Server._Lua.SpaceHazards;
+using Content.Server._NF.GameTicking.Events;
+using Content.Server.GameTicking;
 using Content.Shared._Lua.AmbientSpaceEffects;
 using Content.Shared._Lua.CCVar;
 using Content.Shared._Lua.SpaceHazards;
 using Robust.Server.GameStates;
+using Content.Shared.GameTicking;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -49,6 +52,7 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SpaceHazardActivitySystem _activity = default!;
     [Dependency] private PvsOverrideSystem _pvs = default!;
+    [Dependency] private GameTicker _ticker = default!;
 
     private bool _enabled = true;
     private readonly List<(Vector2 Pos, float Extent)> _gridScratch = new();
@@ -59,12 +63,18 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
         Subs.CVar(_cfg, LuaCVars.AmbientSpaceEffectsEnabled, v => _enabled = v, true);
         SubscribeLocalEvent<AmbientSpaceFieldPlacerControllerComponent, ComponentStartup>(OnPlacerStartup);
         SubscribeLocalEvent<AmbientSpaceFieldComponent, MapInitEvent>(OnFieldMapInit);
+        SubscribeLocalEvent<StationsGeneratedEvent>(_ => GenerateAll());
+        SubscribeLocalEvent<RoundStartedEvent>(_ => GenerateAll());
     }
 
     private void OnFieldMapInit(Entity<AmbientSpaceFieldComponent> ent, ref MapInitEvent args)
     {
         // A nebula is seen and drawn on the radar from far outside of the normal PVS range.
         _pvs.AddGlobalOverride(ent);
+
+        var xform = Transform(ent);
+        if (xform.MapUid is { } mapUid && xform.ParentUid != mapUid)
+            _transform.SetCoordinates(ent, xform, new EntityCoordinates(mapUid, _transform.GetWorldPosition(xform)));
 
         // Spawned by hand or mapped, it has no shape yet.
         if (ent.Comp.Seed == 0)
@@ -84,10 +94,20 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
 
     private void OnPlacerStartup(EntityUid uid, AmbientSpaceFieldPlacerControllerComponent component, ComponentStartup args)
     {
-        TryPregenerate(uid, component);
+        if (_ticker.RunLevel == GameRunLevel.InRound)
+            Generate(uid, component);
     }
 
-    private void TryPregenerate(EntityUid mapUid, AmbientSpaceFieldPlacerControllerComponent placer)
+    private void GenerateAll()
+    {
+        var query = EntityQueryEnumerator<AmbientSpaceFieldPlacerControllerComponent>();
+        while (query.MoveNext(out var uid, out var placer))
+        {
+            Generate(uid, placer);
+        }
+    }
+
+    private void Generate(EntityUid mapUid, AmbientSpaceFieldPlacerControllerComponent placer)
     {
         if (!_enabled || placer.Spawned)
             return;
@@ -103,66 +123,60 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
             return;
         }
 
-        var mapId = map.MapId;
         var count = _random.Next(placer.MinCount, placer.MaxCount + 1);
         var minDist = MathF.Max(0f, placer.MinDistance);
         var maxDist = MathF.Max(minDist + 1f, placer.MaxDistance);
-        var minDistSq = minDist * minDist;
         var maxDistSq = maxDist * maxDist;
-        var spawned = 0;
+        var dangerous = 0;
         var maxAttempts = Math.Max(count * 24, count + 256);
         var placed = new List<(Vector2 Pos, float Radius)>(count);
-        CollectGrids(mapId, _gridScratch);
+        CollectGrids(map.MapId, _gridScratch);
 
-        for (var attempt = 0; attempt < maxAttempts && spawned < count; attempt++)
+        for (var attempt = 0; attempt < maxAttempts && placed.Count < count; attempt++)
         {
             var seed = _random.Next();
             if (seed == 0)
                 seed = 1;
 
             var radius = AmbientSpacePalette.RadiusFromSeed(seed);
+            var minCenterDist = minDist + radius;
+            if (minCenterDist >= maxDist)
+                continue;
+
             var angle = _random.NextFloat() * MathF.Tau;
-            var dist = MathF.Sqrt(minDistSq + _random.NextFloat() * (maxDistSq - minDistSq));
+            var minCenterDistSq = minCenterDist * minCenterDist;
+            var dist = MathF.Sqrt(minCenterDistSq + _random.NextFloat() * (maxDistSq - minCenterDistSq));
             var pos = new Vector2(MathF.Cos(angle), MathF.Sin(angle)) * dist;
 
-            if (OverlapsPlaced(placed, pos, radius, placer.MinSpacingFactor, placer.MinCenterSeparation))
+            if (OverlapsPlaced(placed, pos, radius, placer.Spacing))
                 continue;
 
-            if (OverlapsGrid(_gridScratch, pos, radius + placer.MinGridClearance))
-                continue;
-
-            var ent = Spawn(placer.FieldPrototype, new MapCoordinates(pos, mapId));
+            var ent = Spawn(placer.FieldPrototype, new EntityCoordinates(mapUid, pos));
             if (!TryComp<AmbientSpaceFieldComponent>(ent, out var field))
             {
                 QueueDel(ent);
                 continue;
             }
 
-            var weatherChance = dist < placer.MinWeatherDistance ? 0f : placer.WeatherChance;
-            ApplyDeterministicVisuals(field, seed, radius, weatherChance);
+            var hasWeather = !OverlapsGrid(_gridScratch, pos, radius + placer.DangerClearance) &&
+                             _random.Prob(placer.DangerChance);
+            ApplyDeterministicVisuals(field, seed, radius, hasWeather);
             Dirty(ent, field);
             UpdateActivationRange((ent, field));
             placed.Add((pos, radius));
-            spawned++;
+            if (field.HasWeather)
+                dangerous++;
         }
 
         _gridScratch.Clear();
-        Log.Info($"Pregenerated {spawned}/{count} ambient nebula fields on {ToPrettyString(mapUid)} (annulus {minDist}–{maxDist})");
+        Log.Info($"Generated {placed.Count}/{count} nebulae on {ToPrettyString(mapUid)}, {dangerous} with weather");
     }
 
-    private static bool OverlapsPlaced(
-        List<(Vector2 Pos, float Radius)> placed,
-        Vector2 pos,
-        float radius,
-        float spacingFactor,
-        float minCenterSeparation)
+    private static bool OverlapsPlaced(List<(Vector2 Pos, float Radius)> placed, Vector2 pos, float radius, float spacing)
     {
-        var factor = Math.Clamp(spacingFactor, 0.05f, 2f);
-        var floorSep = MathF.Max(0f, minCenterSeparation);
-
         foreach (var (otherPos, otherRadius) in placed)
         {
-            var minDist = MathF.Max((radius + otherRadius) * factor, floorSep);
+            var minDist = radius + otherRadius + spacing;
             if ((pos - otherPos).LengthSquared() < minDist * minDist)
                 return true;
         }
@@ -197,14 +211,14 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
         return false;
     }
 
-    private void ApplyDeterministicVisuals(AmbientSpaceFieldComponent field, int seed, float radius, float weatherChance)
+    private void ApplyDeterministicVisuals(AmbientSpaceFieldComponent field, int seed, float radius, bool hasWeather)
     {
         field.Seed = seed;
         field.Density = AmbientSpacePalette.DensityFromSeed(seed);
         field.Radius = radius;
         field.Color = AmbientSpacePalette.ColorFromSeed(seed);
         field.Weathers.Clear();
-        if (RollWeather(seed, radius, weatherChance) is not { } primaryWeather)
+        if (!hasWeather || RollWeather(seed, radius) is not { } primaryWeather)
             return;
 
         field.Weathers.Add(primaryWeather);
@@ -236,13 +250,9 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
             1f);
     }
 
-    private ProtoId<NebulaWeatherPrototype>? RollWeather(int seed, float radius, float weatherChance)
+    private ProtoId<NebulaWeatherPrototype>? RollWeather(int seed, float radius)
     {
         var u = unchecked((uint) seed);
-        var weatherRoll = (u >> 12 & 0xFFFu) / 4095f;
-        if (weatherRoll >= weatherChance)
-            return null;
-
         var radiationWeight = RadiationWeight(radius);
         var radiationRoll = (u >> 24 & 0xFFu) / 255f;
         if (radiationWeight > 0f && radiationRoll < radiationWeight * 0.35f && _prototypes.HasIndex(RadiationFogWeather))

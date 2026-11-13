@@ -548,7 +548,7 @@ entities:
       - 716
       - 744
       - 745
-- proto: AirlockCargoGlassLocked
+- proto: AirlockCargoGlass
   entities:
   - uid: 351
     components:
@@ -564,7 +564,7 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: -4.5,1.5
-- proto: AirlockEngineeringGlassLocked
+- proto: AirlockEngineeringGlass
   entities:
   - uid: 350
     components:
@@ -572,7 +572,7 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: -4.5,-2.5
-- proto: AirlockExternalLocked
+- proto: AirlockExternal
   entities:
   - uid: 267
     components:
@@ -586,7 +586,7 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: 1.5,7.5
-- proto: AirlockExternalShuttleLocked
+- proto: AirlockShuttle
   entities:
   - uid: 2
     components:
@@ -600,7 +600,7 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: -0.5,10.5
-- proto: AirlockScienceGlassLocked
+- proto: AirlockScienceGlass
   entities:
   - uid: 352
     components:

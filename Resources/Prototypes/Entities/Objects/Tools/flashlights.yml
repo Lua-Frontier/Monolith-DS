@@ -60,7 +60,7 @@
     storedRotation: -90
   - type: PointLight
     enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: Cone # LuaM
     autoRot: true
     radius: 20 # LuaM 6 -> 20
     netsync: false

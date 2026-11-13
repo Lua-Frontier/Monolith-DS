@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Server._Mono.Cleanup;
 using Content.Shared.GameTicking;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -37,7 +38,7 @@ namespace Content.Server.Tabletop
         /// <returns></returns>
         private Vector2 GetNextTabletopPosition()
         {
-            return UlamSpiral(_tabletops++) * TabletopSeparation;
+            return UlamSpiral(++_tabletops) * TabletopSeparation; // LuaM
         }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace Content.Server.Tabletop
             var mapUid = _mapManager.CreateMap(out var tabletopMap);
             TabletopMap = tabletopMap;
             _tabletops = 0;
+            EnsureComp<CleanupImmuneComponent>(mapUid); // LuaM
 
             var mapComp = Comp<MapComponent>(mapUid);
 
@@ -66,7 +68,7 @@ namespace Content.Server.Tabletop
         /// <returns>The mapped 2D position for the scalar.</returns>
         private Vector2i UlamSpiral(int n)
         {
-            var k = (int)MathF.Ceiling(MathF.Sqrt(n) - 1) / 2;
+            var k = (int)MathF.Ceiling((MathF.Sqrt(n) - 1) / 2); // LuaM
             var t = 2 * k + 1;
             var m = (int)MathF.Pow(t, 2);
             t--;

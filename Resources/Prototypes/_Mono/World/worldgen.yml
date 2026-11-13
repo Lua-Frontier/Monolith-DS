@@ -35,12 +35,10 @@
   - type: AmbientSpaceFieldPlacerController
     minCount: 80
     maxCount: 110
-    minDistance: 2000
+    minDistance: 1000
     maxDistance: 28000
-    minGridClearance: 1000
-    minSpacingFactor: 1.0
-    minCenterSeparation: 2400
-    weatherChance: 0.3
-    minWeatherDistance: 5000
+    spacing: 200
+    dangerChance: 0.1
+    dangerClearance: 500
     fieldPrototype: AmbientSpaceFieldNebula
   # Lua-end

@@ -1,5 +1,6 @@
 using System.IO;
 using System.Linq; // LuaM
+using System.Threading.Tasks;
 using Content.Server._Mono.MonoCoins;
 using Content.Server.Administration.Logs;
 using Content.Server.Database;
@@ -50,6 +51,8 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
     [Dependency] private MonoCoinsManager _coinBase = default!; // I had to.
     [Dependency] private ISharedPlayerManager _playerManager = default!;
     [Dependency] private UseDelaySystem _useDelay = default!; // LuaM
+
+    private readonly HashSet<Guid> _pendingBoxes = new();
 
     public override void Initialize()
     {
@@ -340,6 +343,28 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         SafetyDepositBoxComponent boxComp,
         StorageComponent storageComp)
     {
+        var boxId = boxComp.BoxId!.Value;
+        if (!_pendingBoxes.Add(boxId))
+            return;
+
+        try
+        {
+            await DepositBox(consoleUid, component, player, boxEntity, boxComp, storageComp);
+        }
+        finally
+        {
+            _pendingBoxes.Remove(boxId);
+        }
+    }
+
+    private async Task DepositBox(
+        EntityUid consoleUid,
+        SafetyDepositConsoleComponent component,
+        EntityUid player,
+        EntityUid boxEntity,
+        SafetyDepositBoxComponent boxComp,
+        StorageComponent storageComp)
+    {
         var entityDataList = new List<string>();
 
         Log.Info($"DepositBoxAsync: Box has {storageComp.Container.ContainedEntities.Count} items");
@@ -436,6 +461,27 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
         int characterIndex,
         Guid boxId)
     {
+        if (!_pendingBoxes.Add(boxId))
+            return;
+
+        try
+        {
+            await ReclaimBox(consoleUid, component, player, userId, characterIndex, boxId);
+        }
+        finally
+        {
+            _pendingBoxes.Remove(boxId);
+        }
+    }
+
+    private async Task ReclaimBox(
+        EntityUid consoleUid,
+        SafetyDepositConsoleComponent component,
+        EntityUid player,
+        Guid userId,
+        int characterIndex,
+        Guid boxId)
+    {
         // Get box from database
         var box = await _dbManager.GetSafetyDepositBox(boxId);
 
@@ -514,6 +560,27 @@ public sealed partial class SafetyDepositBoxSystem : EntitySystem
     }
 
     private async void WithdrawBoxAsync(
+        EntityUid consoleUid,
+        SafetyDepositConsoleComponent component,
+        EntityUid player,
+        Guid userId,
+        int characterIndex,
+        Guid boxId)
+    {
+        if (!_pendingBoxes.Add(boxId))
+            return;
+
+        try
+        {
+            await WithdrawBox(consoleUid, component, player, userId, characterIndex, boxId);
+        }
+        finally
+        {
+            _pendingBoxes.Remove(boxId);
+        }
+    }
+
+    private async Task WithdrawBox(
         EntityUid consoleUid,
         SafetyDepositConsoleComponent component,
         EntityUid player,

@@ -16,18 +16,18 @@
             </PanelContainer.PanelOverride>
         </PanelContainer>
 
-        <GridContainer Columns="2" Margin="10">
+        <BoxContainer Orientation="Horizontal" Margin="10" SeparationOverride="16"><!-- LuaM -->
             <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                 <Label Text="{Loc 'guidebook-microwave-ingredients-header'}"/>
                 <GridContainer Columns="3" Name="IngredientsGrid"/>
             </BoxContainer>
 
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+            <BoxContainer Orientation="Vertical"><!-- LuaM -->
                 <Label Text="{Loc 'guidebook-microwave-cook-time-header'}"/>
                 <BoxContainer Name="Machines"/><!-- Frontier: show entities that can cook a recipe. -->
                 <RichTextLabel Name="CookTimeLabel"/>
             </BoxContainer>
-        </GridContainer>
+        </BoxContainer>
 
         <BoxContainer Margin="10">
             <RichTextLabel Name="ResultDescription" HorizontalAlignment="Left"/>

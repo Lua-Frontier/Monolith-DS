@@ -379,3 +379,5 @@
         alwaysFaceTarget: true
         anchorInRange: true # LuaM
         rotationTolerance: 0.1 # LuaM
+        avoidNebulae: true # LuaM
+        stopAtNebulae: true # LuaM

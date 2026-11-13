@@ -1,0 +1,34 @@
+- type: lightMask
+  id: Cone
+  maskPath: /Textures/Effects/LightMasks/cone.png
+  lightCones:
+  - direction: 0
+    innerWidth: 35
+    outerWidth: 70
+
+- type: lightMask
+  id: DoubleCone
+  maskPath: /Textures/Effects/LightMasks/double_cone.png
+  lightCones:
+  - direction: 0
+    innerWidth: 35
+    outerWidth: 70
+  - direction: 180
+    innerWidth: 35
+    outerWidth: 70
+
+- type: lightMask
+  id: NarrowCone
+  maskPath: /Textures/_NF/Effects/LightMasks/narrow_cone.png
+  lightCones:
+  - direction: 0
+    innerWidth: 2
+    outerWidth: 6
+
+- type: lightMask
+  id: Beam
+  maskPath: /Textures/_NF/Effects/LightMasks/beam.png
+  lightCones:
+  - direction: 0
+    innerWidth: 0.5
+    outerWidth: 1.5

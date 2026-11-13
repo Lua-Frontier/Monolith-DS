@@ -15,8 +15,6 @@
         readOnly: true # mono
       - type: Company # LuaM: faction outpost
         companyName: Colonial
-      - type: StationDeadDrop
-        maxDeadDrops: 2
       - type: StationCargoOrderDatabase
         capacity: 240 # has to be large to compensate for playerbase
       - type: TradeCrateDestination
@@ -29,6 +27,8 @@
       components:
         - type: StationNameSetup
           mapNameTemplate: '«Колосс Централл»' # LuaM: 'Caelestinus Central' > '«Колосс Централл»'
+        - type: StationDeadDrop
+          maxDeadDrops: 2
         - type: ExtraStationInformation
           icon: /Textures/_Mono/Logo/icon/icon-256x256.png # used the biggest one, looks better when downscaling than upscaling
           stationSubtext: 'frontier-lobby-frontier-subtext'

@@ -58,7 +58,7 @@ public sealed class GuidebookNavigationExamplesTests
                     }
                     if (window is FancyResearchConsoleMenu research)
                     {
-                        var technology = pair.Client.ResolveDependency<IPrototypeManager>().Index<TechnologyPrototype>("BasicParts");
+                        var technology = pair.Client.ResolveDependency<IPrototypeManager>().Index(new ProtoId<TechnologyPrototype>("BasicParts"));
                         research.SelectTech(technology, ResearchAvailability.Available);
                         Assert.That(research.CurrentTech?.Id, Is.EqualTo("BasicParts"));
                         Assert.That(research.GuidebookReadOnly, Is.True);

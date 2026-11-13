@@ -91,4 +91,17 @@ research-technology-turret-two-pf = Бесконтактные миномётн�
 research-technology-turret-teslalaser = Компактное хранение энергии
 
 gunnery-server-examine-pacifist-grid = [color=crimson]Объект, к которому он прикреплён, не может использовать корабельное оружие![/color]
-gunnery-hardpoint-examine-detail = Требуется [color={ $sizeColor }]{ $size }[/color] [color={ $typeColor }]{ $type }
+gunnery-hardpoint-examine-detail = Требуется [color={ $sizeColor }]{ $size ->
+        [superlight] сверхлёгкая
+        [light] лёгкая
+        [medium] средняя
+        [heavy] тяжёлая
+        [superheavy] сверхтяжёлая
+       *[other] { $size }
+    }[/color] [color={ $typeColor }]{ $type ->
+        [ballistic] баллистическая
+        [energy] энергетическая
+        [missile] ракетная
+        [universal] универсальная
+       *[other] { $type }
+    }[/color] точка подвеса.

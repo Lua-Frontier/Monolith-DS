@@ -11,23 +11,18 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._Lua.Shuttles;
 
-/// <summary>
-/// Draws nebulae on the shuttle radar and the shuttle map: the outline of the dense part
-/// and, for the dangerous ones, the icons of their weather.
-/// </summary>
 public static class NebulaRadarDraw
 {
-    private const float HarmlessFillAlpha = 0.05f;
-    private const float WeatherFillAlpha = 0.11f;
     private const float OutlineAlpha = 0.85f;
+    private const int MaxCachedFills = 512;
+    private const int FillVertexCount = AmbientSpaceNebulaNoise.NavContourSegments * 9;
 
-    // Center, the outline, and the first outline point again to close it.
-    private static Vector2[] _scratch = new Vector2[AmbientSpaceNebulaNoise.NavContourSegments + 2];
+    // -- Заливка от центра к краю (как у областей DeepLagoon) строится один раз на туманность, каждый кадр только переводится в пиксели
+    private static readonly Dictionary<(Vector2[] Contour, bool Weather), DrawVertexUV2DColor[]> Fills = new();
+    private static readonly DrawVertexUV2DColor[] FillScratch = new DrawVertexUV2DColor[FillVertexCount];
+    private static Vector2[] _outline = new Vector2[AmbientSpaceNebulaNoise.NavContourSegments + 1];
     private static readonly List<Texture> Icons = new();
 
-    /// <param name="worldToScreen">From map coordinates to pixels of the control.</param>
-    /// <param name="worldView">Part of the map that is on screen, nebulae outside of it are skipped.</param>
-    /// <param name="iconSize">Size of a weather icon in pixels.</param>
     public static void Draw(
         DrawingHandleScreen handle,
         IEntityManager entManager,
@@ -39,9 +34,9 @@ public static class NebulaRadarDraw
         if (mapId == MapId.Nullspace)
             return;
 
-        // Harmless clouds are decoration and follow the graphics setting, dangerous ones are always shown.
         var drawHarmless = IoCManager.Resolve<IConfigurationManager>().GetCVar(LuaCVars.AmbientSpaceEffectsQuality) > 0;
         var transform = entManager.System<SharedTransformSystem>();
+        var modulate = Color.FromSrgb(handle.Modulate);
 
         var query = entManager.AllEntityQueryEnumerator<AmbientSpaceFieldComponent, TransformComponent>();
         while (query.MoveNext(out _, out var field, out var xform))
@@ -55,39 +50,98 @@ public static class NebulaRadarDraw
                 continue;
 
             var color = AmbientSpacePalette.ResolveFieldColor(field);
-            DrawContour(handle, NebulaVeilHelpers.GetMidContour(field.Seed, radius, field.Density), center, worldToScreen, color, field.HasWeather);
+            var contour = NebulaVeilHelpers.GetMidContour(field.Seed, radius, field.Density);
+            DrawFill(handle, GetFill(contour, field.Seed, color, field.HasWeather), center, worldToScreen, modulate);
+            DrawOutline(handle, contour, center, worldToScreen, color);
 
             if (field.HasWeather && worldView.Contains(center))
                 DrawWeatherIcons(handle, field, Vector2.Transform(center, worldToScreen), iconSize);
         }
     }
 
-    private static void DrawContour(
+    private static DrawVertexUV2DColor[] GetFill(Vector2[] contour, int seed, Color color, bool hasWeather)
+    {
+        if (Fills.TryGetValue((contour, hasWeather), out var fill))
+            return fill;
+
+        if (Fills.Count >= MaxCachedFills)
+            Fills.Clear();
+
+        fill = BuildFill(contour, seed, color, hasWeather ? 1f : 0.75f);
+        Fills[(contour, hasWeather)] = fill;
+        return fill;
+    }
+
+    private static DrawVertexUV2DColor[] BuildFill(Vector2[] contour, int seed, Color color, float density)
+    {
+        var segments = contour.Length;
+        var vertices = new DrawVertexUV2DColor[segments * 9];
+        var random = new System.Random(seed);
+        var middle = new DrawVertexUV2DColor[segments];
+        for (var i = 0; i < segments; i++)
+        {
+            var position = contour[i] * (0.48f + (float) random.NextDouble() * 0.2f);
+            var alpha = (0.07f + (float) random.NextDouble() * 0.07f) * density;
+            middle[i] = new DrawVertexUV2DColor(position, Color.FromSrgb(color.WithAlpha(alpha)));
+        }
+
+        var core = new DrawVertexUV2DColor(Vector2.Zero, Color.FromSrgb(color.WithAlpha(0.16f * density)));
+        var edgeColor = Color.FromSrgb(color.WithAlpha(0.018f * density));
+        var index = 0;
+        for (var i = 0; i < segments; i++)
+        {
+            var next = (i + 1) % segments;
+            var outer = new DrawVertexUV2DColor(contour[i], edgeColor);
+            var outerNext = new DrawVertexUV2DColor(contour[next], edgeColor);
+            vertices[index++] = core;
+            vertices[index++] = middle[i];
+            vertices[index++] = middle[next];
+            vertices[index++] = middle[i];
+            vertices[index++] = outer;
+            vertices[index++] = outerNext;
+            vertices[index++] = middle[i];
+            vertices[index++] = outerNext;
+            vertices[index++] = middle[next];
+        }
+
+        return vertices;
+    }
+
+    private static void DrawFill(
         DrawingHandleScreen handle,
-        Vector2[] contour,
+        DrawVertexUV2DColor[] fill,
         Vector2 center,
         Matrix3x2 worldToScreen,
-        Color color,
-        bool hasWeather)
+        Color modulate)
+    {
+        var count = Math.Min(fill.Length, FillScratch.Length);
+        for (var i = 0; i < count; i++)
+        {
+            var vertex = fill[i];
+            vertex.Position = Vector2.Transform(center + vertex.Position, worldToScreen);
+            vertex.Color *= modulate;
+            FillScratch[i] = vertex;
+        }
+
+        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, Texture.White, FillScratch.AsSpan(0, count));
+    }
+
+    private static void DrawOutline(DrawingHandleScreen handle, Vector2[] contour, Vector2 center, Matrix3x2 worldToScreen, Color color)
     {
         if (contour.Length < 3)
             return;
 
-        var count = contour.Length + 2;
-        if (_scratch.Length < count)
-            _scratch = new Vector2[count];
+        var count = contour.Length + 1;
+        if (_outline.Length < count)
+            _outline = new Vector2[count];
 
-        _scratch[0] = Vector2.Transform(center, worldToScreen);
         for (var i = 0; i < contour.Length; i++)
         {
-            _scratch[i + 1] = Vector2.Transform(center + contour[i], worldToScreen);
+            _outline[i] = Vector2.Transform(center + contour[i], worldToScreen);
         }
 
-        _scratch[count - 1] = _scratch[1];
-
-        var fill = color.WithAlpha(hasWeather ? WeatherFillAlpha : HarmlessFillAlpha);
-        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleFan, _scratch.AsSpan(0, count), fill);
-        handle.DrawPrimitives(DrawPrimitiveTopology.LineStrip, _scratch.AsSpan(1, count - 1), color.WithAlpha(OutlineAlpha));
+        _outline[count - 1] = _outline[0];
+        handle.DrawPrimitives(DrawPrimitiveTopology.LineStrip, _outline.AsSpan(0, count), color.WithAlpha(OutlineAlpha));
     }
 
     private static void DrawWeatherIcons(
@@ -111,7 +165,6 @@ public static class NebulaRadarDraw
             }
         }
 
-        // A row of icons centered on the nebula.
         var half = new Vector2(iconSize, iconSize) * 0.5f;
         var step = iconSize * 1.12f;
         var x = screenPos.X - step * (Icons.Count - 1) * 0.5f;

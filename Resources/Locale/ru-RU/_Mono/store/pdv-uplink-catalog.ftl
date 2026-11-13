@@ -1,4 +1,4 @@
-# Медицина
+﻿# Медицина
 uplink-pirate-medical-bundle-name = Набор медикаментов Интердайн
 uplink-pirate-medical-bundle-desc = Набор автоинъекторов и премиального медицинского оборудования на все случаи жизни. Содержит элитный компактный дефибриллятор, который можно использовать как оружие.
 
@@ -401,3 +401,21 @@ uplink-pdv-t3-voucher-desc = Небольшая карта, позволяюща
 
 uplink-HardBomb-PDV-name = Бомба «Адам»
 uplink-HardBomb-PDV-desc = Ответ Авангарда на недостаток взрывов.
+
+uplink-pdv-t1-hourglass-voucher-name = Ваучер на «Песочные часы»
+uplink-pdv-t1-hourglass-voucher-desc = Небольшая карта, содержащая данные для получения эскорта класса «Песочные часы» из резервов флагмана.
+
+uplink-pdv-t1-kalisto-voucher-name = Ваучер на «Каллисто»
+uplink-pdv-t1-kalisto-voucher-desc = Небольшая карта, содержащая данные для получения артиллерийского корвета класса «Каллисто» из резервов флагмана.
+
+uplink-pdv-t1-layak-voucher-name = Ваучер на «Лаяк»
+uplink-pdv-t1-layak-voucher-desc = Небольшая карта, содержащая данные для получения корвета класса «Лаяк» из резервов флагмана.
+
+uplink-pdv-t2-ganymede-voucher-name = Ваучер на «Ганимед»
+uplink-pdv-t2-ganymede-voucher-desc = Небольшая карта, содержащая данные для получения «фрегата» класса «Ганимед» из резервов флагмана.
+
+uplink-pdv-t2-kortik-voucher-name = Ваучер на «Кортик-Р»
+uplink-pdv-t2-kortik-voucher-desc = Небольшая карта, содержащая данные для получения фрегата класса «Кортик-Р» из резервов флагмана.
+
+uplink-pdv-t3-kortik-voucher-name = Ваучер на «Кортик-ЭМ»
+uplink-pdv-t3-kortik-voucher-desc = Небольшая карта, содержащая данные для получения фрегата класса «Кортик-ЭМ» из резервов флагмана.

@@ -62,6 +62,9 @@ humanoid-profile-editor-flavortext-tab = Description
 # Company
 humanoid-profile-editor-company-tab = Company
 humanoid-profile-editor-company-label = Company:
+humanoid-profile-editor-company-none = None
+humanoid-profile-editor-company-none-description = This character does not belong to any company.
+humanoid-profile-editor-company-no-description = This company has no description.
 
 # Traits
 humanoid-profile-editor-traits-tab = Traits

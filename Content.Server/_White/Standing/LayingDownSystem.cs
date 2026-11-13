@@ -2,6 +2,7 @@ using Content.Shared._White;
 using Content.Shared._White.Standing;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player; // LuaM
 
 namespace Content.Server.Standing;
 
@@ -25,4 +26,14 @@ public sealed partial class LayingDownSystem : SharedLayingDownSystem
         layingDown.AutoGetUp = _cfg.GetClientCVar(args.SenderSession.Channel, CCVars.AutoGetUp);
         Dirty(uid, layingDown);
     }
+
+    // LuaM-start
+    public override bool ShouldAutoGetUp(EntityUid uid, LayingDownComponent layingDown)
+    {
+        if (!TryComp<ActorComponent>(uid, out var actor))
+            return true;
+
+        return _cfg.GetClientCVar(actor.PlayerSession.Channel, CCVars.AutoGetUp);
+    }
+    // LuaM-end
 }

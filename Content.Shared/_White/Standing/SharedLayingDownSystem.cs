@@ -112,6 +112,13 @@ public abstract partial class SharedLayingDownSystem : EntitySystem
         _standing.Stand(uid, standingState);
     }
 
+    // LuaM-start
+    public virtual bool ShouldAutoGetUp(EntityUid uid, LayingDownComponent layingDown)
+    {
+        return layingDown.AutoGetUp;
+    }
+    // LuaM-end
+
     public bool TryStandUp(EntityUid uid, LayingDownComponent? layingDown = null, StandingStateComponent? standingState = null)
     {
         if (!Resolve(uid, ref standingState, false) ||

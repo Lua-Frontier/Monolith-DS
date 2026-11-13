@@ -1232,6 +1232,20 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(Label.StylePropertyFontColor, NanoGold),
                     }),
 
+                // LuaM-start
+                new StyleRule(new SelectorElement(typeof(RichTextLabel), new[] {StyleClassLabelHeading}, null, null), new[]
+                {
+                    new StyleProperty(Label.StylePropertyFont, notoSansBold16),
+                    new StyleProperty(Control.StylePropertyModulateSelf, NanoGold),
+                }),
+
+                new StyleRule(new SelectorElement(typeof(RichTextLabel), new[] {StyleClassLabelHeadingBigger}, null, null), new[]
+                {
+                    new StyleProperty(Label.StylePropertyFont, notoSansBold20),
+                    new StyleProperty(Control.StylePropertyModulateSelf, NanoGold),
+                }),
+                // LuaM-end
+
                 // Small Label
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassLabelSubText}, null, null), new[]
                 {

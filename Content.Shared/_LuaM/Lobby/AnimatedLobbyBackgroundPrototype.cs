@@ -3,7 +3,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._LuaM.Lobby;
 
-[Prototype("animatedLobbyBackground")]
+[Prototype]
 public sealed partial class AnimatedLobbyBackgroundPrototype : IPrototype
 {
     [IdDataField]

@@ -18,41 +18,20 @@ public sealed partial class AmbientSpaceFieldPlacerControllerComponent : Compone
     [DataField]
     public int MaxCount = 30;
 
-    /// <summary>
-    /// Nebula centers are picked in a ring between these distances from the map origin.
-    /// </summary>
     [DataField]
-    public float MinDistance = 2000f;
+    public float MinDistance = 1000f;
 
     [DataField]
-    public float MaxDistance = 30000f;
-
-    /// <summary>
-    /// Gap between the edge of a nebula and any grid that exists when the nebulae are placed.
-    /// </summary>
-    [DataField]
-    public float MinGridClearance = 1500f;
-
-    /// <summary>
-    /// Two nebulae are at least (radius A + radius B) * this apart. Below 1 they may overlap.
-    /// </summary>
-    [DataField]
-    public float MinSpacingFactor = 0.85f;
+    public float MaxDistance = 28000f;
 
     [DataField]
-    public float MinCenterSeparation = 900f;
+    public float Spacing = 200f;
 
-    /// <summary>
-    /// Share of nebulae that get weather, 0..1.
-    /// </summary>
     [DataField]
-    public float WeatherChance = 0.24f;
+    public float DangerChance = 0.1f;
 
-    /// <summary>
-    /// Nebulae closer to the map origin than this are always harmless.
-    /// </summary>
     [DataField]
-    public float MinWeatherDistance;
+    public float DangerClearance = 500f;
 
     [DataField]
     public EntProtoId FieldPrototype = "AmbientSpaceFieldNebula";

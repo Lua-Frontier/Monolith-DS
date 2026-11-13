@@ -152,8 +152,6 @@ public sealed partial class PowerMonitoringWindow : FancyWindow
                 entitiesOfInterest.Add(entry.NetEntity);
         }
 
-        focusSources.Concat(focusLoads);
-
         foreach ((var netEntity, var metaData) in console.PowerMonitoringDeviceMetaData)
         {
             if (NavMap.Visible)
@@ -292,13 +290,21 @@ public sealed partial class PowerMonitoringWindow : FancyWindow
 
     private int AlphabeticalSort(PowerMonitoringConsoleEntry x, PowerMonitoringConsoleEntry y)
     {
-        if (x.MetaData?.EntityName == null)
-            return -1;
+        // LuaM start
+        var xName = x.MetaData?.EntityName;
+        var yName = y.MetaData?.EntityName;
 
-        if (y.MetaData?.EntityName == null)
-            return 1;
+        if (xName == null || yName == null)
+        {
+            if (xName != null)
+                return 1;
 
-        return x.MetaData.Value.EntityName.CompareTo(y.MetaData.Value.EntityName);
+            return yName != null ? -1 : x.NetEntity.CompareTo(y.NetEntity);
+        }
+
+        var result = string.Compare(xName, yName, StringComparison.CurrentCulture);
+        return result != 0 ? result : x.NetEntity.CompareTo(y.NetEntity);
+        // LuaM end
     }
 }
 

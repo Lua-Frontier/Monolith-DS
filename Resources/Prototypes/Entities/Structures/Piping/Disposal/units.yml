@@ -42,6 +42,7 @@
         - TableMask
         layer:
         - TableLayer
+        - BulletImpassable # LuaM
   - type: Destructible
     thresholds:
     - trigger:
@@ -112,6 +113,7 @@
   - type: DisposalUnit
   - type: ThrowInsertContainer
     containerId: disposals
+    probability: 0.33 # LuaM
   - type: UserInterface
     interfaces:
       enum.DisposalUnitUiKey.Key:

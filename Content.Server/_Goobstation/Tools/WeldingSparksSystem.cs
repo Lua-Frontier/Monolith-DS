@@ -14,6 +14,7 @@ namespace Content.Server._Goobstation.Tools;
 public sealed partial class WeldingSparksSystem : EntitySystem
 {
     [Dependency] private ToolSystem _toolSystem = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!; // LuaM
 
     public override void Initialize()
     {
@@ -33,6 +34,12 @@ public sealed partial class WeldingSparksSystem : EntitySystem
 
         // Get the actual `DoAfterID` using its index, for use as a dictionary key.
         var doAfterId = new DoAfterId(args.User, args.DoAfterIdx);
+
+        // LuaM-start
+        // --  мгновенный DoAfter (aghost) уже завершился, эффект удалить было бы некому
+        if (_doAfter.GetStatus(doAfterId) != DoAfterStatus.Running)
+            return;
+        // LuaM-end
 
         var spawnLoc = GetSpawnLoc(ent, args.Target);
         if (spawnLoc is not { } loc)

@@ -11,6 +11,7 @@ namespace Content.Server._LuaM.Guidebook;
 public static class GuidebookRenderFiles
 {
     public const int FormatVersion = 1;
+    public static readonly Regex GuideMapRegex = new("<GuideMap\\s+Map=\"([^\"]+)\"", RegexOptions.Compiled);
     public sealed class Index
     {
         public int Format { get; set; } = FormatVersion;
@@ -66,7 +67,7 @@ public static class GuidebookRenderFiles
         if (Directory.Exists(guides))
         {
             var paths = Directory.EnumerateFiles(guides, "*.xml", SearchOption.AllDirectories)
-                .SelectMany(p => Regex.Matches(File.ReadAllText(p), "<GuideMap\\s+Map=\"([^\"]+)\"").Select(m => m.Groups[1].Value))
+                .SelectMany(p => GuideMapRegex.Matches(File.ReadAllText(p)).Select(m => m.Groups[1].Value))
                 .Distinct().OrderBy(p => p, StringComparer.Ordinal);
             Add("guide-map-list", Encoding.UTF8.GetBytes(string.Join('\n', paths)));
         }

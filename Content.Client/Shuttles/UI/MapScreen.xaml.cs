@@ -97,6 +97,7 @@ public sealed partial class MapScreen : BoxContainer
 //        MapRebuildButton.OnPressed += MapRebuildPressed; // Commented by LuaM
         InitializeMapTarget(); // LuaM
         InitializeMapSearch(); // LuaM
+        InitializeRadarMenu(); // LuaM
 
         OnVisibilityChanged += OnVisChange;
 
