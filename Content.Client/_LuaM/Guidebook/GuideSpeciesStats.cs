@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using Content.Client.Guidebook.Richtext;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Mobs.Components;
@@ -26,37 +27,51 @@ public sealed partial class GuideSpeciesStats : BoxContainer, IDocumentTag
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
         control = this;
+        SpeciesPrototype? selected = null;
+        if (args.TryGetValue("Species", out var speciesId)
+            && !_prototypes.TryIndex(speciesId, out selected))
+            return false;
         if (!_prototypes.TryIndex(MobHumanProto, out var human)) return true;
-        foreach (var species in _prototypes.EnumeratePrototypes<SpeciesPrototype>().Where(s => s.RoundStart).OrderBy(s => Loc.GetString(s.Name)))
+        var speciesToShow = selected != null
+            ? new[] { selected }
+            : _prototypes.EnumeratePrototypes<SpeciesPrototype>().Where(s => s.RoundStart).OrderBy(s => Loc.GetString(s.Name)).ToArray();
+        foreach (var species in speciesToShow)
         {
             if (!_prototypes.TryIndex(species.Prototype, out var mob)) continue;
             var details = new List<string>();
             if (Part<MovementSpeedModifierComponent>(mob, "MovementSpeedModifier") is { } speed
                 && Part<MovementSpeedModifierComponent>(human, "MovementSpeedModifier") is { } humanSpeed)
             {
-                details.Add("Ходьба: " + Relative(speed.BaseWalkSpeed, humanSpeed.BaseWalkSpeed));
-                details.Add("Бег: " + Relative(speed.BaseSprintSpeed, humanSpeed.BaseSprintSpeed));
+                var walk = speed.BaseWalkSpeed;
+                var sprint = speed.BaseSprintSpeed;
+                details.Add("Ходьба: " + walk.ToString("0.##", CultureInfo.CurrentCulture) + " м/с (" + Relative(walk, humanSpeed.BaseWalkSpeed) + ")");
+                details.Add("Бег: " + sprint.ToString("0.##", CultureInfo.CurrentCulture) + " м/с (" + Relative(sprint, humanSpeed.BaseSprintSpeed) + ")");
             }
+            if (Part<StaminaComponent>(mob, "Stamina") is { } stamina)
+                details.Add("Порог оглушения от выносливости: " + stamina.CritThreshold);
             if (Part<MobThresholdsComponent>(mob, "MobThresholds") is { } thresholds
                 && Part<MobThresholdsComponent>(human, "MobThresholds") is { } humanThresholds)
             foreach (var (amount, state) in thresholds.Thresholds)
             {
+                if (amount <= 0) continue;
                 var baseline = humanThresholds.Thresholds.FirstOrDefault(p => p.Value == state).Key.Float();
                 var name = state.ToString() == "Critical" ? "Критический урон" : state.ToString() == "Dead" ? "Смерть" : "Порог состояния";
                 details.Add(name + ": " + amount + (baseline > 0 ? " (" + Relative(amount.Float(), baseline) + ")" : ""));
             }
             var modifiers = Modifiers(mob);
             var baseModifiers = Modifiers(human);
-            if (modifiers != null)
-            foreach (var (type, coefficient) in modifiers.Coefficients)
+            foreach (var type in (modifiers?.Coefficients.Keys.AsEnumerable() ?? Enumerable.Empty<ProtoId<DamageTypePrototype>>())
+                         .Union(baseModifiers?.Coefficients.Keys.AsEnumerable() ?? Enumerable.Empty<ProtoId<DamageTypePrototype>>()).OrderBy(t => t.Id))
             {
+                var coefficient = modifiers?.Coefficients.GetValueOrDefault(type, 1) ?? 1;
                 var baseline = baseModifiers?.Coefficients.GetValueOrDefault(type, 1) ?? 1;
                 if (Math.Abs(coefficient - baseline) < 0.001) continue;
                 var damage = _prototypes.Index(type);
                 details.Add("Получаемый урон, " + damage.LocalizedName + ": " + Relative(coefficient, baseline));
             }
-            var header = new GuideCatalogHeader(Loc.GetString(species.Name), string.Join(" · ", details.Take(2)));
-            var body = new BoxContainer { Orientation = LayoutOrientation.Vertical, HorizontalExpand = true, Visible = false };
+            if (!details.Any(d => d.StartsWith("Получаемый урон,"))) details.Add("Получаемый урон: без отличий от человека.");
+            var header = new GuideCatalogHeader(Loc.GetString(species.Name), selected == null ? string.Join(" · ", details.Take(2)) : null) { Expanded = selected != null };
+            var body = new BoxContainer { Orientation = LayoutOrientation.Vertical, HorizontalExpand = true, Visible = selected != null };
             foreach (var line in details)
             { var label = new RichTextLabel { HorizontalExpand = true, Margin = new Thickness(6) }; label.SetMessage(line); body.AddChild(label); }
             header.OnPressed += _ => { body.Visible = !body.Visible; header.Expanded = body.Visible; };

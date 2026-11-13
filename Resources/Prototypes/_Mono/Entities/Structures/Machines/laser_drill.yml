@@ -7,7 +7,7 @@
   # LuaM-start: contextual equipment guide.
   - type: GuideHelp
     guides:
-    - IndustryDrilling
+    - ColossusLaserDrill # LuaM: help follows the dedicated operation guide
   # LuaM-end
   - type: ItemMiner
     proto: SpawnLootOres15

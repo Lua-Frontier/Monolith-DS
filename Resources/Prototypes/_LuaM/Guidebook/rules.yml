@@ -1,9 +1,9 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: LuaMRuleset
-  name: guide-entry-monolith-rules
+  name: guide-architecture-lua-m-ruleset # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Rules/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Rules/LuaMRuleset.xml > /ServerInfo/_LuaM/Guidebook/Rules/Index.xml
-  priority: 100 # LuaM: -2 > 100
+  priority: 70 # LuaM: guidebook architecture v2.1
   ruleEntry: true
   children:
     - LuaMRule0
@@ -18,7 +18,7 @@
     - LuaMRule9
 
 # Основные правила:
-  bookRoot: true # LuaM: curated server guidebook
+  bookRoot: true # LuaM: guidebook architecture v2.1
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.

@@ -5,21 +5,21 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ColossusCombat
-  name: guide-entry-colossus-personal-combat
+  name: guide-architecture-colossus-combat # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Combat/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Combat.xml > /ServerInfo/_LuaM/Guidebook/Combat/Index.xml
   priority: 5
-  bookRoot: true
-  children:
-  - ArmorExplanation
-  - ColossusPersonalAmmo
+  bookRoot: false # LuaM: guidebook architecture v2.1
+  children: # LuaM: scenario-based guidebook navigation
   - ColossusHandheldWeapons
+  - ColossusPersonalAmmo
+  - ArmorExplanation
   - Defusal
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ColossusMining
-  name: guide-entry-colossus-mining
+  name: guide-architecture-colossus-mining # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Activities/Mining.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/Mining.xml > /ServerInfo/_LuaM/Guidebook/Activities/Mining.xml
   priority: 10 # LuaM: 0 > 10 (section order)
 # LuaM-end

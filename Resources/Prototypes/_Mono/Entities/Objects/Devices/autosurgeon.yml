@@ -207,6 +207,7 @@
   # LuaM-start: contextual cybernetics guide.
   - type: GuideHelp
     guides:
+    - ColossusSurgery # LuaM: installation instructions
     - ColossusMantisBlades
   # LuaM-end
   - type: AutoSurgeon

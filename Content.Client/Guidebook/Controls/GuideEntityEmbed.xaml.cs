@@ -65,10 +65,21 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         MouseFilter = MouseFilterMode.Stop;
     }
 
-    public GuideEntityEmbed(string proto, bool caption, bool interactive) : this()
+    public GuideEntityEmbed(string proto, bool caption, bool interactive, bool compact = false) : this() // LuaM: optional icon-only layout
     {
         Interactive = interactive;
         _entityProto = proto;
+
+        // LuaM-start: recipe icons must not reserve the gallery's 170x106 layout.
+        if (compact && !caption)
+        {
+            SetSize = new Vector2(32, 32);
+            Margin = new Thickness(0);
+            VerticalAlignment = VAlignment.Center;
+            View.SetSize = new Vector2(32, 32);
+            Caption.Visible = false;
+        }
+        // LuaM-end
 
         if (caption)
             Caption.SetMessage(FormattedMessage.FromUnformatted(_prototype.Index<EntityPrototype>(proto).Name)); // LuaM: preserve literal localized names

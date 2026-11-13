@@ -1,22 +1,9 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Expeditions
-  name: guide-entry-expeditions
+  name: guide-architecture-expeditions # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/Expeditions.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Index.xml
   priority: 60 # LuaM: 5 > 60 (section order)
-  children:
-  - MobsExpeditionGuideAberrantFlesh
-  - MobsExpeditionGuideArgocytes
-  - MobsExpeditionGuideBloodCult
-  - MobsExpeditionGuideCarps
-  - MobsExpeditionGuideDinosaurs
-  - MobsExpeditionGuideExplorers
-  - MobsExpeditionGuideMercenaries
-  - MobsExpeditionGuideGangers
-  - MobsExpeditionGuideSilicons
-  - MobsExpeditionGuideSyndicate
-  - MobsExpeditionGuideXenos
-# LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
@@ -37,7 +24,7 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: MobsExpeditionGuideBloodCult
-  name: guide-entry-expedition-blood-cultists
+  name: guide-architecture-mobs-expedition-guide-blood-cult # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/blood_cultists.xml" # LuaM: /ServerInfo/_NF/Guidebook/MobsHostileExpedition/blood_cultists.xml > /ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/blood_cultists.xml
   priority: 30 # LuaM: 0 > 30 (section order)
 # LuaM-end

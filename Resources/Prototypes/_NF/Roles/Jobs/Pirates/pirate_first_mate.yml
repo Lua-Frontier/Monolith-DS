@@ -31,7 +31,7 @@
   accessGroups:
   - GeneralAccess
   guides:
-  - PDV_Entry
+  - ColossusNordfallRoles # LuaM: complete organization help
   special:
   - !type:AddComponentSpecial
     components:
@@ -63,5 +63,6 @@
     #pocket2: AppraisalTool
   storage:
     back:
+    - BookNordfallSOP # LuaM: faction service handbook
     - RadioHandheldNF
     - RubberStampPDVAsvaran # mono

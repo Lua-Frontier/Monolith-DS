@@ -6,6 +6,9 @@
   name: optical camo implant
   description: A mesh of light-bending fibers under the skin. Makes you fully invisible for a few seconds, attacking or getting hurt breaks it.
   components:
+  - type: GuideHelp
+    guides:
+    - ColossusImplantProtection
   - type: Sprite
     sprite: _LuaM/Objects/Misc/optical_camo.rsi
     state: icon

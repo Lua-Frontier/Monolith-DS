@@ -7,7 +7,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.IntegrationTests;
 using Content.MapRenderer.Painters;
-using Content.MapRenderer._LuaM; // LuaM: isolated guidebook render tool
 using Content.Shared.Maps;
 using Newtonsoft.Json;
 using Robust.Shared.Prototypes;
@@ -28,7 +27,7 @@ namespace Content.MapRenderer
 
         internal static async Task Main(string[] args)
         {
-            // LuaM-start: guidebook catalogue export and disabled-by-default rendering.
+            // LuaM-start: guidebook catalogue export.
             if (args.Contains("--guidebook-catalog"))
             {
                 Environment.SetEnvironmentVariable("COLOSS_GUIDEBOOK_WORKER", "1");
@@ -46,11 +45,6 @@ namespace Content.MapRenderer
                     await pair.CleanReturnAsync();
                 }
                 PoolManager.Shutdown();
-                return;
-            }
-            if (args.Contains("--guidebook"))
-            {
-                Environment.ExitCode = await GuidebookImageBuilder.Run(args);
                 return;
             }
             // LuaM-end

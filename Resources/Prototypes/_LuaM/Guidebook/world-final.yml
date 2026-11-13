@@ -1,46 +1,50 @@
 # LuaCorp - AGPLv3. See AGPLv3.txt.
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMWorld
-  name: guide-entry-luamworld
+  name: guide-architecture-lua-m-world # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/World.xml > /ServerInfo/_LuaM/Guidebook/Sector/Index.xml
-  bookRoot: true
-  priority: 2
-  children:
+  bookRoot: true # LuaM: guidebook architecture v2.1
+  priority: 40 # LuaM: guidebook architecture v2.1
+  children: # LuaM: scenario-based guidebook navigation
+  - SectorTopology
   - LuaMStations
   - LuaMWorldObjects
-  - SectorTopology
   - LuaMAsteroids
+  - ColossusNebulae
   - LuaMGameModes
+  - Creatures
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMWorldObjects
-  children:
-  - LuaMMonolithWreck
   priority: 20 # LuaM: 3 > 20 (section order)
-  name: guide-entry-luamworldobjects
+  name: guide-architecture-lua-m-world-objects # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Objects.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/Objects.xml > /ServerInfo/_LuaM/Guidebook/Sector/Objects.xml
+  children: # LuaM: scenario-based guidebook navigation
+  - ColossusCatalogueObjects
+  - LuaMMonolithWreck
+  - ColossusCatalogueDrones
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMAsteroids
   priority: 40 # LuaM: 4 > 40 (section order)
-  name: guide-entry-luamasteroids
+  name: guide-architecture-lua-m-asteroids # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Asteroids.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/Asteroids.xml > /ServerInfo/_LuaM/Guidebook/Sector/Asteroids.xml
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMDroneLoot
   priority: 50 # LuaM: 7 > 50 (section order)
-  name: guide-entry-luamdroneloot
+  name: guide-architecture-lua-m-drone-loot # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Activities/DroneLoot.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/DroneLoot.xml > /ServerInfo/_LuaM/Guidebook/Activities/DroneLoot.xml
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMTrade
   name: guide-entry-luamtrade
@@ -49,10 +53,18 @@
   priority: 5
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMContraband
-  name: guide-entry-luamcontraband
+  name: guide-architecture-lua-m-contraband # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Activities/Contraband.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Economy/Contraband.xml > /ServerInfo/_LuaM/Guidebook/Activities/Contraband.xml
   priority: 40 # LuaM: 0 > 40 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook navigation.
+- type: guideEntry
+  id: ColossusNebulae
+  name: guide-entry-colossus-nebulae
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Nebulae.xml
+  priority: 35
 # LuaM-end

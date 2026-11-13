@@ -1,0 +1,33 @@
+<Document>
+# Голова: органы и импланты
+
+Мозг, глаза и нейростабилизатор занимают отдельные слоты. В каждом — один вариант.
+
+<GuideEntityCards><GuideEntityEmbed Entity="BasicCyberneticEyes"/><GuideEntityEmbed Entity="OrganHumanityChipMk1"/><GuideEntityEmbed Entity="OrganHumanityChipMk2"/><GuideEntityEmbed Entity="OrganHumanityChipMk3"/><GuideEntityEmbed Entity="PositronicBrain"/></GuideEntityCards>
+
+## Глаза
+
+<GuideTable Columns="2">
+<Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>
+<Box>[bold]Биологические / биосинтетические глаза[/bold] · 0</Box><Box>Восстанавливают зрение без кибернетической нагрузки.</Box>
+<Box>[bold]Кибернетические глаза[/bold] · 1</Box><Box>Защита глаз и иммунитет к вспышкам.</Box>
+<Box>[bold]Кибернетические глаза с визором[/bold] · 1</Box><Box>Защита глаз и вспышек; должности, защита разума и криминальные статусы.</Box>
+<Box>[bold]Кибернетические глаза с анализатором[/bold] · 1</Box><Box>Показывают здоровье биологических существ; без защиты глаз и иммунитета к вспышкам.</Box>
+<Box>[bold]Кибернетические глаза диагностики[/bold] · 1</Box><Box>Показывают состояние неорганических и кремниевых существ; без защиты глаз и иммунитета к вспышкам.</Box>
+</GuideTable>
+
+## Нейростабилизаторы
+
+<GuideTable Columns="2">
+<Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>
+<Box>[bold]Mk I[/bold] · 0</Box><Box>Предел человечности +2.</Box>
+<Box>[bold]Mk II[/bold] · 0</Box><Box>Предел +3.</Box>
+<Box>[bold]Mk III[/bold] · 0</Box><Box>Предел +4.</Box>
+</GuideTable>
+
+Чипы заменяют друг друга, не складываются и не заменяют мозг или ускоритель ЦНС. Черты и последствия перегрузки описаны в [textlink="человечности" link="ColossusHumanity"].
+
+## Мозг и голова
+
+Мозг сохраняет сознание пациента. Пустая биосинтетическая голова не содержит его мозг. Позитронный мозг устанавливается только в подходящее тело; это не способ превратить обычного гуманоида в КПБ.
+</Document>

@@ -1,0 +1,267 @@
+# LuaM: scenario-based guidebook hubs. Stable existing IDs remain in their owning files.
+
+- type: guideEntry
+  id: ColossusMoney
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusMoney.xml
+  name: guide-architecture-colossus-money
+  children:
+  - Bank
+  - SafetyDepositBox
+
+- type: guideEntry
+  id: ColossusExtraction
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusExtraction.xml
+  name: guide-architecture-colossus-extraction
+  children:
+  - ColossusMining
+  - IndustryDrilling
+  - ColossusLaserDrill
+  - GasMining
+
+- type: guideEntry
+  id: ColossusLaserDrill
+  text: /ServerInfo/_LuaM/Guidebook/Activities/ColossusLaserDrill.xml
+  name: guide-architecture-colossus-laser-drill
+
+- type: guideEntry
+  id: ColossusExpeditionEnemies
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusExpeditionEnemies.xml
+  name: guide-architecture-colossus-expedition-enemies
+  children:
+  - MobsExpeditionGuideAberrantFlesh
+  - MobsExpeditionGuideArgocytes
+  - MobsExpeditionGuideBloodCult
+  - MobsExpeditionGuideCarps
+  - MobsExpeditionGuideDinosaurs
+  - MobsExpeditionGuideExplorers
+  - MobsExpeditionGuideMercenaries
+  - MobsExpeditionGuideGangers
+  - MobsExpeditionGuideSilicons
+  - MobsExpeditionGuideSyndicate
+  - MobsExpeditionGuideXenos
+
+- type: guideEntry
+  id: ColossusExpeditionsHub
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusExpeditionsHub.xml
+  name: guide-architecture-colossus-expeditions-hub
+  children:
+  - Expeditions
+  - ColossusExpeditionEnemies
+
+- type: guideEntry
+  id: ColossusRndHub
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusRndHub.xml
+  name: guide-architecture-colossus-rnd-hub
+  children:
+  - IndustryResearch
+  - ColossusCatalogueResearch
+  - ColossusArtifacts
+  - ColossusAnomalies
+
+- type: guideEntry
+  id: ColossusMechsHub
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusMechsHub.xml
+  name: guide-architecture-colossus-mechs-hub
+  children:
+  - MechsBase
+  - S1Mechs
+  - S2Mechs
+  - S4Mechs
+
+- type: guideEntry
+  id: ColossusProduction
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusProduction.xml
+  name: guide-architecture-colossus-production
+  children:
+  - IndustryFabricators
+  - ColossusMechsHub
+
+- type: guideEntry
+  id: ColossusBuilding
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusBuilding.xml
+  name: guide-architecture-colossus-building
+  children:
+  - Construction
+  - ExpandingRepairingStation
+  - WirePanels
+  - Airlocks
+
+- type: guideEntry
+  id: ColossusTEG
+  text: /ServerInfo/_LuaM/Guidebook/Engineering/Power/ColossusTEG.xml
+  name: guide-architecture-colossus-t-e-g
+
+- type: guideEntry
+  id: ColossusEdison
+  text: /ServerInfo/_LuaM/Guidebook/Engineering/Power/ColossusEdison.xml
+  name: guide-architecture-colossus-edison
+
+- type: guideEntry
+  id: ColossusFireControlServers
+  text: /ServerInfo/_LuaM/Guidebook/Ships/ColossusFireControlServers.xml
+  name: guide-architecture-colossus-fire-control-servers
+
+- type: guideEntry
+  id: ColossusElectricity
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusElectricity.xml
+  name: guide-architecture-colossus-electricity
+  children:
+  - ColossusPower
+  - ColossusCatalogueEngineering
+  - ColossusTEG
+  - ColossusEdison
+  - Ramping
+  - ShipyardNFROperation
+
+- type: guideEntry
+  id: ColossusAtmosEquipment
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusAtmosEquipment.xml
+  name: guide-architecture-colossus-atmos-equipment
+  children:
+  - Pumps
+  - MixingAndFiltering
+  - Thermomachines
+  - Pipes
+  - PressureRegulator
+
+- type: guideEntry
+  id: ColossusGasSynthesis
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusGasSynthesis.xml
+  name: guide-architecture-colossus-gas-synthesis
+  children:
+  - ColossusGasTritium
+  - ColossusGasFrezon
+  - ColossusGasBZ
+  - ColossusGasHealium
+  - ColossusGasNitrium
+  - ColossusGasPluoxium
+
+- type: guideEntry
+  id: ColossusAtmosMonitoring
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusAtmosMonitoring.xml
+  name: guide-architecture-colossus-atmos-monitoring
+  children:
+  - DeviceMonitoringAndControl
+  - AirAlarms
+  - AtmosphericAlertsComputer
+  - AtmosphericNetworkMonitor
+
+- type: guideEntry
+  id: ColossusAtmosHub
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusAtmosHub.xml
+  name: guide-architecture-colossus-atmos-hub
+  children:
+  - ColossusAtmos
+  - ColossusAtmosEquipment
+  - ColossusGasSynthesis
+  - ColossusAtmosMonitoring
+
+- type: guideEntry
+  id: ColossusGuides
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusGuides.xml
+  name: guide-architecture-colossus-guides
+  children:
+  - ColossusActivities
+  - ColossusExtraction
+  - ColossusExpeditionsHub
+  - ColossusBotany
+  - ColossusRndHub
+  - ColossusProduction
+  - Engineering
+  - ColossusCombat
+  - Medical
+  bookRoot: true
+  priority: 10
+
+- type: guideEntry
+  id: ColossusMMCRoles
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusMMCRoles.xml
+  name: guide-architecture-colossus-m-m-c-roles
+  children:
+  - ColossusMMCFaction
+  - MMC
+  - Economy
+  - ArcFurnace
+  - IndustryAutomation
+  - LuaMLoreMMC
+
+- type: guideEntry
+  id: ColossusTSFRoles
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusTSFRoles.xml
+  name: guide-architecture-colossus-t-s-f-roles
+  children:
+  - TSFMC_Entry
+  - TSFMC_org
+  - TSFMC_SOP
+  - ColossusTSFCode
+
+- type: guideEntry
+  id: ColossusNordfallRoles
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusNordfallRoles.xml
+  name: guide-architecture-colossus-nordfall-roles
+  children:
+  - PDV_Entry
+  - ColossusNordfallCharter
+
+- type: guideEntry
+  id: ColossusUSSPRoles
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusUSSPRoles.xml
+  name: guide-architecture-colossus-u-s-s-p-roles
+  children:
+  - USSP_Entry
+  - USSP_SoP
+
+- type: guideEntry
+  id: ColossusMercenaries
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusMercenaries.xml
+  name: guide-architecture-colossus-mercenaries
+
+- type: guideEntry
+  id: ColossusSpecialRoles
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusSpecialRoles.xml
+  name: guide-architecture-colossus-special-roles
+  children:
+  - ColossusPrecursors
+  - CorticalBorerPracticalGuide
+  - ChimeraPracticalGuide
+  - Xenoborgs
+
+- type: guideEntry
+  id: ColossusShipArmament
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusShipArmament.xml
+  name: guide-architecture-colossus-ship-armament
+  children:
+  - WeaponsSystems
+  - ColossusCatalogueShipWeapons
+  - ColossusFireControlServers
+
+- type: guideEntry
+  id: ColossusReferenceEquipment
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusReferenceEquipment.xml
+  name: guide-architecture-colossus-reference-equipment
+  children:
+  - ColossusCatalogueWeapons
+  - ColossusCatalogueAmmo
+  - ColossusCatalogueArmor
+  - ColossusCatalogueUplinks
+
+- type: guideEntry
+  id: ColossusReferenceResources
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusReferenceResources.xml
+  name: guide-architecture-colossus-reference-resources
+  children:
+  - ColossusCatalogueOres
+  - ColossusCataloguePrices
+
+- type: guideEntry
+  id: ColossusRecipes
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusRecipes.xml
+  name: guide-architecture-colossus-recipes
+  children:
+  - Drinks
+  - FoodRecipes
+
+- type: guideEntry
+  id: ColossusHome
+  text: /ServerInfo/_LuaM/Guidebook/Contextual/ColossusHome.xml
+  name: guide-architecture-colossus-home

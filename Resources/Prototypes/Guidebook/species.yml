@@ -1,135 +1,136 @@
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Species
   name: guide-entry-species
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/Species.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Index.xml
-  priority: 50 # LuaM: 0 > 50 (section order)
-  children:
+  text: "/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/Species.xml > /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Index.xml
+  priority: 120 # LuaM: position in the catalog
+  children: # LuaM: scenario-based guidebook navigation
+  - Avali
   - Arachnid
-  - Diona # Note: Frontier changes inside
-  - Dwarf # Note: Frontier changes inside
-  - Human
-  - Moth
-  - Reptilian # Monolith changes inside
-  - SlimePerson
+  - Ariral
+  - Demon
   - Vox
-  - Goblin # Frontier
-  - Vulpkanin # DeltaV
-  - Harpy # DeltaV
-  - Felinid # DeltaV
-  - Oni # DeltaV
-  - Chitinid # DeltaV
-  - Resomi # Floof
-  - Protogen # Mono
-  - IPC # EE
-  - Rodentia # DeltaV
-  - Tajaran # Goobstation
-  - Hydrakin # Monolith/Obelisk
-  - Feroxi
-  - Demon # Wega
-  - Flight # CE
+  - Vulpkanin
+  - Harpy
+  - Hydrakin
+  - Goblin
+  - Dwarf
+  - Diona
+  - IPC
+  - Moth
+  - Oni
+  - Shark
+  - Protogen
+  - Rodentia
+  - SlimePerson
+  - Tajaran
+  - Reptilian
+  - Felinid
+  - Chitinid
+  - Human
+  - Flight
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Arachnid
   name: species-name-arachnid
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Arachnid.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Arachnid.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Arachnid.xml
-  priority: 10 # LuaM: 0 > 10 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Arachnid.xml # LuaM: standardized species article
+  priority: 20 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Diona
   name: species-name-diona
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Diona.xml" # LuaM: /ServerInfo/_NF/Guidebook/Mobs/Diona.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Diona.xml
-  priority: 20 # LuaM: 0 > 20 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Diona.xml # LuaM: standardized species article
+  priority: 110 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Dwarf
   name: species-name-dwarf
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Dwarf.xml" # LuaM: /ServerInfo/_NF/Guidebook/Mobs/Dwarf.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Dwarf.xml
-  priority: 30 # LuaM: 0 > 30 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Dwarf.xml # LuaM: standardized species article
+  priority: 100 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Human
   name: species-name-human
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Human.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Human.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Human.xml
-  priority: 40 # LuaM: 0 > 40 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Human.xml # LuaM: standardized species article
+  priority: 230 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Moth
   name: species-name-moth
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Moth.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Moth.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Moth.xml
-  priority: 50 # LuaM: 0 > 50 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Moth.xml # LuaM: standardized species article
+  priority: 130 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Reptilian
   name: species-name-reptilian
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Reptilian.xml" # LuaM: /ServerInfo/Guidebook/Mobs/_Mono/MonoReptilian.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Reptilian.xml
-  priority: 60 # LuaM: 0 > 60 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Reptilian.xml # LuaM: standardized species article
+  priority: 200 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: SlimePerson
   name: species-name-slime
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/SlimePerson.xml" # LuaM: /ServerInfo/Guidebook/Mobs/SlimePerson.xml > /ServerInfo/_LuaM/Guidebook/References/Species/SlimePerson.xml
-  priority: 70 # LuaM: 0 > 70 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/SlimePerson.xml # LuaM: standardized species article
+  priority: 180 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Vox
   name: species-name-vox
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Vox.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Vox.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Vox.xml
-  priority: 80 # LuaM: 0 > 80 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Vox.xml # LuaM: standardized species article
+  priority: 50 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Resomi
   name: species-name-resomi
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Resomi.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Resomi.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Resomi.xml
+  text: /ServerInfo/_LuaM/Guidebook/Contextual/Species/Resomi.xml # LuaM: standardized species article
   priority: 150 # LuaM: 0 > 150 (section order)
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Protogen
   name: species-name-protogen
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Protogen.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Protogen.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Protogen.xml
-  priority: 160 # LuaM: 0 > 160 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Protogen.xml # LuaM: standardized species article
+  priority: 160 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: IPC
   name: species-name-ipc
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/IPC.xml" # LuaM: /ServerInfo/Guidebook/Mobs/IPCs.xml > /ServerInfo/_LuaM/Guidebook/References/Species/IPC.xml
-  priority: 170 # LuaM: 0 > 170 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/IPC.xml # LuaM: standardized species article
+  priority: 120 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Tajaran
   name: species-name-tajaran
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Tajaran.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Tajaran.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Tajaran.xml
-  priority: 190 # LuaM: 0 > 190 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Tajaran.xml # LuaM: standardized species article
+  priority: 190 # LuaM: alphabetical species order
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Hydrakin
   name: species-name-hydrakin
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Hydrakin.xml" # LuaM: /ServerInfo/Guidebook/Mobs/Hydrakin.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Hydrakin.xml
-  priority: 200 # LuaM: 0 > 200 (section order)
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Hydrakin.xml # LuaM: standardized species article
+  priority: 80 # LuaM: alphabetical species order
 # LuaM-end

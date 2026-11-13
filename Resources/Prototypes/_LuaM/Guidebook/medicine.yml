@@ -2,35 +2,55 @@
 
 - type: guideEntry
   id: ColossusCyberneticOrgans
-  name: guide-entry-colossus-organs
+  priority: 20 # LuaM: medical guide order
+  name: guide-architecture-colossus-cybernetic-organs # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Medicine/Organs.xml
 
 - type: guideEntry
   id: ColossusCybernetics
-  name: guide-entry-colossus-implants
+  priority: 30 # LuaM: medical guide order
+  name: guide-architecture-colossus-cybernetics # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/Index.xml
   children:
   - ColossusHumanity
+  - ColossusHeadImplants
+  - ColossusCyberneticOrgans
   - ColossusMantisBlades
-  - ColossusCNSImplants
-  - ColossusImplantProtection
+  - ColossusServiceImplants
 
 - type: guideEntry
   id: ColossusHumanity
-  name: guide-entry-colossus-humanity
+  priority: 0 # LuaM: medical guide order
+  name: guide-architecture-colossus-humanity # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/Humanity.xml
 
 - type: guideEntry
   id: ColossusMantisBlades
-  name: guide-entry-colossus-mantis-blades
+  priority: 30 # LuaM: medical guide order
+  name: guide-architecture-colossus-mantis-blades # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/MantisBlades.xml
 
 - type: guideEntry
   id: ColossusCNSImplants
+  priority: 10 # LuaM: medical guide order
   name: guide-entry-colossus-cns
-  text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/CNS.xml
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Organs.xml
 
 - type: guideEntry
   id: ColossusImplantProtection
+  priority: 20 # LuaM: medical guide order
   name: guide-entry-colossus-implant-protection
-  text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/Protection.xml
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Organs.xml
+
+
+- type: guideEntry
+  id: ColossusHeadImplants
+  name: guide-architecture-colossus-head-implants # LuaM: guidebook architecture v2.1
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/Head.xml
+  priority: 10
+
+- type: guideEntry
+  id: ColossusServiceImplants
+  name: guide-architecture-colossus-service-implants # LuaM: guidebook architecture v2.1
+  text: /ServerInfo/_LuaM/Guidebook/Medicine/Implants/Service.xml
+  priority: 40

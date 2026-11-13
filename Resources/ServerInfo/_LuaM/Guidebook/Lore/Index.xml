@@ -1,11 +1,13 @@
 <Document>
-# Лор сектора Колосс
+# Сектор Колосс
 
-## Сектор
-[textlink="Колосс и циклы Харибды" link="LuaMLoreSector"] · [textlink="История заселения и конфликтов" link="Timeline"] · [textlink="Звёздная система и её миры" link="MonoStarSystem"] · [textlink="Монолит" link="LuaMLoreMonolith"].
+[bold]2790 год.[/bold] За опасными маршрутами Харибды лежит Колосс — сектор, переживший катастрофу и десятилетия изоляции. Здесь сохранились станции советских экспедиций, возникла самостоятельная гражданская власть и вновь появились флоты внешних держав.
 
-## Государства и организации
-[textlink="Транс-Солнечная Федерация" link="LuaMLoreTSF"] · [textlink="Авангард Нордфолла" link="LuaMLoreAN"] · [textlink="Колосс" link="LuaMLoreColoss"] · [textlink="ММС" link="LuaMLoreMMC"] · [textlink="СССП" link="LuaMLoreUSSP"] · [textlink="ЧВК «Вайпер»" link="LuaMLoreViper"].
+Империя Феникса удерживает военный протекторат, а Транс-Солнечная Федерация оспаривает её притязания. Местные жители сохраняют нейтралитет. Промышленные компании, наёмники и исследователи ищут своё место среди этих интересов, пока разломы приносят в сектор находки из неизвестного пространства.
 
-[textlink="Игровые должности и служба" link="Factions"] · [textlink="Правила фракционных конфликтов" link="LuaMRule2"]
+## Харибда и её миры
+[textlink="Харибда и сектор Колосс" link="LuaMLoreSector"] · [textlink="История Колосса" link="Timeline"] · [textlink="Звёздная система" link="MonoStarSystem"] · [textlink="Монолит" link="LuaMLoreMonolith"].
+
+## Державы и жители сектора
+[textlink="Колосс" link="LuaMLoreColoss"] · [textlink="Транс-Солнечная Федерация" link="LuaMLoreTSF"] · [textlink="Империя Феникса и Авангард Нордфолла" link="LuaMLoreAN"] · [textlink="Союз Советских Социалистических Планет" link="LuaMLoreUSSP"] · [textlink="История ММС" link="LuaMLoreMMC"] · [textlink="ЧВК «Вайпер»" link="LuaMLoreViper"].
 </Document>

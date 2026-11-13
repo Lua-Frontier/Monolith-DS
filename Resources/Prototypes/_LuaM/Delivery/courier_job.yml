@@ -1,6 +1,7 @@
 - type: job
   id: DeliveryCourier
   guides:
+  - ColossusCourier
   - Caelestinus
   name: job-name-delivery-courier
   description: job-description-delivery-courier

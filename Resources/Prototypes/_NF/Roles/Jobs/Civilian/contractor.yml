@@ -2,7 +2,7 @@
   id: Contractor
   # LuaM-start: faction guide for the selectable lobby role.
   guides:
-  - BeginnerGuide
+  - NewPlayer
   # LuaM-end
   name: job-name-contractor
   description: job-description-contractor

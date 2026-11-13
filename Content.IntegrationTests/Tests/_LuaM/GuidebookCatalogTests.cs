@@ -4,6 +4,8 @@
  * See AGPLv3.txt for details.
  */
 using System.Linq;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 using Content.Server._LuaM.Guidebook;
 using Content.Client._LuaM.Guidebook;
 using Content.Shared._NF.Shipyard.Prototypes;
@@ -19,6 +21,30 @@ namespace Content.IntegrationTests.Tests._LuaM;
 [TestFixture]
 public sealed class GuidebookCatalogTests
 {
+    [Test]
+    public async Task StartingStationAppearsAlongsidePois()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        await pair.Server.WaitAssertion(() =>
+        {
+            var configuration = pair.Server.ResolveDependency<IConfigurationManager>();
+            var previous = configuration.GetCVar(CCVars.GameMap);
+            var entities = pair.Server.ResolveDependency<IEntityManager>();
+            var before = entities.EntityCount;
+            try
+            {
+                // Select the real station metadata without loading its entities.
+                configuration.SetCVar(CCVars.GameMap, "Frontier");
+                var catalog = entities.System<GuidebookCatalogSystem>().BuildSnapshot();
+                var station = catalog.Sites.Single(s => s.MapPath == "/Maps/_LuaM/POI/caelestinus_centralLuaM.yml");
+                Assert.That(station.Facilities, Is.Not.Empty);
+                Assert.That(entities.EntityCount, Is.EqualTo(before));
+            }
+            finally { configuration.SetCVar(CCVars.GameMap, previous); }
+        });
+        await pair.CleanReturnAsync();
+    }
+
     [Test]
     public async Task CatalogIncludesResolvedVesselsWithoutSpawningMaps()
     {

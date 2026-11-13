@@ -1,31 +1,35 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Medical
-  name: guide-entry-medical
+  name: guide-architecture-medical # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Medicine/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Medical.xml > /ServerInfo/_LuaM/Guidebook/Medicine/Index.xml
   priority: 9
-  bookRoot: true
-  children: # LuaM: purpose-based guidebook navigation
+  bookRoot: false # LuaM: guidebook architecture v2.1
+  children: # LuaM: scenario-based guidebook navigation
+  - MedicalDoctor
   - ColossusSurgery
-  - ColossusCybernetics # LuaM: implant guides
-  - MedicalBounties
   - Cryogenics
   - Cloning
   - Letoferol
+  - MedicalBounties
+  - ColossusCybernetics
 # LuaM-end
 
 - type: guideEntry
   id: MedicalDoctor
+  priority: 10 # LuaM: medical guide order
   name: guide-entry-medicaldoctor
   text: "/ServerInfo/Guidebook/Medical/MedicalDoctor.xml"
 
 - type: guideEntry
   id: Cloning
+  priority: 50 # LuaM: medical guide order
   name: guide-entry-cloning
   text: "/ServerInfo/Guidebook/Medical/Cloning.xml"
 
 - type: guideEntry
   id: Cryogenics
+  priority: 40 # LuaM: medical guide order
   name: guide-entry-cryogenics
   text: "/ServerInfo/_NF/Guidebook/Medical/Cryogenics.xml" # Frontier: added _NF prefix
 

@@ -212,8 +212,7 @@ public sealed partial class GuideCatalog : BoxContainer, IDocumentTag
                     Row(list, "После исчерпания", voucher.DestroyOnEmpty ? "Карта исчезает" : "Карта остаётся");
                 }
             });
-        var preview = new Button { Text = "План корабля", HorizontalExpand = true, Margin = new Thickness(0, 6),
-            Disabled = !GuidebookMapRendering.Enabled, ToolTip = "Просмотр планов временно отключён." };
+        var preview = new Button { Text = "План корабля", HorizontalExpand = true, Margin = new Thickness(0, 6) };
         preview.OnPressed += _ => _entities.System<GuidebookMapPreviewSystem>().Open(vessel.MapPath, vessel.Name);
         body.AddChild(preview);
         if (vessel.Equipment.Count > 0)

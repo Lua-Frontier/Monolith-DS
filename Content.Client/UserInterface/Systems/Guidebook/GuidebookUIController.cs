@@ -180,6 +180,7 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
         if (GuidebookButton != null)
             GuidebookButton.SetClickPressed(!_guideWindow.IsOpen);
 
+        var fullBook = guides == null; // LuaM: contextual help keeps its own initial article.
         if (guides == null)
         {
             guides = _prototypeManager.EnumeratePrototypes<GuideEntryPrototype>()
@@ -205,14 +206,15 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
             }
             else
             {
-                selected = _configuration.GetCVar(CCVars.DefaultGuide);
+                // LuaM: the first ordinary opening starts on the navigation grid.
+                selected = fullBook && guides.ContainsKey("ColossusHome")
+                    ? new ProtoId<GuideEntryPrototype>("ColossusHome")
+                    : _configuration.GetCVar(CCVars.DefaultGuide);
             }
         }
         _guideWindow.UpdateGuides(guides, rootEntries, forceRoot, selected);
 
-        // Expand up to depth-2.
-        _guideWindow.Tree.SetAllExpanded(false);
-        _guideWindow.Tree.SetAllExpanded(true, 0); // Frontier: 1->0 (too many entries at depth 2)
+        // LuaM: UpdateGuides reveals the selected path; unrelated roots remain collapsed.
 
         _guideWindow.OpenCenteredRight();
     }

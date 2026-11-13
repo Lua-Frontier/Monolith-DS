@@ -13,7 +13,7 @@
 ## Выбрать термомашину
 Обычный нагреватель работает до [bold][protodata="GasThermoMachineHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/bold], морозильник — до [bold][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/bold].
 
-Для нитриума нужен более горячий источник: Hellfire-нагреватель достигает [bold][protodata="GasThermoMachineHellfireHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/bold]. Для глубокого охлаждения хилиума подходит Hellfire-морозильник с пределом [bold][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/bold]. Эти пределы подставляются из текущих прототипов.
+Для нитриума нужен более горячий источник: Hellfire-нагреватель достигает [bold][protodata="GasThermoMachineHellfireHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/bold]. Для глубокого охлаждения хилиума подходит Hellfire-морозильник с пределом [bold][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/bold].
 
 [textlink="Сборка и режимы термомашин" link="Thermomachines"] · [textlink="Исследования оборудования" link="IndustryResearch"].
 
@@ -35,4 +35,6 @@
 Кислород, азот и плазму получают [textlink="газовыми бурами и газодобытчиками" link="GasMining"]. Миазмы образуются при разложении тел; отдельного рецепта смешивания для них нет.
 
 [textlink="Насосы" link="Pumps"] · [textlink="Смеситель и фильтр" link="MixingAndFiltering"] · [textlink="Охлаждение и нагрев" link="Thermomachines"] · [textlink="Цены" link="ColossusCataloguePrices"]
+
+[textlink="Добыча газа на астероидах" link="GasMining"].
 </Document>

@@ -91,9 +91,8 @@ def check(articles):
         path = entry.get('text', '')
         if path.startswith(own_prefix):
             visible_files.add('Resources' + path)
-            actual = path.removeprefix(own_prefix).split('/')[0]
-            if actual != folder:
-                errors.append(f'{identifier}: folder {actual} differs from tree section {folder}')
+            # Navigation is independent of physical paths: moving an entry must not
+            # require renaming stable XML paths or contextual links.
         for child in entry['children']:
             walk(child, folder, ancestors + [identifier])
 
@@ -103,6 +102,12 @@ def check(articles):
         path = entry.get('text', '')
         folder = path.removeprefix(own_prefix).split('/')[0] if path.startswith(own_prefix) else ''
         walk(identifier, folder, [])
+    roots = sorted((i for i, e in entries.items() if e.get('bookRoot') == 'true'),
+                   key=lambda i: int(entries[i].get('priority', 0)))
+    expected_roots = ['NewPlayer', 'ColossusGuides', 'Factions', 'NF14', 'LuaMWorld',
+                      'ColossusCatalogue', 'LuaMLore', 'LuaMRuleset']
+    if roots != expected_roots:
+        errors.append(f'Unexpected book roots/order: {roots}; expected {expected_roots}')
     for identifier, entry in entries.items():
         path = entry.get('text', '')
         if path.startswith(own_prefix) and 'Resources' + path not in articles:

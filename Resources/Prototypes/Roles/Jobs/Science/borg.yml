@@ -22,7 +22,7 @@
   id: Borg
   # LuaM-start: faction guide for the selectable lobby role.
   guides:
-  - BeginnerGuide
+  - NewPlayer
   # LuaM-end
   name: job-name-borg
   description: job-description-borg

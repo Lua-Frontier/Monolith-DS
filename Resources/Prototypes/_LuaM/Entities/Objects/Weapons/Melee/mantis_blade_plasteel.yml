@@ -46,6 +46,7 @@
   components:
   - type: GuideHelp
     guides:
+    - ColossusSurgery
     - ColossusMantisBlades
   - type: AutoSurgeon
     targetBodyPart: Arm

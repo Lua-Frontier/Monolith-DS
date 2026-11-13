@@ -18,5 +18,5 @@
 ## Боеприпас и защита
 Урон задаёт [bold]патрон или луч[/bold], а не только модель оружия. Дробовик с пулей и с дробью поражает цель по-разному; бронепробитие меняет результат попадания по защищённой цели. Подбор боеприпаса разобран в [textlink="руководстве по патронам" link="ColossusPersonalAmmo"], работа защиты — в [textlink="броне и бронеплитах" link="ArmorExplanation"].
 
-[textlink="Каталог оружия — work in progress" link="ColossusCatalogueWeapons"]. Проверенные источники снабжения: [textlink="аплинки фракций" link="ColossusCatalogueUplinks"].
+[textlink="Боеприпасы" link="ColossusCatalogueAmmo"] · [textlink="Аплинки фракций" link="ColossusCatalogueUplinks"].
 </Document>

@@ -1,49 +1,55 @@
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Engineering
   name: guide-entry-colossus-procedures # LuaM: guide-entry-engineering > guide-entry-colossus-procedures
   text: "/ServerInfo/_LuaM/Guidebook/Engineering/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Engineering.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Index.xml
   priority: 6
-  bookRoot: true # LuaM: curated server guidebook
-  children: # LuaM: energy, atmosphere, then mechs
-  - ColossusPower
-  - ShipyardNFROperation
-  - ColossusAtmos
-  - MechsBase
-  - ColossusCommodities
+  bookRoot: false # LuaM: guidebook architecture v2.1
+  children: # LuaM: scenario-based guidebook navigation
+  - ColossusBuilding
+  - ColossusElectricity
+  - ColossusAtmosHub
+  - IndustryMachineParts
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Construction
-  name: guide-entry-construction
+  name: guide-architecture-construction # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/Guidebook/Engineering/Construction.xml"
-  children:
-  - Airlocks
-  - ExpandingRepairingStation
-  - WirePanels
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ExpandingRepairingStation
-  name: guide-entry-expandingrepairingstation
+  name: guide-architecture-expanding-repairing-station # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/Guidebook/Engineering/ExpandingRepairingStation.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Airlocks
   name: guide-entry-airlocks
   text: "/ServerInfo/Guidebook/Engineering/Airlocks.xml"
   children:
   - AirlockSecurity
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: WirePanels
   name: guide-entry-wirepanels
   text: "/ServerInfo/Guidebook/Engineering/WirePanels.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AirlockSecurity
   name: guide-entry-airlock-security
   text: "/ServerInfo/Guidebook/Engineering/AirlockSecurity.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Atmospherics
   name: guide-entry-atmospherics
@@ -55,7 +61,9 @@
   - AtmosTools
   - Gasses
   - GasMining # Frontier
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: GasManipulation
   name: guide-entry-gasmanipulation
@@ -69,17 +77,23 @@
   - GasCanisters
   - Thermomachines
   - GasCondensing
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Pipes
   name: guide-entry-pipes
   text: "/ServerInfo/Guidebook/Engineering/Pipes.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Pumps
   name: guide-entry-pumps
   text: "/ServerInfo/Guidebook/Engineering/Pumps.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AtmosphereInOut
   name: guide-entry-atmosphereinout
@@ -90,32 +104,44 @@
   - AirInjector
   - AirScrubber
   - PortableScrubber
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AirVent
   name: guide-entry-airvent
   text: "/ServerInfo/Guidebook/Engineering/AirVent.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: PassiveVent
   name: guide-entry-passivevent
   text: "/ServerInfo/Guidebook/Engineering/PassiveVent.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AirInjector
   name: guide-entry-airinjector
   text: "/ServerInfo/Guidebook/Engineering/AirInjector.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AirScrubber
   name: guide-entry-airscrubber
   text: "/ServerInfo/Guidebook/Engineering/AirScrubber.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: PortableScrubber
   name: guide-entry-portablescrubber
   text: "/ServerInfo/Guidebook/Engineering/PortableScrubber.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Valves
   name: guide-entry-valves
@@ -126,28 +152,37 @@
   - PneumaticValve
   - PassiveGate
   - PressureRegulator
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ManualValve
   name: guide-entry-manualvalve
   text: "/ServerInfo/Guidebook/Engineering/ManualValve.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: SignalValve
   name: guide-entry-signalvalve
   text: "/ServerInfo/Guidebook/Engineering/SignalValve.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: PneumaticValve
   name: guide-entry-pneumaticvalve
   text: "/ServerInfo/Guidebook/Engineering/PneumaticValve.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: PassiveGate
   name: guide-entry-passivegate
   text: "/ServerInfo/Guidebook/Engineering/PassiveGate.xml"
+# LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: PressureRegulator
   name: guide-entry-ressureregulator
@@ -155,33 +190,44 @@
   priority: 120 # LuaM: 0 > 120 (section order)
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: MixingAndFiltering
   name: guide-entry-mixingandfiltering
   text: "/ServerInfo/Guidebook/Engineering/MixingAndFiltering.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: GasCanisters
   name: guide-entry-gascanisters
   text: "/ServerInfo/Guidebook/Engineering/GasCanisters.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Thermomachines
   name: guide-entry-thermomachines
   text: "/ServerInfo/Guidebook/Engineering/Thermomachines.xml"
   children:
   - Radiators
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: GasCondensing
   name: guide-entry-gascondensing
   text: "/ServerInfo/Guidebook/Engineering/GasCondensing.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Radiators
   name: guide-entry-radiators
   text: "/ServerInfo/Guidebook/Engineering/Radiators.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AtmosphericsSystems
   name: guide-entry-atmosphericssystems
@@ -191,35 +237,38 @@
   - DeviceMonitoringAndControl
   - FireAndGasControl
   - GasMiningAndStorage
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: PipeNetworks
   name: guide-entry-pipenetworks
   text: "/ServerInfo/Guidebook/Engineering/PipeNetworks.xml"
+# LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: DeviceMonitoringAndControl
   name: guide-entry-devicemonitoringandcontrol
   text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/DeviceControl.xml" # LuaM: /ServerInfo/Guidebook/Engineering/DeviceMonitoringAndControl.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/DeviceControl.xml
   priority: 140 # LuaM: 0 > 140 (section order)
-  children:
-  - AirAlarms
-  - AtmosphericAlertsComputer
-  - AtmosphericNetworkMonitor
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AirAlarms
   name: guide-entry-airalarms
   text: "/ServerInfo/Guidebook/Engineering/AirAlarms.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AtmosphericAlertsComputer
   name: guide-entry-atmosphericalertscomputer
   text: "/ServerInfo/Guidebook/Engineering/AtmosphericAlertsComputer.xml"
+# LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AtmosphericNetworkMonitor
   name: guide-entry-atmosphericnetworkmonitor
@@ -227,16 +276,21 @@
   priority: 30 # LuaM: 0 > 30 (section order)
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: FireAndGasControl
   name: guide-entry-fireandgascontrol
   text: "/ServerInfo/Guidebook/Engineering/FireAndGasControl.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: GasMiningAndStorage
   name: guide-entry-gasminingandstorage
   text: "/ServerInfo/Guidebook/Engineering/GasMiningAndStorage.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AtmosphericUpsets
   name: guide-entry-atmosphericupsets
@@ -244,44 +298,60 @@
   children:
   - Fires
   - Spacing
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Fires
   name: guide-entry-fires
   text: "/ServerInfo/Guidebook/Engineering/Fires.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Spacing
   name: guide-entry-spacing
   text: "/ServerInfo/Guidebook/Engineering/Spacing.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AtmosTools
   name: guide-entry-atmostools
   text: "/ServerInfo/Guidebook/Engineering/AtmosTools.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Gasses
   name: guide-entry-gasses
   text: "/ServerInfo/Guidebook/Engineering/Gasses.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ShuttleCraft
   name: guide-entry-shuttle-craft
   text: "/ServerInfo/Guidebook/Engineering/Shuttlecraft.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Networking
   name: guide-entry-networking
   text: "/ServerInfo/Guidebook/Engineering/Networking.xml"
   children:
   - AccessConfigurator
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AccessConfigurator
   name: guide-entry-access-configurator
   text: "/ServerInfo/Guidebook/Engineering/AccessConfigurator.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Power
   name: guide-entry-power
@@ -292,30 +362,38 @@
     - PowerStorage
     - Ramping
     - VoltageNetworks
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: InspectingPower
   name: guide-entry-inspectingpower
   text: "/ServerInfo/Guidebook/Engineering/InspectingPower.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: PowerStorage
   name: guide-entry-powerstorage
   text: "/ServerInfo/Guidebook/Engineering/PowerStorage.xml"
+# LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Ramping
-  name: guide-entry-ramping
+  name: guide-architecture-ramping # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Engineering/Power/LoadResponse.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Ramping.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Power/LoadResponse.xml
   priority: 10 # LuaM: 0 > 10 (section order)
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: VoltageNetworks
   name: guide-entry-voltagenetworks
   text: "/ServerInfo/Guidebook/Engineering/VoltageNetworks.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Generators
   name: guide-entry-generators
@@ -328,12 +406,16 @@
   - TEG
   - RTG
   - SolarPanels
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: AME
   name: guide-entry-ame
   text: "/ServerInfo/Guidebook/Engineering/AME.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: SingularityTeslaEngine
   name: guide-entry-singularityteslaengine
@@ -341,33 +423,46 @@
   children:
   - SingularityEngine
   - TeslaEngine
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: SingularityEngine
   name: guide-entry-singularityengine
   text: "/ServerInfo/Guidebook/Engineering/SingularityEngine.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: TeslaEngine
   name: guide-entry-teslaengine
   text: "/ServerInfo/Guidebook/Engineering/TeslaEngine.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: TEG
   name: guide-entry-teg
   text: "/ServerInfo/Guidebook/Engineering/TEG.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: RTG
   name: guide-entry-rtg
   text: "/ServerInfo/Guidebook/Engineering/RTG.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: PortableGenerator
   name: guide-entry-portable-generator
   text: "/ServerInfo/Guidebook/Engineering/PortableGenerator.xml"
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: SolarPanels
   name: guide-entry-solarpanels
   text: "/ServerInfo/Guidebook/Engineering/SolarPanels.xml"
+# LuaM-end

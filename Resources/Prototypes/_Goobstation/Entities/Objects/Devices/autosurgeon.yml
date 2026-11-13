@@ -7,7 +7,7 @@
   # LuaM-start: contextual cybernetics guide.
   - type: GuideHelp
     guides:
-    - ColossusCybernetics
+    - ColossusSurgery # LuaM: shared installation instructions
   # LuaM-end
   - type: Sprite
     sprite: _Goobstation/Objects/Devices/autosurgeon.rsi

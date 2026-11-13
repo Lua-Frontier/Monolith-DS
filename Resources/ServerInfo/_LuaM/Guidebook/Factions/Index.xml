@@ -1,13 +1,21 @@
 <Document>
-# Фракции и служба
+# Роли
 
-- [textlink="ТСФ" link="TSFMC_Entry"] — контингент на «Халиконе» и «Арктурусе».
-- [textlink="Авангард Нордфолла" link="PDV_Entry"] — гарнизон крепости «Гелиос».
-- [textlink="Колосс Централл" link="Caelestinus"] — комендант, охрана и гражданский персонал станции.
-- [textlink="Медицинский Центр" link="ColossusMedicalFaction"] — директор и парамедики; отдельная от Колосса организация.
-- [textlink="СССП" link="USSP_Entry"] и [textlink="ЧВК «Вайпер»" link="Viper_Group"] — самостоятельные контингенты на «Камелоте».
-- [textlink="ММС" link="ColossusMMCFaction"] — работа на промышленной станции «Хоккайдо».
-- [textlink="Наймы: первый выход" link="BeginnerGuide"] — начало для наёмника и его киборга.
+[textlink="Наёмники" link="ColossusMercenaries"]
 
-В статьях фракций указаны реальные должности и базы. История организаций находится в [textlink="лоре сектора" link="LuaMLore"], ассортимент снабжения — в [textlink="аплинках" link="ColossusCatalogueUplinks"]. Основания конфликтов и ограничения зелёных зон определяют [textlink="правила сервера" link="LuaMRule2"].
+[textlink="ММС" link="ColossusMMCRoles"]
+
+[textlink="ТСФ" link="ColossusTSFRoles"]
+
+[textlink="Авангард Нордфолла" link="ColossusNordfallRoles"]
+
+[textlink="СССП" link="ColossusUSSPRoles"]
+
+[textlink="ЧВК «Вайпер»" link="Viper_Group"]
+
+[textlink="Колосс Централл" link="Caelestinus"]
+
+[textlink="Медицинский Центр" link="ColossusMedicalFaction"]
+
+[textlink="Особые роли" link="ColossusSpecialRoles"]
 </Document>

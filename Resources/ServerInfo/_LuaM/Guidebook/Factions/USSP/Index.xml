@@ -7,7 +7,7 @@
 - [bold]Сержант СССП[/bold] — 3 — организует действия стрелков.
 - [bold]Стрелок СССП[/bold] — 5 — выполняет приказы командования и задачи подразделения.
 
-Число обозначает общий штат. Отдельные прототипы ефрейтора и медика не добавляют должности в обычное лобби «Камелота».
+Число обозначает общий штат.
 
 <GuideEntityCards><GuideEntityEmbed Entity="WeaponRifleAK502"/><GuideEntityEmbed Entity="ClothingOuterHardsuitUsspL27"/></GuideEntityCards>
 

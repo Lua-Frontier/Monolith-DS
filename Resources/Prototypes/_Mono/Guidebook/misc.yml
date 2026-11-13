@@ -8,14 +8,14 @@
 
 - type: guideEntry
   id: GridClaimer
-  name: guide-entry-gridclaimer
+  name: guide-architecture-grid-claimer # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Ships/GridClaimer.xml" # LuaM: "/ServerInfo/_Mono/Guidebook/Misc/GridClaimer.xml" > "/ServerInfo/_LuaM/Guidebook/Ships/GridClaimer.xml"
   priority: 40 # LuaM: 1 > 40 (section order)
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ArmorExplanation
-  name: guide-entry-armorexplanation
+  name: guide-architecture-armor-explanation # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Combat/ArmorExplanation.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Ships/ArmorExplanation.xml > /ServerInfo/_LuaM/Guidebook/Combat/ArmorExplanation.xml
   priority: 10 # LuaM: 1 > 10 (section order)
   children: # LuaM: purpose-based guidebook navigation

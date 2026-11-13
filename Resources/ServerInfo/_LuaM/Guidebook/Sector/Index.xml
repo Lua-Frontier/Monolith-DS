@@ -1,9 +1,17 @@
 <Document>
-# Станции и карта
+# Сектор
 
-[textlink="Станции: назначение, оборудование и планы" link="LuaMStations"] · [textlink="Другие объекты сектора" link="LuaMWorldObjects"].
+[textlink="Карта" link="SectorTopology"]
 
-[textlink="Топология сектора" link="SectorTopology"] · [textlink="Астероиды и руда" link="LuaMAsteroids"] · [textlink="Режимы и события" link="LuaMGameModes"].
+[textlink="Станции" link="LuaMStations"]
 
-Боевые вылеты и задания вынесены в [textlink="промыслы и экспедиции" link="ColossusActivities"].
+[textlink="Объекты" link="LuaMWorldObjects"]
+
+[textlink="Астероиды" link="LuaMAsteroids"]
+
+[textlink="Туманности" link="ColossusNebulae"]
+
+[textlink="События смены" link="LuaMGameModes"]
+
+[textlink="Существа" link="Creatures"]
 </Document>

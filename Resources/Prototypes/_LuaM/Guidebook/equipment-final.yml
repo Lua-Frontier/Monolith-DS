@@ -13,6 +13,6 @@
 
 - type: guideEntry
   id: ColossusPersonalAmmo
-  name: guide-entry-colossus-personal-ammo
+  name: guide-architecture-colossus-personal-ammo # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Combat/PersonalAmmo.xml
   priority: 20 # LuaM: 0 > 20 (section order)

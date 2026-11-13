@@ -1,0 +1,30 @@
+<Document>
+# Арахнид
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobArachnid"/></GuideEntityCards>
+
+Арахниды — паукообразные гуманоиды с медной кровью и способностью плести шёлк.
+
+## Питание и дыхание
+Дышат кислородом, но задыхаются на 50% быстрее человека. Могут есть сырое мясо; шоколад и лук вызывают отравление.
+
+## Движение и бой
+Безоружные атаки наносят уколы вместо ушибов.
+
+<GuideSpeciesStats Species="Arachnid"/>
+
+## Здоровье и среда
+Кровь основана на меди: железо не восстанавливает её так, как человеческую кровь.
+
+## Снаряжение и взаимодействие
+Имеют два дополнительных кармана в инвентаре.
+
+[bold]Языки:[/bold] Андромеда Стандарт и хитин.
+
+## Особые характеристики
+
+### Шелководство
+Арахниды плетут шёлк, расходуя сытость. Из свёртков шёлка они создают одежду, щиты и стены.
+
+<GuideEntityCards><GuideEntityEmbed Entity="MaterialWebSilk"/><GuideEntityEmbed Entity="ClothingUniformJumpskirtWeb"/><GuideEntityEmbed Entity="WebShield"/><GuideEntityEmbed Entity="WallWeb"/></GuideEntityCards>
+</Document>
