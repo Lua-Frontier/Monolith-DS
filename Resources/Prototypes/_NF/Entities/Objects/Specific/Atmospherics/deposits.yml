@@ -466,6 +466,11 @@
   description: A scanner that both checks the nearby area for gas deposits and estimates the composition of deposits.
   suffix: Unpowered
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - GasMining
+  # LuaM-end
   - type: Sprite
     sprite: _NF/Objects/Specific/Atmospherics/locator.rsi
     layers:

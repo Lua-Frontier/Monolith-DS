@@ -264,6 +264,11 @@
   name: artifact analyzer flatpack
   description: A flatpack used for constructing an artifact analyzer.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusArtifacts
+  # LuaM-end
   - type: Flatpack
     entity: MachineArtifactAnalyzer
   - type: Sprite
@@ -276,6 +281,11 @@
   name: anomaly vessel flatpack
   description: A flatpack used for constructing an anomaly vessel.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusAnomalies
+  # LuaM-end
   - type: Flatpack
     entity: MachineAnomalyVessel
   - type: Sprite
@@ -288,6 +298,11 @@
   name: A.P.E. flatpack
   description: A flatpack used for constructing an A.P.E..
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusAnomalies
+  # LuaM-end
   - type: Flatpack
     entity: MachineAPE
   - type: Sprite
@@ -309,6 +324,11 @@
   name: experimental anomaly vessel flatpack
   description: A flatpack used for constructing an experimental anomaly vessel.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusAnomalies
+  # LuaM-end
   - type: Flatpack
     entity: MachineAnomalyVesselExperimental
 
@@ -327,6 +347,12 @@
   name: blueprint lithograph flatpack
   description: A flatpack used for constructing a blueprint lithograph.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: Flatpack
     entity: BlueprintLithograph
 
@@ -378,6 +404,11 @@
   name: hydroponics tray flatpack
   description: A flatpack used for constructing a hydroponics tray.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusBotany
+  # LuaM-end
   - type: Flatpack
     entity: HydroponicsTrayEmpty
   - type: Sprite
@@ -428,6 +459,11 @@
   name: crate of fertile soil
   description: A crate of fertile soil used for constructing a soil bed for growing. Spread it around with a shovel.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusBotany
+  # LuaM-end
   - type: Flatpack
     entity: HydroponicsSoilNutrition
     qualityNeeded: Digging
@@ -442,6 +478,11 @@
   name: crate of soil
   description: A crate of soil used for constructing a soil bed for growing. Spread it around with a shovel.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusBotany
+  # LuaM-end
   - type: Flatpack
     entity: HydroponicsSoilEmpty
     qualityNeeded: Digging
@@ -456,6 +497,11 @@
   name: withdraw only atm flatpack
   description: A flatpack used for constructing an atm. Best not to think about it.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Bank
+  # LuaM-end
   - type: Flatpack
     entity: ComputerWithdrawBankATM
 
@@ -553,6 +599,11 @@
   name: ore processor flatpack
   description: A flatpack used for constructing an ore processor.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMining
+  # LuaM-end
   - type: Flatpack
     entity: OreProcessor
   - type: Sprite
@@ -568,6 +619,11 @@
   name: PTK-1500e "Matter Dematerializer" flatpack
   description: A flatpack used for constructing a PTK-1500e "Matter Dematerializer".
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: Flatpack
     entity: ShuttleGunKinetic
   - type: StaticPrice
@@ -634,6 +690,12 @@
   name: research and development computer flatpack
   description: A flatpack used for constructing a research and development computer.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: Flatpack
     entity: ComputerResearchAndDevelopment
   - type: StaticPrice
@@ -649,6 +711,11 @@
   name: analysis console flatpack
   description: A flatpack used for constructing an analysis console.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusArtifacts
+  # LuaM-end
   - type: Flatpack
     entity: ComputerAnalysisConsole
   - type: StaticPrice
@@ -689,6 +756,12 @@
   name: research and development server flatpack
   description: A flatpack used for constructing a research and development server.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: Flatpack
     entity: ResearchAndDevelopmentServer
   - type: StaticPrice
@@ -1126,6 +1199,11 @@
   name: station administration console flatpack
   description: A flatpack used for constructing a station administration console for Medical Dispatch.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Bank
+  # LuaM-end
   - type: Flatpack
     entity: ComputerTabletopStationAdminBankATMMedical
   - type: Sprite

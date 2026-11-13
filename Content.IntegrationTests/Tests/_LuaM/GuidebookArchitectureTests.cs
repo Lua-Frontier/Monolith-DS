@@ -41,6 +41,23 @@ public sealed class GuidebookArchitectureTests
             foreach (var root in roots)
                 Walk(root);
 
+            Assert.That(guides["LuaMWorld"].Children.Select(c => c.ToString()), Is.EqualTo(new[]
+            {
+                "SectorTopology", "LuaMStations", "LuaMWorldObjects", "LuaMGameModes", "LuaMAsteroids", "ColossusNebulae",
+            }));
+            Assert.That(guides["LuaMStations"].Children.Select(c => c.ToString()), Is.EqualTo(new[]
+            {
+                "LuaMColossusCentral", "LuaMMedical", "LuaMCamelot", "LuaMHalicon", "LuaMHelios",
+            }));
+            Assert.That(seen.Contains("Creatures"), Is.False);
+            Assert.That(seen.Contains("ColossusCatalogueOres"), Is.False);
+            Assert.That(seen.Contains("ColossusCatalogueObjects"), Is.False);
+            Assert.That(guides["ColossusCatalogueOres"].Text, Is.EqualTo(guides["LuaMAsteroids"].Text));
+            Assert.That(guides["ColossusCatalogueObjects"].Text, Is.EqualTo(guides["LuaMWorldObjects"].Text));
+            Assert.That(guides["LuaMWorldObjects"].Children, Does.Contain(new ProtoId<GuideEntryPrototype>("ColossusSiteTradeDepots")));
+            Assert.That(guides["LuaMGameModes"].Children, Does.Contain(new ProtoId<GuideEntryPrototype>("ColossusEventPlanetoids")));
+            Assert.That(guides["LuaMDroneLoot"].Children, Does.Contain(new ProtoId<GuideEntryPrototype>("ColossusCatalogueDrones")));
+
             foreach (var route in new[]
             {
                 new[] { "NewPlayer", "Species", "Human" },

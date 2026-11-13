@@ -5,6 +5,11 @@
   description: A Ship Repair Device that can reconstruct destroyed sections of ships.
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusShipRepair
+  # LuaM-end
   - type: ShipRepairTool
   - type: Sprite
     scale: 0.8, 0.8
@@ -99,6 +104,11 @@
   id: ShipRepairDeviceAmmo
   description: Ammo cartridge for a ship repair device.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusShipRepair
+  # LuaM-end
   - type: LimitedChargesAmmo
     charges: 100
     whitelist:

@@ -6,14 +6,13 @@
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/World.xml > /ServerInfo/_LuaM/Guidebook/Sector/Index.xml
   bookRoot: true # LuaM: guidebook architecture v2.1
   priority: 40 # LuaM: guidebook architecture v2.1
-  children: # LuaM: scenario-based guidebook navigation
+  children: # LuaM: separate primary stations, roundstart objects and events
   - SectorTopology
   - LuaMStations
   - LuaMWorldObjects
+  - LuaMGameModes
   - LuaMAsteroids
   - ColossusNebulae
-  - LuaMGameModes
-  - Creatures
 # LuaM-end
 
 # LuaM-start: maintained guidebook navigation.
@@ -22,10 +21,31 @@
   priority: 20 # LuaM: 3 > 20 (section order)
   name: guide-architecture-lua-m-world-objects # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Objects.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/Objects.xml > /ServerInfo/_LuaM/Guidebook/Sector/Objects.xml
-  children: # LuaM: scenario-based guidebook navigation
-  - ColossusCatalogueObjects
-  - LuaMMonolithWreck
-  - ColossusCatalogueDrones
+  children: # LuaM: separate primary stations, roundstart objects and events
+  - LuaMTradeMall
+  - ColossusSiteTradeDepots
+  - ColossusSiteBlackMarket
+  - ColossusSiteSevastopol
+  - ColossusSiteMining
+  - ColossusSiteHokkaido
+  - LuaMArcturus
+  - ColossusSiteEdison
+  - ColossusSiteZvezdaLuaM
+  - ColossusSiteZetaNode
+  - ColossusSiteBeacons
+  - ColossusSiteLPBravo
+  - ColossusSiteAnomalousLab
+  - ColossusSiteTinnia
+  - ColossusSiteCaseysCasino
+  - ColossusSiteOmnichurch
+  - ColossusSiteThePit
+  - ColossusSiteGrifty
+  - ColossusSiteMcHobo
+  - ColossusSiteJupiter
+  - ColossusSiteLancelot
+  - ColossusSitePolaris
+  - ColossusSiteAutomatedTanker
+  - ColossusSiteZenith
 # LuaM-end
 
 # LuaM-start: maintained guidebook navigation.
@@ -42,6 +62,8 @@
   priority: 50 # LuaM: 7 > 50 (section order)
   name: guide-architecture-lua-m-drone-loot # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Activities/DroneLoot.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/DroneLoot.xml > /ServerInfo/_LuaM/Guidebook/Activities/DroneLoot.xml
+  children: # LuaM: separate primary stations, roundstart objects and events
+  - ColossusCatalogueDrones
 # LuaM-end
 
 # LuaM-start: maintained guidebook navigation.

@@ -4,6 +4,12 @@
   description: A microscopic chip that's injected under the skin.
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: SubdermalImplant
   - type: Tag
     tags:

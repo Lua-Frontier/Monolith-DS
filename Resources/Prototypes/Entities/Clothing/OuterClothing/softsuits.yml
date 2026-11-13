@@ -5,6 +5,11 @@
   name: EVA suit
   description: A lightweight space suit with the basic ability to protect the wearer from the vacuum of space during emergencies.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva.rsi
   - type: Clothing
@@ -25,6 +30,11 @@
   name: syndicate EVA suit
   description: "Has a tag on the back that reads: 'Totally not property of an enemy corporation, honest!'"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva_syndicate.rsi
   - type: Clothing
@@ -67,6 +77,11 @@
   name: prisoner EVA suit
   description: A lightweight space suit for prisoners to protect them from the vacuum of space during emergencies.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva_prisoner.rsi
   - type: Clothing
@@ -84,6 +99,11 @@
   name: NTSRA voidsuit #Nanotrasen Space Research Association
   description: An ancient space suit, designed by the NTSRA branch of Nanotrasen before their pact with the Central Government. It is very finely crafted, allowing for greater mobility than most modern space suits.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/ancient_voidsuit.rsi
   - type: Clothing
@@ -101,6 +121,11 @@
   name: paramedic voidsuit # Goob edit
   description: A voidsuit made for paramedics. # Goob edit
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi
     layers:

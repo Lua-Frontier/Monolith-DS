@@ -1,7 +1,6 @@
 - type: job
   id: DeliveryCourier
-  guides:
-  - ColossusCourier
+  guides: # LuaM: role-specific pages under Roles
   - Caelestinus
   name: job-name-delivery-courier
   description: job-description-delivery-courier
@@ -91,6 +90,11 @@
   name: courier ID card
   description: An identification card belonging to a delivery service courier.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: PresetIdCard
     job: DeliveryCourier
   - type: Sprite
@@ -107,6 +111,11 @@
   name: courier PDA
   description: A personal digital assistant belonging to a delivery service courier.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Pda
     id: DeliveryCourierIDCard
   - type: Appearance

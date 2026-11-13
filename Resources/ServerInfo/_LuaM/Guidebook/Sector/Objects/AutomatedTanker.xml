@@ -1,0 +1,17 @@
+<Document>
+# Автоматический Секториальный Танкер
+
+Удалённое судно с газовыми и атмосферными системами.
+
+<GuideEntityCards><GuideEntityEmbed Entity="ComputerAtmosMonitoring"/><GuideEntityEmbed Entity="ComputerShuttle"/></GuideEntityCards>
+
+При исследовании учитывайте состояние газовых отсеков и присутствие монолитных существ.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — [bold]10–20 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/ruin_tanker.yml" Name="Автоматический Секториальный Танкер"/>
+
+[textlink="Атмосфера" link="ColossusAtmosHub"]
+</Document>

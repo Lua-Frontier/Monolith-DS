@@ -1,0 +1,17 @@
+<Document>
+# Лаборатория Аномалий
+
+Исследовательский объект с оборудованием РНД.
+
+<GuideEntityCards><GuideEntityEmbed Entity="ComputerTabletopResearchAndDevelopment"/></GuideEntityCards>
+
+Изучайте находки с помощью подходящих анализаторов; порядок работы с артефактами и аномалиями отличается.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — [bold]7–10.8 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_Mono/POI/anomalouslab.yml" Name="Лаборатория Аномалий"/>
+
+[textlink="Артефакты" link="ColossusArtifacts"] · [textlink="Аномалии" link="ColossusAnomalies"]
+</Document>

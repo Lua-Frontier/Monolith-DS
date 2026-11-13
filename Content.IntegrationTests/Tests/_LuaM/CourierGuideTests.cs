@@ -42,7 +42,7 @@ public sealed class CourierGuideTests
             var parser = pair.Client.ResolveDependency<DocumentParsingManager>();
             var entities = pair.Client.ResolveDependency<IEntityManager>();
             var root = pair.Client.ResolveDependency<IUserInterfaceManager>().RootControl;
-            Assert.That(prototypes.Index<JobPrototype>("DeliveryCourier").Guides!.First().ToString(), Is.EqualTo("ColossusCourier"));
+            Assert.That(prototypes.Index<JobPrototype>("DeliveryCourier").Guides!.First().ToString(), Is.EqualTo("Caelestinus"));
             Assert.That(prototypes.Index<GuideEntryPrototype>("ColossusActivities").Children.Select(c => c.ToString()), Does.Contain("ColossusCourier"));
             using (var reader = resources.ContentFileReadText(prototypes.Index<GuideEntryPrototype>("ColossusCourier").Text))
             using (var document = new Document())

@@ -6,6 +6,11 @@
   abstract: true
   parent: BaseStorageItem
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - SafetyDepositBox
+  # LuaM-end
   - type: GenericVisualizer
     visuals:
       enum.StorageVisuals.Open:
@@ -108,6 +113,11 @@
   description: "A console for purchasing and managing safety deposit boxes."
   parent: BaseStructure
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - SafetyDepositBox
+  # LuaM-end
   - type: Sprite
     netsync: false
     noRot: true

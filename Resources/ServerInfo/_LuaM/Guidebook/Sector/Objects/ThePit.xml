@@ -1,0 +1,17 @@
+<Document>
+# Бойцовская Яма
+
+Развлекательный объект с ареной и снабжением для посетителей.
+
+<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineBoxingDrobe"/><GuideEntityEmbed Entity="VendingMachineCiviMedPlus"/></GuideEntityCards>
+
+Наличие арены не заменяет правила сервера и договорённости участников.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — [bold]5.2–6.2 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_NF/POI/arena.yml" Name="Бойцовская Яма"/>
+
+[textlink="Правила сервера" link="LuaMRuleset"]
+</Document>

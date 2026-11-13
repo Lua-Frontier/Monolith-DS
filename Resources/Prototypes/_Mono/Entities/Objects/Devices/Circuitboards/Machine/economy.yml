@@ -30,6 +30,11 @@
   name: compact arc furnace machine board
   description: A machine printed circuit board for a compact arc furnace.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ArcFurnace
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard
@@ -53,6 +58,12 @@
   name: compact precision assembler machine board
   description: A machine printed circuit board for a compact precision assembler.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - MMC
+    - Economy
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard
@@ -76,6 +87,12 @@
   name: industrial press (plates) machine board
   description: A machine printed circuit board for an industrial press, calibrated for plating. Screwdrive it to switch between variants.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - MMC
+    - Economy
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard
@@ -99,6 +116,12 @@
   name: MMC industrial press (plates) machine board
   description: A machine printed circuit board for an industrial press, calibrated for plating. Screwdrive it to switch between variants.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - MMC
+    - Economy
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard
@@ -125,6 +148,12 @@
   name: industrial press (electronics) machine board
   description: A machine printed circuit board for an industrial press, calibrated for electronic components. Screwdrive it to switch between variants.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - MMC
+    - Economy
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard
@@ -148,6 +177,12 @@
   name: MMC industrial press (electronics) machine board
   description: A machine printed circuit board for an industrial press, calibrated for electronic components. Screwdrive it to switch between variants.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - MMC
+    - Economy
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard
@@ -174,6 +209,11 @@
   name: proprietary interactor machine board
   description: A machine printed circuit board for a proprietary interactor. Very important for automated manufacturing.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard
@@ -189,6 +229,11 @@
   name: proprietary robotic arm machine board
   description: A machine printed circuit board for a proprietary robotic arm. Very important for automated manufacturing.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard

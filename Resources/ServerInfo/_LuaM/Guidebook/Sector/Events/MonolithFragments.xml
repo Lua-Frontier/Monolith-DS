@@ -1,0 +1,19 @@
+<Document>
+# Фрагменты Монолита
+
+Небольшие монолитные объекты нескольких форм.
+
+<GuideEntityCards><GuideEntityEmbed Entity="MonolithicCrystalLarge"/></GuideEntityCards>
+
+Поток событий может начаться примерно с [bold]10-й минуты[/bold]. Встречаются варианты арены, вытянутого фрагмента и корабля; геометрия подходов отличается. Приготовьтесь к исследованию опасного объекта, а не к обычной добыче астероидной породы.
+
+[bold]Время существования — 40 минут.[/bold] Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект. [textlink="Закрепление" link="GridClaimer"] сохраняет объект после окончания события.
+
+<GuideMap Map="/Maps/_Mono/Monolithic/monolithicasteroidsmallarena.yml" Name="Фрагменты Монолита: вариант 1"/>
+
+<GuideMap Map="/Maps/_Mono/Monolithic/monolithicasteroidsmallspindle.yml" Name="Фрагменты Монолита: вариант 2"/>
+
+<GuideMap Map="/Maps/_Mono/Monolithic/monolithicasteroidsmallship.yml" Name="Фрагменты Монолита: вариант 3"/>
+
+[textlink="Другие события" link="LuaMGameModes"] · [textlink="Подготовка к бою" link="ColossusCombat"]
+</Document>

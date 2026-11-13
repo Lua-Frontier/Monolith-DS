@@ -3,15 +3,13 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Client.Guidebook.Richtext;
 using Content.Client.Guidebook.RichText;
 using Content.Client.UserInterface.ControlExtensions;
-using Content.Shared.CCVar;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
 
 namespace Content.Client._LuaM.Guidebook;
 
-/// <summary>Native navigation buttons; Discord uses the connected server's public link.</summary>
+/// <summary>Native navigation buttons and the sector's Discord invitation.</summary>
 public sealed class GuideHome : GridContainer, IDocumentTag
 {
     public GuideHome()
@@ -42,9 +40,7 @@ public sealed class GuideHome : GridContainer, IDocumentTag
             {
                 if (id.Length == 0)
                 {
-                    var url = IoCManager.Resolve<IConfigurationManager>().GetCVar(CCVars.InfoLinksDiscord);
-                    if (!string.IsNullOrWhiteSpace(url))
-                        IoCManager.Resolve<IUriOpener>().OpenUri(url);
+                    IoCManager.Resolve<IUriOpener>().OpenUri("https://discord.gg/sector-colossus");
                 }
                 else if (button.TryGetParentHandler<ILinkClickHandler>(out var handler))
                     handler.HandleClick(id);

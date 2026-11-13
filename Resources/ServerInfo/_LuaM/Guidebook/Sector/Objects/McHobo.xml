@@ -1,0 +1,17 @@
+<Document>
+# Заброшенный МаКарго
+
+Разборочный объект с утильной верфью и запасами топлива.
+
+<GuideEntityCards><GuideEntityEmbed Entity="ComputerShipyardScrap"/><GuideEntityEmbed Entity="VendingMachineFuelVend"/></GuideEntityCards>
+
+Альтернативный вариант разборочного узла: в другой смене вместо него может оказаться заправка Грифти.
+
+## Как найти
+
+При начале смены выбирается один из вариантов разборочного узла. Ориентировочная область поиска — [bold]6.25–7.6 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_NF/POI/mchobo.yml" Name="Заброшенный МаКарго"/>
+
+[textlink="Закрепление обломков" link="GridClaimer"]
+</Document>

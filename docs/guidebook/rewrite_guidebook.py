@@ -127,6 +127,9 @@ def check(articles):
         for map_path in re.findall(r'<GuideMap Map="([^"]+)"', content):
             if not (ROOT/('Resources'+map_path)).is_file():
                 errors.append(f'{path}: missing map {map_path}')
+        for texture_path in re.findall(r'<GuideTexture\b[^>]*\bTexture="([^"]+)"', content):
+            if not texture_path.startswith('/Textures/') or not (ROOT/('Resources'+texture_path)).is_file():
+                errors.append(f'{path}: missing texture {texture_path}')
         target = ROOT / path
         if not target.is_file():
             errors.append(f'{path}: XML missing; run --apply')

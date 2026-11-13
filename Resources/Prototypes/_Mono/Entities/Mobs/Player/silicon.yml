@@ -216,6 +216,11 @@
   name: remnant automated defense system tender
   description: A tender to an automated drone ship, to keep its internal mechanisms intact.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusPrecursors
+  # LuaM-end
   - type: Sprite
     layers:
     - state: synd_engi
@@ -367,7 +372,7 @@
   suffix: Ghost Role, Remnant
   components:
   - type: GuideHelp # LuaM: ADS role guide for core, brain and controlled eye.
-    guides:
+    guides: # LuaM: contextual guidebook route
     - ColossusPrecursors
   - type: ContainerComp
     proto: AiHeldRedacted
@@ -390,7 +395,7 @@
   categories: [ HideSpawnMenu, DoNotMap ]
   components:
   - type: GuideHelp # LuaM: ADS role guide for core, brain and controlled eye.
-    guides:
+    guides: # LuaM: contextual guidebook route
     - ColossusPrecursors
   - type: Sprite
   - type: SiliconLawProvider
@@ -435,7 +440,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GuideHelp # LuaM: ADS role guide for core, brain and controlled eye.
-    guides:
+    guides: # LuaM: contextual guidebook route
     - ColossusPrecursors
   - type: IntrinsicRadioTransmitter
     channels:

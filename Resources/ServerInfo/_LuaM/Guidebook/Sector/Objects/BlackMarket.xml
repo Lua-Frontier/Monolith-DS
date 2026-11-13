@@ -1,0 +1,17 @@
+<Document>
+# Бар «Веселый Роджер»
+
+Бар и узел снабжения с чёрным рынком, торговым оборудованием и верфями. Здесь можно пополнить запасы и подготовить следующий вылет.
+
+<GuideEntityCards><GuideEntityEmbed Entity="ComputerBlackMarketBankATM"/><GuideEntityEmbed Entity="VendingMachineBooze"/></GuideEntityCards>
+
+Покупки и оснащение проверяйте по ассортименту местных терминалов; для рейса за добычей есть экспедиционная верфь.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — [bold]6–8 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_LuaM/POI/BlackMarket.yml" Name="Бар «Веселый Роджер»"/>
+
+[textlink="Экспедиции" link="Expeditions"] · [textlink="Торговля" link="CargoHauling"]
+</Document>

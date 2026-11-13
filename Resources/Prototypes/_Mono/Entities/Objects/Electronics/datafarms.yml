@@ -4,6 +4,12 @@
   name: data farm (research) circuitboard
   description: Looks like you could use a screwdriver to change the board type. Unable to be flatpacked due to complex components.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Objects/Misc/module.rsi
     state: datafarm_research

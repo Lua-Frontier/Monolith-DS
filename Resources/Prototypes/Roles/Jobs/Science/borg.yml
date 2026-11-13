@@ -21,8 +21,8 @@
 - type: job
   id: Borg
   # LuaM-start: faction guide for the selectable lobby role.
-  guides:
-  - NewPlayer
+  guides: # LuaM: role-specific pages under Roles
+  - ColossusMercenaries
   # LuaM-end
   name: job-name-borg
   description: job-description-borg

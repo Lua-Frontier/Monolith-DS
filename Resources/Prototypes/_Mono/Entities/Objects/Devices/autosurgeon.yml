@@ -17,6 +17,12 @@
   name: TSF autosurgeon (WJY-21X sandevistan) flatpack
   description: A flatpack used for constructing a TSF autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonSandevistanTSF
   - type: StaticPrice
@@ -42,6 +48,12 @@
   name: TSF autosurgeon (KR-22 shunt device) flatpack
   description: A flatpack used for constructing a TSF autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonShuntTSF
   - type: StaticPrice
@@ -69,6 +81,12 @@
   name: PDV autosurgeon (LS-210 IAS) flatpack
   description: A flatpack used for constructing a PDV autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonIASPDV
   - type: StaticPrice
@@ -97,6 +115,12 @@
   name: PDV autosurgeon (E-SAPI dermal armor) flatpack
   description: A flatpack used for constructing a PDV autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonDermalArmorPDV
   - type: StaticPrice
@@ -122,6 +146,12 @@
   name: PDV autosurgeon (VV/KE prosthetic heart) flatpack
   description: A flatpack used for constructing a PDV autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonAdvHeartPDV
   - type: StaticPrice
@@ -157,6 +187,12 @@
   name: MMC autosurgeon (EVT-001 Sakimoto) flatpack
   description: A flatpack used for constructing a MMC autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonAdvHeartMMC
   - type: StaticPrice
@@ -187,6 +223,12 @@
   name: MMC autosurgeon (muscle fibers suite) flatpack
   description: A flatpack used for constructing a MMC autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonMuscleFibersMieyo
   - type: StaticPrice
@@ -206,8 +248,8 @@
   components:
   # LuaM-start: contextual cybernetics guide.
   - type: GuideHelp
-    guides:
-    - ColossusSurgery # LuaM: installation instructions
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
     - ColossusMantisBlades
   # LuaM-end
   - type: AutoSurgeon
@@ -220,6 +262,12 @@
   name: MMC autosurgeon (mantis blades) flatpack
   description: A flatpack used for constructing a MMC autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusMantisBlades
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonMantisBladesMieyo
   - type: StaticPrice
@@ -247,6 +295,12 @@
   name: MMC autosurgeon (EVT-002 Lotus) flatpack
   description: A flatpack used for constructing a MMC autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonSandevistanMieyo
   - type: StaticPrice

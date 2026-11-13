@@ -7,6 +7,12 @@
   suffix: AI
   parent: [BaseStructure, BaseFactionGearOtherFactionT2]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - LuaMDroneLoot
+    - ColossusCatalogueDrones
+  # LuaM-end
   - type: Destructible
     thresholds:
     - trigger:

@@ -13,8 +13,8 @@
     - type: UseDelay
       delay: 1
     - type: GuideHelp
-      guides:
-      - ArtifactReports
+      guides: # LuaM: contextual guidebook route
+      - ColossusArtifacts
     - type: ActivatableUI
       key: enum.NodeScannerUiKey.Key
       singleUser: true

@@ -1,0 +1,17 @@
+<Document>
+# АСЗ СК-395 «Зенит»
+
+Корабль из группы стартовых объектов с вооружением и корабельными системами.
+
+<GuideEntityCards><GuideEntityEmbed Entity="ComputerGunneryConsole"/><GuideEntityEmbed Entity="WeaponTurretCharon"/></GuideEntityCards>
+
+Это отдельный объект сектора: не путайте его с кораблями АДС, прибывающими в ходе событий.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — [bold]20–25 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/zenith_poi.yml" Name="АСЗ СК-395 «Зенит»"/>
+
+[textlink="Событийные корабли АДС" link="ColossusEventADSFleet"] · [textlink="Предтечи и АДС" link="ColossusPrecursors"]
+</Document>

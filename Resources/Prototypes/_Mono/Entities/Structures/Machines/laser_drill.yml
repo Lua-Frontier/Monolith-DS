@@ -66,6 +66,11 @@
   parent: LaserDrillBase
   description: A large automated drill that digs up random materials when powered with 100 kW of HV. Only works on expedition planets. # LuaM: 50 kW > 100 kW
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusLaserDrill
+  # LuaM-end
   - type: PlanetMiner
     requireExpedition: true
     requireGround: false # works just fine on lattice
@@ -83,6 +88,11 @@
   parent: LaserDrillBase
   description: A large bluespace automated drill that digs up random materials when powered with 150 kW of HV. Now works in space! You can just make out a scratched off logo starting with an embossed 'N' on the side.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusLaserDrill
+  # LuaM-end
   - type: Anchorable
     flags: None # 1984
   - type: ItemMiner

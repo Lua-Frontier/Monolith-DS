@@ -6,7 +6,8 @@
   components:
   # LuaM-start: contextual cybernetics guide.
   - type: GuideHelp
-    guides:
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
     - ColossusHumanity
   # LuaM-end
   - type: EmitSoundOnPickup
@@ -77,6 +78,12 @@
   name: autosurgeon (neural stabilizer chip Mk I)
   description: Puts a neural stabilizer chip into the head, replacing the old one. Raises the humanity limit by 2.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHumanity
+  # LuaM-end
   - type: AutoSurgeon
     targetBodyPart: Head
     targetOrgan: Chip
@@ -106,6 +113,12 @@
   name: autosurgeon (neural stabilizer chip Mk I) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHumanity
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonHumanityChipMk1
   - type: StaticPrice

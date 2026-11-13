@@ -1,0 +1,17 @@
+<Document>
+# Древняя Буровая Станция
+
+Заброшенная станция с добывающим оборудованием. В её помещениях встречаются ксеносы.
+
+<GuideEntityCards><GuideEntityEmbed Entity="MiningDrill"/><GuideEntityEmbed Entity="LaserDrillFlatpack"/></GuideEntityCards>
+
+Осмотрите объект перед разборкой и вывозом оборудования. Для добычи и переработки подготовьте инструменты и место под груз.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — [bold]5.5–9.5 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_Mono/POI/derelictdrillsite.yml" Name="Древняя Буровая Станция"/>
+
+[textlink="Добыча руды" link="ColossusMining"] · [textlink="Лазерный бур" link="ColossusLaserDrill"]
+</Document>

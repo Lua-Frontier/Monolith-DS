@@ -7,8 +7,9 @@
   description: A mesh of light-bending fibers under the skin. Makes you fully invisible for a few seconds, attacking or getting hurt breaks it.
   components:
   - type: GuideHelp
-    guides:
-    - ColossusImplantProtection
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
   - type: Sprite
     sprite: _LuaM/Objects/Misc/optical_camo.rsi
     state: icon
@@ -58,6 +59,12 @@
   name: PDV autosurgeon (optical camo) flatpack
   description: A flatpack used for constructing a PDV autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonOpticalCamoPDV
   - type: StaticPrice

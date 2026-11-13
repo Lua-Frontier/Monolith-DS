@@ -104,8 +104,8 @@
     footstepSoundCollection:
       path: /Audio/Mecha/mechmove03.ogg
   - type: GuideHelp
-    guides:
-    - Robotics
+    guides: # LuaM: contextual guidebook route
+    - ColossusMechsHub
   - type: Destructible
     thresholds:
     - trigger:

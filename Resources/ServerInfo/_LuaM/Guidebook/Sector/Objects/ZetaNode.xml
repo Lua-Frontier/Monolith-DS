@@ -1,0 +1,17 @@
+<Document>
+# Узел «Зета»
+
+Небольшой объект у центральной области сектора.
+
+<GuideEntityCards><GuideEntityEmbed Entity="SellOnlyCarrierComputer"/></GuideEntityCards>
+
+Используйте его отметку как ориентир; состояние помещений проверяйте перед работой внутри.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — [bold]0.5–0.75 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_Mono/POI/zetanode.yml" Name="Узел «Зета»"/>
+
+[textlink="Навигация" link="ColossusOrientation"]
+</Document>

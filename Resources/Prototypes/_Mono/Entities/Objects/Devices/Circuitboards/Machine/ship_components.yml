@@ -73,6 +73,11 @@
   name: low-power gunnery control server board
   description: A machine board for a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: Sprite
     state: security
   - type: MachineBoard
@@ -97,6 +102,11 @@
   name: medium-power gunnery control server board
   description: A machine board for a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: Sprite
     state: security
   - type: MachineBoard
@@ -121,6 +131,11 @@
   name: high-power gunnery control server board
   description: A machine board for a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: Sprite
     state: security
   - type: MachineBoard
@@ -145,6 +160,11 @@
   name: ultra-high-power gunnery control server board
   description: A machine board for a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: Sprite
     state: security
   - type: MachineBoard
@@ -169,6 +189,11 @@
   name: station gunnery control server board
   description: A machine board for a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: Sprite
     state: security
   - type: MachineBoard

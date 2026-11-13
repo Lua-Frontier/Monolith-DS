@@ -16,6 +16,12 @@
   name: USSP autosurgeon (Kerenzikov) flatpack
   description: A flatpack used for constructing a USSP autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonKerenzikovUSSP
   - type: StaticPrice
@@ -41,6 +47,12 @@
   name: USSP autosurgeon (ultra-durable armor plate base) flatpack
   description: A flatpack used for constructing a USSP autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonDermalArmorHeavyUSSP
   - type: StaticPrice

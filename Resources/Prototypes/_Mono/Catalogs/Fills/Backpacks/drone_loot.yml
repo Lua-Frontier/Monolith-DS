@@ -5,6 +5,12 @@
   description: Data recorder from a drone. Contains valuable components.
   suffix: Drone Loot
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - LuaMDroneLoot
+    - ColossusCatalogueDrones
+  # LuaM-end
   - type: RadarBlip
     radarColor: "#FFFF00"
     scale: 1

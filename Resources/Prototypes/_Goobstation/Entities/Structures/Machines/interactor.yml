@@ -4,6 +4,11 @@
   name: interactor
   description: A robotic actuator specialized in interacting with objects using tools.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   # Visuals
   - type: Sprite
     sprite: _Goobstation/Structures/Machines/interactor.rsi

@@ -7,6 +7,12 @@
   parent: BaseItem
   abstract: true
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - ColossusSurgery
+      - ColossusServiceImplants
+    # LuaM-end
     - type: ItemSlots
     - type: ContainerContainer
       containers:

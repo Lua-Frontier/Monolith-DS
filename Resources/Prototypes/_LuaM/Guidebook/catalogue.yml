@@ -80,8 +80,8 @@
 # LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueObjects
-  name: guide-architecture-colossus-catalogue-objects # LuaM: guidebook architecture v2.1
-  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Objects.xml
+  name: guide-architecture-lua-m-world-objects # LuaM: sector navigation
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects.xml # LuaM: sector navigation
   priority: 90 # LuaM: 0 > 90 (section order)
 # LuaM-end
 
@@ -96,8 +96,8 @@
 # LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueOres
-  name: guide-architecture-colossus-catalogue-ores # LuaM: guidebook architecture v2.1
-  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Ores.xml
+  name: guide-architecture-lua-m-asteroids # LuaM: sector navigation
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Asteroids.xml # LuaM: sector navigation
   priority: 110 # LuaM: 0 > 110 (section order)
 # LuaM-end
 

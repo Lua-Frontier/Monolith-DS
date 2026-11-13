@@ -1,0 +1,15 @@
+<Document>
+# Хранилище оружия Синдиката
+
+Вооружённый объект с запасами оружия и охраной.
+
+<GuideEntityCards><GuideEntityEmbed Entity="WeaponTurretSyndicate"/></GuideEntityCards>
+
+В объявлениях называется [bold]«Хранилище оружия Синдиката»[/bold]. Появление возможно примерно с [bold]40-й минуты[/bold] смены. Перед входом осмотрите подходы: внутри есть вооружённые бойцы и турели.
+
+[bold]Время существования — 40 минут.[/bold] Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект. [textlink="Закрепление" link="GridClaimer"] сохраняет объект после окончания события.
+
+<GuideMap Map="/Maps/_LuaM/Bluespace/syndieasteroid.yml" Name="Хранилище оружия Синдиката"/>
+
+[textlink="Другие события" link="LuaMGameModes"] · [textlink="Подготовка к бою" link="ColossusCombat"]
+</Document>

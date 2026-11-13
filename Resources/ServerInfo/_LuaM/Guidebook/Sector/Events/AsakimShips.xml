@@ -1,0 +1,17 @@
+<Document>
+# Корабли Азакимов
+
+Малые и средние корабли воинов Азакимов в режиме «Наследие».
+
+<GuideEntityCards><GuideEntityEmbed Entity="ComputerShuttle"/><GuideEntityEmbed Entity="ComputerGunneryConsole"/></GuideEntityCards>
+
+Поток может начаться примерно с [bold]часа[/bold] смены. Для малого корабля требуется не менее [bold]40 игроков[/bold], для среднего — [bold]60[/bold]; это условия появления, а не время гарантированного прибытия. Не относите к ним общий таймер блюспейс-объектов.
+
+[textlink="Происхождение и назначение Азакимов" link="ColossusPrecursors"]
+
+<GuideMap Map="/Maps/_Mono/ShuttleEvent/asakim_small.yml" Name="Корабли Азакимов: вариант 1"/>
+
+<GuideMap Map="/Maps/_Mono/ShuttleEvent/asakim_medium.yml" Name="Корабли Азакимов: вариант 2"/>
+
+[textlink="Другие события" link="LuaMGameModes"] · [textlink="Подготовка к бою" link="ColossusCombat"]
+</Document>

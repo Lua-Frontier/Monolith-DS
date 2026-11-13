@@ -90,32 +90,26 @@ public sealed partial class DocumentParsingManager
             .Cast<Control>())
         .Labelled("richtext");
 
+    // LuaM: consistent spacing, preserving the existing Label heading fonts and colors.
+    private static Label HeadingLabel(string text, string styleClass, Thickness margin)
+    {
+        return new Label { Text = text, Margin = margin, StyleClasses = { styleClass } };
+    }
+
     private static readonly Parser<char, Control> HeaderControlParser = Try(Char('#'))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelHeadingBigger" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelHeadingBigger", new Thickness(0, 0, 0, 12)), // LuaM
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("header");
 
     private static readonly Parser<char, Control> SubHeaderControlParser = Try(String("##"))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelHeading" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelHeading", new Thickness(0, 4, 0, 8)), // LuaM
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("subheader");
 
     private static readonly Parser<char, Control> TertiaryHeaderControlParser = Try(String("###"))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelKeyText" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelKeyText", new Thickness(0, 0, 0, 6)), // LuaM
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("tertiaryheader");

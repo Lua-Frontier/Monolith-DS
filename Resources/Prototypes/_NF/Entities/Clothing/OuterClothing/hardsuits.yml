@@ -161,6 +161,11 @@
   name: syndicate hardsuit
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: Unremoveable
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
@@ -174,6 +179,11 @@
   name: syndicate hardsuit
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: Unremoveable
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi

@@ -4,14 +4,12 @@
   name: guide-architecture-lua-m-stations # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Stations.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Index.xml
   priority: 10 # LuaM: 1 > 10 (section order)
-  children:
+  children: # LuaM: separate primary stations, roundstart objects and events
   - LuaMColossusCentral
   - LuaMMedical
   - LuaMCamelot
   - LuaMHalicon
   - LuaMHelios
-  - LuaMArcturus
-  - LuaMTradeMall
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
@@ -65,7 +63,7 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: LuaMMonolithWreck
-  name: guide-entry-luam-monolith-wreck
+  name: guide-sector-lua-m-monolith-wreck # LuaM: sector navigation
   text: "/ServerInfo/_LuaM/Guidebook/Sector/MonolithWreck.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/MonolithWreck.xml > /ServerInfo/_LuaM/Guidebook/Sector/MonolithWreck.xml
   priority: 10 # LuaM: 0 > 10 (section order)
 # LuaM-end
@@ -73,9 +71,21 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: LuaMGameModes
-  name: guide-architecture-lua-m-game-modes # LuaM: guidebook architecture v2.1
-  text: "/ServerInfo/_LuaM/Guidebook/Sector/GameModes.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/GameModes.xml > /ServerInfo/_LuaM/Guidebook/Sector/GameModes.xml
+  name: guide-sector-lua-m-game-modes # LuaM: sector navigation
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/Index.xml # LuaM: sector navigation
   priority: 50 # LuaM: 0 > 50 (section order)
+  children: # LuaM: separate primary stations, roundstart objects and events
+  - ColossusEventSyndicateCache
+  - ColossusEventTSFVault
+  - ColossusEventSyndicateShuttle
+  - ColossusEventPreFracture
+  - ColossusEventMonolithFragments
+  - LuaMMonolithWreck
+  - ColossusEventPlanetoids
+  - ColossusEventSalvage
+  - ColossusEventADSFleet
+  - ColossusEventAsakimShips
+  - ColossusEventDeliveries
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.

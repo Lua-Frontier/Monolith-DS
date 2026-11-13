@@ -1,0 +1,17 @@
+<Document>
+# Орбитальный Комплекс «Звезда»
+
+Комплекс с исследовательским и техническим оборудованием.
+
+<GuideEntityCards><GuideEntityEmbed Entity="ComputerTabletopResearchAndDevelopment"/><GuideEntityEmbed Entity="ComputerTabletopAnalysisConsole"/></GuideEntityCards>
+
+При исследовании проверяйте питание, атмосферу и состояние помещений; найденное оборудование сверяйте с задачами своего экипажа.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — [bold]4–10 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_LuaM/POI/Dungeons/ZvezdaLuaM.yml" Name="Орбитальный Комплекс «Звезда»"/>
+
+[textlink="Исследования" link="IndustryResearch"] · [textlink="Артефакты" link="ColossusArtifacts"]
+</Document>

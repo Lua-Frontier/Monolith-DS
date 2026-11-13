@@ -34,9 +34,11 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         _sawmill = Logger.GetSawmill("Guidebook");
+        InitializeLayout(); // LuaM: restore client geometry and keep navigation independent of row lengths.
 
         Tree.OnSelectedItemChanged += OnSelectionChanged;
         // LuaM-start: one home handler for the lifetime of the window.
+        BackButton.OnPressed += _ => GoBack(); // LuaM: previous page, including contextual links.
         HomeButton.OnPressed += _ =>
         {
             HandleClick("ColossusHome"); // LuaM: shared landing page, including from contextual help.
@@ -130,7 +132,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         Scroll.SetScrollValue(default);
         Placeholder.Visible = false;
         EntryContainer.Visible = true;
-        ReturnContainer.Visible = entry.Id != "ColossusHome"; // LuaM: return to home from any article.
+        RecordNavigation(entry); // LuaM: tree selection and direct links share one navigation history.
         SearchBar.Text = "";
         DisposeEntryContents(); // LuaM
         using var file = _resourceManager.ContentFileReadText(entry.Text);
@@ -181,13 +183,14 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         ProtoId<GuideEntryPrototype>? selected = null)
     {
         _entries = entries;
+        ResetNavigationHistory(); // LuaM: a new book/help request starts a fresh history.
         RepopulateTree(rootEntries, forceRoot);
         ClearSelectedGuide();
 
-        Split.State = SplitContainer.SplitState.Auto;
         if (entries.Count == 1)
         {
             TreeBox.Visible = false;
+            Split.State = SplitContainer.SplitState.Auto; // LuaM: a single contextual page uses the whole window.
             Split.ResizeMode = SplitContainer.SplitResizeMode.NotResizable;
             selected = entries.Keys.First();
         }
@@ -195,6 +198,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         {
             TreeBox.Visible = true;
             Split.ResizeMode = SplitContainer.SplitResizeMode.RespectChildrenMinSize;
+            RestoreNavigationWidth(Split.Size.X > 0 ? Split.Size.X : _savedWindowSize.X); // LuaM
         }
 
         if (selected != null)
@@ -293,6 +297,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         item.Metadata = entry;
         var name = Loc.GetString(entry.Name);
         item.Label.Text = name;
+        item.Label.ToolTip = name; // LuaM: long rows remain readable without forcing the sidebar wider.
 
         foreach (var child in entry.Children)
         {

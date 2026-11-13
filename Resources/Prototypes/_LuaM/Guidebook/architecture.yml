@@ -249,8 +249,7 @@
   id: ColossusReferenceResources
   text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusReferenceResources.xml
   name: guide-architecture-colossus-reference-resources
-  children:
-  - ColossusCatalogueOres
+  children: # LuaM: separate primary stations, roundstart objects and events
   - ColossusCataloguePrices
 
 - type: guideEntry

@@ -42,6 +42,11 @@
   id: ClothingOuterHardsuitBaseNoPlateholder
   name: base hardsuit no plateholder
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: SpeedTieredFootsteps # LuaM: light, medium or heavy steps from Hullrot by the suit's slowdown
   - type: PressureProtection
     highPressureMultiplier: 0.3

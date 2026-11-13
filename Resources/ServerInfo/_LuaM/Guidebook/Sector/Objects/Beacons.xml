@@ -1,0 +1,11 @@
+<Document>
+# Маяки астероидных скоплений
+
+[bold]INSO-357k[/bold] и [bold]LINEAR-21[/bold] — отдельные скопления с собственными маяками. Их подписи помогают найти район добычи на карте; сам маяк не показывает точные залежи внутри каждого астероида. Используйте сканер минералов.
+
+<GuideMap Map="/Maps/_Mono/POI/beaconstation_a.yml" Name="Маяк INSO-357k"/>
+
+<GuideMap Map="/Maps/_Mono/POI/beaconstation_wilds.yml" Name="Маяк LINEAR-21"/>
+
+[textlink="Астероиды и породы" link="LuaMAsteroids"] · [textlink="Добыча руды" link="ColossusMining"]
+</Document>

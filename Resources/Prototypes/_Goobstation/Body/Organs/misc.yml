@@ -4,6 +4,12 @@
   name: Sandevistan
   description: Advanced cyberware that is wired into the user's central nervous system and allows them to greatly increase their agility for a short period, at the cost of their endurance.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Cybernetics
   - type: Sprite
     sprite: _Goobstation/Objects/Misc/sandevistan.rsi

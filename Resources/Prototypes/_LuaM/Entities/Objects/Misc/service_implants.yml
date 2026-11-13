@@ -156,6 +156,12 @@
   name: autosurgeon (nutrient injector implant)
   description: Installs an implant that puts a dose of nutrients into the stomach on demand.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: AutoSurgeon
     implant: NutrientInjectorImplant
 
@@ -165,6 +171,12 @@
   name: autosurgeon (nutrient injector implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonNutrientInjector
   - type: StaticPrice
@@ -179,6 +191,12 @@
   name: autosurgeon (water injector implant)
   description: Installs an implant that puts a dose of water into the stomach on demand.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: AutoSurgeon
     implant: WaterInjectorImplant
 
@@ -188,6 +206,12 @@
   name: autosurgeon (water injector implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonWaterInjector
   - type: StaticPrice
@@ -202,6 +226,12 @@
   name: autosurgeon (beer injector implant)
   description: Installs an implant that puts a dose of beer into the stomach on demand.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: AutoSurgeon
     implant: BeerInjectorImplant
 
@@ -211,6 +241,12 @@
   name: autosurgeon (beer injector implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonBeerInjector
   - type: StaticPrice
@@ -225,6 +261,12 @@
   name: autosurgeon (vodka injector implant)
   description: Installs an implant that puts a dose of vodka into the stomach on demand.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: AutoSurgeon
     implant: VodkaInjectorImplant
 
@@ -234,6 +276,12 @@
   name: autosurgeon (vodka injector implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonVodkaInjector
   - type: StaticPrice

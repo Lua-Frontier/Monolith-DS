@@ -1,0 +1,15 @@
+<Document>
+# Церковь
+
+Объект с религиозным и сервисным оборудованием.
+
+<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineChapel"/></GuideEntityCards>
+
+Состав помещений и подходы смотрите на плане.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — [bold]4.2–6.9 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_NF/POI/beacon.yml" Name="Церковь"/>
+</Document>

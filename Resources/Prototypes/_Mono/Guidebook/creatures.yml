@@ -1,8 +1,8 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Creatures
-  name: guide-architecture-creatures # LuaM: guidebook architecture v2.1
-  text: "/ServerInfo/_LuaM/Guidebook/Sector/Creatures/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Creatures.xml > /ServerInfo/_LuaM/Guidebook/Sector/Creatures/Index.xml
+  name: guide-architecture-colossus-special-roles # LuaM: sector navigation
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusSpecialRoles.xml # LuaM: sector navigation
   priority: 60 # LuaM: 8 > 60 (section order)
 
 # LuaM-start: maintained guidebook page and navigation.

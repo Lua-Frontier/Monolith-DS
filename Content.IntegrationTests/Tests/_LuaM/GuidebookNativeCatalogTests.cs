@@ -41,13 +41,22 @@ public sealed class GuidebookNativeCatalogTests
             Assert.That(entities.EntityCount, Is.EqualTo(before), "Rows must not spawn preview entities.");
             using var ore = new GuideOreMatrix();
             Assert.That(ore.TryParseTag(new(), out _), Is.True);
-            var matrix = Descendants(ore).OfType<GridContainer>().Single();
             Assert.That(catalog.Catalog, Is.Not.Null);
-            Assert.That(matrix.Columns, Is.EqualTo(catalog.Catalog!.OreTables.Count(t => t.Grade == "Soft") + 1),
-                "All configured soft rock families are columns; ores scroll vertically.");
-            ore.Measure(new Vector2(360, float.PositiveInfinity));
+            var selectors = Descendants(ore).OfType<OptionButton>().ToArray();
+            Assert.That(selectors.Length, Is.EqualTo(2), "Choose a grade and asteroid family instead of adding a column per family.");
+            Assert.That(selectors[1].ItemCount, Is.EqualTo(catalog.Catalog!.OreTables.Count(t => t.Grade == "Soft")));
+            Assert.That(Descendants(ore).OfType<ScrollContainer>().Single().HScrollEnabled, Is.False);
+            ore.Measure(new Vector2(320, float.PositiveInfinity));
             Assert.That(ore.DesiredSize.Y, Is.GreaterThanOrEqualTo(350), "A scroll control returning zero measure must still have explicit height.");
-            ore.Arrange(new UIBox2(0, 0, 360, ore.DesiredSize.Y));
+            ore.Arrange(new UIBox2(0, 0, 320, ore.DesiredSize.Y));
+            Assert.That(ore.DesiredSize.X, Is.LessThanOrEqualTo(320));
+            foreach (var row in Descendants(ore).OfType<BoxContainer>().Where(r => r.Name == "OreProbabilityRow"))
+            {
+                var cells = row.Children.ToArray();
+                Assert.That(cells.Length, Is.EqualTo(2));
+                Assert.That(cells[1].Position.X, Is.GreaterThanOrEqualTo(cells[0].Position.X + cells[0].Size.X));
+                Assert.That(cells[1].Position.X + cells[1].Size.X, Is.LessThanOrEqualTo(320));
+            }
         });
         await pair.CleanReturnAsync();
     }

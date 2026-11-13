@@ -106,6 +106,12 @@
   suffix: 35 PPS
   description: A power-hungry server dedicated towards scraping data from... somewhere. This one generates research points at a rate of 200 per second. It seems to be bolted to the floor.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: ResearchClient
   - type: ResearchPointSource
     pointsPerSecond: 35
@@ -133,6 +139,12 @@
   name: data farm (Research)
   description: A power-hungry server dedicated towards scraping data from... somewhere. This one generates research points at a rate of 20 per second.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: PointLight
     radius: 1.1
     energy: 1.1

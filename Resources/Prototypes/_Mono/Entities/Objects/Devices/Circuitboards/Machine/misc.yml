@@ -66,6 +66,11 @@
   id: ShipDrillMachineCircuitboard
   name: ship drill machine board
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryDrilling
+  # LuaM-end
   - type: MachineBoard
     prototype: MachineShipDrill
     stackRequirements:

@@ -7,7 +7,8 @@
   description: A combat heart that floods the body with stimulants on demand. While it runs you are much harder to put down and every hit you land heals you, but it eats you alive, deafens you and after a while you stop telling friend from foe.
   components:
   - type: GuideHelp
-    guides:
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
     - ColossusCyberneticOrgans
   - type: Tag
     tags:
@@ -95,6 +96,12 @@
   name: PDV autosurgeon (berserk heart) flatpack
   description: A flatpack used for constructing a PDV autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonBerserkHeartPDV
   - type: StaticPrice
