@@ -1,2 +1,2 @@
-ent-Battletable = battle table
-    .desc = A futuristic-looking battle planning table.
+ent-Battletable = тактический стол
+    .desc = Футуристичный стол для планирования боевых операций.

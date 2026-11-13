@@ -84,5 +84,5 @@ ent-PlushiePurpleGhost22T = плюшевый фиолетовый призрак
 
 ent-PlushieXapcMoth = Плюшевый Ниан-Коммунист
     .desc = От этой игрушки исходит сильный аромат сигар премиум-класса и мощная энергия Коммунизма. Сделано в СССП.
-ent-BaseAkiPlushie = seal
+ent-BaseAkiPlushie = тюлень
     .desc = { ent-BasePlushie.desc }

@@ -51,5 +51,5 @@ ent-PowerCageMediumEmpty = { ent-PowerCageMedium }
 ent-PowerCageHighEmpty = { ent-PowerCageHigh }
     .suffix = Пустой
     .desc = { ent-PowerCageHigh.desc }
-ent-PowerCageMech = mech fuel cell
-    .desc = An auto-recharging fuel cell for mechs.
+ent-PowerCageMech = топливный элемент меха
+    .desc = Самоподзаряжающийся топливный элемент для мехов.

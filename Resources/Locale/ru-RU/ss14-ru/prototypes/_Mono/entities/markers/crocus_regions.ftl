@@ -1,8 +1,8 @@
-ent-BiomeSourceFallbackCrocus = crocus fallback biome source
+ent-BiomeSourceFallbackCrocus = резервный источник биома Крокуса
     .desc = { ent-BaseBiomeSource.desc }
-ent-BiomeSourceFallbackJianghuiIndustrial = crocus jianghui industrial biome source
+ent-BiomeSourceFallbackJianghuiIndustrial = источник биома промзоны Цзянхуэй (Крокус)
     .desc = { ent-BaseBiomeSource.desc }
-ent-BiomeSourceFallbackJianghuiCity = crocus jianghui city biome source
+ent-BiomeSourceFallbackJianghuiCity = источник биома города Цзянхуэй (Крокус)
     .desc = { ent-BaseBiomeSource.desc }
-ent-BiomeSourceFallbackJianghuiPort = crocus jianghui port biome source
+ent-BiomeSourceFallbackJianghuiPort = источник биома порта Цзянхуэй (Крокус)
     .desc = { ent-BaseBiomeSource.desc }

@@ -1,2 +1,2 @@
-ent-Interactor = interactor
-    .desc = A robotic actuator specialized in interacting with objects using tools.
+ent-Interactor = интерактор
+    .desc = Роботизированный привод, предназначенный для взаимодействия с объектами с помощью инструментов.

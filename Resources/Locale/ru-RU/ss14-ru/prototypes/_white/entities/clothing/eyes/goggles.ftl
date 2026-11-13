@@ -1,12 +1,12 @@
-ent-ClothingEyesNightVisionGogglesGen1 = night vision goggles (GEN1)
+ent-ClothingEyesNightVisionGogglesGen1 = очки ночного видения (GEN1)
     .desc = { ent-ClothingEyesNightVisionGoggles.desc }
     .suffix = DEBUG
-ent-ClothingEyesNightVisionGogglesGen2 = night vision goggles (GEN2)
+ent-ClothingEyesNightVisionGogglesGen2 = очки ночного видения (GEN2)
     .desc = { ent-ClothingEyesNightVisionGoggles.desc }
     .suffix = DEBUG
-ent-ClothingEyesNightVisionGogglesGen3 = night vision goggles (GEN3)
+ent-ClothingEyesNightVisionGogglesGen3 = очки ночного видения (GEN3)
     .desc = { ent-ClothingEyesNightVisionGoggles.desc }
     .suffix = DEBUG
-ent-ClothingEyesNightVisionGogglesGen4 = night vision goggles (GEN4)
+ent-ClothingEyesNightVisionGogglesGen4 = очки ночного видения (GEN4)
     .desc = { ent-ClothingEyesNightVisionGoggles.desc }
     .suffix = DEBUG

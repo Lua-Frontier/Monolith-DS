@@ -1,6 +1,6 @@
-ent-HighSecUSSPSecureLocked = USSP Secure, Locked
-ent-HighSecUSSPCommandLocked = USSP Command, Locked
-ent-HighSecUSSPLocked = USSP, Locked
+ent-HighSecUSSPSecureLocked = СССП, охрана, закрыто
+ent-HighSecUSSPCommandLocked = СССП, командование, закрыто
+ent-HighSecUSSPLocked = СССП, закрыто
 ent-HighSecViperLocked = { ent-HighSecDoor }
     .desc = { ent-HighSecDoor.desc }
     .suffix = Viper Group, Закрыт

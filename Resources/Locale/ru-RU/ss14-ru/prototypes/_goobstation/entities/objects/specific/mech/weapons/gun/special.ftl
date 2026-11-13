@@ -1,6 +1,6 @@
-ent-WeaponMechSpecialMousetrapMortar = mousetrap mortar
-    .desc = Mounted mousetrap launcher.
+ent-WeaponMechSpecialMousetrapMortar = мышеловочный миномёт
+    .desc = Установленная пусковая установка мышеловок.
     .suffix = Mech Weapon, Gun, Special, Mortar
-ent-WeaponMechSpecialBananaMortar = banana mortar
-    .desc = Mounted banana peel launcher.
+ent-WeaponMechSpecialBananaMortar = банановый миномёт
+    .desc = Установленная пусковая установка банановых шкурок.
     .suffix = Mech Weapon, Gun, Special, Mortar

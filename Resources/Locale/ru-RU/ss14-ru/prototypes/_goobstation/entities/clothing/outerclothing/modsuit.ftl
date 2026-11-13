@@ -16,5 +16,5 @@ ent-ClothingModsuitChestplateResearchDirector = нагрудная пласти�
     .desc = Объёмный стальной кусок, защищающий от взрывов и ударов битой.
 ent-ClothingModsuitChestplateCaptain = нагрудная пластина МОД «Магнат»
     .desc = Эта хрень сделана из БРИЛЛИАНТОВ, чувааааак, эта броня выкована из ДРАГОЦЕННОСТЕЙ.
-ent-ClothingModsuitChestplateBase = modsuit chestplate
-    .desc = A special modular suit spaceproof cover designed for compact folding inside modular suit control.
+ent-ClothingModsuitChestplateBase = нагрудник модкостюма
+    .desc = Особое герметичное покрытие модульного костюма, складывающееся в компактный блок управления.

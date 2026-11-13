@@ -26,16 +26,16 @@ namespace Content.Server._Lua.AmbientSpaceEffects;
 public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
 {
     private const float WeatherOffPaletteChance = 0.18f;
-    private const float RadiationFogMinRadius = 980f;
+    internal const float RadiationFogMinRadius = 980f; // LuaM: private > internal, NebulaShiftRuleSystem
     private const float RadiationFogFullWeightRadius = 1500f;
 
     // The weather wakes up when a ship gets this close to the edge of the cloud.
-    private const float ActivationMargin = 256f;
+    internal const float ActivationMargin = 256f; // LuaM: private > internal
 
-    private static readonly ProtoId<NebulaWeatherPrototype> RadiationFogWeather = "NebulaRadiationFog";
+    internal static readonly ProtoId<NebulaWeatherPrototype> RadiationFogWeather = "NebulaRadiationFog"; // LuaM: private > internal
 
     // Indexed like AmbientSpacePalette.Colors: the weather a cloud of that color usually carries.
-    private static readonly ProtoId<NebulaWeatherPrototype>[] WeatherByColorIndex =
+    internal static readonly ProtoId<NebulaWeatherPrototype>[] WeatherByColorIndex = // LuaM: private > internal
     [
         "NebulaLightning",
         "NebulaCorrosion",

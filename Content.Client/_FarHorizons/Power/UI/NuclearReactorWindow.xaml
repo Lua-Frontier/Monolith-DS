@@ -1,7 +1,8 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-            MinSize="690 445" Title="Nuclear Reactor">
+            MinSize="690 445" Title="{Loc 'luam-nuclear-reactor-ui-title'}">
+    <!-- LuaM: localized Title, TargetName and ItemName placeholders -->
     <BoxContainer Orientation="Vertical" Margin="5 5 5 5" SeparationOverride="10">
         <!--Main Content-->
         <BoxContainer Name="MainContent" Orientation="Horizontal" VerticalExpand="True" Margin="4">
@@ -30,7 +31,7 @@
 				<!--Target info-->
 				<BoxContainer Name="TargetData" Orientation="Vertical" VerticalExpand="True">
 					<BoxContainer Name="TargetInfo" Orientation="Vertical">
-						<Label Name="TargetName" Text="Rod" ClipText="True"/>
+						<Label Name="TargetName" Text="{Loc 'luam-nuclear-reactor-ui-empty'}" ClipText="True"/>
 						<GridContainer Name="TargetTemperatureGrid" Columns="2" Margin="2 2 2 2">
 							<Label Text="T: " StyleClasses="StatusFieldTitle"  HorizontalExpand="True"/>
 							<Button Name="TargetTemperature" Text="20C" HorizontalAlignment="Right"/>
@@ -53,7 +54,7 @@
 				<!--"Shelf"-->
 				<BoxContainer Name="Shelf" Orientation="Vertical">
 					<Button Name="EjectItem" Text="{Loc comp-nuclear-reactor-ui-eject-button}" />
-					<Label Name="ItemName" Text="empty" ClipText="True"/>
+					<Label Name="ItemName" Text="{Loc 'luam-nuclear-reactor-ui-empty'}" ClipText="True"/>
 				</BoxContainer>
 			</BoxContainer>
 			

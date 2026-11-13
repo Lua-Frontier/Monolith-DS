@@ -1,4 +1,4 @@
-ent-PanzeroRocket = panzero rocket
+ent-PanzeroRocket = ракета «Панцеро»
     .desc = Scheiße!
-ent-MyokoRocket = myoko rocket
+ent-MyokoRocket = ракета «Мёко»
     .desc = くそ!

@@ -1,2 +1,2 @@
-ent-RandomHumanoidSpawnerChronolegioneer = chrono legionnaire
+ent-RandomHumanoidSpawnerChronolegioneer = хронолегионер
     .desc = { "" }

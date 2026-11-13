@@ -1,3 +1,3 @@
-ent-CrateMaterialNukeSupplies = nuclear fission explosive supplies crate
-    .desc = The authentication disk, 4 disk trackers, and the codes. Something has gone very wrong here.
+ent-CrateMaterialNukeSupplies = ящик принадлежностей для ядерной бомбы
+    .desc = Диск аутентификации, 4 пинпоинтера диска и коды. Здесь явно что-то пошло не так.
     .suffix = { ent-CrateBaseSecure.suffix }

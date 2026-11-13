@@ -1,0 +1,12 @@
+# Every 40-60 minutes the hazardous nebulae calm down and their weather moves to harmless ones, the count stays the same.
+- type: entity
+  id: LuaMNebulaShift
+  parent: BaseGameRule
+  components:
+  - type: NebulaShiftRule
+    firstDelay:
+      min: 2400 # 40 minutes
+      max: 3600 # 1 hour
+    interval:
+      min: 2400
+      max: 3600

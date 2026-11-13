@@ -1,3 +1,3 @@
-ent-DataChitStorageServer = solarian data chit storage server
-    .desc = Contains approximately 500 data chits worth of confiscated data, often found within heavily armoured Solarian vaults. The Phaethon Dynasty would love to reclaim this.
+ent-DataChitStorageServer = солярианский сервер хранения дата-чипов
+    .desc = Содержит конфискованные данные объёмом примерно в 500 дата-чипов. Часто встречается в тяжелобронированных солярианских хранилищах. Авангард Нордфолла мечтает их вернуть.
     .suffix = 500 DC

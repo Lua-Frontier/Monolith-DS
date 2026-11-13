@@ -1,6 +1,6 @@
 ent-ThrusterLargeNfsd = большой ракетный двигатель ТСФ
     .desc = { ent-Thruster.desc }
     .suffix = ТСФ
-ent-ThrusterNfsdStealh = stealth thruster
-    .desc = A thruster with a reduced drive-plume and thermal output, but significantly less thrust.
+ent-ThrusterNfsdStealh = малозаметный двигатель
+    .desc = Двигатель с уменьшенным факелом и тепловым излучением, но заметно меньшей тягой.
     .suffix = TSFMC, Stealth

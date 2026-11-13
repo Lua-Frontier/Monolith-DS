@@ -1,3 +1,3 @@
-ent-WeaponMechIndustrialKineticAccelerator = exosuit proto-kinetic accelerator
-    .desc = Fires normal-damage kinetic bolts at a short range.
+ent-WeaponMechIndustrialKineticAccelerator = протокинетический ускоритель для экзокостюма
+    .desc = Стреляет кинетическими зарядами обычного урона на короткую дистанцию.
     .suffix = Mech Weapon, Gun, Industrial, Kinetic Accelerator

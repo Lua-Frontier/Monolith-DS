@@ -1,4 +1,4 @@
-ent-Bullet35mmGrenadeSAPHE = frag grenade
+ent-Bullet35mmGrenadeSAPHE = осколочная граната
     .desc = { ent-BaseBulletTrigger.desc }
-ent-Bullet35mmGrenadeStinger = stinger grenade
+ent-Bullet35mmGrenadeStinger = граната «Жало»
     .desc = { ent-BaseBulletTrigger.desc }

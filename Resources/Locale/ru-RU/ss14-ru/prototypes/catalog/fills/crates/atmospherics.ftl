@@ -1,2 +1,2 @@
-ent-CrateTeg = atmospherics TEG crate
-    .desc = Contains components required to create a Thermoelectric Generator.
+ent-CrateTeg = ящик атмосферного ТЭГ
+    .desc = Содержит компоненты, необходимые для сборки термоэлектрического генератора.

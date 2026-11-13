@@ -20,5 +20,5 @@ ent-LeftFootVox = левая стопа вокса
     .desc = { ent-PartVox.desc }
 ent-RightFootVox = правая стопа вокса
     .desc = { ent-PartVox.desc }
-ent-PartVoxBase = vox body part
+ent-PartVoxBase = часть тела вокса
     .desc = { ent-BaseItem.desc }

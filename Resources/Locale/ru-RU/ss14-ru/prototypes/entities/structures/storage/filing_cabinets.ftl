@@ -19,5 +19,5 @@ ent-filingCabinetDrawerRandom = { ent-filingCabinetDrawer }
     .suffix = Случайный
     .desc = { ent-filingCabinetDrawer.desc }
 ent-BaseFilingCabinet = { ent-BaseStructureDynamic }
-    .desc = A cabinet for all your filing needs.
+    .desc = Шкаф для всех ваших бумаг.
     .suffix = Empty

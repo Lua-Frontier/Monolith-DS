@@ -20,4 +20,4 @@ ent-SpawnDungeonLootFlatpacksScience = случайная упаковка
     .suffix = Экспедиция, Наука
     .desc = { ent-MarkerBasePlaceFree.desc }
 
-ent-SpawnDungeonLawBoardScience = random law board
+ent-SpawnDungeonLawBoardScience = случайная плата законов
