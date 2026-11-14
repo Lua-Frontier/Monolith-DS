@@ -7,6 +7,9 @@ using Content.Shared.Shuttles.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Enums; // LuaM
+using Robust.Shared.Player; // LuaM
+using Robust.Shared.Timing; // LuaM
 
 namespace Content.Server._Mono.Radar;
 
@@ -14,6 +17,26 @@ public sealed partial class RadarBlipSystem : EntitySystem
 {
     [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
+    [Dependency] private IGameTiming _timing = default!; // LuaM
+
+    // LuaM-start: a blip removal only goes to the players whose radar is showing that blip, not to the whole server
+    /// <summary>
+    /// The client drops its blips after 3 seconds without an update (BlipStaleSeconds), so a viewer older than that has nothing to remove.
+    /// </summary>
+    private static readonly TimeSpan RadarViewerTimeout = TimeSpan.FromSeconds(3);
+
+    private readonly Dictionary<ICommonSession, RadarViewer> _radarViewers = new();
+    private readonly List<ICommonSession> _staleViewers = new();
+
+    /// <summary>
+    /// When the player last got a blip report and which blips it had. Each report replaces the previous one on the client.
+    /// </summary>
+    private sealed class RadarViewer
+    {
+        public TimeSpan LastReport;
+        public readonly HashSet<NetEntity> Blips = new();
+    }
+    // LuaM-end
 
     // Pooled collections to avoid per-request heap churn
     private readonly List<BlipNetData> _tempBlipsCache = new();
@@ -55,6 +78,21 @@ public sealed partial class RadarBlipSystem : EntitySystem
         var giveEv = new GiveBlipsEvent(_tempPaletteCache, _tempBlipsCache, _tempMissileCache, _tempHitscansCache);
         RaiseNetworkEvent(giveEv, args.SenderSession);
 
+        // LuaM-start: remember what this player's radar shows now
+        if (!_radarViewers.TryGetValue(args.SenderSession, out var viewer))
+        {
+            viewer = new RadarViewer();
+            _radarViewers[args.SenderSession] = viewer;
+        }
+
+        viewer.LastReport = _timing.CurTime;
+        viewer.Blips.Clear();
+        foreach (var blip in _tempBlipsCache)
+        {
+            viewer.Blips.Add(blip.Uid);
+        }
+        // LuaM-end
+
         _tempBlipsCache.Clear();
         _tempMissileCache.Clear();
         _tempHitscansCache.Clear();
@@ -65,9 +103,42 @@ public sealed partial class RadarBlipSystem : EntitySystem
 
     private void OnBlipShutdown(EntityUid blipUid, RadarBlipComponent component, ComponentShutdown args)
     {
+        // LuaM-start: was sent to every player on the server for every deleted shell and missile
+        if (_radarViewers.Count == 0)
+            return;
+
         var netBlipUid = GetNetEntity(blipUid);
+        var now = _timing.CurTime;
+        Filter? viewers = null;
+        foreach (var (session, viewer) in _radarViewers)
+        {
+            if (now - viewer.LastReport > RadarViewerTimeout || session.Status == SessionStatus.Disconnected)
+            {
+                _staleViewers.Add(session);
+                continue;
+            }
+
+            // their radar never showed it, there is nothing to remove
+            if (!viewer.Blips.Remove(netBlipUid))
+                continue;
+
+            viewers ??= Filter.Empty();
+            viewers.AddPlayer(session);
+        }
+
+        foreach (var session in _staleViewers)
+        {
+            _radarViewers.Remove(session);
+        }
+
+        _staleViewers.Clear();
+
+        if (viewers == null)
+            return;
+
         var removalEv = new BlipRemovalEvent(netBlipUid);
-        RaiseNetworkEvent(removalEv);
+        RaiseNetworkEvent(removalEv, viewers);
+        // LuaM-end
     }
 
     private void AssembleBlipsReport(EntityUid uid, List<EntityUid> sources, RadarConsoleComponent? component = null)

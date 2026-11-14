@@ -253,6 +253,9 @@ public sealed partial class ExecutionSystem : EntitySystem
                 _appearanceSystem.SetData(ammoUid!.Value, AmmoVisuals.Spent, true);
                 Dirty(ammoUid.Value, cartridge);
 
+                if (cartridge.DeleteOnSpawn && !_gunSystem.KeepsSpentInGun(ammoUid.Value)) // LuaM: caseless ammo
+                    Del(ammoUid.Value);
+
                 break;
 
             case AmmoComponent newAmmo:
