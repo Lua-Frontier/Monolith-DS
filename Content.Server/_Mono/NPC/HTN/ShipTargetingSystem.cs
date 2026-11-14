@@ -23,6 +23,7 @@ public sealed partial class ShipTargetingSystem : EntitySystem
 
     [Dependency] private EntityQuery<GunComponent> _gunQuery;
     [Dependency] private EntityQuery<PhysicsComponent> _physQuery;
+    [Dependency] private EntityQuery<FireControllableComponent> _controllableQuery; // LuaM
 
     private HashSet<Entity<FireControllableComponent>> _cannons = new();
 
@@ -107,6 +108,11 @@ public sealed partial class ShipTargetingSystem : EntitySystem
         {
             if (TerminatingOrDeleted(uid))
                 continue;
+
+            // LuaM-start: a reloading or unpowered gun would reject the shot anyway, skip the lead calculation
+            if (!_controllableQuery.TryComp(uid, out var controllable) || !_cannon.CanFire(uid, controllable, noServer: true))
+                continue;
+            // LuaM-end
 
             var gXform = Transform(uid);
 

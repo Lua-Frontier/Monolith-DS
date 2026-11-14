@@ -154,7 +154,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
                         SetCartridgeSpent(ent.Value, cartridge, true);
 
-                        if (cartridge.DeleteOnSpawn)
+                        if (cartridge.DeleteOnSpawn && !KeepsSpentInGun(ent.Value)) // LuaM: bolt-action keeps it until cycled
                             Del(ent.Value);
                     }
                     else

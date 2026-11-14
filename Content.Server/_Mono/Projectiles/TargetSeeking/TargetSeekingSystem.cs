@@ -21,6 +21,8 @@ public sealed partial class TargetSeekingSystem : EntitySystem
     private EntityQuery<ProjectileComponent> _projectileQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;
 
+    private static readonly TimeSpan AcquireInterval = TimeSpan.FromSeconds(0.25); // LuaM
+
     public override void Initialize()
     {
         base.Initialize();
@@ -194,8 +196,9 @@ public sealed partial class TargetSeekingSystem : EntitySystem
                     xform
                 );
             }
-            else
+            else if (_gameTiming.CurTime >= seekingComp.NextAcquire) // LuaM: the search walks every shuttle console, don't run it every tick
             {
+                seekingComp.NextAcquire = _gameTiming.CurTime + AcquireInterval; // LuaM
                 // Try to acquire a new target
                 AcquireTarget(uid, seekingComp, xform);
             }
