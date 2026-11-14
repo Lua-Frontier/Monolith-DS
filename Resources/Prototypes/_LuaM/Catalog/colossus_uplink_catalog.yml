@@ -1,0 +1,162 @@
+# Weapons
+- type: listing
+  id: UplinkColossusLawbringer
+  description: uplink-colossus-lawbringer-desc
+  productEntity: WeaponEnergyGunLawbringer
+  cost:
+    MonolithicCrystal: 3
+  categories: [ UplinkColossusWeapons ]
+
+- type: listing
+  id: UplinkColossusACR
+  productEntity: WeaponRifleACR
+  cost: { MonolithicCrystal: 3 }
+  categories: [ UplinkColossusWeapons ]
+
+- type: listing
+  id: UplinkColossusGalactica
+  productEntity: WeaponPistolCCTCGalactica
+  cost: { MonolithicCrystal: 1 }
+  categories: [ UplinkColossusWeapons ]
+
+- type: listing
+  id: UplinkColossusHunter101
+  productEntity: WeaponSniperHunter101
+  cost: { MonolithicCrystal: 4 }
+  categories: [ UplinkColossusWeapons ]
+
+- type: listing
+  id: UplinkColossusSmartLmg
+  productEntity: WeaponSmartLmg
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusWeapons ]
+
+- type: listing
+  id: UplinkColossusFPDMR
+  productEntity: WeaponRifleFPDMR
+  cost: { MonolithicCrystal: 3 }
+  categories: [ UplinkColossusWeapons ]
+
+- type: listing
+  id: UplinkColossusEnergyRevolver
+  productEntity: WeaponEnergyRevolver
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusWeapons ]
+
+- type: listing
+  id: UplinkColossusRubberEnforcer
+  productEntity: WeaponShotgunEnforcerRubber
+  cost: { MonolithicCrystal: 1 }
+  categories: [ UplinkColossusWeapons ]
+
+- type: listing
+  id: UplinkColossusHostileAsmgt
+  productEntity: WeaponTurretAsmgtHostileUniversallyPacked
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusWeapons ]
+
+# Armor
+- type: listing
+  id: UplinkColossusM92Helmet
+  productEntity: ClothingHeadHardsuitM92
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusArmor ]
+
+- type: listing
+  id: UplinkColossusM92xHelmet
+  productEntity: ClothingHeadHardsuitM92x
+  cost: { MonolithicCrystal: 3 }
+  categories: [ UplinkColossusArmor ]
+
+- type: listing
+  id: UplinkColossusM93Hardsuit
+  productEntity: ClothingOuterHardsuitM93
+  cost: { MonolithicCrystal: 4 }
+  categories: [ UplinkColossusArmor ]
+
+- type: listing
+  id: UplinkColossusArmorPlateStorageT3
+  productEntity: ArmorPlateStorageT3
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusArmor ]
+
+- type: listing
+  id: UplinkColossusSpeedPlate
+  productEntity: ArmorPlateSpeed
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusArmor ]
+
+- type: listing
+  id: UplinkColossusT0Voucher
+  productEntity: ShipVoucherCaelestinusT0
+  cost: { MonolithicCrystal: 1 }
+  categories: [ UplinkColossusVouchers ]
+
+- type: listing
+  id: UplinkColossusT1Voucher
+  productEntity: ShipVoucherCaelestinusT1
+  cost: { MonolithicCrystal: 4 }
+  categories: [ UplinkColossusVouchers ]
+
+# Ammo
+- type: listing
+  id: UplinkColossusACRMagazine
+  productEntity: Magazine635x40mmCaselessBig
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusAmmo ]
+
+- type: listing
+  id: UplinkColossusACRPlasmaMagazine
+  productEntity: Magazine635x40mmCaselessBigPlasma
+  cost: { MonolithicCrystal: 4 }
+  categories: [ UplinkColossusAmmo ]
+
+- type: listing
+  id: UplinkColossus18x160Ammo
+  productEntity: AmmoBoxBullet18x160mm
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusAmmo ]
+
+- type: listing
+  id: UplinkColossus18x160HitscanAmmo
+  productEntity: AmmoBoxHitscan18x160mm
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusAmmo ]
+
+- type: listing
+  id: UplinkColossusRubberAsmgtMagazine
+  productEntity: MagazineAsmgtUniversal9x19mmRubber
+  cost: { MonolithicCrystal: 1 }
+  categories: [ UplinkColossusAmmo ]
+
+
+# Misc
+- type: listing
+  id: UplinkColossusBarrierKit
+  productEntity: DeployableBarrierPacked
+  cost: { MonolithicCrystal: 1 }
+  categories: [ UplinkColossusEquipment ]
+
+- type: listing
+  id: UplinkColossusHoloprojector
+  productEntity: HoloprojectorSecurityEmpty
+  cost: { MonolithicCrystal: 1 }
+  categories: [ UplinkColossusEquipment ]
+
+- type: listing
+  id: UplinkColossusFlasherKit
+  productEntity: PortableFlasherPacked
+  cost: { MonolithicCrystal: 1 }
+  categories: [ UplinkColossusEquipment ]
+
+- type: listing
+  id: UplinkColossusERTSecurityBackpack
+  productEntity: ClothingBackpackERTSecurity
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusEquipment ]
+
+- type: listing
+  id: UplinkColossusRDServerFlatpack
+  productEntity: RDServerColossusFlatpack
+  cost: { MonolithicCrystal: 2 }
+  categories: [ UplinkColossusEquipment ]

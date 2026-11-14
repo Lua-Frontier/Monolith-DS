@@ -1,0 +1,12 @@
+- type: currency
+  id: MonolithicCrystal
+  displayName: store-currency-display-colossus
+  cash:
+    1: MonolithicCrystalSmall
+  canWithdraw: true
+
+- type: stack
+  id: MonolithicCrystalSmall
+  name: small monolithic crystal
+  icon: { sprite: _Mono/Objects/Materials/monolith_crystal.rsi, state: crystal_small }
+  spawn: MonolithicCrystalSmall

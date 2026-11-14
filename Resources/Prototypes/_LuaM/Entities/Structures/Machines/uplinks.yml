@@ -1,0 +1,78 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineColossusUplink
+  name: Colossus equipment requisition station
+  description: A requisition station for Colossus personnel, supplied with monolithic crystals.
+  components:
+  - type: VendingMachine
+    offState: base
+    brokenState: broken_base
+    normalState: screen
+  - type: Advertise
+    pack: FactionUplinkAds
+  - type: Sprite
+    sprite: _LuaM/Structures/Machines/VendingMachines/colossus_uplink.rsi
+    layers:
+    - state: base
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: screen
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: broken_screen
+      map: ["brokenScreen"]
+      shader: unshaded
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.VendingMachineVisuals.VisualState:
+        brokenScreen:
+          Normal: { visible: false }
+          Eject: { visible: false }
+          Deny: { visible: false }
+          Off: { visible: false }
+          Broken: { visible: true }
+  - type: LitOnPowered
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 3
+    falloff: 6.0
+    color: "#1c3348"
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    name: store-preset-name-colossus-uplink
+    categories:
+    - UplinkColossusArmor
+    - UplinkColossusWeapons
+    - UplinkColossusAmmo
+    - UplinkColossusEquipment
+    - UplinkColossusVouchers
+    balance:
+      MonolithicCrystal: 0
+    currencyWhitelist:
+    - MonolithicCrystal
+  - type: CompanyAccessReader
+    requiredCompanies:
+    - Colonial
+
+- type: entity
+  id: StorePresetColossusUplink
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-colossus-uplink
+    categories:
+    - UplinkColossusArmor
+    - UplinkColossusWeapons
+    - UplinkColossusAmmo
+    - UplinkColossusEquipment
+    - UplinkColossusVouchers
+    currencyWhitelist:
+    - MonolithicCrystal
+    balance:
+      MonolithicCrystal: 0
