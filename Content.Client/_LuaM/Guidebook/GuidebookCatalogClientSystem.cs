@@ -28,7 +28,6 @@ public sealed partial class GuidebookCatalogClientSystem : EntitySystem
         SubscribeNetworkEvent<RoundRestartCleanupEvent>(_ => Clear(request: true));
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(_ => Clear(request: true));
         SubscribeNetworkEvent<GuidebookCatalogInvalidatedEvent>(_ => Clear(request: true));
-        SubscribeNetworkEvent<GuidebookImagesInvalidatedEvent>(_ => Clear(request: true));
         SubscribeNetworkEvent<UpdateGuidebookCatalogEvent>(ev =>
         {
             Catalog = ev.Data;

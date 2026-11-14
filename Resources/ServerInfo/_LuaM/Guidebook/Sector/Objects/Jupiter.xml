@@ -1,0 +1,17 @@
+<Document>
+# Разрушенный Крейсер Юпитер
+
+Крупный разрушенный корабль с оставшимся оборудованием и опасными обитателями.
+
+<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/></GuideEntityCards>
+
+Подготовьте защиту от вакуума и вооружение. [bold]Проверьте[/bold] путь отхода, прежде чем углубляться в корпус.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — [bold]15–17.5 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/derelictjupiter.yml" Name="Разрушенный Крейсер Юпитер"/>
+
+[textlink="Бой" link="ColossusCombat"] · [textlink="Ремонт корабля" link="ColossusShipRepair"]
+</Document>

@@ -4,6 +4,11 @@
   name: courier laser blaster
   description: A ColossDelivery self-defense blaster with a sturdier battery. A sticker on the grip reads "RETURN AT THE END OF THE SHIFT".
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Objects/Weapons/Guns/Battery/courier_laser.rsi
     layers:
@@ -22,6 +27,11 @@
   name: courier knife
   description: A ColossDelivery survival knife with a yellow and black handle. Sharper than it looks and great for slicing bread.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Objects/Weapons/Melee/courier_knife.rsi
     state: icon
@@ -43,6 +53,11 @@
   name: courier seclite
   description: A sturdy ColossDelivery flashlight in corporate yellow and black. Its warm beam makes dark corridors look a little friendlier.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Objects/Tools/courier_seclite.rsi
     scale: 0.7, 0.7
@@ -70,6 +85,11 @@
   name: ColossDelivery welcome letter
   description: A corporate letter on yellow ColossDelivery letterhead.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Paper
     stampState: paper_stamp-generic
     stampedBy:

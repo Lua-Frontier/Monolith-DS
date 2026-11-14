@@ -43,6 +43,31 @@ public sealed class GuidebookViewTests
     }
 
     [Test]
+    public async Task ContentsCollapseAndKeepOnlyCurrentServerRules()
+    {
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { Connected = true });
+        await pair.Client.WaitAssertion(() =>
+        {
+            var prototypes = pair.Client.ResolveDependency<IPrototypeManager>();
+            var guides = prototypes.EnumeratePrototypes<GuideEntryPrototype>()
+                .ToDictionary(p => new ProtoId<GuideEntryPrototype>(p.ID), p => (GuideEntry) p);
+            using var window = new GuidebookWindow();
+            window.UpdateGuides(guides, GuidebookNavigation.GetBookRoots(guides), selected: "ColossusHumanity");
+            var rules = window.Tree.Items.Single(i => i.Metadata is GuideEntry e && e.Id == "LuaMRuleset");
+            Assert.That(rules.Expanded, Is.False);
+            Assert.That(window.Tree.Items.Any(i => i.Metadata is GuideEntry e && e.Id == "LuaMRule0"), Is.True);
+            Assert.That(window.Tree.Items.Where(i => i.Metadata is GuideEntry e && e.RuleEntry)
+                .All(i => ((GuideEntry)i.Metadata!).Id.ToString().StartsWith("LuaMRule")), Is.True);
+            var ships = window.Tree.Items.Single(i => i.Metadata is GuideEntry e && e.Id == "NF14");
+            Assert.That(ships.Expanded, Is.False, "Unrelated sections stay collapsed.");
+            window.HandleClick("LuaMRule0");
+            Assert.That(rules.Expanded, Is.True);
+            Assert.That(window.LastEntry, Is.EqualTo(new ProtoId<GuideEntryPrototype>("LuaMRule0")));
+        });
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
     public async Task ItemCardsAlignCaptionsAndWrapWithoutRenamingItems()
     {
         await using var pair = await PoolManager.GetServerClient(new PoolSettings { Connected = true });
@@ -74,7 +99,7 @@ public sealed class GuidebookViewTests
             cards.AddChild(thirdItem); cards.AddChild(fourthItem);
             cards.Measure(new Vector2(1200, 1000));
             cards.Arrange(new UIBox2(0, 0, 1200, cards.DesiredSize.Y));
-            Assert.That(fourthItem.Position.Y, Is.GreaterThan(shortItem.Position.Y), "Four images must form at least two rows even on a wide page.");
+            Assert.That(fourthItem.Position.Y, Is.EqualTo(shortItem.Position.Y), "Wide pages use the available width instead of forcing two columns.");
 
             var entities = pair.Client.ResolveDependency<IEntityManager>();
             var beforePages = entities.EntityCount;

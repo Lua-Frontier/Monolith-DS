@@ -8,7 +8,8 @@
   components:
   # LuaM-start: contextual cybernetics guide.
   - type: GuideHelp
-    guides:
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
     - ColossusMantisBlades
   # LuaM-end
   - type: Tag

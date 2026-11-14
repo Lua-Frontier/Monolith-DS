@@ -4,6 +4,11 @@
   id: Pickaxe
   description: Notched to perfection, for jamming it into rocks.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMining
+  # LuaM-end
   - type: Tag
     tags:
     - Pickaxe
@@ -46,6 +51,11 @@
   id: MiningDrill
   description: Powerful tool used to quickly drill through rocks.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMining
+  # LuaM-end
   - type: Item
     storedRotation: -90
   - type: Tag

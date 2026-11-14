@@ -1,12 +1,5 @@
 <Document>
-# Промыслы и экспедиции
+# Заработок
 
-## Добыча и доставка
-[textlink="Руда: от астероида до продажи" link="ColossusMining"] · [textlink="Грузоперевозки" link="CargoHauling"] · [textlink="Контрабанда" link="LuaMContraband"].
-
-## Боевые вылеты
-[textlink="ИИ-дроны: координаты, ядра и контейнеры" link="LuaMDroneLoot"] · [textlink="Экспедиции: консоль, задания и фауна" link="Expeditions"].
-
-## Другие занятия
-[textlink="Артефакты" link="ColossusArtifacts"] и [textlink="аномалии" link="ColossusAnomalies"] · [textlink="Газовый синтез" link="ColossusAtmos"] · [textlink="Промышленность ММС" link="MMC"].
+<GuideHub Root="ColossusActivities"/>
 </Document>

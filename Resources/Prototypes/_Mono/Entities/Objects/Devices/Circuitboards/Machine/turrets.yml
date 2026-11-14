@@ -5,6 +5,11 @@
   description: A machine printed circuit board for an M25 mining pulsar.
   suffix: Machine Board
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: Sprite
     state: security
   - type: MachineBoard

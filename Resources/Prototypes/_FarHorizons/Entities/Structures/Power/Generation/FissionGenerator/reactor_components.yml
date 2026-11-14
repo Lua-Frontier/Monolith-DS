@@ -14,9 +14,9 @@
     tags:
     - ReactorPart
   - type: GuideHelp
-    guides:
-    - NuclearReactor
-    - Power
+    guides: # LuaM: contextual guidebook route
+    - ColossusReactorParts
+    - ShipyardNFROperation
 
 # Fuel Rods
 - type: entity
@@ -48,9 +48,9 @@
           Quantity: 200
         canReact: false
   - type: GuideHelp
-    guides:
-    - NuclearReactor
-    - Power
+    guides: # LuaM: contextual guidebook route
+    - ColossusReactorParts
+    - ShipyardNFROperation
   - type: PassiveThermalSignature # Mono
     signature: 150000
 

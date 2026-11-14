@@ -14,6 +14,11 @@
   suffix: Medium, ShuttleGun
   description: A laser cannon, powered by pulse laser energy cells.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 2000
   - type: Sprite
@@ -79,6 +84,11 @@
   name: pulse laser flatpack
   description: A flatpacked laser cannon, powered by pulse laser energy cells.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: Flatpack
     entity: ImpulseLaserBase
   - type: StaticPrice

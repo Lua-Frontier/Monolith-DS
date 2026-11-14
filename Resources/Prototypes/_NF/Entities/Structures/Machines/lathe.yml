@@ -407,6 +407,12 @@
   name: blueprint lithograph
   description: Prints blueprints.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: Sprite
     sprite: _NF/Structures/Machines/blueprint_printer.rsi
     snapCardinals: true
@@ -436,6 +442,11 @@
   name: scrap processor
   description: It produces sheets and ingots using scrap.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMining
+  # LuaM-end
   - type: Sprite
     sprite: _NF/Structures/Machines/scrap_processor.rsi
     layers:

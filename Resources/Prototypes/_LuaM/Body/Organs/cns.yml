@@ -6,8 +6,9 @@
   components:
   # LuaM-start: contextual cybernetics guide.
   - type: GuideHelp
-    guides:
-    - ColossusCNSImplants
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+    - ColossusServiceImplants
   # LuaM-end
   - type: Tag
     tags:

@@ -80,7 +80,7 @@
       color: "#ffffff"
   - type: GuideHelp
     guides:
-    - TSFMC_Entry
+    - ColossusTSFCode # LuaM: open the military code directly
   - type: Tag
     tags:
     - Book

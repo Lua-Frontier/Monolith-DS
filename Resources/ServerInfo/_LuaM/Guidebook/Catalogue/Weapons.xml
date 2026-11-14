@@ -1,9 +1,5 @@
 <Document>
 # Каталог оружия
 
-[bold]work in progress[/bold]
-
-Каталог личного оружия пока не публикуется: требуется проверка распределения и расчёта ТТК.
-
-[textlink="Боеприпасы" link="ColossusCatalogueAmmo"] · [textlink="Аплинки" link="ColossusCatalogueUplinks"].
+Порядок стрельбы и свойства оружия разобраны в [textlink="руководстве по личному оружию" link="ColossusHandheldWeapons"]. Подберите [textlink="боеприпасы" link="ColossusCatalogueAmmo"] и проверьте ассортимент [textlink="аплинков" link="ColossusCatalogueUplinks"].
 </Document>

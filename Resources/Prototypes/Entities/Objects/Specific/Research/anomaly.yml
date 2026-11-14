@@ -17,8 +17,8 @@
         type: AnomalyScannerBoundUserInterface
   - type: AnomalyScanner
   - type: GuideHelp
-    guides:
-    - ScannersAndVessels
+    guides: # LuaM: contextual guidebook route
+    - ColossusAnomalies
   - type: Item
     storedRotation: -90
   - type: Tag # LuaM
@@ -72,6 +72,11 @@
   parent: [ AnomalyLocatorUnpowered, PowerCellSlotSmallItem ]
   suffix: Powered
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusAnomalies
+  # LuaM-end
   - type: PowerCellDraw
     drawRate: 1
     useRate: 0
@@ -106,6 +111,11 @@
   parent: [ AnomalyLocatorWideUnpowered, PowerCellSlotSmallItem ]
   suffix: Powered
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusAnomalies
+  # LuaM-end
   - type: PowerCellDraw
     drawRate: 1
     useRate: 0

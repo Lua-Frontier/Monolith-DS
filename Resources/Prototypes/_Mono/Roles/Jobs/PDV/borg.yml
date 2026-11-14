@@ -14,4 +14,4 @@
   jobEntity: PlayerBorgPDV
   applyTraits: false
   guides:
-  - PDV_Entry
+  - ColossusNordfallRoles # LuaM: complete organization help

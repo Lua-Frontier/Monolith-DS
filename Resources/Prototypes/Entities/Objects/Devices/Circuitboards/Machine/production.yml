@@ -205,6 +205,12 @@
   name: R&D server machine board
   description: A machine printed circuit board for the R&D server.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: Sprite
     state: science
   - type: MachineBoard
@@ -292,6 +298,11 @@
   name: artifact analyzer machine board
   description: A machine printed circuit board for an artifact analyzer.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - ColossusArtifacts
+    # LuaM-end
     - type: Sprite
       state: science
     - type: MachineBoard
@@ -344,6 +355,11 @@
   name: anomaly vessel machine board
   description: A machine printed circuit board for an anomaly vessel.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - ColossusAnomalies
+    # LuaM-end
     - type: Sprite
       state: science
     - type: MachineBoard
@@ -360,6 +376,11 @@
   name: experimental anomaly vessel machine board
   description: A machine printed circuit board for an experimental anomaly vessel.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusAnomalies
+  # LuaM-end
   - type: Sprite
     state: science
   - type: MachineBoard
@@ -402,6 +423,11 @@
   name: A.P.E. machine board
   description: A machine printed circuit board for an A.P.E.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - ColossusAnomalies
+    # LuaM-end
     - type: Sprite
       state: science
     - type: MachineBoard
@@ -707,6 +733,11 @@
   name: hydroponics tray machine board
   description: A machine printed circuit board for a hydroponics tray.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - ColossusBotany
+    # LuaM-end
     - type: Sprite
       state: service
     - type: MachineBoard
@@ -1154,6 +1185,11 @@
   parent: BaseMachineCircuitboard
   name: ore processor machine board
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - ColossusMining
+    # LuaM-end
     - type: Sprite
       state: supply
     - type: MachineBoard
@@ -1169,6 +1205,11 @@
   id: OreProcessorIndustrialMachineCircuitboard
   name: industrial ore processor machine board
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMining
+  # LuaM-end
   - type: Sprite
     state: supply
   - type: MachineBoard

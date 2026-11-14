@@ -36,8 +36,7 @@
   - MieyoLiason
   # LuaM-start: faction overview first, production guides remain available.
   guides:
-  - ColossusMMCFaction
-  - MMC
+  - ColossusMMCRoles # LuaM: complete organization help
   # LuaM-end
   special:
   - !type:AddImplantSpecial

@@ -7,6 +7,6 @@
 
 - type: guideEntry
   id: ColossusArmorPlates
-  name: guide-entry-colossus-armor-plates
+  name: guide-architecture-colossus-armor-plates # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Combat/ArmorPlates.xml"
   priority: 10 # LuaM: 0 > 10 (section order)

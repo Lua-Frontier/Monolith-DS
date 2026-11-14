@@ -14,6 +14,11 @@
   name: salvage expedition console flatpack
   description: A flatpack used for constructing an savege expedition console.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Expeditions
+  # LuaM-end
   - type: Flatpack
     entity: ComputerSalvageExpedition
   - type: StaticPrice

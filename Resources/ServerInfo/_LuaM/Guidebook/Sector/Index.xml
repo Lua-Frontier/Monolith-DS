@@ -1,9 +1,7 @@
 <Document>
-# Станции и карта
+# Сектор
 
-[textlink="Станции: назначение, оборудование и планы" link="LuaMStations"] · [textlink="Другие объекты сектора" link="LuaMWorldObjects"].
+Карта помогает найти путь между станциями, местами добычи и опасными объектами.
 
-[textlink="Топология сектора" link="SectorTopology"] · [textlink="Астероиды и руда" link="LuaMAsteroids"] · [textlink="Туманности" link="LuaMNebulae"] · [textlink="Режимы и события" link="LuaMGameModes"].
-
-Боевые вылеты и задания вынесены в [textlink="промыслы и экспедиции" link="ColossusActivities"].
+<GuideHub Root="LuaMWorld"/>
 </Document>

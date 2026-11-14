@@ -6,6 +6,12 @@
   description: This implant lets the user access a hidden MMC uplink at will.
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: SubdermalImplant
     implantAction: ActionOpenUplinkImplant
     whitelist:

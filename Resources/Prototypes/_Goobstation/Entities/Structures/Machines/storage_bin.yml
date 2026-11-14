@@ -4,6 +4,11 @@
   name: storage bin
   description: An electronically controlled storage bin intended for use with robotic arms.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   # Visuals
   - type: Sprite
     sprite: _Goobstation/Structures/Machines/storage_bin.rsi

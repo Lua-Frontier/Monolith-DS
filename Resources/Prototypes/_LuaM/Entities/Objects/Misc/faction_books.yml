@@ -1,0 +1,19 @@
+# LuaCorp - AGPLv3. See AGPLv3.txt.
+- type: entity
+  id: BookNordfallSOP
+  parent: BaseGuidebook
+  name: Nordfall military charter
+  description: The Sacred Military Charter of the Nordfall Vanguard.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#611111"
+    - state: decor_mono_middle_segmented_top
+      color: "#c8a03a"
+    - state: decor_mono_middle_segmented_bottom
+      color: "#c8a03a"
+  - type: GuideHelp
+    guides:
+    - ColossusNordfallCharter

@@ -4,6 +4,12 @@
   name: sentient slime core
   description: "The source of incredible, unending gooeyness."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: Sprite
     sprite: Mobs/Species/Slime/organs.rsi
     state: brain-slime
@@ -50,6 +56,12 @@
   name: slime gas sacs
   description: "Collects nitrogen, which slime cells use for maintenance."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     sprite: Mobs/Species/Slime/organs.rsi
     layers:

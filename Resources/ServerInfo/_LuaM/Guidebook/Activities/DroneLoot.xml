@@ -2,9 +2,15 @@
 # ИИ-дроны: где искать и что забирать
 
 ## Районы появления
-[bold]Дальние координаты:[/bold] 18–22 км — дроны T1; 22–25 км — внутренний пояс T2; 25–30 км — средний пояс T2. В более дальних областях генератор использует тяжёлые группы Medusa, Assembly, Bracket, Mauler и Quake.
+[bold]Дальние координаты:[/bold] [color=#73BFD3]18–22 км[/color] — дроны T1; [color=#73BFD3]22–25 км[/color] — внутренний пояс T2; [color=#73BFD3]25–30 км[/color] — средний пояс T2. В более дальних областях генератор использует тяжёлые группы Medusa, Assembly, Bracket, Mauler и Quake.
 
 [bold]Скопление LINEAR:[/bold] встречаются Mote, Dander и MPulsar. В окружающей области — Rammer Small / Medium, MPulsar, Lance, а также Wasp, Crown, Gust и Piercer. Ориентир центра области — примерно [bold](9088; −7552)[/bold]. Цвет дронов на карте — тёмно-красный.
+
+<GuideEntityCards>
+<GuideTexture Entity="NpcStationAiRammer" Caption="Ядро ИИ"/>
+<GuideTexture Entity="ClothingBackpackDroneLootT1" Caption="Регистратор T1"/>
+<GuideTexture Entity="ClothingBackpackDroneLootT21" Caption="Регистратор T2"/>
+</GuideEntityCards>
 
 ## Трофеи
 Ядро ИИ можно снять и продать. Базовая оценка обычного ядра — [bold]40 000 кр.[/bold]; для Dander задано [bold]20 000 кр.[/bold]

@@ -3,26 +3,32 @@
 
 ## Что взять
 <GuideEntityCards>
-<GuideEntityEmbed Entity="Pickaxe"/>
-  <GuideEntityEmbed Entity="MiningDrill"/>
-  <GuideEntityEmbed Entity="OreBag"/>
+<GuideTexture Entity="Pickaxe" Caption="auto"/>
+  <GuideTexture Entity="MiningDrill" Caption="auto"/>
+  <GuideTexture Entity="OreBag" Caption="auto"/>
 </GuideEntityCards>
 
 Нужны кирка или бур, мешок для руды, подходящие скафандр и дыхательный газ. На корабле оставьте место под груз. Для переработки понадобится запитанный переработчик руды.
 
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="SteelOre" Caption="Добыча"/>
+<GuideTexture Entity="OreProcessor" Caption="Переработка"/>
+<GuideTexture Entity="SpaceCash100" Caption="Продажа"/>
+</GuideEntityCards>
+
 ## Добыча
-- Найдите астероид и остановите корабль на безопасном расстоянии от породы. Запомните место возвращения.
+- [bold]Найдите[/bold] астероид и остановите корабль на безопасном расстоянии от породы. Запомните место возвращения.
 - Разрушайте породу киркой или буром. Кирка эффективнее при хвате двумя руками.
 - Собирайте выпавшую руду мешком. Не рассчитывайте на автоматический сбор только от ношения мешка на поясе.
 - Возвращайтесь за новым запасом газа до того, как закончится текущий. Не бросайте груз там, где не сможете найти его снова.
 
 ## Переработка и продажа
 <GuideEntityCards>
-<GuideEntityEmbed Entity="OreProcessor"/>
-  <GuideEntityEmbed Entity="ComputerPalletConsole"/>
+<GuideTexture Entity="OreProcessor" Caption="auto"/>
+  <GuideTexture Entity="ComputerPalletConsole" Powered="true" Caption="auto"/>
 </GuideEntityCards>
 
-Загрузите руду в переработчик. В его меню выберите материал и закажите переработку. Заберите получившиеся листы или слитки; требования и доступные изделия показаны в меню станка.
+[bold]Загрузите[/bold] руду в переработчик. В его меню выберите материал и закажите переработку. Заберите получившиеся листы или слитки; требования и доступные изделия показаны в меню станка.
 
 Готовые материалы можно оставить для [textlink="производства" link="Economy"], продать другим игрокам или через [textlink="площадку продажи" link="CargoHauling"]. Перед подтверждением уберите с площадки инструменты и личные вещи. Выручку внесите в [textlink="банк" link="Bank"].
 

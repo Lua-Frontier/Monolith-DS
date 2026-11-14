@@ -4,6 +4,12 @@
   name: animal brain
   description: "Not so intelligence, not so honk."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: Sprite
     state: brain
   - type: Organ
@@ -47,6 +53,12 @@
   name: animal eyes
   description: "I see you!"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   # start-backmen: surgery
   - type: Organ
     slotId: eyes

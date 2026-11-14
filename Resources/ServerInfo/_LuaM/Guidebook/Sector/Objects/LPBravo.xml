@@ -1,0 +1,17 @@
+<Document>
+# Прослушка «Браво»
+
+Удалённая база с оборудованием Синдиката, средствами наблюдения и верфью.
+
+<GuideEntityCards><GuideTexture Entity="ComputerShipyardSyndicate" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerAdvancedRadar" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Обычная отметка БСС скрыта. Для поиска и подхода нужны координаты или обнаружение на радаре; не рассчитывайте найти базу по одному списку маяков.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — [bold]15–17 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_LuaM/POI/lpbravoLuaM.yml" Name="Прослушка «Браво»"/>
+
+[textlink="Координаты и метки" link="ColossusOrientation"] · [textlink="Контрабанда" link="LuaMContraband"]
+</Document>

@@ -5,6 +5,9 @@
   suffix: Asakim
   description: ID card pre-fracture Warrior Asakim. Has the ability to copy access rights
   components:
+  - type: GuideHelp
+    guides:
+    - ColossusPrecursors
   - type: Sprite
     layers:
     - state: default

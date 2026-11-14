@@ -143,9 +143,9 @@
             Searching: { state: posibrain-searching }
             On: { state: posibrain-occupied }
     - type: GuideHelp
-      guides:
-      - Cyborgs
-      - Robotics
+      guides: # LuaM: contextual guidebook route
+      - ColossusSurgery
+      - ColossusHeadImplants
     - type: ChangeVoiceInContainer
       whitelist:
         components:

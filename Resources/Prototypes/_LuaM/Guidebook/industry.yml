@@ -1,7 +1,7 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: IndustryMachineParts
-  name: guide-entry-industry-machine-parts
+  name: guide-architecture-industry-machine-parts # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/MMC/MachineParts.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/MachineParts.xml > /ServerInfo/_LuaM/Guidebook/MMC/MachineParts.xml
   priority: 20 # LuaM: 10 > 20 (section order)
 # LuaM-end
@@ -9,7 +9,7 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: IndustryDrilling
-  name: guide-entry-industry-drilling
+  name: guide-architecture-industry-drilling # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/MMC/Drilling.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Drilling.xml > /ServerInfo/_LuaM/Guidebook/MMC/Drilling.xml
   priority: 40 # LuaM: 11 > 40 (section order)
 # LuaM-end
@@ -17,7 +17,7 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: IndustryFabricators
-  name: guide-entry-industry-fabricators
+  name: guide-architecture-industry-fabricators # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/MMC/Fabricators.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Fabricators.xml > /ServerInfo/_LuaM/Guidebook/MMC/Fabricators.xml
   priority: 30 # LuaM: 12 > 30 (section order)
 # LuaM-end
@@ -25,14 +25,10 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: IndustryResearch
-  name: guide-entry-industry-research
+  name: guide-architecture-industry-research # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Research/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Research.xml > /ServerInfo/_LuaM/Guidebook/Research/Index.xml
   priority: 7
-  bookRoot: true
-  children:
-  - ColossusArtifacts
-  - ColossusAnomalies
-# LuaM-end
+  bookRoot: false # LuaM: guidebook architecture v2.1
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry

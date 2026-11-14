@@ -1,0 +1,17 @@
+<Document>
+# Центр Биологического Исследования «Полярис»
+
+Дальний исследовательский комплекс с медицинским и научным оборудованием.
+
+<GuideEntityCards><GuideTexture Entity="ComputerResearchAndDevelopment" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerTabletopAnalysisConsole" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Присутствуют вооружённые противники. Осматривайте помещения последовательно и оставьте путь для эвакуации.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — [bold]10–20 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/polaris.yml" Name="Центр Биологического Исследования «Полярис»"/>
+
+[textlink="Медицина" link="Medical"] · [textlink="Бой" link="ColossusCombat"]
+</Document>

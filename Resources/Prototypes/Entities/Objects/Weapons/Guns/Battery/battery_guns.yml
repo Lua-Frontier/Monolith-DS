@@ -877,6 +877,11 @@
   id: WeaponPistolCHIMP
   description: Just because it's a little C.H.I.M.P. doesn't mean it can't punch like an A.P.E.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusAnomalies
+  # LuaM-end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/chimp.rsi
     layers:

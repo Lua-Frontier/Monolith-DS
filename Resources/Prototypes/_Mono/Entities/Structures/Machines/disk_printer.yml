@@ -4,6 +4,12 @@
   parent: [BaseStructureDisableToolUse, BaseMachine]
   description: A machine that automatically prints tech disks every 7.5 minutes from automatically scavenged pre-Fracture data. Needs 120kW of HV power to function.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: PowerConsumer
     voltage: High
     drawRate: 120000

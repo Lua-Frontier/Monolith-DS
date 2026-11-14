@@ -1,7 +1,7 @@
 <Document>
 # Карпы
 
-  Космические карпы — инопланетные формы жизни, путешествующие в космосе стаями. Если космическая станция оказывается на пути стаи, любой, кто окажется за пределами стен станции, будет атакован.
+  Космические карпы — инопланетные формы жизни, путешествующие в космосе стаями. [italic]Если космическая станция оказывается на пути стаи,[/italic] любой, кто окажется за пределами стен станции, будет атакован.
 
 
   # Известные варианты
@@ -15,12 +15,12 @@
   <GuideEntityEmbed Entity="MobCarp"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color][bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Магикарп"
@@ -33,7 +33,7 @@
   <GuideEntityEmbed Entity="MobCarpMagic"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее
@@ -51,7 +51,7 @@
   <GuideEntityEmbed Entity="MobCarpHolo"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее, Бестелесный
@@ -67,7 +67,7 @@
   <GuideEntityEmbed Entity="MobCarpRainbow"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее
@@ -83,7 +83,7 @@
   <GuideEntityEmbed Entity="MobShark"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 7 [color=red]режущий[/color], 5 [color=#9A54BF]кровопотеря[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее
@@ -99,7 +99,7 @@
   <GuideEntityEmbed Entity="MobSnake"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 3 [color=red]режущий[/color], 3 [color=#9A54BF]кровопотеря[/color], 4 [color=lime]яд[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Маленькая, Яд
@@ -117,7 +117,7 @@
   <GuideEntityEmbed Entity="MobDragonDungeon"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 200 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 15 [color=red]режущий[/color], 15 [color=yellow]колющий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее

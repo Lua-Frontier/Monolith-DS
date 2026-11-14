@@ -1,6 +1,7 @@
 - type: guideEntry
   id: Chemicals
-  name: guide-entry-chemicals
+  priority: 140 # LuaM: catalog order
+  name: guide-architecture-chemicals # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/Guidebook/Chemicals.xml"
   children:
   - Elements

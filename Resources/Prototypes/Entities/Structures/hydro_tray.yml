@@ -105,6 +105,11 @@
   id: HydroponicsTrayEmpty
   suffix: Empty
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusBotany
+  # LuaM-end
   - type: PlantHolder
     waterLevel: 0
     nutritionLevel: 0

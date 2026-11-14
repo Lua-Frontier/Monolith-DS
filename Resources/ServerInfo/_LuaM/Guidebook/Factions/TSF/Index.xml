@@ -2,7 +2,7 @@
 # Морская пехота ТСФ
 TSFMC — вооружённые силы Транс-Солнечной Федерации. Основная база в секторе — [textlink="флагман «Халикон»" link="LuaMHalicon"]; дополнительный корабль — [textlink="«Арктурус»" link="LuaMArcturus"]. Команда ведёт операции, ремонтирует технику и обеспечивает собственное снабжение.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponDEWCalico"/><GuideEntityEmbed Entity="ClothingOuterHardsuitM82c"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponDEWCalico" Caption="auto"/><GuideTexture Entity="ClothingOuterHardsuitM82c" Caption="auto"/></GuideEntityCards>
 
 ## Должности «Халикона»
 - [bold]Полковник ТСФ[/bold] — 1 — руководит контингентом и координирует подчинённых.
@@ -14,9 +14,9 @@ TSFMC — вооружённые силы Транс-Солнечной Феде
 - [bold]Инженер ТСФ[/bold] — 2 — поддерживает целостность и работоспособность флагмана.
 - [bold]Киборг ТСФ[/bold] — 2 — служит ТСФ, следуя своим законам.
 
-Число обозначает общий штат стандартного «Халикона». У «Арктуруса» и специальных режимов другой набор мест.
+Число обозначает общий штат стандартного [bold]«Халикона»[/bold]. У [bold]«Арктуруса»[/bold] и специальных режимов другой набор мест.
 
 [textlink="Управление орудиями" link="WeaponsSystems"] · [textlink="Правила сервера" link="LuaMRuleset"]
 
-[textlink="Командование и должности" link="TSFMC_org"] · [textlink="Служба и снабжение" link="TSFMC_SOP"] · [textlink="История Федерации" link="LuaMLoreTSF"]
+[textlink="Военный кодекс ТСФ" link="ColossusTSFCode"] · [textlink="Командование и должности" link="TSFMC_org"] · [textlink="Служба и снабжение" link="TSFMC_SOP"] · [textlink="История Федерации" link="LuaMLoreTSF"]
 </Document>

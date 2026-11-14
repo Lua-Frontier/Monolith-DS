@@ -73,7 +73,9 @@ public sealed partial class ArmorStats : BoxContainer, IDocumentTag
                 continue;
             // Each record has the game's own sprite and localized, unmodified caption.
             var row = new BoxContainer { HorizontalExpand = true, SeparationOverride = 8 };
-            row.AddChild(new GuideEntityEmbed(id, true, false));
+            var preview = new GuideEntityEmbed(id, true, false) { SetWidth = 128, Margin = new Thickness(4) };
+            preview.FindControl<SpriteView>("View").SetSize = new System.Numerics.Vector2(72, 72);
+            row.AddChild(preview);
             var text = new BoxContainer { Orientation = LayoutOrientation.Vertical, HorizontalExpand = true, Margin = new Thickness(4) };
             row.AddChild(text);
             table.AddChild(row);
@@ -159,10 +161,10 @@ public sealed partial class ArmorStats : BoxContainer, IDocumentTag
         }
         Add(text, Loc.GetString("armor-guide-direct"));
         foreach (var (type, value) in damage.DamageDict)
-            Add(text, TypeName(type) + " " + value);
-        Add(text, Loc.GetString("armor-guide-ap") + ": " + (bypass ? Loc.GetString("armor-guide-bypass") : Percent(penetration)));
+            Markup(text, GuideStatText.Format(TypeName(type), value.ToString()).ToMarkup());
+        Markup(text, GuideStatText.Format(Loc.GetString("armor-guide-ap"), bypass ? Loc.GetString("armor-guide-bypass") : Percent(penetration)).ToMarkup());
         if (proto.TryComp<StaminaDamageOnCollideComponent>(out var stamina, _factory))
-            Add(text, Loc.GetString("armor-guide-stamina") + ": " + Number(stamina.Damage));
+            Markup(text, GuideStatText.Format(Loc.GetString("armor-guide-stamina"), Number(stamina.Damage)).ToMarkup());
         if (count > 1)
             Add(text, Loc.GetString("armor-guide-pellets", ("count", count)));
     }

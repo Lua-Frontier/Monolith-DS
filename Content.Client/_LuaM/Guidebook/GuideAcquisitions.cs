@@ -69,11 +69,16 @@ public sealed partial class GuideAcquisitions : BoxContainer, IDocumentTag
                         var stats = new ArmorStats();
                         stats.TryParseTag(new() { ["Kind"] = proto.Components.ContainsKey("ArmorPlateItem") ? "plates" : "suits", ["Entities"] = proto.ID }, out _);
                         body.AddChild(stats);
+                        if (entry.ShieldStats.Count > 0)
+                            body.AddChild(new GuidePersonalShieldStats(entry.ShieldStats, proto));
                     }
                     else foreach (var stat in entry.Stats) body.AddChild(Text(stat.Label + ": " + stat.Value));
                     var sources = offers.Where(o => o.Method is "fabricator" or "store" or "vendor")
                         .Select(o => o.SourceName).Distinct().OrderBy(n => n).ToList();
                     if (sources.Count > 0) body.AddChild(Text("Получение: " + string.Join("; ", sources)));
+                    if (entry.Kind is "implant" or "reactor")
+                        foreach (var offer in offers.DistinctBy(o => (o.SourceName, o.Detail)))
+                            body.AddChild(Text(offer.SourceName + ": " + offer.Detail));
                 });
         }
         browser.SelectFirst();

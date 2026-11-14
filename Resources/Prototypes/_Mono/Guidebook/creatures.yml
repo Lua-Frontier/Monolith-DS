@@ -1,30 +1,24 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Creatures
-  name: guide-entry-creatures
-  text: "/ServerInfo/_LuaM/Guidebook/References/Creatures/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Creatures.xml > /ServerInfo/_LuaM/Guidebook/References/Creatures/Index.xml
+  name: guide-architecture-colossus-special-roles # LuaM: sector navigation
+  text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusSpecialRoles.xml # LuaM: sector navigation
   priority: 60 # LuaM: 8 > 60 (section order)
-  children:
-  - CorticalBorerPracticalGuide
-  - ChimeraPracticalGuide
-  #- Asakim
-  - Xenoborgs
-# LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: CorticalBorerGuide
   name: guide-entry-cortical-borer
-  text: "/ServerInfo/_LuaM/Guidebook/References/Creatures/CorticalBorer.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/CorticalBorerGuide.xml > /ServerInfo/_LuaM/Guidebook/References/Creatures/CorticalBorer.xml
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Creatures/CorticalBorer.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/CorticalBorerGuide.xml > /ServerInfo/_LuaM/Guidebook/Sector/Creatures/CorticalBorer.xml
   priority: 1
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Letoferol
-  name: guide-entry-letoferol
+  name: guide-architecture-letoferol # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Medicine/Letoferol.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Letoferol.xml > /ServerInfo/_LuaM/Guidebook/Medicine/Letoferol.xml
-  priority: 50 # LuaM: 1 > 50 (section order)
+  priority: 60 # LuaM: medical guide order
 
 #- type: guideEntry
 #  id: Asakim
@@ -37,6 +31,6 @@
 - type: guideEntry
   id: Xenoborgs
   name: guide-entry-xenoborgs
-  text: "/ServerInfo/_LuaM/Guidebook/References/Creatures/Xenoborgs.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Xenoborgs.xml > /ServerInfo/_LuaM/Guidebook/References/Creatures/Xenoborgs.xml
+  text: "/ServerInfo/_LuaM/Guidebook/Sector/Creatures/Xenoborgs.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Xenoborgs.xml > /ServerInfo/_LuaM/Guidebook/Sector/Creatures/Xenoborgs.xml
   priority: 30 # LuaM: 0 > 30 (section order)
 # LuaM-end

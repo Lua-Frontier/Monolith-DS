@@ -1246,6 +1246,14 @@ namespace Content.Client.Stylesheets
                 }),
                 // LuaM-end
 
+                // LuaM-start: guide titles wrap while keeping the same native heading fonts.
+                new StyleRule(new SelectorElement(typeof(Content.Client._LuaM.Guidebook.GuideHeading), new[] {StyleClassLabelHeadingBigger}, null, null),
+                    new[] { new StyleProperty(Label.StylePropertyFont, notoSansBold20) }),
+                new StyleRule(new SelectorElement(typeof(Content.Client._LuaM.Guidebook.GuideHeading), new[] {StyleClassLabelHeading}, null, null),
+                    new[] { new StyleProperty(Label.StylePropertyFont, notoSansBold16) }),
+                new StyleRule(new SelectorElement(typeof(Content.Client._LuaM.Guidebook.GuideHeading), new[] {StyleClassLabelKeyText}, null, null),
+                    new[] { new StyleProperty(Label.StylePropertyFont, notoSansBold12) }),
+                // LuaM-end
                 // Small Label
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassLabelSubText}, null, null), new[]
                 {

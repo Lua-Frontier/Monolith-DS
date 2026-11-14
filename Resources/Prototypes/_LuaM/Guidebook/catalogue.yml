@@ -1,104 +1,123 @@
 # LuaCorp - AGPLv3. See AGPLv3.txt.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogue
-  name: guide-entry-colossus-catalogue
+  name: guide-architecture-colossus-catalogue # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Index.xml
-  bookRoot: true
-  priority: 70
-  children:
-  - ColossusCatalogueShipyards
-  - ColossusCatalogueArmor
-  - ColossusCatalogueWeapons
-  - ColossusCatalogueAmmo
-  - ColossusCatalogueShipWeapons
-  - ColossusCatalogueEngineering
-  - ColossusCatalogueUplinks
-  - ColossusCatalogueResearch
-  - ColossusCatalogueObjects
-  - ColossusCatalogueDrones
-  - ColossusCatalogueOres
-  - ColossusCatalogueSpecies
-  - ColossusCataloguePrices
+  bookRoot: true # LuaM: guidebook architecture v2.1
+  priority: 50 # LuaM: guidebook architecture v2.1
+  children: # LuaM: scenario-based guidebook navigation
+  - ColossusReferenceEquipment
+  - ColossusReferenceResources
+  - Chemicals
+  - ColossusRecipes
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueShipyards
-  name: guide-entry-catalogue-shipyards
+  name: guide-architecture-colossus-catalogue-shipyards # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Shipyards.xml
   priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueArmor
   name: guide-entry-catalogue-armor
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Armor.xml
   priority: 20 # LuaM: 0 > 20 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueWeapons
   name: guide-entry-catalogue-weapons
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Weapons.xml
   priority: 30 # LuaM: 0 > 30 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueAmmo
   name: guide-entry-catalogue-ammo
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Ammo.xml
   priority: 40 # LuaM: 0 > 40 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueShipWeapons
-  name: guide-entry-catalogue-shipweapons
+  name: guide-architecture-colossus-catalogue-ship-weapons # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/ShipWeapons.xml
   priority: 50 # LuaM: 0 > 50 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueEngineering
-  name: guide-entry-catalogue-engineering
+  name: guide-architecture-colossus-catalogue-engineering # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Engineering.xml
   priority: 60 # LuaM: 0 > 60 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueUplinks
   name: guide-entry-catalogue-uplinks
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Uplinks.xml
   priority: 70 # LuaM: 0 > 70 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueResearch
-  name: guide-entry-catalogue-research
+  name: guide-architecture-colossus-catalogue-research # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Research.xml
   priority: 80 # LuaM: 0 > 80 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueObjects
-  name: guide-entry-catalogue-objects
-  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Objects.xml
+  name: guide-architecture-lua-m-world-objects # LuaM: sector navigation
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects.xml # LuaM: sector navigation
   priority: 90 # LuaM: 0 > 90 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueDrones
-  name: guide-entry-catalogue-drones
+  name: guide-architecture-colossus-catalogue-drones # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Drones.xml
   priority: 100 # LuaM: 0 > 100 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueOres
-  name: guide-entry-catalogue-ores
-  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Ores.xml
+  name: guide-architecture-lua-m-asteroids # LuaM: sector navigation
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Asteroids.xml # LuaM: sector navigation
   priority: 110 # LuaM: 0 > 110 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCatalogueSpecies
   name: guide-entry-catalogue-species
-  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species.xml
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Index.xml
   priority: 120 # LuaM: 0 > 120 (section order)
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusCataloguePrices
-  name: guide-entry-catalogue-prices
+  name: guide-architecture-colossus-catalogue-prices # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Prices.xml
   priority: 130 # LuaM: 0 > 130 (section order)
+# LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusBotany
   name: guide-entry-colossus-botany
@@ -106,12 +125,10 @@
   priority: 20 # LuaM: 0 > 20 (section order)
 # LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusSurgery
-  name: guide-entry-colossus-surgery
+  name: guide-architecture-colossus-surgery # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Medicine/Surgery.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Surgery.xml > /ServerInfo/_LuaM/Guidebook/Medicine/Surgery.xml
-  priority: 10 # LuaM: 0 > 10 (section order)
-  children:
-  - ColossusCyberneticOrgans
+  priority: 20 # LuaM: medical guide order
 # LuaM-end

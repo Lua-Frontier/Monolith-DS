@@ -6,6 +6,11 @@
   - BallisticArtilleryTier2HP
   description: A rapid-fire swarm missile rack manufactured by Aetherion Dynamics. Saturates targets with guided warheads to overwhelm defenses. Limited ammo, but deadly. Can be remotely activated or linked to a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 1500
   - type: Sprite

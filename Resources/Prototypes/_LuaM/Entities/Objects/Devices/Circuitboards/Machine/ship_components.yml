@@ -4,6 +4,11 @@
   name: extra-high-power gunnery control server board
   description: A machine board for a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: Sprite
     state: security
   - type: MachineBoard

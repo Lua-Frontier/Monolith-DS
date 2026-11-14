@@ -1,37 +1,43 @@
 - type: guideEntry
   id: Felinid
+  priority: 210 # LuaM: alphabetical species order
   name: species-name-felinid
-  text: "/ServerInfo/Guidebook/Mobs/_DV/Felinid.xml"
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Felinid.xml # LuaM: standardized species article
 
 - type: guideEntry
   id: Harpy
+  priority: 70 # LuaM: alphabetical species order
   name: species-name-harpy
-  text: "/ServerInfo/Guidebook/Mobs/_DV/Harpy.xml"
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Harpy.xml # LuaM: standardized species article
 
 - type: guideEntry
   id: Vulpkanin
+  priority: 60 # LuaM: alphabetical species order
   name: species-name-vulpkanin
-  text: "/ServerInfo/Guidebook/Mobs/_DV/Vulpkanin.xml"
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Vulpkanin.xml # LuaM: standardized species article
 
 - type: guideEntry
   id: Oni
+  priority: 140 # LuaM: alphabetical species order
   name: species-name-oni
-  text: "/ServerInfo/Guidebook/Mobs/_DV/Oni.xml"
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Oni.xml # LuaM: standardized species article
 
 - type: guideEntry
   id: Rodentia
+  priority: 170 # LuaM: alphabetical species order
   name: species-name-rodentia
-  text: "/ServerInfo/Guidebook/Mobs/_DV/Rodentia.xml"
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Rodentia.xml # LuaM: standardized species article
 
 - type: guideEntry
   id: Chitinid
+  priority: 220 # LuaM: alphabetical species order
   name: species-name-chitinid
-  text: "/ServerInfo/Guidebook/Mobs/_DV/Chitinid.xml"
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Chitinid.xml # LuaM: standardized species article
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: Feroxi
   name: species-name-feroxi
-  text: "/ServerInfo/_LuaM/Guidebook/References/Species/Feroxi.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Reference/Feroxi.xml > /ServerInfo/_LuaM/Guidebook/References/Species/Feroxi.xml
+  text: /ServerInfo/_LuaM/Guidebook/Contextual/Species/Feroxi.xml # LuaM: standardized species article
   priority: 210 # LuaM: 0 > 210 (section order)
 # LuaM-end

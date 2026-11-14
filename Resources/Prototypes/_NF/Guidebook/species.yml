@@ -1,4 +1,5 @@
 - type: guideEntry
   id: Goblin
+  priority: 90 # LuaM: alphabetical species order
   name: species-name-goblin
-  text: "/ServerInfo/_NF/Guidebook/Mobs/Goblin.xml"
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Goblin.xml # LuaM: standardized species article

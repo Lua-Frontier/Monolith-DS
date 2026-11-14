@@ -1,0 +1,17 @@
+<Document>
+# Шахтёрский Аванпост «Ланцелот»
+
+Дальний шахтёрский объект с исследовательским и торговым оборудованием.
+
+<GuideEntityCards><GuideTexture Entity="ComputerAnalysisConsole" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerResearchAndDevelopment" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Внутри встречаются монолитные существа; для осмотра и вывоза находок подготовьте боевой экипаж.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — [bold]10–20 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/lancelot.yml" Name="Шахтёрский Аванпост «Ланцелот»"/>
+
+[textlink="Добыча" link="ColossusMining"] · [textlink="Артефакты" link="ColossusArtifacts"]
+</Document>

@@ -45,7 +45,8 @@
   description: Implants a pair of covert deployable plasteel mantis blades into both of your arms.
   components:
   - type: GuideHelp
-    guides:
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
     - ColossusMantisBlades
   - type: AutoSurgeon
     targetBodyPart: Arm
@@ -57,6 +58,12 @@
   name: autosurgeon (plasteel mantis blades) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusMantisBlades
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonMantisBladesPlasteel
   - type: StaticPrice

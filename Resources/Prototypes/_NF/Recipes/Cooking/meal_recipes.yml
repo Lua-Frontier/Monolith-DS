@@ -371,7 +371,7 @@
   name: cotton salad recipe
   result: FoodMothCottonSalad
   time: 5
-  group: MothFood
+  group: Moth # LuaM: use the existing cooking reference group
   reagents:
     OilOlive: 5
   solids:
@@ -951,7 +951,7 @@
   name: rice dough recipe
   result: FoodRiceDough
   time: 5
-  group: Savory
+  group: Ingredients # LuaM: ingredient preparation, not a finished meal
   solids:
     RiceBushel: 4
   reagents:
@@ -967,7 +967,7 @@
   name: raw rice noodle sheet
   result: FoodRiceNoodlesSheet
   time: 15
-  group: Pasta
+  group: Ingredients # LuaM: ingredient preparation, not a finished meal
   solids:
     FoodRiceDough: 1
   reagents:
@@ -1231,7 +1231,7 @@
   name: whole baked chicken
   result: FoodMeatWholeChickenCooked
   time: 20
-  group: Meats
+  group: Savory # LuaM: use the existing cooking reference group
   solids:
     FoodMeatWholeChicken: 1
   recipeType:
@@ -1242,7 +1242,7 @@
   name: whole baked duck
   result: FoodMeatWholeDuckCooked
   time: 20
-  group: Meats
+  group: Savory # LuaM: use the existing cooking reference group
   solids:
     FoodMeatWholeDuck: 1
   recipeType:
@@ -1253,7 +1253,7 @@
   name: whole baked penguin
   result: FoodMeatWholePenguinCooked
   time: 20
-  group: Meats
+  group: Savory # LuaM: use the existing cooking reference group
   solids:
     FoodMeatWholePenguin: 1
   recipeType:

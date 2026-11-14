@@ -4,6 +4,11 @@
   id: HydroponicsSoilEmpty
   suffix: Empty
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusBotany
+  # LuaM-end
   - type: PlantHolder
     waterLevel: 0
     nutritionLevel: 0
@@ -16,6 +21,11 @@
   id: HydroponicsSoilNutrition
   suffix: "0 water, 100 nutrition"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusBotany
+  # LuaM-end
   - type: PlantHolder
     waterLevel: 0
     nutritionLevel: 100

@@ -9,6 +9,11 @@
   suffix: Medium, T2
   description: Launches magnetically contained balls of plasma at targets. Can be remotely activated, or linked up to a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 2000
   - type: Sprite
@@ -72,6 +77,11 @@
   suffix: Medium, T3
   description: Borrowing from the design of the Marauder, the Cerberus fires very similar shots, but in a tight spread of 3 blasts
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 2000
   - type: Sprite
@@ -134,6 +144,11 @@
   suffix: Medium, T2
   description: A rapidly firing energy weapon, well known for its devastating burst followed by a constant stream of plasma.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 4000
   - type: Sprite
@@ -198,6 +213,11 @@
   - ConstructibleMachine #Could possibly create a ConstructibleTurret proto if more are added; comps currently do nothing upgrade wise
   description: Uses mechanisms to launch... something. Destroys rock easily. Limited range.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 1500
   - type: Sprite
@@ -274,6 +294,11 @@
   suffix: Medium, T2
   description: Launches EMP projectiles at ships, disabling systems with powerful electromagnetic pulses. Ideal for non-lethal engagements and can be remotely activated or linked to a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 3500
   - type: Sprite
@@ -334,6 +359,11 @@
   suffix: Large, T4
   description: A more specialized energy weapon, the Scylla fires a massive burst of plasma projectiles down range, in a huge spew to erase large and small targets alike.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 50000
   - type: Sprite
@@ -408,6 +438,11 @@
   suffix: Station, T5
   description: Aetherion Dynamics' most iconic supercapital battery. Fires enormous ionized gas projectiles that melt through the toughest ship armor. Can be remotely activated or linked to a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 50000
   - type: Sprite
@@ -494,6 +529,11 @@
   suffix: Small, T1
   description: A light laser emplacement designed by the Pantheon Collective, used to shred threats of all types.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 3000
   - type: Sprite
@@ -552,6 +592,11 @@
   suffix: Medium, T2
   description: A heavier laser cannon mount, after the relative failure of the Apollo and its subsequent conversion into a mining laser, the Prometheus comes to the field as the new heavy laser cannon, perfect for melting through hostile hulls.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 17500
   - type: Sprite
@@ -621,6 +666,11 @@
   name: L-20 Apollo Mining Laser Cannon
   description: One of the Pantheon Collective's top weapons, the Apollo is aptly named for its beams heating surfaces to beyond the temperature of nearby stars.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 15000
   - type: Sprite
@@ -696,6 +746,11 @@
   suffix: ADS ONLY
   description: A devastating weapon, known for glassing whole fleets when used en masse
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 50000
   - type: Sprite
@@ -789,6 +844,11 @@
   suffix: ADS ONLY
   description: A terrifying weapon to have aimed at you, the Reaper is an ancient piece of pre-fracture tech capable of shattering the strongest of hulls within one or two blasts.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 1500000
   - type: Sprite
@@ -872,6 +932,11 @@
   suffix: ADS ONLY
   description: One of the most powerful EMP weapons in sector, it is a sign of doom for its targets.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 1250000
   - type: Sprite
@@ -956,6 +1021,11 @@
   suffix: ADS ONLY
   description: A rarer, powerful cannon mounted on larger ADS units. Firing a singular particle of antimatter wrapped in energy. Annihalating sections of shuttles at a time.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 175000
   - type: Sprite
@@ -1032,6 +1102,11 @@
   suffix: ADS ONLY
   description: A potent proton cannon from before the Fracture, known for melting holes through both inorganic and organic matter with ease.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 30000
   - type: Sprite
@@ -1098,6 +1173,11 @@
   suffix: ADS ONLY
   description: A burst firing neutron repeater, firing high-damage but slow balls of hell. A marvel of rapture weapons technology. Specializes in tunneling through anything that can't outmanuever it.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 40000
   - type: Sprite
@@ -1169,6 +1249,11 @@
   suffix: ADS ONLY
   description: A unique pre-fracture weapon, the Flayer fires a storm of tungsten alloy darts at near the speed of light, barraging targets to pieces.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 25000
   - type: Sprite

@@ -15,6 +15,11 @@
   name: gunnery control computer board
   description: A computer printed circuit board for a gunnery control computer.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - WeaponsSystems
+    # LuaM-end
     - type: Sprite
       state: cpu_command
     - type: ComputerBoard

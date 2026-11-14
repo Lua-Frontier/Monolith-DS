@@ -21,6 +21,11 @@
   description: Used to deposit and withdraw funds from a personal bank account. 5% deposit fee.
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Bank
+  # LuaM-end
   - type: BankATM
     cashSlot:
       name: bank-ATM-cashSlot
@@ -62,6 +67,11 @@
   description: Used to withdraw funds from a personal bank account, unable to deposit.
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Bank
+  # LuaM-end
   - type: BankATM
     cashSlot:
       name: bank-ATM-cashSlot
@@ -240,6 +250,11 @@
   abstract: true
   description: Used to transfer funds to and from the station's bank account.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Bank
+  # LuaM-end
   - type: Sprite
     netsync: false
     sprite: Structures/Machines/computers.rsi

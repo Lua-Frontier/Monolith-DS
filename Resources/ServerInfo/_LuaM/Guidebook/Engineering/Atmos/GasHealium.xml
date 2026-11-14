@@ -6,11 +6,11 @@
 
 Для режима ниже 41 K нужен [bold]Hellfire-морозильник[/bold] или иной источник глубокого холода: обычный морозильник ограничен [bold][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/bold].
 
-- [bold]1.[/bold] Закачайте [bold]10 моль BZ + 110 моль фрезона[/bold]. Для запуска в смеси должно быть хотя бы [bold]по 5 моль[/bold] BZ и фрезона.
+- [bold]1.[/bold] Закачайте [color=#73BFD3][bold]10 моль BZ + 110 моль фрезона[/bold][/color]. Для запуска в смеси должно быть хотя бы [bold]по 5 моль[/bold] BZ и фрезона.
 - [bold]2.[/bold] Охладите смесь и поддерживайте температуру при работе: реакция выделяет тепло.
 - [bold]3.[/bold] Фильтруйте хилиум, подпитывая оба реагента в отношении [bold]1:11[/bold].
 
-Выход на 1 моль BZ и 11 моль фрезона: [bold]12 × 23,15 / T[/bold] моль хилиума, где T — температура в кельвинах. При [bold]73,15 K[/bold] это около [bold]3,80 моль[/bold], при [bold]23,15 K[/bold] — [bold]12 моль[/bold]. Более низкая температура ещё увеличивает выход; доступный холод зависит от вашей установки. Выше [bold]293,15 K[/bold] реакции нет.
+Выход на [color=#73BFD3]1 моль[/color] BZ и [color=#73BFD3]11 моль[/color] фрезона: [bold]12 × 23,15 / T[/bold] моль хилиума, где T — температура в кельвинах. При [bold]73,15 K[/bold] это около [color=#73BFD3][bold]3,80 моль[/bold][/color], при [bold]23,15 K[/bold] — [color=#73BFD3][bold]12 моль[/bold][/color]. Более низкая температура ещё увеличивает выход; доступный холод зависит от вашей установки. Выше [bold]293,15 K[/bold] реакции нет.
 
 [textlink="Фрезон" link="ColossusGasFrezon"] · [textlink="BZ" link="ColossusGasBZ"] · [textlink="Цены" link="ColossusCataloguePrices"]
 </Document>
