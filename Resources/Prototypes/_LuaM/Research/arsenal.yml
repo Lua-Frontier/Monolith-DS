@@ -92,3 +92,18 @@
   - MiscellaneousItemsOrganization
   - ArmorBasic
   position: 3, 11
+
+- type: technology
+  id: ShipAmmoLoaders
+  name: research-technology-ship-ammo-loaders
+  entityIcon: AmmoLoader
+  discipline: Arsenal
+  tier: 2
+  cost: 20000
+  recipeUnlocks:
+  - MachineAmmoLoaderCircuitboard
+  - MachineAmmoLoaderSmallCircuitboard
+  - MachineShieldMS100Circuitboard
+  technologyPrerequisites:
+  - BasicShuttleArmament
+  position: 10, 8

@@ -4,28 +4,40 @@
   isVisibleLanguage: true
   speech:
     color: "#c9a7ebdd"
+  # LuaM-start
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 4
-    maxSyllables: 6
+    minSyllables: 1
+    maxSyllables: 3
     replacement:
     - ae
+    - ai
+    - el
+    - ia
+    - il
+    - ar
+    - la
+    - le
+    - li
+    - na
+    - ne
+    - ra
+    - ri
+    - sa
+    - se
+    - si
+    - va
+    - ve
     - ael
-    - iae
     - lae
-    - elia
-    - liora
-    - naia
-    - raeli
-    - selia
-    - velia
-    - aniel
-    - eira
-    - aurel
-    - siona
-    - liria
-    - riela
-    - aevia
-    - eliora
-    - naelia
-    - sariae
+    - iae
+    - nai
+    - rae
+    - sel
+    - vel
+    - lir
+    - aur
+    - eir
+    - ion
+    - sae
+  # LuaM-end

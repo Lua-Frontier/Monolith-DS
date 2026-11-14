@@ -14,3 +14,33 @@
     stackRequirements:
       Glass: 10
       Steel: 10
+
+- type: entity
+  id: MachineAmmoLoaderCircuitboard
+  parent: BaseMachineCircuitboard
+  name: ammo loader board
+  description: A machine board for an ammo loader.
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: AmmoLoader
+    requirements:
+      Manipulator: 2
+    stackRequirements:
+      Steel: 5
+
+- type: entity
+  id: MachineAmmoLoaderSmallCircuitboard
+  parent: BaseMachineCircuitboard
+  name: small ammo loader board
+  description: A machine board for a small ammo loader.
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: AmmoLoaderSmall
+    requirements:
+      Manipulator: 1
+    stackRequirements:
+      Steel: 5

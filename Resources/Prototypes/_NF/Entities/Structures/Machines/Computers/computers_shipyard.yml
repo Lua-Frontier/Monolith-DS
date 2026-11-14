@@ -37,11 +37,23 @@
     interfaces:
       enum.ShipyardConsoleUiKey.Shipyard:
         type: ShipyardConsoleBoundUserInterface
+  # LuaM-start: cash put into the console pays for a vessel before the bank account
+  - type: CreditReceiver
+    cashSlot:
+      name: bank-ATM-cashSlot
+      insertSound: /Audio/Machines/scanning.ogg
+      ejectSound: /Audio/Machines/tray_eject.ogg
+      ejectOnBreak: true
+      whitelist:
+        components:
+        - Cash
+  # LuaM-end
   - type: ItemSlots
   - type: ContainerContainer
     containers:
       board: !type:Container
       ShipyardConsole-targetId: !type:ContainerSlot
+      cash_slot: !type:ContainerSlot # LuaM
   - type: Computer
     board: Null
 

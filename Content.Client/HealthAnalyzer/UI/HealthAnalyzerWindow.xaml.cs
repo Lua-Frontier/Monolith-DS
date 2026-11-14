@@ -5,6 +5,7 @@ using Content.Shared.Atmos;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Shitmed.Targeting; // Shitmed
 using Content.Shared.Alert;
+using Content.Shared.Chemistry.Reagent; // LuaM
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
@@ -123,6 +124,7 @@ namespace Content.Client.HealthAnalyzer.UI
             SetActiveButtons(_entityManager.HasComponent<TargetingComponent>(_target.Value));
 
             ReturnButton.Visible = isPart;
+            ReturnPanel.Visible = isPart; // LuaM: no empty box while no part is open
             PartNameLabel.Visible = isPart;
 
             if (part != null)
@@ -190,6 +192,16 @@ namespace Content.Client.HealthAnalyzer.UI
                 HumanityLabel.Text = $"{msg.HumanityLeft:0.#}/{msg.HumanityMax:0.#}";
                 HumanityLabel.FontColorOverride = msg.HumanityLeft < 0 ? Color.Red : Color.FromHex("#ff9100");
             }
+
+            // the chemical dependency, the server only sends it for bodies that have one
+            ReagentPrototype? dependency = null;
+            if (msg.DependencyReagent is { } dependencyId)
+                _prototypes.TryIndex<ReagentPrototype>(dependencyId, out dependency);
+
+            DependencyTextLabel.Visible = dependency != null;
+            DependencyLabel.Visible = dependency != null;
+            if (dependency != null)
+                DependencyLabel.SetMessage(ColoredText(dependency.LocalizedName, Color.FromHex("#ff9100"))); // wraps long names
             // LuaM-end
 
             // Alerts
@@ -198,6 +210,7 @@ namespace Content.Client.HealthAnalyzer.UI
 
             AlertsDivider.Visible = showAlerts;
             AlertsContainer.Visible = showAlerts;
+            AlertsPanel.Visible = showAlerts; // LuaM: no empty box without alerts
 
             if (showAlerts)
                 AlertsContainer.RemoveAllChildren();
@@ -237,7 +250,224 @@ namespace Content.Client.HealthAnalyzer.UI
             IReadOnlyDictionary<string, FixedPoint2> damagePerType = damageable.Damage.DamageDict;
 
             DrawDiagnosticGroups(damageSortedGroups, damagePerType);
+
+            DrawPartDamage(msg); // LuaM
+            DrawBloodChemicals(msg.BloodChemicals); // LuaM
         }
+
+        // LuaM-start: reagents in the bloodstream
+        private void DrawBloodChemicals(Dictionary<string, FixedPoint2>? chemicals)
+        {
+            ChemicalsContainer.RemoveAllChildren();
+
+            if (chemicals == null)
+            {
+                ChemicalsContainer.AddChild(CreatePartHint(Loc.GetString("health-analyzer-window-entity-unknown-value-text"), Color.Gray));
+                return;
+            }
+
+            if (chemicals.Count == 0)
+            {
+                ChemicalsContainer.AddChild(CreatePartHint(Loc.GetString("health-analyzer-window-no-blood-chemicals-text"), Color.Gray));
+                return;
+            }
+
+            foreach (var (reagentId, amount) in chemicals.OrderByDescending(c => c.Value))
+            {
+                var name = _prototypes.TryIndex<ReagentPrototype>(reagentId, out var reagent)
+                    ? reagent.LocalizedName
+                    : Loc.GetString("health-analyzer-window-entity-unknown-text");
+
+                // a rich text label wraps long reagent names instead of cutting them off
+                var label = new RichTextLabel { HorizontalExpand = true };
+                label.SetMessage(ColoredText(" · " + Loc.GetString("health-analyzer-window-blood-chemical-text",
+                    ("reagent", name),
+                    ("amount", amount)), Color.FromHex("#c8c8c8")));
+                ChemicalsContainer.AddChild(label);
+            }
+        }
+
+        private static FormattedMessage ColoredText(string text, Color color)
+        {
+            var message = new FormattedMessage();
+            message.PushColor(color);
+            message.AddText(text);
+            message.Pop();
+            return message;
+        }
+        // LuaM-end
+
+        // LuaM-start: damaged body parts listed in the right column
+        private static readonly TargetBodyPart[] PartOrder =
+        {
+            TargetBodyPart.Head,
+            TargetBodyPart.Torso,
+            TargetBodyPart.RightArm,
+            TargetBodyPart.RightHand,
+            TargetBodyPart.LeftArm,
+            TargetBodyPart.LeftHand,
+            TargetBodyPart.RightLeg,
+            TargetBodyPart.RightFoot,
+            TargetBodyPart.LeftLeg,
+            TargetBodyPart.LeftFoot,
+        };
+
+        private static readonly Color PartBorderColor = Color.FromHex("#333333");
+        private static readonly Color PartBorderHoverColor = Color.FromHex("#ff9100");
+
+        private void DrawPartDamage(HealthAnalyzerScannedUserMessage msg)
+        {
+            PartsContainer.RemoveAllChildren();
+
+            if (msg.PartDamage == null || msg.Body == null)
+            {
+                PartsContainer.AddChild(CreatePartHint(Loc.GetString("health-analyzer-window-no-part-data-text"), Color.Gray));
+                return;
+            }
+
+            var shown = false;
+            foreach (var part in PartOrder)
+            {
+                msg.Body.TryGetValue(part, out var integrity);
+
+                if (integrity == TargetIntegrity.Severed)
+                {
+                    PartsContainer.AddChild(CreatePartEntry(part, integrity, null));
+                    shown = true;
+                    continue;
+                }
+
+                foreach (var partDamage in msg.PartDamage)
+                {
+                    if (partDamage.Part != part)
+                        continue;
+
+                    PartsContainer.AddChild(CreatePartEntry(part, integrity, partDamage.Damage));
+                    shown = true;
+                }
+            }
+
+            if (!shown)
+                PartsContainer.AddChild(CreatePartHint(Loc.GetString("health-analyzer-window-no-part-damage-text"), Color.FromHex("#4caf50")));
+        }
+
+        private static Label CreatePartHint(string text, Color color)
+        {
+            return new Label
+            {
+                Text = text,
+                FontColorOverride = color,
+                HorizontalAlignment = HAlignment.Center,
+                Margin = new Thickness(0, 8),
+            };
+        }
+
+        private Control CreatePartEntry(TargetBodyPart part, TargetIntegrity integrity, Dictionary<string, FixedPoint2>? damage)
+        {
+            var style = new StyleBoxFlat
+            {
+                BackgroundColor = Color.FromHex("#181818"),
+                BorderColor = PartBorderColor,
+                BorderThickness = new Thickness(1),
+            };
+
+            var content = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                Margin = new Thickness(6, 3, 6, 4),
+            };
+
+            content.AddChild(new Label
+            {
+                Text = Loc.GetString(GetPartLocId(part)),
+                FontColorOverride = GetIntegrityColor(integrity),
+            });
+
+            if (damage == null)
+            {
+                content.AddChild(new Label
+                {
+                    Text = Loc.GetString("health-analyzer-window-part-severed-text"),
+                    FontColorOverride = Color.FromHex("#ff4040"),
+                    StyleClasses = { "LabelSubText" },
+                });
+            }
+            else
+            {
+                foreach (var (type, amount) in damage.OrderByDescending(d => d.Value))
+                {
+                    var typeName = _prototypes.TryIndex<DamageTypePrototype>(type, out var typeProto)
+                        ? typeProto.LocalizedName
+                        : type;
+
+                    // ignores the mouse so a click on the text still opens the part
+                    var line = new RichTextLabel { HorizontalExpand = true, MouseFilter = MouseFilterMode.Ignore };
+                    line.SetMessage(ColoredText(" · " + Loc.GetString("health-analyzer-window-damage-type-text",
+                        ("damageType", typeName),
+                        ("amount", amount)), Color.FromHex("#c8c8c8")));
+                    content.AddChild(line);
+                }
+            }
+
+            var panel = new PanelContainer { PanelOverride = style };
+            panel.AddChild(content);
+
+            var button = new ContainerButton
+            {
+                Margin = new Thickness(0, 0, 0, 4),
+                HorizontalExpand = true,
+                ToolTip = Loc.GetString("health-analyzer-window-part-select-tooltip"),
+            };
+            button.AddChild(panel);
+
+            // a severed part has nothing to scan
+            if (damage != null)
+            {
+                button.OnPressed += _ => SelectBodyPart(part);
+                button.OnMouseEntered += _ => style.BorderColor = PartBorderHoverColor;
+                button.OnMouseExited += _ => style.BorderColor = PartBorderColor;
+            }
+
+            return button;
+        }
+
+        private void SelectBodyPart(TargetBodyPart part)
+        {
+            if (_target == null)
+                return;
+
+            OnBodyPartSelected?.Invoke(part, _target.Value);
+        }
+
+        private static Color GetIntegrityColor(TargetIntegrity integrity)
+        {
+            return integrity switch
+            {
+                TargetIntegrity.Healthy or TargetIntegrity.LightlyWounded => Color.FromHex("#e6e6e6"),
+                TargetIntegrity.SomewhatWounded or TargetIntegrity.ModeratelyWounded => Color.FromHex("#e8c547"),
+                TargetIntegrity.HeavilyWounded => Color.FromHex("#ff9100"),
+                _ => Color.FromHex("#ff4040"),
+            };
+        }
+
+        private static string GetPartLocId(TargetBodyPart part)
+        {
+            return part switch
+            {
+                TargetBodyPart.Head => "health-analyzer-window-part-head",
+                TargetBodyPart.Torso => "health-analyzer-window-part-torso",
+                TargetBodyPart.RightArm => "health-analyzer-window-part-right-arm",
+                TargetBodyPart.RightHand => "health-analyzer-window-part-right-hand",
+                TargetBodyPart.LeftArm => "health-analyzer-window-part-left-arm",
+                TargetBodyPart.LeftHand => "health-analyzer-window-part-left-hand",
+                TargetBodyPart.RightLeg => "health-analyzer-window-part-right-leg",
+                TargetBodyPart.RightFoot => "health-analyzer-window-part-right-foot",
+                TargetBodyPart.LeftLeg => "health-analyzer-window-part-left-leg",
+                TargetBodyPart.LeftFoot => "health-analyzer-window-part-left-foot",
+                _ => "health-analyzer-window-entity-unknown-text",
+            };
+        }
+        // LuaM-end
         // Shitmed Change End
         private static string GetStatus(MobState mobState)
         {

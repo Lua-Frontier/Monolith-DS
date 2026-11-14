@@ -1,0 +1,14 @@
+# Looks like a blindfold, but the cloth is thin enough to see through.
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesBlindfoldSheer
+  name: sheer blindfold
+  description: Looks just like a blindfold, but the cloth is thin enough to see through.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: Tag
+    tags:
+    - PetWearable

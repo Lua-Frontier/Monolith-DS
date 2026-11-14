@@ -4,50 +4,39 @@
   isVisibleLanguage: true
   speech:
     color: "#6e6cfedd"
-    fontId: MinecraftEnchantment
+    # fontId: MinecraftEnchantment # LuaM
+  # LuaM-start
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 2
-    maxSyllables: 4
+    minSyllables: 1
+    maxSyllables: 3
     replacement:
-    - ᔑᔑ
-    - ʖ↸
-    - ╎⍑
-    - ꖎꖎリ
-    - ∷∴
-    - ⋮∷
-    - ⨅⍊
-    - ᓵʖ
-    - ᒲ↸
-    - ʖ↸
-    - ᔑ↸
-    - ᑑ↸
-    - ʖᒲ
-    - ⊣ᒷ
-    - ᒲᒷ
-    - リᔑʖ
-    - ╎╎ᑑ
-    - ⎓∴
-    - ᔑ
-    - ʖ
-    - ᓵ
-    - ↸
-    - ᒷ
-    - ⎓
-    - ⊣
-    - ⍑
-    - ╎
-    - ⋮
-    - ꖌ
-    - ꖎ
-    - ᒲ
-    - リ
-    - 𝙹
-    - ᑑ
-    - ∷
-    - ᓭ
-    - ℸ ̣
-    - ⚍
-    - ⍊
-    - ∴
-    - ⨅
+    - hi
+    - dra
+    - va
+    - tha
+    - thra
+    - tri
+    - kri
+    - rri
+    - chi
+    - chir
+    - tvi
+    - kee
+    - kia
+    - ree
+    - tee
+    - wee
+    - vee
+    - ssi
+    - ti
+    - ki
+    - ri
+    - vi
+    - rra
+    - tch
+    - rrk
+    - "'a"
+    - "'i"
+    - "kh'"
+  # LuaM-end

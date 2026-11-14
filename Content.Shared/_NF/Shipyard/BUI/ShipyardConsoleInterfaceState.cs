@@ -20,6 +20,7 @@ public sealed class ShipyardConsoleInterfaceState : BoundUserInterfaceState
     public readonly float SellRate;
     public readonly Dictionary<ProtoId<VesselPrototype>, int> LimitedCounts; // Lua
     public readonly bool HyperwarLimits; // Lua
+    public int Cash; // LuaM: spesos in the console's cash slot, spent before the bank account
 
     public ShipyardConsoleInterfaceState(
         int balance,

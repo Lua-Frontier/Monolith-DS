@@ -1,22 +1,22 @@
 - type: roleLoadout
   id: JobMdMedic
   groups:
-  - ContractorHead
-  - ContractorNeck
-  - MdMedicJumpsuit
-  - MdMedicGloves
-  - MdMedicBackpack
-  - ContractorOuterClothing
-  - ContractorShoes
-  - ContractorFace
-  - ContractorGlasses
-  - ContractorBelt
+  - MercenaryHead # LuaM: ContractorHead > MercenaryHead
+  - MercenaryNeck # LuaM: ContractorNeck > MercenaryNeck
+  - LuaMMdMedicJumpsuit # LuaM: MdMedicJumpsuit > LuaMMdMedicJumpsuit
+  - LuaMMdMedicGloves # LuaM: MdMedicGloves > LuaMMdMedicGloves
+  - LuaMMdMedicBackpack # LuaM: MdMedicBackpack > LuaMMdMedicBackpack
+  - MercenaryOuterClothing # LuaM: ContractorOuterClothing > MercenaryOuterClothing
+  - MercenaryShoes # LuaM: ContractorShoes > MercenaryShoes
+  - MercenaryFace # LuaM: ContractorFace > MercenaryFace
+  - MercenaryGlasses # LuaM: ContractorGlasses > MercenaryGlasses
+  - MercenaryBelt # LuaM: ContractorBelt > MercenaryBelt
   - MdMedicEars
   - ContractorBoxSurvival
   - MdMedicPDA
-  - MercenaryFirearm
-  - MercenaryPistol
-  - MercenaryMag
+  - ContractorFullFirearm # LuaM: MercenaryFirearm > ContractorFullFirearm
+  - ContractorFullPistol # LuaM: MercenaryPistol > ContractorFullPistol
+  - ContractorFullMag # LuaM: MercenaryMag > ContractorFullMag
   - ContractorWallet
   - ContractorCartridge
   - ContractorImplanter
@@ -27,3 +27,5 @@
   - ContractorBureaucracy
   - NFSpeciesSpecific
   - ContractorArmorPlates
+  - MercenaryBalaclava # LuaM
+  - CivGunCaseSpecial # LuaM

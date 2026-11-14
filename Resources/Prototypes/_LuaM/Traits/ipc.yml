@@ -84,3 +84,26 @@
   - type: TraitSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
+
+- type: trait
+  id: IpcFaultyHearingSensors
+  name: trait-luam-ipc-faulty-hearing-sensors-name
+  description: trait-luam-ipc-faulty-hearing-sensors-desc
+  category: Physical
+  cost: -2
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: DeafTrait
+    aidKind: HearingSensor
+
+- type: trait
+  id: IpcModifiedOpticalSensors
+  name: trait-luam-ipc-modified-optical-sensors-name
+  description: trait-luam-ipc-modified-optical-sensors-desc
+  category: Physical
+  cost: 3
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: SharpEye

@@ -17,6 +17,25 @@
   inhand:
   - WeaponCaseLongIrohRegistered
 
+# Special weapon for Viper Group veterans: 10 hours in the Viper Group.
+- type: loadoutEffectGroup
+  id: LuaMViperGroupVet
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: ViperGroup
+      time: 36000 # 10 hrs
+
+- type: loadout
+  id: ContractorSpecialGunAK12
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LuaMViperGroupVet
+  price: 75000
+  inhand:
+  - WeaponCaseLongAK12Registered
+
 - type: loadout
   id: ContractorAkmLoadout
   price: 15000 # same as the Prometheus, a full-auto rifle as well
@@ -129,3 +148,112 @@
   - ContractorFace
   fallbacks:
   - TsfmcGaiter
+
+# Paramedic and director of care: their own medical choices plus everything the contractor can take.
+# Subgroups are not nested, so the mercenary leaf groups are listed one by one.
+- type: loadoutGroup
+  id: LuaMMdMedicJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  loadouts:
+  - MedicalDoctorJumpsuit
+  - MedicalDoctorJumpskirt
+  - MedicalBlueScrubs
+  - MedicalGreenScrubs
+  - MedicalPurpleScrubs
+  subgroups:
+  - MercenaryJumpsuit
+  - MonoMercenaryJumpsuit
+  - LuaMMercenaryJumpsuit
+  - PilotJumpsuit
+  - ContractorJumpsuit
+  fallbacks:
+  - MedicalDoctorJumpsuit
+
+- type: loadoutGroup
+  id: LuaMMdMedicGloves
+  name: loadout-group-contractor-gloves
+  minLimit: 0
+  loadouts: []
+  subgroups:
+  - MdMedicGloves
+  - MercenaryGloves
+  - MonoMercenaryGloves
+  - PilotGloves
+  - ContractorGloves
+
+- type: loadoutGroup
+  id: LuaMMdMedicBackpack
+  name: loadout-group-contractor-backpack
+  loadouts: []
+  subgroups:
+  - MdMedicBackpack
+  - DocBackpack
+  - MercenaryBackpack
+  - MonoMercenaryBackpack
+  - PilotBackpack
+  - ContractorBackpack
+  fallbacks:
+  - DocClothingBackpackMedical
+
+- type: loadoutGroup
+  id: LuaMDocHead
+  name: loadout-group-contractor-head
+  minLimit: 0
+  loadouts: []
+  subgroups:
+  - DocHead
+  - MercenaryHead
+  - PilotHead
+  - ContractorHead
+  - MonoMercenaryHead
+  - LuaMMercenaryHead
+
+- type: loadoutGroup
+  id: LuaMDocNeck
+  name: loadout-group-contractor-neck
+  minLimit: 0
+  loadouts: []
+  subgroups:
+  - DocNeck
+  - MercenaryNeck
+  - ContractorNeck
+
+- type: loadoutGroup
+  id: LuaMDocJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  loadouts: []
+  subgroups:
+  - DocJumpsuit
+  - MercenaryJumpsuit
+  - MonoMercenaryJumpsuit
+  - LuaMMercenaryJumpsuit
+  - PilotJumpsuit
+  - ContractorJumpsuit
+  fallbacks:
+  - ChiefMedicalOfficerJumpsuit
+  - ChiefMedicalOfficerJumpskirt
+
+- type: loadoutGroup
+  id: LuaMDocGloves
+  name: loadout-group-contractor-gloves
+  minLimit: 0
+  loadouts: []
+  subgroups:
+  - DocGloves
+  - MercenaryGloves
+  - MonoMercenaryGloves
+  - PilotGloves
+  - ContractorGloves
+
+- type: loadoutGroup
+  id: LuaMDocShoes
+  name: loadout-group-contractor-shoes
+  loadouts: []
+  subgroups:
+  - DocShoes
+  - MercenaryShoes
+  - LuaMMercenaryShoes
+  - PilotShoes
+  - ContractorShoes
+  fallbacks:
+  - DocClothingShoesColorWhite

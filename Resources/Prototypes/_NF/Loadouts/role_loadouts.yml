@@ -284,16 +284,16 @@
 - type: roleLoadout
   id: JobDirectorOfCare
   groups:
-  - DocHead
-  - DocNeck
-  - DocJumpsuit
-  - DocGloves
-  - MdMedicBackpack
-  - ContractorOuterClothing
-  - DocShoes
-  - ContractorFace
-  - ContractorGlasses
-  - ContractorBelt
+  - LuaMDocHead # LuaM: DocHead > LuaMDocHead
+  - LuaMDocNeck # LuaM: DocNeck > LuaMDocNeck
+  - LuaMDocJumpsuit # LuaM: DocJumpsuit > LuaMDocJumpsuit
+  - LuaMDocGloves # LuaM: DocGloves > LuaMDocGloves
+  - LuaMMdMedicBackpack # LuaM: MdMedicBackpack > LuaMMdMedicBackpack
+  - MercenaryOuterClothing # LuaM: ContractorOuterClothing > MercenaryOuterClothing
+  - LuaMDocShoes # LuaM: DocShoes > LuaMDocShoes
+  - MercenaryFace # LuaM: ContractorFace > MercenaryFace
+  - MercenaryGlasses # LuaM: ContractorGlasses > MercenaryGlasses
+  - MercenaryBelt # LuaM: ContractorBelt > MercenaryBelt
   - DocEars
   - ContractorBoxSurvival
   - DocPDA
@@ -307,6 +307,11 @@
   - ContractorBureaucracy
   - NFSpeciesSpecific
   - ContractorArmorPlates # Mono
+  - MercenaryBalaclava # LuaM
+  - ContractorFullFirearm # LuaM
+  - ContractorFullPistol # LuaM
+  - ContractorFullMag # LuaM
+  - CivGunCaseSpecial # LuaM
 
 # Nfsd
 

@@ -1,0 +1,31 @@
+- type: entity
+  parent: [ ClothingNeckBase, PowerCellSlotMediumItem ]
+  id: ClothingNeckHearingAid
+  name: hearing aid
+  description: Picks up sound and brings it to those who can not hear on their own. Worn around the neck and runs on a power cell.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Misc/headphones.rsi
+    state: icon
+  - type: Clothing
+    equippedPrefix: off
+    sprite: Clothing/Neck/Misc/headphones.rsi
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: PowerCellDraw
+    drawRate: 1
+  - type: ToggleCellDraw
+  - type: HearingAid
+
+- type: entity
+  parent: ClothingNeckHearingAid
+  id: ClothingNeckHearingSensor
+  name: hearing sensor
+  description: An external sound sensor for synthetics with faulty hearing. Plugs in around the neck and runs on its own power cell.
+  components:
+  - type: HearingAid
+    kind: HearingSensor

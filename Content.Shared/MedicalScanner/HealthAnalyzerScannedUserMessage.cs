@@ -22,6 +22,15 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     // LuaM-start: humanity left and the humanity limit of the scanned person
     public float? HumanityLeft;
     public float? HumanityMax;
+
+    // the chemical the scanned person depends on
+    public string? DependencyReagent;
+
+    // damage of every damaged body part
+    public List<Content.Shared._LuaM.Medical.HealthAnalyzerPartDamage>? PartDamage;
+
+    // reagents in the bloodstream and their amounts
+    public Dictionary<string, Content.Shared.FixedPoint.FixedPoint2>? BloodChemicals;
     // LuaM-end
 
     public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, bool? uncloneable, Dictionary<TargetBodyPart, TargetIntegrity>? body, NetEntity? part = null) // Shitmed Change

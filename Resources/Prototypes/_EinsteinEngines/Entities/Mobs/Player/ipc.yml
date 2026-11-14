@@ -136,6 +136,7 @@
   #   - type: Wires
   #     layoutId: IPC
   - type: EmitBuzzWhileDamaged
+  - type: DamagedSiliconSpeech # LuaM
   - type: CanHostGuardian
   - type: WeldingHealable
   - type: RetroMonitorView # Mono
