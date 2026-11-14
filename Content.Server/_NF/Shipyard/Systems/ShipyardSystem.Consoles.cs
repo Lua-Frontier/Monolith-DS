@@ -2,6 +2,7 @@ using Content.Server.Access.Systems;
 using Content.Server.Popups;
 using Content.Server.Radio.EntitySystems;
 using Content.Server._NF.Bank;
+using Content.Shared._NF.Bank; // LuaM
 using Content.Server._NF.Shipyard.Components;
 using Content.Server._NF.ShuttleRecords;
 using Content.Shared._NF.Bank.Components;
@@ -189,7 +190,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 return;
             }
         }
-        else if (bank.Balance < vessel.Price)
+        else if (bank.Balance + GetConsoleCash(shipyardConsoleUid) < vessel.Price) // LuaM: the cash in the console counts too
         {
             ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price)));
             PlayDenySound(player, shipyardConsoleUid, component);
@@ -235,6 +236,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         // Keep track of whether or not a voucher was used.
         // TODO: voucher purchase should be done in a separate function.
         bool voucherUsed = false;
+        var paidCash = 0; // LuaM: how much of the price the cash in the console paid
         if (voucher is not null)
         {
 			// Mono: Check if voucher has a purchase cooldown, and if it is still in cooldown cancel purchase
@@ -276,15 +278,18 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
         else
         {
-            if (bank.Balance < vessel.Price) // LuaM: <= > <
-            {
-                Del(shuttleUid);
-                ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price)));
-                PlayDenySound(player, shipyardConsoleUid, component);
-                return;
-            }
-
-            if (!_bank.TryBankWithdraw(player, vessel.Price))
+            // LuaM-start: the cash in the console pays first, the bank account covers the rest
+            // if (bank.Balance < vessel.Price) // LuaM: <= > <
+            // {
+            //     Del(shuttleUid);
+            //     ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price)));
+            //     PlayDenySound(player, shipyardConsoleUid, component);
+            //     return;
+            // }
+            //
+            // if (!_bank.TryBankWithdraw(player, vessel.Price))
+            if (!TryPayWithCashAndBank(shipyardConsoleUid, player, bank, vessel.Price, out paidCash))
+            // LuaM-end
             {
                 Del(shuttleUid);
                 ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price)));
@@ -470,7 +475,12 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         if (voucherUsed)
             _adminLogger.Add(LogType.ShipYardUsage, LogImpact.Low, $"{ToPrettyString(player):actor} used {ToPrettyString(targetId)} to purchase shuttle {ToPrettyString(shuttleUid)} with a voucher via {ToPrettyString(shipyardConsoleUid)}");
         else
-            _adminLogger.Add(LogType.ShipYardUsage, LogImpact.Low, $"{ToPrettyString(player):actor} used {ToPrettyString(targetId)} to purchase shuttle {ToPrettyString(shuttleUid)} for {vessel.Price} credits via {ToPrettyString(shipyardConsoleUid)}");
+            _adminLogger.Add(LogType.ShipYardUsage, LogImpact.Low, $"{ToPrettyString(player):actor} used {ToPrettyString(targetId)} to purchase shuttle {ToPrettyString(shuttleUid)} for {vessel.Price} credits ({paidCash} in cash) via {ToPrettyString(shipyardConsoleUid)}"); // LuaM: cash part
+
+        // LuaM-start
+        if (paidCash > 0)
+            ConsolePopup(player, Loc.GetString("shipyard-console-paid-cash", ("amount", BankSystemExtensions.ToSpesoString(paidCash))));
+        // LuaM-end
 
         // Adding the record to the shuttle records system makes them eligible to be copied.
         // Can be set on the component of the shipyard.
@@ -762,7 +772,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         if (!component.Initialized)
             return;
 
-        if (args.Container.ID != component.TargetIdSlot.ID)
+        if (args.Container.ID != component.TargetIdSlot.ID
+            && !IsConsoleCashSlot(uid, args.Container.ID)) // LuaM: cash in or out updates the shown cash
             return;
 
         // kind of cursed. We need to update the UI when an Id is entered, but the UI needs to know the player characters bank account.
@@ -996,6 +1007,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             CalculateSellRate(uid),
             _shuttleRestrictions.GetLimitedVesselCounts(), // Lua
             _shuttleRestrictions.HyperwarLimitsActive); // Lua
+        newState.Cash = GetConsoleCash(uid); // LuaM
 
         _ui.SetUiState(uid, uiKey, ExtendUiStateLua(uid, newState)); // Lua: newState > ExtendUiStateLua(uid, newState)
     }

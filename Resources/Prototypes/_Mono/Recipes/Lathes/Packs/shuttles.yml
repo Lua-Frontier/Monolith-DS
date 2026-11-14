@@ -16,3 +16,5 @@
   - MachineShieldMS250Circuitboard
   - MachineShieldMS500Circuitboard
   - LargeThrusterMachineCircuitboard
+  - MachineAmmoLoaderCircuitboard # LuaM
+  - MachineAmmoLoaderSmallCircuitboard # LuaM

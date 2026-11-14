@@ -1,3 +1,9 @@
 ent-MachineGCSExtraCircuitboard = экстрамощный сервер управления вооружением (машинная плата)
     .desc = Печатная плата для экстрамощного сервера управления орудиями.
     .suffix = { ent-BaseMachineCircuitboard.suffix }
+ent-MachineAmmoLoaderCircuitboard = загрузчик боеприпасов (машинная плата)
+    .desc = Печатная плата для загрузчика боеприпасов.
+    .suffix = { ent-BaseMachineCircuitboard.suffix }
+ent-MachineAmmoLoaderSmallCircuitboard = малый загрузчик боеприпасов (машинная плата)
+    .desc = Печатная плата для малого загрузчика боеприпасов.
+    .suffix = { ent-BaseMachineCircuitboard.suffix }

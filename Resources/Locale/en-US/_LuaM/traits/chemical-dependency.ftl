@@ -1,0 +1,9 @@
+﻿trait-luam-chemical-dependency-name = Chemical Dependency
+trait-luam-chemical-dependency-desc = Every round you depend on a random chemical that can be brewed: a medicine, a narcotic or a poison. Every 10 units of it hold withdrawal off for 15 minutes. Without a dose withdrawal sets in: you shake, fall, drop things and can not hold back your groans. A health analyzer shows which chemical you need.
+chemical-dependency-craving = You start to crave your usual dose.
+chemical-dependency-withdrawal-start = Withdrawal hits you. Your body needs a dose right now!
+chemical-dependency-relief = The withdrawal fades.
+chemical-dependency-withdrawal-1 = Your whole body aches.
+chemical-dependency-withdrawal-2 = Your hands won't listen.
+chemical-dependency-withdrawal-3 = You shiver and sweat at the same time.
+health-analyzer-window-entity-dependency-text = Dependency:

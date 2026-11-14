@@ -1,0 +1,21 @@
+- type: trait
+  id: Deafness
+  name: trait-luam-deafness-name
+  description: trait-luam-deafness-desc
+  category: Physical
+  cost: -2
+  speciesBlacklist:
+  - IPC
+  components:
+  - type: DeafTrait
+
+- type: trait
+  id: ChemicalDependency
+  name: trait-luam-chemical-dependency-name
+  description: trait-luam-chemical-dependency-desc
+  category: Physical
+  cost: -4
+  speciesBlacklist:
+  - IPC
+  components:
+  - type: ChemicalDependency

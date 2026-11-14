@@ -20,3 +20,13 @@
   materials:
     Steel: 800
     Glass: 900
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: MachineAmmoLoaderCircuitboard
+  result: MachineAmmoLoaderCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: MachineAmmoLoaderSmallCircuitboard
+  result: MachineAmmoLoaderSmallCircuitboard

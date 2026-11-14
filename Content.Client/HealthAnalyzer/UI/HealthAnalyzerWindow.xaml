@@ -3,7 +3,7 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     SetHeight="650"
-    SetWidth="350"
+    SetWidth="620"
     Resizable="False"> <!-- Shitmed Change -->
     <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
         <PanelContainer.PanelOverride>
@@ -13,16 +13,19 @@
             <PanelContainer.PanelOverride>
                 <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#333333" BackgroundColor="#181818"/>
             </PanelContainer.PanelOverride>
+        <!-- LuaM: two columns, the scan on the left and damaged body parts on the right -->
+        <BoxContainer Orientation="Horizontal" VerticalExpand="True" HorizontalExpand="True">
         <BoxContainer
             Name="RootContainer"
             VerticalExpand="True"
+            SetWidth="340"
             Orientation="Vertical"
             Margin="2">
             <Label
                 Name="NoPatientDataText"
                 Text="{Loc health-analyzer-window-no-patient-data-text}"/>
             <!-- Shitmed Change Start -->
-                <PanelContainer VerticalExpand="False" HorizontalExpand="True" Margin="2 2 2 2" MinHeight="40">
+                <PanelContainer Name="ReturnPanel" VerticalExpand="False" HorizontalExpand="True" Margin="2 2 2 2" MinHeight="40"> <!-- LuaM: Name, hidden while no part is open -->
                     <PanelContainer.PanelOverride>
                         <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#050505"/>
                     </PanelContainer.PanelOverride>
@@ -258,6 +261,13 @@
                     <Label Name="HumanityLabel"
                            FontColorOverride="#ff9100"
                            Visible="False"/>
+                    <!-- LuaM: the chemical the scanned person depends on -->
+                    <Label Name="DependencyTextLabel"
+                           Text="{Loc 'health-analyzer-window-entity-dependency-text'}"
+                           Visible="False"/>
+                    <RichTextLabel Name="DependencyLabel"
+                                   MaxWidth="150"
+                                   Visible="False"/>
                 </GridContainer>
                     </PanelContainer>
                 </PanelContainer>
@@ -267,7 +277,7 @@
                             Visible="False"
                             StyleClasses="LowDivider"/>
 
-            <PanelContainer VerticalExpand="False" HorizontalExpand="True" Margin="4 4 4 4" SetHeight="62">
+            <PanelContainer Name="AlertsPanel" Visible="False" VerticalExpand="False" HorizontalExpand="True" Margin="4 4 4 4" SetHeight="62"> <!-- LuaM: Name and Visible, hidden without alerts -->
                 <PanelContainer.PanelOverride>
                     <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#141414"/>
                 </PanelContainer.PanelOverride>
@@ -289,6 +299,31 @@
                     </ScrollContainer>
                 </PanelContainer>
             </PanelContainer>
+
+            <!-- LuaM-start: reagents in the bloodstream -->
+            <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#141414"/>
+                </PanelContainer.PanelOverride>
+                <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4">
+                    <PanelContainer.PanelOverride>
+                        <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#151515" BackgroundColor="#050505"/>
+                    </PanelContainer.PanelOverride>
+                    <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="6 4">
+                        <Label Text="{Loc 'health-analyzer-window-blood-chemicals-text'}"
+                               FontColorOverride="#ff9100"
+                               Margin="0 0 0 4"/>
+                        <PanelContainer StyleClasses="LowDivider" Margin="0 0 0 4"/>
+                        <ScrollContainer VerticalExpand="True"
+                                         HScrollEnabled="False">
+                            <BoxContainer Name="ChemicalsContainer"
+                                          Orientation="Vertical"
+                                          HorizontalExpand="True"/>
+                        </ScrollContainer>
+                    </BoxContainer>
+                </PanelContainer>
+            </PanelContainer>
+            <!-- LuaM-end -->
 
             <PanelContainer StyleClasses="LowDivider"/>
             <!-- Shitmed Change End -->
@@ -314,6 +349,31 @@
             </PanelContainer>
 
         </BoxContainer>
+        <!-- LuaM-start: damaged body parts, no need to click each limb -->
+        <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 4 4 4">
+            <PanelContainer.PanelOverride>
+                <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#141414"/>
+            </PanelContainer.PanelOverride>
+            <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#151515" BackgroundColor="#050505"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="6 4">
+                    <Label Text="{Loc 'health-analyzer-window-damaged-parts-text'}"
+                           FontColorOverride="#ff9100"
+                           Margin="0 0 0 4"/>
+                    <PanelContainer StyleClasses="LowDivider" Margin="0 0 0 4"/>
+                    <ScrollContainer VerticalExpand="True"
+                                     HScrollEnabled="False">
+                        <BoxContainer Name="PartsContainer"
+                                      Orientation="Vertical"
+                                      HorizontalExpand="True"/>
+                    </ScrollContainer>
+                </BoxContainer>
+            </PanelContainer>
+        </PanelContainer>
+        </BoxContainer>
+        <!-- LuaM-end -->
         </PanelContainer>
     </PanelContainer>
 </controls:FancyWindow>

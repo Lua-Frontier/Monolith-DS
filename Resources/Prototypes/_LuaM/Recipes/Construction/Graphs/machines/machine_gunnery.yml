@@ -99,6 +99,9 @@
             - !type:RaiseEvent
               event: !type:MachineDeconstructedEvent
               broadcast: false
+            # ammo loaders share this graph: drop the loaded ammo instead of deleting it with the machine
+            - !type:EmptyContainer
+              container: ammo_loader
           conditions:
             - !type:EntityAnchored
             - !type:WirePanel

@@ -26,6 +26,7 @@
 // LuaM-start: look ahead runs on the client only, without a request to the server
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
+using Content.Shared._LuaM.Traits;
 using Content.Shared.Camera;
 using Content.Shared.Input;
 using Content.Shared.Movement.Components;
@@ -112,9 +113,13 @@ public sealed partial class FocusToggleSystem : EntitySystem
         if (_active && TryComp<PilotComponent>(player.Value, out var pilot) && pilot.Console != null)
             _active = false;
 
+        var maxOffset = MaxOffset;
+        if (TryComp<SharpEyeComponent>(player.Value, out var sharpEye))
+            maxOffset *= sharpEye.FocusRangeMultiplier;
+
         if (!_active)
             _target = Vector2.Zero;
-        else if (TryGetMouseOffset(out var offset))
+        else if (TryGetMouseOffset(maxOffset, out var offset))
             _target = offset;
 
         _current = Vector2.Lerp(_current, _target, 1f - MathF.Exp(-Sharpness * frameTime));
@@ -122,7 +127,7 @@ public sealed partial class FocusToggleSystem : EntitySystem
             _current = Vector2.Zero;
     }
 
-    private bool TryGetMouseOffset(out Vector2 offset)
+    private bool TryGetMouseOffset(float maxOffset, out Vector2 offset)
     {
         offset = Vector2.Zero;
 
@@ -142,9 +147,9 @@ public sealed partial class FocusToggleSystem : EntitySystem
         var eyeRotation = _eyeManager.CurrentEye.Rotation;
         offset = Vector2.Transform(normalized, Quaternion.CreateFromAxisAngle(-Vector3.UnitZ, (float) eyeRotation.Opposite().Theta));
 
-        offset *= MaxOffset;
-        if (offset.Length() > MaxOffset)
-            offset = offset.Normalized() * MaxOffset;
+        offset *= maxOffset;
+        if (offset.Length() > maxOffset)
+            offset = offset.Normalized() * maxOffset;
 
         return true;
     }

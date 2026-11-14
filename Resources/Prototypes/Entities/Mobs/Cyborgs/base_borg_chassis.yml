@@ -211,6 +211,7 @@
     sounds:
       Unsexed: UnisexSilicon
   - type: UnblockableSpeech
+  - type: DamagedSiliconSpeech # LuaM
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepBorg
