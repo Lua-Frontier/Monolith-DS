@@ -4,9 +4,9 @@
 Гражданская организация на станции [textlink="«Колосс Централл»" link="LuaMColossusCentral"]. Станцией руководит комендант, за безопасность отвечает её служба охраны. [textlink="Медицинский Центр" link="ColossusMedicalFaction"] — отдельная организация со своим директором и штатом.
 
 <GuideEntityCards>
-<GuideTexture Entity="ComputerBankATM" Caption="Банк"/>
+<GuideTexture Entity="ComputerBankATM" Powered="true" Caption="Банк"/>
 <GuideTexture Entity="SafetyDepositConsole" Caption="Личное хранение"/>
-<GuideTexture Entity="ComputerShipyardSr" Caption="Верфь станции"/>
+<GuideTexture Entity="ComputerShipyardSr" Powered="true" Caption="Верфь станции"/>
 </GuideEntityCards>
 
 ## Должности

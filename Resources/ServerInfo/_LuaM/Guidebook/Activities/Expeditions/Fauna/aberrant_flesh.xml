@@ -18,12 +18,12 @@
   <GuideEntityEmbed Entity="MobFleshJaredOldExpeditions"/>
   </GuideEntityCards>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color][bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Голем"
@@ -36,7 +36,7 @@
   <GuideEntityEmbed Entity="MobFleshGolemOldExpeditions"/>
   </GuideEntityCards>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 70 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -53,7 +53,7 @@
   <GuideTexture Entity="DartAberrantFleshHorrorSpikeGuidebook" Caption="auto"/>
   </GuideEntityCards>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 40 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=yellow]колющий[/color], 6 [color=lime]токсичный[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее, стреляет: костяной шип / пасть
@@ -66,7 +66,7 @@
   <GuideEntityEmbed Entity="MobMawExpeditionsGuidebook"/>
   </GuideEntityCards>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 40 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 4 [color=red]режущий[/color] (пасть)
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее, стреляет: костяной шип / пасть
@@ -80,7 +80,7 @@
   <GuideEntityEmbed Entity="MobMawExpeditionsGuidebook"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 8 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 0 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]0 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 4 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -96,7 +96,7 @@
   <GuideEntityEmbed Entity="MobFleshLoverExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее
@@ -110,7 +110,7 @@
   <GuideEntityEmbed Entity="MobFleshAssimilatedMiner"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 140 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -124,7 +124,7 @@
   <GuideEntityEmbed Entity="MobHorrorExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 200 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.6 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.6 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] залп костяных шипов (роль для призрака)

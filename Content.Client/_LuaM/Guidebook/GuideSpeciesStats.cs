@@ -73,7 +73,7 @@ public sealed partial class GuideSpeciesStats : BoxContainer, IDocumentTag
             var header = new GuideCatalogHeader(Loc.GetString(species.Name), selected == null ? string.Join(" · ", details.Take(2)) : null) { Expanded = selected != null };
             var body = new BoxContainer { Orientation = LayoutOrientation.Vertical, HorizontalExpand = true, Visible = selected != null };
             foreach (var line in details)
-            { var label = new RichTextLabel { HorizontalExpand = true, Margin = new Thickness(6) }; label.SetMessage(line); body.AddChild(label); }
+            { var label = new RichTextLabel { HorizontalExpand = true, Margin = new Thickness(6) }; label.SetMessage(GuideStatText.FormatLine(line)); body.AddChild(label); }
             header.OnPressed += _ => { body.Visible = !body.Visible; header.Expanded = body.Visible; };
             AddChild(header); AddChild(body);
         }

@@ -22,7 +22,7 @@
     [color=#999999][italic]Обзор тревог по станции[/italic][/color]
   </Box>
 
-  <GuideEntityCards><GuideTexture Entity="ComputerAtmosMonitoring" Caption=""/>
+  <GuideEntityCards><GuideTexture Entity="ComputerAtmosMonitoring" Powered="true" Caption=""/>
     <GuideTexture Entity="GasPipeSensor" Caption=""/>
   </GuideEntityCards>
   <Box>

@@ -161,10 +161,10 @@ public sealed partial class ArmorStats : BoxContainer, IDocumentTag
         }
         Add(text, Loc.GetString("armor-guide-direct"));
         foreach (var (type, value) in damage.DamageDict)
-            Add(text, TypeName(type) + " " + value);
-        Add(text, Loc.GetString("armor-guide-ap") + ": " + (bypass ? Loc.GetString("armor-guide-bypass") : Percent(penetration)));
+            Markup(text, GuideStatText.Format(TypeName(type), value.ToString()).ToMarkup());
+        Markup(text, GuideStatText.Format(Loc.GetString("armor-guide-ap"), bypass ? Loc.GetString("armor-guide-bypass") : Percent(penetration)).ToMarkup());
         if (proto.TryComp<StaminaDamageOnCollideComponent>(out var stamina, _factory))
-            Add(text, Loc.GetString("armor-guide-stamina") + ": " + Number(stamina.Damage));
+            Markup(text, GuideStatText.Format(Loc.GetString("armor-guide-stamina"), Number(stamina.Damage)).ToMarkup());
         if (count > 1)
             Add(text, Loc.GetString("armor-guide-pellets", ("count", count)));
     }

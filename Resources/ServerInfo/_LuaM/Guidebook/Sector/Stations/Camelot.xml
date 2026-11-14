@@ -4,9 +4,9 @@
 
 ## Корабли и снабжение
 <GuideEntityCards>
-<GuideTexture Entity="ComputerShipyardUSSP" Caption="auto"/>
-<GuideTexture Entity="ComputerShipyardViper" Caption="auto"/>
-<GuideTexture Entity="ComputerShipyardExpedition" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardUSSP" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardViper" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardExpedition" Powered="true" Caption="auto"/>
 </GuideEntityCards>
 На станции стоят отдельные верфи СССП и Viper Group, обычная, экспедиционная и утилизационная верфи. Для каждой фракции есть своя консоль оперативного управления. Здесь также находятся банкоматы, консоли заказов, торговые паллеты и терминалы рынка.
 

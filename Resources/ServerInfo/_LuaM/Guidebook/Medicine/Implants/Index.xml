@@ -1,7 +1,7 @@
 <Document>
 # Органы, протезы и импланты
 
-Выберите часть тела: в таблицах указаны совместимость, человечность, эффект и ограничения каждой модели.
+[bold]Выберите[/bold] часть тела: в таблицах указаны совместимость, человечность, эффект и ограничения каждой модели.
 
 <GuideEntityCards>
 <GuideTexture Entity="BasicCyberneticEyes" Caption="Голова"/>
@@ -9,14 +9,10 @@
 <GuideTexture Entity="OrganArmMantisBlade" Caption="Конечности"/>
 </GuideEntityCards>
 
-- [textlink="Голова" link="ColossusHeadImplants"] — глаза, мозг, нейростабилизаторы.
-- [textlink="Туловище" link="ColossusCyberneticOrgans"] — внутренние органы, ЦНС, подкожная защита и регенерация.
-- [textlink="Руки и ноги" link="ColossusMantisBlades"] — обычные и улучшенные протезы, клинки богомола.
-- [textlink="Служебные импланты" link="ColossusServiceImplants"] — действия, оповещения, переводчики и инъекторы.
 
 В таблицах человечность указана [bold]за один орган, имплант или часть тела[/bold]. Одноимённый органный слот вмещает один вариант; разные слоты не заменяют друг друга. Служебные подкожные импланты не занимают слот подкожной брони. Совместимость зависит от строения конкретного тела.
 
-[textlink="Как установить или снять" link="ColossusSurgery"] · [textlink="Человечность и киберпсихоз" link="ColossusHumanity"]
+[textlink="Как установить или снять" link="ColossusSurgery"]
 
 <GuideHub Root="ColossusCybernetics"/>
 </Document>

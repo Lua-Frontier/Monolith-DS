@@ -3,7 +3,7 @@
 
 Бар и узел снабжения с чёрным рынком, торговым оборудованием и верфями. Здесь можно пополнить запасы и подготовить следующий вылет.
 
-<GuideEntityCards><GuideTexture Entity="ComputerBlackMarketBankATM" Caption="auto"/><GuideTexture Entity="VendingMachineBooze" Caption="auto"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerBlackMarketBankATM" Powered="true" Caption="auto"/><GuideTexture Entity="VendingMachineBooze" Caption="auto"/></GuideEntityCards>
 
 Покупки и оснащение проверяйте по ассортименту местных терминалов; для рейса за добычей есть экспедиционная верфь.
 

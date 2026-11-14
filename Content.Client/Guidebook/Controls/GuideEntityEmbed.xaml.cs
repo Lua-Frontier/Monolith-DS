@@ -37,6 +37,7 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
     private readonly GuidebookSystem _guidebookSystem;
 
     public bool Interactive;
+    public bool PreviewPowered; // LuaM: explicit illustration state, applied only to the local preview.
 
     // The preview entity is only spawned while the embed is in the UI tree.
     private EntProtoId? _entityProto;
@@ -107,6 +108,14 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         View.SetEntity(ent);
         if (_mapInitEntity)
             _entityManager.RunMapInit(ent, _entityManager.GetComponent<MetaDataComponent>(ent));
+        // LuaM-start: keep the complete layered sprite and show the requested operating state.
+        if (PreviewPowered)
+        {
+            var appearance = _entityManager.System<SharedAppearanceSystem>();
+            appearance.SetData(ent, Content.Shared.Computer.ComputerVisuals.Powered, true);
+            appearance.SetData(ent, Content.Shared.PowerCell.PowerCellSlotVisuals.Enabled, true);
+        }
+        // LuaM-end
     }
 
     protected override void ExitedTree()

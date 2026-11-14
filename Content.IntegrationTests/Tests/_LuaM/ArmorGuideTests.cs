@@ -77,10 +77,10 @@ public sealed class ArmorGuideTests
                     var prototype = prototypes.Index(embed.EntityPrototypeId!.Value);
                     Assert.That(embed.Children.OfType<RichTextLabel>().Single().GetMessage(), Is.EqualTo(prototype.Name));
                 }
-                var text = string.Join("\n", Labels(stats).Select(label => label.GetMessage()));
-                Assert.That(text, Does.Contain(heat + " 12"));
-                Assert.That(text, Does.Contain(heat + " 15"));
-                Assert.That(text, Does.Contain(structural + " 35"));
+                var text = string.Join("\n", Labels(stats).Select(label => label.GetFormattedMessage()?.ToString()));
+                Assert.That(text, Does.Contain(heat + ": 12"));
+                Assert.That(text, Does.Contain(heat + ": 15"));
+                Assert.That(text, Does.Contain(structural + ": 35"));
                 Assert.That(text, Does.Contain("-60%"));
                 Assert.That(text, Does.Contain("-10%"));
                 Assert.That(text, Does.Not.Contain("Нет обычного прямого урона"), "14.5mm must resolve HitscanBasicDamage.");

@@ -7,8 +7,8 @@
 На базе установлены обычная и чёрная верфи, радары, консоли орудий и оперативного управления Авангарда. Чёрная верфь и оружейный аплинк дают доступ к фракционному снабжению.
 
 <GuideEntityCards>
-<GuideTexture Entity="ComputerShipyardBlackMarket" Caption="auto"/>
-<GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardBlackMarket" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/>
 <GuideTexture Entity="PDVOverwatchComputer" Caption="auto"/>
 </GuideEntityCards>
 

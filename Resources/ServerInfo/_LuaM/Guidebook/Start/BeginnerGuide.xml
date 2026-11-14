@@ -4,15 +4,15 @@
 Наёмник начинает без назначенной работы: можно вступить в экипаж или купить собственный корабль. Для [bold]киборга наймов[/bold] устройство модулей, зарядка и ремонт разобраны в [textlink="руководстве киборга" link="Cyborgs"]; остальные разделы здесь описывают самостоятельный рейс.
 
 <GuideEntityCards Flow="true">
-<GuideTexture Entity="ComputerBankATM" Caption="Пополнить счёт"/>
-<GuideTexture Entity="ComputerShipyard" Caption="Выбрать корабль"/>
-<GuideTexture Entity="ComputerShuttle" Caption="Занять место пилота"/>
+<GuideTexture Entity="ComputerBankATM" Powered="true" Caption="Пополнить счёт"/>
+<GuideTexture Entity="ComputerShipyard" Powered="true" Caption="Выбрать корабль"/>
+<GuideTexture Entity="ComputerShuttle" Powered="true" Caption="Занять место пилота"/>
 </GuideEntityCards>
 
 ## Получить корабль
-- [bold]1.[/bold] Откройте [textlink="банкомат" link="Bank"] и проверьте банковский баланс: верфь списывает деньги со счёта. Наличные сначала внесите на него.
-- [bold]2.[/bold] На [textlink="верфи" link="Shipyard"] выберите корабль. Цена, класс и доступность покупки указаны в её окне. Если используете ваучер, нужен подходящий тип верфи и корабля — [textlink="выбор верфей" link="ColossusCatalogueShipyards"].
-- [bold]3.[/bold] Найдите причал масс-сканером и займите консоль корабля. [bold]NAV[/bold] управляет полётом, [bold]MAP[/bold] помогает выбрать направление, [bold]DOCK[/bold] — отстыковаться и пристыковаться. Порядок действий и БСС: [textlink="пилотирование" link="Piloting"].
+- [bold]1.[/bold] [bold]Откройте[/bold] [textlink="банкомат" link="Bank"] и проверьте банковский баланс: верфь списывает деньги со счёта. Наличные сначала внесите на него.
+- [bold]2.[/bold] На [textlink="верфи" link="Shipyard"] выберите корабль. Цена, класс и доступность покупки указаны в её окне. [italic]Если используете ваучер,[/italic] нужен подходящий тип верфи и корабля — [textlink="выбор верфей" link="ColossusCatalogueShipyards"].
+- [bold]3.[/bold] [bold]Найдите[/bold] причал масс-сканером и займите консоль корабля. [bold]NAV[/bold] управляет полётом, [bold]MAP[/bold] помогает выбрать направление, [bold]DOCK[/bold] — отстыковаться и пристыковаться. Порядок действий и БСС: [textlink="пилотирование" link="Piloting"].
 
 Снаряжение для выхода из корабля и медицинский маяк разобраны в [textlink="подготовке к вылету" link="StartingGear"]. Как найти напарников или присоединиться к чужому кораблю — [textlink="наём экипажа" link="Hiring"].
 

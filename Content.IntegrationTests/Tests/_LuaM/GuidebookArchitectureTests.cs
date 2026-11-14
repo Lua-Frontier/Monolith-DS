@@ -48,7 +48,10 @@ public sealed class GuidebookArchitectureTests
             Assert.That(guides["LuaMStations"].Children.Select(c => c.ToString()), Is.EqualTo(new[]
             {
                 "LuaMColossusCentral", "LuaMMedical", "LuaMCamelot", "LuaMHalicon", "LuaMHelios",
+                "ColossusSiteHokkaido", "LuaMArcturus",
             }));
+            foreach (var movedStation in new[] { "ColossusSiteHokkaido", "LuaMArcturus" })
+                Assert.That(guides["LuaMWorldObjects"].Children, Does.Not.Contain(new ProtoId<GuideEntryPrototype>(movedStation)));
             Assert.That(seen.Contains("Creatures"), Is.False);
             Assert.That(seen.Contains("ColossusCatalogueOres"), Is.False);
             Assert.That(seen.Contains("ColossusCatalogueObjects"), Is.False);

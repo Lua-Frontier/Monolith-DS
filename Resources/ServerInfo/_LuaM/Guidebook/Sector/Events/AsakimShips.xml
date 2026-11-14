@@ -1,9 +1,9 @@
 <Document>
 # Корабли Азакимов
 
-Малые и средние корабли воинов Азакимов в режиме «Наследие».
+Малые и средние корабли воинов Азакимов в режиме [bold]«Наследие»[/bold].
 
-<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/></GuideEntityCards>
 
 Поток может начаться примерно с [bold]часа[/bold] смены. Для малого корабля требуется не менее [bold]40 игроков[/bold], для среднего — [bold]60[/bold]; это условия появления, а не время гарантированного прибытия. Не относите к ним общий таймер блюспейс-объектов.
 

@@ -7,8 +7,6 @@ using Content.Client.UserInterface.ControlExtensions;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
-using Robust.Client.GameObjects;
-using Robust.Shared.Prototypes;
 
 namespace Content.Client._LuaM.Guidebook;
 
@@ -21,15 +19,15 @@ public sealed class GuideHome : GridContainer, IDocumentTag
         HorizontalExpand = true;
         foreach (var (id, key, icon) in new[]
         {
-            ("NewPlayer", "guide-architecture-new-player", "ClothingOuterHardsuitSpatio"),
-            ("ColossusGuides", "guide-architecture-colossus-guides", "Wrench"),
-            ("Factions", "guide-architecture-factions", "BookTSFSOP"),
-            ("NF14", "guide-architecture-n-f14", "ComputerShuttle"),
-            ("LuaMWorld", "guide-architecture-lua-m-world", "ComputerAdvancedRadar"),
-            ("ColossusCatalogue", "guide-architecture-colossus-catalogue", "RPED"),
-            ("LuaMLore", "guide-architecture-lua-m-lore", "MonolithicCrystalLarge"),
-            ("", "guide-architecture-discord", "RadioHandheldNF"),
-            ("LuaMRuleset", "guide-architecture-lua-m-ruleset", "/Textures/Interface/gavel.png"),
+            ("NewPlayer", "guide-architecture-new-player", "newcomer"),
+            ("ColossusGuides", "guide-architecture-colossus-guides", "manual"),
+            ("Factions", "guide-architecture-factions", "roles"),
+            ("NF14", "guide-architecture-n-f14", "ship"),
+            ("LuaMWorld", "guide-architecture-lua-m-world", "sector"),
+            ("ColossusCatalogue", "guide-architecture-colossus-catalogue", "reference"),
+            ("LuaMLore", "guide-architecture-lua-m-lore", "lore"),
+            ("", "guide-architecture-discord", "discord"),
+            ("LuaMRuleset", "guide-architecture-lua-m-ruleset", "rules"),
         })
         {
             var button = new Button
@@ -42,14 +40,7 @@ public sealed class GuideHome : GridContainer, IDocumentTag
             button.Label.Orphan();
             button.Label.HorizontalExpand = true;
             var body = new BoxContainer { HorizontalExpand = true, SeparationOverride = 12, Margin = new Thickness(8) };
-            var prototypes = IoCManager.Resolve<IPrototypeManager>();
-            if (icon.StartsWith('/'))
-                body.AddChild(new TextureRect { TexturePath = icon, SetSize = new Vector2(40, 40), CanShrink = true,
-                    Stretch = TextureRect.StretchMode.KeepAspectCentered, VerticalAlignment = VAlignment.Center });
-            else if (prototypes.TryIndex<EntityPrototype>(icon, out var prototype))
-                body.AddChild(new TextureRect { Texture = IoCManager.Resolve<IEntityManager>().System<SpriteSystem>().GetPrototypeIcon(prototype).Default,
-                    SetSize = new Vector2(40, 40), CanShrink = true, Stretch = TextureRect.StretchMode.KeepAspectCentered,
-                    VerticalAlignment = VAlignment.Center });
+            body.AddChild(new GuideNavigationIcon(icon) { SetSize = new Vector2(40, 40), VerticalAlignment = VAlignment.Center });
             body.AddChild(button.Label); button.AddChild(body);
             button.OnPressed += _ =>
             {

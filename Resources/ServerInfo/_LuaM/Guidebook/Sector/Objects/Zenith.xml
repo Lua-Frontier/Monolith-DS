@@ -3,7 +3,7 @@
 
 Корабль из группы стартовых объектов с вооружением и корабельными системами.
 
-<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/><GuideTexture Entity="WeaponTurretCharon" Caption="auto"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/><GuideTexture Entity="WeaponTurretCharon" Caption="auto"/></GuideEntityCards>
 
 Это отдельный объект сектора: не путайте его с кораблями АСЗ, прибывающими в ходе событий.
 

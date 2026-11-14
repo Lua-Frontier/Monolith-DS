@@ -2,7 +2,7 @@
 # ЧВК «Вайпер»
 Viper Group — частная военная компания, работающая по контрактам. В секторе её сотрудники начинают на [textlink="станции «Камелот»" link="LuaMCamelot"] рядом с контингентом СССП. Для компании установлены собственные верфь, производственный станок и консоль оперативного управления.
 
-<GuideEntityCards><GuideTexture Entity="CompanyLogoViperGroup" Caption="auto"/><GuideTexture Entity="ComputerShipyardViper" Caption="auto"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="CompanyLogoViperGroup" Caption="auto"/><GuideTexture Entity="ComputerShipyardViper" Powered="true" Caption="auto"/></GuideEntityCards>
 
 ## Должности «Камелота»
 - [bold]Командир «Viper Group»[/bold] — 1 — руководит компанией и организует её деловые связи.

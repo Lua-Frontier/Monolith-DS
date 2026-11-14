@@ -17,6 +17,7 @@
 
 - type: guideEntry
   id: ColossusSiteHokkaido
+  priority: 60 # LuaM: station order
   text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Hokkaido.xml
   name: guide-sector-colossus-site-hokkaido
 

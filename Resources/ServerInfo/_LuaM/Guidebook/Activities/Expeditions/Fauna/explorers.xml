@@ -13,12 +13,12 @@
   <GuideEntityEmbed Entity="MobExplorerMeleeT1"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color][bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color], 6 [color=yellow]колющий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Сборщик"
@@ -29,7 +29,7 @@
   <GuideEntityEmbed Entity="MobExplorerRangedT1"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (неудерживаемый ПКУ)
@@ -43,9 +43,9 @@
   <GuideEntityEmbed Entity="MobExplorerMeleeT2"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 7 [color=red]тупой[/color], 6 [color=red]режущий[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 10%; [color=orange]тепловой[/color] 5%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]10%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]5%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
 
@@ -57,9 +57,9 @@
   <GuideEntityEmbed Entity="MobExplorerRangedT2"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]тупой[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 10%; [color=orange]тепловой[/color] 5%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]10%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]5%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (неудерживаемый ПКУ)
 
 
@@ -71,9 +71,9 @@
   <GuideEntityEmbed Entity="MobExplorerMeleeT3"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 2 [color=red]тупой[/color], 2 [color=red]режущий[/color], 2 [color=yellow]колющий[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 15%; [color=orange]тепловой[/color] 10%; [color=orange]едкий[/color] 15%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]15%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=orange]едкий[/color] [color=#73BFD3]15%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
 
@@ -85,9 +85,9 @@
   <GuideEntityEmbed Entity="MobExplorerRangedT3"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=red]тупой[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 15%; [color=orange]тепловой[/color] 10%; [color=orange]едкий[/color] 15%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]15%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=orange]едкий[/color] [color=#73BFD3]15%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (удерживаемый ПКУ)
 
 
@@ -101,10 +101,10 @@
   <GuideEntityEmbed Entity="MobExplorerHauler"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 200 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 20 [color=red]тупой[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color])
 
 
@@ -116,10 +116,10 @@
   <GuideEntityEmbed Entity="MobExplorerBoss"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 120 (критическое), 150 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=orange]тепловой[/color], 4 [color=yellow]колющий[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] и [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 50%; [color=orange]тепловой[/color] 30%; [color=orange]едкий[/color] 50%
-  - [bold][color=#a4885c]Особые способности:[/color][/bold] Отражение (2.5%)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] и [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]50%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]50%[/color]
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Отражение ([color=#73BFD3]2.5%[/color])
 
 
   # Цели миссий

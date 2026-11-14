@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Numerics;
 using Content.Client.Guidebook.Richtext;
+using Content.Client.Guidebook.Controls;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -21,6 +22,7 @@ public sealed class GuideTexture : BoxContainer, IDocumentTag
     private bool _hasText;
     private bool _fill;
     private bool _entity;
+    private GuideEntityEmbed? _preview;
 
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
@@ -53,21 +55,31 @@ public sealed class GuideTexture : BoxContainer, IDocumentTag
         {
             var prototypes = IoCManager.Resolve<IPrototypeManager>();
             if (!prototypes.TryIndex<EntityPrototype>(entity!, out var prototype)) return false;
-            _image.Texture = IoCManager.Resolve<IEntityManager>().System<SpriteSystem>().GetPrototypeIcon(prototype).Default;
-            scale = args.ContainsKey("Scale") ? scale : 2;
+            _preview = new GuideEntityEmbed(entity!, false, false, true)
+            {
+                SetWidth = float.NaN, SetHeight = float.NaN, Margin = new Thickness(0),
+                HorizontalAlignment = HAlignment.Center,
+                PreviewPowered = args.GetValueOrDefault("Powered") == "true",
+            };
+            var view = _preview.FindControl<SpriteView>("View");
+            view.SetSize = new Vector2(64, 64);
+            view.Stretch = SpriteView.StretchMode.Fill;
+            view.Scale = Vector2.One;
+            _naturalSize = new Vector2(64, 64);
         }
         else _image.TexturePath = path!;
-        _naturalSize = (_image.Texture?.Size ?? Vector2.Zero) * scale;
+        if (!_entity) _naturalSize = (_image.Texture?.Size ?? Vector2.Zero) * scale;
         if (!float.IsFinite(_naturalSize.X) || !float.IsFinite(_naturalSize.Y) ||
             _naturalSize.X <= 0 || _naturalSize.Y <= 0)
             return false;
-        AddChild(_image);
+        if (_preview != null) AddChild(_preview);
+        else AddChild(_image);
 
         if (!_hasText && args.GetValueOrDefault("Caption") is { } caption)
         {
             if (caption == "auto" && _entity)
                 caption = IoCManager.Resolve<IPrototypeManager>().Index<EntityPrototype>(entity!).Name;
-            var label = new RichTextLabel { HorizontalExpand = true, Margin = new Thickness(0, 5, 0, 0) };
+            var label = new GuideCaption { HorizontalExpand = true, Margin = new Thickness(0, 5, 0, 0) };
             label.SetMessage(FormattedMessage.FromUnformatted(caption));
             AddChild(label);
         }

@@ -3,7 +3,7 @@
 
 Комплекс с исследовательским и техническим оборудованием.
 
-<GuideEntityCards><GuideTexture Entity="ComputerTabletopResearchAndDevelopment" Caption="auto"/><GuideTexture Entity="ComputerTabletopAnalysisConsole" Caption="auto"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerTabletopResearchAndDevelopment" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerTabletopAnalysisConsole" Powered="true" Caption="auto"/></GuideEntityCards>
 
 При исследовании проверяйте питание, атмосферу и состояние помещений; найденное оборудование сверяйте с задачами своего экипажа.
 

@@ -10,6 +10,8 @@
   - LuaMCamelot
   - LuaMHalicon
   - LuaMHelios
+  - ColossusSiteHokkaido
+  - LuaMArcturus
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
@@ -49,7 +51,7 @@
   id: LuaMArcturus
   name: guide-entry-luam-arcturus
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Arcturus.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Arcturus.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Arcturus.xml
-  priority: 60 # LuaM: 0 > 60 (section order)
+  priority: 70 # LuaM: 60 > 70 (station order)
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.

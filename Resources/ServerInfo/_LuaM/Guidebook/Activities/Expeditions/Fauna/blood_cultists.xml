@@ -15,12 +15,12 @@
   <GuideEntityEmbed Entity="MobBloodCultistPriest"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])[bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10 [color=red]режущий[/color] (кровавая молния)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] 50%; [color=yellow]колющий[/color] 40% (доспехи послушника)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]40%[/color] (доспехи послушника)
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Заклинатель (кровавая молния)
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Уборщик культа"
@@ -32,10 +32,10 @@
   <GuideTexture Entity="ClothingBeltCultForceField" Caption="auto"/>
   </GuideEntityCards>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 0-35 [color=red]режущий[/color] (1 [color=red]режущий[/color] за кусок мыла)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] 10%; [color=yellow]колющий[/color] 60%; [color=yellow]взрывной[/color] 20% (роба уборщика культа)
-  - [bold][color=#a4885c]Особые способности:[/color][/bold] Заклинатель (скопление бритвенного мыла), Отражение (10%, все снаряды)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]60%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]20%[/color] (роба уборщика культа)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Заклинатель (скопление бритвенного мыла), Отражение ([color=#73BFD3]10%[/color], все снаряды)
 
 
   # "Послушник культа"
@@ -46,9 +46,9 @@
   <GuideEntityEmbed Entity="MobBloodCultistAcolyte"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=red]режущий[/color] (эльдричский меч)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] 50%; [color=yellow]колющий[/color] 40% (доспехи послушника)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]40%[/color] (доспехи послушника)
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
 
@@ -60,9 +60,9 @@
   <GuideEntityEmbed Entity="MobBloodCultistZealotMelee"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]режущий[/color] (ритуальный кинжал)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] 10% (робы культа)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (робы культа)
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
 
@@ -70,9 +70,9 @@
   <GuideEntityEmbed Entity="MobBloodCultistZealotRanged"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 20 [color=red]режущий[/color], 5 [color=#9A54BF]кровопотеря[/color] (болт арбалета кровопийцы)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] 10% (робы культа)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (робы культа)
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (болт арбалета кровопийцы)
 
 
@@ -80,9 +80,9 @@
   <GuideEntityEmbed Entity="MobBloodCultistCaster"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=red]режущий[/color], 2 [color=#9A54BF]кровопотеря[/color] (заклинание кровавого болта)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] 10% (робы культа)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (робы культа)
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Заклинатель (заклинание кровавого болта)
 
 
@@ -96,7 +96,7 @@
   <GuideEntityEmbed Entity="MobBloodCultLeech"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (крит), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 6 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]6 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Регенерация (слабая)
@@ -110,7 +110,7 @@
   <GuideEntityEmbed Entity="BloodCultTurret"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 300
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 0 м/с (0 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]0 м/с[/color] ([color=#73BFD3]0 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=red]режущий[/color], 2 [color=#9A54BF]кровопотеря[/color] (заклинание кровавого болта)
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Турель, Заклинатель (заклинание кровавого болта)
@@ -122,19 +122,19 @@
 
   [color=#a4885c]Летающее существо[/color]: парит над землёй, может преодолевать низкие препятствия (столы, каркасы, перила) без замедления.
 
-  [color=#a4885c]Призыватель[/color]: каждые 55 секунд призывает двух [color=#a4885c]истощённых[/color], которые существуют 110 секунд.
+  [color=#a4885c]Призыватель[/color]: каждые [color=#73BFD3]55 секунд[/color] призывает двух [color=#a4885c]истощённых[/color], которые существуют [color=#73BFD3]110 секунд[/color].
 
-  [color=#a4885c]Отражение (30%, энергия)[/color]: 30% шанс отразить энергетические атаки.
+  [color=#a4885c]Отражение (30%, энергия)[/color]: [color=#73BFD3]30%[/color] шанс отразить энергетические атаки.
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobBloodCultistAscended"/>
   <GuideTexture Entity="ClothingNeckAmuletBloodCult" Caption="auto"/>
   </GuideEntityCards>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 300 (крит), 400 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 20 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
-  - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее, Призыватель (Истощённый), Отражение (30%, энергия)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Летающее, Призыватель (Истощённый), Отражение ([color=#73BFD3]30%[/color], энергия)
 
 
   # "Истощённый"
@@ -149,7 +149,7 @@
   <GuideEntityEmbed Entity="MobBloodCultDrainedOneGuidebook"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 4 [color=#9A54BF]удушение[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Регенерация (слабая), Бестелесный
@@ -167,7 +167,7 @@
   <GuideEntityEmbed Entity="MobBloodCultShadeGuidebook"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 2 [color=red]режущий[/color], 2 [color=#9A54BF]кровопотеря[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Регенерация (слабая), Бестелесный

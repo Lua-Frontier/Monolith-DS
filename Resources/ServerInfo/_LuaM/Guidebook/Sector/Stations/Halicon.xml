@@ -4,8 +4,8 @@
 
 ## Верфь и управление
 <GuideEntityCards>
-<GuideTexture Entity="ComputerShipyardNfsd" Caption="auto"/>
-<GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardNfsd" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/>
 <GuideTexture Entity="TSFOverwatchComputer" Caption="auto"/>
 </GuideEntityCards>
 На флагмане размещены военная и обычная верфи, консоли управления кораблём и орудиями, радары, фракционная связь и оперативное управление ТСФ. Есть консоли ID-карт, личных дел, камер и учёта шаттлов.

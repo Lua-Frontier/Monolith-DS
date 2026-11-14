@@ -3,9 +3,9 @@
 
 Крупный разрушенный корабль с оставшимся оборудованием и опасными обитателями.
 
-<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/></GuideEntityCards>
 
-Подготовьте защиту от вакуума и вооружение. Проверьте путь отхода, прежде чем углубляться в корпус.
+Подготовьте защиту от вакуума и вооружение. [bold]Проверьте[/bold] путь отхода, прежде чем углубляться в корпус.
 
 ## Как найти
 

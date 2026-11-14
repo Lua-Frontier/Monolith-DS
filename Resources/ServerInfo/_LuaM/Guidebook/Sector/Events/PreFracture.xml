@@ -3,7 +3,7 @@
 
 Неопознанное судно с боевыми синтетиками и турелями.
 
-<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/></GuideEntityCards>
 
 Появление возможно примерно со [bold]100-й минуты[/bold]. Не путайте его с отдельными потоками кораблей АСЗ: у события собственная карта и ограничение времени.
 
