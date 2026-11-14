@@ -3,7 +3,7 @@
 
 Мозг, глаза и нейростабилизатор занимают отдельные слоты. В каждом — один вариант.
 
-<GuideEntityCards><GuideEntityEmbed Entity="BasicCyberneticEyes"/><GuideEntityEmbed Entity="OrganHumanityChipMk1"/><GuideEntityEmbed Entity="OrganHumanityChipMk2"/><GuideEntityEmbed Entity="OrganHumanityChipMk3"/><GuideEntityEmbed Entity="PositronicBrain"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="BasicCyberneticEyes" Caption="auto"/><GuideTexture Entity="OrganHumanityChipMk1" Caption="auto"/><GuideTexture Entity="OrganHumanityChipMk2" Caption="auto"/><GuideTexture Entity="OrganHumanityChipMk3" Caption="auto"/><GuideTexture Entity="PositronicBrain" Caption="auto"/></GuideEntityCards>
 
 ## Глаза
 

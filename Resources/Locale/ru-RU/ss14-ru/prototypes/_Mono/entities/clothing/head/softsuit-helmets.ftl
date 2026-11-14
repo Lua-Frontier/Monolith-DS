@@ -1,1 +1,1 @@
-ent-ClothingHeadEVAHelmetDME = DME EVA Helmet
+ent-ClothingHeadEVAHelmetDME = шлем EVA DME

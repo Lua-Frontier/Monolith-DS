@@ -5,19 +5,19 @@
 
 ## Торговля и отдых
 
-[textlink="Торговый Центр" link="LuaMTradeMall"] · [textlink="Торговые аванпосты A–D" link="ColossusSiteTradeDepots"] · [textlink="Бар «Веселый Роджер»" link="ColossusSiteBlackMarket"] · [textlink="Ресторан Тиннии" link="ColossusSiteTinnia"] · [textlink="Безумное Казино Кэсси" link="ColossusSiteCaseysCasino"] · [textlink="Бойцовская Яма" link="ColossusSiteThePit"] · [textlink="Церковь" link="ColossusSiteOmnichurch"]
+<GuideHub Root="LuaMWorldObjects" Entries="LuaMTradeMall,ColossusSiteTradeDepots,ColossusSiteBlackMarket,ColossusSiteTinnia,ColossusSiteCaseysCasino,ColossusSiteThePit,ColossusSiteOmnichurch"/>
 
 ## Базы и технические объекты
 
-[textlink="ММС «Хоккайдо»" link="ColossusSiteHokkaido"] · [textlink="Арктурус" link="LuaMArcturus"] · [textlink="Электростанция Эдисона" link="ColossusSiteEdison"] · [textlink="Узел «Зета»" link="ColossusSiteZetaNode"] · [textlink="Орбитальный Комплекс «Звезда»" link="ColossusSiteZvezdaLuaM"] · [textlink="Заправка Грифти" link="ColossusSiteGrifty"] · [textlink="Заброшенный МаКарго" link="ColossusSiteMcHobo"]
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteHokkaido,LuaMArcturus,ColossusSiteEdison,ColossusSiteZetaNode,ColossusSiteZvezdaLuaM,ColossusSiteGrifty,ColossusSiteMcHobo"/>
 
 ## Исследования и добыча
 
-[textlink="Хранилище технологий «Севастополь»" link="ColossusSiteSevastopol"] · [textlink="Древняя Буровая Станция" link="ColossusSiteMining"] · [textlink="Маяки астероидных скоплений" link="ColossusSiteBeacons"] · [textlink="Лаборатория Аномалий" link="ColossusSiteAnomalousLab"]
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteSevastopol,ColossusSiteMining,ColossusSiteBeacons,ColossusSiteAnomalousLab"/>
 
 ## Дальние объекты
 
-[textlink="Прослушка «Браво»" link="ColossusSiteLPBravo"] · [textlink="Разрушенный Крейсер Юпитер" link="ColossusSiteJupiter"] · [textlink="Шахтёрский Аванпост «Ланцелот»" link="ColossusSiteLancelot"] · [textlink="Центр Биологического Исследования «Полярис»" link="ColossusSitePolaris"] · [textlink="Автоматический Секториальный Танкер" link="ColossusSiteAutomatedTanker"] · [textlink="АСЗ СК-395 «Зенит»" link="ColossusSiteZenith"]
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteLPBravo,ColossusSiteJupiter,ColossusSiteLancelot,ColossusSitePolaris,ColossusSiteAutomatedTanker,ColossusSiteZenith"/>
 
 [textlink="Основные станции" link="LuaMStations"] · [textlink="События" link="LuaMGameModes"]
 </Document>

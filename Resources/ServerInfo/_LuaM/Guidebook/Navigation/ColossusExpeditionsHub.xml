@@ -1,7 +1,5 @@
 <Document>
 # Экспедиции
 
-[textlink="Подготовка" link="Expeditions"]
-
-[textlink="Противники" link="ColossusExpeditionEnemies"]
+<GuideHub Root="ColossusExpeditionsHub"/>
 </Document>

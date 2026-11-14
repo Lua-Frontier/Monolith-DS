@@ -151,6 +151,9 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                     target = screen.GetDamageableClickedEntity(mousePos); // Goob edit
                 }
 
+                if (target == userOverride || target == entity) // LuaM
+                    return; // LuaM
+
                 RaisePredictiveEvent(new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(coordinates)));
                 return;
             }
@@ -200,8 +203,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             if (HasComp<HandsComponent>(userOverride) && Interaction.CombatModeCanHandInteract(userOverride, target))
                 return;
 
-            // -- ЛКМ по себе: сервер такой удар не примет, а клиент проигрывал замах без звука
-            if (target == userOverride || target == entity) // LuaM
+            if (userOverride != entity && (target == userOverride || target == entity)) // LuaM
                 return; // LuaM
 
             // -- Клик по прозрачной части своего спрайта давал промах кулаком прямо в себя: анимация удара по себе, её видели и другие
@@ -313,7 +315,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (HasComp<HandsComponent>(attacker) && Interaction.CombatModeCanHandInteract(attacker, target))
             return;
 
-        if (target == attacker || target == _player.LocalEntity) // LuaM
+        if (attacker != _player.LocalEntity && (target == attacker || target == _player.LocalEntity)) // LuaM
             return; // LuaM
 
         if (target == null && weaponUid == attacker && (attackerPos.Position - mousePos.Position).Length() < SelfClickRadius) // LuaM

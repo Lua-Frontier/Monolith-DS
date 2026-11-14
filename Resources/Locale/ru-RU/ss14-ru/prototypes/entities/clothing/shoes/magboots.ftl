@@ -22,5 +22,5 @@ ent-ActionToggleMagbootsSyndie = { ent-ActionBaseToggleMagboots }
     .desc = { ent-ActionBaseToggleMagboots.desc }
 ent-ActionToggleJetBoots = { ent-ActionBaseToggleMagboots }
     .desc = { ent-ActionBaseToggleMagboots.desc }
-ent-ClothingShoesBootsMagBase = magboots
-    .desc = Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
+ent-ClothingShoesBootsMagBase = магнитные ботинки
+    .desc = Магнитные ботинки, часто используемые при выходе в открытый космос, чтобы пользователь надёжно держался за корпус.

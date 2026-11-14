@@ -3,7 +3,7 @@
 
 Место отдыха и снабжения с кухонным, барным и сервисным оборудованием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineBoozePOI"/><GuideEntityEmbed Entity="VendingMachineChefvend"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineBoozePOI" Caption="auto"/><GuideTexture Entity="VendingMachineChefvend" Caption="auto"/></GuideEntityCards>
 
 Используйте местные автоматы для пополнения запасов, а рецепты ищите в справочниках еды и напитков.
 

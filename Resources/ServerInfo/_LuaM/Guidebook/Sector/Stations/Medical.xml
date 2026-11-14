@@ -9,10 +9,10 @@
 
 ## Лечение и восстановление
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MedicalScanner"/>
-<GuideEntityEmbed Entity="CloningPod"/>
-<GuideEntityEmbed Entity="ChemMaster"/>
-<GuideEntityEmbed Entity="ComputerShipyardMedical"/>
+<GuideTexture Entity="MedicalScanner" Caption="auto"/>
+<GuideTexture Entity="CloningPod" Caption="auto"/>
+<GuideTexture Entity="ChemMaster" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardMedical" Caption="auto"/>
 </GuideEntityCards>
 На карте есть медицинский сканер, консоль и капсула клонирования, хирургические наборы, раздатчик химикатов и ХимМастеры. Медицинский техфаб производит профильное оборудование; автолат обеспечивает базовые детали и инструменты.
 

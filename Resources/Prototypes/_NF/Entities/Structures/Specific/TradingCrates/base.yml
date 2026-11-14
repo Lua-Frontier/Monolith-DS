@@ -153,6 +153,6 @@
       Doubloon: 10
   - type: ExtendDescription
     descriptionList:
-    - description: Selling this item will fund the PDV.
+    - description: extend-desc-funds-pdv # LuaM
       color: "#4f94ad"
       requireDetailRange: true

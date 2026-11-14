@@ -266,6 +266,17 @@ public abstract partial class SharedGunSystem : EntitySystem
             return true;
         }
 
+        // LuaM-start
+        var luamGun = new Content.Shared._LuaM.Weapons.LuaMGetGunEvent();
+        RaiseLocalEvent(entity, ref luamGun);
+        if (luamGun.Gun is { } overrideGun && TryComp(overrideGun, out GunComponent? overrideComp))
+        {
+            gunEntity = overrideGun;
+            gunComp = overrideComp;
+            return true;
+        }
+        // LuaM-end
+
         if (TryComp(entity, out HandsComponent? hands) &&
             hands.ActiveHandEntity is { } held &&
             TryComp(held, out GunComponent? gun))

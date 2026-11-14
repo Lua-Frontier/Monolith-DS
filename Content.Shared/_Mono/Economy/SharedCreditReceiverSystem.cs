@@ -13,7 +13,6 @@ namespace Content.Shared._Mono.Economy;
 /// <remarks>Mostly to be used in other systems that like to implement this behavior to avoid code duplication.</remarks>
 public abstract partial class SharedCreditReceiverSystem : EntitySystem
 {
-    private readonly ISawmill _log = default!;
     [Dependency] private SharedStackSystem _stack = default!; // Frontier
     [Dependency] protected ItemSlotsSystem ItemSlots = default!; // Frontier
 
@@ -164,16 +163,10 @@ public abstract partial class SharedCreditReceiverSystem : EntitySystem
     {
         remainingDebt = 0;
         if (amount <= 0)
-        {
-            _log.Info($"TryCashPayment: {amount} is invalid from Uid {uid}");
             return false;
-        }
 
         if (!TryComp<CreditReceiverComponent>(uid, out var receiver))
-        {
-            _log.Info($"TryCashPayment: {uid} has somehow got money stuck inside.");
             return false;
-        }
 
         // Failed to find money
         if (!TryGetCash(uid, out var cash, out var balance))

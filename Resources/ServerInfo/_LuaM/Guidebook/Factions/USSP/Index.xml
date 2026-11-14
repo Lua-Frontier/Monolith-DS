@@ -9,7 +9,7 @@
 
 Число обозначает общий штат.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponRifleAK502"/><GuideEntityEmbed Entity="ClothingOuterHardsuitUsspL27"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponRifleAK502" Caption="auto"/><GuideTexture Entity="ClothingOuterHardsuitUsspL27" Caption="auto"/></GuideEntityCards>
 
 [textlink="Оборудование Камелота" link="LuaMCamelot"] · [textlink="Правила сервера" link="LuaMRuleset"]
 

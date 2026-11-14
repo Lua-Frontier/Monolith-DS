@@ -3,7 +3,7 @@
 
 Астероиды — источник руды и материалов. Цвет IFF на [bold]MAP[/bold] помогает распознать тип, а сканер минералов показывает залежи внутри. Для первого вылета нужны кирка или бур, мешок для руды и защита от вакуума.
 
-<GuideEntityCards><GuideEntityEmbed Entity="Pickaxe"/><GuideEntityEmbed Entity="MiningDrill"/><GuideEntityEmbed Entity="OreBag"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="Pickaxe" Caption="auto"/><GuideTexture Entity="MiningDrill" Caption="auto"/><GuideTexture Entity="OreBag" Caption="auto"/></GuideEntityCards>
 
 ## Где искать
 

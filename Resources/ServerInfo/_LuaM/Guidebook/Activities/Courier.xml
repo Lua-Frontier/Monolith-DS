@@ -4,9 +4,9 @@
 [bold]Курьер ColossDelivery[/bold] принимает оплаченные заказы, забирает запечатанные посылки на телепаде «Колосс Централл» и доставляет их покупателям. Выплата приходит, когда заказчик открывает посылку своей ID-картой.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="DeliveryCourierPDA"/>
-<GuideEntityEmbed Entity="DeliveryParcel"/>
-<GuideEntityEmbed Entity="ClothingEyesHudLuaMCourier"/>
+<GuideTexture Entity="DeliveryCourierPDA" Caption="auto"/>
+<GuideTexture Entity="DeliveryParcel" Caption="auto"/>
+<GuideTexture Entity="ClothingEyesHudLuaMCourier" Caption="auto"/>
 </GuideEntityCards>
 
 ## Подготовиться к работе

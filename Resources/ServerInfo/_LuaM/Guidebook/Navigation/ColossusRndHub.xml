@@ -1,11 +1,5 @@
 <Document>
 # РНД
 
-[textlink="Исследования" link="IndustryResearch"]
-
-[textlink="Дерево технологий" link="ColossusCatalogueResearch"]
-
-[textlink="Артефакты" link="ColossusArtifacts"]
-
-[textlink="Аномалии" link="ColossusAnomalies"]
+<GuideHub Root="ColossusRndHub"/>
 </Document>

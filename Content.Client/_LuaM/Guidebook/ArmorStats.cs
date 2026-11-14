@@ -73,7 +73,9 @@ public sealed partial class ArmorStats : BoxContainer, IDocumentTag
                 continue;
             // Each record has the game's own sprite and localized, unmodified caption.
             var row = new BoxContainer { HorizontalExpand = true, SeparationOverride = 8 };
-            row.AddChild(new GuideEntityEmbed(id, true, false));
+            var preview = new GuideEntityEmbed(id, true, false) { SetWidth = 128, Margin = new Thickness(4) };
+            preview.FindControl<SpriteView>("View").SetSize = new System.Numerics.Vector2(72, 72);
+            row.AddChild(preview);
             var text = new BoxContainer { Orientation = LayoutOrientation.Vertical, HorizontalExpand = true, Margin = new Thickness(4) };
             row.AddChild(text);
             table.AddChild(row);

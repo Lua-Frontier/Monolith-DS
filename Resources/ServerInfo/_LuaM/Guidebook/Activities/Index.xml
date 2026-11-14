@@ -1,13 +1,5 @@
 <Document>
 # Заработок
 
-[textlink="Грузоперевозки" link="CargoHauling"]
-
-[textlink="Курьер" link="ColossusCourier"]
-
-[textlink="Контрабанда" link="LuaMContraband"]
-
-[textlink="Охота на дронов" link="LuaMDroneLoot"]
-
-[textlink="Продажа газов" link="ColossusCommodities"]
+<GuideHub Root="ColossusActivities"/>
 </Document>

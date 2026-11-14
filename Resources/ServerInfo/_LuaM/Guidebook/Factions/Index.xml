@@ -1,21 +1,5 @@
 <Document>
 # Роли
 
-[textlink="Наёмники" link="ColossusMercenaries"]
-
-[textlink="ММС" link="ColossusMMCRoles"]
-
-[textlink="ТСФ" link="ColossusTSFRoles"]
-
-[textlink="Авангард Нордфолла" link="ColossusNordfallRoles"]
-
-[textlink="СССП" link="ColossusUSSPRoles"]
-
-[textlink="ЧВК «Вайпер»" link="Viper_Group"]
-
-[textlink="Колосс Централл" link="Caelestinus"]
-
-[textlink="Медицинский Центр" link="ColossusMedicalFaction"]
-
-[textlink="Особые роли" link="ColossusSpecialRoles"]
+<GuideHub Root="Factions"/>
 </Document>

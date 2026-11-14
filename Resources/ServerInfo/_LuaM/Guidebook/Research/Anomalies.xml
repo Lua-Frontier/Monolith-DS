@@ -2,9 +2,9 @@
 # Аномалии: очки и сдерживание
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AnomalyScanner"/>
-<GuideEntityEmbed Entity="MachineAnomalyVessel"/>
-<GuideEntityEmbed Entity="MachineAPE"/>
+<GuideTexture Entity="AnomalyScanner" Caption="auto"/>
+<GuideTexture Entity="MachineAnomalyVessel" Caption="auto"/>
+<GuideTexture Entity="MachineAPE" Caption="auto"/>
 </GuideEntityCards>
 
 ## Связать аномалию с сервером

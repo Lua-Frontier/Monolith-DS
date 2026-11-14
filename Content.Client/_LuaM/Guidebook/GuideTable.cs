@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Client.Guidebook.Richtext;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
@@ -43,5 +44,18 @@ public sealed class GuideTable : Container, IDocumentTag
             x += width; i++; if (i % _columns == 0) { x = 0; y += height; }
         }
         return finalSize;
+    }
+    protected override void Draw(DrawingHandleScreen handle)
+    {
+        base.Draw(handle);
+        var y = 0f;
+        for (var row = 0; row < _heights.Length; row++)
+        {
+            var height = _heights[row] * UIScale;
+            handle.DrawRect(new UIBox2(0, y, PixelSize.X, y + height),
+                Color.FromHex(row == 0 ? "#23404F" : row % 2 == 0 ? "#162731" : "#12212B"));
+            handle.DrawRect(new UIBox2(0, y + height - 1, PixelSize.X, y + height), Color.FromHex("#2B414D"));
+            y += height;
+        }
     }
 }

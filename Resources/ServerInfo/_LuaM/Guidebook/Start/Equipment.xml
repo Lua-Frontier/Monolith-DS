@@ -4,9 +4,9 @@
 Для выхода в вакуум нужны [bold]скафандр, шлем, дыхательный баллон и подключённые внутренние источники воздуха[/bold]. Дыхательная смесь зависит от [textlink="расы персонажа" link="Species"]. Баллон и защита тела решают разные задачи; одной маски для выхода из корабля недостаточно.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="DoubleEmergencyOxygenTankFilled"/>
-<GuideEntityEmbed Entity="SpaceMedipen"/>
-<GuideEntityEmbed Entity="HandHeldMassScanner"/>
+<GuideTexture Entity="DoubleEmergencyOxygenTankFilled" Caption="auto"/>
+<GuideTexture Entity="SpaceMedipen" Caption="auto"/>
+<GuideTexture Entity="HandHeldMassScanner" Caption="auto"/>
 </GuideEntityCards>
 
 ## Выбрать набор в лобби
@@ -14,7 +14,7 @@
 
 ## Медицинский сигнал и координаты
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MedicalTrackingImplanter"/>
+<GuideTexture Entity="MedicalTrackingImplanter" Caption="auto"/>
 </GuideEntityCards>
 
 Примените медицинский имплантер к себе. Имплант сообщает в медицинский канал о критическом состоянии и смерти; постоянного отслеживания положения он не даёт.

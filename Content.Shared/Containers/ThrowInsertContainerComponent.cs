@@ -1,12 +1,12 @@
 using Robust.Shared.Audio;
 
-namespace Content.Server.Containers;
+namespace Content.Shared.Containers;
 
 /// <summary>
 /// Allows objects to fall inside the Container when thrown
 /// </summary>
 [RegisterComponent]
-[Access(typeof(ThrowInsertContainerSystem))]
+[Access(typeof(ThrowInsertContainerSystem))] // LuaM: moved to Shared
 public sealed partial class ThrowInsertContainerComponent : Component
 {
     [DataField(required: true)]

@@ -85,8 +85,8 @@ public sealed class GuidebookViewTests
             var longCaption = longItem.Children.OfType<RichTextLabel>().Single();
             Assert.That(shortCaption.Position.Y, Is.EqualTo(longCaption.Position.Y), "Sprite sizes must not shift caption baselines.");
             var prototypes = pair.Client.ResolveDependency<IPrototypeManager>();
-            Assert.That(shortCaption.GetMessage(), Is.EqualTo(prototypes.Index<EntityPrototype>("Wrench").Name));
-            Assert.That(longCaption.GetMessage(), Is.EqualTo(prototypes.Index<EntityPrototype>("IndustrialFurnaceEconomyCompact").Name));
+            Assert.That(shortCaption.GetMessage(), Is.EqualTo(prototypes.Index(new EntProtoId("Wrench")).Name));
+            Assert.That(longCaption.GetMessage(), Is.EqualTo(prototypes.Index(new EntProtoId("IndustrialFurnaceEconomyCompact")).Name));
 
             cards.Measure(new Vector2(190, 1000));
             cards.Arrange(new UIBox2(0, 0, 190, cards.DesiredSize.Y));
@@ -99,14 +99,14 @@ public sealed class GuidebookViewTests
             cards.AddChild(thirdItem); cards.AddChild(fourthItem);
             cards.Measure(new Vector2(1200, 1000));
             cards.Arrange(new UIBox2(0, 0, 1200, cards.DesiredSize.Y));
-            Assert.That(fourthItem.Position.Y, Is.GreaterThan(shortItem.Position.Y), "Four images must form at least two rows even on a wide page.");
+            Assert.That(fourthItem.Position.Y, Is.EqualTo(shortItem.Position.Y), "Wide pages use the available width instead of forcing two columns.");
 
             var entities = pair.Client.ResolveDependency<IEntityManager>();
             var beforePages = entities.EntityCount;
             using var window = new GuidebookWindow();
             var home = window.FindControl<Button>("HomeButton")!;
             var pressed = typeof(BaseButton).GetField("OnPressed", BindingFlags.Instance | BindingFlags.NonPublic)!;
-            var homeListeners = ((Delegate?) pressed.GetValue(home))?.GetInvocationList().Length ?? 0;
+            var homeListeners = ((Delegate) pressed.GetValue(home))?.GetInvocationList().Length ?? 0;
             var allGuides = prototypes.EnumeratePrototypes<GuideEntryPrototype>()
                 .ToDictionary(p => new ProtoId<GuideEntryPrototype>(p.ID), p => (GuideEntry) p);
             window.UpdateGuides(allGuides, GuidebookNavigation.GetBookRoots(allGuides), selected: "NewPlayer");
@@ -119,11 +119,11 @@ public sealed class GuidebookViewTests
                 window.HandleClick("NewPlayer");
             }
             Assert.That(entities.EntityCount, Is.EqualTo(beforePages), "Changing guides releases their client-side sprites.");
-            Assert.That(((Delegate?) pressed.GetValue(home))?.GetInvocationList().Length ?? 0, Is.EqualTo(homeListeners),
+            Assert.That(((Delegate) pressed.GetValue(home))?.GetInvocationList().Length ?? 0, Is.EqualTo(homeListeners),
                 "Selecting pages must not accumulate home-button callbacks.");
             window.UpdateGuides(new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>
             {
-                ["TSFMC_Entry"] = prototypes.Index<GuideEntryPrototype>("TSFMC_Entry"),
+                ["TSFMC_Entry"] = prototypes.Index(new ProtoId<GuideEntryPrototype>("TSFMC_Entry")),
             }, selected: "TSFMC_Entry");
             window.HandleClick("ColossusCatalogueUplinks");
             Assert.That(window.LastEntry, Is.EqualTo(new ProtoId<GuideEntryPrototype>("ColossusCatalogueUplinks")),

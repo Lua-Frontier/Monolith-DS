@@ -1,7 +1,5 @@
 <Document>
 # Производство
 
-[textlink="Фабрикаторы" link="IndustryFabricators"]
-
-[textlink="Мехи" link="ColossusMechsHub"]
+<GuideHub Root="ColossusProduction"/>
 </Document>

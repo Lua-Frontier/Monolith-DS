@@ -1,3 +1,8 @@
+- files: ["LuaMFrontier.ogg"]
+  license: "Custom"
+  copyright: "Frontier by Snakez."
+  source: "https://soundcloud.com/snakezmusic"
+
 - files: ["Andromeda.ogg"]
   license: "Custom"
   copyright: "Andromeda, author unknown. Taken from the Sector Frontier 14 lobby music, converted to stereo."

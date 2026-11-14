@@ -26,5 +26,5 @@
 ### Чувство руды
 Дворф ощущает рудные жилы в породе на расстоянии до 5 метров. Это помогает находить ценные залежи до вскрытия породы.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WallRockChromiteDiamond"/><GuideEntityEmbed Entity="WallRockBasaltBananium"/><GuideEntityEmbed Entity="WallRockBluespace"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WallRockChromiteDiamond" Caption="auto"/><GuideTexture Entity="WallRockBasaltBananium" Caption="auto"/><GuideTexture Entity="WallRockBluespace" Caption="auto"/></GuideEntityCards>
 </Document>

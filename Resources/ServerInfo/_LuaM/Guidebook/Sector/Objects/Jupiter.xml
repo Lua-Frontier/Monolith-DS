@@ -3,7 +3,7 @@
 
 Крупный разрушенный корабль с оставшимся оборудованием и опасными обитателями.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerGunneryConsole"/><GuideEntityEmbed Entity="VendingMachineFuelVend"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/></GuideEntityCards>
 
 Подготовьте защиту от вакуума и вооружение. Проверьте путь отхода, прежде чем углубляться в корпус.
 

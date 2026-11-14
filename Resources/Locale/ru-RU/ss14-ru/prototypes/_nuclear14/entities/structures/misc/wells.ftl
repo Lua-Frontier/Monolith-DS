@@ -1,7 +1,7 @@
-ent-N14WellBoarded = Boarded well
-    .desc = It's a well that's been boarded up. Maybe a crowbar will reveal it's secrets.
-ent-N14WellWaterClean = water well
-    .desc = A well. Hopefully it's got some water at the bottom. Let's hope it's clean.
+ent-N14WellBoarded = заколоченный колодец
+    .desc = Колодец, заколоченный досками. Может, лом раскроет его тайны.
+ent-N14WellWaterClean = колодец
+    .desc = Колодец. Надеюсь, на дне есть вода. И надеюсь, чистая.
     .suffix = Clean
 ent-N14WellWaterDirty = { ent-N14WellWaterClean }
     .desc = { ent-N14WellWaterClean.desc }

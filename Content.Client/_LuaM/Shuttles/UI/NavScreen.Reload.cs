@@ -64,6 +64,7 @@ public sealed partial class NavScreen
 
         UpdateHoloCommsButton();
         UpdateRadarMenu();
+        UpdateNebulaWarning();
 
         if (_reloadBars.Count == 0)
             return;

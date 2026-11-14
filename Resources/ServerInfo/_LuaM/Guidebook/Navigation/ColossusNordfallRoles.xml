@@ -1,7 +1,5 @@
 <Document>
 # Авангард Нордфолла
 
-[textlink="Должности" link="PDV_Entry"]
-
-[textlink="Священный устав" link="ColossusNordfallCharter"]
+<GuideHub Root="ColossusNordfallRoles"/>
 </Document>

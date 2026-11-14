@@ -32,6 +32,7 @@ public sealed partial class ShipSteeringSystem : EntitySystem
     [Dependency] private ShuttleSystem _shuttle = default!;
     [Dependency] private TargetSeekingSystem _seeking = default!;
     [Dependency] private IGameTiming _timing = default!; // LuaM
+    [Dependency] private Content.Server._LuaM.Nebula.NebulaAvoidanceSystem _nebulaAvoidance = default!; // LuaM
 
     [Dependency] private EntityQuery<MapGridComponent> _gridQuery;
     [Dependency] private EntityQuery<ProjectileGridPhaseComponent> _phaseQuery;
@@ -110,6 +111,16 @@ public sealed partial class ShipSteeringSystem : EntitySystem
         if (mapTarget.MapId != shipPos.MapId)
             return;
 
+        // LuaM-start
+        if (ent.Comp.AvoidNebulae)
+        {
+            var shipCenter = new MapCoordinates(Vector2.Transform(shipGrid.LocalAABB.Center, _transform.GetWorldMatrix(shipXform)), shipPos.MapId);
+            _nebulaAvoidance.Refresh(ent.Comp, shipCenter, mapTarget, shipGrid.LocalAABB.Size.Length() * 0.5f);
+            if (ent.Comp.NebulaStopPoint is { } stopPoint)
+                mapTarget = new MapCoordinates(stopPoint, mapTarget.MapId);
+        }
+        // LuaM-end
+
         // gather context
         var shipNorthAngle = _transform.GetWorldRotation(shipXform);
         var toTargetVec = mapTarget.Position - shipPos.Position;
@@ -130,7 +141,16 @@ public sealed partial class ShipSteeringSystem : EntitySystem
         if (ent.Comp.Status == ShipSteeringStatus.InRange)
             return;
 
-        Angle? targetAngle = inRange && ent.Comp.InRangeRotation is { } rot ? rot : (ent.Comp.AlwaysFaceTarget ? toTargetVec.ToWorldAngle() : null);
+        // LuaM-start
+        var faceVec = toTargetVec;
+        if (!inRange && ent.Comp.AvoidNebulae && ent.Comp.NebulaDetour is { } detour)
+        {
+            destMapPos = new MapCoordinates(detour, shipPos.MapId);
+            faceVec = detour - shipPos.Position;
+        }
+        // LuaM-end
+
+        Angle? targetAngle = inRange && ent.Comp.InRangeRotation is { } rot ? rot : (ent.Comp.AlwaysFaceTarget ? faceVec.ToWorldAngle() : null); // LuaM: faceVec
 
         var config = new SteeringConfig
         {

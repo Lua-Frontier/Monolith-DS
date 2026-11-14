@@ -1,9 +1,5 @@
 <Document>
 # Вооружение
 
-[textlink="Корабельные орудия" link="WeaponsSystems"]
-
-[textlink="Каталог орудий" link="ColossusCatalogueShipWeapons"]
-
-[textlink="Серверы СУО" link="ColossusFireControlServers"]
+<GuideHub Root="ColossusShipArmament"/>
 </Document>

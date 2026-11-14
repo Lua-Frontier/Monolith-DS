@@ -3,7 +3,7 @@
 
 Дальний исследовательский комплекс с медицинским и научным оборудованием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/><GuideEntityEmbed Entity="ComputerTabletopAnalysisConsole"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerResearchAndDevelopment" Caption="auto"/><GuideTexture Entity="ComputerTabletopAnalysisConsole" Caption="auto"/></GuideEntityCards>
 
 Присутствуют вооружённые противники. Осматривайте помещения последовательно и оставьте путь для эвакуации.
 

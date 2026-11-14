@@ -1,4 +1,4 @@
 ent-MobMonkeyDummy = { ent-BaseSpeciesDummy }
-    .desc = A dummy monkey meant to be used in character setup.
+    .desc = Манекен обезьяны для настройки персонажа.
 ent-MobKoboldDummy = { ent-BaseSpeciesDummy }
-    .desc = A dummy kobold meant to be used in character setup.
+    .desc = Манекен кобольда для настройки персонажа.

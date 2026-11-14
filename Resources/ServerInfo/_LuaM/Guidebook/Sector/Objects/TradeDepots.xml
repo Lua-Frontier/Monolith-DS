@@ -3,7 +3,7 @@
 
 Четыре торговых аванпоста принимают грузы с назначением [bold]A, B, C или D[/bold]. Буква входит в название отметки на карте и определяет, куда доставлять конкретную партию.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerPalletConsoleNFHighMarket"/><GuideEntityEmbed Entity="VendingMachineTraderDepot"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerPalletConsoleNFHighMarket" Caption="auto"/><GuideTexture Entity="VendingMachineTraderDepot" Caption="auto"/></GuideEntityCards>
 
 Перед вылетом сверяйте назначение в манифесте и букву аванпоста. На месте проверьте оценку паллеты перед продажей; одинаковый внешний вид терминалов не означает одинаковое назначение груза. Аванпосты располагаются примерно в [bold]8–10 км от центра[/bold] и имеют два варианта планировки.
 

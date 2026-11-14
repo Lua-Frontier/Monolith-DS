@@ -1,9 +1,9 @@
 <Document>
 # Боевые аппараты S2
 
-<GuideEntityCards><GuideEntityEmbed Entity="AFInterceptor"/><GuideEntityEmbed Entity="AFInterceptorM"/><GuideEntityEmbed Entity="LightMechaAutocannon"/><GuideEntityEmbed Entity="MediumMechTOW"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AFInterceptor" Caption="auto"/><GuideTexture Entity="AFInterceptorM" Caption="auto"/><GuideTexture Entity="LightMechaAutocannon" Caption="auto"/><GuideTexture Entity="MediumMechTOW" Caption="auto"/></GuideEntityCards>
 
-[bold]Broadsword[/bold] имеет [bold]3 места[/bold] для лёгкого оружия и устройств опознавания. [bold]Halberd[/bold] имеет [bold]3 места[/bold] для среднего оружия и устройств опознавания; лёгкие пушки он не принимает. Обе модели герметичны и рассчитаны на движение в космосе. На гриде скорость мала: это не замена S1 для прохода по коридорам.
+[bold]Broadsword[/bold] имеет [bold]3 места[/bold] для лёгкого оружия и устройств опознавания. [bold]Halberd[/bold] имеет [bold]3 места[/bold] для лёгкого и среднего оружия, а также устройств опознавания. Обе модели герметичны и рассчитаны на движение в космосе. На гриде скорость мала: это не замена S1 для прохода по коридорам.
 
 ## Детали и исследования
 Комплект [bold]Broadsword[/bold] производится на precision assembler в ММС: каркас, голова, две руки и две ноги. Электронику печатает принтер схем. Исследование [bold]«Производство S2-механоидов»[/bold] стоит [bold]50 000 ОИ[/bold], требует боевого производства механоидов и открывает платы, лёгкие пушки и mech fuel cell. Детали корпуса из исследования убраны — их производство отдельно от РНД.

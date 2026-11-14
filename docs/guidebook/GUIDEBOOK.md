@@ -35,11 +35,11 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Посадить и собрать
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="hydroponicsTray"/>
-<GuideEntityEmbed Entity="HydroponicsToolMiniHoe"/>
-<GuideEntityEmbed Entity="HydroponicsToolSpade"/>
-<GuideEntityEmbed Entity="HydroponicsToolClippers"/>
-<GuideEntityEmbed Entity="SeedExtractor"/>
+<GuideTexture Entity="hydroponicsTray" Caption="auto"/>
+<GuideTexture Entity="HydroponicsToolMiniHoe" Caption="auto"/>
+<GuideTexture Entity="HydroponicsToolSpade" Caption="auto"/>
+<GuideTexture Entity="HydroponicsToolClippers" Caption="auto"/>
+<GuideTexture Entity="SeedExtractor" Caption="auto"/>
 </GuideEntityCards>
 
 1. Осмотрите лоток **Shift + ЛКМ**. Вода и питательные вещества имеют шкалу **0–100**; новый стандартный лоток уже содержит по **100**.
@@ -60,7 +60,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Анализатор: прочитать и перенести свойства
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="PlantAnalyzer"/>
+<GuideTexture Entity="PlantAnalyzer" Caption="auto"/>
 </GuideEntityCards>
 
 Используйте анализатор на пакете семян или засаженном лотке. **«Сканирование»** показывает вид, возможные видовые мутации и свойства:
@@ -81,12 +81,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Получить амброзию деус и космонавтскую трубу
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AmbrosiaVulgarisSeeds"/>
-<GuideEntityEmbed Entity="FoodAmbrosiaDeus"/>
-<GuideEntityEmbed Entity="PoppySeeds"/>
-<GuideEntityEmbed Entity="FoodLily"/>
-<GuideEntityEmbed Entity="FoodSpacemansTrumpet"/>
-<GuideEntityEmbed Entity="UnstableMutagenChemistryBottle"/>
+<GuideTexture Entity="AmbrosiaVulgarisSeeds" Caption="auto"/>
+<GuideTexture Entity="FoodAmbrosiaDeus" Caption="auto"/>
+<GuideTexture Entity="PoppySeeds" Caption="auto"/>
+<GuideTexture Entity="FoodLily" Caption="auto"/>
+<GuideTexture Entity="FoodSpacemansTrumpet" Caption="auto"/>
+<GuideTexture Entity="UnstableMutagenChemistryBottle" Caption="auto"/>
 </GuideEntityCards>
 
 Семена **амброзии вульгарис** и **мака** есть в обычном ассортименте автомата семян. Нужные цепочки: **амброзия вульгарис → амброзия деус**; **мак → лилия → космонавтская труба**.
@@ -121,9 +121,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/CargoHauling.xml -->
 # Грузоперевозки и торговля
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerCargoOrders"/>
-  <GuideEntityEmbed Entity="ComputerPalletConsole"/>
-  <GuideEntityEmbed Entity="CrateTradeSecureNormal"/>
+<GuideTexture Entity="ComputerCargoOrders" Caption="auto"/>
+  <GuideTexture Entity="ComputerPalletConsole" Caption="auto"/>
+  <GuideTexture Entity="CrateTradeSecureNormal" Caption="auto"/>
 </GuideEntityCards>
 Торговый ящик приносит разную выручку в зависимости от места продажи. **Перед покупкой оцените маршрут, место в трюме и расходы на рейс.**
 
@@ -150,7 +150,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Contraband.xml -->
 # Контрабанда: сдача и обмен
 Контрабанда может быть одновременно ценным грузом, запрещённым предметом и источником фракционной валюты. Это разные механики: продажа за кредиты не равна сдаче на обменной платформе.
-<GuideEntityCards><GuideEntityEmbed Entity="ContrabandPallet"/><GuideEntityEmbed Entity="ContrabandPalletPirate"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ContrabandPallet" Caption="auto"/><GuideTexture Entity="ContrabandPalletPirate" Caption="auto"/></GuideEntityCards>
 
 ## Как сдать фракции
 Поставьте предметы на её обменную платформу. Откройте связанную консоль, нажмите **оценку**, проверьте список принимаемых вещей и сумму, затем подтвердите сдачу. Консоль забирает только предметы с положительной ценностью для своей валюты. У стопок учитывается количество; неподходящая валюта или нулевая ценность не дают награды.
@@ -159,7 +159,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 Платформа ТСФ выдаёт фракционные военные кредиты, используемые её снабжением; платформа Авангарда — чипы данных. Не путайте их с обычными кредитами или телекристаллами Синдиката. Получатель обязан использовать собственную консоль обмена.
 
 Например, **золото с печатью Авангарда обменивается на 75 военных кредитов ТСФ**, а **канистра нанитов Федерации — на 75 чипов данных**. Это ценность обмена, не обычная цена продажи на торговой паллете.
-<GuideEntityCards><GuideEntityEmbed Entity="PDVStampedGold"/><GuideEntityEmbed Entity="TSFNaniteCanister"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="PDVStampedGold" Caption="auto"/><GuideTexture Entity="TSFNaniteCanister" Caption="auto"/></GuideEntityCards>
 
 ## Доставка и сохранность
 Награда за **выполненный запрос на доставку** определяется самим запросом, этикеткой и пунктом сдачи. Она не начисляется просто за перелёт с контрабандой. Для обмена без заказа используется платформа выше. При продаже ящика проверяйте, какие предметы внутри попадут под сдачу.
@@ -179,6 +179,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 **Дальние координаты:** 18–22 км — дроны T1; 22–25 км — внутренний пояс T2; 25–30 км — средний пояс T2. В более дальних областях генератор использует тяжёлые группы Medusa, Assembly, Bracket, Mauler и Quake.
 
 **Скопление LINEAR:** встречаются Mote, Dander и MPulsar. В окружающей области — Rammer Small / Medium, MPulsar, Lance, а также Wasp, Crown, Gust и Piercer. Ориентир центра области — примерно **(9088; −7552)**. Цвет дронов на карте — тёмно-красный.
+
+<GuideEntityCards>
+<GuideTexture Entity="NpcStationAiRammer" Caption="Ядро ИИ"/>
+<GuideTexture Entity="ClothingBackpackDroneLootT1" Caption="Регистратор T1"/>
+<GuideTexture Entity="ClothingBackpackDroneLootT21" Caption="Регистратор T2"/>
+</GuideEntityCards>
 
 ## Трофеи
 Ядро ИИ можно снять и продать. Базовая оценка обычного ядра — **40 000 кр.**; для Dander задано **20 000 кр.**
@@ -240,7 +246,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobFleshClampExpeditions"/>
-  <GuideEntityEmbed Entity="DartAberrantFleshHorrorSpikeGuidebook"/>
+  <GuideTexture Entity="DartAberrantFleshHorrorSpikeGuidebook" Caption="auto"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 40 (смерть)
   - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
@@ -560,7 +566,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobBloodCultistJanitor"/>
-  <GuideEntityEmbed Entity="ClothingBeltCultForceField"/>
+  <GuideTexture Entity="ClothingBeltCultForceField" Caption="auto"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 140 (смерть)
   - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
@@ -659,7 +665,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobBloodCultistAscended"/>
-  <GuideEntityEmbed Entity="ClothingNeckAmuletBloodCult"/>
+  <GuideTexture Entity="ClothingNeckAmuletBloodCult" Caption="auto"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 300 (крит), 400 (смерть)
   - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
@@ -1937,8 +1943,8 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Index.xml -->
 # Экспедиции
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerSalvageExpedition"/>
-<GuideEntityEmbed Entity="SpaceCashExpeditionT3"/>
+<GuideTexture Entity="ComputerSalvageExpedition" Caption="auto"/>
+<GuideTexture Entity="SpaceCashExpeditionT3" Caption="auto"/>
 </GuideEntityCards>
 Консоль «Утилизаторские экспедиции» предлагает пять заданий. Нажатие **«Принять»** создаёт отдельную карту и автоматически отправляет туда корабль на БСС. Диск координат не выдаётся; выбирать планету вручную на MAP не требуется.
 
@@ -1979,7 +1985,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 Досрочное завершение не засчитывает невыполненную цель. Награда выдаётся при завершении рейса с выполненным заданием: кредитный кейс появляется возле консоли экспедиций. В экстремальном задании он содержит 60 000 кредитов, даже если старое название кейса указывает 70 000.
 
-**По истечении таймера корабль автоматически уходит на БСС, а карта экспедиции удаляется.** Проверка присутствия команды относится к досрочному запросу и не останавливает обычный таймер. Возврат происходит в свободную точку основного сектора, а не к прежнему причалу.
+<GuideNote Tone="warning" Text="[bold]По истечении таймера корабль автоматически уходит на БСС, а карта экспедиции удаляется.[/bold] Проверка присутствия команды относится к досрочному запросу и не останавливает обычный таймер. Возврат происходит в свободную точку основного сектора, а не к прежнему причалу."/>
 
 «Следующее предложение» показывает обновление заданий: после успеха ожидание 5 минут, после провала — 7 минут 30 секунд.
 
@@ -1989,15 +1995,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Index.xml -->
 # Заработок
 
-[Грузоперевозки](guide://CargoHauling)
-
-[Курьер](guide://ColossusCourier)
-
-[Контрабанда](guide://LuaMContraband)
-
-[Охота на дронов](guide://LuaMDroneLoot)
-
-[Продажа газов](guide://ColossusCommodities)
+<GuideHub Root="ColossusActivities"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Mining.xml -->
@@ -2005,12 +2003,18 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 ## Что взять
 <GuideEntityCards>
-<GuideEntityEmbed Entity="Pickaxe"/>
-  <GuideEntityEmbed Entity="MiningDrill"/>
-  <GuideEntityEmbed Entity="OreBag"/>
+<GuideTexture Entity="Pickaxe" Caption="auto"/>
+  <GuideTexture Entity="MiningDrill" Caption="auto"/>
+  <GuideTexture Entity="OreBag" Caption="auto"/>
 </GuideEntityCards>
 
 Нужны кирка или бур, мешок для руды, подходящие скафандр и дыхательный газ. На корабле оставьте место под груз. Для переработки понадобится запитанный переработчик руды.
+
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="SteelOre" Caption="Добыча"/>
+<GuideTexture Entity="OreProcessor" Caption="Переработка"/>
+<GuideTexture Entity="SpaceCash100" Caption="Продажа"/>
+</GuideEntityCards>
 
 ## Добыча
 - Найдите астероид и остановите корабль на безопасном расстоянии от породы. Запомните место возвращения.
@@ -2020,8 +2024,8 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 ## Переработка и продажа
 <GuideEntityCards>
-<GuideEntityEmbed Entity="OreProcessor"/>
-  <GuideEntityEmbed Entity="ComputerPalletConsole"/>
+<GuideTexture Entity="OreProcessor" Caption="auto"/>
+  <GuideTexture Entity="ComputerPalletConsole" Caption="auto"/>
 </GuideEntityCards>
 
 Загрузите руду в переработчик. В его меню выберите материал и закажите переработку. Заберите получившиеся листы или слитки; требования и доступные изделия показаны в меню станка.
@@ -2076,13 +2080,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Index.xml -->
 # Справочники
 
-[Снаряжение](guide://ColossusReferenceEquipment)
-
-[Ресурсы](guide://ColossusReferenceResources)
-
-[Химия](guide://Chemicals)
-
-[Рецепты](guide://ColossusRecipes)
+<GuideHub Root="ColossusCatalogue"/>
 <!-- /article -->
 
 
@@ -2187,6 +2185,11 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 Для обычной брони сначала вычитается плоское уменьшение, затем остаток умножается на коэффициент. Коэффициент 0,6 означает 40% защиты: 30 урона превращаются в 18. Отсутствующий тип урона этой бронёй не уменьшается.
 
+<GuideEntityCards>
+<GuideTexture Entity="ClothingOuterArmorBasic" Caption="Носимая броня"/>
+<GuideTexture Entity="ClothingOuterHardsuitSpatio" Caption="Защита от вакуума"/>
+</GuideEntityCards>
+
 ## Пробитие
 Для защитного коэффициента c между 0 и 1 и пробития p игра использует c^(1−p). Положительное плоское уменьшение умножается на (1−p). При 50% пробития коэффициент 0,6 становится примерно 0,775: из 30 остаётся 23,24. Отрицательное пробитие усиливает защиту: p = −50% даёт примерно 13,94 урона. Коэффициенты уязвимости выше 1 частичное пробитие не меняет.
 
@@ -2195,13 +2198,13 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Слои и части тела
 Расчёт проверяет надетые предметы во всех участвующих слотах, кроме карманов. Лежащий в рюкзаке бронежилет защиты не даёт. Без плоских уменьшений коэффициенты разных предметов перемножаются: 40% и 20% защиты дают 52%, а не 60%. При плоских уменьшениях каждый предмет обрабатывается последовательно.
 
-**Здесь нет таблицы бронеклассов отдельных конечностей.** Наведение и повреждение частей тела существуют, но обычный обработчик брони не сверяет покрытие предмета с выбранной частью: шлем и костюм участвуют через инвентарь, а урон конечности также получает его модификаторы. Нельзя считать непокрытую руку гарантированным обходом брони. Состояние и множители частей тела дополнительно меняют результат.
+<GuideNote Tone="warning" Text="[bold]Здесь нет таблицы бронеклассов отдельных конечностей.[/bold] Наведение и повреждение частей тела существуют, но обычный обработчик брони не сверяет покрытие предмета с выбранной частью: шлем и костюм участвуют через инвентарь, а урон конечности также получает его модификаторы. Нельзя считать непокрытую руку гарантированным обходом брони. Состояние и множители частей тела дополнительно меняют результат."/>
 
 ## Встроенное силовое поле скафандра
 
 Некоторые скафандры имеют включаемый **персональный щит**. Наденьте костюм и включите поле действием на панели; дождитесь полного развёртывания. Во время развёртывания щит ещё не перехватывает удары. Осмотр показывает, поднято ли поле, его остаток или задержку после разрушения. Снятие костюма выключает поле.
 
-**Запас поля и энергия батареи — разные величины.** Попадания расходуют запас поля; включённое поле восстанавливает его с указанной скоростью и одновременно тратит энергию батареи. При выключенном поле его запас не восстанавливается по обычной скорости регенерации. Самозаряд батареи, если предусмотрен моделью, работает отдельно: он может быть слабее расхода включённого поля.
+<GuideNote Tone="warning" Text="[bold]Запас поля и энергия батареи — разные величины.[/bold] Попадания расходуют запас поля; включённое поле восстанавливает его с указанной скоростью и одновременно тратит энергию батареи. При выключенном поле его запас не восстанавливается по обычной скорости регенерации. Самозаряд батареи, если предусмотрен моделью, работает отдельно: он может быть слабее расхода включённого поля."/>
 
 В [каталоге брони](guide://ColossusCatalogueArmor) у таких костюмов есть отдельный блок щита. **Расход заряда ×0,5** означает, что перехваченные 20 единиц этого урона снимут 10 единиц запаса; **×1,5** — снимут 30. Это коэффициент расхода щита, а не процент защиты тела. Если есть плоское уменьшение, оно вычитается перед умножением. Для типов урона без особого коэффициента расход равен ×1. Отдельный удар, для которого итоговый расход равен нулю, поле не перехватывает.
 
@@ -2224,7 +2227,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 # Вставные бронепластины
 Пластина работает в надетом предмете с держателем пластин. Откройте его хранилище и вставьте пластину; первая становится активной. Другие внутри не складывают защиту с активной. После её извлечения активной становится следующая подходящая пластина. Осмотр показывает выбранную пластину и остаточную прочность.
 
-**Поглощение и износ — разные значения.** Пластина может не защищать от данного урона, но всё равно терять от него прочность. Процент поглощения не падает вместе с прочностью. При достижении порога пластина разрушается; при обработке удара поглощение рассчитывается до нанесения износа пластине.
+<GuideNote Tone="warning" Text="[bold]Поглощение и износ — разные значения.[/bold] Пластина может не защищать от данного урона, но всё равно терять от него прочность. Процент поглощения не падает вместе с прочностью. При достижении порога пластина разрушается; при обработке удара поглощение рассчитывается до нанесения износа пластине."/>
 
 В сравнении «износ ×1,5» означает, что 20 единиц этого входящего урона снимают 30 прочности. Скорость указана как доля скорости без пластины: ходьба/бег. Она умножается на замедление костюма.
 [Каталог брони](guide://ColossusCatalogueArmor).
@@ -2272,6 +2275,11 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 В [каталоге боеприпасов](guide://ColossusCatalogueAmmo) выберите калибр над поиском. В описании указаны **прямой урон по типам**, **бронепробитие** и особые свойства. Прямой урон — значение до защиты цели; его нельзя считать гарантированной потерей здоровья через скафандр.
 
+<GuideEntityCards>
+<GuideTexture Entity="Magazine9x19mmSubMachineGunFMJ" Caption="Тип боеприпаса"/>
+<GuideTexture Entity="Magazine762x39mmLowCapacityPractice" Caption="Калибр и совместимость"/>
+</GuideEntityCards>
+
 **FMJ** — обычный оболочечный патрон, удобный для сравнения базового урона. **AP** — бронебойный вариант: сравнивайте пробитие вместе с уроном, а не только название. Другие варианты могут менять тип урона, число снарядов или давать дополнительный эффект — это указано в их описании.
 
 ## Дробь и одиночная пуля
@@ -2287,10 +2295,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 # Мониторинг и управление устройствами
   Для наблюдения за атмосферой и управления оборудованием есть три системы. Выбирайте по задаче: параметры воздуха в комнате, общие тревоги или состояние трубосетей.
 
-  <Box>
-    <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
-    <GuideEntityEmbed Entity="AirSensor" Caption=""/>
-  </Box>
+  <GuideEntityCards><GuideTexture Entity="AirAlarm" Caption=""/>
+    <GuideTexture Entity="AirSensor" Caption=""/>
+  </GuideEntityCards>
   <Box>
     [Воздушные сигнализации](guide://AirAlarms)
   </Box>
@@ -2308,10 +2315,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
     [color=#999999]*Обзор тревог по станции*[/color]
   </Box>
 
-  <Box>
-    <GuideEntityEmbed Entity="ComputerAtmosMonitoring" Caption=""/>
-    <GuideEntityEmbed Entity="GasPipeSensor" Caption=""/>
-  </Box>
+  <GuideEntityCards><GuideTexture Entity="ComputerAtmosMonitoring" Caption=""/>
+    <GuideTexture Entity="GasPipeSensor" Caption=""/>
+  </GuideEntityCards>
   <Box>
     [Монитор атмосферных сетей](guide://AtmosphericNetworkMonitor)
   </Box>
@@ -2374,10 +2380,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 Астероиды в секторе Фронтира — надёжный источник больших объёмов обычно газообразных элементов в виде [color=gold]затвердевших залежей[/color].
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="GasDepositOxygen" Caption="залежи кислорода"/>
-<GuideEntityEmbed Entity="GasDepositNitrogen" Caption="залежи азота"/>
-<GuideEntityEmbed Entity="GasDepositPlasma" Caption="залежи плазмы"/>
-<GuideEntityEmbed Entity="GasDepositCarbonDioxide" Caption="залежи углекислого газа"/>
+<GuideTexture Entity="GasDepositOxygen" Caption="залежи кислорода"/>
+<GuideTexture Entity="GasDepositNitrogen" Caption="залежи азота"/>
+<GuideTexture Entity="GasDepositPlasma" Caption="залежи плазмы"/>
+<GuideTexture Entity="GasDepositCarbonDioxide" Caption="залежи углекислого газа"/>
 </GuideEntityCards>
 
 Атмосферные шаттлы, например, [color=yellow]Gasbender[/color] и [color=yellow]Ambition[/color], оснащены всем необходимым для добычи этих ресурсов. При покупке шаттла ищите категорию [color=cyan]Атмосфера[/color] в [color=steelblue]консоли верфи[/color].
@@ -2393,10 +2399,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 - Сканер газовых месторождений (опционально)
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="GasMiningDrill"/>
-<GuideEntityEmbed Entity="GaslockFrame"/>
-<GuideEntityEmbed Entity="PortableGeneratorJrPacman" Caption="источник питания"/>
-<GuideEntityEmbed Entity="GasDepositLocator"/>
+<GuideTexture Entity="GasMiningDrill" Caption="auto"/>
+<GuideTexture Entity="GaslockFrame" Caption="auto"/>
+<GuideTexture Entity="PortableGeneratorJrPacman" Caption="источник питания"/>
+<GuideTexture Entity="GasDepositLocator" Caption="auto"/>
 </GuideEntityCards>
 
 ## Процедура добычи
@@ -2583,7 +2589,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 # Регулятор входного давления
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="GasPressureRegulator"/>
+<GuideTexture Entity="GasPressureRegulator" Caption="auto"/>
 </GuideEntityCards>
 
 Пассивно пропускает газ из входной [трубосети](guide://PipeNetworks) в выходную, когда давление на входе выше заданного порога. При снижении давления до порога поток прекращается. Электропитание не требуется.
@@ -2634,7 +2640,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/Index.xml -->
 # Мехи: сборка и эксплуатация
 
-<GuideEntityCards><GuideEntityEmbed Entity="MechRipley"/><GuideEntityEmbed Entity="MechRipley2"/><GuideEntityEmbed Entity="MechEquipmentGrabber"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MechRipley" Caption="auto"/><GuideTexture Entity="MechRipley2" Caption="auto"/><GuideTexture Entity="MechEquipmentGrabber" Caption="auto"/></GuideEntityCards>
 
 Мех состоит из корпуса, источника питания и сменного оборудования. **Рипли** — грузовой и промышленный мех с открытой кабиной; **Рипли MK-II** имеет герметичную кабину. Боевые S1, S2 и S4 используют другие крепления. Название «пушка для меха» не означает совместимость со всеми корпусами.
 
@@ -2650,7 +2656,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Собрать Рипли: комплект и порядок
 Подготовьте **каркас Рипли, левую и правую руки, левую и правую ноги**, центральный модуль управления Рипли и модуль управления периферией Рипли. Дополнительно нужны **1 отрезок кабеля, 5 листов стали, 10 металлических стержней, батарея**, гаечный ключ, отвёртка, кусачки и заправленный включённый сварочный аппарат. Голова и модуль наведения обычному Рипли не нужны.
 
-<GuideEntityCards><GuideEntityEmbed Entity="RipleyHarness"/><GuideEntityEmbed Entity="RipleyLArm"/><GuideEntityEmbed Entity="RipleyRArm"/><GuideEntityEmbed Entity="RipleyLLeg"/><GuideEntityEmbed Entity="RipleyRLeg"/><GuideEntityEmbed Entity="RipleyCentralElectronics"/><GuideEntityEmbed Entity="RipleyPeripheralsElectronics"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="RipleyHarness" Caption="auto"/><GuideTexture Entity="RipleyLArm" Caption="auto"/><GuideTexture Entity="RipleyRArm" Caption="auto"/><GuideTexture Entity="RipleyLLeg" Caption="auto"/><GuideTexture Entity="RipleyRLeg" Caption="auto"/><GuideTexture Entity="RipleyCentralElectronics" Caption="auto"/><GuideTexture Entity="RipleyPeripheralsElectronics" Caption="auto"/></GuideEntityCards>
 
 1. Примените четыре конечности к каркасу. После последней детали получится **шасси Рипли**. До этого момента гаечный ключ снимает установленные части: начинать затягивать каркас с неполным комплектом не нужно.
 2. Примените к шасси **гаечный ключ → отвёртку → кабель → кусачки**.
@@ -2668,7 +2674,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Установить и выбрать оборудование
 Выйдите из меха, возьмите модуль и примените его к корпусу. Обычная установка занимает **5 секунд**, движение её прерывает. Из кабины установить модуль нельзя. Если установка не начинается, проверьте **совместимость**, свободные места и состояние корпуса.
 
-Обычный Рипли и MK-II имеют **2 места** для промышленного оборудования. Gygax и Durand принимают боевое оборудование S1. Broadsword — лёгкие крепления; Halberd — средние; Flail и Mace — тяжёлые; Spyglass — лёгкие и РЭБ. Среднее крепление само по себе не принимает лёгкое оружие. Модули опознавания занимают место так же, как другое оборудование.
+Обычный Рипли и MK-II имеют **2 места** для промышленного оборудования. Gygax и Durand принимают боевое оборудование S1. Broadsword принимает лёгкие модули; Halberd — лёгкие и средние; Flail и Mace — лёгкие, средние и тяжёлые; Spyglass — лёгкие и РЭБ. Модули опознавания занимают место так же, как другое оборудование.
 
 В контекстном меню пустого меха выберите **«Открыть панель управления»**. Окно показывает **«Целостность»**, **«Энергия»** и **«Доступно слотов»**; кнопка у установленного модуля снимает его. Пилот открывает это же окно действием на панели способностей.
 
@@ -2704,7 +2710,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S1Mechs.xml -->
 # Боевые мехи S1
 
-<GuideEntityCards><GuideEntityEmbed Entity="MechGygax"/><GuideEntityEmbed Entity="MechDurand"/><GuideEntityEmbed Entity="WeaponMechCombatUltraRifle"/><GuideEntityEmbed Entity="WeaponMechCombatShotgun"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MechGygax" Caption="auto"/><GuideTexture Entity="MechDurand" Caption="auto"/><GuideTexture Entity="WeaponMechCombatUltraRifle" Caption="auto"/><GuideTexture Entity="WeaponMechCombatShotgun" Caption="auto"/></GuideEntityCards>
 
 Gygax и Durand — герметичные боевые мехи для действий на гриде и в космосе. У Gygax выше скорость, Durand медленнее и наносит более сильный удар корпусом. Платы, конечности и броневые пластины этих двух моделей **не взаимозаменяемы**.
 
@@ -2735,9 +2741,9 @@ Gygax и Durand — герметичные боевые мехи для дейс
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S2Mechs.xml -->
 # Боевые аппараты S2
 
-<GuideEntityCards><GuideEntityEmbed Entity="AFInterceptor"/><GuideEntityEmbed Entity="AFInterceptorM"/><GuideEntityEmbed Entity="LightMechaAutocannon"/><GuideEntityEmbed Entity="MediumMechTOW"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AFInterceptor" Caption="auto"/><GuideTexture Entity="AFInterceptorM" Caption="auto"/><GuideTexture Entity="LightMechaAutocannon" Caption="auto"/><GuideTexture Entity="MediumMechTOW" Caption="auto"/></GuideEntityCards>
 
-**Broadsword** имеет **3 места** для лёгкого оружия и устройств опознавания. **Halberd** имеет **3 места** для среднего оружия и устройств опознавания; лёгкие пушки он не принимает. Обе модели герметичны и рассчитаны на движение в космосе. На гриде скорость мала: это не замена S1 для прохода по коридорам.
+**Broadsword** имеет **3 места** для лёгкого оружия и устройств опознавания. **Halberd** имеет **3 места** для лёгкого и среднего оружия, а также устройств опознавания. Обе модели герметичны и рассчитаны на движение в космосе. На гриде скорость мала: это не замена S1 для прохода по коридорам.
 
 ## Детали и исследования
 Комплект **Broadsword** производится на precision assembler в ММС: каркас, голова, две руки и две ноги. Электронику печатает принтер схем. Исследование **«Производство S2-механоидов»** стоит **50 000 ОИ**, требует боевого производства механоидов и открывает платы, лёгкие пушки и mech fuel cell. Детали корпуса из исследования убраны — их производство отдельно от РНД.
@@ -2767,14 +2773,14 @@ Halberd использует **свой каркас**, но голову, ру�
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S4Mechs.xml -->
 # Боевые аппараты S4
 
-<GuideEntityCards><GuideEntityEmbed Entity="AFFlail" Scale="0.9"/><GuideEntityEmbed Entity="AFMace" Scale="0.9"/><GuideEntityEmbed Entity="AFFlailE" Scale="0.9"/><GuideEntityEmbed Entity="HeavyMechRPG"/><GuideEntityEmbed Entity="EWACMechaJammer"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AFFlail" Caption="auto" Scale="0.9"/><GuideTexture Entity="AFMace" Caption="auto" Scale="0.9"/><GuideTexture Entity="AFFlailE" Caption="auto" Scale="0.9"/><GuideTexture Entity="HeavyMechRPG" Caption="auto"/><GuideTexture Entity="EWACMechaJammer" Caption="auto"/></GuideEntityCards>
 
-**Flail** принимает тяжёлое оружие и устройства опознавания, всего **3 модуля**. **Mace** использует те же крепления, но имеет **только 1 место**: устройство опознавания займёт единственный слот вооружения. **Spyglass** имеет **3 места** для лёгкого оружия, РЭБ и устройств опознавания; тяжёлые пушки в него не устанавливаются.
+<GuideNote Tone="warning" Text="[bold]Flail[/bold] принимает лёгкое, среднее и тяжёлое оружие, а также устройства опознавания, всего [bold]3 модуля[/bold]. [bold]Mace[/bold] использует те же крепления, но имеет [bold]только 1 место[/bold]: устройство опознавания займёт единственный слот вооружения. [bold]Spyglass[/bold] имеет [bold]3 места[/bold] для лёгкого оружия, РЭБ и устройств опознавания; тяжёлые пушки в него не устанавливаются."/>
 
 ## Что дают исследования
 **«Производство S4-механоидов» за 75 000 ОИ**, после S2, открывает электронику Flail и ракетную установку R3 «Базука». **«Производство продвинутых S4-механоидов» за 45 000 ОИ** открывает модули РЭБ и рецепты вариантов каркаса.
 
-**Для сборки S4 нужен готовый комплект деталей корпуса:** обычный фабрикатор экзокостюмов его не производит. Технологический диск не добавляет станку неподдерживаемые изделия.
+<GuideNote Tone="warning" Text="[bold]Для сборки S4 нужен готовый комплект деталей корпуса:[/bold] обычный фабрикатор экзокостюмов его не производит. Технологический диск не добавляет станку неподдерживаемые изделия."/>
 
 ## Сборка при наличии деталей корпуса
 Нужен каркас **выбранной модели**: Flail, Mace или Spyglass. Все три принимают **голову, две руки и две ноги Flail**, а также центральный модуль, модуль периферии и модуль наведения Flail.
@@ -2799,7 +2805,7 @@ Halberd использует **свой каркас**, но голову, ру�
 ## Восстановить питание корабля
 **Генератор → высоковольтная сеть (HV) → СМЭС → подстанция → средневольтная сеть (MV) → ЛКП → низковольтная сеть (LV) → оборудование.** СМЭС служит запасом энергии: генератор может питать подстанцию и без него. Соседние кабели разных напряжений не соединяются между собой.
 
-<GuideEntityCards><GuideEntityEmbed Entity="PortableGeneratorPacman"/><GuideEntityEmbed Entity="SMESBasic"/><GuideEntityEmbed Entity="SubstationBasic"/><GuideEntityEmbed Entity="APCBasic"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="PortableGeneratorPacman" Caption="auto"/><GuideTexture Entity="SMESBasic" Caption="auto"/><GuideTexture Entity="SubstationBasic" Caption="auto"/><GuideTexture Entity="APCBasic" Caption="auto"/></GuideEntityCards>
 
 1. Откройте генератор и проверьте топливо, состояние и выбранный выход. П.А.К.М.А.Н., С.У.П.Е.Р.П.А.К.М.А.Н. и старшие топливные модели умеют выдавать HV или MV; переключайте выход **при остановленном генераторе**. Закрепите генератор гаечным ключом над кабелем выбранного напряжения.
 2. Загрузите топливо и нажмите запуск. Плазменные и урановые модели принимают обычные листы и топливные аналоги: обычный материал автоматически превращается в топливный внутри генератора. М.И.Н.И.П.А.К.М.А.Н. заправляется сварочным топливом и отдаёт энергию прямо в **LV**, поэтому его ставят над низковольтным кабелем.
@@ -2818,7 +2824,7 @@ Halberd использует **свой каркас**, но голову, ру�
 
 Обычный М.И.Н.И.П.А.К.М.А.Н. вмещает **300 единиц** сварочного топлива: на оптимальных **6 кВт** полный бак работает около **45 минут**. У корабельной версии бак **500 единиц**, но стартовая заправка — только **70 единиц**, примерно **10 минут 30 секунд** при 6 кВт. Вода и другие примеси засоряют бак: генератор не запустится или остановится. Слейте содержимое через интерфейс и заправьте чистым сварочным топливом; при сливе жидкость попадает на пол.
 
-**Расход зависит от установленной мощности, а не от того, сколько сеть сейчас забирает.** Разгруженный работающий генератор продолжает сжигать топливо. Для базового П.А.К.М.А.Н. на 30 кВт расход примерно в **1,93 раза** выше, чем на 15 кВт. Когда батареи полны и нагрузки мало, уменьшите настройку или остановите лишний генератор.
+<GuideNote Tone="warning" Text="[bold]Расход зависит от установленной мощности, а не от того, сколько сеть сейчас забирает.[/bold] Разгруженный работающий генератор продолжает сжигать топливо. Для базового П.А.К.М.А.Н. на 30 кВт расход примерно в [bold]1,93 раза[/bold] выше, чем на 15 кВт. Когда батареи полны и нагрузки мало, уменьшите настройку или остановите лишний генератор."/>
 
 Плазменный реактор и модели Г.И.П.Е.Р.П.А.К.М.А.Н. излучают радиацию во время работы; её интенсивность растёт с установленной мощностью. Их размещают в отделённом отсеке, а не возле рабочего места пилота.
 
@@ -2832,7 +2838,7 @@ Halberd использует **свой каркас**, но голову, ру�
 ## Солнечные панели
 Обычная панель даёт до **1,5 кВт**, плазменная — до **2 кВт**, урановая — до **3 кВт**. Это верхние значения при правильном повороте к солнцу. Подведите HV, закрепите панели, подключите солнечный трекер и настройте отслеживание в консоли солнечных панелей. На корабле после поворотов проверяйте фактическую выработку.
 
-**Крыша над панелью полностью прекращает генерацию.** Закрывающие солнце конструкции также влияют на отдачу. Номинальные 20 обычных панелей — до 30 кВт, но потребление корабля нужно сравнивать с текущей выработкой, а не с суммой максимумов.
+<GuideNote Tone="warning" Text="[bold]Крыша над панелью полностью прекращает генерацию.[/bold] Закрывающие солнце конструкции также влияют на отдачу. Номинальные 20 обычных панелей — до 30 кВт, но потребление корабля нужно сравнивать с текущей выработкой, а не с суммой максимумов."/>
 
 
 [ТЭГ](guide://ColossusTEG) · [Электростанция Эдисона](guide://ColossusEdison) · [Ремонт корабля](guide://ColossusShipRepair).
@@ -2842,8 +2848,8 @@ Halberd использует **свой каркас**, но голову, ру�
 # Изменение мощности
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="PortableGeneratorPacman"/>
-  <GuideEntityEmbed Entity="SMESBasic"/>
+<GuideTexture Entity="PortableGeneratorPacman" Caption="auto"/>
+  <GuideTexture Entity="SMESBasic" Caption="auto"/>
 </GuideEntityCards>
 
 Генераторы и накопители подстраивают отдаваемую мощность под нагрузку **постепенно**. После резкого включения потребителей возможна краткая просадка питания, даже если максимальной мощности источников достаточно.
@@ -2862,8 +2868,8 @@ Halberd использует **свой каркас**, но голову, ру�
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/ShipyardNFROperation.xml -->
 # Запуск реактора и турбины
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="NuclearReactorNormal"/>
-  <GuideEntityEmbed Entity="Turbine"/>
+  <GuideTexture Entity="NuclearReactorNormal" Caption="auto"/>
+  <GuideTexture Entity="Turbine" Caption="auto"/>
 </GuideEntityCards>
 Реактор **нагревает газ**. Турбина забирает тепло газа и выдаёт электричество. Рабочий контур: **реактор → турбина → охлаждение/обратная труба → реактор**. Это руководство для установок деления с сеткой стержней; антиматерия и плазменный генератор работают иначе.
 
@@ -2875,8 +2881,8 @@ Halberd использует **свой каркас**, но голову, ру�
 
 ## 2. Установите топливо
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="CerenkiteReactorFuelRod"/>
-  <GuideEntityEmbed Entity="UraniumReactorFuelRod"/>
+  <GuideTexture Entity="CerenkiteReactorFuelRod" Caption="auto"/>
+  <GuideTexture Entity="UraniumReactorFuelRod" Caption="auto"/>
 </GuideEntityCards>
 - Оставьте управляющие стержни на **100%**: это полностью введённое положение, которое подавляет реакцию.
 - Примените топливный стержень к реактору: он окажется на полке слева в интерфейсе.
@@ -2908,7 +2914,7 @@ Halberd использует **свой каркас**, но голову, ру�
   <Box>Температура продолжает расти</Box><Box>Введите управляющие стержни до 100% и сохраните циркуляцию/охлаждение. Не перекрывайте горячий контур.</Box>
 </GuideTable>
 
-**Корпус реактора и вход турбины — разные температуры.** Реактор начинает перегреваться выше 1200 K (≈927 °C), гореть выше 1500 K (≈1227 °C), плавиться выше 2000 K (≈1727 °C). Турбина сигнализирует перегрев от 2500 K и перестаёт извлекать энергию от 3000 K. Не ждите лампы турбины, если уже перегревается сам реактор.
+<GuideNote Tone="warning" Text="[bold]Корпус реактора и вход турбины — разные температуры.[/bold] Реактор начинает перегреваться выше 1200 K (≈927 °C), гореть выше 1500 K (≈1227 °C), плавиться выше 2000 K (≈1727 °C). Турбина сигнализирует перегрев от 2500 K и перестаёт извлекать энергию от 3000 K. Не ждите лампы турбины, если уже перегревается сам реактор."/>
 
 ## Остановка и замена топлива
 Введите управляющие стержни до 100%, дождитесь снижения температуры и сохраните охлаждение. Выберите израсходованный стержень в сетке, извлеките на полку и заберите; новый устанавливается тем же способом. Горячие и радиоактивные детали требуют защиты — положение 100% не охлаждает их мгновенно.
@@ -2920,6 +2926,12 @@ Halberd использует **свой каркас**, но голову, ру�
 # Колосс Централл
 
 Гражданская организация на станции [«Колосс Централл»](guide://LuaMColossusCentral). Станцией руководит комендант, за безопасность отвечает её служба охраны. [Медицинский Центр](guide://ColossusMedicalFaction) — отдельная организация со своим директором и штатом.
+
+<GuideEntityCards>
+<GuideTexture Entity="ComputerBankATM" Caption="Банк"/>
+<GuideTexture Entity="SafetyDepositConsole" Caption="Личное хранение"/>
+<GuideTexture Entity="ComputerShipyardSr" Caption="Верфь станции"/>
+</GuideEntityCards>
 
 ## Должности
 - **Наёмник** — без ограничения — самостоятельно выбирает работу, выполняет контракты и зарабатывает на торговле, добыче или экспедициях.
@@ -2938,6 +2950,12 @@ Halberd использует **свой каркас**, но голову, ру�
 
 ММС — промышленная компания с базой на **«Хоккайдо»**. Её сотрудники добывают сырьё, выпускают материалы, компоненты и оборудование, выполняют производственные заказы.
 
+<GuideEntityCards>
+<GuideTexture Entity="IndustrialPressEconomyElectronicsMMC" Caption="Электроника"/>
+<GuideTexture Entity="PrecisionAssemblerEconomy" Caption="Сборка компонентов"/>
+<GuideTexture Entity="IndustrialFurnaceEconomy" Caption="Материалы"/>
+</GuideEntityCards>
+
 ## Должности «Хоккайдо»
 - **Директор ММС** — 1 — руководит предприятием и отвечает за его активы.
 - **Охранник ММС** — 2 — защищает персонал, грузы и оборудование.
@@ -2953,34 +2971,40 @@ Halberd использует **свой каркас**, но голову, ру�
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/Precursors/Index.xml -->
-# Предтечи, АДС и воины Азакимы
+# Предтечи, АСЗ и воины Азакимы
 
-**Предтечи** — создатели Азакимов и автоматизированных оборонительных систем. **Азакимы** — их генетически усовершенствованные воины, а **АДС** — техника и обслуживающие её синтетики. Вместе они представляют самостоятельную силу сектора со своими объектами, кораблями и задачами.
+**Предтечи** — создатели Азакимов и автоматизированных оборонительных судов. **Азакимы** — их генетически усовершенствованные воины, а **борги АСЗ** обслуживают и защищают эти суда. Вместе они представляют самостоятельную силу сектора со своими объектами, кораблями и задачами.
+
+<GuideEntityCards>
+<GuideTexture Entity="PlayerBorgRedacted" Caption="Киборг АСЗ"/>
+<GuideTexture Entity="PlayerStationAiRedacted" Caption="Ядро ИИ"/>
+<GuideTexture Entity="ADSAsakimIDCard" Caption="Префрактурная карта"/>
+</GuideEntityCards>
 
 ## Назначение сторон
 
-Предтечи стоят за технологиями и происхождением этой силы. Азакимы действуют как её воины и командиры на месте, а борги АДС поддерживают работоспособность кораблей и выполняют поставленные задачи. Бортовое ядро ИИ руководит обслуживающими боргами; с появлением Азакимов борги переходят под их командование.
+Предтечи стоят за технологиями и происхождением этой силы. Азакимы действуют как её воины и командиры на месте, а борги АСЗ поддерживают работоспособность кораблей и выполняют поставленные задачи. Бортовое ядро ИИ руководит обслуживающими боргами; с появлением Азакимов борги переходят под их командование.
 
-Без Азакимов деятельность боргов сосредоточена на сохранении активов АДС, в том числе хранилища, и противодействии биоугрозе. Это сочетание инженерной работы, охраны и выездов для устранения угроз. С появлением воинов Азакимов начинается активная операция под их руководством: приоритетом становятся приказы командования, а не прежнее самостоятельное патрулирование.
+Без Азакимов деятельность боргов сосредоточена на сохранении активов АСЗ, в том числе хранилища, и противодействии биоугрозе. Это сочетание инженерной работы, охраны и выездов для устранения угроз. С появлением воинов Азакимов начинается активная операция под их руководством: приоритетом становятся приказы командования, а не прежнее самостоятельное патрулирование.
 
 Задачи Азакимов — установить власть в секторе и ограничить распространение префрактурных технологий. К таким технологиям относятся блюспейс-сумки, скороходы и щиты серии «500». Это утраченные разработки NanoTrasen и компаний Синдиката, интересующие Предтеч как аналоги их собственных технологий. Поиск таких предметов, переговоры об их передаче и взаимодействие с организациями сектора дают воинам занятие помимо непосредственного боя.
 
-АДС и Азакимы связаны с Предтечами. Дроны-убийцы связаны с Экзекуторами, а происхождение Монолита остаётся неизвестным даже Предтечам. Эти силы и явления имеют разное происхождение.
+АСЗ и Азакимы связаны с Предтечами. Дроны-убийцы связаны с Экзекуторами, а происхождение Монолита остаётся неизвестным даже Предтечам. Эти силы и явления имеют разное происхождение.
 
 ## Как появляется роль
 
-Воин Азаким и борг АДС появляются среди **призрачных ролей**, когда в секторе есть соответствующее свободное тело. Корабли Азакимов могут прибыть как событие; борги встречаются на судах АДС. Наличие роли в списке зависит от происходящего в раунде.
+Воин Азаким и борг АСЗ появляются среди **призрачных ролей**, когда в секторе есть соответствующее свободное тело. Корабли Азакимов могут прибыть как событие; борги встречаются на судах АСЗ. Наличие роли в списке зависит от происходящего в раунде.
 
 Для воина Азаким требуется **50 часов общего игрового времени**. У боргов есть вариант с тем же порогом и вариант без этого ограничения. Условия конкретного тела указаны в окне призрачных ролей.
 
-## Первые действия борга АДС
+## Первые действия борга АСЗ
 
-1. Осмотрите судно: состояние корпуса, питание, управление, вооружение и наличие бортового ядра. Свяжитесь с другими силами АДС и уточните общую задачу.
-2. Откройте свои законы и проверьте установленные модули. Борг АДС начинает с инженерным оснащением и оружием: его работа объединяет обслуживание судна, восстановление повреждений и защиту.
+1. Осмотрите судно: состояние корпуса, питание, управление, вооружение и наличие бортового ядра. Свяжитесь с другими силами АСЗ и уточните общую задачу.
+2. Откройте свои законы и проверьте установленные модули. Борг АСЗ начинает с инженерным оснащением и оружием: его работа объединяет обслуживание судна, восстановление повреждений и защиту.
 3. Проверьте заряд перед выходом. Стартовая батарея борга самозаряжающаяся; после интенсивной работы следите за восстановлением энергии. У автопульсера и УРК также есть собственное пополнение заряда — их готовность проверяется отдельно.
 4. Для восстановления утраченных частей корабля выберите **перезаряжающееся УРК**. Оно входит в специальный строительный модуль вместе с РСУ и устройством прокладки труб. УРК восстанавливает уничтоженные объекты по сохранённой схеме корабля; повреждённые, но ещё существующие объекты чинятся обычными инструментами. Порядок работы описан в [ремонте шаттлов](guide://ColossusShipRepair).
 
-Специальное УРК АДС хранит до **800 зарядов** и восстанавливает **1 заряд в секунду**. Его метка позволяет восстанавливать узлы АДС, для которых обычное УРК не подходит.
+Специальное УРК АСЗ хранит до **800 зарядов** и восстанавливает **1 заряд в секунду**. Его метка позволяет восстанавливать узлы АСЗ, для которых обычное УРК не подходит.
 
 Боевой комплект включает огнестрельное и энергетическое оружие, а инженерный — инструменты, строительные материалы, кабель и навигационное оснащение. Переключайте модули под задачу: сначала восстановите возможность движения и управления, затем занимайтесь остальными повреждениями.
 
@@ -2998,9 +3022,9 @@ Halberd использует **свой каркас**, но голову, ру�
 
 «Касатур» связан с носителем и не снимается самостоятельно. Его использование требует соответствующего мозгового органа Азакима; это специализированное оснащение, а не обычный сменный скафандр. При лечении учитывайте, что доступ к телу осложнён закреплённой бронёй.
 
-Родные языки Азакима — драконий и азазиба. Для координации с союзниками есть встроенная связь по каналу **«Предтеч»**; борги АДС понимают азазиба. При контакте с остальными обитателями сектора учитывайте языковой барьер.
+Родные языки Азакима — драконий и азазиба. Для координации с союзниками есть встроенная связь по каналу **«Предтеч»**; борги АСЗ понимают азазиба. При контакте с остальными обитателями сектора учитывайте языковой барьер.
 
-Начните с установления связи с другими воинами, ядрами и боргами АДС. Определите общий план: какие объекты требуют защиты, где нужна инженерная поддержка и какие технологии предстоит найти. Отдавайте боргам конкретные задачи с местом, целью и ожидаемым результатом — это связывает работу экипажа с общей операцией.
+Начните с установления связи с другими воинами, ядрами и боргами АСЗ. Определите общий план: какие объекты требуют защиты, где нужна инженерная поддержка и какие технологии предстоит найти. Отдавайте боргам конкретные задачи с местом, целью и ожидаемым результатом — это связывает работу экипажа с общей операцией.
 
 [Пилотирование](guide://Piloting) · [Ремонт шаттлов](guide://ColossusShipRepair) · [Киборги](guide://Cyborgs) · [Происхождение Монолита](guide://LuaMLoreMonolith)
 <!-- /article -->
@@ -3008,29 +3032,19 @@ Halberd использует **свой каркас**, но голову, ру�
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/Index.xml -->
 # Роли
 
-[Наёмники](guide://ColossusMercenaries)
-
-[ММС](guide://ColossusMMCRoles)
-
-[ТСФ](guide://ColossusTSFRoles)
-
-[Авангард Нордфолла](guide://ColossusNordfallRoles)
-
-[СССП](guide://ColossusUSSPRoles)
-
-[ЧВК «Вайпер»](guide://Viper_Group)
-
-[Колосс Централл](guide://Caelestinus)
-
-[Медицинский Центр](guide://ColossusMedicalFaction)
-
-[Особые роли](guide://ColossusSpecialRoles)
+<GuideHub Root="Factions"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/Medical/Index.xml -->
 # Медицинский Центр
 
 Отдельная медицинская организация со станцией [«Медицинский Центр»](guide://LuaMMedical), собственным руководителем и парамедиками.
+
+<GuideEntityCards>
+<GuideTexture Entity="Medkit" Caption="Неотложная помощь"/>
+<GuideTexture Entity="MedicalBiofabricator" Caption="Восстановление органов"/>
+<GuideTexture Entity="CryogenicSleepUnit" Caption="Хранение персонажа"/>
+</GuideEntityCards>
 
 ## Должности
 - **Директор медицинского центра** — 1 — организует работу центра и медицинской команды.
@@ -3058,12 +3072,22 @@ Halberd использует **свой каркас**, но голову, ру�
 
 В особых режимах состав должностей может отличаться.
 [Священный Военный Устав](guide://ColossusNordfallCharter)
+
+<GuideEntityCards>
+<GuideTexture Entity="BannerNordfallVanguard" Caption="Авангард Нордфолла"/>
+<GuideTexture Entity="BookNordfallSOP" Caption="Военный устав"/>
+</GuideEntityCards>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/TSF/Command.xml -->
 # Командование и должности ТСФ
 
 В лобби местного контингента выбираются полковник, капитан, сержант, рядовой, фельдшер, инженер, оперативник МАРСОК и киборг. Количество мест и назначение должностей указаны в [основной статье ТСФ](guide://TSFMC_Entry).
+
+<GuideEntityCards>
+<GuideTexture Entity="BannerNfsd" Caption="Транс-Солнечная Федерация"/>
+<GuideTexture Entity="BookTSFSOP" Caption="Военный кодекс"/>
+</GuideEntityCards>
 
 **Полковник** руководит контингентом; **капитан** координирует корабль и исполнение приказов; **сержанты** организуют и обучают рядовых. Инженеры и фельдшеры выполняют технические и медицинские задачи подразделения. **Оперативник МАРСОК** в холодной фазе войны надзирает за исполнением устава и защищает главу фракции и его снаряжение. Условия участия в бою заданы [правилом фракционных конфликтов](guide://LuaMRule2).
 
@@ -3079,7 +3103,7 @@ Halberd использует **свой каркас**, но голову, ру�
 # Морская пехота ТСФ
 TSFMC — вооружённые силы Транс-Солнечной Федерации. Основная база в секторе — [флагман «Халикон»](guide://LuaMHalicon); дополнительный корабль — [«Арктурус»](guide://LuaMArcturus). Команда ведёт операции, ремонтирует технику и обеспечивает собственное снабжение.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponDEWCalico"/><GuideEntityEmbed Entity="ClothingOuterHardsuitM82c"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponDEWCalico" Caption="auto"/><GuideTexture Entity="ClothingOuterHardsuitM82c" Caption="auto"/></GuideEntityCards>
 
 ## Должности «Халикона»
 - **Полковник ТСФ** — 1 — руководит контингентом и координирует подчинённых.
@@ -3122,7 +3146,7 @@ TSFMC — вооружённые силы Транс-Солнечной Феде
 
 Число обозначает общий штат.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponRifleAK502"/><GuideEntityEmbed Entity="ClothingOuterHardsuitUsspL27"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponRifleAK502" Caption="auto"/><GuideTexture Entity="ClothingOuterHardsuitUsspL27" Caption="auto"/></GuideEntityCards>
 
 [Оборудование Камелота](guide://LuaMCamelot) · [Правила сервера](guide://LuaMRuleset)
 
@@ -3146,7 +3170,7 @@ TSFMC — вооружённые силы Транс-Солнечной Феде
 # ЧВК «Вайпер»
 Viper Group — частная военная компания, работающая по контрактам. В секторе её сотрудники начинают на [станции «Камелот»](guide://LuaMCamelot) рядом с контингентом СССП. Для компании установлены собственные верфь, производственный станок и консоль оперативного управления.
 
-<GuideEntityCards><GuideEntityEmbed Entity="CompanyLogoViperGroup"/><GuideEntityEmbed Entity="ComputerShipyardViper"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="CompanyLogoViperGroup" Caption="auto"/><GuideTexture Entity="ComputerShipyardViper" Caption="auto"/></GuideEntityCards>
 
 ## Должности «Камелота»
 - **Командир «Viper Group»** — 1 — руководит компанией и организует её деловые связи.
@@ -3162,6 +3186,10 @@ Viper Group — частная военная компания, работающ
 # Империя Феникса и Авангард Нордфолла
 
 Истоки Империи Феникса лежат на периферии освоенного космоса. В **2554 году** там возник **Алый Феникс** — торговое объединение, связанное с поставками Синдикату и охраной Gorlex. Спустя полтора столетия корпоративная война превратила торговые связи в основу нового политического союза.
+
+<GuideEntityCards>
+<GuideTexture Entity="BannerNordfallVanguard" Caption="auto"/>
+</GuideEntityCards>
 
 ## Рождение Империи
 
@@ -3240,12 +3268,18 @@ Viper Group — частная военная компания, работающ
 
 ## Державы и жители сектора
 [Колосс](guide://LuaMLoreColoss) · [Транс-Солнечная Федерация](guide://LuaMLoreTSF) · [Империя Феникса и Авангард Нордфолла](guide://LuaMLoreAN) · [Союз Советских Социалистических Планет](guide://LuaMLoreUSSP) · [История ММС](guide://LuaMLoreMMC) · [ЧВК «Вайпер»](guide://LuaMLoreViper).
+
+<GuideHub Root="LuaMLore"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/MMC.xml -->
 # ММС
 
 Промышленное присутствие **ММС** в Колоссе сосредоточено на **«Хоккайдо»**. Здесь сырьё превращается в компоненты, компоненты — в оборудование, а производственные заказы связывают предприятие с остальным сектором.
+
+<GuideEntityCards>
+<GuideTexture Entity="IndustrialPressEconomyElectronicsMMC" Caption="auto"/>
+</GuideEntityCards>
 
 Противостояние держав поддерживает спрос на материалы и технику. Для компании важны объём поставок, сроки и устойчивость производства. Возможности предприятия зависят от запасов сырья и работы производственных линий не меньше, чем от вооружённой охраны.
 
@@ -3259,7 +3293,11 @@ Viper Group — частная военная компания, работающ
 
 Из разломов Колосса появляются аномальные фрагменты, артефакты и объекты, которые называют **монолитными**. Их ресурсы и технологии привлекают исследователей, искателей добычи и державы. Однако за интересом к находкам скрывается фундаментальное незнание: происхождение Монолита остаётся тайной даже для Предтеч.
 
-Чуждая техника сектора принадлежит разным силам. **Азакимы** созданы Предтечами, а **АДС** служат им помощниками. Дроны-убийцы связаны с другой неизвестной силой — **Экзекуторами**. Ни эти связи, ни сходство отдельных технологий не раскрывают происхождения Монолита.
+<GuideEntityCards>
+<GuideTexture Entity="MonolithicCrystalLarge" Caption="auto"/>
+</GuideEntityCards>
+
+Чуждая техника сектора принадлежит разным силам. **Азакимы** созданы Предтечами, а **АСЗ** служат им помощниками. Дроны-убийцы связаны с другой неизвестной силой — **Экзекуторами**. Ни эти связи, ни сходство отдельных технологий не раскрывают происхождения Монолита.
 
 Для Империи Феникса монолитные находки стали обещанием нового могущества. Исследователи надеются получить из них технологии сверхоружия. Между такими надеждами и пониманием найденного по-прежнему лежит неизвестность, ради которой в сектор продолжают отправляться экспедиции.
 
@@ -3285,7 +3323,7 @@ Viper Group — частная военная компания, работающ
 
 ## Неизвестные силы
 
-**Азакимы** — творения Предтеч; **АДС** созданы им в помощь. Дроны-убийцы связаны с силой, известной как **Экзекуторы**. Происхождение **Монолита** остаётся неизвестным даже Предтечам.
+**Азакимы** — творения Предтеч; **АСЗ** созданы им в помощь. Дроны-убийцы связаны с силой, известной как **Экзекуторы**. Происхождение **Монолита** остаётся неизвестным даже Предтечам.
 
 Ресурсы, аномалии и утраченные знания привлекают в Колосс наёмников, исследователей и державы. Их притязания пересекаются в пространстве, которое ни одна сторона не может считать полностью покорённым.
 
@@ -3332,6 +3370,10 @@ Viper Group — частная военная компания, работающ
 # Транс-Солнечная Федерация
 
 **ТСФ** — крупнейшая держава центрального пространства, созданная в **2739 году** из Транс-Солнечной торговой федерации (**ТСТФ**), сохранившихся территорий ОПЗ и их вооружённых сил. Истощённая корпоративной войной **NanoTrasen была национализирована**, став частью нового государственного порядка.
+
+<GuideEntityCards>
+<GuideTexture Entity="BannerNfsd" Caption="auto"/>
+</GuideEntityCards>
 
 ## Доминионы и федеральная власть
 
@@ -3393,8 +3435,8 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/ArcFurnace.xml -->
 # Дуговая печь
 <GuideEntityCards>
-<GuideEntityEmbed Entity="IndustrialFurnaceEconomy"/>
-  <GuideEntityEmbed Entity="IndustrialFurnaceEconomyCompact"/>
+<GuideTexture Entity="IndustrialFurnaceEconomy" Caption="auto"/>
+  <GuideTexture Entity="IndustrialFurnaceEconomyCompact" Caption="auto"/>
 </GuideEntityCards>
 Печь работает через **меню производственного станка**. В нём выбирают изделие, проверяют требования и ставят производство в очередь. Доступные рецепты включают бронепластины, кремниевую заготовку и переработку иридита; точные требования смотрите в самой печи.
 
@@ -3405,7 +3447,7 @@ Viper Group — частная военная компания, работающ
 - Раствор с нужными реагентами подайте в ёмкости через слот мензурки.
 - Когда требований достаточно, закажите нужное количество изделий и дождитесь завершения.
 
-**Предмет и содержащийся в нём химический элемент не взаимозаменяемы.** Если рецепт требует раствор, сначала получите реагент; если требует конкретный компонент — загрузите именно его. Альтернативные рецепты одного изделия могут расходовать совсем другие ресурсы.
+<GuideNote Tone="warning" Text="[bold]Предмет и содержащийся в нём химический элемент не взаимозаменяемы.[/bold] Если рецепт требует раствор, сначала получите реагент; если требует конкретный компонент — загрузите именно его. Альтернативные рецепты одного изделия могут расходовать совсем другие ресурсы."/>
 
 При нехватке ресурсов проверьте все три вида требований и фактическое содержимое станка. Лежащая сверху деталь ещё не обязательно находится во внутреннем хранилище. Не заказывайте лишнюю партию, пока не проверили расход редких компонентов.
 
@@ -3416,14 +3458,20 @@ Viper Group — частная военная компания, работающ
 # Автоматизация производства
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="UpgradeKitAutomation"/>
-<GuideEntityEmbed Entity="RoboticArm"/>
-<GuideEntityEmbed Entity="StorageBin"/>
-<GuideEntityEmbed Entity="Interactor"/>
-<GuideEntityEmbed Entity="Constructor"/>
+<GuideTexture Entity="UpgradeKitAutomation" Caption="auto"/>
+<GuideTexture Entity="RoboticArm" Caption="auto"/>
+<GuideTexture Entity="StorageBin" Caption="auto"/>
+<GuideTexture Entity="Interactor" Caption="auto"/>
+<GuideTexture Entity="Constructor" Caption="auto"/>
 </GuideEntityCards>
 
 **Роборука** переносит предметы, **накопитель** хранит их, **интерактор** применяет инструмент, **конструктор** начинает постройку по выбранной схеме. Комплект автоматизации открывает предусмотренные машиной порты.
+
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="StorageBin" Caption="Хранение"/>
+<GuideTexture Entity="RoboticArm" Caption="Перемещение"/>
+<GuideTexture Entity="Interactor" Caption="Взаимодействие"/>
+</GuideEntityCards>
 
 ## Накопитель → станок → накопитель
 1. Исследуйте **Промышленную инженерию** за **22 500 ОИ** после **Механического уплотнения**. Напечатайте платы устройств и комплект автоматизации.
@@ -3436,10 +3484,10 @@ Viper Group — частная военная компания, работающ
 
 ## Фильтр → что пропускать
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AutomationFilterName"/>
-<GuideEntityEmbed Entity="AutomationFilterLabel"/>
-<GuideEntityEmbed Entity="AutomationFilterStack"/>
-<GuideEntityEmbed Entity="AutomationFilterCombined"/>
+<GuideTexture Entity="AutomationFilterName" Caption="auto"/>
+<GuideTexture Entity="AutomationFilterLabel" Caption="auto"/>
+<GuideTexture Entity="AutomationFilterStack" Caption="auto"/>
+<GuideTexture Entity="AutomationFilterCombined" Caption="auto"/>
 </GuideEntityCards>
 
 Изготовьте фильтр в меню строительства **G**, настройте и установите в руку или накопитель.
@@ -3469,7 +3517,7 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/Drilling.xml -->
 # Корабельный бур
 
-<GuideEntityCards><GuideEntityEmbed Entity="MachineShipDrill"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MachineShipDrill" Caption="auto"/></GuideEntityCards>
 - **1.** Установите бур на своём корабле у внешнего края и поверните рабочей стороной к астероиду. Его рабочая область — 2 × 2 метра со смещением на 1 метр от центра.
 - **2.** Подайте питание через кабельную сеть: штатная нагрузка 750 Вт. Отдельную команду запуска выбирать не нужно — система проверяет запитанные буры автоматически.
 - **3.** Медленно подведите рабочую область к породе на другом гриде. Бур собирает добываемые объекты и убирает подходящие пустые тайлы; собственный грид корабля пропускает.
@@ -3483,9 +3531,9 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/Economy.xml -->
 # Производство в секторе Колосс
 <GuideEntityCards>
-<GuideEntityEmbed Entity="IndustrialPressEconomyPlates"/>
-  <GuideEntityEmbed Entity="IndustrialFurnaceEconomy"/>
-  <GuideEntityEmbed Entity="PrecisionAssemblerEconomy"/>
+<GuideTexture Entity="IndustrialPressEconomyPlates" Caption="auto"/>
+  <GuideTexture Entity="IndustrialFurnaceEconomy" Caption="auto"/>
+  <GuideTexture Entity="PrecisionAssemblerEconomy" Caption="auto"/>
 </GuideEntityCards>
 Промышленное производство превращает материалы и компоненты в более сложные изделия. **Начинайте с нужного конечного продукта и его рецепта**: покупка сырья без проверки цепочки легко оставляет вас с неподходящими ресурсами.
 
@@ -3499,7 +3547,7 @@ Viper Group — частная военная компания, работающ
 Наличие нужного вещества в листе материала не заменяет реагент в растворе. Для получения растворов могут потребоваться измельчитель и химическое оборудование. Проверяйте конкретный рецепт, прежде чем расходовать редкие ресурсы.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="EconomyPlanner"/>
+<GuideTexture Entity="EconomyPlanner" Caption="auto"/>
 </GuideEntityCards>
 Положите промышленный планировщик на пол и взаимодействуйте с ним, чтобы открыть схему цепочек изготовления. Сверяйте её с текущим меню станка. Если результат — незавершённая заготовка, осмотрите её и проверьте дальнейший этап сборки. Не всякий промежуточный компонент уже готов к установке.
 
@@ -3512,11 +3560,11 @@ Viper Group — частная военная компания, работающ
 
 ## Военные и фракционные станки
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="NfsdTechFab"/>
-  <GuideEntityEmbed Entity="PDVLathe"/>
-  <GuideEntityEmbed Entity="USSPLathe"/>
-  <GuideEntityEmbed Entity="ViperLathe"/>
-  <GuideEntityEmbed Entity="MMCLathe"/>
+  <GuideTexture Entity="NfsdTechFab" Caption="auto"/>
+  <GuideTexture Entity="PDVLathe" Caption="auto"/>
+  <GuideTexture Entity="USSPLathe" Caption="auto"/>
+  <GuideTexture Entity="ViperLathe" Caption="auto"/>
+  <GuideTexture Entity="MMCLathe" Caption="auto"/>
 </GuideEntityCards>
 - **ТСФ:** проекты оружия, снаряжения и ваучеров ТСФ; универсальные снаряды, рельсотронные боеприпасы, ракеты и авиационное вооружение. Имеет общие проекты защиты, блюспейс-баллонов, умного оружия и технических дисков.
 - **Авангард Нордфолла:** фракционные проекты: ближнее и дальнобойное оружие, ваучеры, обычное и профессиональное снаряжение. Также общие боеприпасы и корабельные боеприпасы. Проверка компании допускает сотрудников Авангарда и его командования.
@@ -3525,7 +3573,7 @@ Viper Group — частная военная компания, работающ
 - **Военный фабрикатор:** личные и базовые корабельные боеприпасы, гранаты, обвесы и общий военный ассортимент. Он не наследует все исследования фракций: фракционные наборы в нём отключены.
 
 ## Гражданские задачи
-<GuideEntityCards><GuideEntityEmbed Entity="EngineeringTechFab"/><GuideEntityEmbed Entity="ServiceTechFab"/><GuideEntityEmbed Entity="FactionLathe"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="EngineeringTechFab" Caption="auto"/><GuideTexture Entity="ServiceTechFab" Caption="auto"/><GuideTexture Entity="FactionLathe" Caption="auto"/></GuideEntityCards>
 Инженерный техфаб выбирайте для инженерного оборудования, газодобычи и автоматизации; сервисный — для хозяйственного оборудования и портативного экранного таймера. Плата машины определяет её назначение: цвет корпуса не заменяет проверку меню.
 
 ## Запустить изделие
@@ -3541,7 +3589,7 @@ Viper Group — частная военная компания, работающ
 ММС выпускает материалы, компоненты и промышленное оборудование. Рабочий цикл: **действующий запрос → расчёт цепочки → выпуск → подписанный ящик → паллета → MIC → снабжение**.
 
 ## 1. Найти работу до расхода сырья
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerCargoBounty"/><GuideEntityEmbed Entity="EconomyPlanner"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerCargoBounty" Caption="auto"/><GuideTexture Entity="EconomyPlanner" Caption="auto"/></GuideEntityCards>
 Откройте консоль запросов, вкладку «Доступные». У заказа HKD-PRD строка показывает **предмет, уровень, количество и награду**. Похожее название другого уровня не засчитывается. HKD-VLE — отдельные запросы на ценности: наличность и указанные материалы.
 
 Положите промышленный планировщик на пол и откройте его взаимодействием. На схеме выберите конечное изделие: его входы показывают нужные компоненты и станок. Откройте рецепт этого изделия на указанном станке, затем рецепты его входных компонентов. Планировщик показывает цепочку, а выбранный рецепт в меню машины определяет фактический расход.
@@ -3550,10 +3598,10 @@ Viper Group — частная военная компания, работающ
 
 ## 2. Разделить три вида загрузки
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="IndustrialPressEconomyElectronicsMMC"/>
-  <GuideEntityEmbed Entity="IndustrialPressEconomyPlatesMMC"/>
-  <GuideEntityEmbed Entity="PrecisionAssemblerEconomy"/>
-  <GuideEntityEmbed Entity="IndustrialFurnaceEconomy"/>
+  <GuideTexture Entity="IndustrialPressEconomyElectronicsMMC" Caption="auto"/>
+  <GuideTexture Entity="IndustrialPressEconomyPlatesMMC" Caption="auto"/>
+  <GuideTexture Entity="PrecisionAssemblerEconomy" Caption="auto"/>
+  <GuideTexture Entity="IndustrialFurnaceEconomy" Caption="auto"/>
 </GuideEntityCards>
 - **Материалы:** применяйте стопки к станку. Электронный пресс делает базовые процессоры, конденсаторы, оптику, радиоблоки и камеры; пресс пластин — пластины, электромагниты, ёмкости и моторы в пределах своих наборов рецептов.
 - **Готовые предметы:** положите на станок; в контекстном меню выберите «Открыть», затем «Закрыть», чтобы убрать их во внутреннее хранилище. Предметы рядом на полу рецепту недоступны.
@@ -3562,7 +3610,7 @@ Viper Group — частная военная компания, работающ
 Откройте меню, задайте «Кол-во», затем наведите курсор на рецепт. Красные требования покажут нехватку для всей партии. Запускайте изделие только после проверки всех трёх групп; [детали машины](guide://IndustryMachineParts) изменяют материальный расход и время, но не установленное число готовых компонентов и единиц реагента.
 
 ## 3. Базовые компоненты и сборка
-<GuideEntityCards><GuideEntityEmbed Entity="MicroprocessorEconomy1"/><GuideEntityEmbed Entity="MicroprocessorEconomy2"/><GuideEntityEmbed Entity="MicroprocessorEconomy3"/><GuideEntityEmbed Entity="MotorEconomy1"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MicroprocessorEconomy1" Caption="auto"/><GuideTexture Entity="MicroprocessorEconomy2" Caption="auto"/><GuideTexture Entity="MicroprocessorEconomy3" Caption="auto"/><GuideTexture Entity="MotorEconomy1" Caption="auto"/></GuideEntityCards>
 Сначала изготовьте низшие компоненты прессами, затем загрузите их в сборщик. Расход компонентов на одно изделие:
 - **Мотор:** 1 электромагнит первого уровня + 1 бронепластина первого уровня. Этот рецепт есть и в наборе пресса пластин; не переносите изделия на другой станок без необходимости.
 - **Нанопроцессор, уровень 2:** 2 процессора первого уровня + 2 оптических датчика первого уровня; альтернативно 1 процессор первого уровня + 1 кремниевая пластина.
@@ -3574,7 +3622,7 @@ Viper Group — частная военная компания, работающ
 Для партии умножайте число предметов и реагентов на её размер. Для материалов пользуйтесь подсказкой уже улучшенной машины: её расход округляется вверх отдельно по каждому материалу.
 
 ## 4. Кремний и химия для сложных заказов
-<GuideEntityCards><GuideEntityEmbed Entity="SiliconBouleEconomy"/><GuideEntityEmbed Entity="SiliconWaferEconomy"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="SiliconBouleEconomy" Caption="auto"/><GuideTexture Entity="SiliconWaferEconomy" Caption="auto"/></GuideEntityCards>
 **Кремниевая заготовка в дуговой печи:** 1 алмаз + 500 ед. «кремний» + 30 ед. EZNutrient. Загрузите алмаз как предмет, растворы — через ёмкость. Затем рецепт SiliconWaferEconomy в сборщике превращает одну заготовку в **8 пластин**. Разделка ножом даёт 4; падение повреждает заготовку и превращает её в лом, поэтому переносите её аккуратно.
 
 **Иридитовая цепочка:** промышленный переработчик руды делает шлак из сырья, затем порошок из шлака. В дуговой печи 3 порошка + 10 ед. «напалм» + 10 ед. «термит» дают кристалл. Следующий рецепт: 1 кристалл + 10 ед. «полиакрилат натрия» + 10 ед. «силицид железа» + 40 ед. «бензол» + 40 ед. «фторсерная кислота» → **2 листа иридита**. Не путайте реагенты с одноимёнными твёрдыми материалами.
@@ -3589,7 +3637,7 @@ Viper Group — частная военная компания, работающ
 Смешивайте нужное количество в подходящей ёмкости, нагревайте только рецепты с температурным порогом. Выход не всегда равен сумме исходных объёмов: для 40 «бензол» требуется по 40 «водород» и «углерод». «фторсерная кислота»: 1 «фтор» + 1 «водород» + 1 «калий» + 1 «серная кислота» → 4.
 
 ## 5. Сдать выполненный запрос
-<GuideEntityCards><GuideEntityEmbed Entity="CargoPalletSell"/><GuideEntityEmbed Entity="MMCIndustrialCredit"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="CargoPalletSell" Caption="auto"/><GuideTexture Entity="MMCIndustrialCredit" Caption="auto"/></GuideEntityCards>
 - **1.** Сверьте готовую партию с действующим заказом. На его строке нажмите «Распечатать этикетку».
 - **2.** Положите требуемую партию в ящик, закройте его и примените к ящику этикетку из руки. Этикетка связывает груз с конкретным запросом.
 - **3.** Поставьте ящик на паллету продажи Хоккайдо. Уберите постороннее имущество. На консоли паллеты нажмите «Оценить», проверьте содержимое, затем «Продать».
@@ -3598,7 +3646,7 @@ Viper Group — частная военная компания, работающ
 Нет награды: проверьте этикетку, действительность запроса, уровень и количество изделий. Для выплаты MIC нужен принятый станцией заказ на эти изделия.
 
 ## 6. Потратить награду и расширить производство
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineMMCUplink"/><GuideEntityEmbed Entity="MMCLathe"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineMMCUplink" Caption="auto"/><GuideTexture Entity="MMCLathe" Caption="auto"/></GuideEntityCards>
 Примените MIC из активной руки к киоску снабжения ММС. Откройте «Аплинк MMC», выберите раздел и товар в пределах внесённого баланса; покупка появляется рядом. Киоск принимает MIC, обычная наличность их не заменяет; штатного обмена MIC на наличность в каталоге нет.
 
 Для собственного цеха откройте «ММС | Гидравлика»: 15 000 ОИ после «Исследование материалов 1»; он даёт платы прессов ММС и компактных печи и сборщика. Затем выбирайте улучшения деталей, запасы химии и [автоматизацию](guide://IndustryAutomation) под реально повторяющиеся заказы. Точные открытия всей ветки ММС, включая экипировку и кораблестроение, находятся в [окне РНД](guide://ColossusCatalogueResearch).
@@ -3613,17 +3661,17 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/MachineParts.xml -->
 # Детали машин и УМЗД
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="RPED"/>
-  <GuideEntityEmbed Entity="NanoManipulatorStockPart"/>
-  <GuideEntityEmbed Entity="AdvancedMatterBinStockPart"/>
-  <GuideEntityEmbed Entity="AdvancedCapacitorStockPart"/>
+  <GuideTexture Entity="RPED" Caption="auto"/>
+  <GuideTexture Entity="NanoManipulatorStockPart" Caption="auto"/>
+  <GuideTexture Entity="AdvancedMatterBinStockPart" Caption="auto"/>
+  <GuideTexture Entity="AdvancedCapacitorStockPart" Caption="auto"/>
 </GuideEntityCards>
 
 ## Обновить работающий станок
 - **1.** Осмотрите плату или станок: нужны детали подходящего типа. Производственные микропроцессоры, оптика и моторы ММС — ингредиенты рецептов; манипуляторы, ёмкости материи и конденсаторы — устанавливаемые детали машин.
 - **2.** Загрузите улучшенные детали в УМЗД. Устройство выбирает самые высокие уровни каждого требуемого типа из своих запасов и уже установленных деталей.
-- **3.** Отвёрткой откройте техническую панель станка. Примените УМЗД к машине и стойте на месте до завершения замены; движение и урон прерывают действие.
-- **4.** Закройте панель. В контекстном меню осмотра проверьте улучшения машины. Вытесненные детали возвращаются в УМЗД.
+- **3.** Если у станка есть обслуживаемая техническая панель, откройте её отвёрткой. На оборудовании с заблокированным демонтажем УМЗД применяется без открытия панели. Примените УМЗД к машине и стойте на месте до завершения замены; движение и урон прерывают действие.
+- **4.** Если панель открыта, закройте её. В контекстном меню осмотра проверьте улучшения машины. Вытесненные детали возвращаются в УМЗД.
 
 Если машина требует несколько одинаковых деталей, считается **средний уровень с учётом количества**. Одна деталь уровня 3 и одна уровня 1 дают средний уровень 2. Для полного улучшения замените весь набор.
 
@@ -3650,6 +3698,12 @@ Viper Group — частная военная компания, работающ
 
 [Криогенное лечение](guide://Cryogenics) · [Клонирование](guide://Cloning) · [Летоферол и обращение мутации](guide://Letoferol).
 
+<GuideEntityCards>
+<GuideTexture Entity="HandheldHealthAnalyzer" Caption="Оценить состояние"/>
+<GuideTexture Entity="Medkit" Caption="Оказать помощь"/>
+<GuideTexture Entity="Scalpel" Caption="Подготовить операцию"/>
+</GuideEntityCards>
+
 Медицинский имплант сообщает о критическом состоянии или смерти; датчики комбинезона передают положение на монитор экипажа. [Установка и настройка](guide://StartingGear).
 
 ## Хирургия и улучшения
@@ -3661,14 +3715,16 @@ Viper Group — частная военная компания, работающ
 В окне приёмника **«слишком много повреждений»** означает, что суммарный урон выше допуска конкретного контракта: продолжайте лечение. **«Пациент не жив»** требует реанимации. Когда награда станет доступна, окно покажет выплату: оставшиеся повреждения уменьшают её относительно максимума. Нажатие выдаёт наличные и отправляет пациента; это отдельная операция от продажи тел.
 
 [Поиск капсул и доставка пациентов](guide://MedicalBounties) · [Должности и оборудование МЦ](guide://ColossusMedicalFaction)
+
+<GuideHub Root="Medical"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Letoferol.xml -->
 # Химеры и летоферол
 <GuideEntityCards>
-<GuideEntityEmbed Entity="SyringeLetoferol"/>
+<GuideTexture Entity="SyringeLetoferol" Caption="auto"/>
   <GuideEntityEmbed Entity="MobLetoferolHorror"/>
-  <GuideEntityEmbed Entity="ChimeraFleshKudzu"/>
+  <GuideTexture Entity="ChimeraFleshKudzu" Caption="auto"/>
 </GuideEntityCards>
 Летоферол — опасный реагент, связанный с превращением в химеру. Существует лабораторная и природная разновидность. Природный летоферол также создаёт биомассу при попадании на пол.
 
@@ -3696,7 +3752,7 @@ Viper Group — частная военная компания, работающ
 
 ## Автохирург
 
-<GuideEntityCards><GuideEntityEmbed Entity="AutosurgeonMantisBladesMieyoFlatpack"/><GuideEntityEmbed Entity="AutosurgeonHumanityChipMk1Flatpack"/><GuideEntityEmbed Entity="AutosurgeonDermalArmorFlatpack"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AutosurgeonMantisBladesMieyoFlatpack" Caption="auto"/><GuideTexture Entity="AutosurgeonHumanityChipMk1Flatpack" Caption="auto"/><GuideTexture Entity="AutosurgeonDermalArmorFlatpack" Caption="auto"/></GuideEntityCards>
 
 1. Разверните упаковку нужной модели на полу. Пристегните пациента; без пристёгнутого пациента аппарат оперирует активировавшего его персонажа.
 2. Включите устройство через контекстное меню. Не перемещайте пациента и аппарат **15 с**.
@@ -3708,7 +3764,7 @@ Viper Group — частная военная компания, работающ
 
 ## Подготовка к ручной операции
 
-<GuideEntityCards><GuideEntityEmbed Entity="Scalpel"/><GuideEntityEmbed Entity="Retractor"/><GuideEntityEmbed Entity="Hemostat"/><GuideEntityEmbed Entity="SawElectric"/><GuideEntityEmbed Entity="BoneGel"/><GuideEntityEmbed Entity="Cautery"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="Scalpel" Caption="auto"/><GuideTexture Entity="Retractor" Caption="auto"/><GuideTexture Entity="Hemostat" Caption="auto"/><GuideTexture Entity="SawElectric" Caption="auto"/><GuideTexture Entity="BoneGel" Caption="auto"/><GuideTexture Entity="Cautery" Caption="auto"/></GuideEntityCards>
 
 1. Принесите замену заранее. Уложите пациента; если этап требует операционный стол, именно пристегните его к столу.
 2. Снимите одежду с области: голова — головной убор; грудь и руки — верхняя одежда и комбинезон; кисть — перчатки; нога — верхняя одежда и предметы в слоте ног; стопа — обувь.
@@ -3720,7 +3776,7 @@ Viper Group — частная военная компания, работающ
 
 ## Доступ к области
 
-**«Открытие разреза»**: скальпель **2 с** → ретрактор **2 с** → гемостат **2 с**.
+<GuideNote Tone="warning" Text="[bold]«Открытие разреза»[/bold]: скальпель [bold]2 с[/bold] → ретрактор [bold]2 с[/bold] → гемостат [bold]2 с[/bold]."/>
 
 <GuideTable Columns="2">
 <Box>**Область**</Box><Box>**Подготовка**</Box>
@@ -3741,7 +3797,7 @@ Viper Group — частная военная компания, работающ
 
 На каждой вскрытой области выберите **«Закрытие разреза»**: вернуть раздвинутые кости ретрактором **2 с** → восстановить распиленные кости костным гелем **2 с** → закрыть термокаутером **2 с**. Ненужные и уже выполненные этапы пропускаются. Закрепление органа не закрывает всю область.
 
-**«Части»** возвращает к областям, **«Операции»** — к операциям выбранной области, **«Этапы»** — из требования к прежней операции. Закрытие окна сохраняет выполненные этапы и не зашивает разрез.
+<GuideNote Tone="warning" Text="[bold]«Части»[/bold] возвращает к областям, [bold]«Операции»[/bold] — к операциям выбранной области, [bold]«Этапы»[/bold] — из требования к прежней операции. Закрытие окна сохраняет выполненные этапы и не зашивает разрез."/>
 
 Если этап недоступен, проверьте инструмент в руке, одежду, положение пациента и свободный слот. Для установки конечности выбирают её родителя; операции отсутствующего слота у этого тела не появятся.
 
@@ -3755,7 +3811,7 @@ Viper Group — частная военная компания, работающ
 
 ## Сердце
 
-<GuideEntityCards><GuideEntityEmbed Entity="BasicCyberneticHeart"/><GuideEntityEmbed Entity="UpgradedCyberneticHeart"/><GuideEntityEmbed Entity="OrganPDVAdvancedHeart"/><GuideEntityEmbed Entity="OrganBerserkHeart"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="BasicCyberneticHeart" Caption="auto"/><GuideTexture Entity="UpgradedCyberneticHeart" Caption="auto"/><GuideTexture Entity="OrganPDVAdvancedHeart" Caption="auto"/><GuideTexture Entity="OrganBerserkHeart" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
@@ -3770,7 +3826,7 @@ Viper Group — частная военная компания, работающ
 
 ## Лёгкие
 
-<GuideEntityCards><GuideEntityEmbed Entity="UpgradedCyberneticLungs"/><GuideEntityEmbed Entity="OrganInternalAirSystem"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="UpgradedCyberneticLungs" Caption="auto"/><GuideTexture Entity="OrganInternalAirSystem" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
@@ -3794,7 +3850,7 @@ Viper Group — частная военная компания, работающ
 
 Один слот ЦНС, отдельный от сердца. Нейроускорители включаются и выключаются действием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="OrganCNSMMCSandevistan"/><GuideEntityEmbed Entity="OrganCNSTSFSandevistan"/><GuideEntityEmbed Entity="OrganCNSMMCSakimoto"/><GuideEntityEmbed Entity="OrganCNSKerenzikov"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="OrganCNSMMCSandevistan" Caption="auto"/><GuideTexture Entity="OrganCNSTSFSandevistan" Caption="auto"/><GuideTexture Entity="OrganCNSMMCSakimoto" Caption="auto"/><GuideTexture Entity="OrganCNSKerenzikov" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
@@ -3812,7 +3868,7 @@ Viper Group — частная военная компания, работающ
 
 Один слот; перечисленные варианты взаимно исключаются.
 
-<GuideEntityCards><GuideEntityEmbed Entity="OrganDermalArmor"/><GuideEntityEmbed Entity="OrganDermalArmorPDV"/><GuideEntityEmbed Entity="OrganDermalArmorReflective"/><GuideEntityEmbed Entity="OrganDermalArmorHeavyUSSP"/><GuideEntityEmbed Entity="OrganOpticalCamo"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="OrganDermalArmor" Caption="auto"/><GuideTexture Entity="OrganDermalArmorPDV" Caption="auto"/><GuideTexture Entity="OrganDermalArmorReflective" Caption="auto"/><GuideTexture Entity="OrganDermalArmorHeavyUSSP" Caption="auto"/><GuideTexture Entity="OrganOpticalCamo" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
@@ -3829,7 +3885,7 @@ Viper Group — частная военная компания, работающ
 
 Не занимают слот ЦНС или подкожной брони. Лечение указано **на всю группу урона в секунду**, не на каждый тип.
 
-<GuideEntityCards><GuideEntityEmbed Entity="AutosurgeonPlateletFactoriesMieyoFlatpack"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AutosurgeonPlateletFactoriesMieyoFlatpack" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
@@ -3846,6 +3902,12 @@ Viper Group — частная военная компания, работающ
 
 Выберите часть тела: в таблицах указаны совместимость, человечность, эффект и ограничения каждой модели.
 
+<GuideEntityCards>
+<GuideTexture Entity="BasicCyberneticEyes" Caption="Голова"/>
+<GuideTexture Entity="BasicCyberneticHeart" Caption="Органы туловища"/>
+<GuideTexture Entity="OrganArmMantisBlade" Caption="Конечности"/>
+</GuideEntityCards>
+
 - [Голова](guide://ColossusHeadImplants) — глаза, мозг, нейростабилизаторы.
 - [Туловище](guide://ColossusCyberneticOrgans) — внутренние органы, ЦНС, подкожная защита и регенерация.
 - [Руки и ноги](guide://ColossusMantisBlades) — обычные и улучшенные протезы, клинки богомола.
@@ -3854,6 +3916,8 @@ Viper Group — частная военная компания, работающ
 В таблицах человечность указана **за один орган, имплант или часть тела**. Одноимённый органный слот вмещает один вариант; разные слоты не заменяют друг друга. Служебные подкожные импланты не занимают слот подкожной брони. Совместимость зависит от строения конкретного тела.
 
 [Как установить или снять](guide://ColossusSurgery) · [Человечность и киберпсихоз](guide://ColossusHumanity)
+
+<GuideHub Root="ColossusCybernetics"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Implants/Humanity.xml -->
@@ -3862,7 +3926,7 @@ Viper Group — частная военная компания, работающ
 Человечность ограничивает суммарную нагрузку от кибернетики. Базовый предел — **6**, у человека — **7**. Установленные органы, протезы и импланты расходуют этот запас.
 
 ## Проверить остаток
-<GuideEntityCards><GuideEntityEmbed Entity="HandheldHealthAnalyzer"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="HandheldHealthAnalyzer" Caption="auto"/></GuideEntityCards>
 
 Возьмите медицинский анализатор в руку и **просканируйте себя**. Строка **«Человечность»** показывает остаток и предел: **3/7** означает, что из семи единиц четыре уже заняты. При сканировании другим персонажем эта строка не передаётся. Уведомление после автохирурга также показывает остаток; отрицательное число означает перегрузку.
 
@@ -3892,7 +3956,7 @@ Viper Group — частная военная компания, работающ
 
 ## Протезы
 
-<GuideEntityCards><GuideEntityEmbed Entity="DexLeftHand"/><GuideEntityEmbed Entity="SpeedLeftLeg"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="DexLeftHand" Caption="auto"/><GuideTexture Entity="SpeedLeftLeg" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
@@ -3907,7 +3971,7 @@ Viper Group — частная военная компания, работающ
 
 По одному импланту на существующую руку; целую руку не заменяют.
 
-<GuideEntityCards><GuideEntityEmbed Entity="AutosurgeonMantisBladesMieyoFlatpack"/><GuideEntityEmbed Entity="OrganArmMantisBlade"/><GuideEntityEmbed Entity="MantisBlade"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AutosurgeonMantisBladesMieyoFlatpack" Caption="auto"/><GuideTexture Entity="OrganArmMantisBlade" Caption="auto"/><GuideTexture Entity="MantisBlade" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
@@ -3924,7 +3988,7 @@ Viper Group — частная военная компания, работающ
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Creatures/Chimera.xml -->
 # Химера: способности и ограничения
-<GuideEntityCards><GuideEntityEmbed Entity="MobLetoferolHorror"/><GuideEntityEmbed Entity="ChimeraFleshKudzu"/></GuideEntityCards>
+<GuideEntityCards><GuideEntityEmbed Entity="MobLetoferolHorror"/><GuideTexture Entity="ChimeraFleshKudzu" Caption="auto"/></GuideEntityCards>
 Гуманоидная химера заражает носителей летоферолом, строит биомассу и пользуется врождённым оружием. Статы мелких химер отличаются.
 
 ## Первые действия
@@ -3958,7 +4022,7 @@ Viper Group — частная военная компания, работающ
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Creatures/CorticalBorer.xml -->
 # Мозговой червь: носитель, химия и яйца
-<GuideEntityCards><GuideEntityEmbed Entity="MobCorticalBorer"/><GuideEntityEmbed Entity="CorticalBorerEgg"/></GuideEntityCards>
+<GuideEntityCards><GuideEntityEmbed Entity="MobCorticalBorer"/><GuideTexture Entity="CorticalBorerEgg" Caption="auto"/></GuideEntityCards>
 У червя 20 урона до смерти: вне носителя избегайте прямого боя. Рабочий цикл — найти подходящее тело, проникнуть, накопить химические очки и использовать короткое управление для размножения. Правила роли и допустимые цели читайте при её получении.
 
 ## 1. Найти носителя
@@ -3999,9 +4063,9 @@ Viper Group — частная военная компания, работающ
 # Ксеноборги: корпуса и модули
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MothershipCore"/>
-<GuideEntityEmbed Entity="BorgChassisSelectableXenoborg"/>
-<GuideEntityEmbed Entity="MMI"/>
+<GuideTexture Entity="MothershipCore" Caption="auto"/>
+<GuideTexture Entity="BorgChassisSelectableXenoborg" Caption="auto"/>
+<GuideTexture Entity="MMI" Caption="auto"/>
 </GuideEntityCards>
 
 Ксеноборги собирают материалы и разумные мозги для новых корпусов. После получения роли прочитайте действующий набор законов: он определяет приоритеты ядра и ксеноборгов.
@@ -4015,10 +4079,10 @@ Viper Group — частная военная компания, работающ
 
 ## Выбрать специализацию
 <GuideEntityCards>
-<GuideEntityEmbed Entity="XenoborgChassisEngineer"/>
-<GuideEntityEmbed Entity="XenoborgChassisHeavy"/>
-<GuideEntityEmbed Entity="XenoborgChassisScout"/>
-<GuideEntityEmbed Entity="XenoborgChassisStealth"/>
+<GuideTexture Entity="XenoborgChassisEngineer" Caption="auto"/>
+<GuideTexture Entity="XenoborgChassisHeavy" Caption="auto"/>
+<GuideTexture Entity="XenoborgChassisScout" Caption="auto"/>
+<GuideTexture Entity="XenoborgChassisStealth" Caption="auto"/>
 </GuideEntityCards>
 
 В окне выбора типа корпуса определите специализацию. Все четыре типа получают базовый и инструментальный модули: указатель материнского корабля, GPS, средства сбора материалов и обычные инструменты.
@@ -4064,7 +4128,7 @@ Viper Group — частная военная компания, работающ
 ### Шелководство
 Арахниды плетут шёлк, расходуя сытость. Из свёртков шёлка они создают одежду, щиты и стены.
 
-<GuideEntityCards><GuideEntityEmbed Entity="MaterialWebSilk"/><GuideEntityEmbed Entity="ClothingUniformJumpskirtWeb"/><GuideEntityEmbed Entity="WebShield"/><GuideEntityEmbed Entity="WallWeb"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MaterialWebSilk" Caption="auto"/><GuideTexture Entity="ClothingUniformJumpskirtWeb" Caption="auto"/><GuideTexture Entity="WebShield" Caption="auto"/><GuideTexture Entity="WallWeb" Caption="auto"/></GuideEntityCards>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Diona.xml -->
@@ -4094,7 +4158,7 @@ Viper Group — частная военная компания, работающ
 ### Превращение в дерево
 Передозировка «Робастного урожая» превращает диону в неподвижное дерево и сбрасывает снаряжение. Если срубить дерево, диона снова сможет двигаться.
 
-<GuideEntityCards><GuideEntityEmbed Entity="FloraTree"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="FloraTree" Caption="auto"/></GuideEntityCards>
 
 ### Нимфы после смерти
 После смерти диона может добровольно разрушить тело, выпустив три нимфы. Игрок управляет нимфой-мозгом: она говорит, но не имеет рук и инвентаря. Через 10 минут нимфа способна вырасти в диону с новым случайным телом и именем. Прежний облик при этом не сохраняется.
@@ -4129,7 +4193,7 @@ Viper Group — частная военная компания, работающ
 ### Чувство руды
 Дворф ощущает рудные жилы в породе на расстоянии до 5 метров. Это помогает находить ценные залежи до вскрытия породы.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WallRockChromiteDiamond"/><GuideEntityEmbed Entity="WallRockBasaltBananium"/><GuideEntityEmbed Entity="WallRockBluespace"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WallRockChromiteDiamond" Caption="auto"/><GuideTexture Entity="WallRockBasaltBananium" Caption="auto"/><GuideTexture Entity="WallRockBluespace" Caption="auto"/></GuideEntityCards>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Contextual/Species/Feroxi.xml -->
@@ -4256,7 +4320,7 @@ Viper Group — частная военная компания, работающ
 - Старые сервоприводы: ходьба и бег −10%.
 - Нестабильная проводка: риск дополнительных электрических повреждений.
 
-<GuideEntityCards><GuideEntityEmbed Entity="PositronicBrain"/><GuideEntityEmbed Entity="APCBasic"/><GuideEntityEmbed Entity="BorgCharger"/><GuideEntityEmbed Entity="PowerCellMedium"/><GuideEntityEmbed Entity="EncryptionKeyScience"/><GuideEntityEmbed Entity="WelderIndustrialAdvanced"/><GuideEntityEmbed Entity="CableApcStack"/><GuideEntityEmbed Entity="SheetGlass"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="PositronicBrain" Caption="auto"/><GuideTexture Entity="APCBasic" Caption="auto"/><GuideTexture Entity="BorgCharger" Caption="auto"/><GuideTexture Entity="PowerCellMedium" Caption="auto"/><GuideTexture Entity="EncryptionKeyScience" Caption="auto"/><GuideTexture Entity="WelderIndustrialAdvanced" Caption="auto"/><GuideTexture Entity="CableApcStack" Caption="auto"/><GuideTexture Entity="SheetGlass" Caption="auto"/></GuideEntityCards>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Index.xml -->
@@ -4271,6 +4335,8 @@ Viper Group — частная военная компания, работающ
 Числа относятся к базовому телу без одежды, имплантов и дополнительных черт. В скобках показано отличие от человека: **0%** — без изменений, **−10% получаемого урона** — повреждения меньше на 10%. Пороги крита, смерти и оглушения — разные показатели; специальные способности могут менять их во время игры.
 
 [Подготовка снаряжения](guide://StartingGear) · [Лечение](guide://MedicalDoctor) · [Полёт](guide://Flight)
+
+<GuideHub Root="Species"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Moth.xml -->
@@ -4363,7 +4429,7 @@ Viper Group — частная военная компания, работающ
 ### Подрезка и химикаты
 Кусачки уменьшают стадию на одну и сбрасывают накопленный рост. Феноксазин ускоряет рост в 20 раз, мероксазин останавливает его; оба вещества медленно метаболизируются.
 
-<GuideEntityCards><GuideEntityEmbed Entity="Wirecutter"/><GuideEntityEmbed Entity="Welder"/><GuideEntityEmbed Entity="Flare"/><GuideEntityEmbed Entity="Bonfire"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="Wirecutter" Caption="auto"/><GuideTexture Entity="Welder" Caption="auto"/><GuideTexture Entity="Flare" Caption="auto"/><GuideTexture Entity="Bonfire" Caption="auto"/></GuideEntityCards>
 
 <GuideReagentEmbed Reagent="Phenoxzine"/>
 <GuideReagentEmbed Reagent="Meroxzine"/>
@@ -4485,9 +4551,9 @@ Viper Group — частная военная компания, работающ
 # Аномалии: очки и сдерживание
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AnomalyScanner"/>
-<GuideEntityEmbed Entity="MachineAnomalyVessel"/>
-<GuideEntityEmbed Entity="MachineAPE"/>
+<GuideTexture Entity="AnomalyScanner" Caption="auto"/>
+<GuideTexture Entity="MachineAnomalyVessel" Caption="auto"/>
+<GuideTexture Entity="MachineAPE" Caption="auto"/>
 </GuideEntityCards>
 
 ## Связать аномалию с сервером
@@ -4528,9 +4594,9 @@ Viper Group — частная военная компания, работающ
 # Артефакты: раскрытие узлов
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
-<GuideEntityEmbed Entity="ComputerAnalysisConsole"/>
-<GuideEntityEmbed Entity="NodeScanner"/>
+<GuideTexture Entity="MachineArtifactAnalyzer" Caption="auto"/>
+<GuideTexture Entity="ComputerAnalysisConsole" Caption="auto"/>
+<GuideTexture Entity="NodeScanner" Caption="auto"/>
 </GuideEntityCards>
 
 ## Подключить анализатор
@@ -4582,6 +4648,12 @@ Viper Group — частная военная компания, работающ
 
 **Схему можно двигать:** тяните свободный фон ЛКМ или ПКМ; колесо прокручивает поле вверх и вниз. Это перемещает исследования, а не всё окно.
 [Каталог исследований](guide://ColossusCatalogueResearch).
+
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="MachineArtifactAnalyzer" Caption="Исследовать артефакт"/>
+<GuideTexture Entity="ResearchAndDevelopmentServer" Caption="Накопить очки"/>
+<GuideTexture Entity="ComputerResearchAndDevelopment" Caption="Открыть технологию"/>
+</GuideEntityCards>
 
 ## С чего начинать инженеру
 **Детали:** «Базовые компоненты» 5 000 → «Продвинутые компоненты» 20 000 → «Суперкомпоненты» 25 000 ОИ. «Продвинутые компоненты» открывают детали второго уровня, «Суперкомпоненты» — третьего. [Как установить и что меняется](guide://IndustryMachineParts).
@@ -4651,7 +4723,7 @@ Viper Group — частная военная компания, работающ
 - Список зелёных зон: Колосс Централл, Медицинский центр.
 - В зелёных зонах запрещено воровать что-либо, включая шаттлы. Если игрок находится в КРС (SSD), воровать его вещи всё ещё запрещено.
 - Открытые боевые действия в радиусе 500 метров от зелёных зон запрещены.
-- Антагонисты (АДС, Азакимы, Химеры) не защищены правилами зелёных зон.
+- Антагонисты (АСЗ, Азакимы, Химеры) не защищены правилами зелёных зон.
 - Если вы стали врагом ТСФ, Авангарда Нордфолла или Службы безопасности Колосса, вы теряете защиту зелёной зоны.
 - Корпус морской пехоты ТСФ и Авангард Нордфолла не имеют права устраивать между собой конфликты на территории Колосса Централл.
 - Цель контракта не защищена правилами зелёной зоны, но этой защиты лишены и заказчик, и исполнитель контракта. Такой конфликт должен проходить в разумных рамках, без использования гранат и взрывного оружия на территории зелёных зон.
@@ -4770,9 +4842,9 @@ Viper Group — частная военная компания, работающ
 
 # Правило 5.1
 
-## Игра за киборгов АДС
+## Игра за киборгов АСЗ
 
-- Без Азакимов в раунде борги заняты защитой своих активов (прим.: хранилище АДС) и защитой сектора от биоугрозы.
+- Без Азакимов в раунде борги заняты защитой своих активов (прим.: хранилище АСЗ) и защитой сектора от биоугрозы.
 - С Азакимами в раунде борги переходят в фазу активных антагонистов и прекращают защитную деятельность. Их основной задачей становится полное подчинение приказам Азакимов.
 - Вы имеете право проникнуть в зелёную зону, однако вам запрещено вести на её территории активные боевые действия. Исключение — самооборона.
 
@@ -4892,7 +4964,7 @@ Viper Group — частная военная компания, работающ
 
 Астероиды — источник руды и материалов. Цвет IFF на **MAP** помогает распознать тип, а сканер минералов показывает залежи внутри. Для первого вылета нужны кирка или бур, мешок для руды и защита от вакуума.
 
-<GuideEntityCards><GuideEntityEmbed Entity="Pickaxe"/><GuideEntityEmbed Entity="MiningDrill"/><GuideEntityEmbed Entity="OreBag"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="Pickaxe" Caption="auto"/><GuideTexture Entity="MiningDrill" Caption="auto"/><GuideTexture Entity="OreBag" Caption="auto"/></GuideEntityCards>
 
 ## Где искать
 
@@ -4920,7 +4992,7 @@ Viper Group — частная военная компания, работающ
 
 Карта помогает найти путь между станциями, местами добычи и опасными объектами.
 
-[Карта](guide://SectorTopology) · [Станции](guide://LuaMStations) · [Объекты](guide://LuaMWorldObjects) · [События](guide://LuaMGameModes) · [Астероиды](guide://LuaMAsteroids) · [Туманности](guide://ColossusNebulae)
+<GuideHub Root="LuaMWorld"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/MonolithWreck.xml -->
@@ -4929,9 +5001,9 @@ Viper Group — частная военная компания, работающ
 
 ## Противники и добыча
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MonolithicCrystalLarge"/>
-<GuideEntityEmbed Entity="MonolithicCrystalMedium"/>
-<GuideEntityEmbed Entity="WeaponTurretHeavyMonolithic"/>
+<GuideTexture Entity="MonolithicCrystalLarge" Caption="auto"/>
+<GuideTexture Entity="MonolithicCrystalMedium" Caption="auto"/>
+<GuideTexture Entity="WeaponTurretHeavyMonolithic" Caption="auto"/>
 </GuideEntityCards>
 На карте есть пустотные бойцы ТСФ, тяжёлые монолитные турели и турели NanoTrasen. Среди добычи — средние и крупные монолитные кристаллы, кристаллические образования, биомасса и спавнер контрабандного ящика.
 
@@ -4949,19 +5021,19 @@ Viper Group — частная военная компания, работающ
 
 ## Торговля и отдых
 
-[Торговый Центр](guide://LuaMTradeMall) · [Торговые аванпосты A–D](guide://ColossusSiteTradeDepots) · [Бар «Веселый Роджер»](guide://ColossusSiteBlackMarket) · [Ресторан Тиннии](guide://ColossusSiteTinnia) · [Безумное Казино Кэсси](guide://ColossusSiteCaseysCasino) · [Бойцовская Яма](guide://ColossusSiteThePit) · [Церковь](guide://ColossusSiteOmnichurch)
+<GuideHub Root="LuaMWorldObjects" Entries="LuaMTradeMall,ColossusSiteTradeDepots,ColossusSiteBlackMarket,ColossusSiteTinnia,ColossusSiteCaseysCasino,ColossusSiteThePit,ColossusSiteOmnichurch"/>
 
 ## Базы и технические объекты
 
-[ММС «Хоккайдо»](guide://ColossusSiteHokkaido) · [Арктурус](guide://LuaMArcturus) · [Электростанция Эдисона](guide://ColossusSiteEdison) · [Узел «Зета»](guide://ColossusSiteZetaNode) · [Орбитальный Комплекс «Звезда»](guide://ColossusSiteZvezdaLuaM) · [Заправка Грифти](guide://ColossusSiteGrifty) · [Заброшенный МаКарго](guide://ColossusSiteMcHobo)
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteHokkaido,LuaMArcturus,ColossusSiteEdison,ColossusSiteZetaNode,ColossusSiteZvezdaLuaM,ColossusSiteGrifty,ColossusSiteMcHobo"/>
 
 ## Исследования и добыча
 
-[Хранилище технологий «Севастополь»](guide://ColossusSiteSevastopol) · [Древняя Буровая Станция](guide://ColossusSiteMining) · [Маяки астероидных скоплений](guide://ColossusSiteBeacons) · [Лаборатория Аномалий](guide://ColossusSiteAnomalousLab)
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteSevastopol,ColossusSiteMining,ColossusSiteBeacons,ColossusSiteAnomalousLab"/>
 
 ## Дальние объекты
 
-[Прослушка «Браво»](guide://ColossusSiteLPBravo) · [Разрушенный Крейсер Юпитер](guide://ColossusSiteJupiter) · [Шахтёрский Аванпост «Ланцелот»](guide://ColossusSiteLancelot) · [Центр Биологического Исследования «Полярис»](guide://ColossusSitePolaris) · [Автоматический Секториальный Танкер](guide://ColossusSiteAutomatedTanker) · [АСЗ СК-395 «Зенит»](guide://ColossusSiteZenith)
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteLPBravo,ColossusSiteJupiter,ColossusSiteLancelot,ColossusSitePolaris,ColossusSiteAutomatedTanker,ColossusSiteZenith"/>
 
 [Основные станции](guide://LuaMStations) · [События](guide://LuaMGameModes)
 <!-- /article -->
@@ -4971,9 +5043,9 @@ Viper Group — частная военная компания, работающ
 Дополнительный корабль ТСФ. Его штат отличается от [Халикона](guide://LuaMHalicon): капитан — 1, рядовые — 4, инженер — 1 и киборг — 1. Сержанты — до 3 и фельдшер — до 1 доступны для позднего присоединения; их стартовый штат равен нулю.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShuttle"/>
-<GuideEntityEmbed Entity="ComputerGunneryConsole"/>
-<GuideEntityEmbed Entity="TSFOverwatchComputer"/>
+<GuideTexture Entity="ComputerShuttle" Caption="auto"/>
+<GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/>
+<GuideTexture Entity="TSFOverwatchComputer" Caption="auto"/>
 </GuideEntityCards>
 На борту есть управление кораблём и орудиями, радар, IFF, фракционная связь и оперативное управление ТСФ. Мастерские содержат автолат, протолат, военный, медицинский и боеприпасный техфабы, консоль исследований. Раздатчик химикатов и ХимМастер позволяют готовить лекарства; есть консоль ID-карт.
 
@@ -4989,9 +5061,9 @@ Viper Group — частная военная компания, работающ
 
 ## Корабли и снабжение
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyardUSSP"/>
-<GuideEntityEmbed Entity="ComputerShipyardViper"/>
-<GuideEntityEmbed Entity="ComputerShipyardExpedition"/>
+<GuideTexture Entity="ComputerShipyardUSSP" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardViper" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardExpedition" Caption="auto"/>
 </GuideEntityCards>
 На станции стоят отдельные верфи СССП и Viper Group, обычная, экспедиционная и утилизационная верфи. Для каждой фракции есть своя консоль оперативного управления. Здесь также находятся банкоматы, консоли заказов, торговые паллеты и терминалы рынка.
 
@@ -5010,10 +5082,10 @@ Viper Group — частная военная компания, работающ
 
 ## Купить корабль и начать работу
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyard"/>
-<GuideEntityEmbed Entity="ComputerShipyardExpedition"/>
-<GuideEntityEmbed Entity="ComputerCargoBounty"/>
-<GuideEntityEmbed Entity="LuaMComputerPalletConsoleStationMarket"/>
+<GuideTexture Entity="ComputerShipyard" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardExpedition" Caption="auto"/>
+<GuideTexture Entity="ComputerCargoBounty" Caption="auto"/>
+<GuideTexture Entity="LuaMComputerPalletConsoleStationMarket" Caption="auto"/>
 </GuideEntityCards>
 На карте размещены обычная, экспедиционная, утилизационная верфи и верфь коменданта. Есть банкоматы, терминалы рынка, консоли грузовых заказов и товарных заданий. Для продажи груза используются торговые паллеты; для выполнения задания — соответствующая консоль заказов.
 
@@ -5032,9 +5104,9 @@ Viper Group — частная военная компания, работающ
 
 ## Верфь и управление
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyardNfsd"/>
-<GuideEntityEmbed Entity="ComputerGunneryConsole"/>
-<GuideEntityEmbed Entity="TSFOverwatchComputer"/>
+<GuideTexture Entity="ComputerShipyardNfsd" Caption="auto"/>
+<GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/>
+<GuideTexture Entity="TSFOverwatchComputer" Caption="auto"/>
 </GuideEntityCards>
 На флагмане размещены военная и обычная верфи, консоли управления кораблём и орудиями, радары, фракционная связь и оперативное управление ТСФ. Есть консоли ID-карт, личных дел, камер и учёта шаттлов.
 
@@ -5056,9 +5128,9 @@ Viper Group — частная военная компания, работающ
 На базе установлены обычная и чёрная верфи, радары, консоли орудий и оперативного управления Авангарда. Чёрная верфь и оружейный аплинк дают доступ к фракционному снабжению.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyardBlackMarket"/>
-<GuideEntityEmbed Entity="ComputerGunneryConsole"/>
-<GuideEntityEmbed Entity="PDVOverwatchComputer"/>
+<GuideTexture Entity="ComputerShipyardBlackMarket" Caption="auto"/>
+<GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/>
+<GuideTexture Entity="PDVOverwatchComputer" Caption="auto"/>
 </GuideEntityCards>
 
 ## Контрабанда и заказы
@@ -5077,7 +5149,7 @@ Viper Group — частная военная компания, работающ
 
 Основные станции сектора — места начала работы, снабжения и встречи экипажей.
 
-[Колосс Централл](guide://LuaMColossusCentral) · [Медицинский Центр](guide://LuaMMedical) · [Камелот](guide://LuaMCamelot) · [Халикон](guide://LuaMHalicon) · [Гелиос](guide://LuaMHelios)
+<GuideHub Root="LuaMStations"/>
 
 [Другие постоянные объекты](guide://LuaMWorldObjects) · [Объекты событий](guide://LuaMGameModes)
 <!-- /article -->
@@ -5093,10 +5165,10 @@ Viper Group — частная военная компания, работающ
 
 ## Лечение и восстановление
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MedicalScanner"/>
-<GuideEntityEmbed Entity="CloningPod"/>
-<GuideEntityEmbed Entity="ChemMaster"/>
-<GuideEntityEmbed Entity="ComputerShipyardMedical"/>
+<GuideTexture Entity="MedicalScanner" Caption="auto"/>
+<GuideTexture Entity="CloningPod" Caption="auto"/>
+<GuideTexture Entity="ChemMaster" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardMedical" Caption="auto"/>
 </GuideEntityCards>
 На карте есть медицинский сканер, консоль и капсула клонирования, хирургические наборы, раздатчик химикатов и ХимМастеры. Медицинский техфаб производит профильное оборудование; автолат обеспечивает базовые детали и инструменты.
 
@@ -5111,9 +5183,9 @@ Viper Group — частная военная компания, работающ
 
 ## Торговля и корабли
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerTabletopPalletConsoleNFNormalMarket"/>
-<GuideEntityEmbed Entity="ComputerShipyardScrap"/>
-<GuideEntityEmbed Entity="ComputerBankATM"/>
+<GuideTexture Entity="ComputerTabletopPalletConsoleNFNormalMarket" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardScrap" Caption="auto"/>
+<GuideTexture Entity="ComputerBankATM" Caption="auto"/>
 </GuideEntityCards>
 На карте есть торговые паллеты с консолью продажи, терминал рынка и консоль грузовых заказов. Станция принимает торговые ящики. Банкомат обслуживает личный счёт.
 
@@ -5145,7 +5217,7 @@ Viper Group — частная военная компания, работающ
 - **Прочие объекты** — торговые аванпосты, базы, исследовательские комплексы и руины, размещённые при начале смены. Часть выбирается случайно; доступные места смотрите на карте и в [разделе объектов](guide://LuaMWorldObjects).
 - **Объекты событий** появляются по объявлениям в течение смены. У них могут быть ограничения времени и опасные обитатели. [Что может появиться](guide://LuaMGameModes).
 - **Астероиды и скопления** служат источником руды. В поясе на расстоянии **8750–9000 м от центра** встречаются астероиды и обломки; отдельно отмечены INSO-357k и LINEAR-21. [Породы и состав](guide://LuaMAsteroids).
-- **Туманности** видны как цветные области. Значки погоды предупреждают об опасных эффектах. [Как распознать туманность](guide://ColossusNebulae).
+- **Туманности** видны как цветные области. Значки погоды предупреждают об опасных эффектах; после объявления о смене погоды проверьте маршрут заново. [Как распознать туманность](guide://ColossusNebulae).
 
 ## Метка — ориентир, а не гарантия безопасности
 
@@ -5157,8 +5229,8 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/GridClaimer.xml -->
 # Закрепление обломков
 <GuideEntityCards>
-<GuideEntityEmbed Entity="BannerNanotrasen"/>
-  <GuideEntityEmbed Entity="BannerCargo"/>
+<GuideTexture Entity="BannerNanotrasen" Caption="auto"/>
+  <GuideTexture Entity="BannerCargo" Caption="auto"/>
 </GuideEntityCards>
 Знамя позволяет закрепить подходящий обломок за собой. Захват не выдаёт права на корабль через верфь.
 
@@ -5178,24 +5250,12 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/Index.xml -->
 # Суда
 
-[Покупка корабля](guide://Shipyard)
-
-[Верфи](guide://ColossusCatalogueShipyards)
-
-[Пилотирование](guide://Piloting)
-
-[Навигация](guide://ColossusOrientation)
-
-[Вооружение](guide://ColossusShipArmament)
-
-[Ремонт корабля](guide://ColossusShipRepair)
-
-[Закрепление обломков](guide://GridClaimer)
+<GuideHub Root="NF14"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/Orientation.xml -->
 # Ориентирование в секторе
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShuttle"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Caption="auto"/></GuideEntityCards>
 На **MAP** консоли шаттла находятся карта сектора, поиск объектов, метка X/Y, автопилот и БСС. На **NAV** видны ближайшие корпуса и препятствия; для стыковочных портов есть **DOCK**.
 
 ## Найти нужное место
@@ -5203,10 +5263,16 @@ Viper Group — частная военная компания, работающ
 
 В блоке метки введите X и Y, затем нажмите кнопку установки. Эта цель общая для NAV и MAP. Её можно скрыть, очистить или отправить к ней автопилот. Метка полезна для возврата к найденному обломку, даже если его название отсутствует в списке.
 
-## Что может отсутствовать на карте
-Скрытая подпись IFF и скрытый объект — разные вещи. Вместо имени может отображаться неизвестная масса или сигнатура. [Прослушка «Браво»](guide://LuaMWorldObjects) скрыта полем маскировки на расстоянии свыше 1 км и не предоставляет обычный маяк БСС.
+## Действия с объектом на радаре
 
-Обломки событий существуют ограниченное время. [Крупный обломок Монолита](guide://LuaMMonolithWreck) исчезает по таймеру события даже с людьми на борту. Другие найденные корпуса можно исследовать с учётом механики [закрепления обломков](guide://GridClaimer).
+На **NAV** нажмите **Alt + ПКМ по корпусу**, а на **MAP** — **Alt + ПКМ по отметке объекта**, предварительно выйдя из режима выбора точки БСС. В контекстном меню **«Следовать»** включает автопилот: корабль подходит к выбранному объекту и обновляет цель при его движении. Автоматическая стыковка не выполняется. Для уже пристыкованного к вам объекта эта команда недоступна; чтобы изменить маршрут, задайте другую цель или перейдите на ручное управление.
+
+Если на вашей консоли доступна голосвязь, в том же меню появляется **«Позвонить»** со списком доступных адресатов на выбранном объекте. Недоступные адресаты отмечены отдельно.
+
+## Что может отсутствовать на карте
+Скрытая подпись IFF и скрытый объект — разные вещи. Вместо имени может отображаться неизвестная масса или сигнатура. [Прослушка «Браво»](guide://ColossusSiteLPBravo) скрыта полем маскировки на расстоянии свыше 1 км и не предоставляет обычный маяк БСС.
+
+Обломки событий существуют ограниченное время. Незакреплённый [крупный обломок Монолита](guide://LuaMMonolithWreck) исчезает по таймеру даже с людьми на борту. Успешное [закрепление](guide://GridClaimer) сохраняет подходящий объект после окончания события.
 
 Порядок выбора точки выхода БСС и стыковки разобран в [пилотировании](guide://Piloting).
 <!-- /article -->
@@ -5216,7 +5282,7 @@ Viper Group — частная военная компания, работающ
 
 Туманности — огромные облака газа и пыли, разбросанные по сектору. На радаре и карте они видны цветными пятнами с контуром. Ищите их вдали от станций; расположение облаков меняется от смены к смене.
 
-<GuideTexture Texture="/Textures/_LuaM/Interface/Guidebook/nebula.png"/>
+<GuideTexture Texture="/Textures/_LuaM/Interface/Guidebook/nebula.png" Fill="true"/>
 
 Одна туманность может содержать несколько видов погоды: на радаре каждому соответствует свой значок.
 
@@ -5229,6 +5295,12 @@ Viper Group — частная военная компания, работающ
 В плотной части некоторых облаков бушует космическая непогода. Она повреждает обшивку, нагружает щиты и мешает корабельным системам. Погодные эффекты действуют в **плотной средней зоне**, а не по всей видимой площади облака. Корпус может уже задевать её, даже если центр корабля находится снаружи.
 
 [color=orange]**БСС:**[/color] большинство видов погоды блокируют прыжок. Проверяются **и положение корабля, и точка назначения**: нельзя ни прыгнуть из опасной зоны, ни выбрать выход внутри неё. Для выхода нужна обычная тяга.
+
+## Предупреждение и автопилот
+
+При входе в плотную зону облака с погодой на **NAV** появляются красная надпись **«ВНИМАНИЕ: ВХОД В ОПАСНУЮ ТУМАННОСТЬ»** и звуковой сигнал. Сверьте значки погоды и выберите направление выхода: предупреждение не останавливает корабль. Оно появляется и в завесе, хотя сама завеса не повреждает корпус.
+
+**Автопилот обходит облака с погодными эффектами, включая завесу.** Если назначенная цель находится внутри, он останавливается перед опасной зоной; дальнейший подлёт выполняйте вручную на NAV. Обычные безопасные облака обхода не требуют.
 
 ## Значки на радаре
 
@@ -5245,6 +5317,16 @@ Viper Group — частная военная компания, работающ
 <GuideTexture Texture="/Textures/_Lua/Interface/Radar/nebula_veil.png" Scale="1.5" Text="[bold]Завеса[/bold] — маскирует радарное обнаружение находящихся внутри объектов, в том числе вашего корабля. Не гарантирует полной невидимости. Сама по себе безвредна, [color=lightgreen]БСС разрешён[/color]."/>
 
 При наложении погоды применяется худший множитель тяги и худший множитель паузы оружия; одинаковые штрафы не перемножаются. Завеса не отменяет другие опасности в том же облаке.
+
+## Смена погоды
+
+Примерно каждые **40–60 минут** опасные облака передают свою погоду другим туманностям: прежнее облако затихает, а другое получает его эффекты. Сами облака остаются на местах. При отсутствии подходящего безопасного места погода остаётся в прежнем облаке; число облаков с погодой остаётся прежним.
+
+Об изменении приходит общее объявление. После него заново проверьте значки на маршруте: знакомое безопасное облако может стать опасным. Цвет помогает ориентироваться, но действующие эффекты определяйте по значкам.
+
+## Астероиды и обломки
+
+В облаках встречаются небольшие астероиды и обломки кораблей. Их можно исследовать и разрабатывать, но наличие находки не отменяет погоду. При сближении снижайте скорость и смотрите на корпуса и препятствия на NAV. Не рассчитывайте использовать такой обломок как постоянный склад: после ухода экипажей находки могут исчезнуть.
 
 ## Щит и герметичность
 
@@ -5264,7 +5346,7 @@ Viper Group — частная военная компания, работающ
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/Piloting.xml -->
 # Пилотирование: NAV, MAP и DOCK
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShuttle"/><GuideEntityEmbed Entity="AirlockGlassShuttle"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Caption="auto"/><GuideTexture Entity="AirlockGlassShuttle" Caption="auto"/></GuideEntityCards>
 Консоль шаттла объединяет три экрана. **NAV** — ближний радар и движение; **MAP** — карта сектора, БСС и автопилот; **DOCK** — стыковочные порты. Если управление закрыто, проверьте доступ корабельной ID-карты.
 
 <GuideNavigationUI Mode="shuttle"/>
@@ -5283,6 +5365,10 @@ Viper Group — частная военная компания, работающ
 В списке объектов справа введите часть названия. Карта обновляется сама. Колесо мыши меняет масштаб, перетаскивание — обзор. Кнопка «Маяки» меняет видимость маяков.
 
 Например, найдите [Медицинский Центр](guide://LuaMMedical), выберите свободное пространство рядом с ним и выполните БСС. Координаты X/Y в блоке метки позволяют поставить собственную цель. «Автопилот» у метки ведёт корабль к этой цели обычным ходом. По прибытии включается якорное торможение. Для ручного подлёта вернитесь на NAV и переключите режим инерционных компенсаторов.
+
+Автопилот обходит облака с погодными эффектами, включая завесу. Если цель находится внутри, он остановится у границы; дальше летите вручную. На NAV вход в плотную зону облака с погодой сопровождается красным предупреждением и сигналом. [Погода и безопасный выход](guide://ColossusNebulae).
+
+Для следования за объектом нажмите **Alt + ПКМ по корпусу на NAV** или **по отметке объекта на MAP**, затем **«Следовать»**. На MAP сначала выйдите из режима выбора точки БСС. Подробности следования и вызова связи — в [навигации](guide://ColossusOrientation).
 
 ## 3. Прыгнуть на БСС
 На MAP нажмите «БСС»: курсор покажет место выхода и поворот корпуса. Колесо мыши в этом режиме меняет **ориентацию выхода**. Нажмите на доступную точку карты или маяк, чтобы запросить прыжок. Учитывайте дальность привода и запретные области на предпросмотре.
@@ -5305,15 +5391,15 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/Shipyard.xml -->
 # Покупка и продажа корабля
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyard"/>
-  <GuideEntityEmbed Entity="PassengerIDCard"/>
+<GuideTexture Entity="ComputerShipyard" Caption="auto"/>
+  <GuideTexture Entity="PassengerIDCard" Caption="auto"/>
 </GuideEntityCards>
 Верфь связывает корабль с **конкретной ID-картой**. Берегите её: регистрация нужна для продажи, а корабельный доступ — для управления. Одна карта с уже зарегистрированным кораблём не подходит для покупки следующего.
 
 ## Покупка
 Извлеките карту из КПК, вставьте в консоль и откройте меню. Выберите доступный корабль, проверьте цену, назначение и источник питания. Нажмите «Приобрести». Оплата идёт с банковского счёта покупателя; наличные в кармане сами по себе не заменяют баланс счёта.
 
-Ваучер действует только для подходящей верфи и разрешённых им кораблей. Если покупка недоступна, проверьте карту, доступ к консоли, банковский счёт и условия ваучера. После покупки заберите карту и верните её в КПК.
+Ваучер действует только для подходящей верфи и разрешённых им кораблей. Осмотр ваучера показывает оставшееся число покупок либо неограниченное использование, а также время до следующей покупки, если действует перезарядка. Если покупка недоступна, проверьте карту, доступ к консоли, банковский счёт и условия ваучера. После покупки заберите карту и верните её в КПК.
 
 [Управление и вылет](guide://Piloting).
 
@@ -5336,6 +5422,12 @@ Viper Group — частная военная компания, работающ
 # Корабельные орудия и СУО
 
 Для подключения нужны **орудие, сервер СУО и консоль управления на одном гриде**. Все три устройства должны получать питание.
+
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="ComputerGunneryConsole" Caption="Консоль"/>
+<GuideTexture Entity="GunneryServerLow" Caption="Сервер СУО"/>
+<GuideTexture Entity="WeaponTurretCharon" Caption="Орудие"/>
+</GuideEntityCards>
 
 ## Подключение и стрельба
 1. Откройте на консоли **«Управление орудиями»** и отметьте установки, которыми будете стрелять. Наличие орудия на гриде ещё не означает, что серверу хватает мощности для его подключения.
@@ -5377,7 +5469,7 @@ Viper Group — частная военная компания, работающ
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/Bank.xml -->
 # Деньги и банк
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerBankATM"/><GuideEntityEmbed Entity="SpaceCash1000"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerBankATM" Caption="auto"/><GuideTexture Entity="SpaceCash1000" Caption="auto"/></GuideEntityCards>
 <GuideTable Columns="2">
 <Box>**Где деньги**</Box><Box>**Как используются**</Box>
 <Box>Наличные</Box><Box>Физическая пачка. Для банковской покупки сначала внесите её через банкомат.</Box>
@@ -5409,6 +5501,12 @@ Viper Group — частная военная компания, работающ
 
 Наёмник начинает без назначенной работы: можно вступить в экипаж или купить собственный корабль. Для **киборга наймов** устройство модулей, зарядка и ремонт разобраны в [руководстве киборга](guide://Cyborgs); остальные разделы здесь описывают самостоятельный рейс.
 
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="ComputerBankATM" Caption="Пополнить счёт"/>
+<GuideTexture Entity="ComputerShipyard" Caption="Выбрать корабль"/>
+<GuideTexture Entity="ComputerShuttle" Caption="Занять место пилота"/>
+</GuideEntityCards>
+
 ## Получить корабль
 1. Откройте [банкомат](guide://Bank) и проверьте банковский баланс: верфь списывает деньги со счёта. Наличные сначала внесите на него.
 2. На [верфи](guide://Shipyard) выберите корабль. Цена, класс и доступность покупки указаны в её окне. Если используете ваучер, нужен подходящий тип верфи и корабля — [выбор верфей](guide://ColossusCatalogueShipyards).
@@ -5429,6 +5527,10 @@ Viper Group — частная военная компания, работающ
 # Наём экипажа
 
 Экипаж набирают по договорённости с другими игроками, уже находящимися в секторе. Можно присоединиться к чужому кораблю и работать на нём без покупки собственного.
+
+<GuideEntityCards>
+<GuideTexture Entity="RadioHandheldNF" Caption="Договориться о работе"/>
+</GuideEntityCards>
 
 ## Найти людей на корабль
 1. Через связь или при личной встрече сообщите, кого ищете и для какой работы: пилота, добытчика, инженера, медика или напарника на экспедицию.
@@ -5453,9 +5555,9 @@ Viper Group — частная военная компания, работающ
 Для выхода в вакуум нужны **скафандр, шлем, дыхательный баллон и подключённые внутренние источники воздуха**. Дыхательная смесь зависит от [расы персонажа](guide://Species). Баллон и защита тела решают разные задачи; одной маски для выхода из корабля недостаточно.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="DoubleEmergencyOxygenTankFilled"/>
-<GuideEntityEmbed Entity="SpaceMedipen"/>
-<GuideEntityEmbed Entity="HandHeldMassScanner"/>
+<GuideTexture Entity="DoubleEmergencyOxygenTankFilled" Caption="auto"/>
+<GuideTexture Entity="SpaceMedipen" Caption="auto"/>
+<GuideTexture Entity="HandHeldMassScanner" Caption="auto"/>
 </GuideEntityCards>
 
 ## Выбрать набор в лобби
@@ -5463,7 +5565,7 @@ Viper Group — частная военная компания, работающ
 
 ## Медицинский сигнал и координаты
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MedicalTrackingImplanter"/>
+<GuideTexture Entity="MedicalTrackingImplanter" Caption="auto"/>
 </GuideEntityCards>
 
 Примените медицинский имплантер к себе. Имплант сообщает в медицинский канал о критическом состоянии и смерти; постоянного отслеживания положения он не даёт.
@@ -5478,27 +5580,15 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/Index.xml -->
 # Новичкам
 
-[Первый выход](guide://BeginnerGuide)
-
-[Снаряжение](guide://StartingGear)
-
-[Деньги](guide://ColossusMoney)
-
-[Экипаж](guide://Hiring)
-
-[Виды заработка](guide://Jobs)
-
-[Расы](guide://Species)
-
-[Разметка письма](guide://Writing)
+<GuideHub Root="NewPlayer"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/SafetyDepositBox.xml -->
 # Депозитные ящики
 <GuideEntityCards>
-<GuideEntityEmbed Entity="SafetyDepositConsole"/>
-  <GuideEntityEmbed Entity="SafetyDepositBoxSmall"/>
-  <GuideEntityEmbed Entity="SafetyDepositBoxLarge"/>
+<GuideTexture Entity="SafetyDepositConsole" Caption="auto"/>
+  <GuideTexture Entity="SafetyDepositBoxSmall" Caption="auto"/>
+  <GuideTexture Entity="SafetyDepositBoxLarge" Caption="auto"/>
 </GuideEntityCards>
 Депозит сохраняет разрешённые предметы между сменами. Ящик привязан к владельцу и выбранному слоту персонажа. Другой персонаж не сможет внести его как свой.
 
@@ -5528,6 +5618,13 @@ Viper Group — частная военная компания, работающ
 # Стержни и детали реактора
 
 Детали изготавливаются **ядерным фабрикатором** из загруженных материалов. Доступные после исследования варианты зависят от подключённой базы РНД. Сравнивайте готовую деталь, а не только название сырья.
+
+<GuideEntityCards>
+<GuideTexture Entity="UraniumReactorFuelRod" Caption="Топливо"/>
+<GuideTexture Entity="SteelReactorControlRod" Caption="Управление реакцией"/>
+<GuideTexture Entity="SteelReactorGasChannel" Caption="Теплоноситель"/>
+<GuideTexture Entity="SteelReactorHeatExchanger" Caption="Передача тепла"/>
+</GuideEntityCards>
 
 ## Назначение деталей
 
@@ -5612,6 +5709,10 @@ Viper Group — частная военная компания, работающ
 # Военный кодекс Транс-Солнечной Федерации
 
 **Военный кодекс Транс-Солнечной Федерации** — официальный документ, разработанный на основе Единого кодекса военной юстиции США. Он устанавливает единые стандарты поведения, цепочку командования, правила ведения боя и порядок привлечения к ответственности силами 113-го корпуса Морской Пехоты ТСФ в Секторе Колосс.
+
+<GuideEntityCards>
+<GuideTexture Entity="BookTSFSOP" Caption="Военный кодекс ТСФ"/>
+</GuideEntityCards>
 
 ### Военный кодекс ТСФ
 
@@ -5752,6 +5853,10 @@ Viper Group — частная военная компания, работающ
 
 **Священный Военный Устав Авангарда Нордфолла** — доктринальный суверенный документ, определяющий кодекс чести, духовные и боевые обязанности слуг Империи Феникса в Секторе Колосс.
 
+<GuideEntityCards>
+<GuideTexture Entity="BookNordfallSOP" Caption="Священный Военный Устав"/>
+</GuideEntityCards>
+
 ### Доктрина Тьмы и Пламени: Устав АНФ
 
 Настоящий Свод регулирует внутренний порядок, железную дисциплину, обязанности братьев по оружию и кару за отступничество на территории Сектора Колосс.
@@ -5891,9 +5996,9 @@ Viper Group — частная военная компания, работающ
 **Курьер ColossDelivery** принимает оплаченные заказы, забирает запечатанные посылки на телепаде «Колосс Централл» и доставляет их покупателям. Выплата приходит, когда заказчик открывает посылку своей ID-картой.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="DeliveryCourierPDA"/>
-<GuideEntityEmbed Entity="DeliveryParcel"/>
-<GuideEntityEmbed Entity="ClothingEyesHudLuaMCourier"/>
+<GuideTexture Entity="DeliveryCourierPDA" Caption="auto"/>
+<GuideTexture Entity="DeliveryParcel" Caption="auto"/>
+<GuideTexture Entity="ClothingEyesHudLuaMCourier" Caption="auto"/>
 </GuideEntityCards>
 
 ## Подготовиться к работе
@@ -5972,9 +6077,9 @@ Viper Group — частная военная компания, работающ
 **УРК — устройство ремонта корабля.** Оно восстанавливает утраченные участки пола и конструкции по сохранённому плану корпуса. Для работы нужны само устройство и заряды ремонтной материи.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ShipRepairDevice"/>
-<GuideEntityEmbed Entity="ShipRepairDeviceAmmo"/>
-<GuideEntityEmbed Entity="ShipRepairDeviceMMC"/>
+<GuideTexture Entity="ShipRepairDevice" Caption="auto"/>
+<GuideTexture Entity="ShipRepairDeviceAmmo" Caption="auto"/>
+<GuideTexture Entity="ShipRepairDeviceMMC" Caption="auto"/>
 </GuideEntityCards>
 
 ## Что можно восстановить
@@ -6342,7 +6447,7 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/Flight.xml -->
 # Полёт
 
-<GuideEntityCards><GuideEntityEmbed Entity="CEActionZFlightToggle"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="CEActionZFlightToggle" Caption="auto"/></GuideEntityCards>
 
 Некоторые крылатые расы, включая гарпий и нианов, способны летать на планетах и картах с высотными уровнями. Используйте действие полёта для перемещения между уровнями; поддержание полёта расходует выносливость.
 
@@ -6355,7 +6460,7 @@ Viper Group — частная военная компания, работающ
 
 Мозг, глаза и нейростабилизатор занимают отдельные слоты. В каждом — один вариант.
 
-<GuideEntityCards><GuideEntityEmbed Entity="BasicCyberneticEyes"/><GuideEntityEmbed Entity="OrganHumanityChipMk1"/><GuideEntityEmbed Entity="OrganHumanityChipMk2"/><GuideEntityEmbed Entity="OrganHumanityChipMk3"/><GuideEntityEmbed Entity="PositronicBrain"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="BasicCyberneticEyes" Caption="auto"/><GuideTexture Entity="OrganHumanityChipMk1" Caption="auto"/><GuideTexture Entity="OrganHumanityChipMk2" Caption="auto"/><GuideTexture Entity="OrganHumanityChipMk3" Caption="auto"/><GuideTexture Entity="PositronicBrain" Caption="auto"/></GuideEntityCards>
 
 ## Глаза
 
@@ -6405,7 +6510,7 @@ Viper Group — частная военная компания, работающ
 
 ## Лекарственные инъекторы
 
-<GuideEntityCards><GuideEntityEmbed Entity="AutosurgeonCombatMedipenFlatpack"/><GuideEntityEmbed Entity="AutosurgeonStimulantFlatpack"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AutosurgeonCombatMedipenFlatpack" Caption="auto"/><GuideTexture Entity="AutosurgeonStimulantFlatpack" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
@@ -6432,29 +6537,21 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusMoney.xml -->
 # Деньги
 
-[Банк](guide://Bank)
-
-[Депозитные ящики](guide://SafetyDepositBox)
+<GuideHub Root="ColossusMoney"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusExtraction.xml -->
 # Добыча
 
-[Руда](guide://ColossusMining)
-
-[Корабельный бур](guide://IndustryDrilling)
-
-[Лазерный бур](guide://ColossusLaserDrill)
-
-[Газодобыча](guide://GasMining)
+<GuideHub Root="ColossusExtraction"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/ColossusLaserDrill.xml -->
 # Лазерный бур
 
-<GuideEntityCards><GuideEntityEmbed Entity="LaserDrill"/><GuideEntityEmbed Entity="StationLaserDrill"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="LaserDrill" Caption="auto"/><GuideTexture Entity="StationLaserDrill" Caption="auto"/></GuideEntityCards>
 **Обычная установка:** разместите и закрепите её на экспедиционной планете, подключите к высоковольтной сети с запасом **100 кВт**. При достаточном питании она делает попытку добычи каждые **50 секунд**. Контакт с рудной жилой не нужен; требование грунта отключено, решётка допустима.
 
 **Продвинутая станционная установка:** требует **150 кВт**, попытка каждую **1 секунду**; ограничения экспедиционной планетой нет. Её штатный вариант не позволяет обычное открепление инструментом.
@@ -6468,84 +6565,42 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusExpeditionEnemies.xml -->
 # Противники
 
-[Аномальная плоть](guide://MobsExpeditionGuideAberrantFlesh)
-
-[Аргоциты](guide://MobsExpeditionGuideArgocytes)
-
-[Культисты](guide://MobsExpeditionGuideBloodCult)
-
-[Карпы](guide://MobsExpeditionGuideCarps)
-
-[Динозавры](guide://MobsExpeditionGuideDinosaurs)
-
-[Исследователи](guide://MobsExpeditionGuideExplorers)
-
-[Наёмники](guide://MobsExpeditionGuideMercenaries)
-
-[Панки](guide://MobsExpeditionGuideGangers)
-
-[Мятежные ИИ](guide://MobsExpeditionGuideSilicons)
-
-[Синдикат](guide://MobsExpeditionGuideSyndicate)
-
-[Ксеносы](guide://MobsExpeditionGuideXenos)
+<GuideHub Root="ColossusExpeditionEnemies"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusExpeditionsHub.xml -->
 # Экспедиции
 
-[Подготовка](guide://Expeditions)
-
-[Противники](guide://ColossusExpeditionEnemies)
+<GuideHub Root="ColossusExpeditionsHub"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusRndHub.xml -->
 # РНД
 
-[Исследования](guide://IndustryResearch)
-
-[Дерево технологий](guide://ColossusCatalogueResearch)
-
-[Артефакты](guide://ColossusArtifacts)
-
-[Аномалии](guide://ColossusAnomalies)
+<GuideHub Root="ColossusRndHub"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusMechsHub.xml -->
 # Мехи
 
-[Рипли](guide://MechsBase)
-
-[Серия S1](guide://S1Mechs)
-
-[Серия S2](guide://S2Mechs)
-
-[Серия S4](guide://S4Mechs)
+<GuideHub Root="ColossusMechsHub"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusProduction.xml -->
 # Производство
 
-[Фабрикаторы](guide://IndustryFabricators)
-
-[Мехи](guide://ColossusMechsHub)
+<GuideHub Root="ColossusProduction"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusBuilding.xml -->
 # Строительство
 
-[Конструкции](guide://Construction)
-
-[Ремонт станций](guide://ExpandingRepairingStation)
-
-[Технические панели](guide://WirePanels)
-
-[Шлюзы](guide://Airlocks)
+<GuideHub Root="ColossusBuilding"/>
 <!-- /article -->
 
 
@@ -6555,7 +6610,7 @@ Viper Group — частная военная компания, работающ
 ## Собрать ТЭГ: два независимых газовых контура
 ТЭГ превращает часть разницы тепловой энергии двух потоков в электричество. Нужны **центральный блок, два циркулятора, горячая и холодная петли, насосы, газ и внешнее питание**. Центральный блок потребляет **1 кВт из LV**, а выдаёт мощность в **HV**: для запуска нужен заряженный накопитель или другой генератор.
 
-<GuideEntityCards><GuideEntityEmbed Entity="TegCirculator" Rotation="180" Caption=""/><GuideEntityEmbed Entity="TegCenter" Rotation="90" Caption=""/><GuideEntityEmbed Entity="TegCirculator" Caption=""/></GuideEntityCards>
+<GuideEntityCards><GuideEntityEmbed Entity="TegCirculator" Rotation="180" Caption=""/><GuideEntityEmbed Entity="TegCenter" Rotation="90" Caption=""/><GuideTexture Entity="TegCirculator" Caption=""/></GuideEntityCards>
 
 1. Разместите центральный блок между двумя циркуляторами и закрепите узлы. Разверните их соединительными сторонами к центру; осмотр центрального блока сообщает о неполном соединении.
 2. Соедините вход и выход одного циркулятора с **горячей петлёй**, второго — с **холодной**. Между этими петлями не должно быть общей газовой трубы. При исходном направлении циркулятора вход с севера, выход с юга; при повороте узла поворачиваются и порты.
@@ -6599,98 +6654,42 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusElectricity.xml -->
 # Электроснабжение
 
-[Электросети](guide://ColossusPower)
-
-[Генераторы](guide://ColossusCatalogueEngineering)
-
-[ТЭГ](guide://ColossusTEG)
-
-[Электростанция Эдисона](guide://ColossusEdison)
-
-[Изменение мощности](guide://Ramping)
-
-[Реактор INSFC NFR](guide://ShipyardNFROperation)
+<GuideHub Root="ColossusElectricity"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusAtmosEquipment.xml -->
 # Оборудование
 
-[Насосы](guide://Pumps)
-
-[Смешивание](guide://MixingAndFiltering)
-
-[Термомашины](guide://Thermomachines)
-
-[Трубы](guide://Pipes)
-
-[Регулятор давления](guide://PressureRegulator)
+<GuideHub Root="ColossusAtmosEquipment"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusGasSynthesis.xml -->
 # Синтез газов
 
-[Тритий](guide://ColossusGasTritium)
-
-[Фрезон](guide://ColossusGasFrezon)
-
-[BZ](guide://ColossusGasBZ)
-
-[Хилиум](guide://ColossusGasHealium)
-
-[Нитриум](guide://ColossusGasNitrium)
-
-[Плюоксий](guide://ColossusGasPluoxium)
+<GuideHub Root="ColossusGasSynthesis"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusAtmosMonitoring.xml -->
 # Мониторинг
 
-[Управление устройствами](guide://DeviceMonitoringAndControl)
-
-[Воздушные сигнализации](guide://AirAlarms)
-
-[Консоль сигнализаций](guide://AtmosphericAlertsComputer)
-
-[Монитор сетей](guide://AtmosphericNetworkMonitor)
+<GuideHub Root="ColossusAtmosMonitoring"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusAtmosHub.xml -->
 # Атмосфера
 
-[Газовые контуры](guide://ColossusAtmos)
-
-[Оборудование](guide://ColossusAtmosEquipment)
-
-[Синтез газов](guide://ColossusGasSynthesis)
-
-[Мониторинг](guide://ColossusAtmosMonitoring)
+<GuideHub Root="ColossusAtmosHub"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusGuides.xml -->
 # Руководства
 
-[Заработок](guide://ColossusActivities)
-
-[Добыча](guide://ColossusExtraction)
-
-[Экспедиции](guide://ColossusExpeditionsHub)
-
-[Ботаника](guide://ColossusBotany)
-
-[РНД](guide://ColossusRndHub)
-
-[Производство](guide://ColossusProduction)
-
-[Инженерия](guide://Engineering)
-
-[Бой](guide://ColossusCombat)
-
-[Медицина](guide://Medical)
+<GuideHub Root="ColossusGuides"/>
 <!-- /article -->
 
 
@@ -6701,48 +6700,28 @@ Viper Group — частная военная компания, работающ
 
 [Модернизация станков](guide://IndustryMachineParts) · [Фабрикаторы](guide://IndustryFabricators) · [Добыча](guide://ColossusExtraction).
 
-[Должности «Хоккайдо»](guide://ColossusMMCFaction)
-
-[Заказы MIC](guide://MMC)
-
-[Промышленное производство](guide://Economy)
-
-[Дуговая печь](guide://ArcFurnace)
-
-[Автоматизация](guide://IndustryAutomation)
-
-[История ММС](guide://LuaMLoreMMC)
+<GuideHub Root="ColossusMMCRoles"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusTSFRoles.xml -->
 # ТСФ
 
-[Должности](guide://TSFMC_Entry)
-
-[Командование](guide://TSFMC_org)
-
-[Служба](guide://TSFMC_SOP)
-
-[Военный кодекс](guide://ColossusTSFCode)
+<GuideHub Root="ColossusTSFRoles"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusNordfallRoles.xml -->
 # Авангард Нордфолла
 
-[Должности](guide://PDV_Entry)
-
-[Священный устав](guide://ColossusNordfallCharter)
+<GuideHub Root="ColossusNordfallRoles"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusUSSPRoles.xml -->
 # СССП
 
-[Должности](guide://USSP_Entry)
-
-[Снабжение](guide://USSP_SoP)
+<GuideHub Root="ColossusUSSPRoles"/>
 <!-- /article -->
 
 
@@ -6758,44 +6737,28 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusSpecialRoles.xml -->
 # Особые роли
 
-[Предтечи, АДС, Азакимы](guide://ColossusPrecursors)
-
-[Мозговой червь](guide://CorticalBorerPracticalGuide)
-
-[Химера](guide://ChimeraPracticalGuide)
-
-[Ксеноборги](guide://Xenoborgs)
+<GuideHub Root="ColossusSpecialRoles"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusShipArmament.xml -->
 # Вооружение
 
-[Корабельные орудия](guide://WeaponsSystems)
-
-[Каталог орудий](guide://ColossusCatalogueShipWeapons)
-
-[Серверы СУО](guide://ColossusFireControlServers)
+<GuideHub Root="ColossusShipArmament"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusReferenceEquipment.xml -->
 # Снаряжение
 
-[Оружие](guide://ColossusCatalogueWeapons)
-
-[Боеприпасы](guide://ColossusCatalogueAmmo)
-
-[Броня](guide://ColossusCatalogueArmor)
-
-[Аплинки](guide://ColossusCatalogueUplinks)
+<GuideHub Root="ColossusReferenceEquipment"/>
 <!-- /article -->
 
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusReferenceResources.xml -->
 # Ресурсы
 
-[Цены веществ](guide://ColossusCataloguePrices)
+<GuideHub Root="ColossusReferenceResources"/>
 
 Состав пород и распределение руды находятся в разделе [«Астероиды»](guide://LuaMAsteroids).
 <!-- /article -->
@@ -6804,9 +6767,7 @@ Viper Group — частная военная компания, работающ
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusRecipes.xml -->
 # Рецепты
 
-[Напитки](guide://Drinks)
-
-[Еда](guide://FoodRecipes)
+<GuideHub Root="ColossusRecipes"/>
 <!-- /article -->
 
 
@@ -6824,7 +6785,7 @@ Viper Group — частная военная компания, работающ
 
 Бар и узел снабжения с чёрным рынком, торговым оборудованием и верфями. Здесь можно пополнить запасы и подготовить следующий вылет.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerBlackMarketBankATM"/><GuideEntityEmbed Entity="VendingMachineBooze"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerBlackMarketBankATM" Caption="auto"/><GuideTexture Entity="VendingMachineBooze" Caption="auto"/></GuideEntityCards>
 
 Покупки и оснащение проверяйте по ассортименту местных терминалов; для рейса за добычей есть экспедиционная верфь.
 
@@ -6842,7 +6803,7 @@ Viper Group — частная военная компания, работающ
 
 Исследовательский объект с терминалом технологических дисков и охранными синтетиками.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerTechnologyDiskTerminalPOI"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerTechnologyDiskTerminalPOI" Caption="auto"/></GuideEntityCards>
 
 Подготовьтесь к боевому вылету. Проверяйте помещения и вывозите находки на свой корабль; наличие исследовательского оборудования не означает безопасный доступ.
 
@@ -6860,7 +6821,7 @@ Viper Group — частная военная компания, работающ
 
 Заброшенная станция с добывающим оборудованием. В её помещениях встречаются ксеносы.
 
-<GuideEntityCards><GuideEntityEmbed Entity="MiningDrill"/><GuideEntityEmbed Entity="LaserDrillFlatpack"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MiningDrill" Caption="auto"/><GuideTexture Entity="LaserDrillFlatpack" Caption="auto"/></GuideEntityCards>
 
 Осмотрите объект перед разборкой и вывозом оборудования. Для добычи и переработки подготовьте инструменты и место под груз.
 
@@ -6878,7 +6839,7 @@ Viper Group — частная военная компания, работающ
 
 База ММС: производство компонентов, приём промышленных заказов и корпоративное снабжение.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerCargoBounty"/><GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerCargoBounty" Caption="auto"/><GuideTexture Entity="ComputerResearchAndDevelopment" Caption="auto"/></GuideEntityCards>
 
 Работу начинайте с выбора заказа и планирования сырья. Полная производственная цепочка и должности собраны в ветке ММС.
 
@@ -6896,7 +6857,7 @@ Viper Group — частная военная компания, работающ
 
 Энергетический объект с солнечными панелями, ТЭГ и газовыми контурами.
 
-<GuideEntityCards><GuideEntityEmbed Entity="TegCenter"/><GuideEntityEmbed Entity="TegCirculator"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="TegCenter" Caption="auto"/><GuideTexture Entity="TegCirculator" Caption="auto"/></GuideEntityCards>
 
 Схема станции и порядок запуска приведены в руководстве по электростанции; для настройки сетей используйте статью об электроснабжении.
 
@@ -6914,7 +6875,7 @@ Viper Group — частная военная компания, работающ
 
 Комплекс с исследовательским и техническим оборудованием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerTabletopResearchAndDevelopment"/><GuideEntityEmbed Entity="ComputerTabletopAnalysisConsole"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerTabletopResearchAndDevelopment" Caption="auto"/><GuideTexture Entity="ComputerTabletopAnalysisConsole" Caption="auto"/></GuideEntityCards>
 
 При исследовании проверяйте питание, атмосферу и состояние помещений; найденное оборудование сверяйте с задачами своего экипажа.
 
@@ -6932,7 +6893,7 @@ Viper Group — частная военная компания, работающ
 
 Небольшой объект у центральной области сектора.
 
-<GuideEntityCards><GuideEntityEmbed Entity="SellOnlyCarrierComputer"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="SellOnlyCarrierComputer" Caption="auto"/></GuideEntityCards>
 
 Используйте его отметку как ориентир; состояние помещений проверяйте перед работой внутри.
 
@@ -6950,7 +6911,7 @@ Viper Group — частная военная компания, работающ
 
 Удалённая база с оборудованием Синдиката, средствами наблюдения и верфью.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShipyardSyndicate"/><GuideEntityEmbed Entity="ComputerAdvancedRadar"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShipyardSyndicate" Caption="auto"/><GuideTexture Entity="ComputerAdvancedRadar" Caption="auto"/></GuideEntityCards>
 
 Обычная отметка БСС скрыта. Для поиска и подхода нужны координаты или обнаружение на радаре; не рассчитывайте найти базу по одному списку маяков.
 
@@ -6968,7 +6929,7 @@ Viper Group — частная военная компания, работающ
 
 Исследовательский объект с оборудованием РНД.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerTabletopResearchAndDevelopment"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerTabletopResearchAndDevelopment" Caption="auto"/></GuideEntityCards>
 
 Изучайте находки с помощью подходящих анализаторов; порядок работы с артефактами и аномалиями отличается.
 
@@ -6986,7 +6947,7 @@ Viper Group — частная военная компания, работающ
 
 Место отдыха и снабжения с кухонным, барным и сервисным оборудованием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineBoozePOI"/><GuideEntityEmbed Entity="VendingMachineChefvend"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineBoozePOI" Caption="auto"/><GuideTexture Entity="VendingMachineChefvend" Caption="auto"/></GuideEntityCards>
 
 Используйте местные автоматы для пополнения запасов, а рецепты ищите в справочниках еды и напитков.
 
@@ -7004,7 +6965,7 @@ Viper Group — частная военная компания, работающ
 
 Развлекательный объект с игровым оборудованием и автоматами снабжения.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineGames"/><GuideEntityEmbed Entity="VendingMachineBooze"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineGames" Caption="auto"/><GuideTexture Entity="VendingMachineBooze" Caption="auto"/></GuideEntityCards>
 
 Ассортимент и состояние оборудования проверяйте на месте.
 
@@ -7020,7 +6981,7 @@ Viper Group — частная военная компания, работающ
 
 Объект с религиозным и сервисным оборудованием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineChapel"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineChapel" Caption="auto"/></GuideEntityCards>
 
 Состав помещений и подходы смотрите на плане.
 
@@ -7036,7 +6997,7 @@ Viper Group — частная военная компания, работающ
 
 Развлекательный объект с ареной и снабжением для посетителей.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineBoxingDrobe"/><GuideEntityEmbed Entity="VendingMachineCiviMedPlus"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineBoxingDrobe" Caption="auto"/><GuideTexture Entity="VendingMachineCiviMedPlus" Caption="auto"/></GuideEntityCards>
 
 Наличие арены не заменяет правила сервера и договорённости участников.
 
@@ -7054,7 +7015,7 @@ Viper Group — частная военная компания, работающ
 
 Разборочный узел с топливным снабжением, утильной верфью и сервисными автоматами.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineFuelVend"/><GuideEntityEmbed Entity="ComputerTabletopShipyardScrap"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/><GuideTexture Entity="ComputerTabletopShipyardScrap" Caption="auto"/></GuideEntityCards>
 
 Один из вариантов разборочного узла сектора; альтернативой служит заброшенный МаКарго.
 
@@ -7072,7 +7033,7 @@ Viper Group — частная военная компания, работающ
 
 Разборочный объект с утильной верфью и запасами топлива.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShipyardScrap"/><GuideEntityEmbed Entity="VendingMachineFuelVend"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShipyardScrap" Caption="auto"/><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/></GuideEntityCards>
 
 Альтернативный вариант разборочного узла: в другой смене вместо него может оказаться заправка Грифти.
 
@@ -7090,7 +7051,7 @@ Viper Group — частная военная компания, работающ
 
 Крупный разрушенный корабль с оставшимся оборудованием и опасными обитателями.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerGunneryConsole"/><GuideEntityEmbed Entity="VendingMachineFuelVend"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/></GuideEntityCards>
 
 Подготовьте защиту от вакуума и вооружение. Проверьте путь отхода, прежде чем углубляться в корпус.
 
@@ -7108,7 +7069,7 @@ Viper Group — частная военная компания, работающ
 
 Дальний шахтёрский объект с исследовательским и торговым оборудованием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerAnalysisConsole"/><GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerAnalysisConsole" Caption="auto"/><GuideTexture Entity="ComputerResearchAndDevelopment" Caption="auto"/></GuideEntityCards>
 
 Внутри встречаются монолитные существа; для осмотра и вывоза находок подготовьте боевой экипаж.
 
@@ -7126,7 +7087,7 @@ Viper Group — частная военная компания, работающ
 
 Дальний исследовательский комплекс с медицинским и научным оборудованием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/><GuideEntityEmbed Entity="ComputerTabletopAnalysisConsole"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerResearchAndDevelopment" Caption="auto"/><GuideTexture Entity="ComputerTabletopAnalysisConsole" Caption="auto"/></GuideEntityCards>
 
 Присутствуют вооружённые противники. Осматривайте помещения последовательно и оставьте путь для эвакуации.
 
@@ -7144,7 +7105,7 @@ Viper Group — частная военная компания, работающ
 
 Удалённое судно с газовыми и атмосферными системами.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerAtmosMonitoring"/><GuideEntityEmbed Entity="ComputerShuttle"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerAtmosMonitoring" Caption="auto"/><GuideTexture Entity="ComputerShuttle" Caption="auto"/></GuideEntityCards>
 
 При исследовании учитывайте состояние газовых отсеков и присутствие монолитных существ.
 
@@ -7162,9 +7123,9 @@ Viper Group — частная военная компания, работающ
 
 Корабль из группы стартовых объектов с вооружением и корабельными системами.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerGunneryConsole"/><GuideEntityEmbed Entity="WeaponTurretCharon"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/><GuideTexture Entity="WeaponTurretCharon" Caption="auto"/></GuideEntityCards>
 
-Это отдельный объект сектора: не путайте его с кораблями АДС, прибывающими в ходе событий.
+Это отдельный объект сектора: не путайте его с кораблями АСЗ, прибывающими в ходе событий.
 
 ## Как найти
 
@@ -7172,7 +7133,7 @@ Viper Group — частная военная компания, работающ
 
 <GuideMap Map="/Maps/_Mono/POI/Dungeons/zenith_poi.yml" Name="АСЗ СК-395 «Зенит»"/>
 
-[Событийные корабли АДС](guide://ColossusEventADSFleet) · [Предтечи и АДС](guide://ColossusPrecursors)
+[Событийные корабли АСЗ](guide://ColossusEventADSFleet) · [Предтечи и АСЗ](guide://ColossusPrecursors)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/TradeDepots.xml -->
@@ -7180,7 +7141,7 @@ Viper Group — частная военная компания, работающ
 
 Четыре торговых аванпоста принимают грузы с назначением **A, B, C или D**. Буква входит в название отметки на карте и определяет, куда доставлять конкретную партию.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerPalletConsoleNFHighMarket"/><GuideEntityEmbed Entity="VendingMachineTraderDepot"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerPalletConsoleNFHighMarket" Caption="auto"/><GuideTexture Entity="VendingMachineTraderDepot" Caption="auto"/></GuideEntityCards>
 
 Перед вылетом сверяйте назначение в манифесте и букву аванпоста. На месте проверьте оценку паллеты перед продажей; одинаковый внешний вид терминалов не означает одинаковое назначение груза. Аванпосты располагаются примерно в **8–10 км от центра** и имеют два варианта планировки.
 
@@ -7208,7 +7169,7 @@ Viper Group — частная военная компания, работающ
 
 Вооружённый объект с запасами оружия и охраной.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponTurretSyndicate"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponTurretSyndicate" Caption="auto"/></GuideEntityCards>
 
 В объявлениях называется **«Хранилище оружия Синдиката»**. Появление возможно примерно с **40-й минуты** смены. Перед входом осмотрите подходы: внутри есть вооружённые бойцы и турели.
 
@@ -7224,7 +7185,7 @@ Viper Group — частная военная компания, работающ
 
 Защищённое хранилище с оборудованием и ценностями ТСФ.
 
-<GuideEntityCards><GuideEntityEmbed Entity="DataChitStorageServer"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="DataChitStorageServer" Caption="auto"/></GuideEntityCards>
 
 В объявлениях называется **«Безопасное хранилище ТСФ»**. Появление возможно примерно с **часа** после начала смены. Главный объект внутри — сервер хранения дисков с данными. Его сохранность важна для ТСФ.
 
@@ -7240,7 +7201,7 @@ Viper Group — частная военная компания, работающ
 
 Неопознанное судно с вооружённым экипажем и турелями.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponTurretSyndicate"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponTurretSyndicate" Caption="auto"/></GuideEntityCards>
 
 Появление возможно примерно с **80-й минуты**. Объявление сообщает о неопознанном объекте; определяйте тип судна по осмотру и обстановке. Для абордажа подготовьте защиту, запас воздуха и эвакуационный маршрут.
 
@@ -7256,9 +7217,9 @@ Viper Group — частная военная компания, работающ
 
 Неопознанное судно с боевыми синтетиками и турелями.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShuttle"/><GuideEntityEmbed Entity="ComputerGunneryConsole"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/></GuideEntityCards>
 
-Появление возможно примерно со **100-й минуты**. Не путайте его с отдельными потоками кораблей АДС: у события собственная карта и ограничение времени.
+Появление возможно примерно со **100-й минуты**. Не путайте его с отдельными потоками кораблей АСЗ: у события собственная карта и ограничение времени.
 
 **Время существования — 40 минут.** Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект.
 
@@ -7272,7 +7233,7 @@ Viper Group — частная военная компания, работающ
 
 Небольшие монолитные объекты нескольких форм.
 
-<GuideEntityCards><GuideEntityEmbed Entity="MonolithicCrystalLarge"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MonolithicCrystalLarge" Caption="auto"/></GuideEntityCards>
 
 Поток событий может начаться примерно с **10-й минуты**. Встречаются варианты арены, вытянутого фрагмента и корабля; геометрия подходов отличается. Приготовьтесь к исследованию опасного объекта, а не к обычной добыче астероидной породы.
 
@@ -7294,7 +7255,7 @@ Viper Group — частная военная компания, работающ
 
 Планетоид создаётся целиком при событии: у него собственная местность и случайное название. Поток может начаться примерно с **10-й минуты**; объявления приходят по каналу снабжения. Это не экспедиция, запускаемая с экспедиционной консоли.
 
-<GuideEntityCards><GuideEntityEmbed Entity="MiningDrill"/><GuideEntityEmbed Entity="OreBag"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MiningDrill" Caption="auto"/><GuideTexture Entity="OreBag" Caption="auto"/></GuideEntityCards>
 
 ## Разновидности
 
@@ -7321,6 +7282,11 @@ Viper Group — частная военная компания, работающ
 
 Блюспейс-шторм приносит сразу три повреждённых корабля.
 
+<GuideEntityCards>
+<GuideTexture Entity="ShipRepairDevice" Caption="Восстановить корпус"/>
+<GuideTexture Entity="ShipRepairDeviceAmmo" Caption="Запас ремонта"/>
+</GuideEntityCards>
+
 Поток может начаться примерно с **7-й минуты**; предупреждения передаются по инженерному каналу. Осмотрите корпус, заберите полезное имущество и проверьте возможность закрепления. Обломки отличаются планировкой и сохранностью; не рассчитывайте на исправное питание и герметичность.
 
 **Время существования — 40 минут.** Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект. [Закрепление](guide://GridClaimer) сохраняет объект после окончания события.
@@ -7331,9 +7297,9 @@ Viper Group — частная военная компания, работающ
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/ADSFleet.xml -->
-# Корабли АДС
+# Корабли АСЗ
 
-Корабли автоматизированных оборонительных систем прибывают в режиме «Наследие».
+Автоматизированные оборонительные суда Предтеч прибывают в режиме «Наследие».
 
 Первый поток может начаться примерно с **часа**, усиленный — с **трёх часов** смены. Появление зависит от количества игроков и работы планировщика; не все суда обязаны прибыть за одну смену.
 
@@ -7341,7 +7307,7 @@ Viper Group — частная военная компания, работающ
 
 Это самостоятельные корабельные угрозы, а не обычный 40-минутный блюспейс-обломок. Не ждите их исчезновения по общему таймеру временных объектов.
 
-[Предтечи и АДС](guide://ColossusPrecursors) · [Охота на дронов](guide://LuaMDroneLoot)
+[Предтечи и АСЗ](guide://ColossusPrecursors) · [Охота на дронов](guide://LuaMDroneLoot)
 
 [Другие события](guide://LuaMGameModes) · [Подготовка к бою](guide://ColossusCombat)
 <!-- /article -->
@@ -7351,7 +7317,7 @@ Viper Group — частная военная компания, работающ
 
 Малые и средние корабли воинов Азакимов в режиме «Наследие».
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShuttle"/><GuideEntityEmbed Entity="ComputerGunneryConsole"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/></GuideEntityCards>
 
 Поток может начаться примерно с **часа** смены. Для малого корабля требуется не менее **40 игроков**, для среднего — **60**; это условия появления, а не время гарантированного прибытия. Не относите к ним общий таймер блюспейс-объектов.
 
@@ -7369,6 +7335,11 @@ Viper Group — частная военная компания, работающ
 
 Блюспейс-посылки появляются внутри одной из станций сектора. Объявление сообщает о доставке; искать отдельный корабль на карте не требуется.
 
+<GuideEntityCards>
+<GuideTexture Entity="CrateTradeSecureNormal" Caption="Грузовая доставка"/>
+<GuideTexture Entity="CrateFoodMcCargo" Caption="Доставка МаКарго"/>
+</GuideEntityCards>
+
 - **Грузовая доставка** приносит от двух до пяти случайных грузов.
 - **МаКарго** доставляет ящик еды. Событие возможно с 20-й минуты при числе игроков не более 20.
 - **Посылка Синдиката** приносит один ящик с излишками снаряжения. Появление возможно с часа после начала смены.
@@ -7382,6 +7353,8 @@ Viper Group — частная военная компания, работающ
 # События
 
 В течение смены в сектор прибывают временные объекты, суда и планетоиды. Объявления помогают узнать о появлении и приближении окончания события. Стартовые станции и руины собраны отдельно в [объектах](guide://LuaMWorldObjects).
+
+Погода туманностей также меняется в течение смены: примерно каждые **40–60 минут** опасные эффекты переходят в другие облака. [Как распознать опасную зону и выбраться](guide://ColossusNebulae).
 
 ## Временные объекты
 
@@ -7403,13 +7376,15 @@ Viper Group — частная военная компания, работающ
 
 ## Корабли и посылки
 
-[Корабли АДС](guide://ColossusEventADSFleet) — Корабли автоматизированных оборонительных систем прибывают в режиме «Наследие».
+[Корабли АСЗ](guide://ColossusEventADSFleet) — Автоматизированные оборонительные суда Предтеч прибывают в режиме «Наследие».
 
 [Корабли Азакимов](guide://ColossusEventAsakimShips) — Малые и средние корабли воинов Азакимов в режиме «Наследие».
 
 [Блюспейс-посылки](guide://ColossusEventDeliveries) — Отдельные события доставляют в сектор ящики, а не станции или корабли.
 
-Время в статьях обозначает начало возможного появления, а не расписание. Планировщик выбирает события с паузами и учитывает их условия. В «Стандарте» работают дополнительные потоки некоторых блюспейс-объектов и фрагментов Монолита; в «Наследии» появляются корабли АДС и Азакимов.
+Время в статьях обозначает начало возможного появления, а не расписание. Планировщик выбирает события с паузами и учитывает их условия. В «Стандарте» работают дополнительные потоки некоторых блюспейс-объектов и фрагментов Монолита; в «Наследии» появляются корабли АСЗ и Азакимов.
 
 Не переносите таймер одного события на другое. Для временных объектов заранее готовьте эвакуацию и сверяйтесь с предупреждением; наличие людей на борту не удерживает исчезающий объект.
+
+<GuideHub Root="LuaMGameModes"/>
 <!-- /article -->

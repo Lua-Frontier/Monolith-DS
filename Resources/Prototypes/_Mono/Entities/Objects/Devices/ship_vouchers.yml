@@ -7,7 +7,7 @@
   description: Contains the necessary data for a shipyard console to produce a certain design.
   components:
   - type: Sprite
-    sprite: _Mono/Objects/Misc/newlpc.rsi
+    sprite: _Mono/Objects/Misc/lpcnew.rsi # LuaM
     state: icon
   - type: ShipyardVoucher
     destroyOnEmpty: true
@@ -21,7 +21,7 @@
   description: Contains the necessary data for a shipyard console to produce a certain design.
   components:
   - type: Sprite
-    sprite: _Mono/Objects/Misc/newlpc.rsi
+    sprite: _Mono/Objects/Misc/lpcnew.rsi # LuaM
     state: icon
   - type: ShipyardVoucher
     redemptionsLeft: 12 # Lowest cooldown is half an hour. It's unlikely it'll be met, but hey.

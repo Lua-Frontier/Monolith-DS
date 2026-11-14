@@ -1,2 +1,2 @@
-ent-OrganDemonLiver = liver
+ent-OrganDemonLiver = печень
     .desc = { ent-OrganHumanLiver.desc }

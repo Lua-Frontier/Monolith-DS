@@ -1,2 +1,2 @@
-ent-SpawnVehicleAntagVehicle = Antag Vehicle Spawner
+ent-SpawnVehicleAntagVehicle = спавнер транспорта антагонистов
     .desc = { ent-MarkerBase.desc }

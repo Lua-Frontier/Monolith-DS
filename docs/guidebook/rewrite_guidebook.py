@@ -130,6 +130,15 @@ def check(articles):
         for texture_path in re.findall(r'<GuideTexture\b[^>]*\bTexture="([^"]+)"', content):
             if not texture_path.startswith('/Textures/') or not (ROOT/('Resources'+texture_path)).is_file():
                 errors.append(f'{path}: missing texture {texture_path}')
+        for hub in re.finditer(r'<GuideHub\b([^>]*)/>', content):
+            attrs = dict(re.findall(r'(\w+)="([^"]*)"', hub[1]))
+            root = attrs.get('Root', '')
+            if root not in entries:
+                errors.append(f'{path}: unknown hub Root={root}')
+            elif 'Entries' in attrs:
+                for child in attrs['Entries'].split(','):
+                    if child.strip() not in entries[root]['children']:
+                        errors.append(f'{path}: {child} is not a child of hub {root}')
         target = ROOT / path
         if not target.is_file():
             errors.append(f'{path}: XML missing; run --apply')

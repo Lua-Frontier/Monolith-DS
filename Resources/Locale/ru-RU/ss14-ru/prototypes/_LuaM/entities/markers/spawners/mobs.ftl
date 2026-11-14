@@ -1,2 +1,2 @@
-ent-SpawnMobMoproach = Moproach Spawner
+ent-SpawnMobMoproach = спавнер швабротаракана
     .desc = { ent-MarkerBase.desc }

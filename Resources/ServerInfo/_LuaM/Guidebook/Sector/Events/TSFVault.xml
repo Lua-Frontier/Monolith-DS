@@ -3,7 +3,7 @@
 
 Защищённое хранилище с оборудованием и ценностями ТСФ.
 
-<GuideEntityCards><GuideEntityEmbed Entity="DataChitStorageServer"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="DataChitStorageServer" Caption="auto"/></GuideEntityCards>
 
 В объявлениях называется [bold]«Безопасное хранилище ТСФ»[/bold]. Появление возможно примерно с [bold]часа[/bold] после начала смены. Главный объект внутри — сервер хранения дисков с данными. Его сохранность важна для ТСФ.
 

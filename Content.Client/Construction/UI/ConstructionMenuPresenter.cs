@@ -2,6 +2,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
+using Content.Shared._LuaM.CCVar; // LuaM
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Client.GameObjects;
@@ -11,6 +12,7 @@ using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.Utility;
+using Robust.Shared.Configuration; // LuaM
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
@@ -30,6 +32,7 @@ namespace Content.Client.Construction.UI
         [Dependency] private IPlacementManager _placementManager = default!;
         [Dependency] private IUserInterfaceManager _uiManager = default!;
         [Dependency] private IPlayerManager _playerManager = default!;
+        [Dependency] private IConfigurationManager _cfg = default!; // LuaM
 
         private readonly IConstructionMenuView _constructionView;
         private readonly EntityWhitelistSystem _whitelistSystem;
@@ -112,6 +115,8 @@ namespace Content.Client.Construction.UI
             };
 
             _constructionView.RecipeFavorited += (_, _) => OnViewFavoriteRecipe();
+
+            LoadFavorites(); // LuaM
 
             PopulateCategories();
             OnViewPopulateRecipes(_constructionView, (string.Empty, string.Empty));
@@ -234,7 +239,7 @@ namespace Content.Client.Construction.UI
                         TextureNormal = _spriteSystem.Frame0(recipe.Icon),
                         VerticalAlignment = Control.VAlignment.Center,
                         Name = recipe.Name,
-                        ToolTip = recipe.Name,
+                        ToolTip = FavoriteLabel(recipe), // LuaM
                         Scale = new Vector2(1.35f),
                         ToggleMode = true,
                     };
@@ -297,7 +302,7 @@ namespace Content.Client.Construction.UI
                     uniqueCategories.Add(category);
             }
 
-            var isFavorites = _favoritedRecipes.Count > 0;
+            var isFavorites = true; // LuaM
             var categoriesArray = new string[isFavorites ? uniqueCategories.Count + 2 : uniqueCategories.Count + 1];
 
             // hard-coded to show all recipes
@@ -374,7 +379,7 @@ namespace Content.Client.Construction.UI
             return new(itemList)
             {
                 Metadata = recipe,
-                Text = recipe.Name,
+                Text = FavoriteLabel(recipe), // LuaM
                 Icon = _spriteSystem.Frame0(recipe.Icon),
                 TooltipEnabled = true,
                 TooltipText = recipe.Description,
@@ -455,17 +460,54 @@ namespace Content.Client.Construction.UI
             if (!_favoritedRecipes.Remove(_selected))
                 _favoritedRecipes.Add(_selected);
 
+            // LuaM-start
+            SaveFavorites();
+
             if (_selectedCategory == _favoriteCatName)
-            {
-                if (_favoritedRecipes.Count > 0)
-                    OnViewPopulateRecipes(_constructionView, (string.Empty, _favoriteCatName));
-                else
-                    OnViewPopulateRecipes(_constructionView, (string.Empty, string.Empty));
-            }
+                OnViewPopulateRecipes(_constructionView, (string.Empty, _favoriteCatName));
+            else
+                RefreshFavoriteLabel(_selected);
+            // LuaM-end
 
             PopulateInfo(_selected);
             PopulateCategories(_selectedCategory);
         }
+
+        // LuaM-start
+        private string FavoriteLabel(ConstructionPrototype recipe)
+        {
+            return _favoritedRecipes.Contains(recipe) ? $"★ {recipe.Name}" : recipe.Name;
+        }
+
+        private void RefreshFavoriteLabel(ConstructionPrototype recipe)
+        {
+            foreach (var item in _constructionView.Recipes)
+            {
+                if (item.Metadata == recipe)
+                    item.Text = FavoriteLabel(recipe);
+            }
+
+            if (_recipeButtons.TryGetValue(recipe.Name, out var button))
+                button.ToolTip = FavoriteLabel(recipe);
+        }
+
+        private void LoadFavorites()
+        {
+            _favoritedRecipes.Clear();
+
+            foreach (var id in _cfg.GetCVar(LuaMCVars.ConstructionFavorites).Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+            {
+                if (_prototypeManager.TryIndex<ConstructionPrototype>(id, out var recipe) && !_favoritedRecipes.Contains(recipe))
+                    _favoritedRecipes.Add(recipe);
+            }
+        }
+
+        private void SaveFavorites()
+        {
+            _cfg.SetCVar(LuaMCVars.ConstructionFavorites, string.Join(',', _favoritedRecipes.Select(r => r.ID)));
+            _cfg.SaveToFile();
+        }
+        // LuaM-end
 
         private void SystemBindingChanged(ConstructionSystem? newSystem)
         {

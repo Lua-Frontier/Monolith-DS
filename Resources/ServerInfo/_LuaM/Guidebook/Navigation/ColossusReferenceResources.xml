@@ -1,7 +1,7 @@
 <Document>
 # Ресурсы
 
-[textlink="Цены веществ" link="ColossusCataloguePrices"]
+<GuideHub Root="ColossusReferenceResources"/>
 
 Состав пород и распределение руды находятся в разделе [textlink="«Астероиды»" link="LuaMAsteroids"].
 </Document>

@@ -3,7 +3,7 @@
 
 Неопознанное судно с вооружённым экипажем и турелями.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponTurretSyndicate"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponTurretSyndicate" Caption="auto"/></GuideEntityCards>
 
 Появление возможно примерно с [bold]80-й минуты[/bold]. Объявление сообщает о неопознанном объекте; определяйте тип судна по осмотру и обстановке. Для абордажа подготовьте защиту, запас воздуха и эвакуационный маршрут.
 

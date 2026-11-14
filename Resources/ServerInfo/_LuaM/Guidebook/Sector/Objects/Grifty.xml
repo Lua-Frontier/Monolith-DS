@@ -3,7 +3,7 @@
 
 Разборочный узел с топливным снабжением, утильной верфью и сервисными автоматами.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineFuelVend"/><GuideEntityEmbed Entity="ComputerTabletopShipyardScrap"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/><GuideTexture Entity="ComputerTabletopShipyardScrap" Caption="auto"/></GuideEntityCards>
 
 Один из вариантов разборочного узла сектора; альтернативой служит заброшенный МаКарго.
 

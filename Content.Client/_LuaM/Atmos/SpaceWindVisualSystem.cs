@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._LuaM.Atmos;
 
-public sealed class SpaceWindVisualSystem : EntitySystem
+public sealed partial class SpaceWindVisualSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
 

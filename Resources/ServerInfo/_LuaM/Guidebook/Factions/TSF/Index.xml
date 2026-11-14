@@ -2,7 +2,7 @@
 # Морская пехота ТСФ
 TSFMC — вооружённые силы Транс-Солнечной Федерации. Основная база в секторе — [textlink="флагман «Халикон»" link="LuaMHalicon"]; дополнительный корабль — [textlink="«Арктурус»" link="LuaMArcturus"]. Команда ведёт операции, ремонтирует технику и обеспечивает собственное снабжение.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponDEWCalico"/><GuideEntityEmbed Entity="ClothingOuterHardsuitM82c"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponDEWCalico" Caption="auto"/><GuideTexture Entity="ClothingOuterHardsuitM82c" Caption="auto"/></GuideEntityCards>
 
 ## Должности «Халикона»
 - [bold]Полковник ТСФ[/bold] — 1 — руководит контингентом и координирует подчинённых.

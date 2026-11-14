@@ -5,7 +5,7 @@
 
 ## Протезы
 
-<GuideEntityCards><GuideEntityEmbed Entity="DexLeftHand"/><GuideEntityEmbed Entity="SpeedLeftLeg"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="DexLeftHand" Caption="auto"/><GuideTexture Entity="SpeedLeftLeg" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>
@@ -20,7 +20,7 @@
 
 По одному импланту на существующую руку; целую руку не заменяют.
 
-<GuideEntityCards><GuideEntityEmbed Entity="AutosurgeonMantisBladesMieyoFlatpack"/><GuideEntityEmbed Entity="OrganArmMantisBlade"/><GuideEntityEmbed Entity="MantisBlade"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AutosurgeonMantisBladesMieyoFlatpack" Caption="auto"/><GuideTexture Entity="OrganArmMantisBlade" Caption="auto"/><GuideTexture Entity="MantisBlade" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>

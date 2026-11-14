@@ -1,2 +1,2 @@
-ent-MaintsRoomMarker = Maints interior marker
+ent-MaintsRoomMarker = маркер интерьера техтоннелей
     .desc = { ent-BaseRoomMarker.desc }

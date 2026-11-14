@@ -1,9 +1,9 @@
 <Document>
 # Депозитные ящики
 <GuideEntityCards>
-<GuideEntityEmbed Entity="SafetyDepositConsole"/>
-  <GuideEntityEmbed Entity="SafetyDepositBoxSmall"/>
-  <GuideEntityEmbed Entity="SafetyDepositBoxLarge"/>
+<GuideTexture Entity="SafetyDepositConsole" Caption="auto"/>
+  <GuideTexture Entity="SafetyDepositBoxSmall" Caption="auto"/>
+  <GuideTexture Entity="SafetyDepositBoxLarge" Caption="auto"/>
 </GuideEntityCards>
 Депозит сохраняет разрешённые предметы между сменами. Ящик привязан к владельцу и выбранному слоту персонажа. Другой персонаж не сможет внести его как свой.
 

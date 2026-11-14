@@ -1,25 +1,5 @@
 <Document>
 # Противники
 
-[textlink="Аномальная плоть" link="MobsExpeditionGuideAberrantFlesh"]
-
-[textlink="Аргоциты" link="MobsExpeditionGuideArgocytes"]
-
-[textlink="Культисты" link="MobsExpeditionGuideBloodCult"]
-
-[textlink="Карпы" link="MobsExpeditionGuideCarps"]
-
-[textlink="Динозавры" link="MobsExpeditionGuideDinosaurs"]
-
-[textlink="Исследователи" link="MobsExpeditionGuideExplorers"]
-
-[textlink="Наёмники" link="MobsExpeditionGuideMercenaries"]
-
-[textlink="Панки" link="MobsExpeditionGuideGangers"]
-
-[textlink="Мятежные ИИ" link="MobsExpeditionGuideSilicons"]
-
-[textlink="Синдикат" link="MobsExpeditionGuideSyndicate"]
-
-[textlink="Ксеносы" link="MobsExpeditionGuideXenos"]
+<GuideHub Root="ColossusExpeditionEnemies"/>
 </Document>

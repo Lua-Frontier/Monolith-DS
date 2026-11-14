@@ -33,7 +33,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: Cone # LuaM
     autoRot: true
     netsync: false
   - type: HandheldLight
@@ -115,7 +115,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: Cone # LuaM
     autoRot: true
     netsync: false
   - type: HandheldLight
@@ -202,7 +202,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: Cone # LuaM
     autoRot: true
     netsync: false
   - type: HandheldLight
@@ -271,7 +271,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: Cone # LuaM
     autoRot: true
     netsync: false
 # LuaM start
@@ -347,7 +347,7 @@
     enabled: false
     radius: 5
     energy: 3
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: Cone # LuaM
     autoRot: true
     netsync: false
 # LuaM start

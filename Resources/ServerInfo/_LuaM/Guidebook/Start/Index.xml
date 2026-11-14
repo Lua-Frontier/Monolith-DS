@@ -1,17 +1,5 @@
 <Document>
 # Новичкам
 
-[textlink="Первый выход" link="BeginnerGuide"]
-
-[textlink="Снаряжение" link="StartingGear"]
-
-[textlink="Деньги" link="ColossusMoney"]
-
-[textlink="Экипаж" link="Hiring"]
-
-[textlink="Виды заработка" link="Jobs"]
-
-[textlink="Расы" link="Species"]
-
-[textlink="Разметка письма" link="Writing"]
+<GuideHub Root="NewPlayer"/>
 </Document>

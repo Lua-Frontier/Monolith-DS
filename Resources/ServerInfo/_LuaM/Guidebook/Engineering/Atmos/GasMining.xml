@@ -3,10 +3,10 @@
 Астероиды в секторе Фронтира — надёжный источник больших объёмов обычно газообразных элементов в виде [color=gold]затвердевших залежей[/color].
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="GasDepositOxygen" Caption="залежи кислорода"/>
-<GuideEntityEmbed Entity="GasDepositNitrogen" Caption="залежи азота"/>
-<GuideEntityEmbed Entity="GasDepositPlasma" Caption="залежи плазмы"/>
-<GuideEntityEmbed Entity="GasDepositCarbonDioxide" Caption="залежи углекислого газа"/>
+<GuideTexture Entity="GasDepositOxygen" Caption="залежи кислорода"/>
+<GuideTexture Entity="GasDepositNitrogen" Caption="залежи азота"/>
+<GuideTexture Entity="GasDepositPlasma" Caption="залежи плазмы"/>
+<GuideTexture Entity="GasDepositCarbonDioxide" Caption="залежи углекислого газа"/>
 </GuideEntityCards>
 
 Атмосферные шаттлы, например, [color=yellow]Gasbender[/color] и [color=yellow]Ambition[/color], оснащены всем необходимым для добычи этих ресурсов. При покупке шаттла ищите категорию [color=cyan]Атмосфера[/color] в [color=steelblue]консоли верфи[/color].
@@ -22,10 +22,10 @@
 - Сканер газовых месторождений (опционально)
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="GasMiningDrill"/>
-<GuideEntityEmbed Entity="GaslockFrame"/>
-<GuideEntityEmbed Entity="PortableGeneratorJrPacman" Caption="источник питания"/>
-<GuideEntityEmbed Entity="GasDepositLocator"/>
+<GuideTexture Entity="GasMiningDrill" Caption="auto"/>
+<GuideTexture Entity="GaslockFrame" Caption="auto"/>
+<GuideTexture Entity="PortableGeneratorJrPacman" Caption="источник питания"/>
+<GuideTexture Entity="GasDepositLocator" Caption="auto"/>
 </GuideEntityCards>
 
 ## Процедура добычи

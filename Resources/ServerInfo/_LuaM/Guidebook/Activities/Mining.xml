@@ -3,12 +3,18 @@
 
 ## Что взять
 <GuideEntityCards>
-<GuideEntityEmbed Entity="Pickaxe"/>
-  <GuideEntityEmbed Entity="MiningDrill"/>
-  <GuideEntityEmbed Entity="OreBag"/>
+<GuideTexture Entity="Pickaxe" Caption="auto"/>
+  <GuideTexture Entity="MiningDrill" Caption="auto"/>
+  <GuideTexture Entity="OreBag" Caption="auto"/>
 </GuideEntityCards>
 
 Нужны кирка или бур, мешок для руды, подходящие скафандр и дыхательный газ. На корабле оставьте место под груз. Для переработки понадобится запитанный переработчик руды.
+
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="SteelOre" Caption="Добыча"/>
+<GuideTexture Entity="OreProcessor" Caption="Переработка"/>
+<GuideTexture Entity="SpaceCash100" Caption="Продажа"/>
+</GuideEntityCards>
 
 ## Добыча
 - Найдите астероид и остановите корабль на безопасном расстоянии от породы. Запомните место возвращения.
@@ -18,8 +24,8 @@
 
 ## Переработка и продажа
 <GuideEntityCards>
-<GuideEntityEmbed Entity="OreProcessor"/>
-  <GuideEntityEmbed Entity="ComputerPalletConsole"/>
+<GuideTexture Entity="OreProcessor" Caption="auto"/>
+  <GuideTexture Entity="ComputerPalletConsole" Caption="auto"/>
 </GuideEntityCards>
 
 Загрузите руду в переработчик. В его меню выберите материал и закажите переработку. Заберите получившиеся листы или слитки; требования и доступные изделия показаны в меню станка.

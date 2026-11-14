@@ -6,6 +6,12 @@
 
 [bold]Скопление LINEAR:[/bold] встречаются Mote, Dander и MPulsar. В окружающей области — Rammer Small / Medium, MPulsar, Lance, а также Wasp, Crown, Gust и Piercer. Ориентир центра области — примерно [bold](9088; −7552)[/bold]. Цвет дронов на карте — тёмно-красный.
 
+<GuideEntityCards>
+<GuideTexture Entity="NpcStationAiRammer" Caption="Ядро ИИ"/>
+<GuideTexture Entity="ClothingBackpackDroneLootT1" Caption="Регистратор T1"/>
+<GuideTexture Entity="ClothingBackpackDroneLootT21" Caption="Регистратор T2"/>
+</GuideEntityCards>
+
 ## Трофеи
 Ядро ИИ можно снять и продать. Базовая оценка обычного ядра — [bold]40 000 кр.[/bold]; для Dander задано [bold]20 000 кр.[/bold]
 

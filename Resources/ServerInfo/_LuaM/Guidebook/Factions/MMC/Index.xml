@@ -3,6 +3,12 @@
 
 ММС — промышленная компания с базой на [bold]«Хоккайдо»[/bold]. Её сотрудники добывают сырьё, выпускают материалы, компоненты и оборудование, выполняют производственные заказы.
 
+<GuideEntityCards>
+<GuideTexture Entity="IndustrialPressEconomyElectronicsMMC" Caption="Электроника"/>
+<GuideTexture Entity="PrecisionAssemblerEconomy" Caption="Сборка компонентов"/>
+<GuideTexture Entity="IndustrialFurnaceEconomy" Caption="Материалы"/>
+</GuideEntityCards>
+
 ## Должности «Хоккайдо»
 - [bold]Директор ММС[/bold] — 1 — руководит предприятием и отвечает за его активы.
 - [bold]Охранник ММС[/bold] — 2 — защищает персонал, грузы и оборудование.

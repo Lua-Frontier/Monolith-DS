@@ -17,7 +17,7 @@ namespace Content.Server._LuaM.Bank;
 /// Lets admins see the faction station accounts from the admin panel and add or take money,
 /// without going to the station console.
 /// </summary>
-public sealed class AdminSectorBankSystem : EntitySystem
+public sealed partial class AdminSectorBankSystem : EntitySystem
 {
     /// <summary>
     /// Needed to see the accounts.

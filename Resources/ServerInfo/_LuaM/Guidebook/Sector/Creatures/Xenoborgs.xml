@@ -2,9 +2,9 @@
 # Ксеноборги: корпуса и модули
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MothershipCore"/>
-<GuideEntityEmbed Entity="BorgChassisSelectableXenoborg"/>
-<GuideEntityEmbed Entity="MMI"/>
+<GuideTexture Entity="MothershipCore" Caption="auto"/>
+<GuideTexture Entity="BorgChassisSelectableXenoborg" Caption="auto"/>
+<GuideTexture Entity="MMI" Caption="auto"/>
 </GuideEntityCards>
 
 Ксеноборги собирают материалы и разумные мозги для новых корпусов. После получения роли прочитайте действующий набор законов: он определяет приоритеты ядра и ксеноборгов.
@@ -18,10 +18,10 @@
 
 ## Выбрать специализацию
 <GuideEntityCards>
-<GuideEntityEmbed Entity="XenoborgChassisEngineer"/>
-<GuideEntityEmbed Entity="XenoborgChassisHeavy"/>
-<GuideEntityEmbed Entity="XenoborgChassisScout"/>
-<GuideEntityEmbed Entity="XenoborgChassisStealth"/>
+<GuideTexture Entity="XenoborgChassisEngineer" Caption="auto"/>
+<GuideTexture Entity="XenoborgChassisHeavy" Caption="auto"/>
+<GuideTexture Entity="XenoborgChassisScout" Caption="auto"/>
+<GuideTexture Entity="XenoborgChassisStealth" Caption="auto"/>
 </GuideEntityCards>
 
 В окне выбора типа корпуса определите специализацию. Все четыре типа получают базовый и инструментальный модули: указатель материнского корабля, GPS, средства сбора материалов и обычные инструменты.

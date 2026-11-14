@@ -7,7 +7,7 @@
 
 ## Автохирург
 
-<GuideEntityCards><GuideEntityEmbed Entity="AutosurgeonMantisBladesMieyoFlatpack"/><GuideEntityEmbed Entity="AutosurgeonHumanityChipMk1Flatpack"/><GuideEntityEmbed Entity="AutosurgeonDermalArmorFlatpack"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AutosurgeonMantisBladesMieyoFlatpack" Caption="auto"/><GuideTexture Entity="AutosurgeonHumanityChipMk1Flatpack" Caption="auto"/><GuideTexture Entity="AutosurgeonDermalArmorFlatpack" Caption="auto"/></GuideEntityCards>
 
 - [bold]1.[/bold] Разверните упаковку нужной модели на полу. Пристегните пациента; без пристёгнутого пациента аппарат оперирует активировавшего его персонажа.
 - [bold]2.[/bold] Включите устройство через контекстное меню. Не перемещайте пациента и аппарат [bold]15 с[/bold].
@@ -19,7 +19,7 @@
 
 ## Подготовка к ручной операции
 
-<GuideEntityCards><GuideEntityEmbed Entity="Scalpel"/><GuideEntityEmbed Entity="Retractor"/><GuideEntityEmbed Entity="Hemostat"/><GuideEntityEmbed Entity="SawElectric"/><GuideEntityEmbed Entity="BoneGel"/><GuideEntityEmbed Entity="Cautery"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="Scalpel" Caption="auto"/><GuideTexture Entity="Retractor" Caption="auto"/><GuideTexture Entity="Hemostat" Caption="auto"/><GuideTexture Entity="SawElectric" Caption="auto"/><GuideTexture Entity="BoneGel" Caption="auto"/><GuideTexture Entity="Cautery" Caption="auto"/></GuideEntityCards>
 
 - [bold]1.[/bold] Принесите замену заранее. Уложите пациента; если этап требует операционный стол, именно пристегните его к столу.
 - [bold]2.[/bold] Снимите одежду с области: голова — головной убор; грудь и руки — верхняя одежда и комбинезон; кисть — перчатки; нога — верхняя одежда и предметы в слоте ног; стопа — обувь.
@@ -31,7 +31,7 @@
 
 ## Доступ к области
 
-[bold]«Открытие разреза»[/bold]: скальпель [bold]2 с[/bold] → ретрактор [bold]2 с[/bold] → гемостат [bold]2 с[/bold].
+<GuideNote Tone="warning" Text="[bold]«Открытие разреза»[/bold]: скальпель [bold]2 с[/bold] → ретрактор [bold]2 с[/bold] → гемостат [bold]2 с[/bold]."/>
 
 <GuideTable Columns="2">
 <Box>[bold]Область[/bold]</Box><Box>[bold]Подготовка[/bold]</Box>
@@ -52,7 +52,7 @@
 
 На каждой вскрытой области выберите [bold]«Закрытие разреза»[/bold]: вернуть раздвинутые кости ретрактором [bold]2 с[/bold] → восстановить распиленные кости костным гелем [bold]2 с[/bold] → закрыть термокаутером [bold]2 с[/bold]. Ненужные и уже выполненные этапы пропускаются. Закрепление органа не закрывает всю область.
 
-[bold]«Части»[/bold] возвращает к областям, [bold]«Операции»[/bold] — к операциям выбранной области, [bold]«Этапы»[/bold] — из требования к прежней операции. Закрытие окна сохраняет выполненные этапы и не зашивает разрез.
+<GuideNote Tone="warning" Text="[bold]«Части»[/bold] возвращает к областям, [bold]«Операции»[/bold] — к операциям выбранной области, [bold]«Этапы»[/bold] — из требования к прежней операции. Закрытие окна сохраняет выполненные этапы и не зашивает разрез."/>
 
 Если этап недоступен, проверьте инструмент в руке, одежду, положение пациента и свободный слот. Для установки конечности выбирают её родителя; операции отсутствующего слота у этого тела не появятся.
 

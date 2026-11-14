@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Chassis taken from CMSS13 https://github.com/cmss13-devs/cmss13/pull/11308, fitted to the hull silhouette of every direction by cutting whole rows and columns without resampling, seats redrawn by c_quarian (Monolith-DS)",
+  "size": {
+    "x": 96,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "humvee",
+      "directions": 4
+    },
+    {
+      "name": "medical",
+      "directions": 4
+    },
+    {
+      "name": "transport",
+      "directions": 4
+    }
+  ]
+}

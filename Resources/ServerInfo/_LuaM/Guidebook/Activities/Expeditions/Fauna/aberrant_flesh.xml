@@ -50,7 +50,7 @@
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobFleshClampExpeditions"/>
-  <GuideEntityEmbed Entity="DartAberrantFleshHorrorSpikeGuidebook"/>
+  <GuideTexture Entity="DartAberrantFleshHorrorSpikeGuidebook" Caption="auto"/>
   </GuideEntityCards>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 40 (смерть)
   - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с

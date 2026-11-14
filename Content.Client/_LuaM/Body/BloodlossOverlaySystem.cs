@@ -4,7 +4,7 @@ using Robust.Client.Player;
 
 namespace Content.Client._LuaM.Body;
 
-public sealed class BloodlossOverlaySystem : EntitySystem
+public sealed partial class BloodlossOverlaySystem : EntitySystem
 {
     [Dependency] private IOverlayManager _overlayManager = default!;
     [Dependency] private IPlayerManager _player = default!;

@@ -10,11 +10,11 @@
 ## Посадить и собрать
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="hydroponicsTray"/>
-<GuideEntityEmbed Entity="HydroponicsToolMiniHoe"/>
-<GuideEntityEmbed Entity="HydroponicsToolSpade"/>
-<GuideEntityEmbed Entity="HydroponicsToolClippers"/>
-<GuideEntityEmbed Entity="SeedExtractor"/>
+<GuideTexture Entity="hydroponicsTray" Caption="auto"/>
+<GuideTexture Entity="HydroponicsToolMiniHoe" Caption="auto"/>
+<GuideTexture Entity="HydroponicsToolSpade" Caption="auto"/>
+<GuideTexture Entity="HydroponicsToolClippers" Caption="auto"/>
+<GuideTexture Entity="SeedExtractor" Caption="auto"/>
 </GuideEntityCards>
 
 - [bold]1.[/bold] Осмотрите лоток [bold]Shift + ЛКМ[/bold]. Вода и питательные вещества имеют шкалу [bold]0–100[/bold]; новый стандартный лоток уже содержит по [bold]100[/bold].
@@ -35,7 +35,7 @@
 ## Анализатор: прочитать и перенести свойства
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="PlantAnalyzer"/>
+<GuideTexture Entity="PlantAnalyzer" Caption="auto"/>
 </GuideEntityCards>
 
 Используйте анализатор на пакете семян или засаженном лотке. [bold]«Сканирование»[/bold] показывает вид, возможные видовые мутации и свойства:
@@ -56,12 +56,12 @@
 ## Получить амброзию деус и космонавтскую трубу
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AmbrosiaVulgarisSeeds"/>
-<GuideEntityEmbed Entity="FoodAmbrosiaDeus"/>
-<GuideEntityEmbed Entity="PoppySeeds"/>
-<GuideEntityEmbed Entity="FoodLily"/>
-<GuideEntityEmbed Entity="FoodSpacemansTrumpet"/>
-<GuideEntityEmbed Entity="UnstableMutagenChemistryBottle"/>
+<GuideTexture Entity="AmbrosiaVulgarisSeeds" Caption="auto"/>
+<GuideTexture Entity="FoodAmbrosiaDeus" Caption="auto"/>
+<GuideTexture Entity="PoppySeeds" Caption="auto"/>
+<GuideTexture Entity="FoodLily" Caption="auto"/>
+<GuideTexture Entity="FoodSpacemansTrumpet" Caption="auto"/>
+<GuideTexture Entity="UnstableMutagenChemistryBottle" Caption="auto"/>
 </GuideEntityCards>
 
 Семена [bold]амброзии вульгарис[/bold] и [bold]мака[/bold] есть в обычном ассортименте автомата семян. Нужные цепочки: [bold]амброзия вульгарис → амброзия деус[/bold]; [bold]мак → лилия → космонавтская труба[/bold].

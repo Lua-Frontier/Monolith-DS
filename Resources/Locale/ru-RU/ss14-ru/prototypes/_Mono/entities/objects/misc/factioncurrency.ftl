@@ -1,9 +1,9 @@
-ent-PDVStampedGold = dynasty stamped gold
-    .desc = A heavy crate stacked full of lab synthesized superconductive gold stamped with the Dynasty's logo and an identifying code. As an unapproved form of legal tender, the Federation would love to confiscate this.
+ent-PDVStampedGold = клеймёное золото Авангарда
+    .desc = Тяжёлый ящик, доверху набитый лабораторно синтезированным сверхпроводящим золотом с логотипом Авангарда и идентификационным кодом. Как неодобренное платёжное средство, Федерация с удовольствием бы его конфисковала.
     .suffix = 75 FMC
-ent-TSFNaniteCanister = federation nanite canister
-    .desc = A reinforced silvered-glass cylinder specially made to contain inert recombinative programmable nanites used for micro-scale advanced manufacturing outside the sector. The Dynasty's factories would love to get their hands on this.
+ent-TSFNaniteCanister = канистра нанитов Федерации
+    .desc = Усиленный цилиндр из посеребрённого стекла для хранения инертных рекомбинантных программируемых нанитов, используемых в микромасштабном передовом производстве за пределами сектора. Фабрики Авангарда мечтают заполучить такое.
     .suffix = 75 DC
-ent-TSFNaniteCanisterLarge = federation bulk nanite canister
-    .desc = A large reinforced silvered-glass cylinder specially made to contain inert recombinative programmable nanites used for micro-scale advanced manufacturing outside the sector. The Dynasty's factories would love to get their hands on this.
+ent-TSFNaniteCanisterLarge = большая канистра нанитов Федерации
+    .desc = Большой усиленный цилиндр из посеребрённого стекла для хранения инертных рекомбинантных программируемых нанитов, используемых в микромасштабном передовом производстве за пределами сектора. Фабрики Авангарда мечтают заполучить такое.
     .suffix = CROCUS OBJECTIVE, 75 DC

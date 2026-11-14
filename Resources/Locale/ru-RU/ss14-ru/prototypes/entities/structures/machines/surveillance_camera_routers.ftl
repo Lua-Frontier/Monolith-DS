@@ -44,5 +44,5 @@ ent-SurveillanceCameraRouterRogue = { ent-SurveillanceCameraRouterBase }
 ent-SurveillanceCameraRouterUSSP = { ent-SurveillanceCameraRouterBase }
     .suffix = СССП
     .desc = { ent-SurveillanceCameraRouterBase.desc }
-ent-SurveillanceCameraWirelessRouterXenoborg = xenoborg camera wireless router
+ent-SurveillanceCameraWirelessRouterXenoborg = беспроводной маршрутизатор камер ксеноборгов
     .desc = { ent-SurveillanceCameraWirelessRouterBase.desc }

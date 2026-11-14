@@ -33,7 +33,7 @@
 ### Подрезка и химикаты
 Кусачки уменьшают стадию на одну и сбрасывают накопленный рост. Феноксазин ускоряет рост в 20 раз, мероксазин останавливает его; оба вещества медленно метаболизируются.
 
-<GuideEntityCards><GuideEntityEmbed Entity="Wirecutter"/><GuideEntityEmbed Entity="Welder"/><GuideEntityEmbed Entity="Flare"/><GuideEntityEmbed Entity="Bonfire"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="Wirecutter" Caption="auto"/><GuideTexture Entity="Welder" Caption="auto"/><GuideTexture Entity="Flare" Caption="auto"/><GuideTexture Entity="Bonfire" Caption="auto"/></GuideEntityCards>
 
 <GuideReagentEmbed Reagent="Phenoxzine"/>
 <GuideReagentEmbed Reagent="Meroxzine"/>

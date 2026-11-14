@@ -4,10 +4,10 @@
 
 ## Купить корабль и начать работу
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyard"/>
-<GuideEntityEmbed Entity="ComputerShipyardExpedition"/>
-<GuideEntityEmbed Entity="ComputerCargoBounty"/>
-<GuideEntityEmbed Entity="LuaMComputerPalletConsoleStationMarket"/>
+<GuideTexture Entity="ComputerShipyard" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardExpedition" Caption="auto"/>
+<GuideTexture Entity="ComputerCargoBounty" Caption="auto"/>
+<GuideTexture Entity="LuaMComputerPalletConsoleStationMarket" Caption="auto"/>
 </GuideEntityCards>
 На карте размещены обычная, экспедиционная, утилизационная верфи и верфь коменданта. Есть банкоматы, терминалы рынка, консоли грузовых заказов и товарных заданий. Для продажи груза используются торговые паллеты; для выполнения задания — соответствующая консоль заказов.
 

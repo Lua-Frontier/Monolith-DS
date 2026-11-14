@@ -1,17 +1,5 @@
 <Document>
 # Суда
 
-[textlink="Покупка корабля" link="Shipyard"]
-
-[textlink="Верфи" link="ColossusCatalogueShipyards"]
-
-[textlink="Пилотирование" link="Piloting"]
-
-[textlink="Навигация" link="ColossusOrientation"]
-
-[textlink="Вооружение" link="ColossusShipArmament"]
-
-[textlink="Ремонт корабля" link="ColossusShipRepair"]
-
-[textlink="Закрепление обломков" link="GridClaimer"]
+<GuideHub Root="NF14"/>
 </Document>

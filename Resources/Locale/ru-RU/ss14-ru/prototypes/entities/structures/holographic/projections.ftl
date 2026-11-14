@@ -6,5 +6,5 @@ ent-HolosignSecurity = голографический барьер
     .desc = Барьер из твёрдого света, блокирует движение, но довольно хрупкий.
 ent-HolosignForcefield = голографическое силовое поле
     .desc = Мощное поле временного сдерживания, которое не пропустит ничего, даже Теслу или сингулярность.
-ent-HolosignForcefieldTSF = tsf holographic force field
-    .desc = A powerful hard light field that can withstand a bullet hailstorm and block movement, while allowing lasers to pass through.
+ent-HolosignForcefieldTSF = голографическое силовое поле ТСФ
+    .desc = Мощное поле из жёсткого света, выдерживающее шквал пуль и преграждающее путь, но пропускающее лазеры.

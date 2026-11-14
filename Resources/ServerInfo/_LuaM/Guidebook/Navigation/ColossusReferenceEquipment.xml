@@ -1,11 +1,5 @@
 <Document>
 # Снаряжение
 
-[textlink="Оружие" link="ColossusCatalogueWeapons"]
-
-[textlink="Боеприпасы" link="ColossusCatalogueAmmo"]
-
-[textlink="Броня" link="ColossusCatalogueArmor"]
-
-[textlink="Аплинки" link="ColossusCatalogueUplinks"]
+<GuideHub Root="ColossusReferenceEquipment"/>
 </Document>

@@ -26,5 +26,5 @@
 ### Шелководство
 Арахниды плетут шёлк, расходуя сытость. Из свёртков шёлка они создают одежду, щиты и стены.
 
-<GuideEntityCards><GuideEntityEmbed Entity="MaterialWebSilk"/><GuideEntityEmbed Entity="ClothingUniformJumpskirtWeb"/><GuideEntityEmbed Entity="WebShield"/><GuideEntityEmbed Entity="WallWeb"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MaterialWebSilk" Caption="auto"/><GuideTexture Entity="ClothingUniformJumpskirtWeb" Caption="auto"/><GuideTexture Entity="WebShield" Caption="auto"/><GuideTexture Entity="WallWeb" Caption="auto"/></GuideEntityCards>
 </Document>

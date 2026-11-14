@@ -1,4 +1,4 @@
-ent-ClothingOuterHardsuitCCTCMedium = MP-EVA CSW-19 "Century" tacsuit
-    .desc = A general purpose, combat-ready hardsuit designed by Centennial Armsworks, for Centennial Armsworks. Designed to be usable for riot control, gunfights, and biohazards, but due to cheap materials it isn't particularly effective.
-ent-ClothingOuterHardsuitCCTCMediumPremium = MP-EVA CSW-21 "Centurion" tacsuit
-    .desc = A reinforced variant of the CSW-19 "Century", the "Centurion" is designed with the PMC's commanders in mind, boasting improved quality and protection.
+ent-ClothingOuterHardsuitCCTCMedium = тактический костюм MP-EVA CSW-19 «Сенчури»
+    .desc = Универсальный боевой скафандр, созданный Centennial Armsworks для Centennial Armsworks. Подходит для подавления беспорядков, перестрелок и работы с биоугрозами, но из-за дешёвых материалов не особо эффективен.
+ent-ClothingOuterHardsuitCCTCMediumPremium = тактический костюм MP-EVA CSW-21 «Центурион»
+    .desc = Усиленный вариант CSW-19 «Сенчури». «Центурион» создан для командиров ЧВК и отличается улучшенным качеством и защитой.

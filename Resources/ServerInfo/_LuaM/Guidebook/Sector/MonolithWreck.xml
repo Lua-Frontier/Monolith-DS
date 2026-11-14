@@ -4,9 +4,9 @@
 
 ## Противники и добыча
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MonolithicCrystalLarge"/>
-<GuideEntityEmbed Entity="MonolithicCrystalMedium"/>
-<GuideEntityEmbed Entity="WeaponTurretHeavyMonolithic"/>
+<GuideTexture Entity="MonolithicCrystalLarge" Caption="auto"/>
+<GuideTexture Entity="MonolithicCrystalMedium" Caption="auto"/>
+<GuideTexture Entity="WeaponTurretHeavyMonolithic" Caption="auto"/>
 </GuideEntityCards>
 На карте есть пустотные бойцы ТСФ, тяжёлые монолитные турели и турели NanoTrasen. Среди добычи — средние и крупные монолитные кристаллы, кристаллические образования, биомасса и спавнер контрабандного ящика.
 

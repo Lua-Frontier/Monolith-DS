@@ -39,5 +39,8 @@
   id: TrashBagWhitelist
 
 - type: Tag
+  id: VehicleSmashIgnore
+
+- type: Tag
   id: XenoArtifact
 

@@ -9,6 +9,12 @@
 [bold]Схему можно двигать:[/bold] тяните свободный фон ЛКМ или ПКМ; колесо прокручивает поле вверх и вниз. Это перемещает исследования, а не всё окно.
 [textlink="Каталог исследований" link="ColossusCatalogueResearch"].
 
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="MachineArtifactAnalyzer" Caption="Исследовать артефакт"/>
+<GuideTexture Entity="ResearchAndDevelopmentServer" Caption="Накопить очки"/>
+<GuideTexture Entity="ComputerResearchAndDevelopment" Caption="Открыть технологию"/>
+</GuideEntityCards>
+
 ## С чего начинать инженеру
 [bold]Детали:[/bold] «Базовые компоненты» 5 000 → «Продвинутые компоненты» 20 000 → «Суперкомпоненты» 25 000 ОИ. «Продвинутые компоненты» открывают детали второго уровня, «Суперкомпоненты» — третьего. [textlink="Как установить и что меняется" link="IndustryMachineParts"].
 

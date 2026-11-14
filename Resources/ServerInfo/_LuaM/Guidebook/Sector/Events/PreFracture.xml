@@ -3,9 +3,9 @@
 
 Неопознанное судно с боевыми синтетиками и турелями.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShuttle"/><GuideEntityEmbed Entity="ComputerGunneryConsole"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/></GuideEntityCards>
 
-Появление возможно примерно со [bold]100-й минуты[/bold]. Не путайте его с отдельными потоками кораблей АДС: у события собственная карта и ограничение времени.
+Появление возможно примерно со [bold]100-й минуты[/bold]. Не путайте его с отдельными потоками кораблей АСЗ: у события собственная карта и ограничение времени.
 
 [bold]Время существования — 40 минут.[/bold] Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект.
 

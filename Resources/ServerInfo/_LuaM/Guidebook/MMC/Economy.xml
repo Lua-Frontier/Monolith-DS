@@ -1,9 +1,9 @@
 <Document>
 # Производство в секторе Колосс
 <GuideEntityCards>
-<GuideEntityEmbed Entity="IndustrialPressEconomyPlates"/>
-  <GuideEntityEmbed Entity="IndustrialFurnaceEconomy"/>
-  <GuideEntityEmbed Entity="PrecisionAssemblerEconomy"/>
+<GuideTexture Entity="IndustrialPressEconomyPlates" Caption="auto"/>
+  <GuideTexture Entity="IndustrialFurnaceEconomy" Caption="auto"/>
+  <GuideTexture Entity="PrecisionAssemblerEconomy" Caption="auto"/>
 </GuideEntityCards>
 Промышленное производство превращает материалы и компоненты в более сложные изделия. [bold]Начинайте с нужного конечного продукта и его рецепта[/bold]: покупка сырья без проверки цепочки легко оставляет вас с неподходящими ресурсами.
 
@@ -17,7 +17,7 @@
 Наличие нужного вещества в листе материала не заменяет реагент в растворе. Для получения растворов могут потребоваться измельчитель и химическое оборудование. Проверяйте конкретный рецепт, прежде чем расходовать редкие ресурсы.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="EconomyPlanner"/>
+<GuideTexture Entity="EconomyPlanner" Caption="auto"/>
 </GuideEntityCards>
 Положите промышленный планировщик на пол и взаимодействуйте с ним, чтобы открыть схему цепочек изготовления. Сверяйте её с текущим меню станка. Если результат — незавершённая заготовка, осмотрите её и проверьте дальнейший этап сборки. Не всякий промежуточный компонент уже готов к установке.
 

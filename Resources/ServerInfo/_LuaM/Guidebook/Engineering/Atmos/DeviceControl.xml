@@ -2,10 +2,9 @@
 # Мониторинг и управление устройствами
   Для наблюдения за атмосферой и управления оборудованием есть три системы. Выбирайте по задаче: параметры воздуха в комнате, общие тревоги или состояние трубосетей.
 
-  <Box>
-    <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
-    <GuideEntityEmbed Entity="AirSensor" Caption=""/>
-  </Box>
+  <GuideEntityCards><GuideTexture Entity="AirAlarm" Caption=""/>
+    <GuideTexture Entity="AirSensor" Caption=""/>
+  </GuideEntityCards>
   <Box>
     [textlink="Воздушные сигнализации" link="AirAlarms"]
   </Box>
@@ -23,10 +22,9 @@
     [color=#999999][italic]Обзор тревог по станции[/italic][/color]
   </Box>
 
-  <Box>
-    <GuideEntityEmbed Entity="ComputerAtmosMonitoring" Caption=""/>
-    <GuideEntityEmbed Entity="GasPipeSensor" Caption=""/>
-  </Box>
+  <GuideEntityCards><GuideTexture Entity="ComputerAtmosMonitoring" Caption=""/>
+    <GuideTexture Entity="GasPipeSensor" Caption=""/>
+  </GuideEntityCards>
   <Box>
     [textlink="Монитор атмосферных сетей" link="AtmosphericNetworkMonitor"]
   </Box>

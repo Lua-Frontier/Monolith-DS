@@ -1,7 +1,7 @@
 <Document>
 # Мехи: сборка и эксплуатация
 
-<GuideEntityCards><GuideEntityEmbed Entity="MechRipley"/><GuideEntityEmbed Entity="MechRipley2"/><GuideEntityEmbed Entity="MechEquipmentGrabber"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MechRipley" Caption="auto"/><GuideTexture Entity="MechRipley2" Caption="auto"/><GuideTexture Entity="MechEquipmentGrabber" Caption="auto"/></GuideEntityCards>
 
 Мех состоит из корпуса, источника питания и сменного оборудования. [bold]Рипли[/bold] — грузовой и промышленный мех с открытой кабиной; [bold]Рипли MK-II[/bold] имеет герметичную кабину. Боевые S1, S2 и S4 используют другие крепления. Название «пушка для меха» не означает совместимость со всеми корпусами.
 
@@ -17,7 +17,7 @@
 ## Собрать Рипли: комплект и порядок
 Подготовьте [bold]каркас Рипли, левую и правую руки, левую и правую ноги[/bold], центральный модуль управления Рипли и модуль управления периферией Рипли. Дополнительно нужны [bold]1 отрезок кабеля, 5 листов стали, 10 металлических стержней, батарея[/bold], гаечный ключ, отвёртка, кусачки и заправленный включённый сварочный аппарат. Голова и модуль наведения обычному Рипли не нужны.
 
-<GuideEntityCards><GuideEntityEmbed Entity="RipleyHarness"/><GuideEntityEmbed Entity="RipleyLArm"/><GuideEntityEmbed Entity="RipleyRArm"/><GuideEntityEmbed Entity="RipleyLLeg"/><GuideEntityEmbed Entity="RipleyRLeg"/><GuideEntityEmbed Entity="RipleyCentralElectronics"/><GuideEntityEmbed Entity="RipleyPeripheralsElectronics"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="RipleyHarness" Caption="auto"/><GuideTexture Entity="RipleyLArm" Caption="auto"/><GuideTexture Entity="RipleyRArm" Caption="auto"/><GuideTexture Entity="RipleyLLeg" Caption="auto"/><GuideTexture Entity="RipleyRLeg" Caption="auto"/><GuideTexture Entity="RipleyCentralElectronics" Caption="auto"/><GuideTexture Entity="RipleyPeripheralsElectronics" Caption="auto"/></GuideEntityCards>
 
 - [bold]1.[/bold] Примените четыре конечности к каркасу. После последней детали получится [bold]шасси Рипли[/bold]. До этого момента гаечный ключ снимает установленные части: начинать затягивать каркас с неполным комплектом не нужно.
 - [bold]2.[/bold] Примените к шасси [bold]гаечный ключ → отвёртку → кабель → кусачки[/bold].
@@ -35,7 +35,7 @@
 ## Установить и выбрать оборудование
 Выйдите из меха, возьмите модуль и примените его к корпусу. Обычная установка занимает [bold]5 секунд[/bold], движение её прерывает. Из кабины установить модуль нельзя. Если установка не начинается, проверьте [bold]совместимость[/bold], свободные места и состояние корпуса.
 
-Обычный Рипли и MK-II имеют [bold]2 места[/bold] для промышленного оборудования. Gygax и Durand принимают боевое оборудование S1. Broadsword — лёгкие крепления; Halberd — средние; Flail и Mace — тяжёлые; Spyglass — лёгкие и РЭБ. Среднее крепление само по себе не принимает лёгкое оружие. Модули опознавания занимают место так же, как другое оборудование.
+Обычный Рипли и MK-II имеют [bold]2 места[/bold] для промышленного оборудования. Gygax и Durand принимают боевое оборудование S1. Broadsword принимает лёгкие модули; Halberd — лёгкие и средние; Flail и Mace — лёгкие, средние и тяжёлые; Spyglass — лёгкие и РЭБ. Модули опознавания занимают место так же, как другое оборудование.
 
 В контекстном меню пустого меха выберите [bold]«Открыть панель управления»[/bold]. Окно показывает [bold]«Целостность»[/bold], [bold]«Энергия»[/bold] и [bold]«Доступно слотов»[/bold]; кнопка у установленного модуля снимает его. Пилот открывает это же окно действием на панели способностей.
 

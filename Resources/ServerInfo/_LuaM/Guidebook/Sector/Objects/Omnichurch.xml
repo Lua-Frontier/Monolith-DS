@@ -3,7 +3,7 @@
 
 Объект с религиозным и сервисным оборудованием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineChapel"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineChapel" Caption="auto"/></GuideEntityCards>
 
 Состав помещений и подходы смотрите на плане.
 

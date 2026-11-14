@@ -1,10 +1,12 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
 using Content.Server.DeviceLinking.Systems;
+using Content.Server.Popups;
 using Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 using Content.Shared.Database;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
+using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 
 namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
@@ -17,6 +19,7 @@ public sealed partial class NuclearReactorMonitorSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private DeviceLinkSystem _signal = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = null!;
+    [Dependency] private PopupSystem _popup = default!; // LuaM
 
     private readonly float _threshold = 0.5f;
     private float _accumulator = 0f;
@@ -33,7 +36,19 @@ public sealed partial class NuclearReactorMonitorSystem : EntitySystem
         SubscribeLocalEvent<NuclearReactorMonitorComponent, ReactorControlRodModifyMessage>(OnControlRodMessage);
 
         SubscribeLocalEvent<NuclearReactorMonitorComponent, AnchorStateChangedEvent>(OnAnchorChanged);
+        SubscribeLocalEvent<NuclearReactorMonitorComponent, ActivatableUIOpenAttemptEvent>(OnOpenAttempt); // LuaM
     }
+
+    // LuaM start
+    private void OnOpenAttempt(EntityUid uid, NuclearReactorMonitorComponent comp, ActivatableUIOpenAttemptEvent args)
+    {
+        if (args.Cancelled || Exists(GetEntity(comp.reactor)))
+            return;
+
+        args.Cancel();
+        _popup.PopupEntity(Loc.GetString("nuclear-reactor-monitor-not-linked"), uid, args.User);
+    }
+    // LuaM end
 
     private void OnMapInit(EntityUid uid, NuclearReactorMonitorComponent comp, ref MapInitEvent args)
     {

@@ -3,7 +3,7 @@
 
 База ММС: производство компонентов, приём промышленных заказов и корпоративное снабжение.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerCargoBounty"/><GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerCargoBounty" Caption="auto"/><GuideTexture Entity="ComputerResearchAndDevelopment" Caption="auto"/></GuideEntityCards>
 
 Работу начинайте с выбора заказа и планирования сырья. Полная производственная цепочка и должности собраны в ветке ММС.
 

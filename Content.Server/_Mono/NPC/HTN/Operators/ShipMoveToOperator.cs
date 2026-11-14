@@ -143,6 +143,12 @@ public sealed partial class ShipMoveToOperator : HTNOperator, IHtnConditionalShu
 
     [DataField]
     public float? RotationTolerance;
+
+    [DataField]
+    public bool AvoidNebulae = true;
+
+    [DataField]
+    public bool StopAtNebulae;
     // LuaM-end
 
     /// <summary>
@@ -227,6 +233,12 @@ public sealed partial class ShipMoveToOperator : HTNOperator, IHtnConditionalShu
         comp.TargetRotation = TargetRotation;
         // LuaM-start
         comp.AnchorInRange = AnchorInRange;
+        comp.AvoidNebulae = AvoidNebulae;
+        comp.StopAtNebulae = StopAtNebulae;
+        comp.NextNebulaCheck = TimeSpan.Zero;
+        comp.NebulaDetour = null;
+        comp.NebulaStopPoint = null;
+        comp.NebulaDetourField = null;
         if (RotationTolerance is { } rotationTolerance)
             comp.RotationTolerance = rotationTolerance;
         // LuaM-end

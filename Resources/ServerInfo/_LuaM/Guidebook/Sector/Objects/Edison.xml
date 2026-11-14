@@ -3,7 +3,7 @@
 
 Энергетический объект с солнечными панелями, ТЭГ и газовыми контурами.
 
-<GuideEntityCards><GuideEntityEmbed Entity="TegCenter"/><GuideEntityEmbed Entity="TegCirculator"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="TegCenter" Caption="auto"/><GuideTexture Entity="TegCirculator" Caption="auto"/></GuideEntityCards>
 
 Схема станции и порядок запуска приведены в руководстве по электростанции; для настройки сетей используйте статью об электроснабжении.
 

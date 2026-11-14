@@ -1,15 +1,5 @@
 <Document>
 # Синтез газов
 
-[textlink="Тритий" link="ColossusGasTritium"]
-
-[textlink="Фрезон" link="ColossusGasFrezon"]
-
-[textlink="BZ" link="ColossusGasBZ"]
-
-[textlink="Хилиум" link="ColossusGasHealium"]
-
-[textlink="Нитриум" link="ColossusGasNitrium"]
-
-[textlink="Плюоксий" link="ColossusGasPluoxium"]
+<GuideHub Root="ColossusGasSynthesis"/>
 </Document>

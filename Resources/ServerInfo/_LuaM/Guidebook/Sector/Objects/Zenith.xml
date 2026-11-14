@@ -3,9 +3,9 @@
 
 Корабль из группы стартовых объектов с вооружением и корабельными системами.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerGunneryConsole"/><GuideEntityEmbed Entity="WeaponTurretCharon"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Caption="auto"/><GuideTexture Entity="WeaponTurretCharon" Caption="auto"/></GuideEntityCards>
 
-Это отдельный объект сектора: не путайте его с кораблями АДС, прибывающими в ходе событий.
+Это отдельный объект сектора: не путайте его с кораблями АСЗ, прибывающими в ходе событий.
 
 ## Как найти
 
@@ -13,5 +13,5 @@
 
 <GuideMap Map="/Maps/_Mono/POI/Dungeons/zenith_poi.yml" Name="АСЗ СК-395 «Зенит»"/>
 
-[textlink="Событийные корабли АДС" link="ColossusEventADSFleet"] · [textlink="Предтечи и АДС" link="ColossusPrecursors"]
+[textlink="Событийные корабли АСЗ" link="ColossusEventADSFleet"] · [textlink="Предтечи и АСЗ" link="ColossusPrecursors"]
 </Document>

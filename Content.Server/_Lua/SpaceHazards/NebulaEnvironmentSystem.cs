@@ -129,6 +129,9 @@ public sealed partial class NebulaEnvironmentSystem : EntitySystem
     // A radio is jammed when it or anything that carries it sits on a grid in a radio blackout.
     private bool IsRadioBlocked(EntityUid uid)
     {
+        if (Count<NebulaPresenceComponent>() == 0)
+            return false;
+
         var current = uid;
         for (var i = 0; i < MaxParentChecks && current.Valid; i++)
         {

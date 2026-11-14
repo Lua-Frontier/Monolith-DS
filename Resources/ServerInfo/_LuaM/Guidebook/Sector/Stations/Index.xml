@@ -3,7 +3,7 @@
 
 Основные станции сектора — места начала работы, снабжения и встречи экипажей.
 
-[textlink="Колосс Централл" link="LuaMColossusCentral"] · [textlink="Медицинский Центр" link="LuaMMedical"] · [textlink="Камелот" link="LuaMCamelot"] · [textlink="Халикон" link="LuaMHalicon"] · [textlink="Гелиос" link="LuaMHelios"]
+<GuideHub Root="LuaMStations"/>
 
 [textlink="Другие постоянные объекты" link="LuaMWorldObjects"] · [textlink="Объекты событий" link="LuaMGameModes"]
 </Document>

@@ -2,14 +2,20 @@
 # Автоматизация производства
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="UpgradeKitAutomation"/>
-<GuideEntityEmbed Entity="RoboticArm"/>
-<GuideEntityEmbed Entity="StorageBin"/>
-<GuideEntityEmbed Entity="Interactor"/>
-<GuideEntityEmbed Entity="Constructor"/>
+<GuideTexture Entity="UpgradeKitAutomation" Caption="auto"/>
+<GuideTexture Entity="RoboticArm" Caption="auto"/>
+<GuideTexture Entity="StorageBin" Caption="auto"/>
+<GuideTexture Entity="Interactor" Caption="auto"/>
+<GuideTexture Entity="Constructor" Caption="auto"/>
 </GuideEntityCards>
 
 [bold]Роборука[/bold] переносит предметы, [bold]накопитель[/bold] хранит их, [bold]интерактор[/bold] применяет инструмент, [bold]конструктор[/bold] начинает постройку по выбранной схеме. Комплект автоматизации открывает предусмотренные машиной порты.
+
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="StorageBin" Caption="Хранение"/>
+<GuideTexture Entity="RoboticArm" Caption="Перемещение"/>
+<GuideTexture Entity="Interactor" Caption="Взаимодействие"/>
+</GuideEntityCards>
 
 ## Накопитель → станок → накопитель
 - [bold]1.[/bold] Исследуйте [bold]Промышленную инженерию[/bold] за [bold]22 500 ОИ[/bold] после [bold]Механического уплотнения[/bold]. Напечатайте платы устройств и комплект автоматизации.
@@ -22,10 +28,10 @@
 
 ## Фильтр → что пропускать
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AutomationFilterName"/>
-<GuideEntityEmbed Entity="AutomationFilterLabel"/>
-<GuideEntityEmbed Entity="AutomationFilterStack"/>
-<GuideEntityEmbed Entity="AutomationFilterCombined"/>
+<GuideTexture Entity="AutomationFilterName" Caption="auto"/>
+<GuideTexture Entity="AutomationFilterLabel" Caption="auto"/>
+<GuideTexture Entity="AutomationFilterStack" Caption="auto"/>
+<GuideTexture Entity="AutomationFilterCombined" Caption="auto"/>
 </GuideEntityCards>
 
 Изготовьте фильтр в меню строительства [bold]G[/bold], настройте и установите в руку или накопитель.

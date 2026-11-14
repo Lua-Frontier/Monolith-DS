@@ -1232,6 +1232,28 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(Label.StylePropertyFontColor, NanoGold),
                     }),
 
+                // LuaM-start
+                new StyleRule(new SelectorElement(typeof(RichTextLabel), new[] {StyleClassLabelHeading}, null, null), new[]
+                {
+                    new StyleProperty(Label.StylePropertyFont, notoSansBold16),
+                    new StyleProperty(Control.StylePropertyModulateSelf, NanoGold),
+                }),
+
+                new StyleRule(new SelectorElement(typeof(RichTextLabel), new[] {StyleClassLabelHeadingBigger}, null, null), new[]
+                {
+                    new StyleProperty(Label.StylePropertyFont, notoSansBold20),
+                    new StyleProperty(Control.StylePropertyModulateSelf, NanoGold),
+                }),
+                // LuaM-end
+
+                // LuaM-start: guide titles wrap while keeping the same native heading fonts.
+                new StyleRule(new SelectorElement(typeof(Content.Client._LuaM.Guidebook.GuideHeading), new[] {StyleClassLabelHeadingBigger}, null, null),
+                    new[] { new StyleProperty(Label.StylePropertyFont, notoSansBold20) }),
+                new StyleRule(new SelectorElement(typeof(Content.Client._LuaM.Guidebook.GuideHeading), new[] {StyleClassLabelHeading}, null, null),
+                    new[] { new StyleProperty(Label.StylePropertyFont, notoSansBold16) }),
+                new StyleRule(new SelectorElement(typeof(Content.Client._LuaM.Guidebook.GuideHeading), new[] {StyleClassLabelKeyText}, null, null),
+                    new[] { new StyleProperty(Label.StylePropertyFont, notoSansBold12) }),
+                // LuaM-end
                 // Small Label
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassLabelSubText}, null, null), new[]
                 {

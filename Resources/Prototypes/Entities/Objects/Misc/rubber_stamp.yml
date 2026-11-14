@@ -28,7 +28,7 @@
         length: 1.0 # Frontier: 1 second between stampings, avoid spam for reapplied stamps
   - type: ExtendDescription # Mono
     descriptionList:
-    - description: This item will dry up and become useless if it is left in a safety deposit box.
+    - description: extend-desc-dries-in-deposit-box # LuaM
       color: "#4f94ad"
       requireDetailRange: true
 

@@ -15,4 +15,9 @@
 
 В особых режимах состав должностей может отличаться.
 [textlink="Священный Военный Устав" link="ColossusNordfallCharter"]
+
+<GuideEntityCards>
+<GuideTexture Entity="BannerNordfallVanguard" Caption="Авангард Нордфолла"/>
+<GuideTexture Entity="BookNordfallSOP" Caption="Военный устав"/>
+</GuideEntityCards>
 </Document>

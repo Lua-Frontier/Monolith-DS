@@ -1,11 +1,5 @@
 <Document>
 # Мехи
 
-[textlink="Рипли" link="MechsBase"]
-
-[textlink="Серия S1" link="S1Mechs"]
-
-[textlink="Серия S2" link="S2Mechs"]
-
-[textlink="Серия S4" link="S4Mechs"]
+<GuideHub Root="ColossusMechsHub"/>
 </Document>

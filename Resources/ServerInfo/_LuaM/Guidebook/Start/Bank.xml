@@ -1,6 +1,6 @@
 <Document>
 # Деньги и банк
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerBankATM"/><GuideEntityEmbed Entity="SpaceCash1000"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerBankATM" Caption="auto"/><GuideTexture Entity="SpaceCash1000" Caption="auto"/></GuideEntityCards>
 <GuideTable Columns="2">
 <Box>[bold]Где деньги[/bold]</Box><Box>[bold]Как используются[/bold]</Box>
 <Box>Наличные</Box><Box>Физическая пачка. Для банковской покупки сначала внесите её через банкомат.</Box>

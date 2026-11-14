@@ -3,7 +3,7 @@
 
 Заброшенная станция с добывающим оборудованием. В её помещениях встречаются ксеносы.
 
-<GuideEntityCards><GuideEntityEmbed Entity="MiningDrill"/><GuideEntityEmbed Entity="LaserDrillFlatpack"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MiningDrill" Caption="auto"/><GuideTexture Entity="LaserDrillFlatpack" Caption="auto"/></GuideEntityCards>
 
 Осмотрите объект перед разборкой и вывозом оборудования. Для добычи и переработки подготовьте инструменты и место под груз.
 

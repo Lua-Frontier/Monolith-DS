@@ -3,7 +3,7 @@
 
 Удалённая база с оборудованием Синдиката, средствами наблюдения и верфью.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShipyardSyndicate"/><GuideEntityEmbed Entity="ComputerAdvancedRadar"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShipyardSyndicate" Caption="auto"/><GuideTexture Entity="ComputerAdvancedRadar" Caption="auto"/></GuideEntityCards>
 
 Обычная отметка БСС скрыта. Для поиска и подхода нужны координаты или обнаружение на радаре; не рассчитывайте найти базу по одному списку маяков.
 

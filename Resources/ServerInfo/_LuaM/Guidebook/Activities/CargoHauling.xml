@@ -1,9 +1,9 @@
 <Document>
 # Грузоперевозки и торговля
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerCargoOrders"/>
-  <GuideEntityEmbed Entity="ComputerPalletConsole"/>
-  <GuideEntityEmbed Entity="CrateTradeSecureNormal"/>
+<GuideTexture Entity="ComputerCargoOrders" Caption="auto"/>
+  <GuideTexture Entity="ComputerPalletConsole" Caption="auto"/>
+  <GuideTexture Entity="CrateTradeSecureNormal" Caption="auto"/>
 </GuideEntityCards>
 Торговый ящик приносит разную выручку в зависимости от места продажи. [bold]Перед покупкой оцените маршрут, место в трюме и расходы на рейс.[/bold]
 

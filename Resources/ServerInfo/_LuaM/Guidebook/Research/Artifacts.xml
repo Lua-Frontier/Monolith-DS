@@ -2,9 +2,9 @@
 # Артефакты: раскрытие узлов
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
-<GuideEntityEmbed Entity="ComputerAnalysisConsole"/>
-<GuideEntityEmbed Entity="NodeScanner"/>
+<GuideTexture Entity="MachineArtifactAnalyzer" Caption="auto"/>
+<GuideTexture Entity="ComputerAnalysisConsole" Caption="auto"/>
+<GuideTexture Entity="NodeScanner" Caption="auto"/>
 </GuideEntityCards>
 
 ## Подключить анализатор

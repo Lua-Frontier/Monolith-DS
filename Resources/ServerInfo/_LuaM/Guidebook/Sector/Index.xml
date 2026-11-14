@@ -3,5 +3,5 @@
 
 Карта помогает найти путь между станциями, местами добычи и опасными объектами.
 
-[textlink="Карта" link="SectorTopology"] · [textlink="Станции" link="LuaMStations"] · [textlink="Объекты" link="LuaMWorldObjects"] · [textlink="События" link="LuaMGameModes"] · [textlink="Астероиды" link="LuaMAsteroids"] · [textlink="Туманности" link="ColossusNebulae"]
+<GuideHub Root="LuaMWorld"/>
 </Document>

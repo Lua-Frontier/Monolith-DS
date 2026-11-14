@@ -1,2 +1,2 @@
 ﻿ent-SalvageSpawnerPlastitaniumCommon = SalvageSpawnerPlastitaniumCommon
-ent-SpawnerPlastitaniumCommon = Plastitanium, 1-3
+ent-SpawnerPlastitaniumCommon = пластитан, 1-3

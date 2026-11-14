@@ -1,7 +1,5 @@
 <Document>
 # Рецепты
 
-[textlink="Напитки" link="Drinks"]
-
-[textlink="Еда" link="FoodRecipes"]
+<GuideHub Root="ColossusRecipes"/>
 </Document>

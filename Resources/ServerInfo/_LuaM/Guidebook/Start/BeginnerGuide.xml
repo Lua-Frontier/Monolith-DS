@@ -3,6 +3,12 @@
 
 Наёмник начинает без назначенной работы: можно вступить в экипаж или купить собственный корабль. Для [bold]киборга наймов[/bold] устройство модулей, зарядка и ремонт разобраны в [textlink="руководстве киборга" link="Cyborgs"]; остальные разделы здесь описывают самостоятельный рейс.
 
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="ComputerBankATM" Caption="Пополнить счёт"/>
+<GuideTexture Entity="ComputerShipyard" Caption="Выбрать корабль"/>
+<GuideTexture Entity="ComputerShuttle" Caption="Занять место пилота"/>
+</GuideEntityCards>
+
 ## Получить корабль
 - [bold]1.[/bold] Откройте [textlink="банкомат" link="Bank"] и проверьте банковский баланс: верфь списывает деньги со счёта. Наличные сначала внесите на него.
 - [bold]2.[/bold] На [textlink="верфи" link="Shipyard"] выберите корабль. Цена, класс и доступность покупки указаны в её окне. Если используете ваучер, нужен подходящий тип верфи и корабля — [textlink="выбор верфей" link="ColossusCatalogueShipyards"].

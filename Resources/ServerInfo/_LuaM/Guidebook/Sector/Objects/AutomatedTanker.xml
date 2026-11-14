@@ -3,7 +3,7 @@
 
 Удалённое судно с газовыми и атмосферными системами.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerAtmosMonitoring"/><GuideEntityEmbed Entity="ComputerShuttle"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerAtmosMonitoring" Caption="auto"/><GuideTexture Entity="ComputerShuttle" Caption="auto"/></GuideEntityCards>
 
 При исследовании учитывайте состояние газовых отсеков и присутствие монолитных существ.
 

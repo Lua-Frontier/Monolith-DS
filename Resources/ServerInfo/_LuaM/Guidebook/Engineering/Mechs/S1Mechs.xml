@@ -1,7 +1,7 @@
 <Document>
 # Боевые мехи S1
 
-<GuideEntityCards><GuideEntityEmbed Entity="MechGygax"/><GuideEntityEmbed Entity="MechDurand"/><GuideEntityEmbed Entity="WeaponMechCombatUltraRifle"/><GuideEntityEmbed Entity="WeaponMechCombatShotgun"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MechGygax" Caption="auto"/><GuideTexture Entity="MechDurand" Caption="auto"/><GuideTexture Entity="WeaponMechCombatUltraRifle" Caption="auto"/><GuideTexture Entity="WeaponMechCombatShotgun" Caption="auto"/></GuideEntityCards>
 
 Gygax и Durand — герметичные боевые мехи для действий на гриде и в космосе. У Gygax выше скорость, Durand медленнее и наносит более сильный удар корпусом. Платы, конечности и броневые пластины этих двух моделей [bold]не взаимозаменяемы[/bold].
 

@@ -5,7 +5,7 @@
 
 ## Сердце
 
-<GuideEntityCards><GuideEntityEmbed Entity="BasicCyberneticHeart"/><GuideEntityEmbed Entity="UpgradedCyberneticHeart"/><GuideEntityEmbed Entity="OrganPDVAdvancedHeart"/><GuideEntityEmbed Entity="OrganBerserkHeart"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="BasicCyberneticHeart" Caption="auto"/><GuideTexture Entity="UpgradedCyberneticHeart" Caption="auto"/><GuideTexture Entity="OrganPDVAdvancedHeart" Caption="auto"/><GuideTexture Entity="OrganBerserkHeart" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>
@@ -20,7 +20,7 @@
 
 ## Лёгкие
 
-<GuideEntityCards><GuideEntityEmbed Entity="UpgradedCyberneticLungs"/><GuideEntityEmbed Entity="OrganInternalAirSystem"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="UpgradedCyberneticLungs" Caption="auto"/><GuideTexture Entity="OrganInternalAirSystem" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>
@@ -44,7 +44,7 @@
 
 Один слот ЦНС, отдельный от сердца. Нейроускорители включаются и выключаются действием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="OrganCNSMMCSandevistan"/><GuideEntityEmbed Entity="OrganCNSTSFSandevistan"/><GuideEntityEmbed Entity="OrganCNSMMCSakimoto"/><GuideEntityEmbed Entity="OrganCNSKerenzikov"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="OrganCNSMMCSandevistan" Caption="auto"/><GuideTexture Entity="OrganCNSTSFSandevistan" Caption="auto"/><GuideTexture Entity="OrganCNSMMCSakimoto" Caption="auto"/><GuideTexture Entity="OrganCNSKerenzikov" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>
@@ -62,7 +62,7 @@
 
 Один слот; перечисленные варианты взаимно исключаются.
 
-<GuideEntityCards><GuideEntityEmbed Entity="OrganDermalArmor"/><GuideEntityEmbed Entity="OrganDermalArmorPDV"/><GuideEntityEmbed Entity="OrganDermalArmorReflective"/><GuideEntityEmbed Entity="OrganDermalArmorHeavyUSSP"/><GuideEntityEmbed Entity="OrganOpticalCamo"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="OrganDermalArmor" Caption="auto"/><GuideTexture Entity="OrganDermalArmorPDV" Caption="auto"/><GuideTexture Entity="OrganDermalArmorReflective" Caption="auto"/><GuideTexture Entity="OrganDermalArmorHeavyUSSP" Caption="auto"/><GuideTexture Entity="OrganOpticalCamo" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>
@@ -79,7 +79,7 @@
 
 Не занимают слот ЦНС или подкожной брони. Лечение указано [bold]на всю группу урона в секунду[/bold], не на каждый тип.
 
-<GuideEntityCards><GuideEntityEmbed Entity="AutosurgeonPlateletFactoriesMieyoFlatpack"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AutosurgeonPlateletFactoriesMieyoFlatpack" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>

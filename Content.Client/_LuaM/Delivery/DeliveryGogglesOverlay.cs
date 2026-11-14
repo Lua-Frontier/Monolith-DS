@@ -105,7 +105,7 @@ public sealed class DeliveryGogglesOverlay : Overlay
     }
 }
 
-public sealed class DeliveryGogglesSystem : EntitySystem
+public sealed partial class DeliveryGogglesSystem : EntitySystem
 {
     [Dependency] private IOverlayManager _overlays = default!;
     [Dependency] private IPlayerManager _player = default!;

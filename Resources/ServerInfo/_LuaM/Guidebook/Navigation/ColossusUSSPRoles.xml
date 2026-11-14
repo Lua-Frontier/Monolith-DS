@@ -1,7 +1,5 @@
 <Document>
 # СССП
 
-[textlink="Должности" link="USSP_Entry"]
-
-[textlink="Снабжение" link="USSP_SoP"]
+<GuideHub Root="ColossusUSSPRoles"/>
 </Document>

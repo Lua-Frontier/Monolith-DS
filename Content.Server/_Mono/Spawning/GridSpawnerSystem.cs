@@ -4,6 +4,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server._LuaM.Nebula; // LuaM
 
 namespace Content.Server._Mono.Spawning;
 
@@ -14,6 +15,7 @@ public sealed partial class GridSpawnerSystem : EntitySystem
     [Dependency] private MapLoaderSystem _loader = default!;
     [Dependency] private MetaDataSystem _metadata = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private NebulaAvoidanceSystem _nebulaAvoidance = default!; // LuaM
 
     public override void Initialize()
     {
@@ -25,6 +27,14 @@ public sealed partial class GridSpawnerSystem : EntitySystem
     private void OnInit(Entity<GridSpawnerComponent> ent, ref MapInitEvent args)
     {
         var xform = Transform(ent.Owner);
+
+        // LuaM-start
+        if (ent.Comp.AvoidHazardNebulae && _nebulaAvoidance.IsInHazard(_transform.GetMapCoordinates(xform)))
+        {
+            QueueDel(ent.Owner);
+            return;
+        }
+        // LuaM-end
 
         if (_loader.TryLoadGrid(xform.MapID, ent.Comp.Path, out var grid, offset: _transform.GetWorldPosition(xform)))
         {

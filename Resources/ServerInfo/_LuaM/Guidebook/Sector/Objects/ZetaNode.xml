@@ -3,7 +3,7 @@
 
 Небольшой объект у центральной области сектора.
 
-<GuideEntityCards><GuideEntityEmbed Entity="SellOnlyCarrierComputer"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="SellOnlyCarrierComputer" Caption="auto"/></GuideEntityCards>
 
 Используйте его отметку как ориентир; состояние помещений проверяйте перед работой внутри.
 

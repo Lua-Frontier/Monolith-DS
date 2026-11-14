@@ -1,6 +1,6 @@
 <Document>
 # Химера: способности и ограничения
-<GuideEntityCards><GuideEntityEmbed Entity="MobLetoferolHorror"/><GuideEntityEmbed Entity="ChimeraFleshKudzu"/></GuideEntityCards>
+<GuideEntityCards><GuideEntityEmbed Entity="MobLetoferolHorror"/><GuideTexture Entity="ChimeraFleshKudzu" Caption="auto"/></GuideEntityCards>
 Гуманоидная химера заражает носителей летоферолом, строит биомассу и пользуется врождённым оружием. Статы мелких химер отличаются.
 
 ## Первые действия

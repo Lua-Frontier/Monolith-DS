@@ -1,11 +1,5 @@
 <Document>
 # Особые роли
 
-[textlink="Предтечи, АДС, Азакимы" link="ColossusPrecursors"]
-
-[textlink="Мозговой червь" link="CorticalBorerPracticalGuide"]
-
-[textlink="Химера" link="ChimeraPracticalGuide"]
-
-[textlink="Ксеноборги" link="Xenoborgs"]
+<GuideHub Root="ColossusSpecialRoles"/>
 </Document>

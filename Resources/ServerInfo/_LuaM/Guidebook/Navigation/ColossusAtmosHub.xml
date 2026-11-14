@@ -1,11 +1,5 @@
 <Document>
 # Атмосфера
 
-[textlink="Газовые контуры" link="ColossusAtmos"]
-
-[textlink="Оборудование" link="ColossusAtmosEquipment"]
-
-[textlink="Синтез газов" link="ColossusGasSynthesis"]
-
-[textlink="Мониторинг" link="ColossusAtmosMonitoring"]
+<GuideHub Root="ColossusAtmosHub"/>
 </Document>

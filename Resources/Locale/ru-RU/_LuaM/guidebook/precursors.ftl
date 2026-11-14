@@ -1,1 +1,1 @@
-guide-entry-colossus-precursors = Предтечи, АДС и воины Азакимы
+guide-entry-colossus-precursors = Предтечи, АСЗ и воины Азакимы

@@ -1,9 +1,9 @@
-ent-MobBoomroach = Boomroach
-    .desc = This little mothroach has a chinalake strapped to its back! Why and how?
+ent-MobBoomroach = бумтаракамоль
+    .desc = У этой маленькой таракамоли на спине привязан China-Lake! Зачем и как?
     .suffix = { ent-SimpleMobBase.suffix }
-ent-MobImperiRoach = ImperiRoach
-    .desc = Repurposed and highly trained elite member of the PDV, bewarned explosive personallity
+ent-MobImperiRoach = имперотаракамоль
+    .desc = Перепрофилированный и отлично обученный элитный боец Авангарда. Осторожно: взрывной характер.
     .suffix = { ent-SimpleMobBase.suffix }
-ent-MobOwORoach = OwOroach
-    .desc = Genetic Experimentionation between mothroaches and cats, too far or not far enough?
+ent-MobOwORoach = OwO-таракамоль
+    .desc = Генетический эксперимент по скрещиванию таракамолей и кошек. Слишком далеко зашли или недостаточно далеко?
     .suffix = { ent-SimpleMobBase.suffix }

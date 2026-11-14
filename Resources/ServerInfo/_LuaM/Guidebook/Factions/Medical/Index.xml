@@ -3,6 +3,12 @@
 
 Отдельная медицинская организация со станцией [textlink="«Медицинский Центр»" link="LuaMMedical"], собственным руководителем и парамедиками.
 
+<GuideEntityCards>
+<GuideTexture Entity="Medkit" Caption="Неотложная помощь"/>
+<GuideTexture Entity="MedicalBiofabricator" Caption="Восстановление органов"/>
+<GuideTexture Entity="CryogenicSleepUnit" Caption="Хранение персонажа"/>
+</GuideEntityCards>
+
 ## Должности
 - [bold]Директор медицинского центра[/bold] — 1 — организует работу центра и медицинской команды.
 - [bold]Парамедик[/bold] — 5 — вылетает к пострадавшим, стабилизирует раненых, синтезирует лекарства и занимается восстановлением погибших.

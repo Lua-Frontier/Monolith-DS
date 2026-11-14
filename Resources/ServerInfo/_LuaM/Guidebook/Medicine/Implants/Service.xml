@@ -18,7 +18,7 @@
 
 ## Лекарственные инъекторы
 
-<GuideEntityCards><GuideEntityEmbed Entity="AutosurgeonCombatMedipenFlatpack"/><GuideEntityEmbed Entity="AutosurgeonStimulantFlatpack"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AutosurgeonCombatMedipenFlatpack" Caption="auto"/><GuideTexture Entity="AutosurgeonStimulantFlatpack" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
 <Box>[bold]Модель · человечность[/bold]</Box><Box>[bold]Характеристики и ограничения[/bold]</Box>

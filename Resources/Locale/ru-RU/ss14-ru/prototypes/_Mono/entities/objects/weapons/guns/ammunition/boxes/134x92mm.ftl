@@ -1,7 +1,7 @@
 ent-BaseAmmoBoxShenzhen = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-AmmoBoxShenzhen = ammunition box (13.4x92mm DU-APFSDS caseless)
+ent-AmmoBoxShenzhen = коробка патронов (13.4x92мм DU-APFSDS безгильзовые)
     .desc = { ent-BaseAmmoBoxShenzhen.desc }
-ent-AmmoBoxShenzhenBig = big ammunition box (13.4x92mm DU-APFSDS caseless)
+ent-AmmoBoxShenzhenBig = большая коробка патронов (13.4x92мм DU-APFSDS безгильзовые)
     .desc = { ent-BaseAmmoBoxShenzhen.desc }
     .suffix = Big (30)

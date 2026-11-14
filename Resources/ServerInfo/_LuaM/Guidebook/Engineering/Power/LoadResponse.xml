@@ -2,8 +2,8 @@
 # Изменение мощности
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="PortableGeneratorPacman"/>
-  <GuideEntityEmbed Entity="SMESBasic"/>
+<GuideTexture Entity="PortableGeneratorPacman" Caption="auto"/>
+  <GuideTexture Entity="SMESBasic" Caption="auto"/>
 </GuideEntityCards>
 
 Генераторы и накопители подстраивают отдаваемую мощность под нагрузку [bold]постепенно[/bold]. После резкого включения потребителей возможна краткая просадка питания, даже если максимальной мощности источников достаточно.

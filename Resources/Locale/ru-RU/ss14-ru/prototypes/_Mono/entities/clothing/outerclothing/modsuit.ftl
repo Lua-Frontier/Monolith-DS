@@ -1,12 +1,12 @@
-ent-ClothingModsuitChestplateUSSPVaryag = Panzerkorps Varyag
+ent-ClothingModsuitChestplateUSSPVaryag = панцирь «Варяг»
     .desc = Толстые пластины, сплавленные с внутренним контролем атмосферы.
-ent-ClothingModsuitChestplateUSSPZastavnik = Brust Zastavnika
+ent-ClothingModsuitChestplateUSSPZastavnik = нагрудник «Заставник»
     .desc = Внушительная бронированная оболочка, разработанная для поглощения ударов и поддержания стабильности под давлением.
 ent-ClothingModsuitChestplateRogue = нагрудная пластина модкостюма RX-01
     .desc = Нагрудник имеет предупреждающую этикетку внутри о утечках радиации - и записку рядом с ней 'Удалить эту этикетку в финальном продукте - Феликс'
-ent-ClothingModsuitChestplateVolta = Volta Modsuit Chestplate
+ent-ClothingModsuitChestplateVolta = нагрудник модкостюма «Вольта»
     .desc = Усиленная военная модификация сапёрного модкостюма с повышенной пулестойкостью.
 ent-ClothingModsuitChestplateGalloglass = торс модкостюма «Галлоглас»
     .desc = Лёгкий модкостюм, который жертвует защитой от взрывов и тепла ради энергетического щита и скорости.
-ent-ClothingModsuitChestplateMercenary = mercenary modsuit chestplate
-    .desc = A well rounded modsuit that focuses on mobility with its Actuator Enhancement System allowing its wearer to leap across the battlefield for rapid redeployment.
+ent-ClothingModsuitChestplateMercenary = нагрудник наёмничьего модкостюма
+    .desc = Сбалансированный модкостюм, ставящий во главу угла мобильность: система усиления приводов позволяет владельцу совершать прыжки по полю боя для быстрой передислокации.

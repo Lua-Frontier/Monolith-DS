@@ -3,7 +3,7 @@
 
 Вооружённый объект с запасами оружия и охраной.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponTurretSyndicate"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponTurretSyndicate" Caption="auto"/></GuideEntityCards>
 
 В объявлениях называется [bold]«Хранилище оружия Синдиката»[/bold]. Появление возможно примерно с [bold]40-й минуты[/bold] смены. Перед входом осмотрите подходы: внутри есть вооружённые бойцы и турели.
 

@@ -10,7 +10,7 @@ namespace Content.Client._LuaM.Shipyard.UI;
 /// <summary>
 /// Shows the cached picture of a vessel with free panning and zoom; the picture is never re-rendered while viewed.
 /// </summary>
-public sealed class ShipyardPreviewView : Control
+public sealed partial class ShipyardPreviewView : Control
 {
     [Dependency] private IEntityManager _entities = default!;
 

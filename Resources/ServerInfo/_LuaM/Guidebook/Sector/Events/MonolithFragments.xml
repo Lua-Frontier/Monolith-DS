@@ -3,7 +3,7 @@
 
 Небольшие монолитные объекты нескольких форм.
 
-<GuideEntityCards><GuideEntityEmbed Entity="MonolithicCrystalLarge"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MonolithicCrystalLarge" Caption="auto"/></GuideEntityCards>
 
 Поток событий может начаться примерно с [bold]10-й минуты[/bold]. Встречаются варианты арены, вытянутого фрагмента и корабля; геометрия подходов отличается. Приготовьтесь к исследованию опасного объекта, а не к обычной добыче астероидной породы.
 

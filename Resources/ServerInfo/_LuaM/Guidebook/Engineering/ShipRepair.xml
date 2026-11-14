@@ -4,9 +4,9 @@
 [bold]УРК — устройство ремонта корабля.[/bold] Оно восстанавливает утраченные участки пола и конструкции по сохранённому плану корпуса. Для работы нужны само устройство и заряды ремонтной материи.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ShipRepairDevice"/>
-<GuideEntityEmbed Entity="ShipRepairDeviceAmmo"/>
-<GuideEntityEmbed Entity="ShipRepairDeviceMMC"/>
+<GuideTexture Entity="ShipRepairDevice" Caption="auto"/>
+<GuideTexture Entity="ShipRepairDeviceAmmo" Caption="auto"/>
+<GuideTexture Entity="ShipRepairDeviceMMC" Caption="auto"/>
 </GuideEntityCards>
 
 ## Что можно восстановить

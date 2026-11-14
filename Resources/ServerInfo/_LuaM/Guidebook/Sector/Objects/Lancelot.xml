@@ -3,7 +3,7 @@
 
 Дальний шахтёрский объект с исследовательским и торговым оборудованием.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerAnalysisConsole"/><GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerAnalysisConsole" Caption="auto"/><GuideTexture Entity="ComputerResearchAndDevelopment" Caption="auto"/></GuideEntityCards>
 
 Внутри встречаются монолитные существа; для осмотра и вывоза находок подготовьте боевой экипаж.
 

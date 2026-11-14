@@ -98,7 +98,7 @@ public sealed class ShipyardPreviewTests
         var client = pair.Client;
         var entities = client.ResolveDependency<IEntityManager>();
         var vessel = client.ResolveDependency<IPrototypeManager>().EnumeratePrototypes<VesselPrototype>().First();
-        ShipyardConsoleMenu? menu = null;
+        ShipyardConsoleMenu menu = null;
 
         await client.WaitPost(() =>
         {

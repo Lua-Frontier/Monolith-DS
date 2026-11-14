@@ -10,6 +10,6 @@ ent-SmartfridgeCircuitboard = умный холодильника (машинн�
 ent-SmartArmoryCircuitboard = умный арсенал (машинная плата)
     .desc = Печатная плата для сброки умного арсенала.
     .suffix = Машинная плата
-ent-ShipDrillMachineCircuitboard = ship drill machine board
+ent-ShipDrillMachineCircuitboard = плата корабельного бура
     .desc = { ent-BaseMachineCircuitboard.desc }
     .suffix = { ent-BaseMachineCircuitboard.suffix }

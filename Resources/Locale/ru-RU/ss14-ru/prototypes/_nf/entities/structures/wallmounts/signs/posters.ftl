@@ -2,7 +2,7 @@ ent-NFPosterLegitMagnusWatching = Всегда Следим
     .desc = На этом постере изображён божественный судья, который не упустит ни одной мелочи. Слышите таинственный "Боньк"? Возможно, это ваш страх быть пойманным. Или судья действительно следит за вами?
 ent-NFPosterContrabandEmsCoords = Напоминание о координатах костюма
     .desc = Рози-медработник, напоминающий вам переключить датчики вашего костюма на режим координат! Будьте спокойны и уверены, что ваша следующая смерть, возможно, не станет последней!
-ent-NFPosterLegitBahamaMama = Bahama Mama's
+ent-NFPosterLegitBahamaMama = «Bahama Mama's»
     .desc = Поднимите ноги и насладитесь имитацией тропического пляжа в Bahama Mama's.
 ent-NFPosterLegitWinnerWinner = Победитель-победитель
   .desc = Аппетитный жаркий кусок дразнит вас. Так близко, и так далеко.
@@ -28,9 +28,9 @@ ent-NFPosterLegitGoblinTinkerer = Мастерим!
   .desc = На этом постере изображён весёлый гоблин-инженер, утверждающий, что взрывы — это изюминка мастерства.
 ent-NFPosterContrabandGoblinFront = Гоблинкин, объединяйтесь!
   .desc = Постер, призывающий гоблинов объединиться и бороться за свои права.
-ent-NFPosterContrabandGoblinate = Da Great Space Goblinate!
+ent-NFPosterContrabandGoblinate = Вилыкий Касмичиский Габлинат!
     .desc = Плакат, призывающий восстановить Великий Гоблинат во всей его былой славе.
-ent-NFPosterContrabandKillerFashion = Da Burkin' Fashion
+ent-NFPosterContrabandKillerFashion = Убойная мода
     .desc = Печатная копия того, что, по всей видимости, является нарисованным от руки плакатом с изображением гоблина в рваной тунике и с копьем.
 
 # Langstad-Voigt Heavy Industries

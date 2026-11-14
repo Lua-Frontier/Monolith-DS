@@ -19,9 +19,9 @@ public sealed class GuidePersonalShieldStats : BoxContainer
         SeparationOverride = 8;
         var visuals = suit != null && suit.TryGetComponent<PersonalShieldComponent>(out var field)
             ? field.Visuals : new PersonalShieldVisuals();
-        var image = new BoxContainer { Orientation = LayoutOrientation.Vertical, SetWidth = 170,
+        var image = new BoxContainer { Orientation = LayoutOrientation.Vertical, SetWidth = 128,
             Margin = new Thickness(5), VerticalAlignment = VAlignment.Top };
-        image.AddChild(new GuideShieldPreview(visuals));
+        image.AddChild(new GuideShieldPreview(visuals) { SetSize = new System.Numerics.Vector2(72, 72) });
         image.AddChild(Label("Встроенный персональный щит"));
         AddChild(image);
         var body = new BoxContainer { Orientation = LayoutOrientation.Vertical, HorizontalExpand = true, Margin = new Thickness(4) };

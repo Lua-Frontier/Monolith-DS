@@ -1,9 +1,9 @@
 <Document>
 # Химеры и летоферол
 <GuideEntityCards>
-<GuideEntityEmbed Entity="SyringeLetoferol"/>
+<GuideTexture Entity="SyringeLetoferol" Caption="auto"/>
   <GuideEntityEmbed Entity="MobLetoferolHorror"/>
-  <GuideEntityEmbed Entity="ChimeraFleshKudzu"/>
+  <GuideTexture Entity="ChimeraFleshKudzu" Caption="auto"/>
 </GuideEntityCards>
 Летоферол — опасный реагент, связанный с превращением в химеру. Существует лабораторная и природная разновидность. Природный летоферол также создаёт биомассу при попадании на пол.
 

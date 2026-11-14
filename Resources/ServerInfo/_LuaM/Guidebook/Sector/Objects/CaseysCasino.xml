@@ -3,7 +3,7 @@
 
 Развлекательный объект с игровым оборудованием и автоматами снабжения.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineGames"/><GuideEntityEmbed Entity="VendingMachineBooze"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineGames" Caption="auto"/><GuideTexture Entity="VendingMachineBooze" Caption="auto"/></GuideEntityCards>
 
 Ассортимент и состояние оборудования проверяйте на месте.
 

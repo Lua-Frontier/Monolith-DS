@@ -5,15 +5,5 @@
 
 [textlink="Модернизация станков" link="IndustryMachineParts"] · [textlink="Фабрикаторы" link="IndustryFabricators"] · [textlink="Добыча" link="ColossusExtraction"].
 
-[textlink="Должности «Хоккайдо»" link="ColossusMMCFaction"]
-
-[textlink="Заказы MIC" link="MMC"]
-
-[textlink="Промышленное производство" link="Economy"]
-
-[textlink="Дуговая печь" link="ArcFurnace"]
-
-[textlink="Автоматизация" link="IndustryAutomation"]
-
-[textlink="История ММС" link="LuaMLoreMMC"]
+<GuideHub Root="ColossusMMCRoles"/>
 </Document>

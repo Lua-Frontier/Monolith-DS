@@ -1,11 +1,5 @@
 <Document>
 # Строительство
 
-[textlink="Конструкции" link="Construction"]
-
-[textlink="Ремонт станций" link="ExpandingRepairingStation"]
-
-[textlink="Технические панели" link="WirePanels"]
-
-[textlink="Шлюзы" link="Airlocks"]
+<GuideHub Root="ColossusBuilding"/>
 </Document>

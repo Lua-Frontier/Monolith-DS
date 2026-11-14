@@ -134,3 +134,9 @@
   text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Hydrakin.xml # LuaM: standardized species article
   priority: 80 # LuaM: alphabetical species order
 # LuaM-end
+
+# LuaM: compatibility name for the Plafeim species guide.
+- type: guideEntry
+  id: Plafeim
+  name: species-name-shark
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Shark.xml

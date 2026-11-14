@@ -1,10 +1,10 @@
-ent-BookUSSPLaw = USSP Service Regulations
-    .desc = A field manual carried by all servicemen of the USSP Armed Forces. Every serzhant can quote it from memory, usually at an intensity unsuitable for cramped spaces.
+ent-BookUSSPLaw = Устав службы СССП
+    .desc = Полевое руководство, которое носит каждый военнослужащий Вооружённых сил СССП. Любой сержант цитирует его наизусть — обычно с громкостью, неуместной в тесных помещениях.
     .suffix = { ent-BaseGuidebook.suffix }
-ent-BookTheCommonCause = The Common Cause
-    .desc = A mass-printed civic text issued to all citizens, of the Union. Its short passages emphasize duty, labour, discipline, and the moral value of collective life.
-ent-BookTheCommonCauseFirstEdition = The Common Cause
-    .desc = An early edition of The Common Cause, attributed to the Autarch. The binding is severe, the paper aged, and the words far less restrained than later civic prints.
+ent-BookTheCommonCause = Общее дело
+    .desc = Массово отпечатанный гражданский текст, выдаваемый всем гражданам Союза. Его короткие отрывки прославляют долг, труд, дисциплину и нравственную ценность коллективной жизни.
+ent-BookTheCommonCauseFirstEdition = Общее дело
+    .desc = Раннее издание «Общего дела», приписываемое Автарху. Переплёт суров, бумага пожелтела, а слова куда менее сдержанны, чем в поздних гражданских изданиях.
     .suffix = First Edition
 ent-BookTSFSOP = Военный кодекс ТСФ
     .desc = Военный кодекс Транс-Солнечной Федерации: обязанности, дисциплина и порядок службы.

@@ -4,5 +4,5 @@ ent-RandomRockAnomalySpawner = спавнер каменной аномалии
     .desc = { ent-MarkerBase.desc }
 ent-RandomAnomalyInjectorSpawner = спавнер инжекторной аномалии
     .desc = { ent-MarkerBase.desc }
-ent-RandomAnomalySpawnerTrapless = random anomaly spawner trapless
+ent-RandomAnomalySpawnerTrapless = спавнер случайной аномалии без ловушек
     .desc = { ent-MarkerBase.desc }

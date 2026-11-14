@@ -2,7 +2,7 @@
 # Регулятор входного давления
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="GasPressureRegulator"/>
+<GuideTexture Entity="GasPressureRegulator" Caption="auto"/>
 </GuideEntityCards>
 
 Пассивно пропускает газ из входной [textlink="трубосети" link="PipeNetworks"] в выходную, когда давление на входе выше заданного порога. При снижении давления до порога поток прекращается. Электропитание не требуется.

@@ -5,7 +5,7 @@
 
 Планетоид создаётся целиком при событии: у него собственная местность и случайное название. Поток может начаться примерно с [bold]10-й минуты[/bold]; объявления приходят по каналу снабжения. Это не экспедиция, запускаемая с экспедиционной консоли.
 
-<GuideEntityCards><GuideEntityEmbed Entity="MiningDrill"/><GuideEntityEmbed Entity="OreBag"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MiningDrill" Caption="auto"/><GuideTexture Entity="OreBag" Caption="auto"/></GuideEntityCards>
 
 ## Разновидности
 

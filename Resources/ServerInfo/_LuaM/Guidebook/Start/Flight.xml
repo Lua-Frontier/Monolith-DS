@@ -1,7 +1,7 @@
 <Document>
 # Полёт
 
-<GuideEntityCards><GuideEntityEmbed Entity="CEActionZFlightToggle"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="CEActionZFlightToggle" Caption="auto"/></GuideEntityCards>
 
 Некоторые крылатые расы, включая гарпий и нианов, способны летать на планетах и картах с высотными уровнями. Используйте действие полёта для перемещения между уровнями; поддержание полёта расходует выносливость.
 

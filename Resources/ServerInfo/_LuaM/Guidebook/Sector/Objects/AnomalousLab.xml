@@ -3,7 +3,7 @@
 
 Исследовательский объект с оборудованием РНД.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerTabletopResearchAndDevelopment"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerTabletopResearchAndDevelopment" Caption="auto"/></GuideEntityCards>
 
 Изучайте находки с помощью подходящих анализаторов; порядок работы с артефактами и аномалиями отличается.
 

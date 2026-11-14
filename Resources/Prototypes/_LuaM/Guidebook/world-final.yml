@@ -90,3 +90,9 @@
   text: /ServerInfo/_LuaM/Guidebook/Sector/Nebulae.xml
   priority: 35
 # LuaM-end
+
+# LuaM: compatibility address used by the nebula radar warning.
+- type: guideEntry
+  id: LuaMNebulae
+  name: guide-entry-colossus-nebulae
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Nebulae.xml

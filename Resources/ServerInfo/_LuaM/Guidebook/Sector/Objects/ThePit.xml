@@ -3,7 +3,7 @@
 
 Развлекательный объект с ареной и снабжением для посетителей.
 
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineBoxingDrobe"/><GuideEntityEmbed Entity="VendingMachineCiviMedPlus"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="VendingMachineBoxingDrobe" Caption="auto"/><GuideTexture Entity="VendingMachineCiviMedPlus" Caption="auto"/></GuideEntityCards>
 
 Наличие арены не заменяет правила сервера и договорённости участников.
 

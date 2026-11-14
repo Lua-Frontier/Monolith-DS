@@ -3,7 +3,7 @@
 
 Разборочный объект с утильной верфью и запасами топлива.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShipyardScrap"/><GuideEntityEmbed Entity="VendingMachineFuelVend"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShipyardScrap" Caption="auto"/><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/></GuideEntityCards>
 
 Альтернативный вариант разборочного узла: в другой смене вместо него может оказаться заправка Грифти.
 

@@ -4,7 +4,7 @@
 ## Собрать ТЭГ: два независимых газовых контура
 ТЭГ превращает часть разницы тепловой энергии двух потоков в электричество. Нужны [bold]центральный блок, два циркулятора, горячая и холодная петли, насосы, газ и внешнее питание[/bold]. Центральный блок потребляет [bold]1 кВт из LV[/bold], а выдаёт мощность в [bold]HV[/bold]: для запуска нужен заряженный накопитель или другой генератор.
 
-<GuideEntityCards><GuideEntityEmbed Entity="TegCirculator" Rotation="180" Caption=""/><GuideEntityEmbed Entity="TegCenter" Rotation="90" Caption=""/><GuideEntityEmbed Entity="TegCirculator" Caption=""/></GuideEntityCards>
+<GuideEntityCards><GuideEntityEmbed Entity="TegCirculator" Rotation="180" Caption=""/><GuideEntityEmbed Entity="TegCenter" Rotation="90" Caption=""/><GuideTexture Entity="TegCirculator" Caption=""/></GuideEntityCards>
 
 - [bold]1.[/bold] Разместите центральный блок между двумя циркуляторами и закрепите узлы. Разверните их соединительными сторонами к центру; осмотр центрального блока сообщает о неполном соединении.
 - [bold]2.[/bold] Соедините вход и выход одного циркулятора с [bold]горячей петлёй[/bold], второго — с [bold]холодной[/bold]. Между этими петлями не должно быть общей газовой трубы. При исходном направлении циркулятора вход с севера, выход с юга; при повороте узла поворачиваются и порты.

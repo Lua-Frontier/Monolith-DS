@@ -3,7 +3,7 @@
 
 Исследовательский объект с терминалом технологических дисков и охранными синтетиками.
 
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerTechnologyDiskTerminalPOI"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerTechnologyDiskTerminalPOI" Caption="auto"/></GuideEntityCards>
 
 Подготовьтесь к боевому вылету. Проверяйте помещения и вывозите находки на свой корабль; наличие исследовательского оборудования не означает безопасный доступ.
 

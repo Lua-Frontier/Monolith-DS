@@ -1,6 +1,6 @@
 <Document>
 # Мозговой червь: носитель, химия и яйца
-<GuideEntityCards><GuideEntityEmbed Entity="MobCorticalBorer"/><GuideEntityEmbed Entity="CorticalBorerEgg"/></GuideEntityCards>
+<GuideEntityCards><GuideEntityEmbed Entity="MobCorticalBorer"/><GuideTexture Entity="CorticalBorerEgg" Caption="auto"/></GuideEntityCards>
 У червя 20 урона до смерти: вне носителя избегайте прямого боя. Рабочий цикл — найти подходящее тело, проникнуть, накопить химические очки и использовать короткое управление для размножения. Правила роли и допустимые цели читайте при её получении.
 
 ## 1. Найти носителя

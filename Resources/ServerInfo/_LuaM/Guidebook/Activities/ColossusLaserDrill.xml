@@ -1,7 +1,7 @@
 <Document>
 # Лазерный бур
 
-<GuideEntityCards><GuideEntityEmbed Entity="LaserDrill"/><GuideEntityEmbed Entity="StationLaserDrill"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="LaserDrill" Caption="auto"/><GuideTexture Entity="StationLaserDrill" Caption="auto"/></GuideEntityCards>
 [bold]Обычная установка:[/bold] разместите и закрепите её на экспедиционной планете, подключите к высоковольтной сети с запасом [bold]100 кВт[/bold]. При достаточном питании она делает попытку добычи каждые [bold]50 секунд[/bold]. Контакт с рудной жилой не нужен; требование грунта отключено, решётка допустима.
 
 [bold]Продвинутая станционная установка:[/bold] требует [bold]150 кВт[/bold], попытка каждую [bold]1 секунду[/bold]; ограничения экспедиционной планетой нет. Её штатный вариант не позволяет обычное открепление инструментом.

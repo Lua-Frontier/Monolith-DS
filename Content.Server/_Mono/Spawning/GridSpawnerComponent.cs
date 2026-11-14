@@ -21,6 +21,9 @@ public sealed partial class GridSpawnerComponent : Component
 
     [DataField]
     public bool NameGrid = true;
+
+    [DataField]
+    public bool AvoidHazardNebulae; // LuaM
 }
 
 

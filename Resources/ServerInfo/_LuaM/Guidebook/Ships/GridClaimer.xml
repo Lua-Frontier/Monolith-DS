@@ -1,8 +1,8 @@
 <Document>
 # Закрепление обломков
 <GuideEntityCards>
-<GuideEntityEmbed Entity="BannerNanotrasen"/>
-  <GuideEntityEmbed Entity="BannerCargo"/>
+<GuideTexture Entity="BannerNanotrasen" Caption="auto"/>
+  <GuideTexture Entity="BannerCargo" Caption="auto"/>
 </GuideEntityCards>
 Знамя позволяет закрепить подходящий обломок за собой. Захват не выдаёт права на корабль через верфь.
 

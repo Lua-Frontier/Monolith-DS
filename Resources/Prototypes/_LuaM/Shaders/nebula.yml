@@ -1,0 +1,4 @@
+- type: shader
+  id: NebulaGrade
+  kind: source
+  path: "/Textures/_LuaM/Shaders/nebula_grade.swsl"

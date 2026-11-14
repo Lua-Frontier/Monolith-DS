@@ -29,7 +29,7 @@
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobBloodCultistJanitor"/>
-  <GuideEntityEmbed Entity="ClothingBeltCultForceField"/>
+  <GuideTexture Entity="ClothingBeltCultForceField" Caption="auto"/>
   </GuideEntityCards>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (крит), 140 (смерть)
   - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
@@ -128,7 +128,7 @@
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobBloodCultistAscended"/>
-  <GuideEntityEmbed Entity="ClothingNeckAmuletBloodCult"/>
+  <GuideTexture Entity="ClothingNeckAmuletBloodCult" Caption="auto"/>
   </GuideEntityCards>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 300 (крит), 400 (смерть)
   - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)

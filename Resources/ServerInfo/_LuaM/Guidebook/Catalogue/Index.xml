@@ -1,11 +1,5 @@
 <Document>
 # Справочники
 
-[textlink="Снаряжение" link="ColossusReferenceEquipment"]
-
-[textlink="Ресурсы" link="ColossusReferenceResources"]
-
-[textlink="Химия" link="Chemicals"]
-
-[textlink="Рецепты" link="ColossusRecipes"]
+<GuideHub Root="ColossusCatalogue"/>
 </Document>

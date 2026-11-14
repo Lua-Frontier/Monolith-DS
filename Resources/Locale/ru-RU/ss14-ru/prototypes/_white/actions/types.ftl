@@ -1,8 +1,8 @@
 ent-ToggleNightVision = Переключить ночное видение
   .desc = Переключает ПНВ или естественное ночное зрение.
-ent-WWDPToggleNightVision = Toggle Night Vision
-    .desc = Toggles night vision.
-ent-ToggleThermalVision = Toggle Thermal Vision
-    .desc = Toggles thermal vision.
-ent-PulseThermalVision = Pulse Thermal Vision
-    .desc = Activate thermal vision temporarily.
+ent-WWDPToggleNightVision = Переключить ночное зрение
+    .desc = Включает и выключает ночное зрение.
+ent-ToggleThermalVision = Переключить тепловое зрение
+    .desc = Включает и выключает тепловое зрение.
+ent-PulseThermalVision = Импульс теплового зрения
+    .desc = Временно включает тепловое зрение.
