@@ -5,6 +5,12 @@ namespace Content.Shared._LuaM.CCVar;
 [CVarDefs]
 public sealed class LuaMCVars
 {
+    public static readonly CVarDef<float> LocationAnnouncementX =
+        CVarDef.Create("luam.location_announcement_x", 0.5f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<float> LocationAnnouncementY =
+        CVarDef.Create("luam.location_announcement_y", 0.15f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
     public static readonly CVarDef<bool> RpPanelEnabled =
         CVarDef.Create("luam.rp_panel_enabled", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
 
