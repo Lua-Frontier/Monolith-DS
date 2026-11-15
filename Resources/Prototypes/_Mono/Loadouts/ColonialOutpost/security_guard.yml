@@ -128,7 +128,7 @@
   - MonoSecurityGuardBackpack
   - MonoSecurityGuardSatchel
   - MonoSecurityGuardDuffel
-  - MercenaryClothingModsuitSecurityPowerCell
+  # - MercenaryClothingModsuitSecurityPowerCell # Commented by LuaM
   fallbacks:
   - MonoSecurityGuardBackpack
 

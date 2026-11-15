@@ -34,7 +34,7 @@
     contents:
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
-    - id: UndeterminedVoidsuitHeadOfSecurity # Mono
+    - id: ClothingOuterHardsuitSecurityRed # Mono # LuaM: UndeterminedVoidsuitHeadOfSecurity > ClothingOuterHardsuitSecurityRed
     - id: ClothingMaskBreath
     - id: JetpackMiniFilled
 
