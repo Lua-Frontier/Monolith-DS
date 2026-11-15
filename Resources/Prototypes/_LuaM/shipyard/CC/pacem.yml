@@ -1,0 +1,37 @@
+# Author Info
+# Github: TheScienceOfKSP
+# Discord: sweepergiles
+# Remaped by MrFolium(github)
+
+- type: vessel
+  id: Pacem
+  parent: BaseVessel
+  name: vessel-pacem-name
+  description: vessel-pacem-desc
+  price: 130000
+  purchasable: false
+  category: Medium
+  group: Sr
+  access: Brig
+  mapchecker_group_override: Security
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/CC/pacem.yml
+  guidebookPage: Null
+  class:
+  - Patrol
+  engine:
+  - Bananium
+
+- type: gameMap
+  id: Pacem
+  mapName: 'Pacem'
+  mapPath: /SharedMaps/_LuaM/Shuttles/CC/pacem.yml
+  minPlayers: 0
+  stations:
+    Pacem:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Pacem SEC{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
