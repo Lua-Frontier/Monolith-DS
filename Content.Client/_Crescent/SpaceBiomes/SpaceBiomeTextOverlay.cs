@@ -4,6 +4,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Shared.Timing;
 // LuaM-start: configurable announcement position shared with the HUD preview.
 using Content.Client._LuaM.Hud;
+using Content.Shared._LuaM.Announcements; // LuaM
 using Content.Shared._LuaM.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Client.UserInterface;
@@ -74,7 +75,9 @@ public sealed partial class SpaceBiomeTextOverlay : Control // LuaM: HUD layer a
         _renderer.Draw(handle, screen,
             new Vector2(_cfg.GetCVar(LuaMCVars.LocationAnnouncementX), _cfg.GetCVar(LuaMCVars.LocationAnnouncementY)),
             Text, TextDescription ?? string.Empty, Math.Min(Index, Text.Length),
-            Math.Min(IndexDescription, TextDescription?.Length ?? 0));
+            Math.Min(IndexDescription, TextDescription?.Length ?? 0),
+            (HudHorizontalAlignment) _cfg.GetCVar(LuaMCVars.LocationAnnouncementAlignment),
+            _cfg.GetCVar(LuaMCVars.LocationAnnouncementScale));
         // LuaM-end
 
         if (_nextUpd > _timing.CurTime)

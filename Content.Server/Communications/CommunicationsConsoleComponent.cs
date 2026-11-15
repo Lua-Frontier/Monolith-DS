@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Announcements; // LuaM
 using Content.Server.UserInterface;
 using Content.Shared.Communications;
 using Robust.Shared.Audio;
@@ -34,6 +35,10 @@ namespace Content.Server.Communications
         [ViewVariables]
         [DataField]
         public Color Color = Color.Gold;
+
+        // LuaM: explicit faction presentation, independent of chat text or alert colours.
+        [DataField]
+        public ScreenAnnouncementStyle ScreenStyle = ScreenAnnouncementStyle.System;
 
         /// <summary>
         /// Time in seconds between announcement delays on a per-console basis

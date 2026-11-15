@@ -1,6 +1,8 @@
 using System.Numerics;
 using Content.Client._LuaM.Hud;
 using NUnit.Framework;
+using Content.Shared._LuaM.Announcements;
+using Content.Shared._LuaM.CCVar;
 
 namespace Content.Tests.Client._LuaM;
 
@@ -46,4 +48,69 @@ public sealed class HudLayoutTest
         var clamped = HudLayout.FromPosition(screen, block, new Vector2(-100, 900));
         Assert.That(HudLayout.Position(screen, block, clamped), Is.EqualTo(new Vector2(0, 500)));
     }
+    [TestCase(HudHorizontalAlignment.Left, 0f)]
+    [TestCase(HudHorizontalAlignment.Center, 0.5f)]
+    [TestCase(HudHorizontalAlignment.Right, 1f)]
+    public void EachHorizontalAnchorRoundTripsAndKeepsItsEdge(HudHorizontalAlignment alignment, float fraction)
+    {
+        var screen = new Vector2(1000, 600);
+        var block = new Vector2(200, 100);
+        var anchor = new Vector2(0.5f, 0.3f);
+        var position = HudLayout.Position(screen, block, anchor, alignment);
+        Assert.That(position.X + block.X * fraction, Is.EqualTo(500));
+        var smaller = HudLayout.Position(screen, new Vector2(100, 50), anchor, alignment);
+        Assert.That(smaller.X + 100 * fraction, Is.EqualTo(500));
+        Assert.That(HudLayout.FromPosition(screen, block, position, alignment), Is.EqualTo(anchor));
+        var outside = HudLayout.FromPosition(screen, block, new Vector2(-100, 900), alignment);
+        Assert.That(HudLayout.Position(screen, block, outside, alignment), Is.EqualTo(new Vector2(0, 500)));
+        foreach (var next in new[] { HudHorizontalAlignment.Left, HudHorizontalAlignment.Center, HudHorizontalAlignment.Right })
+        {
+            var converted = HudLayout.FromPosition(screen, block, position, next);
+            Assert.That(HudLayout.Position(screen, block, converted, next), Is.EqualTo(position));
+        }
+    }
+
+    [Test]
+    public void WheelScaleRejectsInvalidValuesAndKeepsReadableLimits()
+    {
+        Assert.That(HudLayout.WheelScale(0.65f, -1), Is.EqualTo(0.65f));
+        Assert.That(HudLayout.WheelScale(1f, 20, 1), Is.EqualTo(1));
+        Assert.That(HudLayout.NormalizeScale(float.NaN), Is.EqualTo(1));
+        Assert.That(HudLayout.WheelScale(1f, float.NaN), Is.EqualTo(1));
+        Assert.That(HudLayout.WheelScale(1f, 1), Is.EqualTo(1.05f).Within(0.001));
+    }
+
+    [TestCase(HudHorizontalAlignment.Left, 0f)]
+    [TestCase(HudHorizontalAlignment.Center, 0.5f)]
+    [TestCase(HudHorizontalAlignment.Right, 1f)]
+    public void OversizedHeadingsKeepTheirConfiguredHorizontalAnchor(HudHorizontalAlignment alignment, float fraction)
+    {
+        var screen = new Vector2(1000, 600);
+        var block = new Vector2(1800, 180);
+        var anchor = new Vector2(0.5f, 0.2f);
+        var point = HudLayout.Position(screen, block, anchor, alignment, allowHorizontalOverflow: true);
+        Assert.That(point.X + block.X * fraction, Is.EqualTo(500));
+        Assert.That(HudLayout.FromPosition(screen, block, point, alignment, allowHorizontalOverflow: true), Is.EqualTo(anchor));
+    }
+
+    [TestCase(1920, 1080)]
+    [TestCase(2560, 1440)]
+    [TestCase(3440, 1440)]
+    [TestCase(1280, 720)]
+    public void DefaultHudAnchorsKeepTheirScreenFractionsAtEveryResolution(int width, int height)
+    {
+        var screen = new Vector2(width, height);
+        var banner = HudLayout.Position(screen, new Vector2(640, 240), HudLayout.DefaultScreenPosition);
+        var location = HudLayout.Position(screen, new Vector2(300, 40), HudLayout.DefaultPosition);
+        Assert.That(banner.X + 320, Is.EqualTo(width * 0.5f).Within(0.01));
+        Assert.That(location.X + 150, Is.EqualTo(width * 0.5f).Within(0.01));
+        Assert.That(banner.Y / height, Is.EqualTo(26f / 1080).Within(0.000001));
+        Assert.That(location.Y / height, Is.EqualTo(121f / 1080).Within(0.000001));
+        Assert.That(LuaMCVars.ScreenAnnouncementY.DefaultValue, Is.EqualTo(HudLayout.DefaultScreenPosition.Y));
+        Assert.That(LuaMCVars.LocationAnnouncementY.DefaultValue, Is.EqualTo(HudLayout.DefaultPosition.Y));
+    }
+
+    [Test]
+    public void InvalidAlignmentFallsBackToCenter() =>
+        Assert.That(HudLayout.NormalizeAlignment((HudHorizontalAlignment) 99), Is.EqualTo(HudHorizontalAlignment.Center));
 }

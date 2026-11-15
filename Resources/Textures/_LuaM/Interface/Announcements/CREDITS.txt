@@ -1,0 +1,15 @@
+Announcement X artwork
+
+Runtime PNGs are split from the approved X design into three layers: elastic nine-slice chrome, fixed 133x103 projection background and separate emblem. No gameplay screenshot or text is baked into these layers. PT Mono is credited separately in Resources/Fonts/_LuaM/PTMono.
+
+Emblem references:
+- System: original warning triangle with one uniform yellow colour.
+- TSF, USSP and Nordfall Vanguard: cleaned and upscaled emblem crops supplied by the contributor from their star map. Blue sun and laurels, red star/hammer/sickle/wreath and orange bird with N respectively. These replace the earlier banner-based concepts. The original map author and licence were not supplied; no claim of ownership or licence over the source marks is made here.
+- Medical Centre: plain cross concept.
+- MMC: angular M concept referencing the M on _Mono/Structures/Doors/Airlocks/Standard/mieyo.rsi/closed.png; not a Mitsubishi mark.
+- Colossus Central: original short C with rectangular corner brackets.
+- Viper Group: original three-part silhouette from _Mono/Companies/viper_group.rsi/thevipergroup.png, by blitz7211, CC-BY-3.0. Eye and fang cutouts added to the central inverted triangle.
+
+New frame and concept artwork: CC-BY-SA-3.0. This does not license third-party source marks or trademarks. Game reference source: https://github.com/Lua-Frontier/Monolith-DS
+
+The title-divider stroke is a separate PNG layer for compact dynamic header placement. Runtime PNG sampling is filtered to retain thin details at fractional HUD scales.

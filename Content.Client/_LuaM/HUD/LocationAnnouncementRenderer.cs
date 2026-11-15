@@ -1,5 +1,6 @@
 using System.Numerics;
 using System.Text;
+using Content.Shared._LuaM.Announcements;
 using Content.Client.Resources;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -57,24 +58,24 @@ public sealed class LocationAnnouncementRenderer
             _titleSize.Y + (description.Length > 0 ? 40 + _descriptionSize.Y : 0));
     }
 
-    public UIBox2 GetBounds(Vector2 screen, Vector2 anchor, string title, string description)
+    public UIBox2 GetBounds(Vector2 screen, Vector2 anchor, string title, string description, HudHorizontalAlignment alignment = HudHorizontalAlignment.Center, float requestedScale = 1)
     {
         var size = GetSize(title, description);
-        var scale = Math.Min(1f, Math.Min(screen.X / Math.Max(size.X, 1), screen.Y / Math.Max(size.Y, 1)));
+        var scale = Math.Min(HudLayout.NormalizeScale(requestedScale), Math.Min(screen.X / Math.Max(size.X, 1), screen.Y / Math.Max(size.Y, 1)));
         size *= Math.Max(0, scale);
-        return UIBox2.FromDimensions(HudLayout.Position(screen, size, anchor), size);
+        return UIBox2.FromDimensions(HudLayout.Position(screen, size, anchor, alignment), size);
     }
 
     public void Draw(DrawingHandleScreen handle, Vector2 screen, Vector2 anchor,
-        string title, string description, int titleLength, int descriptionLength)
+        string title, string description, int titleLength, int descriptionLength, HudHorizontalAlignment alignment = HudHorizontalAlignment.Center, float requestedScale = 1)
     {
         var size = GetSize(title, description);
-        var bounds = GetBounds(screen, anchor, title, description);
+        var bounds = GetBounds(screen, anchor, title, description, alignment, requestedScale);
         var scale = size.Y > 0 ? bounds.Height / size.Y : 1;
         DrawText(handle, _title, title, titleLength,
-            bounds.TopLeft + new Vector2((bounds.Width - _titleSize.X * scale) / 2, 0), scale, Color.White);
+            bounds.TopLeft + new Vector2((bounds.Width - _titleSize.X * scale) * HudLayout.HorizontalFraction(alignment), 0), scale, Color.White);
         DrawText(handle, _description, description, descriptionLength,
-            bounds.TopLeft + new Vector2((bounds.Width - _descriptionSize.X * scale) / 2,
+            bounds.TopLeft + new Vector2((bounds.Width - _descriptionSize.X * scale) * HudLayout.HorizontalFraction(alignment),
                 (_titleSize.Y + 40) * scale), scale, Color.DarkGray);
     }
 

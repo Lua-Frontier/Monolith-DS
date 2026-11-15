@@ -22,6 +22,7 @@
   - type: AccessReader
     access: [[ "Pirate" ]]
   - type: CommunicationsConsole
+    screenStyle: Vanguard # LuaM
     title: comms-console-announcement-title-rogue
     color: "#c90a0a" # LuaM: D2B48C > c90a0a
     canShuttle: false

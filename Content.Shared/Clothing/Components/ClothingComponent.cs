@@ -50,7 +50,7 @@ public sealed partial class ClothingComponent : Component
     [DataField("unequipSound")]
     public SoundSpecifier? UnequipSound;
 
-    [Access(typeof(ClothingSystem))]
+    [Access(typeof(ClothingSystem), Other = AccessPermissions.Read)] // LuaM: appearance-only portrait prefix.
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("equippedPrefix")]
     public string? EquippedPrefix;

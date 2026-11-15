@@ -5,11 +5,35 @@ namespace Content.Shared._LuaM.CCVar;
 [CVarDefs]
 public sealed class LuaMCVars
 {
+    public const float DefaultScreenAnnouncementX = 0.5f;
+    public const float DefaultScreenAnnouncementY = 0.024074074f;
+    public const float DefaultLocationAnnouncementX = 0.5f;
+    public const float DefaultLocationAnnouncementY = 0.11203704f;
+    public static readonly CVarDef<float> ScreenAnnouncementScale =
+        CVarDef.Create("luam.screen_announcement_scale", 1f, CVar.ARCHIVE | CVar.CLIENTONLY);
+    public static readonly CVarDef<float> LocationAnnouncementScale =
+        CVarDef.Create("luam.location_announcement_scale", 1f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<bool> ScreenAnnouncementsEnabled =
+        CVarDef.Create("luam.screen_announcements_enabled", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<float> ScreenAnnouncementX =
+        CVarDef.Create("luam.screen_announcement_x", DefaultScreenAnnouncementX, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<float> ScreenAnnouncementY =
+        CVarDef.Create("luam.screen_announcement_y", DefaultScreenAnnouncementY, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<int> ScreenAnnouncementAlignment =
+        CVarDef.Create("luam.screen_announcement_alignment", 1, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    public static readonly CVarDef<int> LocationAnnouncementAlignment =
+        CVarDef.Create("luam.location_announcement_alignment", 1, CVar.ARCHIVE | CVar.CLIENTONLY);
+
     public static readonly CVarDef<float> LocationAnnouncementX =
-        CVarDef.Create("luam.location_announcement_x", 0.5f, CVar.ARCHIVE | CVar.CLIENTONLY);
+        CVarDef.Create("luam.location_announcement_x", DefaultLocationAnnouncementX, CVar.ARCHIVE | CVar.CLIENTONLY);
 
     public static readonly CVarDef<float> LocationAnnouncementY =
-        CVarDef.Create("luam.location_announcement_y", 0.15f, CVar.ARCHIVE | CVar.CLIENTONLY);
+        CVarDef.Create("luam.location_announcement_y", DefaultLocationAnnouncementY, CVar.ARCHIVE | CVar.CLIENTONLY);
 
     public static readonly CVarDef<bool> RpPanelEnabled =
         CVarDef.Create("luam.rp_panel_enabled", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);

@@ -44,14 +44,14 @@ overwatch-member-coordinates-none = —
 
 overwatch-stop-watching-button = STOP WATCHING
 
-overwatch-title-tsf = TSFMC HALCYON
-overwatch-title-tsfhighcomm = TSF HIGH COMMAND
-overwatch-title-pdv = PDV HELIOS
-overwatch-title-ussp = ST-NAV
-overwatch-title-md = CCTC MD
-overwatch-title-colonial = CCTC SC
-overwatch-title-mmc = COMP. NET
-overwatch-title-thevipergroup = V.NET
+overwatch-title-tsf = TSF Marine Corps
+overwatch-title-tsfhighcomm = TSF Marine Corps
+overwatch-title-pdv = Nordfall Vanguard
+overwatch-title-ussp = USSP
+overwatch-title-md = Medical Personnel
+overwatch-title-colonial = Colossus Personnel
+overwatch-title-mmc = MMC
+overwatch-title-thevipergroup = Viper Group
 overwatch-title-default = Overwatch
 
 overwatch-announcement-title = [{ $overwatchTitle }] - { $targetName }

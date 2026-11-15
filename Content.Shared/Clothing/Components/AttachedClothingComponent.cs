@@ -10,7 +10,7 @@ namespace Content.Shared.Clothing.Components;
 ///     attached to, rather than being dumped on the floor or something like that. Intended for use with hardsuits and
 ///     hardsuit helmets.
 /// </summary>
-[Access(typeof(ToggleableClothingSystem))]
+[Access(typeof(ToggleableClothingSystem), Other = AccessPermissions.Read)] // LuaM: read-only portrait snapshot of replaced headwear.
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class AttachedClothingComponent : Component
 {

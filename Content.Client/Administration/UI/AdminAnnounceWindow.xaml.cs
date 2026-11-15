@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Announcements; // LuaM
 using System.Linq; // Corvax-TTS
 using Content.Shared.Administration;
 using Content.Shared.CCVar; // Corvax-TTS
@@ -29,15 +30,41 @@ namespace Content.Client.Administration.UI
             IoCManager.InjectDependencies(this);
 
             Announcement.Placeholder = new Rope.Leaf(_localization.GetString("admin-announce-announcement-placeholder"));
-            AnnounceMethod.AddItem(_localization.GetString("admin-announce-type-station"));
+            // LuaM: stable numeric channel IDs, displayed in the requested ordinary/server/faction/antag order.
+            AnnounceMethod.AddItem(Loc.GetString("admin-screen-channel-ordinary"), (int) AdminAnnounceType.Station);
             AnnounceMethod.SetItemMetadata(0, AdminAnnounceType.Station);
-            AnnounceMethod.AddItem(_localization.GetString("admin-announce-type-server"));
+            AnnounceMethod.AddItem(_localization.GetString("admin-announce-type-server"), (int) AdminAnnounceType.Server);
             AnnounceMethod.SetItemMetadata(1, AdminAnnounceType.Server);
-            AnnounceMethod.AddItem(_localization.GetString("admin-announce-type-antag"));  // Frontier
-            AnnounceMethod.SetItemMetadata(2, AdminAnnounceType.Antag);  // Frontier
+            AnnounceMethod.AddItem(Loc.GetString("admin-screen-channel-overwatch"), (int) AdminAnnounceType.Overwatch);
+            AnnounceMethod.SetItemMetadata(2, AdminAnnounceType.Overwatch);
+            AnnounceMethod.AddItem(_localization.GetString("admin-announce-type-antag"), (int) AdminAnnounceType.Antag);
+            AnnounceMethod.SetItemMetadata(3, AdminAnnounceType.Antag);
             AnnounceMethod.OnItemSelected += AnnounceMethodOnOnItemSelected;
+            // LuaM-start: explicit style metadata, without inferring factions from RP sender text.
+            foreach (var style in Enum.GetValues<ScreenAnnouncementStyle>())
+            {
+                var id = (int) style;
+                ScreenStyle.AddItem(Loc.GetString($"screen-announcement-style-{style.ToString().ToLowerInvariant()}"), id);
+                ScreenStyle.SetItemMetadata(id, style);
+            }
+            ScreenStyle.SelectId((int) ScreenAnnouncementStyle.System);
+            ScreenStyle.OnItemSelected += args => ScreenStyle.SelectId(args.Id);
+            foreach (var mode in Enum.GetValues<AdminAnnouncePortraitMode>())
+            {
+                PortraitMode.AddItem(Loc.GetString($"admin-screen-portrait-{mode.ToString().ToLowerInvariant()}"), (int) mode);
+                PortraitMode.SetItemMetadata((int) mode, mode);
+            }
+            PortraitMode.SelectId((int) AdminAnnouncePortraitMode.None);
+            PortraitMode.OnItemSelected += args =>
+            {
+                PortraitMode.SelectId(args.Id);
+                PortraitEntity.Editable = args.Id == (int) AdminAnnouncePortraitMode.Entity;
+                PortraitName.Editable = args.Id != (int) AdminAnnouncePortraitMode.None;
+            };
+            // LuaM-end
             VoiceSelector.OnItemSelected += args => VoiceSelector.SelectId(args.Id);
-            Announcement.OnKeyBindUp += AnnouncementOnOnTextChanged;
+            // LuaM: paste and typing both update submit state.
+            Announcement.OnTextChanged += _ => AnnounceButton.Disabled = string.IsNullOrWhiteSpace(Rope.Collapse(Announcement.TextRope));
 
             var ttsEnabled = _cfg.GetCVar(CCVars.TTSEnabled);
             EnableTTS.Visible = ttsEnabled;
@@ -60,16 +87,27 @@ namespace Content.Client.Administration.UI
                 VoiceSelector.SelectId(0);
         }
 
-        private void AnnouncementOnOnTextChanged(GUIBoundKeyEventArgs args)
-        {
-            AnnounceButton.Disabled = Rope.Collapse(Announcement.TextRope).TrimStart() == "";
-        }
-
         private void AnnounceMethodOnOnItemSelected(OptionButton.ItemSelectedEventArgs args)
         {
             AnnounceMethod.SelectId(args.Id);
-            Announcer.Editable = ((AdminAnnounceType?)args.Button.SelectedMetadata ?? AdminAnnounceType.Station) == AdminAnnounceType.Station
-            || ((AdminAnnounceType?)args.Button.SelectedMetadata ?? AdminAnnounceType.Antag) == AdminAnnounceType.Antag; // Frontier
+            // LuaM: server notices remain vanilla chat-only. Keep draft fields while disabling
+            // controls that do not apply to this channel.
+            var server = (AdminAnnounceType?) args.Button.SelectedMetadata == AdminAnnounceType.Server;
+            var faction = (AdminAnnounceType?) args.Button.SelectedMetadata == AdminAnnounceType.Overwatch;
+            for (var i = 0; i < ScreenStyle.ItemCount; i++)
+                ScreenStyle.SetItemDisabled(i, faction && !AdminAnnounceStyles.IsFaction((ScreenAnnouncementStyle) ScreenStyle.GetItemMetadata(i)!));
+            if (faction && !AdminAnnounceStyles.IsFaction((ScreenAnnouncementStyle) ScreenStyle.SelectedMetadata!))
+                ScreenStyle.SelectId((int) ScreenAnnouncementStyle.Tsf);
+            ScreenStyle.Disabled = server;
+            Announcer.Editable = !server;
+            PortraitMode.Disabled = server;
+            PortraitEntity.Editable = !server && PortraitMode.SelectedId == (int) AdminAnnouncePortraitMode.Entity;
+            PortraitName.Editable = !server && PortraitMode.SelectedId != (int) AdminAnnouncePortraitMode.None;
+            PlaySound.Disabled = server;
+            // Choose red for the antagonist preset.
+            if ((AdminAnnounceType?) args.Button.SelectedMetadata == AdminAnnounceType.Antag &&
+                (ScreenAnnouncementStyle?) ScreenStyle.SelectedMetadata == ScreenAnnouncementStyle.System)
+                ScreenStyle.SelectId((int) ScreenAnnouncementStyle.SystemRed);
         }
     }
 }

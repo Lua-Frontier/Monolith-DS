@@ -9,7 +9,8 @@
         </PanelContainer.PanelOverride>
         <BoxContainer Orientation="Vertical">
             <PanelContainer Name="NameBackground" HorizontalExpand="True" VerticalExpand="False">
-                <RichTextLabel Name="ReagentName" HorizontalExpand="True"/>
+                <!-- LuaM: inset reagent names without shrinking the coloured header background. -->
+                <RichTextLabel Name="ReagentName" HorizontalExpand="True" Margin="6 0 6 0"/>
             </PanelContainer>
             <BoxContainer Name="RecipesContainer" HorizontalExpand="True">
                 <Collapsible HorizontalExpand="True">

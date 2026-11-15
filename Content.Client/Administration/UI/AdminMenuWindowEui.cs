@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Announcements; // LuaM
 using Content.Client.Eui;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
@@ -24,6 +25,13 @@ namespace Content.Client.Administration.UI
                 Announcement = Rope.Collapse(_window.Announcement.TextRope),
                 Announcer =  _window.Announcer.Text,
                 AnnounceType =  (AdminAnnounceType) (_window.AnnounceMethod.SelectedMetadata ?? AdminAnnounceType.Station),
+                ScreenStyle = (ScreenAnnouncementStyle) (_window.ScreenStyle.SelectedMetadata ?? ScreenAnnouncementStyle.System), // LuaM
+                // LuaM-start
+                PortraitMode = (AdminAnnouncePortraitMode) (_window.PortraitMode.SelectedMetadata ?? AdminAnnouncePortraitMode.None),
+                PortraitEntity = _window.PortraitEntity.Text,
+                PortraitName = _window.PortraitName.Text,
+                PlaySound = _window.PlaySound.Pressed,
+                // LuaM-end
                 CloseAfter = !_window.KeepWindowOpen.Pressed,
 // Corvax-TTS-start:
                 Voice = (string) (_window.VoiceSelector.SelectedMetadata ?? ""),
@@ -31,6 +39,15 @@ namespace Content.Client.Administration.UI
 // Corvax-TTS-end.
             });
 
+        }
+
+        // LuaM: invalid portrait selections are reported without losing the draft.
+        public override void HandleState(EuiStateBase state)
+        {
+            if (state is not AdminAnnounceEuiState announcement)
+                return;
+            _window.ErrorMessage.Text = announcement.ErrorMessage;
+            _window.ErrorMessage.Visible = !string.IsNullOrEmpty(announcement.ErrorMessage);
         }
 
         public override void Opened()

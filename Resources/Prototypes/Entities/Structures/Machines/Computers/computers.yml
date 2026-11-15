@@ -839,6 +839,7 @@
   - type: AccessReader
     access: [[ "NuclearOperative" ]]
   - type: CommunicationsConsole
+    screenStyle: SystemRed # LuaM
     title: comms-console-announcement-title-nukie
     color: "#ba6363" # mono
     canShuttle: false
@@ -872,6 +873,7 @@
   - type: AccessReader
     access: [[ "Wizard" ]]
   - type: CommunicationsConsole
+    screenStyle: SystemPurple # LuaM
     title: comms-console-announcement-title-wizard
     color: "#ff00ff"
     canShuttle: false
