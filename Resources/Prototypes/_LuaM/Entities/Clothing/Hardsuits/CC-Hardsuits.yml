@@ -2,13 +2,18 @@
   parent: ClothingOuterHardsuitBaseNFNfsd
   id: ClothingHeadHardsuitM92
   name: M92 colonia tacsuit
-  description: A heavy, gilded tacsuit, stripped of its shield but now capable of taking a lot of physical damage. Usually assigned to commanding officers of TSF flagships.
+  description: A light, gilded tacsuit issued to commanding officers of TSF flagships. Fast and agile, with reinforced plating in vital areas, but it carries no shield.
   components:
   - type: Sprite
-    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92-outer.rsi # Lua
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92-outer.rsi
+  - type: Item
+    size: Huge
   - type: Clothing
-    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92-outer.rsi # Lua
-  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92-outer.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ToggleableClothing
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false
     replaceCurrentClothing: true
@@ -16,111 +21,69 @@
       head:  ClothingHeadHelmetHardsuitM92
       helmetcover: ClothingHeadHelmetCoverBlock
       helmetattachment: ClothingHeadHelmetAttachmentBlock
-  - type: FireProtection # Mono
-    reduction: 0.5
+  - type: FireProtection
+    reduction: 0.2
   - type: ExplosionResistance
-    damageCoefficient: 0.3
-  - type: Armor # Mono - Armor Value Changes
+    damageCoefficient: 0.8
+  - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.4
-        Heat: 0.45
-        Radiation: 0.4
-        Caustic: 0.5
-  - type: ClothingSpeedModifier # Mono - Armor Value Changes
-    walkModifier: 0.7 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
-    sprintModifier: 0.75 # LuaM: 1 > 0.9, TSF and PDV suits are 10% slower
-  - type: StaminaDamageResistance # Mono - Stamres
-    coefficient: 0.35
-
+        Blunt: 0.70
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.65
+        Radiation: 0.65
+        Caustic: 0.15
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: HeldSpeedModifier
+  - type: StaminaDamageResistance
+    coefficient: 0.70
 
 - type: entity
-  parent: ClothingOuterHardsuitBaseNFNfsd
+  parent: [ ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing ]
   id: ClothingHeadHardsuitM92x
   name: Colonia M92x tacsuit
-  description: A heavy, gilded tacsuit, stripped of its shield but now capable of taking a lot of physical damage. Usually assigned to commanding officers of TSF flagships.
+  description: A gilded tacsuit for TSF flagship command staff. Trades conventional armor plating for environmental protection and a rechargeable hard-shield.
   components:
   - type: Sprite
-    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92x-outer.rsi # Lua
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92x-outer.rsi
+  - type: Item
+    size: Huge
   - type: Clothing
-    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92x-outer.rsi # Lua
-  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
-    requiredSlot: outerclothing
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M92x-outer.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.03
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.003
+    coolingCoefficient: 0.003
+  - type: HeldSpeedModifier
+  - type: StaminaDamageResistance
+  - type: ToggleableClothing
     blockUnequipWhenAttached: false
     replaceCurrentClothing: true
     clothingPrototypes:
       head:  ClothingHeadHelmetHardsuitM92x
       helmetcover: ClothingHeadHelmetCoverBlock
       helmetattachment: ClothingHeadHelmetAttachmentBlock
-  - type: FireProtection # Mono
-    reduction: 0.5
   - type: ExplosionResistance
-    damageCoefficient: 0.3
-  - type: Armor # Mono - Armor Value Changes
+    damageCoefficient: 0.25
+  - type: FireProtection
+    reduction: 0.7
+  - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.25
-        Heat: 0.45
-        Radiation: 0.4
-        Caustic: 0.5
-  - type: ClothingSpeedModifier # Mono - Armor Value Changes
-    walkModifier: 0.6 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
-    sprintModifier: 0.7 # LuaM: 1 > 0.9, TSF and PDV suits are 10% slower
-  - type: StaminaDamageResistance # Mono - Stamres
-    coefficient: 0.35
-
-- type: entity
-  parent: [ClothingOuterHardsuitBaseNoPlateholder, MonoEnergyShieldClothing, BaseFactionGearTSFT3 ] # Jugger Suit
-  id: ClothingOuterHardsuitM93
-  name: Colonia M93 tacsuit
-  description: An experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Durable, and comes with an integrated hard-shield along with numerous gadgets at the cost of insulation and solid armor.
-  components:
-  - type: Sprite
-    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M93-outer.rsi
-  - type: Clothing
-    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M93-outer.rsi
-  - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
-    requiredSlot: outerclothing
-    blockUnequipWhenAttached: false
-    replaceCurrentClothing: true
-    clothingPrototypes:
-      head: ClothingHeadHelmetHardsuitM93
-      helmetcover: ClothingHeadHelmetCoverBlock
-      helmetattachment: ClothingHeadHelmetAttachmentBlock
-  - type: PressureProtection
-    highPressureMultiplier: 0.2
-    lowPressureMultiplier: 1000
-  - type: FireProtection # Mono
-    reduction: 0.6
-  - type: ExplosionResistance
-    damageCoefficient: 0.4
-  - type: TemperatureProtection
-    heatingCoefficient: 0.01
-    coolingCoefficient: 0.01
-  - type: Armor # Mono - Armor Value Changes
-    modifiers:
-      coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.7
-        Heat: 0.5
-        Radiation: 0.5
-        Caustic: 0.8
-  - type: ClothingSpeedModifier # Mono - Armor Value Changes
-    walkModifier: 0.6 # LuaM: 0.7 > 0.6, TSF and PDV suits are 10% slower
-    sprintModifier: 0.5 # LuaM: 0.6 > 0.5, TSF and PDV suits are 10% slower
-  - type: HeldSpeedModifier
-  - type: FactionClothing
-    faction: NanoTrasen
-  - type: StaminaDamageResistance # Mono - Stamres
-    coefficient: 0.25
-  - type: PirateBountyItem # Mono
-    id: ClothingOuterHardsuitTacsuitHighValue
-  # Mono - Shielding comps
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.70
+        Heat: 0.25
+        Radiation: 0.2
+        Caustic: 0.55
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.75
   - type: PersonalShield
     visuals:
       fillLevel: 0.2
@@ -129,11 +92,11 @@
       color: "#08862e"
       scale: 2.3
     shield:
-      maxCharge: 300
-      regenRate: 5
-      spinupTime: 2.5
+      maxCharge: 170
+      regenRate: 4
+      spinupTime: 1.0
       breakCooldown: 20
-      powerDraw: 0.5
+      powerDraw: 1.2
       blockModifier:
         coefficients:
           Piercing: 0.5
@@ -146,7 +109,6 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 5
-    autoRechargePauseTime: 5
   - type: UseDelay
     delay: 10
   - type: ExtendDescription
@@ -157,3 +119,53 @@
     - description: The M92-x shield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
       color: "#94768c"
       requireDetailRange: true
+
+- type: entity
+  parent: [ ClothingOuterHardsuitBaseNoPlateholder, BaseFactionGearTSFT3 ]
+  id: ClothingOuterHardsuitM93
+  name: Colonia M93 tacsuit
+  description: A heavy modification of the M92 tacsuit for spec-ops units of the TSFMC. General-purpose, with reinforced ballistic plating at the cost of other protection. The integrated shield was removed in favor of armor.
+  components:
+  - type: Sprite
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M93-outer.rsi
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: _Lua/Clothing/OuterClothing/SDHardsuits/M93-outer.rsi
+  - type: ToggleableClothing
+    requiredSlot: outerclothing
+    blockUnequipWhenAttached: false
+    replaceCurrentClothing: true
+    clothingPrototypes:
+      head: ClothingHeadHelmetHardsuitM93
+      helmetcover: ClothingHeadHelmetCoverBlock
+      helmetattachment: ClothingHeadHelmetAttachmentBlock
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.80
+        Piercing: 0.40
+        Heat: 0.80
+        Radiation: 0.75
+        Caustic: 0.95
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: HeldSpeedModifier
+  - type: FactionClothing
+    faction: NanoTrasen
+  - type: StaminaDamageResistance
+    coefficient: 0.80
+  - type: PirateBountyItem
+    id: ClothingOuterHardsuitTacsuitHighValue
