@@ -191,7 +191,9 @@ public sealed partial class ShuttleSystem
             if (ourTiles == 0 || otherTiles == 0)
                 continue;
 
-            Log.Info($"Shuttle impact of {ToPrettyString(args.OurEntity)} with {ToPrettyString(args.OtherEntity)}; our mass: {ourMass}, other: {otherMass}, velocity {jungleDiff}, impact point {worldPoint}");
+            // LuaM: Info > Debug, fired for every contact point and duplicates the admin log below
+            if (Log.IsLogLevelEnabled(LogLevel.Debug))
+                Log.Debug($"Shuttle impact of {ToPrettyString(args.OurEntity)} with {ToPrettyString(args.OtherEntity)}; our mass: {ourMass}, other: {otherMass}, velocity {jungleDiff}, impact point {worldPoint}");
 
             // E = MV^2/2
             var energyMult = MathF.Pow(jungleDiff, 2) / 2;

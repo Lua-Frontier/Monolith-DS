@@ -702,6 +702,20 @@ public abstract partial class SharedGunSystem : EntitySystem
             || HasComp<RevolverAmmoProviderComponent>(owner)
             || HasComp<ContainerAmmoProviderComponent>(owner);
     }
+
+    /// <summary>
+    /// Whether the cartridge stays in a gun that doesn't autocycle (bolt-action, pump) after the shot.
+    /// A caseless round there is kept until the gun is cycled, otherwise the gun would fire again without cycling.
+    /// </summary>
+    public bool KeepsSpentInGun(EntityUid uid)
+    {
+        if (!Containers.TryGetContainingContainer((uid, null, null), out var container))
+            return false;
+
+        var owner = container.Owner;
+        return TryComp<BallisticAmmoProviderComponent>(owner, out var ballistic) && !ballistic.AutoCycle
+            || TryComp<ChamberMagazineAmmoProviderComponent>(owner, out var chamber) && !chamber.AutoCycle;
+    }
     // End LuaM
 
     /// <summary>
@@ -712,6 +726,16 @@ public abstract partial class SharedGunSystem : EntitySystem
         Angle? angle = null,
         bool playSound = true)
     {
+        // LuaM-start: a spent caseless round kept in the gun until cycling leaves no casing behind
+        if (TryComp<CartridgeAmmoComponent>(entity, out var caseless) && caseless.Spent && caseless.DeleteOnSpawn)
+        {
+            if (_netManager.IsServer)
+                Del(entity);
+
+            return;
+        }
+        // LuaM-end
+
         // TODO: Sound limit version.
         var offsetPos = Random.NextVector2(EjectOffset);
         var xform = Transform(entity);
