@@ -1,6 +1,6 @@
-ent-ClothingHelmetHardsuitUIEnforcer = U.I. ENFORCER MKI helmet
+ent-ClothingHelmetHardsuitUIEnforcer = шлем U.I. ENFORCER MKI
     .desc = Защита от вспышек, встроенная система ночного видения и выглядит чертовски хорошо. Кроме того, что порт информационного дисплея сломан, чего ещё можно желать?
-ent-ClothingHelmetHardsuitUIEnforcerMKII = U.I. ENFORCER MKII Combat helmet
+ent-ClothingHelmetHardsuitUIEnforcerMKII = боевой шлем U.I. ENFORCER MKII
     .desc = Этот топовый шлем поставляется с защитой от вспышек, масс-сканером и встроенной системой медицинской диагностики.
 ent-ClothingHelmetHardsuitUIEngineer = инженерный шлем U.I.
     .desc = Дешёвый и эффективный шлем скафандра, просто с дополнительным налётом чёрного рынка.

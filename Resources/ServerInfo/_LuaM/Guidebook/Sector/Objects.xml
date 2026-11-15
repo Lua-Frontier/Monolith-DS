@@ -1,8 +1,23 @@
 <Document>
-# Объекты сектора
-Выберите объект: под списком — план, оборудование, обитатели и находки.
+# Объекты
 
-[textlink="Каталог объектов сектора" link="ColossusCatalogueObjects"].
+Торговые, исследовательские и заброшенные объекты размещаются при начале смены. Некоторые выбираются случайно; их не нужно ждать как событие.
 
-[textlink="Станции" link="LuaMStations"] · [textlink="События" link="LuaMGameModes"] · [textlink="Дроны" link="LuaMDroneLoot"] · [textlink="Экспедиции" link="Expeditions"]
+## Торговля и отдых
+
+<GuideHub Root="LuaMWorldObjects" Entries="LuaMTradeMall,ColossusSiteTradeDepots,ColossusSiteBlackMarket,ColossusSiteTinnia,ColossusSiteCaseysCasino,ColossusSiteThePit,ColossusSiteOmnichurch"/>
+
+## Базы и технические объекты
+
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteEdison,ColossusSiteZetaNode,ColossusSiteZvezdaLuaM,ColossusSiteGrifty,ColossusSiteMcHobo"/>
+
+## Исследования и добыча
+
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteSevastopol,ColossusSiteMining,ColossusSiteBeacons,ColossusSiteAnomalousLab"/>
+
+## Дальние объекты
+
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteLPBravo,ColossusSiteJupiter,ColossusSiteLancelot,ColossusSitePolaris,ColossusSiteAutomatedTanker,ColossusSiteZenith"/>
+
+[textlink="Основные станции" link="LuaMStations"] · [textlink="События" link="LuaMGameModes"]
 </Document>

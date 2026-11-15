@@ -411,7 +411,7 @@
         amount: 4
   - type: ExtendDescription
     descriptionList:
-    - description: Can be cut with a knife to create four fragments.
+    - description: extend-desc-cut-four-fragments # LuaM
       color: "#4f94ad"
       requireDetailRange: true
 

@@ -57,7 +57,7 @@ public sealed partial class LightningSystem : SharedLightningSystem
         if (proto.TryComp<LightningComponent>(out var lightningComp, EntityManager.ComponentFactory))
             spawnOnHit = lightningComp.SpawnOnHit;
 
-        ShootLightning(user, target, lightningPrototype, triggerLightningEvents);
+        ShootLightning(user, target, spawnOnHit, lightningPrototype, triggerLightningEvents); // LuaM: without spawnOnHit this called itself forever (stack overflow)
     }
 
     // Mono - for optimisation purposes

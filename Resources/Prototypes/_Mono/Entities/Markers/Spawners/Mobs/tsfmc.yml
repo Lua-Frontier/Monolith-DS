@@ -132,9 +132,16 @@
   id: MobTSFMCBaseD
   categories: [ HideSpawnMenu ]
   components:
+    - type: NpcPersonalShieldUser # LuaM: turns on the energy shield of its hardsuit
     - type: Loadout
       prototypes:
         - TSFMCMobGearD
+    # LuaM-start: shoots 6.8x52mm plasma rounds
+    - type: BasicEntityAmmoProvider
+      proto: Bullet68x52mmCaselessPlasma
+      capacity: 5
+      count: 5
+    # LuaM-end
 
 # TSF regular Gear Loadouts
 
@@ -148,7 +155,7 @@
     neck: ClothingNeckIFFCyan
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitM82b
-    back: ClothingBackpackTsfmc
+    back: ClothingBackpackTSFLootA # LuaM: ClothingBackpackTsfmc > ClothingBackpackTSFLootA, loot box
     pocket2: DoubleEmergencyAirTankFilled
 #    id: CadetPDA
 
@@ -162,7 +169,7 @@
     neck: ClothingNeckIFFCyan
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitM82c
-    back: ClothingBackpackTsfmc
+    back: ClothingBackpackTSFLootB # LuaM: ClothingBackpackTsfmc > ClothingBackpackTSFLootB, loot box
     pocket2: DoubleEmergencyAirTankFilled
 #    id: CadetPDA
 
@@ -176,7 +183,7 @@
     neck: ClothingNeckIFFCyan
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitM86
-    back: ClothingBackpackTsfmc
+    back: ClothingBackpackTSFLootC # LuaM: ClothingBackpackTsfmc > ClothingBackpackTSFLootC, loot box
     pocket2: DoubleEmergencyAirTankFilled
 #    id: CadetPDA
 
@@ -190,7 +197,7 @@
     neck: ClothingNeckIFFCyan
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitNfsdExperimental
-    back: ClothingBackpackTsfmc
+    back: ClothingBackpackTSFShieldedLoot # LuaM: ClothingBackpackTsfmc > ClothingBackpackTSFShieldedLoot, loot box
     pocket2: DoubleEmergencyAirTankFilled
 #    id: CadetPDA
 
@@ -206,7 +213,7 @@
     neck: ClothingNeckIFFPurple
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterArmorBPVestMedium
-    back: ClothingBackpackTsfmc
+    back: ClothingBackpackTSFLootA # LuaM: ClothingBackpackTsfmc > ClothingBackpackTSFLootA, loot box
     pocket2: DoubleEmergencyAirTankFilled
 #    id: CadetPDA
 
@@ -220,7 +227,7 @@
     neck: ClothingNeckIFFPurple
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitM82c
-    back: ClothingBackpackTsfmc
+    back: ClothingBackpackTSFLootB # LuaM: ClothingBackpackTsfmc > ClothingBackpackTSFLootB, loot box
     pocket2: DoubleEmergencyAirTankFilled
 #    id: CadetPDA
 
@@ -234,7 +241,7 @@
     neck: ClothingNeckIFFPurple
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitM86
-    back: ClothingBackpackTsfmc
+    back: ClothingBackpackTSFLootC # LuaM: ClothingBackpackTsfmc > ClothingBackpackTSFLootC, loot box
     pocket2: DoubleEmergencyAirTankFilled
 #    id: CadetPDA
 
@@ -248,6 +255,6 @@
     neck: ClothingNeckIFFPurple
     mask: ClothingMaskNeckGaiter
     outerClothing: ClothingOuterHardsuitNfsdExperimental
-    back: ClothingBackpackTsfmc
+    back: ClothingBackpackTSFShieldedLoot # LuaM: ClothingBackpackTsfmc > ClothingBackpackTSFShieldedLoot, loot box
     pocket2: DoubleEmergencyAirTankFilled
 #    id: CadetPDA

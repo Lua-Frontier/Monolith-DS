@@ -1,5 +1,5 @@
-ent-WeaponTurretASM220 = ASM-220 «Трайдент»
-    .desc = Встроенная тяжёлая торпедная установка крейсерского класса с ручной перезарядкой, обычно выполняемой в доке. Несмотря на это, использует одни из самых крупных ракет в секторе.
+ent-WeaponTurretASM220 = торпедная стойка ASM-220 «Трайдент»
+    .desc = Тяжёлая встроенная торпедная стойка для крейсеров, заряжаемая вручную, обычно в порту. Несмотря на это, она несёт самые крупные ракеты в секторе.
 ent-WeaponTurretASM220Station = { ent-WeaponTurretASM220 }
-    .desc = A heavy built-in torpedo rack for cruisers which relies on manual loading, usually done at harbor. Despite this, it has the largest missiles in the sector. This one is connected to a system for autoloading the VLS from a capital or stations reserves.
-    .suffix = Supercap/Station, Infinite HE, I'll kill you if you put this on a normal capital.
+    .desc = { ent-WeaponTurretASM220.desc } Эта стойка подключена к системе автозаряжания УВП из запасов капитального корабля или станции.
+    .suffix = Суперкапитальный/Станционный, Бесконечные ОФ, Поставишь на обычный капитальный — убью.

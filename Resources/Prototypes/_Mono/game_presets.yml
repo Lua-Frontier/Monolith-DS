@@ -18,6 +18,7 @@
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
   - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
+  - LuaMNebulaShift # LuaM: hazardous nebulae pass their weather to harmless ones every 40-60 minutes
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
 # LuaM-start: Standard has no outside threat, so the vaults, the syndicate cache, the unidentified shuttles and the monolith fragments run twice as often
@@ -42,6 +43,7 @@
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
   - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
+  - LuaMNebulaShift # LuaM: hazardous nebulae pass their weather to harmless ones every 40-60 minutes
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
@@ -62,6 +64,7 @@
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
   - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
+  - LuaMNebulaShift # LuaM: hazardous nebulae pass their weather to harmless ones every 40-60 minutes
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - StarSystemKyphrus
 #  - PortstrikeAnnounceRuleHour3 # LuaM: auto portstrike removed, manual only (faction heads)
@@ -81,6 +84,7 @@
   - FrontierRoundstartVariation
   - MonoMonolithicEventsScheduler
   - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
+  - LuaMNebulaShift # LuaM: hazardous nebulae pass their weather to harmless ones every 40-60 minutes
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - StarSystemKyphrus
 #  - PortstrikeAnnounceRuleHour3 # LuaM: auto portstrike removed, manual only (faction heads)
@@ -103,6 +107,7 @@
   - MonoAsakimSTCShuttleSpawnerScheduler # LuaM: uncommented
   - MonoMonolithicEventsScheduler
   - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
+  - LuaMNebulaShift # LuaM: hazardous nebulae pass their weather to harmless ones every 40-60 minutes
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
@@ -125,6 +130,7 @@
   - MonoChimeraSTCShuttleSpawnerScheduler
   - MonoMonolithicEventsScheduler
   - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
+  - LuaMNebulaShift # LuaM: hazardous nebulae pass their weather to harmless ones every 40-60 minutes
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
@@ -178,7 +184,7 @@
   id: MonoMixed
   name: mono-mixed-title
   description: mono-mixed-description
-  showInVote: true # it was just old-Biothreat and the deprecated Remnants in one # LuaM: false > true
+  showInVote: false # it was just old-Biothreat and the deprecated Remnants in one
   weight: 0.43 # LuaM: 0.35 > 0.43, needs ~70% of votes against a weight 1 mode
   rules:
   - NFAdventure
@@ -195,6 +201,7 @@
   - MonoAsakimSTCShuttleSpawnerSchedulerSlow # LuaM: uncommented
   - MonoMonolithicEventsScheduler
   - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
+  - LuaMNebulaShift # LuaM: hazardous nebulae pass their weather to harmless ones every 40-60 minutes
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - StarSystemKyphrus
@@ -219,6 +226,7 @@
   #- MonoAsakimSTCShuttleSpawnerSchedulerApocalypse
   - MonoMonolithicEventsScheduler
   - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
+  - LuaMNebulaShift # LuaM: hazardous nebulae pass their weather to harmless ones every 40-60 minutes
   - LuaMMonolithFragmentLargeScheduler # LuaM: the huge monolith fragment, once per shift at 1:30
   - RoundEndRuleHour3
   - ManualPortstrikeTsfPdv

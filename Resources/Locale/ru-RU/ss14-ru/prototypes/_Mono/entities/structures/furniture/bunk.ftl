@@ -1,6 +1,6 @@
-ent-BunkBottom = bunk bed
+ent-BunkBottom = двухъярусная кровать
     .desc = { ent-Bed.desc }
     .suffix = Bottom
-ent-BunkTop = bunk bed
+ent-BunkTop = двухъярусная кровать
     .desc = { ent-Bed.desc }
     .suffix = Top

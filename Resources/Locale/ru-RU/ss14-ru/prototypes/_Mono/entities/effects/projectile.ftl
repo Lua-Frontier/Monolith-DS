@@ -1,6 +1,6 @@
 ent-InstantEffectEMP = мгновенный ЭМИ-эффект
 ent-LightningEMP = ионизированная молния
-ent-InstantEffectEMPCharon = instant EMP effect
+ent-InstantEffectEMPCharon = мгновенный эффект ЭМИ
     .desc = { "" }
-ent-LightningEMPCharon = ionised lightning
+ent-LightningEMPCharon = ионизированная молния
     .desc = { ent-BaseLightning.desc }

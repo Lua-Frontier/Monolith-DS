@@ -43,6 +43,7 @@ public sealed partial class ShuttleSystem
     private void NfOnShuttleShutdown(EntityUid uid)
     {
         _unmannedSince.Remove(uid);
+        _impactedAt.Remove(uid);
     }
     // LuaM-end
 

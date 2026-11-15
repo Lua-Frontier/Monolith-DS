@@ -59,8 +59,9 @@
     sound:
       path: /Audio/Ambience/Objects/server_fans.ogg
   - type: GuideHelp
-    guides:
-    - Science
+    guides: # LuaM: contextual guidebook route
+    - IndustryResearch
+    - ColossusCatalogueResearch
 
 - type: entity
   id: ResearchAndDevelopmentServerTSFMC

@@ -1,0 +1,96 @@
+meta:
+  format: 7
+  category: Map
+  engineVersion: 291.0.0
+  forkId: ""
+  forkVersion: ""
+  time: 11/12/2026 00:00:00
+  entityCount: 1
+maps:
+- 1
+grids:
+- 1
+orphans: []
+nullspace: []
+tilemap:
+  0: Space
+entities:
+- proto: ""
+  entities:
+  - uid: 1
+    components:
+    - type: MetaData
+      name: Grasslands Vehicles
+    - type: Transform
+    - type: Map
+      mapPaused: True
+    - type: CEZGroundLayer
+    - type: GridTree
+    - type: Broadphase
+    - type: OccluderTree
+    - type: MapGrid
+      chunks: {}
+    - type: ThermalSignature
+    - type: SpreaderGrid
+      spreadQueues:
+        Puddle: []
+        MetalFoam: []
+        Kudzu: []
+        Smoke: []
+    - type: GridPathfinding
+    - type: Gravity
+      gravityShakeSound: !type:SoundPathSpecifier
+        path: /Audio/Effects/alert.ogg
+      inherent: True
+      enabled: True
+    - type: DecalGrid
+      chunkCollection:
+        version: 2
+        nodes: []
+    - type: PlanetMap
+    - type: Biome
+      template: LuaMGrasslandsVehicles
+    - type: LuaMBiomeDungeons
+      configs:
+      - NFSalvageOutpost
+      - NFExperiment
+      - NFCaveFactory
+      - NFMedSci
+      - NFFactoryDorms
+      - NFLavaMercenary
+      - NFVirologyLab
+      - NFSnowyLabs
+      minCount: 6
+      maxCount: 10
+      minDistance: 56
+      maxDistance: 420
+      spacing: 110
+    - type: Parallax
+      parallax: bedrock
+    - type: MapLight
+      ambientLightColor: '#D8B059FF'
+    - type: Roof
+      data: {}
+    - type: LightCycle
+    - type: SunShadow
+    - type: SunShadowCycle
+      directions:
+      - direction: 0,3
+      - alpha: 0.5
+        direction: -3,-0.1
+        ratio: 0.25
+      - alpha: 0.8
+        direction: 0,-3
+        ratio: 0.5
+      - alpha: 0.5
+        direction: 3,-0.1
+        ratio: 0.75
+    - type: MapAtmosphere
+      space: False
+      mixture:
+        volume: 2500
+        immutable: True
+        temperature: 293.15
+        moles:
+          Oxygen: 21.82478
+          Nitrogen: 82.10312

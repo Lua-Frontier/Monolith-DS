@@ -21,14 +21,17 @@
 
 - type: gameMap
   id: Sevastopol
-  mapName: 'Sevastopol Data Storage Center'
+  mapName: 'Хранилище Технологий «Севастополь»' # LuaM: 'Sevastopol Data Storage Center' > 'Хранилище Технологий «Севастополь»'
   mapPath: /Maps/_Mono/POI/sevastopol.yml
   minPlayers: 0
   stations:
     Sevastopol:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Хранилище данных и технологий. Его серверы до сих пор хранят то, за чем охотятся все фракции сектора."
       stationProto: RecordsFrontierOutpostCargo
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Sevastopol Data Storage Center'
+          mapNameTemplate: 'Хранилище Технологий «Севастополь»' # LuaM: 'Sevastopol Data Storage Center' > 'Хранилище Технологий «Севастополь»'
         - type: StationDeadDrop
           maxDeadDrops: 6

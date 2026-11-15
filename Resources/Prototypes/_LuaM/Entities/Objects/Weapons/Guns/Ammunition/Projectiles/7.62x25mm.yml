@@ -1,0 +1,112 @@
+# A bit less damage than 9x19mm, but better armor penetration (high muzzle velocity).
+- type: entity
+  id: Bullet762x25mmFMJ
+  name: bullet (7.62x25mm FMJ)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 22
+    armorPenetration: 0.15
+
+- type: entity
+  id: Bullet762x25mmPractice
+  name: bullet (7.62x25mm practice)
+  parent: BaseBulletPractice
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 2
+
+- type: entity
+  id: Bullet762x25mmRubber
+  name: bullet (7.62x25mm rubber)
+  parent: BaseBulletRubber
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+
+- type: entity
+  id: Bullet762x25mmIncendiary
+  parent: BaseBulletIncendiary
+  name: bullet (7.62x25mm incendiary)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+        Heat: 5
+    armorPenetration: -0.05
+
+- type: entity
+  id: Bullet762x25mmUranium
+  parent: BaseBulletUranium
+  name: bullet (7.62x25mm uranium)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 8
+        Piercing: 12
+    armorPenetration: 0
+
+- type: entity
+  id: Bullet762x25mmEmp
+  name: bullet (7.62x25mm emp)
+  parent: BaseBulletEmp
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Shock: 0
+
+# Anti-flesh
+- type: entity
+  id: Bullet762x25mmHP
+  parent: BaseBullet
+  name: bullet (7.62x25mm hollow-point)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Slash: 3
+        Piercing: 24
+    armorPenetration: -0.55
+
+- type: entity
+  id: Bullet762x25mmRIP
+  parent: BaseBullet
+  name: bullet (7.62x25mm RIP)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Slash: 5
+        Piercing: 32
+    armorPenetration: -0.9
+
+# Armor-piercing
+- type: entity
+  id: Bullet762x25mmPlasteelAP
+  parent: BaseBullet
+  name: bullet (7.62x25mm AP)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 6
+        Structural: 25
+    armorPenetration: 0.85

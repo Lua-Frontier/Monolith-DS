@@ -335,11 +335,11 @@ public sealed partial class SurgeryBui : BoundUserInterface
 
         if (_entities.TryGetComponent(_part, out MetaDataComponent? partMeta) &&
             _entities.TryGetComponent(_surgery?.Ent, out MetaDataComponent? surgeryMeta))
-            _window.Title = $"Surgery - {partMeta.EntityName}, {surgeryMeta.EntityName}";
+            _window.Title = Loc.GetString("luam-surgery-ui-window-title-part-surgery", ("part", partMeta.EntityName), ("surgery", surgeryMeta.EntityName)); // LuaM: hardcoded "Surgery - ..." > Loc
         else if (partMeta != null)
-            _window.Title = $"Surgery - {partMeta.EntityName}";
+            _window.Title = Loc.GetString("luam-surgery-ui-window-title-part", ("part", partMeta.EntityName)); // LuaM: hardcoded "Surgery - ..." > Loc
         else
-            _window.Title = "Surgery";
+            _window.Title = Loc.GetString("surgery-ui-window-title"); // LuaM: "Surgery" > surgery-ui-window-title
     }
 
     private enum ViewType

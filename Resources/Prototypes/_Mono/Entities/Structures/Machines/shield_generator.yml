@@ -244,7 +244,7 @@
     radioChannel: Nfsd
   - type: ExtendDescription
     descriptionList:
-    - description: This one is an experimental prototype haphazardly rushed out due to the sudden Letoferol outbreak in the sector. It will require increasing amounts of power the longer it is kept active, meaning you eventually must decide between feeding it even more power or living without it.
+    - description: extend-desc-letoferol-shield # LuaM
       color: "#4f94ad"
       requireDetailRange: false
 
@@ -258,7 +258,7 @@
     radioChannel: Freelance
   - type: ExtendDescription
     descriptionList:
-    - description: This one is an experimental prototype haphazardly rushed out due to the sudden Letoferol outbreak in the sector. It will require increasing amounts of power the longer it is kept active, meaning you eventually must decide between feeding it even more power or living without it.
+    - description: extend-desc-letoferol-shield # LuaM
       color: "#4f94ad"
       requireDetailRange: false
 

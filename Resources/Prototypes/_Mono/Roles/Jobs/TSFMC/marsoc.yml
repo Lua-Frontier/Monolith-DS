@@ -36,7 +36,7 @@
   access:
   - TsfmcEngineering
   guides:
-  - TSFMC_Entry
+  - ColossusTSFRoles # LuaM: complete organization help
   special:
   - !type:AddComponentSpecial
     components:
@@ -70,6 +70,7 @@
     neck: ClothingNeckIFFCyan
   storage: # LuaM: the same uplink as the TSF colonel
     back:
+    - BookTSFSOP # LuaM: faction service handbook
     - BaseSecurityUplinkRadioSheriff
   inhand:
   - UndeterminedTSFMarsocKit

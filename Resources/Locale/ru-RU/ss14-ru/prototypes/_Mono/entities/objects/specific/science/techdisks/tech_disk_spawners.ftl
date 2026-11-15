@@ -1,9 +1,9 @@
 ent-SpawnLootTechDisksT1 = случайные технодиски T1
-ent-SpawnLootTechDisksT2Faction = T2 random faction tech disks
+ent-SpawnLootTechDisksT2Faction = случайные фракционные техдиски T2
     .desc = { ent-MarkerBasePlaceFree.desc }
-ent-SpawnLootTechDisksT2Mech = T2 random mech tech disks
+ent-SpawnLootTechDisksT2Mech = случайные техдиски мехов T2
     .desc = { ent-MarkerBasePlaceFree.desc }
-ent-SpawnLootTechDisksT3Mech = T3 random mech tech disks
+ent-SpawnLootTechDisksT3Mech = случайные техдиски мехов T3
     .desc = { ent-MarkerBasePlaceFree.desc }
-ent-SpawnLootTechDisksT3Fracture = T3 random fracture tech disks
+ent-SpawnLootTechDisksT3Fracture = случайные техдиски «Разлома» T3
     .desc = { ent-MarkerBasePlaceFree.desc }

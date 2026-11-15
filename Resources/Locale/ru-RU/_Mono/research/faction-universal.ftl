@@ -14,4 +14,4 @@ research-technology-universal-armorplates-2 = Продвинутые броне�
 
 
 research-technology-universal-sandbox-missiles = Производство крылатых ракет
-research-technology-universal-90mm-ammo = Производство сверхкрупных снарядов
+research-technology-universal-90mm-ammo = Производство 90-мм снарядов

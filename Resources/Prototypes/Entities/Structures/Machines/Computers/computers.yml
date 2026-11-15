@@ -173,8 +173,8 @@
         ents: []
       disk_slot: !type:ContainerSlot {}
   - type: GuideHelp
-    guides:
-    - ShuttleCraft
+    guides: # LuaM: contextual guidebook route
+    - Piloting
   - type: NoSignalOnLink
   - type: DeviceLinkSource # Mono
     ports:
@@ -623,8 +623,9 @@
     energy: 1.6
     color: "#b53ca1"
   - type: GuideHelp
-    guides:
-    - Science
+    guides: # LuaM: contextual guidebook route
+    - IndustryResearch
+    - ColossusCatalogueResearch
   # Mono
   - type: ShipRepairable
     repairTime: 4
@@ -676,8 +677,8 @@
     energy: 1.6
     color: "#b53ca1"
   - type: GuideHelp
-    guides:
-    - Xenoarchaeology
+    guides: # LuaM: contextual guidebook route
+    - ColossusArtifacts
   # Mono
   - type: ShipRepairable
     repairTime: 4
@@ -1103,6 +1104,12 @@
   name: cargo bounty computer
   description: Used to manage currently active bounties.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - MMC
+    - Economy
+  # LuaM-end
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -1197,6 +1204,11 @@
   name: salvage expeditions computer
   description: Used to accept salvage missions, if you're tough enough.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - Expeditions
+    # LuaM-end
     - type: Sprite
       layers:
         - map: ["computerLayerBody"]

@@ -1,2 +1,2 @@
-ent-Pellet12_gaugeBlank = blank discharge
+ent-Pellet12_gaugeBlank = холостой выстрел
     .desc = { ent-BaseBullet.desc }

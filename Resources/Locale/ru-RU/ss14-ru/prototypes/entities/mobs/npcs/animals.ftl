@@ -160,10 +160,10 @@ ent-MobSpiderBase = { ent-SimpleMobBase }
 ent-MobSpiderAngryBase = { ent-MobSpiderBase }
     .desc = { ent-MobSpiderBase.desc }
     .suffix = { ent-MobSpiderBase.suffix }
-ent-MobReindeerBuck = reindeer buck
-    .desc = You think it can pull a sleigh?
+ent-MobReindeerBuck = северный олень
+    .desc = Думаете, он потянет сани?
     .suffix = { ent-SimpleMobBase.suffix }
-ent-MobReindeerDoe = reindeer doe
+ent-MobReindeerDoe = олениха
     .desc = { ent-MobReindeerBuck.desc }
     .suffix = { ent-MobReindeerBuck.suffix }
 

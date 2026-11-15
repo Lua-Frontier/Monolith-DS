@@ -1,4 +1,4 @@
-ent-GatewayNode = node zeta transit gateway
-    .desc = Transports you from point A to point B. No safety guarantee provided once travel is commenced.
-ent-GatewayCentral = central transit gateway
-    .desc = Transports you from point A to point B. No safety guarantee provided once travel begins.
+ent-GatewayNode = транзитные врата узла Зета
+    .desc = Переносит вас из точки А в точку Б. Безопасность после начала перемещения не гарантируется.
+ent-GatewayCentral = центральные транзитные врата
+    .desc = Переносит вас из точки А в точку Б. Безопасность после начала перемещения не гарантируется.

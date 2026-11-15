@@ -10,3 +10,8 @@
   maxLimit: 1
   loadouts:
   - MMCClothingEyesHudSecurity
+  subgroups: # LuaM
+  - MercenaryGlasses # LuaM
+  - MonoMercenaryBallisticGoggles # LuaM
+  - PilotGlasses # LuaM
+  - ContractorGlasses # LuaM

@@ -141,6 +141,16 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
         base.MouseMove(args);
     }
 
+    // LuaM-start
+    protected override void KeyBindDown(GUIBoundKeyEventArgs args)
+    {
+        if (TryRequestMapMenu(args))
+            return;
+
+        base.KeyBindDown(args);
+    }
+    // LuaM-end
+
     protected override void KeyBindUp(GUIBoundKeyEventArgs args)
     {
         if (FtlMode && ViewingMap != MapId.Nullspace)
@@ -276,6 +286,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
     protected override void Draw(DrawingHandleScreen handle)
     {
         base.Draw(handle);
+        _mapMenuTargets.Clear(); // LuaM
 
         if (ViewingMap == MapId.Nullspace)
             return;
@@ -303,6 +314,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
         DrawStarSystem(handle, matty);
         DrawRadiusIndicators(handle, matty, viewBox); // LuaM
+        DrawNebulae(handle, matty, viewBox); // Lua
 
         // Draw our FTL range + no FTL zones
         // Do it up here because we want this layered below most things.
@@ -414,6 +426,9 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
             if (grid.Owner != _shuttleEntity && _stealthField.IsHiddenFromLocalPlayer(grid.Owner, _console ?? _shuttleEntity)) // LuaM
                 continue;
 
+            if (grid.Owner != _shuttleEntity && EntManager.HasComponent<Content.Shared._Lua.SpaceHazards.NebulaVeilTrackedComponent>(grid.Owner)) // Lua: veil nebula
+                continue;
+
             // Mono
             var hideLabel = iffComp != null && (iffComp.Flags & IFFFlags.HideLabel) != 0x0
                 && !_friendlyIff.IsFriendlyToLocalPlayer(grid.Owner); // LuaM: own faction sees through IFF off
@@ -439,6 +454,8 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
             var mapObject = GetMapObject(gridRelativePos, Angle.Zero, scalePosition: true);
             AddMapObject(existingEdges, existingVerts, mapObject);
+            if (grid.Owner != _shuttleEntity && !blipOnly) // LuaM
+                _mapMenuTargets.Add((grid.Owner, gridUiPos));
 
             // Mono - now always has label
             // Text

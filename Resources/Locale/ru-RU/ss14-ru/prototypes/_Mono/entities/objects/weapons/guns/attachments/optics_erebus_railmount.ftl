@@ -1,5 +1,5 @@
 ent-GunAttachmentOpticErebus4x = оптический прицел Spectre 970 4x (крепление Erebus-HI)
-    .desc = Allows for more medium-range combat to be possible. Doesn't do much for recoil recovery or accuracy.
+    .desc = Делает возможным бой на средней дистанции. Почти не влияет на восстановление после отдачи и точность.
     .suffix = Оптический модуль
 ent-GunAttachmentOpticErebus8x = оптический прицел L6 Bowman 8x (крепление Erebus-HI)
     .desc = Позволяет вести бой на дальних дистанциях. Громоздкий и затрудняет восстановление после отдачи.

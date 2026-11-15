@@ -1,10 +1,10 @@
-ent-N14TentLeatherWall = tent
-    .desc = A tent made out of leather.
+ent-N14TentLeatherWall = палатка
+    .desc = Палатка из кожи.
 ent-N14TentLeatherCorner = { ent-N14TentLeatherWall }
     .desc = { ent-N14TentLeatherWall.desc }
     .suffix = corner
-ent-N14TentClothWall = tent
-    .desc = A tent made out of cloth.
+ent-N14TentClothWall = палатка
+    .desc = Палатка из ткани.
 ent-N14TentClothCorner = { ent-N14TentClothWall }
     .desc = { ent-N14TentClothWall.desc }
     .suffix = corner

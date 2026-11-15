@@ -1,4 +1,4 @@
-ent-N14Plantpot = plant pot
+ent-N14Plantpot = цветочный горшок
     .desc = { ent-PottedPlantBase.desc }
 ent-N14Plantpot1 = { ent-N14Plantpot }
     .desc = { ent-N14Plantpot.desc }
@@ -23,7 +23,7 @@ ent-N14PlantpotDirty4 = { ent-N14PlantpotDirty1 }
     .desc = { ent-N14PlantpotDirty1.desc }
     .suffix = { ent-N14PlantpotDirty1.suffix }
 ent-N14PlantpotBroken1 = { ent-N14PlantpotDirty1 }
-    .desc = A broken plant pot.
+    .desc = Разбитый цветочный горшок.
     .suffix = broken
 ent-N14PlantpotBroken2 = { ent-N14PlantpotBroken1 }
     .desc = { ent-N14PlantpotBroken1.desc }

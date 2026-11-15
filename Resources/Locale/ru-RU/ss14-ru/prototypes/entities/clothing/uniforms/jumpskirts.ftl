@@ -128,5 +128,5 @@ ent-ClothingUniformJumpskirtPsychologist = юбка психолога
     .desc = Я не часто теряю вещи, но иногда мне кажется, что я не могу их найти после того, как куда-то положил.
 ent-ClothingUniformJumpskirtClown = юбка клоуна
     .desc = ХОНК!
-ent-ClothingUniformJumpskirtCasualGreen = casual green jumpskirt
-    .desc = A loose worn green shirt with a grey skirt, perfect for someone looking to relax.
+ent-ClothingUniformJumpskirtCasualGreen = повседневная зелёная юбка-комбинезон
+    .desc = Свободная зелёная рубашка с серой юбкой — идеально для тех, кто хочет расслабиться.

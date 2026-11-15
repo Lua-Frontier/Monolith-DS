@@ -6,6 +6,7 @@ using Content.Shared._Mono.FireControl;
 using Content.Shared.Power;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components; // LuaM
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
@@ -21,6 +22,7 @@ using Content.Shared._Mono.ShipGuns;
 using Content.Shared.Examine;
 using Content.Server.Salvage.Expeditions;
 using Content.Shared._Crescent.Hardpoints;
+using Content.Shared._Crescent.ShipShields;
 
 namespace Content.Server._Mono.FireControl;
 
@@ -40,6 +42,7 @@ public sealed partial class FireControlSystem : EntitySystem
     private EntityQuery<SpaceArtilleryComponent> _artilleryQuery;
     private EntityQuery<FireControlRotateComponent> _fireRotateQuery;
     private EntityQuery<GunComponent> _gunQuery;
+    private EntityQuery<MapGridComponent> _gridQuery; // LuaM
 
     public override void Initialize()
     {
@@ -62,6 +65,7 @@ public sealed partial class FireControlSystem : EntitySystem
         _artilleryQuery = GetEntityQuery<SpaceArtilleryComponent>();
         _fireRotateQuery = GetEntityQuery<FireControlRotateComponent>();
         _gunQuery = GetEntityQuery<GunComponent>();
+        _gridQuery = GetEntityQuery<MapGridComponent>(); // LuaM
     }
 
     private void OnPowerChanged(EntityUid uid, FireControlServerComponent component, PowerChangedEvent args)
@@ -532,7 +536,7 @@ public sealed partial class FireControlSystem : EntitySystem
     /// <summary>
     /// Checks if a weapon is ready to fire.
     /// </summary>
-    private bool CanFire(EntityUid weapon, FireControllableComponent comp, bool noServer = false)
+    public bool CanFire(EntityUid weapon, FireControllableComponent comp, bool noServer = false) // LuaM: public for ShipTargetingSystem
     {
         // Check if weapon is powered
         if (!_power.IsPowered(weapon))
@@ -576,6 +580,15 @@ public sealed partial class FireControlSystem : EntitySystem
         var targetDistance = Vector2.Distance(weaponPos, targetPos);
         var rayDistance = Math.Min(targetDistance, maxDistance);
 
+        // LuaM-start: only our own grid can block the shot, so the ray doesn't need to cross space and enemy ships
+        if (weaponGridUid != null && _gridQuery.TryComp(weaponGridUid, out var weaponGrid))
+        {
+            var gridBox = _xform.GetWorldMatrix(weaponGridUid.Value).TransformBox(weaponGrid.LocalAABB);
+            if (gridBox.Contains(weaponPos))
+                rayDistance = MathF.Min(rayDistance, RayExitDistance(gridBox, weaponPos, direction) + 1f);
+        }
+        // LuaM-end
+
         // Initialize ray collision
         var ray = new CollisionRay(weaponPos, direction, collisionMask: (int)(CollisionGroup.Opaque | CollisionGroup.Impassable));
 
@@ -584,6 +597,10 @@ public sealed partial class FireControlSystem : EntitySystem
         {
             // Always ignore the source weapon itself
             if (entity == sourceWeapon)
+                return true;
+
+            // Always ignore shields, since shields are now opaque and will be caught by the LOS check
+            if (HasComp<ShipShieldComponent>(entity))
                 return true;
 
             // If the weapon isn't on a grid, we'll check against all entities
@@ -606,11 +623,33 @@ public sealed partial class FireControlSystem : EntitySystem
             IgnoreEntityNotOnSameGrid,
             rayDistance,
             returnOnFirstHit: true // We only need to know if there's ANY obstacle
-        ).ToList();
+        ); // LuaM: no ToList copy
 
         // Has line of sight if there are no obstacles in the path
-        return raycastResults.Count == 0;
+        return !raycastResults.Any(); // LuaM
     }
+
+    // LuaM-start
+    /// <summary>
+    /// Distance along a ray that starts inside the box to the point where it leaves the box.
+    /// </summary>
+    private static float RayExitDistance(Box2 box, Vector2 origin, Vector2 direction)
+    {
+        var exit = float.MaxValue;
+
+        if (direction.X > 0f)
+            exit = MathF.Min(exit, (box.Right - origin.X) / direction.X);
+        else if (direction.X < 0f)
+            exit = MathF.Min(exit, (box.Left - origin.X) / direction.X);
+
+        if (direction.Y > 0f)
+            exit = MathF.Min(exit, (box.Top - origin.Y) / direction.Y);
+        else if (direction.Y < 0f)
+            exit = MathF.Min(exit, (box.Bottom - origin.Y) / direction.Y);
+
+        return MathF.Max(exit, 0f);
+    }
+    // LuaM-end
 
     /// <summary>
     /// Checks if a weapon can fire in a specific direction without obstacles

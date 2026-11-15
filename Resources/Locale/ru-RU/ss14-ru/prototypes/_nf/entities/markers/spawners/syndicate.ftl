@@ -1,1 +1,1 @@
-ent-PinpointerSyndicatePOISpawner = Syndicate POI Pinpointer
+ent-PinpointerSyndicatePOISpawner = пинпоинтер POI Синдиката

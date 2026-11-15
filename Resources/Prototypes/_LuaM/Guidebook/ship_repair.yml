@@ -1,0 +1,6 @@
+# LuaCorp - AGPLv3. See AGPLv3.txt.
+- type: guideEntry
+  id: ColossusShipRepair
+  name: guide-architecture-colossus-ship-repair # LuaM: guidebook architecture v2.1
+  text: /ServerInfo/_LuaM/Guidebook/Engineering/ShipRepair.xml
+  priority: 15

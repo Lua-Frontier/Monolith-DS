@@ -212,8 +212,7 @@ public sealed partial class GuideCatalog : BoxContainer, IDocumentTag
                     Row(list, "После исчерпания", voucher.DestroyOnEmpty ? "Карта исчезает" : "Карта остаётся");
                 }
             });
-        var preview = new Button { Text = "План корабля", HorizontalExpand = true, Margin = new Thickness(0, 6),
-            Disabled = !GuidebookMapRendering.Enabled, ToolTip = "Просмотр планов временно отключён." };
+        var preview = new Button { Text = "План корабля", HorizontalExpand = true, Margin = new Thickness(0, 6) };
         preview.OnPressed += _ => _entities.System<GuidebookMapPreviewSystem>().Open(vessel.MapPath, vessel.Name);
         body.AddChild(preview);
         if (vessel.Equipment.Count > 0)
@@ -230,7 +229,7 @@ public sealed partial class GuideCatalog : BoxContainer, IDocumentTag
     private void FillEquipment(BoxContainer body, GuidebookEquipmentEntry item, GuidebookCatalog data)
     {
         body.AddChild(new GuideEntityEmbed(item.PrototypeId, false, false));
-        foreach (var stat in GuidebookCatalogPresentation.Summary(item)) Row(body, stat.Label, stat.Value);
+        foreach (var stat in GuidebookCatalogPresentation.Summary(item)) Row(body, stat.Label, stat.Value, highlight: true);
         var ammo = item.Stats.Where(s => s.Ammunition).GroupBy(s => s.Label[..s.Label.IndexOf(": ", StringComparison.Ordinal)]).ToList();
         if (ammo.Count > 0)
             Expand(body, "Боеприпасы и эффекты (" + ammo.Count + ")", list =>
@@ -239,13 +238,13 @@ public sealed partial class GuideCatalog : BoxContainer, IDocumentTag
                     Expand(list, group.Key, details =>
                     {
                         foreach (var stat in group.Where(GuidebookCatalogPresentation.Useful))
-                            Row(details, stat.Label[(stat.Label.IndexOf(": ", StringComparison.Ordinal) + 2)..], GuidebookCatalogPresentation.DamageValue(stat.Value));
+                            Row(details, stat.Label[(stat.Label.IndexOf(": ", StringComparison.Ordinal) + 2)..], GuidebookCatalogPresentation.DamageValue(stat.Value), highlight: true);
                     });
             });
         Expand(body, "Дополнительные параметры", details =>
         {
             foreach (var stat in item.Stats.Where(s => !s.Ammunition && GuidebookCatalogPresentation.Useful(s)))
-                Row(details, stat.Label, stat.Value);
+                Row(details, stat.Label, stat.Value, highlight: true);
         });
         AddLocations(body, item.Locations, data, "Места установки (" + item.Locations.Count + ")");
     }
@@ -260,14 +259,20 @@ public sealed partial class GuideCatalog : BoxContainer, IDocumentTag
         });
     }
 
-    private static void Row(BoxContainer body, string label, string value, float keyWidth = 135)
+    private static void Row(BoxContainer body, string label, string value, float keyWidth = 135, bool highlight = false)
     {
         var row = new BoxContainer { HorizontalExpand = true, SeparationOverride = 8 };
         var key = Text(label, true);
         key.HorizontalExpand = false;
         key.SetWidth = keyWidth;
         row.AddChild(key);
-        row.AddChild(Text(value));
+        var detail = Text(value);
+        if (highlight)
+        {
+            key.ModulateSelfOverride = Color.Yellow;
+            detail.ModulateSelfOverride = Color.LightBlue;
+        }
+        row.AddChild(detail);
         body.AddChild(row);
     }
 

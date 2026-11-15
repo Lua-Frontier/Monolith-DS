@@ -11,6 +11,9 @@ using Content.Shared.Roles;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Research.Components;
 using Content.Server.Store.Conditions;
+using Content.Server.Jobs;
+using Content.Server.Station.Components;
+using Content.Shared.Maps;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Markdown.Mapping;
@@ -55,7 +58,7 @@ public sealed partial class GuidebookCatalogSystem
       ["PDV"] = "Авангард", ["PDVCivilian"] = "Авангард", ["MMC"] = "ММС" };
 
     private static readonly HashSet<string> AcquisitionComponents = new()
-    { "Lathe", "ResearchServer", "TechnologyDatabase", "VendingMachine", "Store", "ContainerFill", "StorageFill", "SuitStorage", "Clothing", "Gun", "Armor", "ArmorPlateItem", "CartridgeAmmo", "BallisticAmmoProvider", "SeedExtractor", "PlantHolder", "FuelGenerator", "NFSolarPanel", "TegGenerator", "Rtg", "PowerSupplier", "Generator", "Turbine" };
+    { "Lathe", "ResearchServer", "TechnologyDatabase", "VendingMachine", "Store", "ContainerFill", "StorageFill", "SuitStorage", "Clothing", "Gun", "Armor", "ArmorPlateItem", "CartridgeAmmo", "BallisticAmmoProvider", "SeedExtractor", "PlantHolder", "FuelGenerator", "NFSolarPanel", "TegGenerator", "Rtg", "PowerSupplier", "Generator", "Turbine", "Organ", "BodyPart", "SubdermalImplant", "AutoSurgeon", "Flatpack" };
 
     private List<GuidebookAcquisitionEntry> BuildAcquisitions(List<GuidebookMappedEntity> entities, Dictionary<string, List<string>> storeListings,
         HashSet<string>? obtainable = null)
@@ -64,6 +67,13 @@ public sealed partial class GuidebookCatalogSystem
         var found = new Dictionary<string, GuidebookAcquisitionEntry>();
         var processed = new HashSet<string>();
         var sourceData = new Dictionary<string, IReadOnlyDictionary<string, MappingDataNode>>();
+        var activeMapPaths = entities.Select(e => e.MapId).ToHashSet();
+        var lobbyJobs = _prototype.EnumeratePrototypes<GameMapPrototype>()
+            .Where(m => activeMapPaths.Contains(m.MapPath.ToRootedPath().ToString()))
+            .SelectMany(m => m.Stations.Values)
+            .Where(s => s.StationComponentOverrides.TryGetValue("StationJobs", out _))
+            .SelectMany(s => ((StationJobsComponent)s.StationComponentOverrides["StationJobs"].Component).SetupAvailableJobs)
+            .Where(j => j.Value.Any(n => n != 0)).Select(j => j.Key.Id).ToHashSet();
         var technologies = _prototype.EnumeratePrototypes<TechnologyPrototype>().Where(t => !t.Hidden).ToList();
         var techByRecipe = technologies.SelectMany(t => t.RecipeUnlocks.Select(r => (r.Id, Tech: t)))
             .GroupBy(t => t.Id).ToDictionary(g => g.Key, g => g.Select(t => t.Tech).ToList());
@@ -160,6 +170,16 @@ public sealed partial class GuidebookCatalogSystem
         // These factions use legacy police/pirate job IDs despite their current lobby names.
         factionRoles.UnionWith(new[] { "Contractor", "Mercenary", "StationRepresentative", "SecurityGuard", "Sheriff", "Bailiff", "TsfMarsoc", "SeniorOfficer", "Brigmedic", "Deputy", "TsfEngineer", "TsfBorg", "DirectorOfCare", "MdMedic",
             "PirateCaptain", "PirateFirstMate", "PDVTarkhan", "PDVDenasvar", "PDVInfiltrator", "Pirate", "PdvBorg" });
+        // Built-in implants use actual availableJobs, including civilian roles outside combat departments.
+        foreach (var roleId in lobbyJobs)
+        {
+            if (!_prototype.TryIndex<JobPrototype>(roleId, out var job)) continue;
+            currentFaction = FactionFor("", job.ID);
+            foreach (var special in job.Special.OfType<AddImplantSpecial>())
+                foreach (var implantId in special.Implants)
+                    Visit(implantId, "role:" + job.ID, Loc.GetString(job.Name), "loadout",
+                        "Установлен при выборе доступной роли", new HashSet<string>());
+        }
         foreach (var roleId in factionRoles)
         {
             if (!_prototype.TryIndex<JobPrototype>(roleId, out var role)) continue;
@@ -274,12 +294,15 @@ public sealed partial class GuidebookCatalogSystem
             var weapon = item.Components.ContainsKey("Item") && !item.Components.ContainsKey("MobState") && !item.Components.ContainsKey("ShipGunType")
                 && !id.StartsWith("WeaponCase", StringComparison.Ordinal)
                 && (item.Components.ContainsKey("Gun") || (id.StartsWith("Weapon") && item.Components.ContainsKey("MeleeWeapon")));
-            if (armor || weapon)
+            var implant = item.Components.Keys.Any(k => k is "Organ" or "SubdermalImplant" or "AutoSurgeon")
+                || item.Components.ContainsKey("BodyPart");
+            if (armor || weapon || implant)
             {
                 if (!found.TryGetValue(id, out var entry)) found[id] = entry = new GuidebookAcquisitionEntry
-                { PrototypeId = id, Kind = armor ? "armor" : weapon ? "weapon" : "item",
+                { PrototypeId = id, Kind = implant ? "implant" : armor ? "armor" : weapon ? "weapon" : "item",
                     IdentityKey = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(item.Name + "|" + string.Join("|", Data(item)
-                        .Where(p => p.Key.Contains("Ammo") || p.Key.Contains("Projectile") || p.Key.Contains("Shield") || new[] { "Armor", "ArmorPlateItem", "Gun", "MeleeWeapon", "Battery", "ClothingSpeedModifier", "Sprite" }.Contains(p.Key))
+                        .Where(p => p.Key.Contains("Ammo") || p.Key.Contains("Projectile") || p.Key.Contains("Shield") || new[] { "Armor", "ArmorPlateItem", "Gun", "MeleeWeapon", "Battery", "ClothingSpeedModifier", "Sprite" }.Contains(p.Key)
+                            || item.Components.ContainsKey("PersonalShield") && p.Key is "BatterySelfRecharger" or "ArmorPlateHolder" or "Storage")
                         .OrderBy(p => p.Key).Select(p => p.Key + CanonicalNode(p.Value)))))) };
                 if (!entry.Offers.Any(o => o.SourceId == sourceId && o.Method == method && o.Detail == detail && o.CategoryId == categoryId && o.Faction == faction))
                     entry.Offers.Add(new() { SourceId = sourceId, SourceName = sourceName, Method = method, Detail = detail,
@@ -288,8 +311,26 @@ public sealed partial class GuidebookCatalogSystem
                 {
                     AddHandheldStats(item, entry.Stats);
                 }
+                if (armor && item.Components.ContainsKey("PersonalShield") && entry.ShieldStats.Count == 0)
+                    AddPersonalShieldStats(item, entry.ShieldStats);
+                if (implant && entry.Stats.Count == 0)
+                {
+                    // Different organ/upgrade effects must never collapse just because their names/icons match.
+                    entry.IdentityKey = id;
+                    AddMedicalStats(item, entry.Stats);
+                }
             }
             var raw = Data(item);
+            // Follow only medical flatpacks here; the weapon catalogue is unchanged.
+            if (raw.TryGetValue("Flatpack", out var flatpack) && Scalar(flatpack, "entity") is { } device
+                && _prototype.TryIndex<EntityPrototype>(device, out var machine) && machine.Components.ContainsKey("AutoSurgeon"))
+                Visit(device, sourceId, sourceName, method, detail + "; упакованное устройство «" + item.Name + "»", visited, categoryId, categoryName, faction);
+            if (raw.TryGetValue("AutoSurgeon", out var surgeon))
+                foreach (var field in new[] { "newPartProto", "organForEachPart", "implant" })
+                    if (Scalar(surgeon, field) is { } organ && organ != "null")
+                        Visit(organ, sourceId, sourceName, method, detail + "; устанавливает «" + item.Name + "»", visited, categoryId, categoryName, faction);
+            if (raw.TryGetValue("Implanter", out var implanter) && Scalar(implanter, "implant") is { } translated)
+                Visit(translated, sourceId, sourceName, method, detail + "; имплантер «" + item.Name + "»", visited, categoryId, categoryName, faction);
             if (raw.TryGetValue("BallisticAmmoProvider", out var ammunition) && Scalar(ammunition, "proto") is { } cartridge && cartridge != "null")
                 Visit(cartridge, sourceId, sourceName, method, detail, visited, categoryId, categoryName, faction);
             // Container contents are reachable products, not a prototype-wide spawn-menu list.

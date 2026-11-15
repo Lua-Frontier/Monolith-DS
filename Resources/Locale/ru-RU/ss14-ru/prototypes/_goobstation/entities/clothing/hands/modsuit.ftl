@@ -16,5 +16,5 @@ ent-ClothingModsuitGauntletsResearchDirector = перчатки МОД «Мин�
     .desc = Чтобы сохранить пальцы целыми, когда артефакт термоядерит тебя.
 ent-ClothingModsuitGauntletsCaptain = перчатки МОД «Магнат»
     .desc = С особыми канавками и вырезами, чтобы удобнее держать этот чёртов диск.
-ent-ClothingModsuitGauntletsBase = modsuit gauntlets
-    .desc = Special modular suit gloves that protect wearer from electric shock.
+ent-ClothingModsuitGauntletsBase = перчатки модкостюма
+    .desc = Особые перчатки модульного костюма, защищающие владельца от удара током.

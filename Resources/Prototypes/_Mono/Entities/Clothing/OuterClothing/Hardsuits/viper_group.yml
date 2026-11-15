@@ -213,10 +213,10 @@
   #     path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
   - type: ExtendDescription
     descriptionList:
-    - description: Alt-click or otherwise interact to toggle additional shielding.
+    - description: extend-desc-toggle-shielding # LuaM
       color: "#4f94ad"
       requireDetailRange: true
-    - description: The MEDUSA shield projector is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles and close-range directed force.
+    - description: extend-desc-shield-medusa # LuaM
       color: "#94768c"
       requireDetailRange: true
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits

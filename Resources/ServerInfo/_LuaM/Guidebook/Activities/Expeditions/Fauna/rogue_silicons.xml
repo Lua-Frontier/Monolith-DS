@@ -17,13 +17,13 @@
   <GuideEntityEmbed Entity="MobRogueSiliconScrap" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 60 (критическое), 120 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])[bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color], 4 [color=orange]тепловой[/color] (ближний бой); 14 [color=orange]тепловой[/color] (дальний бой)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Летающий (некоторые из них), Стрелок (некоторые из них)
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Дроны"
@@ -36,10 +36,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconDroneLethals"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (критическое), 90 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 20 [color=orange]тепловой[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий, Стрелок (энергетическая пушка)
 
 
@@ -49,10 +49,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconDroneNonLethals"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (критическое), 90 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=orange]тепловой[/color]; 20 [color=lightblue]выносливость[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий, Стрелок (обездвиживатель)
 
 
@@ -62,10 +62,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconDroneScience"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (критическое), 90 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=orange]тепловой[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий, Стрелок (экспериментальная пушка C.H.I.M.P.)
 
 
@@ -79,10 +79,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconServo"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color], 4 [color=orange]тепловой[/color] (ближний бой)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная)
 
 
@@ -96,10 +96,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconHerder"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color], [color=orange]электрический[/color], 10 [color=lightblue]выносливость[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная)
 
 
@@ -113,10 +113,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconHunter"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (критическое), 90 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 17 [color=orange]тепловой[/color] (лазерная винтовка)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Летающий, Стрелок (лазерная винтовка)
 
 
@@ -130,10 +130,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconCatcher"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color], 4 [color=orange]тепловой[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная)
 
 
@@ -145,10 +145,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconViscerator"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 12 (критическое), 20 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 5 м/с (5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]5 м/с[/color] ([color=#73BFD3]5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 4 [color=red]режущий[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий
 
 
@@ -162,10 +162,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconTesla"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 110 (критическое), 160 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 14 [color=yellow]колющий[/color], 10 [color=lightblue]выносливость[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Стрелок (тесла-пушка)
 
 
@@ -179,10 +179,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconGuardian"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 200 (критическое), 400 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 4 [color=orange]тепловой[/color] (повреждённый турбо-лазер)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Летающий, Стрелок (повреждённый турбо-лазер)
 
 
@@ -196,10 +196,10 @@
   <GuideEntityEmbed Entity="MobRogueSiliconBoss"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 300 (критическое), 400 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 15 [color=orange]взрывной[/color] (микро-ракеты)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - [bold][color=#a4885c]Слабости к урону:[/color][/bold] [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Стрелок (микро-ракетная установка)
 
 

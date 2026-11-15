@@ -7,7 +7,6 @@ using Content.Shared.Audio.Events;
 using Content.Shared.GameTicking;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
-using Robust.Shared.ContentPack; // LuaM
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -20,7 +19,6 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
     [Dependency] private AudioSystem _serverAudio = default!;
     [Dependency] private IRobustRandom _robustRandom = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
-    [Dependency] private IResourceManager _resources = default!; // LuaM
 
     private SoundCollectionPrototype _lobbyMusicCollection = default!;
     private string[]? _lobbyPlaylist;
@@ -80,7 +78,7 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
     {
         var playlist = _lobbyMusicCollection.PickFiles
                                             .Select(x => x.ToString())
-                                            .Concat(_prototypeManager.EnumeratePrototypes<LobbyTrackPrototype>().Where(x => _resources.ContentFileExists(x.Path)).Select(x => x.Path.ToString())) // LuaM
+                                            .Concat(_prototypeManager.EnumeratePrototypes<LobbyTrackPrototype>().Select(x => x.Path.ToString())) // LuaM
                                             .Distinct() // LuaM
                                             .ToArray();
          _robustRandom.Shuffle(playlist);

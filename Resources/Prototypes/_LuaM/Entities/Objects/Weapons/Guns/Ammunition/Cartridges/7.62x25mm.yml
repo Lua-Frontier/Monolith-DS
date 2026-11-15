@@ -1,0 +1,149 @@
+- type: entity
+  id: BaseCartridge762x25mm
+  name: cartridge (7.62x25mm FMJ)
+  parent: BaseCartridge
+  description: A bottlenecked pistol round with a high muzzle velocity, it pierces light armor better than 9x19mm.
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - Cartridge762x25mmFMJ
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmFMJ
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Casings/pistol_ammo_casing.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 1
+
+- type: entity
+  id: Cartridge762x25mmFMJ
+  name: cartridge (7.62x25mm FMJ)
+  parent: BaseCartridge762x25mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmFMJ
+
+- type: entity
+  id: Cartridge762x25mmPractice
+  name: cartridge (7.62x25mm practice)
+  parent: BaseCartridge762x25mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmPractice
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#dbdbdb"
+
+- type: entity
+  id: Cartridge762x25mmIncendiary
+  name: cartridge (7.62x25mm incendiary)
+  parent: BaseCartridge762x25mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmIncendiary
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#ff6e52"
+
+- type: entity
+  id: Cartridge762x25mmUranium
+  name: cartridge (7.62x25mm uranium)
+  parent: BaseCartridge762x25mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmUranium
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#65fe08"
+
+- type: entity
+  id: Cartridge762x25mmRubber
+  name: cartridge (7.62x25mm rubber)
+  parent: BaseCartridge762x25mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmRubber
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#43c4f7"
+
+- type: entity
+  id: Cartridge762x25mmEmp
+  name: cartridge (7.62x25mm emp)
+  parent: BaseCartridge762x25mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmEmp
+  - type: EmpDescription
+    range: 0.3
+    energyConsumption: 2700000
+    disableDuration: 10
+
+# Anti-flesh
+- type: entity
+  id: Cartridge762x25mmHP
+  name: cartridge (7.62x25mm hollow-point)
+  parent: BaseCartridge762x25mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmHP
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#90EE90"
+
+- type: entity
+  id: Cartridge762x25mmRIP
+  name: cartridge (7.62x25mm RIP)
+  parent: BaseCartridge762x25mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmRIP
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#C04000"
+
+# Armor-piercing
+- type: entity
+  id: Cartridge762x25mmPlasteelAP
+  name: cartridge (7.62x25mm AP)
+  parent: BaseCartridge762x25mm
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet762x25mmPlasteelAP
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#888888"

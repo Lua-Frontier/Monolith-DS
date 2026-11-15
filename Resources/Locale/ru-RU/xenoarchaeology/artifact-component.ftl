@@ -1,4 +1,4 @@
-### Verbs
+﻿### Verbs
 
 artifact-verb-make-always-active = Сделать артефакт постоянно активным
 artifact-verb-activate = Активировать артефакт
@@ -25,3 +25,10 @@ artifact-node-nf-class-5 = [color=#7883ff]Светило[/color]
 artifact-node-nf-class-6 = [color=#be78ff]Демиург[/color]
 artifact-node-nf-class-7 = [color=#ffda8a]Эонический[/color]
 artifact-node-nf-class-8 = [color=#ffffff]Монадический[/color]
+
+artifact-node-class-1 = [color=#ff2bb1]Гилический[/color]
+artifact-node-class-2 = [color=#ff8b2b]Психический[/color]
+artifact-node-class-3 = [color=#a9ff38]Пневматический[/color]
+artifact-node-class-4 = [color=#2bfff8]Архонт[/color]
+artifact-node-class-5 = [color=#7883ff]Светоч[/color]
+artifact-node-class-6 = [color=#be78ff]Демиург[/color]

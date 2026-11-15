@@ -68,6 +68,6 @@
     - FederalNanites
   - type: ExtendDescription
     descriptionList:
-    - description: This is a potential objective for PDV infantry in the area!
+    - description: extend-desc-pdv-objective # LuaM
       color: "#4f94ad"
       requireDetailRange: false

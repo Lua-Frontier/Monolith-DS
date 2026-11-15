@@ -89,7 +89,22 @@ internal sealed partial class CEClientZLevelsPreAnimSystem : EntitySystem
         {
             var localPosition = zPhys.LocalPosition;
             _sprite.SetOffset((uid, sprite), zPhys.SpriteOffsetDefault);
-            _sprite.SetDrawDepth((uid, sprite), localPosition > 0 ? (int)Shared.DrawDepth.DrawDepth.OverMobs : zPhys.DrawDepthDefault);
+            // LuaM-start
+            if (localPosition > 0)
+            {
+                if (zPhys.AirborneDrawDepthOriginal == null)
+                {
+                    zPhys.AirborneDrawDepthOriginal = sprite.DrawDepth;
+                    _sprite.SetDrawDepth((uid, sprite), (int)Shared.DrawDepth.DrawDepth.OverMobs);
+                }
+            }
+            else if (zPhys.AirborneDrawDepthOriginal is { } original)
+            {
+                zPhys.AirborneDrawDepthOriginal = null;
+                if (sprite.DrawDepth == (int)Shared.DrawDepth.DrawDepth.OverMobs)
+                    _sprite.SetDrawDepth((uid, sprite), original);
+            }
+            // LuaM-end
         }
 
         // Set parent-synced status effect offsets to the parent's current Z value each frame — prevents accumulation.

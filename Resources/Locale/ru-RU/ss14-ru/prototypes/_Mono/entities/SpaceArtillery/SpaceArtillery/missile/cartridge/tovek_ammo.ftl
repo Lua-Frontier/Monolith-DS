@@ -1,56 +1,56 @@
-ent-PaladinMagazine = автозарядник фугасных 250мм снарядов
-    .desc = Контейнерный 250-мм ракетный автозарядник.
+ent-PaladinMagazine = автозарядник фугасных ракет «Паладина» 250мм
+    .desc = Автозарядник фугасных 250-мм ракет для «Паладина».
     .ammo-loader-type = Контейнер (фугасные)
-    .ammo-loader-caliber = 250 мм
+    .ammo-loader-caliber = 250мм
     .ammo-loader-weight = 120 кг
 
-ent-PaladinMagazineInfinite = автозарядник фугасных 250мм снарядов
-    .suffix = БЕСКОНЕЧНЫЙ
-    .desc = Контейнерный 250-мм ракетный автозарядник.
+ent-PaladinMagazineInfinite = автозарядник фугасных ракет «Паладина» 250мм
+    .suffix = Бесконечный
+    .desc = Автозарядник фугасных 250-мм ракет для «Паладина».
     .ammo-loader-type = Контейнер (фугасные)
-    .ammo-loader-caliber = 250 мм
+    .ammo-loader-caliber = 250мм
     .ammo-loader-weight = 120 кг
 
-ent-PaladinMagazineEMPHE = автозарядник ЭМИ/фугасных 250мм снарядов
-    .desc = Контейнерный 250-мм ракетный автозарядник.
-    .ammo-loader-type = Контейнер (ЭМИ/фугасные)
-    .ammo-loader-caliber = 250 мм
+ent-PaladinMagazineEMPHE = автозарядник ЭМИ-фугасных ракет «Паладина» 250мм
+    .desc = Автозарядник ЭМИ-фугасных 250-мм ракет для «Паладина».
+    .ammo-loader-type = Контейнер (ЭМИ-фугасные)
+    .ammo-loader-caliber = 250мм
     .ammo-loader-weight = 125 кг
 
-ent-PaladinMagazineEMPHEInfinite = автозарядник ЭМИ/фугасных 250мм снарядов
-    .suffix = БЕСКОНЕЧНЫЙ
-    .desc = Контейнерный 250-мм ракетный автозарядник.
-    .ammo-loader-type = Контейнер (ЭМИ/фугасные)
-    .ammo-loader-caliber = 250 мм
+ent-PaladinMagazineEMPHEInfinite = автозарядник ЭМИ-фугасных ракет «Паладина» 250мм
+    .suffix = Бесконечный
+    .desc = Автозарядник ЭМИ-фугасных 250-мм ракет для «Паладина».
+    .ammo-loader-type = Контейнер (ЭМИ-фугасные)
+    .ammo-loader-caliber = 250мм
     .ammo-loader-weight = 125 кг
 
-ent-PaladinMagazineHV = автозарядник высокоскоростных 250мм снарядов
-    .desc = Контейнерный 250-мм ракетный автозарядник.
+ent-PaladinMagazineHV = автозарядник высокоскоростных ракет «Паладина» 250мм
+    .desc = Автозарядник высокоскоростных 250-мм ракет для «Паладина».
     .ammo-loader-type = Контейнер (высокоскоростные)
-    .ammo-loader-caliber = 250 мм
+    .ammo-loader-caliber = 250мм
     .ammo-loader-weight = 118 кг
 
-ent-PaladinMagazineHVInfinite = автозарядник высокоскоростных 250мм снарядов
-    .suffix = БЕСКОНЕЧНЫЙ
-    .desc = Контейнерный 250-мм ракетный автозарядник.
+ent-PaladinMagazineHVInfinite = автозарядник высокоскоростных ракет «Паладина» 250мм
+    .suffix = Бесконечный
+    .desc = Автозарядник высокоскоростных 250-мм ракет для «Паладина».
     .ammo-loader-type = Контейнер (высокоскоростные)
-    .ammo-loader-caliber = 250 мм
+    .ammo-loader-caliber = 250мм
     .ammo-loader-weight = 118 кг
 
-ent-TovekCartridge = управляемая ракета 250 мм (ЭМИ/ОФ)
-    .desc = Одиночная 250-мм управляемая ракета для корабельных пусковых установок.
-    .ammo-loader-type = Ракета (управляемая, ЭМИ/ОФ)
-    .ammo-loader-caliber = 250 мм
+ent-TovekCartridge = 250-мм ЭМИ-фугасная ракета
+    .desc = Одиночная ЭМИ-фугасная ракета ASM-250 для пусковых установок «Товек» и «Паладин».
+    .ammo-loader-type = Ракета (ЭМИ-фугасная)
+    .ammo-loader-caliber = 250мм
     .ammo-loader-weight = 27 кг
 
-ent-MissileCartridge250mm = кумулятивная ракета 250 мм
-    .desc = Одиночная 250-мм кумулятивная ракета для корабельных пусковых установок.
+ent-MissileCartridge250mm = 250-мм кумулятивная ракета
+    .desc = Одиночная кумулятивная ракета ASM-250 для пусковых установок «Товек» и «Паладин».
     .ammo-loader-type = Ракета (кумулятивная)
-    .ammo-loader-caliber = 250 мм
+    .ammo-loader-caliber = 250мм
     .ammo-loader-weight = 28 кг
 
-ent-MissileCartridge250mmHV = высокоскоростная ракета 250 мм
-    .desc = Одиночная 250-мм высокоскоростная ракета для корабельных пусковых установок.
+ent-MissileCartridge250mmHV = 250-мм высокоскоростная ракета
+    .desc = Одиночная высокоскоростная ракета ASM-250 для пусковых установок «Товек» и «Паладин».
     .ammo-loader-type = Ракета (высокоскоростная)
-    .ammo-loader-caliber = 250 мм
+    .ammo-loader-caliber = 250мм
     .ammo-loader-weight = 26 кг

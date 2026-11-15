@@ -1,7 +1,9 @@
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Corvax.TTS;
+using Content.Shared._LuaM.Hearing; // LuaM
 using Robust.Client.Audio;
+using Robust.Client.Player; // LuaM
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -20,6 +22,7 @@ public sealed partial class TTSSystem : EntitySystem
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IResourceManager _res = default!;
     [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private IPlayerManager _player = default!; // LuaM
 
     private ISawmill _sawmill = default!;
 
@@ -85,6 +88,11 @@ public sealed partial class TTSSystem : EntitySystem
     {
         if (ev.IsRadio && !_playRadio)
             return;
+
+        // LuaM-start: deaf creatures hear no voices at all, not even muffled
+        if (HasComp<DeafComponent>(_player.LocalEntity))
+            return;
+        // LuaM-end
 
         if (ev.Data is not { Length: > 0 })
         {

@@ -6,6 +6,6 @@ ent-SpawnPointValet = камердинер
     .desc = { ent-SpawnPointJobBase.desc }
 ent-SpawnPointPrisonGuard = тюремный охранник
     .desc = { ent-SpawnPointJobBase.desc }
-ent-SpawnPointCCServiceWorker = valet
+ent-SpawnPointCCServiceWorker = камердинер
     .desc = { ent-SpawnPointJobBase.desc }
     .suffix = { ent-SpawnPointJobBase.suffix }

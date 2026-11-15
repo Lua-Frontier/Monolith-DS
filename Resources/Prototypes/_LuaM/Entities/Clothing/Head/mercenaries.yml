@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingHelmetHardsuitMercenaryWarlord
-  id: ClothingHelmetHardsuitMercenaryWarlordMk2
+  id: ClothingHelmetHardsuitLuaMAyaks
   name: WL-02 helmet
   description: The helmet of the experimental Warlord suit. Flash immunity and mass scanner support are kept, the plating is thicker.
   categories: [ HideSpawnMenu ]

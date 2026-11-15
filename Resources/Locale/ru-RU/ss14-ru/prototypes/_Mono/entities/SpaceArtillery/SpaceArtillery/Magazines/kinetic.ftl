@@ -1,23 +1,23 @@
-ent-140mmCartridge = снаряд 140мм
-    .desc = Одиночный 140мм картридж для корабельной артиллерии.
-    .ammo-loader-type = Боеприпас
-    .ammo-loader-caliber = 140мм
+ent-140mmCartridge = кумулятивный снаряд 85x680мм
+    .desc = Одиночный кумулятивный снаряд 85x680мм для корабельной артиллерии.
+    .ammo-loader-type = Боеприпас (кумулятивный)
+    .ammo-loader-caliber = 85x680мм
     .ammo-loader-weight = 3.5 кг
 
-ent-140mmCartridgeSACLOS = снаряд 140мм (SACLOS)
-    .desc = Одиночный 140мм (SACLOS) картридж для корабельной артиллерии.
-    .ammo-loader-type = Боеприпас
-    .ammo-loader-caliber = 140мм (SACLOS)
+ent-140mmCartridgeSACLOS = снаряд SACLOS 85x680мм
+    .desc = Одиночный снаряд SACLOS 85x680мм для корабельной артиллерии.
+    .ammo-loader-type = Боеприпас (SACLOS)
+    .ammo-loader-caliber = 85x680мм
     .ammo-loader-weight = 3.6 кг
 
-ent-Magazine140mm = 140мм автозарядник
-    .desc = Автозарядник 140мм контейнерного типа.
-    .ammo-loader-type = Контейнер
-    .ammo-loader-caliber = 140 мм
+ent-Magazine140mm = автозарядник бронебойно-фугасных снарядов 85x680мм
+    .desc = Автозарядник с бесконечным запасом бронебойно-фугасных снарядов 85x680мм. Подходит для корабельной артиллерии.
+    .ammo-loader-type = Контейнер (бронебойно-фугасные)
+    .ammo-loader-caliber = 85x680мм
     .ammo-loader-weight = 55 кг
 
-ent-Magazine140mmSACLOS = 140мм (SACLOS) автозарядник
-    .desc = Автозарядник 140мм (SACLOS) контейнерного типа.
-    .ammo-loader-type = Контейнер
-    .ammo-loader-caliber = 140 мм (SACLOS)
+ent-Magazine140mmSACLOS = автозарядник снарядов SACLOS 85x680мм
+    .desc = Автозарядник со 120 снарядами 85x680мм с полуавтоматическим лазерным наведением по линии визирования. Звучит сложно, но значит лишь, что вы сами ведёте снаряд в полёте. Подходит для корабельной артиллерии.
+    .ammo-loader-type = Контейнер (SACLOS)
+    .ammo-loader-caliber = 85x680мм
     .ammo-loader-weight = 56 кг

@@ -1,0 +1,112 @@
+# LuaWorld - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaWorld Contributors
+# See AGPLv3.txt for details.
+
+- type: nebulaWeather
+  id: NebulaLightning
+  kind: Lightning
+  blocksFtl: true
+  weaponCooldownMultiplier: 1.25
+  shieldLoad: 300
+  radarIcon: /Textures/_Lua/Interface/Radar/nebula_lightning.png
+  empRange: 3.5
+  empEnergy: 4000
+  empDuration: 4
+  empChance: 0.035
+  empPulsesPerTick: 1
+  minEventDelaySeconds: 4
+  maxEventDelaySeconds: 7
+  damageChance: 0.22
+  maxDamagedPerTick: 2
+  damage:
+    types:
+      Shock: 40
+      Blunt: 30
+      Structural: 50
+  mobDamage:
+    types:
+      Shock: 8
+      Blunt: 3
+
+- type: nebulaWeather
+  id: NebulaCorrosion
+  kind: Corrosion
+  blocksFtl: true
+  thrustMultiplier: 0.85
+  shieldLoad: 220
+  radarIcon: /Textures/_Lua/Interface/Radar/nebula_corrosion.png
+  damageChance: 0.25
+  maxDamagedPerTick: 3
+  minEventDelaySeconds: 4
+  maxEventDelaySeconds: 8
+  damage:
+    types:
+      Blunt: 40
+      Structural: 60
+  mobDamage:
+    types:
+      Blunt: 5
+      Caustic: 4
+
+- type: nebulaWeather
+  id: NebulaEmpStorm
+  kind: EmpStorm
+  radioBlackout: true
+  thrustMultiplier: 0.65
+  blocksFtl: true
+  radarIcon: /Textures/_Lua/Interface/Radar/nebula_emp.png
+  empRange: 3.5
+  empEnergy: 5000
+  empDuration: 5
+  empChance: 0.04
+  empPulsesPerTick: 1
+  minEventDelaySeconds: 8
+  maxEventDelaySeconds: 20
+
+- type: nebulaWeather
+  id: NebulaVeil
+  kind: Veil
+  blocksFtl: false
+  radarIcon: /Textures/_Lua/Interface/Radar/nebula_veil.png
+
+- type: nebulaWeather
+  id: NebulaRadiationFog
+  kind: RadiationFog
+  shieldLoad: 200
+  blocksFtl: true
+  radarIcon: /Textures/_Lua/Interface/Radar/nebula_radiation.png
+  radiationIntensity: 4
+  damageChance: 0.22
+  maxDamagedPerTick: 2
+  minEventDelaySeconds: 5
+  maxEventDelaySeconds: 10
+  damage:
+    types:
+      Blunt: 30
+      Structural: 50
+  mobDamage:
+    types:
+      Blunt: 2
+
+- type: nebulaWeather
+  id: NebulaHeatWash
+  kind: HeatWash
+  blocksFtl: true
+  thrustMultiplier: 0.8
+  weaponCooldownMultiplier: 1.5
+  shieldLoad: 240
+  radarIcon: /Textures/_Lua/Interface/Radar/nebula_heat.png
+  damageChance: 0.22
+  maxDamagedPerTick: 2
+  minEventDelaySeconds: 4
+  maxEventDelaySeconds: 8
+  mobTemperatureIncrease: 8
+  damage:
+    types:
+      Heat: 50
+      Blunt: 20
+      Structural: 40
+  mobDamage:
+    types:
+      Heat: 7
+      Blunt: 2

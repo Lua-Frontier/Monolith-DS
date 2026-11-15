@@ -68,6 +68,11 @@
   name: scrap processor machine board
   description: A machine printed circuit board for a scrap processor.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - ColossusMining
+    # LuaM-end
     - type: Sprite
       state: supply
     - type: MachineBoard
@@ -255,6 +260,12 @@
   name: blueprint lithograph machine board
   description: A machine printed circuit board for a blueprint lithograph.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: Sprite
     state: science
   - type: MachineBoard

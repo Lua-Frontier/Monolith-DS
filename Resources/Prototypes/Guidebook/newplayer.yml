@@ -1,39 +1,46 @@
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: NewPlayer
-  name: guide-entry-colossus-home # LuaM: guide-entry-newplayer > guide-entry-colossus-home
-  priority: 0 # LuaM: -3 > 0
+  name: guide-architecture-new-player # LuaM: guidebook architecture v2.1
+  priority: 0 # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Start/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/NewPlayer.xml > /ServerInfo/_LuaM/Guidebook/Start/Index.xml
-  bookRoot: true
-  children: # LuaM: purpose-based guidebook navigation
+  bookRoot: true # LuaM: guidebook architecture v2.1
+  children: # LuaM: scenario-based guidebook navigation
   - BeginnerGuide
   - StartingGear
-  - Bank
-  - SafetyDepositBox
+  - ColossusMoney
   - Hiring
   - Jobs
+  - Species
+  - Writing
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Controls
   name: guide-entry-controls
   text: "/ServerInfo/Guidebook/NewPlayer/Controls/Controls.xml"
   children:
   - Radio
+# LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: Radio
   name: guide-entry-radio
   text: "/ServerInfo/Guidebook/NewPlayer/Controls/Radio.xml"
+# LuaM-end
 
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: CharacterCreation
   name: guide-entry-charactercreation
   text: "/ServerInfo/_LuaM/Guidebook/Start/Equipment.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/CharacterCreation.xml > /ServerInfo/_LuaM/Guidebook/Start/Equipment.xml
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: YourFirstCharacter
   name: guide-entry-yourfirstcharacter
   text: "/ServerInfo/Guidebook/NewPlayer/YourFirstCharacter.xml"
+# LuaM-end

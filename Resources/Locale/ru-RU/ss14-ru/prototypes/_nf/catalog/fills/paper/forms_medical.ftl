@@ -14,5 +14,5 @@ ent-PaperWrittenMedicalFormServiceInvoice = Счет за медицинские
     .suffix = Бумажные шаблоны
     .desc = { ent-Paper.desc }
 
-ent-PaperWrittenMedicalFormReceiptInvoice = medical patient record
-ent-PaperWrittenMedicalFormRelease = medical patient record
+ent-PaperWrittenMedicalFormReceiptInvoice = медицинская карта пациента
+ent-PaperWrittenMedicalFormRelease = медицинская карта пациента

@@ -4,6 +4,11 @@
   name: gas mining drill machine board
   description: A machine printed circuit board for a gas mining drill.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - GasMining
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard

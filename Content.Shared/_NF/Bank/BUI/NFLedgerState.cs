@@ -43,6 +43,7 @@ public enum LedgerEntryType : byte
     StationDepositDonation,
     StationDepositAssetsSold,
     StationDepositOther,
+    AdminDeposit, // LuaM: money added from the admin panel
     // Expense entries
     MailPenalty,
     // Mono Begin
@@ -57,6 +58,7 @@ public enum LedgerEntryType : byte
     StationWithdrawalSupplies,
     StationWithdrawalBounty,
     StationWithdrawalOther,
+    AdminWithdrawal, // LuaM: money taken from the admin panel
     // Utility values
     FirstExpense = MailPenalty,
 }

@@ -8,6 +8,25 @@
   - WeaponShotgunBigLeadyUSSP
   - WeaponRifleAK410USSP
   - WeaponLMGHammerUSSP # LuaM
+  - WeaponSubMachineGunPPShUSSP # LuaM: USSP PPSh
+  - Magazine762x25mmDrumFMJ # LuaM: USSP PPSh
+  - Magazine762x25mmDrumEmpty # LuaM: USSP PPSh
+  - Magazine762x25mmDrumPractice # LuaM: USSP PPSh
+  - Magazine762x25mmDrumIncendiary # LuaM: USSP PPSh
+  - Magazine762x25mmDrumUranium # LuaM: USSP PPSh
+  - Magazine762x25mmDrumRubber # LuaM: USSP PPSh
+  - Magazine762x25mmDrumHP # LuaM: USSP PPSh
+  - Magazine762x25mmDrumRIP # LuaM: USSP PPSh
+  - Magazine762x25mmDrumPlasteelAP # LuaM: USSP PPSh
+  - AmmoBox762x25mmFMJ # LuaM: USSP PPSh
+  - AmmoBox762x25mmPlasteelAP # LuaM: USSP PPSh
+  - AmmoBox762x25mmRubber # LuaM: USSP PPSh
+  - AmmoBox762x25mmIncendiary # LuaM: USSP PPSh
+  - AmmoBox762x25mmPractice # LuaM: USSP PPSh
+  - AmmoBox762x25mmUranium # LuaM: USSP PPSh
+  - AmmoBox762x25mmHP # LuaM: USSP PPSh
+  - AmmoBox762x25mmRIP # LuaM: USSP PPSh
+  - AmmoBox762x25mmBigFMJ # LuaM: USSP PPSh
 
 - type: latheRecipePack
   id: MonoUSSPMiscDynamic

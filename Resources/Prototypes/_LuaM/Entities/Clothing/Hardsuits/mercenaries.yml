@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingOuterHardsuitMercenaryWarlord
-  id: ClothingOuterHardsuitMercenaryWarlordMk2
+  id: ClothingOuterHardsuitLuaMAyaks
   name: PMC WL-02
   description: An experimental, ultra-tech revision of the Warlord suit made for those who go first into a breach. Reinforced plating and an advanced heat sink system keep the wearer on their feet and firing for as long as possible.
   components:
@@ -24,7 +24,7 @@
     blockUnequipWhenAttached: false
     replaceCurrentClothing: true
     clothingPrototypes:
-      head: ClothingHelmetHardsuitMercenaryWarlordMk2
+      head: ClothingHelmetHardsuitLuaMAyaks
       helmetcover: ClothingHeadHelmetCoverBlock
       helmetattachment: ClothingHeadHelmetAttachmentBlock
   - type: StaminaDamageResistance

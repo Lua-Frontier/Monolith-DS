@@ -18,6 +18,12 @@
   spawnGroup: Required
   gridPath: /Maps/_LuaM/POI/camelotLuaM.yml # LuaM: /Maps/_Mono/POI/camelot.yml > /Maps/_LuaM/POI/camelotLuaM.yml
   addComponents:
+  - type: MapRadiusIndicator # LuaM: faction zone on the shuttle map
+    radius: 500
+    color: "#B01340"
+    outlineColor: "#8C191E"
+    fillAlpha: 0.15
+    outlineAlpha: 0.35
   - type: IFF
     color: "#ccaa55"
   - type: WorldGenDistanceCarver
@@ -30,7 +36,7 @@
 
 - type: gameMap
   id: USSPCamelot
-  mapName: 'Freeport Camelot'
+  mapName: 'Станция «Камелот»' # LuaM: 'Freeport Camelot' > 'Станция «Камелот»'
   mapPath: /Maps/_LuaM/POI/camelotLuaM.yml # LuaM: /Maps/_Mono/POI/camelot.yml > /Maps/_LuaM/POI/camelotLuaM.yml
   minPlayers: 0
   stations:
@@ -40,10 +46,10 @@
         - type: VesselMusic
           ambientMusicPrototype: CamelotMusic
         - type: VesselInfo
-          description: "A rickety old station that has been cobbled together over many many cycles..."
+          description: "Ветхая станция, циклами собиравшаяся из того, что было под рукой. Стала опорной базой экспедиционного контингента СССП, отрезанного от Союза в секторе Колосс. Здесь же базируется ЧВК «Вайпер»." # LuaM: "A rickety old station that has been cobbled together over many many cycles..." > translated
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Freeport Camelot'
+          mapNameTemplate: 'Станция «Камелот»' # LuaM: 'Freeport Camelot' > 'Станция «Камелот»'
         - type: ExtraStationInformation
           icon:
             sprite: _NF/Structures/Storage/Crates/secure_ammo.rsi

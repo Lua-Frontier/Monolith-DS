@@ -14,4 +14,4 @@
   jobEntity: PlayerBorgTSF
   applyTraits: false
   guides:
-  - TSFMC_Entry
+  - ColossusTSFRoles # LuaM: complete organization help

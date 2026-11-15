@@ -7,6 +7,11 @@
   spawnGroup: Required
   gridPath: /Maps/_LuaM/POI/MedicalLuaM.yml
   addComponents:
+  - type: MapRadiusIndicator
+    radius: 500
+    color: "#00b7eb"
+    fillAlpha: 0.15
+    outlineAlpha: 0.35
   - type: IFF
     color: "#00b7eb"
   - type: Company
@@ -16,17 +21,19 @@
 
 - type: gameMap
   id: Medical
-  mapName: 'Medical Dispatch'
+  mapName: 'Медицинский Центр'
   mapPath: /Maps/_LuaM/POI/MedicalLuaM.yml
   minPlayers: 0
   stations:
     Medical:
       stationProto: RecordsFrontierOutpost
       gridComponents:
+      - type: VesselInfo
+        description: "Медицинский центр Колосса и база поисково-спасательных бригад. Здесь лечат всех, кто сумел долететь."
       - type: CyberpsychosisBlocker # no cyberpsychosis on the station
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Medical Dispatch'
+          mapNameTemplate: 'Медицинский Центр'
         - type: ExtraStationInformation
           icon:
             sprite: _NF/Markers/jobs.rsi

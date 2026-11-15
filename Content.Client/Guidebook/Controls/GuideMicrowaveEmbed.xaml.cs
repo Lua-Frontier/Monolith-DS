@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Numerics; // LuaM: compact machine icons
 using Content.Client.Guidebook.Richtext;
 using Content.Client.Message;
 using Content.Client.UserInterface.ControlExtensions;
@@ -87,7 +88,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
 
         RepresentedPrototype = entity; // Lua
 
-        IconContainer.AddChild(new GuideEntityEmbed(recipe.Result, false, false));
+        IconContainer.AddChild(new GuideEntityEmbed(recipe.Result, false, false, compact: true)); // LuaM
         ResultName.SetMarkup(Loc.GetString("guidebook-microwave-recipe-name-display", ("amount", recipe.ResultCount), ("name", entity.Name))); // Mono
         ResultDescription.SetMarkup(entity.Description);
     }
@@ -98,7 +99,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
         {
             var ingredient = _prototype.Index<EntityPrototype>(product);
 
-            IngredientsGrid.AddChild(new GuideEntityEmbed(product, false, false));
+            var icon = new GuideEntityEmbed(product, false, false, compact: true); // LuaM: inventory-sized icon
 
             // solid name
 
@@ -110,7 +111,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
             solidNameLabel.SetMessage(solidNameMsg);
             solidNameLabel.LinkedPrototype = ingredient; // Lua
 
-            IngredientsGrid.AddChild(solidNameLabel);
+
 
             // solid quantity
 
@@ -121,7 +122,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
             var solidQuantityLabel = new RichTextLabel();
             solidQuantityLabel.SetMessage(solidQuantityMsg);
 
-            IngredientsGrid.AddChild(solidQuantityLabel);
+            AddIngredientRow(icon, solidNameLabel, solidQuantityLabel); // LuaM
         }
     }
 
@@ -142,7 +143,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
             liquidColorLabel.HorizontalAlignment = Control.HAlignment.Center;
             liquidColorLabel.LinkedPrototype = reagent; // Lua
 
-            IngredientsGrid.AddChild(liquidColorLabel);
+
 
             // liquid name
 
@@ -154,7 +155,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
             liquidNameLabel.SetMessage(liquidNameMsg);
             liquidNameLabel.LinkedPrototype = reagent; // Lua
 
-            IngredientsGrid.AddChild(liquidNameLabel);
+
 
             // liquid quantity
 
@@ -165,9 +166,26 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
             var liquidQuantityLabel = new RichTextLabel();
             liquidQuantityLabel.SetMessage(liquidQuantityMsg);
 
-            IngredientsGrid.AddChild(liquidQuantityLabel);
+            AddIngredientRow(liquidColorLabel, liquidNameLabel, liquidQuantityLabel); // LuaM
         }
     }
+
+    // LuaM-start: the name gets only the remaining row width and can wrap.
+    private void AddIngredientRow(Control icon, Control name, Control quantity)
+    {
+        icon.SetWidth = 32;
+        icon.VerticalAlignment = VAlignment.Center;
+        name.HorizontalExpand = true;
+        name.HorizontalAlignment = HAlignment.Stretch;
+        name.VerticalAlignment = VAlignment.Center;
+        quantity.VerticalAlignment = VAlignment.Center;
+        var row = new BoxContainer { HorizontalExpand = true, MinHeight = 32, SeparationOverride = 6 };
+        row.AddChild(icon);
+        row.AddChild(name);
+        row.AddChild(quantity);
+        IngredientsList.AddChild(row);
+    }
+    // LuaM-end
 
     private void GenerateIngredients(FoodRecipePrototype recipe)
     {
@@ -218,7 +236,11 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
     // Frontier: convenience function to add a machine to the recipe
     private void AppendMachineTexture(string path, string state)
     {
-        var machineTexture = new TextureRect();
+        var machineTexture = new TextureRect // LuaM: machine previews use compact fixed slots too.
+        {
+            SetSize = new Vector2(24, 24),
+            Stretch = TextureRect.StretchMode.KeepAspectCentered,
+        };
         machineTexture.Texture = _sprite.Frame0(new SpriteSpecifier.Rsi(new ResPath(path), state));
         Machines.AddChild(machineTexture);
     }

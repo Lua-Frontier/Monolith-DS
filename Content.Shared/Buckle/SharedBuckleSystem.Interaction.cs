@@ -141,7 +141,8 @@ public abstract partial class SharedBuckleSystem
         // Add unstrap verbs for every strapped entity.
         foreach (var entity in component.BuckledEntities)
         {
-            var buckledComp = Comp<BuckleComponent>(entity);
+            if (!TryComp<BuckleComponent>(entity, out var buckledComp)) // LuaM: the client can know a strapped entity before its state arrives
+                continue; // LuaM
 
             if (!_interaction.InRangeUnobstructed(args.User, args.Target, range: buckledComp.Range))
                 continue;

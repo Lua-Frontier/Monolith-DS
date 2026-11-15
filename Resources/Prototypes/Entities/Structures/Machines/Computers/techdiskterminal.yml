@@ -5,6 +5,12 @@
   name: research disk terminal # mono
   description: A terminal used to print out research point disks. # mono
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: EdgeConnection # LuaM
     allowedDirections: None
   - type: Sprite

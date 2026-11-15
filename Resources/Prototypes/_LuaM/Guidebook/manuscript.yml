@@ -2,40 +2,22 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ColossusAtmos
-  name: guide-entry-colossus-atmos
+  name: guide-architecture-colossus-atmos # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Atmos.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/Index.xml
   priority: 30 # LuaM: 0 > 30 (section order)
-  children: # LuaM: purpose-based guidebook navigation
-  - GasMining
-  - Pipes
-  - Pumps
-  - MixingAndFiltering
-  - Thermomachines
-  - ColossusGasTritium
-  - ColossusGasFrezon
-  - ColossusGasBZ
-  - ColossusGasHealium
-  - ColossusGasNitrium
-  - ColossusGasPluoxium
-  - PressureRegulator
-  - DeviceMonitoringAndControl
-# LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ColossusPower
-  name: guide-entry-colossus-power
+  name: guide-architecture-colossus-power # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Engineering/Power/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Power.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Power/Index.xml
   priority: 10 # LuaM: 0 > 10 (section order)
 
-  children: # LuaM: purpose-based guidebook navigation
-  - Ramping
-# LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: ColossusCommodities
-  name: guide-entry-colossus-commodities
+  name: guide-architecture-colossus-commodities # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Engineering/Commodities.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/Commodities.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Commodities.xml
   priority: 50 # LuaM: 0 > 50 (section order)
 # LuaM-end
@@ -103,3 +85,8 @@
   text: "/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasPluoxium.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Industry/GasPluoxium.xml > /ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasPluoxium.xml
   priority: 110 # LuaM: 0 > 110 (section order)
 # LuaM-end
+
+- type: guideEntry
+  id: ColossusReactorParts
+  name: guide-architecture-colossus-reactor-parts # LuaM: guidebook architecture v2.1
+  text: /ServerInfo/_LuaM/Guidebook/Engineering/ReactorParts.xml

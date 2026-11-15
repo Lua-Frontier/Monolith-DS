@@ -1,5 +1,6 @@
 using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared.Climbing.Components;
+using Content.Shared.Disposal.Components; // LuaM
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
@@ -20,6 +21,9 @@ public sealed class CEZLevelClimbingSystem : EntitySystem
     private void OnPreventCollide(Entity<CEZPhysicsComponent> ent, ref PreventCollideEvent args)
     {
         if (!TryComp<PhysicsComponent>(ent, out var physics) || physics.BodyStatus != BodyStatus.InAir)
+            return;
+
+        if (HasComp<DisposalUnitComponent>(args.OtherEntity) && !HasComp<CEZMapComponent>(Transform(ent).MapUid)) // LuaM
             return;
 
         if (HasComp<ClimbableComponent>(args.OtherEntity))

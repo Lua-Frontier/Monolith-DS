@@ -12,6 +12,11 @@
   - BallisticArtilleryTier1HP
   description: A large, twin-barrelled scatter cannon, firing bursts of canister shot to shred any incoming missiles or potential boarders. Uses a self loading mechanism similar to the anaconda handgun.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 250
   - type: Sprite
@@ -81,6 +86,11 @@
   - BallisticArtilleryTier3HP
   description: A heavy 57mm autocannon of syndicate design, created during the corporate war. Made for shattering opponent destroyers. Uses a self loading mechanism similar to the anaconda handgun.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 2000
   - type: Sprite
@@ -263,6 +273,11 @@
   - BallisticArtilleryTier5HP
   description: A heavy artillery gun of syndicate origin, the leviathan is tyrannic testiment of Syndicate ingenuity, designed to send a message. Able to crack NanoTrasen battleships, and small fighters in a single shell. Loads with a similar mechanism as the anaconda handgun.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
 # LuaM-start: can be unanchored
   - type: Anchorable
     delay: 30

@@ -1,0 +1,131 @@
+# USSP PPSh and its 7.62x25mm ammo, unlocked by the UsspPPSh technology.
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponSubMachineGunPPShUSSP
+  result: WeaponSubMachineGunPPSh
+  categories:
+  - SMGs
+  - Ballistic
+  - Weapons
+  materials:
+    Steel: 1200
+    Plasteel: 400
+    Plastic: 400
+
+# Drums: the pistol caliber SMG magazine recipes scaled to 71 rounds (x1.8)
+
+- type: latheRecipe
+  parent: BaseAmmoFMJPistolCaliberSubMachineGunMagazineRecipe
+  id: Magazine762x25mmDrumFMJ
+  result: Magazine762x25mmDrumFMJ
+  materials:
+    Steel: 675
+
+- type: latheRecipe
+  parent: BaseAmmoEmptyPistolCaliberSubMachineGunMagazineRecipe
+  id: Magazine762x25mmDrumEmpty
+  result: Magazine762x25mmDrumEmpty
+  materials:
+    Steel: 67
+
+- type: latheRecipe
+  parent: BaseAmmoPracticePistolCaliberSubMachineGunMagazineRecipe
+  id: Magazine762x25mmDrumPractice
+  result: Magazine762x25mmDrumPractice
+  materials:
+    Steel: 67
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryPistolCaliberSubMachineGunMagazineRecipe
+  id: Magazine762x25mmDrumIncendiary
+  result: Magazine762x25mmDrumIncendiary
+  materials:
+    Steel: 135
+    Plastic: 180
+    Plasma: 360
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumPistolCaliberSubMachineGunMagazineRecipe
+  id: Magazine762x25mmDrumUranium
+  result: Magazine762x25mmDrumUranium
+  materials:
+    Steel: 225
+    UraniumDepleted: 135
+
+- type: latheRecipe
+  parent: BaseAmmoRubberPistolCaliberSubMachineGunMagazineRecipe
+  id: Magazine762x25mmDrumRubber
+  result: Magazine762x25mmDrumRubber
+  materials:
+    Steel: 90
+    Plastic: 585
+
+- type: latheRecipe
+  parent: BaseAmmoHPPistolCaliberSubMachineGunMagazineRecipe
+  id: Magazine762x25mmDrumHP
+  result: Magazine762x25mmDrumHP
+  materials:
+    Steel: 675
+
+- type: latheRecipe
+  parent: BaseAmmoRIPPistolCaliberSubMachineGunMagazineRecipe
+  id: Magazine762x25mmDrumRIP
+  result: Magazine762x25mmDrumRIP
+  materials:
+    Steel: 335
+    Plasteel: 340
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPPistolCaliberSubMachineGunMagazineRecipe
+  id: Magazine762x25mmDrumPlasteelAP
+  result: Magazine762x25mmDrumPlasteelAP
+  materials:
+    Steel: 90
+    Plasteel: 405
+
+# Ammo boxes
+
+- type: latheRecipe
+  parent: BaseAmmoFMJPistolCaliberAmmoBoxRecipe
+  id: AmmoBox762x25mmFMJ
+  result: AmmoBox762x25mmFMJ
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPPistolCaliberAmmoBoxRecipe
+  id: AmmoBox762x25mmPlasteelAP
+  result: AmmoBox762x25mmPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoRubberPistolCaliberAmmoBoxRecipe
+  id: AmmoBox762x25mmRubber
+  result: AmmoBox762x25mmRubber
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryPistolCaliberAmmoBoxRecipe
+  id: AmmoBox762x25mmIncendiary
+  result: AmmoBox762x25mmIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoPracticePistolCaliberAmmoBoxRecipe
+  id: AmmoBox762x25mmPractice
+  result: AmmoBox762x25mmPractice
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumPistolCaliberAmmoBoxRecipe
+  id: AmmoBox762x25mmUranium
+  result: AmmoBox762x25mmUranium
+
+- type: latheRecipe
+  parent: BaseAmmoHPPistolCaliberAmmoBoxRecipe
+  id: AmmoBox762x25mmHP
+  result: AmmoBox762x25mmHP
+
+- type: latheRecipe
+  parent: BaseAmmoRIPPistolCaliberAmmoBoxRecipe
+  id: AmmoBox762x25mmRIP
+  result: AmmoBox762x25mmRIP
+
+- type: latheRecipe
+  parent: BaseAmmoFMJPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox762x25mmBigFMJ
+  result: AmmoBox762x25mmBigFMJ

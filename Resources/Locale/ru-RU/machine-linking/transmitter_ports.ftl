@@ -1,4 +1,4 @@
-signal-port-name-pressed = Нажато
+﻿signal-port-name-pressed = Нажато
 signal-port-description-pressed = Этот порт задействуется всякий раз, когда передатчик активируется.
 signal-port-name-on-transmitter = Вкл
 signal-port-description-on-transmitter = Этот порт задействуется всякий раз, когда передатчик включён.
@@ -46,3 +46,6 @@ signal-port-name-power-charging = Зарядка
 signal-port-description-power-charging = Этот порт задействуется с высоким уровнем сигнала когда батарея заряжается, и с низким когда нет.
 signal-port-name-power-discharging = Разрядка
 signal-port-description-power-discharging = Этот порт задействуется с высоким уровнем сигнала когда батарея разряжается, и с низким когда нет.
+
+signal-port-name-item-detected = Обнаружен предмет
+signal-port-description-item-detected = Этот порт срабатывает каждый раз, когда передатчик обнаруживает предмет.

@@ -100,7 +100,7 @@
     # LuaM-start: contextual help uses the Colossus guide.
     - type: GuideHelp
       guides:
-      - ColossusPower
+      - ColossusTEG # LuaM: help follows the dedicated operation guide
     # LuaM-end
     - type: StealTarget
       stealGroup:
@@ -163,7 +163,7 @@
     # LuaM-start: contextual help uses the Colossus guide.
     - type: GuideHelp
       guides:
-      - ColossusPower
+      - ColossusTEG # LuaM: help follows the dedicated operation guide
     # LuaM-end
 
     # functionality

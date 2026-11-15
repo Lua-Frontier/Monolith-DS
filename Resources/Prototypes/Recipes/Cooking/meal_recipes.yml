@@ -429,7 +429,7 @@
   name: banana bread recipe
   result: FoodBreadBanana
   time: 15
-  group: LoafCakes
+  group: Cake # LuaM: use the existing cooking reference group
   solids:
     FoodDough: 1
     FoodBanana: 1

@@ -1,16 +1,23 @@
 # LuaCorp - AGPLv3. See AGPLv3.txt.
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: ColossusActivities
-  name: guide-entry-colossus-activities
+  name: guide-architecture-colossus-activities # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Activities/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/World/Activities.xml > /ServerInfo/_LuaM/Guidebook/Activities/Index.xml
   priority: 4
-  bookRoot: true
-  children:
-  - ColossusMining
-  - ColossusBotany
+  bookRoot: false # LuaM: guidebook architecture v2.1
+  children: # LuaM: scenario-based guidebook navigation
   - CargoHauling
+  - ColossusCourier
   - LuaMContraband
   - LuaMDroneLoot
-  - Expeditions
+  - ColossusCommodities
+# LuaM-end
+
+# LuaM-start: maintained guidebook navigation.
+- type: guideEntry
+  id: ColossusCourier
+  name: guide-architecture-colossus-courier # LuaM: guidebook architecture v2.1
+  text: /ServerInfo/_LuaM/Guidebook/Activities/Courier.xml
+  priority: 35
 # LuaM-end

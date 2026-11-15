@@ -1,0 +1,27 @@
+# Explosive 12.7x99mm for the CS-12 "Burner". Made like the 6.8x52mm plasma rounds (steel, plastitanium instead of
+# depleted uranium, and plasma), scaled to the 12.7x99mm magazine (10 rounds) and box (30 rounds) base costs.
+# Unlocked by the Vanguard research RogueHeavyWeapons, together with the Burner itself.
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: Magazine127x99mmExplosive
+  categories:
+  - Ammo
+  materials:
+    Steel: 575
+    Plastitanium: 150
+  reagents:
+    Plasma: 60
+  result: Magazine127x99mmExplosive
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: AmmoBox127x99mmExplosive
+  categories:
+  - Ammo
+  materials:
+    Steel: 1725
+    Plastitanium: 450
+  reagents:
+    Plasma: 180
+  result: AmmoBox127x99mmExplosive

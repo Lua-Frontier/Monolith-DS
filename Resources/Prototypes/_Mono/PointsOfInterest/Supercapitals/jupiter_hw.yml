@@ -21,15 +21,18 @@
 
 - type: gameMap
   id: Jupiter_HW
-  mapName: 'PDV Jupiter'
+  mapName: 'Крейсер AN-474 «Юпитер»' # LuaM: 'PDV Jupiter' > 'Крейсер AN-474 «Юпитер»'
   mapPath: /Maps/_Mono/Supercapitals/jupiter_hw.yml
   minPlayers: 0
   stations:
     Jupiter_HW:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Флагманский крейсер Авангарда Нордфолла: мобильная база с ангарами для мехов и системой обороны. Для боя с другими кораблями огневой мощи у него немного."
       stationProto: RecordsFrontierOutpostCargo
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'PDV Jupiter Class Carrier'
+          mapNameTemplate: 'Крейсер AN-474 «Юпитер»' # LuaM: 'PDV Jupiter Class Carrier' > 'Крейсер AN-474 «Юпитер»'
         - type: ExtraStationInformation
           icon: /Textures/_NF/Interface/Pirate/piratelogo.png
           stationSubtext: 'frontier-lobby-jupiter-subtext'

@@ -21,6 +21,9 @@ using Robust.Shared.Timing;
 using Content.Server._NF.Traits.Assorted; // Frontier
 using Content.Server._LuaM.Cyberware; // LuaM
 using Content.Shared._LuaM.Cyberware; // LuaM
+using Content.Shared._LuaM.Traits; // LuaM
+using Content.Shared._LuaM.Medical; // LuaM
+using Content.Shared.FixedPoint; // LuaM
 
 // Shitmed Change
 using Content.Shared.Body.Part;
@@ -296,8 +299,58 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
             message.HumanityMax = max;
             message.HumanityLeft = max - _humanity.GetUsedHumanity(target);
         }
+
+        // the chemical dependency of the scanned person
+        if (TryComp<ChemicalDependencyComponent>(target, out var dependency) && dependency.Reagent is { } dependencyReagent)
+            message.DependencyReagent = dependencyReagent;
+
+        // damage of every damaged body part, so the window lists them without clicking each one
+        if (body != null)
+            message.PartDamage = GetPartDamage(target);
+
+        // reagents in the bloodstream
+        if (bloodstream != null
+            && _solutionContainerSystem.ResolveSolution(target, bloodstream.ChemicalSolutionName,
+                ref bloodstream.ChemicalSolution, out var chemicals))
+        {
+            message.BloodChemicals = new Dictionary<string, FixedPoint2>();
+            foreach (var (reagent, quantity) in chemicals.Contents)
+            {
+                if (quantity <= 0)
+                    continue;
+
+                message.BloodChemicals.TryGetValue(reagent.Prototype, out var amount);
+                message.BloodChemicals[reagent.Prototype] = amount + quantity;
+            }
+        }
         // LuaM-end
 
         _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, message);
     }
+
+    // LuaM-start
+    private List<HealthAnalyzerPartDamage> GetPartDamage(EntityUid target)
+    {
+        var result = new List<HealthAnalyzerPartDamage>();
+
+        foreach (var (partUid, partComp) in _bodySystem.GetBodyChildren(target))
+        {
+            if (_bodySystem.GetTargetBodyPart(partComp) is not { } targetPart
+                || !TryComp<DamageableComponent>(partUid, out var damageable)
+                || damageable.TotalDamage <= 0)
+                continue;
+
+            var damage = new Dictionary<string, FixedPoint2>();
+            foreach (var (type, amount) in damageable.Damage.DamageDict)
+            {
+                if (amount > 0)
+                    damage[type] = amount;
+            }
+
+            result.Add(new HealthAnalyzerPartDamage(targetPart, damage));
+        }
+
+        return result;
+    }
+    // LuaM-end
 }

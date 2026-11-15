@@ -18,6 +18,12 @@
   name: autosurgeon (dermal armor) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonDermalArmor
   - type: StaticPrice
@@ -51,6 +57,12 @@
   name: autosurgeon (platelet factories) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonPlateletFactories
   - type: StaticPrice
@@ -87,6 +99,12 @@
   name: MMC autosurgeon (platelet factories Mk II) flatpack
   description: A flatpack used for constructing a MMC autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonPlateletFactoriesMieyo
   - type: StaticPrice
@@ -123,6 +141,12 @@
   name: PDV autosurgeon (platelet factories Mk III) flatpack
   description: A flatpack used for constructing a PDV autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonPlateletFactoriesPDV
   - type: StaticPrice
@@ -149,6 +173,12 @@
   name: autosurgeon (reflective dermal armor) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonDermalArmorReflective
   - type: StaticPrice

@@ -1,10 +1,10 @@
 ent-ClothingOuterHardsuitUsspL27 = USSP L-27 тактический костюм
     .desc = Стандартный боевой костюм морских операций USSP.
-ent-ClothingOuterHardsuitUsspL10 = USSP L-10 lightsuit
-    .desc = Старая модель боевого костюма USSP, всё ещё используемая на передовой.
-ent-ClothingOuterHardsuitUsspL10A = USSP L-10-A lightsuit
-    .desc = Старая модель боевого костюма USSP, всё ещё используемая на передовой.
-ent-ClothingOuterHardsuitUsspM10 = USSP M-10 scoutsuit
+ent-ClothingOuterHardsuitUsspL10 = лёгкий костюм СССП L-10
+    .desc = Старая модель боевого костюма СССП, всё ещё используемая на передовой.
+ent-ClothingOuterHardsuitUsspL10A = лёгкий костюм СССП L-10-A
+    .desc = Старая модель боевого костюма СССП, всё ещё используемая на передовой.
+ent-ClothingOuterHardsuitUsspM10 = разведывательный костюм СССП M-10
     .desc = Новый прототип боевого костюма, использующий старый L-10 в качестве основы. Имеет встроенный масс-сканер в шлеме.
 ent-ClothingOuterHardsuitUsspL30 = парадный скафандр комиссара USSP L-30
     .desc = Парадный скафандр с улучшенной мобильностью и облегчёнными бронепластинами — для быстрой передачи приказов на передовой (или чтобы не вспотеть на параде).

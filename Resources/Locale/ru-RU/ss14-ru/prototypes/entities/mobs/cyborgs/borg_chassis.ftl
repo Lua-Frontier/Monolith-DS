@@ -18,5 +18,5 @@ ent-BorgChassisSyndicateSaboteur = саботажный киборг Синди�
     .desc = Изящный инженерный киборг, оснащённый модулями скрытности. Проектор-хамелеон позволяет ему маскироваться под киборга Nanotrasen.
 ent-BorgChassisSelectable = { ent-BaseBorgChassisNT }
     .desc = { ent-BaseBorgChassisNT.desc }
-ent-BorgChassisDerelict = derelict cyborg
-    .desc = A man-machine hybrid that assists in station activity. This one is in a state of great disrepair.
+ent-BorgChassisDerelict = заброшенный киборг
+    .desc = Гибрид человека и машины, помогающий в работе станции. Этот в очень плачевном состоянии.

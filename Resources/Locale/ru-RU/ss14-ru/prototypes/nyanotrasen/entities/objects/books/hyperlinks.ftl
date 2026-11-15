@@ -28,5 +28,5 @@ ent-HyperlinkBookHacking = руководство по взлому
     .desc = Только для экстренного использования.
 ent-HyperlinkBookAtmos = руководство по атмосфере
     .desc = Как сделать так, чтобы всем хватало воздуха для дыхания.
-ent-HyperlinkBookSpaceLaw = space law
-    .desc = A big book of laws for space courts.
+ent-HyperlinkBookSpaceLaw = космический закон
+    .desc = Большая книга законов для космических судов.

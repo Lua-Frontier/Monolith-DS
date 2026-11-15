@@ -18,6 +18,13 @@
                 <!-- Far Horizons start -->
                 <CheckBox Name="RenderStarSystemCheckBox" Text="{Loc 'ui-options-render-star-system'}" />
                 <!-- Far Horizons end -->
+                <!-- Lua start -->
+                <ui:OptionDropDown Name="DropDownAmbientSpaceQuality" Title="{Loc 'ui-options-ambient-space-label'}" />
+                <CheckBox Name="AmbientSpaceLayerLowerCheckBox" Text="{Loc 'ui-options-ambient-space-layer-lower'}" />
+                <CheckBox Name="AmbientSpaceLayerMidCheckBox" Text="{Loc 'ui-options-ambient-space-layer-mid'}" />
+                <CheckBox Name="AmbientSpaceLayerUpperCheckBox" Text="{Loc 'ui-options-ambient-space-layer-upper'}" />
+                <ui:OptionSlider Name="AmbientSpaceDensitySlider" Title="{Loc 'ui-options-ambient-space-density'}" />
+                <!-- Lua end -->
 
                 <!-- Interface -->
                 <Label Text="{Loc 'ui-options-interface-label'}" StyleClasses="LabelKeyText"/>

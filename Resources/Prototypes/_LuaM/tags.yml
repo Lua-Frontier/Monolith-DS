@@ -9,6 +9,9 @@
   id: Cartridge9x19mmRubber
 
 - type: Tag
+  id: Cartridge762x25mmFMJ
+
+- type: Tag
   id: ConstructionLoot
 
 - type: Tag
@@ -27,10 +30,19 @@
   id: GrenadeLauncher
 
 - type: Tag
+  id: Magazine762x25mmBox
+
+- type: Tag
+  id: Magazine762x25mmDrum
+
+- type: Tag
   id: ScienceDevice
 
 - type: Tag
   id: TrashBagWhitelist
+
+- type: Tag
+  id: VehicleSmashIgnore
 
 - type: Tag
   id: XenoArtifact

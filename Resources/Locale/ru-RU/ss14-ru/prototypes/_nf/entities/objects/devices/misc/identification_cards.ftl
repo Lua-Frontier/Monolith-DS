@@ -52,5 +52,5 @@ ent-NFJanitorIDCard = ID-карта уборщика
     .desc = { ent-IDCardStandard.desc }
 ent-DocIDCard = ID-карта врача
     .desc = { ent-IDCardStandard.desc }
-ent-CCServiceWorkerNFIDCard = colossus sector service ID card
-    .desc = An identification card belonging to a service worker in the Colossus Sector.
+ent-CCServiceWorkerNFIDCard = ID карта работника сервиса сектора Колосс
+    .desc = Идентификационная карта работника сервиса в секторе Колосс.

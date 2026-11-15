@@ -4,6 +4,12 @@
   name: TSF WJY-21X "Leuko" implant suite
   description: An experimental piece of cyberware developed under contract by Erebus HI that is wired into the central nervous system. Equipped with an experimental reverse-engineered slower-recharging design of a MMC sandevistan.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Cybernetics
   - type: Sprite
     sprite: _Mono/Objects/Misc/cybernetics.rsi
@@ -21,6 +27,12 @@
   name: TSF KR-22 "Zenit" implant suite
   description: A highly experimental piece of cyberware developed in some hellish TSF blacksite that is wired into the central nervous system. Allows the user to do a short localized teleport to any position in their line of sight.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Cybernetics
   - type: Sprite
     sprite: _Mono/Objects/Misc/cybernetics.rsi
@@ -38,6 +50,12 @@
   name: PD-VI LS-210 IAS
   description: A cybernetic organ that replaces the lungs with a suite of filters and other devices. Not enough to keep you breathing in space, but filters out toxic gases and makes you need a little less to breathe.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Tag # LuaM: can not be stashed in a safety deposit box
     tags:
     - SafetyDepositBlacklist
@@ -80,6 +98,12 @@
   name: PD-VI VV/KE prosthetic heart
   description: A fast-pumping compact artifical heart. Can process a lot of reagents at once, and lets you take more damage before going down, but lowers your stamina and processes medicine slower.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Tag # LuaM: can not be stashed in a safety deposit box
     tags:
     - SafetyDepositBlacklist
@@ -133,6 +157,12 @@
   name: MMC EVT-001 "Sakimoto" neural implant # LuaM: replacement heart > neural implant
   description: A strange piece of cybernetic hardware wired into the central nervous system. The exact manner of how is unknown, but it allows the user to channel a form of latent energy into a single hit.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Cybernetics
   - type: Sprite
     sprite: _Mono/Objects/Misc/cybernetics.rsi

@@ -4,6 +4,11 @@
   name: nuclear reactor monitor computer board
   description: A computer printed circuit board for a nuclear reactor monitor.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - ShipyardNFROperation
+    # LuaM-end
     - type: Sprite
       state: cpu_engineering
     - type: ComputerBoard

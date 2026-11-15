@@ -3,7 +3,7 @@
   weight: 0.5
   name: mono-chimera-tsf-pdv-title
   description: mono-chimera-tsf-pdv-description
-  showInVote: true
+  showInVote: false # LuaM: true > false, chimeras are useless as antags, only Standard and Legacy go to the vote
   rules:
   - NFAdventure
   - BasicStationEventScheduler
@@ -16,6 +16,7 @@
   - LuaMChimeraSTCShuttleSpawnerSchedulerTier2Half
   - MonoMonolithicEventsScheduler
   - LuaMSectorAnomalyScheduler # LuaM: sector darkness or brightness, about once per 3-4 shifts
+  - LuaMNebulaShift # hazardous nebulae pass their weather to harmless ones every 40-60 minutes
   - LuaMMonolithFragmentLargeScheduler # the huge monolith fragment, once per shift at 1:30
   - ManualPortstrikeTsfPdv
   - HalcyonBiodome

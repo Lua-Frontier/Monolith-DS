@@ -1,0 +1,371 @@
+# Medium explosion
+
+- type: entity
+  parent: ExplosionEffectGrenade
+  id: ExplosionEffectLuaMMedium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    scale: 1.8, 1.8
+  - type: ParticleEmitter
+    effect: ExplosionFlashLuaMMedium
+
+- type: entity
+  id: ExplosionEffectLuaMMediumShockWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.6
+  - type: ExplosionShockWave
+    falloffPower: 28
+
+- type: entity
+  id: ExplosionEffectLuaMMediumEmbers
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 1.5
+  - type: ParticleEmitter
+    effect: ExplosionEmbersLuaMMedium
+
+- type: entity
+  id: ExplosionEffectLuaMMediumGlowingEmbers
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 3.2
+  - type: ParticleEmitter
+    effect: ExplosionGlowingEmbersLuaMMedium
+
+# Large explosion
+
+- type: entity
+  parent: ExplosionEffectGrenade
+  id: ExplosionEffectLuaMLarge
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    scale: 3, 3
+  - type: TimedDespawn
+    lifetime: 0.8
+  - type: ParticleEmitter
+    effect: ExplosionFlashLuaMLarge
+
+- type: entity
+  id: ExplosionEffectLuaMLargeShockWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.7
+  - type: ExplosionShockWave
+    falloffPower: 18
+
+- type: entity
+  id: ExplosionEffectLuaMLargeEmbers
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 1.8
+  - type: ParticleEmitter
+    effect: ExplosionEmbersLuaMLarge
+
+- type: entity
+  id: ExplosionEffectLuaMLargeGlowingEmbers
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 3.8
+  - type: ParticleEmitter
+    effect: ExplosionGlowingEmbersLuaMLarge
+
+# Secondary blast of the chain, client-side only
+
+- type: entity
+  parent: ExplosionEffectGrenade
+  id: ExplosionEffectLuaMChain
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    scale: 1.2, 1.2
+  - type: ParticleEmitter
+    effect: ExplosionFlashLuaMChain
+
+- type: entity
+  id: ExplosionEffectLuaMChainEmbers
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 1.2
+  - type: ParticleEmitter
+    effect: ExplosionEmbersLuaMChain
+
+- type: particleEffect
+  id: ExplosionFlashLuaMMedium
+  renderLayer: 5
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: soft_dot_big
+  shader: unshaded
+  colorOverLifetime:
+  - time: 0.0
+    color: "#FFFFFFFF"
+  - time: 0.15
+    color: "#FFE088FF"
+  - time: 0.4
+    color: "#FF550066"
+  - time: 1.0
+    color: "#00000000"
+  sizeOverLifetime:
+  - time: 0.0
+    value: 0.4
+  - time: 0.15
+    value: 4.4
+  - time: 1.0
+    value: 9
+  lifetime: 0.32
+  speed: 0
+  particleSize: 1.5
+  emissionRate: 0
+  maxCount: 1
+  burst: true
+  spreadAngle: 0
+  emitAngle: 0
+  shape:
+    type: Point
+
+- type: particleEffect
+  id: ExplosionFlashLuaMLarge
+  renderLayer: 5
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: soft_dot_big
+  shader: unshaded
+  colorOverLifetime:
+  - time: 0.0
+    color: "#FFFFFFFF"
+  - time: 0.15
+    color: "#FFE088FF"
+  - time: 0.4
+    color: "#FF550066"
+  - time: 1.0
+    color: "#00000000"
+  sizeOverLifetime:
+  - time: 0.0
+    value: 0.7
+  - time: 0.15
+    value: 7.7
+  - time: 1.0
+    value: 16
+  lifetime: 0.45
+  speed: 0
+  particleSize: 1.5
+  emissionRate: 0
+  maxCount: 1
+  burst: true
+  spreadAngle: 0
+  emitAngle: 0
+  shape:
+    type: Point
+
+- type: particleEffect
+  id: ExplosionFlashLuaMChain
+  renderLayer: 5
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: soft_dot_big
+  shader: unshaded
+  colorOverLifetime:
+  - time: 0.0
+    color: "#FFFFFFFF"
+  - time: 0.15
+    color: "#FFE088FF"
+  - time: 0.4
+    color: "#FF550066"
+  - time: 1.0
+    color: "#00000000"
+  sizeOverLifetime:
+  - time: 0.0
+    value: 0.2
+  - time: 0.15
+    value: 2.6
+  - time: 1.0
+    value: 5
+  lifetime: 0.22
+  speed: 0
+  particleSize: 1.5
+  emissionRate: 0
+  maxCount: 1
+  burst: true
+  spreadAngle: 0
+  emitAngle: 0
+  shape:
+    type: Point
+
+- type: particleEffect
+  id: ExplosionEmbersLuaMMedium
+  renderLayer: 10
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: dot
+  shader: unshaded
+  colorOverLifetime:
+  - time: 0.0
+    color: "#FFFFFFFF"
+  - time: 0.15
+    color: "#FFDD55FF"
+  - time: 0.6
+    color: "#FF4400CC"
+  - time: 1.0
+    color: "#22000000"
+  lifetime: 0.8
+  lifetimeVariance: 0.3
+  speed: 22
+  speedVariance: 7
+  particleSize: 0.28
+  sizeVariance: 0.08
+  emissionRate: 0
+  maxCount: 110
+  burst: true
+  gravity: 3.0
+  drag: 5.0
+  spreadAngle: 360
+  emitAngle: 0
+  shape:
+    type: CircleFill
+    radius: 0.4
+
+- type: particleEffect
+  id: ExplosionEmbersLuaMLarge
+  renderLayer: 10
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: dot
+  shader: unshaded
+  colorOverLifetime:
+  - time: 0.0
+    color: "#FFFFFFFF"
+  - time: 0.15
+    color: "#FFDD55FF"
+  - time: 0.6
+    color: "#FF4400CC"
+  - time: 1.0
+    color: "#22000000"
+  lifetime: 1.0
+  lifetimeVariance: 0.3
+  speed: 30
+  speedVariance: 10
+  particleSize: 0.32
+  sizeVariance: 0.08
+  emissionRate: 0
+  maxCount: 180
+  burst: true
+  gravity: 3.0
+  drag: 5.0
+  spreadAngle: 360
+  emitAngle: 0
+  shape:
+    type: CircleFill
+    radius: 0.9
+
+- type: particleEffect
+  id: ExplosionEmbersLuaMChain
+  renderLayer: 10
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: dot
+  shader: unshaded
+  colorOverLifetime:
+  - time: 0.0
+    color: "#FFFFFFFF"
+  - time: 0.15
+    color: "#FFDD55FF"
+  - time: 0.6
+    color: "#FF4400CC"
+  - time: 1.0
+    color: "#22000000"
+  lifetime: 0.6
+  lifetimeVariance: 0.3
+  speed: 11
+  speedVariance: 4
+  particleSize: 0.22
+  sizeVariance: 0.08
+  emissionRate: 0
+  maxCount: 30
+  burst: true
+  gravity: 3.0
+  drag: 5.0
+  spreadAngle: 360
+  emitAngle: 0
+  shape:
+    type: CircleFill
+    radius: 0.15
+
+- type: particleEffect
+  id: ExplosionGlowingEmbersLuaMMedium
+  renderLayer: 8
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: dot
+  shader: unshaded
+  colorOverLifetime:
+  - time: 0.0
+    color: "#FFFFFFFF"
+  - time: 0.2
+    color: "#FFAA22FF"
+  - time: 0.65
+    color: "#FF3300CC"
+  - time: 1.0
+    color: "#00000000"
+  lifetime: 2.2
+  lifetimeVariance: 0.6
+  speed: 12
+  speedVariance: 4.5
+  particleSize: 0.22
+  sizeVariance: 0.1
+  emissionRate: 0
+  maxCount: 80
+  burst: true
+  gravity: -0.7
+  drag: 4.5
+  noiseStrength: 0.6
+  noiseFrequency: 1.8
+  spreadAngle: 360
+  emitAngle: 0
+  shape:
+    type: CircleFill
+    radius: 1.0
+
+- type: particleEffect
+  id: ExplosionGlowingEmbersLuaMLarge
+  renderLayer: 8
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: dot
+  shader: unshaded
+  colorOverLifetime:
+  - time: 0.0
+    color: "#FFFFFFFF"
+  - time: 0.2
+    color: "#FFAA22FF"
+  - time: 0.65
+    color: "#FF3300CC"
+  - time: 1.0
+    color: "#00000000"
+  lifetime: 2.8
+  lifetimeVariance: 0.6
+  speed: 16
+  speedVariance: 6
+  particleSize: 0.26
+  sizeVariance: 0.1
+  emissionRate: 0
+  maxCount: 130
+  burst: true
+  gravity: -0.7
+  drag: 4.5
+  noiseStrength: 0.6
+  noiseFrequency: 1.8
+  spreadAngle: 360
+  emitAngle: 0
+  shape:
+    type: CircleFill
+    radius: 2.0

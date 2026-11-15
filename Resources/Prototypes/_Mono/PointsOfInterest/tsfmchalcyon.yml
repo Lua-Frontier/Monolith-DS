@@ -20,6 +20,11 @@
   spawnGroup: Required
   gridPath: /Maps/_LuaM/POI/tsfmchalcyonLuaM.yml # LuaM: /Maps/_Mono/POI/tsfmchalcyon.yml > /Maps/_LuaM/POI/tsfmchalcyonLuaM.yml
   addComponents:
+  - type: MapRadiusIndicator # LuaM: faction zone on the shuttle map
+    radius: 500
+    color: "#047abd"
+    fillAlpha: 0.15
+    outlineAlpha: 0.35
   - type: IFF
     color: "#047abd"
     readOnly: true
@@ -37,7 +42,7 @@
 
 - type: gameMap
   id: TSFMCHalcyon
-  mapName: 'TSFMC Flagship Halcyon'
+  mapName: 'Флагман TSF-113 «Халкион»' # LuaM: 'TSFMC Flagship Halcyon' > 'Флагман TSF-113 «Халкион»'
   mapPath: /Maps/_LuaM/POI/tsfmchalcyonLuaM.yml # LuaM: /Maps/_Mono/POI/tsfmchalcyon.yml > /Maps/_LuaM/POI/tsfmchalcyonLuaM.yml
   minPlayers: 0
   randomRotation: false
@@ -46,10 +51,10 @@
       stationProto: SecurityFrontierOutpost
       gridComponents:
       - type: VesselInfo
-        description: "A mothballed battleship-turned-FOB, and Home of the TSFMC operations."
+        description: "Бывший флагман Транс-Солнечной Федерации, давно списанный с действительной службы. Был отправлен в сектор Колосс и развёрнут как мобильная база Корпуса морской пехоты ТСФ для 113-й бригады." # LuaM: "A mothballed battleship-turned-FOB, and Home of the TSFMC operations." > translated
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'TSFMC Flagship Halcyon'
+          mapNameTemplate: 'Флагман TSF-113 «Халкион»' # LuaM: 'TSFMC Flagship Halcyon' > 'Флагман TSF-113 «Халкион»'
         - type: ExtraStationInformation
           icon:
             sprite: _NF/Structures/Decoration/banner.rsi
@@ -80,13 +85,18 @@
 - type: pointOfInterest
   id: TSFMCHalcyonHyperwar
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'TSFMC Flagship Halcyon'
+  name: 'Флагман TSF-113 «Халкион»' # LuaM: 'TSFMC Flagship Halcyon' > 'Флагман TSF-113 «Халкион»'
   minimumDistance: 4500
   maximumDistance: 5500
   spawnGamePreset: [ MonoRogueTSFHyperwar ]
   spawnGroup: Required
   gridPath: /Maps/_Mono/POI/tsfmchalcyon_hw.yml
   addComponents:
+  - type: MapRadiusIndicator # LuaM: faction zone on the shuttle map
+    radius: 500
+    color: "#047abd"
+    fillAlpha: 0.15
+    outlineAlpha: 0.35
   - type: IFF
     color: "#047abd"
     readOnly: true
@@ -97,7 +107,7 @@
 
 - type: gameMap
   id: TSFMCHalcyonHyperwar
-  mapName: 'TSFMC Flagship Halcyon'
+  mapName: 'Флагман TSF-113 «Халкион»' # LuaM: 'TSFMC Flagship Halcyon' > 'Флагман TSF-113 «Халкион»'
   mapPath: /Maps/_Mono/POI/tsfmchalcyon_hw.yml
   minPlayers: 0
   randomRotation: false
@@ -106,13 +116,13 @@
       stationProto: SecurityFrontierOutpost
       gridComponents:
       - type: VesselInfo
-        description: "A mothballed battleship-turned-FOB, and Home of the TSFMC operations."
+        description: "Бывший флагман Транс-Солнечной Федерации, давно списанный с действительной службы. Был отправлен в сектор Колосс и развёрнут как мобильная база Корпуса морской пехоты ТСФ для 113-й бригады." # LuaM: "A mothballed battleship-turned-FOB, and Home of the TSFMC operations." > translated
       - type: Tag
         tags:
         - TsfStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'TSFMC Flagship Halcyon'
+          mapNameTemplate: 'Флагман TSF-113 «Халкион»' # LuaM: 'TSFMC Flagship Halcyon' > 'Флагман TSF-113 «Халкион»'
         - type: StationEventEligible
         - type: NpcFactionMember
           factions:

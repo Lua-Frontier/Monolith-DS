@@ -1,35 +1,40 @@
 # LuaCorp - AGPLv3. See AGPLv3.txt.
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMLore
-  name: guide-entry-luamlore
+  name: guide-architecture-lua-m-lore # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Lore/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Lore/Lore.xml > /ServerInfo/_LuaM/Guidebook/Lore/Index.xml
-  bookRoot: true
-  priority: 60
-  children: # LuaM: purpose-based guidebook navigation
-  - LuaMLoreSector
+  bookRoot: true # LuaM: guidebook architecture v2.1
+  priority: 60 # LuaM: guidebook architecture v2.1
+  children: # LuaM: scenario-based guidebook navigation
   - Timeline
+  - LuaMLoreSector
   - MonoStarSystem
   - LuaMLoreMonolith
+  - LuaMLoreColoss
   - LuaMLoreTSF
   - LuaMLoreAN
-  - LuaMLoreColoss
-  - LuaMLoreMMC
   - LuaMLoreUSSP
   - LuaMLoreViper
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMLoreSector
   name: guide-entry-luamloresector
   text: /ServerInfo/_LuaM/Guidebook/Lore/Sector.xml
   priority: 10 # LuaM: 0 > 10 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMLoreMonolith
   name: guide-entry-luamloremonolith
   text: /ServerInfo/_LuaM/Guidebook/Lore/Monolith.xml
   priority: 40 # LuaM: 0 > 40 (section order)
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-end
+
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMLoreTSF
   name: guide-entry-luamloretsf
@@ -39,22 +44,31 @@
   - TSFMC_Brigade
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMLoreAN
   name: guide-entry-luamlorean
   text: /ServerInfo/_LuaM/Guidebook/Lore/AN.xml
   priority: 60 # LuaM: 0 > 60 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMLoreColoss
   name: guide-entry-luamlorecoloss
   text: /ServerInfo/_LuaM/Guidebook/Lore/Coloss.xml
   priority: 70 # LuaM: 0 > 70 (section order)
+# LuaM-end
+
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMLoreMMC
-  name: guide-entry-luamloremmc
+  name: guide-architecture-lua-m-lore-m-m-c # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Lore/MMC.xml
   priority: 80 # LuaM: 0 > 80 (section order)
-# LuaM-start: maintained guidebook page and navigation.
+# LuaM-end
+
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMLoreUSSP
   name: guide-entry-luamloreussp
@@ -62,8 +76,10 @@
   priority: 90 # LuaM: 0 > 90 (section order)
 # LuaM-end
 
+# LuaM-start: maintained guidebook navigation.
 - type: guideEntry
   id: LuaMLoreViper
   name: guide-entry-luamloreviper
   text: /ServerInfo/_LuaM/Guidebook/Lore/Viper.xml
   priority: 100 # LuaM: 0 > 100 (section order)
+# LuaM-end

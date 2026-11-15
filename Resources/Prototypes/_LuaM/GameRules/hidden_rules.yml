@@ -1,0 +1,76 @@
+# Game rules that no preset or scheduler of ours ever starts.
+# They are left out of the addgamerule list and the command refuses them.
+# The prototypes stay: some upstream presets, tests and code still use them directly.
+
+- type: hiddenGameRules
+  id: LuaMHiddenGameRules
+  rules:
+  # Upstream station modes, they don't work in the sector
+  - Secret
+  - Sandbox
+  - DeathMatch31
+  - RespawnDeadRule
+  - Traitor
+  - TraitorReinforcement
+  - Nukeops
+  - Revolutionary
+  - Zombie
+  - Wizard
+  - Survivor
+  - Thief
+  - SubGamemodesRule
+  - SubGamemodesRuleNoWizard
+  - SubWizard
+  - InactivityTimeRestart
+  - MaxTimeRestart
+  # Upstream schedulers and roundstart variation
+  - RampingStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - SpaceTrafficControlFriendlyEventScheduler
+  - BasicRoundstartVariation
+  - BasicDecalBrunsVariationPass
+  - BasicDecalDirtMonospaceVariationPass
+  - BasicDecalDirtVariationPass
+  - BasicDecalGraffitiVariationPass
+  - BasicPoweredLightVariationPass
+  - BloodbathPuddleMessVariationPass
+  - CutWireVariationPass
+  - ReinforcedWallRustingVariationPass
+  - SolidWallRustingVariationPass
+  - BasicDeadDropHintVariationPass
+  # Meteors
+  - MeteorSwarmScheduler
+  - MeteorSwarmMildScheduler
+  - KesslerSyndromeScheduler
+  - GameRuleMeteorSwarmSmall
+  - GameRuleMeteorSwarmMedium
+  - GameRuleMeteorSwarmLarge
+  - GameRuleSpaceDustMinor
+  - GameRuleSpaceDustMajor
+  - GameRuleUristSwarm
+  - ImmovableRodSpawn
+  # Station events that are in no event table
+  - BorerSpawn
+  - FalseAlarm
+  - MassHallucinations
+  - KingRatMigration
+  # Timed portstrike and round end, portstrike is manual only
+  - PortstrikeAnnounceRuleHour1
+  - PortstrikeAnnounceRuleHour2
+  - PortstrikeAnnounceRuleHour3
+  - PortstrikeAnnounceRuleHour4
+  - PortstrikeAnnounceRuleRandom35To45
+  - PortstrikeAnnounceRuleSeconds5
+  - RoundEndRuleHour2
+  - RoundEndRuleMinute2
+  # Crocus mode is disabled
+  - PDVObjectivesCrocus
+  - CrocusAnnouncementMinuteRoundStart
+  - CrocusAnnouncementMinute10m
+  # Chimera and Asakim leftovers that nothing starts
+  - MonoChimeraSTCShuttleSpawnerSchedulerTier2
+  - MonoAsakimSTCShuttleSpawnerSchedulerApocalypse
+  - UnknownShuttleChimeraLegionnaire
+  - UnknownShuttleChimeraOlympus
+  - UnknownShuttleChimeraSakuratsu
+  - UnknownShuttleChimeraTethys

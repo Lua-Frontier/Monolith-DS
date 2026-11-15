@@ -31,6 +31,8 @@ namespace Content.Client.Chemistry.UI
 
         private const string PillsRsiPath = "/Textures/Objects/Specific/Chemistry/pills.rsi";
 
+        private ChemMasterBoundUserInterfaceState? _lastState; // LuaM: redraw the lists when the search changes
+
         /// <summary>
         /// Create and initialize the chem master UI client-side. Creates the basic layout,
         /// actual data isn't filled in until the server sends data about the chem master.
@@ -90,6 +92,21 @@ namespace Content.Client.Chemistry.UI
 
             Tabs.SetTabTitle(0, Loc.GetString("chem-master-window-input-tab"));
             Tabs.SetTabTitle(1, Loc.GetString("chem-master-window-output-tab"));
+
+            // LuaM-start: reagent search
+            SearchBar.OnTextChanged += _ =>
+            {
+                if (_lastState != null)
+                    UpdatePanelInfo(_lastState);
+            };
+            // LuaM-end
+        }
+
+        // LuaM: whether a row with this name passes the search
+        private bool MatchesSearch(string name)
+        {
+            var search = SearchBar.Text.Trim();
+            return search.Length == 0 || name.Contains(search, StringComparison.CurrentCultureIgnoreCase);
         }
 
         private ReagentButton MakeReagentButton(string text, ChemMasterReagentAmount amount, ReagentId id, bool isBuffer, string styleClass)
@@ -137,6 +154,7 @@ namespace Content.Client.Chemistry.UI
         public void UpdateState(BoundUserInterfaceState state)
         {
             var castState = (ChemMasterBoundUserInterfaceState)state;
+            _lastState = castState; // LuaM
 
             if (castState.UpdateLabel)
                 LabelLine = GenerateLabel(castState);
@@ -317,6 +335,9 @@ namespace Content.Client.Chemistry.UI
             var rowCount = 0;
             foreach (var reagent in reagentList)
             {
+                if (!MatchesSearch(reagent.name)) // LuaM
+                    continue;
+
                 BufferInfo.Children.Add(BuildReagentRow(reagent.color, rowCount++, reagent.name, reagent.reagentId, reagent.quantity, true, true));
             }
         }
@@ -356,6 +377,9 @@ namespace Content.Client.Chemistry.UI
             {
                 foreach (var (id, quantity) in info.Entities.Select(x => (x.Id, x.Quantity)))
                 {
+                    if (!MatchesSearch(id)) // LuaM
+                        continue;
+
                     control.Children.Add(BuildReagentRow(default(Color), rowCount++, id, default(ReagentId), quantity, false, addReagentButtons));
                 }
             }
@@ -368,6 +392,9 @@ namespace Content.Client.Chemistry.UI
                     _prototypeManager.TryIndex(reagent.Reagent.Prototype, out ReagentPrototype? proto);
                     var name = proto?.LocalizedName ?? Loc.GetString("chem-master-window-unknown-reagent-text");
                     var reagentColor = proto?.SubstanceColor ?? default(Color);
+
+                    if (!MatchesSearch(name)) // LuaM
+                        continue;
 
                     control.Children.Add(BuildReagentRow(reagentColor, rowCount++, name, reagent.Reagent, reagent.Quantity, false, addReagentButtons));
                 }

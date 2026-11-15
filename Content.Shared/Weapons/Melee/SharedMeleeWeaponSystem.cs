@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Weapons; // LuaM
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
@@ -428,7 +429,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                 if (weaponUid == target)
                     return false;
 
-                if (target == attacker || target == user) // LuaM
+                if (attacker != user && (target == attacker || target == user)) // LuaM
                     return false; // LuaM
 
                 break;
@@ -438,6 +439,9 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                     // Target was lightly attacked & deleted.
                     return false;
                 }
+
+                if (target == attacker || target == user) // LuaM
+                    return false; // LuaM
 
                 if (!Blocker.CanAttack(attacker, target, (weaponUid, weapon), true))
                     return false;
@@ -466,7 +470,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         }
 
         if (weapon.SwingBeverage) // LuaM
-            weapon.SwingLeft = !weapon.SwingLeft; // LuaM
+            weapon.SwingFlipped = !weapon.SwingFlipped; // LuaM
 
         Dirty(weaponUid, weapon);
 
@@ -619,6 +623,11 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         if (damageResult?.GetTotal() > FixedPoint2.Zero)
         {
             DoDamageEffect(targets, playerUid, targetXform);
+
+            // LuaM-start: tell the attacker the hit landed
+            var userHitEv = new MeleeUserHitEvent(meleeUid, targets);
+            RaiseLocalEvent(user, ref userHitEv);
+            // LuaM-end
         }
     }
 
@@ -804,6 +813,11 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         if (appliedDamage.GetTotal() > FixedPoint2.Zero)
         {
             DoDamageEffect(targets, playerUid, Transform(targets[0]));
+
+            // LuaM-start: tell the attacker the hit landed
+            var userHitEv = new MeleeUserHitEvent(meleeUid, targets);
+            RaiseLocalEvent(user, ref userHitEv);
+            // LuaM-end
         }
 
         // goob edit - stunmeta

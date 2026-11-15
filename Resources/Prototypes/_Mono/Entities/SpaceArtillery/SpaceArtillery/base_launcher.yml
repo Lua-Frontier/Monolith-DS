@@ -6,6 +6,11 @@
   placement:
     mode: SnapgridCenter
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: WallDefense2
@@ -100,6 +105,11 @@
   placement:
     mode: SnapgridCenter
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic
@@ -197,6 +207,11 @@
   placement:
     mode: SnapgridCenter
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic

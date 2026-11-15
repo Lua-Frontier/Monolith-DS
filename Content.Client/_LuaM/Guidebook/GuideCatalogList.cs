@@ -1,6 +1,7 @@
 /* LuaCorp - AGPLv3. Copyright (c) 2026 LuaCorp Contributors. See AGPLv3.txt. */
 using System.Linq;
 using Robust.Client.Graphics;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client._LuaM.Guidebook;
@@ -17,7 +18,15 @@ public sealed class GuideCatalogList : BoxContainer
         Orientation = LayoutOrientation.Vertical;
         HorizontalExpand = true;
         SeparationOverride = 8;
-        AddChild(_list); AddChild(_details);
+        AddChild(_list);
+        var panel = new PanelContainer
+        {
+            HorizontalExpand = true,
+            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#162833"), BorderColor = Color.FromHex("#365565"),
+                BorderThickness = new Thickness(0, 2, 0, 0), ContentMarginLeftOverride = 12, ContentMarginRightOverride = 12,
+                ContentMarginTopOverride = 12, ContentMarginBottomOverride = 12 },
+        };
+        panel.AddChild(_details); AddChild(panel);
         _list.OnItemSelected += args => Show(args.ItemIndex);
     }
 
@@ -37,6 +46,10 @@ public sealed class GuideCatalogList : BoxContainer
     private void Show(int index)
     {
         _details.RemoveAllChildren();
-        if (index >= 0 && index < _fill.Count) _fill[index](_details);
+        if (index >= 0 && index < _fill.Count)
+        {
+            _details.AddChild(new GuideHeading(_list[index].Text ?? "") { StyleClasses = { "LabelHeading" }, Margin = new Thickness(0, 0, 0, 6) });
+            _fill[index](_details);
+        }
     }
 }

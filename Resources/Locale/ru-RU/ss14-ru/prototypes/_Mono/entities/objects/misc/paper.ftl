@@ -1,2 +1,2 @@
-ent-EnvelopeManila = manila envelope
+ent-EnvelopeManila = манильский конверт
     .desc = { ent-Envelope.desc }

@@ -1,5 +1,4 @@
 using System.Numerics;
-using Content.Shared._LuaM.HoloComms;
 using Content.Shared._LuaM.Shuttles.Events;
 
 namespace Content.Client.Shuttles.UI;
@@ -43,36 +42,10 @@ public sealed partial class NavScreen
         menu.AddItem(Loc.GetString("shuttle-radar-menu-follow"), msg.CanFollow ? () => OnRadarFollow?.Invoke(msg.Grid) : null);
 
         if (_holoCommsAvailable)
-            AddRadarCallItem(menu, msg.Calls);
+            menu.AddCallItem(msg.Calls, target => OnRadarCall?.Invoke(target));
 
         _radarMenu = menu;
         menu.OpenAt(_radarMenuPosition);
-    }
-
-    private void AddRadarCallItem(RadarContextMenu menu, List<HoloCommsContact> calls)
-    {
-        if (!calls.Exists(call => !call.Busy))
-        {
-            menu.AddItem(Loc.GetString("shuttle-radar-menu-unreachable"), null);
-            return;
-        }
-
-        if (calls.Count == 1 && calls[0].Kind == HoloCommsContactKind.Ship)
-        {
-            var target = calls[0].Target;
-            menu.AddItem(Loc.GetString("shuttle-radar-menu-call"), () => OnRadarCall?.Invoke(target));
-            return;
-        }
-
-        menu.AddSubMenu(Loc.GetString("shuttle-radar-menu-call"), subMenu =>
-        {
-            foreach (var call in calls)
-            {
-                var target = call.Target;
-                subMenu.AddItem(call.Name, call.Busy ? null : () => OnRadarCall?.Invoke(target),
-                    call.Busy ? Loc.GetString("shuttle-radar-menu-unreachable") : null);
-            }
-        });
     }
 
     private void UpdateRadarMenu()

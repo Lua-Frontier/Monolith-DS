@@ -197,12 +197,18 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
         }
 
         if (_maps.GetSelectedMap() is { } selected)
+        {
             mapPaths.TryAdd(selected.MapPath.ToRootedPath().ToString(), selected.MapName);
+            sitePaths.TryAdd(selected.MapPath.ToRootedPath().ToString(), false);
+        }
         else
         {
             // The lobby can request the catalogue before a map has been selected.
             foreach (var eligible in _maps.AllVotableMaps())
+            {
                 mapPaths.TryAdd(eligible.MapPath.ToRootedPath().ToString(), eligible.MapName);
+                sitePaths.TryAdd(eligible.MapPath.ToRootedPath().ToString(), false);
+            }
         }
 
         var entities = new List<GuidebookMappedEntity>();

@@ -1,6 +1,6 @@
-ent-WeaponTurretVanquisher = SRM-573 «Ванквер»
+ent-WeaponTurretVanquisher = ракетный контейнер SRM-573 «Покоритель»
     .suffix = Большой, Т4
-    .desc = Ракетная установка ближнего радиуса действия, стреляющая неуправляемыми ракетами калибра 150-мм. Огромная скорострельность и высокая разрушительная мощность.
+    .desc = Ракетный контейнер малой дальности, выпускающий неуправляемые 150-мм ракеты с сокрушительной скорострельностью.
 ent-WeaponTurretVanquisherInfinite = { ent-WeaponTurretVanquisher }
     .suffix = Большой, Т4, Бесконечный
     .desc = { ent-WeaponTurretVanquisher.desc }

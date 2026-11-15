@@ -37,5 +37,5 @@ ent-PlasturaniumWindowRadProofIndestructible = { ent-PlastitaniumWindow }
 ent-WindowTimedSeal10Minutes = { ent-WindowTimedSeal }
     .desc = { ent-WindowTimedSeal.desc }
     .suffix = 10 Minutes, Indestructible
-ent-TimedSealsTableSpawner = random timed seal spawner (30-180 minutes)
+ent-TimedSealsTableSpawner = спавнер случайной временной пломбы (30-180 минут)
     .desc = { ent-MarkerBase.desc }

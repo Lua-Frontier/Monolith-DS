@@ -1,2 +1,2 @@
-ent-OrganTajaranEyes = tajaran eyes
-    .desc = They reflect off the darkness.
+ent-OrganTajaranEyes = глаза таяры
+    .desc = В темноте они отражают свет.

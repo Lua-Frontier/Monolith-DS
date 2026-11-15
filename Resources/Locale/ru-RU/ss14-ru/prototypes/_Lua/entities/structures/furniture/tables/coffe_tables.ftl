@@ -24,5 +24,5 @@ ent-CoffeeTableUranium = урановый кофейный столик
 
 ent-CoffeeTableReinforcedUranium = укреплённый урановый кофейный столик
     .desc = Браво. Вы достигли величия Урана.
-ent-CoffeeTableFrame = coffee table frame
-    .desc = The metal legs that form the base of the table.
+ent-CoffeeTableFrame = каркас кофейного столика
+    .desc = Металлические ножки, на которых держится столик.

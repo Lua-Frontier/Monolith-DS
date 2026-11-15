@@ -52,6 +52,8 @@ public sealed partial class NuclearReactorWindow : FancyWindow
     private int _targetX = 0;
     private int _targetY = 0;
 
+    private static string EmptyText => Loc.GetString("luam-nuclear-reactor-ui-empty"); // LuaM: localized "empty"
+
     public event Action<Vector2d>? ItemActionButtonPressed;
     public event Action? EjectButtonPressed;
 
@@ -119,7 +121,7 @@ public sealed partial class NuclearReactorWindow : FancyWindow
 
         Shelf.Visible = !_isMonitor;
 
-        ItemName.Text = msg.ItemName ?? "empty";
+        ItemName.Text = msg.ItemName ?? EmptyText; // LuaM: "empty" > EmptyText
     }
 
     public void SetEntity(EntityUid reactor, EntityUid? monitor = null)
@@ -294,7 +296,7 @@ public sealed partial class NuclearReactorWindow : FancyWindow
         var vect = new Vector2i(_targetY,  _targetX);
         if(!_data.TryGetValue(vect, out var value))
         {
-            TargetName.Text = "empty";
+            TargetName.Text = EmptyText; // LuaM: "empty" > EmptyText
             TargetTemperatureGrid.Visible = TargetNRadiationGrid.Visible = TargetRadiationGrid.Visible = TargetSpentGrid.Visible = false;
             return;
         }
@@ -316,7 +318,7 @@ public sealed partial class NuclearReactorWindow : FancyWindow
 
     private void UpdateItemAction()
     {
-        if(ItemName.Text == "empty" == (TargetName.Text == "empty"))
+        if(ItemName.Text == EmptyText == (TargetName.Text == EmptyText)) // LuaM: "empty" > EmptyText
         {
             ItemAction.Disabled = true;
             return;
@@ -324,7 +326,7 @@ public sealed partial class NuclearReactorWindow : FancyWindow
         else
             ItemAction.Disabled = false;
 
-        ItemAction.Text = TargetName.Text != "empty"
+        ItemAction.Text = TargetName.Text != EmptyText // LuaM: "empty" > EmptyText
             ? Loc.GetString("comp-nuclear-reactor-ui-remove-button")
             : Loc.GetString("comp-nuclear-reactor-ui-insert-button");
     }
@@ -347,7 +349,7 @@ public sealed partial class NuclearReactorWindow : FancyWindow
         YDecrement.Disabled = _targetY <= 0;
     }
 
-    public void SetItemName(string? itemName) => ItemName.Text = itemName ?? "empty";
+    public void SetItemName(string? itemName) => ItemName.Text = itemName ?? EmptyText; // LuaM: "empty" > EmptyText
 
     private static string FormatPower(float power) => Loc.GetString("comp-nuclear-reactor-ui-therm-format", ("power", power));
 

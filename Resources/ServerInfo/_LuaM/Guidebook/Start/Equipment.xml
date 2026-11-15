@@ -4,9 +4,9 @@
 Для выхода в вакуум нужны [bold]скафандр, шлем, дыхательный баллон и подключённые внутренние источники воздуха[/bold]. Дыхательная смесь зависит от [textlink="расы персонажа" link="Species"]. Баллон и защита тела решают разные задачи; одной маски для выхода из корабля недостаточно.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="DoubleEmergencyOxygenTankFilled"/>
-<GuideEntityEmbed Entity="SpaceMedipen"/>
-<GuideEntityEmbed Entity="HandHeldMassScanner"/>
+<GuideTexture Entity="DoubleEmergencyOxygenTankFilled" Caption="auto"/>
+<GuideTexture Entity="SpaceMedipen" Caption="auto"/>
+<GuideTexture Entity="HandHeldMassScanner" Powered="true" Caption="auto"/>
 </GuideEntityCards>
 
 ## Выбрать набор в лобби
@@ -14,12 +14,14 @@
 
 ## Медицинский сигнал и координаты
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MedicalTrackingImplanter"/>
+<GuideTexture Entity="MedicalTrackingImplanter" Caption="auto"/>
 </GuideEntityCards>
 
-Примените медицинский имплантер к себе. Имплант сообщает в медицинский канал о критическом состоянии и смерти; постоянного отслеживания положения он не даёт.
+[bold]Примените[/bold] медицинский имплантер к себе. Имплант сообщает в медицинский канал о критическом состоянии и смерти; постоянного отслеживания положения он не даёт.
 
 Для передачи местоположения на монитор экипажа откройте меню датчиков комбинезона и выберите [bold]«Координаты»[/bold]. Работа монитора зависит от покрытия сети.
 
 [textlink="Выбор брони" link="ColossusCatalogueArmor"] · [textlink="Первая помощь и восстановление" link="Medical"] · [textlink="Управление кораблём" link="Piloting"]
+
+[italic]Если скафандр оснащён силовым полем,[/italic] перед вылетом включите его и дождитесь развёртывания. Осмотр показывает состояние и остаток поля. Ёмкость батареи, расход энергии и самозаряд смотрите в каталоге модели; осмотр не показывает текущий заряд батареи. Плита подходит только модели с держателем. [textlink="Как работает щит скафандра" link="ArmorExplanation"] · [textlink="Характеристики конкретной модели" link="ColossusCatalogueArmor"].
 </Document>

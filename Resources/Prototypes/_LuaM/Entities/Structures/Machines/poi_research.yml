@@ -1,0 +1,23 @@
+# Research machines of the Anomalous Lab and the Sevastopol data center.
+# They are the reason to fly there, so they can not be unanchored, deconstructed or broken.
+
+- type: entity
+  id: ResearchAndDevelopmentServerPOI
+  parent: [BaseStructureDisableToolUse, ResearchAndDevelopmentServer]
+  suffix: POI, Indestructible
+  components:
+  - type: Godmode
+
+- type: entity
+  id: ComputerTechnologyDiskTerminalPOI
+  parent: [BaseStructureDisableToolUse, ComputerTechnologyDiskTerminal]
+  suffix: POI, Indestructible
+  components:
+  - type: Godmode
+
+- type: entity
+  id: TechDiskPrinterPOI
+  parent: [BaseStructureDisableToolUse, TechDiskPrinter]
+  suffix: POI, Indestructible
+  components:
+  - type: Godmode

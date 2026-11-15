@@ -5,7 +5,7 @@
   description: A satchel produced by Arcadia Industries.
   components:
   - type: Sprite
-    sprite: _Corvax/back/military.rsi
+    sprite: _Corvax/Back/military.rsi
   - type: Storage 
     grid:
     - 0,0,15,5

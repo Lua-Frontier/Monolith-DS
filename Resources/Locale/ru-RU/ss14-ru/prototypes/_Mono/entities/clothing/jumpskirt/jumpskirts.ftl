@@ -1,4 +1,4 @@
 ent-ClothingUniformJumpskirtTAF = санитарная водолазка с юбкой
     .desc = Удобный комплект санитара Trauma Team, что утеплён и имеет стерильно обработанные материалы с кожаными элементами и вставками. Данный вариант оснащён просторной юбкой, что не сковывает движения сестёр-санитаров. Красный вариант показывает агрессивную медицину и её способность защищать окружающих.
-ent-ClothingUniformJumpskirtCCTCFormalDress = executive's formal dress
-    .desc = A dress for special occasions.
+ent-ClothingUniformJumpskirtCCTCFormalDress = парадное платье руководителя
+    .desc = Платье для особых случаев.

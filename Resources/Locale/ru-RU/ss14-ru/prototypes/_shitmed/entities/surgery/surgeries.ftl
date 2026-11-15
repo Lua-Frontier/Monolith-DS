@@ -120,5 +120,5 @@ ent-SurgeryLobotomize = Лоботомия
     .desc = { ent-SurgeryBase.desc }
 ent-SurgeryMendBrainTissue = Восстановить мозговую ткань
     .desc = { ent-SurgeryBase.desc }
-ent-SurgeryCorticalBorerRemoval = Remove Cortical Borer
-    .desc = Removal the Cortical Borer infestation from the body.
+ent-SurgeryCorticalBorerRemoval = Удаление кортикального червя
+    .desc = Удаление кортикального червя из тела.

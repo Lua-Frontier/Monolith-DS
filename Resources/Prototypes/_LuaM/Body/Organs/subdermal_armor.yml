@@ -8,8 +8,9 @@
   components:
   # LuaM-start: contextual cybernetics guide.
   - type: GuideHelp
-    guides:
-    - ColossusImplantProtection
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
   # LuaM-end
   - type: EmitSoundOnPickup
     sound:

@@ -22,6 +22,8 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
     [Dependency] private IPrototypeManager _prototypes = default!; // LuaM: resolve links outside a contextual help window.
 
     private Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> _entries = new();
+    // LuaM: allow only the configured server rules and their descendants.
+    private readonly HashSet<ProtoId<GuideEntryPrototype>> _serverRules = new();
 
     private readonly ISawmill _sawmill;
 
@@ -32,13 +34,14 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         _sawmill = Logger.GetSawmill("Guidebook");
+        InitializeLayout(); // LuaM: restore client geometry and keep navigation independent of row lengths.
 
         Tree.OnSelectedItemChanged += OnSelectionChanged;
         // LuaM-start: one home handler for the lifetime of the window.
+        BackButton.OnPressed += _ => GoBack(); // LuaM: previous page, including contextual links.
         HomeButton.OnPressed += _ =>
         {
-            if (Tree.SelectedItem?.Metadata is GuideEntry entry)
-                ShowGuide(entry);
+            HandleClick("ColossusHome"); // LuaM: shared landing page, including from contextual help.
         };
         // LuaM-end
 
@@ -66,7 +69,10 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
             Tree.SetSelectedIndex(index);
         }
         else
+        {
+            Tree.SetSelectedIndex(null); // LuaM: a landing/contextual page must not retain a stale selection.
             ShowGuide(entry);
+        }
     }
 
     // Lua start: guidebook prototype links (space-wizards#36700)
@@ -126,7 +132,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         Scroll.SetScrollValue(default);
         Placeholder.Visible = false;
         EntryContainer.Visible = true;
-        ReturnContainer.Visible = entry.RuleEntry; // LuaM
+        RecordNavigation(entry); // LuaM: tree selection and direct links share one navigation history.
         SearchBar.Text = "";
         DisposeEntryContents(); // LuaM
         using var file = _resourceManager.ContentFileReadText(entry.Text);
@@ -177,13 +183,14 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         ProtoId<GuideEntryPrototype>? selected = null)
     {
         _entries = entries;
+        ResetNavigationHistory(); // LuaM: a new book/help request starts a fresh history.
         RepopulateTree(rootEntries, forceRoot);
         ClearSelectedGuide();
 
-        Split.State = SplitContainer.SplitState.Auto;
         if (entries.Count == 1)
         {
             TreeBox.Visible = false;
+            Split.State = SplitContainer.SplitState.Auto; // LuaM: a single contextual page uses the whole window.
             Split.ResizeMode = SplitContainer.SplitResizeMode.NotResizable;
             selected = entries.Keys.First();
         }
@@ -191,11 +198,14 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
         {
             TreeBox.Visible = true;
             Split.ResizeMode = SplitContainer.SplitResizeMode.RespectChildrenMinSize;
+            RestoreNavigationWidth(Split.Size.X > 0 ? Split.Size.X : _savedWindowSize.X); // LuaM
         }
 
         if (selected != null)
         {
             var item = Tree.Items.FirstOrDefault(x => x.Metadata is GuideEntry entry && entry.Id == selected);
+            if (item != null)
+                Tree.ExpandParentEntries(item.Index); // LuaM: reveal only the selected path.
             Tree.SetSelectedIndex(item?.Index);
             // LuaM-start: guidebook controls and lifecycle.
             // LuaM: a linked/contextual page need not occupy a permanent place in the main contents.
@@ -203,6 +213,11 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
                 ShowGuide(selectedEntry);
         }
             // LuaM-end
+        // LuaM: do not briefly select (and auto-expand) the first root before showing Home.
+        else if (entries.Values.Count(e => e.BookRoot) == 8 && forceRoot == null)
+        {
+            HandleClick("ColossusHome");
+        }
         else
         {
             var item = Tree.Items.FirstOrDefault(); // LuaM: an empty/invalid contextual list has no first entry.
@@ -236,6 +251,19 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
     {
         Tree.Clear();
 
+        // LuaM-start: own nested ruleEntry pages are allowed, foreign rulesets are not.
+        _serverRules.Clear();
+        var pending = new Stack<ProtoId<GuideEntryPrototype>>();
+        pending.Push(UserInterfaceManager.GetUIController<InfoUIController>().GetCoreRuleEntry().Id);
+        while (pending.TryPop(out var rule))
+        {
+            if (!_serverRules.Add(rule) || !_prototypes.TryIndex(rule, out var prototype))
+                continue;
+            foreach (var child in prototype.Children)
+                pending.Push(child);
+        }
+        // LuaM-end
+
         HashSet<ProtoId<GuideEntryPrototype>> addedEntries = new();
 
         var parent = forcedRoot == null ? null : AddEntry(forcedRoot.Value, null, addedEntries);
@@ -244,7 +272,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
             AddEntry(entry.Id, parent, addedEntries);
         }
 
-        Tree.SetAllExpanded(true);
+        Tree.SetAllExpanded(false); // LuaM: UpdateGuides/HandleClick reveal the selected path.
     }
 
     private TreeItem? AddEntry(ProtoId<GuideEntryPrototype> id,
@@ -262,14 +290,14 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
             return null;
         }
 
-        var rulesProto = UserInterfaceManager.GetUIController<InfoUIController>().GetCoreRuleEntry();
-        if (entry.RuleEntry && entry.Id != rulesProto.Id)
+        if (entry.RuleEntry && !_serverRules.Contains(entry.Id)) // LuaM
             return null;
 
         var item = Tree.AddItem(parent);
         item.Metadata = entry;
         var name = Loc.GetString(entry.Name);
         item.Label.Text = name;
+        item.Label.ToolTip = name; // LuaM: long rows remain readable without forcing the sidebar wider.
 
         foreach (var child in entry.Children)
         {

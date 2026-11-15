@@ -40,7 +40,7 @@
   - Detective
 # LuaM-end.
   guides:
-  - TSFMC_Entry
+  - ColossusTSFRoles # LuaM: complete organization help
   special:
   - !type:AddComponentSpecial
     components:

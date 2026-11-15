@@ -257,7 +257,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
         var companyId = humanoid.Company;
         if (_prototypeManager.TryIndex<CompanyPrototype>(companyId, out var company))
         {
-            PreviewPanel.SetCompanyText($"[color=white]{Loc.GetString("lobby-company-label")}[/color] [color={company.Color.ToHex()}]{company.Name}[/color]"); // LuaM: Company: > {Loc.GetString("lobby-company-label")} 
+            PreviewPanel.SetCompanyText($"[color=white]{Loc.GetString("lobby-company-label")}[/color] [color={company.Color.ToHex()}]{(company.ID == CompanyPrototype.NoCompany.Id ? Loc.GetString("humanoid-profile-editor-company-none") : company.Name)}[/color]"); // LuaM: Company: > {Loc.GetString("lobby-company-label")}
         }
         else
         {

@@ -1,4 +1,4 @@
-ent-BorgIFFTSF = TSF Cyborg Chip
-    .desc = Apply before the final screw of a standard cyborg to install the necessary TSF components.
-ent-BorgIFFPDV = PDV Cyborg Chip
-    .desc = Apply before the final screw of a standard cyborg to install the necessary PDV components.
+ent-BorgIFFTSF = чип киборга ТСФ
+    .desc = Установите перед тем, как закрутить последний винт стандартного киборга, чтобы добавить необходимые компоненты ТСФ.
+ent-BorgIFFPDV = чип киборга Авангарда
+    .desc = Установите перед тем, как закрутить последний винт стандартного киборга, чтобы добавить необходимые компоненты Авангарда.

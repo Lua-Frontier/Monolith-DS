@@ -612,6 +612,7 @@ public partial class ShuttleNavControl : BaseShuttleControl // Mono
 
         DrawStarSystem(handle, worldToShuttle, shuttleToView, xform.MapUid); // Far Horizons
         DrawRadiusIndicators(handle, worldToView, mapPos.Position, xform.MapUid); // LuaM
+        DrawNebulae(handle, worldToView, mapPos); // Lua
 
         _grids.Clear();
         _mapManager.FindGridsIntersecting(xform.MapID, new Box2(mapPos.Position - MaxRadarRangeVector, mapPos.Position + MaxRadarRangeVector), ref _grids, approx: true, includeMap: false);

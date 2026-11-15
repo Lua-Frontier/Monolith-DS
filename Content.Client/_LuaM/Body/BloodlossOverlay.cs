@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._LuaM.Body;
 
-public sealed class BloodlossOverlay : Overlay
+public sealed partial class BloodlossOverlay : Overlay
 {
     private static readonly ProtoId<ShaderPrototype> Shader = "LuaMBloodloss";
 

@@ -97,6 +97,7 @@ public sealed partial class MapScreen : BoxContainer
 //        MapRebuildButton.OnPressed += MapRebuildPressed; // Commented by LuaM
         InitializeMapTarget(); // LuaM
         InitializeMapSearch(); // LuaM
+        InitializeRadarMenu(); // LuaM
 
         OnVisibilityChanged += OnVisChange;
 
@@ -415,6 +416,8 @@ public sealed partial class MapScreen : BoxContainer
                 if (!detected || iffComp != null && (iffComp.Flags & IFFFlags.Hide) != 0x0)
                     continue;
                 if (grid.Owner != _shuttleEntity && _stealthField.IsHiddenFromLocalPlayer(grid.Owner, _console ?? _shuttleEntity)) // LuaM
+                    continue;
+                if (grid.Owner != _shuttleEntity && _entManager.HasComponent<Content.Shared._Lua.SpaceHazards.NebulaVeilTrackedComponent>(grid.Owner)) // Lua: veil nebula
                     continue;
                 var name = hideLabel ?
                     detectionLevel == DetectionLevel.PartialDetected ?

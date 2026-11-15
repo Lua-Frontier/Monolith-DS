@@ -1,0 +1,446 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+
+- type: entity
+  id: LuaMVehicleHumveeBase
+  abstract: true
+  name: humvee
+  description: A fast armored utility vehicle outfitted for patrols and support.
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: OverMobs
+    sprite: _LuaM/Structures/Vehicles/Humvee/humvee.rsi
+    layers:
+    - map: [ base ]
+      state: humvee_base
+    - map: [ damaged ]
+      state: damaged_frame
+      visible: false
+    - map: [ support ]
+      state: ATTACH
+      visible: false
+    - map: [ support-2 ]
+      state: ATTACH
+      visible: false
+    - map: [ wheels ]
+      state: wheels_1
+  - type: SpriteMovement
+    movementLayers:
+      wheels:
+        state: wheels_0
+    noMovementLayers:
+      wheels:
+        state: wheels_1
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.VehicleVisuals.Damaged:
+        damaged:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: true
+  - type: Fixtures
+    fixtures:
+      hull:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -0.65,-1.2,0.65,1.2
+        density: 1000
+        mask:
+        - LargeMobMask
+        layer:
+        - LargeMobLayer
+  - type: Strap
+    position: None
+    size: 500
+    buckleDoafterTime: 1
+    unbuckleDistanceSquared: 0.09
+    buckleSound: /Audio/_LuaM/Vehicles/vehicle_door_open.ogg
+    unbuckleSound: /Audio/_LuaM/Vehicles/vehicle_door_close.ogg
+  - type: StrapSlots
+    offsets:
+    - 0.2, -0.14
+    - -0.23, -0.14
+    - 0.2, 0.36
+    - -0.23, 0.36
+    - 0, 0.34
+  - type: VehicleSeats
+    seats:
+    - Driver
+    - Passenger
+    - Passenger
+    - Passenger
+    - Gunner
+    driverActions:
+    - ActionLuaMVehicleHorn
+    - ActionLuaMVehicleOvercharge
+    - ActionLuaMVehicleSpotlight
+    gunnerActions:
+    - ActionLuaMVehicleSwitchWeapon
+  - type: GridVehicleMover
+    maxSpeed: 15
+    maxReverseSpeed: 4
+    acceleration: 6
+    reverseAcceleration: 4
+    deceleration: 10
+    maxRotationSpeedDegrees: 120
+    rotationAccelerationDegrees: 240
+    rotationDecelerationDegrees: 300
+    alignmentAssistDegrees: 8
+    ramMinSpeed: 3
+    ramStructureDamage: 12
+    ramHullDamage: 2
+    mobRamDamage: 2.5
+    mobRamSpeedMultiplier: 0.9
+    mobCollisionHullDamage: 4
+    speedAtZeroIntegrity: 0.6
+    driftMinSpeed: 9
+    driftGripDegrees: 70
+    driftRecoverDegrees: 240
+    driftMaxDegrees: 50
+    driftDrag: 10
+  - type: VehicleOvercharge
+    speedMultiplier: 1.3
+    duration: 3
+    sound: /Audio/_LuaM/Vehicles/overdrive_activate.ogg
+  - type: VehicleSound
+    hornSound: /Audio/_LuaM/Vehicles/sound_vehicles_humvee_horn.ogg
+    collisionSound:
+      collection: LuaMVehicleCrash
+    collisionSoundCooldown: 1
+    mobCollisionSound: /Audio/Effects/hit_kick.ogg
+  - type: VehicleEngine
+    startSound: /Audio/_LuaM/Vehicles/vehicle_start.ogg
+    stopSound: /Audio/_LuaM/Vehicles/vehicle_turned_off.ogg
+    idleSound: /Audio/_LuaM/Vehicles/vehicle_idle.ogg
+    slowSound: /Audio/_LuaM/Vehicles/vehicle_slow.ogg
+    mediumSound: /Audio/_LuaM/Vehicles/vehicle_med.ogg
+    fastSound: /Audio/_LuaM/Vehicles/vehicle_fast.ogg
+    skidStartSound: /Audio/_LuaM/Vehicles/vehicle_skid_1.ogg
+    skidSound: /Audio/_LuaM/Vehicles/vehicle_skid_2.ogg
+  - type: VehicleSpotlight
+    radius: 6
+    energy: 2.5
+  - type: PointLight
+    enabled: false
+    radius: 6
+    energy: 2.5
+    softness: 2
+    lightMask: Cone
+    autoRot: true
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: LuaMVehicleFrameHumvee
+  - type: VehicleIntegrity
+    maxIntegrity: 1000
+  - type: Repairable
+    doAfterDelay: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:ExplodeBehavior
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 60
+    intensitySlope: 5
+    maxIntensity: 10
+  - type: HardpointSlots
+    family: Humvee
+    slots:
+    - id: turret
+      hardpointType: Turret
+      insertDelay: 2
+    - id: roof
+      hardpointType: RoofAttachment
+      visualLayer: support
+      insertDelay: 1.5
+    - id: front
+      hardpointType: FrontAttachment
+      visualLayer: support-2
+      insertDelay: 1.5
+    - id: wheel
+      hardpointType: Wheel
+      startingItem: LuaMHumveeWheel
+      insertDelay: 1.5
+  - type: VehicleInterior
+    sprite: _LuaM/Structures/Vehicles/Humvee/interior.rsi
+    state: humvee
+    seatOffsets:
+      South:
+      - 6.5, -4.5
+      - -7.5, -4.5
+      - 6.5, 11.5
+      - -7.5, 11.5
+      - 0, 11
+      North:
+      - -6.5, 3.5
+      - 7.5, 3.5
+      - -6.5, -12.5
+      - 7.5, -12.5
+      - 0, 3.5
+      East:
+      - 6.5, 4.5
+      - 6.5, -9.5
+      - -9.5, 4.5
+      - -9.5, -9.5
+      - -4.5, 13
+      West:
+      - -6.5, 4.5
+      - -6.5, -9.5
+      - 9.5, 4.5
+      - 9.5, -9.5
+      - 5.5, 13
+  - type: StaticPrice
+    price: 15000
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: LuaMVehicleHumveeBase
+  id: LuaMVehicleHumvee
+  components:
+  - type: HardpointSlots
+    family: Humvee
+    slots:
+    - id: turret
+      hardpointType: Turret
+      startingItem: LuaMHumveeTurretArmed
+      insertDelay: 2
+    - id: roof
+      hardpointType: RoofAttachment
+      visualLayer: support
+      insertDelay: 1.5
+    - id: front
+      hardpointType: FrontAttachment
+      visualLayer: support-2
+      insertDelay: 1.5
+    - id: wheel
+      hardpointType: Wheel
+      startingItem: LuaMHumveeWheel
+      insertDelay: 1.5
+  - type: VehicleTurret
+    rotationSpeedDegrees: 180
+    fireGraceDegrees: 20
+    pixelOffsets:
+      South: 0, 11
+      North: 0, 3.5
+      East: -4.5, 13
+      West: 5.5, 13
+
+- type: entity
+  parent: LuaMVehicleHumveeBase
+  id: LuaMVehicleHumveeMedical
+  name: humvee (medical)
+  description: A medical-configured humvee outfitted for field triage.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/Humvee/medical.rsi
+  - type: StrapSlots
+    offsets:
+    - 0.2, -0.14
+    - -0.23, -0.14
+    - 0.2, 0.36
+    - -0.23, 0.36
+  - type: Strap
+    position: None
+    size: 400
+    buckleDoafterTime: 1
+    unbuckleDistanceSquared: 0.09
+    buckleSound: /Audio/_LuaM/Vehicles/vehicle_door_open.ogg
+    unbuckleSound: /Audio/_LuaM/Vehicles/vehicle_door_close.ogg
+  - type: VehicleSeats
+    seats:
+    - Driver
+    - Passenger
+    - Passenger
+    - Passenger
+    driverActions:
+    - ActionLuaMVehicleHorn
+    - ActionLuaMVehicleOvercharge
+    - ActionLuaMVehicleSpotlight
+  - type: HardpointSlots
+    family: Humvee
+    slots:
+    - id: roof
+      hardpointType: RoofAttachment
+      visualLayer: support
+      insertDelay: 1.5
+    - id: front
+      hardpointType: FrontAttachment
+      visualLayer: support-2
+      insertDelay: 1.5
+    - id: wheel
+      hardpointType: Wheel
+      startingItem: LuaMHumveeWheel
+      insertDelay: 1.5
+  - type: VehicleInterior
+    sprite: _LuaM/Structures/Vehicles/Humvee/interior.rsi
+    state: medical
+    seatOffsets:
+      South:
+      - 6.5, -4.5
+      - -7.5, -4.5
+      - 6.5, 11.5
+      - -7.5, 11.5
+      North:
+      - -6.5, 3.5
+      - 7.5, 3.5
+      - -6.5, -12.5
+      - 7.5, -12.5
+      East:
+      - 6.5, 4.5
+      - 6.5, -9.5
+      - -9.5, 4.5
+      - -9.5, -9.5
+      West:
+      - -6.5, 4.5
+      - -6.5, -9.5
+      - 9.5, 4.5
+      - 9.5, -9.5
+
+- type: entity
+  parent: LuaMVehicleHumveeMedical
+  id: LuaMVehicleHumveeTransport
+  name: humvee (transport)
+  description: A transport humvee configured for passenger movement.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/Humvee/transport.rsi
+  - type: VehicleInterior
+    sprite: _LuaM/Structures/Vehicles/Humvee/interior.rsi
+    state: transport
+    seatOffsets:
+      South:
+      - 6.5, -4.5
+      - -7.5, -4.5
+      - 6.5, 11.5
+      - -7.5, 11.5
+      North:
+      - -6.5, 3.5
+      - 7.5, 3.5
+      - -6.5, -12.5
+      - 7.5, -12.5
+      East:
+      - 6.5, 4.5
+      - 6.5, -9.5
+      - -9.5, 4.5
+      - -9.5, -9.5
+      West:
+      - -6.5, 4.5
+      - -6.5, -9.5
+      - 9.5, 4.5
+      - 9.5, -9.5
+
+- type: entity
+  parent: LuaMVehicleHumveeBase
+  id: LuaMVehicleHumveeARC
+  name: humvee (ARC)
+  description: A humvee configured as an armored reconnaissance carrier. It has to be deployed to use its cannon.
+  components:
+  - type: VehicleSeats
+    seats:
+    - Driver
+    - Passenger
+    - Passenger
+    - Passenger
+    - Gunner
+    driverActions:
+    - ActionLuaMVehicleHorn
+    - ActionLuaMVehicleOvercharge
+    - ActionLuaMVehicleSpotlight
+    - ActionLuaMVehicleDeploy
+    gunnerActions:
+    - ActionLuaMVehicleSwitchWeapon
+  - type: HardpointSlots
+    family: Humvee
+    slots:
+    - id: turret
+      hardpointType: Turret
+      startingItem: LuaMHumveeARCTurret
+      insertDelay: 2
+    - id: roof
+      hardpointType: RoofAttachment
+      visualLayer: support
+      insertDelay: 1.5
+    - id: front
+      hardpointType: FrontAttachment
+      visualLayer: support-2
+      insertDelay: 1.5
+    - id: wheel
+      hardpointType: Wheel
+      startingItem: LuaMHumveeWheel
+      insertDelay: 1.5
+  - type: VehicleTurret
+    rotationSpeedDegrees: 180
+    fireGraceDegrees: 20
+    requiresDeployed: true
+    pixelOffsets:
+      South: 0, 11
+      North: 0, 3.5
+      East: -4.5, 13
+      West: 5.5, 13
+  - type: VehicleDeployable
+    deployTime: 5
+    undeployTime: 5
+  - type: VehicleAutoTurret
+    range: 10
+    cooldown: 0.2
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: VehicleIntegrity
+    maxIntegrity: 800
+
+- type: entity
+  id: LuaMVehicleInteriorVisual
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    drawdepth: BelowMobs
+    layers:
+    - sprite: _LuaM/Structures/Vehicles/Humvee/interior.rsi
+      state: humvee
+
+- type: entity
+  id: LuaMVehicleTurretVisual
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    drawdepth: Doors
+    sprite: _LuaM/Structures/Vehicles/Humvee/humvee.rsi
+    layers:
+    - state: humveeturret_0
+      visible: false
+    - state: humveecannon_0
+      visible: false
+
+- type: soundCollection
+  id: LuaMVehicleCrash
+  files:
+  - /Audio/_LuaM/Vehicles/vehicle_crash_1.ogg
+  - /Audio/_LuaM/Vehicles/vehicle_crash_2.ogg
+
+- type: damageModifierSet
+  id: LuaMVehicleFrameHumvee
+  coefficients:
+    Blunt: 0.8
+    Slash: 0.8
+    Piercing: 0.35
+    Heat: 0.8
+    Structural: 1

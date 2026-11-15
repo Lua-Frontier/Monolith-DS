@@ -21,6 +21,7 @@ public sealed partial class AdminMenuWindow : DefaultWindow
         MasterTabContainer.SetTabTitle((int) TabIndex.PanicBunker, Loc.GetString("admin-menu-panic-bunker-tab"));
         MasterTabContainer.SetTabTitle((int) TabIndex.Players, Loc.GetString("admin-menu-players-tab"));
         MasterTabContainer.SetTabTitle((int) TabIndex.Objects, Loc.GetString("admin-menu-objects-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.SectorBank, Loc.GetString("luam-admin-menu-bank-tab")); // LuaM
         MasterTabContainer.OnTabChanged += OnTabChanged;
     }
 
@@ -42,5 +43,6 @@ public sealed partial class AdminMenuWindow : DefaultWindow
         PanicBunker,
         Players,
         Objects,
+        SectorBank, // LuaM
     }
 }

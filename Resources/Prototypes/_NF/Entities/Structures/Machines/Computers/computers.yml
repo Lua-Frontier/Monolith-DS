@@ -296,6 +296,8 @@
     cashType: Doubloon
     faction: Pirates
     locStringPrefix: pirate-
+  - type: TsfContrabandFine # LuaM: contraband turned in by the Vanguard fines the TSF budget three times as hard
+    multiplier: 3
 
 - type: entity
   name: bounty redemption console

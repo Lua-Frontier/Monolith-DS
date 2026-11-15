@@ -31,3 +31,22 @@
       amount: 1
     - id: Magazine556x45mmFMJ
       amount: 2
+
+- type: entity
+  parent: [WeaponLoadoutRegisteredBase, WeaponRifleAK12]
+  id: WeaponRifleAK12Registered
+  suffix: Registered
+
+- type: entity
+  parent: WeaponCaseLong
+  id: WeaponCaseLongAK12Registered
+  suffix: Loadout, AK-12
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleAK12Registered
+      amount: 1
+    - id: Magazine762x39mmFMJ
+      amount: 2
+    - id: AmmoBox762x39mmBigFMJ
+      amount: 2

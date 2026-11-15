@@ -1,2 +1,2 @@
-ent-N14MagazineRack = magazine rack
-    .desc = Wireframe rack to store magazines.
+ent-N14MagazineRack = стойка для журналов
+    .desc = Проволочная стойка для хранения журналов.

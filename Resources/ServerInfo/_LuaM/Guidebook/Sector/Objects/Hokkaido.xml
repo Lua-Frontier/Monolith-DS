@@ -1,0 +1,17 @@
+<Document>
+# ММС «Хоккайдо»
+
+База ММС: производство компонентов, приём промышленных заказов и корпоративное снабжение.
+
+<GuideEntityCards><GuideTexture Entity="ComputerCargoBounty" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerResearchAndDevelopment" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Работу начинайте с выбора заказа и планирования сырья. Полная производственная цепочка и должности собраны в ветке ММС.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — [bold]2–8 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_LuaM/POI/hokkaidoLuaM.yml" Name="ММС «Хоккайдо»"/>
+
+[textlink="ММС: должности и работа" link="ColossusMMCRoles"] · [textlink="Заказы MIC" link="MMC"]
+</Document>

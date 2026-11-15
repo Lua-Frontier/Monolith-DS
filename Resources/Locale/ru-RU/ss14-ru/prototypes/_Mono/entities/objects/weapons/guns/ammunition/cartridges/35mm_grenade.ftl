@@ -1,5 +1,5 @@
 ent-Cartridge35mmGrenadeSAPHE = граната (35x53мм полубронебойно-фугасный)
-ent-Base35mmGrenade = base 35x53mm grenade
+ent-Base35mmGrenade = базовая граната 35x53мм
     .desc = { ent-BaseItem.desc }
-ent-Cartridge35mmGrenadeStinger = 35x53mm FL/ST grenade
-    .desc = A powerful less-lethal round. Essentially a long-range stinger and flashbang grenade, useful for counter-insurgency, counter-sniping and riot control.
+ent-Cartridge35mmGrenadeStinger = граната 35x53мм FL/ST
+    .desc = Мощный нелетальный выстрел. По сути — дальнобойная граната «Жало» со светошумовым эффектом. Пригодится для борьбы с повстанцами, контрснайперской работы и подавления беспорядков.

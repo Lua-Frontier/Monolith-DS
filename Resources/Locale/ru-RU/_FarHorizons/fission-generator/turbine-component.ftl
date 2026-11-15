@@ -65,3 +65,5 @@ comp-turbine-ui-power = { POWERWATTS($power) }
 comp-turbine-ui-locked-message = Управление заблокировано.
 comp-turbine-ui-footer-left = Опасность: быстро вращающиеся механизмы.
 comp-turbine-ui-footer-right = 2.0 REV 1
+
+gas-turbine-monitor-not-linked = Монитор не связан с турбиной. Свяжите их мультитулом.

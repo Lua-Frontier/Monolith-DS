@@ -13,5 +13,5 @@ ent-ReinforcementRadioSyndicateSyndiCat = телепорт подкреплен�
 ent-ReinforcementRadioSyndicateCyborgAssault = { ent-ReinforcementRadioSyndicate }
     .suffix = Ядерные оперативники
     .desc = Призовите хорошо вооружённого штурмового киборга, немедленно!
-ent-ReinforcementRadio = syndicate reinforcement radio
-    .desc = Call in a syndicate agent of questionable quality, instantly! Only basic equipment provided.
+ent-ReinforcementRadio = радио подкрепления Синдиката
+    .desc = Мгновенно вызовите агента Синдиката сомнительного качества! Снаряжение — только базовое.

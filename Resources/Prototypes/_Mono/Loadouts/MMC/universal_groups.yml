@@ -11,6 +11,11 @@
   - MonoSecurityGuardBackpack
   - MonoSecurityGuardSatchel
   - MonoSecurityGuardDuffel
+  subgroups: # LuaM
+  - MercenaryBackpack # LuaM
+  - MonoMercenaryBackpack # LuaM
+  - PilotBackpack # LuaM
+  - MMCSubContractorBackpack # LuaM
   fallbacks:
   - ContractorClothingBackpack
 
@@ -22,6 +27,12 @@
   - MMCOfficeSuit
   - MMCOfficeSuitBlack
   - MMCWorkSuit
+  subgroups: # LuaM
+  - MercenaryJumpsuit # LuaM
+  - MonoMercenaryJumpsuit # LuaM
+  - LuaMMercenaryJumpsuit # LuaM
+  - PilotJumpsuit # LuaM
+  - ContractorJumpsuit # LuaM
   fallbacks:
   - MMCOfficeSuit
 
@@ -31,6 +42,10 @@
   minLimit: 0
   loadouts:
   - ContractorClothingBeltUtilityFilled
+  subgroups: # LuaM
+  - MMCSubMercenaryBeltEmployee # LuaM
+  - MonoMercenaryChestrig # LuaM
+  - MMCSubContractorBelt # LuaM
 
 - type: loadoutGroup
   id: MMCOuterClothing
@@ -41,6 +56,10 @@
   - MercenaryVestNormal
   - MercenaryClothingOuterArmorBPVestLight
   - MMCClothingOuterHardsuitMieyoMining
+  subgroups: # LuaM
+  - MMCSubLuaMMercenaryOuterClothing # LuaM
+  - MMCSubPilotOuterClothing # LuaM
+  - MMCSubContractorOuterClothing # LuaM
 
 - type: loadoutGroup
   id: MMCEmployeeShoes
@@ -50,6 +69,11 @@
   - ContractorClothingShoesBootsLaceup
   - ContractorClothingShoesColorBlack
   - ContractorClothingShoesBootsSalvage
+  subgroups: # LuaM
+  - MercenaryShoes # LuaM
+  - LuaMMercenaryShoes # LuaM
+  - PilotShoes # LuaM
+  - MMCSubContractorShoes # LuaM
   fallbacks:
   - ContractorClothingShoesBootsLaceup
 
@@ -86,6 +110,10 @@
   - MercenaryClothingOuterArmorBPVestLight
   - MMCClothingOuterHardsuitMieyoMining
   - MMCClothingOuterHardsuitMieyoCombat
+  subgroups: # LuaM
+  - MMCSubLuaMMercenaryOuterClothing # LuaM
+  - MMCSubPilotOuterClothing # LuaM
+  - MMCSubContractorOuterClothing # LuaM
   fallbacks:
   - MercenaryVestSlim
 
@@ -98,6 +126,10 @@
   - MercenaryClothingBeltWebbingsBigBlack
   - MercenaryClothingBeltSecurity
   - MercenaryClothingBeltSecurityEmpty
+  subgroups: # LuaM
+  - MMCSubMercenaryBeltCorpSec # LuaM
+  - MMCSubMonoMercenaryChestrig # LuaM
+  - ContractorBelt # LuaM
   fallbacks:
   - MercenaryClothingBeltWebbingsNormalBlack
 
@@ -108,6 +140,11 @@
   loadouts:
   - MercenaryClothingShoesBootsJack
   - MercenaryClothingShoesBootsCombat
+  subgroups: # LuaM
+  - MMCSubMercenaryShoes # LuaM
+  - LuaMMercenaryShoes # LuaM
+  - PilotShoes # LuaM
+  - ContractorShoes # LuaM
   fallbacks:
   - MercenaryClothingShoesBootsCombat
 
@@ -119,6 +156,11 @@
   - MonoSecurityGuardBackpack
   - MonoSecurityGuardSatchel
   - MonoSecurityGuardDuffel
+  subgroups: # LuaM
+  - MercenaryBackpack # LuaM
+  - MonoMercenaryBackpack # LuaM
+  - PilotBackpack # LuaM
+  - ContractorBackpack # LuaM
   fallbacks:
   - MonoSecurityGuardBackpack
 
@@ -131,6 +173,12 @@
   - MMCFieldSuitJeans
   - MMCFieldSuitCargos
   - MMCFieldSuitWarm
+  subgroups: # LuaM
+  - MercenaryJumpsuit # LuaM
+  - MonoMercenaryJumpsuit # LuaM
+  - LuaMMercenaryJumpsuit # LuaM
+  - PilotJumpsuit # LuaM
+  - ContractorJumpsuit # LuaM
   fallbacks:
   - MMCFieldSuit
 
@@ -150,6 +198,8 @@
   maxLimit: 1
   loadouts:
   - MercenaryClothingBalaclavaSkiMaskBlack
+  subgroups: # LuaM
+  - MMCSubMercenaryBalaclava # LuaM
 
 - type: loadoutGroup
   id: MMCCorpSecGloves
@@ -159,6 +209,11 @@
   - MercenaryClothingHandsGlovesCombat
   - MercenaryClothingHandsGlovesTacticalCombatBlack
   - ContractorClothingHandsGlovesFingerless
+  subgroups: # LuaM
+  - MMCSubMercenaryGloves # LuaM
+  - MMCSubMonoMercenaryGloves # LuaM
+  - PilotGloves # LuaM
+  - MMCSubContractorGloves # LuaM
   fallbacks:
   - MercenaryClothingHandsGlovesCombat
 

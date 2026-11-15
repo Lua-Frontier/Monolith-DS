@@ -1,2 +1,10 @@
 uplink-security-t3-rising-voucher-name = Rising Voucher
 uplink-security-t3-rising-voucher-desc = A small card that contains the data for the procurement of a Rising-class frigate from the flagship's reserves.
+uplink-security-t1-voucher-name = TSF Tier 1 Ship Voucher
+uplink-security-t1-voucher-desc = A small card that allows for the procurement of any basic TSF shuttle from the flagship's reserves. Reusable, recharges in 30 minutes.
+uplink-security-t2-voucher-name = TSF Tier 2 Ship Voucher
+uplink-security-t2-voucher-desc = A small card that allows for the procurement of any advanced TSF shuttle from the flagship's reserves. Reusable, recharges in 1 hour.
+uplink-security-t3-polaris-voucher-name = TSFN Polaris LPC [T3]
+uplink-security-t3-polaris-voucher-desc = A small card that contains the data for the procurement of a Type-56K Polaris-class frigate from the flagship's reserves. Reusable, recharges in 1 hour 25 minutes.
+uplink-security-t4-luda-voucher-name = TSFN Luda LPC [T4]
+uplink-security-t4-luda-voucher-desc = A small card that authorizes the procurement of a Luda-class strategic missile destroyer. Reusable, recharges in 4 hours.

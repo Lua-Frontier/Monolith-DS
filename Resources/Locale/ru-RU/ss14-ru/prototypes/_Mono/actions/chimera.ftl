@@ -1,6 +1,6 @@
-ent-ActionSpawnBiomassTile = Plant Biomass
-    .desc = Spawns a growth of biomass that can expand outwards.
-ent-ActionSpawnBiomassWall = Plant Flesh Wall
-    .desc = Spawns a thick wall of biomass.
-ent-ActionSpawnLetoferolBeast = Letoferol Beast
-    .desc = Create another lower letoferol beast.
+ent-ActionSpawnBiomassTile = Посадить биомассу
+    .desc = Создаёт нарост биомассы, который может разрастаться.
+ent-ActionSpawnBiomassWall = Вырастить стену из плоти
+    .desc = Создаёт толстую стену из биомассы.
+ent-ActionSpawnLetoferolBeast = Летоферольный зверь
+    .desc = Создать ещё одного низшего летоферольного зверя.

@@ -1,2 +1,2 @@
-ent-ShipVoucherVGMars = VG Mars LPC [T2]
+ent-ShipVoucherVGMars = ваучер «Вайпер» на «Марс» [T2]
     .desc = Небольшая карта с данными для получения корвета класса «Марс» из резервов станции.

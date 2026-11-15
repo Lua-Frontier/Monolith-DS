@@ -14,5 +14,5 @@ ent-ClothingHeadHatCapVizier = фуражка командора Авангар�
     .desc = Модная фуражка, которую носит командор Авангарда, чтобы обозначить свой официальный статус выше остальных имперцев.
 ent-ClothingHeadHatCapVizierPurple = фуражка командора Авангарда
     .desc = Модная фуражка, которую носит командор Авангарда, чтобы обозначить свой официальный статус выше остальных имперцев.
-ent-ClothingHeadHatCCTC = executive's cap
-    .desc = An extravagant, fancy cap for a Trade Charter executive.
+ent-ClothingHeadHatCCTC = фуражка руководителя
+    .desc = Броская, роскошная фуражка руководителя Торговой хартии.

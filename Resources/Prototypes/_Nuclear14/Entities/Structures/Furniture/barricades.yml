@@ -43,7 +43,7 @@
     blocking: 80
   - type: ExtendDescription
     descriptionList:
-    - description: You can fire over this if you stand near it.
+    - description: extend-desc-fire-over # LuaM
       color: "#4f94ad"
       requireDetailRange: false
 
@@ -91,7 +91,7 @@
     blocking: 10
   - type: ExtendDescription
     descriptionList:
-    - description: You can fire over this if you stand near it.
+    - description: extend-desc-fire-over # LuaM
       color: "#4f94ad"
       requireDetailRange: false
 
@@ -188,7 +188,7 @@
     blocking: 100
   - type: ExtendDescription
     descriptionList:
-    - description: You can fire over this if you stand near it.
+    - description: extend-desc-fire-over # LuaM
       color: "#4f94ad"
       requireDetailRange: false
 

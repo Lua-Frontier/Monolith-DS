@@ -137,9 +137,16 @@
   id: MobVoidBaseTSFD
   categories: [ HideSpawnMenu ]
   components:
+    - type: NpcPersonalShieldUser # LuaM: turns on the energy shield of its hardsuit
     - type: Loadout
       prototypes:
         - TSFMCMobGearDWayward
+    # LuaM-start: shoots 6.8x52mm plasma rounds
+    - type: BasicEntityAmmoProvider
+      proto: Bullet68x52mmCaselessPlasma
+      capacity: 5
+      count: 5
+    # LuaM-end
 
 # PDV Loadout Mobs
 
@@ -160,6 +167,27 @@
     - type: Loadout
       prototypes:
         - PDVMobGearCWayward
+    - type: NpcPersonalShieldUser # LuaM: turns on the energy shield of its hardsuit
+    # LuaM-start: shoots explosive 12.7x99mm like the CS-12 Burner
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 0.67 # same as the fire rate (1.5), so the gun never runs dry
+      rechargeSound:
+        path: /Audio/_NF/Effects/silence.ogg
+    - type: BasicEntityAmmoProvider
+      proto: Bullet127x99mmExplosive
+      capacity: 3
+      count: 3
+    - type: Gun
+      damageModifier: 1.0
+      minAngle: 5
+      maxAngle: 20
+      showExamineText: false
+      fireRate: 1.5
+      selectedMode: SemiAuto
+      availableModes:
+      - SemiAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+    # LuaM-end
 
 - type: entity
   parent: MobVoidBasePDV

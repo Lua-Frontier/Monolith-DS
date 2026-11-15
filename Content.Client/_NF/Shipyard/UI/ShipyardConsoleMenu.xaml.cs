@@ -630,6 +630,11 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     public void UpdateState(ShipyardConsoleInterfaceState state)
     {
         BalanceLabel.Text = BankSystemExtensions.ToSpesoString(state.Balance);
+        // LuaM-start: cash in the console
+        CashTextLabel.Visible = state.Cash > 0;
+        CashLabel.Visible = state.Cash > 0;
+        CashLabel.Text = BankSystemExtensions.ToSpesoString(state.Cash);
+        // LuaM-end
         var shipPrice = 0;
         if (!state.FreeListings)
             shipPrice = state.ShipSellValue;

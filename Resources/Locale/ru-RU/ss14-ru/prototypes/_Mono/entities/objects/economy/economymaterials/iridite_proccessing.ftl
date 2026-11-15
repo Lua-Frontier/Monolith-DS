@@ -1,6 +1,6 @@
-ent-MaterialIriditeSlag = iridite slag
-    .desc = Needs to be put in a centrifuge to seperate into the fine powder required for gasless Iridite production.
-ent-IriditePowder = raw iridite powder
-    .desc = Grinded raw iridite slag made in a processing centrifuge, ready to be mixed with napalm and thermite in an arc furnace to make iridite crystals.
-ent-IriditeCrystal = crystalline iridite
-    .desc = A natural state of iridite from the result of non-atmospheric iridite processing. Needs to be processed in an arc furnace again with various chemicals to make 1 iridite sheet.
+ent-MaterialIriditeSlag = иридитовый шлак
+    .desc = Его нужно поместить в центрифугу, чтобы отделить мелкий порошок, необходимый для безгазового производства иридита.
+ent-IriditePowder = сырой иридитовый порошок
+    .desc = Измельчённый в перерабатывающей центрифуге сырой иридитовый шлак. Готов к смешиванию с напалмом и термитом в дуговой печи для получения кристаллов иридита.
+ent-IriditeCrystal = кристаллический иридит
+    .desc = Природная форма иридита, получаемая при безатмосферной переработке. Чтобы получить 1 лист иридита, его нужно снова переработать в дуговой печи с различными химикатами.

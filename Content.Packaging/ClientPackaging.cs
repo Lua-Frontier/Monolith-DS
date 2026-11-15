@@ -66,12 +66,7 @@ public static class ClientPackaging
             Name = "DropSvgPass",
         };
         dropSvgPass.AddDependency(graph.Input).AddBefore(graph.PresetPasses);
-        // LuaM-start: exclude generated PNGs from client downloads.
-        // These PNGs are served on demand by the server, not downloaded at connection.
-        var dropGuidebookRenders = new AssetPassFilterDrop(f => f.Path.StartsWith("GuidebookRenders/", StringComparison.Ordinal)) { Name = "DropGuidebookRenders" };
-        dropGuidebookRenders.AddDependency(graph.Input).AddBefore(graph.PresetPasses);
-        // LuaM-end
-        AssetGraph.CalculateGraph([pass, dropSvgPass, dropGuidebookRenders, ..graph.AllPasses], logger); // LuaM: exclude generated PNGs from client downloads.
+        AssetGraph.CalculateGraph([pass, dropSvgPass, ..graph.AllPasses], logger);
 
         var inputPass = graph.Input;
 
@@ -89,6 +84,14 @@ public static class ClientPackaging
             cancel: cancel);
 
         await RobustClientPackaging.WriteClientResources(contentDir, inputPass, cancel);
+
+        // LuaM-start: local guidebook previews also need the selected station/POI YAML sources.
+        foreach (var map in _LuaM.GuidebookMapResources.Find(contentDir))
+        {
+            cancel.ThrowIfCancellationRequested();
+            inputPass.InjectFileFromDisk(map, Path.Combine(contentDir, "Resources", map));
+        }
+        // LuaM-end
 
         inputPass.InjectFinished();
     }

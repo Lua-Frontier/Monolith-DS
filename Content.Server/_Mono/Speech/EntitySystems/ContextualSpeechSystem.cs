@@ -6,6 +6,7 @@ using Content.Shared._NF.Item;
 using Content.Shared.Chat;
 using Content.Shared.Dataset;
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems; // LuaM
 using Content.Shared.Throwing;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -20,6 +21,7 @@ public sealed partial class ContextualSpeechSystem : EntitySystem
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private MobStateSystem _mobState = default!; // LuaM
 
     private readonly Dictionary<ProtoId<LocalizedDatasetPrototype>, LocalizedDatasetPrototype> _cachedDatasets = new();
 
@@ -66,6 +68,9 @@ public sealed partial class ContextualSpeechSystem : EntitySystem
     private void OnSpeechTrigger(EntityUid uid, ContextualSpeechComponent component, ref SpeechTriggerEvent args)
     {
         if (!component.Triggers.TryGetValue(args.Trigger, out var trigger))
+            return;
+
+        if (_mobState.IsDead(uid)) // LuaM
             return;
 
         if (!_random.Prob(trigger.SpeechChance))

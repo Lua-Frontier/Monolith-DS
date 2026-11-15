@@ -178,6 +178,7 @@ public sealed partial class ContentAudioSystem
     {
         if (!_resourceCache.TryGetResource(new ResPath(soundtrackFilename), out AudioResource? audio))
         {
+            Log.Warning($"Failed to load lobby soundtrack {soundtrackFilename}"); // LuaM
             return;
         }
 
@@ -189,7 +190,7 @@ public sealed partial class ContentAudioSystem
         );
         if (playResult == null)
         {
-            _sawmill.Warning(
+            Log.Warning(
                 $"Tried to play lobby soundtrack '{{Filename}}' using {nameof(SharedAudioSystem)}.{nameof(SharedAudioSystem.PlayGlobal)} but it returned default value of EntityUid!",
                 soundtrackFilename);
             return;

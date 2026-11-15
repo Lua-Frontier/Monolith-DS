@@ -6,8 +6,9 @@
   components:
   # LuaM-start: contextual cybernetics guide.
   - type: GuideHelp
-    guides:
-    - ColossusCybernetics
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
   # LuaM-end
   - type: Sprite
     sprite: _Goobstation/Objects/Devices/autosurgeon.rsi
@@ -66,6 +67,11 @@
   id: AutosurgeonRightSpeedLeg
   name: autosurgeon (right S.P.E.E.D leg)
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+  # LuaM-end
   - type: AutoSurgeon
     targetBodyPart: Torso
     newPartProto: SpeedRightLeg
@@ -75,6 +81,11 @@
   id: AutosurgeonLeftSpeedLeg
   name: autosurgeon (left S.P.E.E.D leg)
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+  # LuaM-end
   - type: AutoSurgeon
     targetBodyPart: Torso
     newPartProto: SpeedLeftLeg
@@ -87,6 +98,12 @@
   id: AutosurgeonMantisBlades
   name: syndicate autosurgeon (mantis blades)
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusMantisBlades
+  # LuaM-end
   - type: AutoSurgeon
     targetBodyPart: Arm
     organForEachPart: OrganArmMantisBlade

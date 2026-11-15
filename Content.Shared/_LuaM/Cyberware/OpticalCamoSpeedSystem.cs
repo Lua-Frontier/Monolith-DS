@@ -26,5 +26,8 @@ public sealed partial class OpticalCamoSpeedSystem : EntitySystem
     private void OnState(Entity<OpticalCamoComponent> ent, ref AfterAutoHandleStateEvent args)
     {
         _movement.RefreshMovementSpeedModifiers(ent);
+
+        var ev = new OpticalCamoStateChangedEvent();
+        RaiseLocalEvent(ent, ref ev);
     }
 }

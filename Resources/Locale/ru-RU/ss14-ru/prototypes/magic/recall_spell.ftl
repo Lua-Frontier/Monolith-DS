@@ -1,2 +1,2 @@
-ent-ActionItemRecall = Mark Item
-    .desc = Mark a held item to later summon into your hand.
+ent-ActionItemRecall = Пометить предмет
+    .desc = Пометьте предмет в руке, чтобы позже призвать его к себе.

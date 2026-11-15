@@ -161,6 +161,6 @@
     - LargeMilitaryPowerCell
   - type: ExtendDescription
     descriptionList:
-    - description: Fits into TSF ballistic & chemical laser GPMGs.
+    - description: extend-desc-fits-tsf-gpmg # LuaM
       color: "#4f94ad"
       requireDetailRange: true

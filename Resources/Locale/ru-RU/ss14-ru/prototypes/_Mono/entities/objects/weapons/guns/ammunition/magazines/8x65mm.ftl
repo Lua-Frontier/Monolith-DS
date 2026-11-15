@@ -14,5 +14,5 @@ ent-Magazine8x65mmSKRBox = SAW короб (8x65мм SKR)
 ent-Magazine8x65mmEmptyBox = SAW короб (8x65мм SKR)
     .desc = Коробчатый магазин, использующий патроны калибра 8x65мм SKR.
     .suffix = Пустой
-ent-BaseMagazine8x65mmBox = SAW box (8x65mm SKR)
+ent-BaseMagazine8x65mmBox = короб пулемёта (8x65мм SKR)
     .desc = { ent-BaseItem.desc }

@@ -5,6 +5,11 @@
   suffix: Capital, T4
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 30000
   - type: Sprite

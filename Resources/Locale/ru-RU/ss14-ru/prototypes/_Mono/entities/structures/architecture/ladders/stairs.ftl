@@ -1,4 +1,4 @@
-ent-MonoCEZLevelsLadderRMCBase = stairs
+ent-MonoCEZLevelsLadderRMCBase = лестница
     .desc = { "" }
     .suffix = ZLEVELS
 ent-MonoCEZLevelLadderRMCKutjevoFull = { ent-CEZLevelLadderBase }

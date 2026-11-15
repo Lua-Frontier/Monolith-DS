@@ -235,10 +235,10 @@
   #     collection: FootstepHeavySuit # LuaM: sound_mecha_powerloader_step > FootstepHeavySuit
   - type: ExtendDescription
     descriptionList:
-    - description: Alt-click or otherwise interact to toggle additional shielding.
+    - description: extend-desc-toggle-shielding # LuaM
       color: "#4f94ad"
       requireDetailRange: true
-    - description: The M92-x shield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
+    - description: extend-desc-shield-m92x # LuaM
       color: "#94768c"
       requireDetailRange: true
 
@@ -318,6 +318,6 @@
     coefficient: 0.0001
   - type: ExtendDescription
     descriptionList:
-    - description: Alt-click or otherwise interact to toggle additional shielding.
+    - description: extend-desc-toggle-shielding # LuaM
       color: "#4f94ad"
       requireDetailRange: true

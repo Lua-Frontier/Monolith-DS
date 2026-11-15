@@ -6,7 +6,7 @@
   description: Contains the necessary data for a shipyard console to produce a certain design.
   components:
   - type: Sprite
-    sprite: _Mono/Objects/Misc/newlpc.rsi
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
     state: icon
   - type: ShipyardVoucher
     destroyOnEmpty: false

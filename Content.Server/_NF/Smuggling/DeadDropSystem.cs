@@ -619,6 +619,9 @@ public sealed partial class DeadDropSystem : EntitySystem
                 {
                     Timer.Spawn(TimeSpan.FromMinutes(delayMinutes), () =>
                     {
+                        if (TerminatingOrDeleted(stationGrid.Value) || TerminatingOrDeleted(uid)) // LuaM
+                            return;
+
                         _radio.SendRadioMessage(stationGrid.Value, output, messageSets.Channel, uid);
                     });
                 }

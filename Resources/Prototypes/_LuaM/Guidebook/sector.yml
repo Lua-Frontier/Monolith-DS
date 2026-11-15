@@ -1,0 +1,162 @@
+# LuaM: permanent sector locations and event object guides.
+
+- type: guideEntry
+  id: ColossusSiteBlackMarket
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/BlackMarket.xml
+  name: guide-sector-colossus-site-black-market
+
+- type: guideEntry
+  id: ColossusSiteSevastopol
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Sevastopol.xml
+  name: guide-sector-colossus-site-sevastopol
+
+- type: guideEntry
+  id: ColossusSiteMining
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Mining.xml
+  name: guide-sector-colossus-site-mining
+
+- type: guideEntry
+  id: ColossusSiteHokkaido
+  priority: 60 # LuaM: station order
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Hokkaido.xml
+  name: guide-sector-colossus-site-hokkaido
+
+- type: guideEntry
+  id: ColossusSiteEdison
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Edison.xml
+  name: guide-sector-colossus-site-edison
+
+- type: guideEntry
+  id: ColossusSiteZvezdaLuaM
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/ZvezdaLuaM.xml
+  name: guide-sector-colossus-site-zvezda-lua-m
+
+- type: guideEntry
+  id: ColossusSiteZetaNode
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/ZetaNode.xml
+  name: guide-sector-colossus-site-zeta-node
+
+- type: guideEntry
+  id: ColossusSiteLPBravo
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/LPBravo.xml
+  name: guide-sector-colossus-site-l-p-bravo
+
+- type: guideEntry
+  id: ColossusSiteAnomalousLab
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/AnomalousLab.xml
+  name: guide-sector-colossus-site-anomalous-lab
+
+- type: guideEntry
+  id: ColossusSiteTinnia
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Tinnia.xml
+  name: guide-sector-colossus-site-tinnia
+
+- type: guideEntry
+  id: ColossusSiteCaseysCasino
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/CaseysCasino.xml
+  name: guide-sector-colossus-site-caseys-casino
+
+- type: guideEntry
+  id: ColossusSiteOmnichurch
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Omnichurch.xml
+  name: guide-sector-colossus-site-omnichurch
+
+- type: guideEntry
+  id: ColossusSiteThePit
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/ThePit.xml
+  name: guide-sector-colossus-site-the-pit
+
+- type: guideEntry
+  id: ColossusSiteGrifty
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Grifty.xml
+  name: guide-sector-colossus-site-grifty
+
+- type: guideEntry
+  id: ColossusSiteMcHobo
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/McHobo.xml
+  name: guide-sector-colossus-site-mc-hobo
+
+- type: guideEntry
+  id: ColossusSiteJupiter
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Jupiter.xml
+  name: guide-sector-colossus-site-jupiter
+
+- type: guideEntry
+  id: ColossusSiteLancelot
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Lancelot.xml
+  name: guide-sector-colossus-site-lancelot
+
+- type: guideEntry
+  id: ColossusSitePolaris
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Polaris.xml
+  name: guide-sector-colossus-site-polaris
+
+- type: guideEntry
+  id: ColossusSiteAutomatedTanker
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/AutomatedTanker.xml
+  name: guide-sector-colossus-site-automated-tanker
+
+- type: guideEntry
+  id: ColossusSiteZenith
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Zenith.xml
+  name: guide-sector-colossus-site-zenith
+
+- type: guideEntry
+  id: ColossusSiteTradeDepots
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/TradeDepots.xml
+  name: guide-sector-colossus-site-trade-depots
+
+- type: guideEntry
+  id: ColossusSiteBeacons
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Objects/Beacons.xml
+  name: guide-sector-colossus-site-beacons
+
+- type: guideEntry
+  id: ColossusEventSyndicateCache
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/SyndicateCache.xml
+  name: guide-sector-colossus-event-syndicate-cache
+
+- type: guideEntry
+  id: ColossusEventTSFVault
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/TSFVault.xml
+  name: guide-sector-colossus-event-t-s-f-vault
+
+- type: guideEntry
+  id: ColossusEventSyndicateShuttle
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/SyndicateShuttle.xml
+  name: guide-sector-colossus-event-syndicate-shuttle
+
+- type: guideEntry
+  id: ColossusEventPreFracture
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/PreFracture.xml
+  name: guide-sector-colossus-event-pre-fracture
+
+- type: guideEntry
+  id: ColossusEventMonolithFragments
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/MonolithFragments.xml
+  name: guide-sector-colossus-event-monolith-fragments
+
+- type: guideEntry
+  id: ColossusEventPlanetoids
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/Planetoids.xml
+  name: guide-sector-colossus-event-planetoids
+
+- type: guideEntry
+  id: ColossusEventSalvage
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/Salvage.xml
+  name: guide-sector-colossus-event-salvage
+
+- type: guideEntry
+  id: ColossusEventADSFleet
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/ADSFleet.xml
+  name: guide-sector-colossus-event-a-d-s-fleet
+
+- type: guideEntry
+  id: ColossusEventAsakimShips
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/AsakimShips.xml
+  name: guide-sector-colossus-event-asakim-ships
+
+- type: guideEntry
+  id: ColossusEventDeliveries
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/Deliveries.xml
+  name: guide-sector-colossus-event-deliveries

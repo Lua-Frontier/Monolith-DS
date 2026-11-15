@@ -1,7 +1,7 @@
 - type: pointOfInterest
   id: ZetaNode
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'Zeta Node'
+  name: 'Узел «Зета»' # LuaM: 'Zeta Node' > 'Узел «Зета»'
   minimumDistance: 500
   maximumDistance: 750
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce, MonoChimeraTsfPdv ] # LuaM: MonoChimeraTsf/MonoChimeraPdv > MonoChimeraTsfPdv
@@ -13,11 +13,11 @@
   - type: Company # LuaM: faction outpost
     companyName: Colonial
   - type: VesselInfo
-    description: "Even the air has a thin coat of dust."
+    description: "Старый узел сектора, давно забытый всеми. Даже воздух здесь покрыт тонким слоем пыли." # LuaM: "Even the air has a thin coat of dust." > translated
 
 - type: gameMap
   id: ZetaNode
-  mapName: 'Zeta Node'
+  mapName: 'Узел «Зета»' # LuaM: 'Zeta Node' > 'Узел «Зета»'
   mapPath: /Maps/_Mono/POI/zetanode.yml
   minPlayers: 0
   stations:
@@ -25,6 +25,6 @@
       stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Zeta Node'
+          mapNameTemplate: 'Узел «Зета»' # LuaM: 'Zeta Node' > 'Узел «Зета»'
         - type: StationDeadDrop
           maxDeadDrops: 2

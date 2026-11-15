@@ -6,6 +6,7 @@
   abstract: true
   components:
   - type: GridSpawner
+    avoidHazardNebulae: true # LuaM
     addComponents:
     - type: IFF
       flags: AlwaysShowColor

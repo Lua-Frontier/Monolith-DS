@@ -239,10 +239,10 @@
     color: "#5dd439"
   - type: ExtendDescription
     descriptionList:
-    - description: Alt-click or otherwise interact to toggle additional shielding.
+    - description: extend-desc-toggle-shielding # LuaM
       color: "#4f94ad"
       requireDetailRange: true
-    - description: The CV-53 hardshield is designed to inhibit the velocity of incoming conventional firearms. However, it struggles against anything involving high-energy particles, such as lasers.
+    - description: extend-desc-shield-cv53 # LuaM
       color: "#94768c"
       requireDetailRange: true
 

@@ -1,0 +1,313 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+
+- type: entity
+  parent: BaseItem
+  id: LuaMHumveeHardpointBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/Humvee/hardpoints.rsi
+  - type: Item
+    size: Huge
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: LuaMHumveeHardpointBase
+  id: LuaMHumveeWheel
+  name: humvee wheel
+  description: A reinforced humvee wheel set.
+  components:
+  - type: Sprite
+    state: tires
+  - type: HardpointItem
+    hardpointType: Wheel
+    family: Humvee
+
+- type: entity
+  parent: LuaMHumveeHardpointBase
+  id: LuaMHumveeTurret
+  name: humvee turret
+  description: A roof-mounted humvee turret. Fits a cannon and a launcher.
+  components:
+  - type: Sprite
+    state: humveeturret
+  - type: HardpointItem
+    hardpointType: Turret
+    family: Humvee
+    visualState: humveeturret_0
+  - type: HardpointSlots
+    family: Humvee
+    slots:
+    - id: turret-cannon
+      hardpointType: Cannon
+      insertDelay: 2
+    - id: turret-launcher
+      hardpointType: Launcher
+      insertDelay: 2
+
+- type: entity
+  parent: LuaMHumveeTurret
+  id: LuaMHumveeTurretArmed
+  suffix: Cannon
+  components:
+  - type: HardpointSlots
+    family: Humvee
+    slots:
+    - id: turret-cannon
+      hardpointType: Cannon
+      startingItem: LuaMHumveeCannon
+      insertDelay: 2
+    - id: turret-launcher
+      hardpointType: Launcher
+      insertDelay: 2
+
+- type: entity
+  parent: LuaMHumveeTurret
+  id: LuaMHumveeARCTurret
+  suffix: ARC
+  components:
+  - type: HardpointSlots
+    family: Humvee
+    slots:
+    - id: turret-cannon
+      hardpointType: Cannon
+      startingItem: LuaMHumveeARCCannon
+      insertDelay: 2
+    - id: turret-launcher
+      hardpointType: Launcher
+      insertDelay: 2
+
+- type: entity
+  parent: LuaMHumveeHardpointBase
+  id: LuaMHumveeCannon
+  name: RE700 rotary cannon
+  description: A rotary cannon for a humvee turret.
+  components:
+  - type: Sprite
+    state: humveecannon
+  - type: HardpointItem
+    hardpointType: Cannon
+    family: Humvee
+    visualState: humveecannon_0
+    ammoType: RERotaryCannon
+  - type: Gun
+    fireRate: 5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/_LuaM/Vehicles/sound_weapons_humvee_cannon.ogg
+    cameraRecoilScalar: 0
+    minAngle: 2
+    maxAngle: 8
+  - type: BallisticAmmoProvider
+    cycleable: false
+    proto: LuaMCartridgeHumveeCannon
+    capacity: 500
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+- type: entity
+  parent: LuaMHumveeCannon
+  id: LuaMHumveeARCCannon
+  name: ARC cannon
+  description: A burst-fire cannon configured for an ARC humvee turret.
+  components:
+  - type: Gun
+    fireRate: 5
+    burstFireRate: 5
+    shotsPerBurst: 3
+    selectedMode: Burst
+    availableModes:
+    - Burst
+    soundGunshot: /Audio/_LuaM/Vehicles/sound_weapons_humvee_cannon.ogg
+    cameraRecoilScalar: 0
+    minAngle: 2
+    maxAngle: 8
+
+- type: entity
+  parent: LuaMHumveeHardpointBase
+  id: LuaMHumveeLauncher
+  name: humvee grenade launcher
+  description: A launcher hardpoint for a humvee turret.
+  components:
+  - type: Sprite
+    state: humveelauncher
+  - type: HardpointItem
+    hardpointType: Launcher
+    family: Humvee
+    visualState: humveelauncher_0
+    ammoType: GrenadeLauncher
+  - type: Gun
+    fireRate: 0.7
+    projectileSpeed: 18
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+    cameraRecoilScalar: 0
+  - type: BallisticAmmoProvider
+    cycleable: false
+    proto: 40mmGrenadeFragmentation
+    capacity: 6
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+- type: entity
+  parent: LuaMHumveeHardpointBase
+  id: LuaMHumveeSnowplow
+  name: humvee plow
+  description: A reinforced plow attachment for a humvee. Makes ramming walls much more effective.
+  components:
+  - type: Sprite
+    state: snowplow
+  - type: HardpointItem
+    hardpointType: FrontAttachment
+    family: Humvee
+    visualState: snowplow_0
+    structureDamageMultiplier: 1.5
+
+- type: entity
+  parent: LuaMHumveeHardpointBase
+  id: LuaMHumveeOverlight
+  name: humvee overlight
+  description: An overlight array for a humvee. Doubles the spotlight range.
+  components:
+  - type: Sprite
+    state: overlight
+  - type: HardpointItem
+    hardpointType: RoofAttachment
+    family: Humvee
+    visualState: overlight_0
+    spotlightRadiusMultiplier: 2
+
+- type: entity
+  parent: LuaMHumveeHardpointBase
+  id: LuaMHumveeHatch
+  name: humvee hatch
+  description: A hatch assembly for a humvee roof.
+  components:
+  - type: Sprite
+    state: humveehatch
+  - type: HardpointItem
+    hardpointType: RoofAttachment
+    family: Humvee
+    visualState: humveehatch_0
+
+- type: entity
+  parent: BaseCartridge556x45mm
+  id: LuaMCartridgeHumveeCannon
+  name: cartridge (10x50mm)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: CartridgeAmmo
+    proto: LuaMBulletHumveeCannon
+    deleteOnSpawn: true
+
+- type: entity
+  parent: Bullet556x45mmFMJ
+  id: LuaMBulletHumveeCannon
+  name: bullet (10x50mm)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 30
+
+- type: entity
+  parent: BaseItem
+  id: LuaMHumveeAmmoBoxBase
+  abstract: true
+  components:
+  - type: Item
+    size: Huge
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/Humvee/ammo.rsi
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent: LuaMHumveeAmmoBoxBase
+  id: LuaMHumveeAmmoBoxCannon
+  name: RE700 rotary cannon ammo crate
+  description: Ammunition for the humvee RE700 rotary cannon. Use it on the vehicle to reload.
+  components:
+  - type: Sprite
+    state: ace_autocannon
+  - type: VehicleAmmoBox
+    ammoType: RERotaryCannon
+    amount: 500
+
+- type: entity
+  parent: LuaMHumveeAmmoBoxBase
+  id: LuaMHumveeAmmoBoxLauncher
+  name: grenade launcher ammo crate
+  description: Grenades for the humvee launcher. Use it on the vehicle to reload.
+  components:
+  - type: Sprite
+    state: glauncher_0
+  - type: VehicleAmmoBox
+    ammoType: GrenadeLauncher
+    amount: 12
+
+- type: entity
+  id: ActionLuaMVehicleHorn
+  name: Horn
+  description: Sound the horn.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 1
+    icon: { sprite: Objects/Fun/bikehorn.rsi, state: icon }
+    event: !type:VehicleHornActionEvent
+
+- type: entity
+  id: ActionLuaMVehicleOvercharge
+  name: Overdrive
+  description: Briefly push the engine past its limits.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 14
+    icon: { sprite: _LuaM/Structures/Vehicles/Humvee/hardpoints.rsi, state: tires }
+    event: !type:VehicleOverchargeActionEvent
+
+- type: entity
+  id: ActionLuaMVehicleSpotlight
+  name: Toggle headlights
+  description: Turn the vehicle headlights on or off.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 0.5
+    icon: { sprite: _LuaM/Structures/Vehicles/Humvee/hardpoints.rsi, state: overlight }
+    event: !type:VehicleSpotlightActionEvent
+
+- type: entity
+  id: ActionLuaMVehicleDeploy
+  name: Deploy
+  description: Deploy or pack up the vehicle. A deployed vehicle cannot move but can use its cannon.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 5
+    icon: { sprite: _LuaM/Structures/Vehicles/Humvee/hardpoints.rsi, state: humveeturret }
+    event: !type:VehicleDeployActionEvent
+
+- type: entity
+  id: ActionLuaMVehicleSwitchWeapon
+  name: Switch turret weapon
+  description: Switch between the turret cannon and launcher.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 0.5
+    icon: { sprite: _LuaM/Structures/Vehicles/Humvee/hardpoints.rsi, state: humveecannon }
+    event: !type:VehicleSwitchWeaponActionEvent

@@ -124,6 +124,11 @@ public abstract partial class SharedShuttleSystem : EntitySystem
 
     public bool CanDraw(EntityUid gridUid, PhysicsComponent? physics = null, IFFComponent? iffComp = null)
     {
+        // Lua-start: a veil nebula hides everything inside it from radars
+        if (HasComp<Content.Shared._Lua.SpaceHazards.NebulaVeilTrackedComponent>(gridUid))
+            return false;
+        // Lua-end
+
         if (!Resolve(gridUid, ref physics))
             return true;
 

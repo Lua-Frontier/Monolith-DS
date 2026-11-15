@@ -25,6 +25,8 @@ namespace Content.IntegrationTests.Tests._LuaM;
 [TestFixture]
 public sealed class ArmorGuideTests
 {
+    private static readonly Regex EntitiesRegex = new("Entities=\"([^\"]+)\"");
+
     [Test]
     public async Task ArmorDocumentsParseAndEveryComparedItemExists()
     {
@@ -39,7 +41,7 @@ public sealed class ArmorGuideTests
                 var guide = prototypes.Index<GuideEntryPrototype>(id);
                 using var reader = resources.ContentFileReadText(guide.Text);
                 var xml = reader.ReadToEnd();
-                foreach (Match match in Regex.Matches(xml, "Entities=\"([^\"]+)\""))
+                foreach (Match match in EntitiesRegex.Matches(xml))
                 foreach (var item in match.Groups[1].Value.Split(','))
                     Assert.That(prototypes.HasIndex<EntityPrototype>(item), Is.True, $"{id}: {item}");
                 using var document = new Document();
@@ -57,8 +59,8 @@ public sealed class ArmorGuideTests
         {
             var entities = pair.Client.ResolveDependency<IEntityManager>();
             var prototypes = pair.Client.ResolveDependency<IPrototypeManager>();
-            var heat = prototypes.Index<DamageTypePrototype>("Heat").LocalizedName;
-            var structural = prototypes.Index<DamageTypePrototype>("Structural").LocalizedName;
+            var heat = prototypes.Index(new ProtoId<DamageTypePrototype>("Heat")).LocalizedName;
+            var structural = prototypes.Index(new ProtoId<DamageTypePrototype>("Structural")).LocalizedName;
             var before = entities.EntityCount;
             using (var stats = new ArmorStats())
             {
@@ -75,10 +77,10 @@ public sealed class ArmorGuideTests
                     var prototype = prototypes.Index(embed.EntityPrototypeId!.Value);
                     Assert.That(embed.Children.OfType<RichTextLabel>().Single().GetMessage(), Is.EqualTo(prototype.Name));
                 }
-                var text = string.Join("\n", Labels(stats).Select(label => label.GetMessage()));
-                Assert.That(text, Does.Contain(heat + " 12"));
-                Assert.That(text, Does.Contain(heat + " 15"));
-                Assert.That(text, Does.Contain(structural + " 35"));
+                var text = string.Join("\n", Labels(stats).Select(label => label.GetFormattedMessage()?.ToString()));
+                Assert.That(text, Does.Contain(heat + ": 12"));
+                Assert.That(text, Does.Contain(heat + ": 15"));
+                Assert.That(text, Does.Contain(structural + ": 35"));
                 Assert.That(text, Does.Contain("-60%"));
                 Assert.That(text, Does.Contain("-10%"));
                 Assert.That(text, Does.Not.Contain("Нет обычного прямого урона"), "14.5mm must resolve HitscanBasicDamage.");

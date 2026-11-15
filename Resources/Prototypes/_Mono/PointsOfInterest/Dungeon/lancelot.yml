@@ -26,13 +26,16 @@
 
 - type: gameMap
   id: Lancelot
-  mapName: 'Lancelot Mining Outpost'
+  mapName: 'Шахтёрский Аванпост «Ланцелот»' # LuaM: 'Lancelot Mining Outpost' > 'Шахтёрский Аванпост «Ланцелот»'
   mapPath: /Maps/_Mono/POI/Dungeons/lancelot.yml
   minPlayers: 0
   stations:
     Lancelot:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Шахтёрский аванпост, брошенный своими хозяевами. Буры и склады остались на месте, а вот люди — нет."
       stationProto: RecordsFrontierOutpostCargo
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Lancelot Mining Outpost'
+          mapNameTemplate: 'Шахтёрский Аванпост «Ланцелот»' # LuaM: 'Lancelot Mining Outpost' > 'Шахтёрский Аванпост «Ланцелот»'
         - type: StationDeadDropHintExempt

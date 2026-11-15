@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Shared._LuaM.GameTicking; // LuaM
 using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
@@ -337,6 +338,8 @@ public sealed partial class GameTicker
         if (args.Length == 0)
             return;
 
+        var hidden = GetHiddenGameRules(); // LuaM
+
         foreach (var rule in args)
         {
             if (!_prototypeManager.HasIndex(rule))
@@ -345,6 +348,22 @@ public sealed partial class GameTicker
 
                 continue;
             }
+
+            // LuaM-start: only real game rules, and not the ones the game never starts
+            if (!_prototypeManager.TryIndex<EntityPrototype>(rule, out var ruleProto)
+                || ruleProto.Abstract
+                || !ruleProto.HasComponent<GameRuleComponent>())
+            {
+                shell.WriteError(Loc.GetString("luam-addgamerule-not-a-rule", ("rule", rule)));
+                continue;
+            }
+
+            if (hidden.Contains(rule))
+            {
+                shell.WriteError(Loc.GetString("luam-addgamerule-hidden", ("rule", rule)));
+                continue;
+            }
+            // LuaM-end
 
             if (shell.Player != null)
             {
@@ -366,8 +385,25 @@ public sealed partial class GameTicker
 
     private CompletionResult AddGameRuleCompletions(IConsoleShell shell, string[] args)
     {
-        return CompletionResult.FromHintOptions(GetAllGameRulePrototypes().Select(p => p.ID), "<rule>");
+        var hidden = GetHiddenGameRules(); // LuaM
+        return CompletionResult.FromHintOptions(GetAllGameRulePrototypes().Select(p => p.ID).Where(id => !hidden.Contains(id)), "<rule>"); // LuaM: hidden rules left out
     }
+
+    // LuaM-start: rules listed in hiddenGameRules prototypes
+    private HashSet<string> GetHiddenGameRules()
+    {
+        var hidden = new HashSet<string>();
+        foreach (var proto in _prototypeManager.EnumeratePrototypes<HiddenGameRulesPrototype>())
+        {
+            foreach (var rule in proto.Rules)
+            {
+                hidden.Add(rule);
+            }
+        }
+
+        return hidden;
+    }
+    // LuaM-end
 
     [AdminCommand(AdminFlags.Fun)]
     private void EndGameRuleCommand(IConsoleShell shell, string argstr, string[] args)

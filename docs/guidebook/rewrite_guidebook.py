@@ -91,9 +91,8 @@ def check(articles):
         path = entry.get('text', '')
         if path.startswith(own_prefix):
             visible_files.add('Resources' + path)
-            actual = path.removeprefix(own_prefix).split('/')[0]
-            if actual != folder:
-                errors.append(f'{identifier}: folder {actual} differs from tree section {folder}')
+            # Navigation is independent of physical paths: moving an entry must not
+            # require renaming stable XML paths or contextual links.
         for child in entry['children']:
             walk(child, folder, ancestors + [identifier])
 
@@ -103,6 +102,12 @@ def check(articles):
         path = entry.get('text', '')
         folder = path.removeprefix(own_prefix).split('/')[0] if path.startswith(own_prefix) else ''
         walk(identifier, folder, [])
+    roots = sorted((i for i, e in entries.items() if e.get('bookRoot') == 'true'),
+                   key=lambda i: int(entries[i].get('priority', 0)))
+    expected_roots = ['NewPlayer', 'ColossusGuides', 'Factions', 'NF14', 'LuaMWorld',
+                      'ColossusCatalogue', 'LuaMLore', 'LuaMRuleset']
+    if roots != expected_roots:
+        errors.append(f'Unexpected book roots/order: {roots}; expected {expected_roots}')
     for identifier, entry in entries.items():
         path = entry.get('text', '')
         if path.startswith(own_prefix) and 'Resources' + path not in articles:
@@ -122,6 +127,18 @@ def check(articles):
         for map_path in re.findall(r'<GuideMap Map="([^"]+)"', content):
             if not (ROOT/('Resources'+map_path)).is_file():
                 errors.append(f'{path}: missing map {map_path}')
+        for texture_path in re.findall(r'<GuideTexture\b[^>]*\bTexture="([^"]+)"', content):
+            if not texture_path.startswith('/Textures/') or not (ROOT/('Resources'+texture_path)).is_file():
+                errors.append(f'{path}: missing texture {texture_path}')
+        for hub in re.finditer(r'<GuideHub\b([^>]*)/>', content):
+            attrs = dict(re.findall(r'(\w+)="([^"]*)"', hub[1]))
+            root = attrs.get('Root', '')
+            if root not in entries:
+                errors.append(f'{path}: unknown hub Root={root}')
+            elif 'Entries' in attrs:
+                for child in attrs['Entries'].split(','):
+                    if child.strip() not in entries[root]['children']:
+                        errors.append(f'{path}: {child} is not a child of hub {root}')
         target = ROOT / path
         if not target.is_file():
             errors.append(f'{path}: XML missing; run --apply')

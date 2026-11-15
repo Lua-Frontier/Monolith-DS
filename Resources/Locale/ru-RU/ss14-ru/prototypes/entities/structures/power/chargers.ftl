@@ -14,5 +14,5 @@ ent-WallWeaponCapacitorRecharger = настенный зарядник энер�
     .desc = { ent-BaseItemRecharger.desc }
 ent-BorgCharger = станция зарядки киборгов
     .desc = Стационарное устройство для зарядки различных роботов и киборгов. Удивительно вместительное.
-ent-BorgChargerXenoborg = xenoborg recharging station
-    .desc = A stationary charger for xenoborgs. Feels claustrophobic.
+ent-BorgChargerXenoborg = зарядная станция ксеноборгов
+    .desc = Стационарное зарядное устройство для ксеноборгов. Внутри тесновато.

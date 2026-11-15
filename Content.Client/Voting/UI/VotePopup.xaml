@@ -19,7 +19,8 @@
         <RichTextLabel Name="VoteTitle" />
         <Button Margin="4 4" Name="FollowVoteTarget" Text="{Loc 'ui-vote-follow-button-popup'}" Visible="False"></Button>
 
-        <GridContainer Columns="3" Name="VoteOptionsContainer"/>
+        <!-- LuaM: GridContainer > WrapContainer -->
+        <WrapContainer Name="VoteOptionsContainer" LayoutAxis="Horizontal" SeparationOverride="4" CrossSeparationOverride="4" Margin="4 2" />
         <BoxContainer Orientation="Horizontal">
             <ProgressBar Margin="4" HorizontalExpand="True" Name="TimeLeftBar" MinValue="0" MaxValue="1" />
             <Label Name="TimeLeftText" />

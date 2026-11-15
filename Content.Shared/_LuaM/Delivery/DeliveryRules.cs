@@ -46,7 +46,7 @@ public sealed partial class DeliveryCatalogCategory
     public List<EntProtoId> Items = new();
 }
 
-[Prototype("deliveryCatalog")]
+[Prototype]
 public sealed partial class DeliveryCatalogPrototype : IPrototype
 {
     [IdDataField]

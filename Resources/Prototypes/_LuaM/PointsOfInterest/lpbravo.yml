@@ -29,15 +29,18 @@
 
 - type: gameMap
   id: LPBravo
-  mapName: 'Listening Point Bravo'
+  mapName: 'Прослушка «Браво»'
   mapPath: /Maps/_LuaM/POI/lpbravoLuaM.yml
   minPlayers: 0
   stations:
     LPBravo:
+      gridComponents:
+      - type: VesselInfo
+        description: "Пост прослушивания, затерянный в пустоте. Чьи переговоры он слушает, лучше не спрашивать."
       stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Listening Point Bravo'
+          mapNameTemplate: 'Прослушка «Браво»'
         - type: StationJobs
           availableJobs: {}
         - type: StationDeadDropHintExempt

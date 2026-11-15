@@ -15,6 +15,12 @@
   spawnGroup: Required
   gridPath: /Maps/_LuaM/POI/pdvheliosLuaM.yml # LuaM: /Maps/_Mono/POI/pdvhelios.yml > /Maps/_LuaM/POI/pdvheliosLuaM.yml
   addComponents:
+  - type: MapRadiusIndicator # LuaM: faction zone on the shuttle map
+    radius: 500
+    color: "#DE9E59"
+    fillAlpha: 0.015
+    outlineAlpha: 0.15
+    hideWithRadarStealth: true
   - type: IFF
     color: "#DE9E59"
     readOnly: true # mono
@@ -38,7 +44,7 @@
 
 - type: gameMap
   id: HeliosFortress
-  mapName: 'PDV Helios Fortress'
+  mapName: 'Крепость «Гелиос»' # LuaM: 'PDV Helios Fortress' > 'Крепость «Гелиос»'
   mapPath: /Maps/_LuaM/POI/pdvheliosLuaM.yml # LuaM: /Maps/_Mono/POI/pdvhelios.yml > /Maps/_LuaM/POI/pdvheliosLuaM.yml 
   minPlayers: 0
   stations:
@@ -46,7 +52,7 @@
       stationProto: RecordsFrontierOutpostCargo
       gridComponents:
       - type: VesselInfo
-        description: "An oppressive imperial aura lurks here. Glory to the Sultan."
+        description: "Крепость, годами служившая Авангарду Нордфолла. Её орудия стерегут рубежи Империи Феникс от тех, кто посмеет посягнуть на священную землю." # LuaM: "An oppressive imperial aura lurks here. Glory to the Sultan." > translated
       - type: JamDeathrattles
         exclusions:
         - FreelanceTrackingImplant
@@ -58,7 +64,7 @@
         - HideLabelAlways # hide all docked ships
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'PDV Helio Fortress'
+          mapNameTemplate: 'Крепость «Гелиос»' # LuaM: 'PDV Helio Fortress' > 'Крепость «Гелиос»'
         - type: ExtraStationInformation
           icon: /Textures/_NF/Interface/Pirate/piratelogo.png
           stationSubtext: 'frontier-lobby-pirate-subtext'
@@ -84,13 +90,19 @@
 - type: pointOfInterest
   id: HeliosFortressHyperwar
   parent: [BasePOI, BaseRepairablePOI]
-  name: 'PDV Helios Fortress'
+  name: 'Крепость «Гелиос»' # LuaM: 'PDV Helios Fortress' > 'Крепость «Гелиос»'
   minimumDistance: 7500
   maximumDistance: 9500
   spawnGamePreset: [ MonoRogueTSFHyperwar ]
   spawnGroup: Required
   gridPath: /Maps/_Mono/POI/pdvhelios_hw.yml
   addComponents:
+  - type: MapRadiusIndicator # LuaM: faction zone on the shuttle map
+    radius: 500
+    color: "#DE9E59"
+    fillAlpha: 0.015
+    outlineAlpha: 0.15
+    hideWithRadarStealth: true
   - type: IFF
     color: "#DE9E59"
     readOnly: true # mono
@@ -102,7 +114,7 @@
 
 - type: gameMap
   id: HeliosFortressHyperwar
-  mapName: 'PDV Helios Fortress'
+  mapName: 'Крепость «Гелиос»' # LuaM: 'PDV Helios Fortress' > 'Крепость «Гелиос»'
   mapPath: /Maps/_Mono/POI/pdvhelios_hw.yml
   minPlayers: 0
   stations:
@@ -110,13 +122,13 @@
       stationProto: RecordsFrontierOutpostCargo
       gridComponents:
       - type: VesselInfo
-        description: "An oppressive imperial aura lurks here. Glory to the Sultan."
+        description: "Крепость, годами служившая Авангарду Нордфолла. Её орудия стерегут рубежи Империи Феникс от тех, кто посмеет посягнуть на священную землю." # LuaM: "An oppressive imperial aura lurks here. Glory to the Sultan." > translated
       - type: Tag
         tags:
         - PdvStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'PDV Helio Fortress'
+          mapNameTemplate: 'Крепость «Гелиос»' # LuaM: 'PDV Helio Fortress' > 'Крепость «Гелиос»'
         - type: StationEventEligible
         - type: NpcFactionMember
           factions:

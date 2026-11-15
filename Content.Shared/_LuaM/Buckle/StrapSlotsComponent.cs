@@ -9,4 +9,7 @@ public sealed partial class StrapSlotsComponent : Component
 {
     [DataField(required: true)]
     public List<Vector2> Offsets = new();
+
+    [ViewVariables]
+    public Dictionary<EntityUid, int> Requested = new();
 }

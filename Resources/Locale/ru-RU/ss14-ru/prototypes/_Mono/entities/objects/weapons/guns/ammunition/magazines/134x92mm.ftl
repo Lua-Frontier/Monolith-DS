@@ -1,2 +1,2 @@
-ent-MagazineShenzhen = QBU-284 magazine (13.4x92mm DU-APFSDS)
+ent-MagazineShenzhen = магазин QBU-284 (13.4x92мм DU-APFSDS)
     .desc = { ent-BaseItem.desc }

@@ -181,6 +181,6 @@
     maxAngle: 0
   - type: ExtendDescription
     descriptionList:
-    - description: Continued fire increases accuracy.
+    - description: extend-desc-accuracy-builds # LuaM
       color: "#4f94ad"
       requireDetailRange: true

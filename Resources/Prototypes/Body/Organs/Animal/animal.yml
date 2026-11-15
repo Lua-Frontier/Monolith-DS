@@ -3,6 +3,11 @@
   parent: BaseItem
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Organ
   - type: Food
   #    quality: Nasty # Frontier
@@ -38,6 +43,12 @@
   name: lungs
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     layers:
     - state: lung-l
@@ -73,6 +84,12 @@
   name: stomach
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: stomach
   - type: Organ
@@ -117,6 +134,12 @@
   name: liver
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: liver
   - type: Organ
@@ -144,6 +167,12 @@
   name: heart
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: heart-on
   - type: Organ
@@ -173,6 +202,12 @@
   name: kidneys
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     layers:
     - state: kidney-l

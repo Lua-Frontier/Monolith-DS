@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Vehicles; // LuaM
 using System.Numerics;
 using Content.Shared._Starfall.Particles;
 using Content.Shared.CCVar;
@@ -28,6 +29,7 @@ public sealed partial class ParticleSystem : EntitySystem
     [Dependency] private IEyeManager _eye = default!;
     [Dependency] private IResourceCache _resourceCache = default!;
     [Dependency] private SpriteSystem _spriteSystem = default!;
+    [Dependency] private GridVehicleMoverSystem _vehicleMover = default!; // LuaM
 
     private readonly List<ActiveEmitter> _emitters = new();
 
@@ -137,6 +139,8 @@ public sealed partial class ParticleSystem : EntitySystem
         { // EN start - burst bypasses velocity which lives in the tick loop so it has to be done this way
             if (TryComp<PhysicsComponent>(attachedEntity, out var physics))
                 emitter.EmitterVelocity = physics.LinearVelocity;
+            if (attachedEntity is { } carried) // LuaM
+                emitter.EmitterVelocity += _vehicleMover.GetCarrierVelocity(carried); // LuaM
             BurstEmit(emitter);
         } // EN end
 

@@ -34,6 +34,8 @@
         id: "posbrain"
       pump:
         id: "pump"
+      subdermal: # LuaM: subdermal armor slot, the organ list here replaces the base torso one
+        id: subdermal
   - type: Destructible # no ashing trigger
     thresholds:
     - trigger:

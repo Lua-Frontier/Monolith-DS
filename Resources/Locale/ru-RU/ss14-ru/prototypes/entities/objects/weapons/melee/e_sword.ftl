@@ -21,5 +21,5 @@ ent-CyborgEnergySwordDouble = { ent-EnergySwordDouble }
     .desc = Интерны Командования Синдиката решили, что одного лезвия на энергетическом мече недостаточно. Специальная разработка для киборгов Синдиката.
 ent-BaseMeleeWeaponEnergy = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-HyperEutacticBlade = hypereutactic-blade
-    .desc = A supermassive weapon envisioned to cleave the very fabric of space and time itself in twain, the hypereutactic blade dynamically flash-forges a hypereutactic crystaline nanostructure capable of passing through most known forms of matter like a hot knife through butter.
+ent-HyperEutacticBlade = гиперэвтектический клинок
+    .desc = Сверхмассивное оружие, созданное, чтобы рассечь надвое саму ткань пространства и времени. Гиперэвтектический клинок мгновенно выковывает гиперэвтектическую кристаллическую наноструктуру, проходящую сквозь большинство известных форм материи, как горячий нож сквозь масло.

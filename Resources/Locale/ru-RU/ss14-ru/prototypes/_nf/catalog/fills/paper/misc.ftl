@@ -20,4 +20,4 @@ ent-PaperWrittenGriftyWindow = записка для босса
     .suffix = Бумага
     .desc = { ent-PaperOffice.desc }
 
-ent-PaperWrittenPartyProcedure = official party preparation procedure
+ent-PaperWrittenPartyProcedure = официальная процедура подготовки к вечеринке

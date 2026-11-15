@@ -1,4 +1,4 @@
-ent-EconomyPlanner = industrial planner
-    .desc = A tablet containing a visual flowchart on how to produce proprietary goods. (Place on the ground and interact with it to open the flowchart!)
-ent-EconomyPlannerTabletop = industrial planner
+ent-EconomyPlanner = промышленный планировщик
+    .desc = Планшет с наглядной блок-схемой производства фирменных товаров. (Положите его на пол и взаимодействуйте, чтобы открыть схему!)
+ent-EconomyPlannerTabletop = промышленный планировщик
     .desc = { ent-BaseBoardTabletop.desc }

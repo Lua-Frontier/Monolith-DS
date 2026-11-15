@@ -4,5 +4,5 @@ ent-NFBlueprintAdvMopItem = чертёж продвинутой швабры
     .desc = Чертёж со схемой продвинутой швабры. Его можно вставить в автолат или любой ТехФаб.
 ent-NFBlueprintPlantAnalyzerEmpty = чертёж анализатора растений
     .desc = Чертёж со схемой анализатора растений. Его можно вставить в автолат или любой ТехФаб.
-ent-NFBlueprintPlantAnalyzer = plant analyzer blueprint
-    .desc = A blueprint with a schematic of a plant analyzer. It can be inserted into an autolathe or a techfab.
+ent-NFBlueprintPlantAnalyzer = чертёж анализатора растений
+    .desc = Чертёж со схемой анализатора растений. Его можно вставить в автолат или техфаб.

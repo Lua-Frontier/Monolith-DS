@@ -1,9 +1,9 @@
-ent-BaseGunAttachmentGrip = grip
-    .desc = Helps a bit with recoil control.
+ent-BaseGunAttachmentGrip = рукоять
+    .desc = Немного помогает справляться с отдачей.
     .suffix = Grip Attachment
-ent-BaseGunAttachmentSuppressor = suppressor
-    .desc = Makes a gunshot a bit more quiet.
+ent-BaseGunAttachmentSuppressor = глушитель
+    .desc = Делает выстрел чуть тише.
     .suffix = Barrel Attachment
-ent-BaseGunAttachmentOptic = optic
-    .desc = Wow, I can see farther!
+ent-BaseGunAttachmentOptic = прицел
+    .desc = Ого, я вижу дальше!
     .suffix = Optic Attachment

@@ -1,12 +1,18 @@
 - type: roleLoadout
   id: JobMMCEmployee
   groups:
+  - MMCMercenaryHead # LuaM
+  - MercenaryNeck # LuaM
   - MMCEmployeeJumpsuit
+  - MMCMercenaryGloves # LuaM
   - MMCEmployeeBackpack
   - MMCOuterClothing
   - MMCEmployeeShoes
+  - MMCMercenaryFace # LuaM
+  - MMCMercenaryGlasses # LuaM
   - MMCEmployeeBelt
   - MMCEmployeeEars
+  - MercenaryBalaclava # LuaM
   - ContractorEncryptionKey
   - ContractorBoxSurvival
   - MieyoEmployeePDA
@@ -26,11 +32,14 @@
 - type: roleLoadout
   id: JobMMCSecurity
   groups:
+  - MMCMercenaryHead # LuaM
+  - MercenaryNeck # LuaM
   - MMCCorpSecJumpsuit
   - MMCCorpSecGloves
   - MMCCorpSecBackpack
   - MMCCorpSecOuterClothing
   - MMCCorpSecShoes
+  - MMCMercenaryFace # LuaM
   - MMCCorpSecBelt
   - MMCCorpSecEars
   - MMCCorpSecBalaclava
@@ -57,13 +66,17 @@
 - type: roleLoadout
   id: JobMMCLiason
   groups:
+  - MMCMercenaryHead # LuaM
+  - MercenaryNeck # LuaM
   - MMCEmployeeJumpsuit
   - MMCCorpSecGloves
   - MMCEmployeeBackpack
   - MMCOuterClothing
   - MMCEmployeeShoes
+  - MMCMercenaryFace # LuaM
   - MMCEmployeeBelt
   - MMCCorpSecEars
+  - MercenaryBalaclava # LuaM
   - MMCHud
   - ContractorEncryptionKey
   - ContractorBoxSurvival

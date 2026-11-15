@@ -30,5 +30,5 @@ ent-Pill = таблетка
     .desc = Это не свеча.
 ent-PillCanister = баночка для таблеток
     .desc = Вмещает до 10 таблеток.
-ent-MiniSyringe = mini syringe
-    .desc = A regular syringe, reshaped to fit inside of a gun.
+ent-MiniSyringe = мини-шприц
+    .desc = Обычный шприц, переделанный так, чтобы помещаться в оружие.

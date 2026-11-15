@@ -1,0 +1,36 @@
+# Shuttle Notes:
+# Medium science shuttle: R&D console, artifact analysis console, tech disk terminal, two L85 and two M25.
+# Solar panels and a SuperPacman generator.
+- type: vessel
+  id: InvestigatorMk2
+  parent: BaseVessel
+  name: vessel-investigatormk2-name
+  description: vessel-investigatormk2-desc
+  price: 100000 # placeholder, check the appraisal with ShipyardTests (the price must not be below it)
+  category: Medium
+  group: Shipyard
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Civilian/investigatormk2.yml
+  guidebookPage: null
+  class:
+  - Science
+  engine:
+  - Solar
+  - Uranium
+
+- type: gameMap
+  id: InvestigatorMk2
+  mapName: 'NR Investigator Mk2'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Civilian/investigatormk2.yml
+  minPlayers: 0
+  stations:
+    InvestigatorMk2:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'NR Investigator Mk2 CIV-{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]

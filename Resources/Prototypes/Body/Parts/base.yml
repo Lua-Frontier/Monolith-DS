@@ -9,6 +9,11 @@
   id: BasePartInorganic
   name: "body part"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Icon
     sprite: Mobs/Species/Human/parts.rsi
   - type: Damageable
@@ -36,6 +41,11 @@
   id: BaseTorsoInorganic
   name: "torso"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "torso_m"
   - type: Icon
@@ -87,6 +97,11 @@
   name: "head"
   description: "Doesn't make sense not to live for fun, your brain gets smart but your head gets dumb."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "head_m"
   - type: Icon
@@ -144,6 +159,11 @@
   id: BaseLeftArm
   name: "left arm"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "l_arm"
   - type: Icon
@@ -166,6 +186,11 @@
   id: BaseRightArm
   name: "right arm"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "r_arm"
   - type: Icon
@@ -189,6 +214,11 @@
   id: BaseLeftHand
   name: "left hand"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "l_hand"
   - type: Icon
@@ -204,6 +234,11 @@
   id: BaseRightHand
   name: "right hand"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "r_hand"
   - type: Icon
@@ -219,6 +254,11 @@
   id: BaseLeftLeg
   name: "left leg"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "l_leg"
   - type: Icon
@@ -239,6 +279,11 @@
   id: BaseRightLeg
   name: "right leg"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "r_leg"
   - type: Icon
@@ -259,6 +304,11 @@
   id: BaseLeftFoot
   name: "left foot"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "l_foot"
   - type: Icon
@@ -274,6 +324,11 @@
   id: BaseRightFoot
   name: "right foot"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: "r_foot"
   - type: Icon

@@ -5,6 +5,11 @@
   name: gunnery control server
   description: Manages the remote operation of ship weapons.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: Sprite
     sprite: Structures/Machines/telecomms.rsi
     snapCardinals: true
@@ -119,7 +124,7 @@
 
 - type: entity
   id: GunneryServerUltra
-  parent: [BaseStructureDisableToolUse, GunneryServerBase]
+  parent: GunneryServerBase # LuaM: [BaseStructureDisableToolUse, GunneryServerBase] > GunneryServerBase, can be unanchored like the lower tiers
   name: ultra-high-power gunnery control server
   components:
   - type: Machine
@@ -135,8 +140,8 @@
     idleLoad: 50
     batteryRechargeRate: 2400
     batteryRechargeEfficiency: 0.95
-  - type: Anchorable # Sorry Tunguska, but I am NOT risking this being used for a missile bus. - "what could go wrong" says redrover -- It turns out, a lot could and did.
-    flags: Anchorable
+#  - type: Anchorable # Sorry Tunguska, but I am NOT risking this being used for a missile bus. - "what could go wrong" says redrover -- It turns out, a lot could and did. # Commented by LuaM
+#    flags: Anchorable # Commented by LuaM
   - type: ShipRepairable
     repairTime: 25
     repairCost: 100
@@ -231,6 +236,11 @@
   placement:
     mode: SnapgridCenter
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: ExtensionCableReceiver

@@ -42,6 +42,7 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
 
     // Note: this data does not need to be saved
     private float _updateTimer = 1.0f;
+    private readonly Dictionary<EntityUid, GridAlarmEntries> _gridAlarmEntries = new(); // LuaM
 
     public override void Initialize()
     {
@@ -164,37 +165,30 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
         {
             _updateTimer -= UpdateTime;
 
-            // Keep a list of UI entries for each gridUid, in case multiple consoles stand on the same grid
-            var airAlarmEntriesForEachGrid = new Dictionary<EntityUid, AtmosAlertsComputerEntry[]>();
-            var fireAlarmEntriesForEachGrid = new Dictionary<EntityUid, AtmosAlertsComputerEntry[]>();
-            var gaslockEntriesForEachGrid = new Dictionary<EntityUid, AtmosAlertsComputerEntry[]>(); // Frontier
+            // LuaM start
+            _gridAlarmEntries.Clear();
 
             var query = AllEntityQuery<AtmosAlertsComputerComponent, TransformComponent>();
+            while (query.MoveNext(out _, out _, out var consoleXform))
+            {
+                if (consoleXform.GridUid is { } consoleGrid && !_gridAlarmEntries.ContainsKey(consoleGrid))
+                    _gridAlarmEntries[consoleGrid] = new GridAlarmEntries(CompOrNull<MapGridComponent>(consoleGrid), CompOrNull<NavMapComponent>(consoleGrid));
+            }
+
+            if (_gridAlarmEntries.Count == 0)
+                return;
+
+            CollectAlarmStateData();
+
+            query = AllEntityQuery<AtmosAlertsComputerComponent, TransformComponent>();
             while (query.MoveNext(out var ent, out var entConsole, out var entXform))
             {
-                if (entXform?.GridUid == null)
+                if (entXform.GridUid == null || !_gridAlarmEntries.TryGetValue(entXform.GridUid.Value, out var gridEntries))
                     continue;
 
-                // Make a list of alarm state data for all the air and fire alarms on the grid
-                if (!airAlarmEntriesForEachGrid.TryGetValue(entXform.GridUid.Value, out var airAlarmEntries))
-                {
-                    airAlarmEntries = GetAlarmStateData(entXform.GridUid.Value, AtmosAlertsComputerGroup.AirAlarm).ToArray();
-                    airAlarmEntriesForEachGrid[entXform.GridUid.Value] = airAlarmEntries;
-                }
-
-                if (!fireAlarmEntriesForEachGrid.TryGetValue(entXform.GridUid.Value, out var fireAlarmEntries))
-                {
-                    fireAlarmEntries = GetAlarmStateData(entXform.GridUid.Value, AtmosAlertsComputerGroup.FireAlarm).ToArray();
-                    fireAlarmEntriesForEachGrid[entXform.GridUid.Value] = fireAlarmEntries;
-                }
-
-                // Frontier: gaslocks (note: no alarm state)
-                if (!gaslockEntriesForEachGrid.TryGetValue(entXform.GridUid.Value, out var gaslockEntries))
-                {
-                    gaslockEntries = GetAlarmStateData(entXform.GridUid.Value, AtmosAlertsComputerGroup.Gaslock).ToArray();
-                    gaslockEntriesForEachGrid[entXform.GridUid.Value] = gaslockEntries;
-                }
-                // End Frontier
+                var airAlarmEntries = gridEntries.AirAlarms;
+                var fireAlarmEntries = gridEntries.FireAlarms;
+                // LuaM end
 
                 // Determine the highest level of alert for the console (based on non-silenced alarms)
                 var highestAlert = AtmosAlarmType.Invalid;
@@ -216,7 +210,9 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
                     _appearance.SetData(ent, AtmosAlertsComputerVisuals.ComputerLayerScreen, (int) highestAlert, entAppearance);
 
                 // If the console UI is open, send UI data to each subscribed session
-                UpdateUIState(ent, airAlarmEntries, fireAlarmEntries, gaslockEntries, entConsole, entXform); // Frontier: add gaslockEntries
+                // LuaM
+                if (_userInterfaceSystem.IsUiOpen(ent, AtmosAlertsComputerUiKey.Key))
+                    UpdateUIState(ent, gridEntries.AirAlarmArray, gridEntries.FireAlarmArray, gridEntries.GaslockArray, entConsole, entXform);
             }
         }
     }
@@ -250,27 +246,32 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
             new AtmosAlertsComputerBoundInterfaceState(airAlarmStateData, fireAlarmStateData, focusAlarmData, gaslockStateData, focusGaslockData)); // Frontier: add gaslockStateData, focusGaslockData
     }
 
-    private List<AtmosAlertsComputerEntry> GetAlarmStateData(EntityUid gridUid, AtmosAlertsComputerGroup group)
+    // LuaM start
+    private void CollectAlarmStateData()
     {
-        var alarmStateData = new List<AtmosAlertsComputerEntry>();
-
         var queryAlarms = AllEntityQuery<AtmosAlertsDeviceComponent, AtmosAlarmableComponent, DeviceNetworkComponent, TransformComponent>();
         while (queryAlarms.MoveNext(out var ent, out var entDevice, out var entAtmosAlarmable, out var entDeviceNetwork, out var entXform))
         {
-            if (entXform.GridUid != gridUid)
+            if (entXform.GridUid is not { } gridUid || !_gridAlarmEntries.TryGetValue(gridUid, out var gridEntries))
                 continue;
 
             if (!entXform.Anchored)
                 continue;
 
-            if (entDevice.Group != group)
+            if (gridEntries.MapGrid is not { } mapGrid || gridEntries.NavMap is not { } navMap)
                 continue;
 
-            if (!TryComp<MapGridComponent>(entXform.GridUid, out var mapGrid))
-                continue;
+            var alarmStateData = entDevice.Group switch
+            {
+                AtmosAlertsComputerGroup.AirAlarm => gridEntries.AirAlarms,
+                AtmosAlertsComputerGroup.FireAlarm => gridEntries.FireAlarms,
+                AtmosAlertsComputerGroup.Gaslock => gridEntries.Gaslocks,
+                _ => null,
+            };
 
-            if (!TryComp<NavMapComponent>(entXform.GridUid, out var navMap))
+            if (alarmStateData == null)
                 continue;
+            // LuaM end
 
             // If emagged, change the alarm type to normal
             var alarmState = (entAtmosAlarmable.LastAlarmState == AtmosAlarmType.Emagged) ? AtmosAlarmType.Normal : entAtmosAlarmable.LastAlarmState;
@@ -305,8 +306,8 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
 
                     var sensorXform = Transform(sensorEnt);
 
-                    if (sensorXform.Anchored && sensorXform.GridUid == entXform.GridUid)
-                        alarmRegionSeeds.Add(_mapSystem.CoordinatesToTile(entXform.GridUid.Value, mapGrid, _transformSystem.GetMapCoordinates(sensorEnt, sensorXform)));
+                    if (sensorXform.Anchored && sensorXform.GridUid == gridUid)
+                        alarmRegionSeeds.Add(_mapSystem.CoordinatesToTile(gridUid, mapGrid, _transformSystem.GetMapCoordinates(sensorEnt, sensorXform)));
                 }
 
                 var regionProperties = new SharedNavMapSystem.NavMapRegionProperties(netEnt, AtmosAlertsComputerUiKey.Key, alarmRegionSeeds);
@@ -315,21 +316,36 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
 
             else
             {
-                _navMapSystem.RemoveNavMapRegion(entXform.GridUid.Value, navMap, netEnt);
+                _navMapSystem.RemoveNavMapRegion(gridUid, navMap, netEnt);
             }
 
             alarmStateData.Add(entry);
         }
-
-        return alarmStateData;
     }
+
+    // LuaM start
+    private sealed class GridAlarmEntries(MapGridComponent? mapGrid, NavMapComponent? navMap)
+    {
+        public readonly MapGridComponent? MapGrid = mapGrid;
+        public readonly NavMapComponent? NavMap = navMap;
+        public readonly List<AtmosAlertsComputerEntry> AirAlarms = new();
+        public readonly List<AtmosAlertsComputerEntry> FireAlarms = new();
+        public readonly List<AtmosAlertsComputerEntry> Gaslocks = new();
+
+        private AtmosAlertsComputerEntry[]? _airAlarmArray;
+        private AtmosAlertsComputerEntry[]? _fireAlarmArray;
+        private AtmosAlertsComputerEntry[]? _gaslockArray;
+
+        public AtmosAlertsComputerEntry[] AirAlarmArray => _airAlarmArray ??= AirAlarms.ToArray();
+        public AtmosAlertsComputerEntry[] FireAlarmArray => _fireAlarmArray ??= FireAlarms.ToArray();
+        public AtmosAlertsComputerEntry[] GaslockArray => _gaslockArray ??= Gaslocks.ToArray();
+    }
+    // LuaM end
 
     private AtmosAlertsFocusDeviceData? GetFocusAlarmData(EntityUid uid, EntityUid? focusDevice, EntityUid gridUid)
     {
-        if (focusDevice == null)
+        if (!TryComp(focusDevice, out TransformComponent? focusDeviceXform)) // LuaM
             return null;
-
-        var focusDeviceXform = Transform(focusDevice.Value);
 
         if (!focusDeviceXform.Anchored ||
             focusDeviceXform.GridUid != gridUid ||
@@ -442,10 +458,8 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
     // Frontier: gets gaslock BUI state for a particular entity
     private AtmosAlertsFocusGaslockData? GetFocusGaslockData(EntityUid? focusDevice, EntityUid gridUid)
     {
-        if (focusDevice == null)
+        if (!TryComp(focusDevice, out TransformComponent? focusDeviceXform)) // LuaM
             return null;
-
-        var focusDeviceXform = Transform(focusDevice.Value);
 
         // Hack: assuming all pumps are dockable pumps, pressure pumps, and have one non-dockable node
         if (!focusDeviceXform.Anchored ||
@@ -484,11 +498,22 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
         gasData); // Dictionary<Gas, (float, float)> gasData)
     }
 
+    // LuaM start
+    private bool IsOnConsoleGrid(EntityUid console, EntityUid device)
+    {
+        return TryComp(device, out TransformComponent? deviceXform) &&
+            deviceXform.Anchored &&
+            deviceXform.GridUid != null &&
+            deviceXform.GridUid == Transform(console).GridUid;
+    }
+    // LuaM end
+
     // Frontier: message handlers for gaslock state
     private void OnUndockRequestMessage(Entity<AtmosAlertsComputerComponent> ent, ref UndockRequestMessage args)
     {
         var dockUid = GetEntity(args.DockEntity);
-        if (!HasComp<DockablePipeComponent>(dockUid) ||
+        if (!IsOnConsoleGrid(ent, dockUid) || // LuaM
+            !HasComp<DockablePipeComponent>(dockUid) ||
             !TryComp<DockingComponent>(dockUid, out var dockComp))
             return;
         _docking.Undock((dockUid, dockComp));
@@ -498,7 +523,8 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
     private void OnPumpDirectionMessage(Entity<AtmosAlertsComputerComponent> ent, ref RemoteGasPressurePumpChangePumpDirectionMessage args)
     {
         var pumpUid = GetEntity(args.Pump);
-        if (!TryComp<GasPressurePumpComponent>(pumpUid, out var pumpComp) || !pumpComp.SettableDirection)
+        if (!IsOnConsoleGrid(ent, pumpUid) || // LuaM
+            !TryComp<GasPressurePumpComponent>(pumpUid, out var pumpComp) || !pumpComp.SettableDirection)
             return;
         _pressurePump.SetPumpDirection((pumpUid, pumpComp), args.Inwards, args.Actor);
     }
@@ -506,7 +532,8 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
     private void OnPumpPressureMessage(Entity<AtmosAlertsComputerComponent> ent, ref RemoteGasPressurePumpChangeOutputPressureMessage args)
     {
         var pumpUid = GetEntity(args.Pump);
-        if (!TryComp<GasPressurePumpComponent>(pumpUid, out var pumpComp))
+        if (!IsOnConsoleGrid(ent, pumpUid) || // LuaM
+            !TryComp<GasPressurePumpComponent>(pumpUid, out var pumpComp))
             return;
         _pressurePump.SetPumpPressure((pumpUid, pumpComp), args.Pressure, args.Actor);
     }
@@ -514,7 +541,8 @@ public sealed partial class AtmosAlertsComputerSystem : SharedAtmosAlertsCompute
     private void OnPumpStatusMessage(Entity<AtmosAlertsComputerComponent> ent, ref RemoteGasPressurePumpToggleStatusMessage args)
     {
         var pumpUid = GetEntity(args.Pump);
-        if (!TryComp<GasPressurePumpComponent>(pumpUid, out var pumpComp))
+        if (!IsOnConsoleGrid(ent, pumpUid) || // LuaM
+            !TryComp<GasPressurePumpComponent>(pumpUid, out var pumpComp))
             return;
         _pressurePump.SetPumpStatus((pumpUid, pumpComp), args.Enabled, args.Actor);
     }

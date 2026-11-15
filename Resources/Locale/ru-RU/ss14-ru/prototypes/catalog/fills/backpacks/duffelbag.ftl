@@ -53,5 +53,5 @@ ent-ClothingBackpackDuffelSyndicateRaidBundle = набор рейдерског�
     .desc = Содержит прочный рейдерский бронекостюм Синдиката.
 ent-ClothingBackpackDuffelSyndicateFilledAtreides = набор WT-312 «Атрейдс»
     .desc = Стильный и смертоносный: компактный одноручный пистолет-пулемёт, используемый стариками из Синдиката, а также три магазина к нему.
-ent-ClothingBackpackDuffelSyndicateMedicHardsuitBundle = syndicate medic hardsuit bundle
-    .desc = Contains the Syndicate's blood red medical hardsuit.
+ent-ClothingBackpackDuffelSyndicateMedicHardsuitBundle = набор медицинского скафандра Синдиката
+    .desc = Содержит кроваво-красный медицинский скафандр Синдиката.

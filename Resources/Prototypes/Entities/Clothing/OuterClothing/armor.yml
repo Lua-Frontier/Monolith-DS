@@ -185,7 +185,7 @@
     color: "#80ff80"
     radius: 5
     energy: 2
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: Cone # LuaM
     autoRot: true
     netsync: false
   - type: LightBehaviour

@@ -14,6 +14,11 @@
   name: carp tail
   description: Unique glands in this tail let space carp fly in a vacuum.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     state: tail
   - type: Icon

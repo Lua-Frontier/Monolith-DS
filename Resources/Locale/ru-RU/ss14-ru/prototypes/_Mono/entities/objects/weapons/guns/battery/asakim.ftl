@@ -12,5 +12,5 @@ ent-WeaponRifleADMPistolForge = плазменный пистолет
 ent-WeaponRifleAsakimPistolForge = { ent-WeaponRifleADMPistolForge }
     .desc = { ent-WeaponRifleADMPistolForge.desc }
     .suffix = Forge, Асакимы, Биокод
-ent-WeaponRifleAsakimAutopulserADM = kunisa-pattern plasma autopulser
-    .desc = An advanced handheld plasma rifle built for cyborgs. The design bears similarities to pre-fracture plasma weapons.
+ent-WeaponRifleAsakimAutopulserADM = плазменный автоимпульсник образца «Куниса»
+    .desc = Продвинутая ручная плазменная винтовка для киборгов. Конструкция напоминает плазменное оружие времён до Разлома.

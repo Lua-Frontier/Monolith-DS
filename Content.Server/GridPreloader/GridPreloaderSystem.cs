@@ -62,6 +62,10 @@ public sealed partial class GridPreloaderSystem : SharedGridPreloaderSystem
         if (!PreloadingEnabled)
             return;
 
+        // LuaM
+        if (_prototype.Count<PreloadedGridPrototype>() == 0)
+            return;
+
         var mapUid = _map.CreateMap(out var mapId, false);
         var preloader = EnsureComp<GridPreloaderComponent>(mapUid);
         _meta.SetEntityName(mapUid, "GridPreloader Map");

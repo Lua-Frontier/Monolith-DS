@@ -83,7 +83,7 @@
   #   removalTime: 3.0
   - type: ExtendDescription
     descriptionList:
-    - description: Can be thrown to stick to targets.
+    - description: extend-desc-throw-to-stick # LuaM
       color: "#4f94ad"
       requireDetailRange: true
 

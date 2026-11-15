@@ -7,6 +7,12 @@
   suffix: AI
   parent: [BaseStructure, BaseFactionGearOtherFactionT2]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - LuaMDroneLoot
+    - ColossusCatalogueDrones
+  # LuaM-end
   - type: Destructible
     thresholds:
     - trigger:
@@ -44,7 +50,8 @@
     messagePerceivedByOthers: petting-success-station-ai-others
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
-  - type: Anchorable
+  - type: Anchorable # let's uh Not have these weaponised probably
+    flags: Unanchorable
   - type: HTN
     sleepPlayerCheckRangeOverride: 4000
     sleepMaxGridSpeed: 10 # don't sleep so we can still dodge grids or such if drifting far from players

@@ -1,6 +1,6 @@
-ent-ActionJumpToCore = Jump to core
-    .desc = Sends your eye back to the core.
-ent-ActionSurvCameraLights = Toggle camera lights
-    .desc = Enable surveillance camera lights near wherever you're viewing.
-ent-ActionAIViewLaws = View Laws
-    .desc = View the laws that you must follow.
+ent-ActionJumpToCore = Вернуться к ядру
+    .desc = Возвращает ваш взгляд к ядру.
+ent-ActionSurvCameraLights = Переключить подсветку камер
+    .desc = Включает подсветку камер наблюдения рядом с местом, которое вы просматриваете.
+ent-ActionAIViewLaws = Просмотреть законы
+    .desc = Просмотреть законы, которым вы обязаны следовать.

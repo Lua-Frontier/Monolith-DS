@@ -91,9 +91,9 @@
     zeroVisible: true
   - type: Appearance
   - type: Clothing
-    sprite: _LuaM/Objects/Weapons/Guns/rifles/ACR_inhands_32x.rsi
+    sprite: _LuaM/Objects/Weapons/Guns/Rifles/ACR_inhands_32x.rsi
   - type: Item
-    sprite: _LuaM/Objects/Weapons/Guns/rifles/ACR_inhands_32x.rsi
+    sprite: _LuaM/Objects/Weapons/Guns/Rifles/ACR_inhands_32x.rsi
   - type: StaticPrice
     price: 2400
   - type: ESAttachableGun

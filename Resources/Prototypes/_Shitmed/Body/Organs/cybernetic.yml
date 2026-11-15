@@ -84,6 +84,12 @@
   name: cybernetic eyes
   description: A pair of cybernetic eyes that enhance your vision, and protect you from eye damage.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: Cybernetics
   - type: Sprite
     sprite: _Shitmed/Mobs/Species/Misc/Cybernetics/organs.rsi
@@ -128,6 +134,12 @@
   name: cybernetic heart
   description: A precision-tuned heart that slows down medicine absorption while hastening the absorption of poisons and narcotics resulting in weakened effects.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: heart-on
   - type: Heart
@@ -190,6 +202,12 @@
   name: cybernetic liver
   description: A high-efficiency synthetic liver that neutralizes all negative effects of alcohol while preserving the buzz.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Liver
   - type: Organ
     slotId: liver
@@ -219,6 +237,12 @@
   name: cybernetic lungs
   description: Advanced synthetic lungs that breathe oxygen and nitrogen, ignore CO2, and resist most other atmospheric hazards.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     layers:
       - state: lung-l

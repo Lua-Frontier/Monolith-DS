@@ -3,6 +3,11 @@
   parent: BaseItem
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Mobs/Species/Protogen/organs.rsi
   - type: Organ
@@ -42,6 +47,12 @@
   name: brain
   description: "The source of incredible, unending intelligence. 01001000 01101111 01101110 01101011 00101110"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: MindContainer
     showExamineInfo: true
   - type: Speech
@@ -92,6 +103,12 @@
   name: eyes
   description: "Emits LED lights to resemble eyes."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: Organ # Shitmed Change
     slotId: eyes # Shitmed Change
     onAdd:
@@ -116,6 +133,12 @@
   name: tongue
   description: "A fleshy muscle located within a Protogen's mouth, wherever that is."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: Sprite
     state: tongue
 
@@ -136,6 +159,12 @@
   name: ears
   description: "Lets a Protogen process audio. And listen to their favorite techno hits."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: Sprite
     state: ears
   - type: Ears # Shitmed Change
@@ -146,6 +175,12 @@
   name: lungs
   description: "Filters oxygen from an atmosphere, which is then sent into the bloodstream to be used as an electron carrier. God knows how a Protogen breathes at all."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Organ # Shitmed Change
     slotId: lungs # Shitmed Change
   - type: Sprite
@@ -185,6 +220,12 @@
   name: heart
   description: "Even the most stone-cold, technology-based heart was alive once."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Heart # Shitmed Change
   - type: Organ # Shitmed Change
     slotId: heart # Shitmed Change
@@ -211,6 +252,12 @@
   name: stomach
   description: "Gross. This is hard to stomach."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Organ # Shitmed Change
     slotId: stomach # Shitmed Change
   - type: Sprite
@@ -245,6 +292,12 @@
   name: liver
   description: "Pairing suggestion: fermented RAM sticks and CPU drives."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Liver # Shitmed Change
   - type: Organ # Shitmed Change
     slotId: liver # Shitmed Change
@@ -266,6 +319,12 @@
   name: kidneys
   description: "Filters toxins and computer viruses from the bloodstream."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Organ # Shitmed
     slotId: kidneys
   - type: Sprite

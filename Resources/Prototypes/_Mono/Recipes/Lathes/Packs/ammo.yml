@@ -954,6 +954,8 @@
   - Magazine35mmGrenadeStinger
   - Magazine127x99mm
   - AmmoBox127x99mm
+  - Magazine127x99mmExplosive # LuaM
+  - AmmoBox127x99mmExplosive # LuaM
   - Magazine762x39mmBox
 
 #DP

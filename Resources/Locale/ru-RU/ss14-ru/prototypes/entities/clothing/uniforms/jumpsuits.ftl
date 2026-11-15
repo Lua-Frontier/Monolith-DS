@@ -221,5 +221,5 @@ ent-ClothingUniformSecurityTrooper = униформа патрульного
     .desc = Официальная униформа, выдаваемая Патрульным Nanotrasen, обычно с ней идёт патрульный автомобиль.
 ent-ClothingUniformJumpsuitST = комбинезон Scrap Tech
     .desc = Старый, грязный, и проклеенный жёлтой изолентой, но все еще надёжный комбинезон фирменно-оранжевого цвета для утилизации.
-ent-ClothingUniformJumpsuitCasualGreen = casual green jumpsuit
-    .desc = A loose worn green shirt with a grey pants, perfect for someone looking to relax.
+ent-ClothingUniformJumpsuitCasualGreen = повседневный зелёный комбинезон
+    .desc = Свободная зелёная рубашка с серыми штанами — идеально для тех, кто хочет расслабиться.

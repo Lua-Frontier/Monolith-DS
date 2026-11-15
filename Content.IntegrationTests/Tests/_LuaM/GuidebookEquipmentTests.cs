@@ -66,8 +66,8 @@ public sealed class GuidebookEquipmentTests
             Assert.That(autocannon.Stats.Single(s => s.Label == "Теоретический цикл очереди").Value, Is.EqualTo("0.8 с"));
             Assert.That(autocannon.Stats.Single(s => s.Label == "Теоретический средний темп очередями").Value, Is.EqualTo("2.5 выстр./с"));
             Assert.That(autocannon.Stats.Single(s => s.Label == "Начальный магазин").Value,
-                Is.EqualTo(prototypes.Index<EntityPrototype>("Magazine57mmHE").Name));
-            var bluntName = prototypes.Index<DamageTypePrototype>("Blunt").LocalizedName;
+                Is.EqualTo(prototypes.Index(new EntProtoId("Magazine57mmHE")).Name));
+            var bluntName = prototypes.Index(new ProtoId<DamageTypePrototype>("Blunt")).LocalizedName;
             Assert.That(autocannon.Stats.Any(s => s.Label.EndsWith("прямой урон " + bluntName) && s.Value == "65 → 71.5 после множителя орудия"), Is.True,
                 "Cartridge indirection must retain resolved damage and apply the gun multiplier.");
             Assert.That(autocannon.Stats.Where(s => s.Label.Contains("прямой урон")).All(s => s.Ammunition), Is.True,

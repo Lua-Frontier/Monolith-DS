@@ -74,5 +74,5 @@ ent-StationAiUploadComputer = консоль загрузки ИИ
     .desc = Используется для обновления законов станционного ИИ.
 ent-CentcommComputerComms = консоль связи УСФ
     .desc = Компьютер, используемый для распространения сообщений по всему сектору с помощью клавиатуры. Превосходный аналог обычного коммуникационного компьютера.
-ent-WizardComputerComms = wizard communications computer
-    .desc = A computer capable of magically projecting your speech to the station. Using this to make an announcement will alert the station to your presence.
+ent-WizardComputerComms = консоль связи волшебника
+    .desc = Компьютер, магическим образом передающий вашу речь на станцию. Если сделать объявление, станция узнает о вашем присутствии.

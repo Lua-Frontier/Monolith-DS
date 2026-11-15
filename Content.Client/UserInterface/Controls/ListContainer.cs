@@ -291,6 +291,14 @@ public class ListContainer : Control
                             button.Pressed = true;
                     }
                     AddChild(button);
+                    // LuaM-start
+                    // --  ExitedTree в RT 291 убирает кнопку из группы, после повторной вставки группу и выделение надо вернуть
+                    if (_buttonGroup != null)
+                    {
+                        button.Pressed = data == _selected;
+                        button.Group = _buttonGroup;
+                    }
+                    // LuaM-end
                     button.Measure(finalSize);
                 }
             }

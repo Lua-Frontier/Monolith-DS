@@ -1,2 +1,2 @@
-ent-NocturineHypo = nocturine hypo
-    .desc = A self-refilling injector for rapid administration of nocturine to victims.
+ent-NocturineHypo = гипоспрей ноктюрина
+    .desc = Самонаполняющийся инъектор для быстрого введения ноктюрина жертвам.

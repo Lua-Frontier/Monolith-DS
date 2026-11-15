@@ -113,6 +113,7 @@ public sealed class HazardBanner : HazardBannerBackground
     }
 }
 
+[Virtual]
 public class HazardBannerBackground : Control
 {
     private const int GradientBands = 32;

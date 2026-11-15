@@ -1998,9 +1998,7 @@
       Critical:
         dataset: MouseCritical
         speechChance: 1
-      Dead:
-        dataset: MouseDeath
-        speechChance: 1
+      # LuaM: Dead trigger removed
       Revived:
         dataset: MouseRevived
         speechChance: 1

@@ -20,9 +20,8 @@
       Steel: 62
       Glass: 25
   - type: GuideHelp
-    guides:
-    - Cyborgs
-    - Robotics
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
 
 - type: entity
   parent: [ PartSiliconBase, BaseLeftArm ]

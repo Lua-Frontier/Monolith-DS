@@ -9,5 +9,5 @@ ent-SciFlash = вспышка
     .suffix = 2 заряда
 ent-PortableFlasher = переносная вспышка
     .desc = Сверхъяркая лампочка с дистанционным триггером, полезная для создания зоны, только для СБ.
-ent-CyborgStunbaton = cyborg stun baton
-    .desc = A stun baton for incapacitating people with, designed for cyborgs. Actively harming with this is considered bad tone.
+ent-CyborgStunbaton = шоковая дубинка киборга
+    .desc = Шоковая дубинка для обездвиживания людей, созданная для киборгов. Активно калечить ею считается дурным тоном.

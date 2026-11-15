@@ -88,6 +88,7 @@ public sealed partial class SpaceCleanupSystem : BaseCleanupSystem<PhysicsCompon
         var price = 0f;
 
         return !_gridQuery.HasComp(uid)
+            && !_immuneQuery.HasComp(xform.MapUid) // LuaM
             && (xform.ParentUid == xform.MapUid // don't delete if on grid
                 || (isStuck |= GetWallStuck((uid, xform)))) // or wall-stuck
             && !_htnQuery.HasComp(uid) // handled by MobCleanupSystem

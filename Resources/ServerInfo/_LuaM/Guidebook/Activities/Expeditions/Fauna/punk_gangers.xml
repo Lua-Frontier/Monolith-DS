@@ -13,21 +13,21 @@
   <GuideEntityEmbed Entity="MobPunkGangerMeleeT1" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color][bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   <Box>
   <GuideEntityEmbed Entity="MobPunkGangerMeleeT2" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=red]тупой[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=orange]взрывной[/color] 10% (броня панков)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]; [color=orange]взрывной[/color] [color=#73BFD3]10%[/color] (броня панков)
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
 
@@ -35,9 +35,9 @@
   <GuideEntityEmbed Entity="MobPunkGangerMeleeT3" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4.5 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 18 [color=red]тупой[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] 10%; [color=yellow]колющий[/color] 60%; [color=orange]тепловой[/color] 10%; [color=orange]взрывной[/color] 20% (тяжёлая броня панков)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] [color=#73BFD3]10%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]60%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=orange]взрывной[/color] [color=#73BFD3]20%[/color] (тяжёлая броня панков)
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
 
@@ -45,7 +45,7 @@
   <GuideEntityEmbed Entity="MobPunkGangerPistol" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=yellow]колющий[/color] (.35 патрон)
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (mk 58)
@@ -55,7 +55,7 @@
   <GuideEntityEmbed Entity="MobPunkGangerShotgun" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10-60 [color=yellow]колющий[/color] (10 за дробинку)
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (дробовик)
@@ -65,9 +65,9 @@
   <GuideEntityEmbed Entity="MobPunkGangerSmg" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=yellow]колющий[/color] (.35 патрон)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=orange]взрывной[/color] 10% (броня панков)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]; [color=orange]взрывной[/color] [color=#73BFD3]10%[/color] (броня панков)
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (дрозд)
 
 
@@ -79,9 +79,9 @@
   <GuideEntityEmbed Entity="MobPunkGangerLeader" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 140 (смерть)
-  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] [color=#73BFD3]4 м/с[/color]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 17 [color=orange]тепловой[/color]
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] 10%; [color=yellow]колющий[/color] 60%; [color=orange]тепловой[/color] 10%; [color=orange]взрывной[/color] 20% (тяжёлая броня панков)
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] [color=#73BFD3]10%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]60%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=orange]взрывной[/color] [color=#73BFD3]20%[/color] (тяжёлая броня панков)
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (лазерная винтовка)
 
 

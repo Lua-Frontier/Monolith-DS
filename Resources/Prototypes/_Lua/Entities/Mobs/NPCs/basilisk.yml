@@ -64,7 +64,7 @@
       NavSmash: !type:Bool
         true
   - type: Reflect
-    reflectProb: 1
+    reflectProb: 0.2 # LuaM: 1 > 0.2
     reflects:
     - Energy
   - type: Butcherable # LuaM: was commented out in sector-frontier-14, two diamond ores when butchered

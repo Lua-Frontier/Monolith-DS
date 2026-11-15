@@ -1,0 +1,19 @@
+# LuaCorp - AGPLv3. See AGPLv3.txt.
+
+- type: guideEntry
+  id: Avali
+  name: species-name-avali
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Avali.xml
+  priority: 10
+
+- type: guideEntry
+  id: Ariral
+  name: species-name-ariral
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Ariral.xml
+  priority: 30
+
+- type: guideEntry
+  id: Shark
+  name: species-name-shark
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Shark.xml
+  priority: 150

@@ -1,3 +1,3 @@
-ent-NukeTestingProjectile = nuclear lobster
-    .desc = You need to krill yourself NOW.
+ent-NukeTestingProjectile = ядерный лобстер
+    .desc = Тебе срочно нужно самоустраниться.
     .suffix = yeah

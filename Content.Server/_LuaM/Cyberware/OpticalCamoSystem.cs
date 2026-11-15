@@ -71,15 +71,18 @@ public sealed partial class OpticalCamoSystem : EntitySystem
         if (args.Handled)
             return;
 
-        args.Handled = true;
-
         if (ent.Comp.Active)
         {
+            args.Handled = true;
             Deactivate(ent);
             return;
         }
 
-        Activate(ent);
+        // Left unhandled when blocked by other stealth, so the cooldown doesn't burn for nothing.
+        if (Activate(ent))
+            args.Handled = true;
+        else
+            _popup.PopupEntity(Loc.GetString(ent.Comp.BlockedPopup), ent, ent);
     }
 
     // The psycho turns the camo on as soon as the action is ready, the cooldown runs as if the player pressed it.

@@ -141,9 +141,10 @@ public sealed partial class ShuttleConsoleSystem
             return;
 
         // Check shuttle can even FTL
-        if (!_shuttle.CanFTL(shuttleUid.Value, out var reason))
+        if (!_shuttle.CanFTL(shuttleUid.Value, out var reason, targetCoordinates)) // Lua: + targetCoordinates
         {
             // TODO: Session popup
+            _popup.PopupEntity(reason, ent.Owner, PopupType.Medium); // Lua: say why, the nebula block is not shown anywhere else
             return;
         }
 

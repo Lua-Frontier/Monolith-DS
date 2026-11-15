@@ -40,13 +40,6 @@ public sealed partial class GuideShipyardPreview : BoxContainer
                 var window = new ShipyardConsoleMenu();
                 _window = window;
                 window.SetGuidebookReadOnly(yard.Name, yard.Vessels.ToList());
-                // LuaM start: the shipyard window draws the live preview itself
-                // window.OnPreviewShip += vessel =>
-                // {
-                //     var record = data.Vessels.FirstOrDefault(v => v.Id == vessel.ID);
-                //     if (record != null) _entities.System<GuidebookMapPreviewSystem>().Open(record.MapPath, record.Name);
-                // };
-                // LuaM end
                 window.OnClose += Close;
                 window.OpenCentered();
             };

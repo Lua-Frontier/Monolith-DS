@@ -111,5 +111,5 @@
   - type: PowerSwitch
   # Guide
   - type: GuideHelp
-    guides:
-    - Automation
+    guides: # LuaM: contextual guidebook route
+    - IndustryAutomation

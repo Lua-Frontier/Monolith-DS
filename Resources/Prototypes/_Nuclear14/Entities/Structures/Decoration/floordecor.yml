@@ -475,7 +475,7 @@
     blocking: 20
   - type: ExtendDescription
     descriptionList:
-    - description: You can fire over this if you stand near it.
+    - description: extend-desc-fire-over # LuaM
       color: "#4f94ad"
       requireDetailRange: false
 

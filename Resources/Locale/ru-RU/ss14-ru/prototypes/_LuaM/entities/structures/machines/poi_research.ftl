@@ -1,0 +1,9 @@
+ent-ResearchAndDevelopmentServerPOI = { ent-ResearchAndDevelopmentServer }
+    .desc = { ent-ResearchAndDevelopmentServer.desc }
+    .suffix = Точка интереса, Неразрушимый
+ent-ComputerTechnologyDiskTerminalPOI = { ent-ComputerTechnologyDiskTerminal }
+    .desc = { ent-ComputerTechnologyDiskTerminal.desc }
+    .suffix = Точка интереса, Неразрушимый
+ent-TechDiskPrinterPOI = { ent-TechDiskPrinter }
+    .desc = { ent-TechDiskPrinter.desc }
+    .suffix = Точка интереса, Неразрушимый

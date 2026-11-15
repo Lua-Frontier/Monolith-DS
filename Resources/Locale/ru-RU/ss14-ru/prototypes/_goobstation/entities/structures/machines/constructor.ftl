@@ -1,2 +1,2 @@
-ent-Constructor = constructor
-    .desc = The machine putting assistants out of a job, it can build anything using supplied materials.
+ent-Constructor = конструктор
+    .desc = Машина, оставляющая ассистентов без работы. Может построить что угодно из предоставленных материалов.

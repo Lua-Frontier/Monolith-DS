@@ -28,14 +28,17 @@
 
 - type: gameMap
   id: Mining
-  mapName: 'Derelict Drillsite'
+  mapName: 'Древняя Буровая Станция' # LuaM: 'Derelict Drillsite' > 'Древняя Буровая Станция'
   mapPath: /Maps/_Mono/POI/derelictdrillsite.yml
   minPlayers: 0
   stations:
     Mining:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Давно заброшенная буровая станция. Часть оборудования ещё можно запустить, если повезёт."
       stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Derelict Drillsite'
+          mapNameTemplate: 'Древняя Буровая Станция' # LuaM: 'Derelict Drillsite' > 'Древняя Буровая Станция'
         - type: StationDeadDrop
           maxDeadDrops: 6

@@ -19,7 +19,7 @@
   weight: 30
   displayWeight: 30
   guides:
-  - USSP_Entry
+  - ColossusUSSPRoles # LuaM: complete organization help
   special:
   - !type:AddImplantSpecial
     implants: [ UsspTrackingImplant ]

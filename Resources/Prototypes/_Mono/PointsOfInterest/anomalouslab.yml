@@ -23,15 +23,18 @@
 
 - type: gameMap
   id: AnomalousLab
-  mapName: 'Anomalous Lab'
+  mapName: 'Лаборатория Аномалий' # LuaM: 'Anomalous Lab' > 'Лаборатория Аномалий'
   mapPath: /Maps/_Mono/POI/anomalouslab.yml
   minPlayers: 0
   stations:
     AnomalousLab:
+      gridComponents: # LuaM
+      - type: VesselInfo
+        description: "Исследовательская станция, изучавшая аномалии сектора. Что здесь пошло не так, уже никто не расскажет, но сами аномалии никуда не делись."
       stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Anomalous Lab'
+          mapNameTemplate: 'Лаборатория Аномалий' # LuaM: 'Anomalous Lab' > 'Лаборатория Аномалий'
         - type: StationJobs
           availableJobs: {}
         - type: StationDeadDropHintExempt

@@ -1482,7 +1482,7 @@
   description: uplink-pdv-t0-voucher-desc
   productEntity: ShipVoucherPdvT0
   cost:
-    Doubloon: 25
+    Doubloon: 15 # LuaM: 25 > 15
   categories:
   - UplinkPdvVouchers
   conditions:
@@ -1497,7 +1497,7 @@
   description: uplink-pdv-t1-voucher-desc
   productEntity: ShipVoucherPdvT1
   cost:
-    Doubloon: 60 # +10 tax from mat cost since no research cost
+    Doubloon: 36 # +10 tax from mat cost since no research cost # LuaM: 60 > 36
   categories:
   - UplinkPdvVouchers
   conditions:
@@ -1512,7 +1512,7 @@
   description: uplink-pdv-t2-voucher-desc
   productEntity: ShipVoucherPdvT2
   cost:
-    Doubloon: 175 # +25 tax from mat cost since no research cost
+    Doubloon: 105 # +25 tax from mat cost since no research cost # LuaM: 175 > 105
   categories:
   - UplinkPdvVouchers
   conditions:
@@ -1541,7 +1541,7 @@
   description: uplink-pdv-t3-voucher-desc
   productEntity: ShipVoucherPdvT3
   cost:
-    Doubloon: 650 # +50 tax from mat cost since no research cost
+    Doubloon: 390 # +50 tax from mat cost since no research cost # LuaM: 650 > 390
   categories:
   - UplinkPdvVouchers
   conditions:
@@ -1556,7 +1556,7 @@
   description: uplink-pdv-t4-saturn-voucher-desc
   productEntity: ShipVoucherSaturn
   cost:
-    Doubloon: 1250 # +100 tax from mat cost since no research cost
+    Doubloon: 750 # +100 tax from mat cost since no research cost # LuaM: 1250 > 750
   categories:
   - UplinkPdvVouchers
   conditions:

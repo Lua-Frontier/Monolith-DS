@@ -17,12 +17,12 @@
   <GuideEntityEmbed Entity="MobArgocyteSlurvaExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 15 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3 м/с (3 м/с)[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3 м/с[/color] ([color=#73BFD3]3 м/с[/color])[bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 3 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Скиттер"
@@ -33,7 +33,7 @@
   <GuideEntityEmbed Entity="MobArgocyteSkitterExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 30 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -47,7 +47,7 @@
   <GuideEntityEmbed Entity="MobArgocyteSwiperExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 40 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -61,7 +61,7 @@
   <GuideEntityEmbed Entity="MobArgocyteGliderExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (4.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -75,7 +75,7 @@
   <GuideEntityEmbed Entity="MobArgocyteCrawlerExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 60 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 5 м/с (5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]5 м/с[/color] ([color=#73BFD3]5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -89,7 +89,7 @@
   <GuideEntityEmbed Entity="MobArgocyteFounderExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 150 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (4.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -103,7 +103,7 @@
   <GuideEntityEmbed Entity="MobArgocyteBarrierExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 35 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 3 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -117,7 +117,7 @@
   <GuideEntityEmbed Entity="MobArgocyteMolderExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -131,7 +131,7 @@
   <GuideEntityEmbed Entity="MobArgocytePouncerExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -145,7 +145,7 @@
   <GuideEntityEmbed Entity="MobArgocyteHarvesterExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 90 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=orange]едкий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -159,7 +159,7 @@
   <GuideEntityEmbed Entity="MobArgocyteEnforcerExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 140 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -173,7 +173,7 @@
   <GuideEntityEmbed Entity="MobArgocyteLeviathingExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 500 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 25 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет

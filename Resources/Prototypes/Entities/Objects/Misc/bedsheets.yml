@@ -12,7 +12,7 @@
   - type: Sprite
     sprite: Objects/Misc/bedsheets.rsi
     noRot: true
-    drawdepth: OverMobs
+    drawdepth: BelowMobs # LuaM
   - type: SpriteFade
     clickThrough: false
   - type: Item

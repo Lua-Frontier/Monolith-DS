@@ -451,7 +451,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         if (queued.Proto.FireColor == null)
         {
             AddComp<ExplosionHideFireComponent>(visualEnt);
-            _explosionEffect.SpawnEffects(pos);
+            _explosionEffect.SpawnEffects(pos, iterationIntensity.Count);
         }
         // LuaM end
 

@@ -175,7 +175,7 @@
       isLooped: true
   - type: PointLight
     enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: Cone # LuaM
     autoRot: true
     radius: 20
     netsync: false
@@ -211,6 +211,7 @@
     sounds:
       Unsexed: UnisexSilicon
   - type: UnblockableSpeech
+  - type: DamagedSiliconSpeech # LuaM
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepBorg

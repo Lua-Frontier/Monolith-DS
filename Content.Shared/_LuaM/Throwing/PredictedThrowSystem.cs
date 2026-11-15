@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Containers;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Input;
@@ -22,6 +23,7 @@ public sealed partial class PredictedThrowSystem : EntitySystem
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private SharedStackSystem _stack = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
@@ -106,9 +108,26 @@ public sealed partial class PredictedThrowSystem : EntitySystem
             ev.Direction,
             ev.ThrowSpeed,
             ev.PlayerUid,
-            compensateFriction: !HasComp<LandAtCursorComponent>(ev.ItemUid),
+            compensateFriction: !HasComp<LandAtCursorComponent>(ev.ItemUid) && !AimedAtThrowInsert(coordinates),
             predicted: true);
 
         return true;
+    }
+
+    // -- С компенсацией трения предмет приземляется на 80% пути и въезжает в мусоропровод уже не брошенным
+    private bool AimedAtThrowInsert(EntityCoordinates coordinates)
+    {
+        var mapCoords = _transform.ToMapCoordinates(coordinates);
+        if (!_map.TryFindGridAt(mapCoords, out var gridUid, out var grid))
+            return false;
+
+        var anchored = _map.GetAnchoredEntitiesEnumerator(gridUid, grid, _map.TileIndicesFor(gridUid, grid, mapCoords));
+        while (anchored.MoveNext(out var ent))
+        {
+            if (HasComp<ThrowInsertContainerComponent>(ent))
+                return true;
+        }
+
+        return false;
     }
 }

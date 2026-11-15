@@ -158,7 +158,7 @@
     deleteOnSpawn: true
   - type: ExtendDescription
     descriptionList:
-    - description: Usage requires a dedicated flare launcher.
+    - description: extend-desc-needs-flare-launcher # LuaM
       color: "#4f94ad"
       requireDetailRange: true
 

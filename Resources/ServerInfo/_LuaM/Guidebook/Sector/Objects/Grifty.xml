@@ -1,0 +1,17 @@
+<Document>
+# Заправка Грифти
+
+Разборочный узел с топливным снабжением, утильной верфью и сервисными автоматами.
+
+<GuideEntityCards><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/><GuideTexture Entity="ComputerTabletopShipyardScrap" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Один из вариантов разборочного узла сектора; альтернативой служит заброшенный МаКарго.
+
+## Как найти
+
+При начале смены выбирается один из вариантов разборочного узла. Ориентировочная область поиска — [bold]6.25–8.6 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_NF/POI/grifty.yml" Name="Заправка Грифти"/>
+
+[textlink="Закрепление обломков" link="GridClaimer"]
+</Document>

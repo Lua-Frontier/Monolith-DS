@@ -56,7 +56,7 @@ public sealed partial class GuideNavigationUI : BoxContainer, IDocumentTag
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
         control = null;
-        if (!args.TryGetValue("Mode", out var mode) || mode is not ("shuttle" or "weapons" or "expedition" or "research"))
+        if (!args.TryGetValue("Mode", out var mode) || mode is not ("shuttle" or "weapons" or "expedition" or "research" or "delivery"))
             return false;
 
         _mode = mode;
@@ -70,6 +70,7 @@ public sealed partial class GuideNavigationUI : BoxContainer, IDocumentTag
                 "shuttle" => "Открыть NAV / MAP / DOCK",
                 "weapons" => "Открыть учебное управление орудиями",
                 "research" => "Открыть учебный РНД",
+                "delivery" => "Открыть ColossDelivery — приложение курьера",
                 _ => "Открыть учебную консоль экспедиций",
             },
             HorizontalExpand = true,
@@ -112,6 +113,9 @@ public sealed partial class GuideNavigationUI : BoxContainer, IDocumentTag
                     break;
                 case "research":
                     CreateResearch();
+                    break;
+                case "delivery":
+                    CreateDelivery();
                     break;
                 default:
                     CreateExpedition();
@@ -284,6 +288,7 @@ public sealed partial class GuideNavigationUI : BoxContainer, IDocumentTag
         {
             window.OnClose -= CloseExample;
             if (window.Parent != null) window.Close();
+            if (_mode == "delivery") window.Dispose();
         }
 
         foreach (var dummy in _dummies)

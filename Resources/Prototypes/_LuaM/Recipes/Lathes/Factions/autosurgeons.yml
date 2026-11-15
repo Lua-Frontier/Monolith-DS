@@ -202,6 +202,23 @@
     Durathread: 1500
     UraniumFissile: 100
 
+# Berserk heart: PDV. The VV/KE heart recipe with more of everything and some uranium.
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: AutosurgeonBerserkHeartPDVRecipe
+  result: AutosurgeonBerserkHeartPDVFlatpack
+  materialDiscountScale: 0
+  materials:
+    Steel: 3000
+    Plastic: 6000
+    Glass: 800
+    Plasteel: 5000
+    Plasma: 3000
+    Lithium: 2000
+    Copper: 2000
+    Durathread: 2000
+    UraniumFissile: 300
+
 # Ultra-durable armor plate base: USSP and Viper Group. The PDV E-SAPI recipe with plastitanium.
 - type: latheRecipe
   parent: BaseToolRecipe

@@ -9891,7 +9891,7 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
-- proto: ComputerTechnologyDiskTerminal
+- proto: ComputerTechnologyDiskTerminalPOI
   entities:
   - uid: 1459
     components:
@@ -17383,7 +17383,7 @@ entities:
       parent: 1
     - type: DeltaPressure
       gridUid: 1
-- proto: ResearchAndDevelopmentServer
+- proto: ResearchAndDevelopmentServerPOI
   entities:
   - uid: 327
     components:
@@ -18545,7 +18545,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 5.381559,-11.286938
       parent: 1
-- proto: TechDiskPrinter
+- proto: TechDiskPrinterPOI
   entities:
   - uid: 2534
     components:

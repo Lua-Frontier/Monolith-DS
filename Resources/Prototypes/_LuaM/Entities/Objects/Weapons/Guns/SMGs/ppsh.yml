@@ -1,0 +1,56 @@
+# USSP PPSh: a heavy drum-fed SMG that can only be fired wielded.
+# Wielded spread equals the one-handed spread of the Atreides.
+- type: entity
+  name: PPSh-41 (7.62x25mm)
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunPPSh
+  description: A heavy USSP submachine gun with a wooden stock and a 71-round drum. Too heavy to fire with one hand. Uses 7.62x25mm ammo.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/SMGs/ppsh.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    sprite: _LuaM/Objects/Weapons/Guns/SMGs/ppsh_inhands_32x.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Weapons/Guns/SMGs/ppsh_inhands_32x.rsi
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunRequiresWield
+  - type: Gun
+    minAngle: 2
+    maxAngle: 16
+    angleIncrease: 3
+    angleDecay: 16
+    fireRate: 8.5
+    soundGunshot:
+      path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/smg.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 1500
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine762x25mmDrumFMJ
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - Magazine762x25mmDrum
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge762x25mmFMJ
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge762x25mmFMJ

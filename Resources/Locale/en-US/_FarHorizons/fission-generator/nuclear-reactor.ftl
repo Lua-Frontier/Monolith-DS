@@ -44,3 +44,5 @@ comp-nuclear-reactor-ui-therm-format = { POWERWATTS($power) }t
 
 comp-nuclear-reactor-ui-footer-left = Danger: high radiation.
 comp-nuclear-reactor-ui-footer-right = 0.8 REV 3
+
+nuclear-reactor-monitor-not-linked = The monitor is not linked to a reactor. Link them with a multitool.

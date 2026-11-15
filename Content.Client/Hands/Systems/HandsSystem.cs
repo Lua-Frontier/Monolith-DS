@@ -150,7 +150,10 @@ namespace Content.Client.Hands.Systems
             // -- Контейнер руки обнуляет угол без обновления цели интерполяции: у ножа там оставался угол броска,
             // -- и после сброса клиент доворачивал его по диагонали. Задаём обе цели текущими значениями
             if (held is { } dropped && TryComp(dropped, out TransformComponent? xform) && !TerminatingOrDeleted(dropped))
+            {
+                xform.ActivelyLerping = false;
                 TransformSystem.SetLocalPositionRotation(dropped, xform.LocalPosition, xform.LocalRotation, xform);
+            }
             // LuaM-end
         }
 

@@ -15,21 +15,21 @@
   <GuideEntityEmbed Entity="MobMercenarySoldierKnife" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])[bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]режущий[/color], 2 [color=yellow]колющий[/color] (топорик)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   <Box>
   <GuideEntityEmbed Entity="MobMercenarySoldierPistol" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=yellow]колющий[/color] (.35 патрон)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (mk58)
 
 
@@ -37,9 +37,9 @@
   <GuideEntityEmbed Entity="MobMercenarySoldierNovalite" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 17 [color=yellow]колющий[/color] (.20 патрон)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (Novalite C1)
 
 
@@ -51,9 +51,9 @@
   <GuideEntityEmbed Entity="MobMercenaryBreacherMachete" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 15 [color=red]режущий[/color] (мачете)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
 
@@ -61,9 +61,9 @@
   <GuideEntityEmbed Entity="MobMercenarySoldierRevolver" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 17 [color=yellow]колющий[/color] (.20 патрон)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (двойные револьверы Argenti)
 
 
@@ -71,9 +71,9 @@
   <GuideEntityEmbed Entity="MobMercenaryBreacherShotgun" Caption=""/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10 [color=yellow]колющий[/color] (дробовой патрон)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (дробовик)
 
 
@@ -85,9 +85,9 @@
   <GuideEntityEmbed Entity="MobMercenarySpecialistMedic"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 14 [color=orange]тепловой[/color] (ретро лазерный пистолет); 5 [color=red]тупой[/color], 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color] (циркулярная пила)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (ретро лазерный пистолет)
 
 
@@ -95,9 +95,9 @@
   <GuideEntityEmbed Entity="MobMercenarySpecialistAssault"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 15 [color=yellow]колющий[/color] (.30 патрон)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (Gestio)
 
 
@@ -110,9 +110,9 @@
   <GuideEntityEmbed Entity="MobMercenaryCaptain"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (критическое), 130 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 14 [color=orange]тепловой[/color] (ретро лазерный пистолет); 5 [color=red]тупой[/color], 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color] (циркулярная пила)
-  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (ретро лазерный пистолет)
 
 

@@ -7,6 +7,12 @@
   name: autosurgeon (EMP implant)
   description: Installs the EMP implant into whoever is buckled to it, or into whoever turns it on.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Sprite
     state: icon-syndie
   - type: AutoSurgeon
@@ -18,6 +24,12 @@
   name: autosurgeon (EMP implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Item
     size: Small
   - type: Flatpack
@@ -34,6 +46,12 @@
   name: autosurgeon (freedom implant)
   description: Installs the freedom implant into whoever is buckled to it, or into whoever turns it on.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Sprite
     state: icon-syndie
   - type: AutoSurgeon
@@ -45,6 +63,12 @@
   name: autosurgeon (freedom implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Item
     size: Small
   - type: Flatpack
@@ -61,6 +85,12 @@
   name: autosurgeon (scram implant)
   description: Installs the scram implant into whoever is buckled to it, or into whoever turns it on.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Sprite
     state: icon-syndie
   - type: AutoSurgeon
@@ -72,6 +102,12 @@
   name: autosurgeon (scram implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Item
     size: Small
   - type: Flatpack
@@ -88,6 +124,12 @@
   name: autosurgeon (storage implant)
   description: Installs the storage implant into whoever is buckled to it, or into whoever turns it on.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Sprite
     state: icon-syndie
   - type: AutoSurgeon
@@ -99,6 +141,12 @@
   name: autosurgeon (storage implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Item
     size: Small
   - type: Flatpack

@@ -33,7 +33,7 @@ public sealed partial class CartridgeAmmoComponent : AmmoComponent
     /// Caseless ammunition.
     /// </summary>
     [DataField]
-    public bool DeleteOnSpawn;
+    public bool DeleteOnSpawn = true; // LuaM: all ammo is caseless, spent casings don't litter the floor
 
     [DataField("soundEject")]
     public SoundSpecifier? EjectSound = new SoundCollectionSpecifier("CasingEject");

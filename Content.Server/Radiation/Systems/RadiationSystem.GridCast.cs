@@ -95,6 +95,12 @@ public partial class RadiationSystem
                 );
             }
 
+            // Lua-start: radiation that has no source entity, like a nebula
+            var ambient = new Content.Server._Lua.Radiation.GetAmbientRadiationEvent();
+            RaiseLocalEvent(destUid, ref ambient);
+            rads += MathF.Max(ambient.Radiation, 0f);
+            // Lua-end
+
             // Apply modifier if the destination entity is hidden within a radiation blocking container
             rads = GetAdjustedRadiationIntensity(destUid, rads);
 

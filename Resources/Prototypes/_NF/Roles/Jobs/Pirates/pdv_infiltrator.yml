@@ -33,7 +33,7 @@
   accessGroups:
   - GeneralAccess
   guides:
-  - PDV_Entry
+  - ColossusNordfallRoles # LuaM: complete organization help
   special:
   - !type:AddComponentSpecial
     components:
@@ -67,6 +67,7 @@
     pocket2: WeaponPistolHawk4
   storage:
     back:
+    - BookNordfallSOP # LuaM: faction service handbook
     - RadioHandheldNF
     - BasePirateUplinkPirateCrew # LuaM: the same uplink as the PDV praetorian
 #    - RubberStampPDVSpasaka # Commented by LuaM

@@ -48,6 +48,9 @@ public sealed partial class OpticalCamoComponent : Component
     [DataField]
     public LocId BrokenPopup = "optical-camo-broken";
 
+    [DataField]
+    public LocId BlockedPopup = "optical-camo-blocked";
+
     [DataField, AutoNetworkedField]
     public bool Active;
 
@@ -56,3 +59,9 @@ public sealed partial class OpticalCamoComponent : Component
 }
 
 public sealed partial class ActivateOpticalCamoEvent : InstantActionEvent;
+
+/// <summary>
+/// Raised on the client after a new camo state is applied, so the visuals can follow <see cref="OpticalCamoComponent.Active"/>.
+/// </summary>
+[ByRefEvent]
+public record struct OpticalCamoStateChangedEvent;

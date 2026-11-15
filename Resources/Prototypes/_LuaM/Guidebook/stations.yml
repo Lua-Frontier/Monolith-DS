@@ -1,17 +1,17 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: LuaMStations
-  name: guide-entry-luam-stations
+  name: guide-architecture-lua-m-stations # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Index.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Stations.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Index.xml
   priority: 10 # LuaM: 1 > 10 (section order)
-  children:
+  children: # LuaM: separate primary stations, roundstart objects and events
   - LuaMColossusCentral
   - LuaMMedical
   - LuaMCamelot
   - LuaMHalicon
   - LuaMHelios
+  - ColossusSiteHokkaido
   - LuaMArcturus
-  - LuaMTradeMall
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
@@ -51,7 +51,7 @@
   id: LuaMArcturus
   name: guide-entry-luam-arcturus
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Arcturus.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Arcturus.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Arcturus.xml
-  priority: 60 # LuaM: 0 > 60 (section order)
+  priority: 70 # LuaM: 60 > 70 (station order)
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
@@ -65,7 +65,7 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: LuaMMonolithWreck
-  name: guide-entry-luam-monolith-wreck
+  name: guide-sector-lua-m-monolith-wreck # LuaM: sector navigation
   text: "/ServerInfo/_LuaM/Guidebook/Sector/MonolithWreck.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/MonolithWreck.xml > /ServerInfo/_LuaM/Guidebook/Sector/MonolithWreck.xml
   priority: 10 # LuaM: 0 > 10 (section order)
 # LuaM-end
@@ -73,21 +73,33 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: LuaMGameModes
-  name: guide-entry-luam-game-modes
-  text: "/ServerInfo/_LuaM/Guidebook/Sector/GameModes.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/GameModes.xml > /ServerInfo/_LuaM/Guidebook/Sector/GameModes.xml
+  name: guide-sector-lua-m-game-modes # LuaM: sector navigation
+  text: /ServerInfo/_LuaM/Guidebook/Sector/Events/Index.xml # LuaM: sector navigation
   priority: 50 # LuaM: 0 > 50 (section order)
+  children: # LuaM: separate primary stations, roundstart objects and events
+  - ColossusEventSyndicateCache
+  - ColossusEventTSFVault
+  - ColossusEventSyndicateShuttle
+  - ColossusEventPreFracture
+  - ColossusEventMonolithFragments
+  - LuaMMonolithWreck
+  - ColossusEventPlanetoids
+  - ColossusEventSalvage
+  - ColossusEventADSFleet
+  - ColossusEventAsakimShips
+  - ColossusEventDeliveries
 # LuaM-end
 
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: LuaMHelios
-  name: guide-entry-luam-helios
+  name: guide-architecture-lua-m-helios # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Sector/Stations/Helios.xml" # LuaM: /ServerInfo/_LuaM/Guidebook/Stations/Helios.xml > /ServerInfo/_LuaM/Guidebook/Sector/Stations/Helios.xml
   priority: 50 # LuaM: 0 > 50 (section order)
 # LuaM-end
 
 - type: guideEntry
   id: ColossusOrientation
-  name: guide-entry-colossus-orientation
+  name: guide-architecture-colossus-orientation # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Ships/Orientation.xml
   priority: 30 # LuaM: 0 > 30 (section order)

@@ -16,6 +16,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Shared._LuaM.Hearing; // LuaM
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -133,6 +134,9 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
 //         if (TryComp(Transform(uid).ParentUid, out ActorComponent? actor)) // Commented by // Corvax-TTS
 // Corvax-TTS-start:
         var parent = Transform(uid).ParentUid;
+
+        if (HasComp<DeafComponent>(parent)) // LuaM: deaf creatures hear no radio
+            return;
 
         if (TryComp(parent, out ActorComponent? actor))
 // Corvax-TTS-end.

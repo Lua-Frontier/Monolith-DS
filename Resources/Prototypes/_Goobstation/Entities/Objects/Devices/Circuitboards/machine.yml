@@ -4,6 +4,11 @@
   name: robotic arm machine board
   description: A machine printed circuit board for a robotic arm.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard
@@ -22,6 +27,11 @@
   name: constructor machine board
   description: A machine printed circuit board for a constructor.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard
@@ -39,6 +49,11 @@
   name: storage bin machine board
   description: A machine printed circuit board for a storage bin.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   - type: MachineBoard
     prototype: StorageBin
     requirements:
@@ -53,6 +68,11 @@
   name: interactor machine board
   description: A machine printed circuit board for an interactor.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   - type: Sprite
     state: engineering
   - type: MachineBoard

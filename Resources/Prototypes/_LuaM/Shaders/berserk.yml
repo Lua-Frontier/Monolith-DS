@@ -1,0 +1,11 @@
+- type: shader
+  id: BerserkShadow
+  kind: source
+  path: "/Textures/_LuaM/Shaders/berserk_shadow.swsl"
+
+- type: shader
+  id: BerserkBlood
+  kind: source
+  path: "/Textures/_LuaM/Shaders/berserk_blood.swsl"
+  params:
+    intensity: 0.6

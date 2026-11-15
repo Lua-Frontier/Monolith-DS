@@ -1,6 +1,6 @@
-ent-BaseFactionWarDeclarator = war declarator
-    .desc = A device used to declare hostilities within the sector. If both sides activate it, total war will be declared.
-ent-WarDeclaratorTsf = TSFMC war declarator
+ent-BaseFactionWarDeclarator = объявитель войны
+    .desc = Устройство для объявления военных действий в секторе. Если обе стороны его активируют, будет объявлена тотальная война.
+ent-WarDeclaratorTsf = объявитель войны КМП ТСФ
     .desc = { ent-BaseFactionWarDeclarator.desc }
-ent-WarDeclaratorPdv = PDV war declarator
+ent-WarDeclaratorPdv = объявитель войны Авангарда
     .desc = { ent-BaseFactionWarDeclarator.desc }

@@ -1,7 +1,7 @@
 # LuaM-start: maintained guidebook page and navigation.
 - type: guideEntry
   id: WeaponsSystems
-  name: guide-entry-colossus-equipment # LuaM: guide-entry-gunnery > guide-entry-colossus-equipment
+  name: guide-architecture-weapons-systems # LuaM: guidebook architecture v2.1
   text: "/ServerInfo/_LuaM/Guidebook/Ships/WeaponsSystems.xml" # LuaM: "/ServerInfo/_Mono/Guidebook/ShipCombat.xml" > "/ServerInfo/_LuaM/Guidebook/Ships/WeaponsSystems.xml"
   priority: 50 # LuaM: 1 > 50 (section order)
   bookRoot: false
