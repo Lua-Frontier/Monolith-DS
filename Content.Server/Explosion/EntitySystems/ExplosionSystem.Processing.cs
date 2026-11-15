@@ -157,7 +157,9 @@ public sealed partial class ExplosionSystem
 #endif
         }
 
-        Log.Info($"Processed {TilesPerTick - tilesRemaining} tiles in {Stopwatch.Elapsed.TotalMilliseconds}ms");
+        // LuaM: Info > Debug, this ran every tick while any explosion was active
+        if (Log.IsLogLevelEnabled(LogLevel.Debug))
+            Log.Debug($"Processed {TilesPerTick - tilesRemaining} tiles in {Stopwatch.Elapsed.TotalMilliseconds}ms");
 
         // we have finished processing our tiles. Is there still an ongoing explosion?
         if (_activeExplosion != null)

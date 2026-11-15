@@ -157,7 +157,6 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         var coordinates = collisionCoordinates != null
             ? _transform.ToCoordinates(collisionCoordinates.Value)
             : Transform(projectile).Coordinates;
-        var otherName = ToPrettyString(target);
         var direction = ourBody.LinearVelocity.Normalized();
         DamageSpecifier modifiedDamage;
         if (_net.IsServer)
@@ -175,17 +174,17 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         }
         var deleted = Deleted(target);
 
-        var filter = Robust.Shared.Player.Filter.Pvs(coordinates, entityMan: EntityManager);
+        // LuaM-start: one PVS pass per hit instead of three, effects and damage flash share the same recipients
+        var impactFilter = Robust.Shared.Player.Filter.Pvs(coordinates, entityMan: EntityManager);
+        var damageFilter = impactFilter;
+        var filter = impactFilter;
         if (_guns.GunPrediction &&
             TryComp(projectile, out PredictedProjectileServerComponent? serverProjectile) &&
             serverProjectile.Shooter is { } shooter)
         {
-            filter = filter.RemovePlayer(shooter);
+            filter = impactFilter.Clone().RemovePlayer(shooter);
         }
-
-        // Create a separate filter for impact effects and damage effects that includes the shooter
-        var impactFilter = Robust.Shared.Player.Filter.Pvs(coordinates, entityMan: EntityManager);
-        var damageFilter = Robust.Shared.Player.Filter.Pvs(coordinates, entityMan: EntityManager);
+        // LuaM-end
 
         if (modifiedDamage is not null && (Exists(component.Shooter) || Exists(component.Weapon)))
         {

@@ -84,6 +84,11 @@ public sealed partial class TargetSeekingComponent : Component
     public bool SeekingDisabled;
 
     /// <summary>
+    /// LuaM: when a missile without a target may search for one again.
+    /// </summary>
+    public TimeSpan NextAcquire;
+
+    /// <summary>
     /// Do we want to draw arc/velocity lines on radar?
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]

@@ -64,6 +64,10 @@ namespace Content.Server.Entry
             var res = IoCManager.Resolve<IResourceManager>();
             var logManager = IoCManager.Resolve<ILogManager>();
 
+            // LuaM: no grid splitting, shot-up ships stay one grid instead of spawning debris grids with their own physics.
+            // Presets and server_config.toml can still turn it back on.
+            cfg.OverrideDefault(Robust.Shared.CVars.GridSplitting, false);
+
             LoadConfigPresets(cfg, res, logManager.GetSawmill("configpreset"));
 
             var aczProvider = new ContentMagicAczProvider(IoCManager.Resolve<IDependencyCollection>());
