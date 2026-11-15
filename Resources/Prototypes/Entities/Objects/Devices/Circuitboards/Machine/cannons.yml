@@ -85,6 +85,11 @@
   suffix: DO NOT MAP, Machine Board
   categories: [ DoNotMap ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: Sprite
     state: security
   - type: MachineBoard

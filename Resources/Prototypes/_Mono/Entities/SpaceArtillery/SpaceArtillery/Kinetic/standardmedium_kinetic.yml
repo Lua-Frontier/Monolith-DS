@@ -9,6 +9,11 @@
   suffix: Medium, T2
   description: A dual-barrel, heavy 40x360mm autocannon firing general-purpose APHE rounds, effective for sustained fire against medium targets. Can be remotely activated or linked up to a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 650
   - type: Sprite
@@ -88,6 +93,11 @@
   suffix: Medium, T2
   description: A single-barrel autocannon made by Aetherion Dynamics. Medium artillery piece with high impact but relatively low fire rate, firing HEAT shells to damage ship armor and systems. Can be remotely activated or linked up to a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 900
   - type: Sprite
@@ -173,6 +183,11 @@
   - BallisticArtilleryTier3HP
   description: A quad-barrel, 25x170mm chaingun firing solid shot AP rounds, designed to be mounted upon fighters by Armamenti Corvus. Can be remotely activated or linked up to a GCS.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 3000
   - type: Sprite

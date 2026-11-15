@@ -57,6 +57,11 @@
   parent: BaseLandMine
   id: LandMineKick
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Defusal
+  # LuaM-end
   - type: GhostKickUserOnTrigger
   - type: DeleteOnTrigger
 
@@ -66,6 +71,11 @@
   parent: BaseLandMine
   id: LandMineModular
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Defusal
+  # LuaM-end
   - type: PayloadCase
   - type: Construction
     graph: ModularMineGraph
@@ -76,6 +86,11 @@
   parent: BaseLandMine
   id: LandMineExplosive
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Defusal
+  # LuaM-end
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default

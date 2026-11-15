@@ -65,7 +65,7 @@ public sealed partial class DocumentParsingManager
                     var rt = new RichTextLabel
                     {
                         HorizontalExpand = true,
-                        Margin = new Thickness(0, 0, 0, 15.0f)
+                        Margin = new Thickness(0, 0, 0, 10.0f) // LuaM: compact paragraphs; headings provide section spacing.
                     };
 
                     var msg = new FormattedMessage();
@@ -90,29 +90,26 @@ public sealed partial class DocumentParsingManager
             .Cast<Control>())
         .Labelled("richtext");
 
-    // LuaM-start
-    private static RichTextLabel HeadingLabel(string text, string styleClass)
+    // LuaM: wrapping headings retain the native fonts through explicit GuideHeading style rules.
+    private static Content.Client._LuaM.Guidebook.GuideHeading HeadingLabel(string text, string styleClass, Thickness margin)
     {
-        var label = new RichTextLabel { StyleClasses = { styleClass } };
-        label.SetMessage(FormattedMessage.FromUnformatted(text));
-        return label;
+        return new Content.Client._LuaM.Guidebook.GuideHeading(text) { Margin = margin, StyleClasses = { styleClass } };
     }
-    // LuaM-end
 
     private static readonly Parser<char, Control> HeaderControlParser = Try(Char('#'))
-        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelHeadingBigger"), // LuaM: Label > RichTextLabel
+        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelHeadingBigger", new Thickness(0, 0, 0, 12)), // LuaM
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("header");
 
     private static readonly Parser<char, Control> SubHeaderControlParser = Try(String("##"))
-        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelHeading"), // LuaM: Label > RichTextLabel
+        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelHeading", new Thickness(0, 14, 0, 10)), // LuaM
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("subheader");
 
     private static readonly Parser<char, Control> TertiaryHeaderControlParser = Try(String("###"))
-        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelKeyText"), // LuaM: Label > RichTextLabel
+        .Then(SkipWhitespaces.Then(Map(text => HeadingLabel(text, "LabelKeyText", new Thickness(0, 0, 0, 6)), // LuaM
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("tertiaryheader");

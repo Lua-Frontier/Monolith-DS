@@ -10,6 +10,24 @@
 
 - type: guideEntry
   id: ColossusMMCFaction
-  name: guide-entry-colossus-mmc-faction
+  name: guide-architecture-colossus-m-m-c-faction # LuaM: guidebook architecture v2.1
   text: /ServerInfo/_LuaM/Guidebook/Factions/MMC/Index.xml
   priority: 0
+
+- type: guideEntry
+  id: ColossusTSFCode
+  name: guide-entry-colossus-tsf-code
+  text: /ServerInfo/_LuaM/Guidebook/Factions/TSF/Code.xml
+  priority: 30
+
+- type: guideEntry
+  id: ColossusNordfallCharter
+  name: guide-architecture-colossus-nordfall-charter # LuaM: guidebook architecture v2.1
+  text: /ServerInfo/_LuaM/Guidebook/Factions/PDV/Charter.xml
+  priority: 10
+
+- type: guideEntry
+  id: ColossusPrecursors
+  name: guide-entry-colossus-precursors
+  text: /ServerInfo/_LuaM/Guidebook/Factions/Precursors/Index.xml
+  priority: 80

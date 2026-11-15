@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
+using System.Reflection;
 using Content.Client._LuaM.Shipyard;
 using Content.Client._NF.Shipyard.UI;
 using Content.Shared._NF.Shipyard.Prototypes;
@@ -11,6 +13,34 @@ namespace Content.IntegrationTests.Tests._LuaM;
 [TestFixture]
 public sealed class ShipyardPreviewTests
 {
+    [Test]
+    public void LargeMapsHaveBoundedReducedResolutionAndAPathApi()
+    {
+        var pick = typeof(ShipyardPreviewRenderSystem).GetMethod("PickPixelsPerTile", BindingFlags.NonPublic | BindingFlags.Static)!;
+        var scale = (int)pick.Invoke(null, new object[] { new Vector2(1500, 1500) })!;
+        Assert.That(scale, Is.GreaterThan(0), "Large plans should reduce resolution rather than fail at a four-pixel minimum.");
+        Assert.That(1500L * 1500 * scale * scale * 4, Is.LessThanOrEqualTo(32L * 1024 * 1024));
+        Assert.That(typeof(ShipyardPreviewRenderSystem).GetMethod("TryBuildMap"), Is.Not.Null,
+            "Stations and drones must be loaded by map path, without fake Vessel prototypes.");
+    }
+
+    [TestCase(200, 200)]
+    [TestCase(1000, 1000)]
+    [TestCase(1500, 1500)]
+    [TestCase(2000, 2)]
+    public void TextureFallbackHonoursBothBudgets(float width, float height)
+    {
+        var pick = typeof(ShipyardPreviewRenderSystem).GetMethod("PickPixelsPerTile", BindingFlags.NonPublic | BindingFlags.Static)!;
+        var scale = (int)pick.Invoke(null, new object[] { new Vector2(width, height) })!;
+        if (width == 200 && height == 200) Assert.That(scale, Is.GreaterThan(0));
+        if (scale == 0) return; // Explicitly unsupported, never allocate an oversized target.
+        var pixelsX = (long)Math.Ceiling(width * scale);
+        var pixelsY = (long)Math.Ceiling(height * scale);
+        Assert.That(pixelsX, Is.LessThanOrEqualTo(4096));
+        Assert.That(pixelsY, Is.LessThanOrEqualTo(4096));
+        Assert.That(pixelsX * pixelsY * 4, Is.LessThanOrEqualTo(32L * 1024 * 1024));
+    }
+
     private const string PreviewMapName = "Shipyard preview";
 
     private static int PreviewMaps(IEntityManager entities)

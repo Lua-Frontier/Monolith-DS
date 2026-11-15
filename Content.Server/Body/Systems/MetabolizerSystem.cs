@@ -1,3 +1,4 @@
+using Content.Server._LuaM.Body; // LuaM
 using Content.Server.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Administration.Logs;
@@ -223,6 +224,10 @@ namespace Content.Server.Body.Systems
                 if (mostToRemove > FixedPoint2.Zero)
                 {
                     solution.RemoveReagent(reagent, mostToRemove);
+                    // LuaM-start: tell the body how much of the reagent it took in
+                    var metabolizedEv = new ReagentMetabolizedEvent(reagent.Prototype, mostToRemove);
+                    RaiseLocalEvent(ent.Comp2?.Body ?? solutionEntityUid.Value, ref metabolizedEv);
+                    // LuaM-end
                     // Frontier: do not count cryogenics chems against the reagent limit (to buff cryo meds)
                     if (!proto.Metabolisms.ContainsKey("Cryogenic"))
                         reagents++;

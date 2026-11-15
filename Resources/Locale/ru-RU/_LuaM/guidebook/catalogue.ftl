@@ -13,4 +13,4 @@ guide-entry-catalogue-ores = Породы и руда
 guide-entry-catalogue-species = Характеристики рас
 guide-entry-catalogue-prices = Цены газов и реагентов
 guide-entry-colossus-botany = Ботаника
-guide-entry-colossus-surgery = Операции и замена органов
+guide-entry-colossus-surgery = Хирургия: установка и замена

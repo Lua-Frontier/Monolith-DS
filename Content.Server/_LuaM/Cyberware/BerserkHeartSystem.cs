@@ -1,6 +1,6 @@
+using Content.Server._LuaM.Hearing;
 using Content.Server.Body.Systems;
 using Content.Shared._LuaM.Cyberware;
-using Content.Shared._LuaM.Hearing;
 using Content.Shared._LuaM.Weapons;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
@@ -21,11 +21,14 @@ public sealed partial class BerserkHeartSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private DeafnessSystem _deafness = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MobThresholdSystem _thresholds = default!;
     [Dependency] private MovementSpeedModifierSystem _movement = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IGameTiming _timing = default!;
+
+    private const string DeafSource = "BerserkHeart";
 
     public override void Initialize()
     {
@@ -143,13 +146,7 @@ public sealed partial class BerserkHeartSystem : EntitySystem
         comp.OldCritThreshold = RaiseThreshold(ent, MobState.Critical, comp.CritThreshold);
         comp.OldDeadThreshold = RaiseThreshold(ent, MobState.Dead, comp.DeadThreshold);
 
-        comp.AddedDeaf = !HasComp<DeafComponent>(ent);
-        if (comp.AddedDeaf)
-        {
-            var deaf = AddComp<DeafComponent>(ent);
-            deaf.SoundVolume = comp.MuffledSoundVolume;
-            Dirty(ent.Owner, deaf);
-        }
+        _deafness.AddSource(ent, DeafSource, comp.MuffledSoundVolume);
 
         Dirty(ent);
         _movement.RefreshMovementSpeedModifiers(ent);
@@ -179,10 +176,7 @@ public sealed partial class BerserkHeartSystem : EntitySystem
         comp.OldCritThreshold = null;
         comp.OldDeadThreshold = null;
 
-        if (comp.AddedDeaf)
-            RemComp<DeafComponent>(ent);
-
-        comp.AddedDeaf = false;
+        _deafness.RemoveSource(ent, DeafSource);
 
         _movement.RefreshMovementSpeedModifiers(ent);
 

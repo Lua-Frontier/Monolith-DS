@@ -7,6 +7,11 @@
   name: autodoc
   description: This is an autodoc. It's empty. You built it. Why?
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     sprite: Structures/Machines/scanner.rsi
     snapCardinals: true

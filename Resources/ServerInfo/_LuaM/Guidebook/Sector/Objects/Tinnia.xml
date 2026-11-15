@@ -1,0 +1,17 @@
+<Document>
+# Ресторан Тиннии
+
+Место отдыха и снабжения с кухонным, барным и сервисным оборудованием.
+
+<GuideEntityCards><GuideTexture Entity="VendingMachineBoozePOI" Caption="auto"/><GuideTexture Entity="VendingMachineChefvend" Caption="auto"/></GuideEntityCards>
+
+[bold]Используйте[/bold] местные автоматы для пополнения запасов, а рецепты ищите в справочниках еды и напитков.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — [bold]3.4–5.8 км от центра сектора[/bold].
+
+<GuideMap Map="/Maps/_LuaM/POI/TiniaLuaM.yml" Name="Ресторан Тиннии"/>
+
+[textlink="Еда" link="FoodRecipes"] · [textlink="Напитки" link="Drinks"]
+</Document>

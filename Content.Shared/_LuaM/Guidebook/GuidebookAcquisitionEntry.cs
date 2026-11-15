@@ -20,4 +20,5 @@ public sealed class GuidebookAcquisitionEntry
     public string IdentityKey = "";
     public List<GuidebookAcquisitionOffer> Offers = new();
     public List<GuidebookCatalogStat> Stats = new();
+    public List<GuidebookCatalogStat> ShieldStats = new();
 }

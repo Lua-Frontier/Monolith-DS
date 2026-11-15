@@ -18,6 +18,11 @@
   - BallisticArtillery
   description: A laser weapon that engages targets with rapid, precise shots.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 2500
   - type: Sprite
@@ -99,6 +104,11 @@
   - BallisticArtilleryTier4HP
   description: A heavy laser weapon that unleashes a barrage of shots, destroying everything in its path.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  # LuaM-end
   - type: StaticPrice
     price: 25000
   - type: Sprite

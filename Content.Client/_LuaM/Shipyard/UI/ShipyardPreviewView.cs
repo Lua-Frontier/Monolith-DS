@@ -3,6 +3,7 @@ using Content.Shared._NF.Shipyard.Prototypes;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Shared.Input;
+using Robust.Shared.Utility;
 
 namespace Content.Client._LuaM.Shipyard.UI;
 
@@ -25,6 +26,7 @@ public sealed partial class ShipyardPreviewView : Control
 
     private readonly ShipyardPreviewRenderSystem _render;
     private VesselPrototype? _vessel;
+    private string? _path;
     private ShipyardPreviewEntry? _shown;
     private Vector2 _center;
     private float _zoom = 1f;
@@ -38,9 +40,9 @@ public sealed partial class ShipyardPreviewView : Control
 
     public VesselPrototype? Vessel => _vessel;
 
-    public ShipyardPreviewEntry? Entry => _vessel != null && _shown?.VesselId == _vessel.ID ? _shown : null;
+    public ShipyardPreviewEntry? Entry => _path != null && _shown?.Key == _path ? _shown : null;
 
-    public bool Loading => _vessel != null && _render.IsLoading(_vessel.ID);
+    public bool Loading => _path != null && _render.IsLoading(_path);
 
     public ShipyardPreviewView()
     {
@@ -58,26 +60,35 @@ public sealed partial class ShipyardPreviewView : Control
             return;
 
         _vessel = vessel;
+        SetMap(vessel?.ShuttlePath.ToRootedPath().ToString());
+    }
+
+    public void SetMap(string? path)
+    {
+        _render.Release(this);
+        _path = path;
+        _shown = null;
         ShowCurrent();
     }
 
     private void ShowCurrent()
     {
-        if (_vessel == null)
+        if (_path == null)
         {
             _shown = null;
             StateChanged?.Invoke();
             return;
         }
 
-        if (_render.Get(_vessel.ID) is { } entry)
+        if (IsInsideTree) _render.Request(_path, this);
+        if (_render.Get(_path) is { } entry)
         {
             _shown = entry;
             FitWhole();
         }
         else if (IsInsideTree)
         {
-            _render.Request(_vessel);
+            _render.Request(_path, this);
         }
 
         StateChanged?.Invoke();
@@ -93,8 +104,8 @@ public sealed partial class ShipyardPreviewView : Control
     protected override void ExitedTree()
     {
         _render.PreviewChanged -= OnPreviewChanged;
-        if (_vessel != null && _render.IsLoading(_vessel.ID))
-            _render.Cancel();
+        _render.Release(this);
+        _shown = null;
 
         _dragging = false;
         base.ExitedTree();
@@ -109,7 +120,7 @@ public sealed partial class ShipyardPreviewView : Control
             return;
         }
 
-        if (_vessel?.ID != vesselId)
+        if (_path != vesselId)
             return;
 
         _shown = _render.Get(vesselId);
@@ -252,7 +263,7 @@ public sealed partial class ShipyardPreviewView : Control
         origin = new Vector2(MathF.Round(origin.X), MathF.Round(origin.Y));
         screen.DrawTextureRect(texture.Texture, UIBox2.FromDimensions(origin, size));
 
-        if (_vessel != null && _shown.VesselId != _vessel.ID)
+        if (_path != null && _shown.Key != _path)
             screen.DrawRect(bounds, LoadingShade);
     }
 

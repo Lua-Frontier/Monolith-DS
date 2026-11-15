@@ -4,5 +4,11 @@
   parent:
     - BaseImplantOnlyImplanterSyndi
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Implanter
     implant: MMCUplinkImplant

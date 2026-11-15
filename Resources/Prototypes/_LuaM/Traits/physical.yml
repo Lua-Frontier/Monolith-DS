@@ -1,0 +1,10 @@
+- type: trait
+  id: SharpEye
+  name: trait-luam-sharp-eye-name
+  description: trait-luam-sharp-eye-desc
+  category: Physical
+  cost: 3
+  speciesBlacklist:
+  - IPC
+  components:
+  - type: SharpEye

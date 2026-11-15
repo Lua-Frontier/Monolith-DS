@@ -10,8 +10,8 @@
     size: Ginormous
   - type: MechEquipment
   - type: GuideHelp
-    guides:
-    - Robotics
+    guides: # LuaM: contextual guidebook route
+    - ColossusMechsHub
 
 - type: entity
   id: MechEquipmentGrabber

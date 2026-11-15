@@ -15,6 +15,11 @@
   name: super capacitor blueprint
   description: A blueprint with a schematic of a super capacitor. It can be inserted into an autolathe or a techfab.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryMachineParts
+  # LuaM-end
   - type: Blueprint
     providedRecipes:
     - SuperCapacitorStockPart
@@ -25,6 +30,11 @@
   name: super manipulator blueprint
   description: A blueprint with a schematic of a super manipulator. It can be inserted into an autolathe or a techfab.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryMachineParts
+  # LuaM-end
   - type: Blueprint
     providedRecipes:
     - PicoManipulatorStockPart
@@ -35,6 +45,11 @@
   name: super matter bin blueprint
   description: A blueprint with a schematic of a super matter bin. It can be inserted into an autolathe or a techfab.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryMachineParts
+  # LuaM-end
   - type: Blueprint
     providedRecipes:
     - SuperMatterBinStockPart

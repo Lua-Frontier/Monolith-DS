@@ -3,6 +3,11 @@
   parent: BaseItem
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     sprite: Mobs/Species/Diona/organs.rsi
   - type: Organ
@@ -35,6 +40,12 @@
   name: brain
   description: "The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: MindContainer
     showExamineInfo: true
   - type: Speech
@@ -80,6 +91,12 @@
   name: eyes
   description: "I see you!"
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: Sprite
     layers:
     - state: eyeball-l
@@ -94,6 +111,12 @@
   name: stomach
   description: "The diona's equivalent of a stomach, it reeks of asparagus and vinegar."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: stomach
   - type: SolutionContainerManager
@@ -126,6 +149,12 @@
   name: lungs
   description: "A spongy mess of slimy, leaf-like structures. Capable of breathing both carbon dioxide and oxygen."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: lungs
   - type: Organ

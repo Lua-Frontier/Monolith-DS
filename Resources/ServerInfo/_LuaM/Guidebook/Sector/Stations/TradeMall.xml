@@ -3,9 +3,9 @@
 
 ## Торговля и корабли
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerTabletopPalletConsoleNFNormalMarket"/>
-<GuideEntityEmbed Entity="ComputerShipyardScrap"/>
-<GuideEntityEmbed Entity="ComputerBankATM"/>
+<GuideTexture Entity="ComputerTabletopPalletConsoleNFNormalMarket" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardScrap" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerBankATM" Powered="true" Caption="auto"/>
 </GuideEntityCards>
 На карте есть торговые паллеты с консолью продажи, терминал рынка и консоль грузовых заказов. Станция принимает торговые ящики. Банкомат обслуживает личный счёт.
 

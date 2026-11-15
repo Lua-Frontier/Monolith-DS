@@ -26,10 +26,4 @@
   <Import Project="..\RobustToolbox\Imports\Shared.props" />
   <Import Project="..\RobustToolbox\Imports\Testing.props" />
 
-  <!-- LuaM: guidebook rendering is opt-in while the rendering feature is paused. -->
-  <Target Name="GenerateGuidebookMapRenders" AfterTargets="Build"
-          Condition="'$(GenerateGuidebookImages)' == 'true' and '$(DesignTimeBuild)' != 'true'">
-    <Exec WorkingDirectory="$(MSBuildProjectDirectory)/.."
-          Command="dotnet &quot;$(TargetPath)&quot; --guidebook --resources &quot;$(MSBuildProjectDirectory)/../Resources&quot;" />
-  </Target>
 </Project>

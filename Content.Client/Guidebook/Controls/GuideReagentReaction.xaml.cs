@@ -81,7 +81,7 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
                 }
             }
         };
-        var nameLabel = new RichTextLabel();
+        var nameLabel = new RichTextLabel { HorizontalExpand = true }; // LuaM: long source names wrap
         nameLabel.SetMarkup(Loc.GetString("guidebook-reagent-sources-ent-wrapper", ("name", prototype.Name)));
         entContainer.AddChild(nameLabel);
         ReactantsContainer.AddChild(entContainer);
@@ -166,7 +166,7 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
             msg.AddMarkupOrThrow(Loc.GetString("guidebook-reagent-recipes-reagent-display",
                 ("reagent", productProto.LocalizedName), ("ratio", amount)));
 
-            var label = new GuidebookRichPrototypeLink();
+            var label = new GuidebookRichPrototypeLink { HorizontalExpand = true }; // LuaM: wrap within its column
             if (addLinks)
                 label.LinkedPrototype = productProto;
             label.SetMessage(msg);

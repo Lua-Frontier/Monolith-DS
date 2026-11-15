@@ -1,17 +1,5 @@
 <Document>
-# Каталог
+# Справочники
 
-- [textlink="Каталог верфей" link="ColossusCatalogueShipyards"]
-- [textlink="Каталог брони" link="ColossusCatalogueArmor"]
-- [textlink="Каталог оружия" link="ColossusCatalogueWeapons"]
-- [textlink="Каталог боеприпасов" link="ColossusCatalogueAmmo"]
-- [textlink="Корабельное вооружение" link="ColossusCatalogueShipWeapons"]
-- [textlink="Генераторы и СУО" link="ColossusCatalogueEngineering"]
-- [textlink="Каталог аплинков" link="ColossusCatalogueUplinks"]
-- [textlink="Окно исследований" link="ColossusCatalogueResearch"]
-- [textlink="Каталог объектов сектора" link="ColossusCatalogueObjects"]
-- [textlink="Дроны и регистраторы" link="ColossusCatalogueDrones"]
-- [textlink="Породы и руда" link="ColossusCatalogueOres"]
-- [textlink="Характеристики рас" link="ColossusCatalogueSpecies"]
-- [textlink="Цены газов и реагентов" link="ColossusCataloguePrices"]
+<GuideHub Root="ColossusCatalogue"/>
 </Document>

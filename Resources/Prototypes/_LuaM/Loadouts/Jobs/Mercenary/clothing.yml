@@ -233,3 +233,16 @@
   loadouts:
   - MercenaryClothingShoesBootsPirate
   - MercenaryClothingShoesBootsPirateLuffy
+
+# Eyes, listed straight in the _NF MercenaryGlasses group so every role that uses it gets them
+- type: loadout
+  id: MercenaryClothingEyesGlassesNoir
+  price: 100
+  equipment:
+    eyes: ClothingEyesGlassesNoir
+
+- type: loadout
+  id: MercenaryClothingEyesBlindfoldSheer
+  price: 75
+  equipment:
+    eyes: ClothingEyesBlindfoldSheer

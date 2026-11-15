@@ -1,4 +1,5 @@
 - type: guideEntry
   id: Demon
+  priority: 40 # LuaM: alphabetical species order
   name: species-name-demon
-  text: "/ServerInfo/_Wega/Guidebook/Mobs/Demon.xml"
+  text: /ServerInfo/_LuaM/Guidebook/Catalogue/Species/Demon.xml # LuaM: standardized species article

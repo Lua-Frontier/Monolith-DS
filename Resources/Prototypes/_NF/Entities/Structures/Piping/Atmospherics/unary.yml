@@ -6,6 +6,11 @@
   placement:
     mode: SnapgridCenter
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - GasMining
+  # LuaM-end
   - type: Appearance
   - type: PipeColorVisuals
   - type: Rotatable

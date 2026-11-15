@@ -123,8 +123,8 @@
     - type: Lock
       locked: true # Frontier: false<true
     - type: GuideHelp
-      guides:
-      - GasCanisters
+      guides: # LuaM: contextual guidebook route
+      - ColossusAtmosEquipment
     - type: Climbable # mono
     - type: FootstepModifier # mono
       footstepSoundCollection:

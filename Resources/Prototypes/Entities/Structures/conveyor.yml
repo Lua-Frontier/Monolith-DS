@@ -5,6 +5,11 @@
   placement:
     mode: SnapgridCenter
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   - type: Rotatable
     rotateWhileAnchored: true
   - type: Clickable
@@ -80,6 +85,11 @@
   suffix: assembly
   description: A conveyor belt assembly. Used to construct a conveyor belt.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryAutomation
+  # LuaM-end
   - type: Tag
     tags:
     - ConveyorAssembly

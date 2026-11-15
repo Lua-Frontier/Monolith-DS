@@ -69,8 +69,8 @@
     energy: 3.0
     color: "#b53ca1"
   - type: GuideHelp
-    guides:
-    - Xenoarchaeology
+    guides: # LuaM: contextual guidebook route
+    - ColossusArtifacts
   - type: LitOnPowered
   - type: Appearance
   - type: GenericVisualizer

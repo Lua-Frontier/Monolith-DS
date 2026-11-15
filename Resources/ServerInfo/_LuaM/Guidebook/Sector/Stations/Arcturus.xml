@@ -3,9 +3,9 @@
 Дополнительный корабль ТСФ. Его штат отличается от [textlink="Халикона" link="LuaMHalicon"]: капитан — 1, рядовые — 4, инженер — 1 и киборг — 1. Сержанты — до 3 и фельдшер — до 1 доступны для позднего присоединения; их стартовый штат равен нулю.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShuttle"/>
-<GuideEntityEmbed Entity="ComputerGunneryConsole"/>
-<GuideEntityEmbed Entity="TSFOverwatchComputer"/>
+<GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/>
+<GuideTexture Entity="TSFOverwatchComputer" Caption="auto"/>
 </GuideEntityCards>
 На борту есть управление кораблём и орудиями, радар, IFF, фракционная связь и оперативное управление ТСФ. Мастерские содержат автолат, протолат, военный, медицинский и боеприпасный техфабы, консоль исследований. Раздатчик химикатов и ХимМастер позволяют готовить лекарства; есть консоль ID-карт.
 

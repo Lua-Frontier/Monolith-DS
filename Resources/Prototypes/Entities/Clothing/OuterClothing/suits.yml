@@ -133,6 +133,11 @@
   name: space ninja suit
   description: This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/spaceninja.rsi
   - type: Clothing
@@ -293,6 +298,11 @@
   suffix: Hardsuit, DO NOT MAP
   categories: [ DoNotMap ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueArmor
+  # LuaM-end
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000

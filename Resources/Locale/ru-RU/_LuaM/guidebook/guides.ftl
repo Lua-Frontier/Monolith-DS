@@ -11,7 +11,7 @@ guide-entry-colossus-science = Исследования и робототехн�
 guide-entry-colossus-mining = Добыча и переработка руды
 guide-entry-colossus-tsf-sop = Служба и снабжение ТСФ
 guide-entry-colossus-tsf-structure = Командование и должности ТСФ
-guide-entry-colossus-tsf-brigade = 21-я бригада
+guide-entry-colossus-tsf-brigade = Контингент ТСФ
 guide-entry-colossus-tsf-ranks = Звания и обращение
 guide-entry-colossus-tsf-culture = Федерация: общество и культура
 guide-entry-colossus-pdv = Авангард Нордфолла
@@ -23,7 +23,7 @@ guide-entry-colossus-flight = Полёт
 guide-entry-colossus-production = Промышленное производство
 guide-entry-colossus-furnace = Дуговая печь
 guide-entry-colossus-fire-control = Серверы управления вооружением
-guide-entry-colossus-procedures = Энергия и атмос
+guide-entry-colossus-procedures = Инженерия
 guide-entry-colossus-equipment = Корабельное вооружение
 
 guide-entry-colossus-personal-combat = Бой и снаряжение

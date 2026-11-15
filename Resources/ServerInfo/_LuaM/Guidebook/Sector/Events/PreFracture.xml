@@ -1,0 +1,15 @@
+<Document>
+# Судно до Раскола
+
+Неопознанное судно с боевыми синтетиками и турелями.
+
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Появление возможно примерно со [bold]100-й минуты[/bold]. Не путайте его с отдельными потоками кораблей АСЗ: у события собственная карта и ограничение времени.
+
+[bold]Время существования — 40 минут.[/bold] Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект.
+
+<GuideMap Map="/Maps/_Mono/Bluespace/prefracture.yml" Name="Судно до Раскола"/>
+
+[textlink="Другие события" link="LuaMGameModes"] · [textlink="Подготовка к бою" link="ColossusCombat"]
+</Document>

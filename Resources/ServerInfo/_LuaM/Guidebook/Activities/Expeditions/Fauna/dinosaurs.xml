@@ -15,12 +15,12 @@
   <GuideEntityEmbed Entity="MobDinosaurCompyExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.1 м/с (4.1 м/с)[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.1 м/с[/color] ([color=#73BFD3]4.1 м/с[/color])[bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Дилофозавр"
@@ -31,7 +31,7 @@
   <GuideEntityEmbed Entity="MobDinosaurDiloExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.3 м/с (4.3 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.3 м/с[/color] ([color=#73BFD3]4.3 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]режущий[/color], 2 [color=orange]едкий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -45,7 +45,7 @@
   <GuideEntityEmbed Entity="MobDinosaurRaptorExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 80 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (4.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 18 [color=red]режущий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -59,7 +59,7 @@
   <GuideEntityEmbed Entity="MobDinosaurParaExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -73,7 +73,7 @@
   <GuideEntityEmbed Entity="MobDinosaurKentroExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 150 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 2.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]2.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -87,7 +87,7 @@
   <GuideEntityEmbed Entity="MobDinosaurTrikeExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 200 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3 м/с (3 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3 м/с[/color] ([color=#73BFD3]3 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 15 [color=yellow]колющий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -101,7 +101,7 @@
   <GuideEntityEmbed Entity="MobDinosaurAnkiExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 250 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 2 м/с (2 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]2 м/с[/color] ([color=#73BFD3]2 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 8 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -115,7 +115,7 @@
   <GuideEntityEmbed Entity="MobDinosaurSpinoExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 350 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (4.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]тупой[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -129,7 +129,7 @@
   <GuideEntityEmbed Entity="MobDinosaurStegoExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 350 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 2.5 м/с (2.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]2.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]тупой[/color], 8 [color=yellow]колющий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -143,7 +143,7 @@
   <GuideEntityEmbed Entity="MobDinosaurTrexExpeditions"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 450 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.5 м/с (4.5 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 15 [color=red]тупой[/color], 10 [color=yellow]колющий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет

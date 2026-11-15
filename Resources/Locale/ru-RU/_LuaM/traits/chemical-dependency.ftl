@@ -1,0 +1,9 @@
+﻿trait-luam-chemical-dependency-name = Зависимость от химикатов
+trait-luam-chemical-dependency-desc = Каждый раунд вы зависимы от случайного химиката, который можно сварить: лекарства, наркотика или яда. Каждые 10 единиц препарата сдерживают ломку на 15 минут. Без дозы начинается ломка: вас трясёт, вы падаете, роняете вещи и не можете сдержать стонов. Какой химикат нужен, покажет анализатор здоровья.
+chemical-dependency-craving = Вас начинает тянуть к привычной дозе.
+chemical-dependency-withdrawal-start = Вас накрывает ломка. Организму срочно нужна доза!
+chemical-dependency-relief = Ломка отступает.
+chemical-dependency-withdrawal-1 = Всё тело ломит.
+chemical-dependency-withdrawal-2 = Руки не слушаются.
+chemical-dependency-withdrawal-3 = Вас бросает то в жар, то в холод.
+health-analyzer-window-entity-dependency-text = Зависимость:

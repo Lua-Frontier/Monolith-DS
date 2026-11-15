@@ -1,12 +1,5 @@
 <Document>
-# Начало и деньги
+# Новичкам
 
-## Начать смену
-[textlink="Первый выход" link="BeginnerGuide"] · [textlink="Снаряжение перед вылетом" link="StartingGear"] · [textlink="Вакансии экипажа" link="Hiring"].
-
-## Деньги и имущество
-[textlink="Банковский, сберегательный и офшорный счета" link="Bank"] · [textlink="Депозитные ящики" link="SafetyDepositBox"].
-
-## Выбрать направление
-[textlink="Корабли и полёт" link="NF14"] · [textlink="Станции и карта" link="LuaMWorld"] · [textlink="Виды заработка" link="Jobs"] · [textlink="Фракции и должности" link="Factions"].
+<GuideHub Root="NewPlayer"/>
 </Document>

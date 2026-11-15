@@ -4,6 +4,11 @@
   name: TSFMC equipment requisition station
   description: A central TSFMC material access lift. Lets you access deep storage at the cost of FMC, which represent merit and accumulated resources.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueUplinks
+  # LuaM-end
   - type: VendingMachine
     offState: tsf
     brokenState: broken
@@ -63,6 +68,11 @@
   name: PDV equipment requisition station
   description: A central PDV material access lift. Lets you access deep storage at the cost of data chits, which represent merit and accumulated resources.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueUplinks
+  # LuaM-end
   - type: VendingMachine
     offState: pdv
     brokenState: broken
@@ -114,6 +124,11 @@
   name: MMC requisition kiosk
   description: A central MMC material access lift. Lets you access Hokkaido's deep storage at the cost of MIC, which represent your value to the board.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueUplinks
+  # LuaM-end
   - type: VendingMachine
     offState: mmc
     brokenState: broken

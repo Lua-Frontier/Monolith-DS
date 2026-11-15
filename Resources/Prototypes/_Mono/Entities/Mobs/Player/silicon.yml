@@ -167,6 +167,9 @@
   parent: BaseFactionBorgChassis
   abstract: true
   components:
+  - type: GuideHelp # LuaM: replace inherited generic robotics help for ADS chassis.
+    guides:
+    - ColossusPrecursors
   - type: NpcFactionMember
     factions:
     # - Syndicate # Commented by LuaM
@@ -213,6 +216,11 @@
   name: remnant automated defense system tender
   description: A tender to an automated drone ship, to keep its internal mechanisms intact.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusPrecursors
+  # LuaM-end
   - type: Sprite
     layers:
     - state: synd_engi
@@ -363,6 +371,9 @@
   parent: PlayerStationAiEmpty
   suffix: Ghost Role, Remnant
   components:
+  - type: GuideHelp # LuaM: ADS role guide for core, brain and controlled eye.
+    guides: # LuaM: contextual guidebook route
+    - ColossusPrecursors
   - type: ContainerComp
     proto: AiHeldRedacted
     container: station_ai_mind_slot
@@ -383,6 +394,9 @@
   parent: StationAiBrain
   categories: [ HideSpawnMenu, DoNotMap ]
   components:
+  - type: GuideHelp # LuaM: ADS role guide for core, brain and controlled eye.
+    guides: # LuaM: contextual guidebook route
+    - ColossusPrecursors
   - type: Sprite
   - type: SiliconLawProvider
     laws: Redacted
@@ -425,6 +439,9 @@
   parent: AiHeldMono
   categories: [ HideSpawnMenu ]
   components:
+  - type: GuideHelp # LuaM: ADS role guide for core, brain and controlled eye.
+    guides: # LuaM: contextual guidebook route
+    - ColossusPrecursors
   - type: IntrinsicRadioTransmitter
     channels:
     - Common

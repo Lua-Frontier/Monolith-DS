@@ -5,6 +5,12 @@
   name: USSP "Kerenzikov" reflex booster
   description: A crude USSP reflex booster wired into the central nervous system. Unlike the Sandevistan it lets you shoot while it runs, but it burns your cells and tears your body the whole time, and three times harder after 10 seconds.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Objects/Misc/cybernetics.rsi
     state: booster

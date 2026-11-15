@@ -3,6 +3,12 @@
   parent: BaseItem
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: Sprite
     sprite: Mobs/Species/Arachnid/organs.rsi
   - type: Organ
@@ -56,6 +62,12 @@
   name: lungs
   description: "Filters oxygen from an atmosphere... just more greedily."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     layers:
     - state: lung-l
@@ -93,6 +105,12 @@
   name: heart
   description: "A disgustingly persistent little biological pump made for spiders."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: heart-on
   - type: Item
@@ -124,6 +142,12 @@
   description: "Pairing suggestion: chianti and fava beans."
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Item
     size: Small
     heldPrefix: liver
@@ -153,6 +177,12 @@
   description: "Filters toxins from the bloodstream."
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Organ # Shitmed
     slotId: kidneys
   - type: Sprite

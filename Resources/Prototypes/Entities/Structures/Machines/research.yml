@@ -62,8 +62,9 @@
       machine_board: !type:Container
       machine_parts: !type:Container
   - type: GuideHelp
-    guides:
-    - Science
+    guides: # LuaM: contextual guidebook route
+    - IndustryResearch
+    - ColossusCatalogueResearch
 
 - type: entity
   abstract: true # Mono: Abstract

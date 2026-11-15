@@ -4,6 +4,11 @@
   name: courier cap
   description: A thick yellow baseball cap with a black brim and the ColossDelivery logo. The brim keeps its shape even after a couple of fights over a parcel.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Clothing/Head/Hats/courier_cap.rsi
   - type: Clothing
@@ -15,6 +20,11 @@
   name: courier uniform
   description: A yellow and black ColossDelivery work uniform. Heavy tunic with shoulder pads, a tie and trousers with knee pads.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Clothing/Uniforms/Jumpsuit/courier.rsi
   - type: Clothing
@@ -28,6 +38,11 @@
   name: courier jacket
   description: A heavy yellow synthleather jacket with a black collar and the ColossDelivery logo on the back. Softens blows and cuts a little.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Clothing/OuterClothing/Coats/courier_jacket.rsi
   - type: Clothing
@@ -44,6 +59,11 @@
   name: courier thermobag
   description: A square insulated courier bag with the ColossDelivery logo. Food inside stays fresh.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Clothing/Back/Backpacks/courier_thermobag.rsi
   - type: Clothing
@@ -65,6 +85,11 @@
   name: ColossDelivery cloak
   description: A black corporate cloak with a yellow ColossDelivery logo on the back. Purely for show.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Clothing/Neck/Cloaks/courier_cloak.rsi
   - type: Clothing
@@ -76,6 +101,11 @@
   name: yellow ColossDelivery cloak
   description: A bright yellow formal cloak with black stripes in ColossDelivery colours. Purely for show.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Clothing/Neck/Cloaks/courier_cloak_yellow.rsi
   - type: Clothing
@@ -87,6 +117,11 @@
   name: courier HUD
   description: A ColossDelivery heads-up display. Marks the customers of the orders you carry with a spinning target ring.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusCourier
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Clothing/Eyes/Hud/courier.rsi
   - type: Clothing

@@ -8,6 +8,11 @@
   parent: BaseItem
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides: # LuaM: contextual guidebook route
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Mobs/Chimera/organs.rsi
     state: metabolism-chimera
@@ -38,6 +43,12 @@
   name: chimera stomach
   description: "A strange organ that serves as the center for the metabolism of a Chimera."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: stomach
   - type: Stomach
@@ -81,6 +92,12 @@
   name: chimera brain
   description: "The heart of a chimera growth."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusHeadImplants
+  # LuaM-end
   - type: Sprite
     state: brain
   - type: Item
@@ -93,6 +110,12 @@
   name: chimera spike gland
   description: "Takes the location of the liver in the body, and repurposes them to be used as a gland for growing bone spikes instead."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Metabolizer
     maxReagents: 2
     metabolizerTypes: [Chimera]
@@ -115,6 +138,12 @@
   parent: [ BaseChimeraOrgan , OrganHumanHeart ]
   name: chimera heart
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Metabolizer
     metabolizerTypes: [Chimera]
   - type: Sprite
@@ -132,6 +161,12 @@
   name: chimera pheropod
   description: "Distributes pheromones allowing for hivemind communication with other Chimeras. Serves as the lungs for the parasite as well."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: pheropod
   - type: Item

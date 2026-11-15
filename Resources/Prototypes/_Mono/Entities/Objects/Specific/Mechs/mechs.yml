@@ -4,6 +4,11 @@
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMechsHub
+  # LuaM-end
   - type: Mech
     equipmentWhitelist:
       tags:
@@ -15,6 +20,11 @@
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMechsHub
+  # LuaM-end
   - type: Mech
     equipmentWhitelist:
       tags:
@@ -27,6 +37,11 @@
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMechsHub
+  # LuaM-end
   - type: Mech
     equipmentWhitelist:
       tags:
@@ -39,6 +54,11 @@
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMechsHub
+  # LuaM-end
   - type: Mech
     equipmentWhitelist:
       tags:
@@ -52,6 +72,11 @@
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusMechsHub
+  # LuaM-end
   - type: Mech
     equipmentWhitelist:
       tags:

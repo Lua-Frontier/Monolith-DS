@@ -20,16 +20,17 @@ using Robust.Shared.Serialization.Markdown.Value;
 namespace Content.Client._LuaM.Shipyard;
 
 /// <summary>
-/// Layout data read from the loaded shuttle grid.
+/// Layout data read from the loaded map grids.
 /// </summary>
-public sealed record ShipyardPreviewInfo(Vector2i Dimensions, int Tiles);
+public sealed record ShipyardPreviewInfo(Vector2i Dimensions, int Tiles, int Grids = 1);
 
 /// <summary>
-/// A cached shuttle picture: the whole grid rendered once.
+/// A cached map picture: all its grids rendered once.
 /// </summary>
 public sealed class ShipyardPreviewEntry
 {
-    public required string VesselId;
+    public required string Key;
+    public string Error = string.Empty;
     public IRenderTexture? Texture;
     public int PixelsPerTile;
     public ShipyardPreviewInfo? Info;
@@ -39,7 +40,7 @@ public sealed class ShipyardPreviewEntry
 }
 
 /// <summary>
-/// Renders shipyard vessels into cached textures. The grid is loaded on a client-only map,
+/// Renders ships, stations and drones into cached textures on a client-only map,
 /// drawn once through an off-screen viewport and deleted right away; nothing reaches the server.
 /// </summary>
 public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
@@ -69,10 +70,13 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
     private long _cacheBytes;
     private long _useCounter;
     private Job? _job;
+    private bool _shuttingDown;
+    private readonly Dictionary<string, Job> _pending = new();
+    private readonly Dictionary<object, string> _owners = new();
     private readonly List<string> _notify = new();
 
     /// <summary>
-    /// Raised with the vessel id once its picture is ready or failed; an empty id means the cache was reset.
+    /// Raised with the map path once its picture is ready or failed; an empty id means the cache was reset.
     /// </summary>
     public event Action<string>? PreviewChanged;
 
@@ -85,7 +89,9 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
 
     private sealed class Job
     {
-        public required VesselPrototype Vessel;
+        public required string Path;
+        public LoadResult? Loaded;
+        public string Error = string.Empty;
         public Stage Stage;
         public int Frames;
         public EntityUid Map;
@@ -107,6 +113,7 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
     {
         _net.Disconnect -= OnDisconnect;
         _proto.PrototypesReloaded -= OnPrototypesReloaded;
+        _shuttingDown = true;
         Clear();
         base.Shutdown();
     }
@@ -131,37 +138,37 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
         return entry;
     }
 
-    public bool IsLoading(string vesselId)
+    public bool IsLoading(string key) => _job?.Path == key || _pending.ContainsKey(key);
+
+    public void Request(string path, object owner)
     {
-        return _job?.Vessel.ID == vesselId;
+        if (_shuttingDown) return;
+        if (_owners.TryGetValue(owner, out var previous) && previous != path) Release(owner);
+        _owners[owner] = path;
+        if (_cache.ContainsKey(path) || IsLoading(path)) return;
+        _pending[path] = new Job { Path = path };
     }
 
-    /// <summary>
-    /// Starts building the picture unless it is cached or already being built; replaces any other pending build.
-    /// </summary>
-    public void Request(VesselPrototype vessel)
+    public void Release(object owner)
     {
-        if (_cache.ContainsKey(vessel.ID) || _job?.Vessel.ID == vessel.ID)
-            return;
-
-        Cancel();
-        _job = new Job { Vessel = vessel };
+        if (!_owners.Remove(owner, out var path) || _owners.ContainsValue(path)) return;
+        _pending.Remove(path);
+        if (_job?.Path == path) Cancel();
+        if (_cache.TryGetValue(path, out var entry) && entry.Failed) _cache.Remove(path);
     }
 
     public void Cancel()
     {
-        if (_job == null)
-            return;
-
-        if (_job.Map.IsValid())
-            QueueDel(_job.Map);
-
+        if (_job?.Loaded is { } loaded)
+            foreach (var uid in loaded.Entities) QueueDel(uid);
         _job = null;
     }
 
     public void Clear()
     {
         Cancel();
+        _pending.Clear();
+        _owners.Clear();
 
         foreach (var entry in _cache.Values)
         {
@@ -189,8 +196,13 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
             }
         }
 
-        if (_job is not { } job)
-            return;
+        if (_job == null && _pending.Count > 0)
+        {
+            var next = _pending.First();
+            _pending.Remove(next.Key);
+            _job = next.Value;
+        }
+        if (_job is not { } job) return;
 
         switch (job.Stage)
         {
@@ -209,7 +221,10 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
             case Stage.Ready:
                 // -- Рендер идёт только из Draw окна верфи; закрытое окно не держит временную карту
                 if (++job.Frames > MaxUndrawnFrames)
-                    Cancel();
+                {
+                    job.Error = "Окно предпросмотра не смогло отрисовать план. Откройте его снова.";
+                    Fail(job);
+                }
                 break;
         }
     }
@@ -218,7 +233,7 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
     {
         try
         {
-            if (!TryBuildGrid(job.Vessel, out job.Map, out job.MapId, out job.Bounds, out job.Info))
+            if (!TryBuildMapCore(job.Path, out job.Map, out job.MapId, out job.Bounds, out job.Info, out job.Loaded))
             {
                 Fail(job);
                 return;
@@ -229,24 +244,37 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
         }
         catch (Exception e)
         {
-            Log.Error($"Failed to load shipyard preview for {job.Vessel.ID}: {e}");
+            Log.Error($"Failed to load shipyard preview for {job.Path}: {e}");
             Fail(job);
         }
     }
 
     /// <summary>
-    /// Loads the vessel grid north-up on a new client-only map. The caller owns the map and deletes it.
+    /// Loads the saved grids on a new client-only map. The caller owns the map and deletes it.
     /// </summary>
     public bool TryBuildGrid(VesselPrototype vessel, out EntityUid map, out MapId mapId, out Box2 bounds, out ShipyardPreviewInfo? info)
+        => TryBuildMap(vessel.ShuttlePath.ToRootedPath().ToString(), out map, out mapId, out bounds, out info);
+
+    public bool TryBuildMap(string path, out EntityUid map, out MapId mapId, out Box2 bounds, out ShipyardPreviewInfo? info)
+        => TryBuildMapCore(path, out map, out mapId, out bounds, out info, out _);
+
+    private bool TryBuildMapCore(string path, out EntityUid map, out MapId mapId, out Box2 bounds,
+        out ShipyardPreviewInfo? info, out LoadResult? loaded)
     {
+        loaded = null;
         map = EntityUid.Invalid;
         mapId = MapId.Nullspace;
         bounds = default;
         info = null;
 
-        if (!_loader.TryReadFile(vessel.ShuttlePath.ToRootedPath(), out var data))
+        if (!(path.StartsWith("/Maps/", StringComparison.Ordinal) || path.StartsWith("/SharedMaps/", StringComparison.Ordinal))
+            || path.Contains("..", StringComparison.Ordinal) || !_loader.TryReadFile(new(path), out var data))
             return false;
 
+        // Bound entity creation before deserialization; resolution alone cannot bound RAM/loading work.
+        if (!data.TryGet("entities", out SequenceDataNode? savedGroups)
+            || savedGroups.OfType<MappingDataNode>().Sum(g => g.Get<SequenceDataNode>("entities").Count) > 50000)
+            return false;
         StripServerComponents(data);
 
         var read = new BeforeEntityReadEvent();
@@ -272,36 +300,39 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
             }
 
             deserializer.StartEntities();
+            if (result.Grids.Count == 0 || result.Maps.Count != 1)
+            {
+                _loader.Delete(result);
+                return false;
+            }
+
+            var mapEntity = result.Maps.First();
+            map = mapEntity.Owner;
+            mapId = mapEntity.Comp.MapId;
+            _meta.SetEntityName(map, "Shipyard preview");
+            Box2? combined = null;
+            var tiles = 0;
+            foreach (var grid in result.Grids)
+            {
+                var worldBounds = _xform.GetWorldMatrix(grid.Owner).TransformBox(grid.Comp.LocalAABB);
+                combined = combined?.Union(worldBounds) ?? worldBounds;
+                tiles += _map.GetAllTiles(grid.Owner, grid.Comp).Count();
+            }
+            bounds = combined!.Value;
+            info = new ShipyardPreviewInfo(new Vector2i((int)MathF.Ceiling(bounds.Width), (int)MathF.Ceiling(bounds.Height)), tiles, result.Grids.Count);
+            loaded = result;
+            return true;
         }
         catch (Exception e)
         {
-            Log.Error($"Failed to load shipyard preview grid {vessel.ShuttlePath}: {e}");
+            Log.Error($"Failed to load shipyard preview grid {path}: {e}");
             _loader.Delete(result);
+            map = EntityUid.Invalid;
+            mapId = MapId.Nullspace;
+            bounds = default;
+            info = null;
             return false;
         }
-
-        if (result.Grids.Count != 1 || result.Maps.Count != 1)
-        {
-            _loader.Delete(result);
-            return false;
-        }
-
-        var grid = result.Grids.First();
-        var mapEntity = result.Maps.First();
-        map = mapEntity.Owner;
-        mapId = mapEntity.Comp.MapId;
-        _meta.SetEntityName(map, "Shipyard preview");
-
-        _xform.SetLocalRotation(grid.Owner, Angle.Zero);
-
-        var aabb = grid.Comp.LocalAABB;
-        bounds = aabb.Translated(_xform.GetWorldPosition(grid.Owner));
-
-        var tiles = _map.GetAllTiles(grid.Owner, grid.Comp).Count();
-        info = new ShipyardPreviewInfo(
-            new Vector2i((int) MathF.Round(aabb.Width), (int) MathF.Round(aabb.Height)),
-            tiles);
-        return true;
     }
 
     /// <summary>
@@ -368,10 +399,27 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
 
         var size = job.Bounds.Size + new Vector2(2f, 2f);
         var pixelsPerTile = PickPixelsPerTile(size);
+        if (pixelsPerTile == 0)
+        {
+            Fail(job);
+            return;
+        }
         var pixelSize = new Vector2i(
             Math.Max(1, (int) MathF.Ceiling(size.X * pixelsPerTile)),
             Math.Max(1, (int) MathF.Ceiling(size.Y * pixelsPerTile)));
 
+        var required = (long)pixelSize.X * pixelSize.Y * 4;
+        while (_cacheBytes + required > CacheBudgetBytes)
+        {
+            var oldest = _cache.Values.Where(e => !_owners.ContainsValue(e.Key)).MinBy(e => e.LastUsed);
+            if (oldest == null)
+            {
+                job.Error = "Лимит памяти планов: закройте другое окно предпросмотра и откройте план снова.";
+                Fail(job);
+                return;
+            }
+            _cache.Remove(oldest.Key); _cacheBytes -= oldest.Bytes; oldest.Texture?.Dispose();
+        }
         IClydeViewport? viewport = null;
         IRenderTexture? texture = null;
         try
@@ -405,7 +453,7 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
         }
         catch (Exception e)
         {
-            Log.Error($"Failed to render shipyard preview for {job.Vessel.ID}: {e}");
+            Log.Error($"Failed to render shipyard preview for {job.Path}: {e}");
             texture?.Dispose();
             texture = null;
         }
@@ -419,15 +467,25 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
 
     private static int PickPixelsPerTile(Vector2 size)
     {
+        if (!float.IsFinite(size.X) || !float.IsFinite(size.Y) || size.X <= 0 || size.Y <= 0)
+            return 0;
         foreach (var step in PixelsPerTileSteps)
         {
-            var width = size.X * step;
-            var height = size.Y * step;
-            if (width <= MaxTextureSide && height <= MaxTextureSide && (long) (width * height) * 4 <= MaxEntryBytes)
+            if (Fits(step))
                 return step;
         }
 
-        return Math.Max(4, (int) (MaxTextureSide / MathF.Max(size.X, size.Y)));
+        // Keep both limits after fallback and account for pixel rounding before allocation.
+        for (var step = 15; step >= 1; step--)
+            if (Fits(step)) return step;
+        return 0;
+
+        bool Fits(int step)
+        {
+            var width = Math.Ceiling((double)size.X * step);
+            var height = Math.Ceiling((double)size.Y * step);
+            return width <= MaxTextureSide && height <= MaxTextureSide && width * height * 4 <= MaxEntryBytes;
+        }
     }
 
     private void Fail(Job job)
@@ -437,15 +495,16 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
 
     private void Finish(Job job, IRenderTexture? texture, int pixelsPerTile, Vector2i pixelSize)
     {
-        if (job.Map.IsValid())
-            QueueDel(job.Map);
+        if (job.Loaded is { } loaded)
+            foreach (var uid in loaded.Entities) QueueDel(uid);
 
         if (_job == job)
             _job = null;
 
         var entry = new ShipyardPreviewEntry
         {
-            VesselId = job.Vessel.ID,
+            Key = job.Path,
+            Error = job.Error,
             Texture = texture,
             PixelsPerTile = pixelsPerTile,
             Info = job.Info,
@@ -454,28 +513,28 @@ public sealed partial class ShipyardPreviewRenderSystem : EntitySystem
             LastUsed = ++_useCounter,
         };
 
-        if (_cache.Remove(entry.VesselId, out var old))
+        if (_cache.Remove(entry.Key, out var old))
         {
             _cacheBytes -= old.Bytes;
             old.Texture?.Dispose();
         }
 
-        _cache[entry.VesselId] = entry;
+        _cache[entry.Key] = entry;
         _cacheBytes += entry.Bytes;
-        Evict(entry.VesselId);
+        Evict(entry.Key);
 
-        _notify.Add(entry.VesselId);
+        _notify.Add(entry.Key);
     }
 
     private void Evict(string keep)
     {
         while (_cacheBytes > CacheBudgetBytes && _cache.Count > 1)
         {
-            var oldest = _cache.Values.Where(e => e.VesselId != keep).MinBy(e => e.LastUsed);
+            var oldest = _cache.Values.Where(e => e.Key != keep && !_owners.ContainsValue(e.Key)).MinBy(e => e.LastUsed);
             if (oldest == null)
                 return;
 
-            _cache.Remove(oldest.VesselId);
+            _cache.Remove(oldest.Key);
             _cacheBytes -= oldest.Bytes;
             oldest.Texture?.Dispose();
         }

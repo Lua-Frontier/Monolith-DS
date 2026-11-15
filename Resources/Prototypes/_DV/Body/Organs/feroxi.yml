@@ -36,6 +36,12 @@
   name: feroxian lungs and gills
   description: "A pair of amphibious lungs along with gills, filtering oxygen out of the air continuously."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
     layers:

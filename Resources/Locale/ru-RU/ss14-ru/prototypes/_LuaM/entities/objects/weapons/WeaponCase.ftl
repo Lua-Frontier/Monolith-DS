@@ -4,3 +4,7 @@ ent-WeaponCaseLongIrohRegistered = кейс с R-13 «Иерофант»
     .desc = Кейс для хранения крупнокалиберного оружия и аксессуаров к нему.
 ent-WeaponRifleIrohRegistered = { ent-WeaponRifleIroh } (зарегистр.)
     .desc = { ent-WeaponRifleIroh.desc }
+ent-WeaponCaseLongAK12Registered = кейс с АК-12 «Сумрак»
+    .desc = Кейс для хранения крупнокалиберного оружия и аксессуаров к нему.
+ent-WeaponRifleAK12Registered = { ent-WeaponRifleAK12 } (зарегистр.)
+    .desc = { ent-WeaponRifleAK12.desc }

@@ -117,3 +117,26 @@
   components:
   - type: Implanter
     implant: AriralTranslatorImplant
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: FreespeakTranslatorImplant
+  name: escher translator implant
+  description: An implant giving the ability to understand and speak Escher, the language of the Nordfall Vanguard.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Freespeak
+    spoken:
+    - Freespeak
+    requires:
+    - TauCetiBasic
+
+- type: entity
+  id: FreespeakTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: escher translator implanter
+  components:
+  - type: Implanter
+    implant: FreespeakTranslatorImplant

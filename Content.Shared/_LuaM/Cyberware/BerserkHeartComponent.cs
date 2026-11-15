@@ -106,12 +106,6 @@ public sealed partial class BerserkHeartComponent : Component
     [ViewVariables]
     public FixedPoint2? OldDeadThreshold;
 
-    /// <summary>
-    /// Whether the heart made the user deaf, so it does not cure a deafness it did not cause.
-    /// </summary>
-    [ViewVariables]
-    public bool AddedDeaf;
-
     [ViewVariables]
     public TimeSpan NextGunPopup;
 }

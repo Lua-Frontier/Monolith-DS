@@ -5,6 +5,11 @@
   name: gunnery control server
   description: Manages the remote operation of ship weapons.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: Sprite
     sprite: Structures/Machines/telecomms.rsi
     snapCardinals: true
@@ -231,6 +236,11 @@
   placement:
     mode: SnapgridCenter
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - WeaponsSystems
+  # LuaM-end
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: ExtensionCableReceiver

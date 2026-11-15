@@ -40,6 +40,12 @@
   name: autosurgeon (combat medipen implant)
   description: Installs an implant that injects a combat medipen dose on demand and automatically when the owner goes critical.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: AutoSurgeon
     implant: CombatMedipenImplant
 
@@ -49,6 +55,12 @@
   name: autosurgeon (combat medipen implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonCombatMedipen
   - type: StaticPrice
@@ -63,6 +75,12 @@
   name: autosurgeon (stimulant implant)
   description: Installs an implant that injects a dose of stimulants on demand and automatically when the owner goes critical.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: AutoSurgeon
     implant: StimulantImplant
 
@@ -72,6 +90,12 @@
   name: autosurgeon (stimulant implant) flatpack
   description: A flatpack used for constructing an autosurgeon.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusServiceImplants
+  # LuaM-end
   - type: Flatpack
     entity: AutosurgeonStimulant
   - type: StaticPrice

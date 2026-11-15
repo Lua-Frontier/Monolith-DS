@@ -7,6 +7,11 @@
   id: BaseToolSurgery
   abstract: true
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+  # LuaM-end
   - type: Sprite
   - type: StaticPrice
     price: 40 # 20->40 Mono

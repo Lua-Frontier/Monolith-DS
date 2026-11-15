@@ -33,6 +33,12 @@
   parent: BaseHydrakinOrgan
   name: hydrakin stomach
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     state: stomach
   - type: Stomach
@@ -68,6 +74,12 @@
   parent: [ BaseHydrakinOrgan ]
   name: hydrakin liver
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     layers:
     - state: liver
@@ -98,6 +110,12 @@
   name: hydrakin lungs
   description: "Hydrakin lungs, capable of processing any gas without negative effects."
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - ColossusSurgery
+    - ColossusCyberneticOrgans
+  # LuaM-end
   - type: Sprite
     layers:
     - state: lung-l

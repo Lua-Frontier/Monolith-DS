@@ -134,6 +134,12 @@
   name: cargo bounty computer board
   description: A computer printed circuit board for a cargo bounty computer.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - MMC
+    - Economy
+  # LuaM-end
   - type: Sprite
     state: cpu_supply
   - type: ComputerBoard
@@ -163,6 +169,11 @@
   name: salvage expeditions computer board
   description: A computer printed circuit board for a salvage expeditions computer.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - Expeditions
+    # LuaM-end
     - type: Sprite
       state: cpu_supply
     - type: ComputerBoard
@@ -180,6 +191,11 @@
   description: A computer printed circuit board for a cargo shuttle console.
   categories: [ HideSpawnMenu ] # Frontier
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Piloting
+  # LuaM-end
   - type: Sprite
     state: cpu_supply
   - type: ComputerBoard
@@ -239,6 +255,12 @@
   name: R&D computer board
   description: A computer printed circuit board for a R&D console.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - IndustryResearch
+      - ColossusCatalogueResearch
+    # LuaM-end
     - type: Sprite
       state: cpu_science
     - type: ComputerBoard
@@ -252,6 +274,11 @@
   name: analysis computer board
   description: A computer printed circuit board for an analysis console.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - ColossusArtifacts
+    # LuaM-end
     - type: Sprite
       state: cpu_science
     - type: ComputerBoard
@@ -265,6 +292,12 @@
   name: tech disk terminal board
   description: A computer printed circuit board for a technology disk terminal.
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - IndustryResearch
+    - ColossusCatalogueResearch
+  # LuaM-end
   - type: Sprite
     state: cpu_science
   - type: ComputerBoard
@@ -449,6 +482,11 @@
   name: shuttle console board
   description: A computer printed circuit board for a shuttle console.
   components:
+    # LuaM-start: contextual guidebook route.
+    - type: GuideHelp
+      guides:
+      - Piloting
+    # LuaM-end
     - type: Sprite
       state: cpu_supply
     - type: ComputerBoard
@@ -463,6 +501,11 @@
   description: A computer printed circuit board for a syndicate shuttle console.
   categories: [ HideSpawnMenu ] # Frontier
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - Piloting
+  # LuaM-end
   - type: Sprite
     state: cpu_syndicate
   - type: ComputerBoard

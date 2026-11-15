@@ -15,12 +15,12 @@
   <GuideEntityEmbed Entity="MobXeno"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])[bold][color=#a4885c]*[/color][/bold]
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 6 [color=red]физический[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
 
-  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  [bold][color=#a4885c][italic][/color][/bold] - [/italic]средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Трутень"
@@ -31,7 +31,7 @@
   <GuideEntityEmbed Entity="MobXenoDrone"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 70 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.5 м/с (3 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=red]физический[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -45,7 +45,7 @@
   <GuideEntityEmbed Entity="MobXenoPraetorian"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 100 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10 [color=red]физический[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -59,7 +59,7 @@
   <GuideEntityEmbed Entity="MobXenoRavager"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 150 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4.2 м/с (2.3 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4.2 м/с[/color] ([color=#73BFD3]2.3 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 14 [color=red]физический[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -73,7 +73,7 @@
   <GuideEntityEmbed Entity="MobXenoRunner"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 50 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 6 м/с (2.7 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]6 м/с[/color] ([color=#73BFD3]2.7 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 3 [color=red]физический[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
@@ -87,7 +87,7 @@
   <GuideEntityEmbed Entity="MobXenoSpitter"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 75 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 4 м/с (4 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=orange]едкий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (кислота)
@@ -101,7 +101,7 @@
   <GuideEntityEmbed Entity="WeaponTurretXeno"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 75 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 0 м/с (0 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]0 м/с[/color] ([color=#73BFD3]0 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 5 [color=orange]едкий[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] Турель, Стрелок (кислота)
@@ -109,13 +109,13 @@
 
   # "Королева"
 
-  Отвечающая как за откладывание яиц, так и за руководство своими детьми, Королева — самый важный член улья ксеносов. Если она умрёт, улей потеряет всё направление.
+  Отвечающая как за откладывание яиц, так и за руководство своими детьми, Королева — самый важный член улья ксеносов. [italic]Если она умрёт,[/italic] улей потеряет всё направление.
 
   <Box>
   <GuideEntityEmbed Entity="MobXenoQueen"/>
   </Box>
   - [bold][color=#a4885c]Порог здоровья:[/color][/bold] 250 (смерть)
-  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] 3.8 м/с (2.8 м/с)
+  - [bold][color=#a4885c]Скорость (бег/ходьба):[/color][/bold] [color=#73BFD3]3.8 м/с[/color] ([color=#73BFD3]2.8 м/с[/color])
   - [bold][color=#a4885c]Урон (тип):[/color][/bold] 20 [color=red]физический[/color]
   - [bold][color=#a4885c]Сопротивления урону:[/color][/bold] нет
   - [bold][color=#a4885c]Особые способности:[/color][/bold] нет

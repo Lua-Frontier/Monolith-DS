@@ -4,6 +4,12 @@
   name: industrial planner
   description: A tablet containing a visual flowchart on how to produce proprietary goods. (Place on the ground and interact with it to open the flowchart!)
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - MMC
+    - Economy
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Objects/Misc/Economy/economyplanner.rsi
     layers:
@@ -26,6 +32,12 @@
   name: industrial planner
   categories: [ HideSpawnMenu ]
   components:
+  # LuaM-start: contextual guidebook route.
+  - type: GuideHelp
+    guides:
+    - MMC
+    - Economy
+  # LuaM-end
   - type: Sprite
     sprite: _Mono/Objects/Misc/Economy/economyplannerbg.rsi
     state: tabletop

@@ -35,15 +35,15 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Посадить и собрать
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="hydroponicsTray"/>
-<GuideEntityEmbed Entity="HydroponicsToolMiniHoe"/>
-<GuideEntityEmbed Entity="HydroponicsToolSpade"/>
-<GuideEntityEmbed Entity="HydroponicsToolClippers"/>
-<GuideEntityEmbed Entity="SeedExtractor"/>
+<GuideTexture Entity="hydroponicsTray" Caption="auto"/>
+<GuideTexture Entity="HydroponicsToolMiniHoe" Caption="auto"/>
+<GuideTexture Entity="HydroponicsToolSpade" Caption="auto"/>
+<GuideTexture Entity="HydroponicsToolClippers" Caption="auto"/>
+<GuideTexture Entity="SeedExtractor" Caption="auto"/>
 </GuideEntityCards>
 
 1. Осмотрите лоток **Shift + ЛКМ**. Вода и питательные вещества имеют шкалу **0–100**; новый стандартный лоток уже содержит по **100**.
-2. Нажмите пакетом семян по свободному лотку. В занятом лотке сначала уберите прежнее растение **лопаткой**.
+2. **Нажмите** пакетом семян по свободному лотку. В занятом лотке сначала уберите прежнее растение **лопаткой**.
 3. Поддерживайте воду выше **10**, питание выше **5**: ниже этих значений растение теряет здоровье и задерживает рост. Например, при воде 15 добавьте **50 ед. воды**, при питании 8 — **20 ед. EZ-нутриентов**: это восстановит около 50 и 40 пунктов соответственно, за вычетом расхода во время обработки.
 4. **Зелёный индикатор** — урожай готов: нажмите пустой рукой. Древесные растения собирают острым инструментом. Одноразовую культуру после сбора придётся посадить снова; повторное плодоношение проверяйте анализатором.
 5. Один плод используйте на работающем **экстракторе семян**: базовая машина выдаёт **1–3 пакета**, сохраняя свойства растения. Из плодов с признаком **«Без семян»** семена не извлекаются.
@@ -55,18 +55,18 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 - **Красный** — здоровье **не выше половины выносливости**, а не обязательно смерть. Осмотрите лоток; погибшее растение уберите лопаткой. Живому восстановите воду и питание, устраните причину повреждений.
 - **Оранжевый** — сорняки или вредители от **5**, токсины от **40**, неподходящая температура, давление или нехватка потребляемого газа. Осмотр сообщает причину. **Маленькая тяпка** полностью убирает сорняки. **1 ед. пестицидов** убирает 6 пунктов вредителей, но добавляет 4 пункта токсинов; **1 ед. гербицидов** так же действует на сорняки. После обработки токсины снижают водой.
 
-Для неизменённых мака, амброзии и большинства обычных культур подходит давление **81–121 кПа**, температура **283–303 K** (примерно **10–30 °C**). У изменённого растения пределы могут отличаться: проверяйте их анализатором. Наличие индикатора освещения в интерфейсе не означает, что текущая система рассчитывает вред от света.
+Для неизменённых мака, амброзии и большинства обычных культур подходит давление **81–121 кПа**, температура **283–303 K** (примерно **10–30 °C**). У изменённого растения пределы могут отличаться: проверяйте их анализатором.
 
 ## Анализатор: прочитать и перенести свойства
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="PlantAnalyzer"/>
+<GuideTexture Entity="PlantAnalyzer" Caption="auto"/>
 </GuideEntityCards>
 
-Используйте анализатор на пакете семян или засаженном лотке. **«Сканирование»** показывает вид, возможные видовые мутации и свойства:
+**Используйте** анализатор на пакете семян или засаженном лотке. **«Сканирование»** показывает вид, возможные видовые мутации и свойства:
 
 - **«Урожайность»** — число плодов за сбор; **«Потенция»** — влияет на количество реагентов в каждом плоде.
-- **«Созревание»** — возраст до зрелости; **«Производство»** — интервал между урожаями в единицах возраста. Это не секунды: обычный цикл идёт раз в **15 секунд**, а возраст увеличивается с вероятностью **80%**; плохие условия задерживают рост.
+- **«Созревание»** — возраст до зрелости; **«Производство»** — интервал между урожаями в единицах возраста. Это не секунды: обычный цикл идёт раз в [color=#73BFD3]**15 секунд**[/color], а возраст увеличивается с вероятностью [color=#73BFD3]**80%**[/color]; плохие условия задерживают рост.
 - **«Выносливость»** — запас здоровья; **«Продолжительность жизни»** — возраст начала старения. Увеличивайте их для долгой работы культуры.
 - **«Без семян»** мешает экстрактору; **«Жизнеспособный: Нет»** вызывает сильное повреждение и задержку роста.
 
@@ -81,12 +81,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Получить амброзию деус и космонавтскую трубу
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AmbrosiaVulgarisSeeds"/>
-<GuideEntityEmbed Entity="FoodAmbrosiaDeus"/>
-<GuideEntityEmbed Entity="PoppySeeds"/>
-<GuideEntityEmbed Entity="FoodLily"/>
-<GuideEntityEmbed Entity="FoodSpacemansTrumpet"/>
-<GuideEntityEmbed Entity="UnstableMutagenChemistryBottle"/>
+<GuideTexture Entity="AmbrosiaVulgarisSeeds" Caption="auto"/>
+<GuideTexture Entity="FoodAmbrosiaDeus" Caption="auto"/>
+<GuideTexture Entity="PoppySeeds" Caption="auto"/>
+<GuideTexture Entity="FoodLily" Caption="auto"/>
+<GuideTexture Entity="FoodSpacemansTrumpet" Caption="auto"/>
+<GuideTexture Entity="UnstableMutagenChemistryBottle" Caption="auto"/>
 </GuideEntityCards>
 
 Семена **амброзии вульгарис** и **мака** есть в обычном ассортименте автомата семян. Нужные цепочки: **амброзия вульгарис → амброзия деус**; **мак → лилия → космонавтская труба**.
@@ -107,28 +107,28 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 - **Амброзия деус:** омнизин **около 1,29 → 2,43 ед.**; также содержит другие вещества.
 - **Космонавтская труба:** олигомеры полипирилия **3 → 11 ед.**
 
-Загрузите урожай и мензурку в **измельчитель реагентов**, нажмите **«Измельчить»**. Состав плода переходит в общую смесь: выделяйте нужный реагент оборудованием для разделения, а не считайте всю мензурку чистым лекарством. Рецепты смесей находятся в [справочнике химии](guide://Chemicals).
+**Загрузите** урожай и мензурку в **измельчитель реагентов**, нажмите **«Измельчить»**. Состав плода переходит в общую смесь: выделяйте нужный реагент оборудованием для разделения, а не считайте всю мензурку чистым лекарством. Рецепты смесей находятся в [справочнике химии](guide://Chemicals).
 
 ## Поднять потенцию и сохранить семена
 
-**Робаст харвест** добавляет **3 потенции за обработанную единицу**, до **50**. После превышения **30** растение становится бессемянным; при дальнейшей обработке уже достигшей 50 культуры каждая единица имеет **10%** шанс снизить урожайность на 1, пока она выше 1.
+**Робаст харвест** добавляет **3 потенции за обработанную единицу**, до **50**. После превышения **30** растение становится бессемянным; при дальнейшей обработке уже достигшей 50 культуры каждая единица имеет [color=#73BFD3]**10%**[/color] шанс снизить урожайность на 1, пока она выше 1.
 
 Для исходной потенции **10**: **6 ед. → 28**, ещё **1 ед. → 31 и бессемянность**; всего **14 ед. → 50**. Сначала размножьте нужную линию, затем повышайте потенцию рабочего растения. Потенция не увеличивает число плодов: для этого отдельно переносите **«Урожайность»** анализатором.
 
-**Секатор** берёт пакет с живого растения после первой стадии роста и снимает **30–40 здоровья**. У готового к сбору растения пакет получает обычное стартовое здоровье; при раннем срезе — оставшееся здоровье донора. Не рассчитывайте на бесконечные безопасные срезы: после каждого есть **30%** шанс запретить следующие образцы с этого растения.
+**Секатор** берёт пакет с живого растения после первой стадии роста и снимает **30–40 здоровья**. У готового к сбору растения пакет получает обычное стартовое здоровье; при раннем срезе — оставшееся здоровье донора. Не рассчитывайте на бесконечные безопасные срезы: после каждого есть [color=#73BFD3]**30%**[/color] шанс запретить следующие образцы с этого растения.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/CargoHauling.xml -->
 # Грузоперевозки и торговля
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerCargoOrders"/>
-  <GuideEntityEmbed Entity="ComputerPalletConsole"/>
-  <GuideEntityEmbed Entity="CrateTradeSecureNormal"/>
+<GuideTexture Entity="ComputerCargoOrders" Powered="true" Caption="auto"/>
+  <GuideTexture Entity="ComputerPalletConsole" Powered="true" Caption="auto"/>
+  <GuideTexture Entity="CrateTradeSecureNormal" Caption="auto"/>
 </GuideEntityCards>
 Торговый ящик приносит разную выручку в зависимости от места продажи. **Перед покупкой оцените маршрут, место в трюме и расходы на рейс.**
 
 ## Купить и доставить
-- Откройте консоль заказов и проверьте доступный каталог, цену и банковский баланс.
+- **Откройте** консоль заказов и проверьте доступный каталог, цену и банковский баланс.
 - Освободите площадку приёма груза, оформите заказ и заберите доставленные предметы.
 - Осмотрите торговый ящик: описание указывает станцию назначения. Значок на ящике помогает сортировать партии.
 - Перевезите ящики на нужную станцию. Разложите груз по направлениям, чтобы не искать его при разгрузке.
@@ -136,7 +136,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Продать
 - Поставьте груз на площадку продажи рядом с соответствующей консолью.
 - Уберите с площадки свои инструменты, запасы и остальные вещи, которые хотите оставить.
-- Проверьте оценку и число продаваемых объектов, затем подтвердите продажу.
+- **Проверьте** оценку и число продаваемых объектов, затем подтвердите продажу.
 - Заберите появившиеся у консоли наличные. Для зачисления используйте [банкомат](guide://Bank).
 
 Консоль продажи учитывает содержимое продаваемых контейнеров. Не оставляйте в ящике личное имущество. Закреплённые объекты и запрещённые к продаже предметы могут не приниматься; запрещённое содержимое также мешает продаже контейнера.
@@ -150,29 +150,41 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Contraband.xml -->
 # Контрабанда: сдача и обмен
 Контрабанда может быть одновременно ценным грузом, запрещённым предметом и источником фракционной валюты. Это разные механики: продажа за кредиты не равна сдаче на обменной платформе.
-<GuideEntityCards><GuideEntityEmbed Entity="ContrabandPallet"/><GuideEntityEmbed Entity="ContrabandPalletPirate"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ContrabandPallet" Caption="auto"/><GuideTexture Entity="ContrabandPalletPirate" Caption="auto"/></GuideEntityCards>
 
 ## Как сдать фракции
-Поставьте предметы на её обменную платформу. Откройте связанную консоль, нажмите **оценку**, проверьте список принимаемых вещей и сумму, затем подтвердите сдачу. Консоль забирает только предметы с положительной ценностью для своей валюты. У стопок учитывается количество; неподходящая валюта или нулевая ценность не дают награды.
+Поставьте предметы на её обменную платформу. **Откройте** связанную консоль, нажмите **оценку**, проверьте список принимаемых вещей и сумму, затем подтвердите сдачу. Консоль забирает только предметы с положительной ценностью для своей валюты. У стопок учитывается количество; неподходящая валюта или нулевая ценность не дают награды.
 
 ## ТСФ и Авангард
 Платформа ТСФ выдаёт фракционные военные кредиты, используемые её снабжением; платформа Авангарда — чипы данных. Не путайте их с обычными кредитами или телекристаллами Синдиката. Получатель обязан использовать собственную консоль обмена.
 
-Примеры из текущих прототипов: **золото с печатью Авангарда — 75 военных кредитов ТСФ**; **канистра нанитов Федерации — 75 чипов данных**. Это ценность обмена, не обычная цена продажи на торговой паллете.
-<GuideEntityCards><GuideEntityEmbed Entity="PDVStampedGold"/><GuideEntityEmbed Entity="TSFNaniteCanister"/></GuideEntityCards>
+Например, **золото с печатью Авангарда обменивается на 75 военных кредитов ТСФ**, а **канистра нанитов Федерации — на 75 чипов данных**. Это ценность обмена, не обычная цена продажи на торговой паллете.
+<GuideEntityCards><GuideTexture Entity="PDVStampedGold" Caption="auto"/><GuideTexture Entity="TSFNaniteCanister" Caption="auto"/></GuideEntityCards>
 
 ## Доставка и сохранность
 Награда за **выполненный запрос на доставку** определяется самим запросом, этикеткой и пунктом сдачи. Она не начисляется просто за перелёт с контрабандой. Для обмена без заказа используется платформа выше. При продаже ящика проверяйте, какие предметы внутри попадут под сдачу.
 
 Крупные монолитные кристаллы и некоторые ценные грузы хрупкие. Потерянный или уничтоженный предмет не заменяется его рыночной стоимостью. Допустимость владения и перевозки определяется [правилами](guide://LuaMRule2), а ассортимент наград — [аплинком фракции](guide://ColossusCatalogueUplinks).
+
+## Штраф бюджету ТСФ
+
+Реализация предмета с отрицательным налогом ТСФ уменьшает **бюджет ТСФ**, а не личный счёт продавца на величину штрафа. Основа расчёта: **стоимость предмета × модуль его отрицательного налога ТСФ**. При обычной торговой продаже применяется расчёт торговой паллеты; при сдаче на обменной консоли **Авангарда множитель штрафа ×3**.
+
+Списывается не больше остатка бюджета, уведомление идёт в канал ТСФ. Выплата продавцу и фракционная награда за сдачу рассчитываются отдельно: штраф бюджета нельзя прибавлять к обещанному личному доходу.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/DroneLoot.xml -->
 # ИИ-дроны: где искать и что забирать
 ## Районы появления
-**Дальние координаты:** 18–22 км — дроны T1; 22–25 км — внутренний пояс T2; 25–30 км — средний пояс T2. В более дальних областях генератор использует тяжёлые группы Medusa, Assembly, Bracket, Mauler и Quake.
+**Дальние координаты:** [color=#73BFD3]18–22 км[/color] — дроны T1; [color=#73BFD3]22–25 км[/color] — внутренний пояс T2; [color=#73BFD3]25–30 км[/color] — средний пояс T2. В более дальних областях генератор использует тяжёлые группы Medusa, Assembly, Bracket, Mauler и Quake.
 
 **Скопление LINEAR:** встречаются Mote, Dander и MPulsar. В окружающей области — Rammer Small / Medium, MPulsar, Lance, а также Wasp, Crown, Gust и Piercer. Ориентир центра области — примерно **(9088; −7552)**. Цвет дронов на карте — тёмно-красный.
+
+<GuideEntityCards>
+<GuideTexture Entity="NpcStationAiRammer" Caption="Ядро ИИ"/>
+<GuideTexture Entity="ClothingBackpackDroneLootT1" Caption="Регистратор T1"/>
+<GuideTexture Entity="ClothingBackpackDroneLootT21" Caption="Регистратор T2"/>
+</GuideEntityCards>
 
 ## Трофеи
 Ядро ИИ можно снять и продать. Базовая оценка обычного ядра — **40 000 кр.**; для Dander задано **20 000 кр.**
@@ -202,12 +214,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobFleshJaredOldExpeditions"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Голем"
@@ -220,7 +232,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobFleshGolemOldExpeditions"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 70 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -234,10 +246,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobFleshClampExpeditions"/>
-  <GuideEntityEmbed Entity="DartAberrantFleshHorrorSpikeGuidebook"/>
+  <GuideTexture Entity="DartAberrantFleshHorrorSpikeGuidebook" Caption="auto"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 40 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=yellow]колющий[/color], 6 [color=lime]токсичный[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Летающее, стреляет: костяной шип / пасть
@@ -250,7 +262,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMawExpeditionsGuidebook"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 40 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 4 [color=red]режущий[/color] (пасть)
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Летающее, стреляет: костяной шип / пасть
@@ -264,7 +276,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMawExpeditionsGuidebook"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 8 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 0 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]0 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 4 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -280,7 +292,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobFleshLoverExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 30 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Летающее
@@ -294,7 +306,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobFleshAssimilatedMiner"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 140 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -308,7 +320,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobHorrorExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 200 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.6 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.6 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 12 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** залп костяных шипов (роль для призрака)
@@ -347,12 +359,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteSlurvaExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 15 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3 м/с (3 м/с)**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3 м/с[/color] ([color=#73BFD3]3 м/с[/color])**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 3 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Скиттер"
@@ -363,7 +375,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteSkitterExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 30 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.5 м/с (3.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -377,7 +389,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteSwiperExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 40 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.5 м/с (3 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -391,7 +403,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteGliderExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (4.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 10 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -405,7 +417,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteCrawlerExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 60 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 5 м/с (5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]5 м/с[/color] ([color=#73BFD3]5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 12 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -419,7 +431,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteFounderExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 150 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (4.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -433,7 +445,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteBarrierExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 35 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.5 м/с (3 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 3 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -447,7 +459,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteMolderExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 80 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.5 м/с (3.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -461,7 +473,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocytePouncerExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.5 м/с (3.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 10 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -475,7 +487,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteHarvesterExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 90 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.5 м/с (3.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=orange]едкий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -489,7 +501,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteEnforcerExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.5 м/с (3.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -503,7 +515,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobArgocyteLeviathingExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 500 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.5 м/с (3.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 25 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -540,12 +552,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobBloodCultistPriest"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 10 [color=red]режущий[/color] (кровавая молния)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] 50%; [color=yellow]колющий[/color] 40% (доспехи послушника)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]40%[/color] (доспехи послушника)
   - **[color=#a4885c]Особые способности:[/color]** Заклинатель (кровавая молния)
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Уборщик культа"
@@ -554,13 +566,13 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobBloodCultistJanitor"/>
-  <GuideEntityEmbed Entity="ClothingBeltCultForceField"/>
+  <GuideTexture Entity="ClothingBeltCultForceField" Caption="auto"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 0-35 [color=red]режущий[/color] (1 [color=red]режущий[/color] за кусок мыла)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] 10%; [color=yellow]колющий[/color] 60%; [color=yellow]взрывной[/color] 20% (роба уборщика культа)
-  - **[color=#a4885c]Особые способности:[/color]** Заклинатель (скопление бритвенного мыла), Отражение (10%, все снаряды)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]60%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]20%[/color] (роба уборщика культа)
+  - **[color=#a4885c]Особые способности:[/color]** Заклинатель (скопление бритвенного мыла), Отражение ([color=#73BFD3]10%[/color], все снаряды)
 
 
   # "Послушник культа"
@@ -571,9 +583,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobBloodCultistAcolyte"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=red]режущий[/color] (эльдричский меч)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] 50%; [color=yellow]колющий[/color] 40% (доспехи послушника)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=orange]тепловой[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]40%[/color] (доспехи послушника)
   - **[color=#a4885c]Особые способности:[/color]** нет
 
 
@@ -585,9 +597,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobBloodCultistZealotMelee"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 12 [color=red]режущий[/color] (ритуальный кинжал)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] 10% (робы культа)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (робы культа)
   - **[color=#a4885c]Особые способности:[/color]** нет
 
 
@@ -595,9 +607,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobBloodCultistZealotRanged"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 20 [color=red]режущий[/color], 5 [color=#9A54BF]кровопотеря[/color] (болт арбалета кровопийцы)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] 10% (робы культа)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (робы культа)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (болт арбалета кровопийцы)
 
 
@@ -605,9 +617,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobBloodCultistCaster"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=red]режущий[/color], 2 [color=#9A54BF]кровопотеря[/color] (заклинание кровавого болта)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] 10% (робы культа)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]тепловой[/color] и [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (робы культа)
   - **[color=#a4885c]Особые способности:[/color]** Заклинатель (заклинание кровавого болта)
 
 
@@ -621,7 +633,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobBloodCultLeech"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 80 (крит), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 6 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]6 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 10 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Регенерация (слабая)
@@ -635,7 +647,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="BloodCultTurret"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 300
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 0 м/с (0 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]0 м/с[/color] ([color=#73BFD3]0 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=red]режущий[/color], 2 [color=#9A54BF]кровопотеря[/color] (заклинание кровавого болта)
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Турель, Заклинатель (заклинание кровавого болта)
@@ -647,19 +659,19 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
   [color=#a4885c]Летающее существо[/color]: парит над землёй, может преодолевать низкие препятствия (столы, каркасы, перила) без замедления.
 
-  [color=#a4885c]Призыватель[/color]: каждые 55 секунд призывает двух [color=#a4885c]истощённых[/color], которые существуют 110 секунд.
+  [color=#a4885c]Призыватель[/color]: каждые [color=#73BFD3]55 секунд[/color] призывает двух [color=#a4885c]истощённых[/color], которые существуют [color=#73BFD3]110 секунд[/color].
 
-  [color=#a4885c]Отражение (30%, энергия)[/color]: 30% шанс отразить энергетические атаки.
+  [color=#a4885c]Отражение (30%, энергия)[/color]: [color=#73BFD3]30%[/color] шанс отразить энергетические атаки.
 
   <GuideEntityCards>
   <GuideEntityEmbed Entity="MobBloodCultistAscended"/>
-  <GuideEntityEmbed Entity="ClothingNeckAmuletBloodCult"/>
+  <GuideTexture Entity="ClothingNeckAmuletBloodCult" Caption="auto"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 300 (крит), 400 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 20 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
-  - **[color=#a4885c]Особые способности:[/color]** Летающее, Призыватель (Истощённый), Отражение (30%, энергия)
+  - **[color=#a4885c]Особые способности:[/color]** Летающее, Призыватель (Истощённый), Отражение ([color=#73BFD3]30%[/color], энергия)
 
 
   # "Истощённый"
@@ -674,7 +686,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobBloodCultDrainedOneGuidebook"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 4 [color=#9A54BF]удушение[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Регенерация (слабая), Бестелесный
@@ -692,7 +704,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobBloodCultShadeGuidebook"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (крит), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 2 [color=red]режущий[/color], 2 [color=#9A54BF]кровопотеря[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Регенерация (слабая), Бестелесный
@@ -715,7 +727,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Fauna/carps.xml -->
 # Карпы
 
-  Космические карпы — инопланетные формы жизни, путешествующие в космосе стаями. Если космическая станция оказывается на пути стаи, любой, кто окажется за пределами стен станции, будет атакован.
+  Космические карпы — инопланетные формы жизни, путешествующие в космосе стаями. *Если космическая станция оказывается на пути стаи,* любой, кто окажется за пределами стен станции, будет атакован.
 
 
   # Известные варианты
@@ -729,12 +741,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobCarp"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Летающее
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Магикарп"
@@ -747,7 +759,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobCarpMagic"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Летающее
@@ -765,7 +777,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobCarpHolo"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Летающее, Бестелесный
@@ -781,7 +793,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobCarpRainbow"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Летающее
@@ -797,7 +809,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobShark"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 80 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 7 [color=red]режущий[/color], 5 [color=#9A54BF]кровопотеря[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Летающее
@@ -813,7 +825,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSnake"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 3 [color=red]режущий[/color], 3 [color=#9A54BF]кровопотеря[/color], 4 [color=lime]яд[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Маленькая, Яд
@@ -831,7 +843,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDragonDungeon"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 200 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 15 [color=red]режущий[/color], 15 [color=yellow]колющий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Летающее
@@ -868,12 +880,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurCompyExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.1 м/с (4.1 м/с)**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.1 м/с[/color] ([color=#73BFD3]4.1 м/с[/color])**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Дилофозавр"
@@ -884,7 +896,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurDiloExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.3 м/с (4.3 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.3 м/с[/color] ([color=#73BFD3]4.3 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]режущий[/color], 2 [color=orange]едкий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -898,7 +910,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurRaptorExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 80 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (4.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 18 [color=red]режущий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -912,7 +924,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurParaExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -926,7 +938,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurKentroExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 150 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 2.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]2.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 10 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -940,7 +952,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurTrikeExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 200 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3 м/с (3 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3 м/с[/color] ([color=#73BFD3]3 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 15 [color=yellow]колющий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -954,7 +966,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurAnkiExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 250 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 2 м/с (2 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]2 м/с[/color] ([color=#73BFD3]2 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -968,7 +980,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurSpinoExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 350 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (4.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 12 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -982,7 +994,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurStegoExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 350 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 2.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]2.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 12 [color=red]тупой[/color], 8 [color=yellow]колющий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -996,7 +1008,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobDinosaurTrexExpeditions"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 450 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (4.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]4.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 15 [color=red]тупой[/color], 10 [color=yellow]колющий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -1031,12 +1043,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobExplorerMeleeT1"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=red]тупой[/color], 6 [color=yellow]колющий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Сборщик"
@@ -1047,7 +1059,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobExplorerRangedT1"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 12 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (неудерживаемый ПКУ)
@@ -1061,9 +1073,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobExplorerMeleeT2"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 7 [color=red]тупой[/color], 6 [color=red]режущий[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 10%; [color=orange]тепловой[/color] 5%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]10%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]5%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** нет
 
 
@@ -1075,9 +1087,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobExplorerRangedT2"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 12 [color=red]тупой[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 10%; [color=orange]тепловой[/color] 5%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]10%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]5%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (неудерживаемый ПКУ)
 
 
@@ -1089,9 +1101,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobExplorerMeleeT3"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 2 [color=red]тупой[/color], 2 [color=red]режущий[/color], 2 [color=yellow]колющий[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 15%; [color=orange]тепловой[/color] 10%; [color=orange]едкий[/color] 15%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]15%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=orange]едкий[/color] [color=#73BFD3]15%[/color]
   - **[color=#a4885c]Особые способности:[/color]** нет
 
 
@@ -1103,9 +1115,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobExplorerRangedT3"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=red]тупой[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 15%; [color=orange]тепловой[/color] 10%; [color=orange]едкий[/color] 15%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]15%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=orange]едкий[/color] [color=#73BFD3]15%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (удерживаемый ПКУ)
 
 
@@ -1119,10 +1131,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobExplorerHauler"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 200 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 20 [color=red]тупой[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color])
 
 
@@ -1134,10 +1146,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobExplorerBoss"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 120 (критическое), 150 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=orange]тепловой[/color], 4 [color=yellow]колющий[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] и [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 50%; [color=orange]тепловой[/color] 30%; [color=orange]едкий[/color] 50%
-  - **[color=#a4885c]Особые способности:[/color]** Отражение (2.5%)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] и [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]50%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]50%[/color]
+  - **[color=#a4885c]Особые способности:[/color]** Отражение ([color=#73BFD3]2.5%[/color])
 
 
   # Цели миссий
@@ -1171,21 +1183,21 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMercenarySoldierKnife" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 8 [color=red]режущий[/color], 2 [color=yellow]колющий[/color] (топорик)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** нет
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   <Box>
   <GuideEntityEmbed Entity="MobMercenarySoldierPistol" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=yellow]колющий[/color] (.35 патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (mk58)
 
 
@@ -1193,9 +1205,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMercenarySoldierNovalite" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 17 [color=yellow]колющий[/color] (.20 патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (Novalite C1)
 
 
@@ -1207,9 +1219,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMercenaryBreacherMachete" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 15 [color=red]режущий[/color] (мачете)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** нет
 
 
@@ -1217,9 +1229,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMercenarySoldierRevolver" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 17 [color=yellow]колющий[/color] (.20 патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (двойные револьверы Argenti)
 
 
@@ -1227,9 +1239,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMercenaryBreacherShotgun" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 10 [color=yellow]колющий[/color] (дробовой патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (дробовик)
 
 
@@ -1241,9 +1253,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMercenarySpecialistMedic"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 14 [color=orange]тепловой[/color] (ретро лазерный пистолет); 5 [color=red]тупой[/color], 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color] (циркулярная пила)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (ретро лазерный пистолет)
 
 
@@ -1251,9 +1263,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMercenarySpecialistAssault"/> <!--ЕБУЧИЕ ИИ-->
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 15 [color=yellow]колющий[/color] (.30 патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (Gestio)
 
 
@@ -1266,9 +1278,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobMercenaryCaptain"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 14 [color=orange]тепловой[/color] (ретро лазерный пистолет); 5 [color=red]тупой[/color], 5 [color=red]режущий[/color], 5 [color=yellow]колющий[/color] (циркулярная пила)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (ретро лазерный пистолет)
 
 
@@ -1301,21 +1313,21 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobPunkGangerMeleeT1" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 12 [color=red]тупой[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   <Box>
   <GuideEntityEmbed Entity="MobPunkGangerMeleeT2" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=red]тупой[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=orange]взрывной[/color] 10% (броня панков)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]; [color=orange]взрывной[/color] [color=#73BFD3]10%[/color] (броня панков)
   - **[color=#a4885c]Особые способности:[/color]** нет
 
 
@@ -1323,9 +1335,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobPunkGangerMeleeT3" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4.5 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4.5 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 18 [color=red]тупой[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] 10%; [color=yellow]колющий[/color] 60%; [color=orange]тепловой[/color] 10%; [color=orange]взрывной[/color] 20% (тяжёлая броня панков)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] [color=#73BFD3]10%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]60%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=orange]взрывной[/color] [color=#73BFD3]20%[/color] (тяжёлая броня панков)
   - **[color=#a4885c]Особые способности:[/color]** нет
 
 
@@ -1333,7 +1345,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobPunkGangerPistol" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=yellow]колющий[/color] (.35 патрон)
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (mk 58)
@@ -1343,7 +1355,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobPunkGangerShotgun" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 10-60 [color=yellow]колющий[/color] (10 за дробинку)
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (дробовик)
@@ -1353,9 +1365,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobPunkGangerSmg" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=yellow]колющий[/color] (.35 патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 25%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=orange]взрывной[/color] 10% (броня панков)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]25%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]; [color=orange]взрывной[/color] [color=#73BFD3]10%[/color] (броня панков)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (дрозд)
 
 
@@ -1367,9 +1379,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobPunkGangerLeader" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость бега:[/color]** 4 м/с
+  - **[color=#a4885c]Скорость бега:[/color]** [color=#73BFD3]4 м/с[/color]
   - **[color=#a4885c]Урон (тип):[/color]** 17 [color=orange]тепловой[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] 10%; [color=yellow]колющий[/color] 60%; [color=orange]тепловой[/color] 10%; [color=orange]взрывной[/color] 20% (тяжёлая броня панков)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] [color=#73BFD3]10%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]60%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=orange]взрывной[/color] [color=#73BFD3]20%[/color] (тяжёлая броня панков)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (лазерная винтовка)
 
 
@@ -1406,13 +1418,13 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconScrap" Caption=""/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 60 (критическое), 120 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=red]тупой[/color], 4 [color=orange]тепловой[/color] (ближний бой); 14 [color=orange]тепловой[/color] (дальний бой)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Летающий (некоторые из них), Стрелок (некоторые из них)
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Дроны"
@@ -1425,10 +1437,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconDroneLethals"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 30 (критическое), 90 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 20 [color=orange]тепловой[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий, Стрелок (энергетическая пушка)
 
 
@@ -1438,10 +1450,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconDroneNonLethals"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 30 (критическое), 90 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=orange]тепловой[/color]; 20 [color=lightblue]выносливость[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий, Стрелок (обездвиживатель)
 
 
@@ -1451,10 +1463,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconDroneScience"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 30 (критическое), 90 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=orange]тепловой[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий, Стрелок (экспериментальная пушка C.H.I.M.P.)
 
 
@@ -1468,10 +1480,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconServo"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 80 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=red]тупой[/color], 4 [color=orange]тепловой[/color] (ближний бой)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная)
 
 
@@ -1485,10 +1497,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconHerder"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 80 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=red]тупой[/color], [color=orange]электрический[/color], 10 [color=lightblue]выносливость[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная)
 
 
@@ -1502,10 +1514,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconHunter"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 30 (критическое), 90 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 17 [color=orange]тепловой[/color] (лазерная винтовка)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Летающий, Стрелок (лазерная винтовка)
 
 
@@ -1519,10 +1531,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconCatcher"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 80 (критическое), 140 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=red]тупой[/color], 4 [color=orange]тепловой[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная)
 
 
@@ -1534,10 +1546,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconViscerator"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 12 (критическое), 20 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 5 м/с (5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]5 м/с[/color] ([color=#73BFD3]5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 4 [color=red]режущий[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Летающий
 
 
@@ -1551,10 +1563,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconTesla"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 110 (критическое), 160 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 14 [color=yellow]колющий[/color], 10 [color=lightblue]выносливость[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Стрелок (тесла-пушка)
 
 
@@ -1568,10 +1580,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconGuardian"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 200 (критическое), 400 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 4 [color=orange]тепловой[/color] (повреждённый турбо-лазер)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Летающий, Стрелок (повреждённый турбо-лазер)
 
 
@@ -1585,10 +1597,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobRogueSiliconBoss"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 300 (критическое), 400 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 15 [color=orange]взрывной[/color] (микро-ракеты)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 30%; [color=red]режущий[/color] 50%; [color=yellow]колющий[/color] 30%; [color=orange]едкий[/color] 10%
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] 20%; [color=orange]электрический[/color] 50%; [color=lime]радиационный[/color] 20%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]30%[/color]; [color=red]режущий[/color] [color=#73BFD3]50%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=orange]структурный[/color] [color=#73BFD3]20%[/color]; [color=orange]электрический[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]20%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Иммунитет ([color=orange]холод[/color], [color=lime]яд[/color], [color=#9A54BF]удушье[/color], [color=#9A54BF]кровопотеря[/color], [color=#da8b8b]клеточный[/color]), Регенерация (сильная), Стрелок (микро-ракетная установка)
 
 
@@ -1623,12 +1635,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalDeckhandVoid"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=yellow]колющий[/color] (.35 патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=yellow]взрывной[/color] 10% (бронежилет)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (бронежилет)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (Viper)
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Инженер Синдиката"
@@ -1640,9 +1652,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalEngineerVoid"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 10 [color=yellow]колющий[/color] (дробовой патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=yellow]взрывной[/color] 10% (бронежилет)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (бронежилет)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (Дробовик)
 
 
@@ -1654,9 +1666,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalSaboteurA"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 0; ЭМП-патроны (разряжают батареи)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=yellow]взрывной[/color] 10% (бронежилет)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (бронежилет)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (Viper)
 
 
@@ -1669,9 +1681,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalMedicVoid"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=yellow]колющий[/color], 6 [color=lime]яд[/color] (дротик Синдиката)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] 20%; [color=red]режущий[/color] 15%; [color=yellow]колющий[/color] 35%; [color=orange]тепловой[/color] 15%; [color=orange]едкий[/color] 25% (бронированный медицинский халат)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] [color=#73BFD3]20%[/color]; [color=red]режущий[/color] [color=#73BFD3]15%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]35%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]15%[/color]; [color=orange]едкий[/color] [color=#73BFD3]25%[/color] (бронированный медицинский халат)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (дротик Синдиката)
 
   <GuideReagentEmbed Reagent="Impedrezene"/>
@@ -1687,9 +1699,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalOperatorVoid"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 16 [color=yellow]колющий[/color] (.35 патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] и [color=red]режущий[/color] 10%; [color=yellow]колющий[/color] 60%; [color=orange]тепловой[/color] 10%; [color=yellow]взрывной[/color] 20% (пуленепробиваемый жилет)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color] и [color=red]режущий[/color] [color=#73BFD3]10%[/color]; [color=yellow]колющий[/color] [color=#73BFD3]60%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]10%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]20%[/color] (пуленепробиваемый жилет)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (ПП)
 
 
@@ -1701,9 +1713,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalGrenadierA"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** Различный [color=yellow]взрывной[/color]
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 10%; [color=orange]тепловой[/color] 25%; [color=yellow]взрывной[/color] 85% (взрывостойкий костюм Синдиката)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]10%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]25%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]85%[/color] (взрывостойкий костюм Синдиката)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (China Lake)
 
 
@@ -1715,7 +1727,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalChemwarriorA"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** различный
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (распылительная насадка)
@@ -1726,10 +1738,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalChemwarriorB"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** различный
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=yellow]колющий[/color] 60%; [color=orange]тепловой[/color] 40%; [color=yellow]едкий[/color] 60% (биокостюм Синдиката)
-  - **[color=#a4885c]Слабости к урону:[/color]** [color=red]режущий[/color] 20%; [color=yellow]взрывной[/color] 40%
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=yellow]колющий[/color] [color=#73BFD3]60%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]40%[/color]; [color=yellow]едкий[/color] [color=#73BFD3]60%[/color] (биокостюм Синдиката)
+  - **[color=#a4885c]Слабости к урону:[/color]** [color=red]режущий[/color] [color=#73BFD3]20%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]40%[/color]
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (распылительная насадка)
 
 
@@ -1742,9 +1754,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalSecondOfficerVoid"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 17 [color=orange]тепловой[/color] (продвинутый лазерный пистолет)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] 30%; [color=orange]тепловой[/color] 20%; [color=orange]едкий[/color] 10%; [color=yellow]взрывной[/color] 10% (бронежилет)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color] и [color=yellow]колющий[/color] [color=#73BFD3]30%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]20%[/color]; [color=orange]едкий[/color] [color=#73BFD3]10%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (бронежилет)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (продвинутый лазерный пистолет)
 
 
@@ -1757,9 +1769,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalCaptainVoid"/>
   </GuideEntityCards>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 35 [color=yellow]колющий[/color] (.45 патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color], [color=yellow]колющий[/color] и [color=orange]тепловой[/color] 30%;  [color=orange]едкий[/color] 25%; [color=yellow]взрывной[/color] 10% (бронированное пальто Синдиката)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color], [color=yellow]колющий[/color] и [color=orange]тепловой[/color] [color=#73BFD3]30%[/color];  [color=orange]едкий[/color] [color=#73BFD3]25%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]10%[/color] (бронированное пальто Синдиката)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (револьвер Python)
 
 
@@ -1771,9 +1783,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobSyndicateNavalCommanderA"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (критическое), 130 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.5 м/с (2.5 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.5 м/с[/color] ([color=#73BFD3]2.5 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 35 [color=yellow]колющий[/color] (.30 патрон)
-  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color], [color=yellow]колющий[/color] 40%; [color=orange]тепловой[/color] 80%; [color=orange]едкий[/color] 50%; [color=lime]радиационный[/color] 99%; [color=yellow]взрывной[/color] 80% (элитный скафандр Синдиката)
+  - **[color=#a4885c]Сопротивления урону:[/color]** [color=red]тупой[/color], [color=red]режущий[/color], [color=yellow]колющий[/color] [color=#73BFD3]40%[/color]; [color=orange]тепловой[/color] [color=#73BFD3]80%[/color]; [color=orange]едкий[/color] [color=#73BFD3]50%[/color]; [color=lime]радиационный[/color] [color=#73BFD3]99%[/color]; [color=yellow]взрывной[/color] [color=#73BFD3]80%[/color] (элитный скафандр Синдиката)
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (akms)
 
 
@@ -1808,12 +1820,12 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobXeno"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)**[color=#a4885c]*[/color]**
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])**[color=#a4885c]*[/color]**
   - **[color=#a4885c]Урон (тип):[/color]** 6 [color=red]физический[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
 
-  **[color=#a4885c]*[/color]** - *средний человек бегает 4.5 м/с, ходит 2.5 м/с.*
+  **[color=#a4885c]*[/color]** - *средний человек бегает [color=#73BFD3]4.5 м/с[/color], ходит [color=#73BFD3]2.5 м/с[/color].*
 
 
   # "Трутень"
@@ -1824,7 +1836,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobXenoDrone"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 70 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.5 м/с (3 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.5 м/с[/color] ([color=#73BFD3]3 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=red]физический[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -1838,7 +1850,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobXenoPraetorian"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 100 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 10 [color=red]физический[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -1852,7 +1864,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobXenoRavager"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 150 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4.2 м/с (2.3 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4.2 м/с[/color] ([color=#73BFD3]2.3 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 14 [color=red]физический[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -1866,7 +1878,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobXenoRunner"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 50 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 6 м/с (2.7 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]6 м/с[/color] ([color=#73BFD3]2.7 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 3 [color=red]физический[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -1880,7 +1892,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="MobXenoSpitter"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 75 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 4 м/с (4 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]4 м/с[/color] ([color=#73BFD3]4 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=orange]едкий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Стрелок (кислота)
@@ -1894,7 +1906,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
   <GuideEntityEmbed Entity="WeaponTurretXeno"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 75 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 0 м/с (0 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]0 м/с[/color] ([color=#73BFD3]0 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 5 [color=orange]едкий[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** Турель, Стрелок (кислота)
@@ -1902,13 +1914,13 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
   # "Королева"
 
-  Отвечающая как за откладывание яиц, так и за руководство своими детьми, Королева — самый важный член улья ксеносов. Если она умрёт, улей потеряет всё направление.
+  Отвечающая как за откладывание яиц, так и за руководство своими детьми, Королева — самый важный член улья ксеносов. *Если она умрёт,* улей потеряет всё направление.
 
   <Box>
   <GuideEntityEmbed Entity="MobXenoQueen"/>
   </Box>
   - **[color=#a4885c]Порог здоровья:[/color]** 250 (смерть)
-  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** 3.8 м/с (2.8 м/с)
+  - **[color=#a4885c]Скорость (бег/ходьба):[/color]** [color=#73BFD3]3.8 м/с[/color] ([color=#73BFD3]2.8 м/с[/color])
   - **[color=#a4885c]Урон (тип):[/color]** 20 [color=red]физический[/color]
   - **[color=#a4885c]Сопротивления урону:[/color]** нет
   - **[color=#a4885c]Особые способности:[/color]** нет
@@ -1931,66 +1943,59 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Expeditions/Index.xml -->
 # Экспедиции
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerSalvageExpedition"/>
-<GuideEntityEmbed Entity="SpaceCashExpeditionT3"/>
+<GuideTexture Entity="ComputerSalvageExpedition" Powered="true" Caption="auto"/>
+<GuideTexture Entity="SpaceCashExpeditionT3" Caption="auto"/>
 </GuideEntityCards>
-Консоль «Утилизаторские экспедиции» предлагает пять заданий. Нажатие **«Принять»** создаёт отдельную карту и автоматически отправляет туда корабль на БСС. Диск координат не выдаётся; выбирать планету вручную на MAP не требуется.
+Консоль **«Утилизаторские экспедиции»** предлагает пять заданий. Нажатие **«Принять»** создаёт отдельную карту и автоматически отправляет туда корабль на БСС. Диск координат не выдаётся; выбирать планету вручную на MAP не требуется.
 
 <GuideNavigationUI Mode="expedition"/>
 
 ## Что показывает карточка
 - **Подробности** — условие выполнения: какая цель должна быть уничтожена.
 - **Враги** — фракция противников на карте. Тип цели и состав охраны зависят от неё.
-- **Продолжительность** — время существования экспедиции. Текущие задания генерируются на 45–60 минут; таймер запускается при создании карты и включает перелёт.
+- **Продолжительность** — время существования экспедиции. Текущие задания генерируются на [color=#73BFD3]45–60 минут[/color]; таймер запускается при создании карты и включает перелёт.
 - **Биом** — тип местности. **Модификаторы** уточняют атмосферу, температуру, погоду, освещение и другие условия именно этого предложения.
 - **Награды** — выплата за выполненную цель после завершения рейса.
 
 На карте экспедиции интерфейс показывает остаток времени, направление к объекту, цель, прогресс и сумму награды. Направление также объявляется при прибытии.
 
 ## Цели и сложности
-**Уничтожение** требует разрушить указанные строения. При осмотре целевого объекта появляется отметка «Это необходимо уничтожить»; сообщения и счётчик показывают остаток целей. **Устранение** требует убить одну мегафауну. Убийство обычной охраны само по себе задание не завершает.
+**Уничтожение** требует разрушить указанные строения. При осмотре целевого объекта появляется отметка **«Это необходимо уничтожить»**; сообщения и счётчик показывают остаток целей. **Устранение** требует убить одну мегафауну. Убийство обычной охраны само по себе задание не завершает.
 
 <GuideTable Columns="3">
 <Box>**Сложность**</Box><Box>**Строений в «Уничтожении»**</Box><Box>**Награда**</Box>
-<Box>Умеренная</Box><Box>5</Box><Box>20 000 кредитов</Box>
-<Box>Высокая</Box><Box>7</Box><Box>40 000 кредитов</Box>
-<Box>Экстремальная</Box><Box>9</Box><Box>60 000 кредитов</Box>
+<Box>Умеренная</Box><Box>5</Box><Box>20 [color=#73BFD3]000 кредитов[/color]</Box>
+<Box>Высокая</Box><Box>7</Box><Box>40 [color=#73BFD3]000 кредитов[/color]</Box>
+<Box>Экстремальная</Box><Box>9</Box><Box>60 [color=#73BFD3]000 кредитов[/color]</Box>
 </GuideTable>
 
-С повышением сложности растёт количество групп охраны и расширяется набор опасных условий. Поэтому сравнивайте также врагов и модификаторы. В обычных предложениях сейчас используются только эти три сложности и две боевые цели. «Добыча», «Минимальная» и «Низкая» существуют в системе, но обычная консоль их не предлагает.
+С повышением сложности растёт количество групп охраны и расширяется набор опасных условий. Поэтому сравнивайте также врагов и модификаторы. Консоль предлагает три сложности и две боевые цели, перечисленные выше.
 
 ## Почему запуск недоступен
 Корабль должен поддерживать экспедиции через собственную конфигурацию. Установка консоли на обычный корпус не добавляет ему задания. Подходящие корабли перечислены в [верфи](guide://Shipyard).
 
-«Принять» недоступно, пока уже выполняется задание, идёт БСС/его перезарядка или отсчёт следующего предложения. Запуск также отклоняется при достижении общего лимита активных экспедиций — по умолчанию 15.
+**«Принять»** недоступно, пока уже выполняется задание, идёт БСС/его перезарядка или отсчёт следующего предложения. Запуск также отклоняется при достижении общего лимита активных экспедиций — по умолчанию 15.
 
-Для вылета проверяется область в 256 м вокруг границ корабля: посторонний корпус массой от 100 блокирует запуск. Корабли, состыкованные с вашим или с тем же причалом, исключены из этой проверки. Сообщение «слишком близко» относится именно к этой области.
+Для вылета проверяется область в 256 м вокруг границ корабля: посторонний корпус массой от 100 блокирует запуск. Корабли, состыкованные с вашим или с тем же причалом, исключены из этой проверки. Сообщение **«слишком близко»** относится именно к этой области.
 
 После принятия корабль проходит запуск БСС, зависящий от его массы, и примерно 50-секундный перелёт. На карте экспедиции одновременно размещается один корабль; присоединиться вторым обычным прыжком нельзя.
 
 ## Завершение и возвращение
-Успешная цель не возвращает корабль немедленно. Можно продолжать рейс до истечения времени либо нажать **«Завершить экспедицию»**. Эта кнопка становится доступна после прибытия. Она проверяет, что персонажи игроков и дружественные роли призраков на этой карте находятся на гриде корабля, затем сокращает остаток времени до **20 секунд**. Если осталось меньше, прежний срок сохраняется.
+Успешная цель не возвращает корабль немедленно. Можно продолжать рейс до истечения времени либо нажать **«Завершить экспедицию»**. Эта кнопка становится доступна после прибытия. Она проверяет, что персонажи игроков и дружественные роли призраков на этой карте находятся на гриде корабля, затем сокращает остаток времени до [color=#73BFD3]**20 секунд**[/color]. *Если осталось меньше,* прежний срок сохраняется.
 
-Досрочное завершение не засчитывает невыполненную цель. Награда выдаётся при завершении рейса с выполненным заданием: кредитный кейс появляется возле консоли экспедиций. В экстремальном задании он содержит 60 000 кредитов, даже если старое название кейса указывает 70 000.
+Досрочное завершение не засчитывает невыполненную цель. Награда выдаётся при завершении рейса с выполненным заданием: кредитный кейс появляется возле консоли экспедиций. В экстремальном задании он содержит 60 [color=#73BFD3]000 кредитов[/color], даже если старое название кейса указывает 70 000.
 
-**По истечении таймера корабль автоматически уходит на БСС, а карта экспедиции удаляется.** Проверка присутствия команды относится к досрочному запросу и не останавливает обычный таймер. Возврат происходит в свободную точку основного сектора, а не к прежнему причалу.
+<GuideNote Tone="warning" Text="[bold]По истечении таймера корабль автоматически уходит на БСС, а карта экспедиции удаляется.[/bold] Проверка присутствия команды относится к досрочному запросу и не останавливает обычный таймер. Возврат происходит в свободную точку основного сектора, а не к прежнему причалу."/>
 
-«Следующее предложение» показывает обновление заданий: после успеха ожидание по умолчанию 5 минут, после провала — 7 минут 30 секунд. Серверная настройка может менять эти интервалы.
+**«Следующее предложение»** показывает обновление заданий: после успеха ожидание [color=#73BFD3]5 минут[/color], после провала — [color=#73BFD3]7 минут[/color] [color=#73BFD3]30 секунд[/color].
 
 [Пилотирование](guide://Piloting) · [Корабли и верфи](guide://Shipyard)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Index.xml -->
-# Промыслы и экспедиции
+# Заработок
 
-## Добыча и доставка
-[Руда: от астероида до продажи](guide://ColossusMining) · [Грузоперевозки](guide://CargoHauling) · [Контрабанда](guide://LuaMContraband).
-
-## Боевые вылеты
-[ИИ-дроны: координаты, ядра и контейнеры](guide://LuaMDroneLoot) · [Экспедиции: консоль, задания и фауна](guide://Expeditions).
-
-## Другие занятия
-[Артефакты](guide://ColossusArtifacts) и [аномалии](guide://ColossusAnomalies) · [Газовый синтез](guide://ColossusAtmos) · [Промышленность ММС](guide://MMC).
+<GuideHub Root="ColossusActivities"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Mining.xml -->
@@ -1998,26 +2003,32 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 ## Что взять
 <GuideEntityCards>
-<GuideEntityEmbed Entity="Pickaxe"/>
-  <GuideEntityEmbed Entity="MiningDrill"/>
-  <GuideEntityEmbed Entity="OreBag"/>
+<GuideTexture Entity="Pickaxe" Caption="auto"/>
+  <GuideTexture Entity="MiningDrill" Caption="auto"/>
+  <GuideTexture Entity="OreBag" Caption="auto"/>
 </GuideEntityCards>
 
 Нужны кирка или бур, мешок для руды, подходящие скафандр и дыхательный газ. На корабле оставьте место под груз. Для переработки понадобится запитанный переработчик руды.
 
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="SteelOre" Caption="Добыча"/>
+<GuideTexture Entity="OreProcessor" Caption="Переработка"/>
+<GuideTexture Entity="SpaceCash100" Caption="Продажа"/>
+</GuideEntityCards>
+
 ## Добыча
-- Найдите астероид и остановите корабль на безопасном расстоянии от породы. Запомните место возвращения.
+- **Найдите** астероид и остановите корабль на безопасном расстоянии от породы. Запомните место возвращения.
 - Разрушайте породу киркой или буром. Кирка эффективнее при хвате двумя руками.
 - Собирайте выпавшую руду мешком. Не рассчитывайте на автоматический сбор только от ношения мешка на поясе.
 - Возвращайтесь за новым запасом газа до того, как закончится текущий. Не бросайте груз там, где не сможете найти его снова.
 
 ## Переработка и продажа
 <GuideEntityCards>
-<GuideEntityEmbed Entity="OreProcessor"/>
-  <GuideEntityEmbed Entity="ComputerPalletConsole"/>
+<GuideTexture Entity="OreProcessor" Caption="auto"/>
+  <GuideTexture Entity="ComputerPalletConsole" Powered="true" Caption="auto"/>
 </GuideEntityCards>
 
-Загрузите руду в переработчик. В его меню выберите материал и закажите переработку. Заберите получившиеся листы или слитки; требования и доступные изделия показаны в меню станка.
+**Загрузите** руду в переработчик. В его меню выберите материал и закажите переработку. Заберите получившиеся листы или слитки; требования и доступные изделия показаны в меню станка.
 
 Готовые материалы можно оставить для [производства](guide://Economy), продать другим игрокам или через [площадку продажи](guide://CargoHauling). Перед подтверждением уберите с площадки инструменты и личные вещи. Выручку внесите в [банк](guide://Bank).
 
@@ -2037,7 +2048,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Armor.xml -->
 # Каталог брони
 
-Защита, скорость и доступное снабжение. Общее снаряжение находится в группе «Наёмники».
+Защита, скорость и доступное снабжение. Для модели с силовым полем под обычной бронёй показан отдельный блок **«Встроенный персональный щит»**: запас поля, расход по типам урона, регенерация, времена восстановления, питание и совместимость с плитами. Характеристики щита относятся к его собственной системе, а не к постоянной броне костюма. Общее снаряжение находится в группе **«Наёмники»**.
 
 <GuideAcquisitions Kind="armor"/>
 
@@ -2059,56 +2070,22 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Engineering.xml -->
-# Генераторы и СУО
-
-## Источники питания
+# Генераторы
 
 <GuideAutoCatalogue Kind="generators"/>
 
-## Серверы управления орудиями
-
-<GuideCatalog Kind="server"/>
-
-[Электропитание](guide://ColossusPower) · [Корабельные системы](guide://WeaponsSystems).
+[Электросети](guide://ColossusPower).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Index.xml -->
-# Каталог
+# Справочники
 
-- [Каталог верфей](guide://ColossusCatalogueShipyards)
-- [Каталог брони](guide://ColossusCatalogueArmor)
-- [Каталог оружия](guide://ColossusCatalogueWeapons)
-- [Каталог боеприпасов](guide://ColossusCatalogueAmmo)
-- [Корабельное вооружение](guide://ColossusCatalogueShipWeapons)
-- [Генераторы и СУО](guide://ColossusCatalogueEngineering)
-- [Каталог аплинков](guide://ColossusCatalogueUplinks)
-- [Окно исследований](guide://ColossusCatalogueResearch)
-- [Каталог объектов сектора](guide://ColossusCatalogueObjects)
-- [Дроны и регистраторы](guide://ColossusCatalogueDrones)
-- [Породы и руда](guide://ColossusCatalogueOres)
-- [Характеристики рас](guide://ColossusCatalogueSpecies)
-- [Цены газов и реагентов](guide://ColossusCataloguePrices)
+<GuideHub Root="ColossusCatalogue"/>
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Objects.xml -->
-# Каталог объектов сектора
 
-Планы, оборудование и содержимое исходных карт.
 
-<GuideSites/>
 
-[Основные станции](guide://LuaMStations) · [Ориентирование](guide://ColossusOrientation).
-<!-- /article -->
-
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Ores.xml -->
-# Породы и руда
-
-Проценты — вероятность результата в подключённой таблице породы, а не доля всех тайлов астероида. Выберите разновидность породы; таблица прокручивается горизонтально.
-
-<GuideOreMatrix/>
-
-[Добыча](guide://ColossusMining) · [Астероиды](guide://LuaMAsteroids).
-<!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Prices.xml -->
 # Цены газов и реагентов
@@ -2123,7 +2100,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Research.xml -->
 # Окно исследований
 
-В учебном окне показаны актуальные непустые ветки, поддерживаемые исследовательскими серверами сектора. Выберите исследование, чтобы увидеть стоимость, предшественников и открытия.
+В учебном окне показаны ветки исследовательских серверов сектора. **Выберите** исследование, чтобы увидеть стоимость, предшественников и открытия.
 
 <GuideNavigationUI Mode="research"/>
 
@@ -2155,25 +2132,17 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Shipyards.xml -->
 # Каталог верфей
 
-Выберите верфь и откройте её справочное окно. В нём доступны поиск кораблей, классы, цены и ограничения покупки. Покупка и продажа отключены; просмотр планов временно недоступен.
+**Выберите** верфь и откройте её справочное окно. В нём доступны поиск кораблей, классы, цены, ограничения покупки и планы кораблей. Для покупки или продажи используйте игровую консоль верфи.
 
 <GuideCatalog Kind="ships"/>
 
 [Покупка, ваучеры и продажа](guide://Shipyard) · [Пилотирование](guide://Piloting)
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species.xml -->
-# Характеристики рас
-
-Скорость, пороги состояний и получаемый урон относительно человека.
-
-<GuideSpeciesStats/>
-<!-- /article -->
-
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Uplinks.xml -->
 # Каталог аплинков
 
-Ассортимент, разделы и цены действующих аплинков. Операции покупки и вывода валюты отключены.
+Ассортимент, разделы и цены аплинков. Покупки и операции с валютой выполняйте на игровых аплинках.
 
 <GuideAcquisitions Kind="uplink"/>
 <!-- /article -->
@@ -2181,11 +2150,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Weapons.xml -->
 # Каталог оружия
 
-**work in progress**
-
-Каталог личного оружия пока не публикуется: требуется проверка распределения и расчёта ТТК.
-
-[Боеприпасы](guide://ColossusCatalogueAmmo) · [Аплинки](guide://ColossusCatalogueUplinks).
+Порядок стрельбы и свойства оружия разобраны в [руководстве по личному оружию](guide://ColossusHandheldWeapons). Подберите [боеприпасы](guide://ColossusCatalogueAmmo) и проверьте ассортимент [аплинков](guide://ColossusCatalogueUplinks).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Combat/AcquiredWeapons.xml -->
@@ -2196,7 +2161,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 Для магазинного оружия откройте меню **ПКМ → Передёрнуть затвор**. Действие извлекает находящийся в патроннике патрон и досылает следующий; если затвор уже открыт — закрывает его. Активация оружия в руке (**Z** при стандартных клавишах) передёргивает затвор либо переключает его состояние, в зависимости от конструкции. У помпового и другого оружия с ручной подачей эта же активация выполняет перезарядку между выстрелами.
 
-Если оружие щёлкает после смены магазина, проверьте патронник и положение затвора. Совпадения внешнего вида магазинов недостаточно: оружие принимает определённый магазин или калибр.
+*Если оружие щёлкает после смены магазина,* проверьте патронник и положение затвора. Совпадения внешнего вида магазинов недостаточно: оружие принимает определённый магазин или калибр.
 
 ## Разброс и отдача
 **Разброс** — отклонение пули от линии прицеливания. Чем дальше цель, тем шире область возможных попаданий. У оружия с нарастающим разбросом каждый выстрел расширяет эту область, а пауза между очередями возвращает точность.
@@ -2208,7 +2173,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Боеприпас и защита
 Урон задаёт **патрон или луч**, а не только модель оружия. Дробовик с пулей и с дробью поражает цель по-разному; бронепробитие меняет результат попадания по защищённой цели. Подбор боеприпаса разобран в [руководстве по патронам](guide://ColossusPersonalAmmo), работа защиты — в [броне и бронеплитах](guide://ArmorExplanation).
 
-[Каталог оружия — work in progress](guide://ColossusCatalogueWeapons). Проверенные источники снабжения: [аплинки фракций](guide://ColossusCatalogueUplinks).
+[Боеприпасы](guide://ColossusCatalogueAmmo) · [Аплинки фракций](guide://ColossusCatalogueUplinks).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Combat/ArmorExplanation.xml -->
@@ -2218,22 +2183,36 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Что происходит при попадании
 Сначала активная пластина перехватывает свою долю урона. Остаток проходит через сопротивления цели и надетую броню. Колющий, термический, дробящий и другие компоненты одного попадания считаются отдельно.
 
-Для обычной брони сначала вычитается плоское уменьшение, затем остаток умножается на коэффициент. Коэффициент 0,6 означает 40% защиты: 30 урона превращаются в 18. Отсутствующий тип урона этой бронёй не уменьшается.
+Для обычной брони сначала вычитается плоское уменьшение, затем остаток умножается на коэффициент. Коэффициент 0,6 означает [color=#73BFD3]40%[/color] защиты: 30 урона превращаются в 18. Отсутствующий тип урона этой бронёй не уменьшается.
+
+<GuideEntityCards>
+<GuideTexture Entity="ClothingOuterArmorBasic" Caption="Носимая броня"/>
+<GuideTexture Entity="ClothingOuterHardsuitSpatio" Caption="Защита от вакуума"/>
+</GuideEntityCards>
 
 ## Пробитие
-Для защитного коэффициента c между 0 и 1 и пробития p игра использует c^(1−p). Положительное плоское уменьшение умножается на (1−p). При 50% пробития коэффициент 0,6 становится примерно 0,775: из 30 остаётся 23,24. Отрицательное пробитие усиливает защиту: p = −50% даёт примерно 13,94 урона. Коэффициенты уязвимости выше 1 частичное пробитие не меняет.
+Для защитного коэффициента c между 0 и 1 и пробития p игра использует c^(1−p). Положительное плоское уменьшение умножается на (1−p). При [color=#73BFD3]50%[/color] пробития коэффициент 0,6 становится примерно 0,775: из 30 остаётся 23,24. Отрицательное пробитие усиливает защиту: p = −[color=#73BFD3]50%[/color] даёт примерно 13,94 урона. Коэффициенты уязвимости выше [color=#73BFD3]1 час[/color]тичное пробитие не меняет.
 
-При пробитии от 100% обычные модификаторы брони снимаются. «Игнорирование сопротивлений» также пропускает обычный расчёт сопротивлений. **Эти свойства сами по себе не обходят вставную пластину:** она проверяется раньше и не использует процент пробития. Некоторые сопротивления специально защищены от изменения пробитием.
+При пробитии от [color=#73BFD3]100%[/color] обычные модификаторы брони снимаются. **«Игнорирование сопротивлений»** также пропускает обычный расчёт сопротивлений. **Эти свойства сами по себе не обходят вставную пластину:** она проверяется раньше и не использует процент пробития. Некоторые сопротивления специально защищены от изменения пробитием.
 
 ## Слои и части тела
-Расчёт проверяет надетые предметы во всех участвующих слотах, кроме карманов. Лежащий в рюкзаке бронежилет защиты не даёт. Без плоских уменьшений коэффициенты разных предметов перемножаются: 40% и 20% защиты дают 52%, а не 60%. При плоских уменьшениях каждый предмет обрабатывается последовательно.
+Расчёт проверяет надетые предметы во всех участвующих слотах, кроме карманов. Лежащий в рюкзаке бронежилет защиты не даёт. Без плоских уменьшений коэффициенты разных предметов перемножаются: [color=#73BFD3]40%[/color] и [color=#73BFD3]20%[/color] защиты дают [color=#73BFD3]52%[/color], а не 60%. При плоских уменьшениях каждый предмет обрабатывается последовательно.
 
-**Здесь нет таблицы бронеклассов отдельных конечностей.** Наведение и повреждение частей тела существуют, но обычный обработчик брони не сверяет покрытие предмета с выбранной частью: шлем и костюм участвуют через инвентарь, а урон конечности также получает его модификаторы. Нельзя считать непокрытую руку гарантированным обходом брони. Состояние и множители частей тела дополнительно меняют результат.
+<GuideNote Tone="warning" Text="[bold]Здесь нет таблицы бронеклассов отдельных конечностей.[/bold] Наведение и повреждение частей тела существуют, но обычный обработчик брони не сверяет покрытие предмета с выбранной частью: шлем и костюм участвуют через инвентарь, а урон конечности также получает его модификаторы. Нельзя считать непокрытую руку гарантированным обходом брони. Состояние и множители частей тела дополнительно меняют результат."/>
 
-## Энергетический щит
-Встроенный персональный щит — отдельный перехватчик удара с зарядом, питанием, временем развёртывания и восстановлением. Он должен быть включён на надетом предмете и работать в требуемом слоте. Активный щит отменяет перехваченный удар целиком, расходуя заряд; пробивающий заряд удар также отменяется, после чего щит уходит на восстановление. Обычный процент пробития брони сам по себе не отключает щит. Специальное свойство разрушения щита принудительно обнуляет его заряд.
+## Встроенное силовое поле скафандра
 
-После разрушения предусмотрено автоматическое повторное включение по завершении задержки, если этому не мешают состояние предмета и питание. Проверяйте индикатор: наличие щитового костюма не означает, что щит сейчас развёрнут. У ряда таких костюмов вместо пластин стоит щит и вставить пластину нельзя.
+Некоторые скафандры имеют включаемый **персональный щит**. **Наденьте** костюм и включите поле действием на панели; дождитесь полного развёртывания. Во время развёртывания щит ещё не перехватывает удары. Осмотр показывает, поднято ли поле, его остаток или задержку после разрушения. Снятие костюма выключает поле.
+
+<GuideNote Tone="warning" Text="[bold]Запас поля и энергия батареи — разные величины.[/bold] Попадания расходуют запас поля; включённое поле восстанавливает его с указанной скоростью и одновременно тратит энергию батареи. При выключенном поле его запас не восстанавливается по обычной скорости регенерации. Самозаряд батареи, если предусмотрен моделью, работает отдельно: он может быть слабее расхода включённого поля."/>
+
+В [каталоге брони](guide://ColossusCatalogueArmor) у таких костюмов есть отдельный блок щита. **Расход заряда ×0,5** означает, что перехваченные 20 единиц этого урона снимут 10 единиц запаса; **×1,5** — снимут 30. Это коэффициент расхода щита, а не процент защиты тела. *Если есть плоское уменьшение,* оно вычитается перед умножением. Для типов урона без особого коэффициента расход равен ×1. Отдельный удар, для которого итоговый расход равен нулю, поле не перехватывает.
+
+Пока развёрнутое поле имеет запас, **перехваченный удар отменяется целиком**. Даже удар, обнуливший запас, не передаёт свой остаток телу: после него поле разрушается, и следующие попадания приходятся на обычную защиту. Процент пробития брони сам по себе не отключает поле; специальные боеприпасы могут принудительно разрушать его.
+
+После разрушения проходят **распад поля → задержка восстановления → новое развёртывание**. Система пытается включить щит автоматически; костюм должен оставаться надетым, а питания должно хватать. Показанная задержка не включает время распада и нового развёртывания — в каталоге они указаны отдельно. *Если поле не поднялось,* проверьте осмотр, питание и повторно включите его действием.
+
+Многие щитовые скафандры **не имеют держателя бронеплит**, а их хранилище запрещает вставлять плиты. Наличие щита само по себе не доказывает запрет для любой модели: смотрите строку совместимости конкретного костюма. Щит не превращается в расходную плиту и не требует замены предмета после каждого разрушения. Выключенное поле не добавляет защиты; собственная броня скафандра продолжает работать отдельно.
 
 ## Защита от среды
 Термическая броня уменьшает урон типа Heat; теплоизоляция замедляет нагрев и охлаждение тела. Защита от давления меняет расчёт баротравмы; это не процент защиты от пуль или огня. Для выхода в космос нужен полный комплект с подходящим шлемом и дыханием: баллон, маска или интерфейс скафандра и включённая подача. Радиационная и кислотная защита также отдельны; фильтр воздуха не заменяет защиту от внешнего излучения.
@@ -2246,25 +2225,29 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Combat/ArmorPlates.xml -->
 # Вставные бронепластины
-Пластина работает в надетом предмете с держателем пластин. Откройте его хранилище и вставьте пластину; первая становится активной. Другие внутри не складывают защиту с активной. После её извлечения активной становится следующая подходящая пластина. Осмотр показывает выбранную пластину и остаточную прочность.
+Пластина работает в надетом предмете с держателем пластин. **Откройте** его хранилище и вставьте пластину; первая становится активной. Другие внутри не складывают защиту с активной. После её извлечения активной становится следующая подходящая пластина. Осмотр показывает выбранную пластину и остаточную прочность.
 
-**Поглощение и износ — разные значения.** Пластина может не защищать от данного урона, но всё равно терять от него прочность. Процент поглощения не падает вместе с прочностью. При достижении порога пластина разрушается; при обработке удара поглощение рассчитывается до нанесения износа пластине.
+<GuideNote Tone="warning" Text="[bold]Поглощение и износ — разные значения.[/bold] Пластина может не защищать от данного урона, но всё равно терять от него прочность. Процент поглощения не падает вместе с прочностью. При достижении порога пластина разрушается; при обработке удара поглощение рассчитывается до нанесения износа пластине."/>
 
-В сравнении «износ ×1,5» означает, что 20 единиц этого входящего урона снимают 30 прочности. Скорость указана как доля скорости без пластины: ходьба/бег. Она умножается на замедление костюма.
+В сравнении **«износ ×1,5»** означает, что 20 единиц этого входящего урона снимают 30 прочности. Скорость указана как доля скорости без пластины: ходьба/бег. Она умножается на замедление костюма.
 [Каталог брони](guide://ColossusCatalogueArmor).
 
 ## Как выбрать
 Баллистическая пластина полностью перехватывает колющий компонент, но термический удар портит её в полтора раза быстрее без поглощения. Диффузионная полностью перехватывает термический компонент, наполовину радиационный и электрический; колющий удар быстро разрушает её. Травматическая хороша против дробящих и режущих ударов, но пули и нагрев также расходуют её прочность.
 
-Скоростная пластина повышает ходьбу и бег на 10%, одновременно усиливает дробящий, режущий, колющий и термический урон на 10%. Она расходует выносливость от исходного урона. Обычная защитная пластина переводит половину поглощённого урона в урон выносливости.
+Скоростная пластина повышает ходьбу и бег на [color=#73BFD3]10%[/color], одновременно усиливает дробящий, режущий, колющий и термический урон на [color=#73BFD3]10%[/color]. Она расходует выносливость от исходного урона. Обычная защитная пластина переводит половину поглощённого урона в урон выносливости.
 
 Пример: 30 колющего урона по свежей баллистической пластине снимают 30 её прочности, наносят 15 урона выносливости и не доходят до обычной брони. Высокое пробитие патрона это поглощение не отменяет. Смешанный удар может оставить неперехваченные типы урона.
 
 ## Замена и ремонт
-Держите запас отдельно от активного держателя. Коробка для хранения пластин сама по себе не становится бронёй. Для ремонта уцелевшей обычной пластины используйте инструмент с качеством нанесения материала, например показанный ниже. Базовый рецепт требует 10 единиц топлива инструмента и 7 секунд работы. Обычная сварка нужного качества не даёт. Разрушенную пластину заменяйте.
+Держите запас отдельно от активного держателя. Коробка для хранения пластин сама по себе не становится бронёй. Для ремонта уцелевшей обычной пластины используйте инструмент с качеством нанесения материала, например показанный ниже. Базовый рецепт требует 10 единиц топлива инструмента и [color=#73BFD3]7 секунд[/color] работы. Обычная сварка нужного качества не даёт. Разрушенную пластину заменяйте.
 <GuideEntityEmbed Entity="NaniteApplicator"/>
 
 Плита перехватывает попадания и взрывы до расчёта защиты костюма.
+
+## Скафандры с силовым полем
+
+У щитовой модели может отсутствовать держатель бронеплит и быть запрещено помещение плиты в хранилище. Поле имеет собственный запас, регенерацию, питание и задержку после разрушения; оно восстанавливается без установки новой плиты. Проверяйте совместимость в [каталоге брони](guide://ColossusCatalogueArmor), а управление и расход — в [руководстве по силовым полям](guide://ArmorExplanation).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Combat/Index.xml -->
@@ -2292,6 +2275,11 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 В [каталоге боеприпасов](guide://ColossusCatalogueAmmo) выберите калибр над поиском. В описании указаны **прямой урон по типам**, **бронепробитие** и особые свойства. Прямой урон — значение до защиты цели; его нельзя считать гарантированной потерей здоровья через скафандр.
 
+<GuideEntityCards>
+<GuideTexture Entity="Magazine9x19mmSubMachineGunFMJ" Caption="Тип боеприпаса"/>
+<GuideTexture Entity="Magazine762x39mmLowCapacityPractice" Caption="Калибр и совместимость"/>
+</GuideEntityCards>
+
 **FMJ** — обычный оболочечный патрон, удобный для сравнения базового урона. **AP** — бронебойный вариант: сравнивайте пробитие вместе с уроном, а не только название. Другие варианты могут менять тип урона, число снарядов или давать дополнительный эффект — это указано в их описании.
 
 ## Дробь и одиночная пуля
@@ -2307,10 +2295,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 # Мониторинг и управление устройствами
   Для наблюдения за атмосферой и управления оборудованием есть три системы. Выбирайте по задаче: параметры воздуха в комнате, общие тревоги или состояние трубосетей.
 
-  <Box>
-    <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
-    <GuideEntityEmbed Entity="AirSensor" Caption=""/>
-  </Box>
+  <GuideEntityCards><GuideTexture Entity="AirAlarm" Caption=""/>
+    <GuideTexture Entity="AirSensor" Caption=""/>
+  </GuideEntityCards>
   <Box>
     [Воздушные сигнализации](guide://AirAlarms)
   </Box>
@@ -2328,10 +2315,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
     [color=#999999]*Обзор тревог по станции*[/color]
   </Box>
 
-  <Box>
-    <GuideEntityEmbed Entity="ComputerAtmosMonitoring" Caption=""/>
-    <GuideEntityEmbed Entity="GasPipeSensor" Caption=""/>
-  </Box>
+  <GuideEntityCards><GuideTexture Entity="ComputerAtmosMonitoring" Powered="true" Caption=""/>
+    <GuideTexture Entity="GasPipeSensor" Caption=""/>
+  </GuideEntityCards>
   <Box>
     [Монитор атмосферных сетей](guide://AtmosphericNetworkMonitor)
   </Box>
@@ -2342,15 +2328,15 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasBZ.xml -->
 # BZ
-**Реагенты:** плазма и оксид азота. **Температура:** не выше **313,149 K (около 40 °C)**. В реакторе должно оставаться хотя бы **10 моль каждого реагента**.
+**Реагенты:** плазма и оксид азота. **Температура:** не выше **313,149 K (около 40 °C)**. В реакционной смеси должно оставаться хотя бы [color=#73BFD3]**10 моль каждого реагента**[/color].
 
 <GuideGasCircuit Inputs="Плазма + оксид азота" Mixer="Начальная смесь 1:1; например, по 100 моль" Chamber="Охлаждаемая трубная петля: 293 K, потолок 313,149 K" Product="BZ — в баллон; оставшиеся реагенты — в петлю с подпиткой"/>
 
-1. Подайте **по 100 моль** плазмы и оксида азота. Для начала установите смеситель на **50% / 50%**.
+1. **Подайте** **по 100 моль** плазмы и оксида азота. Для начала установите смеситель на [color=#73BFD3]**50% / 50%**[/color].
 2. Удерживайте температуру ниже 313,149 K и отбирайте BZ фильтром. Реакция выделяет тепло, поэтому охладитель нужен и после запуска.
-3. Подпитывайте контур: реакция останавливается, когда любого из реагентов становится меньше **10 моль**.
+3. Подпитывайте контур: реакция останавливается, когда любого из реагентов становится меньше [color=#73BFD3]**10 моль**[/color].
 
-Без побочного распада расход составляет **0,8 моль плазмы + 0,4 моль оксида азота на 1 моль BZ**. Скорость зависит от объёма и давления: большой объём и меньшее давление ускоряют реакцию. Если плазмы больше **75%** исходных реагентов, часть оксида азота разлагается на азот и кислород, снижая выход BZ.
+Без побочного распада расход составляет [color=#73BFD3]**0,8 моль плазмы + 0,4 моль оксида азота на 1 моль BZ**[/color]. Скорость зависит от объёма и давления: большой объём и меньшее давление ускоряют реакцию. Если плазмы больше [color=#73BFD3]**75%**[/color] исходных реагентов, часть оксида азота разлагается на азот и кислород, снижая выход BZ.
 
 [Получение оксида азота](guide://ColossusAtmos) · [Хилиум](guide://ColossusGasHealium) · [Нитриум](guide://ColossusGasNitrium)
 <!-- /article -->
@@ -2361,15 +2347,15 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 <GuideGasCircuit Inputs="Кислород + тритий + азот" Mixer="Кислород / тритий 8:1; азот добавляется в петлю отдельно" Chamber="Охладитель: 73,15 K" Product="Фрезон — в баллон; азот и остатки реагентов — обратно в охладитель"/>
 
-1. Закачайте в охлаждаемую петлю **80 моль кислорода + 10 моль трития + 8 моль азота**.
+1. Закачайте в охлаждаемую петлю [color=#73BFD3]**80 моль кислорода + 10 моль трития + 8 моль азота**[/color].
 2. Охладите до **73,15 K**. Фильтруйте продукт, возвращая реагенты в контур.
 3. При подпитке сохраняйте кислород / тритий **8:1**. При 73,15 K азота нужно не меньше одной десятой количества кислорода, участвующего в расчёте реакции.
 
-При 73,15 K из **8 моль кислорода + 1 моль трития** получаются **9 моль фрезона**. За один расчёт перерабатывается 1/50 доступной порции; превращение идёт постепенно. Ниже этой температуры выход уменьшается и образуется больше азота, выше — производство останавливается.
+При 73,15 K из [color=#73BFD3]**8 моль кислорода + 1 моль трития**[/color] получаются [color=#73BFD3]**9 моль фрезона**[/color]. За один расчёт перерабатывается 1/50 доступной порции; превращение идёт постепенно. Ниже этой температуры выход уменьшается и образуется больше азота, выше — производство останавливается.
 
 [Тритий](guide://ColossusGasTritium) · [Хилиум](guide://ColossusGasHealium) · [Цены](guide://ColossusCataloguePrices)
 
-**Охлаждающая реакция:** фрезон с азотом выше **23,15 K** также превращается в оксид азота и охлаждает смесь. Отбирайте фрезон сразу; выход **9 моль** выше описывает основную реакцию до этих потерь.
+**Охлаждающая реакция:** фрезон с азотом выше **23,15 K** также превращается в оксид азота и охлаждает смесь. Отбирайте фрезон сразу; выход [color=#73BFD3]**9 моль**[/color] выше описывает основную реакцию до этих потерь.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasHealium.xml -->
@@ -2380,11 +2366,11 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 Для режима ниже 41 K нужен **Hellfire-морозильник** или иной источник глубокого холода: обычный морозильник ограничен **[protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="MinTemperature"/] K**.
 
-1. Закачайте **10 моль BZ + 110 моль фрезона**. Для запуска в смеси должно быть хотя бы **по 5 моль** BZ и фрезона.
+1. Закачайте [color=#73BFD3]**10 моль BZ + 110 моль фрезона**[/color]. Для запуска в смеси должно быть хотя бы **по 5 моль** BZ и фрезона.
 2. Охладите смесь и поддерживайте температуру при работе: реакция выделяет тепло.
 3. Фильтруйте хилиум, подпитывая оба реагента в отношении **1:11**.
 
-Выход на 1 моль BZ и 11 моль фрезона: **12 × 23,15 / T** моль хилиума, где T — температура в кельвинах. При **73,15 K** это около **3,80 моль**, при **23,15 K** — **12 моль**. Более низкая температура ещё увеличивает выход; доступный холод зависит от вашей установки. Выше **293,15 K** реакции нет.
+Выход на [color=#73BFD3]1 моль[/color] BZ и [color=#73BFD3]11 моль[/color] фрезона: **12 × 23,15 / T** моль хилиума, где T — температура в кельвинах. При **73,15 K** это около [color=#73BFD3]**3,80 моль**[/color], при **23,15 K** — [color=#73BFD3]**12 моль**[/color]. Более низкая температура ещё увеличивает выход; доступный холод зависит от вашей установки. Выше **293,15 K** реакции нет.
 
 [Фрезон](guide://ColossusGasFrezon) · [BZ](guide://ColossusGasBZ) · [Цены](guide://ColossusCataloguePrices)
 <!-- /article -->
@@ -2394,10 +2380,10 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 Астероиды в секторе Фронтира — надёжный источник больших объёмов обычно газообразных элементов в виде [color=gold]затвердевших залежей[/color].
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="GasDepositOxygen" Caption="залежи кислорода"/>
-<GuideEntityEmbed Entity="GasDepositNitrogen" Caption="залежи азота"/>
-<GuideEntityEmbed Entity="GasDepositPlasma" Caption="залежи плазмы"/>
-<GuideEntityEmbed Entity="GasDepositCarbonDioxide" Caption="залежи углекислого газа"/>
+<GuideTexture Entity="GasDepositOxygen" Caption="залежи кислорода"/>
+<GuideTexture Entity="GasDepositNitrogen" Caption="залежи азота"/>
+<GuideTexture Entity="GasDepositPlasma" Caption="залежи плазмы"/>
+<GuideTexture Entity="GasDepositCarbonDioxide" Caption="залежи углекислого газа"/>
 </GuideEntityCards>
 
 Атмосферные шаттлы, например, [color=yellow]Gasbender[/color] и [color=yellow]Ambition[/color], оснащены всем необходимым для добычи этих ресурсов. При покупке шаттла ищите категорию [color=cyan]Атмосфера[/color] в [color=steelblue]консоли верфи[/color].
@@ -2413,21 +2399,21 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 - Сканер газовых месторождений (опционально)
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="GasMiningDrill"/>
-<GuideEntityEmbed Entity="GaslockFrame"/>
-<GuideEntityEmbed Entity="PortableGeneratorJrPacman" Caption="источник питания"/>
-<GuideEntityEmbed Entity="GasDepositLocator"/>
+<GuideTexture Entity="GasMiningDrill" Caption="auto"/>
+<GuideTexture Entity="GaslockFrame" Caption="auto"/>
+<GuideTexture Entity="PortableGeneratorJrPacman" Caption="источник питания"/>
+<GuideTexture Entity="GasDepositLocator" Caption="auto"/>
 </GuideEntityCards>
 
 ## Процедура добычи
 
 Стандартная процедура бурения газа:
 
-1. Найдите астероид с [color=lightpink]газовыми месторождениями[/color]. [color=lightgreen]Сканер месторождений[/color] поможет их обнаружить — он издаёт сигнал при приближении. Сканер можно напечатать на [color=orange]инженерном ТехФабе[/color].
+1. **Найдите** астероид с [color=lightpink]газовыми месторождениями[/color]. [color=lightgreen]Сканер месторождений[/color] поможет их обнаружить — он издаёт сигнал при приближении. Сканер можно напечатать на [color=orange]инженерном ТехФабе[/color].
 
 2. Разработайте часть астероида и ищите [color=lightpink]облака твёрдых элементов[/color].
 
-3. Закрепите [color=khaki]бур для добычи газа[/color] на [color=lightpink]месторождении[/color].
+3. **Закрепите** [color=khaki]бур для добычи газа[/color] на [color=lightpink]месторождении[/color].
 
 4. Проложите [color=dodgerblue]трубы[/color] от бура к ближайшему краю астероида.
 
@@ -2435,21 +2421,21 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 6. Важно: фильтры, миксеры, скрубберы и вентиляция [color=tomato]**могут не работать**[/color] на астероиде. Для эффективной переработки настройте **фильтрацию, обработку и хранение газа прямо на шаттле**.
 
-7. Закрепите [color=mediumspringgreen]портативный газовый шлюз[/color] на краю астероида. **Красный выходной порт** с огнями должен быть направлен **наружу**, в сторону космоса.
+7. **Закрепите** [color=mediumspringgreen]портативный газовый шлюз[/color] на краю астероида. **Красный выходной порт** с огнями должен быть направлен **наружу**, в сторону космоса.
 
 8. Через консоль шаттла состыкуйте [color=cyan]газовый шлюз шаттла[/color] с [color=mediumspringgreen]портативным газовым шлюзом[/color].
 
-9. Установите [color=orange]портативный генератор[/color] на астероиде, включите его и подключите [color=limegreen]кабели[/color], чтобы питать и [color=khaki]бур[/color], и [color=mediumspringgreen]газовый шлюз[/color].
+9. **Установите** [color=orange]портативный генератор[/color] на астероиде, включите его и подключите [color=limegreen]кабели[/color], чтобы питать и [color=khaki]бур[/color], и [color=mediumspringgreen]газовый шлюз[/color].
 
-10. Установите целевое давление на [color=khaki]буре[/color].
+10. **Установите** целевое давление на [color=khaki]буре[/color].
 
-11. Установите давление и направление на обоих шлюзах: [color=mediumspringgreen]портативном[/color] и [color=cyan]шаттла[/color].
+11. **Установите** давление и направление на обоих шлюзах: [color=mediumspringgreen]портативном[/color] и [color=cyan]шаттла[/color].
 
 12. Учтите, что [color=mediumspringgreen]газовые шлюзы[/color] **двунаправленные**, и направление движения огней показывает, куда пойдёт газ. **Оба должны быть направлены в одну сторону для перекачки газа.**
 
-13. Ждите, пока [color=lightpink]месторождение[/color] не истощится — индикатор на буре загорится [color=yellow]жёлтым[/color], когда газа мало, и [color=red]красным[/color], когда пусто. Если найдёте другие месторождения на том же астероиде, **выгодно качать несколько одновременно!**
+13. Ждите, пока [color=lightpink]месторождение[/color] не истощится — индикатор на буре загорится [color=yellow]жёлтым[/color], когда газа мало, и [color=red]красным[/color], когда пусто. *Если найдёте другие месторождения на том же астероиде,* **выгодно качать несколько одновременно!**
 
-14. Если бур светится [color=orange]оранжевым[/color], сеть труб забита. Проверьте давление и направление помп!
+14. Если бур светится [color=orange]оранжевым[/color], сеть труб забита. **Проверьте** давление и направление помп!
 
 ## Фильтрация и обработка газа
 
@@ -2475,11 +2461,11 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 Для нагрева до 1500 K используйте **Hellfire-нагреватель** или другой подходящий горячий контур. Обычный нагреватель ограничен **[protodata="GasThermoMachineHeater" comp="GasThermoMachine" member="MaxTemperature"/] K**.
 
-1. Подайте **100 моль азота + 100 моль трития + 10 моль BZ**. Для запуска нужны минимум **20 моль азота, 20 моль трития и 5 моль BZ** в смеси.
+1. **Подайте** [color=#73BFD3]**100 моль азота + 100 моль трития + 10 моль BZ**[/color]. Для запуска нужны минимум [color=#73BFD3]**20 моль азота, 20 моль трития и 5 моль BZ**[/color] в смеси.
 2. Нагрейте до **1500 K** и включите непрерывную подпитку BZ. Ниже минимальной закладки реакция остановится, даже если остальные реагенты ещё есть.
 3. Отбирайте нитриум фильтром. Синтез расходует тепло: на каждый произведённый моль смесь теряет **100 кДж**, нагреватель должен это компенсировать.
 
-Расход на **1 моль нитриума**: **1 моль азота + 1 моль трития + 0,05 моль BZ**. Температурный множитель скорости — **T / 2984**: при 1500 K это около 0,503, при 2984 K — 1, пока хватает реагентов.
+Расход на [color=#73BFD3]**1 моль нитриума**[/color]: [color=#73BFD3]**1 моль азота + 1 моль трития + 0,05 моль BZ**[/color]. Температурный множитель скорости — **T / 2984**: при 1500 K это около 0,503, при 2984 K — 1, пока хватает реагентов.
 
 Не добавляйте кислород в выходной контур. При температуре **до 343,15 K (70 °C)** нитриум с кислородом разлагается на азот и пар; кислород при этом служит условием реакции и не расходуется.
 
@@ -2492,26 +2478,26 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 <GuideGasCircuit Inputs="CO2 + кислород + тритий" Mixer="По молям 100:50:1; сначала CO2 / O2 2:1, затем малая подача трития" Chamber="Охлаждаемая петля в диапазоне 50–273,15 K" Product="Плюоксий — в баллон; пар — в отдельный отвод; остатки реагентов — обратно"/>
 
-1. Закачайте **100 моль CO2 + 50 моль кислорода + 1 моль трития**.
+1. Закачайте [color=#73BFD3]**100 моль CO2 + 50 моль кислорода + 1 моль трития**[/color].
 2. Охладите смесь до диапазона **50–273,15 K**; для начала достаточно **250 K**.
 3. Отфильтруйте плюоксий и образующийся пар. Поддерживайте охлаждение: реакция выделяет тепло.
 
-Из **1 моль CO2 + 0,5 моль кислорода + 0,01 моль трития** получаются **1 моль плюоксия + 0,01 моль пара**. За один расчёт реакции производится не больше **5 моль плюоксия**.
+Из [color=#73BFD3]**1 моль CO2 + 0,5 моль кислорода + 0,01 моль трития**[/color] получаются [color=#73BFD3]**1 моль плюоксия + 0,01 моль пара**[/color]. За один расчёт реакции производится не больше **5 моль плюоксия**.
 
-[Сборка контура](guide://ColossusAtmos) · [Применение в ТЭГ](guide://ColossusPower) · [Цены](guide://ColossusCataloguePrices)
+[Сборка контура](guide://ColossusAtmos) · [Применение в ТЭГ](guide://ColossusTEG) · [Цены](guide://ColossusCataloguePrices)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/GasTritium.xml -->
 # Тритий
-**Реагенты:** кислород и плазма. **Смесь:** не меньше 30 моль кислорода на 1 моль плазмы.
+**Реагенты:** кислород и плазма. **Смесь:** не меньше [color=#73BFD3]30 моль[/color] кислорода на [color=#73BFD3]1 моль[/color] плазмы.
 
 <GuideGasCircuit Inputs="Кислород + плазма" Mixer="96,77% кислорода / 3,23% плазмы при одинаковой температуре" Chamber="Камера горения: выше 373,15 K; полный температурный коэффициент при 700 K" Product="Тритий — в охлаждаемый выход; кислород и остатки плазмы — обратно"/>
 
-1. Подайте пробную смесь **300 моль кислорода + 10 моль плазмы** и нагрейте выше **373,15 K (100 °C)**.
+1. **Подайте** пробную смесь [color=#73BFD3]**300 моль кислорода + 10 моль плазмы**[/color] и нагрейте выше **373,15 K (100 °C)**.
 2. Отбирайте тритий фильтром, подпитывайте кислородом и ограничивайте плазму. Отношение 30:1 нужно сохранять во время работы: кислород расходуется при горении.
 3. Охладите отобранный продукт. В присутствии кислорода тритий сам начинает гореть от **700 K (426,85 °C)**.
 
-При отношении кислород / плазма **30 и выше** каждый расходуемый моль плазмы даёт 1 моль трития. Между **10 и 30** часть плазмы превращается в CO2; при **10 и ниже** тритий не производится.
+При отношении кислород / плазма **30 и выше** каждый расходуемый моль плазмы даёт [color=#73BFD3]1 моль[/color] трития. Между **10 и 30** часть плазмы превращается в CO2; при **10 и ниже** тритий не производится.
 
 [Сборка контура](guide://ColossusAtmos) · [Фрезон](guide://ColossusGasFrezon) · [Нитриум](guide://ColossusGasNitrium)
 <!-- /article -->
@@ -2519,9 +2505,9 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/Index.xml -->
 # Атмос: смеси и синтез газа
 ## Собрать установку
-1. Закрепите баллоны на портах. Входы смесителя подключите к исходным газам; за выходом поставьте насос и реакционный контур с нагревателем или охладителем.
+1. **Закрепите** баллоны на портах. Входы смесителя подключите к исходным газам; за выходом поставьте насос и реакционный контур с нагревателем или охладителем.
 2. Фильтр после реактора отправляет готовый газ в отдельный баллон. Остаток возвращайте в контур, подпитку подавайте через смеситель.
-3. Газоанализатором проверяйте **моли, состав, температуру и давление** на входе в реактор. Если условие реакции задано в молях, одного нужного процента в почти пустой трубе недостаточно.
+3. Газоанализатором проверяйте **моли, состав, температуру и давление** на входе в реактор. *Если условие реакции задано в молях,* одного нужного процента в почти пустой трубе недостаточно.
 
 <GuideGasCircuit Inputs="Баллоны с реагентами на портах" Mixer="Доли реагентов; насос направлен в реактор" Chamber="Трубная петля с нагревателем или охладителем" Product="Продукт — в приёмный баллон; непрореагировавшая смесь — обратно в петлю"/>
 
@@ -2530,7 +2516,7 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Выбрать термомашину
 Обычный нагреватель работает до **[protodata="GasThermoMachineHeater" comp="GasThermoMachine" member="MaxTemperature"/] K**, морозильник — до **[protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="MinTemperature"/] K**.
 
-Для нитриума нужен более горячий источник: Hellfire-нагреватель достигает **[protodata="GasThermoMachineHellfireHeater" comp="GasThermoMachine" member="MaxTemperature"/] K**. Для глубокого охлаждения хилиума подходит Hellfire-морозильник с пределом **[protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="MinTemperature"/] K**. Эти пределы подставляются из текущих прототипов.
+Для нитриума нужен более горячий источник: Hellfire-нагреватель достигает **[protodata="GasThermoMachineHellfireHeater" comp="GasThermoMachine" member="MaxTemperature"/] K**. Для глубокого охлаждения хилиума подходит Hellfire-морозильник с пределом **[protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="MinTemperature"/] K**.
 
 [Сборка и режимы термомашин](guide://Thermomachines) · [Исследования оборудования](guide://IndustryResearch).
 
@@ -2545,13 +2531,15 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 </GuideTable>
 
 ## Остальные газы
-**Оксид азота:** смешайте аммиак и кислород **1:1**, нагрейте выше **323,149 K (50 °C)**. Из 2 моль каждого реагента получаются **1 моль оксида азота + 3 моль пара**. Фильтруйте оба продукта; при **850 K** оксид азота начинает разлагаться. Аммиак и оксид азота есть в соответствующих грузовых баллонах.
+**Оксид азота:** смешайте аммиак и кислород **1:1**, нагрейте выше **323,149 K (50 °C)**. Из [color=#73BFD3]2 моль[/color] каждого реагента получаются [color=#73BFD3]**1 моль оксида азота + 3 моль пара**[/color]. Фильтруйте оба продукта; при **850 K** оксид азота начинает разлагаться. Аммиак и оксид азота есть в соответствующих грузовых баллонах.
 
 **Углекислый газ:** образуется при горении плазмы с отношением кислород / плазма **10 и ниже**; при 30 и выше продуктом становится тритий. **Пар** также получается при горении трития с кислородом от **700 K**.
 
 Кислород, азот и плазму получают [газовыми бурами и газодобытчиками](guide://GasMining). Миазмы образуются при разложении тел; отдельного рецепта смешивания для них нет.
 
 [Насосы](guide://Pumps) · [Смеситель и фильтр](guide://MixingAndFiltering) · [Охлаждение и нагрев](guide://Thermomachines) · [Цены](guide://ColossusCataloguePrices)
+
+[Добыча газа на астероидах](guide://GasMining).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Atmos/NetworkMonitor.xml -->
@@ -2601,17 +2589,17 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 # Регулятор входного давления
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="GasPressureRegulator"/>
+<GuideTexture Entity="GasPressureRegulator" Caption="auto"/>
 </GuideEntityCards>
 
 Пассивно пропускает газ из входной [трубосети](guide://PipeNetworks) в выходную, когда давление на входе выше заданного порога. При снижении давления до порога поток прекращается. Электропитание не требуется.
 
 ## Настройка
 - Соедините вход с сетью, давление которой хотите поддерживать, а выход — с сетью, принимающей лишний газ.
-- Откройте интерфейс и выставьте порог давления.
-- Проверьте входное и выходное давление и фактический расход газа.
+- **Откройте** интерфейс и выставьте порог давления.
+- **Проверьте** входное и выходное давление и фактический расход газа.
 
-Максимальный расход: [color=#a4885c][protodata="GasPressureRegulator" comp="GasPressureRegulator" member="MaxTransferRate"/] л/с[/color]. Если на выходе давление слишком высокое, регулятор не сможет отвести газ как обычный насос.
+Максимальный расход: [color=#a4885c][protodata="GasPressureRegulator" comp="GasPressureRegulator" member="MaxTransferRate"/] л/с[/color]. *Если на выходе давление слишком высокое,* регулятор не сможет отвести газ как обычный насос.
 
 Такой регулятор полезен для отвода избытка газа из камеры сгорания или контура [ТЭГ](guide://TEG). Он контролирует **давление на входе**, а не поддерживает заданное давление на выходе.
 
@@ -2630,13 +2618,13 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 
 
 ## Что производить
-**Фрезон — 10 кр./моль.** При максимальном выходе 8 моль кислорода и 1 моль трития дают 9 моль фрезона: продукт **90 кр.**, реагенты по базовой оценке **7,04 кр.** Разница по основным реагентам **82,96 кр.**; охлаждающая реакция фрезона с азотом уменьшает фактический выход.
+**Фрезон — 10 кр./моль.** При максимальном выходе [color=#73BFD3]8 моль[/color] кислорода и [color=#73BFD3]1 моль[/color] трития дают [color=#73BFD3]9 моль[/color] фрезона: продукт **90 кр.**, реагенты по базовой оценке **7,04 кр.** Разница по основным реагентам **82,96 кр.**; охлаждающая реакция фрезона с азотом уменьшает фактический выход.
 
-**Нитриум — 45 кр./моль:** основные реагенты на 1 моль стоят **6,73 кр.**; разница **38,27 кр.** до затрат на нагрев.
+**Нитриум — 45 кр./моль:** основные реагенты на [color=#73BFD3]1 моль[/color] стоят **6,73 кр.**; разница **38,27 кр.** до затрат на нагрев.
 
-**BZ — 12 кр./моль:** реагенты на 1 моль стоят **1,80 кр.**, разница **10,20 кр.**; скорость ограничена объёмом и давлением реактора.
+**BZ — 12 кр./моль:** реагенты на [color=#73BFD3]1 моль[/color] стоят **1,80 кр.**, разница **10,20 кр.**; скорость ограничена объёмом и давлением реактора.
 
-**Хилиум — 18 кр./моль:** 1 моль BZ и 11 моль фрезона стоят **122 кр.** При 73,15 K получится продукта примерно на **68,36 кр.** — это убыток. По стоимости реагентов синтез становится выгодным ниже **41 K**; при 23,15 K продукт стоит **216 кр.** до расходов на охлаждение.
+**Хилиум — 18 кр./моль:** [color=#73BFD3]1 моль[/color] BZ и [color=#73BFD3]11 моль[/color] фрезона стоят **122 кр.** При 73,15 K получится продукта примерно на **68,36 кр.** — это убыток. По стоимости реагентов синтез становится выгодным ниже **41 K**; при 23,15 K продукт стоит **216 кр.** до расходов на охлаждение.
 
 **Тритий — 6 кр./моль**, плазма — **2 кр./моль**. Получение трития требует кислорода и нагрева; удерживайте отношение 30:1, затем отводите продукт. [Схемы и температуры](guide://ColossusAtmos).
 
@@ -2644,31 +2632,22 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Index.xml -->
-# Энергия и атмос
+# Инженерия
 
-## Электроснабжение
-[Реактор и турбина](guide://ShipyardNFROperation) · [Сети питания, ТЭГ и электростанция Эдисона](guide://ColossusPower).
-
-## Газы
-[Атмос: оборудование и рецепты синтеза](guide://ColossusAtmos) · [Цены газов и химикатов](guide://ColossusCataloguePrices).
-
-[Обслуживание и улучшение станков](guide://IndustryMachineParts) · [Производство ММС](guide://MMC)
-
-## Мехи
-[Сборка, питание и обслуживание](guide://MechsBase).
+[Строительство](guide://ColossusBuilding) · [Электроснабжение](guide://ColossusElectricity) · [Атмосфера](guide://ColossusAtmosHub) · [Модернизация станков](guide://IndustryMachineParts).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/Index.xml -->
 # Мехи: сборка и эксплуатация
 
-<GuideEntityCards><GuideEntityEmbed Entity="MechRipley"/><GuideEntityEmbed Entity="MechRipley2"/><GuideEntityEmbed Entity="MechEquipmentGrabber"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MechRipley" Caption="auto"/><GuideTexture Entity="MechRipley2" Caption="auto"/><GuideTexture Entity="MechEquipmentGrabber" Caption="auto"/></GuideEntityCards>
 
-Мех состоит из корпуса, источника питания и сменного оборудования. **Рипли** — грузовой и промышленный мех с открытой кабиной; **Рипли MK-II** имеет герметичную кабину. Боевые S1, S2 и S4 используют другие крепления. Название «пушка для меха» не означает совместимость со всеми корпусами.
+Мех состоит из корпуса, источника питания и сменного оборудования. **Рипли** — грузовой и промышленный мех с открытой кабиной; **Рипли MK-II** имеет герметичную кабину. Боевые S1, S2 и S4 используют другие крепления. Название **«пушка для меха»** не означает совместимость со всеми корпусами.
 
 ## Где изготовить детали
-Для Рипли откройте **«Базовое производство механоидов» за 15 000 ОИ** после «Продвинутых компонентов». Части и гидравлическая клешня печатаются на фабрикаторе экзокостюмов, платы — на принтере схем. Воздушный баллон экзокостюма и двигатель экзокостюма доступны на фабрикаторе без исследования. Материалы загружайте в каждый станок отдельно; изученная технология не передаёт их между машинами.
+Для Рипли откройте **«Базовое производство механоидов» за 15 000 ОИ** после **«Продвинутых компонентов»**. Части и гидравлическая клешня печатаются на фабрикаторе экзокостюмов, платы — на принтере схем. Воздушный баллон экзокостюма и двигатель экзокостюма доступны на фабрикаторе без исследования. Материалы загружайте в каждый станок отдельно; изученная технология не передаёт их между машинами.
 
-**Физические части Gygax, Durand и Broadsword производятся в ММС на precision assembler**, из промышленных компонентов. Обычный фабрикатор экзокостюмов больше не печатает эти комплекты. Платы и оружие по-прежнему зависят от исследований и поддерживаемых рецептов соответствующего станка.
+**Физические части Gygax, Durand и Broadsword производятся в ММС на precision assembler**, из промышленных компонентов. Для плат и оружия нужны исследования и подходящий станок.
 
 У Halberd и серии S4 наличие технологии или диска не гарантирует изготовление каркаса: обычный фабрикатор не поддерживает набор их частей. Сначала найдите реальный источник корпуса; не тратьте ОИ в расчёте получить полный мех из одного исследования.
 
@@ -2677,15 +2656,15 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 ## Собрать Рипли: комплект и порядок
 Подготовьте **каркас Рипли, левую и правую руки, левую и правую ноги**, центральный модуль управления Рипли и модуль управления периферией Рипли. Дополнительно нужны **1 отрезок кабеля, 5 листов стали, 10 металлических стержней, батарея**, гаечный ключ, отвёртка, кусачки и заправленный включённый сварочный аппарат. Голова и модуль наведения обычному Рипли не нужны.
 
-<GuideEntityCards><GuideEntityEmbed Entity="RipleyHarness"/><GuideEntityEmbed Entity="RipleyLArm"/><GuideEntityEmbed Entity="RipleyRArm"/><GuideEntityEmbed Entity="RipleyLLeg"/><GuideEntityEmbed Entity="RipleyRLeg"/><GuideEntityEmbed Entity="RipleyCentralElectronics"/><GuideEntityEmbed Entity="RipleyPeripheralsElectronics"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="RipleyHarness" Caption="auto"/><GuideTexture Entity="RipleyLArm" Caption="auto"/><GuideTexture Entity="RipleyRArm" Caption="auto"/><GuideTexture Entity="RipleyLLeg" Caption="auto"/><GuideTexture Entity="RipleyRLeg" Caption="auto"/><GuideTexture Entity="RipleyCentralElectronics" Caption="auto"/><GuideTexture Entity="RipleyPeripheralsElectronics" Caption="auto"/></GuideEntityCards>
 
-1. Примените четыре конечности к каркасу. После последней детали получится **шасси Рипли**. До этого момента гаечный ключ снимает установленные части: начинать затягивать каркас с неполным комплектом не нужно.
-2. Примените к шасси **гаечный ключ → отвёртку → кабель → кусачки**.
-3. Вставьте **центральный модуль управления**, закрепите отвёрткой. Вставьте **модуль управления периферией**, снова примените отвёртку.
-4. Вставьте батарею и закрепите отвёрткой. На этом этапе строительства нужна именно батарея с признаком силовой ячейки; произвольный предмет с зарядом не заменяет её.
-5. Добавьте **5 листов стали → гаечный ключ → сварку → 10 металлических стержней → сварку**. Последняя сварка завершает мех; вставленная при сборке батарея переносится в готовый корпус.
+1. **Примените** четыре конечности к каркасу. После последней детали получится **шасси Рипли**. До этого момента гаечный ключ снимает установленные части: начинать затягивать каркас с неполным комплектом не нужно.
+2. **Примените** к шасси **гаечный ключ → отвёртку → кабель → кусачки**.
+3. **Вставьте** **центральный модуль управления**, закрепите отвёрткой. **Вставьте** **модуль управления периферией**, снова примените отвёртку.
+4. **Вставьте** батарею и закрепите отвёрткой. На этом этапе строительства нужна именно батарея с признаком силовой ячейки; произвольный предмет с зарядом не заменяет её.
+5. **Добавьте** **5 листов стали → гаечный ключ → сварку → 10 металлических стержней → сварку**. Последняя сварка завершает мех; вставленная при сборке батарея переносится в готовый корпус.
 
-Каждый инструмент применяется отдельным действием. Если шаг не принимается, осмотрите шасси и сверьте следующий этап: повторное применение прошлого инструмента не пропускает недостающую плату или материал.
+Каждый инструмент применяется отдельным действием. *Если шаг не принимается,* осмотрите шасси и сверьте следующий этап: повторное применение прошлого инструмента не пропускает недостающую плату или материал.
 
 ## Герметичный Рипли MK-II
 Каркас MK-II собирается с обычными четырьмя конечностями Рипли и **комплектом для модернизации механоидов**. Электроника та же. До установки пяти листов стали порядок совпадает с обычным Рипли.
@@ -2693,37 +2672,37 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 После стали: **гаечный ключ → сварка → воздушный баллон экзокостюма → гаечный ключ → 10 листов пластали → гаечный ключ → сварка**. Металлические стержни в этом варианте не нужны. MK-II медленнее обычного Рипли, но защищает кабину от окружающей атмосферы.
 
 ## Установить и выбрать оборудование
-Выйдите из меха, возьмите модуль и примените его к корпусу. Обычная установка занимает **5 секунд**, движение её прерывает. Из кабины установить модуль нельзя. Если установка не начинается, проверьте **совместимость**, свободные места и состояние корпуса.
+Выйдите из меха, возьмите модуль и примените его к корпусу. Обычная установка занимает [color=#73BFD3]**5 секунд**[/color], движение её прерывает. Из кабины установить модуль нельзя. *Если установка не начинается,* проверьте **совместимость**, свободные места и состояние корпуса.
 
-Обычный Рипли и MK-II имеют **2 места** для промышленного оборудования. Gygax и Durand принимают боевое оборудование S1. Broadsword — лёгкие крепления; Halberd — средние; Flail и Mace — тяжёлые; Spyglass — лёгкие и РЭБ. Среднее крепление само по себе не принимает лёгкое оружие. Модули опознавания занимают место так же, как другое оборудование.
+Обычный Рипли и MK-II имеют [color=#73BFD3]**2 места**[/color] для промышленного оборудования. Gygax и Durand принимают боевое оборудование S1. Broadsword принимает лёгкие модули; Halberd — лёгкие и средние; Flail и Mace — лёгкие, средние и тяжёлые; Spyglass — лёгкие и РЭБ. Модули опознавания занимают место так же, как другое оборудование.
 
 В контекстном меню пустого меха выберите **«Открыть панель управления»**. Окно показывает **«Целостность»**, **«Энергия»** и **«Доступно слотов»**; кнопка у установленного модуля снимает его. Пилот открывает это же окно действием на панели способностей.
 
 Выбор рабочего инструмента выполняется действием **смены оборудования**. Оно перебирает установленные модули, затем состояние **«Ничего не выбрано»**: в нём боевой клик использует сам корпус. Для клешни выберите её и нажмите на доступный предмет обычным взаимодействием; для оружия используйте боевой режим.
 
 ## Перевозить груз клешнёй
-Гидравлическая клешня вмещает **8 объектов**. Захват одного предмета занимает **2,5 секунды** и расходует **30 единиц энергии**. Предмет должен быть рядом, доступен без препятствия и **откреплён**. Клешня не забирает живых существ, другие мехи, аномалии и настенные конструкции.
+Гидравлическая клешня вмещает **8 объектов**. Захват одного предмета занимает [color=#73BFD3]**2,5 секунды**[/color] и расходует **30 единиц энергии**. Предмет должен быть рядом, доступен без препятствия и **откреплён**. Клешня не забирает живых существ, другие мехи, аномалии и настенные конструкции.
 
 Захваченный груз отображается в панели управления; извлекайте его кнопкой у нужной строки. Освободите место перед мехом: выгрузка не проходит сквозь препятствие. **Перед снятием клешни выгрузите всё содержимое**, иначе модуль останется установленным.
 
 ## Войти, выйти и заменить батарею
-Через контекстное меню выберите **«Войти»** либо перетащите своего персонажа на мех. Обычная посадка занимает **3 секунды** и прерывается движением. Выйти можно действием на панели способностей; внешний персонаж использует **«Извлечь пилота»**, обычно с задержкой 3 секунды. Пилот не получает доступ к инструментам ремонта своего корпуса из кабины.
+Через контекстное меню выберите **«Войти»** либо перетащите своего персонажа на мех. Обычная посадка занимает [color=#73BFD3]**3 секунды**[/color] и прерывается движением. Выйти можно действием на панели способностей; внешний персонаж использует **«Извлечь пилота»**, обычно с задержкой [color=#73BFD3]3 секунды[/color]. Пилот не получает доступ к инструментам ремонта своего корпуса из кабины.
 
-Для замены питания выйдите, **откройте техническую панель отвёрткой**, примените лом к меху и дождитесь извлечения батареи — обычно **2 секунды**. Вставьте заряженную батарею в пустой отсек и закройте панель. Если старая батарея не снята или панель закрыта, новая не установится.
+Для замены питания выйдите, **откройте техническую панель отвёрткой**, примените лом к меху и дождитесь извлечения батареи — обычно [color=#73BFD3]**2 секунды**[/color]. **Вставьте** заряженную батарею в пустой отсек и закройте панель. *Если старая батарея не снята или панель закрыта,* новая не установится.
 
-При заряде **5% и ниже** мех замедляется. Величина штрафа зависит от модели: у Gygax скорость уменьшается вдвое, у Broadsword остаётся 75% обычной скорости. ЭМИ снимает до **половины максимальной ёмкости** установленной батареи; пустой источник не защищает от последующего дефицита энергии.
+При заряде [color=#73BFD3]**5% и ниже**[/color] мех замедляется. Величина штрафа зависит от модели: у Gygax скорость уменьшается вдвое, у Broadsword остаётся [color=#73BFD3]75%[/color] обычной скорости. ЭМИ снимает до **половины максимальной ёмкости** установленной батареи; пустой источник не защищает от последующего дефицита энергии.
 
-**mech fuel cell** хранит **7200 единиц энергии**, восстанавливает **30 единиц в секунду** и начинает восстановление через **30 секунд после расхода**. С нуля до полного заряда нужно около **4 минут восстановления плюс пауза**. Обычные силовые блоки сами не заряжаются: большой запас энергии не означает наличие генератора.
+**mech fuel cell** хранит **7200 единиц энергии**, восстанавливает **30 единиц в секунду** и начинает восстановление через [color=#73BFD3]**30 секунд после расхода**[/color]. С нуля до полного заряда нужно около [color=#73BFD3]**4 минут восстановления плюс пауза**[/color]. Обычные силовые блоки сами не заряжаются: большой запас энергии не означает наличие генератора.
 
 ## Оружие питается от меха
-У нынешних меховых автоматических пушек, пулемётов, дробовиков и ракетных установок боеприпасы создаются из **энергии**, как и у лазеров. Отдельные магазины и корабельные снаряды для них не загружаются. При стрельбе внутренний запас оружия пополняется из батареи меха. Если заряда не хватает на это пополнение, стрельба может прекратиться, хотя индикатор меха ещё выше нуля.
+У нынешних меховых автоматических пушек, пулемётов, дробовиков и ракетных установок боеприпасы создаются из **энергии**, как и у лазеров. Отдельные магазины и корабельные снаряды для них не загружаются. При стрельбе внутренний запас оружия пополняется из батареи меха. *Если заряда не хватает на это пополнение,* стрельба может прекратиться, хотя индикатор меха ещё выше нуля.
 
-Среднее и тяжёлое вооружение, а также пусковые устройства РЭБ имеют блокировку **на гриде корабля или станции**. Сообщение «ОБНАРУЖЕНА ГРАВИТАЦИЯ» относится к этой проверке: выключение генератора гравитации блокировку не снимает. Для стрельбы нужно покинуть грид.
+Среднее и тяжёлое вооружение, а также пусковые устройства РЭБ имеют блокировку **на гриде корабля или станции**. Сообщение **«ОБНАРУЖЕНА ГРАВИТАЦИЯ»** относится к этой проверке: выключение генератора гравитации блокировку не снимает. Для стрельбы нужно покинуть грид.
 
 ## Ремонт и неполадки
-Выйдите и примените к повреждённому корпусу включённую заправленную сварку. Для Рипли базовый ремонт занимает **10 секунд**, требует **25 единиц топлива** и восстанавливает повреждения корпуса. У боевых моделей другие время и расход; например, у Durand — **20 секунд и 55 единиц**. Разрушенный и исчезнувший корпус сваркой не вернуть.
+Выйдите и примените к повреждённому корпусу включённую заправленную сварку. Для Рипли базовый ремонт занимает [color=#73BFD3]**10 секунд**[/color], требует **25 единиц топлива** и восстанавливает повреждения корпуса. У боевых моделей другие время и расход; например, у Durand — [color=#73BFD3]**20 секунд и 55 единиц**[/color]. Разрушенный и исчезнувший корпус сваркой не вернуть.
 
-Если мех не принимает пилота, проверьте, не занято ли место, не сломан ли корпус и может ли персонаж двигаться. Если не работает выбранное оборудование — сверяйте выбор, заряд, дистанцию, вместимость клешни и блокировку стрельбы на гриде. Если приборы показывают заряд, но скорость резко упала, проверьте порог 5% и повреждения; смена оружия не восстанавливает питание.
+*Если мех не принимает пилота,* проверьте, не занято ли место, не сломан ли корпус и может ли персонаж двигаться. Если не работает выбранное оборудование — сверяйте выбор, заряд, дистанцию, вместимость клешни и блокировку стрельбы на гриде. Если приборы показывают заряд, но скорость резко упала, проверьте порог [color=#73BFD3]5%[/color] и повреждения; смена оружия не восстанавливает питание.
 
 [Боевые мехи S1](guide://S1Mechs) · [Космические аппараты S2](guide://S2Mechs) · [S4 и РЭБ](guide://S4Mechs).
 <!-- /article -->
@@ -2731,30 +2710,30 @@ estacioncapibara.com/wiki-monolith/monolith-rule-conflict-one-random-deathmatch/
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S1Mechs.xml -->
 # Боевые мехи S1
 
-<GuideEntityCards><GuideEntityEmbed Entity="MechGygax"/><GuideEntityEmbed Entity="MechDurand"/><GuideEntityEmbed Entity="WeaponMechCombatUltraRifle"/><GuideEntityEmbed Entity="WeaponMechCombatShotgun"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="MechGygax" Caption="auto"/><GuideTexture Entity="MechDurand" Caption="auto"/><GuideTexture Entity="WeaponMechCombatUltraRifle" Caption="auto"/><GuideTexture Entity="WeaponMechCombatShotgun" Caption="auto"/></GuideEntityCards>
 
 Gygax и Durand — герметичные боевые мехи для действий на гриде и в космосе. У Gygax выше скорость, Durand медленнее и наносит более сильный удар корпусом. Платы, конечности и броневые пластины этих двух моделей **не взаимозаменяемы**.
 
 ## Получить комплект
-**Каркас, голову, две руки, две ноги и броневые пластины** заказывают в производстве ММС: их рецепты есть у precision assembler. Обычный фабрикатор экзокостюмов не печатает эти комплекты. Для электроники изучите **«Производство боевых механоидов»**: **35 000 ОИ**, после базового производства механоидов и «Суперкомпонентов». На принтере схем изготовьте центральный модуль, модуль периферии и модуль наведения **своей модели**.
+**Каркас, голову, две руки, две ноги и броневые пластины** заказывают в производстве ММС: их рецепты есть у precision assembler. Обычный фабрикатор экзокостюмов не печатает эти комплекты. Для электроники изучите **«Производство боевых механоидов»**: [color=#73BFD3]**35 000 ОИ**[/color], после базового производства механоидов и **«Суперкомпонентов»**. На принтере схем изготовьте центральный модуль, модуль периферии и модуль наведения **своей модели**.
 
 Дополнительно нужны **1 отрезок кабеля, 1 конденсатор, батарея, 5 листов стали, воздушный баллон экзокостюма и двигатель экзокостюма**. Подготовьте ключ, отвёртку, кусачки и включённую сварку. Качество конденсатора не является способом улучшения характеристик готового меха.
 
 ## Собрать корпус
-1. Примените голову и четыре конечности к каркасу: получится шасси. Гаечный ключ до завершения этого этапа снимает установленные части.
+1. **Примените** голову и четыре конечности к каркасу: получится шасси. Гаечный ключ до завершения этого этапа снимает установленные части.
 2. На шасси: **ключ → отвёртка → кабель → кусачки**.
-3. Вставьте **центральный модуль → отвёртка → модуль периферии → отвёртка → модуль наведения → отвёртка**.
+3. **Вставьте** **центральный модуль → отвёртка → модуль периферии → отвёртка → модуль наведения → отвёртка**.
 4. Затем **конденсатор → отвёртка → батарея → отвёртка → 5 листов стали → ключ → сварка**.
-5. Установите **воздушный баллон экзокостюма → ключ → двигатель экзокостюма → ключ → броневые пластины своей модели → ключ → сварка**.
+5. **Установите** **воздушный баллон экзокостюма → ключ → двигатель экзокостюма → ключ → броневые пластины своей модели → ключ → сварка**.
 
 Последняя сварка создаёт обычный корпус. На этапе перед финальной сваркой существует отдельная ветка для фракционного устройства опознавания ТСФ или Авангарда; оно применяется **перед** сваркой. Устройство опознавания не заменяет платы или броневые пластины.
 
 ## Оснащение и ремонт
-Оба корпуса принимают оборудование категории **боевых мехов S1**. Пушка с лёгким креплением S2 к ним не подходит. И автоматическая винтовка, и дробовик используют **энергию меха**: запасные магазины для их пополнения не нужны. Выберите модуль действием смены оборудования, затем используйте боевой режим.
+Оба корпуса принимают оборудование категории **боевых мехов S1**. Пушка с лёгким креплением S2 к ним не подходит. И автоматическая винтовка, и дробовик используют **энергию меха**: запасные магазины для их пополнения не нужны. **Выберите** модуль действием смены оборудования, затем используйте боевой режим.
 
-Часть полученного корпусом урона передаётся пилоту: у Gygax **10%**, у Durand **15%**. При критическом состоянии пилота он извлекается из меха. У Gygax при заряде **5% и ниже** скорость падает вдвое; возвращение на ремонт после полного расхода питания займёт заметно дольше.
+Часть полученного корпусом урона передаётся пилоту: у Gygax [color=#73BFD3]**10%**[/color], у Durand [color=#73BFD3]**15%**[/color]. При критическом состоянии пилота он извлекается из меха. У Gygax при заряде **5% и ниже** скорость падает вдвое; возвращение на ремонт после полного расхода питания займёт заметно дольше.
 
-Выйдите из кабины и примените включённую сварку. Базовый ремонт Gygax — **10 секунд и 25 единиц топлива**, Durand — **20 секунд и 55 единиц**. Для замены батареи откройте панель отвёрткой и извлеките старую ломом.
+Выйдите из кабины и примените включённую сварку. Базовый ремонт Gygax — [color=#73BFD3]**10 секунд и 25 единиц топлива**[/color], Durand — [color=#73BFD3]**20 секунд и 55 единиц**[/color]. Для замены батареи откройте панель отвёрткой и извлеките старую ломом.
 
 [Управление, питание и клешня](guide://MechsBase) · [Космические аппараты S2](guide://S2Mechs) · [Исследования мехов](guide://ColossusCatalogueResearch).
 <!-- /article -->
@@ -2762,14 +2741,14 @@ Gygax и Durand — герметичные боевые мехи для дейс
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S2Mechs.xml -->
 # Боевые аппараты S2
 
-<GuideEntityCards><GuideEntityEmbed Entity="AFInterceptor"/><GuideEntityEmbed Entity="AFInterceptorM"/><GuideEntityEmbed Entity="LightMechaAutocannon"/><GuideEntityEmbed Entity="MediumMechTOW"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AFInterceptor" Caption="auto"/><GuideTexture Entity="AFInterceptorM" Caption="auto"/><GuideTexture Entity="LightMechaAutocannon" Caption="auto"/><GuideTexture Entity="MediumMechTOW" Caption="auto"/></GuideEntityCards>
 
-**Broadsword** имеет **3 места** для лёгкого оружия и устройств опознавания. **Halberd** имеет **3 места** для среднего оружия и устройств опознавания; лёгкие пушки он не принимает. Обе модели герметичны и рассчитаны на движение в космосе. На гриде скорость мала: это не замена S1 для прохода по коридорам.
+**Broadsword** имеет [color=#73BFD3]**3 места**[/color] для лёгкого оружия и устройств опознавания. **Halberd** имеет [color=#73BFD3]**3 места**[/color] для лёгкого и среднего оружия, а также устройств опознавания. Обе модели герметичны и рассчитаны на движение в космосе. На гриде скорость мала: это не замена S1 для прохода по коридорам.
 
 ## Детали и исследования
-Комплект **Broadsword** производится на precision assembler в ММС: каркас, голова, две руки и две ноги. Электронику печатает принтер схем. Исследование **«Производство S2-механоидов»** стоит **50 000 ОИ**, требует боевого производства механоидов и открывает платы, лёгкие пушки и mech fuel cell. Детали корпуса из исследования убраны — их производство отдельно от РНД.
+Комплект **Broadsword** производится на precision assembler в ММС: каркас, голова, две руки и две ноги. Электронику печатает принтер схем. Исследование **«Производство S2-механоидов»** стоит [color=#73BFD3]**50 000 ОИ**[/color], требует боевого производства механоидов и открывает платы, лёгкие пушки и mech fuel cell. Детали корпуса из исследования убраны — их производство отдельно от РНД.
 
-Halberd использует **свой каркас**, но голову, руки, ноги и три платы **Broadsword**. При этом рецепт его каркаса сейчас не подключён к стандартному набору precision assembler, а набор частей S2 отключён у обычного фабрикатора. Исследование **«Производство продвинутых S2-механоидов» за 35 000 ОИ** открывает среднее оружие, но не обеспечивает каркас Halberd.
+Halberd использует **свой каркас**, но голову, руки, ноги и три платы **Broadsword**. Для сборки нужен готовый каркас Halberd: precision assembler и обычный фабрикатор экзокостюмов его не производят. Исследование **«Производство продвинутых S2-механоидов» за 35 000 ОИ** открывает среднее оружие.
 
 ## Собрать Broadsword или полученный каркас Halberd
 Присоедините голову и четыре конечности Broadsword к каркасу. На готовом шасси выполните:
@@ -2786,7 +2765,7 @@ Halberd использует **свой каркас**, но голову, ру�
 
 **Все три средние установки Halberd блокируют стрельбу на гриде**, даже при выключенной гравитации. Выйдите в свободное пространство. Для навигации откройте радар действием на панели способностей; радарная отметка показывает объект, но сама по себе не подтверждает принадлежность цели.
 
-Базовый ремонт аппаратов этой линии — **30 секунд и 40 единиц сварочного топлива**, снаружи кабины. Перед БСС носителя верните аппарат на его грид: полёт рядом с кораблём не означает нахождение на борту.
+Базовый ремонт аппаратов этой линии — [color=#73BFD3]**30 секунд и 40 единиц сварочного топлива**[/color], снаружи кабины. Перед БСС носителя верните аппарат на его грид: полёт рядом с кораблём не означает нахождение на борту.
 
 [Общее управление](guide://MechsBase) · [Тяжёлые аппараты S4](guide://S4Mechs) · [Доступные исследования](guide://ColossusCatalogueResearch).
 <!-- /article -->
@@ -2794,14 +2773,14 @@ Halberd использует **свой каркас**, но голову, ру�
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Mechs/S4Mechs.xml -->
 # Боевые аппараты S4
 
-<GuideEntityCards><GuideEntityEmbed Entity="AFFlail" Scale="0.9"/><GuideEntityEmbed Entity="AFMace" Scale="0.9"/><GuideEntityEmbed Entity="AFFlailE" Scale="0.9"/><GuideEntityEmbed Entity="HeavyMechRPG"/><GuideEntityEmbed Entity="EWACMechaJammer"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="AFFlail" Caption="auto" Scale="0.9"/><GuideTexture Entity="AFMace" Caption="auto" Scale="0.9"/><GuideTexture Entity="AFFlailE" Caption="auto" Scale="0.9"/><GuideTexture Entity="HeavyMechRPG" Caption="auto"/><GuideTexture Entity="EWACMechaJammer" Caption="auto"/></GuideEntityCards>
 
-**Flail** принимает тяжёлое оружие и устройства опознавания, всего **3 модуля**. **Mace** использует те же крепления, но имеет **только 1 место**: устройство опознавания займёт единственный слот вооружения. **Spyglass** имеет **3 места** для лёгкого оружия, РЭБ и устройств опознавания; тяжёлые пушки в него не устанавливаются.
+<GuideNote Tone="warning" Text="[bold]Flail[/bold] принимает лёгкое, среднее и тяжёлое оружие, а также устройства опознавания, всего [bold]3 модуля[/bold]. [bold]Mace[/bold] использует те же крепления, но имеет [bold]только 1 место[/bold]: устройство опознавания займёт единственный слот вооружения. [bold]Spyglass[/bold] имеет [bold]3 места[/bold] для лёгкого оружия, РЭБ и устройств опознавания; тяжёлые пушки в него не устанавливаются."/>
 
 ## Что дают исследования
-**«Производство S4-механоидов» за 75 000 ОИ**, после S2, открывает электронику Flail и ракетную установку R3 «Базука». **«Производство продвинутых S4-механоидов» за 45 000 ОИ** открывает модули РЭБ и рецепты вариантов каркаса.
+**«Производство S4-механоидов» за 75 000 ОИ**, после S2, открывает электронику Flail и ракетную установку R3 **«Базука»**. **«Производство продвинутых S4-механоидов» за 45 000 ОИ** открывает модули РЭБ и рецепты вариантов каркаса.
 
-**Обычный фабрикатор экзокостюмов не печатает комплект корпуса S4:** набор частей отключён. Открытый рецепт или технологический диск не возвращают его в станок. Пушки «Metronome» и «Ravager» также исключены из обычных исследовательских и производственных наборов; наличие их прототипов не означает доступную закупку или печать.
+<GuideNote Tone="warning" Text="[bold]Для сборки S4 нужен готовый комплект деталей корпуса:[/bold] обычный фабрикатор экзокостюмов его не производит. Технологический диск не добавляет станку неподдерживаемые изделия."/>
 
 ## Сборка при наличии деталей корпуса
 Нужен каркас **выбранной модели**: Flail, Mace или Spyglass. Все три принимают **голову, две руки и две ноги Flail**, а также центральный модуль, модуль периферии и модуль наведения Flail.
@@ -2813,125 +2792,101 @@ Halberd использует **свой каркас**, но голову, ру�
 5. **Воздушный баллон экзокостюма → ключ → двигатель экзокостюма → ключ → ключ → сварка**. Для фракционного варианта перед последней сваркой вставляется устройство опознавания ТСФ или Авангарда.
 
 ## Вооружение и РЭБ
-Ракетная установка **R3 «Базука»** использует энергию меха: **500 единиц на ракету**, базовый интервал выстрелов **4 секунды**. Отдельные ракеты в неё не заряжают. Установка запрещает стрельбу **на гриде корабля или станции**; отсутствие гравитации внутри корабля этого не меняет.
+Ракетная установка **R3 «Базука»** использует энергию меха: **500 единиц на ракету**, базовый интервал выстрелов [color=#73BFD3]**4 секунды**[/color]. Отдельные ракеты в неё не заряжают. Установка запрещает стрельбу **на гриде корабля или станции**; отсутствие гравитации внутри корабля этого не меняет.
 
-Модули **E-58 «Blanket»** и **E-58 «Spark»** ставятся на Spyglass. Они выпускают специальные помеховые снаряды, а не включают постоянную защиту корпуса. Blanket тратит **500 единиц** на выстрел, базовый интервал — **10 секунд**. Spark стреляет серией из **6 снарядов** по **10 единиц энергии**, между сериями **15 секунд**. Обе установки также блокируются на гриде.
+Модули **E-58 «Blanket»** и **E-58 «Spark»** ставятся на Spyglass. Они выпускают специальные помеховые снаряды, а не включают постоянную защиту корпуса. Blanket тратит **500 единиц** на выстрел, базовый интервал — [color=#73BFD3]**10 секунд**[/color]. Spark стреляет серией из [color=#73BFD3]**6 снарядов**[/color] по **10 единиц энергии**, между сериями **15 секунд**. Обе установки также блокируются на гриде.
 
-Следите за энергией и паузой восстановления mech fuel cell. Если установка замолчала при ненулевом заряде, ей может не хватать энергии на полное пополнение внутреннего запаса. [Общее управление, установка модулей и замена батареи](guide://MechsBase).
+Следите за энергией и паузой восстановления mech fuel cell. *Если установка замолчала при ненулевом заряде,* ей может не хватать энергии на полное пополнение внутреннего запаса. [Общее управление, установка модулей и замена батареи](guide://MechsBase).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Power/Index.xml -->
-# Электропитание и ТЭГ
+# Электросети
 
 ## Восстановить питание корабля
 **Генератор → высоковольтная сеть (HV) → СМЭС → подстанция → средневольтная сеть (MV) → ЛКП → низковольтная сеть (LV) → оборудование.** СМЭС служит запасом энергии: генератор может питать подстанцию и без него. Соседние кабели разных напряжений не соединяются между собой.
 
-<GuideEntityCards><GuideEntityEmbed Entity="PortableGeneratorPacman"/><GuideEntityEmbed Entity="SMESBasic"/><GuideEntityEmbed Entity="SubstationBasic"/><GuideEntityEmbed Entity="APCBasic"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="PortableGeneratorPacman" Caption="auto"/><GuideTexture Entity="SMESBasic" Caption="auto"/><GuideTexture Entity="SubstationBasic" Caption="auto"/><GuideTexture Entity="APCBasic" Caption="auto"/></GuideEntityCards>
 
-1. Откройте генератор и проверьте топливо, состояние и выбранный выход. П.А.К.М.А.Н., С.У.П.Е.Р.П.А.К.М.А.Н. и старшие топливные модели умеют выдавать HV или MV; переключайте выход **при остановленном генераторе**. Закрепите генератор гаечным ключом над кабелем выбранного напряжения.
-2. Загрузите топливо и нажмите запуск. Плазменные и урановые модели принимают обычные листы и топливные аналоги: обычный материал автоматически превращается в топливный внутри генератора. М.И.Н.И.П.А.К.М.А.Н. заправляется сварочным топливом и отдаёт энергию прямо в **LV**, поэтому его ставят над низковольтным кабелем.
+1. **Откройте** генератор и проверьте топливо, состояние и выбранный выход. П.А.К.М.А.Н., С.У.П.Е.Р.П.А.К.М.А.Н. и старшие топливные модели умеют выдавать HV или MV; переключайте выход **при остановленном генераторе**. **Закрепите** генератор гаечным ключом над кабелем выбранного напряжения.
+2. **Загрузите** топливо и нажмите запуск. Плазменные и урановые модели принимают обычные листы и топливные аналоги: обычный материал автоматически превращается в топливный внутри генератора. М.И.Н.И.П.А.К.М.А.Н. заправляется сварочным топливом и отдаёт энергию прямо в **LV**, поэтому его ставят над низковольтным кабелем.
 3. Введите требуемую мощность в кВт. Начните с оптимального значения своей модели; повышайте его, если генерации не хватает на потребителей и зарядку. Учитывайте время нарастания мощности: сразу после старта сеть ещё может питаться из батарей.
-4. В СМЭС включите вход и выход. Подведите HV от генератора к **кабельному терминалу, направленному в СМЭС**. HV под самим СМЭС — его выход. Не соединяйте входную и выходную линии обходным кабелем.
-5. Проверьте пределы мощности СМЭС, подстанции и ЛКП. Генератор может работать, а оборудование оставаться без питания из-за выключенного преобразователя, малого предела выхода или разрыва следующей сети.
+4. В СМЭС включите вход и выход. **Подведите** HV от генератора к **кабельному терминалу, направленному в СМЭС**. HV под самим СМЭС — его выход. Не соединяйте входную и выходную линии обходным кабелем.
+5. **Проверьте** пределы мощности СМЭС, подстанции и ЛКП. Генератор может работать, а оборудование оставаться без питания из-за выключенного преобразователя, малого предела выхода или разрыва следующей сети.
 
 [Кабели и напряжения](guide://VoltageNetworks) · [СМЭС и накопители](guide://PowerStorage) · [Поиск обрыва](guide://InspectingPower).
 
 ## Топливо, мощность и время работы
-В каталоге собраны актуальные генераторы, их топливо и настройки. Оптимальная мощность и максимальная мощность различаются; улучшенные детали могут увеличить фактическую отдачу.
+В каталоге собраны генераторы, их топливо и настройки. Оптимальная мощность и максимальная мощность различаются; улучшенные детали могут увеличить фактическую отдачу.
 
 [Генераторы и оборудование](guide://ColossusCatalogueEngineering).
 
-У базового П.А.К.М.А.Н. оптимальная настройка **15 кВт**, предел — **35 кВт**. При 15 кВт один лист плазмы расходуется примерно за **90 секунд**, 30 листов — за **45 минут**. С.У.П.Е.Р.П.А.К.М.А.Н. при оптимальных **30 кВт** тратит один лист урана за те же 90 секунд; его предел — **60 кВт**. У плазменного реактора оптимальная настройка **105 кВт**, предел **160 кВт**: один лист плазмы при 105 кВт рассчитан примерно на **250 секунд**.
+У базового П.А.К.М.А.Н. оптимальная настройка [color=#73BFD3]**15 кВт**[/color], предел — [color=#73BFD3]**35 кВт**[/color]. При [color=#73BFD3]15 кВт[/color] один лист плазмы расходуется примерно за [color=#73BFD3]**90 секунд**[/color], 30 листов — за [color=#73BFD3]**45 минут**[/color]. С.У.П.Е.Р.П.А.К.М.А.Н. при оптимальных **30 кВт** тратит один лист урана за те же [color=#73BFD3]90 секунд[/color]; его предел — [color=#73BFD3]**60 кВт**[/color]. У плазменного реактора оптимальная настройка [color=#73BFD3]**105 кВт**[/color], предел **160 кВт**: один лист плазмы при [color=#73BFD3]105 кВт[/color] рассчитан примерно на [color=#73BFD3]**250 секунд**[/color].
 
-Обычный М.И.Н.И.П.А.К.М.А.Н. вмещает **300 единиц** сварочного топлива: на оптимальных **6 кВт** полный бак работает около **45 минут**. У корабельной версии бак **500 единиц**, но стартовая заправка — только **70 единиц**, примерно **10 минут 30 секунд** при 6 кВт. Вода и другие примеси засоряют бак: генератор не запустится или остановится. Слейте содержимое через интерфейс и заправьте чистым сварочным топливом; при сливе жидкость попадает на пол.
+Обычный М.И.Н.И.П.А.К.М.А.Н. вмещает **300 единиц** сварочного топлива: на оптимальных [color=#73BFD3]**6 кВт**[/color] полный бак работает около [color=#73BFD3]**45 минут**[/color]. У корабельной версии бак **500 единиц**, но стартовая заправка — только **70 единиц**, примерно **10 минут 30 секунд** при [color=#73BFD3]6 кВт[/color]. Вода и другие примеси засоряют бак: генератор не запустится или остановится. Слейте содержимое через интерфейс и заправьте чистым сварочным топливом; при сливе жидкость попадает на пол.
 
-**Расход зависит от установленной мощности, а не от того, сколько сеть сейчас забирает.** Разгруженный работающий генератор продолжает сжигать топливо. Для базового П.А.К.М.А.Н. на 30 кВт расход примерно в **1,93 раза** выше, чем на 15 кВт. Когда батареи полны и нагрузки мало, уменьшите настройку или остановите лишний генератор.
+<GuideNote Tone="warning" Text="[bold]Расход зависит от установленной мощности, а не от того, сколько сеть сейчас забирает.[/bold] Разгруженный работающий генератор продолжает сжигать топливо. Для базового П.А.К.М.А.Н. на 30 кВт расход примерно в [bold]1,93 раза[/bold] выше, чем на 15 кВт. Когда батареи полны и нагрузки мало, уменьшите настройку или остановите лишний генератор."/>
 
 Плазменный реактор и модели Г.И.П.Е.Р.П.А.К.М.А.Н. излучают радиацию во время работы; её интенсивность растёт с установленной мощностью. Их размещают в отделённом отсеке, а не возле рабочего места пилота.
 
 ## Заряд падает, хотя генератор работает
-Сравните **нагрузку и выработку сети** в окне генератора. Если нагрузка выше выработки, разницу покрывают накопители. Увеличение предела СМЭС не создаёт энергию: оно только позволяет быстрее расходовать запас.
+Сравните **нагрузку и выработку сети** в окне генератора. *Если нагрузка выше выработки,* разницу покрывают накопители. Увеличение предела СМЭС не создаёт энергию: оно только позволяет быстрее расходовать запас.
 
-Базовый СМЭС хранит **8 МДж**, продвинутый — **16 МДж**. При постоянном дефиците **20 кВт** полного базового СМЭС теоретически хватит на **400 секунд**, продвинутого — на **800 секунд**. Это расчёт для одного накопителя и постоянной нагрузки; батареи подстанций и ЛКП дают дополнительный запас. Если заряд СМЭС растёт, но ЛКП разряжается, ищите ограничение или обрыв между ними.
+Базовый СМЭС хранит **8 МДж**, продвинутый — **16 МДж**. При постоянном дефиците [color=#73BFD3]**20 кВт**[/color] полного базового СМЭС теоретически хватит на [color=#73BFD3]**400 секунд**[/color], продвинутого — на **800 секунд**. Это расчёт для одного накопителя и постоянной нагрузки; батареи подстанций и ЛКП дают дополнительный запас. *Если заряд СМЭС растёт,* но ЛКП разряжается, ищите ограничение или обрыв между ними.
 
-Если генератор не запускается, проверьте закрепление, топливо и засорение. У некоторых моделей пуск вероятностный: неудачная попытка при исправной заправленной машине ещё не означает неисправность. Если машина работает без полезной отдачи, сверяйте выбранные HV/MV с кабелем под ней и наличие соединения до потребителя.
+*Если генератор не запускается,* проверьте закрепление, топливо и засорение. У некоторых моделей пуск вероятностный: неудачная попытка при исправной заправленной машине ещё не означает неисправность. Если машина работает без полезной отдачи, сверяйте выбранные HV/MV с кабелем под ней и наличие соединения до потребителя.
 
 ## Солнечные панели
-Обычная панель даёт до **1,5 кВт**, плазменная — до **2 кВт**, урановая — до **3 кВт**. Это верхние значения при правильном повороте к солнцу. Подведите HV, закрепите панели, подключите солнечный трекер и настройте отслеживание в консоли солнечных панелей. На корабле после поворотов проверяйте фактическую выработку.
+Обычная панель даёт до [color=#73BFD3]**1,5 кВт**[/color], плазменная — до [color=#73BFD3]**2 кВт**[/color], урановая — до **3 кВт**. Это верхние значения при правильном повороте к солнцу. **Подведите** HV, закрепите панели, подключите солнечный трекер и настройте отслеживание в консоли солнечных панелей. На корабле после поворотов проверяйте фактическую выработку.
 
-**Крыша над панелью полностью прекращает генерацию.** Закрывающие солнце конструкции также влияют на отдачу. Номинальные 20 обычных панелей — до 30 кВт, но потребление корабля нужно сравнивать с текущей выработкой, а не с суммой максимумов.
+<GuideNote Tone="warning" Text="[bold]Крыша над панелью полностью прекращает генерацию.[/bold] Закрывающие солнце конструкции также влияют на отдачу. Номинальные 20 обычных панелей — до 30 кВт, но потребление корабля нужно сравнивать с текущей выработкой, а не с суммой максимумов."/>
 
-## Собрать ТЭГ: два независимых газовых контура
-ТЭГ превращает часть разницы тепловой энергии двух потоков в электричество. Нужны **центральный блок, два циркулятора, горячая и холодная петли, насосы, газ и внешнее питание**. Центральный блок потребляет **1 кВт из LV**, а выдаёт мощность в **HV**: для запуска нужен заряженный накопитель или другой генератор.
 
-<GuideEntityCards><GuideEntityEmbed Entity="TegCirculator" Rotation="180" Caption=""/><GuideEntityEmbed Entity="TegCenter" Rotation="90" Caption=""/><GuideEntityEmbed Entity="TegCirculator" Caption=""/></GuideEntityCards>
-
-1. Разместите центральный блок между двумя циркуляторами и закрепите узлы. Разверните их соединительными сторонами к центру; осмотр центрального блока сообщает о неполном соединении.
-2. Соедините вход и выход одного циркулятора с **горячей петлёй**, второго — с **холодной**. Между этими петлями не должно быть общей газовой трубы. При исходном направлении циркулятора вход с севера, выход с юга; при повороте узла поворачиваются и порты.
-3. В каждой петле поставьте насос так, чтобы он забирал газ **с выхода циркулятора**, прогонял через нагреватель или охладитель и подавал **во вход циркулятора**. Заполните обе петли. На входе каждого циркулятора давление должно быть **выше**, чем на выходе: при обратном или нулевом перепаде газ не проходит.
-4. Горячую петлю нагревайте камерой горения или реакторным теплообменом. Холодную охлаждайте радиаторами в космосе или газовым охладителем. Сам электрический нагреватель расходует энергию сети: замкнутая установка из нагревателя и ТЭГ не является самостоятельным источником питания.
-5. Дайте 1 кВт пускового питания и подключите HV к потребителю или зарядке СМЭС. Сверяйте температуры и давления на обоих циркуляторах, затем мощность при осмотре центрального блока и нагрузку сети.
-
-## От чего зависит выход ТЭГ
-Жёсткого порога горячей температуры нет. Нужны **поток с обеих сторон и разные температуры**. При равных температурах или отсутствии газа на одной стороне выход нулевой. Быстрая анимация циркулятора включается при перепаде свыше **500 кПа**; это визуальный порог, а не требование запуска.
-
-При **350 / 300 K** эффективный коэффициент отбора около **1,02%**, при **600 / 300 K** — **20,2%**, при **1000 / 300 K** — **49,5%**. Это доля доступной тепловой энергии потоков, а не обещанная мощность. Для одного и того же перепада температур больший расход и теплоёмкость газа увеличивают выход; нагревающаяся холодная петля его уменьшает. Базовый коэффициент ограничен **65%** и дополнительно снижается при малой разнице температур.
-
-Теплоёмкость, Дж/(моль·K): **O2 — 20; N2 и CO2 — 30; пар — 40; плюоксий — 80; плазма — 200**. N2 подходит для простой холодной петли; плюоксий переносит больше тепла на моль. Плазма в горячей замкнутой петле переносит примерно в **6,67 раза** больше тепла на моль, чем N2. Горение требует отдельной подачи топлива и кислорода; горячий теплоноситель сам по себе не заменяет источник тепла.
-
-Если мощность падает, сначала проверьте перепад давления на **обоих** циркуляторах, затем охлаждение холодной петли и нагрев горячей. Если ТЭГ совсем молчит, проверьте LV-питание и соединение трёх блоков. Низкая фактическая отдача при заряженных батареях может означать, что сеть сейчас не запрашивает больше мощности.
-
-[Камера горения](guide://TEG) · [Синтез газов](guide://ColossusAtmos) · [Ядерный реактор и турбина](guide://ShipyardNFROperation).
-
-## Электростанция Эдисона
-На станции есть солнечный контур с консолью и трекером, ТЭГ, СМЭС, подстанция и оборудование для хранения газа. Солнечную генерацию подключают через HV; ТЭГ запускают двумя контурами по схеме выше. Положение терминалов, труб и циркуляторов смотрите на плане.
-
-<GuideMap Map="/Maps/_NF/POI/edison.yml" Name="Электростанция Эдисона"/>
+[ТЭГ](guide://ColossusTEG) · [Электростанция Эдисона](guide://ColossusEdison) · [Ремонт корабля](guide://ColossusShipRepair).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Power/LoadResponse.xml -->
 # Изменение мощности
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="PortableGeneratorPacman"/>
-  <GuideEntityEmbed Entity="SMESBasic"/>
+<GuideTexture Entity="PortableGeneratorPacman" Caption="auto"/>
+  <GuideTexture Entity="SMESBasic" Caption="auto"/>
 </GuideEntityCards>
 
 Генераторы и накопители подстраивают отдаваемую мощность под нагрузку **постепенно**. После резкого включения потребителей возможна краткая просадка питания, даже если максимальной мощности источников достаточно.
 
-Например, сеть потребляла 50 кВт, а после подключения оборудования ей нужно 100 кВт. Источник с пределом 100 кВт не обязательно начнёт отдавать всю мощность мгновенно: ему нужно время на увеличение отдачи.
+Например, сеть потребляла [color=#73BFD3]50 кВт[/color], а после подключения оборудования ей нужно [color=#73BFD3]100 кВт[/color]. Источник с пределом [color=#73BFD3]100 кВт[/color] не обязательно начнёт отдавать всю мощность мгновенно: ему нужно время на увеличение отдачи.
 
 ## Если оборудование отключается
-- Проверьте топливо генераторов и заряд накопителей.
-- Сравните текущую нагрузку с доступной мощностью. Если мощности действительно не хватает, ожидание не поможет.
+- **Проверьте** топливо генераторов и заряд накопителей.
+- Сравните текущую нагрузку с доступной мощностью. *Если мощности действительно не хватает,* ожидание не поможет.
 - После подключения крупного потребителя дайте сети стабилизироваться. По возможности включайте потребители по очереди.
 - При остановке генератора проверьте, успевают ли другие источники подхватить нагрузку и достаточно ли у них резерва.
 
-[Электропитание](guide://ColossusPower) · [Генераторы](guide://Generators)
+[Электропитание](guide://ColossusPower) · [Генераторы](guide://ColossusCatalogueEngineering)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/ShipyardNFROperation.xml -->
 # Запуск реактора и турбины
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="NuclearReactorNormal"/>
-  <GuideEntityEmbed Entity="Turbine"/>
+  <GuideTexture Entity="NuclearReactorNormal" Caption="auto"/>
+  <GuideTexture Entity="Turbine" Caption="auto"/>
 </GuideEntityCards>
 Реактор **нагревает газ**. Турбина забирает тепло газа и выдаёт электричество. Рабочий контур: **реактор → турбина → охлаждение/обратная труба → реактор**. Это руководство для установок деления с сеткой стержней; антиматерия и плазменный генератор работают иначе.
 
 ## 1. Подготовьте контур
-- Откройте управление через ПКМ → «Разблокировать», если вместо настроек написано «Управление заблокировано.».
-- Проверьте соединение входов и выходов обеих машин. Включите установленные в контуре насосы. Газ должен возвращаться к реактору, а не уходить из разорванной трубы в помещение.
-- Если контур пуст, подключите канистры к его газовым портам. Канистра должна стоять на порту и быть закреплена. Для подачи через насос включите насос и задайте давление выше давления в принимающей трубе. **Выпускной клапан самой канистры открывать не нужно:** он выпускает газ наружу.
+- **Откройте** управление через ПКМ → **«Разблокировать»**, если вместо настроек написано **«Управление заблокировано.»**.
+- **Проверьте** соединение входов и выходов обеих машин. **Включите** установленные в контуре насосы. Газ должен возвращаться к реактору, а не уходить из разорванной трубы в помещение.
+- *Если контур пуст,* подключите канистры к его газовым портам. Канистра должна стоять на порту и быть закреплена. Для подачи через насос включите насос и задайте давление выше давления в принимающей трубе. **Выпускной клапан самой канистры открывать не нужно:** он выпускает газ наружу.
 - Универсального количества канистр и давления нет: объём труб и схема охлаждения отличаются. Закачайте теплоноситель до появления газа на входе турбины; азот и углекислый газ не заменяют отсутствующее соединение труб.
 
 ## 2. Установите топливо
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="CerenkiteReactorFuelRod"/>
-  <GuideEntityEmbed Entity="UraniumReactorFuelRod"/>
+  <GuideTexture Entity="CerenkiteReactorFuelRod" Caption="auto"/>
+  <GuideTexture Entity="UraniumReactorFuelRod" Caption="auto"/>
 </GuideEntityCards>
-- Оставьте управляющие стержни на **100%**: это полностью введённое положение, которое подавляет реакцию.
-- Примените топливный стержень к реактору: он окажется на полке слева в интерфейсе.
-- Выберите **пустую синюю ячейку** в сетке и нажмите **«ВСТАВИТЬ»**. Повторяйте для предусмотренных топливных мест. Не вынимайте из штатной схемы управляющие стержни и теплообменники ради дополнительных топливных ячеек.
+- Оставьте управляющие стержни на [color=#73BFD3]**100%**[/color]: это полностью введённое положение, которое подавляет реакцию.
+- **Примените** топливный стержень к реактору: он окажется на полке слева в интерфейсе.
+- **Выберите** **пустую синюю ячейку** в сетке и нажмите **«ВСТАВИТЬ»**. Повторяйте для предусмотренных топливных мест. Не вынимайте из штатной схемы управляющие стержни и теплообменники ради дополнительных топливных ячеек.
 - Число и расположение топлива зависят от сетки реактора. Четыре стержня в малом реакторе не являются рецептом для любой установки.
 
 <GuideReactorUI Mode="reactor"/>
@@ -2939,12 +2894,12 @@ Halberd использует **свой каркас**, но голову, ру�
 ## 3. Начните нагрев
 У турбины увеличьте **«Расход»**, чтобы горячий газ проходил через неё; максимальное значение штатной турбины — 1000. Не выставляйте одновременно максимальную нагрузку статора: холодная турбина может остаться в срыве.
 
-Постепенно уменьшайте задание управляющих стержней кнопкой **«- -»** и наблюдайте за нагревом. Один шаг — 5 процентных пунктов; малая кнопка «-» — 0,5. **Меньший процент усиливает реакцию.** После изменения дождитесь движения фактического положения к заданию. Начните с 50% и подстройте положение по нагреву и расходу теплоносителя.
+Постепенно уменьшайте задание управляющих стержней кнопкой **«- -»** и наблюдайте за нагревом. Один шаг — 5 процентных пунктов; малая кнопка «-» — 0,5. **Меньший процент усиливает реакцию.** После изменения дождитесь движения фактического положения к заданию. Начните с [color=#73BFD3]50%[/color] и подстройте положение по нагреву и расходу теплоносителя.
 
 ## 4. Стабилизируйте турбину
-- Цель штатной турбины — около **600 об/мин**. При этом нагрузка лопастей около 83%.
+- **Цель штатной турбины** — около **600 об/мин**. При этом нагрузка лопастей около [color=#73BFD3]83%[/color].
 - **«+1000» нагрузки статора тормозит** турбину и повышает отбор энергии; **«-1000» позволяет ускориться**. Меняйте настройку с паузами, наблюдая обороты.
-- Если есть автоматика, включите её переключатель. Убедитесь, что она действительно меняет нагрузку при изменении оборотов. Для ручного управления отключите её, иначе обе настройки будут мешать друг другу.
+- *Если есть автоматика,* включите её переключатель. Убедитесь, что она действительно меняет нагрузку при изменении оборотов. Для ручного управления отключите её, иначе обе настройки будут мешать друг другу.
 - **«Потенциал»** — возможная выработка, **«Подача»** — фактическая отдача в сеть. Меньшая подача при малом потреблении не означает неисправность.
 
 <GuideReactorUI Mode="turbine"/>
@@ -2952,23 +2907,31 @@ Halberd использует **свой каркас**, но голову, ру�
 ## Если не заработало
 <GuideTable Columns="2">
   <Box>**Признак**</Box><Box>**Действие**</Box>
-  <Box>Газ холодный; «НЕДОГРЕВ»</Box><Box>Проверьте топливо, положение управляющих стержней и циркуляцию. Турбине нужен входной газ горячее 20 °C.</Box>
-  <Box>Горячий газ; «СРЫВ РАБОТЫ»</Box><Box>Уменьшайте нагрузку статора, чтобы турбина снова раскрутилась.</Box>
-  <Box>Выше 720 об/мин</Box><Box>Увеличьте нагрузку статора. Это порог превышения оборотов и повреждений; 90% нагрузки лопастей само по себе не порог.</Box>
+  <Box>Газ холодный; **«НЕДОГРЕВ»**</Box><Box>**Проверьте** топливо, положение управляющих стержней и циркуляцию. Турбине нужен входной газ горячее [color=#73BFD3]20 °C[/color].</Box>
+  <Box>Горячий газ; **«СРЫВ РАБОТЫ»**</Box><Box>Уменьшайте нагрузку статора, чтобы турбина снова раскрутилась.</Box>
+  <Box>Выше 720 об/мин</Box><Box>Увеличьте нагрузку статора. Это порог превышения оборотов и повреждений; [color=#73BFD3]90%[/color] нагрузки лопастей само по себе не порог.</Box>
   <Box>Падает целостность</Box><Box>Сначала устраните превышение оборотов, затем ремонтируйте турбину сваркой. Изношенные лопасти не восстанавливаются настройкой нагрузки.</Box>
-  <Box>Температура продолжает расти</Box><Box>Введите управляющие стержни до 100% и сохраните циркуляцию/охлаждение. Не перекрывайте горячий контур.</Box>
+  <Box>Температура продолжает расти</Box><Box>Введите управляющие стержни до [color=#73BFD3]100%[/color] и сохраните циркуляцию/охлаждение. Не перекрывайте горячий контур.</Box>
 </GuideTable>
 
-**Корпус реактора и вход турбины — разные температуры.** Реактор начинает перегреваться выше 1200 K (≈927 °C), гореть выше 1500 K (≈1227 °C), плавиться выше 2000 K (≈1727 °C). Турбина сигнализирует перегрев от 2500 K и перестаёт извлекать энергию от 3000 K. Не ждите лампы турбины, если уже перегревается сам реактор.
+<GuideNote Tone="warning" Text="[bold]Корпус реактора и вход турбины — разные температуры.[/bold] Реактор начинает перегреваться выше 1200 K (≈927 °C), гореть выше 1500 K (≈1227 °C), плавиться выше 2000 K (≈1727 °C). Турбина сигнализирует перегрев от 2500 K и перестаёт извлекать энергию от 3000 K. Не ждите лампы турбины, если уже перегревается сам реактор."/>
 
 ## Остановка и замена топлива
-Введите управляющие стержни до 100%, дождитесь снижения температуры и сохраните охлаждение. Выберите израсходованный стержень в сетке, извлеките на полку и заберите; новый устанавливается тем же способом. Горячие и радиоактивные детали требуют защиты — положение 100% не охлаждает их мгновенно.
+Введите управляющие стержни до [color=#73BFD3]100%[/color], дождитесь снижения температуры и сохраните охлаждение. **Выберите** израсходованный стержень в сетке, извлеките на полку и заберите; новый устанавливается тем же способом. Горячие и радиоактивные детали требуют защиты — положение [color=#73BFD3]100%[/color] не охлаждает их мгновенно.
+
+[Детали, материалы и реакторные реакции газа](guide://ColossusReactorParts). При выборе теплоносителя учитывайте его взаимодействие с нейтронами, а не только температуру.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/Coloss/Index.xml -->
 # Колосс Централл
 
 Гражданская организация на станции [«Колосс Централл»](guide://LuaMColossusCentral). Станцией руководит комендант, за безопасность отвечает её служба охраны. [Медицинский Центр](guide://ColossusMedicalFaction) — отдельная организация со своим директором и штатом.
+
+<GuideEntityCards>
+<GuideTexture Entity="ComputerBankATM" Powered="true" Caption="Банк"/>
+<GuideTexture Entity="SafetyDepositConsole" Caption="Личное хранение"/>
+<GuideTexture Entity="ComputerShipyardSr" Powered="true" Caption="Верфь станции"/>
+</GuideEntityCards>
 
 ## Должности
 - **Наёмник** — без ограничения — самостоятельно выбирает работу, выполняет контракты и зарабатывает на торговле, добыче или экспедициях.
@@ -2987,6 +2950,12 @@ Halberd использует **свой каркас**, но голову, ру�
 
 ММС — промышленная компания с базой на **«Хоккайдо»**. Её сотрудники добывают сырьё, выпускают материалы, компоненты и оборудование, выполняют производственные заказы.
 
+<GuideEntityCards>
+<GuideTexture Entity="IndustrialPressEconomyElectronicsMMC" Caption="Электроника"/>
+<GuideTexture Entity="PrecisionAssemblerEconomy" Caption="Сборка компонентов"/>
+<GuideTexture Entity="IndustrialFurnaceEconomy" Caption="Материалы"/>
+</GuideEntityCards>
+
 ## Должности «Хоккайдо»
 - **Директор ММС** — 1 — руководит предприятием и отвечает за его активы.
 - **Охранник ММС** — 2 — защищает персонал, грузы и оборудование.
@@ -2994,31 +2963,88 @@ Halberd использует **свой каркас**, но голову, ру�
 
 Число обозначает общий штат. Сотрудники и охрана подчиняются директору.
 
-Производственные заказы приносят деньги и промышленные кредиты **MIC** для корпоративного снабжения. Киоск проверяет доступ «ММС» на ID и принадлежность персонажа к компании.
+Производственные заказы приносят деньги и промышленные кредиты **MIC** для корпоративного снабжения. Киоск проверяет доступ **«ММС»** на ID и принадлежность персонажа к компании.
 
 [Производство и заказы](guide://MMC) · [Корпоративное снабжение](guide://ColossusCatalogueUplinks) · [Правила фракций](guide://LuaMRule2).
 
 [История ММС](guide://LuaMLoreMMC)
 <!-- /article -->
 
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/Precursors/Index.xml -->
+# Предтечи, АСЗ и воины Азакимы
+
+**Предтечи** — создатели Азакимов и автоматизированных оборонительных судов. **Азакимы** — их генетически усовершенствованные воины, а **борги АСЗ** обслуживают и защищают эти суда. Вместе они представляют самостоятельную силу сектора со своими объектами, кораблями и задачами.
+
+<GuideEntityCards>
+<GuideTexture Entity="PlayerBorgRedacted" Caption="Киборг АСЗ"/>
+<GuideTexture Entity="PlayerStationAiRedacted" Caption="Ядро ИИ"/>
+<GuideTexture Entity="ADSAsakimIDCard" Caption="Префрактурная карта"/>
+</GuideEntityCards>
+
+## Назначение сторон
+
+Предтечи стоят за технологиями и происхождением этой силы. Азакимы действуют как её воины и командиры на месте, а борги АСЗ поддерживают работоспособность кораблей и выполняют поставленные задачи. Бортовое ядро ИИ руководит обслуживающими боргами; с появлением Азакимов борги переходят под их командование.
+
+Без Азакимов деятельность боргов сосредоточена на сохранении активов АСЗ, в том числе хранилища, и противодействии биоугрозе. Это сочетание инженерной работы, охраны и выездов для устранения угроз. С появлением воинов Азакимов начинается активная операция под их руководством: приоритетом становятся приказы командования, а не прежнее самостоятельное патрулирование.
+
+Задачи Азакимов — установить власть в секторе и ограничить распространение префрактурных технологий. К таким технологиям относятся блюспейс-сумки, скороходы и щиты серии **«500»**. Это утраченные разработки NanoTrasen и компаний Синдиката, интересующие Предтеч как аналоги их собственных технологий. Поиск таких предметов, переговоры об их передаче и взаимодействие с организациями сектора дают воинам занятие помимо непосредственного боя.
+
+АСЗ и Азакимы связаны с Предтечами. Дроны-убийцы связаны с Экзекуторами, а происхождение Монолита остаётся неизвестным даже Предтечам. Эти силы и явления имеют разное происхождение.
+
+## Как появляется роль
+
+Воин Азаким и борг АСЗ появляются среди **призрачных ролей**, когда в секторе есть соответствующее свободное тело. Корабли Азакимов могут прибыть как событие; борги встречаются на судах АСЗ. Наличие роли в списке зависит от происходящего в раунде.
+
+Для воина Азаким требуется **50 часов общего игрового времени**. У боргов есть вариант с тем же порогом и вариант без этого ограничения. Условия конкретного тела указаны в окне призрачных ролей.
+
+## Первые действия борга АСЗ
+
+1. Осмотрите судно: состояние корпуса, питание, управление, вооружение и наличие бортового ядра. Свяжитесь с другими силами АСЗ и уточните общую задачу.
+2. **Откройте** свои законы и проверьте установленные модули. Борг АСЗ начинает с инженерным оснащением и оружием: его работа объединяет обслуживание судна, восстановление повреждений и защиту.
+3. **Проверьте** заряд перед выходом. Стартовая батарея борга самозаряжающаяся; после интенсивной работы следите за восстановлением энергии. У автопульсера и УРК также есть собственное пополнение заряда — их готовность проверяется отдельно.
+4. Для восстановления утраченных частей корабля выберите **перезаряжающееся УРК**. Оно входит в специальный строительный модуль вместе с РСУ и устройством прокладки труб. УРК восстанавливает уничтоженные объекты по сохранённой схеме корабля; повреждённые, но ещё существующие объекты чинятся обычными инструментами. Порядок работы описан в [ремонте шаттлов](guide://ColossusShipRepair).
+
+Специальное УРК АСЗ хранит до **800 зарядов** и восстанавливает **1 заряд в секунду**. Его метка позволяет восстанавливать узлы АСЗ, для которых обычное УРК не подходит.
+
+Боевой комплект включает огнестрельное и энергетическое оружие, а инженерный — инструменты, строительные материалы, кабель и навигационное оснащение. Переключайте модули под задачу: сначала восстановите возможность движения и управления, затем занимайтесь остальными повреждениями.
+
+У борга есть **аварийный телепорт**: отдельное действие переносит его на случайную позицию в радиусе 30–40 тайлов. Это средство выхода из опасной ситуации без выбора точной точки назначения; после переноса проверьте своё положение и путь к кораблю.
+
+Для связи доступны общий канал, диспетчерский канал и канал **«Предтеч»**, а также бинарная связь. Борг понимает и произносит азазиба — язык Азакимов. Общие приёмы управления модулями, зарядки и ремонта тела находятся в [руководстве по киборгам](guide://Cyborgs).
+
+## Первые действия воина Азаким
+
+Азаким — живое существо: ему нужны воздух, пища, вода и медицинская помощь. Природная стойкость и боевое оснащение не заменяют подготовку к выходу в космос. Перед выходом проверьте шлем, кислород и включённое дыхание от баллона.
+
+Стартовое оснащение включает **экзокостюм «Касатур»**, плазменный автопульсер, нано-ламинатный фазовый клинок, отдельный энергетический щит и реактивный ранец. В сумке и разгрузке находятся инструменты, медицинские средства и дополнительные устройства. Разберите комплект до вылета: разместите оружие, щит, аптечку и инструменты так, чтобы быстро переключать их в руках.
+
+Стартовая ID-карта Азакима умеет копировать доступы: примените её к другой ID-карте. Новые доступы добавляются к уже записанным на ней.
+
+**«Касатур»** связан с носителем и не снимается самостоятельно. Его использование требует соответствующего мозгового органа Азакима; это специализированное оснащение, а не обычный сменный скафандр. При лечении учитывайте, что доступ к телу осложнён закреплённой бронёй.
+
+Родные языки Азакима — драконий и азазиба. Для координации с союзниками есть встроенная связь по каналу **«Предтеч»**; борги АСЗ понимают азазиба. При контакте с остальными обитателями сектора учитывайте языковой барьер.
+
+Начните с установления связи с другими воинами, ядрами и боргами АСЗ. Определите общий план: какие объекты требуют защиты, где нужна инженерная поддержка и какие технологии предстоит найти. Отдавайте боргам конкретные задачи с местом, целью и ожидаемым результатом — это связывает работу экипажа с общей операцией.
+
+[Пилотирование](guide://Piloting) · [Ремонт шаттлов](guide://ColossusShipRepair) · [Киборги](guide://Cyborgs) · [Происхождение Монолита](guide://LuaMLoreMonolith)
+<!-- /article -->
+
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/Index.xml -->
-# Фракции и служба
+# Роли
 
-- [ТСФ](guide://TSFMC_Entry) — контингент на «Халиконе» и «Арктурусе».
-- [Авангард Нордфолла](guide://PDV_Entry) — гарнизон крепости «Гелиос».
-- [Колосс Централл](guide://Caelestinus) — комендант, охрана и гражданский персонал станции.
-- [Медицинский Центр](guide://ColossusMedicalFaction) — директор и парамедики; отдельная от Колосса организация.
-- [СССП](guide://USSP_Entry) и [ЧВК «Вайпер»](guide://Viper_Group) — самостоятельные контингенты на «Камелоте».
-- [ММС](guide://ColossusMMCFaction) — работа на промышленной станции «Хоккайдо».
-- [Наймы: первый выход](guide://BeginnerGuide) — начало для наёмника и его киборга.
-
-В статьях фракций указаны реальные должности и базы. История организаций находится в [лоре сектора](guide://LuaMLore), ассортимент снабжения — в [аплинках](guide://ColossusCatalogueUplinks). Основания конфликтов и ограничения зелёных зон определяют [правила сервера](guide://LuaMRule2).
+<GuideHub Root="Factions"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/Medical/Index.xml -->
 # Медицинский Центр
 
 Отдельная медицинская организация со станцией [«Медицинский Центр»](guide://LuaMMedical), собственным руководителем и парамедиками.
+
+<GuideEntityCards>
+<GuideTexture Entity="Medkit" Caption="Неотложная помощь"/>
+<GuideTexture Entity="MedicalBiofabricator" Caption="Восстановление органов"/>
+<GuideTexture Entity="CryogenicSleepUnit" Caption="Хранение персонажа"/>
+</GuideEntityCards>
 
 ## Должности
 - **Директор медицинского центра** — 1 — организует работу центра и медицинской команды.
@@ -3031,10 +3057,10 @@ Halberd использует **свой каркас**, но голову, ру�
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/PDV/Index.xml -->
 # Авангард Нордфолла
-Авангард — вооружённая организация Нордфолла с базой в крепости «Гелиос». Название PDV сохраняется в обозначениях техники и систем. Действия фракции в смене подчиняются [правилам сервера](guide://LuaMRuleset).
+Авангард — вооружённая организация Нордфолла с базой в крепости **«Гелиос»**. Название PDV сохраняется в обозначениях техники и систем. Действия фракции в смене подчиняются [правилам сервера](guide://LuaMRuleset).
 
 ## Должности в лобби «Гелиоса»
-Названия ниже соответствуют доступным должностям обычного «Гелиоса». Число обозначает штат мест, а не оставшиеся свободные места.
+Названия ниже соответствуют доступным должностям обычного **«Гелиоса»**. Число обозначает штат мест, а не оставшиеся свободные места.
 
 - **Командор Авангарда** — 1 — Руководит командой и её операциями.
 - **Полевой командир Авангарда** — 1 — Помогает командору и координирует команду; его слово следует после командорского.
@@ -3044,7 +3070,13 @@ Halberd использует **свой каркас**, но голову, ру�
 - **Оперативник Авангарда** — без ограничения числа мест — Выполняет задачи команды и приказы командования.
 - **Киборг Авангарда** — 2 — Служит Авангарду и следует своим законам.
 
-Это перечень игровых должностей, а не отдельная придворная иерархия. Сотрудник Нордфолла, посол и руководитель существуют среди прототипов ролей, но в штат обычного «Гелиоса» не входят. Особые режимы могут задавать другой состав.
+В особых режимах состав должностей может отличаться.
+[Священный Военный Устав](guide://ColossusNordfallCharter)
+
+<GuideEntityCards>
+<GuideTexture Entity="BannerNordfallVanguard" Caption="Авангард Нордфолла"/>
+<GuideTexture Entity="BookNordfallSOP" Caption="Военный устав"/>
+</GuideEntityCards>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/TSF/Command.xml -->
@@ -3052,12 +3084,17 @@ Halberd использует **свой каркас**, но голову, ру�
 
 В лобби местного контингента выбираются полковник, капитан, сержант, рядовой, фельдшер, инженер, оперативник МАРСОК и киборг. Количество мест и назначение должностей указаны в [основной статье ТСФ](guide://TSFMC_Entry).
 
+<GuideEntityCards>
+<GuideTexture Entity="BannerNfsd" Caption="Транс-Солнечная Федерация"/>
+<GuideTexture Entity="BookTSFSOP" Caption="Военный кодекс"/>
+</GuideEntityCards>
+
 **Полковник** руководит контингентом; **капитан** координирует корабль и исполнение приказов; **сержанты** организуют и обучают рядовых. Инженеры и фельдшеры выполняют технические и медицинские задачи подразделения. **Оперативник МАРСОК** в холодной фазе войны надзирает за исполнением устава и защищает главу фракции и его снаряжение. Условия участия в бою заданы [правилом фракционных конфликтов](guide://LuaMRule2).
 
 ## Должность и звание
 Должность определяет выбранную роль и её доступы. Воинское звание относится к служебному статусу персонажа: упоминание майора, лейтенанта или уорент-офицера в лоре не добавляет такую профессию в лобби и не выдаёт её доступы.
 
-История 5-го и 9-го эскадронов относится к [21-й бригаде](guide://TSFMC_Brigade). Её подразделения не заменяют список доступных должностей текущего «Халикона».
+История 5-го и 9-го эскадронов относится к [21-й бригаде](guide://TSFMC_Brigade). Её подразделения не заменяют список доступных должностей текущего **«Халикона»**.
 
 [Служба и снабжение](guide://TSFMC_SOP) · [Халикон](guide://LuaMHalicon)
 <!-- /article -->
@@ -3066,7 +3103,7 @@ Halberd использует **свой каркас**, но голову, ру�
 # Морская пехота ТСФ
 TSFMC — вооружённые силы Транс-Солнечной Федерации. Основная база в секторе — [флагман «Халикон»](guide://LuaMHalicon); дополнительный корабль — [«Арктурус»](guide://LuaMArcturus). Команда ведёт операции, ремонтирует технику и обеспечивает собственное снабжение.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponDEWCalico"/><GuideEntityEmbed Entity="ClothingOuterHardsuitM82c"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponDEWCalico" Caption="auto"/><GuideTexture Entity="ClothingOuterHardsuitM82c" Caption="auto"/></GuideEntityCards>
 
 ## Должности «Халикона»
 - **Полковник ТСФ** — 1 — руководит контингентом и координирует подчинённых.
@@ -3078,11 +3115,11 @@ TSFMC — вооружённые силы Транс-Солнечной Феде
 - **Инженер ТСФ** — 2 — поддерживает целостность и работоспособность флагмана.
 - **Киборг ТСФ** — 2 — служит ТСФ, следуя своим законам.
 
-Число обозначает общий штат стандартного «Халикона». У «Арктуруса» и специальных режимов другой набор мест.
+Число обозначает общий штат стандартного **«Халикона»**. У **«Арктуруса»** и специальных режимов другой набор мест.
 
 [Управление орудиями](guide://WeaponsSystems) · [Правила сервера](guide://LuaMRuleset)
 
-[Командование и должности](guide://TSFMC_org) · [Служба и снабжение](guide://TSFMC_SOP) · [История Федерации](guide://LuaMLoreTSF)
+[Военный кодекс ТСФ](guide://ColossusTSFCode) · [Командование и должности](guide://TSFMC_org) · [Служба и снабжение](guide://TSFMC_SOP) · [История Федерации](guide://LuaMLoreTSF)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/TSF/Service.xml -->
@@ -3092,7 +3129,7 @@ TSFMC — вооружённые силы Транс-Солнечной Феде
 Стартовый комплект зависит от должности. Дополнительное снабжение выдаётся через **аплинк ТСФ**, а открываемое оборудование — через соответствующие станки. Ассортимент и стоимость доступны в [учебном окне аплинка](guide://ColossusCatalogueUplinks); защита костюмов — в [каталоге брони](guide://ColossusCatalogueArmor).
 
 ## Сдать контрабанду
-Используйте **платформу обмена ТСФ и её консоль**, а не торговую паллету. В окне оценки видны принятые предметы и награда фракционной валютой. Если груз не засчитан, сравните его с принимаемым ассортиментом — обычная цена продажи не означает, что предмет подходит для обмена. [Контрабанда и валюты](guide://LuaMContraband).
+**Используйте** **платформу обмена ТСФ и её консоль**, а не торговую паллету. В окне оценки видны принятые предметы и награда фракционной валютой. *Если груз не засчитан,* сравните его с принимаемым ассортиментом — обычная цена продажи не означает, что предмет подходит для обмена. [Контрабанда и валюты](guide://LuaMContraband).
 
 ## Подчинение и конфликты
 [Должность и звание](guide://TSFMC_org) описывают местную структуру. Основания нападения и ограничения на территории Колосс Централл задают [правила зелёных зон и фракций](guide://LuaMRule2).
@@ -3107,9 +3144,9 @@ TSFMC — вооружённые силы Транс-Солнечной Феде
 - **Сержант СССП** — 3 — организует действия стрелков.
 - **Стрелок СССП** — 5 — выполняет приказы командования и задачи подразделения.
 
-Число обозначает общий штат. Отдельные прототипы ефрейтора и медика не добавляют должности в обычное лобби «Камелота».
+Число обозначает общий штат.
 
-<GuideEntityCards><GuideEntityEmbed Entity="WeaponRifleAK502"/><GuideEntityEmbed Entity="ClothingOuterHardsuitUsspL27"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="WeaponRifleAK502" Caption="auto"/><GuideTexture Entity="ClothingOuterHardsuitUsspL27" Caption="auto"/></GuideEntityCards>
 
 [Оборудование Камелота](guide://LuaMCamelot) · [Правила сервера](guide://LuaMRuleset)
 
@@ -3119,10 +3156,10 @@ TSFMC — вооружённые силы Транс-Солнечной Феде
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/USSP/Service.xml -->
 # Служба и снабжение СССП
 
-**Комиссар → сержанты → стрелки** — структура местного контингента. Список мест приведён в [основном руководстве СССП](guide://USSP_Entry). Упомянутые в старых материалах ефрейторы и медики не являются отдельными выбираемыми должностями обычного «Камелота».
+**Комиссар → сержанты → стрелки** — структура местного контингента. Список мест приведён в [основном руководстве СССП](guide://USSP_Entry). Упомянутые в старых материалах ефрейторы и медики не являются отдельными выбираемыми должностями обычного **«Камелота»**.
 
 ## Оборудование Камелота
-СССП и ЧВК «Вайпер» используют общую ветку исследований и производственное оборудование, поэтому в [каталоге брони](guide://ColossusCatalogueArmor) их снабжение объединено. Это не объединяет их командование: у Вайпера свои должности и руководитель.
+СССП и ЧВК **«Вайпер»** используют общую ветку исследований и производственное оборудование, поэтому в [каталоге брони](guide://ColossusCatalogueArmor) их снабжение объединено. Это не объединяет их командование: у Вайпера свои должности и руководитель.
 
 Для нужного предмета откройте способы получения в каталоге и используйте указанный станок или автомат. Открытие технологии проверяется на [сервере РНД](guide://ColossusCatalogueResearch); сам предмет изготавливается на станке с нужными материалами.
 
@@ -3133,7 +3170,7 @@ TSFMC — вооружённые силы Транс-Солнечной Феде
 # ЧВК «Вайпер»
 Viper Group — частная военная компания, работающая по контрактам. В секторе её сотрудники начинают на [станции «Камелот»](guide://LuaMCamelot) рядом с контингентом СССП. Для компании установлены собственные верфь, производственный станок и консоль оперативного управления.
 
-<GuideEntityCards><GuideEntityEmbed Entity="CompanyLogoViperGroup"/><GuideEntityEmbed Entity="ComputerShipyardViper"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="CompanyLogoViperGroup" Caption="auto"/><GuideTexture Entity="ComputerShipyardViper" Powered="true" Caption="auto"/></GuideEntityCards>
 
 ## Должности «Камелота»
 - **Командир «Viper Group»** — 1 — руководит компанией и организует её деловые связи.
@@ -3146,98 +3183,154 @@ Viper Group — частная военная компания, работающ
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/AN.xml -->
-# Авангард Нордфолла
+# Империя Феникса и Авангард Нордфолла
 
-Авангард Нордфолла представляет **Империю Феникса** в секторе Колосс. Его гарнизон размещён в крепости «Гелиос». Военный уклад Авангарда соединяет строгую дисциплину с религиозным языком служения: устав описывает воинов как слуг Империи и определяет их духовные и боевые обязанности.
+Истоки Империи Феникса лежат на периферии освоенного космоса. В [color=#73BFD3]**2554 году**[/color] там возник **Алый Феникс** — торговое объединение, связанное с поставками Синдикату и охраной Gorlex. Спустя полтора столетия корпоративная война превратила торговые связи в основу нового политического союза.
 
-## Гарнизон Империи
-Командор возглавляет Авангард. Паладин выполняет роль Великого Инквизитора гарнизона: следит за верностью военнослужащих и чистотой устава. Так военная иерархия одновременно становится системой идеологического надзора.
+<GuideEntityCards>
+<GuideTexture Entity="BannerNordfallVanguard" Caption="auto"/>
+</GuideEntityCards>
 
+## Рождение Империи
 
+Командир группы **«Омега»**, известный как **Анархист**, объединил сепаратистов, отказавшихся продолжать войну Синдиката. После её завершения в [color=#73BFD3]**2739 году**[/color] к союзу присоединилась значительная часть CyberSun, постепенно растворившаяся в нём. Gorlex отвергла этот путь и ушла отдельно.
 
-В противостоянии с [Федерацией](guide://LuaMLoreTSF) Авангард выступает вооружённой силой самостоятельной державы. Его внутренний устав отражает имперскую доктрину; игровые ограничения определяются [правилами сервера](guide://LuaMRuleset).
+В [color=#73BFD3]**2743 году**[/color] передача власти Анархисту была закреплена документально. Столицей стала **Кадия**. После его смерти в [color=#73BFD3]**2750 году**[/color] сложился культ Истинного Императора, а при императоре **Грации** начался рост промышленности и флота. Вместе с ними расширялись территориальные притязания государства.
 
-[Служба в Авангарде](guide://PDV_Entry)
+## Имперский протекторат
+
+Восстановление доступа к Колоссу открыло Империи путь в богатый, но ослабленный изоляцией сектор. В [color=#73BFD3]**2779 году**[/color] сюда вошли её войска. Имперский протекторат сохранил внутреннее гражданское управление, сосредоточив военную власть в руках пришедших сил. Крепость **«Гелиос»** стала опорой **Авангарда Нордфолла**, местного имперского гарнизона.
+
+Особый интерес Империи вызывают монолитные технологии. Исследователи связывают с ними надежды на создание сверхоружия, однако происхождение находок и пределы их возможностей остаются неизвестными. В [color=#73BFD3]**2790 году**[/color] прибытие Федерации поставило под вопрос и имперские притязания на эти знания, и сам контроль над сектором.
+
+[Колосс](guide://LuaMLoreColoss) · [Транс-Солнечная Федерация](guide://LuaMLoreTSF) · [История сектора](guide://Timeline)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/Coloss.xml -->
 # Колосс
 
-Колосс — местная администрация и гражданское сообщество сектора. Во главе администрации стоит выборный **Комендант**. Служба безопасности обеспечивает местный правопорядок, а отдельный [Медицинский Центр](guide://ColossusMedicalFaction) оказывает помощь населению.
+Колосс начинался как дальняя колония **Союза Советских Социалистических Планет**. В [color=#73BFD3]**2740 году**[/color] здесь были основаны гражданская станция **«Колосс Централл»** и военный **«Камелот»**. Связь с большой державой обещала защиту и снабжение, но катаклизм [color=#73BFD3]**2754 года**[/color] оборвал маршруты и оставил колонистов наедине с Харибдой.
+
+## Годы самостоятельности
+
+Вокруг уцелевшего Колосса Централл собрались пережившие катастрофу. За десятилетия изоляции они создали собственную администрацию, выборную должность **Коменданта** и службу безопасности. Камелот перешёл под местное управление. Ощущение, что Союз оставил своих колонистов, укрепило их привязанность к самостоятельной власти.
+
+Станции и их жители составили общество, которому приходилось обеспечивать собственное существование. Снабжение, безопасность и сохранение поселений стали повседневными заботами местной администрации задолго до возвращения внешних держав.
 
 ## Между державами
-В секторе присутствуют силы самостоятельных государств: [ТСФ](guide://LuaMLoreTSF) и [Имперского Авангарда](guide://LuaMLoreAN). Отношения с их высшим командованием требуют дипломатии; Комендант выступает посредником при межфракционных спорах.
 
-Администрация устанавливает Режимные приказы для своих объектов и сообщества. Наличие этих местных институтов отличает Колосс от простого скопления случайных авантюристов.
+После восстановления контакта Империя Феникса установила над регионом военный протекторат. Гражданское самоуправление сохранилось: Комендант и служба безопасности продолжили управлять местной жизнью, тогда как имперские силы закрепились на Гелиосе.
 
+В [color=#73BFD3]**2790 году**[/color] в сектор пришла Транс-Солнечная Федерация. Спор держав вновь сделал Колосс предметом чужих притязаний. Местная администрация сохраняет нейтралитет, защищает население от пиратов и других угроз. На Камелоте размещены контингент СССП и бойцы ЧВК **«Вайпер»**, а над всем регионом сталкиваются интересы Федерации и Империи.
 
-
-[Колосс Централл](guide://LuaMColossusCentral) · [Медицинский Центр](guide://LuaMMedical) · [Должности Колосс Централл](guide://Caelestinus)
+[История Колосса](guide://Timeline) · [Харибда](guide://LuaMLoreSector) · [Империя Феникса](guide://LuaMLoreAN)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/History.xml -->
-# Краткая история сектора
-**Корпоративная война** между NanoTrasen и Синдикатом уничтожила первую и подорвала силы второго. Повреждённая боевая группа Синдиката отступила в будущий сектор Колосс и погибла. Местная имперская власть использовала найденные технологии для собственного развития.
+# История Колосса
 
-После падения корпораций Конфедерация из системы Сол присвоила их разработки. За полвека она превратилась в крупную военную державу, захватывала территории и преследовала бывших союзников Синдиката.
+К [color=#73BFD3]**2790 году**[/color] Колосс стал местом встречи держав, наёмников и исследователей, которых привлекают ресурсы и тайны Харибды. Его станции несут следы другой эпохи: советской колонизации, катастрофы и долгих лет, когда рассчитывать приходилось только на собственные силы.
 
-Авторитарные законы вызвали раскол: рабочие союзы создали [СССП](guide://LuaMLoreUSSP). Конфедерация преобразовалась в [Транс-Солнечную Федерацию](guide://LuaMLoreTSF) и выиграла последовавшую гражданскую войну.
+## Первые станции
 
-## Колосс
-Сектор привлёк исследователей ресурсами и аномалиями. ТСФ направила подрядчиков для заселения гражданской колонии. На фоне войны с Авангардом Нордфолла колонисты выступили против обращения с мирными жителями и потребовали независимости. Занятая войной Федерация признала их требования. Эта колония стала [Колоссом](guide://LuaMLoreColoss), а её гражданский центр — станцией «Колосс Централл».
+В [color=#73BFD3]**2740 году**[/color] СССП направил экспедиции в Колосс. Были основаны гражданская станция **«Колосс Централл»** и военный **«Камелот»**, а флагманом контингента стал линкор **«Молот Союза»**. Позднее появились исследовательская **«Звезда»** и хранилище технологий **«Севастополь»**.
 
-Спор ТСФ и СССП о будущем сектора вновь перерос в войну. Династия Нордфолла поддерживала местные повстанческие ячейки, выступавшие против внешнего вмешательства. После разгрома повстанцев и отступления основной части сил СССП [Авангард Нордфолла](guide://PDV_Entry) начал действовать открыто.
+## Катаклизм 2754 года
 
-Это историческая предыстория. Текущие действия персонажей определяются обстановкой смены и [правилами сервера](guide://LuaMRuleset).
+Расширившаяся Харибда поглотила Колосс. Маршруты разрушились, связь с внешним миром оборвалась. Многие суда и станции погибли; вместе со связью исчезли и вести о **«Молоте Союза»**.
+
+Убежищем для выживших стали окрестности Колосса Централл. Пространство вокруг станции стабилизировал артефакт, названный **«Маяком»**. Через несколько дней он исчез. Легенда гласит, что Маяк слился со станцией, но подтверждений этому нет.
+
+## Изоляция: 2754–2778
+
+Оставшиеся в секторе жители создали самостоятельную администрацию, выборную должность Коменданта и местную службу безопасности. Камелот перешёл под управление Колосса. С годами надежда на скорое возвращение Союза уступила убеждению, что колонисты должны сами распоряжаться своей судьбой.
+
+Для СССП эти десятилетия стали временем новых потерь. Война с ТСФ [color=#73BFD3]**2760–2767 годов**[/color] завершилась поражением. Нападения дронов Экзекуторов в [color=#73BFD3]**2770–2775 годах**[/color] ещё сильнее истощили государство. Доктрина **«Единая крепость»** закрепила отказ от внешней экспансии; возвращение потерянного сектора осталось за пределами возможностей Союза.
+
+## Возвращение внешнего мира
+
+В [color=#73BFD3]**2778 году**[/color] первый известный цикл стабилизации восстановил контакт с Колоссом. Годом позже в сектор вошли силы **Империи Феникса**. Установив военный протекторат, Империя сохранила гражданское самоуправление и приступила к строительству и укреплению крепости **«Гелиос»**.
+
+В [color=#73BFD3]**2790 году**[/color] сюда прибыл **«Халикон»** с силами **113-го корпуса морской пехоты ТСФ**. Федерация оспорила имперский контроль под знаменем свободы навигации и исследований. Колосс оказался между двумя державами, продолжая сохранять нейтралитет и защищать собственное население.
+
+[Харибда и циклы](guide://LuaMLoreSector) · [Колосс](guide://LuaMLoreColoss) · [СССП](guide://LuaMLoreUSSP) · [Империя Феникса](guide://LuaMLoreAN) · [ТСФ](guide://LuaMLoreTSF)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/Index.xml -->
-# Лор сектора Колосс
+# Сектор Колосс
 
-## Сектор
-[Колосс и циклы Харибды](guide://LuaMLoreSector) · [История заселения и конфликтов](guide://Timeline) · [Звёздная система и её миры](guide://MonoStarSystem) · [Монолит](guide://LuaMLoreMonolith).
+[color=#73BFD3]**2790 год.**[/color] За опасными маршрутами Харибды лежит Колосс — сектор, переживший катастрофу и десятилетия изоляции. Здесь сохранились станции советских экспедиций, возникла самостоятельная гражданская власть и вновь появились флоты внешних держав.
 
-## Государства и организации
-[Транс-Солнечная Федерация](guide://LuaMLoreTSF) · [Авангард Нордфолла](guide://LuaMLoreAN) · [Колосс](guide://LuaMLoreColoss) · [ММС](guide://LuaMLoreMMC) · [СССП](guide://LuaMLoreUSSP) · [ЧВК «Вайпер»](guide://LuaMLoreViper).
+Империя Феникса удерживает военный протекторат, а Транс-Солнечная Федерация оспаривает её притязания. Местные жители сохраняют нейтралитет. Промышленные компании, наёмники и исследователи ищут своё место среди этих интересов, пока разломы приносят в сектор находки из неизвестного пространства.
 
-[Игровые должности и служба](guide://Factions) · [Правила фракционных конфликтов](guide://LuaMRule2)
+## Державы и жители сектора
+[История ММС](guide://LuaMLoreMMC)
+
+<GuideHub Root="LuaMLore"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/MMC.xml -->
 # ММС
-ММС представляет промышленное освоение Колосса. Её присутствие сосредоточено на **Хоккайдо**: здесь перерабатывают сырьё, выпускают компоненты, собирают оборудование и выполняют производственные заказы.
 
-Война фракций создаёт спрос на материалы и технику. Для компании это рынок, на котором ценятся объём поставки, сроки и возможность повторить производство. Производственная линия и склад сырья определяют возможности предприятия не меньше, чем вооружённая охрана.
+Промышленное присутствие **ММС** в Колоссе сосредоточено на **«Хоккайдо»**. Здесь сырьё превращается в компоненты, компоненты — в оборудование, а производственные заказы связывают предприятие с остальным сектором.
 
-Внутри компании управление разделено между директором, сотрудниками производства и службой безопасности. **Промышленные кредиты MIC** связывают выполненные заказы со снабжением персонала из корпоративного аплинка.
+<GuideEntityCards>
+<GuideTexture Entity="IndustrialPressEconomyElectronicsMMC" Caption="auto"/>
+</GuideEntityCards>
 
-[Производство ММС](guide://MMC) · [Исследования](guide://IndustryResearch) · [Снабжение](guide://ColossusCatalogueUplinks)
+Противостояние держав поддерживает спрос на материалы и технику. Для компании важны объём поставок, сроки и устойчивость производства. Возможности предприятия зависят от запасов сырья и работы производственных линий не меньше, чем от вооружённой охраны.
+
+Директор руководит компанией, сотрудники обеспечивают выпуск продукции, а служба безопасности охраняет её людей и имущество. **Промышленные кредиты MIC** связывают выполнение заказов с корпоративным снабжением персонала.
+
+[Колосс](guide://LuaMLoreColoss) · [История сектора](guide://Timeline)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/Monolith.xml -->
 # Монолит
 
-Монолитом называют аномальные обломки с неизведанными артефактами и ресурсами. Их происхождение неизвестно даже Предтечам. Это отдельная загадка Харибды: азакимы и помогающие им АДС описываются как творения Предтеч, а дроны Экзекуторов — как создания неизвестной цивилизации.
+Из разломов Колосса появляются аномальные фрагменты, артефакты и объекты, которые называют **монолитными**. Их ресурсы и технологии привлекают исследователей, искателей добычи и державы. Однако за интересом к находкам скрывается фундаментальное незнание: происхождение Монолита остаётся тайной даже для Предтеч.
 
+<GuideEntityCards>
+<GuideTexture Entity="MonolithicCrystalLarge" Caption="auto"/>
+</GuideEntityCards>
 
+Чуждая техника сектора принадлежит разным силам. **Азакимы** созданы Предтечами, а **АСЗ** служат им помощниками. Дроны-убийцы связаны с другой неизвестной силой — **Экзекуторами**. Ни эти связи, ни сходство отдельных технологий не раскрывают происхождения Монолита.
 
-Экспедиционные сведения находятся в [руководстве по крупному обломку](guide://LuaMMonolithWreck). [Циклы Харибды](guide://LuaMLoreSector) определяют доступность самого сектора.
+Для Империи Феникса монолитные находки стали обещанием нового могущества. Исследователи надеются получить из них технологии сверхоружия. Между такими надеждами и пониманием найденного по-прежнему лежит неизвестность, ради которой в сектор продолжают отправляться экспедиции.
+
+[Харибда и разломы](guide://LuaMLoreSector) · [Империя Феникса](guide://LuaMLoreAN) · [Монолитный обломок](guide://LuaMMonolithWreck)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/Sector.xml -->
-# Колосс и циклы Харибды
-<!-- Source: https://wiki.deadspace14.net/Фронтир:Лор -->
-Колосс — окраина аномального сектора Харибда. **Циклы** временно стабилизируют пространство и открывают связь с внешним миром.
+# Харибда и сектор Колосс
 
-Освоение началось в 2740 году. Катаклизм 2754 года отрезал поселения; артефакт «Маяк» сохранил окрестности Колосс Централ. Изоляция продолжалась до 2778 года. За это время сложилась самостоятельная администрация. После восстановления контакта сектор стал предметом соперничества держав.
+**Харибда** — область мощной блюспейс-аномальной активности. Нестабильные звёзды, чёрные дыры и разрывы пространства делают путешествия через неё опасными. Внутри этой области находится **Колосс**, относительно стабильный сектор, где вокруг станции **«Колосс Централл»** сохраняется жизнь поселений.
 
-[Администрация](guide://LuaMLoreColoss) · [Монолит](guide://LuaMLoreMonolith)
+Расширение Харибды в [color=#73BFD3]**2754 году**[/color] отрезало Колосс от внешнего мира. С тех пор его история неотделима от переменчивости самого пространства: маршруты, по которым пришли колонисты, перестали быть надёжной связью с остальной цивилизацией.
+
+## Циклы
+
+Временами пространство стабилизируется, открывая более безопасный путь в сектор и обратно. Такие периоды называют **циклами**. Их длительность и частота меняются; долгосрочные планы приходится соотносить с непостоянством Харибды.
+
+## Разломы
+
+**Разлом** — аномальный выброс, на мгновение связывающий сектор с неизведанным пространством. Через него могут появиться монолитные фрагменты, организмы, техника и объекты из прошлого и будущего. Намеренно открыть такой путь из известного космоса не удаётся.
+
+Наряду с аномальными находками особую ценность имеют **префактурные технологии** — утраченные разработки NanoTrasen и компаний Синдиката. Предтечи считают их несанкционированными аналогами собственных технологий.
+
+## Неизвестные силы
+
+**Азакимы** — творения Предтеч; **АСЗ** созданы им в помощь. Дроны-убийцы связаны с силой, известной как **Экзекуторы**. Происхождение **Монолита** остаётся неизвестным даже Предтечам.
+
+Ресурсы, аномалии и утраченные знания привлекают в Колосс наёмников, исследователей и державы. Их притязания пересекаются в пространстве, которое ни одна сторона не может считать полностью покорённым.
+
+[История Колосса](guide://Timeline) · [Монолит](guide://LuaMLoreMonolith) · [Звёздная система](guide://MonoStarSystem)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/StellarSystem.xml -->
 # Звёздная система Колосса
 
-Кифрус — стабильная звезда класса A, вокруг которой расположен сектор. Следующие описания относятся к лору системы; они не задают атмосферу и ресурсы случайной карты экспедиции.
+Кифрус — стабильная звезда класса A. В её системе находятся Асклепиу, Траскиас, Фервидус, Мерак и Аэрумна.
 
 ## Кифрус
 Кольцо обломков у звезды создаёт помехи связи. По старым разведывательным данным длительная работа оборудования на близкой орбите требовала специальной защиты; эти помехи также препятствовали планам NanoTrasen по строительству мегаструктур.
@@ -3257,88 +3350,101 @@ Viper Group — частная военная компания, работающ
 ## Аэрумна
 После неудачного биологического эксперимента поверхность покрыла биомасса химер. Моря и реки летоферола переносят через неё питательные вещества; доступные ресурсы поглощаются растущей массой. Биологическое преобразование сделало среду непригодной для другой жизни.
 
-[История сектора](guide://Timeline) · [Экспедиции и фактические условия высадки](guide://Expeditions)
+[История сектора](guide://Timeline) · [Харибда](guide://LuaMLoreSector)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/TSF/Brigade.xml -->
-# 21-я механизированная кавалерийская бригада
+# Контингент ТСФ в Колоссе
 
-Бригаду направили в Колосс после тяжёлых потерь 404-й дивизии. Оставшиеся подразделения, потерявшие командира и значительную часть штаба, включили в состав 21-й. Её передовая база — «Халикон»; приданный военно-морской отряд действует совместно с местным командованием.
+В [color=#73BFD3]**2790 году**[/color] в Колосс прибывает **«Халикон»**, опорный флагман **113-го корпуса морской пехоты Транс-Солнечной Федерации**. Его появление становится открытым вызовом имперскому протекторату, установившемуся после долгой изоляции сектора.
 
-## 5-й эскадрон — «Незваные гости»
-Party Crashers объединяет тяжёлую и механизированную пехоту. Его задачи — прорыв, применение тяжёлого вооружения и подрывные работы. Части эскадрона также привлекают к военной полиции и охране кораблей.
+Федерация обосновывает своё присутствие защитой свободы навигации и исследований. Для Империи это вмешательство в подконтрольный ей регион и попытка завладеть его ресурсами и технологиями. Между этими притязаниями местная администрация Колосса продолжает сохранять нейтралитет.
 
-## 9-й эскадрон — «Орлиные глаза»
-Eagle’s Eyes обеспечивает снабжение и поддержку, располагает лёгкой пехотой и прикрывает тыл 5-го эскадрона. К нему организационно относятся боевые инженеры и медицинский отряд флота.
-
-Новоприбывших распределяют по подразделениям внутри этих эскадронов. Это лорная организация бригады: игровые места и доступы задаются [должностями контингента](guide://TSFMC_org), а не отдельным выбором эскадрона в лобби.
+[Транс-Солнечная Федерация](guide://LuaMLoreTSF) · [Империя Феникса](guide://LuaMLoreAN) · [История Колосса](guide://Timeline)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/TSF/Index.xml -->
 # Транс-Солнечная Федерация
 
-Федерация выросла из торгового объединения и Конфедерации, прежде зависевшей от NanoTrasen. После Великой Корпоративной войны военные присвоили корпоративные технологии, а государство ограничило влияние крупных компаний. В 2739 году ТСФ стала самостоятельной державой — наследницей центральных территорий ОПЗ.
+**ТСФ** — крупнейшая держава центрального пространства, созданная в [color=#73BFD3]**2739 году**[/color] из Транс-Солнечной торговой федерации (**ТСТФ**), сохранившихся территорий ОПЗ и их вооружённых сил. Истощённая корпоративной войной **NanoTrasen была национализирована**, став частью нового государственного порядка.
 
-## Государство и общество
-Доминионы сохраняют местную самостоятельность; федеральная власть контролирует внешнюю политику, флот и межзвёздную торговлю. За последующее столетие умеренная демократия приобрела черты авторитарного военного государства. Раскол с рабочими союзами, создавшими [СССП](guide://LuaMLoreUSSP), завершился гражданской войной.
+<GuideEntityCards>
+<GuideTexture Entity="BannerNfsd" Caption="auto"/>
+</GuideEntityCards>
 
-В обществе заметен разрыв между правящей элитой и обычными гражданами. Предприятия находятся под государственным надзором, оружейные производства пользуются особыми привилегиями. Новая столица Калиго-Прайм стала витриной благополучия состоятельных слоёв. Президент формально избирается, однако требование длительной военной службы ограничивает круг кандидатов.
+## Доминионы и федеральная власть
 
-**Winter Solstice** — особое подразделение с влиянием на военную и гражданскую власть. Его название не является синонимом высшего командования; принадлежность к нему не следует из одного лишь высокого звания.
+Федеральные доминионы объединяют системы и колонии, имеют местные правительства и законы. Центр контролирует внешнюю политику, армию, стратегические маршруты, коммуникации, федеральные налоги и валюту.
 
-## Контингент Колосса
-В секторе ТСФ противостоит [Авангарду Нордфолла](guide://LuaMLoreAN). Гарнизон опирается на «Халикон» и [21-ю механизированную кавалерийскую бригаду](guide://TSFMC_Brigade). Длительные войны осложняют снабжение удалённого контингента.
+Две палаты Конгресса представляют население и доминионы, исполнительную власть возглавляет президент. Формальные демократические институты сосуществуют с фактическим господством крупных собственников, держателей капитала и высших флотских чинов. Удалённость миров даёт местным администрациям значительную самостоятельность.
 
-[Служба и игровые должности ТСФ](guide://TSFMC_Entry) · [История сектора](guide://Timeline)
+**Земля** — политический центр; **Марс** — тяжёлая промышленность и верфи. Подлёдные города **Европы** известны биоинженерией и фармацевтикой. Легенды о чудовищах её океанов не подтверждены современной наукой.
+
+## Общество и экономика
+
+Федерация человекоцентрична: высшие посты преимущественно занимают люди, положение ксенорас неравноправно. КПБ не признаются юридически равными биологическим личностям.
+
+Частный капитал сохраняет влияние, но стратегическая инфраструктура и независимые корпоративные армии ограничены государством после опыта корпоративных войн. Частные предприятия продолжают работать в рамках федерального регулирования.
+
+## Флот и Колосс
+
+Основа силы Федерации — Звёздный Флот; Корпус морской пехоты выполняет абордажи, захват станций и наземные операции. Тяжёлые контракты сочетаются с усиленной подготовкой и обеспечением. Спецподразделения **MARSOC** набираются из человеческих ветеранов.
+
+В [color=#73BFD3]**2790 году**[/color] Федерация ввела в Колосс **«Халикон» и 113-й корпус морской пехоты**. Она оспаривает имперский протекторат, заявляя о свободе навигации и исследований. Империя считает это попыткой захвата богатого сектора.
+
+[Контингент в Колоссе](guide://TSFMC_Brigade) · [Империя Феникса](guide://LuaMLoreAN) · [История Колосса](guide://Timeline)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/USSP/Index.xml -->
 # Союз Советских Социалистических Планет
 
-СССП возник из рабочего движения после распада корпоративного порядка и раскола Конфедерации. Политическим и символическим центром революции стала **Нова-Сигни**. Союз проиграл гражданскую войну Транс-Солнечной Федерации, но сохранил государственность и вооружённые силы.
+СССП возник в эпоху Раскола из восстаний против ОПЗ. Шахтёр и инженер **Иосиф Дятлов** объединил рабочие и ксенорасовые движения; **Декларация Братства 2312 года** провозгласила союз угнетённых против капитала и империализма. В [color=#73BFD3]**2351 году**[/color] ОПЗ признало независимый Союз.
 
-## После революции
-Корпоративную войну здесь считают следствием частной алчности и борьбы за власть. Федерация воспринимается как наследница порядка, против которого выступали революционеры. После смерти Автарха единоличное военное руководство сменилось более коллективной и процедурной системой; централизация и идеологическая строгость сохранились.
+## Дятлов-град и гражданские флаги
 
-Современный Союз осторожнее и бюрократичнее своего революционного предшественника. Потеря военной мощи заставляет его искать другие источники влияния, в том числе технологии и аномальные объекты Колосса.
+Столицей стал **Дятлов-град** на **Зимнем-4** в системе Дятлов: подземный город, Дом Советов и орбитальные верфи символизируют индустриальную основу государства. Идеал расового равноправия со временем столкнулся с централизацией под человеческим руководством.
 
-## Экспедиция в Колосс
-Разрыв связи и столкновения с автономными боевыми дронами изолировали часть экспедиционных сил. Происхождение машин связывают с неизвестными Экзекуторами, но достоверное объяснение остаётся частью загадки сектора.
+Три неофициальных **«гражданских флага»** сохраняли общинную автономию: **Свобода** унатхов, **Гранал** вульпканинов и **Агриппина** слаймалюдов и они. Доктрина **«Единый путь» 2631 года** усилила унификацию и давление на местные элиты.
 
-Местная опорная станция — **Камелот**, принадлежащий СССП. На ней размещается также самостоятельная [ЧВК «Вайпер»](guide://LuaMLoreViper). Совместная база не объединяет их руководство.
+## Потерянный Колосс
 
-[Должности и служба СССП](guide://USSP_Entry) · [Камелот](guide://LuaMCamelot) · [История сектора](guide://Timeline)
+Участие в корпоративной войне пришлось свернуть ради защиты собственных территорий от пиратов. После войны в [color=#73BFD3]**2740 году**[/color] Союз начал освоение Колосса, основал Колосс Централл и Камелот, направил линкор **«Молот Союза»**. Катаклизм [color=#73BFD3]**2754 года**[/color] отрезал сектор от внешнего мира, а линкор пропал.
+
+Поражение в войне с ТСФ [color=#73BFD3]**2760–2767 годов**[/color] и нападения Экзекуторов [color=#73BFD3]**2770–2775 годов**[/color] истощили государство. **«Единая крепость»** закрепила оборонительную политику, отказ от экспансии и перевод экономики на гражданские задачи.
+
+Когда контакт с Колоссом восстановился, у Союза уже не было сил оспорить имперский протекторат. В секторе остаются советский контингент и добровольцы, но само государство следует оборонительному курсу **«Единой крепости»**. Потерянная колония существует вне прежнего контроля Союза.
+
+[Камелот](guide://LuaMCamelot) · [Колосс](guide://LuaMLoreColoss) · [История сектора](guide://Timeline)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Lore/Viper.xml -->
 # ЧВК «Вайпер» — Viper Group
-<GuideEntityCards><GuideEntityEmbed Entity="CompanyLogoViperGroup"/></GuideEntityCards>
 
-Viper Group — частная военная компания. Её участие в делах сектора строится вокруг контрактов: охраны, сопровождения и применения силы в интересах заказчика. Командование компании отвечает за исполнение заказа и сохранение собственного контингента.
+**Viper Group** — частная военная компания, чьё присутствие в секторе строится вокруг контрактов. Охрана, сопровождение и применение силы в интересах заказчика составляют её работу. Командование отвечает за исполнение обязательств и сохранение собственного контингента.
 
-В секторе Колосс бойцы «Вайпер» размещены на **Камелоте**, станции СССП. Совместное размещение даёт компании базу снабжения и связывает её повседневную службу с советским присутствием в секторе.
+В Колоссе бойцы **«Вайпер»** размещены на **«Камелоте»**, рядом с контингентом СССП. Общая станция служит базой для обеих организаций, сохраняя самостоятельность компании и её командования.
 
-В отношениях с другими фракциями для наёмников существенны заказчик, условия договора и интересы компании. Подробная история её основания пока не установлена в местном лоре.
+Отношения наёмников с другими силами сектора определяются заказчиком, условиями договора и интересами самой компании. Среди притязаний держав **«Вайпер»** занимает место самостоятельной военной организации, для которой контракт связывает деловые обязательства с вооружённой силой.
 
-[Камелот](guide://LuaMCamelot) · [Должности ЧВК](guide://Viper_Group)
+[Камелот](guide://LuaMCamelot) · [СССП](guide://LuaMLoreUSSP) · [Колосс](guide://LuaMLoreColoss)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/ArcFurnace.xml -->
 # Дуговая печь
 <GuideEntityCards>
-<GuideEntityEmbed Entity="IndustrialFurnaceEconomy"/>
-  <GuideEntityEmbed Entity="IndustrialFurnaceEconomyCompact"/>
+<GuideTexture Entity="IndustrialFurnaceEconomy" Caption="auto"/>
+  <GuideTexture Entity="IndustrialFurnaceEconomyCompact" Caption="auto"/>
 </GuideEntityCards>
 Печь работает через **меню производственного станка**. В нём выбирают изделие, проверяют требования и ставят производство в очередь. Доступные рецепты включают бронепластины, кремниевую заготовку и переработку иридита; точные требования смотрите в самой печи.
 
 ## Загрузка
 - Обеспечьте питание и откройте интерфейс печи.
-- Выберите рецепт до загрузки: ему могут требоваться отдельные предметы, реагенты или материалы.
+- **Выберите** рецепт до загрузки: ему могут требоваться отдельные предметы, реагенты или материалы.
 - Листы и сырьё загружайте как материалы. Готовые компоненты положите на печь и уберите внутрь действием открытия/закрытия через контекстное меню.
 - Раствор с нужными реагентами подайте в ёмкости через слот мензурки.
 - Когда требований достаточно, закажите нужное количество изделий и дождитесь завершения.
 
-**Предмет и содержащийся в нём химический элемент не взаимозаменяемы.** Если рецепт требует раствор, сначала получите реагент; если требует конкретный компонент — загрузите именно его. Альтернативные рецепты одного изделия могут расходовать совсем другие ресурсы.
+<GuideNote Tone="warning" Text="[bold]Предмет и содержащийся в нём химический элемент не взаимозаменяемы.[/bold] Если рецепт требует раствор, сначала получите реагент; если требует конкретный компонент — загрузите именно его. Альтернативные рецепты одного изделия могут расходовать совсем другие ресурсы."/>
 
 При нехватке ресурсов проверьте все три вида требований и фактическое содержимое станка. Лежащая сверху деталь ещё не обязательно находится во внутреннем хранилище. Не заказывайте лишнюю партию, пока не проверили расход редких компонентов.
 
@@ -3349,30 +3455,36 @@ Viper Group — частная военная компания. Её участ�
 # Автоматизация производства
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="UpgradeKitAutomation"/>
-<GuideEntityEmbed Entity="RoboticArm"/>
-<GuideEntityEmbed Entity="StorageBin"/>
-<GuideEntityEmbed Entity="Interactor"/>
-<GuideEntityEmbed Entity="Constructor"/>
+<GuideTexture Entity="UpgradeKitAutomation" Caption="auto"/>
+<GuideTexture Entity="RoboticArm" Caption="auto"/>
+<GuideTexture Entity="StorageBin" Caption="auto"/>
+<GuideTexture Entity="Interactor" Caption="auto"/>
+<GuideTexture Entity="Constructor" Caption="auto"/>
 </GuideEntityCards>
 
 **Роборука** переносит предметы, **накопитель** хранит их, **интерактор** применяет инструмент, **конструктор** начинает постройку по выбранной схеме. Комплект автоматизации открывает предусмотренные машиной порты.
 
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="StorageBin" Caption="Хранение"/>
+<GuideTexture Entity="RoboticArm" Caption="Перемещение"/>
+<GuideTexture Entity="Interactor" Caption="Взаимодействие"/>
+</GuideEntityCards>
+
 ## Накопитель → станок → накопитель
-1. Исследуйте **Промышленную инженерию** за **22 500 ОИ** после **Механического уплотнения**. Напечатайте платы устройств и комплект автоматизации.
-2. Соберите и закрепите станок, два накопителя и две роборуки; подайте питание. Откройте техническую панель станка отвёрткой, установите комплект автоматизации и закройте панель. Машина должна поддерживать это улучшение.
+1. Исследуйте **Промышленную инженерию** за [color=#73BFD3]**22 500 ОИ**[/color] после **Механического уплотнения**. Напечатайте платы устройств и комплект автоматизации.
+2. **Соберите** и закрепите станок, два накопителя и две роборуки; подайте питание. **Откройте** техническую панель станка отвёрткой, установите комплект автоматизации и закройте панель. Машина должна поддерживать это улучшение.
 3. Поставьте первую руку между входным накопителем и станком, вторую — между станком и выходным накопителем. Вход и выход руки должны находиться у соответствующих соседей.
 4. Мультитулом соедините **выход предметов накопителя → вход руки**, затем **выход руки → вход материалов станка**. Для второй руки соедините **выход продукции станка → вход руки → вход выходного накопителя**.
-5. Выберите рецепт в станке и подайте пробную партию. Проверьте, что ресурсы загружаются в нужное хранилище, а готовое изделие доходит до выхода.
+5. **Выберите** рецепт в станке и подайте пробную партию. **Проверьте**, что ресурсы загружаются в нужное хранилище, а готовое изделие доходит до выхода.
 
 **Порты предметов** выбирают содержимое для переноса: материалы, внутреннее хранилище, инструмент или фильтр. **Сигнальные порты** запускают действия и сообщают об их завершении. Связывайте эти цепи отдельно. Без связи с машиной рука берёт предметы с пола на входе и кладёт на пол у выхода; к каждой стороне можно привязать только одну машину.
 
 ## Фильтр → что пропускать
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AutomationFilterName"/>
-<GuideEntityEmbed Entity="AutomationFilterLabel"/>
-<GuideEntityEmbed Entity="AutomationFilterStack"/>
-<GuideEntityEmbed Entity="AutomationFilterCombined"/>
+<GuideTexture Entity="AutomationFilterName" Caption="auto"/>
+<GuideTexture Entity="AutomationFilterLabel" Caption="auto"/>
+<GuideTexture Entity="AutomationFilterStack" Caption="auto"/>
+<GuideTexture Entity="AutomationFilterCombined" Caption="auto"/>
 </GuideEntityCards>
 
 Изготовьте фильтр в меню строительства **G**, настройте и установите в руку или накопитель.
@@ -3383,12 +3495,12 @@ Viper Group — частная военная компания. Её участ�
 - **Комбинированный** — объединяет два фильтра. **ИЛИ** пропускает по любому условию, **И** требует оба. Режим переключается использованием фильтра в руке.
 
 ## Интерактор → действие инструментом
-Установите инструмент через окно снаряжения интерактора и поместите объект перед ним. Настройте фильтр на этот объект: без фильтра целью может оказаться другой предмет или конструкция на том же месте.
+**Установите** инструмент через окно снаряжения интерактора и поместите объект перед ним. **Настройте** фильтр на этот объект: без фильтра целью может оказаться другой предмет или конструкция на том же месте.
 
 **Start** запускает одну попытку. **Auto Start** включает повтор после успешного завершения. **Started** сообщает о начале действия с задержкой, **Completed** — об успешном завершении, **Failed** — об отказе. Например, свяжите сигнал **Moved** роборуки с **Start** интерактора: обработка начнётся после доставки предмета. Без инструмента интерактор выполняет взаимодействие пустой рукой.
 
 ## Конструктор → начало постройки
-Откройте окно конструктора и выберите схему. Подайте материалы во внутреннее хранилище или положите рядом, затем передайте **Start**. Конструктор создаёт первый этап перед собой; следующие этапы, требующие инструмента, выполняют интеракторы. У конструктора те же сигналы запуска, завершения и ошибки.
+**Откройте** окно конструктора и выберите схему. **Подайте** материалы во внутреннее хранилище или положите рядом, затем передайте **Start**. Конструктор создаёт первый этап перед собой; следующие этапы, требующие инструмента, выполняют интеракторы. У конструктора те же сигналы запуска, завершения и ошибки.
 
 ## Найти остановку линии
 - **Рука пустая:** проверьте питание, вход источника, фильтр и минимальный размер стопки.
@@ -3400,84 +3512,73 @@ Viper Group — частная военная компания. Её участ�
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/Drilling.xml -->
-# Бурение
+# Корабельный бур
 
-## Корабельный бур: прорезать астероид
-<GuideEntityCards><GuideEntityEmbed Entity="MachineShipDrill"/></GuideEntityCards>
-- **1.** Установите бур на своём корабле у внешнего края и поверните рабочей стороной к астероиду. Его рабочая область — 2 × 2 метра со смещением на 1 метр от центра.
-- **2.** Подайте питание через кабельную сеть: штатная нагрузка 750 Вт. Отдельную команду запуска выбирать не нужно — система проверяет запитанные буры автоматически.
+<GuideEntityCards><GuideTexture Entity="MachineShipDrill" Caption="auto"/></GuideEntityCards>
+- **1.** **Установите** бур на своём корабле у внешнего края и поверните рабочей стороной к астероиду. Его рабочая область — 2 × 2 метра со смещением на 1 метр от центра.
+- **2.** **Подайте** питание через кабельную сеть: штатная нагрузка 750 Вт. Отдельную команду запуска выбирать не нужно — система проверяет запитанные буры автоматически.
 - **3.** Медленно подведите рабочую область к породе на другом гриде. Бур собирает добываемые объекты и убирает подходящие пустые тайлы; собственный грид корабля пропускает.
 - **4.** После прохода соберите руду. Бур не переносит добычу в грузовой ящик или плавильню.
 
 Не бурит: проверьте питание, направление, попадание именно в рабочую область и наличие отдельного грида астероида. Это не универсальный демонтажник построек: добыча работает с добываемыми объектами, удаление пола ограничено типами поверхности.
 
-Плату открывает «Массовая экскавация»: **25 000 ОИ**, требуются «Сканирование космоса» и «Продвинутые компоненты». Остальные открытия показаны в [РНД](guide://IndustryResearch).
-
-## Автоматический лазерный бур: производить руду
-<GuideEntityCards><GuideEntityEmbed Entity="LaserDrill"/><GuideEntityEmbed Entity="StationLaserDrill"/></GuideEntityCards>
-**Обычная установка:** разместите и закрепите её на экспедиционной планете, подключите к высоковольтной сети с запасом **100 кВт**. При достаточном питании она делает попытку добычи каждые **50 секунд**. Контакт с рудной жилой не нужен; требование грунта отключено, решётка допустима.
-
-**Продвинутая станционная установка:** требует **150 кВт**, попытка каждую **1 секунду**; ограничения экспедиционной планетой нет. Её штатный вариант не позволяет обычное открепление инструментом.
-
-Каждая попытка использует случайную таблицу добычи. Обычная партия — 15 единиц одной руды; редкие результаты — отдельные алмаз, блюспейс-руда или бананиум. Пустой результат также входит в таблицу добычи. При остановке проверьте высоковольтный кабель и свободную мощность; у обычной установки — ещё и тип карты.
-
-Дальше отправьте руду в переработку, а полученные материалы — в [производственную цепочку](guide://MMC).
+Плату открывает **«Массовая экскавация»**: [color=#73BFD3]**25 000 ОИ**[/color], требуются **«Сканирование космоса»** и **«Продвинутые компоненты»**. Остальные открытия показаны в [РНД](guide://IndustryResearch).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/Economy.xml -->
 # Производство в секторе Колосс
 <GuideEntityCards>
-<GuideEntityEmbed Entity="IndustrialPressEconomyPlates"/>
-  <GuideEntityEmbed Entity="IndustrialFurnaceEconomy"/>
-  <GuideEntityEmbed Entity="PrecisionAssemblerEconomy"/>
+<GuideTexture Entity="IndustrialPressEconomyPlates" Caption="auto"/>
+  <GuideTexture Entity="IndustrialFurnaceEconomy" Caption="auto"/>
+  <GuideTexture Entity="PrecisionAssemblerEconomy" Caption="auto"/>
 </GuideEntityCards>
 Промышленное производство превращает материалы и компоненты в более сложные изделия. **Начинайте с нужного конечного продукта и его рецепта**: покупка сырья без проверки цепочки легко оставляет вас с неподходящими ресурсами.
 
 ## Рабочий порядок
-- Найдите подходящий станок и откройте список его изделий. Пресс, дуговая печь и прецизионный сборщик имеют разные наборы рецептов.
-- Проверьте требования выбранного рецепта: материалы, готовые компоненты и реагенты учитываются отдельно.
-- Загрузите листы и сырьё в хранилище материалов станка.
+- **Найдите** подходящий станок и откройте список его изделий. Пресс, дуговая печь и прецизионный сборщик имеют разные наборы рецептов.
+- **Проверьте** требования выбранного рецепта: материалы, готовые компоненты и реагенты учитываются отдельно.
+- **Загрузите** листы и сырьё в хранилище материалов станка.
 - Для рецептов с предметами положите компоненты на станок и используйте действие открытия/закрытия через контекстное меню, чтобы убрать их во внутреннее хранилище.
-- Если нужны реагенты, вставьте подходящую ёмкость в слот мензурки. Закажите изделие через меню станка и заберите результат.
+- *Если нужны реагенты,* вставьте подходящую ёмкость в слот мензурки. Закажите изделие через меню станка и заберите результат.
 
 Наличие нужного вещества в листе материала не заменяет реагент в растворе. Для получения растворов могут потребоваться измельчитель и химическое оборудование. Проверяйте конкретный рецепт, прежде чем расходовать редкие ресурсы.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="EconomyPlanner"/>
+<GuideTexture Entity="EconomyPlanner" Caption="auto"/>
 </GuideEntityCards>
-Положите промышленный планировщик на пол и взаимодействуйте с ним, чтобы открыть схему цепочек изготовления. Сверяйте её с текущим меню станка. Если результат — незавершённая заготовка, осмотрите её и проверьте дальнейший этап сборки. Не всякий промежуточный компонент уже готов к установке.
+**Положите** промышленный планировщик на пол и взаимодействуйте с ним, чтобы открыть схему цепочек изготовления. Сверяйте её с текущим меню станка. *Если результат — незавершённая заготовка,* осмотрите её и проверьте дальнейший этап сборки. Не всякий промежуточный компонент уже готов к установке.
 
-Точные количества смотрите в текущем меню оборудования: рецепты и доступные наборы могут различаться. Работа с [дуговой печью](guide://ArcFurnace) описана отдельно. Недостающие компоненты можно купить у других игроков; для поставок и реализации продукции используйте [снабжение и торговлю](guide://CargoHauling).
+Точные количества компонентов смотрите в меню станка. Работа с [дуговой печью](guide://ArcFurnace) описана отдельно. Недостающие компоненты можно купить у других игроков; для поставок и реализации продукции используйте [снабжение и торговлю](guide://CargoHauling).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/Fabricators.xml -->
 # Как выбрать фабрикатор
-**Исследование открывает проект в базе РНД; печатать его может только станок с соответствующим набором рецептов.** Если проекта нет в меню даже после исследования, сначала проверьте тип фабрикатора и подключение к нужному серверу.
+**Исследование открывает проект в базе РНД; печатать его может только станок с соответствующим набором рецептов.** *Если проекта нет в меню даже после исследования,* сначала проверьте тип фабрикатора и подключение к нужному серверу.
 
 ## Военные и фракционные станки
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="NfsdTechFab"/>
-  <GuideEntityEmbed Entity="PDVLathe"/>
-  <GuideEntityEmbed Entity="USSPLathe"/>
-  <GuideEntityEmbed Entity="ViperLathe"/>
-  <GuideEntityEmbed Entity="MMCLathe"/>
+  <GuideTexture Entity="NfsdTechFab" Caption="auto"/>
+  <GuideTexture Entity="PDVLathe" Caption="auto"/>
+  <GuideTexture Entity="USSPLathe" Caption="auto"/>
+  <GuideTexture Entity="ViperLathe" Caption="auto"/>
+  <GuideTexture Entity="MMCLathe" Caption="auto"/>
 </GuideEntityCards>
 - **ТСФ:** проекты оружия, снаряжения и ваучеров ТСФ; универсальные снаряды, рельсотронные боеприпасы, ракеты и авиационное вооружение. Имеет общие проекты защиты, блюспейс-баллонов, умного оружия и технических дисков.
 - **Авангард Нордфолла:** фракционные проекты: ближнее и дальнобойное оружие, ваучеры, обычное и профессиональное снаряжение. Также общие боеприпасы и корабельные боеприпасы. Проверка компании допускает сотрудников Авангарда и его командования.
-- **СССП и ЧВК «Вайпер»:** оба станка включают проекты СССП и ЧВК «Вайпер», включая оружие, броню и ваучеры; оба допускают сотрудников СССП и ЧВК «Вайпер». Их общие наборы включают базовую и улучшенную броню, панк-снаряжение, продвинутые медикаменты, гипоспреи и блюспейс-баллоны. Личные и базовые корабельные боеприпасы доступны сразу; исследуемые наборы включают рельсотронные снаряды, ракеты и другие корабельные боеприпасы.
+- **СССП и ЧВК «Вайпер»:** оба станка включают проекты СССП и ЧВК **«Вайпер»**, включая оружие, броню и ваучеры; оба допускают сотрудников СССП и ЧВК **«Вайпер»**. Их общие наборы включают базовую и улучшенную броню, панк-снаряжение, продвинутые медикаменты, гипоспреи и блюспейс-баллоны. Личные и базовые корабельные боеприпасы доступны сразу; исследуемые наборы включают рельсотронные снаряды, ракеты и другие корабельные боеприпасы.
 - **ММС:** хозяйственное снаряжение ММС, промышленное оборудование, корпоративная экипировка и технические диски; также личные и корабельные боеприпасы, снаряжение безопасности, умное оружие и взрывчатка. Требует принадлежность к ММС. Серийные компоненты выпускают отдельные прессы и сборщики, см. [производство ММС](guide://MMC).
 - **Военный фабрикатор:** личные и базовые корабельные боеприпасы, гранаты, обвесы и общий военный ассортимент. Он не наследует все исследования фракций: фракционные наборы в нём отключены.
 
 ## Гражданские задачи
-<GuideEntityCards><GuideEntityEmbed Entity="EngineeringTechFab"/><GuideEntityEmbed Entity="ServiceTechFab"/><GuideEntityEmbed Entity="FactionLathe"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="EngineeringTechFab" Caption="auto"/><GuideTexture Entity="ServiceTechFab" Caption="auto"/><GuideTexture Entity="FactionLathe" Caption="auto"/></GuideEntityCards>
 Инженерный техфаб выбирайте для инженерного оборудования, газодобычи и автоматизации; сервисный — для хозяйственного оборудования и портативного экранного таймера. Плата машины определяет её назначение: цвет корпуса не заменяет проверку меню.
 
 ## Запустить изделие
-- Откройте станок и найдите проект по названию. Задайте количество **до** проверки расхода.
+- **Откройте** станок и найдите проект по названию. Задайте количество **до** проверки расхода.
 - Материалы применяйте стопкой к станку. Для рецепта с реагентами вставьте наполненную мензурку в **слот ёмкости**: он есть у фракционных фабов, военного фабрикатора, патронного фабрикатора и фаба охраны Колосс Централ. Раствор должен содержать нужный реагент на всю выбранную партию.
-- Эти фабы работают с материалами и растворами. Готовые компоненты через «Открыть / Закрыть» загружаются в отдельные производственные сборщики, прессы и печи ММС; их работа описана в [производстве](guide://Economy).
-- Если нет исследуемого проекта, откройте [окно РНД](guide://ColossusCatalogueResearch), найдите изделие и проверьте предшествующие технологии. Затем проверьте синхронизацию станка с сервером.
-- Если проект виден, но недоступен, проверьте красные требования, питание, доступ и принадлежность компании. Смена ID сама по себе не меняет компанию персонажа.
+- Эти фабы работают с материалами и растворами. Готовые компоненты через **«Открыть / Закрыть»** загружаются в отдельные производственные сборщики, прессы и печи ММС; их работа описана в [производстве](guide://Economy).
+- *Если нет исследуемого проекта,* откройте [окно РНД](guide://ColossusCatalogueResearch), найдите изделие и проверьте предшествующие технологии. Затем проверьте синхронизацию станка с сервером.
+- *Если проект виден,* но недоступен, проверьте красные требования, питание, доступ и принадлежность компании. Смена ID сама по себе не меняет компанию персонажа.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/Index.xml -->
@@ -3485,132 +3586,141 @@ Viper Group — частная военная компания. Её участ�
 ММС выпускает материалы, компоненты и промышленное оборудование. Рабочий цикл: **действующий запрос → расчёт цепочки → выпуск → подписанный ящик → паллета → MIC → снабжение**.
 
 ## 1. Найти работу до расхода сырья
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerCargoBounty"/><GuideEntityEmbed Entity="EconomyPlanner"/></GuideEntityCards>
-Откройте консоль запросов, вкладку «Доступные». У заказа HKD-PRD строка показывает **предмет, уровень, количество и награду**. Похожее название другого уровня не засчитывается. HKD-VLE — отдельные запросы на ценности: наличность и указанные материалы.
+<GuideEntityCards><GuideTexture Entity="ComputerCargoBounty" Powered="true" Caption="auto"/><GuideTexture Entity="EconomyPlanner" Caption="auto"/></GuideEntityCards>
+**Откройте** консоль запросов, вкладку **«Доступные»**. У заказа HKD-PRD строка показывает **предмет, уровень, количество и награду**. Похожее название другого уровня не засчитывается. HKD-VLE — отдельные запросы на ценности: наличность и указанные материалы.
 
-Положите промышленный планировщик на пол и откройте его взаимодействием. На схеме выберите конечное изделие: его входы показывают нужные компоненты и станок. Откройте рецепт этого изделия на указанном станке, затем рецепты его входных компонентов. Планировщик показывает цепочку, а выбранный рецепт в меню машины определяет фактический расход.
+**Положите** промышленный планировщик на пол и откройте его взаимодействием. На схеме выберите конечное изделие: его входы показывают нужные компоненты и станок. **Откройте** рецепт этого изделия на указанном станке, затем рецепты его входных компонентов. Планировщик показывает цепочку, а выбранный рецепт в меню машины определяет фактический расход.
 
-На Хоккайдо есть директор, охрана и производственные сотрудники. Для киоска снабжения нужны и доступ «ММС» на ID, и принадлежность персонажа к ММС.
+На Хоккайдо есть директор, охрана и производственные сотрудники. Для киоска снабжения нужны и доступ **«ММС»** на ID, и принадлежность персонажа к ММС.
 
 ## 2. Разделить три вида загрузки
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="IndustrialPressEconomyElectronicsMMC"/>
-  <GuideEntityEmbed Entity="IndustrialPressEconomyPlatesMMC"/>
-  <GuideEntityEmbed Entity="PrecisionAssemblerEconomy"/>
-  <GuideEntityEmbed Entity="IndustrialFurnaceEconomy"/>
+  <GuideTexture Entity="IndustrialPressEconomyElectronicsMMC" Caption="auto"/>
+  <GuideTexture Entity="IndustrialPressEconomyPlatesMMC" Caption="auto"/>
+  <GuideTexture Entity="PrecisionAssemblerEconomy" Caption="auto"/>
+  <GuideTexture Entity="IndustrialFurnaceEconomy" Caption="auto"/>
 </GuideEntityCards>
 - **Материалы:** применяйте стопки к станку. Электронный пресс делает базовые процессоры, конденсаторы, оптику, радиоблоки и камеры; пресс пластин — пластины, электромагниты, ёмкости и моторы в пределах своих наборов рецептов.
-- **Готовые предметы:** положите на станок; в контекстном меню выберите «Открыть», затем «Закрыть», чтобы убрать их во внутреннее хранилище. Предметы рядом на полу рецепту недоступны.
-- **Реагенты:** вставьте раствор в слот ёмкости. Лист плазмы не заменяет «плазма» в растворе, кусок кремния — «кремний». Нужный раствор получают химическим оборудованием или измельчением подходящего сырья.
+- **Готовые предметы:** положите на станок; в контекстном меню выберите **«Открыть»**, затем **«Закрыть»**, чтобы убрать их во внутреннее хранилище. Предметы рядом на полу рецепту недоступны.
+- **Реагенты:** вставьте раствор в слот ёмкости. Лист плазмы не заменяет **«плазма»** в растворе, кусок кремния — **«кремний»**. Нужный раствор получают химическим оборудованием или измельчением подходящего сырья.
 
-Откройте меню, задайте «Кол-во», затем наведите курсор на рецепт. Красные требования покажут нехватку для всей партии. Запускайте изделие только после проверки всех трёх групп; [детали машины](guide://IndustryMachineParts) изменяют материальный расход и время, но не установленное число готовых компонентов и единиц реагента.
+**Откройте** меню, задайте **«Кол-во»**, затем наведите курсор на рецепт. Красные требования покажут нехватку для всей партии. Запускайте изделие только после проверки всех трёх групп; [детали машины](guide://IndustryMachineParts) изменяют материальный расход и время, но не установленное число готовых компонентов и единиц реагента.
 
 ## 3. Базовые компоненты и сборка
-<GuideEntityCards><GuideEntityEmbed Entity="MicroprocessorEconomy1"/><GuideEntityEmbed Entity="MicroprocessorEconomy2"/><GuideEntityEmbed Entity="MicroprocessorEconomy3"/><GuideEntityEmbed Entity="MotorEconomy1"/></GuideEntityCards>
-Сначала изготовьте низшие компоненты прессами, затем загрузите их в сборщик. Проверенные цепочки на одно изделие:
+<GuideEntityCards><GuideTexture Entity="MicroprocessorEconomy1" Caption="auto"/><GuideTexture Entity="MicroprocessorEconomy2" Caption="auto"/><GuideTexture Entity="MicroprocessorEconomy3" Caption="auto"/><GuideTexture Entity="MotorEconomy1" Caption="auto"/></GuideEntityCards>
+Сначала изготовьте низшие компоненты прессами, затем загрузите их в сборщик. Расход компонентов на одно изделие:
 - **Мотор:** 1 электромагнит первого уровня + 1 бронепластина первого уровня. Этот рецепт есть и в наборе пресса пластин; не переносите изделия на другой станок без необходимости.
 - **Нанопроцессор, уровень 2:** 2 процессора первого уровня + 2 оптических датчика первого уровня; альтернативно 1 процессор первого уровня + 1 кремниевая пластина.
-- **Процессор уровня 3:** 1 нанопроцессор + 1 кремниевая пластина + 30 ед. «плазма». Здесь одной загрузки компонентов уже недостаточно.
-- **Улучшенная оптика:** 1 базовая оптика + 2 базовых конденсатора. У прессового рецепта нет реагентов; альтернативный рецепт сборщика дополнительно требует 20 ед. «фенол». Одинаковый результат может иметь разную стоимость.
+- **Процессор уровня 3:** 1 нанопроцессор + 1 кремниевая пластина + [color=#73BFD3]30 ед.[/color] **«плазма»**. Здесь одной загрузки компонентов уже недостаточно.
+- **Улучшенная оптика:** 1 базовая оптика + 2 базовых конденсатора. У прессового рецепта нет реагентов; альтернативный рецепт сборщика дополнительно требует [color=#73BFD3]20 ед.[/color] **«фенол»**. Одинаковый результат может иметь разную стоимость.
 
-Базовый процессор прессует 100 «сталь» + 400 «медь» + 300 «золото» + 300 «серебро» + 300 «литий»; базовая оптика — 500 «стекло» + 300 «медь» + 300 «сталь». Это единицы материалов рецепта, не количество листов. Подсказка станка учитывает установленную скидку.
+Базовый процессор прессует 100 **«сталь»** + 400 **«медь»** + 300 «золото» + 300 «серебро» + 300 «литий»; базовая оптика — 500 «стекло» + 300 «медь» + 300 «сталь». Это единицы материалов рецепта, не количество листов. Подсказка станка учитывает установленную скидку.
 
 Для партии умножайте число предметов и реагентов на её размер. Для материалов пользуйтесь подсказкой уже улучшенной машины: её расход округляется вверх отдельно по каждому материалу.
 
 ## 4. Кремний и химия для сложных заказов
-<GuideEntityCards><GuideEntityEmbed Entity="SiliconBouleEconomy"/><GuideEntityEmbed Entity="SiliconWaferEconomy"/></GuideEntityCards>
-**Кремниевая заготовка в дуговой печи:** 1 алмаз + 500 ед. «кремний» + 30 ед. EZNutrient. Загрузите алмаз как предмет, растворы — через ёмкость. Затем рецепт SiliconWaferEconomy в сборщике превращает одну заготовку в **8 пластин**. Разделка ножом даёт 4; падение повреждает заготовку и превращает её в лом, поэтому переносите её аккуратно.
+<GuideEntityCards><GuideTexture Entity="SiliconBouleEconomy" Caption="auto"/><GuideTexture Entity="SiliconWaferEconomy" Caption="auto"/></GuideEntityCards>
+**Кремниевая заготовка в дуговой печи:** 1 алмаз + [color=#73BFD3]500 ед.[/color] **«кремний»** + [color=#73BFD3]30 ед.[/color] EZNutrient. **Загрузите** алмаз как предмет, растворы — через ёмкость. Затем рецепт SiliconWaferEconomy в сборщике превращает одну заготовку в **8 пластин**. Разделка ножом даёт 4; падение повреждает заготовку и превращает её в лом, поэтому переносите её аккуратно.
 
-**Иридитовая цепочка:** промышленный переработчик руды делает шлак из сырья, затем порошок из шлака. В дуговой печи 3 порошка + 10 ед. «напалм» + 10 ед. «термит» дают кристалл. Следующий рецепт: 1 кристалл + 10 ед. «полиакрилат натрия» + 10 ед. «силицид железа» + 40 ед. «бензол» + 40 ед. «фторсерная кислота» → **2 листа иридита**. Не путайте реагенты с одноимёнными твёрдыми материалами.
+**Иридитовая цепочка:** промышленный переработчик руды делает шлак из сырья, затем порошок из шлака. В дуговой печи 3 порошка + [color=#73BFD3]10 ед.[/color] **«напалм»** + [color=#73BFD3]10 ед.[/color] **«термит»** дают кристалл. Следующий рецепт: 1 кристалл + [color=#73BFD3]10 ед.[/color] «полиакрилат натрия» + 10 ед. «силицид железа» + 40 ед. «бензол» + 40 ед. «фторсерная кислота» → **2 листа иридита**. Не путайте реагенты с одноимёнными твёрдыми материалами.
 
 Для химического участка полезны точные соотношения, количества указаны в единицах раствора:
-- «напалм»: 1 «масло» + 1 «сварочное топливо» + 1 «этанол» → 3.
-- «термит»: 1 «железо» + 1 «алюминий» + 1 «кислород» → 3.
-- «полиакрилат натрия»: 2 «кислород» + 1 «натрий» + 1 «азот» → 4.
-- «силицид железа»: 1 «железо» + 1 «кремний» → 2, температура от 310 K.
-- «бензол»: 1 «водород» + 1 «углерод» → 1, температура от 310 K.
+- **«напалм»**: 1 **«масло»** + 1 «сварочное топливо» + 1 «этанол» → 3.
+- **«термит»**: 1 **«железо»** + 1 «алюминий» + 1 «кислород» → 3.
+- **«полиакрилат натрия»**: 2 **«кислород»** + 1 «натрий» + 1 «азот» → 4.
+- **«силицид железа»**: 1 **«железо»** + 1 «кремний» → 2, температура от 310 K.
+- **«бензол»**: 1 **«водород»** + 1 «углерод» → 1, температура от 310 K.
 
-Смешивайте нужное количество в подходящей ёмкости, нагревайте только рецепты с температурным порогом. Выход не всегда равен сумме исходных объёмов: для 40 «бензол» требуется по 40 «водород» и «углерод». «фторсерная кислота»: 1 «фтор» + 1 «водород» + 1 «калий» + 1 «серная кислота» → 4.
+Смешивайте нужное количество в подходящей ёмкости, нагревайте только рецепты с температурным порогом. Выход не всегда равен сумме исходных объёмов: для 40 **«бензол»** требуется по 40 **«водород»** и «углерод». «фторсерная кислота»: 1 «фтор» + 1 «водород» + 1 «калий» + 1 «серная кислота» → 4.
 
 ## 5. Сдать выполненный запрос
-<GuideEntityCards><GuideEntityEmbed Entity="CargoPalletSell"/><GuideEntityEmbed Entity="MMCIndustrialCredit"/></GuideEntityCards>
-- **1.** Сверьте готовую партию с действующим заказом. На его строке нажмите «Распечатать этикетку».
-- **2.** Положите требуемую партию в ящик, закройте его и примените к ящику этикетку из руки. Этикетка связывает груз с конкретным запросом.
-- **3.** Поставьте ящик на паллету продажи Хоккайдо. Уберите постороннее имущество. На консоли паллеты нажмите «Оценить», проверьте содержимое, затем «Продать».
-- **4.** Заберите физические талоны MIC с места проданного ящика. Это не банковский перевод. Обычная денежная выручка паллеты считается отдельно: итоговую сумму показывает «Оценить», наличные появляются у консоли, а MIC — на месте ящика. Не считайте это обменным курсом MIC на кредиты. Сумму и дополнительные награды определяет выбранный запрос; оптовые заказы могут выдавать ещё и ящик электроники.
+<GuideEntityCards><GuideTexture Entity="CargoPalletSell" Caption="auto"/><GuideTexture Entity="MMCIndustrialCredit" Caption="auto"/></GuideEntityCards>
+- **1.** Сверьте готовую партию с действующим заказом. На его строке нажмите **«Распечатать этикетку»**.
+- **2.** **Положите** требуемую партию в ящик, закройте его и примените к ящику этикетку из руки. Этикетка связывает груз с конкретным запросом.
+- **3.** Поставьте ящик на паллету продажи Хоккайдо. Уберите постороннее имущество. На консоли паллеты нажмите **«Оценить»**, проверьте содержимое, затем **«Продать»**.
+- **4.** Заберите физические талоны MIC с места проданного ящика. Это не банковский перевод. Обычная денежная выручка паллеты считается отдельно: итоговую сумму показывает **«Оценить»**, наличные появляются у консоли, а MIC — на месте ящика. Не считайте это обменным курсом MIC на кредиты. Сумму и дополнительные награды определяет выбранный запрос; оптовые заказы могут выдавать ещё и ящик электроники.
 
 Нет награды: проверьте этикетку, действительность запроса, уровень и количество изделий. Для выплаты MIC нужен принятый станцией заказ на эти изделия.
 
 ## 6. Потратить награду и расширить производство
-<GuideEntityCards><GuideEntityEmbed Entity="VendingMachineMMCUplink"/><GuideEntityEmbed Entity="MMCLathe"/></GuideEntityCards>
-Примените MIC из активной руки к киоску снабжения ММС. Откройте «Аплинк MMC», выберите раздел и товар в пределах внесённого баланса; покупка появляется рядом. Киоск принимает MIC, обычная наличность их не заменяет; штатного обмена MIC на наличность в каталоге нет.
+<GuideEntityCards><GuideTexture Entity="VendingMachineMMCUplink" Caption="auto"/><GuideTexture Entity="MMCLathe" Caption="auto"/></GuideEntityCards>
+**Примените** MIC из активной руки к киоску снабжения ММС. **Откройте** **«Аплинк MMC»**, выберите раздел и товар в пределах внесённого баланса; покупка появляется рядом. Киоск принимает MIC, обычная наличность их не заменяет; штатного обмена MIC на наличность в каталоге нет.
 
-Для собственного цеха откройте «ММС | Гидравлика»: 15 000 ОИ после «Исследование материалов 1»; он даёт платы прессов ММС и компактных печи и сборщика. Затем выбирайте улучшения деталей, запасы химии и [автоматизацию](guide://IndustryAutomation) под реально повторяющиеся заказы. Точные открытия всей ветки ММС, включая экипировку и кораблестроение, находятся в [окне РНД](guide://ColossusCatalogueResearch).
+Для собственного цеха откройте **«ММС | Гидравлика»**: 15 [color=#73BFD3]000 ОИ[/color] после **«Исследование материалов 1»**; он даёт платы прессов ММС и компактных печи и сборщика. Затем выбирайте улучшения деталей, запасы химии и [автоматизацию](guide://IndustryAutomation) под реально повторяющиеся заказы. Точные открытия всей ветки ММС, включая экипировку и кораблестроение, находятся в [окне РНД](guide://ColossusCatalogueResearch).
 <GuideMap Map="/Maps/_LuaM/POI/hokkaidoLuaM.yml" Name="Хоккайдо"/>
 
 ## Производственные руководства
 [Промышленные станки](guide://Economy) · [Дуговая печь](guide://ArcFurnace) · [Автоматизация производства](guide://IndustryAutomation).
+
+[Модернизация станков и УМЗД](guide://IndustryMachineParts) · [Фабрикаторы](guide://IndustryFabricators) · [Корабельный бур](guide://IndustryDrilling) · [Лазерный бур](guide://ColossusLaserDrill).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/MMC/MachineParts.xml -->
 # Детали машин и УМЗД
 <GuideEntityCards>
-  <GuideEntityEmbed Entity="RPED"/>
-  <GuideEntityEmbed Entity="NanoManipulatorStockPart"/>
-  <GuideEntityEmbed Entity="AdvancedMatterBinStockPart"/>
-  <GuideEntityEmbed Entity="AdvancedCapacitorStockPart"/>
+  <GuideTexture Entity="RPED" Caption="auto"/>
+  <GuideTexture Entity="NanoManipulatorStockPart" Caption="auto"/>
+  <GuideTexture Entity="AdvancedMatterBinStockPart" Caption="auto"/>
+  <GuideTexture Entity="AdvancedCapacitorStockPart" Caption="auto"/>
 </GuideEntityCards>
 
 ## Обновить работающий станок
 - **1.** Осмотрите плату или станок: нужны детали подходящего типа. Производственные микропроцессоры, оптика и моторы ММС — ингредиенты рецептов; манипуляторы, ёмкости материи и конденсаторы — устанавливаемые детали машин.
-- **2.** Загрузите улучшенные детали в УМЗД. Устройство выбирает самые высокие уровни каждого требуемого типа из своих запасов и уже установленных деталей.
-- **3.** Отвёрткой откройте техническую панель станка. Примените УМЗД к машине и стойте на месте до завершения замены; движение и урон прерывают действие.
-- **4.** Закройте панель. В контекстном меню осмотра проверьте улучшения машины. Вытесненные детали возвращаются в УМЗД.
+- **2.** **Загрузите** улучшенные детали в УМЗД. Устройство выбирает самые высокие уровни каждого требуемого типа из своих запасов и уже установленных деталей.
+- **3.** *Если у станка есть обслуживаемая техническая панель,* откройте её отвёрткой. На оборудовании с заблокированным демонтажем УМЗД применяется без открытия панели. **Примените** УМЗД к машине и стойте на месте до завершения замены; движение и урон прерывают действие.
+- **4.** *Если панель открыта,* закройте её. В контекстном меню осмотра проверьте улучшения машины. Вытесненные детали возвращаются в УМЗД.
 
-Если машина требует несколько одинаковых деталей, считается **средний уровень с учётом количества**. Одна деталь уровня 3 и одна уровня 1 дают средний уровень 2. Для полного улучшения замените весь набор.
+*Если машина требует несколько одинаковых деталей,* считается **средний уровень с учётом количества**. Одна деталь уровня 3 и одна уровня 1 дают средний уровень 2. Для полного улучшения замените весь набор.
 
 ## Что меняется у производственного станка
 Для обычных коэффициентов станка:
-- **Манипулятор** уменьшает время: уровень 1 → 100%, 2 → 50%, 3 → 25%, 4 → 12,5% исходного времени. Формула: время рецепта × коэффициент машины × 0,5^(средний уровень − 1).
-- **Ёмкость материи** уменьшает материальный расход: уровень 1 → 100%, 2 → 93%, 3 → 86,49%, 4 → 80,44%. Это значения до округления и поправки конкретного рецепта.
+- **Манипулятор** уменьшает время: уровень 1 → [color=#73BFD3]100%[/color], 2 → [color=#73BFD3]50%[/color], 3 → [color=#73BFD3]25%[/color], 4 → 12,5% исходного времени. Формула: время рецепта × коэффициент машины × 0,5^(средний уровень − 1).
+- **Ёмкость материи** уменьшает материальный расход: уровень 1 → [color=#73BFD3]100%[/color], 2 → [color=#73BFD3]93%[/color], 3 → [color=#73BFD3]86,49%[/color], 4 → 80,44%. Это значения до округления и поправки конкретного рецепта.
 - Итог каждого материала: **округление вверх(базовое количество × итоговый коэффициент расхода ^ масштаб скидки рецепта)**. При масштабе 0 скидки нет; при 0,2 она слабее обычной. Скидка материалов не сокращает заданное рецептом число предметов и реагентов.
 
-У прессов ММС коэффициент ёмкости материи равен 0,9: уровни 1 / 2 / 3 / 4 дают 100 / 90 / 81 / 72,9% материального расхода до масштаба скидки и округления. У отдельных машин коэффициенты переопределены. Конденсатор не даёт всем станкам одинаковую скидку энергии: эффект зависит от устройства. Сверяйте результат через осмотр улучшений; таблица выше описывает стандартную обработку Lathe.
+У прессов ММС коэффициент ёмкости материи равен 0,9: уровни 1 / 2 / 3 / 4 дают 100 / 90 / 81 / [color=#73BFD3]72,9%[/color] материального расхода до масштаба скидки и округления. У отдельных машин коэффициенты переопределены. Конденсатор не даёт всем станкам одинаковую скидку энергии: эффект зависит от устройства. Сверяйте результат через осмотр улучшений; таблица выше описывает стандартную обработку Lathe.
 
 ## Настройки УМЗД
-Контекстные действия переключают фильтр **детали / батареи / смешанный** и подбор с пола. Выключенный подбор оставляет ручную загрузку. Батареи исключены из режима «детали», даже если технически являются деталями машины. Действие опустошения выгружает содержимое у ваших ног; во время него не двигайтесь.
+Контекстные действия переключают фильтр **детали / батареи / смешанный** и подбор с пола. Выключенный подбор оставляет ручную загрузку. Батареи исключены из режима **«детали»**, даже если технически являются деталями машины. Действие опустошения выгружает содержимое у ваших ног; во время него не двигайтесь.
 
 ## Где открыть детали
-«Базовые компоненты» стоит 5 000 ОИ и служит началом цепочки. «Продвинутые компоненты» — ещё 20 000 ОИ, открывает детали уровня 2. «Суперкомпоненты» — ещё 25 000 ОИ, открывает уровень 3 и соответствующие чертежи. «Механическое уплотнение» после «Продвинутые компоненты» стоит 12 500 ОИ и открывает УМЗД и упаковщик машин. Все условия и точные изделия доступны в [окне РНД](guide://ColossusCatalogueResearch).
+**«Базовые компоненты»** стоит 5 [color=#73BFD3]000 ОИ[/color] и служит началом цепочки. **«Продвинутые компоненты»** — ещё 20 [color=#73BFD3]000 ОИ[/color], открывает детали уровня 2. «Суперкомпоненты» — ещё 25 [color=#73BFD3]000 ОИ[/color], открывает уровень 3 и соответствующие чертежи. «Механическое уплотнение» после «Продвинутые компоненты» стоит 12 500 ОИ и открывает УМЗД и упаковщик машин. Все условия и точные изделия доступны в [окне РНД](guide://ColossusCatalogueResearch).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Index.xml -->
 # Медицина
 
 ## Лечение и восстановление
-[Диагностика и медицинские инструменты](guide://MedicalDoctor) · [Химическое производство](guide://Chemist) · [Лекарственные вещества](guide://Medicine).
+[Химическое производство](guide://Chemist) · [Лекарственные вещества](guide://Medicine)
 
-[Операции и замена органов](guide://ColossusSurgery) · [Криогенное лечение](guide://Cryogenics) · [Клонирование](guide://Cloning) · [Летоферол и обращение мутации](guide://Letoferol).
+
+<GuideEntityCards>
+<GuideTexture Entity="HandheldHealthAnalyzer" Caption="Оценить состояние"/>
+<GuideTexture Entity="Medkit" Caption="Оказать помощь"/>
+<GuideTexture Entity="Scalpel" Caption="Подготовить операцию"/>
+</GuideEntityCards>
 
 Медицинский имплант сообщает о критическом состоянии или смерти; датчики комбинезона передают положение на монитор экипажа. [Установка и настройка](guide://StartingGear).
 
-## Импланты и протезы
-[Установка и совместимость](guide://ColossusCybernetics) · [Человечность и киберпсихоз](guide://ColossusHumanity) · [Органы и протезы](guide://ColossusCyberneticOrgans).
+## Хирургия и улучшения
+[Человечность и киберпсихоз](guide://ColossusHumanity)
 
 ## Медицинские контракты
-Доставьте найденного в спасательной капсуле контрактного пациента в **приёмник медицинских заказов** на МЦ. Обычный пациент без контракта награды не даёт.
+Доставьте найденного в спасательной капсуле контрактного пациента в **приёмник медицинских заказов** на МЦ. *Обычный пациент без контракта награды не даёт.*
 
 В окне приёмника **«слишком много повреждений»** означает, что суммарный урон выше допуска конкретного контракта: продолжайте лечение. **«Пациент не жив»** требует реанимации. Когда награда станет доступна, окно покажет выплату: оставшиеся повреждения уменьшают её относительно максимума. Нажатие выдаёт наличные и отправляет пациента; это отдельная операция от продажи тел.
 
-[Поиск капсул и доставка пациентов](guide://MedicalBounties) · [Медицинские рецепты](guide://MedicalRecipes) · [Должности и оборудование МЦ](guide://ColossusMedicalFaction)
+[Должности и оборудование МЦ](guide://ColossusMedicalFaction)
+
+<GuideHub Root="Medical"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Letoferol.xml -->
 # Химеры и летоферол
 <GuideEntityCards>
-<GuideEntityEmbed Entity="SyringeLetoferol"/>
+<GuideTexture Entity="SyringeLetoferol" Caption="auto"/>
   <GuideEntityEmbed Entity="MobLetoferolHorror"/>
-  <GuideEntityEmbed Entity="ChimeraFleshKudzu"/>
+  <GuideTexture Entity="ChimeraFleshKudzu" Caption="auto"/>
 </GuideEntityCards>
 Летоферол — опасный реагент, связанный с превращением в химеру. Существует лабораторная и природная разновидность. Природный летоферол также создаёт биомассу при попадании на пол.
 
@@ -3619,7 +3729,7 @@ Viper Group — частная военная компания. Её участ�
 ## Лечение
 Мезотаксинид и мезофенерол выводят обе разновидности летоферола и при достаточной концентрации обращают соответствующее превращение. **Выведение яда и обращение мутации имеют разные пороги.** Для лабораторной и природной форм пороги мезотаксинида составляют 15 и 25 единиц, мезофенерола — 40 и 45. Передозировка мезотаксинида сама причиняет вред: лечение должен контролировать медик.
 
-Ниже приведены актуальные свойства и рецепты веществ. Протолетоферол — промежуточный реагент, а не готовое лекарство.
+Ниже приведены свойства и рецепты веществ. Протолетоферол — промежуточный реагент, а не готовое лекарство.
 <GuideReagentEmbed Reagent="Letoferol"/>
 <GuideReagentEmbed Reagent="NaturalLetoferol"/>
 <GuideReagentEmbed Reagent="Mesotaxinide"/>
@@ -3630,176 +3740,176 @@ Viper Group — частная военная компания. Её участ�
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Surgery.xml -->
-# Операции и замена органов
+# Хирургия: установка и замена
 
-Хирургическое окно позволяет заменить органы, пришить конечность и установить протез. Подготовьте пациента, замену и **скальпель, ретрактор, гемостат, пилу, флакон костного геля и термокаутер**. Установка автохирургом и отдельные слоты описаны в [руководстве по имплантам](guide://ColossusCybernetics).
+**Выберите** [орган или имплант](guide://ColossusCybernetics) и проверьте [человечность](guide://ColossusHumanity) до операции.
 
-## Открыть окно и выполнить этап
+Биосинтетические органы и части тела изготавливаются на **медицинском биофабрикаторе**; обычная кибернетика — на **медицинском ТехФабе** или **фабрикаторе экзокостюмов**, фракционные модели — на своём фабе. **Подключите** станок к базе с изученным рецептом; технологии смотрите в [РНД](guide://ColossusCatalogueResearch), готовые устройства — в [аплинках](guide://ColossusCatalogueUplinks).
 
-<GuideEntityCards>
-<GuideEntityEmbed Entity="Scalpel"/>
-<GuideEntityEmbed Entity="Retractor"/>
-<GuideEntityEmbed Entity="Hemostat"/>
-<GuideEntityEmbed Entity="SawElectric"/>
-<GuideEntityEmbed Entity="BoneGel"/>
-<GuideEntityEmbed Entity="Cautery"/>
-</GuideEntityCards>
+## Автохирург
 
-1. Уложите пациента. Снимите одежду, закрывающую выбранную область: для головы — головной убор; для груди и рук — верхнюю одежду и комбинезон; для кисти — перчатки; для ноги — верхнюю одежду и предметы в слоте ног; для стопы — обувь.
-2. На хирурге должны быть **маска и перчатки**. Без любого из этих двух предметов каждый выполненный этап добавляет пациенту **15 ядовитого урона**, если хирург не имеет отдельного эффекта стерилизации.
-3. Возьмите хирургический инструмент. В контекстном меню пациента выберите **«Начать операцию»**: откроется окно **«Операция»** со списком частей тела.
-4. Выберите область, затем операцию. Строка **«Требуется»** ведёт к подготовительной операции: например, перед заменой сердца сначала выполняют вскрытие грудной клетки.
-5. Держите нужный инструмент в одной из рук и нажмите кнопку текущего этапа. После завершения полосы выполнения этап засчитывается, становится доступен следующий. Инструмент на полу или в сумке не учитывается. Смена руки и движение хирурга прерывают текущий этап.
+<GuideEntityCards><GuideTexture Entity="AutosurgeonMantisBladesMieyoFlatpack" Caption="auto"/><GuideTexture Entity="AutosurgeonHumanityChipMk1Flatpack" Caption="auto"/><GuideTexture Entity="AutosurgeonDermalArmorFlatpack" Caption="auto"/></GuideEntityCards>
 
-Кнопка **«Части»** возвращает к выбору области, **«Операции»** — к операциям на ней, **«Этапы»** — к предыдущей операции после перехода в её требования. Закрытие окна не зашивает разрез: можно открыть его снова и продолжить с выполненного места.
+1. **Разверните** упаковку нужной модели на полу. **Пристегните** пациента; без пристёгнутого пациента аппарат оперирует активировавшего его персонажа.
+2. **Включите** устройство через контекстное меню. Не перемещайте пациента и аппарат [color=#73BFD3]**15 с**[/color].
+3. **Проверьте** анализатором состояние и человечность; новые активные возможности появятся на панели действий.
 
-Обычные операции требуют лежащего пациента. Если конкретный этап сообщает, что нужен **операционный стол**, пациента необходимо именно пристегнуть к нему. Принудительный сон уменьшает кровопотерю от начального разреза с **10 до 5**; обычное лежание само по себе обезболиванием не является.
+Аппарат органа заменяет содержимое своего слота. Аппарат клинков заполняет свободные слоты существующих рук; подкожный аппарат не ставит второй такой же имплант. Подходящий слот обязателен, а перегрузка человечности не блокирует установку.
 
-## Открыть доступ к органам
+Использованный аппарат разбирается отвёрткой за [color=#73BFD3]**5 с**[/color], возвращая [color=#73BFD3]**5 стали и 5 пластика**[/color]. Извлечённого органа в нём нет. Для органов и органных имплантов используйте ручную операцию. Служебные подкожные устройства извлекаются подходящим имплантером с разрешённым извлечением; постоянные модели так не удаляются. Переводчики устанавливаются своими имплантерами.
 
-**«Открытие разреза»** выполняется на той области, где будет вмешательство:
+## Подготовка к ручной операции
 
-1. **«Сделать разрез скальпелем»** — скальпель, базово **2 с**.
-2. **«Отвести кожу в стороны»** — ретрактор, **2 с**.
-3. **«Зажать кровоточащие сосуды»** — гемостат, **2 с**.
+<GuideEntityCards><GuideTexture Entity="Scalpel" Caption="auto"/><GuideTexture Entity="Retractor" Caption="auto"/><GuideTexture Entity="Hemostat" Caption="auto"/><GuideTexture Entity="SawElectric" Caption="auto"/><GuideTexture Entity="BoneGel" Caption="auto"/><GuideTexture Entity="Cautery" Caption="auto"/></GuideEntityCards>
 
-Для сердца, лёгких, печени и желудка выберите **туловище → «Вскрытие грудной клетки»**. После разреза выполните **«Распилить кости»** пилой (**4 с**) и **«Приподнять кости»** ретрактором (**2 с**). Теперь доступна работа с органами груди.
+1. **Принесите** замену заранее. **Уложите** пациента; если этап требует операционный стол, именно пристегните его к столу.
+2. **Снимите** одежду с области: голова — головной убор; грудь и руки — верхняя одежда и комбинезон; кисть — перчатки; нога — верхняя одежда и предметы в слоте ног; стопа — обувь.
+3. **Наденьте** **маску и перчатки**. Без любого из них каждый этап добавляет пациенту **15 ядовитого урона**, если у хирурга нет отдельной стерилизации.
+4. **Возьмите** хирургический инструмент → ПКМ по пациенту → **«Начать операцию»** → часть тела → операция. Кнопка **«Требуется»** открывает нужную подготовку.
+5. Держите инструмент текущего этапа или устанавливаемый орган **в руке** и нажмите этап. Предметы в сумке и на полу не учитываются; движение хирурга и смена руки прерывают выполнение.
 
-Для глаз и мозга выберите **голову** и откройте разрез. Отдельное вскрытие грудной клетки им не нужно; этап распила костей входит в выбранную операцию.
+Принудительный сон уменьшает кровопотерю от начального разреза с **10 до 5**. Простое лежание его не заменяет. Время ниже базовое; инструменты и модификаторы его меняют. Доступная самостоятельная операция занимает в **4 раза** больше времени.
 
-Время здесь базовое: улучшенные инструменты и модификаторы хирурга его меняют. Самостоятельная операция, когда разрешена сервером, занимает в **4 раза** больше времени.
+## Доступ к области
 
-## Заменить сердце, лёгкие, печень или желудок
+<GuideNote Tone="warning" Text="[bold]«Открытие разреза»[/bold]: скальпель [bold]2 с[/bold] → ретрактор [bold]2 с[/bold] → гемостат [bold]2 с[/bold]."/>
 
-Сначала изготовьте и принесите новый орган: извлечение прежнего и установка нового — две разные операции. Обычная пересадка занимает соответствующее место: второе сердце или вторые лёгкие поверх имеющихся не устанавливаются.
+<GuideTable Columns="2">
+<Box>**Область**</Box><Box>**Подготовка**</Box>
+<Box>Сердце, лёгкие, печень, желудок; ЦНС и подкожная броня</Box><Box>Туловище → **«Вскрытие грудной клетки»**. После разреза: пила [color=#73BFD3]**4 с**[/color], затем приподнять кости ретрактором [color=#73BFD3]**2 с**[/color].</Box>
+<Box>Глаза, мозг, нейрочип</Box><Box>Голова → **«Открытие разреза»**. Распил костей входит в выбранную операцию.</Box>
+<Box>Клинок богомола</Box><Box>Рука → **«Открытие разреза»**, без распила костей.</Box>
+</GuideTable>
 
-1. В открытой грудной клетке выберите **«Удаление сердца»**, **«Удаление лёгких»**, **«Удаление печени»** или **«Удаление желудка»**.
-2. Выполните оставшиеся незавершённые этапы: распил костей пилой (**4 с**, если ещё не выполнен), зажим внутренних сосудов гемостатом (**2 с**), извлечение органа гемостатом (**8 с**). Гемостат выполняет здесь и роль пинцета. Извлечённый орган отделяется от пациента и подбирается в свободную руку, если она есть.
-3. Вернитесь в **«Операции»**, выберите **«Установка»** нужного органа. Возьмите сам новый орган в руку и нажмите этап добавления (**6 с**). Предмет переместится из руки внутрь пациента.
-4. Выполните **«Закрыть раны»** термокаутером (**2 с**): этот этап закрепляет установленный орган. Одного перемещения предмета в тело недостаточно для завершения процедуры.
-5. Завершите **«Закрытие разреза»**, описанное ниже. Установка органа не закрывает грудную клетку автоматически.
+## Удаление и установка
 
-Вариант операции зависит от строения пациента: для тела без нужного органного места соответствующей установки не будет. Кибернетическое сердце занимает место сердца, кибернетические лёгкие — лёгких; карманный имплант из имплантера органом не считается.
+- **Орган:** выберите удаление нужного органа. *Если ещё требуется,* распилите кости пилой [color=#73BFD3]**4 с**[/color]; зажмите внутренние сосуды гемостатом [color=#73BFD3]**2 с**[/color], извлеките орган гемостатом **8 с**. При свободной руке извлечённый орган подбирается в неё. Затем выберите установку: новый орган в руке → добавление **6 с** → закрепление термокаутером **2 с**. Не оставляйте пациента без сердца; перед заменой желудка обеспечьте питание.
+- **Нейрочип, ЦНС, подкожная броня:** выберите установку или удаление соответствующего импланта. Для головы и туловища предусмотрен этап пилой; для клинка распил не нужен. Извлечение — гемостатом после зажима сосудов; вставка — самим имплантом с закреплением термокаутером. Занятый слот сначала освобождают.
+- **Конечность:** выберите удаляемую часть → разрез → **«Удаление части тела»**: пила [color=#73BFD3]**4 с**[/color], гемостат [color=#73BFD3]**2 с**[/color], ампутация пилой **8 с**. Отсутствующую часть удалять не нужно. Для установки выберите родителя: руку/ногу пришивают к туловищу, кисть — к руке, стопу — к ноге. **Откройте** разрез → **«Прикрепить…»** нужной стороны → замена в руке **6 с** → термокаутер **2 с**.
 
-## Заменить глаза или перенести мозг
+Левая и правая части различаются. При удалении руки её кисть остаётся на отсоединённой руке; новую кисть при необходимости пришивают отдельно. После закрепления проверьте появление руки в интерфейсе или опоры на ногу. Позитронный мозг требует подходящего места и сам по себе не превращает тело в КПБ.
 
-Для глаз: **голова → «Открытие разреза» → «Удаление глаз»**. Выполните распил пилой, зажим внутренних сосудов гемостатом и извлечение гемостатом. Затем **«Установка глаз»**: новый орган в руке → добавление → закрепление термокаутером → закрытие разреза. Кибернетические глаза устанавливаются этой же процедурой.
+## Закрытие и проверка
 
-Мозг извлекают и устанавливают аналогично через операции **«Удаление мозга» / «Установка мозга»** на голове. Установка позитронного мозга — отдельная операция для тела с подходящим местом; она не превращает обычного гуманоида в ИПС.
+На каждой вскрытой области выберите **«Закрытие разреза»**: вернуть раздвинутые кости ретрактором [color=#73BFD3]**2 с**[/color] → восстановить распиленные кости костным гелем [color=#73BFD3]**2 с**[/color] → закрыть термокаутером **2 с**. Ненужные и уже выполненные этапы пропускаются. Закрепление органа не закрывает всю область.
 
-## Заменить руку, кисть, ногу или стопу
+<GuideNote Tone="warning" Text="[bold]«Части»[/bold] возвращает к областям, [bold]«Операции»[/bold] — к операциям выбранной области, [bold]«Этапы»[/bold] — из требования к прежней операции. Закрытие окна сохраняет выполненные этапы и не зашивает разрез."/>
 
-У частей тела есть **тип и сторона**. Левая кисть заменяет левую кисть, правая нога — правую ногу. При удалении целой руки её кисть остаётся частью отсоединённой руки; новая рука должна содержать подходящую кисть либо её придётся пришить отдельно.
+*Если этап недоступен,* проверьте инструмент в руке, одежду, положение пациента и свободный слот. Для установки конечности выбирают её родителя; операции отсутствующего слота у этого тела не появятся.
 
-1. Выберите **саму удаляемую часть**, выполните **«Открытие разреза»**, затем **«Удаление части тела»**: распил пилой (**4 с**), зажим внутренних сосудов гемостатом (**2 с**), ампутация пилой (**8 с**). Если часть уже отсутствует, начинайте с установки.
-2. Для установки выберите **родительскую часть**: руку или ногу пришивают к **туловищу**, кисть — к соответствующей **руке**, стопу — к соответствующей **ноге**.
-3. Откройте разрез на родительской части. Выберите операцию **«Прикрепить…»** с нужной стороной. Держите замену в руке и выполните вставку (**6 с**).
-4. Закрепите её термокаутером (**2 с**). Этот этап завершает прикрепление и включает работу новой части. Проверьте появление кисти в интерфейсе рук либо возможность опираться на установленную ногу; затем закройте оставшийся открытый разрез.
-
-## Закрыть после операции
-
-На каждой вскрытой области выберите **«Закрытие разреза»**. Окно пропускает уже выполненные или ненужные этапы:
-
-1. **«Вернуть кости»** — ретрактор, **2 с**, если кости раздвигали.
-2. **«Восстановить грудную клетку»** — флакон костного геля, **2 с**, если кости распиливали.
-3. **«Закрыть разрез»** — термокаутер, **2 с**. Удаляются состояния открытого разреза, отведённой кожи и зажатых сосудов.
-
-Если после замены обрабатывали несколько областей, проверьте каждую через **«Части»**. Закрытие груди не закрывает отдельно вскрытую голову или руку.
-
-[Свойства органов и протезов](guide://ColossusCyberneticOrgans) · [Установка имплантов](guide://ColossusCybernetics)
-
-## Если этап не запускается
-
-- **«Отсутствуют инструменты»** — возьмите именно инструмент текущего этапа либо устанавливаемый орган/часть в руку. Для удаления органа подходит **гемостат**, для вставки нужен **сам орган**.
-- **Требование снять обмундирование** — освободите слоты выбранной области, перечисленные в начале руководства. Снятие одной брони не освобождает слот комбинезона.
-- **«Пациент должен лежать!»** — уложите пациента; наличие рядом стола этого не заменяет.
-- Операции установки нет — проверьте область и свободное место: руки/ноги ставят через туловище, кисти через руку, стопы через ногу; органы одного типа сначала извлекают.
-- Этап уже отмечен выполненным — переходите дальше. Повторный распил после уже вскрытой грудной клетки не требуется.
-- После вставки операция осталась незаконченной — выполните закрепление термокаутером, затем отдельно закройте разрез.
+[Характеристики улучшений](guide://ColossusCybernetics) · [РНД](guide://ColossusCatalogueResearch) · [Аплинки](guide://ColossusCatalogueUplinks)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Organs.xml -->
-# Органы и протезы
+# Туловище: органы и импланты
 
-Исследования и доступные ветки смотрите в [учебном окне РНД](guide://ColossusCatalogueResearch); остальные справочники находятся в [каталоге](guide://ColossusCatalogue). Для перечисленных ниже обычных протезов используются **медицинский ТехФаб** и **фабрикатор экзокостюмов**, подключённые к изучившей рецепт базе исследований. Выберите рецепт по названию предмета и загрузите указанные станком материалы.
+Сердце, лёгкие, печень, ЦНС и подкожная броня имеют отдельные слоты. В каждом органном слоте одновременно работает один вариант. Кибернетика уязвима к ЭМИ; отсутствие дыхания и защита от давления — разные эффекты.
 
-<GuideEntityCards>
-<GuideEntityEmbed Entity="BasicCyberneticHeart"/>
-<GuideEntityEmbed Entity="UpgradedCyberneticHeart"/>
-<GuideEntityEmbed Entity="UpgradedCyberneticLungs"/>
-<GuideEntityEmbed Entity="BasicCyberneticEyes"/>
-<GuideEntityEmbed Entity="DexLeftHand"/>
-<GuideEntityEmbed Entity="SpeedLeftLeg"/>
-</GuideEntityCards>
+## Сердце
 
-- **Кибернетическое сердце**: предел урона выносливости до истощения **+35%**. Расход лекарств — **−30%**, ядов — **+40%**, наркотиков — **+20%**. Медленное расходование продлевает присутствие дозы в организме; это не универсальный множитель лечения и не иммунитет к ядам.
-- **Улучшенное кибернетическое сердце**: предел выносливости **+70%**, иммунитет к повреждениям от давления; расход лекарств **−60%**, ядов **+180%**, наркотиков **+60%**. Холод и отсутствие дыхания этим сердцем не устраняются.
-- **Улучшенные кибернетические лёгкие**: убирают необходимость дышать. Это эффект установленного органа; отдельного включения нет. Иммунитет к давлению находится у улучшенного сердца, поэтому для выхода в вакуум это разные улучшения.
-- **Кибернетические глаза**: защита глаз и иммунитет к вспышкам. **Кибернетические глаза с визором** дополнительно показывают должности, имплант защиты разума и криминальные статусы. **Кибернетические глаза с анализатором** показывают здоровье биологических существ; **кибернетические глаза диагностики** — неорганических и кремниевых. Медицинский и диагностический варианты не следует выбирать ради защиты от вспышек: у них другой набор эффектов.
-- **Д.Е.К.С левая кисть / Д.Е.К.С правая кисть**: время действий с полосой выполнения **−20% за кисть**; две дают **−36%** суммарно, когда действие учитывает этот множитель.
-- **Б.Е.Г.У.Н левая нога / Б.Е.Г.У.Н правая нога**: базовые скорости части **2,875 м/с шагом**, **5,175 м/с бегом**, защита от скольжения и напольных триггеров. Итоговое движение зависит и от остальных установленных ног и модификаторов тела.
-- **Ч.Ж левая рука / Ч.Ж правая рука**: позволяют взламывать двери силой, в том числе запитанные; скорость вскрытия **×1,5**. Это замена целой руки, а не перчатки.
+<GuideEntityCards><GuideTexture Entity="BasicCyberneticHeart" Caption="auto"/><GuideTexture Entity="UpgradedCyberneticHeart" Caption="auto"/><GuideTexture Entity="OrganPDVAdvancedHeart" Caption="auto"/><GuideTexture Entity="OrganBerserkHeart" Caption="auto"/></GuideEntityCards>
 
-Протезы рук, кистей и ног открывает **«Продвинутое протезирование»**; базовые сердце и лёгкие — **«Усиления организма»**; улучшенные органы — **«Выживание в вакууме»**. Кибернетика может временно отключаться от ЭМИ: замена органа меняет не только свойства, но и уязвимость пациента.
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Биологическое / биосинтетическое сердце** · 0</Box><Box>Восстанавливает работу сердца; метаболизм зависит от вида.</Box>
+<Box>**Кибернетическое сердце** · 1</Box><Box>Предел выносливости +[color=#73BFD3]35%[/color]. Расход лекарств −[color=#73BFD3]30%[/color], ядов +[color=#73BFD3]40%[/color], наркотиков +20%.</Box>
+<Box>**Улучшенное кибернетическое сердце** · 1</Box><Box>Предел выносливости +[color=#73BFD3]70%[/color], иммунитет к повреждениям от давления. Расход лекарств −[color=#73BFD3]60%[/color], ядов +[color=#73BFD3]180%[/color], наркотиков +60%.</Box>
+<Box>**PD-VI VV/KE** · 1</Box><Box>Порог смерти +20; предел выносливости 75 вместо 100.</Box>
+<Box>**Сердце берсерка** · 4</Box><Box>**«Жажда крови»**: пороги крита/смерти не ниже 150/250, ближний урон +[color=#73BFD3]20%[/color], нет замедления от травм; стрельба заблокирована. Перезарядка [color=#73BFD3]2 минуты[/color].</Box>
+</GuideTable>
 
-Каждый перечисленный кибернетический орган занимает **1 ед. человечности**, каждая кибернетическая рука, кисть, нога или стопа — **0,5**. Две руки и две кисти считаются отдельно: суммарно **2**. [Как проверить запас человечности](guide://ColossusHumanity).
+Расход реагентов меняет длительность дозы, а не умножает лечение. Сердце берсерка наносит каждую секунду по **1,5** ушибов, порезов и уколов; попадание в живое существо лечит эти типы по **3,33**. Удар по стене не лечит. Речь и рация не слышны, прочие звуки приглушены; через [color=#73BFD3]**30 с**[/color] скрываются личности и значки. Выключается вручную: возврат обычных порогов может немедленно привести к криту или смерти. Более высокие исходные пороги не снижаются; режим не является киберпсихозом.
 
-## Органы Авангарда
-<GuideEntityCards><GuideEntityEmbed Entity="OrganInternalAirSystem"/><GuideEntityEmbed Entity="OrganPDVAdvancedHeart"/></GuideEntityCards>
+## Лёгкие
 
-**Система внутреннего дыхания PD-VI LS-210** заменяет лёгкие и использует собственную фильтрацию; иммунитета к необходимости дышать у неё нет. **Протез сердца PD-VI VV/KE** повышает порог смерти на **20**, но снижает предел выносливости до **75** вместо обычных **100**. Оба органа стоят по **1 ед. человечности**. Их автохирурги открывает «Кардиореспираторная бионика Авангарда» за **20 000 ОИ**, изготовление — на фабе Авангарда.
+<GuideEntityCards><GuideTexture Entity="UpgradedCyberneticLungs" Caption="auto"/><GuideTexture Entity="OrganInternalAirSystem" Caption="auto"/></GuideEntityCards>
 
-[Порядок замены и закрытие разреза](guide://ColossusSurgery) · [Импланты в отдельных слотах](guide://ColossusCybernetics)
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Биологические / биосинтетические лёгкие** · 0</Box><Box>Обмен дыхательных газов; подходящая смесь зависит от вида.</Box>
+<Box>**Обычные киберлёгкие** · 1</Box><Box>Продолжают участвовать в дыхании.</Box>
+<Box>**Улучшенные киберлёгкие** · 1</Box><Box>Устраняют потребность дышать, без отдельного включения. Не дают иммунитет к давлению или холоду.</Box>
+<Box>**Внутреннее дыхание PD-VI LS-210** · 1</Box><Box>Собственная фильтрация; потребность дышать сохраняется.</Box>
+</GuideTable>
+
+## Печень, почки и желудок
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Биологическая / биосинтетическая печень** · 0</Box><Box>Обрабатывает алкоголь отдельно от пищи и напитков.</Box>
+<Box>**Киберпечень** · 1</Box><Box>Меняет обработку алкоголя на кибернетический метаболизм. Не является универсальным антидотом.</Box>
+<Box>**Биологические почки** · 0</Box><Box>Удаляют вещества без действующего метаболизма; не заменяют функции сердца и печени.</Box>
+<Box>**Биологический желудок** · 0</Box><Box>Обрабатывает пищу и питьё. Введение в желудок отличается от введения в кровь.</Box>
+</GuideTable>
+
+## Центральная нервная система
+
+Один слот ЦНС, отдельный от сердца. Нейроускорители включаются и выключаются действием.
+
+<GuideEntityCards><GuideTexture Entity="OrganCNSMMCSandevistan" Caption="auto"/><GuideTexture Entity="OrganCNSTSFSandevistan" Caption="auto"/><GuideTexture Entity="OrganCNSMMCSakimoto" Caption="auto"/><GuideTexture Entity="OrganCNSKerenzikov" Caption="auto"/></GuideEntityCards>
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**ММС EVT-002 «Лотос»** · 3</Box><Box>Сандевистан: скорость +[color=#73BFD3]50%[/color], частота обычных ближних атак ×2, стрельба заблокирована. Безопасно 10 с; перезарядка 40 с.</Box>
+<Box>**ТСФ WJY-21X «Лейко»** · 3</Box><Box>Тот же режим Сандевистана: скорость +[color=#73BFD3]50%[/color], частота обычных ближних атак ×2, без стрельбы. Безопасно 15 с; перезарядка 80 с.</Box>
+<Box>**ММС EVT-001 «Сакимото»** · 2</Box><Box>**«Чёрная вспышка»**: урон следующего безоружного удара ×2,5. Активная рука свободна; оружие и клинки не подходят. Восстановление 60 с после попадания, 10 с после промаха.</Box>
+<Box>**«Керезников»** · 3</Box><Box>Скорость +[color=#73BFD3]35%[/color], частота обычных ближних атак ×1,5; стрельба разрешена. Без безопасного периода. Восстановление после отключения 30 с.</Box>
+</GuideTable>
+
+**Сандевистан:** за [color=#73BFD3]**2 с**[/color] до конца безопасного периода предупреждает; сам по таймеру не выключается. После периода — **15 клеточного урона/с**, первый тик через ещё [color=#73BFD3]**1 с**[/color]. Крит отключает режим.
+
+**«Керезников»:** каждую секунду **3 клеточного** и по **0,5** ушибов, порезов и уколов. Через [color=#73BFD3]**10 с**[/color] — **9** и по **1,5** соответственно. Лечение механического урона не устраняет клеточный.
+
+## Подкожная защита
+
+Один слот; перечисленные варианты взаимно исключаются.
+
+<GuideEntityCards><GuideTexture Entity="OrganDermalArmor" Caption="auto"/><GuideTexture Entity="OrganDermalArmorPDV" Caption="auto"/><GuideTexture Entity="OrganDermalArmorReflective" Caption="auto"/><GuideTexture Entity="OrganDermalArmorHeavyUSSP" Caption="auto"/><GuideTexture Entity="OrganOpticalCamo" Caption="auto"/></GuideEntityCards>
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Дермальная броня** · 1</Box><Box>Плоское снижение ушибов, порезов и уколов на 3,5; электрический урон +[color=#73BFD3]25%[/color].</Box>
+<Box>**PD-VI E-SAPI** · 2</Box><Box>Уколы и высокотемпературный урон −[color=#73BFD3]15%[/color], ушибы и порезы −[color=#73BFD3]10%[/color]; электрический +[color=#73BFD3]25%[/color], скорость −5%.</Box>
+<Box>**Отражающая дермальная броня** · 3</Box><Box>Отражение подходящего снаряда [color=#73BFD3]20%[/color]; скорость −[color=#73BFD3]10%[/color], электрический урон +[color=#73BFD3]25%[/color]. Обычного снижения урона нет.</Box>
+<Box>**Сверхпрочная бронеплитная основа** · 3</Box><Box>Поглощает один подходящий снаряд; восстановление 20 с. Скорость −[color=#73BFD3]10%[/color]. Не защищает от любого источника урона.</Box>
+<Box>**Оптическая маскировка** · 2</Box><Box>Действие на 7 с: скорость +[color=#73BFD3]10%[/color], первый подходящий удар ×1,4. Атака или прямое повреждение прекращают маскировку. Восстановление 60 с; обнаружение всё ещё возможно.</Box>
+</GuideTable>
+
+Дермальная броня и E-SAPI заменяют защиту одноимённой черты; после удаления защита черты возвращается. Отражающая броня использует другой модификатор.
+
+## Фабрики тромбоцитов
+
+Не занимают слот ЦНС или подкожной брони. Лечение указано **на всю группу урона в секунду**, не на каждый тип.
+
+<GuideEntityCards><GuideTexture Entity="AutosurgeonPlateletFactoriesMieyoFlatpack" Caption="auto"/></GuideEntityCards>
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**I** · 0</Box><Box>До 1,5 механического / 2 ожогового урона в секунду.</Box>
+<Box>**II** · 1</Box><Box>До 2 / 2,66 в секунду.</Box>
+<Box>**III** · 2</Box><Box>До 2,6 / 3,46 в секунду.</Box>
+</GuideTable>
+
+В крите действует [color=#73BFD3]**25%**[/color] лечения. Более высокий уровень заменяет меньший вместе с его стоимостью человечности; уровни не складываются.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Implants/Index.xml -->
-# Установка имплантов
+# Органы, протезы и импланты
 
-Автохирург устанавливает выбранное улучшение за **15 с**. Ручная хирургия позволяет извлечь и переставить органы из отдельных слотов. Перед установкой проверьте [человечность](guide://ColossusHumanity): устройство допускает перегрузку, но она создаёт риск киберпсихоза.
+**Выберите** часть тела: в таблицах указаны совместимость, человечность, эффект и ограничения каждой модели.
 
-[Человечность и киберпсихоз](guide://ColossusHumanity) · [Клинки богомола](guide://ColossusMantisBlades) · [Импланты ЦНС](guide://ColossusCNSImplants) · [Броня и лечебные импланты](guide://ColossusImplantProtection).
-
-## Установить автохирургом
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AutosurgeonMantisBladesMieyoFlatpack"/>
-<GuideEntityEmbed Entity="AutosurgeonHumanityChipMk1Flatpack"/>
-<GuideEntityEmbed Entity="AutosurgeonDermalArmorFlatpack"/>
+<GuideTexture Entity="BasicCyberneticEyes" Caption="Голова"/>
+<GuideTexture Entity="BasicCyberneticHeart" Caption="Органы туловища"/>
+<GuideTexture Entity="OrganArmMantisBlade" Caption="Конечности"/>
 </GuideEntityCards>
 
-1. Изготовьте или купите **упакованный автохирург** нужного типа и разверните его на полу.
-2. Пристегните пациента к автохирургу. Если никто не пристёгнут, устройство оперирует того, кто его активировал.
-3. В контекстном меню включите устройство. Дождитесь **15 с** без перемещения пациента или установки. После успешной операции автохирург расходуется; состояние видно при осмотре.
-4. Снова просканируйте себя медицинским анализатором и проверьте строку **«Человечность»**. Встроенные активные возможности появляются на панели действий.
 
-Автохирург органа заменяет содержимое своего слота. Аппарат клинков заполняет свободные слоты существующих рук; аппарат подкожного импланта не устанавливает второй такой же экземпляр. Ручную замену выполняют через [окно операций](guide://ColossusSurgery).
+В таблицах человечность указана **за один орган, имплант или часть тела**. Одноимённый органный слот вмещает один вариант; разные слоты не заменяют друг друга. Служебные подкожные импланты не занимают слот подкожной брони. Совместимость зависит от строения конкретного тела.
 
-## Что можно совместить
-<GuideTable Columns="2">
-<Box>**Место**</Box><Box>**Что устанавливается**</Box>
-<Box>Голова</Box><Box>Один чип нейростабилизатора. Глаза занимают собственный слот.</Box>
-<Box>ЦНС в туловище</Box><Box>Один «Лотос», «Лейко» или «Сакимото». Эти улучшения конкурируют между собой, но не заменяют сердце.</Box>
-<Box>Подкожная броня туловища</Box><Box>Обычная дермальная броня либо пластины Авангарда; одновременно только один вариант.</Box>
-<Box>Каждая рука</Box><Box>Один клинок богомола. Не требует замены руки целиком.</Box>
-<Box>Сердце, лёгкие и другие органы</Box><Box>Соответствующий обычный или кибернетический орган. Замена не освобождает чужой слот.</Box>
-</GuideTable>
+[Как установить или снять](guide://ColossusSurgery)
 
-## Получить нужное устройство
-- **Общая кибернетика:** «Выживание в вакууме», **50 000 ОИ**, открывает Mk I и дермальную броню; печать на медицинском ТехФабе или фабрикаторе экзокостюмов.
-- **Авангард:** «Кардиореспираторная бионика Авангарда», **20 000 ОИ**: внутреннее дыхание, протез сердца, пластины и Mk II; изготовление на фракционном фабе.
-- **ММС:** «ММС | Базовые бионические протезы», **50 000 ОИ**: клинки, Mk III и фабрики тромбоцитов. Исследования «Лотоса» и «Сакимото» — по **75 000 ОИ**. Используйте фаб ММС.
-- **ТСФ:** «Нейромодификация ЦНС» за **75 000 ОИ** открывает «Лейко» и Mk II; используйте фаб ТСФ.
-- **Инъекторы:** боевой медипен и стимулятор доступны в снабжении Авангарда, ТСФ и Контравенде; ММС открывает их через «ММС | Боевые импланты» за **50 000 ОИ**.
-
-Это цены отдельных исследований; предшественники изучаются отдельно. Конкретные рецепты и ассортимент смотрите в [РНД](guide://ColossusCatalogueResearch) и [аплинках](guide://ColossusCatalogueUplinks).
-
-## Установить или снять вручную
-В [окне операций](guide://ColossusSurgery) выберите **голову** для нейрочипа, **руку** для клинка, **туловище** для ЦНС или подкожной брони.
-
-1. Выполните подготовительную операцию: **открыть разрез** на голове/руке, **вскрыть грудную клетку** для импланта туловища.
-2. Выберите установку или извлечение нужного импланта. Для головы и туловища среди этапов есть **пила**; для клинка распил костей не нужен. При удалении зажмите внутреннее кровотечение **гемостатом**, затем им же извлеките орган.
-3. Для установки держите **сам имплант** в руке и выполните вставку, затем закрепите его **термокаутером**. Если слот занят, сначала извлеките прежний имплант.
-4. Отдельно завершите [закрытие операционной области](guide://ColossusSurgery): костный гель для распиленных костей и термокаутер для разреза. Завершение вставки не закрывает весь разрез.
-
+<GuideHub Root="ColossusCybernetics"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Implants/Humanity.xml -->
@@ -3808,155 +3918,82 @@ Viper Group — частная военная компания. Её участ�
 Человечность ограничивает суммарную нагрузку от кибернетики. Базовый предел — **6**, у человека — **7**. Установленные органы, протезы и импланты расходуют этот запас.
 
 ## Проверить остаток
-<GuideEntityCards><GuideEntityEmbed Entity="HandheldHealthAnalyzer"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="HandheldHealthAnalyzer" Caption="auto"/></GuideEntityCards>
 
-Возьмите медицинский анализатор в руку и **просканируйте себя**. Строка **«Человечность»** показывает остаток и предел: **3/7** означает, что из семи единиц четыре уже заняты. При сканировании другим персонажем эта строка не передаётся. Уведомление после автохирурга также показывает остаток; отрицательное число означает перегрузку.
+**Возьмите** медицинский анализатор в руку и **просканируйте себя**. Строка **«Человечность»** показывает остаток и предел: **3/7** означает, что из семи единиц четыре уже заняты. При сканировании другим персонажем эта строка не передаётся. Уведомление после автохирурга также показывает остаток; отрицательное число означает перегрузку.
 
-<GuideTable Columns="2">
-<Box>**Улучшение**</Box><Box>**Стоимость**</Box>
-<Box>Кибернетические сердце, лёгкие, печень или глаза</Box><Box>1 за каждый орган; улучшенный вариант также стоит 1</Box>
-<Box>Рука, кисть, нога или стопа</Box><Box>0,5 за каждую часть, включая Д.Е.К.С, Б.Е.Г.У.Н и Ч.Ж</Box>
-<Box>Клинок богомола</Box><Box>1 на руку, два клинка — 2</Box>
-<Box>«Лотос», «Лейко»</Box><Box>3</Box>
-<Box>«Сакимото»</Box><Box>2</Box>
-<Box>Обычная дермальная броня / пластины Авангарда</Box><Box>1 / 2</Box>
-<Box>Фабрики тромбоцитов, боевой медипен или стимулятор</Box><Box>1 за улучшение</Box>
-<Box>Свобода, ЭМИ, хранилище / телепортирующий имплант</Box><Box>1 / 2</Box>
-</GuideTable>
-
-Например, человек с «Лотосом» (**3**), парой клинков (**2**), дермальной бронёй (**1**) и киберглазами (**1**) расходует все **7**. Боевой медипен сверх этого даёт перегрузку на **1**.
+Например, человек с **«Лотосом»** (**3**), парой клинков (**2**), дермальной бронёй (**1**) и киберглазами (**1**) расходует все **7**. Боевой медипен сверх этого даёт перегрузку на **1**.
 
 ## Повысить предел
-<GuideEntityCards>
-<GuideEntityEmbed Entity="OrganHumanityChipMk1"/>
-<GuideEntityEmbed Entity="OrganHumanityChipMk2"/>
-<GuideEntityEmbed Entity="OrganHumanityChipMk3"/>
-</GuideEntityCards>
-
-**Чип нейростабилизатора Mk I / II / III** добавляет **+2 / +3 / +4** к пределу и сам не расходует человечность. В голове только один слот: Mk III заменяет предыдущий чип, а не суммируется с ним. Источники устройств указаны в [установке имплантов](guide://ColossusCybernetics).
+[Нейростабилизатор](guide://ColossusHeadImplants) увеличивает предел. В голове один слот: чипы заменяют друг друга, а не складываются.
 
 Черта **«Лояльность к хрому»** даёт ещё **+2**. При **«Непереносимости хрома»** предел всегда **0**: расовый бонус и нейрочип его не поднимают.
 
 ## Когда начинается киберпсихоз
-При получении **ударного, режущего или колющего урона** персонаж с перегрузкой проходит проверку: **25% за каждую лишнюю единицу**, максимум **100%**. Перегрузка на 0,5 даёт **12,5%**, на 2 — **50%**, на 4 — **100%** за подходящее событие урона. Само течение времени проверку не вызывает.
+При получении **ударного, режущего или колющего урона** персонаж с перегрузкой проходит проверку: [color=#73BFD3]**25% за каждую лишнюю единицу**[/color], максимум [color=#73BFD3]**100%**[/color]. Перегрузка на 0,5 даёт **12,5%**, на 2 — **50%**, на 4 — **100%** за подходящее событие урона. Само течение времени проверку не вызывает.
 
-При срыве тело до **15 с** управляется враждебным ИИ и атакует окружающих. Игрок в это время наблюдает, но не управляет телом. Критическое состояние или смерть прекращают срыв раньше; следующий возможен через **10 мин после его окончания**.
+Киберпсихоз не начинается на гриде с блокировкой киберпсихоза: такая защита есть у **«Колосса Централл»** и **Медицинского Центра**. Рядом со станцией, на другом гриде, она не действует.
+
+При срыве тело до [color=#73BFD3]**15 с**[/color] управляется враждебным ИИ и атакует окружающих. Игрок в это время наблюдает, но не управляет телом. Критическое состояние или смерть прекращают срыв раньше; следующий возможен через [color=#73BFD3]**10 мин после его окончания**[/color].
+
+Во время срыва ИИ сам включает готовые импланты: выдвигает клинки богомола, запускает сандевистан или **«Керезников»**, включает оптическую маскировку и сердце берсерка. Выключать их он не умеет: после срыва это придётся сделать самому, иначе сандевистан продолжит перегружать организм.
 
 Чтобы убрать риск, снизьте расход до предела или установите более мощный чип. Извлечение [органа или импланта](guide://ColossusSurgery) освобождает его стоимость.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Implants/MantisBlades.xml -->
-# Клинки богомола
+# Руки и ноги: протезы и клинки
 
-<GuideEntityCards>
-<GuideEntityEmbed Entity="AutosurgeonMantisBladesMieyoFlatpack"/>
-<GuideEntityEmbed Entity="OrganArmMantisBlade"/>
-<GuideEntityEmbed Entity="MantisBlade"/>
-</GuideEntityCards>
+Рука и кисть, нога и стопа — отдельные части. Учитывайте сторону и родительскую часть. Обычные протезы восстанавливают утраченную функцию; улучшенные добавляют эффекты.
 
-**Автохирург ММС (клинки богомола)** за одну операцию ставит имплант в каждую существующую руку со свободным слотом. На фабе ММС он открывается исследованием «ММС | Базовые бионические протезы» за **50 000 ОИ**. Стоимость человечности — **1 за руку**, обычно **2 за пару**. [Порядок установки](guide://ColossusCybernetics).
+## Протезы
 
-## Выдвинуть и убрать
-Нажмите **«Переключить клинки богомола»** на панели действий: раскрываются сразу все установленные клинки. Предмет из соответствующей кисти **выпадает на пол**. Повторное нажатие складывает все клинки. Для парного режима нужны обе руки с выдвинутыми клинками.
-
-ЭМИ временно блокирует выдвижение. Снятие импланта или отделение руки убирает её клинок; ручная операция выполняется на **руке**, в слоте **импланта руки**. Перед ней достаточно [открыть разрез](guide://ColossusSurgery), грудную клетку вскрывать не нужно.
-
-## Удар и парный режим
-Один клинок: **26 режущего + 11 колющего урона**, отдельно **50 структурного**; **1,5 обычной атаки/с** до модификаторов. Прицельный удар имеет множитель повреждения выбранной части **×2**. Клинок вскрывает и запитанные двери, скорость вскрытия **×3**.
-
-Когда раскрыта пара:
-- После попадания основным клинком второй атакует через **0,25 с** с **67% базового урона**, если ещё находится в руке и попадает по цели.
-- Каждый клинок получает **35% вероятности отражения** в проверках отражаемых снарядов. Это отдельные проверки, а не суммарные 70%.
-- **«Рывок клинков богомола»** перемещает на **4 м**, сбивает первое задетое существо; перезарядка **30 с**. Складывание клинков не сбрасывает её.
-
-В каждом клинке запас по **2,5 ед. флогистона и напалма**. При подходящем ударе переносится **1 ед. смеси**; после расхода раствора дополнительного впрыска нет.
-
-[Совместимость и установка](guide://ColossusCybernetics) · [Человечность](guide://ColossusHumanity)
-<!-- /article -->
-
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Implants/CNS.xml -->
-# Импланты центральной нервной системы
-
-<GuideEntityCards>
-<GuideEntityEmbed Entity="OrganCNSMMCSandevistan"/>
-<GuideEntityEmbed Entity="OrganCNSTSFSandevistan"/>
-<GuideEntityEmbed Entity="OrganCNSMMCSakimoto"/>
-</GuideEntityCards>
-
-Все три устройства занимают **один слот ЦНС в туловище**. Их нельзя совместить между собой. **Сердце остаётся отдельным органом**. Автохирург меняет устройство в слоте; ручная замена требует вскрытой грудной клетки и операции установки/удаления импланта ЦНС.
-
-## «Лотос» и «Лейко»: Сандевистан
-**Нейроимплант ММС EVT-002 «Лотос»** и **имплантный комплекс ТСФ WJY-21X «Лейко»** стоят по **3 ед. человечности**. Соответствующие исследования — по **75 000 ОИ**, изготовление на фабе своей фракции.
-
-Нажмите **«Переключить Сандевистан»**: скорость движения **+50%**, частота обычных атак ближнего боя **×2**, стрельба блокируется. Повторное нажатие отключает ускорение и запускает перезарядку.
+<GuideEntityCards><GuideTexture Entity="DexLeftHand" Caption="auto"/><GuideTexture Entity="SpeedLeftLeg" Caption="auto"/></GuideEntityCards>
 
 <GuideTable Columns="2">
-<Box>**Модель**</Box><Box>**Безопасная работа / перезарядка**</Box>
-<Box>«Лотос»</Box><Box>10 с / 40 с</Box>
-<Box>«Лейко»</Box><Box>15 с / 80 с</Box>
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Биосинтетическая рука, кисть, нога или стопа** · 0</Box><Box>Органическое восстановление соответствующей части тела.</Box>
+<Box>**Обычная кибернетическая часть** · 0,5</Box><Box>Восстанавливает соответствующую часть тела. Рука и кисть оплачиваются отдельно: две руки и две кисти — 2.</Box>
+<Box>**Д.Е.К.С левая / правая кисть** · 0,5</Box><Box>Время учитывающих модификатор действий с полосой выполнения −[color=#73BFD3]20%[/color] за кисть; две дают −[color=#73BFD3]36%[/color].</Box>
+<Box>**Б.Е.Г.У.Н левая / правая нога** · 0,5</Box><Box>Скорости части: [color=#73BFD3]2,875 м/с[/color] шагом, [color=#73BFD3]5,175 м/с[/color] бегом; защита от скольжения и напольных триггеров. Итог зависит от остальных ног и тела.</Box>
+<Box>**Ч.Ж левая / правая рука** · 0,5</Box><Box>Силовое вскрытие дверей, включая запитанные, скорость ×1,5. Заменяет целую руку.</Box>
 </GuideTable>
 
-За **2 с** до конца безопасного времени появляется предупреждение. Выключайте ускорение вручную: оно не отключается по таймеру. После безопасного периода начинается **15 клеточного урона в секунду**, первый тик — через ещё 1 с. Критическое состояние отключает ускорение.
+## Клинки богомола
 
-## «Сакимото»: усиленный удар
-**Нейроимплант ММС EVT-001 «Сакимото»** стоит **2 ед. человечности**, открывается отдельным исследованием ММС за **75 000 ОИ**. Освободите активную руку, нажмите **«Чёрная вспышка»**, затем нанесите **безоружный удар**: базовый множитель урона усиленного удара **×2,5**. Перезарядка после попадания **60 с**, после промаха **10 с**. Оружие и клинки в руках для этой версии не подходят.
+По одному импланту на существующую руку; целую руку не заменяют.
 
-[Установка автохирургом](guide://ColossusCybernetics) · [Ручные операции](guide://ColossusSurgery) · [Человечность](guide://ColossusHumanity)
+<GuideEntityCards><GuideTexture Entity="AutosurgeonMantisBladesMieyoFlatpack" Caption="auto"/><GuideTexture Entity="OrganArmMantisBlade" Caption="auto"/><GuideTexture Entity="MantisBlade" Caption="auto"/></GuideEntityCards>
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Пласталевый клинок** · 0,5</Box><Box>13 порезов + 5,5 уколов; отдельно 25 структурного. Парное отражение подходящего снаряда [color=#73BFD3]17,5%[/color] за клинок. Нет химического впрыска и бронепробития плазменной модели.</Box>
+<Box>**Плазменный клинок ММС** · 1</Box><Box>26 порезов + 11 уколов; отдельно 50 структурного, 1,5 обычной атаки/с. Прицельный урон части ×2. Вскрывает запитанные двери, скорость ×3. Парное отражение [color=#73BFD3]35%[/color] за клинок.</Box>
+</GuideTable>
+
+Действие переключения выдвигает или складывает все клинки. Предмет из соответствующей кисти выпадает. ЭМИ временно блокирует выдвижение; удаление импланта или руки убирает её клинок.
+
+В парном режиме после попадания основным клинком второй атакует через [color=#73BFD3]**0,25 с**[/color] с [color=#73BFD3]**67%**[/color] базового урона, если остаётся в руке и достаёт до цели. Вероятности отражения отдельных клинков не складываются.
+
+Обе модели в парном режиме получают рывок на [color=#73BFD3]**4 м**[/color], сбивающий первое задетое существо; восстановление [color=#73BFD3]**30 с**[/color], складывание клинков его не сбрасывает. Каждый плазменный клинок содержит по **2,5 ед. флогистона и напалма**; подходящий удар переносит **1 ед. смеси** до её исчерпания.
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Implants/Protection.xml -->
-# Подкожная броня и лечебные импланты
-
-## Подкожная броня
-<GuideEntityCards>
-<GuideEntityEmbed Entity="OrganDermalArmor"/>
-<GuideEntityEmbed Entity="OrganDermalArmorPDV"/>
-</GuideEntityCards>
-
-В туловище один слот подкожной брони. Автохирург заменяет установленный вариант; при ручной операции сначала [вскройте грудную клетку](guide://ColossusSurgery). Защита работает постоянно после установки.
-
-- **Дермальная броня**, человечность **1**: вычитает **3,5 ед.** ударного, режущего и колющего урона; электрический урон **+25%**. Это плоское снижение, а не процент брони.
-- **Бронепластины PD-VI E-SAPI**, человечность **2**: колющий урон **−15%**, ударный и режущий **−10%**; высокотемпературный **+10%**, электрический **+25%**.
-
-Имплант заменяет защиту одноимённой черты дермальной брони, а не складывается с ней. После удаления прежняя защита черты возвращается. Источники: общий медицинский/экзокостюмный фаб для дермальной брони, фаб Авангарда для PD-VI; [исследования](guide://ColossusCybernetics).
-
-## Фабрики тромбоцитов
-<GuideEntityCards><GuideEntityEmbed Entity="AutosurgeonPlateletFactoriesMieyoFlatpack"/></GuideEntityCards>
-
-**Автохирург ММС (фабрики тромбоцитов)** открывается в базовой бионике ММС за **50 000 ОИ**; человечность **1**. Это улучшение туловища, оно не занимает слот ЦНС или подкожной брони. После установки восстановление идёт автоматически: до **1,5 механического** и **2 ожогового урона в секунду**, распределённого по типам этих групп. В критическом состоянии остаётся **25%** обычного лечения.
-
-## Боевой медипен и стимулятор
-<GuideEntityCards>
-<GuideEntityEmbed Entity="AutosurgeonCombatMedipenFlatpack"/>
-<GuideEntityEmbed Entity="AutosurgeonStimulantFlatpack"/>
-</GuideEntityCards>
-
-Каждый имплант стоит **1 ед. человечности** и имеет **3 заряда**. Нажмите действие **«Ввести боевой медипен»** или **«Ввести стимулятор»**. Один заряд восстанавливается за **40 с**, последовательно: с нуля до трёх — **120 с**.
-
-- Боевой медипен: **25 ед. омнизина + 5 ед. транексамовой кислоты** за применение.
-- Стимулятор: **30 ед. стимуляторов** за применение.
-
-При переходе владельца в критическое состояние имплант использует заряд автоматически. Автоматическое срабатывание повторяется не чаще раза в **60 с** и требует доступного заряда. Ручное применение также расходует заряд; лекарства попадают в кровь с обычными для веществ эффектами и передозировками.
-
-Устройства продаются в снабжении Авангарда, ТСФ и Контравенде. ММС изготавливает их после **«ММС | Боевые импланты»**, **50 000 ОИ**. [Ассортимент аплинков](guide://ColossusCatalogueUplinks) · [Правила установки](guide://ColossusCybernetics).
-<!-- /article -->
-
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Creatures/Chimera.xml -->
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Creatures/Chimera.xml -->
 # Химера: способности и ограничения
-<GuideEntityCards><GuideEntityEmbed Entity="MobLetoferolHorror"/><GuideEntityEmbed Entity="ChimeraFleshKudzu"/></GuideEntityCards>
+<GuideEntityCards><GuideEntityEmbed Entity="MobLetoferolHorror"/><GuideTexture Entity="ChimeraFleshKudzu" Caption="auto"/></GuideEntityCards>
 Гуманоидная химера заражает носителей летоферолом, строит биомассу и пользуется врождённым оружием. Статы мелких химер отличаются.
 
 ## Первые действия
-- Откройте связь роя: введите **+l текст** в чат. Это коллективный разум химер, не радиогарнитура; обычный разговор его не заменяет.
-- Проверьте панель действий: ночное зрение, радар, посадка биомассы, мясная стена и костяные шипы. Костяные шипы требуют сохранённой железы.
-- Биомасса: Она лечит химер при контакте и замедляет остальных до 45% скорости.
+- **Откройте** связь роя: введите **+l текст** в чат. Это коллективный разум химер, не радиогарнитура; обычный разговор его не заменяет.
+- **Проверьте** панель действий: ночное зрение, радар, посадка биомассы, мясная стена и костяные шипы. Костяные шипы требуют сохранённой железы.
+- Биомасса: Она лечит химер при контакте и замедляет остальных до [color=#73BFD3]45%[/color] скорости.
 
 ## Что нажимать в бою
-**Посадка биомассы:** выберите действие и тайл. Дальность размещения 3, задержка повторного применения 5 секунд. Рост затем распространяется самостоятельно; это лечение и контроль проходов.
+**Посадка биомассы:** выберите действие и тайл. Дальность размещения 3, задержка повторного применения [color=#73BFD3]5 секунд[/color]. Рост затем распространяется самостоятельно; это лечение и контроль проходов.
 
-**Мясная стена:** выберите действие и свободный тайл в пределах 3. Задержка 1 секунда. Закрывайте простреливаемый проход или отделяйте противника; проверка столкновений не позволяет поставить стену в любой занятый тайл.
+**Мясная стена:** выберите действие и свободный тайл в пределах 3. Задержка [color=#73BFD3]1 секунд[/color]а. Закрывайте простреливаемый проход или отделяйте противника; проверка столкновений не позволяет поставить стену в любой занятый тайл.
 
-**Костяные шипы:** используйте отдельную способность органа. Она выпускает залп из 7 шипов; каждый несёт 6 колющего и 50 структурного урона и 1 ед. «натуральный летоферол». Внутренний запас — 2 выстрела, восстановление раз в 5 секунд. Это собственное оружие химеры; свойства обычного огнестрела на него не переносите.
+**Костяные шипы:** используйте отдельную способность органа. Она выпускает залп из 7 шипов; каждый несёт 6 колющего и 50 структурного урона и [color=#73BFD3]1 ед.[/color] **«натуральный летоферол»**. Внутренний запас — 2 выстрела, восстановление раз в [color=#73BFD3]5 секунд[/color]. Это собственное оружие химеры; свойства обычного огнестрела на него не переносите.
 
 **Когти:** гуманоидный вариант наносит 16 режущего и 350 структурного урона, частота 1,2 атаки в секунду. Они предназначены и для разрушения препятствий. Критическое состояние начинается при 500 урона, смерть — при 600; замедление от ран появляется раньше.
 
@@ -3968,39 +4005,39 @@ Viper Group — частная военная компания. Её участ�
 У химеры есть пассивная регенерация и отсутствие необходимости дышать благодаря органам, но огонь особенно опасен: коэффициент Heat 1,4, горение распространяется, горящая биомасса тоже уязвима. Отступайте с горящего участка; при возможности тушитесь и возвращайтесь на сохранившуюся биомассу. Восстановление не делает вас неуязвимым.
 
 ## Заражение: что действительно происходит
-Гуманоидная химера вводит когтями **2,5 ед. «натуральный летоферол»** за успешную инъекцию; шипы также несут реагент. Наличие реагента ещё не означает немедленное превращение: у природного летоферола порог реакции 15 ед., а соответствующая мутация настроена **для мёртвых, не для живых**. Природная форма требует гуманоидного тега и не обращается автоматически после смерти химеры.
+Гуманоидная химера вводит когтями **2,5 ед. «натуральный летоферол»** за успешную инъекцию; шипы также несут реагент. Наличие реагента ещё не означает немедленное превращение: у природного летоферола порог реакции [color=#73BFD3]15 ед.[/color], а соответствующая мутация настроена **для мёртвых, не для живых**. Природная форма требует гуманоидного тега и не обращается автоматически после смерти химеры.
 
 Мезотаксинид и мезофенерол удаляют летоферол и могут отменять предусмотренные мутации при нужной концентрации. До достижения порога и смерти заражение само по себе не превращает человека.
 
 [Мозговой червь](guide://CorticalBorerPracticalGuide) использует другую механику носителя и не относится к рою Letoferol.
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Creatures/CorticalBorer.xml -->
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Creatures/CorticalBorer.xml -->
 # Мозговой червь: носитель, химия и яйца
-<GuideEntityCards><GuideEntityEmbed Entity="MobCorticalBorer"/><GuideEntityEmbed Entity="CorticalBorerEgg"/></GuideEntityCards>
+<GuideEntityCards><GuideEntityEmbed Entity="MobCorticalBorer"/><GuideTexture Entity="CorticalBorerEgg" Caption="auto"/></GuideEntityCards>
 У червя 20 урона до смерти: вне носителя избегайте прямого боя. Рабочий цикл — найти подходящее тело, проникнуть, накопить химические очки и использовать короткое управление для размножения. Правила роли и допустимые цели читайте при её получении.
 
 ## 1. Найти носителя
-- Выберите действие проникновения и цель рядом. У цели должны быть тело и кровоток; другой червь, уже занятый носитель и экспедиционные существа с ограничением добычи не подходят.
-- Проникновение занимает **3 секунды**. Не двигайтесь и не получайте урон; предельная дистанция действия 1,5. Задержка повторного применения — 5 секунд.
+- **Выберите** действие проникновения и цель рядом. У цели должны быть тело и кровоток; другой червь, уже занятый носитель и экспедиционные существа с ограничением добычи не подходят.
+- Проникновение занимает [color=#73BFD3]**3 секунды**[/color]. Не двигайтесь и не получайте урон; предельная дистанция действия 1,5. Задержка повторного применения — [color=#73BFD3]5 секунд[/color].
 - Включённый блокиратор приёма пищи в слоте головы перекрывает вход. Это проверка конкретного свойства надетого предмета, а не любой брони вообще. Защита CorticalBorerProtection от сахара тоже блокирует проникновение.
 - После успеха червь находится внутри тела, собственные повреждения сбрасываются. Действие выхода позволяет покинуть носителя; сахарная защита может блокировать и добровольный выход.
 
 ## 2. Разделять связь с носителем и связь улья
-**+r текст** — коллективный канал «Червивый шёпот». Его слышат участники этого коллективного разума. Это отдельный канал от [роя химеры](guide://ChimeraPracticalGuide).
+**+r текст** — коллективный канал **«Червивый шёпот»**. Его слышат участники этого коллективного разума. Это отдельный канал от [роя химеры](guide://ChimeraPracticalGuide).
 
 Внутри носителя обычная речь червя направляется ему и самому червю; коллективный канал из этого перенаправления исключён. Сообщения радио, которые получает носитель, передаются сидящему внутри игроку-червю. Для координации улья используйте +r, для обращения к носителю — обычное сообщение изнутри.
 
 ## 3. Химический запас
-Стартовый запас — **50 очков**, максимум **250**; внутри носителя прибавляется **1 очко в секунду**. Снаружи запас не растёт. Откройте проверку крови перед введением веществ, затем химическое меню; задайте объём и выберите вещество.
+Стартовый запас — **50 очков**, максимум **250**; внутри носителя прибавляется **1 очко в секунду**. Снаружи запас не растёт. **Откройте** проверку крови перед введением веществ, затем химическое меню; задайте объём и выберите вещество.
 
-Цена указана за единицу реагента: бикаридин и келотан — по 4 очка, физраствор — 2, уголь — 3, дексалин плюс — 10. Например, 10 ед. бикаридина расходуют 40 очков. Введение идёт в кровоток носителя; сахарная защита мешает этой способности. Не расходуйте весь запас, если планируете яйцо.
+Цена указана за единицу реагента: бикаридин и келотан — по 4 очка, физраствор — 2, уголь — 3, дексалин плюс — 10. Например, [color=#73BFD3]10 ед.[/color] бикаридина расходуют 40 очков. Введение идёт в кровоток носителя; сахарная защита мешает этой способности. Не расходуйте весь запас, если планируете яйцо.
 
 ## 4. Управление и яйцо
 - Накопите **200 очков**, выберите действие захвата управления. Мёртвым носителем управлять нельзя; сахарная защита блокирует захват.
-- Если тело имеет игрока или призрачную роль, управление длится **40 секунд**. Повторный захват имеет задержку **340 секунд**. Осмотр собственного управляемого тела показывает оставшееся время и запас очков.
+- *Если тело имеет игрока или призрачную роль,* управление длится [color=#73BFD3]**40 секунд**[/color]. Повторный захват имеет задержку [color=#73BFD3]**340 секунд**[/color]. Осмотр собственного управляемого тела показывает оставшееся время и запас очков.
 - Пока управляете таким носителем, нажмите действие откладывания яйца: расход **200 очков**, яйцо появляется у тела через рвоту. Действие доступно только размножающемуся червю при ограниченном по времени контроле; бессрочное управление пустым телом не даёт яиц.
-- Яйцо создаёт нового червя, когда его призрачную роль занимает игрок. Порог разрушения яйца — **1 урон**.
+- Яйцо создаёт нового червя, когда его призрачную роль занимает игрок. Порог разрушения яйца — [color=#E5AD68]**1 урон**[/color].
 - Верните управление действием завершения или дождитесь конца срока. Вы вернётесь в червя внутри носителя; это не действие выхода из тела.
 
 ## Если действие не работает
@@ -4012,519 +4049,535 @@ Viper Group — частная военная компания. Её участ�
 [Операции и замена органов](guide://ColossusSurgery)
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Creatures/Index.xml -->
-# Существа и роли
-- [Химера](guide://ChimeraPracticalGuide) — коллективная связь, способности, заражение и ограничения снаряжения.
-- [Кортикальный червь](guide://CorticalBorerPracticalGuide) — проникновение, химикаты, контроль и яйца.
-- [Ксеноборги](guide://Xenoborgs) — ядро, материалы и создание новых корпусов.
-<!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Creatures/Xenoborgs.xml -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Creatures/Xenoborgs.xml -->
 # Ксеноборги: корпуса и модули
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MothershipCore"/>
-<GuideEntityEmbed Entity="BorgChassisSelectableXenoborg"/>
-<GuideEntityEmbed Entity="MMI"/>
+<GuideTexture Entity="MothershipCore" Caption="auto"/>
+<GuideTexture Entity="BorgChassisSelectableXenoborg" Caption="auto"/>
+<GuideTexture Entity="MMI" Caption="auto"/>
 </GuideEntityCards>
 
 Ксеноборги собирают материалы и разумные мозги для новых корпусов. После получения роли прочитайте действующий набор законов: он определяет приоритеты ядра и ксеноборгов.
 
 ## Ядро → производство корпуса
-Загрузите сталь в ядро материнского корабля и откройте его окно производства. **Пустой корпус стоит 30 стальных листов**, печать занимает **2 секунды** без изменения скорости производства. Он уже содержит мозго-машинный интерфейс и боевую батарею; специализацию предстоит выбрать отдельно.
+**Загрузите** сталь в ядро материнского корабля и откройте его окно производства. **Пустой корпус стоит 30 стальных листов**, печать занимает [color=#73BFD3]**2 секунды**[/color] без изменения скорости производства. Он уже содержит мозго-машинный интерфейс и боевую батарею; специализацию предстоит выбрать отдельно.
 
 Подготовьте разумный мозг в мозго-машинном интерфейсе либо позитронный мозг. Для замены мозгового устройства откройте панель корпуса и освободите занятый слот через окно киборга; затем установите подготовленное устройство. Голый орган и мозго-машинный интерфейс — разные предметы.
 
-Если установка модуля или мозга не проходит, проверьте техническую панель, занятость слота и совместимость. Один пустой напечатанный корпус не означает появления нового игрока.
+*Если установка модуля или мозга не проходит,* проверьте техническую панель, занятость слота и совместимость. Один пустой напечатанный корпус не означает появления нового игрока.
 
 ## Выбрать специализацию
 <GuideEntityCards>
-<GuideEntityEmbed Entity="XenoborgChassisEngineer"/>
-<GuideEntityEmbed Entity="XenoborgChassisHeavy"/>
-<GuideEntityEmbed Entity="XenoborgChassisScout"/>
-<GuideEntityEmbed Entity="XenoborgChassisStealth"/>
+<GuideTexture Entity="XenoborgChassisEngineer" Caption="auto"/>
+<GuideTexture Entity="XenoborgChassisHeavy" Caption="auto"/>
+<GuideTexture Entity="XenoborgChassisScout" Caption="auto"/>
+<GuideTexture Entity="XenoborgChassisStealth" Caption="auto"/>
 </GuideEntityCards>
 
 В окне выбора типа корпуса определите специализацию. Все четыре типа получают базовый и инструментальный модули: указатель материнского корабля, GPS, средства сбора материалов и обычные инструменты.
 
 - **Инженер** начинает с разрушителем аутентификации и кабелем. Его специальные улучшения дают управление шлюзами и расширенные инструменты для вскрытия и ремонта. Доступно **2 дополнительных модуля**.
-- **Тяжёлый** начинает с глушителем связи; модуль тяжёлого лазера печатается отдельно. Порог критического состояния — **350 урона**; скорость ходьбы/бега — **1,2 / 2,2 м/с**. Доступно **3 дополнительных модуля**.
-- **Разведчик** получает хирургический модуль с инструментами и мозго-машинным интерфейсом. Скорость ходьбы/бега — **3 / 6 м/с**: подходит для извлечения мозгов и доставки добычи. Доступно **2 дополнительных модуля**.
+- **Тяжёлый** начинает с глушителем связи; модуль тяжёлого лазера печатается отдельно. Порог критического состояния — [color=#E5AD68]**350 урона**[/color]; скорость ходьбы/бега — [color=#73BFD3]**1,2 / 2,2 м/с**[/color]. Доступно **3 дополнительных модуля**.
+- **Разведчик** получает хирургический модуль с инструментами и мозго-машинным интерфейсом. Скорость ходьбы/бега — [color=#73BFD3]**3 / 6 м/с**[/color]: подходит для извлечения мозгов и доставки добычи. Доступно **2 дополнительных модуля**.
 - **Скрытный** начинает с устройством невидимости. Модули с ноктюорин-гипо, маскировочным проектором и усиленной невидимостью ядро печатает отдельно. Доступно **2 дополнительных модуля**.
 
 ## Улучшение → нужный тип корпуса
-Откройте производство ядра и выберите модуль. Печатные модули ксеноборгов из его штатного набора стоят **по 30 стальных листов**; установка требует открытой панели корпуса и свободного дополнительного слота. Общие модули подходят всем, специальные — только своему типу. Наличие рецепта у ядра не делает модуль совместимым с любым корпусом.
+**Откройте** производство ядра и выберите модуль. Печатные модули ксеноборгов из его штатного набора стоят **по 30 стальных листов**; установка требует открытой панели корпуса и свободного дополнительного слота. Общие модули подходят всем, специальные — только своему типу. Наличие рецепта у ядра не делает модуль совместимым с любым корпусом.
 
 ## Разрушение ядра → 15 секунд
-Разрушение **последнего** ядра запускает уничтожение ксеноборгов через **15 секунд**, предупредительный сигнал звучит через **10 секунд**. Разрушение любого ядра также запускает уничтожение фрагментов его указателя через **15 секунд**: после объявления выбросьте такие фрагменты.
+Разрушение **последнего** ядра запускает уничтожение ксеноборгов через [color=#73BFD3]**15 секунд**[/color], предупредительный сигнал звучит через [color=#73BFD3]**10 секунд**[/color]. Разрушение любого ядра также запускает уничтожение фрагментов его указателя через **15 секунд**: после объявления выбросьте такие фрагменты.
 
 [Другие существа](guide://Creatures)
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Index.xml -->
-# Рецепты и справочники
-[Химикаты и реакции](guide://Chemicals) · [Напитки](guide://Drinks) · [Еда](guide://FoodRecipes) · [Медицинские рецепты](guide://MedicalRecipes).
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Arachnid.xml -->
+# Арахнид
 
-Эти таблицы строятся из игровых прототипов: показывают ингредиенты, количество, условия реакции и результат.
+<GuideEntityCards><GuideEntityEmbed Entity="MobArachnid"/></GuideEntityCards>
 
-[Строительство](guide://Construction) · [Письмо и форматирование](guide://Writing).
+Арахниды — паукообразные гуманоиды с медной кровью и способностью плести шёлк.
+
+## Питание и дыхание
+Дышат кислородом, но задыхаются на [color=#73BFD3]50%[/color] быстрее человека. Могут есть сырое мясо; шоколад и лук вызывают отравление.
+
+## Движение и бой
+Безоружные атаки наносят уколы вместо ушибов.
+
+<GuideSpeciesStats Species="Arachnid"/>
+
+## Здоровье и среда
+Кровь основана на меди: железо не восстанавливает её так, как человеческую кровь.
+
+## Снаряжение и взаимодействие
+Имеют два дополнительных кармана в инвентаре.
+
+**Языки:** Андромеда Стандарт и хитин.
+
+## Особые характеристики
+### Шелководство
+Арахниды плетут шёлк, расходуя сытость. Из свёртков шёлка они создают одежду, щиты и стены.
+
+<GuideEntityCards><GuideTexture Entity="MaterialWebSilk" Caption="auto"/><GuideTexture Entity="ClothingUniformJumpskirtWeb" Caption="auto"/><GuideTexture Entity="WebShield" Caption="auto"/><GuideTexture Entity="WallWeb" Caption="auto"/></GuideEntityCards>
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Arachnid.xml -->
-# Арахниды
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Diona.xml -->
+# Диона
 
-  <Box>
-    <GuideEntityEmbed Entity="MobArachnid" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobDiona"/></GuideEntityCards>
 
-  У них два дополнительных кармана в инвентаре. Могут есть сырое мясо без вреда, но некоторые продукты, как шоколад и лук, их травят.
-  Они задыхаются на 50% быстрее, а их синяя кровь не метаболизируется из железа, вместо него основана на меди.
+Дионы — разумные растительные организмы, состоящие из нимф.
 
-  Их безоружные атаки наносят урон уколами вместо ушибов.
+## Питание и дыхание
+Лёгкие усваивают кислород и углекислый газ. Голод и жажда растут медленнее, чем у человека.
 
-  ## Шелководство
+## Движение и бой
+Переносят шок сверхсветового прыжка без потери сознания; кудзу не замедляет их передвижение.
 
-  <GuideEntityCards>
-    <GuideEntityEmbed Entity="MaterialWebSilk" Caption=""/>
-    <GuideEntityEmbed Entity="ClothingUniformJumpskirtWeb" Caption=""/>
-    <GuideEntityEmbed Entity="WebShield" Caption=""/>
-    <GuideEntityEmbed Entity="WallWeb" Caption=""/>
-  </GuideEntityCards>
+<GuideSpeciesStats Species="Diona"/>
 
-  Арахниды плетут шёлк, тратя сытость. Только они могут крафтить свёртки шёлка в разные вещи: от одежды и щитов до целых стен.
+## Здоровье и среда
+Вместо крови — древесный сок, который не восстанавливается железом. Гербициды отравляют, а **«Робастный урожай»** лечит. Тепловой урон может поджечь тело.
+
+## Снаряжение и взаимодействие
+Не могут носить обувь.
+
+**Языки:** Андромеда Стандарт и язык корней.
+
+## Особые характеристики
+### Превращение в дерево
+Передозировка **«Робастного урожая»** превращает диону в неподвижное дерево и сбрасывает снаряжение. *Если срубить дерево,* диона снова сможет двигаться.
+
+<GuideEntityCards><GuideTexture Entity="FloraTree" Caption="auto"/></GuideEntityCards>
+
+### Нимфы после смерти
+После смерти диона может добровольно разрушить тело, выпустив три нимфы. Игрок управляет нимфой-мозгом: она говорит, но не имеет рук и инвентаря. Через [color=#73BFD3]10 минут[/color] нимфа способна вырасти в диону с новым случайным телом и именем. Прежний облик при этом не сохраняется.
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobDionaNymph"/></GuideEntityCards>
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Diona.xml -->
-# Дионы
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Dwarf.xml -->
+# Дворф
 
-  <Box>
-    <GuideEntityEmbed Entity="MobDiona" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobDwarf"/></GuideEntityCards>
 
-  Дионы не могут носить обувь, но их не замедляет кудзу.
-  Они медленнее испытывают голод и жажду.
-  Благодаря своей прочности, они переносят шок от сверхсветовых прыжков (FTL) без потери сознания.
-  Их "кровь" — древесный сок, который не может быть синтезирован из железа.
-  Как растения, они получают отравление от гербицида, а Робастный урожай их лечит (но при злоупотреблении есть риск!).
+Дворфы — гуманоиды, приспособленные к горному делу и лучше людей переносящие алкоголь.
 
-  Они получают [color=#1e90ff]на 30% меньше урона от тупых атак и на 20% меньше от режущих[/color];
-  но [color=#ffa500]на 50% больше урона от огня, на 20% больше от электричества, и легко загораются при получении достаточного теплового урона из любого источника.[/color]
+## Питание и дыхание
+Дышат кислородом и питаются обычной пищей. Алкоголь действует на них иначе, чем на человека: они лучше переносят опьянение.
 
-  ## Вырос как дерево
-  <Box>
-    <GuideEntityEmbed Entity="FloraTree" Caption=""/>
-  </Box>
-  Передозировка Робастного урожая приводит к тому, что Диона превращается в неподвижное дерево (выпадает всё снаряжение).
-  Если срубить дерево, Диона вернётся в подвижное состояние.
+## Движение и бой
+Невысокий рост сочетается с большим весом: по массе дворф сопоставим с они. Особое преимущество в добыче даёт чувство руды.
 
-  ## Нимфы дионы
-  <GuideEntityCards>
-    <GuideEntityEmbed Entity="MobDionaNymph" Caption=""/>
-    <GuideEntityEmbed Entity="MobDionaNymph" Caption=""/>
-    <GuideEntityEmbed Entity="MobDionaNymph" Caption=""/>
-  </GuideEntityCards>
-  После смерти Диона может добровольно уничтожить своё тело, выпустив "внутренние органы" в виде трёх нимф. Игрок получает контроль над нимфой-мозгом.
-  Она может говорить, но не имеет рук и инвентаря, почти ничего не может делать.
+<GuideSpeciesStats Species="Dwarf"/>
 
-  Через 10 минут нимфа может восстановиться в полноценную диону. Это будет новое случайное тело с новым именем, и доказательств прежней личности почти не останется, кроме слов игрока.
+## Здоровье и среда
+При нехватке воздуха удушье наносит вдвое больше урона за дыхательный цикл, чем человеку. Алкоголь способен восстанавливать повреждения дворфа. Остальное лечение остаётся медицинской задачей, а не заменяется выпивкой.
+
+## Снаряжение и взаимодействие
+Пользуются обычными инструментами и снаряжением гуманоидов.
+
+**Языки:** Андромеда Стандарт.
+
+## Особые характеристики
+### Чувство руды
+Дворф ощущает рудные жилы в породе на расстоянии до 5 метров. Это помогает находить ценные залежи до вскрытия породы.
+
+<GuideEntityCards><GuideTexture Entity="WallRockChromiteDiamond" Caption="auto"/><GuideTexture Entity="WallRockBasaltBananium" Caption="auto"/><GuideTexture Entity="WallRockBluespace" Caption="auto"/></GuideEntityCards>
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Dwarf.xml -->
-# Дворфы
-
-  <Box>
-    <GuideEntityEmbed Entity="MobDwarf" Caption=""/>
-  </Box>
-
-  Трудолюбивый народ, дворфы во многом похожи на людей, но лучше переносят алкоголь и даже лечатся им.
-
-  <GuideEntityCards>
-    <GuideEntityEmbed Entity="WallRockChromiteDiamond" Caption=""/>
-    <GuideEntityEmbed Entity="WallRockBasaltBananium" Caption=""/>
-    <GuideEntityEmbed Entity="WallRockBluespace" Caption=""/>
-  </GuideEntityCards>
-
-  Дворф инстинктивно чувствует, где находятся лучшие жилы руды в любой породе, и может ощущать руду на расстоянии до 5 метров.
-<!-- /article -->
-
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Feroxi.xml -->
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Contextual/Species/Feroxi.xml -->
 # Ферокси
-<GuideEntityCards>
-<GuideEntityEmbed Entity="MobFeroxiDummy"/>
-  <GuideEntityEmbed Entity="OrganFeroxiLungs"/>
-</GuideEntityCards>
-Ферокси — акулоподобные гуманоиды с сильным укусом и особым водным обменом. Их основная бытовая опасность — быстрое обезвоживание.
 
-## Еда и вода
-Берите мясную пищу: обычный рацион других видов может не подходить вашему пищеварению. Некоторые специальные категории пищи тоже усваиваются, но для надёжного снабжения подойдёт мясной рацион.
+<GuideEntityCards><GuideEntityEmbed Entity="MobFeroxiDummy"/></GuideEntityCards>
 
-**Всегда носите запас питья.** Жажда растёт быстро; при сильном обезвоживании меняется работа дыхательных органов и возникает опасность удушья. Не ждите потери сознания: пейте заранее и предупреждайте медика, если дыхание ухудшилось. Для дальнего выхода подготовьте запас воды вместе с воздухом и едой.
+Ферокси — акулоподобные гуманоиды с сильным укусом и обменом веществ, зависящим от водного баланса.
 
-## Особенности тела
-Ферокси немного лучше переносят холод и тупые удары, но уязвимее к порезам: соответствующие изменения составляют 10%. Эти преимущества не заменяют скафандр, броню или лечение.
+## Питание и дыхание
+Основой снабжения служат мясная пища и запас воды. Жажда растёт быстро; при обезвоживании меняется работа дыхательных органов и появляется опасность удушья.
 
-Лёгкие объединены с жабрами и не извлекаются как обычный съёмный орган. При лечении сообщите врачу о виде персонажа: физиология и обмен веществ отличаются от человеческих.
+## Движение и бой
+Имеют сильный укус. Лучше переносят тупые удары и холод, но уязвимее к порезам.
 
-Не проверяйте устойчивость к среде экспериментами без страховки. Подготовку защитного снаряжения смотрите в [руководстве по броне](guide://ArmorExplanation).
+<GuideSpeciesStats Species="Feroxi"/>
+
+## Здоровье и среда
+Лёгкие и жабры объединены в особый орган, который не извлекается как обычные лёгкие. При лечении требуется учитывать обмен веществ вида.
+
+## Снаряжение и взаимодействие
+Заранее запасайте воду для дальнего выхода; защитное снаряжение подбирайте по [руководству по броне](guide://ArmorExplanation).
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Human.xml -->
-# Люди
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Human.xml -->
+# Человек
 
-  <Box>
-    <GuideEntityEmbed Entity="MobHumanDummy" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobHumanDummy"/></GuideEntityCards>
 
-  В зависимости от точки зрения люди либо заурядны, либо универсальный стандарт, с которым сравнивают остальных.
-  Особых механик или примечательных черт у них нет.
+Люди — универсальный ориентир для сравнения рас. Подходят для знакомства с обычными системами питания, дыхания и лечения.
+
+## Питание и дыхание
+Дышат кислородом, едят обычную пищу и пьют воду. Для выхода в вакуум нужны баллон с подходящей смесью и подключённое дыхание.
+
+## Движение и бой
+Безоружные удары наносят ушибы. Скорость, пороги состояний и восприимчивость к урону человека служат базой сравнения ниже.
+
+<GuideSpeciesStats Species="Human"/>
+
+## Здоровье и среда
+Нуждаются в обычном медицинском лечении, остановке кровотечения и защите от опасного давления и температуры.
+
+## Снаряжение и взаимодействие
+Используют стандартные слоты одежды и обычное снаряжение гуманоидов.
+
+**Языки:** Андромеда Стандарт.
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Hydrakin.xml -->
-# Гидракины
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Hydrakin.xml -->
+# Гидракин
 
-  <Box>
-    <GuideEntityEmbed Entity="MobHydrakin" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobHydrakin"/></GuideEntityCards>
 
-  ## Лор
+Гидракины — птицеподобные гуманоиды с необычным газообменом и очень холодной нормальной температурой тела.
 
-  Гидракины - птицеподобные существа со странной внешностью и чрезвычайной устойчивостью к холоду. Пушистые, исключительно тёплые и печально известные своей шумностью, эти птицы родом с безжизненного ледяного мира, находящегося далеко за пределами обычных границ обитаемого космоса. Их родная планета заперта в вечных ледяных бурях, тускло освещена и окружена океанами жидкого кислорода под атмосферой с высоким содержанием фрезона — когда-то считалось, что там нет жизни.
+## Питание и дыхание
+Могут дышать различными газами, кроме углекислого газа и водяного пара. Плазма, тритий, фрезон, нитрий и другие специальные газы могут давать положительные эффекты. Предпочитают сырую пищу; теобромин и лук крайне токсичны.
 
-  Ранее не соответствуя критериям разумности, этот вид был модернизирован компанией Ullman Industries. Вместо того чтобы модернизировать их для интеграции или труда, Ullman провёл модернизацию как экспериментальный проект, чтобы продемонстрировать свои технологические возможности инвесторам. Как только были достигнуты показатели разумности и коммуникации, проект был объявлен успешным, но сам модернизированный вид был признан нерентабельным для корпоративных интересов.
+## Движение и бой
+Безоружные атаки наносят порезы; сильный холод замедляет движение.
 
-  Сбои в транспортировке, блюспейс-штормы и халатность корпорации рассеяли партии гидракинов и колонии по всему Колоссу, оставив многих вне контроля Ullman. Сегодня гидракины существуют как частично модернизированный, перемещённый вид, пытающийся адаптироваться к сектору, в котором им никогда не предназначалось жить.
+<GuideSpeciesStats Species="Hydrakin"/>
 
-  ## Питание
+## Здоровье и среда
+Имеют аммиачную кровь. Тело постоянно выделяет тепло: изолирующая одежда, куртка или скафандр мешают охлаждению и могут вызвать перегрев. Лепоразин и пиразин усиленно охлаждают организм. Криопрепараты при достаточно низкой температуре вызывают сон. В критическом состоянии и после смерти собственная терморегуляция и тепловыделение прекращаются.
 
-  - Гидракины в основном предпочитают сырую пищу. Лук и продукты, содержащие теобромин, [color=#FFA500]крайне токсичны для них[/color].
+## Снаряжение и взаимодействие
+Из-за строения головы не могут носить очки.
 
-  ## Физические свойства
+**Языки:** Андромеда Стандарт и хи’драв’тха.
 
-  - Они [color=#4169E1]на 10% устойчивее к уколами и ушибам[/color].
-  - Они получают [color=#FFA500]на 25% больше урона от ожогов и на 15% больше порезов[/color].
-  - Ношение очков [color=#FFA500]невозможно[/color] из-за анатомии головы.
+## Особые характеристики
+### Терморегуляция
+Обычная температура тела около −[color=#73BFD3]63°C[/color]. Температурные пороги повреждения: ниже −[color=#73BFD3]263,15°C[/color] и выше [color=#73BFD3]58,85°C[/color]. Эти пороги не отменяют замедления при охлаждении и перегрева под изоляцией.
 
-  ## Температура
+### Особые газы
+- Плазма помогает восстанавливать ожоги.
+- Тритий помогает восстанавливать ожоги и токсические повреждения.
+- Закись азота увеличивает скорость ходьбы и бега на [color=#73BFD3]15%[/color] при достаточном содержании в лёгких.
+- Фрезон охлаждает тело, если оно теплее −[color=#73BFD3]58°C[/color].
+- БЗ помогает восстанавливать токсический и клеточный урон.
+- Хилиум лечит механические, ожоговые и токсические повреждения, но повышенная доза вызывает опьянение и сон.
+- Нитрий поддерживает дыхание без обычного для других видов образования нитрозилплазмида; плюоксиум особенно эффективно насыщает организм.
 
-  - Тело гидракинов [color=#FFA500]постоянно нагревается[/color]. Они могут переносить тепло без какой-либо изоляции, но ношение скафандров или курток немедленно начинает [color=#FFA500]нагревать их до 67°C[/color].
-  - Лепоразин и пиразин оказывают [color=#4169E1]усиленный[/color] охлаждающий эффект на их организм.
-  - Однако использование любых крио-химикатов заставит гидракинов [color=#FFA500]заснуть[/color], если температура их тела достаточно низка для активации.
-  - Кроме того, терморегуляция гидракинов полностью отключается в критическом состоянии, а также при смерти.
+Эффекты зависят от количества газа в лёгких. Газовая смесь всё ещё должна иметь подходящие температуру и давление.
 
-  ## Атмосфера
-
-  - Гидракины способны дышать всеми газами, за исключением углекислого газа и водяного пара.
-  - Уникальные газы (такие как плазма, тритий, фрезон, нитрий, гелий и др.) оказывают на них в основном [color=#4169E1]положительный[/color] эффект, описанный в статье «Химикаты».
+### Происхождение
+Вид происходит с ледяного мира с океанами жидкого кислорода и атмосферой, богатой фрезоном. Ullman Industries повысила его разумность как демонстрационный проект для инвесторов, но сочла дальнейшее использование нерентабельным. Аварии перевозки, блюспейс-штормы и корпоративная халатность рассеяли гидракинов по сектору.
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/IPC.xml -->
-# К.П.Б.
-  <GuideEntityEmbed Entity="MobIPCDummy" Caption="К.П.Б."/>
-  КПБ (сокращение от Комплексный Позитронный Блок) - это тип разумного робота, считающийся [color=yellow]независимой личностью[/color], что означает, что [color=red]они не руководствуются никакими законами робототехники[/color]. КПБ нельзя взломать с помощью ЕМАГа, поскольку они не обязаны следовать каким-либо заданным директивам в своей системе.
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/IPC.xml -->
+# КПБ
 
-  <Box>
-    <GuideEntityEmbed Entity="PositronicBrain" Caption="Позитронный мозг"/>
-  </Box>
-  Как и борги, КПБ имеют позитронный мозг в качестве источника обработки. Однако, в отличие от них, КПБ нельзя собрать. «Дешевле создать оболочку, которая будет подчиняться, чем ту, которая не будет! *подмигивание*»
+<GuideEntityCards><GuideEntityEmbed Entity="MobIPCDummy"/></GuideEntityCards>
 
-  ## Зарядка КПБ
-   <GuideEntityCards>
-    <GuideEntityEmbed Entity="APCBasic" Caption="ЛКП"/>
-    <GuideEntityEmbed Entity="BorgCharger" Caption="Зарядная станция борга"/>
-    <GuideEntityEmbed Entity="PowerCellMedium" Caption="Батарейный элемент"/>
-  </GuideEntityCards>
-  КПБ можно заряжать тремя способами:
+КПБ — комплексный позитронный блок: самостоятельный разумный робот с позитронным мозгом. Его обслуживание отличается от лечения органических рас.
 
-  [color=green]ЛКП[/color]: КПБ могут использовать ЛКП для зарядки. Нажмите [color=yellow]Alt + левый клик[/color] по ЛКП столько раз, сколько необходимо для полной зарядки.
+## Питание и дыхание
+Не нуждаются в дыхании; вместо еды требуется электрическая энергия. Заряжайтесь от ЛКП действием **Alt + ЛКМ**, в зарядной станции киборгов или заменой внутренней батареи через открытый люк.
 
-  [color=green]Станции зарядки киборгов[/color]: Чтобы подзарядиться КПБ могут использовать станции зарядки киборгов.
+## Движение и бой
+Движение и устойчивость зависят от состояния корпуса и выбранных при создании персонажа черт.
 
-  [color=green]Батарейки[/color]: У КПБ есть внутренняя батарея, служащая их аккумулятором. Они могут просто открыть люк и заменить его вручную.
+<GuideSpeciesStats Species="IPC"/>
 
-  ## Встроенное радио
-  <Box>
-    <GuideEntityEmbed Entity="EncryptionKeyScience" Caption="Ключ шифрования"/>
-  </Box>
+## Здоровье и среда
+Сваркой восстанавливают механический урон, кабелями — ожоги и радиационные повреждения, листами стекла — слепоту. При нагреве тела до [color=#73BFD3]110°C[/color] КПБ немедленно отключается как мёртвый, даже если обычный порог тепловых повреждений ещё не достигнут. После полного ремонта мёртвого КПБ используйте действие ПКМ **«Перезапустить»**. Электрическое воздействие на мёртвое тело, включая дефибриллятор, разряжает батарею и вызывает выброс энергии.
 
-  КПБ **не** используют внешние рации, поскольку у них уже есть встроенная. Им нужно только вставить ключ шифрования из радиостанции. Нажав на КПБ с [color=yellow]кусачками[/color], вы можете извлечь их ключи шифрования.
+## Снаряжение и взаимодействие
+Встроенное радио вмещает до 18 ключей шифрования и позволяет настраивать каналы и частоты. Для замены батареи и извлечения ключей сначала разблокируйте технический доступ; ключи извлекаются кусачками. КПБ не подчиняется законам робототехники и не получает приказы от ЕМАГа; собрать новую полноценную личность КПБ как обычного борга нельзя.
 
-  ## Ремонт
-  <Box HorizontalAlignment="Stretch">
-    <GuideEntityEmbed Entity="WelderIndustrialAdvanced" Caption="Сварочный аппарат"/>
-    Сварочный аппарат можно использовать для восстановления [color=yellow]механического[/color] урона.
-  </Box>
-  <Box HorizontalAlignment="Stretch">
-    <GuideEntityEmbed Entity="CableApcStack" Caption="Кабели (любые)"/>
-    Кабели можно использовать для восстановления [color=yellow]ожогов[/color] и [color=yellow]радиационного[/color] урона.
-  </Box>
-  <Box HorizontalAlignment="Stretch">
-    <GuideEntityEmbed Entity="SheetGlass" Caption="Листы стекла (любые)"/>
-    Листы стекла можно использовать для восстановления [color=yellow]слепоты[/color].
-  </Box>
-  <Box HorizontalAlignment="Stretch">
-    В случае смерти КПБ, после полного ремонта его следует перезапустить с помощью кнопки [color=yellow]«Перезапустить»[/color] (кликните ПКМ по КПБ).
+**Языки:** Андромеда Стандарт и РобоРечь.
 
-    [color=red]НИКОГДА НЕ БЕЙТЕ КПБ ТОКОМ с помощью дефибриллятора или каким-либо другим способом, пока он мёртв, так как это приведёт к разряду батареи и выбросу энергии наружу![/color]
-  </Box>
+## Особые характеристики
+### Музыка и восприятие
+Могут исполнять MIDI-композиции через выбор инструмента в меню ПКМ по себе. Зрение КПБ отображается с эффектом ЭЛТ-экрана.
+
+### Черты корпуса
+Дополнительные недостатки выбираются при создании персонажа и не относятся ко всем КПБ одновременно.
+- Коррозия: кислотный урон ×1,5, контакт с водой добавляет 1 электрического урона за единицу воды.
+- Повышенное энергопотребление: [color=#73BFD3]15 ед.[/color]/с; микрореакторная батарея пополняет [color=#73BFD3]12 ед.[/color]/с.
+- Хрупкий корпус: пороги повреждений ниже на 75.
+- Сложная конструкция: восстановление ×0,5, время ремонта ×2.
+- Старые сервоприводы: ходьба и бег −[color=#73BFD3]10%[/color].
+- Нестабильная проводка: риск дополнительных электрических повреждений.
+
+<GuideEntityCards><GuideTexture Entity="PositronicBrain" Caption="auto"/><GuideTexture Entity="APCBasic" Caption="auto"/><GuideTexture Entity="BorgCharger" Caption="auto"/><GuideTexture Entity="PowerCellMedium" Caption="auto"/><GuideTexture Entity="EncryptionKeyScience" Caption="auto"/><GuideTexture Entity="WelderIndustrialAdvanced" Caption="auto"/><GuideTexture Entity="CableApcStack" Caption="auto"/><GuideTexture Entity="SheetGlass" Caption="auto"/></GuideEntityCards>
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Index.xml -->
-# Расы: сравнение с человеком
-Показано **изменение относительно человека**: 0% — без отличий, скорость −10% — медленнее на 10%, получаемый урон −15% — меньше на 15%. Пороги показывают суммарный урон до крита и смерти без лечения.
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Index.xml -->
+# Расы
 
-[Характеристики рас](guide://ColossusCatalogueSpecies).
+Раса определяет физиологию персонажа: чем он дышит и питается, как переносит повреждения и температуру, какое снаряжение носит и какими врождёнными способностями обладает. Это отдельный выбор от профессии: одна роль может играться по-разному в зависимости от тела персонажа.
 
-Дыхание, питание и особые способности разобраны на страницах рас в оглавлении этого раздела.
+**Выберите** расу при создании персонажа. Перед первым выходом проверьте её дыхательную смесь, рацион и уязвимости. Например, воксам нужен азот вместо обычного воздуха, а КПБ — зарядка вместо еды.
 
-## Особые действия рас
-**Вульпканины и протогены:** действие **«Сфокусировать глаза»** включает тепловое зрение на **0,7 с**, повторное применение — через **3 с**.
+Страницы рас расположены **по алфавиту**. В каждой одинаковый порядок: питание и дыхание, движение и бой, здоровье и среда, снаряжение и взаимодействие. В конце описаны уникальные механики вида.
 
-**Гарпии:** в радиальном меню эмоций выберите звуковую эмоцию, затем голос другой расы или звук предмета в дополнительном круге. **«Своим голосом»** возвращает обычный вариант.
+Числа относятся к базовому телу без одежды, имплантов и дополнительных черт. В скобках показано отличие от человека: [color=#73BFD3]**0%**[/color] — без изменений, **−10% получаемого урона** — повреждения меньше на [color=#73BFD3]10%[/color]. Пороги крита, смерти и оглушения — разные показатели; специальные способности могут менять их во время игры.
 
+[Подготовка снаряжения](guide://StartingGear) · [Лечение](guide://MedicalDoctor)
+
+<GuideHub Root="Species" Entries="Avali,Arachnid,Ariral,Demon,Vox,Vulpkanin,Harpy,Hydrakin,Goblin,Dwarf,Diona,IPC,Moth,Oni,Shark,Protogen,Rodentia,SlimePerson,Tajaran,Reptilian,Felinid,Chitinid,Human"/>
+
+[Полёт крылатых рас](guide://Flight)
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Moth.xml -->
-# Нианы
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Moth.xml -->
+# Ниан
 
-  <Box>
-    <GuideEntityEmbed Entity="MobMoth" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobMoth"/></GuideEntityCards>
 
-  <!-- Frontier: moth diet
-  They can eat cotton, fabrics and clothing, but virtually none of the food that others would consider "edible". They prefer a somewhat lower temperature range than humans.
-  -->
-  Нианы могут есть хлопок и получать питание из растительных волокон, которые другие виды не переваривают. Предпочитают чуть более прохладный климат, чем люди.
-  <!-- End Frontier: moth diet -->
-  Их насекомья кровь не метаболизируется из железа, как обычная.
+Нианы — крылатые насекомоподобные гуманоиды, способные питаться растительными волокнами.
 
-  Крылья дают лучшую разгонную динамику при отсутствии гравитации на станции, но в открытом космосе без снаряжения они всё ещё не двигаются.
+## Питание и дыхание
+Дышат кислородом. Могут есть хлопок и другие пригодные для них растительные волокна.
 
-  Получают [color=#1e90ff]на 30% меньше урона холодом[/color], но [color=#ffa500]на 30% больше урона ожогами и легче загораются[/color].
+## Движение и бой
+Крылья улучшают разгон в невесомости внутри станции; в открытом космосе они не заменяют средство передвижения.
 
-  ## Полёт
+<GuideSpeciesStats Species="Moth"/>
 
-  Этот вид способен летать на планетах и в других местах с высотными уровнями. Подробнее: [полёт](guide://Flight).
+## Здоровье и среда
+Имеют насекомью кровь, которая не восполняется железом. Лучше переносят холод, но уязвимее к жару и легче загораются. Температурные пороги тела: холод ниже −[color=#73BFD3]43,15°C[/color], жара выше [color=#73BFD3]46,85°C[/color].
+
+## Снаряжение и взаимодействие
+При подборе одежды учитывайте защиту от температуры и воспламенения.
+
+**Языки:** Андромеда Стандарт и моффик.
+
+## Особые характеристики
+### Полёт
+На планетах и картах с высотными уровнями могут летать, расходуя выносливость. [Управление полётом и расход выносливости](guide://Flight).
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Protogen.xml -->
-# Протогены
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Protogen.xml -->
+# Протоген
 
-  <Box>
-    <GuideEntityEmbed Entity="MobProtogen" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobProtogen"/></GuideEntityCards>
 
-  Протоген - это технологически усовершенствованное существо, состоящее как из бионических, так и из биологических частей. Хотя у них смесь искусственных и естественных органов, они всё равно обладают душой и разумом, но также имеют программные файлы, которые управляют ими. Перегрев или переохлаждение могут повредить схемы искусственных органов. Они всё ещё нуждаются в еде и лечении обычными медикаментами.
+Протогены — гибриды органического тела и бионических систем, сохраняющие потребность в обычном питании и лечении.
 
-  Они способны воспроизводить цифровую музыку и получают меньше урона от удушья.
+## Питание и дыхание
+Дышат кислородом, нуждаются в еде и воде. Наличие искусственных частей не превращает пищу в зарядку батареи.
 
-  Их прочные тела снижают урон ушибами на 20%, а урон порезами и уколами на 10%, но их гибридная электронная природа увеличивает урон от ожогов и обморожения на 30%, от электричества на 50% и радиации на 55%.
+## Движение и бой
+Безоружная атака наносит порезы. Прочное тело снижает часть механического урона.
+
+<GuideSpeciesStats Species="Protogen"/>
+
+## Здоровье и среда
+Лечатся обычными медикаментами. Искусственные части чувствительны к перегреву, переохлаждению, электричеству и радиации; удушье переносится легче.
+
+## Снаряжение и взаимодействие
+Способны исполнять MIDI-композиции: откройте ПКМ по себе и выберите инструмент. Их зрение отображается с эффектом ЭЛТ-экрана.
+
+**Языки:** Андромеда Стандарт и канилунцт; также понимают РобоРечь.
+
+## Особые характеристики
+### Тепловое зрение
+Действие **«Сфокусировать глаза»** включает тепловое зрение на [color=#73BFD3]**0,7 секунды**[/color], повторное применение — через [color=#73BFD3]**3 секунды**[/color].
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Reptilian.xml -->
-# Унатхи
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Reptilian.xml -->
+# Унатх
 
-  <Box>
-    <GuideEntityEmbed Entity="MobReptilian" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobReptilian"/></GuideEntityCards>
 
+Унатхи — хладнокровные гуманоиды с хвостом и растущими когтями.
 
-  ## Питание
-  Унатхи могут есть сырое мясо, но заболевают от употребления шоколада или любой другой пищи, содержащей теобромин.
+## Питание и дыхание
+Дышат кислородом. Могут есть сырое мясо; продукты с теобромином, включая шоколад, вызывают отравление.
 
+## Движение и бой
+Могут тянуть предметы хвостом, оставляя руки свободными. Начальная стадия когтей наносит 8 единиц порезов с частотой 1,5 атаки/с; рост меняет урон и владение оружием.
 
-  ## Физические свойства
-  Могут тащить предметы хвостом, оставляя обе руки свободными.
+<GuideSpeciesStats Species="Reptilian"/>
 
-  Получают на [color=#FFA500]15%[/color] меньше урона от порезов и на [color=#FF0000]5%[/color] меньше урона от ожогов, но на [color=#FFA500]25%[/color] больше урона от ушибов.
+## Здоровье и среда
+Холод мешает терморегуляции. При температуре тела ниже [color=#73BFD3]21,85°C[/color] появляется эффект опьянения, ниже [color=#73BFD3]11,85°C[/color] — сонливость; ниже [color=#73BFD3]11,85°C[/color] начинается и холодовой урон. Выше 48,85°C скорость увеличивается на 10% и восстанавливаются механические и ожоговые повреждения. Тепловой урон начинается выше 126,85°C. Зимняя одежда и скафандры помогают сохранять тепло. Сварка, факел и костёр нагревают тело; объятия передают тепло между существами, в том числе от унатха более холодному существу.
 
-  Их урон в ближнем бою значительно выше, чем у людей — 8 единиц порезами с частотой атаки 1.5.
+## Снаряжение и взаимодействие
+Стадия когтей влияет на точность стрельбы и урон оружия ближнего боя. На последней стадии огнестрельное оружие становится недоступно, кроме предусмотренного исключения для луков.
 
+**Языки:** Андромеда Стандарт и драконий.
 
-  ## Когти
-  Унатхи вооружены опасными когтями с разными стадиями роста.
+## Особые характеристики
+### Рост когтей
+- Стадия 0: 8 порезов.
+- Стадия 1: 11 порезов; разброс стрельбы +[color=#73BFD3]10%[/color], урон оружия ближнего боя −[color=#73BFD3]5%[/color].
+- Стадия 2: 13 порезов и 2 укола; разброс +[color=#73BFD3]25%[/color], урон оружия −[color=#73BFD3]13%[/color]. Доступны широкие взмахи когтями.
+- Стадия 3: 15 порезов и 5 уколов; разброс +[color=#73BFD3]45%[/color], урон оружия −[color=#73BFD3]25%[/color].
+- Стадия 4: 18 порезов и 12 уколов; урон оружия −[color=#73BFD3]50%[/color], ограничение огнестрельного оружия.
 
-  - Стадия 0 — [color=#FFA500]8 единиц урона порезами.[/color]
-  - Стадия 1 — [color=#FFA500]11 единиц урона порезами.[/color] [color=#FFDEAD]Разброс при стрельбе повышен на 10%, урон холодного оружия снижен на 5%.[/color]
-  - Стадия 2 — [color=#FFA500]13 единиц урона порезами, 2 единицы  уронами уколами.[/color] [color=#FFDEAD]Разброс при стрельбе повышен на 25%, урон холодного оружия снижен на 13%.[/color] Начиная с этой стадии вы можете совершать широкие взмахи когтями.
-  - Стадия 3 — [color=#FFA500]15 единиц урона порезамиа, 5 единиц уронами уколами.[/color] [color=#FFDEAD]Разброс при стрельбе повышен на 45%, урон холодного оружия снижен на 25%.[/color]
-  - Стадия 4 — [color=#FFA500]18 единиц урона порезами, 12 единиц уронами уколами.[/color] [color=#FFDEAD]Начиная с этой стадии, вы больше не можете использовать огнестрельное оружие, кроме луков. Урон холодного оружия снижен на 50%.[/color]
+### Подрезка и химикаты
+Кусачки уменьшают стадию на одну и сбрасывают накопленный рост. Феноксазин ускоряет рост в 20 раз, мероксазин останавливает его; оба вещества медленно метаболизируются.
 
-  ### Подрезка когтей
+<GuideEntityCards><GuideTexture Entity="Wirecutter" Caption="auto"/><GuideTexture Entity="Welder" Caption="auto"/><GuideTexture Entity="Flare" Caption="auto"/><GuideTexture Entity="Bonfire" Caption="auto"/></GuideEntityCards>
 
-  С помощью [color=#FFA500]кусачек[/color] вы можете подрезать когти унатха, уменьшая их стадию на одну единицу и сбрасывая текущий прогресс роста.
-
-  <Box>
-    <GuideEntityEmbed Entity="Wirecutter" Caption=""/>
-  </Box>
-
-  ### Химикаты
-
-  Некоторые химикаты позволяют лучше контролировать рост когтей унатхов. Феноксазин ускоряет рост когтей в 20 раз, а мероксазин полностью останавливает их рост. Оба вещества метаболизируются медленно, что позволяет эффективно использовать их в долгосрочной перспективе.
-
-  <GuideReagentEmbed Reagent="Phenoxzine"/>
-  <GuideReagentEmbed Reagent="Meroxzine"/>
-
-  ## Температура
-
-  Будучи хладнокровными, они не способны вырабатывать достаточно тепла для поддержания себя в среде с температурой [color=#4169E1]20°C[/color].
-  Температура ниже [color=#4169E1]22°C[/color] крайне опасна для них! Они начинают [color=#FF0000]чувствовать сонливость и периодически терять сознание[/color].
-  Однако они получают небольшое восстановление и ускорение, если им удаётся поддерживать температуру тела выше [color=#FFA500]47°C[/color].
-
-  ### Нагрев
-
-  - Сварочные аппараты, аварийные факелы и костры теперь могут нагревать гуманоидов, включая унатхов.
-  <GuideEntityCards>
-    <GuideEntityEmbed Entity="Welder" Caption=""/>
-    <GuideEntityEmbed Entity="Flare" Caption=""/>
-    <GuideEntityEmbed Entity="Bonfire" Caption=""/>
-  </GuideEntityCards>
-  - Ношение зимней одежды или скафандров позволяет вырабатывать достаточно тепла, чтобы чувствовать себя относительно комфортно.
-  - Унатхи могут обмениваться теплом с другими существами через объятия. Однако объятие холодного существа ухудшит ситуацию.
+<GuideReagentEmbed Reagent="Phenoxzine"/>
+<GuideReagentEmbed Reagent="Meroxzine"/>
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Resomi.xml -->
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Contextual/Species/Resomi.xml -->
 # Резоми
 
-  <Box>
-    <GuideEntityEmbed Entity="MobResomiDummy" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobResomiDummy"/></GuideEntityCards>
 
-  Резоми - маленький птицеподобный вид с ледяной планеты.
+Резоми — небольшие птицеподобные гуманоиды с холодной родной планеты.
 
-  Хотя их крылья не позволяют им полностью летать, они могут использовать их для лучшего маневрирования в невесомости.
+## Питание и дыхание
+Дышат кислородом и переваривают сырое мясо и другие сырые животные белки.
 
-  Как и большинство других нечеловеческих видов, резоми способны переваривать сырое мясо и другие сырые животные белки.
+## Движение и бой
+Крылья помогают маневрировать в невесомости, но не обеспечивают полноценного полёта. Безоружные атаки наносят порезы.
 
-  Благодаря условиям их родной планеты и крови на аммиачной основе, резоми значительно более устойчивы к холоду и способны выдерживать температуры до -77°C.
-  Следовательно, температуры, которые большинство других видов считают комфортными, для них невыносимо жарки - они начинают страдать уже при 30°C.
+<GuideSpeciesStats Species="Resomi"/>
 
-  Наряду с устойчивостью к температуре, они получают меньше урона от холода и больше урона от тепла, аналогично мотылькам, а также более восприимчивы к ушибам.
+## Здоровье и среда
+Кровь на аммиачной основе. Переносят холод примерно до −[color=#73BFD3]77°C[/color], но жара становится опасной уже около [color=#73BFD3]30°C[/color]. Уязвимее к ушибам и теплу, устойчивее к холодовому урону.
 
-  Из-за своих маленьких размеров они могут поместиться в вещмешки.
-
-  Их атака без оружия наносит урон порезами.
+## Снаряжение и взаимодействие
+Благодаря размеру помещаются в вещмешки.
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/SlimePerson.xml -->
-# Слаймолюды
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/SlimePerson.xml -->
+# Слаймолюд
 
-  <Box>
-    <GuideEntityEmbed Entity="MobSlimePerson" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobSlimePerson"/></GuideEntityCards>
 
-  Они дышат азотом вместо кислорода: на станции его много, но в баллонах найти сложнее. Получают значительный урон от распыления/обливания водой, но
-  (как и другие виды) должны пить её для гидратации без вреда.
-  Выдыхают закись азота и невосприимчивы к ней.
-  Их тело обрабатывает 6 реагентов одновременно вместо 2.
+Слаймолюды — разумные слизистые гуманоиды с внутренним хранилищем и особым газообменом.
 
-  У слаймов есть **внутренний инвентарь 2x3** внутри слизистой мембраны. Любой видит содержимое и может вынуть без спроса,
-  так что будьте осторожны.
+## Питание и дыхание
+Дышат азотом, выдыхают закись азота и невосприимчивы к ней. Питьевая вода утоляет жажду без вреда; обливание или распыление воды повреждает тело.
 
-  Регенерация немного быстрее, чем у других гуманоидов. Они могут упрочнять кулаки и бьют сильнее,
-  хотя и немного медленнее.
+## Движение и бой
+Могут упрочнять кулаки: удары становятся сильнее, но медленнее.
 
-  Их слизистая "кровь" не производится из железа. Слайм-кровь технически является источником умеренно сытной еды для других видов, хотя пить кровь коллег обычно дурной тон.
-  Задыхаются на 80% медленнее, но получают урон давлением на 9% быстрее. Это делает их самым живучим видом в вакууме. Ненадолго.
+<GuideSpeciesStats Species="SlimePerson"/>
 
-  Получают [color=#1e90ff]на 40% меньше ушибов и на 20% меньше отравления[/color], но [color=#ffa500]на 50% больше обморожения, на 20% больше порезов и на 20% больше уколов[/color].
+## Здоровье и среда
+Слизистая кровь не восстанавливается железом; для других видов она может служить пищей. Регенерация несколько быстрее обычной. Задыхаются на [color=#73BFD3]80%[/color] медленнее человека, но урон от давления накапливается быстрее примерно на [color=#73BFD3]9%[/color]: это не защита для длительного пребывания в вакууме.
+
+## Снаряжение и взаимодействие
+Внутри тела есть хранилище 2×3. Содержимое видно другим, и окружающие могут извлекать из него предметы.
+
+**Языки:** Андромеда Стандарт и пузырчатый.
+
+## Особые характеристики
+### Метаболизм
+Организм обрабатывает до шести реагентов одновременно вместо двух. Это меняет сочетание и скорость действия нескольких веществ: учитывайте его при лечении.
+
+### Упрочнение кулаков
+Включайте расовое действие для изменения безоружной атаки; увеличение силы сопровождается снижением темпа ударов.
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Tajaran.xml -->
-# Таяраны
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Tajaran.xml -->
+# Таяран
 
-  <Box>
-    <GuideEntityEmbed Entity="MobTajaran" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobTajaran"/></GuideEntityCards>
 
-  Таяраны - всеядные двуногие гуманоиды с чертами, сильно напоминающими земных кошачьих.
-  Их самые отличительные черты включают слой шерсти, большие уши на голове и хвост, помогающий сохранять равновесие.
-  Первоначально клановое общество, таяран пережили века диктаторского правления.
-  После гражданской войны их правительство раскололось, и власть вернулась к кланам, где и остаётся по сей день.
+Таяраны — всеядные покрытые шерстью гуманоиды с кошачьими чертами, крупными ушами и хвостом.
 
-  ## Механики
+## Питание и дыхание
+Дышат кислородом и питаются смешанным рационом.
 
-  Из-за [color=yellow]маленького роста[/color] таяраны могут [color=#1e90ff]помещаться в вещмешки[/color].
+## Движение и бой
+Когти наносят порезы и уколы. Природная ловкость снижает вред от ударов и падений, а босиком можно ходить бесшумно.
 
-  Их слой шерсти даёт им некоторую [color=#1e90ff]устойчивость к холоду[/color], ценой [color=#ec3a3a]получения большего урона от ожогов[/color].
+<GuideSpeciesStats Species="Tajaran"/>
 
-  Они используют когти для безоружных атак, нанося урон [color=#ec3a3a]порезами[/color] и [color=#ec3a3a]уколами[/color].
+## Здоровье и среда
+Шерсть помогает переносить холод, но повышает уязвимость к ожогам.
 
-  Благодаря врождённой ловкости они [color=#1e90ff]получают сниженный урон от ударов и падений[/color], а мягкие лапы позволяют им [color=#1e90ff]ходить без обуви бесшумно[/color].
+## Снаряжение и взаимодействие
+Благодаря небольшому росту помещаются в вещмешки.
 
-  ## Мягкие лапы
+**Языки:** Андромеда Стандарт и сиик’маас.
 
-  Этa раса при падении с большой высоты приземляется мягче. (Проще говоря, у них большее расстояние, при котором падение не причиняет им вреда и не оглушает их.)
+## Особые характеристики
+### Мягкие лапы
+Падение с высоты начинает наносить урон и оглушать позже, чем у видов без этой способности.
 
-  ## Soft Paws
-
-  This species lands softer when dropping from high altitudes. (In layman's terms, they have a higher distance where falling does not hurt or stun them.)
+### Происхождение
+Клановое общество таяран пережило диктаторское правление и гражданскую войну. После раскола правительства власть вновь перешла к кланам.
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/References/Species/Vox.xml -->
-# Воксы
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Vox.xml -->
+# Вокс
 
-  <Box>
-    <GuideEntityEmbed Entity="MobVox" Caption=""/>
-  </Box>
+<GuideEntityCards><GuideEntityEmbed Entity="MobVox"/></GuideEntityCards>
 
-  [color=#ffa500]Внимание! Этот вид не рекомендуется новичкам из-за смертельной аллергии на кислород![/color]
+Воксы — азотодышащие гуманоиды. Их выбор требует постоянного контроля дыхательного оборудования.
 
-  Воксы дышат азотом, а [color=#ffa500]кислород для них ядовит.[/color]
-  Увы, космические станции обычно полны кислородом,
-  поэтому почти всегда требуется внутренний источник азота во избежание смертельного контакта.
+## Питание и дыхание
+**Дышат азотом; кислород ядовит.** В обычной атмосфере станции используйте маску и подключённый азотный баллон. В начале получают включённое дыхание и запасные маску с карманным азотным баллоном в наборе выживания. Помимо обычной еды, переваривают сырое мясо, упаковки снеков, банановые кожуры и яичную скорлупу; могут пить сварочное топливо.
 
-  Воксы всегда спавнятся с работающими внутренними системами азота.
-  В наборе выживания есть запасная маска и карманный баллон с азотом.
+## Движение и бой
+Безоружные атаки наносят порезы.
 
-  Помимо обычной еды, воксы могут есть упаковки снеков, банановые кожуры, скорлупу яиц и сырое мясо без вреда. Им также нравится пить сварочное топливо.
+<GuideSpeciesStats Species="Vox"/>
 
-  Воксы [color=#1e90ff]медленно восстанавливаются от низких уровней отравления[/color] сами по себе,
-  пока не превышают 20 урона ядом.
-  Это позволяет недолго дышать воздухом станции до тридцати секунд без долговременного урона,
-  чтобы быстро поесть, попить, принять лекарства и т. п.
-  Тридцатисекундное воздействие кислорода отыгрывается двумя минутами восстановления.
-  Если в течение минуты состояние не улучшается, требуется медицинская помощь.
+## Здоровье и среда
+Имеют кровь на аммиачной основе. От небольшого отравления восстанавливаются самостоятельно, пока накоплено не больше 20 единиц токсического урона.
 
-  Безоружная атака воксами наносят порезы.
+## Снаряжение и взаимодействие
+Для еды, питья и приёма лекарств может понадобиться временно снять маску. Заранее подготовьте всё необходимое и снова подключите азот после действия.
+
+**Языки:** Андромеда Стандарт и язык воксов.
+
+## Особые характеристики
+### Воздействие кислорода
+Примерно [color=#73BFD3]30 секунд[/color] контакта с воздухом станции могут потребовать около двух минут восстановления. Это ориентир, а не гарантированное безопасное время: состояние зависит от уже полученного урона. *Если после возвращения к азоту за минуту нет улучшения,* нужна медицинская помощь.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Research/Anomalies.xml -->
 # Аномалии: очки и сдерживание
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="AnomalyScanner"/>
-<GuideEntityEmbed Entity="MachineAnomalyVessel"/>
-<GuideEntityEmbed Entity="MachineAPE"/>
+<GuideTexture Entity="AnomalyScanner" Caption="auto"/>
+<GuideTexture Entity="MachineAnomalyVessel" Caption="auto"/>
+<GuideTexture Entity="MachineAPE" Caption="auto"/>
 </GuideEntityCards>
 
 ## Связать аномалию с сервером
-1. Примените сканер аномалий к аномалии и дождитесь завершения сканирования.
-2. Примените этот сканер к **пустому сосуду аномалии**. В него записывается последняя просканированная аномалия. Одной аномалии соответствует один сосуд: повторное подключение к другому не сработает.
-3. Откройте сосуд и выберите исследовательский сервер. Для выработки сосуду нужны питание и связь с сервером; саму аномалию внутрь не переносят.
+1. **Примените** сканер аномалий к аномалии и дождитесь завершения сканирования.
+2. **Примените** этот сканер к **пустому сосуду аномалии**. В него записывается последняя просканированная аномалия. Одной аномалии соответствует один сосуд: повторное подключение к другому не сработает.
+3. **Откройте** сосуд и выберите исследовательский сервер. Для выработки сосуду нужны питание и связь с сервером; саму аномалию внутрь не переносят.
 
 ## Прочитать сканер
-- **Текущая опасность** — сила эффектов. При **100%** начинается сверхкритическое событие; связанный сосуд взрывается после сверхкритического завершения аномалии.
+- **Текущая опасность** — сила эффектов. При [color=#73BFD3]**100%**[/color] начинается сверхкритическое событие; связанный сосуд взрывается после сверхкритического завершения аномалии.
 - **Текущее состояние: Рост** — опасность увеличивается сама. **Стабильное** — автоматического роста или распада нет. **Распад** — аномалия теряет здоровье и в итоге исчезает.
 - **Пассивная генерация очков** — выход самой аномалии до множителя сосуда. Сравнивайте его с приростом на сервере.
 - **Время до следующего импульса** — момент очередного эффекта. Импульс также меняет состояние, поэтому после него проверяйте сканер снова.
 - **Поведение** — дополнительный модификатор эффектов, чувствительности к частицам и выхода ОИ. После трансформации перечитайте его описание.
 
 ## Частицы A.P.E.
-Поверните A.P.E. так, чтобы частицы попадали в аномалию. Выберите тип по результату сканирования, включите излучатель на короткую серию и выключите перед оценкой результата. Дельта, Эпсилон, Сигма и Зета получают разные назначения **у каждой аномалии**.
+Поверните A.P.E. так, чтобы частицы попадали в аномалию. **Выберите** тип по результату сканирования, включите излучатель на короткую серию и выключите перед оценкой результата. Дельта, Эпсилон, Сигма и Зета получают разные назначения **у каждой аномалии**.
 
 <GuideTable Columns="2">
-<Box>**Опасный тип**</Box><Box>Непосредственно повышает опасность. Используйте для увеличения выхода, прекращая обстрел до 100%.</Box>
+<Box>**Опасный тип**</Box><Box>Непосредственно повышает опасность. **Используйте** для увеличения выхода, прекращая обстрел до [color=#73BFD3]100%[/color].</Box>
 <Box>**Нестабильный тип**</Box><Box>Сдвигает состояние к росту. Нужен, в частности, чтобы вывести аномалию из распада.</Box>
 <Box>**Сдерживающий тип**</Box><Box>Сдвигает состояние от роста к стабильности, но уменьшает здоровье. Остановитесь, когда сканер показывает стабильное состояние: дальнейший обстрел вызывает распад и уничтожение.</Box>
 <Box>**Трансформирующий тип**</Box><Box>Повышает опасность и может изменить поведение. Проверяйте новое описание и выход очков.</Box>
 </GuideTable>
 
-**Сдерживание не уменьшает уже накопленную опасность.** Оно останавливает её дальнейший автоматический рост ценой здоровья. Если требуется уничтожить аномалию, продолжайте воздействовать сдерживающим типом до её исчезновения.
+**Сдерживание не уменьшает уже накопленную опасность.** Оно останавливает её дальнейший автоматический рост ценой здоровья. *Если требуется уничтожить аномалию,* продолжайте воздействовать сдерживающим типом до её исчезновения.
 
 ## От чего зависит выход ОИ
-Опасность увеличивает выход по нелинейной кривой; состояние роста добавляет бонус, а потеря здоровья уменьшает результат. Дополнительно действуют поведение, **множитель форка 2,5** и множитель сосуда.
+Опасность увеличивает выход по нелинейной кривой; состояние роста добавляет бонус, а потеря здоровья уменьшает результат. Дополнительно действуют поведение, **общий множитель 2,5** и множитель сосуда.
 
-Для здоровой аномалии в стабильном состоянии без модификатора поведения: **50% опасности — 100 ОИ/с**, **90% — около 166 ОИ/с**, до множителя сосуда. Рост даёт больше очков, но приближает сверхкритическое событие. Для длительной работы повышайте опасность короткими сериями, затем возвращайте состояние к стабильному и проверяйте его после импульсов.
+Для здоровой аномалии в стабильном состоянии без модификатора поведения: [color=#73BFD3]**50% опасности — 100 ОИ/с**[/color], [color=#73BFD3]**90% — около 166 ОИ/с**[/color], до множителя сосуда. Рост даёт больше очков, но приближает сверхкритическое событие. Для длительной работы повышайте опасность короткими сериями, затем возвращайте состояние к стабильному и проверяйте его после импульсов.
 
 **Сосуд не подключается:** он уже занят либо аномалия привязана к другому сосуду. **ОИ не поступают:** проверьте питание сосуда, выбранный сервер и существование аномалии.
 
@@ -4535,9 +4588,9 @@ Viper Group — частная военная компания. Её участ�
 # Артефакты: раскрытие узлов
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
-<GuideEntityEmbed Entity="ComputerAnalysisConsole"/>
-<GuideEntityEmbed Entity="NodeScanner"/>
+<GuideTexture Entity="MachineArtifactAnalyzer" Caption="auto"/>
+<GuideTexture Entity="ComputerAnalysisConsole" Powered="true" Caption="auto"/>
+<GuideTexture Entity="NodeScanner" Caption="auto"/>
 </GuideEntityCards>
 
 ## Подключить анализатор
@@ -4553,25 +4606,25 @@ Viper Group — частная военная компания. Её участ�
 - **Эффект** — реакция открытого узла; до раскрытия она скрыта. **Прочность** показывает оставшиеся срабатывания, а у одноразового узла — факт активации.
 
 ## Раскрыть и извлечь очки
-1. Выберите доступный заблокированный узел и подготовьте все воздействия из **Стимуляторов**.
-2. Начните с первого воздействия и выполните остальные, пока идёт попытка раскрытия. Базовое окно — **10 секунд**; каждое новое срабатывание другого узла в этой попытке добавляет **6 секунд**. Повтор того же стимула окно не продлевает. Между попытками есть пауза **5 секунд**.
+1. **Выберите** доступный заблокированный узел и подготовьте все воздействия из **Стимуляторов**.
+2. Начните с первого воздействия и выполните остальные, пока идёт попытка раскрытия. Базовое окно — [color=#73BFD3]**10 секунд**[/color]; каждое новое срабатывание другого узла в этой попытке добавляет [color=#73BFD3]**6 секунд**[/color]. Повтор того же стимула окно не продлевает. Между попытками есть пауза **5 секунд**.
 3. После завершения проверьте новый статус и эффект. Например, если требуются отвёртка и нагрев, примените отвёртку и обеспечьте нагрев в этой же попытке; одна отвёртка дочерний узел не откроет.
-4. Нажмите **Извлечь очки**. Очки поступают на выбранный сервер; повторное извлечение без новой исследовательской ценности ничего не добавит. Затем переходите к следующим узлам.
+4. **Нажмите** **Извлечь очки**. Очки поступают на выбранный сервер; повторное извлечение без новой исследовательской ценности ничего не добавит. Затем переходите к следующим узлам.
 
 ## Подсказка → воздействие
 <GuideTable Columns="2">
-<Box>**Свинчивание / закрепление / поддевание / импульсы**</Box><Box>Примените соответственно отвёртку, гаечный ключ, лом или мультитул.</Box>
+<Box>**Свинчивание / закрепление / поддевание / импульсы**</Box><Box>**Примените** соответственно отвёртку, гаечный ключ, лом или мультитул.</Box>
 <Box>**Изучение**</Box><Box>Осмотрите артефакт с близкого расстояния.</Box>
 <Box>**Музыка**</Box><Box>Играйте на инструменте в радиусе 2 м.</Box>
 <Box>**Магнитное поле**</Box><Box>Включённые магнитные ботинки в радиусе 2 м либо активация утилизаторского магнита в радиусе 40 м.</Box>
 <Box>**Нагрев / холод**</Box><Box>Температура выше 373 K / ниже 255 K либо 20 единиц термического урона / урона холодом.</Box>
 <Box>**Излучение / физическое воздействие**</Box><Box>Нанесите 20 радиационного / физического урона.</Box>
-<Box>**Высокое / низкое давление**</Box><Box>Поднимите давление выше 385 кПа / опустите ниже 50 кПа.</Box>
-<Box>**Без кислорода**</Box><Box>В окружающей смеси должно остаться не более 10 моль O2.</Box>
-<Box>**Вода / кровь / указанное вещество**</Box><Box>Нанесите не менее 5 ед. нужного реагента за одно воздействие. Газовые стимулы также реагируют на соответствующий газ в атмосфере.</Box>
+<Box>**Высокое / низкое давление**</Box><Box>Поднимите давление выше [color=#73BFD3]385 кПа[/color] / опустите ниже [color=#73BFD3]50 кПа[/color].</Box>
+<Box>**Без кислорода**</Box><Box>В окружающей смеси должно остаться не более [color=#73BFD3]10 моль[/color] O2.</Box>
+<Box>**Вода / кровь / указанное вещество**</Box><Box>Нанесите не менее [color=#73BFD3]5 ед.[/color] нужного реагента за одно воздействие. Газовые стимулы также реагируют на соответствующий газ в атмосфере.</Box>
 <Box>**Бросок**</Box><Box>Бросьте переносимый артефакт и дождитесь приземления.</Box>
 <Box>**Смерть**</Box><Box>Смерть существа в радиусе 15 м.</Box>
-<Box>**Время**</Box><Box>Дождитесь таймера узла: 80–120 секунд.</Box>
+<Box>**Время**</Box><Box>**Дождитесь** таймера узла: [color=#73BFD3]80–120 секунд[/color].</Box>
 </GuideTable>
 
 **Узел не открывается:** проверьте все стимуляторы выбранного узла и статус его предшественников. Подавленный артефакт не раскрывает узлы; на защищённом гриде активация также может блокироваться.
@@ -4590,16 +4643,22 @@ Viper Group — частная военная компания. Её участ�
 **Схему можно двигать:** тяните свободный фон ЛКМ или ПКМ; колесо прокручивает поле вверх и вниз. Это перемещает исследования, а не всё окно.
 [Каталог исследований](guide://ColossusCatalogueResearch).
 
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="MachineArtifactAnalyzer" Caption="Исследовать артефакт"/>
+<GuideTexture Entity="ResearchAndDevelopmentServer" Caption="Накопить очки"/>
+<GuideTexture Entity="ComputerResearchAndDevelopment" Powered="true" Caption="Открыть технологию"/>
+</GuideEntityCards>
+
 ## С чего начинать инженеру
-**Детали:** «Базовые компоненты» 5 000 → «Продвинутые компоненты» 20 000 → «Суперкомпоненты» 25 000 ОИ. «Продвинутые компоненты» открывают детали второго уровня, «Суперкомпоненты» — третьего. [Как установить и что меняется](guide://IndustryMachineParts).
+**Детали:** **«Базовые компоненты»** 5 000 → **«Продвинутые компоненты»** 20 000 → «Суперкомпоненты» 25 [color=#73BFD3]000 ОИ[/color]. «Продвинутые компоненты» открывают детали второго уровня, «Суперкомпоненты» — третьего. [Как установить и что меняется](guide://IndustryMachineParts).
 
-**Упаковка и автоматизация:** после исследования «Продвинутые компоненты» купите «Механическое уплотнение» за 12 500 ОИ: УМЗД, чертёж УМЗД и упаковщик. Затем «Промышленная инженерия» за 22 500 ОИ: комплекты улучшения станков, комплект автоматизации, платы роборуки, накопителя, интерактора, конструктора и листопрокатчика. [Сборка линии](guide://IndustryAutomation).
+**Упаковка и автоматизация:** после исследования **«Продвинутые компоненты»** купите **«Механическое уплотнение»** за 12 [color=#73BFD3]500 ОИ[/color]: УМЗД, чертёж УМЗД и упаковщик. Затем «Промышленная инженерия» за 22 [color=#73BFD3]500 ОИ[/color]: комплекты улучшения станков, комплект автоматизации, платы роборуки, накопителя, интерактора, конструктора и листопрокатчика. [Сборка линии](guide://IndustryAutomation).
 
-**Промышленность ММС:** «ММС | Гидравлика» стоит 15 000 ОИ после «Исследование материалов 1»; открывает платы двух прессов ММС и компактных печи и сборщика. «ММС | Торговые товары» за 5 000 ОИ продолжает эту цепочку торговыми изделиями. Это отдельная ветка; «Промышленная инженерия» её не заменяет.
+**Промышленность ММС:** **«ММС | Гидравлика»** стоит 15 [color=#73BFD3]000 ОИ[/color] после **«Исследование материалов 1»**; открывает платы двух прессов ММС и компактных печи и сборщика. «ММС | Торговые товары» за 5 [color=#73BFD3]000 ОИ[/color] продолжает эту цепочку торговыми изделиями. Это отдельная ветка; «Промышленная инженерия» её не заменяет.
 
-**Добыча:** «Массовая экскавация» стоит 25 000 ОИ и требует «Сканирование космоса» + «Продвинутые компоненты»; включает корабельный бур, алмазное бурение и продвинутое поисковое оборудование. [Практика бурения](guide://IndustryDrilling).
+**Добыча:** **«Массовая экскавация»** стоит 25 [color=#73BFD3]000 ОИ[/color] и требует **«Сканирование космоса»** + «Продвинутые компоненты»; включает корабельный бур, алмазное бурение и продвинутое поисковое оборудование. [Практика бурения](guide://IndustryDrilling).
 
-[Детали машин и УМЗД](guide://IndustryMachineParts) · [Сборка мехов](guide://MechsBase)
+[Детали машин и УМЗД](guide://IndustryMachineParts) · [Сборка мехов](guide://ColossusMechsHub)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Rules/0.xml -->
@@ -4658,7 +4717,7 @@ Viper Group — частная военная компания. Её участ�
 - Список зелёных зон: Колосс Централл, Медицинский центр.
 - В зелёных зонах запрещено воровать что-либо, включая шаттлы. Если игрок находится в КРС (SSD), воровать его вещи всё ещё запрещено.
 - Открытые боевые действия в радиусе 500 метров от зелёных зон запрещены.
-- Антагонисты (АДС, Азакимы, Химеры) не защищены правилами зелёных зон.
+- Антагонисты (АСЗ, Азакимы, Химеры) не защищены правилами зелёных зон.
 - Если вы стали врагом ТСФ, Авангарда Нордфолла или Службы безопасности Колосса, вы теряете защиту зелёной зоны.
 - Корпус морской пехоты ТСФ и Авангард Нордфолла не имеют права устраивать между собой конфликты на территории Колосса Централл.
 - Цель контракта не защищена правилами зелёной зоны, но этой защиты лишены и заказчик, и исполнитель контракта. Такой конфликт должен проходить в разумных рамках, без использования гранат и взрывного оружия на территории зелёных зон.
@@ -4777,9 +4836,9 @@ Viper Group — частная военная компания. Её участ�
 
 # Правило 5.1
 
-## Игра за киборгов АДС
+## Игра за киборгов АСЗ
 
-- Без Азакимов в раунде борги заняты защитой своих активов (прим.: хранилище АДС) и защитой сектора от биоугрозы.
+- Без Азакимов в раунде борги заняты защитой своих активов (прим.: хранилище АСЗ) и защитой сектора от биоугрозы.
 - С Азакимами в раунде борги переходят в фазу активных антагонистов и прекращают защитную деятельность. Их основной задачей становится полное подчинение приказам Азакимов.
 - Вы имеете право проникнуть в зелёную зону, однако вам запрещено вести на её территории активные боевые действия. Исключение — самооборона.
 
@@ -4895,73 +4954,82 @@ Viper Group — частная военная компания. Её участ�
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Asteroids.xml -->
-# Астероиды и руда
-Цвет IFF на **MAP** указывает тип астероида. Сканер минералов показывает залежи внутри.
+# Астероиды
 
-[Породы и руда](guide://ColossusCatalogueOres).
+Астероиды — источник руды и материалов. Цвет IFF на **MAP** помогает распознать тип, а сканер минералов показывает залежи внутри. Для первого вылета нужны кирка или бур, мешок для руды и защита от вакуума.
 
-Таблица сравнивает **выбор рудной породы** в таблицах генерации. Переключатель меняет мягкую, твёрдую и обогащённую породу. Пустоты и помещения в этот процент не входят.
+<GuideEntityCards><GuideTexture Entity="Pickaxe" Caption="auto"/><GuideTexture Entity="MiningDrill" Caption="auto"/><GuideTexture Entity="OreBag" Caption="auto"/></GuideEntityCards>
 
-**Лом** перерабатывается в утилизаторе; газовые залежи разрабатываются отдельным газовым буром. INSO-357k и LINEAR-21 — названия скоплений с собственными маяками.
+## Где искать
 
-[Бурение](guide://IndustryDrilling) · [Добыча газа](guide://GasMining) · [Переработка ММС](guide://MMC)
+Астероидный пояс находится примерно в [color=#73BFD3]**8750–9000 м от центра сектора**[/color]. Отдельно отмечены скопления **INSO-357k** и **LINEAR-21** — найдите их маяки на карте. Добываемые [планетоиды](guide://ColossusEventPlanetoids) могут прибывать отдельными событиями.
+
+## Породы и состав
+
+**Выберите** **разновидность породы** — мягкую, твёрдую или обогащённую, затем **тип астероида**. Таблица показывает доступные ресурсы и вероятность каждого результата для выбранной породы.
+
+<GuideOreMatrix/>
+
+Процент — вероятность выбора результата в таблице породы, **не доля всех тайлов астероида**. Пустоты и помещения в него не входят. **«Пустая порода»** означает результат без рудной жилы. Сканер показывает конкретный найденный астероид, таблица — распределение возможных результатов.
+
+## Вывезти и переработать
+
+Руду собирают в мешки и перерабатывают в запитанном переработчике. **Лом** отправляют в утилизатор; газовые залежи разрабатываются газовым буром. Оставляйте запас воздуха для возвращения и место под груз.
+
+[Добыча и переработка](guide://ColossusMining) · [Корабельный бур](guide://IndustryDrilling) · [Лазерный бур](guide://ColossusLaserDrill) · [Газодобыча](guide://GasMining) · [Производство ММС](guide://MMC)
 <!-- /article -->
 
-<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/GameModes.xml -->
-# Режимы и события смены
-Режим определяет набор угроз и доступные базы. В текущем голосовании используются следующие варианты.
 
-- **Стандарт** — обычные события сектора без потоков кораблей химер и АСЗ. Дополнительные планировщики чаще создают тайники, хранилища, неопознанные шаттлы и малые фрагменты Монолита.
-- **Наследие** — к обычным событиям добавляются корабли автоматических оборонительных систем, включая более сильный второй уровень и азакимов.
-- **Смешанный** — корабли химер, оборонительных систем и азакимов появляются замедленными потоками.
-- **Биоугроза** — потоки кораблей химер двух уровней; одновременно активны биокупола ТСФ и Авангарда.
-
-Гипервойна, Апокалипсис и прежние варианты противостояния остаются специальными режимами и скрыты из обычного голосования. Их карты и стартовые места могут отличаться от описаний стандартных станций.
-
-## Повторяющиеся события
-Блюспейс-события создают временные объекты: тайники, хранилища, шаттлы и зоны добычи. Их появление не означает, что объект останется до конца смены. Крупный [обломок Монолита](guide://LuaMMonolithWreck) имеет собственный таймер 40 минут и появляется в обычных режимах на полуторачасовой отметке; в «Стандарте» предусмотрен второй выход на шестом часу.
-
-Военные удары по портам в режимах, где они включены, запускаются вручную через фракционное командование. Автоматический удар по достижении третьего часа не является общим правилом смены.
-
-[Станции](guide://LuaMStations) · [Правила сервера](guide://LuaMRuleset)
-<!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Index.xml -->
-# Станции и карта
+# Сектор
 
-[Станции: назначение, оборудование и планы](guide://LuaMStations) · [Другие объекты сектора](guide://LuaMWorldObjects).
+Карта помогает найти путь между станциями, местами добычи и опасными объектами.
 
-[Топология сектора](guide://SectorTopology) · [Астероиды и руда](guide://LuaMAsteroids) · [Режимы и события](guide://LuaMGameModes).
-
-Боевые вылеты и задания вынесены в [промыслы и экспедиции](guide://ColossusActivities).
+<GuideHub Root="LuaMWorld"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/MonolithWreck.xml -->
-# Крупный обломок Монолита
-Это поглощённый Монолитом аванпост. Он появляется отдельным событием примерно через **1 час 30 минут** после начала смены. В «Стандарте» возможен второй такой обломок на шестом часу. Объявления сообщают о появлении и приближении исчезновения.
+# Поглощённый аванпост ДСБФ
+Это поглощённый Монолитом аванпост. Он может появиться отдельным событием примерно с [color=#73BFD3]**1 часа 30 минут**[/color] после начала смены. В **«Стандарте»** возможен второй такой обломок примерно с шестого часа. Объявления сообщают о появлении и приближении исчезновения.
 
 ## Противники и добыча
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MonolithicCrystalLarge"/>
-<GuideEntityEmbed Entity="MonolithicCrystalMedium"/>
-<GuideEntityEmbed Entity="WeaponTurretHeavyMonolithic"/>
+<GuideTexture Entity="MonolithicCrystalLarge" Caption="auto"/>
+<GuideTexture Entity="MonolithicCrystalMedium" Caption="auto"/>
+<GuideTexture Entity="WeaponTurretHeavyMonolithic" Caption="auto"/>
 </GuideEntityCards>
 На карте есть пустотные бойцы ТСФ, тяжёлые монолитные турели и турели NanoTrasen. Среди добычи — средние и крупные монолитные кристаллы, кристаллические образования, биомасса и спавнер контрабандного ящика.
 
 ## Ограничение времени
-**Время существования — 40 минут, в том числе с людьми на борту.** Событие закрепляет обломок в пространстве и запрещает пилотирование; наличие консоли орудий не превращает его в управляемый корабль. Планируйте вывоз добычи в пределах таймера.
+**Обычное время существования — 40 минут.** Незакреплённый объект исчезает по окончании события даже с людьми на борту. Успешное закрепление удерживает объект; наличие экипажа не заменяет закрепление. Событие закрепляет обломок в пространстве и запрещает пилотирование; наличие консоли орудий не превращает его в управляемый корабль. Планируйте вывоз добычи в пределах таймера.
 
-[Режимы и события](guide://LuaMGameModes) · [Бой и защита](guide://ColossusCombat)
+[Объекты событий](guide://LuaMGameModes) · [Бой и защита](guide://ColossusCombat)
 <GuideMap Map="/Maps/_LuaM/Monolithic/monolithicnfsdoutpost.yml" Name="Обломок Монолита"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects.xml -->
-# Объекты сектора
-Выберите объект: под списком — план, оборудование, обитатели и находки.
+# Объекты
 
-[Каталог объектов сектора](guide://ColossusCatalogueObjects).
+Торговые, исследовательские и заброшенные объекты размещаются при начале смены. Некоторые выбираются случайно; их не нужно ждать как событие.
 
-[Станции](guide://LuaMStations) · [События](guide://LuaMGameModes) · [Дроны](guide://LuaMDroneLoot) · [Экспедиции](guide://Expeditions)
+## Торговля и отдых
+
+<GuideHub Root="LuaMWorldObjects" Entries="LuaMTradeMall,ColossusSiteTradeDepots,ColossusSiteBlackMarket,ColossusSiteTinnia,ColossusSiteCaseysCasino,ColossusSiteThePit,ColossusSiteOmnichurch"/>
+
+## Базы и технические объекты
+
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteEdison,ColossusSiteZetaNode,ColossusSiteZvezdaLuaM,ColossusSiteGrifty,ColossusSiteMcHobo"/>
+
+## Исследования и добыча
+
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteSevastopol,ColossusSiteMining,ColossusSiteBeacons,ColossusSiteAnomalousLab"/>
+
+## Дальние объекты
+
+<GuideHub Root="LuaMWorldObjects" Entries="ColossusSiteLPBravo,ColossusSiteJupiter,ColossusSiteLancelot,ColossusSitePolaris,ColossusSiteAutomatedTanker,ColossusSiteZenith"/>
+
+[Основные станции](guide://LuaMStations) · [События](guide://LuaMGameModes)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Stations/Arcturus.xml -->
@@ -4969,9 +5037,9 @@ Viper Group — частная военная компания. Её участ�
 Дополнительный корабль ТСФ. Его штат отличается от [Халикона](guide://LuaMHalicon): капитан — 1, рядовые — 4, инженер — 1 и киборг — 1. Сержанты — до 3 и фельдшер — до 1 доступны для позднего присоединения; их стартовый штат равен нулю.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShuttle"/>
-<GuideEntityEmbed Entity="ComputerGunneryConsole"/>
-<GuideEntityEmbed Entity="TSFOverwatchComputer"/>
+<GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/>
+<GuideTexture Entity="TSFOverwatchComputer" Caption="auto"/>
 </GuideEntityCards>
 На борту есть управление кораблём и орудиями, радар, IFF, фракционная связь и оперативное управление ТСФ. Мастерские содержат автолат, протолат, военный, медицинский и боеприпасный техфабы, консоль исследований. Раздатчик химикатов и ХимМастер позволяют готовить лекарства; есть консоль ID-карт.
 
@@ -4987,9 +5055,9 @@ Viper Group — частная военная компания. Её участ�
 
 ## Корабли и снабжение
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyardUSSP"/>
-<GuideEntityEmbed Entity="ComputerShipyardViper"/>
-<GuideEntityEmbed Entity="ComputerShipyardExpedition"/>
+<GuideTexture Entity="ComputerShipyardUSSP" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardViper" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardExpedition" Powered="true" Caption="auto"/>
 </GuideEntityCards>
 На станции стоят отдельные верфи СССП и Viper Group, обычная, экспедиционная и утилизационная верфи. Для каждой фракции есть своя консоль оперативного управления. Здесь также находятся банкоматы, консоли заказов, торговые паллеты и терминалы рынка.
 
@@ -5008,10 +5076,10 @@ Viper Group — частная военная компания. Её участ�
 
 ## Купить корабль и начать работу
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyard"/>
-<GuideEntityEmbed Entity="ComputerShipyardExpedition"/>
-<GuideEntityEmbed Entity="ComputerCargoBounty"/>
-<GuideEntityEmbed Entity="LuaMComputerPalletConsoleStationMarket"/>
+<GuideTexture Entity="ComputerShipyard" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardExpedition" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerCargoBounty" Powered="true" Caption="auto"/>
+<GuideTexture Entity="LuaMComputerPalletConsoleStationMarket" Caption="auto"/>
 </GuideEntityCards>
 На карте размещены обычная, экспедиционная, утилизационная верфи и верфь коменданта. Есть банкоматы, терминалы рынка, консоли грузовых заказов и товарных заданий. Для продажи груза используются торговые паллеты; для выполнения задания — соответствующая консоль заказов.
 
@@ -5030,9 +5098,9 @@ Viper Group — частная военная компания. Её участ�
 
 ## Верфь и управление
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyardNfsd"/>
-<GuideEntityEmbed Entity="ComputerGunneryConsole"/>
-<GuideEntityEmbed Entity="TSFOverwatchComputer"/>
+<GuideTexture Entity="ComputerShipyardNfsd" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/>
+<GuideTexture Entity="TSFOverwatchComputer" Caption="auto"/>
 </GuideEntityCards>
 На флагмане размещены военная и обычная верфи, консоли управления кораблём и орудиями, радары, фракционная связь и оперативное управление ТСФ. Есть консоли ID-карт, личных дел, камер и учёта шаттлов.
 
@@ -5054,9 +5122,9 @@ Viper Group — частная военная компания. Её участ�
 На базе установлены обычная и чёрная верфи, радары, консоли орудий и оперативного управления Авангарда. Чёрная верфь и оружейный аплинк дают доступ к фракционному снабжению.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyardBlackMarket"/>
-<GuideEntityEmbed Entity="ComputerGunneryConsole"/>
-<GuideEntityEmbed Entity="PDVOverwatchComputer"/>
+<GuideTexture Entity="ComputerShipyardBlackMarket" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/>
+<GuideTexture Entity="PDVOverwatchComputer" Caption="auto"/>
 </GuideEntityCards>
 
 ## Контрабанда и заказы
@@ -5071,19 +5139,13 @@ Viper Group — частная военная компания. Её участ�
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Stations/Index.xml -->
-# Станции и события сектора
-Выбирайте место по нужному оборудованию. Доступ к фракционным верфям и помещениям определяется картой и ID-картой.
+# Станции
 
-- [Колосс Централл](guide://LuaMColossusCentral) — гражданский старт, верфи, торговые паллеты, заказы и клонирование.
-- [Медицинский Центр](guide://LuaMMedical) — медицинский старт, химия, клонирование и медицинская верфь.
-- [Камелот](guide://LuaMCamelot) — старт СССП и ЧВК «Вайпер», две фракционные верфи, производство и лаборатории.
-- [Гелиос](guide://LuaMHelios) — основной старт Авангарда, чёрная верфь, контрабандные заказы и фракционное производство.
-- [Халикон](guide://LuaMHalicon) — основной старт ТСФ, военная верфь и мастерские.
-- [Арктурус](guide://LuaMArcturus) — дополнительный корабль ТСФ с ограниченным штатом и орудиями.
-- [Торговый Центр](guide://LuaMTradeMall) — торговые паллеты, верфи, автоматы и транзит.
-- [Крупный обломок Монолита](guide://LuaMMonolithWreck) — временная боевая зона с кристаллами и турелями.
+Основные станции сектора — места начала работы, снабжения и встречи экипажей.
 
-[Режимы и события смены](guide://LuaMGameModes) · [Как долететь и пристыковаться](guide://Piloting)
+<GuideHub Root="LuaMStations"/>
+
+[Другие постоянные объекты](guide://LuaMWorldObjects) · [Объекты событий](guide://LuaMGameModes)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Stations/Medical.xml -->
@@ -5097,10 +5159,10 @@ Viper Group — частная военная компания. Её участ�
 
 ## Лечение и восстановление
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MedicalScanner"/>
-<GuideEntityEmbed Entity="CloningPod"/>
-<GuideEntityEmbed Entity="ChemMaster"/>
-<GuideEntityEmbed Entity="ComputerShipyardMedical"/>
+<GuideTexture Entity="MedicalScanner" Caption="auto"/>
+<GuideTexture Entity="CloningPod" Caption="auto"/>
+<GuideTexture Entity="ChemMaster" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardMedical" Powered="true" Caption="auto"/>
 </GuideEntityCards>
 На карте есть медицинский сканер, консоль и капсула клонирования, хирургические наборы, раздатчик химикатов и ХимМастеры. Медицинский техфаб производит профильное оборудование; автолат обеспечивает базовые детали и инструменты.
 
@@ -5115,9 +5177,9 @@ Viper Group — частная военная компания. Её участ�
 
 ## Торговля и корабли
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerTabletopPalletConsoleNFNormalMarket"/>
-<GuideEntityEmbed Entity="ComputerShipyardScrap"/>
-<GuideEntityEmbed Entity="ComputerBankATM"/>
+<GuideTexture Entity="ComputerTabletopPalletConsoleNFNormalMarket" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerShipyardScrap" Powered="true" Caption="auto"/>
+<GuideTexture Entity="ComputerBankATM" Powered="true" Caption="auto"/>
 </GuideEntityCards>
 На карте есть торговые паллеты с консолью продажи, терминал рынка и консоль грузовых заказов. Станция принимает торговые ящики. Банкомат обслуживает личный счёт.
 
@@ -5131,57 +5193,63 @@ Viper Group — частная военная компания. Её участ�
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Topology.xml -->
-# Топология сектора
+# Карта сектора
 
-## Астероидный пояс
-Кольцо на расстоянии **8750–9000 м от центра сектора** содержит астероиды и обломки. [Породы и распределение руды](guide://ColossusCatalogueOres) · [Добыча и переработка](guide://ColossusMining).
+Сектор — общее космическое пространство со станциями, астероидами и отдельными кораблями. Экипажи перемещаются между ними, добывают ресурсы, торгуют и исследуют находки. Карта в консоли шаттла помогает выбрать цель и понять, что находится вокруг.
 
-## Дальние области
-**18–22 км** — область дронов T1. Далее идут зоны T2: **22–25 км** и **25–30 км**; ещё дальше встречаются тяжёлые группы. Состав, трофеи и планы собраны в [справочнике ИИ-дронов](guide://LuaMDroneLoot).
+## Открыть карту
 
-## Станции и отдельные объекты
-[Станции фракций и гражданские узлы](guide://LuaMStations) · [Прочие объекты](guide://LuaMWorldObjects) · [Режимы и временные объекты](guide://LuaMGameModes).
+**Откройте** консоль шаттла и выберите **MAP**. Здесь видны известные объекты, метки, координаты и зоны сектора. Для близкого маневрирования используется **NAV**, для стыковки — **DOCK**.
 
-[Как найти координаты, поставить метку и проложить маршрут](guide://ColossusOrientation)
+<GuideNavigationUI Mode="shuttle"/>
+
+В учебном окне выберите MAP: найдите объект в списке и посмотрите его положение относительно корабля. Подробные действия с метками и координатами описаны в [навигации](guide://ColossusOrientation), с движением и БСС — в [пилотировании](guide://Piloting).
+
+## Что искать на карте
+
+- **Станции** — основные базы экипажей. Начните знакомство с [Колосса Централл и других основных станций](guide://LuaMStations).
+- **Прочие объекты** — торговые аванпосты, базы, исследовательские комплексы и руины, размещённые при начале смены. Часть выбирается случайно; доступные места смотрите на карте и в [разделе объектов](guide://LuaMWorldObjects).
+- **Объекты событий** появляются по объявлениям в течение смены. У них могут быть ограничения времени и опасные обитатели. [Что может появиться](guide://LuaMGameModes).
+- **Астероиды и скопления** служат источником руды. В поясе на расстоянии [color=#73BFD3]**8750–9000 м от центра**[/color] встречаются астероиды и обломки; отдельно отмечены INSO-357k и LINEAR-21. [Породы и состав](guide://LuaMAsteroids).
+- **Туманности** видны как цветные области. Значки погоды предупреждают об опасных эффектах; после объявления о смене погоды проверьте маршрут заново. [Как распознать туманность](guide://ColossusNebulae).
+
+## Метка — ориентир, а не гарантия безопасности
+
+Название и цвет помогают распознать объект, но не сообщают обо всех угрозах внутри. У некоторых мест скрыты подпись или обычная отметка БСС. В дальних областях встречаются [ИИ-дроны](guide://LuaMDroneLoot): зоны T1 начинаются примерно с **18–22 км**, T2 — с **22–30 км**.
+
+Перед вылетом найдите цель, запомните место возвращения и оцените маршрут. При выборе БСС учитывайте привод, дальность и опасные зоны; подлетайте и стыкуйтесь обычным ходом.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/GridClaimer.xml -->
 # Закрепление обломков
 <GuideEntityCards>
-<GuideEntityEmbed Entity="BannerNanotrasen"/>
-  <GuideEntityEmbed Entity="BannerCargo"/>
+<GuideTexture Entity="BannerNanotrasen" Caption="auto"/>
+  <GuideTexture Entity="BannerCargo" Caption="auto"/>
 </GuideEntityCards>
 Знамя позволяет закрепить подходящий обломок за собой. Захват не выдаёт права на корабль через верфь.
 
 ## Порядок действий
-Разместите знамя на нужном объекте и закрепите его. Откройте контекстное меню знамени и выберите «Захватить обломок». Дождитесь сообщения о результате. **Просто поставить знамя недостаточно.**
+**Разместите** знамя на нужном объекте и закрепите его. **Откройте** контекстное меню знамени и выберите **«Захватить обломок»**. Дождитесь сообщения о результате. **Просто поставить знамя недостаточно.**
 
-Действие доступно только на объектах, допускающих захват. Если пункта нет, проверьте, закреплено ли знамя, можете ли вы с ним взаимодействовать и подходит ли сам объект. Обычный корабль или станция не становятся пригодными для захвата только из-за установленного знамени.
+Действие доступно только на объектах, допускающих захват. *Если пункта нет,* проверьте, закреплено ли знамя, можете ли вы с ним взаимодействовать и подходит ли сам объект. [color=#E5AD68]Обычный корабль или станция не становятся пригодными для захвата только из-за установленного знамени.[/color]
 
 Отдельной платы за это действие и персонального лимита захватов нет. Требуется само знамя и подходящий объект; это не покупка корабля на [верфи](guide://Shipyard). Знамя помечает объект как занятый, но не выдаёт ID-карту, доступ к дверям или защиту от других игроков. Не оставляйте единственный комплект жизненно важного снаряжения на найденном обломке.
 
 ## Как освободить место
-Используйте «Освободить обломок», когда объект больше не нужен. Открепление, перенос или удаление знамени тоже снимает его захват.
+**Используйте** **«Освободить обломок»**, когда объект больше не нужен. Открепление, перенос или удаление знамени тоже снимает его захват.
 
 На одном объекте могут действовать несколько знамён: снятие вашего не обязательно освобождает весь объект. После полного освобождения не рассчитывайте на его сохранность вдали от игроков. Перед уходом заберите ценности и запишите координаты; маршрут обратно планируйте по [карте сектора](guide://ColossusOrientation).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/Index.xml -->
-# Корабль и полёт
+# Суда
 
-## Выбрать и купить
-[Верфи и доступные корабли](guide://ColossusCatalogueShipyards) · [Покупка, ваучеры и продажа](guide://Shipyard).
-
-## Управлять
-[NAV, MAP, DOCK и БСС](guide://Piloting) · [Ориентирование в космосе](guide://ColossusOrientation) · [Закрепление обломков](guide://GridClaimer).
-
-## Корабельные системы
-[Орудия и серверы СУО](guide://WeaponsSystems) · [Реактор и турбина](guide://ShipyardNFROperation) · [Электропитание](guide://ColossusPower).
+<GuideHub Root="NF14"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/Orientation.xml -->
 # Ориентирование в секторе
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShuttle"/></GuideEntityCards>
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/></GuideEntityCards>
 На **MAP** консоли шаттла находятся карта сектора, поиск объектов, метка X/Y, автопилот и БСС. На **NAV** видны ближайшие корпуса и препятствия; для стыковочных портов есть **DOCK**.
 
 ## Найти нужное место
@@ -5189,71 +5257,157 @@ Viper Group — частная военная компания. Её участ�
 
 В блоке метки введите X и Y, затем нажмите кнопку установки. Эта цель общая для NAV и MAP. Её можно скрыть, очистить или отправить к ней автопилот. Метка полезна для возврата к найденному обломку, даже если его название отсутствует в списке.
 
-## Что может отсутствовать на карте
-Скрытая подпись IFF и скрытый объект — разные вещи. Вместо имени может отображаться неизвестная масса или сигнатура. [Прослушка «Браво»](guide://LuaMWorldObjects) скрыта полем маскировки на расстоянии свыше 1 км и не предоставляет обычный маяк БСС.
+## Действия с объектом на радаре
 
-Обломки событий существуют ограниченное время. [Крупный обломок Монолита](guide://LuaMMonolithWreck) исчезает по таймеру события даже с людьми на борту. Другие найденные корпуса можно исследовать с учётом механики [закрепления обломков](guide://GridClaimer).
+На **NAV** нажмите **Alt + ПКМ по корпусу**, а на **MAP** — **Alt + ПКМ по отметке объекта**, предварительно выйдя из режима выбора точки БСС. В контекстном меню **«Следовать»** включает автопилот: корабль подходит к выбранному объекту и обновляет цель при его движении. [color=#E5AD68]**Стыковку выполняйте вручную.**[/color] Для уже пристыкованного к вам объекта эта команда недоступна; чтобы изменить маршрут, задайте другую цель или перейдите на ручное управление.
+
+*Если на вашей консоли доступна голосвязь,* в том же меню появляется **«Позвонить»** со списком доступных адресатов на выбранном объекте. Недоступные адресаты отмечены отдельно.
+
+## Что может отсутствовать на карте
+Скрытая подпись IFF и скрытый объект — разные вещи. Вместо имени может отображаться неизвестная масса или сигнатура. [Прослушка «Браво»](guide://ColossusSiteLPBravo) скрыта полем маскировки на расстоянии свыше [color=#73BFD3]1 км[/color] и не предоставляет обычный маяк БСС.
+
+Обломки событий существуют ограниченное время. Незакреплённый [крупный обломок Монолита](guide://LuaMMonolithWreck) исчезает по таймеру даже с людьми на борту. Успешное [закрепление](guide://GridClaimer) сохраняет подходящий объект после окончания события.
 
 Порядок выбора точки выхода БСС и стыковки разобран в [пилотировании](guide://Piloting).
 <!-- /article -->
 
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Nebulae.xml -->
+# Туманности
+
+Туманности — огромные облака газа и пыли, разбросанные по сектору. На радаре и карте они видны цветными пятнами с контуром. Ищите их вдали от станций; расположение облаков меняется от смены к смене.
+
+<GuideTexture Texture="/Textures/_LuaM/Interface/Guidebook/nebula.png" Fill="true"/>
+
+Одна туманность может содержать несколько видов погоды: на радаре каждому соответствует свой значок.
+
+## Обычные туманности
+
+Безопасные облака лишь окрашивают пространство вокруг. Сквозь них можно летать, сражаться и работать. **Цвет облака сам по себе не определяет опасность** — смотрите на значки погоды.
+
+## Опасные туманности
+
+В плотной части некоторых облаков бушует космическая непогода. Она повреждает обшивку, нагружает щиты и мешает корабельным системам. Погодные эффекты действуют в **плотной средней зоне**, а не по всей видимой площади облака. Корпус может уже задевать её, даже если центр корабля находится снаружи.
+
+[color=orange]**БСС:**[/color] большинство видов погоды блокируют прыжок. Проверяются **и положение корабля, и точка назначения**: нельзя ни прыгнуть из опасной зоны, ни выбрать выход внутри неё. Для выхода нужна обычная тяга.
+
+## Предупреждение и автопилот
+
+При входе в плотную зону облака с погодой на **NAV** появляются красная надпись **«ВНИМАНИЕ: ВХОД В ОПАСНУЮ ТУМАННОСТЬ»** и звуковой сигнал. Сверьте значки погоды и выберите направление выхода: предупреждение не останавливает корабль. Оно появляется и в завесе, хотя сама завеса не повреждает корпус.
+
+**Автопилот обходит облака с погодными эффектами, включая завесу.** *Если назначенная цель находится внутри,* он останавливается перед опасной зоной; дальнейший подлёт выполняйте вручную на NAV. Обычные безопасные облака обхода не требуют.
+
+## Значки на радаре
+
+<GuideTexture Texture="/Textures/_Lua/Interface/Radar/nebula_lightning.png" Scale="1.5" Text="[bold]Грозовой фронт[/bold] — молнии повреждают обшивку, разряды и ЭМИ выводят из строя оборудование. Пауза оружия [color=lightblue]×1,25[/color]: скорострельность примерно на [color=lightblue]20% ниже[/color]. [color=orange]БСС заблокирован.[/color]"/>
+
+<GuideTexture Texture="/Textures/_Lua/Interface/Radar/nebula_corrosion.png" Scale="1.5" Text="[bold]Едкое облако[/bold] — разъедает обшивку, двигатели теряют [color=lightblue]15% тяги[/color]. [color=orange]БСС заблокирован.[/color]"/>
+
+<GuideTexture Texture="/Textures/_Lua/Interface/Radar/nebula_emp.png" Scale="1.5" Text="[bold]Ионный шторм[/bold] — ЭМИ бьёт по технике, радиосвязь глохнет, тяга падает на [color=lightblue]35%[/color]. Сам шторм не повреждает обшивку; корабельный щит не поглощает его импульсы. [color=orange]БСС заблокирован.[/color]"/>
+
+<GuideTexture Texture="/Textures/_Lua/Interface/Radar/nebula_radiation.png" Scale="1.5" Text="[bold]Радиационный туман[/bold] — повреждает обшивку и облучает незащищённый экипаж вне герметичных отсеков. [color=orange]БСС заблокирован.[/color]"/>
+
+<GuideTexture Texture="/Textures/_Lua/Interface/Radar/nebula_heat.png" Scale="1.5" Text="[bold]Тепловая волна[/bold] — жар повреждает обшивку, тяга падает на [color=lightblue]20%[/color]. Пауза оружия [color=lightblue]×1,5[/color]: скорострельность примерно на [color=lightblue]33% ниже[/color]. [color=orange]БСС заблокирован.[/color]"/>
+
+<GuideTexture Texture="/Textures/_Lua/Interface/Radar/nebula_veil.png" Scale="1.5" Text="[bold]Завеса[/bold] — маскирует радарное обнаружение находящихся внутри объектов, в том числе вашего корабля. Не гарантирует полной невидимости. Сама по себе безвредна, [color=lightgreen]БСС разрешён[/color]."/>
+
+При наложении погоды применяется худший множитель тяги и худший множитель паузы оружия; одинаковые штрафы не перемножаются. Завеса не отменяет другие опасности в том же облаке.
+
+## Смена погоды
+
+Примерно каждые [color=#73BFD3]**40–60 минут**[/color] опасные облака передают свою погоду другим туманностям: прежнее облако затихает, а другое получает его эффекты. Сами облака остаются на местах. При отсутствии подходящего безопасного места погода остаётся в прежнем облаке; число облаков с погодой остаётся прежним.
+
+Об изменении приходит общее объявление. После него заново проверьте значки на маршруте: знакомое безопасное облако может стать опасным. Цвет помогает ориентироваться, но действующие эффекты определяйте по значкам.
+
+## Астероиды и обломки
+
+В облаках встречаются небольшие астероиды и обломки кораблей. Их можно исследовать и разрабатывать, но наличие находки не отменяет погоду. При сближении снижайте скорость и смотрите на корпуса и препятствия на NAV. Не рассчитывайте использовать такой обломок как постоянный склад: после ухода экипажей находки могут исчезнуть.
+
+## Щит и герметичность
+
+**Поднятый корабельный щит** принимает удары грозы, коррозии, радиационного тумана и тепловой волны вместо обшивки. Каждый удар нагружает щит; после его падения страдает корпус. Щит не снимает запрет БСС, подавление связи и снижение тяги.
+
+**Герметичный отсек с воздухом** укрывает экипаж от прямого воздействия погоды. При разгерметизации опасны разряды, коррозия, нагрев и радиация. Держите защиту от вакуума под рукой; наружные работы отложите до выхода из облака. Название модели **«Nebula»** само по себе не означает иммунитет ко всем эффектам туманностей.
+
+## Подготовиться и выбраться
+
+1. До входа проверьте питание двигателей и щита, герметичность и запас воздуха. **Выберите** ближайшую границу выхода; учитывайте снижение тяги и инерцию.
+2. При блокировке БСС выходите на NAV **обычной тягой за пределы плотной зоны**. Следите за щитом и пробоинами; при потере воздуха изолируйте повреждённые отсеки. Не полагайтесь на радиосвязь в ионном шторме — согласуйте маршрут заранее.
+3. Снаружи выберите безопасную точку на MAP и повторите БСС. *Если отказ остаётся,* прочитайте сообщение консоли: прыжку могут мешать привод, дальность или препятствия.
+4. **Проверьте** экипаж и корпус. [УРК](guide://ColossusShipRepair) восстанавливает утраченные конструкции по плану корабля; сохранившееся повреждённое оборудование ремонтируется отдельно.
+
+[Пилотирование](guide://Piloting) · [Карта сектора](guide://SectorTopology) · [Астероиды](guide://LuaMAsteroids)
+<!-- /article -->
+
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/Piloting.xml -->
 # Пилотирование: NAV, MAP и DOCK
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerShuttle"/><GuideEntityEmbed Entity="AirlockGlassShuttle"/></GuideEntityCards>
-Консоль шаттла объединяет три экрана. **NAV** — ближний радар и движение; **MAP** — карта сектора, БСС и автопилот; **DOCK** — стыковочные порты. Если управление закрыто, проверьте доступ корабельной ID-карты.
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/><GuideTexture Entity="AirlockGlassShuttle" Caption="auto"/></GuideEntityCards>
+Консоль шаттла объединяет три экрана. **NAV** — ближний радар и движение; **MAP** — карта сектора, БСС и автопилот; **DOCK** — стыковочные порты. *Если управление закрыто,* проверьте доступ корабельной ID-карты.
 
 <GuideNavigationUI Mode="shuttle"/>
 
 ## 1. Отстыковаться и выйти в открытый космос
-Откройте DOCK. В списке «Пристыкованные объекты» нажмите «Отстыковать» у соединения или «Отстыковать всё». Переключитесь на NAV и отведите корпус от причала.
+**Откройте** **DOCK**. В списке **«Пристыкованные объекты»** нажмите **«Отстыковать»** у соединения или **«Отстыковать всё»**. **Переключитесь** на **NAV** и отведите корпус от причала.
 
 - [keybind="ShuttleStrafeUp"/] и [keybind="ShuttleStrafeDown"/] — тяга вперёд и назад.
 - [keybind="ShuttleStrafeLeft"/] и [keybind="ShuttleStrafeRight"/] — боковая тяга.
 - [keybind="ShuttleRotateLeft"/] и [keybind="ShuttleRotateRight"/] — поворот.
 - [keybind="ShuttleBrake"/] — торможение.
 
-Тяга меняет скорость. После отпускания клавиши корабль продолжает двигаться. «Дрейф», «Ход» и «Стоп» переключают инерционные компенсаторы. Следите за скоростью и вращением на NAV; сначала погасите движение, затем подводите порты.
+[color=#E5AD68]**Тяга меняет скорость.**[/color] После отпускания клавиши корабль *продолжает двигаться*. **«Дрейф»**, **«Ход»** и «Стоп» переключают инерционные компенсаторы. Следите за скоростью и вращением на NAV; сначала погасите движение, затем подводите порты.
 
 ## 2. Найти станцию на MAP
-В списке объектов справа введите часть названия. Карта обновляется сама. Колесо мыши меняет масштаб, перетаскивание — обзор. Кнопка «Маяки» меняет видимость маяков.
+В списке объектов справа введите часть названия. Карта обновляется сама. Колесо мыши меняет масштаб, перетаскивание — обзор. Кнопка **«Маяки»** меняет видимость маяков.
 
-Например, найдите [Медицинский Центр](guide://LuaMMedical), выберите свободное пространство рядом с ним и выполните БСС. Координаты X/Y в блоке метки позволяют поставить собственную цель. «Автопилот» у метки ведёт корабль к этой цели обычным ходом. По прибытии включается якорное торможение. Для ручного подлёта вернитесь на NAV и переключите режим инерционных компенсаторов.
+Например, найдите [Медицинский Центр](guide://LuaMMedical), выберите свободное пространство рядом с ним и выполните БСС. Координаты X/Y в блоке метки позволяют поставить собственную цель. **«Автопилот»** у метки ведёт корабль к этой цели обычным ходом. По прибытии включается якорное торможение. Для ручного подлёта вернитесь на NAV и переключите режим инерционных компенсаторов.
+
+Автопилот обходит облака с погодными эффектами, включая завесу. *Если цель находится внутри,* он остановится у границы; дальше летите вручную. На NAV вход в плотную зону облака с погодой сопровождается красным предупреждением и сигналом. [Погода и безопасный выход](guide://ColossusNebulae).
+
+Для следования за объектом нажмите **Alt + ПКМ по корпусу на NAV** или **по отметке объекта на MAP**, затем **«Следовать»**. На MAP сначала выйдите из режима выбора точки БСС. Подробности следования и вызова связи — в [навигации](guide://ColossusOrientation).
 
 ## 3. Прыгнуть на БСС
-На MAP нажмите «БСС»: курсор покажет место выхода и поворот корпуса. Колесо мыши в этом режиме меняет **ориентацию выхода**. Нажмите на доступную точку карты или маяк, чтобы запросить прыжок. Учитывайте дальность привода и запретные области на предпросмотре.
+На MAP нажмите **«БСС»**: курсор покажет место выхода и поворот корпуса. Колесо мыши в этом режиме меняет **ориентацию выхода**. **Нажмите** на доступную точку карты или маяк, чтобы запросить прыжок. Учитывайте дальность привода и запретные области на предпросмотре.
 
-Следите за статусом и полосой БСС справа сверху: запуск, перелёт и перезарядка занимают время. Если прыжок отклонён, прочитайте сообщение консоли: причиной может быть привод, дальность, препятствие либо блокировка БСС. После выхода вернитесь на NAV для подлёта.
+Следите за статусом и полосой БСС справа сверху: запуск, перелёт и перезарядка занимают время. *Если прыжок отклонён,* прочитайте сообщение консоли: причиной может быть привод, дальность, препятствие либо блокировка БСС. После выхода вернитесь на NAV для подлёта.
 
 ## 4. Пристыковаться
-На DOCK найдите порты своего корабля и станции. Подведите шлюзы друг к другу с малой скоростью, совместив направление. Выберите доступное соединение и нажмите «Пристыковать». Успешное соединение появляется среди пристыкованных объектов.
+На DOCK найдите порты своего корабля и станции. **Подведите** шлюзы друг к другу с малой скоростью, совместив направление. **Выберите** доступное соединение и нажмите **«Пристыковать»**. Успешное соединение появляется среди пристыкованных объектов.
 
 [Станции и их оборудование](guide://LuaMStations) · [Ориентирование и метки](guide://ColossusOrientation) · [Управление орудиями](guide://WeaponsSystems)
+
+## Туманности и отказ БСС
+
+Опасная погода в плотной зоне туманности может блокировать БСС. Выходите обычной тягой, затем повторяйте прыжок в безопасную точку. [Виды погоды, защита корабля и действия экипажа](guide://ColossusNebulae).
+
+## После повреждения корпуса
+*Если после обстрела или опасной погоды в корпусе появились пробоины,* уйдите из-под огня и подготовьте защиту от вакуума. **УРК** восстанавливает утраченный пол и конструкции по плану корабля; сохранившееся повреждённое оборудование требует обычного ремонта. [Как пользоваться УРК](guide://ColossusShipRepair).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/Shipyard.xml -->
 # Покупка и продажа корабля
 <GuideEntityCards>
-<GuideEntityEmbed Entity="ComputerShipyard"/>
-  <GuideEntityEmbed Entity="PassengerIDCard"/>
+<GuideTexture Entity="ComputerShipyard" Powered="true" Caption="auto"/>
+  <GuideTexture Entity="PassengerIDCard" Caption="auto"/>
 </GuideEntityCards>
-Верфь связывает корабль с **конкретной ID-картой**. Берегите её: регистрация нужна для продажи, а корабельный доступ — для управления. Одна карта с уже зарегистрированным кораблём не подходит для покупки следующего.
+Верфь связывает корабль с **конкретной ID-картой**. Берегите её: регистрация нужна для продажи, а корабельный доступ — для управления. [color=#E5AD68]Одна карта с уже зарегистрированным кораблём не подходит для покупки следующего.[/color]
 
 ## Покупка
-Извлеките карту из КПК, вставьте в консоль и откройте меню. Выберите доступный корабль, проверьте цену, назначение и источник питания. Нажмите «Приобрести». Оплата идёт с банковского счёта покупателя; наличные в кармане сами по себе не заменяют баланс счёта.
+**Извлеките** карту из КПК, вставьте в консоль и откройте меню. **Выберите** доступный корабль, проверьте цену, назначение и источник питания. Нажмите **«Приобрести»**. Оплата идёт с банковского счёта покупателя; наличные в кармане сами по себе не заменяют баланс счёта.
 
-Ваучер действует только для подходящей верфи и разрешённых им кораблей. Если покупка недоступна, проверьте карту, доступ к консоли, банковский счёт и условия ваучера. После покупки заберите карту и верните её в КПК.
+Ваучер действует только для подходящей верфи и разрешённых им кораблей. Осмотр ваучера показывает оставшееся число покупок либо неограниченное использование, а также время до следующей покупки, если действует перезарядка. *Если покупка недоступна,* проверьте карту, доступ к консоли, банковский счёт и условия ваучера. После покупки заберите карту и верните её в КПК.
 
 [Управление и вылет](guide://Piloting).
 
+После покупки сохраняется исходный план корпуса. **УРК** позволяет вернуть утраченные участки пола и подходящие конструкции на прежние места; достроенные позднее секции в этот план автоматически не входят. [Восстановление корабля](guide://ColossusShipRepair).
+
 ## Продажа
-Пристыкуйте корабль к станции, на которой используете верфь. Выведите экипаж и вынесите вещи, которые хотите сохранить. Вставьте **карту с регистрацией этого корабля** и нажмите «Продать».
+Пристыкуйте корабль к станции, на которой используете верфь. Выведите экипаж и вынесите вещи, которые хотите сохранить. **Вставьте** **карту с регистрацией этого корабля** и нажмите **«Продать»**.
 
 [color=#d9b36c]Продажа удаляет корабль.[/color] Не рассчитывайте, что оставленный груз автоматически вернётся владельцам. Некоторые предметы на борту запрещают продажу; консоль сообщит причину отказа.
 
 Сумма продажи зависит от оценки корабля и его содержимого. Она может отличаться от цены покупки: обещать полный возврат за повреждённый или разобранный корабль нельзя. После успешной продажи регистрация снимается, а выручка поступает на банковский счёт продавца.
 
 ## Каталоги верфей
-Выберите верфь. В её справочном окне работают поиск и фильтры; покупка и продажа отключены. Просмотр планов временно недоступен.
+**Выберите** верфь. В её справочном окне работают поиск, фильтры и просмотр планов кораблей. Для покупки или продажи используйте игровую консоль верфи.
 
 [Каталог верфей](guide://ColossusCatalogueShipyards).
 <!-- /article -->
@@ -5263,28 +5417,39 @@ Viper Group — частная военная компания. Её участ�
 
 Для подключения нужны **орудие, сервер СУО и консоль управления на одном гриде**. Все три устройства должны получать питание.
 
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="Консоль"/>
+<GuideTexture Entity="GunneryServerLow" Caption="Сервер СУО"/>
+<GuideTexture Entity="WeaponTurretCharon" Caption="Орудие"/>
+</GuideEntityCards>
+
 ## Подключение и стрельба
-1. Откройте на консоли **«Управление орудиями»** и отметьте установки, которыми будете стрелять. Наличие орудия на гриде ещё не означает, что серверу хватает мощности для его подключения.
-2. Выберите точку на радаре. Для снарядов учитывайте время полёта: справочный показатель времени на 100 м помогает оценить упреждение.
-3. Если установки нет в списке, проверьте питание и свободную мощность СУО. Если установка выбрана, но не стреляет — её боезапас или заряд, перезарядку и допустимое направление огня.
+1. **Откройте** на консоли **«Управление орудиями»** и отметьте установки, которыми будете стрелять. Наличие орудия на гриде ещё не означает, что серверу хватает мощности для его подключения.
+2. **Выберите** точку на радаре. Для снарядов учитывайте время полёта: справочный показатель времени на 100 м помогает оценить упреждение.
+3. *Если установки нет в списке,* проверьте питание и свободную мощность СУО. Если установка выбрана, но не стреляет — её боезапас или заряд, перезарядку и допустимое направление огня.
 
 <GuideNavigationUI Mode="weapons"/>
 
 ## Нагрузка на сервер
 Классы орудий расходуют вычислительную мощность: **сверхлёгкое — 1, лёгкое — 3, среднее — 6, тяжёлое — 9, сверхтяжёлое — 12**. Четыре средних орудия занимают 24 единицы: сервер на 24 будет заполнен, у сервера на 42 останется 18. У некоторых серверов дополнительно ограничено число консолей.
 
-Мощность конкретного сервера и его варианты — в [каталоге генераторов и СУО](guide://ColossusCatalogueEngineering).
+Мощность конкретного сервера и его варианты — в [каталоге серверов СУО](guide://ColossusFireControlServers).
 
 ## Выбор орудия
 [Каталог корабельного вооружения](guide://ColossusCatalogueShipWeapons) разделён на баллистическое, энергетическое и ракетное. В сводке показаны темп стрельбы, дальность или скорость полёта, питание и пополнение боезапаса. Установленные на картах варианты с другими параметрами учитываются отдельно.
 
 Дальность снаряда рассчитана по скорости и времени жизни без препятствий; темп не учитывает ручную перезарядку и истощение запаса заряда. [Ремонт и энергетика корабля](guide://ColossusPower).
+
+## Активный биощит
+
+Генератор с биозащитой подавляет плоть на защищённом гриде **только при поднятом щите**. Стоящий, но выключенный или лишённый питания генератор защиты не даёт. **Проверьте** состояние щита и доступную мощность перед входом в опасную область. Название модели **«Nebula»** само по себе не означает иммунитет к туманностям.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/Activities.xml -->
 # Виды заработка
 
 - [Добыча руды](guide://ColossusMining) — астероиды, переработка и продажа материалов.
+- [Курьерская доставка](guide://ColossusCourier) — заказы ColossDelivery, посылки и оплата за доставку.
 - [Грузоперевозки](guide://CargoHauling) — торговые заказы и доставка ящиков.
 - [Экспедиции](guide://Expeditions) — задания на отдельных картах и вывоз трофеев.
 - [ИИ-дроны](guide://LuaMDroneLoot) — ядра, чёрные ящики и трофейные контейнеры.
@@ -5297,29 +5462,32 @@ Viper Group — частная военная компания. Её участ�
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/Bank.xml -->
-# Деньги, сберегательный и офшорный счёт
-<GuideEntityCards><GuideEntityEmbed Entity="ComputerBankATM"/><GuideEntityEmbed Entity="SpaceCash1000"/></GuideEntityCards>
+# Деньги и банк
+<GuideEntityCards><GuideTexture Entity="ComputerBankATM" Powered="true" Caption="auto"/><GuideTexture Entity="SpaceCash1000" Caption="auto"/></GuideEntityCards>
 <GuideTable Columns="2">
 <Box>**Где деньги**</Box><Box>**Как используются**</Box>
 <Box>Наличные</Box><Box>Физическая пачка. Для банковской покупки сначала внесите её через банкомат.</Box>
 <Box>Банковский баланс</Box><Box>Деньги выбранного персонажа. С него оплачиваются обычные покупки, верфи и снятие наличных.</Box>
-<Box>Сбережения / офшорный счёт</Box><Box>Отдельный кошелёк аккаунта, общий для его персонажей. В банкомате показан как «Сбережения». Не является дополнительной пачкой денег или вторым доступным балансом для обычной верфи.</Box>
+<Box>Сбережения (офшорный счёт)</Box><Box>Один общий баланс аккаунта для всех его персонажей. В банкомате показан как **«Сбережения»**. При наличии денег на нём они учитываются при оплате наборов снаряжения и депозитных ящиков.</Box>
 </GuideTable>
 
 ## Внести и снять
-Вставьте кредиты в купюроприёмник и нажмите **«Внести»**. Внесение использует деньги в слоте, а не произвольную сумму из карманов. **«Вывести»** выдаёт наличные из банковского баланса персонажа; этой кнопкой нельзя обналичить сбережения.
+**Вставьте** кредиты в купюроприёмник и нажмите **«Внести»**. Внесение использует деньги в слоте, а не произвольную сумму из карманов. **«Вывести»** выдаёт наличные из банковского баланса персонажа; этой кнопкой нельзя обналичить сбережения.
 
 Покупка на верфи списывает деньги с банка, но не забирает пачки из инвентаря. Выручка обычной паллеты появляется наличными у её консоли: её также надо внести.
 
-## Как пополняются сбережения
-При внесении может действовать распределение между банком и сбережениями; его величину задают настройки сервера. Перед зачислением отдельный банкомат может удержать собственную комиссию. Не считайте эту комиссию автоматическим пополнением офшора: это разные расчёты.
+Перед внесением проверьте комиссию банкомата. Внесённые деньги зачисляются на банковский счёт.
 
-В настройках этой сборки исходный порог — **20 000 000**, но прогрессивное отчисление по умолчанию отключено. При этих настройках превышение порога не переводит деньги в сбережения. Отдельной кнопки свободного перевода банковского баланса в сбережения у обычного банкомата нет.
+## Оплатить депозитный ящик
+Цена [депозитного ящика](guide://SafetyDepositBox) списывается безналично. *Если у аккаунта есть сбережения,* консоль использует их первыми, затем списывает недостающую сумму с банковского счёта персонажа.
 
-## Где можно тратить оба счёта
-[Депозитная консоль](guide://SafetyDepositBox) умеет оплачивать ящик из общей суммы: **сначала сбережения, затем банк**. Другие покупки используют сбережения только при явной поддержке этой оплаты; обычная верфь их не учитывает.
+## Перевести деньги через ЮПИ
 
-Пример расчёта, не цена ящика: покупка за 10 000 при 6 000 сбережений и 20 000 в банке оставит 0 сбережений и 16 000 в банке.
+**Откройте** **ЮПИ в КПК**. Ваш шестизначный буквенно-цифровой код нужен отправителю; это код перевода, а не номер банковского счёта. Введите код получателя и сумму, проверьте комиссию и итог, затем подтвердите перевод. Следующий перевод доступен через [color=#73BFD3]**1 минуту**[/color].
+
+Комиссия — [color=#73BFD3]**3%**[/color] в пределах первых **250 000** отправленных за скользящие [color=#73BFD3]**30 минут**[/color], **10%** с превышения. Две части комиссии округляются вверх отдельно. Например, при оставшемся льготном лимите 50 000 перевод 100 000 стоит **1 500 + 5 000 = 6 500** комиссии; получателю зачисляется **93 500 на банковский счёт**. С отправителя списывается указанная сумма целиком.
+
+Перевод требует доступного счёта и подходящего получателя; себе переводить нельзя. Персонажи в режиме **Ironman** не отправляют и не получают ЮПИ.
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/BeginnerGuide.xml -->
@@ -5327,12 +5495,18 @@ Viper Group — частная военная компания. Её участ�
 
 Наёмник начинает без назначенной работы: можно вступить в экипаж или купить собственный корабль. Для **киборга наймов** устройство модулей, зарядка и ремонт разобраны в [руководстве киборга](guide://Cyborgs); остальные разделы здесь описывают самостоятельный рейс.
 
-## Получить корабль
-1. Откройте [банкомат](guide://Bank) и проверьте банковский баланс: верфь списывает деньги со счёта. Наличные сначала внесите на него.
-2. На [верфи](guide://Shipyard) выберите корабль. Цена, класс и доступность покупки указаны в её окне. Если используете ваучер, нужен подходящий тип верфи и корабля — [выбор верфей](guide://ColossusCatalogueShipyards).
-3. Найдите причал масс-сканером и займите консоль корабля. **NAV** управляет полётом, **MAP** помогает выбрать направление, **DOCK** — отстыковаться и пристыковаться. Порядок действий и БСС: [пилотирование](guide://Piloting).
+<GuideEntityCards Flow="true">
+<GuideTexture Entity="ComputerBankATM" Powered="true" Caption="Пополнить счёт"/>
+<GuideTexture Entity="ComputerShipyard" Powered="true" Caption="Выбрать корабль"/>
+<GuideTexture Entity="ComputerShuttle" Powered="true" Caption="Занять место пилота"/>
+</GuideEntityCards>
 
-Снаряжение для выхода из корабля и медицинский маяк разобраны в [подготовке к вылету](guide://StartingGear). Для набора людей на свободные места используйте [учёт экипажа](guide://Hiring).
+## Получить корабль
+1. **Откройте** [банкомат](guide://Bank) и проверьте банковский баланс: верфь списывает деньги со счёта. Наличные сначала внесите на него.
+2. На [верфи](guide://Shipyard) выберите корабль. Цена, класс и доступность покупки указаны в её окне. *Если используете ваучер,* нужен подходящий тип верфи и корабля — [выбор верфей](guide://ColossusCatalogueShipyards).
+3. **Найдите** причал масс-сканером и займите консоль корабля. **NAV** управляет полётом, **MAP** помогает выбрать направление, **DOCK** — отстыковаться и пристыковаться. Порядок действий и БСС: [пилотирование](guide://Piloting).
+
+Снаряжение для выхода из корабля и медицинский маяк разобраны в [подготовке к вылету](guide://StartingGear). Как найти напарников или присоединиться к чужому кораблю — [наём экипажа](guide://Hiring).
 
 ## Выбрать работу
 - **Руда:** найти астероид, добыть и продать материал — [добыча и переработка](guide://ColossusMining).
@@ -5340,18 +5514,33 @@ Viper Group — частная военная компания. Её участ�
 - **Экспедиция:** выбрать задание на консоли и вернуть нужный груз — [экспедиции](guide://Expeditions).
 - **ИИ-дроны:** найти и обезвредить корабль, забрать ядро и регистратор — [поиск и добыча](guide://LuaMDroneLoot).
 
-[Станции сектора](guide://LuaMStations) — куда лететь за особым оборудованием. [Виды заработка](guide://Jobs) — остальные занятия. Условия сбережений между сменами отличаются от банковского счёта: [деньги и хранение](guide://Bank).
+[Станции сектора](guide://LuaMStations) — куда лететь за особым оборудованием. [Виды заработка](guide://Jobs) — остальные занятия. [Деньги и банковские операции](guide://Bank) · [Хранение вещей между сменами](guide://SafetyDepositBox).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/Crew.xml -->
-# Вакансии экипажа
+# Наём экипажа
 
-**Компьютер учёта экипажа** открывает места для присоединения к кораблю. В списке должностей задайте количество мест; вкладка объявления меняет текст, который увидят кандидаты. Доступ к изменению мест определяется кораблём.
+Экипаж набирают по договорённости с другими игроками, уже находящимися в секторе. Можно присоединиться к чужому кораблю и работать на нём без покупки собственного.
 
-## Почему пропал корабль
-Если на корабле не осталось работающих консолей управления, его вакансии закрываются — даже при исправном компьютере учёта. После восстановления питания консоли места возвращаются в список.
+<GuideEntityCards>
+<GuideTexture Entity="RadioHandheldNF" Caption="Договориться о работе"/>
+</GuideEntityCards>
 
-[Подготовка к рейсу](guide://BeginnerGuide) · [Управление кораблём](guide://Piloting)
+## Найти людей на корабль
+1. Через связь или при личной встрече сообщите, кого ищете и для какой работы: пилота, добытчика, инженера, медика или напарника на экспедицию.
+2. Назовите корабль и место посадки. Договоритесь, кто встретит новых участников и откроет им вход.
+3. До вылета согласуйте оплату: фиксированную сумму или долю выручки, момент расчёта и распределение расходов на топливо, припасы и ремонт. Отдельно обсудите, кому достанутся добыча и найденное оборудование.
+4. Распределите обязанности и проверьте места, доступное снаряжение и припасы на весь экипаж. Для выхода за борт каждому нужна собственная [подготовка к вакууму](guide://StartingGear).
+
+## Присоединиться к экипажу
+Сообщите, какую работу готовы выполнять, уточните задачу рейса и условия оплаты. Получите название корабля и место встречи, затем поднимитесь на борт через согласованный вход.
+
+Договорённость о работе сама по себе не выдаёт доступов. До отстыковки проверьте, можете ли пользоваться нужными помещениями и оборудованием; если дверь закрыта, обратитесь к владельцу корабля. Уточните способ связи с экипажем и место сбора при раздельной работе.
+
+## Рассчитаться за работу
+Оплата между участниками не начисляется автоматически по договорённости. Передайте согласованную сумму самостоятельно. Для перевода через **ЮПИ в КПК** нужен код получателя; комиссия и ограничения разобраны в [руководстве по деньгам](guide://Bank).
+
+[Первый выход](guide://BeginnerGuide) · [Управление кораблём](guide://Piloting) · [Виды заработка](guide://Jobs)
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/Equipment.xml -->
@@ -5360,9 +5549,9 @@ Viper Group — частная военная компания. Её участ�
 Для выхода в вакуум нужны **скафандр, шлем, дыхательный баллон и подключённые внутренние источники воздуха**. Дыхательная смесь зависит от [расы персонажа](guide://Species). Баллон и защита тела решают разные задачи; одной маски для выхода из корабля недостаточно.
 
 <GuideEntityCards>
-<GuideEntityEmbed Entity="DoubleEmergencyOxygenTankFilled"/>
-<GuideEntityEmbed Entity="SpaceMedipen"/>
-<GuideEntityEmbed Entity="HandHeldMassScanner"/>
+<GuideTexture Entity="DoubleEmergencyOxygenTankFilled" Caption="auto"/>
+<GuideTexture Entity="SpaceMedipen" Caption="auto"/>
+<GuideTexture Entity="HandHeldMassScanner" Powered="true" Caption="auto"/>
 </GuideEntityCards>
 
 ## Выбрать набор в лобби
@@ -5370,57 +5559,1800 @@ Viper Group — частная военная компания. Её участ�
 
 ## Медицинский сигнал и координаты
 <GuideEntityCards>
-<GuideEntityEmbed Entity="MedicalTrackingImplanter"/>
+<GuideTexture Entity="MedicalTrackingImplanter" Caption="auto"/>
 </GuideEntityCards>
 
-Примените медицинский имплантер к себе. Имплант сообщает в медицинский канал о критическом состоянии и смерти; постоянного отслеживания положения он не даёт.
+**Примените** медицинский имплантер к себе. Имплант сообщает в медицинский канал о критическом состоянии и смерти; постоянного отслеживания положения он не даёт.
 
 Для передачи местоположения на монитор экипажа откройте меню датчиков комбинезона и выберите **«Координаты»**. Работа монитора зависит от покрытия сети.
 
 [Выбор брони](guide://ColossusCatalogueArmor) · [Первая помощь и восстановление](guide://Medical) · [Управление кораблём](guide://Piloting)
+
+*Если скафандр оснащён силовым полем,* перед вылетом включите его и дождитесь развёртывания. Осмотр показывает состояние и остаток поля. Ёмкость батареи, расход энергии и самозаряд смотрите в каталоге модели; осмотр не показывает текущий заряд батареи. Плита подходит только модели с держателем. [Как работает щит скафандра](guide://ArmorExplanation) · [Характеристики конкретной модели](guide://ColossusCatalogueArmor).
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/Index.xml -->
-# Начало и деньги
+# Новичкам
 
-## Начать смену
-[Первый выход](guide://BeginnerGuide) · [Снаряжение перед вылетом](guide://StartingGear) · [Вакансии экипажа](guide://Hiring).
-
-## Деньги и имущество
-[Банковский, сберегательный и офшорный счета](guide://Bank) · [Депозитные ящики](guide://SafetyDepositBox).
-
-## Выбрать направление
-[Корабли и полёт](guide://NF14) · [Станции и карта](guide://LuaMWorld) · [Виды заработка](guide://Jobs) · [Фракции и должности](guide://Factions).
+<GuideHub Root="NewPlayer"/>
 <!-- /article -->
 
 <!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/SafetyDepositBox.xml -->
 # Депозитные ящики
 <GuideEntityCards>
-<GuideEntityEmbed Entity="SafetyDepositConsole"/>
-  <GuideEntityEmbed Entity="SafetyDepositBoxSmall"/>
-  <GuideEntityEmbed Entity="SafetyDepositBoxLarge"/>
+<GuideTexture Entity="SafetyDepositConsole" Caption="auto"/>
+  <GuideTexture Entity="SafetyDepositBoxSmall" Caption="auto"/>
+  <GuideTexture Entity="SafetyDepositBoxLarge" Caption="auto"/>
 </GuideEntityCards>
 Депозит сохраняет разрешённые предметы между сменами. Ящик привязан к владельцу и выбранному слоту персонажа. Другой персонаж не сможет внести его как свой.
 
 ## Сохранить вещи
-- В консоли выберите размер ящика и проверьте цену. Покупка сначала расходует [сбережения](guide://Bank), затем банковский баланс.
+- В консоли выберите размер ящика и проверьте цену и доступный баланс. Покупка оплачивается безналично.
 - Заберите физический ящик и положите в него вещи. Размер ящика ограничивает и площадь хранения, и размер отдельных предметов.
-- Вставьте ящик в слот депозитной консоли и подтвердите внесение.
-- Дождитесь подтверждения хранения. Физический ящик исчезнет: теперь содержимое сохранено в базе.
+- **Вставьте** ящик в слот депозитной консоли и подтвердите внесение.
+- **Дождитесь** подтверждения хранения. Физический ящик исчезнет: теперь содержимое сохранено в базе.
 
 Чтобы вернуть вещи, выберите свой сохранённый ящик в консоли и получите его. **После выдачи сохранённая копия содержимого удаляется.** Вещи снова находятся в мире; перед уходом внесите ящик обратно.
 
-## Оплата и офшорный счёт
-Деньги и предметы сохраняются разными системами. Ящик не является способом положить наличные на офшор: деньги внутрь запрещены. Консоль проверяет **банк персонажа + сбережения аккаунта**, списывает сначала сбережения и только недостающую часть — из банка. Пачка кредитов в руке при этом не учитывается.
+## Оплата и принадлежность ящика
+Консоль списывает стоимость ящика с банковского счёта. *Если у аккаунта есть сбережения,* сначала используются они, затем недостающая сумма списывается из банка. Пачка кредитов в руке не учитывается: предварительно внесите её через [банкомат](guide://Bank).
 
-У двух персонажей одного аккаунта сбережения общие, но сами ящики связаны с **конкретным слотом персонажа**. Оплата со сберегательного счёта не делает его ящик общим. Выдача сохранённого ящика не возвращает стоимость покупки и удаляет сохранённую копию; для повторного хранения внесите физический ящик обратно.
-
-Подробнее о зачислении и снятии: [банк и сбережения](guide://Bank).
+Ящик связан с **конкретным слотом персонажа**. Общий баланс аккаунта не делает его ящики общими для всех персонажей. Выдача сохранённого ящика не возвращает стоимость покупки и удаляет сохранённую копию; для повторного хранения внесите физический ящик обратно.
 
 ## Ограничения и потеря
-Ящик не принимает ряд предметов: удостоверения и КПК, деньги, другие хранилища, ёмкости с реагентами, таблетки, ключи шифрования, импланты и имплантеры, платы и упакованные машины. Есть и другие запреты по свойствам предмета. Если вещь не помещается, проверьте её размер и ограничения, а не покупайте ящик вслепую.
+Ящик не принимает ряд предметов: удостоверения и КПК, деньги, другие хранилища, ёмкости с реагентами, таблетки, ключи шифрования, импланты и имплантеры, платы и упакованные машины. Есть и другие запреты по свойствам предмета. *Если вещь не помещается,* проверьте её размер и ограничения, а не покупайте ящик вслепую.
 
 [color=#d6a35c]Восстановление потерянного ящика возвращает пустую тару, а не содержимое.[/color] Оно доступно для ящика, выданного в предыдущей смене и не возвращённого на хранение. Ожидать неделю не требуется. Потерянные вместе с ним предметы не восстанавливаются.
 
 Можно подписать ящик ручным этикетировщиком: подпись сохраняется и помогает различать несколько ящиков.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/ReactorParts.xml -->
+# Стержни и детали реактора
+
+Детали изготавливаются **ядерным фабрикатором** из загруженных материалов. Доступные после исследования варианты зависят от подключённой базы РНД. Сравнивайте готовую деталь, а не только название сырья.
+
+<GuideEntityCards>
+<GuideTexture Entity="UraniumReactorFuelRod" Caption="Топливо"/>
+<GuideTexture Entity="SteelReactorControlRod" Caption="Управление реакцией"/>
+<GuideTexture Entity="SteelReactorGasChannel" Caption="Теплоноситель"/>
+<GuideTexture Entity="SteelReactorHeatExchanger" Caption="Передача тепла"/>
+</GuideEntityCards>
+
+## Назначение деталей
+
+<GuideTable Columns="3">
+<Box>**Деталь**</Box><Box>**Назначение**</Box><Box>**Выбор**</Box>
+<Box>Топливный стержень</Box><Box>Источник нейтронов и тепла</Box><Box>Церенкит, уран, плутоний и другие реально доступные варианты в списке ниже</Box>
+<Box>Управляющий стержень</Box><Box>Поглощает нейтроны; ввод на [color=#73BFD3]100%[/color] подавляет реакцию</Box><Box>Управляющие детали разных материалов; материал влияет на взаимодействия, но не заменяет настройку ввода</Box>
+<Box>Газовый канал</Box><Box>Передаёт тепло газу; возможны реакции газа с нейтронами</Box><Box>Нужен проток и замкнутый контур, не просто газ рядом с реактором</Box>
+<Box>Теплообменник</Box><Box>Передаёт тепло соседним деталям; сам не газовый канал</Box><Box>Сравнивайте проводимость и расположение</Box>
+</GuideTable>
+
+Отражение и замедление — **свойства взаимодействия материала с нейтронами**, не ещё два обязательных класса оборудования. Отражение направляет нейтрон обратно с разбросом, замедление снижает его скорость; управляющий стержень поглощает его. Характер материала не делает любую компоновку безопасной.
+
+Показатели материалов ниже — относительные величины, а не мощность в ваттах. У управляющих стержней, газовых каналов и теплообменников радиоактивность и нейтронная радиоактивность равны нулю.
+
+Общие параметры: тепловая масса топливного стержня — **420 000 Дж/K**, управляющего стержня и теплообменника — **105 000 Дж/K**, газового канала — **21 000 Дж/K**. Каждый газовый канал вмещает **100 л**. Порог плавления деталей — **1700 K (1426,85 °C)**.
+
+## Топливные стержни
+
+1. **Топливный стержень из церенкита** — радиоактивность **5**, нейтронная **0**; теплопроводность **6**, электропроводность **6**; плотность **4**, твёрдость **2**; отражение **0**.
+2. **Урановый топливный стержень** — радиоактивность **4**, нейтронная **3**; теплопроводность **3**, электропроводность **4**; плотность **7**, твёрдость **5**; отражение **0**.
+3. **Плутониевый топливный стержень** — радиоактивность **3**, нейтронная **5**; теплопроводность **6**, электропроводность **7**; плотность **8**, твёрдость **7**; отражение **0**.
+4. **Бананиумовый топливный стержень** — радиоактивность **7**, нейтронная **1,5**; теплопроводность **4**, электропроводность **4**; плотность **5**, твёрдость **4**; отражение **0**.
+5. **Плазменный топливный стержень** — радиоактивность **2**, нейтронная **0**; теплопроводность **3**, электропроводность **5**; плотность **1**, твёрдость **2**; отражение **0**.
+6. **Топливный стержень из уранового стекла** — радиоактивность **2**, нейтронная **1,5**; теплопроводность **3**, электропроводность **3,5**; плотность **4,5**, твёрдость **4**; отражение **0**.
+
+## Управляющие стержни
+
+1. **Управляющий стержень из борума** — теплопроводность **6**, электропроводность **5**; плотность **6**, твёрдость **5**; отражение **0**.
+2. **Стальной управляющий стержень** — теплопроводность **6**, электропроводность **5**; плотность **4**, твёрдость **3**; отражение **0**.
+3. **Латунный управляющий стержень** — теплопроводность **7**, электропроводность **6**; плотность **5**, твёрдость **2**; отражение **0**.
+4. **Стеклянный управляющий стержень** — теплопроводность **3**, электропроводность **3**; плотность **2**, твёрдость **3**; отражение **0**.
+5. **Золотой управляющий стержень** — теплопроводность **7**, электропроводность **7**; плотность **6**, твёрдость **2**; отражение **6**.
+6. **Серебряный управляющий стержень** — теплопроводность **6**, электропроводность **6**; плотность **4**, твёрдость **2**; отражение **6**.
+7. **Пласталевый управляющий стержень** — теплопроводность **6**, электропроводность **5**; плотность **7**, твёрдость **3**; отражение **0**.
+8. **Управляющий стержень из плазменного стекла** — теплопроводность **3**, электропроводность **3**; плотность **3**, твёрдость **7**; отражение **0**.
+9. **Алмазный управляющий стержень** — теплопроводность **3**, электропроводность **3**; плотность **6**, твёрдость **7**; отражение **0**.
+
+## Стержни газовых каналов
+
+1. **Стальной стержень газового канала** — теплопроводность **6**, электропроводность **5**; плотность **4**, твёрдость **3**; отражение **0**.
+2. **Латунный стержень газового канала** — теплопроводность **7**, электропроводность **6**; плотность **5**, твёрдость **2**; отражение **0**.
+3. **Стеклянный стержень газового канала** — теплопроводность **3**, электропроводность **3**; плотность **2**, твёрдость **3**; отражение **0**.
+4. **Золотой стержень газового канала** — теплопроводность **7**, электропроводность **7**; плотность **6**, твёрдость **2**; отражение **6**.
+5. **Серебряный стержень газового канала** — теплопроводность **6**, электропроводность **6**; плотность **4**, твёрдость **2**; отражение **6**.
+6. **Пласталевый стержень газового канала** — теплопроводность **6**, электропроводность **5**; плотность **7**, твёрдость **3**; отражение **0**.
+7. **Стержень газового канала из плазменного стекла** — теплопроводность **3**, электропроводность **3**; плотность **3**, твёрдость **7**; отражение **0**.
+8. **Алмазный стержень газового канала** — теплопроводность **3**, электропроводность **3**; плотность **6**, твёрдость **7**; отражение **0**.
+
+## Теплообменники
+
+1. **Стальной стержень теплообменника** — теплопроводность **6**, электропроводность **5**; плотность **4**, твёрдость **3**; отражение **0**.
+2. **Латунный стержень теплообменника** — теплопроводность **7**, электропроводность **6**; плотность **5**, твёрдость **2**; отражение **0**.
+3. **Стеклянный стержень теплообменника** — теплопроводность **3**, электропроводность **3**; плотность **2**, твёрдость **3**; отражение **0**.
+4. **Золотой стержень теплообменника** — теплопроводность **7**, электропроводность **7**; плотность **6**, твёрдость **2**; отражение **6**.
+5. **Серебряный стержень теплообменника** — теплопроводность **6**, электропроводность **6**; плотность **4**, твёрдость **2**; отражение **6**.
+6. **Пласталевый стержень теплообменника** — теплопроводность **6**, электропроводность **5**; плотность **7**, твёрдость **3**; отражение **0**.
+7. **Стержень теплообменника из плазменного стекла** — теплопроводность **3**, электропроводность **3**; плотность **3**, твёрдость **7**; отражение **0**.
+8. **Алмазный стержень теплообменника** — теплопроводность **3**, электропроводность **3**; плотность **6**, твёрдость **7**; отражение **0**.
+
+Плотность и твёрдость влияют на столкновения; отражательная способность — на обратное направление нейтронов; радиоактивные свойства — на образование нейтронов и деление. Теплообмен зависит и от теплопроводности, и от электропроводности. **Тепловая масса** задаётся отдельно: более высокая проводимость не означает большую теплоёмкость.
+
+Порог плавления — предел повреждения, не рекомендуемая рабочая температура. Выше порога деталь теряет целостность, а расплавленная деталь может стать неизвлекаемой.
+
+При делении локальная температура детали повышается на **50 или 75 K** в зависимости от процесса: такая разность равна **50 или 75 °C**, не градусам Фаренгейта. Температура всего корпуса этим не увеличивается мгновенно на ту же величину. Порог **80 °C** относится к ожогу от горячей детали, а не к её плавлению.
+
+## Реакции газа в каналах
+
+Эти превращения происходят **в газовом канале при взаимодействии с нейтронами**. Обычный смеситель с той же смесью их не воспроизводит. Начальная закладка и расход зависят от объёма канала и потока нейтронов; фиксированного выхода в секунду нет.
+
+- **Плазма, больше 1 моль:** на срабатывание расходуется [color=#73BFD3]**0,5 моль**[/color], образуется [color=#73BFD3]**2 моля трития**[/color] и добавляются нейтроны. Плазма может усиливать реакцию, а не служить нейтральным теплоносителем.
+- **CO2, больше 1 моль:** часть нейтронов поглощается и греет деталь. Сам CO2 этим процессом **не расходуется**.
+- **Тритий, больше 1 моль:** на срабатывание расходуется [color=#73BFD3]**1 моль**[/color], деталь нагревается на **1 K**. Для партии выбирается **один** продукт: **0,5 O2**, **0,5 N2**, **0,1 аммиака**, **0,1 N2O** либо **0,1 фрезона** на срабатывание. Все пять одновременно не гарантированы.
+
+Состав теплоносителя поэтому меняет не только перенос тепла. Следите за анализатором газа, температурой корпуса и деталей; ввод стержней до [color=#73BFD3]**100%**[/color] прекращает разгон, но не убирает уже накопленное тепло. Сохраняйте охлаждение.
+
+[Запуск и безопасная остановка](guide://ShipyardNFROperation) · [Атмосферная варка газов](guide://ColossusAtmos)
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/TSF/Code.xml -->
+# Военный кодекс Транс-Солнечной Федерации
+
+**Военный кодекс Транс-Солнечной Федерации** — официальный документ, разработанный на основе Единого кодекса военной юстиции США. Он устанавливает единые стандарты поведения, цепочку командования, правила ведения боя и порядок привлечения к ответственности силами 113-го корпуса Морской Пехоты ТСФ в Секторе Колосс.
+
+<GuideEntityCards>
+<GuideTexture Entity="BookTSFSOP" Caption="Военный кодекс ТСФ"/>
+</GuideEntityCards>
+
+### Военный кодекс ТСФ
+
+Настоящий Кодекс регулирует внутреннюю дисциплину, права и обязанности военнослужащих Транс-Солнечной Федерации на оперативной территории Сектора Колосс.
+
+Нарушение Военного кодекса ТСФ не равносильно нарушению правил сервера, поскольку Военный кодекс ТСФ регулирует IC составляющую.
+
+При этом [Правила сервера «Колосс»](guide://LuaMRuleset) всегда имеют наивысший приоритет над любыми пунктами устава и кодекса.
+
+## Раздел I. Основные обязанности и ценности
+
+### Базовые положения службы
+
+- **Основная миссия:** Каждый военнослужащий Транс-Солнечной Федерации (ТСФ) обязан защищать суверенитет Федерации, обеспечивать свободу навигации, отстаивать идеалы либеральной демократии и пресекать бесконтрольную экспансию тоталитарных сил Империи Феникса в Секторе Колосс.
+- **Цепочка командования:** Высшим авторитетом на оперативной территории является Полковник ТСФ. Капитан ТСФ является вторым лицом в цепочке командования. Любое распоряжение, отданное по цепочке командования через Сержантов ТСФ, подлежит немедленному исполнению. Рядовой состав не имеет права узурпировать или присваивать себе полномочия командования.
+- **Воинское приветствие в силах Транс-Солнечной Федерации:** Воинское приветствие является официальным проявлением преданности Транс-Солнечному Договору. В условиях нормальной атмосферы и гравитации при приближении старшего по званию или должности за 3–4 метра военнослужащий обязан принять строевую стойку, повернуться лицом к начальнику и приложить выпрямленную правую ладонь к нижнему краю головного убора/шлема или к надбровной дуге.
+- **Протокол контрабанды:** Силы ТСФ уполномочены осуществлять задержание гражданских лиц за владение опасной контрабандой. В случае добровольной сдачи незаконного груза, военнослужащие обязаны выплатить установленное вознаграждение при наличии средств на балансе. Использование трофейного контрабандного снаряжения разрешено силам ТСФ без ограничений.
+
+## Раздел II. Особый статус Главного инспектора: Представитель MARSOC
+
+Представитель MARSOC (Командования специальных операций Корпуса морской пехоты ТСФ) назначается в сектор в качестве Главного военного инспектора.
+
+### Полномочия и обязанности Представителя MARSOC
+
+- Его распоряжения в рамках контроля правопорядка и соблюдения Кодекса обладают **высшей юридической силой** для всех военнослужащих, включая Капитана ТСФ.
+- Личное сопровождение и охрана Полковника ТСФ в любых оперативных условиях.
+- Регулирование и надзор за точным исполнением положений Военного Кодекса ТСФ, проведение внутренних расследований и инспекций боеготовности.
+- Проведение профессионального отбора наиболее подготовленных и преданных уставу бойцов человеческой расы для их последующего зачисления в элитные подразделения **MARSOC**.
+- **Применение санкций:** Обладает правом единоличного ареста и конвоирования любого военнослужащего ТСФ в бриг за нарушение дисциплины.
+
+### ПРОТОКОЛ ТАКТИЧЕСКОГО ДОПРОСА MARSOC (ИНСПЕКТОРСКИЙ СТАНДАРТ)
+
+Настоящий протокол регламентирует порядок проведения допроса задержанных лиц (военнослужащих-перебежчиков, шпионов, нарушителей бесполетных зон и военнопленных АНФ) силами Представителя MARSOC на объектах ТСФ.
+
+**1. Подготовительный этап и изоляция:**
+- Допрашиваемое лицо должно быть полностью разоружено, обыскано на предмет скрытых средств связи/чипов и заковано в наручники.
+- Допрос проводится исключительно в специализированном допросном блоке Флагмана **«Халикон»** или в изолированном помещении Брига. Присутствие посторонних лиц, не имеющих допуска от Полковника или Представителя MARSOC, запрещено.
+
+**2. Процедура ведения допроса:**
+- **Установление личности:** Фиксация имени, звания, фракционной принадлежности или гражданского статуса субъекта.
+- **Сбор тактических данных:** Первоочередными целями допроса являются выяснение планов Авангарда АНФ, кодов частот, координат разломов монолитных кристаллов и выявление внутренних саботажников.
+- **Соблюдение конвенций ТСФ:** Допрос должен вестись в рамках профессиональных стандартов Военной юстиции. Любые показания, полученные под физическими пытками, не имеют юридической силы.
+- Разрешено использование психологического давления, депривации сна и изоляции.
+
+**3. Регулирование правонарушений по результатам допроса:**
+- *Если в ходе допроса установлена вина задержанного сотрудника ТСФ,* Представитель MARSOC немедленно определяет класс преступления (Класс 1–4) согласно Разделу III и этапирует его в Бриг.
+- Военнопленные АНФ и гражданские шпионы после допроса содержатся в Бриге под охраной до окончания оперативной смены, либо передаются Службе Безопасности Колосса, если их действия подпадают под статьи Режимных Приказов мирного населения.
+
+## Раздел III. Дисциплинарные наказания (Бриг)
+
+Нарушения классифицируются по степени тяжести и эквивалентны шкале наказаний Режимных Приказов Сектора Колосс. Местом отбывания наказания служит фракционный бриг флагмана **«Халикон»**.
+
+<GuideTable Columns="3">
+<Box>Классификация</Box>
+<Box>Виды нарушений</Box>
+<Box>Срок заключения и санкции</Box>
+<Box>**Класс 1**</Box>
+<Box>Мелкие дисциплинарные проступки: неуважительное отношение к сослуживцам, засорение общего канала связи, халатность при стыковке крейсера, мелкая порча федерального имущества.</Box>
+<Box>Официальный выговор или содержание под стражей в Бриге от [color=#73BFD3]**0 до 15 минут**[/color].</Box>
+<Box>**Класс 2**</Box>
+<Box>Малые воинские преступления: неподчинение законным приказам Сержанта или Представителя MARSOC, сокрытие найденных медицинских запасов, незаконное использование гражданских судов.</Box>
+<Box>Содержание под стражей в Бриге от [color=#73BFD3]**15 до 30 минут**[/color].</Box>
+<Box>**Класс 3**</Box>
+<Box>Серьезные должностные проступки: саботаж работы верфи или портов снабжения Федерации, мошенничество с бюджетом фракции, несанкционированный штурм гражданских шаттлов, умышленная порча критических систем.</Box>
+<Box>Содержание под стражей в Бриге от [color=#73BFD3]**30 до 45 минут**[/color].</Box>
+<Box>**Класс 4**</Box>
+<Box>Особо тяжкие преступления против Федерации: измена Федерации и призывы к перевороту, умышленное уничтожение Крейсера **«Арктурус»**, терроризм, пиратство в космосе, несанкционированный оборот биооружия.</Box>
+<Box>Заключение в Бриг на срок от [color=#73BFD3]**45 до 60 минут**[/color]. При отягчающих обстоятельствах — трибунал, пожизненное заключение в бриге или смертная казнь по прямому приказу Полковника.</Box>
+</GuideTable>
+
+## Раздел IV. Оперативные угрозы и тактические столкновения
+
+### Правила ведения боя и тактический протокол
+
+- **Невмешательство в гражданскую политику**
+Силы ТСФ не заинтересованы в подмене собой местного правопорядка в лице Службы Безопасности Колосс Централа. Локальные криминальные происшествия среди гражданских лиц не являются приоритетом ТСФ.
+- **Фракционные объекты**
+Главной операционной базой является Флагман **«Халикон»**. Крейсер **«Арктурус»** является мобильной ударной единицей.
+- **Закрытие космического пространства**
+Полковник ТСФ имеет право на объявление бесполетных зон в районах: Буровая станция, Дата-Центр, станция **«Браво»** и места появления аномальных объектов (игровых событий). Любой несанкционированный борт в закрытом секторе классифицируется как враг и нейтрализуется.
+- **Время наступательных операций**
+Проведение наступательных рейдов на укрепленные объекты Авангарда АНФ разрешено строго через [color=#73BFD3]3 часа[/color] после начала оперативной смены.
+
+## Раздел V. Регламент Речи, Дресс-кода и Радиообмена ТСФ
+
+### Стандарты Воинской Дисциплины и Внешнего Вида Корпуса
+
+- **Чистота речи и профессиональная этика:** Военнослужащие ТСФ обязаны демонстрировать моральный облик защитников демократии. Запрещено использование нецензурной брани, мата и оскорблений. Засорение общего канала связи посторонними разговорами классифицируется как нарушение **Класса 1** и влечет за собой выговор или содержание под стражей в Бриге флагмана **«Халикон»** на срок до [color=#73BFD3]15 минут[/color].
+- **Уставная речь и радиообмен:** Любые коммуникации должны быть лаконичными и четкими. Использование гражданского сленга и неформальных приветствий (**«привет»**, **«йоу»**) запрещено. При ответе старшему по званию используются строго установленные формулировки:
+- Вместо **«Да»** — **«Так точно»** или **«Утвердительно»**;
+- Вместо **«Нет»** — **«Никак нет»** или **«Отрицательно»**;
+- Вместо **«Окей / Ладно»** — **«Принято»** или **«Будет исполнено»**;
+- Вместо **«Извини»** — **«Виноват, исправлюсь»**.
+- **Субординация при обращении:** Обращение к личному составу и офицерам ТСФ строится строго по форме: **«Звание — Фамилия»** (например: *«Сержант Миллер, доклад окончен»*).
+- **Регламент ношения униформы (Дресс-код):** Каждый морской пехотинец обязан носить полную уставную форму, соответствующую его подразделению и знакам различия. Категорически запрещается смешивать элементы федеральной экипировки с гражданской одеждой, а также использовать неуставные аксессуары без прямого разрешения Представителя MARSOC или Полковника. Бронежилет, шлем и знаки различия должны быть в полной боевой готовности.
+
+### ТАКТИЧЕСКИЙ РАДИОПРОТОКОЛ (ТЕН-КОДЫ И КОДЫ СОСТОЯНИЯ MARSOC/ТСФ)
+
+Для оптимизации координации 113-го корпуса Морской Пехоты ТСФ на оперативной территории Сектора Колосс утверждается единая система кодов связи:
+
+**Служебные Тен-коды ТСФ:**
+- **10-0** — Конец связи.
+- **10-1** — Непонятна радиопередача (помехи, повторите).
+- **10-2** — Срочно.
+- **10-3** — Прекратить радиопередачу (освободить частоту).
+- **10-4** — Утвердительно / Принято / Так точно.
+- **10-5** — Передайте мою радиопередачу.
+- **10-6** — Отрицательно / Не принято / Никак нет.
+- **10-9** — Повторите радиопередачу.
+- **10-10** — Запрос Главного военного инспектора (требуется Представитель MARSOC).
+- **10-12** — Ожидайте.
+- **10-13** — Сделайте тактический доклад.
+- **10-17** — В пути (выдвигаюсь на объект).
+- **10-19** — Вернитесь в бриг / На шаттл.
+- **10-20** — Текущее местоположение.
+- **10-21** — Запрос встречи (встретьтесь со мной).
+- **10-22** — Веду перестрелку (огневой контакт с силами АНФ или силами угрозы).
+- **10-24** — Поручение / боевая задача выполнена.
+- **10-26** — Расчетное время прибытия на точку (ETA).
+- **10-40** — Действуйте скрытно (режим маскировки).
+- **10-53** — Проход заблокирован.
+- **10-55** — Субъект под воздействием (алкоголь / наркотические вещества).
+- **10-100** — Полное радиомолчание. Разрешены только экстренные доклады ЧП.
+
+**Оперативные Коды Состояния:**
+- **Код 0** — Офицер на земле (критическое состояние / боец ТСФ убит).
+- **Код 1** — Офицер ранен (требуется эвакуация в медблок).
+- **Код 2** — Требуется большое подкрепление.
+- **Код 3** — Требуется малое подкрепление.
+- **Код 4** — Ситуация спокойная.
+- **Код 5** — Нахожусь на лечении в медицинском отсеке.
+- **Код 6** — Нахожусь на регламентированном перерыве.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Factions/PDV/Charter.xml -->
+# Священный Военный Устав Авангарда Нордфолла
+
+**Священный Военный Устав Авангарда Нордфолла** — доктринальный суверенный документ, определяющий кодекс чести, духовные и боевые обязанности слуг Империи Феникса в Секторе Колосс.
+
+<GuideEntityCards>
+<GuideTexture Entity="BookNordfallSOP" Caption="Священный Военный Устав"/>
+</GuideEntityCards>
+
+### Доктрина Тьмы и Пламени: Устав АНФ
+
+Настоящий Свод регулирует внутренний порядок, железную дисциплину, обязанности братьев по оружию и кару за отступничество на территории Сектора Колосс.
+
+Нарушение Военного устава АНФ не равносильно нарушению правил сервера, поскольку устав регулирует IC составляющую.
+
+При этом [Правила сервера «Колосс»](guide://LuaMRuleset) всегда имеют наивысший приоритет над любыми пунктами устава и кодекса.
+
+## Раздел I. Обязанности оперативников и Священный Долг
+
+### Догматы Железной Дисциплины
+
+- **Преданность Престолу:** Военнослужащий Авангарда Нордфолла есть карающая длань **Истинного Бога-Императора Феникса**. Его жизнь принадлежит Престолу, а разум его Командованию. Оперативник обязан безропотно уничтожать врагов Империи, стойко игнорировать шёпот Харибды и сеять страх среди чужаков. Смерть во имя Империи — высшая награда, сомнение — худшее предательство.
+- **Священная Субординация:** Воля Командора Авангарда священна и неоспорима. Полевой командир — глашатай его воли, чьё слово обладает силой закона и является вторым во фракции. Преторианцы направляют ярость Оперативников. Любой приказ старшего по званию должен быть исполнен незамедлительно, слепо и без тени сомнения. Обсуждение приказа приравнивается к духовной порче.
+- **Ритуал Приветствия:** Приближение старшего по званию обязывает оперативника замереть, принять монументальную строевую стойку "Смирно" и вскинуть правую ладонь к своему боевому шлему. Этот жест знаменует готовность пролить кровь за Империю и подтверждает верность воинскому братству Авангарда.
+- **Отношение к Монолитам и Осквернению:** Все монолитные кристаллы и артефакты Харибды — **имперская собственность**. Сокрытие ресурсов карается как высшая ересь. Грабёж мирных жителей сектора без воли Командования запрещён, ибо Авангард несёт порядок, а не хаос.
+
+## Раздел II. Верховный Судия и Очиститель: Паладин НФ
+
+Паладин НФ — Великий Инквизитор гарнизона, назначенный для бдения над душами военнослужащих, искоренения скверны и надзора за чистотой Устава.
+
+### Полномочия Эквитеса-Паладина АНФ
+
+- Распоряжения Паладина НФ в вопросах веры, верности и дисциплины обладают **абсолютной и высшей юридической силой**. Им подчиняется весь личный состав, вплоть до Полевого командира.
+- Осуществляет непрестанное конвоирование, личную охрану и защиту Командора Авангарда, являясь его щитом от внутренних заговорщиков и внешних еретиков.
+- Проводит внезапные инспекции, карает за халатность, упреждает саботаж и оценивает верность оперативников Догматам Империи.
+- Проводит священный и жестокий отбор среди выживших и наиболее стойких оперативников для их последующего возвышения и зачисления в элитные штурмовые спецподразделения Империи.
+- **Дисциплинарный Меч:** Наделен правом единолично вершить скорый суд, заковывать осквернивших присягу оперативников в кандалы и бросать их в темницы гауптвахты.
+
+### СВЯЩЕННЫЙ ПРОТОКОЛ ДОПРОСА (ИНКВИЗИТОРСКИЙ СТАНДАРТ ПАЛАДИНА)
+
+Настоящий протокол регламентирует ритуал дознания, проводимый Паладином НФ в отношении пленных лазутчиков ТСФ, внутренних отступников, предателей и нарушителей имперских бесполетных зон.
+
+**1. Изоляция и Смирение плоти:**
+- Пленный должен быть лишен оружия, средств связи, имплантов связи и наглухо закован в наручники.
+- Очистительный допрос проходит исключительно в пыточных казематах или следственном карцере Крепости **«Гелиос»**. Рядовому составу вход запрещён — шёпот предателей опасен для неокрепших умов.
+
+**2. Дознание во имя Пламени Феникса:**
+- Паладин обязан огнём и словом выжечь из допрашиваемого истинные мотивы, шифры фракционных частот ТСФ, планы штурма Флагмана **«Халикон»** и координаты скрытых залежей монолитов.
+- Допускаются любые методы ментального прессинга, депривация чувств и изоляция. Физическое воздействие одобряется Командором, однако субъект должен дышать до тех пор, пока из него не будет вырвана последняя крупица тактической информации. Сомнение в методах Паладина есть соучастие.
+
+**3. Вердикт и Судьба плоти:**
+- Провинившиеся братья АНФ этапируются на гауптвахту для искупления грехов согласно Разделу III.
+- Шпионы Федерации и еретики после допроса гниют на гауптвахте до конца смены в качестве обменного фонда, либо подвергаются полной ликвидации (выдворению в открытый космос без баллона) по приказу Командора Авангарда, лишающего их права на жизнь.
+
+## Раздел III. Меры Очищения и Искупления (Гауптвахта)
+
+Каждое преступление против Устава есть грех перед Империей, соразмерный Режимным Приказам Сектора Колосс. Местом искупления грехов является холодная гауптвахта Крепости **«Гелиос»**. При суммировании грехов сроки заключения складываются.
+
+<GuideTable Columns="3">
+<Box>Степень Грехопадения</Box>
+<Box>Суть Прегрешения</Box>
+<Box>Время Искупления и Кара</Box>
+<Box>**Мерзость I степени**</Box>
+<Box>**Дисциплинарные проступки:** Сквернословие в адрес братьев по оружию, пререкание с Преторианцем, ересь в общих каналах рации, халатность при стыковке к фракционным постам и кораблям, мелкая порча имущества АНФ.</Box>
+<Box>Выговор перед строем от Паладина или заточение на гауптвахту на срок от [color=#73BFD3]**0 до 15 минут**[/color].</Box>
+<Box>**Мерзость II степени**</Box>
+<Box>**Легкие преступления:** Открытый отказ повиноваться воле Преторианца или Паладина, осквернение медицинских догматов, угон гражданских посудин без благословения, утаивание мелкой контрабанды.</Box>
+<Box>Заточение в кандалы гауптвахты на срок от [color=#73BFD3]**15 до 30 минут**[/color].</Box>
+<Box>**Мерзость III степени**</Box>
+<Box>**Средние преступления:** Осознанный саботаж работы имперской верфи, пролитие крови братьев в гарнизоне (драки), пиратский абордаж чужих шаттлов без санкции Полевого командира.</Box>
+<Box>Заточение в кандалы гауптвахты на срок от [color=#73BFD3]**30 до 45 минут**[/color].</Box>
+<Box>**Мерзость IV степени**</Box>
+<Box>**Тяжкие грехи и Измена:** Мятеж против Командора, заговоры с федератами ТСФ, умышленное осквернение и уничтожение крейсера **«Юпитер»**, биотерроризм, хищение запрещенного оружия.</Box>
+<Box>Заточение на гауптвахту на срок от [color=#73BFD3]**45 до 60 минут**[/color]. *При отсутствии раскаяния и упорстве во грехе — трибунал,* вечное гниение в карцере или Экстерминатус плоти (смертная казнь через расстрел).</Box>
+</GuideTable>
+
+## Раздел IV. Священный Боевой Регламент
+
+### Протоколы войны и Зоны Отчуждения
+
+- **Презрение к мирской суете гражданских**
+Авангард Нордфолла не опускается до контроля над жалкими обывателями Сектора Колосс и презирает дежурную возню Службы Безопасности Колосс Централа. Внутренние склоки гражданских игнорируются, пока их грязь не летит на знамена Империи.
+- **Протокол Освящения Техники**
+Главными святынями АНФ в Секторе Колосс являются Звездная Крепость "Гелиос" и Крейсер "Юпитер".
+- **Установление Зон Отчуждения**
+Паладин и Командование АНФ вправе объявить бесполетными зонами районы Дата-Центра, пункта прослушки **«Браво»**, буровой станции и мест проведения великих знамений (игровых событий). Любой чужак, нарушивший границу зоны, признается вероотступником и подлежит немедленному расщеплению.
+- **Час Возмездия (Рейды)**
+Проведение тотальных наступательных штурмов на цитадели противника (аванпосты ТСФ) разрешено строго по истечении [color=#73BFD3]3 часов[/color] с момента начала смены, когда ярость оперативников достигнет апогея.
+
+## Раздел V. Регламент Речи, Дресс-кода и Радиообмена АНФ
+
+### Чистота Речи и Дресс-код Карающей Длани
+
+- **Чистота имперской речи:** Категорически запрещено использование нецензурной брани, мата и оскорблений братьев по оружию как в локальном пространстве, так и на частотах связи. Сквернословие и ересь в общих каналах рации расцениваются как **Мерзость I степени** и караются немедленным заточением на гауптвахту Крепости **«Гелиос»** на срок до [color=#73BFD3]15 минут[/color].
+- **Запрет на засорение эфира:** Военная радиочастота является священным инструментом координации. Пустые разговоры, шутки и обсуждение мирской суеты приравниваются к халатности.
+- **Уставная речь и Священные ответы:** Панибратство уничтожает дисциплину. Запрещены гражданские приветствия (**«привет»**, **«салют»**). При обращении к Преторианцу или Командору оперативник обязан использовать строгие уставные формы:
+- **«Да»** — **«Так точно»** или **«Утвердительно»**;
+- **«Нет»** — **«Никак нет»** или **«Отрицательно»**;
+- **«Хорошо / Ладно»** — **«Принято»** или **«Будет исполнено»**;
+- **«Извини»** — **«Виноват, исправлюсь»**.
+- **Форма обращения:** Любое обращение к старшему по званию строится по нерушимой структуре: **«Звание/Должность — Фамилия»** (например: *«Командор Алмаз, разрешите обратиться»*).
+- **Священный Дресс-код:** Каждый слуга Империи обязан находиться на службе в полной боевой экипировке, соответствующей его званию и подразделению. Совмещение имперской брони с жалкими гражданскими лохмотьями или ношение неуставных аксессуаров карается по всей строгости Устава. Боевой шлем, бронежилет и знаки различия должны быть в идеальном состоянии.
+
+### СВЯЩЕННЫЙ ШИФР РАДИООБМЕНА (ТЕН-КОДЫ И КОДЫ СОСТОЯНИЯ АНФ)
+
+Для ускорения передачи приказов и сокрытия тактических данных от шпионов ТСФ, в эфире Авангарда вводятся следующие шифры:
+
+**Тактические Тен-коды:**
+- **10-0** — Конец связи.
+- **10-1** — Непонятна радиопередача (повторите четче).
+- **10-2** — Срочно.
+- **10-3** — Остановите радиопередачу (прекратить флуд).
+- **10-4** — Утвердительно / Принято / Так точно.
+- **10-5** — Передайте мою радиопередачу.
+- **10-6** — Отрицательно / Не принято / Никак нет.
+- **10-9** — Повторите радиопередачу.
+- **10-10** — Запрос Верховного Судии (требуется Паладин НФ).
+- **10-12** — Ожидайте.
+- **10-13** — Сделайте доклад о ситуации.
+- **10-17** — В пути / Выдвигаюсь.
+- **10-19** — Вернитесь на станцию / На боевой шаттл.
+- **10-20** — Местоположение (координаты).
+- **10-21** — Встретьтесь со мной в указанной точке.
+- **10-22** — Веду перестрелку (огневой контакт с врагом).
+- **10-24** — Поручение выполнено.
+- **10-26** — Расчетное время прибытия (ETA).
+- **10-40** — Действуйте скрытно (скрытное развертывание).
+- **10-53** — Проход заблокирован.
+- **10-55** — Субъект под ментальным осквернением Харибды или веществами.
+- **10-100** — Полное радиомолчание. В эфире — только краткие и срочные сообщения.
+
+**Коды Состояния Оперативников:**
+- **Код 0** — Брат по оружию на земле (критическое состояние / погиб во имя Империи).
+- **Код 1** — Оперативник ранен (требуется медицинское очищение).
+- **Код 2** — Требуется большое подкрепление.
+- **Код 3** — Требуется малое подкрепление.
+- **Код 4** — Ситуация спокойная.
+- **Код 5** — Нахожусь на лечении.
+- **Код 6** — Нахожусь на ритуальном перерыве / молитве богу Императору.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/Courier.xml -->
+# Курьерская доставка
+
+**Курьер ColossDelivery** принимает оплаченные заказы, забирает запечатанные посылки на телепаде **«Колосс Централл»** и доставляет их покупателям. Выплата приходит, когда заказчик открывает посылку своей ID-картой.
+
+<GuideEntityCards>
+<GuideTexture Entity="DeliveryCourierPDA" Caption="auto"/>
+<GuideTexture Entity="DeliveryParcel" Caption="auto"/>
+<GuideTexture Entity="ClothingEyesHudLuaMCourier" Caption="auto"/>
+</GuideEntityCards>
+
+## Подготовиться к работе
+
+**Выберите** должность **«Курьер»**. **Откройте** свой КПК и приложение **ColossDelivery**: на этой должности оно показывает рабочую панель курьера. Получать заказы можно через КПК, но за каждой новой посылкой нужно возвращаться к **телепаду доставки на Колосс Централл**.
+
+Для рейсов к другим станциям и кораблям нужен транспорт. Стартовый ваучер используйте на подходящей [верфи](guide://Shipyard); перед отстыковкой подготовьте [снаряжение для выхода в космос](guide://StartingGear). **Проверьте** место под посылки и способ связи с заказчиком.
+
+## Приложение курьера
+
+Вверху показаны имя курьера, число завершённых доставок, заработок и банковский баланс либо выплата наличными. Счётчик активных заказов помогает следить за лимитом: одновременно можно вести **два заказа**.
+
+В карточке заказа:
+- **Номер и получатель** — какую посылку брать и кому её передавать.
+- **Статус** — свободен ли заказ, взят вами или другим курьером. **«Курьер выбыл, ждёт нового»** означает, что заказ можно принять, но его посылка уже находится в секторе.
+- **«Стоимость»** — сколько заплатил покупатель; **«Вам»** — ваше вознаграждение за завершение доставки.
+- **«Осталось»** — время до отмены. [color=#73BFD3]**30 минут отсчитываются с оформления покупателем**[/color], включая ожидание курьера. Принятие или переназначение заказа не обновляет таймер.
+- **«Посылка: X, Y»** — положение посылки, а не покупателя. До первого принятия карточка сообщает, что она появится на телепаде.
+- **Состав** — заказанные товары и их количество.
+
+<GuideNavigationUI Mode="delivery"/>
+
+## Принять заказ и забрать посылку
+
+1. **Выберите** свободный заказ, сравните выплату и оставшееся время с маршрутом. **Нажмите** **«Взять заказ»**. Статус сменится на **«взят вами»**, а покупатель получит уведомление с именем курьера.
+2. При первом принятии запечатанная посылка появляется на телепаде доставки. Осмотрите её **Shift + ЛКМ**: сверяйте номер заказа, получателя, назначенного курьера и время до отмены.
+3. Заберите посылку и свяжитесь с покупателем. Уточните станцию или корабль, причал и место встречи. *Если принимаете заказ выбывшего курьера,* ищите уже существующую посылку по координатам в карточке — новая на телепаде не появится.
+4. При втором заказе проверьте, успеваете ли пройти оба маршрута. Лимит относится к принятым заказам, а не только к посылкам, которые вы держите в руках.
+
+## Найти получателя и завершить доставку
+
+У посылки есть **встроенный указатель на заказчика**. Курьерские очки помечают получателей ваших активных заказов, когда они находятся в поле зрения. Для дальнего маршрута уточняйте место встречи по связи; координаты самой посылки не заменяют координаты получателя.
+
+Передайте посылку заказчику и попросите применить к ней **его ID-карту**. Открыть её должен **тот же персонаж, который оформил заказ**, с именем на карте, соответствующим имени при оформлении. Передачи карты или закрытой посылки другому человеку недостаточно.
+
+После успешной проверки посылка открывается, товары появляются на её месте, заказ закрывается и курьер получает выплату. Для завершения не требуется возвращать упаковку на телепад.
+
+## Сколько платят
+
+Вознаграждение — [color=#73BFD3]**30% от первых 50 000**[/color] стоимости заказа плюс [color=#73BFD3]**10% от превышения**[/color]. Выплата начисляется назначенному курьеру после открытия посылки покупателем.
+
+<GuideTable Columns="2">
+<Box>**Стоимость заказа**</Box><Box>**Выплата курьеру**</Box>
+<Box>5 000</Box><Box>1 500</Box>
+<Box>50 000</Box><Box>15 000</Box>
+<Box>100 000</Box><Box>20 000</Box>
+</GuideTable>
+
+Обычная выплата поступает на банковский счёт. В режиме **Ironman** курьер получает её наличными. Число выполненных заказов и заработанная сумма обновляются в приложении.
+
+## Если доставка не завершается
+
+- **Заказ уже взят:** его ведёт другой работающий курьер. **Выберите** свободный заказ.
+- **Не удаётся взять ещё один:** у вас уже два активных заказа. Сначала завершите один из них.
+- **На телепаде нет новой посылки:** проверьте статус и координаты — после переназначения используется прежняя посылка.
+- **Заказчик не может открыть посылку:** сверяйте получателя и номер заказа; ID-картой должен воспользоваться сам заказчик. Имя на карте должно совпадать с именем при оформлении.
+- **Не пришла оплата:** убедитесь, что заказчик открыл посылку и что заказ был назначен вам. Простая передача груза заказ не закрывает.
+
+Когда срок истекает, заказ отменяется, посылка разрушается, а покупателю возвращается уплаченная сумма. За незавершённую доставку курьер не получает вознаграждение.
+
+## Как покупателю оформить заказ
+
+**Вставьте** свою ID-карту в КПК и откройте **ColossDelivery**. **Выберите** товары, количество и нажмите **«Заказать»**. Минимальная сумма — **5 000**, максимум — **30 предметов суммарно**, одновременно — **два активных заказа**. Сумма в приложении включает наценку доставки и списывается с банковского счёта при оформлении.
+
+Во вкладке **«Мои заказы»** следите за назначением курьера и временем. После уведомления о принятии согласуйте место встречи и держите ID-карту при себе для открытия посылки.
+
+Для заказа нужны банковский счёт и доступный сервис: в секторе должны быть курьер на смене и телепад доставки. В режиме Ironman покупки через приложение недоступны. У курьера приложение показывает рабочую панель вместо магазина.
+
+[Виды заработка](guide://Jobs) · [Банк и переводы](guide://Bank) · [Пилотирование](guide://Piloting) · [Грузоперевозки](guide://CargoHauling)
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/ShipRepair.xml -->
+# Ремонт корабля: УРК
+
+**УРК — устройство ремонта корабля.** Оно восстанавливает утраченные участки пола и конструкции по сохранённому плану корпуса. Для работы нужны само устройство и заряды ремонтной материи.
+
+<GuideEntityCards>
+<GuideTexture Entity="ShipRepairDevice" Caption="auto"/>
+<GuideTexture Entity="ShipRepairDeviceAmmo" Caption="auto"/>
+<GuideTexture Entity="ShipRepairDeviceMMC" Caption="auto"/>
+</GuideEntityCards>
+
+## Что можно восстановить
+
+При покупке шаттла сохраняется его исходная конструкция. УРК использует этот план: возвращает пол и подходящие утраченные объекты на прежние места, с прежним направлением. К ним относятся поддерживаемые модели стен, шлюзов, проводки и оборудования.
+
+Постройки, добавленные после покупки, автоматически в план не попадают. Груз, предметы на полу и личное снаряжение в нём не сохраняются. У некоторых объектов и кораблей восстановление разрешено только совместимым инструментом.
+
+**Уцелевший повреждённый объект УРК не лечит.** Для него нужен обычный ремонт подходящим инструментом. *Если исходный объект всё ещё существует на корабле,* УРК не создаст его копию.
+
+## Восстановить пробоину
+
+1. Защититесь от вакуума и остановите опасную работу рядом с пробоиной. Перед выходом снаружи проверьте [скафандр и дыхание](guide://StartingGear).
+2. **Возьмите** заряженное УРК в активную руку. Отсутствующие участки сохранённой конструкции показываются полупрозрачной схемой.
+3. Подойдите к повреждению и нажмите **ЛКМ** по нужному месту. Дальность обычного УРК — [color=#73BFD3]**3 м от персонажа**[/color], у **УРК Mieyo — 5 м**. Схема видна дальше, чем устройство может ремонтировать.
+4. *Если пол отличается от сохранённого,* первым применением восстанавливается **пол**. Для остальных конструкций примените устройство к этому месту ещё раз.
+5. **Дождитесь** окончания полосы выполнения. **Движение и получение урона прерывают работу.** Затем переходите к следующему участку.
+
+На борту УРК ориентируется на корпус, на котором вы находитесь. Для ремонта соседнего пристыкованного шаттла перейдите на него. При работе из космоса выбирайте точку на нужном корпусе, особенно если рядом стоят несколько кораблей.
+
+## Несколько конструкций в одной точке
+
+После восстановления пола одно применение может вернуть **несколько подходящих объектов** в радиусе [color=#73BFD3]**0,5 м**[/color] от точки нажатия. Например, на одном участке могут находиться и оборудование, и проводка.
+
+Стоимость такого ремонта равна **сумме зарядов за выбранные объекты**. Время группового восстановления меньше суммы отдельных операций. *Если заряда хватает на каждый объект по отдельности,* но не на всю группу, завершить работу не удастся — сначала пополните устройство.
+
+Для одного участка пола обычное УРК расходует **1 заряд** и работает [color=#73BFD3]**0,5 с**[/color]. Стоимость и время восстановления конструкций зависят от их типа: например, обычный шлюз требует [color=#73BFD3]**6 зарядов и 6 с**[/color]. УРК Mieyo выполняет ту же работу вдвое быстрее при том же расходе зарядов.
+
+## Заряды и пополнение
+
+Обычное УРК вмещает **500 зарядов**, новый экземпляр содержит **100**. УРК Mieyo вмещает **800**, также начиная со **100**.
+
+**Возьмите** **картридж УРК** и примените его к устройству. Полный картридж содержит **100 зарядов**. Переносится только недостающее до полной ёмкости количество; неиспользованный остаток остаётся в картридже. Нужен именно картридж УРК, а не сжатая материя для РСУ.
+
+В инженерном модуле киборга есть **перезаряжающееся УРК**: ёмкость **300 зарядов**, начальный запас **50**, восстановление [color=#73BFD3]**1 заряда за 5 с**[/color]. Его дальность — [color=#73BFD3]**3 м**[/color], скорость ремонта соответствует обычному устройству. [Работа с модулями киборга](guide://Cyborgs).
+
+## Где взять
+
+Обычное УРК и картриджи продаются в инженерных торгоматах. Их также изготавливают на инженерном техфабе при доступном рецепте. **УРК Mieyo** получают через снабжение и производство [ММС](guide://MMC).
+
+## Почему не ремонтирует
+
+- **«Недостаточно зарядов»** — проверьте запас и пополните УРК. На участке с несколькими конструкциями нужен заряд на всю группу.
+- **«Нет данных для ремонта объекта»** — для этого корпуса нет сохранённого плана. **Используйте** обычное строительство и ремонт.
+- **«Невозможно починить: оригинал уцелел»** — исходный объект ещё существует. **Найдите** и почините его обычным способом; УРК не дублирует сохранившееся оборудование.
+- **«Невозможно починить объект»** — этот корпус или конструкция не допускает выбранное УРК.
+- **Нет реакции на схему** — подойдите в пределах дальности, выберите сам ремонтируемый корпус и проверьте заряд. Не каждое место корабля и не каждый объект входят в план восстановления.
+
+После восстановления корпуса проверьте герметичность, питание и работоспособность оборудования. Возвращённая конструкция не заменяет проверку корабельных систем перед следующим вылетом.
+
+[Пилотирование](guide://Piloting) · [Покупка корабля](guide://Shipyard) · [Электроснабжение](guide://ColossusPower) · [Строительство](guide://Construction)
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Goblin.xml -->
+# Гоблин
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobGoblin"/></GuideEntityCards>
+
+Гоблины — небольшие гуманоиды, способные пользоваться тесными укрытиями и искать полезное в мусоре.
+
+## Питание и дыхание
+Дышат кислородом. Необычное пищеварение сопровождается повышенной устойчивостью к токсинам.
+
+## Движение и бой
+Когти наносят порезы. Маленькое тело легче повреждается механическими атаками.
+
+<GuideSpeciesStats Species="Goblin"/>
+
+## Здоровье и среда
+Мышеловки срабатывают даже через обувь. Обливание водой или чистящим средством вызывает отрицательную реакцию.
+
+## Снаряжение и взаимодействие
+Помещаются в вещмешки, могут забираться в унитазы и почтовые терминалы. Говорят с гоблинским акцентом и имеют собственные кричалки.
+
+**Языки:** Андромеда Стандарт.
+
+## Особые характеристики
+### Поиск в мусоре
+Могут рыться в мусоропроводах и доставать оттуда мусор.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Vulpkanin.xml -->
+# Вульпканин
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobVulpkaninDummy"/></GuideEntityCards>
+
+Вульпканины — покрытые шерстью гуманоиды с чертами псовых.
+
+## Питание и дыхание
+Дышат кислородом и могут есть сырое мясо. Теобромин в шоколаде, чае и кофе и аллицин в луке и чесноке вызывают отравление.
+
+## Движение и бой
+Безоружные атаки когтями наносят порезы и ушибы.
+
+<GuideSpeciesStats Species="Vulpkanin"/>
+
+## Здоровье и среда
+Шерсть помогает переносить холод, но повышенная уязвимость к ожогам требует осторожности с огнём.
+
+## Снаряжение и взаимодействие
+По умолчанию имеют дейтеранопию; отображение можно отключить в настройках доступности.
+
+**Языки:** Андромеда Стандарт и канилунцт.
+
+## Особые характеристики
+### Тепловое зрение
+Действие **«Сфокусировать глаза»** включает тепловое зрение на [color=#73BFD3]**0,7 секунды**[/color]. Повторное применение доступно через [color=#73BFD3]**3 секунды**[/color].
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Harpy.xml -->
+# Гарпия
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobHarpyDummy"/></GuideEntityCards>
+
+Гарпии — лёгкие крылатые гуманоиды с развитой голосовой имитацией.
+
+## Питание и дыхание
+Дышат кислородом; цикл вдоха и выдоха занимает [color=#73BFD3]3 секунды[/color], поэтому баллон расходуется вдвое быстрее человеческого. *При наличии как минимум 0,*2 моля углекислого газа или миазмы дыхание затрудняется. Уйдите в очищенную атмосферу или подключите чистый кислород: около [color=#73BFD3]3 секунд[/color] восстанавливают насыщение крови. Могут есть сырое мясо, но отравляются теобромином (шоколад, чай, кофе) и аллицином (лук, чеснок).
+
+## Движение и бой
+Меньше человека и весят примерно вдвое меньше него, легче фелинида. Когти наносят уколы. Лёгкое тело уязвимее к ушибам и порезам.
+
+<GuideSpeciesStats Species="Harpy"/>
+
+## Здоровье и среда
+Чувствительны к загрязнению воздуха: проверяйте запас газа и состояние дыхания до дальнего выхода.
+
+## Снаряжение и взаимодействие
+Не носят обычные комбинезоны и начинают с юбкой-комбинезоном. По умолчанию имеют ультрафиолетовое зрение; его отображение отключается в настройках доступности.
+
+**Языки:** Андромеда Стандарт и валирийский.
+
+## Особые характеристики
+### Имитация и музыка
+В радиальном меню эмоций выберите звуковую эмоцию, затем голос расы или звук предмета. **«Своим голосом»** возвращает собственный голос. Доступна большая часть звуковой библиотеки. Для исполнения MIDI откройте ПКМ по себе и выберите инструмент; во время исполнения над головой появляются ноты.
+
+### Полёт
+Могут летать на планетах и картах с высотными уровнями. [Управление полётом](guide://Flight).
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Felinid.xml -->
+# Фелинид
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobFelinidDummy"/></GuideEntityCards>
+
+Фелиниды — небольшие гуманоиды с кошачьими ушами, мягкими лапами и когтями.
+
+## Питание и дыхание
+Дышат кислородом, могут есть сырое мясо. Теобромин (шоколад, чай, кофе) и аллицин (лук, чеснок) вызывают отравление. Могут съесть мышь или крысу из руки: это насыщает и восстанавливает способность выплёвывать комок шерсти.
+
+## Движение и бой
+Меньший размер усложняет попадание по ним, но их легче толкнуть. Когти наносят порезы и уколы. Мягкие лапы уменьшают вред и оглушение от падений; босиком могут ходить бесшумно.
+
+<GuideSpeciesStats Species="Felinid"/>
+
+## Здоровье и среда
+Лечение органического тела сочетается с особой способностью выводить некоторые вещества комком шерсти.
+
+## Снаряжение и взаимодействие
+Помещаются в вещмешки. Малый рост затрудняет переноску и перемещение тяжёлых существ; они не могут переносить они.
+
+**Языки:** Андромеда Стандарт и некомиметик.
+
+## Особые характеристики
+### Комок шерсти
+Расовое действие позволяет выплюнуть комок шерсти и вывести часть химикатов из кровотока. Поедание мышей и крыс восстанавливает способность.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Oni.xml -->
+# Они
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobOniDummy"/></GuideEntityCards>
+
+Они — крупные рогатые гуманоиды, физически сильные, но плохо приспособленные к точной стрельбе.
+
+## Питание и дыхание
+Дышат кислородом, едят обычную пищу и пьют воду.
+
+## Движение и бой
+Удары и оружие ближнего боя наносят больше урона: ушибы, порезы и ожоги +[color=#73BFD3]45%[/color]; уколы и удушение +[color=#73BFD3]20%[/color]. Повышенная выносливость помогает выдерживать оглушающие атаки.
+
+<GuideSpeciesStats Species="Oni"/>
+
+## Здоровье и среда
+Лучше переносят механические повреждения; увеличенный размер не заменяет медицинскую помощь.
+
+## Снаряжение и взаимодействие
+Легче переносят и толкают других существ, сложнее сдвигаются с места. Самого они тяжелее нести и тащить, а по крупному телу проще попасть. При стрельбе сильнее разброс. Время вскрытия дверей инструментом составляет [color=#73BFD3]60%[/color] обычного.
+
+**Языки:** Андромеда Стандарт и кела’эл.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Chitinid.xml -->
+# Хитинид
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobChitinid"/></GuideEntityCards>
+
+Хитиниды — тяжёлые насекомоподобные гуманоиды с прочным панцирем и особым обменом радиации.
+
+## Питание и дыхание
+Дышат кислородом и едят сырое мясо. Из-за активного метаболизма голодают примерно на [color=#73BFD3]33%[/color] быстрее человека.
+
+## Движение и бой
+Хорошо справляются с переноской и перемещением предметов. Панцирь повышает массу тела; холод дополнительно замедляет движения.
+
+<GuideSpeciesStats Species="Chitinid"/>
+
+## Здоровье и среда
+Имеют насекомью кровь. Обычный шприц не пробивает панцирь: для введения препаратов подходят гипоспреи. Особенно устойчивы к радиации, но уязвимее к электричеству и холоду.
+
+## Снаряжение и взаимодействие
+Имеют биологический источник света.
+
+**Языки:** Андромеда Стандарт.
+
+## Особые характеристики
+### Радиация и хитцит
+Небольшой радиационный урон восстанавливается естественным образом до определённого предела. При накоплении радиации её можно вывести в виде камня хитцита. Выделенный хитцит сам слабо радиоактивен.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Rodentia.xml -->
+# Раткин
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobRodentiaDummy"/></GuideEntityCards>
+
+Раткины — небольшие гуманоиды с чертами грызунов, приспособленные к тесным проходам.
+
+## Питание и дыхание
+Дышат кислородом и едят сырое мясо. Теобромин (шоколад, чай, кофе) и аллицин (лук, чеснок) вызывают отравление. Голодают примерно на [color=#73BFD3]33%[/color] быстрее человека.
+
+## Движение и бой
+Когти наносят порезы и ушибы. Маленькое тело уязвимо к механическим повреждениям.
+
+<GuideSpeciesStats Species="Rodentia"/>
+
+## Здоровье и среда
+Мышеловки срабатывают даже при надетой обуви.
+
+## Снаряжение и взаимодействие
+Помещаются в вещмешки и могут красться под столами, но не под дверями.
+
+**Языки:** Андромеда Стандарт и мышиный.
+
+## Особые характеристики
+### Поиск в мусоре
+Могут рыться в мусоропроводах и доставать мусор.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Demon.xml -->
+# Аркана
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobDemon"/></GuideEntityCards>
+
+Арканы — демоновидные гуманоиды с широким температурным диапазоном и особой кровью.
+
+## Питание и дыхание
+Дышат кислородом, нуждаются в пище и воде.
+
+## Движение и бой
+Могут тянуть предметы хвостом, не занимая руки. Безоружная атака наносит 2 единицы порезов и 3 уколов.
+
+<GuideSpeciesStats Species="Demon"/>
+
+## Здоровье и среда
+Имеют кровь аркан; небольшие ушибы и ожоги восстанавливаются пассивно. Температурный урон начинается при охлаждении тела ниже −[color=#73BFD3]18,15°C[/color] или нагреве выше [color=#73BFD3]69,85°C[/color]. Устойчивее к холоду, жару и токсинам, но уязвимее к клеточному урону.
+
+## Снаряжение и взаимодействие
+
+**Языки:** Андромеда Стандарт и кела’эл.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Avali.xml -->
+# Авали
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobAvaliDummy"/></GuideEntityCards>
+
+Авали — небольшие пернатые гуманоиды с кровью на аммиачной основе.
+
+## Питание и дыхание
+Дышат кислородом. Пищеварение допускает мясо, фрукты и продукты, подходящие рептилоидному рациону; пьют воду.
+
+## Движение и бой
+Лучше разгоняются в невесомости. Безоружные атаки наносят уколы.
+
+<GuideSpeciesStats Species="Avali"/>
+
+## Здоровье и среда
+Температурные пороги тела: холод ниже −[color=#73BFD3]77,75°C[/color], жара выше [color=#73BFD3]47°C[/color]. Лучше переносят холодовой урон и хуже — ожоги. Кровь на аммиачной основе.
+
+## Снаряжение и взаимодействие
+Небольшой размер позволяет помещаться в подходящие хранилища.
+
+**Языки:** Андромеда Стандарт и авали.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Ariral.xml -->
+# Арирал
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobAriralDummy"/></GuideEntityCards>
+
+Ариралы — высокие гуманоиды с собственным языком и биохимией крови и пота.
+
+## Питание и дыхание
+Дышат кислородом; органические органы усваивают пищу и воду.
+
+## Движение и бой
+Безоружный удар наносит ушибы и переносит на цель небольшое количество пота. Порог оглушения от выносливости ниже человеческого.
+
+<GuideSpeciesStats Species="Ariral"/>
+
+## Здоровье и среда
+Собственная кровь восстанавливается относительно быстро, но кровотечение затихает медленно. Сильно устойчивы к токсинам; чувствительнее к порезам, уколам, холоду, радиации и кровопотере.
+
+## Снаряжение и взаимодействие
+
+**Языки:** Андромеда Стандарт и ариральский.
+
+## Особые характеристики
+### Чужая биохимия
+Кровь арирала токсична для организма без соответствующей биохимии: отравление возможно уже от небольшого количества. Кровь и пот при достаточной дозе также вызывают тошноту, рвоту и зрительные эффекты у других видов. Сами ариралы защищены от этих эффектов своей физиологией.
+
+<GuideReagentEmbed Reagent="AriralBlood"/>
+<GuideReagentEmbed Reagent="AriralSweat"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Catalogue/Species/Shark.xml -->
+# Плафеим
+
+<GuideEntityCards><GuideEntityEmbed Entity="MobPlafDummy"/></GuideEntityCards>
+
+Плафеимы — акулоподобные гуманоиды с жаберно-лёгочным дыханием и чувствительностью к обезвоживанию.
+
+## Питание и дыхание
+Питаются органической пищей и нуждаются в воде. Для обычного дыхания поддерживайте водный баланс: при обезвоживании работа лёгких меняется и появляется опасность удушья.
+
+## Движение и бой
+Безоружная атака — укус с уроном уколами. Могут тянуть предметы, оставляя руки свободными.
+
+<GuideSpeciesStats Species="Shark"/>
+
+## Здоровье и среда
+Лёгкие-жабры отличаются от человеческих органов. Температурные пороги тела: холод ниже −[color=#73BFD3]73,15°C[/color], жара выше [color=#73BFD3]126,85°C[/color]; это не отменяет требований к давлению и дыханию.
+
+## Снаряжение и взаимодействие
+
+**Языки:** Андромеда Стандарт и плафеимский.
+
+## Особые характеристики
+### Водный баланс
+При снижении запаса жидкости меняется газовый метаболизм. Пейте до ухудшения дыхания и сообщайте медику о виде персонажа, если возникло удушье.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Start/Flight.xml -->
+# Полёт
+
+<GuideEntityCards><GuideTexture Entity="CEActionZFlightToggle" Caption="auto"/></GuideEntityCards>
+
+Некоторые крылатые расы, включая гарпий и нианов, способны летать на планетах и картах с высотными уровнями. **Используйте** действие полёта для перемещения между уровнями; поддержание полёта расходует выносливость.
+
+Расход равен **базовый расход расы × (масса тела / 70)**. Увеличение массы повышает расход; полёт не заменяет реактивный ранец в открытом космосе.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Implants/Head.xml -->
+# Голова: органы и импланты
+
+Мозг, глаза и нейростабилизатор занимают отдельные слоты. В каждом — один вариант.
+
+<GuideEntityCards><GuideTexture Entity="BasicCyberneticEyes" Caption="auto"/><GuideTexture Entity="OrganHumanityChipMk1" Caption="auto"/><GuideTexture Entity="OrganHumanityChipMk2" Caption="auto"/><GuideTexture Entity="OrganHumanityChipMk3" Caption="auto"/><GuideTexture Entity="PositronicBrain" Caption="auto"/></GuideEntityCards>
+
+## Глаза
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Биологические / биосинтетические глаза** · 0</Box><Box>Восстанавливают зрение без кибернетической нагрузки.</Box>
+<Box>**Кибернетические глаза** · 1</Box><Box>Защита глаз и иммунитет к вспышкам.</Box>
+<Box>**Кибернетические глаза с визором** · 1</Box><Box>Защита глаз и вспышек; должности, защита разума и криминальные статусы.</Box>
+<Box>**Кибернетические глаза с анализатором** · 1</Box><Box>Показывают здоровье биологических существ; без защиты глаз и иммунитета к вспышкам.</Box>
+<Box>**Кибернетические глаза диагностики** · 1</Box><Box>Показывают состояние неорганических и кремниевых существ; без защиты глаз и иммунитета к вспышкам.</Box>
+</GuideTable>
+
+## Нейростабилизаторы
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Mk I** · 0</Box><Box>Предел человечности +2.</Box>
+<Box>**Mk II** · 0</Box><Box>Предел +3.</Box>
+<Box>**Mk III** · 0</Box><Box>Предел +4.</Box>
+</GuideTable>
+
+Чипы заменяют друг друга, не складываются и не заменяют мозг или ускоритель ЦНС. Черты и последствия перегрузки описаны в [человечности](guide://ColossusHumanity).
+
+## Мозг и голова
+
+Мозг сохраняет сознание пациента. Пустая биосинтетическая голова не содержит его мозг. Позитронный мозг устанавливается только в подходящее тело; это не способ превратить обычного гуманоида в КПБ.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Medicine/Implants/Service.xml -->
+# Служебные импланты и инъекторы
+
+Не занимают органный слот подкожной брони. Активируются своими действиями; способ удаления зависит от конкретного импланта, а не от операции замены органа.
+
+## Служебные функции
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**ЭМИ** · 1</Box><Box>Импульс 2,75 м: отключение электроники до 10 с, потеря заряда устройств до [color=#73BFD3]2,7 МДж[/color]. Может затронуть собственную кибернетику.</Box>
+<Box>**Свобода** · 1</Box><Box>Снятие подходящих наручников по действию, до трёх применений. Не даёт иммунитет к захвату или оглушению.</Box>
+<Box>**SCRAM** · 2</Box><Box>Случайная телепортация без выбора безопасной точки.</Box>
+<Box>**Хранилище** · 1</Box><Box>Встроенный инвентарь 3×3; ограничения размеров предметов сохраняются.</Box>
+<Box>**Защита разума** · 0</Box><Box>Защита от поддерживаемых механикой воздействий на разум. Не навязывает лояльность организации.</Box>
+<Box>**Оповещения** · 0</Box><Box>Сигнал о крите и смерти в своём медицинском или фракционном канале. Передача координат зависит от отдельного датчика модели.</Box>
+<Box>**Переводчики** · 0</Box><Box>Понимание и/или речь для языков конкретной модели; проверьте оба направления и совместимость с видом.</Box>
+</GuideTable>
+
+## Лекарственные инъекторы
+
+<GuideEntityCards><GuideTexture Entity="AutosurgeonCombatMedipenFlatpack" Caption="auto"/><GuideTexture Entity="AutosurgeonStimulantFlatpack" Caption="auto"/></GuideEntityCards>
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Боевой медипен** · 1</Box><Box>[color=#73BFD3]25 ед.[/color] омнизина + [color=#73BFD3]5 ед.[/color] транексамовой кислоты в кровь.</Box>
+<Box>**Стимулятор** · 1</Box><Box>[color=#73BFD3]30 ед.[/color] стимуляторов в кровь.</Box>
+</GuideTable>
+
+У каждого **3 заряда**. Один восстанавливается за [color=#73BFD3]**40 с**[/color] последовательно: с нуля до трёх — [color=#73BFD3]**120 с**[/color]. Действия **«Ввести боевой медипен» / «Ввести стимулятор»** расходуют заряд. При переходе в крит укол автоматический, не чаще раза в **60 с** и только с доступным зарядом. Обычные эффекты и передозировки веществ сохраняются.
+
+## Пища и питьё
+
+<GuideTable Columns="2">
+<Box>**Модель · человечность**</Box><Box>**Характеристики и ограничения**</Box>
+<Box>**Питательный инъектор** · 0</Box><Box>[color=#73BFD3]15 ед.[/color] питательных веществ в желудок.</Box>
+<Box>**Водный инъектор** · 0</Box><Box>[color=#73BFD3]30 ед.[/color] воды в желудок.</Box>
+<Box>**Пивной инъектор** · 0</Box><Box>[color=#73BFD3]20 ед.[/color] пива в желудок.</Box>
+<Box>**Водочный инъектор** · 0</Box><Box>[color=#73BFD3]10 ед.[/color] водки в желудок.</Box>
+</GuideTable>
+
+У каждого **3 заряда**, восстановление одного — [color=#73BFD3]**180 с**[/color], последовательно. Укол включается вручную; в крите автоматически не срабатывает. Введение в желудок не заменяет введение в кровь; алкоголь сохраняет обычные эффекты.
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusMoney.xml -->
+# Деньги
+
+<GuideHub Root="ColossusMoney"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusExtraction.xml -->
+# Добыча
+
+<GuideHub Root="ColossusExtraction"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Activities/ColossusLaserDrill.xml -->
+# Лазерный бур
+
+<GuideEntityCards><GuideTexture Entity="LaserDrill" Caption="auto"/><GuideTexture Entity="StationLaserDrill" Caption="auto"/></GuideEntityCards>
+**Обычная установка:** разместите и закрепите её на экспедиционной планете, подключите к высоковольтной сети с запасом [color=#73BFD3]**100 кВт**[/color]. При достаточном питании она делает попытку добычи каждые [color=#73BFD3]**50 секунд**[/color]. Контакт с рудной жилой не нужен; требование грунта отключено, решётка допустима.
+
+**Продвинутая станционная установка:** требует [color=#73BFD3]**150 кВт**[/color], попытка каждую [color=#73BFD3]**1 секунду**[/color]; ограничения экспедиционной планетой нет. Её штатный вариант не позволяет обычное открепление инструментом.
+
+Каждая попытка использует случайную таблицу добычи. Обычная партия — 15 единиц одной руды; редкие результаты — отдельные алмаз, блюспейс-руда или бананиум. Пустой результат также входит в таблицу добычи. При остановке проверьте высоковольтный кабель и свободную мощность; у обычной установки — ещё и тип карты.
+
+Дальше отправьте руду в переработку, а полученные материалы — в [производственную цепочку](guide://MMC).
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusExpeditionEnemies.xml -->
+# Противники
+
+<GuideHub Root="ColossusExpeditionEnemies"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusExpeditionsHub.xml -->
+# Экспедиции
+
+<GuideHub Root="ColossusExpeditionsHub"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusRndHub.xml -->
+# РНД
+
+<GuideHub Root="ColossusRndHub"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusMechsHub.xml -->
+# Мехи
+
+<GuideHub Root="ColossusMechsHub"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusProduction.xml -->
+# Производство
+
+<GuideHub Root="ColossusProduction"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusBuilding.xml -->
+# Строительство
+
+<GuideHub Root="ColossusBuilding"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Power/ColossusTEG.xml -->
+# ТЭГ
+
+## Собрать ТЭГ: два независимых газовых контура
+ТЭГ превращает часть разницы тепловой энергии двух потоков в электричество. Нужны **центральный блок, два циркулятора, горячая и холодная петли, насосы, газ и внешнее питание**. Центральный блок потребляет [color=#73BFD3]**1 кВт из LV**[/color], а выдаёт мощность в **HV**: для запуска нужен заряженный накопитель или другой генератор.
+
+<GuideEntityCards><GuideEntityEmbed Entity="TegCirculator" Rotation="180" Caption=""/><GuideEntityEmbed Entity="TegCenter" Rotation="90" Caption=""/><GuideTexture Entity="TegCirculator" Caption=""/></GuideEntityCards>
+
+1. **Разместите** центральный блок между двумя циркуляторами и закрепите узлы. **Разверните** их соединительными сторонами к центру; осмотр центрального блока сообщает о неполном соединении.
+2. Соедините вход и выход одного циркулятора с **горячей петлёй**, второго — с **холодной**. Между этими петлями не должно быть общей газовой трубы. При исходном направлении циркулятора вход с севера, выход с юга; при повороте узла поворачиваются и порты.
+3. В каждой петле поставьте насос так, чтобы он забирал газ **с выхода циркулятора**, прогонял через нагреватель или охладитель и подавал **во вход циркулятора**. **Заполните** обе петли. На входе каждого циркулятора давление должно быть **выше**, чем на выходе: при обратном или нулевом перепаде газ не проходит.
+4. Горячую петлю нагревайте камерой горения или реакторным теплообменом. Холодную охлаждайте радиаторами в космосе или газовым охладителем. Сам электрический нагреватель расходует энергию сети: замкнутая установка из нагревателя и ТЭГ не является самостоятельным источником питания.
+5. Дайте [color=#73BFD3]1 кВт[/color] пускового питания и подключите HV к потребителю или зарядке СМЭС. Сверяйте температуры и давления на обоих циркуляторах, затем мощность при осмотре центрального блока и нагрузку сети.
+
+## От чего зависит выход ТЭГ
+Жёсткого порога горячей температуры нет. Нужны **поток с обеих сторон и разные температуры**. При равных температурах или отсутствии газа на одной стороне выход нулевой. Быстрая анимация циркулятора включается при перепаде свыше **500 кПа**; это визуальный порог, а не требование запуска.
+
+При **350 / 300 K** эффективный коэффициент отбора около [color=#73BFD3]**1,02%**[/color], при **600 / 300 K** — [color=#73BFD3]**20,2%**[/color], при **1000 / 300 K** — **49,5%**. Это доля доступной тепловой энергии потоков, а не обещанная мощность. Для одного и того же перепада температур больший расход и теплоёмкость газа увеличивают выход; нагревающаяся холодная петля его уменьшает. Базовый коэффициент ограничен **65%** и дополнительно снижается при малой разнице температур.
+
+Теплоёмкость, Дж/(моль·K): **O2 — 20; N2 и CO2 — 30; пар — 40; плюоксий — 80; плазма — 200**. N2 подходит для простой холодной петли; плюоксий переносит больше тепла на моль. Плазма в горячей замкнутой петле переносит примерно в **6,67 раза** больше тепла на моль, чем N2. Горение требует отдельной подачи топлива и кислорода; горячий теплоноситель сам по себе не заменяет источник тепла.
+
+*Если мощность падает,* сначала проверьте перепад давления на **обоих** циркуляторах, затем охлаждение холодной петли и нагрев горячей. *Если ТЭГ совсем молчит,* проверьте LV-питание и соединение трёх блоков. Низкая фактическая отдача при заряженных батареях может означать, что сеть сейчас не запрашивает больше мощности.
+
+[Камера горения](guide://TEG) · [Синтез газов](guide://ColossusAtmos) · [Ядерный реактор и турбина](guide://ShipyardNFROperation).
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Engineering/Power/ColossusEdison.xml -->
+# Электростанция Эдисона
+
+На станции есть солнечный контур с консолью и трекером, ТЭГ, СМЭС, подстанция и оборудование для хранения газа. Солнечную генерацию подключают через HV; ТЭГ запускают [двумя независимыми контурами](guide://ColossusTEG). Положение терминалов, труб и циркуляторов смотрите на плане.
+
+<GuideMap Map="/Maps/_NF/POI/edison.yml" Name="Электростанция Эдисона"/>
+
+[Запуск ТЭГ](guide://ColossusTEG).
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Ships/ColossusFireControlServers.xml -->
+# Серверы СУО
+
+<GuideCatalog Kind="server"/>
+
+[Подключение орудий](guide://WeaponsSystems).
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusElectricity.xml -->
+# Электроснабжение
+
+<GuideHub Root="ColossusElectricity"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusAtmosEquipment.xml -->
+# Оборудование
+
+<GuideHub Root="ColossusAtmosEquipment"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusGasSynthesis.xml -->
+# Синтез газов
+
+<GuideHub Root="ColossusGasSynthesis"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusAtmosMonitoring.xml -->
+# Мониторинг
+
+<GuideHub Root="ColossusAtmosMonitoring"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusAtmosHub.xml -->
+# Атмосфера
+
+<GuideHub Root="ColossusAtmosHub"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusGuides.xml -->
+# Руководства
+
+<GuideHub Root="ColossusGuides"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusMMCRoles.xml -->
+# ММС
+
+Компания работает с сырьём, промышленными компонентами и производственными заказами.
+
+[Модернизация станков](guide://IndustryMachineParts) · [Фабрикаторы](guide://IndustryFabricators) · [Добыча](guide://ColossusExtraction)
+
+<GuideHub Root="ColossusMMCRoles"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusTSFRoles.xml -->
+# ТСФ
+
+<GuideHub Root="ColossusTSFRoles"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusNordfallRoles.xml -->
+# Авангард Нордфолла
+
+<GuideHub Root="ColossusNordfallRoles"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusUSSPRoles.xml -->
+# СССП
+
+<GuideHub Root="ColossusUSSPRoles"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusMercenaries.xml -->
+# Наёмники
+
+Самостоятельные экипажи выбирают работу и оснащение под свои задачи.
+
+[Первый выход](guide://BeginnerGuide) · [Снаряжение](guide://StartingGear) · [Экипаж](guide://Hiring) · [Виды заработка](guide://Jobs).
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusSpecialRoles.xml -->
+# Особые роли
+
+<GuideHub Root="ColossusSpecialRoles"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusShipArmament.xml -->
+# Вооружение
+
+<GuideHub Root="ColossusShipArmament"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusReferenceEquipment.xml -->
+# Снаряжение
+
+<GuideHub Root="ColossusReferenceEquipment"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusReferenceResources.xml -->
+# Ресурсы
+
+<GuideHub Root="ColossusReferenceResources"/>
+
+Состав пород и распределение руды находятся в разделе [«Астероиды»](guide://LuaMAsteroids).
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Navigation/ColossusRecipes.xml -->
+# Рецепты
+
+<GuideHub Root="ColossusRecipes"/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Contextual/ColossusHome.xml -->
+# Сектор Колосс
+
+**Выберите** тему.
+
+<GuideHome/>
+<!-- /article -->
+
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/BlackMarket.xml -->
+# Бар «Веселый Роджер»
+
+Бар и узел снабжения с чёрным рынком, торговым оборудованием и верфями. Здесь можно пополнить запасы и подготовить следующий вылет.
+
+<GuideEntityCards><GuideTexture Entity="ComputerBlackMarketBankATM" Powered="true" Caption="auto"/><GuideTexture Entity="VendingMachineBooze" Caption="auto"/></GuideEntityCards>
+
+Покупки и оснащение проверяйте по ассортименту местных терминалов; для рейса за добычей есть экспедиционная верфь.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **6–8 км от центра сектора**.
+
+<GuideMap Map="/Maps/_LuaM/POI/BlackMarket.yml" Name="Бар «Веселый Роджер»"/>
+
+[Экспедиции](guide://Expeditions) · [Торговля](guide://CargoHauling)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Sevastopol.xml -->
+# Хранилище технологий «Севастополь»
+
+Исследовательский объект с терминалом технологических дисков и охранными синтетиками.
+
+<GuideEntityCards><GuideTexture Entity="ComputerTechnologyDiskTerminalPOI" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Подготовьтесь к боевому вылету. Проверяйте помещения и вывозите находки на свой корабль; наличие исследовательского оборудования не означает безопасный доступ.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **3.5–7.5 км от центра сектора**.
+
+<GuideMap Map="/Maps/_Mono/POI/sevastopol.yml" Name="Хранилище технологий «Севастополь»"/>
+
+[Исследования](guide://IndustryResearch) · [Бой](guide://ColossusCombat)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Mining.xml -->
+# Древняя Буровая Станция
+
+Заброшенная станция с добывающим оборудованием. В её помещениях встречаются ксеносы.
+
+<GuideEntityCards><GuideTexture Entity="MiningDrill" Caption="auto"/><GuideTexture Entity="LaserDrillFlatpack" Caption="auto"/></GuideEntityCards>
+
+Осмотрите объект перед разборкой и вывозом оборудования. Для добычи и переработки подготовьте инструменты и место под груз.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **5.5–9.5 км от центра сектора**.
+
+<GuideMap Map="/Maps/_Mono/POI/derelictdrillsite.yml" Name="Древняя Буровая Станция"/>
+
+[Добыча руды](guide://ColossusMining) · [Лазерный бур](guide://ColossusLaserDrill)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Hokkaido.xml -->
+# ММС «Хоккайдо»
+
+База ММС: производство компонентов, приём промышленных заказов и корпоративное снабжение.
+
+<GuideEntityCards><GuideTexture Entity="ComputerCargoBounty" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerResearchAndDevelopment" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Работу начинайте с выбора заказа и планирования сырья. Полная производственная цепочка и должности собраны в ветке ММС.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **2–8 км от центра сектора**.
+
+<GuideMap Map="/Maps/_LuaM/POI/hokkaidoLuaM.yml" Name="ММС «Хоккайдо»"/>
+
+[ММС: должности и работа](guide://ColossusMMCRoles) · [Заказы MIC](guide://MMC)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Edison.xml -->
+# Электростанция Эдисона
+
+Энергетический объект с солнечными панелями, ТЭГ и газовыми контурами.
+
+<GuideEntityCards><GuideTexture Entity="TegCenter" Caption="auto"/><GuideTexture Entity="TegCirculator" Caption="auto"/></GuideEntityCards>
+
+Схема станции и порядок запуска приведены в руководстве по электростанции; для настройки сетей используйте статью об электроснабжении.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **5.65–7.4 км от центра сектора**.
+
+<GuideMap Map="/Maps/_NF/POI/edison.yml" Name="Электростанция Эдисона"/>
+
+[План и запуск электростанции](guide://ColossusEdison) · [Электросети](guide://ColossusPower)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/ZvezdaLuaM.xml -->
+# Орбитальный Комплекс «Звезда»
+
+Комплекс с исследовательским и техническим оборудованием.
+
+<GuideEntityCards><GuideTexture Entity="ComputerTabletopResearchAndDevelopment" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerTabletopAnalysisConsole" Powered="true" Caption="auto"/></GuideEntityCards>
+
+При исследовании проверяйте питание, атмосферу и состояние помещений; найденное оборудование сверяйте с задачами своего экипажа.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **4–10 км от центра сектора**.
+
+<GuideMap Map="/Maps/_LuaM/POI/Dungeons/ZvezdaLuaM.yml" Name="Орбитальный Комплекс «Звезда»"/>
+
+[Исследования](guide://IndustryResearch) · [Артефакты](guide://ColossusArtifacts)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/ZetaNode.xml -->
+# Узел «Зета»
+
+Небольшой объект у центральной области сектора.
+
+<GuideEntityCards><GuideTexture Entity="SellOnlyCarrierComputer" Caption="auto"/></GuideEntityCards>
+
+**Используйте** его отметку как ориентир; состояние помещений проверяйте перед работой внутри.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **0.5–0.75 км от центра сектора**.
+
+<GuideMap Map="/Maps/_Mono/POI/zetanode.yml" Name="Узел «Зета»"/>
+
+[Навигация](guide://ColossusOrientation)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/LPBravo.xml -->
+# Прослушка «Браво»
+
+Удалённая база с оборудованием Синдиката, средствами наблюдения и верфью.
+
+<GuideEntityCards><GuideTexture Entity="ComputerShipyardSyndicate" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerAdvancedRadar" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Обычная отметка БСС скрыта. Для поиска и подхода нужны координаты или обнаружение на радаре; не рассчитывайте найти базу по одному списку маяков.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **15–17 км от центра сектора**.
+
+<GuideMap Map="/Maps/_LuaM/POI/lpbravoLuaM.yml" Name="Прослушка «Браво»"/>
+
+[Координаты и метки](guide://ColossusOrientation) · [Контрабанда](guide://LuaMContraband)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/AnomalousLab.xml -->
+# Лаборатория Аномалий
+
+Исследовательский объект с оборудованием РНД.
+
+<GuideEntityCards><GuideTexture Entity="ComputerTabletopResearchAndDevelopment" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Изучайте находки с помощью подходящих анализаторов; порядок работы с артефактами и аномалиями отличается.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **7–10.8 км от центра сектора**.
+
+<GuideMap Map="/Maps/_Mono/POI/anomalouslab.yml" Name="Лаборатория Аномалий"/>
+
+[Артефакты](guide://ColossusArtifacts) · [Аномалии](guide://ColossusAnomalies)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Tinnia.xml -->
+# Ресторан Тиннии
+
+Место отдыха и снабжения с кухонным, барным и сервисным оборудованием.
+
+<GuideEntityCards><GuideTexture Entity="VendingMachineBoozePOI" Caption="auto"/><GuideTexture Entity="VendingMachineChefvend" Caption="auto"/></GuideEntityCards>
+
+**Используйте** местные автоматы для пополнения запасов, а рецепты ищите в справочниках еды и напитков.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **3.4–5.8 км от центра сектора**.
+
+<GuideMap Map="/Maps/_LuaM/POI/TiniaLuaM.yml" Name="Ресторан Тиннии"/>
+
+[Еда](guide://FoodRecipes) · [Напитки](guide://Drinks)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/CaseysCasino.xml -->
+# Безумное Казино Кэсси
+
+Развлекательный объект с игровым оборудованием и автоматами снабжения.
+
+<GuideEntityCards><GuideTexture Entity="VendingMachineGames" Caption="auto"/><GuideTexture Entity="VendingMachineBooze" Caption="auto"/></GuideEntityCards>
+
+Ассортимент и состояние оборудования проверяйте на месте.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — **4.25–5.6 км от центра сектора**.
+
+<GuideMap Map="/Maps/_NF/POI/caseyscasino.yml" Name="Безумное Казино Кэсси"/>
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Omnichurch.xml -->
+# Церковь
+
+Объект с религиозным и сервисным оборудованием.
+
+<GuideEntityCards><GuideTexture Entity="VendingMachineChapel" Caption="auto"/></GuideEntityCards>
+
+Состав помещений и подходы смотрите на плане.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — **4.2–6.9 км от центра сектора**.
+
+<GuideMap Map="/Maps/_NF/POI/beacon.yml" Name="Церковь"/>
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/ThePit.xml -->
+# Бойцовская Яма
+
+Развлекательный объект с ареной и снабжением для посетителей.
+
+<GuideEntityCards><GuideTexture Entity="VendingMachineBoxingDrobe" Caption="auto"/><GuideTexture Entity="VendingMachineCiviMedPlus" Caption="auto"/></GuideEntityCards>
+
+Наличие арены не заменяет правила сервера и договорённости участников.
+
+## Как найти
+
+Объект размещается при начале смены. Ориентировочная область поиска — **5.2–6.2 км от центра сектора**.
+
+<GuideMap Map="/Maps/_NF/POI/arena.yml" Name="Бойцовская Яма"/>
+
+[Правила сервера](guide://LuaMRuleset)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Grifty.xml -->
+# Заправка Грифти
+
+Разборочный узел с топливным снабжением, утильной верфью и сервисными автоматами.
+
+<GuideEntityCards><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/><GuideTexture Entity="ComputerTabletopShipyardScrap" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Один из вариантов разборочного узла сектора; альтернативой служит заброшенный МаКарго.
+
+## Как найти
+
+При начале смены выбирается один из вариантов разборочного узла. Ориентировочная область поиска — **6.25–8.6 км от центра сектора**.
+
+<GuideMap Map="/Maps/_NF/POI/grifty.yml" Name="Заправка Грифти"/>
+
+[Закрепление обломков](guide://GridClaimer)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/McHobo.xml -->
+# Заброшенный МаКарго
+
+Разборочный объект с утильной верфью и запасами топлива.
+
+<GuideEntityCards><GuideTexture Entity="ComputerShipyardScrap" Powered="true" Caption="auto"/><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/></GuideEntityCards>
+
+Альтернативный вариант разборочного узла: в другой смене вместо него может оказаться заправка Грифти.
+
+## Как найти
+
+При начале смены выбирается один из вариантов разборочного узла. Ориентировочная область поиска — **6.25–7.6 км от центра сектора**.
+
+<GuideMap Map="/Maps/_NF/POI/mchobo.yml" Name="Заброшенный МаКарго"/>
+
+[Закрепление обломков](guide://GridClaimer)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Jupiter.xml -->
+# Разрушенный Крейсер Юпитер
+
+Крупный разрушенный корабль с оставшимся оборудованием и опасными обитателями.
+
+<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/><GuideTexture Entity="VendingMachineFuelVend" Caption="auto"/></GuideEntityCards>
+
+Подготовьте защиту от вакуума и вооружение. **Проверьте** путь отхода, прежде чем углубляться в корпус.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — **15–17.5 км от центра сектора**.
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/derelictjupiter.yml" Name="Разрушенный Крейсер Юпитер"/>
+
+[Бой](guide://ColossusCombat) · [Ремонт корабля](guide://ColossusShipRepair)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Lancelot.xml -->
+# Шахтёрский Аванпост «Ланцелот»
+
+Дальний шахтёрский объект с исследовательским и торговым оборудованием.
+
+<GuideEntityCards><GuideTexture Entity="ComputerAnalysisConsole" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerResearchAndDevelopment" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Внутри встречаются монолитные существа; для осмотра и вывоза находок подготовьте боевой экипаж.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — **10–20 км от центра сектора**.
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/lancelot.yml" Name="Шахтёрский Аванпост «Ланцелот»"/>
+
+[Добыча](guide://ColossusMining) · [Артефакты](guide://ColossusArtifacts)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Polaris.xml -->
+# Центр Биологического Исследования «Полярис»
+
+Дальний исследовательский комплекс с медицинским и научным оборудованием.
+
+<GuideEntityCards><GuideTexture Entity="ComputerResearchAndDevelopment" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerTabletopAnalysisConsole" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Присутствуют вооружённые противники. Осматривайте помещения последовательно и оставьте путь для эвакуации.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — **10–20 км от центра сектора**.
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/polaris.yml" Name="Центр Биологического Исследования «Полярис»"/>
+
+[Медицина](guide://Medical) · [Бой](guide://ColossusCombat)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/AutomatedTanker.xml -->
+# Автоматический Секториальный Танкер
+
+Удалённое судно с газовыми и атмосферными системами.
+
+<GuideEntityCards><GuideTexture Entity="ComputerAtmosMonitoring" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/></GuideEntityCards>
+
+При исследовании учитывайте состояние газовых отсеков и присутствие монолитных существ.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — **10–20 км от центра сектора**.
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/ruin_tanker.yml" Name="Автоматический Секториальный Танкер"/>
+
+[Атмосфера](guide://ColossusAtmosHub)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Zenith.xml -->
+# АСЗ СК-395 «Зенит»
+
+Корабль из группы стартовых объектов с вооружением и корабельными системами.
+
+<GuideEntityCards><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/><GuideTexture Entity="WeaponTurretCharon" Caption="auto"/></GuideEntityCards>
+
+Это отдельный объект сектора: не путайте его с кораблями АСЗ, прибывающими в ходе событий.
+
+## Как найти
+
+Объект может быть выбран при начале смены; он встречается не в каждом секторе. Ориентировочная область поиска — **20–25 км от центра сектора**.
+
+<GuideMap Map="/Maps/_Mono/POI/Dungeons/zenith_poi.yml" Name="АСЗ СК-395 «Зенит»"/>
+
+[Событийные корабли АСЗ](guide://ColossusEventADSFleet) · [Предтечи и АСЗ](guide://ColossusPrecursors)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/TradeDepots.xml -->
+# Торговые аванпосты A–D
+
+Четыре торговых аванпоста принимают грузы с назначением **A, B, C или D**. Буква входит в название отметки на карте и определяет, куда доставлять конкретную партию.
+
+<GuideEntityCards><GuideTexture Entity="ComputerPalletConsoleNFHighMarket" Powered="true" Caption="auto"/><GuideTexture Entity="VendingMachineTraderDepot" Caption="auto"/></GuideEntityCards>
+
+Перед вылетом сверяйте назначение в манифесте и букву аванпоста. На месте проверьте оценку паллеты перед продажей; одинаковый внешний вид терминалов не означает одинаковое назначение груза. Аванпосты располагаются примерно в **8–10 км от центра** и имеют два варианта планировки.
+
+<GuideMap Map="/Maps/_NF/POI/cargodepot.yml" Name="Торговый аванпост: первый вариант"/>
+
+<GuideMap Map="/Maps/_NF/POI/cargodepotalt.yml" Name="Торговый аванпост: второй вариант"/>
+
+[Покупка, доставка и продажа грузов](guide://CargoHauling)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Objects/Beacons.xml -->
+# Маяки астероидных скоплений
+
+**INSO-357k** и **LINEAR-21** — отдельные скопления с собственными маяками. Их подписи помогают найти район добычи на карте; сам маяк не показывает точные залежи внутри каждого астероида. **Используйте** сканер минералов.
+
+<GuideMap Map="/Maps/_Mono/POI/beaconstation_a.yml" Name="Маяк INSO-357k"/>
+
+<GuideMap Map="/Maps/_Mono/POI/beaconstation_wilds.yml" Name="Маяк LINEAR-21"/>
+
+[Астероиды и породы](guide://LuaMAsteroids) · [Добыча руды](guide://ColossusMining)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/SyndicateCache.xml -->
+# Хранилище оружия Синдиката
+
+Вооружённый объект с запасами оружия и охраной.
+
+<GuideEntityCards><GuideTexture Entity="WeaponTurretSyndicate" Caption="auto"/></GuideEntityCards>
+
+В объявлениях называется **«Хранилище оружия Синдиката»**. Появление возможно примерно с **40-й минуты** смены. Перед входом осмотрите подходы: внутри есть вооружённые бойцы и турели.
+
+**Время существования — 40 минут.** Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект. [Закрепление](guide://GridClaimer) сохраняет объект после окончания события.
+
+<GuideMap Map="/Maps/_LuaM/Bluespace/syndieasteroid.yml" Name="Хранилище оружия Синдиката"/>
+
+[Другие события](guide://LuaMGameModes) · [Подготовка к бою](guide://ColossusCombat)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/TSFVault.xml -->
+# Хранилище ТСФ
+
+Защищённое хранилище с оборудованием и ценностями ТСФ.
+
+<GuideEntityCards><GuideTexture Entity="DataChitStorageServer" Caption="auto"/></GuideEntityCards>
+
+В объявлениях называется **«Безопасное хранилище ТСФ»**. Появление возможно примерно с **часа** после начала смены. Главный объект внутри — сервер хранения дисков с данными. Его сохранность важна для ТСФ.
+
+**Время существования — 40 минут.** Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект.
+
+<GuideMap Map="/Maps/_NF/Bluespace/vault.yml" Name="Хранилище ТСФ"/>
+
+[Другие события](guide://LuaMGameModes) · [Подготовка к бою](guide://ColossusCombat)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/SyndicateShuttle.xml -->
+# Шаттл Синдиката
+
+Неопознанное судно с вооружённым экипажем и турелями.
+
+<GuideEntityCards><GuideTexture Entity="WeaponTurretSyndicate" Caption="auto"/></GuideEntityCards>
+
+Появление возможно примерно с **80-й минуты**. Объявление сообщает о неопознанном объекте; определяйте тип судна по осмотру и обстановке. Для абордажа подготовьте защиту, запас воздуха и эвакуационный маршрут.
+
+**Время существования — 40 минут.** Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект.
+
+<GuideMap Map="/Maps/_NF/Bluespace/syndieftlintercept.yml" Name="Шаттл Синдиката"/>
+
+[Другие события](guide://LuaMGameModes) · [Подготовка к бою](guide://ColossusCombat)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/PreFracture.xml -->
+# Судно до Раскола
+
+Неопознанное судно с боевыми синтетиками и турелями.
+
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Появление возможно примерно со **100-й минуты**. Не путайте его с отдельными потоками кораблей АСЗ: у события собственная карта и ограничение времени.
+
+**Время существования — 40 минут.** Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект.
+
+<GuideMap Map="/Maps/_Mono/Bluespace/prefracture.yml" Name="Судно до Раскола"/>
+
+[Другие события](guide://LuaMGameModes) · [Подготовка к бою](guide://ColossusCombat)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/MonolithFragments.xml -->
+# Фрагменты Монолита
+
+Небольшие монолитные объекты нескольких форм.
+
+<GuideEntityCards><GuideTexture Entity="MonolithicCrystalLarge" Caption="auto"/></GuideEntityCards>
+
+Поток событий может начаться примерно с **10-й минуты**. Встречаются варианты арены, вытянутого фрагмента и корабля; геометрия подходов отличается. Приготовьтесь к исследованию опасного объекта, а не к обычной добыче астероидной породы.
+
+**Время существования — 40 минут.** Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект. [Закрепление](guide://GridClaimer) сохраняет объект после окончания события.
+
+<GuideMap Map="/Maps/_Mono/Monolithic/monolithicasteroidsmallarena.yml" Name="Фрагменты Монолита: вариант 1"/>
+
+<GuideMap Map="/Maps/_Mono/Monolithic/monolithicasteroidsmallspindle.yml" Name="Фрагменты Монолита: вариант 2"/>
+
+<GuideMap Map="/Maps/_Mono/Monolithic/monolithicasteroidsmallship.yml" Name="Фрагменты Монолита: вариант 3"/>
+
+[Другие события](guide://LuaMGameModes) · [Подготовка к бою](guide://ColossusCombat)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/Planetoids.xml -->
+# Планетоиды
+
+Временные астероидные миры для добычи и исследования.
+
+Планетоид создаётся целиком при событии: у него собственная местность и случайное название. Поток может начаться примерно с **10-й минуты**; объявления приходят по каналу снабжения. Это не экспедиция, запускаемая с экспедиционной консоли.
+
+<GuideEntityCards><GuideTexture Entity="MiningDrill" Caption="auto"/><GuideTexture Entity="OreBag" Caption="auto"/></GuideEntityCards>
+
+## Разновидности
+
+<GuideTable Columns="2">
+<Box>**Тип**</Box><Box>**Что распознать**</Box>
+<Box>Базальтовый</Box><Box>Базальтовая местность.</Box>
+<Box>Хромитовый</Box><Box>Хромитовая местность.</Box>
+<Box>Снежный</Box><Box>Снежная поверхность.</Box>
+<Box>Пещерный</Box><Box>Пещерная местность и замкнутые проходы.</Box>
+<Box>Мусорный</Box><Box>Местность из лома и обломков.</Box>
+</GuideTable>
+
+Тип местности не гарантирует конкретную партию добычи. **Возьмите** инструменты, защиту от внешней среды и запас воздуха; перед удалением от корабля запомните точку возвращения.
+
+**Время существования — 40 минут.** Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект. [Закрепление](guide://GridClaimer) сохраняет объект после окончания события.
+
+[Добыча и переработка](guide://ColossusMining) · [Обычные астероиды](guide://LuaMAsteroids)
+
+[Другие события](guide://LuaMGameModes)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/Salvage.xml -->
+# Обломки кораблей
+
+Блюспейс-шторм приносит сразу три повреждённых корабля.
+
+<GuideEntityCards>
+<GuideTexture Entity="ShipRepairDevice" Caption="Восстановить корпус"/>
+<GuideTexture Entity="ShipRepairDeviceAmmo" Caption="Запас ремонта"/>
+</GuideEntityCards>
+
+Поток может начаться примерно с **7-й минуты**; предупреждения передаются по инженерному каналу. Осмотрите корпус, заберите полезное имущество и проверьте возможность закрепления. Обломки отличаются планировкой и сохранностью; не рассчитывайте на исправное питание и герметичность.
+
+**Время существования — 40 минут.** Перед исчезновением приходит предупреждение. Заранее вывозите людей и добычу: присутствие экипажа не удерживает объект. [Закрепление](guide://GridClaimer) сохраняет объект после окончания события.
+
+[Закрепление](guide://GridClaimer) · [Ремонт корабля](guide://ColossusShipRepair)
+
+[Другие события](guide://LuaMGameModes)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/ADSFleet.xml -->
+# Корабли АСЗ
+
+Автоматизированные оборонительные суда Предтеч прибывают в режиме **«Наследие»**.
+
+Первый поток может начаться примерно с **часа**, усиленный — с **трёх часов** смены. Появление зависит от количества игроков и работы планировщика; не все суда обязаны прибыть за одну смену.
+
+В первом потоке встречаются **Wyrm**, **Zenith** и **Nebula**, в усиленном к ним добавляются **Zenith-E**, **Razor-N** и **Wyvern**. Их размеры, вооружение и предупреждения различаются. Сообщение о **Razor-N** предупреждает о ядерном заряде; сообщение о капитальном корабле требует отдельной подготовки к бою.
+
+Это самостоятельные корабельные угрозы, а не обычный 40-минутный блюспейс-обломок. Не ждите их исчезновения по общему таймеру временных объектов.
+
+[Предтечи и АСЗ](guide://ColossusPrecursors) · [Охота на дронов](guide://LuaMDroneLoot)
+
+[Другие события](guide://LuaMGameModes) · [Подготовка к бою](guide://ColossusCombat)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/AsakimShips.xml -->
+# Корабли Азакимов
+
+Малые и средние корабли воинов Азакимов в режиме **«Наследие»**.
+
+<GuideEntityCards><GuideTexture Entity="ComputerShuttle" Powered="true" Caption="auto"/><GuideTexture Entity="ComputerGunneryConsole" Powered="true" Caption="auto"/></GuideEntityCards>
+
+Поток может начаться примерно с **часа** смены. Для малого корабля требуется не менее **40 игроков**, для среднего — **60**; это условия появления, а не время гарантированного прибытия. Не относите к ним общий таймер блюспейс-объектов.
+
+[Происхождение и назначение Азакимов](guide://ColossusPrecursors)
+
+<GuideMap Map="/Maps/_Mono/ShuttleEvent/asakim_small.yml" Name="Корабли Азакимов: вариант 1"/>
+
+<GuideMap Map="/Maps/_Mono/ShuttleEvent/asakim_medium.yml" Name="Корабли Азакимов: вариант 2"/>
+
+[Другие события](guide://LuaMGameModes) · [Подготовка к бою](guide://ColossusCombat)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/Deliveries.xml -->
+# Блюспейс-посылки
+
+Блюспейс-посылки появляются внутри одной из станций сектора. Объявление сообщает о доставке; искать отдельный корабль на карте не требуется.
+
+<GuideEntityCards>
+<GuideTexture Entity="CrateTradeSecureNormal" Caption="Грузовая доставка"/>
+<GuideTexture Entity="CrateFoodMcCargo" Caption="Доставка МаКарго"/>
+</GuideEntityCards>
+
+- **Грузовая доставка** приносит от двух до пяти случайных грузов.
+- **МаКарго** доставляет ящик еды. Событие возможно с 20-й минуты при числе игроков не более 20.
+- **Посылка Синдиката** приносит один ящик с излишками снаряжения. Появление возможно с часа после начала смены.
+
+Место доставки выбирается случайно. Осмотрите помещения станции после объявления.
+
+[Другие события](guide://LuaMGameModes)
+<!-- /article -->
+
+<!-- article: Resources/ServerInfo/_LuaM/Guidebook/Sector/Events/Index.xml -->
+# События
+
+В течение смены в сектор прибывают временные объекты, суда и планетоиды. Объявления помогают узнать о появлении и приближении окончания события. Стартовые станции и руины собраны отдельно в [объектах](guide://LuaMWorldObjects).
+
+Погода туманностей также меняется в течение смены: примерно каждые [color=#73BFD3]**40–60 минут**[/color] опасные эффекты переходят в другие облака. [Как распознать опасную зону и выбраться](guide://ColossusNebulae).
+
+[color=#E5AD68]**Время в статьях — начало возможного появления, а не расписание.**[/color] Планировщик выбирает события с паузами и учитывает их условия. В **«Стандарте»** работают дополнительные потоки некоторых блюспейс-объектов и фрагментов Монолита; в **«Наследии»** появляются корабли АСЗ и Азакимов.
+
+Не переносите таймер одного события на другое. Для временных объектов **заранее готовьте эвакуацию** и сверяйтесь с предупреждением; [color=#E5AD68]наличие людей на борту не удерживает исчезающий объект.[/color]
+
+<GuideHub Root="LuaMGameModes"/>
 <!-- /article -->

@@ -141,6 +141,8 @@
   loadouts:
   - MercenaryClothingEyesGlassesMercenary
   - MercenaryClothingEyesGlassesSunglasses
+  - MercenaryClothingEyesGlassesNoir # LuaM
+  - MercenaryClothingEyesBlindfoldSheer # LuaM
   subgroups:
   - MonoMercenaryBallisticGoggles # Mono
   - PilotGlasses
