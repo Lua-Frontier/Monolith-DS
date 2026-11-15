@@ -212,6 +212,8 @@
   - type: BallisticAmmoProvider
     capacity: 8 # 7->8 Mono
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: GunSpreadModifier # LuaM: reinforced, as it is used by the CC
+    spread: 0.6
   - type: Gun
     fireRate: 2.2 # Mono
     damageModifier: 1.3
