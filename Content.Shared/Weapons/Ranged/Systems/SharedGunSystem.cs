@@ -466,11 +466,17 @@ public abstract partial class SharedGunSystem : EntitySystem
             gun.BurstActivated = false;
             gun.BurstShotsCount = 0;
             gun.ShotCounter = 0;
-            gun.NextFire = TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.NextFire.TotalSeconds));
+            gun.NextFire = attemptEv.KeepCooldown ? lastFire : TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.NextFire.TotalSeconds)); // LuaM
             return;
         }
 
         var fromCoordinates = Transform(user).Coordinates;
+        // LuaM-start
+        var luamOrigin = new Content.Shared._LuaM.Weapons.LuaMGetShootOriginEvent(gunUid, toCoordinates.Value);
+        RaiseLocalEvent(user, ref luamOrigin);
+        if (luamOrigin.Origin is { } luamFrom)
+            fromCoordinates = luamFrom;
+        // LuaM-end
         // Remove ammo
         var ev = new TakeAmmoEvent(shots, new List<(EntityUid? Entity, IShootable Shootable)>(), fromCoordinates, user, true); // Frontier: add intent to fire
 
@@ -945,7 +951,10 @@ public record struct BoltStateChangedEvent(EntityUid User, bool Closed); //Mono
 /// <param name="Cancelled">Set this to true if the shot should be cancelled.</param>
 /// <param name="ThrowItems">Set this to true if the ammo shouldn't actually be fired, just thrown.</param>
 [ByRefEvent]
-public record struct AttemptShootEvent(EntityUid User, string? Message, bool Cancelled = false, bool ThrowItems = false);
+public record struct AttemptShootEvent(EntityUid User, string? Message, bool Cancelled = false, bool ThrowItems = false)
+{
+    public bool KeepCooldown; // LuaM: a cancelled shot that was never fired keeps the reload, e.g. a turret still turning
+}
 
 /// <summary>
 ///     Raised directed on the gun after firing.

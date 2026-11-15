@@ -22,6 +22,8 @@ public sealed partial class VehicleDeployActionEvent : InstantActionEvent;
 
 public sealed partial class VehicleSwitchWeaponActionEvent : InstantActionEvent;
 
+public sealed partial class VehicleSwitchShellActionEvent : InstantActionEvent;
+
 [Serializable, NetSerializable]
 public sealed partial class HardpointInstallDoAfterEvent : DoAfterEvent
 {
@@ -78,6 +80,12 @@ public sealed class VehicleTurretAimEvent(NetEntity vehicle, NetCoordinates coor
 
 [ByRefEvent]
 public record struct VehicleCanMoveEvent(bool Cancelled = false);
+
+[ByRefEvent]
+public readonly record struct VehicleCrashEvent(float Speed, System.Numerics.Vector2 Direction);
+
+[ByRefEvent]
+public record struct VehicleEngineStartAttemptEvent(EntityUid Driver, bool Cancelled = false);
 
 [ByRefEvent]
 public record struct VehicleSeatsChangedEvent(EntityUid Occupant, VehicleSeatRole Role, bool Seated);

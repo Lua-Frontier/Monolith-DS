@@ -1,5 +1,8 @@
 ﻿using Content.Server.Explosion.Components;
+using System.Numerics; // LuaM
 using Content.Server.Weapons.Ranged.Systems;
+using Content.Shared.Projectiles; // LuaM
+using Robust.Shared.Physics.Components; // LuaM
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
@@ -56,6 +59,14 @@ public sealed partial class ProjectileGrenadeSystem : EntitySystem
     private void FragmentIntoProjectiles(EntityUid uid, ProjectileGrenadeComponent component)
     {
         var grenadeCoord = _transformSystem.GetMapCoordinates(uid);
+        // LuaM-start
+        if (component.ConeDegrees > 0f)
+        {
+            FragmentIntoCone(uid, component, grenadeCoord);
+            return;
+        }
+        // LuaM-end
+
         var shootCount = 0;
         var totalCount = component.Container.ContainedEntities.Count + component.UnspawnedCount;
         var segmentAngle = 5; // Mono
@@ -79,9 +90,48 @@ public sealed partial class ProjectileGrenadeSystem : EntitySystem
             // slightly uneven, doesn't really change much, but it looks better
             var direction = angle.ToVec().Normalized();
             var velocity = _random.NextVector2(component.MinVelocity, component.MaxVelocity);
-            _gun.ShootProjectile(contentUid, direction, velocity, uid, null);
+            _gun.ShootProjectile(contentUid, direction, velocity, uid, CompOrNull<Content.Shared.Projectiles.ProjectileComponent>(uid)?.Shooter); // LuaM: fragments keep the real shooter
+            DetachFromSource(uid, contentUid); // LuaM
         }
     }
+
+    // LuaM-start
+    private void FragmentIntoCone(EntityUid uid, ProjectileGrenadeComponent component, MapCoordinates coords)
+    {
+        var forward = TryComp<PhysicsComponent>(uid, out var body) && body.LinearVelocity.LengthSquared() > 0.01f
+            ? body.LinearVelocity.ToWorldAngle()
+            : _transformSystem.GetWorldRotation(uid) - (CompOrNull<ProjectileComponent>(uid)?.Angle ?? Angle.Zero);
+        var half = component.ConeDegrees / 2f;
+        var shooter = CompOrNull<ProjectileComponent>(uid)?.Shooter;
+
+        while (TrySpawnContents(coords, component, out var contentUid))
+        {
+            var angle = forward + Angle.FromDegrees(_random.NextFloat(-half, half));
+            var speed = _random.NextFloat(component.MinVelocity, component.MaxVelocity);
+            _gun.ShootProjectile(contentUid, angle.ToWorldVec(), Vector2.Zero, uid, shooter, speed);
+            DetachFromSource(uid, contentUid);
+        }
+    }
+
+    // -- Разорвавшийся снаряд сразу удаляется: ссылка на него в осколке ломает отправку состояния, поэтому оружием осколка
+    // -- становится пушка, из которой стреляли, или сам стрелок
+    private void DetachFromSource(EntityUid source, EntityUid fragment)
+    {
+        if (!TryComp<ProjectileComponent>(fragment, out var projectile))
+            return;
+
+        var parent = CompOrNull<ProjectileComponent>(source);
+        var weapon = parent?.Weapon is { } w && w != source && !TerminatingOrDeleted(w) ? w : parent?.Shooter;
+        if (weapon == source)
+            weapon = null;
+
+        projectile.Weapon = weapon;
+        if (projectile.Shooter == source)
+            projectile.Shooter = weapon;
+
+        Dirty(fragment, projectile);
+    }
+    // LuaM-end
 
     /// <summary>
     /// Spawns one instance of the fill prototype or contained entity at the coordinate indicated

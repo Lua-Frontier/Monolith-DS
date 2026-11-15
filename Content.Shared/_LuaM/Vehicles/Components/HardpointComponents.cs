@@ -76,13 +76,13 @@ public sealed partial class HardpointItemComponent : Component
     public float StructureDamageMultiplier = 1f;
 }
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class VehicleAmmoBoxComponent : Component
 {
     [DataField(required: true)]
     public string AmmoType = string.Empty;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public int Amount = 500;
 
     [DataField]
@@ -106,6 +106,12 @@ public sealed partial class VehicleTurretComponent : Component
 
     [DataField]
     public Dictionary<Direction, Vector2> PixelOffsets = new();
+
+    [DataField]
+    public float MuzzleLength = 0.5f;
+
+    [DataField]
+    public string Sprite = "_LuaM/Structures/Vehicles/Humvee/humvee.rsi";
 
     [DataField, AutoNetworkedField]
     public Angle LocalRotation;

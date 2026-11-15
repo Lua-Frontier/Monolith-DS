@@ -3,8 +3,13 @@
  * Copyright (c) 2026 LuaCorp Contributors
  * See AGPLv3.txt for details.
  */
+using System.IO;
 using System.Linq;
 using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
+using Robust.Shared.ContentPack;
+using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Network;
@@ -48,7 +53,9 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     private readonly HashSet<ICommonSession> _waiting = new();
     private readonly Dictionary<NetUserId, TimeSpan> _lastRequest = new();
+    [Dependency] private IResourceManager _resources = default!;
     private IEnumerator<bool>? _builder;
+    private CancellationTokenSource? _parseCancel;
     private GuidebookCatalog? _building;
     private GuidebookCatalog? _cached;
     private string? _cachedPreset;
@@ -73,6 +80,7 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
     private void ResetCache(bool dropWaiters = false)
     {
         _builder?.Dispose(); _builder = null; _building = null; _cached = null;
+        _parseCancel?.Cancel(); _parseCancel = null;
         if (dropWaiters) _waiting.Clear();
         else _waiting.RemoveWhere(s => !s.Channel.IsConnected);
         _lastRequest.Clear();
@@ -121,7 +129,12 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
             var budget = System.Diagnostics.Stopwatch.StartNew();
             while (budget.Elapsed.TotalMilliseconds < 3)
             {
-                if (_builder.MoveNext()) continue;
+                if (_builder.MoveNext())
+                {
+                    // -- false: шаг ждёт фоновый разбор карты, в этом тике делать больше нечего
+                    if (!_builder.Current) break;
+                    continue;
+                }
                 _builder.Dispose(); _builder = null;
                 _cached = _building; _building = null;
                 foreach (var session in _waiting.Where(s => s.Channel.IsConnected))
@@ -138,8 +151,75 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
     public GuidebookCatalog BuildSnapshot()
     {
         var result = new GuidebookCatalog();
-        foreach (var _ in BuildSnapshotSteps(result)) { }
+        foreach (var progressed in BuildSnapshotSteps(result))
+        {
+            if (!progressed) Thread.Sleep(1);
+        }
         return result;
+    }
+
+    // -- Чтение и разбор YAML карт занимали около трёх четвертей сборки справочника и шли в основном потоке:
+    // -- после старта раунда это давало секунды рывков. Разбор не трогает сущности, поэтому вынесен в фоновую задачу,
+    // -- которая отдаёт карты по одной в том же порядке
+    private ParsedMapSlot[] ParseMaps(IReadOnlyList<string> paths)
+    {
+        var token = (_parseCancel ??= new CancellationTokenSource()).Token;
+        var slots = new ParsedMapSlot[paths.Count];
+        for (var i = 0; i < slots.Length; i++)
+            slots[i] = new ParsedMapSlot();
+
+        Task.Run(() =>
+        {
+            foreach (var (slot, path) in slots.Zip(paths))
+            {
+                if (!token.IsCancellationRequested)
+                {
+                    try { slot.Data = ParseMap(path); }
+                    catch (Exception exception) { slot.Error = exception.Message; }
+                }
+
+                slot.Done = true;
+            }
+        });
+
+        return slots;
+    }
+
+    private sealed class ParsedMapSlot
+    {
+        public volatile bool Done;
+        public MappingDataNode? Data;
+        public string? Error;
+    }
+
+    private MappingDataNode? ParseMap(string path)
+    {
+        var resPath = new ResPath(path).ToRootedPath();
+        TextReader reader;
+        if (_resources.UserData.Exists(resPath))
+            reader = _resources.UserData.OpenText(resPath);
+        else if (_resources.TryContentFileRead(resPath, out var stream))
+            reader = new StreamReader(stream);
+        else
+            return null;
+
+        using (reader)
+        {
+            var documents = DataNodeParser.ParseYamlStream(reader).ToArray();
+            return documents.Length == 1 ? documents[0].Root as MappingDataNode : null;
+        }
+    }
+
+    private MappingDataNode? ParsedMap(ParsedMapSlot slot, string path)
+    {
+        // -- Дерево карты большое: слот отпускает его сразу после выдачи
+        var data = slot.Data;
+        slot.Data = null;
+        if (data != null)
+            return data;
+
+        Log.Error($"Guidebook catalogue could not read map {path}{(slot.Error != null ? $": {slot.Error}" : string.Empty)}");
+        return null;
     }
 
     private IEnumerable<bool> BuildSnapshotSteps(GuidebookCatalog result)
@@ -206,13 +286,13 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
         }
 
         var entities = new List<GuidebookMappedEntity>();
-        foreach (var (path, name) in mapPaths.OrderBy(p => p.Key))
+        var orderedMaps = mapPaths.OrderBy(p => p.Key).ToList();
+        var parsedMaps = ParseMaps(orderedMaps.Select(p => p.Key).ToList());
+        for (var i = 0; i < orderedMaps.Count; i++)
         {
-            if (!_mapLoader.TryReadFile(new ResPath(path), out var data))
-            {
-                Log.Error($"Guidebook catalogue could not read map {path}");
-                continue;
-            }
+            var (path, name) = orderedMaps[i];
+            while (!parsedMaps[i].Done) yield return false;
+            if (ParsedMap(parsedMaps[i], path) is not { } data) continue;
 
             result.MapNames[path] = name;
             if (sitePaths.TryGetValue(path, out var hidden)) result.Sites.Add(ReadSite(name, path, hidden, data));

@@ -5,6 +5,7 @@
  */
 
 using Content.Shared._LuaM.Vehicles.Components;
+using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
@@ -15,6 +16,7 @@ namespace Content.Shared._LuaM.Vehicles;
 
 public sealed partial class VehicleFeaturesSystem : EntitySystem
 {
+    [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private HardpointSystem _hardpoints = default!;
@@ -30,6 +32,7 @@ public sealed partial class VehicleFeaturesSystem : EntitySystem
         SubscribeLocalEvent<VehicleSoundComponent, VehicleHornActionEvent>(OnHorn);
         SubscribeLocalEvent<VehicleOverchargeComponent, VehicleOverchargeActionEvent>(OnOvercharge);
         SubscribeLocalEvent<VehicleSpotlightComponent, VehicleSpotlightActionEvent>(OnSpotlight);
+        SubscribeLocalEvent<VehicleSpotlightComponent, VehicleSeatsChangedEvent>(OnSpotlightSeatsChanged);
         SubscribeLocalEvent<VehicleDeployableComponent, VehicleDeployActionEvent>(OnDeploy);
         SubscribeLocalEvent<VehicleDeployableComponent, VehicleCanMoveEvent>(OnDeployCanMove);
         SubscribeLocalEvent<VehicleDeployableComponent, ExaminedEvent>(OnDeployExamined);
@@ -94,6 +97,20 @@ public sealed partial class VehicleFeaturesSystem : EntitySystem
         _light.SetRadius(ent, ent.Comp.Radius * _hardpoints.GetSpotlightMultiplier(ent));
         _light.SetEnergy(ent, ent.Comp.Energy);
         _light.SetEnabled(ent, ent.Comp.Enabled);
+        _actions.SetToggled(args.Action, ent.Comp.Enabled);
+        _audio.PlayPredicted(ent.Comp.Enabled ? ent.Comp.TurnOnSound : ent.Comp.TurnOffSound, ent, args.Performer);
+    }
+
+    private void OnSpotlightSeatsChanged(Entity<VehicleSpotlightComponent> ent, ref VehicleSeatsChangedEvent args)
+    {
+        if (!args.Seated || args.Role != VehicleSeatRole.Driver)
+            return;
+
+        foreach (var (action, comp) in _actions.GetActions(args.Occupant))
+        {
+            if (comp.Container == ent.Owner && comp is InstantActionComponent { Event: VehicleSpotlightActionEvent })
+                _actions.SetToggled(action, ent.Comp.Enabled);
+        }
     }
 
     private void OnDeploy(Entity<VehicleDeployableComponent> ent, ref VehicleDeployActionEvent args)

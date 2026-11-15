@@ -7,12 +7,14 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Ranged.Events;
+using Robust.Shared.Network; // LuaM
 using Robust.Shared.Timing;
 
 namespace Content.Shared.CombatMode.Pacification;
 
 public sealed partial class PacificationSystem : EntitySystem
 {
+    [Dependency] private INetManager _net = default!; // LuaM
     [Dependency] private AlertsSystem _alertsSystem = default!;
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
     [Dependency] private SharedCombatModeSystem _combatSystem = default!;
@@ -143,7 +145,9 @@ public sealed partial class PacificationSystem : EntitySystem
 
         // Tell the player why they can’t throw stuff:
         var cannotThrowMessage = ev.CancelReasonMessageId ?? "pacified-cannot-throw";
-        _popup.PopupEntity(Loc.GetString(cannotThrowMessage, ("projectile", itemName)), ent, ent);
+        // -- Бросок теперь предсказывается: клиент показывал бы сообщение при каждом перепредсказании и ещё раз от сервера
+        if (_net.IsServer) // LuaM
+            _popup.PopupEntity(Loc.GetString(cannotThrowMessage, ("projectile", itemName)), ent, ent);
     }
 
     private void OnPacifiedDangerousAttack(Entity<PacifismDangerousAttackComponent> ent, ref AttemptPacifiedAttackEvent args)

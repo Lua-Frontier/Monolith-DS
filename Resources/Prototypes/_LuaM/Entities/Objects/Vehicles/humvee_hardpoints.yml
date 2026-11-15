@@ -47,6 +47,10 @@
     - id: turret-launcher
       hardpointType: Launcher
       insertDelay: 2
+  - type: ContainerContainer
+    containers:
+      turret-cannon: !type:ContainerSlot
+      turret-launcher: !type:ContainerSlot
 
 - type: entity
   parent: LuaMHumveeTurret
@@ -95,6 +99,7 @@
     ammoType: RERotaryCannon
   - type: Gun
     fireRate: 5
+    projectileSpeed: 75
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -119,6 +124,7 @@
   components:
   - type: Gun
     fireRate: 5
+    projectileSpeed: 75
     burstFireRate: 5
     shotsPerBurst: 3
     selectedMode: Burst

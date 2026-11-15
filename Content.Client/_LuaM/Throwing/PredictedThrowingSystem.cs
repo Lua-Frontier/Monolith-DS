@@ -1,5 +1,6 @@
 using Content.Shared._LuaM.Throwing;
 using Robust.Client.Physics;
+using Robust.Client.Player;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
@@ -9,6 +10,7 @@ namespace Content.Client._LuaM.Throwing;
 public sealed partial class PredictedThrowingSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPlayerManager _player = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
 
     private static readonly TimeSpan RestTime = TimeSpan.FromSeconds(0.5);
@@ -26,12 +28,20 @@ public sealed partial class PredictedThrowingSystem : EntitySystem
 
         SubscribeLocalEvent<PredictedThrownItemComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<PredictedThrownItemComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<PredictedThrownItemComponent, AfterAutoHandleStateEvent>(OnHandleState);
         SubscribeLocalEvent<PhysicsComponent, UpdateIsPredictedEvent>(OnUpdateIsPredicted);
+    }
+
+    // -- Чужие броски не предсказываются: их полёт и звуки приходят с сервера, а предсказанные события попадания
+    // -- и приземления у наблюдателя сыграли бы эти звуки второй раз
+    private bool IsLocalThrow(PredictedThrownItemComponent comp)
+    {
+        return comp.Thrower != null && comp.Thrower == _player.LocalEntity;
     }
 
     private void OnUpdateIsPredicted(Entity<PhysicsComponent> ent, ref UpdateIsPredictedEvent args)
     {
-        if (HasComp<PredictedThrownItemComponent>(ent) || _settling.ContainsKey(ent))
+        if (TryComp<PredictedThrownItemComponent>(ent, out var thrown) && IsLocalThrow(thrown) || _settling.ContainsKey(ent))
             args.IsPredicted = true;
     }
 
@@ -41,10 +51,15 @@ public sealed partial class PredictedThrowingSystem : EntitySystem
         _physics.UpdateIsPredicted(ent.Owner);
     }
 
+    private void OnHandleState(Entity<PredictedThrownItemComponent> ent, ref AfterAutoHandleStateEvent args)
+    {
+        _physics.UpdateIsPredicted(ent.Owner);
+    }
+
     private void OnShutdown(Entity<PredictedThrownItemComponent> ent, ref ComponentShutdown args)
     {
         // -- Если выключить предсказание, пока предмет движется, клиент покажет отстающее на пинг серверное состояние: предмет откатится и повторит поворот
-        if (TerminatingOrDeleted(ent))
+        if (TerminatingOrDeleted(ent) || !IsLocalThrow(ent.Comp))
             return;
 
         _settling[ent] = new Settling(_timing.RealTime);

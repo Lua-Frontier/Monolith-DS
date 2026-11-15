@@ -368,13 +368,25 @@ public sealed partial class GunSystem : SharedGunSystem
             return;
         }
 
+        // LuaM-start
+        var originEv = new LuaMGetMuzzleFlashOriginEvent();
+        RaiseLocalEvent(gunUid, ref originEv);
+        if (originEv.Origin is { } origin)
+            coordinates = origin;
+        // LuaM-end
+
         var ent = Spawn(message.Prototype, coordinates);
         TransformSystem.SetWorldRotationNoLerp(ent, message.Angle);
+
+        // LuaM-start
+        if (originEv.Origin != null && TryComp<SpriteComponent>(ent, out var flashSprite))
+            _sprite.SetDrawDepth((ent, flashSprite), (int) Shared.DrawDepth.DrawDepth.Effects);
+        // LuaM-end
 
         // Don't track muzzle flash to user if this is a fire control console weapon (ship artillery)
         // Note: FireControllableComponent is server-only, so we can't check it on client
         // The server will handle this check
-        if (user != null)
+        if (user != null && originEv.Origin == null) // LuaM: vehicle turret flashes stay on the barrel
         {
             var track = EnsureComp<TrackUserComponent>(ent);
             track.User = user;

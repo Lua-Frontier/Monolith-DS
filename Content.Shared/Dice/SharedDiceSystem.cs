@@ -3,6 +3,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network; // LuaM
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Dice;
@@ -10,6 +11,7 @@ namespace Content.Shared.Dice;
 public abstract partial class SharedDiceSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private INetManager _net = default!; // LuaM
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
 
@@ -33,6 +35,12 @@ public abstract partial class SharedDiceSystem : EntitySystem
 
     private void OnLand(Entity<DiceComponent> entity, ref LandEvent args)
     {
+        // LuaM-start
+        // -- При предсказанном броске приземление считает и клиент, а его бросок кости по номеру тика не совпадает с серверным
+        if (_net.IsClient)
+            return;
+        // LuaM-end
+
         Roll(entity);
     }
 

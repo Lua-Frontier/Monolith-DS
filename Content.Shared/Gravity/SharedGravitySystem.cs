@@ -1,6 +1,7 @@
 using Content.Shared.Alert;
 using Content.Shared.Inventory;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components; // LuaM
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
@@ -20,6 +21,11 @@ public abstract partial class SharedGravitySystem : EntitySystem
     [Dependency] protected EntityQuery<GravityComponent> GravityQuery = new();
     [Dependency] private EntityQuery<GravityAffectedComponent> _weightlessQuery = new();
     [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = new();
+    [Dependency] private EntityQuery<TransformComponent> _xformQuery = new(); // LuaM
+    [Dependency] private EntityQuery<MapGridComponent> _gridQuery = new(); // LuaM
+
+    private readonly Stack<EntityUid> _gravityPending = new(); // LuaM
+    private readonly List<Entity<GravityAffectedComponent>> _gravityChanged = new(); // LuaM
 
     public override void Initialize()
     {
@@ -173,14 +179,42 @@ public abstract partial class SharedGravitySystem : EntitySystem
 
     private void OnGravityChange(ref GravityChangedEvent args)
     {
-        var gravity = AllEntityQuery<GravityAffectedComponent, TransformComponent>();
-        while(gravity.MoveNext(out var uid, out var weightless, out var xform))
-        {
-            if (xform.GridUid != args.ChangedGridIndex)
-                continue;
+        // LuaM-start
+        // -- Раньше здесь перебирались все сущности мира с гравитацией ради одного грида: десятки миллисекунд
+        // -- на каждое переключение генератора. Теперь обходится только дерево самого грида
+        if (!_gridQuery.HasComp(args.ChangedGridIndex))
+            return;
 
-            RefreshWeightless((uid, weightless), !args.HasGravity);
+        _gravityChanged.Clear();
+        _gravityPending.Clear();
+        _gravityPending.Push(args.ChangedGridIndex);
+
+        while (_gravityPending.TryPop(out var parent))
+        {
+            var children = _xformQuery.GetComponent(parent).ChildEnumerator;
+            while (children.MoveNext(out var child))
+            {
+                // -- У вложенного грида своя гравитация, его содержимое к этому гриду не относится
+                if (_gridQuery.HasComp(child))
+                    continue;
+
+                if (_weightlessQuery.TryComp(child, out var affected))
+                    _gravityChanged.Add((child, affected));
+
+                if (_xformQuery.GetComponent(child).ChildCount > 0)
+                    _gravityPending.Push(child);
+            }
         }
+
+        // -- Обновление идёт отдельным проходом: обработчики смены невесомости могут менять иерархию
+        foreach (var ent in _gravityChanged)
+        {
+            if (!TerminatingOrDeleted(ent))
+                RefreshWeightless((ent.Owner, ent.Comp), !args.HasGravity);
+        }
+
+        _gravityChanged.Clear();
+        // LuaM-end
     }
 
     private void OnAlertsSync(AlertSyncEvent ev)

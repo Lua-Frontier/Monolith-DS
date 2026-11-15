@@ -68,6 +68,8 @@ public sealed partial class VehicleEngineSoundSystem : EntitySystem
             var inRange = pos.MapId == listener.MapId &&
                           (pos.Position - listener.Position).LengthSquared() <= engine.MaxDistance * engine.MaxDistance;
             var running = engine.EngineOn && now >= engine.ReadyAt;
+            var fadeIn = TimeSpan.FromSeconds(engine.StartFadeTime);
+            var audible = engine.EngineOn && now >= engine.ReadyAt - fadeIn;
 
             if (!inRange)
             {
@@ -79,7 +81,7 @@ public sealed partial class VehicleEngineSoundSystem : EntitySystem
 
             _engines.TryGetValue(uid, out var audio);
             var gain = 1f;
-            if (running)
+            if (audible)
             {
                 if (audio == null)
                 {
@@ -87,7 +89,10 @@ public sealed partial class VehicleEngineSoundSystem : EntitySystem
                     _engines[uid] = audio;
                 }
 
+                // -- Гул заводится поверх хвоста стартера и плавно нарастает, а не врубается на полную с щелчком
                 audio.OffTime = 0f;
+                if (engine.StartFadeTime > 0f)
+                    gain = Math.Clamp((float) ((now - (engine.ReadyAt - fadeIn)).TotalSeconds / engine.StartFadeTime), 0f, 1f);
             }
             else
             {
@@ -115,7 +120,8 @@ public sealed partial class VehicleEngineSoundSystem : EntitySystem
             UpdateLayer(uid, engine, audio, 2, engine.MediumSound, gain);
             UpdateLayer(uid, engine, audio, 3, engine.FastSound, gain);
 
-            var skidding = running && speed >= MinSkidSpeed && (mover.Handbrake || MathF.Abs(mover.DriftDegrees) >= engine.SkidDegrees);
+            var skidding = running && speed >= MinSkidSpeed && !mover.Floating && !HasComp<HoverVehicleComponent>(uid) &&
+                           (mover.Handbrake || MathF.Abs(mover.DriftDegrees) >= engine.SkidDegrees);
             if (skidding && audio.Skid == null)
             {
                 audio.Skid = Play(uid, engine.SkidSound, engine.SkidVolume, engine.MaxDistance);

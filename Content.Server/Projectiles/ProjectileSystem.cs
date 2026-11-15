@@ -1,6 +1,7 @@
 using Content.Server.Destructible;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Projectiles;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
@@ -70,6 +71,11 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
                 QueueDel(uid);
             return null;
         }
+
+        // LuaM-start
+        if (component.PenetrateMobs && HasComp<MobStateComponent>(target))
+            damageRequired = FixedPoint2.Min(damageRequired, modifiedDamage.GetTotal());
+        // LuaM-end
 
         // Server-specific logic: penetration
         if (component.PenetrationThreshold != 0)

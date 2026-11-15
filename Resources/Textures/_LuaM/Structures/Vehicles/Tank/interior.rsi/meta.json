@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Technical placeholder generated from the FV150 hull silhouette (CMSS13-PvE https://github.com/cmss13-devs/cmss13-pve/pull/1276) by c_quarian (Monolith-DS), to be redrawn",
+  "size": {
+    "x": 96,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "tank",
+      "directions": 4
+    }
+  ]
+}

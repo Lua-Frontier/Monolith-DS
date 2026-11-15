@@ -151,6 +151,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 });
 
 #pragma warning disable NUnit2045 // Interdependent asserts.
+                Assert.That(standingState.Stand(human)); // LuaM: you can't buckle while lying down
                 // Re-buckling has no cooldown
                 Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle));
                 Assert.That(buckle.Buckled);
@@ -212,6 +213,7 @@ namespace Content.IntegrationTests.Tests.Buckle
                 });
 
                 // Re-buckle
+                Assert.That(standingState.Stand(human)); // LuaM: you can't buckle while lying down
                 Assert.That(buckleSystem.TryBuckle(human, human, chair, buckleComp: buckle));
 
                 // Move away from the chair

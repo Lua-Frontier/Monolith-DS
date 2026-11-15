@@ -192,6 +192,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
                 UpdateOccupants(interior, strap, shown, worldPos, worldRot - hullDir.ToAngle(), hullDir, eyeRot);
         }
 
+        UpdateRiders(eyeRot);
         RestoreUnseen();
     }
 
@@ -235,25 +236,57 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
                 _sprite.SetVisible((occupant, sprite), true);
             }
 
-            if (seats == null ||
-                !TryComp<VehicleOccupantComponent>(occupant, out var seat) ||
-                seat.Seat < 0 || seat.Seat >= seats.Count)
-            {
+            ShiftToSeat(occupant, sprite, seats, hullPos, imageRot, eyeRot);
+        }
+    }
+
+    private void ShiftToSeat(EntityUid occupant, SpriteComponent sprite, List<Vector2>? seats, Vector2 hullPos, Angle imageRot, Angle eyeRot)
+    {
+        if (seats == null ||
+            !TryComp<VehicleOccupantComponent>(occupant, out var seat) ||
+            seat.Seat < 0 || seat.Seat >= seats.Count)
+        {
+            return;
+        }
+
+        if (!_shifted.TryGetValue(occupant, out var original))
+        {
+            original = sprite.Offset;
+            _shifted[occupant] = original;
+        }
+
+        var target = hullPos + imageRot.RotateVec(seats[seat.Seat] / PixelsPerMeter);
+        var (occupantPos, occupantRot) = _transform.GetWorldPositionRotation(occupant);
+        var spriteRot = sprite.NoRotation ? -eyeRot : occupantRot;
+        var offset = original + (-spriteRot).RotateVec(target - occupantPos);
+        if (!sprite.Offset.EqualsApprox(offset, 0.001))
+            _sprite.SetOffset((occupant, sprite), offset);
+    }
+
+    private void UpdateRiders(Angle eyeRot)
+    {
+        var query = EntityQueryEnumerator<VehicleRiderVisualsComponent, SpriteComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var riders, out var sprite, out var xform))
+        {
+            var (worldPos, worldRot) = _transform.GetWorldPositionRotation(xform);
+            var hullDir = GetHullDirection(worldRot + eyeRot);
+            var depth = (int) (hullDir is Direction.East or Direction.West ? riders.SideDrawDepth : riders.FrontDrawDepth);
+            if (sprite.DrawDepth != depth)
+                _sprite.SetDrawDepth((uid, sprite), depth);
+
+            if (!TryComp<StrapComponent>(uid, out var strap) || strap.BuckledEntities.Count == 0)
                 continue;
-            }
 
-            if (!_shifted.TryGetValue(occupant, out var original))
+            riders.SeatOffsets.TryGetValue(hullDir, out var seats);
+            var imageRot = worldRot - hullDir.ToAngle();
+            foreach (var occupant in strap.BuckledEntities)
             {
-                original = sprite.Offset;
-                _shifted[occupant] = original;
-            }
+                if (!TryComp<SpriteComponent>(occupant, out var occupantSprite))
+                    continue;
 
-            var target = hullPos + imageRot.RotateVec(seats[seat.Seat] / PixelsPerMeter);
-            var (occupantPos, occupantRot) = _transform.GetWorldPositionRotation(occupant);
-            var spriteRot = sprite.NoRotation ? -eyeRot : occupantRot;
-            var offset = original + (-spriteRot).RotateVec(target - occupantPos);
-            if (!sprite.Offset.EqualsApprox(offset, 0.001))
-                _sprite.SetOffset((occupant, sprite), offset);
+                _seen.Add(occupant);
+                ShiftToSeat(occupant, occupantSprite, seats, worldPos, imageRot, eyeRot);
+            }
         }
     }
 
@@ -359,16 +392,16 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
         {
             state.TurretBase = baseState;
             state.TurretWeapon = weaponState;
-            SetTurretLayer((turretEnt, sprite), 0, baseState);
-            SetTurretLayer((turretEnt, sprite), 1, weaponState);
+            var rsi = new ResPath(turret.Sprite);
+            SetTurretLayer((turretEnt, sprite), 0, rsi, baseState);
+            SetTurretLayer((turretEnt, sprite), 1, rsi, weaponState);
         }
 
         var delta = Angle.ShortestDistance(state.TurretRotation, turret.LocalRotation);
         var lerp = Math.Clamp(frameTime * TurretVisualTurnSpeed, 0f, 1f);
         state.TurretRotation = (state.TurretRotation + delta * lerp).Reduced();
 
-        var offset = turret.PixelOffsets.TryGetValue(hullDir, out var px) ? px / PixelsPerMeter : Vector2.Zero;
-        var localOffset = (-hullDir.ToAngle()).RotateVec(offset);
+        var localOffset = VehicleTurretSystem.GetTurretPivot(turret, hullDir);
 
         var xform = Transform(turretEnt);
         if (!xform.LocalPosition.EqualsApprox(localOffset))
@@ -381,7 +414,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
             _sprite.SetColor((turretEnt, sprite), sprite.Color.WithAlpha(alpha));
     }
 
-    private void SetTurretLayer(Entity<SpriteComponent> sprite, int layer, string? state)
+    private void SetTurretLayer(Entity<SpriteComponent> sprite, int layer, ResPath rsi, string? state)
     {
         if (state == null)
         {
@@ -389,7 +422,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
             return;
         }
 
-        _sprite.LayerSetRsiState(sprite.AsNullable(), layer, state);
+        _sprite.LayerSetRsi(sprite.AsNullable(), layer, rsi, state);
         _sprite.LayerSetVisible(sprite.AsNullable(), layer, true);
     }
 }

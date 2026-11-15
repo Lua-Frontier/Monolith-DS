@@ -52,7 +52,7 @@
         state: keys
   - type: ConditionalSpawner
     prototypes:
-      - VehicleSkeletonMotorcycleNF # Frontier: add NF suffix
+      - VehicleLuaMMotorcycle
       
 - type: entity
   name: Wheelchair Spawner

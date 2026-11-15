@@ -60,7 +60,7 @@ public sealed partial class ClientAlertsSystem : AlertsSystem
         if (args.Current is not AlertComponentState cast)
             return;
 
-        alerts.Comp.Alerts = cast.Alerts;
+        alerts.Comp.Alerts = new(cast.Alerts); // LuaM: copy, predicted alerts must not edit the cached server state
 
         UpdateHud(alerts);
     }

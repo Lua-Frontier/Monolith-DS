@@ -94,6 +94,11 @@ public sealed partial class ProjectileComponent : Component
     [DataField]
     public List<string>? PenetrationDamageTypeRequirement;
 
+    // LuaM-start
+    [DataField]
+    public bool PenetrateMobs;
+    // LuaM-end
+
     /// <summary>
     ///     Tracks the amount of damage dealt for penetration purposes.
     /// </summary>

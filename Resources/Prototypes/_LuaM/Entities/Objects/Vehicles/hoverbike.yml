@@ -1,0 +1,275 @@
+- type: entity
+  parent: [ LuaMHoverVehicleBase, VehicleLuaMMotorcycle ]
+  id: LuaMHoverbikeBase
+  abstract: true
+  name: hoverbike
+  description: A turbine with bike handles. Drives like a bike on deck and flies free in open space.
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _NF/Objects/Vehicles/hoverbike.rsi
+    layers:
+    - map: [ base ]
+      state: hull
+    - state: engine
+    - state: lights
+      shader: unshaded
+  - type: HoverVehicle
+    thrust: 4
+    maxSpeed: 12
+    brakeRate: 2
+    rotationSpeedDegrees: 140
+  - type: GridVehicleMover
+    maxSpeed: 14
+    maxReverseSpeed: 3
+    acceleration: 7
+    reverseAcceleration: 3
+    deceleration: 8
+    maxRotationSpeedDegrees: 160
+    rotationAccelerationDegrees: 340
+    rotationDecelerationDegrees: 400
+    alignmentAssistDegrees: 8
+    ramMinSpeed: 3
+    ramStructureDamage: 0.1
+    ramHullDamage: 3
+    mobRamDamage: 1.5
+    mobRamSpeedMultiplier: 0.6
+    mobCollisionHullDamage: 2
+    mobThrowMaxDistance: 2.5
+    speedAtZeroIntegrity: 0.5
+    driftMinSpeed: 10
+    driftGripDegrees: 80
+    driftRecoverDegrees: 260
+    driftMaxDegrees: 35
+    driftDrag: 8
+  - type: VehicleEngine
+    startSound: /Audio/Effects/Vehicle/vehiclestartup.ogg
+    stopSound: /Audio/_LuaM/Vehicles/vehicle_turned_off.ogg
+    idleSound: /Audio/Effects/shuttle_thruster.ogg
+    slowSound: /Audio/Effects/shuttle_thruster.ogg
+    mediumSound: /Audio/Effects/shuttle_thruster.ogg
+    fastSound: /Audio/Effects/shuttle_thruster.ogg
+    startDelay: 1
+    exitDelay: 1
+    volume: -6
+  - type: Storage
+    clickInsert: false
+    grid:
+    - 0,0,1,3
+    - 3,0,6,3
+    - 8,0,9,3
+    maxItemSize: Huge
+    blacklist:
+      components:
+      - HumanoidAppearance
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: SolutionContainerManager
+    solutions:
+      fuel:
+        maxVol: 100
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 100
+  - type: VehicleFuel
+    consumptionPerMinute: 2
+  - type: StaticPrice
+    price: 4000
+
+- type: entity
+  parent: LuaMHoverbikeBase
+  id: VehicleHoverbikeMailcarrier
+  name: mail carrier hoverbike
+  description: You better run, better run, faster than my mail.
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _NF/Objects/Vehicles/hoverbike.rsi
+    layers:
+    - map: [ base ]
+      state: hull
+      color: "#8fd3ff"
+    - state: engine
+    - state: mailtrim
+    - state: lights
+      shader: unshaded
+  - type: ItemSlots
+    slots:
+      mailgun:
+        name: rpds
+        whitelist:
+          components:
+          - Gun
+        priority: 2
+  - type: ItemMapper
+    mapLayers:
+      mailgun:
+        whitelist:
+          components:
+          - Gun
+    sprite: _NF/Objects/Vehicles/hoverbike.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+      mailgun: !type:ContainerSlot
+
+- type: entity
+  parent: LuaMHoverbikeBase
+  id: VehicleHoverbikeNfsd
+  name: TSFMC hoverbike
+  description: An TSFMC issued turbine with bike handles. Very safe.
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _NF/Objects/Vehicles/hoverbike.rsi
+    layers:
+    - map: [ base ]
+      state: hull
+      color: "#3d4b54"
+    - state: engine
+    - state: nfsdstar
+    - state: lights
+      shader: unshaded
+  - type: VehicleSound
+    hornSound: /Audio/Effects/Vehicle/policesiren.ogg
+    collisionSound:
+      collection: LuaMVehicleCrash
+      params:
+        volume: 4
+    collisionSoundCooldown: 1
+    mobCollisionSound:
+      path: /Audio/Effects/hit_kick.ogg
+      params:
+        volume: 4
+  - type: ItemSlots
+    slots:
+      nfsdbaton:
+        name: stunbaton
+        whitelist:
+          components:
+          - Stunbaton
+        priority: 2
+  - type: ItemMapper
+    mapLayers:
+      nfsdbaton:
+        whitelist:
+          components:
+          - Stunbaton
+    sprite: _NF/Objects/Vehicles/hoverbike.rsi
+  - type: RotatingLight
+    speed: 190
+  - type: VehicleSpotlight
+    radius: 6
+    energy: 2
+  - type: PointLight
+    enabled: false
+    radius: 6
+    energy: 2
+    color: "#FF4020"
+    lightMask: DoubleCone
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+      nfsdbaton: !type:ContainerSlot
+
+- type: entity
+  parent: LuaMHoverbikeBase
+  id: VehicleHoverbikePirate
+  name: pirate hoverbike
+  description: Yarr! Dis be me sovereign space shuttle. Now, whaur me rum?
+  components:
+  - type: Storage
+    clickInsert: false
+    grid:
+    - 0,0,5,3
+    maxItemSize: Huge
+    blacklist:
+      components:
+      - HumanoidAppearance
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _NF/Objects/Vehicles/hoverbike.rsi
+    layers:
+    - map: [ base ]
+      state: hull
+      color: "#3d2712"
+    - state: engine
+    - state: pirate
+    - state: lights
+      shader: unshaded
+  - type: ItemSlots
+    slots:
+      piratemusket:
+        name: gun
+        whitelist:
+          components:
+          - Gun
+        priority: 2
+  - type: ItemMapper
+    mapLayers:
+      piratemusket:
+        whitelist:
+          components:
+          - Gun
+    sprite: _NF/Objects/Vehicles/hoverbike.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+      piratemusket: !type:ContainerSlot
+
+- type: entity
+  parent: LuaMHoverbikeBase
+  id: VehicleHoverbikeSyndicate
+  name: syndicate hoverbike
+  description: This thing screams style. And war crimes.
+  components:
+  - type: Storage
+    clickInsert: false
+    grid:
+    - 0,0,8,4
+    blacklist:
+      components:
+      - HumanoidAppearance
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _NF/Objects/Vehicles/hoverbike.rsi
+    layers:
+    - map: [ base ]
+      state: hull
+      color: "#b51e0e"
+    - state: engine
+    - state: syndicatebags
+    - state: syndicatelights
+      shader: unshaded
+  - type: ItemSlots
+    slots:
+      syndicategun:
+        name: gun
+        whitelist:
+          components:
+          - Gun
+        priority: 2
+  - type: ItemMapper
+    mapLayers:
+      syndicategun:
+        whitelist:
+          components:
+          - Gun
+    sprite: _NF/Objects/Vehicles/hoverbike.rsi
+  - type: VehicleSpotlight
+    radius: 6
+    energy: 3
+  - type: PointLight
+    enabled: false
+    color: green
+    radius: 6
+    energy: 3
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+      syndicategun: !type:ContainerSlot

@@ -1,0 +1,263 @@
+- type: entity
+  parent: LuaMVehicleBase
+  id: LuaMVehicleSPPVan
+  name: Kheshig-1 IFV
+  description: A mine-resistant infantry fighting vehicle with a roof turret and room for a whole squad.
+  components:
+  - type: VehicleEngine
+    startSound: /Audio/_LuaM/Vehicles/vehicle_start.ogg
+    stopSound: /Audio/_LuaM/Vehicles/vehicle_turned_off.ogg
+    idleSound: /Audio/_LuaM/Vehicles/SPP_idle.ogg
+    slowSound: /Audio/_LuaM/Vehicles/SPP_slow.ogg
+    mediumSound: /Audio/_LuaM/Vehicles/SPP_med.ogg
+    fastSound: /Audio/_LuaM/Vehicles/SPP_fast.ogg
+    skidStartSound: /Audio/_LuaM/Vehicles/vehicle_skid_1.ogg
+    skidSound: /Audio/_LuaM/Vehicles/vehicle_skid_2.ogg
+    startDelay: 1.3
+    exitDelay: 2.3
+  - type: Sprite
+    drawdepth: OverMobs
+    sprite: _LuaM/Structures/Vehicles/SPPVan/sppvan.rsi
+    layers:
+    - map: [ base ]
+      state: sppvan_base
+    - map: [ damaged ]
+      state: damaged_frame
+      visible: false
+    - map: [ wheels ]
+      state: wheels_1
+  - type: SpriteMovement
+    movementLayers:
+      wheels:
+        state: wheels_0
+    noMovementLayers:
+      wheels:
+        state: wheels_1
+  - type: Fixtures
+    fixtures:
+      hull:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -0.6,-1.2,0.6,1.5
+        density: 1200
+        mask:
+        - LargeMobMask
+        layer:
+        - LargeMobLayer
+  - type: Strap
+    position: None
+    size: 800
+    buckleDoafterTime: 1
+    unbuckleDistanceSquared: 0.09
+    buckleSound:
+      path: /Audio/_LuaM/Vehicles/vehicle_door_open.ogg
+      params:
+        volume: 2.5
+    unbuckleSound: /Audio/_LuaM/Vehicles/vehicle_door_close.ogg
+  - type: StrapSlots
+    offsets:
+    - -0.02, -0.73
+    - -0.48, -0.73
+    - -0.23, -0.02
+    - -0.02, 1.08
+    - -0.02, 0.58
+    - -0.48, 1.08
+    - -0.48, 0.58
+  - type: VehicleSeats
+    seats:
+    - Driver
+    - Passenger
+    - Gunner
+    - Passenger
+    - Passenger
+    - Passenger
+    - Passenger
+    driverActions:
+    - ActionLuaMVehicleHorn
+    - ActionLuaMVehicleOvercharge
+    - ActionLuaMVehicleSpotlight
+  - type: GridVehicleMover
+    maxSpeed: 12
+    crushMinSpeedScale: 0.6
+    crushHullDamageScale: 0.5
+    maxReverseSpeed: 4
+    acceleration: 4.5
+    reverseAcceleration: 3.5
+    deceleration: 10
+    maxRotationSpeedDegrees: 100
+    rotationAccelerationDegrees: 200
+    rotationDecelerationDegrees: 280
+    alignmentAssistDegrees: 8
+    ramMinSpeed: 3
+    ramStructureDamage: 16
+    ramHullDamage: 1.5
+    mobRamDamage: 3
+    mobRamSpeedMultiplier: 0.92
+    mobCollisionHullDamage: 3
+    speedAtZeroIntegrity: 0.5
+    driftMinSpeed: 10
+    driftGripDegrees: 70
+    driftRecoverDegrees: 220
+    driftMaxDegrees: 40
+    driftDrag: 10
+  - type: VehicleIntegrity
+    maxIntegrity: 1400
+  - type: SolutionContainerManager
+    solutions:
+      fuel:
+        maxVol: 300
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 300
+  - type: RefillableSolution
+    solution: fuel
+  - type: VehicleFuel
+    consumptionPerMinute: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2800
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:ExplodeBehavior
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: HardpointSlots
+    family: SPPVan
+    slots:
+    - id: turret
+      hardpointType: Turret
+      startingItem: LuaMSPPVanTurretArmed
+      insertDelay: 2
+    - id: wheel
+      hardpointType: Wheel
+      startingItem: LuaMSPPVanWheel
+      insertDelay: 1.5
+  - type: ContainerContainer
+    containers:
+      turret: !type:ContainerSlot
+      wheel: !type:ContainerSlot
+  - type: VehicleTurret
+    rotationSpeedDegrees: 180
+    fireGraceDegrees: 20
+    muzzleLength: 0.6
+    sprite: _LuaM/Structures/Vehicles/SPPVan/sppvan.rsi
+    pixelOffsets:
+      South: 0, 13
+      North: 0, 2
+      East: -6, 14
+      West: 6, 14
+  - type: VehicleInterior
+    sprite: _LuaM/Structures/Vehicles/SPPVan/interior.rsi
+    state: sppvan
+    seatOffsets:
+      South:
+      - -0.5, -23.5
+      - -15.5, -23.5
+      - -7.5, -0.5
+      - -0.5, 34.5
+      - -0.5, 18.5
+      - -15.5, 34.5
+      - -15.5, 18.5
+      North:
+      - -0.5, 25.5
+      - 14.5, 25.5
+      - 7.5, -0.5
+      - -0.5, -33.5
+      - -0.5, -17.5
+      - 14.5, -33.5
+      - 14.5, -17.5
+      East:
+      - 23.5, 0.5
+      - 23.5, -12.5
+      - -2.5, -6.5
+      - -34.5, 0.5
+      - -19.5, 0.5
+      - -34.5, -12.5
+      - -19.5, -12.5
+      West:
+      - -24.5, 0.5
+      - -24.5, -13.5
+      - 1.5, -6.5
+      - 34.5, 0.5
+      - 19.5, 0.5
+      - 34.5, -13.5
+      - 19.5, -13.5
+  - type: StaticPrice
+    price: 22000
+
+- type: entity
+  parent: LuaMHumveeHardpointBase
+  id: LuaMSPPVanWheel
+  name: Kheshig wheels
+  description: A reinforced wheel set for a Kheshig IFV.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/SPPVan/hardpoints.rsi
+    state: tires
+  - type: HardpointItem
+    hardpointType: Wheel
+    family: SPPVan
+
+- type: entity
+  parent: LuaMHumveeHardpointBase
+  id: LuaMSPPVanTurret
+  name: Kheshig turret
+  description: A roof turret for a Kheshig IFV. Fits a cannon.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/SPPVan/hardpoints.rsi
+    state: turret
+  - type: HardpointItem
+    hardpointType: Turret
+    family: SPPVan
+    visualState: van_turret_0
+  - type: HardpointSlots
+    family: SPPVan
+    slots:
+    - id: turret-cannon
+      hardpointType: Cannon
+      insertDelay: 2
+  - type: ContainerContainer
+    containers:
+      turret-cannon: !type:ContainerSlot
+
+- type: entity
+  parent: LuaMSPPVanTurret
+  id: LuaMSPPVanTurretArmed
+  suffix: Cannon
+  components:
+  - type: HardpointSlots
+    family: SPPVan
+    slots:
+    - id: turret-cannon
+      hardpointType: Cannon
+      startingItem: LuaMSPPVanCannon
+      insertDelay: 2
+
+- type: entity
+  parent: LuaMHumveeCannon
+  id: LuaMSPPVanCannon
+  name: T60-P3M turret cannon
+  description: A rapid-fire turret cannon for a Kheshig IFV. Uses the same 10x50mm crates as the RE700.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/SPPVan/hardpoints.rsi
+    state: cannon
+  - type: HardpointItem
+    hardpointType: Cannon
+    family: SPPVan
+    visualState: t60p3m_0
+    ammoType: RERotaryCannon
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/_LuaM/Vehicles/sound_weapons_humvee_cannon.ogg
+    cameraRecoilScalar: 0
+    minAngle: 2
+    maxAngle: 7

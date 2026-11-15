@@ -27,3 +27,12 @@
   license: "Custom"
   copyright: "\"Slammed the car door\" (2024), provided by c_quarian (Monolith-DS), converted to mono ogg"
   source: "NA"
+
+- files:
+  - SPP_idle.ogg
+  - SPP_slow.ogg
+  - SPP_med.ogg
+  - SPP_fast.ogg
+  license: "Custom"
+  copyright: "Taken from Project Zomboid by The Indie Stone (originally stock sounds), converted to mono ogg. SPP_idle/slow/med/fast were zb_car_idle/slow/med/fast, crossfaded into seamless loops"
+  source: "https://projectzomboid.com"

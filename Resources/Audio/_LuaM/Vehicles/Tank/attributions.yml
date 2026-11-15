@@ -1,0 +1,12 @@
+- files:
+  - TankStart.ogg
+  - TankIdle.ogg
+  license: "Custom"
+  copyright: "Taken from RussianCM (Resources/Audio/_RMC14/Vehicle), no attribution recorded there; converted to mono ogg, TankIdle crossfaded into a seamless loop, TankStart trimmed and faded out. Placeholder, to be replaced"
+  source: "NA"
+
+- files:
+  - HonkTruck.ogg
+  license: "MIT"
+  copyright: "RMC-14 contributors"
+  source: "https://github.com/RMC-14/RMC-14/pull/8791"

@@ -60,14 +60,20 @@ public sealed partial class VehicleEngineComponent : Component
     public SoundSpecifier? SkidSound;
 
     [DataField]
-    public TimeSpan ExitDelay = TimeSpan.Zero;
+    public TimeSpan StartDelay = TimeSpan.FromSeconds(1.3);
+
+    [DataField]
+    public TimeSpan ExitDelay = TimeSpan.FromSeconds(2.3);
 
     // -- После глушения гул ещё звучит и плавно затихает
     [DataField]
-    public float StopFadeDelay = 1f;
+    public float StopFadeDelay = 0.5f;
 
     [DataField]
-    public float StopFadeTime = 1f;
+    public float StopFadeTime = 0.5f;
+
+    [DataField]
+    public float StartFadeTime = 0.5f;
 
     [DataField]
     public float Volume = -3f;
@@ -145,6 +151,12 @@ public sealed partial class VehicleSpotlightComponent : Component
     [DataField]
     public float Energy = 2.5f;
 
+    [DataField]
+    public SoundSpecifier? TurnOnSound = new SoundPathSpecifier("/Audio/Items/flashlight_on.ogg");
+
+    [DataField]
+    public SoundSpecifier? TurnOffSound = new SoundPathSpecifier("/Audio/Items/flashlight_off.ogg");
+
     [DataField, AutoNetworkedField]
     public bool Enabled;
 }
@@ -215,4 +227,18 @@ public sealed partial class VehicleInteriorComponent : Component
     // -- Пиксели от центра кадра кузова для каждого места: кузов нарисован в 3/4, жёсткий поворот мест под него не подходит
     [DataField]
     public Dictionary<Direction, List<Vector2>> SeatOffsets = new();
+}
+
+// -- Открытая техника без кузова: седок садится на сиденье по ракурсу, сбоку он над машиной, спереди и сзади под ней
+[RegisterComponent]
+public sealed partial class VehicleRiderVisualsComponent : Component
+{
+    [DataField]
+    public Dictionary<Direction, List<Vector2>> SeatOffsets = new();
+
+    [DataField]
+    public DrawDepth.DrawDepth SideDrawDepth = DrawDepth.DrawDepth.Objects;
+
+    [DataField]
+    public DrawDepth.DrawDepth FrontDrawDepth = DrawDepth.DrawDepth.OverMobs;
 }

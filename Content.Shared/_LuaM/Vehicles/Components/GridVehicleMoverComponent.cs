@@ -4,6 +4,7 @@
  * See AGPLv3.txt for details.
  */
 
+using System.Numerics;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._LuaM.Vehicles.Components;
@@ -43,7 +44,7 @@ public sealed partial class GridVehicleMoverComponent : Component
     public float AlignmentAssistMaxSpeed = 1.5f;
 
     [DataField]
-    public float ProbeStep = 0.1f;
+    public float ProbeStep = 0.2f;
 
     [DataField]
     public float RamMinSpeed = 3f;
@@ -65,6 +66,31 @@ public sealed partial class GridVehicleMoverComponent : Component
 
     [DataField]
     public float MobKnockdownTime = 1.5f;
+
+    [DataField]
+    public float MobThrowDistancePerSpeed = 0.3f;
+
+    [DataField]
+    public float MobThrowMinDistance = 1.5f;
+
+    [DataField]
+    public float MobThrowMaxDistance = 4f;
+
+    // -- Тяжёлая машина сносит деревья и валуны на малой скорости и почти не теряет ход
+    [DataField]
+    public float CrushMinSpeedScale = 1f;
+
+    [DataField]
+    public float? CrushSpeedRetention;
+
+    [DataField]
+    public float CrushHullDamageScale = 1f;
+
+    [DataField]
+    public float MobThrowMinSpeed = 6f;
+
+    [DataField]
+    public float MobThrowSideRatio = 0.6f;
 
     [DataField]
     public float FullSpeedIntegrityFraction = 0.7f;
@@ -118,4 +144,20 @@ public sealed partial class GridVehicleMoverComponent : Component
 
     [ViewVariables]
     public float Accumulator;
+
+    [AutoNetworkedField]
+    public bool Floating;
+
+    [ViewVariables]
+    public TimeSpan NextFloatCheck;
+
+    // -- Поза, в которой уже проверяли, не залез ли корпус в стену: пока машина в ней стоит, проверка не повторяется
+    [ViewVariables]
+    public Vector2 UnstickCheckedPosition;
+
+    [ViewVariables]
+    public Angle UnstickCheckedRotation;
+
+    [ViewVariables]
+    public TimeSpan UnstickRetryAt;
 }
