@@ -1,0 +1,33 @@
+- type: vessel
+  id: Aeon
+  parent: BaseVessel
+  name: vessel-aeon-name # LuaM-locale
+  description: vessel-aeon-desc # LuaM-locale
+  price: 40000
+  category: Small
+  group: Medical
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/med/aeon.yml
+  guidebookPage: null
+  class:
+  - Civilian
+  - Medical
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Aeon
+  mapName: 'Aeon'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Med/aeon.yml
+  minPlayers: 0
+  stations:
+    Aeon:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Aeon MED{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            MdMedic: [ 0, 0 ]

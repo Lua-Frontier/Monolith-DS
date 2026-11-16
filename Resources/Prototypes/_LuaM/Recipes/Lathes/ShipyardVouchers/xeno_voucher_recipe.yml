@@ -1,0 +1,22 @@
+- type: latheRecipe
+  id: ShipVoucherXenoRecipe
+  result: ShipVoucherXeno
+  completetime: 60
+  materialDiscountScale: 0.2
+  materials:
+    Steel: 10050
+    Copper: 10050
+    Plasteel: 8040
+    Lithium: 10050
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 1340
+    UraniumDepleted: 670
+    UraniumFissile: 170
+
+- type: latheRecipePack
+  id: LuaMCivilianVouchersDynamic
+  recipes:
+  - ShipVoucherXenoRecipe

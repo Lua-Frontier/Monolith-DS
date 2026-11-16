@@ -282,6 +282,7 @@
     - PunkGear
     - BluespaceAirTanks
     - GlassesContractor
+    - LuaMCivilianVouchersDynamic
 # LuaM-end.
   - type: EmagLatheRecipes
     emagStaticPacks:

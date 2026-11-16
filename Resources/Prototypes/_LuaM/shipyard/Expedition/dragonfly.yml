@@ -1,0 +1,41 @@
+- type: vessel
+  id: dragonfly
+  parent: BaseVessel
+  name: vessel-dragonfly-name
+  description: vessel-dragonfly-desc
+  price: 120000
+  category: Medium
+  group: Expedition
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/dragonfly.yml
+  guidebookPage: Null
+  class:
+  - Medical
+  - Chemistry
+  - Pursuit
+  - Expedition
+  - Science
+  - Salvage
+  - Civilian
+  - Cargo
+  engine:
+  - AME
+
+- type: gameMap
+  id: dragonfly
+  mapName: 'Dragonfly-C2'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Expedition/dragonfly.yml
+  minPlayers: 0
+  stations:
+    dragonfly:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Dragonfly-C2 {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]
