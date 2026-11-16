@@ -14,6 +14,7 @@ using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Interaction;
 using Content.Shared.Medical.SuitSensor;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -374,7 +375,8 @@ public sealed partial class SuitSensorSystem : EntitySystem
 
         // check if sensor is enabled and worn by user
         // Frontier modification, made sensor work with grid being null
-        if (sensor.Mode == SuitSensorMode.SensorOff || sensor.User == null || !HasComp<MobStateComponent>(sensor.User) ) // || transform.GridUid == null
+        if (sensor.Mode == SuitSensorMode.SensorOff || sensor.User == null || !HasComp<MobStateComponent>(sensor.User) // || transform.GridUid == null
+            || !TryComp<MindContainerComponent>(sensor.User, out var mindContainer) || !mindContainer.HasMind) // LuaM
             return null;
 
         // try to get mobs id from ID slot

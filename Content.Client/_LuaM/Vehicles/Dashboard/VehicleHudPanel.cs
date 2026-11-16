@@ -14,6 +14,13 @@ public abstract class VehicleHudPanel : Control
     protected const float HeaderHeight = 18f;
     protected const float HeaderMiddle = HeaderHeight / 2f;
     private const float GripWidth = 14f;
+    private const int TextCacheLimit = 128;
+    private static readonly string[] Zeros = { "", "0", "00", "000", "0000" };
+
+    private readonly Dictionary<string, string> _locale = new();
+    private readonly Dictionary<string, string> _upper = new();
+    private readonly Dictionary<(string Format, int A, int B), string> _formatted = new();
+    private readonly Dictionary<(Font Font, string Text, float Width, float Scale), string> _fitted = new();
 
     protected static readonly Color Section = Color.FromHex("#111923F0");
     protected static readonly Color SectionBorder = Color.FromHex("#2D4757");
@@ -73,7 +80,7 @@ public abstract class VehicleHudPanel : Control
         }
 
         var titleRight = DrawHeader(handle, PanelWidth - GripWidth, s);
-        DrawMiddle(handle, TitleFont, Fit(TitleFont, Title.ToUpperInvariant(), titleRight - 6f - 9f, s), 9, HeaderMiddle, s, Accent);
+        DrawMiddle(handle, TitleFont, Fit(TitleFont, Upper(Title), titleRight - 6f - 9f, s), 9, HeaderMiddle, s, Accent);
 
         DrawBody(handle, s);
     }
@@ -126,13 +133,45 @@ public abstract class VehicleHudPanel : Control
 
     protected float LeadingZeroDigits(DrawingHandleScreen handle, int value, int width, float x, float middle, float s, Color color)
     {
-        var text = Math.Clamp(value, 0, (int) MathF.Pow(10, width) - 1).ToString(new string('0', width));
-        var lead = text.Length - text.TrimStart('0').Length;
-        if (lead == text.Length)
-            lead = text.Length - 1;
+        width = Math.Clamp(width, 1, Zeros.Length - 1);
+        var digits = Format("{0}", Math.Clamp(value, 0, (int) MathF.Pow(10, width) - 1));
+        var dim = DrawMiddle(handle, Digits, Zeros[Math.Max(0, width - digits.Length)], x, middle, s, Off);
+        return dim + DrawMiddle(handle, Digits, digits, x + dim, middle, s, color);
+    }
 
-        var dim = DrawMiddle(handle, Digits, text[..lead], x, middle, s, Off);
-        return dim + DrawMiddle(handle, Digits, text[lead..], x + dim, middle, s, color);
+    protected string Locale(string id)
+    {
+        if (!_locale.TryGetValue(id, out var text))
+            _locale[id] = text = Loc.GetString(id);
+
+        return text;
+    }
+
+    protected string Upper(string text)
+    {
+        if (_upper.TryGetValue(text, out var upper))
+            return upper;
+
+        if (_upper.Count >= TextCacheLimit)
+            _upper.Clear();
+
+        upper = text.ToUpperInvariant();
+        _upper[text] = upper;
+        return upper;
+    }
+
+    protected string Format(string format, int a, int b = 0)
+    {
+        var key = (format, a, b);
+        if (_formatted.TryGetValue(key, out var text))
+            return text;
+
+        if (_formatted.Count >= TextCacheLimit)
+            _formatted.Clear();
+
+        text = string.Format(format, a, b);
+        _formatted[key] = text;
+        return text;
     }
 
     protected float IndicatorWidth(string text, float s)
@@ -206,18 +245,40 @@ public abstract class VehicleHudPanel : Control
         DrawMiddle(handle, font, text, center - Measure(font, text, s) / s / 2f, middle, s, color);
     }
 
-    protected static string Fit(Font font, string text, float maxWidth, float s)
+    protected string Fit(Font font, string text, float maxWidth, float s)
     {
         if (maxWidth <= 0f)
             return string.Empty;
 
+        var key = (font, text, maxWidth, s);
+        if (_fitted.TryGetValue(key, out var fitted))
+            return fitted;
+
+        if (_fitted.Count >= TextCacheLimit)
+            _fitted.Clear();
+
+        fitted = Truncate(font, text, maxWidth, s);
+        _fitted[key] = fitted;
+        return fitted;
+    }
+
+    private static string Truncate(Font font, string text, float maxWidth, float s)
+    {
         if (Measure(font, text, s) / s <= maxWidth)
             return text;
 
-        var length = text.Length;
-        while (length > 0 && Measure(font, text[..length] + "…", s) / s > maxWidth)
+        var limit = maxWidth * s - Measure(font, "…", s);
+        var width = 0f;
+        var length = 0;
+        foreach (var rune in text.EnumerateRunes())
         {
-            length--;
+            if (font.TryGetCharMetrics(rune, s, out var metrics))
+                width += metrics.Advance;
+
+            if (width > limit)
+                break;
+
+            length += rune.Utf16SequenceLength;
         }
 
         return length == 0 ? string.Empty : text[..length].TrimEnd() + "…";

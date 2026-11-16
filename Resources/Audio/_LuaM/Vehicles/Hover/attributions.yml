@@ -1,0 +1,8 @@
+- files:
+  - hover_idle.ogg
+  - hover_slow.ogg
+  - hover_med.ogg
+  - hover_fast.ogg
+  license: "CC0-1.0"
+  copyright: "Hover turbine engine loops, synthesized by c_quarian (Monolith-DS)"
+  source: "NA"

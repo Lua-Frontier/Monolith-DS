@@ -197,6 +197,8 @@ public sealed partial class GunSystem : SharedGunSystem
         if (!Timing.IsFirstTimePredicted)
             return;
 
+        RefreshAmmoCounters(); // LuaM
+
         var entityNull = _player.LocalEntity;
 
         if (entityNull == null || !TryComp<CombatModeComponent>(entityNull, out var combat) || !combat.IsInCombatMode)
@@ -269,6 +271,7 @@ public sealed partial class GunSystem : SharedGunSystem
         // This also means any ammo specific stuff can be grabbed as necessary.
         var direction = TransformSystem.ToMapCoordinates(fromCoordinates).Position - TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var worldAngle = direction.ToAngle().Opposite();
+        var serverEffects = IsVehicleMounted(gunUid, out _); // LuaM
 
         foreach (var (ent, shootable) in ammo)
         {
@@ -288,8 +291,11 @@ public sealed partial class GunSystem : SharedGunSystem
                     if (!cartridge.Spent)
                     {
                         SetCartridgeSpent(ent!.Value, cartridge, true);
-                        MuzzleFlash(gunUid, cartridge, worldAngle, user);
-                        Audio.PlayPredicted(cartridge.SoundGunshot ?? gun.SoundGunshotModified, gunUid, user);
+                        if (!serverEffects) // LuaM
+                        {
+                            MuzzleFlash(gunUid, cartridge, worldAngle, user);
+                            Audio.PlayPredicted(cartridge.SoundGunshot ?? gun.SoundGunshotModified, gunUid, user);
+                        }
                         Recoil(user, direction, gun.CameraRecoilScalarModified);
                         // TODO: Can't predict entity deletions.
                         //if (cartridge.DeleteOnSpawn)
@@ -306,8 +312,11 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     break;
                 case AmmoComponent newAmmo:
-                    MuzzleFlash(gunUid, newAmmo, worldAngle, user);
-                    Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+                    if (!serverEffects) // LuaM
+                    {
+                        MuzzleFlash(gunUid, newAmmo, worldAngle, user);
+                        Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+                    }
                     Recoil(user, direction, gun.CameraRecoilScalarModified);
                     if (IsClientSide(ent!.Value))
                         Del(ent.Value);
@@ -315,7 +324,8 @@ public sealed partial class GunSystem : SharedGunSystem
                         RemoveShootable(ent.Value);
                     break;
                 case HitscanAmmoComponent:
-                    Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+                    if (!serverEffects) // LuaM
+                        Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
                     Recoil(user, direction, gun.CameraRecoilScalarModified);
                     break;
             }

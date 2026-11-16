@@ -8,6 +8,9 @@ namespace Content.Shared._LuaM.Vehicles.Components;
 public sealed partial class VehicleFuelComponent : Component
 {
     [DataField]
+    public bool Enabled = true;
+
+    [DataField]
     public string Solution = "fuel";
 
     [DataField]

@@ -229,7 +229,6 @@
     despawnIfOffLinkedGrid: false
     addComponentsOnDeath: []
     removeComponentsOnDeath: []
-  - type: CavemanAccent
 
 - type: entity
   name: Mistake

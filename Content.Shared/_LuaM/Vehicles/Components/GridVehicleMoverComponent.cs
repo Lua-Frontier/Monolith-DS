@@ -13,34 +13,34 @@ namespace Content.Shared._LuaM.Vehicles.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class GridVehicleMoverComponent : Component
 {
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float MaxSpeed = 6f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float MaxReverseSpeed = 3f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float Acceleration = 5f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float ReverseAcceleration = 4f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float Deceleration = 12f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float MaxRotationSpeedDegrees = 120f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float RotationAccelerationDegrees = 240f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float RotationDecelerationDegrees = 300f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float AlignmentAssistDegrees = 8f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float AlignmentAssistMaxSpeed = 1.5f;
 
     [DataField]
@@ -98,36 +98,43 @@ public sealed partial class GridVehicleMoverComponent : Component
     [DataField]
     public float SpeedAtZeroIntegrity = 0.6f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float DriftMinSpeed;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float DriftGripDegrees = 70f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float DriftRecoverDegrees = 240f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float DriftMaxDegrees = 50f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float DriftDrag = 10f;
 
     // -- Ручник на кнопке ходьбы: тормозит и срывает машину в занос даже на небольшой скорости
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float HandbrakeDeceleration = 5f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float HandbrakeGripDegrees = 25f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float HandbrakeTurnMultiplier = 1.4f;
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float HandbrakeDriftMinSpeed = 2.5f;
 
     [AutoNetworkedField]
     public bool Handbrake;
+
+    // -- Ограничитель скорости водителя, доля от MaxSpeed
+    [DataField, AutoNetworkedField]
+    public float SpeedLimit = 1f;
+
+    [DataField]
+    public float MinSpeedLimit = 0.1f;
 
     [AutoNetworkedField]
     public float CurrentSpeed;
@@ -160,4 +167,7 @@ public sealed partial class GridVehicleMoverComponent : Component
 
     [ViewVariables]
     public TimeSpan UnstickRetryAt;
+
+    [ViewVariables]
+    public Dictionary<EntityUid, TimeSpan> HitCooldowns = new();
 }

@@ -15,6 +15,7 @@ using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 
@@ -22,6 +23,7 @@ namespace Content.Shared._LuaM.Vehicles;
 
 public sealed partial class HardpointSystem : EntitySystem
 {
+    [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedGunSystem _gun = default!;
@@ -370,6 +372,7 @@ public sealed partial class HardpointSystem : EntitySystem
         box.Amount -= loaded;
         Dirty(used, box);
 
+        _audio.PlayPredicted(box.LoadSound, ent, args.User);
         _popup.PopupClient(Loc.GetString("luam-vehicle-ammo-loaded", ("amount", loaded), ("weapon", weapon)), ent, args.User);
 
         if (box.Amount <= 0 && _net.IsServer)

@@ -600,3 +600,15 @@ FreedomImplanter: AutosurgeonImplantFreedomFlatpack
 ScramImplanter: AutosurgeonImplantScramFlatpack
 StorageImplanter: AutosurgeonImplantStorageFlatpack
 # LuaM end
+
+# LuaM start: legacy skeleton motorcycle keys removed
+VehicleKeySkeletonMotorcycle: null
+# LuaM end
+
+# LuaM start: NF vehicles moved to the LuaM vehicle base
+VehicleHoverbikeNF: VehicleLuaMHoverbike
+VehicleHoverbikeNFKeys: VehicleLuaMHoverbike
+VehicleATVNF: VehicleLuaMATV
+NFVehicleJanicart: VehicleLuaMJanicart
+NFVehicleJanicartKey: VehicleLuaMJanicart
+# LuaM end

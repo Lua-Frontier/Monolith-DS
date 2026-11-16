@@ -141,7 +141,6 @@
       insertDelay: 1.5
   - type: VehicleTurret
     rotationSpeedDegrees: 180
-    fireGraceDegrees: 20
     pixelOffsets:
       South: 0, 11
       North: 0, 3.5
@@ -296,7 +295,6 @@
       insertDelay: 1.5
   - type: VehicleTurret
     rotationSpeedDegrees: 180
-    fireGraceDegrees: 20
     requiresDeployed: true
     pixelOffsets:
       South: 0, 11

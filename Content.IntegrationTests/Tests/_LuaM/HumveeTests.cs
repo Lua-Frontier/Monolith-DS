@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Numerics;
 using Content.Shared._LuaM.Buckle;
 using Content.Shared._LuaM.Vehicles;
@@ -6,9 +7,12 @@ using Content.Shared._LuaM.Weapons;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Gravity;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Weapons.Melee;
 using Content.Shared.Standing;
 using Content.Shared._White.Standing;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Pulling.Events;
@@ -84,6 +88,166 @@ public sealed class HumveeTests
             Assert.That(muzzle, Is.Not.EqualTo(xformSys.GetWorldPosition(gunner)));
             Assert.That(muzzle.Length(), Is.LessThan(maxMuzzle));
 
+            entMan.DeleteEntity(vehicle);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [TestCase("LuaMVehicleTank", 0, false)]
+    [TestCase("LuaMVehicleTank", 2, false)]
+    [TestCase("LuaMVehicleTankOneMan", 0, false)]
+    [TestCase("LuaMVehicleHumvee", 1, true)]
+    public async Task OccupantHandsAndMelee(string proto, int seat, bool canMelee)
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var buckle = server.System<SharedBuckleSystem>();
+        var hands = server.System<SharedHandsSystem>();
+        var melee = server.System<SharedMeleeWeaponSystem>();
+        var map = await pair.CreateTestMap();
+
+        await server.WaitAssertion(() =>
+        {
+            var vehicle = entMan.SpawnEntity(proto, new MapCoordinates(Vector2.Zero, map.MapId));
+            var occupant = Seat(entMan, buckle, vehicle, seat);
+
+            var free = 0;
+            foreach (var hand in hands.EnumerateHands(occupant))
+            {
+                if (hand.HeldEntity == null)
+                    free++;
+            }
+
+            Assert.That(free == 0, Is.EqualTo(!canMelee));
+            Assert.That(melee.TryGetWeapon(occupant, out _, out _), Is.EqualTo(canMelee));
+
+            entMan.DeleteEntity(vehicle);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task TankMuzzleSitsOnDrawnBarrel()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var buckle = server.System<SharedBuckleSystem>();
+        var hardpoints = server.System<HardpointSystem>();
+        var xformSys = server.System<SharedTransformSystem>();
+        var map = await pair.CreateTestMap();
+
+        await server.WaitAssertion(() =>
+        {
+            var vehicle = entMan.SpawnEntity("LuaMVehicleTank", new MapCoordinates(Vector2.Zero, map.MapId));
+            var gunner = Seat(entMan, buckle, vehicle, 1);
+            var turret = entMan.GetComponent<VehicleTurretComponent>(vehicle);
+            turret.Rotation = new Angle(MathF.PI / 2f);
+            Assert.That(hardpoints.TryGetWeapon(vehicle, HardpointType.Cannon, out var cannon, out _), Is.True);
+
+            // -- Корпус смотрит на юг (ось башни -1, 0 px), ствол на восток: в ракурсе East дуло нарисовано в 40, 6 px от центра башни
+            var expected = new Vector2(39f, 6f) / 32f;
+
+            var flash = new LuaMGetMuzzleFlashOriginEvent();
+            entMan.EventBus.RaiseLocalEvent(cannon!.Value, ref flash);
+            Assert.That(flash.Origin, Is.Not.Null);
+            Assert.That(Vector2.Distance(xformSys.ToMapCoordinates(flash.Origin!.Value).Position, expected), Is.LessThan(0.01f));
+
+            var shot = new LuaMGetShootOriginEvent(cannon.Value, new EntityCoordinates(map.MapUid, new Vector2(10f, 0.2f)));
+            entMan.EventBus.RaiseLocalEvent(gunner, ref shot);
+            Assert.That(shot.Origin, Is.Not.Null);
+            Assert.That(Vector2.Distance(xformSys.ToMapCoordinates(shot.Origin!.Value).Position, expected), Is.LessThan(0.01f));
+
+            entMan.DeleteEntity(vehicle);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task TurretHoldsAimWhileHullMovesAndTurns()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var turretSys = server.System<VehicleTurretSystem>();
+        var xformSys = server.System<SharedTransformSystem>();
+        var timing = server.ResolveDependency<IGameTiming>();
+        var map = await pair.CreateTestMap();
+
+        EntityUid vehicle = default;
+        Angle aimed = default;
+
+        await server.WaitPost(() =>
+        {
+            vehicle = entMan.SpawnEntity("LuaMVehicleTank", new MapCoordinates(Vector2.Zero, map.MapId));
+            var turret = entMan.GetComponent<VehicleTurretComponent>(vehicle);
+            turretSys.AimAt((vehicle, turret), new MapCoordinates(new Vector2(6f, 0f), map.MapId));
+        });
+
+        await pair.RunTicksSync(timing.TickRate * 2);
+
+        await server.WaitPost(() =>
+        {
+            aimed = turretSys.GetWorldRotation(vehicle, entMan.GetComponent<VehicleTurretComponent>(vehicle));
+            Assert.That(Math.Abs(Angle.ShortestDistance(aimed, new Vector2(1f, 0f).ToWorldAngle()).Degrees), Is.LessThan(2));
+            xformSys.SetWorldPositionRotation(vehicle, new Vector2(0f, 3f), new Angle(MathF.PI / 2f));
+        });
+
+        await pair.RunTicksSync(timing.TickRate);
+
+        await server.WaitAssertion(() =>
+        {
+            var turret = entMan.GetComponent<VehicleTurretComponent>(vehicle);
+            Assert.That(Math.Abs(Angle.ShortestDistance(turretSys.GetWorldRotation(vehicle, turret), aimed).Degrees), Is.LessThan(3));
+            Assert.That(turretSys.IsAligned((vehicle, turret), new MapCoordinates(new Vector2(6f, 3f), map.MapId)), Is.True);
+            entMan.DeleteEntity(vehicle);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task TurretKeepsWorldAimWhenVehicleChangesParent()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var turretSys = server.System<VehicleTurretSystem>();
+        var xformSys = server.System<SharedTransformSystem>();
+        var timing = server.ResolveDependency<IGameTiming>();
+        var map = await pair.CreateTestMap();
+
+        EntityUid vehicle = default;
+        MapCoordinates target = default;
+
+        await server.WaitPost(() =>
+        {
+            xformSys.SetLocalRotation(map.Grid, new Angle(MathF.PI / 2f));
+            vehicle = entMan.SpawnEntity("LuaMVehicleTank", map.GridCoords);
+            var turret = entMan.GetComponent<VehicleTurretComponent>(vehicle);
+            target = new MapCoordinates(xformSys.GetWorldPosition(vehicle) + new Vector2(6f, 0f), map.MapId);
+            turretSys.AimAt((vehicle, turret), target);
+        });
+
+        await pair.RunTicksSync(timing.TickRate * 2);
+
+        await server.WaitPost(() =>
+        {
+            Assert.That(turretSys.IsAligned((vehicle, entMan.GetComponent<VehicleTurretComponent>(vehicle)), target), Is.True);
+            xformSys.SetParent(vehicle, map.MapUid);
+        });
+
+        await pair.RunTicksSync(timing.TickRate);
+
+        await server.WaitAssertion(() =>
+        {
+            var turret = entMan.GetComponent<VehicleTurretComponent>(vehicle);
+            Assert.That(entMan.GetComponent<TransformComponent>(vehicle).ParentUid, Is.EqualTo(map.MapUid));
+            Assert.That(turretSys.IsAligned((vehicle, turret), target), Is.True);
             entMan.DeleteEntity(vehicle);
         });
 
@@ -310,8 +474,7 @@ public sealed class HumveeTests
         {
             Assert.That(hardpoints.TryGetWeapon(vehicle, HardpointType.Cannon, out var cannon, out var gun), Is.True);
             var turret = entMan.GetComponent<VehicleTurretComponent>(vehicle);
-            turret.LocalRotation = Angle.Zero;
-            turret.TargetLocalRotation = Angle.Zero;
+            turret.Rotation = Angle.Zero;
             var mag = entMan.GetComponent<VehicleShellMagazineComponent>(cannon!.Value);
             var before = mag.Counts[mag.Selected];
             var sideways = new EntityCoordinates(map.MapUid, new Vector2(10f, 0f));
@@ -455,8 +618,9 @@ public sealed class HumveeTests
         await pair.CleanReturnAsync();
     }
 
-    [Test]
-    public async Task MotorcycleCrashThrowsRiderOff()
+    [TestCase("VehicleLuaMMotorcycle", 1)]
+    [TestCase("VehicleLuaMATV", 2)]
+    public async Task BikeCrashThrowsRidersOff(string proto, int seats)
     {
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
@@ -465,7 +629,7 @@ public sealed class HumveeTests
         var timing = server.ResolveDependency<IGameTiming>();
         var map = await pair.CreateTestMap();
 
-        EntityUid rider = default;
+        var riders = new List<EntityUid>();
         await server.WaitPost(() =>
         {
             var gravity = entMan.EnsureComponent<GravityComponent>(map.Grid);
@@ -481,8 +645,13 @@ public sealed class HumveeTests
                 }
             }
 
-            var bike = entMan.SpawnEntity("VehicleLuaMMotorcycle", map.GridCoords);
-            rider = Seat(entMan, buckle, bike, 0);
+            var bike = entMan.SpawnEntity(proto, map.GridCoords);
+            Assert.That(entMan.GetComponent<VehicleSeatsComponent>(bike).Seats, Has.Count.EqualTo(seats));
+            for (var i = 0; i < seats; i++)
+            {
+                riders.Add(Seat(entMan, buckle, bike, i));
+            }
+
             entMan.SpawnEntity("WallSolid", map.GridCoords.Offset(Angle.Zero.ToWorldVec() * 2f));
             var mover = entMan.GetComponent<GridVehicleMoverComponent>(bike);
             mover.CurrentSpeed = 14f;
@@ -492,7 +661,12 @@ public sealed class HumveeTests
         await pair.RunTicksSync(timing.TickRate);
 
         await server.WaitAssertion(() =>
-            Assert.That(entMan.GetComponent<BuckleComponent>(rider).Buckled, Is.False));
+        {
+            foreach (var rider in riders)
+            {
+                Assert.That(entMan.GetComponent<BuckleComponent>(rider).Buckled, Is.False);
+            }
+        });
 
         await pair.CleanReturnAsync();
     }
@@ -559,6 +733,7 @@ public sealed class HumveeTests
     [TestCase("VehicleHoverbikeNfsd")]
     [TestCase("VehicleHoverbikePirate")]
     [TestCase("VehicleHoverbikeSyndicate")]
+    [TestCase("VehicleLuaMHoverbike")]
     public async Task HoverbikesUseNewVehicleSystem(string proto)
     {
         await using var pair = await PoolManager.GetServerClient();
@@ -573,6 +748,147 @@ public sealed class HumveeTests
             Assert.That(entMan.HasComponent<HoverVehicleComponent>(bike), Is.True);
             Assert.That(entMan.HasComponent<VehicleFuelComponent>(bike), Is.True);
             entMan.DeleteEntity(bike);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [TestCase("LuaMVehicleHumveeOneMan")]
+    [TestCase("LuaMVehicleTankOneMan")]
+    [TestCase("LuaMVehicleSPPVanOneMan")]
+    public async Task OneManDriverAlsoGuns(string proto)
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var buckle = server.System<SharedBuckleSystem>();
+        var turrets = server.System<VehicleTurretSystem>();
+        var map = await pair.CreateTestMap();
+
+        await server.WaitAssertion(() =>
+        {
+            var vehicle = entMan.SpawnEntity(proto, new MapCoordinates(Vector2.Zero, map.MapId));
+            var seats = entMan.GetComponent<VehicleSeatsComponent>(vehicle);
+            Assert.That(seats.Seats, Does.Not.Contain(VehicleSeatRole.Gunner));
+
+            var driver = Seat(entMan, buckle, vehicle, 0);
+            Assert.That(seats.Driver, Is.EqualTo(driver));
+            Assert.That(seats.Gunner, Is.EqualTo(driver));
+
+            var turret = entMan.GetComponent<VehicleTurretComponent>(vehicle);
+            var gun = new LuaMGetGunEvent();
+            entMan.EventBus.RaiseLocalEvent(driver, ref gun);
+            if (turrets.TryGetSelectedWeapon(vehicle, turret, out var weapon, out _))
+                Assert.That(gun.Gun, Is.EqualTo(weapon));
+            else
+                Assert.That(gun.Gun, Is.Null);
+
+            buckle.Unbuckle(driver, null);
+            Assert.That(seats.Gunner, Is.Null);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task TankCannonHeldFireDoesNotSkipReload()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var buckle = server.System<SharedBuckleSystem>();
+        var hardpoints = server.System<HardpointSystem>();
+        var gunSys = server.System<SharedGunSystem>();
+        var timing = server.ResolveDependency<IGameTiming>();
+        var map = await pair.CreateTestMap();
+
+        EntityUid gunner = default;
+        EntityUid cannon = default;
+        var target = new EntityCoordinates(map.MapUid, new Vector2(0f, -10f));
+
+        await server.WaitPost(() =>
+        {
+            var vehicle = entMan.SpawnEntity("LuaMVehicleTank", new MapCoordinates(Vector2.Zero, map.MapId));
+            gunner = Seat(entMan, buckle, vehicle, 1);
+            Assert.That(hardpoints.TryGetWeapon(vehicle, HardpointType.Cannon, out var weapon, out _), Is.True);
+            cannon = weapon!.Value;
+        });
+
+        await pair.RunTicksSync(5);
+        await server.WaitAssertion(() =>
+            gunSys.AttemptShoot(gunner, cannon, entMan.GetComponent<GunComponent>(cannon), target));
+
+        await pair.RunTicksSync(timing.TickRate * 4 + 5);
+
+        await server.WaitAssertion(() =>
+        {
+            var gun = entMan.GetComponent<GunComponent>(cannon);
+            gun.ShotCounter = 1;
+            gunSys.AttemptShoot(gunner, cannon, gun, target);
+            var mag = entMan.GetComponent<VehicleShellMagazineComponent>(cannon);
+            Assert.That(mag.Counts[mag.Selected], Is.EqualTo(4), "a held trigger fires as soon as the shell is loaded");
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task AtvUsesNewVehicleSystem()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var map = await pair.CreateTestMap();
+
+        await server.WaitAssertion(() =>
+        {
+            var atv = entMan.SpawnEntity("VehicleLuaMATV", new MapCoordinates(Vector2.Zero, map.MapId));
+            Assert.That(entMan.HasComponent<GridVehicleMoverComponent>(atv), Is.True);
+            Assert.That(entMan.HasComponent<HoverVehicleComponent>(atv), Is.False);
+            Assert.That(entMan.GetComponent<VehicleFuelComponent>(atv).Enabled, Is.True);
+            Assert.That(entMan.System<ItemSlotsSystem>().TryGetSlot(atv, "bag", out _), Is.True);
+            entMan.DeleteEntity(atv);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task JanicartKeepsCleaningKitWithoutFuel()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var map = await pair.CreateTestMap();
+
+        await server.WaitAssertion(() =>
+        {
+            var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+            var cart = entMan.SpawnEntity("VehicleLuaMJanicart", coords);
+            var mop = entMan.SpawnEntity("MopItem", coords);
+            var bag = entMan.SpawnEntity("TrashBag", coords);
+            var waterCan = entMan.SpawnEntity("JerryCanWeldingFuel", coords);
+            var driver = entMan.SpawnEntity("MobHuman", coords);
+            var slots = entMan.System<ItemSlotsSystem>();
+            var solutions = entMan.System<SharedSolutionContainerSystem>();
+
+            Assert.That(entMan.HasComponent<GridVehicleMoverComponent>(cart), Is.True);
+            Assert.That(slots.TryInsert(cart, "mop_slot", mop, null), Is.True);
+            Assert.That(slots.TryInsert(cart, "trashbag_slot", bag, null), Is.True);
+
+            var start = new VehicleEngineStartAttemptEvent(driver);
+            entMan.EventBus.RaiseLocalEvent(cart, ref start);
+            Assert.That(start.Cancelled, Is.False);
+
+            Assert.That(solutions.TryGetSolution(waterCan, "tank", out var tank, out _), Is.True);
+            solutions.RemoveAllSolution(tank!.Value);
+            solutions.TryAddReagent(tank.Value, "Water", FixedPoint2.New(50), out _);
+            var pour = new SolutionTransferAttemptEvent(waterCan, cart);
+            entMan.EventBus.RaiseLocalEvent(cart, ref pour);
+            Assert.That(pour.CancelReason, Is.Null);
+
+            Assert.That(solutions.TryGetRefillableSolution(cart, out _, out var bucket), Is.True);
+            Assert.That(bucket!.MaxVolume, Is.EqualTo(FixedPoint2.New(800)));
         });
 
         await pair.CleanReturnAsync();
@@ -758,6 +1074,49 @@ public sealed class HumveeTests
             Assert.That(xform.LocalPosition.Y, Is.LessThan(-0.5f), "it drove up to the wall");
             Assert.That(MathF.Abs(xform.LocalPosition.X), Is.LessThan(1f), $"it did not slide along the wall (x {xform.LocalPosition.X:0.00})");
             Assert.That(mover.CurrentSpeed, Is.EqualTo(0f).Within(0.5f));
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task RamCooldownSurvivesOtherVehicleRemoval()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var map = await pair.CreateTestMap();
+
+        EntityUid humvee = default;
+        EntityUid wall = default;
+        var firstHit = FixedPoint2.Zero;
+
+        await server.WaitPost(() =>
+        {
+            PrepareFloor(entMan, map);
+            humvee = entMan.SpawnEntity("LuaMVehicleHumvee", new EntityCoordinates(map.Grid, Vector2.Zero));
+            wall = entMan.SpawnEntity("WallSolid", new EntityCoordinates(map.Grid, new Vector2(0.5f, -2.5f)));
+            entMan.GetComponent<GridVehicleMoverComponent>(humvee).CurrentSpeed = 10f;
+        });
+
+        await pair.RunTicksSync(12);
+
+        await server.WaitPost(() =>
+        {
+            firstHit = entMan.GetComponent<DamageableComponent>(wall).TotalDamage;
+            Assert.That(firstHit, Is.GreaterThan(FixedPoint2.Zero));
+
+            var other = entMan.SpawnEntity("LuaMVehicleHumvee", new EntityCoordinates(map.Grid, new Vector2(20f, 0f)));
+            entMan.DeleteEntity(other);
+            entMan.GetComponent<GridVehicleMoverComponent>(humvee).CurrentSpeed = 10f;
+        });
+
+        await pair.RunTicksSync(3);
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(entMan.GetComponent<DamageableComponent>(wall).TotalDamage, Is.EqualTo(firstHit));
+            entMan.DeleteEntity(humvee);
         });
 
         await pair.CleanReturnAsync();

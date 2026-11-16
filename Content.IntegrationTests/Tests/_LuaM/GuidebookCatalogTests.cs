@@ -106,7 +106,6 @@ public sealed class GuidebookCatalogTests
         var system = pair.Client.ResolveDependency<IEntityManager>().System<GuidebookCatalogClientSystem>();
         await pair.Client.WaitPost(system.Request);
         // A snapshot is built across ticks, rather than blocking a player request.
-        // -- Карты разбираются в фоновом потоке, поэтому ждём по времени: в тесте тики идут быстрее разбора
         var deadline = DateTime.UtcNow + TimeSpan.FromSeconds(90);
         while (system.Catalog == null && DateTime.UtcNow < deadline) await pair.RunTicksSync(5);
         await pair.Client.WaitAssertion(() =>

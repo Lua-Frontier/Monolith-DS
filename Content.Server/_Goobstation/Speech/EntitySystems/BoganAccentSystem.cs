@@ -38,7 +38,7 @@ public sealed partial class BoganAccentSystem : EntitySystem
         if (_random.Prob(0.3f))
         {
             var pick = _random.Next(1, 5);
-            message += Loc.GetString($"accent-bogan-suffix-{pick}");
+            message = message.TrimEnd(' ', '.', '!', '?', '…') + Loc.GetString($"accent-bogan-suffix-{pick}"); // LuaM: message += > TrimEnd
         }
 
         args.Message = message;

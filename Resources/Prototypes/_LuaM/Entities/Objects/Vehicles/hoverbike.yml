@@ -14,6 +14,13 @@
     - state: engine
     - state: lights
       shader: unshaded
+  - type: SpriteMovement
+    movementLayers:
+      base:
+        state: hull
+    noMovementLayers:
+      base:
+        state: hull
   - type: HoverVehicle
     thrust: 4
     maxSpeed: 12
@@ -45,13 +52,13 @@
   - type: VehicleEngine
     startSound: /Audio/Effects/Vehicle/vehiclestartup.ogg
     stopSound: /Audio/_LuaM/Vehicles/vehicle_turned_off.ogg
-    idleSound: /Audio/Effects/shuttle_thruster.ogg
-    slowSound: /Audio/Effects/shuttle_thruster.ogg
-    mediumSound: /Audio/Effects/shuttle_thruster.ogg
-    fastSound: /Audio/Effects/shuttle_thruster.ogg
+    idleSound: /Audio/_LuaM/Vehicles/Hover/hover_idle.ogg
+    slowSound: /Audio/_LuaM/Vehicles/Hover/hover_slow.ogg
+    mediumSound: /Audio/_LuaM/Vehicles/Hover/hover_med.ogg
+    fastSound: /Audio/_LuaM/Vehicles/Hover/hover_fast.ogg
     startDelay: 1
     exitDelay: 1
-    volume: -6
+    volume: 0
   - type: Storage
     clickInsert: false
     grid:
@@ -273,3 +280,12 @@
     containers:
       storagebase: !type:Container
       syndicategun: !type:ContainerSlot
+
+- type: entity
+  parent: LuaMHoverbikeBase
+  id: VehicleLuaMHoverbike
+  components:
+  - type: RandomSprite
+    available:
+    - base:
+        hull: Sixteen

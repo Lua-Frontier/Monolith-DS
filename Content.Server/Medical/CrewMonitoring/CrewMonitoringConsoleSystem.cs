@@ -26,7 +26,7 @@ public sealed partial class CrewMonitoringConsoleSystem : EntitySystem
 
     private void OnRemove(EntityUid uid, CrewMonitoringConsoleComponent component, ComponentRemove args)
     {
-        component.ConnectedSensors.Clear();
+        component.ConnectedSensors = new(); // LuaM: the dictionary is shared with the server
     }
 
     private void OnPacketReceived(EntityUid uid, CrewMonitoringConsoleComponent component, DeviceNetworkPacketEvent args)

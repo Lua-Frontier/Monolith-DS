@@ -224,6 +224,15 @@ public sealed partial class GunSystem : SharedGunSystem
                 ShootOrThrow(ammoEnt, mapDirection, gunVelocity, gun, gunUid, user, offset, fromCoordinates);
                 shotProjectiles.Add(ammoEnt);
             }
+            // LuaM-start
+            if (IsVehicleMounted(gunUid, out var vehicle))
+            {
+                MuzzleFlash(gunUid, muzzle, mapDirection.ToAngle());
+                Audio.PlayPvs(sound ?? gun.SoundGunshotModified, vehicle);
+                return;
+            }
+            // LuaM-end
+
             MuzzleFlash(gunUid, muzzle, mapDirection.ToAngle(), user);
             Audio.PlayPredicted(sound ?? gun.SoundGunshotModified, gunUid, user);
         }

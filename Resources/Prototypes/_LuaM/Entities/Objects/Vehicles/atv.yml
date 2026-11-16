@@ -1,0 +1,79 @@
+- type: entity
+  parent: VehicleLuaMMotorcycle
+  id: VehicleLuaMATV
+  name: ATV
+  description: All-Tile Vehicle. A two-seat quad bike with a rack for a bag. Hit a wall at speed and both of you are going over the handlebars.
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    noRot: true
+    sprite: _NF/Objects/Vehicles/atv.rsi
+    layers:
+    - map: [ base ]
+      state: hull
+    - state: engine
+    - state: lights
+      shader: unshaded
+  - type: SpriteMovement
+    movementLayers:
+      base:
+        state: hull
+    noMovementLayers:
+      base:
+        state: hull
+  - type: RandomSprite
+    available:
+    - base:
+        hull: Sixteen
+  - type: StrapSlots
+    offsets:
+    - 0, -0.08
+    - 0, 0.22
+  - type: VehicleRiderVisuals
+    seatOffsets:
+      South:
+      - 0, 4
+      - 0, 8
+      North:
+      - 0, 4
+      - 0, 1
+      East:
+      - -1, 6
+      - -7, 7
+      West:
+      - 1, 6
+      - 7, 7
+  - type: GridVehicleMover
+    maxSpeed: 10
+    driftMinSpeed: 6.5
+  - type: VehicleSeats
+    seats:
+    - Driver
+    - Passenger
+    driverActions:
+    - ActionLuaMVehicleHorn
+    - ActionLuaMVehicleSpotlight
+  - type: ItemSlots
+    slots:
+      bag:
+        name: stored bag
+        whitelist:
+          components:
+          - Storage
+        priority: 2
+        insertSound:
+          path: /Audio/Items/belt_equip.ogg
+          params:
+            volume: -3
+  - type: ItemMapper
+    mapLayers:
+      bag:
+        whitelist:
+          components:
+          - Storage
+    sprite: _NF/Objects/Vehicles/atv.rsi
+  - type: ContainerContainer
+    containers:
+      bag: !type:ContainerSlot
+  - type: StaticPrice
+    price: 750

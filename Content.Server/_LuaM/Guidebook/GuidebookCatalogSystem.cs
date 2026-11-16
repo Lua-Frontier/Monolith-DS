@@ -131,7 +131,6 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
             {
                 if (_builder.MoveNext())
                 {
-                    // -- false: шаг ждёт фоновый разбор карты, в этом тике делать больше нечего
                     if (!_builder.Current) break;
                     continue;
                 }
@@ -158,25 +157,27 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
         return result;
     }
 
-    // -- Чтение и разбор YAML карт занимали около трёх четвертей сборки справочника и шли в основном потоке:
-    // -- после старта раунда это давало секунды рывков. Разбор не трогает сущности, поэтому вынесен в фоновую задачу,
-    // -- которая отдаёт карты по одной в том же порядке
+    private const int ParseLookahead = 4;
+
     private ParsedMapSlot[] ParseMaps(IReadOnlyList<string> paths)
     {
         var token = (_parseCancel ??= new CancellationTokenSource()).Token;
+        var gate = new SemaphoreSlim(ParseLookahead);
         var slots = new ParsedMapSlot[paths.Count];
         for (var i = 0; i < slots.Length; i++)
-            slots[i] = new ParsedMapSlot();
+            slots[i] = new ParsedMapSlot(gate);
 
-        Task.Run(() =>
+        Task.Run(async () =>
         {
             foreach (var (slot, path) in slots.Zip(paths))
             {
-                if (!token.IsCancellationRequested)
+                try
                 {
-                    try { slot.Data = ParseMap(path); }
-                    catch (Exception exception) { slot.Error = exception.Message; }
+                    await gate.WaitAsync(token);
+                    slot.Data = ParseMap(path);
                 }
+                catch (OperationCanceledException) { }
+                catch (Exception exception) { slot.Error = exception.Message; }
 
                 slot.Done = true;
             }
@@ -185,8 +186,9 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
         return slots;
     }
 
-    private sealed class ParsedMapSlot
+    private sealed class ParsedMapSlot(SemaphoreSlim gate)
     {
+        public readonly SemaphoreSlim Gate = gate;
         public volatile bool Done;
         public MappingDataNode? Data;
         public string? Error;
@@ -212,9 +214,9 @@ public sealed partial class GuidebookCatalogSystem : EntitySystem
 
     private MappingDataNode? ParsedMap(ParsedMapSlot slot, string path)
     {
-        // -- Дерево карты большое: слот отпускает его сразу после выдачи
         var data = slot.Data;
         slot.Data = null;
+        slot.Gate.Release();
         if (data != null)
             return data;
 

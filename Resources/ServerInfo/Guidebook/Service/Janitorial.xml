@@ -20,7 +20,7 @@
 
 ## Дополнительное оборудование
 <Box>
-<GuideEntityEmbed Entity="NFVehicleJanicart"/>
+<GuideEntityEmbed Entity="VehicleLuaMJanicart"/>
 <GuideEntityEmbed Entity="WetFloorSign"/>
 <GuideEntityEmbed Entity="Holoprojector" Caption="holosign projector"/>
 <GuideEntityEmbed Entity="LightReplacer"/>

@@ -24,7 +24,7 @@
         state: keys
   - type: ConditionalSpawner
     prototypes:
-      - NFVehicleJanicart # Frontier: add NF prefix
+      - VehicleLuaMJanicart # LuaM
 
 - type: entity
   name: ATV Spawner
@@ -38,7 +38,7 @@
         state: keys
   - type: ConditionalSpawner
     prototypes:
-      - VehicleATVNF # Frontier: add NF suffix
+      - VehicleLuaMATV # LuaM
 
 - type: entity
   name: Motobike Spawner

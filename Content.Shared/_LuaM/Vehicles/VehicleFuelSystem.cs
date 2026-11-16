@@ -36,7 +36,7 @@ public sealed partial class VehicleFuelSystem : EntitySystem
         var query = EntityQueryEnumerator<VehicleFuelComponent, VehicleEngineComponent, GridVehicleMoverComponent>();
         while (query.MoveNext(out var uid, out var fuel, out var engine, out var mover))
         {
-            if (!engine.EngineOn)
+            if (!fuel.Enabled || !engine.EngineOn)
             {
                 fuel.Accumulator = 0f;
                 continue;
@@ -73,13 +73,13 @@ public sealed partial class VehicleFuelSystem : EntitySystem
 
     private void OnCanMove(Entity<VehicleFuelComponent> ent, ref VehicleCanMoveEvent args)
     {
-        if (GetFuel(ent, ent.Comp) <= FixedPoint2.Zero)
+        if (ent.Comp.Enabled && GetFuel(ent, ent.Comp) <= FixedPoint2.Zero)
             args.Cancelled = true;
     }
 
     private void OnStartAttempt(Entity<VehicleFuelComponent> ent, ref VehicleEngineStartAttemptEvent args)
     {
-        if (GetFuel(ent, ent.Comp) > FixedPoint2.Zero)
+        if (!ent.Comp.Enabled || GetFuel(ent, ent.Comp) > FixedPoint2.Zero)
             return;
 
         args.Cancelled = true;
@@ -88,7 +88,7 @@ public sealed partial class VehicleFuelSystem : EntitySystem
 
     private void OnTransferAttempt(Entity<VehicleFuelComponent> ent, ref SolutionTransferAttemptEvent args)
     {
-        if (args.To != ent.Owner || args.CancelReason != null ||
+        if (!ent.Comp.Enabled || args.To != ent.Owner || args.CancelReason != null ||
             !_solution.TryGetDrainableSolution(args.From, out _, out var source))
         {
             return;
@@ -106,12 +106,13 @@ public sealed partial class VehicleFuelSystem : EntitySystem
 
     private void OnTransferred(Entity<VehicleFuelComponent> ent, ref SolutionTransferredEvent args)
     {
-        _engine.TryStart(ent);
+        if (ent.Comp.Enabled)
+            _engine.TryStart(ent);
     }
 
     private void OnExamined(Entity<VehicleFuelComponent> ent, ref ExaminedEvent args)
     {
-        if (!_solution.TryGetSolution(ent.Owner, ent.Comp.Solution, out _, out var solution))
+        if (!ent.Comp.Enabled || !_solution.TryGetSolution(ent.Owner, ent.Comp.Solution, out _, out var solution))
             return;
 
         var amount = GetFuel(ent, ent.Comp);

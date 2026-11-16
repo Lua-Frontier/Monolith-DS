@@ -13,7 +13,7 @@ public sealed class VehicleGunnerPanel : VehicleHudPanel
     public int Capacity;
     public float Reload = 1f;
     public float Azimuth;
-    public readonly List<(string Name, int Count, int Capacity)> Shells = new();
+    public readonly List<(string NameId, int Count, int Capacity)> Shells = new();
     public int Selected = -1;
     public string Weapon = string.Empty;
 
@@ -24,10 +24,10 @@ public sealed class VehicleGunnerPanel : VehicleHudPanel
     protected override float DrawHeader(DrawingHandleScreen handle, float right, float s)
     {
         var (status, color) = Ammo <= 0
-            ? (Loc.GetString("luam-vehicle-gunner-empty"), Danger)
+            ? (Locale("luam-vehicle-gunner-empty"), Danger)
             : Reload < 1f
-                ? (Loc.GetString("luam-vehicle-gunner-reloading"), Warn)
-                : (Loc.GetString("luam-vehicle-gunner-ready"), Good);
+                ? (Locale("luam-vehicle-gunner-reloading"), Warn)
+                : (Locale("luam-vehicle-gunner-ready"), Good);
 
         return StatusLight(handle, right, status, color, s);
     }
@@ -41,13 +41,13 @@ public sealed class VehicleGunnerPanel : VehicleHudPanel
     private void DrawAmmoBlock(DrawingHandleScreen handle, float s)
     {
         Box(handle, 6, 24, 94, 60, Inset, SectionBorder, s);
-        DrawMiddle(handle, Label, Fit(Label, Loc.GetString("luam-vehicle-gunner-ammo"), 84, s), 11, 31, s, Muted);
+        DrawMiddle(handle, Label, Fit(Label, Locale("luam-vehicle-gunner-ammo"), 84, s), 11, 31, s, Muted);
 
         var digits = Capacity >= 100 || Ammo >= 100 ? 3 : 2;
         var ammoColor = Ammo <= 0 ? Danger : Capacity > 0 && Ammo <= Capacity / 4 ? Warn : Text;
         var advance = LeadingZeroDigits(handle, Ammo, digits, 11, 51, s, ammoColor);
 
-        var capacity = $"/{Capacity}";
+        var capacity = Format("/{0}", Capacity);
         var capacityX = 11 + advance + 2;
         if (Capacity > 0 && capacityX + Width(DigitsSmall, capacity, s) <= 95)
             DrawMiddle(handle, DigitsSmall, capacity, capacityX, 56, s, Muted);
@@ -64,7 +64,7 @@ public sealed class VehicleGunnerPanel : VehicleHudPanel
         {
             for (var i = 0; i < Shells.Count && i < MaxRows; i++)
             {
-                var (name, count, capacity) = Shells[i];
+                var (nameId, count, capacity) = Shells[i];
                 var middle = 32 + i * RowSpacing;
                 var selected = i == Selected;
                 if (selected)
@@ -74,19 +74,19 @@ public sealed class VehicleGunnerPanel : VehicleHudPanel
                 }
 
                 var textColor = selected ? Accent : count > 0 ? Text : Muted;
-                var countX = DrawMiddleRight(handle, DigitsSmall, $"{count:00}/{capacity:00}", RightEdge, middle, s, count > 0 ? textColor : Danger);
-                DrawMiddle(handle, Label, Fit(Label, name.ToUpperInvariant(), countX - 4f - (RightX + 3), s), RightX + 3, middle, s, textColor);
+                var countX = DrawMiddleRight(handle, DigitsSmall, Format("{0:00}/{1:00}", count, capacity), RightEdge, middle, s, count > 0 ? textColor : Danger);
+                DrawMiddle(handle, Label, Fit(Label, Upper(Locale(nameId)), countX - 4f - (RightX + 3), s), RightX + 3, middle, s, textColor);
             }
         }
         else
         {
-            DrawMiddle(handle, Label, Fit(Label, Loc.GetString("luam-vehicle-gunner-weapon"), RightEdge - RightX, s), RightX, 32, s, Muted);
-            DrawMiddle(handle, TitleFont, Fit(TitleFont, Weapon.ToUpperInvariant(), RightEdge - RightX, s), RightX, 47, s, Text);
+            DrawMiddle(handle, Label, Fit(Label, Locale("luam-vehicle-gunner-weapon"), RightEdge - RightX, s), RightX, 32, s, Muted);
+            DrawMiddle(handle, TitleFont, Fit(TitleFont, Upper(Weapon), RightEdge - RightX, s), RightX, 47, s, Text);
         }
 
         handle.DrawRect(Rect(107, 67, 144, 1, s), SectionBorder);
         var heading = ((int) MathF.Round(Azimuth) % 360 + 360) % 360;
-        var valueX = DrawMiddleRight(handle, DigitsSmall, $"{heading:000}°", RightEdge, 75, s, Accent);
-        DrawMiddle(handle, Label, Fit(Label, Loc.GetString("luam-vehicle-gunner-azimuth"), valueX - 4f - RightX, s), RightX, 75, s, Muted);
+        var valueX = DrawMiddleRight(handle, DigitsSmall, Format("{0:000}°", heading), RightEdge, 75, s, Accent);
+        DrawMiddle(handle, Label, Fit(Label, Locale("luam-vehicle-gunner-azimuth"), valueX - 4f - RightX, s), RightX, 75, s, Muted);
     }
 }

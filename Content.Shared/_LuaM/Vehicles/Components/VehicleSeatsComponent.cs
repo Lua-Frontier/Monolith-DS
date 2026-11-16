@@ -13,7 +13,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._LuaM.Vehicles.Components;
 
 // -- Порядок мест совпадает с порядком смещений в StrapSlots
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class VehicleSeatsComponent : Component
 {
     [DataField(required: true)]
@@ -27,6 +27,12 @@ public sealed partial class VehicleSeatsComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? Gunner;
+
+    [DataField]
+    public bool DriverIsGunner;
+
+    [DataField]
+    public bool BlockAllHands;
 
     [DataField]
     public List<EntProtoId> DriverActions = new();
@@ -54,6 +60,9 @@ public sealed partial class VehicleOccupantComponent : Component
 
     [DataField, AutoNetworkedField]
     public int Seat;
+
+    [DataField, AutoNetworkedField]
+    public bool HandsBlocked;
 
     [DataField]
     public Vector2? PreviousMaxZoom;

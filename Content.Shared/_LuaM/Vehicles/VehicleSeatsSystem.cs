@@ -20,6 +20,8 @@ using Content.Shared.Popups;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Projectiles;
 using Content.Shared.Verbs;
+using Content.Shared.Weapons.Melee;
+using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 
@@ -31,6 +33,7 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
     [Dependency] private SharedBuckleSystem _buckle = default!;
     [Dependency] private SharedContentEyeSystem _eye = default!;
     [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private INetManager _net = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
@@ -40,6 +43,7 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<VehicleSeatsComponent, StrapAttemptEvent>(OnStrapAttempt);
         SubscribeLocalEvent<VehicleSeatsComponent, StrappedEvent>(OnStrapped);
         SubscribeLocalEvent<VehicleSeatsComponent, UnstrappedEvent>(OnUnstrapped);
         SubscribeLocalEvent<VehicleSeatsComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
@@ -48,6 +52,13 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
 
         SubscribeLocalEvent<VehicleOccupantComponent, PreventCollideEvent>(OnOccupantPreventCollide);
         SubscribeLocalEvent<VehicleOccupantComponent, AttackAttemptEvent>(OnOccupantAttackAttempt);
+        SubscribeLocalEvent<VehicleOccupantComponent, GetMeleeWeaponEvent>(OnOccupantGetMeleeWeapon);
+    }
+
+    private void OnStrapAttempt(Entity<VehicleSeatsComponent> ent, ref StrapAttemptEvent args)
+    {
+        if (_net.IsClient)
+            args.Cancelled = true;
     }
 
     private void OnStrapped(Entity<VehicleSeatsComponent> ent, ref StrappedEvent args)
@@ -66,24 +77,39 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
     {
         var role = seat >= 0 && seat < ent.Comp.Seats.Count ? ent.Comp.Seats[seat] : VehicleSeatRole.Passenger;
 
+        var allHands = ent.Comp.BlockAllHands ||
+                       role == VehicleSeatRole.Gunner ||
+                       role == VehicleSeatRole.Driver && ent.Comp.DriverIsGunner;
+
         var comp = EnsureComp<VehicleOccupantComponent>(occupant);
         comp.Vehicle = ent;
         comp.Role = role;
         comp.Seat = seat;
+        comp.HandsBlocked = allHands;
         Dirty(occupant, comp);
         _physics.RegenerateContacts(occupant);
         SetVehicleZoom(ent, occupant, comp);
+
+        var handCount = CompOrNull<HandsComponent>(occupant)?.Count ?? 0;
+        if (allHands)
+            BlockHands(ent, occupant, handCount);
+        else if (role == VehicleSeatRole.Driver)
+            BlockHands(ent, occupant, 1);
 
         switch (role)
         {
             case VehicleSeatRole.Driver:
                 ent.Comp.Driver = occupant;
-                BlockHands(ent, occupant, 1);
+                if (ent.Comp.DriverIsGunner)
+                {
+                    ent.Comp.Gunner = occupant;
+                    AddActions(ent, occupant, ent.Comp.GunnerActions);
+                }
+
                 AddActions(ent, occupant, ent.Comp.DriverActions);
                 break;
             case VehicleSeatRole.Gunner:
                 ent.Comp.Gunner = occupant;
-                BlockHands(ent, occupant, CompOrNull<HandsComponent>(occupant)?.Count ?? 0);
                 AddActions(ent, occupant, ent.Comp.GunnerActions);
                 break;
         }
@@ -273,6 +299,13 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
     {
         if (args.Target == ent.Comp.Vehicle)
             args.Cancel();
+    }
+
+    // -- С занятыми руками движок берёт кулак как оружие, и стрелок бил ЛКМ и толкался ПКМ прямо из машины
+    private void OnOccupantGetMeleeWeapon(Entity<VehicleOccupantComponent> ent, ref GetMeleeWeaponEvent args)
+    {
+        if (ent.Comp.HandsBlocked)
+            args.Handled = true;
     }
 
     public bool TryGetDriver(EntityUid vehicle, out EntityUid driver)

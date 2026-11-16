@@ -80,16 +80,16 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
         NoServerLabel.Visible = false;
 
         // Order sensor data
-        var orderedSensors = sensors.OrderBy(n => n.Name).OrderBy(j => j.Job);
+        var orderedSensors = sensors.OrderBy(j => j.Job).ThenBy(n => n.Name).ToList(); // LuaM
         var assignedSensors = new HashSet<SuitSensorStatus>();
         var departments = sensors.SelectMany(d => d.JobDepartments).Distinct().OrderBy(n => n);
 
         // Create department labels and populate lists
         foreach (var department in departments)
         {
-            var departmentSensors = orderedSensors.Where(d => d.JobDepartments.Contains(department));
+            var departmentSensors = orderedSensors.Where(d => d.JobDepartments.Contains(department)).ToList(); // LuaM
 
-            if (departmentSensors == null || !departmentSensors.Any())
+            if (departmentSensors.Count == 0)
                 continue;
 
             foreach (var sensor in departmentSensors)
@@ -120,9 +120,9 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
         }
 
         // Account for any non-station users
-        var remainingSensors = orderedSensors.Except(assignedSensors);
+        var remainingSensors = orderedSensors.Where(s => !assignedSensors.Contains(s)).ToList(); // LuaM
 
-        if (remainingSensors.Any())
+        if (remainingSensors.Count > 0)
         {
             var spacer = new Control()
             {

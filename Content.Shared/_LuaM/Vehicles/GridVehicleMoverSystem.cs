@@ -75,7 +75,26 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
 
         SubscribeLocalEvent<GridVehicleMoverComponent, PreventCollideEvent>(OnPreventCollide);
         SubscribeLocalEvent<GridVehicleMoverComponent, BeingPulledAttemptEvent>((_, _, args) => OnBeingPulledAttempt(args));
-        InitializeCollision();
+        SubscribeAllEvent<VehicleSpeedLimitEvent>(OnSpeedLimit);
+    }
+
+    private void OnSpeedLimit(VehicleSpeedLimitEvent msg, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity is not { } user ||
+            !TryGetEntity(msg.Vehicle, out var vehicle) ||
+            !TryComp<VehicleSeatsComponent>(vehicle, out var seats) || seats.Driver != user ||
+            !TryComp<GridVehicleMoverComponent>(vehicle, out var mover) ||
+            !float.IsFinite(msg.Limit))
+        {
+            return;
+        }
+
+        var limit = Math.Clamp(msg.Limit, mover.MinSpeedLimit, 1f);
+        if (MathHelper.CloseTo(mover.SpeedLimit, limit))
+            return;
+
+        mover.SpeedLimit = limit;
+        Dirty(vehicle.Value, mover);
     }
 
     private void OnPreventCollide(Entity<GridVehicleMoverComponent> ent, ref PreventCollideEvent args)
@@ -167,7 +186,13 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     public (float Throttle, float Steering, bool Handbrake) GetInput(EntityUid uid, VehicleSeatsComponent seats)
     {
         if (seats.Driver is not { } driver ||
-            !TryComp<InputMoverComponent>(driver, out var input) ||
+            !TryComp<InputMoverComponent>(driver, out var input))
+        {
+            return (0f, 0f, false);
+        }
+
+        var buttons = input.HeldMoveButtons;
+        if ((buttons & (MoveButtons.AnyDirection | MoveButtons.Walk)) == 0 ||
             !_actionBlocker.CanConsciouslyPerformAction(driver))
         {
             return (0f, 0f, false);
@@ -178,7 +203,6 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         if (ev.Cancelled)
             return (0f, 0f, false);
 
-        var buttons = input.HeldMoveButtons;
         var throttle = 0f;
         var steering = 0f;
 
@@ -253,8 +277,8 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
 
         UpdateDrift(mover, steering, handbrake, turned, dt);
 
-        var maxSpeed = mover.MaxSpeed * speedMultiplier;
-        var maxReverse = mover.MaxReverseSpeed * speedMultiplier;
+        var maxSpeed = mover.MaxSpeed * speedMultiplier * mover.SpeedLimit;
+        var maxReverse = MathF.Min(mover.MaxReverseSpeed * speedMultiplier, maxSpeed);
 
         float targetSpeed;
         float rate;

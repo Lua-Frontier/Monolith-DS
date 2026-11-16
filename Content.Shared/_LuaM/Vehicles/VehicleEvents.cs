@@ -4,10 +4,10 @@
  * See AGPLv3.txt for details.
  */
 
+using System.Numerics;
 using Content.Shared._LuaM.Vehicles.Components;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
-using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._LuaM.Vehicles;
@@ -72,10 +72,17 @@ public sealed partial class HardpointRemoveDoAfterEvent : DoAfterEvent
 public sealed partial class VehicleAmmoLoadDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
-public sealed class VehicleTurretAimEvent(NetEntity vehicle, NetCoordinates coordinates) : EntityEventArgs
+public sealed class VehicleTurretAimEvent(NetEntity vehicle, Vector2 offset) : EntityEventArgs
 {
     public readonly NetEntity Vehicle = vehicle;
-    public readonly NetCoordinates Coordinates = coordinates;
+    public readonly Vector2 Offset = offset;
+}
+
+[Serializable, NetSerializable]
+public sealed class VehicleSpeedLimitEvent(NetEntity vehicle, float limit) : EntityEventArgs
+{
+    public readonly NetEntity Vehicle = vehicle;
+    public readonly float Limit = limit;
 }
 
 [ByRefEvent]

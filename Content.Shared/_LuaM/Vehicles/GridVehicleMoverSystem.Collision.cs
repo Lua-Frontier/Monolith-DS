@@ -33,13 +33,9 @@ public sealed partial class GridVehicleMoverSystem
 
     private static readonly ProtoId<TagPrototype> SmashIgnoreTag = "VehicleSmashIgnore";
     private static readonly TimeSpan HitCooldown = TimeSpan.FromSeconds(0.75);
+    private const int HitCooldownPruneCount = 16;
 
-    private readonly Dictionary<EntityUid, TimeSpan> _lastHit = new();
-
-    private void InitializeCollision()
-    {
-        SubscribeLocalEvent<GridVehicleMoverComponent, ComponentShutdown>((_, _, _) => _lastHit.Clear());
-    }
+    private readonly List<EntityUid> _expiredHits = new();
 
     // -- То, что не меняется между пробами одного тика: считается один раз, а не на каждую пробу
     private readonly record struct Hull(
@@ -148,7 +144,7 @@ public sealed partial class GridVehicleMoverSystem
     private void Ram(EntityUid uid, GridVehicleMoverComponent mover, EntityUid target)
     {
         var speed = MathF.Abs(mover.CurrentSpeed);
-        if (_net.IsClient || speed < mover.RamMinSpeed || !TryStartHit(target))
+        if (_net.IsClient || speed < mover.RamMinSpeed || !TryStartHit(mover, target))
             return;
 
         if (HasComp<DamageableComponent>(target) && !_tag.HasTag(target, SmashIgnoreTag))
@@ -193,7 +189,7 @@ public sealed partial class GridVehicleMoverSystem
         _transform.SetWorldPosition(mob, mobPos + right * side * 0.6f);
 
         var speed = MathF.Abs(mover.CurrentSpeed);
-        if (speed < mover.RamMinSpeed || !TryStartHit(mob))
+        if (speed < mover.RamMinSpeed || !TryStartHit(mover, mob))
             return;
 
         var damage = new DamageSpecifier();
@@ -214,16 +210,28 @@ public sealed partial class GridVehicleMoverSystem
             _audio.PlayPvs(sound.MobCollisionSound, uid);
     }
 
-    private bool TryStartHit(EntityUid target)
+    private bool TryStartHit(GridVehicleMoverComponent mover, EntityUid target)
     {
         var now = _timing.CurTime;
-        if (_lastHit.TryGetValue(target, out var last) && now < last + HitCooldown)
+        if (mover.HitCooldowns.TryGetValue(target, out var until) && now < until)
             return false;
 
-        if (_lastHit.Count > 256)
-            _lastHit.Clear();
+        if (mover.HitCooldowns.Count >= HitCooldownPruneCount)
+        {
+            _expiredHits.Clear();
+            foreach (var (hit, end) in mover.HitCooldowns)
+            {
+                if (now >= end)
+                    _expiredHits.Add(hit);
+            }
 
-        _lastHit[target] = now;
+            foreach (var hit in _expiredHits)
+            {
+                mover.HitCooldowns.Remove(hit);
+            }
+        }
+
+        mover.HitCooldowns[target] = now + HitCooldown;
         return true;
     }
 

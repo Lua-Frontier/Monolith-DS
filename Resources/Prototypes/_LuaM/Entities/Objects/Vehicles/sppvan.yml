@@ -142,7 +142,6 @@
       wheel: !type:ContainerSlot
   - type: VehicleTurret
     rotationSpeedDegrees: 180
-    fireGraceDegrees: 20
     muzzleLength: 0.6
     sprite: _LuaM/Structures/Vehicles/SPPVan/sppvan.rsi
     pixelOffsets:
@@ -251,6 +250,11 @@
     hardpointType: Cannon
     family: SPPVan
     visualState: t60p3m_0
+    muzzleOffsets:
+      South: -1.5, -18
+      North: -1.5, 22
+      East: 20, 2
+      West: -21, 2
     ammoType: RERotaryCannon
   - type: Gun
     fireRate: 6

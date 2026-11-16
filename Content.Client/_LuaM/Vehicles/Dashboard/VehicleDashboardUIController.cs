@@ -23,12 +23,15 @@ public sealed partial class VehicleDashboardUIController : UIController, IOnStat
 
     private const float KmhPerTile = 3.6f;
     private const float NeedleResponse = 8f;
+    private const float PanelMargin = -150f;
+    private const float StackGap = 6f;
 
     private VehicleDashboard? _panel;
     private VehicleGunnerPanel? _gunnerPanel;
     private Vector2? _driverPosition;
     private Vector2? _gunnerPosition;
     private bool _active;
+    private bool _stacked;
     private EntityUid? _vehicle;
 
     public override void Initialize()
@@ -58,11 +61,13 @@ public sealed partial class VehicleDashboardUIController : UIController, IOnStat
 
         _panel = new VehicleDashboard { Visible = false };
         _panel.Moved += pos => _driverPosition = pos;
+        _panel.SpeedLimitChanged += OnSpeedLimitChanged;
         Place(screen, _panel, _driverPosition);
 
         _gunnerPanel = new VehicleGunnerPanel { Visible = false };
         _gunnerPanel.Moved += pos => _gunnerPosition = pos;
         Place(screen, _gunnerPanel, _gunnerPosition);
+        _stacked = false;
     }
 
     private static void Place(LayoutContainer screen, VehicleHudPanel panel, Vector2? position)
@@ -78,7 +83,23 @@ public sealed partial class VehicleDashboardUIController : UIController, IOnStat
         LayoutContainer.SetAnchorPreset(panel, LayoutContainer.LayoutPreset.CenterBottom);
         LayoutContainer.SetGrowHorizontal(panel, LayoutContainer.GrowDirection.Both);
         LayoutContainer.SetGrowVertical(panel, LayoutContainer.GrowDirection.Begin);
-        LayoutContainer.SetMarginBottom(panel, -150);
+        LayoutContainer.SetMarginBottom(panel, PanelMargin);
+    }
+
+    private void SetStacked(bool stacked)
+    {
+        if (_stacked == stacked || _gunnerPosition != null || _gunnerPanel == null || _panel == null)
+            return;
+
+        _stacked = stacked;
+        var margin = stacked ? PanelMargin - _panel.MinSize.Y - StackGap : PanelMargin;
+        LayoutContainer.SetMarginBottom(_gunnerPanel, margin);
+    }
+
+    private void OnSpeedLimitChanged(float limit)
+    {
+        if (_vehicle is { } vehicle)
+            _entMan.RaisePredictiveEvent(new VehicleSpeedLimitEvent(_entMan.GetNetEntity(vehicle), limit));
     }
 
     private void OnScreenUnload()
@@ -117,16 +138,19 @@ public sealed partial class VehicleDashboardUIController : UIController, IOnStat
         _vehicle = vehicle;
 
         var driver = occupant.Role == VehicleSeatRole.Driver &&
-                     _entMan.TryGetComponent<GridVehicleMoverComponent>(vehicle, out _);
-        var gunner = occupant.Role == VehicleSeatRole.Gunner &&
+                     _entMan.HasComponent<GridVehicleMoverComponent>(vehicle);
+        var gunner = _entMan.TryGetComponent<VehicleSeatsComponent>(vehicle, out var seats) &&
+                     seats.Gunner == _player.LocalEntity &&
                      _entMan.HasComponent<VehicleTurretComponent>(vehicle);
 
         _panel.Visible = driver;
         _gunnerPanel.Visible = gunner;
+        SetStacked(driver && gunner);
 
         if (driver)
             UpdateDriver(vehicle, snap, args.DeltaSeconds);
-        else if (gunner)
+
+        if (gunner)
             UpdateGunner(vehicle, snap);
     }
 
@@ -150,6 +174,16 @@ public sealed partial class VehicleDashboardUIController : UIController, IOnStat
         var load = mover.MaxSpeed > 0f ? Math.Clamp(speed / mover.MaxSpeed, 0f, 1f) : 0f;
         var tach = !engineOn ? 0f : starting ? 2.5f + MathF.Sin((float) now.TotalSeconds * 18f) * 0.6f : 0.9f + load * 5.2f;
 
+        // -- Тяга турбин: на газу почти полная, накатом держит только парение
+        var hover = _entMan.HasComponent<HoverVehicleComponent>(vehicle);
+        var thrust = 0f;
+        if (hover && engineOn && _entMan.TryGetComponent<VehicleSeatsComponent>(vehicle, out var seats))
+        {
+            var throttle = _entMan.System<GridVehicleMoverSystem>().GetInput(vehicle, seats).Throttle;
+            thrust = starting ? 0.3f + MathF.Sin((float) now.TotalSeconds * 12f) * 0.05f
+                : throttle != 0f ? MathF.Max(0.75f, load) : 0.15f + load * 0.45f;
+        }
+
         var fuel = 1f;
         var hasFuel = true;
         if (_entMan.TryGetComponent<VehicleFuelComponent>(vehicle, out var fuelComp) &&
@@ -164,6 +198,11 @@ public sealed partial class VehicleDashboardUIController : UIController, IOnStat
         var k = snap ? 1f : 1f - MathF.Exp(-NeedleResponse * dt);
         panel.Speed += (speed * KmhPerTile - panel.Speed) * k;
         panel.Tach += (tach - panel.Tach) * k;
+        panel.Thrust += (thrust - panel.Thrust) * k;
+        panel.Hover = hover;
+        panel.MinSpeedLimit = mover.MinSpeedLimit;
+        if (!panel.DraggingLimit)
+            panel.SpeedLimit = mover.SpeedLimit;
         panel.Fuel += (fuel - panel.Fuel) * k;
         panel.Hull = GetHull(vehicle);
         panel.EngineOn = engineOn;
@@ -172,7 +211,7 @@ public sealed partial class VehicleDashboardUIController : UIController, IOnStat
         panel.Handbrake = mover.Handbrake;
         panel.Lights = _entMan.TryGetComponent<VehicleSpotlightComponent>(vehicle, out var light) && light.Enabled;
         panel.Boost = _entMan.TryGetComponent<VehicleOverchargeComponent>(vehicle, out var boost) && now < boost.ActiveUntil;
-        panel.Gear = mover.CurrentSpeed < -0.05f ? 'R' : speed > 0.05f ? 'D' : 'N';
+        panel.Gear = mover.CurrentSpeed < -0.05f ? "R" : speed > 0.05f ? "D" : "N";
         panel.MaxSpeed = mover.MaxSpeed * KmhPerTile;
         if (snap)
             panel.Title = _entMan.GetComponent<MetaDataComponent>(vehicle).EntityName;
@@ -185,7 +224,7 @@ public sealed partial class VehicleDashboardUIController : UIController, IOnStat
         if (snap)
             panel.Title = _entMan.GetComponent<MetaDataComponent>(vehicle).EntityName;
 
-        panel.Azimuth = (float) turret.LocalRotation.Degrees;
+        panel.Azimuth = (float) VehicleTurretSystem.GetLocalRotation(turret, _entMan.GetComponent<TransformComponent>(vehicle)).Degrees;
         panel.Shells.Clear();
         panel.Selected = -1;
 
@@ -216,7 +255,7 @@ public sealed partial class VehicleDashboardUIController : UIController, IOnStat
         {
             var shell = mag.Shells[i];
             var shells = i < mag.Counts.Count ? mag.Counts[i] : 0;
-            panel.Shells.Add((Loc.GetString(shell.Name), shells, shell.Capacity));
+            panel.Shells.Add((shell.Name.Id, shells, shell.Capacity));
         }
 
         panel.Selected = mag.Selected;

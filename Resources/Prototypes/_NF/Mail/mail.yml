@@ -1857,8 +1857,7 @@
   components:
   - type: Mail
     contents:
-      - id: VehicleATVNF
-      - id: VehicleKeyATV
+      - id: VehicleLuaMATV # LuaM
 
 - type: entity
   categories: [ HideSpawnMenu ]

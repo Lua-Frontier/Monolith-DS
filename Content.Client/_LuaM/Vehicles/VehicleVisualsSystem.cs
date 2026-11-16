@@ -15,7 +15,6 @@ using Robust.Client.Input;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
-using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -34,8 +33,8 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
 
     private static readonly EntProtoId InteriorVisual = "LuaMVehicleInteriorVisual";
     private static readonly EntProtoId TurretVisual = "LuaMVehicleTurretVisual";
-    private const float PixelsPerMeter = 32f;
-    private const float TurretVisualTurnSpeed = 6f;
+    private const float TurretVisualCatchUp = 1.5f;
+    private const float TurretVisualSnapDegrees = 45f;
     private const float TurretFadedAlpha = 0.6f;
     private const float HoverDelay = 0.15f;
     private const float HoverSearchRange = 5f;
@@ -183,29 +182,22 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
             }
 
             var (worldPos, worldRot) = _transform.GetWorldPositionRotation(xform);
-            var hullDir = GetHullDirection(worldRot + eyeRot);
+            var hullDir = VehicleTurretSystem.GetSpriteDirection(worldRot + eyeRot, SpriteComponent.DirectionBias);
 
             if (state.Turret is { } turretEnt)
-                UpdateTurret(uid, state, turretEnt, hullDir, MathHelper.Lerp(1f, TurretFadedAlpha, state.Fade), frameTime);
+                UpdateTurret(uid, xform, worldRot, state, turretEnt, hullDir, MathHelper.Lerp(1f, TurretFadedAlpha, state.Fade), frameTime);
 
             if (TryComp<StrapComponent>(uid, out var strap) && strap.BuckledEntities.Count > 0)
-                UpdateOccupants(interior, strap, shown, worldPos, worldRot - hullDir.ToAngle(), hullDir, eyeRot);
+                UpdateOccupants(interior, strap, shown, worldPos, GetImageRotation(sprite, worldRot, hullDir, eyeRot), hullDir, eyeRot);
         }
 
         UpdateRiders(eyeRot);
         RestoreUnseen();
     }
 
-    // -- Тот же выбор ракурса, что у движка при отрисовке 4-направленного спрайта, со смещением у диагоналей
-    private static Direction GetHullDirection(Angle screenAngle)
+    private static Angle GetImageRotation(SpriteComponent sprite, Angle worldRot, Direction hullDir, Angle eyeRot)
     {
-        return SpriteComponent.Layer.GetDirection(RsiDirectionType.Dir4, screenAngle.Reduced().FlipPositive()) switch
-        {
-            RsiDirection.North => Direction.North,
-            RsiDirection.East => Direction.East,
-            RsiDirection.West => Direction.West,
-            _ => Direction.South,
-        };
+        return sprite.NoRotation ? -eyeRot : worldRot - hullDir.ToAngle();
     }
 
     private void UpdateOccupants(
@@ -255,7 +247,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
             _shifted[occupant] = original;
         }
 
-        var target = hullPos + imageRot.RotateVec(seats[seat.Seat] / PixelsPerMeter);
+        var target = hullPos + imageRot.RotateVec(seats[seat.Seat] / VehicleTurretSystem.PixelsPerMeter);
         var (occupantPos, occupantRot) = _transform.GetWorldPositionRotation(occupant);
         var spriteRot = sprite.NoRotation ? -eyeRot : occupantRot;
         var offset = original + (-spriteRot).RotateVec(target - occupantPos);
@@ -269,7 +261,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
         while (query.MoveNext(out var uid, out var riders, out var sprite, out var xform))
         {
             var (worldPos, worldRot) = _transform.GetWorldPositionRotation(xform);
-            var hullDir = GetHullDirection(worldRot + eyeRot);
+            var hullDir = VehicleTurretSystem.GetSpriteDirection(worldRot + eyeRot, SpriteComponent.DirectionBias);
             var depth = (int) (hullDir is Direction.East or Direction.West ? riders.SideDrawDepth : riders.FrontDrawDepth);
             if (sprite.DrawDepth != depth)
                 _sprite.SetDrawDepth((uid, sprite), depth);
@@ -278,7 +270,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
                 continue;
 
             riders.SeatOffsets.TryGetValue(hullDir, out var seats);
-            var imageRot = worldRot - hullDir.ToAngle();
+            var imageRot = GetImageRotation(sprite, worldRot, hullDir, eyeRot);
             foreach (var occupant in strap.BuckledEntities)
             {
                 if (!TryComp<SpriteComponent>(occupant, out var occupantSprite))
@@ -360,7 +352,15 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
         return false;
     }
 
-    private void UpdateTurret(EntityUid vehicle, VisualState state, EntityUid turretEnt, Direction hullDir, float alpha, float frameTime)
+    private void UpdateTurret(
+        EntityUid vehicle,
+        TransformComponent vehicleXform,
+        Angle worldRot,
+        VisualState state,
+        EntityUid turretEnt,
+        Direction hullDir,
+        float alpha,
+        float frameTime)
     {
         if (!TryComp<VehicleTurretComponent>(vehicle, out var turret) ||
             !TryComp<SpriteComponent>(turretEnt, out var sprite))
@@ -397,9 +397,13 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
             SetTurretLayer((turretEnt, sprite), 1, rsi, weaponState);
         }
 
-        var delta = Angle.ShortestDistance(state.TurretRotation, turret.LocalRotation);
-        var lerp = Math.Clamp(frameTime * TurretVisualTurnSpeed, 0f, 1f);
-        state.TurretRotation = (state.TurretRotation + delta * lerp).Reduced();
+        var target = worldRot - vehicleXform.LocalRotation + turret.Rotation;
+        var delta = Angle.ShortestDistance(state.TurretRotation, target);
+        var step = MathHelper.DegreesToRadians(turret.RotationSpeedDegrees * TurretVisualCatchUp) * frameTime;
+        state.TurretRotation = Math.Abs(delta.Theta) <= step || Math.Abs(delta.Degrees) >= TurretVisualSnapDegrees
+            ? target.Reduced()
+            : (state.TurretRotation + new Angle(step * Math.Sign(delta.Theta))).Reduced();
+        var localRotation = (state.TurretRotation - worldRot).Reduced();
 
         var localOffset = VehicleTurretSystem.GetTurretPivot(turret, hullDir);
 
@@ -407,8 +411,8 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
         if (!xform.LocalPosition.EqualsApprox(localOffset))
             _transform.SetLocalPositionNoLerp(turretEnt, localOffset, xform);
 
-        if (!xform.LocalRotation.EqualsApprox(state.TurretRotation))
-            _transform.SetLocalRotationNoLerp(turretEnt, state.TurretRotation, xform);
+        if (!xform.LocalRotation.EqualsApprox(localRotation))
+            _transform.SetLocalRotationNoLerp(turretEnt, localRotation, xform);
 
         if (!MathHelper.CloseTo(sprite.Color.A, alpha))
             _sprite.SetColor((turretEnt, sprite), sprite.Color.WithAlpha(alpha));

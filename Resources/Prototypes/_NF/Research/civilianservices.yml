@@ -124,7 +124,7 @@
 # - type: technology
 #   id: MobileSanitation
 #   name: research-technology-mobile-sanitation
-#   entityIcon: NFVehicleJanicart
+#   entityIcon: VehicleLuaMJanicart # LuaM
 #   discipline: CivilianServices
 #   tier: 2
 #   cost: 5000
