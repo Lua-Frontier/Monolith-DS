@@ -33,6 +33,7 @@ public sealed partial class CEZLevelsSystem : CESharedZLevelsSystem
         InitializeTransit();
 
         SubscribeLocalEvent<CEStationZLevelsComponent, StationPostInitEvent>(OnStationPostInit);
+        SubscribeLocalEvent<CEZMapComponent, EntityTerminatingEvent>(OnZMapTerminating); // LuaM
     }
 
     private void OnStationPostInit(Entity<CEStationZLevelsComponent> ent, ref StationPostInitEvent args)
