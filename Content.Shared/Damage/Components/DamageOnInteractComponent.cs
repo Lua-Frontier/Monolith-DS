@@ -17,7 +17,7 @@ public sealed partial class DamageOnInteractComponent : Component
     /// How much damage to apply to the person making contact
     /// </summary>
     [DataField(required: true), AutoNetworkedField]
-    public DamageSpecifier Damage = default!;
+    public DamageSpecifier Damage = new(); // LuaM
 
     /// <summary>
     /// Whether the damage should be resisted by a person's armor values

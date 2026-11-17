@@ -7,7 +7,9 @@ using Content.Shared._White;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Hands.Components;
+using Content.Shared.Movement.Events; // LuaM
 using Content.Shared.Movement.Systems;
+using Content.Shared.Stunnable; // LuaM
 using Content.Shared.Physics;
 using Content.Shared.Projectiles;
 using Content.Shared.Rotation;
@@ -42,6 +44,8 @@ public sealed partial class StandingStateSystem : EntitySystem
         SubscribeLocalEvent<StandingStateComponent, AttemptMobCollideEvent>(OnMobCollide);
         SubscribeLocalEvent<StandingStateComponent, AttemptMobTargetCollideEvent>(OnMobTargetCollide);
         SubscribeLocalEvent<StandingStateComponent, PreventCollideEvent>(PreventCollide); // Mono
+        SubscribeLocalEvent<StandingStateComponent, RefreshFrictionModifiersEvent>(OnRefreshFriction); // LuaM
+        SubscribeLocalEvent<StandingStateComponent, TileFrictionEvent>(OnTileFriction); // LuaM
     }
 
     private void OnMobTargetCollide(Entity<StandingStateComponent> ent, ref AttemptMobTargetCollideEvent args)
@@ -59,6 +63,28 @@ public sealed partial class StandingStateSystem : EntitySystem
             args.Cancelled = true;
         }
     }
+
+    // LuaM-start: a body on the floor slides to a stop like in Nebula; knockdown keeps its own slide
+    private bool SlidesWhileDown(Entity<StandingStateComponent> ent)
+    {
+        return ent.Comp.CurrentState != StandingState.Standing && !HasComp<KnockedDownComponent>(ent);
+    }
+
+    private void OnRefreshFriction(Entity<StandingStateComponent> ent, ref RefreshFrictionModifiersEvent args)
+    {
+        if (!SlidesWhileDown(ent))
+            return;
+
+        args.ModifyFriction(ent.Comp.DownFrictionMod);
+        args.ModifyAcceleration(ent.Comp.DownFrictionMod);
+    }
+
+    private void OnTileFriction(Entity<StandingStateComponent> ent, ref TileFrictionEvent args)
+    {
+        if (SlidesWhileDown(ent))
+            args.Modifier *= ent.Comp.DownFrictionMod;
+    }
+    // LuaM-end
 
     public bool IsDown(EntityUid uid, StandingStateComponent? standingState = null)
     {
@@ -135,6 +161,7 @@ public sealed partial class StandingStateSystem : EntitySystem
         }
 
         _movement.RefreshMovementSpeedModifiers(uid); // WD EDIT
+        _movement.RefreshFrictionModifiers(uid); // LuaM
         _movement.RefreshWeightlessModifiers(uid); // Mono edit
         return true;
     }
@@ -179,6 +206,7 @@ public sealed partial class StandingStateSystem : EntitySystem
         }
         standingState.ChangedFixtures.Clear();
         _movement.RefreshMovementSpeedModifiers(uid); // WD EDIT
+        _movement.RefreshFrictionModifiers(uid); // LuaM
         _movement.RefreshWeightlessModifiers(uid); // Mono edit
         return true;
     }

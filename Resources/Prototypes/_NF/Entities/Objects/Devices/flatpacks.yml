@@ -999,7 +999,7 @@
   description: A flatpack used for constructing a hoverbike. Keys already slotted in the ignition.
   components:
   - type: Flatpack
-    entity: VehicleHoverbikeNFKeys
+    entity: VehicleLuaMHoverbike # LuaM
   - type: StaticPrice
     price: 2000
   - type: Sprite
@@ -1013,7 +1013,7 @@
   description: A flatpack used for constructing a hoverbike. Keys already slotted in the ignition.
   components:
   - type: Flatpack
-    entity: VehicleHoverbikeMailcarrierKey
+    entity: VehicleHoverbikeMailcarrier
   - type: StaticPrice
     price: 75
 
@@ -1024,7 +1024,7 @@
   description: A flatpack used for constructing a hoverbike. Keys already slotted in the ignition.
   components:
   - type: Flatpack
-    entity: VehicleHoverbikeNfsdKey
+    entity: VehicleHoverbikeNfsd
   - type: StaticPrice
     price: 750
 
@@ -1035,7 +1035,7 @@
   description: A flatpack used for constructing a hoverbike. Keys already slotted in the ignition.
   components:
   - type: Flatpack
-    entity: VehicleHoverbikePirateKey
+    entity: VehicleHoverbikePirate
   - type: StaticPrice
     price: 750
 
@@ -1046,7 +1046,7 @@
   description: A flatpack used for constructing a hoverbike. Keys already slotted in the ignition.
   components:
   - type: Flatpack
-    entity: VehicleHoverbikeSyndicateKey
+    entity: VehicleHoverbikeSyndicate
   - type: StaticPrice
     price: 750
 
@@ -1057,7 +1057,7 @@
   description: A flatpack used for constructing a Janicart. Keys already slotted in the ignition. Mop sold separately.
   components:
   - type: Flatpack
-    entity: NFVehicleJanicartKey
+    entity: VehicleLuaMJanicart # LuaM
   - type: StaticPrice
     price: 375 # 1.25 * base value of input materials
 

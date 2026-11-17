@@ -674,6 +674,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         var damage = GetDamage(meleeUid, user, component);
         var entities = GetEntityList(ev.Entities);
+        entities.RemoveAll(target => !Exists(target)); // LuaM
 
         if (entities.Count == 0)
         {

@@ -27,6 +27,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
 using Content.Shared.StepTrigger.Components; // Delta V-NoShoesSilentFootstepsComponent
+using Content.Shared._LuaM.Performance; // LuaM
 
 namespace Content.Shared.Movement.Systems;
 
@@ -259,7 +260,7 @@ public abstract partial class SharedMoverController : VirtualController
 
             // If we're not on a grid, and not able to move in space check if we're close enough to a grid to touch.
             if (!touching && MobMoverQuery.TryComp(uid, out var mobMover))
-                touching |= IsAroundCollider(_lookup, (uid, physicsComponent, mobMover, xform));
+                touching |= IsAroundColliderCached(_lookup, (uid, physicsComponent, mobMover, xform)); // LuaM
 
             // If we're touching then use the weightless values
             if (touching)
@@ -478,8 +479,10 @@ public abstract partial class SharedMoverController : VirtualController
         var (uid, collider, mover, transform) = entity;
         var enlargedAABB = _lookup.GetWorldAABB(entity.Owner, transform).Enlarged(mover.GrabRange);
 
-        _aroundColliderSet.Clear();
-        lookupSystem.GetEntitiesIntersecting(transform.MapID, enlargedAABB, _aroundColliderSet);
+        // LuaM-start
+        _aroundColliderSet.ClearAndTrim();
+        lookupSystem.GetEntitiesIntersecting(transform.MapID, enlargedAABB, _aroundColliderSet, LookupFlags.Static);
+        // LuaM-end
         foreach (var otherEntity in _aroundColliderSet)
         {
             if (otherEntity == uid)

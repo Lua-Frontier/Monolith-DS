@@ -194,6 +194,7 @@ accent-german-words-46-2 = комм
 accent-german-words-replace-46 = комманданте
 
 accent-german-words-47 = пиво
+accent-german-words-47-2 = пивко
 accent-german-words-replace-47 = бир
 
 accent-german-words-48 = привет
@@ -217,6 +218,7 @@ accent-german-words-52 = пока.
 accent-german-words-replace-52 = чюсс.
 
 accent-german-words-53 = чао
+accent-german-words-53-2 = пока-пока
 accent-german-words-replace-53 = чау
 
 accent-german-words-54 = фантастический
@@ -252,6 +254,7 @@ accent-german-words-replace-60 = ташэ
 accent-german-words-61 = солдат
 accent-german-words-61-2 = боец
 accent-german-words-61-3 = рядовой
+accent-german-words-61-4 = воин
 accent-german-words-replace-61 = золдат
 
 accent-german-words-62 = солдаты

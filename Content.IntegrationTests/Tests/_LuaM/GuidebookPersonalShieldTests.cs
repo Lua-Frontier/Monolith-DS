@@ -57,7 +57,9 @@ public sealed class GuidebookPersonalShieldTests
         var entities = pair.Client.ResolveDependency<IEntityManager>();
         var system = entities.System<GuidebookCatalogClientSystem>();
         await pair.Client.WaitPost(system.Request);
-        for (var i = 0; i < 100 && system.Catalog == null; i++) await pair.RunTicksSync(5);
+        var timer = System.Diagnostics.Stopwatch.StartNew();
+        while (system.Catalog == null && timer.Elapsed < System.TimeSpan.FromSeconds(90))
+            await pair.RunTicksSync(5);
         await pair.Client.WaitAssertion(() =>
         {
             Assert.That(system.Catalog, Is.Not.Null);

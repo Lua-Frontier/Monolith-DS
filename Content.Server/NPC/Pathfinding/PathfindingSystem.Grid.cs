@@ -8,6 +8,8 @@ using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components; // LuaM
+using Robust.Shared.Physics.Dynamics; // LuaM
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -268,8 +270,20 @@ public sealed partial class PathfindingSystem
         }
     }
 
+    [Dependency] private EntityQuery<PhysicsComponent> _moveBodyQuery = default!; // LuaM
+
     private void OnMoveEvent(ref MoveEvent ev)
     {
+        // LuaM-start
+        if (_moveBodyQuery.TryGetComponent(ev.Sender, out var moveBody) &&
+            (!moveBody.Hard ||
+             ((moveBody.CollisionMask & PathfindingCollisionLayer) == 0x0 &&
+              (moveBody.CollisionLayer & PathfindingCollisionMask) == 0x0)))
+        {
+            return;
+        }
+        // LuaM-end
+
         if (!_fixturesQuery.TryGetComponent(ev.Sender, out var fixtures) ||
             !IsBodyRelevant(fixtures) ||
             _gridQuery.HasComponent(ev.Sender))
@@ -404,7 +418,10 @@ public sealed partial class PathfindingSystem
         // sw.Start();
         var points = chunk.Points;
         var gridOrigin = chunk.Origin * ChunkSize;
-        var tileEntities = new ValueList<EntityUid>();
+        // LuaM-start: wizden#44340
+        var tileEntities = new ValueList<Entity<FixturesComponent>>();
+        var fixtureList = new ValueList<(EntityUid, TransformComponent, ValueList<Fixture>)>();
+        // LuaM-end
         var chunkPolys = chunk.BufferPolygons;
 
         for (var i = 0; i < chunkPolys.Length; i++)
@@ -449,8 +466,26 @@ public sealed partial class PathfindingSystem
                         continue;
                     }
 
-                    tileEntities.Add(ent);
+                    tileEntities.Add((ent, fixtures)); // LuaM
                 }
+
+                // LuaM-start: wizden#44340
+                fixtureList.Clear();
+                foreach (var ent in tileEntities)
+                {
+                    if (!_xformQuery.TryGetComponent(ent, out var entXform))
+                        continue;
+
+                    var entFixtures = new ValueList<Fixture>();
+                    foreach (var fixture in ent.Comp.Fixtures.Values)
+                    {
+                        if (fixture.Hard)
+                            entFixtures.Add(fixture);
+                    }
+
+                    fixtureList.Add((ent.Owner, entXform, entFixtures));
+                }
+                // LuaM-end
 
                 for (var subX = 0; subX < SubStep; subX++)
                 {
@@ -465,18 +500,14 @@ public sealed partial class PathfindingSystem
                         var collisionLayer = 0x0;
                         var damage = 0f;
 
-                        foreach (var ent in tileEntities)
+                        foreach (var (ent, xform, fixtures) in fixtureList) // LuaM: wizden#44340
                         {
-                            if (!_fixturesQuery.TryGetComponent(ent, out var fixtures))
-                                continue;
-
                             var colliding = false;
 
-                            foreach (var fixture in fixtures.Fixtures.Values)
+                            foreach (var fixture in fixtures) // LuaM: wizden#44340
                             {
                                 // Don't need to re-do it.
-                                if (!fixture.Hard ||
-                                    (collisionMask & fixture.CollisionMask) == fixture.CollisionMask &&
+                                if ((collisionMask & fixture.CollisionMask) == fixture.CollisionMask && // LuaM: hard fixtures only, filtered above
                                     (collisionLayer & fixture.CollisionLayer) == fixture.CollisionLayer)
                                 {
                                     continue;
@@ -491,10 +522,10 @@ public sealed partial class PathfindingSystem
                                         continue;
 
                                     intersects = true;
+                                    break; // LuaM
                                 }
 
-                                if (!intersects ||
-                                    !_xformQuery.TryGetComponent(ent, out var xform))
+                                if (!intersects) // LuaM
                                 {
                                     continue;
                                 }

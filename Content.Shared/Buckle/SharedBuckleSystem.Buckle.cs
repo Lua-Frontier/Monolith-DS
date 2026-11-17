@@ -284,6 +284,23 @@ public abstract partial class SharedBuckleSystem
             return false;
         }
 
+        // LuaM-start: lying down you can only be put on a bed, standing up would unbuckle you again
+        if (strapComp.Position != StrapPosition.Down && _standing.IsDown(buckleUid) && !_mobState.IsIncapacitated(buckleUid))
+        {
+            if (popup)
+            {
+                var message = Loc.GetString(buckleUid == user
+                    ? "luam-buckle-lying-message"
+                    : "luam-buckle-other-lying-message",
+                    ("owner", Identity.Entity(buckleUid, EntityManager)));
+
+                _popup.PopupClient(message, user);
+            }
+
+            return false;
+        }
+        // LuaM-end
+
         if (buckleComp.Buckled && !TryUnbuckle(buckleUid, user, buckleComp))
         {
             if (popup)

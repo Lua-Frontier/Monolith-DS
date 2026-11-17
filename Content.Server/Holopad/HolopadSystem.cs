@@ -470,6 +470,12 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
         if (!Resolve(entity.Owner, ref telephone, false))
             return;
 
+        // LuaM-start
+        if (!_userInterfaceSystem.IsUiOpen(entity.Owner, HolopadUiKey.InteractionWindow)
+            && !_userInterfaceSystem.IsUiOpen(entity.Owner, HolopadUiKey.AiActionWindow))
+            return;
+        // LuaM-end
+
         var source = new Entity<TelephoneComponent>(entity, telephone);
         var holopads = new Dictionary<NetEntity, string>();
 

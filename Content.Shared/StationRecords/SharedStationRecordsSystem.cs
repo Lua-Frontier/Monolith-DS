@@ -18,7 +18,7 @@ public abstract class SharedStationRecordsSystem : EntitySystem
     }
     public (NetEntity, uint) Convert(StationRecordKey input)
     {
-        return (GetNetEntity(input.OriginStation), input.Id);
+        return (TryGetNetEntity(input.OriginStation, out var station) ? station.Value : NetEntity.Invalid, input.Id); // LuaM
     }
 
     public List<(NetEntity, uint)> Convert(ICollection<StationRecordKey> input)

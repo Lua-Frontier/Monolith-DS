@@ -498,6 +498,11 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
             return;
         }
 
+        // LuaM-start
+        if (!_userInterface.IsUiOpen(uid, SurveillanceCameraMonitorUiKey.Key))
+            return;
+        // LuaM-end
+
         var state = new SurveillanceCameraMonitorUiState(GetNetEntity(monitor.ActiveCamera), monitor.KnownSubnets.Keys.ToHashSet(), monitor.ActiveCameraAddress, monitor.ActiveSubnet, monitor.KnownCameras);
         _userInterface.SetUiState(uid, SurveillanceCameraMonitorUiKey.Key, state);
     }

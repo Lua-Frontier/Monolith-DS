@@ -15,7 +15,9 @@ using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing; // LuaM
 using Robust.Shared.Utility;
+using Content.Shared._LuaM.Performance; // LuaM
 
 namespace Content.Server.Fluids.EntitySystems;
 
@@ -36,7 +38,8 @@ public sealed partial class DrainSystem : SharedDrainSystem
 
     // Mono
     private float _updateInterval = 1f;
-    private float _updateAccumulator = 0f;
+    [Dependency] private IGameTiming _timing = default!; // LuaM
+    private readonly Dictionary<EntityUid, TimeSpan> _idleUntil = new(); // LuaM
 
     public override void Initialize()
     {
@@ -45,6 +48,7 @@ public sealed partial class DrainSystem : SharedDrainSystem
         SubscribeLocalEvent<DrainComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<DrainComponent, AfterInteractUsingEvent>(OnInteract);
         SubscribeLocalEvent<DrainComponent, DrainDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<DrainComponent, ComponentShutdown>((uid, _, _) => _idleUntil.Remove(uid)); // LuaM
     }
 
     private void AddEmptyVerb(Entity<DrainComponent> entity, ref GetVerbsEvent<Verb> args)
@@ -120,17 +124,30 @@ public sealed partial class DrainSystem : SharedDrainSystem
     {
         base.Update(frameTime);
 
-        // Mono
-        _updateAccumulator += frameTime;
-        if (_updateAccumulator < _updateInterval)
-            return;
-        _updateAccumulator -= _updateInterval;
+        // LuaM-start
+        var period = TickSpread.Period(_timing, _updateInterval);
+        var tick = _timing.CurTick;
+        var now = _timing.CurTime;
+        // LuaM-end
 
         var managerQuery = GetEntityQuery<SolutionContainerManagerComponent>();
 
         var query = EntityQueryEnumerator<DrainComponent>();
         while (query.MoveNext(out var uid, out var drain))
         {
+            // LuaM-start
+            if (!TickSpread.Due(uid, tick, period))
+                continue;
+
+            if (_idleUntil.TryGetValue(uid, out var idle))
+            {
+                if (now < idle)
+                    continue;
+
+                _idleUntil.Remove(uid);
+            }
+            // LuaM-end
+
             if (!managerQuery.TryGetComponent(uid, out var manager))
                 continue;
 
@@ -160,6 +177,7 @@ public sealed partial class DrainSystem : SharedDrainSystem
 
                 if (_puddles.Count == 0 && drainSolution.Volume <= 0)
                 {
+                    _idleUntil[uid] = now + TimeSpan.FromSeconds(5); // LuaM
                     _ambientSoundSystem.SetAmbience(uid, false);
                     continue;
                 }

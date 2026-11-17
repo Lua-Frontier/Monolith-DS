@@ -83,6 +83,11 @@ public sealed partial class CEZLevelsSpeakingSystem : EntitySystem
         Timer.Spawn(MessageDelayMilliseconds,
             () =>
             {
+                // LuaM-start
+                if (TerminatingOrDeleted(transmit))
+                    return;
+                // LuaM-end
+
                 _chat.TrySendInGameICMessage(
                     transmit,
                     message,

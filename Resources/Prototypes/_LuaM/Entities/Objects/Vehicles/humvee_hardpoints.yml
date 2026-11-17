@@ -47,6 +47,10 @@
     - id: turret-launcher
       hardpointType: Launcher
       insertDelay: 2
+  - type: ContainerContainer
+    containers:
+      turret-cannon: !type:ContainerSlot
+      turret-launcher: !type:ContainerSlot
 
 - type: entity
   parent: LuaMHumveeTurret
@@ -92,9 +96,15 @@
     hardpointType: Cannon
     family: Humvee
     visualState: humveecannon_0
+    muzzleOffsets:
+      South: -0.5, -28
+      North: -0.5, 27
+      East: 29, -2
+      West: -29, -2
     ammoType: RERotaryCannon
   - type: Gun
     fireRate: 5
+    projectileSpeed: 75
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -119,6 +129,7 @@
   components:
   - type: Gun
     fireRate: 5
+    projectileSpeed: 75
     burstFireRate: 5
     shotsPerBurst: 3
     selectedMode: Burst
@@ -141,13 +152,18 @@
     hardpointType: Launcher
     family: Humvee
     visualState: humveelauncher_0
+    muzzleOffsets:
+      South: 11, -10
+      North: -12, 7
+      East: 9, 11.5
+      West: -8, -12.5
     ammoType: GrenadeLauncher
   - type: Gun
     fireRate: 0.7
     projectileSpeed: 18
-    selectedMode: SemiAuto
+    selectedMode: FullAuto
     availableModes:
-    - SemiAuto
+    - FullAuto
     soundGunshot: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
     cameraRecoilScalar: 0
   - type: BallisticAmmoProvider
@@ -256,6 +272,7 @@
   - type: VehicleAmmoBox
     ammoType: GrenadeLauncher
     amount: 12
+    loadSound: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
 
 - type: entity
   id: ActionLuaMVehicleHorn

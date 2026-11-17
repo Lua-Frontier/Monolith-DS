@@ -73,6 +73,10 @@ namespace Content.Server.Chemistry.EntitySystems
                 return;
             var inputContainer = _itemSlotsSystem.GetItemOrNull(owner, SharedChemMaster.InputSlotName);
             _appearanceSystem.SetData(owner, ChemMasterVisualState.BeakerInserted, inputContainer.HasValue); // Frontier
+            // LuaM-start
+            if (!_userInterfaceSystem.IsUiOpen(owner, ChemMasterUiKey.Key))
+                return;
+            // LuaM-end
             var outputContainer = _itemSlotsSystem.GetItemOrNull(owner, SharedChemMaster.OutputSlotName);
 
             var bufferReagents = bufferSolution.Contents;

@@ -8,10 +8,13 @@ using System.Numerics;
 using Content.Shared._LuaM.Vehicles.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
+using Content.Shared.Ghost;
+using Content.Shared.Gravity;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
+using Content.Shared.Pulling.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Standing;
@@ -29,6 +32,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
 {
     [Dependency] private ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private SharedGravitySystem _gravity = default!;
     [Dependency] private HardpointSystem _hardpoints = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private MobStateSystem _mobState = default!;
@@ -43,10 +47,19 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     private const int MaxStepsPerFrame = 6;
     private const float MinSpeed = 0.01f;
     private const float MinMove = 0.0001f;
+    private static readonly TimeSpan UnstickRetryDelay = TimeSpan.FromSeconds(2);
+    private static readonly float[] UnstickSteps = { 0.05f, 0.1f, 0.2f, 0.3f };
+    private static readonly Vector2[] UnstickDirections =
+    {
+        new(1f, 0f), new(-1f, 0f), new(0f, 1f), new(0f, -1f),
+        new(0.7071f, 0.7071f), new(-0.7071f, 0.7071f), new(0.7071f, -0.7071f), new(-0.7071f, -0.7071f),
+    };
     private const float HardTurnFraction = 0.8f;
     private const float Clearance = PhysicsConstants.PolygonRadius * 0.75f;
     private const int MobPassMask = (int) CollisionGroup.MobMask;
     private const int MobPassLayer = (int) CollisionGroup.MobLayer;
+    private static readonly TimeSpan FloatCheckInterval = TimeSpan.FromSeconds(0.25);
+    private const float LandingSpeed = 0.5f;
 
     private EntityQuery<FixturesComponent> _fixturesQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -61,7 +74,27 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
 
         SubscribeLocalEvent<GridVehicleMoverComponent, PreventCollideEvent>(OnPreventCollide);
-        InitializeCollision();
+        SubscribeLocalEvent<GridVehicleMoverComponent, BeingPulledAttemptEvent>((_, _, args) => OnBeingPulledAttempt(args));
+        SubscribeAllEvent<VehicleSpeedLimitEvent>(OnSpeedLimit);
+    }
+
+    private void OnSpeedLimit(VehicleSpeedLimitEvent msg, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity is not { } user ||
+            !TryGetEntity(msg.Vehicle, out var vehicle) ||
+            !TryComp<VehicleSeatsComponent>(vehicle, out var seats) || seats.Driver != user ||
+            !TryComp<GridVehicleMoverComponent>(vehicle, out var mover) ||
+            !float.IsFinite(msg.Limit))
+        {
+            return;
+        }
+
+        var limit = Math.Clamp(msg.Limit, mover.MinSpeedLimit, 1f);
+        if (MathHelper.CloseTo(mover.SpeedLimit, limit))
+            return;
+
+        mover.SpeedLimit = limit;
+        Dirty(vehicle.Value, mover);
     }
 
     private void OnPreventCollide(Entity<GridVehicleMoverComponent> ent, ref PreventCollideEvent args)
@@ -69,7 +102,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        if (args.OtherBody.BodyType == BodyType.Static)
+        if (!ent.Comp.Floating && args.OtherBody.BodyType == BodyType.Static)
         {
             args.Cancelled = true;
             return;
@@ -82,13 +115,29 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         }
     }
 
+    private void OnBeingPulledAttempt(BeingPulledAttemptEvent args)
+    {
+        if (!HasComp<GhostComponent>(args.Puller))
+            args.Cancel();
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
+        var now = _timing.CurTime;
         var query = EntityQueryEnumerator<GridVehicleMoverComponent, VehicleSeatsComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var mover, out var seats, out var xform))
         {
+            if (!_net.IsClient && now >= mover.NextFloatCheck)
+            {
+                mover.NextFloatCheck = now + FloatCheckInterval;
+                UpdateFloating((uid, mover, xform));
+            }
+
+            if (mover.Floating)
+                continue;
+
             if (_net.IsClient && (!_timing.InPrediction || seats.Driver == null || seats.Driver != _player.LocalEntity))
                 continue;
 
@@ -134,10 +183,16 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         }
     }
 
-    private (float Throttle, float Steering, bool Handbrake) GetInput(EntityUid uid, VehicleSeatsComponent seats)
+    public (float Throttle, float Steering, bool Handbrake) GetInput(EntityUid uid, VehicleSeatsComponent seats)
     {
         if (seats.Driver is not { } driver ||
-            !TryComp<InputMoverComponent>(driver, out var input) ||
+            !TryComp<InputMoverComponent>(driver, out var input))
+        {
+            return (0f, 0f, false);
+        }
+
+        var buttons = input.HeldMoveButtons;
+        if ((buttons & (MoveButtons.AnyDirection | MoveButtons.Walk)) == 0 ||
             !_actionBlocker.CanConsciouslyPerformAction(driver))
         {
             return (0f, 0f, false);
@@ -148,7 +203,6 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         if (ev.Cancelled)
             return (0f, 0f, false);
 
-        var buttons = input.HeldMoveButtons;
         var throttle = 0f;
         var steering = 0f;
 
@@ -216,13 +270,15 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             else
             {
                 mover.AngularVelocityDegrees = 0f;
+                if (TryUnstick(uid, mover, seats, hull, ref position, rotation))
+                    _transform.SetLocalPositionNoLerp(uid, position, xform);
             }
         }
 
         UpdateDrift(mover, steering, handbrake, turned, dt);
 
-        var maxSpeed = mover.MaxSpeed * speedMultiplier;
-        var maxReverse = mover.MaxReverseSpeed * speedMultiplier;
+        var maxSpeed = mover.MaxSpeed * speedMultiplier * mover.SpeedLimit;
+        var maxReverse = MathF.Min(mover.MaxReverseSpeed * speedMultiplier, maxSpeed);
 
         float targetSpeed;
         float rate;
@@ -281,6 +337,9 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             lastGood = candidate;
         }
 
+        if (blocked && lastGood == start)
+            TryUnstick(uid, mover, seats, hull, ref lastGood, rotation);
+
         if (lastGood != start)
             _transform.SetLocalPositionNoLerp(uid, lastGood, xform);
 
@@ -291,6 +350,47 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         }
 
         _physics.WakeBody(uid);
+    }
+
+    // -- Корпус уже залез в препятствие (стену построили вплотную, дверь закрылась на машине): тогда любая поза занята и машина
+    // -- стоит намертво. Только в этом случае выталкиваем её в ближайшее свободное место; обычное касание стены не трогаем
+    private bool TryUnstick(
+        EntityUid uid,
+        GridVehicleMoverComponent mover,
+        VehicleSeatsComponent seats,
+        in Hull hull,
+        ref Vector2 position,
+        Angle rotation)
+    {
+        var now = _timing.CurTime;
+        if (now < mover.UnstickRetryAt &&
+            mover.UnstickCheckedPosition.EqualsApprox(position, 0.001) &&
+            mover.UnstickCheckedRotation.EqualsApprox(rotation, 0.001))
+        {
+            return false;
+        }
+
+        mover.UnstickCheckedPosition = position;
+        mover.UnstickCheckedRotation = rotation;
+        mover.UnstickRetryAt = now + UnstickRetryDelay;
+
+        if (CanOccupy(uid, mover, seats, hull, position, rotation, false))
+            return false;
+
+        foreach (var distance in UnstickSteps)
+        {
+            foreach (var direction in UnstickDirections)
+            {
+                var candidate = position + rotation.RotateVec(direction) * distance;
+                if (!CanOccupy(uid, mover, seats, hull, candidate, rotation, false))
+                    continue;
+
+                position = candidate;
+                return true;
+            }
+        }
+
+        return false;
     }
 
     // -- Занос: при резком повороте на скорости или с ручником корпус поворачивается быстрее, чем меняется направление движения
@@ -330,6 +430,46 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
         }
 
         return speed;
+    }
+
+    public bool IsFloating(EntityUid uid, TransformComponent xform)
+    {
+        return xform.GridUid is not { } grid || xform.ParentUid != grid || !_gravity.EntityGridOrMapHaveGravity(uid);
+    }
+
+    private void UpdateFloating(Entity<GridVehicleMoverComponent, TransformComponent> ent)
+    {
+        var (uid, mover, xform) = ent;
+        var floating = IsFloating(uid, xform);
+        if (floating == mover.Floating || !_physicsQuery.TryComp(uid, out var body))
+            return;
+
+        var heading = _transform.GetWorldRotation(xform) - Angle.FromDegrees(mover.DriftDegrees);
+        if (floating)
+        {
+            _physics.SetLinearVelocity(uid, heading.ToWorldVec() * mover.CurrentSpeed, body: body);
+            mover.CurrentSpeed = 0f;
+        }
+        else
+        {
+            var velocity = body.LinearVelocity;
+            if (velocity.Length() > LandingSpeed)
+            {
+                var along = Vector2.Dot(velocity, heading.ToWorldVec());
+                mover.CurrentSpeed = Math.Clamp(along, -mover.MaxReverseSpeed, mover.MaxSpeed);
+            }
+
+            _physics.SetLinearVelocity(uid, Vector2.Zero, body: body);
+        }
+
+        mover.AngularVelocityDegrees = 0f;
+        mover.DriftDegrees = 0f;
+        mover.Floating = floating;
+        mover.IsMoving = MathF.Abs(mover.CurrentSpeed) > MinSpeed;
+        _physics.SetAngularVelocity(uid, 0f, body: body);
+        _physics.WakeBody(uid, body: body);
+        _physics.RegenerateContacts(uid);
+        Dirty(uid, mover);
     }
 
     // -- Машина двигается через трансформ, физической скорости у неё и пассажиров нет: эффектам отдаём её вручную

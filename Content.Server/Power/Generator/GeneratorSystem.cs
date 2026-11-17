@@ -155,7 +155,8 @@ public sealed partial class GeneratorSystem : SharedGeneratorSystem
             component.Multiplier,
             availableMaterial);
 
-        _materialStorage.TryChangeMaterialAmount(uid, component.FuelMaterial, -toRemove);
+        if (toRemove != 0) // LuaM
+            _materialStorage.TryChangeMaterialAmount(uid, component.FuelMaterial, -toRemove);
     }
 
     private int RemoveFractionalFuel(ref float fractional, float fuelUsed, float multiplier, int availableQuantity)

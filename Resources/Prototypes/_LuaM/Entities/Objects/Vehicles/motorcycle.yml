@@ -1,0 +1,122 @@
+- type: entity
+  parent: LuaMVehicleBase
+  id: VehicleLuaMMotorcycle
+  name: motorcycle
+  description: A light single-seat bike. Fast and nimble, but hit a wall at speed and you are going over the handlebars.
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    noRot: true
+    sprite: _LuaM/Structures/Vehicles/Motorcycle/motorcycle.rsi
+    layers:
+    - map: [ base ]
+      state: vehicle
+  - type: SpriteMovement
+    movementLayers:
+      base:
+        state: vehicle_moving
+    noMovementLayers:
+      base:
+        state: vehicle
+  - type: Fixtures
+    fixtures:
+      hull:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -0.3,-0.45,0.3,0.45
+        density: 400
+        mask:
+        - LargeMobMask
+        layer:
+        - LargeMobLayer
+  - type: Strap
+    position: None
+    size: 200
+    buckleDoafterTime: 0.5
+    unbuckleDistanceSquared: 0.09
+  - type: StrapSlots
+    offsets:
+    - 0, -0.08
+  - type: VehicleRiderVisuals
+    seatOffsets:
+      South:
+      - 0, 4
+      North:
+      - 0, 4
+      East:
+      - -1, 6
+      West:
+      - 1, 6
+  - type: VehicleSeats
+    seats:
+    - Driver
+    driverActions:
+    - ActionLuaMVehicleHorn
+    - ActionLuaMVehicleSpotlight
+  - type: GridVehicleMover
+    maxSpeed: 17
+    weightClass: Weak
+    maxReverseSpeed: 3
+    acceleration: 8
+    reverseAcceleration: 3
+    deceleration: 9
+    maxRotationSpeedDegrees: 170
+    rotationAccelerationDegrees: 360
+    rotationDecelerationDegrees: 420
+    alignmentAssistDegrees: 8
+    ramMinSpeed: 3
+    ramStructureDamage: 0.1
+    crushMinSpeedScale: 100
+    ramHullDamage: 3
+    mobRamDamage: 1.5
+    mobRamSpeedMultiplier: 0.6
+    mobCollisionHullDamage: 2
+    mobThrowMaxDistance: 2.5
+    speedAtZeroIntegrity: 0.5
+    driftMinSpeed: 11
+    driftGripDegrees: 80
+    driftRecoverDegrees: 260
+    driftMaxDegrees: 35
+    driftDrag: 8
+  - type: VehicleCrashEject
+    minSpeed: 7
+  - type: VehicleSpotlight
+    radius: 5
+    energy: 2
+  - type: PointLight
+    enabled: false
+    radius: 5
+    energy: 2
+    softness: 2
+    lightMask: Cone
+    autoRot: true
+  - type: VehicleIntegrity
+    maxIntegrity: 300
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:ExplodeBehavior
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 20
+    intensitySlope: 5
+    maxIntensity: 4
+  - type: SolutionContainerManager
+    solutions:
+      fuel:
+        maxVol: 80
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 80
+  - type: VehicleFuel
+    consumptionPerMinute: 1.5
+  - type: StaticPrice
+    price: 3000

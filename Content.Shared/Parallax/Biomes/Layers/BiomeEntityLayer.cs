@@ -23,4 +23,12 @@ public sealed partial class BiomeEntityLayer : IBiomeWorldLayer
 
     [DataField("entities", required: true)]
     public List<EntProtoId> Entities = new();
+
+    // LuaM-start
+    /// <summary>
+    /// Сколько из 8 соседних тайлов тоже должны пройти порог слоя, иначе сущность не ставится: убирает одиночные стены на краях шума
+    /// </summary>
+    [DataField]
+    public int MinNeighbours;
+    // LuaM-end
 }

@@ -82,6 +82,8 @@ public sealed partial class ExplosionSystem
     /// </summary>
     public override void Update(float frameTime)
     {
+        ProcessMicroExplosions(); // LuaM
+
         if (_activeExplosion == null && _explosionQueue.Count == 0)
             // nothing to do
             return;

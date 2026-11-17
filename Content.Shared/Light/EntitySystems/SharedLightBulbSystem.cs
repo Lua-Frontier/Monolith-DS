@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Throwing; // LuaM
 using Content.Shared.Destructible;
 using Content.Shared.Light.Components;
 using Content.Shared.Throwing;
@@ -28,7 +29,9 @@ public abstract partial class SharedLightBulbSystem : EntitySystem
 
     private void HandleLand(EntityUid uid, LightBulbComponent bulb, ref LandEvent args)
     {
-        PlayBreakSound(uid, bulb);
+        // -- Клиент бросившего уже сыграл звук сам при предсказанном броске
+        var user = HasComp<PredictedThrownItemComponent>(uid) ? args.User : null; // LuaM
+        PlayBreakSound(uid, bulb, user); // LuaM: added user
         SetState(uid, LightBulbState.Broken, bulb);
     }
 

@@ -22,6 +22,8 @@ public sealed partial class ShipRepairDataComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public List<EntProtoId> EntityPalette = new();
+
+    public override bool SessionSpecific => true; // LuaM
 }
 
 [DataDefinition, Serializable, NetSerializable]

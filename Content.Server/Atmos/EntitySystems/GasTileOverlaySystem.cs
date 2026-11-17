@@ -447,7 +447,6 @@ namespace Content.Server.Atmos.EntitySystems
                         continue;
 
                     List<GasOverlayChunk> dataToSend = new();
-                    ev.UpdatedChunks[netGrid] = dataToSend;
 
                     previouslySent.TryGetValue(netGrid, out var previousChunks);
 
@@ -467,6 +466,11 @@ namespace Content.Server.Atmos.EntitySystems
                         if (previousChunks == null || !previousChunks.Contains(gIndex))
                             dataToSend.Add(value);
                     }
+
+                    // LuaM-start
+                    if (dataToSend.Count != 0)
+                        ev.UpdatedChunks[netGrid] = dataToSend;
+                    // LuaM-end
 
                     previouslySent[netGrid] = gridChunks;
                     if (previousChunks != null)

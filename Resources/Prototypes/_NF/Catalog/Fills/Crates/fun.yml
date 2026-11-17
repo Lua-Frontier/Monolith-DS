@@ -35,8 +35,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: VehicleHoverbikeNF
-      - id: VehicleKeyHoverbikeNF
+      - id: VehicleLuaMHoverbike # LuaM
 
 - type: entity
   id: CrateFunHoverbikeNFPirate
@@ -47,8 +46,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: VehicleHoverbikePirate
-      - id: VehicleKeyHoverbikeNF
+      - id: VehicleHoverbikePirate # LuaM
 
 - type: entity
   id: CrateFunPartyNF

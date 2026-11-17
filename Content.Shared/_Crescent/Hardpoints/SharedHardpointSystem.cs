@@ -106,6 +106,13 @@ public partial class SharedHardpointSystem : EntitySystem
     {
         if (args.Anchored || comp.anchoring is null || TerminatingOrDeleted(target))
             return;
+        // LuaM-start
+        if (TerminatingOrDeleted(comp.anchoring.Value))
+        {
+            comp.anchoring = null;
+            return;
+        }
+        // LuaM-end
         _transformSystem.Unanchor(comp.anchoring.Value);
     }
 

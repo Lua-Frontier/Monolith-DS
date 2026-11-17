@@ -10,4 +10,4 @@
       state: vehicle
   - type: ConditionalSpawner
     prototypes:
-    - VehicleHoverbikeNF
+    - VehicleLuaMHoverbike # LuaM

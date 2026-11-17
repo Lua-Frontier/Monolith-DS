@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics; // LuaM
 using Content.Shared.Alert;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
@@ -16,6 +17,9 @@ using Content.Shared.Strip.Components;
 using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Network; // LuaM
+using Robust.Shared.Physics.Components; // LuaM
+using Robust.Shared.Physics.Systems; // LuaM
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Ensnaring;
@@ -37,6 +41,8 @@ public abstract partial class SharedEnsnareableSystem : EntitySystem
     [Dependency] private   SharedHandsSystem _hands = default!;
     [Dependency] protected SharedPopupSystem Popup = default!;
     [Dependency] private   StaminaSystem _stamina = default!;
+    [Dependency] private   INetManager _net = default!; // LuaM
+    [Dependency] private   SharedPhysicsSystem _physics = default!; // LuaM
 
     public override void Initialize()
     {
@@ -237,6 +243,21 @@ public abstract partial class SharedEnsnareableSystem : EntitySystem
     {
         if (!component.CanThrowTrigger)
             return;
+
+        // LuaM-start
+        // -- При предсказанном броске клиент только останавливает болу у цели: вставка в контейнер прямо в обработке
+        // -- столкновения повторялась бы при каждом перепредсказании вместе со звуком, а связывание всё равно присылает сервер
+        if (_net.IsClient)
+        {
+            if (HasComp<EnsnareableComponent>(args.Target) && TryComp<PhysicsComponent>(uid, out var body))
+            {
+                _physics.SetLinearVelocity(uid, Vector2.Zero, body: body);
+                _physics.SetAngularVelocity(uid, 0f, body: body);
+            }
+
+            return;
+        }
+        // LuaM-end
 
         if (TryEnsnare(args.Target, uid, component))
         {

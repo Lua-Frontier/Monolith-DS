@@ -8,7 +8,6 @@ using Content.Shared._LuaM.Vehicles.Components;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Popups;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -69,7 +68,7 @@ public sealed partial class VehicleEngineSystem : EntitySystem
         if (args.Seated)
         {
             if (HasComp<ActorComponent>(args.Occupant))
-                Start(ent);
+                Start(ent, args.Occupant);
 
             return;
         }
@@ -86,7 +85,7 @@ public sealed partial class VehicleEngineSystem : EntitySystem
     private void OnPlayerAttached(Entity<VehicleOccupantComponent> ent, ref PlayerAttachedEvent args)
     {
         if (ent.Comp.Role == VehicleSeatRole.Driver && TryComp<VehicleEngineComponent>(ent.Comp.Vehicle, out var engine))
-            Start((ent.Comp.Vehicle, engine));
+            Start((ent.Comp.Vehicle, engine), ent);
     }
 
     private void OnCanMove(Entity<VehicleEngineComponent> ent, ref VehicleCanMoveEvent args)
@@ -106,7 +105,9 @@ public sealed partial class VehicleEngineSystem : EntitySystem
 
         if (ent.Comp.Exiting == occupant)
         {
-            args.Cancelled = true;
+            if (_timing.CurTime < ent.Comp.ExitAt)
+                args.Cancelled = true;
+
             return;
         }
 
@@ -116,20 +117,41 @@ public sealed partial class VehicleEngineSystem : EntitySystem
         args.Cancelled = true;
         Stop(ent);
         ent.Comp.Exiting = occupant;
-        ent.Comp.ExitAt = _timing.CurTime + GetLength(ent.Comp.StopSound) + ent.Comp.ExitDelay;
+        ent.Comp.ExitAt = _timing.CurTime + ent.Comp.ExitDelay;
         Dirty(ent);
         _popup.PopupClient(Loc.GetString("luam-vehicle-engine-stopping"), ent, occupant);
     }
 
     // -- Уже работающий мотор повторно не заводим, иначе звук запуска ляжет поверх гула
-    private void Start(Entity<VehicleEngineComponent> ent)
+    public void TryStart(EntityUid vehicle)
+    {
+        if (TryComp<VehicleEngineComponent>(vehicle, out var engine) &&
+            TryComp<VehicleSeatsComponent>(vehicle, out var seats) &&
+            seats.Driver is { } driver && HasComp<ActorComponent>(driver))
+        {
+            Start((vehicle, engine), driver);
+        }
+    }
+
+    public void Stall(EntityUid vehicle)
+    {
+        if (TryComp<VehicleEngineComponent>(vehicle, out var engine))
+            Stop((vehicle, engine));
+    }
+
+    private void Start(Entity<VehicleEngineComponent> ent, EntityUid driver)
     {
         if (_net.IsClient || ent.Comp.EngineOn)
             return;
 
+        var attempt = new VehicleEngineStartAttemptEvent(driver);
+        RaiseLocalEvent(ent, ref attempt);
+        if (attempt.Cancelled)
+            return;
+
         ent.Comp.EngineOn = true;
         ent.Comp.Exiting = null;
-        ent.Comp.ReadyAt = _timing.CurTime + GetLength(ent.Comp.StartSound);
+        ent.Comp.ReadyAt = _timing.CurTime + ent.Comp.StartDelay;
         ent.Comp.StartStream = _audio.PlayPvs(ent.Comp.StartSound, ent)?.Entity;
         Dirty(ent);
     }
@@ -147,10 +169,5 @@ public sealed partial class VehicleEngineSystem : EntitySystem
 
         ent.Comp.StartStream = _audio.Stop(ent.Comp.StartStream);
         _audio.PlayPvs(ent.Comp.StopSound, ent);
-    }
-
-    private TimeSpan GetLength(SoundSpecifier? sound)
-    {
-        return sound == null ? TimeSpan.Zero : _audio.GetAudioLength(_audio.ResolveSound(sound));
     }
 }

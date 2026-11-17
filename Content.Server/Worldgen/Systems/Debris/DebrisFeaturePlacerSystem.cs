@@ -74,6 +74,12 @@ public sealed partial class DebrisFeaturePlacerSystem : BaseWorldSystem
             return;
         }
 
+        // LuaM-start
+        if (TryComp<WorldChunkComponent>(component.OwningController, out var ownerChunk) &&
+            ownerChunk.Coordinates == GetChunkCoords(uid, xform))
+            return;
+        // LuaM-end
+
         placer.OwnedDebris.Remove(component.LastKey);
         var newChunk = GetOrCreateChunk(GetChunkCoords(uid), xform.MapUid!.Value);
         if (newChunk is null || !TryComp<DebrisFeaturePlacerControllerComponent>(newChunk, out var newPlacer))
@@ -85,6 +91,7 @@ public sealed partial class DebrisFeaturePlacerSystem : BaseWorldSystem
 
         newPlacer.OwnedDebris[_xformSys.GetWorldPosition(xform)] = uid; // Change our owner.
         component.OwningController = newChunk.Value;
+        component.LastKey = _xformSys.GetWorldPosition(xform); // LuaM
     }
 
     /// <summary>

@@ -3,6 +3,7 @@ using Content.Client.Actions;
 using Content.Client.Actions.UI;
 using Content.Client.Cooldown;
 using Content.Client.Stylesheets;
+using Content.Shared._LuaM.Vehicles.Components;
 using Content.Shared.Actions;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -48,6 +49,7 @@ public sealed class ActionButton : Control, IEntityControl
     public readonly CooldownGraphic Cooldown;
     private readonly SpriteView _smallItemSpriteView;
     private readonly SpriteView _bigItemSpriteView;
+    private readonly TextureRect _bigItemIcon; // LuaM
 
     private Texture? _buttonBackgroundTexture;
 
@@ -110,6 +112,15 @@ public sealed class ActionButton : Control, IEntityControl
             Visible = false,
             OverrideDirection = Direction.South,
         };
+        // LuaM-start
+        _bigItemIcon = new TextureRect
+        {
+            HorizontalExpand = true,
+            VerticalExpand = true,
+            Stretch = StretchMode.Scale,
+            Visible = false
+        };
+        // LuaM-end
         _smallItemSpriteView = new SpriteView
         {
             Name = "Small Sprite",
@@ -143,6 +154,7 @@ public sealed class ActionButton : Control, IEntityControl
         AddChild(Button);
         AddChild(_bigActionIcon);
         AddChild(_bigItemSpriteView);
+        AddChild(_bigItemIcon); // LuaM
         AddChild(HighlightRect);
         AddChild(Label);
         AddChild(Cooldown);
@@ -211,6 +223,24 @@ public sealed class ActionButton : Control, IEntityControl
 
     private void UpdateItemIcon()
     {
+        // LuaM-start
+        _bigItemIcon.Visible = false;
+        _bigItemIcon.Texture = null;
+        if (_action is { EntityIcon: { } vehicle, ItemIconStyle: ItemActionIconStyle.BigItem } &&
+            _entities.HasComponent<VehicleSeatsComponent>(vehicle) &&
+            _entities.TryGetComponent<IconComponent>(vehicle, out var vehicleIcon))
+        {
+            _spriteSys ??= _entities.System<SpriteSystem>();
+            _bigItemIcon.Texture = _spriteSys.GetIcon(vehicleIcon);
+            _bigItemIcon.Visible = true;
+            _bigItemSpriteView.Visible = false;
+            _bigItemSpriteView.SetEntity(null);
+            _smallItemSpriteView.Visible = false;
+            _smallItemSpriteView.SetEntity(null);
+            return;
+        }
+        // LuaM-end
+
         if (_action is not {EntityIcon: { } entity} ||
             !_entities.HasComponent<SpriteComponent>(entity))
         {

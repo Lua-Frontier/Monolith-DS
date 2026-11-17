@@ -18,6 +18,11 @@ public sealed partial class LagCompensationSystem : EntitySystem
     // Max ping I've had is 350ms from aus to spain.
     public static readonly TimeSpan BufferTime = TimeSpan.FromMilliseconds(750);
 
+    // LuaM-start
+    private readonly HashSet<EntityUid> _holding = new();
+    private readonly List<EntityUid> _drained = new();
+    // LuaM-end
+
     public override void Initialize()
     {
         base.Initialize();
@@ -34,10 +39,17 @@ public sealed partial class LagCompensationSystem : EntitySystem
 
         // Cull any old ones from active updates
         // Probably fine to include ignored.
-        var query = AllEntityQuery<LagCompensationComponent>();
-
-        while (query.MoveNext(out var comp))
+        // LuaM-start
+        _drained.Clear();
+        foreach (var uid in _holding)
         {
+            if (!TryComp(uid, out LagCompensationComponent? comp))
+            {
+                _drained.Add(uid);
+                continue;
+            }
+        // LuaM-end
+
             while (comp.Positions.TryPeek(out var pos))
             {
                 if (pos.Item1 < earliestTime)
@@ -48,7 +60,19 @@ public sealed partial class LagCompensationSystem : EntitySystem
 
                 break;
             }
+
+            // LuaM-start
+            if (comp.Positions.Count == 0)
+                _drained.Add(uid);
+            // LuaM-end
         }
+
+        // LuaM-start
+        foreach (var uid in _drained)
+        {
+            _holding.Remove(uid);
+        }
+        // LuaM-end
     }
 
     private void OnLagMove(EntityUid uid, LagCompensationComponent component, ref MoveEvent args)
@@ -57,6 +81,7 @@ public sealed partial class LagCompensationSystem : EntitySystem
             return; // probably being sent to nullspace for deletion.
 
         component.Positions.Enqueue((_timing.CurTime, args.NewPosition, args.NewRotation));
+        _holding.Add(uid); // LuaM
     }
 
     public (EntityCoordinates Coordinates, Angle Angle) GetCoordinatesAngle(EntityUid uid, ICommonSession? pSession,

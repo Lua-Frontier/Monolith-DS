@@ -1,4 +1,6 @@
 using System.Numerics;
+using System.Threading;
+using System.Threading.Tasks;
 using Content.Shared._LuaM.CCVar;
 using Content.Shared._LuaM.Lobby;
 using Content.Shared.CCVar;
@@ -6,24 +8,33 @@ using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
+using Robust.Shared.ContentPack;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 
 namespace Content.Client._LuaM.Lobby;
 
 public sealed partial class LobbyBackgroundControl : TextureRect
 {
+    [Dependency] private IClyde _clyde = default!;
     [Dependency] private IResourceCache _resourceCache = default!;
+    [Dependency] private IResourceManager _resources = default!;
     [Dependency] private IConfigurationManager _configuration = default!;
 
-    private const int FramesLoadedPerUpdate = 1;
+    private const int MaxDecoding = 2;
+    private const float MinDelay = 0.02f;
     private const float ParallaxZoom = 1.06f;
     private const float ParallaxTravel = 0.0125f;
     private const float ParallaxResponse = 6f;
 
     private readonly List<Texture> _frames = new();
     private readonly List<float> _delays = new();
+    private readonly List<OwnedTexture> _owned = new();
     private readonly Queue<(ResPath Path, float Delay)> _pending = new();
+    private readonly Queue<(Task<Image<Rgba32>?> Decode, float Delay)> _decoding = new();
+    private CancellationTokenSource? _cancel;
     private int _frame;
     private float _timer;
     private Vector2 _cursorOffset;
@@ -45,35 +56,109 @@ public sealed partial class LobbyBackgroundControl : TextureRect
     {
         Clear();
 
-        for (var i = 0; i < proto.Frames; i++)
+        if (_resourceCache.TryGetResource<TextureResource>(FramePath(proto, 0), out var first))
         {
-            var delay = MathF.Max(0.02f, i < proto.Delays.Count ? proto.Delays[i] : proto.FrameTime);
-            _pending.Enqueue((proto.Path / $"{i:D3}.{proto.Extension}", delay));
+            _frames.Add(first.Texture);
+            _delays.Add(GetDelay(proto, 0));
+            Texture = first.Texture;
         }
 
-        LoadPending(1);
-        Texture = _frames.Count > 0 ? _frames[0] : null;
+        _cancel = new CancellationTokenSource();
+        for (var i = 1; i < proto.Frames; i++)
+        {
+            _pending.Enqueue((FramePath(proto, i), GetDelay(proto, i)));
+        }
+
+        StartDecodes();
     }
 
     private void Clear()
     {
+        _cancel?.Cancel();
+        _cancel?.Dispose();
+        _cancel = null;
+
+        while (_decoding.TryDequeue(out var decoding))
+        {
+            DisposeWhenDone(decoding.Decode);
+        }
+
+        _pending.Clear();
+        Texture = null;
+
+        foreach (var texture in _owned)
+        {
+            texture.Dispose();
+        }
+
+        _owned.Clear();
         _frames.Clear();
         _delays.Clear();
-        _pending.Clear();
         _frame = 0;
         _timer = 0;
     }
 
-    private void LoadPending(int count)
+    private void UploadNext()
     {
-        for (var i = 0; i < count && _pending.TryDequeue(out var next); i++)
-        {
-            if (!_resourceCache.TryGetResource<TextureResource>(next.Path, out var texture))
-                continue;
+        if (!_decoding.TryPeek(out var next) || !next.Decode.IsCompleted)
+            return;
 
-            _frames.Add(texture.Texture);
+        _decoding.Dequeue();
+        StartDecodes();
+
+        if (!next.Decode.IsCompletedSuccessfully || next.Decode.GetAwaiter().GetResult() is not { } image)
+            return;
+
+        using (image)
+        {
+            var texture = _clyde.LoadTextureFromImage(image);
+            _owned.Add(texture);
+            _frames.Add(texture);
             _delays.Add(next.Delay);
         }
+    }
+
+    private void StartDecodes()
+    {
+        if (_cancel == null)
+            return;
+
+        var token = _cancel.Token;
+        while (_decoding.Count < MaxDecoding && _pending.TryDequeue(out var next))
+        {
+            var path = next.Path;
+            _decoding.Enqueue((Task.Run(() => Decode(path, token), token), next.Delay));
+        }
+    }
+
+    private Image<Rgba32>? Decode(ResPath path, CancellationToken token)
+    {
+        if (token.IsCancellationRequested || !_resources.TryContentFileRead(path, out var stream))
+            return null;
+
+        using (stream)
+        {
+            return Image.Load<Rgba32>(stream);
+        }
+    }
+
+    private static void DisposeWhenDone(Task<Image<Rgba32>?> decode)
+    {
+        decode.ContinueWith(task =>
+        {
+            if (task.IsCompletedSuccessfully)
+                task.GetAwaiter().GetResult()?.Dispose();
+        });
+    }
+
+    private static ResPath FramePath(AnimatedLobbyBackgroundPrototype proto, int frame)
+    {
+        return proto.Path / $"{frame:D3}.{proto.Extension}";
+    }
+
+    private static float GetDelay(AnimatedLobbyBackgroundPrototype proto, int frame)
+    {
+        return MathF.Max(MinDelay, frame < proto.Delays.Count ? proto.Delays[frame] : proto.FrameTime);
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -81,9 +166,9 @@ public sealed partial class LobbyBackgroundControl : TextureRect
         base.FrameUpdate(args);
         UpdateParallax(args.DeltaSeconds);
 
-        if (_pending.Count > 0)
+        if (_decoding.Count > 0)
         {
-            LoadPending(FramesLoadedPerUpdate);
+            UploadNext();
             return;
         }
 

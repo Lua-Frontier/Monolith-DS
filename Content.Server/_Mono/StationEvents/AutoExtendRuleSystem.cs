@@ -43,6 +43,11 @@ public sealed partial class AutoExtendRuleSystem : EntitySystem
             var hasNearbyPlayer = false;
             foreach (var entUid in extendRule.Entities)
             {
+                // LuaM-start
+                if (TerminatingOrDeleted(entUid))
+                    continue;
+                // LuaM-end
+
                 // this is copypasted and modified from NPCSystem
                 var xform = Transform(entUid);
                 var ourCoords = xform.Coordinates;

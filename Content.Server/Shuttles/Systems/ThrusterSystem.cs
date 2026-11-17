@@ -244,6 +244,7 @@ public sealed partial class ThrusterSystem : EntitySystem
                 shuttleComponent.AngularThrust += component.Thrust;
                 DebugTools.Assert(!shuttleComponent.AngularThrusters.Contains(uid));
                 shuttleComponent.AngularThrusters.Add(uid);
+                shuttleComponent.AngularFiring = null; // LuaM
                 return;
             }
 
@@ -388,6 +389,7 @@ public sealed partial class ThrusterSystem : EntitySystem
                 shuttleComponent.AngularThrust += component.Thrust;
                 DebugTools.Assert(!shuttleComponent.AngularThrusters.Contains(uid));
                 shuttleComponent.AngularThrusters.Add(uid);
+                shuttleComponent.AngularFiring = null; // LuaM
                 break;
             // Lua start
             case ThrusterType.Omnidirectional:
@@ -438,6 +440,7 @@ public sealed partial class ThrusterSystem : EntitySystem
         shuttle.AngularThrust += component.AngularThrustExtra;
         DebugTools.Assert(!shuttle.AngularThrusters.Contains(uid));
         shuttle.AngularThrusters.Add(uid);
+        shuttle.AngularFiring = null; // LuaM
     }
 
     private static void RemoveAngularThrustExtra(EntityUid uid, ThrusterComponent component, ShuttleComponent shuttle)
@@ -645,6 +648,7 @@ public sealed partial class ThrusterSystem : EntitySystem
             return;
 
         component.ThrustDirections |= direction;
+        component.AngularFiring = null; // LuaM
 
         var index = GetFlagIndex(direction);
         var appearanceQuery = GetEntityQuery<AppearanceComponent>();
@@ -670,6 +674,7 @@ public sealed partial class ThrusterSystem : EntitySystem
             return;
 
         component.ThrustDirections &= ~direction;
+        component.AngularFiring = null; // LuaM
 
         var index = GetFlagIndex(direction);
         var appearanceQuery = GetEntityQuery<AppearanceComponent>();
@@ -686,9 +691,19 @@ public sealed partial class ThrusterSystem : EntitySystem
         }
     }
 
+    // LuaM-start
+    public static readonly DirectionFlag[] CardinalFlags =
+        { DirectionFlag.South, DirectionFlag.East, DirectionFlag.North, DirectionFlag.West };
+    // LuaM-end
+
     public void DisableLinearThrusters(ShuttleComponent component)
     {
-        foreach (DirectionFlag dir in Enum.GetValues(typeof(DirectionFlag)))
+        // LuaM-start
+        if (component.ThrustDirections == DirectionFlag.None)
+            return;
+
+        foreach (var dir in CardinalFlags)
+        // LuaM-end
         {
             DisableLinearThrustDirection(component, dir);
         }
@@ -698,6 +713,13 @@ public sealed partial class ThrusterSystem : EntitySystem
 
     public void SetAngularThrust(ShuttleComponent component, bool on)
     {
+        // LuaM-start
+        if (component.AngularFiring == on)
+            return;
+
+        component.AngularFiring = on;
+        // LuaM-end
+
         var appearanceQuery = GetEntityQuery<AppearanceComponent>();
         var thrusterQuery = GetEntityQuery<ThrusterComponent>();
 

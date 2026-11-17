@@ -10,6 +10,7 @@ using Content.Server._NF.Salvage; // Frontier
 
 using EntityPosition = (Robust.Shared.GameObjects.EntityUid Entity, Robust.Shared.Map.EntityCoordinates Coordinates);
 using Content.Server.StationEvents.Events; // Frontier
+using Content.Shared._LuaM.Performance; // LuaM
 
 namespace Content.Server.Worldgen.Systems;
 
@@ -39,9 +40,16 @@ public sealed partial class LocalityLoaderSystem : BaseWorldSystem
     public override void Update(float frameTime)
     {
         var e = EntityQueryEnumerator<LocalityLoaderComponent, TransformComponent>();
+        // LuaM-start
+        var period = TickSpread.Period(_timing, 0.5f);
+        var tick = _timing.CurTick;
+        // LuaM-end
 
         while (e.MoveNext(out var uid, out var loadable, out var xform))
         {
+            if (!TickSpread.Due(uid, tick, period)) // LuaM
+                continue; // LuaM
+
             if (!_controllerQuery.TryComp(xform.MapUid, out var controller)) // Mono
             {
                 RaiseLocalEvent(uid, new LocalStructureLoadedEvent());
@@ -89,19 +97,12 @@ public sealed partial class LocalityLoaderSystem : BaseWorldSystem
     {
         if (entity.IsValid())
         {
-            // Handle mobrestrictions getting deleted
-            var query = AllEntityQuery<NFSalvageMobRestrictionsComponent>();
+            // LuaM-start
+            DespawnRestrictions(entity);
 
-            while (query.MoveNext(out var salvUid, out var salvMob))
-            {
-                if (entity == salvMob.LinkedGridEntity && salvMob.DespawnIfOffLinkedGrid) // Mono - fix
-                {
-                    QueueDel(salvUid);
-                }
-            }
-
-            // Do not delete the grid, it is being deleted.
-            _linkedLifecycleGrid.UnparentPlayersFromGrid(grid: entity, deleteGrid: false, ignoreLifeStage: true);
+            if (MayHoldPlayers(entity))
+                _linkedLifecycleGrid.UnparentPlayersFromGrid(grid: entity, deleteGrid: false, ignoreLifeStage: true);
+            // LuaM-end
         }
     }
     // Frontier

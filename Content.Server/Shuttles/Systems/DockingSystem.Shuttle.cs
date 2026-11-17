@@ -291,31 +291,29 @@ public sealed partial class DockingSystem
                                 continue;
                             // End Frontier
 
-                            if (!CanDock(
+                            // LuaM-start
+                            if (!TryGetDockPlacement(
                                     other,
                                     _xformQuery.GetComponent(otherUid),
                                     otherGrid,
                                     _xformQuery.GetComponent(otherGridUid),
                                     shuttleAABB,
-                                    targetGridAngle,
-                                    shuttleFixturesComp,
-                                    (targetGrid, targetGridGrid),
-                                    isMap,
-                                    out _,
+                                    out var otherMatty,
                                     out var otherdockedAABB,
-                                    out var otherTargetAngle))
+                                    out var otherOffset))
                             {
                                 continue;
                             }
 
                             otherdockedAABB = otherdockedAABB.Rounded(DockRoundingDigits);
 
-                            // Different setup.
-                            if (!targetAngle.Equals(otherTargetAngle) ||
-                                !dockedAABB.Equals(otherdockedAABB))
+                            if (!targetAngle.Equals(otherOffset.Reduced()) ||
+                                !dockedAABB.Equals(otherdockedAABB) ||
+                                !ValidSpawn((targetGrid, targetGridGrid), otherMatty, otherOffset, shuttleFixturesComp, isMap))
                             {
                                 continue;
                             }
+                            // LuaM-end
 
                             dockedPorts.Add((otherUid, otherGridUid, other, otherGrid));
                         }
@@ -409,7 +407,7 @@ public sealed partial class DockingSystem
             // If it's not a map check it doesn't overlap the grid.
             else
             {
-                if (_mapSystem.GetLocalTilesIntersecting(gridEntity.Owner, gridEntity.Comp, aabb).Any())
+                if (AnyTileIntersecting(gridEntity, aabb)) // LuaM
                     return false;
             }
         }
@@ -419,10 +417,19 @@ public sealed partial class DockingSystem
 
     public List<Entity<DockingComponent>> GetDocks(EntityUid uid)
     {
-        _dockingSet.Clear();
-        _lookup.GetChildEntities(uid, _dockingSet);
+        // LuaM-start
+        var docks = new List<Entity<DockingComponent>>();
+        if (_dockIndex.DocksOn(uid) is not { } indexed)
+            return docks;
 
-        return _dockingSet.ToList();
+        foreach (var dock in indexed)
+        {
+            if (TryComp<DockingComponent>(dock, out var comp))
+                docks.Add((dock, comp));
+        }
+
+        return docks;
+        // LuaM-end
     }
 
     /// <summary>

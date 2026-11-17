@@ -42,6 +42,13 @@ public abstract partial class SharedIgnitionSourceSystem : EntitySystem
             return;
 
         ent.Comp.Ignited = ignited;
+        IgnitedChanged(ent, ignited); // LuaM
         Dirty(ent, ent.Comp);
     }
+
+    // LuaM-start
+    protected virtual void IgnitedChanged(EntityUid uid, bool ignited)
+    {
+    }
+    // LuaM-end
 }

@@ -22,6 +22,12 @@ public sealed partial class DungeonJob
 
         foreach (var tile in dungeon.CorridorTiles)
         {
+            // LuaM-start
+            await SuspendDungeon();
+            if (!ValidateResume())
+                return;
+            // LuaM-end
+
             if (reservedTiles.Contains(tile))
                 continue;
 

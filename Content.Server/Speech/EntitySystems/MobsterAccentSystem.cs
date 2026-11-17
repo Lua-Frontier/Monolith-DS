@@ -16,7 +16,7 @@ public sealed partial class MobsterAccentSystem : EntitySystem
     private static readonly Regex RegexLastWord = new(@"(\S+)$");
 // LuaM-start:
     private static readonly Regex RegexRussianIng = new(@"(?<=\w\w)(ов)а(?!\w)", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexRussianVowel = new(@"[аоуыэ]", RegexOptions.IgnoreCase);
+    private static readonly Regex RegexTrailingPunctuation = new(@"[\s\.!\?‽…]+$");
 // LuaM-end.
 
     [Dependency] private IRobustRandom _random = default!;
@@ -51,19 +51,6 @@ public sealed partial class MobsterAccentSystem : EntitySystem
         msg = RegexUpperOr.Replace(msg, "UH");
         msg = RegexLowerAr.Replace(msg, "ah");
         msg = RegexUpperAr.Replace(msg, "AH");
-// LuaM-start:
-        for (var i = 0; i < msg.Length; i++)
-        {
-            if (RegexRussianVowel.IsMatch(msg[i].ToString()))
-            {
-                if (_random.Prob(0.3f))
-                {
-                    msg = msg.Remove(i, 1);
-                    i--;
-                }
-            }
-        }
-// LuaM-end.
 
         // Prefix
         if (_random.Prob(0.15f))
@@ -104,7 +91,7 @@ public sealed partial class MobsterAccentSystem : EntitySystem
             }
             if (lastWordAllCaps)
                 suffix = suffix.ToUpper();
-            msg += suffix;
+            msg = RegexTrailingPunctuation.Replace(msg, "") + suffix; // LuaM: msg += suffix > RegexTrailingPunctuation
         }
 
         return msg;

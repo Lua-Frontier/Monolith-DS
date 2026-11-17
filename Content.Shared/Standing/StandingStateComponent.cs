@@ -28,6 +28,9 @@ public sealed partial class StandingStateComponent : Component
     public float HitRange = 3f;
 
     [DataField, AutoNetworkedField]
+    public float DownFrictionMod = 0.4f; // LuaM: from Nebula, lying bodies slide to a stop
+
+    [DataField, AutoNetworkedField]
     public bool Standing { get; set; } = true;
 
     /// <summary>

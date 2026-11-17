@@ -1,0 +1,190 @@
+# Что машина сносит на ходу. Классы массы: Weak (байки, квадроцикл, уборочная тележка) < Light (хамви) < Medium (фургон СПП) < Heavy (танк).
+# Правило ловит только прототипы с Damageable и Destructible, без тега Wall и не от BaseWall/неразрушимых баз.
+# Деревья и камни с VehicleCrushable сносятся своей механикой и правилами не трогаются.
+# На гридах, защищённых от взрывов (станции), машина ничего не сносит.
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashTables
+  parents:
+  - TableBase
+  - TableFrame
+  - Rack
+  slowdownBelowWeightClass: Medium
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashLockers
+  parents:
+  - ClosetBase
+  excludeParents:
+  - GunSafe
+  blacklist:
+    components:
+    - Lock
+    - AccessReader
+  minDestroyWeightClass: Light
+  slowdownBelowWeightClass: Medium
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashCrates
+  parents:
+  - CrateGeneric
+  blacklist:
+    components:
+    - Lock
+    - AccessReader
+  minDestroyWeightClass: Light
+  slowdownBelowWeightClass: Medium
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashFurniture
+  parents:
+  - Bed
+  - BenchSofaMiddle
+  - BenchSofaCorpMiddle
+  - BenchSofaCorner
+  - BenchSofaCorpCorner
+  - BenchComfy
+  - Dresser
+  excludeParents:
+  - OperatingTable
+  minDestroyWeightClass: Light
+  slowdownBelowWeightClass: Medium
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashClutter
+  parents:
+  - BaseRailing
+  - BaseScrapLarge
+  - BaseTarget
+  - BasePlaceableInstrument
+  - PlasticFlapsClear
+  - PlasticFlapsOpaque
+  - AirlockAssembly
+  slowdownBelowWeightClass: Medium
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashFences
+  parents:
+  - BaseFenceMetal
+  - BaseFenceWood
+  - BaseBarricade
+  - InflatableWall
+  minDestroyWeightClass: Light
+  slowdownBelowWeightClass: Medium
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashGrilles
+  parents:
+  - Grille
+  minDestroyWeightClass: Light
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashWindows
+  parents:
+  - Window
+  - WindowDirectional
+  excludeParents:
+  - ReinforcedWindow
+  - WindowRCDResistant
+  - ShuttleWindow
+  - WindowReinforcedDirectional
+  - PlasmaReinforcedWindowDirectional
+  - UraniumReinforcedWindowDirectional
+  minDestroyWeightClass: Light
+  slowdownBelowWeightClass: Medium
+
+# Обшивка кораблей: только танк
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashHullWindows
+  parents:
+  - ReinforcedWindow
+  - WindowRCDResistant
+  - ShuttleWindow
+  - WindowReinforcedDirectional
+  - PlasmaReinforcedWindowDirectional
+  - UraniumReinforcedWindowDirectional
+  - PlastitaniumWindowBase
+  excludeParents:
+  - ReinforcedWindowOutpost
+  - ReinforcedWindowDiagonalOutpost
+  - PlastitaniumWindowOutpost
+  - PlastitaniumWindowDiagonalOutpost
+  - PlastitaniumWindowIndestructible
+  - PlastitaniumWindowDiagonalIndestructible
+  - PlasturaniumWindowRadProofIndestructible
+  - PlasturaniumWindowDiagonalRadProofIndestructible
+  damage: 5000
+  minDestroyWeightClass: Heavy
+
+# Двери открываются водителю с доступом; запитанную без доступа не пробить, обесточенную — от фургона и тяжелее
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashWindoors
+  parents:
+  - BaseWindoor
+  requiresDoorUnpowered: true
+  minDestroyWeightClass: Light
+  minContinueWeightClass: Heavy
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashDoors
+  whitelist:
+    components:
+    - Airlock
+    - Firelock
+  excludeParents:
+  - BaseWindoor
+  - AirlockExternal
+  - AirlockShuttle
+  - AirlockHeavyGlass
+  blacklist:
+    tags:
+    - HighSecDoor
+    - Wall
+  requiresDoorUnpowered: true
+  minDestroyWeightClass: Medium
+  minContinueWeightClass: Heavy
+  smashSound:
+    collection: MetalCrunch
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashHullDoors
+  parents:
+  - AirlockExternal
+  - AirlockShuttle
+  excludeParents:
+  - AirlockExternalGlassShuttleMieyoLockedOutpost
+  - AirlockExternalShuttleMieyoLockedOutpost
+  - AirlockGlassShuttleNfsdOutpost
+  - AirlockGlassShuttleNfsdOutpostLocked
+  - AirlockGlassShuttleOutpost
+  - AirlockGlassShuttleUSSPOutpostLocked
+  - AirlockShuttleNfsdOutpost
+  - AirlockShuttleNfsdOutpostLocked
+  - AirlockShuttleOutpost
+  - AirlockShuttleUSSPOutpostLocked
+  damage: 5000
+  requiresDoorUnpowered: true
+  minDestroyWeightClass: Heavy
+  minContinueWeightClass: Heavy
+  smashSound:
+    collection: MetalCrunch
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashShutters
+  parents:
+  - BaseShutter
+  excludeParents:
+  - BlastDoor
+  - N14BlastDoorExteriorIndestructible
+  minDestroyWeightClass: Medium
+  minContinueWeightClass: Heavy
+  smashSound:
+    collection: MetalCrunch
+
+- type: luamVehicleSmashRule
+  id: LuaMVehicleSmashUtility
+  parents:
+  - hydroponicsTray
+  - DisposalUnit
+  - MailingUnit
+  minDestroyWeightClass: Medium

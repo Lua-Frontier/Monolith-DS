@@ -15,6 +15,7 @@ using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 
@@ -22,6 +23,7 @@ namespace Content.Shared._LuaM.Vehicles;
 
 public sealed partial class HardpointSystem : EntitySystem
 {
+    [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedGunSystem _gun = default!;
@@ -29,6 +31,7 @@ public sealed partial class HardpointSystem : EntitySystem
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedToolSystem _tool = default!;
+    [Dependency] private VehicleShellSystem _shells = default!;
 
     private const string PryingQuality = "Prying";
     private const float RemoveDelay = 3f;
@@ -44,6 +47,7 @@ public sealed partial class HardpointSystem : EntitySystem
         SubscribeLocalEvent<HardpointSlotsComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<HardpointSlotsComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<HardpointSlotsComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<VehicleAmmoBoxComponent, ExaminedEvent>(OnAmmoBoxExamined);
         SubscribeLocalEvent<HardpointSlotsComponent, HardpointInstallDoAfterEvent>(OnInstallDoAfter);
         SubscribeLocalEvent<HardpointSlotsComponent, HardpointRemoveDoAfterEvent>(OnRemoveDoAfter);
         SubscribeLocalEvent<HardpointSlotsComponent, VehicleAmmoLoadDoAfterEvent>(OnAmmoDoAfter);
@@ -215,7 +219,7 @@ public sealed partial class HardpointSystem : EntitySystem
         if (TryComp<VehicleAmmoBoxComponent>(args.Used, out var box))
         {
             args.Handled = true;
-            if (!TryFindAmmoTarget(ent, box, out _))
+            if (!TryFindAmmoTarget(ent, box, out _) && !_shells.TryFindShellTarget(ent, box.AmmoType, out _, out _))
             {
                 _popup.PopupClient(Loc.GetString("luam-vehicle-ammo-no-weapon"), ent, args.User);
                 return;
@@ -336,26 +340,48 @@ public sealed partial class HardpointSystem : EntitySystem
     private void OnAmmoDoAfter(Entity<HardpointSlotsComponent> ent, ref VehicleAmmoLoadDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Used is not { } used ||
-            !TryComp<VehicleAmmoBoxComponent>(used, out var box) ||
-            !TryFindAmmoTarget(ent, box, out var target))
+            !TryComp<VehicleAmmoBoxComponent>(used, out var box))
+        {
+            return;
+        }
+
+        int loaded;
+        EntityUid weapon;
+        if (TryFindAmmoTarget(ent, box, out var target))
+        {
+            loaded = Math.Min(target.Comp.Capacity - target.Comp.Count, box.Amount);
+            if (loaded > 0)
+                _gun.SetBallisticUnspawned(target, target.Comp.UnspawnedCount + loaded);
+
+            weapon = target.Owner;
+        }
+        else if (_shells.TryFindShellTarget(ent, box.AmmoType, out var mag, out var index))
+        {
+            loaded = _shells.AddShells(mag, index, box.Amount);
+            weapon = mag.Owner;
+        }
+        else
         {
             return;
         }
 
         args.Handled = true;
-        var space = target.Comp.Capacity - target.Comp.Count;
-        var loaded = Math.Min(space, box.Amount);
         if (loaded <= 0)
             return;
 
-        _gun.SetBallisticUnspawned(target, target.Comp.UnspawnedCount + loaded);
         box.Amount -= loaded;
         Dirty(used, box);
 
-        _popup.PopupClient(Loc.GetString("luam-vehicle-ammo-loaded", ("amount", loaded), ("weapon", target.Owner)), ent, args.User);
+        _audio.PlayPredicted(box.LoadSound, ent, args.User);
+        _popup.PopupClient(Loc.GetString("luam-vehicle-ammo-loaded", ("amount", loaded), ("weapon", weapon)), ent, args.User);
 
         if (box.Amount <= 0 && _net.IsServer)
             QueueDel(used);
+    }
+
+    private void OnAmmoBoxExamined(Entity<VehicleAmmoBoxComponent> ent, ref ExaminedEvent args)
+    {
+        args.PushMarkup(Loc.GetString("luam-vehicle-ammo-box-examine", ("amount", ent.Comp.Amount)));
     }
 
     private void OnExamined(Entity<HardpointSlotsComponent> ent, ref ExaminedEvent args)
@@ -376,7 +402,9 @@ public sealed partial class HardpointSystem : EntitySystem
 
                 var ammo = TryComp<BallisticAmmoProviderComponent>(installed, out var ballistic)
                     ? Loc.GetString("luam-hardpoint-examine-ammo", ("count", ballistic.Count), ("capacity", ballistic.Capacity))
-                    : string.Empty;
+                    : TryComp<VehicleShellMagazineComponent>(installed, out var mag)
+                        ? Loc.GetString("luam-hardpoint-examine-shells", ("shells", _shells.GetSummary(mag)))
+                        : string.Empty;
 
                 args.PushMarkup(Loc.GetString("luam-hardpoint-examine-installed", ("slot", slotName), ("item", installed), ("ammo", ammo)));
             }

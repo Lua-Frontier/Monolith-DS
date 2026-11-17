@@ -14,6 +14,7 @@ using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Interaction;
 using Content.Shared.Medical.SuitSensor;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -70,6 +71,11 @@ public sealed partial class SuitSensorSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        // LuaM-start
+        if (_gameTiming.CurTick.Value % 3 != 1)
+            return;
+        // LuaM-end
+
         var curTime = _gameTiming.CurTime;
         //var sensors = EntityManager.EntityQueryEnumerator<SuitSensorComponent, DeviceNetworkComponent>(); // Frontier modification
         var sensors = EntityQueryEnumerator<SuitSensorComponent, DeviceNetworkComponent, TransformComponent>(); // Frontier modification
@@ -91,11 +97,6 @@ public sealed partial class SuitSensorSystem : EntitySystem
             // TODO: This would cause imprecision at different tick rates.
             sensor.NextUpdate = curTime + sensor.UpdateRate;
 
-            // get sensor status
-            var status = GetSensorState(uid, sensor);
-            if (status == null)
-                continue;
-
             //Retrieve active server address if the sensor isn't connected to a server
             if (sensor.ConnectedServer == null)
             {
@@ -108,15 +109,20 @@ public sealed partial class SuitSensorSystem : EntitySystem
                 sensor.ConnectedServer = address;
             }
 
-            // Send it to the connected server
-            var payload = SuitSensorToPacket(status);
-
             // Clear the connected server if its address isn't on the network
             if (!_deviceNetworkSystem.IsAddressPresent(device.DeviceNetId, sensor.ConnectedServer))
             {
                 sensor.ConnectedServer = null;
                 continue;
             }
+
+            // LuaM-start
+            var status = GetSensorState(uid, sensor);
+            if (status == null)
+                continue;
+
+            var payload = SuitSensorToPacket(status);
+            // LuaM-end
 
             _deviceNetworkSystem.QueuePacket(uid, sensor.ConnectedServer, payload, device: device);
         }
@@ -374,7 +380,8 @@ public sealed partial class SuitSensorSystem : EntitySystem
 
         // check if sensor is enabled and worn by user
         // Frontier modification, made sensor work with grid being null
-        if (sensor.Mode == SuitSensorMode.SensorOff || sensor.User == null || !HasComp<MobStateComponent>(sensor.User) ) // || transform.GridUid == null
+        if (sensor.Mode == SuitSensorMode.SensorOff || sensor.User == null || !HasComp<MobStateComponent>(sensor.User) // || transform.GridUid == null
+            || !TryComp<MindContainerComponent>(sensor.User, out var mindContainer) || !mindContainer.HasMind) // LuaM
             return null;
 
         // try to get mobs id from ID slot

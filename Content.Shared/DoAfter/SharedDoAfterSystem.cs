@@ -191,9 +191,9 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             || args.Event.GetType().Namespace is {} ns && ns.StartsWith("Content.IntegrationTests"), // classes defined in tests cannot be marked as serializable.
             $"Do after event is not serializable. Event: {args.Event.GetType()}");
 
-        if (!Resolve(args.User, ref comp))
+        if (!Resolve(args.User, ref comp, false)) // LuaM
         {
-            Log.Error($"Attempting to start a doAfter with invalid user: {ToPrettyString(args.User)}.");
+            Log.Debug($"Attempting to start a doAfter with invalid user: {ToPrettyString(args.User)}."); // LuaM
             id = null;
             return false;
         }

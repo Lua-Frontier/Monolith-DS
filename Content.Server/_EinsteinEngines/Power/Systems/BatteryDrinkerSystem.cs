@@ -96,14 +96,22 @@ public sealed partial class BatteryDrinkerSystem : EntitySystem
 
         var source = args.Target.Value;
         var drinker = uid;
-        var sourceBattery = Comp<BatteryComponent>(source);
+        // LuaM-start
+        if (!TryComp<BatteryComponent>(source, out var sourceBattery))
+            return;
 
-        _silicon.TryGetSiliconBattery(drinker, out var drinkerBatteryComponent);
+        if (!_silicon.TryGetSiliconBattery(drinker, out var drinkerBatteryComponent))
+            return;
+        // LuaM-end
 
         if (!TryComp(uid, out PowerCellSlotComponent? batterySlot))
             return;
 
         var container = _container.GetContainer(uid, batterySlot.CellSlotId);
+        // LuaM-start
+        if (container.ContainedEntities.Count == 0)
+            return;
+        // LuaM-end
         var drinkerBattery = container.ContainedEntities.First();
 
         TryComp<BatteryDrinkerSourceComponent>(source, out var sourceComp);

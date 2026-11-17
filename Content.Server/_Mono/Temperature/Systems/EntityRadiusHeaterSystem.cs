@@ -5,6 +5,8 @@ using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared.IgnitionSource;
 using Content.Shared.Item.ItemToggle.Components;
+using Content.Shared._LuaM.Performance; // LuaM
+using Robust.Shared.Timing; // LuaM
 
 namespace Content.Server._Mono.Temperature.Systems;
 
@@ -16,21 +18,26 @@ public sealed partial class EntityRadiusHeaterSystem : EntitySystem
     [Dependency] private TemperatureSystem _temp = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
 
+    [Dependency] private IGameTiming _timing = default!; // LuaM
+
     private float _updateCooldown = 1f;
-    private TimeSpan _updateTimer = TimeSpan.Zero;
 
     public override void Update(float frameTime)
     {
-        if (_updateTimer < TimeSpan.FromSeconds(_updateCooldown))
-        {
-            _updateTimer += TimeSpan.FromSeconds(frameTime);
-            return;
-        }
+        // LuaM-start
+        var period = TickSpread.Period(_timing, _updateCooldown);
+        var tick = _timing.CurTick;
+        // LuaM-end
 
         var eqe = EntityQueryEnumerator<EntityRadiusHeaterComponent>();
 
         while (eqe.MoveNext(out var uid, out var comp))
         {
+            // LuaM-start
+            if (!TickSpread.Due(uid, tick, period))
+                continue;
+            // LuaM-end
+
             if (comp.RequireActivation && TryComp<IgnitionSourceComponent>(uid, out var ignite)
                                        && !ignite.Ignited)
                 continue;
@@ -42,16 +49,13 @@ public sealed partial class EntityRadiusHeaterSystem : EntitySystem
             if (!this.IsPowered(uid, EntityManager))
                 continue;
 
-            var nearby = _lookup.GetEntitiesInRange<TemperatureComponent>(Transform(uid).Coordinates, comp.Radius);
+            var nearby = _lookup.GetEntitiesInRange<TemperatureComponent>(Transform(uid).Coordinates, comp.Radius, LookupFlags.Dynamic | LookupFlags.Sundries); // LuaM
             var xform = Transform(uid);
             foreach (var ent in nearby)
             {
                 _temp.ChangeHeat(ent, CalculateThermalEnergy(ent, xform, comp));
             }
         }
-
-
-        _updateTimer = TimeSpan.Zero;
     }
 
     public float CalculateThermalEnergy(Entity<TemperatureComponent> ent,

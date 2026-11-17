@@ -59,9 +59,13 @@ public sealed partial class GuidebookCatalogSystem
             }
             yield return true;
         }
-        foreach (var drone in drones.Values.OrderBy(d => d.Name))
+        var droneList = drones.Values.OrderBy(d => d.Name).ToList();
+        var droneMaps = ParseMaps(droneList.Select(d => d.MapPath).ToList());
+        for (var i = 0; i < droneList.Count; i++)
         {
-            if (!_mapLoader.TryReadFile(new(drone.MapPath), out var map)) continue;
+            var drone = droneList[i];
+            while (!droneMaps[i].Done) yield return false;
+            if (ParsedMap(droneMaps[i], drone.MapPath) is not { } map) continue;
             foreach (var group in map.Get<SequenceDataNode>("entities").OfType<MappingDataNode>())
             {
                 var id = Scalar(group, "proto");

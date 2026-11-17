@@ -71,7 +71,7 @@ public sealed partial class SignalTimerSystem : EntitySystem
         _audio.PlayPvs(signalTimer.DoneSound, uid);
         _signalSystem.InvokePort(uid, signalTimer.TriggerPort);
 
-        if (_ui.HasUi(uid, SignalTimerUiKey.Key))
+        if (_ui.HasUi(uid, SignalTimerUiKey.Key) && _ui.IsUiOpen(uid, SignalTimerUiKey.Key)) // LuaM
         {
             _ui.SetUiState(uid, SignalTimerUiKey.Key, new SignalTimerBoundUserInterfaceState(signalTimer.Label,
                 TimeSpan.FromSeconds(signalTimer.Delay), // Mono

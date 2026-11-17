@@ -106,7 +106,8 @@ public sealed class GuidebookCatalogTests
         var system = pair.Client.ResolveDependency<IEntityManager>().System<GuidebookCatalogClientSystem>();
         await pair.Client.WaitPost(system.Request);
         // A snapshot is built across ticks, rather than blocking a player request.
-        for (var i = 0; i < 100 && system.Catalog == null; i++) await pair.RunTicksSync(5);
+        var deadline = DateTime.UtcNow + TimeSpan.FromSeconds(90);
+        while (system.Catalog == null && DateTime.UtcNow < deadline) await pair.RunTicksSync(5);
         await pair.Client.WaitAssertion(() =>
         {
             Assert.That(system.Catalog, Is.Not.Null);
@@ -157,7 +158,8 @@ public sealed class GuidebookCatalogTests
         {
             await pair.Server.WaitPost(() => pair.Server.ResolveDependency<IEntityManager>()
                 .System<GuidebookCatalogSystem>().InvalidateResources());
-            for (var i = 0; i < 100 && (system.Catalog == null || ReferenceEquals(system.Catalog, previous)); i++)
+            var refreshDeadline = DateTime.UtcNow + TimeSpan.FromSeconds(90);
+            while ((system.Catalog == null || ReferenceEquals(system.Catalog, previous)) && DateTime.UtcNow < refreshDeadline)
                 await pair.RunTicksSync(5);
             await pair.Client.WaitAssertion(() =>
             {

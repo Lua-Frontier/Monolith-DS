@@ -20,8 +20,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: NFVehicleJanicart
-      - id: VehicleKeyJanicart
+      - id: VehicleLuaMJanicart # LuaM
 
 - type: entity
   id: CrateServiceReplacementColoredLights

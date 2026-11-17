@@ -45,4 +45,9 @@ public sealed partial class ProjectileGrenadeComponent : Component
     /// </summary>
     [DataField]
     public float MaxVelocity = 6f;
+
+    // LuaM-start
+    [DataField]
+    public float ConeDegrees;
+    // LuaM-end
 }

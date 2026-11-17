@@ -148,6 +148,21 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
             });
         }
 
+        // LuaM-start
+        if (!doDirectMove
+            && _entManager.TryGetComponent<NPCSteeringComponent>(owner, out var currentSteering)
+            && !currentSteering.DirectMove
+            && currentSteering.Status == SteeringStatus.Moving
+            && currentSteering.CurrentPath.Count > 0
+            && currentSteering.Coordinates.Equals(targetCoordinates))
+        {
+            return (true, new Dictionary<string, object>()
+            {
+                {NPCBlackboard.OwnerCoordinates, targetCoordinates}
+            });
+        }
+        // LuaM-end
+
         // Monolith - early port of wizden#38846
         if (!doDirectMove)
         {
@@ -183,14 +198,24 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
 
     // Given steering is complicated we'll hand it off to a dedicated system rather than this singleton operator.
 
+    private const string TargetLostKey = "LuaMMoveTargetLost"; // LuaM
+
     public override void Startup(NPCBlackboard blackboard)
     {
         base.Startup(blackboard);
 
         // Need to remove the planning value for execution.
         blackboard.Remove<EntityCoordinates>(NPCBlackboard.OwnerCoordinates);
-        var targetCoordinates = blackboard.GetValue<EntityCoordinates>(TargetKey);
         var uid = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
+        // LuaM-start
+        blackboard.Remove<bool>(TargetLostKey);
+        if (!blackboard.TryGetValue<EntityCoordinates>(TargetKey, out var targetCoordinates, _entManager)
+            || _entManager.Deleted(targetCoordinates.EntityId))
+        {
+            targetCoordinates = _entManager.GetComponent<TransformComponent>(uid).Coordinates;
+            blackboard.SetValue(TargetLostKey, true);
+        }
+        // LuaM-end
 
         // Re-use the path we may have if applicable.
         var comp = _steering.Register(uid, targetCoordinates);
@@ -230,6 +255,9 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
         if (!_entManager.TryGetComponent<NPCSteeringComponent>(owner, out var steering))
             return HTNOperatorStatus.Failed;
 
+        if (blackboard.ContainsKey(TargetLostKey)) // LuaM
+            return HTNOperatorStatus.Failed; // LuaM
+
         // Just keep moving in the background and let the other tasks handle it.
         if (ShutdownState == HTNPlanState.PlanFinished && steering.Status == SteeringStatus.Moving)
         {
@@ -248,6 +276,7 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
     public void ConditionalShutdown(NPCBlackboard blackboard)
     {
         // Cleanup the blackboard and remove steering.
+        blackboard.Remove<bool>(TargetLostKey); // LuaM
         if (blackboard.TryGetValue<CancellationTokenSource>(MovementCancelToken, out var cancelToken, _entManager))
         {
             cancelToken.Cancel();

@@ -197,6 +197,8 @@ public sealed partial class GunSystem : SharedGunSystem
         if (!Timing.IsFirstTimePredicted)
             return;
 
+        RefreshAmmoCounters(); // LuaM
+
         var entityNull = _player.LocalEntity;
 
         if (entityNull == null || !TryComp<CombatModeComponent>(entityNull, out var combat) || !combat.IsInCombatMode)
@@ -269,6 +271,7 @@ public sealed partial class GunSystem : SharedGunSystem
         // This also means any ammo specific stuff can be grabbed as necessary.
         var direction = TransformSystem.ToMapCoordinates(fromCoordinates).Position - TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var worldAngle = direction.ToAngle().Opposite();
+        var serverEffects = IsVehicleMounted(gunUid, out _); // LuaM
 
         foreach (var (ent, shootable) in ammo)
         {
@@ -288,8 +291,11 @@ public sealed partial class GunSystem : SharedGunSystem
                     if (!cartridge.Spent)
                     {
                         SetCartridgeSpent(ent!.Value, cartridge, true);
-                        MuzzleFlash(gunUid, cartridge, worldAngle, user);
-                        Audio.PlayPredicted(cartridge.SoundGunshot ?? gun.SoundGunshotModified, gunUid, user);
+                        if (!serverEffects) // LuaM
+                        {
+                            MuzzleFlash(gunUid, cartridge, worldAngle, user);
+                            Audio.PlayPredicted(cartridge.SoundGunshot ?? gun.SoundGunshotModified, gunUid, user);
+                        }
                         Recoil(user, direction, gun.CameraRecoilScalarModified);
                         // TODO: Can't predict entity deletions.
                         //if (cartridge.DeleteOnSpawn)
@@ -311,8 +317,11 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     break;
                 case AmmoComponent newAmmo:
-                    MuzzleFlash(gunUid, newAmmo, worldAngle, user);
-                    Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+                    if (!serverEffects) // LuaM
+                    {
+                        MuzzleFlash(gunUid, newAmmo, worldAngle, user);
+                        Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+                    }
                     Recoil(user, direction, gun.CameraRecoilScalarModified);
                     if (IsClientSide(ent!.Value))
                         Del(ent.Value);
@@ -320,7 +329,8 @@ public sealed partial class GunSystem : SharedGunSystem
                         RemoveShootable(ent.Value);
                     break;
                 case HitscanAmmoComponent:
-                    Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+                    if (!serverEffects) // LuaM
+                        Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
                     Recoil(user, direction, gun.CameraRecoilScalarModified);
                     break;
             }
@@ -373,13 +383,25 @@ public sealed partial class GunSystem : SharedGunSystem
             return;
         }
 
+        // LuaM-start
+        var originEv = new LuaMGetMuzzleFlashOriginEvent();
+        RaiseLocalEvent(gunUid, ref originEv);
+        if (originEv.Origin is { } origin)
+            coordinates = origin;
+        // LuaM-end
+
         var ent = Spawn(message.Prototype, coordinates);
         TransformSystem.SetWorldRotationNoLerp(ent, message.Angle);
+
+        // LuaM-start
+        if (originEv.Origin != null && TryComp<SpriteComponent>(ent, out var flashSprite))
+            _sprite.SetDrawDepth((ent, flashSprite), (int) Shared.DrawDepth.DrawDepth.Effects);
+        // LuaM-end
 
         // Don't track muzzle flash to user if this is a fire control console weapon (ship artillery)
         // Note: FireControllableComponent is server-only, so we can't check it on client
         // The server will handle this check
-        if (user != null)
+        if (user != null && originEv.Origin == null) // LuaM: vehicle turret flashes stay on the barrel
         {
             var track = EnsureComp<TrackUserComponent>(ent);
             track.User = user;

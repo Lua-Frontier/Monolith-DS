@@ -49,12 +49,14 @@ public sealed partial class PredictedThrowSystem : EntitySystem
         if (session?.AttachedEntity is not { Valid: true } player || !Exists(player) || !coordinates.IsValid(EntityManager))
             return false;
 
-        ThrowHeldItem(player, coordinates);
+        ThrowHeldItem(player, coordinates, predicted: true);
         // -- Всегда false, чтобы ввод ушёл на сервер и бросок там подтвердился
         return false;
     }
 
-    public bool ThrowHeldItem(EntityUid player, EntityCoordinates coordinates, float minDistance = 0.1f)
+    // -- predicted ставит только обработчик клавиши: обезоруживание и прочие серверные броски клиент не предсказывал,
+    // -- им нужны обычная отдача камеры и звуки с сервера
+    public bool ThrowHeldItem(EntityUid player, EntityCoordinates coordinates, float minDistance = 0.1f, bool predicted = false)
     {
         if (_container.IsEntityInContainer(player) ||
             !TryComp(player, out HandsComponent? hands) ||
@@ -66,8 +68,13 @@ public sealed partial class PredictedThrowSystem : EntitySystem
         var split = stack is { Count: > 1, ThrowIndividually: true };
 
         // -- Бросок того, кого несёшь, и деление стопки клиент не предскажет: их обрабатывает только сервер
-        if (_net.IsClient && (split || HasComp<VirtualItemComponent>(throwEnt)))
-            return false;
+        if (split || HasComp<VirtualItemComponent>(throwEnt))
+        {
+            if (_net.IsClient)
+                return false;
+
+            predicted = false;
+        }
 
         if (_timing.CurTime < hands.NextThrowTime)
             return false;
@@ -109,7 +116,7 @@ public sealed partial class PredictedThrowSystem : EntitySystem
             ev.ThrowSpeed,
             ev.PlayerUid,
             compensateFriction: !HasComp<LandAtCursorComponent>(ev.ItemUid) && !AimedAtThrowInsert(coordinates),
-            predicted: true);
+            predicted: predicted);
 
         return true;
     }

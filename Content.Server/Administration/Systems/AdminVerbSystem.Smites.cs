@@ -951,7 +951,6 @@ public sealed partial class AdminVerbSystem
                 EnsureComp<MobsterAccentComponent>(args.Target);
                 EnsureComp<MothAccentComponent>(args.Target);
                 EnsureComp<OwOAccentComponent>(args.Target);
-                EnsureComp<SkeletonAccentComponent>(args.Target);
                 EnsureComp<SouthernAccentComponent>(args.Target);
                 EnsureComp<SpanishAccentComponent>(args.Target);
                 EnsureComp<StutteringAccentComponent>(args.Target);
@@ -1016,7 +1015,6 @@ public sealed partial class AdminVerbSystem
                 _popup.PopupEntity(Loc.GetString("admin-smite-caveman-self"), args.Target, player, PopupType.LargeCaution);
                 _audio.PlayPvs(new SoundPathSpecifier("/Audio/_NF/Effects/bonk.ogg"), args.Target, AudioParams.Default.WithMaxDistance(30.0f).WithVolume(3.0f));
 
-                EnsureComp<CavemanAccentComponent>(args.Target);
             },
             Impact = LogImpact.Extreme,
             Message = string.Join(": ", cavemanName, Loc.GetString("admin-smite-caveman-description"))

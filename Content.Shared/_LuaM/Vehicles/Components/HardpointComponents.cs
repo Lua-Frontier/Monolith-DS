@@ -5,6 +5,7 @@
  */
 
 using System.Numerics;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -66,6 +67,10 @@ public sealed partial class HardpointItemComponent : Component
     [DataField]
     public string? VisualState;
 
+    // -- Дуло в пикселях от центра спрайта башни для каждого ракурса, ось Y вверх
+    [DataField]
+    public Dictionary<Direction, Vector2> MuzzleOffsets = new();
+
     [DataField]
     public string? AmmoType;
 
@@ -76,17 +81,20 @@ public sealed partial class HardpointItemComponent : Component
     public float StructureDamageMultiplier = 1f;
 }
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class VehicleAmmoBoxComponent : Component
 {
     [DataField(required: true)]
     public string AmmoType = string.Empty;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public int Amount = 500;
 
     [DataField]
     public float LoadDelay = 3f;
+
+    [DataField]
+    public SoundSpecifier? LoadSound = new SoundPathSpecifier("/Audio/Weapons/Guns/MagIn/lmg_magin.ogg");
 }
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
@@ -99,7 +107,13 @@ public sealed partial class VehicleTurretComponent : Component
     public float RotationSpeedDegrees = 180f;
 
     [DataField]
-    public float FireGraceDegrees = 20f;
+    public float FireGraceDegrees = 2f;
+
+    [DataField]
+    public float AimDeadzoneDegrees = 1.5f;
+
+    [DataField]
+    public float AimReverseDelay = 0.06f;
 
     [DataField]
     public bool RequiresDeployed;
@@ -107,11 +121,17 @@ public sealed partial class VehicleTurretComponent : Component
     [DataField]
     public Dictionary<Direction, Vector2> PixelOffsets = new();
 
-    [DataField, AutoNetworkedField]
-    public Angle LocalRotation;
+    [DataField]
+    public float MuzzleLength = 0.5f;
+
+    [DataField]
+    public string Sprite = "_LuaM/Structures/Vehicles/Humvee/humvee.rsi";
 
     [DataField, AutoNetworkedField]
-    public Angle TargetLocalRotation;
+    public Angle Rotation;
+
+    [ViewVariables]
+    public Vector2? AimOffset;
 
     [DataField, AutoNetworkedField]
     public HardpointType SelectedWeapon = HardpointType.Cannon;

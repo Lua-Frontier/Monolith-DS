@@ -83,7 +83,7 @@ public sealed partial class StoreComponent : Component
     /// <summary>
     ///     The map the store was originally from, used to block refunds if the map is changed
     /// </summary>
-    [DataField]
+    [ViewVariables] // LuaM
     public EntityUid? StartingMap;
 
     #region audio

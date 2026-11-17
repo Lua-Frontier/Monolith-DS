@@ -164,6 +164,11 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
         if (startingGear == null)
             return;
 
+        // LuaM-start
+        if (TerminatingOrDeleted(entity))
+            return;
+        // LuaM-end
+
         var xform = _xformQuery.GetComponent(entity);
 
         if (InventorySystem.TryGetSlots(entity, out var slotDefinitions))

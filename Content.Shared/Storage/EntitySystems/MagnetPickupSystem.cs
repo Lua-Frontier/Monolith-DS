@@ -106,6 +106,11 @@ public sealed partial class MagnetPickupSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+        // LuaM-start
+        if (_timing.CurTick.Value % 3 != 2)
+            return;
+        // LuaM-end
+
         var query = EntityQueryEnumerator<MagnetPickupComponent, StorageComponent, TransformComponent, MetaDataComponent>();
         var currentTime = _timing.CurTime;
 

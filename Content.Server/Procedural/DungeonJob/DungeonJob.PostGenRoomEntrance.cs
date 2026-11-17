@@ -37,6 +37,12 @@ public sealed partial class DungeonJob
 
         foreach (var room in dungeon.Rooms)
         {
+            // LuaM-start
+            await SuspendDungeon();
+            if (!ValidateResume())
+                return;
+            // LuaM-end
+
             foreach (var entrance in room.Entrances)
             {
                 _entManager.SpawnEntities(

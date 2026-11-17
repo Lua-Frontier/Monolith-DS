@@ -229,6 +229,11 @@ public sealed partial class AreaEchoSystem : EntitySystem
         var originTileIndices = tileRef.GridIndices;
         var worldPosition = _transformSystem.GetWorldPosition(transformComponent);
 
+        // LuaM-start
+        if (!float.IsFinite(worldPosition.X) || !float.IsFinite(worldPosition.Y))
+            return false;
+        // LuaM-end
+
         // At this point, we are ready for war against the client's pc.
         foreach (var direction in _calculatedDirections)
         {
@@ -280,7 +285,8 @@ public sealed partial class AreaEchoSystem : EntitySystem
                 var currentOriginLocalPosition = Vector2.Transform(currentOriginWorldPosition, worldMatrix);
 
                 var delta = currentOriginLocalPosition - previousRayOriginLocalPosition;
-                if (delta.LengthSquared() <= float.Epsilon + float.Epsilon)
+                if (!float.IsFinite(delta.X) || !float.IsFinite(delta.Y) || // LuaM
+                    delta.LengthSquared() <= float.Epsilon + float.Epsilon)
                 {
                     break;
                 }

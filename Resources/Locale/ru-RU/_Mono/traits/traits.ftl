@@ -5,7 +5,7 @@ humanoid-profile-editor-traits-collapse-all = Свернуть всё
 
 # Акценты
 trait-bogan-accent-name = Акцент богана
-trait-bogan-accent-desc = Ой! Ты говоришь как йови!
+trait-bogan-accent-desc = Ой, мужик! Вы говорите по-простому, как работяга из глубинки, совсем как йови.
 
 # Physical
 trait-prybar-prosthetics-name = Руки-ломы

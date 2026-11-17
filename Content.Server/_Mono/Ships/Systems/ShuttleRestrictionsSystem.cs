@@ -170,7 +170,7 @@ public sealed partial class ShuttleRestrictionsSystem : EntitySystem
             totalPowerEntities++;
         }
 
-        var percentage = totalPowerEntities != 0 && powered != 0 ? powered / totalPowerEntities : 0;
+        var percentage = totalPowerEntities != 0 && powered != 0 ? (double) powered / totalPowerEntities : 0; // LuaM
 
         if (percentage >= PoweredInactivityThreshold)
             return true;

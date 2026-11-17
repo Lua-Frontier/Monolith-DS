@@ -1,0 +1,9 @@
+ent-LuaMVehicleHumveeOneMan = { ent-LuaMVehicleHumvee }
+    .desc = { ent-LuaMVehicleHumvee.desc }
+    .suffix = Одноручный
+ent-LuaMVehicleTankOneMan = { ent-LuaMVehicleTank }
+    .desc = { ent-LuaMVehicleTank.desc }
+    .suffix = Одноручный
+ent-LuaMVehicleSPPVanOneMan = { ent-LuaMVehicleSPPVan }
+    .desc = { ent-LuaMVehicleSPPVan.desc }
+    .suffix = Одноручный

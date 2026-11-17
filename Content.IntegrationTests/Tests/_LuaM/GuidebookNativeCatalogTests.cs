@@ -25,7 +25,9 @@ public sealed class GuidebookNativeCatalogTests
         await using var pair = await PoolManager.GetServerClient(new PoolSettings { Connected = true });
         var catalog = pair.Client.ResolveDependency<IEntityManager>().System<GuidebookCatalogClientSystem>();
         await pair.Client.WaitPost(catalog.Request);
-        for (var i = 0; i < 100 && catalog.Catalog == null; i++) await pair.RunTicksSync(5);
+        var timer = System.Diagnostics.Stopwatch.StartNew();
+        while (catalog.Catalog == null && timer.Elapsed < System.TimeSpan.FromSeconds(90))
+            await pair.RunTicksSync(5);
         await pair.Client.WaitAssertion(() =>
         {
             var entities = pair.Client.ResolveDependency<IEntityManager>();

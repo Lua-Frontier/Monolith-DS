@@ -7,13 +7,13 @@ using System.Numerics;
 
 namespace Content.Shared.Projectiles;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent] // LuaM
 public sealed partial class ProjectileComponent : Component
 {
     /// <summary>
     ///     The angle of the fired projectile.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField] // LuaM
     public Angle Angle;
 
     /// <summary>
@@ -25,19 +25,19 @@ public sealed partial class ProjectileComponent : Component
     /// <summary>
     ///     User that shot this projectile.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField] // LuaM
     public EntityUid? Shooter;
 
     /// <summary>
     ///     Weapon used to shoot.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField] // LuaM
     public EntityUid? Weapon;
 
     /// <summary>
     ///     The projectile spawns inside the shooter most of the time, this prevents entities from shooting themselves.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField] // LuaM
     public bool IgnoreShooter = true;
 
     /// <summary>
@@ -79,7 +79,7 @@ public sealed partial class ProjectileComponent : Component
     /// <summary>
     ///     If true, the projectile has hit enough targets and should no longer interact with further collisions pending deletion.
     /// </summary>
-    [DataField, AutoNetworkedField] // Mono - networked
+    [DataField] // Mono - networked // LuaM
     public bool ProjectileSpent;
 
     /// <summary>
@@ -93,6 +93,11 @@ public sealed partial class ProjectileComponent : Component
     /// </summary>
     [DataField]
     public List<string>? PenetrationDamageTypeRequirement;
+
+    // LuaM-start
+    [DataField]
+    public bool PenetrateMobs;
+    // LuaM-end
 
     /// <summary>
     ///     Tracks the amount of damage dealt for penetration purposes.

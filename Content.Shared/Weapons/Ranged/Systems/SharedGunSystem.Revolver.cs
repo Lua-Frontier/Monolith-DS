@@ -526,6 +526,15 @@ public partial class SharedGunSystem
                 if (ent == null)
                     continue;
 
+                // LuaM-start
+                if (Deleted(ent.Value))
+                {
+                    component.AmmoSlots[index] = null;
+                    component.Chambers[index] = null;
+                    continue;
+                }
+                // LuaM-end
+
                 if (TryComp<CartridgeAmmoComponent>(ent, out var cartridge))
                 {
                     if (cartridge.Spent)
@@ -608,7 +617,7 @@ public partial class SharedGunSystem
     {
         var currentIndex = ent.Comp.CurrentIndex;
 
-        var index = (currentIndex - 1) % ent.Comp.Capacity;
+        var index = (currentIndex - 1 + ent.Comp.Capacity) % ent.Comp.Capacity; // LuaM
         var chamber = ent.Comp.Chambers[index];
         if (chamber == true)
         {

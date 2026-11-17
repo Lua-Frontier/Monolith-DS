@@ -135,6 +135,14 @@ public sealed partial class PullController : VirtualController
         if (_container.IsEntityInContainer(player))
             return false;
 
+        // LuaM-start
+        if (!float.IsFinite(coords.X) || !float.IsFinite(coords.Y) ||
+            _transformSystem.ToMapCoordinates(coords, logError: false).MapId != Transform(player).MapID)
+        {
+            return false;
+        }
+        // LuaM-end
+
         pullerComp.NextThrow = _timing.CurTime + pullerComp.ThrowCooldown;
 
         // Cap the distance

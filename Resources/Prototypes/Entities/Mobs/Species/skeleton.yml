@@ -61,7 +61,6 @@
     understands:
     - TauCetiBasic
     - Calcic
-  - type: SkeletonAccent
   - type: Fixtures
     fixtures:
       fix1:

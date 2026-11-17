@@ -1,0 +1,215 @@
+- type: entity
+  parent: LuaMVehicleBase
+  id: VehicleLuaMJanicart
+  name: janicart
+  description: The janitor's trusty steed. Carries a mop bucket, a trash bag and the rest of the cleaning kit.
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    noRot: true
+    sprite: _LuaM/Structures/Vehicles/Janicart/janicart.rsi
+    layers:
+    - map: [ base ]
+      state: vehicle
+  - type: SpriteMovement
+    movementLayers:
+      base:
+        state: vehicle_moving
+    noMovementLayers:
+      base:
+        state: vehicle
+  - type: Fixtures
+    fixtures:
+      hull:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -0.35,-0.4,0.35,0.4
+        density: 400
+        mask:
+        - LargeMobMask
+        layer:
+        - LargeMobLayer
+  - type: Strap
+    position: None
+    size: 200
+    buckleDoafterTime: 0.5
+    unbuckleDistanceSquared: 0.09
+  - type: StrapSlots
+    offsets:
+    - 0, 0
+  - type: VehicleRiderVisuals
+    sideDrawDepth: OverMobs
+    seatOffsets:
+      South:
+      - 0, 7
+      North:
+      - 0, 1
+      East:
+      - -4, 6
+      West:
+      - 4, 6
+  - type: VehicleSeats
+    seats:
+    - Driver
+    driverActions:
+    - ActionLuaMVehicleHorn
+    - ActionLuaMVehicleSpotlight
+  - type: VehicleSound
+    hornSound:
+      path: /Audio/Effects/Vehicle/carhorn.ogg
+      params:
+        volume: -3
+  - type: GridVehicleMover
+    maxSpeed: 8
+    weightClass: Weak
+    maxReverseSpeed: 3
+    acceleration: 4
+    reverseAcceleration: 3
+    deceleration: 8
+    maxRotationSpeedDegrees: 140
+    rotationAccelerationDegrees: 300
+    rotationDecelerationDegrees: 380
+    alignmentAssistDegrees: 8
+    ramMinSpeed: 3
+    ramStructureDamage: 0.1
+    crushMinSpeedScale: 100
+    ramHullDamage: 2
+    mobRamDamage: 0.5
+    mobRamSpeedMultiplier: 0.5
+    mobCollisionHullDamage: 1
+    mobThrowMaxDistance: 1.5
+    speedAtZeroIntegrity: 0.5
+    driftMinSpeed: 100
+  - type: VehicleEngine
+    startSound: /Audio/Effects/Vehicle/vehiclestartup.ogg
+    idleSound: /Audio/Effects/Vehicle/vehicleengineidle.ogg
+    slowSound: /Audio/Effects/Vehicle/vehicleengineidle.ogg
+    mediumSound: /Audio/Effects/Vehicle/vehicleengineidle.ogg
+    fastSound: /Audio/Effects/Vehicle/vehicleengineidle.ogg
+    startDelay: 0.5
+    exitDelay: 0.5
+    volume: -8
+  - type: VehicleSpotlight
+    radius: 3.5
+    energy: 1.5
+  - type: PointLight
+    enabled: false
+    radius: 3.5
+    energy: 1.5
+    softness: 2
+    lightMask: Cone
+    autoRot: true
+  - type: VehicleFuel
+    enabled: false
+  - type: SolutionContainerManager
+    solutions:
+      fuel:
+        maxVol: 0
+        reagents: []
+      bucket:
+        maxVol: 800
+  - type: RefillableSolution
+    solution: bucket
+  - type: DrainableSolution
+    solution: bucket
+  - type: ExaminableSolution
+    solution: bucket
+  - type: Spillable
+    solution: bucket
+    spillDelay: 3.0
+    spillWhenThrown: false
+  - type: Drink
+    solution: bucket
+  - type: ItemSlots
+    slots:
+      mop_slot:
+        name: janitorial-trolley-slot-component-slot-name-mop
+        whitelist:
+          tags:
+          - Mop
+        insertOnInteract: false
+        priority: 9
+      plunger_slot:
+        name: janitorial-trolley-slot-component-slot-name-plunger
+        whitelist:
+          tags:
+          - Plunger
+        priority: 8
+      wetfloorsign_slot4: &wetFloorSignSlot
+        name: janitorial-trolley-slot-component-slot-name-sign
+        whitelist:
+          tags:
+          - WetFloorSign
+        priority: 7
+      wetfloorsign_slot3: *wetFloorSignSlot
+      wetfloorsign_slot2: *wetFloorSignSlot
+      wetfloorsign_slot1: *wetFloorSignSlot
+      lightreplacer_slot:
+        name: janitorial-trolley-slot-component-slot-name-lightreplacer
+        whitelist:
+          components:
+          - LightReplacer
+        priority: 6
+      spraybottle_slot:
+        name: janitorial-trolley-slot-component-slot-name-spray
+        whitelist:
+          tags:
+          - Spray
+        insertOnInteract: false
+        priority: 5
+      bucket_slot:
+        name: janitorial-trolley-slot-component-slot-name-bucket
+        whitelist:
+          tags:
+          - Bucket
+        insertOnInteract: false
+        priority: 4
+      trashbag_slot:
+        name: janitorial-trolley-slot-component-slot-name-trashbag
+        whitelist:
+          tags:
+          - TrashBag
+        priority: 3
+  - type: ItemMapper
+    mapLayers:
+      storage:
+        whitelist:
+          tags:
+          - TrashBag
+    sprite: Objects/Vehicles/janicart.rsi
+  - type: ContainerContainer
+    containers:
+      mop_slot: !type:ContainerSlot
+      plunger_slot: !type:ContainerSlot
+      wetfloorsign_slot4: !type:ContainerSlot
+      wetfloorsign_slot3: !type:ContainerSlot
+      wetfloorsign_slot2: !type:ContainerSlot
+      wetfloorsign_slot1: !type:ContainerSlot
+      lightreplacer_slot: !type:ContainerSlot
+      spraybottle_slot: !type:ContainerSlot
+      bucket_slot: !type:ContainerSlot
+      trashbag_slot: !type:ContainerSlot
+  - type: Tag
+    tags:
+    - Wringer
+    - DoorBumpOpener
+  - type: VehicleIntegrity
+    maxIntegrity: 250
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          VehicleJanicartDestroyed:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: StaticPrice
+    price: 375

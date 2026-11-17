@@ -5,7 +5,7 @@ namespace Content.Server.Speech.EntitySystems;
 
 public sealed partial class BleatingAccentSystem : EntitySystem
 {
-    private static readonly Regex BleatRegex = new("([mbdlpwhrkcnytfo])([aiu])", RegexOptions.IgnoreCase);
+    private static readonly Regex BleatRegex = new("([бвгдклмнпрт])([еэ])", RegexOptions.IgnoreCase); // LuaM: ([mbdlpwhrkcnytfo])([aiu]) > cyrillic
 
     public override void Initialize()
     {

@@ -174,11 +174,18 @@ public sealed partial class ThrowingSystem : EntitySystem
         if (projectileQuery.TryGetComponent(uid, out var proj) && !proj.OnlyCollideWhenShot)
             return;
 
+        // LuaM-start
+        if (HasComp<Content.Shared._LuaM.Vehicles.Components.GridVehicleMoverComponent>(uid))
+            return;
+        // LuaM-end
+
         var comp = new ThrownItemComponent
         {
-            Thrower = user,
+            Thrower = user is { } thrower && TerminatingOrDeleted(thrower) ? null : user, // LuaM
             Animate = animated,
         };
+        if (comp.Thrower is { } tracked) // LuaM
+            EntityManager.System<Content.Shared._LuaM.Throwing.ThrowerSystem>().Track(tracked, uid); // LuaM
 
         // if not given, get the default friction value for distance calculation
         var tileFriction = friction ?? _frictionModifier * TileFrictionMod;
@@ -195,6 +202,21 @@ public sealed partial class ThrowingSystem : EntitySystem
         comp.LandTime = comp.ThrownTime + TimeSpan.FromSeconds(flyTime);
         comp.PlayLandSound = playSound;
         AddComp(uid, comp, true);
+
+        // LuaM start
+        if (predicted)
+        {
+            var predictedComp = EnsureComp<PredictedThrownItemComponent>(uid);
+            predictedComp.Thrower = user;
+            Dirty(uid, predictedComp);
+            _physics.UpdateIsPredicted(uid, physics);
+        }
+        else if (_net.IsServer)
+        {
+            // -- Предмет перебросили в полёте уже без предсказания: метка прошлого броска глушила бы звуки для его автора
+            RemComp<PredictedThrownItemComponent>(uid);
+        }
+        // LuaM end
 
         ThrowingAngleComponent? throwingAngle = null;
 
@@ -237,11 +259,6 @@ public sealed partial class ThrowingSystem : EntitySystem
         {
             _physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
         }
-
-        // LuaM start
-        if (predicted)
-            EnsureComp<PredictedThrownItemComponent>(uid);
-        // LuaM end
 
         if (user == null)
             return;

@@ -109,6 +109,15 @@ namespace Content.Shared.Damage
             {
                 // Initialize damage dictionary, using the types and groups from the damage
                 // container prototype
+                // LuaM-start
+                var capacity = damageContainerPrototype.SupportedTypes.Count;
+                foreach (var groupId in damageContainerPrototype.SupportedGroups)
+                {
+                    capacity += _prototypeManager.Index<DamageGroupPrototype>(groupId).DamageTypes.Count;
+                }
+
+                component.Damage.DamageDict.EnsureCapacity(capacity);
+                // LuaM-end
                 foreach (var type in damageContainerPrototype.SupportedTypes)
                 {
                     component.Damage.DamageDict.TryAdd(type, FixedPoint2.Zero);
@@ -126,6 +135,7 @@ namespace Content.Shared.Damage
             else
             {
                 // No DamageContainerPrototype was given. So we will allow the container to support all damage types
+                component.Damage.DamageDict.EnsureCapacity(_prototypeManager.Count<DamageTypePrototype>()); // LuaM
                 foreach (var type in _prototypeManager.EnumeratePrototypes<DamageTypePrototype>())
                 {
                     component.Damage.DamageDict.TryAdd(type.ID, FixedPoint2.Zero);

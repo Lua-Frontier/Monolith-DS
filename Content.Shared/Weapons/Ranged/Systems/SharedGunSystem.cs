@@ -306,6 +306,42 @@ public abstract partial class SharedGunSystem : EntitySystem
         return false;
     }
 
+    // LuaM-start
+    // -- Башня крутится на сервере, клиент часто ошибается в предсказании выстрела с едущей машины: звук и вспышку пушки на технике даёт сервер всем, вместе со стрелком
+    protected bool IsVehicleMounted(EntityUid gun, out EntityUid vehicle)
+    {
+        vehicle = gun;
+        if (!HasComp<Content.Shared._LuaM.Vehicles.Components.HardpointItemComponent>(gun))
+            return false;
+
+        var parent = Transform(gun).ParentUid;
+        while (parent.IsValid() && HasComp<Content.Shared._LuaM.Vehicles.Components.HardpointSlotsComponent>(parent))
+        {
+            vehicle = parent;
+            parent = Transform(parent).ParentUid;
+        }
+
+        return vehicle != gun;
+    }
+    // LuaM-end
+
+    // LuaM-start
+    private void SetBurstState(EntityUid uid, GunComponent gun, bool activated, int shots)
+    {
+        if (gun.BurstActivated != activated)
+        {
+            gun.BurstActivated = activated;
+            DirtyField(uid, gun, nameof(GunComponent.BurstActivated));
+        }
+
+        if (gun.BurstShotsCount != shots)
+        {
+            gun.BurstShotsCount = shots;
+            DirtyField(uid, gun, nameof(GunComponent.BurstShotsCount));
+        }
+    }
+    // LuaM-end
+
     private void StopShooting(EntityUid uid, GunComponent gun)
     {
         if (gun.ShotCounter == 0)
@@ -450,6 +486,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         else
         {
             shots = Math.Min(shots, gun.ShotsPerBurstModified - gun.ShotCounter);
+            shots = Math.Min(shots, gun.ShotsPerBurstModified - gun.BurstShotsCount); // LuaM
         }
 
         var attemptEv = new AttemptShootEvent(user, null);
@@ -463,14 +500,21 @@ public abstract partial class SharedGunSystem : EntitySystem
             }
             if (!gun.LockOnTargetBurst || gun.ShootCoordinates == null) // Goobstation
                 gun.Target = null;
-            gun.BurstActivated = false;
-            gun.BurstShotsCount = 0;
+            SetBurstState(gunUid, gun, false, 0); // LuaM: gun.BurstActivated = false; gun.BurstShotsCount = 0 > SetBurstState
             gun.ShotCounter = 0;
-            gun.NextFire = TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.NextFire.TotalSeconds));
+            DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter)); // LuaM
+            gun.NextFire = attemptEv.KeepCooldown ? lastFire : TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.NextFire.TotalSeconds)); // LuaM
             return;
         }
 
         var fromCoordinates = Transform(user).Coordinates;
+        // LuaM-start
+        var luamOrigin = new Content.Shared._LuaM.Weapons.LuaMGetShootOriginEvent(gunUid, toCoordinates.Value);
+        RaiseLocalEvent(user, ref luamOrigin);
+        if (luamOrigin.Origin is { } luamFrom)
+            fromCoordinates = luamFrom;
+        toCoordinates = luamOrigin.Target;
+        // LuaM-end
         // Remove ammo
         var ev = new TakeAmmoEvent(shots, new List<(EntityUid? Entity, IShootable Shootable)>(), fromCoordinates, user, true); // Frontier: add intent to fire
 
@@ -495,8 +539,7 @@ public abstract partial class SharedGunSystem : EntitySystem
 
             if (!gun.LockOnTargetBurst || gun.ShootCoordinates == null) // Goobstation
                 gun.Target = null;
-            gun.BurstActivated = false;
-            gun.BurstShotsCount = 0;
+            SetBurstState(gunUid, gun, false, 0); // LuaM: gun.BurstActivated = false; gun.BurstShotsCount = 0 > SetBurstState
             gun.ShotCounter = 0;
             gun.NextFire += TimeSpan.FromSeconds(gun.BurstCooldown);
 
@@ -520,23 +563,24 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
 
         // Handle burstfire
-        if (gun.SelectedMode == SelectiveFire.Burst)
+        // LuaM-start: the burst state is networked through SetBurstState
+        if (gun.SelectedMode == SelectiveFire.Burst || gun.BurstActivated)
         {
-            gun.BurstActivated = true;
-        }
-        if (gun.BurstActivated)
-        {
-            gun.BurstShotsCount += shots;
-            if (gun.BurstShotsCount >= gun.ShotsPerBurstModified)
+            var burstShots = gun.BurstShotsCount + shots;
+            if (burstShots >= gun.ShotsPerBurstModified)
             {
                 gun.NextFire += TimeSpan.FromSeconds(gun.BurstCooldown);
                 if (!gun.LockOnTargetBurst || gun.ShootCoordinates == null) // Goobstation
                     gun.Target = null;
-                gun.BurstActivated = false;
-                gun.BurstShotsCount = 0;
+                SetBurstState(gunUid, gun, false, 0);
                 gun.ShotCounter = 0;
             }
+            else
+            {
+                SetBurstState(gunUid, gun, true, burstShots);
+            }
         }
+        // LuaM-end
 
         // Shoot confirmed - sounds also played here in case it's invalid (e.g. cartridge already spent).
         Shoot(gunUid, gun, ev.Ammo, fromCoordinates, toCoordinates.Value, out var userImpulse, user, throwItems: attemptEv.ThrowItems);
@@ -969,7 +1013,10 @@ public record struct BoltStateChangedEvent(EntityUid User, bool Closed); //Mono
 /// <param name="Cancelled">Set this to true if the shot should be cancelled.</param>
 /// <param name="ThrowItems">Set this to true if the ammo shouldn't actually be fired, just thrown.</param>
 [ByRefEvent]
-public record struct AttemptShootEvent(EntityUid User, string? Message, bool Cancelled = false, bool ThrowItems = false);
+public record struct AttemptShootEvent(EntityUid User, string? Message, bool Cancelled = false, bool ThrowItems = false)
+{
+    public bool KeepCooldown; // LuaM: a cancelled shot that was never fired keeps the reload, e.g. a turret still turning
+}
 
 /// <summary>
 ///     Raised directed on the gun after firing.

@@ -1,0 +1,42 @@
+- type: entity
+  parent: LuaMVehicleHumvee
+  id: LuaMVehicleHumveeOneMan
+  suffix: One-man
+  components:
+  - type: VehicleSeats
+    driverIsGunner: true
+    seats:
+    - Driver
+    - Passenger
+    - Passenger
+    - Passenger
+    - Passenger
+
+- type: entity
+  parent: LuaMVehicleTank
+  id: LuaMVehicleTankOneMan
+  suffix: One-man
+  components:
+  - type: VehicleSeats
+    driverIsGunner: true
+    seats:
+    - Driver
+    - Passenger
+    - Passenger
+    - Passenger
+
+- type: entity
+  parent: LuaMVehicleSPPVan
+  id: LuaMVehicleSPPVanOneMan
+  suffix: One-man
+  components:
+  - type: VehicleSeats
+    driverIsGunner: true
+    seats:
+    - Driver
+    - Passenger
+    - Passenger
+    - Passenger
+    - Passenger
+    - Passenger
+    - Passenger

@@ -11,9 +11,15 @@ public sealed partial class IgnitionSourceSystem : SharedIgnitionSourceSystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<IgnitionSourceComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var xform))
+        // LuaM-start
+        _litWalk.Clear();
+        _litWalk.AddRange(_lit);
+        foreach (var uid in _litWalk)
         {
+            if (Paused(uid) || !TryComp(uid, out IgnitionSourceComponent? comp) || !TryComp(uid, out TransformComponent? xform))
+                continue;
+        // LuaM-end
+
             if (!comp.Ignited)
                 continue;
 

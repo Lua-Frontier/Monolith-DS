@@ -1,0 +1,10 @@
+﻿ent-LuaMVehicleSPPVan = БМП «Хешиг-1»
+    .desc = Защищённая от мин боевая машина пехоты с турелью на крыше и местом для целого отделения.
+ent-LuaMSPPVanWheel = колёса «Хешига»
+    .desc = Усиленный комплект колёс для БМП «Хешиг».
+ent-LuaMSPPVanTurret = турель «Хешига»
+    .desc = Турель на крышу БМП «Хешиг». В неё ставится пушка.
+ent-LuaMSPPVanTurretArmed = { ent-LuaMSPPVanTurret }
+    .desc = { ent-LuaMSPPVanTurret.desc }
+ent-LuaMSPPVanCannon = башенная пушка T60-P3M
+    .desc = Скорострельная башенная пушка для БМП «Хешиг». Заряжается теми же ящиками 10x50 мм, что и RE700.

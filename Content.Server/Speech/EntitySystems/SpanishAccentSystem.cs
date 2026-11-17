@@ -1,4 +1,3 @@
-using System.Text;
 using Content.Server.Speech.Components;
 
 namespace Content.Server.Speech.EntitySystems
@@ -14,9 +13,7 @@ namespace Content.Server.Speech.EntitySystems
         {
             // Insert E before every S
             message = InsertS(message);
-            message = InsertRussianS(message);  // LuaM
-            // If a sentence ends with ?, insert a reverse ? at the beginning of the sentence
-            message = ReplacePunctuation(message);
+            message = InsertRussianS(message);  // LuaM; ReplacePunctuation (¡¿) removed
             return message;
         }
 
@@ -55,34 +52,6 @@ namespace Content.Server.Speech.EntitySystems
             return msg;
         }
 // LuaM-end
-
-        private string ReplacePunctuation(string message)
-        {
-            var sentences = AccentSystem.SentenceRegex.Split(message);
-            var msg = new StringBuilder();
-            foreach (var s in sentences)
-            {
-                var toInsert = new StringBuilder();
-                for (var i = s.Length - 1; i >= 0 && "?!‽".Contains(s[i]); i--)
-                {
-                    toInsert.Append(s[i] switch
-                    {
-                        '?' => '¿',
-                        '!' => '¡',
-                        '‽' => '⸘',
-                        _ => ' '
-                    });
-                }
-                if (toInsert.Length == 0)
-                {
-                    msg.Append(s);
-                } else
-                {
-                    msg.Append(s.Insert(s.Length - s.TrimStart().Length, toInsert.ToString()));
-                }
-            }
-            return msg.ToString();
-        }
 
         private void OnAccent(EntityUid uid, SpanishAccentComponent component, AccentGetEvent args)
         {

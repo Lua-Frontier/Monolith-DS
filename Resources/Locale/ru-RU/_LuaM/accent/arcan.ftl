@@ -1,0 +1,27 @@
+﻿luam-accent-arcan-words-1 = хах
+luam-accent-arcan-words-1-2 = ахах
+luam-accent-arcan-words-replace-1 = хи-хи..
+luam-accent-arcan-words-2 = меня
+luam-accent-arcan-words-replace-2 = меня...
+luam-accent-arcan-words-3 = м
+luam-accent-arcan-words-3-2 = мм
+luam-accent-arcan-words-3-3 = ммм
+luam-accent-arcan-words-replace-3 = мм-х..
+luam-accent-arcan-words-4 = вас
+luam-accent-arcan-words-replace-4 = Вас
+luam-accent-arcan-words-5 = вы
+luam-accent-arcan-words-replace-5 = Вы
+luam-accent-arcan-words-6 = вам
+luam-accent-arcan-words-replace-6 = Вам
+luam-accent-arcan-words-7 = привет
+luam-accent-arcan-words-replace-7 = приветик
+luam-accent-arcan-words-8 = спасибо
+luam-accent-arcan-words-replace-8 = спасибочки
+luam-accent-arcan-words-9 = ай
+luam-accent-arcan-words-9-2 = ой
+luam-accent-arcan-words-replace-9 = ах-х...
+
+luam-accent-arcan-prefix-1 = Ах..
+luam-accent-arcan-prefix-2 = Мх...
+luam-accent-arcan-prefix-3 = Ммм..
+luam-accent-arcan-prefix-4 = Хи-хи..

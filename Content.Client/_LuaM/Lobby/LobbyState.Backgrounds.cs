@@ -48,6 +48,7 @@ public sealed partial class LobbyState
         Lobby.PreviousSongButton.OnPressed -= OnPreviousSong;
         Lobby.NextSongButton.OnPressed -= OnNextSong;
         Lobby.PauseSongButton.OnPressed -= OnPauseSong;
+        Lobby.Background.SetStatic(null);
     }
 
     private void SetStaticLobbyBackground(string? path)

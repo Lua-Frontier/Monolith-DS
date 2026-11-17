@@ -16,7 +16,7 @@ public sealed partial class GeneralStationRecordConsoleComponent : Component
     /// <summary>
     /// Qualities to filter a search by.
     /// </summary>
-    [DataField]
+    [ViewVariables] // LuaM
     public StationRecordsFilter? Filter;
 
     /// <summary>

@@ -71,14 +71,20 @@ public sealed partial class NaniteOverlaySystem : EntitySystem
         List<EntityUid> toRemove = new();
         foreach (var entity in _modifiedEntities)
         {
+            // LuaM-start
+            if (TerminatingOrDeleted(entity.Key))
+            {
+                toRemove.Add(entity.Key);
+                continue;
+            }
+            // LuaM-end
             if ((_transform.GetWorldPosition(Transform(entity.Key)) - _transform.GetWorldPosition(Transform(player.Value))).LengthSquared() > (eye.Range * eye.Range + 1))
                 toRemove.Add(entity.Key);
         }
 
         foreach (var entry in toRemove)
         {
-            _sprite.SetColor(entry, _modifiedEntities[entry]);
-            _modifiedEntities.Remove(entry);
+            Restore(entry); // LuaM
         }
 
         // 1. Find entities that have Repairable, Damageable (SpriteComponent too but everything has that)
@@ -92,6 +98,14 @@ public sealed partial class NaniteOverlaySystem : EntitySystem
                 _entities.Add(GetNetEntity(entity));
             }
         }
+
+        // LuaM-start
+        foreach (var tinted in _modifiedEntities.Keys.ToList())
+        {
+            if (!_entities.Contains(GetNetEntity(tinted)))
+                Restore(tinted);
+        }
+        // LuaM-end
 
         // 2. Ask the server for their damage threshold
         RaiseNetworkEvent(new NaniteOverlayMessage(_entities.ToArray()));
@@ -113,12 +127,7 @@ public sealed partial class NaniteOverlaySystem : EntitySystem
                 ShowOverlay(GetEntity(message.Targets[i]), response);
             else if (response == 0) // entity was repaired and is at full health
             {
-                var uid = GetEntity(message.Targets[i]);
-                if (!uid.Valid || TerminatingOrDeleted(uid) && _modifiedEntities.ContainsKey(uid))
-                {
-                    _sprite.SetColor(uid, _modifiedEntities[uid]);
-                    _modifiedEntities.Remove(uid);
-                }
+                Restore(GetEntity(message.Targets[i])); // LuaM
             }
         }
     }
@@ -181,11 +190,24 @@ public sealed partial class NaniteOverlaySystem : EntitySystem
 
     private void ClearOverlays()
     {
-        foreach (var ent in _modifiedEntities)
+        // LuaM-start
+        foreach (var ent in _modifiedEntities.Keys.ToList())
         {
-            _sprite.SetColor(ent.Key, ent.Value);
+            Restore(ent);
         }
+        // LuaM-end
 
         _modifiedEntities.Clear();
     }
+
+    // LuaM-start
+    private void Restore(EntityUid uid)
+    {
+        if (!_modifiedEntities.Remove(uid, out var color) || TerminatingOrDeleted(uid))
+            return;
+
+        if (TryComp<SpriteComponent>(uid, out var sprite))
+            _sprite.SetColor((uid, sprite), color);
+    }
+    // LuaM-end
 }

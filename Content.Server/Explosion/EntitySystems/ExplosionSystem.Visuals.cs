@@ -57,7 +57,7 @@ public sealed partial class ExplosionSystem
 
         // Light, sound & visuals may extend well beyond normal PVS range. In principle, this should probably still be
         // restricted to something like the same map, but whatever.
-        _pvsSys.AddGlobalOverride(explosionEntity);
+        _pvsSys.AddSessionOverrides(explosionEntity, Robust.Shared.Player.Filter.BroadcastMap(epicenter.MapId)); // LuaM
 
         var appearance = AddComp<AppearanceComponent>(explosionEntity);
         _appearance.SetData(explosionEntity, ExplosionAppearanceData.Progress, 1, appearance);

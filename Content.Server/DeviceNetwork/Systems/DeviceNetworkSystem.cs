@@ -51,6 +51,10 @@ namespace Content.Server.DeviceNetwork.Systems
 
         public override void Update(float frameTime)
         {
+            // LuaM-start
+            if (GuardedUpdate())
+                return;
+            // LuaM-end
 
             while (_activeQueue.TryDequeue(out var packet))
             {

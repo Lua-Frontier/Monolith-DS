@@ -27,6 +27,12 @@ public sealed partial class DungeonJob
 
         for (var i = 0; i < gen.Count; i++)
         {
+            // LuaM-start
+            await SuspendDungeon();
+            if (!ValidateResume())
+                return;
+            // LuaM-end
+
             var roomIndex = random.Next(rooms.Count);
             var room = rooms[roomIndex];
 

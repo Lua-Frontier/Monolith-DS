@@ -88,9 +88,23 @@ public sealed partial class SolutionHeaterSystem : EntitySystem
             TurnOff(entity);
     }
 
+    // LuaM-start
+    private const float HeatStep = 0.5f;
+    private float _heatTime;
+    // LuaM-end
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        // LuaM-start
+        _heatTime += frameTime;
+        if (_heatTime < HeatStep)
+            return;
+
+        frameTime = _heatTime;
+        _heatTime = 0f;
+        // LuaM-end
 
         var query = EntityQueryEnumerator<ActiveSolutionHeaterComponent, SolutionHeaterComponent, ItemPlacerComponent>();
         while (query.MoveNext(out _, out _, out var heater, out var placer))
