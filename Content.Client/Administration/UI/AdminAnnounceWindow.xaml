@@ -1,23 +1,38 @@
 <DefaultWindow
     xmlns="https://spacestation14.io"
     Title="{Loc admin-announce-title}"
-    MinWidth="500">
-    <GridContainer Columns="1">
-        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-            <LineEdit Name="Announcer" Access="Public" PlaceHolder="{Loc admin-announce-announcer-placeholder}" Text="{Loc admin-announce-announcer-default}" HorizontalExpand="True" SizeFlagsStretchRatio="2"/>
-            <Control HorizontalExpand="True" SizeFlagsStretchRatio="1" />
-            <OptionButton Name="AnnounceMethod" Access="Public" HorizontalExpand="True" SizeFlagsStretchRatio="2"/>
+    MinWidth="600">
+    <!-- LuaM: one explicit presentation form for all announcement channels. -->
+    <BoxContainer Orientation="Vertical" SeparationOverride="8">
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc admin-screen-channel}" />
+            <OptionButton Name="AnnounceMethod" Access="Public" HorizontalExpand="True" Margin="8 0 0 0"/>
         </BoxContainer>
-        <TextEdit Name="Announcement" Access="Public" VerticalExpand="True" MinHeight="100" />
-        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc screen-announcement-style-label}" />
+            <OptionButton Name="ScreenStyle" Access="Public" HorizontalExpand="True" Margin="8 0 0 0"/>
+        </BoxContainer>
+        <Label Text="{Loc admin-screen-heading}" />
+        <LineEdit Name="Announcer" Access="Public" PlaceHolder="{Loc admin-screen-heading-placeholder}" HorizontalExpand="True"/>
+        <Label Text="{Loc admin-screen-message}" />
+        <TextEdit Name="Announcement" Access="Public" VerticalExpand="True" MinHeight="140" />
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc admin-screen-portrait}" />
+            <OptionButton Name="PortraitMode" Access="Public" HorizontalExpand="True" Margin="8 0 0 0" />
+        </BoxContainer>
+        <LineEdit Name="PortraitEntity" Access="Public" Editable="False" PlaceHolder="{Loc admin-screen-entity-placeholder}" />
+        <LineEdit Name="PortraitName" Access="Public" Editable="False" PlaceHolder="{Loc admin-screen-name-placeholder}" />
+        <CheckBox Name="PlaySound" Access="Public" Pressed="True" Text="{Loc admin-screen-sound}" />
+        <BoxContainer Orientation="Horizontal">
             <CheckBox Name="EnableTTS" Access="Public" Text="{Loc admin-announce-enable-tts}" Pressed="True" />
             <Control HorizontalExpand="True" />
             <OptionButton Name="VoiceSelector" Access="Public" HorizontalExpand="True" SizeFlagsStretchRatio="2"/>
         </BoxContainer>
-
-        <GridContainer Rows="1">
-            <CheckBox Name="KeepWindowOpen" Access="Public" Text="{Loc 'admin-announce-keep-open'}" />
-            <Button Name="AnnounceButton" Access="Public" Disabled="True" Text="{Loc admin-announce-button}" HorizontalAlignment="Center"/>
-        </GridContainer>
-    </GridContainer>
+        <Label Name="ErrorMessage" Access="Public" Visible="False" Modulate="#FF7777" />
+        <BoxContainer Orientation="Horizontal">
+            <CheckBox Name="KeepWindowOpen" Access="Public" Text="{Loc admin-announce-keep-open}" />
+            <Control HorizontalExpand="True" />
+            <Button Name="AnnounceButton" Access="Public" Disabled="True" Text="{Loc admin-announce-button}"/>
+        </BoxContainer>
+    </BoxContainer>
 </DefaultWindow>

@@ -2,11 +2,9 @@ using Content.Shared._Rat.Overwatch;
 using Robust.Client.Audio;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
-using Robust.Client.ResourceManagement;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Map;
-using Robust.Shared.Timing;
 using System.Numerics;
 
 namespace Content.Client._Rat.Overwatch;
@@ -25,9 +23,6 @@ public sealed partial class OverwatchConsoleSystem : EntitySystem
     [Dependency] private IEyeManager _eye = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
-    [Dependency] private IOverlayManager _overlay = default!;
-    [Dependency] private IResourceCache _cache = default!;
-    [Dependency] private IGameTiming _timing = default!;
 
     /// <summary>
     /// Кэш ретранслируемых звуков для отслеживания активных ретрансляций.
@@ -39,55 +34,23 @@ public sealed partial class OverwatchConsoleSystem : EntitySystem
     /// </summary>
     private readonly List<(EntityUid Uid, AudioComponent Audio, RatOverwatchRelayedSoundComponent? Relay, EntityCoordinates Position)> _toRelay = new();
 
-    private OverwatchAnnouncementOverlay _announcementOverlay = default!;
-
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeNetworkEvent<OverwatchAnnouncementEvent>(OnAnnouncement);
+        // LuaM: the common announcement HUD owns the network subscription and rendering.
 
         SubscribeLocalEvent<RatOverwatchRelayedSoundComponent, ComponentRemove>(OnRelayedRemove);
         SubscribeLocalEvent<RatOverwatchRelayedSoundComponent, EntityTerminatingEvent>(OnRelayedRemove);
-        SubscribeLocalEvent<RatOverwatchWatchingComponent, ComponentInit>(OnLocalWatchingInit);
         SubscribeLocalEvent<RatOverwatchWatchingComponent, ComponentRemove>(OnLocalWatchingRemoved);
 
-        _announcementOverlay = new(_cache, _timing);
-        _overlay.AddOverlay(_announcementOverlay);
     }
 
-    public override void Shutdown()
-    {
-        base.Shutdown();
-        _overlay.RemoveOverlay(_announcementOverlay);
-    }
-
-    /// <summary>
-    /// Обработчик события объявления Overwatch.
-    /// </summary>
-    private void OnAnnouncement(OverwatchAnnouncementEvent ev)
-    {
-        var title = Loc.GetString("overwatch-announcement-title",
-            ("overwatchTitle", ev.OverwatchTitle),
-            ("targetName", ev.TargetName));
-        _announcementOverlay.SetText(title, ev.Message, ev.Color);
-    }
-
-    private void OnLocalWatchingInit(Entity<RatOverwatchWatchingComponent> ent, ref ComponentInit args)
-    {
-        if (_player.LocalEntity != ent.Owner || !ent.Comp.Watching.HasValue)
-            return;
-
-        var watchingNet = GetNetEntity(ent.Comp.Watching.Value);
-        _announcementOverlay?.Reset();
-    }
-
+    // LuaM: screen announcements are routed through the common client HUD queue.
     private void OnLocalWatchingRemoved(Entity<RatOverwatchWatchingComponent> ent, ref ComponentRemove args)
     {
         if (_player.LocalEntity != ent.Owner)
             return;
 
-        _announcementOverlay.Reset();
         CleanupAllRelayedSounds();
     }
 

@@ -1,3 +1,5 @@
+using Content.Server._LuaM.Announcements; // LuaM
+using Content.Shared._LuaM.Announcements; // LuaM
 using Content.Server._LuaM.Audio; // LuaM
 using System.Collections.Immutable;
 using System.Globalization;
@@ -74,6 +76,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private DiscordChatLink _discordLink = default!;
     [Dependency] private LanguageSystem _language = default!; // Einstein Engines - Language
     [Dependency] private CollectiveMindUpdateSystem _collectiveMind = default!; // Goobstation - Starlight collective mind port
+    [Dependency] private ScreenAnnouncementSystem _screenAnnouncements = default!; // LuaM
     [Dependency] private AnnouncementAudioSystem _announcementAudio = default!; // LuaM
 
     public const int VoiceRange = 10; // how far voice goes in world units
@@ -365,6 +368,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         return sound == null ? DefaultAnnouncementSoundResolved : _audio.ResolveSound(sound);
     }
 
+    // LuaM-start: comms can add the stock cue while retaining their custom announcement sound.
+    public void PlayAnnouncementSound(Filter filter, SoundSpecifier? sound = null, bool includeDefaultSound = false)
+    {
+        var resolved = ResolveAnnouncementSound(sound);
+        if (includeDefaultSound && !resolved.Equals(DefaultAnnouncementSoundResolved))
+            _announcementAudio.Mark(_audio.PlayGlobal(DefaultAnnouncementSoundResolved, filter, true, AudioParams.Default.WithVolume(-2f)));
+        _announcementAudio.Mark(_audio.PlayGlobal(resolved, filter, true, AudioParams.Default.WithVolume(-2f)));
+    }
+    // LuaM-end
+
     /// <summary>
     /// Dispatches an announcement to all.
     /// </summary>
@@ -377,16 +390,20 @@ public sealed partial class ChatSystem : SharedChatSystem
         string? sender = null,
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
-        Color? colorOverride = null
+        Color? colorOverride = null,
+        ScreenAnnouncementStyle style = ScreenAnnouncementStyle.System, // LuaM
+        EntityUid? speaker = null, // LuaM
+        string? portraitName = null, bool includeDefaultSound = false // LuaM
         )
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
+        _screenAnnouncements.Send(sender, message, style, colorOverride, speaker: speaker, portraitName: portraitName); // LuaM
         if (playSound)
         {
-            _announcementAudio.Mark(_audio.PlayGlobal(ResolveAnnouncementSound(announcementSound), Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f))); // LuaM
+            PlayAnnouncementSound(Filter.Broadcast(), announcementSound, includeDefaultSound); // LuaM
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }
@@ -408,15 +425,18 @@ public sealed partial class ChatSystem : SharedChatSystem
         string? sender = null,
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
-        Color? colorOverride = null)
+        Color? colorOverride = null,
+        ScreenAnnouncementStyle style = ScreenAnnouncementStyle.System,
+        EntityUid? speaker = null, string? portraitName = null, bool includeDefaultSound = false) // LuaM
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, colorOverride);
+        _screenAnnouncements.Send(sender, message, style, colorOverride, filter, speaker, portraitName); // LuaM
         if (playSound)
         {
-            _announcementAudio.Mark(_audio.PlayGlobal(ResolveAnnouncementSound(announcementSound), filter, true, AudioParams.Default.WithVolume(-2f))); // LuaM
+            PlayAnnouncementSound(filter, announcementSound, includeDefaultSound); // LuaM
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement from {sender}: {message}");
     }
@@ -435,7 +455,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         string? sender = null,
         bool playDefaultSound = true,
         SoundSpecifier? announcementSound = null,
-        Color? colorOverride = null)
+        Color? colorOverride = null,
+        ScreenAnnouncementStyle style = ScreenAnnouncementStyle.System,
+        EntityUid? speaker = null, string? portraitName = null, bool includeDefaultSound = false) // LuaM
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
@@ -453,10 +475,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         var filter = _stationSystem.GetInStation(stationDataComp);
 
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source, false, true, colorOverride);
+        _screenAnnouncements.Send(sender, message, style, colorOverride, filter, speaker, portraitName); // LuaM
 
         if (playDefaultSound)
         {
-            _announcementAudio.Mark(_audio.PlayGlobal(ResolveAnnouncementSound(announcementSound), filter, true, AudioParams.Default.WithVolume(-2f))); // LuaM
+            PlayAnnouncementSound(filter, announcementSound, includeDefaultSound); // LuaM
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");

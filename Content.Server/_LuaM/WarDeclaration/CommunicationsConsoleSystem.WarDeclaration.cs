@@ -74,7 +74,7 @@ public sealed partial class CommunicationsConsoleSystem
         _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("comms-console-war-surrender", ("faction", faction)),
             title,
             announcementSound: comp.Sound,
-            colorOverride: Color.White);
+            colorOverride: Color.White, style: comp.ScreenStyle, speaker: mob, includeDefaultSound: true);
         _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has capitulated in the war for {declarator.Faction}");
 
         UpdateCommsConsoleInterface();
@@ -129,7 +129,7 @@ public sealed partial class CommunicationsConsoleSystem
         if (autoDeclareDelay is { } delay)
             msg += "\n" + Loc.GetString("comms-console-war-declaration-auto-warning", ("minutes", (int) Math.Ceiling(delay.TotalMinutes)));
 
-        _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: declarator.WarDeclarationSound ?? comp.Sound, colorOverride: comp.Color);
+        _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: declarator.WarDeclarationSound ?? comp.Sound, colorOverride: comp.Color, style: comp.ScreenStyle, speaker: mob, includeDefaultSound: true); // LuaM
         _adminLogger.Add(LogType.Action, LogImpact.Extreme, $"{ToPrettyString(mob):player} has declared war for {declarator.Faction}: {reason}");
 
         UpdateCommsConsoleInterface();

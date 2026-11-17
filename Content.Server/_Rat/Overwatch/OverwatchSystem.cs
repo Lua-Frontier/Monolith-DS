@@ -1,3 +1,5 @@
+using Content.Server.Chat.Systems; // LuaM
+using Content.Shared._LuaM.Announcements; // LuaM
 using System.Linq;
 using System.Numerics;
 using Content.Server.Chat.Managers;
@@ -429,7 +431,6 @@ public sealed partial class OverwatchSystem : EntitySystem
             if (TryComp<ActorComponent>(member, out var actor) && actor.PlayerSession != null)
             {
                 recipients.Add(actor.PlayerSession);
-                RaiseNetworkEvent(new OverwatchAnnouncementEvent(args.Message, targetName, overwatchTitle, color), actor.PlayerSession);
             }
         }
 
@@ -444,6 +445,13 @@ public sealed partial class OverwatchSystem : EntitySystem
             filter.AddPlayer(recipient);
         }
 
+        // LuaM-start: do not capture for an empty audience; reuse one event for the filter.
+        // The engine still serializes per connection. Preserve the old per-player path's
+        // replay behaviour (the chat message is recorded separately).
+        var portrait = EntityManager.System<AnnouncementPortraitCaptureSystem>().Capture(args.Actor);
+        RaiseNetworkEvent(new OverwatchAnnouncementEvent(args.Message, targetName, overwatchTitle, color, faction.Id, portrait), filter, recordReplay: false);
+        // LuaM-end
+        EntityManager.System<ChatSystem>().PlayAnnouncementSound(filter); // LuaM
         _chatManager.ChatMessageToManyFiltered(
             filter,
             ChatChannel.Local,
@@ -705,6 +713,20 @@ public sealed partial class OverwatchSystem : EntitySystem
         return factionComp.CompanyName;
     }
 
+    // LuaM-start: administrative faction announcements use the same membership/jamming rules
+    // as an actual Overwatch console, and share this filter with chat, sound and TTS.
+    public Filter GetAnnouncementRecipients(ProtoId<CompanyPrototype> faction)
+    {
+        var filter = Filter.Empty();
+        foreach (var member in GetFactionMembers(faction))
+        {
+            if (TryComp<ActorComponent>(member, out var actor) && actor.PlayerSession != null)
+                filter.AddPlayer(actor.PlayerSession);
+        }
+        return filter;
+    }
+    // LuaM-end
+
     /// <summary>
     /// Получает кэшированный список членов фракции.
     /// </summary>
@@ -816,9 +838,9 @@ public sealed partial class OverwatchSystem : EntitySystem
     {
         var key = faction switch
         {
-            "TSF" => "overwatch-title-tsf",
+            "TSF" or "TSFCivilian" => "overwatch-title-tsf", // LuaM
             "TSFHighComm" => "overwatch-title-tsfhighcomm",
-            "PDV" => "overwatch-title-pdv",
+            "PDV" or "PDVCivilian" or "PDVHighComm" => "overwatch-title-pdv", // LuaM
             "USSP" => "overwatch-title-ussp",
             "MD" => "overwatch-title-md",
             "Colonial" => "overwatch-title-colonial",

@@ -1,0 +1,44 @@
+- files: ["system-chrome.png", "system-divider.png", "system-projection.png", "system-emblem.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Approved X artwork for Monolith-DS; original frame and concept emblem."
+  source: "https://github.com/Lua-Frontier/Monolith-DS"
+
+- files: ["tsf-chrome.png", "tsf-divider.png", "tsf-projection.png", "tsf-emblem.png"]
+  license: "Custom"
+  copyright: "Approved X frame: CC-BY-SA-3.0. Emblem cleaned from contributor-supplied star-map crop; original mark author and licence not supplied. See CREDITS.txt."
+  source: "NA"
+
+- files: ["vanguard-chrome.png", "vanguard-divider.png", "vanguard-projection.png", "vanguard-emblem.png"]
+  license: "Custom"
+  copyright: "Approved X frame: CC-BY-SA-3.0. Emblem cleaned from contributor-supplied star-map crop; original mark author and licence not supplied. See CREDITS.txt."
+  source: "NA"
+
+- files: ["mmc-chrome.png", "mmc-divider.png", "mmc-projection.png", "mmc-emblem.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Approved X artwork for Monolith-DS; original frame and concept emblem."
+  source: "https://github.com/Lua-Frontier/Monolith-DS"
+
+- files: ["medical-chrome.png", "medical-divider.png", "medical-projection.png", "medical-emblem.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Approved X artwork for Monolith-DS; original frame and concept emblem."
+  source: "https://github.com/Lua-Frontier/Monolith-DS"
+
+- files: ["colossus-chrome.png", "colossus-divider.png", "colossus-projection.png", "colossus-emblem.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Approved X artwork for Monolith-DS; original frame and concept emblem."
+  source: "https://github.com/Lua-Frontier/Monolith-DS"
+
+- files: ["ussp-chrome.png", "ussp-divider.png", "ussp-projection.png", "ussp-emblem.png"]
+  license: "Custom"
+  copyright: "Approved X frame: CC-BY-SA-3.0. Emblem cleaned from contributor-supplied star-map crop; original mark author and licence not supplied. See CREDITS.txt."
+  source: "NA"
+
+- files: ["viper-chrome.png", "viper-divider.png", "viper-projection.png", "viper-emblem.png"]
+  license: "CC-BY-3.0"
+  copyright: "Approved X artwork for Monolith-DS. Triangle/V motif redrawn with reference to Viper Group logo by blitz7211."
+  source: "https://github.com/Lua-Frontier/Monolith-DS"
+
+- files: ["system-red-chrome.png", "system-red-divider.png", "system-red-projection.png", "system-red-emblem.png", "system-purple-chrome.png", "system-purple-divider.png", "system-purple-projection.png", "system-purple-emblem.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Approved X system artwork, recoloured red and purple."
+  source: "https://github.com/Lua-Frontier/Monolith-DS"

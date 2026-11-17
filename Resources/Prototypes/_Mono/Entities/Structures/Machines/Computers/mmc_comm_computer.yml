@@ -7,6 +7,7 @@
   - type: AccessReader
     access: [[ "MieyoSecurity" ]]
   - type: CommunicationsConsole
+    screenStyle: Mmc # LuaM
     title: comms-console-announcement-title-mieyo
     color: "#FF8800"
     canShuttle: false

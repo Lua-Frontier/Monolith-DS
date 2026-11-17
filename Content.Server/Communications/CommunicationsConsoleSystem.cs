@@ -243,7 +243,7 @@ namespace Content.Server.Communications
         {
             var maxLength = _cfg.GetCVar(CCVars.ChatMaxAnnouncementLength);
             var msg = SharedChatSystem.SanitizeAnnouncement(message.Message, maxLength);
-            var author = Loc.GetString("comms-console-announcement-unknown-sender");
+            // LuaM: author information belongs to the portrait, not an appended sender line.
             if (message.Actor is { Valid: true } mob)
             {
                 if (!CanAnnounce(comp))
@@ -257,9 +257,7 @@ namespace Content.Server.Communications
                     return;
                 }
 
-                var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(uid, mob);
-                RaiseLocalEvent(tryGetIdentityShortInfoEvent);
-                author = tryGetIdentityShortInfoEvent.Title;
+                // LuaM: no identity lookup is needed for an appended sender suffix.
             }
 
             comp.AnnouncementCooldownRemaining = comp.Delay;
@@ -273,7 +271,7 @@ namespace Content.Server.Communications
             title ??= comp.Title;
 
             var ttsMessage = msg; // Corvax-TTS
-            msg += "\n" + Loc.GetString("comms-console-announcement-sent-by") + " " + author;
+            // LuaM: do not append an author suffix to the chat or HUD body.
 // Corvax-TTS-start:
             var voice = string.Empty;
             LanguagePrototype? language = null;
@@ -287,14 +285,14 @@ namespace Content.Server.Communications
 
             if (comp.Global)
             {
-                _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: comp.Sound, colorOverride: comp.Color);
+                _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: comp.Sound, colorOverride: comp.Color, style: comp.ScreenStyle, speaker: message.Actor, includeDefaultSound: true); // LuaM
                 TrySendTtsAnnouncement(voice, ttsMessage, Filter.Broadcast(), message.Actor, language); // Corvax-TTS
 
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following global announcement: {msg}");
                 return;
             }
 
-            _chatSystem.DispatchStationAnnouncement(uid, msg, title, colorOverride: comp.Color);
+            _chatSystem.DispatchStationAnnouncement(uid, msg, title, announcementSound: comp.Sound, colorOverride: comp.Color, style: comp.ScreenStyle, speaker: message.Actor, includeDefaultSound: true); // LuaM
 // Corvax-TTS-start:
             if (TryGetStationAnnouncementFilter(uid, out var filter))
                 TrySendTtsAnnouncement(voice, ttsMessage, filter, message.Actor, language);

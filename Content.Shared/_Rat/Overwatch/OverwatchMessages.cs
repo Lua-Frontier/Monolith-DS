@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Announcements; // LuaM
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Rat.Overwatch;
@@ -262,11 +263,16 @@ public sealed class OverwatchAnnouncementEvent : EntityEventArgs
     /// </summary>
     public readonly Color Color;
 
-    public OverwatchAnnouncementEvent(string message, string targetName, string overwatchTitle, Color color)
+    public readonly AnnouncementPortraitSnapshot? Portrait; // LuaM
+    public readonly string Faction; // LuaM: explicit source metadata for announcement presentation.
+
+    public OverwatchAnnouncementEvent(string message, string targetName, string overwatchTitle, Color color, string faction = "", AnnouncementPortraitSnapshot? portrait = null) // LuaM
     {
         Message = message;
         TargetName = targetName;
         OverwatchTitle = overwatchTitle;
         Color = color;
+        Faction = faction; // LuaM
+        Portrait = portrait; // LuaM
     }
 }

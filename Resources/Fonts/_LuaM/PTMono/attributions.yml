@@ -1,0 +1,4 @@
+- files: ["PTM55FT.ttf"]
+  license: "Custom"
+  copyright: "Copyright (c) 2011, ParaType Ltd. PT Mono Regular, unmodified Google Fonts distribution. Licensed under SIL Open Font License 1.1; full licence included in OFL.txt."
+  source: "https://github.com/google/fonts/tree/main/ofl/ptmono"

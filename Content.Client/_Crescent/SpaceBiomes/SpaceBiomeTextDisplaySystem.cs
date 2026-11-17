@@ -4,13 +4,15 @@ using Content.Client.Audio;
 using Robust.Client.Graphics;
 using Robust.Shared.Timing;
 using Content.Shared._Crescent.Vessel;
+using Robust.Client.UserInterface; // LuaM
+using Robust.Client.UserInterface.Controls; // LuaM
 
 namespace Content.Client._Crescent.SpaceBiomes;
 
 public sealed partial class SpaceTextDisplaySystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _protMan = default!;
-    [Dependency] private IOverlayManager _overMan = default!;
+    [Dependency] private IUserInterfaceManager _ui = default!; // LuaM: full-window HUD layer.
     [Dependency] private ContentAudioSystem _audioSys = default!;
 
     private SpaceBiomeTextOverlay _overlay = default!;
@@ -21,8 +23,19 @@ public sealed partial class SpaceTextDisplaySystem : EntitySystem
         SubscribeLocalEvent<SpaceBiomeSwapMessage>(OnSwap);
         SubscribeLocalEvent<PlayerParentChangedMessage>(OnNewVesselEntered);
         _overlay = new();
-        _overMan.AddOverlay(_overlay);
+        // LuaM-start: keep the announcement outside the clipped game viewport.
+        _ui.WindowRoot.AddChild(_overlay);
+        LayoutContainer.SetAnchorPreset(_overlay, LayoutContainer.LayoutPreset.Wide);
+        // LuaM-end
     }
+
+    // LuaM-start
+    public override void Shutdown()
+    {
+        _overlay.Orphan();
+        base.Shutdown();
+    }
+    // LuaM-end
 
     private void OnSwap(ref SpaceBiomeSwapMessage ev)
     {

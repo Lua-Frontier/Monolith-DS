@@ -1,31 +1,35 @@
-using System.ComponentModel;
 using System.Numerics;
-using System.Runtime.ExceptionServices;
-using System.Text;
-using Content.Client.Resources;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
-using Robust.Shared.Enums;
 using Robust.Shared.Timing;
+// LuaM-start: configurable announcement position shared with the HUD preview.
+using Content.Client._LuaM.Hud;
+using Content.Shared._LuaM.Announcements; // LuaM
+using Content.Shared._LuaM.CCVar;
+using Robust.Shared.Configuration;
+using Robust.Client.UserInterface;
+using Content.Client.UserInterface.Screens;
+// LuaM-end
 
 namespace Content.Client._Crescent.SpaceBiomes;
 
 /// <summary>
 /// this system handles the actual drawing of grid names, descriptions, and biome overlays & descriptions
 /// </summary>
-public sealed partial class SpaceBiomeTextOverlay : Overlay
+public sealed partial class SpaceBiomeTextOverlay : Control // LuaM: HUD layer avoids viewport clipping.
 {
     [Dependency] private IResourceCache _cache = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IConfigurationManager _cfg = default!; // LuaM
+    private readonly LocationAnnouncementRenderer _renderer; // LuaM
 
-    public override OverlaySpace Space => OverlaySpace.ScreenSpace;
-    private Font _font;
-    private Font _descriptionfont;
+    // LuaM: rendered as a full-window HUD control rather than a viewport overlay.
+    // LuaM: fonts and text measurement belong to LocationAnnouncementRenderer.
 
     public string? Text;
     public int Index;
     public bool Reverse;
-    public Vector2 Position;
+    // LuaM: position is read from the archived client layout settings.
     public TimeSpan CharInterval;
     private TimeSpan _nextUpd = TimeSpan.Zero;
 
@@ -33,14 +37,12 @@ public sealed partial class SpaceBiomeTextOverlay : Overlay
     public TimeSpan CharIntervalDescription;
     public int IndexDescription;
     public bool ReverseDescription;
-    public Vector2 PositionDescription;
     private TimeSpan _nextUpdDescription = TimeSpan.Zero;
 
     public SpaceBiomeTextOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _font = _cache.GetFont("/Fonts/Jura/Jura.ttf", 25); // LuaM changed: Iceberg-Regular.ttf -> Jura.ttf
-        _descriptionfont = _cache.GetFont("/Fonts/Jura/Jura.ttf", 15); // LuaM changed: Iceberg-Regular.ttf -> Jura.ttf
+        _renderer = new LocationAnnouncementRenderer(_cache); // LuaM
     }
 
     public void Reset()
@@ -48,7 +50,6 @@ public sealed partial class SpaceBiomeTextOverlay : Overlay
         Text = null;
         Index = 0;
         Reverse = false;
-        Position = Vector2.Zero;
         _nextUpd = TimeSpan.Zero;
     }
     public void ResetDescription()
@@ -56,21 +57,28 @@ public sealed partial class SpaceBiomeTextOverlay : Overlay
         TextDescription = null;
         IndexDescription = 0;
         ReverseDescription = false;
-        PositionDescription = Vector2.Zero;
         _nextUpdDescription = TimeSpan.Zero;
     }
 
-    protected override void Draw(in OverlayDrawArgs args)
+    protected override void Draw(DrawingHandleScreen handle) // LuaM
     {
+        if (UserInterfaceManager.ActiveScreen is not InGameScreen) // LuaM
+            return;
         if (Text == null || Text == string.Empty)
             return;
 
-        DrawDescription(args); //if there is no description, this returns almost immediately so it shouldnt interfere
+        DrawDescription(); // LuaM: retain the description animation.
 
-        if (Position == Vector2.Zero)
-            Position = CalcPosition(_font, Text, new Vector2(args.ViewportBounds.Width, args.ViewportBounds.Height));
-
-        args.ScreenHandle.DrawString(_font, Position, Text[..Index]);
+        // LuaM-start: use full HUD pixels, independent of the clipped render viewport.
+        // Recalculate for current window size/configuration even while an announcement is animating.
+        var screen = (Vector2) PixelSize;
+        _renderer.Draw(handle, screen,
+            new Vector2(_cfg.GetCVar(LuaMCVars.LocationAnnouncementX), _cfg.GetCVar(LuaMCVars.LocationAnnouncementY)),
+            Text, TextDescription ?? string.Empty, Math.Min(Index, Text.Length),
+            Math.Min(IndexDescription, TextDescription?.Length ?? 0),
+            (HudHorizontalAlignment) _cfg.GetCVar(LuaMCVars.LocationAnnouncementAlignment),
+            _cfg.GetCVar(LuaMCVars.LocationAnnouncementScale));
+        // LuaM-end
 
         if (_nextUpd > _timing.CurTime)
             return;
@@ -97,17 +105,13 @@ public sealed partial class SpaceBiomeTextOverlay : Overlay
         _nextUpd += CharInterval;
     }
 
-    private void DrawDescription(OverlayDrawArgs args)
+    private void DrawDescription() // LuaM
     {
         if (TextDescription == null || TextDescription == string.Empty)
             return;
 
 
-        if (PositionDescription == Vector2.Zero)
-            PositionDescription = CalcPositionDescription(_descriptionfont, TextDescription, new Vector2(args.ViewportBounds.Width, args.ViewportBounds.Height));
-
-
-        args.ScreenHandle.DrawString(_descriptionfont, PositionDescription, TextDescription[..IndexDescription], Color.DarkGray);
+        // LuaM: description is drawn together with the title by the shared renderer.
 
         if (_nextUpdDescription > _timing.CurTime)
             return;
@@ -134,35 +138,5 @@ public sealed partial class SpaceBiomeTextOverlay : Overlay
         _nextUpdDescription += CharIntervalDescription;
     }
 
-    private Vector2 CalcPosition(Font font, string str, Vector2 viewport)
-    {
-        Vector2 strSize = new();
-        foreach (Rune r in str)
-        {
-            if (font.TryGetCharMetrics(r, 1, out var metrics))
-            {
-                strSize.X += metrics.Width;
-                strSize.Y = Math.Max(strSize.Y, metrics.Height);
-            }
-        }
-
-        Vector2 pos = new Vector2((viewport.X - strSize.X) / 2, strSize.Y + 110);
-        return pos;
-    }
-
-    private Vector2 CalcPositionDescription(Font font, string str, Vector2 viewport)
-    {
-        Vector2 strSize = new();
-        foreach (Rune r in str)
-        {
-            if (font.TryGetCharMetrics(r, 1, out var metrics))
-            {
-                strSize.X += metrics.Width;
-                strSize.Y = Math.Max(strSize.Y, metrics.Height);
-            }
-        }
-
-        Vector2 pos = new Vector2((viewport.X - strSize.X) / 2, strSize.Y + 110 + 70); //70 should be enough to give the title font space
-        return pos;
-    }
+    // LuaM: legacy fixed-coordinate calculations replaced by HudLayout.
 }

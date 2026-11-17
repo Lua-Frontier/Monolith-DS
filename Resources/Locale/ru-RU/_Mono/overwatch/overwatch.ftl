@@ -44,14 +44,14 @@ overwatch-member-coordinates-none = —
 
 overwatch-stop-watching-button = ПРЕКРАТИТЬ НАБЛЮДЕНИЕ
 
-overwatch-title-tsf = TSFMC HALCYON
-overwatch-title-tsfhighcomm = TSF ВЫСШЕЕ КОМАНДОВАНИЕ
-overwatch-title-pdv = NF HELIOS
-overwatch-title-ussp = ST-NAV
-overwatch-title-md = CCTC MD
-overwatch-title-colonial = CCTC SC
-overwatch-title-mmc = COMP. NET
-overwatch-title-thevipergroup = V.NET
+overwatch-title-tsf = Корпус Морпехов ТСФ
+overwatch-title-tsfhighcomm = Корпус Морпехов ТСФ
+overwatch-title-pdv = Авангард Нордфолла
+overwatch-title-ussp = СССП
+overwatch-title-md = Медицинский Персонал
+overwatch-title-colonial = Персонал Колосса
+overwatch-title-mmc = ММС
+overwatch-title-thevipergroup = Viper Group
 overwatch-title-default = Наблюдение
 
 overwatch-announcement-title = [{ $overwatchTitle }] - { $targetName }

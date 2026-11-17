@@ -19,7 +19,9 @@
   - type: AccessReader
     access: [["HeadOfPersonnel"], ["HeadOfSecurity"]]
   - type: CommunicationsConsole
-    title: comms-console-announcement-title-station
+    screenStyle: Tsf # LuaM
+    title: comms-console-announcement-title-tsf # LuaM: faction heading instead of generic station
+    color: "#5ABEFF" # LuaM: Gold > TSF blue
     canShuttle: false
     global: true #SR WILL NOT BE IGNORED
   - type: ConsoleWarDeclarator # LuaM
