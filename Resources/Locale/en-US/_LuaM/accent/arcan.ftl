@@ -20,3 +20,8 @@ luam-accent-arcan-words-replace-8 = thankies
 luam-accent-arcan-words-9 = ow
 luam-accent-arcan-words-9-2 = oh
 luam-accent-arcan-words-replace-9 = ah-h...
+
+luam-accent-arcan-prefix-1 = Ah..
+luam-accent-arcan-prefix-2 = Mh...
+luam-accent-arcan-prefix-3 = Mmm..
+luam-accent-arcan-prefix-4 = Hee-hee..

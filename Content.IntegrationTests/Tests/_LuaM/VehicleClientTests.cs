@@ -33,11 +33,10 @@ public sealed class VehicleClientTests
         var buckle = server.System<SharedBuckleSystem>();
         var seats = server.System<VehicleSeatsSystem>();
 
-        EntityUid player = default;
+        var player = await PlaceRiderOnTestGrid(pair);
         EntityUid tank = default;
         await server.WaitAssertion(() =>
         {
-            player = server.ResolveDependency<IPlayerManager>().Sessions.Single().AttachedEntity!.Value;
             tank = entMan.SpawnEntity("LuaMVehicleTank", entMan.GetComponent<TransformComponent>(player).Coordinates);
             var slots = entMan.GetComponent<StrapSlotsComponent>(tank);
             slots.Requested[player] = 0;
@@ -108,15 +107,7 @@ public sealed class VehicleClientTests
         EntityUid player = default;
         EntityUid bike = default;
         var baseline = Vector2.Zero;
-        await server.WaitPost(() =>
-        {
-            player = server.ResolveDependency<IPlayerManager>().Sessions.Single().AttachedEntity!.Value;
-            var grid = entMan.GetComponent<TransformComponent>(player).GridUid!.Value;
-            var gravity = entMan.EnsureComponent<Content.Shared.Gravity.GravityComponent>(grid);
-            gravity.Enabled = true;
-            gravity.Inherent = true;
-            entMan.Dirty(grid, gravity);
-        });
+        player = await VehicleClientTests.PlaceRiderOnTestGrid(pair);
         await pair.RunTicksSync(30);
         var netPlayerEarly = entMan.GetNetEntity(player);
         await client.WaitPost(() => baseline = clientEntMan.GetComponent<SpriteComponent>(clientEntMan.GetEntity(netPlayerEarly)).Offset);
@@ -242,6 +233,31 @@ public sealed class VehicleClientTests
 
         await server.WaitPost(() => entMan.DeleteEntity(bike));
         await pair.CleanReturnAsync();
+    }
+
+    internal static async Task<EntityUid> PlaceRiderOnTestGrid(Content.IntegrationTests.Pair.TestPair pair)
+    {
+        var map = await pair.CreateTestMap();
+        var server = pair.Server;
+        var entities = server.ResolveDependency<IEntityManager>();
+        var maps = server.System<SharedMapSystem>();
+        var transforms = server.System<SharedTransformSystem>();
+        EntityUid rider = default;
+        await server.WaitPost(() =>
+        {
+            for (var x = -3; x <= 3; x++)
+            for (var y = -3; y <= 3; y++)
+                maps.SetTile(map.Grid, map.Grid.Comp, new Vector2i(x, y), map.Tile.Tile);
+
+            var gravity = entities.EnsureComponent<Content.Shared.Gravity.GravityComponent>(map.Grid);
+            gravity.Enabled = true;
+            gravity.Inherent = true;
+            entities.Dirty(map.Grid, gravity);
+
+            rider = server.ResolveDependency<IPlayerManager>().Sessions.Single().AttachedEntity!.Value;
+            transforms.SetCoordinates(rider, map.GridCoords.Offset(new Vector2(0.5f, 0.5f)));
+        });
+        return rider;
     }
 
     private static T? Find<T>(Control control) where T : Control

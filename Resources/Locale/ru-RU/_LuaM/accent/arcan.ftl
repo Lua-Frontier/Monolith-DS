@@ -20,3 +20,8 @@ luam-accent-arcan-words-replace-8 = спасибочки
 luam-accent-arcan-words-9 = ай
 luam-accent-arcan-words-9-2 = ой
 luam-accent-arcan-words-replace-9 = ах-х...
+
+luam-accent-arcan-prefix-1 = Ах..
+luam-accent-arcan-prefix-2 = Мх...
+luam-accent-arcan-prefix-3 = Ммм..
+luam-accent-arcan-prefix-4 = Хи-хи..

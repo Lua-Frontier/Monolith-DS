@@ -6,3 +6,12 @@
   cost: 1
   components:
   - type: ArcanAccent
+
+- type: trait
+  id: LuaMTacticalAccent
+  name: trait-luam-tactical-accent-name
+  description: trait-luam-tactical-accent-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: TacticalAccent

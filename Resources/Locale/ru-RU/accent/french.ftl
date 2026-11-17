@@ -1,15 +1,15 @@
 accent-french-words-1 = да
 accent-french-words-1-2 = ага
-accent-french-words-replace-1 = oui
+accent-french-words-replace-1 = уи
 
 accent-french-words-2 = нет
 accent-french-words-2-2 = нет
 accent-french-words-2-3 = неа
 accent-french-words-2-4 = нету
-accent-french-words-replace-2 = non
+accent-french-words-replace-2 = нон
 
 accent-french-words-3 = не.
-accent-french-words-replace-3 = non.
+accent-french-words-replace-3 = нон.
 
 accent-french-words-4 = дерьмо
 accent-french-words-4-2 = пиздец
@@ -19,37 +19,37 @@ accent-french-words-4-5 = блять
 accent-french-words-4-6 = твою мать
 accent-french-words-4-7 = черт
 accent-french-words-4-8 = еб твою
-accent-french-words-replace-4 = merde
+accent-french-words-replace-4 = мерд
 
 accent-french-words-5 = багет
-accent-french-words-replace-5 = baguette
+accent-french-words-replace-5 = багет
 
 accent-french-words-6 = багеты
-accent-french-words-replace-6 = baguettes
+accent-french-words-replace-6 = багеты
 
 accent-french-words-7 = мужик
 accent-french-words-7-2 = мужчина
 accent-french-words-7-3 = чувак
 accent-french-words-7-4 = парень
-accent-french-words-replace-7 = monsieur
+accent-french-words-replace-7 = месье
 
 accent-french-words-8 = мужики
 accent-french-words-8-2 = мужчины
-accent-french-words-replace-8 = messieurs
+accent-french-words-replace-8 = месье
 
 accent-french-words-9 = женщина
 accent-french-words-9-2 = дама
-accent-french-words-replace-9 = madame
+accent-french-words-replace-9 = мадам
 
 accent-french-words-10 = женщины
 accent-french-words-10-2 = дамы
-accent-french-words-replace-10 = mesdames
+accent-french-words-replace-10 = мадам
 
 accent-french-words-11 = мисс
-accent-french-words-replace-11 = mademoiselle
+accent-french-words-replace-11 = мадемуазель
 
 accent-french-words-12 = господа
-accent-french-words-replace-12 = messieurs-dames
+accent-french-words-replace-12 = месье-дам
 
 accent-french-words-13 = о боже
 accent-french-words-13-2 = о мой бог
@@ -58,7 +58,7 @@ accent-french-words-13-4 = ну пиздец
 accent-french-words-13-5 = боже мой
 accent-french-words-13-6 = господи
 accent-french-words-13-7 = елки
-accent-french-words-replace-13 = mon dieu
+accent-french-words-replace-13 = мон дьё
 
 accent-french-words-14 = мой
 accent-french-words-replace-14 = mon
@@ -72,14 +72,14 @@ accent-french-words-16-2 = дебил
 accent-french-words-16-3 = тупица
 accent-french-words-16-4 = дурак
 accent-french-words-16-5 = балбес
-accent-french-words-replace-16 = imbécile
+accent-french-words-replace-16 = имбесиль
 
 accent-french-words-17 = идиоты
 accent-french-words-17-2 = дебилы
 accent-french-words-17-3 = тупые
 accent-french-words-17-4 = дураки
 accent-french-words-17-5 = болваны
-accent-french-words-replace-17 = imbéciles
+accent-french-words-replace-17 = имбесили
 
 accent-french-words-18 = красота
 accent-french-words-18-2 = красивый
@@ -104,27 +104,27 @@ accent-french-words-replace-22 = musique
 
 accent-french-words-23 = капитан
 accent-french-words-23-2 = кэп
-accent-french-words-replace-23 = capitaine
+accent-french-words-replace-23 = капитэн
 
 accent-french-words-24 = вино
 accent-french-words-replace-24 = vin
 
 accent-french-words-25 = сыр
-accent-french-words-replace-25 = fromage
+accent-french-words-replace-25 = фромаж
 
 accent-french-words-26 = что
 accent-french-words-replace-26 = quoi
 
 accent-french-words-27 = большое спасибо
 accent-french-words-27-2 = благодарю
-accent-french-words-replace-27 = merci beaucoup
+accent-french-words-replace-27 = мерси боку
 
 accent-french-words-28 = спасибо
 accent-french-words-28-2 = спасиб
-accent-french-words-replace-28 = merci
+accent-french-words-replace-28 = мерси
 
 accent-french-words-29 = пожалуйста
-accent-french-words-replace-29 = s'il vous plaît
+accent-french-words-replace-29 = силь ву пле
 
 accent-french-words-30 = огонь
 accent-french-words-30-2 = пламя
@@ -170,7 +170,7 @@ accent-french-words-41 = прекрасный
 accent-french-words-41-2 = замечательный
 accent-french-words-41-3 = чудесный
 accent-french-words-41-4 = великолепно
-accent-french-words-replace-41 = magnifique
+accent-french-words-replace-41 = манифик
 
 accent-french-words-42 = предупреждение
 accent-french-words-replace-42 = avertissement
@@ -182,7 +182,7 @@ accent-french-words-44 = и
 accent-french-words-replace-44 = et
 
 accent-french-words-45 = улитка
-accent-french-words-replace-45 = escargot
+accent-french-words-replace-45 = эскарго
 
 accent-french-words-46 = командир
 accent-french-words-46-2 = комм
@@ -193,10 +193,10 @@ accent-french-words-replace-47 = blanc
 
 accent-french-words-48 = привет
 accent-french-words-48-2 = здорово
-accent-french-words-replace-48 = bonjour
+accent-french-words-replace-48 = бонжур
 
 accent-french-words-49 = добрый вечер
-accent-french-words-replace-49 = bonsoir
+accent-french-words-replace-49 = бонсуар
 
 accent-french-words-50 = врач
 accent-french-words-50-2 = врача
@@ -207,16 +207,16 @@ accent-french-words-replace-50-2 = docteur
 
 accent-french-words-51 = до свидания
 accent-french-words-51-2 = досвидания
-accent-french-words-replace-51 = au revoir
+accent-french-words-replace-51 = оревуар
 
 accent-french-words-52 = пока
-accent-french-words-replace-52 = salut
+accent-french-words-replace-52 = салю
 
 accent-french-words-53 = чао
-accent-french-words-replace-53 = ciao
+accent-french-words-replace-53 = чао
 
 accent-french-words-54 = фантастический
-accent-french-words-replace-54 = fantastique
+accent-french-words-replace-54 = фантастик
 
 accent-french-words-55 = двойник
 accent-french-words-replace-55 = sosie
@@ -240,7 +240,7 @@ accent-french-words-replace-58 = hôpital
 
 accent-french-words-59 = любовь
 accent-french-words-59-2 = влюблен
-accent-french-words-replace-59 = amour
+accent-french-words-replace-59 = амур
 
 accent-french-words-60 = сумка
 accent-french-words-replace-60 = sac

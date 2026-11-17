@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-Краткая техническая справка по билду Monolith-DS для Claude Code.
+Краткая техническая справка по билду Monolith-DS для Codex.
 
 ## Что это
 

@@ -32,15 +32,7 @@ public sealed class RiderProbeTest
 
         EntityUid player = default;
         EntityUid bike = default;
-        await server.WaitPost(() =>
-        {
-            player = server.ResolveDependency<IPlayerManager>().Sessions.Single().AttachedEntity!.Value;
-            var grid = entMan.GetComponent<TransformComponent>(player).GridUid!.Value;
-            var gravity = entMan.EnsureComponent<Content.Shared.Gravity.GravityComponent>(grid);
-            gravity.Enabled = true;
-            gravity.Inherent = true;
-            entMan.Dirty(grid, gravity);
-        });
+        player = await VehicleClientTests.PlaceRiderOnTestGrid(pair);
         await pair.RunTicksSync(30);
 
         await server.WaitAssertion(() =>
