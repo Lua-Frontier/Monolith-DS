@@ -1,0 +1,62 @@
+- type: decal
+  id: BlueStarLogo1
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/bluestar_logo.rsi
+    state: logo_1.1
+
+- type: decal
+  id: BlueStarLogo2
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/bluestar_logo.rsi
+    state: logo_2.1
+
+- type: decal
+  id: BlueStarLogo3
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/bluestar_logo.rsi
+    state: logo_3.1
+
+- type: decal
+  id: BlueStarLogo4
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/bluestar_logo.rsi
+    state: logo_4.1
+
+- type: decal
+  id: BlueStarLogo5
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/bluestar_logo.rsi
+    state: logo_5.1
+
+- type: decal
+  id: BlueStarLogo6
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/bluestar_logo.rsi
+    state: logo_6.1
+
+- type: decal
+  id: BlueStarLogo7
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/bluestar_logo.rsi
+    state: logo_7.1
+
+- type: decal
+  id: BlueStarLogo8
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/bluestar_logo.rsi
+    state: logo_8.1
+
+- type: decal
+  id: BlueStarLogo9
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _LuaM/Decals/bluestar_logo.rsi
+    state: logo_9.1

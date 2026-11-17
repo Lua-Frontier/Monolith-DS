@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "decals made by bluestarwings (discord)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "logo_1.1"
+      },
+      {
+        "name": "logo_2.1"
+      },
+      {
+        "name": "logo_3.1"
+      },
+      {
+        "name": "logo_4.1"
+      },
+      {
+        "name": "logo_5.1"
+      },
+      {
+        "name": "logo_6.1"
+      },
+      {
+        "name": "logo_7.1"
+      },
+      {
+        "name": "logo_8.1"
+      },
+      {
+        "name": "logo_9.1"
+      }
+    ]
+  }
+  
