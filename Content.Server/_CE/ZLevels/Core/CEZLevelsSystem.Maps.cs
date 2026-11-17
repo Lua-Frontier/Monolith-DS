@@ -123,6 +123,46 @@ public sealed partial class CEZLevelsSystem
         QueueDel(networkUid);
     }
 
+    // LuaM-start: a map deleted on its own stayed in the network, and the network state (sent to every player
+    // every tick) then logged an error with a stack trace each time, flooding the log until the server ran out of memory
+    private void OnZMapTerminating(Entity<CEZMapComponent> ent, ref EntityTerminatingEvent args)
+    {
+        var networkUid = ent.Comp.NetworkUid;
+        if (TerminatingOrDeleted(networkUid) || !TryComp<CEZMapNetworkComponent>(networkUid, out var network))
+            return;
+
+        if (network.ZLevelByEntity.Remove(ent.Owner, out var depth))
+        {
+            network.ZLevels.Remove(depth);
+
+            if (network.ZLevels.TryGetValue(depth + 1, out var above)
+                && TryComp<CEZMapComponent>(above, out var aboveComp)
+                && aboveComp.MapBelow == ent.Owner)
+            {
+                aboveComp.MapBelow = null;
+                Dirty(above.Value, aboveComp);
+            }
+
+            if (network.ZLevels.TryGetValue(depth - 1, out var below)
+                && TryComp<CEZMapComponent>(below, out var belowComp)
+                && belowComp.MapAbove == ent.Owner)
+            {
+                belowComp.MapAbove = null;
+                Dirty(below.Value, belowComp);
+            }
+        }
+
+        var sorted = network.SortedZLevels;
+        for (var i = 0; i < sorted.Count; i++)
+        {
+            if (sorted[i] == ent.Owner)
+                sorted[i] = EntityUid.Invalid;
+        }
+
+        Dirty(networkUid, network);
+    }
+    // LuaM-end
+
     private void QuickApiCache(Entity<CEZMapNetworkComponent> network, EntityUid value, int depth)
     {
         var comp = network.Comp;

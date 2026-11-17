@@ -22,6 +22,7 @@ using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Configuration;
+using Robust.Shared.ContentPack; // LuaM
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -38,6 +39,7 @@ public sealed partial class AHelpUIController: UIController, IOnSystemChanged<Bw
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IClyde _clyde = default!;
     [Dependency] private IUserInterfaceManager _uiManager = default!;
+    [Dependency] private IResourceManager _resourceManager = default!; // LuaM
     [UISystemDependency] private readonly AudioSystem _audio = default!;
 
     private BwoinkSystem? _bwoinkSystem;
@@ -57,9 +59,20 @@ public sealed partial class AHelpUIController: UIController, IOnSystemChanged<Bw
         SubscribeNetworkEvent<BwoinkPlayerTypingUpdated>(PeopleTypingUpdated);
 
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
-        _config.OnValueChanged(CCVars.AHelpSound, v => _aHelpSound = v, true);
+        _config.OnValueChanged(CCVars.AHelpSound, SetAHelpSound, true); // LuaM
         _config.OnValueChanged(CCVars.BwoinkSoundEnabled, v => _bwoinkSoundEnabled = v, true);
     }
+
+    // LuaM-start: the client cvar is shared between servers, a sound path from another server's resources
+    // does not exist here and the ahelp sound was not played at all
+    private void SetAHelpSound(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path) || !_resourceManager.ContentFileExists(new ResPath(path)))
+            path = CCVars.AHelpSound.DefaultValue;
+
+        _aHelpSound = path;
+    }
+    // LuaM-end
 
     public void UnloadButton()
     {
