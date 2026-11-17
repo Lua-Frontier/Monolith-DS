@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 10/30/2026 13:35:10
-  entityCount: 3308
+  entityCount: 3311
 maps: []
 grids:
 - 1
@@ -22459,6 +22459,24 @@ entities:
     - type: Transform
       parent: 1
       pos: 14.5,-8.5
+  - uid: 3325
+    components:
+    - type: Transform
+      parent: 1
+      pos: -18.5,7.5
+      anchored: True
+  - uid: 3326
+    components:
+    - type: Transform
+      parent: 1
+      pos: -13.5,-8.5
+      anchored: True
+  - uid: 3327
+    components:
+    - type: Transform
+      parent: 1
+      pos: -14.5,-4.5
+      anchored: True
 - proto: WeaponTurretTovek
   entities:
   - uid: 3256
