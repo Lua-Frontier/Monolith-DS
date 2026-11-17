@@ -59,7 +59,13 @@ namespace Content.Server.Atmos.EntitySystems
 
         private static readonly TimeSpan UpdateTime = TimeSpan.FromSeconds(1);
 
-        private readonly Dictionary<Entity<FlammableComponent>, float> _fireEvents = new();
+        // LuaM-start
+        private Dictionary<Entity<FlammableComponent>, float> _fireEvents = new();
+        private Dictionary<Entity<FlammableComponent>, float> _processingFireEvents = new();
+        private readonly List<Entity<FlammableComponent>> _dueFlammables = new();
+        private static readonly TimeSpan SweepInterval = TimeSpan.FromSeconds(0.1);
+        private TimeSpan _nextSweep;
+        // LuaM-end
 
         public override void Initialize()
         {
@@ -420,8 +426,13 @@ namespace Content.Server.Atmos.EntitySystems
         public override void Update(float frameTime)
         {
             // process all fire events
-            foreach (var (flammable, deltaTemp) in _fireEvents)
+            // LuaM-start
+            (_fireEvents, _processingFireEvents) = (_processingFireEvents, _fireEvents);
+            foreach (var (flammable, deltaTemp) in _processingFireEvents)
             {
+                if (flammable.Comp.Deleted || TerminatingOrDeleted(flammable.Owner))
+                    continue;
+            // LuaM-end
                 // 100 -> 1, 200 -> 2, 400 -> 3...
                 var fireStackMod = Math.Max(MathF.Log2(deltaTemp / 100) + 1, 0);
                 var fireStackDelta = fireStackMod - flammable.Comp.FireStacks;
@@ -432,14 +443,32 @@ namespace Content.Server.Atmos.EntitySystems
                 }
                 Ignite(flammableEntity, flammableEntity, flammable);
             }
-            _fireEvents.Clear();
+            _processingFireEvents.Clear(); // LuaM
 
             var curTime = _timing.CurTime;
 
+            // LuaM-start
+            if (curTime < _nextSweep)
+                return;
+
+            _nextSweep = curTime + SweepInterval;
+            // LuaM-end
+
             // TODO: This needs cleanup to take off the crust from TemperatureComponent and shit.
+            // LuaM-start
+            _dueFlammables.Clear();
             var query = EntityQueryEnumerator<FlammableComponent, TransformComponent>();
-            while (query.MoveNext(out var uid, out var flammable, out _))
+            while (query.MoveNext(out var dueUid, out var dueFlammable, out _))
             {
+                if (curTime >= dueFlammable.NextUpdate)
+                    _dueFlammables.Add((dueUid, dueFlammable));
+            }
+
+            foreach (var (uid, flammable) in _dueFlammables)
+            {
+                if (flammable.Deleted || TerminatingOrDeleted(uid))
+                    continue;
+            // LuaM-end
                 if (curTime < flammable.NextUpdate)
                     continue;
 

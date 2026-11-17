@@ -64,11 +64,23 @@ public sealed partial class BatteryInterfaceSystem : EntitySystem
         netBattery.MaxSupply = Math.Clamp(args.Rate, ent.Comp.MinSupply, ent.Comp.MaxSupply);
     }
 
+    // LuaM-start
+    private float _uiAccumulator;
+    private const float UiInterval = 0.25f;
+    // LuaM-end
+
     public override void Update(float frameTime)
     {
-        var query = EntityQueryEnumerator<BatteryInterfaceComponent, BatteryComponent, PowerNetworkBatteryComponent>();
+        // LuaM-start
+        _uiAccumulator += frameTime;
+        if (_uiAccumulator < UiInterval)
+            return;
+        _uiAccumulator = 0f;
 
-        while (query.MoveNext(out var uid, out var batteryInterface, out var battery, out var netBattery))
+        var query = EntityQueryEnumerator<ActiveUserInterfaceComponent, BatteryInterfaceComponent, BatteryComponent, PowerNetworkBatteryComponent>();
+
+        while (query.MoveNext(out var uid, out _, out var batteryInterface, out var battery, out var netBattery))
+        // LuaM-end
         {
             UpdateUI(uid, batteryInterface, battery, netBattery);
         }

@@ -181,9 +181,11 @@ public sealed partial class ThrowingSystem : EntitySystem
 
         var comp = new ThrownItemComponent
         {
-            Thrower = user,
+            Thrower = user is { } thrower && TerminatingOrDeleted(thrower) ? null : user, // LuaM
             Animate = animated,
         };
+        if (comp.Thrower is { } tracked) // LuaM
+            EntityManager.System<Content.Shared._LuaM.Throwing.ThrowerSystem>().Track(tracked, uid); // LuaM
 
         // if not given, get the default friction value for distance calculation
         var tileFriction = friction ?? _frictionModifier * TileFrictionMod;

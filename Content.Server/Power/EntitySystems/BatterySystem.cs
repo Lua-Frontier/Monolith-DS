@@ -101,7 +101,7 @@ namespace Content.Server.Power.EntitySystems
             _updateAccumulator += frameTime;
             if (_updateAccumulator < _updateInterval)
                 return;
-            _updateAccumulator -= _updateAccumulator;
+            _updateAccumulator -= _updateInterval; // LuaM
 
             var query = EntityQueryEnumerator<BatterySelfRechargerComponent, BatteryComponent>();
             while (query.MoveNext(out var uid, out var comp, out var batt))

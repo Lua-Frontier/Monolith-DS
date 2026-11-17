@@ -55,6 +55,7 @@
     - ActionLuaMVehicleSpotlight
   - type: GridVehicleMover
     maxSpeed: 17
+    weightClass: Weak
     maxReverseSpeed: 3
     acceleration: 8
     reverseAcceleration: 3

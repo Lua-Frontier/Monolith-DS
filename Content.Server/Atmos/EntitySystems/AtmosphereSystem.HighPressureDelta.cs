@@ -1,5 +1,7 @@
 using Content.Server.Atmos.Components;
 using Content.Shared._LuaM.Atmos; // LuaM
+using Content.Shared._LuaM.Performance; // LuaM
+using System.Numerics; // LuaM
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Mobs.Components;
@@ -146,7 +148,7 @@ namespace Content.Server.Atmos.EntitySystems
                     tile.PressureSpecificTarget = curTile;
             }
 
-            _entSet.Clear();
+            _entSet.ClearAndTrim(); // LuaM
             _lookup.GetLocalEntitiesIntersecting(tile.GridIndex, tile.GridIndices, _entSet, 0f);
 
             foreach (var entity in _entSet)
@@ -244,7 +246,13 @@ namespace Content.Server.Atmos.EntitySystems
                     // TODO: Technically these directions won't be correct but uhh I'm just here for optimisations buddy not to fix my old bugs.
                     if (throwTarget != EntityCoordinates.Invalid)
                     {
-                        var pos = ((_transformSystem.ToMapCoordinates(throwTarget).Position - _transformSystem.GetWorldPosition(xform)).Normalized() + dirVec).Normalized();
+                        // LuaM-start
+                        var toTarget = _transformSystem.ToMapCoordinates(throwTarget).Position - _transformSystem.GetWorldPosition(xform);
+                        toTarget = toTarget.Normalized();
+                        var pos = (toTarget + dirVec).Normalized();
+                        if (!float.IsFinite(pos.X) || !float.IsFinite(pos.Y))
+                            pos = Vector2.Zero;
+                        // LuaM-end
                         _physics.ApplyLinearImpulse(uid, pos * moveForce, body: physics);
                     }
                     else

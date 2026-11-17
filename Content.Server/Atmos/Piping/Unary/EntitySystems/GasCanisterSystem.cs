@@ -46,10 +46,22 @@ public sealed partial class GasCanisterSystem : SharedGasCanisterSystem
         canister.Air.Clear();
     }
 
+    // LuaM-start
+    public void RefreshUi(EntityUid uid, GasCanisterComponent canister)
+    {
+        DirtyUI(uid, canister);
+    }
+    // LuaM-end
+
     protected override void DirtyUI(EntityUid uid, GasCanisterComponent? canister = null, NodeContainerComponent? nodeContainer = null)
     {
         if (!Resolve(uid, ref canister, ref nodeContainer))
             return;
+
+        // LuaM-start
+        if (!UI.IsUiOpen(uid, GasCanisterUiKey.Key))
+            return;
+        // LuaM-end
 
         var portStatus = false;
         var tankPressure = 0f;

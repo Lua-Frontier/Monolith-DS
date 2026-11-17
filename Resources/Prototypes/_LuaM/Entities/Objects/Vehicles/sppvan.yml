@@ -78,6 +78,7 @@
     - ActionLuaMVehicleSpotlight
   - type: GridVehicleMover
     maxSpeed: 12
+    weightClass: Medium
     crushMinSpeedScale: 0.6
     crushHullDamageScale: 0.5
     maxReverseSpeed: 4

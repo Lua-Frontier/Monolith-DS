@@ -68,6 +68,9 @@ public sealed partial class CloakHeatSystem : EntitySystem
             if (TryComp<PhysicsComponent>(gridUid, out var pcomp))
                 isMoving = pcomp.LinearVelocity != Vector2.Zero;
 
+            var heatBefore = heatComp.CurrentHeat; // LuaM
+            var overheatedBefore = heatComp.IsOverheated; // LuaM
+
             // Check if Hide flag is active on this grid
             bool hideActive = (iffComp.Flags & IFFFlags.Hide) != 0;
 
@@ -95,7 +98,8 @@ public sealed partial class CloakHeatSystem : EntitySystem
                 heatComp.CurrentHeat = Math.Max(0f, heatComp.CurrentHeat);
             }
 
-            Dirty(gridUid, heatComp);
+            if (heatComp.CurrentHeat != heatBefore || heatComp.IsOverheated != overheatedBefore) // LuaM
+                Dirty(gridUid, heatComp);
         }
     }
 

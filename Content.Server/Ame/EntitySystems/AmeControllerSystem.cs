@@ -137,6 +137,14 @@ public sealed partial class AmeControllerSystem : EntitySystem
         if (!_userInterfaceSystem.HasUi(uid, AmeControllerUiKey.Key))
             return;
 
+        // LuaM-start
+        if (!_userInterfaceSystem.IsUiOpen(uid, AmeControllerUiKey.Key))
+        {
+            controller.NextUIUpdate = _gameTiming.CurTime + controller.UpdateUIPeriod;
+            return;
+        }
+        // LuaM-end
+
         var state = GetUiState(uid, controller);
         _userInterfaceSystem.SetUiState(uid, AmeControllerUiKey.Key, state);
 

@@ -314,6 +314,11 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         if (!posFound)
             return;
 
+        // LuaM-start
+        if (TryQueueMicroExplosion(gridPos!.Value, typeId, totalIntensity, maxTileIntensity, tileBreakScale, maxTileBreak, canCreateVacuum, uid))
+            return;
+        // LuaM-end
+
         // Mono - MapCoordinates -> EntityCoordinates
         QueueExplosion(gridPos!.Value, typeId, totalIntensity, slope, maxTileIntensity, uid, tileBreakScale, maxTileBreak, canCreateVacuum, addLog: false);
 
@@ -392,11 +397,13 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
                 continue;
 
             var dst = queued.Proto.MaxCombineDistance;
+            dst = CombineDistance(queued, epicenter, totalIntensity, dst); // LuaM
             if (!epicenter.TryDistance(EntityManager, queued.Epicenter, out var distance) || distance > dst)
                 continue;
 
             // they are close enough to combine so just add total intensity and prevent queuing another one
             queued.TotalIntensity += totalIntensity;
+            queued.MaxTileIntensity = MathF.Max(queued.MaxTileIntensity, maxTileIntensity); // LuaM
             return;
         }
 

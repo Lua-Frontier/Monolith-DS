@@ -442,6 +442,9 @@ namespace Content.Server.Decals
                     Dirty(uid.Value, decals);
             }
 
+            if (PvsEnabled) // LuaM
+                GatherDirtyChunks(); // LuaM
+
             /* // Mono edit: early return is redundant, if PVS is disabled, it will clear at end anyways.
             if (!PvsEnabled)
             {

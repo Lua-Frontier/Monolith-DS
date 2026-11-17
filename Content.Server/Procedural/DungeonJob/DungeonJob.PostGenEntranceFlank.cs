@@ -52,6 +52,12 @@ public sealed partial class DungeonJob
 
         foreach (var entrance in spawnPositions)
         {
+            // LuaM-start
+            await SuspendDungeon();
+            if (!ValidateResume())
+                return;
+            // LuaM-end
+
             _entManager.SpawnEntities(_maps.GridTileToLocal(_gridUid, _grid, entrance), EntitySpawnCollection.GetSpawns(entGroup.Entries, random));
         }
     }

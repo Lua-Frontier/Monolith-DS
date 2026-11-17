@@ -107,6 +107,11 @@ public sealed partial class MaterialStorageMagnetPickupSystem : EntitySystem
         if (_net.IsClient) // LuaM
             return; // LuaM
 
+        // LuaM-start
+        if (_timing.CurTick.Value % 3 != 0)
+            return;
+        // LuaM-end
+
         var query = EntityQueryEnumerator<MaterialStorageMagnetPickupComponent, MaterialStorageComponent, TransformComponent>();
         var currentTime = _timing.CurTime;
 

@@ -13,7 +13,7 @@ public sealed partial class VendingMachinePurchaseComponent : Component
     /// The grid ID where this entity was purchased from a vending machine.
     /// Used to determine if the same-grid discount should apply.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField] // LuaM
     public EntityUid PurchaseGrid;
 
     /// <summary>

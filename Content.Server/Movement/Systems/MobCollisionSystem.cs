@@ -34,6 +34,11 @@ public sealed class MobCollisionSystem : SharedMobCollisionSystem
             if (_actorQuery.HasComp(uid) || !PhysicsQuery.TryComp(uid, out var physics))
                 continue;
 
+            // LuaM-start
+            if (!physics.Awake)
+                continue;
+            // LuaM-end
+
             HandleCollisions((uid, comp, physics), frameTime);
         }
 

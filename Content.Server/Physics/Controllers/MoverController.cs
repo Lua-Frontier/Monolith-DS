@@ -34,6 +34,11 @@ public sealed partial class MoverController : SharedMoverController
     [Dependency] private EntityQuery<DroneConsoleComponent> _droneQuery = default!;
     [Dependency] private EntityQuery<ShuttleComponent> _shuttleQuery = default!;
     [Dependency] private EntityQuery<GhostComponent> _ghostQuery = default!;
+    // LuaM-start
+    [Dependency] private EntityQuery<ActorComponent> _actorQuery = default!;
+    private readonly List<ShuttleInput> _shuttleInputs = new();
+    private readonly List<EntityUid> _lostPilots = new();
+    // LuaM-end
 
     // Not needed for persistence; just used to save an alloc
     private readonly HashSet<EntityUid> _seenMovers = [];
@@ -199,6 +204,19 @@ public sealed partial class MoverController : SharedMoverController
         {
             if (IsPaused(uid) && !_ghostQuery.HasComp(uid)) // Frontier: Skip processing paused entities. Ghosts are excepted for mapping reasons
                 continue; // Frontier
+
+            // LuaM-start
+            if (activeComp.RelayedFrom == null
+                && moverComp.HeldMoveButtons == MoveButtons.None
+                && (Timing.CurTick > moverComp.LastInputTick
+                    || (moverComp.CurTickWalkMovement == Vector2.Zero && moverComp.CurTickSprintMovement == Vector2.Zero))
+                && !_actorQuery.HasComp(uid)
+                && PhysicsQuery.TryComp(uid, out var idleBody)
+                && !idleBody.Awake)
+            {
+                continue;
+            }
+            // LuaM-end
 
             _seenRelayMovers.Clear(); // O(1) if already empty
             QueueRelaySources(activeComp.RelayedFrom);
@@ -481,9 +499,12 @@ public sealed partial class MoverController : SharedMoverController
         var shuttleQuery = EntityQueryEnumerator<ShuttleComponent, PilotedShuttleComponent, PhysicsComponent>();
         while (shuttleQuery.MoveNext(out var uid, out var shuttle, out var piloted, out var body))
         {
-            var inputs = new List<ShuttleInput>();
-            // query all our pilots for input
-            var toRemove = new List<EntityUid>();
+            // LuaM-start
+            var inputs = _shuttleInputs;
+            inputs.Clear();
+            var toRemove = _lostPilots;
+            toRemove.Clear();
+            // LuaM-end
 
             var angularMul = 0f;
             var accelMul = 0f;
@@ -647,7 +668,7 @@ public sealed partial class MoverController : SharedMoverController
                 var totalForce = GetDirectionThrust(linearInput, shuttle, body, xform) * _nebulaEnvironment.GetThrustMultiplier(uid); // Lua: nebula thrust penalty
 
                 // Won't just do cardinal directions.
-                foreach (DirectionFlag dir in Enum.GetValues(typeof(DirectionFlag)))
+                foreach (var dir in ThrusterSystem.CardinalFlags) // LuaM
                 {
                     // Brain no worky but I just want cardinals
                     switch (dir)

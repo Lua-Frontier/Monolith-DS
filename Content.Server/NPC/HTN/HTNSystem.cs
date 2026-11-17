@@ -47,6 +47,7 @@ public sealed partial class HTNSystem : EntitySystem
         _loadedQuery = GetEntityQuery<LoadedChunkComponent>(); // Frontier
         SubscribeLocalEvent<HTNComponent, MobStateChangedEvent>(_npc.OnMobStateChange);
         SubscribeLocalEvent<HTNComponent, MapInitEvent>(_npc.OnNPCMapInit);
+        SubscribeLocalEvent<HTNComponent, ComponentStartup>(OnHTNStartup); // LuaM
         SubscribeLocalEvent<HTNComponent, PlayerAttachedEvent>(_npc.OnPlayerNPCAttach);
         SubscribeLocalEvent<HTNComponent, PlayerDetachedEvent>(_npc.OnPlayerNPCDetach);
         SubscribeLocalEvent<HTNComponent, ComponentShutdown>(OnHTNShutdown);
@@ -220,11 +221,14 @@ public sealed partial class HTNSystem : EntitySystem
             {
                 if (comp.PlanningJob.Exception != null)
                 {
-                    Log.Fatal($"Received exception on planning job for {uid}!");
+                    // LuaM-start
+                    Log.Error($"Received exception on planning job for {ToPrettyString(uid)}, removing its HTN: {comp.PlanningJob.Exception}");
                     _npc.SleepNPC(uid);
-                    var exc = comp.PlanningJob.Exception;
+                    comp.PlanningJob = null;
+                    comp.PlanningToken = null;
                     RemComp<HTNComponent>(uid);
-                    throw exc;
+                    continue;
+                    // LuaM-end
                 }
 
                 // If a new planning job has finished then handle it.
@@ -299,7 +303,18 @@ public sealed partial class HTNSystem : EntitySystem
                 comp.PlanningToken = null;
             }
 
-            Update(comp, frameTime);
+            // LuaM-start
+            try
+            {
+                Update(comp, frameTime);
+            }
+            catch (Exception e)
+            {
+                Log.Error($"NPC {ToPrettyString(uid)} threw during its update and has been put to sleep: {e}");
+                comp.Blackboard.SetValue(NPCBlackboard.Owner, uid);
+                _npc.SleepNPC(uid, comp);
+            }
+            // LuaM-end
             count++;
             updates++;
         }
@@ -308,6 +323,14 @@ public sealed partial class HTNSystem : EntitySystem
         // otherwise it lets us know where we left off.
         count = 0;
     }
+
+    // LuaM-start
+    private void OnHTNStartup(EntityUid uid, HTNComponent component, ComponentStartup args)
+    {
+        if (!component.Blackboard.ContainsKey(NPCBlackboard.Owner))
+            component.Blackboard.SetValue(NPCBlackboard.Owner, uid);
+    }
+    // LuaM-end
 
     private void AppendDebugText(HTNTask task, StringBuilder text, List<int> planBtr, List<int> btr, ref int level)
     {
@@ -507,7 +530,7 @@ public sealed partial class HTNSystem : EntitySystem
         var branchTraversal = component.Plan?.BranchTraversalRecord;
 
         var job = new HTNPlanJob(
-            0.02,
+            0.003, // LuaM
             _prototypeManager,
             component.RootTask,
             component.Blackboard.ShallowClone(), branchTraversal, cancelToken.Token);

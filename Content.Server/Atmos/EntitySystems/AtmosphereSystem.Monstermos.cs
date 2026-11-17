@@ -64,6 +64,7 @@ namespace Content.Server.Atmos.EntitySystems
             _equalizeTiles[0] = tile;
             tile.MonstermosInfo.LastQueueCycle = queueCycle;
             var tileCount = 1;
+            var searchLimit = MonstermosSearchLimit(ent.Comp4); // LuaM
             for (var i = 0; i < tileCount; i++)
             {
                 if (i > Atmospherics.MonstermosHardTileLimit) break;
@@ -83,6 +84,7 @@ namespace Content.Server.Atmos.EntitySystems
                     if (!exploring.AdjacentBits.IsFlagSet(direction)) continue;
                     var adj = exploring.AdjacentTiles[j];
                     if (adj?.Air == null) continue;
+                    if (searchLimit < Atmospherics.MonstermosHardTileLimit && tileCount >= searchLimit && adj.MonstermosInfo.LastQueueCycle != queueCycle) break; // LuaM
                     if(adj.MonstermosInfo.LastQueueCycle == queueCycle) continue;
                     adj.MonstermosInfo = new MonstermosInfo {LastQueueCycle = queueCycle};
 
@@ -93,12 +95,18 @@ namespace Content.Server.Atmos.EntitySystems
                     {
                         // Looks like someone opened an airlock to space!
 
-                        ExplosivelyDepressurize(ent, tile, cycleNum);
+                        // LuaM-start
+                        if (!BreachLooping(ent.Owner, tile))
+                            ExplosivelyDepressurize(ent, tile, cycleNum);
+                        else
+                            MarkEqualized(tileCount, cycleNum);
+                        // LuaM-end
                         return;
                     }
                 }
             }
 
+            var explored = tileCount; // LuaM
             if (tileCount > Atmospherics.MonstermosTileLimit)
             {
                 for (var i = Atmospherics.MonstermosTileLimit; i < tileCount; i++)
@@ -364,10 +372,12 @@ namespace Content.Server.Atmos.EntitySystems
             }
 
             // We do cleanup.
-            Array.Clear(_equalizeTiles, 0, Atmospherics.MonstermosHardTileLimit);
-            Array.Clear(_equalizeGiverTiles, 0, Atmospherics.MonstermosTileLimit);
-            Array.Clear(_equalizeTakerTiles, 0, Atmospherics.MonstermosTileLimit);
-            Array.Clear(_equalizeQueue, 0, Atmospherics.MonstermosTileLimit);
+            // LuaM-start
+            Array.Clear(_equalizeTiles, 0, explored);
+            Array.Clear(_equalizeGiverTiles, 0, tileCount);
+            Array.Clear(_equalizeTakerTiles, 0, tileCount);
+            Array.Clear(_equalizeQueue, 0, tileCount);
+            // LuaM-end
         }
 
         private void ExplosivelyDepressurize(

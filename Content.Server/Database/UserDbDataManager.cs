@@ -45,8 +45,13 @@ public sealed partial class UserDbDataManager : IPostInjectInit
     public void ClientDisconnected(ICommonSession session)
     {
         _users.Remove(session.UserId, out var data);
+        // LuaM-start
         if (data == null)
-            throw new InvalidOperationException("Did not have cached data in ClientDisconnect!");
+        {
+            _sawmill.Warning($"Did not have cached data in ClientDisconnect for {session}");
+            return;
+        }
+        // LuaM-end
 
         data.Cancel.Cancel();
         data.Cancel.Dispose();

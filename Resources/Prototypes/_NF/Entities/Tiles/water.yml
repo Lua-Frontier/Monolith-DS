@@ -25,12 +25,14 @@
         reagents:
         - ReagentId: Water
           Quantity: 9999999
-  - type: SolutionRegeneration
-    solution: tank
-    generated:
-      reagents:
-      - ReagentId: Water
-        Quantity: 100
+  # LuaM-start
+  # - type: SolutionRegeneration
+  #   solution: tank
+  #   generated:
+  #     reagents:
+  #     - ReagentId: Water
+  #       Quantity: 100
+  # LuaM-end
   - type: DrainableSolution
     solution: pool
   # - type: SpeedModifierContacts

@@ -6,6 +6,7 @@
 
 using System.Numerics;
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._LuaM.Vehicles.Components;
 
@@ -170,4 +171,37 @@ public sealed partial class GridVehicleMoverComponent : Component
 
     [ViewVariables]
     public Dictionary<EntityUid, TimeSpan> HitCooldowns = new();
+
+    // -- Класс массы решает, что машина сносит на ходу и кого сдвигает при ударе
+    [DataField]
+    public VehicleWeightClass WeightClass = VehicleWeightClass.Light;
+
+    // -- На малой скорости машина толкает машину своего класса и легче, а не упирается в неё
+    [DataField]
+    public bool CanPushVehicles = true;
+
+    [DataField]
+    public float PushMaxSpeed = 1.5f;
+
+    // -- Отлёт и закрут после удара о машину, в осях грида; гаснут сами
+    [AutoNetworkedField]
+    public Vector2 ImpactVelocity;
+
+    [AutoNetworkedField]
+    public float ImpactSpinDegrees;
+
+    [ViewVariables]
+    public float SmashSlowMultiplier = 1f;
+
+    [ViewVariables]
+    public TimeSpan SmashSlowUntil;
+}
+
+[Serializable, NetSerializable]
+public enum VehicleWeightClass : byte
+{
+    Weak,
+    Light,
+    Medium,
+    Heavy,
 }

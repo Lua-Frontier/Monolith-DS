@@ -66,6 +66,7 @@
     - ActionLuaMVehicleSwitchShell
   - type: GridVehicleMover
     maxSpeed: 8
+    weightClass: Heavy
     crushMinSpeedScale: 0.1
     crushSpeedRetention: 0.85
     crushHullDamageScale: 0

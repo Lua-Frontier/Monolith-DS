@@ -16,6 +16,11 @@ public sealed partial class EmitSoundSystem : SharedEmitSoundSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+        // LuaM-start
+        if (_timing.CurTick.Value % 3 != 1)
+            return;
+        // LuaM-end
+
         var query = EntityQueryEnumerator<SpamEmitSoundComponent>();
 
         while (query.MoveNext(out var uid, out var soundSpammer))

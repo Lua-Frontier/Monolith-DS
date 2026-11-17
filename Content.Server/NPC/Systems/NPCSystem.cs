@@ -161,10 +161,11 @@ namespace Content.Server.NPC.Systems
                 if (_playerDistanceCheckTimer >= PlayerDistanceCheckInterval)
                 {
                     _playerDistanceCheckTimer = 0f;
-                    CheckPlayerDistancesAndPauseNPCs();
+                    StartSleepPass(); // LuaM
                 }
             }
 
+            StepSleepPass(); // LuaM
             // Add your system here.
             _htn.UpdateNPC(ref _count, _maxUpdates, frameTime);
 

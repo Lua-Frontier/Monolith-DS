@@ -159,6 +159,7 @@ public sealed partial class AirAlarmSystem : EntitySystem
             [DeviceNetworkConstants.Command] = AirAlarmSetMode,
             [AirAlarmSetMode] = mode
         };
+        WriteModeStamp(uid, payload); // LuaM
 
         _deviceNet.QueuePacket(uid, null, payload);
     }
@@ -504,6 +505,8 @@ public sealed partial class AirAlarmSystem : EntitySystem
 
         UpdateUI(uid, controller);
 
+        StampLocalMode(uid, origin); // LuaM
+
         // setting sync deals with the issue of air alarms
         // in the same network needing to have the same mode
         // as other alarms
@@ -564,6 +567,17 @@ public sealed partial class AirAlarmSystem : EntitySystem
             case AirAlarmSetMode:
                 if (!args.Data.TryGetValue(AirAlarmSetMode, out AirAlarmMode alarmMode))
                     break;
+
+                // LuaM-start
+                if (!TryAcceptModeStamp(uid, args.Data))
+                    return;
+
+                if (controller.CurrentMode == alarmMode)
+                {
+                    SyncMode(uid, alarmMode);
+                    return;
+                }
+                // LuaM-end
 
                 SetMode(uid, args.SenderAddress, alarmMode, uiOnly: false);
 

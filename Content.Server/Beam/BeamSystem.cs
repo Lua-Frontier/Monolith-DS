@@ -100,8 +100,9 @@ public sealed partial class BeamSystem : SharedBeamSystem
 
         var distanceLength = distanceCorrection.Length();
 
+        var nearby = Robust.Shared.Player.Filter.Pvs(beamStartPos).AddPlayersByPvs(beamStartPos.Offset(distanceCorrection)); // LuaM
         var beamVisualizerEvent = new BeamVisualizerEvent(GetNetEntity(ent), distanceLength, userAngle, bodyState, shader);
-        RaiseNetworkEvent(beamVisualizerEvent);
+        RaiseNetworkEvent(beamVisualizerEvent, nearby); // LuaM
 
         if (controller != null)
             beam.VirtualBeamController = controller;
@@ -124,7 +125,7 @@ public sealed partial class BeamSystem : SharedBeamSystem
             var newEnt = Spawn(prototype, beamSpawnPos);
 
             var ev = new BeamVisualizerEvent(GetNetEntity(newEnt), distanceLength, userAngle, bodyState, shader);
-            RaiseNetworkEvent(ev);
+            RaiseNetworkEvent(ev, nearby); // LuaM
         }
 
         var beamFiredEvent = new BeamFiredEvent(ent);

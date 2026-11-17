@@ -61,6 +61,7 @@
         volume: -3
   - type: GridVehicleMover
     maxSpeed: 8
+    weightClass: Weak
     maxReverseSpeed: 3
     acceleration: 4
     reverseAcceleration: 3

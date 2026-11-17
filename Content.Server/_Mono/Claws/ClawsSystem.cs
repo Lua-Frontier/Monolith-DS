@@ -53,8 +53,7 @@ public sealed class ClawsSystem : SharedClawsSystem
             if (comp.GrowTimer < claw.GrowCooldown)
             {
                 UpdateClaws(uid, comp); // Pretty sure we can afford that.
-                Dirty(uid, comp);
-                continue;
+                continue; // LuaM
             }
 
             comp.GrowTimer = TimeSpan.Zero;

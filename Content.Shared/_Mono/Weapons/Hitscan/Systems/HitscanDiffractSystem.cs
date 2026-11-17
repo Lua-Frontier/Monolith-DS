@@ -111,6 +111,7 @@ public sealed partial class HitscanDiffractSystem : EntitySystem
         };
 
         RaiseLocalEvent(newHitscan, ref diffractedTraceEvent);
+        QueueDel(newHitscan); // LuaM
     }
 
     private static Vector2 RotateVector(Vector2 vector, float angleRadians)

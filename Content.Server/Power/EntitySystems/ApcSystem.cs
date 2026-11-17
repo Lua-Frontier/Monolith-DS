@@ -50,6 +50,11 @@ public sealed partial class ApcSystem : EntitySystem
 
     public override void Update(float deltaTime)
     {
+        // LuaM-start
+        if (_gameTiming.CurTick.Value % 3 != 2)
+            return;
+        // LuaM-end
+
         var query = EntityQueryEnumerator<ApcComponent, PowerNetworkBatteryComponent, UserInterfaceComponent>();
         while (query.MoveNext(out var uid, out var apc, out var battery, out var ui))
         {

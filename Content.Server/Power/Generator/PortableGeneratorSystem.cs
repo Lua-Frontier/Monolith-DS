@@ -209,11 +209,23 @@ public sealed partial class PortableGeneratorSystem : SharedPortableGeneratorSys
             args.DisableMessage = Loc.GetString("fuel-generator-verb-disable-on");
     }
 
+    // LuaM-start
+    private float _uiAccumulator;
+    private const float UiInterval = 0.25f;
+    // LuaM-end
+
     public override void Update(float frameTime)
     {
-        var query = EntityQueryEnumerator<PortableGeneratorComponent, FuelGeneratorComponent, PowerSupplierComponent>();
+        // LuaM-start
+        _uiAccumulator += frameTime;
+        if (_uiAccumulator < UiInterval)
+            return;
+        _uiAccumulator = 0f;
 
-        while (query.MoveNext(out var uid, out var portGen, out var fuelGen, out var powerSupplier))
+        var query = EntityQueryEnumerator<ActiveUserInterfaceComponent, PortableGeneratorComponent, FuelGeneratorComponent, PowerSupplierComponent>();
+
+        while (query.MoveNext(out var uid, out _, out var portGen, out var fuelGen, out var powerSupplier))
+        // LuaM-end
         {
             UpdateUI(uid, portGen, fuelGen, powerSupplier);
         }

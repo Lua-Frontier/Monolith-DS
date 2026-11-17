@@ -125,11 +125,13 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
     private void OnDock(DockEvent ev)
     {
+        ForgetCachedDocks(); // LuaM
         RefreshShuttleConsoles();
     }
 
     private void OnUndock(UndockEvent ev)
     {
+        ForgetCachedDocks(); // LuaM
         RefreshShuttleConsoles();
     }
 
@@ -361,6 +363,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     public Dictionary<NetEntity, List<DockingPortState>> GetAllDocks()
     {
         // TODO: NEED TO MAKE SURE THIS UPDATES ON ANCHORING CHANGES!
+        // LuaM-start
+        if (TryGetCachedDocks(out var cached))
+            return cached;
+        // LuaM-end
         var result = new Dictionary<NetEntity, List<DockingPortState>>();
         var query = AllEntityQuery<DockingComponent, TransformComponent, MetaDataComponent>();
 
@@ -396,6 +402,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             gridDocks.Add(state);
         }
 
+        CacheDocks(result); // LuaM
         return result;
     }
 

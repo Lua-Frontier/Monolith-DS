@@ -36,6 +36,14 @@ public sealed partial class PlayTimeAddOverallCommand : IConsoleCommand
             return;
         }
 
+        // LuaM-start
+        if (!_playTimeTracking.TryGetTrackerTimes(player, out _))
+        {
+            shell.WriteError(Loc.GetString("luam-playtime-not-loaded", ("username", args[0])));
+            return;
+        }
+        // LuaM-end
+
         _playTimeTracking.AddTimeToOverallPlaytime(player, TimeSpan.FromMinutes(minutes));
         var overall = _playTimeTracking.GetOverallPlaytime(player);
 
@@ -91,6 +99,14 @@ public sealed partial class PlayTimeAddRoleCommand : IConsoleCommand
             shell.WriteError(Loc.GetString("parse-minutes-fail", ("minutes", minutes)));
             return;
         }
+
+        // LuaM-start
+        if (!_playTimeTracking.TryGetTrackerTimes(player, out _))
+        {
+            shell.WriteError(Loc.GetString("luam-playtime-not-loaded", ("username", userName)));
+            return;
+        }
+        // LuaM-end
 
         _playTimeTracking.AddTimeToTracker(player, role, TimeSpan.FromMinutes(minutes));
         var time = _playTimeTracking.GetPlayTimeForTracker(player, role);
@@ -148,6 +164,14 @@ public sealed partial class PlayTimeGetOverallCommand : IConsoleCommand
             return;
         }
 
+        // LuaM-start
+        if (!_playTimeTracking.TryGetTrackerTimes(player, out _))
+        {
+            shell.WriteError(Loc.GetString("luam-playtime-not-loaded", ("username", userName)));
+            return;
+        }
+        // LuaM-end
+
         var value = _playTimeTracking.GetOverallPlaytime(player);
         shell.WriteLine(Loc.GetString(
             "cmd-playtime_getoverall-success",
@@ -192,6 +216,14 @@ public sealed partial class PlayTimeGetRoleCommand : IConsoleCommand
             shell.WriteError(Loc.GetString("parse-session-fail", ("username", userName)));
             return;
         }
+
+        // LuaM-start
+        if (!_playTimeTracking.TryGetTrackerTimes(session, out _))
+        {
+            shell.WriteError(Loc.GetString("luam-playtime-not-loaded", ("username", userName)));
+            return;
+        }
+        // LuaM-end
 
         if (args.Length == 1)
         {

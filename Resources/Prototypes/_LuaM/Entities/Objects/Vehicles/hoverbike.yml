@@ -28,6 +28,7 @@
     rotationSpeedDegrees: 140
   - type: GridVehicleMover
     maxSpeed: 14
+    weightClass: Weak
     maxReverseSpeed: 3
     acceleration: 7
     reverseAcceleration: 3

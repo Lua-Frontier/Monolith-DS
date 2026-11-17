@@ -32,7 +32,22 @@ public abstract partial class SharedGunSystem
         SubscribeLocalEvent<BallisticAmmoProviderComponent, AfterInteractEvent>(OnBallisticAfterInteract);
         SubscribeLocalEvent<BallisticAmmoProviderComponent, AmmoFillDoAfterEvent>(OnBallisticAmmoFillDoAfter);
         SubscribeLocalEvent<BallisticAmmoProviderComponent, UseInHandEvent>(OnBallisticUse);
+        SubscribeLocalEvent<BallisticAmmoProviderComponent, EntRemovedFromContainerMessage>(OnBallisticEntRemoved); // LuaM
     }
+
+    // LuaM-start
+    private void OnBallisticEntRemoved(EntityUid uid, BallisticAmmoProviderComponent component, EntRemovedFromContainerMessage args)
+    {
+        if (Timing.ApplyingState || args.Container.ID != "ballistic-ammo")
+            return;
+
+        if (component.Entities.Remove(args.Entity))
+        {
+            UpdateBallisticAppearance(uid, component);
+            DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.Entities));
+        }
+    }
+    // LuaM-end
 
     private void OnBallisticUse(EntityUid uid, BallisticAmmoProviderComponent component, UseInHandEvent args)
     {

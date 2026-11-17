@@ -184,6 +184,7 @@ namespace Content.Server.Entry
                 {
                     _euiManager.SendUpdates();
                     _voteManager.Update();
+                    _sysMan?.GetEntitySystem<_LuaM.StateRecovery.GridDeletionHistorySystem>().Dedupe(); // LuaM
                     break;
                 }
 

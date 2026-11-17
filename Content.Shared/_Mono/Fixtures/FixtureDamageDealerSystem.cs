@@ -14,7 +14,7 @@ public sealed partial class FixtureDamageDealerSystem : EntitySystem
     [Dependency] private SharedPhysicsSystem _physic = default!;
 
     private float _updateCooldown = 1f;
-    private float _updateTimer = 0f;
+    private float _updateTimer = 0.61f; // LuaM
 
     private List<Entity<FixtureDamageDealerComponent>> _entities = [];
 

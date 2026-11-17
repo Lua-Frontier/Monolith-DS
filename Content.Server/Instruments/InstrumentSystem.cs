@@ -404,7 +404,7 @@ public sealed partial class InstrumentSystem : SharedInstrumentSystem
 
         if (send || !instrument.RespectMidiLimits)
         {
-            RaiseNetworkEvent(msg);
+            RaiseNetworkEvent(msg, Filter.Pvs(uid, entityManager: EntityManager).RemovePlayerByAttachedEntity(attached)); // LuaM
         }
     }
 

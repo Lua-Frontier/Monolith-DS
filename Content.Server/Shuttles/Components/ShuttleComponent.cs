@@ -53,6 +53,8 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         public readonly List<EntityUid> AngularThrusters = new();
 
+        public bool? AngularFiring; // LuaM
+
         [ViewVariables]
         public float AngularThrust = 0f;
 
