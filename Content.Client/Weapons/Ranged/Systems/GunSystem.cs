@@ -309,6 +309,11 @@ public sealed partial class GunSystem : SharedGunSystem
 
                     if (IsClientSide(ent!.Value))
                         Del(ent.Value);
+                    // LuaM-start: the server deletes a caseless round right after the shot. Until that state arrives the
+                    // round taken out of the magazine sat at the shooter as a live bullet sprite, so hide it like a predicted eject.
+                    else if (cartridge.DeleteOnSpawn && !Containers.IsEntityInContainer(ent.Value))
+                        TransformSystem.DetachEntity(ent.Value, Transform(ent.Value));
+                    // LuaM-end
 
                     break;
                 case AmmoComponent newAmmo:
