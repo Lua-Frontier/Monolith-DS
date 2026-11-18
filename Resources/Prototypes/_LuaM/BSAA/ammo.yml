@@ -1,0 +1,164 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+# Ported from dead-space-14 (DeadSpace: TheCircle / BSAA).
+
+# projectiles
+- type: entity
+  id: BulletDragon
+  name: пуля (5.56х45 мм Dragon's breath)
+  parent: BaseBulletIncendiary # LuaM: BulletIncendiaryTrace > BaseBulletIncendiary
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: _LuaM/Necromorfs/BSAA/weapons/projectiles.rsi
+    layers:
+    - state: bulletb
+      shader: unshaded
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Piercing: 11
+        Heat: 6
+  - type: HitscanBasicEffects
+    # LuaM: закомментировано временно — нет поля fireStacks в HitscanBasicEffectsComponent
+    # fireStacks: 0.30
+  - type: HitscanBasicVisuals
+    # LuaM: закомментировано временно — нет поля bullet в HitscanBasicVisualsComponent
+    # bullet:
+    #   sprite:
+    #     sprite: _LuaM/Necromorfs/BSAA/weapons/projectiles.rsi
+    #     state: bulletb
+
+- type: entity
+  id: PelletShotgunDragon
+  name: дробина (12х70 Dragon's breath)
+  parent: Pellet12_gaugeIncendiary # LuaM: PelletShotgunIncendiaryTrace > Pellet12_gaugeIncendiary
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicVisuals
+    # LuaM: закомментировано временно — нет поля bullet в HitscanBasicVisualsComponent
+    # bullet:
+    #   sprite:
+    #     sprite: _LuaM/Necromorfs/BSAA/weapons/projectiles.rsi
+    #     state: bulletb
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Piercing: 5
+        Heat: 5
+  - type: HitscanBasicEffects
+    # LuaM: закомментировано временно — нет поля fireStacks в HitscanBasicEffectsComponent
+    # fireStacks: 0.30
+
+- type: entity
+  id: PelletShotgunDragonSpread
+  categories: [ HideSpawnMenu ]
+  parent: PelletShotgunDragon
+  components:
+  - type: ProjectileSpread
+    proto: PelletShotgunDragon
+    count: 6
+    spread: 15
+
+# Cartridge
+
+- type: entity
+  id: CartridgeDragon
+  name: патрон (5.56х45 мм Dragon's breath)
+  parent: BaseCartridge556x45mm # LuaM: BaseCartridgeRifle > BaseCartridge556x45mm
+  components:
+  - type: CartridgeAmmo
+    proto: BulletDragon
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#7b0e13"
+
+- type: entity
+  id: CartridgeCaselessDragon
+  name: патрон (4.7х33 мм безгильзовые, Dragon's breath)
+  parent: Cartridge635x40mmCaseless # LuaM: CartridgeCaselessRifleIncendiary > Cartridge635x40mmCaseless
+  components:
+  - type: CartridgeAmmo
+    proto: BulletDragon
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#7b0e13"
+
+- type: entity
+  id: ShellShotgunDragon
+  name: дробь (12х70 Dragon's breath)
+  parent: [ BaseShellShotgun12_gauge, BaseC1Contraband ] # LuaM: BaseShellShotgun > BaseShellShotgun12_gauge; BaseSecurityContraband > BaseC1Contraband
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/weapons/shell.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunDragonSpread
+  - type: SpentAmmoVisuals
+    state: "base"
+
+# Boxes
+
+- type: entity
+  parent: BaseAmmoBox635x40mmCaseless # LuaM: BaseMagazineBoxCaselessRifle > BaseAmmoBox635x40mmCaseless
+  id: MagazineBoxCaselessRifleDragon
+  name: коробка патронов (4.7х33 мм безгильзовые, Dragon's breath)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessDragon
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/weapons/Boxes/caseless_rifle.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: practice
+
+- type: entity
+  parent: BaseAmmoBox556x45mm # LuaM: BaseMagazineBoxRifle > BaseAmmoBox556x45mm
+  id: MagazineBoxRifleDragon
+  name: коробка патронов (5.56х45 мм Dragon's breath)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeDragon
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/weapons/Boxes/rifle.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: practice
+
+- type: entity
+  name: коробка ружейных патронов (12х70 Dragon's breath)
+  parent: AmmoProvider12_gaugeShotgunShell # LuaM: AmmoProviderShotgunShell > AmmoProvider12_gaugeShotgunShell
+  id: BoxShotgunDragon
+  components:
+    - type: BallisticAmmoProvider
+      proto: ShellShotgunDragon
+    - type: MagazineVisuals
+      magState: mag-practice
+      steps: 3
+      zeroVisible: false
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/BSAA/weapons/Boxes/shotgun.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-practice-1
+        map: ["enum.GunVisualLayers.Mag"]
+      - state: practice

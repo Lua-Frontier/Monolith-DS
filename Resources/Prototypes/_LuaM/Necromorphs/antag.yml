@@ -1,0 +1,46 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+# Ported from dead-space-14 (DeadSpace: TheCircle / BSAA).
+
+- type: factionIcon
+  id: UnitologyHeadFaction
+  priority: 11
+  showTo:
+    components:
+      - ShowAntagIcons
+      # LuaM: закомментировано временно — нет прототипа Unitology
+      # - Unitology
+      - UnitologyEnslaved
+      - UnitologyHead
+  icon:
+    sprite: /Textures/_LuaM/Interface/Misc/antag_icons.rsi
+    state: UnitologyHead
+
+- type: factionIcon
+  id: UnitologyFaction
+  priority: 11
+  showTo:
+    components:
+      - ShowAntagIcons
+      # LuaM: закомментировано временно — нет прототипа Unitology
+      # - Unitology
+      - UnitologyEnslaved
+      - UnitologyHead
+  icon:
+    sprite: /Textures/_LuaM/Interface/Misc/antag_icons.rsi
+    state: Unitology
+
+- type: factionIcon
+  id: UnitologyEnslavedFaction
+  priority: 11
+  showTo:
+    components:
+      - ShowAntagIcons
+      # LuaM: закомментировано временно — нет прототипа Unitology
+      # - Unitology
+      - UnitologyEnslaved
+      - UnitologyHead
+  icon:
+    sprite: /Textures/_LuaM/Interface/Misc/antag_icons.rsi
+    state: UnitologyEnslaved

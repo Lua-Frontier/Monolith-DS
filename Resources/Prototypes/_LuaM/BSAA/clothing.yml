@@ -1,0 +1,166 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+# Ported from dead-space-14 (DeadSpace: TheCircle / BSAA).
+
+# Рюкзак
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBSAABackpack
+  name: продвинутый рюкзак АПБТ
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/clothing/backpack.rsi
+  - type: Storage
+    grid:
+    - 0,0,9,5
+  - type: Tag
+    tags: []
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+# Мантия
+- type: entity
+  parent: [ ClothingNeckBase, BaseCommandContraband ]
+  id: BSAALeaderShoulder
+  name: мантия лидера АПБТ
+  description: Необычайно украшенная драпировка, отражающая всю мощь альянса. Повисла на шее лидера, обвив объятиями плечи, как личный ангел-хранитель.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/misc/bsaa-mantle.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/BSAA/misc/bsaa-mantle.rsi
+
+# РПС
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltBSAA
+  name: РПС АПБТ
+  description: Универсальный разгрузочный жилет для убийства различных угроз.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/clothing/belt.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/BSAA/clothing/belt.rsi
+
+- type: entity
+  parent: ClothingBeltBSAA
+  id: ClothingBeltBSAAMedicFilled
+  suffix: Заполненный, Медик
+  components:
+  - type: StorageFill
+    contents:
+      - id: BSAACombatKitFilled
+        amount: 2
+      # LuaM: закомментировано временно — нет прототипа ChemistryBottlePuncturase
+      # - id: ChemistryBottlePuncturase
+      #   amount: 2
+      # LuaM: закомментировано временно — нет прототипа ChemistryBottleDermaline
+      # - id: ChemistryBottleDermaline
+      #   amount: 2
+      # LuaM: закомментировано временно — нет прототипа ChemistryBottleEpinephrine
+      # - id: ChemistryBottleEpinephrine
+      # LuaM: закомментировано временно — нет прототипа ChemistryBottleSaline
+      # - id: ChemistryBottleSaline
+      # LuaM: закомментировано временно — нет прототипа ChemistryBottleBicaridine
+      # - id: ChemistryBottleBicaridine
+      #   amount: 2
+
+# # Очки
+- type: entity
+  parent: ClothingEyesHudMedSec # LuaM: ClothingEyesHudAdvanced > ClothingEyesHudMedSec
+  id: ClothingEyesBSAA
+  name: продвинутый визор АПБТ
+  description: Технологический прорыв в мире визоров.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/clothing/glass.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/BSAA/clothing/glass.rsi
+  - type: ShowHealthBars
+  # LuaM: закомментировано временно — нет компонента PNV
+  # - type: PNV
+  #   color: "#AFC4D111"
+  #   activateSound:
+  #     path: /Audio/_LuaM/NightVision/pnv.ogg
+
+# # Перчатки
+- type: entity
+  parent: ClothingHandsGlovesCombat
+  id: ClothingHandsGlovesBSAA
+  name: боевые перчатки АПБТ
+  description: Эти тактические перчатки огнеупорны и ударопрочны.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/clothing/gloves.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/BSAA/clothing/gloves.rsi
+
+# Магнитки
+- type: entity
+  parent: ClothingShoesBootsMagAdv # LuaM: ADTClothingShoesBootsMagERT > ClothingShoesBootsMagAdv
+  id: ClothingShoesBootsMagBSAA
+  name: магнитные сапоги АПБТ
+  description: Продвинутые магнитные ботинки, не замедляющие своего владельца.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/clothing/magboots.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/BSAA/clothing/magboots.rsi
+
+# Противогаз
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskBSAA
+  name: противогаз АПБТ
+  description: Специальный противогаз АПБТ.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/clothing/mask.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/BSAA/clothing/mask.rsi
+  # LuaM: закомментировано временно — нет компонента SpecialDeathSound
+  # - type: SpecialDeathSound
+  #   sound:
+  #     path: /Audio/_LuaM/Voice/Death/sec_death.ogg
+  - type: ActionGrant
+    # actions:  # LuaM: всё содержимое закомментировано
+    # LuaM: закомментировано временно — нет прототипа ActionGasMaskDispatch
+    # - ActionGasMaskDispatch
+  - type: ItemActionGrant
+    # actions:  # LuaM: всё содержимое закомментировано
+    # LuaM: закомментировано временно — нет прототипа ActionGasMaskDispatch
+    # - ActionGasMaskDispatch
+    activeIfWorn: true
+  # LuaM: закомментировано временно — нет компонента GasMaskDispatch
+  # - type: GasMaskDispatch
+  #   channel: SOCChannel
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+    hideOnToggle: true
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.95
+
+# Комбинезон
+- type: entity
+  parent: ClothingUniformJumpsuitERTLeader
+  id: ClothingUniformJumpsuitBSAA
+  name: комбинезон АПБТ
+  description: Комбинезон спецназа "Saros".
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/BSAA/clothing/uniform.rsi
+  - type: Clothing
+    sprite: _LuaM/Necromorfs/BSAA/clothing/uniform.rsi
