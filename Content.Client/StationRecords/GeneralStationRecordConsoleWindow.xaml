@@ -17,13 +17,6 @@
                 <ScrollContainer VerticalExpand="True">
                     <ItemList Name="RecordListing" />
                 </ScrollContainer>
-                <ScrollContainer VerticalExpand="True">
-                    <BoxContainer Name="JobListing"
-                                  Orientation="Vertical"
-                                  HorizontalExpand="True"
-                                  VerticalExpand="True">
-                    </BoxContainer>
-                </ScrollContainer>
             </BoxContainer>
             <BoxContainer Orientation="Vertical" Margin="5" HorizontalExpand="True"> <!-- Frontier: add HorizontalExpand-->
                 <ScrollContainer VerticalExpand="True"> <!-- Frontier: put record info in a scroll box -->

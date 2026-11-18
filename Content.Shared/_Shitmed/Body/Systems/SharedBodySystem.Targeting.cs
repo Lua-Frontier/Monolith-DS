@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Traits; // LuaM
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared._Shitmed.Body.Events;
@@ -213,6 +214,14 @@ public partial class SharedBodySystem
         return landed;
     }
 
+    // LuaM: the owner of the limb can make it harder to tear off
+    private float GetSeverIntegrity(Entity<BodyPartComponent> part)
+    {
+        return TryComp<SeverIntegrityModifierComponent>(part.Comp.Body, out var modifier)
+            ? part.Comp.SeverIntegrity * modifier.Multiplier
+            : part.Comp.SeverIntegrity;
+    }
+
     private void OnDamageChanged(Entity<BodyPartComponent> partEnt, ref DamageChangedEvent args)
     {
         if (!TryComp<DamageableComponent>(partEnt, out var damageable))
@@ -228,7 +237,7 @@ public partial class SharedBodySystem
             && delta != null
             && !HasComp<BodyPartReattachedComponent>(partEnt)
             && !partEnt.Comp.Enabled
-            && damageable.TotalDamage >= partEnt.Comp.SeverIntegrity
+            && damageable.TotalDamage >= GetSeverIntegrity(partEnt) // LuaM: SeverIntegrity > GetSeverIntegrity
             && _severingDamageTypes.Any(damageType => delta.DamageDict.TryGetValue(damageType, out var value) && value > 0))
             severed = true;
 

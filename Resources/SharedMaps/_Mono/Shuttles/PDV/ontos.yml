@@ -1238,7 +1238,7 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
-- proto: ComputerTabletopIFF
+- proto: ComputerTabletopIFFImperial
   entities:
   - uid: 160
     components:

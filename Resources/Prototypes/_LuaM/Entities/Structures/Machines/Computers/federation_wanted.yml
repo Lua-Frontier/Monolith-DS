@@ -1,0 +1,50 @@
+- type: entity
+  id: ComputerFederationWanted
+  parent: BaseComputer
+  name: federation wanted console
+  description: Lists everyone the Federation wants in the Colossus sector and the reward for bringing them in.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      sprite: Structures/Machines/computers.rsi
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      sprite: Structures/Machines/computers.rsi
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      sprite: Structures/Machines/computers.rsi
+      state: security
+    - map: ["computerLayerKeys"]
+      sprite: Structures/Machines/computers.rsi
+      state: security_key
+  - type: FederationWantedConsole
+  - type: ActivatableUI
+    key: enum.FederationWantedConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.FederationWantedConsoleUiKey.Key:
+        type: FederationWantedConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: Computer
+    board: Null # same as the Vanguard console, nothing drops from it
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#047abd"
+
+- type: entity
+  parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseStructureComputerWallmount, ComputerFederationWanted]
+  id: ComputerWallmountFederationWanted
+  components:
+  - type: EdgeConnection
+    allowedDirections: None
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _NF/Structures/Machines/computer_wallmount.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer_wallmount
+    - map: ["computerLayerScreen"]
+      state: screen_records

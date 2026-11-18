@@ -60,6 +60,7 @@ namespace Content.Client.Chemistry.UI
             }
 
             _window.OnReagentButtonPressed += (args, button) => SendMessage(new ChemMasterReagentAmountButtonMessage(button.Id, button.Amount, button.IsBuffer));
+            _window.OnFavoriteButtonPressed += reagent => SendMessage(new ChemMasterToggleFavoriteMessage(reagent)); // LuaM
         }
 
         /// <summary>

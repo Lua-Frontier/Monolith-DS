@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/01/2025 08:22:46
-  entityCount: 475
+  entityCount: 474
 maps: []
 grids:
 - 1
@@ -1530,18 +1530,6 @@ entities:
     components:
     - type: Transform
       pos: 1.5,1.5
-      parent: 1
-    - type: ApcPowerReceiver
-      powerLoad: 5
-    - type: Battery
-      startingCharge: 0
-- proto: ComputerIFF
-  entities:
-  - uid: 230
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,2.5
       parent: 1
     - type: ApcPowerReceiver
       powerLoad: 5

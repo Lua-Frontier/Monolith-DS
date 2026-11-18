@@ -7,6 +7,7 @@
   spawnGamePreset: [ NFAdventure, NFPirate, MonoStandard, MonoRogueTSF, MonoTSFUSSP, MonoADS, MonoChimera, MonoMixed, MonoAllAtOnce, MonoChimeraTsfPdv ] # LuaM: MonoChimeraTsf/MonoChimeraPdv > MonoChimeraTsfPdv
   spawnGroup: Required
   gridPath: /Maps/_Mono/POI/zetanode.yml
+  randomRotation: false # LuaM: also applies to Zeta-2 and Zeta-3
   addComponents:
   - type: IFF
     color: "#37946e"

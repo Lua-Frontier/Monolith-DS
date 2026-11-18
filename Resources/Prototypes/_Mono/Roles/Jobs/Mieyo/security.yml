@@ -13,6 +13,7 @@
     inverted: true
     traits:
     - Heretic
+    - FederationWanted # LuaM
   alternateRequirementSets:
     longerPlaytimeLessEmployee:
     - !type:OverallPlaytimeRequirement
@@ -21,6 +22,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: MMCSecurityGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

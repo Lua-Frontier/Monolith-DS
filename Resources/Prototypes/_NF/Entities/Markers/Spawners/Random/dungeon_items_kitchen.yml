@@ -383,7 +383,7 @@
     - CutterMachineFlatpack
     - DawInstrumentFlatpack
     - MinimoogInstrumentFlatpack
-    - ComputerIFFFlatpack
+    # - ComputerIFFFlatpack # LuaM: only VG and Syndicate ships have this console
     - JukeboxFlatpack
     - VendingMachineBoozeFlatpack
     - VendingMachineCigsFlatpack

@@ -1,6 +1,7 @@
 - type: species
   id: Felinid
   name: species-name-felinid
+  bonusTraitPoints: 2 # LuaM
   roundStart: true # LuaM - false -> true (меня заставили)
   prototype: MobFelinid
   sprites: MobHumanSprites

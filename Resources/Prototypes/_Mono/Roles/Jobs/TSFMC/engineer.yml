@@ -10,6 +10,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: TsfEngiGear
   icon: JobIconTSFEngi
   supervisors: job-supervisors-sergeant

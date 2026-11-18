@@ -65,7 +65,7 @@
     MailNFCircuitboardService: 1.25
     MailNFCognizine: 0.5
     MailNFMedkit: 1
-    MailNFIFFBoard: 0.5
+    # MailNFIFFBoard: 0.5 # LuaM: only VG and Syndicate ships have this console
     MailMonoRCD: 0.5
     MailNFMoney: 1
     MailNFNecrosol: 0.5

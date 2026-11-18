@@ -774,8 +774,8 @@
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
-    walkModifier: 1 # LuaM: 1.1 > 1, all suits are 0.1 slower
-    sprintModifier: 1 # 0.9-> 1 Mono # LuaM: 1.1 > 1, all suits are 0.1 slower
+    walkModifier: 0.9 # LuaM: 1.1 > 1 > 0.9, 10% slowdown
+    sprintModifier: 0.9 # 0.9-> 1 Mono # LuaM: 1.1 > 1 > 0.9, 10% slowdown
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance # Mono - Stamres
     coefficient: 0.45

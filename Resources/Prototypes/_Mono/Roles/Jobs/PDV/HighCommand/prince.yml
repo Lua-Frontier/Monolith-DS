@@ -3,6 +3,11 @@
   name: job-name-pdv-prince
   description: job-description-pdv-prince
   playTimeTracker: JobPDVPrince
+  requirements: # LuaM
+    - !type:TraitsRequirement # LuaM: Nordfall can't be wanted by the Federation
+      inverted: true
+      traits:
+      - FederationWanted
   startingGear: PDVPrinceGearEvent
   icon: JobIconPDVPrince
   supervisors: job-supervisors-nobody

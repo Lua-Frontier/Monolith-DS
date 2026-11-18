@@ -1,0 +1,69 @@
+- type: entity
+  parent: ComputerIFF
+  id: ComputerIFFImperial
+  name: imperial IFF computer
+  description: Removes every trace of this vessel's designation from foreign sensors. Only works on Vanguard ships.
+  components:
+  - type: IFFConsole
+    allowedFlags:
+    - HideLabel
+    - HideLabelAlways
+    allowedShipGroups:
+    - BlackMarket # the Vanguard shipyard listing
+  - type: Sprite # same look as the Vanguard communications computer
+    sprite: _Mono/Structures/Machines/computers.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      sprite: Structures/Machines/computers.rsi
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      sprite: Structures/Machines/computers.rsi
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm_rogue
+    - map: ["computerLayerKeys"]
+      state: rogue_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: Computer
+    board: ComputerIFFImperialCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#D2B48C"
+
+- type: entity
+  parent: [BaseStructureComputerTabletop, ComputerIFFImperial]
+  id: ComputerTabletopIFFImperial
+  suffix: Tabletop
+  components:
+  - type: EdgeConnection
+    allowedDirections: None
+  - type: Sprite
+    drawdepth: SmallObjects
+    layers:
+    - map: ["computerLayerBody"]
+      sprite: _NF/Structures/Machines/computer_tabletop.rsi
+      state: computer_tabletop
+    - map: ["computerLayerKeyboard"]
+      sprite: _NF/Structures/Machines/computer_tabletop.rsi
+      state: generic_keyboard_tabletop
+    - map: ["computerLayerScreen"]
+      sprite: _Mono/Structures/Machines/computers.rsi
+      state: comm_rogue
+    - map: ["computerLayerKeys"]
+      sprite: _Mono/Structures/Machines/computers.rsi
+      state: rogue_key
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ComputerIFFImperialCircuitboard
+  name: imperial IFF console board
+  description: A computer printed circuit board for an imperial IFF console.
+  components:
+  - type: Sprite
+    state: cpu_command
+  - type: ComputerBoard
+    prototype: ComputerIFFImperial
+  - type: ComputerTabletopBoard
+    prototype: ComputerTabletopIFFImperial

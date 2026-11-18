@@ -1,3 +1,4 @@
+using Content.Server._LuaM.Shuttles; // LuaM
 using Content.Server.Shuttles.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Shuttles.BUIStates;
@@ -37,6 +38,18 @@ public sealed partial class ShuttleSystem
         }
     }
 
+    // LuaM-start: consoles that only work on the ships of certain shipyards
+    private IFFFlags GetAllowedIFFFlags(IFFConsoleComponent component, EntityUid? grid)
+    {
+        if (component.AllowedShipGroups.Count == 0)
+            return component.AllowedFlags;
+
+        return TryComp<ShipyardOriginComponent>(grid, out var origin) && component.AllowedShipGroups.Contains(origin.Group)
+            ? component.AllowedFlags
+            : IFFFlags.None;
+    }
+    // LuaM-end
+
     private void OnIFFConsoleOpen(EntityUid uid, IFFConsoleComponent component, ref BoundUIOpenedEvent args)
     {
         // Make sure UI state is up-to-date when opening the UI
@@ -44,7 +57,7 @@ public sealed partial class ShuttleSystem
         {
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
-                AllowedFlags = component.AllowedFlags,
+                AllowedFlags = GetAllowedIFFFlags(component, xform?.GridUid), // LuaM
                 Flags = IFFFlags.None,
             });
             return;
@@ -54,7 +67,7 @@ public sealed partial class ShuttleSystem
         {
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
-                AllowedFlags = component.AllowedFlags,
+                AllowedFlags = GetAllowedIFFFlags(component, xform?.GridUid), // LuaM
                 Flags = IFFFlags.None,
             });
             return;
@@ -62,33 +75,38 @@ public sealed partial class ShuttleSystem
 
         _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
         {
-            AllowedFlags = component.AllowedFlags,
+            AllowedFlags = GetAllowedIFFFlags(component, xform.GridUid), // LuaM
             Flags = iff.Flags,
         });
     }
 
     private void OnIFFShow(EntityUid uid, IFFConsoleComponent component, IFFShowIFFMessage args)
     {
-        if (!TryComp(uid, out TransformComponent? xform) || xform.GridUid == null ||
-            (component.AllowedFlags & IFFFlags.HideLabel) == 0x0)
-        {
+        if (!TryComp(uid, out TransformComponent? xform) || xform.GridUid == null)
             return;
-        }
+
+        // LuaM-start: ship check, and the imperial console hides the detection label as well
+        var allowed = GetAllowedIFFFlags(component, xform.GridUid);
+        if ((allowed & IFFFlags.HideLabel) == 0x0)
+            return;
+
+        var flags = IFFFlags.HideLabel | (allowed & IFFFlags.HideLabelAlways);
+        // LuaM-end
 
         if (!args.Show)
         {
-            AddIFFFlag(xform.GridUid.Value, IFFFlags.HideLabel);
+            AddIFFFlag(xform.GridUid.Value, flags); // LuaM: HideLabel > flags
         }
         else
         {
-            RemoveIFFFlag(xform.GridUid.Value, IFFFlags.HideLabel);
+            RemoveIFFFlag(xform.GridUid.Value, flags); // LuaM: HideLabel > flags
         }
     }
 
     private void OnIFFShowVessel(EntityUid uid, IFFConsoleComponent component, IFFShowVesselMessage args)
     {
         if (!TryComp(uid, out TransformComponent? xform) || xform.GridUid == null ||
-            (component.AllowedFlags & IFFFlags.Hide) == 0x0)
+            (GetAllowedIFFFlags(component, xform.GridUid) & IFFFlags.Hide) == 0x0) // LuaM: ship check
         {
             return;
         }
@@ -112,7 +130,7 @@ public sealed partial class ShuttleSystem
         {
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
-                AllowedFlags = component.AllowedFlags,
+                AllowedFlags = GetAllowedIFFFlags(component, Transform(uid).GridUid), // LuaM
                 Flags = IFFFlags.None,
             });
         }
@@ -120,7 +138,7 @@ public sealed partial class ShuttleSystem
         {
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
-                AllowedFlags = component.AllowedFlags,
+                AllowedFlags = GetAllowedIFFFlags(component, xform.GridUid), // LuaM
                 Flags = iff.Flags,
             });
         }
@@ -138,7 +156,7 @@ public sealed partial class ShuttleSystem
 
             _uiSystem.SetUiState(uid, IFFConsoleUiKey.Key, new IFFConsoleBoundUserInterfaceState()
             {
-                AllowedFlags = comp.AllowedFlags,
+                AllowedFlags = GetAllowedIFFFlags(comp, gridUid), // LuaM
                 Flags = component.Flags,
             });
         }

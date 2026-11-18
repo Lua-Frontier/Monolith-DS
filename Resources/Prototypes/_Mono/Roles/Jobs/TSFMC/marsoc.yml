@@ -23,6 +23,7 @@
     inverted: true
     traits:
     - Heretic
+    - FederationWanted # LuaM
   startingGear: MarsocOperativeGearHyperwarRole
   icon: JobIconTSFMarsoc
   supervisors: job-supervisors-ws

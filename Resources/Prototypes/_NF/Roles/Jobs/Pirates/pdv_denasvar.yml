@@ -28,6 +28,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: PDVDenasvarGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

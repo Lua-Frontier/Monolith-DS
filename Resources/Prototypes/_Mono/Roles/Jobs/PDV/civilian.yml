@@ -3,6 +3,11 @@
   name: job-name-pdv-civilian
   description: job-description-pdv-civilian
   playTimeTracker: JobPdvCivilian
+  requirements: # LuaM
+    - !type:TraitsRequirement # LuaM: Nordfall can't be wanted by the Federation
+      inverted: true
+      traits:
+      - FederationWanted
   startingGear: PdvCivilianGear
   icon: JobIconPDVCiv
   supervisors: job-supervisors-pdv-civ

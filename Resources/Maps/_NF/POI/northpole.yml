@@ -2951,14 +2951,6 @@ entities:
     - type: Transform
       pos: -6.456246,21.638512
       parent: 1
-- proto: ComputerIFF
-  entities:
-  - uid: 1183
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -4.5,15.5
-      parent: 1
 - proto: DisposalUnit
   entities:
   - uid: 1154

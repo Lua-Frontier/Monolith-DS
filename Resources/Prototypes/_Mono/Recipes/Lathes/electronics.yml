@@ -48,10 +48,11 @@
   id: AdvancedRadarConsoleCircuitboard
   result: AdvancedRadarConsoleCircuitboard
 
-- type: latheRecipe
-  parent: BaseGoldCircuitboardRecipe
-  id: ComputerIFFCircuitboard
-  result: ComputerIFFCircuitboard
+# LuaM: only VG and Syndicate ships have this console
+# - type: latheRecipe
+#   parent: BaseGoldCircuitboardRecipe
+#   id: ComputerIFFCircuitboard
+#   result: ComputerIFFCircuitboard
 
 - type: latheRecipe
   parent: BaseGoldCircuitboardRecipe

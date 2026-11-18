@@ -22,7 +22,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 150 # LuaM: 50 > 150, explosives are 3x tougher
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]

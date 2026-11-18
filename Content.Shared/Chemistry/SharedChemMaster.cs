@@ -107,10 +107,19 @@ namespace Content.Shared.Chemistry
         Alphabetical = 1,
         Quantity = 2,
         Latest = 3,
+        Favorites = 4, // LuaM
     }
 
     [Serializable, NetSerializable]
     public sealed class ChemMasterSortingTypeCycleMessage : BoundUserInterfaceMessage;
+
+    // LuaM-start: favorite reagents of the buffer
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterToggleFavoriteMessage(ReagentId reagentId) : BoundUserInterfaceMessage
+    {
+        public readonly ReagentId ReagentId = reagentId;
+    }
+    // LuaM-end
 
 
     public enum ChemMasterReagentAmount
@@ -201,10 +210,13 @@ namespace Content.Shared.Chemistry
 
         public readonly ChemMasterDrawSource DrawSource;
 
+        public readonly List<ReagentId> FavoriteReagents; // LuaM
+
         public ChemMasterBoundUserInterfaceState(
             ChemMasterMode mode, ChemMasterSortingType sortingType, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
             IReadOnlyList<ReagentQuantity> bufferReagents, FixedPoint2 bufferCurrentVolume,
-            uint selectedPillType, uint pillDosageLimit, bool updateLabel, ChemMasterDrawSource drawSource)
+            uint selectedPillType, uint pillDosageLimit, bool updateLabel, ChemMasterDrawSource drawSource,
+            List<ReagentId> favoriteReagents) // LuaM
         {
             InputContainerInfo = inputContainerInfo;
             OutputContainerInfo = outputContainerInfo;
@@ -216,6 +228,7 @@ namespace Content.Shared.Chemistry
             PillDosageLimit = pillDosageLimit;
             UpdateLabel = updateLabel;
             DrawSource = drawSource;
+            FavoriteReagents = favoriteReagents; // LuaM
         }
     }
 

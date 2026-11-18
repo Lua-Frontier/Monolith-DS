@@ -7,7 +7,8 @@
     xmlns:playerTab="clr-namespace:Content.Client.Administration.UI.Tabs.PlayerTab"
     xmlns:objectsTab="clr-namespace:Content.Client.Administration.UI.Tabs.ObjectsTab"
     xmlns:panic="clr-namespace:Content.Client.Administration.UI.Tabs.PanicBunkerTab"
-    xmlns:luamBank="clr-namespace:Content.Client._LuaM.Bank.UI">
+    xmlns:luamBank="clr-namespace:Content.Client._LuaM.Bank.UI"
+    xmlns:luamJobs="clr-namespace:Content.Client._LuaM.Administration.UI">
     <TabContainer Name="MasterTabContainer">
         <adminTab:AdminTab />
         <adminbusTab:AdminbusTab />
@@ -19,5 +20,7 @@
         <objectsTab:ObjectsTab Name="ObjectsTabControl" Access="Public" />
         <!-- LuaM: faction station accounts -->
         <luamBank:AdminSectorBankTab />
+        <!-- LuaM: faction job slots -->
+        <luamJobs:AdminStationJobsTab />
     </TabContainer>
 </DefaultWindow>

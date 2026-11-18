@@ -25,4 +25,10 @@ public sealed partial class TraitCategoryPrototype : IPrototype
     /// </summary>
     [DataField]
     public int? MaxTraitPoints;
+
+    /// <summary>
+    ///     LuaM: whether the bonus trait points of the species count towards this category.
+    /// </summary>
+    [DataField]
+    public bool SpeciesBonusPoints;
 }

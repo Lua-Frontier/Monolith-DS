@@ -8,6 +8,11 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 10800
+    - !type:TraitsRequirement # wanted people can't take this job
+      inverted: true
+      traits:
+      - Heretic
+      - FederationWanted
   startingGear: DeliveryCourierGear
   alwaysUseSpawner: true
   icon: "JobIconDeliveryCourier"

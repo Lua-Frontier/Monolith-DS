@@ -10,6 +10,7 @@
     inverted: true
     traits:
     - Heretic
+    - FederationWanted # LuaM
   # No requirements. Anyone can be my slave.
   startingGear: MMCEmployeeGear
   alwaysUseSpawner: true

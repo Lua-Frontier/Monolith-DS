@@ -250,6 +250,8 @@
   name: M86 Mk.4(B) hardsuit
   description: A limited-production redesign proposal for the M86 Mk.3(R), outfitted with an inbuilt personal shield generator.
   components:
+  - type: SpeedTieredFootsteps # LuaM: heavy steps
+    forcedTier: Heavy
   - type: CritInjectorClothing # LuaM
     solution:
       reagents:

@@ -1,0 +1,10 @@
+﻿trait-luam-enhanced-motorics-name = Улучшенная моторика
+trait-luam-enhanced-motorics-desc = Ваши движения точнее и быстрее: действия, требующие времени, выполняются на 30% быстрее.
+trait-luam-synthetic-leukocytes-name = Синтетические лейкоциты
+trait-luam-synthetic-leukocytes-desc = Урон от кровопотери снижен на 60%, а кровотечение останавливается в 3 раза быстрее.
+trait-luam-athletic-name = Атлетичность
+trait-luam-athletic-desc = Вы двигаетесь на 10% быстрее и не можете поскользнуться.
+trait-luam-reinforced-endoskeleton-name = Укреплённый эндоскелет
+trait-luam-reinforced-endoskeleton-desc = Порог отрыва конечностей увеличен на 33%.
+trait-luam-fast-metabolism-name = Ускоренный метаболизм
+trait-luam-fast-metabolism-desc = Реагенты в крови усваиваются на 25% быстрее.

@@ -14,6 +14,8 @@
   spawnGroup: Required
   gridPath: /Maps/_Mono/Supercapitals/jupiter_hw.yml
   addComponents:
+  - type: ShipyardOrigin # LuaM: a Vanguard ship for the imperial IFF console
+    group: BlackMarket
   - type: IFF
     color: "#d1bf58"
     flags: [HideLabel]

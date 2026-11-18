@@ -54,6 +54,7 @@ namespace Content.Server.Chemistry.EntitySystems
 
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterSetModeMessage>(OnSetModeMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterSortingTypeCycleMessage>(OnCycleSortingTypeMessage);
+            SubscribeLocalEvent<ChemMasterComponent, ChemMasterToggleFavoriteMessage>(OnToggleFavoriteMessage); // LuaM
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterSetPillTypeMessage>(OnSetPillTypeMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterReagentAmountButtonMessage>(OnReagentButtonMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterCreatePillsMessage>(OnCreatePillsMessage);
@@ -71,6 +72,7 @@ namespace Content.Server.Chemistry.EntitySystems
             var (owner, chemMaster) = ent;
             if (!_solutionContainerSystem.TryGetSolution(owner, SharedChemMaster.BufferSolutionName, out _, out var bufferSolution))
                 return;
+            ForgetUsedUpFavorites(chemMaster, bufferSolution); // LuaM: before the closed UI check, the buffer can run out with it closed
             var inputContainer = _itemSlotsSystem.GetItemOrNull(owner, SharedChemMaster.InputSlotName);
             _appearanceSystem.SetData(owner, ChemMasterVisualState.BeakerInserted, inputContainer.HasValue); // Frontier
             // LuaM-start
@@ -84,7 +86,8 @@ namespace Content.Server.Chemistry.EntitySystems
 
             var state = new ChemMasterBoundUserInterfaceState(
                 chemMaster.Mode, chemMaster.SortingType, BuildInputContainerInfo(inputContainer), BuildOutputContainerInfo(outputContainer),
-                bufferReagents, bufferCurrentVolume, chemMaster.PillType, chemMaster.PillDosageLimit, updateLabel, chemMaster.DrawSource);
+                bufferReagents, bufferCurrentVolume, chemMaster.PillType, chemMaster.PillDosageLimit, updateLabel, chemMaster.DrawSource,
+                new List<ReagentId>(chemMaster.FavoriteReagents)); // LuaM
 
             _userInterfaceSystem.SetUiState(owner, ChemMasterUiKey.Key, state);
         }
@@ -103,11 +106,33 @@ namespace Content.Server.Chemistry.EntitySystems
         private void OnCycleSortingTypeMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterSortingTypeCycleMessage message)
         {
             chemMaster.Comp.SortingType++;
-            if (chemMaster.Comp.SortingType > ChemMasterSortingType.Latest)
+            if (chemMaster.Comp.SortingType > ChemMasterSortingType.Favorites) // LuaM: Latest > Favorites
                 chemMaster.Comp.SortingType = ChemMasterSortingType.None;
             UpdateUiState(chemMaster);
             ClickSound(chemMaster);
         }
+
+        // LuaM-start: favorite reagents of the buffer
+        private void OnToggleFavoriteMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterToggleFavoriteMessage message)
+        {
+            if (!_solutionContainerSystem.TryGetSolution(chemMaster.Owner, SharedChemMaster.BufferSolutionName, out _, out var bufferSolution)
+                || !bufferSolution.ContainsReagent(message.ReagentId))
+            {
+                return;
+            }
+
+            if (!chemMaster.Comp.FavoriteReagents.Remove(message.ReagentId))
+                chemMaster.Comp.FavoriteReagents.Add(message.ReagentId);
+
+            UpdateUiState(chemMaster);
+            ClickSound(chemMaster);
+        }
+
+        private static void ForgetUsedUpFavorites(ChemMasterComponent chemMaster, Solution buffer)
+        {
+            chemMaster.FavoriteReagents.RemoveAll(reagent => !buffer.ContainsReagent(reagent));
+        }
+        // LuaM-end
 
         private void OnSetPillTypeMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterSetPillTypeMessage message)
         {

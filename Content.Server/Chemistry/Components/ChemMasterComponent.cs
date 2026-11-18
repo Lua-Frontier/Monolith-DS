@@ -1,5 +1,6 @@
 using Content.Server.Chemistry.EntitySystems;
 using Content.Shared.Chemistry;
+using Content.Shared.Chemistry.Reagent; // LuaM
 using Robust.Shared.Audio;
 
 namespace Content.Server.Chemistry.Components
@@ -32,5 +33,11 @@ namespace Content.Server.Chemistry.Components
         /// </summary>
         [DataField]
         public ChemMasterDrawSource DrawSource = ChemMasterDrawSource.Internal;
+
+        /// <summary>
+        /// LuaM: buffer reagents marked with a star. A list because <see cref="ReagentId"/> hashes are not stable.
+        /// </summary>
+        [DataField]
+        public List<ReagentId> FavoriteReagents = new();
     }
 }

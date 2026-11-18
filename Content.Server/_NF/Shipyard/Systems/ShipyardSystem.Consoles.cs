@@ -1,3 +1,4 @@
+using Content.Server._LuaM.Shuttles; // LuaM
 using Content.Server.Access.Systems;
 using Content.Server.Popups;
 using Content.Server.Radio.EntitySystems;
@@ -297,6 +298,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 return;
             }
         }
+
+        EnsureComp<ShipyardOriginComponent>(shuttleUid).Group = vessel.Group; // LuaM: faction-locked consoles
 
         // Add company information to the shuttle from the ID card or voucher
         string? companyName = null;

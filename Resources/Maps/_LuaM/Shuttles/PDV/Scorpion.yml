@@ -2068,7 +2068,7 @@ entities:
     - type: Transform
       pos: -2.359126,2.4906847
       parent: 1
-- proto: ComputerIFF
+- proto: ComputerIFFImperial
   entities:
   - uid: 322
     components:

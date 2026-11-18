@@ -2460,7 +2460,7 @@ entities:
         solution@pen: !type:ContainerSlot
           ent: 987
     - type: InsideEntityStorage
-- proto: ComputerIFF
+- proto: ComputerIFFImperial
   entities:
   - uid: 134
     components:

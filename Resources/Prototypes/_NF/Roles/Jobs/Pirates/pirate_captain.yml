@@ -13,6 +13,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   enforcedPlayTime: true #Monolith
   whitelisted: false # LuaM: true > false
   startingGear: PirateCaptainNFGear

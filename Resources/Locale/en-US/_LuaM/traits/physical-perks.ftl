@@ -1,0 +1,10 @@
+﻿trait-luam-enhanced-motorics-name = Enhanced Motorics
+trait-luam-enhanced-motorics-desc = Your movements are precise and quick: timed actions take 30% less time.
+trait-luam-synthetic-leukocytes-name = Synthetic Leukocytes
+trait-luam-synthetic-leukocytes-desc = Blood loss deals 60% less damage and bleeding stops 3 times faster.
+trait-luam-athletic-name = Athletic
+trait-luam-athletic-desc = You move 10% faster and can't slip.
+trait-luam-reinforced-endoskeleton-name = Reinforced Endoskeleton
+trait-luam-reinforced-endoskeleton-desc = Your limbs take 33% more damage before they can be torn off.
+trait-luam-fast-metabolism-name = Fast Metabolism
+trait-luam-fast-metabolism-desc = Reagents in your blood are processed 25% faster.

@@ -13,6 +13,7 @@
     inverted: true
     traits:
     - Heretic
+    - FederationWanted # LuaM
   # LuaM-commented-start:
   # alternateRequirementSets:
   #   longerPlaytimeLessEmployee:

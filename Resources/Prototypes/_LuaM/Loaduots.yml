@@ -43,6 +43,20 @@
     back:
     - WeaponRifleAk
 
+- type: loadout
+  id: MercenaryPlasteelSwordLoadout
+  price: 5000
+  storage:
+    back:
+    - PlasteelArmingSword
+
+- type: loadout
+  id: MercenaryBreachingHammerLoadout
+  price: 7500
+  storage:
+    back:
+    - SecBreachingHammer
+
 # VG weapons: MercenaryFirearm (shared with other jobs, so it is copied here) plus the mercenary self-defense guns
 - type: loadoutGroup
   id: VGFirearm
@@ -71,6 +85,8 @@
   - ContractorSvalinnLoadout
   - ContractorDoubleBarreledLoadout
   - ContractorAkmLoadout
+  - MercenaryPlasteelSwordLoadout
+  - MercenaryBreachingHammerLoadout
 
 # Contractor weapons: the full choice of the old mercenary role plus the contractor self-defense guns.
 # The pistol and ammo lists come in as subgroups, so they stay in sync with the mercenary role.
@@ -98,6 +114,8 @@
   - MercenaryLeverActionloadout
   - ContractorDoubleBarreledLoadout
   - ContractorAkmLoadout
+  - MercenaryPlasteelSwordLoadout
+  - MercenaryBreachingHammerLoadout
 
 - type: loadoutGroup
   id: ContractorFullPistol

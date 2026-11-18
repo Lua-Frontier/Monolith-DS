@@ -13,6 +13,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   #whitelisted: true # mono - comment out
   startingGear: PirateFirstMateNFGear
   alwaysUseSpawner: true

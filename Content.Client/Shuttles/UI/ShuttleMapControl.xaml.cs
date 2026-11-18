@@ -432,6 +432,9 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
             // Mono
             var hideLabel = iffComp != null && (iffComp.Flags & IFFFlags.HideLabel) != 0x0
                 && !_friendlyIff.IsFriendlyToLocalPlayer(grid.Owner); // LuaM: own faction sees through IFF off
+            // LuaM: no text at all, same as the radar
+            var noLabel = iffComp != null && (iffComp.Flags & IFFFlags.HideLabelAlways) != 0x0
+                && !_friendlyIff.IsFriendlyToLocalPlayer(grid.Owner);
             var detectionLevel = _console == null ? DetectionLevel.Detected : _detection.IsGridDetected(grid.Owner, _console.Value);
             var detected = detectionLevel != DetectionLevel.Undetected || !hideLabel;
             var blipOnly = detectionLevel != DetectionLevel.Detected;
@@ -464,7 +467,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
             // Force drawing it at this point.
             // Mono
-            var iffText = hideLabel ?
+            var iffText = noLabel ? null : hideLabel ? // LuaM: noLabel
                 detectionLevel == DetectionLevel.PartialDetected ?
                     Loc.GetString($"shuttle-console-signature-infrared")
                     : _detection.HandleUnknownMassLabel(grid.Owner)
