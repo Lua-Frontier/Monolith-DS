@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 01/13/2026 03:21:56
-  entityCount: 3351
+  entityCount: 3350
 maps: []
 grids:
 - 1
@@ -13744,8 +13744,7 @@ entities:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
-          ents:
-          - 1642
+          ents: []
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -15874,15 +15873,6 @@ entities:
     - type: Transform
       pos: 21.557425,-3.3447056
       parent: 1
-- proto: SyringeLetoferol
-  entities:
-  - uid: 1642
-    components:
-    - type: Transform
-      parent: 1641
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: Table
   entities:
   - uid: 1278

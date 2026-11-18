@@ -1241,19 +1241,20 @@
 #      tags:
 #      - NukeOpsUplink
 
-- type: listing # Frontier - Mono Meow meow
-  id: UplinkMobCatMicrobomb
-  name: uplink-mobcat-microbomb-name
-  description: uplink-mobcat-microbomb-desc
-  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-syndicat }
-  productEntity: ReinforcementRadioSyndicateSyndiCat
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 15 # Mono
-  cost:
-    Telecrystal: 30 # Mono
-  categories:
-    - UplinkAllies
+# LuaM: the syndicat is not sold anymore, surplus crates pick from these listings so it is gone from them too
+# - type: listing # Frontier - Mono Meow meow
+#   id: UplinkMobCatMicrobomb
+#   name: uplink-mobcat-microbomb-name
+#   description: uplink-mobcat-microbomb-desc
+#   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-syndicat }
+#   productEntity: ReinforcementRadioSyndicateSyndiCat
+#   discountCategory: usualDiscounts
+#   discountDownTo:
+#     Telecrystal: 15 # Mono
+#   cost:
+#     Telecrystal: 30 # Mono
+#   categories:
+#     - UplinkAllies
 
 - type: listing
   id: UplinkSyndicatePersonalAI
