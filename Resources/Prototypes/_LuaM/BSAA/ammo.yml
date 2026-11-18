@@ -72,6 +72,7 @@
   - type: CartridgeAmmo
     proto: BulletDragon
   - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Ammo/ammo_casing.rsi # LuaM: спрайт из DS (родитель переназначен)
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -87,6 +88,7 @@
   - type: CartridgeAmmo
     proto: BulletDragon
   - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Ammo/ammo_casing.rsi # LuaM: спрайт из DS (родитель переназначен)
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -116,6 +118,10 @@
   id: MagazineBoxCaselessRifleDragon
   name: коробка патронов (4.7х33 мм безгильзовые, Dragon's breath)
   components:
+  - type: MagazineVisuals # LuaM: из DS (родитель переназначен)
+    magState: mag
+    steps: 5
+    zeroVisible: false
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessDragon
   - type: Sprite
@@ -132,6 +138,10 @@
   id: MagazineBoxRifleDragon
   name: коробка патронов (5.56х45 мм Dragon's breath)
   components:
+  - type: MagazineVisuals # LuaM: из DS (родитель переназначен)
+    magState: mag
+    steps: 11
+    zeroVisible: false
   - type: BallisticAmmoProvider
     proto: CartridgeDragon
   - type: Sprite

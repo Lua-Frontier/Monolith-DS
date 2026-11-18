@@ -395,6 +395,10 @@
   description: Увеличенный магазин под патрон 5.56 мм, с вместимостью в 45 единиц
   parent: Magazine556x45mmFMJ # LuaM: ADTExtMagazineRifle > Magazine556x45mmFMJ
   components:
+  - type: MagazineVisuals # LuaM: из DS (родитель переназначен)
+    magState: mag
+    steps: 2
+    zeroVisible: false
   - type: BallisticAmmoProvider
     proto: CartridgeDragon
   - type: Sprite

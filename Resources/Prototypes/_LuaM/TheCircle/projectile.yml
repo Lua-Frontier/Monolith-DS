@@ -154,6 +154,7 @@
   - type: CartridgeAmmo
     proto: BulletASh12
   - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Ammo/ammo_casing.rsi # LuaM: спрайт из DS (родитель переназначен)
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -191,6 +192,7 @@
   - type: CartridgeAmmo
     proto: BulletRifleSCARAB
   - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Ammo/ammo_casing.rsi # LuaM: спрайт из DS (родитель переназначен)
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -229,6 +231,7 @@
   - type: CartridgeAmmo
     proto: BulletVSK
   - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Ammo/ammo_casing.rsi # LuaM: спрайт из DS (родитель переназначен)
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -263,6 +266,12 @@
   name: короб пулемёта «Вихрь»
   description: Короб на 180 патронов для пулемёта «Вихрь».
   components:
+  - type: MagazineVisuals # LuaM: из DS (родитель переназначен)
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Ammo/light_rifle_box.rsi # LuaM: спрайт из DS (родитель переназначен)
   - type: Tag
     tags:
     - MagazineWhirl
@@ -278,6 +287,8 @@
   parent: BaseCartridge762x39mm # LuaM: BaseCartridgeLightRifle > BaseCartridge762x39mm
   name: патрон «Вихря»
   components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Ammo/ammo_casing.rsi # LuaM: спрайт из DS (родитель переназначен)
   - type: Tag
     tags:
     - Cartridge
@@ -310,6 +321,7 @@
     tags:
     - ShellShotgun23MM
   - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Ammo/shotgun_shell.rsi # LuaM: спрайт из DS (родитель переназначен)
     layers:
     - state: slug
       map: [ "enum.AmmoVisualLayers.Base" ]
@@ -361,6 +373,7 @@
     steps: 3
     zeroVisible: false
   - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Ammo/shotgun.rsi # LuaM: спрайт из DS (родитель переназначен)
     layers:
     - state: base
       map: [ "enum.GunVisualLayers.Base" ]
