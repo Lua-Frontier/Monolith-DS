@@ -752,9 +752,10 @@
     - OrganHarvesterMachineCircuitboard
     chance: 0.95
     offset: 0.0
-    rarePrototypes:
-    # - ComputerIFFCircuitboard # LuaM: only VG and Syndicate ships have this console
-    rareChance: 0.03
+    # LuaM: the IFF board was the only rare item, only VG and Syndicate ships have this console
+    # rarePrototypes:
+    # - ComputerIFFCircuitboard
+    # rareChance: 0.03
 
 - type: entity
   name: random flatpack
