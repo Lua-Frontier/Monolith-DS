@@ -1,0 +1,39 @@
+- type: vessel
+  id: caduceus
+  parent: BaseVessel
+  name: vessel-caduceus-name # LuaM-locale
+  description: vessel-caduceus-desc # LuaM-locale
+  limit: 1
+  price: 180000
+  access: Medical
+  category: Large
+  group: Medical
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Med/caduceus.yml
+  guidebookPage: null
+  class:
+  - Civilian
+  - Medical
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: caduceus
+  mapName: 'Caduceus'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Med/caduceus.yml
+  minPlayers: 0
+  stations:
+    caduceus:
+      stationProto: StandardFrontierExpeditionVessel
+      gridComponents:
+        - type: IFF
+          color: '#52B4E9FF'
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Caduceus MED {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]

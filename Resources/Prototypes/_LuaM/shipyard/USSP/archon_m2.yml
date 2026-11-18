@@ -1,0 +1,40 @@
+- type: vessel
+  id: archon_m2
+  parent: BaseVesselIFFDisabled
+  name: vessel-archon-m2-name # LuaM-locale
+  description: vessel-archon-m2-desc # LuaM-locale
+  limit: 2
+  price: 135000
+  purchasable: false # voucher only
+  category: Medium
+  group: Ussp
+  access: USSP
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/USSP/archon_m2.yml
+  guidebookPage: null
+  class:
+  - Corvette
+  - Brawler
+  engine:
+  - AME
+
+- type: gameMap
+  id: archon_m2
+  mapName: 'VTL_Archon-M2'
+  mapPath: /SharedMaps/_LuaM/Shuttles/USSP/archon_m2.yml
+  minPlayers: 0
+  stations:
+    archon_m2:
+      stationProto: StandardFrontierVessel
+      gridComponents:
+      - type: VesselInfo
+        description: "Тяжёлый штурмовой корабль модификации M2."
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Archon-M2 USSP{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            USSPSergeant: [ 0, 0]
+            USSPRifleman: [ 0, 0]

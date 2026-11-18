@@ -42,7 +42,7 @@
   - AutosurgeonWaterInjectorRecipe # LuaM: USSP service implants
   - AutosurgeonBeerInjectorRecipe # LuaM: USSP service implants
   - AutosurgeonVodkaInjectorRecipe # LuaM: USSP service implants
-  
+
 - type: latheRecipePack
   id: MonoUSSPArmorDynamic
   recipes:
@@ -60,9 +60,13 @@
   - ShipVoucherUsspDrakon
   - ShipVoucherUsspTayfun
   - ShipVoucherUsspBuran
+  # LuaM-start:
+  - ShipVoucherUsspDefiant
+  - ShipVoucherUsspArchonM2
+  # LuaM-end.
 
 - type: latheRecipePack
   id: MonoUSSPStatic
   recipes:
   - USSPTechfabMachineCircuitboard
-  - ShipVoucherUsspT0Recipe
+  # - ShipVoucherUsspT0Recipe  # coment bay LuaM

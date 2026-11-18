@@ -1,0 +1,40 @@
+- type: vessel
+  id: defiant
+  parent: BaseVesselIFFDisabled
+  name: vessel-defiant-name # LuaM-locale
+  description: vessel-defiant-desc # LuaM-locale
+  limit: 2
+  price: 450000
+  purchasable: false # voucher only
+  category: Large
+  group: Ussp
+  access: USSP
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/USSP/defiant.yml
+  guidebookPage: null
+  class:
+  - Frigate
+  - Brawler
+  engine:
+  - AME
+
+- type: gameMap
+  id: defiant
+  mapName: 'Defiant'
+  mapPath: /SharedMaps/_LuaM/Shuttles/USSP/defiant.yml
+  minPlayers: 0
+  stations:
+    defiant:
+      stationProto: StandardFrontierVessel
+      gridComponents:
+      - type: VesselInfo
+        description: "Тяжёлый крейсер дальнего радиуса действия проекта Э-74205."
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Defiant USSP{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            USSPSergeant: [ 0, 0 ]
+            USSPRifleman: [ 0, 0 ]
