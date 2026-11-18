@@ -6,7 +6,7 @@
   productEntity: JumppackpdvFilled
   icon: { sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi, state: icon }
   cost:
-    Doubloon: 350
+    Doubloon: 250
   categories:
     - UplinkPirateUtility
   conditions:

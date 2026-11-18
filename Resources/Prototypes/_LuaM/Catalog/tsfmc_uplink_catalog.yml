@@ -6,7 +6,7 @@
   productEntity: JumppacktsfFilled
   icon: { sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi, state: icon }
   cost:
-    FederationMilitaryCredit: 350
+    FederationMilitaryCredit: 250
   categories:
     - UplinkSecurityUtility
   conditions:
