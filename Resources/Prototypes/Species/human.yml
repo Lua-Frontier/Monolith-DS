@@ -2,6 +2,7 @@
   id: Human
   name: species-name-human
   roundStart: true
+  bonusTraitPoints: 2 # LuaM
   prototype: MobHuman
   sprites: MobHumanSprites
   markingLimits: MobHumanMarkingLimits

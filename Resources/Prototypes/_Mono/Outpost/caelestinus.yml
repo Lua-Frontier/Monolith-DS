@@ -4,7 +4,7 @@
   mapPath: /Maps/_LuaM/POI/caelestinus_centralLuaM.yml # LuaM /Maps/_Mono/POI/caelestinus_central.yml > /Maps/_LuaM/POI/caelestinus_centralLuaM.yml
   minPlayers: 0
   maxPlayers: 100
-  randomRotation: true
+  randomRotation: false # LuaM: true > false, the station always faces the same way
   maxRandomOffset: 0
   stations:
     Frontier:

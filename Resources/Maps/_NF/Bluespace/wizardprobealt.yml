@@ -2475,15 +2475,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ComputerTabletopIFF
-  entities:
-  - uid: 2
-    components:
-    - type: MetaData
-      name: damaged IFF computer
-    - type: Transform
-      pos: -0.5,1.5
-      parent: 1
 - proto: ComputerTabletopRadar
   entities:
   - uid: 563

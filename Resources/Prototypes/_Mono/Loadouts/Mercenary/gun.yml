@@ -23,6 +23,8 @@
   - MercenaryMercLaserCarbineLoadout # LuaM
   - MercenaryEnergyGunLoadout
   - MercenaryLeverActionloadout
+  - MercenaryPlasteelSwordLoadout # LuaM
+  - MercenaryBreachingHammerLoadout # LuaM
 
 - type: loadoutGroup
   id: MercenaryPistol

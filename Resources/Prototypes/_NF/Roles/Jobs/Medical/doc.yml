@@ -13,6 +13,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   alternateRequirementSets: # mono
     longerPlaytimeLessSec: # mono
     - !type:OverallPlaytimeRequirement # mono
@@ -21,6 +22,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: DocGear
   alwaysUseSpawner: true
   assignedCompany: MD

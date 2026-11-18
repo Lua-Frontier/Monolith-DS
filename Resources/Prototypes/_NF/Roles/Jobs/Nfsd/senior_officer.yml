@@ -13,6 +13,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: SeniorOfficerGear
   icon: JobIconSergeant
   supervisors: job-supervisors-sheriff

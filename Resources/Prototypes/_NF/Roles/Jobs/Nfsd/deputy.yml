@@ -10,6 +10,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: DeputyGear
   icon: JobIconDeputy
   supervisors: job-supervisors-sergeant

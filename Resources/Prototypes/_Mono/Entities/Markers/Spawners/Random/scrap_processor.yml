@@ -206,7 +206,7 @@
     - id: StationMapCircuitboard
     - id: StationRecordsComputerCircuitboard
     #Shittle
-    - id: ComputerIFFCircuitboard
+    # - id: ComputerIFFCircuitboard # LuaM: only VG and Syndicate ships have this console
     - id: GunneryControlComputerCircuitboard
     - id: GyroscopeMachineCircuitboard
     - id: MachineDriveCTLA25Circuitboard

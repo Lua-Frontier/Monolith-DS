@@ -65,6 +65,12 @@ public sealed partial class PointOfInterestPrototype : IPrototype, IInheritingPr
     public int PositionY { get; private set; } = 0;
 
     /// <summary>
+    ///     LuaM: whether the grid gets a random rotation. If false, it keeps the rotation of its map file.
+    /// </summary>
+    [DataField]
+    public bool RandomRotation { get; private set; } = true;
+
+    /// <summary>
     ///     Components to be added to any spawned grids.
     /// </summary>
     [DataField]

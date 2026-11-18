@@ -1,3 +1,4 @@
+using Content.Server._LuaM.Traits; // LuaM
 using Content.Server._LuaM.Body; // LuaM
 using Content.Server.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -99,9 +100,22 @@ namespace Content.Server.Body.Systems
                 if (_gameTiming.CurTime < metab.NextUpdate)
                     continue;
 
-                metab.NextUpdate += metab.UpdateInterval;
+                metab.NextUpdate += GetUpdateInterval(uid, metab); // LuaM: UpdateInterval > GetUpdateInterval
                 TryMetabolize((uid, metab));
             }
+        }
+
+        // LuaM: a trait can speed up the organs working on the reagents in the blood
+        private TimeSpan GetUpdateInterval(EntityUid uid, MetabolizerComponent metab)
+        {
+            if (metab.SolutionOnBody
+                && _organQuery.CompOrNull(uid)?.Body is { } body
+                && TryComp<MetabolismSpeedModifierComponent>(body, out var modifier))
+            {
+                return metab.UpdateInterval / modifier.RateMultiplier;
+            }
+
+            return metab.UpdateInterval;
         }
 
         private void TryMetabolize(Entity<MetabolizerComponent, OrganComponent?, SolutionContainerManagerComponent?> ent)

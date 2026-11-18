@@ -16,6 +16,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: BailiffGear
   icon: JobIconTSFCaptain
   supervisors: job-supervisors-sheriff

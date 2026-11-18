@@ -39,12 +39,12 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 25
+        damage: 75 # LuaM: 25 > 75, explosives are 3x tougher
       behaviors:
       - !type:ExplodeBehavior
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 150 # LuaM: 50 > 150, explosives are 3x tougher
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]

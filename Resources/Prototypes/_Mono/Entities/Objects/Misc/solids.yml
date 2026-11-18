@@ -41,6 +41,16 @@
           collection: GlassBreak
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # LuaM-start: the crystal rots away in 2 minutes unless it is kept in a fridge
+  - type: Perishable
+    rotAfter: 115 # the last 5 seconds are the first tick of the rotting itself
+    molsPerSecondPerUnitMass: 0
+  - type: RotInto # no entity, nothing is left of it
+    stage: 0
+  - type: Tag
+    tags:
+    - FentanylCrystal # fits in smart fridges
+  # LuaM-end
   - type: PirateBountyItem
     id: FentanylCrystal
   - type: ItemTax # Mono

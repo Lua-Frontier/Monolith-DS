@@ -1,11 +1,11 @@
-- type: trait
-  id: LuaMArcanAccent
-  name: trait-luam-arcan-accent-name
-  description: trait-luam-arcan-accent-desc
-  category: SpeechTraits
-  cost: 1
-  components:
-  - type: ArcanAccent
+# - type: trait
+#   id: LuaMArcanAccent
+#   name: trait-luam-arcan-accent-name
+#   description: trait-luam-arcan-accent-desc
+#   category: SpeechTraits
+#   cost: 1
+#   components:
+#   - type: ArcanAccent
 
 - type: trait
   id: LuaMTacticalAccent

@@ -10,7 +10,7 @@
     AmmoTechFabFlatpack: 4294967295 # LuaM: Infinite
     NFHolopadShipFlatpack: 4294967295 # Infinite
     # LaserDrillFlatpack: 4294967295 # Infinite - Mono
-    ComputerIFFFlatpack: 4294967295 # Infinite - Mono
+    # ComputerIFFFlatpack: 4294967295 # Infinite - Mono # LuaM: only VG and Syndicate ships have this console
     ResearchAndDevelopmentServerMercFlatpack: 4294967295 # Mono: infinite
     ComputerResearchAndDevelopmentFlatpack: 4294967295 # Mono: infinite
     FTLDriveFlatpack: 4294967295 # Infinite

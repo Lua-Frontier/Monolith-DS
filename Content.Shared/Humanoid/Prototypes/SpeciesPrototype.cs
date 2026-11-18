@@ -103,6 +103,12 @@ public sealed partial class SpeciesPrototype : IPrototype
     public ProtoId<LocalizedDatasetPrototype> LastNames { get; private set; } = "NamesLast";
 // LuaM-end.
 
+    /// <summary>
+    ///     LuaM: extra trait points in the categories that allow a species bonus.
+    /// </summary>
+    [DataField]
+    public int BonusTraitPoints { get; private set; }
+
     [DataField]
     public SpeciesNaming Naming { get; private set; } = SpeciesNaming.FirstLast;
 

@@ -13,6 +13,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   alternateRequirementSets:
     longerPlaytimeLessSec:
     - !type:OverallPlaytimeRequirement
@@ -21,6 +22,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: NFDetectiveGear
   icon: JobIconNFDetective
   supervisors: job-supervisors-bailiff

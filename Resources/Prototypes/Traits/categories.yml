@@ -15,4 +15,5 @@
 - type: traitCategory
   id: Physical
   name: trait-category-physical
-  maxTraitPoints: 6
+  maxTraitPoints: 8 # LuaM: 6 > 8
+  speciesBonusPoints: true # LuaM

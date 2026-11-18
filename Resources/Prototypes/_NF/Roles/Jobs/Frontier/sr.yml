@@ -8,18 +8,21 @@
       time: 360000 # 100 hrs
     - !type:RoleTimeRequirement
       role: JobSecurityGuard
-      time: 18000 # 5 hrs as security guard - mono
+      time: 36000 # LuaM: 18000 > 36000, 10 hrs as security guard instead of the TSF and Vanguard hours
+    # LuaM-start: only the security guard hours are required now
     # Factions are required here because Overseer needs to actually understand how both factions work.
-    - !type:RoleTimeRequirement
-      role: JobPirate
-      time: 36000 # 10 hours
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 36000 # 10 hours
+    # - !type:RoleTimeRequirement
+    #   role: JobPirate
+    #   time: 36000 # 10 hours
+    # - !type:DepartmentTimeRequirement
+    #   department: Security
+    #   time: 36000 # 10 hours
+    # LuaM-end
     - !type:TraitsRequirement # LuaM: heretics can't take this job
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   whitelisted: false
   startingGear: SrGear
   alwaysUseSpawner: true

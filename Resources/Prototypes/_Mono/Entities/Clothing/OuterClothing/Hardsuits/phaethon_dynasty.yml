@@ -69,14 +69,14 @@
         Blunt: 0.7
         Slash: 0.75
         Piercing: 0.35
-        Heat: 0.75
+        Heat: 0.4 # LuaM: 0.75 > 0.4
         Radiation: 0.7
         Caustic: 0.9
   - type: ClothingSpeedModifier
     walkModifier: 0.8 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
     sprintModifier: 0.8 # LuaM: 0.9 > 0.8, TSF and PDV suits are 10% slower
   - type: ExplosionResistance
-    damageCoefficient: 0.7
+    damageCoefficient: 0.4 # LuaM: 0.7 > 0.4
   - type: Tag
     tags:
     - RogueHardsuit
@@ -252,6 +252,8 @@
   name: "PDV CV-280 'Basilisk' combat hardsuit"
   description: A combat hardsuit designed by the Phaethon Dynasty for Tarkhans. Utilizes an imperfect nanolaminate composition like the CV-67 to save weight, and an installed hydraulic rig for more mobility, and painted in a royal Tarkhan white palette. A rare sight.
   components:
+  - type: SpeedTieredFootsteps # LuaM: heavy steps
+    forcedTier: Heavy
   - type: CritInjectorClothing # LuaM
     solution:
       reagents:
@@ -267,17 +269,17 @@
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.3
+    damageCoefficient: 0.2 # LuaM: 0.3 > 0.2
   - type: FireProtection
     reduction: 0.8
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.55
-        Slash: 0.45
-        Piercing: 0.375
+        Blunt: 0.35 # LuaM: 0.55 > 0.35
+        Slash: 0.35 # LuaM: 0.45 > 0.35
+        Piercing: 0.35 # LuaM: 0.375 > 0.35
         Shock: 0.95
-        Heat: 0.7
+        Heat: 0.1 # LuaM: 0.7 > 0.1
         Radiation: 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier

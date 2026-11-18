@@ -17,7 +17,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50 # Probably thick cast iron, should be a bit beefy
+        damage: 150 # LuaM: 50 > 150, explosives are 3x tougher | Probably thick cast iron, should be a bit beefy
       behaviors:
       - !type:TriggerBehavior
       - !type:DoActsBehavior

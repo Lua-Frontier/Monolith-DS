@@ -707,7 +707,7 @@ namespace Content.Client.Lobby.UI
                 {
                     category = _prototypeManager.Index<TraitCategoryPrototype>(categoryId);
                     categoryName = Loc.GetString(category.Name);
-                    maxTraitPoints = category.MaxTraitPoints;
+                    maxTraitPoints = Profile?.GetMaxTraitPoints(category, _prototypeManager) ?? category.MaxTraitPoints; // LuaM: species bonus
                 }
                 else
                 {
@@ -799,7 +799,7 @@ namespace Content.Client.Lobby.UI
                                 }
 
                                 // Check if adding this trait would exceed the maximum points
-                                if (currentPoints + trait.Cost > category.MaxTraitPoints)
+                                if (currentPoints + trait.Cost > maxTraitPoints)
                                 {
                                     // Reset the selection without triggering the event
                                     selector.Preference = false;
@@ -820,7 +820,19 @@ namespace Content.Client.Lobby.UI
                         }
                         else
                         {
-                            Profile = Profile?.WithoutTraitPreference(trait.ID, _prototypeManager);
+                            // LuaM-start: a perk giving points stays while other perks are paid with them,
+                            // otherwise the most expensive ones would silently be lost on save
+                            var withoutTrait = Profile?.WithoutTraitPreference(trait.ID, _prototypeManager);
+                            if (withoutTrait != null
+                                && withoutTrait.GetValidTraits(withoutTrait.TraitPreferences, _prototypeManager).Count
+                                < withoutTrait.TraitPreferences.Count)
+                            {
+                                selector.Preference = true;
+                                return;
+                            }
+
+                            Profile = withoutTrait;
+                            // LuaM-end
                         }
 
                         SetDirty();
@@ -844,7 +856,7 @@ namespace Content.Client.Lobby.UI
                             // Find and update the point counter label
                             if (categoryButton.TraitsContainer.ChildCount >= 2)
                             {
-                                var maxPoints = category.MaxTraitPoints.Value;
+                                var maxPoints = maxTraitPoints.GetValueOrDefault();
                                 float pointsLeft = Math.Max(0, maxPoints - currentPoints);
                                 if (categoryButton.TraitsContainer.GetChild(0) is ProgressBar progressBar)
                                 {
@@ -876,12 +888,12 @@ namespace Content.Client.Lobby.UI
                                 {
                                     pointsLabel.Text = Loc.GetString("humanoid-profile-editor-trait-count-hint",
                                         ("current", pointsLeft),
-                                        ("max", category.MaxTraitPoints));
+                                        ("max", maxPoints));
                                 }
                             }
 
                             // Update all trait colors based on the new point total
-                            RefreshTraitColors(categoryButton, category, currentPoints);
+                            RefreshTraitColors(categoryButton, maxTraitPoints, currentPoints); // LuaM: category > maxTraitPoints
                         }
                     };
                     selectors.Add(selector);
@@ -890,7 +902,7 @@ namespace Content.Client.Lobby.UI
                 // Selection counter
                 if (category is { MaxTraitPoints: >= 0 })
                 {
-                    var maxPoints = category.MaxTraitPoints.Value;
+                    var maxPoints = maxTraitPoints.GetValueOrDefault();
                     var progressBar = new ProgressBar
                     {
                         MinHeight = 4,
@@ -927,7 +939,7 @@ namespace Content.Client.Lobby.UI
 
                     categoryButton.AddTrait(new Label
                     {
-                        Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", pointsLeft), ("max", category.MaxTraitPoints)),
+                        Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", pointsLeft), ("max", maxPoints)),
                         FontColorOverride = Color.Gray
                     });
                 }
@@ -942,12 +954,12 @@ namespace Content.Client.Lobby.UI
                     if (category is { MaxTraitPoints: >= 0 })
                     {
                         // If this trait would exceed the limit when added to current selection
-                        if (!selector.Preference && selector.Cost + selectionCount > category.MaxTraitPoints)
+                        if (!selector.Preference && selector.Cost + selectionCount > maxTraitPoints)
                         {
                             selector.SetUnavailable(true);
                         }
                         // If this trait is already selected but would exceed the limit if added now
-                        else if (selector.Preference && selectionCount > category.MaxTraitPoints)
+                        else if (selector.Preference && selectionCount > maxTraitPoints)
                         {
                             // This shouldn't happen normally, but just in case
                             selector.SetUnavailable(true);
@@ -962,7 +974,7 @@ namespace Content.Client.Lobby.UI
         }
 
         // Helper method to refresh trait colors when points change
-        private void RefreshTraitColors(TraitCategoryButton categoryButton, TraitCategoryPrototype category, int currentPoints)
+        private void RefreshTraitColors(TraitCategoryButton categoryButton, int? maxTraitPoints, int currentPoints) // LuaM: category > maxTraitPoints
         {
             // Skip the first child which is the points label
             for (int i = 1; i < categoryButton.TraitsContainer.ChildCount; i++)
@@ -974,12 +986,12 @@ namespace Content.Client.Lobby.UI
                     selector.SetUnavailable(false);
 
                     // If this trait would exceed the limit when added to current selection
-                    if (!selector.Preference && selector.Cost + currentPoints > category.MaxTraitPoints)
+                    if (!selector.Preference && selector.Cost + currentPoints > maxTraitPoints)
                     {
                         selector.SetUnavailable(true);
                     }
                     // Enable traits that can now be selected
-                    else if (!selector.Preference && selector.Cost + currentPoints <= category.MaxTraitPoints)
+                    else if (!selector.Preference && selector.Cost + currentPoints <= maxTraitPoints)
                     {
                         selector.SetUnavailable(false);
                     }
@@ -1826,6 +1838,15 @@ namespace Content.Client.Lobby.UI
                     || trait.SpeciesWhitelist.Count > 0 && !trait.SpeciesWhitelist.Contains(species)) // LuaM
                     toRemove.Add(traitId);
             }
+
+            // LuaM-start: a species with fewer trait points can't keep everything, same choice as the server
+            var validTraits = Profile.GetValidTraits(Profile.TraitPreferences, _prototypeManager);
+            foreach (var traitId in Profile.TraitPreferences)
+            {
+                if (!validTraits.Contains(traitId) && !toRemove.Contains(traitId))
+                    toRemove.Add(traitId);
+            }
+            // LuaM-end
 
             foreach (var traitId in toRemove)
             {

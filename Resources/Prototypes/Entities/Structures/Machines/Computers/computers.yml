@@ -348,6 +348,9 @@
   description: Allows you to control the IFF characteristics of this vessel.
   components:
   - type: IFFConsole
+    allowedShipGroups: # LuaM: only VG and Syndicate ships
+    - Viper
+    - Syndicate
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -380,6 +383,7 @@
   description: Allows you to control the IFF and stealth characteristics of this vessel.
   components:
   - type: IFFConsole
+    allowedShipGroups: [] # LuaM: not bound to shipyard ships
     allowedFlags:
       - Hide
       - HideLabel

@@ -27,12 +27,12 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 10
+        damage: 30 # LuaM: 10 > 30, explosives are 3x tougher
       behaviors:
       - !type:TimerStartBehavior
     - trigger:
         !type:DamageTrigger
-        damage: 800
+        damage: 2400 # LuaM: 800 > 2400, explosives are 3x tougher
       behaviors:
       - !type:TriggerBehavior
       - !type:DoActsBehavior
@@ -131,12 +131,12 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 10
+        damage: 30 # LuaM: 10 > 30, explosives are 3x tougher
       behaviors:
       - !type:TimerStartBehavior
     - trigger:
         !type:DamageTrigger
-        damage: 45
+        damage: 135 # LuaM: 45 > 135, explosives are 3x tougher
       behaviors:
       - !type:TriggerBehavior
       - !type:DoActsBehavior
@@ -305,7 +305,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 150 # LuaM: 50 > 150, explosives are 3x tougher
       behaviors:
       - !type:TriggerBehavior
       - !type:DoActsBehavior
@@ -339,7 +339,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 150 # LuaM: 50 > 150, explosives are 3x tougher
       behaviors:
       - !type:TriggerBehavior
       - !type:DoActsBehavior
