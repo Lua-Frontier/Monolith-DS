@@ -1,0 +1,10 @@
+- type: construction
+  name: double-bladed energy sword
+  id: EnergySwordDouble
+  graph: EnergySwordDouble
+  startNode: start
+  targetNode: energySwordDouble
+  category: construction-category-weapons
+  description: A variant of the classic Energy Sword with blades on both ends.
+  icon: { sprite: Objects/Weapons/Melee/e_sword_double.rsi, state: e_sword_double }
+  objectType: Item

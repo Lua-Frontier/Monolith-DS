@@ -1,4 +1,5 @@
 using Content.Shared.Storage;
+using Content.Shared.Whitelist; // LuaM
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -40,6 +41,28 @@ public sealed partial class SafetyDepositBoxComponent : Component
     /// </summary>
     [DataField(required:true), ViewVariables(VVAccess.ReadWrite)]
     public int Cost;
+
+    // LuaM-start
+    /// <summary>
+    /// Exact item prototypes that can be stored even when the storage blacklist matches them.
+    /// Prototypes inheriting from these are not exempt.
+    /// </summary>
+    [DataField]
+    public HashSet<EntProtoId> BlacklistExceptions = new();
+
+    /// <summary>
+    /// Items matching this are refused for holding reagents, unless they are clothing that passes
+    /// <see cref="ClothingReagentBlacklist"/>.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? ReagentBlacklist;
+
+    /// <summary>
+    /// Clothing matching this is refused because reagents can be put into it or taken out of it.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? ClothingReagentBlacklist;
+    // LuaM-end
 }
 
 [Serializable, NetSerializable]

@@ -1,6 +1,8 @@
 using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._LuaM.SafetyDepositBox; // LuaM
+using Content.Shared._WF.SafetyDepositBox.Components; // LuaM
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
@@ -68,6 +70,7 @@ public abstract partial class SharedStorageSystem : EntitySystem
     [Dependency] protected SharedTransformSystem TransformSystem = default!;
     [Dependency] protected SharedUserInterfaceSystem UI = default!;
     [Dependency] protected UseDelaySystem UseDelay = default!;
+    [Dependency] private   SafetyDepositRulesSystem _safetyDeposit = default!; // LuaM
 
     private EntityQuery<ItemComponent> _itemQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -1040,8 +1043,14 @@ public abstract partial class SharedStorageSystem : EntitySystem
             return false;
         }
 
+        // LuaM-start: safety deposit boxes have their own rules on top of the blacklist
+        var blacklisted = TryComp<SafetyDepositBoxComponent>(uid, out var depositBox)
+            ? !_safetyDeposit.CanStore(depositBox, storageComp.Blacklist, insertEnt)
+            : _whitelistSystem.IsBlacklistPass(storageComp.Blacklist, insertEnt);
+        // LuaM-end
+
         if (_whitelistSystem.IsWhitelistFail(storageComp.Whitelist, insertEnt) ||
-            _whitelistSystem.IsBlacklistPass(storageComp.Blacklist, insertEnt))
+            blacklisted) // LuaM: IsBlacklistPass > blacklisted
         {
             reason = "comp-storage-invalid-container";
             return false;

@@ -17,7 +17,7 @@
     sprite: _Mono/Objects/Weapons/Guns/Rifles/molot_inhands_32x.rsi
   - type: GunWieldBonus
     minAngle: -31 # LuaM: -31 > -30
-    maxAngle: -46 # LuaM: -46 > -60
+    maxAngle: -64 # LuaM: -60 > -64, no spread when wielded
   - type: Gun
     fireRate: 7
     projectileSpeed: 120

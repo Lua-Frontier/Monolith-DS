@@ -797,6 +797,8 @@ construction-WelderSwordIndustrial = industrial welder energy sword
 construction-WelderSwordIndustrial-desc = Roughly converted from a welding tool, this energy sword hums an unstable flame. It looks like it's about to fall apart.
 construction-WelderSwordExperimental = experimental welder energy sword
 construction-WelderSwordExperimental-desc = Roughly converted from a welding tool, this energy sword hums an unstable flame. It looks like it's about to fall apart.
+construction-EnergySwordDouble = double-bladed energy sword
+construction-EnergySwordDouble-desc = A variant of the classic Energy Sword with blades on both ends.
 
 construction-FishingRodMakeshift = makeshift fishing rod
 construction-FishingRodMakeshift-desc = Probably would be hard to catch a fish using that.

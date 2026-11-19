@@ -107,6 +107,7 @@
   - type: Tag  # Mono
     tags:
     - EnergySword
+    - EnergySwordCrafting # LuaM: ingredient of the double-bladed energy sword
   - type: Reflect
     reflectProb: 0.35 #LuaM 0.5 > 0.35
     reflects:
@@ -374,6 +375,11 @@
     spread: 75
   - type: PirateBountyItem # Mono
     id: TSFEnergyWeapon
+  # LuaM-start: crafted from two energy swords
+  - type: Construction
+    graph: EnergySwordDouble
+    node: energySwordDouble
+  # LuaM-end
 
 # Item will look weird in handslot. Will need to adjust handstorage visuals in a future PR
 - type: entity

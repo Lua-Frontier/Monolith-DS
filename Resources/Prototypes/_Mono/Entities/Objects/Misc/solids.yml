@@ -60,6 +60,6 @@
       BlackMarket: 0.25
   - type: ExtendDescription
     descriptionList:
-    - description: extend-desc-funds-pdv # LuaM
+    - description: extend-desc-fine-tsf-reward-pdv # LuaM
       color: "#4f94ad"
       requireDetailRange: true

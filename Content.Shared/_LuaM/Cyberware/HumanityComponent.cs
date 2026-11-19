@@ -13,7 +13,7 @@ namespace Content.Shared._LuaM.Cyberware;
 public sealed partial class HumanityComponent : Component
 {
     [DataField]
-    public float MaxHumanity = 6f;
+    public float MaxHumanity = 4f;
 
     /// <summary>
     /// Extra humanity by species, a racial feature.

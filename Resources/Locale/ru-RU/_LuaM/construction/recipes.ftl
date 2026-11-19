@@ -849,6 +849,8 @@ construction-WelderSwordIndustrial = { ent-EnergySwordWelderIndustrial }
 construction-WelderSwordIndustrial-desc = { ent-EnergySwordWelderIndustrial.desc }
 construction-WelderSwordExperimental = { ent-EnergySwordWelderExperimental }
 construction-WelderSwordExperimental-desc = { ent-EnergySwordWelderExperimental.desc }
+construction-EnergySwordDouble = { ent-EnergySwordDouble }
+construction-EnergySwordDouble-desc = { ent-EnergySwordDouble.desc }
 
 construction-FishingRodMakeshift = { ent-FishingRodMakeshift }
 construction-FishingRodMakeshift-desc = { ent-FishingRodMakeshift.desc }
