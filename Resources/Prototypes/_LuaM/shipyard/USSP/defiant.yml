@@ -1,6 +1,6 @@
 - type: vessel
   id: defiant
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel
   name: vessel-defiant-name # LuaM-locale
   description: vessel-defiant-desc # LuaM-locale
   limit: 2

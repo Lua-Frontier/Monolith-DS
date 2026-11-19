@@ -1,6 +1,6 @@
 - type: vessel
   id: archon_m2
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel
   name: vessel-archon-m2-name # LuaM-locale
   description: vessel-archon-m2-desc # LuaM-locale
   limit: 2
