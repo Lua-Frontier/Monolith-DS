@@ -50,7 +50,8 @@
   - type: GridVehicleMover
     maxSpeed: 10
     weightClass: Weak
-    maxRotationSpeedDegrees: 190
+    acceleration: 4
+    maxRotationSpeedDegrees: 146
     driftMinSpeed: 9
     driftGripDegrees: 150
   - type: VehicleSeats
