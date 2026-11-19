@@ -25,7 +25,6 @@
     activeIfWorn: true
   - type: Jetpack
     acceleration: 1.5
-    detectionrange: 1024
     weightlessModifier: 2.4
     moleUsage: 0.01
 
