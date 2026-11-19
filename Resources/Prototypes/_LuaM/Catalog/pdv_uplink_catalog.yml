@@ -4,7 +4,7 @@
   name:  uplink-pdv-jumppack-name
   description: uplink-pdv-jumppack-desc
   productEntity: JumppackpdvFilled
-  icon: { sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi, state: icon }
+  icon: { sprite: _LuaM/Objects/Tanks/jumppacks/pdv.rsi, state: icon }
   cost:
     Doubloon: 250
   categories:
