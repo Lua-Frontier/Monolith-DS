@@ -25,13 +25,20 @@
   - type: BonusMeleeDamage
     damageModifierSet:
       coefficients:
-        Blunt: 1.45 # LuaM: 1.2 > 1.45
-        Slash: 1.45 # LuaM: 1.2 > 1.45
-        Heat: 1.45 # LuaM add
+        Blunt: 1.2 # LuaM: 1.2 > 1.45 > 1.2
+        Slash: 1.2 # LuaM: 1.2 > 1.45 > 1.2
+        Heat: 1.2 # LuaM add
         Piercing: 1.2
         Asphyxiation: 1.2
   - type: Damageable
     damageModifierSet: Oni
+  # LuaM-start: 15 more health than other species
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      115: Critical
+      215: Dead
+  # LuaM-end
   - type: Body
     prototype: Human
   - type: Fixtures
