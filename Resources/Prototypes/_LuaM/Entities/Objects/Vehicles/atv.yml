@@ -4,6 +4,10 @@
   name: ATV
   description: All-Tile Vehicle. A two-seat quad bike with a rack for a bag. Hit a wall at speed and both of you are going over the handlebars.
   components:
+  - type: LuaMWaterVehicle
+    foam:
+      sprite: _LuaM/Effects/Water/vehicle_foam32.rsi
+      state: atv
   - type: Sprite
     drawdepth: Objects
     noRot: true
@@ -46,7 +50,9 @@
   - type: GridVehicleMover
     maxSpeed: 10
     weightClass: Weak
-    driftMinSpeed: 6.5
+    maxRotationSpeedDegrees: 190
+    driftMinSpeed: 9
+    driftGripDegrees: 150
   - type: VehicleSeats
     seats:
     - Driver

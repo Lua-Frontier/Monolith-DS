@@ -17,6 +17,15 @@ public sealed class PerformanceCVars
     public static readonly CVarDef<int> DeviceNetGuardMaxBacklog =
         CVarDef.Create("luam.device_net_guard.max_backlog", 200000, CVar.SERVERONLY);
 
+    public static readonly CVarDef<float> SlowTickThresholdMs =
+        CVarDef.Create("luam.slow_tick.threshold_ms", 250f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<int> SlowTickTop =
+        CVarDef.Create("luam.slow_tick.top", 20, CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> SlowTickProfile =
+        CVarDef.Create("luam.slow_tick.profile", true, CVar.SERVERONLY);
+
     public static readonly CVarDef<float> ChunkUnloadGrace =
         CVarDef.Create("luam.worldgen.unload_grace", 60f, CVar.SERVERONLY);
 

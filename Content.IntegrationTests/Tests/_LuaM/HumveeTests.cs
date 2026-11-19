@@ -340,6 +340,52 @@ public sealed class HumveeTests
         await pair.CleanReturnAsync();
     }
 
+    [Test]
+    public async Task DriverSeatSwitchWaitsForEngineStop()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var buckle = server.System<SharedBuckleSystem>();
+        var seats = server.System<VehicleSeatsSystem>();
+        var timing = server.ResolveDependency<IGameTiming>();
+        var map = await pair.CreateTestMap();
+
+        EntityUid vehicle = default;
+        EntityUid driver = default;
+        TimeSpan exitDelay = default;
+
+        await server.WaitPost(() =>
+        {
+            vehicle = entMan.SpawnEntity("LuaMVehicleHumvee", new MapCoordinates(Vector2.Zero, map.MapId));
+            driver = Seat(entMan, buckle, vehicle, 0);
+        });
+
+        await pair.RunTicksSync(timing.TickRate);
+
+        await server.WaitAssertion(() =>
+        {
+            var engine = entMan.GetComponent<VehicleEngineComponent>(vehicle);
+            engine.EngineOn = true;
+            exitDelay = engine.ExitDelay;
+
+            seats.RequestSwitchSeat((vehicle, entMan.GetComponent<VehicleSeatsComponent>(vehicle)), driver, 1);
+            Assert.That(entMan.GetComponent<VehicleOccupantComponent>(driver).Seat, Is.EqualTo(0));
+            Assert.That(engine.Exiting, Is.EqualTo(driver));
+            Assert.That(buckle.TryUnbuckle(driver, driver), Is.False);
+        });
+
+        await pair.RunTicksSync((int) (timing.TickRate * exitDelay.TotalSeconds) + 5);
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(entMan.GetComponent<BuckleComponent>(driver).Buckled, Is.True);
+            Assert.That(entMan.GetComponent<VehicleOccupantComponent>(driver).Seat, Is.EqualTo(1));
+            Assert.That(entMan.GetComponent<VehicleSeatsComponent>(vehicle).Driver, Is.Null);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
     [TestCase("MobHuman")]
     [TestCase("MobVoidBaseTSFD")]
     public async Task RamKnocksDownAndThrowsMob(string proto)

@@ -6,6 +6,7 @@
 
 using System.Numerics;
 using Content.Shared._LuaM.Vehicles.Components;
+using Content.Shared._LuaM.Water;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
 using Content.Shared.Ghost;
@@ -42,6 +43,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     [Dependency] private StandingStateSystem _standing = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private LuaMWaterSystem _water = default!;
 
     private const float FixedStep = 1f / 60f;
     private const int MaxStepsPerFrame = 6;
@@ -243,6 +245,11 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             var accel = steering == 0f ? mover.RotationDecelerationDegrees : mover.RotationAccelerationDegrees;
             mover.AngularVelocityDegrees = StepTowards(mover.AngularVelocityDegrees, target, accel * dt);
         }
+        else if (mover.PivotRotationSpeedDegrees > 0f && !handbrake)
+        {
+            var accel = steering == 0f ? mover.RotationDecelerationDegrees : mover.RotationAccelerationDegrees;
+            mover.AngularVelocityDegrees = StepTowards(mover.AngularVelocityDegrees, steering * mover.PivotRotationSpeedDegrees, accel * dt);
+        }
         else
         {
             mover.AngularVelocityDegrees = 0f;
@@ -428,6 +435,10 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             if (ratio < mover.FullSpeedIntegrityFraction && mover.FullSpeedIntegrityFraction > 0f)
                 speed *= MathHelper.Lerp(mover.SpeedAtZeroIntegrity, 1f, ratio / mover.FullSpeedIntegrityFraction);
         }
+
+        // -- В воде колёсная техника вязнет: чем легче машина, тем сильнее, набранная скорость гасится торможением
+        if (!HasComp<HoverVehicleComponent>(uid))
+            speed *= _water.GetVehicleSpeedFactor(uid, mover.WeightClass);
 
         return speed;
     }

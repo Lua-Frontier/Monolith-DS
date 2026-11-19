@@ -4,6 +4,10 @@
   name: Kheshig-1 IFV
   description: A mine-resistant infantry fighting vehicle with a roof turret and room for a whole squad.
   components:
+  - type: LuaMWaterVehicle
+    foam:
+      sprite: _LuaM/Effects/Water/vehicle_foam96.rsi
+      state: sppvan
   - type: VehicleEngine
     startSound: /Audio/_LuaM/Vehicles/vehicle_start.ogg
     stopSound: /Audio/_LuaM/Vehicles/vehicle_turned_off.ogg

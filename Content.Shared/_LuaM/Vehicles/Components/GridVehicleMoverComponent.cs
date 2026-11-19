@@ -38,6 +38,10 @@ public sealed partial class GridVehicleMoverComponent : Component
     [DataField]
     public float RotationDecelerationDegrees = 300f;
 
+    // -- Гусеничная техника разворачивается на месте с этой скоростью; 0 — только на ходу, как колёсная
+    [DataField]
+    public float PivotRotationSpeedDegrees;
+
     [DataField]
     public float AlignmentAssistDegrees = 8f;
 

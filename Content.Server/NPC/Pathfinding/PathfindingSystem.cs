@@ -52,6 +52,7 @@ namespace Content.Server.NPC.Pathfinding
         [Dependency] private SharedMapSystem _maps = default!;
         [Dependency] private SharedPhysicsSystem _physics = default!;
         [Dependency] private SharedTransformSystem _transform = default!;
+        [Dependency] private Robust.Shared.Profiling.ProfManager _prof = default!; // LuaM
 
         private readonly Dictionary<ICommonSession, PathfindingDebugMode> _subscribedSessions = new();
 
@@ -109,7 +110,14 @@ namespace Content.Server.NPC.Pathfinding
                 MaxDegreeOfParallelism = _parallel.ParallelProcessCount,
             };
 
-            UpdateGrid(options);
+            // LuaM-start
+            using (_prof.Group("Pathfinding navmesh"))
+            {
+                UpdateGrid(options);
+            }
+
+            using var requestsGroup = _prof.Group("Pathfinding requests");
+            // LuaM-end
             _stopwatch.Restart();
             var amount = Math.Min(PathTickLimit, _pathRequests.Count);
             var results = ArrayPool<PathResult>.Shared.Rent(amount);

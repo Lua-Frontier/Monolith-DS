@@ -21,6 +21,7 @@ public sealed partial class VehicleEngineSystem : EntitySystem
     [Dependency] private SharedBuckleSystem _buckle = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private VehicleSeatsSystem _seats = default!;
     [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
@@ -47,12 +48,44 @@ public sealed partial class VehicleEngineSystem : EntitySystem
             if (engine.Exiting is not { } exiting || now < engine.ExitAt)
                 continue;
 
+            var seat = engine.ExitSeat;
             engine.Exiting = null;
+            engine.ExitSeat = null;
             Dirty(uid, engine);
 
-            if (TryComp<BuckleComponent>(exiting, out var buckle) && buckle.BuckledTo == uid)
+            if (!TryComp<BuckleComponent>(exiting, out var buckle) || buckle.BuckledTo != uid)
+                continue;
+
+            if (seat == null)
+            {
                 _buckle.Unbuckle((exiting, buckle), null);
+                continue;
+            }
+
+            if (!TryComp<VehicleSeatsComponent>(uid, out var seats) || !_seats.SwitchSeat((uid, seats), exiting, seat.Value))
+                Start((uid, engine), exiting);
         }
+    }
+
+    // -- Пересадка с места водителя ждёт глушения так же, как выход, иначе через соседнее место выходили без задержки
+    public bool TryDelaySeatSwitch(EntityUid vehicle, EntityUid driver, int seat)
+    {
+        if (!TryComp<VehicleEngineComponent>(vehicle, out var engine))
+            return false;
+
+        if (engine.Exiting == driver)
+            return true;
+
+        if (!engine.EngineOn)
+            return false;
+
+        Stop((vehicle, engine));
+        engine.Exiting = driver;
+        engine.ExitSeat = seat;
+        engine.ExitAt = _timing.CurTime + engine.ExitDelay;
+        Dirty(vehicle, engine);
+        _popup.PopupClient(Loc.GetString("luam-vehicle-engine-stopping"), vehicle, driver);
+        return true;
     }
 
     public bool CanDrive(VehicleEngineComponent engine)
@@ -76,6 +109,7 @@ public sealed partial class VehicleEngineSystem : EntitySystem
         if (ent.Comp.Exiting == args.Occupant)
         {
             ent.Comp.Exiting = null;
+            ent.Comp.ExitSeat = null;
             Dirty(ent);
         }
 

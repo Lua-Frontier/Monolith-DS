@@ -1,0 +1,18 @@
+light_mode unshaded;
+
+uniform sampler2D SCREEN_TEXTURE;
+uniform sampler2D background;
+uniform highp vec2 originPixels;
+uniform highp vec2 rightPixels;
+uniform highp vec2 forwardPixels;
+
+void fragment() {
+    highp vec2 source = (originPixels + rightPixels * UV.x + forwardPixels * UV.y) * SCREEN_PIXEL_SIZE;
+    if (source.x < 0.0 || source.y < 0.0 || source.x > 1.0 || source.y > 1.0) {
+        discard;
+    }
+    highp vec4 scene = zTextureSpec(SCREEN_TEXTURE, source);
+    highp vec3 space = zTextureSpec(background, source).rgb;
+    highp float coverage = smoothstep(0.004, 0.025, length(scene.rgb - space));
+    COLOR = vec4(scene.rgb, scene.a * coverage);
+}

@@ -2,25 +2,25 @@
   id: NFMobXeno
   parent: [NFMobRestrictions, NFMobFactionlessBase, MobXeno] # Mono edit - faction overwriting fix
   suffix: Frontier
-  categories: [ HideSpawnMenu ]
+#  categories: [ HideSpawnMenu ] # LuaM
 
 - type: entity
   parent: [NFMobRestrictions, NFMobFactionlessBase, MobXenoPraetorian]  # Mono edit - faction overwriting fix
   id: NFMobXenoPraetorian
   suffix: Frontier
-  categories: [ HideSpawnMenu ]
+#  categories: [ HideSpawnMenu ] # LuaM
 
 - type: entity
   parent: [NFMobRestrictions, NFMobFactionlessBase, MobXenoDrone]  # Mono edit - faction overwriting fix
   id: NFMobXenoDrone
   suffix: Frontier
-  categories: [ HideSpawnMenu ]
+#  categories: [ HideSpawnMenu ] # LuaM
 
 - type: entity
   parent: [NFMobRestrictions, NFMobFactionlessBase, MobXenoQueen]  # Mono edit - faction overwriting fix
   id: NFMobXenoQueen
   suffix: Frontier
-  categories: [ HideSpawnMenu ]
+#  categories: [ HideSpawnMenu ] # LuaM
   components:
   - type: ReplacementAccent
     accent: xeno
@@ -42,25 +42,25 @@
   parent: [NFMobRestrictions, NFMobFactionlessBase, MobXenoRavager] # Mono edit - faction overwriting fix
   id: NFMobXenoRavager
   suffix: Frontier
-  categories: [ HideSpawnMenu ]
+#  categories: [ HideSpawnMenu ] # LuaM
 
 - type: entity
   parent: [NFMobRestrictions, NFMobFactionlessBase, MobXenoRunner] # Mono edit - faction overwriting fix
   id: NFMobXenoRunner
   suffix: Frontier
-  categories: [ HideSpawnMenu ]
+#  categories: [ HideSpawnMenu ] # LuaM
 
 - type: entity
   parent: [NFMobRestrictions, NFMobFactionlessBase, MobXenoRouny] # Mono edit - faction overwriting fix
   id: NFMobXenoRouny
   suffix: Frontier
-  categories: [ HideSpawnMenu ]
+#  categories: [ HideSpawnMenu ] # LuaM
 
 - type: entity
   parent: [NFMobRestrictions, NFMobFactionlessBase, MobXenoSpitter] # Mono edit - faction overwriting fix
   id: NFMobXenoSpitter
   suffix: Frontier
-  categories: [ HideSpawnMenu ]
+#  categories: [ HideSpawnMenu ] # LuaM
 
 - type: entity
   parent: [NFMobRestrictions, NFMobSimpleHostileBase, MobPurpleSnake]

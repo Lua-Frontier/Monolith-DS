@@ -1,0 +1,20 @@
+# Ported from Wolfgate (Resources/Textures/_WF/FtlEffects/Shaders), AGPL-3.0-or-later
+- type: shader
+  id: LuaMFtlDeparture
+  kind: source
+  path: "/Textures/_LuaM/Shaders/ftl_departure.swsl"
+
+- type: shader
+  id: LuaMFtlMotion
+  kind: source
+  path: "/Textures/_LuaM/Shaders/ftl_motion.swsl"
+
+- type: shader
+  id: LuaMFtlBackground
+  kind: source
+  path: "/Textures/_LuaM/Shaders/ftl_background.swsl"
+
+- type: shader
+  id: LuaMFtlCopy
+  kind: source
+  path: "/Textures/_LuaM/Shaders/ftl_copy.swsl"

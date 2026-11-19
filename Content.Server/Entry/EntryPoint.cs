@@ -180,11 +180,22 @@ namespace Content.Server.Entry
 
             switch (level)
             {
+                // LuaM-start
+                case ModUpdateLevel.PreEngine:
+                    _sysMan?.GetEntitySystem<_LuaM.Performance.SlowTickReportSystem>().PreEngine();
+                    break;
+
+                case ModUpdateLevel.FramePreEngine:
+                    _sysMan?.GetEntitySystem<_LuaM.Performance.SlowTickReportSystem>().FramePreEngine();
+                    break;
+                // LuaM-end
+
                 case ModUpdateLevel.PostEngine:
                 {
                     _euiManager.SendUpdates();
                     _voteManager.Update();
                     _sysMan?.GetEntitySystem<_LuaM.StateRecovery.GridDeletionHistorySystem>().Dedupe(); // LuaM
+                    _sysMan?.GetEntitySystem<_LuaM.Performance.SlowTickReportSystem>().PostEngine(); // LuaM
                     break;
                 }
 

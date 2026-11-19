@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "drawn by c_quarian (discord)",
+  "size": {
+    "x": 96,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "buggy_chassis",
+      "directions": 4
+    },
+    {
+      "name": "buggy_body",
+      "directions": 4
+    },
+    {
+      "name": "buggy_base",
+      "directions": 4
+    },
+    {
+      "name": "wheels_0",
+      "directions": 4,
+      "delays": [
+        [
+          0.08,
+          0.08,
+          0.08,
+          0.08
+        ],
+        [
+          0.08,
+          0.08,
+          0.08,
+          0.08
+        ],
+        [
+          0.08,
+          0.08,
+          0.08,
+          0.08
+        ],
+        [
+          0.08,
+          0.08,
+          0.08,
+          0.08
+        ]
+      ]
+    },
+    {
+      "name": "wheels_1",
+      "directions": 4
+    },
+    {
+      "name": "buggy_cage",
+      "directions": 4
+    },
+    {
+      "name": "buggy_seats",
+      "directions": 4
+    }
+  ]
+}

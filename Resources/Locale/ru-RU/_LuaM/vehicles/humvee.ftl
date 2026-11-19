@@ -66,3 +66,4 @@ luam-vehicle-gunner-ammo = БОЕКОМПЛЕКТ
 luam-vehicle-gunner-shells = СНАРЯДЫ
 luam-vehicle-gunner-weapon = ОРУДИЕ
 luam-vehicle-gunner-azimuth = КУРС БАШНИ
+luam-vehicle-hardpoint-not-mounted = Стреляет только установленным на машину.

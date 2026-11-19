@@ -33,6 +33,11 @@ public sealed partial class ChameleonProjectorSystem : SharedChameleonProjectorS
     private void OnHandleState(Entity<ChameleonDisguiseComponent> ent, ref AfterAutoHandleStateEvent args)
     {
         CopyComp<SpriteComponent>(ent);
+        // LuaM-start
+        // -- Рантайм-пост-шейдеры источника (обводка при наведении) копируются без прототипа и шейдера и роняют инициализацию спрайта
+        if (_spriteQuery.TryComp(ent, out var disguiseSprite))
+            _sprite.ClearPostShaders((ent, disguiseSprite));
+        // LuaM-end
         CopyComp<GenericVisualizerComponent>(ent);
         CopyComp<SolutionContainerVisualsComponent>(ent);
         CopyComp<BurnStateVisualsComponent>(ent);

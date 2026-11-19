@@ -99,6 +99,10 @@ public sealed partial class VehicleEngineComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? Exiting;
 
+    // -- Водитель не выходит, а пересаживается: после глушения займёт это место
+    [DataField, AutoNetworkedField]
+    public int? ExitSeat;
+
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
     public TimeSpan ExitAt;
 
@@ -241,4 +245,18 @@ public sealed partial class VehicleRiderVisualsComponent : Component
 
     [DataField]
     public DrawDepth.DrawDepth FrontDrawDepth = DrawDepth.DrawDepth.OverMobs;
+
+    // -- Слой над седоками (борта, каркас безопасности): отдельная клиентская сущность
+    [DataField]
+    public EntProtoId? OverlayVisual;
+
+    // -- При наведении кузов и каркас становятся полупрозрачными, под ними виден интерьер
+    [DataField]
+    public EntProtoId? InteriorVisual;
+
+    [DataField]
+    public float FadedAlpha = 0.3f;
+
+    [DataField]
+    public float FadeRate = 3f;
 }

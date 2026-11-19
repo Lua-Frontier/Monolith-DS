@@ -10,7 +10,16 @@
     key: floorTile
   - type: Transform
     anchored: true
-  - type: FloorOccluder
+#  - type: FloorOccluder # LuaM
+  # LuaM-start
+  - type: LuaMWater
+    depth: 7
+    vehicleSpeedFactors:
+      Weak: 0.4
+      Light: 0.55
+      Medium: 0.7
+      Heavy: 0.85
+  # LuaM-end
   - type: Clickable
   - type: SyncSprite
   - type: Sprite

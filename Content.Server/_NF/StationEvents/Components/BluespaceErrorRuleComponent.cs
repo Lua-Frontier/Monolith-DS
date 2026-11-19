@@ -7,6 +7,7 @@ using Robust.Shared.Utility;
 using Content.Shared._NF.Bank.Components;
 using Robust.Shared.Map;
 using Content.Server._NF.StationEvents.Events;
+using Robust.Shared.Serialization.Markdown.Mapping; // LuaM
 
 namespace Content.Server._NF.StationEvents.Components;
 
@@ -61,7 +62,30 @@ public sealed partial class BluespaceErrorRuleComponent : Component
     /// How much the grid is appraised at upon entering into existence, set after starting the event
     /// </summary>
     public double StartingValue = 0;
+
+    // LuaM-start: the grids spawn one per tick, see BluespaceErrorRule.ActiveTick
+    [ViewVariables]
+    public readonly Queue<PendingBluespaceSpawn> PendingSpawns = new();
+
+    [ViewVariables]
+    public MapId? SpawnMap;
+
+    [ViewVariables]
+    public EntityCoordinates SpawnCoords;
+    // LuaM-end
 }
+
+// LuaM-start
+public sealed class PendingBluespaceSpawn(IBluespaceSpawnGroup group, int index)
+{
+    public readonly IBluespaceSpawnGroup Group = group;
+    public readonly int Index = index;
+    public ResPath? Path;
+    public volatile bool Parsing;
+    public MappingDataNode? Parsed;
+    public EntityUid? Spawned;
+}
+// LuaM-end
 
 public interface IBluespaceSpawnGroup
 {

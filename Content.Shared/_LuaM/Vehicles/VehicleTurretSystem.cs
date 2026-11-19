@@ -374,8 +374,16 @@ public sealed partial class VehicleTurretSystem : EntitySystem
 
     private void OnAttemptShoot(Entity<HardpointItemComponent> ent, ref AttemptShootEvent args)
     {
-        if (args.Cancelled || !TryGetTurretVehicle(ent, out var vehicle))
+        if (args.Cancelled)
             return;
+
+        // -- Снятое с машины орудие из рук не стреляет
+        if (!TryGetTurretVehicle(ent, out var vehicle))
+        {
+            args.Cancelled = true;
+            args.Message = Loc.GetString("luam-vehicle-hardpoint-not-mounted");
+            return;
+        }
 
         if (vehicle.Comp.RequiresDeployed &&
             (!TryComp<VehicleDeployableComponent>(vehicle, out var deploy) || !deploy.Deployed))

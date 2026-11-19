@@ -4,6 +4,10 @@
   name: janicart
   description: The janitor's trusty steed. Carries a mop bucket, a trash bag and the rest of the cleaning kit.
   components:
+  - type: LuaMWaterVehicle
+    foam:
+      sprite: _LuaM/Effects/Water/vehicle_foam32.rsi
+      state: janicart
   - type: Sprite
     drawdepth: Objects
     noRot: true
@@ -66,9 +70,9 @@
     acceleration: 4
     reverseAcceleration: 3
     deceleration: 8
-    maxRotationSpeedDegrees: 140
-    rotationAccelerationDegrees: 300
-    rotationDecelerationDegrees: 380
+    maxRotationSpeedDegrees: 170
+    rotationAccelerationDegrees: 800
+    rotationDecelerationDegrees: 800
     alignmentAssistDegrees: 8
     ramMinSpeed: 3
     ramStructureDamage: 0.1

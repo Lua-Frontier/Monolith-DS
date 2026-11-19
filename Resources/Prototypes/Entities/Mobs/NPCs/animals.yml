@@ -77,6 +77,16 @@
     action: ActionToggleNightVision
     phosphorColor: "#986033"
     lightingColor: "#ffffff52" #LuaM edit end.
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 - type: entity
   name: bee
@@ -151,6 +161,16 @@
     rootTask:
       task: SimpleHostileCompound
   - type: ZombieImmune
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 - type: entity
   name: bee
@@ -178,6 +198,16 @@
   - type: Bloodstream
     bloodMaxVolume: 0.1
   - type: ZombieImmune
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 
 - type: entity
@@ -417,8 +447,9 @@
         damageType: Blunt
         damage: 10
       behaviors:
-      - !type:GibBehavior # Shitmed Change
-        gibContents: Skip # Shitmed Change
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
   - type: NonSpreaderZombie
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks: [Hissing]
@@ -612,7 +643,9 @@
         damageType: Blunt
         damage: 250
       behaviors:
-      - !type:GibBehavior { }
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
@@ -884,6 +917,16 @@
     bloodMaxVolume: 0.1
   - type: MobPrice
     price: 50
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 - type: entity
   name: cow
@@ -2014,6 +2057,16 @@
     action: ActionToggleNightVision
     phosphorColor: "#986033"
     lightingColor: "#ffffff52" #LuaM edit end.
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 - type: entity
   parent: MobMouse
@@ -2208,6 +2261,16 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 
 - type: entity
@@ -2258,6 +2321,16 @@
     interactSuccessSpawn: EffectHearts
   - type: Bloodstream
     bloodMaxVolume: 50
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 - type: entity
   name: frog
@@ -2320,6 +2393,16 @@
     - VimPilot
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 - type: entity
   name: parrot
   parent: [ SimpleMobBase, FlyingMobBase ]
@@ -2394,6 +2477,16 @@
       - RadioSpeaker
       - VendingMachine
   # End Frontier
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 - type: entity
   name: penguin
@@ -2586,6 +2679,16 @@
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 - type: entity
   parent: [ SimpleMobBase, MobCombat ]
   id: MobSpiderBase
@@ -3710,6 +3813,16 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 - type: entity
   name: pig

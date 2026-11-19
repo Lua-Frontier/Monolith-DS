@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from CMSS13-PvE https://github.com/cmss13-devs/cmss13-pve/pull/1276 by github CactusMouth via RussianCM (CMU14); turret frames recentered on the turret ring by c_quarian (Monolith-DS)",
+  "copyright": "Taken from CMSS13-PvE https://github.com/cmss13-devs/cmss13-pve/pull/1276 by github CactusMouth via RussianCM (CMU14); turret frames recentered on the turret ring by c_quarian (Monolith-DS); recolored to the humvee palette by c_quarian (discord)",
   "size": {
     "x": 96,
     "y": 96

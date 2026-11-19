@@ -1,0 +1,30 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+
+- type: entity
+  id: LuaMWaterWake
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: Sprite
+    drawdepth: Effects
+    noRot: true
+    sprite: _LuaM/Effects/Water/splash32.rsi
+    state: shallow
+
+- type: entity
+  id: LuaMWaterVehicleFoam
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _LuaM/Effects/Water/vehicle_foam96.rsi
+    state: buggy

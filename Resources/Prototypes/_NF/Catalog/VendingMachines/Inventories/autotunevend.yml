@@ -26,6 +26,7 @@
     KalimbaInstrument: 2
     WoodblockInstrument: 2
     GlockenspielInstrument: 2
+    TR808Instrument: 2 # LuaM
     BikeHornInstrument: 1 # Not actully bad as you might think
     MusicBoxInstrument: 1
     XylophoneInstrument: 1

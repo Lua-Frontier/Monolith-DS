@@ -16,7 +16,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._LuaM.Nebula;
 
-// -- Внутри плотной части туманности картинка сдвигается к её оттенку с сохранением яркости (как режим «Цветность» в Photoshop); шейдер работает только внутри
+// -- Внутри плотной части туманности картинка тонируется в её цвет (фотофильтр с сохранением яркости и дымка на тёмном); шейдер работает только внутри
 public sealed partial class NebulaTintSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
@@ -25,7 +25,7 @@ public sealed partial class NebulaTintSystem : EntitySystem
     [Dependency] private IOverlayManager _overlays = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
-    private const float Strength = 0.3f;
+    private const float Strength = 0.45f;
     private const float FadeSpeed = 0.8f;
     private static readonly TimeSpan CheckInterval = TimeSpan.FromSeconds(0.25);
 

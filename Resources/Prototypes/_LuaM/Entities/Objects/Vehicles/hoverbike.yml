@@ -34,8 +34,8 @@
     reverseAcceleration: 3
     deceleration: 8
     maxRotationSpeedDegrees: 160
-    rotationAccelerationDegrees: 340
-    rotationDecelerationDegrees: 400
+    rotationAccelerationDegrees: 800
+    rotationDecelerationDegrees: 800
     alignmentAssistDegrees: 8
     ramMinSpeed: 3
     ramStructureDamage: 0.1
@@ -45,8 +45,8 @@
     mobCollisionHullDamage: 2
     mobThrowMaxDistance: 2.5
     speedAtZeroIntegrity: 0.5
-    driftMinSpeed: 10
-    driftGripDegrees: 80
+    driftMinSpeed: 12
+    driftGripDegrees: 130
     driftRecoverDegrees: 260
     driftMaxDegrees: 35
     driftDrag: 8

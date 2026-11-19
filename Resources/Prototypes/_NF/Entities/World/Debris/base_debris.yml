@@ -14,6 +14,6 @@
 #  - type: PreventPilot # Mono: FUN ALLOWED
   - type: IFF
     flags: HideLabel, HideLabelAlways, AlwaysShowColor
-  - type: ClaimableGrid # Mono
+#  - type: ClaimableGrid # Mono # LuaM: asteroids can't be claimed, the wrecks keep it in wrecks.yml
   - type: DetectedAtRangeMultiplier # Mono
     visualBias: 1024

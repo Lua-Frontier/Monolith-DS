@@ -25,6 +25,11 @@ public sealed partial class PryTileReaction : ITileReaction
 
         // Mono
         var grid = tile.GridUid;
+        // LuaM-start
+        // -- У планетарной карты нет подложки: выломанный грунт превращается в космос
+        if (entityManager.HasComponent<MapComponent>(grid))
+            return FixedPoint2.Zero;
+        // LuaM-end
         foreach (var ent in mapSys.GetAnchoredEntities((grid, entityManager.GetComponent<MapGridComponent>(grid)), tile.GridIndices))
         {
             // if we're not unanchorable, refuse to pry tile

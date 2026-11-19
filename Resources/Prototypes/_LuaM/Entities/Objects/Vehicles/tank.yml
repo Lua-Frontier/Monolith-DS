@@ -4,6 +4,10 @@
   name: FV150 Hobelar light tank
   description: A light cavalry tank with a fully traversable turret. The gunner aims the turret, the driver keeps it moving.
   components:
+  - type: LuaMWaterVehicle
+    foam:
+      sprite: _LuaM/Effects/Water/vehicle_foam96.rsi
+      state: tank
   - type: Sprite
     drawdepth: OverMobs
     sprite: _LuaM/Structures/Vehicles/Tank/tank.rsi
@@ -75,6 +79,7 @@
     reverseAcceleration: 2
     deceleration: 8
     maxRotationSpeedDegrees: 70
+    pivotRotationSpeedDegrees: 45
     rotationAccelerationDegrees: 140
     rotationDecelerationDegrees: 220
     alignmentAssistDegrees: 8
@@ -170,27 +175,42 @@
     state: tank
     seatOffsets:
       South:
-      - 6.55, -20.38
-      - -8.5, -1.7
-      - 8.5, 1.7
-      - -0.85, 22.1
+      - -15.5, -7.5
+      - -16.5, 25.5
+      - -6.5, 25.5
+      - -26.5, 25.5
       North:
-      - -7.94, 29.87
-      - 7.65, 9.86
-      - -9.35, 6.46
-      - 0, -13.94
+      - 13.5, 13.5
+      - 14.5, -18.5
+      - 4.5, -18.5
+      - 24.5, -18.5
       East:
-      - 22.32, 13.96
-      - 2.63, -0.68
-      - -0.77, 16.32
-      - -21.16, 6.97
+      - 10.5, -9.5
+      - -22.5, -10.5
+      - -22.5, -0.5
+      - -22.5, -20.5
       West:
-      - -21.12, -1.31
-      - -2.63, 14.62
-      - 0.77, -2.38
-      - 21.16, 6.97
+      - -10.5, -9.5
+      - 22.5, -10.5
+      - 22.5, -0.5
+      - 22.5, -20.5
   - type: StaticPrice
     price: 60000
+
+- type: entity
+  parent: LuaMVehicleTank
+  id: LuaMVehicleTankSyndicate
+  name: Syndicate FV150 Hobelar light tank
+  description: A captured light cavalry tank repainted in Syndicate black and red. The gunner aims the turret, the driver keeps it moving.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/Tank/tank_syndicate.rsi
+  - type: Icon
+    state: icon_syndicate
+  - type: VehicleTurret
+    sprite: _LuaM/Structures/Vehicles/Tank/tank_syndicate.rsi
+  - type: VehicleInterior
+    state: tank_syndicate
 
 - type: damageModifierSet
   id: LuaMVehicleFrameTank

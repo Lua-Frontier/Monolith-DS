@@ -16,6 +16,8 @@ using Content.Shared.Rotation;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network; // LuaM
+using Robust.Shared.Player; // LuaM
+using Robust.Shared.Timing; // LuaM
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
@@ -34,6 +36,13 @@ public sealed partial class StandingStateSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transform = default!; // Mono
     [Dependency] private IRobustRandom _random = default!; // Mono
     [Dependency] private INetManager _net = default!; // LuaM
+    // LuaM-start
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+
+    private static readonly TimeSpan LocalDownSoundCooldown = TimeSpan.FromSeconds(0.5);
+    private TimeSpan _lastLocalDownSound;
+    // LuaM-end
 
     // If StandingCollisionLayer value is ever changed to more than one layer, the logic needs to be edited.
     private const int StandingCollisionLayer = (int) CollisionGroup.MidImpassable;
@@ -155,16 +164,37 @@ public sealed partial class StandingStateSystem : EntitySystem
         if (standingState.LifeStage <= ComponentLifeStage.Starting)
             return true;
 
-        if (playSound && _net.IsServer) // LuaM
-        {
-            _audio.PlayPvs(standingState.DownSound, uid); // LuaM
-        }
+        if (playSound)
+            PlayDownSound(uid, standingState); // LuaM
 
         _movement.RefreshMovementSpeedModifiers(uid); // WD EDIT
         _movement.RefreshFrictionModifiers(uid); // LuaM
         _movement.RefreshWeightlessModifiers(uid); // Mono edit
         return true;
     }
+
+    // LuaM-start
+    // -- Сервер играет звук всем, кроме упавшего; упавший слышит его у себя сразу: при предсказании или когда падение пришло с сервера
+    private void PlayDownSound(EntityUid uid, StandingStateComponent standingState)
+    {
+        if (_net.IsServer)
+        {
+            _audio.PlayPredicted(standingState.DownSound, uid, uid);
+            return;
+        }
+
+        if (uid != _player.LocalEntity || !_timing.IsFirstTimePredicted)
+            return;
+
+        // -- Серверное состояние догоняет уже предсказанное падение и может вызвать Down ещё раз
+        var now = _timing.RealTime;
+        if (now - _lastLocalDownSound < LocalDownSoundCooldown)
+            return;
+
+        _lastLocalDownSound = now;
+        _audio.PlayPredicted(standingState.DownSound, uid, uid);
+    }
+    // LuaM-end
 
     public bool Stand(EntityUid uid,
         StandingStateComponent? standingState = null,

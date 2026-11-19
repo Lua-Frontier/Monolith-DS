@@ -26,6 +26,19 @@
     - Passenger
 
 - type: entity
+  parent: LuaMVehicleTankSyndicate
+  id: LuaMVehicleTankSyndicateOneMan
+  suffix: One-man
+  components:
+  - type: VehicleSeats
+    driverIsGunner: true
+    seats:
+    - Driver
+    - Passenger
+    - Passenger
+    - Passenger
+
+- type: entity
   parent: LuaMVehicleSPPVan
   id: LuaMVehicleSPPVanOneMan
   suffix: One-man

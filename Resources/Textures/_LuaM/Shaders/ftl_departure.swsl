@@ -1,0 +1,67 @@
+light_mode unshaded;
+
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp vec2 forwardPixels;
+uniform highp vec2 rightPixels;
+uniform highp float intensity;
+uniform highp float phase;
+uniform highp float burst;
+
+highp float sparkLane(highp vec2 p, highp float radius, highp float density, highp float offset) {
+    return (p.x / max(radius, 0.04) + 1.0) * density + offset;
+}
+
+highp float sparks(highp vec2 p, highp float lane, highp float laneWidth, highp float rowHeight, highp float offset) {
+    highp float seed = fract(sin(floor(lane) * 127.1 + offset * 37.7) * 43758.5453);
+    highp float head = 1.0 - fract(phase * (0.7 + seed * 1.1 + intensity * 0.6) + seed * 13.0);
+    highp float width = clamp(laneWidth * 0.9, 0.06, 0.36);
+    highp float height = max(rowHeight * 1.25, 0.002 + seed * 0.0025);
+    highp vec2 distance = vec2((fract(lane) - 0.5) / width, (p.y - head) / height);
+    highp float core = exp(-dot(distance, distance) * 2.0);
+    highp float halo = exp(-dot(distance, distance) * 0.6) * 0.12;
+    return (core + halo) * (0.25 + seed * seed * 0.85);
+}
+
+void fragment() {
+    highp vec2 p = UV;
+    highp float radius = sqrt(max(1.0 - p.y * p.y, 0.0));
+    highp float shell = length(p);
+    highp float inside = 1.0 - smoothstep(0.93, 1.02, shell);
+    highp float ends = smoothstep(0.0, 0.22, p.y) * (1.0 - smoothstep(0.97, 1.0, p.y));
+    highp float envelope = inside * ends * intensity;
+    if (envelope <= 0.001) {
+        discard;
+    }
+
+    highp float bow = exp(-pow((shell - 0.9) * 19.0, 2.0));
+    highp float wake = sin(shell * 31.0 + phase * 11.0 - p.y * 5.0);
+    highp float turbulence = sin(p.x * 17.0 + p.y * 13.0 - phase * 6.0)
+        * sin(p.y * 21.0 + phase * 9.0);
+    highp float pressure = bow * 0.42 + wake * 0.055 + turbulence * 0.025;
+    highp vec2 displacement = (rightPixels * p.x * pressure
+        + forwardPixels * (p.y * pressure + wake * 0.035)) * envelope * (1.0 + burst * 1.8);
+    highp vec2 safeMin = SCREEN_PIXEL_SIZE * 0.5;
+    highp vec2 safeMax = vec2(1.0) - safeMin;
+    highp vec2 uv = clamp((FRAGCOORD.xy - displacement) * SCREEN_PIXEL_SIZE, safeMin, safeMax);
+    highp vec4 scene = zTextureSpec(SCREEN_TEXTURE, uv);
+
+    highp float laneA = sparkLane(p, radius, 31.0, 0.0);
+    highp float laneB = sparkLane(p, radius * 0.92, 53.0, 19.3);
+#ifdef HAS_DFDX
+    highp float widthA = fwidth(laneA);
+    highp float widthB = fwidth(laneB);
+    highp float rowHeight = fwidth(p.y);
+#else
+    highp float widthA = 0.2;
+    highp float widthB = 0.2;
+    highp float rowHeight = 0.0;
+#endif
+    highp float particles = sparks(p, laneA, widthA, rowHeight, 0.0)
+        + sparks(p, laneB, widthB, rowHeight, 19.3) * 0.32;
+    highp vec2 focus = vec2(p.x * 18.0, (p.y - 0.91) * 34.0);
+    highp float flash = exp(-dot(focus, focus)) * burst;
+    highp float caustics = pow(max(0.0, sin(shell * 34.0 + phase * 10.0 + turbulence * 0.5)), 12.0)
+        * pow(max(0.0, sin(p.x * 11.0 + p.y * 7.0 - phase * 2.0)), 2.0) * 0.025;
+    highp float light = particles * intensity + flash + caustics;
+    COLOR = vec4(scene.rgb + vec3(light), envelope * 0.97);
+}

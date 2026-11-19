@@ -40,6 +40,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
     private const float HoverSearchRange = 5f;
 
     private readonly Dictionary<EntityUid, VisualState> _states = new();
+    private readonly Dictionary<EntityUid, VisualState> _riderStates = new();
     private readonly HashSet<EntityUid> _hovered = new();
 
     // -- Пассажиров прячем под непрозрачным кузовом и сдвигаем их спрайты к сиденьям текущего ракурса
@@ -51,6 +52,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
     private sealed class VisualState
     {
         public EntityUid? Interior;
+        public EntityUid? Overlay;
         public EntityUid? Turret;
         public float Fade;
         public float HoverTime;
@@ -68,6 +70,8 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
 
         SubscribeLocalEvent<VehicleInteriorComponent, ComponentStartup>(OnInteriorStartup);
         SubscribeLocalEvent<VehicleInteriorComponent, ComponentShutdown>(OnInteriorShutdown);
+        SubscribeLocalEvent<VehicleRiderVisualsComponent, ComponentStartup>(OnRiderStartup);
+        SubscribeLocalEvent<VehicleRiderVisualsComponent, ComponentShutdown>(OnRiderShutdown);
         SubscribeLocalEvent<HardpointSlotsComponent, HardpointsChangedEvent>(OnHardpointsChanged);
         SubscribeLocalEvent<HardpointSlotsComponent, ComponentStartup>(OnHardpointsStartup);
     }
@@ -96,6 +100,47 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
     {
         if (!_states.Remove(ent, out var state))
             return;
+
+        if (state.Interior is { } interior && !TerminatingOrDeleted(interior))
+            QueueDel(interior);
+
+        if (state.Turret is { } turret && !TerminatingOrDeleted(turret))
+            QueueDel(turret);
+    }
+
+    private void OnRiderStartup(Entity<VehicleRiderVisualsComponent> ent, ref ComponentStartup args)
+    {
+        var hasTurret = HasComp<VehicleTurretComponent>(ent);
+        if (ent.Comp.OverlayVisual == null && ent.Comp.InteriorVisual == null && !hasTurret)
+            return;
+
+        var state = new VisualState();
+        _riderStates[ent] = state;
+        var coords = new EntityCoordinates(ent, Vector2.Zero);
+
+        if (ent.Comp.OverlayVisual is { } overlayProto)
+            state.Overlay = Spawn(overlayProto, coords);
+
+        if (ent.Comp.InteriorVisual is { } interiorProto)
+        {
+            var interior = Spawn(interiorProto, coords);
+            if (TryComp<SpriteComponent>(interior, out var interiorSprite))
+                _sprite.SetVisible((interior, interiorSprite), false);
+
+            state.Interior = interior;
+        }
+
+        if (hasTurret)
+            state.Turret = Spawn(TurretVisual, coords);
+    }
+
+    private void OnRiderShutdown(Entity<VehicleRiderVisualsComponent> ent, ref ComponentShutdown args)
+    {
+        if (!_riderStates.Remove(ent, out var state))
+            return;
+
+        if (state.Overlay is { } overlay && !TerminatingOrDeleted(overlay))
+            QueueDel(overlay);
 
         if (state.Interior is { } interior && !TerminatingOrDeleted(interior))
             QueueDel(interior);
@@ -141,7 +186,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
     {
         base.FrameUpdate(frameTime);
 
-        if (_states.Count > 0)
+        if (_states.Count > 0 || _riderStates.Count > 0)
             UpdateHovered();
 
         var eyeRot = _eye.CurrentEye.Rotation;
@@ -152,34 +197,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
             if (!_states.TryGetValue(uid, out var state))
                 continue;
 
-            // -- Пока машина поворачивается, её силуэт пробегает под курсором: короткие касания не должны мигать прозрачностью
-            if (_hovered.Contains(uid))
-            {
-                state.HoverTime += frameTime;
-                state.LeaveTime = 0f;
-            }
-            else if ((state.LeaveTime += frameTime) >= HoverDelay)
-            {
-                state.HoverTime = 0f;
-            }
-
-            var target = state.HoverTime >= HoverDelay ? 1f : 0f;
-            state.Fade = target > state.Fade
-                ? MathF.Min(target, state.Fade + interior.FadeRate * frameTime)
-                : MathF.Max(target, state.Fade - interior.FadeRate * frameTime);
-
-            var hullAlpha = MathHelper.Lerp(1f, interior.FadedAlpha, state.Fade);
-            if (!MathHelper.CloseTo(sprite.Color.A, hullAlpha))
-                _sprite.SetColor((uid, sprite), sprite.Color.WithAlpha(hullAlpha));
-
-            // -- Интерьер совпадает с силуэтом кузова, поэтому сразу непрозрачный под ним: иначе при наведении мелькает пустой пол
-            var shown = state.Fade > 0f;
-            if (state.Interior is { } interiorEnt && TryComp<SpriteComponent>(interiorEnt, out var interiorSprite) &&
-                interiorSprite.Visible != shown)
-            {
-                _sprite.SetColor((interiorEnt, interiorSprite), interiorSprite.Color.WithAlpha(1f));
-                _sprite.SetVisible((interiorEnt, interiorSprite), shown);
-            }
+            var shown = UpdateFade(uid, sprite, state, interior.FadeRate, interior.FadedAlpha, frameTime);
 
             var (worldPos, worldRot) = _transform.GetWorldPositionRotation(xform);
             var hullDir = VehicleTurretSystem.GetSpriteDirection(worldRot + eyeRot, SpriteComponent.DirectionBias);
@@ -191,8 +209,48 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
                 UpdateOccupants(interior, strap, shown, worldPos, GetImageRotation(sprite, worldRot, hullDir, eyeRot), hullDir, eyeRot);
         }
 
-        UpdateRiders(eyeRot);
+        UpdateRiders(eyeRot, frameTime);
         RestoreUnseen();
+    }
+
+    // -- Пока машина поворачивается, её силуэт пробегает под курсором: короткие касания не должны мигать прозрачностью
+    private bool UpdateFade(EntityUid uid, SpriteComponent sprite, VisualState state, float fadeRate, float fadedAlpha, float frameTime)
+    {
+        if (_hovered.Contains(uid))
+        {
+            state.HoverTime += frameTime;
+            state.LeaveTime = 0f;
+        }
+        else if ((state.LeaveTime += frameTime) >= HoverDelay)
+        {
+            state.HoverTime = 0f;
+        }
+
+        var target = state.HoverTime >= HoverDelay ? 1f : 0f;
+        state.Fade = target > state.Fade
+            ? MathF.Min(target, state.Fade + fadeRate * frameTime)
+            : MathF.Max(target, state.Fade - fadeRate * frameTime);
+
+        var hullAlpha = MathHelper.Lerp(1f, fadedAlpha, state.Fade);
+        if (!MathHelper.CloseTo(sprite.Color.A, hullAlpha))
+            _sprite.SetColor((uid, sprite), sprite.Color.WithAlpha(hullAlpha));
+
+        if (state.Overlay is { } overlay && TryComp<SpriteComponent>(overlay, out var overlaySprite) &&
+            !MathHelper.CloseTo(overlaySprite.Color.A, hullAlpha))
+        {
+            _sprite.SetColor((overlay, overlaySprite), overlaySprite.Color.WithAlpha(hullAlpha));
+        }
+
+        // -- Интерьер совпадает с силуэтом кузова, поэтому сразу непрозрачный под ним: иначе при наведении мелькает пустой пол
+        var shown = state.Fade > 0f;
+        if (state.Interior is { } interiorEnt && TryComp<SpriteComponent>(interiorEnt, out var interiorSprite) &&
+            interiorSprite.Visible != shown)
+        {
+            _sprite.SetColor((interiorEnt, interiorSprite), interiorSprite.Color.WithAlpha(1f));
+            _sprite.SetVisible((interiorEnt, interiorSprite), shown);
+        }
+
+        return shown;
     }
 
     private static Angle GetImageRotation(SpriteComponent sprite, Angle worldRot, Direction hullDir, Angle eyeRot)
@@ -255,7 +313,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
             _sprite.SetOffset((occupant, sprite), offset);
     }
 
-    private void UpdateRiders(Angle eyeRot)
+    private void UpdateRiders(Angle eyeRot, float frameTime)
     {
         var query = EntityQueryEnumerator<VehicleRiderVisualsComponent, SpriteComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var riders, out var sprite, out var xform))
@@ -265,6 +323,19 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
             var depth = (int) (hullDir is Direction.East or Direction.West ? riders.SideDrawDepth : riders.FrontDrawDepth);
             if (sprite.DrawDepth != depth)
                 _sprite.SetDrawDepth((uid, sprite), depth);
+
+            if (_riderStates.TryGetValue(uid, out var state))
+            {
+                if (state.Interior is { } interiorEnt)
+                {
+                    UpdateFade(uid, sprite, state, riders.FadeRate, riders.FadedAlpha, frameTime);
+                    if (TryComp<SpriteComponent>(interiorEnt, out var interiorSprite) && interiorSprite.DrawDepth != depth - 1)
+                        _sprite.SetDrawDepth((interiorEnt, interiorSprite), depth - 1);
+                }
+
+                if (state.Turret is { } turretEnt)
+                    UpdateTurret(uid, xform, worldRot, state, turretEnt, hullDir, MathHelper.Lerp(1f, TurretFadedAlpha, state.Fade), frameTime);
+            }
 
             if (!TryComp<StrapComponent>(uid, out var strap) || strap.BuckledEntities.Count == 0)
                 continue;
@@ -332,7 +403,7 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
 
         foreach (var ent in gameplay.GetClickableEntities(coords, false))
         {
-            if (_states.ContainsKey(ent))
+            if (IsHoverable(ent))
                 _hovered.Add(ent);
         }
     }
@@ -342,14 +413,28 @@ public sealed partial class VehicleVisualsSystem : EntitySystem
     {
         foreach (var uid in _states.Keys)
         {
-            if (!TryComp(uid, out TransformComponent? xform) || xform.MapID != coords.MapId)
-                continue;
+            if (IsNear(uid, coords))
+                return true;
+        }
 
-            if ((_transform.GetWorldPosition(xform) - coords.Position).LengthSquared() <= HoverSearchRange * HoverSearchRange)
+        foreach (var (uid, state) in _riderStates)
+        {
+            if (state.Interior != null && IsNear(uid, coords))
                 return true;
         }
 
         return false;
+    }
+
+    private bool IsNear(EntityUid uid, MapCoordinates coords)
+    {
+        return TryComp(uid, out TransformComponent? xform) && xform.MapID == coords.MapId &&
+               (_transform.GetWorldPosition(xform) - coords.Position).LengthSquared() <= HoverSearchRange * HoverSearchRange;
+    }
+
+    private bool IsHoverable(EntityUid uid)
+    {
+        return _states.ContainsKey(uid) || _riderStates.TryGetValue(uid, out var state) && state.Interior != null;
     }
 
     private void UpdateTurret(

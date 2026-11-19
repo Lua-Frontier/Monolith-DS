@@ -205,6 +205,11 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
         if (gridUid == null)
             return;
 
+        // LuaM-start: the whole grid is being deleted, its devices and consoles go with it
+        if (TerminatingOrDeleted(gridUid.Value))
+            return;
+        // LuaM-end
+
         if (component.IsCollectionMasterOrChild)
             AssignEntityAsCollectionMaster(uid, component, xform);
 
@@ -777,6 +782,9 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
 
                 foreach ((var child, var childDevice) in device.ChildDevices)
                 {
+                    if (TerminatingOrDeleted(child)) // LuaM
+                        continue; // LuaM
+
                     newMasterDevice.ChildDevices.Add(child, childDevice);
 
                     childDevice.CollectionMaster = newMaster;
@@ -845,8 +853,12 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
 
     private void UpdateCollectionChildMetaData(EntityUid child, EntityUid master)
     {
+        // LuaM-start
+        if (!TryComp(child, out TransformComponent? xform))
+            return;
+        // LuaM-end
+
         var netEntity = GetNetEntity(child);
-        var xform = Transform(child);
 
         var query = AllEntityQuery<PowerMonitoringConsoleComponent, TransformComponent>();
         while (query.MoveNext(out var ent, out var entConsole, out var entXform))
@@ -866,8 +878,12 @@ internal sealed partial class PowerMonitoringConsoleSystem : SharedPowerMonitori
 
     private void UpdateCollectionMasterMetaData(EntityUid master, int childCount)
     {
+        // LuaM-start
+        if (!TryComp(master, out TransformComponent? xform))
+            return;
+        // LuaM-end
+
         var netEntity = GetNetEntity(master);
-        var xform = Transform(master);
 
         var query = AllEntityQuery<PowerMonitoringConsoleComponent, TransformComponent>();
         while (query.MoveNext(out var ent, out var entConsole, out var entXform))

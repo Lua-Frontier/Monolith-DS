@@ -1,4 +1,5 @@
 using Content.Client.Rotation;
+using Content.Shared._LuaM.Vehicles.Components; // LuaM
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Movement.Systems;
@@ -56,6 +57,9 @@ internal sealed partial class BuckleSystem : SharedBuckleSystem
         //if (HasComp<VehicleComponent>(component.LastEntityBuckledTo)) // Umbra
         //    return; // Umbra
 
+        if (HasComp<VehicleRiderVisualsComponent>(uid)) // LuaM
+            return; // LuaM
+
         if (!TryComp<SpriteComponent>(uid, out var strapSprite))
             return;
 
@@ -95,6 +99,9 @@ internal sealed partial class BuckleSystem : SharedBuckleSystem
 
         if (!TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
             return;
+
+        if (HasComp<VehicleRiderVisualsComponent>(args.Strap)) // LuaM
+            return; // LuaM
 
         var angle = _xformSystem.GetWorldRotation(args.Strap) + _eye.CurrentEye.Rotation; // Get true screen position, or close enough
 
