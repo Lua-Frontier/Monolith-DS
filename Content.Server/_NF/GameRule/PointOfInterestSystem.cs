@@ -254,7 +254,8 @@ public sealed partial class PointOfInterestSystem : EntitySystem
     private bool TrySpawnPoiGrid(MapId mapUid, PointOfInterestPrototype proto, Vector2 offset, out EntityUid? gridUid, string? overrideName = null)
     {
         gridUid = null;
-        if (!_map.TryLoadGrid(mapUid, proto.GridPath, out var loadedGrid, offset: offset, rot: _random.NextAngle()))
+        var rotation = proto.RandomRotation ? _random.NextAngle() : Angle.Zero; // LuaM
+        if (!_map.TryLoadGrid(mapUid, proto.GridPath, out var loadedGrid, offset: offset, rot: rotation)) // LuaM: _random.NextAngle() > rotation
             return false;
         gridUid = loadedGrid.Value;
         List<EntityUid> gridList = [loadedGrid.Value];

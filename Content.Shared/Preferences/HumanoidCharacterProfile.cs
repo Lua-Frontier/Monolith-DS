@@ -493,6 +493,15 @@ namespace Content.Shared.Preferences
             };
         }
 
+        // LuaM: the point limit of a trait category for this character's species
+        public int? GetMaxTraitPoints(TraitCategoryPrototype category, IPrototypeManager protoManager)
+        {
+            if (category.MaxTraitPoints is not { } max || !category.SpeciesBonusPoints)
+                return category.MaxTraitPoints;
+
+            return protoManager.TryIndex(Species, out var species) ? max + species.BonusTraitPoints : max;
+        }
+
         public HumanoidCharacterProfile WithTraitPreference(ProtoId<TraitPrototype> traitId, IPrototypeManager protoManager)
         {
             // null category is assumed to be default.
@@ -530,7 +539,7 @@ namespace Content.Shared.Preferences
                 count += otherProto.Cost;
             }
 
-            if (count > traitCategory.MaxTraitPoints && traitProto.Cost != 0)
+            if (count > GetMaxTraitPoints(traitCategory, protoManager) && traitProto.Cost != 0) // LuaM: species bonus
             {
                 return new(this);
             }
@@ -589,7 +598,7 @@ namespace Content.Shared.Preferences
             if (!Items.SequenceEqual(other.Items)) return false; // Mono
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
             if (!_antagPreferences.SequenceEqual(other._antagPreferences)) return false;
-            if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
+            if (!_traitPreferences.SetEquals(other._traitPreferences)) return false; // LuaM: validation reorders them, the order means nothing
             if (FlavorText != other.FlavorText) return false;
             if (!Appearance.MemberwiseEquals(other.Appearance)) return false;
 
@@ -864,7 +873,7 @@ namespace Content.Shared.Preferences
                 existing += traitProto.Cost;
 
                 // Too expensive.
-                if (existing > category.MaxTraitPoints)
+                if (existing > GetMaxTraitPoints(category, protoManager)) // LuaM: species bonus
                     continue;
 
                 groups[category.ID] = existing;

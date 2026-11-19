@@ -11,10 +11,10 @@ namespace Content.Shared.Atmos.Rotting;
 public sealed partial class RotIntoComponent : Component
 {
     /// <summary>
-    /// Entity to rot into.
+    /// Entity to rot into. If null, nothing is left behind. // LuaM
     /// </summary>
-    [DataField("entity", required: true), ViewVariables(VVAccess.ReadWrite)]
-    public EntProtoId Entity = string.Empty;
+    [DataField("entity"), ViewVariables(VVAccess.ReadWrite)] // LuaM: no longer required
+    public EntProtoId? Entity; // LuaM: EntProtoId > EntProtoId?
 
     /// <summary>
     /// Rotting stage to turn at, this is a multiplier of the total rot time.

@@ -1,0 +1,24 @@
+# The TSF side of the Corporate Agent trait (Heretic), only one of the two can be taken.
+- type: trait
+  id: FederationWanted
+  name: trait-federation-wanted-name
+  description: trait-federation-wanted-desc
+  category: Physical
+  cost: -10 # same as Heretic. Nordfall, TSF, medical and MMC jobs can't take it.
+  mutuallyExclusiveTraits:
+  - Heretic
+  blacklist:
+    components:
+    - BorgChassis
+  components:
+  - type: AddComponentsAfterTime
+    excludedCompanies:
+    - TSF
+    - PDV
+    - PDVCivilian
+    addComponentsOnSelection:
+    - type: Contraband
+      hideValues: true
+      turnInValues:
+        FederationMilitaryCredit: 250 # same number as the Heretic reward in doubloons
+    - type: FederationWanted

@@ -18,6 +18,9 @@
   id: DatadiskEncrypted
 
 - type: Tag
+  id: EnergySwordCrafting
+
+- type: Tag
   id: FanElectronics
 
 - type: Tag
@@ -44,3 +47,6 @@
 - type: Tag
   id: XenoArtifact
 
+
+- type: Tag
+  id: FentanylCrystal

@@ -10,6 +10,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: PirateNFGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

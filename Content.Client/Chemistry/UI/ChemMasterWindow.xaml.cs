@@ -27,11 +27,17 @@ namespace Content.Client.Chemistry.UI
         [Dependency] private IEntityManager _entityManager = default!;
         private readonly SpriteSystem _sprite;
         public event Action<BaseButton.ButtonEventArgs, ReagentButton>? OnReagentButtonPressed;
+        public event Action<ReagentId>? OnFavoriteButtonPressed; // LuaM
         public readonly Button[] PillTypeButtons;
 
         private const string PillsRsiPath = "/Textures/Objects/Specific/Chemistry/pills.rsi";
 
         private ChemMasterBoundUserInterfaceState? _lastState; // LuaM: redraw the lists when the search changes
+
+        // LuaM-start: favorite star
+        private static readonly Color FavoriteColor = Color.FromHex("#FFD24A");
+        private static readonly Color NotFavoriteColor = Color.FromHex("#5A5A62");
+        // LuaM-end
 
         /// <summary>
         /// Create and initialize the chem master UI client-side. Creates the basic layout,
@@ -108,6 +114,22 @@ namespace Content.Client.Chemistry.UI
             var search = SearchBar.Text.Trim();
             return search.Length == 0 || name.Contains(search, StringComparison.CurrentCultureIgnoreCase);
         }
+
+        // LuaM-start: favorite star
+        private Button MakeFavoriteButton(ReagentId reagent, bool favorite)
+        {
+            var button = new Button
+            {
+                Text = "★",
+                ToolTip = Loc.GetString(favorite ? "chem-master-window-favorite-remove" : "chem-master-window-favorite-add"),
+                StyleClasses = { StyleBase.ButtonSquare },
+                Margin = new Thickness(0, 0, 4, 0),
+            };
+            button.Label.FontColorOverride = favorite ? FavoriteColor : NotFavoriteColor;
+            button.OnPressed += _ => OnFavoriteButtonPressed?.Invoke(reagent);
+            return button;
+        }
+        // LuaM-end
 
         private ReagentButton MakeReagentButton(string text, ChemMasterReagentAmount amount, ReagentId id, bool isBuffer, string styleClass)
         {
@@ -268,6 +290,7 @@ namespace Content.Client.Chemistry.UI
                 ChemMasterSortingType.Alphabetical => Loc.GetString("chem-master-window-sort-type-alphabetical"),
                 ChemMasterSortingType.Quantity => Loc.GetString("chem-master-window-sort-type-quantity"),
                 ChemMasterSortingType.Latest => Loc.GetString("chem-master-window-sort-type-latest"),
+                ChemMasterSortingType.Favorites => Loc.GetString("chem-master-window-sort-type-favorites"), // LuaM
                 _ => Loc.GetString("chem-master-window-sort-type-none")
             };
 
@@ -324,6 +347,11 @@ namespace Content.Client.Chemistry.UI
                 case ChemMasterSortingType.Latest:
                     reagentList = Enumerable.Reverse(reagentList).ToList();
                     break;
+                // LuaM-start: favorites first, the rest keeps its order
+                case ChemMasterSortingType.Favorites:
+                    reagentList = reagentList.OrderByDescending(x => state.FavoriteReagents.Contains(x.reagentId)).ToList();
+                    break;
+                // LuaM-end
 
                 case ChemMasterSortingType.None:
                 default:
@@ -338,7 +366,8 @@ namespace Content.Client.Chemistry.UI
                 if (!MatchesSearch(reagent.name)) // LuaM
                     continue;
 
-                BufferInfo.Children.Add(BuildReagentRow(reagent.color, rowCount++, reagent.name, reagent.reagentId, reagent.quantity, true, true));
+                BufferInfo.Children.Add(BuildReagentRow(reagent.color, rowCount++, reagent.name, reagent.reagentId, reagent.quantity, true, true,
+                    state.FavoriteReagents.Contains(reagent.reagentId))); // LuaM
             }
         }
 
@@ -403,7 +432,7 @@ namespace Content.Client.Chemistry.UI
         /// <summary>
         /// Take reagent/entity data and present rows, labels, and buttons appropriately. todo sprites?
         /// </summary>
-        private Control BuildReagentRow(Color reagentColor, int rowCount, string name, ReagentId reagent, FixedPoint2 quantity, bool isBuffer, bool addReagentButtons)
+        private Control BuildReagentRow(Color reagentColor, int rowCount, string name, ReagentId reagent, FixedPoint2 quantity, bool isBuffer, bool addReagentButtons, bool? favorite = null) // LuaM: favorite, null means no star
         {
             //Colors rows and sets fallback for reagentcolor to the same as background, this will hide colorPanel for entities hopefully
             var rowColor1 = Color.FromHex("#1B1B1E");
@@ -445,6 +474,15 @@ namespace Content.Client.Chemistry.UI
                     }
                 }
             };
+
+            // LuaM-start: favorite star in front of the name
+            if (favorite is { } isFavorite)
+            {
+                var favoriteButton = MakeFavoriteButton(reagent, isFavorite);
+                rowContainer.AddChild(favoriteButton);
+                favoriteButton.SetPositionFirst();
+            }
+            // LuaM-end
 
             // Add the reagent buttons after the color panel
             foreach (var reagentTransferButton in reagentButtonConstructors)

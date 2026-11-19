@@ -2817,13 +2817,6 @@ entities:
     - type: Transform
       pos: 0.5,7.5
       parent: 1
-- proto: ComputerIFF
-  entities:
-  - uid: 957
-    components:
-    - type: Transform
-      pos: -1.5,7.5
-      parent: 1
 - proto: ComputerMedicalRecords
   entities:
   - uid: 970

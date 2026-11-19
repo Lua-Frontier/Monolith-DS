@@ -1,0 +1,25 @@
+- type: constructionGraph
+  id: EnergySwordDouble
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: energySwordDouble
+      steps:
+      - tag: EnergySwordCrafting
+        name: construction-graph-tag-energy-sword
+        icon:
+          sprite: Objects/Weapons/Melee/e_sword.rsi
+          state: e_sword
+      - tag: EnergySwordCrafting
+        name: construction-graph-tag-energy-sword
+        icon:
+          sprite: Objects/Weapons/Melee/e_sword.rsi
+          state: e_sword
+      - material: Plastitanium
+        amount: 10
+      - material: Iridite
+        amount: 1
+        doAfter: 5
+  - node: energySwordDouble
+    entity: EnergySwordDouble

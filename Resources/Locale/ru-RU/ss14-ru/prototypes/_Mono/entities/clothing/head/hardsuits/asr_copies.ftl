@@ -2,5 +2,5 @@ ent-ClothingHeadHelmetHardsuitAshen = шлем боевого тактическ
     .desc = Боевой тактический костюм, разработанный в Авангарде Нордфолла.
 ent-ClothingHeadHelmetHardsuitAshenElite = шлем боевого скафандра Авангарда CV-53
     .desc = Основан на CV-32, жертвует боевой защитой ради защиты окружающей среды.
-ent-ClothingHeadHelmetHardsuitVizier = шлем боевого скафандра Авангарда CV-67
+ent-ClothingHeadHelmetHardsuitVizier = шлем боевого скафандра Авангарда CV-68
     .desc = Украшенный тактический костюм, разработанный с несовершенным наноламинатным составом. Высокая манёвренность, прочная броня.

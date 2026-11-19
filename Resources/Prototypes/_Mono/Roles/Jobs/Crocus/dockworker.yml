@@ -8,6 +8,7 @@
     inverted: true
     traits:
     - Heretic
+    - FederationWanted # LuaM
   startingGear: JianghuiDockworkerGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true

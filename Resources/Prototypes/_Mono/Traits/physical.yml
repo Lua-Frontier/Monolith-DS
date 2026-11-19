@@ -458,6 +458,8 @@
   description: trait-heretic-desc
   category: Physical
   cost: -10 # LuaM: 0 > -10, gives 10 trait points. PDV, TSF, medical, VG, USSP and MMC jobs can't take it.
+  mutuallyExclusiveTraits: # LuaM: either this or the TSF side of it
+  - FederationWanted
   blacklist:
     components:
     - BorgChassis

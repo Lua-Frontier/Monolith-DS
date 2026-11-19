@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/20/2026 07:30:51
-  entityCount: 353
+  entityCount: 352
 maps: []
 grids:
 - 1
@@ -1252,17 +1252,6 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
-- proto: ComputerTabletopIFF
-  entities:
-  - uid: 171
-    components:
-    - type: Transform
-      pos: 1.5,1.5
-      parent: 1
-    - type: ApcPowerReceiver
-      powerLoad: 5
-    - type: Battery
-      startingCharge: 0
 - proto: ComputerTabletopShuttleANALR67RWR
   entities:
   - uid: 172
@@ -1915,7 +1904,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,-3.5
       parent: 1
-- proto: SuitStorageWallmountSyndie
+- proto: SuitStorageWallmountMercenary
   entities:
   - uid: 249
     components:

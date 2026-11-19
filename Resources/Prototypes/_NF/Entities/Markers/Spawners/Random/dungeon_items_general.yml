@@ -743,7 +743,7 @@
     - MedicalTechFabCircuitboard
     - OreProcessorIndustrialMachineCircuitboard
     - DawInstrumentMachineCircuitboard
-    - ComputerIFFCircuitboard
+    # - ComputerIFFCircuitboard # LuaM: only VG and Syndicate ships have this console
     - SpawnDungeonLootFlatpacks
     - MercenaryTechFabCircuitboardNF
     - OperatingTableCircuitboard # LuaM
@@ -1102,7 +1102,7 @@
     - HoverbikeFlatpack
     - DawInstrumentFlatpack
     - MinimoogInstrumentFlatpack
-    - ComputerIFFFlatpack
+    # - ComputerIFFFlatpack # LuaM: only VG and Syndicate ships have this console
     - JukeboxFlatpack
     - VendingMachineBoozeFlatpack
     - VendingMachineCigsFlatpack

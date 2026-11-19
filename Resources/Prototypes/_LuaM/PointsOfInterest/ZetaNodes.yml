@@ -1,0 +1,38 @@
+# Extra parking stations next to Colossus Central. Everything but the name comes from ZetaNode.
+- type: pointOfInterest
+  id: ZetaNode2
+  parent: ZetaNode
+  name: 'Узел «Зета-2»'
+
+- type: gameMap
+  id: ZetaNode2
+  mapName: 'Узел «Зета-2»'
+  mapPath: /Maps/_Mono/POI/zetanode.yml
+  minPlayers: 0
+  stations:
+    ZetaNode2:
+      stationProto: RecordsFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Узел «Зета-2»'
+        - type: StationDeadDrop
+          maxDeadDrops: 2
+
+- type: pointOfInterest
+  id: ZetaNode3
+  parent: ZetaNode
+  name: 'Узел «Зета-3»'
+
+- type: gameMap
+  id: ZetaNode3
+  mapName: 'Узел «Зета-3»'
+  mapPath: /Maps/_Mono/POI/zetanode.yml
+  minPlayers: 0
+  stations:
+    ZetaNode3:
+      stationProto: RecordsFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Узел «Зета-3»'
+        - type: StationDeadDrop
+          maxDeadDrops: 2

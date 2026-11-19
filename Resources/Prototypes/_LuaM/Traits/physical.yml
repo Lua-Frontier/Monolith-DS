@@ -8,3 +8,81 @@
   - IPC
   components:
   - type: SharpEye
+
+- type: trait
+  id: LuaMEnhancedMotorics
+  name: trait-luam-enhanced-motorics-name
+  description: trait-luam-enhanced-motorics-desc
+  category: Physical
+  cost: 2
+  blacklist:
+    components:
+    - BorgChassis
+  components:
+  - type: DoAfterDelayMultiplier
+    multiplier: 0.7
+
+- type: trait
+  id: LuaMSyntheticLeukocytes
+  name: trait-luam-synthetic-leukocytes-name
+  description: trait-luam-synthetic-leukocytes-desc
+  category: Physical
+  cost: 4
+  mutuallyExclusiveTraits:
+  - Hemophilia
+  speciesBlacklist:
+  - IPC
+  blacklist:
+    components:
+    - BorgChassis
+  components:
+  - type: BloodRecoveryModifier
+    bleedReductionMultiplier: 3
+    bloodlossDamageMultiplier: 0.4
+
+- type: trait
+  id: LuaMAthletic
+  name: trait-luam-athletic-name
+  description: trait-luam-athletic-desc
+  category: Physical
+  cost: 12
+  speciesBlacklist:
+  - IPC
+  blacklist:
+    components:
+    - BorgChassis
+  components:
+  - type: TraitSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
+  - type: NoSlip
+
+- type: trait
+  id: LuaMReinforcedEndoskeleton
+  name: trait-luam-reinforced-endoskeleton-name
+  description: trait-luam-reinforced-endoskeleton-desc
+  category: Physical
+  cost: 4
+  mutuallyExclusiveTraits:
+  - OsteogenesisImperfecta
+  blacklist:
+    components:
+    - BorgChassis
+  components:
+  - type: SeverIntegrityModifier
+    multiplier: 1.33
+
+- type: trait
+  id: LuaMFastMetabolism
+  name: trait-luam-fast-metabolism-name
+  description: trait-luam-fast-metabolism-desc
+  category: Physical
+  cost: 8
+  speciesBlacklist:
+  - IPC
+  blacklist:
+    components:
+    - BorgChassis
+  components:
+  - type: MetabolismSpeedModifier
+    rateMultiplier: 1.25

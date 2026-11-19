@@ -16,6 +16,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   whitelisted: false # LuaM: true > false
   startingGear: PDVInfiltratorGear
   alwaysUseSpawner: true

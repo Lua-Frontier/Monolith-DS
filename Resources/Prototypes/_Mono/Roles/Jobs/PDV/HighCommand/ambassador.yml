@@ -3,6 +3,11 @@
   name: job-name-pdv-ambassador
   description: job-description-pdv-ambassador
   playTimeTracker: JobPDVAmbassador
+  requirements: # LuaM
+    - !type:TraitsRequirement # LuaM: Nordfall can't be wanted by the Federation
+      inverted: true
+      traits:
+      - FederationWanted
   startingGear: PDVAmbassadorGearEvent
   icon: JobIconPDVAmbassador
   supervisors: job-supervisors-nobody

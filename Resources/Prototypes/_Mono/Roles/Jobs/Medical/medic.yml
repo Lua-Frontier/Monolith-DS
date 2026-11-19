@@ -10,6 +10,7 @@
       inverted: true
       traits:
       - Heretic
+      - FederationWanted # LuaM
   startingGear: MdMedicGear
   alwaysUseSpawner: true
   icon: "JobIconMedicalDoctor"

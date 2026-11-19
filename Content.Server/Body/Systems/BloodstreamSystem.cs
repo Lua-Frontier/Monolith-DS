@@ -1,3 +1,4 @@
+using Content.Server._LuaM.Traits; // LuaM
 using Content.Server.Body.Components;
 using Content.Server.EntityEffects.Effects;
 using Content.Server.Fluids.EntitySystems;
@@ -128,6 +129,8 @@ public sealed partial class BloodstreamSystem : EntitySystem
                 TryModifyBloodLevel(uid, bloodstream.BloodRefreshAmount, bloodstream);
             }
 
+            TryComp<BloodRecoveryModifierComponent>(uid, out var bloodRecovery); // LuaM
+
             // Removes blood from the bloodstream based on bleed amount (bleed rate)
             // as well as stop their bleeding to a certain extent.
             if (bloodstream.BleedAmount > 0)
@@ -135,7 +138,7 @@ public sealed partial class BloodstreamSystem : EntitySystem
                 // Blood is removed from the bloodstream at a 1-1 rate with the bleed amount
                 TryModifyBloodLevel(uid, (-bloodstream.BleedAmount), bloodstream);
                 // Bleed rate is reduced by the bleed reduction amount in the bloodstream component.
-                TryModifyBleedAmount(uid, -bloodstream.BleedReductionAmount, bloodstream);
+                TryModifyBleedAmount(uid, -bloodstream.BleedReductionAmount * (bloodRecovery?.BleedReductionMultiplier ?? 1f), bloodstream); // LuaM: trait multiplier
             }
 
             // deal bloodloss damage if their blood level is below a threshold.
@@ -145,6 +148,8 @@ public sealed partial class BloodstreamSystem : EntitySystem
             {
                 // bloodloss damage is based on the base value, and modified by how low your blood level is.
                 var amt = bloodstream.BloodlossDamage / (0.1f + bloodPercentage);
+                if (bloodRecovery != null) // LuaM
+                    amt *= bloodRecovery.BloodlossDamageMultiplier;
 
                 _damageableSystem.TryChangeDamage(uid, amt,
                     ignoreResistances: false, interruptsDoAfters: false);

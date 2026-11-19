@@ -34,7 +34,7 @@
       - OverwatchConsole # Requested by staff
       - GhostRoleMobSpawner # Reinforcement radios
       - DoorRemote # Requested by staff
-      - SolutionContainerManager # Requested by staff + lets you do crazy crazy shit that shouldn't be allowed gameplay wise (such as storing 6ku of letoferol)
+      # - SolutionContainerManager # Commented by LuaM: moved to reagentBlacklist of SafetyDepositBox
       - NukeDisk # Might be abusable in some way, who knows.
       - Contraband # items exchangeable for FMC or DC. this also includes a large portion of faction gear which shouldn't be persistent for balance reasons
       - ThiefUndeterminedBackpack # no stashing an entire fucking judge/overseer modsuit or spasaka/TARKHAN/MARSOC kit
@@ -48,6 +48,24 @@
       - SafetyDepositBlacklist
       - MailCapsule # LuaM: mail capsules can not be stashed
   - type: SafetyDepositBox
+    # LuaM-start
+    blacklistExceptions: # allowed even though the blacklist matches them
+    - EnergySword
+    - EnergySwordNfsd
+    - NFEnergyPickaxe
+    reagentBlacklist: # clothing is edible and holds reagents too, it is judged by clothingReagentBlacklist instead
+      components:
+      - SolutionContainerManager # Requested by staff + lets you do crazy crazy shit that shouldn't be allowed gameplay wise (such as storing 6ku of letoferol)
+    clothingReagentBlacklist: # clothing that reagents can be put into or taken out of
+      components:
+      - RefillableSolution
+      - InjectableSolution
+      - DrawableSolution
+      - DrainableSolution
+      - DumpableSolution
+      - Absorbent
+      - Spillable
+    # LuaM-end
   - type: Appearance
   - type: Tag
     tags:

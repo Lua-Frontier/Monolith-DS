@@ -114,7 +114,8 @@ public sealed partial class RottingSystem : SharedRottingSystem
                 var stage = RotStage(uid, rotting, perishable);
                 if (stage >= rotInto.Stage)
                 {
-                    Spawn(rotInto.Entity, xform.Coordinates);
+                    if (rotInto.Entity is { } rotEntity) // LuaM: can rot into nothing
+                        Spawn(rotEntity, xform.Coordinates);
                     QueueDel(uid);
                     continue;
                 }

@@ -1,0 +1,15 @@
+<Control
+    xmlns="https://spacestation14.io"
+    Margin="4">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc luam-admin-jobs-tab-header}" HorizontalExpand="True" />
+            <Button Name="RefreshButton" Text="{Loc luam-admin-jobs-refresh}" />
+        </BoxContainer>
+        <Label Name="StatusLabel" Visible="False" />
+        <Label Name="EmptyLabel" Text="{Loc luam-admin-jobs-empty}" Visible="False" />
+        <ScrollContainer VerticalExpand="True" HScrollEnabled="False" Margin="0 4 0 0">
+            <BoxContainer Name="JobsContainer" Orientation="Vertical" HorizontalExpand="True" />
+        </ScrollContainer>
+    </BoxContainer>
+</Control>

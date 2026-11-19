@@ -7,6 +7,10 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 43200
+    - !type:TraitsRequirement # LuaM: Nordfall can't be wanted by the Federation
+      inverted: true
+      traits:
+      - FederationWanted
   assignedCompany: PDV
   canBeAntag: false
   icon: JobIconBorg
