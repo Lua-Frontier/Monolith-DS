@@ -4,7 +4,7 @@
   name:  uplink-tsf-jumppack-name
   description: uplink-tsf-jumppack-desc
   productEntity: JumppacktsfFilled
-  icon: { sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi, state: icon }
+  icon: { sprite: _LuaM/Objects/Tanks/jumppacks/tsf.rsi, state: icon }
   cost:
     FederationMilitaryCredit: 250
   categories:
