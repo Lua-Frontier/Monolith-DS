@@ -141,7 +141,7 @@
   - type: ItemTax # Mono
     taxAccounts:
       BlackMarket: 0.3
-      nfsd: -0.225 # LuaM: -0.075 > -0.225, TSF contraband fines tripled
+      nfsd: -0.6 # LuaM: -0.075 > -0.6
   - type: RadarBlip
     radarColor: "#cc4e0e"
     scale: 1.5
@@ -153,6 +153,6 @@
       Doubloon: 10
   - type: ExtendDescription
     descriptionList:
-    - description: extend-desc-funds-pdv # LuaM
+    - description: extend-desc-fine-tsf-reward-pdv # LuaM
       color: "#4f94ad"
       requireDetailRange: true

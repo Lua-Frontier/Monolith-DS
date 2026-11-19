@@ -116,24 +116,41 @@
     - sprite: _NF/Markers/general.rsi
       state: questionmark
       color: red
-  - type: RandomSpawner
-    prototypes:
-    - GoldOre15
-    - SteelOre15
-    - PlasmaOre15
-    - SilverOre15
-    - SpaceQuartz15
-    - UraniumOre15
-    - Coal15
-    - LithiumOre15
-    - CopperOre15
-    chance: 0.95
+  # LuaM-start: weighted ore table. Weights are hundredths of a percent and add up to 10000.
+  # Keep them whole: the weighted pick sums floats and throws if the running total falls short.
+  - type: EntityTableSpawner
     offset: 0.0
-    rarePrototypes:
-    - BananiumOre1
-    - DiamondOre1
-    - BluespaceOre1
-    rareChance: 0.01
+    table: !type:GroupSelector
+      children:
+      - id: Coal15
+        weight: 2000
+      - id: Salt15
+        weight: 1500
+      - id: SteelOre15
+        weight: 1000
+      - id: UraniumOre15
+        weight: 250
+      - id: PlasmaOre15
+        weight: 250
+      - id: GoldOre15
+        weight: 881
+      - id: SilverOre15
+        weight: 881
+      - id: SpaceQuartz15
+        weight: 881
+      - id: LithiumOre15
+        weight: 881
+      - id: CopperOre15
+        weight: 881
+      - !type:GroupSelector
+        weight: 100
+        children:
+        - id: BananiumOre1
+        - id: DiamondOre1
+        - id: BluespaceOre1
+      - !type:NoneSelector
+        weight: 495
+  # LuaM-end
 
 - type: entity
   parent: GoldOre

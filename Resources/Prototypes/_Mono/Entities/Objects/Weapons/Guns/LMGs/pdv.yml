@@ -52,8 +52,8 @@
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/Rifles/wspr_tarkhan_inhands_32x.rsi
   - type: GunWieldBonus
-    minAngle: -13 # LuaM: -14 > -13
-    maxAngle: -47
+    minAngle: -12.7 # LuaM: -14 > -12.7, wielded spread 1.3 degrees
+    maxAngle: -45.5 # LuaM: -47 > -45.5, wielded spread 6.5 degrees
   - type: Gun
     minAngle: 14
     maxAngle: 52
@@ -79,6 +79,7 @@
         whitelist:
           tags:
           - Magazine762x51mmBoxSmall
+          - Magazine762x51mmBoxBig # LuaM
           - Magazine762x51mmFMJ
           - Magazine762x51mmLowCapacityFMJ
         whitelistFailPopup: gun-magazine-whitelist-fail

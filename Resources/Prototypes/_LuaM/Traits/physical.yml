@@ -45,7 +45,9 @@
   name: trait-luam-athletic-name
   description: trait-luam-athletic-desc
   category: Physical
-  cost: 6
+  cost: 12
+  speciesBlacklist:
+  - IPC
   blacklist:
     components:
     - BorgChassis

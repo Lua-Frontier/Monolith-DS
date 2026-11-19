@@ -15,3 +15,4 @@ extend-desc-fits-tsf-gpmg = Fits into TSF ballistic & chemical laser GPMGs.
 extend-desc-accuracy-builds = Continued fire increases accuracy.
 extend-desc-lathe-components = Insert components for recipes by placing them on top of the lathe, then "open / close" inside its right-click menu.
 extend-desc-letoferol-shield = This one is an experimental prototype haphazardly rushed out due to the sudden Letoferol outbreak in the sector. It will require increasing amounts of power the longer it is kept active, meaning you eventually must decide between feeding it even more power or living without it.
+extend-desc-fine-tsf-reward-pdv = Turning this item in fines the TSF and rewards the Nordfall Vanguard.

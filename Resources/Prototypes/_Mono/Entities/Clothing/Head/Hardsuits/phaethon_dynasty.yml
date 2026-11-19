@@ -84,7 +84,7 @@
 - type: entity
   parent: [ClothingHeadHelmetHardsuitSyndieElite, ShowSecurityIcons, ShowMedicalIcons ] # LuaM add ShowMedicalIcons
   id: ClothingHeadHelmetHardsuitVizier
-  name: PDV CV-67 combat hardsuit helmet
+  name: PDV CV-68 combat hardsuit helmet # LuaM: CV-67 > CV-68
   description: An adorned tacsuit designed with an imperfect nanolaminate composition. High maneuverability, sturdy armor.
   categories: [ HideSpawnMenu ]
   components:

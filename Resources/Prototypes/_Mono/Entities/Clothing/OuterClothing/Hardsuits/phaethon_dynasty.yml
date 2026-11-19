@@ -133,7 +133,7 @@
 - type: entity
   parent: ClothingOuterHardsuitSyndieCommander
   id: ClothingOuterHardsuitVizier
-  name: PDV CV-67 combat tacsuit
+  name: PDV CV-68 combat tacsuit # LuaM: CV-67 > CV-68
   description: An adorned tacsuit designed with an imperfect nanolaminate composition. High maneuverability, sturdy armor.
   components:
   - type: SpeedTieredFootsteps # LuaM: always heavy steps, whatever the slowdown
@@ -141,6 +141,19 @@
   - type: ClothingSpeedModifier # LuaM: TSF and PDV suits are 10% slower, inherited 1.0 > 0.9
     walkModifier: 0.9
     sprintModifier: 0.9
+  # LuaM-start: heat and explosion resistance raised to 65%, other values match the parent suit
+  - type: ExplosionResistance
+    damageCoefficient: 0.35 # inherited 0.5 > 0.35
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.35
+        Slash: 0.35
+        Piercing: 0.27
+        Heat: 0.35 # inherited 0.4 > 0.35
+        Radiation: 0.25
+        Caustic: 0.4
+  # LuaM-end
   - type: Sprite
     sprite: _LuaM/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi # LuaM: _Mono/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi -> _LuaM/Clothing/OuterClothing/Hardsuits/pdv_vizier.rsi
   - type: Clothing
@@ -250,7 +263,7 @@
   parent: ClothingOuterHardsuitAshen
   id: ClothingOuterHardsuitTarkhan
   name: "PDV CV-280 'Basilisk' combat hardsuit"
-  description: A combat hardsuit designed by the Phaethon Dynasty for Tarkhans. Utilizes an imperfect nanolaminate composition like the CV-67 to save weight, and an installed hydraulic rig for more mobility, and painted in a royal Tarkhan white palette. A rare sight.
+  description: A combat hardsuit designed by the Phaethon Dynasty for Tarkhans. Utilizes an imperfect nanolaminate composition like the CV-68 to save weight, and an installed hydraulic rig for more mobility, and painted in a royal Tarkhan white palette. A rare sight. # LuaM: CV-67 > CV-68
   components:
   - type: SpeedTieredFootsteps # LuaM: heavy steps
     forcedTier: Heavy
@@ -279,7 +292,7 @@
         Slash: 0.35 # LuaM: 0.45 > 0.35
         Piercing: 0.35 # LuaM: 0.375 > 0.35
         Shock: 0.95
-        Heat: 0.1 # LuaM: 0.7 > 0.1
+        Heat: 0.2 # LuaM: 0.7 > 0.2
         Radiation: 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier

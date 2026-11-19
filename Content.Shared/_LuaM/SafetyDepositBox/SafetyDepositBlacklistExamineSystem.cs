@@ -1,3 +1,4 @@
+using Content.Shared._WF.SafetyDepositBox.Components;
 using Content.Shared.Examine;
 using Content.Shared.Item;
 using Content.Shared.Storage;
@@ -8,18 +9,19 @@ namespace Content.Shared._LuaM.SafetyDepositBox;
 
 /// <summary>
 /// Tells on examine that an item can not be put into a safety deposit box.
-/// The blacklist is read from the box prototype, so the examine text always matches the real storage rules.
+/// The rules are read from the box prototype, so the examine text always matches the real storage rules.
 /// </summary>
 public sealed partial class SafetyDepositBlacklistExamineSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _prototype = default!;
-    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private SafetyDepositRulesSystem _rules = default!;
 
-    // all safety deposit boxes share the storage blacklist of their abstract parent
+    // all safety deposit boxes share the storage rules of their abstract parent
     private static readonly EntProtoId BoxPrototype = "SafetyDepositBoxSmall";
 
+    private SafetyDepositBoxComponent? _box;
     private EntityWhitelist? _blacklist;
-    private bool _blacklistLoaded;
+    private bool _rulesLoaded;
 
     public override void Initialize()
     {
@@ -33,7 +35,7 @@ public sealed partial class SafetyDepositBlacklistExamineSystem : EntitySystem
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
     {
         if (args.WasModified<EntityPrototype>())
-            _blacklistLoaded = false;
+            _rulesLoaded = false;
     }
 
     private void OnExamined(Entity<MetaDataComponent> ent, ref ExaminedEvent args)
@@ -41,26 +43,30 @@ public sealed partial class SafetyDepositBlacklistExamineSystem : EntitySystem
         if (!HasComp<ItemComponent>(ent))
             return;
 
-        if (!_whitelist.IsBlacklistPass(GetBlacklist(), ent))
+        LoadRules();
+
+        if (_box == null || _rules.CanStore(_box, _blacklist, ent))
             return;
 
         args.PushMarkup(Loc.GetString("safety-deposit-blacklisted-examine"), -1);
     }
 
-    private EntityWhitelist? GetBlacklist()
+    private void LoadRules()
     {
-        if (_blacklistLoaded)
-            return _blacklist;
+        if (_rulesLoaded)
+            return;
 
-        _blacklistLoaded = true;
+        _rulesLoaded = true;
+        _box = null;
         _blacklist = null;
 
-        if (_prototype.TryIndex(BoxPrototype, out var proto) &&
-            proto.TryComp<StorageComponent>(out var storage, Factory))
-        {
-            _blacklist = storage.Blacklist;
-        }
+        if (!_prototype.TryIndex(BoxPrototype, out var proto))
+            return;
 
-        return _blacklist;
+        if (proto.TryComp<SafetyDepositBoxComponent>(out var box, Factory))
+            _box = box;
+
+        if (proto.TryComp<StorageComponent>(out var storage, Factory))
+            _blacklist = storage.Blacklist;
     }
 }

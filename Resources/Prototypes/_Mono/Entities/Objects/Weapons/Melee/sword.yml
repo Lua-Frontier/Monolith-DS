@@ -338,7 +338,7 @@
     - Belt
     - suitStorage
   - type: Reflect
-    reflectProb: 0.75 # LuaM 0.8 > 0.5 > 0.75
+    reflectProb: 0.4 # LuaM 0.8 > 0.5 > 0.75 > 0.4
     reflects:
     - Energy
     - NonEnergy
@@ -346,23 +346,25 @@
     malus: 0.9
   - type: StaticPrice
     price: 5000 # YOU CALL THAT A BLADE.... I'LL SHOW YOU A BLADE...
-  - type: WeaponMeleeCharge
-    activeTime: 5 #LuaM: 3 > 5
-    cooldown: 20 #LuaM 30 > 15 > 20
-    cooldownDamagePenalty:
-      types:
-        Slash: -27
-  - type: ItemToggleMeleeWeapon
-    activatedDamage:
-        types:
-            Slash: 125 # LuaM: 100 > 125
-            Structural: 500 # LuaM: 300 > 500
-  - type: ItemToggle
-    predictable: false
-    soundActivate:
-      path: /Audio/Weapons/bladeslice.ogg
-    soundDeactivate:
-      path: /Audio/Weapons/bladeslice.ogg
+  # LuaM-start: the charged strike on Z is disabled for now
+  # - type: WeaponMeleeCharge
+  #   activeTime: 5 #LuaM: 3 > 5
+  #   cooldown: 20 #LuaM 30 > 15 > 20
+  #   cooldownDamagePenalty:
+  #     types:
+  #       Slash: -27
+  # - type: ItemToggleMeleeWeapon
+  #   activatedDamage:
+  #       types:
+  #           Slash: 125 # LuaM: 100 > 125
+  #           Structural: 500 # LuaM: 300 > 500
+  # - type: ItemToggle
+  #   predictable: false
+  #   soundActivate:
+  #     path: /Audio/Weapons/bladeslice.ogg
+  #   soundDeactivate:
+  #     path: /Audio/Weapons/bladeslice.ogg
+  # LuaM-end
   - type: Tag
     tags:
     - Shamshir

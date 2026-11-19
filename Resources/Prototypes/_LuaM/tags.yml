@@ -18,6 +18,9 @@
   id: DatadiskEncrypted
 
 - type: Tag
+  id: EnergySwordCrafting
+
+- type: Tag
   id: FanElectronics
 
 - type: Tag
