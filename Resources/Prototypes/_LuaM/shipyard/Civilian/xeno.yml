@@ -1,0 +1,37 @@
+- type: vessel
+  id: NMXeno
+  parent: BaseVessel
+  name: vessel-nmxeno-name
+  description: vessel-nmxeno-desc
+  limit: 2
+  price: 260000
+  purchasable: false # voucher only
+  category: Large
+  group: Shipyard
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Civilian/xeno.yml
+  guidebookPage: null
+  class:
+  - Frigate
+  - Brawler
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: NMXeno
+  mapName: 'Xeno'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Civilian/xeno.yml
+  minPlayers: 0
+  stations:
+    NMXeno:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Xeno CIV{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

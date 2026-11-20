@@ -1,0 +1,36 @@
+- type: vessel
+  id: lunir
+  parent: BaseVessel
+  name: vessel-lunir-name
+  description: vessel-lunir-desc
+  price: 110000
+  category: Medium
+  group: Expedition
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/lunir.yml
+  guidebookPage: null
+  class:
+  - Expedition
+  - Pursuit
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: lunir
+  mapName: 'lunIR'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Expedition/lunir.yml
+  minPlayers: 0
+  stations:
+    lunir:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'lunIR VTL {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]
+

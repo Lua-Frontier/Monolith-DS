@@ -1,0 +1,38 @@
+- type: vessel
+  id: archonC
+  parent: BaseVessel
+  name: vessel-archonC-name
+  description: vessel-archonC-desc
+  price: 100000
+  category: Medium
+  group: Expedition
+  access: Mercenary
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/archonC.yml
+  guidebookPage: Null
+  class:
+  - Medical
+  - Pursuit
+  - Expedition
+  - Civilian
+  engine:
+  - AME
+
+- type: gameMap
+  id: archonC
+  mapName: 'Archon C2'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Expedition/archonC.yml
+  minPlayers: 0
+  stations:
+    archonC:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Archon C2{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

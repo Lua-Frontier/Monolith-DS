@@ -172,6 +172,7 @@
   - ClothingBackpackMessengerHolding
   - FlashlightSecliteNF
   - ArmorPlateStorageT2Recipe # LuaM
+  - ShipVoucherXenoRecipe # LuaM
 ## Weapons
   - WeaponGrapplingGun
   - KatanaNF

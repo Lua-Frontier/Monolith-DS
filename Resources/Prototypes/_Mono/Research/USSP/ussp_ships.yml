@@ -22,6 +22,9 @@
   recipeUnlocks:
   - ShipVoucherUsspDrakon
   - ShipVoucherUsspTayfun
+  # LuaM-start:
+  - ShipVoucherUsspArchonM2
+  # LuaM-end.
   technologyPrerequisites:
   - UsspBasicShips
   position: 9, 8 # LuaM 3, -16 > 9, 8
@@ -35,6 +38,9 @@
   cost: 95000
   recipeUnlocks:
   - ShipVoucherUsspBuran
+  # LuaM-start:
+  - ShipVoucherUsspDefiant
+  # LuaM-end.
   technologyPrerequisites:
   - UsspMediumShips
   # - UniversalMaterialResearchT3 # Commented by LuaM
