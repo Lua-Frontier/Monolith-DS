@@ -51,7 +51,10 @@
     maxSpeed: 10
     weightClass: Weak
     acceleration: 4
-    maxRotationSpeedDegrees: 146
+    maxRotationSpeedDegrees: 190
+    pivotRotationSpeedDegrees: 190
+    rotationAccelerationDegrees: 100000
+    rotationDecelerationDegrees: 100000
     driftMinSpeed: 9
     driftGripDegrees: 150
   - type: VehicleSeats

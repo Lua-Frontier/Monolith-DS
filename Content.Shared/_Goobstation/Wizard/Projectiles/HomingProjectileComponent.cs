@@ -5,7 +5,8 @@ namespace Content.Shared._Goobstation.Wizard.Projectiles;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class HomingProjectileComponent : Component
 {
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    // LuaM: not networked, the client never reads it and a deleted target broke the component state
+    [ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? Target;
 
     [DataField, AutoNetworkedField]

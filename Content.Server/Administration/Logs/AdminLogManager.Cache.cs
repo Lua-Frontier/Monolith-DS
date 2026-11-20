@@ -17,6 +17,7 @@ public sealed partial class AdminLogManager
     // TODO ADMIN LOGS make this thread safe or remove thread safety from the main partial class
     private readonly Dictionary<int, List<SharedAdminLog>> _roundsLogCache = new(MaxRoundsCached);
     private readonly Queue<int> _roundsLogCacheQueue = new();
+    private readonly object _cacheLock = new(); // LuaM: the admin logs window searches the cache from Task.Run while the game thread appends
 
     private static readonly Gauge CacheRoundCount = Metrics.CreateGauge(
         "admin_logs_cache_round_count",
@@ -29,23 +30,26 @@ public sealed partial class AdminLogManager
     // TODO ADMIN LOGS cache previous {MaxRoundsCached} rounds on startup
     public void CacheNewRound()
     {
-        List<SharedAdminLog>? list = null;
-
-        _roundsLogCacheQueue.Enqueue(_currentRoundId);
-        if (_roundsLogCacheQueue.Count > MaxRoundsCached)
+        lock (_cacheLock) // LuaM
         {
-            var oldestRound = _roundsLogCacheQueue.Dequeue();
-            if (_roundsLogCache.Remove(oldestRound, out var oldestList))
+            List<SharedAdminLog>? list = null;
+
+            _roundsLogCacheQueue.Enqueue(_currentRoundId);
+            if (_roundsLogCacheQueue.Count > MaxRoundsCached)
             {
-                list = oldestList;
-                list.Clear();
+                var oldestRound = _roundsLogCacheQueue.Dequeue();
+                if (_roundsLogCache.Remove(oldestRound, out var oldestList))
+                {
+                    list = oldestList;
+                    list.Clear();
+                }
             }
+
+            list ??= new List<SharedAdminLog>(LogListInitialSize);
+
+            _roundsLogCache.Add(_currentRoundId, list);
+            CacheRoundCount.Set(_roundsLogCache.Count);
         }
-
-        list ??= new List<SharedAdminLog>(LogListInitialSize);
-
-        _roundsLogCache.Add(_currentRoundId, list);
-        CacheRoundCount.Set(_roundsLogCache.Count);
     }
 
     private void CacheLog(AdminLog log)
@@ -59,16 +63,22 @@ public sealed partial class AdminLogManager
     private void CacheLog(SharedAdminLog log)
     {
         // TODO ADMIN LOGS remove redundant data and don't do a dictionary lookup per log
-        var cache = _roundsLogCache[_currentRoundId];
-        cache.Add(log);
-        CacheLogCount.Set(cache.Count);
+        lock (_cacheLock) // LuaM
+        {
+            var cache = _roundsLogCache[_currentRoundId];
+            cache.Add(log);
+            CacheLogCount.Set(cache.Count);
+        }
     }
 
     private void CacheLogs(IEnumerable<SharedAdminLog> logs)
     {
-        var cache = _roundsLogCache[_currentRoundId];
-        cache.AddRange(logs);
-        CacheLogCount.Set(cache.Count);
+        lock (_cacheLock) // LuaM
+        {
+            var cache = _roundsLogCache[_currentRoundId];
+            cache.AddRange(logs);
+            CacheLogCount.Set(cache.Count);
+        }
     }
 
     private bool TryGetCache(int roundId, [NotNullWhen(true)] out List<SharedAdminLog>? cache)
@@ -78,14 +88,22 @@ public sealed partial class AdminLogManager
 
     private bool TrySearchCache(LogFilter? filter, [NotNullWhen(true)] out List<SharedAdminLog>? results)
     {
-        if (filter?.Round == null || !TryGetCache(filter.Round.Value, out var cache))
+        // LuaM-start: search a snapshot, the game thread keeps appending to the live list
+        SharedAdminLog[] snapshot;
+        lock (_cacheLock)
         {
-            results = null;
-            return false;
+            if (filter?.Round == null || !TryGetCache(filter.Round.Value, out var cache))
+            {
+                results = null;
+                return false;
+            }
+
+            snapshot = cache.ToArray();
         }
 
         // TODO ADMIN LOGS a better heuristic than linq spaghetti
-        var query = cache.AsEnumerable();
+        var query = snapshot.AsEnumerable();
+        // LuaM-end
 
         query = filter.DateOrder switch
         {

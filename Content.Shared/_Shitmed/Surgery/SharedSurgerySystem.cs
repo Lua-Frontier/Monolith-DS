@@ -90,9 +90,10 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         if (!_timing.IsFirstTimePredicted)
             return;
 
-        if (args.Cancelled
-            || args.Handled
-            || args.Target is not { } target
+        if (args.Cancelled || args.Handled) // LuaM: an interrupted doafter is not an invalid surgery
+            return;
+
+        if (args.Target is not { } target
             || !IsSurgeryValid(ent, target, args.Surgery, args.Step, args.User, out var surgery, out var part, out var step)
             || !PreviousStepsComplete(ent, part, surgery, args.Step)
             || !CanPerformStep(args.User, ent, part, step, false))

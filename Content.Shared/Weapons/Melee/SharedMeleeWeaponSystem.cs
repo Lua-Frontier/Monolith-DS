@@ -622,7 +622,8 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         if (damageResult?.GetTotal() > FixedPoint2.Zero)
         {
-            DoDamageEffect(targets, playerUid, targetXform);
+            if (!TerminatingOrDeleted(target.Value)) // LuaM: target can be gibbed by the hit
+                DoDamageEffect(targets, playerUid, targetXform);
 
             // LuaM-start: tell the attacker the hit landed
             var userHitEv = new MeleeUserHitEvent(meleeUid, targets);
@@ -805,13 +806,16 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             }
         }
 
+        var hitCount = targets.Count; // LuaM
+        targets.RemoveAll(target => TerminatingOrDeleted(target)); // LuaM: targets can be gibbed by the hit
+
         if (entities.Count != 0)
         {
             var target = entities.First();
             _meleeSound.PlayHitSound(target, playerUid, GetHighestDamageSound(appliedDamage, _protoManager), hitEvent.HitSoundOverride, component);
         }
 
-        if (appliedDamage.GetTotal() > FixedPoint2.Zero)
+        if (appliedDamage.GetTotal() > FixedPoint2.Zero && targets.Count > 0) // LuaM
         {
             DoDamageEffect(targets, playerUid, Transform(targets[0]));
 
@@ -824,7 +828,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         // goob edit - stunmeta
         if (TryComp<StaminaComponent>(user, out var stamina))
             // make it not immediate to prevent annoying stamcrits // Mono - scale with targets count
-            _stamina.TakeStaminaDamage(user, component.HeavyStaminaCost * (targets.Count - 1), stamina, visual: false, immediate: false);
+            _stamina.TakeStaminaDamage(user, component.HeavyStaminaCost * (hitCount - 1), stamina, visual: false, immediate: false); // LuaM: hitCount
 
         return true;
     }

@@ -8,6 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared._LuaM.Vehicles.Components;
 using Content.Shared._LuaM.Weapons;
+using Content.Shared.ActionBlocker;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
@@ -20,6 +21,7 @@ namespace Content.Shared._LuaM.Vehicles;
 
 public sealed partial class VehicleTurretSystem : EntitySystem
 {
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private HardpointSystem _hardpoints = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private ISharedPlayerManager _player = default!;
@@ -55,6 +57,7 @@ public sealed partial class VehicleTurretSystem : EntitySystem
             if (_player.LocalEntity is { } local &&
                 TryComp<VehicleOccupantComponent>(local, out var occupant) &&
                 TryComp<VehicleSeatsComponent>(occupant.Vehicle, out var seats) && seats.Gunner == local &&
+                _actionBlocker.CanConsciouslyPerformAction(local) &&
                 TryComp<VehicleTurretComponent>(occupant.Vehicle, out var own))
             {
                 RotateTurret((occupant.Vehicle, own), Transform(occupant.Vehicle), frameTime);
@@ -316,6 +319,7 @@ public sealed partial class VehicleTurretSystem : EntitySystem
         if (args.SenderSession.AttachedEntity is not { } user ||
             !TryGetEntity(msg.Vehicle, out var vehicle) ||
             !TryComp<VehicleSeatsComponent>(vehicle, out var seats) || seats.Gunner != user ||
+            !_actionBlocker.CanConsciouslyPerformAction(user) ||
             !TryComp<VehicleTurretComponent>(vehicle, out var turret))
         {
             return;

@@ -158,6 +158,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
 
             var wasMoving = mover.IsMoving;
             var wasDrifting = mover.DriftDegrees != 0f;
+            var wasTurning = mover.AngularVelocityDegrees != 0f;
             var handbrakeChanged = mover.Handbrake != handbrake;
             mover.Handbrake = handbrake;
 
@@ -180,7 +181,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
                 RaiseLocalEvent(uid, ref ev);
             }
 
-            if (mover.IsMoving || wasMoving || wasDrifting || handbrakeChanged || mover.AngularVelocityDegrees != 0f)
+            if (mover.IsMoving || wasMoving || wasDrifting || wasTurning || handbrakeChanged || mover.AngularVelocityDegrees != 0f)
                 Dirty(uid, mover);
         }
     }
@@ -272,7 +273,9 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             {
                 turned = mover.AngularVelocityDegrees * dt;
                 rotation = desired;
-                _transform.SetLocalRotationNoLerp(uid, rotation, xform);
+                // -- С NoLerp клиент после серверного состояния доводил угол к устаревшей серверной цели: стрелка дёргалась назад
+                // -- при остановке поворота. Обычный сеттер даёт движку сбросить эту цель на перепроигрывании
+                _transform.SetLocalRotation(uid, rotation, xform);
             }
             else
             {

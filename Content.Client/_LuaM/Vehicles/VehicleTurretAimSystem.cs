@@ -7,6 +7,7 @@
 using System.Numerics;
 using Content.Shared._LuaM.Vehicles;
 using Content.Shared._LuaM.Vehicles.Components;
+using Content.Shared.ActionBlocker;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
@@ -17,6 +18,7 @@ namespace Content.Client._LuaM.Vehicles;
 
 public sealed partial class VehicleTurretAimSystem : EntitySystem
 {
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private IEyeManager _eye = default!;
     [Dependency] private IInputManager _input = default!;
     [Dependency] private IPlayerManager _player = default!;
@@ -48,6 +50,7 @@ public sealed partial class VehicleTurretAimSystem : EntitySystem
         if (_player.LocalEntity is not { } local ||
             !TryComp<VehicleOccupantComponent>(local, out var occupant) ||
             !TryComp<VehicleSeatsComponent>(occupant.Vehicle, out var seats) || seats.Gunner != local ||
+            !_actionBlocker.CanConsciouslyPerformAction(local) ||
             !TryComp<VehicleTurretComponent>(occupant.Vehicle, out var turret))
         {
             _lastVehicle = EntityUid.Invalid;

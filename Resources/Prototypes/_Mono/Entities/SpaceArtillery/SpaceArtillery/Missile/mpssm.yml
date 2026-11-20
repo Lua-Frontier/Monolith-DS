@@ -53,7 +53,7 @@
 # HEAT
 
 - type: entity
-  id: RocketMk248
+  id: RocketMk248 # LuaM: no ShipWeaponProjectile, shields caught it from the inside and it blew up on the shooter
   name: MPSSM Mk.248 HEAT rocket
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
@@ -71,7 +71,6 @@
     - state: mini-rocket
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectSmall
-  - type: ShipWeaponProjectile
   - type: RadarBlip
     radarColor: "#FCBA03"
     scale: 1

@@ -65,8 +65,9 @@
     reverseAcceleration: 3
     deceleration: 9
     maxRotationSpeedDegrees: 170
-    rotationAccelerationDegrees: 900
-    rotationDecelerationDegrees: 900
+    pivotRotationSpeedDegrees: 170
+    rotationAccelerationDegrees: 100000
+    rotationDecelerationDegrees: 100000
     alignmentAssistDegrees: 8
     ramMinSpeed: 3
     ramStructureDamage: 0.1

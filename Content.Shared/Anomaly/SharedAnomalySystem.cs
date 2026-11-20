@@ -429,6 +429,9 @@ public abstract partial class SharedAnomalySystem : EntitySystem
             }
 
             resultList.Add(tileref);
+            // LuaM: the wall spawners of this pulse are not hard yet, without this a tile could get several rocks at once
+            if (!settings.CanSpawnOnEntities)
+                tilerefs.Remove(tileref);
         }
         return resultList;
     }

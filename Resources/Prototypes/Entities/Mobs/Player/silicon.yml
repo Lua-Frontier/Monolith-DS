@@ -824,7 +824,7 @@
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHigh
   - type: RandomMetadata
-    nameSegments: [NFNamesBorgUnlocalized] # Frontier: names_borg<NFNamesBorgUnlocalized
+    nameSegments: [NFNamesBorg] # Frontier: names_borg<NFNamesBorgUnlocalized # LuaM: NFNamesBorgUnlocalized > NFNamesBorg
 
 - type: entity
   id: PlayerBorgDerelictGhostRole

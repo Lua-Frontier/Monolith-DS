@@ -171,9 +171,10 @@ public sealed partial class MicrowaveSystem : EntitySystem
             if (reagents[reagent.Key] < reagent.Value)
                 return (recipe, 0);
 
+            var reagentPortions = (reagents[reagent.Key] / reagent.Value).Int(); // LuaM: recipes can ask for less than 1u, Int() / Int() divided by zero
             portions = portions == 0
-                ? reagents[reagent.Key].Int() / reagent.Value.Int()
-                : Math.Min(portions, reagents[reagent.Key].Int() / reagent.Value.Int());
+                ? reagentPortions
+                : Math.Min(portions, reagentPortions);
         }
 
         //Return as many portions as we can assemble with the given materials

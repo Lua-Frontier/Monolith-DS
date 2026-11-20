@@ -351,8 +351,27 @@
     proto: LuaMBulletTankHEAT
     deleteOnSpawn: true
 
+# -- Без ShipWeaponProjectile: щит ловит только корабельные снаряды, и выстрел изнутри щита рвался у самого танка
 - type: entity
-  parent: 90mmBulletHE
+  parent: BaseBulletTrigger
+  id: LuaMBulletTankBase
+  name: shell
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 4.2
+  - type: PointLight
+    radius: 3.5
+    energy: 0.5
+    color: orange
+  - type: RadarBlip
+    scale: 0.8
+    shape: circle
+    radarColor: "#FFFFFF"
+
+- type: entity
+  parent: LuaMBulletTankBase
   id: LuaMBulletTankHE
   name: HE shell
   categories: [ HideSpawnMenu ]
@@ -362,6 +381,11 @@
       types:
         Piercing: 50
         Structural: 40
+  - type: Sprite
+    sprite: _Mono/Objects/SpaceArtillery/shells.rsi
+    layers:
+    - state: 90mmHE
+  - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
     totalIntensity: 90
@@ -371,7 +395,7 @@
     tileBreakScale: 3
 
 - type: entity
-  parent: 90mmBulletBase
+  parent: LuaMBulletTankBase
   id: LuaMBulletTankFlechette
   name: flechette shell
   categories: [ HideSpawnMenu ]
@@ -425,7 +449,7 @@
     lifetime: 0.5
 
 - type: entity
-  parent: 90mmBulletBase
+  parent: LuaMBulletTankBase
   id: LuaMBulletTankHEAT
   name: HEAT shell
   categories: [ HideSpawnMenu ]

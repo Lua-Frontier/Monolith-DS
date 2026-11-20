@@ -59,7 +59,7 @@
         - Wizard
       - type: RandomMetadata
         nameSegments:
-        - names_wizard_first
-        - names_wizard_last
+        - NamesWizardFirst # LuaM: names_wizard_first > NamesWizardFirst
+        - NamesWizardLast # LuaM: names_wizard_last > NamesWizardLast
       mindRoles:
       - MindRoleWizard
