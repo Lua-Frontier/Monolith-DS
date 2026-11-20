@@ -1,0 +1,36 @@
+- type: vessel
+  id: phocir
+  parent: BaseVessel
+  name: vessel-phocir-name # LuaM-locale
+  description: vessel-phocir-desc # LuaM-locale
+  price: 115000
+  category: Medium
+  group: Shipyard
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Civilian/phocir.yml
+  guidebookPage: null
+  class:
+  - Civilian
+  - Kitchen
+  - Botany
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: phocir
+  mapName: 'VTL PhocIR-C1'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Civilian/phocir.yml
+  minPlayers: 0
+  stations:
+    phocir:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'PhocIR-C1 CIV {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Contractor: [ 0, 0 ]
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

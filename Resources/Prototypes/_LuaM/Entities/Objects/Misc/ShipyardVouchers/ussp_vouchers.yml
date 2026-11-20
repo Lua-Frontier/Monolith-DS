@@ -1,0 +1,50 @@
+- type: entity
+  parent: BaseShipLPCRenewable
+  id: ShipVoucherDefiant
+  name: USSP Defiant LPC [T3]
+  description: A small card that contains the data for the procurement of a Defiant-class cruiser.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
+    layers:
+    - state: icon_capital
+    - state: screen
+      color: "#b40505"
+    - state: screen7
+      color: "#b40505"
+      shader: unshaded
+  - type: Item
+    heldPrefix: ussp
+  - type: ShipyardVoucher
+    destroyOnEmpty: false
+    cooldown: 5100
+    consoleType: USSP
+    companyName: USSP
+    vessels:
+    - defiant
+
+
+- type: entity
+  parent: BaseShipLPCRenewable
+  id: ShipVoucherArchonM2
+  name: USSP Archon-M2 LPC [T2]
+  description: A small card that contains the data for the procurement of an Archon-M2-class corvette.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Misc/lpcnew.rsi
+    layers:
+    - state: icon
+    - state: screen
+      color: "#b40505"
+    - state: screen4
+      color: "#b40505"
+      shader: unshaded
+  - type: Item
+    heldPrefix: ussp
+  - type: ShipyardVoucher
+    destroyOnEmpty: false
+    cooldown: 3600 # one hour
+    consoleType: USSP
+    companyName: USSP
+    vessels:
+    - archon_m2

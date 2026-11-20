@@ -1,0 +1,58 @@
+# Civilian
+ # Xeno
+- type: latheRecipe
+  id: ShipVoucherXenoRecipe
+  result: ShipVoucherXeno
+  completetime: 60
+  materialDiscountScale: 0.2
+  materials:
+    Steel: 10050
+    Copper: 10050
+    Plasteel: 8040
+    Lithium: 10050
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 1340
+    UraniumDepleted: 670
+    UraniumFissile: 170
+
+# UCCP
+ # Defiant
+- type: latheRecipe
+  parent: BaseVoucherRecipe
+  id: ShipVoucherUsspDefiant
+  result: ShipVoucherDefiant
+  completetime: 25
+  materialDiscountScale: 0.2
+  materials:
+    Steel: 10050
+    Copper: 10050
+    Plasteel: 8040
+    Lithium: 10050
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 1340
+    UraniumDepleted: 670
+    UraniumFissile: 170
+
+ # Archon-M2
+- type: latheRecipe
+  parent: BaseVoucherRecipe
+  id: ShipVoucherUsspArchonM2
+  result: ShipVoucherArchonM2
+  completetime: 10
+  materialDiscountScale: 0.2
+  materials:
+    Steel: 6700
+    Copper: 6700
+    Plasteel: 3350
+    Lithium: 6700
+    Glass: 3350
+    Plasma: 3350
+    Gold: 3350
+    Silver: 3350
+    Plastitanium: 670
