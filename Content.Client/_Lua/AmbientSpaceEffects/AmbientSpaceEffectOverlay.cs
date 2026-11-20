@@ -3,6 +3,7 @@
 // See AGPLv3.txt for details.
 
 using System.Numerics;
+using Content.Client.Parallax;
 using Content.Shared._Lua.AmbientSpaceEffects;
 using Robust.Client.Graphics;
 using Robust.Client.Utility;
@@ -47,7 +48,8 @@ public sealed class AmbientSpaceEffectOverlay : Overlay
         _timing = IoCManager.Resolve<IGameTiming>();
         _clyde = IoCManager.Resolve<IClyde>();
         _transform = entManager.System<SharedTransformSystem>();
-        ZIndex = 0;
+        // -- Туманность ближе планет и звёзд (Parallax + 1) и фона аномалии (Parallax + 2), поэтому рисуется поверх них
+        ZIndex = ParallaxSystem.ParallaxZIndex + 3;
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

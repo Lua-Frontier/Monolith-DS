@@ -71,12 +71,10 @@
     currencyWhitelist:
     - StolenEssence
   - type: RandomMetadata
-    nameSegments:
-    - The
-    - RevenantType
-    - of
-    - RevenantAdjective
-    - RevenantTheme
+    nameSegments: # LuaM: The RevenantType of RevenantAdjective RevenantTheme > localized datasets
+    - NamesRevenantType
+    - NamesRevenantAdjective
+    - NamesRevenantTheme
   - type: Speech
     speechVerb: Ghost
   - type: Reactive

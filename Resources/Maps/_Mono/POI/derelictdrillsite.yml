@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 07/15/2026 22:40:08
-  entityCount: 6416
+  entityCount: 6417
 maps: []
 grids:
 - 1
@@ -15413,6 +15413,16 @@ entities:
     - type: Physics
       canCollide: False
       bodyType: Static
+- proto: LuaMVehicleHumveeTransport
+  entities:
+  - uid: 6417
+    components:
+    - type: MetaData
+      desc: Транспортный хамви. Неизвестно как он оказался именно здесь и для чего он использовался.
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 2.2,4
+      parent: 1
 - proto: MachineFrame
   entities:
   - uid: 2191

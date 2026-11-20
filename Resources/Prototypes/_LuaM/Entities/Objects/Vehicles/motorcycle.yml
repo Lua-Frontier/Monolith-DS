@@ -4,6 +4,10 @@
   name: motorcycle
   description: A light single-seat bike. Fast and nimble, but hit a wall at speed and you are going over the handlebars.
   components:
+  - type: LuaMWaterVehicle
+    foam:
+      sprite: _LuaM/Effects/Water/vehicle_foam32.rsi
+      state: motorcycle
   - type: Sprite
     drawdepth: Objects
     noRot: true
@@ -61,8 +65,9 @@
     reverseAcceleration: 3
     deceleration: 9
     maxRotationSpeedDegrees: 170
-    rotationAccelerationDegrees: 360
-    rotationDecelerationDegrees: 420
+    pivotRotationSpeedDegrees: 170
+    rotationAccelerationDegrees: 100000
+    rotationDecelerationDegrees: 100000
     alignmentAssistDegrees: 8
     ramMinSpeed: 3
     ramStructureDamage: 0.1
@@ -73,8 +78,8 @@
     mobCollisionHullDamage: 2
     mobThrowMaxDistance: 2.5
     speedAtZeroIntegrity: 0.5
-    driftMinSpeed: 11
-    driftGripDegrees: 80
+    driftMinSpeed: 14
+    driftGripDegrees: 150
     driftRecoverDegrees: 260
     driftMaxDegrees: 35
     driftDrag: 8

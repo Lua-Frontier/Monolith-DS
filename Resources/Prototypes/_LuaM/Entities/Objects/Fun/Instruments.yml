@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseHandheldInstrument
+  id: TR808Instrument
+  name: TR-808 rhythm composer
+  description: A legendary analog drum machine. Its cowbell is the backbone of every other phonk track.
+  components:
+  - type: Instrument
+    bank: 42
+    program: 0
+    allowPercussion: true
+  - type: Sprite
+    sprite: _LuaM/Objects/Fun/Instruments/tr808.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: _LuaM/Objects/Fun/Instruments/tr808.rsi
+  - type: StaticPrice
+    price: 400

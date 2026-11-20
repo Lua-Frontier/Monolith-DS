@@ -7,6 +7,7 @@ using Content.Shared._LuaM.Buckle;
 using Content.Shared._LuaM.Vehicles;
 using Content.Shared._LuaM.Vehicles.Components;
 using Content.Shared.Buckle;
+using Content.Shared.Mind;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Robust.Server.Player;
@@ -196,16 +197,13 @@ public sealed class VehicleClientTests
         var entMan = server.ResolveDependency<IEntityManager>();
         var clientEntMan = client.ResolveDependency<IEntityManager>();
         var buckle = server.System<SharedBuckleSystem>();
-        var map = await pair.CreateTestMap();
 
-        EntityUid player = default;
+        var player = await PlaceRiderOnTestGrid(pair);
         EntityUid bike = default;
         NetEntity netBike = default;
         await server.WaitAssertion(() =>
         {
-            player = server.ResolveDependency<IPlayerManager>().Sessions.Single().AttachedEntity!.Value;
-            entMan.System<SharedTransformSystem>().SetCoordinates(player, map.GridCoords);
-            bike = entMan.SpawnEntity("VehicleLuaMHoverbike", map.GridCoords);
+            bike = entMan.SpawnEntity("VehicleLuaMHoverbike", entMan.GetComponent<TransformComponent>(player).Coordinates);
             netBike = entMan.GetNetEntity(bike);
             var slots = entMan.GetComponent<StrapSlotsComponent>(bike);
             slots.Requested[player] = 0;
@@ -241,7 +239,7 @@ public sealed class VehicleClientTests
         var server = pair.Server;
         var entities = server.ResolveDependency<IEntityManager>();
         var maps = server.System<SharedMapSystem>();
-        var transforms = server.System<SharedTransformSystem>();
+        var minds = server.System<SharedMindSystem>();
         EntityUid rider = default;
         await server.WaitPost(() =>
         {
@@ -254,8 +252,11 @@ public sealed class VehicleClientTests
             gravity.Inherent = true;
             entities.Dirty(map.Grid, gravity);
 
-            rider = server.ResolveDependency<IPlayerManager>().Sessions.Single().AttachedEntity!.Value;
-            transforms.SetCoordinates(rider, map.GridCoords.Offset(new Vector2(0.5f, 0.5f)));
+            // -- Сущность игрока в пуле может остаться призраком или с камерой, повёрнутой под прежний грид
+            var session = server.ResolveDependency<IPlayerManager>().Sessions.Single();
+            rider = entities.SpawnEntity("MobHuman", map.GridCoords.Offset(new Vector2(0.5f, 0.5f)));
+            Assert.That(minds.TryGetMind(session.UserId, out var mindId, out var mind), Is.True);
+            minds.TransferTo(mindId.Value, rider, mind: mind);
         });
         return rider;
     }

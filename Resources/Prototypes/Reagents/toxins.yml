@@ -228,8 +228,8 @@
   color: "#5050ff"
   boilingPoint: 165
   meltingPoint: -87
-  tileReactions: # Mono - alien romulus
-  - !type:PryTileReaction
+#  tileReactions: # Mono - alien romulus # LuaM
+#  - !type:PryTileReaction # LuaM
   reactiveEffects:
     Acidic:
       methods: [ Touch ]

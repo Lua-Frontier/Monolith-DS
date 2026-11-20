@@ -1,0 +1,8 @@
+- files:
+  - buggy_idle.ogg
+  - buggy_med.ogg
+  - buggy_med2.ogg
+  - buggy_fast.ogg
+  license: "Custom"
+  copyright: "Taken from Project Zomboid by The Indie Stone (originally stock sounds), converted to mono ogg. buggy_idle/med/med2/fast were zb_jeep_idle/med/med2/fast, crossfaded into seamless loops and normalized"
+  source: "https://projectzomboid.com"

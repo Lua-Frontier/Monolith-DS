@@ -32,6 +32,8 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedBuckleSystem _buckle = default!;
     [Dependency] private SharedContentEyeSystem _eye = default!;
+    [Dependency] private VehicleEngineSystem _engine = default!;
+    [Dependency] private HardpointSystem _hardpoints = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
@@ -77,9 +79,10 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
     {
         var role = seat >= 0 && seat < ent.Comp.Seats.Count ? ent.Comp.Seats[seat] : VehicleSeatRole.Passenger;
 
+        // -- Без установленного оружия стрелок остаётся обычным пассажиром и стреляет из своего
         var allHands = ent.Comp.BlockAllHands ||
-                       role == VehicleSeatRole.Gunner ||
-                       role == VehicleSeatRole.Driver && ent.Comp.DriverIsGunner;
+                       (role == VehicleSeatRole.Gunner || role == VehicleSeatRole.Driver && ent.Comp.DriverIsGunner) &&
+                       HasTurretWeapon(ent);
 
         var comp = EnsureComp<VehicleOccupantComponent>(occupant);
         comp.Vehicle = ent;
@@ -147,6 +150,13 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
         RaiseLocalEvent(ent, ref ev);
     }
 
+    private bool HasTurretWeapon(EntityUid vehicle)
+    {
+        return HasComp<VehicleTurretComponent>(vehicle) &&
+               (_hardpoints.TryGetWeapon(vehicle, HardpointType.Cannon, out _, out _) ||
+                _hardpoints.TryGetWeapon(vehicle, HardpointType.Launcher, out _, out _));
+    }
+
     // -- Предел зума поднимаем до машинного, иначе после ручного приближения отдалиться обратно уже нельзя
     private void SetVehicleZoom(Entity<VehicleSeatsComponent> ent, EntityUid occupant, VehicleOccupantComponent comp)
     {
@@ -193,18 +203,25 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
         return true;
     }
 
-    public void SwitchSeat(Entity<VehicleSeatsComponent> ent, EntityUid occupant, int seat)
+    public bool SwitchSeat(Entity<VehicleSeatsComponent> ent, EntityUid occupant, int seat)
     {
         if (!TryComp<StrapSlotsComponent>(ent, out var slots) ||
             seat < 0 || seat >= slots.Offsets.Count ||
             !IsSeatFree(ent, seat))
         {
-            return;
+            return false;
         }
 
         Unseat(ent, occupant);
         _transform.SetLocalPositionNoLerp(occupant, slots.Offsets[seat]);
         Seat(ent, occupant, seat);
+        return true;
+    }
+
+    public void RequestSwitchSeat(Entity<VehicleSeatsComponent> ent, EntityUid occupant, int seat)
+    {
+        if (ent.Comp.Driver != occupant || !_engine.TryDelaySeatSwitch(ent, occupant, seat))
+            SwitchSeat(ent, occupant, seat);
     }
 
     private void OnGetVerbs(Entity<VehicleSeatsComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
@@ -241,7 +258,7 @@ public sealed partial class VehicleSeatsSystem : EntitySystem
                 {
                     if (seated)
                     {
-                        SwitchSeat(ent, user, seat);
+                        RequestSwitchSeat(ent, user, seat);
                         return;
                     }
 

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "drawn by c_quarian (discord) in the buggy palette; side view shapes based on the proto-kinetic accelerator icon by RiceMar1244 based on tgstation at https://github.com/tgstation/tgstation/commit/8b7f8ba6a3327c7381967c550f185dffafd11a57",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "pka_turret",
+      "directions": 4
+    },
+    {
+      "name": "pka_turret_icon"
+    }
+  ]
+}

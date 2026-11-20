@@ -80,6 +80,16 @@
   - type: Speech
     speechVerb: SmallMob
   - type: NonSpreaderZombie
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 - type: entity
   id: MobTickSalvage

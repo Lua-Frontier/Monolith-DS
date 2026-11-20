@@ -155,7 +155,13 @@ public partial class ChatBox : UIWidget
     {
         var formatted = new FormattedMessage(4); // WD EDIT // specifying size beforehand smells like a useless microoptimisation, but i'll give them the benefit of doubt
         formatted.PushColor(color);
-        formatted.AddMarkupOrThrow(message);
+        // LuaM-start
+        if (!formatted.TryAddMarkup(message, out var error))
+        {
+            IoCManager.Resolve<ILogManager>().GetSawmill("chat").Warning($"Invalid chat markup ({error}): {message}");
+            formatted.AddMarkupPermissive(message);
+        }
+        // LuaM-end
         formatted.Pop();
         if(repeat != 0) // WD EDIT START
         {

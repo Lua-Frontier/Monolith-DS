@@ -20,6 +20,12 @@ public sealed partial class PathfindingSystem
 {
     private static readonly TimeSpan UpdateCooldown = TimeSpan.FromSeconds(0.45);
 
+    // LuaM-start
+    private const int MaxChunksPerTick = 16;
+    private static readonly TimeSpan GridBuildBudget = TimeSpan.FromMilliseconds(5);
+    private static readonly TimeSpan SlowGridBuild = TimeSpan.FromMilliseconds(100);
+    // LuaM-end
+
     // What relevant collision groups we track for pathfinding.
     // Stuff like chairs have collision but aren't relevant for mobs.
     public const int PathfindingCollisionMask = (int) CollisionGroup.MobMask;
@@ -87,6 +93,7 @@ public sealed partial class PathfindingSystem
         var updateCount = 0;
 #endif
         _stopwatch.Restart();
+        var builtChunks = 0; // LuaM
 
         // We defer chunk updates because rebuilding a navmesh is hella costly
         // Still run even when paused.
@@ -103,20 +110,32 @@ public sealed partial class PathfindingSystem
                 continue;
             }
 
+            // LuaM-start
+            if (builtChunks >= MaxChunksPerTick || _stopwatch.Elapsed >= GridBuildBudget)
+                break;
+            // LuaM-end
+
             var dirtyPortals = comp.DirtyPortals;
             dirtyPortals.Clear();
 
             // TODO: Often we invalidate the entire chunk when it might be something as simple as an airlock change
             // Would be better to handle that though this was safer and max it's taking is like 1-2ms every half-second.
-            var dirt = new GridPathfindingChunk[comp.DirtyChunks.Count];
+            var dirt = new GridPathfindingChunk[Math.Min(comp.DirtyChunks.Count, MaxChunksPerTick - builtChunks)]; // LuaM
             var idx = 0;
 
             foreach (var origin in comp.DirtyChunks)
             {
+                // LuaM-start
+                if (idx >= dirt.Length)
+                    break;
+                // LuaM-end
                 var chunk = GetChunk(origin, uid, pathfinding);
                 dirt[idx] = chunk;
                 idx++;
             }
+
+            builtChunks += dirt.Length; // LuaM
+            var gridStart = _stopwatch.Elapsed; // LuaM
 
             // We force clear portals in a single-threaded context to be safe
             // as they may not be thread-safe to touch.
@@ -139,10 +158,12 @@ public sealed partial class PathfindingSystem
             // This is for map <> grid pathfinding
 
             // Without parallel this is roughly 3x slower on my desktop.
+            using (_prof.Group("Navmesh breadcrumbs")) // LuaM
             Parallel.For(0, dirt.Length, options, i =>
             {
                 BuildBreadcrumbs(dirt[i], (uid, mapGridComp));
             });
+            var breadcrumbsTime = _stopwatch.Elapsed - gridStart; // LuaM
 
             const int Division = 4;
 
@@ -196,6 +217,8 @@ public sealed partial class PathfindingSystem
                 });
             }
 
+            var navmeshTime = _stopwatch.Elapsed - gridStart; // LuaM
+
             // Handle portals at the end after having cleared their neighbors above.
             // We do this because there's no guarantee of where these are for chunks.
             foreach (var portal in dirtyPortals)
@@ -216,7 +239,26 @@ public sealed partial class PathfindingSystem
                 AddNeighbors(polyA, polyB);
             }
 
-            comp.DirtyChunks.Clear();
+            // LuaM-start
+            var gridTime = _stopwatch.Elapsed - gridStart;
+            if (gridTime > SlowGridBuild)
+            {
+                Log.Warning($"Navmesh rebuild of {ToPrettyString(uid)} took {gridTime.TotalMilliseconds:F0} ms for {dirt.Length} chunks " +
+                            $"(breadcrumbs {breadcrumbsTime.TotalMilliseconds:F0}, polys {(navmeshTime - breadcrumbsTime).TotalMilliseconds:F0}, " +
+                            $"portals {dirtyPortals.Count} {(gridTime - navmeshTime).TotalMilliseconds:F0}), {comp.DirtyChunks.Count - dirt.Length} chunks left");
+            }
+
+            if (dirt.Length == comp.DirtyChunks.Count)
+            {
+                comp.DirtyChunks.Clear();
+                continue;
+            }
+
+            foreach (var chunk in dirt)
+            {
+                comp.DirtyChunks.Remove(chunk.Origin);
+            }
+            // LuaM-end
         }
     }
 

@@ -12,6 +12,7 @@ public sealed partial class AirAlarmSystem
 
     private const string ModeStampTick = "luam_air_alarm_mode_tick";
     private const string ModeStampOrigin = "luam_air_alarm_mode_origin";
+    private const string ModeStampSequence = "luam_air_alarm_mode_sequence";
 
     private void StampLocalMode(EntityUid uid, string origin)
     {
@@ -19,7 +20,9 @@ public sealed partial class AirAlarmSystem
             return;
 
         var stamp = EnsureComp<AirAlarmModeStampComponent>(uid);
-        stamp.Tick = _stampTiming.CurTick.Value;
+        var tick = _stampTiming.CurTick.Value;
+        stamp.Sequence = stamp.Tick == tick && stamp.Origin == origin ? stamp.Sequence + 1 : 0;
+        stamp.Tick = tick;
         stamp.Origin = origin;
     }
 
@@ -30,19 +33,28 @@ public sealed partial class AirAlarmSystem
 
         payload[ModeStampTick] = stamp.Tick;
         payload[ModeStampOrigin] = stamp.Origin;
+        payload[ModeStampSequence] = stamp.Sequence;
     }
 
     private bool TryAcceptModeStamp(EntityUid uid, NetworkPayload payload)
     {
-        if (!payload.TryGetValue(ModeStampTick, out uint tick) || !payload.TryGetValue(ModeStampOrigin, out string? origin))
+        if (!payload.TryGetValue(ModeStampTick, out uint tick)
+            || !payload.TryGetValue(ModeStampOrigin, out string? origin)
+            || !payload.TryGetValue(ModeStampSequence, out uint sequence))
             return false;
 
         var stamp = EnsureComp<AirAlarmModeStampComponent>(uid);
-        if (tick < stamp.Tick || tick == stamp.Tick && string.CompareOrdinal(origin, stamp.Origin) <= 0)
+        var order = tick != stamp.Tick
+            ? tick.CompareTo(stamp.Tick)
+            : string.CompareOrdinal(origin, stamp.Origin) is var byOrigin and not 0
+                ? byOrigin
+                : sequence.CompareTo(stamp.Sequence);
+        if (order <= 0)
             return false;
 
         stamp.Tick = tick;
         stamp.Origin = origin;
+        stamp.Sequence = sequence;
         return true;
     }
 }

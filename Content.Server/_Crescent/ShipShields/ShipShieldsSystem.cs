@@ -181,6 +181,7 @@ public sealed partial class ShipShieldsSystem : EntitySystem
 
         if (component.Source is { } source)
         {
+            RaiseProjectileImpact(uid, args.OtherEntity, projectile); // LuaM
             var ev = new ShieldDeflectedEvent(args.OtherEntity, projectile);
             RaiseLocalEvent(source, ref ev);
         }

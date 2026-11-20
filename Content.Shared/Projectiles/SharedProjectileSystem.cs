@@ -573,6 +573,10 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     private void OnEmbeddableTermination(Entity<EmbeddedContainerComponent> container, ref EntityTerminatingEvent args)
     {
+        // LuaM: nowhere to drop them when the map is going away or the target sits in nullspace, they are deleted with it
+        if (Transform(container).MapUid is not { } map || TerminatingOrDeleted(map))
+            return;
+
         DetachAllEmbedded(container);
     }
 

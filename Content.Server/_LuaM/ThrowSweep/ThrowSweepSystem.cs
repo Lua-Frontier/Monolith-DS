@@ -16,6 +16,7 @@ public sealed class ThrowSweepSystem : EntitySystem
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
+    [Dependency] private RayCastSystem _rayCast = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
     private const float Gap = 0.02f;
@@ -86,17 +87,21 @@ public sealed class ThrowSweepSystem : EntitySystem
                 continue;
 
             var direction = travel / distance;
-            var hits = _physics.IntersectRay(xform.MapID, new CollisionRay(start, direction, mask), distance, uid, false);
 
-            var nearest = float.MaxValue;
-            foreach (var hit in hits)
+            // -- IntersectRay проверяет только AABB фикстур: диагональная стена занимает весь тайл, и бросок в её пустую
+            // -- половину откатывался назад без удара, а клиент честно отскакивал от скоса. Луч по форме фикстур
+            var filter = new QueryFilter
             {
-                if (hit.Distance < nearest && IsWall(uid, body, ourFixture, hit.HitEntity))
-                    nearest = hit.Distance;
-            }
+                MaskBits = mask,
+                Flags = QueryFlags.Static,
+                IsIgnored = other => !IsWall(uid, body, ourFixture, other),
+            };
 
-            if (nearest == float.MaxValue)
+            var result = _rayCast.CastRayClosest(xform.MapID, start, travel, filter);
+            if (!result.Hit)
                 continue;
+
+            var nearest = result.Results[0].Fraction * distance;
 
             var aabb = _lookup.GetWorldAABB(uid, xform);
             var half = aabb.Size / 2f;

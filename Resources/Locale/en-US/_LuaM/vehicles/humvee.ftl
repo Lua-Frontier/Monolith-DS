@@ -66,3 +66,4 @@ luam-vehicle-gunner-ammo = AMMO
 luam-vehicle-gunner-shells = SHELLS
 luam-vehicle-gunner-weapon = WEAPON
 luam-vehicle-gunner-azimuth = TURRET HEADING
+luam-vehicle-hardpoint-not-mounted = It has to be mounted on a vehicle to fire.

@@ -75,11 +75,14 @@ public abstract partial class SharedLayingDownSystem : EntitySystem
         if (args.Handled || args.Cancelled || HasComp<KnockedDownComponent>(uid) ||
             _mobState.IsIncapacitated(uid) || !_standing.Stand(uid))
         {
-            component.CurrentState = StandingState.Lying;
-            return;
+            // LuaM-start
+            if (component.CurrentState == StandingState.GettingUp)
+            {
+                component.CurrentState = StandingState.Lying;
+                Dirty(uid, component);
+            }
+            // LuaM-end
         }
-
-        component.CurrentState = StandingState.Standing;
     }
 
     private void OnRefreshMovementSpeed(EntityUid uid, LayingDownComponent component, RefreshMovementSpeedModifiersEvent args)
@@ -142,6 +145,7 @@ public abstract partial class SharedLayingDownSystem : EntitySystem
             return false;
 
         standingState.CurrentState = StandingState.GettingUp;
+        Dirty(uid, standingState); // LuaM
         return true;
     }
 

@@ -392,7 +392,7 @@
   - type: RandomMetadata
     nameSegments:
       # - names_borg # Frontier
-      - NFNamesBorgUnlocalized # Frontier
+      - NFNamesBorg # Frontier # LuaM: NFNamesBorgUnlocalized > NFNamesBorg, the dataset is commented out
   - type: NpcFactionMember
     factions:
     - NanoTrasen

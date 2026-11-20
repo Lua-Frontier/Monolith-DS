@@ -4,6 +4,10 @@
   name: FV150 Hobelar light tank
   description: A light cavalry tank with a fully traversable turret. The gunner aims the turret, the driver keeps it moving.
   components:
+  - type: LuaMWaterVehicle
+    foam:
+      sprite: _LuaM/Effects/Water/vehicle_foam96.rsi
+      state: tank
   - type: Sprite
     drawdepth: OverMobs
     sprite: _LuaM/Structures/Vehicles/Tank/tank.rsi
@@ -75,6 +79,7 @@
     reverseAcceleration: 2
     deceleration: 8
     maxRotationSpeedDegrees: 70
+    pivotRotationSpeedDegrees: 45
     rotationAccelerationDegrees: 140
     rotationDecelerationDegrees: 220
     alignmentAssistDegrees: 8
@@ -170,27 +175,42 @@
     state: tank
     seatOffsets:
       South:
-      - 6.55, -20.38
-      - -8.5, -1.7
-      - 8.5, 1.7
-      - -0.85, 22.1
+      - -15.5, -7.5
+      - -16.5, 25.5
+      - -6.5, 25.5
+      - -26.5, 25.5
       North:
-      - -7.94, 29.87
-      - 7.65, 9.86
-      - -9.35, 6.46
-      - 0, -13.94
+      - 13.5, 13.5
+      - 14.5, -18.5
+      - 4.5, -18.5
+      - 24.5, -18.5
       East:
-      - 22.32, 13.96
-      - 2.63, -0.68
-      - -0.77, 16.32
-      - -21.16, 6.97
+      - 10.5, -9.5
+      - -22.5, -10.5
+      - -22.5, -0.5
+      - -22.5, -20.5
       West:
-      - -21.12, -1.31
-      - -2.63, 14.62
-      - 0.77, -2.38
-      - 21.16, 6.97
+      - -10.5, -9.5
+      - 22.5, -10.5
+      - 22.5, -0.5
+      - 22.5, -20.5
   - type: StaticPrice
     price: 60000
+
+- type: entity
+  parent: LuaMVehicleTank
+  id: LuaMVehicleTankSyndicate
+  name: Syndicate FV150 Hobelar light tank
+  description: A captured light cavalry tank repainted in Syndicate black and red. The gunner aims the turret, the driver keeps it moving.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/Tank/tank_syndicate.rsi
+  - type: Icon
+    state: icon_syndicate
+  - type: VehicleTurret
+    sprite: _LuaM/Structures/Vehicles/Tank/tank_syndicate.rsi
+  - type: VehicleInterior
+    state: tank_syndicate
 
 - type: damageModifierSet
   id: LuaMVehicleFrameTank
@@ -331,8 +351,27 @@
     proto: LuaMBulletTankHEAT
     deleteOnSpawn: true
 
+# -- Без ShipWeaponProjectile: щит ловит только корабельные снаряды, и выстрел изнутри щита рвался у самого танка
 - type: entity
-  parent: 90mmBulletHE
+  parent: BaseBulletTrigger
+  id: LuaMBulletTankBase
+  name: shell
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 4.2
+  - type: PointLight
+    radius: 3.5
+    energy: 0.5
+    color: orange
+  - type: RadarBlip
+    scale: 0.8
+    shape: circle
+    radarColor: "#FFFFFF"
+
+- type: entity
+  parent: LuaMBulletTankBase
   id: LuaMBulletTankHE
   name: HE shell
   categories: [ HideSpawnMenu ]
@@ -342,6 +381,11 @@
       types:
         Piercing: 50
         Structural: 40
+  - type: Sprite
+    sprite: _Mono/Objects/SpaceArtillery/shells.rsi
+    layers:
+    - state: 90mmHE
+  - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
     totalIntensity: 90
@@ -351,7 +395,7 @@
     tileBreakScale: 3
 
 - type: entity
-  parent: 90mmBulletBase
+  parent: LuaMBulletTankBase
   id: LuaMBulletTankFlechette
   name: flechette shell
   categories: [ HideSpawnMenu ]
@@ -405,7 +449,7 @@
     lifetime: 0.5
 
 - type: entity
-  parent: 90mmBulletBase
+  parent: LuaMBulletTankBase
   id: LuaMBulletTankHEAT
   name: HEAT shell
   categories: [ HideSpawnMenu ]

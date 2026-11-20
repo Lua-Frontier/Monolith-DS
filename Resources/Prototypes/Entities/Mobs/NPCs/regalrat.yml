@@ -128,8 +128,8 @@
     price: 2500 # rat wealth
   - type: RandomMetadata
     nameSegments:
-    - RegalRatNameKingdom
-    - RegalRatNameTitle
+    - NamesRegalratKingdom # LuaM: RegalRatNameKingdom > NamesRegalratKingdom
+    - NamesRegalratTitle # LuaM: RegalRatNameTitle > NamesRegalratTitle
   # - type: GuideHelp # Frontier: removed from guidebook
   #   guides: # Frontier: removed from guidebook
   #   - MinorAntagonists # Frontier: removed from guidebook
@@ -337,6 +337,16 @@
     action: ActionToggleNightVision
     phosphorColor: "#986033"
     lightingColor: "#ffffff52" #LuaM edit end.
+  - type: Destructible # LuaM
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior # LuaM
+        recursive: false
+        gibContents: Skip
 
 
 - type: weightedRandomEntity

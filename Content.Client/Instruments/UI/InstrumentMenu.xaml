@@ -1,26 +1,28 @@
 <DefaultWindow xmlns="https://spacestation14.io"
             xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
     <BoxContainer Orientation="Vertical" SeparationOverride="5">
+        <!-- LuaM-start -->
         <BoxContainer Orientation="Horizontal" VerticalExpand="True">
             <Button Name="InputButton" ToggleMode="True" Text="{Loc 'instruments-component-menu-input-button'}" TextAlign="Center"
-                    HorizontalExpand="True" SizeFlagsStretchRatio="1" />
-            <Control HorizontalExpand="True" SizeFlagsStretchRatio="0.5" />
-            <Button Name="BandButton" Text="{Loc 'instruments-component-menu-band-button'}" TextAlign="Center" HorizontalExpand="True"
-                    SizeFlagsStretchRatio="1"/>
-            <Control HorizontalExpand="True" SizeFlagsStretchRatio="0.5" />
-            <Button Name="FileButton" Text="{Loc 'instruments-component-menu-play-button'}" TextAlign="Center" HorizontalExpand="True"
-                    SizeFlagsStretchRatio="1" />
+                    SetSize="112 30" VerticalAlignment="Center" />
+            <Control HorizontalExpand="True" />
+            <Button Name="BandButton" Text="{Loc 'instruments-component-menu-band-button'}" TextAlign="Center"
+                    SetSize="112 30" VerticalAlignment="Center" />
+            <Control HorizontalExpand="True" />
+            <Button Name="FileButton" Text="{Loc 'instruments-component-menu-play-button'}" TextAlign="Center"
+                    SetSize="112 30" VerticalAlignment="Center" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal" VerticalExpand="True">
-            <Button Name="LoopButton" ToggleMode="True" Text="{Loc 'instruments-component-menu-loop-button'}" TextAlign="Center" HorizontalExpand="True"
-                    SizeFlagsStretchRatio="1" />
-            <Control HorizontalExpand="True" SizeFlagsStretchRatio="0.5" />
-            <Button Name="ChannelsButton" Text="{Loc 'instruments-component-menu-channels-button'}" TextAlign="Center" HorizontalExpand="True"
-                    SizeFlagsStretchRatio="1"/>
-            <Control HorizontalExpand="True" SizeFlagsStretchRatio="0.5" />
-            <Button Name="StopButton" Text="{Loc 'instruments-component-menu-stop-button'}" TextAlign="Center" HorizontalExpand="True"
-                    SizeFlagsStretchRatio="1" />
+            <Button Name="LoopButton" ToggleMode="True" Text="{Loc 'instruments-component-menu-loop-button'}" TextAlign="Center"
+                    SetSize="112 30" VerticalAlignment="Center" />
+            <Control HorizontalExpand="True" />
+            <Button Name="ChannelsButton" Text="{Loc 'instruments-component-menu-channels-button'}" TextAlign="Center"
+                    SetSize="112 30" VerticalAlignment="Center" />
+            <Control HorizontalExpand="True" />
+            <Button Name="StopButton" Text="{Loc 'instruments-component-menu-stop-button'}" TextAlign="Center"
+                    SetSize="112 30" VerticalAlignment="Center" />
         </BoxContainer>
+        <!-- LuaM-end -->
         <BoxContainer Orientation="Horizontal" VerticalExpand="True">
             <Control HorizontalExpand="True" SizeFlagsStretchRatio="0.125" />
             <Slider Name="PlaybackSlider" HorizontalExpand="True" />

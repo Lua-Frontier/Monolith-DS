@@ -34,8 +34,9 @@ public partial class ShipShieldsSystem
                 || !TryComp<ShipShieldEmitterComponent>(source, out var emitter))
                 continue;
 
-            if (TryComp<HitscanBasicDamageComponent>(ent, out var damage))
-                emitter.Damage += (float) (damage.Damage * _damageable.UniversalHitscanDamageModifier).GetTotal();
+            var total = TryComp<HitscanBasicDamageComponent>(ent, out var damage)
+                ? (float) (damage.Damage * _damageable.UniversalHitscanDamageModifier).GetTotal()
+                : 0f;
 
             // The explosion of the laser is not spawned on a shield (it would go off inside the ship), so the shield takes it.
             if (TryComp<HitscanSpawnEntityComponent>(ent, out var spawn)
@@ -43,8 +44,11 @@ public partial class ShipShieldsSystem
                 && spawnedProto.TryComp<ExplosiveComponent>(out var explosive, Factory)
                 && _prototypeManager.TryIndex(explosive.ExplosionType, out var explosionType))
             {
-                emitter.Damage += explosive.TotalIntensity * (float) explosionType.DamagePerIntensity.GetTotal();
+                total += explosive.TotalIntensity * (float) explosionType.DamagePerIntensity.GetTotal();
             }
+
+            emitter.Damage += total;
+            RaiseHitscanImpact(hit, args.FromCoordinates, args.ShotDirection, total);
         }
     }
 }

@@ -96,6 +96,7 @@
           prob: 0.25
   - type: IFF
     color: "#88b0d1"
+  - type: ClaimableGrid # LuaM: moved here from NFBaseDebris
 
 - type: entity
   id: NFBaseWreckDebrisBrass
@@ -188,6 +189,7 @@
           prob: 0.25
   - type: IFF
     color: "#E1C16E"
+  - type: ClaimableGrid # LuaM: moved here from NFBaseDebris
 
 # region Wreck Sizes
 - type: entity

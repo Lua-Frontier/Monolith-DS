@@ -23,6 +23,7 @@ using Robust.Shared.Containers;
 using Content.Shared._White.Standing;
 using Content.Shared.Jittering;
 using Content.Shared.Speech.EntitySystems;
+using Robust.Shared.Timing; // LuaM
 
 namespace Content.Shared.Stunnable;
 
@@ -40,6 +41,7 @@ public abstract partial class SharedStunSystem : EntitySystem
     [Dependency] private SharedContainerSystem _container = default!; // WD EDIT
     [Dependency] private SharedStutteringSystem _stutter = default!; // goob edit
     [Dependency] private SharedJitteringSystem _jitter = default!; // goob edit
+    [Dependency] private IGameTiming _timing = default!; // LuaM
 
     /// <summary>
     /// Friction modifier for knocked down players.
@@ -155,7 +157,8 @@ public abstract partial class SharedStunSystem : EntitySystem
 
         if (TryComp(uid, out LayingDownComponent? layingDown))
         {
-            if (_layingDown.ShouldAutoGetUp(uid, layingDown) && !_container.IsEntityInContainer(uid)) // LuaM
+            // LuaM: on a server state the server starts the stand-up do-after itself, a client copy would desync from it
+            if (!_timing.ApplyingState && _layingDown.ShouldAutoGetUp(uid, layingDown) && !_container.IsEntityInContainer(uid))
                 _layingDown.TryStandUp(uid, layingDown);
             return;
         }

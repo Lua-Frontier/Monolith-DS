@@ -319,7 +319,9 @@ namespace Content.Client.Chat.UI
             {
                 if (node.Name != null)
                 {
-                    result.AddMarkupOrThrow(node.ToString());
+                    // LuaM: AddMarkupOrThrow -> AddMarkupPermissive, this runs from FrameUpdate on every new letter,
+                    // a tag that doesn't survive the round trip through markup must not throw in the UI update.
+                    result.AddMarkupPermissive(node.ToString());
                     continue;
                 }
 
@@ -416,7 +418,7 @@ namespace Content.Client.Chat.UI
             var msg = new FormattedMessage();
             if (fontColor != null)
                 msg.PushColor(fontColor.Value);
-            msg.AddMarkupOrThrow(message);
+            msg.AddMarkupPermissive(message); // LuaM
             return msg;
         }
 

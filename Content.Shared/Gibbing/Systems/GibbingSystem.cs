@@ -120,16 +120,21 @@ public sealed partial class GibbingSystem : EntitySystem
             new AttemptEntityContentsGibEvent(gibbable, gibContentsOption, allowedContainers, excludedContainers);
         RaiseLocalEvent(gibbable, ref gibContentsAttempt);
 
-        foreach (var container in _containerSystem.GetAllContainers(gibbable))
+        // LuaM-start: GetAllContainers without a ContainerManager returns an enumerable that throws
+        if (TryComp<ContainerManagerComponent>(gibbable, out var containerManager))
         {
-            var valid = true;
-            if (allowedContainers != null)
-                valid = allowedContainers.Contains(container.ID);
-            if (excludedContainers != null)
-                valid = valid && !excludedContainers.Contains(container.ID);
-            if (valid)
-                validContainers.Add(container);
+            foreach (var container in _containerSystem.GetAllContainers(gibbable, containerManager))
+            {
+                var valid = true;
+                if (allowedContainers != null)
+                    valid = allowedContainers.Contains(container.ID);
+                if (excludedContainers != null)
+                    valid = valid && !excludedContainers.Contains(container.ID);
+                if (valid)
+                    validContainers.Add(container);
+            }
         }
+        // LuaM-end
 
         switch (gibContentsOption)
         {

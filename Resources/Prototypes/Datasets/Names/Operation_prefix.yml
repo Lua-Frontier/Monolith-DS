@@ -1,0 +1,6 @@
+# LuaM: restored as localizedDataset for the nukeops operation name, the Russian names live in datasets/names/operation_prefix.ftl
+- type: localizedDataset
+  id: operationPrefix
+  values:
+    prefix: names-operation-prefix-dataset-
+    count: 102

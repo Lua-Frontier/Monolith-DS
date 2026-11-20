@@ -6,6 +6,7 @@
 
 using System.Numerics;
 using Content.Shared._LuaM.Vehicles.Components;
+using Content.Shared._LuaM.Water;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
 using Content.Shared.Ghost;
@@ -42,6 +43,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
     [Dependency] private StandingStateSystem _standing = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private LuaMWaterSystem _water = default!;
 
     private const float FixedStep = 1f / 60f;
     private const int MaxStepsPerFrame = 6;
@@ -144,32 +146,39 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             if (xform.GridUid is not { } grid || xform.ParentUid != grid)
                 continue;
 
+            if (_net.IsClient)
+                ResetDriverLerp(uid, xform);
+
             var (throttle, steering, handbrake) = GetInput(uid, seats);
 
             // -- Стоящую машину без нажатых клавиш считать незачем
             if (throttle == 0f && steering == 0f && handbrake == mover.Handbrake && !mover.IsMoving &&
                 mover.CurrentSpeed == 0f && mover.AngularVelocityDegrees == 0f && mover.DriftDegrees == 0f)
             {
-                mover.Accumulator = 0f;
                 continue;
             }
 
             var wasMoving = mover.IsMoving;
             var wasDrifting = mover.DriftDegrees != 0f;
+            var wasTurning = mover.AngularVelocityDegrees != 0f;
             var handbrakeChanged = mover.Handbrake != handbrake;
             mover.Handbrake = handbrake;
 
-            mover.Accumulator = MathF.Min(mover.Accumulator + frameTime, FixedStep * MaxStepsPerFrame);
-            if (mover.Accumulator >= FixedStep)
+            var startPosition = xform.LocalPosition;
+            var startRotation = xform.LocalRotation;
+
+            // -- Число шагов только от длины тика: с накопителем перепроигранный тик считался иначе и угол прыгал назад
+            var steps = Math.Clamp((int) MathF.Round(frameTime / FixedStep), 1, MaxStepsPerFrame);
+            var stepTime = frameTime / steps;
+            var hull = GetHull(uid, grid, xform);
+            var speedMultiplier = GetSpeedMultiplier(uid, mover);
+            for (var i = 0; i < steps; i++)
             {
-                var hull = GetHull(uid, grid, xform);
-                var speedMultiplier = GetSpeedMultiplier(uid, mover);
-                while (mover.Accumulator >= FixedStep)
-                {
-                    Step((uid, mover, xform), seats, hull, speedMultiplier, throttle, steering, handbrake, FixedStep);
-                    mover.Accumulator -= FixedStep;
-                }
+                Step((uid, mover, xform), seats, hull, speedMultiplier, throttle, steering, handbrake, stepTime);
             }
+
+            if (_net.IsClient)
+                LerpDriverPrediction(uid, xform, startPosition, startRotation);
 
             mover.IsMoving = MathF.Abs(mover.CurrentSpeed) > MinSpeed;
             if (mover.IsMoving != wasMoving)
@@ -178,9 +187,44 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
                 RaiseLocalEvent(uid, ref ev);
             }
 
-            if (mover.IsMoving || wasMoving || wasDrifting || handbrakeChanged || mover.AngularVelocityDegrees != 0f)
+            if (mover.IsMoving || wasMoving || wasDrifting || wasTurning || handbrakeChanged || mover.AngularVelocityDegrees != 0f)
                 Dirty(uid, mover);
         }
+    }
+
+    // -- Водитель видит свою машину только по предсказанию: интерполяция серверного состояния показывала отстающую позу
+    private void ResetDriverLerp(EntityUid uid, TransformComponent xform)
+    {
+        if (!xform.ActivelyLerping)
+            return;
+
+        if (xform.PredictedLerp && _timing.IsFirstTimePredicted)
+        {
+            var position = xform.NextPosition ?? xform.LocalPosition;
+            var rotation = xform.NextRotation ?? xform.LocalRotation;
+            xform.ActivelyLerping = false;
+            _transform.SetLocalPositionNoLerp(uid, position, xform);
+            _transform.SetLocalRotationNoLerp(uid, rotation, xform);
+        }
+
+        xform.ActivelyLerping = false;
+    }
+
+    // -- Позицию и угол интерполируем вместе: с одной из них движок тянул бы вторую к устаревшей цели
+    private void LerpDriverPrediction(EntityUid uid, TransformComponent xform, Vector2 startPosition, Angle startRotation)
+    {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        var position = xform.LocalPosition;
+        var rotation = xform.LocalRotation;
+        if (position.EqualsApprox(startPosition) && rotation.EqualsApprox(startRotation))
+            return;
+
+        _transform.SetLocalPositionNoLerp(uid, startPosition, xform);
+        _transform.SetLocalRotationNoLerp(uid, startRotation, xform);
+        xform.ActivelyLerping = false;
+        _transform.SetLocalPositionRotation(uid, position, rotation, xform);
     }
 
     public (float Throttle, float Steering, bool Handbrake) GetInput(EntityUid uid, VehicleSeatsComponent seats)
@@ -242,6 +286,11 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
 
             var accel = steering == 0f ? mover.RotationDecelerationDegrees : mover.RotationAccelerationDegrees;
             mover.AngularVelocityDegrees = StepTowards(mover.AngularVelocityDegrees, target, accel * dt);
+        }
+        else if (mover.PivotRotationSpeedDegrees > 0f && !handbrake)
+        {
+            var accel = steering == 0f ? mover.RotationDecelerationDegrees : mover.RotationAccelerationDegrees;
+            mover.AngularVelocityDegrees = StepTowards(mover.AngularVelocityDegrees, steering * mover.PivotRotationSpeedDegrees, accel * dt);
         }
         else
         {
@@ -428,6 +477,10 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             if (ratio < mover.FullSpeedIntegrityFraction && mover.FullSpeedIntegrityFraction > 0f)
                 speed *= MathHelper.Lerp(mover.SpeedAtZeroIntegrity, 1f, ratio / mover.FullSpeedIntegrityFraction);
         }
+
+        // -- В воде колёсная техника вязнет: чем легче машина, тем сильнее, набранная скорость гасится торможением
+        if (!HasComp<HoverVehicleComponent>(uid))
+            speed *= _water.GetVehicleSpeedFactor(uid, mover.WeightClass);
 
         return speed;
     }

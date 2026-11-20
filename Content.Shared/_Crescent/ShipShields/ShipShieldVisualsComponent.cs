@@ -41,9 +41,6 @@ public sealed partial class ShipShieldVisualsComponent : Component
     public float HexDensity = 14f;
 
     [DataField]
-    public float CoreFade = 0.83f;
-
-    [DataField]
     public float FillLevel = 0.12f;
 
     [DataField]
@@ -53,9 +50,6 @@ public sealed partial class ShipShieldVisualsComponent : Component
     public float RimLevel = 0.8f;
 
     [DataField]
-    public float AlphaBands = 6f;
-
-    [DataField]
     public float BreathDepth = 0.1f;
 
     [DataField]
@@ -63,6 +57,10 @@ public sealed partial class ShipShieldVisualsComponent : Component
 
     [DataField]
     public float ShardScale = 5f;
+
+    // -- Наименьшая ширина светящейся полосы у края щита в тайлах; у больших щитов полоса шире, 10% полуоси
+    [DataField]
+    public float EdgeDepth = 6f;
 }
 
 public static class ShipShieldVisualsProgress

@@ -9,6 +9,10 @@
   name: humvee
   description: A fast armored utility vehicle outfitted for patrols and support.
   components:
+  - type: LuaMWaterVehicle
+    foam:
+      sprite: _LuaM/Effects/Water/vehicle_foam96.rsi
+      state: humvee
   - type: Sprite
     drawdepth: OverMobs
     sprite: _LuaM/Structures/Vehicles/Humvee/humvee.rsi

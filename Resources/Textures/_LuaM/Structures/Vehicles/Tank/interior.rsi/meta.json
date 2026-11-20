@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Technical placeholder generated from the FV150 hull silhouette (CMSS13-PvE https://github.com/cmss13-devs/cmss13-pve/pull/1276) by c_quarian (Monolith-DS), to be redrawn",
+  "copyright": "Driver station, floor and wall props taken from the CMSS13 tank interior (https://github.com/cmss13-devs/cmss13/blob/master/icons/obj/vehicles/interiors/tank.dmi and general.dmi) via Wolfgate, fitted to the FV150 hull silhouette of every direction by cutting whole rows and columns without resampling, seats, humvee palette and Syndicate recolors by c_quarian (discord)",
   "size": {
     "x": 96,
     "y": 96
@@ -9,6 +9,10 @@
   "states": [
     {
       "name": "tank",
+      "directions": 4
+    },
+    {
+      "name": "tank_syndicate",
       "directions": 4
     }
   ]

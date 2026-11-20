@@ -167,10 +167,7 @@
   name: Urist McRaptor
   suffix: Random Appearance
   components:
-  - type: RandomHumanoidAppearance
-  - type: RandomMetadata
-    nameSegments:
-    - NamesResomiUnisex
+  - type: RandomHumanoidAppearance # LuaM: RandomMetadata [NamesResomiUnisex] removed, the dataset is gone and this already names by species
 
 - type: entity # mono
   parent: MobHydrakin
@@ -181,7 +178,7 @@
   - type: RandomHumanoidAppearance
   - type: RandomMetadata
     nameSegments:
-    - names_hydrakin_unisex
+    - NamesHydrakinUnisex # LuaM: names_hydrakin_unisex > NamesHydrakinUnisex
 
 - type: entity
   parent: MobGoblin
@@ -244,8 +241,8 @@
   - type: RandomHumanoidAppearance
   - type: RandomMetadata
     nameSegments:
-    - names_tajaran_first
-    - names_tajaran_last
+    - NamesTajaranFirst # LuaM: names_tajaran_first > NamesTajaranFirst
+    - NamesTajaranLast # LuaM: names_tajaran_last > NamesTajaranLast
 
 # Goob Central Command!
 
@@ -434,7 +431,7 @@
   - type: RandomMetadata
     nameSegments:
     - NamesMilitaryFirstPolitical
-    - names_last
+    - NamesLast # LuaM: names_last > NamesLast
   - type: RandomHumanoidSpawner
     settings: DiplomatGear
 
@@ -454,7 +451,7 @@
   - type: RandomMetadata
     nameSegments:
     - NamesMilitaryFirstPolitical
-    - names_last
+    - NamesLast # LuaM: names_last > NamesLast
   - type: LanguageKnowledge
     speaks:
     - SolCommon

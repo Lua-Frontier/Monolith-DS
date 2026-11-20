@@ -3,6 +3,7 @@ using Content.Shared.Decals;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.GameStates;
+using Robust.Shared.Timing; // LuaM
 using Robust.Shared.Utility;
 using static Content.Shared.Decals.DecalGridComponent;
 
@@ -12,11 +13,17 @@ namespace Content.Client.Decals
     {
         [Dependency] private IOverlayManager _overlayManager = default!;
         [Dependency] private SpriteSystem _sprites = default!;
+        [Dependency] private IGameTiming _timing = default!; // LuaM
 
         private DecalOverlay? _overlay;
 
         private HashSet<uint> _removedUids = new();
         private readonly List<Vector2i> _removedChunks = new();
+
+        // LuaM-start: decal chunks travel apart from PVS and can arrive before the grid itself, keep them until it does
+        private static readonly TimeSpan PendingChunkLifetime = TimeSpan.FromSeconds(30);
+        private readonly Dictionary<NetEntity, (Dictionary<Vector2i, DecalChunk> Chunks, TimeSpan Expires)> _pendingChunks = new();
+        // LuaM-end
 
         public override void Initialize()
         {
@@ -111,6 +118,14 @@ namespace Content.Client.Decals
 
                 var gridId = GetEntity(netGrid);
 
+                // LuaM-start
+                if (!gridId.IsValid())
+                {
+                    QueuePendingChunks(netGrid, updatedGridChunks);
+                    continue;
+                }
+                // LuaM-end
+
                 if (!TryComp(gridId, out DecalGridComponent? gridComp))
                 {
                     Log.Error($"Received decal information for an entity without a decal component: {ToPrettyString(gridId)}");
@@ -128,6 +143,21 @@ namespace Content.Client.Decals
 
                 var gridId = GetEntity(netGrid);
 
+                // LuaM-start
+                if (!gridId.IsValid())
+                {
+                    if (_pendingChunks.TryGetValue(netGrid, out var pending))
+                    {
+                        foreach (var index in chunks)
+                        {
+                            pending.Chunks.Remove(index);
+                        }
+                    }
+
+                    continue;
+                }
+                // LuaM-end
+
                 if (!TryComp(gridId, out DecalGridComponent? gridComp))
                 {
                     Log.Error($"Received decal information for an entity without a decal component: {ToPrettyString(gridId)}");
@@ -137,6 +167,50 @@ namespace Content.Client.Decals
                 RemoveChunks(gridId, gridComp, chunks);
             }
         }
+
+        // LuaM-start
+        private void QueuePendingChunks(NetEntity netGrid, Dictionary<Vector2i, DecalChunk> chunks)
+        {
+            var expires = _timing.RealTime + PendingChunkLifetime;
+            if (!_pendingChunks.TryGetValue(netGrid, out var pending))
+            {
+                _pendingChunks[netGrid] = (new Dictionary<Vector2i, DecalChunk>(chunks), expires);
+                return;
+            }
+
+            foreach (var (index, chunk) in chunks)
+            {
+                pending.Chunks[index] = chunk;
+            }
+
+            _pendingChunks[netGrid] = (pending.Chunks, expires);
+        }
+
+        public override void Update(float frameTime)
+        {
+            base.Update(frameTime);
+
+            if (_pendingChunks.Count == 0)
+                return;
+
+            var now = _timing.RealTime;
+            foreach (var (netGrid, pending) in _pendingChunks)
+            {
+                var gridId = GetEntity(netGrid);
+                if (TryComp(gridId, out DecalGridComponent? gridComp))
+                {
+                    if (pending.Chunks.Count > 0)
+                        UpdateChunks(gridId, gridComp, pending.Chunks);
+
+                    _pendingChunks.Remove(netGrid);
+                }
+                else if (now > pending.Expires)
+                {
+                    _pendingChunks.Remove(netGrid);
+                }
+            }
+        }
+        // LuaM-end
 
         private void UpdateChunks(EntityUid gridId, DecalGridComponent gridComp, Dictionary<Vector2i, DecalChunk> updatedGridChunks)
         {

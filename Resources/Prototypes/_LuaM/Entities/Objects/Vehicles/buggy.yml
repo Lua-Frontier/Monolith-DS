@@ -1,0 +1,245 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+
+- type: entity
+  parent: LuaMVehicleBase
+  id: LuaMVehicleBuggy
+  name: buggy
+  description: A light two-seat off-road buggy with a roll cage. Faster than a humvee, but it protects its crew only from rolling over. The cage has a mount for a turret.
+  components:
+  - type: LuaMWaterVehicle
+    foam:
+      sprite: _LuaM/Effects/Water/vehicle_foam96.rsi
+      state: buggy
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _LuaM/Structures/Vehicles/Buggy/buggy.rsi
+    layers:
+    - map: [ base ]
+      state: buggy_base
+    - state: buggy_seats
+    - map: [ wheels ]
+      state: wheels_1
+  - type: SpriteMovement
+    movementLayers:
+      wheels:
+        state: wheels_0
+    noMovementLayers:
+      wheels:
+        state: wheels_1
+  - type: Fixtures
+    fixtures:
+      hull:
+        shape:
+          !type:PhysShapeAabb
+          bounds: -0.7,-1.1,0.7,1.1
+        density: 600
+        mask:
+        - LargeMobMask
+        layer:
+        - LargeMobLayer
+  - type: Strap
+    position: None
+    size: 300
+    buckleDoafterTime: 0.75
+    unbuckleDistanceSquared: 0.09
+  - type: StrapSlots
+    offsets:
+    - 0.25, 0.19
+    - -0.28, 0.19
+  - type: VehicleRiderVisuals
+    frontDrawDepth: Objects
+    overlayVisual: LuaMVehicleBuggyOverlayVisual
+    interiorVisual: LuaMVehicleBuggyInteriorVisual
+    seatOffsets:
+      South:
+      - 10, 10
+      - -9, 10
+      North:
+      - -10, 2
+      - 9, 2
+      East:
+      - -5, 16
+      - -5, 2
+      West:
+      - 5, 2
+      - 5, 16
+  - type: VehicleSeats
+    seats:
+    - Driver
+    - Gunner
+    driverActions:
+    - ActionLuaMVehicleHorn
+    - ActionLuaMVehicleOvercharge
+    - ActionLuaMVehicleSpotlight
+  - type: GridVehicleMover
+    maxSpeed: 18
+    maxReverseSpeed: 5
+    acceleration: 7.5
+    reverseAcceleration: 4.5
+    deceleration: 10
+    maxRotationSpeedDegrees: 135
+    rotationAccelerationDegrees: 270
+    rotationDecelerationDegrees: 330
+    alignmentAssistDegrees: 8
+    ramMinSpeed: 3
+    ramStructureDamage: 8
+    ramHullDamage: 2.5
+    mobRamDamage: 2
+    mobRamSpeedMultiplier: 0.85
+    mobCollisionHullDamage: 4
+    speedAtZeroIntegrity: 0.6
+    driftMinSpeed: 10
+    driftGripDegrees: 70
+    driftRecoverDegrees: 240
+    driftMaxDegrees: 50
+    driftDrag: 9
+  - type: VehicleEngine
+    startSound: /Audio/_LuaM/Vehicles/vehicle_start.ogg
+    stopSound: /Audio/_LuaM/Vehicles/vehicle_turned_off.ogg
+    idleSound: /Audio/_LuaM/Vehicles/Buggy/buggy_idle.ogg
+    slowSound: /Audio/_LuaM/Vehicles/Buggy/buggy_med2.ogg
+    mediumSound: /Audio/_LuaM/Vehicles/Buggy/buggy_med.ogg
+    fastSound: /Audio/_LuaM/Vehicles/Buggy/buggy_fast.ogg
+    skidStartSound: /Audio/_LuaM/Vehicles/vehicle_skid_1.ogg
+    skidSound: /Audio/_LuaM/Vehicles/vehicle_skid_2.ogg
+    startDelay: 1.3
+    exitDelay: 2.3
+  - type: HardpointSlots
+    family: Buggy
+    slots:
+    - id: turret
+      hardpointType: Cannon
+      insertDelay: 2
+  - type: ContainerContainer
+    containers:
+      turret: !type:ContainerSlot
+  - type: VehicleTurret
+    turretSlot: turret
+    sprite: _LuaM/Structures/Vehicles/Buggy/turret.rsi
+    rotationSpeedDegrees: 240
+    pixelOffsets:
+      South: 0, 17.5
+      North: -1, 6.5
+      East: -6, 32
+      West: 4.5, 32
+  - type: VehicleIntegrity
+    maxIntegrity: 600
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:ExplodeBehavior
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 40
+    intensitySlope: 5
+    maxIntensity: 8
+  - type: SolutionContainerManager
+    solutions:
+      fuel:
+        maxVol: 150
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 150
+  - type: VehicleFuel
+    consumptionPerMinute: 3
+  - type: StaticPrice
+    price: 8000
+
+- type: entity
+  parent: LuaMVehicleBuggy
+  id: LuaMVehicleBuggyOneMan
+  suffix: One-man
+  components:
+  - type: VehicleSeats
+    driverIsGunner: true
+    seats:
+    - Driver
+    - Passenger
+    driverActions:
+    - ActionLuaMVehicleHorn
+    - ActionLuaMVehicleOvercharge
+    - ActionLuaMVehicleSpotlight
+
+- type: entity
+  parent: BaseItem
+  id: LuaMBuggyTurretPKA
+  name: buggy proto-kinetic turret
+  description: A proto-kinetic accelerator on a pintle mount for a buggy roll cage. Fires twice as fast as a handheld one. Hold it and click a buggy to install it.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Vehicles/Buggy/turret.rsi
+    state: pka_turret_icon
+  - type: Item
+    size: Huge
+  - type: HardpointItem
+    hardpointType: Cannon
+    family: Buggy
+    visualState: pka_turret
+    muzzleOffsets:
+      South: 0, -8
+      North: 0, 11
+      East: 13.5, 8
+      West: -13.5, 8
+  - type: Gun
+    fireRate: 1.5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    minAngle: 1
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 10
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+    cameraRecoilScalar: 0
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.375
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+  - type: BasicEntityAmmoProvider
+    proto: BulletKinetic
+    capacity: 3
+    count: 3
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  id: LuaMVehicleBuggyOverlayVisual
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: Sprite
+    drawdepth: OverMobs
+    sprite: _LuaM/Structures/Vehicles/Buggy/buggy.rsi
+    layers:
+    - state: buggy_body
+    - state: buggy_cage
+
+- type: entity
+  id: LuaMVehicleBuggyInteriorVisual
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _LuaM/Structures/Vehicles/Buggy/buggy.rsi
+    layers:
+    - state: buggy_chassis
+    - state: buggy_seats
+    - state: wheels_1
