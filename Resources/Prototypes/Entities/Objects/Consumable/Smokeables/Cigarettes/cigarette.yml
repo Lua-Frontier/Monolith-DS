@@ -25,6 +25,8 @@
   - type: Construction
     graph: smokeableCigarette
     node: cigarette
+  - type: Extractable # LuaM: ground in a reagent grinder
+    grindableSolutionName: smokable
 
 - type: entity
   id: SoakedCigarette
@@ -51,6 +53,8 @@
   - type: Construction
     graph: smokeableCigarette
     node: cigarette
+  - type: Extractable # LuaM: ground in a reagent grinder
+    grindableSolutionName: smokable
 
 - type: entity
   id: CigaretteSpent

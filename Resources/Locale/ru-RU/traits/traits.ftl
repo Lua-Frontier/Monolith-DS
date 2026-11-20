@@ -5,7 +5,7 @@ trait-poor-vision-name = Близорукость
 trait-poor-vision-desc = Ваши глаза уже не те, что раньше, и вы с трудом видите предметы вдали без корректирующих очков.
 trait-narcolepsy-desc = Вас одолевают приступы сонливости
 trait-pacifist-name = Пацифист
-trait-pacifist-desc = Вы не можете нападать и причинять вред живым существам.
+trait-pacifist-desc = Вы не можете нападать и причинять вред живым существам. Не действует на ролях ТСФ, Авангарда, ЧВК Viper Group, офицера СБ и коменданта.
 permanent-blindness-trait-examined = [color=lightblue]{ CAPITALIZE(POSS-PRONOUN($target)) } глаза остекленелые и расфокусированные. Не похоже, что { SUBJECT($target) } может хорошо вас видеть, если может вообще.[/color]
 trait-lightweight-name = Быстрое опьянение
 trait-lightweight-desc = Алкоголь оказывает на вас более сильное воздействие

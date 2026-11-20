@@ -4,6 +4,7 @@ using Content.Client.Message;
 using Content.Shared.Atmos;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Shitmed.Targeting; // Shitmed
+using Content.Shared._LuaM.Addiction; // LuaM
 using Content.Shared.Alert;
 using Content.Shared.Chemistry.Reagent; // LuaM
 using Content.Shared.Damage;
@@ -193,15 +194,34 @@ namespace Content.Client.HealthAnalyzer.UI
                 HumanityLabel.FontColorOverride = msg.HumanityLeft < 0 ? Color.Red : Color.FromHex("#ff9100");
             }
 
-            // the chemical dependency, the server only sends it for bodies that have one
-            ReagentPrototype? dependency = null;
-            if (msg.DependencyReagent is { } dependencyId)
-                _prototypes.TryIndex<ReagentPrototype>(dependencyId, out dependency);
+            // chemical dependencies, the server only sends them for bodies that have some
+            var dependencies = new List<string>();
+            if (msg.DependencyReagent is { } dependencyId
+                && _prototypes.TryIndex<ReagentPrototype>(dependencyId, out var dependency))
+            {
+                dependencies.Add(msg.DependencyRecovery > 0f
+                    ? Loc.GetString("health-analyzer-window-addiction-recovery", ("addiction", dependency.LocalizedName), ("percent", (int) (msg.DependencyRecovery * 100)))
+                    : dependency.LocalizedName);
+            }
 
-            DependencyTextLabel.Visible = dependency != null;
-            DependencyLabel.Visible = dependency != null;
-            if (dependency != null)
-                DependencyLabel.SetMessage(ColoredText(dependency.LocalizedName, Color.FromHex("#ff9100"))); // wraps long names
+            if (msg.Addictions != null)
+            {
+                foreach (var (addictionId, recovery) in msg.Addictions)
+                {
+                    if (!_prototypes.TryIndex<AddictionPrototype>(addictionId, out var addiction))
+                        continue;
+
+                    var addictionName = Loc.GetString(addiction.Name);
+                    dependencies.Add(recovery > 0f
+                        ? Loc.GetString("health-analyzer-window-addiction-recovery", ("addiction", addictionName), ("percent", (int) (recovery * 100)))
+                        : addictionName);
+                }
+            }
+
+            DependencyTextLabel.Visible = dependencies.Count > 0;
+            DependencyLabel.Visible = dependencies.Count > 0;
+            if (dependencies.Count > 0)
+                DependencyLabel.SetMessage(ColoredText(string.Join(", ", dependencies), Color.FromHex("#ff9100"))); // wraps long names
             // LuaM-end
 
             // Alerts

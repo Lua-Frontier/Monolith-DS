@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Autosurgeon; // LuaM
 using Content.Shared._Shitmed.Body.Events;
 using Content.Shared.Body.Part;
 using Robust.Shared.Prototypes;
@@ -44,7 +45,7 @@ public sealed partial class BodyPartEffectSystem : EntitySystem
             if (ev.Add)
                 AddComponents(ev.Body, partEnt, partEnt.Comp.OnAdd);
             else
-                RemoveComponents(ev.Body, partEnt, partEnt.Comp.OnAdd);
+                RemoveComponents(ev.Body, partEnt, partEnt.Comp.OnAdd, keepImplants: ev.EnableChanged); // LuaM: keepImplants
         }
 
         if (partEnt.Comp.OnRemove != null)
@@ -82,13 +83,20 @@ public sealed partial class BodyPartEffectSystem : EntitySystem
     private void RemoveComponents(EntityUid body,
         EntityUid part,
         ComponentRegistry reg,
-        BodyPartEffectComponent? effectComp = null)
+        BodyPartEffectComponent? effectComp = null,
+        bool keepImplants = false) // LuaM
     {
         if (!Resolve(part, ref effectComp, logMissing: false))
             return;
 
+        TryComp<AutoSurgeonPartEffectsComponent>(part, out var implants); // LuaM
+
         foreach (var (key, comp) in reg)
         {
+            // LuaM: autosurgeon implants keep working while the part is disabled by wounds
+            if (keepImplants && implants != null && implants.Components.Contains(key))
+                continue;
+
             RemComp(body, comp.Component.GetType());
             effectComp.Active.Remove(key);
         }

@@ -301,8 +301,22 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
         }
 
         // the chemical dependency of the scanned person
-        if (TryComp<ChemicalDependencyComponent>(target, out var dependency) && dependency.Reagent is { } dependencyReagent)
-            message.DependencyReagent = dependencyReagent;
+        if (TryComp<ChemicalDependencyComponent>(target, out var dependency))
+        {
+            foreach (var entry in dependency.Dependencies)
+            {
+                if (entry.Addiction is { } addiction)
+                {
+                    message.Addictions ??= new();
+                    message.Addictions[addiction] = entry.Recovery;
+                }
+                else if (dependency.Reagent is { } dependencyReagent)
+                {
+                    message.DependencyReagent = dependencyReagent;
+                    message.DependencyRecovery = entry.Recovery;
+                }
+            }
+        }
 
         // damage of every damaged body part, so the window lists them without clicking each one
         if (body != null)

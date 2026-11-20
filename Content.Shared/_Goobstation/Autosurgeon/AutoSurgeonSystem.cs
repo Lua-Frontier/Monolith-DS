@@ -411,6 +411,12 @@ public sealed partial class AutoSurgeonSystem : EntitySystem
         }
         // LuaM-end
 
+        // LuaM-start: implants, kept while the part is disabled by wounds
+        var implants = EnsureComp<AutoSurgeonPartEffectsComponent>(part);
+        implants.Components.UnionWith(addedToUser.Keys);
+        Dirty(part, implants);
+        // LuaM-end
+
         var partEffectComp = EnsureComp<BodyPartEffectComponent>(part);
         foreach (var (name, data) in addedToUser)
         {

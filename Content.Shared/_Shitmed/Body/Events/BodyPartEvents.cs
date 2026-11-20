@@ -27,4 +27,4 @@ public readonly record struct BodyPartEnabledEvent(Entity<BodyPartComponent> Par
 [ByRefEvent]
 public readonly record struct BodyPartDisabledEvent(Entity<BodyPartComponent> Part);
 
-public readonly record struct BodyPartComponentsModifyEvent(EntityUid Body, bool Add);
+public readonly record struct BodyPartComponentsModifyEvent(EntityUid Body, bool Add, bool EnableChanged = false); // LuaM: EnableChanged, the part was enabled or disabled rather than attached or removed
