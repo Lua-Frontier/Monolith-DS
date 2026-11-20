@@ -154,9 +154,6 @@ public sealed partial class GridVehicleMoverComponent : Component
     [AutoNetworkedField]
     public bool IsMoving;
 
-    [ViewVariables]
-    public float Accumulator;
-
     [AutoNetworkedField]
     public bool Floating;
 

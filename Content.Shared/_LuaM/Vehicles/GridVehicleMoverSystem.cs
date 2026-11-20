@@ -146,13 +146,15 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             if (xform.GridUid is not { } grid || xform.ParentUid != grid)
                 continue;
 
+            if (_net.IsClient)
+                ResetDriverLerp(uid, xform);
+
             var (throttle, steering, handbrake) = GetInput(uid, seats);
 
             // -- Стоящую машину без нажатых клавиш считать незачем
             if (throttle == 0f && steering == 0f && handbrake == mover.Handbrake && !mover.IsMoving &&
                 mover.CurrentSpeed == 0f && mover.AngularVelocityDegrees == 0f && mover.DriftDegrees == 0f)
             {
-                mover.Accumulator = 0f;
                 continue;
             }
 
@@ -162,17 +164,21 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             var handbrakeChanged = mover.Handbrake != handbrake;
             mover.Handbrake = handbrake;
 
-            mover.Accumulator = MathF.Min(mover.Accumulator + frameTime, FixedStep * MaxStepsPerFrame);
-            if (mover.Accumulator >= FixedStep)
+            var startPosition = xform.LocalPosition;
+            var startRotation = xform.LocalRotation;
+
+            // -- Число шагов только от длины тика: с накопителем перепроигранный тик считался иначе и угол прыгал назад
+            var steps = Math.Clamp((int) MathF.Round(frameTime / FixedStep), 1, MaxStepsPerFrame);
+            var stepTime = frameTime / steps;
+            var hull = GetHull(uid, grid, xform);
+            var speedMultiplier = GetSpeedMultiplier(uid, mover);
+            for (var i = 0; i < steps; i++)
             {
-                var hull = GetHull(uid, grid, xform);
-                var speedMultiplier = GetSpeedMultiplier(uid, mover);
-                while (mover.Accumulator >= FixedStep)
-                {
-                    Step((uid, mover, xform), seats, hull, speedMultiplier, throttle, steering, handbrake, FixedStep);
-                    mover.Accumulator -= FixedStep;
-                }
+                Step((uid, mover, xform), seats, hull, speedMultiplier, throttle, steering, handbrake, stepTime);
             }
+
+            if (_net.IsClient)
+                LerpDriverPrediction(uid, xform, startPosition, startRotation);
 
             mover.IsMoving = MathF.Abs(mover.CurrentSpeed) > MinSpeed;
             if (mover.IsMoving != wasMoving)
@@ -184,6 +190,41 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             if (mover.IsMoving || wasMoving || wasDrifting || wasTurning || handbrakeChanged || mover.AngularVelocityDegrees != 0f)
                 Dirty(uid, mover);
         }
+    }
+
+    // -- Водитель видит свою машину только по предсказанию: интерполяция серверного состояния показывала отстающую позу
+    private void ResetDriverLerp(EntityUid uid, TransformComponent xform)
+    {
+        if (!xform.ActivelyLerping)
+            return;
+
+        if (xform.PredictedLerp && _timing.IsFirstTimePredicted)
+        {
+            var position = xform.NextPosition ?? xform.LocalPosition;
+            var rotation = xform.NextRotation ?? xform.LocalRotation;
+            xform.ActivelyLerping = false;
+            _transform.SetLocalPositionNoLerp(uid, position, xform);
+            _transform.SetLocalRotationNoLerp(uid, rotation, xform);
+        }
+
+        xform.ActivelyLerping = false;
+    }
+
+    // -- Позицию и угол интерполируем вместе: с одной из них движок тянул бы вторую к устаревшей цели
+    private void LerpDriverPrediction(EntityUid uid, TransformComponent xform, Vector2 startPosition, Angle startRotation)
+    {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        var position = xform.LocalPosition;
+        var rotation = xform.LocalRotation;
+        if (position.EqualsApprox(startPosition) && rotation.EqualsApprox(startRotation))
+            return;
+
+        _transform.SetLocalPositionNoLerp(uid, startPosition, xform);
+        _transform.SetLocalRotationNoLerp(uid, startRotation, xform);
+        xform.ActivelyLerping = false;
+        _transform.SetLocalPositionRotation(uid, position, rotation, xform);
     }
 
     public (float Throttle, float Steering, bool Handbrake) GetInput(EntityUid uid, VehicleSeatsComponent seats)
@@ -273,9 +314,7 @@ public sealed partial class GridVehicleMoverSystem : EntitySystem
             {
                 turned = mover.AngularVelocityDegrees * dt;
                 rotation = desired;
-                // -- С NoLerp клиент после серверного состояния доводил угол к устаревшей серверной цели: стрелка дёргалась назад
-                // -- при остановке поворота. Обычный сеттер даёт движку сбросить эту цель на перепроигрывании
-                _transform.SetLocalRotation(uid, rotation, xform);
+                _transform.SetLocalRotationNoLerp(uid, rotation, xform);
             }
             else
             {
