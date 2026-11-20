@@ -1,4 +1,5 @@
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Roles; // LuaM
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
@@ -79,6 +80,17 @@ public sealed partial class TraitPrototype : IPrototype
 
         [DataField] // LuaM
         public HashSet<ProtoId<SpeciesPrototype>> SpeciesWhitelist { get; private set; } = new(); // LuaM
+
+    // LuaM-start: jobs that never get this trait, even when it is picked in the profile
+    [DataField]
+    public HashSet<ProtoId<JobPrototype>> JobBlacklist { get; private set; } = new();
+
+    /// <summary>
+    ///     Departments whose jobs never get this trait.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<DepartmentPrototype>> DepartmentBlacklist { get; private set; } = new();
+    // LuaM-end
 
     // Einstein Engines - Language begin (remove this if trait system refactor)
     /// <summary>

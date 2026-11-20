@@ -19,3 +19,5 @@
   - IPC
   components:
   - type: ChemicalDependency
+    blacklist:
+    - Naltrexone # the cure for addictions

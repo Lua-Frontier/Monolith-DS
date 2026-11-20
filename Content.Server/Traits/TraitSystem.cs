@@ -45,6 +45,9 @@ public sealed partial class TraitSystem : EntitySystem
                 _whitelistSystem.IsBlacklistPass(traitPrototype.Blacklist, args.Mob))
                 continue;
 
+            if (IsJobBlacklisted(traitPrototype, protoJob.ID)) // LuaM
+                continue; // LuaM
+
             EntityManager.RemoveComponents(args.Mob, traitPrototype.RemoveComponents); // LuaM
 
             MergeDamageProtection(args.Mob, traitPrototype.Components); // LuaM
@@ -88,4 +91,20 @@ public sealed partial class TraitSystem : EntitySystem
                 handsComp: handsComponent);
         }
     }
+
+    // LuaM-start
+    private bool IsJobBlacklisted(TraitPrototype trait, ProtoId<JobPrototype> job)
+    {
+        if (trait.JobBlacklist.Contains(job))
+            return true;
+
+        foreach (var departmentId in trait.DepartmentBlacklist)
+        {
+            if (_prototypeManager.TryIndex(departmentId, out var department) && department.Roles.Contains(job))
+                return true;
+        }
+
+        return false;
+    }
+    // LuaM-end
 }

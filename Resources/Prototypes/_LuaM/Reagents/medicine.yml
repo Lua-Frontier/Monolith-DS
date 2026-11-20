@@ -1,0 +1,25 @@
+- type: reagent
+  id: Naltrexone
+  name: reagent-name-naltrexone
+  group: Medicine
+  desc: reagent-desc-naltrexone
+  physicalDesc: reagent-physical-desc-crystalline
+  flavor: medicine
+  color: "#c9d6e3"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.2
+      effects:
+      - !type:TreatChemicalDependency
+      - !type:ChemVomit
+        probability: 0.05
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        damage:
+          types:
+            Poison: 0.5

@@ -3,6 +3,15 @@
   name: trait-pacifist-name
   description: trait-pacifist-desc
   category: Quirks
+  # LuaM-start: armed factions and station security can not be pacifists
+  departmentBlacklist:
+  - Security # TSF
+  - Antag # Vanguard
+  - ViperGroup
+  jobBlacklist:
+  - SecurityGuard
+  - StationRepresentative
+  # LuaM-end
   components:
   - type: Pacified
 

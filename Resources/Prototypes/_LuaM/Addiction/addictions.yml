@@ -1,0 +1,69 @@
+# Addictions picked up in the round: take in more than the threshold within the window and the body gets hooked.
+# Sit out recoveryTime of withdrawal over its two-minute bouts or take treatmentAmount of naltrexone to get over it.
+
+- type: addiction
+  id: Alcohol
+  name: addiction-name-alcohol
+  reagents:
+  - Ethanol
+  reagentParents:
+  - BaseAlcohol
+
+- type: addiction
+  id: Nicotine
+  name: addiction-name-nicotine
+  reagents:
+  - Nicotine
+  threshold: 25 # three cigarettes in a row, with room for ones not smoked to the end
+  doseAmount: 5
+  withdrawal: # no shaking or falling, just a cough that will not stop
+    jitter: false
+    knockdownChance: 0
+    dropChance: 0
+    emoteChance: 0.8
+    emotes:
+    - Cough
+    popupChance: 0.15
+    popups:
+    - chemical-dependency-nicotine-withdrawal
+
+- type: addiction
+  id: Desoxyephedrine
+  name: addiction-name-desoxyephedrine
+  reagents:
+  - Desoxyephedrine
+
+- type: addiction
+  id: Stimulants
+  name: addiction-name-stimulants
+  reagents:
+  - Stimulants
+
+- type: addiction
+  id: Ephedrine
+  name: addiction-name-ephedrine
+  reagents:
+  - Ephedrine
+
+- type: addiction
+  id: SpaceDrugs
+  name: addiction-name-space-drugs
+  reagents:
+  - SpaceDrugs
+
+- type: addiction
+  id: Fentanyl
+  name: addiction-name-fentanyl
+  reagents:
+  - Fentanyl
+  threshold: 9
+  doseAmount: 5
+  treatmentAmount: 150 # as much as the dependency from the trait
+  recoveryTime: 10m # five bouts of withdrawal
+
+- type: addiction
+  id: Omnizine
+  name: addiction-name-omnizine
+  reagents:
+  - Omnizine
+  overdoseThreshold: 60 # only an overdose hooks you, the same 60 units at which omnizine starts to wear off faster

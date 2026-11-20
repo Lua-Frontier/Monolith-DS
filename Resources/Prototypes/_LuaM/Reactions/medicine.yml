@@ -1,0 +1,11 @@
+- type: reaction
+  id: Naltrexone
+  reactants:
+    Haloperidol:
+      amount: 1
+    Dylovene:
+      amount: 1
+    Charcoal:
+      amount: 1
+  products:
+    Naltrexone: 3

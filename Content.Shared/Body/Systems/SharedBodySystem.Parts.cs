@@ -87,13 +87,13 @@ public partial class SharedBodySystem
         {
             EnablePart(partEnt);
             if (partEnt.Comp.Body is { Valid: true } bodyEnt)
-                RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(bodyEnt, true));
+                RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(bodyEnt, true, EnableChanged: true)); // LuaM: EnableChanged
         }
         else
         {
             DisablePart(partEnt);
             if (partEnt.Comp.Body is { Valid: true } bodyEnt)
-                RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(bodyEnt, false));
+                RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(bodyEnt, false, EnableChanged: true)); // LuaM: EnableChanged
         }
 
         Dirty(partEnt, partEnt.Comp);

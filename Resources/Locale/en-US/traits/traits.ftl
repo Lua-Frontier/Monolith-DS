@@ -8,7 +8,7 @@ trait-narcolepsy-name = Narcolepsy
 trait-narcolepsy-desc = You fall asleep randomly.
 
 trait-pacifist-name = Pacifist
-trait-pacifist-desc = You cannot attack or hurt any living beings.
+trait-pacifist-desc = You cannot attack or hurt any living beings. Does not apply to TSF, Vanguard, Viper Group, security guard and station representative jobs.
 
 permanent-blindness-trait-examined = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
 
