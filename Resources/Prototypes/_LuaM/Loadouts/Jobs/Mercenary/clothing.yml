@@ -90,6 +90,12 @@
   equipment:
     neck: ClothingNeckCloakRosy
 
+- type: loadout
+  id: MercenaryClothingNeckCloakBee
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakBee
+
 # Jumpsuit
 - type: loadout
   id: MercenaryClothingUniformJumpsuitPirate
@@ -173,6 +179,7 @@
   - MercenaryClothingNeckCloakEmpirePreafectOrange
   - MercenaryClothingNeckCloakEmpirePreafectViolet
   - MercenaryClothingNeckCloakRosy
+  - MercenaryClothingNeckCloakBee
   subgroups:
   - ContractorNeck
 
