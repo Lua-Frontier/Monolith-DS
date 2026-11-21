@@ -10,6 +10,7 @@
   parent: BaseVessel
   name: IED Interceptor Drone 'Inertia'
   description: A fighter equipped with high mobility and two RAC-30 Draupnirs for shooting down artillery fire.
+  locDescription: vessel-inertia-desc # LuaM
   limit: 6
   price: 28897
   purchasable: false #voucher only

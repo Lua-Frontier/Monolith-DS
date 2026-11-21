@@ -6,6 +6,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Content.Shared._NF.Emp.Components; // LuaM
 
 namespace Content.Shared.Emp;
 
@@ -18,6 +19,19 @@ public abstract partial class SharedEmpSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transform = default!;
 
     private HashSet<EntityUid> _entSet = new();
+
+    // LuaM-start: the blast visual matches the pulse range instead of a fixed 5 tiles
+    private const float MinBlastVisualRange = 0.5f;
+
+    private void SetBlastVisualRange(EntityUid blast, float range)
+    {
+        if (!TryComp<EmpBlastComponent>(blast, out var blastComp))
+            return;
+
+        blastComp.VisualRange = MathF.Max(range, MinBlastVisualRange);
+        Dirty(blast, blastComp);
+    }
+    // LuaM-end
 
     public override void Initialize()
     {
@@ -48,7 +62,7 @@ public abstract partial class SharedEmpSystem : EntitySystem
         }
         // TODO: replace with PredictedSpawn once it works with animated sprites
         if (_net.IsServer)
-            Spawn(EmpPulseEffectPrototype, mapCoordinates);
+            SetBlastVisualRange(Spawn(EmpPulseEffectPrototype, mapCoordinates), range); // LuaM
 
         var coordinates = _transform.ToCoordinates(mapCoordinates);
         _audio.PlayPredicted(EmpSound, coordinates, user);
@@ -72,7 +86,7 @@ public abstract partial class SharedEmpSystem : EntitySystem
         }
         // TODO: replace with PredictedSpawn once it works with animated sprites
         if (_net.IsServer)
-            Spawn(EmpPulseEffectPrototype, coordinates);
+            SetBlastVisualRange(Spawn(EmpPulseEffectPrototype, coordinates), range); // LuaM
 
         _audio.PlayPredicted(EmpSound, coordinates, user);
     }

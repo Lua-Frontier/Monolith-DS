@@ -100,6 +100,14 @@ public sealed partial class ConstructionPrototype : IPrototype
     [DataField]
     public ProtoId<ConstructionPrototype>[] AlternativePrototypes = [];
 
+    // LuaM-start
+    /// <summary>
+    ///     Sprite offset of the placement preview and the construction ghost, for structures whose sprite is shifted off the placed tile.
+    /// </summary>
+    [DataField]
+    public System.Numerics.Vector2 GhostOffset;
+    // LuaM-end
+
     public IReadOnlyList<IConstructionCondition> Conditions => _conditions;
     public IReadOnlyList<SpriteSpecifier> Layers => _layers ?? new List<SpriteSpecifier> { Icon };
 }

@@ -4,8 +4,8 @@ meta:
   engineVersion: 291.0.4
   forkId: ""
   forkVersion: ""
-  time: 11/18/2026 22:07:38
-  entityCount: 964
+  time: 11/20/2026 15:02:26
+  entityCount: 966
 maps: []
 grids:
 - 1
@@ -98,10 +98,10 @@ entities:
     - type: ThermalSignature
     - type: SpreaderGrid
       spreadQueues:
-        MetalFoam: []
         Kudzu: []
-        Smoke: []
         Puddle: []
+        MetalFoam: []
+        Smoke: []
     - type: Shuttle
       dampingModifier: 2.5
       bodyModifier: 2.5
@@ -3823,6 +3823,20 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: 4.5,-8.5
+- proto: HardpointUniversalSuperheavy
+  entities:
+  - uid: 965
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -15.5,-5.5
+  - uid: 966
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: 16.5,-5.5
 - proto: HospitalCurtains
   entities:
   - uid: 522
@@ -3833,7 +3847,7 @@ entities:
       pos: 6.5,-8.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -9076.05
+      secondsUntilStateChange: -9124.033
   - uid: 523
     components:
     - type: Transform
@@ -3842,7 +3856,7 @@ entities:
       pos: 8.5,-8.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -9076.583
+      secondsUntilStateChange: -9124.566
 - proto: LockerWallColorMedicalFilled
   entities:
   - uid: 524

@@ -102,7 +102,7 @@
         - id: WeaponDP29
         - id: WeaponSubMachineGunWt550
         - id: WeaponSubMachineGunAtreides
-        - id: WeaponSniperHristov
+        # - id: WeaponSniperHristov # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
         - id: WeaponRifleXlr556
         - id: WeaponRifleMR8C
         - id: WeaponRifleAnnie

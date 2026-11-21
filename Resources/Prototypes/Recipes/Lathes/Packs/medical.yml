@@ -81,7 +81,7 @@
   # - ChemDispenserMachineCircuitboard # Frontier: dynamic
   # - ChemMasterMachineCircuitboard # Frontier: dynamic
   - CondenserMachineCircuitBoard
-  - ThermobathMachineCircuitboard
+  # - HotplateMachineCircuitboard # Frontier: dynamic # LuaM: thermobath disabled, hotplate restored
   - OperatingTableCircuitboard # Shitmed Change
   - OrganHarvesterMachineCircuitboard # :)
 

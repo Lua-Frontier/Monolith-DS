@@ -1,0 +1,355 @@
+# Dark and white heavy-duty airlocks with a trim along the door leaves in the LuaTech department colours.
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkAtmosCicads
+  suffix: Atmos, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/atmos.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkAtmosCicads
+  suffix: Atmos, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/atmos.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkBotanyCicads
+  suffix: Botany, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/botany.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkBotanyCicads
+  suffix: Botany, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/botany.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkChemCicads
+  suffix: Chem, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/chem.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkChemCicads
+  suffix: Chem, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/chem.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkClearCicads
+  suffix: Clear, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/clear.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkClearCicads
+  suffix: Clear, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/clear.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkCommandCicads
+  suffix: Command, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/comm.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkCommandCicads
+  suffix: Command, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/comm.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkDormCicads
+  suffix: Dorm, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/dorm.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkDormCicads
+  suffix: Dorm, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/dorm.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkEngineeringCicads
+  suffix: Engineering, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/engin.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkEngineeringCicads
+  suffix: Engineering, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/engin.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkMaintenanceCicads
+  suffix: Maintenance, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkMaintenanceCicads
+  suffix: Maintenance, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/maint.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkMedicalCicads
+  suffix: Medical, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/medi.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkMedicalCicads
+  suffix: Medical, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/medi.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkScienceCicads
+  suffix: Science, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/scie.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkScienceCicads
+  suffix: Science, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/scie.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkSecurityCicads
+  suffix: Security, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Standard/security.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkSecurityCicads
+  suffix: Security, Dark, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Trim/Glass/security.rsi
+
+# White versions
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteAtmosCicads
+  suffix: Atmos, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/atmos.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteAtmosCicads
+  suffix: Atmos, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/atmos.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteBotanyCicads
+  suffix: Botany, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/botany.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteBotanyCicads
+  suffix: Botany, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/botany.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteChemCicads
+  suffix: Chem, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/chem.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteChemCicads
+  suffix: Chem, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/chem.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteClearCicads
+  suffix: Clear, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/clear.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteClearCicads
+  suffix: Clear, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/clear.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteCommandCicads
+  suffix: Command, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/comm.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteCommandCicads
+  suffix: Command, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/comm.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteDormCicads
+  suffix: Dorm, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/dorm.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteDormCicads
+  suffix: Dorm, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/dorm.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteEngineeringCicads
+  suffix: Engineering, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/engin.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteEngineeringCicads
+  suffix: Engineering, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/engin.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteMaintenanceCicads
+  suffix: Maintenance, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteMaintenanceCicads
+  suffix: Maintenance, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/maint.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteMedicalCicads
+  suffix: Medical, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/medi.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteMedicalCicads
+  suffix: Medical, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/medi.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteScienceCicads
+  suffix: Science, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/scie.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteScienceCicads
+  suffix: Science, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/scie.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyWhiteSecurityCicads
+  suffix: Security, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Standard/security.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassWhiteSecurityCicads
+  suffix: Security, White, Cicads
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/TrimWhite/Glass/security.rsi

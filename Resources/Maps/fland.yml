@@ -90973,7 +90973,7 @@ entities:
     - type: Transform
       pos: 28.5,36.5
       parent: 13329
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 10636
     components:

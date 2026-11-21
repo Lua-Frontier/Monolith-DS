@@ -6,4 +6,5 @@ namespace Content.Shared.Chemistry;
 public enum SolutionHeaterVisuals
 {
     IsOn,
+    IsCooling, // LuaM
 }

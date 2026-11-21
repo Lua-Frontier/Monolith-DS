@@ -3,6 +3,7 @@
   parent: BaseVessel
   name: MMC Kami
   description: Light mining craft. Only equipped with 2 20mms, plus 2 mining pulsers and a magnet.
+  locDescription: vessel-kami-desc # LuaM
   price: 92015
   category: Small
   group: Mieyo

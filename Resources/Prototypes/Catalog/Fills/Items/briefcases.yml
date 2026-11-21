@@ -8,25 +8,27 @@
       - id: Paper
         amount: 3
 
-- type: entity
-  id: BriefcaseSyndieSniperBundleFilled
-  parent: BriefcaseSyndie
-  suffix: Syndicate, Sniper Bundle
-  components:
-  - type: Item
-    size: Ginormous
-  - type: Storage
-    maxItemSize: Huge
-    grid:
-    - 0,0,6,3
-  - type: StorageFill
-    contents:
-      - id: WeaponSniperHristov
-      - id: AmmoBox145x114mm
-      - id: ClothingNeckTieRed
-      - id: ClothingHandsGlovesLatex
-      - id: ClothingUniformJumpsuitLawyerBlack
-      - id: BarberScissors
+# LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+# - type: entity
+#   id: BriefcaseSyndieSniperBundleFilled
+#   parent: BriefcaseSyndie
+#   suffix: Syndicate, Sniper Bundle
+#   components:
+#   - type: Item
+#     size: Ginormous
+#   - type: Storage
+#     maxItemSize: Huge
+#     grid:
+#     - 0,0,6,3
+#   - type: StorageFill
+#     contents:
+#       - id: WeaponSniperHristov
+#       - id: AmmoBox145x114mm
+#       - id: ClothingNeckTieRed
+#       - id: ClothingHandsGlovesLatex
+#       - id: ClothingUniformJumpsuitLawyerBlack
+#       - id: BarberScissors
+# LuaM-end
 
 - type: entity
   id: BriefcaseSyndieLobbyingBundleFilled

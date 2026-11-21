@@ -4,8 +4,8 @@ meta:
   engineVersion: 291.0.4
   forkId: ""
   forkVersion: ""
-  time: 11/15/2026 23:25:57
-  entityCount: 1198
+  time: 11/20/2026 17:18:05
+  entityCount: 1201
 maps: []
 grids:
 - 1
@@ -89,10 +89,10 @@ entities:
     - type: ThermalSignature
     - type: SpreaderGrid
       spreadQueues:
-        Puddle: []
-        Smoke: []
         MetalFoam: []
+        Smoke: []
         Kudzu: []
+        Puddle: []
     - type: Shuttle
       dampingModifier: 2.5
       bodyModifier: 2.5
@@ -2218,6 +2218,16 @@ entities:
     - type: Transform
       parent: 1
       pos: 9.5,9.5
+  - uid: 1200
+    components:
+    - type: Transform
+      parent: 1
+      pos: -7.5,6.5
+  - uid: 1201
+    components:
+    - type: Transform
+      parent: 1
+      pos: 8.5,6.5
 - proto: CableHV
   entities:
   - uid: 277
@@ -3314,7 +3324,7 @@ entities:
       pos: -7.5,11.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -6283.839
+      secondsUntilStateChange: -6480.675
   - uid: 466
     components:
     - type: Transform
@@ -5542,7 +5552,7 @@ entities:
       pos: -10.5,12.5
 - proto: GunneryServerLow
   entities:
-  - uid: 1194
+  - uid: 749
     components:
     - type: Transform
       parent: 1
@@ -5727,7 +5737,7 @@ entities:
     - type: Transform
       parent: 1
       pos: -2.5,-4.5
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 769
     components:
@@ -8408,15 +8418,22 @@ entities:
     - type: Transform
       parent: 1
       pos: 12.5,-11.5
-- proto: WeaponCapacitorRecharger
+- proto: WarpPoint
   entities:
   - uid: 1187
     components:
     - type: Transform
       parent: 1
+      pos: 0.5,2.5
+- proto: WeaponCapacitorRecharger
+  entities:
+  - uid: 1188
+    components:
+    - type: Transform
+      parent: 1
       rot: -1.5707963267948966 rad
       pos: 4.5,-6.5
-  - uid: 1188
+  - uid: 1189
     components:
     - type: Transform
       parent: 1
@@ -8440,13 +8457,13 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponTurretM25
   entities:
-  - uid: 749
+  - uid: 1190
     components:
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
       pos: -3.5,11.5
-  - uid: 1189
+  - uid: 1191
     components:
     - type: Transform
       parent: 1
@@ -8466,19 +8483,19 @@ entities:
       pos: -4.5,10.5
 - proto: WeaponTurretRAC30
   entities:
-  - uid: 1190
+  - uid: 1194
     components:
     - type: Transform
       parent: 1
       pos: 11.5,-13.5
-  - uid: 1191
+  - uid: 1195
     components:
     - type: Transform
       parent: 1
       pos: -10.5,-13.5
 - proto: WindoorSecure
   entities:
-  - uid: 1195
+  - uid: 1196
     components:
     - type: Transform
       parent: 1
@@ -8488,7 +8505,7 @@ entities:
       gridUid: 1
 - proto: WindowReinforcedDirectional
   entities:
-  - uid: 1196
+  - uid: 1197
     components:
     - type: Transform
       parent: 1
@@ -8496,7 +8513,7 @@ entities:
       pos: -11.5,-9.5
     - type: DeltaPressure
       gridUid: 1
-  - uid: 1197
+  - uid: 1198
     components:
     - type: Transform
       parent: 1
@@ -8504,7 +8521,7 @@ entities:
       pos: -10.5,-9.5
     - type: DeltaPressure
       gridUid: 1
-  - uid: 1198
+  - uid: 1199
     components:
     - type: Transform
       parent: 1

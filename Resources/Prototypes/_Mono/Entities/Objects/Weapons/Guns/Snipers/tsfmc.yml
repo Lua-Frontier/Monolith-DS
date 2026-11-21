@@ -1,125 +1,129 @@
-- type: entity
-  name: "TCA QBU-284 'Shenzhen' coilgun AMR"
-  parent: [BaseWeaponRifle, BaseGunWieldable, BaseFactionGearTSFT3]
-  id: WeaponAMRShenzhen
-  description: Magazine-fed AMR, utilizing electromagnets to fire 13.4x92mm DU-APFSDS rounds with extreme velocity.
-  components:
-  - type: Sprite
-    sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-0
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: GunWieldBonus
-    minAngle: -5
-    maxAngle: -95
-  - type: Gun
-    minAngle: 5
-    maxAngle: 95
-    angleIncrease: 27
-    angleDecay: 10
-    fireRate: 0.4
-    selectedMode: SemiAuto
-    availableModes: SemiAuto
-    soundGunshot:
-      path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/chemrail_shenzhen.ogg
-  - type: ChamberMagazineAmmoProvider
-    soundRack:
-      path: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineShenzhen
-        insertSound: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-          - MagazineShenzhen
-        whitelistFailPopup: gun-magazine-whitelist-fail
-      gun_chamber:
-        name: Chamber
-        startingItem: CartridgeShenzhen
-        priority: 1
-        whitelist:
-          tags:
-          - CartridgeShenzhen
-  - type: ContainerContainer
-    containers:
-      gun_magazine: !type:ContainerSlot
-      gun_chamber: !type:ContainerSlot
-  - type: MagazineVisuals
-    magState: mag
-    steps: 1
-    zeroVisible: true
-  - type: Appearance
-  - type: Clothing
-    sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen_inhands_32x.rsi
-  - type: Item
-    size: Ginormous
-    sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen_inhands_32x.rsi
-  - type: StaticPrice
-    price: 2400
-  - type: SpeedModifiedOnWield
-    walkModifier: 0.3
-    sprintModifier: 0.3
-  - type: CursorOffsetRequiresWield
-  - type: EyeCursorOffset
-    maxOffset: 7
-    pvsIncrease: 0.7
-  - type: GunRequiresWield
-  - type: LaserPointer
-    targetedColor: "#03c2fc"
-    defaultColor: "#fc0324"
-  - type: MeleeRequiresWield
-  - type: MeleeWeapon
-    attackRate: 0.6
-    damage:
-      types:
-        Blunt: 24 # snipers are HEAVY!
-    angle: 0
-    wideAnimationRotation: 45
-    animation: WeaponArcThrust
-    soundHit:
-      collection: MetalThud
-  - type: AltFireMelee
-    attackType: Light
-  - type: WieldDelay
-    baseDelay: 1.2
-    modifiedDelay: 1.2
-    preventFiring: true
-  - type: UseDelay
-    delay: 1
-  - type: HoloCigarBlacklist # LuaM
+# LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+# - type: entity
+#   name: "TCA QBU-284 'Shenzhen' coilgun AMR"
+#   parent: [BaseWeaponRifle, BaseGunWieldable, BaseFactionGearTSFT3]
+#   id: WeaponAMRShenzhen
+#   description: Magazine-fed AMR, utilizing electromagnets to fire 13.4x92mm DU-APFSDS rounds with extreme velocity.
+#   components:
+#   - type: Sprite
+#     sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen.rsi
+#     layers:
+#     - state: base
+#       map: ["enum.GunVisualLayers.Base"]
+#     - state: mag-0
+#       map: ["enum.GunVisualLayers.Mag"]
+#   - type: GunWieldBonus
+#     minAngle: -5
+#     maxAngle: -95
+#   - type: Gun
+#     minAngle: 5
+#     maxAngle: 95
+#     angleIncrease: 27
+#     angleDecay: 10
+#     fireRate: 0.4
+#     selectedMode: SemiAuto
+#     availableModes: SemiAuto
+#     soundGunshot:
+#       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/chemrail_shenzhen.ogg
+#   - type: ChamberMagazineAmmoProvider
+#     soundRack:
+#       path: /Audio/Weapons/Guns/Cock/batrifle_cock.ogg
+#   - type: ItemSlots
+#     slots:
+#       gun_magazine:
+#         name: Magazine
+#         startingItem: MagazineShenzhen
+#         insertSound: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
+#         ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+#         priority: 2
+#         whitelist:
+#           tags:
+#           - MagazineShenzhen
+#         whitelistFailPopup: gun-magazine-whitelist-fail
+#       gun_chamber:
+#         name: Chamber
+#         startingItem: CartridgeShenzhen
+#         priority: 1
+#         whitelist:
+#           tags:
+#           - CartridgeShenzhen
+#   - type: ContainerContainer
+#     containers:
+#       gun_magazine: !type:ContainerSlot
+#       gun_chamber: !type:ContainerSlot
+#   - type: MagazineVisuals
+#     magState: mag
+#     steps: 1
+#     zeroVisible: true
+#   - type: Appearance
+#   - type: Clothing
+#     sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen_inhands_32x.rsi
+#   - type: Item
+#     size: Ginormous
+#     sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen_inhands_32x.rsi
+#   - type: StaticPrice
+#     price: 2400
+#   - type: SpeedModifiedOnWield
+#     walkModifier: 0.3
+#     sprintModifier: 0.3
+#   - type: CursorOffsetRequiresWield
+#   - type: EyeCursorOffset
+#     maxOffset: 7
+#     pvsIncrease: 0.7
+#   - type: GunRequiresWield
+#   - type: LaserPointer
+#     targetedColor: "#03c2fc"
+#     defaultColor: "#fc0324"
+#   - type: MeleeRequiresWield
+#   - type: MeleeWeapon
+#     attackRate: 0.6
+#     damage:
+#       types:
+#         Blunt: 24 # snipers are HEAVY!
+#     angle: 0
+#     wideAnimationRotation: 45
+#     animation: WeaponArcThrust
+#     soundHit:
+#       collection: MetalThud
+#   - type: AltFireMelee
+#     attackType: Light
+#   - type: WieldDelay
+#     baseDelay: 1.2
+#     modifiedDelay: 1.2
+#     preventFiring: true
+#   - type: UseDelay
+#     delay: 1
+#   - type: HoloCigarBlacklist # LuaM
+# LuaM-end
 
-- type: entity
-  name: "TCA QBU-284 'Shenzhen' coilgun AMR"
-  parent: WeaponAMRShenzhen
-  id: WeaponAMRShenzhenEmpty
-  suffix: Empty
-  description: Magazine-fed AMR, utilizing electromagnets to fire 13.4x92mm DU-APFSDS rounds with extreme velocity.
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: null
-        insertSound: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-          - MagazineShenzhen
-        whitelistFailPopup: gun-magazine-whitelist-fail
-      gun_chamber:
-        name: Chamber
-        startingItem: null
-        priority: 1
-        whitelist:
-          tags:
-          - CartridgeShenzhen
+# LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+# - type: entity
+#   name: "TCA QBU-284 'Shenzhen' coilgun AMR"
+#   parent: WeaponAMRShenzhen
+#   id: WeaponAMRShenzhenEmpty
+#   suffix: Empty
+#   description: Magazine-fed AMR, utilizing electromagnets to fire 13.4x92mm DU-APFSDS rounds with extreme velocity.
+#   components:
+#   - type: ItemSlots
+#     slots:
+#       gun_magazine:
+#         name: Magazine
+#         startingItem: null
+#         insertSound: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
+#         ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+#         priority: 2
+#         whitelist:
+#           tags:
+#           - MagazineShenzhen
+#         whitelistFailPopup: gun-magazine-whitelist-fail
+#       gun_chamber:
+#         name: Chamber
+#         startingItem: null
+#         priority: 1
+#         whitelist:
+#           tags:
+#           - CartridgeShenzhen
+# LuaM-end
 
 - type: entity
   name: VFD QBU-243 Xian DMR (8x65mm SKR)

@@ -3,6 +3,7 @@
   parent: BaseVessel
   name: CASC Lightning
   description: A fast-moving fast-strafing support craft. Armred with 4 TOVEKs and 2 chainguns. Really more of a heavy fighter than a proper ship.
+  locDescription: vessel-lightning-desc # LuaM
   price: 71000
   category: Small
   group: Sr

@@ -4,7 +4,7 @@ meta:
   engineVersion: 291.0.4
   forkId: ""
   forkVersion: ""
-  time: 11/18/2026 22:31:26
+  time: 11/20/2026 16:35:05
   entityCount: 1044
 maps: []
 grids:
@@ -92,8 +92,8 @@ entities:
       spreadQueues:
         MetalFoam: []
         Puddle: []
-        Smoke: []
         Kudzu: []
+        Smoke: []
     - type: Shuttle
       dampingModifier: 2.5
       bodyModifier: 2.5
@@ -763,7 +763,7 @@ entities:
       pos: -2.5,5.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -8348.412
+      secondsUntilStateChange: -8864.773
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -4234,6 +4234,8 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: -4.5,-0.5
+    - type: FuelGenerator
+      targetPower: 140000
 - proto: GravityGeneratorMini
   entities:
   - uid: 554
@@ -4490,7 +4492,7 @@ entities:
       pos: 4.5,-3.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -11384.051
+      secondsUntilStateChange: -11900.412
 - proto: LargeAPC
   entities:
   - uid: 595

@@ -25,12 +25,6 @@
 
 # Neck
 - type: loadout
-  id: MercenaryClothingNeckCloakPirateCap
-  price: 100
-  equipment:
-    neck: ClothingNeckCloakPirateCap
-
-- type: loadout
   id: MercenaryClothingNeckCloakBlueStar
   price: 100
   equipment:
@@ -91,34 +85,16 @@
     neck: ClothingNeckCloakEmpirePreafectViolet
 
 - type: loadout
-  id: MercenaryClothingNeckCloakRenegade
-  price: 100
-  equipment:
-    neck: ClothingNeckCloakRenegade
-
-- type: loadout
-  id: MercenaryClothingNeckCloakRenegadeCaptain
-  price: 100
-  equipment:
-    neck: ClothingNeckCloakRenegadeCaptain
-
-- type: loadout
-  id: MercenaryClothingNeckCloakRenegadePoncho
-  price: 100
-  equipment:
-    neck: ClothingNeckCloakRenegadePoncho
-
-- type: loadout
-  id: MercenaryClothingNeckMantleRenegade
-  price: 100
-  equipment:
-    neck: ClothingNeckMantleRenegade
-
-- type: loadout
   id: MercenaryClothingNeckCloakRosy
   price: 100
   equipment:
     neck: ClothingNeckCloakRosy
+
+- type: loadout
+  id: MercenaryClothingNeckCloakBee
+  price: 100
+  equipment:
+    neck: ClothingNeckCloakBee
 
 # Jumpsuit
 - type: loadout
@@ -192,7 +168,6 @@
   name: loadout-group-contractor-neck
   minLimit: 0
   loadouts:
-  - MercenaryClothingNeckCloakPirateCap
   - MercenaryClothingNeckCloakBlueStar
   - MercenaryClothingNeckCloakBlueStarRed
   - MercenaryClothingNeckCloakBlueStarBlack
@@ -203,11 +178,8 @@
   - MercenaryClothingNeckCloakEmpirePreafect
   - MercenaryClothingNeckCloakEmpirePreafectOrange
   - MercenaryClothingNeckCloakEmpirePreafectViolet
-  - MercenaryClothingNeckCloakRenegade
-  - MercenaryClothingNeckCloakRenegadeCaptain
-  - MercenaryClothingNeckCloakRenegadePoncho
-  - MercenaryClothingNeckMantleRenegade
   - MercenaryClothingNeckCloakRosy
+  - MercenaryClothingNeckCloakBee
   subgroups:
   - ContractorNeck
 

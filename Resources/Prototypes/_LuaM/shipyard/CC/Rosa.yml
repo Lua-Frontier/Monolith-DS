@@ -2,7 +2,7 @@
   id: Rosa
   parent: BaseVessel
   name: vessel-rosa-name
-  description: vessel-rosa-name
+  description: vessel-rosa-desc
   price: 212000
   purchasable: false
   category: Medium

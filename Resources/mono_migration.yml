@@ -61,10 +61,15 @@ HyperlinkBookNfsdSop: null
 # base planet water replaced by CE water (z-level safe landing + distortion)
 FloorWaterEntity: CEWater
 
-#hotplate -> thermobath
-ChemistryHotplate: MachineThermobath
-HotplateMachineCircuitboard: ThermobathMachineCircuitboard
-ChemistryHotplateFlatpack: MachineThermobathFlatpack
+# LuaM-start: thermobath disabled, hotplate restored
+# #hotplate -> thermobath
+# ChemistryHotplate: MachineThermobath
+# HotplateMachineCircuitboard: ThermobathMachineCircuitboard
+# ChemistryHotplateFlatpack: MachineThermobathFlatpack
+MachineThermobath: ChemistryHotplate
+ThermobathMachineCircuitboard: HotplateMachineCircuitboard
+MachineThermobathFlatpack: ChemistryHotplateFlatpack
+# LuaM-end
 
 # Shipyard culling
 MiningCarrierComputer: null
@@ -129,3 +134,16 @@ HardpointMissileSuperheavy: HardpointUniversalSuperheavy
 
 # LuaM: the old wall pirate flag is replaced by the pirate banner
 PirateFlag: BannerPirates
+
+# LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+WeaponSniperHristov: null
+WeaponSniperHristovEmpty: null
+WeaponSniperHristovEMPHE: null
+WeaponAMRShenzhen: null
+WeaponAMRShenzhenEmpty: null
+WeaponSniperHunter101: null
+WeaponCaseHunter101Registered: null
+TechDiskHristov: null
+WeaponCaseLongHristovExpedition: null
+BriefcaseSyndieSniperBundleFilled: null
+# LuaM-end

@@ -49,9 +49,9 @@
     ClothingNeckCloakBi: 3
     ClothingNeckCloakAce: 3
     ClothingNeckCloakLesbian: 3
+    ClothingNeckCloakBee: 3
   contrabandInventory:
     ClothingNeckCloakNanotrasen: 3
-    ClothingNeckCloakPirateCap: 3
     ClothingNeckCloakUssp: 3
     ClothingNeckCloakSr: 3
     ClothingNeckMantleSr: 3
@@ -61,7 +61,20 @@
     ClothingNeckCloakDrakeIndustriesRipped: 3
   emaggedInventory:
     ClothingNeckViperGroupMantle: 3
+
+- type: vendingMachineInventory
+  id: VendPirateCapesInventory
+  startingInventory:
+    ClothingNeckCloakPirateCap: 3
+    ClothingNeckCloakRenegade: 3
     ClothingNeckCloakRenegadeCaptain: 3
     ClothingNeckCloakRenegadePoncho: 3
-    ClothingNeckCloakRenegade: 3
     ClothingNeckMantleRenegade: 3
+    ClothingOuterCoatPirate: 3
+    ClothingOuterCoatPirateCaptain: 3
+    ClothingShoesBootsPirate: 3
+    ClothingShoesBootsPirateLuffy: 3
+    ClothingHeadHatPirate: 3
+    ClothingHeadHatPirates: 3
+    ClothingHeadHatPirateTricord: 3
+    ClothingHeadHatPirateLuffy: 3

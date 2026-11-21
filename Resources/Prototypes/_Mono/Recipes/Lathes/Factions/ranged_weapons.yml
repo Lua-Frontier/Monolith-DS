@@ -217,23 +217,25 @@
 
 # TSF Shenzhen
 
-- type: latheRecipe
-  parent: BaseWeaponRecipeLong
-  id: WeaponAMRShenzhenTSF
-  result: WeaponAMRShenzhenEmpty
-  categories:
-  - AntiMaterial
-  - Weapons
-  - Ballistic
-  materials:
-    Steel: 7000
-    Plasteel: 6000
-    Plastitanium: 1500
-    Copper: 2000
-    Lithium: 2000
-    Gold: 500
-    Silver: 500
-    UraniumDepleted: 120 # For the mag it comes with + the bullet in the chamber. 20 DU per round, if you're adding any recipes yourself.
+# LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+# - type: latheRecipe
+#   parent: BaseWeaponRecipeLong
+#   id: WeaponAMRShenzhenTSF
+#   result: WeaponAMRShenzhenEmpty
+#   categories:
+#   - AntiMaterial
+#   - Weapons
+#   - Ballistic
+#   materials:
+#     Steel: 7000
+#     Plasteel: 6000
+#     Plastitanium: 1500
+#     Copper: 2000
+#     Lithium: 2000
+#     Gold: 500
+#     Silver: 500
+#     UraniumDepleted: 120 # For the mag it comes with + the bullet in the chamber. 20 DU per round, if you're adding any recipes yourself.
+# LuaM-end
 
 # TSF Shenzhen
 
@@ -453,22 +455,24 @@
 
 # hristov
 
-- type: latheRecipe
-  parent: BaseWeaponRecipeLong
-  id: WeaponSniperHristovRogue
-  result: WeaponSniperHristovEmpty
-  categories:
-  - DMRs
-  - AntiMaterial
-  - Ballistic
-  - Weapons
-  - Antitank
-  materials:
-    Steel: 7500
-    Plasteel: 3000
-    Plastic: 1000
-    Silver: 2000
-    Uranium: 400
+# LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+# - type: latheRecipe
+#   parent: BaseWeaponRecipeLong
+#   id: WeaponSniperHristovRogue
+#   result: WeaponSniperHristovEmpty
+#   categories:
+#   - DMRs
+#   - AntiMaterial
+#   - Ballistic
+#   - Weapons
+#   - Antitank
+#   materials:
+#     Steel: 7500
+#     Plasteel: 3000
+#     Plastic: 1000
+#     Silver: 2000
+#     Uranium: 400
+# LuaM-end
 
 # Ussp guns
 

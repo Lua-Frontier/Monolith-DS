@@ -24,7 +24,7 @@
   - ContractorSpecialGunMla34
   #- ContractorSpecialGunMla79
   - ContractorSpecialGunMalandro
-  - ContractorSpecialWeapon101 # LuaM
+  # - ContractorSpecialWeapon101 # LuaM # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
   - ContractorSpecialGunIroh # LuaM
   - ContractorSpecialGunAK12 # LuaM
 # TSF playtime weapons

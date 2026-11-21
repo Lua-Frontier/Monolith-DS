@@ -1,0 +1,82 @@
+# Author: Almaz3200
+# R.I.P Sparta. June 2nd, 2044.
+
+- type: entity
+  id: Jumppacktsf
+  parent: JetpackNfsd
+  name: TSFMC jumppack
+  suffix: Empty
+  components:
+  - type: Item
+    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+  - type: Sprite
+    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+  - type: JumpAbility
+    jumpDistance: 6
+    jumpSound: /Audio/_LuaM/Effects/jump.ogg
+  - type: ActionGrant
+    actions:
+    - ActionGravityJump 
+  - type: ItemActionGrant
+    actions:
+    - ActionGravityJump
+    activeIfWorn: true
+  - type: Jetpack
+    acceleration: 1.5
+    weightlessModifier: 2.4
+    moleUsage: 0.01
+
+- type: entity
+  id: JumppacktsfFilled
+  parent: JetpackBlueFilled
+  name: TSFMC jumppack
+  suffix: Filled
+  components:
+  - type: Item
+    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+  - type: Sprite
+    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+  - type: JumpAbility
+    jumpDistance: 6
+    jumpSound: /Audio/_LuaM/Effects/jump.ogg
+  - type: ActionGrant
+    actions:
+    - ActionGravityJump 
+  - type: ItemActionGrant
+    actions:
+    - ActionGravityJump
+    activeIfWorn: true
+  - type: Jetpack
+    acceleration: 1.5
+    weightlessModifier: 2.4
+    moleUsage: 0.01
+
+- type: entity
+  id: Jumppackpdv
+  parent: Jumppacktsf
+  name: PDV jumppack
+  suffix: Empty
+  components:
+  - type: Item
+    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+  - type: Sprite
+    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+
+- type: entity
+  id: JumppackpdvFilled
+  parent: JumppacktsfFilled
+  name: PDV jumppack
+  suffix: Filled
+  components:
+  - type: Item
+    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+  - type: Sprite
+    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi

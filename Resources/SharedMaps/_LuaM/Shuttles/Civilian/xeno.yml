@@ -4,7 +4,7 @@ meta:
   engineVersion: 291.0.4
   forkId: ""
   forkVersion: ""
-  time: 11/18/2026 22:21:32
+  time: 11/20/2026 16:40:10
   entityCount: 1672
 maps: []
 grids:
@@ -93,8 +93,8 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
       spreadQueues:
-        Puddle: []
         MetalFoam: []
+        Puddle: []
         Kudzu: []
         Smoke: []
     - type: Shuttle
@@ -3955,7 +3955,7 @@ entities:
       canCollide: False
 - proto: ComputerAdvancedRadar
   entities:
-  - uid: 534
+  - uid: 532
     components:
     - type: Transform
       parent: 1
@@ -3966,7 +3966,7 @@ entities:
       startingCharge: 0
 - proto: ComputerGunneryConsole
   entities:
-  - uid: 532
+  - uid: 533
     components:
     - type: Transform
       parent: 1
@@ -3977,7 +3977,7 @@ entities:
       startingCharge: 0
 - proto: ComputerShuttle
   entities:
-  - uid: 533
+  - uid: 534
     components:
     - type: Transform
       parent: 1
@@ -5712,6 +5712,8 @@ entities:
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -3.5,5.5
+    - type: FuelGenerator
+      targetPower: 110000
 - proto: GravityGeneratorMini
   entities:
   - uid: 754
@@ -6199,7 +6201,7 @@ entities:
       pos: 8.5,5.5
     - type: Anchorable
       currentDelay: 2
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 822
     components:

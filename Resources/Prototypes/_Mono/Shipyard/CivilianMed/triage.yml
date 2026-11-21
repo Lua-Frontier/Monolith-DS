@@ -9,6 +9,7 @@
   parent: BaseVessel
   name: MI Triage
   description: A extremely compact medical ship that packs a punch.
+  locDescription: vessel-triage-desc # LuaM
   price: 64262 #Approx 60262
   category: Small
   group: Medical

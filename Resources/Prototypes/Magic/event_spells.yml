@@ -72,8 +72,8 @@
         orGroup: Guns
       - id: WeaponSniperMosin
         orGroup: Guns
-      - id: WeaponSniperHristov
-        orGroup: Guns
+      # - id: WeaponSniperHristov # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+        # orGroup: Guns
       - id: Musket
         orGroup: Guns
       - id: WeaponPistolFlintlock

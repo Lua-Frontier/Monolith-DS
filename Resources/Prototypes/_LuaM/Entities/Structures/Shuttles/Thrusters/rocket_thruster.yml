@@ -1,0 +1,30 @@
+# Stock single-tile thruster in the colours and glow of the Cicads omni thruster.
+- type: entity
+  id: RocketThrusterCicads
+  parent: Thruster
+  name: rocket thruster
+  description: A thruster that allows a shuttle to move. This one burns with a bright blue flame.
+  components:
+  - type: Machine
+    board: RocketThrusterCicadsMachineCircuitboard
+  - type: Sprite
+    sprite: _LuaM/Structures/Shuttles/rocket_thruster.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+      color: "#24a4ff"
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+      color: "#add6ff"
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 1.5
+    color: "#24a4ff"

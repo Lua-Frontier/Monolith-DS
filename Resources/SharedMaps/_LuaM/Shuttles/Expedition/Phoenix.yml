@@ -13621,7 +13621,7 @@ entities:
     - type: Transform
       pos: 24.5,-13.5
       parent: 1
-- proto: MachineThermobathFlatpack
+- proto: ChemistryHotplateFlatpack
   entities:
   - uid: 1146
     components:

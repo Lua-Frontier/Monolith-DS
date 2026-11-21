@@ -1486,7 +1486,7 @@
     - id: LatheUpgradeKitCryo # Mono - replace hyperconvection lathes with upgrade kit
       orGroup: Board
       prob: 0.25
-    - id: ThermobathMachineCircuitboard
+    - id: HotplateMachineCircuitboard # LuaM: thermobath disabled, hotplate restored
       orGroup: Board
       prob: 0.5
     - id: CutterMachineCircuitboard

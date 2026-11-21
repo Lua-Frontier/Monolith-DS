@@ -1,0 +1,33 @@
+- type: vessel
+  id: Edelweiss
+  parent: BaseVessel
+  name: NXL_Edelweiss
+  description: vessel-edelweiss-desc
+  price: 100000
+  category: Small
+  group: Medical
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/Med/Edelweiss.yml
+  guidebookPage: null
+  class:
+  - Civilian
+  - Medical
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Edelweiss
+  mapName: 'Edelweiss'
+  mapPath: /SharedMaps/_LuaM/Shuttles/Med/Edelweiss.yml
+  minPlayers: 0
+  stations:
+    Edelweiss:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Edelweiss MED{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            MdMedic: [ 0, 0 ]

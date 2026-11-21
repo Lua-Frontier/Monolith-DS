@@ -745,7 +745,7 @@
     - CryoPodMachineCircuitboard
     - DiagnoserMachineCircuitboard
     - ElectrolysisUnitMachineCircuitboard
-    - ThermobathMachineCircuitboard
+    - HotplateMachineCircuitboard # LuaM: thermobath disabled, hotplate restored
     - MedicalScannerMachineCircuitboard
     - StasisBedMachineCircuitboard
     - VaccinatorMachineCircuitboard
@@ -779,7 +779,7 @@
     - MachineElectrolysisUnitFlatpack
     - BaseGasCondenserFlatpack
     - MachineCentrifugeFlatpack
-    - MachineThermobathFlatpack
+    - ChemistryHotplateFlatpack # LuaM: thermobath disabled, hotplate restored
     - KitchenReagentGrinderFlatpack
     - ComputerCrewMonitoringFlatpack
     - VendingMachineMedicalFlatpack

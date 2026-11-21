@@ -10,6 +10,7 @@
   parent: BaseVessel
   name: JIN Zeros
   description: A truck stop diner ship designed to resemble a semi-truck, complete with a EVA accessable dining room and a small cargo bay.
+  locDescription: vessel-zeros-desc # LuaM
   price: 153578
   category: Large
   group: Shipyard

@@ -3,6 +3,7 @@
   parent: BaseVessel
   name: SKR Autumn
   description: An updated production variant of the Autumn cargo freighter. Comes with a shield generator and a few 90mms.
+  locDescription: vessel-autumn-desc # LuaM
   price: 224831
   category: Large
   group: Shipyard
