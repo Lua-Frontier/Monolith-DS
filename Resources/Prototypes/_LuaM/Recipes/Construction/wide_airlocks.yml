@@ -1,0 +1,83 @@
+- type: construction
+  id: BigAirlockGlass
+  name: big glass airlock
+  description: It looks like an ordinary airlock... but very wide.
+  graph: LuaMWideAirlock
+  startNode: start
+  targetNode: bigAirlock
+  category: construction-category-structures
+  icon:
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/big_glass_lua.rsi
+    state: assembly
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TilesNotBlocked
+      tiles:
+      - -1,0
+      - 0,0
+      - 1,0
+
+- type: construction
+  id: BigMedicalAirlockGlass
+  name: big glass medical airlock
+  description: It looks like an ordinary airlock... but very wide.
+  graph: LuaMWideAirlock
+  startNode: start
+  targetNode: bigMedicalAirlock
+  category: construction-category-structures
+  icon:
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/big_medical_glass_lua.rsi
+    state: assembly
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TilesNotBlocked
+      tiles:
+      - -1,0
+      - 0,0
+      - 1,0
+
+- type: construction
+  id: BigExternalAirlockGlass
+  name: big glass external airlock
+  description: It looks like an ordinary airlock... but very wide.
+  graph: LuaMWideAirlock
+  startNode: start
+  targetNode: bigExternalAirlock
+  category: construction-category-structures
+  icon:
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/big_external_glass_lua.rsi
+    state: assembly
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TilesNotBlocked
+      tiles:
+      - -1,0
+      - 0,0
+      - 1,0
+
+- type: construction
+  id: MediumMedicalAirlockGlass
+  name: medium glass medical airlock
+  description: It looks like an ordinary airlock... but very wide.
+  graph: LuaMWideAirlock
+  startNode: start
+  targetNode: mediumMedicalAirlock
+  category: construction-category-structures
+  icon:
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/medium_medical_glass_lua.rsi
+    state: assembly
+  ghostOffset: 0.5,0
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TilesNotBlocked
+      tiles:
+      - 0,0
+      - 1,0

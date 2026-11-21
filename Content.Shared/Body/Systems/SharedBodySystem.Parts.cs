@@ -116,6 +116,8 @@ public partial class SharedBodySystem
                 var ev = new BodyPartEnabledEvent(hand);
                 RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
             }
+
+            AddLeg(partEnt, (partEnt.Comp.Body.Value, body)); // LuaM: legless crawling speed
         }
 
         if (partEnt.Comp.PartType == BodyPartType.Hand)
@@ -158,6 +160,8 @@ public partial class SharedBodySystem
                 var ev = new BodyPartDisabledEvent(hand);
                 RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
             }
+
+            RemoveLeg(partEnt, (partEnt.Comp.Body.Value, body)); // LuaM: legless crawling speed
         }
 
         if (partEnt.Comp.PartType == BodyPartType.Hand)
@@ -378,6 +382,12 @@ public partial class SharedBodySystem
             // Mono
             Standing.Stand(bodyEnt, force: !HasComp<LayingDownComponent>(bodyEnt));
         }
+        // LuaM-start: legless crawling speed depends on the arms
+        else if (legEnt.Comp.PartType == BodyPartType.Arm && bodyEnt.Comp.LegEntities.Count == 0)
+        {
+            UpdateMovementSpeed(bodyEnt);
+        }
+        // LuaM-end
     }
 
     private void RemoveLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
@@ -393,6 +403,12 @@ public partial class SharedBodySystem
             if (bodyEnt.Comp.LegEntities.Count == 0 && bodyEnt.Comp.RequiredLegs > 0) // Mono
                 Standing.Down(bodyEnt); // Shitmed Change
         }
+        // LuaM-start: legless crawling speed depends on the arms
+        else if (legEnt.Comp.PartType == BodyPartType.Arm && bodyEnt.Comp.LegEntities.Count == 0)
+        {
+            UpdateMovementSpeed(bodyEnt);
+        }
+        // LuaM-end
     }
 
     private void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
@@ -815,6 +831,23 @@ public partial class SharedBodySystem
         walkSpeed /= body.RequiredLegs;
         sprintSpeed /= body.RequiredLegs;
         acceleration /= body.RequiredLegs;
+
+        // LuaM-start: without legs the body crawls on its arms
+        if (body.LegEntities.Count == 0)
+        {
+            var arms = 0;
+            foreach (var arm in GetBodyChildrenOfType(bodyId, BodyPartType.Arm, body))
+            {
+                if (arm.Component.Enabled)
+                    arms++;
+            }
+
+            walkSpeed = body.LeglessCrawlSpeed * Math.Min(arms, 2) / 2f;
+            sprintSpeed = walkSpeed;
+            acceleration = arms > 0 ? MovementSpeedModifierComponent.DefaultAcceleration : 0f;
+        }
+        // LuaM-end
+
         Movement.ChangeBaseSpeed(bodyId, walkSpeed, sprintSpeed, acceleration, movement);
     }
 

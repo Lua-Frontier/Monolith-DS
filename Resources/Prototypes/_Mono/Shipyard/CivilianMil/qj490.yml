@@ -5,6 +5,7 @@
   parent: BaseVessel
   name: GS QJ-490/B
   description: Comes with 4 AK-570s and a Dravon autocannon. Rather fast to accelerate but lacking in missile countermeasures. After it's decomissioning from the TSFMC fleet, GS purchased and retrofitted the design, the old energy weapons and logistically demanding bomb bay having been swapped out for more conventional arms.
+  locDescription: vessel-qj490-desc # LuaM
   price: 25200
   category: Small
   shuttlePath: /SharedMaps/_Mono/Shuttles/CivilianMil/qj490.yml

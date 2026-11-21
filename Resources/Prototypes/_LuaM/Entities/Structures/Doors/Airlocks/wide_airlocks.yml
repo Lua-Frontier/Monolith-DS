@@ -1,0 +1,100 @@
+# Ported from Lua-Frontier/sector-frontier-14-ds (Resources/Prototypes/_Lua/Entities/Structures/Doors/Airlocks/airlocks.yml)
+# LuaWorld - This file is licensed under AGPLv3
+# Copyright (c) 2025 LuaWorld Contributors
+# See AGPLv3.txt for details.
+
+# 3 tiles wide
+- type: entity
+  id: BigGlassAirlockBase
+  parent: AirlockGlass
+  abstract: true
+  name: big glass airlock
+  description: It looks like an ordinary airlock... but very wide. It opens, it closes, and it might crush you.
+  suffix: 3 tiles
+  components:
+  - type: Transform
+    noRot: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.49,-0.49,1.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - GlassAirlockLayer
+  - type: Sprite
+    snapCardinals: false
+    offset: 0,0
+
+- type: entity
+  id: BigAirlockGlass
+  parent: [BigGlassAirlockBase, AirlockGlass]
+  name: big glass airlock
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/big_glass_lua.rsi
+  - type: Construction
+    graph: LuaMWideAirlock
+    node: bigAirlock
+
+- type: entity
+  id: BigMedicalAirlockGlass
+  parent: [BigGlassAirlockBase, AirlockGlass]
+  name: big glass medical airlock
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/big_medical_glass_lua.rsi
+  - type: Construction
+    graph: LuaMWideAirlock
+    node: bigMedicalAirlock
+
+- type: entity
+  id: BigExternalAirlockGlass
+  parent: [BigGlassAirlockBase, AirlockExternalGlass]
+  name: big glass external airlock
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/big_external_glass_lua.rsi
+  - type: Construction
+    graph: LuaMWideAirlock
+    node: bigExternalAirlock
+
+# 2 tiles wide
+- type: entity
+  id: MediumGlassAirlockBase
+  parent: AirlockGlass
+  abstract: true
+  name: medium glass airlock
+  description: It looks like an ordinary airlock... but very wide. It opens, it closes, and it might crush you.
+  suffix: 2 tiles
+  components:
+  - type: Transform
+    noRot: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,1.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - GlassAirlockLayer
+  - type: Sprite
+    snapCardinals: false
+    offset: 0.5,0
+
+- type: entity
+  id: MediumMedicalAirlockGlass
+  parent: [MediumGlassAirlockBase, AirlockGlass]
+  name: medium glass medical airlock
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/medium_medical_glass_lua.rsi
+  - type: Construction
+    graph: LuaMWideAirlock
+    node: mediumMedicalAirlock

@@ -41704,7 +41704,7 @@ entities:
     - type: Transform
       pos: -1.5,34.5
       parent: 1
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 6096
     components:

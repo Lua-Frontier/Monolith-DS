@@ -1,3 +1,20 @@
+# JumpPack
+- type: listing
+  id: UplinkSecurityJumppack
+  name:  uplink-tsf-jumppack-name
+  description: uplink-tsf-jumppack-desc
+  productEntity: JumppacktsfFilled
+  icon: { sprite: _LuaM/Objects/Tanks/jumppacks/tsf.rsi, state: icon }
+  cost:
+    FederationMilitaryCredit: 250
+  categories:
+    - UplinkSecurityUtility
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+
 # Vouchers
 # Prices match the Vanguard vouchers in the PDV uplink.
 # T1

@@ -1,0 +1,9 @@
+# Snail has the same body mass as a mouse, so the cube costs the same.
+- type: latheRecipe
+  id: SnailCube
+  result: SnailCube
+  categories:
+  - Animals
+  completetime: 15
+  materials:
+    Biomass: 12

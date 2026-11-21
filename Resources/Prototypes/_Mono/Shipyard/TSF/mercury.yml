@@ -3,6 +3,7 @@
   parent: BaseVesselIFFDisabled
   name: TSF-SKR Mercury
   description: Naval designation Type-32D Guided Missile Corvette. Equipped with 4 heavy frontal facing Paladin AShM pods, and 2 light PD guns.
+  locDescription: vessel-mercury-desc # LuaM
   price: 500000
   purchasable: false # voucher only - T2
   category: Medium

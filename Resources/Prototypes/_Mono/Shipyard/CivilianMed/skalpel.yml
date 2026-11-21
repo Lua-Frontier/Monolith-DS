@@ -3,6 +3,7 @@
   parent: BaseVessel
   name: SKR Skalpel
   description: A rather bulky lightly-equipped entry-level medical ship. Comes with chemistry and a medical bay for S&R, and a very basic cryonics setup.
+  locDescription: vessel-skalpel-desc # LuaM
   price: 87200
   category: Medium
   group: Medical

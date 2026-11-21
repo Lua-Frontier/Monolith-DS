@@ -169,22 +169,24 @@
   - JawsOfLife
   - MedkitCombatFilled
 
-- type: thiefBackpackSet # amr set
-  id: KitSelectorTSFMarsocShenzhen
-  name: selectable-set-tsfmarsoc-shenzhen-kit-name
-  description: selectable-set-tsfmarsoc-shenzhen-kit-desc
-  sprite:
-    sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen.rsi
-    state: icon
-  content:
-  - WeaponAMRShenzhen
-  - MagazineShenzhen
-  - MagazineShenzhen
-  - MagazineShenzhen
-  - MagazineShenzhen
-  - AmmoBoxShenzhenBig
-  - JawsOfLife
-  - MedkitCombatFilled
+# LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+# - type: thiefBackpackSet # amr set
+#   id: KitSelectorTSFMarsocShenzhen
+#   name: selectable-set-tsfmarsoc-shenzhen-kit-name
+#   description: selectable-set-tsfmarsoc-shenzhen-kit-desc
+#   sprite:
+#     sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen.rsi
+#     state: icon
+#   content:
+#   - WeaponAMRShenzhen
+#   - MagazineShenzhen
+#   - MagazineShenzhen
+#   - MagazineShenzhen
+#   - MagazineShenzhen
+#   - AmmoBoxShenzhenBig
+#   - JawsOfLife
+#   - MedkitCombatFilled
+# LuaM-end
 
 - type: thiefBackpackSet # pulse carbine set
   id: KitSelectorTSFMarsocPulseCarbine

@@ -42,6 +42,15 @@ public sealed partial class BodyComponent : Component
     [DataField, AutoNetworkedField]
     public HashSet<EntityUid> LegEntities = new();
 
+    // LuaM-start
+    /// <summary>
+    /// Base speed of a body without legs crawling on both arms, before the laying down modifier.
+    /// Each working arm gives half of it.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float LeglessCrawlSpeed = 2f;
+    // LuaM-end
+
     // WD EDIT START
     [DataField, AutoNetworkedField]
     public bool ThermalVisibility = true;

@@ -421,7 +421,7 @@
     - WeaponCaseHeavyAsmgtExpeditions
     - WeaponCaseLongXrayCannonExpedition
     - WeaponCaseLongJackdaw
-    - WeaponCaseLongHristovExpedition
+    # - WeaponCaseLongHristovExpedition # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
     - WeaponCaseMr8c # Mono
     - WeaponCaseMla79 # Mono
     chance: 1.0

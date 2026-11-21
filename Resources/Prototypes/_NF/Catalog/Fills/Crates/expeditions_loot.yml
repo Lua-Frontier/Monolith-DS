@@ -238,7 +238,7 @@
     - id: MachineElectrolysisUnitFlatpack
     - id: BaseGasCondenserFlatpack
     - id: MachineCentrifugeFlatpack
-    - id: MachineThermobathFlatpack
+    - id: ChemistryHotplateFlatpack # LuaM: thermobath disabled, hotplate restored
     - id: KitchenReagentGrinderFlatpack
     - id: VendingMachineChemicalsFlatpack
     - id: VendingMachineRestockChemVend

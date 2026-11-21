@@ -1,0 +1,99 @@
+# Assemblies of the wide airlocks, see wide_airlocks.yml
+
+- type: entity
+  id: AirlockAssemblyBigBase
+  parent: AirlockAssembly
+  abstract: true
+  name: big airlock assembly
+  description: An assembly of a very wide airlock.
+  suffix: 3 tiles
+  components:
+  - type: Transform
+    noRot: false
+  - type: Sprite
+    snapCardinals: false
+    offset: 0,0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.45,-0.45,1.45,0.45"
+        density: 110
+        mask:
+        - FullTileMask
+        layer:
+        - HumanoidBlockLayer
+
+- type: entity
+  id: AirlockAssemblyMediumBase
+  parent: AirlockAssembly
+  abstract: true
+  name: medium airlock assembly
+  description: An assembly of a very wide airlock.
+  suffix: 2 tiles
+  components:
+  - type: Transform
+    noRot: false
+  - type: Sprite
+    snapCardinals: false
+    offset: 0.5,0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,1.45,0.45"
+        density: 110
+        mask:
+        - FullTileMask
+        layer:
+        - HumanoidBlockLayer
+
+- type: entity
+  id: AirlockAssemblyBigGlass
+  parent: AirlockAssemblyBigBase
+  name: big glass airlock assembly
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/big_glass_lua.rsi
+    state: assembly
+  - type: Construction
+    graph: LuaMWideAirlock
+    node: bigAssembly
+
+- type: entity
+  id: AirlockAssemblyBigMedicalGlass
+  parent: AirlockAssemblyBigBase
+  name: big glass medical airlock assembly
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/big_medical_glass_lua.rsi
+    state: assembly
+  - type: Construction
+    graph: LuaMWideAirlock
+    node: bigMedicalAssembly
+
+- type: entity
+  id: AirlockAssemblyBigExternalGlass
+  parent: AirlockAssemblyBigBase
+  name: big glass external airlock assembly
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/big_external_glass_lua.rsi
+    state: assembly
+  - type: Construction
+    graph: LuaMWideAirlock
+    node: bigExternalAssembly
+
+- type: entity
+  id: AirlockAssemblyMediumMedicalGlass
+  parent: AirlockAssemblyMediumBase
+  name: medium glass medical airlock assembly
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/Airlocks/Glass/medium_medical_glass_lua.rsi
+    state: assembly
+  - type: Construction
+    graph: LuaMWideAirlock
+    node: mediumMedicalAssembly

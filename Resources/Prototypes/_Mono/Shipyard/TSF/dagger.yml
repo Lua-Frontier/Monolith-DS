@@ -3,6 +3,7 @@
   parent: BaseVesselIFFDisabled
   name: TSF-SKR Dagger
   description: Straight from the shipyards of Sol, this ship is equipped with a single M381 mass driver as its main armament for long-range fire support. Don't let them get close.
+  locDescription: vessel-dagger-desc # LuaM
   limit: 3
   hyperwarLimit: 6
   price: 150000

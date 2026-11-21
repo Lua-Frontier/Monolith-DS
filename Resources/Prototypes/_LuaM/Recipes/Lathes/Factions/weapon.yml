@@ -74,18 +74,20 @@
     Gold: 250
 
 # CC
-- type: latheRecipe
-  id: WeaponSniperHunter101
-  result: WeaponSniperHunter101
-  completetime: 30 # faster for your trouble
-  categories:
-  - Weapons
-  materials:
-    Steel: 7500
-    Plasteel: 3000
-    Plastic: 1000
-    Silver: 2000
-    Uranium: 400
+# LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+# - type: latheRecipe
+#   id: WeaponSniperHunter101
+#   result: WeaponSniperHunter101
+#   completetime: 30 # faster for your trouble
+#   categories:
+#   - Weapons
+#   materials:
+#     Steel: 7500
+#     Plasteel: 3000
+#     Plastic: 1000
+#     Silver: 2000
+#     Uranium: 400
+# LuaM-end
 
 - type: latheRecipe
   id: WeaponRifleFPDMR

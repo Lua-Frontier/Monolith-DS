@@ -4,6 +4,7 @@
   parent: BaseVesselIFFDisabled
   name: TSF-ELF Seax
   description: Fast moving, low profile medical ship. Equipped with twin TOVEKs for deterrence.
+  locDescription: vessel-seax-desc # LuaM
   price: 120000
   category: Small
   group: Security

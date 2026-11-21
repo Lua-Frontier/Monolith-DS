@@ -5,6 +5,7 @@
   parent: BaseVesselIFFDisabled
   name: NCS Drakon
   description: A fast brawler with heavy armor and ballistic armaments.
+  locDescription: vessel-drakon-desc # LuaM
   price: 112753
   purchasable: false # voucher only
   category: Medium

@@ -9,6 +9,7 @@
   parent: BaseVessel
   name: VG Talonuran
   description: A small heavy support craft, comissioned by the Viper Group for fleet support. Magboots suggested.
+  locDescription: vessel-talonuran-desc # LuaM
   price: 68714
   category: Small
   group: Viper

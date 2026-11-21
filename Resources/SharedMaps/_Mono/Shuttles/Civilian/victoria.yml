@@ -3639,7 +3639,7 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-- proto: WeaponLaserTurretL1Phalanx
+- proto: WeaponTurretM25
   entities:
   - uid: 296
     components:

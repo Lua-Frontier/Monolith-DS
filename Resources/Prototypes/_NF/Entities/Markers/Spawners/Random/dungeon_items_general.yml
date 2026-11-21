@@ -1075,7 +1075,7 @@
     - BriefcaseSyndieLobbyingBundleFilled
     - BriefcaseSyndieLobbyingBundleFilled
     - BriefcaseThiefBribingBundleFilled
-    - BriefcaseSyndieSniperBundleFilled
+    # - BriefcaseSyndieSniperBundleFilled # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
     rareChance: 0.01
 
 - type: entity

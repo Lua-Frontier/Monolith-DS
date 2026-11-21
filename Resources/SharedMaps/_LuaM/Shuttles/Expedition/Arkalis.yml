@@ -15182,7 +15182,7 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: 6.5,5.5
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 2087
     components:
@@ -19664,8 +19664,6 @@ entities:
     - type: Transform
       parent: 1
       pos: -9.5,29.5
-- proto: WallPlastitaniumCapital
-  entities:
   - uid: 2517
     components:
     - type: Transform
@@ -20924,8 +20922,6 @@ entities:
     - type: Transform
       parent: 1
       pos: -9.5,32.5
-- proto: WallPlastitaniumDiagonalCapital
-  entities:
   - uid: 178
     components:
     - type: Transform

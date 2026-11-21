@@ -148,7 +148,7 @@
   - WeaponRifleMR3CTSF
   - WeaponRifleXlr556Tsf
   - WeaponShotgunBulldogRogue
-  - WeaponSniperHristovRogue
+  # - WeaponSniperHristovRogue # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
   - WeaponSprayNozzle
   - WeaponSubMachineGunC20rRogue
   - WeaponSubMachineGunDrozdTSF

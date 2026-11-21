@@ -1,0 +1,78 @@
+# Lua: ported from sector-frontier-14-ds, rebuilt on the Monolith ship weapon bases.
+# Fires a hook that tethers this shuttle to the shuttle it hits, see ShuttleGrappleTurretSystem.
+
+- type: entity
+  id: WeaponShuttleGrapplingTurret
+  name: grappling turret
+  parent: [BallisticArtilleryTier1HP, BallisticArtillery]
+  suffix: Light, ShuttleGun
+  description: A shuttle harpoon for latching onto another shuttle. The hook is shown on radar.
+  components:
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  - type: StaticPrice
+    price: 1500
+  - type: Sprite
+    sprite: _Lua/Objects/Weapons/Guns/Turrets/turrets20mm.rsi
+    drawdepth: Mobs
+    layers:
+    - state: turrets20mm
+  - type: Appearance
+  - type: AmmoCounter
+  - type: FireControlRotate
+  - type: Actions
+  - type: Battery
+    maxCharge: 5000
+    startingCharge: 5000
+  - type: ExaminableBattery
+  - type: AutoShootGun
+  - type: GunSignalControl
+  - type: WirelessNetworkConnection
+    range: 700
+  - type: Gun
+    fireRate: 0.5
+    projectileSpeed: 75
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/harpoon.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletShuttleGrapplingHook
+    fireCost: 200
+  - type: SpaceArtillery
+    powerChargeRate: 100
+    powerUseActive: 20
+    powerUsePassive: 1100
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 100
+  - type: RadarBlip
+    radarColor: "#229E51"
+    scale: 1
+  - type: ShipGunType
+    shipType: Ballistic
+  - type: ShipGunClass
+    shipClass: Light
+  - type: ShipRepairable
+    repairTime: 10
+    repairCost: 30
+  - type: ShuttleGrappleTurret
+
+- type: entity
+  parent: BaseNFFlatpack
+  id: WeaponShuttleGrapplingTurretFlatpack
+  name: grappling turret flatpack
+  description: A flatpack used for constructing a grappling turret.
+  components:
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  - type: Flatpack
+    entity: WeaponShuttleGrapplingTurret
+  - type: StaticPrice
+    price: 150
+  - type: Sprite
+    sprite: _Lua/Flatpack/flatpack.rsi
+    layers:
+    - state: ship_weapon

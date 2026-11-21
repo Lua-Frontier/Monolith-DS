@@ -3,6 +3,7 @@
   parent: BaseVessel
   name: MSH Shuilian
   description: A large botany-focused ship. Comes with 4 separate climate-controlled "biodomes", each with their own separate atmosphere, plus equipment to filter multiple specific gases out into a gaslock for exporting.
+  locDescription: vessel-shuilian-desc # LuaM
   price: 195000
   category: Large
   group: Shipyard

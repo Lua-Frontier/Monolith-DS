@@ -1,3 +1,21 @@
+# JumpPack
+- type: listing
+  id: UplinkPDVJumppack
+  name:  uplink-pdv-jumppack-name
+  description: uplink-pdv-jumppack-desc
+  productEntity: JumppackpdvFilled
+  icon: { sprite: _LuaM/Objects/Tanks/jumppacks/pdv.rsi, state: icon }
+  cost:
+    Doubloon: 250
+  categories:
+    - UplinkPirateUtility
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - PirateUplink
+
+# Grenades
 - type: listing
   id: UplinkPirateWhitePhosphorusGrenade
   name: uplink-pirate-white-phosphorus-name
