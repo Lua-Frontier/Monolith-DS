@@ -1,0 +1,147 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+# Ported from dead-space-14 (DeadSpace: TheCircle / BSAA).
+
+- type: entity
+  parent: ProjectileGrenadeBase
+  id: GrenadeNecroKudzu
+  name: граната с некроволокнами
+  description: Противная на вид. При активации выпускает пару волокон некрокудзы на пол.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/grenade.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: ProjectileGrenade
+    # LuaM: закомментировано временно — нет прототипа NecroKudzu
+    # fillPrototype: NecroKudzu
+    capacity: 2
+  - type: EmitSoundOnTrigger
+    # LuaM: закомментировано временно — нет поля keysIn в EmitSoundOnTriggerComponent
+    # keysIn:
+    # - timer
+    sound:
+      path: "/Audio/Effects/flash_bang.ogg"
+    positional: true
+  - type: SpawnOnTrigger
+    # LuaM: закомментировано временно — нет поля keysIn в SpawnOnTriggerComponent
+    # keysIn:
+    # - timer
+    proto: GrenadeFlashEffect
+    # LuaM: закомментировано временно — нет поля predicted в SpawnOnTriggerComponent
+    # predicted: true
+#   # LuaM: закомментировано временно — нет компонента TriggerOnUse
+#   # - type: TriggerOnUse
+#   # LuaM: закомментировано временно — нет компонента TimerTrigger
+#   # - type: TimerTrigger
+#   #   initialBeepDelay: 0
+#   #   beepInterval: 2
+#   #   delay: 3.5
+  - type: TimerTriggerVisuals
+    primingSound:
+      path: /Audio/Effects/countdown.ogg
+
+- type: entity
+  parent: Jug
+  id: JugTheCircle
+  name: крепкий кувшин
+  description: Крепкий кувшин, что вмещает чуть больше, нежели обычный.
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/jug.rsi
+      layers:
+        - state: jug
+        - state: jug1
+          map: [ "enum.SolutionContainerLayers.Fill" ]
+          visible: false
+    - type: Item
+      shape:
+      - 0,0,2,1
+      size: Large
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/jug.rsi
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          maxVol: 300
+
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: WeaponTurretTheCircle
+  name: баллистическая турель
+  description: Автоматическая турель с баллистическим пулемётом.
+  suffix: Круг
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+    # LuaM: закомментировано временно — нет прототипа Necromorfs
+    # - Necromorfs
+
+- type: entity
+  id: ExtraborilVial
+  name: пробирка с экстраборилом
+  description: Пробирка, заполненная до краев экстраборилом.
+  parent: BaseChemistryEmptyVial # LuaM: ChemistryEmptyVial > BaseChemistryEmptyVial
+  components:
+  - type: Label
+    currentLabel: Экстраборил
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 40
+        reagents:
+        - ReagentId: Extraboril
+          Quantity: 40
+
+- type: entity
+  parent: BoxVial
+  id: ExtraborilKit
+  name: набор медика "Круг"
+  description: Важный набор для твоего медика Круга. Кстати, скажи спасибо своему медику, ему будет приятно.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,3,2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Beaker
+          amount: !type:ConstantNumberSelector # LuaM: 2 > ConstantNumberSelector
+            value: 2
+        - id: ClothingEyesGlassesChemical
+        - id: TheCircleMedicPaper
+        - id: ExtraborilVial
+          amount: !type:ConstantNumberSelector # LuaM: 5 > ConstantNumberSelector
+            value: 5
+
+- type: entity
+  parent: Paper
+  id: TheCircleMedicPaper
+  name: инструкция медика "Круг"
+  description: Лист бумаги, на котором указаны пропорции варки новых химикатов и способы их использования.
+  components:
+  - type: Paper
+    content: paper-medic-circle
+
+- type: entity
+  parent: CandyBucket
+  id: GeistCandyBag
+  name: корзинка для конфет
+  description: Тыквенная корзинка, набитая сладостями.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: FoodSnackSwirlLollipop
+          amount: !type:ConstantNumberSelector # LuaM: 2 > ConstantNumberSelector
+            value: 2
+        - id: FoodSnackCnDs
+          amount: !type:ConstantNumberSelector # LuaM: 2 > ConstantNumberSelector
+            value: 2
+        - id: FoodSnackChocolate
+          amount: !type:ConstantNumberSelector # LuaM: 2 > ConstantNumberSelector
+            value: 2

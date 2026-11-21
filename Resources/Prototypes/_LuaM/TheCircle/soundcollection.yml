@@ -1,0 +1,24 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+# Ported from dead-space-14 (DeadSpace: TheCircle / BSAA).
+
+- type: soundCollection
+  id: splinter-blade-extend
+  files:
+    - /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/splinter-blade-sfx/splinter-blade-extend.ogg
+
+- type: soundCollection
+  id: splinter-blade-retract
+  files:
+    - /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/splinter-blade-sfx/splinter-blade-retract.ogg
+
+- type: soundCollection
+  id: splinter-blade-attack
+  files:
+    - /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/splinter-blade-sfx/splinter-blade-attack.ogg
+
+- type: soundCollection
+  id: splinter-blade-miss
+  files:
+    - /Audio/_LuaM/Necromorfs/TheCircle/Weapon/sfx/splinter-blade-sfx/splinter-blade-miss.ogg

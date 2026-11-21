@@ -1,0 +1,38 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+# Ported from dead-space-14 (DeadSpace: TheCircle / BSAA).
+
+# Магазин Сайги
+
+- type: Tag
+  id: MagazineForSinabir
+
+- type: Tag
+  id: DrumForSinabir
+
+- type: Tag
+  id: DrumForSinabirBurn
+
+- type: Tag
+  id: MagazineForSinabirBurn
+
+# Магазин Вереск и магазин Абакана
+
+- type: Tag
+  id: CartridgeCaselessRifleIncendiary
+
+- type: Tag
+  id: CartridgeDragon
+
+- type: Tag
+  id: CartridgeCaselessDragon
+
+- type: Tag
+  id: ExtMagazineRifleBurn
+
+- type: Tag
+  id: MagazineCaselessRifleBurn
+
+- type: Tag
+  id: ShellShotgunDragon

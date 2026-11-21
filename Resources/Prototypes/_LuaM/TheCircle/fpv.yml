@@ -1,0 +1,13 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+# Ported from dead-space-14 (DeadSpace: TheCircle / BSAA).
+
+# LuaM: закомментировано временно — нет прототипа типа fpvIcon
+# - type: fpvIcon
+#   id: FPVIcon
+#   locationPreference: Right
+#   isShaded: true
+#   icon:
+#     sprite: /Textures/_LuaM/Interface/Misc/drone.rsi
+#     state: controling

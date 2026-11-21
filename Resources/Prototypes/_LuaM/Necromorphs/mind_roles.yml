@@ -1,0 +1,39 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+# Ported from dead-space-14 (DeadSpace: TheCircle / BSAA).
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleUnitology
+  name: Роль Юнитолога
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    # LuaM: закомментировано временно — нет прототипа Uni
+    # antagPrototype: Uni
+    subtype: role-subtype-uni
+  # LuaM: закомментировано временно — нет компонента UnitologyRole
+  # - type: UnitologyRole
+
+- type: entity
+  parent: MindRoleUnitology
+  id: MindRoleHeadUnitology
+  name: Роль Старшего Юнитолога
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    # LuaM: закомментировано временно — нет прототипа UniHead
+    # antagPrototype: UniHead
+    subtype: role-subtype-unihead
+
+- type: entity
+  parent: MindRoleUnitology
+  id: MindRoleEnslavedUnitology
+  name: Роль Порабощённого
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    # LuaM: закомментировано временно — нет прототипа UniEnslaved
+    # antagPrototype: UniEnslaved
+    subtype: role-subtype-unienslaved
