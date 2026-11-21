@@ -48565,7 +48565,7 @@ entities:
     - type: Transform
       pos: 3.5,-27.5
       parent: 1
-- proto: MachineThermobathFlatpack
+- proto: ChemistryHotplateFlatpack
   entities:
   - uid: 4654
     components:

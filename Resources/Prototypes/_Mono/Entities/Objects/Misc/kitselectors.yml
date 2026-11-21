@@ -58,7 +58,7 @@
   - type: ThiefUndeterminedBackpack
     possibleSets:
     - KitSelectorTSFMarsocFenghuang
-    - KitSelectorTSFMarsocShenzhen
+    # - KitSelectorTSFMarsocShenzhen # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
     - KitSelectorTSFMarsocPulseCarbine
     - KitSelectorTSFMarsocHailstorm
     maxSelectedSets: 1

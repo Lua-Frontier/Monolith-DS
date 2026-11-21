@@ -6201,7 +6201,7 @@ entities:
       pos: 8.5,5.5
     - type: Anchorable
       currentDelay: 2
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 822
     components:

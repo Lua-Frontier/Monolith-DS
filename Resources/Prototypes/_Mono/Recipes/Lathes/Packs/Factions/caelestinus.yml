@@ -9,7 +9,7 @@
   - WeaponRifleACRRecipe
   - Magazine635x40mmCaselessBigRecipe
   - Magazine635x40mmCaselessBigPlasmarecipe
-  - WeaponSniperHunter101
+  # - WeaponSniperHunter101 # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
   - WeaponRifleFPDMR
   - WeaponPistolCCTCGalactica
   - ClothingHeadHardsuitM92

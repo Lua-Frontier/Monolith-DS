@@ -30,6 +30,7 @@
     AirlockGlassFlatpack: 4294967295 # Infinite
     AirlockShuttleFlatpack: 4294967295 # Infinite
     AirlockGlassShuttleFlatpack: 4294967295 # Infinite
+    WeaponShuttleGrapplingTurretFlatpack: 4294967295 # Lua
     ComputerWithdrawBankATMFlatpack: 4294967295 # Infinite
     TelevisionFlatpack: 4294967295 # Infinite
     MassMediaFlatpack: 4294967295 # Infinite - Mono

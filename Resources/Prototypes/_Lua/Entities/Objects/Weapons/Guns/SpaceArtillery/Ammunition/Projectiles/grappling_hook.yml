@@ -1,0 +1,19 @@
+# Lua: ported from sector-frontier-14-ds.
+
+- type: entity
+  id: BulletShuttleGrapplingHook
+  name: shuttle grappling hook
+  parent: GrapplingHook
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 4
+  - type: ShipWeaponProjectile
+  - type: RadarBlip
+    scale: 1.25
+    requireNoGrid: false
+    visibleFromOtherGrids: true
+    radarColor: "#53FF6A"
+    shape: triangle
+    maxDistance: 1024
+  - type: ShuttleGrapplingHookProjectile

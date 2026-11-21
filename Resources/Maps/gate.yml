@@ -75382,7 +75382,7 @@ entities:
     - type: Transform
       pos: 19.386444,169.56036
       parent: 2
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 22855
     components:

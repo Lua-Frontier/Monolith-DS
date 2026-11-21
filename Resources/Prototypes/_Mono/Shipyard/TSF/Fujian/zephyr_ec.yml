@@ -3,6 +3,7 @@
   parent: BaseVessel
   name: TSF-SKR Zephyr-EC
   description: An old fighter with an TSFN-EC overhaul package, converting it into a light unmanned drone.
+  locDescription: vessel-zephyrec-desc # LuaM
   limit: 8
   hyperwarLimit: 0
   price: 29194

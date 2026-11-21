@@ -3962,7 +3962,7 @@ entities:
     - type: Transform
       pos: 4.5,-13.5
       parent: 1
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 510
     components:

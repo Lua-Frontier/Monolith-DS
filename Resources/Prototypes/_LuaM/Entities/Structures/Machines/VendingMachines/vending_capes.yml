@@ -27,3 +27,30 @@
     radius: 1.8
     energy: 1.6
     color: "#7c3bb8"
+
+- type: entity
+  parent: VendingMachineClothingCapes
+  id: VendingMachineClothingCapesPirate
+  name: Pirate VendCapes
+  description: A shabby machine full of cloaks for those who sail under the black flag.
+  components:
+  - type: VendingMachine
+    pack: VendPirateCapesInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: _LuaM/Structures/Machines/VendingMachines/piratecapes.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.8
+    energy: 1.6
+    color: "#c8282a"

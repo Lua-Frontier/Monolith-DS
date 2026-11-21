@@ -302,7 +302,7 @@
     - id: CryoPodMachineCircuitboard
     - id: CondenserMachineCircuitBoard
     - id: ElectrolysisUnitMachineCircuitboard
-    - id: ThermobathMachineCircuitboard
+    - id: HotplateMachineCircuitboard # LuaM: thermobath disabled, hotplate restored
     - id: ReagentGrinderMachineCircuitboard
     - id: StasisBedMachineCircuitboard
     - id: BiomassReclaimerMachineCircuitboard

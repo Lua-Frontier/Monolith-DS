@@ -304,8 +304,8 @@
 
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
-  id: ThermobathMachineCircuitboard
-  result: ThermobathMachineCircuitboard
+  id: HotplateMachineCircuitboard # LuaM: thermobath disabled, hotplate restored
+  result: HotplateMachineCircuitboard # LuaM
 
 - type: latheRecipe
   parent: BaseGoldCircuitboardRecipe

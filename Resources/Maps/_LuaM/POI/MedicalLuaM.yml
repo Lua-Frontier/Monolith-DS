@@ -25688,14 +25688,14 @@ entities:
       parent: 1
     - type: AmbientSound
       range: 3
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 1163
     components:
     - type: Transform
       pos: -15.5,-11.5
       parent: 1
-- proto: MachineThermobathFlatpack
+- proto: ChemistryHotplateFlatpack
   entities:
   - uid: 1165
     components:

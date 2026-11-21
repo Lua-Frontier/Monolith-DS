@@ -3,6 +3,7 @@
   parent: BaseVessel
   name: MMC Pebble
   description: A dirt cheap mining craft. Literally only the bare essentials. No gunnery, no drills or pulsers, no magnet.
+  locDescription: vessel-pebble-desc # LuaM
   price: 70000
   category: Small
   group: Mieyo

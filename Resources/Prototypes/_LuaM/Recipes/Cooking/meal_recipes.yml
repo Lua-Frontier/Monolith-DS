@@ -1,0 +1,10 @@
+- type: microwaveMealRecipe
+  id: RecipeDankpocket
+  name: dank pocket recipe
+  result: FoodDonkpocketDank
+  time: 5
+  group: Savory
+  solids:
+    FoodDonkpocket: 1
+    LeavesCannabis: 1
+  recipeType: Assembler

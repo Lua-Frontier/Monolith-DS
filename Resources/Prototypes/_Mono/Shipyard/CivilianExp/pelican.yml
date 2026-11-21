@@ -3,6 +3,7 @@
   parent: BaseVessel
   name: SKR Pelican
   description: A long-range expeditionary brick of a ship with a wide variety of capabilities such as salvage, mining, cargo, science, chemistry, and medical duties. Has very poor defensive armaments compared to other ships of the size and cost though.
+  locDescription: vessel-pelican-desc # LuaM
   price: 282000 # Giant markup for the capabilities.
   category: Large
   group: Expedition

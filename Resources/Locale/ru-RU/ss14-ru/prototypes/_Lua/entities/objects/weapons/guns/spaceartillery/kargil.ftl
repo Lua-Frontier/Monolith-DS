@@ -1,0 +1,9 @@
+﻿ent-WeaponTurretKargil = 130-мм орудие «Каргилл»
+    .desc = Одноствольная главная батарея, дающая тяжёлые выстрелы на предельной дальности. Стреляет автоматическими снарядами 130x820мм со слегка сниженной мощностью. Может активироваться дистанционно или подключаться к GCS.
+    .suffix = Большой, Т4
+ent-WeaponTurretKargilHomingCluster = { ent-WeaponTurretKargil }
+    .desc = { ent-WeaponTurretKargil.desc }
+    .suffix = Большой, Т4, Бесконечные HMNG-CLST
+ent-WeaponTurretKargilHECluster = { ent-WeaponTurretKargil }
+    .desc = { ent-WeaponTurretKargil.desc }
+    .suffix = Большой, Т4, Бесконечные HE-CLST

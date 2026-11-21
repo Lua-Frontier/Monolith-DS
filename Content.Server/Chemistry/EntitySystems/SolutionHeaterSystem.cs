@@ -6,6 +6,11 @@ using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Placeable;
 using Content.Shared.Power;
+// LuaM-start
+using Content.Shared.Examine;
+using Content.Shared.Popups;
+using Content.Shared.Verbs;
+// LuaM-end
 
 namespace Content.Server.Chemistry.EntitySystems;
 
@@ -14,6 +19,7 @@ public sealed partial class SolutionHeaterSystem : EntitySystem
     [Dependency] private PowerReceiverSystem _powerReceiver = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private SharedPopupSystem _popup = default!; // LuaM
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -25,7 +31,60 @@ public sealed partial class SolutionHeaterSystem : EntitySystem
         SubscribeLocalEvent<SolutionHeaterComponent, UpgradeExamineEvent>(OnUpgradeExamine);
         SubscribeLocalEvent<SolutionHeaterComponent, ItemPlacedEvent>(OnItemPlaced);
         SubscribeLocalEvent<SolutionHeaterComponent, ItemRemovedEvent>(OnItemRemoved);
+        // LuaM-start
+        SubscribeLocalEvent<SolutionHeaterComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<SolutionHeaterComponent, GetVerbsEvent<AlternativeVerb>>(OnGetAltVerbs);
+        SubscribeLocalEvent<SolutionHeaterComponent, ExaminedEvent>(OnExamined);
+        // LuaM-end
     }
+
+    // LuaM-start
+    private void OnStartup(Entity<SolutionHeaterComponent> entity, ref ComponentStartup args)
+    {
+        _appearance.SetData(entity, SolutionHeaterVisuals.IsCooling, entity.Comp.Cooling);
+    }
+
+    private void OnGetAltVerbs(Entity<SolutionHeaterComponent> entity, ref GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+
+        var user = args.User;
+        args.Verbs.Add(new AlternativeVerb
+        {
+            Text = Loc.GetString(entity.Comp.Cooling
+                ? "solution-heater-verb-set-heating"
+                : "solution-heater-verb-set-cooling"),
+            Act = () => SetCooling(entity, !entity.Comp.Cooling, user),
+        });
+    }
+
+    private void OnExamined(Entity<SolutionHeaterComponent> entity, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        args.PushMarkup(Loc.GetString(entity.Comp.Cooling
+            ? "solution-heater-examine-cooling"
+            : "solution-heater-examine-heating"));
+    }
+
+    public void SetCooling(Entity<SolutionHeaterComponent> entity, bool cooling, EntityUid? user = null)
+    {
+        if (entity.Comp.Cooling == cooling)
+            return;
+
+        entity.Comp.Cooling = cooling;
+        _appearance.SetData(entity, SolutionHeaterVisuals.IsCooling, cooling);
+
+        if (user != null)
+        {
+            _popup.PopupEntity(Loc.GetString(cooling
+                ? "solution-heater-popup-cooling"
+                : "solution-heater-popup-heating"), entity, user.Value);
+        }
+    }
+    // LuaM-end
 
     private void TurnOn(EntityUid uid)
     {
@@ -117,6 +176,19 @@ public sealed partial class SolutionHeaterSystem : EntitySystem
                 var energy = heater.HeatPerSecond * frameTime;
                 foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((heatingEntity, container)))
                 {
+                    // LuaM-start
+                    if (heater.Cooling)
+                    {
+                        if (soln.Comp.Solution.Temperature <= heater.MinTemperature)
+                            continue;
+
+                        _solutionContainer.AddThermalEnergy(soln, -energy);
+                        if (soln.Comp.Solution.Temperature < heater.MinTemperature)
+                            _solutionContainer.SetTemperature(soln, heater.MinTemperature);
+                        continue;
+                    }
+                    // LuaM-end
+
                     _solutionContainer.AddThermalEnergy(soln, energy);
                 }
             }

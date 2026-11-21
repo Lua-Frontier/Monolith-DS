@@ -3,6 +3,7 @@
   parent: BaseVessel
   name: SKR Sakuratsu
   description: An updated production variant of the Sakuratsu research vessel. Comes with an artifact research area and an ore processor.
+  locDescription: vessel-sakuratsu-desc # LuaM
   price: 99721
   category: Medium
   group: Shipyard

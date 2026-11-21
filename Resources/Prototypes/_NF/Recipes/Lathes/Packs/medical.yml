@@ -46,5 +46,5 @@
   - ChemDispenserMachineCircuitboard
   - ChemMasterMachineCircuitboard
   - ReagentGrinderMachineCircuitboard
-  - ThermobathMachineCircuitboard
+  - HotplateMachineCircuitboard # LuaM: thermobath disabled, hotplate restored
   - AutodocCircuitboard # Shitmed Change

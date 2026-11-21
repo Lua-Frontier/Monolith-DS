@@ -3,6 +3,7 @@
   parent: BaseVesselIFFDisabled
   name: PDV-VI Scorpion
   description: A light corvette armed with missile launchers for all kinds of ships.
+  locDescription: vessel-scorpion-desc # LuaM
   price: 150000
   purchasable: false # Voucher only - T1
   category: Large
