@@ -106,3 +106,14 @@
     sprite:  _LuaM/Clothing/Necks/AkiPlash/AkiPlash-helmet.rsi
   - type: Clothing
     sprite:  _LuaM/Clothing/Necks/AkiPlash/AkiPlash-helmet.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakBee
+  name: bee cloak
+  description: You feel like buzzing.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Neck/Cloaks/bee_cloak.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Neck/Cloaks/bee_cloak.rsi

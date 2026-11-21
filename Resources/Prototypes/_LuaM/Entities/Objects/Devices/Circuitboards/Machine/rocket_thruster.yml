@@ -1,0 +1,12 @@
+- type: entity
+  id: RocketThrusterCicadsMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: rocket thruster machine board
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MachineBoard
+    prototype: RocketThrusterCicads
+    requirements:
+      Capacitor: 1
+    stackRequirements:
+      Steel: 5
