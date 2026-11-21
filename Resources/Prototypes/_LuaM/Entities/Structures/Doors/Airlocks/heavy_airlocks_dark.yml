@@ -1,0 +1,177 @@
+# Dark heavy-duty airlocks with stripes in the LuaTech department colours.
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkAtmos
+  suffix: Atmos, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/atmos.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkAtmos
+  suffix: Atmos, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/atmos.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkBotany
+  suffix: Botany, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/botany.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkBotany
+  suffix: Botany, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/botany.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkChem
+  suffix: Chem, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/chem.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkChem
+  suffix: Chem, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/chem.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkClear
+  suffix: Clear, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/clear.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkClear
+  suffix: Clear, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/clear.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkCommand
+  suffix: Command, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/comm.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkCommand
+  suffix: Command, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/comm.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkDorm
+  suffix: Dorm, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/dorm.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkDorm
+  suffix: Dorm, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/dorm.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkEngineering
+  suffix: Engineering, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/engin.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkEngineering
+  suffix: Engineering, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/engin.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkMaintenance
+  suffix: Maintenance, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkMaintenance
+  suffix: Maintenance, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/maint.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkMedical
+  suffix: Medical, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/medi.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkMedical
+  suffix: Medical, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/medi.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkScience
+  suffix: Science, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/scie.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkScience
+  suffix: Science, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/scie.rsi
+
+- type: entity
+  parent: AirlockHeavy
+  id: AirlockHeavyDarkSecurity
+  suffix: Security, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Standard/security.rsi
+
+- type: entity
+  parent: AirlockHeavyGlass
+  id: AirlockHeavyGlassDarkSecurity
+  suffix: Security, Dark
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/Doors/HeavyAirlocks/Glass/security.rsi

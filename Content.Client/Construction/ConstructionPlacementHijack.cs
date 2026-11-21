@@ -52,6 +52,8 @@ namespace Content.Client.Construction
             base.StartHijack(manager);
             var spriteSystem = IoCManager.Resolve<IEntityManager>().System<SpriteSystem>();
             manager.CurrentTextures = _prototype?.Layers.Select(sprite => (IDirectionalTextureProvider) spriteSystem.RsiStateLike(sprite)).ToList();
+            if (_prototype is { } proto && proto.GhostOffset != default && manager.CurrentPlacementOverlayEntity is { } overlay) // LuaM
+                spriteSystem.SetOffset(overlay, proto.GhostOffset); // LuaM
         }
     }
 }

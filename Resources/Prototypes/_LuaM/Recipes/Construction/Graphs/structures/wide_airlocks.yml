@@ -1,0 +1,510 @@
+- type: constructionGraph
+  id: LuaMWideAirlock
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bigAssembly
+      completed:
+      - !type:SetAnchor
+        value: false
+      steps:
+      - material: Steel
+        amount: 12
+        doAfter: 4
+    - to: bigMedicalAssembly
+      completed:
+      - !type:SetAnchor
+        value: false
+      steps:
+      - material: Steel
+        amount: 12
+        doAfter: 4
+    - to: bigExternalAssembly
+      completed:
+      - !type:SetAnchor
+        value: false
+      steps:
+      - material: Steel
+        amount: 12
+        doAfter: 4
+    - to: mediumMedicalAssembly
+      completed:
+      - !type:SetAnchor
+        value: false
+      steps:
+      - material: Steel
+        amount: 8
+        doAfter: 4
+
+## BigAirlockGlass
+  - node: bigAssembly
+    entity: AirlockAssemblyBigGlass
+    actions:
+    - !type:SnapToGrid {}
+    - !type:SetAnchor {}
+    edges:
+    - to: bigWired
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: Cable
+        amount: 15
+        doAfter: 4
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 12
+      - !type:DeleteEntity {}
+      steps:
+      - tool: Welding
+        doAfter: 5
+
+  - node: bigWired
+    entity: AirlockAssemblyBigGlass
+    edges:
+    - to: bigElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - component: DoorElectronics
+        store: board
+        name: "door electronics circuit board"
+        icon:
+          sprite: "Objects/Misc/module.rsi"
+          state: "door_electronics"
+        doAfter: 3
+    - to: bigAssembly
+      completed:
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 15
+      steps:
+      - tool: Cutting
+        doAfter: 4
+
+  - node: bigElectronics
+    edges:
+    - to: bigGlassElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: ReinforcedGlass
+        amount: 3
+        doAfter: 3
+    - to: bigWired
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:EmptyAllContainers
+        pickup: true
+        emptyAtUser: true
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: bigGlassElectronics
+    entity: AirlockAssemblyBigGlass
+    edges:
+    - to: bigAirlock
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: ReinforcedGlass
+        amount: 3
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 3
+    - to: bigWired
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:EmptyAllContainers
+        pickup: true
+        emptyAtUser: true
+      - !type:SpawnPrototype
+        prototype: SheetRGlass1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: bigAirlock
+    entity: BigAirlockGlass
+    actions:
+    - !type:SetWiresPanelSecurity
+      wiresAccessible: true
+    edges:
+    - to: bigGlassElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      - !type:DoorWelded {}
+      - !type:DoorBolted
+        value: false
+      - !type:WirePanel {}
+      - !type:AllWiresCut
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetRGlass1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 3
+
+## BigMedicalAirlockGlass
+  - node: bigMedicalAssembly
+    entity: AirlockAssemblyBigMedicalGlass
+    actions:
+    - !type:SnapToGrid {}
+    - !type:SetAnchor {}
+    edges:
+    - to: bigMedicalWired
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: Cable
+        amount: 15
+        doAfter: 4
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 12
+      - !type:DeleteEntity {}
+      steps:
+      - tool: Welding
+        doAfter: 5
+
+  - node: bigMedicalWired
+    entity: AirlockAssemblyBigMedicalGlass
+    edges:
+    - to: bigMedicalElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - component: DoorElectronics
+        store: board
+        name: "door electronics circuit board"
+        icon:
+          sprite: "Objects/Misc/module.rsi"
+          state: "door_electronics"
+        doAfter: 3
+    - to: bigMedicalAssembly
+      completed:
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 15
+      steps:
+      - tool: Cutting
+        doAfter: 4
+
+  - node: bigMedicalElectronics
+    edges:
+    - to: bigMedicalGlassElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: ReinforcedGlass
+        amount: 3
+        doAfter: 3
+    - to: bigMedicalWired
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:EmptyAllContainers
+        pickup: true
+        emptyAtUser: true
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: bigMedicalGlassElectronics
+    entity: AirlockAssemblyBigMedicalGlass
+    edges:
+    - to: bigMedicalAirlock
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: ReinforcedGlass
+        amount: 3
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 3
+    - to: bigMedicalWired
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:EmptyAllContainers
+        pickup: true
+        emptyAtUser: true
+      - !type:SpawnPrototype
+        prototype: SheetRGlass1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: bigMedicalAirlock
+    entity: BigMedicalAirlockGlass
+    actions:
+    - !type:SetWiresPanelSecurity
+      wiresAccessible: true
+    edges:
+    - to: bigMedicalGlassElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      - !type:DoorWelded {}
+      - !type:DoorBolted
+        value: false
+      - !type:WirePanel {}
+      - !type:AllWiresCut
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetRGlass1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 3
+
+## BigExternalAirlockGlass
+  - node: bigExternalAssembly
+    entity: AirlockAssemblyBigExternalGlass
+    actions:
+    - !type:SnapToGrid {}
+    - !type:SetAnchor {}
+    edges:
+    - to: bigExternalWired
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: Cable
+        amount: 15
+        doAfter: 4
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 12
+      - !type:DeleteEntity {}
+      steps:
+      - tool: Welding
+        doAfter: 5
+
+  - node: bigExternalWired
+    entity: AirlockAssemblyBigExternalGlass
+    edges:
+    - to: bigExternalElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - component: DoorElectronics
+        store: board
+        name: "door electronics circuit board"
+        icon:
+          sprite: "Objects/Misc/module.rsi"
+          state: "door_electronics"
+        doAfter: 3
+    - to: bigExternalAssembly
+      completed:
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 15
+      steps:
+      - tool: Cutting
+        doAfter: 4
+
+  - node: bigExternalElectronics
+    edges:
+    - to: bigExternalGlassElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: ReinforcedGlass
+        amount: 3
+        doAfter: 3
+    - to: bigExternalWired
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:EmptyAllContainers
+        pickup: true
+        emptyAtUser: true
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: bigExternalGlassElectronics
+    entity: AirlockAssemblyBigExternalGlass
+    edges:
+    - to: bigExternalAirlock
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: ReinforcedGlass
+        amount: 3
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 3
+    - to: bigExternalWired
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:EmptyAllContainers
+        pickup: true
+        emptyAtUser: true
+      - !type:SpawnPrototype
+        prototype: SheetRGlass1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: bigExternalAirlock
+    entity: BigExternalAirlockGlass
+    actions:
+    - !type:SetWiresPanelSecurity
+      wiresAccessible: true
+    edges:
+    - to: bigExternalGlassElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      - !type:DoorWelded {}
+      - !type:DoorBolted
+        value: false
+      - !type:WirePanel {}
+      - !type:AllWiresCut
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetRGlass1
+        amount: 3
+      steps:
+      - tool: Prying
+        doAfter: 3
+
+## MediumMedicalAirlockGlass
+  - node: mediumMedicalAssembly
+    entity: AirlockAssemblyMediumMedicalGlass
+    actions:
+    - !type:SnapToGrid {}
+    - !type:SetAnchor {}
+    edges:
+    - to: mediumMedicalWired
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: Cable
+        amount: 10
+        doAfter: 4
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 8
+      - !type:DeleteEntity {}
+      steps:
+      - tool: Welding
+        doAfter: 5
+
+  - node: mediumMedicalWired
+    entity: AirlockAssemblyMediumMedicalGlass
+    edges:
+    - to: mediumMedicalElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - component: DoorElectronics
+        store: board
+        name: "door electronics circuit board"
+        icon:
+          sprite: "Objects/Misc/module.rsi"
+          state: "door_electronics"
+        doAfter: 3
+    - to: mediumMedicalAssembly
+      completed:
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 10
+      steps:
+      - tool: Cutting
+        doAfter: 4
+
+  - node: mediumMedicalElectronics
+    edges:
+    - to: mediumMedicalGlassElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: ReinforcedGlass
+        amount: 2
+        doAfter: 3
+    - to: mediumMedicalWired
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:EmptyAllContainers
+        pickup: true
+        emptyAtUser: true
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: mediumMedicalGlassElectronics
+    entity: AirlockAssemblyMediumMedicalGlass
+    edges:
+    - to: mediumMedicalAirlock
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - material: ReinforcedGlass
+        amount: 2
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 3
+    - to: mediumMedicalWired
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:EmptyAllContainers
+        pickup: true
+        emptyAtUser: true
+      - !type:SpawnPrototype
+        prototype: SheetRGlass1
+        amount: 2
+      steps:
+      - tool: Prying
+        doAfter: 5
+
+  - node: mediumMedicalAirlock
+    entity: MediumMedicalAirlockGlass
+    actions:
+    - !type:SetWiresPanelSecurity
+      wiresAccessible: true
+    edges:
+    - to: mediumMedicalGlassElectronics
+      conditions:
+      - !type:EntityAnchored {}
+      - !type:DoorWelded {}
+      - !type:DoorBolted
+        value: false
+      - !type:WirePanel {}
+      - !type:AllWiresCut
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetRGlass1
+        amount: 2
+      steps:
+      - tool: Prying
+        doAfter: 3

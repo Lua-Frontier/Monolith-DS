@@ -228,6 +228,8 @@ namespace Content.Client.Construction
                 _sprite.LayerSetVisible((ghost.Value, sprite), i, true);
             }
 
+            _sprite.SetOffset((ghost.Value, sprite), prototype.GhostOffset); // LuaM
+
             if (prototype.CanBuildInImpassable)
                 EnsureComp<WallMountComponent>(ghost.Value).Arc = new(Math.Tau);
 
