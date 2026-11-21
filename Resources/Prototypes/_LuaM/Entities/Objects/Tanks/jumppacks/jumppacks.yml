@@ -15,7 +15,7 @@
     sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
   - type: JumpAbility
     jumpDistance: 6
-    jumpSound: /Audio/_luaM/Effects/jump.ogg
+    jumpSound: /Audio/_LuaM/Effects/jump.ogg
   - type: ActionGrant
     actions:
     - ActionGravityJump 
@@ -42,7 +42,7 @@
     sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
   - type: JumpAbility
     jumpDistance: 6
-    jumpSound: /Audio/_luaM/Effects/jump.ogg
+    jumpSound: /Audio/_LuaM/Effects/jump.ogg
   - type: ActionGrant
     actions:
     - ActionGravityJump 
