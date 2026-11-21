@@ -3,11 +3,6 @@
   copyright: "Created by qwertyquerty"
   source: "https://www.youtube.com/@qwertyquerty"
 
-- files: ["ninja_greeting.ogg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Created by Chillyconmor"
-  source: "https://github.com/space-wizards/space-station-14/blob/master/Resources/Audio/Misc/ninja_greeting.ogg"
-
 - files: ["thief_greeting.ogg"]
   license: "CC-BY-NC-4.0"
   copyright: "Taken from SergeQuadrado via freesound.org, edit and mono by TheShuEd"
@@ -17,11 +12,6 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from TG station."
   source: "https://github.com/tgstation/tgstation/blob/b44fcdedfb7c7d8425bd75b9caf71644a86375d1/sound/creatures/narsie_rises.ogg"
-
-- files: ["ratvar_rises.ogg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Taken from TG station."
-  source: "https://github.com/tgstation/tgstation/blob/2f63c779cb43543cfde76fa7ddaeacfde185fded/sound/effects/ratvar_rises.ogg"
 
 - files: ["ratvar_reveal.ogg"]
   license: "CC-BY-SA-3.0"

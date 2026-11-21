@@ -101,7 +101,7 @@
       path: /Audio/Items/matchbox_drop.ogg
   - type: EmitSoundOnCollide
     sound:
-      path: /Audio/_Goobstation/Items/handling/matchbox_drop.ogg
+      path: /Audio/Items/matchbox_drop.ogg # LuaM
   - type: EmitSoundOnUse
     sound:
       path: /Audio/_Goobstation/Items/handling/matchbox_use.ogg

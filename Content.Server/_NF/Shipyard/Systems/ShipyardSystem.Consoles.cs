@@ -429,7 +429,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             }
         }
         _records.Synchronize(shuttleStation!.Value);
-        _records.Synchronize(station);
+        if (HasComp<StationRecordsComponent>(station)) // LuaM
+            _records.Synchronize(station);
 
         EntityManager.AddComponents(shuttleUid, vessel.AddComponents);
 

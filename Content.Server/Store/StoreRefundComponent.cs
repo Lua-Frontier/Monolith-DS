@@ -15,7 +15,7 @@ public sealed partial class StoreRefundComponent : Component
     /// <summary>
     ///     The store this entity was bought from
     /// </summary>
-    [DataField]
+    [ViewVariables] // LuaM
     public EntityUid? StoreEntity;
 
     /// <summary>

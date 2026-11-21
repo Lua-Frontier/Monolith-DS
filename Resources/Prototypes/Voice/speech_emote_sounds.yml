@@ -277,7 +277,7 @@
     RobotBeep:
       collection: RobotBeeps
     Yawn:
-      path: /Audio/_Goobstation/Voice/Vox/vox_yawn.ogg
+      path: /Audio/_Goobstation/Voice/Vox/vox_snore.ogg # LuaM
     Snore:
       path: /Audio/_Goobstation/Voice/Vox/vox_snore.ogg
     Sigh:
@@ -477,11 +477,11 @@
     Beep:
       path: /Audio/Machines/twobeep.ogg
     Chime:
-      path: /Audio/Machines/chime.ogg
+      path: /Audio/Effects/chime.ogg # LuaM
     Buzz:
-      path: /Audio/Machines/buzz-sigh.ogg
+      path: /Audio/Effects/Cargo/buzz_sigh.ogg # LuaM
     Buzz-Two:
-      path: /Audio/Machines/buzz-two.ogg
+      path: /Audio/Effects/Cargo/buzz_two.ogg # LuaM
     Honk:
       path: /Audio/Items/bikehorn.ogg
     Ping:
@@ -522,11 +522,11 @@
     Beep:
       path: /Audio/Machines/twobeep.ogg
     Chime:
-      path: /Audio/Machines/chime.ogg
+      path: /Audio/Effects/chime.ogg # LuaM
     Buzz:
-      path: /Audio/Machines/buzz-sigh.ogg
+      path: /Audio/Effects/Cargo/buzz_sigh.ogg # LuaM
     Buzz-Two:
-      path: /Audio/Machines/buzz-two.ogg
+      path: /Audio/Effects/Cargo/buzz_two.ogg # LuaM
     Honk:
       path: /Audio/Items/bikehorn.ogg
     Ping:

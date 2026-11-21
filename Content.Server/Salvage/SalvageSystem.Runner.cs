@@ -18,6 +18,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Utility;
 using Content.Shared.Coordinates;
 using Content.Server._LuaM.Salvage; // LuaM
+using Content.Server._LuaM.Maps; // LuaM
 
 namespace Content.Server.Salvage;
 
@@ -30,6 +31,7 @@ public sealed partial class SalvageSystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private GameTicker _gameTicker = default!;
     [Dependency] private ExpeditionHudSystem _expeditionHud = default!; // LuaM
+    [Dependency] private GradualMapDeletionSystem _gradualMapDeletion = default!; // LuaM
     private void InitializeRunner()
     {
         SubscribeLocalEvent<FTLRequestEvent>(OnFTLRequest);
@@ -159,8 +161,16 @@ public sealed partial class SalvageSystem
         }
 
         // Last shuttle has left so finish the mission.
-        QueueDel(ev.FromMapUid.Value);
+        DeleteExpeditionMap(ev.FromMapUid.Value); // LuaM
     }
+
+    // LuaM-start
+    private void DeleteExpeditionMap(EntityUid map)
+    {
+        RemCompDeferred<SalvageExpeditionComponent>(map);
+        _gradualMapDeletion.QueueDelete(map);
+    }
+    // LuaM-end
 
     // Runs the expedition
     private void UpdateRunner()
@@ -271,7 +281,7 @@ public sealed partial class SalvageSystem
 
             if (remaining < TimeSpan.Zero)
             {
-                QueueDel(uid);
+                DeleteExpeditionMap(uid); // LuaM
             }
         }
 

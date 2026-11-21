@@ -10,7 +10,7 @@
       map: ["effect"]
   - type: Gun
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_animation.ogg
+      path: /Audio/Magic/staff_animation.ogg # LuaM
   - type: BasicEntityAmmoProvider
     proto: ProjectilePolyboltCarp
     capacity: 5
@@ -71,7 +71,7 @@
       map: ["effect"]
   - type: Gun
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_animation.ogg
+      path: /Audio/Magic/staff_animation.ogg # LuaM
   - type: BasicEntityAmmoProvider
     proto: ProjectileLocker
     capacity: 5
@@ -125,7 +125,7 @@
       map: ["effect"]
   - type: Gun
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_door.ogg
+      path: /Audio/Magic/staff_door.ogg # LuaM
   - type: BasicEntityAmmoProvider
     proto: ProjectilePolyboltDoor
     capacity: 10

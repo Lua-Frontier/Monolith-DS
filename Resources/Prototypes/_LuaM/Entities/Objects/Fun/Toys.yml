@@ -6,16 +6,16 @@
   components:
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_LuaM/Plushie/frfrfr.ogg
+      path: /Audio/_LuaM/Voice/Vulpkanin/fox_ururur.ogg
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/_LuaM/Plushie/frfrfr.ogg
+      path: /Audio/_LuaM/Voice/Vulpkanin/fox_ururur.ogg
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/_LuaM/Plushie/frfrfr.ogg
+      path: /Audio/_LuaM/Voice/Vulpkanin/fox_ururur.ogg
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/_LuaM/Plushie/frfrfr.ogg
+      path: /Audio/_LuaM/Voice/Vulpkanin/fox_ururur.ogg
   - type: StaticPrice
     price: 2
     vendPrice: 150

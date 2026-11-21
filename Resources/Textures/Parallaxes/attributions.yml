@@ -33,7 +33,7 @@
   copyright: "Made by SlamBamActionman"
   source: "https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Parallaxes/space_map3.png"
 
-- files: ["SnowballParallaxBG.png", "SnowballParallaxStars.png", "SnowballParallaxSun.png"]
+- files: ["SnowballParallaxBG.png", "SnowballParallaxStars.png"]
   license: "CC-BY-3.0"
   copyright: "By ketufaispikinut"
   source: "https://github.com/ketufaispikinut"

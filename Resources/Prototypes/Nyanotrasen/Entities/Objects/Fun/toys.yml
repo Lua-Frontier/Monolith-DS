@@ -8,16 +8,16 @@
     netsync: false
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/Voice/Moth/squeak_moth.ogg
+      path: /Audio/Voice/Moth/moth_squeak.ogg # LuaM
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/Voice/Moth/scream_moth.ogg
+      path: /Audio/Voice/Moth/moth_scream.ogg # LuaM
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/Voice/Moth/squeak_moth.ogg
+      path: /Audio/Voice/Moth/moth_squeak.ogg # LuaM
   - type: EmitSoundOnTrigger
     sound:
-      path: /Audio/Voice/Moth/squeak_moth.ogg
+      path: /Audio/Voice/Moth/moth_squeak.ogg # LuaM
   - type: UseDelay
     delay: 2
 

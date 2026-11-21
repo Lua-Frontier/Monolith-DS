@@ -25,8 +25,8 @@
 - type: soundCollection
   id: SMGDrop
   files:
-  - /Audio/_Goobstation/Items/weapons/SMG/drop1.ogg
-  - /Audio/_Goobstation/Items/weapons/SMG/drop2.ogg
+  - /Audio/_Goobstation/Items/weapons/Rifle/drop1.ogg # LuaM
+  - /Audio/_Goobstation/Items/weapons/Rifle/drop2.ogg # LuaM
 # Rifles
 - type: soundCollection
   id: RiflesPickUp
@@ -77,8 +77,8 @@
 - type: soundCollection
   id: ShotgunsDrop
   files:
-  - /Audio/_Goobstation/Items/weapons/Shotgun/drop1.ogg
-  - /Audio/_Goobstation/Items/weapons/Shotgun/drop2.ogg
+  - /Audio/_Goobstation/Items/weapons/Rifle/drop1.ogg # LuaM
+  - /Audio/_Goobstation/Items/weapons/Rifle/drop2.ogg # LuaM
 
 # Snipers
 - type: soundCollection
@@ -116,9 +116,9 @@
 - type: soundCollection
   id: GenericPickup
   files:
-  - /Audio/_Goobstation/Items/handling/generic_pickup1.ogg
-  - /Audio/_Goobstation/Items/handling/generic_pickup2.ogg
-  - /Audio/_Goobstation/Items/handling/generic_pickup3.ogg
+  - /Audio/_Goobstation/Items/handling/generic_drop3.ogg # LuaM
+  - /Audio/_Goobstation/Items/handling/generic_drop4.ogg # LuaM
+  - /Audio/_Goobstation/Items/handling/generic_drop5.ogg # LuaM
 
 # Organs
 - type: soundCollection

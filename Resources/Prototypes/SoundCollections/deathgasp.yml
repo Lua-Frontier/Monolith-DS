@@ -4,8 +4,8 @@
   - /Audio/Effects/Gasp/male_deathgasp_1.ogg
   - /Audio/Effects/Gasp/male_deathgasp_2.ogg
   - /Audio/Effects/Gasp/male_deathgasp_3.ogg
-  - /Audio/Effects/Gasp/male_deathgasp_4.ogg
-  - /Audio/Effects/Gasp/male_deathgasp_5.ogg
+  - /Audio/Effects/Gasp/female_deathgasp_4.ogg # LuaM
+  - /Audio/Effects/Gasp/female_deathgasp_5.ogg # LuaM
 
 - type: soundCollection
   id: FemaleDeathGasp

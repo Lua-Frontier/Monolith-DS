@@ -1,4 +1,6 @@
 using Content.Server.Cargo.Systems;
+using Content.Shared.GameTicking; // LuaM
+using Stopwatch = System.Diagnostics.Stopwatch; // LuaM
 using Content.Server.Power.Components;
 using Content.Shared._Mono.CCVar;
 using Content.Shared.Power.Components;
@@ -27,7 +29,12 @@ public sealed partial class GridCleanupSystem : BaseCleanupSystem<MapGridCompone
     private TimeSpan _duration;
 
     private HashSet<Entity<ApcComponent>> _apcList = new();
-    private readonly GridCleanupGridComponent _defaultState = new(); // LuaM
+    // LuaM-start
+    private const int ForcedChecksPerTick = 32;
+    private static readonly TimeSpan ForcedCheckBudget = TimeSpan.FromMilliseconds(2);
+    private readonly Queue<EntityUid> _forcedCleanup = new();
+    private readonly GridCleanupGridComponent _defaultState = new();
+    // LuaM-end
 
     private EntityQuery<BatteryComponent> _batteryQuery;
     private EntityQuery<CleanupImmuneComponent> _immuneQuery;
@@ -35,6 +42,7 @@ public sealed partial class GridCleanupSystem : BaseCleanupSystem<MapGridCompone
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => _forcedCleanup.Clear()); // LuaM
 
         _batteryQuery = GetEntityQuery<BatteryComponent>();
         _immuneQuery = GetEntityQuery<CleanupImmuneComponent>();
@@ -120,30 +128,60 @@ public sealed partial class GridCleanupSystem : BaseCleanupSystem<MapGridCompone
         var result = new List<EntityUid>();
         foreach (var uid in grids)
         {
-            if (TerminatingOrDeleted(uid) || !IsCleanupCandidate(uid, out var xform, out var scale))
-                continue;
-
-            // grids without settings get the default ones, without adding the component
-            var state = CompOrNull<GridCleanupGridComponent>(uid) ?? _defaultState;
-            if (IsAbandoned(uid, xform, scale, state))
+            if (IsAbandonedForForcedCleanup(uid))
                 result.Add(uid);
         }
 
         return result;
     }
 
-    /// <summary>
-    /// Deletes every grid that meets the cleanup rules right now.
-    /// </summary>
-    public int ForceCleanupGrids()
+    private bool IsAbandonedForForcedCleanup(EntityUid uid)
     {
-        var grids = GetAbandonedGrids();
-        foreach (var uid in grids)
+        if (TerminatingOrDeleted(uid) || EntityManager.IsQueuedForDeletion(uid)
+            || !IsCleanupCandidate(uid, out var xform, out var scale))
+            return false;
+
+        var state = CompOrNull<GridCleanupGridComponent>(uid) ?? _defaultState;
+        return IsAbandoned(uid, xform, scale, state);
+    }
+
+    /// <summary>
+    /// Schedules a pass over current grids, bypassing the abandonment timer.
+    /// Eligibility is checked just before removal.
+    /// </summary>
+    public bool TryScheduleGridCleanup()
+    {
+        if (_forcedCleanup.Count != 0)
+            return false;
+
+        var query = EntityQueryEnumerator<MapGridComponent>();
+        while (query.MoveNext(out var uid, out _))
         {
-            CleanupEnt(uid);
+            _forcedCleanup.Enqueue(uid);
         }
 
-        return grids.Count;
+        return _forcedCleanup.Count != 0;
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        if (_forcedCleanup.Count == 0)
+            return;
+
+        var started = Stopwatch.GetTimestamp();
+        for (var i = 0; i < ForcedChecksPerTick && _forcedCleanup.TryDequeue(out var uid); i++)
+        {
+            if (IsAbandonedForForcedCleanup(uid))
+            {
+                // QueueDel drains later in the tick, so cap removals separately from the scan budget.
+                CleanupEnt(uid);
+                return;
+            }
+
+            if (Stopwatch.GetElapsedTime(started) >= ForcedCheckBudget)
+                return;
+        }
     }
     // LuaM-end
 

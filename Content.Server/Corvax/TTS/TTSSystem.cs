@@ -176,6 +176,9 @@ public sealed partial class TTSSystem : EntitySystem
 
         foreach (var session in recipients)
         {
+            if (TerminatingOrDeleted(uid)) // LuaM
+                return; // LuaM
+
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 
@@ -212,7 +215,7 @@ public sealed partial class TTSSystem : EntitySystem
 
         foreach (var target in targets)
         {
-            if (!sent.Add(target))
+            if (!sent.Add(target) || TerminatingOrDeleted(target)) // LuaM
                 continue;
 
             if (_language.CanUnderstand(target, language.ID))
@@ -242,6 +245,9 @@ public sealed partial class TTSSystem : EntitySystem
 
         foreach (var receiver in receivers)
         {
+            if (TerminatingOrDeleted(receiver)) // LuaM
+                continue; // LuaM
+
             if (_language.CanUnderstand(receiver, language.ID))
             {
                 RaiseNetworkEvent(new PlayTTSEvent(soundData, GetNetEntity(receiver), isRadio: true), Filter.Entities(receiver));

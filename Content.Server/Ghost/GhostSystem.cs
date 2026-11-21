@@ -41,6 +41,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Server.Preferences.Managers;
+using Content.Server._LuaM.Maps; // LuaM
 
 namespace Content.Server.Ghost
 {
@@ -75,6 +76,7 @@ namespace Content.Server.Ghost
         [Dependency] private IAdminManager _admin = default!; // Frontier
         [Dependency] private IServerPreferencesManager _preferencesManager = default!;
         [Dependency] private GhostSpriteStateSystem _ghostState = default!;
+        [Dependency] private GradualMapDeletionSystem _gradualMapDeletion = default!; // LuaM
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -530,7 +532,7 @@ namespace Content.Server.Ghost
             var mapUid = _transformSystem.GetMap(spawnPosition.Value);
             var gridUid = spawnPosition?.EntityId;
             // Test if the map is being deleted
-            if (mapUid == null || TerminatingOrDeleted(mapUid.Value))
+            if (mapUid == null || TerminatingOrDeleted(mapUid.Value) || _gradualMapDeletion.IsDeleting(mapUid.Value)) // LuaM
                 return false;
             // Test if the grid is being deleted
             if (gridUid != null && TerminatingOrDeleted(gridUid.Value))

@@ -13,10 +13,10 @@ public sealed partial class TraitOrganForEachPartSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<TraitOrganForEachPartComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<TraitOrganForEachPartComponent, MapInitEvent>(OnMapInit);
     }
 
-    private void OnStartup(Entity<TraitOrganForEachPartComponent> ent, ref ComponentStartup args)
+    private void OnMapInit(Entity<TraitOrganForEachPartComponent> ent, ref MapInitEvent args)
     {
         foreach (var (partId, partComp) in _body.GetBodyChildrenOfType(ent, ent.Comp.PartType).ToList())
         {
