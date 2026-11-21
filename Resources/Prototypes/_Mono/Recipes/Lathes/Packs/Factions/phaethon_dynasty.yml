@@ -42,7 +42,7 @@
   - WeaponSubMachineGunAtreidesRogue
   - WeaponLauncherPanzeroRogue
   - WeaponShotgunBulldogRogue
-  - WeaponSniperHristovRogue
+  # - WeaponSniperHristovRogue # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
   - WeaponSubMachineGunMla73Rogue
   - WeaponDEWBasilisk
   - WeaponShotgunSultanPulsar

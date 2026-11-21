@@ -4408,7 +4408,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 659
     components:

@@ -9293,7 +9293,7 @@ entities:
     - type: Transform
       pos: 3.5,-9.5
       parent: 1
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 1340
     components:

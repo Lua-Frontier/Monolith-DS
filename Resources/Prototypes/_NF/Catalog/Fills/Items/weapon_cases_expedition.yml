@@ -450,17 +450,19 @@
     - id: AmmoBox762x39mmFMJ
       amount: 2
 
-- type: entity
-  parent: WeaponCaseLong
-  id: WeaponCaseLongHristovExpedition
-  suffix: Dungeon, Hristov
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponSniperHristov
-      amount: 1
-    - id: AmmoBox145x114mm
-      amount: 2
+# LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+# - type: entity
+#   parent: WeaponCaseLong
+#   id: WeaponCaseLongHristovExpedition
+#   suffix: Dungeon, Hristov
+#   components:
+#   - type: StorageFill
+#     contents:
+#     - id: WeaponSniperHristov
+#       amount: 1
+#     - id: AmmoBox145x114mm
+#       amount: 2
+# LuaM-end
 
 - type: entity
   parent: WeaponCaseLong

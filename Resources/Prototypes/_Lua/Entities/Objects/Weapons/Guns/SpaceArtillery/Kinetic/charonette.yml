@@ -1,0 +1,110 @@
+# Lua: ported from sector-frontier-14-ds, rebuilt on the Monolith ship weapon bases and the M381 CHARON.
+# A smaller CHARON: half the battery, slower slug, always self-recharging (no reloads, no loader needed).
+# Fires a scaled-down CHARON APHE slug: 2.5x less damage, 3x smaller blast radius.
+
+- type: entity
+  id: WeaponTurretCharonette
+  name: M194 CHARONETTE mass driver
+  parent: [BallisticArtilleryTier3HP, BallisticArtillery] # can be unanchored, unlike the CHARON
+  suffix: Medium, T3
+  description: A smaller, more compact railgun that fires a large slug at rapid velocity, capable of big damage to enemy ships. Medium linear accelerator, can be remotely activated or linked up to a GCS.
+  components:
+  - type: GuideHelp
+    guides:
+    - ColossusCatalogueShipWeapons
+  - type: StaticPrice
+    price: 17500
+  - type: Sprite
+    sprite: _Mono/Objects/ShuttleWeapons/charonette.rsi
+    layers:
+    - state: space_artillery
+  - type: Appearance
+  - type: FireControlRotate
+  - type: AmmoCounter
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: GunSignalControl
+  - type: Gun
+    fireRate: 0.05
+    recoil: 1500
+    minAngle: 0
+    maxAngle: 0
+    projectileSpeed: 400
+    shootThermalSignature: 20000000 # ~4.5km after firing
+    soundGunshot:
+      path: /Audio/_Mono/Weapons/Guns/Gunshots/leviathan_fire.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
+  - type: Battery
+    maxCharge: 20000
+    startingCharge: 20000
+  - type: ExaminableBattery
+  - type: BatterySelfRecharger # no APC receiver, so it always recharges on its own
+    autoRecharge: true
+    autoRechargeRate: 150
+    autoRechargePause: false
+  - type: SpaceArtillery
+    powerChargeRate: 150
+    powerUsePassive: 600
+    powerUseActive: 4000
+  - type: Actions
+  - type: ProjectileBatteryAmmoProvider
+    proto: ShipMiniRailgunProjectile
+    fireCost: 1000
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 1000
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: RadarBlip
+    radarColor: "#D53A3A"
+    scale: 2
+    visibleFromOtherGrids: true
+    gridConfig:
+      color: "#D53A3A"
+      shape: Square
+      respectZoom: true
+      rotate: true
+      bounds: "-1,-1,1,1"
+  - type: ShipGunType
+    shipType: Ballistic
+  - type: ShipGunClass
+    shipClass: Heavy # 9 fire control points
+  - type: ShipRepairable
+    repairTime: 30
+    repairCost: 200
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Superheavy
+
+- type: entity
+  id: ShipMiniRailgunProjectile
+  name: M194 CHARONETTE 280mm 10.25 kg APHE slug
+  parent: ShipRailgunProjectileAphe
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Structural: 2800 # CHARON APHE 7000 / 2.5
+        Blunt: 1200 # 3000 / 2.5
+    penetrationThreshold: 3200 # 8000 / 2.5
+  - type: RadarBlip
+    scale: 1
+    shape: circle
+    radarColor: "#D53A3A"
+  - type: Explosive
+    deleteAfterExplosion: false
+    explosionType: HardBomb
+    # Radius ~ (totalIntensity / slope)^(1/3): CHARON APHE ~3.4 tiles, this one ~1.1 tiles (3x smaller).
+    # Peak intensity ~ slope * radius is 2.5x lower than the CHARON APHE.
+    totalIntensity: 44
+    intensitySlope: 30
+    maxIntensity: 180
+    tileBreakScale: 3

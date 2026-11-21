@@ -12,6 +12,7 @@
   components:
   - type: Sprinter # Goobstation
     sprintSpeedMultiplier: 1.25 # LuaM: 1.45 > 1.25
+    staminaDrainRate: 6 # LuaM: 9 > 6 (-33%)
   - type: Humanity # LuaM: cyberware limit and cyberpsychosis
     speciesBonus:
       Human: 1 # racial feature of humans

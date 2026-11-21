@@ -5188,7 +5188,7 @@ entities:
     - type: Transform
       pos: 1.5,-8.5
       parent: 1
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 512
     components:

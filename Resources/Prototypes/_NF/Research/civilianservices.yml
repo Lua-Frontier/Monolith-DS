@@ -79,7 +79,7 @@
   cost: 13500
   recipeUnlocks:
   - MedicalAssemblerMachineCircuitboard
-  - ThermobathMachineCircuitboard
+  - HotplateMachineCircuitboard # LuaM: thermobath disabled, hotplate restored
   - ChemMasterMachineCircuitboard
   - ChemDispenserMachineCircuitboard
   - FatExtractorMachineCircuitboard

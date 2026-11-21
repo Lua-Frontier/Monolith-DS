@@ -72,9 +72,9 @@
   - id: WeaponSniperMosin
     amount: 0
     maxAmount: 5
-  - id: WeaponSniperHristov
-    amount: 0
-    maxAmount: 5
+  # - id: WeaponSniperHristov # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
+    # amount: 0
+    # maxAmount: 5
   - id: WeaponLaserGun
     amount: 0
     maxAmount: 1

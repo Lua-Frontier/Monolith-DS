@@ -247,6 +247,7 @@
     sprite: _Mono/Objects/Weapons/Guns/Shotguns/Helepolis.rsi
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/Shotguns/Helepolis.rsi
+    slots: [ Back, suitStorage, pocket ] # LuaM: pocketable
   - type: Gun
     minAngle: 3
     maxAngle: 12

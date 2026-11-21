@@ -13,6 +13,7 @@
   - MothroachMustardCube
   - MouseCube
   - CockroachCube
+  - SnailCube # LuaM
 
 - type: latheRecipePack
   id: HostileCubesStatic

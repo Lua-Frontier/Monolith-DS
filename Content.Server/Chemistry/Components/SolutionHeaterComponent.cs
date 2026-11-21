@@ -26,4 +26,18 @@ public sealed partial class SolutionHeaterComponent : Component
     /// </summary>
     [DataField("partRatingHeatMultiplier")]
     public float PartRatingHeatMultiplier = 1.5f;
+
+    // LuaM-start
+    /// <summary>
+    /// Whether the heater removes heat from the solution instead of adding it.
+    /// </summary>
+    [DataField]
+    public bool Cooling;
+
+    /// <summary>
+    /// Solutions are not cooled below this temperature, in Kelvin.
+    /// </summary>
+    [DataField]
+    public float MinTemperature = 253.15f;
+    // LuaM-end
 }

@@ -33490,7 +33490,7 @@ entities:
       pos: 47.5,-2.5
     missingComponents:
     - Anchorable
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 1829
     components:

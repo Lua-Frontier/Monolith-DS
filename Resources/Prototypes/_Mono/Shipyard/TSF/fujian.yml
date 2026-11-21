@@ -5,6 +5,7 @@
   parent: BaseVesselIFFDisabled
   name: TSF-SKR Fujian
   description: A decently-sized escort carrier, capable of holding 4 Zephyrs or Zephyr-ECs. Carries quite a bit of armor to defend itself and its fighters.
+  locDescription: vessel-fujian-desc # LuaM
   limit: 2
   hyperwarLimit: 0 # For lag and balance reasons, but mostly lag.
   price: 500000

@@ -3199,7 +3199,7 @@ entities:
     - type: Transform
       parent: 1
       pos: -3.5,4.5
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 159
     components:

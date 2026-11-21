@@ -1,0 +1,8 @@
+- type: entity
+  parent: MonkeyCube
+  id: SnailCube
+  name: snail cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobSnail

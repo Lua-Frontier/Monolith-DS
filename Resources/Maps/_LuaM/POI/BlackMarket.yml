@@ -21258,6 +21258,13 @@ entities:
       parent: 1
 - proto: VendingMachineClothingCapes
   entities:
+  - uid: 3759
+    components:
+    - type: Transform
+      pos: 35.5,0.5
+      parent: 1
+- proto: VendingMachineClothingCapesPirate
+  entities:
   - uid: 3757
     components:
     - type: Transform
@@ -21267,11 +21274,6 @@ entities:
     components:
     - type: Transform
       pos: 25.5,-19.5
-      parent: 1
-  - uid: 3759
-    components:
-    - type: Transform
-      pos: 35.5,0.5
       parent: 1
 - proto: VendingMachineCuddlyCritterVend
   entities:

@@ -102043,7 +102043,7 @@ entities:
     - type: Transform
       pos: 87.5,99.5
       parent: 1
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 18039
     components:

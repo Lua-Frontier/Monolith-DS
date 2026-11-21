@@ -28720,7 +28720,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 111.5,51.5
       parent: 1
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 4197
     components:

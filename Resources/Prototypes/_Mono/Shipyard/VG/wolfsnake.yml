@@ -9,6 +9,7 @@
   parent: BaseVessel
   name: VG Wolfsnake
   description: A heavy duty artillery platform outsourced to GS. Comes with a massive cannon from the corporate wars.
+  locDescription: vessel-wolfsnake-desc # LuaM
   limit: 2
   price: 196620
   purchasable: false # Voucher only

@@ -2,7 +2,7 @@
   id: Edelweiss
   parent: BaseVessel
   name: NXL_Edelweiss
-  description: Low-rescue shuttle, loved by many Paramedics in it`s base version. This one is modified to be longer in lenght, with addition of Cryo-block.
+  description: vessel-edelweiss-desc
   price: 100000
   category: Small
   group: Medical

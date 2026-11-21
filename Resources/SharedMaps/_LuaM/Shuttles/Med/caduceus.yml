@@ -7719,7 +7719,7 @@ entities:
     - type: Transform
       parent: 1
       pos: 10.5,-13.5
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 525
     components:

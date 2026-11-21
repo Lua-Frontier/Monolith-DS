@@ -60286,7 +60286,7 @@ entities:
     - type: Transform
       pos: -10.5,0.5
       parent: 1
-- proto: MachineThermobath
+- proto: ChemistryHotplate
   entities:
   - uid: 7667
     components:

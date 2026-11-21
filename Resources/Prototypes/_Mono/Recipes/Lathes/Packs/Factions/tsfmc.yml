@@ -34,7 +34,7 @@
   - WeaponDEWSmilodon
   #- WeaponLauncherTSFOsiris
   - WeaponLauncherTSFAnubis
-  - WeaponAMRShenzhenTSF
+  # - WeaponAMRShenzhenTSF # LuaM: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
   - WeaponRifleRiversongTSF
   - WeaponRifleDragonfangTSF
 
