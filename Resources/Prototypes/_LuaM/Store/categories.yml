@@ -1,0 +1,19 @@
+- type: storeCategory
+  id: UplinkColossusArmor
+  name: store-category-colossus-armor
+
+- type: storeCategory
+  id: UplinkColossusWeapons
+  name: store-category-colossus-weapons
+
+- type: storeCategory
+  id: UplinkColossusAmmo
+  name: store-category-colossus-ammo
+
+- type: storeCategory
+  id: UplinkColossusEquipment
+  name: store-category-colossus-equipment
+
+- type: storeCategory
+  id: UplinkColossusVouchers
+  name: store-category-colossus-vouchers

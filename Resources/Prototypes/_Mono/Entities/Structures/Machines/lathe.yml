@@ -957,7 +957,7 @@
     - StaticAmmoRecipePack
     - StaticGrenades
     - SecurityWeaponsStatic
-    - MonoCaelestinusVouchersStatic
+    # - MonoCaelestinusVouchersStatic # Commented by LuaM: moved to research pack
     # LuaM-start:
     - MonoAttachmentsStatic
     - RoundstartShipgunAmmo
@@ -989,6 +989,7 @@
     - NFMercenaryTechfabDeprecated
     # Mono end
     # LuaM-start:
+    - ColossusResearch
     - TechDiskRecipes
     - ArmorBasic
     - ArmorAdvanced

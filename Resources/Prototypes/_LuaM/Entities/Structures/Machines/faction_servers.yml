@@ -1,0 +1,23 @@
+# Colossus R&D server
+- type: entity
+  id: ResearchAndDevelopmentServerColossus
+  parent: BaseRdServerFaction
+  name: Colossus R&D server
+  description: Contains the collective knowledge of the Colossus sector.
+  components:
+  - type: Sprite
+    sprite: _Mono/Structures/Machines/server.rsi
+    layers:
+    - state: server
+    - state: variant-caelestinus
+    - state: server_o
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: TechnologyDatabase
+    supportedDisciplines:
+    - Colossus
+    - FactionUniversal
+    - Industrial
+    - Arsenal
+    - Experimental
+    - CivilianServices
+    - MechaEngineering

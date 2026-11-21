@@ -109,6 +109,17 @@
 
 - type: latheRecipe
   parent: BaseToolRecipe
+  id: ClothingBackpackERTSecurityRecipe
+  result: ClothingBackpackERTSecurity
+  materialDiscountScale: 0
+  materials:
+    Durathread: 5000
+    Plastic: 5000
+    Plasteel: 10000
+    Gold: 2500
+
+- type: latheRecipe
+  parent: BaseToolRecipe
   id: ClothingBackpackPDVTarkhanRecipe
   result: ClothingBackpackPDVTarkhan
   materialDiscountScale: 0

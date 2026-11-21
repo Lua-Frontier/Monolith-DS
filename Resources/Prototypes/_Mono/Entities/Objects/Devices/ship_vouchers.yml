@@ -763,6 +763,8 @@
     vessels:
     - Hornet
     - Lightning
+    - Parabellum # LuaM
+    - Spitfire # LuaM: alternative purchasing method
 
 # Start T1
 - type: entity
@@ -788,3 +790,4 @@
     vessels:
     - Petra
     - Rosa # LuaM
+    - Pacem # LuaM

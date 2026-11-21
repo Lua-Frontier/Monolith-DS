@@ -73,6 +73,7 @@
     - Flash
     - RubberStampSr
     - DoorRemoteCommand
+    - ColossusUplinkRadio3 # LuaM
     - EncryptionKeyCentCom
     - EncryptionKeyStationMasterSR #Mono start
     - EncryptionKeyDiplomacy

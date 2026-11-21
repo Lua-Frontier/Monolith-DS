@@ -6,9 +6,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: HitscanBasicRaycast
-    maxDistance: 512
+    maxDistance: 1024
   - type: HitscanRadarSignature
     radarColor: "#00BFFF"
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 60
+        Shock: 24
 
 - type: entity
   id: WeaponTurretMoros
@@ -92,7 +97,7 @@
         Structural: 600
         Heat: 200
   - type: HitscanBasicRaycast
-    maxDistance: 1000
+    maxDistance: 1536
   - type: HitscanRadarSignature
     radarColor: "#00BFFF"
 
@@ -130,8 +135,8 @@
     recoil: 50
     minAngle: 0
     maxAngle: 0
-    burstCooldown: 45
-    burstFireRate: 15
+    burstCooldown: 15
+    burstFireRate: 45
     shotsPerBurst: 90
     selectedMode: Burst
     availableModes: Burst

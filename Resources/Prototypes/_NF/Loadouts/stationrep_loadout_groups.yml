@@ -13,7 +13,7 @@
   id: StationRepBackpack
   name: loadout-group-contractor-backpack
   loadouts:
-  - StationRepClothingModsuitHeadOfSecurityPowerCell
+  - ClothingBackpackERTSecurity # LuaM StationRepClothingModsuitHeadOfSecurityPowerCell > ClothingBackpackERTSecurity
   subgroups:
   - SecurityBackpack
 

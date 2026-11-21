@@ -1,0 +1,4 @@
+- type: loadout
+  id: ClothingBackpackERTSecurity
+  equipment:
+    back: ClothingBackpackERTSecurity

@@ -1,0 +1,37 @@
+# Author Info
+# Github: Rubeebeebee
+# Discord: rubeebee
+# Remaped by MrFolium(github)
+
+- type: vessel
+  id: Parabellum
+  parent: BaseVessel
+  name: vessel-parabellum-name
+  description: vessel-parabellum-desc
+  price: 92000
+  purchasable: false
+  category: Medium
+  group: Sr
+  access: Brig # Oddball, matches guard ID, specific enough to exclude cadets
+  mapchecker_group_override: Security  # Treat this as a security vessel for mapchecker purposes
+  shuttlePath: /SharedMaps/_LuaM/Shuttles/CC/parabellum.yml
+  guidebookPage: Null
+  class:
+  - Civilian
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Parabellum
+  mapName: 'Parabellum'
+  mapPath: /SharedMaps/_LuaM/Shuttles/CC/parabellum.yml
+  minPlayers: 0
+  stations:
+    Parabellum:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Parabellum SEC{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'

@@ -1,0 +1,16 @@
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: DeployableBarrier
+  result: DeployableBarrierPacked
+  materials:
+    Steel: 1200
+    Plastic: 600
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: PortableFlasher
+  result: PortableFlasherPacked
+  materials:
+    Steel: 600
+    Glass: 800
+    Plastic: 300

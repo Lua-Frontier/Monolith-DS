@@ -1,4 +1,3 @@
-
 - type: entity
   name: small monolithic crystal
   parent: [BaseItem, BaseMonolithContrabandT1]
@@ -14,6 +13,12 @@
   - type: Item
     sprite: Objects/Specific/Syndicate/telecrystal.rsi
     size: Small
+  - type: Stack # LuaM: for use as currency
+    count: 1
+    stackType: MonolithicCrystalSmall
+  - type: Currency # LuaM: MC price
+    price:
+      MonolithicCrystal: 1
   - type: StaticPrice
     price: 10000
   - type: Damageable
@@ -88,6 +93,9 @@
   - type: Tag
     tags:
     - Unstashable
+  - type: Currency # LuaM: MC price
+    price:
+      MonolithicCrystal: 2
 
 - type: entity
   name: large monolithic crystal
@@ -136,5 +144,6 @@
   - type: Tag
     tags:
     - Unstashable
-
-
+  - type: Currency # LuaM: MC price
+    price:
+      MonolithicCrystal: 3

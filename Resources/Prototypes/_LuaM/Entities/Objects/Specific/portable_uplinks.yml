@@ -1,0 +1,42 @@
+- type: entity
+  parent: [ BaseItem, StorePresetColossusUplink ]
+  id: BaseColossusUplinkRadio
+  name: Colossus uplink
+  description: A portable requisition terminal for Colossus personnel, supplied with monolithic crystals.
+  suffix: Empty
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: CompanyAccessReader
+    requiredCompanies:
+    - Colonial
+
+- type: entity
+  parent: BaseColossusUplinkRadio
+  id: BaseColossusUplinkRadioDebug
+  suffix: Colossus, DEBUG
+  components:
+  - type: Store
+    balance:
+      MonolithicCrystal: 99999
+
+- type: entity
+  parent: BaseColossusUplinkRadio
+  id: ColossusUplinkRadio3
+  suffix: Colossus, 3 MC
+  components:
+  - type: Store
+    balance:
+      MonolithicCrystal: 3

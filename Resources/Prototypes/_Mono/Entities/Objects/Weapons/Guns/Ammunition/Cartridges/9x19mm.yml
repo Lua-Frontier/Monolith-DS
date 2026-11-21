@@ -80,6 +80,10 @@
   name: cartridge (9x19mm rubber)
   parent: BaseCartridge9x19mm
   components:
+  - type: Tag
+    tags:
+    - Cartridge # LuaM
+    - Cartridge9x19mmRubber # LuaM
   - type: CartridgeAmmo
     proto: Bullet9x19mmRubber
   - type: Sprite
