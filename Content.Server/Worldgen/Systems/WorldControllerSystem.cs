@@ -111,7 +111,7 @@ public sealed partial class WorldControllerSystem : EntitySystem
             _chunksToLoad[uid] = new Dictionary<Vector2i, List<EntityUid>>();
         }
 
-        if (_chunksToLoad.Count == 0)
+        if (_chunksToLoad.Count == 0 && EntityManager.Count<LoadedChunkComponent>() == 0) // LuaM: unload chunks of removed controllers too
             return; // Just bail early.
 
         CollectActiveHelmGrids(); // LuaM
@@ -164,12 +164,19 @@ public sealed partial class WorldControllerSystem : EntitySystem
         var chunksUnloaded = 0;
 
         // Make sure these chunks get unloaded at the end of the tick.
-        while (loadedEnum.MoveNext(out var uid, out var _, out var chunk))
+        while (loadedEnum.MoveNext(out var uid, out var loaded, out var chunk))
         {
-            var coords = chunk.Coordinates;
+            // LuaM-start: retained chunks no longer have loaders, and their map may have been deleted.
+            var hasController = _chunksToLoad.TryGetValue(chunk.Map, out var demand);
+            var needed = demand?.ContainsKey(chunk.Coordinates) == true;
+            if (!needed)
+                loaded.Loaders = null;
 
-            if (ShouldUnload(uid, _chunksToLoad[chunk.Map].ContainsKey(coords))) // LuaM
+            if (!hasController || ShouldUnload(uid, needed))
+            // LuaM-end
             {
+                if (!hasController)
+                    _unneededSince.Remove(uid); // LuaM
                 RemCompDeferred<LoadedChunkComponent>(uid);
                 chunksUnloaded++;
             }
@@ -281,7 +288,7 @@ public sealed partial class WorldControllerSystem : EntitySystem
             return false;
 
         var map = mapOrNull.Value;
-        if (!_chunksToLoad.ContainsKey(map))
+        if (!_chunksToLoad.TryGetValue(map, out var set)) // LuaM
             return false;
 
         var wc = _xformSys.GetWorldPosition(xform);
@@ -291,13 +298,11 @@ public sealed partial class WorldControllerSystem : EntitySystem
         var coords = WorldGen.WorldToChunkCoords(wc);
         var chunks = new GridPointsNearEnumerator(coords.Floored(), radius);
 
-        var set = _chunksToLoad[map];
-
         while (chunks.MoveNext(out var chunk))
         {
-            if (!set.TryGetValue(chunk.Value, out _))
-                set[chunk.Value] = new List<EntityUid>(4);
-            set[chunk.Value].Add(uid);
+            if (!set.TryGetValue(chunk.Value, out var loaders)) // LuaM
+                set[chunk.Value] = loaders = new List<EntityUid>(4); // LuaM
+            loaders.Add(uid); // LuaM
         }
 
         return true;

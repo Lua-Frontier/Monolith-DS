@@ -1,0 +1,7 @@
+- type: font
+  id: Fondamento
+  path: /Fonts/Fondamento-Regular.ttf
+
+- type: font
+  id: Jura
+  path: /Fonts/Jura/Jura.ttf

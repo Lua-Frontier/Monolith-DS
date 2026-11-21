@@ -209,9 +209,9 @@
     - /Audio/Items/deconstruct.ogg
     - /Audio/Items/flashlight_off.ogg
     - /Audio/Items/flashlight_on.ogg
-    - /Audio/Items/pistol_cock.ogg
-    - /Audio/Items/pistol_magin.ogg
-    - /Audio/Items/pistol_magout.ogg
+    - /Audio/Weapons/Guns/Cock/pistol_cock.ogg # LuaM
+    - /Audio/Weapons/Guns/MagIn/pistol_magin.ogg # LuaM
+    - /Audio/Weapons/Guns/MagOut/pistol_magout.ogg # LuaM
     # - /Audio/Items/rped.ogg # Frontier
     # - /Audio/Machines/door_lock_off.ogg # Frontier
     # - /Audio/Machines/door_lock_on.ogg # Frontier

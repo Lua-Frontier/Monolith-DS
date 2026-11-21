@@ -1243,7 +1243,7 @@
       types:
         Blunt: 3
     soundHit:
-      path: /Audio/Weapons/Guns/Hits/snap.ogg
+      path: /Audio/Effects/snap.ogg # LuaM
   - type: StaminaDamageOnCollide
     damage: 22 # 5 hits to stun sounds reasonable
 

@@ -1,2 +1,3 @@
 battery-drinker-verb-drink = Осушить
-battery-drinker-empty = {CAPATALIZE(THE($target))} уже пуст!
+# LuaM
+battery-drinker-empty = {CAPITALIZE(THE($target))} уже пуст!

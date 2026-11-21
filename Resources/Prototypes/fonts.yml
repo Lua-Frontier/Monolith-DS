@@ -34,9 +34,7 @@
   id: BoxRound
   path: /Fonts/Boxfont-round/Boxfont Round.ttf
 
-- type: font
-  id: AnimalSilence
-  path: /Fonts/Animal Silence.otf
+# LuaM: AnimalSilence removed
 
 - type: font
   id: Monospace

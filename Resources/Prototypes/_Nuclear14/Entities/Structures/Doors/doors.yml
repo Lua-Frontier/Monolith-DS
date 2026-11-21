@@ -446,7 +446,7 @@
     openSound:
       path: /Audio/Effects/rustle5.ogg
     closeSound:
-      path: /Audio/Items/zip.ogg
+      path: /Audio/Misc/zip.ogg # LuaM
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Web

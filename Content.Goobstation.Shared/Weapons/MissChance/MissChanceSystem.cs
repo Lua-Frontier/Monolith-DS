@@ -35,10 +35,10 @@ public sealed partial class MissChanceSystem : EntitySystem
     public void ApplyMissChance(EntityUid? ent, float chance)
     {
         // GunShotEvent goes nuts with ammo uids on client so we tell it to stfu
-        if (_netManager.IsClient || ent == null)
+        if (_netManager.IsClient || ent is not { } uid || TerminatingOrDeleted(uid)) // LuaM
             return;
 
-        var missComp = EnsureComp<MissChanceComponent>((EntityUid)ent);
+        var missComp = EnsureComp<MissChanceComponent>(uid); // LuaM
         missComp.Chance = chance;
     }
 }

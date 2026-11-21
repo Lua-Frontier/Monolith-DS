@@ -13,7 +13,7 @@
     heldPrefix: healing
   - type: Gun
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_healing.ogg
+      path: /Audio/Magic/staff_healing.ogg # LuaM
   - type: BasicEntityAmmoProvider
     proto: ProjectileHealingBolt
     capacity: 10
@@ -32,7 +32,7 @@
     heldPrefix: door
   - type: Gun
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_door.ogg
+      path: /Audio/Magic/staff_door.ogg # LuaM
   - type: BasicEntityAmmoProvider
     proto: ProjectilePolyboltDoor
     capacity: 10

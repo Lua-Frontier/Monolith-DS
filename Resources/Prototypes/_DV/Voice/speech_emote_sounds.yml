@@ -303,11 +303,11 @@
     variation: 0.125
   sounds:
     Buzz:
-      path: /Audio/_DV/Voice/Chitinid/moth_scream.ogg
+      path: /Audio/Voice/Moth/moth_scream.ogg # LuaM
     Scream:
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
     Laugh:
-      path: /Audio/_DV/Voice/Chitinid/moth_laugh.ogg
+      path: /Audio/Voice/Moth/moth_laugh.ogg # LuaM
     Chitter:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:

@@ -27,7 +27,10 @@ public sealed class PerformanceCVars
         CVarDef.Create("luam.slow_tick.profile", true, CVar.SERVERONLY);
 
     public static readonly CVarDef<float> ChunkUnloadGrace =
-        CVarDef.Create("luam.worldgen.unload_grace", 60f, CVar.SERVERONLY);
+        CVarDef.Create("luam.worldgen.unload_grace", 10f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> MapDeletionBudgetMs =
+        CVarDef.Create("luam.map_deletion.budget_ms", 4f, CVar.SERVERONLY);
 
     public static readonly CVarDef<bool> IdleHelmsSkipWorldgen =
         CVarDef.Create("luam.worldgen.idle_helms_skip", true, CVar.SERVERONLY);

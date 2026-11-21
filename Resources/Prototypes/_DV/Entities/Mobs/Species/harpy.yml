@@ -268,7 +268,7 @@
       - name: harpy-mimicry-pistol-cock
         icon: WeaponPistolMk58
         sound:
-          path: /Audio/Items/pistol_cock.ogg
+          path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg # LuaM
       HarpyToy:
       - name: harpy-mimicry-toy-shark
         icon: PlushieSharkBlue

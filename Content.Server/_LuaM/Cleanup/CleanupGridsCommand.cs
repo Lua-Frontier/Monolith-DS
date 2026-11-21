@@ -8,7 +8,7 @@ using Robust.Shared.Console;
 namespace Content.Server._LuaM.Cleanup;
 
 /// <summary>
-/// Deletes right away every grid that meets the grid cleanup rules, without waiting for the cleanup timer.
+/// Schedules removal of abandoned grids without waiting for the cleanup timer.
 /// With "preview" only lists them.
 /// </summary>
 [AdminCommand(AdminFlags.Spawn)]
@@ -51,9 +51,14 @@ public sealed partial class CleanupGridsCommand : LocalizedEntityCommands
             return;
         }
 
-        var deleted = _gridCleanup.ForceCleanupGrids();
-        _adminLogger.Add(LogType.Action, LogImpact.High, $"{shell.Player?.Name ?? "Server"} force cleaned up {deleted} grids");
-        shell.WriteLine(Loc.GetString("cmd-cleanupgrids-done", ("count", deleted)));
+        if (!_gridCleanup.TryScheduleGridCleanup())
+        {
+            shell.WriteLine(Loc.GetString("cmd-cleanupgrids-no-new-pass"));
+            return;
+        }
+
+        _adminLogger.Add(LogType.Action, LogImpact.High, $"{shell.Player?.Name ?? "Server"} scheduled forced grid cleanup");
+        shell.WriteLine(Loc.GetString("cmd-cleanupgrids-scheduled"));
     }
 
     public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)

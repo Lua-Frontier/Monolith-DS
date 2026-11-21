@@ -2,7 +2,7 @@
   id: across_the_void
   name: Guillaume David - Across The Void
   path:
-    path: /Audio/_Mono/Jukebox/across_the_void.ogg
+    path: /Audio/Lobby/across_the_void.ogg # LuaM
 
 - type: jukebox
   id: dawsons_christian

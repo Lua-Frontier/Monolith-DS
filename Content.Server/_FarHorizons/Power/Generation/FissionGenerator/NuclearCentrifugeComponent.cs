@@ -43,7 +43,7 @@ public sealed partial class NuclearCentrifugeComponent : Component
     /// Sound played when the centrifuge failed to create any plutonium
     /// </summary>
     [DataField]
-    public SoundPathSpecifier SoundFail = new("/Audio/Machines/buzz-two.ogg");
+    public SoundPathSpecifier SoundFail = new("/Audio/Effects/Cargo/buzz_two.ogg"); // LuaM
 
     /// <summary>
     /// Sound played when the centrifuge creates plutonium

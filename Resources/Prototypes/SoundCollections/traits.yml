@@ -54,7 +54,7 @@
   - /Audio/Weapons/punch4.ogg
   - /Audio/Weapons/genhit1.ogg
   - /Audio/Weapons/Guns/Hits/bullet_hit.ogg
-  - /Audio/Weapons/Guns/Hits/snap.ogg
+  - /Audio/Effects/snap.ogg # LuaM
   - /Audio/Weapons/Guns/Gunshots/atreides.ogg
   - /Audio/Weapons/Guns/Gunshots/c-20r.ogg
   - /Audio/Weapons/Guns/Gunshots/pistol.ogg

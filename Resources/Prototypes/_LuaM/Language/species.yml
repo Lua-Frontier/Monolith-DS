@@ -3,6 +3,7 @@
   isVisibleLanguage: true
   speech:
     color: "#C0FFD9"
+    fontId: Fondamento
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -26,6 +27,7 @@
   isVisibleLanguage: true
   speech:
     color: "#99E0FF"
+    fontId: BoxRound
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -49,6 +51,7 @@
   isVisibleLanguage: true
   speech:
     color: "#B0E0FF"
+    fontId: Jura
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
