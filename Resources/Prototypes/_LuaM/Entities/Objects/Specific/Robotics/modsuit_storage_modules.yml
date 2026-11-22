@@ -1,0 +1,62 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: ModsuitStorageModuleBase
+  name: modsuit storage module
+  description: Expands the storage of a modsuit control unit. Installed under the unit's maintenance panel.
+  components:
+  - type: Item
+    size: Small
+    storedRotation: -90
+  - type: Sprite
+    sprite: Objects/Specific/Robotics/borgmodule.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ModsuitStorageModuleBase
+  id: ModsuitStorageModuleAdvanced
+  name: advanced modsuit storage module
+  description: Expands the storage of a modsuit control unit to 10x6. Installed under the unit's maintenance panel.
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-trash-bag
+  - type: ModsuitStorageModule
+    grid:
+    - 0,0,9,5
+
+- type: entity
+  parent: ModsuitStorageModuleBase
+  id: ModsuitStorageModuleExperimental
+  name: experimental modsuit storage module
+  description: Expands the storage of a modsuit control unit to 10x8. Installed under the unit's maintenance panel.
+  components:
+  - type: Sprite
+    layers:
+    - state: science
+    - state: icon-trash-bag
+  - type: ModsuitStorageModule
+    grid:
+    - 0,0,9,7
+  - type: StaticPrice
+    price: 200
+
+- type: entity
+  parent: ModsuitStorageModuleBase
+  id: ModsuitStorageModuleBluespace
+  name: bluespace modsuit storage module
+  description: Expands the storage of a modsuit control unit to 20x10 using bluespace folding. Installed under the unit's maintenance panel.
+  components:
+  - type: Sprite
+    layers:
+    - state: science
+      color: "#7fa8ff"
+    - state: icon-trash-bag
+      color: "#9fd0ff"
+  - type: ModsuitStorageModule
+    grid:
+    - 0,0,19,9
+  - type: StaticPrice
+    price: 400

@@ -55,3 +55,30 @@
   - HardsuitsAdvanced
   - AdvancedPersonalPropulsion
   position: 9, 7
+
+- type: technology
+  id: ModsuitStorageAdvanced
+  name: research-technology-modsuit-storage-advanced
+  entityIcon: ModsuitStorageModuleAdvanced
+  discipline: Industrial
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - ModsuitStorageModuleAdvanced
+  technologyPrerequisites:
+  - HardsuitsSpecialized
+  position: 9, 8
+
+- type: technology
+  id: ModsuitStorageExperimental
+  name: research-technology-modsuit-storage-experimental
+  entityIcon: ModsuitStorageModuleExperimental
+  discipline: Industrial
+  tier: 3
+  cost: 30000
+  recipeUnlocks:
+  - ModsuitStorageModuleExperimental
+  technologyPrerequisites:
+  - ModsuitStorageAdvanced
+  - HardsuitsAdvanced
+  position: 8, 6

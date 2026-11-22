@@ -221,3 +221,5 @@
     - id: TechDiskFtl
     - id: TechDiskTranslationPreFracture
     - id: TechDiskDataFarm # LuaM
+    - id: TechDiskSurgicalGloves # LuaM
+    - id: TechDiskModsuitStorageBluespace # LuaM
