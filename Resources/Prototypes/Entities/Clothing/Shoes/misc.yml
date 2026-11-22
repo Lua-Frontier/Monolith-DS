@@ -153,7 +153,8 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
   - type: Tag
-    tags: []
+    tags: # LuaM: [] > SafetyDepositBlacklist
+    - SafetyDepositBlacklist # LuaM: can not be kept in safety deposit boxes
 
 - type: entity
   id: ActionToggleSpeedBoots
