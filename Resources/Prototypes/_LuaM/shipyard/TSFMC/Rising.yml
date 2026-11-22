@@ -17,9 +17,6 @@
   - Frigate
   engine:
   - Plasma
-  addComponents:
-    - type: IFF
-      color: "#047ABDFF"
 - type: gameMap
   id: TSFMCRising
   mapName: 'Rising'
