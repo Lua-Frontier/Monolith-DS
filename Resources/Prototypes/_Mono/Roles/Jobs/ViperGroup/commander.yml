@@ -13,6 +13,7 @@
     - Human
     - Dwarf
     - IPC # LuaM
+    - Demon # LuaM: Arcana
   startingGear: ViperCommanderGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true
