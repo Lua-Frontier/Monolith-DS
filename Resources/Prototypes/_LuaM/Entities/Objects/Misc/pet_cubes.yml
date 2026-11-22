@@ -1,0 +1,78 @@
+- type: entity
+  parent: MonkeyCube
+  id: GoldfishCube
+  name: space goldfish cube
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: cube
+    color: "#ff9a3c"
+  - type: Rehydratable
+    possibleSpawns:
+    - MobCarpGoldfish
+
+- type: entity
+  parent: MonkeyCube
+  id: SquackroachCube
+  name: squackroach cube
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: cube
+    color: "#b48cd8"
+  - type: Rehydratable
+    possibleSpawns:
+    - MobSquackroach
+
+- type: entity
+  parent: MonkeyCubeWrapped
+  id: GoldfishCubeWrapped
+  name: space goldfish cube
+  suffix: Wrapped
+  description: Unwrap this to get a space goldfish cube.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: GoldfishCube
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: wrapper
+    color: "#ff9a3c"
+
+- type: entity
+  parent: MonkeyCubeWrapped
+  id: SquackroachCubeWrapped
+  name: squackroach cube
+  suffix: Wrapped
+  description: Unwrap this to get a squackroach cube.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: SquackroachCube
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: wrapper
+    color: "#b48cd8"
+
+- type: entity
+  parent: MonkeyCubeBox
+  id: PetCubeBox
+  name: pet cube box
+  description: "A box of pet cubes: space goldfish and squackroaches! Just add water!"
+  components:
+  - type: StorageFill
+    contents:
+    - id: GoldfishCubeWrapped
+      amount: 4
+    - id: SquackroachCubeWrapped
+      amount: 4
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: box_variant
+  - type: StaticPrice
+    price: 20
+    vendPrice: 2000

@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: LivestockPetCubeBox
+  icon:
+    sprite: Objects/Misc/monkeycube.rsi
+    state: box_variant
+  product: PetCubeBox
+  cost: 3000
+  category: cargoproduct-category-name-livestock
+  group: market

@@ -1,0 +1,12 @@
+﻿ent-GoldfishCube = кубик космической золотой рыбки
+    .desc = { ent-MonkeyCube.desc }
+ent-SquackroachCube = кубик гарпии-моли
+    .desc = { ent-MonkeyCube.desc }
+ent-GoldfishCubeWrapped = кубик космической золотой рыбки
+    .suffix = Завёрнутый
+    .desc = Распакуй его, чтобы получить кубик космической золотой рыбки.
+ent-SquackroachCubeWrapped = кубик гарпии-моли
+    .suffix = Завёрнутый
+    .desc = Распакуй его, чтобы получить кубик гарпии-моли.
+ent-PetCubeBox = коробка кубиков питомцев
+    .desc = Коробка кубиков питомцев: космические золотые рыбки и гарпии-моли! Просто добавь воды!
