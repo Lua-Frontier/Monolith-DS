@@ -1,6 +1,6 @@
 - type: vessel
   id: Layak
-  parent: BaseVesselIFFDisabled
+  parent: BaseVesselVanguard # LuaM: BaseVesselIFFDisabled > BaseVesselVanguard
   name: PDV-VI Layak
   description: A compact escort corvette with 4 flak guns for PD, and light armaments for dealing with smaller craft, plus a HYDRA on each side for larger threats. It even got a shield!
   locDescription: vessel-layak-desc # LuaM

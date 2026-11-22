@@ -23,3 +23,21 @@
     Steel: 100
     Glass: 200
     Silver: 50
+
+# Priced like the jaws of life
+- type: latheRecipe
+  id: ClothingNeckHearingAid
+  result: ClothingNeckHearingAid
+  categories:
+  - Neck
+  completetime: 6
+  materials:
+    Steel: 1000
+    Glass: 500
+    Plasma: 300
+    Gold: 50
+
+- type: latheRecipe
+  parent: ClothingNeckHearingAid
+  id: ClothingNeckHearingSensor
+  result: ClothingNeckHearingSensor

@@ -2,7 +2,7 @@
 
 - type: vessel
   id: Tayfun
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel # LuaM: BaseVesselIFFDisabled > BaseVessel, no IFF console aboard
   name: NCS Tayfun
   description: An armored gunship with 4 90mms, 2 30mms, and 2 VESPERA missile pods.
   locDescription: vessel-tayfun-desc # LuaM

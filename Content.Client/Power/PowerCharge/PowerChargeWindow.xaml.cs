@@ -25,9 +25,20 @@ public sealed partial class PowerChargeWindow : FancyWindow
 
         OnButton.OnPressed += _ => bui.SetPowerSwitch(true);
         OffButton.OnPressed += _ => bui.SetPowerSwitch(false);
+        ActionButton.OnPressed += _ => bui.ActionButton(); // Lua
 
         EntityView.SetEntity(bui.Owner);
     }
+
+    // Lua start: action button
+    public void SetActionUI(bool actionUI)
+    {
+        ActionButton.Visible = actionUI;
+        ActionButtonText.Visible = actionUI;
+        if (actionUI)
+            SetSize = new(SetSize.X, Math.Max(SetSize.Y, 210));
+    }
+    // Lua end
 
     public void UpdateState(PowerChargeState state)
     {
@@ -35,6 +46,8 @@ public sealed partial class PowerChargeWindow : FancyWindow
             OnButton.Pressed = true;
         else
             OffButton.Pressed = true;
+
+        ActionButton.Disabled = !state.ActionUnlocked; // Lua
 
         PowerLabel.Text = Loc.GetString(
             "power-charge-window-power-label",

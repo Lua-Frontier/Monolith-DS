@@ -1,0 +1,8 @@
+- type: soundCollection
+  id: IpcShutdownError
+  files:
+    - /Audio/_LuaM/Voice/IPC/shutdown_error1.wav
+    - /Audio/_LuaM/Voice/IPC/shutdown_error2.wav
+    - /Audio/_LuaM/Voice/IPC/shutdown_error3.wav
+    - /Audio/_LuaM/Voice/IPC/shutdown_error4.wav
+    - /Audio/_LuaM/Voice/IPC/shutdown_error5.wav

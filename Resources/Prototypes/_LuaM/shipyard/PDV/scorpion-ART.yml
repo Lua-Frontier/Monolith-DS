@@ -2,7 +2,7 @@
 
 - type: vessel
   id: ScorpionART
-  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
+  parent: BaseVesselVanguard
   name: vessel-scorpionART-name
   description: vessel-scorpionART-desc
   price: 193200
@@ -18,9 +18,6 @@
   - Corvette
   engine:
   - Plasma
-  addComponents:
-    - type: IFF
-      color: "#E03131FF"
 - type: gameMap
   id: ScorpionART
   mapName: 'AN Scorpion-ART'

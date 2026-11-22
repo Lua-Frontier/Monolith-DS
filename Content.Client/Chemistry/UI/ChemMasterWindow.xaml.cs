@@ -14,6 +14,7 @@ using Content.Shared.FixedPoint;
 using Robust.Client.Graphics;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 using Robust.Client.GameObjects;
+using Robust.Shared.Timing; // LuaM
 
 namespace Content.Client.Chemistry.UI
 {
@@ -28,6 +29,16 @@ namespace Content.Client.Chemistry.UI
         private readonly SpriteSystem _sprite;
         public event Action<BaseButton.ButtonEventArgs, ReagentButton>? OnReagentButtonPressed;
         public event Action<ReagentId>? OnFavoriteButtonPressed; // LuaM
+
+        // LuaM-start: the drain button shows only while a pourable container is in the active hand
+        public Func<bool>? CanDrainHeld;
+
+        protected override void FrameUpdate(FrameEventArgs args)
+        {
+            base.FrameUpdate(args);
+            DrainHeldButton.Visible = CanDrainHeld?.Invoke() ?? false;
+        }
+        // LuaM-end
         public readonly Button[] PillTypeButtons;
 
         private const string PillsRsiPath = "/Textures/Objects/Specific/Chemistry/pills.rsi";

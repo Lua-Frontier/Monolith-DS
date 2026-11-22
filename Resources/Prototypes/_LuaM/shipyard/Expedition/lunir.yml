@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: vessel-lunir-name
   description: vessel-lunir-desc
-  price: 110000
+  price: 131000
   category: Medium
   group: Expedition
   shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/lunir.yml

@@ -2051,7 +2051,7 @@ entities:
         68:
         - - Pressed
           - Toggle
-- proto: SMESBasic
+- proto: SMESIndustrial
   entities:
   - uid: 270
     components:

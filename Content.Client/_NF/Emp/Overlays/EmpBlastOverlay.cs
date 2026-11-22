@@ -92,10 +92,15 @@ namespace Content.Client._NF.Emp.Overlays
             {
                 if (!_blasts.ContainsKey(blastEntity) && BlastQualifies(blastEntity, currentEyeLoc, blast))
                 {
+                    // Lua start: per-blast shader
+                    var shader = blast.ShaderId != null && _prototypeManager.TryIndex<ShaderPrototype>(blast.ShaderId, out var shaderProto)
+                        ? shaderProto.InstanceUnique()
+                        : _baseShader.Duplicate();
+                    // Lua end
                     _blasts.Add(
                             blastEntity,
                             (
-                                _baseShader.Duplicate(),
+                                shader, // Lua
                                 new EmpShaderInstance(
                                     _transform.GetMapCoordinates(blastEntity),
                                     blast.VisualRange,

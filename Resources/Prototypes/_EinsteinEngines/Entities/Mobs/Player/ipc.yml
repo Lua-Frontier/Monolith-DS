@@ -129,6 +129,11 @@
   - type: HeadsetChannelToggle
   - type: HeadsetTunableRadio
   # LuaM end
+  # LuaM-start: random error sound on shutdown, from damage or overheating alike
+  - type: DeathSound
+    sound:
+      collection: IpcShutdownError
+  # LuaM-end
   - type: DeadStartupButton
     sound:
       path: /Audio/_EinsteinEngines/Effects/Silicon/startup.ogg

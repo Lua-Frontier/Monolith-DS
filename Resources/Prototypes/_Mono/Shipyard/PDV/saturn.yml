@@ -1,6 +1,6 @@
 - type: vessel
   id: Saturn
-  parent: BaseVesselIFFDisabled
+  parent: BaseVesselVanguard # LuaM: BaseVesselIFFDisabled > BaseVesselVanguard
   name: HSS Saturn
   description: A heavy brute of a capital, with large main batteries, a thick interior structure of full plastitanium, and 2 bays for large mechs in the rear. This a ship fit for the Dynasty's finest and most prestigeous.
   locDescription: vessel-saturn-desc # LuaM

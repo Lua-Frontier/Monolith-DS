@@ -42,3 +42,7 @@ chem-master-window-beaker-low-text = Недостаточно раствора �
 chem-master-output-source = Источник упаковки:
 chem-master-no-source = Нет источника
 chem-master-window-search-placeholder = Поиск химиката по названию...
+chem-master-window-drain-button = Слить химикаты
+chem-master-window-drain-tooltip = Вылить всё из ёмкости в руке в буфер
+chem-master-window-drain-no-container = Возьмите в руку кувшин или мензурку.
+chem-master-window-drain-empty = Ёмкость в руке пуста.

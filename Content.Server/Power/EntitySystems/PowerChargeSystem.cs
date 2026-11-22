@@ -28,6 +28,7 @@ public sealed partial class PowerChargeSystem : EntitySystem
 
         // This needs to be ui key agnostic
         SubscribeLocalEvent<PowerChargeComponent, SwitchChargingMachineMessage>(OnSwitchGenerator);
+        SubscribeLocalEvent<PowerChargeComponent, PowerChargeActionMessage>(OnActionMessage); // Lua
 
         SubscribeLocalEvent<PowerChargeComponent, EmpPulseEvent>(OnEmpPulse); // Frontier: emp code
     }
@@ -96,9 +97,48 @@ public sealed partial class PowerChargeSystem : EntitySystem
         component.NeedUIUpdate = true;
     }
 
+    // Lua start: UI action that spends the charge
+    private void OnActionMessage(EntityUid uid, PowerChargeComponent component, PowerChargeActionMessage args)
+    {
+        if (!component.ActionUI || !component.Intact || component.Charge < component.ActionCharge)
+            return;
+
+        _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(args.Actor):player} activated {ToPrettyString(uid):target}");
+
+        var actionEv = new PowerChargeActionEvent();
+        RaiseLocalEvent(uid, ref actionEv);
+
+        if (component.ActionCharge <= 0)
+            return;
+
+        component.Charge = Math.Max(0, component.Charge - component.ActionCharge);
+        if (component.Active)
+        {
+            component.Active = false;
+            var deactivatedEv = new ChargedMachineDeactivatedEvent();
+            RaiseLocalEvent(uid, ref deactivatedEv);
+        }
+
+        if (TryComp<ApcPowerReceiverComponent>(uid, out var powerReceiver))
+        {
+            UpdatePowerState(component, powerReceiver);
+            UpdateState((uid, component, powerReceiver));
+        }
+
+        component.NeedUIUpdate = true;
+    }
+    // Lua end
+
     private static void UpdatePowerState(PowerChargeComponent component, ApcPowerReceiverComponent powerReceiver)
     {
-        powerReceiver.Load = component.SwitchedOn ? component.ActivePowerUse : component.IdlePowerUse;
+        // Lua start: separate draw while charging
+        if (!component.SwitchedOn)
+            powerReceiver.Load = component.IdlePowerUse;
+        else if (component.ActiveChargingPowerUse is { } chargingPower && component.Charge < component.MaxCharge)
+            powerReceiver.Load = chargingPower;
+        else
+            powerReceiver.Load = component.ActivePowerUse;
+        // Lua end
     }
 
     public override void Update(float frameTime)
@@ -126,7 +166,7 @@ public sealed partial class PowerChargeSystem : EntitySystem
                     // Scale discharge rate such that if we're at 25% active power we discharge at 75% rate.
                     var receiving = powerReceiver.PowerReceived;
                     var mainSystemPower = Math.Max(0, receiving - chargingMachine.IdlePowerUse);
-                    var ratio = 1 - mainSystemPower / (chargingMachine.ActivePowerUse - chargingMachine.IdlePowerUse);
+                    var ratio = 1 - mainSystemPower / ((chargingMachine.ActiveChargingPowerUse ?? chargingMachine.ActivePowerUse) - chargingMachine.IdlePowerUse); // Lua: ActiveChargingPowerUse
                     chargeRate = -(ratio * chargingMachine.ChargeRate);
                 }
             }
@@ -154,6 +194,16 @@ public sealed partial class PowerChargeSystem : EntitySystem
                     chargingMachine.Active = false;
                 }
             }
+
+            // Lua start: draw drops once fully charged
+            if (chargingMachine.ActiveChargingPowerUse != null)
+            {
+                var oldLoad = powerReceiver.Load;
+                UpdatePowerState(chargingMachine, powerReceiver);
+                if (!MathHelper.CloseTo(oldLoad, powerReceiver.Load))
+                    chargingMachine.NeedUIUpdate = true;
+            }
+            // Lua end
 
             var updateUI = chargingMachine.NeedUIUpdate;
             if (!MathHelper.CloseTo(lastCharge, chargingMachine.Charge))
@@ -216,7 +266,8 @@ public sealed partial class PowerChargeSystem : EntitySystem
             status,
             (short) Math.Round(powerReceiver.PowerReceived),
             (short) Math.Round(powerReceiver.Load),
-            chargeEta
+            chargeEta,
+            component.ActionUI && component.Charge >= component.ActionCharge // Lua
         );
 
         _uiSystem.SetUiState(
@@ -306,3 +357,4 @@ public sealed partial class PowerChargeSystem : EntitySystem
 
 [ByRefEvent] public record struct ChargedMachineActivatedEvent;
 [ByRefEvent] public record struct ChargedMachineDeactivatedEvent;
+[ByRefEvent] public record struct PowerChargeActionEvent; // Lua

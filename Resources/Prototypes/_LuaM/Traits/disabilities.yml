@@ -4,6 +4,7 @@
   description: trait-luam-deafness-desc
   category: Physical
   cost: -2
+  traitGear: ClothingNeckHearingAid
   speciesBlacklist:
   - IPC
   components:

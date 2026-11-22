@@ -1,0 +1,13 @@
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: ThermalCyberneticEyesTSF
+  result: ThermalCyberneticEyes
+  completetime: 10
+  materialDiscountScale: 0
+  materials:
+    Steel: 1500
+    Glass: 1000
+    Plastic: 1000
+    Gold: 500
+    Silver: 500
+    Plasma: 500

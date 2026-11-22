@@ -4,7 +4,7 @@
   name: vessel-archon-m2-name # LuaM-locale
   description: vessel-archon-m2-desc # LuaM-locale
   limit: 2
-  price: 135000
+  price: 184000
   purchasable: false # voucher only
   category: Medium
   group: Ussp

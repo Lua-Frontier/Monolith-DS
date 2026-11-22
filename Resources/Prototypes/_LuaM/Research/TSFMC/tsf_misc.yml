@@ -26,3 +26,16 @@
   - TsfmcBasicEquipment
   - ArmorPlateStorage
   position: 9, 6
+
+- type: technology
+  id: TsfmcThermalEyes
+  name: research-technology-tsfmc-thermal-eyes
+  entityIcon: ThermalCyberneticEyes
+  discipline: TsfmcEquipment
+  tier: 2
+  cost: 30000
+  recipeUnlocks:
+  - ThermalCyberneticEyesTSF
+  technologyPrerequisites:
+  - Hypospray
+  position: 11, 9

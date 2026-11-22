@@ -41,3 +41,7 @@ chem-master-window-beaker-low-text = Not enough solution in beaker
 chem-master-output-source = Packaging source:
 chem-master-no-source = No Source
 chem-master-window-search-placeholder = Search reagents by name...
+chem-master-window-drain-button = Drain chemicals
+chem-master-window-drain-tooltip = Pour everything from the container in your hand into the buffer
+chem-master-window-drain-no-container = Hold a jug or a beaker in your hand.
+chem-master-window-drain-empty = { CAPITALIZE(THE($container)) } is empty.

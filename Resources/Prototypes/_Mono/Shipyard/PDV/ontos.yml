@@ -1,6 +1,6 @@
 - type: vessel
   id: Ontos
-  parent: BaseVesselIFFDisabled
+  parent: BaseVesselVanguard # LuaM: BaseVesselIFFDisabled > BaseVesselVanguard
   name: PDV Ontos
   description: Carries a large howitzer for fire-support and heavy anti-ship duties with 2 scattercannons for escort duty, but struggles against anything moving faster than a snail.
   locDescription: vessel-ontos-desc # LuaM

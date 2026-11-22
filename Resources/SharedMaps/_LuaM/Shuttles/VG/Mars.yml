@@ -4853,7 +4853,7 @@ entities:
     - type: Transform
       parent: 1
       pos: 2.5,4.5
-- proto: SMESAdvanced
+- proto: SMESIndustrial
   entities:
   - uid: 731
     components:

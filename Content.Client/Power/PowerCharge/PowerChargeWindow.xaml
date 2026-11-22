@@ -24,6 +24,10 @@
                 <ProgressBar Name="ChargeBar" MaxValue="255">
                     <Label Name="ChargeText" Margin="4 0" Text="0 %" />
                 </ProgressBar>
+                <!-- Lua start: action button -->
+                <Label Name="ActionButtonText" Visible="False" Text="{Loc 'power-charge-window-action'}" StyleClasses="StatusFieldTitle" />
+                <Button Name="ActionButton" Visible="False" Disabled="True" Text="{Loc 'power-charge-window-power-action'}" MinWidth="120" />
+                <!-- Lua end -->
             </GridContainer>
         </BoxContainer>
         <PanelContainer Margin="12 0 0 0" StyleClasses="Inset" VerticalAlignment="Center">

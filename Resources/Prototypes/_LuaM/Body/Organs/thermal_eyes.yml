@@ -1,0 +1,33 @@
+- type: entity
+  parent: BasicCyberneticEyes
+  id: ThermalCyberneticEyes
+  name: cybernetic thermal eyes
+  description: A pair of TSF-made cybernetic eyes with an integrated thermal imager and SecHUD. Briefly highlights warm bodies through walls and protects from flashes.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Mobs/Species/Misc/Cybernetics/organs.rsi
+    state: eyes-thermal
+  - type: Organ
+    onAdd:
+    - type: FlashImmunity
+    - type: EyeProtection
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ThermalVision
+      pulseTime: 2
+      isEquipment: false
+      toggleAction: PulseThermalVision
+
+- type: entity
+  parent: ThermalCyberneticEyes
+  id: ThermalCyberneticEyesBlackMarket
+  name: black market thermal eyes
+  description: A thermal eye implant stolen from the TSF and sold on the black market. The SecHUD and flash protection were stripped out, only the thermal imager remains.
+  components:
+  - type: Organ
+    onAdd:
+    - type: ThermalVision
+      pulseTime: 2
+      isEquipment: false
+      toggleAction: PulseThermalVision

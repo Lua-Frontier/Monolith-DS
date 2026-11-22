@@ -72,7 +72,7 @@
   description: A fashionable TSFMC cloak for the Captain and XO of the marine detachment.
   components:
   - type: Sprite
-    sprite: _Mono/Clothing/Neck/Cloaks/tsfcaptaincloak.rsi
+    sprite: _LuaM/Clothing/Neck/Cloaks/tsfcaptaincloak.rsi # LuaM: _Mono > _LuaM, new sprite
 
 - type: entity
   parent: ClothingNeckBase

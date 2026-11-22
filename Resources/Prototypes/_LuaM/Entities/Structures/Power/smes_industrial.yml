@@ -2,7 +2,7 @@
   parent: BaseSMES
   id: SMESIndustrial
   name: industrial SMES
-  suffix: 20MJ
+  suffix: 20MJ, Syndicate|VG
   components:
   - type: Sprite
     sprite: _LuaM/Structures/Power/smes_industrial.rsi

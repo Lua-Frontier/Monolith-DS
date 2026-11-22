@@ -3183,7 +3183,7 @@ entities:
         14:
         - - Pressed
           - DoorBolt
-- proto: SMESBasic
+- proto: SMESIndustrial
   entities:
   - uid: 391
     components:

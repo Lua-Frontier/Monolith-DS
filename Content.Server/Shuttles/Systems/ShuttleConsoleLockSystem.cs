@@ -700,6 +700,25 @@ public sealed partial class ShuttleConsoleLockSystem : SharedShuttleConsoleLockS
         return true;
     }
 
+    // LuaM-start: hacking with a cryptographic sequencer
+    /// <summary>
+    /// Unlocks the console, or the whole ship if it has a grid lock, without any deed check.
+    /// </summary>
+    public void ForceUnlock(EntityUid console, ShuttleConsoleLockComponent? lockComp = null)
+    {
+        if (!Resolve(console, ref lockComp) || !GetEffectiveLockState(console, lockComp))
+            return;
+
+        var gridUid = Transform(console).GridUid;
+        if (gridUid != null && HasComp<ShipGridLockComponent>(gridUid.Value))
+            SetGridLockState(gridUid.Value, false);
+        else
+            lockComp.Locked = false;
+
+        Popup.PopupEntity(Loc.GetString("shuttle-console-unlocked"), console);
+    }
+    // LuaM-end
+
     /// <summary>
     /// Sets the shuttle ID for a console lock component.
     /// This should be called when a ship is purchased.

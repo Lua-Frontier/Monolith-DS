@@ -19,6 +19,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared.Fluids; // LuaM
+using Content.Shared.Hands.EntitySystems; // LuaM
 
 namespace Content.Server.Chemistry.EntitySystems
 {
@@ -39,6 +41,8 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private StorageSystem _storageSystem = default!;
         [Dependency] private LabelSystem _labelSystem = default!;
         [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+        [Dependency] private SharedHandsSystem _hands = default!; // LuaM
+        [Dependency] private IPrototypeManager _prototypeManager = default!; // LuaM
 
         private static readonly EntProtoId PillPrototypeId = "Pill";
 
@@ -55,6 +59,7 @@ namespace Content.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterSetModeMessage>(OnSetModeMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterSortingTypeCycleMessage>(OnCycleSortingTypeMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterToggleFavoriteMessage>(OnToggleFavoriteMessage); // LuaM
+            SubscribeLocalEvent<ChemMasterComponent, ChemMasterDrainHeldMessage>(OnDrainHeldMessage); // LuaM
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterSetPillTypeMessage>(OnSetPillTypeMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterReagentAmountButtonMessage>(OnReagentButtonMessage);
             SubscribeLocalEvent<ChemMasterComponent, ChemMasterCreatePillsMessage>(OnCreatePillsMessage);
@@ -131,6 +136,38 @@ namespace Content.Server.Chemistry.EntitySystems
         private static void ForgetUsedUpFavorites(ChemMasterComponent chemMaster, Solution buffer)
         {
             chemMaster.FavoriteReagents.RemoveAll(reagent => !buffer.ContainsReagent(reagent));
+        }
+        // LuaM-end
+
+        // LuaM-start: pour the jug or beaker in hand into the buffer, same as dragging it onto the machine
+        private void OnDrainHeldMessage(Entity<ChemMasterComponent> chemMaster, ref ChemMasterDrainHeldMessage message)
+        {
+            var user = message.Actor;
+            if (_hands.GetActiveItem(user) is not { } held
+                || !TryComp<RefillableSolutionComponent>(held, out var refillable)
+                || refillable.PreventTransferOut
+                || !_solutionContainerSystem.TryGetSolution(held, refillable.Solution, out var heldSoln, out var heldSolution))
+            {
+                _popupSystem.PopupCursor(Loc.GetString("chem-master-window-drain-no-container"), user);
+                return;
+            }
+
+            if (heldSolution.Volume == FixedPoint2.Zero)
+            {
+                _popupSystem.PopupCursor(Loc.GetString("chem-master-window-drain-empty", ("container", held)), user);
+                return;
+            }
+
+            if (!_solutionContainerSystem.TryGetSolution(chemMaster.Owner, SharedChemMaster.BufferSolutionName, out _, out var bufferSolution))
+                return;
+
+            var poured = _solutionContainerSystem.SplitSolution(heldSoln.Value, heldSolution.Volume);
+            _adminLogger.Add(LogType.Action, LogImpact.Low,
+                $"{ToPrettyString(user):user} drained {ToPrettyString(held):container} into {ToPrettyString(chemMaster):chemMaster} {SharedSolutionContainerSystem.ToPrettyString(poured)}");
+            bufferSolution.AddSolution(poured, _prototypeManager);
+
+            _audioSystem.PlayPvs(AbsorbentComponent.DefaultTransferSound, chemMaster);
+            UpdateUiState(chemMaster);
         }
         // LuaM-end
 

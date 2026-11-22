@@ -6607,15 +6607,13 @@ entities:
     - type: Transform
       pos: 5.5,-11.5
       parent: 1
-- proto: SMESAdvanced
+- proto: SMESIndustrial
   entities:
   - uid: 824
     components:
     - type: Transform
       pos: -3.5,-3.5
       parent: 1
-- proto: SMESBasic
-  entities:
   - uid: 825
     components:
     - type: Transform

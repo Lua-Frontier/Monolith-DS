@@ -1,0 +1,8 @@
+# Vanguard ships start hidden the way the imperial IFF console hides them: the label is gone at any range.
+- type: vessel
+  id: BaseVesselVanguard
+  abstract: true
+  parent: BaseVesselIFFDisabled
+  addComponents:
+  - type: IFF
+    flags: [IsPlayerShuttle, HideLabel, HideLabelAlways]

@@ -4034,8 +4034,6 @@ entities:
       deviceLists:
       - 47
       - 51
-      configurators:
-      - invalid
   - uid: 445
     components:
     - type: Transform
@@ -5279,8 +5277,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 50
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0335FCFF'
   - uid: 600
@@ -5292,8 +5288,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 50
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0335FCFF'
   - uid: 601
@@ -5496,8 +5490,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 50
-      configurators:
-      - invalid
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor

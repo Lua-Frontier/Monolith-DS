@@ -11,4 +11,12 @@ public abstract partial class SharedPowerChargeComponent : Component
     [DataField]
     public LocId WindowTitle { get; set; } = string.Empty;
 
+    // Lua start
+    /// <summary>
+    /// Show an action button in the UI that spends the charge.
+    /// </summary>
+    [DataField]
+    public bool ActionUI { get; set; }
+    // Lua end
+
 }

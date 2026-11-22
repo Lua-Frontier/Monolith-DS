@@ -261,6 +261,7 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: FireControlConsole
+  - type: ShuttleConsoleLock # LuaM: locked and unlocked together with the ship, like the shuttle console
   # - type: ShipNpcTarget # Commented by LuaM
   #   needPower: true
   - type: TargetSeekingTarget

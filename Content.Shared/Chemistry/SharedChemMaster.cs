@@ -119,6 +119,12 @@ namespace Content.Shared.Chemistry
     {
         public readonly ReagentId ReagentId = reagentId;
     }
+
+    /// <summary>
+    /// Pours everything from the container in the user's active hand into the buffer.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterDrainHeldMessage : BoundUserInterfaceMessage;
     // LuaM-end
 
 

@@ -11,6 +11,7 @@
   - PrybarProsthetics
   - BionicLegs
   - DermalArmor
+  - ThermalEyeModules
   speciesBlacklist:
   - IPC
   whitelist:
@@ -47,3 +48,20 @@
   components:
   - type: TraitOrganForEachPart
     organ: OrganArmMantisBladePlasteel
+
+- type: trait
+  id: ThermalEyeModules
+  name: trait-luam-thermal-eye-modules-name
+  description: trait-luam-thermal-eye-modules-desc
+  category: Physical
+  cost: 4
+  mutuallyExclusiveTraits:
+  - ChromeIntolerance
+  speciesBlacklist: # innate thermal vision
+  - Vulpkanin
+  - Protogen
+  components:
+  - type: TraitOrganForEachPart
+    organ: ThermalCyberneticEyesBlackMarket
+    partType: Head
+    replace: true

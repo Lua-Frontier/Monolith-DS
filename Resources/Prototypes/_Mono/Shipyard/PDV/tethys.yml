@@ -1,6 +1,6 @@
 - type: vessel
   id: Tethys
-  parent: BaseVesselIFFDisabled
+  parent: BaseVesselVanguard # LuaM: BaseVesselIFFDisabled > BaseVesselVanguard
   name: PDV Tethys
   description: A stealthy survelliance and early-warning ship for monitoring. Stealth thrusters aren't very good for fighting though, so be careful.
   locDescription: vessel-tethys-desc # LuaM

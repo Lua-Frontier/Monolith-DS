@@ -20,3 +20,8 @@ power-charge-window-power-label = { $draw } / { $max } W
 
 power-charge-window-eta-none = N/A
 power-charge-window-eta-value = { TOSTRING($left, "m\\:ss") }
+
+## UI action button
+
+power-charge-window-action = Activate:
+power-charge-window-power-action = Activate

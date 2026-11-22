@@ -4,3 +4,5 @@ trait-luam-chrome-loyalty-name = Лояльность к хрому
 trait-luam-chrome-loyalty-desc = Вы легко уживаетесь с кибернетикой. Человечность повышена на 2.
 trait-luam-plasteel-mantis-blades-name = Пласталевые клинки богомола
 trait-luam-plasteel-mantis-blades-desc = Вы начинаете смену с пласталевым клинком богомола в каждой руке. Стоят 0.5 человечности за руку.
+trait-luam-thermal-eye-modules-name = Термальные модули глаз
+trait-luam-thermal-eye-modules-desc = Украденный у ТСФа имплант термальных глаз и проданный на черном рынке. Даёт способность термального зрения. Стоит 1 человечность.

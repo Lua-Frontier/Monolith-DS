@@ -5190,8 +5190,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1271
-      configurators:
-      - invalid
   - uid: 1152
     components:
     - type: Transform
@@ -5200,8 +5198,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1271
-      configurators:
-      - invalid
   - uid: 1410
     components:
     - type: Transform
@@ -5210,8 +5206,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1271
-      configurators:
-      - invalid
 - proto: FirelockGlass
   entities:
   - uid: 1603
@@ -6688,8 +6682,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1271
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 803
@@ -6742,8 +6734,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1271
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 810
@@ -6816,8 +6806,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1271
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasVentScrubber
@@ -6830,8 +6818,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1271
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#FF0040FF'
   - uid: 820
@@ -6842,8 +6828,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1271
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#FF0040FF'
   - uid: 821
@@ -6960,8 +6944,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1271
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#FF0040FF'
 - proto: GravityGeneratorMini

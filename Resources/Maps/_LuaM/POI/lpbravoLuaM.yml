@@ -35648,7 +35648,7 @@ entities:
     - type: Transform
       parent: 1
       pos: -2.5,-3.5
-- proto: SMESAdvancedEmpty
+- proto: SMESIndustrial
   entities:
   - uid: 972
     components:
@@ -35670,15 +35670,11 @@ entities:
     - type: Transform
       parent: 1
       pos: 45.5,-3.5
-- proto: SMESBasic
-  entities:
   - uid: 1869
     components:
     - type: Transform
       parent: 1
       pos: -1.5,-9.5
-- proto: SMESBasicEmpty
-  entities:
   - uid: 1167
     components:
     - type: Transform

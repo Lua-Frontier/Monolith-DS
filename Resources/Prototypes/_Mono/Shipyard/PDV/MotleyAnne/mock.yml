@@ -7,7 +7,7 @@
 
 - type: vessel
   id: Mock
-  parent: BaseVessel
+  parent: BaseVesselVanguard # LuaM: BaseVessel > BaseVesselVanguard, label hidden like on the Motley Anne
   name: IED Brawler Drone 'Mock'
   description: A lightly armored fighter equipped with 2 57x460mm autocannons for harassing targets and taking down enemy fighters.
   locDescription: vessel-mock-desc # LuaM

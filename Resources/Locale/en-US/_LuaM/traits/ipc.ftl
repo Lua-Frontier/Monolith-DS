@@ -12,3 +12,14 @@ trait-luam-ipc-ancient-servos-name = Ancient Servos
 trait-luam-ipc-ancient-servos-desc = Your servos are long outdated. Your movement speed is 10% lower.
 
 unstable-wiring-short = The wiring sparks and shorts out!
+trait-luam-ipc-flimsy-bolts-name = Flimsy Bolts
+trait-luam-ipc-flimsy-bolts-desc = Your limbs are held on by cheap fasteners. They take half as much damage before they can be torn off, even while they still work.
+trait-luam-ipc-poor-thermal-insulation-name = Poor Thermal Insulation
+trait-luam-ipc-poor-thermal-insulation-desc = Your chassis barely holds heat, so in the cold your systems burn power to keep warm. While your chassis is below 0 °C, your charge drains twice as fast, whatever battery you put in.
+trait-luam-ipc-fragile-structure-name = Fragile Structure
+trait-luam-ipc-fragile-structure-desc = Your chassis is not sealed. Too low or too high pressure hurts you like it hurts organics, so you will not last long in space without a suit.
+trait-luam-ipc-auto-reboot-name = Automatic Reboot
+trait-luam-ipc-auto-reboot-desc = After a forced shutdown, such as from overheating or damage, you try to switch yourself back on every 60 seconds. It fails while you are still overheated, damaged past shutdown or out of charge.
+auto-reboot-failed = {$target} tries to reboot, but fails to switch on.
+trait-luam-ipc-conductive-shell-name = Conductive Shell
+trait-luam-ipc-conductive-shell-desc = Your punches send an electric discharge through the target: 7 shock damage and stamina loss. Punching a corpse works like a defibrillator, at most once every 5 seconds. Every hit costs 5% of your battery charge, no charge means no discharge.

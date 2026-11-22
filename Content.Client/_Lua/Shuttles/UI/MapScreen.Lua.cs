@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Client._Lua.UserInterface;
 using Content.Client.Stylesheets;
+using Content.Shared._LuaM.Shuttles; // LuaM
 using Content.Shared._NF.Shipyard.Components;
 using Content.Shared.Shuttles.UI.MapObjects;
 using Robust.Client.Graphics;
@@ -165,12 +166,14 @@ public sealed partial class MapScreen
 
     private MapObjectSortKey GetMapObjectSortKey(IMapObject mapObj)
     {
+        // LuaM: the sector station and points of interest right under our own ship, then the rest
         var group = mapObj switch
         {
             GridMapObject grid when grid.Entity == _shuttleEntity => 0,
-            GridMapObject grid when IsMaskedGrid(grid) => 3, // LuaM: unknown signatures go last
-            GridMapObject grid when IsStationMapObject(grid) => 1,
-            GridMapObject => 2,
+            GridMapObject grid when IsMaskedGrid(grid) => 4, // LuaM: unknown signatures go last
+            GridMapObject grid when _entManager.HasComponent<SectorLandmarkComponent>(grid.Entity) => 1, // LuaM
+            GridMapObject grid when IsStationMapObject(grid) => 2,
+            GridMapObject => 3,
             ShuttleBeaconObject => 5,
             ShuttleExclusionObject => 6,
             _ => 7,

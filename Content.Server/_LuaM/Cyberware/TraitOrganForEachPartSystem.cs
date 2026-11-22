@@ -22,7 +22,24 @@ public sealed partial class TraitOrganForEachPartSystem : EntitySystem
         {
             var organ = Spawn(ent.Comp.Organ, Transform(ent).Coordinates);
             if (!TryComp<OrganComponent>(organ, out var organComp)
-                || !_body.InsertOrgan(partId, organ, organComp.SlotId, partComp, organComp))
+                || !_body.CanInsertOrgan(partId, organComp.SlotId, partComp))
+            {
+                Del(organ);
+                continue;
+            }
+
+            if (ent.Comp.Replace)
+            {
+                foreach (var (oldId, oldComp) in _body.GetPartOrgans(partId, partComp).ToList())
+                {
+                    if (oldComp.SlotId != organComp.SlotId || !_body.RemoveOrgan(oldId, oldComp))
+                        continue;
+
+                    QueueDel(oldId);
+                }
+            }
+
+            if (!_body.InsertOrgan(partId, organ, organComp.SlotId, partComp, organComp))
                 Del(organ);
         }
 

@@ -91,6 +91,7 @@
   description: trait-luam-ipc-faulty-hearing-sensors-desc
   category: Physical
   cost: -2
+  traitGear: ClothingNeckHearingSensor
   speciesWhitelist:
   - IPC
   components:
@@ -107,3 +108,70 @@
   - IPC
   components:
   - type: SharpEye
+
+- type: trait
+  id: IpcFlimsyBolts
+  name: trait-luam-ipc-flimsy-bolts-name
+  description: trait-luam-ipc-flimsy-bolts-desc
+  category: Physical
+  cost: -4
+  mutuallyExclusiveTraits:
+  - LuaMReinforcedEndoskeleton
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: SeverIntegrityModifier
+    multiplier: 0.5
+
+- type: trait
+  id: IpcPoorThermalInsulation
+  name: trait-luam-ipc-poor-thermal-insulation-name
+  description: trait-luam-ipc-poor-thermal-insulation-desc
+  category: Physical
+  cost: -2
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: SiliconColdDrain
+
+- type: trait
+  id: IpcFragileStructure
+  name: trait-luam-ipc-fragile-structure-name
+  description: trait-luam-ipc-fragile-structure-desc
+  category: Physical
+  cost: -2
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.5
+
+- type: trait
+  id: IpcAutoReboot
+  name: trait-luam-ipc-auto-reboot-name
+  description: trait-luam-ipc-auto-reboot-desc
+  category: Physical
+  cost: 6
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: AutoReboot
+
+- type: trait
+  id: IpcConductiveShell
+  name: trait-luam-ipc-conductive-shell-name
+  description: trait-luam-ipc-conductive-shell-desc
+  category: Physical
+  cost: 3
+  speciesWhitelist:
+  - IPC
+  components:
+  - type: ConductiveShell
+    damage:
+      types:
+        Shock: 7
+    reviveHeal: # same as a defibrillator
+      types:
+        Asphyxiation: -40

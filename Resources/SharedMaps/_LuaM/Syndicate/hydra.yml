@@ -4066,7 +4066,7 @@ entities:
         525:
         - - Status
           - Toggle
-- proto: SMESAdvanced
+- proto: SMESIndustrial
   entities:
   - uid: 558
     components:

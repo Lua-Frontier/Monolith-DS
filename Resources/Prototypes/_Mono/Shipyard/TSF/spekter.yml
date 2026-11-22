@@ -1,7 +1,7 @@
 #kasature90 (github)/_starch_ (discord)
 - type: vessel
   id: Spekter
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel # LuaM: BaseVesselIFFDisabled > BaseVessel, no IFF console aboard
   name: TSF-SKR Spekter
   description: Nuclear-powered guided-missile corvette for killing anything smaller than a full-on battlecruiser. Equipped with 6 ASM-220 Trident VLS racks and light point-defense.
   locDescription: vessel-spekter-desc # LuaM
