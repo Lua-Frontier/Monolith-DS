@@ -1,0 +1,95 @@
+- type: entity
+  parent: MonkeyCube
+  id: GoldfishCube
+  name: space goldfish cube
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: cube
+    color: "#ff9a3c"
+  - type: Rehydratable
+    possibleSpawns:
+    - MobCarpGoldfish
+
+- type: entity
+  parent: MonkeyCube
+  id: SquackroachCube
+  name: squackroach cube
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: cube
+    color: "#b48cd8"
+  - type: Rehydratable
+    possibleSpawns:
+    - MobSquackroach
+
+- type: entity
+  parent: MonkeyCubeWrapped
+  id: GoldfishCubeWrapped
+  name: space goldfish cube
+  suffix: Wrapped
+  description: Unwrap this to get a space goldfish cube.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: GoldfishCube
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: wrapper
+    color: "#ff9a3c"
+
+- type: entity
+  parent: MonkeyCubeWrapped
+  id: SquackroachCubeWrapped
+  name: squackroach cube
+  suffix: Wrapped
+  description: Unwrap this to get a squackroach cube.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: SquackroachCube
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: wrapper
+    color: "#b48cd8"
+
+- type: entity
+  parent: MonkeyCubeBox
+  id: GoldfishCubeBox
+  name: space goldfish cube box
+  description: A box of space goldfish cubes. Just add water!
+  components:
+  - type: StorageFill
+    contents:
+    - id: GoldfishCubeWrapped
+      amount: 8
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: box
+    color: "#ff9a3c"
+  - type: StaticPrice
+    price: 20
+    vendPrice: 2000
+
+- type: entity
+  parent: MonkeyCubeBox
+  id: SquackroachCubeBox
+  name: squackroach cube box
+  description: A box of squackroach cubes. Just add water!
+  components:
+  - type: StorageFill
+    contents:
+    - id: SquackroachCubeWrapped
+      amount: 8
+  - type: Sprite
+    sprite: Objects/Misc/monkeycube.rsi
+    state: box
+    color: "#b48cd8"
+  - type: StaticPrice
+    price: 20
+    vendPrice: 2000

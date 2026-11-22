@@ -277,6 +277,8 @@
         prob: 0.3
       - id: MobMoproach
         prob: 0.15
+      - id: MobSquackroach
+        prob: 0.15
 # LuaM-end.
 
 - type: entity

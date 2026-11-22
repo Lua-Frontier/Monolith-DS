@@ -1,0 +1,19 @@
+- type: cargoProduct
+  id: LivestockGoldfishCubeBox
+  icon:
+    sprite: _LuaM/Mobs/Aliens/Carps/goldfish.rsi
+    state: alive
+  product: GoldfishCubeBox
+  cost: 3000
+  category: cargoproduct-category-name-livestock
+  group: market
+
+- type: cargoProduct
+  id: LivestockSquackroachCubeBox
+  icon:
+    sprite: _LuaM/Mobs/Animals/squackroach.rsi
+    state: icon
+  product: SquackroachCubeBox
+  cost: 3000
+  category: cargoproduct-category-name-livestock
+  group: market
