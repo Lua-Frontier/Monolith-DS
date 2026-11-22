@@ -1,0 +1,25 @@
+- type: latheRecipe
+  id: ModsuitStorageModuleAdvanced
+  result: ModsuitStorageModuleAdvanced
+  completetime: 5
+  materials:
+    Steel: 1000
+    Plastic: 500
+    Silver: 250
+
+- type: latheRecipe
+  id: ModsuitStorageModuleExperimental
+  result: ModsuitStorageModuleExperimental
+  completetime: 5
+  materials:
+    Steel: 1500
+    Plastic: 750
+    Silver: 500
+    Gold: 250
+    Plasma: 500
+
+# same cost as the bags of holding
+- type: latheRecipe
+  parent: ClothingBackpackHolding
+  id: ModsuitStorageModuleBluespace
+  result: ModsuitStorageModuleBluespace

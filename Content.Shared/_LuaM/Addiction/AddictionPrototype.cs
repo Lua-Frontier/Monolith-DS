@@ -75,6 +75,17 @@ public sealed partial class AddictionPrototype : IPrototype
     public TimeSpan RecoveryTime = TimeSpan.FromMinutes(6);
 
     /// <summary>
+    /// How much of the reagents taken in once addicted turns the addiction heavy: like the dependency from the trait,
+    /// only <see cref="HeavyTreatmentAmount"/> of a treatment reagent cures it and sitting out withdrawal does not.
+    /// Null for an addiction that never gets heavy.
+    /// </summary>
+    [DataField]
+    public FixedPoint2? HeavyThreshold = 400;
+
+    [DataField]
+    public FixedPoint2 HeavyTreatmentAmount = 150;
+
+    /// <summary>
     /// What withdrawal from this addiction does. The usual shaking, falling and groaning when not set.
     /// </summary>
     [DataField]

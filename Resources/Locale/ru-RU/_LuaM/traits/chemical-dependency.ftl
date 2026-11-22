@@ -13,6 +13,7 @@ health-analyzer-window-entity-dependency-text = Зависимость:
 addiction-warning = Вам всё труднее остановиться: { $addiction } затягивает.
 addiction-acquired = Кажется, вы подсели. Зависимость: { $addiction }.
 addiction-cured = Тяга отпускает. Вы избавились от зависимости: { $addiction }.
+addiction-heavy = Вы слишком глубоко увязли. Зависимость стала тяжёлой: { $addiction }. Перетерпеть её уже не выйдет, нужен полный курс лечения.
 addiction-name-alcohol = алкоголь
 addiction-name-nicotine = никотин
 addiction-name-desoxyephedrine = дезоксиэфедрин
@@ -22,6 +23,7 @@ addiction-name-space-drugs = космический мираж
 addiction-name-fentanyl = фентанил
 addiction-name-omnizine = омнизин
 health-analyzer-window-addiction-recovery = { $addiction } (лечение { $percent }%)
+health-analyzer-window-addiction-heavy = { $addiction }, тяжёлая
 reagent-effect-guidebook-treat-chemical-dependency =
     { $chance ->
         [1] Снимает

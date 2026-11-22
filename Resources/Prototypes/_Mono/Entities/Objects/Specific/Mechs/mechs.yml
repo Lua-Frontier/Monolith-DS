@@ -107,7 +107,7 @@
     baseState: tsfgygax
     openState: tsfgygax-open
     brokenState: tsfgygax-broken
-    maxIntegrity: 1500 # LuaM
+    maxIntegrity: 1800 # LuaM: 1500 > 1800, as the base Gygax
   - type: RadarBlip # Mono
     radarColor: "#028EDE"
     scale: 1.5
@@ -135,7 +135,7 @@
     baseState: pdvgygax
     openState: pdvgygax-open
     brokenState: pdvgygax-broken
-    maxIntegrity: 1500  # LuaM
+    maxIntegrity: 1800  # LuaM: 1500 > 1800, as the base Gygax
   - type: RadarBlip # Mono
     radarColor: "#ffde21"
     scale: 1.5
@@ -163,7 +163,7 @@
     baseState: tsfdurand
     openState: tsfdurand-open
     brokenState: tsfdurand-broken
-    maxIntegrity: 2400  # LuaM
+    maxIntegrity: 1950  # LuaM: 2400 > 1950, as the base Durand
   - type: RadarBlip # Mono
     radarColor: "#028EDE"
     scale: 1.5
@@ -191,7 +191,7 @@
     baseState: pdvdurand
     openState: pdvdurand-open
     brokenState: pdvdurand-broken
-    maxIntegrity: 2400  # LuaM
+    maxIntegrity: 1950  # LuaM: 2400 > 1950, as the base Durand
   - type: RadarBlip # Mono
     radarColor: "#ffde21"
     scale: 1.5
@@ -242,7 +242,7 @@
     criticalPowerStateSpeedPenalty: 0.75
     maxEquipmentAmount: 3
     airtight: true
-    maxIntegrity: 9250  # LuaM 1750 > 9250
+    maxIntegrity: 6937  # LuaM 1750 > 9250 > 6937
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -259,7 +259,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 9270 # LuaM 5000 > 9270
+        damage: 6957 # LuaM 5000 > 9270 > 6957
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -316,15 +316,6 @@
           Piercing: 35
           Heat: 20
           Structural: 52
-  - type: PlateletFactories  # LuaM
-    intervalSeconds: 0.1
-    damagePerInterval:
-      types:
-          Blunt: -2.3
-          Slash: -2.3
-          Piercing: -2.3
-          Heat: -2.3
-          Structural: -2.4
 
 
 - type: entity
@@ -370,15 +361,6 @@
           Piercing: 35
           Heat: 20
           Structural: 72
-  - type: PlateletFactories # LuaM
-    intervalSeconds: 0.1
-    damagePerInterval:
-      types:
-          Blunt: -2.3
-          Slash: -2.3
-          Piercing: -2.3
-          Heat: -2.3
-          Structural: -2.4
 
 #PDV Broadsword
 - type: entity
@@ -406,15 +388,6 @@
           Piercing: 35
           Heat: 20
           Structural: 72
-  - type: PlateletFactories # LuaM
-    intervalSeconds: 0.1
-    damagePerInterval:
-      types:
-          Blunt: -2.3
-          Slash: -2.3
-          Piercing: -2.3
-          Heat: -2.3
-          Structural: -2.4
 
 #Halberd
 
@@ -432,7 +405,7 @@
     criticalPowerStateSpeedPenalty: 0.35 # LuaM 0.85 > 0.35
     maxEquipmentAmount: 3
     airtight: true
-    maxIntegrity: 12750 # LuaM 2150 > 12750
+    maxIntegrity: 9562 # LuaM 2150 > 12750 > 9562
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -449,7 +422,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 12770  # LuaM 3000 > 12770
+        damage: 9582  # LuaM 3000 > 12770 > 9582
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -490,15 +463,6 @@
           Piercing: 45
           Heat: 30
           Structural: 92
-  - type: PlateletFactories  # LuaM
-    intervalSeconds: 0.1
-    damagePerInterval:
-      types:
-          Blunt: -2.3
-          Slash: -2.3
-          Piercing: -2.3
-          Heat: -2.3
-          Structural: -2.4
 
 #TSF Halberd
 - type: entity
@@ -526,15 +490,6 @@
           Piercing: 35
           Heat: 20
           Structural: 72
-  - type: PlateletFactories # LuaM
-    intervalSeconds: 0.1
-    damagePerInterval:
-      types:
-          Blunt: -3.3
-          Slash: -3.3
-          Piercing: -3.3
-          Heat: -3.3
-          Structural: -3.4
 #PDV Halberd
 - type: entity
   id: AFInterceptorMPDV
@@ -561,15 +516,6 @@
           Piercing: 35
           Heat: 20
           Structural: 72
-  - type: PlateletFactories # LuaM
-    intervalSeconds: 0.1
-    damagePerInterval:
-      types:
-          Blunt: -3.3
-          Slash: -3.3
-          Piercing: -3.3
-          Heat: -3.3
-          Structural: -3.4
 #4x4 mechas
 - type: entity
   id: AFFlail

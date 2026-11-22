@@ -1,4 +1,5 @@
 using Content.Server.Administration.Logs;
+using Content.Shared.Clothing.Components; // LuaM
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -63,7 +64,8 @@ public sealed partial class LubeSystem : EntitySystem
 
     private bool TryLube(Entity<LubeComponent> entity, EntityUid target, EntityUid actor)
     {
-        if (HasComp<LubedComponent>(target) || !HasComp<ItemComponent>(target))
+        // LuaM: attached parts (modsuit gloves, boots, hardsuit helmets) would slip out of their suit when retracted
+        if (HasComp<LubedComponent>(target) || !HasComp<ItemComponent>(target) || HasComp<AttachedClothingComponent>(target))
         {
             _popup.PopupEntity(Loc.GetString("lube-failure", ("target", Identity.Entity(target, EntityManager))), actor, actor, PopupType.Medium);
             return false;

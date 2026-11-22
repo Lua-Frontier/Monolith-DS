@@ -12,9 +12,6 @@
       gloves: ClothingModsuitGauntletsUSSPVaryag
       outerClothing: ClothingModsuitChestplateUSSPVaryag
       shoes: ClothingModsuitBootsUSSPVaryag
-  - type: Storage # Extra space - LuaM
-    grid:
-    - 0,0,8,6
 
 - type: entity
   parent: ClothingModsuitUSSPVaryag
@@ -44,9 +41,6 @@
       gloves: ClothingModsuitGauntletsUSSPZastavnik
       outerClothing: ClothingModsuitChestplateUSSPZastavnik
       shoes: ClothingModsuitBootsUSSPZastavnik
-  - type: Storage # Extra space - LuaM
-    grid:
-    - 0,0,8,6
 
 - type: entity
   parent: ClothingModsuitUSSPZastavnik
@@ -70,16 +64,23 @@
   components:
   - type: Sprite
     sprite: _Mono/Clothing/Back/Modsuits/rogue.rsi
-  - type: Storage # Extra space - Mono
-    grid:
-    - 0,0,12,6 # LuaM: 0,0,7,3 > 0,0,12,6
-    maxItemSize: Huge
+  # LuaM: removed extra storage space, expanded by storage modules
   - type: ToggleableClothing
     clothingPrototypes:
       head: ClothingModsuitHelmetRogue
       gloves: ClothingModsuitGauntletsRogue
       outerClothing: ClothingModsuitChestplateRogue
       shoes: ClothingModsuitBootsRogue
+  # LuaM-start: comes with an advanced storage module
+  - type: ModsuitStorageUpgrade
+    moduleSlot:
+      name: modsuit-storage-module-slot-name
+      startingItem: ModsuitStorageModuleAdvanced
+      swap: false
+      whitelist:
+        components:
+        - ModsuitStorageModule
+  # LuaM-end
   - type: PowerCellDraw
     drawRate: 0.2 # Sealed draw rate
     useRate: 0.5 # Draw rate for sealing
@@ -110,10 +111,7 @@
   components:
   - type: Sprite
     sprite: _Mono/Clothing/Back/Modsuits/tsfmc-volta.rsi
-  - type: Storage # Extra space - Mono
-    grid:
-    - 0,0,12,6 # LuaM: 0,0,7,3 > 0,0,12,6
-    maxItemSize: Huge
+  # LuaM: removed extra storage space, expanded by storage modules
   - type: ToggleableClothing
     clothingPrototypes:
       head: ClothingModsuitHelmetVolta
@@ -155,10 +153,7 @@
   components:
   - type: Sprite
     sprite: _Mono/Clothing/Back/Modsuits/mercenary.rsi
-  - type: Storage # Extra space - Mono
-    grid:
-    - 0,0,8,4 # LuaM: 0,0,7,3 > 0,0,8,4
-    maxItemSize: Huge
+  # LuaM: removed extra storage space, expanded by storage modules
   - type: ToggleableClothing
     clothingPrototypes:
       head: ClothingModsuitHelmetMercenary

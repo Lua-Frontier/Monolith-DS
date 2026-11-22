@@ -212,6 +212,9 @@ namespace Content.Client.HealthAnalyzer.UI
                         continue;
 
                     var addictionName = Loc.GetString(addiction.Name);
+                    if (msg.HeavyAddictions?.Contains(addictionId) == true)
+                        addictionName = Loc.GetString("health-analyzer-window-addiction-heavy", ("addiction", addictionName));
+
                     dependencies.Add(recovery > 0f
                         ? Loc.GetString("health-analyzer-window-addiction-recovery", ("addiction", addictionName), ("percent", (int) (recovery * 100)))
                         : addictionName);

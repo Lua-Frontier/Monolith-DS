@@ -432,6 +432,7 @@
     - CyberLiver
     - CyberOrgans
     - UpgradedCyberOrgans
+    - ModsuitStorageModules
     # LuaM-end.
   - type: MaterialStorage
     whitelist:

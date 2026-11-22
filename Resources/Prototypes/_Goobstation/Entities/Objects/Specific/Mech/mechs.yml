@@ -674,12 +674,12 @@
   - type: PlateletFactories
     intervalSeconds: 0.1
     damagePerInterval:
-      types:
-          Blunt: -2
-          Slash: -2
-          Piercing: -2
-          Heat: -2
-          Structural: -3
+      types: # LuaM: 110 > 10 per second in total
+          Blunt: -0.2 # LuaM: -2 > -0.2
+          Slash: -0.2 # LuaM: -2 > -0.2
+          Piercing: -0.2 # LuaM: -2 > -0.2
+          Heat: -0.2 # LuaM: -2 > -0.2
+          Structural: -0.2 # LuaM: -3 > -0.2
 
 
 - type: entity

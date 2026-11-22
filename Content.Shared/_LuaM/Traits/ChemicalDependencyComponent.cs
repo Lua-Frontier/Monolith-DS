@@ -166,6 +166,18 @@ public sealed class ChemicalDependency
     public float Recovery;
 
     /// <summary>
+    /// How much of the chemicals was taken in since the addiction was picked up, until it turns heavy.
+    /// </summary>
+    [ViewVariables]
+    public FixedPoint2 TakenWhileAddicted;
+
+    /// <summary>
+    /// The addiction got heavy from taking in too much: it is cured like the dependency from the trait.
+    /// </summary>
+    [ViewVariables]
+    public bool Heavy;
+
+    /// <summary>
     /// The dependency the trait gives: only a treatment reagent cures it, sitting out withdrawal does not.
     /// </summary>
     public bool Innate => Addiction == null;

@@ -126,6 +126,8 @@ public sealed partial class ChemicalDependencySystem : EntitySystem
                 relapsed = true;
             }
 
+            CountTowardsHeavy(ent, dependency, args.Amount);
+
             dependency.Consumed += args.Amount;
             if (dependency.Consumed < dependency.DoseAmount)
                 continue;
@@ -150,6 +152,34 @@ public sealed partial class ChemicalDependencySystem : EntitySystem
             ent.Comp.NextRelapsePopup = _timing.CurTime + TimeSpan.FromSeconds(30);
             _popup.PopupEntity(Loc.GetString("chemical-dependency-relapse"), ent, ent, PopupType.SmallCaution);
         }
+    }
+
+    /// <summary>
+    /// Turns the addiction heavy once the body took in too much of it while addicted.
+    /// </summary>
+    private void CountTowardsHeavy(EntityUid uid, ChemicalDependency dependency, FixedPoint2 amount)
+    {
+        if (dependency.Heavy
+            || dependency.Addiction is not { } addictionId
+            || !_proto.TryIndex(addictionId, out var addiction)
+            || addiction.HeavyThreshold is not { } threshold)
+            return;
+
+        dependency.TakenWhileAddicted += amount;
+        if (dependency.TakenWhileAddicted <= threshold)
+            return;
+
+        dependency.Heavy = true;
+
+        // the treatment already taken keeps its units, they are just a smaller share of the longer course
+        if (addiction.HeavyTreatmentAmount > 0)
+        {
+            dependency.Recovery *= dependency.TreatmentAmount.Float() / addiction.HeavyTreatmentAmount.Float();
+            dependency.TreatmentAmount = addiction.HeavyTreatmentAmount;
+        }
+
+        _popup.PopupEntity(Loc.GetString("addiction-heavy", ("addiction", Loc.GetString(addiction.Name))),
+            uid, uid, PopupType.LargeCaution);
     }
 
     /// <summary>
@@ -328,8 +358,10 @@ public sealed partial class ChemicalDependencySystem : EntitySystem
 
                 dependency.WithdrawalElapsed += TimeSpan.FromSeconds(frameTime);
 
-                // sitting out withdrawal without a dose slowly gets the body over an addiction
-                if (dependency.Addiction is { } addictionId && _proto.TryIndex(addictionId, out var addiction))
+                // sitting out withdrawal without a dose slowly gets the body over an addiction, unless it got heavy
+                if (!dependency.Heavy
+                    && dependency.Addiction is { } addictionId
+                    && _proto.TryIndex(addictionId, out var addiction))
                 {
                     dependency.Recovery += frameTime / (float) addiction.RecoveryTime.TotalSeconds;
                     if (dependency.Recovery >= 1f)

@@ -1,5 +1,6 @@
 # Addictions picked up in the round: take in more than the threshold within the window and the body gets hooked.
 # Sit out recoveryTime of withdrawal over its two-minute bouts or take treatmentAmount of naltrexone to get over it.
+# Take in more than heavyThreshold once addicted and it turns heavy: only heavyTreatmentAmount of naltrexone cures it.
 
 - type: addiction
   id: Alcohol
@@ -8,6 +9,8 @@
   - Ethanol
   reagentParents:
   - BaseAlcohol
+  threshold: 100
+  heavyThreshold: 300
 
 - type: addiction
   id: Nicotine
@@ -16,6 +19,7 @@
   - Nicotine
   threshold: 25 # three cigarettes in a row, with room for ones not smoked to the end
   doseAmount: 5
+  heavyThreshold: 150 # about fifteen cigarettes
   withdrawal: # no shaking or falling, just a cough that will not stop
     jitter: false
     knockdownChance: 0
@@ -59,6 +63,7 @@
   threshold: 9
   doseAmount: 5
   treatmentAmount: 150 # as much as the dependency from the trait
+  heavyThreshold: null # already as hard to cure as a heavy addiction
   recoveryTime: 10m # five bouts of withdrawal
 
 - type: addiction

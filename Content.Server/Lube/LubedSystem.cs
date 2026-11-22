@@ -1,3 +1,4 @@
+using Content.Shared.Clothing.Components; // LuaM
 using Content.Shared.IdentityManagement;
 using Content.Shared.Lube;
 using Content.Shared.NameModifier.EntitySystems;
@@ -32,7 +33,8 @@ public sealed partial class LubedSystem : EntitySystem
 
     private void OnHandPickUp(EntityUid uid, LubedComponent component, ContainerGettingInsertedAttemptEvent args)
     {
-        if (component.SlipsLeft <= 0)
+        // LuaM: attached clothing must always go back into its suit
+        if (component.SlipsLeft <= 0 || HasComp<AttachedClothingComponent>(uid))
         {
             RemComp<LubedComponent>(uid);
             _nameMod.RefreshNameModifiers(uid);

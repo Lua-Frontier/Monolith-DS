@@ -28,3 +28,10 @@
   - AutosurgeonDermalArmorRecipe
   - AutosurgeonPlateletFactoriesRecipe
   - AutosurgeonMantisBladesPlasteelRecipe
+
+- type: latheRecipePack
+  id: ModsuitStorageModules
+  recipes:
+  - ModsuitStorageModuleAdvanced
+  - ModsuitStorageModuleExperimental
+  - ModsuitStorageModuleBluespace

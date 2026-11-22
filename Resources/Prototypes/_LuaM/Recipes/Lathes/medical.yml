@@ -106,3 +106,13 @@
     Gold: 50
     Silver: 50
     Plasma: 500
+
+- type: latheRecipe
+  id: ClothingHandsGlovesSurgical
+  result: ClothingHandsGlovesSurgical
+  completetime: 2
+  materials:
+    Steel: 1500
+    Plastic: 1000
+    Silver: 500
+    Bluespace: 200

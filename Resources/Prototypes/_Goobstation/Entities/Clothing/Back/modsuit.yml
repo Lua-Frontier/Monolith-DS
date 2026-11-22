@@ -25,9 +25,12 @@
     - back
   - type: Storage # satchel
     grid:
-    - 0,0,1,3
-    - 3,0,6,3
-    - 8,0,9,3
+    # LuaM-start: duffel bag size, expanded by storage modules
+    # - 0,0,1,3
+    # - 3,0,6,3
+    # - 8,0,9,3
+    - 0,0,7,4
+    # LuaM-end
     maxItemSize: Huge
   - type: ContainerContainer
     containers:
@@ -69,6 +72,15 @@
   - type: DoAfter
   - type: SealableClothingControl
   - type: SealableClothingRequiresPower
+  # LuaM-start
+  - type: ModsuitStorageUpgrade
+    moduleSlot:
+      name: modsuit-storage-module-slot-name
+      swap: false
+      whitelist:
+        components:
+        - ModsuitStorageModule
+  # LuaM-end
   - type: SealableClothingVisuals
     spriteLayer: sealed
     clothingVisuals:
@@ -127,13 +139,6 @@
     quickEquip: false
     slots:
     - back
-  - type: Storage # LuaM extra space
-    grid:
-#    - 0,0,1,3
-#    - 3,0,6,3
-#    - 8,0,9,3
-    - 0,0,10,6
-    maxItemSize: Huge
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -207,9 +212,6 @@
   - type: Construction
     graph: Modsuit
     node: headofsecurity
-  - type: Storage #LuaM - extra Space
-    grid:
-    - 0,0,10,6
 
 - type: entity
   parent: ClothingModsuitHeadOfSecurity
@@ -246,9 +248,6 @@
   - type: Construction
     graph: Modsuit
     node: paramedic
-  - type: Storage # Extra space - LuaM
-    grid:
-    - 0,0,9,4
 
 
 - type: entity

@@ -4,7 +4,8 @@
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     SetHeight="650"
     SetWidth="620"
-    Resizable="False"> <!-- Shitmed Change -->
+    MinSize="620 500"
+    Resizable="True"> <!-- Shitmed Change --> <!-- LuaM: Resizable False > True, MinSize -->
     <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
         <PanelContainer.PanelOverride>
             <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#525252" BackgroundColor="#3d474d"/>
