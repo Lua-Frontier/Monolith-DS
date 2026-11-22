@@ -30,6 +30,9 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     // addictions picked up in the round and how far each is from a cure, from 0 to 1
     public Dictionary<string, float>? Addictions;
 
+    // addictions that got heavy
+    public HashSet<string>? HeavyAddictions;
+
     // damage of every damaged body part
     public List<Content.Shared._LuaM.Medical.HealthAnalyzerPartDamage>? PartDamage;
 

@@ -13,6 +13,7 @@ health-analyzer-window-entity-dependency-text = Dependency:
 addiction-warning = It is getting harder to stop: { $addiction } is pulling you in.
 addiction-acquired = Looks like you got hooked. Addiction: { $addiction }.
 addiction-cured = The craving lets go. You got over your addiction: { $addiction }.
+addiction-heavy = You are in too deep. Your addiction got heavy: { $addiction }. It will not pass on its own anymore, only a full course of treatment helps.
 addiction-name-alcohol = alcohol
 addiction-name-nicotine = nicotine
 addiction-name-desoxyephedrine = desoxyephedrine
@@ -22,6 +23,7 @@ addiction-name-space-drugs = space drugs
 addiction-name-fentanyl = fentanyl
 addiction-name-omnizine = omnizine
 health-analyzer-window-addiction-recovery = { $addiction } (treatment { $percent }%)
+health-analyzer-window-addiction-heavy = { $addiction }, heavy
 reagent-effect-guidebook-treat-chemical-dependency =
     { $chance ->
         [1] Holds

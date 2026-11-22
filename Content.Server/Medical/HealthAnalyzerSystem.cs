@@ -309,6 +309,11 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
                 {
                     message.Addictions ??= new();
                     message.Addictions[addiction] = entry.Recovery;
+                    if (entry.Heavy)
+                    {
+                        message.HeavyAddictions ??= new();
+                        message.HeavyAddictions.Add(addiction);
+                    }
                 }
                 else if (dependency.Reagent is { } dependencyReagent)
                 {
