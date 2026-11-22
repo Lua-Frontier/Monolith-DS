@@ -13,6 +13,8 @@
     - Human
     - Dwarf
     - IPC # LuaM
+    - Demon # LuaM: Arcana
+    - Oni # LuaM
   startingGear: ViperCommanderGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true
@@ -53,3 +55,4 @@
     back:
     - RadioHandheldNF
     - VGHandheldOverwatchConsole
+    - ShipVoucherVGKeelback # LuaM

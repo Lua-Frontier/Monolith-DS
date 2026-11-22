@@ -17,6 +17,13 @@ public sealed class PowerChargeBoundUserInterface : BoundUserInterface
         SendMessage(new SwitchChargingMachineMessage(on));
     }
 
+    // Lua start
+    public void ActionButton()
+    {
+        SendMessage(new PowerChargeActionMessage());
+    }
+    // Lua end
+
     protected override void Open()
     {
         base.Open();
@@ -25,6 +32,7 @@ public sealed class PowerChargeBoundUserInterface : BoundUserInterface
 
         _window = this.CreateWindow<PowerChargeWindow>();
         _window.UpdateWindow(this, Loc.GetString(component.WindowTitle));
+        _window.SetActionUI(component.ActionUI); // Lua
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

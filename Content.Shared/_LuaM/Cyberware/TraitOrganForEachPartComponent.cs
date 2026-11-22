@@ -15,4 +15,10 @@ public sealed partial class TraitOrganForEachPartComponent : Component
 
     [DataField]
     public BodyPartType PartType = BodyPartType.Arm;
+
+    /// <summary>
+    /// Deletes the organ already sitting in the slot, like natural eyes, so the new one can take its place.
+    /// </summary>
+    [DataField]
+    public bool Replace;
 }

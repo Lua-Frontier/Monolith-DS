@@ -33,7 +33,8 @@
   - type: ZombieImmune
   - type: DoAfter
   - type: RotationVisuals
-    horizontalRotation: 90
+    defaultRotation: -90 # LuaM: unbuckling resets to this, BaseMob's 0 left IPCs upright, head to the right like other species
+    horizontalRotation: -90 # LuaM: 90 > -90
   - type: Examiner
     # - type: Recyclable
     #   safe: false

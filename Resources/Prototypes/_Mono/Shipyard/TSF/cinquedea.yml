@@ -2,7 +2,7 @@
 #internals refit by harrow/waphun
 - type: vessel
   id: Cinquedea
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel # LuaM: BaseVesselIFFDisabled > BaseVessel, no IFF console aboard
   name: TSF-ELF Cinquedea
   description: Moderately armed and heavily armored multipurpose corvette. Armed with 6 Prometheus laser cannons and 2 L-1 Phalanxes for Point Defence. Quick and Agile, perfect for pursuing and finishing off damaged enemy vessels.
   locDescription: vessel-cinquedea-desc # LuaM

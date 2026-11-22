@@ -16,6 +16,14 @@ public sealed class SwitchChargingMachineMessage : BoundUserInterfaceMessage
     }
 }
 
+// Lua start
+/// <summary>
+///     Sent to the server to spend the machine's charge on its action.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class PowerChargeActionMessage : BoundUserInterfaceMessage;
+// Lua end
+
 [Serializable, NetSerializable]
 public sealed class PowerChargeState : BoundUserInterfaceState
 {
@@ -26,6 +34,7 @@ public sealed class PowerChargeState : BoundUserInterfaceState
     public short PowerDraw;
     public short PowerDrawMax;
     public short EtaSeconds;
+    public bool ActionUnlocked; // Lua
 
     public PowerChargeState(
         bool on,
@@ -33,7 +42,8 @@ public sealed class PowerChargeState : BoundUserInterfaceState
         PowerChargePowerStatus powerStatus,
         short powerDraw,
         short powerDrawMax,
-        short etaSeconds)
+        short etaSeconds,
+        bool actionUnlocked = false) // Lua
     {
         On = on;
         Charge = charge;
@@ -41,6 +51,7 @@ public sealed class PowerChargeState : BoundUserInterfaceState
         PowerDraw = powerDraw;
         PowerDrawMax = powerDrawMax;
         EtaSeconds = etaSeconds;
+        ActionUnlocked = actionUnlocked; // Lua
     }
 }
 

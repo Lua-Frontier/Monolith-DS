@@ -1,6 +1,6 @@
 - type: vessel
   id: Gadfly
-  parent: BaseVesselIFFDisabled
+  parent: BaseVesselVanguard # LuaM: BaseVesselIFFDisabled > BaseVesselVanguard
   name: PDV Gadfly
   description: A short-range light support craft armed with 2 40x360mm AK570 autocannons and 2 90x630mm TARNYXs.
   locDescription: vessel-gadfly-desc # LuaM

@@ -2,7 +2,7 @@
 
 - type: vessel
   id: ScorpionMSL
-  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
+  parent: BaseVesselVanguard
   name: vessel-scorpionMSL-name
   description: vessel-scorpionMSL-desc
   price: 193200
@@ -18,9 +18,6 @@
   - Corvette
   engine:
   - Plasma
-  addComponents:
-    - type: IFF
-      color: "#E03131FF"
 - type: gameMap
   id: ScorpionMSL
   mapName: 'AN Scorpion-MSL'

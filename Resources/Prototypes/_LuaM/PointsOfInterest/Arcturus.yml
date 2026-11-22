@@ -15,9 +15,8 @@
     outlineAlpha: 0.35
   - type: IFF
     color: "#047abd"
-    flags: [HideLabel]
     readOnly: true
-  - type: Company # TSF sees the cruiser through its hidden IFF
+  - type: Company
     companyName: TSF
 
 - type: gameMap

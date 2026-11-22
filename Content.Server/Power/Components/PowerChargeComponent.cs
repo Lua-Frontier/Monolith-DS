@@ -26,6 +26,21 @@ public sealed partial class PowerChargeComponent : SharedPowerChargeComponent
     [DataField("activePower")]
     public float ActivePowerUse { get; set; }
 
+    // Lua start
+    /// <summary>
+    /// Power consumed when <see cref="SwitchedOn"/> is true and the machine is not fully charged yet.
+    /// Falls back to <see cref="ActivePowerUse"/> when not set.
+    /// </summary>
+    [DataField("activeChargingPower")]
+    public float? ActiveChargingPowerUse { get; set; }
+
+    /// <summary>
+    /// How much charge the UI action needs and consumes. Only used with <see cref="SharedPowerChargeComponent.ActionUI"/>.
+    /// </summary>
+    [DataField]
+    public float ActionCharge { get; set; } = 1.0f;
+    // Lua end
+
     /// <summary>
     /// Is the gravity generator intact?
     /// </summary>

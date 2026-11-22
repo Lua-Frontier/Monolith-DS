@@ -2,7 +2,7 @@
 
 - type: vessel
   id: MotleyAnne
-  parent: BaseVesselIFFDisabled
+  parent: BaseVesselVanguard # LuaM: BaseVesselIFFDisabled > BaseVesselVanguard
   name: PDV-IED Motley Anne
   description: A support mothership designed to reinforce an engagements back-line with mech and drone ensemble or closer resupplies.
   locDescription: vessel-motleyanne-desc # LuaM

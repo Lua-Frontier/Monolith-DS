@@ -2,7 +2,7 @@
 #Специально для МК:КОЛОСС (ss14s://sf.deadspace14.net)
 - type: vessel
   id: VSKFracture
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel
   name: vessel-VSKFracture-name
   description: vessel-VSKFracture-desc
   price: 150000

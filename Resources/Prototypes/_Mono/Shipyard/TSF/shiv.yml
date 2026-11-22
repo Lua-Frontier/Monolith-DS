@@ -2,7 +2,7 @@
 
 - type: vessel
   id: Shiv
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel # LuaM: BaseVesselIFFDisabled > BaseVessel, no IFF console aboard
   name: TSF-PIN Shiv
   description: The workhorse of industry of the Solarian fleets; rugged, ancient, some may even say obsolete. Comes with a decent armament and good mining capabilities.
   locDescription: vessel-shiv-desc # LuaM

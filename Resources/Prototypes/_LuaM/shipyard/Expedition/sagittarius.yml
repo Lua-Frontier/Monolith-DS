@@ -5,7 +5,7 @@
   parent: BaseVessel
   name: vessel-sagittarius-name # LuaM-locale
   description: vessel-sagittarius-desc # LuaM-locale
-  price: 100400
+  price: 111000
   category: Large
   group: Expedition
   shuttlePath: /SharedMaps/_LuaM/Shuttles/Expedition/sagittarius.yml

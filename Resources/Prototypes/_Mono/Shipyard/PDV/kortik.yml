@@ -1,6 +1,6 @@
 - type: vessel
   id: KortikR
-  parent: BaseVesselIFFDisabled
+  parent: BaseVesselVanguard # LuaM: BaseVesselIFFDisabled > BaseVesselVanguard
   name: PDV-NCI Kortik-R
   description: An retrofitted version of old purchased hulls. Equipped with a heavy up-close armament, 2 howitzers for bombardment, and lots of extra hardpoints, but lacking in PD, GCS power, and unable to use shields.
   locDescription: vessel-kortikr-desc # LuaM

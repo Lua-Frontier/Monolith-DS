@@ -1,3 +1,4 @@
+using Content.Shared.Chemistry.Components; // LuaM
 using Content.Shared.DragDrop;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
@@ -35,6 +36,14 @@ public abstract partial class SharedGoobDragDropSystem : EntitySystem
     {
         if (!_timing.IsFirstTimePredicted || args.Handled || !CanDragDrop(args.User))
             return;
+
+        // LuaM-start: a beaker or jug dragged onto something that takes its contents, like a ChemMaster,
+        // only pours them in and is not inserted as well
+        if (TryComp<RefillableSolutionComponent>(args.Dragged, out var refillable)
+            && !refillable.PreventTransferOut
+            && HasComp<DumpableSolutionComponent>(uid))
+            return;
+        // LuaM-end
 
         args.Handled = _interaction.InteractUsing(args.User, args.Dragged, uid, Transform(uid).Coordinates);
     }

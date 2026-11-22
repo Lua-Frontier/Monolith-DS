@@ -22,6 +22,7 @@ using Content.Shared.Power.Components;
 using Content.Shared.Alert;
 using Content.Server._EinsteinEngines.Silicon.Death;
 using Content.Server._EinsteinEngines.Power.Components;
+using Content.Shared._LuaM.Traits; // LuaM
 
 namespace Content.Server._EinsteinEngines.Silicon.Charge;
 
@@ -119,6 +120,13 @@ public sealed partial class SiliconChargeSystem : EntitySystem
             // Maybe it doesn't matter, and stuff should just use static drain?
             if (!siliconComp.EntityType.Equals(SiliconType.Npc)) // Don't bother checking heat if it's an NPC. It's a waste of time, and it'd be delayed due to the update time.
                 drainRateFinalAddi += SiliconHeatEffects(silicon, siliconComp, frameTime) - 1; // This will need to be changed at some point if we allow external batteries, since the heat of the Silicon might not be applicable.
+
+            // LuaM-start: a cold battery drains faster instead of slower
+            if (TryComp<SiliconColdDrainComponent>(silicon, out var coldDrain)
+                && TryComp<TemperatureComponent>(silicon, out var coldTemp)
+                && coldTemp.CurrentTemperature < coldDrain.Threshold)
+                drainRateFinalAddi = drainRate * (coldDrain.Multiplier - 1);
+            // LuaM-end
 
             // Ensures that the drain rate is at least 10% of normal,
             // and would allow at least 4 minutes of life with a max charge, to prevent cheese.

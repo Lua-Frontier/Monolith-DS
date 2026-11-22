@@ -1,0 +1,118 @@
+# Lua: stationary EMP generator. It can't be unanchored or taken apart and has no recipe.
+# Charges for 4 minutes, then fires a 750 m pulse that disables everything off its own grid for 60 seconds.
+
+- type: entity
+  id: MobileEmpGeneratorLua
+  parent: [BaseStructureDisableToolUse, BaseC2ContrabandUnredeemable, BaseMachinePowered]
+  name: EMP generator
+  description: Creates giant EMP blasts to disable shuttles. Its own ship is not affected.
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: AmbientSound
+    enabled: false
+    volume: -6
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: ApcPowerReceiver
+    powerLoad: 4500
+  - type: Repairable
+    fuelCost: 10
+    doAfterDelay: 5
+  - type: PowerCharge
+    windowTitle: emp-generator-window-title
+    idlePower: 50
+    activePower: 2500
+    activeChargingPower: 9000
+    chargeRate: 0.0041667 # 4 minutes from empty to full
+    charge: 0
+    actionUI: true
+  - type: EmpGenerator
+    range: 750
+    energyConsumption: 1000000
+    disableDuration: 60
+    lightRadiusMin: 0.75
+    lightRadiusMax: 2.5
+    empBlastEffect: EffectEmpBlastLua
+    bypassEmpImmunity: true
+  - type: EmpDescription
+    range: 750
+    energyConsumption: 1000000
+    disableDuration: 60
+  - type: EmpGeneratorVisuals
+    spriteMap:
+      broken: "broken"
+      unpowered: "off"
+      off: "off"
+      on: "on"
+    thresholds:
+    - maxCharge: 0.2
+      state: null
+      visible: false
+    - maxCharge: 0.4
+      state: startup
+      visible: true
+    - maxCharge: 0.6
+      state: idle
+      visible: true
+    - maxCharge: 0.8
+      state: activating
+      visible: true
+    - maxCharge: 1000.0 # bigger value
+      state: activated
+      visible: true
+  - type: ActivatableUI
+    key: enum.PowerChargeUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.PowerChargeUiKey.Key:
+        type: PowerChargeBoundUserInterface
+  - type: Appearance
+  - type: PointLight
+    radius: 2.5
+    energy: 0.7
+    castShadows: false
+    color: "#85c6ff"
+  - type: Sprite
+    sprite: _Lua/Structures/Machines/memp_mini.rsi
+    snapCardinals: true
+    layers:
+    - state: on
+      map: ["enum.EmpGeneratorVisualLayers.Base"]
+    - sprite: _Lua/Structures/Machines/memp_core.rsi
+      state: activated
+      shader: unshaded
+      map: ["enum.EmpGeneratorVisualLayers.Core"]
+      scale: "0.4,0.4"
+      offset: "0,0.2"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 3125
+        mask:
+        - LargeMobMask
+        layer:
+        - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MachineFrameDestroyed:
+            min: 1
+            max: 1
+  - type: StaticPrice
+    price: 300

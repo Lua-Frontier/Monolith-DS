@@ -2,7 +2,7 @@
 
 - type: vessel
   id: Buran
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel # LuaM: BaseVesselIFFDisabled > BaseVessel, no IFF console aboard
   name: VEF Buran
   description: USSP capital-sized frigate with tremendous broadside firepower and thick armor. Glory to commissariat.
   locDescription: vessel-buran-desc # LuaM

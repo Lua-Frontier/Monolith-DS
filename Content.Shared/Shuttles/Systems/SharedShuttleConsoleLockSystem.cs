@@ -16,6 +16,7 @@ public abstract partial class SharedShuttleConsoleLockSystem : EntitySystem
     [Dependency] protected SharedAppearanceSystem Appearance = default!;
     [Dependency] protected SharedPopupSystem Popup = default!;
     [Dependency] protected IGameTiming Timing = default!;
+    [Dependency] protected SharedUserInterfaceSystem UI = default!; // LuaM
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -99,6 +100,18 @@ public abstract partial class SharedShuttleConsoleLockSystem : EntitySystem
             gridLock.ShuttleId = shuttleId;
 
         Dirty(gridUid, gridLock);
+
+        // LuaM-start: locking the ship closes every locked console on it, the gunnery ones as well
+        if (!locked)
+            return;
+
+        var query = EntityQueryEnumerator<ShuttleConsoleLockComponent, TransformComponent>();
+        while (query.MoveNext(out var console, out _, out var xform))
+        {
+            if (xform.GridUid == gridUid)
+                UI.CloseUis(console);
+        }
+        // LuaM-end
     }
 
 

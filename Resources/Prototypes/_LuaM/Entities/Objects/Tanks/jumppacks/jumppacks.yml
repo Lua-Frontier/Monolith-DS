@@ -8,11 +8,11 @@
   suffix: Empty
   components:
   - type: Item
-    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/tsf.rsi
   - type: Sprite
-    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/tsf.rsi
   - type: Clothing
-    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/tsf.rsi
   - type: JumpAbility
     jumpDistance: 6
     jumpSound: /Audio/_LuaM/Effects/jump.ogg
@@ -35,11 +35,11 @@
   suffix: Filled
   components:
   - type: Item
-    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/tsf.rsi
   - type: Sprite
-    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/tsf.rsi
   - type: Clothing
-    sprite: _LuaM/Objects/Tanks/Jumppacks/tsf.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/tsf.rsi
   - type: JumpAbility
     jumpDistance: 6
     jumpSound: /Audio/_LuaM/Effects/jump.ogg
@@ -62,11 +62,11 @@
   suffix: Empty
   components:
   - type: Item
-    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/pdv.rsi
   - type: Sprite
-    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/pdv.rsi
   - type: Clothing
-    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/pdv.rsi
 
 - type: entity
   id: JumppackpdvFilled
@@ -75,8 +75,8 @@
   suffix: Filled
   components:
   - type: Item
-    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/pdv.rsi
   - type: Sprite
-    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/pdv.rsi
   - type: Clothing
-    sprite: _LuaM/Objects/Tanks/Jumppacks/pdv.rsi
+    sprite: _LuaM/Objects/Tanks/jumppacks/pdv.rsi

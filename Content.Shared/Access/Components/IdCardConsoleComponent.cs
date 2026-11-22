@@ -68,7 +68,7 @@ public sealed partial class IdCardConsoleComponent : Component
     //"Kitchen",
     //"Lawyer", //Monolith:  Not used
     "Mail", // Frontier
-    //"Maintenance", //Monolith: Not used
+    "Maintenance", // LuaM: uncommented, service crews
     "Medical",
     "Mercenary", // Frontier
     //"Quartermaster",
@@ -78,9 +78,9 @@ public sealed partial class IdCardConsoleComponent : Component
     "Security",
     "Service",
     "StationTrafficController", // Frontier
-    //"USSP", // Mono
-    //"USSPHigh", // Mono
-    //"USSPCommand", // Mono
+    "USSP", // Mono // LuaM: uncommented, hiring on USSP ships
+    "USSPHigh", // Mono // LuaM: uncommented
+    "USSPCommand", // Mono // LuaM: uncommented
     //"Theatre",
     "Frontier", // Frontier //TSF Base access
     "Sergeant", // Frontier //TSF FTL access
@@ -93,6 +93,8 @@ public sealed partial class IdCardConsoleComponent : Component
     "Mieyo", // Mono
     "MieyoSecurity", // Mono
     "MieyoLiason", // Mono
+    "Viper", // LuaM
+    "ViperCommand", // LuaM
     };
 
     [Serializable, NetSerializable]

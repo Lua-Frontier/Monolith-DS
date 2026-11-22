@@ -2,7 +2,7 @@
 #Специально для МК:КОЛОСС (ss14s://sf.deadspace14.net)
 - type: vessel
   id: VSKSentinelDRG
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel
   name: vessel-VSKSentinelDRG-name
   description: vessel-VSKSentinelDRG-desc
   price: 350000

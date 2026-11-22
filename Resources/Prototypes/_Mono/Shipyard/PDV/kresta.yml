@@ -1,6 +1,6 @@
 - type: vessel
   id: Kresta
-  parent: BaseVesselIFFDisabled
+  parent: BaseVesselVanguard # LuaM: BaseVesselIFFDisabled > BaseVesselVanguard
   name: PDV Kresta
   description: Krestas are thin-hulled but heavily equipped for their size, with 2 FANG 57x460mm autocannons supported by 2 AK570 40x360mm autocannons.
   locDescription: vessel-kresta-desc # LuaM

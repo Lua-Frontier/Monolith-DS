@@ -1,0 +1,4 @@
+- files: ["shutdown_error1.wav", "shutdown_error2.wav", "shutdown_error3.wav", "shutdown_error4.wav", "shutdown_error5.wav"]
+  license: "CC0-1.0"
+  copyright: "Synthesized from sine tones and filtered noise for Monolith-DS, original work"
+  source: "https://github.com/Covral/Monolith-DS"

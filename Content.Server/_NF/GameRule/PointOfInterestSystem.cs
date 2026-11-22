@@ -12,6 +12,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server._NF.Station.Systems;
 using Robust.Shared.EntitySerialization.Systems;
+using Content.Shared._LuaM.Shuttles; // LuaM
 
 namespace Content.Server._NF.GameRule;
 
@@ -270,6 +271,7 @@ public sealed partial class PointOfInterestSystem : EntitySystem
         _meta.SetEntityName(loadedGrid.Value, stationName, meta);
 
         EntityManager.AddComponents(loadedGrid.Value, proto.AddComponents);
+        EnsureComp<SectorLandmarkComponent>(loadedGrid.Value); // LuaM: listed first in the FTL destinations
 
         // Rename warp points after set up if needed
         if (proto.NameWarp)

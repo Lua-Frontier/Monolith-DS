@@ -1,5 +1,7 @@
 using Content.Server.Shuttles.Events;
 using Content.Shared.Shuttles.Systems;
+using Content.Server._LuaM.Shuttles; // LuaM
+using Content.Shared.Shuttles.Components; // LuaM
 
 namespace Content.Server._Mono.Detection;
 
@@ -33,9 +35,26 @@ public sealed partial class ApplyIFFFlagsToDockedShipsSystem : EntitySystem
 
     public void ApplyFlags(EntityUid gridUid, ApplyIFFFlagsToDockedShipsComponent iffComp, bool applying = true)
     {
+        // LuaM-start: undocking takes back only the flags docking added, a ship hidden on its own stays hidden
         if (applying)
-            _shuttle.AddIFFFlag(gridUid, iffComp.Flags);
-        else
-            _shuttle.RemoveIFFFlag(gridUid, iffComp.Flags);
+        {
+            var current = TryComp<IFFComponent>(gridUid, out var iff) ? iff.Flags : IFFFlags.None;
+            var added = iffComp.Flags & ~current;
+            if (added == IFFFlags.None)
+                return;
+
+            EnsureComp<DockingIFFFlagsComponent>(gridUid).Flags |= added;
+            _shuttle.AddIFFFlag(gridUid, added);
+            return;
+        }
+
+        if (!TryComp<DockingIFFFlagsComponent>(gridUid, out var docking))
+            return;
+
+        _shuttle.RemoveIFFFlag(gridUid, docking.Flags & iffComp.Flags);
+        docking.Flags &= ~iffComp.Flags;
+        if (docking.Flags == IFFFlags.None)
+            RemComp<DockingIFFFlagsComponent>(gridUid);
+        // LuaM-end
     }
 }

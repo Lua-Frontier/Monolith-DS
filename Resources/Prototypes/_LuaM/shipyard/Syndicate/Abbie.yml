@@ -1,0 +1,34 @@
+- type: vessel
+  id: Abbie
+  parent: BaseVessel
+  name: vessel-abbie-name
+  description: vessel-abbie-desc
+  price: 210000
+  category: Large
+  group: Syndicate
+  shuttlePath: /SharedMaps/_LuaM/Syndicate/abbie.yml
+  guidebookPage: Null
+  class:
+  - Syndicate
+  - Science
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Abbie
+  mapName: 'Abbie'
+  mapPath: /SharedMaps/_LuaM/Syndicate/abbie.yml
+  minPlayers: 0
+  stations:
+    Abbie:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Abbie SYN{1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            Pilot: [ 0, 0 ]
+            Mercenary: [ 0, 0 ]

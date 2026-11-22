@@ -3,7 +3,7 @@
   parent: BaseVessel
   name: vessel-aeon-name # LuaM-locale
   description: vessel-aeon-desc # LuaM-locale
-  price: 40000
+  price: 48000
   category: Small
   group: Medical
   shuttlePath: /SharedMaps/_LuaM/Shuttles/Med/aeon.yml

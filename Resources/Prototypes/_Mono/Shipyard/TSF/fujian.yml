@@ -2,7 +2,7 @@
 
 - type: vessel
   id: Fujian
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel # LuaM: BaseVesselIFFDisabled > BaseVessel, no IFF console aboard
   name: TSF-SKR Fujian
   description: A decently-sized escort carrier, capable of holding 4 Zephyrs or Zephyr-ECs. Carries quite a bit of armor to defend itself and its fighters.
   locDescription: vessel-fujian-desc # LuaM

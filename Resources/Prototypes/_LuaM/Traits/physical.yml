@@ -65,6 +65,8 @@
   cost: 4
   mutuallyExclusiveTraits:
   - OsteogenesisImperfecta
+  - LuaMFragileBones
+  - IpcFlimsyBolts
   blacklist:
     components:
     - BorgChassis
@@ -86,3 +88,58 @@
   components:
   - type: MetabolismSpeedModifier
     rateMultiplier: 1.25
+
+- type: trait
+  id: LuaMFragileBones
+  name: trait-luam-fragile-bones-name
+  description: trait-luam-fragile-bones-desc
+  category: Physical
+  cost: -4
+  mutuallyExclusiveTraits:
+  - LuaMReinforcedEndoskeleton
+  speciesBlacklist:
+  - IPC
+  blacklist:
+    components:
+    - BorgChassis
+  components:
+  - type: SeverIntegrityModifier
+    multiplier: 0.5
+
+- type: trait
+  id: LuaMFurAllergy
+  name: trait-luam-fur-allergy-name
+  description: trait-luam-fur-allergy-desc
+  category: Physical
+  cost: -1
+  speciesBlacklist: # robots and the furries themselves
+  - IPC
+  - Tajaran
+  - Vulpkanin
+  - Rodentia
+  - Yowie
+  - Ariral
+  - Monkey
+  - Avali
+  - Resomi
+  - Harpy
+  - Hydrakin
+  blacklist:
+    components:
+    - BorgChassis
+  components:
+  - type: FurAllergy
+    species:
+    - Tajaran
+    - Vulpkanin
+    - Rodentia
+    - Yowie
+    - Ariral
+    - Monkey
+    - Avali
+    - Resomi
+    - Harpy
+    - Hydrakin
+    chokeDamage:
+      types:
+        Asphyxiation: 2

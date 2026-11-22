@@ -25,6 +25,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Verbs;
+using Content.Shared._EinsteinEngines.Silicon.Components; // LuaM
+using Content.Shared.Traits.Assorted; // LuaM
 
 namespace Content.Server._Shitmed.Medical.Surgery;
 
@@ -168,6 +170,11 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     {
         if (HasComp<ForcedSleepingComponent>(args.Body))
             return;
+
+        // LuaM-start: silicons and the pain numb feel nothing to scream about
+        if (HasComp<SiliconComponent>(args.Body) || HasComp<PainNumbnessComponent>(args.Body))
+            return;
+        // LuaM-end
 
         _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);
     }

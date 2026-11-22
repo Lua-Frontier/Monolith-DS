@@ -2,7 +2,7 @@
 
 - type: vessel
   id: TSFMCRising
-  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
+  parent: BaseVessel
   name: vessel-rising-name
   description: vessel-rising-desc
   limit: 1
@@ -17,9 +17,6 @@
   - Frigate
   engine:
   - Plasma
-  addComponents:
-    - type: IFF
-      color: "#047ABDFF"
 - type: gameMap
   id: TSFMCRising
   mapName: 'Rising'

@@ -1,0 +1,20 @@
+# The VG commander gets the MEDUSA hardsuit for free, picked by default.
+- type: loadout
+  id: ViperCommanderClothingOuterHardsuitMedusa
+  price: 0
+  equipment:
+    outerClothing: ClothingOuterHardsuitViperGroupShield
+
+- type: loadoutGroup
+  id: VGCommanderOuterClothing
+  name: loadout-group-contractor-outerclothing
+  loadouts:
+  - ViperCommanderClothingOuterHardsuitMedusa
+  - ViperClothingOuterHardsuitViperWarlord
+  - MercenaryVestSlim
+  - MercenaryVestNormal
+  - MercenaryClothingOuterArmorBPVestLight
+  - MercenaryClothingOuterArmorBPVestMedium
+  - MercenaryClothingOuterArmorBPVestHeavy
+  - MercenaryClothingOuterArmorBPVestPolyvalent
+  - MercenaryClothingOuterArmorBPVestStabproof

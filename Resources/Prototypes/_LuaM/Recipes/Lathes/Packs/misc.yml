@@ -7,3 +7,9 @@
   id: ScienceBag
   recipes:
   - ScienceBag
+
+- type: latheRecipePack
+  id: HearingAidsStatic
+  recipes:
+  - ClothingNeckHearingAid
+  - ClothingNeckHearingSensor

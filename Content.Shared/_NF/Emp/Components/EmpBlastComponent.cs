@@ -27,4 +27,12 @@ public sealed partial class EmpBlastComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float VisualRange = 5f;
+
+    // Lua start
+    /// <summary>
+    ///     Shader prototype used to draw the blast. The default EMP shader when null.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public string? ShaderId;
+    // Lua end
 }

@@ -2,7 +2,7 @@
 #Специально для МК:КОЛОСС (ss14s://sf.deadspace14.net)
 - type: vessel
   id: VSKSentinelEMP
-  parent: BaseVesselIFFDisabled
+  parent: BaseVessel
   name: vessel-VSKSentinelEMP-name
   description: vessel-VSKSentinelEMP-desc
   price: 350000

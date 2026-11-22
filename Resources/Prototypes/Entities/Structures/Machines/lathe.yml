@@ -177,6 +177,7 @@
     - MonoRestraintsStatic # Mono
     - ReportingStatic # DeltaV
     - Capacities # LuaM
+    - HearingAidsStatic # LuaM
   - type: EmagLatheRecipes
     emagStaticPacks:
     - StaticAmmoRecipePack

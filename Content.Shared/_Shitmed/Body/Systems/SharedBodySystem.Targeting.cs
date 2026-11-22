@@ -230,14 +230,18 @@ public partial class SharedBodySystem
         var severed = false;
         var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;
         var delta = args.DamageDelta;
+        // LuaM-start: a limb weaker than its disable threshold can be torn off while it still works
+        var severIntegrity = GetSeverIntegrity(partEnt);
+        var mustBeDisabled = severIntegrity >= partEnt.Comp.IntegrityThresholds[TargetIntegrity.CriticallyWounded];
+        // LuaM-end
 
         if (args.CanSever
             && partEnt.Comp.CanSever
             && partIdSlot is not null
             && delta != null
             && !HasComp<BodyPartReattachedComponent>(partEnt)
-            && !partEnt.Comp.Enabled
-            && damageable.TotalDamage >= GetSeverIntegrity(partEnt) // LuaM: SeverIntegrity > GetSeverIntegrity
+            && (!partEnt.Comp.Enabled || !mustBeDisabled) // LuaM: !Enabled > (!Enabled || !mustBeDisabled)
+            && damageable.TotalDamage >= severIntegrity // LuaM: SeverIntegrity > GetSeverIntegrity
             && _severingDamageTypes.Any(damageType => delta.DamageDict.TryGetValue(damageType, out var value) && value > 0))
             severed = true;
 

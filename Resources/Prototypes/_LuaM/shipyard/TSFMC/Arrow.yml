@@ -2,7 +2,7 @@
 
 - type: vessel
   id: TSFMCArrow
-  parent: BaseVesselIFFDisabled # LuaM: BaseVesselAntag > BaseVesselIFFDisabled (renamed upstream)
+  parent: BaseVessel
   name: vessel-arrow-name
   description: vessel-arrow-desc
   limit: 2
@@ -17,9 +17,6 @@
   - Frigate
   engine:
   - Plasma
-  addComponents:
-    - type: IFF
-      color: "#047ABDFF"
 - type: gameMap
   id: TSFMCArrow
   mapName: 'Arrow'

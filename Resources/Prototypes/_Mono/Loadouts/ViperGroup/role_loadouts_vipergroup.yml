@@ -70,7 +70,7 @@
   - VGJumpsuit
   - VGGloves
   - VGBackpack
-  - VGOuterClothing
+  - VGCommanderOuterClothing # LuaM: VGOuterClothing > VGCommanderOuterClothing, free MEDUSA hardsuit
   - VGShoes
   - VGFace
   - VGEyesLieutenant

@@ -10,3 +10,11 @@
   id: LunaSdfDisk
   kind: source
   path: "/Textures/_Lua/Shaders/luna_sdf_disk.swsl"
+
+- type: shader
+  id: EmpLua
+  kind: source
+  path: "/Textures/_Lua/Shaders/emp_lua.swsl"
+  params:
+    positionInput: 0,0
+    life: 0

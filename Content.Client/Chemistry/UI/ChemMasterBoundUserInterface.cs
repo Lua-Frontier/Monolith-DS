@@ -1,5 +1,7 @@
 using Content.Shared.Chemistry;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Chemistry.Components; // LuaM
+using Content.Shared.Hands.EntitySystems; // LuaM
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -61,7 +63,23 @@ namespace Content.Client.Chemistry.UI
 
             _window.OnReagentButtonPressed += (args, button) => SendMessage(new ChemMasterReagentAmountButtonMessage(button.Id, button.Amount, button.IsBuffer));
             _window.OnFavoriteButtonPressed += reagent => SendMessage(new ChemMasterToggleFavoriteMessage(reagent)); // LuaM
+            // LuaM-start
+            _window.DrainHeldButton.OnPressed += _ => SendMessage(new ChemMasterDrainHeldMessage());
+            _window.CanDrainHeld = HoldsPourableContainer;
+            // LuaM-end
         }
+
+        // LuaM-start: same check as the server, a refillable container that may be poured out
+        private bool HoldsPourableContainer()
+        {
+            if (PlayerManager.LocalEntity is not { } player
+                || EntMan.System<SharedHandsSystem>().GetActiveItem(player) is not { } held)
+                return false;
+
+            return EntMan.TryGetComponent<RefillableSolutionComponent>(held, out var refillable)
+                   && !refillable.PreventTransferOut;
+        }
+        // LuaM-end
 
         /// <summary>
         /// Update the ui each time new state data is sent from the server.
