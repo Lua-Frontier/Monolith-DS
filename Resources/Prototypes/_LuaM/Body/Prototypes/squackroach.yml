@@ -1,0 +1,37 @@
+# Based on the Mothroach body; harpy lungs as in Goob-Station's Squackroach body.
+- type: body
+  id: Squackroach
+  name: "squackroach"
+  root: torso
+  slots:
+    head:
+      part: HeadAnimal
+      connections:
+      - torso
+      organs:
+        brain: OrganAnimalBrain
+        eyes: OrganAnimalEyes
+    torso:
+      part: TorsoAnimal
+      connections:
+      - right leg
+      - left leg
+      - head
+      organs:
+        lungs: OrganHarpyLungs
+        stomach: OrganAnimalStomach
+        liver: OrganAnimalLiver
+        heart: OrganAnimalHeart
+        kidneys: OrganAnimalKidneys
+    right leg:
+      part: RightLegsAnimal
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegsAnimal
+      connections:
+      - left foot
+    right foot:
+      part: RightAnimalFeet
+    left foot:
+      part: LeftAnimalFeet

@@ -12,3 +12,33 @@
   - type: ConditionalSpawner
     prototypes:
     - MobMoproach
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobCarpGoldfish
+  name: Space Goldfish Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _LuaM/Mobs/Aliens/Carps/goldfish.rsi
+      state: alive
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCarpGoldfish
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobSquackroach
+  name: Squackroach Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _LuaM/Mobs/Animals/squackroach.rsi
+      state: icon
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSquackroach

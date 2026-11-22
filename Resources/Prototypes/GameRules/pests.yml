@@ -106,6 +106,8 @@
       prob: 0.005
     - id: MobMoproach
       prob: 0.0025
+    - id: MobSquackroach
+      prob: 0.0025
 # LuaM-end.
     specialEntries: # Mono
     - id: MobCorticalBorer # Mono
