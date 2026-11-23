@@ -26,6 +26,18 @@ public sealed partial class RadarBlipsSystem : EntitySystem
     private readonly List<BlipData> _cachedBlipData = new();
     private readonly List<MissileVectorData> _cachedMissileData = new();
 
+    // LuaM-start
+    private static readonly Color MissileLineColor = Color.FromHex("#00AACC");
+    private static readonly Color MissileArcColor = Color.FromHex("#FF0040");
+    private static readonly List<HitscanNetData> EmptyHitscans = new();
+
+    /// <summary>
+    /// Index of each blip in <see cref="_blips"/>, rebuilt after a new report or a removal.
+    /// </summary>
+    private readonly Dictionary<NetEntity, int> _blipIndex = new();
+    private bool _blipIndexDirty = true;
+    // LuaM-end
+
     public override void Initialize()
     {
         base.Initialize();
@@ -40,12 +52,19 @@ public sealed partial class RadarBlipsSystem : EntitySystem
         _missiles = ev.Missiles;
         _hitscans = ev.HitscanLines;
         _lastUpdatedTime = _timing.CurTime;
+        _blipIndexDirty = true; // LuaM
     }
 
     private void RemoveBlip(BlipRemovalEvent args)
     {
-        var blipid = _blips.FirstOrDefault(x => x.Uid == args.NetBlipUid);
-        _blips.Remove(blipid);
+        // LuaM-start: removing default(BlipNetData) when the blip isn't there is pointless, and the index has to follow the list
+        var idx = _blips.FindIndex(x => x.Uid == args.NetBlipUid);
+        if (idx < 0)
+            return;
+
+        _blips.RemoveAt(idx);
+        _blipIndexDirty = true;
+        // LuaM-end
     }
 
     public void RequestBlips(EntityUid console)
@@ -115,12 +134,33 @@ public sealed partial class RadarBlipsSystem : EntitySystem
             return _cachedMissileData;
 
         // populate the cached list instead of allocating a new one each frame
+        // LuaM-start: blips are looked up by index, not by scanning the whole list for every missile each frame
+        if (_missiles.Count == 0)
+            return _cachedMissileData;
+
+        if (_blipIndexDirty)
+        {
+            _blipIndex.Clear();
+            for (var i = 0; i < _blips.Count; i++)
+            {
+                _blipIndex.TryAdd(_blips[i].Uid, i);
+            }
+
+            _blipIndexDirty = false;
+        }
+        // LuaM-end
+
         foreach (var missile in _missiles)
         {
-            var tiedBlip = _blips.FirstOrDefault(x => x.Uid == missile.Uid);
+            // LuaM-start: a missile without its blip used to draw its lines from the map origin
+            if (!_blipIndex.TryGetValue(missile.Uid, out var blipIdx))
+                continue;
+
+            var tiedBlip = _blips[blipIdx];
             var coord = tiedBlip.Position;
-            var color = Color.FromHex("#00AACC");
-            var colorArcs = Color.FromHex("#FF0040");
+            var color = MissileLineColor;
+            var colorArcs = MissileArcColor;
+            // LuaM-end
 
             var predictedPosStart = new NetCoordinates(missile.Uid, coord.Position + tiedBlip.Vel * (float)(_timing.CurTime - _lastUpdatedTime).TotalSeconds);
             var posEnd = Vector2.Create(
@@ -153,7 +193,7 @@ public sealed partial class RadarBlipsSystem : EntitySystem
     public List<HitscanNetData> GetHitscanLines()
     {
         if (_timing.CurTime.TotalSeconds - _lastUpdatedTime.TotalSeconds > BlipStaleSeconds)
-            return new();
+            return EmptyHitscans; // LuaM: no new list every frame
 
         return _hitscans;
     }

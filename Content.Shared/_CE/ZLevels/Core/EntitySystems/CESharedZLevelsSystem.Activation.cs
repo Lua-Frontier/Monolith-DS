@@ -14,6 +14,12 @@ public abstract partial class CESharedZLevelsSystem
 {
     private readonly List<EntityUid> _activeBodies = new();
 
+    /// <summary>
+    /// LuaM: the same bodies as <see cref="_activeBodies"/> for membership checks. Every item, structure and mob has z-physics,
+    /// and a map load or a crowd of moving mobs made the list scans quadratic.
+    /// </summary>
+    private readonly HashSet<EntityUid> _activeBodiesSet = new();
+
     public IReadOnlyList<EntityUid> ActiveBodies => _activeBodies;
 
     private void InitializeActivation()
@@ -95,13 +101,14 @@ public abstract partial class CESharedZLevelsSystem
         if (!Resolve(entity, ref entity.Comp, false))
             return;
 
-        if (_activeBodies.Contains(entity))
+        if (_activeBodiesSet.Contains(entity)) // LuaM: set instead of list scan
             return;
 
         entity.Comp.Sleeping = false;
         entity.Comp.SleepTimer = 0f;
 
         _activeBodies.Add(entity);
+        _activeBodiesSet.Add(entity); // LuaM
     }
 
     [PublicAPI]
@@ -113,7 +120,8 @@ public abstract partial class CESharedZLevelsSystem
         entity.Comp.Sleeping = true;
         entity.Comp.SleepTimer = 0f;
 
-        _activeBodies.Remove(entity);
+        if (_activeBodiesSet.Remove(entity)) // LuaM: most bodies put to sleep were never active, don't scan the list for them
+            _activeBodies.Remove(entity);
     }
 
     [PublicAPI]
