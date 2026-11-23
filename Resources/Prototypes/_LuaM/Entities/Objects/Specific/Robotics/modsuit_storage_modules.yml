@@ -60,3 +60,6 @@
     - 0,0,19,9
   - type: StaticPrice
     price: 400
+  - type: Tag
+    tags:
+    - SafetyDepositBlacklist # can not be carried between shifts
