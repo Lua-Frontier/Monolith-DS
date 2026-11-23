@@ -16,6 +16,7 @@ namespace Content.Shared._CE.ZLevels.Core.EntitySystems;
 public abstract partial class CESharedZLevelsSystem
 {
     private readonly List<EntityUid> _dirtyMovementBodies = new();
+    private readonly HashSet<EntityUid> _dirtyMovementSet = new(); // LuaM: membership check for the list above, every moving mob and item lands here each tick
 
     private void InitializeMovement()
     {
@@ -144,8 +145,13 @@ public abstract partial class CESharedZLevelsSystem
 
     private void OnMoveEvent(Entity<CEZPhysicsComponent> entity, ref MoveEvent args)
     {
-        if (_dirtyMovementBodies.Contains(entity))
+        // LuaM-start: without client simulation nothing ever clears the list on the client, it would grow for the whole session
+        if (_net.IsClient && !_clientSimulation)
             return;
+
+        if (!_dirtyMovementSet.Add(entity))
+            return;
+        // LuaM-end
 
         _dirtyMovementBodies.Add(entity);
     }
@@ -497,6 +503,7 @@ public abstract partial class CESharedZLevelsSystem
         }
 
         _dirtyMovementBodies.Clear();
+        _dirtyMovementSet.Clear(); // LuaM
     }
 }
 

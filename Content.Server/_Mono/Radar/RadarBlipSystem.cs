@@ -45,6 +45,8 @@ public sealed partial class RadarBlipSystem : EntitySystem
     private readonly List<EntityUid> _tempSourcesCache = new();
     private readonly List<BlipConfig> _tempPaletteCache = new();
     private readonly Dictionary<BlipConfig, ushort> _paletteIndex = new();
+    private readonly List<Vector2> _tempSourcePositions = new(); // LuaM
+    private readonly HashSet<EntityUid> _reportedBlips = new(); // LuaM
 
     public override void Initialize()
     {
@@ -69,6 +71,14 @@ public sealed partial class RadarBlipSystem : EntitySystem
             _tempSourcesCache.AddRange(sourcesEv.Sources);
         else
             _tempSourcesCache.Add(radarUid.Value);
+
+        // LuaM-start: source positions are needed for every blip, look them up once per report
+        _tempSourcePositions.Clear();
+        foreach (var source in _tempSourcesCache)
+        {
+            _tempSourcePositions.Add(_xform.GetWorldPosition(source));
+        }
+        // LuaM-end
 
         CollectVeilFields(Transform(radarUid.Value).MapID); // Lua
         AssembleBlipsReport((EntityUid)radarUid, _tempSourcesCache, radar);
@@ -96,6 +106,7 @@ public sealed partial class RadarBlipSystem : EntitySystem
         _tempBlipsCache.Clear();
         _tempMissileCache.Clear();
         _tempHitscansCache.Clear();
+        _reportedBlips.Clear(); // LuaM
         _tempSourcesCache.Clear();
         _tempPaletteCache.Clear();
         _paletteIndex.Clear();
@@ -154,21 +165,26 @@ public sealed partial class RadarBlipSystem : EntitySystem
 
         while (blipQuery.MoveNext(out var blipUid, out var blip, out var blipXform, out var blipPhysics))
         {
-            if (!blip.Enabled
-                || blipXform.MapID != radarMapId
-                || !NearAnySources(_xform.GetWorldPosition(blipXform), sources, blip.MaxDistance)
-            )
+            // LuaM-start: cheap field checks go before the world position lookup, which is done once instead of twice
+            if (!blip.Enabled || blipXform.MapID != radarMapId)
                 continue;
 
             var blipGrid = blipXform.GridUid;
-
-            if (blipGrid == null && _veilFields.Count > 0 && IsInNebulaVeil(_xform.GetWorldPosition(blipXform))) // Lua: a veil nebula hides what flies inside it
-                continue;
 
             if (blip.RequireNoGrid && blipGrid != null // if we want no grid but we are on a grid
                 || !blip.VisibleFromOtherGrids && blipGrid != radarGrid // or if we don't want to be visible from other grids but we're on another grid
             )
                 continue; // don't show this blip
+
+            var blipWorldPos = _xform.GetWorldPosition(blipXform);
+            if (!NearAnySources(blipWorldPos, _tempSourcePositions, blip.MaxDistance))
+                continue;
+
+            if (blipGrid == null && _veilFields.Count > 0 && IsInNebulaVeil(blipWorldPos)) // Lua: a veil nebula hides what flies inside it
+                continue;
+
+            _reportedBlips.Add(blipUid);
+            // LuaM-end
 
             var netBlipUid = GetNetEntity(blipUid);
 
@@ -211,6 +227,10 @@ public sealed partial class RadarBlipSystem : EntitySystem
         var missileQuery = EntityQueryEnumerator<TargetSeekingComponent, RadarBlipComponent, TransformComponent>();
         while (missileQuery.MoveNext(out var missile, out var seeker, out var missileBlip, out var missileBlipXform))
         {
+            // LuaM: only missiles whose blip is in this report, the lines of the rest were sent from the whole server and drawn from the origin
+            if (!seeker.ArcLines || !_reportedBlips.Contains(missile))
+                continue;
+
             var netMissileUid = GetNetEntity(missile);
             var missileArc = MathHelper.DegreesToRadians(seeker.ScanArc);
             if (seeker.ArcLines)
@@ -222,6 +242,9 @@ public sealed partial class RadarBlipSystem : EntitySystem
         var saclosQuery = EntityQueryEnumerator<TargetGuidedComponent, RadarBlipComponent, TransformComponent>();
         while (saclosQuery.MoveNext(out var missile, out var seeker, out var missileBlip, out var missileBlipXform))
         {
+            if (!seeker.RadarLines || !_reportedBlips.Contains(missile)) // LuaM
+                continue;
+
             var netMissileUid = GetNetEntity(missile);
             if (seeker.RadarLines)
                 _tempMissileCache.Add(new(netMissileUid,
@@ -267,7 +290,8 @@ public sealed partial class RadarBlipSystem : EntitySystem
             if (!hitscan.Enabled)
                 continue;
 
-            if (!NearAnySources(hitscan.StartPosition, sources, component.MaxRange) && NearAnySources(hitscan.EndPosition, sources, component.MaxRange))
+            // LuaM: skip only when both ends are out of range (the old check sent far-away shots and dropped ones fired into range from outside)
+            if (!NearAnySources(hitscan.StartPosition, _tempSourcePositions, component.MaxRange) && !NearAnySources(hitscan.EndPosition, _tempSourcePositions, component.MaxRange))
                 continue;
 
             if (IsInNebulaVeil(hitscan.StartPosition) || IsInNebulaVeil(hitscan.EndPosition)) // Lua
@@ -277,12 +301,11 @@ public sealed partial class RadarBlipSystem : EntitySystem
         }
     }
 
-    private bool NearAnySources(Vector2 coord, List<EntityUid> sources, float range)
+    private static bool NearAnySources(Vector2 coord, List<Vector2> sources, float range) // LuaM: positions instead of entities
     {
         var rsqr = range * range;
-        foreach (var source in sources)
+        foreach (var pos in sources) // LuaM
         {
-            var pos = _xform.GetWorldPosition(source);
             if ((pos - coord).LengthSquared() < rsqr)
                 return true;
         }

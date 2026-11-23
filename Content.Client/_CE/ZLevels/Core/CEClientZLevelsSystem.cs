@@ -88,7 +88,8 @@ internal sealed partial class CEClientZLevelsPreAnimSystem : EntitySystem
         while (query.MoveNext(out var uid, out var zPhys, out var sprite))
         {
             var localPosition = zPhys.LocalPosition;
-            _sprite.SetOffset((uid, sprite), zPhys.SpriteOffsetDefault);
+            if (sprite.Offset != zPhys.SpriteOffsetDefault) // LuaM: every item, structure and mob is here, SetOffset rebuilds the sprite matrix even for the same value
+                _sprite.SetOffset((uid, sprite), zPhys.SpriteOffsetDefault);
             // LuaM-start
             if (localPosition > 0)
             {
@@ -117,7 +118,8 @@ internal sealed partial class CEClientZLevelsPreAnimSystem : EntitySystem
             if (!_zPhysQuery.TryComp(parent, out var parentZPhys))
                 continue;
             var zOffset = new Vector2(0, parentZPhys.LocalPosition * CESharedZLevelsSystem.ZLevelOffset);
-            _sprite.SetOffset((uid, sprite), zOffset);
+            if (sprite.Offset != zOffset) // LuaM
+                _sprite.SetOffset((uid, sprite), zOffset);
         }
     }
 }
@@ -149,6 +151,10 @@ internal sealed partial class CEClientZLevelsPostAnimSystem : EntitySystem
         var query = EntityQueryEnumerator<CEZPhysicsComponent, SpriteComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var zPhys, out var sprite, out var xform))
         {
+            // LuaM: on the ground the Z contribution is zero, skip the world rotation lookup and the matrix rebuild
+            if (zPhys.LocalPosition == 0f)
+                continue;
+
             var rawZ = new Vector2(0, zPhys.LocalPosition * CESharedZLevelsSystem.ZLevelOffset);
             Vector2 zOffset;
             if (sprite.NoRotation)

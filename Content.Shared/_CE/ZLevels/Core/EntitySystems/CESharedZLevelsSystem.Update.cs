@@ -38,12 +38,14 @@ public abstract partial class CESharedZLevelsSystem
                 !_physicsQuery.TryComp(uid, out var physics))
             {
                 _activeBodies.RemoveAt(i);
+                _activeBodiesSet.Remove(uid); // LuaM
                 continue;
             }
 
             if (!_zMapQuery.HasComp(xform.MapUid))
             {
                 _activeBodies.RemoveAt(i);
+                _activeBodiesSet.Remove(uid); // LuaM
                 continue;
             }
 
