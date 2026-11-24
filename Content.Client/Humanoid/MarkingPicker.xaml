@@ -2,12 +2,12 @@
     <!-- Primary container -->
     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
         <!-- Marking lists -->
-        <BoxContainer Orientation="Horizontal" SeparationOverride="5" HorizontalExpand="True">
+        <BoxContainer Orientation="Horizontal" SeparationOverride="5" HorizontalExpand="True" VerticalExpand="True"> <!-- LuaM -->
             <!-- Unused markings -->
             <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
                     <Label Text="{Loc 'markings-unused'}" HorizontalAlignment="Stretch" HorizontalExpand="True" />
-                    <Label Name="CMarkingPoints" Text="uwu" HorizontalAlignment="Right" />
+                    <Label Name="CMarkingPoints" Text="uwu" HorizontalAlignment="Right" Margin="0 0 10 0" /> <!-- LuaM -->
                 </BoxContainer>
 
                 <OptionButton Name="CMarkingCategoryButton" StyleClasses="OpenLeft" />

@@ -3,8 +3,8 @@
             Resizable="False">
 
     <BoxContainer Orientation="Horizontal" SeparationOverride="4" MinSize="200 40">
-        <Button Name="SaveButton" Access="Public" Text="{Loc 'character-setup-gui-save-panel-save'}" StyleClasses="ButtonBig"/>
-        <Button Name="NoSaveButton" Access="Public" Text="{Loc 'character-setup-gui-save-panel-nosave'}" StyleClasses="ButtonBig"/>
-        <Button Name="CancelButton" Access="Public" Text="{Loc 'character-setup-gui-save-panel-cancel'}" StyleClasses="ButtonBig"/>
+        <Button Name="SaveButton" Access="Public" Text="{Loc 'character-setup-gui-save-panel-save'}" StyleClasses="LuaMHudPositive" MinHeight="38"/> <!-- LuaM -->
+        <Button Name="NoSaveButton" Access="Public" Text="{Loc 'character-setup-gui-save-panel-nosave'}" StyleClasses="LuaMHudDanger" MinHeight="38"/> <!-- LuaM -->
+        <Button Name="CancelButton" Access="Public" Text="{Loc 'character-setup-gui-save-panel-cancel'}" StyleClasses="LuaMHudButton" MinHeight="38"/> <!-- LuaM -->
     </BoxContainer>
 </DefaultWindow>

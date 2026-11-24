@@ -18,7 +18,7 @@ namespace Content.Client.Lobby.UI.Roles;
 public sealed partial class RequirementsSelector : BoxContainer
 {
     private readonly RadioOptions<int> _options;
-    private readonly StripeBack _lockStripe;
+    private readonly PanelContainer _lockStripe; // LuaM
     private List<ProtoId<GuideEntryPrototype>>? _guides;
 
     public event Action<int>? OnSelected;
@@ -45,25 +45,15 @@ public sealed partial class RequirementsSelector : BoxContainer
             OnSelected?.Invoke(args.Id);
         };
 
-        var requirementsLabel = new Label()
+// LuaM-start
+        _lockStripe = new Content.Client._LuaM.UserInterface.Hud.HudCallout
         {
-            Text = Loc.GetString("role-timer-locked"),
-            Visible = true,
-            HorizontalAlignment = HAlignment.Center,
-            StyleClasses = {StyleBase.StyleClassLabelSubText},
-        };
-
-        _lockStripe = new StripeBack()
-        {
+            Status = Content.Client._LuaM.UserInterface.Hud.HudStatus.Caution,
+            Lead = Loc.GetString("role-timer-locked"),
             Visible = false,
-            HorizontalExpand = true,
-            HasMargins = false,
             MouseFilter = MouseFilterMode.Stop,
-            Children =
-            {
-                requirementsLabel
-            }
         };
+// LuaM-end
 
         Help.OnPressed += _ =>
         {
@@ -126,6 +116,7 @@ public sealed partial class RequirementsSelector : BoxContainer
         {
             Text = text,
             MinWidth = 90,
+            StyleClasses = { LobbyHudStyles.Priority + Math.Clamp(value, 0, 3) }, // LuaM
             HorizontalExpand = true,
         };
     }

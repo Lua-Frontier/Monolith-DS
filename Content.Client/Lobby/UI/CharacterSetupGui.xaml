@@ -1,49 +1,48 @@
+<!-- LuaM -->
 <Control xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-         xmlns:style="clr-namespace:Content.Client.Stylesheets"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+         xmlns:hud="clr-namespace:Content.Client._LuaM.UserInterface.Hud"
          VerticalExpand="True">
     <Control>
         <PanelContainer Name="BackgroundPanel" />
-        <BoxContainer Orientation="Vertical" SeparationOverride="0">
-            <BoxContainer Orientation="Horizontal" MinSize="0 40">
-                <Label Text="{Loc 'character-setup-gui-character-setup-label'}"
-                       Margin="8 0 0 0" VAlign="Center"
-                       StyleClasses="LabelHeadingBigger" />
+        <BoxContainer Name="CharEditor" HorizontalExpand="True" VerticalExpand="True" />
 
-                <Button Name="StatsButton" HorizontalExpand="True"
-                        Text="{Loc 'character-setup-gui-character-setup-stats-button'}"
-                        StyleClasses="ButtonBig"
-                        HorizontalAlignment="Right" />
-                <cc:CommandButton Name="AdminRemarksButton"
-                                  Command="adminremarks"
-                                  Text="{Loc 'character-setup-gui-character-setup-adminremarks-button'}"
-                                  StyleClasses="ButtonBig" />
-                <Button Name="RulesButton"
-                        Text="{Loc 'character-setup-gui-character-setup-rules-button'}"
-                        StyleClasses="ButtonBig"/>
-                <Button Name="CloseButton"
-                        Access="Public"
-                        Text="{Loc 'character-setup-gui-character-setup-close-button'}"
-                        StyleClasses="ButtonBig"/>
+        <PanelContainer Name="Dock" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                <Button Name="StatsButton" StyleClasses="LuaMHudIcon" SetSize="40 40"
+                        ToolTip="{Loc 'character-setup-gui-character-setup-stats-button'}">
+                    <hud:HudIcon Kind="Stats" SetSize="22 22" />
+                </Button>
+                <cc:CommandButton Name="AdminRemarksButton" Command="adminremarks" StyleClasses="LuaMHudIcon" SetSize="40 40"
+                                  ToolTip="{Loc 'character-setup-gui-character-setup-adminremarks-button'}">
+                    <hud:HudIcon Kind="Notes" SetSize="22 22" />
+                </cc:CommandButton>
+                <Button Name="RulesButton" StyleClasses="LuaMHudIcon" SetSize="40 40"
+                        ToolTip="{Loc 'character-setup-gui-character-setup-rules-button'}">
+                    <hud:HudIcon Kind="Rules" SetSize="22 22" />
+                </Button>
+                <Button Name="CloseButton" Access="Public" StyleClasses="LuaMHudPower" SetSize="40 40"
+                        ToolTip="{Loc 'character-setup-gui-close'}">
+                    <hud:HudIcon Name="CloseIcon" Kind="Close" SetSize="22 22" />
+                </Button>
             </BoxContainer>
-            <PanelContainer>
-                <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.NanoGold}" ContentMarginTopOverride="2" />
-                </PanelContainer.PanelOverride>
-            </PanelContainer>
-            <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="0">
-                <ScrollContainer MinSize="325 0" Margin="5 5 0 0">
-                    <BoxContainer Name="Characters" Orientation="Vertical" />
-                </ScrollContainer>
-                <PanelContainer MinSize="2 0">
-                    <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BackgroundColor="{x:Static style:StyleNano.NanoGold}" ContentMarginTopOverride="2" />
-                    </PanelContainer.PanelOverride>
+        </PanelContainer>
+
+        <Control Visible="False">
+            <BoxContainer Name="CharacterHeader" Orientation="Vertical" SeparationOverride="4">
+                <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                    <Button Name="CharacterSelectButton" HorizontalExpand="True" StyleClasses="LuaMHudButton" SetHeight="32"
+                            ToolTip="{Loc 'character-setup-gui-characters-tooltip'}" />
+                    <Button Name="NewCharacterButton" Text="{Loc 'character-setup-gui-new-character'}" StyleClasses="LuaMHudPositive" SetHeight="32" />
+                    <Label Name="SlotsLabel" VAlign="Center" StyleClasses="LuaMHudMark" />
+                </BoxContainer>
+                <PanelContainer Name="CharactersPanel" StyleClasses="LuaMHudPanel" Visible="False">
+                    <ScrollContainer HScrollEnabled="False" SetHeight="260">
+                        <BoxContainer Name="Characters" Orientation="Vertical" SeparationOverride="6" />
+                    </ScrollContainer>
                 </PanelContainer>
-                <BoxContainer Name="CharEditor" HorizontalExpand="True" />
             </BoxContainer>
-        </BoxContainer>
+        </Control>
     </Control>
 </Control>

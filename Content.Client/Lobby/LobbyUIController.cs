@@ -251,6 +251,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
         var dummy = LoadProfileEntity(humanoid, null, true);
         PreviewPanel.SetSprite(dummy);
         PreviewPanel.SetSummaryText(humanoid.Summary);
+        PreviewPanel.SetProfileInfo(humanoid); // LuaM
         PreviewPanel.SetBankBalanceText(humanoid.BankBalanceText); // Frontier
 
         // Company Display

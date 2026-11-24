@@ -1,0 +1,533 @@
+
+- type: loadoutCategory
+  id: JumpsuitCamo
+  name: loadout-category-jumpsuit-camo
+  order: 10
+  slots: [ jumpsuit ]
+  match: [ CombatSuit, Crocus, Desert, Tacticool, Operative, SecurityTrooper, Tac, Infantry ]
+
+- type: loadoutCategory
+  id: JumpsuitMilitary
+  name: loadout-category-jumpsuit-military
+  order: 15
+  slots: [ jumpsuit ]
+  match: [ Military, TSFMC, Tsfmc, TSF, USSP, MMC, PDV, Pdv, Viper, ViperGroup, DrakeIndustries, Mieyo, Colossus, Courier, Mercenary, Pilot, Contractor, UNSA, Rogue, Ullman, Ulliman, COG, NovaSharks, Nfsd, PublicAffairsLiaison, MailCarrier, PrivateSec, Hauler ]
+
+- type: loadoutCategory
+  id: JumpsuitColor
+  name: loadout-category-jumpsuit-color
+  order: 30
+  slots: [ jumpsuit ]
+  match: [ Color ]
+  exclude: [ Scrubs ]
+
+- type: loadoutCategory
+  id: JumpsuitPunk
+  name: loadout-category-jumpsuit-punk
+  order: 35
+  slots: [ jumpsuit ]
+  match: [ Random, Punk ]
+
+- type: loadoutCategory
+  id: JumpsuitDress
+  name: loadout-category-jumpsuit-dress
+  order: 40
+  slots: [ jumpsuit ]
+  match: [ Dress, Striped, Janimaid, Performer ]
+  exclude: [ Formal ]
+
+- type: loadoutCategory
+  id: JumpsuitCasual
+  name: loadout-category-jumpsuit-casual
+  order: 50
+  slots: [ jumpsuit ]
+  match: [ Casual, Hawai, Tshirt, Flannel, Overalls, Shorts, Safari, Jeans, Cargos, Warm, Kilt ]
+
+- type: loadoutCategory
+  id: JumpsuitCostume
+  name: loadout-category-costume
+  order: 55
+  slots: [ jumpsuit ]
+  match: [ Costume, Clown, Mime, Jester, Gladiator, Kimono, Pirate, DameDane, Ancient, Jabroni, Monastic, Robe, Rainbow ]
+
+- type: loadoutCategory
+  id: HeadHelmet
+  name: loadout-category-head-helmet
+  order: 100
+  slots: [ head ]
+  match: [ Helmet ]
+
+- type: loadoutCategory
+  id: HeadBeret
+  name: loadout-category-head-beret
+  order: 110
+  slots: [ head ]
+  match: [ Beret ]
+
+- type: loadoutCategory
+  id: HeadCap
+  name: loadout-category-head-cap
+  order: 120
+  slots: [ head ]
+  match: [ ~soft, Flatcap, Trucker, Capcap, Cap, StcCap, HatPilot, Ushanka, Utility ]
+  exclude: [ Captain, Hopcap ]
+
+- type: loadoutCategory
+  id: HeadHat
+  name: loadout-category-head-hat
+  order: 130
+  slots: [ head ]
+  match: [ BH, Cowboy, WideBrimmed, Fedora, Bowler, Tophat, Sombrero, StrawHat, Witch, Witch1, Witchhunter, Pilgrim, Casa, Fez, Safari, Pirate, Pirates, Tricord, Plaguedoctor, FishCap ]
+
+- type: loadoutCategory
+  id: HeadBand
+  name: loadout-category-head-band
+  order: 140
+  slots: [ head ]
+  match: [ Band ]
+
+- type: loadoutCategory
+  id: HeadCostume
+  name: loadout-category-costume
+  order: 150
+  slots: [ head ]
+  match: [ Jester, JesterAlt, Cone, Tinfoil, Mitre, Cardinal, Nun, NunHood, Rasta, Mirror, Plunger, Kippah, Sanabi, Vizier ]
+
+- type: loadoutCategory
+  id: OuterHardsuit
+  name: loadout-category-outer-hardsuit
+  order: 100
+  slots: [ outerClothing ]
+  match: [ Hardsuit, EVA, Suit ]
+  exclude: [ Plague ]
+
+- type: loadoutCategory
+  id: OuterArmor
+  name: loadout-category-outer-armor
+  order: 110
+  slots: [ outerClothing ]
+  match: [ Armor, BP, Web, Carapace ]
+
+- type: loadoutCategory
+  id: OuterWinter
+  name: loadout-category-outer-winter
+  order: 120
+  slots: [ outerClothing ]
+  match: [ Winter ]
+
+- type: loadoutCategory
+  id: OuterLab
+  name: loadout-category-outer-lab
+  order: 130
+  slots: [ outerClothing ]
+  match: [ Lab, Rnd, RD, Robo, BioScientist, ParamedicWB ]
+
+- type: loadoutCategory
+  id: OuterApron
+  name: loadout-category-outer-apron
+  order: 140
+  slots: [ outerClothing ]
+  match: [ Apron, JacketChef ]
+
+- type: loadoutCategory
+  id: OuterCostume
+  name: loadout-category-costume
+  order: 145
+  slots: [ outerClothing ]
+  match: [ Priest, Plague, PlagueSuit, DameDane, Nun, NunRobe, Bishop, Cardinal, Pirate, PirateCaptain, WitchHunter, Gentle, SpaceAsshole, WetFloorSign ]
+
+- type: loadoutCategory
+  id: OuterCoat
+  name: loadout-category-outer-coat
+  order: 150
+  slots: [ outerClothing ]
+  match: [ Coat, Jacket, Bomber, Hoodie, Flannel, Trench, Sweater, Poncho, Vest, Raincoat ]
+
+- type: loadoutCategory
+  id: BackModsuit
+  name: loadout-category-back-modsuit
+  order: 100
+  slots: [ back ]
+  match: [ Modsuit ]
+
+- type: loadoutCategory
+  id: BackDuffel
+  name: loadout-category-back-duffel
+  order: 110
+  slots: [ back ]
+  match: [ Duffel ]
+
+- type: loadoutCategory
+  id: BackSatchel
+  name: loadout-category-back-satchel
+  order: 120
+  slots: [ back ]
+  match: [ Satchel ]
+
+- type: loadoutCategory
+  id: BackMessenger
+  name: loadout-category-back-messenger
+  order: 130
+  slots: [ back ]
+  match: [ Messenger ]
+
+- type: loadoutCategory
+  id: BackBackpack
+  name: loadout-category-back-backpack
+  order: 140
+  slots: [ back ]
+  match: [ Backpack ]
+
+- type: loadoutCategory
+  id: ShoesMag
+  name: loadout-category-shoes-mag
+  order: 100
+  slots: [ shoes ]
+  match: [ Mag ]
+
+- type: loadoutCategory
+  id: ShoesWinter
+  name: loadout-category-shoes-winter
+  order: 110
+  slots: [ shoes ]
+  match: [ Winter ]
+
+- type: loadoutCategory
+  id: ShoesBoots
+  name: loadout-category-shoes-boots
+  order: 120
+  slots: [ shoes ]
+  match: [ Boots ]
+
+- type: loadoutCategory
+  id: ShoesColor
+  name: loadout-category-shoes-color
+  order: 130
+  slots: [ shoes ]
+  match: [ Color ]
+
+- type: loadoutCategory
+  id: Pride
+  name: loadout-category-pride
+  order: 90
+  slots: [ neck, storage ]
+  match: [ Ace, Aro, Bi, Enby, Gay, Intersex, Lesbian, Pan, Trans, Pin, LGBT, LGBTQ, Flag ]
+  exclude: [ Instrument ]
+
+- type: loadoutCategory
+  id: NeckMantle
+  name: loadout-category-neck-mantle
+  order: 100
+  slots: [ neck ]
+  match: [ Mantle ]
+
+- type: loadoutCategory
+  id: NeckCloak
+  name: loadout-category-neck-cloak
+  order: 110
+  slots: [ neck ]
+  match: [ Cloak, Poncho, Overcoat ]
+
+- type: loadoutCategory
+  id: NeckBadge
+  name: loadout-category-neck-badge
+  order: 120
+  slots: [ neck ]
+  match: [ Badge, Lawyerbadge, Dogtags, IFF, Armband, Camera ]
+
+- type: loadoutCategory
+  id: NeckScarf
+  name: loadout-category-neck-scarf
+  order: 130
+  slots: [ neck ]
+  match: [ Scarf, Tie, Stole ]
+
+- type: loadoutCategory
+  id: GlovesCombat
+  name: loadout-category-gloves-combat
+  order: 100
+  slots: [ gloves ]
+  match: [ Combat, Tactical, Fingerless, MercFingerless ]
+
+- type: loadoutCategory
+  id: GlovesColor
+  name: loadout-category-gloves-color
+  order: 110
+  slots: [ gloves ]
+  match: [ Color ]
+
+- type: loadoutCategory
+  id: GlovesBoxing
+  name: loadout-category-gloves-boxing
+  order: 120
+  slots: [ gloves ]
+  match: [ Boxing ]
+
+- type: loadoutCategory
+  id: BeltWebbing
+  name: loadout-category-belt-webbing
+  order: 100
+  slots: [ belt ]
+  match: [ Webbing, Webbings, Bandolier, Assault, Infantry, Holster, TSFMC, Tsfmc, TSF, USSP, MMC, PDV, Pdv, Viper, ViperGroup, DrakeIndustries, Mieyo, Colossus, Courier, Mercenary, Pilot, Contractor, UNSA, Rogue, Ullman, Ulliman, COG, NovaSharks ]
+
+- type: loadoutCategory
+  id: BeltBag
+  name: loadout-category-belt-bag
+  order: 110
+  slots: [ belt ]
+  match: [ Bag, Waistbag, Folder ]
+
+- type: loadoutCategory
+  id: EyesHud
+  name: loadout-category-eyes-hud
+  order: 100
+  slots: [ eyes ]
+  match: [ Hud, Meson, Chemical ]
+
+- type: loadoutCategory
+  id: EyesBallistic
+  name: loadout-category-eyes-ballistic
+  order: 110
+  slots: [ eyes ]
+  match: [ Ballistic ]
+
+- type: loadoutCategory
+  id: EyesGlasses
+  name: loadout-category-eyes-glasses
+  order: 120
+  slots: [ eyes ]
+  match: [ Glasses, Sunglasses, Goggles, Shades, Jamjar ]
+
+- type: loadoutCategory
+  id: AmmoShotgun
+  name: loadout-category-ammo-shotgun
+  order: 40
+  slots: [ storage ]
+  require: [ Magazine, Ammo, Box ]
+  match: [ gauge, Buckshot, Slug, Beanbag ]
+
+- type: loadoutCategory
+  id: AmmoSmg
+  name: loadout-category-ammo-smg
+  order: 41
+  slots: [ storage ]
+  require: [ Magazine, Ammo ]
+  match: [ SubMachineGun ]
+
+- type: loadoutCategory
+  id: AmmoPistol
+  name: loadout-category-ammo-pistol
+  order: 42
+  slots: [ storage ]
+  require: [ Magazine, Ammo ]
+  match: [ Pistol, 9x19, 45, 357, 57x28 ]
+
+- type: loadoutCategory
+  id: AmmoRifle
+  name: loadout-category-ammo-rifle
+  order: 43
+  slots: [ storage ]
+  match: [ Magazine, Ammo, SpeedLoader ]
+
+- type: loadoutCategory
+  id: WeaponEnergy
+  name: loadout-category-weapon-energy
+  order: 50
+  slots: [ storage ]
+  require: [ Weapon ]
+  match: [ Laser, Energy, Disabler, Svalinn, Kinetic ]
+  exclude: [ Flatpack ]
+
+- type: loadoutCategory
+  id: WeaponSmg
+  name: loadout-category-weapon-smg
+  order: 51
+  slots: [ storage ]
+  require: [ Weapon ]
+  match: [ SubMachineGun, Vector ]
+
+- type: loadoutCategory
+  id: WeaponShotgun
+  name: loadout-category-weapon-shotgun
+  order: 52
+  slots: [ storage ]
+  require: [ Weapon ]
+  match: [ Shotgun, Enforcer ]
+
+- type: loadoutCategory
+  id: WeaponRifle
+  name: loadout-category-weapon-rifle
+  order: 53
+  slots: [ storage ]
+  require: [ Weapon ]
+  match: [ Rifle, Sniper, LMG, DP, Long, Ak, AK ]
+
+- type: loadoutCategory
+  id: WeaponPistol
+  name: loadout-category-weapon-pistol
+  order: 54
+  slots: [ storage ]
+  require: [ Weapon ]
+  match: [ Pistol, Revolver, Short ]
+
+- type: loadoutCategory
+  id: ItemMelee
+  name: loadout-category-item-melee
+  order: 200
+  slots: [ storage ]
+  match: [ Knife, Knives, Machete, Sword, Kukri, Hammer, Pickaxe, Blade ]
+
+- type: loadoutCategory
+  id: ItemInstrument
+  name: loadout-category-item-instrument
+  order: 210
+  slots: [ storage ]
+  match: [ Instrument ]
+
+- type: loadoutCategory
+  id: ItemSmoking
+  name: loadout-category-item-smoking
+  order: 220
+  slots: [ storage ]
+  match: [ Cig, Cigar, Lighter, Matchbox, Tobacco, Smoking, Vape, Ashtray ]
+
+- type: loadoutCategory
+  id: ItemTowel
+  name: loadout-category-item-towel
+  order: 230
+  slots: [ storage ]
+  match: [ Towel ]
+
+- type: loadoutCategory
+  id: ItemToy
+  name: loadout-category-item-toy
+  order: 240
+  slots: [ storage ]
+  match: [ Plushie, Ball, Basketball, Football, Crayon, Dinkystar, Orb, Horn, Hug, Lobster ]
+  exclude: [ Implanter ]
+
+- type: loadoutCategory
+  id: ItemJewelry
+  name: loadout-category-item-jewelry
+  order: 250
+  slots: [ storage ]
+  match: [ Ring, Wristwatch, Hairflower, Wreath, Cane, Umbrella ]
+
+- type: loadoutCategory
+  id: ItemMask
+  name: loadout-category-item-mask
+  order: 260
+  slots: [ storage, mask, balaclava ]
+  match: [ Mask, Gaiter, Balaclava ]
+
+- type: loadoutCategory
+  id: ItemSurvival
+  name: loadout-category-item-survival
+  order: 270
+  slots: [ storage ]
+  match: [ Survival ]
+
+- type: loadoutCategory
+  id: ItemImplant
+  name: loadout-category-item-implant
+  order: 280
+  slots: [ storage ]
+  match: [ Implanter, Autosurgeon ]
+
+- type: loadoutCategory
+  id: ItemCartridge
+  name: loadout-category-item-cartridge
+  order: 290
+  slots: [ storage ]
+  match: [ Cartridge ]
+
+- type: loadoutCategory
+  id: ItemDrink
+  name: loadout-category-item-drink
+  order: 300
+  slots: [ storage ]
+  match: [ Flask ]
+
+- type: loadoutCategory
+  id: ItemPaper
+  name: loadout-category-item-paper
+  order: 310
+  slots: [ storage ]
+  match: [ Stamp, Folder, Clipboard, Labeler, Book, Bible, Briefcase, Crayon ]
+
+- type: loadoutCategory
+  id: ItemTool
+  name: loadout-category-item-tool
+  order: 320
+  slots: [ storage ]
+  match: [ Toolbox, Analyzer, GPS, Scanner, Counter, Configurator, Monitor, Flashlight, Lantern, Radio, Binoculars, Pinpointer, Device, RCD, RPD, Recorder, Detector, Projector, Tool ]
+
+- type: loadoutCategory
+  id: ItemEncryption
+  name: loadout-category-item-encryption
+  order: 330
+  slots: [ storage ]
+  match: [ Encryption ]
+
+- type: loadoutCategory
+  id: ItemArmorPlate
+  name: loadout-category-item-armor-plate
+  order: 340
+  slots: [ storage ]
+  match: [ Plate ]
+
+- type: loadoutCategory
+  id: ItemFlatpack
+  name: loadout-category-item-flatpack
+  order: 350
+  slots: [ storage ]
+  match: [ Flatpack ]
+
+- type: loadoutCategory
+  id: Faction
+  name: loadout-category-faction
+  order: 490
+  match: [ TSFMC, Tsfmc, TSF, USSP, MMC, PDV, Pdv, Viper, ViperGroup, DrakeIndustries, Mieyo, Colossus, Courier, Mercenary, Pilot, Contractor, UNSA, Rogue, Ullman, Ulliman, COG, NovaSharks ]
+
+- type: loadoutCategory
+  id: DeptCommand
+  name: loadout-category-dept-command
+  order: 500
+  match: [ Captain, Cap, CapFormal, HoP, Hop, HoS, Hos, Hopcap, Hoshat, Commander, Commissar, Colonel, Centcom, CentCom, Command, Officer ]
+  exclude: [ Stc, SeniorOfficer ]
+
+- type: loadoutCategory
+  id: DeptSecurity
+  name: loadout-category-dept-security
+  order: 510
+  match: [ Sec, Security, Warden, Detective, Det, BH, Nfsd, Prisoner, SeniorOfficer, Sheriff, Brigmedic, Bailiff, Cadet, Forensic, SecGuard, Guard ]
+
+- type: loadoutCategory
+  id: DeptMedical
+  name: loadout-category-dept-medical
+  order: 520
+  match: [ Medical, Med, Medic, Paramedic, Para, Chemistry, Chem, Virology, Viro, Genetics, Gene, Gen, Psychologist, Physician, SeniorPhysician, CMO, Cmo, Scrubs, Surgcap, Nurse, Doctor, Sterile, Latex, Nitrile, Stethoscope, EMT, MedSec ]
+
+- type: loadoutCategory
+  id: DeptScience
+  name: loadout-category-dept-science
+  order: 530
+  match: [ Scientist, Science, Sci, Research, Researcher, ResearchDirector, RD, Rd, RND, Rnd, Roboticist, Robo, Robotics, Robohands, Bio ]
+
+- type: loadoutCategory
+  id: DeptEngineering
+  name: loadout-category-dept-engineering
+  order: 540
+  match: [ Engineering, Engineer, Engi, Atmos, Atmospherics, Atmostech, CE, Ce, ChiefEngineer, Hazard, Hardhat, Utility, Insulated ]
+
+- type: loadoutCategory
+  id: DeptCargo
+  name: loadout-category-dept-cargo
+  order: 550
+  match: [ Cargo, QM, Qm, Salvage, Miner, Mining, Hauler, Trucker, Mail, Mailman, MailCarrier, Ore ]
+
+- type: loadoutCategory
+  id: DeptService
+  name: loadout-category-dept-service
+  order: 560
+  match: [ Bartender, Bar, Chef, Hydroponics, Hydro, Botany, Botanist, Plant, Janitor, Jani, Chaplain, Curator, Librarian, Reporter, Journalist, Lawyer, Musician, Valet, Clown, Mime, Service, Performer ]

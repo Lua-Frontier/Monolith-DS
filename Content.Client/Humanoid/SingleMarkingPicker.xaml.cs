@@ -203,6 +203,25 @@ public sealed partial class SingleMarkingPicker : BoxContainer
         }
     }
 
+    // LuaM-start
+    public void UseCompactLayout()
+    {
+        ColorSelectorContainer.Orientation = BoxContainer.LayoutOrientation.Vertical;
+        ColorSelectorContainer.SeparationOverride = 10;
+        ColorSelectorContainer.Margin = new Thickness(0, 8, 0, 0);
+        if (ColorSelectorContainer.Parent is ScrollContainer colors)
+        {
+            colors.MinHeight = 0;
+            colors.VScrollEnabled = false;
+            colors.HScrollEnabled = false;
+            colors.ReturnMeasure = true;
+        }
+
+        if (MarkingList.Parent is ScrollContainer list)
+            list.MinHeight = 300;
+    }
+    // LuaM-end
+
     private void PopulateColors()
     {
         if (_markings == null

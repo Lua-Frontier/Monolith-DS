@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Client._LuaM.Lobby;
+using Content.Shared._LuaM.Loadouts;
 using Content.Shared.Clothing;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
@@ -7,13 +9,20 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Client.Lobby.UI.Loadouts;
 
 [GenerateTypedNameReferences]
 public sealed partial class LoadoutGroupContainer : BoxContainer
 {
+    private const int FlatListLimit = 10; // LuaM
+    private const int PinnedLimit = 12; // LuaM
+
     private readonly LoadoutGroupPrototype _groupProto;
+    private readonly HashSet<string> _expanded = new(); // LuaM
+    private readonly Dictionary<string, EntProtoId?> _icons = new(); // LuaM
+    private readonly IRobustRandom _random = IoCManager.Resolve<IRobustRandom>(); // LuaM
 
     public event Action<ProtoId<LoadoutPrototype>>? OnLoadoutPressed;
     public event Action<ProtoId<LoadoutPrototype>>? OnLoadoutUnpressed;
@@ -67,53 +76,24 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
 
         var selected = loadout.SelectedLoadouts[_groupProto.ID];
 
-        foreach (var loadoutProto in _groupProto.Loadouts)
+        // LuaM-start
+        var entries = new List<(LoadoutPrototype Proto, Func<LoadoutContainer> Create, bool Pressed, bool Direct, EntProtoId? Icon)>();
+        var seen = new HashSet<string>();
+
+        void AddEntry(ProtoId<LoadoutPrototype> loadoutProto, bool direct)
         {
-            if (!protoMan.TryIndex(loadoutProto, out var loadProto))
-                continue;
+            if (!seen.Add(loadoutProto.Id) || !protoMan.TryIndex(loadoutProto, out var loadProto))
+                return;
 
             // Frontier: hide loadout effects
             if (loadout.IsHidden(profile, session, loadoutProto, collection))
-                continue;
-            // End Frontier: hide loadout effects
+                return;
 
-            var matchingLoadout = selected.FirstOrDefault(e => e.Prototype == loadoutProto);
-            var pressed = matchingLoadout != null;
-
+            var pressed = selected.Any(e => e.Prototype == loadoutProto);
             var enabled = loadout.IsValid(profile, session, loadoutProto, collection, out var reason);
-            var loadoutContainer = new LoadoutContainer(loadoutProto, !enabled, reason);
-            loadoutContainer.Select.Pressed = pressed;
-            loadoutContainer.Text = string.IsNullOrEmpty(loadProto.Name) ? loadoutSystem.GetName(loadProto) : loadProto.Name; // Frontier: allow overriding loadout names
 
-            loadoutContainer.Select.OnPressed += args =>
+            LoadoutContainer Create()
             {
-                if (args.Button.Pressed)
-                    OnLoadoutPressed?.Invoke(loadoutProto);
-                else
-                    OnLoadoutUnpressed?.Invoke(loadoutProto);
-            };
-
-            LoadoutsContainer.AddChild(loadoutContainer);
-        }
-
-        // Frontier: loadoutGroup subgroups
-        foreach (var subgroupProto in _groupProto.Subgroups)
-        {
-            if (!protoMan.TryIndex(subgroupProto, out var loadoutGroupProto))
-                continue;
-
-            foreach (var loadoutProto in loadoutGroupProto.Loadouts)
-            {
-                if (!protoMan.TryIndex(loadoutProto, out var loadProto))
-                    continue;
-
-                if (loadout.IsHidden(profile, session, loadoutProto, collection))
-                    continue;
-
-                var matchingLoadout = selected.FirstOrDefault(e => e.Prototype == loadoutProto);
-                var pressed = matchingLoadout != null;
-
-                var enabled = loadout.IsValid(profile, session, loadoutProto, collection, out var reason);
                 var loadoutContainer = new LoadoutContainer(loadoutProto, !enabled, reason);
                 loadoutContainer.Select.Pressed = pressed;
                 loadoutContainer.Text = string.IsNullOrEmpty(loadProto.Name) ? loadoutSystem.GetName(loadProto) : loadProto.Name; // Frontier: allow overriding loadout names
@@ -126,9 +106,135 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
                         OnLoadoutUnpressed?.Invoke(loadoutProto);
                 };
 
-                LoadoutsContainer.AddChild(loadoutContainer);
+                return loadoutContainer;
+            }
+
+            entries.Add((loadProto, Create, pressed, direct, loadProto.PreviewEntity ?? loadoutSystem.GetFirstOrNull(loadProto)));
+        }
+
+        foreach (var loadoutProto in _groupProto.Loadouts)
+        {
+            AddEntry(loadoutProto, true);
+        }
+
+        // Frontier: loadoutGroup subgroups
+        foreach (var subgroupProto in _groupProto.Subgroups)
+        {
+            if (!protoMan.TryIndex(subgroupProto, out var loadoutGroupProto))
+                continue;
+
+            foreach (var loadoutProto in loadoutGroupProto.Loadouts)
+            {
+                AddEntry(loadoutProto, false);
             }
         }
-        // End Frontier
+
+        if (entries.Count <= FlatListLimit)
+        {
+            foreach (var entry in entries)
+            {
+                LoadoutsContainer.AddChild(entry.Create());
+            }
+            return;
+        }
+
+        var pinDirect = _groupProto.Subgroups.Count > 0 && entries.Count(e => e.Direct) <= PinnedLimit;
+        var categorizer = new LoadoutCategorizer(protoMan, loadoutSystem);
+        var pinned = new List<Func<LoadoutContainer>>();
+        var categories = new Dictionary<string, (LocId Name, int Order, List<(Func<LoadoutContainer> Create, bool Pressed, EntProtoId? Icon)> Items)>();
+
+        foreach (var entry in entries)
+        {
+            if (entry.Direct && pinDirect || _groupProto.Fallbacks.Contains(entry.Proto.ID))
+            {
+                pinned.Add(entry.Create);
+                continue;
+            }
+
+            var category = categorizer.Categorize(entry.Proto);
+            var id = category?.ID ?? LoadoutCategorizer.OtherCategory;
+            if (!categories.TryGetValue(id, out var bucket))
+            {
+                bucket = (category?.Name ?? "loadout-category-other", category?.Order ?? int.MaxValue, new());
+                categories[id] = bucket;
+            }
+            bucket.Items.Add((entry.Create, entry.Pressed, entry.Icon));
+        }
+
+        foreach (var (id, bucket) in categories.ToList())
+        {
+            if (bucket.Items.Count > 1 || id == LoadoutCategorizer.OtherCategory)
+                continue;
+
+            categories.Remove(id);
+            if (!categories.TryGetValue(LoadoutCategorizer.OtherCategory, out var other))
+            {
+                other = ("loadout-category-other", int.MaxValue, new());
+                categories[LoadoutCategorizer.OtherCategory] = other;
+            }
+            other.Items.AddRange(bucket.Items);
+        }
+
+        if (pinned.Count == 0 && categories.Count <= 1)
+        {
+            foreach (var entry in entries)
+            {
+                LoadoutsContainer.AddChild(entry.Create());
+            }
+            return;
+        }
+
+        foreach (var create in pinned)
+        {
+            LoadoutsContainer.AddChild(create());
+        }
+
+        foreach (var (id, bucket) in categories.OrderBy(c => c.Value.Order))
+        {
+            var anyPressed = bucket.Items.Any(i => i.Pressed);
+            var title = Loc.GetString(anyPressed ? "loadout-category-title-selected" : "loadout-category-title",
+                ("name", Loc.GetString(bucket.Name)),
+                ("count", bucket.Items.Count));
+
+            if (!_icons.TryGetValue(id, out var icon))
+            {
+                var icons = bucket.Items.Select(i => i.Icon).Where(i => i != null).ToList();
+                icon = icons.Count > 0 ? _random.Pick(icons) : null;
+                _icons[id] = icon;
+            }
+
+            var expanded = _expanded.Contains(id);
+            var body = new BoxContainer { Orientation = LayoutOrientation.Vertical, Margin = new Thickness(15, 0, 0, 0), Visible = expanded };
+            void Fill()
+            {
+                if (body.ChildCount > 0)
+                    return;
+
+                foreach (var item in bucket.Items)
+                {
+                    body.AddChild(item.Create());
+                }
+            }
+
+            if (expanded)
+                Fill();
+
+            var header = new LoadoutCategoryHeader(title, icon, expanded);
+            header.OnToggled += pressed =>
+            {
+                if (pressed)
+                    Fill();
+
+                body.Visible = pressed;
+                if (pressed)
+                    _expanded.Add(id);
+                else
+                    _expanded.Remove(id);
+            };
+
+            LoadoutsContainer.AddChild(header);
+            LoadoutsContainer.AddChild(body);
+        }
+        // LuaM-end
     }
 }

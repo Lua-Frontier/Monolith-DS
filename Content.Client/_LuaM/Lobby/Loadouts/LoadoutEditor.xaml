@@ -1,0 +1,83 @@
+<BoxContainer xmlns="https://spacestation14.io"
+         xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+         xmlns:hud="clr-namespace:Content.Client._LuaM.UserInterface.Hud"
+         xmlns:luam="clr-namespace:Content.Client._LuaM.UserInterface"
+         Orientation="Vertical"
+         HorizontalExpand="True"
+         VerticalExpand="True"
+         SeparationOverride="8">
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#1A1F22" BorderColor="#2A3236" BorderThickness="0 0 0 1"/>
+        </PanelContainer.PanelOverride>
+        <BoxContainer Orientation="Vertical">
+            <BoxContainer Orientation="Horizontal" SeparationOverride="12" Margin="12 6">
+                <Label Text="{Loc 'loadout-editor-title'}" StyleClasses="LuaMHudTitle" VAlign="Center"/>
+                <Label Name="RoleTitle" StyleClasses="LuaMHudMono" VAlign="Center" FontColorOverride="#7FD1C7"/>
+                <Control HorizontalExpand="True"/>
+                <Label Name="Cost" StyleClasses="LuaMHudMono" VAlign="Center"/>
+                <Label Name="Balance" StyleClasses="LuaMHudMono" VAlign="Center"/>
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+    <BoxContainer Name="RoleNameBox" Orientation="Horizontal" SeparationOverride="6" Visible="False">
+        <Label Name="LoadoutNameLabel" StyleClasses="LuaMHudMonoDim" VAlign="Center"/>
+        <LineEdit Name="RoleNameEdit" MinWidth="380" StyleClasses="LuaMHudInput"/>
+    </BoxContainer>
+    <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="10">
+        <PanelContainer MinWidth="390" VerticalExpand="True">
+            <PanelContainer.PanelOverride>
+                <hud:StyleBoxGrid Step="0"/>
+            </PanelContainer.PanelOverride>
+            <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                <BoxContainer Name="RoleList" Orientation="Vertical" Margin="6"/>
+            </ScrollContainer>
+        </PanelContainer>
+        <PanelContainer HorizontalExpand="True" VerticalExpand="True">
+            <PanelContainer.PanelOverride>
+                <hud:StyleBoxGrid Step="0"/>
+            </PanelContainer.PanelOverride>
+            <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="0 10">
+                    <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" VerticalExpand="True">
+                        <BoxContainer Name="LeftSlots" Orientation="Vertical" VerticalAlignment="Center"/>
+                        <BoxContainer Orientation="Vertical" VerticalAlignment="Center" Margin="18 0" SeparationOverride="6">
+                            <PanelContainer SetSize="300 320">
+                                <PanelContainer.PanelOverride>
+                                    <hud:StyleBoxGrid/>
+                                </PanelContainer.PanelOverride>
+                                <SpriteView Name="Preview" Scale="9 9" SetSize="300 320"/>
+                            </PanelContainer>
+                            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="4">
+                                <Button Name="RotateLeft" Text="◀" StyleClasses="LuaMHudButton"/>
+                                <Button Name="RotateRight" Text="▶" StyleClasses="LuaMHudButton"/>
+                            </BoxContainer>
+                        </BoxContainer>
+                        <BoxContainer Name="RightSlots" Orientation="Vertical" VerticalAlignment="Center"/>
+                    </BoxContainer>
+                    <PanelContainer MinSize="0 1" Margin="40 8 40 6">
+                        <PanelContainer.PanelOverride>
+                            <graphics:StyleBoxFlat BackgroundColor="#3D484D"/>
+                        </PanelContainer.PanelOverride>
+                    </PanelContainer>
+                    <BoxContainer Name="WeaponSlots" Orientation="Horizontal" HorizontalAlignment="Center"/>
+                </BoxContainer>
+            </ScrollContainer>
+        </PanelContainer>
+        <PanelContainer Name="PickerPanel" MinWidth="460" MaxWidth="460" VerticalExpand="True" Visible="False">
+            <PanelContainer.PanelOverride>
+                <hud:StyleBoxHud BackgroundColor="#121618" BorderColor="#7FD1C7" BorderThickness="1" HeaderHeight="32" Double="True" Chamfer="8"
+                                 ContentMarginLeftOverride="6" ContentMarginRightOverride="6" ContentMarginBottomOverride="6" ContentMarginTopOverride="0"/>
+            </PanelContainer.PanelOverride>
+            <BoxContainer Orientation="Vertical" SeparationOverride="6">
+                <BoxContainer Orientation="Horizontal" SeparationOverride="10" Margin="8 3 6 0" SetHeight="29">
+                    <Label Name="PickerTitle" HorizontalExpand="True" StyleClasses="LuaMHudHeading" VAlign="Center"/>
+                    <Button Name="PickerClose" Text="✕" StyleClasses="LuaMHudButton"/>
+                </BoxContainer>
+                <ScrollContainer VerticalExpand="True" HScrollEnabled="False" Margin="6 0 6 6">
+                    <BoxContainer Name="PickerContent" Orientation="Vertical" HorizontalExpand="True"/>
+                </ScrollContainer>
+            </BoxContainer>
+        </PanelContainer>
+    </BoxContainer>
+</BoxContainer>

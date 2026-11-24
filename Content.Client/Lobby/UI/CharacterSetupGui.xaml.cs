@@ -44,11 +44,12 @@ namespace Content.Client.Lobby.UI
             };
             back.SetPatchMargin(StyleBox.Margin.All, 10);
 
-            BackgroundPanel.PanelOverride = back;
+            // LuaM
 
             _createNewCharacterButton = new Button
             {
                 Text = Loc.GetString("character-setup-gui-create-new-character-button"),
+                StyleClasses = { Content.Client.Stylesheets.LobbyHudStyles.Button }, // LuaM
             };
 
             _createNewCharacterButton.OnPressed += args =>
@@ -59,6 +60,19 @@ namespace Content.Client.Lobby.UI
             };
 
             CharEditor.AddChild(profileEditor);
+// LuaM-start
+            CharacterHeader.Orphan();
+            profileEditor.SetCharacterHeader(CharacterHeader);
+            CharacterSelectButton.OnPressed += _ => CharactersPanel.Visible = !CharactersPanel.Visible;
+            NewCharacterButton.OnPressed += _ =>
+            {
+                _preferencesManager.CreateCharacter(HumanoidCharacterProfile.Random());
+                ReloadCharacterPickers();
+                CharactersPanel.Visible = true;
+            };
+            Dock.PanelOverride = Content.Client._LuaM.UserInterface.Hud.StyleBoxHud.Frame(null, null, 4);
+            CloseIcon.IconColor = Content.Client._LuaM.UserInterface.Hud.HudPalette.Bad;
+// LuaM-end
             RulesButton.OnPressed += _ => new RulesAndInfoWindow().Open();
 
             StatsButton.OnPressed += _ => new PlaytimeStatsWindow().OpenCentered();
@@ -97,12 +111,19 @@ namespace Content.Client.Lobby.UI
                     character,
                     slot == selectedSlot);
 
+                characterPickerButton.SetSlotCode(slot); // LuaM
                 Characters.AddChild(characterPickerButton);
 
                 characterPickerButton.OnPressed += args =>
                 {
+                    CharactersPanel.Visible = false; // LuaM
                     SelectCharacter?.Invoke(slot);
                 };
+
+// LuaM-start
+                if (slot == selectedSlot)
+                    CharacterSelectButton.Text = $"A{slot + 1:00} · {character.Name}   ▼";
+// LuaM-end
 
                 characterPickerButton.OnDeletePressed += () =>
                 {
@@ -111,7 +132,9 @@ namespace Content.Client.Lobby.UI
             }
 
             _createNewCharacterButton.Disabled = numberOfFullSlots >= _preferencesManager.Settings.MaxCharacterSlots;
+            SlotsLabel.Text = Loc.GetString("character-setup-gui-slots", ("used", numberOfFullSlots), ("max", _preferencesManager.Settings.MaxCharacterSlots)); // LuaM
             Characters.AddChild(_createNewCharacterButton);
+            NewCharacterButton.Disabled = _createNewCharacterButton.Disabled; // LuaM
         }
     }
 }

@@ -1,0 +1,4 @@
+- files: ["IBMPlexSansCondensed-Regular.ttf", "IBMPlexSansCondensed-Medium.ttf", "IBMPlexSansCondensed-SemiBold.ttf"]
+  license: "OFL-1.1"
+  copyright: "Copyright 2017 IBM Corp. with Reserved Font Name \"Plex\". Unmodified; full licence in OFL.txt."
+  source: "https://github.com/IBM/plex"

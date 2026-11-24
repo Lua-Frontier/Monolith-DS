@@ -64,8 +64,9 @@ namespace Content.Client.Lobby
                 ? Loc.GetString("ui-lobby-title", ("serverName", serverName))
                 : lobbyNameCvar;
 
-            var width = _cfg.GetCVar(CCVars.ServerLobbyRightPanelWidth);
-            Lobby.RightSide.SetWidth = width;
+            // LuaM
+            // var width = _cfg.GetCVar(CCVars.ServerLobbyRightPanelWidth);
+            // Lobby.RightSide.SetWidth = width;
 
             InitializeLuaMLobby(); // LuaM
             UpdateLobbyUi();
@@ -131,13 +132,14 @@ namespace Content.Client.Lobby
         {
             if (_gameTicker.IsGameStarted)
             {
-                Lobby!.StartTime.Text = string.Empty;
+                // Lobby!.StartTime.Text = string.Empty; // LuaM
                 var roundTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
-                Lobby!.StationTime.Text = Loc.GetString("lobby-state-player-status-round-time", ("hours", roundTime.Hours), ("minutes", roundTime.Minutes));
+                Lobby!.SetStationTime(Loc.GetString("lobby-state-player-status-round-time", ("hours", roundTime.Hours), ("minutes", roundTime.Minutes))); // LuaM
+                Lobby!.SetRoundTimer($"{roundTime.Hours}:{roundTime.Minutes:D2}", Loc.GetString("lobby-hud-round-running")); // LuaM
                 return;
             }
 
-            Lobby!.StationTime.Text = Loc.GetString("lobby-state-player-status-round-not-started");
+            Lobby!.SetStationTime(Loc.GetString("lobby-state-player-status-round-not-started")); // LuaM
             string text;
 
             if (_gameTicker.Paused)
@@ -146,7 +148,8 @@ namespace Content.Client.Lobby
             }
             else if (_gameTicker.StartTime < _gameTiming.CurTime)
             {
-                Lobby!.StartTime.Text = Loc.GetString("lobby-state-soon");
+                // Lobby!.StartTime.Text = Loc.GetString("lobby-state-soon"); // LuaM
+                Lobby!.SetRoundTimer("0:00", Loc.GetString("lobby-state-soon")); // LuaM
                 return;
             }
             else
@@ -167,7 +170,8 @@ namespace Content.Client.Lobby
                 }
             }
 
-            Lobby!.StartTime.Text = Loc.GetString("lobby-state-round-start-countdown-text", ("timeLeft", text));
+            // Lobby!.StartTime.Text = Loc.GetString("lobby-state-round-start-countdown-text", ("timeLeft", text)); // LuaM
+            Lobby!.SetRoundTimer(text, Loc.GetString("lobby-hud-until-start")); // LuaM
         }
 
         private void LobbyStatusUpdated()
