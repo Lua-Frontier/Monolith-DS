@@ -1,0 +1,20 @@
+# Command-looking doors of the Medical Center. The Director of Care has medical access only,
+# so they read the chief medical officer level instead of Command.
+
+- type: entity
+  parent: AirlockCommandLocked
+  id: AirlockCommandChiefMedicalOfficerLocked
+  suffix: Chief Medical Officer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefMedicalOfficer ]
+
+- type: entity
+  parent: HighSecCommandLocked
+  id: HighSecChiefMedicalOfficerLocked
+  suffix: Chief Medical Officer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChiefMedicalOfficer ]

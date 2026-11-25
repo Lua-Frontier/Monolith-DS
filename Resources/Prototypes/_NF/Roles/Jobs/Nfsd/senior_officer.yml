@@ -25,7 +25,7 @@
   - Armory
   - Sergeant
   - Bailiff
-  - Medical
+  # - Medical # LuaM: the Colossus medbay
   - Chemistry
   - TsfmcEngineering
   accessGroups:

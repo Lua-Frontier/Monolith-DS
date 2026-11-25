@@ -39,6 +39,8 @@
   - Hydroponics
   - Atmospherics
   - Pilot # Mono
+  - ColossusSecurity # LuaM
+  - ColossusCommand # LuaM
 #  - Pirate # Mono
 
 # Mono start

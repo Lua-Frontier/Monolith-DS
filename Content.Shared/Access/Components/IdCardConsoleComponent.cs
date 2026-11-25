@@ -95,6 +95,8 @@ public sealed partial class IdCardConsoleComponent : Component
     "MieyoLiason", // Mono
     "Viper", // LuaM
     "ViperCommand", // LuaM
+    "ColossusSecurity", // LuaM
+    "ColossusCommand", // LuaM
     };
 
     [Serializable, NetSerializable]

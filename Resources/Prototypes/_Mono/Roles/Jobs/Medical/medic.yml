@@ -21,9 +21,10 @@
   canBeAntag: false
   accessGroups:
   - GeneralAccess
-  - Medical
+  # - Medical # LuaM: the group has ChiefMedicalOfficer, the Director of Care access
   access:
   - Medical
+  - Chemistry # LuaM
   guides:
   - ColossusMedicalFaction # LuaM: Caelestinus > ColossusMedicalFaction
   special:
