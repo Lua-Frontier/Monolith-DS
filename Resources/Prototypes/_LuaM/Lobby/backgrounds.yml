@@ -3,7 +3,6 @@
   path: /Textures/_LuaM/LobbyScreens/LuaMGalaxy1/
   frames: 14
   frameTime: 0.15
-  default: true
 
 - type: animatedLobbyBackground
   id: LuaMSky1
@@ -22,6 +21,7 @@
   path: /Textures/_LuaM/LobbyScreens/LuaMPlanets1/
   frames: 20
   frameTime: 0.2
+  default: true
 
 - type: animatedLobbyBackground
   id: LuaMSpace1

@@ -22,7 +22,7 @@
     </PanelContainer>
     <BoxContainer Name="RoleNameBox" Orientation="Horizontal" SeparationOverride="6" Visible="False">
         <Label Name="LoadoutNameLabel" StyleClasses="LuaMHudMonoDim" VAlign="Center"/>
-        <LineEdit Name="RoleNameEdit" MinWidth="380" StyleClasses="LuaMHudInput"/>
+        <LineEdit Name="RoleNameEdit" MinWidth="380" HorizontalExpand="True" StyleClasses="LuaMHudInput"/>
     </BoxContainer>
     <BoxContainer Orientation="Horizontal" VerticalExpand="True" SeparationOverride="10">
         <PanelContainer MinWidth="390" VerticalExpand="True">

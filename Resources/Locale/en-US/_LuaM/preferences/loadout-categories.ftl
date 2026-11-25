@@ -150,3 +150,5 @@ character-setup-gui-new-character = + New
 lobby-hud-field-role-short = Role
 traits-editor-lead-points = Not enough points
 traits-editor-lead-exclusive = Incompatible
+humanoid-profile-editor-soon = Soon
+humanoid-profile-editor-soon-tooltip = Coming soon

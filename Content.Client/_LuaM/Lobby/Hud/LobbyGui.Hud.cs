@@ -30,11 +30,11 @@ public sealed partial class LobbyGui
     private float _fitTimer;
     private float _fitWidth;
 
-    private const float TerminalMinWidth = 620;
+    private const float TerminalMinWidth = 660;
     private const float TerminalChrome = 70;
     private const float TerminalMaxShare = 0.42f;
     private const float RoundRowMin = 124;
-    private const float RoundRowMax = 300;
+    private const float RoundRowMax = 380;
 
     private void HideBannerDuplicates()
     {
@@ -86,8 +86,7 @@ public sealed partial class LobbyGui
         if (!DefaultState.Visible || Width <= 0)
             return;
 
-        ServerInfo.Measure(new Vector2(float.PositiveInfinity, float.PositiveInfinity));
-        var wanted = Math.Clamp(ServerInfo.DesiredSize.X + TerminalChrome, TerminalMinWidth, MathF.Max(TerminalMinWidth, Width * TerminalMaxShare));
+        var wanted = MathF.Min(TerminalMinWidth, MathF.Max(TerminalMinWidth * 0.8f, Width * TerminalMaxShare));
         if (MathF.Abs(RightSide.SetWidth - wanted) > 2)
             RightSide.SetWidth = wanted;
 
