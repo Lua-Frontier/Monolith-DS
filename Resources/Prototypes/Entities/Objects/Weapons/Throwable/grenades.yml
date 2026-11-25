@@ -53,6 +53,7 @@
   id: ExGrenade
   components:
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 10
@@ -81,6 +82,7 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/flashbang.rsi
+  - type: ConcussiveFlash # LuaM
   - type: FlashOnTrigger
     range: 7
   - type: SoundOnTrigger
@@ -144,6 +146,7 @@
   - type: OnUseTimerTrigger
     delay: 5
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Minibomb
     totalIntensity: 200
@@ -296,6 +299,7 @@
   - type: OnUseTimerTrigger
     delay: 5
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 20000 # ~15 tile radius.
@@ -393,6 +397,7 @@
   - type: Sprite
     sprite: Objects/Weapons/Grenades/holyhandgrenade.rsi
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default # same as macrobomb
     totalIntensity: 3500

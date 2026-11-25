@@ -54,6 +54,7 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 1
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100
@@ -120,6 +121,7 @@
   - type: SpentAmmoVisuals
   - type: StaticPrice
     price: 1
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100

@@ -62,6 +62,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:ExplodeBehavior
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100

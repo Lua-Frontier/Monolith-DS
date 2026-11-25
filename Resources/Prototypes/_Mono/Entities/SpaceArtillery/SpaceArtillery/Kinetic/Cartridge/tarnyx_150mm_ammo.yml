@@ -62,6 +62,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:ExplodeBehavior
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100
@@ -128,6 +129,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:ExplodeBehavior
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100
@@ -158,6 +160,7 @@
   - type: Ammo
     muzzleFlash: null
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     deleteAfterExplosion: false
     explosionType: HardBomb
@@ -202,6 +205,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:ExplodeBehavior
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100

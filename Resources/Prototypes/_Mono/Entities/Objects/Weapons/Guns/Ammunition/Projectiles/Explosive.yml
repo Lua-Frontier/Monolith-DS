@@ -13,6 +13,7 @@
   - type: ExplodeOnTrigger
   - type: TimedDespawn
     lifetime: 7
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: DemolitionCharge
     maxIntensity: 25
@@ -42,6 +43,7 @@
   - type: ExplodeOnTrigger
   - type: TimedDespawn
     lifetime: 7
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: MicroBomb
     maxIntensity: 10 # 180 brute dmg/tile

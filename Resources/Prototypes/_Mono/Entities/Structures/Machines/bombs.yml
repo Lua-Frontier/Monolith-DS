@@ -10,6 +10,7 @@
        state: syndicate-bomb
      - type: Appearance
      - type: InteractionOutline
+     - type: ConcussiveExplosive # LuaM
      - type: Explosive
        explosionType: Default
        totalIntensity: 10000.0

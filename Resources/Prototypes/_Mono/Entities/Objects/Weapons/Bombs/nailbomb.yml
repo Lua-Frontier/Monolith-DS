@@ -25,6 +25,8 @@
   #   intensitySlope: 5
   #   maxIntensity: 6
   #   canCreateVacuum: false
+  - type: ConcussiveExplosive # LuaM
+    radius: 2
   - type: ProjectileGrenade
     fillPrototype: PelletClusterLethal
     capacity: 50

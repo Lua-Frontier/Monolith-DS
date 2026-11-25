@@ -735,6 +735,7 @@
     layers:
       - state: frag
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 40
@@ -757,6 +758,7 @@
     layers:
       - state: frag
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 2
@@ -799,6 +801,7 @@
     layers:
       - state: grenade
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 150 # a ~2 tile radius
@@ -815,6 +818,7 @@
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
       - state: grenade
+  - type: ConcussiveFlash # LuaM
   - type: FlashOnTrigger
     range: 7
   - type: SpawnOnTrigger
@@ -835,6 +839,7 @@
     layers:
       - state: grenade
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 175 # about a ~6 tile radius
@@ -949,6 +954,7 @@
     layers:
       - state: ball
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: DemolitionCharge
     maxIntensity: 9

@@ -249,6 +249,7 @@
     - type: ExplodeOnTrigger
     - type: GibOnTrigger
       deleteItems: true
+    - type: ConcussiveExplosive # LuaM
     - type: Explosive
       explosionType: MicroBomb
       totalIntensity: 120
@@ -285,6 +286,7 @@
     - type: ExplodeOnTrigger
     - type: GibOnTrigger
       deleteItems: true
+    - type: ConcussiveExplosive # LuaM
     - type: Explosive
       explosionType: Default
       totalIntensity: 3500

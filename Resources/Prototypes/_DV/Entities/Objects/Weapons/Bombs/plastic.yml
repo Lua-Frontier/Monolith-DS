@@ -20,6 +20,7 @@
         volume: -6
     startOnStick: true
     canToggleStartOnStick: true
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: DemolitionCharge
     totalIntensity: 400 # mono

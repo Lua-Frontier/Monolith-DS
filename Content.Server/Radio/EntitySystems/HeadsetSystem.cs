@@ -16,7 +16,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using System.Linq;
-using Content.Shared._LuaM.Hearing; // LuaM
+using Content.Server._LuaM.Hearing; // LuaM
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -26,6 +26,7 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
     [Dependency] private RadioSystem _radio = default!;
     [Dependency] private LanguageSystem _language = default!;
     [Dependency] private HeadsetPunishmentSystem _punishment = default!;
+    [Dependency] private DeafSpeechSystem _deafSpeech = default!; // LuaM
 
     public override void Initialize()
     {
@@ -135,17 +136,26 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
 // Corvax-TTS-start:
         var parent = Transform(uid).ParentUid;
 
-        if (HasComp<DeafComponent>(parent)) // LuaM: deaf creatures hear no radio
-            return;
-
         if (TryComp(parent, out ActorComponent? actor))
 // Corvax-TTS-end.
         {
             // Einstein Engines - Language begin
             var canUnderstand = _language.CanUnderstand(parent, args.Language.ID); // Corvax-TTS: Transform(uid).ParentUid > parent
+            var chatMsg = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg;
+
+            // LuaM-start: deaf creatures hear no radio, a concussed one makes out only part of the words
+            if (_deafSpeech.IsDeaf(parent, out var partialSpeech))
+            {
+                if (!partialSpeech || _deafSpeech.Garble(chatMsg) is not { } garbled)
+                    return;
+
+                chatMsg = garbled;
+            }
+            // LuaM-end
+
             var msg = new MsgChatMessage
             {
-                Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
+                Message = chatMsg // LuaM: canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
             };
             _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
 

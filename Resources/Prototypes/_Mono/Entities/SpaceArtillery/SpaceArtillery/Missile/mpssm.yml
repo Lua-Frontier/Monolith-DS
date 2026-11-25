@@ -32,6 +32,7 @@
     color: orange
     energy: 0.5
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 8
@@ -90,6 +91,7 @@
     trackDelay: 0
     exposesTracking: false
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 150

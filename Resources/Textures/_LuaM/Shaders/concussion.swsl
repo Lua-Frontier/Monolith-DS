@@ -1,0 +1,45 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float intensity;
+uniform highp float motion;
+uniform highp float blurRadius;
+uniform highp float doubleVision;
+uniform highp float ghostAlpha;
+uniform highp float desaturation;
+uniform highp float vignette;
+
+const highp int Taps = 12;
+const highp float GoldenAngle = 2.39996323;
+
+void fragment() {
+    highp vec2 uv = FRAGCOORD.xy * SCREEN_PIXEL_SIZE.xy;
+    highp float k = clamp(intensity, 0.0, 1.0);
+
+    // Second, ghost image of the screen that slowly floats around the real one.
+    highp float time = TIME * 1.3;
+    highp vec2 wobble = vec2(sin(time), cos(time * 0.77 + 0.4)) * motion;
+    highp vec2 ghostShift = (vec2(1.0, 0.35) + wobble * 0.6) * doubleVision * k;
+
+    // Disc blur, its radius in screen pixels grows with the intensity.
+    highp vec2 radius = SCREEN_PIXEL_SIZE.xy * blurRadius * k;
+    highp vec3 sharp = vec3(0.0);
+    highp vec3 ghost = vec3(0.0);
+    for (int i = 0; i < Taps; i++)
+    {
+        highp float fi = float(i);
+        highp float r = sqrt((fi + 0.5) / float(Taps));
+        highp float a = fi * GoldenAngle;
+        highp vec2 offset = vec2(cos(a), sin(a)) * r * radius;
+        sharp += zTextureSpec(SCREEN_TEXTURE, uv + offset).rgb;
+        ghost += zTextureSpec(SCREEN_TEXTURE, uv + offset + ghostShift).rgb;
+    }
+    sharp /= float(Taps);
+    ghost /= float(Taps);
+
+    highp vec3 color = mix(sharp, ghost, ghostAlpha * k);
+    color = mix(color, vec3(zGrayscale(color)), desaturation * k);
+
+    highp float edge = smoothstep(0.25, 0.75, length(uv - vec2(0.5)));
+    color *= 1.0 - vignette * k * edge;
+
+    COLOR = vec4(color, 1.0);
+}

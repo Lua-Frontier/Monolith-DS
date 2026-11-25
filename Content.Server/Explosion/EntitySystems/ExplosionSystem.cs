@@ -234,6 +234,11 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             explosive.CanCreateVacuum,
             user);
 
+        // LuaM-start
+        var detonated = new ExplosiveDetonatedEvent((float) totalIntensity * mult, explosive.IntensitySlope, explosive.MaxIntensity);
+        RaiseLocalEvent(uid, ref detonated);
+        // LuaM-end
+
         if (explosive.DeleteAfterExplosion ?? delete)
             QueueDel(uid);
     }

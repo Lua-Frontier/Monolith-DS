@@ -44,6 +44,7 @@
   - type: ProjectileGrenade
     fillPrototype: PelletClusterRubber
     capacity: 30
+  - type: ConcussiveFlash # LuaM
   - type: FlashOnTrigger
     range: 7
   - type: EmitSoundOnTrigger
@@ -96,6 +97,8 @@
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
+  - type: ConcussiveExplosive # LuaM
+    radius: 3
   - type: ProjectileGrenade
     fillPrototype: PelletClusterLethal
     capacity: 30

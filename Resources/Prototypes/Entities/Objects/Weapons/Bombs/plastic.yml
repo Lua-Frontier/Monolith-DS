@@ -64,6 +64,7 @@
   - type: DeviceLinkSink
     ports:
       - Timer
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive # Powerful explosion in a very small radius. Doesn't break underplating.
     explosionType: DemolitionCharge
     totalIntensity: 325
@@ -113,6 +114,7 @@
   - type: DeviceLinkSink
     ports:
     - Timer
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Cryo
     totalIntensity: 220 # LuaM: 120 > 220
