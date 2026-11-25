@@ -12,11 +12,11 @@ public sealed partial class MenuButton : ContainerButton
     public const string StyleClassLabelTopButton = "topButtonLabel";
     public const string StyleClassRedTopButton = "topButtonLabel";
 
-    private static readonly Color ColorNormal = Color.FromHex("#8f8f8f");
+    private static readonly Color ColorNormal = Color.FromHex("#6FB3AA"); // LuaM: #8f8f8f > #6FB3AA
     private static readonly Color ColorRedNormal = Color.FromHex("#FEFEFE");
-    private static readonly Color ColorHovered = Color.FromHex("#363636");
+    private static readonly Color ColorHovered = Color.FromHex("#DCE2E3"); // LuaM: #363636 > #DCE2E3
     private static readonly Color ColorRedHovered = Color.FromHex("#FFFFFF");
-    private static readonly Color ColorPressed = Color.FromHex("#878787");
+    private static readonly Color ColorPressed = Color.FromHex("#7FD1C7"); // LuaM: #878787 > #7FD1C7
 
     private const float VertPad = 8f;
     private Color NormalColor => HasStyleClass(StyleClassRedTopButton) ? ColorRedNormal : ColorNormal;
