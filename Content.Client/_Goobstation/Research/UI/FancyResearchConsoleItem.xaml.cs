@@ -80,32 +80,20 @@ public sealed partial class FancyResearchConsoleItem : LayoutContainer
         Button.OnPressed += Selected;
         Button.OnDrawModeChanged += UpdateColor;
 
-        // Set colors - only border color varies by availability state
-        var availabilityBorderColor = availability switch
-        {
-            ResearchAvailability.Researched => Color.FromHex("#2ab043"),
-            ResearchAvailability.Available => Color.FromHex("#fab325"),
-            ResearchAvailability.PrereqsMet => Color.FromHex("#91752f"),
-            ResearchAvailability.Unavailable => Color.Crimson,
-            _ => Color.Crimson
-        };
-
-        // Background always uses discipline color
-        // Create a brighter version of the discipline color for hover by interpolating with white
-        HoveredColor = Color.InterpolateBetween(disciplineColor, Color.White, 0.3f);
-        // Create an even brighter version for selection (persistent bright highlight)
-        SelectedColor = Color.InterpolateBetween(disciplineColor, Color.White, 0.5f);
-        // Only border color varies by availability
+        // LuaM-start
+        var availabilityBorderColor = ResearchColorScheme.GetTechBorderColor(availability);
+        BackgroundColor = Content.Client._LuaM.UserInterface.Hud.StyleBoxLamp.Mix(availabilityBorderColor, Content.Client._LuaM.UserInterface.Hud.HudPalette.Background, 0.12f);
+        HoveredColor = Content.Client._LuaM.UserInterface.Hud.StyleBoxLamp.Mix(availabilityBorderColor, Content.Client._LuaM.UserInterface.Hud.HudPalette.Background, 0.28f);
+        SelectedColor = Content.Client._LuaM.UserInterface.Hud.StyleBoxLamp.Mix(availabilityBorderColor, Content.Client._LuaM.UserInterface.Hud.HudPalette.Background, 0.45f);
         BorderColor = availabilityBorderColor;
 
-        // Create rounded style box with 8px corner radius and thick border
         var roundedStyle = new RoundedStyleBoxFlat
         {
             BorderColor = BorderColor,
-            BorderThickness = new Thickness(2.5f),
-            CornerRadius = 8f
+            BorderThickness = new Thickness(2f),
+            CornerRadius = 0f
         };
-
+        // LuaM-end
         Panel.PanelOverride = roundedStyle;
         UpdateColor();
     }

@@ -69,7 +69,7 @@ public sealed partial class MapScreen
     {
         slider.BackgroundStyleBoxOverride = new StyleBoxFlat
         {
-            BackgroundColor = Color.FromHex("#121512"),
+            BackgroundColor = Color.FromHex("#07090A"), // LuaM: #121512 > #07090A
             ContentMarginTopOverride = 2,
             ContentMarginBottomOverride = 2,
         };
@@ -81,8 +81,8 @@ public sealed partial class MapScreen
         };
         slider.ForegroundStyleBoxOverride = new StyleBoxFlat
         {
-            BackgroundColor = Color.FromHex("#2A302A"),
-            BorderColor = Color.FromHex("#3E463E"),
+            BackgroundColor = Color.FromHex("#1A1F22"), // LuaM: #2A302A > #1A1F22
+            BorderColor = Color.FromHex("#3D484D"), // LuaM: #3E463E > #3D484D
             BorderThickness = new Thickness(1),
             ContentMarginTopOverride = 2,
             ContentMarginBottomOverride = 2,
@@ -115,12 +115,11 @@ public sealed partial class MapScreen
         {
             Text = mapObj.Name,
             HorizontalExpand = true,
-            MinHeight = 18f,
+            MinHeight = 22f,
         };
-        gridButton.AddStyleClass(ConsoleStyles.Button); // LuaM: ButtonSquare > console button
+        gridButton.AddStyleClass(HudThemeStyles.ListRow);
         gridButton.Label.ClipText = true;
-        gridButton.Label.FontColorOverride = Color.FromHex("#C5CEDB");
-        gridButton.Label.FontOverride = _mapObjectFont;
+        gridButton.Label.Align = Label.AlignMode.Left;
         gridButton.OnPressed += _ => OnMapObjectPress(mapObj);
 
         var iconSlot = new CenterContainer()

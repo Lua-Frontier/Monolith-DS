@@ -105,41 +105,43 @@ public static class ResearchColorScheme
     /// <summary>
     /// Technology item colors based on availability state
     /// </summary>
+    // LuaM-start
     private static readonly Dictionary<ResearchAvailability, TechItemColors> BaseTechItemColors = new()
     {
         [ResearchAvailability.Researched] = new TechItemColors(
-            background: Color.LimeGreen,
-            border: Color.LimeGreen,
-            hover: Color.LimeGreen,
-            selected: Color.LimeGreen,
-            connection: Color.LimeGreen,
-            infoText: Color.LimeGreen
+            background: Color.FromHex("#6FBF73"),
+            border: Color.FromHex("#6FBF73"),
+            hover: Color.FromHex("#6FBF73"),
+            selected: Color.FromHex("#6FBF73"),
+            connection: Color.FromHex("#6FBF73"),
+            infoText: Color.FromHex("#6FBF73")
         ),
         [ResearchAvailability.Available] = new TechItemColors(
-            background: Color.FromHex("#e8fa25"),
-            border: Color.FromHex("#e8fa25"),
-            hover: Color.FromHex("#e8fa25"),
-            selected: Color.FromHex("#e8fa25"),
-            connection: Color.FromHex("#e8fa25"),
-            infoText: Color.FromHex("#e8fa25")
+            background: Color.FromHex("#5FA8D3"),
+            border: Color.FromHex("#5FA8D3"),
+            hover: Color.FromHex("#5FA8D3"),
+            selected: Color.FromHex("#5FA8D3"),
+            connection: Color.FromHex("#5FA8D3"),
+            infoText: Color.FromHex("#5FA8D3")
         ),
         [ResearchAvailability.PrereqsMet] = new TechItemColors(
-            background: Color.FromHex("#cca031"),
-            border: Color.FromHex("#cca031"),
-            hover: Color.FromHex("#cca031"),
-            selected: Color.FromHex("#cca031"),
-            connection: Color.FromHex("#cca031"),
-            infoText: Color.Crimson
+            background: Color.FromHex("#3F7194"),
+            border: Color.FromHex("#3F7194"),
+            hover: Color.FromHex("#3F7194"),
+            selected: Color.FromHex("#3F7194"),
+            connection: Color.FromHex("#3F7194"),
+            infoText: Color.FromHex("#E5533D")
         ),
         [ResearchAvailability.Unavailable] = new TechItemColors(
-            background: Color.Crimson,
-            border: Color.Crimson,
-            hover: Color.Crimson,
-            selected: Color.Crimson,
-            connection: Color.Crimson,
-            infoText: Color.Crimson
+            background: Color.FromHex("#E5533D"),
+            border: Color.FromHex("#E5533D"),
+            hover: Color.FromHex("#E5533D"),
+            selected: Color.FromHex("#E5533D"),
+            connection: Color.FromHex("#E5533D"),
+            infoText: Color.FromHex("#E5533D")
         )
     };
+    // LuaM-end
 
     /// <summary>
     /// Get optimized tech item colors for a specific availability state

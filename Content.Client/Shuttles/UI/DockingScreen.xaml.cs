@@ -146,7 +146,7 @@ public sealed partial class DockingScreen : BoxContainer
             if (!dock.Connected || dock.GridDockedWith == null || !_ourDockButtons.TryGetValue(dock.Entity, out var button))
                 continue;
 
-            button.ModulateSelfOverride = enabled ? Color.Red : null; // LuaM
+            SetDockedLamp(button, true); // LuaM
             // LuaM-comented-start:
             // if (button.ChildCount == 0)
             //     continue;
@@ -308,7 +308,7 @@ public sealed partial class DockingScreen : BoxContainer
                 //     }
                 // }
                 // LuaM-comented-end
-                button.ModulateSelfOverride = null; // LuaM return color
+                SetDockedLamp(button, false); // LuaM
                 continue;
             }
 
@@ -324,7 +324,7 @@ public sealed partial class DockingScreen : BoxContainer
                 Logger.GetSawmill("shuttle").Debug($"UpdateDockLockIndicators: Entity {dockedEntity} component says FTLLock.Enabled = {lockComp.Enabled}, UI showing = {isLocked}");
             }
 
-            button.ModulateSelfOverride = isLocked ? Color.Red : null; // LuaM
+            SetDockedLamp(button, true); // LuaM
 
             // LuaM-comented-start:
             // // Get or create lock indicator
@@ -353,6 +353,17 @@ public sealed partial class DockingScreen : BoxContainer
             // LuaM-comented-end
         }
     }
+
+    // LuaM-start
+    private static void SetDockedLamp(Button button, bool docked)
+    {
+        button.ModulateSelfOverride = null;
+        if (docked && !button.HasStyleClass(ConsoleStyles.Yellow))
+            button.AddStyleClass(ConsoleStyles.Yellow);
+        else if (!docked && button.HasStyleClass(ConsoleStyles.Yellow))
+            button.RemoveStyleClass(ConsoleStyles.Yellow);
+    }
+    // LuaM-end
 
     private void BuildDocks(EntityUid? shuttle)
     {
@@ -448,8 +459,7 @@ public sealed partial class DockingScreen : BoxContainer
             // LuaM-start: | painting button
             if (dock.Connected && dock.GridDockedWith != null)
             {
-                bool isLocked = FTLLockEnabledButton.Pressed;
-                button.ModulateSelfOverride = isLocked ? Color.Red : null;
+                SetDockedLamp(button, true);
             }
             // Lua-end
 

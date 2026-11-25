@@ -95,6 +95,7 @@
                                HorizontalAlignment="Center"/>
                     </controls:PanelContainer>
                     <controls:PanelContainer StyleClasses="LuaMConsoleInset">
+                    <!-- LuaM -->
                     <controls:GridContainer Columns="2"
                                    HorizontalAlignment="Stretch"
                                    VerticalAlignment="Top"
@@ -102,27 +103,27 @@
                                    Margin="6 4 6 4"
                                    Name="ReadonlyDisplay">
                         <controls:Label Text="{controls:Loc 'shuttle-console-designation'}"/>
-                        <controls:Label Name="ShuttleDesignation"
+                        <controls:Label Name="ShuttleDesignation" ClipText="True"
                                Text="{controls:Loc 'shuttle-console-designation-unknown'}"
                                HorizontalExpand="True"
                                Align="Right"/>
                         <controls:Label Text="{controls:Loc 'shuttle-console-position'}"/>
-                        <controls:Label Name="GridPosition"
+                        <controls:Label Name="GridPosition" ClipText="True"
                                Text="0.0, 0.0"
                                HorizontalExpand="True"
                                Align="Right"/>
                         <controls:Label Text="{controls:Loc 'shuttle-console-orientation'}"/>
-                        <controls:Label Name="GridOrientation"
+                        <controls:Label Name="GridOrientation" ClipText="True"
                                Text="0.0"
                                HorizontalExpand="True"
                                Align="Right"/>
                         <controls:Label Text="{controls:Loc 'shuttle-console-linear-velocity'}"/>
-                        <controls:Label Name="GridLinearVelocity"
+                        <controls:Label Name="GridLinearVelocity" ClipText="True"
                                Text="0.0, 0.0"
                                HorizontalExpand="True"
                                Align="Right"/>
                         <controls:Label Text="{controls:Loc 'shuttle-console-angular-velocity'}"/>
-                        <controls:Label Name="GridAngularVelocity"
+                        <controls:Label Name="GridAngularVelocity" ClipText="True"
                                Text="0.0"
                                HorizontalExpand="True"
                                Align="Right"/>
@@ -130,7 +131,7 @@
                         <controls:Label Name="GridAltitudeCaption"
                                Text="{controls:Loc 'shuttle-console-altitude'}"
                                Visible="False"/>
-                        <controls:Label Name="GridAltitude"
+                        <controls:Label Name="GridAltitude" ClipText="True"
                                Text="-"
                                HorizontalExpand="True"
                                Align="Right"
@@ -138,7 +139,7 @@
                         <controls:Label Name="GridVerticalVelocityCaption"
                                Text="{controls:Loc 'shuttle-console-vertical-velocity'}"
                                Visible="False"/>
-                        <controls:Label Name="GridVerticalVelocity"
+                        <controls:Label Name="GridVerticalVelocity" ClipText="True"
                                Text="-"
                                HorizontalExpand="True"
                                Align="Right"
@@ -146,7 +147,7 @@
                         <controls:Label Name="GridTravelStateCaption"
                                Text="{controls:Loc 'shuttle-console-travel-state'}"
                                Visible="False"/>
-                        <controls:Label Name="GridTravelState"
+                        <controls:Label Name="GridTravelState" ClipText="True"
                                Text="-"
                                HorizontalExpand="True"
                                Align="Right"
@@ -190,19 +191,19 @@
                                          TextAlign="Center"
                                          ToggleMode="True"
                                          HorizontalExpand="True"
-                                         StyleClasses="LuaMConsoleButton"/>
+                                         StyleClasses="LuaMConsoleButton LuaMLampYellow"/> <!-- LuaM -->
                         <controls:Button Name="DampenerOn"
                                          Text="{controls:Loc 'shuttle-console-inertia-dampener-dampen'}"
                                          TextAlign="Center"
                                          ToggleMode="True"
                                          HorizontalExpand="True"
-                                         StyleClasses="LuaMConsoleButton"/>
+                                         StyleClasses="LuaMConsoleButton LuaMLampGreen"/> <!-- LuaM -->
                         <controls:Button Name="AnchorOn"
                                          Text="{controls:Loc 'shuttle-console-inertia-dampener-anchor'}"
                                          TextAlign="Center"
                                          ToggleMode="True"
                                          HorizontalExpand="True"
-                                         StyleClasses="LuaMConsoleButton"/>
+                                         StyleClasses="LuaMConsoleButton LuaMLampBlue"/> <!-- LuaM -->
                     </controls:BoxContainer>
                     <!-- End Frontier - Inertia dampener controls-->
 

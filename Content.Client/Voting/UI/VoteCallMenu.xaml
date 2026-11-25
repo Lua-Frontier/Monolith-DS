@@ -4,13 +4,18 @@
                  MouseFilter="Stop" MinSize="350 200">
     <PanelContainer StyleClasses="AngleRect" />
     <BoxContainer Orientation="Vertical">
-        <BoxContainer Margin="8 0" Orientation="Horizontal">
-            <Label Text="{Loc 'ui-vote-create-title'}"
-                   HorizontalExpand="True" VAlign="Center" StyleClasses="LabelHeading" />
-            <TextureButton Name="CloseButton" StyleClasses="windowCloseButton"
-                           VerticalAlignment="Center" />
-        </BoxContainer>
-        <controls:HighDivider />
+        <!-- LuaM-start -->
+        <Control>
+            <PanelContainer StyleClasses="WindowHeadingBackground" />
+            <BoxContainer Margin="4 2 8 0" Orientation="Horizontal">
+                <Label Text="{Loc 'ui-vote-create-title'}"
+                       HorizontalExpand="True" VAlign="Center" StyleClasses="FancyWindowTitle" />
+                <TextureButton Name="CloseButton" StyleClasses="windowCloseButton"
+                               VerticalAlignment="Center" />
+            </BoxContainer>
+        </Control>
+        <PanelContainer StyleClasses="LowDivider" />
+        <!-- LuaM-end -->
 
         <BoxContainer Orientation="Vertical" Margin="8 2 8 0" VerticalExpand="True" VerticalAlignment="Top">
             <BoxContainer Orientation="Vertical">

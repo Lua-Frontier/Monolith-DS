@@ -86,6 +86,7 @@ namespace Content.Client.Atmos.UI
                     HorizontalExpand = true,
                     Pressed = _selectedGases.Contains((Gas)int.Parse(gas.ID))
                 };
+                gasButton.AddStyleClass(Content.Client.Stylesheets.HudThemeStyles.ListRow); // LuaM
                 gasButton.OnToggled += args =>
                 {
                     var gasId = (Gas)int.Parse(gasButton.Name);

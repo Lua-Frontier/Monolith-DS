@@ -56,13 +56,14 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
                 var currentButtonRef = new Button
                 {
                     Text = name,
-                    TextAlign = Label.AlignMode.Right,
-                    HorizontalAlignment = HAlignment.Center,
+                    TextAlign = Label.AlignMode.Left, // LuaM: Right > Left
+                    HorizontalExpand = true, // LuaM: HorizontalAlignment Center > expand
                     VerticalAlignment = VAlignment.Center,
                     SizeFlagsStretchRatio = 1,
-                    MinSize = new Vector2(340, 20),
+                    MinSize = new Vector2(0, 22), // LuaM: 340 20 > 0 22
                     ClipText = true,
                 };
+                currentButtonRef.AddStyleClass(Content.Client.Stylesheets.HudThemeStyles.ListRow); // LuaM
 
                 currentButtonRef.OnPressed += _ => WarpClicked?.Invoke(warpTarget);
                 currentButtonRef.Visible = ButtonIsVisible(currentButtonRef);
