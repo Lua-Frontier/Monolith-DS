@@ -195,7 +195,7 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(TabContainer.StylePropertyTabStyleBoxInactive, tabContainerBoxInactive),
                     }),
 
-            }).ToList());
+            }).Concat(HudThemeStyles.GetRules(resCache)).ToList()); // LuaM
         }
     }
 }

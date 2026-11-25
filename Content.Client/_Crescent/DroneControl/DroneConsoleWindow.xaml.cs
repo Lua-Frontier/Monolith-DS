@@ -96,6 +96,7 @@ public sealed partial class DroneConsoleWindow : FancyWindow
                 ToggleMode = true,
                 Pressed = SelectedDrones.Contains(netEnt)
             };
+            btn.AddStyleClass(Content.Client.Stylesheets.HudThemeStyles.ListRow); // LuaM
 
             btn.OnPressed += (args) =>
             {

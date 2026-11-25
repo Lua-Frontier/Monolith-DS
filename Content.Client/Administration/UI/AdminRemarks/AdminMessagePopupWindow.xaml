@@ -1,9 +1,10 @@
+<!-- LuaM: palette colors -->
 <Control xmlns="https://spacestation14.io"
          xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
     <PanelContainer MouseFilter="Stop">
         <PanelContainer.PanelOverride>
             <!-- semi-transparent background -->
-            <gfx:StyleBoxFlat BackgroundColor="#000000AA" />
+            <gfx:StyleBoxFlat BackgroundColor="#07090AAA" />
         </PanelContainer.PanelOverride>
 
         <Control HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="600">

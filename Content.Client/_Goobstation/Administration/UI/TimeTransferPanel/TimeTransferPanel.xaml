@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <DefaultWindow xmlns="https://spacestation14.io"
                 xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                 xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
@@ -20,7 +21,7 @@
         <Control MinHeight="10"/>
         <PanelContainer VerticalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+                    <gfx:StyleBoxFlat BackgroundColor="#121618" />
                 </PanelContainer.PanelOverride>
             <ScrollContainer HScrollEnabled="False"
                      HorizontalExpand="True"

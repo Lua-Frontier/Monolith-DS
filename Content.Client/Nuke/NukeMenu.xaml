@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <DefaultWindow xmlns="https://spacestation14.io"
             xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
             Title="{Loc 'nuke-user-interface-title'}"
@@ -9,14 +10,14 @@
         <!-- First status label -->
         <PanelContainer Margin="0 0 0 5">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#001c00" />
+                <gfx:StyleBoxFlat BackgroundColor="#121618" />
             </PanelContainer.PanelOverride>
             <Label Name="FirstStatusLabel"/>
         </PanelContainer>
         <!-- Second status label -->
         <PanelContainer Margin="0 0 0 5">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#001c00" />
+                <gfx:StyleBoxFlat BackgroundColor="#121618" />
             </PanelContainer.PanelOverride>
             <Label Name="SecondStatusLabel"/>
         </PanelContainer>

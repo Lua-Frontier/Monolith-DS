@@ -1,3 +1,4 @@
+using Content.Client._LuaM.UserInterface.Hud;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
@@ -6,104 +7,50 @@ using static Robust.Client.UserInterface.StylesheetHelpers;
 
 namespace Content.Client.Stylesheets;
 
-/// <summary>
-/// Shuttle, gunnery and radar console look, in the colors of the Dead Space 14 AHelp menu.
-/// </summary>
 public static class ConsoleStyles
 {
-    /// <summary>
-    /// A section of the console.
-    /// </summary>
     public const string Section = "LuaMConsoleSection";
-
-    /// <summary>
-    /// A darker inset inside a section: readouts and lists.
-    /// </summary>
     public const string Inset = "LuaMConsoleInset";
-
-    /// <summary>
-    /// Section header strip, holds a <see cref="HeaderLabel"/>.
-    /// </summary>
     public const string Header = "LuaMConsoleHeader";
-
-    /// <summary>
-    /// Section title.
-    /// </summary>
     public const string HeaderLabel = "LuaMConsoleHeaderLabel";
-
-    /// <summary>
-    /// Any console button, toggles show the pressed look while on.
-    /// </summary>
     public const string Button = "LuaMConsoleButton";
-
-    /// <summary>
-    /// Console text input.
-    /// </summary>
     public const string Input = "LuaMConsoleInput";
+
+    public const string Blue = "LuaMLampBlue";
+    public const string Green = "LuaMLampGreen";
+    public const string Yellow = "LuaMLampYellow";
+    public const string Red = "LuaMLampRed";
+    public const string Violet = "LuaMLampViolet";
+    public const string Orange = "LuaMLampOrange";
+
+    public static readonly (string Class, Color Color)[] Lamps =
+    {
+        (Blue, HudPalette.Advisory),
+        (Green, HudPalette.Good),
+        (Yellow, HudPalette.Caution),
+        (Red, HudPalette.Bad),
+        (Violet, HudAccents.Science),
+        (Orange, HudAccents.Cargo),
+    };
 
     public static StyleRule[] GetRules(IResourceCache resCache)
     {
-        var section = new StyleBoxFlat
-        {
-            BackgroundColor = Color.FromHex("#111923F0"),
-            BorderColor = Color.FromHex("#2D4757"),
-            BorderThickness = new Thickness(1),
-        };
-        var inset = new StyleBoxFlat
-        {
-            BackgroundColor = Color.FromHex("#0D1219F6"),
-            BorderColor = Color.FromHex("#2D4757"),
-            BorderThickness = new Thickness(1),
-        };
-        var header = new StyleBoxFlat
-        {
-            BackgroundColor = Color.FromHex("#202631F5"),
-            BorderColor = Color.FromHex("#5D6A7C"),
-            BorderThickness = new Thickness(0, 0, 0, 1),
-            ContentMarginTopOverride = 8,
-            ContentMarginBottomOverride = 8,
-            ContentMarginLeftOverride = 10,
-            ContentMarginRightOverride = 10,
-        };
-        var input = new StyleBoxFlat
-        {
-            BackgroundColor = Color.FromHex("#0D1219F6"),
-            BorderColor = Color.FromHex("#2D4757"),
-            BorderThickness = new Thickness(1),
-            ContentMarginTopOverride = 4,
-            ContentMarginBottomOverride = 4,
-            ContentMarginLeftOverride = 7,
-            ContentMarginRightOverride = 7,
-        };
+        var section = StyleBoxHud.Frame(HudPalette.Panel.WithAlpha(0.96f), null, 0);
+        section.Chamfer = 6;
+        var inset = new StyleBoxGrid { Step = 0 };
+        var header = new StyleBoxHudHeader { Inset = 0, Chamfer = 0 };
+        header.SetContentMarginOverride(StyleBox.Margin.Vertical, 5);
+        header.SetContentMarginOverride(StyleBox.Margin.Horizontal, 8);
 
-        var button = new StyleBoxFlat
-        {
-            BackgroundColor = Color.FromHex("#111923F0"),
-            BorderColor = Color.FromHex("#2D4757"),
-            BorderThickness = new Thickness(1),
-            ContentMarginTopOverride = 3,
-            ContentMarginBottomOverride = 3,
-            ContentMarginLeftOverride = 6,
-            ContentMarginRightOverride = 6,
-        };
-        var buttonHover = new StyleBoxFlat(button)
-        {
-            BackgroundColor = Color.FromHex("#162638F4"),
-            BorderColor = Color.FromHex("#1D7E9D"),
-        };
-        var buttonPressed = new StyleBoxFlat(button)
-        {
-            BackgroundColor = Color.FromHex("#18344AF5"),
-            BorderColor = Color.FromHex("#2EA7D0"),
-        };
-        var buttonDisabled = new StyleBoxFlat(button)
-        {
-            BackgroundColor = Color.FromHex("#10161FC8"),
-            BorderColor = Color.FromHex("#293844"),
-        };
+        var input = HudThemeStyles.Flat(HudPalette.Background, HudPalette.Border);
+        input.SetContentMarginOverride(StyleBox.Margin.Vertical, 4);
+        input.SetContentMarginOverride(StyleBox.Margin.Horizontal, 7);
 
-        return
-        [
+        var legend = StyleBoxLamp.Mix(HudPalette.Fg, HudPalette.Text, 0.45f);
+        var font = LobbyHudStyles.UiFont(resCache, 13, "Medium");
+
+        var rules = new List<StyleRule>
+        {
             Element<PanelContainer>().Class(Section)
                 .Prop(PanelContainer.StylePropertyPanel, section),
             Element<PanelContainer>().Class(Inset)
@@ -111,30 +58,85 @@ public static class ConsoleStyles
             Element<PanelContainer>().Class(Header)
                 .Prop(PanelContainer.StylePropertyPanel, header),
             Element<Label>().Class(HeaderLabel)
-                .Prop(Label.StylePropertyFont, resCache.NotoStack(variation: "Bold", size: 12))
-                .Prop(Label.StylePropertyFontColor, Color.FromHex("#4EC6E8")),
+                .Prop(Label.StylePropertyFont, LobbyHudStyles.MonoMediumFont(resCache, 12))
+                .Prop(Label.StylePropertyFontColor, HudPalette.Advisory),
 
             Element<LineEdit>().Class(Input)
                 .Prop(LineEdit.StylePropertyStyleBox, input)
-                .Prop("font-color", Color.FromHex("#F1F3F6")),
+                .Prop("font-color", HudPalette.Text),
             Element<LineEdit>().Class(Input).Pseudo(LineEdit.StylePseudoClassPlaceholder)
-                .Prop("font-color", Color.FromHex("#7A8590")),
+                .Prop("font-color", HudPalette.TextDim),
+        };
 
-            // The default button rules tint every state through ModulateSelf, the console colors stay as they are.
-            Element<ContainerButton>().Class(Button)
-                .Prop(ContainerButton.StylePropertyStyleBox, button)
-                .Prop(Control.StylePropertyModulateSelf, Color.White),
-            ButtonState(ContainerButton.StylePseudoClassNormal, button),
-            ButtonState(ContainerButton.StylePseudoClassHover, buttonHover),
-            ButtonState(ContainerButton.StylePseudoClassPressed, buttonPressed),
-            ButtonState(ContainerButton.StylePseudoClassDisabled, buttonDisabled),
-        ];
+        var shell = HudThemeStyles.WindowFrame(null);
+        shell.SetContentMarginOverride(StyleBox.Margin.All, 10);
+        var titleHeader = HudThemeStyles.Header(null, true);
+        titleHeader.SetContentMarginOverride(StyleBox.Margin.Vertical, 6);
+        var textArea = HudThemeStyles.Flat(HudPalette.Background, HudPalette.Border);
+        textArea.SetContentMarginOverride(StyleBox.Margin.Vertical, 6);
+        textArea.SetContentMarginOverride(StyleBox.Margin.Horizontal, 7);
+        var inputDisabled = HudThemeStyles.Flat(HudPalette.Panel, HudPalette.LineDim);
+        inputDisabled.SetContentMarginOverride(StyleBox.Margin.Vertical, 4);
+        inputDisabled.SetContentMarginOverride(StyleBox.Margin.Horizontal, 7);
+
+        rules.AddRange(new StyleRule[]
+        {
+            Element<PanelContainer>().Class(DeadSpaceAHelpStyles.Shell)
+                .Prop(PanelContainer.StylePropertyPanel, shell),
+            Element<PanelContainer>().Class(DeadSpaceAHelpStyles.Header)
+                .Prop(PanelContainer.StylePropertyPanel, titleHeader),
+            Element<Label>().Class(DeadSpaceAHelpStyles.Title)
+                .Prop(Label.StylePropertyFont, LobbyHudStyles.MonoMediumFont(resCache, 12))
+                .Prop(Label.StylePropertyFontColor, HudPalette.Fg),
+            Element<OutputPanel>().Class(DeadSpaceAHelpStyles.TextArea)
+                .Prop(OutputPanel.StylePropertyStyleBox, textArea),
+            Element<LineEdit>().Class(DeadSpaceAHelpStyles.Input)
+                .Prop(LineEdit.StylePropertyStyleBox, input)
+                .Prop("font-color", HudPalette.Text),
+            Element<LineEdit>().Class(DeadSpaceAHelpStyles.Input).Class(LineEdit.StyleClassLineEditNotEditable)
+                .Prop(LineEdit.StylePropertyStyleBox, inputDisabled)
+                .Prop("font-color", HudPalette.TextDim),
+            Element<LineEdit>().Class(DeadSpaceAHelpStyles.Input).Pseudo(LineEdit.StylePseudoClassPlaceholder)
+                .Prop("font-color", HudPalette.TextDim),
+        });
+
+        AddLamp(rules, Button, HudPalette.Fg, legend, font, 1);
+        AddLamp(rules, DeadSpaceAHelpStyles.ProfileControl, HudPalette.Fg, legend, font, 1);
+        AddLamp(rules, DeadSpaceAHelpStyles.ProfileControlDanger, HudPalette.Bad, StyleBoxLamp.Mix(HudPalette.Bad, HudPalette.Text, 0.6f), font, 1);
+        foreach (var (cls, color) in Lamps)
+        {
+            AddLamp(rules, cls, color, StyleBoxLamp.Mix(color, HudPalette.Text, 0.6f), font, 2);
+        }
+
+        return rules.ToArray();
     }
 
-    private static StyleRule ButtonState(string pseudoClass, StyleBox styleBox)
+    private static void AddLamp(List<StyleRule> rules, string cls, Color color, Color text, Font font, int weight)
     {
-        return Element<ContainerButton>().Class(Button).Pseudo(pseudoClass)
-            .Prop(ContainerButton.StylePropertyStyleBox, styleBox)
-            .Prop(Control.StylePropertyModulateSelf, Color.White);
+        var fg = color == HudPalette.Fg;
+        var normal = HudThemeStyles.Lamp(color, StyleBoxLamp.Lit.Off, fg ? null : StyleBoxLamp.Mix(color, HudPalette.Border, 0.4f));
+        var hover = HudThemeStyles.Lamp(color, StyleBoxLamp.Lit.Off, fg ? HudPalette.BorderBright : color);
+        var pressed = HudThemeStyles.Lamp(color, fg ? StyleBoxLamp.Lit.On : StyleBoxLamp.Lit.Fill, fg ? HudPalette.Fg : null);
+        var disabled = HudThemeStyles.Lamp(HudPalette.Offline, StyleBoxLamp.Lit.Off, HudPalette.LineDim);
+
+        foreach (var (pseudo, box, label) in new[]
+                 {
+                     (ContainerButton.StylePseudoClassNormal, (StyleBox) normal, text),
+                     (ContainerButton.StylePseudoClassHover, hover, color),
+                     (ContainerButton.StylePseudoClassPressed, pressed, fg ? color : HudPalette.Void),
+                     (ContainerButton.StylePseudoClassDisabled, disabled, HudPalette.Offline),
+                 })
+        {
+            var selector = Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(cls);
+            rules.Add(selector.Pseudo(pseudo)
+                .Prop(ContainerButton.StylePropertyStyleBox, box)
+                .Prop(Control.StylePropertyModulateSelf, Color.White));
+
+            var classes = new[] { cls };
+            rules.Add(new StyleRule(new SelectorChild(
+                    new SelectorElement(typeof(ContainerButton), classes, null, new[] { pseudo }),
+                    new SelectorElement(typeof(Label), null, null, null)),
+                new[] { new StyleProperty(Label.StylePropertyFontColor, label), new StyleProperty(Label.StylePropertyFont, font) }));
+        }
     }
 }

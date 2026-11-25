@@ -70,7 +70,7 @@ namespace Content.Client.Wires.UI
                     new PanelContainer
                     {
                         MinSize = new Vector2(2, 0),
-                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#525252ff")}
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#1F2629ff")} // LuaM: #525252ff > #1F2629ff
                     },
                     new PanelContainer
                     {
@@ -82,7 +82,7 @@ namespace Content.Client.Wires.UI
                     new PanelContainer
                     {
                         MinSize = new Vector2(2, 0),
-                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#525252ff")}
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#1F2629ff")} // LuaM: #525252ff > #1F2629ff
                     },
                 }
             };
@@ -195,7 +195,7 @@ namespace Content.Client.Wires.UI
 
             var middle = new PanelContainer
             {
-                PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#202320")},
+                PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#121618")}, // LuaM: #202320 > #121618
                 Children =
                 {
                     new BoxContainer
@@ -217,13 +217,13 @@ namespace Content.Client.Wires.UI
             _topContainer.AddChild(new PanelContainer
             {
                 MinSize = new Vector2(0, 2),
-                PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#525252ff")}
+                PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#1F2629ff")} // LuaM: #525252ff > #1F2629ff
             });
             _topContainer.AddChild(middle);
             _topContainer.AddChild(new PanelContainer
             {
                 MinSize = new Vector2(0, 2),
-                PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#525252ff")}
+                PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#1F2629ff")} // LuaM: #525252ff > #1F2629ff
             });
             CloseButton.OnPressed += _ => Close();
             SetHeight = 200;

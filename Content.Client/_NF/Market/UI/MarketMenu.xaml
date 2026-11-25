@@ -1,4 +1,5 @@
-﻿<controls:FancyWindow xmlns="https://spacestation14.io"
+﻿<!-- LuaM: palette colors -->
+<controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
@@ -21,7 +22,7 @@
                 <!-- Market data container -->
                 <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="10">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BorderThickness="2" BorderColor="#777777" />
+                        <gfx:StyleBoxFlat BorderThickness="2" BorderColor="#5A686E" />
                     </PanelContainer.PanelOverride>
                     <BoxContainer Orientation="Vertical"
                                   VerticalExpand="True"
@@ -55,7 +56,7 @@
                 <!-- Cart data container -->
                 <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="10">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BorderThickness="2" BorderColor="#777777" />
+                        <gfx:StyleBoxFlat BorderThickness="2" BorderColor="#5A686E" />
                     </PanelContainer.PanelOverride>
                     <BoxContainer Orientation="Vertical"
                                   VerticalExpand="True"

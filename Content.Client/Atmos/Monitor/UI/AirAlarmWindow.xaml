@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <ui:FancyWindow xmlns="https://spacestation14.io"
             xmlns:x="http://schemas.microsoft.com/winfx/2007/xaml"
             xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
@@ -43,7 +44,7 @@
             <!-- Vent devices -->
             <PanelContainer VerticalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#1B1E1B" />
+                    <gfx:StyleBoxFlat BackgroundColor="#121618" />
                 </PanelContainer.PanelOverride>
 
                 <ScrollContainer>
@@ -53,7 +54,7 @@
             <!-- Scrubber devices -->
             <PanelContainer VerticalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#1B1E1B" />
+                    <gfx:StyleBoxFlat BackgroundColor="#121618" />
                 </PanelContainer.PanelOverride>
 
                 <ScrollContainer>
@@ -63,7 +64,7 @@
             <!-- Sensors -->
             <PanelContainer VerticalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#1B1E1B" />
+                    <gfx:StyleBoxFlat BackgroundColor="#121618" />
                 </PanelContainer.PanelOverride>
 
                 <ScrollContainer>

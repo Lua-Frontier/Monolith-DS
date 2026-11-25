@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <controls:FancyWindow xmlns="https://spacestation14.io"
                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                      xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
@@ -13,7 +14,7 @@
                 HorizontalAlignment="Left"></Button>
         <PanelContainer Margin="0 10 0 0" VerticalExpand="True">
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BackgroundColor="#000000FF"/>
+                <graphics:StyleBoxFlat BackgroundColor="#07090AFF"/>
             </PanelContainer.PanelOverride>
             <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" VerticalAlignment="Center">
                 <Label Name="TotalLabel"

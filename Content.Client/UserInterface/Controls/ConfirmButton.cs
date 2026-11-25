@@ -144,6 +144,7 @@ public sealed partial class ConfirmButton : Button
         base.Text = IsConfirming ? Text : ConfirmationText;
 
         IsConfirming = !IsConfirming;
+        DrawModeChanged(); // LuaM
     }
 
     // Lua start

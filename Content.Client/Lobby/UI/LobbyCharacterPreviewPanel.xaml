@@ -20,12 +20,12 @@
                         <Label Text="{Loc 'lobby-hud-field-name'}" StyleClasses="LuaMHudLabel" MinWidth="84" VAlign="Center" />
                         <Label Name="NameLabel" StyleClasses="LuaMHudBodyBold" ClipText="True" HorizontalExpand="True" />
                     </BoxContainer>
-                    <PanelContainer MinHeight="1"><PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#2A3236" /></PanelContainer.PanelOverride></PanelContainer>
+                    <PanelContainer MinHeight="1"><PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#1A1F22" /></PanelContainer.PanelOverride></PanelContainer>
                     <BoxContainer Orientation="Horizontal">
                         <Label Text="{Loc 'lobby-hud-field-role-short'}" StyleClasses="LuaMHudLabel" MinWidth="84" VAlign="Center" />
                         <Label Name="RoleLabel" StyleClasses="LuaMHudBodyBold" FontColorOverride="#7FD1C7" ClipText="True" HorizontalExpand="True" />
                     </BoxContainer>
-                    <PanelContainer MinHeight="1"><PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#2A3236" /></PanelContainer.PanelOverride></PanelContainer>
+                    <PanelContainer MinHeight="1"><PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#1A1F22" /></PanelContainer.PanelOverride></PanelContainer>
                     <RichTextLabel Name="Company" />
                     <Label Name="MonoCoins" StyleClasses="LuaMHudMark" />
                     <BoxContainer Name="BalanceRow" Orientation="Horizontal" SeparationOverride="10">

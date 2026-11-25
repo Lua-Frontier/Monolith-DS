@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <controls:FancyWindow xmlns="https://spacestation14.io"
             xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
             xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
@@ -6,13 +7,13 @@
     <BoxContainer Margin="10 2 10 2" Orientation="Vertical">
         <PanelContainer VerticalExpand="True" HorizontalExpand="True">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BorderThickness="3" BorderColor="#35434d" BackgroundColor="#696969"/>
+                <gfx:StyleBoxFlat BorderThickness="3" BorderColor="#3D484D" BackgroundColor="#696969"/>
             </PanelContainer.PanelOverride>
             <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 2">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BorderThickness="3" BorderColor="#303030" BackgroundColor="#0f0f0f"/>
+                    <gfx:StyleBoxFlat BorderThickness="3" BorderColor="#2A3236" BackgroundColor="#07090A"/>
                 </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'bank-atm-menu-balance-label'}"
@@ -28,7 +29,7 @@
                   PlaceHolder="{Loc 'bank-atm-menu-withdraw-amount'}" Margin="2 2"/>
         <PanelContainer VerticalExpand="False" HorizontalExpand="True" Margin="2 2">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BorderThickness="3" BorderColor="#3d3d3d" BackgroundColor="#111111" />
+                <gfx:StyleBoxFlat BorderThickness="3" BorderColor="#3D484D" BackgroundColor="#07090A" />
             </PanelContainer.PanelOverride>
         <Button Name="WithdrawButton"
                 Text="{Loc 'bank-atm-menu-withdraw-button'}"

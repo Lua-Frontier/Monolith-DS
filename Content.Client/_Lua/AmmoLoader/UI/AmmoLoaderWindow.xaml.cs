@@ -364,7 +364,7 @@ public sealed partial class AmmoLoaderWindow : FancyWindow
             MaxHeight = 18,
             PanelOverride = new StyleBoxFlat
             {
-                BackgroundColor = Color.FromHex("#151d26e6"),
+                BackgroundColor = Color.FromHex("#121618e6"), // LuaM: #151d26e6 > #121618e6
                 BorderColor = Color.Transparent,
             },
         };
@@ -734,8 +734,8 @@ public sealed partial class AmmoLoaderWindow : FancyWindow
                 VerticalExpand = false,
                 PanelOverride = new StyleBoxFlat
                 {
-                    BackgroundColor = Color.FromHex("#0d1319"),
-                    BorderColor = Color.FromHex("#24313d"),
+                    BackgroundColor = Color.FromHex("#07090A"), // LuaM: #0d1319 > #07090A
+                    BorderColor = Color.FromHex("#3D484D"), // LuaM: #24313d > #3D484D
                     BorderThickness = new Thickness(2),
                 },
             });
@@ -757,8 +757,8 @@ public sealed partial class AmmoLoaderWindow : FancyWindow
                 VerticalExpand = false,
                 PanelOverride = new StyleBoxFlat
                 {
-                    BackgroundColor = Color.FromHex("#0d1319"),
-                    BorderColor = Color.FromHex("#24313d"),
+                    BackgroundColor = Color.FromHex("#07090A"), // LuaM: #0d1319 > #07090A
+                    BorderColor = Color.FromHex("#3D484D"), // LuaM: #24313d > #3D484D
                     BorderThickness = new Thickness(2),
                 },
             });

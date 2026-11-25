@@ -1,4 +1,5 @@
-﻿<controls:StationOrCrewLargeControl xmlns="https://spacestation14.io"
+﻿<!-- LuaM: palette colors -->
+<controls:StationOrCrewLargeControl xmlns="https://spacestation14.io"
                            xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
                            xmlns:maths="clr-namespace:Robust.Shared.Maths;assembly=Robust.Shared.Maths"
                            xmlns:xNamespace="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,15 +10,15 @@
                            VerticalExpand="True">
     <PanelContainer.PanelOverride>
         <!-- Using PanelBackgroundLight adds padding left and right, so we manually set background color -->
-        <graphics:StyleBoxFlat BackgroundColor="#303030"/>
+        <graphics:StyleBoxFlat BackgroundColor="#1A1F22"/>
     </PanelContainer.PanelOverride>
     <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="6 6 6 6">
         <PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#35434d" BackgroundColor="#141414"/>
+            <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#3D484D" BackgroundColor="#07090A"/>
         </PanelContainer.PanelOverride>
         <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="0 0 0 0">
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#262626" BackgroundColor="#111111"/>
+                <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#2A3236" BackgroundColor="#07090A"/>
             </PanelContainer.PanelOverride>
     <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="1 1">
 

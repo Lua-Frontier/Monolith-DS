@@ -25,12 +25,23 @@ public sealed partial class HumanoidProfileEditor
         var width = Profile.Appearance.Width <= 0.005f ? 1f : Profile.Appearance.Width;
         var height = Profile.Appearance.Height <= 0.005f ? 1f : Profile.Appearance.Height;
         _entManager.System<SpriteSystem>().SetScale((PreviewDummy, sprite), new Vector2(width, height));
+        SpriteView.InvalidateMeasure();
     }
 
     private void InitHudStyle()
     {
         var rail = new HudTabRail(TabContainer, horizontal: true) { IconFor = TabIcon, Margin = new Thickness(0) };
+        rail.Trailer = SoonButton();
         TabStripSlot.AddChild(rail);
+
+        var markingsPanel = MarkingsTab.GetChild(0);
+        markingsPanel.Orphan();
+        markingsPanel.VerticalExpand = false;
+        Markings.SetHeight = 560;
+        var appearance = HairPanel.Parent!;
+        appearance.AddChild(markingsPanel);
+        markingsPanel.SetPositionInParent(HairPanel.GetPositionInParent() + 1);
+        TabContainer.SetTabVisible(MarkingsTab, false);
 
         SetHudClass(LobbyHudStyles.Positive, SaveButton);
         SetHudClass(LobbyHudStyles.Danger, ResetButton);
@@ -80,6 +91,39 @@ public sealed partial class HumanoidProfileEditor
         UpdatePreviewVisibility();
     }
 
+    private static Control SoonButton()
+    {
+        var label = new Label
+        {
+            Text = HudStyleScope.Track(Loc.GetString("humanoid-profile-editor-soon").ToUpperInvariant()),
+            StyleClasses = { HudStyleScope.Skip, LobbyHudStyles.TabTitle },
+            FontColorOverride = HudPalette.Caution,
+            VAlign = Label.VAlignMode.Center,
+        };
+        var row = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Horizontal,
+            HorizontalAlignment = Control.HAlignment.Center,
+            VerticalAlignment = Control.VAlignment.Center,
+            SeparationOverride = 6,
+            Children =
+            {
+                new HudIcon { Kind = HudIconKind.Help, SetSize = new Vector2(16, 16), Stroke = 1.8f, IconColor = HudPalette.Caution },
+                label,
+            },
+        };
+        var button = new ContainerButton
+        {
+            ToolTip = Loc.GetString("humanoid-profile-editor-soon-tooltip"),
+            MinSize = new Vector2(0, HudTabRail.StripHeight),
+            HorizontalExpand = true,
+            StyleBoxOverride = new StyleBoxHazard(),
+            StyleClasses = { HudStyleScope.Skip },
+        };
+        button.AddChild(row);
+        return button;
+    }
+
     public void SetCharacterHeader(Control header)
     {
         CharacterHeaderSlot.RemoveAllChildren();
@@ -119,10 +163,15 @@ public sealed partial class HumanoidProfileEditor
         if (HairPanel.Visible != hasHair)
             HairPanel.Visible = hasHair;
 
-        var room = MathF.Min(SpriteBox.Height / 40f, SpriteBox.Width / 34f);
+        var tall = MathF.Max(1f, Profile?.Appearance.Height ?? 1f);
+        var wide = MathF.Max(1f, Profile?.Appearance.Width ?? 1f);
+        var room = MathF.Min(SpriteBox.Height / (40f * tall), SpriteBox.Width / (34f * wide));
         var scale = MathF.Max(4, MathF.Floor(room));
         if (!MathHelper.CloseTo(SpriteView.Scale.X, scale))
+        {
             SpriteView.Scale = new System.Numerics.Vector2(scale, scale);
+            SpriteView.InvalidateMeasure();
+        }
     }
 
     private void UpdatePreviewVisibility()

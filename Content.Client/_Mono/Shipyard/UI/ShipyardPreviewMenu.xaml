@@ -10,7 +10,7 @@
     <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="10 10 10 10">
         <PanelContainer SetSize="400 75" HorizontalAlignment="Left" VerticalAlignment="Top">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BorderThickness="7" BorderColor="#252525" BackgroundColor="#000000"/>
+                <gfx:StyleBoxFlat BorderThickness="7" BorderColor="#2A3236" BackgroundColor="#07090A"/>
             </PanelContainer.PanelOverride>
             <Label Name="ShipName" FontColorOverride="#00FF00" Text="shipyard-preview-unknown-ship" HorizontalAlignment="Center"/>
         </PanelContainer>
@@ -19,8 +19,8 @@
                         VerticalAlignment="Bottom">
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BorderThickness="7"
-                                  BorderColor="#252525"
-                                  BackgroundColor="#000000"/>
+                                  BorderColor="#2A3236"
+                                  BackgroundColor="#07090A"/>
             </PanelContainer.PanelOverride>
             <Label Name="ShipDataLabel"
                    FontColorOverride="#00FF00"

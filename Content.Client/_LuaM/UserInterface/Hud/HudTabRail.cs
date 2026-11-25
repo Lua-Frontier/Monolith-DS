@@ -10,6 +10,7 @@ namespace Content.Client._LuaM.UserInterface.Hud;
 public sealed class HudTabRail : BoxContainer
 {
     private const int ShortLength = 9;
+    public const float StripHeight = 54;
 
     private readonly TabContainer _tabs;
     private readonly List<(Control Tab, ContainerButton Button, Label Number, Label Title)> _buttons = new();
@@ -18,6 +19,8 @@ public sealed class HudTabRail : BoxContainer
     private readonly Dictionary<ContainerButton, HudIcon> _icons = new();
 
     public Func<Control, HudIconKind?>? IconFor { get; set; }
+
+    public Control? Trailer { get; set; }
 
     public HudTabRail(TabContainer tabs, bool horizontal = false)
     {
@@ -83,7 +86,7 @@ public sealed class HudTabRail : BoxContainer
             {
                 Visible = visible,
                 ToolTip = title,
-                MinSize = _horizontal ? new Vector2(0, 54) : new Vector2(70, 56),
+                MinSize = _horizontal ? new Vector2(0, StripHeight) : new Vector2(70, 56),
                 HorizontalExpand = _horizontal,
             };
             if (_horizontal)
@@ -97,11 +100,11 @@ public sealed class HudTabRail : BoxContainer
                     Orientation = LayoutOrientation.Horizontal,
                     HorizontalAlignment = HAlignment.Center,
                     VerticalAlignment = VAlignment.Center,
-                    SeparationOverride = 8,
+                    SeparationOverride = 6,
                 };
                 if (IconFor?.Invoke(tab) is { } kind)
                 {
-                    var icon = new HudIcon { Kind = kind, SetSize = new Vector2(20, 20), Stroke = 1.8f };
+                    var icon = new HudIcon { Kind = kind, SetSize = new Vector2(16, 16), Stroke = 1.8f };
                     _icons[button] = icon;
                     row.AddChild(icon);
                 }
@@ -124,6 +127,12 @@ public sealed class HudTabRail : BoxContainer
 
             _buttons.Add((tab, button, number, shortTitle));
             AddChild(button);
+        }
+
+        if (Trailer != null)
+        {
+            Trailer.Orphan();
+            AddChild(Trailer);
         }
 
         UpdateStyles();

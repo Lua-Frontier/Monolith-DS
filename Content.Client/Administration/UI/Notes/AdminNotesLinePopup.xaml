@@ -1,8 +1,9 @@
+<!-- LuaM: palette colors -->
 <Popup xmlns="https://spacestation14.io"
        xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
     <PanelContainer>
         <PanelContainer.PanelOverride>
-            <gfx:StyleBoxFlat BorderThickness="2" BorderColor="#18181B" BackgroundColor="#25252a"/>
+            <gfx:StyleBoxFlat BorderThickness="2" BorderColor="#2A3236" BackgroundColor="#1A1F22"/>
         </PanelContainer.PanelOverride>
         <BoxContainer Orientation="Vertical" Margin="4 4 4 4">
             <Label Name="PlayerNameLabel"/>

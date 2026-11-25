@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
@@ -29,7 +30,7 @@
                 <Label Name="CatalogTitle" Margin="2 4 0 0" FontColorOverride="#9BA6AD"/>
                 <PanelContainer VerticalExpand="True">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BorderColor="#444444" BorderThickness="2"/>
+                        <gfx:StyleBoxFlat BorderColor="#3D484D" BorderThickness="2"/>
                     </PanelContainer.PanelOverride>
                     <ScrollContainer HScrollEnabled="False" VerticalExpand="True">
                         <BoxContainer Name="Vessels" Orientation="Vertical" Margin="2"/>
@@ -39,7 +40,7 @@
             <!-- Preview -->
             <PanelContainer HorizontalExpand="True" VerticalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BorderColor="#444444" BorderThickness="2"/>
+                    <gfx:StyleBoxFlat BorderColor="#3D484D" BorderThickness="2"/>
                 </PanelContainer.PanelOverride>
                 <Control Margin="2" HorizontalExpand="True" VerticalExpand="True">
                     <luamShipyard:ShipyardPreviewView Name="PreviewView" Access="Public"/>
@@ -47,7 +48,7 @@
                                     VerticalAlignment="Top"
                                     Margin="8 6">
                         <PanelContainer.PanelOverride>
-                            <gfx:StyleBoxFlat BackgroundColor="#0B1118D9"
+                            <gfx:StyleBoxFlat BackgroundColor="#07090AD9"
                                               BorderColor="#2D4757"
                                               BorderThickness="1"
                                               ContentMarginLeftOverride="10"
@@ -65,7 +66,7 @@
                                     VerticalAlignment="Center"
                                     Visible="False">
                         <PanelContainer.PanelOverride>
-                            <gfx:StyleBoxFlat BackgroundColor="#0B1118E6"
+                            <gfx:StyleBoxFlat BackgroundColor="#07090AE6"
                                               BorderColor="#2D4757"
                                               BorderThickness="1"
                                               ContentMarginLeftOverride="12"
@@ -90,7 +91,7 @@
             <BoxContainer Name="InfoColumn" Orientation="Vertical" SetWidth="330" SeparationOverride="6">
                 <PanelContainer VerticalExpand="True">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BorderColor="#444444" BorderThickness="2"/>
+                        <gfx:StyleBoxFlat BorderColor="#3D484D" BorderThickness="2"/>
                     </PanelContainer.PanelOverride>
                     <ScrollContainer HScrollEnabled="False" VerticalExpand="True">
                         <BoxContainer Orientation="Vertical" Margin="10 6" SeparationOverride="4">
@@ -111,7 +112,7 @@
                     <Label Text="{Loc 'shipyard-dock-title'}" FontColorOverride="#9BA6AD"/>
                     <PanelContainer>
                         <PanelContainer.PanelOverride>
-                            <gfx:StyleBoxFlat BorderColor="#444444" BorderThickness="2"/>
+                            <gfx:StyleBoxFlat BorderColor="#3D484D" BorderThickness="2"/>
                         </PanelContainer.PanelOverride>
                         <luaShipyard:ShipyardDockRadarControl Name="DockRadar"
                                                               MinSize="250 250"
@@ -129,14 +130,15 @@
                         MinHeight="28"
                         VerticalAlignment="Center"
                         Text="{Loc 'id-card-console-window-insert-button'}"/>
-                <controls:ConfirmButton Name="PurchaseButton"
+                <!-- LuaM: confirm colors -->
+                <controls:ConfirmButton Name="PurchaseButton" StyleClasses="LuaMConfirmGood"
                                         Access="Public"
                                         HorizontalExpand="True"
                                         MinHeight="28"
                                         VerticalAlignment="Center"
                                         Text="{Loc 'shipyard-console-purchase-available'}"
                                         Disabled="True"/>
-                <controls:ConfirmButton Name="SellShipButton"
+                <controls:ConfirmButton Name="SellShipButton" StyleClasses="LuaMConfirmBad"
                                         HorizontalExpand="True"
                                         MinHeight="28"
                                         VerticalAlignment="Center"

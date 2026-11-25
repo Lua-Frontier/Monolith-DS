@@ -58,7 +58,7 @@
                             <hud:HudHeader Name="DeployHeader" Id="DPL-01" Title="{Loc 'lobby-hud-deploy-short'}" />
                             <PanelContainer Name="TimerBox" SetHeight="150">
                                 <PanelContainer.PanelOverride>
-                                    <hud:StyleBoxGrid Step="0" BackgroundColor="#172833" BorderColor="#3F6E8A" ScanlineColor="#5FA8D30F"
+                                    <hud:StyleBoxGrid Step="0" BackgroundColor="#1A1F22" BorderColor="#3F6E8A" ScanlineColor="#5FA8D30F"
                                                       ContentMarginLeftOverride="12" ContentMarginRightOverride="12"
                                                       ContentMarginTopOverride="8" ContentMarginBottomOverride="8" />
                                 </PanelContainer.PanelOverride>
@@ -125,7 +125,7 @@
                             <hud:HudShape Status="Advisory" SetSize="9 9" />
                             <Label Text="{Loc 'lobby-hud-character'}" StyleClasses="LuaMHudHeading" VAlign="Center" />
                             <PanelContainer HorizontalExpand="True" MinHeight="1" VerticalAlignment="Center">
-                                <PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#2A3236" /></PanelContainer.PanelOverride>
+                                <PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#1A1F22" /></PanelContainer.PanelOverride>
                             </PanelContainer>
                         </BoxContainer>
                         <lobbyUi:LobbyCharacterPreviewPanel Name="CharacterPreview" Access="Public" />
@@ -134,7 +134,7 @@
                             <hud:HudShape Status="Advisory" SetSize="9 9" />
                             <Label Text="{Loc 'lobby-hud-round'}" StyleClasses="LuaMHudHeading" VAlign="Center" />
                             <PanelContainer HorizontalExpand="True" MinHeight="1" VerticalAlignment="Center">
-                                <PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#2A3236" /></PanelContainer.PanelOverride>
+                                <PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#1A1F22" /></PanelContainer.PanelOverride>
                             </PanelContainer>
                         </BoxContainer>
                         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
@@ -153,7 +153,7 @@
                             <hud:HudShape Status="Advisory" SetSize="9 9" />
                             <Label Text="{Loc 'lobby-hud-terminal'}" StyleClasses="LuaMHudHeading" VAlign="Center" />
                             <PanelContainer HorizontalExpand="True" MinHeight="1" VerticalAlignment="Center">
-                                <PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#2A3236" /></PanelContainer.PanelOverride>
+                                <PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#1A1F22" /></PanelContainer.PanelOverride>
                             </PanelContainer>
                         </BoxContainer>
                         <PanelContainer VerticalExpand="True">

@@ -1,11 +1,12 @@
-﻿<BoxContainer xmlns="https://spacestation14.io"
+﻿<!-- LuaM: palette colors -->
+<BoxContainer xmlns="https://spacestation14.io"
               xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
               Orientation="Vertical"
               Margin="5 5 5 5">
     <!-- LuaM: constrain names and descriptions to the reference card. -->
     <PanelContainer HorizontalExpand="True">
         <PanelContainer.PanelOverride>
-            <gfx:StyleBoxFlat BorderThickness="1" BorderColor="#777777"/>
+            <gfx:StyleBoxFlat BorderThickness="1" BorderColor="#5A686E"/>
         </PanelContainer.PanelOverride>
         <BoxContainer Orientation="Vertical">
             <PanelContainer Name="NameBackground" HorizontalExpand="True" VerticalExpand="False">

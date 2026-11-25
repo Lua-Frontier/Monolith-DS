@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <BoxContainer xmlns="https://spacestation14.io"
               xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
               Orientation="Horizontal"
@@ -5,7 +6,7 @@
             SeparationOverride="4">
     <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="0 0 0 0">
         <PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#262626" BackgroundColor="#2e2e2e"/>
+            <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#2A3236" BackgroundColor="#1A1F22"/>
         </PanelContainer.PanelOverride>
         <BoxContainer Orientation="Horizontal"
                       HorizontalExpand="True"

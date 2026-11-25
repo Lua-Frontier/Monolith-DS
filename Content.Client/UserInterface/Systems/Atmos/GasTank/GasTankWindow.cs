@@ -119,7 +119,7 @@ public sealed partial class GasTankWindow
 
         var middle = new PanelContainer
         {
-            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#202025") },
+            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#121618") }, // LuaM: #202025 > #121618
             Children =
             {
                 (contentContainer = new BoxContainer
@@ -134,13 +134,13 @@ public sealed partial class GasTankWindow
         topContainer.AddChild(new PanelContainer
         {
             MinSize = new Vector2(0, 2),
-            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#525252ff") }
+            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#1F2629ff") } // LuaM: #525252ff > #1F2629ff
         });
         topContainer.AddChild(middle);
         topContainer.AddChild(new PanelContainer
         {
             MinSize = new Vector2(0, 2),
-            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#525252ff") }
+            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#1F2629ff") } // LuaM: #525252ff > #1F2629ff
         });
 
 

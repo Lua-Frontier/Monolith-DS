@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <controls:FancyWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
@@ -14,7 +15,7 @@
         <Control VerticalExpand="True" HorizontalExpand="True" Margin="10 10 10 0">
             <PanelContainer Name="MainPanel" HorizontalExpand="False" VerticalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <graphics:StyleBoxFlat BackgroundColor="#202023" />
+                    <graphics:StyleBoxFlat BackgroundColor="#121618" />
                 </PanelContainer.PanelOverride>
             </PanelContainer>
             <ScrollContainer Name="ArticleListScrollbar" HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="True">
@@ -34,7 +35,7 @@
         <Control SetHeight="30" Margin="2 0 0 0">
             <PanelContainer Name="FooterPanel">
                 <PanelContainer.PanelOverride>
-                    <graphics:StyleBoxFlat BorderColor="#5A5A5A" BorderThickness="0 2 0 0" />
+                    <graphics:StyleBoxFlat BorderColor="#3D484D" BorderThickness="0 2 0 0" />
                 </PanelContainer.PanelOverride>
             </PanelContainer>
             <BoxContainer Name="ContentFooter" HorizontalExpand="True" SetHeight="28">
