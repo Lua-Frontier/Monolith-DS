@@ -9,7 +9,7 @@ public sealed class SegmentDisplay : Control
 {
     private static readonly Color ActiveColor = Color.FromHex("#94daca");
     private static readonly Color InactiveColor = Color.FromHex("#46635c");
-    private static readonly Color BackgroundColor = Color.FromHex("#1e272a");
+    private static readonly Color BackgroundColor = Color.FromHex("#1A1F22"); // LuaM: #1e272a > #1A1F22
 
     /// <summary>
     /// 7-segment display patterns for digits 0-9.

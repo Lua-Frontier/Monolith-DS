@@ -1,8 +1,9 @@
+<!-- LuaM: palette colors -->
 <PanelContainer xmlns="https://spacestation14.io"
               xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
               Margin="5 5 5 5" HorizontalExpand="True">
     <PanelContainer.PanelOverride>
-        <gfx:StyleBoxFlat BorderThickness="1" BorderColor="#777777"/>
+        <gfx:StyleBoxFlat BorderThickness="1" BorderColor="#5A686E"/>
     </PanelContainer.PanelOverride>
 
     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
@@ -13,7 +14,7 @@
                 <RichTextLabel Name="ResultName" HorizontalExpand="True" VerticalAlignment="Center"/>
             </BoxContainer>
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#393c3f"/>
+                <gfx:StyleBoxFlat BackgroundColor="#1F2629"/>
             </PanelContainer.PanelOverride>
         </PanelContainer>
 

@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <DefaultWindow xmlns="https://spacestation14.io"
             xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
     <BoxContainer Orientation="Vertical" SeparationOverride="5">
@@ -31,7 +32,7 @@
     </BoxContainer>
     <PanelContainer Name="UnavailableOverlay" Visible="False" MouseFilter="Stop">
         <PanelContainer.PanelOverride>
-            <gfx:StyleBoxFlat BackgroundColor="#000000E5" />
+            <gfx:StyleBoxFlat BackgroundColor="#07090AE5" />
         </PanelContainer.PanelOverride>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Align="Center"
                StyleClasses="LabelBig"

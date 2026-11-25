@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <BoxContainer Name="Container" xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
@@ -9,7 +10,7 @@
          Margin="0 0 0 5">
     <PanelContainer MinSize="70 8" VerticalExpand="True" HorizontalExpand="False">
         <PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#2A3A3E" BackgroundColor="#162327"/>
+            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#1A1F22"/>
         </PanelContainer.PanelOverride>
         <PanelContainer>
         <PanelContainer.PanelOverride>
@@ -22,11 +23,11 @@
     </PanelContainer>
     <PanelContainer HorizontalExpand="True">
         <PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#2A3A3E" BackgroundColor="#162327"/>
+            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#1A1F22"/>
         </PanelContainer.PanelOverride>
         <PanelContainer>
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#162327"/>
+                <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#1A1F22"/>
             </PanelContainer.PanelOverride>
     <Button Name="SelectButton" ToggleMode="True" Margin="2 2 2 2" HorizontalExpand="True" StyleClasses="ButtonSquare">
         <luam:MarqueeLabel Name="NameLabel" />
@@ -35,11 +36,11 @@
     </PanelContainer>
     <PanelContainer SetSize="64 64" HorizontalAlignment="Right">
         <PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#2A3A3E" BackgroundColor="#1C2B30"/>
+            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#1A1F22"/>
         </PanelContainer.PanelOverride>
         <PanelContainer>
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#162327"/>
+                <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#1A1F22"/>
             </PanelContainer.PanelOverride>
         <SpriteView Name="Sprite" Scale="4 4" MouseFilter="Stop"/>
         </PanelContainer>

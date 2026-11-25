@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                Title="{Loc 'general-station-record-console-window-title'}"
@@ -28,7 +29,7 @@
                     <Label Name="AdTitle" Text="{Loc 'general-station-record-console-ad-label'}" StyleClasses="LabelKeyText"/>
                     <PanelContainer VerticalExpand="True" HorizontalExpand="True">
                         <PanelContainer.PanelOverride>
-                            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#777777"/>
+                            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#5A686E"/>
                         </PanelContainer.PanelOverride>
                         <TextEdit Name="AdTextBox" MinHeight="100" VerticalExpand="True" HorizontalExpand="True"/>
                     </PanelContainer>

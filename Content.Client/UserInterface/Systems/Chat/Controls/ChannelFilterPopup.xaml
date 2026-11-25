@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <controls:ChannelFilterPopup
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Systems.Chat.Controls"
@@ -11,7 +12,7 @@
                     <Label Text="{Loc 'hud-chatbox-autofill-highlights'}"/>
                     <PanelContainer>
                         <PanelContainer.PanelOverride>
-                            <graphics:StyleBoxFlat BackgroundColor="#141414"/>
+                            <graphics:StyleBoxFlat BackgroundColor="#07090A"/>
                         </PanelContainer.PanelOverride>
                         <RichTextLabel Name="AutoFillLabel" Margin="5 5"/>
                     </PanelContainer>
@@ -19,7 +20,7 @@
                 <Label Text="{Loc 'hud-chatbox-highlights'}"/>
                 <PanelContainer>
                     <PanelContainer.PanelOverride>
-                        <graphics:StyleBoxFlat BackgroundColor="#282829"/>
+                        <graphics:StyleBoxFlat BackgroundColor="#1A1F22"/>
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="HighlightEdit" MinHeight="150" Margin="5 5"/>
                 </PanelContainer>

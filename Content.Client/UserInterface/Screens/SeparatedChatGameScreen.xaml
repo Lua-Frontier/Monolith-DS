@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <screens:SeparatedChatGameScreen
     xmlns="https://spacestation14.io"
     xmlns:screens="clr-namespace:Content.Client.UserInterface.Screens"
@@ -31,22 +32,22 @@
         </LayoutContainer>
         <PanelContainer Name="SeparatedChatPanel" MinWidth="300">
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BackgroundColor="#1A1A1A" />
+                <graphics:StyleBoxFlat BackgroundColor="#121618" />
             </PanelContainer.PanelOverride>
 
             <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="10" Margin="10">
                 <menuBar:GameTopMenuBar Name="TopBar" HorizontalExpand="True" Access="Protected" />
                 <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="6 6 6 6">
                     <PanelContainer.PanelOverride>
-                        <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#35434d" BackgroundColor="#141414"/>
+                        <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#3D484D" BackgroundColor="#07090A"/>
                     </PanelContainer.PanelOverride>
                     <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="0 0 0 0">
                         <PanelContainer.PanelOverride>
-                            <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#262626" BackgroundColor="#111111"/>
+                            <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#2A3236" BackgroundColor="#07090A"/>
                         </PanelContainer.PanelOverride>
                         <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="3 3">
                             <PanelContainer.PanelOverride>
-                                <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#303030" BackgroundColor="#1f1f1f"/>
+                                <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#2A3236" BackgroundColor="#121618"/>
                             </PanelContainer.PanelOverride>
                             <SplitContainer State="Auto" VerticalExpand="True" Orientation="Vertical">
                             <userActions:UserActionsPanel Name="UserActionsPanel" Access="Public"/>

@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <controls:FancyWindow
     xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,13 +10,13 @@
     <BoxContainer Orientation="Vertical">
         <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="6 6 6 6">
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#35434d" BackgroundColor="#191919"/>
+                <graphics:StyleBoxFlat BorderThickness="3" BorderColor="#3D484D" BackgroundColor="#07090A"/>
             </PanelContainer.PanelOverride>
         <BoxContainer Name="MainContainer" Orientation="Vertical">
         <!-- Frontier: balance -->
         <PanelContainer VerticalExpand="False" HorizontalExpand="True">
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BorderThickness="6" BorderColor="#212121" BackgroundColor="#111111" />
+                <graphics:StyleBoxFlat BorderThickness="6" BorderColor="#2A3236" BackgroundColor="#07090A" />
             </PanelContainer.PanelOverride>
         <GridContainer Margin ="0 2 0 4" Columns="2" HorizontalExpand="True">
             <BoxContainer Margin="4 0 2 0" Orientation="Horizontal" HorizontalExpand="True" HorizontalAlignment="Left">

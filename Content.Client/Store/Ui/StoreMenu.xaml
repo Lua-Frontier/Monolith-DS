@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <DefaultWindow
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
@@ -26,7 +27,7 @@
             <LineEdit Name="SearchBar" Margin="4" PlaceHolder="Search" HorizontalExpand="True"/>
                 <PanelContainer VerticalExpand="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#000000FF" />
+                    <gfx:StyleBoxFlat BackgroundColor="#07090AFF" />
                 </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Horizontal" VerticalExpand="True">
                     <PanelContainer VerticalExpand="True">

@@ -335,7 +335,7 @@ namespace Content.Client.HealthAnalyzer.UI
             TargetBodyPart.LeftFoot,
         };
 
-        private static readonly Color PartBorderColor = Color.FromHex("#333333");
+        private static readonly Color PartBorderColor = Color.FromHex("#3D484D"); // LuaM: #333333 > #3D484D
         private static readonly Color PartBorderHoverColor = Color.FromHex("#ff9100");
 
         private void DrawPartDamage(HealthAnalyzerScannedUserMessage msg)
@@ -389,7 +389,7 @@ namespace Content.Client.HealthAnalyzer.UI
         {
             var style = new StyleBoxFlat
             {
-                BackgroundColor = Color.FromHex("#181818"),
+                BackgroundColor = Color.FromHex("#07090A"), // LuaM: #181818 > #07090A
                 BorderColor = PartBorderColor,
                 BorderThickness = new Thickness(1),
             };

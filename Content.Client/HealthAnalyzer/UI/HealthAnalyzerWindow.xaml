@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <controls:FancyWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
@@ -8,11 +9,11 @@
     Resizable="True"> <!-- Shitmed Change --> <!-- LuaM: Resizable False > True, MinSize -->
     <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
         <PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#525252" BackgroundColor="#3d474d"/>
+            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#1F2629"/>
         </PanelContainer.PanelOverride>
         <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 2 2 2">
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#333333" BackgroundColor="#181818"/>
+                <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#07090A"/>
             </PanelContainer.PanelOverride>
         <!-- LuaM: two columns, the scan on the left and damaged body parts on the right -->
         <BoxContainer Orientation="Horizontal" VerticalExpand="True" HorizontalExpand="True">
@@ -28,7 +29,7 @@
             <!-- Shitmed Change Start -->
                 <PanelContainer Name="ReturnPanel" VerticalExpand="False" HorizontalExpand="True" Margin="2 2 2 2" MinHeight="40"> <!-- LuaM: Name, hidden while no part is open -->
                     <PanelContainer.PanelOverride>
-                        <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#050505"/>
+                        <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#3D484D" BackgroundColor="#07090A"/>
                     </PanelContainer.PanelOverride>
             <Button Name="ReturnButton"
                     Text="{Loc 'health-analyzer-window-return-button-text'}"
@@ -45,17 +46,17 @@
                 <!-- Shitmed Change Start -->
                     <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 2 2 2">
                         <PanelContainer.PanelOverride>
-                            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#333333" BackgroundColor="#181818"/>
+                            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#3D484D" BackgroundColor="#07090A"/>
                         </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Horizontal"
                               Margin="0 0 0 5">
                     <PanelContainer VerticalExpand="False" HorizontalExpand="False" Margin="2 2">
                         <PanelContainer.PanelOverride>
-                            <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#141414"/>
+                            <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#3D484D" BackgroundColor="#07090A"/>
                         </PanelContainer.PanelOverride>
                         <PanelContainer VerticalExpand="False" HorizontalExpand="False" Margin="1 1">
                             <PanelContainer.PanelOverride>
-                                <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#151515" BackgroundColor="#050505"/>
+                                <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#2A3236" BackgroundColor="#07090A"/>
                             </PanelContainer.PanelOverride>
                     <PanelContainer>
                         <TextureRect Name="NoDataTex"
@@ -235,11 +236,11 @@
 
                 <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
                     <PanelContainer.PanelOverride>
-                        <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#141414"/>
+                        <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#3D484D" BackgroundColor="#07090A"/>
                     </PanelContainer.PanelOverride>
                     <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4">
                         <PanelContainer.PanelOverride>
-                            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#151515" BackgroundColor="#050505"/>
+                            <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#2A3236" BackgroundColor="#07090A"/>
                         </PanelContainer.PanelOverride>
                 <GridContainer Margin="2 2"
                                Columns="2">
@@ -280,11 +281,11 @@
 
             <PanelContainer Name="AlertsPanel" Visible="False" VerticalExpand="False" HorizontalExpand="True" Margin="4 4 4 4" SetHeight="62"> <!-- LuaM: Name and Visible, hidden without alerts -->
                 <PanelContainer.PanelOverride>
-                    <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#141414"/>
+                    <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#3D484D" BackgroundColor="#07090A"/>
                 </PanelContainer.PanelOverride>
                 <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4">
                     <PanelContainer.PanelOverride>
-                        <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#151515" BackgroundColor="#050505"/>
+                        <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#2A3236" BackgroundColor="#07090A"/>
                     </PanelContainer.PanelOverride>
                     <ScrollContainer
                         Margin="5 5 5 5"
@@ -304,11 +305,11 @@
             <!-- LuaM-start: reagents in the bloodstream -->
             <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
                 <PanelContainer.PanelOverride>
-                    <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#141414"/>
+                    <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#3D484D" BackgroundColor="#07090A"/>
                 </PanelContainer.PanelOverride>
                 <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4">
                     <PanelContainer.PanelOverride>
-                        <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#151515" BackgroundColor="#050505"/>
+                        <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#2A3236" BackgroundColor="#07090A"/>
                     </PanelContainer.PanelOverride>
                     <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="6 4">
                         <Label Text="{Loc 'health-analyzer-window-blood-chemicals-text'}"
@@ -330,11 +331,11 @@
             <!-- Shitmed Change End -->
             <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 4">
                 <PanelContainer.PanelOverride>
-                    <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#141414"/>
+                    <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#3D484D" BackgroundColor="#07090A"/>
                 </PanelContainer.PanelOverride>
                 <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4">
                     <PanelContainer.PanelOverride>
-                        <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#151515" BackgroundColor="#050505"/>
+                        <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#2A3236" BackgroundColor="#07090A"/>
                     </PanelContainer.PanelOverride>
             <ScrollContainer
                 Margin="5 5 5 5"
@@ -353,11 +354,11 @@
         <!-- LuaM-start: damaged body parts, no need to click each limb -->
         <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 4 4 4">
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#333333" BackgroundColor="#141414"/>
+                <graphics:StyleBoxFlat BorderThickness="4" BorderColor="#3D484D" BackgroundColor="#07090A"/>
             </PanelContainer.PanelOverride>
             <PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4">
                 <PanelContainer.PanelOverride>
-                    <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#151515" BackgroundColor="#050505"/>
+                    <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#2A3236" BackgroundColor="#07090A"/>
                 </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="6 4">
                     <Label Text="{Loc 'health-analyzer-window-damaged-parts-text'}"

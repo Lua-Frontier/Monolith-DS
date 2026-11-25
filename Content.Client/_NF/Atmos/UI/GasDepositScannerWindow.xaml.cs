@@ -66,7 +66,7 @@ namespace Content.Client._NF.Atmos.UI
                 VerticalExpand = true,
                 HorizontalExpand = true,
                 Margin = new Thickness(4),
-                PanelOverride = new StyleBoxFlat { BorderColor = Color.FromHex("#4f4f4f"), BorderThickness = new Thickness(1) }
+                PanelOverride = new StyleBoxFlat { BorderColor = Color.FromHex("#3D484D"), BorderThickness = new Thickness(1) } // LuaM: #4f4f4f > #3D484D
             };
             var dataContainer = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical, VerticalExpand = true, Margin = new Thickness(4) };
 

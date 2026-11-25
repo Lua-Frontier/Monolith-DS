@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <Control xmlns="https://spacestation14.io"
          xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
          xmlns:system="clr-namespace:System;assembly=System.Runtime"
@@ -8,7 +9,7 @@
         <Control HorizontalExpand="True" SetHeight="27">
             <PanelContainer>
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BorderColor="#3B3E56" BorderThickness="0 0 0 1"/>
+                    <gfx:StyleBoxFlat BorderColor="#3D484D" BorderThickness="0 0 0 1"/>
                 </PanelContainer.PanelOverride>
             </PanelContainer>
             <Label Name="TitleLabel" Margin="12 0 6 0" HorizontalAlignment="Left"/>

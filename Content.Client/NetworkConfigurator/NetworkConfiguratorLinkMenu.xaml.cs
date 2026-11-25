@@ -37,7 +37,7 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
         var footerStyleBox = new StyleBoxFlat()
         {
             BorderThickness = new Thickness(0, 2, 0, 0),
-            BorderColor = Color.FromHex("#5A5A5A")
+            BorderColor = Color.FromHex("#3D484D") // LuaM: #5A5A5A > #3D484D
         };
 
         FooterPanel.PanelOverride = footerStyleBox;

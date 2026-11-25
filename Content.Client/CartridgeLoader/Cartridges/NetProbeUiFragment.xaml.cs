@@ -12,7 +12,7 @@ public sealed partial class NetProbeUiFragment : BoxContainer
     private readonly StyleBoxFlat _styleBox = new()
     {
         BackgroundColor = Color.Transparent,
-        BorderColor = Color.FromHex("#5a5a5a"),
+        BorderColor = Color.FromHex("#3D484D"), // LuaM: #5a5a5a > #3D484D
         BorderThickness = new Thickness(0, 0, 0, 1)
     };
 

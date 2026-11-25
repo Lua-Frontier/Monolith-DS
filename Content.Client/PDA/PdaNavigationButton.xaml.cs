@@ -19,8 +19,8 @@ public sealed partial class PdaNavigationButton : ContainerButton
 
     private readonly StyleBoxFlat _styleBox = new()
     {
-        BackgroundColor = Color.FromHex("#202023"),
-        BorderColor = Color.FromHex("#5a5a5a"),
+        BackgroundColor = Color.FromHex("#121618"), // LuaM: #202023 > #121618
+        BorderColor = Color.FromHex("#3D484D"), // LuaM: #5a5a5a > #3D484D
         BorderThickness = new Thickness(0, 0, 0, 2)
     };
 

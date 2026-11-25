@@ -1,4 +1,5 @@
-﻿<mapping:MappingScreen
+﻿<!-- LuaM: palette colors -->
+<mapping:MappingScreen
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
@@ -63,7 +64,7 @@
             <PanelContainer Name="Actions" VerticalExpand="True" HorizontalExpand="True"
                             MaxHeight="48">
                 <PanelContainer.PanelOverride>
-                    <graphics:StyleBoxFlat BackgroundColor="#222222AA" />
+                    <graphics:StyleBoxFlat BackgroundColor="#121618AA" />
                 </PanelContainer.PanelOverride>
                 <BoxContainer Orientation="Horizontal" Margin="15 10">
                     <mapping:MappingActionsButton

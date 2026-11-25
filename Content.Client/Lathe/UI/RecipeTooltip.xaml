@@ -1,3 +1,4 @@
+<!-- LuaM: palette colors -->
 <Control xmlns="https://spacestation14.io"
          xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
          MaxWidth="400">
@@ -5,8 +6,8 @@
         <PanelContainer.PanelOverride>
             <gfx:StyleBoxFlat
                 BorderThickness="2"
-                BorderColor="#363636"
-                BackgroundColor="#25252A"
+                BorderColor="#3D484D"
+                BackgroundColor="#1A1F22"
             />
         </PanelContainer.PanelOverride>
         <BoxContainer

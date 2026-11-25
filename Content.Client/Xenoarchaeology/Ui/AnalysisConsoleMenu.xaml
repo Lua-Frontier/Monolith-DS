@@ -1,4 +1,5 @@
-﻿<controls:FancyWindow xmlns="https://spacestation14.io"
+﻿<!-- LuaM: palette colors -->
+<controls:FancyWindow xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
@@ -20,7 +21,7 @@
             <BoxContainer Name="ExtractContainer" Orientation="Vertical" VerticalExpand="True" Visible="False">
                 <PanelContainer HorizontalExpand="True" VerticalExpand="True" RectClipContent="True">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BackgroundColor="#000000FF" />
+                        <gfx:StyleBoxFlat BackgroundColor="#07090AFF" />
                     </PanelContainer.PanelOverride>
                     <BoxContainer Margin="10 10 10 5" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
                         <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
@@ -73,7 +74,7 @@
         <BoxContainer HorizontalExpand="True" VerticalExpand="True">
             <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" RectClipContent="True">
                 <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#000000FF" />
+                    <gfx:StyleBoxFlat BackgroundColor="#07090AFF" />
                 </PanelContainer.PanelOverride>
                 <BoxContainer Margin="10 10 10 10" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
                     <ui:XenoArtifactGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
