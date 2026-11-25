@@ -224,6 +224,8 @@ public static class LobbyHudStyles
             Element<Label>().Class(Body)
                 .Prop(Label.StylePropertyFont, UiFont(resCache, 13, "Regular"))
                 .Prop(Label.StylePropertyFontColor, HudPalette.Text),
+            Element<RichTextLabel>().Class(Body)
+                .Prop("font", UiFont(resCache, 13, "Regular")),
             Element<Label>().Class(BodyBold)
                 .Prop(Label.StylePropertyFont, ui15)
                 .Prop(Label.StylePropertyFontColor, HudPalette.Text),

@@ -33,9 +33,16 @@
   canBeAntag: false
   setPreference: true
   accessGroups:
-  - AllAccess
+  - TsfCommandAccess # LuaM: AllAccess > TsfCommandAccess, the same as the colonel, no Colossus access
   access:
   - TsfmcEngineering
+  # LuaM-start
+  - HeadOfSecurity
+  - Bailiff
+  - Sergeant
+  - Armory
+  - Detective
+  # LuaM-end
   guides:
   - ColossusTSFRoles # LuaM: complete organization help
   special:

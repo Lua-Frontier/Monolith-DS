@@ -34,10 +34,7 @@
   displayWeight: 60 # Top
   canBeAntag: false
   accessGroups:
-  - AllAccessMono #Mono
-  access:
-  - HeadOfPersonnel #Mono
-  - Frontier #LuaM Add (acces fix)
+  - ColossusCommandAccess # LuaM: AllAccessMono > ColossusCommandAccess, no TSF access
   guides:
   - Caelestinus
   special:

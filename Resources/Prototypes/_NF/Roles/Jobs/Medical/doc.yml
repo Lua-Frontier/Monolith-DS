@@ -33,9 +33,7 @@
   displayWeight: 60 # Second from the top # mono - first from top
   canBeAntag: false
   accessGroups:
-  - AllAccessMono #Mono
-  access:
-  - ChiefMedicalOfficer #Mono
+  - Medical # LuaM: AllAccessMono > Medical, medicine only, no TSF and Colossus access
   guides:
   - ColossusMedicalFaction # LuaM: Caelestinus > ColossusMedicalFaction
   special:

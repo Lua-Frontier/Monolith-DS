@@ -20,8 +20,7 @@
   displayWeight: 20 # Second from the bottom
   canBeAntag: false
   access:
-  - Security
-  - Brig
+  - ColossusSecurity # LuaM: Security, Brig > ColossusSecurity, no TSF access
   - Maintenance
   - Service
   - External

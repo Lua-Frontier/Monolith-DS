@@ -257,7 +257,8 @@ namespace Content.Server.GameTicking
                             ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))),
                         Loc.GetString("latejoin-arrival-sender"),
                         playDefaultSound: false,
-                        colorOverride: Color.Gold);
+                        colorOverride: Color.Gold,
+                        showOnScreen: false); // LuaM
                 }
                 else
                 {
@@ -267,7 +268,8 @@ namespace Content.Server.GameTicking
                             ("entity", mob),
                             ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))),
                         Loc.GetString("latejoin-arrival-sender"),
-                        playDefaultSound: false);
+                        playDefaultSound: false,
+                        showOnScreen: false); // LuaM
                 }
             }
 

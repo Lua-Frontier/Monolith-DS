@@ -29,14 +29,14 @@
   assignedCompany: TSF
   canBeAntag: false
   accessGroups:
-  - AllAccessMono #Mono Start
+  - TsfCommandAccess # LuaM: AllAccessMono > TsfCommandAccess, no Colossus medical and mail #Mono Start
   access:
   - TsfmcEngineering
   - HeadOfSecurity
   - Bailiff
   - Sergeant
-  - Armory
-  - Frontier #Mono End
+  - Armory #Mono End
+  # - Frontier # LuaM: the Colossus station access
 # LuaM-start:
   - Detective
 # LuaM-end.

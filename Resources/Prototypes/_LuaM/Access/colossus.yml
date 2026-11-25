@@ -1,0 +1,27 @@
+# Colossus station staff. Kept apart from the TSF levels (Security, Brig, HeadOfSecurity...),
+# so the station guards and the commandant don't open TSF doors and the TSF doesn't open the station.
+
+- type: accessLevel
+  id: ColossusSecurity
+  name: id-card-access-level-colossus-security
+
+- type: accessLevel
+  id: ColossusCommand
+  name: id-card-access-level-colossus-command
+
+# The commandant: AllAccessMono without the levels shared with the TSF and without the medical ones.
+- type: accessGroup
+  id: ColossusCommandAccess
+  tags:
+  - ColossusCommand
+  - ColossusSecurity
+  - HeadOfPersonnel
+  - Frontier
+  - Captain
+  - Mail
+  - Mercenary
+  - Service
+  - StationTrafficController
+  - Maintenance
+  - External
+  - Janitor

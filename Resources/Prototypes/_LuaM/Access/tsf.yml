@@ -1,0 +1,15 @@
+# The TSF colonel and MARSOC: AllAccessMono without the Colossus medbay and mail.
+- type: accessGroup
+  id: TsfCommandAccess
+  tags:
+  - Captain
+  - Command
+  - Security
+  - Brig
+  - Mercenary
+  - Service
+  - StationTrafficController
+  - Maintenance
+  - External
+  - Janitor
+  - Chemistry

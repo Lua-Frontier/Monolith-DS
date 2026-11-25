@@ -1,0 +1,119 @@
+# Doors of the Colossus station. Same looks as their parents, but they read the Colossus access levels
+# instead of the ones the TSF also has.
+
+- type: entity
+  parent: AirlockSecurityLocked
+  id: AirlockColossusSecurityLocked
+  suffix: Colossus Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusSecurity ]
+
+- type: entity
+  parent: AirlockSecurityGlassLocked
+  id: AirlockColossusSecurityGlassLocked
+  suffix: Colossus Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusSecurity ]
+
+- type: entity
+  parent: AirlockBrigGlassLocked
+  id: AirlockColossusBrigGlassLocked
+  suffix: Colossus Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusSecurity ]
+
+- type: entity
+  parent: WindoorSecureSecurityLocked
+  id: WindoorSecureColossusSecurityLocked
+  suffix: Colossus Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusSecurity ]
+
+- type: entity
+  parent: AirlockCommandLocked
+  id: AirlockColossusCommandLocked
+  suffix: Colossus Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusCommand ]
+
+- type: entity
+  parent: WindoorSecureCommandLocked
+  id: WindoorSecureColossusCommandLocked
+  suffix: Colossus Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusCommand ]
+
+- type: entity
+  parent: AirlockFrontierBridgeLocked
+  id: AirlockColossusBridgeLocked
+  suffix: Colossus Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusCommand ]
+
+- type: entity
+  parent: AirlockFrontierBridgeGlassLocked
+  id: AirlockColossusBridgeGlassLocked
+  suffix: Colossus Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusCommand ]
+
+- type: entity
+  parent: AirlockFrontierCommandLocked
+  id: AirlockColossusFrontierCommandLocked
+  suffix: Colossus Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusCommand ]
+
+- type: entity
+  parent: AirlockFrontierCommandEngineeringLocked
+  id: AirlockColossusCommandEngineeringLocked
+  suffix: Colossus Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusCommand ]
+
+- type: entity
+  parent: AirlockHeavyCommandFrontierCommandLocked
+  id: AirlockHeavyCommandColossusCommandLocked
+  suffix: Colossus Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusCommand ]
+
+- type: entity
+  parent: AirlockHeavySecurityFrontierCommandLocked
+  id: AirlockHeavySecurityColossusCommandLocked
+  suffix: Colossus Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusCommand ]
+
+- type: entity
+  parent: WindoorSecureFrontierCommandLocked
+  id: WindoorSecureColossusFrontierCommandLocked
+  suffix: Colossus Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsColossusCommand ]

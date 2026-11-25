@@ -57,9 +57,13 @@
   cost: 4
   mutuallyExclusiveTraits:
   - ChromeIntolerance
-  speciesBlacklist: # innate thermal vision
+  speciesBlacklist:
+  # innate thermal vision
   - Vulpkanin
   - Protogen
+  # no eyes slot in the head
+  - Diona
+  - SlimePerson
   components:
   - type: TraitOrganForEachPart
     organ: ThermalCyberneticEyesBlackMarket
