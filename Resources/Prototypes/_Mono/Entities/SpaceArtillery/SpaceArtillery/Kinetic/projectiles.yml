@@ -112,6 +112,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 2
@@ -161,6 +162,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 2
@@ -198,6 +200,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 18 # totalIntensity goes first, please.
@@ -233,6 +236,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 18 # totalIntensity goes first, please.
@@ -276,6 +280,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 18 # totalIntensity goes first, please.
@@ -326,6 +331,7 @@
     layers:
     - state: 90mmHE
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 45
@@ -481,6 +487,7 @@
       - Impassable
       - Opaque
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBomb
     totalIntensity: 50
@@ -529,6 +536,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     deleteAfterExplosion: false
     explosionType: Default
@@ -612,6 +620,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     deleteAfterExplosion: false
     explosionType: Default
@@ -661,6 +670,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     deleteAfterExplosion: false
     explosionType: Default
@@ -701,6 +711,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 600
@@ -739,6 +750,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBombShipGun
     totalIntensity: 120
@@ -787,6 +799,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBombShipGun
     totalIntensity: 60
@@ -846,6 +859,7 @@
   - type: PointLight
     color: "#fc5a03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     deleteAfterExplosion: false
     explosionType: Default
@@ -884,6 +898,7 @@
   - type: PointLight
     color: "#035EFC"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 30
@@ -984,6 +999,7 @@
       - Impassable
       - Opaque
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBomb
     totalIntensity: 1500
@@ -1032,6 +1048,7 @@
   - type: PointLight
     color: "#19AFFF"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     deleteAfterExplosion: false
     explosionType: Default
@@ -1109,6 +1126,7 @@
   - type: PointLight
     color: "#19AFFF"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     deleteAfterExplosion: false
     explosionType: HardBomb
@@ -1148,6 +1166,7 @@
   - type: PointLight
     color: "#19AFFF"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBomb
     totalIntensity: 13000
@@ -1219,6 +1238,7 @@
   - type: PointLight
     color: "#fc5a03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 1900
@@ -1257,6 +1277,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 12
@@ -1275,6 +1296,7 @@
         Structural: 200
         Blunt: 60
         Piercing: 10
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 6
@@ -1310,6 +1332,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 45

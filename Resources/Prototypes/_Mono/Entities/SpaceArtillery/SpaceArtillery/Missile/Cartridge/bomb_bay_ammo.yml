@@ -25,6 +25,7 @@
   - type: TimedDespawn
     lifetime: 30
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 2000
@@ -79,6 +80,7 @@
         acts: ["Destruction"]
       - !type:ExplodeBehavior
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100
@@ -117,6 +119,7 @@
     color: orange
     energy: 2
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 100
@@ -178,6 +181,7 @@
         acts: ["Destruction"]
       - !type:ExplodeBehavior
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100
@@ -216,6 +220,7 @@
     color: green
     energy: 2
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     deleteAfterExplosion: false
     explosionType: Default
@@ -266,6 +271,7 @@
         acts: ["Destruction"]
       - !type:ExplodeBehavior
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100

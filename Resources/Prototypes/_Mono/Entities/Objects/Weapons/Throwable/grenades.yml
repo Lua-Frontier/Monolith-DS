@@ -59,6 +59,7 @@
   id: StickyGrenade
   components:
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: DemolitionCharge
     totalIntensity: 25

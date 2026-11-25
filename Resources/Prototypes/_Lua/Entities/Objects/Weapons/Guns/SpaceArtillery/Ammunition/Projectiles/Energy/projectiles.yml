@@ -15,6 +15,7 @@
         Structural: 100
         Heat: 50
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 7

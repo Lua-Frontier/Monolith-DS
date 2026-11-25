@@ -115,6 +115,7 @@
   - type: DeviceLinkSink
     ports:
       - Timer
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Minibomb #you may survive with a bombsuit lol
     totalIntensity: 50
@@ -141,6 +142,7 @@
     sprite: _Mono/Clothing/Neck/Misc/nuke-collar.rsi
   - type: Clothing
     sprite: _Mono/Clothing/Neck/Misc/nuke-collar.rsi
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Minibomb # uh oh
     totalIntensity: 75000

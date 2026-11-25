@@ -93,6 +93,7 @@
     color: orange
     energy: 0.5
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 8
@@ -153,6 +154,7 @@
     color: orange
     energy: 0.5
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 50
@@ -183,6 +185,7 @@
     scanArc: 0
     launchSpeed: 90
     maxSpeed: 300
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 30
@@ -218,6 +221,7 @@
     color: orange
     energy: 0.5
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 130
@@ -264,6 +268,7 @@
     color: orange
     energy: 0.5
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 70
@@ -314,6 +319,7 @@
     energyConsumption: 2700000
     disableDuration: 5
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 40
@@ -362,6 +368,7 @@
     color: orange
     energy: 2
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 600
@@ -424,6 +431,7 @@
     color: orange
     energy: 2
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBombShipGun
     maxIntensity: 450

@@ -10,6 +10,7 @@
     layers:
       - state: grenade
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 1 # max 15 per tile
@@ -50,6 +51,7 @@
     layers:
     - state: primed
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive # Nerfed SeismicCharge
     explosionType: Cryo
     totalIntensity: 30

@@ -9,7 +9,8 @@ namespace Content.Server._LuaM.Hearing;
 /// </summary>
 public sealed partial class DeafnessSystem : EntitySystem
 {
-    public void AddSource(EntityUid uid, string source, float soundVolume)
+    /// <param name="partialSpeech">The creature still makes out part of the speech, like after a concussion.</param>
+    public void AddSource(EntityUid uid, string source, float soundVolume, bool partialSpeech = false)
     {
         if (TerminatingOrDeleted(uid))
             return;
@@ -19,6 +20,11 @@ public sealed partial class DeafnessSystem : EntitySystem
             sources.AddedDeaf = !HasComp<DeafComponent>(uid);
 
         sources.Sources[source] = soundVolume;
+        if (partialSpeech)
+            sources.PartialSpeechSources.Add(source);
+        else
+            sources.PartialSpeechSources.Remove(source);
+
         Apply((uid, sources));
     }
 
@@ -27,6 +33,7 @@ public sealed partial class DeafnessSystem : EntitySystem
         if (!TryComp<DeafSourcesComponent>(uid, out var sources) || !sources.Sources.Remove(source))
             return;
 
+        sources.PartialSpeechSources.Remove(source);
         Apply((uid, sources));
     }
 
@@ -49,6 +56,7 @@ public sealed partial class DeafnessSystem : EntitySystem
 
         var deaf = EnsureComp<DeafComponent>(ent);
         deaf.SoundVolume = ent.Comp.Sources.Values.Min();
+        deaf.PartialSpeech = ent.Comp.Sources.Keys.All(ent.Comp.PartialSpeechSources.Contains);
         Dirty(ent, deaf);
     }
 }

@@ -6,3 +6,7 @@
   license: "Custom"
   copyright: "from free audio library"
   source: "https://zvukogram.com/zvuk/117834/"
+- files: ["concussion.ogg"]
+  license: "Custom"
+  copyright: "from free audio library, converted from MP3 to mono OGG"
+  source: "https://zvukogram.com/"

@@ -1,0 +1,10 @@
+- type: shader
+  id: LuaMConcussion
+  kind: source
+  path: "/Textures/_LuaM/Shaders/concussion.swsl"
+  params:
+    blurRadius: 9.0
+    doubleVision: 0.012
+    ghostAlpha: 0.45
+    desaturation: 0.5
+    vignette: 0.45

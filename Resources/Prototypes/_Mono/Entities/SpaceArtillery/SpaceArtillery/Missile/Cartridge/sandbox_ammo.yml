@@ -33,6 +33,7 @@
     color: orange
     energy: 2
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBomb
     maxIntensity: 1000
@@ -99,6 +100,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:ExplodeBehavior
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBomb
     maxIntensity: 150
@@ -145,6 +147,7 @@
     color: orange
     energy: 2
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBomb
     maxIntensity: 5000
@@ -212,6 +215,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:ExplodeBehavior
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: HardBomb
     maxIntensity: 1500

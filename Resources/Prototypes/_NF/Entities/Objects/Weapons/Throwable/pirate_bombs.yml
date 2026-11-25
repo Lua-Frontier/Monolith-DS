@@ -35,6 +35,7 @@
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive # Weak explosion with rad damage spread over a large radius.
     explosionType: Radioactive
     totalIntensity: 40
@@ -53,6 +54,7 @@
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive # Weak explosion in a very small radius. Doesn't break underplating.
     explosionType: DemolitionCharge
     totalIntensity: 50

@@ -15,6 +15,7 @@
   - type: OnUseTimerTrigger
     delay: 3
     examinable: false
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: BottleBomb
     totalIntensity: 25

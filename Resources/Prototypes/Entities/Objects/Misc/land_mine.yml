@@ -92,6 +92,7 @@
     - Defusal
   # LuaM-end
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 10

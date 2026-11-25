@@ -28,6 +28,7 @@
   - type: PointLight
     color: "#FF0040"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 90
@@ -65,6 +66,7 @@
   - type: PointLight
     color: "#FF0040"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 30
@@ -113,6 +115,7 @@
   - type: PointLight
     radarColor: "#FF0040"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 5
@@ -149,6 +152,7 @@
   - type: PointLight
     radarColor: "#00e5ff"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 32
@@ -187,6 +191,7 @@
   - type: PointLight
     color: "#FF00AA"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 25
@@ -289,6 +294,7 @@
   - type: PointLight
     color: "#6BC1FF"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 500
@@ -330,6 +336,7 @@
   - type: PointLight
     radarColor: "#ffffff"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 25
@@ -405,6 +412,7 @@
   - type: PointLight
     color: "#ab0707"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 120
@@ -592,6 +600,7 @@
   components:
   - type: TriggerOnSpawn
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 1200
@@ -605,6 +614,7 @@
   components:
   - type: TriggerOnSpawn
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 45
@@ -618,6 +628,7 @@
   components:
   - type: TriggerOnSpawn
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 80

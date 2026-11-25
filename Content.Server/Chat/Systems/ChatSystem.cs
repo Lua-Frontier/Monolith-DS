@@ -46,7 +46,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Server._LuaM.Chat; // LuaM
-using Content.Shared._LuaM.Hearing; // LuaM
+using Content.Server._LuaM.Hearing; // LuaM
 
 namespace Content.Server.Chat.Systems;
 
@@ -78,6 +78,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private CollectiveMindUpdateSystem _collectiveMind = default!; // Goobstation - Starlight collective mind port
     [Dependency] private ScreenAnnouncementSystem _screenAnnouncements = default!; // LuaM
     [Dependency] private AnnouncementAudioSystem _announcementAudio = default!; // LuaM
+    [Dependency] private DeafSpeechSystem _deafSpeech = default!; // LuaM
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -697,9 +698,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 
-            if (listener != source && HasComp<DeafComponent>(listener)) // LuaM: deaf creatures hear no speech
-                continue;
-
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
@@ -707,6 +705,16 @@ public sealed partial class ChatSystem : SharedChatSystem
             var canUnderstandLanguage = _language.CanUnderstand(listener, language.ID);
             // How the entity perceives the message depends on whether it can understand its language
             var perceivedMessage = canUnderstandLanguage ? message : languageObfuscatedMessage;
+
+            // LuaM-start: deaf creatures hear no speech, a concussed one makes out only part of the words
+            if (listener != source && _deafSpeech.IsDeaf(listener, out var whisperPartial))
+            {
+                if (!whisperPartial)
+                    continue;
+
+                perceivedMessage = _deafSpeech.Garble(perceivedMessage);
+            }
+            // LuaM-end
 
             // Result is the intermediate message derived from the perceived one via obfuscation
             // Wrapped message is the result wrapped in an "x says y" string
@@ -795,9 +803,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 
-            if (listener != source && HasComp<DeafComponent>(listener)) // LuaM: deaf creatures hear no speech
-                continue;
-
             // Einstein Engines - Language begin
             var canUnderstandLanguage = _language.CanUnderstand(listener, language.ID);
             // How the entity perceives the message depends on whether it can understand its language
@@ -807,6 +812,16 @@ public sealed partial class ChatSystem : SharedChatSystem
                 !recipients.Contains(listener) &&
                 !HasComp<GhostComponent>(listener))
                 continue;
+
+            // LuaM-start: deaf creatures hear no speech, a concussed one makes out only part of the words
+            if (listener != source && _deafSpeech.IsDeaf(listener, out var directPartial))
+            {
+                if (!directPartial)
+                    continue;
+
+                perceivedMessage = _deafSpeech.Garble(perceivedMessage);
+            }
+            // LuaM-end
 
             var wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, perceivedMessage, language);
             _chatManager.ChatMessageToOne(ChatChannel.CollectiveMind, message, wrappedMessage, source, false, session.Channel);
@@ -1008,9 +1023,17 @@ public sealed partial class ChatSystem : SharedChatSystem
                 continue;
             EntityUid listener = session.AttachedEntity.Value;
 
-            // LuaM-start: deaf creatures hear no speech, emotes and LOOC still reach them
-            if ((channel is ChatChannel.Local or ChatChannel.Whisper) && listener != source && HasComp<DeafComponent>(listener))
+            // LuaM-start: deaf creatures hear no speech, a concussed one makes out only part of the words. Emotes and LOOC reach them whole
+            if (channel == ChatChannel.Local && listener != source && _deafSpeech.IsDeaf(listener, out var partialSpeech))
+            {
+                if (!partialSpeech)
+                    continue;
+
+                var heard = _language.CanUnderstand(listener, language.ID) ? message : obfuscated;
+                var garbled = _deafSpeech.Garble(heard);
+                _chatManager.ChatMessageToOne(channel, garbled, WrapPublicMessage(source, name, garbled, language), source, entHideChat, session.Channel, author: author);
                 continue;
+            }
             // LuaM-end
 
             // If the channel does not support languages, or the entity can understand the message, send the original message, otherwise send the obfuscated version

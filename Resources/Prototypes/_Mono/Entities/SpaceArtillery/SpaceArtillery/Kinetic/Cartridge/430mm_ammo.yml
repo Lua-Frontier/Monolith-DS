@@ -30,6 +30,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
       - !type:ExplodeBehavior
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 100
@@ -67,6 +68,7 @@
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     totalIntensity: 16200 # This is 3/5th of a subnuclear shell # LuaM: 10800 > 16200, +50%

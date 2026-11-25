@@ -22,7 +22,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-using Content.Shared._LuaM.Hearing; // LuaM
+using Content.Server._LuaM.Hearing; // LuaM
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -38,6 +38,7 @@ public sealed partial class RadioSystem : EntitySystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private LanguageSystem _language = default!; // Einstein Engines - Language
+    [Dependency] private DeafSpeechSystem _deafSpeech = default!; // LuaM
 
     // set used to prevent radio feedback loops.
     private readonly HashSet<string> _messages = new();
@@ -80,9 +81,6 @@ public sealed partial class RadioSystem : EntitySystem
 
     private void OnIntrinsicReceive(EntityUid uid, IntrinsicRadioReceiverComponent component, ref RadioReceiveEvent args)
     {
-        if (HasComp<DeafComponent>(uid)) // LuaM: deaf creatures hear no radio
-            return;
-
         if (TryComp(uid, out ActorComponent? actor))
         {
             // Einstein Engines - Languages begin
@@ -91,6 +89,16 @@ public sealed partial class RadioSystem : EntitySystem
 
             if (!_language.CanUnderstand(listener, args.Language.ID))
                 msg = args.LanguageObfuscatedChatMsg;
+
+            // LuaM-start: deaf creatures hear no radio, a concussed one makes out only part of the words
+            if (_deafSpeech.IsDeaf(listener, out var partialSpeech))
+            {
+                if (!partialSpeech || _deafSpeech.Garble(msg) is not { } garbled)
+                    return;
+
+                msg = garbled;
+            }
+            // LuaM-end
 
             _netMan.ServerSendMessage(new MsgChatMessage { Message = msg }, actor.PlayerSession.Channel);
             // Einstein Engines - Languages end

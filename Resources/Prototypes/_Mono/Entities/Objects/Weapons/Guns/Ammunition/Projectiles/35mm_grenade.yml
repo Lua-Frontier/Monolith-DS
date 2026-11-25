@@ -9,6 +9,7 @@
     layers:
     - state: grenade
   - type: ExplodeOnTrigger
+  - type: ConcussiveExplosive # LuaM
   - type: Explosive
     explosionType: Default
     maxIntensity: 60
@@ -39,6 +40,7 @@
   - type: ContainerContainer
     containers:
       cluster-payload: !type:Container
+  - type: ConcussiveFlash # LuaM
   - type: FlashOnTrigger
     range: 5
   - type: SoundOnTrigger

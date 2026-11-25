@@ -13,4 +13,11 @@ public sealed partial class DeafComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float SoundVolume;
+
+    /// <summary>
+    /// The creature still makes out part of the speech: some words come through, the rest are gibberish.
+    /// Otherwise it hears no speech and no radio at all.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool PartialSpeech;
 }
