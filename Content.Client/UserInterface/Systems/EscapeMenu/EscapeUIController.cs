@@ -69,6 +69,14 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
             _changelog.ToggleWindow();
         };
 
+// LuaM-start
+        _escapeWindow.RoadmapButton.OnPressed += _ =>
+        {
+            CloseEscapeWindow();
+            UIManager.GetUIController<Content.Client._LuaM.Roadmap.RoadmapUIController>().OpenWindow();
+        };
+// LuaM-end
+
         _escapeWindow.RulesButton.OnPressed += _ =>
         {
             CloseEscapeWindow();

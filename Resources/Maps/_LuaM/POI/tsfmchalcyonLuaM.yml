@@ -4961,20 +4961,6 @@ entities:
       - 5731
       - 5732
       - 5733
-- proto: AirlockExternalGlassLocked
-  entities:
-  - uid: 47
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,-28.5
-      parent: 1
-  - uid: 48
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,-30.5
-      parent: 1
 - proto: AirlockExternalGlassNfsd
   entities:
   - uid: 49
@@ -5238,6 +5224,18 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 27.5,21.5
+      parent: 1
+  - uid: 47
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -10.5,-28.5
+      parent: 1
+  - uid: 48
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -10.5,-30.5
       parent: 1
 - proto: AirlockFreezer
   entities:

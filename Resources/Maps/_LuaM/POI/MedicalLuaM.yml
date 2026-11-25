@@ -5358,7 +5358,7 @@ entities:
     - type: Transform
       pos: 0.5,19.5
       parent: 1
-- proto: AirlockCommandLocked
+- proto: AirlockCommandChiefMedicalOfficerLocked
   entities:
   - uid: 2
     components:
@@ -24946,7 +24946,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: HighSecCommandLocked
+- proto: HighSecChiefMedicalOfficerLocked
   entities:
   - uid: 5
     components:
@@ -25365,6 +25365,9 @@ entities:
         89:
         - - Pressed
           - DoorBolt
+    - type: AccessReader
+      access:
+      - - ChiefMedicalOfficer
   - uid: 2777
     components:
     - type: Transform
@@ -25394,6 +25397,9 @@ entities:
         3499:
         - - Pressed
           - Toggle
+    - type: AccessReader
+      access:
+      - - ChiefMedicalOfficer
 - proto: LockableButtonChiefMedicalOfficer
   entities:
   - uid: 2778
@@ -25938,6 +25944,9 @@ entities:
     - type: Transform
       pos: 0.5,22.5
       parent: 1
+    - type: AccessReader
+      access:
+      - - ChiefMedicalOfficer
 - proto: NFPlushieSharkMinnow
   entities:
   - uid: 2831
@@ -25957,6 +25966,9 @@ entities:
     - type: Transform
       pos: -3.5,19.5
       parent: 1
+    - type: AccessReader
+      access:
+      - - ChiefMedicalOfficer
 - proto: ObjectWeaponsMeleeLiliacBouquet
   entities:
   - uid: 5166

@@ -1,0 +1,19 @@
+<roadmap:RoadmapWindow xmlns="https://spacestation14.io"
+                       xmlns:roadmap="clr-namespace:Content.Client._LuaM.Roadmap"
+                       xmlns:hud="clr-namespace:Content.Client._LuaM.UserInterface.Hud"
+                       MouseFilter="Stop"
+                       MinSize="720 420"
+                       SetSize="980 620">
+    <PanelContainer StyleClasses="LuaMHudWindow" HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" SeparationOverride="10">
+            <BoxContainer Orientation="Horizontal" SeparationOverride="8">
+                <hud:HudHeader Name="Header" Id="MAP-01" />
+                <Button Name="CloseButton" StyleClasses="LuaMHudIcon" SetSize="26 26" VerticalAlignment="Center">
+                    <hud:HudIcon Kind="Close" SetSize="14 14" />
+                </Button>
+            </BoxContainer>
+            <BoxContainer Name="Columns" Orientation="Horizontal" SeparationOverride="12"
+                          HorizontalExpand="True" VerticalExpand="True" Margin="0 0 0 2" />
+        </BoxContainer>
+    </PanelContainer>
+</roadmap:RoadmapWindow>

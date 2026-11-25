@@ -1,0 +1,15 @@
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsColossusSecurity
+  suffix: Colossus Security, Locked
+  components:
+  - type: AccessReader
+    access: [["ColossusSecurity"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsColossusCommand
+  suffix: Colossus Command, Locked
+  components:
+  - type: AccessReader
+    access: [["ColossusCommand"]]

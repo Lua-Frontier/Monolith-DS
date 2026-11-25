@@ -3,4 +3,4 @@ uplink-holo-cigar-desc = A holo-cigar imported from the Sol system. The full eff
 holo-cigar-verb-desc = Become the big boss.
 holo-cigar-verb-text = Activate
 # LuaM:
-holocigar-blacklist-examine = It seems the holo-cigar only has a partial effect on this weapon, allowing it to be used in one hand, but not in a pair!
+holocigar-blacklist-examine = [color=#D9A441]It seems the holo-cigar only has a partial effect on this weapon, allowing it to be used in one hand, but not in a pair![/color]

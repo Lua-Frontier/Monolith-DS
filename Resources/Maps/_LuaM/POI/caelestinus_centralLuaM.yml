@@ -8022,7 +8022,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -35.5,-11.5
       parent: 2
-- proto: AirlockBrigGlassLocked
+- proto: AirlockColossusBrigGlassLocked
   entities:
   - uid: 39
     components:
@@ -8053,7 +8053,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -59.5,19.5
       parent: 2
-- proto: AirlockCommandLocked
+- proto: AirlockColossusCommandLocked
   entities:
   - uid: 43
     components:
@@ -8165,7 +8165,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 27.5,15.5
       parent: 2
-- proto: AirlockFrontierBridgeGlassLocked
+- proto: AirlockColossusBridgeGlassLocked
   entities:
   - uid: 60
     components:
@@ -8191,7 +8191,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -23.5,-3.5
       parent: 2
-- proto: AirlockFrontierBridgeLocked
+- proto: AirlockColossusBridgeLocked
   entities:
   - uid: 64
     components:
@@ -8217,7 +8217,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -6.5,-3.5
       parent: 2
-- proto: AirlockFrontierCommandEngineeringLocked
+- proto: AirlockColossusCommandEngineeringLocked
   entities:
   - uid: 68
     components:
@@ -8231,7 +8231,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -31.5,12.5
       parent: 2
-- proto: AirlockFrontierCommandLocked
+- proto: AirlockColossusFrontierCommandLocked
   entities:
   - uid: 70
     components:
@@ -8707,7 +8707,7 @@ entities:
     - type: Transform
       pos: -24.5,41.5
       parent: 2
-- proto: AirlockHeavyCommandFrontierCommandLocked
+- proto: AirlockHeavyCommandColossusCommandLocked
   entities:
   - uid: 147
     components:
@@ -8724,7 +8724,7 @@ entities:
     - type: Transform
       pos: -31.5,17.5
       parent: 2
-- proto: AirlockHeavySecurityFrontierCommandLocked
+- proto: AirlockHeavySecurityColossusCommandLocked
   entities:
   - uid: 150
     components:
@@ -8831,7 +8831,7 @@ entities:
     - type: Transform
       pos: -15.5,41.5
       parent: 2
-- proto: AirlockSecurityGlassLocked
+- proto: AirlockColossusSecurityGlassLocked
   entities:
   - uid: 166
     components:
@@ -8865,7 +8865,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -23.5,30.5
       parent: 2
-- proto: AirlockSecurityLocked
+- proto: AirlockColossusSecurityLocked
   entities:
   - uid: 169
     components:
@@ -26627,6 +26627,9 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
+    - type: AccessReader
+      access:
+      - - ColossusCommand
 - proto: ComputerCrewMonitoring
   entities:
   - uid: 3265
@@ -26660,6 +26663,9 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: ComputerId
   entities:
   - uid: 3269
@@ -26988,6 +26994,9 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: ComputerTabletopRadar
   entities:
   - uid: 3305
@@ -46624,6 +46633,9 @@ entities:
       parent: 2
     - type: Lock
       locked: False
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: HandheldCrewMonitor
   entities:
   - uid: 5924
@@ -47010,6 +47022,9 @@ entities:
         39:
         - - Pressed
           - DoorBolt
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: LockableButtonCommand
   entities:
   - uid: 5975
@@ -47025,6 +47040,9 @@ entities:
         7501:
         - - Pressed
           - Toggle
+    - type: AccessReader
+      access:
+      - - ColossusCommand
   - uid: 5976
     components:
     - type: MetaData
@@ -47057,6 +47075,9 @@ entities:
         6315:
         - - Pressed
           - Toggle
+    - type: AccessReader
+      access:
+      - - ColossusCommand
   - uid: 5977
     components:
     - type: MetaData
@@ -47074,6 +47095,9 @@ entities:
         6619:
         - - Pressed
           - Toggle
+    - type: AccessReader
+      access:
+      - - ColossusCommand
 - proto: LockableButtonMailCarrier
   entities:
   - uid: 5978
@@ -47150,6 +47174,9 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Static
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
   - uid: 5985
     components:
     - type: Transform
@@ -47158,6 +47185,9 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Static
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: LockerJanitorFilled
   entities:
   - uid: 5986
@@ -47652,6 +47682,9 @@ entities:
     - type: Transform
       pos: 13.5,25.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusCommand
 - proto: NFHolopadFrontierOutpostSR
   entities:
   - uid: 6052
@@ -47659,6 +47692,9 @@ entities:
     - type: Transform
       pos: -15.5,8.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusCommand
 - proto: NFHolopadFrontierOutpostSTC
   entities:
   - uid: 6053
@@ -47666,6 +47702,9 @@ entities:
     - type: Transform
       pos: -23.5,4.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusCommand
 - proto: NFLockerSecurityFilled
   entities:
   - uid: 705
@@ -47673,21 +47712,33 @@ entities:
     - type: Transform
       pos: -22.5,31.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
   - uid: 2617
     components:
     - type: Transform
       pos: -22.5,26.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
   - uid: 2619
     components:
     - type: Transform
       pos: -21.5,26.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
   - uid: 6057
     components:
     - type: Transform
       pos: -21.5,31.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: NFSignBus
   entities:
   - uid: 6058
@@ -47736,6 +47787,9 @@ entities:
     - type: Transform
       pos: -18.5,7.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusCommand
 - proto: NFWardrobePrisonFilled
   entities:
   - uid: 6066
@@ -59012,21 +59066,33 @@ entities:
     - type: Transform
       pos: -24.5,26.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
   - uid: 7720
     components:
     - type: Transform
       pos: -24.5,28.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
   - uid: 7722
     components:
     - type: Transform
       pos: -23.5,28.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
   - uid: 7725
     components:
     - type: Transform
       pos: -23.5,26.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: SurveillanceCameraRouterGeneral
   entities:
   - uid: 7726
@@ -60866,6 +60932,9 @@ entities:
     - type: Transform
       pos: -21.5,28.5
       parent: 2
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: VendingMachineSeeds
   entities:
   - uid: 7926
@@ -70907,7 +70976,7 @@ entities:
       parent: 2
     - type: DeltaPressure
       gridUid: 2
-- proto: WindoorSecureCommandLocked
+- proto: WindoorSecureColossusCommandLocked
   entities:
   - uid: 3188
     components:
@@ -70995,7 +71064,7 @@ entities:
       parent: 2
     - type: DeltaPressure
       gridUid: 2
-- proto: WindoorSecureFrontierCommandLocked
+- proto: WindoorSecureColossusFrontierCommandLocked
   entities:
   - uid: 2550
     components:
@@ -71065,7 +71134,7 @@ entities:
       parent: 2
     - type: DeltaPressure
       gridUid: 2
-- proto: WindoorSecureSecurityLocked
+- proto: WindoorSecureColossusSecurityLocked
   entities:
   - uid: 9767
     components:

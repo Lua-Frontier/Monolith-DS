@@ -24,6 +24,7 @@ namespace Content.Client.Lobby.UI
             LeaveIcon.IconColor = Content.Client._LuaM.UserInterface.Hud.HudPalette.Bad;
             RulesButton.OnPressed += _ => new Content.Client.Info.RulesAndInfoWindow().Open();
             GuideButton.OnPressed += _ => UserInterfaceManager.GetUIController<Content.Client.UserInterface.Systems.Guidebook.GuidebookUIController>().ToggleGuidebook();
+            RoadmapButton.OnPressed += _ => UserInterfaceManager.GetUIController<Content.Client._LuaM.Roadmap.RoadmapUIController>().ToggleWindow();
             HideBannerDuplicates();
 // LuaM-end
 
