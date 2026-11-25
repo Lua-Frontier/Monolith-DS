@@ -1,0 +1,14 @@
+﻿roadmap-item-ui-unification = Bringing the UI to a common style
+roadmap-item-mmc-updates = New content for the MMC
+roadmap-item-vg-updates = New content for the VG
+roadmap-item-sbkc-updates = New content for the SBKC
+roadmap-item-bratva-pirates = The «Paycheck Bratva» pirates
+roadmap-item-planets = Planets
+roadmap-item-optimization = Optimization
+roadmap-item-circle-squad = The «Circle» squad
+roadmap-item-corporations = Further development of the corporations
+roadmap-item-martial-arts = Martial arts
+roadmap-item-surgery = Surgery improvements
+roadmap-item-prestige-ranks = Prestige ranks for roles
+roadmap-item-fauna-ai = Advanced fauna AI
+roadmap-item-economy = An attempt to rework the economy

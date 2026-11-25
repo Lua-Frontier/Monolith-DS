@@ -7,7 +7,8 @@
 
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
         <changelog:ChangelogButton Access="Public" Name="ChangelogButton"/>
-        <ui:VoteCallMenuButton />
+        <!-- LuaM -->
+        <Button Access="Public" Name="RoadmapButton" Text="{Loc 'ui-escape-roadmap'}" />
         <Button Access="Public" Name="OptionsButton" Text="{Loc 'ui-escape-options'}" />
         <Button Access="Public" Name="RulesButton" Text="{Loc 'ui-escape-rules'}" />
         <Button Access="Public" Name="GuidebookButton" Text="{Loc 'ui-escape-guidebook'}" />

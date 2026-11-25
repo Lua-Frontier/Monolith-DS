@@ -1,0 +1,83 @@
+- type: roadmapItem
+  id: RoadmapUiUnification
+  name: roadmap-item-ui-unification
+  stage: Done
+  order: 10
+
+- type: roadmapItem
+  id: RoadmapMmcUpdates
+  name: roadmap-item-mmc-updates
+  stage: Near
+  order: 20
+
+- type: roadmapItem
+  id: RoadmapVgUpdates
+  name: roadmap-item-vg-updates
+  stage: Near
+  order: 30
+
+- type: roadmapItem
+  id: RoadmapSbkcUpdates
+  name: roadmap-item-sbkc-updates
+  stage: Near
+  order: 40
+
+- type: roadmapItem
+  id: RoadmapBratvaPirates
+  name: roadmap-item-bratva-pirates
+  stage: Later
+  order: 10
+
+- type: roadmapItem
+  id: RoadmapPlanets
+  name: roadmap-item-planets
+  stage: Later
+  order: 20
+
+- type: roadmapItem
+  id: RoadmapOptimization
+  name: roadmap-item-optimization
+  stage: Later
+  order: 30
+
+- type: roadmapItem
+  id: RoadmapCircleSquad
+  name: roadmap-item-circle-squad
+  stage: Later
+  order: 40
+
+- type: roadmapItem
+  id: RoadmapCorporations
+  name: roadmap-item-corporations
+  stage: Later
+  order: 50
+
+- type: roadmapItem
+  id: RoadmapMartialArts
+  name: roadmap-item-martial-arts
+  stage: Later
+  order: 60
+
+- type: roadmapItem
+  id: RoadmapSurgery
+  name: roadmap-item-surgery
+  stage: Later
+  order: 70
+
+- type: roadmapItem
+  id: RoadmapPrestigeRanks
+  name: roadmap-item-prestige-ranks
+  stage: Near
+  order: 50
+
+- type: roadmapItem
+  id: RoadmapFaunaAi
+  name: roadmap-item-fauna-ai
+  stage: Later
+  order: 80
+
+- type: roadmapItem
+  id: RoadmapEconomy
+  name: roadmap-item-economy
+  stage: Later
+  order: 90

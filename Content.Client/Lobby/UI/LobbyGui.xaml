@@ -108,6 +108,8 @@
                             <Button Name="NextBackgroundButton" Access="Public" StyleClasses="LuaMHudButton" Text="&gt;" MinSize="28 28" />
                         </BoxContainer>
                     </PanelContainer>
+                    <!-- LuaM -->
+                    <Button Name="RoadmapButton" Text="{Loc 'lobby-roadmap-button'}" />
                 </BoxContainer>
 
                 <PanelContainer Name="RightSide" Access="Public" StyleClasses="LuaMHudWindow" HorizontalAlignment="Right"
