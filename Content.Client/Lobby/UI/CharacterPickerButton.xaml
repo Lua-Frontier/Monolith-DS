@@ -1,24 +1,33 @@
+<!-- LuaM -->
 <ContainerButton xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:style="clr-namespace:Content.Client.Stylesheets">
+         xmlns:style="clr-namespace:Content.Client.Stylesheets"
+         xmlns:hud="clr-namespace:Content.Client._LuaM.UserInterface.Hud">
     <BoxContainer Orientation="Horizontal"
                   HorizontalExpand="True"
-                  SeparationOverride="0"
+                  SeparationOverride="8"
+                  Margin="8 4 10 4"
                   Name="InternalHBox">
         <SpriteView Scale="2 2"
-                    Margin="0 4 4 4"
                     OverrideDirection="South"
                     Name="View"
                     SetSize="64 64"/>
-        <Label Name="DescriptionLabel"
-               ClipText="True"
-               HorizontalExpand="True"/>
-        <Button Name="DeleteButton"
-                Text="{Loc 'character-setup-gui-character-picker-button-delete-button'}"/>
-        <Button Name="ConfirmDeleteButton"
-                Text="{Loc 'character-setup-gui-character-picker-button-confirm-delete-button'}"
-                Visible="False"
-                ModulateSelfOverride="{x:Static style:StyleNano.ButtonColorCautionDefault}"/>
-
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
+            <Label Name="CodeLabel" StyleClasses="LuaMHudHeading" />
+            <Label Name="DescriptionLabel"
+                   ClipText="True"
+                   HorizontalExpand="True"
+                   StyleClasses="LuaMHudBody"/>
+        </BoxContainer>
+        <BoxContainer Orientation="Vertical" VerticalAlignment="Center" SeparationOverride="4">
+            <hud:HudRing Name="Ring" HorizontalAlignment="Center" Visible="False" />
+            <Button Name="DeleteButton"
+                    StyleClasses="LuaMHudDanger"
+                    Text="{Loc 'character-setup-gui-character-picker-button-delete-button'}"/>
+            <Button Name="ConfirmDeleteButton"
+                    StyleClasses="LuaMHudDanger"
+                    Text="{Loc 'character-setup-gui-character-picker-button-confirm-delete-button'}"
+                    Visible="False"/>
+        </BoxContainer>
     </BoxContainer>
 </ContainerButton>

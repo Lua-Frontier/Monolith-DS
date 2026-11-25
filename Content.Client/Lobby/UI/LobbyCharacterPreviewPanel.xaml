@@ -1,29 +1,43 @@
+<!-- LuaM -->
 <Control
     xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
-    <BoxContainer Name="VBox" Orientation="Vertical">
-        <controls:NanoHeading Name="Header" Text="{Loc 'lobby-character-preview-panel-header'}">
-
-        </controls:NanoHeading>
-        <BoxContainer Name="Loaded" Orientation="Vertical"
-                      Visible="False">
-            <Label Name="Summary" HorizontalAlignment="Center" Margin="3 3"/>
-            <!-- Frontier -->
-            <Label Name="BankBalance" HorizontalAlignment="Center" Margin="3 3"/>
-            <!-- Company Display -->
-            <RichTextLabel Name="Company" HorizontalAlignment="Center" Margin="3 3"/>
-            <!-- End Frontier -->
-            <BoxContainer Name="ViewBox" Orientation="Horizontal" HorizontalAlignment="Center">
-
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:hud="clr-namespace:Content.Client._LuaM.UserInterface.Hud">
+    <BoxContainer Name="VBox" Orientation="Vertical" SeparationOverride="10">
+        <controls:NanoHeading Name="Header" Text="{Loc 'lobby-character-preview-panel-header'}" Visible="False" />
+        <BoxContainer Name="Loaded" Orientation="Vertical" SeparationOverride="8" Visible="False">
+            <BoxContainer Orientation="Horizontal" SeparationOverride="16">
+                <PanelContainer SetSize="168 204" Margin="3">
+                    <PanelContainer.PanelOverride>
+                        <hud:StyleBoxGrid Step="24" />
+                    </PanelContainer.PanelOverride>
+                    <BoxContainer Name="ViewBox" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </PanelContainer>
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="6" VerticalAlignment="Center">
+                    <BoxContainer Orientation="Horizontal">
+                        <Label Text="{Loc 'lobby-hud-field-name'}" StyleClasses="LuaMHudLabel" MinWidth="84" VAlign="Center" />
+                        <Label Name="NameLabel" StyleClasses="LuaMHudBodyBold" ClipText="True" HorizontalExpand="True" />
+                    </BoxContainer>
+                    <PanelContainer MinHeight="1"><PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#2A3236" /></PanelContainer.PanelOverride></PanelContainer>
+                    <BoxContainer Orientation="Horizontal">
+                        <Label Text="{Loc 'lobby-hud-field-role-short'}" StyleClasses="LuaMHudLabel" MinWidth="84" VAlign="Center" />
+                        <Label Name="RoleLabel" StyleClasses="LuaMHudBodyBold" FontColorOverride="#7FD1C7" ClipText="True" HorizontalExpand="True" />
+                    </BoxContainer>
+                    <PanelContainer MinHeight="1"><PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#2A3236" /></PanelContainer.PanelOverride></PanelContainer>
+                    <RichTextLabel Name="Company" />
+                    <Label Name="MonoCoins" StyleClasses="LuaMHudMark" />
+                    <BoxContainer Name="BalanceRow" Orientation="Horizontal" SeparationOverride="10">
+                        <Label Text="{Loc 'lobby-hud-field-balance'}" StyleClasses="LuaMHudLabel" VAlign="Center" FontColorOverride="#6FBF73" />
+                        <Label Name="BankBalance" StyleClasses="LuaMHudData" FontColorOverride="#6FBF73" VAlign="Center" />
+                    </BoxContainer>
+                    <Button Name="CharacterSetup" Text="{Loc 'lobby-hud-setup-button'}" StyleClasses="LuaMHudAccent"
+                            HorizontalAlignment="Left" MinHeight="32" />
+                </BoxContainer>
             </BoxContainer>
-            <controls:VSpacer/>
-            <Button Name="CharacterSetup" Text="{Loc 'lobby-character-preview-panel-character-setup-button'}"
-                    HorizontalAlignment="Center"
-                    Margin="0 5 0 0"/>
-            <!-- MonoCoins Display -->
-            <Label Name="MonoCoins" HorizontalAlignment="Center" Margin="3 3"/>
+            <Label Name="Summary" Visible="False" />
         </BoxContainer>
-        <Label Name="Unloaded" Text="{Loc 'lobby-character-preview-panel-unloaded-preferences-label'}"/>
+        <Label Name="Unloaded" Text="{Loc 'lobby-character-preview-panel-unloaded-preferences-label'}" StyleClasses="LuaMHudMonoDim" />
     </BoxContainer>
 </Control>

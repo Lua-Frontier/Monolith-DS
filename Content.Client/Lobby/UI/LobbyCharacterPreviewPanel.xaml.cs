@@ -20,6 +20,14 @@ public sealed partial class LobbyCharacterPreviewPanel : Control
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+// LuaM-start
+        var parent = BalanceRow.Parent!;
+        var index = BalanceRow.GetPositionInParent();
+        var strip = new Content.Client._LuaM.UserInterface.Hud.HudCallout { Status = Content.Client._LuaM.UserInterface.Hud.HudStatus.Nominal };
+        strip.SetContent(BalanceRow);
+        parent.AddChild(strip);
+        strip.SetPositionInParent(index);
+// LuaM-end
     }
 
     public void SetLoaded(bool value)
@@ -73,8 +81,8 @@ public sealed partial class LobbyCharacterPreviewPanel : Control
         var spriteView = new SpriteView
         {
             OverrideDirection = Direction.South,
-            Scale = new Vector2(4f, 4f),
-            MaxSize = new Vector2(112, 112),
+            Scale = new Vector2(5f, 5f), // LuaM
+            MaxSize = new Vector2(160, 160), // LuaM
             Stretch = SpriteView.StretchMode.Fill,
         };
         spriteView.SetEntity(uid);

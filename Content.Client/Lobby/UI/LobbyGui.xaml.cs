@@ -18,6 +18,14 @@ namespace Content.Client.Lobby.UI
             IoCManager.InjectDependencies(this);
             SetAnchorPreset(MainContainer, LayoutPreset.Wide);
             SetAnchorPreset(Background, LayoutPreset.Wide);
+            SetAnchorPreset(Vignette, LayoutPreset.Wide); // LuaM
+// LuaM-start
+            CallVoteButton.Text = null;
+            LeaveIcon.IconColor = Content.Client._LuaM.UserInterface.Hud.HudPalette.Bad;
+            RulesButton.OnPressed += _ => new Content.Client.Info.RulesAndInfoWindow().Open();
+            GuideButton.OnPressed += _ => UserInterfaceManager.GetUIController<Content.Client.UserInterface.Systems.Guidebook.GuidebookUIController>().ToggleGuidebook();
+            HideBannerDuplicates();
+// LuaM-end
 
             LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
 
@@ -34,18 +42,9 @@ namespace Content.Client.Lobby.UI
             {
                 case LobbyGuiState.Default:
                     DefaultState.Visible = true;
-                    RightSide.Visible = true;
                     break;
                 case LobbyGuiState.CharacterSetup:
-                    CharacterSetupState.Visible = true;
-
-                    var actualWidth = (float) UserInterfaceManager.RootControl.PixelWidth;
-                    var setupWidth = (float) LeftSide.PixelWidth;
-
-                    if (1 - (setupWidth / actualWidth) > 0.30)
-                    {
-                        RightSide.Visible = false;
-                    }
+                    CharacterSetupState.Visible = true; // LuaM
 
                     UserInterfaceManager.GetUIController<LobbyUIController>().ReloadCharacterSetup();
 

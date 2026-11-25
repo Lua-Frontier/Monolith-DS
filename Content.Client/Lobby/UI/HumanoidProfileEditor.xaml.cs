@@ -199,7 +199,7 @@ namespace Content.Client.Lobby.UI
             NameEdit.OnTextChanged += args => { SetName(args.Text); };
             NameRandomize.OnPressed += args => RandomizeName();
             RandomizeEverythingButton.OnPressed += args => { RandomizeEverything(); };
-            WarningLabel.SetMarkup($"[color=red]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]");
+            WarningLabel.SetMarkup($"[color=#C9CFD1]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]"); // LuaM
 
             #endregion Name
 
@@ -543,6 +543,9 @@ namespace Content.Client.Lobby.UI
             #region Markings
 
             TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-markings-tab"));
+            InitLoadoutEditor(); // LuaM
+            InitTraitsEditor(); // LuaM
+            InitHudStyle(); // LuaM
 
             Markings.OnMarkingAdded += OnMarkingChange;
             Markings.OnMarkingRemoved += OnMarkingChange;
@@ -623,7 +626,13 @@ namespace Content.Client.Lobby.UI
             EnforceSpeciesTraitRestrictions();
 
             var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
-            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-traits-tab"));
+            TabContainer.SetTabTitle(TraitsList.Parent!.Parent!, Loc.GetString("humanoid-profile-editor-traits-tab")); // LuaM: index > control
+
+            if (_traitsEditor != null) // LuaM
+            {
+                RefreshTraitsEditor();
+                return;
+            }
 
             if (traits.Count < 1)
             {
@@ -1187,6 +1196,7 @@ namespace Content.Client.Lobby.UI
         public void RefreshLoadouts()
         {
             _loadoutWindow?.Orphan();
+            RefreshLoadoutEditor(); // LuaM
         }
 
         /// <summary>
@@ -1205,6 +1215,7 @@ namespace Content.Client.Lobby.UI
 
             PreviewDummy = _controller.LoadProfileEntity(Profile, JobOverride, ShowClothes.Pressed);
             SpriteView.SetEntity(PreviewDummy);
+            _loadoutEditor?.SetPreview(PreviewDummy); // LuaM
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
@@ -1447,14 +1458,15 @@ namespace Content.Client.Lobby.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#363636")},
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Content.Client._LuaM.UserInterface.Hud.HudPalette.PanelRaised, BorderColor = Content.Client._LuaM.UserInterface.Hud.HudPalette.LineDim, BorderThickness = new Thickness(0, 0, 0, 1)}, // LuaM
                         Children =
                         {
                             new Label
                             {
                                 Text = Loc.GetString("humanoid-profile-editor-department-jobs-label",
                                     ("departmentName", departmentName)),
-                                Margin = new Thickness(5f, 0, 0, 0)
+                                Margin = new Thickness(8f, 4f, 0, 4f), // LuaM
+                                StyleClasses = { Content.Client.Stylesheets.LobbyHudStyles.LabelClass }, // LuaM
                             }
                         }
                     });
@@ -1489,7 +1501,7 @@ namespace Content.Client.Lobby.UI
                     };
                     var jobIcon = _prototypeManager.Index(job.Icon);
                     icon.Texture = _entManager.System<SpriteSystem>().Frame0(jobIcon.Icon);
-                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+                    selector.Setup(items, job.LocalizedName, 320, job.LocalizedDescription, icon, job.Guides); // LuaM: 200 > 320
 
                     if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
                     {
@@ -1532,6 +1544,7 @@ namespace Content.Client.Lobby.UI
                     var loadoutWindowBtn = new Button()
                     {
                         Text = Loc.GetString("loadout-window"),
+                        StyleClasses = { Content.Client.Stylesheets.LobbyHudStyles.Button }, // LuaM
                         HorizontalAlignment = HAlignment.Right,
                         VerticalAlignment = VAlignment.Center,
                         Margin = new Thickness(3f, 3f, 0f, 0f),
@@ -1541,35 +1554,25 @@ namespace Content.Client.Lobby.UI
                     var protoManager = collection.Resolve<IPrototypeManager>();
 
                     // If no loadout found then disabled button
-                    if (!protoManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID), out var roleLoadoutProto))
+                    if (!protoManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID), out _))
                     {
                         loadoutWindowBtn.Disabled = true;
                     }
                     // else
                     else
                     {
-                        loadoutWindowBtn.OnPressed += args =>
-                        {
-                            RoleLoadout? loadout = null;
-
-                            // Clone so we don't modify the underlying loadout.
-                            Profile?.Loadouts.TryGetValue(LoadoutSystem.GetJobPrototype(job.ID), out loadout);
-                            loadout = loadout?.Clone();
-
-                            if (loadout == null)
-                            {
-                                loadout = new RoleLoadout(roleLoadoutProto.ID);
-                                loadout.SetDefault(Profile, _playerManager.LocalSession, _prototypeManager);
-                            }
-
-                            OpenLoadout(job, loadout, roleLoadoutProto);
-                        };
+                        loadoutWindowBtn.OnPressed += _ => OpenLoadoutTab(job); // LuaM: loadout window > loadout tab
                     }
 
                     _jobPriorities.Add((job.ID, selector));
                     jobContainer.AddChild(selector);
                     jobContainer.AddChild(loadoutWindowBtn);
-                    category.AddChild(jobContainer);
+                    category.AddChild(new PanelContainer // LuaM
+                    {
+                        Margin = new Thickness(0, 2),
+                        PanelOverride = new Content.Client._LuaM.UserInterface.Hud.StyleBoxHud(Content.Client._LuaM.UserInterface.Hud.HudPalette.Panel, Content.Client._LuaM.UserInterface.Hud.HudPalette.Border),
+                        Children = { jobContainer },
+                    });
                 }
             }
 
@@ -1882,7 +1885,7 @@ namespace Content.Client.Lobby.UI
             UpdateHeightLabel();
 // LuaM-end.
             SetDirty();
-            ReloadPreview();
+            ApplyPreviewScale(); // LuaM
         }
 
         private void ResetHeight()
@@ -1899,7 +1902,7 @@ namespace Content.Client.Lobby.UI
             UpdateWidthLabel();
 // LuaM-end.
             SetDirty();
-            ReloadPreview();
+            ApplyPreviewScale(); // LuaM
         }
 
         private void ResetWidth()
