@@ -273,9 +273,6 @@ public static class HudAccents
         ["PlantAnalyzer"] = HudAccent.Service,
         ["BarSign"] = HudAccent.Service,
 
-        ["Administration"] = HudAccent.Admin,
-        ["Bql"] = HudAccent.Admin,
-        ["NPC"] = HudAccent.Admin,
     };
 
     private static readonly Dictionary<Type, HudAccent> Cache = new();

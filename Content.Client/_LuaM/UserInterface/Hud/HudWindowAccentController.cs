@@ -75,9 +75,18 @@ public sealed partial class HudWindowAccentController : UIController
             var (window, added) = _pending[i];
             (EntityUid, Enum)? best = null;
             var bestGap = TimeSpan.MaxValue;
+            var uiSystem = _entities.System<Robust.Client.GameObjects.UserInterfaceSystem>();
+            var windowName = window.GetType().Name;
             foreach (var (key, seen) in _seen)
             {
                 var gap = (seen - added).Duration();
+                if (uiSystem.TryGetOpenUi(key.Item1, key.Item2, out var bui))
+                {
+                    var stem = bui.GetType().Name.Replace("BoundUserInterface", string.Empty).Replace("BUI", string.Empty);
+                    if (stem.Length > 3 && windowName.StartsWith(stem, StringComparison.Ordinal))
+                        gap -= TimeSpan.FromSeconds(10);
+                }
+
                 if (gap < bestGap)
                 {
                     bestGap = gap;
@@ -85,7 +94,7 @@ public sealed partial class HudWindowAccentController : UIController
                 }
             }
 
-            if (best is { } owner && bestGap < TimeSpan.FromSeconds(1))
+            if (best is { } owner && bestGap < TimeSpan.FromSeconds(0.5))
             {
                 var proto = _entities.GetComponentOrNull<MetaDataComponent>(owner.Item1)?.EntityPrototype?.ID;
                 var resolved = HudAccents.ForPrototype(proto, _protos) ?? HudAccents.For(window.GetType());
