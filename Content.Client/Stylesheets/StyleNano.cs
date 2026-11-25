@@ -1891,7 +1891,7 @@ namespace Content.Client.Stylesheets
                         Modulate = ButtonColorGoodDefault
                     }),
 //            }).ToList()); // Commented by LuaM
-            }).Concat(DeadSpaceAHelpStyles.GetRules(resCache)).Concat(ConsoleStyles.GetRules(resCache)).Concat(LobbyHudStyles.GetRules(resCache)).Concat(Content.Client._LuaM.RpPanel.RpPanelStyles.GetRules(resCache)).ToList()); // LuaM: register the Dead Space 14 AHelp visual rules in the legacy stylesheet pipeline. // LuaM: + console styles // LuaM: + lobby styles
+            }).Concat(HudThemeStyles.GetRules(resCache)).Concat(DeadSpaceAHelpStyles.GetRules(resCache)).Concat(ConsoleStyles.GetRules(resCache)).Concat(LobbyHudStyles.GetRules(resCache)).Concat(Content.Client._LuaM.RpPanel.RpPanelStyles.GetRules(resCache)).ToList()); // LuaM: register the Dead Space 14 AHelp visual rules in the legacy stylesheet pipeline. // LuaM: + console styles // LuaM: + lobby styles // LuaM: + hud theme
         }
     }
 }

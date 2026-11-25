@@ -3,45 +3,45 @@ using Robust.Shared.Maths;
 namespace Content.Client.Stylesheets;
 
 /// <summary>
-/// Monolith-DS interface colors: navy panels, blue borders and cyan accents, the same as the consoles and the AHelp.
+/// Monolith-DS interface colors: the console kit colors.
 /// </summary>
 public static class LuaMPalette
 {
     /// <summary>
     /// Window and panel background.
     /// </summary>
-    public static readonly Color Panel = Color.FromHex("#111923");
+    public static readonly Color Panel = Color.FromHex("#121618");
 
     /// <summary>
     /// Darker inset: lists, inputs, trees.
     /// </summary>
-    public static readonly Color PanelDeep = Color.FromHex("#0D1219");
+    public static readonly Color PanelDeep = Color.FromHex("#07090A");
 
     /// <summary>
     /// Slightly lighter rows and secondary panels.
     /// </summary>
-    public static readonly Color PanelRaised = Color.FromHex("#162433");
+    public static readonly Color PanelRaised = Color.FromHex("#1A1F22");
 
-    public static readonly Color Header = Color.FromHex("#202631");
-    public static readonly Color Border = Color.FromHex("#2D4757");
+    public static readonly Color Header = Color.FromHex("#1A1F22");
+    public static readonly Color Border = Color.FromHex("#3D484D");
 
     /// <summary>
     /// Headings, window titles and other highlighted text.
     /// </summary>
-    public static readonly Color AccentText = Color.FromHex("#4EC6E8");
+    public static readonly Color AccentText = Color.FromHex("#7FD1C7");
 
-    public static readonly Color Accent = Color.FromHex("#2EA7D0");
+    public static readonly Color Accent = Color.FromHex("#4A7D77");
 
-    public static readonly Color Button = Color.FromHex("#1C2E40");
-    public static readonly Color ButtonHover = Color.FromHex("#23506B");
-    public static readonly Color ButtonPressed = Color.FromHex("#1A6A8A");
-    public static readonly Color ButtonDisabled = Color.FromHex("#121922");
+    public static readonly Color Button = Color.FromHex("#121618");
+    public static readonly Color ButtonHover = Color.FromHex("#1F2629");
+    public static readonly Color ButtonPressed = Color.FromHex("#24403D");
+    public static readonly Color ButtonDisabled = Color.FromHex("#0A0C0D");
 
     /// <summary>
     /// Selected list row or active tab.
     /// </summary>
-    public static readonly Color Selected = Color.FromHex("#1E4A66");
+    public static readonly Color Selected = Color.FromHex("#24403D");
 
-    public static readonly Color Scrollbar = Color.FromHex("#4E7FA0");
-    public static readonly Color ScrollbarHover = Color.FromHex("#6FA3C4");
+    public static readonly Color Scrollbar = Color.FromHex("#3D484D");
+    public static readonly Color ScrollbarHover = Color.FromHex("#4A7D77");
 }

@@ -28,8 +28,6 @@ public sealed class HudStyleScope : Control
             return;
 
         Apply(Parent);
-        Apply(UserInterfaceManager.ModalRoot);
-        Apply(UserInterfaceManager.WindowRoot);
     }
 
     public static void Apply(Control control)
