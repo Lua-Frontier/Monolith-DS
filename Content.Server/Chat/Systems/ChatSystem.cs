@@ -458,7 +458,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null,
         ScreenAnnouncementStyle style = ScreenAnnouncementStyle.System,
-        EntityUid? speaker = null, string? portraitName = null, bool includeDefaultSound = false) // LuaM
+        EntityUid? speaker = null, string? portraitName = null, bool includeDefaultSound = false, // LuaM
+        bool showOnScreen = true) // LuaM
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
@@ -476,7 +477,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         var filter = _stationSystem.GetInStation(stationDataComp);
 
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source, false, true, colorOverride);
-        _screenAnnouncements.Send(sender, message, style, colorOverride, filter, speaker, portraitName); // LuaM
+        if (showOnScreen) // LuaM
+            _screenAnnouncements.Send(sender, message, style, colorOverride, filter, speaker, portraitName); // LuaM
 
         if (playDefaultSound)
         {
