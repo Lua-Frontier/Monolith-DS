@@ -35,7 +35,7 @@ public sealed partial class FireControlWindow : FancyWindow
     private FireControlConsoleBoundInterfaceState? _currentState;
 
     // LuaM: reload bar under each weapon button, full and green when the weapon may fire
-    private const float WeaponButtonMargin = 4f;
+    private const float WeaponButtonMargin = 0f; // LuaM: 4 > 0, the list keeps the gap
     private static readonly TimeSpan MinShownReload = TimeSpan.FromSeconds(0.3);
     private static readonly StyleBoxFlat ReloadReadyStyle = new(Color.FromHex("#3A7D44"));
     private static readonly StyleBoxFlat ReloadChargingStyle = new(Color.FromHex("#D98C1A"));
@@ -48,6 +48,10 @@ public sealed partial class FireControlWindow : FancyWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         UseDeadSpaceMenuStyle(); // LuaM
+        ConsoleStyles.Caps(this); // LuaM
+        ConsoleStyles.AddGunShape(SelectBallisticButton, Content.Client._LuaM.UserInterface.Hud.HudStatus.Caution); // LuaM
+        ConsoleStyles.AddGunShape(SelectEnergyButton, Content.Client._LuaM.UserInterface.Hud.HudStatus.Advisory); // LuaM
+        ConsoleStyles.AddGunShape(SelectMissileButton, Content.Client._LuaM.UserInterface.Hud.HudStatus.Warning); // LuaM
         RefreshButton.OnPressed += _ => OnServerRefresh?.Invoke();
         SelectAllButton.OnPressed += SelectAllWeapons;
         UnselectAllButton.OnPressed += UnselectAllWeapons;
@@ -191,24 +195,16 @@ public sealed partial class FireControlWindow : FancyWindow
     /// </summary>
     private void UpdateWeaponButtonText(Button button, FireControllableEntry controllable)
     {
-        if (button.Pressed && controllable.HasManualReload && controllable.AmmoCount.HasValue)
-        {
-            button.Text = Loc.GetString("gunnery-gun-select-ammo", ("name", controllable.Name), ("ammo", controllable.AmmoCount.Value));
-
-            if (controllable.AmmoCount.Value == 0)
-            {
-                button.ModulateSelfOverride = Color.Red;
-            }
-            else
-            {
-                button.ModulateSelfOverride = null;
-            }
-        }
-        else
-        {
-            button.Text = Loc.GetString("gunnery-gun-select", ("name", controllable.Name));
-            button.ModulateSelfOverride = null;
-        }
+        // LuaM: texts are only written when they change
+        var withAmmo = button.Pressed && controllable.HasManualReload && controllable.AmmoCount.HasValue;
+        var text = withAmmo
+            ? Loc.GetString("gunnery-gun-select-ammo", ("name", controllable.Name), ("ammo", controllable.AmmoCount!.Value))
+            : Loc.GetString("gunnery-gun-select", ("name", controllable.Name));
+        if (button.Text != text)
+            button.Text = text;
+        Color? tint = withAmmo && controllable.AmmoCount!.Value == 0 ? Color.Red : null;
+        if (button.ModulateSelfOverride != tint)
+            button.ModulateSelfOverride = tint;
     }
 
     /// <summary>
@@ -239,14 +235,14 @@ public sealed partial class FireControlWindow : FancyWindow
 
         if (state.Connected)
         {
-            ServerStatus.Text = Loc.GetString("gunnery-window-connected");
-            ServerStatus.FontColorOverride = Color.Green;
+            ServerStatus.Lead = Loc.GetString("gunnery-window-connected").ToUpperInvariant(); // LuaM: callout
+            ServerStatus.Status = Content.Client._LuaM.UserInterface.Hud.HudStatus.Nominal; // LuaM
         }
         else
         {
             RefreshButton.Disabled = false;
-            ServerStatus.Text = Loc.GetString("gunnery-window-disconnected");
-            ServerStatus.FontColorOverride = Color.Red;
+            ServerStatus.Lead = Loc.GetString("gunnery-window-disconnected").ToUpperInvariant(); // LuaM: callout
+            ServerStatus.Status = Content.Client._LuaM.UserInterface.Hud.HudStatus.Warning; // LuaM
         }
 
         UpdateWeaponsList(state);
@@ -332,7 +328,11 @@ public sealed partial class FireControlWindow : FancyWindow
 
             // Store the weapon type if available
             var entity = _entityManager.GetEntity(controllable.NetEntity);
-            if (_entityManager.TryGetComponent<ShipGunTypeComponent>(entity, out var typeComp))
+            if (controllable.GunType is { } sentType) // LuaM: the server sends the type
+            {
+                _weaponTypes[controllable.NetEntity] = sentType;
+            }
+            else if (_entityManager.TryGetComponent<ShipGunTypeComponent>(entity, out var typeComp))
             {
                 _weaponTypes[controllable.NetEntity] = typeComp.Type;
             }
@@ -344,14 +344,18 @@ public sealed partial class FireControlWindow : FancyWindow
             }
             else
             {
+                ShipGunType? gunType = _weaponTypes.TryGetValue(controllable.NetEntity, out var knownType) ? knownType : null; // LuaM
                 var button = new Button
                 {
                     ToggleMode = true,
                     Text = controllable.Name,
-                    StyleClasses = { ConsoleStyles.Button },// LuaM "ButtonSquare OpenRight" > "ButtonSquare" > console button
+                    StyleClasses = { ConsoleStyles.GunStyle(gunType) }, // LuaM "ButtonSquare OpenRight" > "ButtonSquare" > thin toggle in the weapon type color
                     HorizontalExpand = true,
+                    ClipText = true, // LuaM
                     Margin = new Thickness(WeaponButtonMargin, 2) // LuaM (4, 1) > (4, 2)
                 };
+                ConsoleStyles.AddGunShape(button, ConsoleStyles.GunShape(gunType)); // LuaM
+                Content.Client._LuaM.UserInterface.Hud.HudMarquee.Attach(button); // LuaM
 
                 button.OnToggled += _ =>
                 {

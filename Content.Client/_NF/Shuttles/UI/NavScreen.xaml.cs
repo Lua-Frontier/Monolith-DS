@@ -104,6 +104,8 @@ namespace Content.Client.Shuttles.UI
                 {
                     AnchorOn.Disabled = false;
                 }
+
+                SyncModeSwitch(); // LuaM
             }
 
             // Frontier target

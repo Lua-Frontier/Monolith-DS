@@ -7,16 +7,13 @@ public sealed class StyleBoxLamp : StyleBox
 {
     public Color CaseColor { get; set; } = HudPalette.Border;
     public Color FaceColor { get; set; } = HudPalette.Background;
-    public Color RimColor { get; set; } = Color.Black;
     public Color? RingColor { get; set; }
     public Color? InnerGlow { get; set; }
-    public float InnerGlowSize { get; set; } = 12;
     public Color? OuterGlow { get; set; }
-    public float OuterGlowSize { get; set; } = 8;
+    public float OuterGlowSize { get; set; } = 12;
 
-    private readonly DrawVertexUV2DColor[] _band = new DrawVertexUV2DColor[24];
-
-    private static readonly float[] GlowSteps = { 0f, 0.12f, 0.28f, 0.5f, 0.75f, 1f };
+    private const int HaloSteps = 6;
+    private readonly DrawVertexUV2DColor[] _band = new DrawVertexUV2DColor[24 * HaloSteps];
 
     public StyleBoxLamp()
     {
@@ -30,20 +27,17 @@ public sealed class StyleBoxLamp : StyleBox
         switch (lit)
         {
             case Lit.Off:
-                FaceColor = Mix(lamp, HudPalette.Background, 0.07f);
-                RimColor = Color.Black.WithAlpha(0.8f);
-                InnerGlow = lamp.WithAlpha(0.07f);
+                FaceColor = Mix(lamp, HudPalette.Background, 0.04f);
+                InnerGlow = lamp.WithAlpha(0.03f);
                 break;
             case Lit.On:
                 FaceColor = Mix(lamp, HudPalette.Background, 0.16f);
-                RimColor = Mix(lamp, Color.Black, 0.55f);
-                InnerGlow = lamp.WithAlpha(0.22f);
+                InnerGlow = lamp.WithAlpha(0.11f);
                 break;
             case Lit.Fill:
                 FaceColor = lamp;
-                RimColor = Mix(Color.Black, lamp, 0.35f);
-                InnerGlow = Color.White.WithAlpha(0.12f);
-                OuterGlow = lamp.WithAlpha(0.1f);
+                InnerGlow = Color.White.WithAlpha(0.06f);
+                OuterGlow = lamp.WithAlpha(0.05f);
                 break;
         }
 
@@ -75,7 +69,16 @@ public sealed class StyleBoxLamp : StyleBox
         if (OuterGlow is { } halo)
         {
             var g = OuterGlowSize * uiScale;
-            Band(handle, new UIBox2(box.Left - g, box.Top - g, box.Right + g, box.Bottom + g), box, halo.WithAlpha(0), halo);
+            for (var i = 0; i < HaloSteps; i++)
+            {
+                var t0 = (float) i / HaloSteps;
+                var t1 = (float) (i + 1) / HaloSteps;
+                var inner = new UIBox2(box.Left - g * t0, box.Top - g * t0, box.Right + g * t0, box.Bottom + g * t0);
+                var outer = new UIBox2(box.Left - g * t1, box.Top - g * t1, box.Right + g * t1, box.Bottom + g * t1);
+                Band(i * 24, outer, inner, halo.WithAlpha(halo.A * (1 - t1) * (1 - t1)), halo.WithAlpha(halo.A * (1 - t0) * (1 - t0)));
+            }
+
+            handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, Texture.White, _band);
         }
 
         if (RingColor is { } ring)
@@ -87,43 +90,19 @@ public sealed class StyleBoxLamp : StyleBox
         handle.DrawRect(box, Color.Black);
         StyleBoxHud.DrawFrame(handle, box, px, CaseColor);
 
-        var face = new UIBox2(box.Left + 3 * px, box.Top + 3 * px, box.Right - 3 * px, box.Bottom - 3 * px);
+        var face = new UIBox2(box.Left + 2 * px, box.Top + 2 * px, box.Right - 2 * px, box.Bottom - 2 * px);
         if (face.Width <= 0 || face.Height <= 0)
             return;
 
         handle.DrawRect(face, FaceColor);
-
         if (InnerGlow is { } glow)
-        {
-            var reach = MathF.Min(face.Width, face.Height) / 2f;
-            var edge = glow.A * 0.8f;
-            var floor = glow.A * 0.35f;
-            float Alpha(float t) => floor + (edge - floor) * (1 - t) * (1 - t);
-
-            for (var i = 0; i < GlowSteps.Length - 1; i++)
-            {
-                var d0 = reach * GlowSteps[i];
-                var d1 = reach * GlowSteps[i + 1];
-                Band(handle,
-                    new UIBox2(face.Left + d0, face.Top + d0, face.Right - d0, face.Bottom - d0),
-                    new UIBox2(face.Left + d1, face.Top + d1, face.Right - d1, face.Bottom - d1),
-                    glow.WithAlpha(Alpha(GlowSteps[i])),
-                    glow.WithAlpha(Alpha(GlowSteps[i + 1])));
-            }
-
-            var core = reach * GlowSteps[^1];
-            if (face.Width - 2 * core > 0)
-                handle.DrawRect(new UIBox2(face.Left + core, face.Top + core, face.Right - core, face.Bottom - core), glow.WithAlpha(floor));
-        }
-
-        StyleBoxHud.DrawFrame(handle, face, px, RimColor);
-        handle.DrawRect(new UIBox2(face.Left + px, face.Top + px, face.Right - px, face.Top + 2 * px), Color.White.WithAlpha(0.05f));
+            handle.DrawRect(face, glow.WithAlpha(glow.A * 0.5f));
     }
 
     private readonly Vector2[] _o = new Vector2[4];
     private readonly Vector2[] _i = new Vector2[4];
 
-    private void Band(DrawingHandleScreen handle, UIBox2 outer, UIBox2 inner, Color outerColor, Color innerColor)
+    private void Band(int n, UIBox2 outer, UIBox2 inner, Color outerColor, Color innerColor)
     {
         var oc = outerColor;
         var ic = innerColor;
@@ -132,7 +111,6 @@ public sealed class StyleBoxLamp : StyleBox
         o[0] = outer.TopLeft; o[1] = outer.TopRight; o[2] = outer.BottomRight; o[3] = outer.BottomLeft;
         i[0] = inner.TopLeft; i[1] = inner.TopRight; i[2] = inner.BottomRight; i[3] = inner.BottomLeft;
 
-        var n = 0;
         for (var side = 0; side < 4; side++)
         {
             var next = (side + 1) % 4;
@@ -143,7 +121,5 @@ public sealed class StyleBoxLamp : StyleBox
             _band[n++] = new DrawVertexUV2DColor(i[next], Vector2.Zero, ic);
             _band[n++] = new DrawVertexUV2DColor(i[side], Vector2.Zero, ic);
         }
-
-        handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, Texture.White, _band);
     }
 }

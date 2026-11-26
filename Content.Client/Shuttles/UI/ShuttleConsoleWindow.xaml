@@ -2,11 +2,11 @@
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:ui="clr-namespace:Content.Client.Shuttles.UI"
                       Title="{Loc 'shuttle-console-window-title'}"
-                      SetSize="1260 870"
-                      MinSize="1260 870">
+                      SetSize="1260 900"
+                      MinSize="1000 885">
     <!-- Lua: 1260x850 instead of 1300x994, the radars scale with the window -->
     <!-- LuaM: Dead Space 14 menu look like the AHelp, the window shell and header are set in code -->
-    <!-- LuaM: 850 > 870 for the hints line -->
+    <!-- LuaM: 850 > 900 for the hints line and the speed readout; mode buttons 44 > 30 high; MinSize 1000x885 so it can be shrunk -->
 
     <BoxContainer Orientation="Vertical" Margin="8 6 8 8">
         <!-- Top row mode buttons -->
@@ -15,7 +15,7 @@
                           Orientation="Horizontal"
                           HorizontalAlignment="Stretch"
                           HorizontalExpand="True"
-                          MinSize="44 44"
+                          MinSize="44 30"
                           SeparationOverride="4"
                           Margin="4">
                 <Button Name="NavModeButton"

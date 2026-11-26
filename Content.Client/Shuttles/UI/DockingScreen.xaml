@@ -27,12 +27,12 @@
                              Text="{controls:Loc 'shuttle-console-ftl-lock-enabled'}"
                              ToggleMode="True"
                              HorizontalExpand="True"
-                             StyleClasses="LuaMConsoleButton"/>
+                             StyleClasses="LuaMConsoleButton LuaMLampGreen"/>
             <controls:Button Name="FTLLockDisabledButton"
                              Text="{controls:Loc 'shuttle-console-ftl-lock-disabled'}"
                              ToggleMode="True"
                              HorizontalExpand="True"
-                             StyleClasses="LuaMConsoleButton"/>
+                             StyleClasses="LuaMConsoleButton LuaMLampRed"/>
         </controls:BoxContainer>
 
         <!-- Docks Section -->
@@ -41,7 +41,7 @@
         </controls:PanelContainer>
         <controls:Button Name="UndockAllButton"
                          Text="{controls:Loc 'shuttle-console-undock-all'}"
-                         StyleClasses="LuaMConsoleButton"/>
+                         StyleClasses="LuaMConsoleThin"/>
         <controls:PanelContainer StyleClasses="LuaMConsoleInset" VerticalExpand="True">
             <controls:ScrollContainer VerticalExpand="True" HScrollEnabled="False"
                                       ReturnMeasure="True" Margin="4">

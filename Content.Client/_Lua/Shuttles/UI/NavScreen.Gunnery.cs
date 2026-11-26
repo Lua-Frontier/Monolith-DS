@@ -5,6 +5,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Map;
 using Content.Client.Stylesheets;
+using Content.Client._LuaM.UserInterface.Hud; // LuaM
 
 namespace Content.Client.Shuttles.UI;
 
@@ -49,8 +50,8 @@ public sealed partial class NavScreen
         NavRadar.DefaultCursorShape = connected ? CursorShape.Crosshair : CursorShape.Arrow;
         NavRadar.SetGunneryControllables(_weapons);
 
-        GunneryStatus.Text = Loc.GetString(connected ? "gunnery-window-connected" : "gunnery-window-disconnected");
-        GunneryStatus.FontColorOverride = connected ? Color.Green : Color.Red;
+        GunneryStatus.Lead = Loc.GetString(connected ? "gunnery-window-connected" : "gunnery-window-disconnected").ToUpperInvariant(); // LuaM: callout
+        GunneryStatus.Status = connected ? HudStatus.Nominal : HudStatus.Warning; // LuaM
 
         UpdateWeaponButtons();
         UpdateGunnerySelection();
@@ -120,20 +121,26 @@ public sealed partial class NavScreen
             toRemove.Remove(weapon.NetEntity);
 
             var entity = _entManager.GetEntity(weapon.NetEntity);
-            if (_entManager.TryGetComponent<ShipGunTypeComponent>(entity, out var typeComp))
+            if (weapon.GunType is { } sentType) // LuaM: the server sends the type
+                _weaponTypes[weapon.NetEntity] = sentType;
+            else if (_entManager.TryGetComponent<ShipGunTypeComponent>(entity, out var typeComp))
                 _weaponTypes[weapon.NetEntity] = typeComp.Type;
 
             if (_weaponButtons.ContainsKey(weapon.NetEntity))
                 continue;
 
+            ShipGunType? gunType = _weaponTypes.TryGetValue(weapon.NetEntity, out var knownType) ? knownType : null; // LuaM
             var button = new Button
             {
                 ToggleMode = true,
                 Text = weapon.Name,
-                StyleClasses = { ConsoleStyles.Button }, // LuaM: ButtonSquare > console button
+                StyleClasses = { GunStyle(gunType) }, // LuaM: thin toggle in the weapon type color
                 HorizontalExpand = true,
-                Margin = new Thickness(4, 2),
+                ClipText = true, // LuaM
+                Margin = new Thickness(0, 2), // LuaM: (4, 2) > (0, 2), the list keeps the gap
             };
+            AddGunShape(button, GunShape(gunType)); // LuaM
+            HudMarquee.Attach(button); // LuaM
             button.OnToggled += _ => UpdateGunnerySelection();
 
             GunneryWeaponsBox.AddChild(WithReloadBar(weapon.NetEntity, button)); // LuaM: button > button with its reload bar
@@ -165,16 +172,16 @@ public sealed partial class NavScreen
             if (!_weaponButtons.TryGetValue(weapon.NetEntity, out var button))
                 continue;
 
-            if (button.Pressed && weapon.HasManualReload && weapon.AmmoCount.HasValue)
-            {
-                button.Text = Loc.GetString("gunnery-gun-select-ammo", ("name", weapon.Name), ("ammo", weapon.AmmoCount.Value));
-                button.ModulateSelfOverride = weapon.AmmoCount.Value == 0 ? Color.Red : null;
-            }
-            else
-            {
-                button.Text = Loc.GetString("gunnery-gun-select", ("name", weapon.Name));
-                button.ModulateSelfOverride = null;
-            }
+            // LuaM: texts are only written when they change, every write re-measures the list
+            var withAmmo = button.Pressed && weapon.HasManualReload && weapon.AmmoCount.HasValue;
+            var text = withAmmo
+                ? Loc.GetString("gunnery-gun-select-ammo", ("name", weapon.Name), ("ammo", weapon.AmmoCount!.Value))
+                : Loc.GetString("gunnery-gun-select", ("name", weapon.Name));
+            if (button.Text != text)
+                button.Text = text;
+            Color? tint = withAmmo && weapon.AmmoCount!.Value == 0 ? Color.Red : null;
+            if (button.ModulateSelfOverride != tint)
+                button.ModulateSelfOverride = tint;
         }
     }
 }

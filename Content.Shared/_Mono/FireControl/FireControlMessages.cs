@@ -114,6 +114,11 @@ public struct FireControllableEntry
     /// When the weapon can fire again, if it is still waiting.
     /// </summary>
     public TimeSpan? ReloadEnd;
+
+    /// <summary>
+    /// Weapon category, the client may not have the weapon entity in view.
+    /// </summary>
+    public Content.Shared._Mono.ShipGuns.ShipGunType? GunType;
     // End LuaM
 
     public FireControllableEntry(NetEntity entity, NetCoordinates coordinates, string name, int? ammoCount = null, bool hasManualReload = false, bool ignoresLos = false)

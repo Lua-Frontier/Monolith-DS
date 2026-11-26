@@ -111,7 +111,7 @@ public sealed partial class NavScreen
                 TelephoneState.Calling => "holo-comms-button-calling",
                 TelephoneState.InCall => "holo-comms-button-in-call",
                 _ => "holo-comms-button",
-            });
+            }).ToUpperInvariant();
         }
 
         UpdateHoloCommsRemote(state == TelephoneState.Idle ? null : comms.RemoteName);

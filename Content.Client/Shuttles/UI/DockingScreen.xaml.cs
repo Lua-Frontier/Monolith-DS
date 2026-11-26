@@ -358,10 +358,19 @@ public sealed partial class DockingScreen : BoxContainer
     private static void SetDockedLamp(Button button, bool docked)
     {
         button.ModulateSelfOverride = null;
-        if (docked && !button.HasStyleClass(ConsoleStyles.Yellow))
-            button.AddStyleClass(ConsoleStyles.Yellow);
-        else if (!docked && button.HasStyleClass(ConsoleStyles.Yellow))
-            button.RemoveStyleClass(ConsoleStyles.Yellow);
+        if (docked && !button.HasStyleClass(ConsoleStyles.Docked))
+            button.AddStyleClass(ConsoleStyles.Docked);
+        else if (!docked && button.HasStyleClass(ConsoleStyles.Docked))
+            button.RemoveStyleClass(ConsoleStyles.Docked);
+
+        foreach (var row in button.Children)
+        {
+            foreach (var part in row.Children)
+            {
+                if (part is Label label)
+                    label.FontColorOverride = docked ? Content.Client._LuaM.UserInterface.Hud.HudPalette.Cream : null;
+            }
+        }
     }
     // LuaM-end
 
@@ -456,15 +465,15 @@ public sealed partial class DockingScreen : BoxContainer
                 StyleClasses = { ConsoleStyles.Button } // LuaM square button // LuaM: ButtonSquare > console button
             };
 
+            // Add the container with text and lock indicator to the button
+            button.AddChild(buttonContainer); // LuaM: moved up, the docked look colors its labels
+
             // LuaM-start: | painting button
             if (dock.Connected && dock.GridDockedWith != null)
             {
                 SetDockedLamp(button, true);
             }
             // Lua-end
-
-            // Add the container with text and lock indicator to the button
-            button.AddChild(buttonContainer);
 
             button.OnMouseEntered += args =>
             {

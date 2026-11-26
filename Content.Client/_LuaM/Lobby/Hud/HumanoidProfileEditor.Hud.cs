@@ -37,7 +37,7 @@ public sealed partial class HumanoidProfileEditor
         var markingsPanel = MarkingsTab.GetChild(0);
         markingsPanel.Orphan();
         markingsPanel.VerticalExpand = false;
-        Markings.SetHeight = 560;
+        Markings.MinHeight = 560;
         var appearance = HairPanel.Parent!;
         appearance.AddChild(markingsPanel);
         markingsPanel.SetPositionInParent(HairPanel.GetPositionInParent() + 1);

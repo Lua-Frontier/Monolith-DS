@@ -63,14 +63,14 @@
                                             Text="{controls:Loc 'shuttle-console-map-settings'}"
                                             StyleClasses="LuaMConsoleHeaderLabel"/>
                             <controls:GridContainer Columns="2" HSeparationOverride="3" VSeparationOverride="3">
-                                <controls:Button Name="MapFTLButton" StyleClasses="LuaMConsoleButton"
+                                <controls:Button Name="MapFTLButton" StyleClasses="LuaMConsoleButton LuaMLampBlue"
                                                  ToggleMode="True"
                                                  MinHeight="18"
                                                  HorizontalExpand="True"
                                                  Text="{controls:Loc 'shuttle-console-ftl-button'}"
                                                  TextAlign="Center"/>
                                 <!-- Mono - Autopilot -->
-                                <controls:Button Name="MapAutopilotButton" StyleClasses="LuaMConsoleButton"
+                                <controls:Button Name="MapAutopilotButton" StyleClasses="LuaMConsoleButton LuaMLampGreen"
                                                  ToggleMode="True"
                                                  MinHeight="18"
                                                  HorizontalExpand="True"
@@ -78,7 +78,7 @@
                                                  TextAlign="Center"/>
                             </controls:GridContainer>
                             <!-- LuaM: the scan button is gone, the map refreshes by itself; beacons take the whole row -->
-                            <controls:Button Name="MapBeaconsButton" StyleClasses="LuaMConsoleButton"
+                            <controls:Button Name="MapBeaconsButton" StyleClasses="LuaMConsoleToggle"
                                              ToggleMode="True"
                                              Pressed="True"
                                              MinHeight="18"
@@ -94,12 +94,12 @@
                             <controls:BoxContainer Orientation="Horizontal" SeparationOverride="3">
                                 <controls:LineEdit Name="MapTargetX" StyleClasses="LuaMConsoleInput" HorizontalExpand="True" MinWidth="60"/>
                                 <controls:LineEdit Name="MapTargetY" StyleClasses="LuaMConsoleInput" HorizontalExpand="True" MinWidth="60"/>
-                                <controls:Button Name="MapTargetSet" StyleClasses="LuaMConsoleButton"
+                                <controls:Button Name="MapTargetSet" StyleClasses="LuaMConsoleThin"
                                                  MinHeight="18"
                                                  Text="{controls:Loc 'shuttle-console-set-target'}"
                                                  ToolTip="{controls:Loc 'shuttle-console-set-target-description'}"
                                                  TextAlign="Center"/>
-                                <controls:Button Name="MapTargetHide" StyleClasses="LuaMConsoleButton"
+                                <controls:Button Name="MapTargetHide" StyleClasses="LuaMConsoleToggle"
                                                  ToggleMode="True"
                                                  MinHeight="18"
                                                  Text="{controls:Loc 'shuttle-console-hide-target'}"
@@ -107,13 +107,13 @@
                                                  TextAlign="Center"/>
                             </controls:BoxContainer>
                             <controls:BoxContainer Orientation="Horizontal" SeparationOverride="3">
-                                <controls:Button Name="MapTargetAutopilot" StyleClasses="LuaMConsoleButton"
+                                <controls:Button Name="MapTargetAutopilot" StyleClasses="LuaMConsoleButton LuaMLampGreen"
                                                  MinHeight="18"
                                                  HorizontalExpand="True"
                                                  Text="{controls:Loc 'shuttle-console-autopilot-button'}"
                                                  ToolTip="{controls:Loc 'shuttle-console-target-autopilot-description'}"
                                                  TextAlign="Center"/>
-                                <controls:Button Name="MapTargetClear" StyleClasses="LuaMConsoleButton"
+                                <controls:Button Name="MapTargetClear" StyleClasses="LuaMConsoleThin"
                                                  MinHeight="18"
                                                  HorizontalExpand="True"
                                                  Text="{controls:Loc 'shuttle-console-clear-target'}"

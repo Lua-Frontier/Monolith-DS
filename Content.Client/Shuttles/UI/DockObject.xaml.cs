@@ -31,8 +31,8 @@ public sealed partial class DockObject : PanelContainer
         
         var viewButton = new Button()
         {
-            Text = Loc.GetString("luam-shuttle-dock-view"), // LuaM: "View" > luam-shuttle-dock-view
-            StyleClasses = { ConsoleStyles.Button }, // LuaM
+            Text = Loc.GetString("luam-shuttle-dock-view").ToUpperInvariant(), // LuaM: "View" > luam-shuttle-dock-view
+            StyleClasses = { ConsoleStyles.Thin }, // LuaM
         };
 
         viewButton.OnPressed += args =>
