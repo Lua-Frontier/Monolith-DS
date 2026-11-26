@@ -1,0 +1,26 @@
+# Stack types of glass shards: a broken window leaves one pile instead of a scatter of shards.
+
+- type: stack
+  id: LuaMShardGlass
+  spawn: ShardGlass
+  maxCount: 100
+
+- type: stack
+  id: LuaMShardGlassReinforced
+  spawn: ShardGlassReinforced
+  maxCount: 100
+
+- type: stack
+  id: LuaMShardGlassPlasma
+  spawn: ShardGlassPlasma
+  maxCount: 100
+
+- type: stack
+  id: LuaMShardGlassUranium
+  spawn: ShardGlassUranium
+  maxCount: 100
+
+- type: stack
+  id: LuaMShardGlassClockwork
+  spawn: ShardGlassClockwork
+  maxCount: 100

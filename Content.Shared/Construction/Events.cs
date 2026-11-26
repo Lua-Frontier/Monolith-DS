@@ -132,7 +132,25 @@ public sealed partial class ConstructionInteractDoAfterEvent : DoAfterEvent
     public override DoAfterEvent Clone() => this;
 }
 
+// LuaM-start: refining a stack refines several units at once
 [Serializable, NetSerializable]
-public sealed partial class WelderRefineDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class WelderRefineDoAfterEvent : DoAfterEvent
 {
+    /// <summary>
+    /// How many units of the stack get refined, the fuel for them was asked for when welding started.
+    /// </summary>
+    [DataField]
+    public int Count = 1;
+
+    private WelderRefineDoAfterEvent()
+    {
+    }
+
+    public WelderRefineDoAfterEvent(int count)
+    {
+        Count = count;
+    }
+
+    public override DoAfterEvent Clone() => this;
 }
+// LuaM-end

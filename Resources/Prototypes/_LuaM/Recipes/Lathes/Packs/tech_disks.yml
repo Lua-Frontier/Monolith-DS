@@ -158,6 +158,7 @@
   - XenoTranslator
   - ZookeeperTranslatorImplanter
   - ArmorPlateStorageT5Recipe
+  - ArmorPlateStorageBlueSpaceRecipe
 
 # All tech disk ammo recipes
 - type: latheRecipePack

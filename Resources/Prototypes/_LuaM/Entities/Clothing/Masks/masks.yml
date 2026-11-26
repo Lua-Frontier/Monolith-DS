@@ -8,3 +8,26 @@
     sprite: _LuaM/Clothing/Mask/gastarkhan.rsi
   - type: Clothing
     sprite: _LuaM/Clothing/Mask/gastarkhan.rsi
+
+- type: entity
+  parent: ClothingMaskGasSecurity
+  id: ClothingMaskGasTrauma
+  name: ATU gas mask
+  description: The TSFMC gas mask repainted for the trauma unit in the colours of the T-23 hardsuit.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Mask/gastrauma.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Mask/gastrauma.rsi
+  - type: CatWearable
+
+- type: entity
+  parent: ClothingMaskGasSwat
+  id: ClothingMaskGasTraumaLeader
+  name: advanced ATU gas mask
+  description: The TSFMC colonel gas mask repainted for the trauma unit command in the colours of the T-53 hardsuit.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Mask/gastrauma_leader.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Mask/gastrauma_leader.rsi

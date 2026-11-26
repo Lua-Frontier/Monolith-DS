@@ -7,7 +7,6 @@
     access: [[ "ChiefMedicalOfficer" ]]
   - type: StorageFill
     contents:
-    - id: JetpackBlueFilled
-    - id: ClothingOuterHardsuitTraumaLeader
-    - id: ClothingShoesBootsMagAshen
-    - id: ClothingMaskBreathMedicalSecurity
+    - id: JetpackTraumaLeaderFilled
+    - id: ClothingMaskGasTraumaLeader
+    # The T-53 hardsuit and the advanced ATU boots come with the Director of Care's loadout.

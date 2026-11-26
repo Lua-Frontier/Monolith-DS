@@ -1,0 +1,381 @@
+# Stack types of produce: identical produce lying around or stored together merges into one stack.
+
+- type: stack
+  id: LuaMProduceCottonBol
+  spawn: CottonBol
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceDeathNettle
+  spawn: DeathNettle
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodAloe
+  spawn: FoodAloe
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodAmbrosiaDeus
+  spawn: FoodAmbrosiaDeus
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodAmbrosiaVulgaris
+  spawn: FoodAmbrosiaVulgaris
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodAnomalyBerry
+  spawn: FoodAnomalyBerry
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodApple
+  spawn: FoodApple
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodAvocado
+  spawn: FoodAvocado
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodBanana
+  spawn: FoodBanana
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodBerries
+  spawn: FoodBerries
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodBloodTomato
+  spawn: FoodBloodTomato
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodBluePumpkin
+  spawn: FoodBluePumpkin
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodBlueTomato
+  spawn: FoodBlueTomato
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodBungo
+  spawn: FoodBungo
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodCabbage
+  spawn: FoodCabbage
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodCarrot
+  spawn: FoodCarrot
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodCherry
+  spawn: FoodCherry
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodChiliPepper
+  spawn: FoodChiliPepper
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodChillyPepper
+  spawn: FoodChillyPepper
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodCocoaPod
+  spawn: FoodCocoaPod
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodCoffee
+  spawn: FoodCoffee
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodCorn
+  spawn: FoodCorn
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodCucumber
+  spawn: FoodCucumber
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodEggplant
+  spawn: FoodEggplant
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodEveryspice
+  spawn: FoodEveryspice
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodExtradimensionalOrange
+  spawn: FoodExtradimensionalOrange
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodFakeCapfruit
+  spawn: FoodFakeCapfruit
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodFlyAmanita
+  spawn: FoodFlyAmanita
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodGalaxythistle
+  spawn: FoodGalaxythistle
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodGarlic
+  spawn: FoodGarlic
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodGatfruit
+  spawn: FoodGatfruit
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodGlasstle
+  spawn: FoodGlasstle
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodGoldenApple
+  spawn: FoodGoldenApple
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodGrape
+  spawn: FoodGrape
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodHolymelon
+  spawn: FoodHolymelon
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodHoneyComb
+  spawn: FoodHoneyComb
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodKoibean
+  spawn: FoodKoibean
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodLaughinPeaPod
+  spawn: FoodLaughinPeaPod
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodLemon
+  spawn: FoodLemon
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodLemoon
+  spawn: FoodLemoon
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodLily
+  spawn: FoodLily
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodLime
+  spawn: FoodLime
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodLingzhi
+  spawn: FoodLingzhi
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodMimana
+  spawn: FoodMimana
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodMint
+  spawn: FoodMint
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodMonkanana
+  spawn: FoodMonkanana
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodMushroom
+  spawn: FoodMushroom
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodOnion
+  spawn: FoodOnion
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodOnionRed
+  spawn: FoodOnionRed
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodOrange
+  spawn: FoodOrange
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodPeaPod
+  spawn: FoodPeaPod
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodPear
+  spawn: FoodPear
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodPineapple
+  spawn: FoodPineapple
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodPoppy
+  spawn: FoodPoppy
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodPotato
+  spawn: FoodPotato
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodPumpkin
+  spawn: FoodPumpkin
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodRealCapfruit
+  spawn: FoodRealCapfruit
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodSoybeans
+  spawn: FoodSoybeans
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodSpacemansTrumpet
+  spawn: FoodSpacemansTrumpet
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodTomato
+  spawn: FoodTomato
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodWatermelon
+  spawn: FoodWatermelon
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceFoodWorldPeas
+  spawn: FoodWorldPeas
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceLeavesCannabis
+  spawn: LeavesCannabis
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceLeavesCannabisRainbow
+  spawn: LeavesCannabisRainbow
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceLeavesTea
+  spawn: LeavesTea
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceLeavesTobacco
+  spawn: LeavesTobacco
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceLog
+  spawn: Log
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceMeatwheatBushel
+  spawn: MeatwheatBushel
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceNettle
+  spawn: Nettle
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceOatBushel
+  spawn: OatBushel
+  maxCount: 100
+
+- type: stack
+  id: LuaMProducePapercane
+  spawn: Papercane
+  maxCount: 100
+
+- type: stack
+  id: LuaMProducePyrottonBol
+  spawn: PyrottonBol
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceRiceBushel
+  spawn: RiceBushel
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceSteelLog
+  spawn: SteelLog
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceSugarcane
+  spawn: Sugarcane
+  maxCount: 100
+
+- type: stack
+  id: LuaMProduceWheatBushel
+  spawn: WheatBushel
+  maxCount: 100

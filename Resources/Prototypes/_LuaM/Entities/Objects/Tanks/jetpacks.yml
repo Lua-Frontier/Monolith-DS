@@ -1,0 +1,57 @@
+# Jetpacks of the Medical Center trauma unit, in the colours of the T-23 and T-53 hardsuits.
+- type: entity
+  parent: JetpackBlue
+  id: JetpackTrauma
+  name: ATU jetpack
+  description: A jetpack of the trauma unit, painted to match the T-23 hardsuit.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tanks/Jetpacks/trauma.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Tanks/Jetpacks/trauma.rsi
+
+- type: entity
+  parent: JetpackTrauma
+  id: JetpackTraumaFilled
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 13 minutes of thrust, as the filled blue jetpack
+      volume: 5
+      temperature: 293.15
+      moles:
+        Oxygen: 1.025689525
+        Nitrogen: 1.025689525
+
+- type: entity
+  parent: JetpackBlue
+  id: JetpackTraumaLeader
+  name: advanced ATU jetpack
+  description: A jetpack of the trauma unit command, painted to match the T-53 hardsuit.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tanks/Jetpacks/trauma_leader.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Tanks/Jetpacks/trauma_leader.rsi
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      volume: 50 # ten times the usual jetpack
+      temperature: 293.15
+
+- type: entity
+  parent: JetpackTraumaLeader
+  id: JetpackTraumaLeaderFilled
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 50 L at the pressure of the filled blue jetpack, about two hours of thrust
+      volume: 50
+      temperature: 293.15
+      moles:
+        Oxygen: 10.25689525
+        Nitrogen: 10.25689525

@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Content.Server._LuaM.Stacks; // LuaM
 using Content.Server.Construction.Components;
 using Content.Shared._Goobstation.Construction;
 using Content.Shared.ActionBlocker;
@@ -34,6 +35,7 @@ namespace Content.Server.Construction
         [Dependency] private EntityLookupSystem _lookupSystem = default!;
         [Dependency] private SharedTransformSystem _transformSystem = default!;
         [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
+        [Dependency] private UnitStackSystem _unitStack = default!; // LuaM
 
         // --- WARNING! LEGACY CODE AHEAD! ---
         // This entire file contains the legacy code for initial construction.
@@ -220,13 +222,15 @@ namespace Content.Server.Construction
                         break;
 
                     case ArbitraryInsertConstructionGraphStep arbitraryStep:
-                        foreach (var entity in new HashSet<EntityUid>(EnumerateNearby(user)))
+                        foreach (var nearby in new HashSet<EntityUid>(EnumerateNearby(user))) // LuaM: entity > nearby
                         {
-                            if (!arbitraryStep.EntityValid(entity, EntityManager, Factory))
+                            if (!arbitraryStep.EntityValid(nearby, EntityManager, Factory))
                                 continue;
 
-                            if (used.Contains(entity))
+                            if (used.Contains(nearby))
                                 continue;
+
+                            var entity = _unitStack.TakeOne(nearby, user.ToCoordinates(0, 0)); // LuaM: one shard or fruit, not the whole stack
 
                             // Dump out any stored entities in used entity
                             if (TryComp<StorageComponent>(entity, out var storage))

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._LuaM.Stacks; // LuaM
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -121,6 +122,9 @@ namespace Content.Shared.Stacks
                 return false;
 
             if (string.IsNullOrEmpty(recipientStack.StackTypeId) || !recipientStack.StackTypeId.Equals(donorStack.StackTypeId))
+                return false;
+
+            if (!CanMerge(donor, recipient)) // LuaM
                 return false;
 
             transferred = Math.Min(donorStack.Count, GetAvailableSpace(recipientStack));
@@ -355,6 +359,9 @@ namespace Content.Shared.Stacks
             if (insertStack.StackTypeId != targetStack.StackTypeId)
                 return false;
 
+            if (!CanMerge(insertEnt, targetEnt)) // LuaM
+                return false;
+
             var available = GetAvailableSpace(targetStack);
 
             if (available <= 0)
@@ -366,6 +373,15 @@ namespace Content.Shared.Stacks
             SetCount(insertEnt, insertStack.Count - change, insertStack);
             return true;
         }
+
+        // LuaM-start: stacks of the same type can still refuse to merge, e.g. produce with different genes
+        public bool CanMerge(EntityUid donor, EntityUid recipient)
+        {
+            var ev = new StackMergeAttemptEvent(donor);
+            RaiseLocalEvent(recipient, ref ev);
+            return !ev.Cancelled;
+        }
+        // LuaM-end
 
         private void OnStackStarted(EntityUid uid, StackComponent component, ComponentStartup args)
         {

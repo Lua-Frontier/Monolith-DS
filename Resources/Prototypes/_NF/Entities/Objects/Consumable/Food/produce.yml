@@ -4,6 +4,12 @@
   id: FoodPear
   description: It's peary good.
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceFoodPear
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: FlavorProfile
     flavors:
       - pear
@@ -34,6 +40,12 @@
   id: FoodCoffee
   description: Red berries encasing coffee beans.
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceFoodCoffee
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: FlavorProfile
     flavors:
       - bitter
@@ -66,6 +78,12 @@
   id: FoodAvocado
   description: Like delicious buttery grass.
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceFoodAvocado
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: FlavorProfile
     flavors:
       - avocado
@@ -132,6 +150,12 @@
   id: FoodCucumber
   description: Like fresh crispy water.
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceFoodCucumber
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: FlavorProfile
     flavors:
       - cucumber
@@ -269,6 +293,12 @@
   id: FoodHoneyComb
   description: Crispy container of honey.
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceFoodHoneyComb
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: FlavorProfile
     flavors:
       - honeycomb
@@ -326,6 +356,12 @@
   id: FoodEveryspice
   description: The long, pale pods of the everyspice plant. A flavorful addition to food when ground.
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceFoodEveryspice
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: FlavorProfile
     flavors:
       - spices
@@ -426,6 +462,12 @@
   id: FoodMonkanana
   description: Looks like a monkeyfied banana.
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceFoodMonkanana
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: FlavorProfile
     flavors:
       - hairy

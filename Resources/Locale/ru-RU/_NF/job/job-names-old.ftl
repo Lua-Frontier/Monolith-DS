@@ -1,6 +1,6 @@
 # Role timers
 JobSecurityCadetOld = кадет СБ
-JobSecurityOfficerOld = офицер СБ
+JobSecurityOfficerOld = сотрудник СБ
 JobHeadOfSecurityOld = ГСБ
 JobWardenOld = смотритель
 JobDetectiveOld = детектив

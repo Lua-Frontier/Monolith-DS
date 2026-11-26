@@ -79,21 +79,17 @@
     Lithium: 1000
     UraniumFissile: 150
 
-# - type: latheRecipe # For posterity
-#   parent: BaseToolRecipe
-#   id: ArmorPlateStorageBlueSpaceRecipe
-#   result: ArmorPlateStorageBlueSpace
-#   materialDiscountScale: 0
-#   materials:
-#     Bluespace: 400
-#     Diamond: 400
-#     Plastitanium: 4000
-#     Gold: 2000
-#     Plasma: 1000
-#     Glass: 1000
-#     Copper: 1000
-#     Lithium: 1000
-#     UraniumFissile: 300
+# The same price as the speed boots: both come from the pre-fracture tech disks.
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: ArmorPlateStorageBlueSpaceRecipe
+  result: ArmorPlateStorageBlueSpace
+  materialDiscountScale: 0
+  materials:
+    Steel: 1500
+    Plastic: 1000
+    Silver: 500
+    Bluespace: 200
 
 # Backpacks
 - type: latheRecipe

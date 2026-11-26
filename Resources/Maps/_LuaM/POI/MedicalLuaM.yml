@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 10/23/2026 16:14:21
-  entityCount: 5167
+  entityCount: 5165
 maps: []
 grids:
 - 1
@@ -5144,28 +5144,6 @@ entities:
     - type: ContainedSolution
       containerName: food
       container: 3728
-- proto: ActionToggleInternals
-  entities:
-  - uid: 4832
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 4830
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 4830
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 4831
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 4830
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 4830
 - proto: AirAlarm
   entities:
   - uid: 4917
@@ -12122,7 +12100,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 6.4166374,29.575514
       parent: 1
-- proto: ClothingMaskGasSecurity
+- proto: ClothingMaskGasTrauma
   entities:
   - uid: 4806
     components:
@@ -12328,7 +12306,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingShoesBootsMagAshen
+- proto: ClothingShoesBootsMagVoidTrauma
   entities:
   - uid: 4810
     components:
@@ -12355,19 +12333,8 @@ entities:
     components:
     - type: Transform
       parent: 4825
-    - type: GasTank
-      toggleActionEntity: 4832
     - type: Physics
       canCollide: False
-    - type: Jetpack
-      toggleActionEntity: 4831
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 4831
-          - 4832
     - type: InsideEntityStorage
   - uid: 4858
     components:
@@ -25021,7 +24988,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 16.5,-11.5
       parent: 1
-- proto: JetpackBlueFilled
+- proto: JetpackTraumaFilled
   entities:
   - uid: 4808
     components:

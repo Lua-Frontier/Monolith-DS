@@ -149,6 +149,12 @@ public abstract partial class CESharedZLevelsSystem
         if (_net.IsClient && !_clientSimulation)
             return;
 
+        // Off z-level maps (the whole sector) there is no ground height to track; every item moving on a belt
+        // used to go through the ground cache and the active bodies every tick. Moving onto a z-level map
+        // is a move too, and then the new map is already set.
+        if (!_zMapQuery.HasComp(Transform(entity).MapUid))
+            return;
+
         if (!_dirtyMovementSet.Add(entity))
             return;
         // LuaM-end

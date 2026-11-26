@@ -242,8 +242,8 @@
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
     - id: ClothingOuterHardsuitTrauma
-    - id: ClothingMaskBreath
-    - id: JetpackMiniFilled
+    - id: ClothingMaskGasTrauma # LuaM: ClothingMaskBreath > ClothingMaskGasTrauma
+    - id: JetpackTraumaFilled # LuaM: JetpackMiniFilled > JetpackTraumaFilled
     - id: ClothingShoesBootsMagVoidTrauma
   - type: AccessReader
     access: [["Medical"]]

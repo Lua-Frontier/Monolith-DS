@@ -29,6 +29,18 @@
         Heat: 3
   - type: MovementSpeedModifier
     weightlessAcceleration: 2.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 89.6 # same mass as a felinid (radius 0.28, density 140)
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
   - type: PseudoItem
     storedOffset: 0,17
     shape:

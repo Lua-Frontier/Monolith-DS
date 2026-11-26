@@ -3854,6 +3854,9 @@ entities:
           Oxygen: 1.7459903
           Nitrogen: 6.568249
         immutable: False
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: TableReinforced
   entities:
   - uid: 580
