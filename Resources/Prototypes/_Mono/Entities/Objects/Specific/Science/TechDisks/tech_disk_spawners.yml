@@ -223,3 +223,4 @@
     - id: TechDiskDataFarm # LuaM
     - id: TechDiskSurgicalGloves # LuaM
     - id: TechDiskModsuitStorageBluespace # LuaM
+    - id: TechDiskArmorPlateStorageBlueSpace # LuaM
