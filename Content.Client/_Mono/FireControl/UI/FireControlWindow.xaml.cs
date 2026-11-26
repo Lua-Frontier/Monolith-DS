@@ -35,7 +35,7 @@ public sealed partial class FireControlWindow : FancyWindow
     private FireControlConsoleBoundInterfaceState? _currentState;
 
     // LuaM: reload bar under each weapon button, full and green when the weapon may fire
-    private const float WeaponButtonMargin = 4f;
+    private const float WeaponButtonMargin = 0f; // LuaM: 4 > 0, the list keeps the gap
     private static readonly TimeSpan MinShownReload = TimeSpan.FromSeconds(0.3);
     private static readonly StyleBoxFlat ReloadReadyStyle = new(Color.FromHex("#3A7D44"));
     private static readonly StyleBoxFlat ReloadChargingStyle = new(Color.FromHex("#D98C1A"));
@@ -49,6 +49,9 @@ public sealed partial class FireControlWindow : FancyWindow
         IoCManager.InjectDependencies(this);
         UseDeadSpaceMenuStyle(); // LuaM
         ConsoleStyles.Caps(this); // LuaM
+        ConsoleStyles.AddGunShape(SelectBallisticButton, Content.Client._LuaM.UserInterface.Hud.HudStatus.Caution); // LuaM
+        ConsoleStyles.AddGunShape(SelectEnergyButton, Content.Client._LuaM.UserInterface.Hud.HudStatus.Advisory); // LuaM
+        ConsoleStyles.AddGunShape(SelectMissileButton, Content.Client._LuaM.UserInterface.Hud.HudStatus.Warning); // LuaM
         RefreshButton.OnPressed += _ => OnServerRefresh?.Invoke();
         SelectAllButton.OnPressed += SelectAllWeapons;
         UnselectAllButton.OnPressed += UnselectAllWeapons;
@@ -325,7 +328,11 @@ public sealed partial class FireControlWindow : FancyWindow
 
             // Store the weapon type if available
             var entity = _entityManager.GetEntity(controllable.NetEntity);
-            if (_entityManager.TryGetComponent<ShipGunTypeComponent>(entity, out var typeComp))
+            if (controllable.GunType is { } sentType) // LuaM: the server sends the type
+            {
+                _weaponTypes[controllable.NetEntity] = sentType;
+            }
+            else if (_entityManager.TryGetComponent<ShipGunTypeComponent>(entity, out var typeComp))
             {
                 _weaponTypes[controllable.NetEntity] = typeComp.Type;
             }
@@ -348,6 +355,7 @@ public sealed partial class FireControlWindow : FancyWindow
                     Margin = new Thickness(WeaponButtonMargin, 2) // LuaM (4, 1) > (4, 2)
                 };
                 ConsoleStyles.AddGunShape(button, ConsoleStyles.GunShape(gunType)); // LuaM
+                Content.Client._LuaM.UserInterface.Hud.HudMarquee.Attach(button); // LuaM
 
                 button.OnToggled += _ =>
                 {

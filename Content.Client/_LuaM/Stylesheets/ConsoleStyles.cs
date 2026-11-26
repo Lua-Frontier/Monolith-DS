@@ -61,7 +61,7 @@ public static class ConsoleStyles
     {
         var section = HudThemeStyles.Flat(HudPalette.PanelRaised, null);
         section.SetContentMarginOverride(StyleBox.Margin.All, 3);
-        var inset = HudThemeStyles.Flat(HudPalette.Background, HudPalette.LineDim);
+        var inset = new StyleBoxGrid { Step = 0, BackgroundColor = HudPalette.Background, ScanlineColor = HudPalette.Text.WithAlpha(0.014f), BorderColor = HudPalette.LineDim };
         var header = HudThemeStyles.Flat(Color.Transparent, null);
         header.SetContentMarginOverride(StyleBox.Margin.Vertical, 5);
         header.SetContentMarginOverride(StyleBox.Margin.Horizontal, 8);
@@ -163,7 +163,7 @@ public static class ConsoleStyles
         rules.Add(Element<PanelContainer>().Class(Hazard).Prop(PanelContainer.StylePropertyPanel, Tape(5, 8, 0.08f)));
         rules.Add(Element<Label>().Class(HazardLabel)
             .Prop(Label.StylePropertyFont, LobbyHudStyles.MonoMediumFont(resCache, 12))
-            .Prop(Label.StylePropertyFontColor, HudAccents.Cargo));
+            .Prop(Label.StylePropertyFontColor, HudPalette.Cream));
 
         foreach (var (pseudo, box) in new[]
                  {

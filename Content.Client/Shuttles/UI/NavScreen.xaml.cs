@@ -196,6 +196,7 @@ public sealed partial class NavScreen : BoxContainer
         GridPosition.Text = Loc.GetString("shuttle-console-position-value",
             ("X", $"{worldPos.X:0.0}"),
             ("Y", $"{worldPos.Y:0.0}"));
+        FitCoordsCaption(); // LuaM
         GridOrientation.Text = Loc.GetString("shuttle-console-orientation-value",
             ("angle", $"{displayRotDegrees:0.0}"));
 

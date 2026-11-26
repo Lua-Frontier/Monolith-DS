@@ -37,7 +37,7 @@
                             <!-- Forge-Change-End -->
                             <!-- Gunnery weapons -->
                             <controls:BoxContainer Name="GunneryControls" Orientation="Vertical" VerticalExpand="True" SeparationOverride="4">
-                                <controls:PanelContainer StyleClasses="LuaMConsoleHazard"> <!-- LuaM: hazard tape -->
+                                <controls:PanelContainer StyleClasses="LuaMConsoleHazard" Margin="2 0"> <!-- LuaM: hazard tape -->
                                     <controls:Label Text="{controls:Loc 'gunnery-guns'}" HorizontalAlignment="Center" StyleClasses="LuaMConsoleHazardLabel"/>
                                 </controls:PanelContainer>
                                 <controls:BoxContainer Orientation="Horizontal" SeparationOverride="4">
@@ -59,7 +59,7 @@
                                 <controls:PanelContainer StyleClasses="LuaMConsoleInset" VerticalExpand="True">
                                     <controls:ScrollContainer VerticalExpand="True" HScrollEnabled="False">
                                         <controls:BoxContainer Name="GunneryWeaponsBox" Orientation="Vertical"
-                                                               HorizontalExpand="True" Margin="4"/>
+                                                               HorizontalExpand="True" Margin="2 4 10 4"/> <!-- LuaM: 4 > 2 4 10 4, room for the scrollbar -->
                                     </controls:ScrollContainer>
                                 </controls:PanelContainer>
                             </controls:BoxContainer>
@@ -99,6 +99,14 @@
                         <controls:Label Name="GridSpeed" Text="0.0" StyleClasses="LuaMConsoleReadout" HorizontalExpand="True"/>
                         <controls:Label Text="{controls:Loc 'shuttle-console-speed-unit'}" StyleClasses="LuaMConsoleReadoutUnit" VAlign="Bottom" Margin="0 0 0 4"/>
                     </controls:BoxContainer>
+                    <!-- LuaM: coordinates on a row of their own, the caption shortens for long numbers -->
+                    <controls:BoxContainer Name="GridPositionRow" Orientation="Horizontal" Margin="6 4 6 0" SeparationOverride="8">
+                        <controls:Label Name="GridPositionCaption" Text="{controls:Loc 'shuttle-console-position'}" StyleClasses="LuaMConsoleKey"/>
+                        <controls:Label Name="GridPosition" StyleClasses="LuaMConsoleValue"
+                               Text="0.0, 0.0"
+                               HorizontalExpand="True"
+                               Align="Right"/>
+                    </controls:BoxContainer>
                     <controls:GridContainer Columns="2"
                                    HorizontalAlignment="Stretch"
                                    VerticalAlignment="Top"
@@ -108,11 +116,6 @@
                         <controls:Label Text="{controls:Loc 'shuttle-console-designation'}" StyleClasses="LuaMConsoleKey"/>
                         <controls:Label Name="ShuttleDesignation" StyleClasses="LuaMConsoleValue" ClipText="True"
                                Text="{controls:Loc 'shuttle-console-designation-unknown'}"
-                               HorizontalExpand="True"
-                               Align="Right"/>
-                        <controls:Label Text="{controls:Loc 'shuttle-console-position'}" StyleClasses="LuaMConsoleKey"/>
-                        <controls:Label Name="GridPosition" StyleClasses="LuaMConsoleValue" ClipText="True"
-                               Text="0.0, 0.0"
                                HorizontalExpand="True"
                                Align="Right"/>
                         <controls:Label Text="{controls:Loc 'shuttle-console-orientation'}" StyleClasses="LuaMConsoleKey"/>

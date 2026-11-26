@@ -121,6 +121,7 @@ public sealed partial class MapScreen
         gridButton.Label.ClipText = true;
         gridButton.Label.Align = Label.AlignMode.Left;
         gridButton.OnPressed += _ => OnMapObjectPress(mapObj);
+        Content.Client._LuaM.UserInterface.Hud.HudMarquee.Attach(gridButton); // LuaM
 
         var iconSlot = new CenterContainer()
         {

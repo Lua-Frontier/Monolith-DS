@@ -351,6 +351,7 @@ public sealed partial class FireControlSystem : EntitySystem
             var (ammoCount, hasManualReload) = GetWeaponAmmunitionInfo(controllable);
             controlled.AmmoCount = ammoCount;
             controlled.HasManualReload = hasManualReload;
+            controlled.GunType = CompOrNull<Content.Shared._Mono.ShipGuns.ShipGunTypeComponent>(controllable)?.Type; // LuaM
 
             // LuaM: reload progress, from the last shot until the weapon may fire again
             var reloadEnd = fcComp?.NextFire ?? TimeSpan.Zero;

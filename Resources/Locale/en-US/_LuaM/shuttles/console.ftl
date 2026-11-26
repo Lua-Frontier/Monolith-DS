@@ -13,3 +13,4 @@ shuttle-console-hints-map = Object in the list - show on map   ·   Hold RMB - p
 shuttle-console-hints-dock = SPACE - brake   ·   Wheel - zoom
 shuttle-console-speed-unit = m/s
 shuttle-console-sector = Colossus Sector
+shuttle-console-position-short = Pos.:

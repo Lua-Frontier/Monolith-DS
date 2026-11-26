@@ -27,6 +27,8 @@ public sealed partial class PdaProgramItem : ContainerButton
     {
         RobustXamlLoader.Load(this);
         Panel.PanelOverride = _styleBox;
+        InstallButton.Label.FontOverride = Content.Client.Stylesheets.LobbyHudStyles.UiFont(IoCManager.Resolve<Robust.Client.ResourceManagement.IResourceCache>(), 11); // LuaM: the lamp font did not fit
+        InstallButton.ClipText = true; // LuaM
     }
 
     protected override void Draw(DrawingHandleScreen handle)

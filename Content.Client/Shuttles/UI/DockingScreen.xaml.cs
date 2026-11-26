@@ -368,7 +368,7 @@ public sealed partial class DockingScreen : BoxContainer
             foreach (var part in row.Children)
             {
                 if (part is Label label)
-                    label.FontColorOverride = docked ? Content.Client._LuaM.UserInterface.Hud.HudAccents.Cargo : null;
+                    label.FontColorOverride = docked ? Content.Client._LuaM.UserInterface.Hud.HudPalette.Cream : null;
             }
         }
     }

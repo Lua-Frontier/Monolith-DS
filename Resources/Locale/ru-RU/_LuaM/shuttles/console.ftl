@@ -15,3 +15,4 @@ shuttle-console-hints-map = Объект в списке - на карте   · 
 shuttle-console-hints-dock = ПРОБЕЛ - торможение   ·   Колесо - масштаб
 shuttle-console-speed-unit = м/с
 shuttle-console-sector = Сектор Колосс
+shuttle-console-position-short = Корд.:

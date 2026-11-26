@@ -32,7 +32,7 @@ public sealed partial class NavScreen
             MaxValue = 1,
             Value = 1,
             SetHeight = 4,
-            Margin = new Thickness(4, 0, 4, 2),
+            Margin = new Thickness(0, 0, 0, 2),
             ForegroundStyleBoxOverride = ReloadReadyStyle,
             BackgroundStyleBoxOverride = ReloadBackgroundStyle,
         };

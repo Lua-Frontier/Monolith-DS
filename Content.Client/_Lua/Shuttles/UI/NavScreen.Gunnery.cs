@@ -121,7 +121,9 @@ public sealed partial class NavScreen
             toRemove.Remove(weapon.NetEntity);
 
             var entity = _entManager.GetEntity(weapon.NetEntity);
-            if (_entManager.TryGetComponent<ShipGunTypeComponent>(entity, out var typeComp))
+            if (weapon.GunType is { } sentType) // LuaM: the server sends the type
+                _weaponTypes[weapon.NetEntity] = sentType;
+            else if (_entManager.TryGetComponent<ShipGunTypeComponent>(entity, out var typeComp))
                 _weaponTypes[weapon.NetEntity] = typeComp.Type;
 
             if (_weaponButtons.ContainsKey(weapon.NetEntity))
@@ -135,9 +137,10 @@ public sealed partial class NavScreen
                 StyleClasses = { GunStyle(gunType) }, // LuaM: thin toggle in the weapon type color
                 HorizontalExpand = true,
                 ClipText = true, // LuaM
-                Margin = new Thickness(4, 2),
+                Margin = new Thickness(0, 2), // LuaM: (4, 2) > (0, 2), the list keeps the gap
             };
             AddGunShape(button, GunShape(gunType)); // LuaM
+            HudMarquee.Attach(button); // LuaM
             button.OnToggled += _ => UpdateGunnerySelection();
 
             GunneryWeaponsBox.AddChild(WithReloadBar(weapon.NetEntity, button)); // LuaM: button > button with its reload bar
