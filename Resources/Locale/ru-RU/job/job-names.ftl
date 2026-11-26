@@ -1,5 +1,5 @@
 job-name-warden = смотритель
-job-name-security = офицер СБ
+job-name-security = сотрудник СБ
 job-name-cadet = кадет СБ
 job-name-hos = глава службы безопасности
 job-name-detective = детектив
