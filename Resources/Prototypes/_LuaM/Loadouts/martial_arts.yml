@@ -1,0 +1,12 @@
+- type: loadoutGroup
+  id: MartialArtsManual
+  name: loadout-group-martial-arts-manual
+  minLimit: 0
+  loadouts:
+  - LoadoutCQCManual
+
+- type: loadout
+  id: LoadoutCQCManual
+  storage:
+    back:
+    - CQCManual

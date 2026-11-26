@@ -1,0 +1,24 @@
+<Document>
+# Кунг-фу дракона
+
+Стиль защиты и контроля: стойкость в неподвижности и точные удары по лежащим. Изучается по учебнику кунг-фу дракона.
+
+<GuideEntityCards>
+<GuideTexture Entity="DragonKungFuManual" Caption="auto"/>
+</GuideEntityCards>
+
+## Сила дракона
+<GuideTexture Entity="GuidebookDragonPower" Text="Постойте неподвижно [bold]1 с[/bold] — появится «Сила дракона» на [color=#73BFD3]5 с[/color]; пока вы стоите, она обновляется."/>
+
+Пока сила действует и активная рука пуста, удары в ближнем бою по вам слабее на [color=#73BFD3]40%[/color]: ушибы, режущий, колющий и термический урон. Каждый пропущенный удар усиливает ваши атаки, с оружием и без, ещё в [color=#73BFD3]1,2[/color] раза на [color=#73BFD3]5 с[/color], но не больше чем втрое.
+
+## Комбо
+<GuideTable Columns="3">
+<Box>[bold]Приём[/bold]</Box><Box>[bold]Действия[/bold]</Box><Box>[bold]Эффект[/bold]</Box>
+<Box>Коготь дракона</Box><Box>Толчок → Толчок</Box><Box>[color=#73BFD3]50[/color] выносливости, скорость цели падает до [color=#73BFD3]60%[/color] на [color=#73BFD3]2 с[/color].</Box>
+<Box>Хвост дракона</Box><Box>Толчок → Захват → Удар</Box><Box>Цель отпускается. Стоящей — [color=#73BFD3]15[/color] ушибов, [color=#73BFD3]30[/color] выносливости и падение на [color=#73BFD3]6 с[/color]; лежащей — оглушение на [color=#73BFD3]1 с[/color].</Box>
+<Box>Удар дракона</Box><Box>Толчок → Удар → Удар</Box><Box>Только на лежащих. [color=#73BFD3]40[/color] ушибов и паралич на [color=#73BFD3]2 с[/color].</Box>
+</GuideTable>
+
+[textlink="Боевые искусства" link="ColossusMartialArts"]
+</Document>

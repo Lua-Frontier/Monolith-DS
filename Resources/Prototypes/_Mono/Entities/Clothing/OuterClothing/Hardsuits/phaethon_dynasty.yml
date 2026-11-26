@@ -296,8 +296,8 @@
         Radiation: 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.95 # LuaM: 1.05 > 0.95, TSF and PDV suits are 10% slower
-    sprintModifier: 0.95 # powered rig instead of shield # LuaM: 1.05 > 0.95, TSF and PDV suits are 10% slower
+    walkModifier: 0.85 # LuaM: 1.05 > 0.85, the Tarkhan suit is 15% slower
+    sprintModifier: 0.85 # powered rig instead of shield # LuaM: 1.05 > 0.85, the Tarkhan suit is 15% slower
   - type: ToggleableClothing
     requiredSlot: outerclothing
     blockUnequipWhenAttached: false

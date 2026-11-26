@@ -1,0 +1,61 @@
+- type: guideEntry
+  id: ColossusGrabs
+  name: guide-entry-colossus-grabs
+  text: /ServerInfo/_LuaM/Guidebook/Combat/Grabs.xml
+  priority: 35
+
+- type: guideEntry
+  id: ColossusMartialArts
+  name: guide-entry-colossus-martial-arts
+  text: /ServerInfo/_LuaM/Guidebook/Combat/MartialArts/Index.xml
+  priority: 40
+  children:
+  - ColossusMartialArtsCQC
+  - ColossusMartialArtsSleepingCarp
+  - ColossusMartialArtsKravMaga
+  - ColossusMartialArtsCorporateJudo
+  - ColossusMartialArtsCapoeira
+  - ColossusMartialArtsDragonKungFu
+  - ColossusMartialArtsNinjutsu
+
+- type: guideEntry
+  id: ColossusMartialArtsCQC
+  name: guide-entry-colossus-martial-arts-cqc
+  text: /ServerInfo/_LuaM/Guidebook/Combat/MartialArts/CQC.xml
+  priority: 10
+
+- type: guideEntry
+  id: ColossusMartialArtsSleepingCarp
+  name: guide-entry-colossus-martial-arts-sleeping-carp
+  text: /ServerInfo/_LuaM/Guidebook/Combat/MartialArts/SleepingCarp.xml
+  priority: 20
+
+- type: guideEntry
+  id: ColossusMartialArtsKravMaga
+  name: guide-entry-colossus-martial-arts-krav-maga
+  text: /ServerInfo/_LuaM/Guidebook/Combat/MartialArts/KravMaga.xml
+  priority: 30
+
+- type: guideEntry
+  id: ColossusMartialArtsCorporateJudo
+  name: guide-entry-colossus-martial-arts-corporate-judo
+  text: /ServerInfo/_LuaM/Guidebook/Combat/MartialArts/CorporateJudo.xml
+  priority: 40
+
+- type: guideEntry
+  id: ColossusMartialArtsCapoeira
+  name: guide-entry-colossus-martial-arts-capoeira
+  text: /ServerInfo/_LuaM/Guidebook/Combat/MartialArts/Capoeira.xml
+  priority: 50
+
+- type: guideEntry
+  id: ColossusMartialArtsDragonKungFu
+  name: guide-entry-colossus-martial-arts-dragon-kung-fu
+  text: /ServerInfo/_LuaM/Guidebook/Combat/MartialArts/DragonKungFu.xml
+  priority: 60
+
+- type: guideEntry
+  id: ColossusMartialArtsNinjutsu
+  name: guide-entry-colossus-martial-arts-ninjutsu
+  text: /ServerInfo/_LuaM/Guidebook/Combat/MartialArts/Ninjutsu.xml
+  priority: 70

@@ -21,6 +21,7 @@
   - VGInfanteerPDA
   - ContractorWallet
   - ContractorCartridge
+  - MartialArtsManual # LuaM
   - ContractorImplanter
   - ContractorUtility
   - ContractorFun
@@ -53,6 +54,7 @@
   - VGLieutenantPDA
   - ContractorWallet
   - ContractorCartridge
+  - MartialArtsManual # LuaM
   - ContractorImplanter
   - ContractorUtility
   - ContractorFun
@@ -85,6 +87,7 @@
   - VGCommanderPDA
   - ContractorWallet
   - ContractorCartridge
+  - MartialArtsManual # LuaM
   - ContractorImplanter
   - ContractorUtility
   - ContractorFun

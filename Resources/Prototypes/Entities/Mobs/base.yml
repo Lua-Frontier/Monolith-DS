@@ -127,6 +127,7 @@
     soundHit:
       path: /Audio/Effects/hit_kick.ogg
   - type: Pullable
+  - type: Grabbable # LuaM: grab stages
   - type: LightningTarget
     priority: 1 # Mono
     lightningExplode: false

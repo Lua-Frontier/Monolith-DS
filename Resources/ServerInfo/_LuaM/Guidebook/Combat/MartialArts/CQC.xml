@@ -1,0 +1,25 @@
+<Document>
+# Ближний бой (CQC)
+
+Агрессивный стиль: быстро выбивает выносливость, роняет противника и отбирает у него оружие. Изучается по старому учебнику.
+
+<GuideEntityCards>
+<GuideTexture Entity="CQCManual" Caption="auto"/>
+</GuideEntityCards>
+
+## Особенности
+- Каждый толчок без оружия дополнительно отнимает [color=#73BFD3]25[/color] выносливости.
+- [bold]Подсечка.[/bold] Удар лёжа по стоящему противнику сбивает его с ног на [color=#73BFD3]5 с[/color], а вы сразу встаёте.
+
+## Комбо
+<GuideTable Columns="3">
+<Box>[bold]Приём[/bold]</Box><Box>[bold]Действия[/bold]</Box><Box>[bold]Эффект[/bold]</Box>
+<Box>Бросок</Box><Box>Захват → Удар</Box><Box>Только на стоящих. [color=#73BFD3]10[/color] ушибов, падение на [color=#73BFD3]12 с[/color], цель отпускается.</Box>
+<Box>Пинок</Box><Box>Удар → Удар</Box><Box>Отбрасывает и отнимает [color=#73BFD3]25[/color] выносливости. Лежащему — [color=#73BFD3]10[/color] ушибов в голову и [color=#73BFD3]55[/color] выносливости; без выносливости он засыпает на [color=#73BFD3]10 с[/color].</Box>
+<Box>Удержание</Box><Box>Захват → Захват</Box><Box>Падение на [color=#73BFD3]10 с[/color] и [color=#73BFD3]30[/color] выносливости.</Box>
+<Box>Давление</Box><Box>Толчок → Захват</Box><Box>[color=#73BFD3]65[/color] выносливости; предмет из активной руки цели переходит в вашу свободную руку.</Box>
+<Box>Серия ударов</Box><Box>Толчок → Толчок → Удар</Box><Box>[color=#73BFD3]10[/color] ушибов и [color=#73BFD3]70[/color] выносливости.</Box>
+</GuideTable>
+
+[textlink="Боевые искусства" link="ColossusMartialArts"]
+</Document>

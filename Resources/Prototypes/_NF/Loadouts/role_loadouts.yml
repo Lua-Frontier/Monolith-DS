@@ -242,6 +242,7 @@
   - StationRepPDA
   - ContractorWallet
   - ContractorCartridge
+  - MartialArtsManual # LuaM
   - ContractorImplanter
   - ContractorUtility # Mono
  # - ContractorFun # Mono - no fun allowed

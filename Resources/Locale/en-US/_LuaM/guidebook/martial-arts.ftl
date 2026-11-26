@@ -1,0 +1,9 @@
+﻿guide-entry-colossus-grabs = Grabs
+guide-entry-colossus-martial-arts = Martial Arts
+guide-entry-colossus-martial-arts-cqc = Close Quarters Combat
+guide-entry-colossus-martial-arts-sleeping-carp = Sleeping Carp
+guide-entry-colossus-martial-arts-krav-maga = Krav Maga
+guide-entry-colossus-martial-arts-corporate-judo = Corporate Judo
+guide-entry-colossus-martial-arts-capoeira = Capoeira
+guide-entry-colossus-martial-arts-dragon-kung-fu = Dragon Kung Fu
+guide-entry-colossus-martial-arts-ninjutsu = Ninjutsu

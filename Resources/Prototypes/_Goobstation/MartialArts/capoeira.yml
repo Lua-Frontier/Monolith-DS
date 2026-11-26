@@ -1,0 +1,99 @@
+- type: martialArt
+  id: Capoeira
+  martialArtsForm: Capoeira
+  roundstartCombos: CapoeiraMoves
+
+- type: comboList
+  id: CapoeiraMoves
+  combos:
+  - PushKick
+  - SweepKick
+  - CircleKick
+  - SpinKick
+  - KickUp
+
+- type: combo
+  id: PushKick
+  name: martial-arts-combo-capoeira-push-kick
+  martialArtsForm: Capoeira
+  attacks:
+  - Grab
+  - Harm
+  - Harm
+  event: !type:PushKickPerformedEvent
+    staminaToHeal: -30
+    modifierSet:
+      coefficients:
+        Blunt: 1.25
+        Slash: 1.25
+        Piercing: 1.25
+      ignoreArmorPierceFlags: All
+  paralyzeTime: 2 # multiplied by the power, about 6 seconds when running
+  canDoWhileProne: false
+
+- type: combo
+  id: CircleKick
+  name: martial-arts-combo-capoeira-circle-kick
+  martialArtsForm: Capoeira
+  attacks:
+  - Disarm
+  - Disarm
+  - Harm
+  event: !type:CircleKickPerformedEvent
+    staminaToHeal: -40
+    sound:
+      path: /Audio/Weapons/genhit2.ogg
+  extraDamage: 15
+  canDoWhileProne: false
+
+- type: combo
+  id: SweepKick
+  name: martial-arts-combo-capoeira-sweep-kick
+  martialArtsForm: Capoeira
+  attacks:
+  - Harm
+  - Harm
+  - Disarm
+  event: !type:SweepKickPerformedEvent
+    staminaToHeal: -60
+    attackSpeedMultiplier: 1.5
+    attackSpeedMultiplierTime: 5
+    minVelocity: 2
+    sound:
+      path: /Audio/Weapons/genhit1.ogg
+  extraDamage: 10
+  paralyzeTime: 1
+  staminaDamage: 10
+  canDoWhileProne: false
+
+- type: combo
+  id: SpinKick
+  name: martial-arts-combo-capoeira-spin-kick
+  martialArtsForm: Capoeira
+  attacks:
+  - Grab
+  - Harm
+  - Disarm
+  - Harm
+  event: !type:SpinKickPerformedEvent
+    staminaToHeal: -100
+    attackSpeedMultiplier: 1.5
+    attackSpeedMultiplierTime: 5
+    minVelocity: 2
+    sound:
+      path: /Audio/Weapons/genhit1.ogg
+  paralyzeTime: 2
+  staminaDamage: 15
+  extraDamage: 25
+  canDoWhileProne: false
+
+- type: combo
+  id: KickUp
+  name: martial-arts-combo-capoeira-kick-up
+  martialArtsForm: Capoeira
+  attacks:
+  - Disarm
+  - Disarm
+  event: !type:KickUpPerformedEvent
+    staminaToHeal: 0
+  performOnSelf: true

@@ -1,0 +1,68 @@
+- type: martialArt
+  id: SleepingCarp
+  martialArtsForm: SleepingCarp
+  roundstartCombos: SleepingCarpMoves
+  randomDamageModifier: true
+  baseDamageModifier: 5
+  damageModifierType: Slash
+  randomSayings:
+  - carp-saying-huah
+  - carp-saying-hya
+  - carp-saying-choo
+  - carp-saying-wuo
+  - carp-saying-kya
+  - carp-saying-huh
+  - carp-saying-hiyoh
+  - carp-saying-strike
+  - carp-saying-bite
+  randomSayingsDowned:
+  - carp-saying-banzai
+  - carp-saying-kiya
+  - carp-saying-omae
+  - carp-saying-see
+  - carp-saying-time
+  - carp-saying-cowabunga
+
+- type: comboList
+  id: SleepingCarpMoves
+  combos:
+  - SleepingCarpGnashingTeeth
+  - SleepingCarpKneeHaul
+  - SleepingCarpCrashingWaves
+
+- type: combo
+  id: SleepingCarpGnashingTeeth
+  name: martial-arts-combo-carp-gnashing-teeth
+  martialArtsForm: SleepingCarp
+  attacks:
+  - Harm
+  - Harm
+  event: !type:SleepingCarpGnashingTeethPerformedEvent
+    sound:
+      path: /Audio/Weapons/genhit1.ogg
+  damageType: Slash
+  extraDamage: 20
+
+- type: combo
+  id: SleepingCarpKneeHaul
+  name: martial-arts-combo-carp-knee-haul
+  martialArtsForm: SleepingCarp
+  attacks:
+  - Harm
+  - Grab
+  event: !type:SleepingCarpKneeHaulPerformedEvent
+  extraDamage: 10
+  paralyzeTime: 6
+  staminaDamage: 60
+
+- type: combo
+  id: SleepingCarpCrashingWaves
+  name: martial-arts-combo-carp-crashing-waves
+  martialArtsForm: SleepingCarp
+  attacks:
+  - Harm
+  - Disarm
+  event: !type:SleepingCarpCrashingWavesPerformedEvent
+    sound:
+      path: /Audio/Weapons/genhit2.ogg
+  staminaDamage: 25
