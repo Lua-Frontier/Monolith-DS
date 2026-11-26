@@ -1,4 +1,5 @@
-﻿using Content.Server.Body.Systems;
+﻿using Content.Server._LuaM.Stacks; // LuaM
+using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Body.Components;
@@ -34,6 +35,7 @@ public sealed partial class SharpSystem : EntitySystem
     [Dependency] private TransformSystem _transform = default!;
     [Dependency] private IRobustRandom _robustRandom = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private UnitStackSystem _unitStack = default!; // LuaM
 
     public override void Initialize()
     {
@@ -108,6 +110,8 @@ public sealed partial class SharpSystem : EntitySystem
             args.Handled = true;
             return;
         }
+
+        _unitStack.DetachRest(args.Args.Target.Value); // LuaM: only one fruit of a produce stack gets butchered
 
         var spawnEntities = EntitySpawnCollection.GetSpawns(butcher.SpawnedEntities, _robustRandom);
         var coords = _transform.GetMapCoordinates(args.Args.Target.Value);

@@ -64,6 +64,12 @@
   parent: FoodProduceBase
   id: FoodMint
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceFoodMint
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: Sprite
     sprite: _Lua/Objects/Specific/Hydroponics/mint.rsi
     state: produce

@@ -87,6 +87,7 @@ namespace Content.Server.Explosion.EntitySystems
         [Dependency] private ElectrocutionSystem _electrocution = default!;
         [Dependency] private StationSystem _station = default!; // Frontier: medical insurance
         [Dependency] private SharedMapSystem _map = default!; // Frontier: medical insurance
+        [Dependency] private Content.Server.Stack.StackSystem _stack = default!; // LuaM
 
         public override void Initialize()
         {
@@ -192,6 +193,15 @@ namespace Content.Server.Explosion.EntitySystems
 
         private void HandleDeleteTrigger(EntityUid uid, DeleteOnTriggerComponent component, TriggerEvent args)
         {
+            // LuaM-start: stepping on a pile of shards breaks one shard, not the whole pile
+            if (TryComp<Content.Shared.Stacks.StackComponent>(uid, out var stack) && stack.Count > 1)
+            {
+                _stack.Use(uid, 1, stack);
+                args.Handled = true;
+                return;
+            }
+            // LuaM-end
+
             QueueDel(uid);
             args.Handled = true;
         }

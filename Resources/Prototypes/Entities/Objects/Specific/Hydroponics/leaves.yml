@@ -6,6 +6,12 @@
   id: LeavesCannabis
   description: "Recently legalized in most galaxies."
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceLeavesCannabis
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/cannabis.rsi
   - type: Produce
@@ -72,6 +78,12 @@
   id: LeavesCannabisRainbow
   description: "Is it supposed to be glowing like that...?"
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceLeavesCannabisRainbow
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
   - type: Produce
@@ -167,6 +179,12 @@
   id: LeavesTea
   description: "Can be dried out to make tea."
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceLeavesTea
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/tea_plant.rsi
   - type: Produce
@@ -200,6 +218,12 @@
   id: LeavesTobacco
   description: "Dry them out to make some smokes."
   components:
+  # LuaM-start: produce stacks
+  - type: Stack
+    stackType: LuaMProduceLeavesTobacco
+    count: 1
+  - type: UnitStack
+  # LuaM-end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/tobacco.rsi
   - type: Produce

@@ -37,6 +37,7 @@ using Content.Shared.Containers.ItemSlots;
 using Robust.Server.GameObjects;
 using Content.Shared.Whitelist;
 using Content.Shared.Destructible;
+using Content.Shared._LuaM.Stacks; // LuaM
 
 namespace Content.Server.Nutrition.EntitySystems;
 
@@ -324,7 +325,7 @@ public sealed partial class FoodSystem : EntitySystem
         // Mono: Shut off. We love emergent mechanics!
         //        _solutionContainer.SetCapacity(soln.Value, soln.Value.Comp.Solution.MaxVolume - transferAmount); // Frontier: remove food capacity after taking a bite.
 
-        if (TryComp<StackComponent>(entity, out var stack))
+        if (TryComp<StackComponent>(entity, out var stack) && !HasComp<UnitStackComponent>(entity)) // LuaM: a fruit split off a produce stack is eaten bite by bite
         {
             //Not deleting whole stack piece will make troubles with grinding object
             if (stack.Count > 1)
