@@ -129,7 +129,13 @@ public abstract partial class SharedConveyorController : VirtualController
 
         while (query.MoveNext(out var uid, out var comp, out var fixtures, out var physics, out var xform))
         {
-            _job.Conveyed.Add(((uid, comp, fixtures, physics, xform), Vector2.Zero, false));
+            // LuaM-start: a sleeping body isn't conveyed and has nothing to update. Piles resting at the end of a belt
+            // used to be walked through every tick; a conveyor turning on, or anything bumping them, wakes them up.
+            if (!physics.Awake)
+                continue;
+            // LuaM-end
+
+            _job.Conveyed.Add(((uid, comp, fixtures, physics, xform), Vector2.Zero, false, null)); // LuaM: null
         }
 
         _parallel.ProcessNow(_job, _job.Conveyed.Count);
@@ -176,7 +182,8 @@ public abstract partial class SharedConveyorController : VirtualController
 
             PhysicsSystem.SetLinearVelocity(ent.Entity.Owner, velocity, wakeBody: false);
 
-            if (!IsConveyed((ent.Entity.Owner, ent.Entity.Comp2)))
+            // LuaM: the job already went through the contacts, only check again when it stopped early
+            if (!(ent.TouchingRunning ?? IsConveyed((ent.Entity.Owner, ent.Entity.Comp2))))
             {
                 RemComp<ConveyedComponent>(ent.Entity.Owner);
             }
@@ -198,9 +205,11 @@ public abstract partial class SharedConveyorController : VirtualController
     /// <returns>False if we should no longer be considered actively conveyed.</returns>
     private bool TryConvey(Entity<ConveyedComponent, FixturesComponent, PhysicsComponent, TransformComponent> entity,
         bool prediction,
-        out Vector2 direction)
+        out Vector2 direction,
+        out bool? touchingRunning) // LuaM: whether it still touches a running conveyor, null when not checked
     {
         direction = Vector2.Zero;
+        touchingRunning = null; // LuaM
         var fixtures = entity.Comp2;
         var physics = entity.Comp3;
         var xform = entity.Comp4;
@@ -226,6 +235,7 @@ public abstract partial class SharedConveyorController : VirtualController
         var contacts = PhysicsSystem.GetContacts((entity.Owner, fixtures));
         var transform = PhysicsSystem.GetPhysicsTransform(entity.Owner);
         var anyConveyors = false;
+        var anyRunning = false; // LuaM
 
         while (contacts.MoveNext(out var contact))
         {
@@ -242,6 +252,7 @@ public abstract partial class SharedConveyorController : VirtualController
                 continue;
 
             anyConveyors = true;
+            anyRunning |= CanRun(conveyor); // LuaM
             var otherFixture = contact.OtherFixture(entity.Owner);
             var otherTransform = PhysicsSystem.GetPhysicsTransform(other);
 
@@ -255,6 +266,8 @@ public abstract partial class SharedConveyorController : VirtualController
                 bestConveyor = (other, conveyor);
             }
         }
+
+        touchingRunning = anyRunning; // LuaM
 
         // If we have no touching contacts we shouldn't be using conveyed anyway so nuke it.
         if (!anyConveyors)
@@ -354,7 +367,7 @@ public abstract partial class SharedConveyorController : VirtualController
     {
         public int BatchSize => 16;
 
-        public List<(Entity<ConveyedComponent, FixturesComponent, PhysicsComponent, TransformComponent> Entity, Vector2 Direction, bool Result)> Conveyed = new();
+        public List<(Entity<ConveyedComponent, FixturesComponent, PhysicsComponent, TransformComponent> Entity, Vector2 Direction, bool Result, bool? TouchingRunning)> Conveyed = new(); // LuaM: TouchingRunning
 
         public SharedConveyorController System;
 
@@ -371,9 +384,9 @@ public abstract partial class SharedConveyorController : VirtualController
 
             var result = System.TryConvey(
                 (convey.Entity.Owner, convey.Entity.Comp1, convey.Entity.Comp2, convey.Entity.Comp3, convey.Entity.Comp4),
-                Prediction, out var direction);
+                Prediction, out var direction, out var touchingRunning); // LuaM: touchingRunning
 
-            Conveyed[index] = (convey.Entity, direction, result);
+            Conveyed[index] = (convey.Entity, direction, result, touchingRunning); // LuaM: touchingRunning
         }
     }
 
