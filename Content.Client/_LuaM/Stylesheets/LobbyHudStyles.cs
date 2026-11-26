@@ -81,11 +81,11 @@ public static class LobbyHudStyles
 
         var primary = Lamp(HudPalette.Fg, StyleBoxLamp.Lit.On);
         var accent = Lamp(HudPalette.Fg, StyleBoxLamp.Lit.On, HudPalette.Fg);
-        accent.InnerGlow = HudPalette.Fg.WithAlpha(0.35f);
-        accent.OuterGlow = HudPalette.Fg.WithAlpha(0.07f);
+        accent.InnerGlow = HudPalette.Fg.WithAlpha(0.18f);
+        accent.OuterGlow = HudPalette.Fg.WithAlpha(0.035f);
         var accentHover = Lamp(HudPalette.Fg, StyleBoxLamp.Lit.On, HudPalette.Cream);
-        accentHover.InnerGlow = HudPalette.Fg.WithAlpha(0.5f);
-        accentHover.OuterGlow = HudPalette.Fg.WithAlpha(0.1f);
+        accentHover.InnerGlow = HudPalette.Fg.WithAlpha(0.25f);
+        accentHover.OuterGlow = HudPalette.Fg.WithAlpha(0.05f);
         var primaryHover = Lamp(HudPalette.Fg, StyleBoxLamp.Lit.On, HudPalette.Fg);
         var primaryPressed = Lamp(HudPalette.Fg, StyleBoxLamp.Lit.On, HudPalette.FgDim);
 

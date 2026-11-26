@@ -43,6 +43,7 @@ public sealed partial class NavScreen : BoxContainer
         InitializeTargetControls(); // LuaM
         InitializeHoloComms(); // LuaM
         InitializeRadarMenu(); // LuaM
+        InitializeConsoleLook(); // LuaM
     }
 
     // Frontier - IFF search
@@ -158,13 +159,13 @@ public sealed partial class NavScreen : BoxContainer
             if (portNames.TryGetValue(portId, out var customName))
             {
                 // Use the custom name if available
-                button.Text = customName;
+                button.Text = customName.ToUpperInvariant(); // LuaM
             }
             else
             {
                 // Otherwise use the default localized name
                 var locKey = $"shuttle-console-{portId}";
-                button.Text = Loc.GetString(locKey);
+                button.Text = Loc.GetString(locKey).ToUpperInvariant(); // LuaM
             }
         }
     }
@@ -204,6 +205,7 @@ public sealed partial class NavScreen : BoxContainer
         GridLinearVelocity.Text = Loc.GetString("shuttle-console-linear-velocity-value",
             ("X", $"{gridVelocity.X + 10f * float.Epsilon:0.0}"),
             ("Y", $"{gridVelocity.Y + 10f * float.Epsilon:0.0}"));
+        GridSpeed.Text = $"{gridBody.LinearVelocity.Length():0.0}"; // LuaM
         GridAngularVelocity.Text = Loc.GetString("shuttle-console-angular-velocity-value",
             ("angularVelocity", $"{-MathHelper.RadiansToDegrees(gridBody.AngularVelocity) + 10f * float.Epsilon:0.0}"));
 

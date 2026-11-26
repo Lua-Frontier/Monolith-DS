@@ -34,6 +34,8 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         UseDeadSpaceMenuStyle(); // LuaM
+        Content.Client.Stylesheets.ConsoleStyles.Caps(this); // LuaM
+        InitializeSector(); // LuaM
         InitializeGunnery(); // Lua
 
         // Mode switching

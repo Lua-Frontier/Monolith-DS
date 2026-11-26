@@ -53,7 +53,7 @@ public sealed partial class MapScreen
                 case Label label:
                     label.AddStyleClass(StyleNano.StyleClassLabelSmall);
                     break;
-                case Button button:
+                case Button button when !button.HasStyleClass(ConsoleStyles.Thin) && !button.HasStyleClass(ConsoleStyles.Toggle): // LuaM: thin buttons keep their mono font
                     button.Label.FontOverride = _mapCompactFont;
                     break;
                 case Slider slider:
