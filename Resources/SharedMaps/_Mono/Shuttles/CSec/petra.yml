@@ -614,14 +614,14 @@ entities:
     - type: Transform
       pos: -0.5,-14.5
       parent: 1
-- proto: AirlockSecurityGlassLocked
+- proto: AirlockColossusSecurityGlassLocked
   entities:
   - uid: 374
     components:
     - type: Transform
       pos: 0.5,-3.5
       parent: 1
-- proto: AirlockSecurityLocked
+- proto: AirlockColossusSecurityLocked
   entities:
   - uid: 373
     components:
@@ -3555,6 +3555,9 @@ entities:
     - type: Transform
       pos: 1.5,-4.5
       parent: 1
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: LockerSteel
   entities:
   - uid: 318

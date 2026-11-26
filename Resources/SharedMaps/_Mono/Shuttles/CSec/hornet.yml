@@ -770,14 +770,14 @@ entities:
     - type: Transform
       pos: 3.5,-7.5
       parent: 1
-- proto: AirlockSecurityGlassLocked
+- proto: AirlockColossusSecurityGlassLocked
   entities:
   - uid: 215
     components:
     - type: Transform
       pos: 1.5,2.5
       parent: 1
-- proto: AirlockSecurityLocked
+- proto: AirlockColossusSecurityLocked
   entities:
   - uid: 226
     components:
@@ -2353,6 +2353,9 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: ComputerGunneryConsole
   entities:
   - uid: 244
@@ -3845,6 +3848,9 @@ entities:
     - type: Transform
       pos: 2.5,1.5
       parent: 1
+    - type: AccessReader
+      access:
+      - - ColossusSecurity
 - proto: LockerWallMaterialsFuelUraniumFilled2
   entities:
   - uid: 734
@@ -5048,7 +5054,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 7.5,-9.5
       parent: 1
-- proto: WindoorSecureSecurityLocked
+- proto: WindoorSecureColossusSecurityLocked
   entities:
   - uid: 232
     components:

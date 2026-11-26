@@ -8,7 +8,7 @@
   purchasable: false # T1 - voucher only
   category: Medium
   group: Sr
-  access: Brig
+  access: ColossusSecurity # LuaM: Brig > ColossusSecurity, the station guards lost Brig
   mapchecker_group_override: Security
   shuttlePath: /SharedMaps/_Mono/Shuttles/CSec/petra.yml
   guidebookPage: Null
