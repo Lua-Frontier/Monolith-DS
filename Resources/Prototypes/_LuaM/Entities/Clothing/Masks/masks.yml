@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingMaskGasSyndicate
+  id: ClothingMaskGasTarkhan
+  name: Tarkhan gas mask
+  description: An advanced tactical gas mask refitted for Tarkhans in the colours of the CV-280 'Basilisk' hardsuit.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Mask/gastarkhan.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Mask/gastarkhan.rsi

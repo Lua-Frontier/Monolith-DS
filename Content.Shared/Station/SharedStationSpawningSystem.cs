@@ -126,14 +126,45 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
         }
     }
 
-    public void EquipStartingGear(EntityUid entity, LoadoutPrototype loadout, bool raiseEvent = true, List<EntityUid>? spawnedStorageItems = null) // LuaM: spawnedStorageItems
+    public void EquipStartingGear(EntityUid entity, LoadoutPrototype loadout, bool raiseEvent = true, List<EntityUid>? spawnedStorageItems = null, List<(string Slot, EntProtoId Proto)>? deferredStorage = null) // LuaM: spawnedStorageItems, deferredStorage
     {
         EquipStartingGear(entity, loadout.StartingGear, raiseEvent);
-        EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent, spawnedStorageItems); // LuaM: spawnedStorageItems
+        EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent, spawnedStorageItems, deferredStorage); // LuaM: spawnedStorageItems, deferredStorage
 
         // Mono - loadout comps
         EntityManager.AddComponents(entity, loadout.Components);
     }
+
+    // LuaM-start
+    /// <summary>
+    /// Gives the storage items that were deferred because their slot was empty.
+    /// They go into the slot storage, or into a free hand, or stay at the feet.
+    /// </summary>
+    public void EquipDeferredStorage(EntityUid entity, List<(string Slot, EntProtoId Proto)> deferred, List<EntityUid>? spawnedStorageItems = null)
+    {
+        if (deferred.Count == 0 || TerminatingOrDeleted(entity))
+            return;
+
+        var coords = _xformSystem.GetMapCoordinates(entity);
+        _inventoryQuery.TryComp(entity, out var inventoryComp);
+        _handsQuery.TryComp(entity, out var handsComponent);
+
+        foreach (var (slotName, entProto) in deferred)
+        {
+            var spawnedEntity = Spawn(entProto, coords);
+            spawnedStorageItems?.Add(spawnedEntity);
+
+            if (inventoryComp != null
+                && InventorySystem.TryGetSlotEntity(entity, slotName, out var slotEnt, inventoryComponent: inventoryComp)
+                && _storageQuery.TryComp(slotEnt, out var storage)
+                && _storage.Insert(slotEnt.Value, spawnedEntity, out _, storageComp: storage, playSound: false))
+                continue;
+
+            if (handsComponent != null && _handsSystem.TryGetEmptyHand(entity, out var emptyHand, handsComponent))
+                _handsSystem.TryPickup(entity, spawnedEntity, emptyHand, checkActionBlocker: false, handsComp: handsComponent);
+        }
+    }
+    // LuaM-end
 
     /// <summary>
     /// <see cref="EquipStartingGear(Robust.Shared.GameObjects.EntityUid,System.Nullable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.StartingGearPrototype}},bool)"/>
@@ -159,7 +190,8 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
     /// <param name="startingGear">Starting gear to use.</param>
     /// <param name="raiseEvent">Should we raise the event for equipped. Set to false if you will call this manually</param>
     /// <param name="spawnedStorageItems">LuaM: if set, gets every entity spawned from the gear's storage list, even ones that did not fit into the storage.</param>
-    public void EquipStartingGear(EntityUid entity, IEquipmentLoadout? startingGear, bool raiseEvent = true, List<EntityUid>? spawnedStorageItems = null) // LuaM: spawnedStorageItems
+    /// <param name="deferredStorage">LuaM: if set, gets the storage items whose slot is still empty instead of skipping them, see <see cref="EquipDeferredStorage"/>.</param>
+    public void EquipStartingGear(EntityUid entity, IEquipmentLoadout? startingGear, bool raiseEvent = true, List<EntityUid>? spawnedStorageItems = null, List<(string Slot, EntProtoId Proto)>? deferredStorage = null) // LuaM: spawnedStorageItems, deferredStorage
     {
         if (startingGear == null)
             return;
@@ -222,6 +254,15 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
                         _storage.Insert(slotEnt.Value, spawnedEntity, out _, storageComp: storage, playSound: false);
                     }
                 }
+                // LuaM-start: the backpack can come later from the job starting gear
+                else if (deferredStorage != null)
+                {
+                    foreach (var entProto in entProtos)
+                    {
+                        deferredStorage.Add((slotName, entProto));
+                    }
+                }
+                // LuaM-end
             }
         }
 

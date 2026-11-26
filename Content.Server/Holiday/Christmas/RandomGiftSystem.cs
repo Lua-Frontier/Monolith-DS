@@ -1,3 +1,4 @@
+using Content.Shared._LuaM.Holiday; // LuaM
 using Content.Server.Administration.Logs;
 using Content.Server.Hands.Systems;
 using Content.Shared.Database;
@@ -95,11 +96,15 @@ public sealed partial class RandomGiftSystem : EntitySystem
         var itemCompName = Factory.GetComponentName<ItemComponent>();
         var mapGridCompName = Factory.GetComponentName<MapGridComponent>();
         var physicsCompName = Factory.GetComponentName<PhysicsComponent>();
+        var noGiftCompName = Factory.GetComponentName<NoRandomGiftComponent>(); // LuaM
 
         foreach (var proto in _prototype.EnumeratePrototypes<EntityPrototype>())
         {
             if (proto.Abstract || proto.HideSpawnMenu || proto.Components.ContainsKey(mapGridCompName) || !proto.Components.ContainsKey(physicsCompName))
                 continue;
+
+            if (proto.Components.ContainsKey(noGiftCompName)) // LuaM
+                continue; // LuaM
 
             _possibleGiftsUnsafe.Add(proto.ID);
 

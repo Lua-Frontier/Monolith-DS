@@ -11,6 +11,12 @@
 #  - !type:DepartmentTimeRequirement # Requires time in both factions # Commented by LuaM
 #    department: Antag # Commented by LuaM
 #    time: 108000 # 30 hours # mono # Commented by LuaM
+  # LuaM-start: no vox Tarkhans
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Vox
+  # LuaM-end
   - !type:TraitsRequirement # The trait doesn't do anything if you're PDV anyways, but this is 1 step closer to letting it actually give you points
     inverted: true
     traits:
@@ -57,7 +63,8 @@
     ears: ClothingHeadsetAltVanguardCommand
     gloves: ClothingHandsGlovesTacticalCombatBlack
     outerClothing: ClothingOuterHardsuitTarkhan
-    shoes: ClothingShoesBootsMagAshen
+    shoes: ClothingShoesBootsMagPDVAdvanced # LuaM: ClothingShoesBootsMagAshen > ClothingShoesBootsMagPDVAdvanced, the same as the PDV commander
+    mask: ClothingMaskGasTarkhan # LuaM
     id: PDVTarkhanPDA
     pocket1: CrowbarPocket
     pocket2: RadioHandheldNF

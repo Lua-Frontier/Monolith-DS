@@ -388,14 +388,32 @@
 
 - type: alert
   id: Pulled
-  icons: [ /Textures/Interface/Alerts/Pull/pulled.png ]
+  icons: # LuaM: severity is the grab stage
+  - /Textures/Interface/Alerts/Pull/pulled.png
+  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+    state: grabbed-soft
+  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+    state: grabbed-hard
+  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+    state: grabbed-choke
+  minSeverity: 0 # LuaM
+  maxSeverity: 3 # LuaM
   clickEvent: !type:StopBeingPulledAlertEvent
   name: alerts-pulled-name
   description: alerts-pulled-desc
 
 - type: alert
   id: Pulling
-  icons: [ /Textures/Interface/Alerts/Pull/pulling.png ]
+  icons: # LuaM: severity is the grab stage
+  - /Textures/Interface/Alerts/Pull/pulling.png
+  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+    state: grab-soft
+  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+    state: grab-hard
+  - sprite: /Textures/_White/Interface/Alerts/pull.rsi
+    state: grab-choke
+  minSeverity: 0 # LuaM
+  maxSeverity: 3 # LuaM
   clickEvent: !type:StopPullingAlertEvent
   name: alerts-pulling-name
   description: alerts-pulling-desc

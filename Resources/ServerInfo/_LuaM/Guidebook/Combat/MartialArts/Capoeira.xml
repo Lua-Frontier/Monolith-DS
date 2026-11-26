@@ -1,0 +1,29 @@
+<Document>
+# Капоэйра
+
+Танец войны: комбо питаются скоростью мастера. Изучается по учебнику хореографии.
+
+<GuideEntityCards>
+<GuideTexture Entity="CapoeiraManual" Caption="auto"/>
+</GuideEntityCards>
+
+## Особенности
+- [bold]Сила приёма[/bold] — скорость движения × [color=#73BFD3]0,6[/color], от [color=#73BFD3]1[/color] до [color=#73BFD3]4[/color]. От неё зависят урон, время падения и дальность отброса. На месте сила минимальна.
+- Комбо, кроме подъёма разгибом, нельзя выполнить лёжа.
+- Каждое комбо восстанавливает от [color=#73BFD3]30[/color] до [color=#73BFD3]100[/color] выносливости.
+- Удар или толчок на ходу ускоряет атаки до [color=#73BFD3]×1,5[/color] на [color=#73BFD3]3 с[/color].
+- [bold]Промах[/bold] без оружия добавляет [color=#73BFD3]+2[/color] урона ударам на [color=#73BFD3]3 с[/color] и сокращает перезарядку.
+- [bold]Захват[/bold] ускоряет вас на [color=#73BFD3]20%[/color] на [color=#73BFD3]4 с[/color] и обрывает спринт цели: снова побежать она сможет примерно через [color=#73BFD3]5 с[/color].
+
+## Комбо
+<GuideTable Columns="3">
+<Box>[bold]Приём[/bold]</Box><Box>[bold]Действия[/bold]</Box><Box>[bold]Эффект[/bold]</Box>
+<Box>Толчок ногой</Box><Box>Захват → Удар → Удар</Box><Box>Только на стоящих. Отбрасывает на [color=#73BFD3]1[/color] тайл × силу и роняет на [color=#73BFD3]2 с[/color] × силу. Пока лежит, цель получает на [color=#73BFD3]25%[/color] больше ушибов, режущего и колющего урона в ближнем бою.</Box>
+<Box>Круговой удар</Box><Box>Толчок → Толчок → Удар</Box><Box>[color=#73BFD3]15[/color] × сила ушибов и замедление в силу раз на [color=#73BFD3]2 с[/color] × силу.</Box>
+<Box>Подсекающий удар</Box><Box>Удар → Удар → Толчок</Box><Box>Скорость от [color=#73BFD3]2[/color] тайлов/с. Падение на [color=#73BFD3]1 с[/color] × силу, [color=#73BFD3]10[/color] × сила ушибов, [color=#73BFD3]10[/color] выносливости, атаки [color=#73BFD3]×1,5[/color] на [color=#73BFD3]5 с[/color].</Box>
+<Box>Удар с разворота</Box><Box>Захват → Удар → Толчок → Удар</Box><Box>Только на стоящих, скорость от [color=#73BFD3]2[/color] тайлов/с. Падение на [color=#73BFD3]2 с[/color] × силу, [color=#73BFD3]25[/color] × сила ушибов, [color=#73BFD3]15[/color] выносливости, атаки [color=#73BFD3]×1,5[/color] на [color=#73BFD3]5 с[/color].</Box>
+<Box>Подъём разгибом</Box><Box>Толчок по себе → Толчок по себе</Box><Box>Можно лёжа. Вы сразу встаёте.</Box>
+</GuideTable>
+
+[textlink="Боевые искусства" link="ColossusMartialArts"]
+</Document>

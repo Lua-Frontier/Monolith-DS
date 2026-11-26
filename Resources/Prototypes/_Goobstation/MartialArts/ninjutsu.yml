@@ -1,0 +1,34 @@
+- type: martialArt
+  id: Ninjutsu
+  martialArtsForm: Ninjutsu
+  roundstartCombos: NinjutsuMoves
+
+- type: comboList
+  id: NinjutsuMoves
+  combos:
+  - BiteTheDust
+  - DirtyKill
+
+- type: combo
+  id: BiteTheDust
+  name: martial-arts-combo-ninjutsu-bite-the-dust
+  martialArtsForm: Ninjutsu
+  attacks:
+  - Harm
+  - Grab
+  event: !type:BiteTheDustPerformedEvent
+  extraDamage: 10
+  paralyzeTime: 9
+
+- type: combo
+  id: DirtyKill
+  name: martial-arts-combo-ninjutsu-dirty-kill
+  martialArtsForm: Ninjutsu
+  attacks:
+  - Disarm
+  - Disarm
+  event: !type:DirtyKillPerformedEvent
+    sound:
+      path: /Audio/Weapons/genhit2.ogg
+  extraDamage: 20
+  paralyzeTime: 7

@@ -1,3 +1,4 @@
+using Content.Goobstation.Common.Grab; // LuaM
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
@@ -415,6 +416,13 @@ public sealed partial class PullingSystem : EntitySystem
 
         if (pullable.Comp.Puller == pullerUid)
         {
+            // LuaM-start: in combat mode the grab is tightened instead of letting go
+            var regrabEv = new RegrabAttemptEvent(pullable);
+            RaiseLocalEvent(pullerUid, ref regrabEv);
+            if (regrabEv.Handled)
+                return true;
+            // LuaM-end
+
             return TryStopPull(pullable, pullable.Comp);
         }
 
@@ -511,8 +519,8 @@ public sealed partial class PullingSystem : EntitySystem
         // Messaging
         var message = new PullStartedMessage(pullerUid, pullableUid);
         _modifierSystem.RefreshMovementSpeedModifiers(pullerUid);
-        _alertsSystem.ShowAlert(pullerUid, pullerComp.PullingAlert);
-        _alertsSystem.ShowAlert(pullableUid, pullableComp.PulledAlert);
+        _alertsSystem.ShowAlert(pullerUid, pullerComp.PullingAlert, 0); // LuaM: severity is the grab stage
+        _alertsSystem.ShowAlert(pullableUid, pullableComp.PulledAlert, 0); // LuaM
 
         RaiseLocalEvent(pullerUid, message);
         RaiseLocalEvent(pullableUid, message);
@@ -544,6 +552,13 @@ public sealed partial class PullingSystem : EntitySystem
 
         if (msg.Cancelled)
             return false;
+
+        // LuaM-start: a grabbed one has to break free
+        var releaseEv = new GrabReleaseAttemptEvent(user, pullerUidNull.Value);
+        RaiseLocalEvent(pullableUid, ref releaseEv);
+        if (!releaseEv.Released)
+            return false;
+        // LuaM-end
 
         StopPulling(pullableUid, pullable);
         return true;

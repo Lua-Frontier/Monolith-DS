@@ -1,0 +1,59 @@
+- type: entity
+  id: ActionLegSweep
+  name: Leg Sweep
+  description: Sweeps the legs out from under a target to knock them down for a few seconds.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 0.5
+    icon:
+      sprite: _Goobstation/Actions/kravmaga.rsi
+      state: legsweep
+    event: !type:KravMagaActionEvent
+  - type: Sprite # For guidebook
+    sprite: _Goobstation/Actions/kravmaga.rsi
+    state: legsweep
+  - type: KravMagaAction
+    configuration: LegSweep
+    name: martial-arts-combo-krav-maga-leg-sweep
+
+- type: entity
+  id: ActionNeckChop
+  name: Neck Chop
+  description: A hard swing with the side of your hand that disables the target's ability to speak for twenty seconds.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 0.5
+    icon:
+      sprite: _Goobstation/Actions/kravmaga.rsi
+      state: neckchop
+    event: !type:KravMagaActionEvent
+  - type: Sprite # For guidebook
+    sprite: _Goobstation/Actions/kravmaga.rsi
+    state: neckchop
+  - type: KravMagaAction
+    configuration: NeckChop
+    name: martial-arts-combo-krav-maga-neck-chop
+    effectTime: 20
+
+- type: entity
+  id: ActionLungPunch
+  name: Lung Punch
+  description: Deals stamina damage and prevents breathing for ten seconds.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 0.5
+    icon:
+      sprite: _Goobstation/Actions/kravmaga.rsi
+      state: lungpunch
+    event: !type:KravMagaActionEvent
+  - type: Sprite # For guidebook
+    sprite: _Goobstation/Actions/kravmaga.rsi
+    state: lungpunch
+  - type: KravMagaAction
+    configuration: LungPunch
+    name: martial-arts-combo-krav-maga-lung-punch
+    staminaDamage: 40
+    effectTime: 10

@@ -40,6 +40,11 @@ namespace Content.Shared.Weapons.Melee.Events
 
         public DamageSpecifier BonusDamage = new();
 
+        /// <summary>
+        ///     Modifier sets applied to the damage of this attack, e.g. martial arts defence.
+        /// </summary>
+        public List<DamageModifierSet> ModifiersList = new(); // LuaM
+
         public AttackedEvent(EntityUid used, EntityUid user, EntityCoordinates clickLocation)
         {
             Used = used;

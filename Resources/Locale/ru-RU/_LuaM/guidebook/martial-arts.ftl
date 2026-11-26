@@ -1,0 +1,9 @@
+﻿guide-entry-colossus-grabs = Захваты
+guide-entry-colossus-martial-arts = Боевые искусства
+guide-entry-colossus-martial-arts-cqc = Ближний бой (CQC)
+guide-entry-colossus-martial-arts-sleeping-carp = Путь Спящего Карпа
+guide-entry-colossus-martial-arts-krav-maga = Крав-мага
+guide-entry-colossus-martial-arts-corporate-judo = Корпоративное дзюдо
+guide-entry-colossus-martial-arts-capoeira = Капоэйра
+guide-entry-colossus-martial-arts-dragon-kung-fu = Кунг-фу дракона
+guide-entry-colossus-martial-arts-ninjutsu = Ниндзюцу

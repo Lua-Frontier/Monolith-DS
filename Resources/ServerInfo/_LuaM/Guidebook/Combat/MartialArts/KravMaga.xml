@@ -1,0 +1,20 @@
+<Document>
+# Крав-мага
+
+Стиль самообороны с короткими точными приёмами. Перчатки крав-маги учат ему, пока надеты.
+
+<GuideEntityCards>
+<GuideTexture Entity="ClothingHandsGlovesKravMaga" Caption="auto"/>
+</GuideEntityCards>
+
+## Приёмы
+Комбо у крав-маги нет. Выберите приём на панели действий — появится сообщение о готовности — и ударьте существо без оружия. Приём срабатывает на первом задетом существе и расходуется; промах его не тратит. Выбрать приём снова можно через [color=#73BFD3]0,5 с[/color].
+
+Удар без выбранного приёма наносит дополнительно [color=#73BFD3]5[/color] ушибов, по лежащему — [color=#73BFD3]10[/color].
+
+<GuideTexture Entity="ActionLegSweep" Text="[bold]Подсечка[/bold] — сбивает стоящего противника с ног на [color=#73BFD3]4 с[/color]."/>
+<GuideTexture Entity="ActionNeckChop" Text="[bold]Удар по шее[/bold] — цель не может говорить [color=#73BFD3]20 с[/color]."/>
+<GuideTexture Entity="ActionLungPunch" Text="[bold]Удар под дых[/bold] — [color=#73BFD3]40[/color] выносливости, и цель не дышит [color=#73BFD3]10 с[/color]. Несколько таких ударов подряд могут довести до удушья."/>
+
+[textlink="Боевые искусства" link="ColossusMartialArts"]
+</Document>

@@ -50,14 +50,25 @@ public static class LobbyHudStyles
     private const string Fonts = "/Fonts/_LuaM/";
     private const string Symbols = "/Fonts/NotoSans/NotoSansSymbols2-Regular.ttf";
 
+    // The same fallbacks as the old Noto stack: circled digits and ☹ of the ahelp list are only in NotoSansSymbols
+    private static readonly string[] Fallbacks =
+    {
+        "/Fonts/NotoSans/NotoSans-Regular.ttf",
+        "/Fonts/NotoSans/NotoSansSymbols-Regular.ttf",
+        Symbols,
+        "/Fonts/NotoSans/NotoSansSC-Regular.ttf",
+    };
+
+    private static string[] Stack(string main) => [main, .. Fallbacks];
+
     public static Font UiFont(IResourceCache res, int size, string weight = "SemiBold") =>
-        res.GetFont(new[] { Fonts + $"IBMPlexSansCondensed/IBMPlexSansCondensed-{weight}.ttf", "/Fonts/NotoSans/NotoSans-Regular.ttf", Symbols }, size);
+        res.GetFont(Stack(Fonts + $"IBMPlexSansCondensed/IBMPlexSansCondensed-{weight}.ttf"), size);
 
     public static Font MonoFont(IResourceCache res, int size, bool semi = false) =>
-        res.GetFont(new[] { Fonts + (semi ? "IBMPlexMono/IBMPlexMono-SemiBold.ttf" : "IBMPlexMono/IBMPlexMono-Regular.ttf"), "/Fonts/NotoSans/NotoSans-Regular.ttf", Symbols }, size);
+        res.GetFont(Stack(Fonts + (semi ? "IBMPlexMono/IBMPlexMono-SemiBold.ttf" : "IBMPlexMono/IBMPlexMono-Regular.ttf")), size);
 
     public static Font MonoMediumFont(IResourceCache res, int size) =>
-        res.GetFont(new[] { Fonts + "IBMPlexMono/IBMPlexMono-Medium.ttf", "/Fonts/NotoSans/NotoSans-Regular.ttf", Symbols }, size);
+        res.GetFont(Stack(Fonts + "IBMPlexMono/IBMPlexMono-Medium.ttf"), size);
 
     public static StyleRule[] GetRules(IResourceCache resCache)
     {

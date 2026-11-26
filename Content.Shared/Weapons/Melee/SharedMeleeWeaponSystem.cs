@@ -1,4 +1,5 @@
 using Content.Shared._LuaM.Weapons; // LuaM
+using Content.Goobstation.Common.MartialArts; // LuaM
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
@@ -267,6 +268,8 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         var ev = new GetMeleeAttackRateEvent(uid, component.AttackRate, 1, user);
         RaiseLocalEvent(uid, ref ev);
+        if (user != uid) // LuaM: martial arts modifiers are on the user
+            RaiseLocalEvent(user, ref ev); // LuaM
 
         return ev.Rate * ev.Multipliers;
     }
@@ -441,7 +444,17 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                 }
 
                 if (target == attacker || target == user) // LuaM
+                {
+                    // LuaM-start: martial arts have combos done on yourself
+                    if (target == user && attacker == user)
+                    {
+                        var selfComboEv = new ComboAttackPerformedEvent(user, user, weaponUid, ComboAttackType.Disarm);
+                        RaiseLocalEvent(user, ref selfComboEv);
+                    }
+                    // LuaM-end
+
                     return false; // LuaM
+                }
 
                 if (!Blocker.CanAttack(attacker, target, (weaponUid, weapon), true))
                     return false;
@@ -560,7 +573,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                     $"{ToPrettyString(playerUid):actor} melee attacked (light) using {ToPrettyString(meleeUid):tool} and missed");
             }
             var missEvent = new MeleeHitEvent(new List<EntityUid>(), user, meleeUid, damage, null);
-            RaiseLocalEvent(meleeUid, missEvent);
+            RaiseLocalEvent(meleeUid, missEvent, true); // LuaM: broadcast for martial arts
             _meleeSound.PlaySwingSound(playerUid, meleeUid, component);
             return;
         }
@@ -569,7 +582,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         // Raise event before doing damage so we can cancel damage if the event is handled
         var hitEvent = new MeleeHitEvent(new List<EntityUid> { target.Value }, user, meleeUid, damage, null);
-        RaiseLocalEvent(meleeUid, hitEvent);
+        RaiseLocalEvent(meleeUid, hitEvent, true); // LuaM: broadcast for martial arts
 
         if (hitEvent.Handled)
             return;
@@ -593,7 +606,13 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         RaiseLocalEvent(target.Value, attackedEvent);
 
         var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
+        modifiedDamage = DamageSpecifier.ApplyModifierSets(modifiedDamage, attackedEvent.ModifiersList); // LuaM
         var damageResult = Damageable.TryChangeDamage(target, modifiedDamage, origin: user, armorPenetration: component.ArmorPenetration, partMultiplier: component.ClickPartDamageMultiplier); // Shitmed Change
+
+        // LuaM-start: martial arts combos
+        var comboEv = new ComboAttackPerformedEvent(user, target.Value, meleeUid, ComboAttackType.Harm);
+        RaiseLocalEvent(user, ref comboEv);
+        // LuaM-end
 
         if (damageResult is {Empty: false})
         {
@@ -692,7 +711,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
                     $"{ToPrettyString(playerUid):actor} melee attacked (heavy) using {ToPrettyString(meleeUid):tool} and missed");
             }
             var missEvent = new MeleeHitEvent(new List<EntityUid>(), user, meleeUid, damage, direction);
-            RaiseLocalEvent(meleeUid, missEvent);
+            RaiseLocalEvent(meleeUid, missEvent, true); // LuaM: broadcast for martial arts
 
             // immediate audio feedback
             _meleeSound.PlaySwingSound(playerUid, meleeUid, component);
@@ -741,7 +760,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         // Raise event before doing damage so we can cancel damage if the event is handled
         var hitEvent = new MeleeHitEvent(targets, user, meleeUid, damage, direction);
-        RaiseLocalEvent(meleeUid, hitEvent);
+        RaiseLocalEvent(meleeUid, hitEvent, true); // LuaM: broadcast for martial arts
 
         if (hitEvent.Handled)
             return true;
@@ -778,6 +797,12 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             var attackedEvent = new AttackedEvent(meleeUid, user, GetCoordinates(ev.Coordinates));
             RaiseLocalEvent(entity, attackedEvent);
             var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
+            modifiedDamage = DamageSpecifier.ApplyModifierSets(modifiedDamage, attackedEvent.ModifiersList); // LuaM
+
+            // LuaM-start: martial arts combos
+            var comboEv = new ComboAttackPerformedEvent(user, entity, meleeUid, ComboAttackType.HarmLight);
+            RaiseLocalEvent(user, ref comboEv);
+            // LuaM-end
 
             var damageResult = Damageable.TryChangeDamage(entity, modifiedDamage, origin: user, armorPenetration: component.HeavyArmorPenetration ?? component.ArmorPenetration, partMultiplier: component.HeavyPartDamageMultiplier); // Shitmed Change, LuaM: HeavyArmorPenetration
 
@@ -921,6 +946,12 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         if (Deleted(target))
             return false;
+
+        if (InRange(user, target.Value, component.Range, session))
+        {
+            var comboEv = new ComboAttackPerformedEvent(user, target.Value, meleeUid, ComboAttackType.Disarm);
+            RaiseLocalEvent(user, ref comboEv);
+        }
         // LuaM-end
 
         return true;

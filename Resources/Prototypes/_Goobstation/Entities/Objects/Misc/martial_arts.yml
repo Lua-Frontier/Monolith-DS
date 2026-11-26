@@ -1,0 +1,182 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseMartialArtsManual
+  components:
+  - type: Item
+    size: Small
+  - type: NoRandomGift # Given only by loadouts
+
+- type: entity
+  parent: BaseMartialArtsManual
+  id: CQCManual
+  name: old manual
+  description: A small, black manual. There are drawn instructions of tactical hand-to-hand combat.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/cqc_manual.rsi
+    state: icon
+  - type: GrantMartialArtKnowledge
+    martialArtsForm: CloseQuartersCombat
+    learnMessage: cqc-success-learned
+  - type: GuideHelp
+    guides:
+    - ColossusMartialArtsCQC
+
+- type: entity
+  parent: BaseMartialArtsManual
+  id: SleepingCarpScroll
+  name: mysterious scroll
+  description: A scroll filled with strange markings. It seems to be drawings of some sort of martial art.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Wizard/Objects/scroll.rsi
+    state: scroll2
+  - type: Item
+    sprite: _Goobstation/Wizard/Objects/scroll.rsi
+  - type: GrantSleepingCarp
+  - type: GuideHelp
+    guides:
+    - ColossusMartialArtsSleepingCarp
+
+- type: entity
+  parent: BaseMartialArtsManual
+  id: CapoeiraManual
+  name: choreography manual
+  description: Choreography manual, or so it claims. Every second page ends with someone on the floor, not dancing.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/martial_arts.rsi
+    state: capoeira
+  - type: GrantMartialArtKnowledge
+    martialArtsForm: Capoeira
+    learnMessage: capoeira-success-learned
+  - type: GuideHelp
+    guides:
+    - ColossusMartialArtsCapoeira
+
+- type: entity
+  parent: BaseMartialArtsManual
+  id: DragonKungFuManual
+  name: Dragon Kung Fu manual
+  description: A manual with instructions of Dragon Kung Fu, a martial art for elite bodyguards.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/martial_arts.rsi
+    state: dragon
+  - type: GrantMartialArtKnowledge
+    martialArtsForm: KungFuDragon
+    learnMessage: dragon-success-learned
+  - type: GuideHelp
+    guides:
+    - ColossusMartialArtsDragonKungFu
+
+- type: entity
+  parent: BaseMartialArtsManual
+  id: NinjutsuScroll
+  name: ninjutsu scroll
+  description: A green scroll containing some Japanese script. Its lessons are written for those who strike unseen.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/martial_arts.rsi
+    state: ninjutsu
+  - type: GrantMartialArtKnowledge
+    martialArtsForm: Ninjutsu
+    learnMessage: ninjutsu-success-learned
+  - type: GuideHelp
+    guides:
+    - ColossusMartialArtsNinjutsu
+
+- type: entity
+  parent: ClothingBeltSecurity
+  id: ClothingBeltCorporateJudo
+  name: corporate judo belt
+  description: Teaches the wearer Corporate Judo while worn.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Belt/judobelt.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Belt/judobelt.rsi
+  - type: NoRandomGift
+  - type: GrantMartialArtOnEquip
+    martialArtsForm: CorporateJudo
+    learnMessage: judo-success-learned
+  - type: StaticPrice
+    price: 1500
+  - type: GuideHelp
+    guides:
+    - ColossusMartialArtsCorporateJudo
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesKravMaga
+  name: Krav Maga gloves
+  description: These gloves can teach you to perform Krav Maga using nanochips for as long as you're wearing them.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Hands/Gloves/kravgloves.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Hands/Gloves/kravgloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-red
+  - type: FingerprintMask
+  - type: NoRandomGift
+  - type: ClothingGrantComponent
+    component:
+    - type: KravMaga
+  - type: StaticPrice
+    price: 1500
+  - type: GuideHelp
+    guides:
+    - ColossusMartialArtsKravMaga
+
+# Guidebook icons
+
+- type: entity
+  id: GuidebookHelp
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Interface/Misc/intents.rsi
+    state: help
+
+- type: entity
+  id: GuidebookHarm
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Interface/Misc/intents.rsi
+    state: harm
+
+- type: entity
+  id: GuidebookDisarm
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Interface/Misc/intents.rsi
+    state: disarm
+
+- type: entity
+  id: GuidebookGrab
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Interface/Misc/intents.rsi
+    state: grab
+
+- type: entity
+  id: GuidebookLossOfSurprise
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/Structures/Storage/closet.rsi
+    state: cardboard_special
+
+- type: entity
+  id: GuidebookDragonPower
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_Goobstation/Interface/Alerts/dragonpower.rsi
+    state: icon

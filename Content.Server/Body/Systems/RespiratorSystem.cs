@@ -20,6 +20,9 @@ using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.EntityEffects;
 using Content.Shared.Mobs.Systems;
+using Content.Goobstation.Common.Grab; // LuaM
+using Content.Goobstation.Common.MartialArts; // LuaM
+using Content.Goobstation.Shared.GrabIntent; // LuaM
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -81,7 +84,10 @@ public sealed partial class RespiratorSystem : EntitySystem
 
             UpdateSaturation(uid, -(float) respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid) && !HasComp<DebrainedComponent>(uid)) // Shitmed Change - Cannot breathe in crit or when no brain.
+            var airBlocked = IsAirBlocked(uid); // LuaM
+
+            if (!_mobState.IsIncapacitated(uid) && !HasComp<DebrainedComponent>(uid) // Shitmed Change - Cannot breathe in crit or when no brain.
+                && !airBlocked) // LuaM
             {
                 switch (respirator.Status)
                 {
@@ -96,7 +102,7 @@ public sealed partial class RespiratorSystem : EntitySystem
                 }
             }
 
-            if (respirator.Saturation < respirator.SuffocationThreshold)
+            if (respirator.Saturation < respirator.SuffocationThreshold || airBlocked) // LuaM: airBlocked
             {
                 if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
@@ -113,6 +119,14 @@ public sealed partial class RespiratorSystem : EntitySystem
             respirator.SuffocationCycles = 0;
         }
     }
+
+    // LuaM-start: a choke grab and a Krav Maga lung punch stop breathing
+    private bool IsAirBlocked(EntityUid uid)
+    {
+        return HasComp<KravMagaBlockedBreathingComponent>(uid)
+               || TryComp<GrabbableComponent>(uid, out var grabbable) && grabbable.GrabStage == GrabStage.Suffocate;
+    }
+    // LuaM-end
 
     public void Inhale(EntityUid uid, BodyComponent? body = null)
     {
