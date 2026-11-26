@@ -19,6 +19,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing; // LuaM
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Follower;
@@ -32,6 +33,7 @@ public sealed partial class FollowerSystem : EntitySystem
     [Dependency] private SharedPhysicsSystem _physicsSystem = default!;
     [Dependency] private INetManager _netMan = default!;
     [Dependency] private ISharedAdminManager _adminManager = default!;
+    [Dependency] private IGameTiming _timing = default!; // LuaM
 
     private static readonly ProtoId<TagPrototype> ForceableFollowTag = "ForceableFollow";
 
@@ -128,6 +130,13 @@ public sealed partial class FollowerSystem : EntitySystem
 
     private void OnFollowerMove(EntityUid uid, FollowerComponent component, ref MoveInputEvent args)
     {
+        // LuaM-start: the client also raises this while applying a server state whose held buttons differ from its
+        // own, e.g. a state from before the key was let go. That stopped the following on the client alone and left
+        // the ghost detached there while the server kept it following. Only real input stops following.
+        if (_timing.ApplyingState)
+            return;
+        // LuaM-end
+
         if (args.HasDirectionalMovement)
             StopFollowingEntity(uid, component.Following);
     }
