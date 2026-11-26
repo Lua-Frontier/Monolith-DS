@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
+        with:
+          persist-credentials: false # LuaM: the CI token makes cloning the engine submodule fail with 403
       - name: Setup Submodule
         run: git submodule update --init
       - name: Pull engine updates
