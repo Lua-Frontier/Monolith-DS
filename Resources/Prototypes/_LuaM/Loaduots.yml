@@ -265,15 +265,28 @@
   - PilotGloves
   - ContractorGloves
 
+# The Director of Care starts in the T-53 hardsuit and the advanced ATU boots, nothing else to pick.
 - type: loadoutGroup
   id: LuaMDocShoes
   name: loadout-group-contractor-shoes
-  loadouts: []
-  subgroups:
-  - DocShoes
-  - MercenaryShoes
-  - LuaMMercenaryShoes
-  - PilotShoes
-  - ContractorShoes
-  fallbacks:
-  - DocClothingShoesColorWhite
+  loadouts:
+  - LuaMDocClothingShoesBootsMagVoidTraumaLeader
+
+- type: loadoutGroup
+  id: LuaMDocOuterClothing
+  name: loadout-group-contractor-outerclothing
+  loadouts:
+  - LuaMDocClothingOuterHardsuitTraumaLeader
+
+- type: loadout
+  id: LuaMDocClothingShoesBootsMagVoidTraumaLeader
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: ShoesCapableNF
+  equipment:
+    shoes: ClothingShoesBootsMagVoidTraumaLeader
+
+- type: loadout
+  id: LuaMDocClothingOuterHardsuitTraumaLeader
+  equipment:
+    outerClothing: ClothingOuterHardsuitTraumaLeader

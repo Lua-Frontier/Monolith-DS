@@ -78,22 +78,19 @@
       - 0.153853429 # oxygen
       - 0.153853429 # nitrogen
 
+# LuaM-start: ATU boots work like the tactical magboots: thrusters, a gas tank, no walking on the void
 - type: entity
-  parent: [ClothingShoesBootsMagBase]
+  parent: [ClothingShoesBootsMagSyndie]
   id: ClothingShoesBootsMagVoidTrauma
   name: ATU boots
-  description: > 
-    Lightweight voidboots reinforced for harsh space conditions,
-    designed to maintain mobility and reduce movement loss from injury.
+  description: Magnetic boots of the trauma unit with integrated thrusters for reaching patients out in space. It can hold 0.75 L of gas.
   components:
-  - type: Magboots
-    requiresGrid: false
   - type: Sprite
     sprite: _Mono/Clothing/Shoes/Boots/voidboots-trauma.rsi
+    state: icon
   - type: Clothing
     sprite: _Mono/Clothing/Shoes/Boots/voidboots-trauma.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.75
+# LuaM-end
    
 - type: entity
   parent: [ClothingShoesBootsMagBase]
@@ -109,6 +106,11 @@
     sprite: _Mono/Clothing/Shoes/Boots/voidboots-trauma-leader.rsi
   - type: Clothing
     sprite: _Mono/Clothing/Shoes/Boots/voidboots-trauma-leader.rsi
+  # LuaM-start: no walking slowdown with the magnets on, running is still slowed
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.85
+  # LuaM-end
   # LuaM: the own heavy step sound is removed, so it does not override the suit steps
   # - type: FootstepModifier
   #   footstepSoundCollection:
