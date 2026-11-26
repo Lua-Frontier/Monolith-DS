@@ -5,16 +5,10 @@
   order: 10
 
 - type: roadmapItem
-  id: RoadmapUiRestyle
-  name: roadmap-item-ui-restyle
-  stage: Done
-  order: 20
-
-- type: roadmapItem
   id: RoadmapMcUpdatesPartOne
   name: roadmap-item-mc-updates-part-one
   stage: Done
-  order: 30
+  order: 20
 
 - type: roadmapItem
   id: RoadmapMmcUpdates
@@ -67,8 +61,8 @@
 - type: roadmapItem
   id: RoadmapMartialArts
   name: roadmap-item-martial-arts
-  stage: Later
-  order: 60
+  stage: Done
+  order: 30
 
 - type: roadmapItem
   id: RoadmapSurgery

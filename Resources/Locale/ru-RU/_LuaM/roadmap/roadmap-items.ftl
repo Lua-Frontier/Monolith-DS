@@ -1,5 +1,4 @@
 ﻿roadmap-item-ui-unification = Приведение UI к общей схеме
-roadmap-item-ui-restyle = Перевод UI на новый стиль
 roadmap-item-mc-updates-part-one = Новинки для МЦ. Часть 1
 roadmap-item-mmc-updates = Новинки для ММС
 roadmap-item-vg-updates = Новинки для VG
