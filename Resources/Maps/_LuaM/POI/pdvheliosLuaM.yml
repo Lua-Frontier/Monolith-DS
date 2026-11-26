@@ -49649,7 +49649,7 @@ entities:
     - type: Transform
       pos: -22.5,15.5
       parent: 1
-- proto: VendingMachineMedical
+- proto: VendingMachineCiviMedPlus
   entities:
   - uid: 7018
     components:
