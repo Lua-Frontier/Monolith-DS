@@ -5,6 +5,18 @@
   order: 10
 
 - type: roadmapItem
+  id: RoadmapUiRestyle
+  name: roadmap-item-ui-restyle
+  stage: Done
+  order: 20
+
+- type: roadmapItem
+  id: RoadmapMcUpdatesPartOne
+  name: roadmap-item-mc-updates-part-one
+  stage: Done
+  order: 30
+
+- type: roadmapItem
   id: RoadmapMmcUpdates
   name: roadmap-item-mmc-updates
   stage: Near
