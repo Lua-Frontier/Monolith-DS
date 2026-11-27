@@ -193,22 +193,23 @@ public sealed partial class NavScreen : BoxContainer
         var displayRot = (-worldRot).Reduced();
         var displayRotDegrees = displayRot.FlipPositive().Degrees;
 
-        GridPosition.Text = Loc.GetString("shuttle-console-position-value",
+        // LuaM: texts are written only when they change, every write re-lays out the whole console window
+        SetText(GridPosition, Loc.GetString("shuttle-console-position-value",
             ("X", $"{worldPos.X:0.0}"),
-            ("Y", $"{worldPos.Y:0.0}"));
+            ("Y", $"{worldPos.Y:0.0}")));
         FitCoordsCaption(); // LuaM
-        GridOrientation.Text = Loc.GetString("shuttle-console-orientation-value",
-            ("angle", $"{displayRotDegrees:0.0}"));
+        SetText(GridOrientation, Loc.GetString("shuttle-console-orientation-value",
+            ("angle", $"{displayRotDegrees:0.0}"))); // LuaM
 
         var gridVelocity = gridBody.LinearVelocity;
         gridVelocity = displayRot.RotateVec(gridVelocity);
         // Get linear velocity relative to the console entity
-        GridLinearVelocity.Text = Loc.GetString("shuttle-console-linear-velocity-value",
+        SetText(GridLinearVelocity, Loc.GetString("shuttle-console-linear-velocity-value",
             ("X", $"{gridVelocity.X + 10f * float.Epsilon:0.0}"),
-            ("Y", $"{gridVelocity.Y + 10f * float.Epsilon:0.0}"));
-        GridSpeed.Text = $"{gridBody.LinearVelocity.Length():0.0}"; // LuaM
-        GridAngularVelocity.Text = Loc.GetString("shuttle-console-angular-velocity-value",
-            ("angularVelocity", $"{-MathHelper.RadiansToDegrees(gridBody.AngularVelocity) + 10f * float.Epsilon:0.0}"));
+            ("Y", $"{gridVelocity.Y + 10f * float.Epsilon:0.0}"))); // LuaM
+        SetText(GridSpeed, $"{gridBody.LinearVelocity.Length():0.0}"); // LuaM
+        SetText(GridAngularVelocity, Loc.GetString("shuttle-console-angular-velocity-value",
+            ("angularVelocity", $"{-MathHelper.RadiansToDegrees(gridBody.AngularVelocity) + 10f * float.Epsilon:0.0}"))); // LuaM
 
         UpdateAltitude(gridXform); // Mono
     }
@@ -263,17 +264,17 @@ public sealed partial class NavScreen : BoxContainer
         if (!onZNetwork)
             return;
 
-        GridAltitude.Text = Loc.GetString("shuttle-console-altitude-value",
-            ("altitude", $"{altitude!.Value:0.00}"));
+        SetText(GridAltitude, Loc.GetString("shuttle-console-altitude-value",
+            ("altitude", $"{altitude!.Value:0.00}"))); // LuaM
 
         // CEZPhysics.Velocity is positive = up; the server mirrors the grid's fall
         // speed onto it. Add a bias like the other velocity rows so -0 never shows.
         var vertical = 0f;
         if (_entManager.TryGetComponent(_shuttleEntity, out CEZPhysicsComponent? velPhys))
             vertical = velPhys.Velocity;
-        GridVerticalVelocity.Text = Loc.GetString("shuttle-console-vertical-velocity-value",
-            ("velocity", $"{vertical + 10f * float.Epsilon:0.00}"));
+        SetText(GridVerticalVelocity, Loc.GetString("shuttle-console-vertical-velocity-value",
+            ("velocity", $"{vertical + 10f * float.Epsilon:0.00}"))); // LuaM
 
-        GridTravelState.Text = state!;
+        SetText(GridTravelState, state!); // LuaM
     }
 }

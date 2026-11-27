@@ -1,0 +1,728 @@
+- type: entity
+  abstract: true
+  parent: LuaMShipGunPartBase
+  id: LuaMShipGunBarrelBase
+  components:
+  - type: Sprite
+    state: icon
+  - type: MultiHandedItem
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelL85
+  name: L85 barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light ballistic mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/l85.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelL85
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelAdder
+  name: Adder barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light ballistic mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/adder.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelAdder
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelRAC30
+  name: RAC-30 barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light ballistic mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/rac30.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelRAC30
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelAC35
+  name: AC-35 barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light ballistic mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ac35.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelAC35
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelFlare
+  name: GS-002 flare tube
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light ballistic mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/flare.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelFlare
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelAK570
+  name: AK570 barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ak570.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelAK570
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelDravon
+  name: Dravon barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/dravon.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelDravon
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelFang
+  name: Fang barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/fang.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelFang
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelAK800
+  name: AK800 barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ak800.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.25
+    sprintModifier: 0.25
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelAK800
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelTarnyx
+  name: Tarnyx barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/tarnyx.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.25
+    sprintModifier: 0.25
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelTarnyx
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelEquinox
+  name: Equinox barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/equinox.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.25
+    sprintModifier: 0.25
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelEquinox
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelBofors
+  name: Bofors barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/bofors.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelBofors
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelCyrexa
+  name: Cyrexa barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/cyrexa.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelCyrexa
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelKargil
+  name: Kargil barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/kargil.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelKargil
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelAK820
+  name: AK820 barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ak820.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelAK820
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelHades
+  name: Hades barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/hades.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelHades
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelLongbow
+  name: Longbow barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/longbow.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelLongbow
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelR300
+  name: R-300 barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/r300.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelR300
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelHydra
+  name: Hydra barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/hydra.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelHydra
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelLeviathan
+  name: Leviathan barrel
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy artillery mount."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/leviathan.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelLeviathan
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelCharonette
+  name: Charonette rails
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a mass driver cradle."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/charonette.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.25
+    sprintModifier: 0.25
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelCharonette
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelType35
+  name: Type-35 emitter
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/type35.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelType35
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelCerberus
+  name: Cerberus emitter
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/cerberus.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.25
+    sprintModifier: 0.25
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelCerberus
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelM220
+  name: Rubicon emitter
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/m220.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelM220
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelPhalanx
+  name: Phalanx lens
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/phalanx.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelPhalanx
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelMoros
+  name: Moros lens
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/moros.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelMoros
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelImpulseLaser
+  name: pulse laser lens
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a light energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/impulselaser.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelImpulseLaser
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelType54
+  name: Type-54C emitter
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/type54.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.25
+    sprintModifier: 0.25
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelType54
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelPrometheus
+  name: Prometheus lens
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/prometheus.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.25
+    sprintModifier: 0.25
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelPrometheus
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelApollo
+  name: Apollo lens
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/apollo.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.25
+    sprintModifier: 0.25
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelApollo
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelShkval
+  name: Shkval lens
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/shkval.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelShkval
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelScylla
+  name: Scylla emitter
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a heavy energy weapon frame."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/scylla.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelScylla
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelVespera
+  name: Vespera launch module
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a missile launcher platform."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/vespera.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelVespera
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelVanyk
+  name: Vanyk launch module
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a missile launcher platform."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/vanyk.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelVanyk
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelLightMunitionsBay
+  name: GPOB-L bay module
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a missile launcher platform."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/lightmunitionsbay.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelLightMunitionsBay
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelSerpent
+  name: Serpent torpedo tube
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a missile launcher platform."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/serpent.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.25
+    sprintModifier: 0.25
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelSerpent
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelTovek
+  name: Tovek launch module
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a missile launcher platform."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/tovek.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelTovek
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelTrident
+  name: Trident torpedo cell
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a missile launcher platform."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/trident.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelTrident
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelPaladin
+  name: Paladin launch tube
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a missile launcher platform."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/paladin.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelPaladin
+
+- type: entity
+  parent: LuaMShipGunBarrelBase
+  id: LuaMShipGunBarrelVanquisher
+  name: Vanquisher launch module
+  description: "Main part of a ship weapon. Defines which weapon gets assembled on a missile launcher platform."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/vanquisher.rsi
+  - type: Item
+    size: Ginormous
+  - type: HeldSpeedModifier
+    walkModifier: 0.2
+    sprintModifier: 0.2
+    mirrorClothingModifier: false
+  - type: Tag
+    tags:
+    - LuaMShipGunBarrelVanquisher

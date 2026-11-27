@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Cut from ak820.rsi (Made by kasature90 (github)/_starch_ (discord))",
+    "size": {
+        "x": 96,
+        "y": 96
+    },
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
+}

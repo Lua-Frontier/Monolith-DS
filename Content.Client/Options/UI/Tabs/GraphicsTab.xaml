@@ -25,12 +25,16 @@
                 <CheckBox Name="AmbientSpaceLayerUpperCheckBox" Text="{Loc 'ui-options-ambient-space-layer-upper'}" />
                 <ui:OptionSlider Name="AmbientSpaceDensitySlider" Title="{Loc 'ui-options-ambient-space-density'}" />
                 <!-- Lua end -->
+                <ui:OptionDropDown Name="DropDownParticleQuality" Title="{Loc 'ui-options-particle-quality-label'}" /> <!-- LuaM: explosions and effects -->
 
                 <!-- Interface -->
                 <Label Text="{Loc 'ui-options-interface-label'}" StyleClasses="LabelKeyText"/>
                 <!-- LuaM: client HUD layout editor -->
                 <Button Name="HudLayoutButton" Text="{Loc 'hud-layout-open'}" HorizontalAlignment="Left" />
-                <ui:OptionDropDown Name="DropDownUIScale" Title="{Loc 'ui-options-scale-label'}" />
+                <!-- LuaM-start: UI scale as a slider, OptionDropDown DropDownUIScale > slider + auto checkbox -->
+                <ui:OptionSlider Name="UIScaleSlider" Title="{Loc 'ui-options-scale-label'}" />
+                <CheckBox Name="UIScaleAutoCheckBox" />
+                <!-- LuaM-end -->
                 <CheckBox Name="ViewportStretchCheckBox" Text="{Loc 'ui-options-vp-stretch'}" />
                 <ui:OptionSlider Name="ViewportScaleSlider" Title="{Loc ui-options-vp-scale}" />
                 <ui:OptionSlider Name="ViewportWidthSlider" Title="{Loc ui-options-vp-width}" />

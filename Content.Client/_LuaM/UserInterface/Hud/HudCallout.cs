@@ -37,6 +37,10 @@ public sealed class HudCallout : PanelContainer
         get => _status;
         set
         {
+            // states repeat on every console update, a new panel box re-lays out the callout each time
+            if (_status == value && PanelOverride != null)
+                return;
+
             _status = value;
             _shape.Status = value;
             var color = HudStatusColors.Of(value);
@@ -58,6 +62,9 @@ public sealed class HudCallout : PanelContainer
         get => _lead.Text;
         set
         {
+            if (_lead.Text == value && _lead.Visible == !string.IsNullOrEmpty(value))
+                return;
+
             _lead.Text = value;
             _lead.Visible = !string.IsNullOrEmpty(value);
         }
@@ -68,6 +75,9 @@ public sealed class HudCallout : PanelContainer
         get => _text.Text;
         set
         {
+            if (_text.Text == value && _text.Visible == !string.IsNullOrEmpty(value))
+                return;
+
             _text.Text = value;
             _text.Visible = !string.IsNullOrEmpty(value);
         }

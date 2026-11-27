@@ -1,8 +1,9 @@
 - type: entity
-  id: WeaponTurretASM220
+  id: WeaponTurretASM220Base # LuaM: WeaponTurretASM220 > WeaponTurretASM220Base, shared with the movable crafted version
+  abstract: true # LuaM
   name: ASM-220 "Trident" Torpedo Rack
   parent:
-  - BallisticArtilleryUnanchorableCartridge
+  - BallisticArtilleryBaseCartridge # LuaM: BallisticArtilleryUnanchorableCartridge > BallisticArtilleryBaseCartridge, RequiresGrid moved to WeaponTurretASM220
   - BallisticArtilleryTier4HP
   description: A heavy built-in torpedo rack for cruisers which relies on manual loading, usually done at harbor. Despite this, it has the largest missiles in the sector.
   components:
@@ -55,10 +56,14 @@
   - type: HardpointAnchorableOnly
     class: Missile
     size: Superheavy # LuaM: Heavy > Superheavy
+  # LuaM-start: 12 fire control points instead of the 6 of its weapon class
+  - type: FireControllable
+    processingPowerCost: 12
+  # LuaM-end
 
 - type: entity
   id: WeaponTurretASM220Station
-  suffix: Supercap/Station, Infinite HE, I'll kill you if you put this on a normal capital.
+  suffix: Supercap/Station, Infinite HE, I'll kill you if you put this on a normal capital. Bolted. # LuaM: added Bolted
   parent:
   - WeaponTurretASM220
   description: A heavy built-in torpedo rack for cruisers which relies on manual loading, usually done at harbor. Despite this, it has the largest missiles in the sector. This one is connected to a system for autoloading the VLS from a capital or stations reserves.
@@ -77,3 +82,12 @@
   - type: HardpointAnchorableOnly
     class: Missile
     size: Superheavy
+
+# LuaM-start: mapped guns stay bolted to the grid, the movable crafted ones are in _LuaM/Entities/SpaceArtillery/movable.yml
+- type: entity
+  id: WeaponTurretASM220
+  parent: WeaponTurretASM220Base
+  suffix: Bolted
+  components:
+  - type: RequiresGrid
+# LuaM-end

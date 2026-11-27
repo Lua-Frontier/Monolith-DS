@@ -38,4 +38,12 @@ public sealed partial class FireControllableComponent : Component
     /// </summary>
     [ViewVariables]
     public TimeSpan LastShot = TimeSpan.Zero;
+
+    // LuaM-start
+    /// <summary>
+    /// Fire control processing power used by this weapon. When unset, it comes from the weapon's ship gun class.
+    /// </summary>
+    [DataField]
+    public int? ProcessingPowerCost;
+    // LuaM-end
 }

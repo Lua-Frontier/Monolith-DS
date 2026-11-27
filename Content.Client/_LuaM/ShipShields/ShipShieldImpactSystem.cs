@@ -61,7 +61,12 @@ public sealed class ShipShieldImpactSystem : EntitySystem
         var now = _timing.RealTime;
         foreach (var (uid, list) in _impacts)
         {
-            list.RemoveAll(impact => (now - impact.Time).TotalSeconds >= Lifetime);
+            // runs every frame while a shield is hit: a plain loop instead of a lambda capturing now
+            for (var i = list.Count - 1; i >= 0; i--)
+            {
+                if ((now - list[i].Time).TotalSeconds >= Lifetime)
+                    list.RemoveAt(i);
+            }
             if (list.Count == 0 || TerminatingOrDeleted(uid))
                 _expired.Add(uid);
         }

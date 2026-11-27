@@ -195,6 +195,7 @@ public sealed class GuideHub : BoxContainer, IDocumentTag
         ["ColossusServiceImplants"] = "MedicalTrackingImplanter",
         ["WeaponsSystems"] = "ComputerGunneryConsole",
         ["ColossusCatalogueShipWeapons"] = "WeaponTurretCharon",
+        ["ColossusShipWeaponAssembly"] = "LuaMShipGunFrameHeavyArtillery",
         ["ColossusFireControlServers"] = "GunneryServerLow",
         ["Bank"] = "ComputerBankATM",
         ["SafetyDepositBox"] = "SafetyDepositBoxMedium",

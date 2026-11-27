@@ -1,0 +1,2079 @@
+- type: constructionGraph
+  id: LuaMShipGunFrameLightBallistic
+  start: frame
+  graph:
+  - node: frame
+    entity: LuaMShipGunFrameLightBallistic
+    edges:
+    - to: l85_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelL85
+        name: construction-graph-tag-luam-ship-gun-barrel-l85
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/l85.rsi
+          state: icon
+        doAfter: 2
+    - to: adder_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelAdder
+        name: construction-graph-tag-luam-ship-gun-barrel-adder
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/adder.rsi
+          state: icon
+        doAfter: 2
+    - to: rac30_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelRAC30
+        name: construction-graph-tag-luam-ship-gun-barrel-r-a-c30
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/rac30.rsi
+          state: icon
+        doAfter: 3
+    - to: ac35_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelAC35
+        name: construction-graph-tag-luam-ship-gun-barrel-a-c35
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ac35.rsi
+          state: icon
+        doAfter: 3
+    - to: flare_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelFlare
+        name: construction-graph-tag-luam-ship-gun-barrel-flare
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/flare.rsi
+          state: icon
+        doAfter: 2
+  - node: l85_body
+    entity: LuaMShipGunUnfinishedL85
+    edges:
+    - to: l85
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 205
+      steps:
+      - tag: LuaMShipGunBarrelL85
+        name: construction-graph-tag-luam-ship-gun-barrel-l85
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/l85.rsi
+          state: icon
+        doAfter: 2
+      - tag: LuaMShipGunChargerMk1
+        name: construction-graph-tag-luam-ship-gun-charger-mk1
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk1
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 5
+        doAfter: 2
+      - material: Cable
+        amount: 5
+        doAfter: 1
+      - tool: Screwing
+        doAfter: 2
+      - tool: Welding
+        doAfter: 3
+  - node: adder_body
+    entity: LuaMShipGunUnfinishedAdder
+    edges:
+    - to: adder
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 205
+      steps:
+      - tag: LuaMShipGunBarrelAdder
+        name: construction-graph-tag-luam-ship-gun-barrel-adder
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/adder.rsi
+          state: icon
+        doAfter: 2
+      - tag: LuaMShipGunChargerMk1
+        name: construction-graph-tag-luam-ship-gun-charger-mk1
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk1
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 5
+        doAfter: 2
+      - material: Cable
+        amount: 5
+        doAfter: 1
+      - tool: Screwing
+        doAfter: 2
+      - tool: Welding
+        doAfter: 3
+  - node: rac30_body
+    entity: LuaMShipGunUnfinishedRAC30
+    edges:
+    - to: rac30
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 279
+      steps:
+      - tag: LuaMShipGunBarrelRAC30
+        name: construction-graph-tag-luam-ship-gun-barrel-r-a-c30
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/rac30.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunBarrelRAC30
+        name: construction-graph-tag-luam-ship-gun-barrel-r-a-c30
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/rac30.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: ac35_body
+    entity: LuaMShipGunUnfinishedAC35
+    edges:
+    - to: ac35
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 322
+      steps:
+      - tag: LuaMShipGunBarrelAC35
+        name: construction-graph-tag-luam-ship-gun-barrel-a-c35
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ac35.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: flare_body
+    entity: LuaMShipGunUnfinishedFlare
+    edges:
+    - to: flare
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 205
+      steps:
+      - tag: LuaMShipGunBarrelFlare
+        name: construction-graph-tag-luam-ship-gun-barrel-flare
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/flare.rsi
+          state: icon
+        doAfter: 2
+      - tag: LuaMShipGunChargerMk1
+        name: construction-graph-tag-luam-ship-gun-charger-mk1
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk1
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 5
+        doAfter: 2
+      - material: Cable
+        amount: 5
+        doAfter: 1
+      - tool: Screwing
+        doAfter: 2
+      - tool: Welding
+        doAfter: 3
+  - node: l85
+    entity: WeaponTurretL85Autocannon
+  - node: adder
+    entity: WeaponTurretAdderScattercannon
+  - node: rac30
+    entity: WeaponTurretRAC30
+  - node: ac35
+    entity: WeaponTurretAC-35
+  - node: flare
+    entity: WeaponTurretFlare
+
+- type: constructionGraph
+  id: LuaMShipGunFrameArtillery
+  start: frame
+  graph:
+  - node: frame
+    entity: LuaMShipGunFrameArtillery
+    edges:
+    - to: ak570_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelAK570
+        name: construction-graph-tag-luam-ship-gun-barrel-a-k570
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ak570.rsi
+          state: icon
+        doAfter: 3
+    - to: dravon_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelDravon
+        name: construction-graph-tag-luam-ship-gun-barrel-dravon
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/dravon.rsi
+          state: icon
+        doAfter: 3
+    - to: fang_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelFang
+        name: construction-graph-tag-luam-ship-gun-barrel-fang
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/fang.rsi
+          state: icon
+        doAfter: 3
+    - to: ak800_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelAK800
+        name: construction-graph-tag-luam-ship-gun-barrel-a-k800
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ak800.rsi
+          state: icon
+        doAfter: 4
+    - to: tarnyx_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelTarnyx
+        name: construction-graph-tag-luam-ship-gun-barrel-tarnyx
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/tarnyx.rsi
+          state: icon
+        doAfter: 4
+    - to: equinox_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelEquinox
+        name: construction-graph-tag-luam-ship-gun-barrel-equinox
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/equinox.rsi
+          state: icon
+        doAfter: 4
+  - node: ak570_body
+    entity: LuaMShipGunUnfinishedAK570
+    edges:
+    - to: ak570
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 397
+      steps:
+      - tag: LuaMShipGunBarrelAK570
+        name: construction-graph-tag-luam-ship-gun-barrel-a-k570
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ak570.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: dravon_body
+    entity: LuaMShipGunUnfinishedDravon
+    edges:
+    - to: dravon
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 397
+      steps:
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: fang_body
+    entity: LuaMShipGunUnfinishedFang
+    edges:
+    - to: fang
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 456
+      steps:
+      - tag: LuaMShipGunBarrelFang
+        name: construction-graph-tag-luam-ship-gun-barrel-fang
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/fang.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: ak800_body
+    entity: LuaMShipGunUnfinishedAK800
+    edges:
+    - to: ak800
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 5004
+      steps:
+      - tag: LuaMShipGunChargerMk3
+        name: construction-graph-tag-luam-ship-gun-charger-mk3
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk3
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 10
+        doAfter: 4
+      - material: CableHV
+        amount: 10
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 4
+      - tool: Welding
+        doAfter: 8
+  - node: tarnyx_body
+    entity: LuaMShipGunUnfinishedTarnyx
+    edges:
+    - to: tarnyx
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 5004
+      steps:
+      - tag: LuaMShipGunChargerMk3
+        name: construction-graph-tag-luam-ship-gun-charger-mk3
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk3
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 10
+        doAfter: 4
+      - material: CableHV
+        amount: 10
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 4
+      - tool: Welding
+        doAfter: 8
+  - node: equinox_body
+    entity: LuaMShipGunUnfinishedEquinox
+    edges:
+    - to: equinox
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 5004
+      steps:
+      - tag: LuaMShipGunChargerMk3
+        name: construction-graph-tag-luam-ship-gun-charger-mk3
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk3
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 10
+        doAfter: 4
+      - material: CableHV
+        amount: 10
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 4
+      - tool: Welding
+        doAfter: 8
+  - node: ak570
+    entity: WeaponTurretAK570
+  - node: dravon
+    entity: WeaponTurretDravon
+  - node: fang
+    entity: WeaponTurretFang
+  - node: ak800
+    entity: WeaponTurretAk800
+  - node: tarnyx
+    entity: WeaponTurretTarnyxMovable
+  - node: equinox
+    entity: WeaponTurretTarnyxReloadAPMovable
+
+- type: constructionGraph
+  id: LuaMShipGunFrameHeavyArtillery
+  start: frame
+  graph:
+  - node: frame
+    entity: LuaMShipGunFrameHeavyArtillery
+    edges:
+    - to: bofors_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelBofors
+        name: construction-graph-tag-luam-ship-gun-barrel-bofors
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/bofors.rsi
+          state: icon
+        doAfter: 5
+    - to: cyrexa_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelCyrexa
+        name: construction-graph-tag-luam-ship-gun-barrel-cyrexa
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/cyrexa.rsi
+          state: icon
+        doAfter: 5
+    - to: kargil_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelKargil
+        name: construction-graph-tag-luam-ship-gun-barrel-kargil
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/kargil.rsi
+          state: icon
+        doAfter: 3
+    - to: ak820_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelAK820
+        name: construction-graph-tag-luam-ship-gun-barrel-a-k820
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ak820.rsi
+          state: icon
+        doAfter: 5
+    - to: hades_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelHades
+        name: construction-graph-tag-luam-ship-gun-barrel-hades
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/hades.rsi
+          state: icon
+        doAfter: 5
+    - to: longbow_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelLongbow
+        name: construction-graph-tag-luam-ship-gun-barrel-longbow
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/longbow.rsi
+          state: icon
+        doAfter: 5
+    - to: r300_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelR300
+        name: construction-graph-tag-luam-ship-gun-barrel-r300
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/r300.rsi
+          state: icon
+        doAfter: 5
+    - to: hydra_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelHydra
+        name: construction-graph-tag-luam-ship-gun-barrel-hydra
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/hydra.rsi
+          state: icon
+        doAfter: 5
+    - to: leviathan_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelLeviathan
+        name: construction-graph-tag-luam-ship-gun-barrel-leviathan
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/leviathan.rsi
+          state: icon
+        doAfter: 5
+  - node: bofors_body
+    entity: LuaMShipGunUnfinishedBofors
+    edges:
+    - to: bofors
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 8097
+      steps:
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: cyrexa_body
+    entity: LuaMShipGunUnfinishedCyrexa
+    edges:
+    - to: cyrexa
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 8097
+      steps:
+      - tag: LuaMShipGunBarrelCyrexa
+        name: construction-graph-tag-luam-ship-gun-barrel-cyrexa
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/cyrexa.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: kargil_body
+    entity: LuaMShipGunUnfinishedKargil
+    edges:
+    - to: kargil
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 4511
+      steps:
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: ak820_body
+    entity: LuaMShipGunUnfinishedAK820
+    edges:
+    - to: ak820
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 8097
+      steps:
+      - tag: LuaMShipGunBarrelAK820
+        name: construction-graph-tag-luam-ship-gun-barrel-a-k820
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/ak820.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: hades_body
+    entity: LuaMShipGunUnfinishedHades
+    edges:
+    - to: hades
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 10717
+      steps:
+      - tag: LuaMShipGunBarrelHades
+        name: construction-graph-tag-luam-ship-gun-barrel-hades
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/hades.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: longbow_body
+    entity: LuaMShipGunUnfinishedLongbow
+    edges:
+    - to: longbow
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 10717
+      steps:
+      - tag: LuaMShipGunBarrelLongbow
+        name: construction-graph-tag-luam-ship-gun-barrel-longbow
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/longbow.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: r300_body
+    entity: LuaMShipGunUnfinishedR300
+    edges:
+    - to: r300
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 8097
+      steps:
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: hydra_body
+    entity: LuaMShipGunUnfinishedHydra
+    edges:
+    - to: hydra
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 8400
+      steps:
+      - tag: LuaMShipGunBarrelHydra
+        name: construction-graph-tag-luam-ship-gun-barrel-hydra
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/hydra.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunBarrelHydra
+        name: construction-graph-tag-luam-ship-gun-barrel-hydra
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/hydra.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: leviathan_body
+    entity: LuaMShipGunUnfinishedLeviathan
+    edges:
+    - to: leviathan
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 10717
+      steps:
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: bofors
+    entity: WeaponTurretBofors
+  - node: cyrexa
+    entity: WeaponTurretCyrexa
+  - node: kargil
+    entity: WeaponTurretKargil
+  - node: ak820
+    entity: WeaponTurretAk820
+  - node: hades
+    entity: WeaponTurretHades
+  - node: longbow
+    entity: WeaponTurretLongbowMovable
+  - node: r300
+    entity: WeaponTurretR300
+  - node: hydra
+    entity: WeaponTurretHydra
+  - node: leviathan
+    entity: WeaponTurretLeviathan
+
+- type: constructionGraph
+  id: LuaMShipGunFrameMassDriver
+  start: frame
+  graph:
+  - node: frame
+    entity: LuaMShipGunFrameMassDriver
+    edges:
+    - to: charonette_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelCharonette
+        name: construction-graph-tag-luam-ship-gun-barrel-charonette
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/charonette.rsi
+          state: icon
+        doAfter: 4
+  - node: charonette_body
+    entity: LuaMShipGunUnfinishedCharonette
+    edges:
+    - to: charonette
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 7888
+      steps:
+      - tag: LuaMShipGunChargerMk3
+        name: construction-graph-tag-luam-ship-gun-charger-mk3
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk3
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 10
+        doAfter: 4
+      - material: CableHV
+        amount: 10
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 4
+      - tool: Welding
+        doAfter: 8
+  - node: charonette
+    entity: WeaponTurretCharonette
+
+- type: constructionGraph
+  id: LuaMShipGunFrameLightEnergy
+  start: frame
+  graph:
+  - node: frame
+    entity: LuaMShipGunFrameLightEnergy
+    edges:
+    - to: type35_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelType35
+        name: construction-graph-tag-luam-ship-gun-barrel-type35
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/type35.rsi
+          state: icon
+        doAfter: 3
+    - to: cerberus_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelCerberus
+        name: construction-graph-tag-luam-ship-gun-barrel-cerberus
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/cerberus.rsi
+          state: icon
+        doAfter: 4
+    - to: m220_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelM220
+        name: construction-graph-tag-luam-ship-gun-barrel-m220
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/m220.rsi
+          state: icon
+        doAfter: 3
+    - to: phalanx_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelPhalanx
+        name: construction-graph-tag-luam-ship-gun-barrel-phalanx
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/phalanx.rsi
+          state: icon
+        doAfter: 2
+    - to: moros_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelMoros
+        name: construction-graph-tag-luam-ship-gun-barrel-moros
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/moros.rsi
+          state: icon
+        doAfter: 3
+    - to: impulselaser_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelImpulseLaser
+        name: construction-graph-tag-luam-ship-gun-barrel-impulse-laser
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/impulselaser.rsi
+          state: icon
+        doAfter: 3
+  - node: type35_body
+    entity: LuaMShipGunUnfinishedType35
+    edges:
+    - to: type35
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 402
+      steps:
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: cerberus_body
+    entity: LuaMShipGunUnfinishedCerberus
+    edges:
+    - to: cerberus
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 2000
+      steps:
+      - tag: LuaMShipGunBarrelCerberus
+        name: construction-graph-tag-luam-ship-gun-barrel-cerberus
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/cerberus.rsi
+          state: icon
+        doAfter: 4
+      - tag: LuaMShipGunChargerMk3
+        name: construction-graph-tag-luam-ship-gun-charger-mk3
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk3
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 10
+        doAfter: 4
+      - material: CableHV
+        amount: 10
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 4
+      - tool: Welding
+        doAfter: 8
+  - node: m220_body
+    entity: LuaMShipGunUnfinishedM220
+    edges:
+    - to: m220
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 402
+      steps:
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: phalanx_body
+    entity: LuaMShipGunUnfinishedPhalanx
+    edges:
+    - to: phalanx
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 344
+      steps:
+      - tag: LuaMShipGunChargerMk1
+        name: construction-graph-tag-luam-ship-gun-charger-mk1
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk1
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 5
+        doAfter: 2
+      - material: Cable
+        amount: 5
+        doAfter: 1
+      - tool: Screwing
+        doAfter: 2
+      - tool: Welding
+        doAfter: 3
+  - node: moros_body
+    entity: LuaMShipGunUnfinishedMoros
+    edges:
+    - to: moros
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 402
+      steps:
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: impulselaser_body
+    entity: LuaMShipGunUnfinishedImpulseLaser
+    edges:
+    - to: impulselaser
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 402
+      steps:
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: type35
+    entity: WeaponTurretType35
+  - node: cerberus
+    entity: WeaponTurretCerberus
+  - node: m220
+    entity: WeaponTurretM220
+  - node: phalanx
+    entity: WeaponLaserTurretL1Phalanx
+  - node: moros
+    entity: WeaponTurretMoros
+  - node: impulselaser
+    entity: ImpulseLaserBase
+
+- type: constructionGraph
+  id: LuaMShipGunFrameHeavyEnergy
+  start: frame
+  graph:
+  - node: frame
+    entity: LuaMShipGunFrameHeavyEnergy
+    edges:
+    - to: type54_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelType54
+        name: construction-graph-tag-luam-ship-gun-barrel-type54
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/type54.rsi
+          state: icon
+        doAfter: 4
+    - to: prometheus_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelPrometheus
+        name: construction-graph-tag-luam-ship-gun-barrel-prometheus
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/prometheus.rsi
+          state: icon
+        doAfter: 4
+    - to: apollo_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelApollo
+        name: construction-graph-tag-luam-ship-gun-barrel-apollo
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/apollo.rsi
+          state: icon
+        doAfter: 4
+    - to: shkval_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelShkval
+        name: construction-graph-tag-luam-ship-gun-barrel-shkval
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/shkval.rsi
+          state: icon
+        doAfter: 5
+    - to: scylla_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelScylla
+        name: construction-graph-tag-luam-ship-gun-barrel-scylla
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/scylla.rsi
+          state: icon
+        doAfter: 5
+  - node: type54_body
+    entity: LuaMShipGunUnfinishedType54
+    edges:
+    - to: type54
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 3957
+      steps:
+      - tag: LuaMShipGunChargerMk3
+        name: construction-graph-tag-luam-ship-gun-charger-mk3
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk3
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 10
+        doAfter: 4
+      - material: CableHV
+        amount: 10
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 4
+      - tool: Welding
+        doAfter: 8
+  - node: prometheus_body
+    entity: LuaMShipGunUnfinishedPrometheus
+    edges:
+    - to: prometheus
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 5320
+      steps:
+      - tag: LuaMShipGunChargerMk3
+        name: construction-graph-tag-luam-ship-gun-charger-mk3
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk3
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 10
+        doAfter: 4
+      - material: CableHV
+        amount: 10
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 4
+      - tool: Welding
+        doAfter: 8
+  - node: apollo_body
+    entity: LuaMShipGunUnfinishedApollo
+    edges:
+    - to: apollo
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 5320
+      steps:
+      - tag: LuaMShipGunChargerMk3
+        name: construction-graph-tag-luam-ship-gun-charger-mk3
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk3
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 10
+        doAfter: 4
+      - material: CableHV
+        amount: 10
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 4
+      - tool: Welding
+        doAfter: 8
+  - node: shkval_body
+    entity: LuaMShipGunUnfinishedShkval
+    edges:
+    - to: shkval
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 8362
+      steps:
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: scylla_body
+    entity: LuaMShipGunUnfinishedScylla
+    edges:
+    - to: scylla
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 8362
+      steps:
+      - tag: LuaMShipGunBarrelScylla
+        name: construction-graph-tag-luam-ship-gun-barrel-scylla
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/scylla.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: type54
+    entity: WeaponTurretType54Movable
+  - node: prometheus
+    entity: WeaponLaserTurretPrometheus
+  - node: apollo
+    entity: WeaponLaserTurretApollo
+  - node: shkval
+    entity: WeaponTurretShkval
+  - node: scylla
+    entity: WeaponTurretScylla
+
+- type: constructionGraph
+  id: LuaMShipGunFrameMissilePlatform
+  start: frame
+  graph:
+  - node: frame
+    entity: LuaMShipGunFrameMissilePlatform
+    edges:
+    - to: vespera_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelVespera
+        name: construction-graph-tag-luam-ship-gun-barrel-vespera
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/vespera.rsi
+          state: icon
+        doAfter: 3
+    - to: vanyk_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelVanyk
+        name: construction-graph-tag-luam-ship-gun-barrel-vanyk
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/vanyk.rsi
+          state: icon
+        doAfter: 3
+    - to: lightmunitionsbay_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelLightMunitionsBay
+        name: construction-graph-tag-luam-ship-gun-barrel-light-munitions-bay
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/lightmunitionsbay.rsi
+          state: icon
+        doAfter: 3
+    - to: serpent_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelSerpent
+        name: construction-graph-tag-luam-ship-gun-barrel-serpent
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/serpent.rsi
+          state: icon
+        doAfter: 4
+    - to: tovek_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelTovek
+        name: construction-graph-tag-luam-ship-gun-barrel-tovek
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/tovek.rsi
+          state: icon
+        doAfter: 3
+    - to: trident_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelTrident
+        name: construction-graph-tag-luam-ship-gun-barrel-trident
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/trident.rsi
+          state: icon
+        doAfter: 3
+    - to: paladin_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelPaladin
+        name: construction-graph-tag-luam-ship-gun-barrel-paladin
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/paladin.rsi
+          state: icon
+        doAfter: 5
+    - to: vanquisher_body
+      conditions:
+      - !type:EntityAnchored {}
+      steps:
+      - tag: LuaMShipGunBarrelVanquisher
+        name: construction-graph-tag-luam-ship-gun-barrel-vanquisher
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/vanquisher.rsi
+          state: icon
+        doAfter: 5
+  - node: vespera_body
+    entity: LuaMShipGunUnfinishedVespera
+    edges:
+    - to: vespera
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 496
+      steps:
+      - tag: LuaMShipGunBarrelVespera
+        name: construction-graph-tag-luam-ship-gun-barrel-vespera
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/vespera.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: vanyk_body
+    entity: LuaMShipGunUnfinishedVanyk
+    edges:
+    - to: vanyk
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 496
+      steps:
+      - tag: LuaMShipGunBarrelVanyk
+        name: construction-graph-tag-luam-ship-gun-barrel-vanyk
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/vanyk.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: lightmunitionsbay_body
+    entity: LuaMShipGunUnfinishedLightMunitionsBay
+    edges:
+    - to: lightmunitionsbay
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 422
+      steps:
+      - tag: LuaMShipGunBarrelLightMunitionsBay
+        name: construction-graph-tag-luam-ship-gun-barrel-light-munitions-bay
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/lightmunitionsbay.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: serpent_body
+    entity: LuaMShipGunUnfinishedSerpent
+    edges:
+    - to: serpent
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 3702
+      steps:
+      - tag: LuaMShipGunBarrelSerpent
+        name: construction-graph-tag-luam-ship-gun-barrel-serpent
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/serpent.rsi
+          state: icon
+        doAfter: 4
+      - tag: LuaMShipGunChargerMk3
+        name: construction-graph-tag-luam-ship-gun-charger-mk3
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk3
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 10
+        doAfter: 4
+      - material: CableHV
+        amount: 10
+        doAfter: 3
+      - tool: Screwing
+        doAfter: 4
+      - tool: Welding
+        doAfter: 8
+  - node: tovek_body
+    entity: LuaMShipGunUnfinishedTovek
+    edges:
+    - to: tovek
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 1852
+      steps:
+      - tag: LuaMShipGunBarrelTovek
+        name: construction-graph-tag-luam-ship-gun-barrel-tovek
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/tovek.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: trident_body
+    entity: LuaMShipGunUnfinishedTrident
+    edges:
+    - to: trident
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 1870
+      steps:
+      - tag: LuaMShipGunBarrelTrident
+        name: construction-graph-tag-luam-ship-gun-barrel-trident
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/trident.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunBarrelTrident
+        name: construction-graph-tag-luam-ship-gun-barrel-trident
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/trident.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunBarrelTrident
+        name: construction-graph-tag-luam-ship-gun-barrel-trident
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/trident.rsi
+          state: icon
+        doAfter: 3
+      - tag: LuaMShipGunChargerMk2
+        name: construction-graph-tag-luam-ship-gun-charger-mk2
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk2
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Steel
+        amount: 10
+        doAfter: 3
+      - material: CableMV
+        amount: 5
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 3
+      - tool: Welding
+        doAfter: 5
+  - node: paladin_body
+    entity: LuaMShipGunUnfinishedPaladin
+    edges:
+    - to: paladin
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 8725
+      steps:
+      - tag: LuaMShipGunBarrelPaladin
+        name: construction-graph-tag-luam-ship-gun-barrel-paladin
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/paladin.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunBarrelPaladin
+        name: construction-graph-tag-luam-ship-gun-barrel-paladin
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/paladin.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunBarrelPaladin
+        name: construction-graph-tag-luam-ship-gun-barrel-paladin
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/paladin.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunBarrelPaladin
+        name: construction-graph-tag-luam-ship-gun-barrel-paladin
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/paladin.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunBarrelPaladin
+        name: construction-graph-tag-luam-ship-gun-barrel-paladin
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/paladin.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunBarrelPaladin
+        name: construction-graph-tag-luam-ship-gun-barrel-paladin
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/paladin.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunBarrelPaladin
+        name: construction-graph-tag-luam-ship-gun-barrel-paladin
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/paladin.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: vanquisher_body
+    entity: LuaMShipGunUnfinishedVanquisher
+    edges:
+    - to: vanquisher
+      conditions:
+      - !type:EntityAnchored {}
+      completed:
+      - !type:SetAssembledShipGunPrice
+        price: 8089
+      steps:
+      - tag: LuaMShipGunBarrelVanquisher
+        name: construction-graph-tag-luam-ship-gun-barrel-vanquisher
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/Barrels/vanquisher.rsi
+          state: icon
+        doAfter: 5
+      - tag: LuaMShipGunChargerMk4
+        name: construction-graph-tag-luam-ship-gun-charger-mk4
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: charger_mk4
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - tag: LuaMShipGunFireControlModule
+        name: construction-graph-tag-luam-ship-gun-fire-control
+        icon:
+          sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+          state: fire_control
+        doAfter: 1
+      - material: Plasteel
+        amount: 20
+        doAfter: 5
+      - material: CableHV
+        amount: 20
+        doAfter: 4
+      - tool: Screwing
+        doAfter: 6
+      - tool: Welding
+        doAfter: 12
+  - node: vespera
+    entity: WeaponTurretVesperaMovable
+  - node: vanyk
+    entity: WeaponTurretVanykMovable
+  - node: lightmunitionsbay
+    entity: WeaponTurretLightMunitionsBay
+  - node: serpent
+    entity: WeaponTurretSerpentMissileMovable
+  - node: tovek
+    entity: WeaponTurretTovek
+  - node: trident
+    entity: WeaponTurretASM220Movable
+  - node: paladin
+    entity: WeaponTurretPaladin
+  - node: vanquisher
+    entity: WeaponTurretVanquisher

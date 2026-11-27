@@ -5616,7 +5616,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 7.5,15.5
       parent: 1
-- proto: GunneryServerMedium
+- proto: GunneryServerUltra
   entities:
   - uid: 1057
     components:

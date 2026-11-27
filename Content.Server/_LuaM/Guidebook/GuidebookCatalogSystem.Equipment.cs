@@ -9,9 +9,11 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Content.Shared._LuaM.Guidebook;
+using Content.Shared.Construction.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Explosion;
+using Content.Shared.Research.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Serialization.Markdown.Mapping;
@@ -96,7 +98,7 @@ public sealed partial class GuidebookCatalogSystem
             .Where(p => !p.Abstract && (p.Components.ContainsKey("CartridgeAmmo") || p.Components.ContainsKey("BallisticAmmoProvider") || p.Components.ContainsKey("Projectile")))
             .OrderBy(p => p.ID, StringComparer.Ordinal).ToList();
 
-        foreach (var entity in entities)
+        foreach (var entity in entities.Concat(PrintedServers(entities)))
         {
             if (!_prototype.TryIndex<EntityPrototype>(entity.PrototypeId, out var prototype))
                 continue;
@@ -108,7 +110,8 @@ public sealed partial class GuidebookCatalogSystem
                     .Select(CanonicalNode).OrderBy(x => x, StringComparer.Ordinal)));
             if (configurations.TryGetValue(configurationKey, out var known))
             {
-                known.Locations[entity.MapId] = known.Locations.GetValueOrDefault(entity.MapId) + 1;
+                if (entity.MapId != PrintedMapId)
+                    known.Locations[entity.MapId] = known.Locations.GetValueOrDefault(entity.MapId) + 1;
                 continue;
             }
             var components = entity.Components == null ? ReadPrototype(entity.PrototypeId) : EquipmentComponents(prototype, entity.Components);
@@ -151,7 +154,9 @@ public sealed partial class GuidebookCatalogSystem
                 var gunClass = Scalar(Component(components, "ShipGunClass"), "shipClass");
                 if (gunClass != null)
                     Add("Класс", ReadableScalar(gunClass));
-                Add("Нагрузка на СУО", (gunClass switch { "Superlight" => 1, "Light" => 3, "Medium" => 6, "Heavy" => 9, "Superheavy" => 12, _ => 0 }) + " ед.");
+                var powerCost = Scalar(Component(components, "FireControllable"), "processingPowerCost");
+                // Class names are matched without case: the Hydra spells it "SuperHeavy".
+                Add("Нагрузка на СУО", (powerCost ?? (gunClass?.ToLowerInvariant() switch { "superlight" => 1, "light" => 3, "medium" => 6, "heavy" => 9, "superheavy" => 12, _ => 0 }).ToString()) + " ед.");
                 Number("Gun", "fireRate", "Темп вне очереди", " выстр./с");
                 Number("Gun", "selectedMode", "Режим при установке");
                 if (gun.TryGetValue("availableModes", out var modes))
@@ -262,11 +267,44 @@ public sealed partial class GuidebookCatalogSystem
                 entry = new GuidebookEquipmentEntry { Id = id, PrototypeId = entity.PrototypeId, Kind = kind, Stats = stats };
                 entries.Add(id, entry);
             }
-            entry.Locations[entity.MapId] = entry.Locations.GetValueOrDefault(entity.MapId) + 1;
+            if (entity.MapId != PrintedMapId)
+                entry.Locations[entity.MapId] = entry.Locations.GetValueOrDefault(entity.MapId) + 1;
             configurations[configurationKey] = entry;
         }
 
         return entries.Values.OrderBy(e => e.Kind).ThenBy(e => e.PrototypeId, StringComparer.Ordinal).ThenBy(e => e.Id, StringComparer.Ordinal).ToList();
+    }
+
+    /// <summary>
+    /// Map id of the servers added by <see cref="PrintedServers"/>: they get a row but no place of installation.
+    /// </summary>
+    private const string PrintedMapId = "";
+
+    /// <summary>
+    /// Gunnery servers built from a board some lathe prints. Such a server may stand on no reachable map,
+    /// and the catalogue used to miss it: the 120 point server was only on voucher ships.
+    /// </summary>
+    private IEnumerable<GuidebookMappedEntity> PrintedServers(List<GuidebookMappedEntity> entities)
+    {
+        var mapped = entities.Select(e => e.PrototypeId).ToHashSet();
+        var added = new HashSet<string>();
+        foreach (var recipe in _prototype.EnumeratePrototypes<LatheRecipePrototype>().OrderBy(r => r.ID, StringComparer.Ordinal))
+        {
+            if (recipe.Result is not { } board
+                || !_prototype.TryIndex(board, out var boardPrototype)
+                || !boardPrototype.TryComp<MachineBoardComponent>(out var machineBoard, EntityManager.ComponentFactory))
+                continue;
+
+            var machine = machineBoard.Prototype.Id;
+            if (mapped.Contains(machine)
+                || !_prototype.TryIndex<EntityPrototype>(machine, out var machinePrototype)
+                || machinePrototype.Abstract
+                || !machinePrototype.Components.ContainsKey("FireControlServer")
+                || !added.Add(machine))
+                continue;
+
+            yield return new GuidebookMappedEntity(machine, PrintedMapId, string.Empty, null);
+        }
     }
 
     private void DescribeAmmunition(string id, string prefix, double multiplier, double gunSpeed,

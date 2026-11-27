@@ -3105,7 +3105,7 @@ entities:
     - type: Transform
       pos: -7.5,-2.5
       parent: 1
-- proto: GunneryServerMedium
+- proto: GunneryServerHigh
   entities:
   - uid: 440
     components:

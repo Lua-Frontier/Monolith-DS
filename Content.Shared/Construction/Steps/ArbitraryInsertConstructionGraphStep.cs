@@ -14,7 +14,10 @@ namespace Content.Shared.Construction.Steps
             if (string.IsNullOrEmpty(Name))
                 return;
 
-            examinedEvent.PushMarkup(Loc.GetString("construction-insert-arbitrary-entity", ("stepName", Name)));
+            // LuaM-start: name is usually a locale key, the examine text showed the raw key
+            var stepName = Loc.TryGetString(Name, out var localized) ? localized : Name;
+            examinedEvent.PushMarkup(Loc.GetString("construction-insert-arbitrary-entity", ("stepName", stepName)));
+            // LuaM-end
         }
 
         public override ConstructionGuideEntry GenerateGuideEntry()

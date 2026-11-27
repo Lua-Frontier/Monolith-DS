@@ -30,6 +30,141 @@
   id: GrenadeLauncher
 
 - type: Tag
+  id: LuaMShipGunBarrelAC35
+
+- type: Tag
+  id: LuaMShipGunBarrelAK570
+
+- type: Tag
+  id: LuaMShipGunBarrelAK800
+
+- type: Tag
+  id: LuaMShipGunBarrelAK820
+
+- type: Tag
+  id: LuaMShipGunBarrelAdder
+
+- type: Tag
+  id: LuaMShipGunBarrelApollo
+
+- type: Tag
+  id: LuaMShipGunBarrelBofors
+
+- type: Tag
+  id: LuaMShipGunBarrelCerberus
+
+- type: Tag
+  id: LuaMShipGunBarrelCharonette
+
+- type: Tag
+  id: LuaMShipGunBarrelCyrexa
+
+- type: Tag
+  id: LuaMShipGunBarrelDravon
+
+- type: Tag
+  id: LuaMShipGunBarrelEquinox
+
+- type: Tag
+  id: LuaMShipGunBarrelFang
+
+- type: Tag
+  id: LuaMShipGunBarrelFlare
+
+- type: Tag
+  id: LuaMShipGunBarrelHades
+
+- type: Tag
+  id: LuaMShipGunBarrelHydra
+
+- type: Tag
+  id: LuaMShipGunBarrelImpulseLaser
+
+- type: Tag
+  id: LuaMShipGunBarrelKargil
+
+- type: Tag
+  id: LuaMShipGunBarrelL85
+
+- type: Tag
+  id: LuaMShipGunBarrelLeviathan
+
+- type: Tag
+  id: LuaMShipGunBarrelLightMunitionsBay
+
+- type: Tag
+  id: LuaMShipGunBarrelLongbow
+
+- type: Tag
+  id: LuaMShipGunBarrelM220
+
+- type: Tag
+  id: LuaMShipGunBarrelMoros
+
+- type: Tag
+  id: LuaMShipGunBarrelPaladin
+
+- type: Tag
+  id: LuaMShipGunBarrelPhalanx
+
+- type: Tag
+  id: LuaMShipGunBarrelPrometheus
+
+- type: Tag
+  id: LuaMShipGunBarrelR300
+
+- type: Tag
+  id: LuaMShipGunBarrelRAC30
+
+- type: Tag
+  id: LuaMShipGunBarrelScylla
+
+- type: Tag
+  id: LuaMShipGunBarrelSerpent
+
+- type: Tag
+  id: LuaMShipGunBarrelShkval
+
+- type: Tag
+  id: LuaMShipGunBarrelTarnyx
+
+- type: Tag
+  id: LuaMShipGunBarrelTovek
+
+- type: Tag
+  id: LuaMShipGunBarrelTrident
+
+- type: Tag
+  id: LuaMShipGunBarrelType35
+
+- type: Tag
+  id: LuaMShipGunBarrelType54
+
+- type: Tag
+  id: LuaMShipGunBarrelVanquisher
+
+- type: Tag
+  id: LuaMShipGunBarrelVanyk
+
+- type: Tag
+  id: LuaMShipGunBarrelVespera
+
+- type: Tag
+  id: LuaMShipGunChargerMk1
+
+- type: Tag
+  id: LuaMShipGunChargerMk2
+
+- type: Tag
+  id: LuaMShipGunChargerMk3
+
+- type: Tag
+  id: LuaMShipGunChargerMk4
+
+- type: Tag
+  id: LuaMShipGunFireControlModule
+
+- type: Tag
   id: Magazine762x25mmBox
 
 - type: Tag

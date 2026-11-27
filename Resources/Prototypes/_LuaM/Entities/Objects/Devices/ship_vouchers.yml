@@ -28,6 +28,7 @@
       color: "#05ffff"
       shader: unshaded
   - type: ShipyardVoucher
+    tier: 3
     destroyOnEmpty: false
     cooldown: 10800
     consoleType: Security

@@ -5604,7 +5604,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.5,-26.5
       parent: 1
-- proto: GunneryServerHigh
+- proto: GunneryServerUltra
   entities:
   - uid: 412
     components:
@@ -10305,7 +10305,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponTurretTarnyxReload
+- proto: WeaponTurretTarnyxReloadMovable
   entities:
   - uid: 465
     components:

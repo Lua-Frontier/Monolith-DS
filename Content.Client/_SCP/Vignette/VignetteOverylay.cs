@@ -24,22 +24,20 @@ public sealed partial class VignetteOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
-    public override bool RequestScreenTexture => true;
+    // LuaM-start: the shader only blends a dark edge over the frame and never reads the screen,
+    // the full screen copy every frame (and once more for every z-level eye) was wasted.
+    public override bool RequestScreenTexture => false;
+
+    protected override bool BeforeDraw(in OverlayDrawArgs args)
+    {
+        // Mono: Prevent a stupid bug with Z eyes causing multiple vignettes showing causing rendering issues.
+        // This took me too long to find for how simple it was.
+        return Strength > 0f && args.Viewport.Eye is not ScalingViewport.ZEye;
+    }
+    // LuaM-end
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        if (ScreenTexture is null)
-            return;
-
-        // Mono: Prevent a stupid bug with Z eyes causing multiple vignettes showing causing rendering issues.
-        // This took me too long to find for how simple it was.
-        if (args.Viewport.Eye is ScalingViewport.ZEye)
-            return;
-
-        if (Strength <= 0f) // LuaM
-            return;
-
-        _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         _shader.SetParameter("vignette_color", Color.Black.WithAlpha(Strength)); // LuaM: WithAlpha(0.9f), шейдер раньше игнорировал альфу
 
         args.WorldHandle.UseShader(_shader);

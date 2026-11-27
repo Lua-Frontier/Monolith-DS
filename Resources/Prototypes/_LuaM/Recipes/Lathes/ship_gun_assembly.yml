@@ -1,0 +1,647 @@
+# Ship weapon parts: frames, barrels and common parts for assembling ship weapons by construction.
+
+# Common parts
+
+- type: latheRecipe
+  id: LuaMShipGunChargerMk1
+  result: LuaMShipGunChargerMk1
+  categories:
+  - LuaMShipGunParts
+  completetime: 4
+  materials:
+    Steel: 300
+    Glass: 300
+    Gold: 50
+
+- type: latheRecipe
+  id: LuaMShipGunChargerMk2
+  result: LuaMShipGunChargerMk2
+  categories:
+  - LuaMShipGunParts
+  completetime: 6
+  materials:
+    Steel: 500
+    Glass: 500
+    Gold: 150
+    Plasma: 200
+
+- type: latheRecipe
+  id: LuaMShipGunChargerMk3
+  result: LuaMShipGunChargerMk3
+  categories:
+  - LuaMShipGunParts
+  completetime: 10
+  materials:
+    Plasteel: 500
+    Glass: 500
+    Gold: 300
+    Plasma: 500
+    Silver: 200
+
+- type: latheRecipe
+  id: LuaMShipGunChargerMk4
+  result: LuaMShipGunChargerMk4
+  categories:
+  - LuaMShipGunParts
+  completetime: 15
+  materials:
+    Plasteel: 1000
+    Gold: 800
+    Plasma: 1000
+    Uranium: 500
+    Silver: 500
+
+- type: latheRecipe
+  id: LuaMShipGunFireControlModule
+  result: LuaMShipGunFireControlModule
+  categories:
+  - LuaMShipGunParts
+  completetime: 5
+  materials:
+    Steel: 200
+    Glass: 500
+    Gold: 100
+
+# Gunnery server boards
+
+- type: latheRecipe
+  id: MachineGCSUltraCircuitboard
+  result: MachineGCSUltraCircuitboard
+  categories:
+  - LuaMShipGunParts
+  completetime: 6
+  materials:
+    Steel: 200
+    Glass: 800
+    Gold: 300
+    Silver: 200
+    Plastitanium: 5000
+
+- type: latheRecipe
+  id: MachineGCSExtraCircuitboard
+  result: MachineGCSExtraCircuitboard
+  categories:
+  - LuaMShipGunParts
+  completetime: 8
+  materials:
+    Steel: 300
+    Glass: 1000
+    Gold: 500
+    Silver: 400
+    Plastitanium: 5000
+    Iridite: 1000
+
+# Light ballistic mount
+
+- type: latheRecipe
+  id: LuaMShipGunFrameLightBallistic
+  result: LuaMShipGunFrameLightBallistic
+  categories:
+  - LuaMShipGunParts
+  completetime: 10
+  materials:
+    Steel: 1500
+    Plasteel: 300
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelL85
+  result: LuaMShipGunBarrelL85
+  categories:
+  - LuaMShipGunParts
+  completetime: 3
+  materials:
+    Steel: 400
+    Plasteel: 100
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelAdder
+  result: LuaMShipGunBarrelAdder
+  categories:
+  - LuaMShipGunParts
+  completetime: 3
+  materials:
+    Steel: 400
+    Plasteel: 100
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelRAC30
+  result: LuaMShipGunBarrelRAC30
+  categories:
+  - LuaMShipGunParts
+  completetime: 3
+  materials:
+    Steel: 300
+    Plasteel: 100
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelAC35
+  result: LuaMShipGunBarrelAC35
+  categories:
+  - LuaMShipGunParts
+  completetime: 4
+  materials:
+    Steel: 750
+    Plasteel: 250
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelFlare
+  result: LuaMShipGunBarrelFlare
+  categories:
+  - LuaMShipGunParts
+  completetime: 3
+  materials:
+    Steel: 400
+    Plasteel: 100
+
+# Artillery mount
+
+- type: latheRecipe
+  id: LuaMShipGunFrameArtillery
+  result: LuaMShipGunFrameArtillery
+  categories:
+  - LuaMShipGunParts
+  completetime: 15
+  materials:
+    Steel: 3000
+    Plasteel: 1000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelAK570
+  result: LuaMShipGunBarrelAK570
+  categories:
+  - LuaMShipGunParts
+  completetime: 3
+  materials:
+    Steel: 400
+    Plasteel: 100
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelDravon
+  result: LuaMShipGunBarrelDravon
+  categories:
+  - LuaMShipGunParts
+  completetime: 5
+  materials:
+    Steel: 800
+    Plasteel: 200
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelFang
+  result: LuaMShipGunBarrelFang
+  categories:
+  - LuaMShipGunParts
+  completetime: 4
+  materials:
+    Steel: 750
+    Plasteel: 250
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelAK800
+  result: LuaMShipGunBarrelAK800
+  categories:
+  - LuaMShipGunParts
+  completetime: 12
+  materials:
+    Steel: 2000
+    Plasteel: 1500
+    Plastitanium: 400
+    Iridite: 2000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelTarnyx
+  result: LuaMShipGunBarrelTarnyx
+  categories:
+  - LuaMShipGunParts
+  completetime: 12
+  materials:
+    Steel: 2000
+    Plasteel: 1500
+    Plastitanium: 400
+    Iridite: 2000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelEquinox
+  result: LuaMShipGunBarrelEquinox
+  categories:
+  - LuaMShipGunParts
+  completetime: 12
+  materials:
+    Steel: 2000
+    Plasteel: 1500
+    Plastitanium: 400
+    Iridite: 2000
+
+# Heavy artillery mount
+
+- type: latheRecipe
+  id: LuaMShipGunFrameHeavyArtillery
+  result: LuaMShipGunFrameHeavyArtillery
+  categories:
+  - LuaMShipGunParts
+  completetime: 25
+  materials:
+    Steel: 5000
+    Plasteel: 3000
+    Plastitanium: 800
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelBofors
+  result: LuaMShipGunBarrelBofors
+  categories:
+  - LuaMShipGunParts
+  completetime: 12
+  materials:
+    Steel: 2000
+    Plasteel: 1500
+    Plastitanium: 400
+    Iridite: 2000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelCyrexa
+  result: LuaMShipGunBarrelCyrexa
+  categories:
+  - LuaMShipGunParts
+  completetime: 6
+  materials:
+    Steel: 1000
+    Plasteel: 750
+    Plastitanium: 200
+    Iridite: 1000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelKargil
+  result: LuaMShipGunBarrelKargil
+  categories:
+  - LuaMShipGunParts
+  completetime: 12
+  materials:
+    Steel: 2000
+    Plasteel: 1500
+    Plastitanium: 400
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelAK820
+  result: LuaMShipGunBarrelAK820
+  categories:
+  - LuaMShipGunParts
+  completetime: 6
+  materials:
+    Steel: 1000
+    Plasteel: 750
+    Plastitanium: 200
+    Iridite: 1000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelHades
+  result: LuaMShipGunBarrelHades
+  categories:
+  - LuaMShipGunParts
+  completetime: 9
+  materials:
+    Steel: 1500
+    Plasteel: 1500
+    Plastitanium: 600
+    Iridite: 1000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelLongbow
+  result: LuaMShipGunBarrelLongbow
+  categories:
+  - LuaMShipGunParts
+  completetime: 9
+  materials:
+    Steel: 1500
+    Plasteel: 1500
+    Plastitanium: 600
+    Iridite: 1000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelR300
+  result: LuaMShipGunBarrelR300
+  categories:
+  - LuaMShipGunParts
+  completetime: 12
+  materials:
+    Steel: 2000
+    Plasteel: 1500
+    Plastitanium: 400
+    Iridite: 2000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelHydra
+  result: LuaMShipGunBarrelHydra
+  categories:
+  - LuaMShipGunParts
+  completetime: 4
+  materials:
+    Steel: 700
+    Plasteel: 500
+    Plastitanium: 150
+    Iridite: 700
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelLeviathan
+  result: LuaMShipGunBarrelLeviathan
+  categories:
+  - LuaMShipGunParts
+  completetime: 18
+  materials:
+    Steel: 3000
+    Plasteel: 3000
+    Plastitanium: 1200
+    Iridite: 2000
+
+# Mass driver cradle
+
+- type: latheRecipe
+  id: LuaMShipGunFrameMassDriver
+  result: LuaMShipGunFrameMassDriver
+  categories:
+  - LuaMShipGunParts
+  completetime: 25
+  materials:
+    Steel: 4000
+    Plasteel: 3000
+    Plastitanium: 800
+    Silver: 1000
+    Gold: 500
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelCharonette
+  result: LuaMShipGunBarrelCharonette
+  categories:
+  - LuaMShipGunParts
+  completetime: 12
+  materials:
+    Steel: 2000
+    Plasteel: 1500
+    Plastitanium: 400
+    Silver: 600
+    Gold: 300
+    Iridite: 2000
+
+# Light energy weapon frame
+
+- type: latheRecipe
+  id: LuaMShipGunFrameLightEnergy
+  result: LuaMShipGunFrameLightEnergy
+  categories:
+  - LuaMShipGunParts
+  completetime: 10
+  materials:
+    Steel: 1500
+    Plasteel: 300
+    Glass: 1000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelType35
+  result: LuaMShipGunBarrelType35
+  categories:
+  - LuaMShipGunParts
+  completetime: 8
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    Glass: 600
+    Gold: 200
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelCerberus
+  result: LuaMShipGunBarrelCerberus
+  categories:
+  - LuaMShipGunParts
+  completetime: 4
+  materials:
+    Steel: 750
+    Plasteel: 250
+    Glass: 300
+    Gold: 100
+    Iridite: 1000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelM220
+  result: LuaMShipGunBarrelM220
+  categories:
+  - LuaMShipGunParts
+  completetime: 8
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    Glass: 600
+    Gold: 200
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelPhalanx
+  result: LuaMShipGunBarrelPhalanx
+  categories:
+  - LuaMShipGunParts
+  completetime: 8
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    Glass: 600
+    Gold: 200
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelMoros
+  result: LuaMShipGunBarrelMoros
+  categories:
+  - LuaMShipGunParts
+  completetime: 8
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    Glass: 600
+    Gold: 200
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelImpulseLaser
+  result: LuaMShipGunBarrelImpulseLaser
+  categories:
+  - LuaMShipGunParts
+  completetime: 8
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    Glass: 600
+    Gold: 200
+
+# Heavy energy weapon frame
+
+- type: latheRecipe
+  id: LuaMShipGunFrameHeavyEnergy
+  result: LuaMShipGunFrameHeavyEnergy
+  categories:
+  - LuaMShipGunParts
+  completetime: 20
+  materials:
+    Steel: 3000
+    Plasteel: 2000
+    Glass: 2000
+    Gold: 500
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelType54
+  result: LuaMShipGunBarrelType54
+  categories:
+  - LuaMShipGunParts
+  completetime: 8
+  materials:
+    Steel: 1500
+    Plasteel: 500
+    Glass: 600
+    Gold: 200
+    Iridite: 2000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelPrometheus
+  result: LuaMShipGunBarrelPrometheus
+  categories:
+  - LuaMShipGunParts
+  completetime: 12
+  materials:
+    Steel: 2000
+    Plasteel: 1500
+    Plastitanium: 400
+    Glass: 900
+    Gold: 300
+    Iridite: 2000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelApollo
+  result: LuaMShipGunBarrelApollo
+  categories:
+  - LuaMShipGunParts
+  completetime: 12
+  materials:
+    Steel: 2000
+    Plasteel: 1500
+    Plastitanium: 400
+    Glass: 900
+    Gold: 300
+    Iridite: 2000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelShkval
+  result: LuaMShipGunBarrelShkval
+  categories:
+  - LuaMShipGunParts
+  completetime: 18
+  materials:
+    Steel: 3000
+    Plasteel: 3000
+    Plastitanium: 1200
+    Glass: 1500
+    Gold: 500
+    Iridite: 2000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelScylla
+  result: LuaMShipGunBarrelScylla
+  categories:
+  - LuaMShipGunParts
+  completetime: 9
+  materials:
+    Steel: 1500
+    Plasteel: 1500
+    Plastitanium: 600
+    Glass: 750
+    Gold: 250
+    Iridite: 1000
+
+# Missile launcher platform
+
+- type: latheRecipe
+  id: LuaMShipGunFrameMissilePlatform
+  result: LuaMShipGunFrameMissilePlatform
+  categories:
+  - LuaMShipGunParts
+  completetime: 15
+  materials:
+    Steel: 2500
+    Plasteel: 800
+    Plastic: 1000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelVespera
+  result: LuaMShipGunBarrelVespera
+  categories:
+  - LuaMShipGunParts
+  completetime: 4
+  materials:
+    Steel: 750
+    Plasteel: 250
+    Plastic: 300
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelVanyk
+  result: LuaMShipGunBarrelVanyk
+  categories:
+  - LuaMShipGunParts
+  completetime: 4
+  materials:
+    Steel: 750
+    Plasteel: 250
+    Plastic: 300
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelSerpent
+  result: LuaMShipGunBarrelSerpent
+  categories:
+  - LuaMShipGunParts
+  completetime: 4
+  materials:
+    Steel: 750
+    Plasteel: 250
+    Plastic: 300
+    Iridite: 1000
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelTovek
+  result: LuaMShipGunBarrelTovek
+  categories:
+  - LuaMShipGunParts
+  completetime: 6
+  materials:
+    Steel: 1000
+    Plasteel: 750
+    Plastitanium: 200
+    Plastic: 450
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelTrident
+  result: LuaMShipGunBarrelTrident
+  categories:
+  - LuaMShipGunParts
+  completetime: 3
+  materials:
+    Steel: 500
+    Plasteel: 400
+    Plastitanium: 100
+    Plastic: 250
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelPaladin
+  result: LuaMShipGunBarrelPaladin
+  categories:
+  - LuaMShipGunParts
+  completetime: 3
+  materials:
+    Steel: 400
+    Plasteel: 400
+    Plastitanium: 150
+    Plastic: 200
+    Iridite: 300
+
+- type: latheRecipe
+  id: LuaMShipGunBarrelVanquisher
+  result: LuaMShipGunBarrelVanquisher
+  categories:
+  - LuaMShipGunParts
+  completetime: 9
+  materials:
+    Steel: 1500
+    Plasteel: 1500
+    Plastitanium: 600
+    Plastic: 750
+    Iridite: 1000

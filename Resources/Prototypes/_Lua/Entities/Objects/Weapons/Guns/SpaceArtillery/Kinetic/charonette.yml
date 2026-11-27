@@ -1,6 +1,7 @@
 # Lua: ported from sector-frontier-14-ds, rebuilt on the Monolith ship weapon bases and the M381 CHARON.
 # A smaller CHARON: half the battery, slower slug, always self-recharging (no reloads, no loader needed).
-# Fires a scaled-down CHARON APHE slug: 2.5x less damage, 3x smaller blast radius.
+# Fires a scaled-down CHARON APHE slug with a 3x smaller blast radius.
+# LuaM: hits as hard as a Bofors APHE shell without going through walls, 750 m/s, 2.5 km range.
 
 - type: entity
   id: WeaponTurretCharonette
@@ -29,7 +30,7 @@
     recoil: 1500
     minAngle: 0
     maxAngle: 0
-    projectileSpeed: 400
+    projectileSpeed: 750 # LuaM: 400 > 750
     shootThermalSignature: 20000000 # ~4.5km after firing
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/Gunshots/leviathan_fire.ogg
@@ -56,7 +57,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.5,-0.5,0.5,0.5 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1000
         mask:
         - MachineMask
@@ -92,9 +93,13 @@
   - type: Projectile
     damage:
       types:
-        Structural: 2800 # CHARON APHE 7000 / 2.5
-        Blunt: 1200 # 3000 / 2.5
-    penetrationThreshold: 3200 # 8000 / 2.5
+        Structural: 14000 # LuaM: 2800 > 14000, same as the Bofors APHE shell
+        Blunt: 300 # LuaM: 1200 > 300
+    penetrationThreshold: 0 # LuaM: 3200 > 0, does not go through walls unlike the Bofors shell
+  # LuaM-start: 2.5 km range at 750 m/s
+  - type: TimedDespawn
+    lifetime: 3.34
+  # LuaM-end
   - type: RadarBlip
     scale: 1
     shape: circle
