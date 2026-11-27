@@ -36,6 +36,9 @@ public sealed partial class RadarBlipsSystem : EntitySystem
     /// </summary>
     private readonly Dictionary<NetEntity, int> _blipIndex = new();
     private bool _blipIndexDirty = true;
+    private uint _cachedBlipFrame = uint.MaxValue;
+    private int _cachedBlipVersion = -1;
+    private int _blipsVersion;
     // LuaM-end
 
     public override void Initialize()
@@ -53,6 +56,7 @@ public sealed partial class RadarBlipsSystem : EntitySystem
         _hitscans = ev.HitscanLines;
         _lastUpdatedTime = _timing.CurTime;
         _blipIndexDirty = true; // LuaM
+        _blipsVersion++; // LuaM
     }
 
     private void RemoveBlip(BlipRemovalEvent args)
@@ -64,6 +68,7 @@ public sealed partial class RadarBlipsSystem : EntitySystem
 
         _blips.RemoveAt(idx);
         _blipIndexDirty = true;
+        _blipsVersion++;
         // LuaM-end
     }
 
@@ -89,6 +94,14 @@ public sealed partial class RadarBlipsSystem : EntitySystem
     /// </summary>
     public List<BlipData> GetCurrentBlips()
     {
+        // LuaM-start
+        if (_cachedBlipFrame == _timing.CurFrame && _cachedBlipVersion == _blipsVersion)
+            return _cachedBlipData;
+
+        _cachedBlipFrame = _timing.CurFrame;
+        _cachedBlipVersion = _blipsVersion;
+        // LuaM-end
+
         // clear the cache and bail early if the data is stale
         _cachedBlipData.Clear();
         if (_timing.CurTime.TotalSeconds - _lastUpdatedTime.TotalSeconds > BlipStaleSeconds)

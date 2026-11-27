@@ -20,7 +20,9 @@ public partial class ShuttleNavControl
     private HashSet<NetEntity> _gunnerySelected = new();
     private readonly Dictionary<NetEntity, Color> _gunneryBlipColors = new();
     private TimeSpan _nextGunneryCursor;
-
+    private static readonly TimeSpan GunneryLosInterval = TimeSpan.FromSeconds(0.1);
+    private readonly Dictionary<NetEntity, bool> _gunneryLos = new();
+    private TimeSpan _nextGunneryLos;
     /// <summary>
     /// Whether the fire button is held over the radar.
     /// </summary>
@@ -48,6 +50,7 @@ public partial class ShuttleNavControl
     public void SetGunneryControllables(FireControllableEntry[]? controllables)
     {
         _gunneryControllables = controllables;
+        _gunneryLos.Clear();
     }
 
     public void SetGunnerySelection(HashSet<NetEntity> selected)
@@ -70,6 +73,11 @@ public partial class ShuttleNavControl
             _gunneryBlipColors[blip.NetUid] = blip.Config.Color;
         }
 
+        var now = Timing.RealTime;
+        var recheck = now >= _nextGunneryLos;
+        if (recheck)
+            _nextGunneryLos = now + GunneryLosInterval;
+
         var physics = EntManager.System<SharedPhysicsSystem>();
         foreach (var controllable in _gunneryControllables)
         {
@@ -81,10 +89,14 @@ public partial class ShuttleNavControl
             if (direction.LengthSquared() <= 0.001f)
                 continue;
 
-            var ray = new CollisionRay(worldPos, direction.Normalized(), (int) CollisionGroup.Impassable);
-            var results = physics.IntersectRay(mapId, ray, direction.Length(), ignoredEnt: _coordinates?.EntityId);
+            if (!controllable.IgnoresLos && (recheck || !_gunneryLos.ContainsKey(controllable.NetEntity)))
+            {
+                var ray = new CollisionRay(worldPos, direction.Normalized(), (int) CollisionGroup.Impassable);
+                _gunneryLos[controllable.NetEntity] = !physics.IntersectRay(mapId, ray, direction.Length(), ignoredEnt: _coordinates?.EntityId).Any();
+            }
 
-            if ((!results.Any() || controllable.IgnoresLos) && _gunneryBlipColors.TryGetValue(controllable.NetEntity, out var color))
+            var clear = controllable.IgnoresLos || _gunneryLos.GetValueOrDefault(controllable.NetEntity);
+            if (clear && _gunneryBlipColors.TryGetValue(controllable.NetEntity, out var color))
                 handle.DrawLine(Vector2.Transform(worldPos, worldToView), cursorViewPos, color.WithAlpha(0.3f));
         }
     }

@@ -69,17 +69,17 @@ public sealed partial class HudWindowAccentController : UIController
             }
         }
 
-        // runs every frame: the stale keys go through a reused list instead of a new copy of the keys
-        _stale.Clear();
-        foreach (var key in _seen.Keys)
+        if (_seen.Count > _currentUis.Count)
         {
-            if (!_currentUis.Contains(key))
-                _stale.Add(key);
-        }
+            _stale.Clear();
+            foreach (var key in _seen.Keys)
+            {
+                if (!_currentUis.Contains(key))
+                    _stale.Add(key);
+            }
 
-        foreach (var key in _stale)
-        {
-            _seen.Remove(key);
+            foreach (var key in _stale)
+                _seen.Remove(key);
         }
 
         for (var i = _pending.Count - 1; i >= 0; i--)
@@ -146,9 +146,16 @@ public sealed partial class HudWindowAccentController : UIController
                 && window.Position.X + size.X <= screen.X && window.Position.Y + size.Y <= screen.Y)
                 continue;
 
-            var fitted = System.Numerics.Vector2.Max(System.Numerics.Vector2.Min(size, max), window.MinSize);
-            window.SetSize = fitted;
-            LayoutContainer.SetPosition(window, System.Numerics.Vector2.Max((screen - fitted) / 2f, System.Numerics.Vector2.Zero));
+            var fitted = size;
+            if (size.X > max.X || size.Y > max.Y)
+            {
+                fitted = System.Numerics.Vector2.Max(System.Numerics.Vector2.Min(size, max), window.MinSize);
+                window.SetSize = fitted;
+            }
+
+            var position = System.Numerics.Vector2.Clamp(window.Position, System.Numerics.Vector2.Zero, System.Numerics.Vector2.Max(screen - fitted, System.Numerics.Vector2.Zero));
+            if (position != window.Position)
+                LayoutContainer.SetPosition(window, position);
         }
     }
 
@@ -157,7 +164,8 @@ public sealed partial class HudWindowAccentController : UIController
         if (control is not BaseWindow window)
             return;
 
-        _fit.Add((window, 0));
+        if (window is not Content.Client.UserInterface.Systems.Storage.Controls.StorageWindow)
+            _fit.Add((window, 0));
 
         if (_owners.TryGetValue(window, out var known))
         {

@@ -1,0 +1,4 @@
+- files: ["popout.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made by LuaCorp for the window pop-out button"
+  source: "https://github.com/okhrimm/Monolith-DS"

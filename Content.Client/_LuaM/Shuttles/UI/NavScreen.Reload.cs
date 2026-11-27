@@ -80,7 +80,9 @@ public sealed partial class NavScreen
                 progress = Math.Clamp((float) ((now - reload.Start) / (reload.End - reload.Start)), 0f, 1f);
             }
 
-            bar.Value = progress ?? 1f;
+            var value = progress ?? 1f;
+            if (bar.Value != value)
+                bar.Value = value;
 
             var style = progress == null ? ReloadReadyStyle : ReloadChargingStyle;
             if (bar.ForegroundStyleBoxOverride != style)

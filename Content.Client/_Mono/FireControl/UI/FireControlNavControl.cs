@@ -38,6 +38,12 @@ public sealed class FireControlNavControl : ShuttleNavControl
     private float _lastCursorUpdateTime = 0f;
     private const float CursorUpdateInterval = 0.1f; // 10 updates per second
 
+    // LuaM-start
+    private static readonly TimeSpan LosInterval = TimeSpan.FromSeconds(0.1);
+    private readonly Dictionary<NetEntity, bool> _los = new();
+    private TimeSpan _nextLos;
+    // LuaM-end
+
     public FireControlNavControl() : base(64f, 512f, 512f)
     {
         IoCManager.InjectDependencies(this);
@@ -85,6 +91,13 @@ public sealed class FireControlNavControl : ShuttleNavControl
         foreach (var blip in blips)
             _blipColors[blip.NetUid] = blip.Config.Color;
 
+        // LuaM-start
+        var now = Timing.RealTime;
+        var recheck = now >= _nextLos;
+        if (recheck)
+            _nextLos = now + LosInterval;
+        // LuaM-end
+
         if (_controllables != null)
         {
             foreach (var controllable in _controllables)
@@ -100,12 +113,16 @@ public sealed class FireControlNavControl : ShuttleNavControl
                     var cursorWorldPos = Vector2.Transform(cursorViewPos, viewToWorld);
 
                     var direction = cursorWorldPos - worldPos;
-                    var ray = new CollisionRay(worldPos, direction.Normalized(), (int)CollisionGroup.Impassable);
+                    // LuaM-start
+                    if (!controllable.IgnoresLos && (recheck || !_los.ContainsKey(controllable.NetEntity)))
+                    {
+                        var ray = new CollisionRay(worldPos, direction.Normalized(), (int)CollisionGroup.Impassable);
+                        _los[controllable.NetEntity] = !_physics.IntersectRay(xform.MapID, ray, direction.Length(), ignoredEnt: _coordinates?.EntityId).Any();
+                    }
 
-                    var results = _physics.IntersectRay(xform.MapID, ray, direction.Length(), ignoredEnt: _coordinates?.EntityId);
-
-                    if ((!results.Any() || controllable.IgnoresLos) && _blipColors.TryGetValue(controllable.NetEntity, out var color))
+                    if ((controllable.IgnoresLos || _los.GetValueOrDefault(controllable.NetEntity)) && _blipColors.TryGetValue(controllable.NetEntity, out var color))
                         handle.DrawLine(Vector2.Transform(worldPos, worldToView), cursorViewPos, color.WithAlpha(0.3f));
+                    // LuaM-end
                 }
             }
         }
@@ -115,6 +132,7 @@ public sealed class FireControlNavControl : ShuttleNavControl
     {
         _activeConsole = console;
         _controllables = controllables;
+        _los.Clear(); // LuaM
     }
 
     public void UpdateSelectedWeapons(HashSet<NetEntity> selectedWeapons)

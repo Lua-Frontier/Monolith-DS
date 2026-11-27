@@ -211,6 +211,26 @@ public sealed partial class StorageWindow : BaseWindow
         }
     }
 
+    // LuaM-start
+    public void CloseToParent()
+    {
+        var position = Position;
+        var containerSystem = _entity.System<SharedContainerSystem>();
+        Close();
+
+        if (StorageEntity != null &&
+            containerSystem.TryGetContainingContainer(StorageEntity.Value, out var container) &&
+            _entity.TryGetComponent(container.Owner, out StorageComponent? storage) &&
+            storage.Container.Contains(StorageEntity.Value) &&
+            _entity.System<UserInterfaceSystem>().TryGetOpenUi<StorageBoundUserInterface>(container.Owner,
+                StorageComponent.StorageUiKey.Key,
+                out var parentBui))
+        {
+            parentBui.Show(position);
+        }
+    }
+    // LuaM-end
+
     private void BuildGridRepresentation()
     {
         if (!_entity.TryGetComponent<StorageComponent>(StorageEntity, out var comp) || comp.Grid.Count == 0)

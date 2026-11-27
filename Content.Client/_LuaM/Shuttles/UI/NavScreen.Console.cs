@@ -41,19 +41,6 @@ public sealed partial class NavScreen
         ModeSwitch.AnchorLocked = AnchorOn.Disabled;
     }
 
-    /// <summary>
-    /// Writes a label text only when it changed: every write invalidates the layout of the whole window,
-    /// and the readouts are refreshed every frame.
-    /// </summary>
-    private static bool SetText(Label label, string text)
-    {
-        if (label.Text == text)
-            return false;
-
-        label.Text = text;
-        return true;
-    }
-
     private int _coordsCaption;
     private float _coordsFullWidth = -1;
     private float _coordsShortWidth;
