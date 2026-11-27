@@ -587,7 +587,7 @@
     # - StaticGrenades # Commented by LuaM
     - RoundstartShipgunAmmo # Mono
     dynamicPacks:
-    - LuaMShipGunAssembly # LuaM
+    - LuaMShipGunAssemblyCivilian # LuaM
     - DynamicAmmoRecipePack
     # Mono start
     # - ResearchedExplosives # Commented by LuaM

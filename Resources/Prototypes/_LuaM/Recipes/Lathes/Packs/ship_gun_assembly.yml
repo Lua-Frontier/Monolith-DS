@@ -1,5 +1,37 @@
+# TSFMC branch only.
 - type: latheRecipePack
-  id: LuaMShipGunAssembly
+  id: LuaMShipGunAssemblyTsf
+  recipes:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
+  - LuaMShipGunFrameLightEnergy
+  - LuaMShipGunBarrelRAC30
+  - LuaMShipGunBarrelType35
+  - LuaMShipGunBarrelCerberus
+  - LuaMShipGunFrameMissilePlatform
+  - LuaMShipGunFrameArtillery
+  - LuaMShipGunBarrelPaladin
+  - LuaMShipGunBarrelTarnyx
+  - LuaMShipGunBarrelEquinox
+  - LuaMShipGunFrameHeavyEnergy
+  - LuaMShipGunBarrelType54
+  - LuaMShipGunBarrelPrometheus
+  - LuaMShipGunFrameHeavyArtillery
+  - LuaMShipGunBarrelBofors
+  - LuaMShipGunBarrelCyrexa
+  - LuaMShipGunBarrelLongbow
+  - LuaMShipGunBarrelAK820
+  - LuaMShipGunBarrelScylla
+  - MachineGCSUltraCircuitboard
+  - MachineGCSExtraCircuitboard
+
+# PDV branch only.
+- type: latheRecipePack
+  id: LuaMShipGunAssemblyPdv
   recipes:
   - LuaMShipGunChargerMk1
   - LuaMShipGunChargerMk2
@@ -21,38 +53,89 @@
   - LuaMShipGunBarrelR300
   - LuaMShipGunBarrelHydra
   - LuaMShipGunBarrelLeviathan
+  - MachineGCSUltraCircuitboard
+  - MachineGCSExtraCircuitboard
+
+# USSP branch only, shared by the USSP and Viper Group lathes.
+- type: latheRecipePack
+  id: LuaMShipGunAssemblyUssp
+  recipes:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
+  - LuaMShipGunFrameArtillery
+  - LuaMShipGunFrameLightEnergy
+  - LuaMShipGunBarrelAdder
+  - LuaMShipGunBarrelFang
+  - LuaMShipGunBarrelImpulseLaser
+  - LuaMShipGunFrameMissilePlatform
+  - LuaMShipGunBarrelPaladin
+  - LuaMShipGunBarrelTrident
+  - LuaMShipGunBarrelVanquisher
+  - LuaMShipGunFrameHeavyArtillery
+  - LuaMShipGunBarrelBofors
+  - LuaMShipGunBarrelCyrexa
+  - LuaMShipGunBarrelHydra
+  - LuaMShipGunBarrelLeviathan
+  - MachineGCSUltraCircuitboard
+
+# MMC branch only.
+- type: latheRecipePack
+  id: LuaMShipGunAssemblyMmc
+  recipes:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
   - LuaMShipGunFrameLightEnergy
   - LuaMShipGunBarrelRAC30
-  - LuaMShipGunBarrelType35
-  - LuaMShipGunBarrelCerberus
-  - LuaMShipGunBarrelPaladin
-  - LuaMShipGunBarrelTarnyx
-  - LuaMShipGunBarrelEquinox
-  - LuaMShipGunFrameHeavyEnergy
-  - LuaMShipGunBarrelType54
-  - LuaMShipGunBarrelPrometheus
-  - LuaMShipGunBarrelAK820
-  - LuaMShipGunBarrelScylla
-  - LuaMShipGunBarrelImpulseLaser
   - LuaMShipGunBarrelAC35
+  - LuaMShipGunBarrelType35
+  - LuaMShipGunFrameHeavyArtillery
+  - LuaMShipGunFrameMissilePlatform
+  - LuaMShipGunBarrelBofors
+  - LuaMShipGunBarrelCyrexa
+  - LuaMShipGunBarrelTrident
+  - LuaMShipGunFrameHeavyEnergy
+  - LuaMShipGunBarrelAK820
   - LuaMShipGunBarrelHades
   - LuaMShipGunBarrelApollo
+  - MachineGCSUltraCircuitboard
+
+# Civilian branch only, for the military, ammo and mercenary techfabs.
+- type: latheRecipePack
+  id: LuaMShipGunAssemblyCivilian
+  recipes:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
+  - LuaMShipGunFrameArtillery
   - LuaMShipGunBarrelL85
   - LuaMShipGunBarrelFlare
   - LuaMShipGunBarrelAK570
   - LuaMShipGunBarrelDravon
+  - LuaMShipGunFrameMissilePlatform
   - LuaMShipGunBarrelVespera
   - LuaMShipGunBarrelVanyk
   - LuaMShipGunBarrelTovek
+  - LuaMShipGunFrameLightEnergy
   - LuaMShipGunBarrelM220
   - LuaMShipGunBarrelPhalanx
+  - LuaMShipGunFrameHeavyArtillery
   - LuaMShipGunFrameMassDriver
   - LuaMShipGunBarrelAK800
   - LuaMShipGunBarrelKargil
   - LuaMShipGunBarrelCharonette
-  - MachineGCSUltraCircuitboard
-  - MachineGCSExtraCircuitboard
   - MachineGCSHighCircuitboard
+  - MilitaryTechfabMachineCircuitboard
 
 # Printed without research on the security techfab of Colossus.
 - type: latheRecipePack

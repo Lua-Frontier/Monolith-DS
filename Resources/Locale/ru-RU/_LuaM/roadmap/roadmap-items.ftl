@@ -9,6 +9,7 @@ roadmap-item-optimization = Оптимизация
 roadmap-item-circle-squad = Отряд «Круг»
 roadmap-item-corporations = Дальнейшее развитие корпораций
 roadmap-item-martial-arts = Боевые искусства
+roadmap-item-ship-guns = Создание корабельных орудий
 roadmap-item-surgery = Улучшение хирургии
 roadmap-item-prestige-ranks = Престижные ранги для ролей
 roadmap-item-fauna-ai = Продвинутый ИИ фауны

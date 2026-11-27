@@ -208,6 +208,7 @@
     - SecurityEquipment
     - SmartGun
     - PunkGear
+    - LuaMShipGunAssemblyTsf
 # LuaM-end.
   - type: EmagLatheRecipes
     emagStaticPacks:
@@ -258,7 +259,7 @@
     - StaticGrenades
     - MonoAttachmentsStatic # Mono
     dynamicPacks:
-    - LuaMShipGunAssembly # LuaM
+    - LuaMShipGunAssemblyCivilian # LuaM
     - NFMercenaryTechfabDeprecated
     #- DynamicAmmoRecipePack
     # Mono start
@@ -337,7 +338,7 @@
     - StaticGrenades
     - MonoAttachmentsStatic # Mono
     dynamicPacks:
-    - LuaMShipGunAssembly # LuaM
+    - LuaMShipGunAssemblyCivilian # LuaM
     - NFHackedMercenaryTechfabDeprecated
    # - DynamicAmmoRecipePack
     - SmartGun # Goobstation

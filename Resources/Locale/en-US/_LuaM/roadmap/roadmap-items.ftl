@@ -9,6 +9,7 @@ roadmap-item-optimization = Optimization
 roadmap-item-circle-squad = The «Circle» squad
 roadmap-item-corporations = Further development of the corporations
 roadmap-item-martial-arts = Martial arts
+roadmap-item-ship-guns = Ship gun crafting
 roadmap-item-surgery = Surgery improvements
 roadmap-item-prestige-ranks = Prestige ranks for roles
 roadmap-item-fauna-ai = Advanced fauna AI

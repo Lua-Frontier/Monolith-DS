@@ -22,6 +22,11 @@
     Glass: 900
 
 - type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: MilitaryTechfabMachineCircuitboard
+  result: MilitaryTechfabMachineCircuitboard
+
+- type: latheRecipe
   parent: BaseCircuitboardRecipe
   id: MachineAmmoLoaderCircuitboard
   result: MachineAmmoLoaderCircuitboard
