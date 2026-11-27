@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Client.Lobby;
+using Content.Client.UserInterface.Systems.Storage.Controls;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
@@ -35,9 +36,11 @@ public sealed partial class WindowMemoryController : UIController, IOnStateEnter
 
     private static string Key(BaseWindow window) => window.GetType().FullName ?? window.GetType().Name;
 
+    private static bool Skip(Control control) => control is StorageWindow;
+
     private void OnAdded(Control control)
     {
-        if (control is not BaseWindow window)
+        if (control is not BaseWindow window || Skip(window))
             return;
 
         if (!_saved.ContainsKey(Key(window)))
@@ -54,7 +57,7 @@ public sealed partial class WindowMemoryController : UIController, IOnStateEnter
 
     private void OnRemoved(Control control)
     {
-        if (control is not BaseWindow window)
+        if (control is not BaseWindow window || Skip(window))
             return;
 
         var index = _pending.FindIndex(p => p.Window == window);

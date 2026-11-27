@@ -45,6 +45,7 @@ public static class LobbyHudStyles
     public const string Note = "LuaMHudNote";
     public const string TabTitle = "LuaMHudTab";
     public const string TraitTitle = "LuaMHudTraitTitle";
+    public const string TraitCard = "LuaMHudTraitCard";
     public const string NoteLead = "LuaMHudNoteLead";
 
     private const string Fonts = "/Fonts/_LuaM/";
@@ -210,6 +211,9 @@ public static class LobbyHudStyles
                 .Prop(Label.StylePropertyFontColor, HudPalette.Fg),
             Element<Label>().Class(TraitTitle)
                 .Prop(Label.StylePropertyFont, UiFont(resCache, 18))
+                .Prop(Label.StylePropertyFontColor, HudPalette.Text),
+            Element<Label>().Class(TraitCard)
+                .Prop(Label.StylePropertyFont, ui13)
                 .Prop(Label.StylePropertyFontColor, HudPalette.Text),
             Element<Label>().Class(Note)
                 .Prop(Label.StylePropertyFont, MonoFont(resCache, 11))

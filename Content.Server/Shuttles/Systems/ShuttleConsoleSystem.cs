@@ -140,8 +140,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     /// </summary>
     public void RefreshShuttleConsoles(EntityUid gridUid)
     {
-        var exclusions = new List<ShuttleExclusionObject>();
-        GetExclusions(ref exclusions);
+// LuaM-commented-start:
+//        var exclusions = new List<ShuttleExclusionObject>();
+//        GetExclusions(ref exclusions);
+// LuaM-commented-end
         _consoles.Clear();
         _lookup.GetChildEntities(gridUid, _consoles);
         DockingInterfaceState? dockState = null;
@@ -157,8 +159,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     /// </summary>
     public void RefreshShuttleConsoles()
     {
-        var exclusions = new List<ShuttleExclusionObject>();
-        GetExclusions(ref exclusions);
+// LuaM-commented-start:
+//        var exclusions = new List<ShuttleExclusionObject>();
+//        GetExclusions(ref exclusions);
+// LuaM-commented-end
         var query = AllEntityQuery<ShuttleConsoleComponent>();
         DockingInterfaceState? dockState = null;
 

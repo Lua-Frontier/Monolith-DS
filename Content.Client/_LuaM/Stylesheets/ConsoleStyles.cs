@@ -224,7 +224,7 @@ public static class ConsoleStyles
         {
             if (child is Button { Text: { } text } button && button.StyleClasses.Any(c => c.StartsWith("LuaM")))
                 button.Text = text.ToUpperInvariant();
-            else if (child is Label { Text: { } label } caption && (caption.HasStyleClass(Caption) || caption.HasStyleClass(Key)))
+            else if (child is Label { Text: { } label } caption && (caption.HasStyleClass(Caption) || caption.HasStyleClass(Key) || caption.HasStyleClass(HeaderLabel) || caption.HasStyleClass(HazardLabel)))
                 caption.Text = label.ToUpperInvariant();
 
             Caps(child);

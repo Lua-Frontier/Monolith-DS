@@ -17,6 +17,7 @@ public sealed partial class FireControlSystem
     /// List of active guided missiles that need cursor position updates
     /// </summary>
     private readonly HashSet<EntityUid> _activeMissiles = new();
+    private readonly HashSet<EntityUid> _activeConsoles = new(); // LuaM
 
     /// <summary>
     /// Map of console entities to their current mouse positions
@@ -180,6 +181,12 @@ public sealed partial class FireControlSystem
 // LuaM-start:
         if (_activeMissiles.Count == 0 && _consoleMousePositions.Count == 0)
             return;
+
+        if (_activeMissiles.Count == 0)
+        {
+            _consoleMousePositions.Clear();
+            return;
+        }
 // LuaM-end.
 
         // Update target positions for active missiles based on the current cursor position
@@ -217,7 +224,8 @@ public sealed partial class FireControlSystem
     private void CleanupConsolePositions()
     {
         // Get all consoles that are actually controlling missiles
-        var activeConsoles = new HashSet<EntityUid>();
+        var activeConsoles = _activeConsoles; // LuaM: new HashSet > reused buffer
+        activeConsoles.Clear(); // LuaM
         foreach (var missileUid in _activeMissiles)
         {
             if (TryComp<TargetGuidedComponent>(missileUid, out var guidedComp) &&

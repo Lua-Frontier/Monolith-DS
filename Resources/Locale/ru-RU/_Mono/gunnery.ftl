@@ -2,7 +2,8 @@ gunnery-window-title = Управление орудиями
 gunnery-window-disconnected = ОТКЛЮЧЕНО
 gunnery-window-connected = ПОДКЛЮЧЕНО
 gunnery-select-all = Выбрать всё
-gunnery-unselect-all = Отменить выбор
+# LuaM: Отменить выбор > Снять выбор
+gunnery-unselect-all = Снять выбор
 gunnery-guns = Орудия
 gunnery-shield-label = Состояние щита
 gunnery-iff-search = Поиск IFF

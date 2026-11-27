@@ -33,7 +33,12 @@ public sealed class TraitsEditor : BoxContainer
     private readonly Label _subtitle;
     private readonly Label _points;
     private readonly LineEdit _search;
+    private const string SplitCategory = "Physical";
+
     private readonly GridContainer _cards;
+    private readonly BoxContainer _split;
+    private readonly BoxContainer _positive;
+    private readonly BoxContainer _negative;
     private readonly Label _empty;
     private readonly BoxContainer _details;
     private List<TraitCategoryView> _data = new();
@@ -126,7 +131,17 @@ public sealed class TraitsEditor : BoxContainer
             },
         };
 
-        _cards = new GridContainer { Columns = 2, HorizontalExpand = true, HSeparationOverride = 6, VSeparationOverride = 6 };
+        _cards = new GridContainer { Columns = 2, HorizontalExpand = true, HSeparationOverride = 4, VSeparationOverride = 4 };
+        _positive = new BoxContainer { Orientation = LayoutOrientation.Vertical, HorizontalExpand = true, SeparationOverride = 4 };
+        _negative = new BoxContainer { Orientation = LayoutOrientation.Vertical, HorizontalExpand = true, SeparationOverride = 4 };
+        _split = new BoxContainer
+        {
+            Orientation = LayoutOrientation.Horizontal,
+            HorizontalExpand = true,
+            SeparationOverride = 4,
+            Visible = false,
+            Children = { _positive, _negative },
+        };
         _empty = new Label
         {
             Text = Loc.GetString("traits-editor-empty"),
@@ -157,7 +172,7 @@ public sealed class TraitsEditor : BoxContainer
                             Orientation = LayoutOrientation.Vertical,
                             HorizontalExpand = true,
                             Margin = new Thickness(0, 0, 6, 0),
-                            Children = { _cards, _empty },
+                            Children = { _cards, _split, _empty },
                         },
                     },
                 },
@@ -263,6 +278,8 @@ public sealed class TraitsEditor : BoxContainer
     private void RebuildCards()
     {
         _cards.RemoveAllChildren();
+        _positive.RemoveAllChildren();
+        _negative.RemoveAllChildren();
         var search = _search.Text.Trim();
         var category = _data.FirstOrDefault(c => c.Id == _current);
 
@@ -300,9 +317,31 @@ public sealed class TraitsEditor : BoxContainer
             }
         }
 
-        foreach (var (cat, trait) in traits)
+        var split = search.Length == 0 && category?.Id == SplitCategory && traits.Count > 0;
+        _cards.Visible = !split;
+        _split.Visible = split;
+
+        if (split)
         {
-            _cards.AddChild(CreateCard(trait, category == null || search.Length > 0 ? cat.Name : null));
+            traits = traits.Where(x => x.Trait.Proto.Cost >= 0)
+                .OrderByDescending(x => x.Trait.Proto.Cost)
+                .Concat(traits.Where(x => x.Trait.Proto.Cost < 0).OrderBy(x => x.Trait.Proto.Cost))
+                .ToList();
+
+            _positive.AddChild(CreateColumnHeader(Loc.GetString("traits-editor-positive"), HudPalette.Fg));
+            _negative.AddChild(CreateColumnHeader(Loc.GetString("traits-editor-negative"), HudPalette.Good));
+
+            foreach (var (_, trait) in traits)
+            {
+                (trait.Proto.Cost >= 0 ? _positive : _negative).AddChild(CreateCard(trait, null));
+            }
+        }
+        else
+        {
+            foreach (var (cat, trait) in traits)
+            {
+                _cards.AddChild(CreateCard(trait, category == null || search.Length > 0 ? cat.Name : null));
+            }
         }
 
         _empty.Visible = traits.Count == 0;
@@ -387,6 +426,17 @@ public sealed class TraitsEditor : BoxContainer
         _details.AddChild(action);
     }
 
+    private static Control CreateColumnHeader(string text, Color color)
+    {
+        return new Label
+        {
+            Text = text.ToUpperInvariant(),
+            StyleClasses = { LobbyHudStyles.Mono },
+            FontColorOverride = color,
+            Margin = new Thickness(4, 0, 0, 2),
+        };
+    }
+
     private Control CreateCard(TraitView trait, string? categoryName)
     {
         var selected = trait.State == TraitState.Selected;
@@ -404,6 +454,8 @@ public sealed class TraitsEditor : BoxContainer
                 selected ? HudPalette.OrangeDark : HudPalette.PanelHover,
                 selected ? HudPalette.Orange : HudPalette.BorderBright,
                 selected ? HudPalette.Orange : null);
+        normal.SetContentMarginOverride(StyleBox.Margin.All, 3);
+        hover.SetContentMarginOverride(StyleBox.Margin.All, 3);
 
         var card = new ContainerButton
         {
@@ -431,11 +483,11 @@ public sealed class TraitsEditor : BoxContainer
             _ => ("0", HudPalette.TextDim),
         };
 
-        var body = new BoxContainer { Orientation = LayoutOrientation.Vertical, Margin = new Thickness(12, 6, 10, 6), SeparationOverride = 2 };
+        var body = new BoxContainer { Orientation = LayoutOrientation.Vertical, Margin = new Thickness(8, 3, 6, 3), SeparationOverride = 2 };
         body.AddChild(new BoxContainer
         {
             Orientation = LayoutOrientation.Horizontal,
-            SeparationOverride = 10,
+            SeparationOverride = 8,
             Children =
             {
                 new HudShape { Status = HudStatus.Warning, Visible = blocked },
@@ -444,14 +496,14 @@ public sealed class TraitsEditor : BoxContainer
                     Text = Loc.GetString(trait.Proto.Name),
                     HorizontalExpand = true,
                     ClipText = true,
-                    StyleClasses = { LobbyHudStyles.BodyBold },
+                    StyleClasses = { LobbyHudStyles.TraitCard },
                     FontColorOverride = selected ? HudPalette.Orange : blocked ? StyleBoxLamp.Mix(HudPalette.Bad, HudPalette.Text, 0.6f) : HudPalette.Text,
                 },
                 new PanelContainer
                 {
                     VerticalAlignment = VAlignment.Center,
                     PanelOverride = new StyleBoxFlat { BackgroundColor = HudPalette.Background, BorderColor = costColor, BorderThickness = new Thickness(1) },
-                    Children = { new Label { Text = costText, StyleClasses = { LobbyHudStyles.Mono }, FontColorOverride = costColor, Margin = new Thickness(7, 1) } },
+                    Children = { new Label { Text = costText, StyleClasses = { LobbyHudStyles.Mono }, FontColorOverride = costColor, Margin = new Thickness(5, 0) } },
                 },
             },
         });

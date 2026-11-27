@@ -41,9 +41,20 @@ public sealed partial class CloseRecentWindowUIController : UIController
         for (int i=recentlyInteractedWindows.Count-1; i>=0; i--)
         {
             var window = recentlyInteractedWindows[i];
+            // LuaM-start
+            if (window.IsOpen && !IsShown(window))
+                continue;
+            // LuaM-end
             recentlyInteractedWindows.RemoveAt(i); // Should always be removed as either the reference is stale or we're closing it
             if (window.IsOpen)
             {
+                // LuaM-start
+                if (window is Content.Client.UserInterface.Systems.Storage.Controls.StorageWindow storage)
+                {
+                    storage.CloseToParent();
+                    return;
+                }
+                // LuaM-end
                 window.Close();
                 return;
             }
@@ -101,6 +112,19 @@ public sealed partial class CloseRecentWindowUIController : UIController
         recentlyInteractedWindows.Add(window);
     }
 
+    // LuaM-start
+    private static bool IsShown(Control control)
+    {
+        for (var current = control; current != null; current = current.Parent)
+        {
+            if (!current.Visible)
+                return false;
+        }
+
+        return true;
+    }
+    // LuaM-end
+
     private BaseWindow? GetWindowForControl(Control? control)
     {
         if (control == null)
@@ -131,7 +155,7 @@ public sealed partial class CloseRecentWindowUIController : UIController
         for (var i = recentlyInteractedWindows.Count - 1; i >= 0; i--)
         {
             var window = recentlyInteractedWindows[i];
-            if (window.IsOpen)
+            if (window.IsOpen && IsShown(window)) // LuaM: && IsShown
                 return true;
 
             // continue going down the list, hoping to find a still-open window
