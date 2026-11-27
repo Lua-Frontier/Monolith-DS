@@ -208,7 +208,7 @@
     - SecurityEquipment
     - SmartGun
     - PunkGear
-    - LuaMShipGunAssembly
+    - LuaMShipGunAssemblyTsf
 # LuaM-end.
   - type: EmagLatheRecipes
     emagStaticPacks:

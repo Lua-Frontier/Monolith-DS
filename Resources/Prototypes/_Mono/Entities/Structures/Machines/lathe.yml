@@ -188,7 +188,7 @@
     - GlassesContractor
     - TechDiskRecipes
     - MonoViperGroupDynamic
-    - LuaMShipGunAssembly
+    - LuaMShipGunAssemblyUssp
     # LuaM-end
   - type: CompanyAccessReader # LuaM
     requiredCompanies:
@@ -276,7 +276,7 @@
     - MonoUSSPMiscDynamic
     - MonoUSSPWeaponsDynamicRanged
     - MonoUSSPVouchersDynamic
-    - LuaMShipGunAssembly
+    - LuaMShipGunAssemblyUssp
     # LuaM-end.
   - type: MaterialStorage
     whitelist:
@@ -362,7 +362,7 @@
     - PunkGear
     - BluespaceAirTanks
     - GlassesContractor
-    - LuaMShipGunAssembly
+    - LuaMShipGunAssemblyMmc
     # LuaM-end
   - type: MaterialStorage
     whitelist:
