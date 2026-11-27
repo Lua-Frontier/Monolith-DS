@@ -532,7 +532,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: TimedDespawn
-    lifetime: 2.11 # LuaM: 4 > 2.11, same range at the faster muzzle speed
+    lifetime: 2.58 # LuaM: 4 > 2.58, same range at the faster muzzle speed
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger

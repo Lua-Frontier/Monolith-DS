@@ -666,7 +666,7 @@
         layer:
         - MachineLayer
   - type: Gun
-    projectileSpeed: 550 # LuaM: 290 > 550
+    projectileSpeed: 450 # LuaM: 290 > 450
     minAngle: 0
     maxAngle: 7
     fireRate: 6
