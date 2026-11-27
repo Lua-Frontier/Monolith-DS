@@ -70,7 +70,7 @@
     - PunkGear
     - BluespaceAirTanks
     - GlassesContractor
-    - LuaMShipGunAssembly
+    - LuaMShipGunAssemblyCivilian
     # LuaM-end
   - type: MaterialStorage
     whitelist:

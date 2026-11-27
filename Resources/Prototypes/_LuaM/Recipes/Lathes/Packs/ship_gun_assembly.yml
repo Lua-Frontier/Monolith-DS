@@ -53,6 +53,37 @@
   - MachineGCSUltraCircuitboard
   - MachineGCSExtraCircuitboard
   - MachineGCSHighCircuitboard
+  - MilitaryTechfabMachineCircuitboard
+
+# Civilian branch only: the military techfab must not print faction guns from a faction server.
+- type: latheRecipePack
+  id: LuaMShipGunAssemblyCivilian
+  recipes:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
+  - LuaMShipGunFrameArtillery
+  - LuaMShipGunBarrelL85
+  - LuaMShipGunBarrelFlare
+  - LuaMShipGunBarrelAK570
+  - LuaMShipGunBarrelDravon
+  - LuaMShipGunFrameMissilePlatform
+  - LuaMShipGunBarrelVespera
+  - LuaMShipGunBarrelVanyk
+  - LuaMShipGunBarrelTovek
+  - LuaMShipGunFrameLightEnergy
+  - LuaMShipGunBarrelM220
+  - LuaMShipGunBarrelPhalanx
+  - LuaMShipGunFrameHeavyArtillery
+  - LuaMShipGunFrameMassDriver
+  - LuaMShipGunBarrelAK800
+  - LuaMShipGunBarrelKargil
+  - LuaMShipGunBarrelCharonette
+  - MachineGCSHighCircuitboard
+  - MilitaryTechfabMachineCircuitboard
 
 # Printed without research on the security techfab of Colossus.
 - type: latheRecipePack

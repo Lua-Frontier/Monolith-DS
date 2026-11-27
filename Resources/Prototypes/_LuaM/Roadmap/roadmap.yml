@@ -65,6 +65,12 @@
   order: 30
 
 - type: roadmapItem
+  id: RoadmapShipGuns
+  name: roadmap-item-ship-guns
+  stage: Done
+  order: 40
+
+- type: roadmapItem
   id: RoadmapSurgery
   name: roadmap-item-surgery
   stage: Later
