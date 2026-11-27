@@ -1,0 +1,427 @@
+- type: technology
+  id: LuaMShipGunAssemblyPdvBasic
+  name: research-technology-luam-ship-gun-assembly-pdv-basic
+  entityIcon: WeaponTurretSerpentMissileMovable
+  discipline: RogueEquipment
+  tier: 1
+  cost: 20000
+  recipeUnlocks:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
+  - LuaMShipGunFrameArtillery
+  - LuaMShipGunFrameMissilePlatform
+  - LuaMShipGunBarrelAdder
+  - LuaMShipGunBarrelFang
+  - LuaMShipGunBarrelSerpent
+  position: 13, 4
+
+- type: technology
+  id: LuaMShipGunAssemblyPdvMissiles
+  name: research-technology-luam-ship-gun-assembly-pdv-missiles
+  entityIcon: WeaponTurretVanquisher
+  discipline: RogueEquipment
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - LuaMShipGunBarrelTrident
+  - LuaMShipGunBarrelVanquisher
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyPdvBasic
+  position: 12, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyPdvArtillery
+  name: research-technology-luam-ship-gun-assembly-pdv-artillery
+  entityIcon: WeaponTurretLongbowMovable
+  discipline: RogueEquipment
+  tier: 2
+  cost: 40000
+  recipeUnlocks:
+  - LuaMShipGunFrameHeavyArtillery
+  - LuaMShipGunBarrelBofors
+  - LuaMShipGunBarrelCyrexa
+  - LuaMShipGunBarrelLongbow
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyPdvBasic
+  position: 14, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyPdvHeavy
+  name: research-technology-luam-ship-gun-assembly-pdv-heavy
+  entityIcon: WeaponTurretLeviathan
+  discipline: RogueEquipment
+  tier: 3
+  cost: 75000
+  recipeUnlocks:
+  - LuaMShipGunBarrelR300
+  - LuaMShipGunBarrelHydra
+  - LuaMShipGunBarrelLeviathan
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyPdvArtillery
+  position: 14, 8
+
+- type: technology
+  id: LuaMShipGunAssemblyTsfBasic
+  name: research-technology-luam-ship-gun-assembly-tsf-basic
+  entityIcon: WeaponTurretCerberus
+  discipline: TsfmcEquipment
+  tier: 1
+  cost: 20000
+  recipeUnlocks:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
+  - LuaMShipGunFrameLightEnergy
+  - LuaMShipGunBarrelRAC30
+  - LuaMShipGunBarrelType35
+  - LuaMShipGunBarrelCerberus
+  position: 13, 4
+
+- type: technology
+  id: LuaMShipGunAssemblyTsfMissiles
+  name: research-technology-luam-ship-gun-assembly-tsf-missiles
+  entityIcon: WeaponTurretTarnyxReloadAPMovable
+  discipline: TsfmcEquipment
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - LuaMShipGunFrameMissilePlatform
+  - LuaMShipGunFrameArtillery
+  - LuaMShipGunBarrelPaladin
+  - LuaMShipGunBarrelTarnyx
+  - LuaMShipGunBarrelEquinox
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyTsfBasic
+  position: 12, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyTsfEnergy
+  name: research-technology-luam-ship-gun-assembly-tsf-energy
+  entityIcon: WeaponLaserTurretPrometheus
+  discipline: TsfmcEquipment
+  tier: 2
+  cost: 40000
+  recipeUnlocks:
+  - LuaMShipGunFrameHeavyEnergy
+  - LuaMShipGunBarrelType54
+  - LuaMShipGunBarrelPrometheus
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyTsfBasic
+  position: 13, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyTsfArtillery
+  name: research-technology-luam-ship-gun-assembly-tsf-artillery
+  entityIcon: WeaponTurretLongbowMovable
+  discipline: TsfmcEquipment
+  tier: 2
+  cost: 40000
+  recipeUnlocks:
+  - LuaMShipGunFrameHeavyArtillery
+  - LuaMShipGunBarrelBofors
+  - LuaMShipGunBarrelCyrexa
+  - LuaMShipGunBarrelLongbow
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyTsfBasic
+  position: 14, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyTsfMainCaliber
+  name: research-technology-luam-ship-gun-assembly-tsf-main-caliber
+  entityIcon: WeaponTurretScylla
+  discipline: TsfmcEquipment
+  tier: 3
+  cost: 75000
+  recipeUnlocks:
+  - LuaMShipGunBarrelAK820
+  - LuaMShipGunBarrelScylla
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyTsfEnergy
+  - LuaMShipGunAssemblyTsfArtillery
+  position: 13, 8
+
+- type: technology
+  id: LuaMShipGunAssemblyUsspBasic
+  name: research-technology-luam-ship-gun-assembly-ussp-basic
+  entityIcon: ImpulseLaserBase
+  discipline: Ussp
+  tier: 1
+  cost: 20000
+  recipeUnlocks:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
+  - LuaMShipGunFrameArtillery
+  - LuaMShipGunFrameLightEnergy
+  - LuaMShipGunBarrelAdder
+  - LuaMShipGunBarrelFang
+  - LuaMShipGunBarrelImpulseLaser
+  position: 13, 4
+
+- type: technology
+  id: LuaMShipGunAssemblyUsspMissiles
+  name: research-technology-luam-ship-gun-assembly-ussp-missiles
+  entityIcon: WeaponTurretVanquisher
+  discipline: Ussp
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - LuaMShipGunFrameMissilePlatform
+  - LuaMShipGunBarrelPaladin
+  - LuaMShipGunBarrelTrident
+  - LuaMShipGunBarrelVanquisher
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyUsspBasic
+  position: 12, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyUsspArtillery
+  name: research-technology-luam-ship-gun-assembly-ussp-artillery
+  entityIcon: WeaponTurretCyrexa
+  discipline: Ussp
+  tier: 2
+  cost: 40000
+  recipeUnlocks:
+  - LuaMShipGunFrameHeavyArtillery
+  - LuaMShipGunBarrelBofors
+  - LuaMShipGunBarrelCyrexa
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyUsspBasic
+  position: 14, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyUsspHeavy
+  name: research-technology-luam-ship-gun-assembly-ussp-heavy
+  entityIcon: WeaponTurretLeviathan
+  discipline: Ussp
+  tier: 3
+  cost: 75000
+  recipeUnlocks:
+  - LuaMShipGunBarrelHydra
+  - LuaMShipGunBarrelLeviathan
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyUsspArtillery
+  position: 14, 8
+
+- type: technology
+  id: LuaMShipGunAssemblyMmcBasic
+  name: research-technology-luam-ship-gun-assembly-mmc-basic
+  entityIcon: WeaponTurretType35
+  discipline: Mieyo
+  tier: 1
+  cost: 15000
+  recipeUnlocks:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
+  - LuaMShipGunFrameLightEnergy
+  - LuaMShipGunBarrelRAC30
+  - LuaMShipGunBarrelAC35
+  - LuaMShipGunBarrelType35
+  position: 13, 4
+
+- type: technology
+  id: LuaMShipGunAssemblyMmcArtillery
+  name: research-technology-luam-ship-gun-assembly-mmc-artillery
+  entityIcon: WeaponTurretASM220Movable
+  discipline: Mieyo
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - LuaMShipGunFrameHeavyArtillery
+  - LuaMShipGunFrameMissilePlatform
+  - LuaMShipGunBarrelBofors
+  - LuaMShipGunBarrelCyrexa
+  - LuaMShipGunBarrelTrident
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyMmcBasic
+  position: 13, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyMmcHeavy
+  name: research-technology-luam-ship-gun-assembly-mmc-heavy
+  entityIcon: WeaponLaserTurretApollo
+  discipline: Mieyo
+  tier: 3
+  cost: 75000
+  recipeUnlocks:
+  - LuaMShipGunFrameHeavyEnergy
+  - LuaMShipGunBarrelAK820
+  - LuaMShipGunBarrelHades
+  - LuaMShipGunBarrelApollo
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyMmcArtillery
+  position: 13, 8
+
+- type: technology
+  id: LuaMShipGunAssemblyBasic
+  name: research-technology-luam-ship-gun-assembly-basic
+  entityIcon: WeaponTurretDravon
+  discipline: FactionUniversal
+  tier: 1
+  cost: 20000
+  recipeUnlocks:
+  - LuaMShipGunChargerMk1
+  - LuaMShipGunChargerMk2
+  - LuaMShipGunChargerMk3
+  - LuaMShipGunChargerMk4
+  - LuaMShipGunFireControlModule
+  - LuaMShipGunFrameLightBallistic
+  - LuaMShipGunFrameArtillery
+  - LuaMShipGunBarrelL85
+  - LuaMShipGunBarrelFlare
+  - LuaMShipGunBarrelAK570
+  - LuaMShipGunBarrelDravon
+  position: 12, 2
+
+- type: technology
+  id: LuaMShipGunAssemblyCivMissiles
+  name: research-technology-luam-ship-gun-assembly-civ-missiles
+  entityIcon: WeaponTurretTovek
+  discipline: FactionUniversal
+  tier: 2
+  cost: 25000
+  recipeUnlocks:
+  - LuaMShipGunFrameMissilePlatform
+  - LuaMShipGunBarrelVespera
+  - LuaMShipGunBarrelVanyk
+  - LuaMShipGunBarrelTovek
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyBasic
+  position: 11, 5
+
+- type: technology
+  id: LuaMShipGunAssemblyCivEnergy
+  name: research-technology-luam-ship-gun-assembly-civ-energy
+  entityIcon: WeaponLaserTurretL1Phalanx
+  discipline: FactionUniversal
+  tier: 2
+  cost: 25000
+  recipeUnlocks:
+  - LuaMShipGunFrameLightEnergy
+  - LuaMShipGunBarrelM220
+  - LuaMShipGunBarrelPhalanx
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyBasic
+  position: 12, 5
+
+- type: technology
+  id: LuaMShipGunAssemblyCivArtillery
+  name: research-technology-luam-ship-gun-assembly-civ-artillery
+  entityIcon: WeaponTurretCharonette
+  discipline: FactionUniversal
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - LuaMShipGunFrameHeavyArtillery
+  - LuaMShipGunFrameMassDriver
+  - LuaMShipGunBarrelAK800
+  - LuaMShipGunBarrelKargil
+  - LuaMShipGunBarrelCharonette
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyBasic
+  position: 13, 5
+
+- type: technology
+  id: LuaMShipGunAssemblyPdvServer90
+  name: research-technology-luam-ship-gun-assembly-pdv-server90
+  entityIcon: GunneryServerUltra
+  discipline: RogueEquipment
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - MachineGCSUltraCircuitboard
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyPdvBasic
+  position: 15, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyPdvServer120
+  name: research-technology-luam-ship-gun-assembly-pdv-server120
+  entityIcon: GunneryServerExtra
+  discipline: RogueEquipment
+  tier: 3
+  cost: 60000
+  recipeUnlocks:
+  - MachineGCSExtraCircuitboard
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyPdvServer90
+  position: 15, 8
+
+- type: technology
+  id: LuaMShipGunAssemblyTsfServer90
+  name: research-technology-luam-ship-gun-assembly-tsf-server90
+  entityIcon: GunneryServerUltra
+  discipline: TsfmcEquipment
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - MachineGCSUltraCircuitboard
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyTsfBasic
+  position: 15, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyTsfServer120
+  name: research-technology-luam-ship-gun-assembly-tsf-server120
+  entityIcon: GunneryServerExtra
+  discipline: TsfmcEquipment
+  tier: 3
+  cost: 60000
+  recipeUnlocks:
+  - MachineGCSExtraCircuitboard
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyTsfServer90
+  position: 15, 8
+
+- type: technology
+  id: LuaMShipGunAssemblyUsspServer90
+  name: research-technology-luam-ship-gun-assembly-ussp-server90
+  entityIcon: GunneryServerUltra
+  discipline: Ussp
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - MachineGCSUltraCircuitboard
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyUsspBasic
+  position: 15, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyMmcServer90
+  name: research-technology-luam-ship-gun-assembly-mmc-server90
+  entityIcon: GunneryServerUltra
+  discipline: Mieyo
+  tier: 2
+  cost: 35000
+  recipeUnlocks:
+  - MachineGCSUltraCircuitboard
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyMmcBasic
+  position: 14, 6
+
+- type: technology
+  id: LuaMShipGunAssemblyCivServer60
+  name: research-technology-luam-ship-gun-assembly-civ-server60
+  entityIcon: GunneryServerHigh
+  discipline: FactionUniversal
+  tier: 2
+  cost: 20000
+  recipeUnlocks:
+  - MachineGCSHighCircuitboard
+  technologyPrerequisites:
+  - LuaMShipGunAssemblyBasic
+  position: 14, 5

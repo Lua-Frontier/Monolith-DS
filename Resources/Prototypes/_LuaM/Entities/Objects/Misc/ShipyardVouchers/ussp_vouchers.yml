@@ -16,6 +16,7 @@
   - type: Item
     heldPrefix: ussp
   - type: ShipyardVoucher
+    tier: 3
     destroyOnEmpty: false
     cooldown: 5100
     consoleType: USSP
@@ -42,6 +43,7 @@
   - type: Item
     heldPrefix: ussp
   - type: ShipyardVoucher
+    tier: 2
     destroyOnEmpty: false
     cooldown: 3600 # one hour
     consoleType: USSP

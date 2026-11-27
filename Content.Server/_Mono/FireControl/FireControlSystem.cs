@@ -314,6 +314,9 @@ public sealed partial class FireControlSystem : EntitySystem
         if (!Resolve(controllable, ref component))
             return 0;
 
+        if (component.ProcessingPowerCost is { } cost) // LuaM
+            return cost; // LuaM
+
         if (!TryComp<ShipGunClassComponent>(controllable, out var classComponent))
             return 0;
 

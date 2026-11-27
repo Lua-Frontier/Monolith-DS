@@ -327,6 +327,17 @@ namespace Content.Server.Construction
             // Construction transferring.
             var newConstruction = EnsureComp<ConstructionComponent>(newUid);
 
+            // LuaM-start: a result without its own construction graph (a ship weapon) got an empty graph here,
+            // GetCurrentNode below returned null and threw, the new entity never initialized and the old one was gone.
+            // It continues on the graph it was built with, at the node it was built into.
+            if (string.IsNullOrEmpty(newConstruction.Graph))
+            {
+                newConstruction.Graph = construction.Graph;
+                newConstruction.Node = construction.Node;
+                newConstruction.DeconstructionNode = null; // the default "start" node does not have to exist in that graph
+            }
+            // LuaM-end
+
             // Transfer all construction-owned containers.
             newConstruction.Containers.UnionWith(construction.Containers);
 

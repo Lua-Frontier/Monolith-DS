@@ -1844,7 +1844,7 @@ entities:
     - type: Transform
       pos: 4.5,-0.5
       parent: 1
-- proto: WeaponTurretTarnyxReload
+- proto: WeaponTurretTarnyxReloadMovable
   entities:
   - uid: 246
     components:

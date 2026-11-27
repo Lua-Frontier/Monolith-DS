@@ -33,7 +33,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.6,-0.6,0.6,0.6"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.6,-0.6,0.6,0.6 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -41,7 +41,7 @@
         - MachineLayer
   - type: Gun
     damageModifier: 2
-    projectileSpeed: 380
+    projectileSpeed: 600 # LuaM: 380 > 600
     minAngle: 0
     maxAngle: 1
     fireRate: 0.2
@@ -85,7 +85,7 @@
   - type: ShipGunType
     shipType: Ballistic
   - type: ShipGunClass
-    shipClass: Medium
+    shipClass: Superheavy # LuaM: Medium > Superheavy, 12 fire control points
   - type: ShipRepairable
     repairTime: 30
     repairCost: 150
@@ -163,14 +163,14 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.6,-0.6,0.6,0.6"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.6,-0.6,0.6,0.6 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
         layer:
         - MachineLayer
   - type: Gun
-    projectileSpeed: 360
+    projectileSpeed: 500 # LuaM: 360 > 500
     minAngle: 0
     maxAngle: 0.5
     fireRate: 3.5
@@ -226,7 +226,7 @@
   id: WeaponTurretAk800
   name: AK800 100mm autocannon
   parent:
-  - WeaponTurretAk820Base # LuaM: WeaponTurretAk820 > WeaponTurretAk820Base, no hardpoint needed
+  - WeaponTurretAk820Base # LuaM: WeaponTurretAk820 > WeaponTurretAk820Base
   suffix: Large, T4
   description: A single-barreled variant of the AK820 autocannon, with less GCS strain but lower firerate. Large hard hitting naval gun for steady damage. Fires APHEDS rounds, allowing for enhanced penetration, but not as much explosive power as full-sized APHE rounds. Feeds from an 96 round internal magazine.
   components:
@@ -239,6 +239,11 @@
     muzzleFlash: MuzzleFlashEffect120mmAK800
   - type: ShipGunClass
     shipClass: Heavy
+  # LuaM-start: mounted on a hardpoint like the AK820; only the superheavy universal hardpoint exists
+  - type: HardpointAnchorableOnly
+    class: Ballistic
+    size: Superheavy
+  # LuaM-end
 
 # Bofors 203x940mm
 
@@ -276,14 +281,14 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.5,-0.5,0.5,0.5 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
         layer:
         - MachineLayer
   - type: Gun
-    projectileSpeed: 550
+    projectileSpeed: 700 # LuaM: 550 > 700
     minAngle: 0
     maxAngle: 1
     fireRate: 0.1
@@ -320,7 +325,7 @@
   - type: ShipGunType
     shipType: Ballistic
   - type: ShipGunClass
-    shipClass: Medium
+    shipClass: Superheavy # LuaM: Medium > Superheavy, 12 fire control points
   - type: ShipRepairable
     repairTime: 30
     repairCost: 150
@@ -370,14 +375,14 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.6,-0.6,0.6,0.6"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.6,-0.6,0.6,0.6 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
         layer:
         - MachineLayer
   - type: Gun
-    projectileSpeed: 550
+    projectileSpeed: 700 # LuaM: 550 > 700
     minAngle: 0
     maxAngle: 0
     fireRate: 0.2
@@ -425,6 +430,10 @@
   - type: HardpointAnchorableOnly
     class: Ballistic
     size: Superheavy
+  # LuaM-start: 24 fire control points instead of the 12 of its weapon class
+  - type: FireControllable
+    processingPowerCost: 24
+  # LuaM-end
 
 # R-300 320x752mm
 
@@ -460,7 +469,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.6,-0.6,0.6,0.6"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.6,-0.6,0.6,0.6 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -501,6 +510,10 @@
   - type: ShipRepairable
     repairTime: 45
     repairCost: 200
+  # LuaM-start: 24 fire control points instead of the 12 of its weapon class
+  - type: FireControllable
+    processingPowerCost: 24
+  # LuaM-end
   # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
   #   class: Ballistic
   #   size: Heavy # doesnt match who cares
@@ -540,7 +553,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.6,-0.6,0.6,0.6"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.6,-0.6,0.6,0.6 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -615,10 +628,11 @@
 # Longbow
 
 - type: entity
-  id: WeaponTurretLongbow
+  id: WeaponTurretLongbowBase # LuaM: WeaponTurretLongbow > WeaponTurretLongbowBase, shared with the movable crafted version
+  abstract: true # LuaM
   name: L/65 "Longbow" 85mm autocannon
   parent:
-  - BallisticArtilleryUnanchorableMagazine
+  - BallisticArtilleryBaseMagazine # LuaM: BallisticArtilleryUnanchorableMagazine > BallisticArtilleryBaseMagazine, RequiresGrid moved to WeaponTurretLongbow
   - BallisticArtilleryTier5HP
   suffix: Capital/Station, T4
   description: Fires 85mm shells in a 15 round burst from an internal autoloader.
@@ -645,14 +659,14 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.6,-0.6,0.6,0.6"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.6,-0.6,0.6,0.6 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
         layer:
         - MachineLayer
   - type: Gun
-    projectileSpeed: 290
+    projectileSpeed: 450 # LuaM: 290 > 450
     minAngle: 0
     maxAngle: 7
     fireRate: 6
@@ -706,3 +720,12 @@
   - type: HardpointAnchorableOnly
     class: Ballistic
     size: Superheavy
+
+# LuaM-start: mapped Longbow stays bolted to the grid, the movable crafted ones are in _LuaM/Entities/SpaceArtillery/movable.yml
+- type: entity
+  id: WeaponTurretLongbow
+  parent: WeaponTurretLongbowBase
+  suffix: Capital/Station, T4, Bolted
+  components:
+  - type: RequiresGrid
+# LuaM-end

@@ -55,10 +55,14 @@ public sealed partial class HudWindowAccentController : UIController
     {
         var now = _timing.RealTime;
         _currentUis.Clear();
-        if (_player.LocalEntity is { } player)
+
+        // entity systems are not running in the main menu (and in client tests before connecting),
+        // System<T>() threw there every frame a window was waiting for its owner
+        _entities.EntitySysManager.TryGetEntitySystem<Robust.Client.GameObjects.UserInterfaceSystem>(out var uiSystem);
+
+        if (_player.LocalEntity is { } player && uiSystem != null)
         {
-            var uis = _entities.System<Robust.Client.GameObjects.UserInterfaceSystem>();
-            foreach (var (uid, key) in uis.GetActorUis(player))
+            foreach (var (uid, key) in uiSystem.GetActorUis(player))
             {
                 _currentUis.Add((uid, key));
                 _seen.TryAdd((uid, key), now);
@@ -83,12 +87,11 @@ public sealed partial class HudWindowAccentController : UIController
             var (window, added) = _pending[i];
             (EntityUid, Enum)? best = null;
             var bestGap = TimeSpan.MaxValue;
-            var uiSystem = _entities.System<Robust.Client.GameObjects.UserInterfaceSystem>();
             var windowName = window.GetType().Name;
             foreach (var (key, seen) in _seen)
             {
                 var gap = (seen - added).Duration();
-                if (uiSystem.TryGetOpenUi(key.Item1, key.Item2, out var bui))
+                if (uiSystem != null && uiSystem.TryGetOpenUi(key.Item1, key.Item2, out var bui))
                 {
                     var stem = bui.GetType().Name.Replace("BoundUserInterface", string.Empty).Replace("BUI", string.Empty);
                     if (stem.Length > 3 && windowName.StartsWith(stem, StringComparison.Ordinal))

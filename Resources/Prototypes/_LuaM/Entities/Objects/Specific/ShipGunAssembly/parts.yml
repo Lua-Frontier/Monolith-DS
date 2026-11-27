@@ -1,0 +1,103 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: LuaMShipGunPartBase
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Specific/ShipGunAssembly/parts.rsi
+  - type: Item
+    size: Normal
+  - type: GuideHelp
+    guides:
+    - ColossusShipWeaponAssembly
+    - ColossusCatalogueShipWeapons
+
+- type: entity
+  parent: LuaMShipGunPartBase
+  id: LuaMShipGunChargerMk1
+  name: Mk1 weapon charger
+  description: Power storage and charging unit for light ship weapons. Installed while assembling a weapon on its frame.
+  components:
+  - type: Sprite
+    state: charger_mk1
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+    mirrorClothingModifier: false
+  - type: Item
+    size: Ginormous
+  - type: Tag
+    tags:
+    - LuaMShipGunChargerMk1
+
+- type: entity
+  parent: LuaMShipGunPartBase
+  id: LuaMShipGunChargerMk2
+  name: Mk2 weapon charger
+  description: Power storage and charging unit for medium ship weapons. Installed while assembling a weapon on its frame.
+  components:
+  - type: Sprite
+    state: charger_mk2
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.6
+    sprintModifier: 0.6
+    mirrorClothingModifier: false
+  - type: Item
+    size: Ginormous
+  - type: Tag
+    tags:
+    - LuaMShipGunChargerMk2
+
+- type: entity
+  parent: LuaMShipGunPartBase
+  id: LuaMShipGunChargerMk3
+  name: Mk3 weapon charger
+  description: Power storage and charging unit for heavy ship weapons. Installed while assembling a weapon on its frame.
+  components:
+  - type: Sprite
+    state: charger_mk3
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.5
+    sprintModifier: 0.5
+    mirrorClothingModifier: false
+  - type: Item
+    size: Ginormous
+  - type: Tag
+    tags:
+    - LuaMShipGunChargerMk3
+
+- type: entity
+  parent: LuaMShipGunPartBase
+  id: LuaMShipGunChargerMk4
+  name: Mk4 weapon charger
+  description: Power storage and charging unit for superheavy ship weapons. Installed while assembling a weapon on its frame.
+  components:
+  - type: Sprite
+    state: charger_mk4
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+  - type: Item
+    size: Ginormous
+  - type: Tag
+    tags:
+    - LuaMShipGunChargerMk4
+
+- type: entity
+  parent: LuaMShipGunPartBase
+  id: LuaMShipGunFireControlModule
+  name: fire control module
+  description: Targeting and gunnery link unit of a ship weapon. Superheavy weapons need two of them.
+  components:
+  - type: Sprite
+    state: fire_control
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - LuaMShipGunFireControlModule

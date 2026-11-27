@@ -1,0 +1,519 @@
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedL85
+  name: "L85 14mm autocannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/l85.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightBallistic
+    node: l85_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedAdder
+  name: "Adder scattercannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/adder.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightBallistic
+    node: adder_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedRAC30
+  name: "RAC-30 Draupnir Autocannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/rac30.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightBallistic
+    node: rac30_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedAC35
+  name: "AC-35 Chaingun (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/ac35.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightBallistic
+    node: ac35_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedFlare
+  name: "GS-002 Sunny flare system (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/flare.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightBallistic
+    node: flare_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedAK570
+  name: "AK570 40mm autocannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/ak570.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameArtillery
+    node: ak570_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedDravon
+  name: "ADBP-7 DRAVON 57mm Autocannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/dravon.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameArtillery
+    node: dravon_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedFang
+  name: "Fang heavy 57mm autocannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/fang.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameArtillery
+    node: fang_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedAK800
+  name: "AK800 100mm autocannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/ak800.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameArtillery
+    node: ak800_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedTarnyx
+  name: "ADBX-31 TARNYX 90mm EMP Cannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/tarnyx.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameArtillery
+    node: tarnyx_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedEquinox
+  name: "GS-001 EQUINOX 90mm AP Cannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/equinox.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameArtillery
+    node: equinox_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedBofors
+  name: "Bofors 203mm cannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/bofors.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: bofors_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedCyrexa
+  name: "CYREXA 130mm cannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/cyrexa.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: cyrexa_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedKargil
+  name: "KARGIL 130mm cannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/kargil.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: kargil_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedAK820
+  name: "AK820 100mm autocannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/ak820.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: ak820_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedHades
+  name: "HADES 203mm cannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/hades.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: hades_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedLongbow
+  name: "L/65 'Longbow' 85mm autocannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/longbow.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: longbow_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedR300
+  name: "R-300 430mm howitzer (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/r300.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: r300_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedHydra
+  name: "Hydra 130mm battery (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/hydra.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: hydra_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedLeviathan
+  name: "LEVIATHAN 380mm howitzer (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/leviathan.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: leviathan_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedCharonette
+  name: "M194 CHARONETTE mass driver (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/charonette.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMassDriver
+    node: charonette_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedType35
+  name: "Type-35 MARAUDER-type plasma cannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/type35.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightEnergy
+    node: type35_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedCerberus
+  name: "TPC Cerberus Plasma scattercannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/cerberus.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightEnergy
+    node: cerberus_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedM220
+  name: "M220 RUBICON EMP launcher (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/m220.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightEnergy
+    node: m220_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedPhalanx
+  name: "L-1 Phalanx (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/phalanx.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightEnergy
+    node: phalanx_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedMoros
+  name: "SL-170 «Moros» (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/moros.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightEnergy
+    node: moros_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedImpulseLaser
+  name: "pulse laser (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/impulselaser.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightEnergy
+    node: impulselaser_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedType54
+  name: "Type-54C plasma autopulser (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/type54.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyEnergy
+    node: type54_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedPrometheus
+  name: "TPC Prometheus Laser Cannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/prometheus.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyEnergy
+    node: prometheus_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedApollo
+  name: "L-20 Apollo Mining Laser Cannon (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/apollo.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyEnergy
+    node: apollo_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedShkval
+  name: "HL-220 «Shkval» (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/shkval.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyEnergy
+    node: shkval_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedScylla
+  name: "TPC Scylla plasma impulse driver (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/scylla.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyEnergy
+    node: scylla_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedVespera
+  name: "ADMP-50 VESPERA Missile Rack (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/vespera.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMissilePlatform
+    node: vespera_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedVanyk
+  name: "ASM-150 'Vanyk' Missile Pod (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/vanyk.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMissilePlatform
+    node: vanyk_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedLightMunitionsBay
+  name: "GPOB-L Light Munitions Bay (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/lightmunitionsbay.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMissilePlatform
+    node: lightmunitionsbay_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedSerpent
+  name: "Serpent torpedo launcher (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/serpent.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMissilePlatform
+    node: serpent_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedTovek
+  name: "ADMX-250 TOVEK Missile Pod (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/tovek.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMissilePlatform
+    node: tovek_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedTrident
+  name: "ASM-220 'Trident' Torpedo Rack (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/trident.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMissilePlatform
+    node: trident_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedPaladin
+  name: "MLRS-382 'Paladin' Missile Pod (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/paladin.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMissilePlatform
+    node: paladin_body
+    deconstructionTarget: null
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunUnfinishedVanquisher
+  name: "SRM-573 'Vanquisher' Missile Pod (assembly)"
+  description: Body of a ship weapon being assembled. Examine it to see the next step.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/Unfinished/vanquisher.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMissilePlatform
+    node: vanquisher_body
+    deconstructionTarget: null

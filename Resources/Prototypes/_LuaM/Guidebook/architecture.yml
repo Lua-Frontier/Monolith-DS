@@ -102,6 +102,11 @@
   name: guide-architecture-colossus-fire-control-servers
 
 - type: guideEntry
+  id: ColossusShipWeaponAssembly
+  text: /ServerInfo/_LuaM/Guidebook/Ships/ColossusShipWeaponAssembly.xml
+  name: guide-architecture-colossus-ship-weapon-assembly
+
+- type: guideEntry
   id: ColossusElectricity
   text: /ServerInfo/_LuaM/Guidebook/Navigation/ColossusElectricity.xml
   name: guide-architecture-colossus-electricity
@@ -233,6 +238,7 @@
   children:
   - WeaponsSystems
   - ColossusCatalogueShipWeapons
+  - ColossusShipWeaponAssembly
   - ColossusFireControlServers
 
 - type: guideEntry

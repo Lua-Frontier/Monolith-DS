@@ -14,10 +14,10 @@
   # lastNames: names_last
   # LuaM commented end:
   naming: FirstLast
-  minAge: 50
-  youngAge: 100
-  oldAge: 350
-  maxAge: 500
+  minAge: 18 # LuaM: 50 > 18
+  youngAge: 30 # LuaM: 100 > 30
+  oldAge: 60 # LuaM: 350 > 60
+  maxAge: 120 # LuaM: 500 > 120
 
 - type: speciesBaseSprites
   id: MobDemonSprites

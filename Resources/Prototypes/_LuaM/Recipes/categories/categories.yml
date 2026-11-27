@@ -3,3 +3,7 @@
 - type: latheCategory
   id: Mechs
   name: Recipes-Economy-LuaM-Mechs
+
+- type: latheCategory
+  id: LuaMShipGunParts
+  name: lathe-category-luam-ship-gun-parts

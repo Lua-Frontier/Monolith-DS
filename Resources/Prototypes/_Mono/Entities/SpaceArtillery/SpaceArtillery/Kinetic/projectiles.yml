@@ -532,7 +532,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: TimedDespawn
-    lifetime: 4
+    lifetime: 2.58 # LuaM: 4 > 2.58, same range at the faster muzzle speed
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
@@ -666,7 +666,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: TimedDespawn
-    lifetime: 5.15
+    lifetime: 3.26 # LuaM: 5.15 > 3.26, same range at the faster muzzle speed
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
@@ -707,7 +707,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: TimedDespawn
-    lifetime: 5.15
+    lifetime: 3.52 # LuaM: 5.15 > 3.52, same range at the faster muzzle speed
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
@@ -746,7 +746,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: TimedDespawn
-    lifetime: 4
+    lifetime: 2.53 # LuaM: 4 > 2.53, same range at the faster muzzle speed
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger
@@ -855,7 +855,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: TimedDespawn
-    lifetime: 5.5
+    lifetime: 4.32 # LuaM: 5.5 > 4.32, same range at the faster muzzle speed
   - type: PointLight
     color: "#fc5a03"
   - type: ExplodeOnTrigger
@@ -894,7 +894,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: TimedDespawn
-    lifetime: 7
+    lifetime: 5.5 # LuaM: 7 > 5.5, same range at the faster muzzle speed
   - type: PointLight
     color: "#035EFC"
   - type: ExplodeOnTrigger
@@ -938,7 +938,7 @@
   - type: TriggerOnSpawn
     timerOnly: true
   - type: TimedDespawn
-    lifetime: 1
+    lifetime: 0.79 # LuaM: 1 > 0.79, same range at the faster muzzle speed
   - type: OnUseTimerTrigger
     delay: 1
     examinable: false
@@ -1234,7 +1234,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: TimedDespawn
-    lifetime: 7.2 #3.2km - Its 520mm after all.
+    lifetime: 4.05 # LuaM: 7.2 > 4.05, same range at the faster muzzle speed #3.2km - Its 520mm after all.
   - type: PointLight
     color: "#fc5a03"
   - type: ExplodeOnTrigger

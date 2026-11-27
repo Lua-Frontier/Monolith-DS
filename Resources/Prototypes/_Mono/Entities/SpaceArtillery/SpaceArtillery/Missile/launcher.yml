@@ -1,10 +1,11 @@
 # Corporate War Era - Syndicate
 
 - type: entity
-  id: WeaponTurretSerpentMissile
+  id: WeaponTurretSerpentMissileBase # LuaM: WeaponTurretSerpentMissile > WeaponTurretSerpentMissileBase, shared with the movable crafted version
+  abstract: true # LuaM
   name: Serpent torpedo launcher
   parent:
-  - BallisticArtilleryUnanchorable
+  - BallisticArtilleryBase # LuaM: BallisticArtilleryUnanchorable > BallisticArtilleryBase, RequiresGrid moved to WeaponTurretSerpentMissile
   - BallisticArtilleryTier3HP
   description: A light torpedo launcher developed by the Syndicate during the corporate war, uses similar systems to the anaconda for self loading munitons.
   components:
@@ -110,7 +111,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.5,-0.5,0.5,0.5 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -133,3 +134,12 @@
   # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
   #   class: Missile
   #   size: Heavy
+
+# LuaM-start: mapped guns stay bolted to the grid, the movable crafted ones are in _LuaM/Entities/SpaceArtillery/movable.yml
+- type: entity
+  id: WeaponTurretSerpentMissile
+  parent: WeaponTurretSerpentMissileBase
+  suffix: Bolted
+  components:
+  - type: RequiresGrid
+# LuaM-end

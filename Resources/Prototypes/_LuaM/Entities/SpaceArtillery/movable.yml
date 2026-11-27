@@ -1,0 +1,136 @@
+# Movable versions of ship weapons that are mapped bolted to the grid. These are the ones assembled by construction.
+
+- type: entity
+  id: WeaponTurretLongbowMovable
+  parent: WeaponTurretLongbowBase
+  suffix: Capital/Station, T4, Movable
+  components:
+  - type: Anchorable
+    delay: 30
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Pullable
+  - type: PirateBountyItem
+    id: ShipWeapon
+
+- type: entity
+  id: WeaponTurretTarnyxMovable
+  parent: WeaponTurretTarnyxBase
+  suffix: Station, Recharging Ammo, EMP, Movable
+  components:
+  - type: Anchorable
+    delay: 30
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Pullable
+  - type: PirateBountyItem
+    id: ShipWeapon
+
+- type: entity
+  id: WeaponTurretTarnyxReloadMovable
+  parent: WeaponTurretTarnyxReloadBase
+  suffix: Medium, T2 - Infinite EMP, Movable
+  components:
+  - type: Anchorable
+    delay: 10
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Pullable
+  - type: PirateBountyItem
+    id: ShipWeapon
+
+- type: entity
+  id: WeaponTurretTarnyxReloadAPMovable
+  parent: WeaponTurretTarnyxReloadAPBase
+  suffix: Ship, Infinite Standard AP Ammo, Movable
+  components:
+  - type: Anchorable
+    delay: 10
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Pullable
+  - type: PirateBountyItem
+    id: ShipWeapon
+
+- type: entity
+  id: WeaponTurretType54Movable
+  parent: WeaponTurretType54Base
+  suffix: Medium, T2, Movable
+  components:
+  - type: Anchorable
+    delay: 30
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Pullable
+  - type: PirateBountyItem
+    id: ShipWeapon
+
+- type: entity
+  id: WeaponTurretVesperaMovable
+  parent: WeaponTurretVesperaBase
+  suffix: Movable
+  components:
+  - type: Anchorable
+    delay: 10
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Pullable
+  - type: PirateBountyItem
+    id: ShipWeapon
+
+- type: entity
+  id: WeaponTurretVanykMovable
+  parent: WeaponTurretVanykBase
+  suffix: Movable
+  components:
+  - type: Anchorable
+    delay: 10
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Pullable
+  - type: PirateBountyItem
+    id: ShipWeapon
+
+- type: entity
+  id: WeaponTurretSerpentMissileMovable
+  parent: WeaponTurretSerpentMissileBase
+  suffix: Movable
+  components:
+  - type: Anchorable
+    delay: 30
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Pullable
+  - type: PirateBountyItem
+    id: ShipWeapon
+
+- type: entity
+  id: WeaponTurretASM220Movable
+  parent: WeaponTurretASM220Base
+  suffix: Movable
+  components:
+  - type: Anchorable
+    delay: 10
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Pullable
+  - type: PirateBountyItem
+    id: ShipWeapon

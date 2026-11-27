@@ -14,6 +14,7 @@
       color: "#e68e00"
       shader: unshaded
   - type: ShipyardVoucher
+    tier: 3
     destroyOnEmpty: true
     consoleType: Shipyard
     vessels:

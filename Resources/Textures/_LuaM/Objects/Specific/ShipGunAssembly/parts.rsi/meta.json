@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Cut from cerberus.rsi (Sprite by Avalon-Proto, base by Kyres1); Cut from pinhole.rsi (Made by Avalon (@427991401624502274 on Discord) for Monolith); Cut from m25.rsi (Made by kyres1 (discord), modified by Avalon-Proto); Cut from shkval.rsi (Resprite by MrFolium(github), based on harbringer.rsi by Kyres1); Cut from tarnyx.rsi (Created by kyres1 (discord), Modified by Avalon-Proto)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "charger_mk1"
+        },
+        {
+            "name": "charger_mk2"
+        },
+        {
+            "name": "charger_mk3"
+        },
+        {
+            "name": "charger_mk4"
+        },
+        {
+            "name": "fire_control"
+        }
+    ]
+}

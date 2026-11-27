@@ -252,11 +252,13 @@
     staticPacks:
     - NFMercenaryTechfabDeprecatedStatic
     #- StaticAmmoRecipePack # Commented by LuaM
+    - LuaMMercenaryFMJAmmo # LuaM
     - MonoRestraintsStatic # Mono
     #- RoundstartShipgunAmmo # Mono # Commented by LuaM
     - StaticGrenades
     - MonoAttachmentsStatic # Mono
     dynamicPacks:
+    - LuaMShipGunAssembly # LuaM
     - NFMercenaryTechfabDeprecated
     #- DynamicAmmoRecipePack
     # Mono start
@@ -329,11 +331,13 @@
     staticPacks:
     - NFHackedMercenaryTechfabDeprecatedStatic
     #- StaticAmmoRecipePack
+    - LuaMMercenaryFMJAmmo # LuaM
     - MonoRestraintsStatic
     #- RoundstartShipgunAmmo # Mono
     - StaticGrenades
     - MonoAttachmentsStatic # Mono
     dynamicPacks:
+    - LuaMShipGunAssembly # LuaM
     - NFHackedMercenaryTechfabDeprecated
    # - DynamicAmmoRecipePack
     - SmartGun # Goobstation

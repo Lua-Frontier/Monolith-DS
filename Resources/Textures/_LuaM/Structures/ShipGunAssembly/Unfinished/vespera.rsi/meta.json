@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-3.0",
+    "copyright": "Cut from vespera.rsi (Created by kyres1 (discord))",
+    "size": {
+        "x": 48,
+        "y": 48
+    },
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
+}

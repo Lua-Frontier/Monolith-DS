@@ -66,4 +66,12 @@ public sealed partial class ShipyardVoucherComponent : Component
     /// </summary>
     [DataField]
     public bool CanBeUnassigned = true;
+
+    // LuaM-start
+    /// <summary>
+    ///     Voucher tier of the vessels it buys. The shipyard shows it as a [T2]-style badge next to those vessels.
+    /// </summary>
+    [DataField]
+    public int? Tier;
+    // LuaM-end
 }

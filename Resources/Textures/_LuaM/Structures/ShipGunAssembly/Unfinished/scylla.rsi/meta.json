@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Cut from scylla.rsi (Sprites by Avalon-Proto, base by Kyres1)",
+    "size": {
+        "x": 96,
+        "y": 96
+    },
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
+}

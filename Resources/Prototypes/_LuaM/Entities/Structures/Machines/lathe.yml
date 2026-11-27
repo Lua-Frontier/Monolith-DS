@@ -81,6 +81,7 @@
     - UniversalShellAmmo
     - UniversalOrdinance
     - DynamicAmmoRecipePack
+    - LuaMShipGunAssembly
   - type: MaterialStorage
     whitelist:
       tags:

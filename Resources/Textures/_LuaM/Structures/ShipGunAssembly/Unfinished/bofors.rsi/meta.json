@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Cut from bofors.rsi (Sprites by kyres1, modified by Avalon-Proto)",
+    "size": {
+        "x": 128,
+        "y": 128
+    },
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
+}

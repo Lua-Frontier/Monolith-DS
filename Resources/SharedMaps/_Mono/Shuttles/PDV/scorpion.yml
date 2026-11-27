@@ -3963,7 +3963,7 @@ entities:
     - type: Transform
       pos: 0.5,21.5
       parent: 1
-- proto: GunneryServerMedium
+- proto: GunneryServerHigh
   entities:
   - uid: 543
     components:

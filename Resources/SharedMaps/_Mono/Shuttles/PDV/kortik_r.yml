@@ -6918,7 +6918,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 8.5,-19.5
       parent: 1
-- proto: GunneryServerUltra
+- proto: GunneryServerExtra
   entities:
   - uid: 998
     components:

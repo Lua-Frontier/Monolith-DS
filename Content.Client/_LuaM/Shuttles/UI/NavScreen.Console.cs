@@ -46,12 +46,22 @@ public sealed partial class NavScreen
     private float _coordsShortWidth;
     private string? _coordsFullText;
     private string? _coordsShortText;
+    private int _coordsFittedLength = -1;
+    private float _coordsFittedRow = -1;
 
     private void FitCoordsCaption()
     {
         var avail = GridPositionRow.Size.X;
         if (avail <= 0)
             return;
+
+        // the fit only changes with the row width or the number of characters in the coordinates
+        var length = GridPosition.Text?.Length ?? 0;
+        if (length == _coordsFittedLength && avail == _coordsFittedRow)
+            return;
+
+        _coordsFittedLength = length;
+        _coordsFittedRow = avail;
 
         if (_coordsFullWidth < 0)
         {

@@ -14,10 +14,28 @@ public sealed class HudStyleScope : Control
 
     private static readonly AttachedProperty<string?> Written = AttachedProperty<string?>.CreateNull("LuaMHudWritten", typeof(HudStyleScope));
 
+    /// <summary>
+    /// Set on every control the scope already listens to, so it subscribes to it only once.
+    /// </summary>
+    private static readonly AttachedProperty<bool> Hooked = AttachedProperty<bool>.Create("LuaMHudHooked", typeof(HudStyleScope));
+
+    /// <summary>
+    /// A full walk also runs this often, for style classes code changes on existing controls.
+    /// </summary>
+    private const float SafetyWalkInterval = 1f;
+
+    // The whole lobby used to be walked every frame. Styling a control is needed once, when it appears or shows up;
+    // only the tracked captions are rewritten whenever their text changes, so only they are checked every frame.
+    private readonly List<Control> _tracked = new();
+    private readonly Action<Control> _markDirty;
+    private bool _dirty = true;
+    private float _sinceWalk;
+
     public HudStyleScope()
     {
         Visible = true;
         MouseFilter = MouseFilterMode.Ignore;
+        _markDirty = _ => _dirty = true;
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -27,11 +45,37 @@ public sealed class HudStyleScope : Control
         if (Parent == null)
             return;
 
-        Apply(Parent);
+        _sinceWalk += args.DeltaSeconds;
+        if (_dirty || _sinceWalk >= SafetyWalkInterval)
+        {
+            _dirty = false;
+            _sinceWalk = 0;
+            _tracked.Clear();
+            Apply(Parent, this);
+            return;
+        }
+
+        foreach (var control in _tracked)
+        {
+            ApplyText(control);
+        }
     }
 
     public static void Apply(Control control)
     {
+        Apply(control, null);
+    }
+
+    private static void Apply(Control control, HudStyleScope? scope)
+    {
+        if (scope != null && !control.GetValue(Hooked))
+        {
+            // a new child or a hidden part showing up needs styling, everything else stays styled
+            control.SetValue(Hooked, true);
+            control.OnChildAdded += scope._markDirty;
+            control.OnVisibilityChanged += scope._markDirty;
+        }
+
         if (!control.Visible || control.HasStyleClass(Skip))
             return;
 
@@ -90,38 +134,88 @@ public sealed class HudStyleScope : Control
             case Label label when label.FontOverride == null && ((ICollection<string>) label.StyleClasses).Count == 0:
                 Tag(label, LobbyHudStyles.Auto);
                 break;
-            case Label label when label.Text != null
-                                  && (label.HasStyleClass(LobbyHudStyles.TabTitle)
-                                      || label.HasStyleClass(LobbyHudStyles.Title)
-                                      || label.HasStyleClass(LobbyHudStyles.LabelClass)):
-                if (IsWritten(label, label.Text))
-                    break;
-                var spaced = Track(label.Text.ToUpperInvariant());
-                if (spaced != label.Text)
-                    label.Text = spaced;
-                Remember(label, label.Text);
-                break;
-            case Label label when label.Text != null && label.HasStyleClass(LobbyHudStyles.Heading):
-                if (IsWritten(label, label.Text))
-                    break;
-                var upper = label.Text.Replace(TrackSpace.ToString(), string.Empty).ToUpperInvariant();
-                if (upper != label.Text)
-                    label.Text = upper;
-                Remember(label, label.Text);
-                break;
         }
 
-        if (control is Button { Text: { } text } lamp && !IsWritten(lamp, text) && HasHudClass(lamp))
+        var caption = CaptionOf(control);
+        if (caption != Caption.None)
         {
-            var legend = Track(text.ToUpperInvariant());
-            if (legend != text)
-                lamp.Text = legend;
-            Remember(lamp, lamp.Text ?? legend);
+            ApplyText(control, caption);
+            scope?._tracked.Add(control);
         }
 
         foreach (var child in control.Children)
         {
-            Apply(child);
+            Apply(child, scope);
+        }
+    }
+
+    private enum Caption : byte
+    {
+        None,
+        Spaced,
+        Heading,
+        Lamp,
+    }
+
+    private static Caption CaptionOf(Control control)
+    {
+        switch (control)
+        {
+            case Label label when label.HasStyleClass(LobbyHudStyles.TabTitle)
+                                  || label.HasStyleClass(LobbyHudStyles.Title)
+                                  || label.HasStyleClass(LobbyHudStyles.LabelClass):
+                return Caption.Spaced;
+            case Label label when label.HasStyleClass(LobbyHudStyles.Heading):
+                return Caption.Heading;
+            case Button button when HasHudClass(button):
+                return Caption.Lamp;
+            default:
+                return Caption.None;
+        }
+    }
+
+    /// <summary>
+    /// Rewrites a caption in the HUD letter case and spacing when its text was changed since the last time.
+    /// </summary>
+    private static void ApplyText(Control control)
+    {
+        // tracked controls keep their kind until the next walk, only the text is checked here
+        switch (control)
+        {
+            case Label label when label.HasStyleClass(LobbyHudStyles.Heading):
+                ApplyText(label, Caption.Heading);
+                break;
+            case Label label:
+                ApplyText(label, Caption.Spaced);
+                break;
+            case Button button:
+                ApplyText(button, Caption.Lamp);
+                break;
+        }
+    }
+
+    private static void ApplyText(Control control, Caption caption)
+    {
+        switch (caption)
+        {
+            case Caption.Spaced when control is Label { Text: { } text } label && !IsWritten(label, text):
+                var spaced = Track(text.ToUpperInvariant());
+                if (spaced != text)
+                    label.Text = spaced;
+                Remember(label, label.Text!);
+                break;
+            case Caption.Heading when control is Label { Text: { } text } label && !IsWritten(label, text):
+                var upper = text.Replace(TrackSpace.ToString(), string.Empty).ToUpperInvariant();
+                if (upper != text)
+                    label.Text = upper;
+                Remember(label, label.Text!);
+                break;
+            case Caption.Lamp when control is Button { Text: { } text } lamp && !IsWritten(lamp, text):
+                var legend = Track(text.ToUpperInvariant());
+                if (legend != text)
+                    lamp.Text = legend;
+                Remember(lamp, lamp.Text ?? legend);
+                break;
         }
     }
 
