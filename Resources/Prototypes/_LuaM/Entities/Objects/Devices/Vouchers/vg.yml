@@ -15,6 +15,7 @@
       color: "#B42328FF"
       shader: unshaded
   - type: ShipyardVoucher
+    tier: 2
     destroyOnEmpty: false
     cooldown: 3600 # one hour, as the Keelback
     consoleType: Viper

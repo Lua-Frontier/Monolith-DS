@@ -15,5 +15,9 @@
 
 <GuideCatalog Kind="missile"/>
 
+## Сборка орудий
+
+Многие из этих орудий можно собрать из деталей со сборщика: [textlink="Сборка орудий" link="ColossusShipWeaponAssembly"].
+
 [textlink="Управление огнём" link="WeaponsSystems"].
 </Document>

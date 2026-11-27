@@ -14,6 +14,10 @@
     scale: 1, 1
   - type: Gun
     shotsPerBurst: 1
+  # LuaM-start: the CYREXA went to Superheavy (12 fire control points), the single-barrel KARGIL stays Medium
+  - type: ShipGunClass
+    shipClass: Medium
+  # LuaM-end
 
 - type: entity
   id: WeaponTurretKargilHomingCluster

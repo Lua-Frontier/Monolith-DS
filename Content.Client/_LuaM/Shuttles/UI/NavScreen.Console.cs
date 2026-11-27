@@ -41,17 +41,40 @@ public sealed partial class NavScreen
         ModeSwitch.AnchorLocked = AnchorOn.Disabled;
     }
 
+    /// <summary>
+    /// Writes a label text only when it changed: every write invalidates the layout of the whole window,
+    /// and the readouts are refreshed every frame.
+    /// </summary>
+    private static bool SetText(Label label, string text)
+    {
+        if (label.Text == text)
+            return false;
+
+        label.Text = text;
+        return true;
+    }
+
     private int _coordsCaption;
     private float _coordsFullWidth = -1;
     private float _coordsShortWidth;
     private string? _coordsFullText;
     private string? _coordsShortText;
+    private int _coordsFittedLength = -1;
+    private float _coordsFittedRow = -1;
 
     private void FitCoordsCaption()
     {
         var avail = GridPositionRow.Size.X;
         if (avail <= 0)
             return;
+
+        // the fit only changes with the row width or the number of characters in the coordinates
+        var length = GridPosition.Text?.Length ?? 0;
+        if (length == _coordsFittedLength && avail == _coordsFittedRow)
+            return;
+
+        _coordsFittedLength = length;
+        _coordsFittedRow = avail;
 
         if (_coordsFullWidth < 0)
         {

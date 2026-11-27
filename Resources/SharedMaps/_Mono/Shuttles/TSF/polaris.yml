@@ -9112,7 +9112,7 @@ entities:
     - type: Transform
       pos: -2.5,11.5
       parent: 1
-- proto: GunneryServerUltra
+- proto: GunneryServerExtra
   entities:
   - uid: 1302
     components:

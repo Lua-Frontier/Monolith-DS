@@ -2699,7 +2699,7 @@ entities:
     - type: Transform
       pos: -1.5,-8.5
       parent: 1
-- proto: GunneryServerHigh
+- proto: GunneryServerUltra
   entities:
   - uid: 369
     components:

@@ -148,7 +148,7 @@
     scale: 1.45
     shape: arrow
   - type: TimedDespawn
-    lifetime: 2.1
+    lifetime: 3.125 # LuaM: 2.1 > 3.125, 1.25 km range at 400 m/s
   - type: PointLight
     radarColor: "#00e5ff"
   - type: ExplodeOnTrigger
@@ -290,7 +290,7 @@
     scale: 3.5
     shape: triangle
   - type: TimedDespawn
-    lifetime: 7.2
+    lifetime: 5.4 # LuaM: 7.2 > 5.4, 3.24 km at 600 m/s like the Leviathan
   - type: PointLight
     color: "#6BC1FF"
   - type: ExplodeOnTrigger

@@ -1,0 +1,189 @@
+- type: entity
+  abstract: true
+  id: LuaMShipGunFrameBase
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    drawdepth: OverMobs
+    state: icon
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Anchorable
+    delay: 5
+  - type: Pullable
+  - type: Rotatable
+    rotateWhilePulling: false
+    rotateWhileAnchored: false
+    increment: 90
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: GuideHelp
+    guides:
+    - ColossusShipWeaponAssembly
+    - ColossusCatalogueShipWeapons
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunFrameLightBallistic
+  name: light ballistic mount
+  description: "Base of a ship weapon. Anchor it, then insert one of the fitting parts: L85 barrel x2, Adder barrel x2, RAC-30 barrel x3, AC-35 barrel x2, GS-002 flare tube x2."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/frame_light_ballistic.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightBallistic
+    node: frame
+    deconstructionTarget: null
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+    mirrorClothingModifier: false
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunFrameArtillery
+  name: artillery mount
+  description: "Base of a ship weapon. Anchor it, then insert one of the fitting parts: AK570 barrel x2, Dravon barrel, Fang barrel x2, AK800 barrel, Tarnyx barrel, Equinox barrel."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/frame_artillery.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameArtillery
+    node: frame
+    deconstructionTarget: null
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunFrameHeavyArtillery
+  name: heavy artillery mount
+  description: "Base of a ship weapon. Anchor it, then insert one of the fitting parts: Bofors barrel, Cyrexa barrel x2, Kargil barrel, AK820 barrel x2, Hades barrel x2, Longbow barrel x2, R-300 barrel, Hydra barrel x3, Leviathan barrel."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/frame_heavy_artillery.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyArtillery
+    node: frame
+    deconstructionTarget: null
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.05
+    sprintModifier: 0.05
+    mirrorClothingModifier: false
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunFrameMassDriver
+  name: mass driver cradle
+  description: "Base of a ship weapon. Anchor it, then insert one of the fitting parts: Charonette rails."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/frame_mass_driver.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMassDriver
+    node: frame
+    deconstructionTarget: null
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunFrameLightEnergy
+  name: light energy weapon frame
+  description: "Base of a ship weapon. Anchor it, then insert one of the fitting parts: Type-35 emitter, Cerberus emitter x2, Rubicon emitter, Phalanx lens, Moros lens, pulse laser lens."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/frame_light_energy.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameLightEnergy
+    node: frame
+    deconstructionTarget: null
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+    mirrorClothingModifier: false
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunFrameHeavyEnergy
+  name: heavy energy weapon frame
+  description: "Base of a ship weapon. Anchor it, then insert one of the fitting parts: Type-54C emitter, Prometheus lens, Apollo lens, Shkval lens, Scylla emitter x2."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/frame_heavy_energy.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameHeavyEnergy
+    node: frame
+    deconstructionTarget: null
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.05
+    sprintModifier: 0.05
+    mirrorClothingModifier: false
+
+- type: entity
+  parent: LuaMShipGunFrameBase
+  id: LuaMShipGunFrameMissilePlatform
+  name: missile launcher platform
+  description: "Base of a ship weapon. Anchor it, then insert one of the fitting parts: Vespera launch module x2, Vanyk launch module x2, GPOB-L bay module x2, Serpent torpedo tube x2, Tovek launch module x2, Trident torpedo cell x4, Paladin launch tube x8, Vanquisher launch module x2."
+  components:
+  - type: Sprite
+    sprite: _LuaM/Structures/ShipGunAssembly/frame_missile_platform.rsi
+  - type: Construction
+    graph: LuaMShipGunFrameMissilePlatform
+    node: frame
+    deconstructionTarget: null
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: HeldSpeedModifier
+    walkModifier: 0.4
+    sprintModifier: 0.4
+    mirrorClothingModifier: false

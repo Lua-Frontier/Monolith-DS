@@ -1,8 +1,9 @@
 - type: entity
-  id: WeaponTurretVanyk
+  id: WeaponTurretVanykBase # LuaM: WeaponTurretVanyk > WeaponTurretVanykBase, shared with the movable crafted version
+  abstract: true # LuaM
   name: ASM-150 "Vanyk" Missile Pod
   parent:
-  - BallisticArtilleryUnanchorableMagazine
+  - BallisticArtilleryBaseMagazine # LuaM: BallisticArtilleryUnanchorableMagazine > BallisticArtilleryBaseMagazine, RequiresGrid moved to WeaponTurretVanyk
   - BallisticArtilleryTier2HP
   description: An escort missile pod manufactured by Aetherion Dynamics. Launches 150mm guided missiles for basic ship-to-ship combat and area denial. Uses a built-in autoloader instead of a rack, increasing capacity but reducing rate of fire. Can be remotely activated or linked to a GCS.
   components:
@@ -65,3 +66,12 @@
   # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
   #   class: Missile
   #   size: Light
+
+# LuaM-start: mapped guns stay bolted to the grid, the movable crafted ones are in _LuaM/Entities/SpaceArtillery/movable.yml
+- type: entity
+  id: WeaponTurretVanyk
+  parent: WeaponTurretVanykBase
+  suffix: Bolted
+  components:
+  - type: RequiresGrid
+# LuaM-end

@@ -10390,7 +10390,7 @@ entities:
     - type: Transform
       pos: -1.5,41.5
       parent: 1
-- proto: GunneryServerUltra
+- proto: GunneryServerExtra
   entities:
   - uid: 1457
     components:

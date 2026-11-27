@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-3.0",
+    "copyright": "Cut from dravon.rsi (Created by kyres1 (discord), modified by Avalon-Proto)",
+    "size": {
+        "x": 48,
+        "y": 48
+    },
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
+}

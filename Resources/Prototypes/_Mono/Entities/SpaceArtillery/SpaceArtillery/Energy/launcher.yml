@@ -136,10 +136,11 @@
 # Type 54 autopulser
 
 - type: entity
-  id: WeaponTurretType54
+  id: WeaponTurretType54Base # LuaM: WeaponTurretType54 > WeaponTurretType54Base, shared with the movable crafted version
+  abstract: true # LuaM
   name: Type-54C plasma autopulser
   parent:
-  - BallisticArtilleryUnanchorable
+  - BallisticArtilleryBase # LuaM: BallisticArtilleryUnanchorable > BallisticArtilleryBase, RequiresGrid moved to WeaponTurretType54
   - BallisticArtilleryTier2HP
   suffix: Medium, T2
   description: A rapidly firing energy weapon, well known for its devastating burst followed by a constant stream of plasma.
@@ -198,6 +199,10 @@
   - type: ShipRepairable
     repairTime: 25
     repairCost: 100
+  # LuaM-start: 6 fire control points instead of the 9 of its weapon class
+  - type: FireControllable
+    processingPowerCost: 6
+  # LuaM-end
   # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
   #   class: Energy
   #   size: Medium
@@ -380,7 +385,7 @@
     range: 500
   - type: Gun
     damageModifier: 2
-    projectileSpeed: 350
+    projectileSpeed: 400 # LuaM: 350 > 400
     minAngle: 0
     maxAngle: 6
     fireRate: 1
@@ -443,6 +448,10 @@
     guides:
     - ColossusCatalogueShipWeapons
   # LuaM-end
+  # LuaM-start: 24 fire control points instead of the 12 of its weapon class
+  - type: FireControllable
+    processingPowerCost: 24
+  # LuaM-end
   - type: StaticPrice
     price: 50000
   - type: Sprite
@@ -464,14 +473,14 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.75,-0.75,0.75,0.75"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.75,-0.75,0.75,0.75 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
         layer:
         - MachineLayer
   - type: Gun
-    projectileSpeed: 295
+    projectileSpeed: 600 # LuaM: 295 > 600
     fireRate: 0.75
     recoil: 500 # 20x - station weapon
     shootThermalSignature: 12000000 # ~6km after firing
@@ -713,7 +722,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.75,-0.75,0.75,0.75"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.75,-0.75,0.75,0.75 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -772,7 +781,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.75,-0.75,0.75,0.75"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.75,-0.75,0.75,0.75 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -890,7 +899,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.5,-0.5,0.5,0.5 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -979,7 +988,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.5,-0.5,0.5,0.5"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.5,-0.5,0.5,0.5 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -1070,7 +1079,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.75,-0.75,0.75,0.75"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.75,-0.75,0.75,0.75 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -1304,3 +1313,12 @@
   # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
   #   class: Ballistic # Because it's not a energy weapon, actually.
   #   size: Medium
+
+# LuaM-start: mapped guns stay bolted to the grid, the movable crafted ones are in _LuaM/Entities/SpaceArtillery/movable.yml
+- type: entity
+  id: WeaponTurretType54
+  parent: WeaponTurretType54Base
+  suffix: Medium, T2, Bolted
+  components:
+  - type: RequiresGrid
+# LuaM-end

@@ -10,6 +10,7 @@ guide-architecture-colossus-building = Строительство
 guide-architecture-colossus-t-e-g = ТЭГ
 guide-architecture-colossus-edison = Электростанция Эдисона
 guide-architecture-colossus-fire-control-servers = Серверы СУО
+guide-architecture-colossus-ship-weapon-assembly = Сборка орудий
 guide-architecture-colossus-electricity = Электроснабжение
 guide-architecture-colossus-atmos-equipment = Оборудование
 guide-architecture-colossus-gas-synthesis = Синтез газов

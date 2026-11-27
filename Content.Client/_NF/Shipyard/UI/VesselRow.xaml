@@ -1,4 +1,5 @@
 <ContainerButton xmlns="https://spacestation14.io"
+                 xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                  HorizontalExpand="True"
                  ToggleMode="True"
                  StyleClasses="button"
@@ -7,6 +8,24 @@
     <BoxContainer Orientation="Horizontal"
                   HorizontalExpand="True"
                   Margin="6 3">
+        <!-- LuaM-start: voucher tier badge -->
+        <PanelContainer Name="TierBadge"
+                        Access="Public"
+                        Visible="False"
+                        VerticalAlignment="Center"
+                        Margin="0 0 6 0">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1B2226"
+                                  BorderColor="#34474D"
+                                  BorderThickness="1"
+                                  ContentMarginLeftOverride="4"
+                                  ContentMarginRightOverride="4" />
+            </PanelContainer.PanelOverride>
+            <Label Name="TierLabel"
+                   Access="Public"
+                   FontColorOverride="#8ED2CB" />
+        </PanelContainer>
+        <!-- LuaM-end -->
         <Label Name="VesselName"
                Access="Public"
                ClipText="True"

@@ -67963,7 +67963,7 @@ entities:
     - type: Transform
       pos: 5.6053185,9.523383
       parent: 1
-- proto: WeaponTurretTarnyx
+- proto: WeaponTurretTarnyxMovable
   entities:
   - uid: 10345
     components:

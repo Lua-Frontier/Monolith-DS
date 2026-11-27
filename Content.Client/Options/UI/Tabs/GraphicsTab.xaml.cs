@@ -29,20 +29,9 @@ public sealed partial class GraphicsTab : Control
         Control.AddOption(new OptionFullscreen(Control, _cfg, FullscreenCheckBox));
         Control.AddOption(new OptionLightingQuality(Control, _cfg, DropDownLightingQuality));
 
-        Control.AddOptionDropDown(
-            CVars.DisplayUIScale,
-            DropDownUIScale,
-            [
-                new OptionDropDownCVar<float>.ValueOption(
-                    0f,
-                    Loc.GetString("ui-options-scale-auto", ("scale", UserInterfaceManager.DefaultUIScale))),
-                new OptionDropDownCVar<float>.ValueOption(0.75f, Loc.GetString("ui-options-scale-75")),
-                new OptionDropDownCVar<float>.ValueOption(1.00f, Loc.GetString("ui-options-scale-100")),
-                new OptionDropDownCVar<float>.ValueOption(1.25f, Loc.GetString("ui-options-scale-125")),
-                new OptionDropDownCVar<float>.ValueOption(1.50f, Loc.GetString("ui-options-scale-150")),
-                new OptionDropDownCVar<float>.ValueOption(1.75f, Loc.GetString("ui-options-scale-175")),
-                new OptionDropDownCVar<float>.ValueOption(2.00f, Loc.GetString("ui-options-scale-200")),
-            ]);
+        // LuaM-start: a 75-200% slider instead of the 75/100/125/150/175/200 presets, automatic stays as a checkbox
+        Control.AddOption(new Content.Client._LuaM.Options.OptionUIScale(Control, _cfg, UIScaleAutoCheckBox, UIScaleSlider));
+        // LuaM-end
 
         var vpStretch = Control.AddOptionCheckBox(CCVars.ViewportStretch, ViewportStretchCheckBox);
         var vpVertFit = Control.AddOptionCheckBox(CCVars.ViewportVerticalFit, ViewportVerticalFitCheckBox);
@@ -85,6 +74,18 @@ public sealed partial class GraphicsTab : Control
         Control.AddOptionCheckBox(LuaCVars.AmbientSpaceLayerUpper, AmbientSpaceLayerUpperCheckBox);
         Control.AddOptionPercentSlider(LuaCVars.AmbientSpaceEffectsDensity, AmbientSpaceDensitySlider, min: 0f, max: 1.5f);
         // Lua-end
+
+        // LuaM-start: particle effects of explosions and impacts, the heaviest part of a fight on weak hardware
+        Control.AddOptionDropDown(
+            CCVars.ParticleQuality,
+            DropDownParticleQuality,
+            [
+                new OptionDropDownCVar<int>.ValueOption(0, Loc.GetString("ui-options-particle-quality-off")),
+                new OptionDropDownCVar<int>.ValueOption(1, Loc.GetString("ui-options-particle-quality-low")),
+                new OptionDropDownCVar<int>.ValueOption(2, Loc.GetString("ui-options-particle-quality-medium")),
+                new OptionDropDownCVar<int>.ValueOption(3, Loc.GetString("ui-options-particle-quality-high")),
+            ]);
+        // LuaM-end
 
         Control.Initialize();
 

@@ -20,7 +20,7 @@
     scale: 1.5
     shape: circle
   - type: TimedDespawn
-    lifetime: 5
+    lifetime: 4 # LuaM: 5 > 4, same range at the faster muzzle speed
   - type: PointLight
     color: "#FB00FF"
   - type: EmpOnTrigger
@@ -97,7 +97,7 @@
     scale: 1.75
     shape: triangle
   - type: TimedDespawn
-    lifetime: 5
+    lifetime: 4 # LuaM: 5 > 4, same range at the faster muzzle speed
 
 - type: entity
   id: 150mmApShell
@@ -173,7 +173,7 @@
     scale: 1.75
     shape: triangle
   - type: TimedDespawn
-    lifetime: 5
+    lifetime: 4 # LuaM: 5 > 4, same range at the faster muzzle speed
 
 - type: entity
   id: 150mmApheShell

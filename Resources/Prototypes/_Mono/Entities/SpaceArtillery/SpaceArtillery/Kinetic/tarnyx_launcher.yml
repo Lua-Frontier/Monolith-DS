@@ -1,10 +1,11 @@
 # inf ammo for ads/station
 
 - type: entity
-  id: WeaponTurretTarnyx
+  id: WeaponTurretTarnyxBase # LuaM: WeaponTurretTarnyx > WeaponTurretTarnyxBase, shared with the movable crafted version
+  abstract: true # LuaM
   name: ADBX-31 TARNYX 90mm EMP Cannon
   parent:
-  - BallisticArtilleryUnanchorable
+  - BallisticArtilleryBase # LuaM: BallisticArtilleryUnanchorable > BallisticArtilleryBase, RequiresGrid moved to WeaponTurretTarnyx
   - BallisticArtilleryTier3HP
   suffix: Station, Recharging Ammo, EMP
   description: A heavy EMP cannon made by Aetherion Dynamics, designed to disable large sections of enemy ships with a single, powerful shot. Effective in asymmetric combat. Can be remotely activated or linked up to a GCS.
@@ -32,7 +33,7 @@
   - type: GunSignalControl
   - type: Gun
     fireRate: 0.1
-    projectileSpeed: 400
+    projectileSpeed: 500 # LuaM: 400 > 500
     shootThermalSignature: 8000000 # ~2.8km after firing - relatively low
     soundGunshot:
       collection: ShipGunGenericBig
@@ -67,9 +68,10 @@
 # limited ammo for ships
 
 - type: entity
-  id: WeaponTurretTarnyxReload
+  id: WeaponTurretTarnyxReloadBase # LuaM: WeaponTurretTarnyxReload > WeaponTurretTarnyxReloadBase, shared with the movable crafted version
+  abstract: true # LuaM
   name: ADBX-31 TARNYX 90mm EMP Cannon
-  parent: [BallisticArtilleryUnanchorableCartridge, BallisticArtilleryTier3HP] # LuaM: added BallisticArtilleryTier3HP
+  parent: [BallisticArtilleryBaseCartridge, BallisticArtilleryTier3HP] # LuaM: added BallisticArtilleryTier3HP; BallisticArtilleryUnanchorableCartridge > BallisticArtilleryBaseCartridge, RequiresGrid moved to WeaponTurretTarnyxReload
   suffix: Medium, T2 - Infinite EMP
   description: A heavy EMP cannon made by Aetherion Dynamics, designed to disable large sections of enemy ships with a single, powerful shot. Effective in asymmetric combat. Can be remotely activated or linked up to a GCS.
   components:
@@ -88,7 +90,7 @@
   - type: GunSignalControl
   - type: Gun
     fireRate: 0.1
-    projectileSpeed: 400
+    projectileSpeed: 500 # LuaM: 400 > 500
     shootThermalSignature: 8000000 # ~2.8km after firing - relatively low
     soundGunshot:
       collection: ShipGunGenericBig
@@ -124,9 +126,10 @@
   #   size: Medium
 
 - type: entity
-  id: WeaponTurretTarnyxReloadAP
+  id: WeaponTurretTarnyxReloadAPBase # LuaM: WeaponTurretTarnyxReloadAP > WeaponTurretTarnyxReloadAPBase, shared with the movable crafted version
+  abstract: true # LuaM
   name: GS-001 EQUINOX 90mm AP Cannon
-  parent: WeaponTurretTarnyxReload
+  parent: WeaponTurretTarnyxReloadBase # LuaM: WeaponTurretTarnyxReload > WeaponTurretTarnyxReloadBase
   suffix: Ship, Infinite Standard AP Ammo
   description: A knockoff heavy cannon made by GS, unlike the ABDX-31, it automatically loads AP shells. Effective in asymmetric combat. Can be remotely activated or linked up to a GCS.
   components:
@@ -150,3 +153,26 @@
   # - type: HardpointAnchorableOnly # Commented by LuaM: only superheavy weapons need a hardpoint
   #   class: Ballistic
   #   size: Medium
+
+# LuaM-start: mapped guns stay bolted to the grid, the movable crafted ones are in _LuaM/Entities/SpaceArtillery/movable.yml
+- type: entity
+  id: WeaponTurretTarnyx
+  parent: WeaponTurretTarnyxBase
+  suffix: Station, Recharging Ammo, EMP, Bolted
+  components:
+  - type: RequiresGrid
+
+- type: entity
+  id: WeaponTurretTarnyxReload
+  parent: WeaponTurretTarnyxReloadBase
+  suffix: Medium, T2 - Infinite EMP, Bolted
+  components:
+  - type: RequiresGrid
+
+- type: entity
+  id: WeaponTurretTarnyxReloadAP
+  parent: WeaponTurretTarnyxReloadAPBase
+  suffix: Ship, Infinite Standard AP Ammo, Bolted
+  components:
+  - type: RequiresGrid
+# LuaM-end

@@ -25,7 +25,7 @@
     range: 500
   - type: GunSignalControl
   - type: Gun
-    damageModifier: 0.5
+    damageModifier: 1 # LuaM: 0.5 > 1, full projectile damage
     selectedMode: Burst
     availableModes: Burst
     burstCooldown: 15
@@ -65,7 +65,7 @@
   - type: ShipGunType
     shipType: Missile
   - type: ShipGunClass
-    shipClass: Heavy
+    shipClass: Superheavy # LuaM: Heavy > Superheavy, 12 fire control points
   - type: ShipRepairable
     repairTime: 100
     repairCost: 200
@@ -74,7 +74,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.75,-0.75,0.75,0.75"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.75,-0.75,0.75,0.75 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask

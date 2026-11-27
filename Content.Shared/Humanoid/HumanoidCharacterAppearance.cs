@@ -268,9 +268,26 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             eyeColor,
             skinColor,
             markingSet.GetForwardEnumerator().ToList(),
-            appearance.Height,
-            appearance.Width);
+            ClampSize(appearance.Height), // LuaM
+            ClampSize(appearance.Width)); // LuaM
     }
+
+    // LuaM-start
+    /// <summary>
+    /// Limits of the height and width sliders in the character editor. A profile loaded from a file or sent by
+    /// a modified client went straight through with any size.
+    /// </summary>
+    public const float MinSize = 0.8f;
+    public const float MaxSize = 1.2f;
+
+    public static float ClampSize(float size)
+    {
+        if (!float.IsFinite(size))
+            return 1.0f;
+
+        return Math.Clamp(size, MinSize, MaxSize);
+    }
+    // LuaM-end
 
     public bool MemberwiseEquals(ICharacterAppearance maybeOther)
     {

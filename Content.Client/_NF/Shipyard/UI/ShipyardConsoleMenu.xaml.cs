@@ -3,6 +3,7 @@ using System.Numerics; // LuaM
 using Content.Client.UserInterface.Controls;
 using Content.Client._NF.Shipyard.BUI;
 using Content.Shared._NF.Bank;
+using Content.Shared._NF.Shipyard.Components; // LuaM
 using Content.Shared._NF.Shipyard.BUI;
 using Content.Shared._NF.Shipyard.Prototypes;
 using Content.Shared.Shuttles.BUIStates; // Lua
@@ -316,6 +317,11 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
                 LimitedCount = { Visible = limit > 0, Text = $"{Math.Max(limitRemain, 0)}/{limit}" },
                 Pressed = prototype.ID == _selected?.ID,
             };
+            if (GetVoucherTier(prototype) is { } tier) // voucher tier badge
+            {
+                vesselEntry.TierBadge.Visible = true;
+                vesselEntry.TierLabel.Text = $"[T{tier}]";
+            }
             vesselEntry.OnPressed += _ => Select(prototype);
             Vessels.AddChild(vesselEntry);
             // LuaM end
@@ -323,6 +329,33 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     }
 
     // LuaM start
+    private Dictionary<string, int>? _voucherTiers;
+
+    /// <summary>
+    /// The lowest voucher tier among the tiered vouchers that buy this vessel, or null when none does.
+    /// </summary>
+    private int? GetVoucherTier(VesselPrototype prototype)
+    {
+        if (_voucherTiers == null)
+        {
+            _voucherTiers = new();
+            var factory = _entManager.ComponentFactory;
+            foreach (var entity in _protoManager.EnumeratePrototypes<EntityPrototype>())
+            {
+                if (entity.Abstract || !entity.TryGetComponent<ShipyardVoucherComponent>(out var voucher, factory) || voucher.Tier is not { } tier)
+                    continue;
+
+                foreach (var vessel in voucher.Vessels)
+                {
+                    if (!_voucherTiers.TryGetValue(vessel, out var known) || tier < known)
+                        _voucherTiers[vessel] = tier;
+                }
+            }
+        }
+
+        return _voucherTiers.TryGetValue(prototype.ID, out var result) ? result : null;
+    }
+
     private (int Limit, int Remain) GetLimit(VesselPrototype prototype)
     {
         var limit = _hyperwarLimits ? prototype.HyperwarLimitActive : prototype.LimitActive;

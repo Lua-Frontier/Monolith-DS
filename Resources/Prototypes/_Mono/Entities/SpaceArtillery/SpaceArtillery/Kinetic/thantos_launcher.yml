@@ -61,7 +61,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.6,-0.6,0.6,0.6"
+          bounds: "-0.45,-0.45,0.45,0.45" # LuaM: -0.6,-0.6,0.6,0.6 > -0.45,-0.45,0.45,0.45, fits a one tile doorway
         density: 1500
         mask:
         - MachineMask
@@ -87,6 +87,10 @@
   - type: HardpointAnchorableOnly
     class: Ballistic
     size: Superheavy
+  # LuaM-start: 24 fire control points instead of the 12 of its weapon class
+  - type: FireControllable
+    processingPowerCost: 24
+  # LuaM-end
 
 
 # If someone wants to make a ship version go nuts, but be SURE it uses ammo
