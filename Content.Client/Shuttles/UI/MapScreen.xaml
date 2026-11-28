@@ -92,11 +92,12 @@
                         <controls:BoxContainer Orientation="Vertical" Margin="7 5" SeparationOverride="3">
                             <controls:Label Text="{controls:Loc 'shuttle-console-map-target'}" StyleClasses="LuaMConsoleHeaderLabel"/>
                             <controls:BoxContainer Orientation="Horizontal" SeparationOverride="3">
-                                <controls:LineEdit Name="MapTargetX" StyleClasses="LuaMConsoleInput" HorizontalExpand="True" MinWidth="60"/>
-                                <controls:LineEdit Name="MapTargetY" StyleClasses="LuaMConsoleInput" HorizontalExpand="True" MinWidth="60"/>
+                                <ui:CoordinateMarqueeInput Name="MapTargetX" HorizontalExpand="True" MinWidth="72"/>
+                                <ui:CoordinateMarqueeInput Name="MapTargetY" HorizontalExpand="True" MinWidth="72"/>
                                 <controls:Button Name="MapTargetSet" StyleClasses="LuaMConsoleThin"
                                                  MinHeight="18"
-                                                 Text="{controls:Loc 'shuttle-console-set-target'}"
+                                                 MinWidth="26"
+                                                 MaxWidth="26"
                                                  ToolTip="{controls:Loc 'shuttle-console-set-target-description'}"
                                                  TextAlign="Center"/>
                                 <controls:Button Name="MapTargetHide" StyleClasses="LuaMConsoleToggle"

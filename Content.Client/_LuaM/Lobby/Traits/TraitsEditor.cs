@@ -8,6 +8,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Client._LuaM.Lobby.Traits;
@@ -44,6 +45,9 @@ public sealed class TraitsEditor : BoxContainer
     private List<TraitCategoryView> _data = new();
     private string _current = SelectedCategory;
     private ProtoId<TraitPrototype>? _focused;
+    private const float SearchDebounceSeconds = 0.15f;
+    private float _searchDelay;
+    private bool _searchPending;
 
     public event Action<ProtoId<TraitPrototype>>? OnTraitToggled;
     public event Action? OnClearAll;
@@ -101,7 +105,11 @@ public sealed class TraitsEditor : BoxContainer
             PlaceHolder = Loc.GetString("traits-editor-search"),
             StyleClasses = { LobbyHudStyles.Input },
         };
-        _search.OnTextChanged += _ => RebuildCards();
+        _search.OnTextChanged += _ =>
+        {
+            _searchPending = true;
+            _searchDelay = SearchDebounceSeconds;
+        };
 
         var clear = new ConfirmButton
         {
@@ -200,6 +208,21 @@ public sealed class TraitsEditor : BoxContainer
         RebuildCards();
     }
 
+    protected override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+
+        if (!_searchPending)
+            return;
+
+        _searchDelay -= args.DeltaSeconds;
+        if (_searchDelay > 0)
+            return;
+
+        _searchPending = false;
+        RebuildCards();
+    }
+
     private IEnumerable<(TraitCategoryView Category, TraitView Trait)> AllTraits()
     {
         return _data.SelectMany(c => c.Traits.Select(t => (c, t)));
@@ -277,6 +300,7 @@ public sealed class TraitsEditor : BoxContainer
 
     private void RebuildCards()
     {
+        _searchPending = false;
         _cards.RemoveAllChildren();
         _positive.RemoveAllChildren();
         _negative.RemoveAllChildren();

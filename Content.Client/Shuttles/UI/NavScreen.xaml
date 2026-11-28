@@ -78,12 +78,13 @@
 
                 <!-- Nav controls -->
                 <controls:PanelContainer StyleClasses="LuaMConsoleSection" VerticalExpand="True" HorizontalExpand="False">
+                <!-- LuaM -->
                 <controls:BoxContainer Name="RightDisplayNav"
                       VerticalAlignment="Stretch"
                       HorizontalAlignment="Right"
                       VerticalExpand="True"
-                      MinWidth="256"
-                      MaxWidth="256"
+                      MinWidth="292"
+                      MaxWidth="292"
                       Margin="4"
                       SeparationOverride="4"
                       Orientation="Vertical">
@@ -222,12 +223,13 @@
                         <controls:BoxContainer Orientation="Horizontal"
                                                HorizontalExpand="True"
                                                SeparationOverride="3">
-                            <controls:LineEdit Name="TargetX" Access="Public" HorizontalExpand="True" StyleClasses="LuaMConsoleInput"/>
-                            <controls:LineEdit Name="TargetY" Access="Public" HorizontalExpand="True" StyleClasses="LuaMConsoleInput"/>
+                            <!-- LuaM-start -->
+                            <ui:CoordinateMarqueeInput Name="TargetX" HorizontalExpand="True" MinWidth="72"/>
+                            <ui:CoordinateMarqueeInput Name="TargetY" HorizontalExpand="True" MinWidth="72"/>
                             <controls:Button Name="TargetSet"
-                                            Text="{controls:Loc 'shuttle-console-set-target'}"
                                             TextAlign="Center"
-                                            MinWidth="20"
+                                            MinWidth="26"
+                                            MaxWidth="26"
                                             ToolTip="{controls:Loc 'shuttle-console-set-target-description'}"
                                             StyleClasses="LuaMConsoleThin"/>
                             <controls:Button Name="TargetHide"
@@ -237,6 +239,7 @@
                                             MinWidth="20"
                                             ToolTip="{controls:Loc 'shuttle-console-hide-target-description'}"
                                             StyleClasses="LuaMConsoleToggle"/>
+                            <!-- LuaM-end -->
                         </controls:BoxContainer>
                         <!-- LuaM-start: autopilot to the marker and removing it -->
                         <controls:BoxContainer Orientation="Horizontal" HorizontalExpand="True" SeparationOverride="3">

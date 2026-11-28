@@ -218,6 +218,37 @@ public static class ConsoleStyles
         button.Label.Margin = new Thickness(15, 0, 0, 0);
     }
 
+    public static void UpdateGunType(Button button, ShipGunType? type)
+    {
+        var style = GunStyle(type);
+        if (!button.HasStyleClass(style))
+        {
+            button.RemoveStyleClass(Toggle);
+            button.RemoveStyleClass(GunBallistic);
+            button.RemoveStyleClass(GunEnergy);
+            button.RemoveStyleClass(GunMissile);
+            button.AddStyleClass(style);
+        }
+
+        var shape = GunShape(type);
+        var existing = button.Children.OfType<HudShape>().FirstOrDefault();
+        if (shape is null)
+        {
+            if (existing == null)
+                return;
+
+            existing.Orphan();
+            button.Label.Margin = default;
+            return;
+        }
+
+        if (existing?.Status == shape)
+            return;
+
+        existing?.Orphan();
+        AddGunShape(button, shape);
+    }
+
     public static void Caps(Control root)
     {
         foreach (var child in root.Children)

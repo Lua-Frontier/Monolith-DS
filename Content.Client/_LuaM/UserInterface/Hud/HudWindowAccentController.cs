@@ -53,6 +53,12 @@ public sealed partial class HudWindowAccentController : UIController
 
     private void MatchOwners()
     {
+        if (_owners.Count > 200)
+            _owners.Clear();
+
+        if (_pending.Count == 0)
+            return;
+
         var now = _timing.RealTime;
         _currentUis.Clear();
 
@@ -119,8 +125,6 @@ public sealed partial class HudWindowAccentController : UIController
             }
         }
 
-        if (_owners.Count > 200)
-            _owners.Clear();
     }
 
     private readonly List<(BaseWindow Window, int Frames)> _fit = new();

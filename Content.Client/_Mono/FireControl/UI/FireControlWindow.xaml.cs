@@ -343,6 +343,10 @@ public sealed partial class FireControlWindow : FancyWindow
             {
                 toRemove.Remove(controllable.NetEntity);
                 UpdateWeaponButtonText(existingButton, controllable);
+                // LuaM-start
+                var existingType = _weaponTypes.TryGetValue(controllable.NetEntity, out var knownType) ? knownType : (ShipGunType?) null;
+                ConsoleStyles.UpdateGunType(existingButton, existingType);
+                // LuaM-end
             }
             else
             {
