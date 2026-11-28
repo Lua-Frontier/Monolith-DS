@@ -26501,7 +26501,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -32.5,3.5
       parent: 2
-- proto: ComputerCargoBounty
+- proto: LuaMComputerKitchenBounty
   entities:
   - uid: 10396
     components:
@@ -26970,7 +26970,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -46.5,41.5
       parent: 2
-- proto: ComputerTabletopCargoBounty
+- proto: LuaMComputerTabletopKitchenBounty
   entities:
   - uid: 10400
     components:

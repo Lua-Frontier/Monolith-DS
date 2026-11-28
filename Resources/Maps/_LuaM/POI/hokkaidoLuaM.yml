@@ -15660,7 +15660,7 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
-- proto: ComputerCargoBounty
+- proto: LuaMComputerMMCBounty
   entities:
   - uid: 2331
     components:

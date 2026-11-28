@@ -1,5 +1,6 @@
 using Content.Client.Cargo.UI;
 using Content.Shared.Cargo.Components;
+using Content.Shared._LuaM.Cargo; // LuaM
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
@@ -20,6 +21,10 @@ public sealed class CargoBountyConsoleBoundUserInterface : BoundUserInterface
         base.Open();
 
         _menu = this.CreateWindow<CargoBountyMenu>();
+
+        // LuaM: consoles with their own texts, like the Colossus kitchen
+        if (EntMan.TryGetComponent<BountyConsoleLocaleComponent>(Owner, out var locale))
+            _menu.SetLocalePrefix(locale.Prefix);
 
         _menu.OnLabelButtonPressed += id =>
         {

@@ -1,0 +1,57 @@
+# Bounty consoles of the factions: the cargo bounty console with its own texts, order slips and skip access.
+
+# Colossus Central kitchen, anyone may skip an order
+
+- type: entity
+  parent: ComputerCargoBounty
+  id: LuaMComputerKitchenBounty
+  name: kitchen order console
+  description: Shows the orders of the Colossus Central kitchen and prints order slips for them.
+  components:
+  - type: CargoBountyConsole
+    bountyLabelId: LuaMPaperKitchenOrderManifest
+  - type: BountyConsoleLocale
+    prefix: kitchen-
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: ComputerTabletopCargoBounty
+  id: LuaMComputerTabletopKitchenBounty
+  name: kitchen order console
+  description: Shows the orders of the Colossus Central kitchen and prints order slips for them.
+  suffix: Tabletop
+  components:
+  - type: CargoBountyConsole
+    bountyLabelId: LuaMPaperKitchenOrderManifest
+  - type: BountyConsoleLocale
+    prefix: kitchen-
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: PaperCargoBountyManifest
+  id: LuaMPaperKitchenOrderManifest
+  name: kitchen order slip
+  description: An order slip of the Colossus Central kitchen. Put it on a crate with the dishes and sell the crate to fulfil the order.
+
+# MMC Hokkaido production tasks, skipped by MMC staff
+
+- type: entity
+  parent: ComputerCargoBounty
+  id: LuaMComputerMMCBounty
+  name: MMC task console
+  description: Shows the production tasks of the MMC board of directors and prints waybills for them.
+  components:
+  - type: CargoBountyConsole
+    bountyLabelId: LuaMPaperMMCBountyManifest
+  - type: BountyConsoleLocale
+    prefix: mmc-
+  - type: AccessReader
+    access: [["Mieyo"]]
+
+- type: entity
+  parent: PaperCargoBountyManifest
+  id: LuaMPaperMMCBountyManifest
+  name: MMC task waybill
+  description: A waybill of an MMC production task. Put it on a crate with the goods and sell the crate to fulfil the task.
