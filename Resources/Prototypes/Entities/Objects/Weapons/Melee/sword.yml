@@ -7,6 +7,7 @@
   - type: Execution
     doAfterDuration: 4.0
   - type: MeleeWeapon
+    range: 1.8 # LuaM: melee range +20% for swords, sabres and mantis blades
     wideAnimationRotation: -135
   - type: Sprite
     state: icon

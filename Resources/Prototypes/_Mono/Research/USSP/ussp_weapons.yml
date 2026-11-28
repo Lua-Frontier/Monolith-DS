@@ -22,6 +22,9 @@
   recipeUnlocks:
   - WeaponRifleAK410USSP
   - AmmoBox762x39mmSubsonic
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox762x39mmBigSubsonic
+  # LuaM-end
   technologyPrerequisites:
   - UsspMediumGuns
   position: 8, 6 # LuaM: 12, 8 > 8, 6

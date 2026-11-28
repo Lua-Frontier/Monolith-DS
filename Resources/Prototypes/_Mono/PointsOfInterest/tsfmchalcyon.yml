@@ -32,6 +32,7 @@
     companyName: TSF
   - type: SolarPoweredGrid
     doNotCull: true
+  - type: NebulaWeatherExclusion # LuaM: no hazardous nebulae near the station
   - type: WorldGenDistanceCarver
     distanceThresholds:
     # Dead zone

@@ -114,7 +114,13 @@
   - AmmoBox12_gaugeBuckshot
   - AmmoBox12_gaugeBuckshot
   - AccessBreaker
-  - JawsOfLife
+#  - JawsOfLife # Commented by LuaM: the Tarkhan jaws of life below
+  # LuaM-start: Tarkhan tools
+  - JawsOfLifeTarkhan
+  - PowerDrillTarkhan
+  - WelderExperimentalTarkhan
+  - HandHeldMassScannerTarkhan
+  # LuaM-end
   - MedkitCombatFilled
 
 - type: thiefBackpackSet # rifle set
@@ -132,6 +138,12 @@
   - Magazine762x51mmFMJ
   - Magazine762x51mmFMJ
   - AccessBreaker
+  # LuaM-start: Tarkhan tools
+  - JawsOfLifeTarkhan
+  - PowerDrillTarkhan
+  - WelderExperimentalTarkhan
+  - HandHeldMassScannerTarkhan
+  # LuaM-end
   - MedkitCombatFilled
 
 - type: thiefBackpackSet # LMG set
@@ -148,6 +160,12 @@
   - AmmoBox762x51mmFMJ
   - AmmoBox762x51mmFMJ
   - AccessBreaker
+  # LuaM-start: Tarkhan tools
+  - JawsOfLifeTarkhan
+  - PowerDrillTarkhan
+  - WelderExperimentalTarkhan
+  - HandHeldMassScannerTarkhan
+  # LuaM-end
   - MedkitCombatFilled
 
 # TSF MARSOC
@@ -167,6 +185,11 @@
   - Magazine8x65mmSKR
   - GunAttachmentGripErebusVFG
   - JawsOfLife
+  # LuaM-start: MARSOC tools
+  - PowerDrill
+  - WelderExperimental
+  - HandHeldMassScanner
+  # LuaM-end
   - MedkitCombatFilled
 
 # LuaM-start: Hristov, Shenzhen and Hunter-101 disabled, their ammo stays
@@ -200,6 +223,11 @@
   - PortableRecharger
   - WeaponEnergyRevolver
   - JawsOfLife
+  # LuaM-start: MARSOC tools
+  - PowerDrill
+  - WelderExperimental
+  - HandHeldMassScanner
+  # LuaM-end
   - MedkitCombatFilled
 
 - type: thiefBackpackSet # hailstorm set
@@ -217,4 +245,9 @@
   - AmmoBox9x19mmFMJ
   - WeaponEnergyRevolver
   - JawsOfLife
+  # LuaM-start: MARSOC tools
+  - PowerDrill
+  - WelderExperimental
+  - HandHeldMassScanner
+  # LuaM-end
   - MedkitCombatFilled

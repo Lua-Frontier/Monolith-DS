@@ -30,7 +30,10 @@ selectable-set-pdvtarkhan-breacher-kit-desc =
     - 4 boxes of Buckshot
     - an Anaconda
     - an access breaker
-    - a jaws of life
+    - Tarkhan jaws of life
+    - a Tarkhan power drill
+    - a Tarkhan advanced welding tool
+    - a Tarkhan mass scanner
     - and a combat medkit.
 
 selectable-set-pdvtarkhan-molot-kit-name = Molot kit
@@ -40,6 +43,10 @@ selectable-set-pdvtarkhan-molot-kit-desc =
     - 4 mags of 7.62x51mm
     - a VT-7 HF blade
     - an access breaker
+    - Tarkhan jaws of life
+    - a Tarkhan power drill
+    - a Tarkhan advanced welding tool
+    - a Tarkhan mass scanner
     - and a combat medkit.
 
 selectable-set-pdvtarkhan-wspr-kit-name = LA/22 Kord kit
@@ -48,6 +55,10 @@ selectable-set-pdvtarkhan-wspr-kit-desc =
     - a LA/22 Kord LMG
     - 4 boxes of 7.62x51mm
     - an access breaker
+    - Tarkhan jaws of life
+    - a Tarkhan power drill
+    - a Tarkhan advanced welding tool
+    - a Tarkhan mass scanner
     - and a combat medkit.
 
 selectable-set-tsfmarsoc-fenghuang-kit-name = Fenghuang kit
@@ -57,6 +68,9 @@ selectable-set-tsfmarsoc-fenghuang-kit-desc =
     - 4 mags of 8x65mm
     - a vertical foregrip
     - a jaws of life
+    - a power drill
+    - an experimental welding tool
+    - a handheld mass scanner
     - and a combat medkit.
 
 selectable-set-tsfmarsoc-shenzhen-kit-name = Shenzhen kit
@@ -75,6 +89,9 @@ selectable-set-tsfmarsoc-pulse-kit-desc =
     - a portable recharger
     - an EG-4 energy magnum
     - a jaws of life
+    - a power drill
+    - an experimental welding tool
+    - a handheld mass scanner
     - and a combat medkit.
 
 selectable-set-tsfmarsoc-hailstorm-kit-name = Hailstorm kit
@@ -84,4 +101,7 @@ selectable-set-tsfmarsoc-hailstorm-kit-desc =
     - 4 boxes of 9x19mm
     - an EG-4 energy magnum
     - a jaws of life
+    - a power drill
+    - an experimental welding tool
+    - a handheld mass scanner
     - and a combat medkit.

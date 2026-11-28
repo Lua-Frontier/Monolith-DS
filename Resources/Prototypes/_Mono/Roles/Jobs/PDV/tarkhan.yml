@@ -58,12 +58,13 @@
 - type: startingGear
   id: PDVTarkhanGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitNfsdTacCream
+    jumpsuit: ClothingUniformJumpsuitTarkhan # LuaM: ClothingUniformJumpsuitNfsdTacCream > ClothingUniformJumpsuitTarkhan
     back: ClothingBackpackPDVTarkhan
-    ears: ClothingHeadsetAltVanguardCommand
-    gloves: ClothingHandsGlovesTacticalCombatBlack
+    ears: ClothingHeadsetAltTarkhan # LuaM: ClothingHeadsetAltVanguardCommand > ClothingHeadsetAltTarkhan
+    gloves: ClothingHandsGlovesTarkhan # LuaM: ClothingHandsGlovesTacticalCombatBlack > ClothingHandsGlovesTarkhan
     outerClothing: ClothingOuterHardsuitTarkhan
-    shoes: ClothingShoesBootsMagPDVAdvanced # LuaM: ClothingShoesBootsMagAshen > ClothingShoesBootsMagPDVAdvanced, the same as the PDV commander
+    suitstorage: JetpackTarkhanFilled # LuaM
+    shoes: ClothingShoesBootsMagTarkhan # LuaM: ClothingShoesBootsMagAshen > ClothingShoesBootsMagPDVAdvanced > ClothingShoesBootsMagTarkhan
     mask: ClothingMaskGasTarkhan # LuaM
     id: PDVTarkhanPDA
     pocket1: CrowbarPocket
@@ -74,5 +75,6 @@
     back:
     - BookNordfallSOP # LuaM: faction service handbook
     - BasePirateUplinkRadioPirateCaptain
+    - PDVHandheldOverwatchConsole # LuaM
   inhand:
   - UndeterminedPDVTarkhanKit

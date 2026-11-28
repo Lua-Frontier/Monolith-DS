@@ -25,6 +25,7 @@ public sealed partial class BerserkHeartSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MobThresholdSystem _thresholds = default!;
     [Dependency] private MovementSpeedModifierSystem _movement = default!;
+    [Dependency] private MeleeDamageMultiplierSystem _multiplier = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IGameTiming _timing = default!;
 
@@ -203,7 +204,7 @@ public sealed partial class BerserkHeartSystem : EntitySystem
     private void OnGetMeleeDamage(Entity<BerserkHeartComponent> ent, ref GetMeleeDamageEvent args)
     {
         if (ent.Comp.Active)
-            args.Damage *= ent.Comp.MeleeDamageMultiplier;
+            _multiplier.Multiply(ref args, ent.Comp.MeleeDamageMultiplier);
     }
 
     // Only hits on living creatures heal, so walls, crates and corpses can not be farmed.

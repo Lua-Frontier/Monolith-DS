@@ -141,3 +141,27 @@
   - /Audio/_LuaM/Effects/Footsteps/suitstep_carpet_heavy3.ogg
   - /Audio/_LuaM/Effects/Footsteps/suitstep_carpet_heavy4.ogg
   - /Audio/_LuaM/Effects/Footsteps/suitstep_carpet_heavy5.ogg
+
+- type: soundCollection
+  id: FootstepHardsuitLightWater
+  files:
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_light1.ogg
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_light2.ogg
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_light3.ogg
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_light4.ogg
+
+- type: soundCollection
+  id: FootstepHardsuitMediumWater
+  files:
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_medium1.ogg
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_medium2.ogg
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_medium3.ogg
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_medium4.ogg
+
+- type: soundCollection
+  id: FootstepHardsuitHeavyWater
+  files:
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_heavy1.ogg
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_heavy2.ogg
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_heavy3.ogg
+  - /Audio/_LuaM/Effects/Footsteps/suitstep_water_heavy4.ogg

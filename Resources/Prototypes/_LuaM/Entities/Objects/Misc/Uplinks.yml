@@ -37,3 +37,22 @@
   - type: Store
     balance:
       MMCIndustrialCredit: 99999
+
+# Uplinks of the MARSOC and Tarkhan ghost roles: the colonel and commander uplinks with 500 to spend.
+- type: entity
+  parent: BaseSecurityUplinkRadioSheriff
+  id: BaseSecurityUplinkRadioMarsocGhost
+  suffix: MARSOC 500
+  components:
+  - type: Store
+    balance:
+      FederationMilitaryCredit: 500
+
+- type: entity
+  parent: BasePirateUplinkRadioPirateCaptain
+  id: BasePirateUplinkTarkhanGhost
+  suffix: Tarkhan 500
+  components:
+  - type: Store
+    balance:
+      Doubloon: 500

@@ -476,7 +476,7 @@
         layer:
         - MachineLayer
   - type: Gun
-    projectileSpeed: 150
+    projectileSpeed: 350 # LuaM: 150 > 350
     minAngle: 0
     maxAngle: 0
     fireRate: 0.05
@@ -560,7 +560,7 @@
         layer:
         - MachineLayer
   - type: Gun
-    projectileSpeed: 100 # LuaM: 40 > 100
+    projectileSpeed: 350 # LuaM: 40 > 100 > 350
     minAngle: 0
     maxAngle: 0
     fireRate: 0.05

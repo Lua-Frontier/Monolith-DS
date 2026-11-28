@@ -63,8 +63,8 @@
       tableId: SalvageBluespaceEventsTable
     minimumTimeUntilFirstEvent: 420 # 7 minutes
     minMaxEventTiming:
-      min: 2100 # 35 minutes between events
-      max: 2400 # 40 minutes between events
+      min: 2460 # 41 minutes between events # LuaM: 2100 > 2460, the salvage lasts 40 minutes, a try while it's still active always failed
+      max: 2700 # 45 minutes between events # LuaM: 2400 > 2700
 
 - type: entityTable
   id: SalvageBluespaceEventsTable

@@ -12,6 +12,7 @@
     sprite: Objects/Weapons/Melee/katana.rsi
     state: icon
   - type: MeleeWeapon
+    range: 1.8 # LuaM: melee range +20% for swords, sabres and mantis blades
     wideAnimationRotation: -135 # LuaM
     damage:
       types:
@@ -32,6 +33,7 @@
     sprite: Objects/Weapons/Melee/claymore.rsi
     state: icon
   - type: MeleeWeapon
+    range: 1.8 # LuaM: melee range +20% for swords, sabres and mantis blades
     attackRate: 0.75
     damage:
       types:

@@ -1,0 +1,16 @@
+# 8x65mm SAW boxes: each costs four 8x65mm magazines of the same ammo.
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredMagazineRecipe
+  id: Magazine8x65mmSKRBox
+  result: Magazine8x65mmSKRBox
+  materials:
+    Steel: 2300
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryFullyPoweredMagazineRecipe
+  id: Magazine8x65mmSKRBoxIncendiary
+  result: Magazine8x65mmSKRBoxIncendiary
+  materials:
+    Steel: 400
+    Plastic: 700
+    Plasma: 1200

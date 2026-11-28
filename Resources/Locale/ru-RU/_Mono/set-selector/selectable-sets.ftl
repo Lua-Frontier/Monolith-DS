@@ -28,7 +28,10 @@ selectable-set-pdvtarkhan-breacher-kit-desc =
     - 4 коробки картечи
     - «Анаконда»
     - разрушитель доступа
-    - «Челюсти жизни»
+    - челюсти жизни Паладина
+    - дрель Паладина
+    - продвинутый сварочный аппарат Паладина
+    - сканер массы Паладина
     - боевая аптечка.
 selectable-set-pdvtarkhan-molot-kit-name = Набор «Молот»
 selectable-set-pdvtarkhan-molot-kit-desc =
@@ -37,6 +40,10 @@ selectable-set-pdvtarkhan-molot-kit-desc =
     - 4 магазина 7.62x51мм
     - ВЧ-клинок VT-7
     - разрушитель доступа
+    - челюсти жизни Паладина
+    - дрель Паладина
+    - продвинутый сварочный аппарат Паладина
+    - сканер массы Паладина
     - боевая аптечка.
 selectable-set-pdvtarkhan-wspr-kit-name = Набор LA/22 «Корд»
 selectable-set-pdvtarkhan-wspr-kit-desc =
@@ -44,6 +51,10 @@ selectable-set-pdvtarkhan-wspr-kit-desc =
     - пулемёт LA/22 «Корд»
     - 4 коробки 7.62x51мм
     - разрушитель доступа
+    - челюсти жизни Паладина
+    - дрель Паладина
+    - продвинутый сварочный аппарат Паладина
+    - сканер массы Паладина
     - боевая аптечка.
 selectable-set-tsfmarsoc-fenghuang-kit-name = Набор «Фэнхуан»
 selectable-set-tsfmarsoc-fenghuang-kit-desc =
@@ -52,6 +63,9 @@ selectable-set-tsfmarsoc-fenghuang-kit-desc =
     - 4 магазина 8x65мм
     - вертикальная передняя рукоять
     - «Челюсти жизни»
+    - электродрель
+    - экспериментальный сварочный аппарат
+    - ручной сканер массы
     - боевая аптечка.
 selectable-set-tsfmarsoc-shenzhen-kit-name = Набор «Шэньчжэнь»
 selectable-set-tsfmarsoc-shenzhen-kit-desc =
@@ -68,6 +82,9 @@ selectable-set-tsfmarsoc-pulse-kit-desc =
     - портативное зарядное устройство
     - энергетический «Магнум» EG-4
     - «Челюсти жизни»
+    - электродрель
+    - экспериментальный сварочный аппарат
+    - ручной сканер массы
     - боевая аптечка.
 selectable-set-tsfmarsoc-hailstorm-kit-name = Набор «Град»
 selectable-set-tsfmarsoc-hailstorm-kit-desc =
@@ -76,4 +93,7 @@ selectable-set-tsfmarsoc-hailstorm-kit-desc =
     - 4 коробки 9x19мм
     - энергетический «Магнум» EG-4
     - «Челюсти жизни»
+    - электродрель
+    - экспериментальный сварочный аппарат
+    - ручной сканер массы
     - боевая аптечка.

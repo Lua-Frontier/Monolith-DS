@@ -6,3 +6,7 @@ ent-JetpackTraumaLeader = продвинутый джетпак ATU
     .desc = Джетпак командования отряда травматологии, окрашенный под скафандр T-53.
 ent-JetpackTraumaLeaderFilled = { ent-JetpackTraumaLeader }
     .desc = { ent-JetpackTraumaLeader.desc }
+ent-JetpackTarkhan = джетпак Паладина
+    .desc = Джетпак в цветах скафандра CV-280 «Василиск». Вмещает 50 л газа, как пустотный джетпак.
+ent-JetpackTarkhanFilled = { ent-JetpackTarkhan }
+    .desc = { ent-JetpackTarkhan.desc }

@@ -1,0 +1,56 @@
+# Tarkhan gear in the colours of the CV-280 'Basilisk' hardsuit, like the Tarkhan gas mask.
+
+- type: entity
+  parent: [ ClothingShoesBootsMagAdv, BaseFactionGearPDVT2 ]
+  id: ClothingShoesBootsMagTarkhan
+  name: Tarkhan magboots
+  description: Advanced magboots repainted for the Tarkhans in the colours of the CV-280 'Basilisk' hardsuit. They do not slow down their wearer.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Shoes/Boots/magboots-tarkhan.rsi
+    state: icon
+  - type: Clothing
+    sprite: _LuaM/Clothing/Shoes/Boots/magboots-tarkhan.rsi
+
+- type: entity
+  parent: ClothingHandsGlovesTacticalCombatBlack
+  id: ClothingHandsGlovesTarkhan
+  name: Tarkhan combat gloves
+  description: Tactical combat gloves in the colours of the CV-280 'Basilisk' hardsuit. They are fireproof and shock resistant.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Hands/Gloves/tarkhan.rsi
+    color: "#FFFFFF"
+  - type: Clothing
+    sprite: _LuaM/Clothing/Hands/Gloves/tarkhan.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+
+- type: entity
+  parent: ClothingUniformJumpsuitNfsdTacCream
+  id: ClothingUniformJumpsuitTarkhan
+  name: Tarkhan shirt
+  description: The Tarkhan field uniform, a white shirt in the colours of the CV-280 'Basilisk' hardsuit worn with dark trousers.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/tarkhan.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Uniforms/Jumpsuit/tarkhan.rsi
+
+- type: entity
+  parent: ClothingHeadsetAltVanguardCommand
+  id: ClothingHeadsetAltTarkhan
+  name: Tarkhan headset
+  description: The Vanguard command over-ear headset in the colours of the CV-280 'Basilisk' hardsuit.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Clothing/Ears/Headsets/tarkhan.rsi
+  - type: Clothing
+    sprite: _LuaM/Clothing/Ears/Headsets/tarkhan.rsi

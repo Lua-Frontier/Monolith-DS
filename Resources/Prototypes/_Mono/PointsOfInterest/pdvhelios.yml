@@ -34,6 +34,7 @@
     fieldRadius: 256
   - type: Company # LuaM: faction outpost
     companyName: PDV
+  - type: NebulaWeatherExclusion # LuaM: no hazardous nebulae near the station
   - type: WorldGenDistanceCarver
     distanceThresholds:
     # drones no droning

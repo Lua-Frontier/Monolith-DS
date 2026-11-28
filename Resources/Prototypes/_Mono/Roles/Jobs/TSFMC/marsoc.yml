@@ -70,6 +70,7 @@
     ears: ClothingHeadsetAltTsfmcMarsoc
     gloves: ClothingHandsGlovesTacticalCombatBlack
     outerClothing: ClothingOuterHardsuitM86Mk4
+    suitstorage: JetpackVoidFilled # LuaM
     shoes: ClothingShoesBootsMagAdv
     id: MarsocPDA
     pocket1: CrowbarPocket
@@ -80,5 +81,6 @@
     back:
     - BookTSFSOP # LuaM: faction service handbook
     - BaseSecurityUplinkRadioSheriff
+    - TSFHandheldOverwatchConsole # LuaM
   inhand:
   - UndeterminedTSFMarsocKit

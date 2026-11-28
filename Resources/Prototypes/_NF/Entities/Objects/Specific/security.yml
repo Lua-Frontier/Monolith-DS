@@ -84,6 +84,7 @@
   - type: CompanyAccessReader # LuaM add
     requiredCompanies:
     - TSF
+    - TSFHighComm # LuaM
 
 - type: entity
   parent: BaseSecurityUplinkRadio

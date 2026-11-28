@@ -1,3 +1,4 @@
+#nullable enable
 /* LuaCorp - AGPLv3. See AGPLv3.txt for details. */
 using System;
 using System.Collections.Generic;
@@ -70,7 +71,7 @@ public sealed class CourierGuideTests
             Click(take);
             Assert.That(Descendants(window).OfType<Label>().Count(l => l.Text == Loc.GetString("delivery-ui-status-yours")), Is.EqualTo(2));
             Click(Descendants(window).OfType<Button>().Single(b => b.Text == Loc.GetString("delivery-ui-take")));
-            Assert.That(Descendants(window).OfType<Label>().Any(l => l.Text.Contains("только два")), Is.True);
+            Assert.That(Descendants(window).OfType<Label>().Any(l => l.Text?.Contains("только два") == true), Is.True);
             Assert.That(entities.EntityCount, Is.EqualTo(before), "The example must not create parcels or other game entities.");
             open.Invoke(example, null);
             Assert.That(window.Disposed, Is.True, "Replacing the example releases the previous native app.");

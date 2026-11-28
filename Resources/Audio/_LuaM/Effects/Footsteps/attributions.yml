@@ -68,3 +68,19 @@
   license: "CC-BY-SA-3.0"
   copyright: "Made by Covral (github) from tacsuit_step_00..02 by majormoth (Discord, taken from Hullrot), grass1..4 by D001447733 and jevans27 (freesound.org), snowstep1..4 by alexo400 (freesound.org), asteroid1..5, wood1..5 and carpet1..5 from CEV-Eris. The metal ring of the suit steps is cut and the surface steps are layered on top"
   source: "https://github.com/Covral/Monolith-DS/tree/master/Resources/Audio/Effects/Footsteps"
+- files:
+  - suitstep_water_light1.ogg
+  - suitstep_water_light2.ogg
+  - suitstep_water_light3.ogg
+  - suitstep_water_light4.ogg
+  - suitstep_water_medium1.ogg
+  - suitstep_water_medium2.ogg
+  - suitstep_water_medium3.ogg
+  - suitstep_water_medium4.ogg
+  - suitstep_water_heavy1.ogg
+  - suitstep_water_heavy2.ogg
+  - suitstep_water_heavy3.ogg
+  - suitstep_water_heavy4.ogg
+  license: "CC-BY-SA-3.0"
+  copyright: "Made from tacsuit_step_00..02 by majormoth (Discord, taken from Hullrot) and water1..4 from Citadel-Station-13-RP. The metal ring of the suit steps is faded out and the water steps are layered on top"
+  source: "https://github.com/Citadel-Station-13/Citadel-Station-13-RP/tree/b7392a25f826d038d35309cf36875f2066c3eb05/sound/effects/footstep"

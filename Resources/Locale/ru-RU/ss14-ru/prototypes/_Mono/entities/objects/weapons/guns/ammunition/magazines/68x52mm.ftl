@@ -23,5 +23,5 @@ ent-Magazine68x52mmCaselessBig = короб (6,8x52мм STANAG безгильз�
     .desc = Коробчатый магазин, использующий патроны калибра 6,8x52мм STANAG.
 ent-BaseMagazine68x52mmCaselessShort = короткий винтовочный магазин (6.8x52мм STANAG безгильзовые)
     .desc = { ent-BaseMagazine68x52mmCaseless.desc }
-ent-Magazine68x52mmCaselessPlasma = магазин (6.8x52мм STANAG безгильзовый плазменный)
-    .desc = { ent-BaseMagazine68x52mmCaseless.desc }
+ent-Magazine68x52mmCaselessPlasma = магазин (6,8x52мм STANAG плазменные)
+    .desc = Магазин, использующий плазменные патроны калибра 6,8x52мм STANAG.
