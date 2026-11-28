@@ -1,0 +1,450 @@
+# LuaCorp - This file is licensed under AGPLv3
+# Copyright (c) 2026 LuaCorp Contributors
+# See AGPLv3.txt for details.
+# Ported from dead-space-14 (DeadSpace: TheCircle / BSAA).
+
+- type: entity
+  id: SpawnPointTheCircleFighter
+  parent: MarkerBase
+  categories: [ HideSpawnMenu ]
+  name: "Круг"
+  components:
+  - type: SpawnPoint
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/uplink.rsi
+      state: icon
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  id: BaseSpawnPointGhostCircle
+  name: ghost role thecircle
+  suffix: Круг
+  parent: BaseAntagSpawner
+  components:
+  - type: GhostRole
+    rules: ghost-role-information-rules-team-antagonist # LuaM: rules-default-team-antagonist > rules-team-antagonist
+    mindRoles:
+    - MindRoleBaseCircleFighters
+    requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 36000 
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 72000 
+    raffle:
+      settings: default
+  # LuaM: закомментировано временно — нет компонента GhostRoleIntroduction
+  # - type: GhostRoleIntroduction
+  #   operationNames: [ОПЕРАЦИЯ «НОВОЕ СБЛИЖЕНИЕ», ОПЕРАЦИЯ «ПРОБУЖДЕНИЕ», ОПЕРАЦИЯ «ПЕРЕХВАТ»]
+  #   text: Боец Круга, выполните поставленную задачу и обеспечьте победу отряда.
+  #   textColor: '#9db7ff'
+  #   font: /Fonts/Bedstead/Bedstead.otf
+  #   fontSize: 18
+  #   operationFontSize: 26
+  #   sound:
+  #     path: /Audio/_LuaM/Necromorfs/TheCircle/the-circle-start.ogg
+  #   duration: 12
+  #   fadeFromBlackDuration: 3
+  #   textDelay: 0.8
+  #   charactersPerSecond: 50
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseSpawnPointGhostCircle
+  id: SpawnPointCircleCommander
+  components:
+  - type: GhostRole
+    name: roles-antag-thecircle-commander-name
+    description: roles-antag-thecircle-commander-objective
+    rules: ghost-role-information-rules-team-antagonist # LuaM: rules-default-team-antagonist > rules-team-antagonist
+    mindRoles:
+    - MindRoleCircleCommander
+    requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 144000 # 40 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 234000 # 65 hours
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 126000 # 35 hours
+    - !type:RoleTimeRequirement
+      role: JobChemist
+      time: 126000 # 35 hours
+    - !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 90000 # 25 hours
+  # LuaM: закомментировано временно — нет компонента GhostRoleIntroduction
+  # - type: GhostRoleIntroduction
+  #   operationNames: [ОПЕРАЦИЯ «НОВОЕ СБЛИЖЕНИЕ», ОПЕРАЦИЯ «ПРОБУЖДЕНИЕ», ОПЕРАЦИЯ «ПЕРЕХВАТ»]
+  #   textLoc: roles-antag-thecircle-commander-start
+  #   textColor: '#9db7ff'
+  #   font: /Fonts/Bedstead/Bedstead.otf
+  #   fontSize: 18
+  #   operationFontSize: 26
+  #   sound:
+  #     path: /Audio/_LuaM/Necromorfs/TheCircle/the-circle-start.ogg
+  #   duration: 12
+  #   fadeFromBlackDuration: 3
+  #   textDelay: 0.8
+  #   charactersPerSecond: 50
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+        state: commander
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseSpawnPointGhostCircle
+  id: SpawnPointCircleFighterLight
+  components:
+  - type: GhostRole
+    name: roles-antag-thecircle-light-name
+    description: roles-antag-thecircle-light-objective
+    rules: ghost-role-information-rules-team-antagonist # LuaM: rules-default-team-antagonist > rules-team-antagonist
+    mindRoles:
+    - MindRoleCircleFighterLight
+    requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 108000 # 30 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 216000 # 60 hours
+  # LuaM: закомментировано временно — нет компонента GhostRoleIntroduction
+  # - type: GhostRoleIntroduction
+  #   operationNames: [ОПЕРАЦИЯ «НОВОЕ СБЛИЖЕНИЕ», ОПЕРАЦИЯ «ПРОБУЖДЕНИЕ», ОПЕРАЦИЯ «ПЕРЕХВАТ»]
+  #   textLoc: roles-antag-thecircle-light-start
+  #   textColor: '#9db7ff'
+  #   font: /Fonts/Bedstead/Bedstead.otf
+  #   fontSize: 18
+  #   operationFontSize: 26
+  #   sound:
+  #     path: /Audio/_LuaM/Necromorfs/TheCircle/the-circle-start.ogg
+  #   duration: 12
+  #   fadeFromBlackDuration: 3
+  #   textDelay: 0.8
+  #   charactersPerSecond: 50
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+        state: light
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseSpawnPointGhostCircle
+  id: SpawnPointCircleFighterHeavy
+  components:
+  - type: GhostRole
+    name: roles-antag-thecircle-heavy-name
+    description: roles-antag-thecircle-heavy-objective
+    rules: ghost-role-information-rules-team-antagonist # LuaM: rules-default-team-antagonist > rules-team-antagonist
+    mindRoles:
+    - MindRoleCircleFighterHeavy
+    requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 108000 # 30 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 216000 # 60 hours
+  # LuaM: закомментировано временно — нет компонента GhostRoleIntroduction
+  # - type: GhostRoleIntroduction
+  #   operationNames: [ОПЕРАЦИЯ «НОВОЕ СБЛИЖЕНИЕ», ОПЕРАЦИЯ «ПРОБУЖДЕНИЕ», ОПЕРАЦИЯ «ПЕРЕХВАТ»]
+  #   textLoc: roles-antag-thecircle-heavy-start
+  #   textColor: '#9db7ff'
+  #   font: /Fonts/Bedstead/Bedstead.otf
+  #   fontSize: 18
+  #   operationFontSize: 26
+  #   sound:
+  #     path: /Audio/_LuaM/Necromorfs/TheCircle/the-circle-start.ogg
+  #   duration: 12
+  #   fadeFromBlackDuration: 3
+  #   textDelay: 0.8
+  #   charactersPerSecond: 50
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+        state: heavy
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseSpawnPointGhostCircle
+  id: SpawnPointCircleMedic
+  components:
+  - type: GhostRole
+    name: roles-antag-thecircle-medic-name
+    description: roles-antag-thecircle-medic-objective
+    rules: ghost-role-information-rules-team-antagonist # LuaM: rules-default-team-antagonist > rules-team-antagonist
+    mindRoles:
+    - MindRoleCircleMedic
+    requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 216000 # 60 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 108000 # 30 hours
+    - !type:RoleTimeRequirement
+      role: JobChemist
+      time: 162000 # 45 hours
+  # LuaM: закомментировано временно — нет компонента GhostRoleIntroduction
+  # - type: GhostRoleIntroduction
+  #   operationNames: [ОПЕРАЦИЯ «НОВОЕ СБЛИЖЕНИЕ», ОПЕРАЦИЯ «ПРОБУЖДЕНИЕ», ОПЕРАЦИЯ «ПЕРЕХВАТ»]
+  #   textLoc: roles-antag-thecircle-medic-start
+  #   textColor: '#9db7ff'
+  #   font: /Fonts/Bedstead/Bedstead.otf
+  #   fontSize: 18
+  #   operationFontSize: 26
+  #   sound:
+  #     path: /Audio/_LuaM/Necromorfs/TheCircle/the-circle-start.ogg
+  #   duration: 12
+  #   fadeFromBlackDuration: 3
+  #   textDelay: 0.8
+  #   charactersPerSecond: 50
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+        state: medic
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseSpawnPointGhostCircle
+  id: SpawnPointCircleEngineer
+  components:
+  - type: GhostRole
+    name: roles-antag-thecircle-engineer-name
+    description: roles-antag-thecircle-engineer-objective
+    rules: ghost-role-information-rules-team-antagonist # LuaM: rules-default-team-antagonist > rules-team-antagonist
+    mindRoles:
+    - MindRoleCircleEngineer
+    requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 90000 # 25 hours
+    - !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 144000 # 40 hours
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 216000 # 60 hours
+  # LuaM: закомментировано временно — нет компонента GhostRoleIntroduction
+  # - type: GhostRoleIntroduction
+  #   operationNames: [ОПЕРАЦИЯ «НОВОЕ СБЛИЖЕНИЕ», ОПЕРАЦИЯ «ПРОБУЖДЕНИЕ», ОПЕРАЦИЯ «ПЕРЕХВАТ»]
+  #   textLoc: roles-antag-thecircle-engineer-start
+  #   textColor: '#9db7ff'
+  #   font: /Fonts/Bedstead/Bedstead.otf
+  #   fontSize: 18
+  #   operationFontSize: 26
+  #   sound:
+  #     path: /Audio/_LuaM/Necromorfs/TheCircle/the-circle-start.ogg
+  #   duration: 12
+  #   fadeFromBlackDuration: 3
+  #   textDelay: 0.8
+  #   charactersPerSecond: 50
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+        state: engineer
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseSpawnPointGhostCircle
+  id: SpawnPointCircleShockTrooper
+  components:
+  - type: GhostRole
+    name: roles-antag-thecircle-shock-trooper-name
+    description: roles-antag-thecircle-shock-trooper-objective
+    rules: ghost-role-information-rules-team-antagonist # LuaM: rules-default-team-antagonist > rules-team-antagonist
+    mindRoles:
+    - MindRoleCircleShockTrooper
+    requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 216000 # 60 hours
+  # LuaM: закомментировано временно — нет компонента GhostRoleIntroduction
+  # - type: GhostRoleIntroduction
+  #   operationNames: [ОПЕРАЦИЯ «НОВОЕ СБЛИЖЕНИЕ», ОПЕРАЦИЯ «ПРОБУЖДЕНИЕ», ОПЕРАЦИЯ «ПЕРЕХВАТ»]
+  #   textLoc: roles-antag-thecircle-shock-trooper-start
+  #   textColor: '#9db7ff'
+  #   font: /Fonts/Bedstead/Bedstead.otf
+  #   fontSize: 18
+  #   operationFontSize: 26
+  #   sound:
+  #     path: /Audio/_LuaM/Necromorfs/TheCircle/the-circle-start.ogg
+  #   duration: 12
+  #   fadeFromBlackDuration: 3
+  #   textDelay: 0.8
+  #   charactersPerSecond: 50
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+        state: geist
+
+# НЕ ИСПОЛЬЗОВАТЬ, СОЗДАНО ДЛЯ ВНУТРЕННОГО ГАЙДА
+
+- type: entity
+  id: GuidePosterCircleCommander
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+      state: commander
+
+- type: entity
+  id: GuidePosterCircleFighterLight
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+      state: light
+
+- type: entity
+  id: GuidePosterCircleFighterHeavy
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+      state: heavy
+
+- type: entity
+  id: GuidePosterCircleMedic
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+      state: medic
+
+- type: entity
+  id: GuidePosterCircleEngineer
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+      state: engineer
+
+- type: entity
+  id: GuidePosterCircleGeist
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+      state: geist
+
+- type: entity
+  id: GuidePosterCircleDreadnought
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+      state: dread
+
+- type: entity
+  id: GuideJobIconCircleCommander
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+      state: circle_lead
+
+- type: entity
+  id: GuideJobIconCircleFighterLight
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+      state: circle_light
+
+- type: entity
+  id: GuideJobIconCircleFighterHeavy
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+      state: circle_heavy
+
+- type: entity
+  id: GuideJobIconCircleMedic
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+      state: circle_medic
+
+- type: entity
+  id: GuideJobIconCircleEngineer
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+      state: circle_engineer
+
+- type: entity
+  id: GuideJobIconCircleGeist
+  parent: PosterBase
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _LuaM/Necromorfs/TheCircle/Mics/etc/icon.rsi
+      state: circle_geist
+
+# LuaM-start: из PR #53
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseSpawnPointGhostCircle
+  id: SpawnPointCircleGeist
+  components:
+  - type: GhostRole
+    name: roles-antag-thecircle-geist-name
+    description: roles-antag-thecircle-geist-objective
+    rules: ghost-role-information-rules-team-antagonist # LuaM: rules-default-team-antagonist > rules-team-antagonist
+    mindRoles:
+    - MindRoleCircleGeist
+    requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 216000 # 60 hours
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _LuaM/Necromorfs/TheCircle/Mics/jobs.rsi
+        state: geist
+
+# НЕ ИСПОЛЬЗОВАТЬ, СОЗДАНО ДЛЯ ВНУТРЕННОГО ГАЙДА
+# LuaM-end
