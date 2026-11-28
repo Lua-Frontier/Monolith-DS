@@ -5,6 +5,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Content.Shared.Stacks; // LuaM
 using Content.Shared.Storage; // Ronstation
 using Content.Shared.Storage.Components; // Ronstation
 using Robust.Server.Audio;
@@ -53,7 +54,7 @@ public sealed partial class ProduceMaterialExtractorSystem : EntitySystem
             .Where(r => ent.Comp.ExtractionReagents.Contains(r.Reagent.Prototype))
             .Sum(r => r.Quantity.Float());
 
-        var changed = (int)matAmount;
+        var changed = (int)matAmount * (CompOrNull<StackComponent>(used)?.Count ?? 1); // LuaM: a produce stack holds the solution of one fruit
 
         if (changed == 0)
         {

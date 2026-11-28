@@ -84,6 +84,20 @@ namespace Content.Server.Medical.BiomassReclaimer
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public float ProduceYieldMultiplier = 0.25f;
 
+        // LuaM-start: organs
+        /// <summary>
+        /// Least biomass a single organ gives.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public int OrganYieldMin = 2;
+
+        /// <summary>
+        /// Most biomass a single organ gives.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public int OrganYieldMax = 3;
+        // LuaM-end
+
         /// <summary>
         /// The time it takes to process a mob, per mass.
         /// </summary>
