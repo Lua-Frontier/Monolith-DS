@@ -1,0 +1,97 @@
+# Sinks and the floor drain, built from the construction menu.
+
+- type: constructionGraph
+  id: LuaMSink
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sink
+      completed:
+      - !type:SnapToGrid { }
+      steps:
+      - material: Steel
+        amount: 5
+        doAfter: 2
+      - tag: SinkElectronics
+        name: construction-graph-tag-sink-electronics
+        icon:
+          sprite: Objects/Misc/module.rsi
+          state: door_electronics
+        doAfter: 1
+  - node: sink
+    entity: Sink
+    edges:
+    - to: start
+      steps:
+      - tool: Welding
+        doAfter: 3
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 5
+      - !type:SpawnPrototype
+        prototype: SinkElectronics
+        amount: 1
+      - !type:DeleteEntity
+
+- type: constructionGraph
+  id: LuaMSinkWide
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sinkWide
+      completed:
+      - !type:SnapToGrid { }
+      steps:
+      - material: Steel
+        amount: 8
+        doAfter: 3
+      - tag: SinkWideElectronics
+        name: construction-graph-tag-sink-wide-electronics
+        icon:
+          sprite: Objects/Misc/module.rsi
+          state: door_electronics
+        doAfter: 1
+  - node: sinkWide
+    entity: SinkWide
+    edges:
+    - to: start
+      steps:
+      - tool: Welding
+        doAfter: 4
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 8
+      - !type:SpawnPrototype
+        prototype: SinkWideElectronics
+        amount: 1
+      - !type:DeleteEntity
+
+- type: constructionGraph
+  id: LuaMFloorDrain
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: drain
+      completed:
+      - !type:SnapToGrid { }
+      steps:
+      - material: Steel
+        amount: 5
+        doAfter: 3
+  - node: drain
+    entity: FloorDrain
+    edges:
+    - to: start
+      steps:
+      - tool: Welding
+        doAfter: 3
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 5
+      - !type:DeleteEntity

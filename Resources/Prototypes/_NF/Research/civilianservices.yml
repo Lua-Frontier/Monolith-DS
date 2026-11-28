@@ -17,6 +17,8 @@
   - ServiceSelectiveDropper # Mono
   - KitchenAssemblerMachineCircuitboard # Mono
   - ElectricRangeMachineCircuitboard # Mono
+  - SinkElectronics # LuaM
+  - SinkWideElectronics # LuaM
   technologyPrerequisites:
   - BasicParts
   position: 3, 12 # LuaM: -3, -2 > 3, 12

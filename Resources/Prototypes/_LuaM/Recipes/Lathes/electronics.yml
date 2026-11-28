@@ -35,3 +35,13 @@
   parent: BaseCircuitboardRecipe
   id: MachineAmmoLoaderSmallCircuitboard
   result: MachineAmmoLoaderSmallCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: SinkElectronics
+  result: SinkElectronics
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: SinkWideElectronics
+  result: SinkWideElectronics

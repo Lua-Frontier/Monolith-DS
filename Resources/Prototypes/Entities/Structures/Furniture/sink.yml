@@ -81,6 +81,9 @@
         reagents:
         - ReagentId: Water
           Quantity: 500
+  - type: Construction # LuaM
+    graph: LuaMSink
+    node: sink
 
 - type: entity
   name: wide sink
@@ -98,6 +101,9 @@
       maxFillLevels: 1
       fillBaseName: sink_wide-fill-
       solutionName: drainBuffer
+    - type: Construction # LuaM
+      graph: LuaMSinkWide
+      node: sinkWide
 
 #Stemless Sink
 

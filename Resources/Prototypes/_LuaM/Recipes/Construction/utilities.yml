@@ -83,3 +83,19 @@
   category: construction-category-storage
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+
+# DRAIN
+- type: construction
+  id: LuaMFloorDrain
+  graph: LuaMFloorDrain
+  startNode: start
+  targetNode: drain
+  category: construction-category-utilities
+  icon:
+    sprite: Objects/Specific/Janitorial/drain.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

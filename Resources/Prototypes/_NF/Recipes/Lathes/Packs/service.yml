@@ -45,3 +45,5 @@
   - SodaDispenserMachineCircuitboard
   - BiogeneratorMachineCircuitboard
   - DeepFryerMachineCircuitboard
+  - SinkElectronics # LuaM
+  - SinkWideElectronics # LuaM
