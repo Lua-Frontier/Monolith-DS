@@ -188,4 +188,5 @@
   - type: CompanyAccessReader
     requiredCompanies:
     - TSF
+    - TSFHighComm # LuaM
     inverted: true

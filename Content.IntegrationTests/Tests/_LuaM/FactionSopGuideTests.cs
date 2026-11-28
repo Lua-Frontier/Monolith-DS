@@ -1,3 +1,4 @@
+#nullable enable
 /* LuaCorp - AGPLv3. See AGPLv3.txt. */
 using System.Collections.Generic;
 using System.Linq;

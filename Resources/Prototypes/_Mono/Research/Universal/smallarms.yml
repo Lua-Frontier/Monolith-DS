@@ -10,6 +10,7 @@
   position: 5, 8 # LuaM: 8, 6 > 5, 8
   recipeUnlocks:
   - Magazine762x51mmPlasteelAP
+  - Magazine8x65mmSKRBox # LuaM: the 8x65mm SAW box
   - AmmoBox762x51mmPlasteelAP
   - Magazine762x54mmRPlasteelAP
   - AmmoBox762x54mmRPlasteelAP
@@ -41,6 +42,22 @@
   - AmmoBox12_gaugeFlechette
   - Magazine635x40mmCaselessAP
   - AmmoBox635x40mmCaselessAP
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox9x19mmBigPlasteelAP
+  - AmmoBox45_ACPBigPlasteelAP
+  - AmmoBox46x30mmBigPlasteelAP
+  - AmmoBox57x28mmBigPlasteelAP
+  - AmmoBox357_magnumBigPlasteelAP
+  - AmmoBox556x45mmBigPlasteelAP
+  - AmmoBox762x39mmBigPlasteelAP
+  - AmmoBox762x51mmBigPlasteelAP
+  - AmmoBox762x54mmRBigPlasteelAP
+  - AmmoBox635x40mmCaselessBigAP
+  - AmmoBox12_gaugeBigSlugAP
+  - AmmoBox12_gaugeBigFlechette
+  - AmmoBox23x75mmBigSlugAP
+  - AmmoBox23x75mmBigFlechette
+  # LuaM-end
 
 #- type: technology
 #  id: UniversalSynthalloyCore
@@ -133,6 +150,7 @@
   - Magazine762x54mmRIncendiary
   - AmmoBox762x54mmRIncendiary
   - Magazine8x65mmSKRIncendiary
+  - Magazine8x65mmSKRBoxIncendiary # LuaM
   - AmmoBox8x65mmSKRIncendiary
   - Magazine556x45mmIncendiary
   - SpeedLoader556x45mmIncendiary
@@ -156,6 +174,23 @@
   - AmmoBox45_ACPIncendiary
   - AmmoBox23x75mmFlashbang
   - AmmoBox23x75mmFlare
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox9x19mmBigIncendiary
+  - AmmoBox45_ACPBigIncendiary
+  - AmmoBox46x30mmBigIncendiary
+  - AmmoBox57x28mmBigIncendiary
+  - AmmoBox357_magnumBigIncendiary
+  - AmmoBox556x45mmBigIncendiary
+  - AmmoBox762x39mmBigIncendiary
+  - AmmoBox762x51mmBigIncendiary
+  - AmmoBox762x54mmRBigIncendiary
+  - AmmoBox8x65mmSKRBigIncendiary
+  - AmmoBox12_gaugeBigFlare
+  - AmmoBox12_gaugeBigIncendiary
+  - AmmoBox23x75mmBigFlare
+  - AmmoBox23x75mmBigIncendiary
+  - AmmoBox23x75mmBigFlashbang
+  # LuaM-end
   technologyPrerequisites:
   - UniversalMaterialResearchT1
   position: 5, 12 # LuaM: 9, -1 > 5, 12
@@ -195,6 +230,19 @@
   - Magazine45_ACPPistolUranium
   - Magazine45_ACPSubMachineGunUranium
   - AmmoBox45_ACPUranium
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox9x19mmBigUranium
+  - AmmoBox45_ACPBigUranium
+  - AmmoBox46x30mmBigUranium
+  - AmmoBox57x28mmBigUranium
+  - AmmoBox357_magnumBigUranium
+  - AmmoBox556x45mmBigUranium
+  - AmmoBox762x39mmBigUranium
+  - AmmoBox762x51mmBigUranium
+  - AmmoBox762x54mmRBigUranium
+  - AmmoBox12_gaugeBigUranium
+  - AmmoBox23x75mmBigUranium
+  # LuaM-end
   technologyPrerequisites:
   - UniversalPlastitaniumCore
   position: 4, 8 # LuaM: 7, 5 > 4, 8

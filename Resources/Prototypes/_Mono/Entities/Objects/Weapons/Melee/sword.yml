@@ -199,6 +199,7 @@
       #  Heat: 15 # Commented by LuaM
         Structural: 150 # LuaM 80 > 150
   - type: MeleeWeapon
+    range: 1.8 # LuaM: melee range +20% for swords, sabres and mantis blades
     heavyStaminaCost: 1
     wideAnimationRotation: -60 # LuaM: -135 > -60
     attackRate: 1.25
@@ -242,6 +243,7 @@
     sprite: _Mono/Objects/Weapons/Melee/ullmansword.rsi
     size: Large
   - type: MeleeWeapon
+    range: 1.8 # LuaM: melee range +20% for swords, sabres and mantis blades
     heavyStaminaCost: 1
     wideAnimationRotation: -135
     attackRate: 1.25

@@ -54,6 +54,8 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] private   IEntityManager _entities = default!; // Delta V-NoShoesSilentFootstepsComponent
     [Dependency] private   SpeedTieredFootstepsSystem _speedTieredFootsteps = default!; // LuaM
 
+    private readonly List<FootstepModifierComponent> _footstepSurfaces = new(); // LuaM: the entities changing the footsteps on the stepped tile
+
     protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery;
     protected EntityQuery<ThrownItemComponent> ThrownItemQuery; // LuaM
     protected EntityQuery<FootstepModifierComponent> FootstepModifierQuery;
@@ -599,6 +601,7 @@ public abstract partial class SharedMoverController : VirtualController
         // If the coordinates have a FootstepModifier component
         // i.e. component that emit sound on footsteps emit that sound
         var anchored = _mapSystem.GetAnchoredEntities(xform.GridUid.Value, grid, position);
+        _footstepSurfaces.Clear(); // LuaM
 
         while (anchored.MoveNext(out var maybeFootstep))
         {
@@ -610,22 +613,33 @@ public abstract partial class SharedMoverController : VirtualController
                 return true;
             }
 
-            // LuaM-start: suits on carpets get their own steps, with shoes or without
-            if (FootstepModifierQuery.TryComp(maybeFootstep, out var surfaceModifier) &&
-                _inventory.TryGetSlotEntity(uid, "outerClothing", out var surfaceSuit) &&
+            // LuaM-start: the surfaces are picked by priority below, so a catwalk over water is always a catwalk
+            if (FootstepModifierQuery.TryComp(maybeFootstep, out var surfaceModifier))
+                _footstepSurfaces.Add(surfaceModifier);
+            // LuaM-end
+        }
+
+        // LuaM-start
+        if (_footstepSurfaces.Count > 1)
+            _footstepSurfaces.Sort((a, b) => b.Priority.CompareTo(a.Priority));
+
+        foreach (var surfaceModifier in _footstepSurfaces)
+        {
+            // suits on carpets, water and the like get their own steps, with shoes or without
+            if (_inventory.TryGetSlotEntity(uid, "outerClothing", out var surfaceSuit) &&
                 _speedTieredFootsteps.TryGetSurfaceSound(surfaceSuit.Value, surfaceModifier.FootstepSoundCollection, out sound))
             {
                 return true;
             }
-            // LuaM-end
 
-            if (_inventory.TryGetSlotEntity(uid, "shoes", out var shoes) &&
-                FootstepModifierQuery.TryComp(maybeFootstep, out var footstep))
+            // water splashes under bare feet too
+            if (haveShoes || surfaceModifier.Barefoot)
             {
-                sound = footstep.FootstepSoundCollection;
+                sound = surfaceModifier.FootstepSoundCollection;
                 return sound != null;
             }
         }
+        // LuaM-end
 
         // Frontier
         if (_inventory.TryGetSlotEntity(uid, "outerClothing", out var outerClothing) &&

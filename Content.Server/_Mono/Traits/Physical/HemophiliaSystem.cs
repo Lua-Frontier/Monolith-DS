@@ -38,6 +38,9 @@ public sealed partial class HemophiliaSystem : EntitySystem
         if (args.DamageDelta is null || !args.DamageIncreased)
             return;
 
+        if (_bloodstream.IsBleedingSuppressed(ent)) // LuaM: same exception as the normal bleeding from damage
+            return;
+
         if (!TryComp<BloodstreamComponent>(ent, out var blood))
             return;
 

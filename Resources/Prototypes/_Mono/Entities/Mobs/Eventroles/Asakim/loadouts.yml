@@ -10,7 +10,7 @@
     pocket2: Hypospray # LuaM: DoubleEmergencyOxygenTankFilled > Hypospray
     belt: ClothingBeltWebbingsBigBlack
     id: ADSAsakimIDCard # LuaM add
-    suitStorage: OxygenTankFilled
+    suitstorage: OxygenTankFilled # LuaM: suitStorage > suitstorage, slot names are case-sensitive
     ears: ClothingHeadsetChameleon # LuaM add
   inhand:
   - WeaponRifleAsakimAutopulser

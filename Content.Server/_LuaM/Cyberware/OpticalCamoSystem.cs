@@ -1,4 +1,5 @@
 using Content.Shared._LuaM.Cyberware;
+using Content.Shared._LuaM.Weapons;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
@@ -18,6 +19,7 @@ public sealed partial class OpticalCamoSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private MovementSpeedModifierSystem _movement = default!;
+    [Dependency] private MeleeDamageMultiplierSystem _multiplier = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedStealthSystem _stealth = default!;
     [Dependency] private IGameTiming _timing = default!;
@@ -119,7 +121,7 @@ public sealed partial class OpticalCamoSystem : EntitySystem
     private void OnGetMeleeDamage(Entity<OpticalCamoComponent> ent, ref GetMeleeDamageEvent args)
     {
         if (ent.Comp.Active)
-            args.Damage *= ent.Comp.FirstHitMultiplier;
+            _multiplier.Multiply(ref args, ent.Comp.FirstHitMultiplier);
     }
 
     private void OnMeleeAttack(Entity<OpticalCamoComponent> ent, ref MeleeAttackEvent args)

@@ -23,6 +23,7 @@ public sealed partial class NebulaShiftRuleSystem : GameRuleSystem<NebulaShiftRu
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SpaceHazardActivitySystem _activity = default!;
+    [Dependency] private NebulaWeatherExclusionSystem _exclusion = default!;
 
     private readonly Dictionary<MapId, List<Entity<AmbientSpaceFieldComponent>>> _dangerous = new();
     private readonly Dictionary<MapId, List<Candidate>> _harmless = new();
@@ -145,13 +146,17 @@ public sealed partial class NebulaShiftRuleSystem : GameRuleSystem<NebulaShiftRu
         }
     }
 
-    // -- Как и при генерации, опасная туманность не встаёт на станцию или POI, а корабли игроков не должны оказаться внутри неё
+    // -- Как и при генерации, опасная туманность не встаёт на станцию или POI и не подходит к главным станциям,
+    // -- а корабли игроков не должны оказаться внутри неё
     private void RemoveBlocked(NebulaShiftRuleComponent component, MapId mapId, List<Candidate> candidates)
     {
         candidates.RemoveAll(candidate =>
         {
             var center = _transform.GetWorldPosition(candidate.Field.Owner);
             var radius = MathF.Max(candidate.Field.Comp.Radius, 1f);
+            if (_exclusion.IsExcluded(mapId, center, radius))
+                return true;
+
             var reach = radius + MathF.Max(component.GridClearance, component.ShipClearance);
 
             _grids.Clear();

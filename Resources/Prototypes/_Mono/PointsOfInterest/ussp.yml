@@ -26,6 +26,7 @@
     outlineAlpha: 0.35
   - type: IFF
     color: "#ccaa55"
+  - type: NebulaWeatherExclusion # LuaM: no hazardous nebulae near the station
   - type: WorldGenDistanceCarver
     distanceThresholds:
     # Dead zone

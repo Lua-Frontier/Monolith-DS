@@ -490,6 +490,7 @@
   - type: CompanyAccessReader # LuaM add
     requiredCompanies:
     - TSF
+    - TSFHighComm # LuaM
 
 # Mono
 - type: entity

@@ -64,7 +64,7 @@
     shape: circle
     radarColor: "#FFFFFF"
   - type: TimedDespawn
-    lifetime: 20
+    lifetime: 9.15 # LuaM: 20 > 9.15, about 3.2 km at 350 m/s
   - type: PointLight
     color: "#FCBA03"
   - type: ExplodeOnTrigger

@@ -27,6 +27,15 @@
   - AmmoBox762x25mmHP # LuaM: USSP PPSh
   - AmmoBox762x25mmRIP # LuaM: USSP PPSh
   - AmmoBox762x25mmBigFMJ # LuaM: USSP PPSh
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox762x25mmBigPractice
+  - AmmoBox762x25mmBigIncendiary
+  - AmmoBox762x25mmBigUranium
+  - AmmoBox762x25mmBigRubber
+  - AmmoBox762x25mmBigHP
+  - AmmoBox762x25mmBigRIP
+  - AmmoBox762x25mmBigPlasteelAP
+  # LuaM-end
 
 - type: latheRecipePack
   id: MonoUSSPMiscDynamic

@@ -8,7 +8,7 @@ namespace Content.Shared._LuaM.Clothing;
 /// <summary>
 /// Picks the footstep sound of a suit by how much it slows the wearer down: light, medium or heavy steps.
 /// The slowdown is read from the suit's ClothingSpeedModifier, the stronger of walk and sprint counts.
-/// On grass, snow, dirt, wood and carpet the suit uses steps of the same tier made for that surface.
+/// On grass, snow, dirt, wood, carpet and water the suit uses steps of the same tier made for that surface.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SpeedTieredFootstepsComponent : Component
@@ -58,6 +58,7 @@ public sealed partial class SpeedTieredFootstepsComponent : Component
         ["FootstepAsteroid"] = new("FootstepHardsuitLightDirt", "FootstepHardsuitMediumDirt", "FootstepHardsuitHeavyDirt"),
         ["FootstepWood"] = new("FootstepHardsuitLightWood", "FootstepHardsuitMediumWood", "FootstepHardsuitHeavyWood"),
         ["FootstepCarpet"] = new("FootstepHardsuitLightCarpet", "FootstepHardsuitMediumCarpet", "FootstepHardsuitHeavyCarpet"),
+        ["FootstepWater"] = new("FootstepHardsuitLightWater", "FootstepHardsuitMediumWater", "FootstepHardsuitHeavyWater"),
     };
 }
 

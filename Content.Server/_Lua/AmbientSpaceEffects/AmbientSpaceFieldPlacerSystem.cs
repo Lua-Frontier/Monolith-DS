@@ -4,6 +4,7 @@
 
 using System.Numerics;
 using Content.Server._Lua.SpaceHazards;
+using Content.Server._LuaM.Nebula; // LuaM
 using Content.Server._NF.GameTicking.Events;
 using Content.Server.GameTicking;
 using Content.Shared._Lua.AmbientSpaceEffects;
@@ -53,6 +54,7 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
     [Dependency] private SpaceHazardActivitySystem _activity = default!;
     [Dependency] private PvsOverrideSystem _pvs = default!;
     [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private NebulaWeatherExclusionSystem _exclusion = default!; // LuaM
 
     private bool _enabled = true;
     private readonly List<(Vector2 Pos, float Extent)> _gridScratch = new();
@@ -130,6 +132,7 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
         var dangerous = 0;
         var maxAttempts = Math.Max(count * 24, count + 256);
         var placed = new List<(Vector2 Pos, float Radius)>(count);
+        var candidates = new List<(EntityUid Uid, AmbientSpaceFieldComponent Field, int Seed)>(); // LuaM
         CollectGrids(map.MapId, _gridScratch);
 
         for (var attempt = 0; attempt < maxAttempts && placed.Count < count; attempt++)
@@ -158,8 +161,14 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
                 continue;
             }
 
-            var hasWeather = !OverlapsGrid(_gridScratch, pos, radius + placer.DangerClearance) &&
-                             _random.Prob(placer.DangerChance);
+            // LuaM-start: no weather near the protected stations; with a fixed count the dangerous ones are picked after the loop
+            var canHaveWeather = !OverlapsGrid(_gridScratch, pos, radius + placer.DangerClearance) &&
+                                 !_exclusion.IsExcluded(map.MapId, pos, radius);
+            if (canHaveWeather && placer.DangerCount != null)
+                candidates.Add((ent, field, seed));
+
+            var hasWeather = canHaveWeather && placer.DangerCount == null && _random.Prob(placer.DangerChance);
+            // LuaM-end
             ApplyDeterministicVisuals(field, seed, radius, hasWeather);
             Dirty(ent, field);
             UpdateActivationRange((ent, field));
@@ -167,6 +176,29 @@ public sealed partial class AmbientSpaceFieldPlacerSystem : EntitySystem
             if (field.HasWeather)
                 dangerous++;
         }
+
+        // LuaM-start
+        if (placer.DangerCount is { } dangerCount)
+        {
+            _random.Shuffle(candidates);
+            foreach (var (uid, field, seed) in candidates)
+            {
+                if (dangerous >= dangerCount)
+                    break;
+
+                ApplyDeterministicVisuals(field, seed, field.Radius, true);
+                if (!field.HasWeather)
+                    continue;
+
+                Dirty(uid, field);
+                UpdateActivationRange((uid, field));
+                dangerous++;
+            }
+
+            if (dangerous < dangerCount)
+                Log.Warning($"Only {dangerous}/{dangerCount} nebulae with weather fit on {ToPrettyString(mapUid)}");
+        }
+        // LuaM-end
 
         _gridScratch.Clear();
         Log.Info($"Generated {placed.Count}/{count} nebulae on {ToPrettyString(mapUid)}, {dangerous} with weather");

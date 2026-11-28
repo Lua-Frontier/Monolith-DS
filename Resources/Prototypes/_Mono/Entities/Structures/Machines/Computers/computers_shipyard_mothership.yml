@@ -43,6 +43,7 @@
   - type: CompanyAccessReader
     requiredCompanies:
     - TSF
+    - TSFHighComm # LuaM
 
 - type: entity
   id: JupiterCarrierComputer

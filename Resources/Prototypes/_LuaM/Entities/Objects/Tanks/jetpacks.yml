@@ -55,3 +55,32 @@
       moles:
         Oxygen: 10.25689525
         Nitrogen: 10.25689525
+
+# Tarkhan jetpack in the colours of the CV-280 'Basilisk' hardsuit, holds 50 L like the void jetpack.
+- type: entity
+  parent: JetpackVoid
+  id: JetpackTarkhan
+  name: Tarkhan jetpack
+  description: A jetpack in the colours of the CV-280 'Basilisk' hardsuit. It can hold 50 L of gas, like the void jetpack.
+  components:
+  - type: Item
+    sprite: _LuaM/Objects/Tanks/Jetpacks/tarkhan.rsi
+  - type: Sprite
+    sprite: _LuaM/Objects/Tanks/Jetpacks/tarkhan.rsi
+  - type: Clothing
+    sprite: _LuaM/Objects/Tanks/Jetpacks/tarkhan.rsi
+
+- type: entity
+  parent: JetpackTarkhan
+  id: JetpackTarkhanFilled
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      # Filled like the void jetpack
+      volume: 50
+      temperature: 293.15
+      moles:
+        Oxygen: 4.36
+        Nitrogen: 16.42

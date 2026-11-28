@@ -2,7 +2,7 @@
   id: MarsocOperativeGear
   equipment:
     jumpsuit: ClothingUniformTsfmcMopp
-    back: ClothingBackpackERTLeader
+    back: ClothingBackpackHolding # LuaM: ClothingBackpackERTLeader > ClothingBackpackHolding
     eyes: ClothingEyesHudNfsd
     ears: ClothingHeadsetAltTsfmcMarsoc
     gloves: ClothingHandsGlovesTacticalCombatBlack
@@ -13,14 +13,14 @@
     pocket2: WeaponPistolMk58
     belt: ClothingBeltWebbingsNormalTSFMC
     neck: ClothingNeckIFFCyan
-    suitStorage: OxygenTankFilled
+    suitstorage: JetpackVoidFilled # LuaM: suitStorage > suitstorage, slot names are case-sensitive; OxygenTankFilled > JetpackVoidFilled
   inhand:
   - WeaponLMGMR8B
   - GunAttachmentGripErebusLAM
   storage:
     back:
     - RadioHandheldNF
-    - BaseSecurityUplinkRadioDeputy
+    - BaseSecurityUplinkRadioMarsocGhost # LuaM: BaseSecurityUplinkRadioDeputy > BaseSecurityUplinkRadioMarsocGhost
     - DoubleEmergencyOxygenTank
     - MedkitCombatFilled
     - MedkitCombatFilled
@@ -30,6 +30,16 @@
     - EnergySwordNfsd
     - BluespaceLifelineImplanter
     - PinpointerUniversal
+    # LuaM-start: overwatch, the MARSOC kit tools and the ERT medical pouch
+    - TSFHandheldOverwatchConsole
+    - JawsOfLife
+    - PowerDrill
+    - WelderExperimental
+    - HandHeldMassScanner
+    - MedicalPouchFilledERT
+    - ArmorPlateStorageBlueSpace
+    - ArmorPlateStorageBlueSpace
+    # LuaM-end
     belt:
     - Magazine8x65mmSKR
     - Magazine8x65mmSKR

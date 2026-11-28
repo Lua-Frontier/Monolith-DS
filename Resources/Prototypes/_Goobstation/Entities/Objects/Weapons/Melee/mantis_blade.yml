@@ -11,6 +11,7 @@
     sprite: _Goobstation/Objects/Weapons/Melee/mantis_blade.rsi
     state: icon
   - type: MeleeWeapon
+    range: 1.8 # LuaM: melee range +20% for swords, sabres and mantis blades
     swingLeft: true
     wideAnimationRotation: 135
     attackRate: 1.5

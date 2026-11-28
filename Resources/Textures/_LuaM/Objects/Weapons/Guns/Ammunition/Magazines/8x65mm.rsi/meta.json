@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "https://github.com/shiptest-ss13/Shiptest/blob/master/icons/obj/ammo.dmi, modified by _starch_ (discord). Incendiary band for the 8x65mm STANAG magazine in the colours of the incendiary 8x65mm ammo box",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "incendiary"
+        }
+    ]
+}
