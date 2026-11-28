@@ -1,0 +1,21 @@
+# Big ammo boxes, same cost bases as the other big boxes of their caliber class.
+
+- type: latheRecipe
+  parent: BaseAmmoFMJIntermediateBigAmmoBoxRecipe # 12 gauge boxes use the intermediate box cost
+  id: AmmoBox12_gaugeBigBuckshot
+  result: AmmoBox12_gaugeBigBuckshot
+
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigBuckshot
+  result: AmmoBox23x75mmBigBuckshot
+
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox127x99mmBig
+  result: AmmoBox127x99mmBig
+
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox8x65mmSKRBig
+  result: AmmoBox8x65mmSKRBig

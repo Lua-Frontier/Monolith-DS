@@ -182,6 +182,7 @@
     # LuaM-start:
     - NFMercenaryTechfabDeprecatedStatic
     - MonoRestraintsStatic
+    - LuaMTsf8x65AmmoStatic
     # LuaM-end
     dynamicPacks:
     - NFNfsdTechfabDeprecated

@@ -4,6 +4,7 @@
   id: BaseAmmoBox127x99mm
   name: ammunition box (12.7x99mm anti-material)
   components:
+  - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:

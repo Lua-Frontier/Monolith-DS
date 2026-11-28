@@ -3,6 +3,7 @@
   parent: [BaseItem, RecyclableItemCardboard] # Frontier: added RecyclableItemCardboard
   id: BaseAmmoBox68x52mmCaseless
   components:
+  - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:

@@ -35,6 +35,8 @@
   - AmmoBox357_magnumBigFMJ
   - AmmoBox46x30mmBigFMJ
   - AmmoBox556x45mmBigFMJ
+  - AmmoBox12_gaugeBigBuckshot # LuaM
+  - AmmoBox23x75mmBigBuckshot # LuaM
   technologyPrerequisites:
   - AdvancedParts
 

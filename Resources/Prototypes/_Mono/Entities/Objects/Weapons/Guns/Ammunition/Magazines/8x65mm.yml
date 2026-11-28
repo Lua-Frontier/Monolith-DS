@@ -95,6 +95,7 @@
   parent: [BaseItem, RecyclableItemSteelTiny] # Frontier: added RecyclableItemSteelTiny
   abstract: true
   components:
+  - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
   - type: Tag
     tags:
     - MagazineBox8x65mmSKR

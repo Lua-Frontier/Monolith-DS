@@ -25,6 +25,7 @@
   id: AmmoProvider12_gaugeShotgunShell
   abstract: true
   components:
+    - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
     - type: Sprite
       sprite: _Mono/Objects/Weapons/Guns/Ammunition/Boxes/12_gauge.rsi
     - type: BallisticAmmoProvider
@@ -44,6 +45,7 @@
   id: AmmoProvider23x75mmShotgunShell
   abstract: true
   components:
+    - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
     - type: Sprite
       sprite: _Mono/Objects/Weapons/Guns/Ammunition/Boxes/4_gauge.rsi
     - type: BallisticAmmoProvider

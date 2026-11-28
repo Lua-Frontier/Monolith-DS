@@ -1,0 +1,5 @@
+# 8x65mm SKR ammo the TSF techfab prints without research or tech disks.
+- type: latheRecipePack
+  id: LuaMTsf8x65AmmoStatic
+  recipes:
+  - AmmoBox8x65mmSKR
