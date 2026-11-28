@@ -22,7 +22,7 @@
   - ContractorWallet
   - ContractorCartridge
   - MartialArtsManual # LuaM
-  - ContractorImplanter
+  - VGImplanter # LuaM: ContractorImplanter > VGImplanter, no medical tracker
   - ContractorUtility
   - ContractorFun
   - ContractorTrinkets
@@ -55,7 +55,7 @@
   - ContractorWallet
   - ContractorCartridge
   - MartialArtsManual # LuaM
-  - ContractorImplanter
+  - VGImplanter # LuaM: ContractorImplanter > VGImplanter, no medical tracker
   - ContractorUtility
   - ContractorFun
   - ContractorTrinkets
@@ -88,7 +88,7 @@
   - ContractorWallet
   - ContractorCartridge
   - MartialArtsManual # LuaM
-  - ContractorImplanter
+  - VGImplanter # LuaM: ContractorImplanter > VGImplanter, no medical tracker
   - ContractorUtility
   - ContractorFun
   - ContractorTrinkets

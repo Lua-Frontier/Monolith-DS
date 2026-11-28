@@ -22,7 +22,7 @@
   - ColossusUSSPRoles # LuaM: complete organization help
   special:
   - !type:AddImplantSpecial
-    implants: [ UsspTrackingImplant ]
+    implants: [ UsspTrackingImplant, LuaMFreeportTrackingImplant ] # LuaM: LuaMFreeportTrackingImplant
   - !type:AddComponentSpecial
     components:
     - type: MailDisabled

@@ -38,6 +38,13 @@
       - VG
     - type: ChatRank
       rank: vg-infanteer
+  # LuaM-start: the same language as the VG officers and the USSP
+  - !type:AddLanguageSpecial
+    languagesSpoken:
+    - NovaCygniBasic
+    languagesUnderstood:
+    - NovaCygniBasic
+  # LuaM-end
   accessGroups:
   - GeneralAccess
   - ViperLow
