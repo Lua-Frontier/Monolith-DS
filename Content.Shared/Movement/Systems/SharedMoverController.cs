@@ -28,6 +28,7 @@ using Robust.Shared.Utility;
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
 using Content.Shared.StepTrigger.Components; // Delta V-NoShoesSilentFootstepsComponent
 using Content.Shared._LuaM.Performance; // LuaM
+using Content.Shared._LuaM.Clothing; // LuaM
 
 namespace Content.Shared.Movement.Systems;
 
@@ -51,6 +52,7 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] private   SharedTransformSystem _transform = default!;
     [Dependency] private   TagSystem _tags = default!;
     [Dependency] private   IEntityManager _entities = default!; // Delta V-NoShoesSilentFootstepsComponent
+    [Dependency] private   SpeedTieredFootstepsSystem _speedTieredFootsteps = default!; // LuaM
 
     protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery;
     protected EntityQuery<ThrownItemComponent> ThrownItemQuery; // LuaM
@@ -608,6 +610,15 @@ public abstract partial class SharedMoverController : VirtualController
                 return true;
             }
 
+            // LuaM-start: suits on carpets get their own steps, with shoes or without
+            if (FootstepModifierQuery.TryComp(maybeFootstep, out var surfaceModifier) &&
+                _inventory.TryGetSlotEntity(uid, "outerClothing", out var surfaceSuit) &&
+                _speedTieredFootsteps.TryGetSurfaceSound(surfaceSuit.Value, surfaceModifier.FootstepSoundCollection, out sound))
+            {
+                return true;
+            }
+            // LuaM-end
+
             if (_inventory.TryGetSlotEntity(uid, "shoes", out var shoes) &&
                 FootstepModifierQuery.TryComp(maybeFootstep, out var footstep))
             {
@@ -620,6 +631,14 @@ public abstract partial class SharedMoverController : VirtualController
         if (_inventory.TryGetSlotEntity(uid, "outerClothing", out var outerClothing) &&
             TryComp<FootstepModifierComponent>(outerClothing, out var outerModifier))
         {
+            // LuaM-start: suits step on grass, snow, dirt, wood and carpet without the metal clank
+            if (tileDef == null && _mapSystem.TryGetTileRef(xform.GridUid.Value, grid, position, out var suitTileRef))
+                tileDef = (ContentTileDefinition) _tileDefinitionManager[suitTileRef.Tile.TypeId];
+
+            if (tileDef != null && _speedTieredFootsteps.TryGetSurfaceSound(outerClothing.Value, tileDef, out sound))
+                return true;
+            // LuaM-end
+
             sound = outerModifier.FootstepSoundCollection;
             return sound != null;
         }

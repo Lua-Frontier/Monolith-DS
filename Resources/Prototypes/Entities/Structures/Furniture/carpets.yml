@@ -37,6 +37,9 @@
     - id: MaterialCloth1
       amount: 1
   - type: TrayScanReveal
+  - type: FootstepModifier # LuaM: carpets sound like carpet, not like the floor under them
+    footstepSoundCollection:
+      collection: FootstepCarpet
 
 - type: entity
   id: Carpet

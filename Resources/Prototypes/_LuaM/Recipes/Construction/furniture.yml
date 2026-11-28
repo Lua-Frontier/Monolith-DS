@@ -31,3 +31,33 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMSink
+  graph: LuaMSink
+  startNode: start
+  targetNode: sink
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/sink.rsi
+    state: sink_stem
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: LuaMSinkWide
+  graph: LuaMSinkWide
+  startNode: start
+  targetNode: sinkWide
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/sink.rsi
+    state: sink_wide
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

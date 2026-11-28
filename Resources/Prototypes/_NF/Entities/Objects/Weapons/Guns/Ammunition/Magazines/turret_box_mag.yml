@@ -7,6 +7,7 @@
    Universal ASMGT-compatible ammo box capable of accepting 5.56x45mm, 6.35x40mm, 7.62x39mm and 9x19mm cartridges.
   suffix: empty
   components:
+  - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
   - type: Tag
     tags:
       - MagazineAsmgt

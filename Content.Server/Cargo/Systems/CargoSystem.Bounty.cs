@@ -6,6 +6,7 @@ using Content.Server.NameIdentifier;
 using Content.Server.Stack;
 using Content.Shared._NF.Bank;
 using Content.Shared._NF.Medical; // Frontier
+using Content.Shared._LuaM.Cargo; // LuaM
 using Content.Shared.Access.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
@@ -75,7 +76,7 @@ public sealed partial class CargoSystem
 
         var label = Spawn(component.BountyLabelId, Transform(uid).Coordinates);
         component.NextPrintTime = _timing.CurTime + component.PrintDelay;
-        SetupBountyLabel(label, station, bounty.Value);
+        SetupBountyLabel(label, station, bounty.Value, localePrefix: CompOrNull<BountyConsoleLocaleComponent>(uid)?.Prefix); // LuaM: localePrefix
         _audio.PlayPvs(component.PrintSound, uid);
     }
 
@@ -110,7 +111,7 @@ public sealed partial class CargoSystem
         _audio.PlayPvs(component.SkipSound, uid);
     }
 
-    public void SetupBountyLabel(EntityUid uid, EntityUid stationId, CargoBountyData bounty, PaperComponent? paper = null, CargoBountyLabelComponent? label = null)
+    public void SetupBountyLabel(EntityUid uid, EntityUid stationId, CargoBountyData bounty, PaperComponent? paper = null, CargoBountyLabelComponent? label = null, string? localePrefix = null) // LuaM: localePrefix
     {
         if (!Resolve(uid, ref paper, ref label) || !_protoMan.TryIndex<CargoBountyPrototype>(bounty.Bounty, out var prototype))
             return;
@@ -118,13 +119,16 @@ public sealed partial class CargoSystem
         label.Id = bounty.Id;
         label.AssociatedStationId = stationId;
         var msg = new FormattedMessage();
-        msg.AddText(Loc.GetString("bounty-manifest-header", ("id", bounty.Id)));
+        // LuaM-start: own texts
+        msg.AddText(BountyConsoleLoc.Get(localePrefix, "bounty-manifest-header", ("id", bounty.Id)));
         msg.PushNewline();
-        msg.AddText(Loc.GetString("bounty-manifest-list-start"));
+        msg.AddText(BountyConsoleLoc.Get(localePrefix, "bounty-manifest-list-start"));
+        // LuaM-end
         msg.PushNewline();
         foreach (var entry in prototype.Entries)
         {
-            msg.AddMarkupOrThrow($"- {Loc.GetString("bounty-console-manifest-entry",
+            // LuaM: own texts
+            msg.AddMarkupOrThrow($"- {BountyConsoleLoc.Get(localePrefix, "bounty-console-manifest-entry",
                 ("amount", entry.Amount),
                 ("item", Loc.GetString(entry.Name)))}");
             msg.PushNewline();

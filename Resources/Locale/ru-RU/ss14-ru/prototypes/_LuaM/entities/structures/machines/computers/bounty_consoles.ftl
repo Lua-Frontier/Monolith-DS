@@ -1,0 +1,11 @@
+﻿ent-LuaMComputerKitchenBounty = консоль кухонных заказов
+    .desc = Показывает заказы кухни Колосса и печатает к ним бланки.
+ent-LuaMComputerTabletopKitchenBounty = { ent-LuaMComputerKitchenBounty }
+    .desc = { ent-LuaMComputerKitchenBounty.desc }
+    .suffix = Настольный
+ent-LuaMPaperKitchenOrderManifest = бланк кухонного заказа
+    .desc = Бланк заказа кухни Колосса. Наклейте его на ящик с блюдами и продайте ящик, чтобы выполнить заказ.
+ent-LuaMComputerMMCBounty = консоль заданий ММС
+    .desc = Показывает производственные задания совета директоров ММС и печатает к ним накладные.
+ent-LuaMPaperMMCBountyManifest = накладная задания ММС
+    .desc = Накладная производственного задания ММС. Наклейте её на ящик с товаром и продайте ящик, чтобы выполнить задание.

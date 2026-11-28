@@ -43,6 +43,7 @@
       - Pill # Bypasses reagent storage
       - MachineBoard # lets you lockbox TSF servers and shit :face_holding_back_tears:
       - Flatpack # ditto
+      - AmmoBox # LuaM: ammo boxes and box magazines
       tags:
       - Unstashable
       - SafetyDepositBlacklist

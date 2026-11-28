@@ -37,6 +37,9 @@ using Robust.Shared.Random;
 using Content.Shared.Contraband; // Frontier
 using System.Linq; // LuaM
 using Content.Server.Explosion.Components; // LuaM
+using Content.Shared.Stacks; // LuaM
+using Content.Shared.Body.Organ; // LuaM
+using Content.Shared.Mind.Components; // LuaM
 
 namespace Content.Server.Medical.BiomassReclaimer
 {
@@ -245,12 +248,15 @@ namespace Content.Server.Medical.BiomassReclaimer
                 component.SpawnedEntities = butcherableComponent.SpawnedEntities;
             }
 
-            var expectedYield = physics.FixturesMass * component.YieldPerUnitMass;
+            var mass = physics.FixturesMass * (CompOrNull<StackComponent>(toProcess)?.Count ?? 1); // LuaM: a produce stack weighs as one fruit
+            var expectedYield = mass * component.YieldPerUnitMass; // LuaM: physics.FixturesMass > mass
             if (HasComp<ProduceComponent>(toProcess))
                 expectedYield *= component.ProduceYieldMultiplier;
+            else if (HasComp<OrganComponent>(toProcess)) // LuaM
+                expectedYield = _robustRandom.Next(component.OrganYieldMin, component.OrganYieldMax + 1); // LuaM
             component.CurrentExpectedYield += expectedYield;
 
-            component.ProcessingTimer = physics.FixturesMass * component.ProcessingTimePerUnitMass;
+            component.ProcessingTimer = mass * component.ProcessingTimePerUnitMass; // LuaM: physics.FixturesMass > mass
 
             // LuaM: NPCs whose gear is deleted when their body is gibbed (fauna) lose it here too,
             // instead of handing out their faction hardsuits through the reclaimer.
@@ -285,8 +291,14 @@ namespace Content.Server.Medical.BiomassReclaimer
                 return false;
 
             bool isPlant = HasComp<ProduceComponent>(dragged);
-            if (!isPlant && !HasComp<MobStateComponent>(dragged))
+            var isOrgan = HasComp<OrganComponent>(dragged); // LuaM
+            if (!isPlant && !isOrgan && !HasComp<MobStateComponent>(dragged)) // LuaM: + !isOrgan
                 return false;
+
+            // LuaM-start: a brain with someone in it is still a person
+            if (isOrgan && TryComp<MindContainerComponent>(dragged, out var mindContainer) && mindContainer.HasMind)
+                return false;
+            // LuaM-end
 
             if (!Transform(reclaimer).Anchored)
                 return false;
@@ -294,7 +306,7 @@ namespace Content.Server.Medical.BiomassReclaimer
             if (TryComp<ApcPowerReceiverComponent>(reclaimer, out var power) && !power.Powered)
                 return false;
 
-            if (!isPlant && reclaimer.Comp.SafetyEnabled && !_mobState.IsDead(dragged))
+            if (!isPlant && !isOrgan && reclaimer.Comp.SafetyEnabled && !_mobState.IsDead(dragged)) // LuaM: + !isOrgan
                 return false;
 
             // Reject souled bodies in easy mode.

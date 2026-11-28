@@ -39,6 +39,7 @@
   name: "L6 SAW magazine box (7.62x39mm FMJ)"
   parent: BaseMagazine762x39mm
   components:
+  - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
   - type: Tag
     tags:
       - Magazine762x39mmBox
@@ -144,6 +145,7 @@
   name: "PK munitions box (7.62x39mm FMJ)"
   parent: BaseMagazine762x39mm
   components:
+  - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
   - type: Tag
     tags:
       - Magazine762x39mmBox

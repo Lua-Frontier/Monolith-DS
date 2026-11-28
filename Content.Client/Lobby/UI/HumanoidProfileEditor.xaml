@@ -75,7 +75,7 @@
                             <BoxContainer HorizontalExpand="True" Visible="False" Name="TTSContainer">
                                 <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
                                 <Control HorizontalExpand="True"/>
-                                <OptionButton Name="VoiceButton" HorizontalAlignment="Right" />
+                                <OptionButton Name="VoiceButton" HorizontalAlignment="Right" Filterable="True" /> <!-- LuaM: Filterable -->
                                 <Button Name="VoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" HorizontalAlignment="Right" />
                             </BoxContainer>
                             </BoxContainer>

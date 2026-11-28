@@ -985,9 +985,13 @@
   - AmmoBox635x40mmCaselessBig #PDV
   - AmmoBox68x52mmCaselessBig #TSF
   - AmmoBoxShenzhenBig #TSF
+  - AmmoBox12_gaugeBigBuckshot # LuaM
+  - AmmoBox23x75mmBigBuckshot # LuaM
+  - AmmoBox127x99mmBig # LuaM
 
 #8x65 SKR Ammo Box
   - AmmoBox8x65mmSKR
+  - AmmoBox8x65mmSKRBig # LuaM
 
 # Smart
   - MagazineSmart # LuaM

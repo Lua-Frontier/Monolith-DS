@@ -1,0 +1,74 @@
+# Big ammo boxes for the calibers that only had small ones. Three times the small box, like the other big boxes.
+
+- type: entity
+  parent: AmmoProvider12_gaugeShotgunShell
+  id: AmmoBox12_gaugeBigBuckshot
+  name: big shotgun shell box (12 gauge buckshot)
+  suffix: Big
+  components:
+  - type: Item
+    shape:
+    - 0,0,2,1
+  - type: BallisticAmmoProvider
+    capacity: 96 # 3x standard box
+    proto: ShellShotgun12_gaugeBuckshot
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/12_gauge.rsi
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+
+- type: entity
+  parent: AmmoProvider23x75mmShotgunShell
+  id: AmmoBox23x75mmBigBuckshot
+  name: big shotgun shell box (4 gauge buckshot)
+  suffix: Big
+  components:
+  - type: Item
+    shape:
+    - 0,0,2,1
+  - type: BallisticAmmoProvider
+    capacity: 96 # 3x standard box
+    proto: ShellShotgun23x75mmBuckshot
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/4_gauge.rsi
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+
+- type: entity
+  parent: BaseAmmoBox127x99mm
+  id: AmmoBox127x99mmBig
+  name: big ammunition box (12.7x99mm anti-material)
+  suffix: Big
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,1
+  - type: BallisticAmmoProvider
+    capacity: 90 # 3x standard box
+    proto: Cartridge127x99mm
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/12.7x99mm.rsi
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+
+# No magazine tags, so it can not be loaded into the Fenghuang like the SAW box.
+- type: entity
+  parent: BaseAmmoBox8x65mm
+  id: AmmoBox8x65mmSKRBig
+  name: big ammunition box (8x65mm SKR FMJ)
+  suffix: Big
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,1
+  - type: BallisticAmmoProvider
+    capacity: 300 # 3x standard box
+    proto: Cartridge8x65mmSKR
+  - type: Sprite
+    sprite: _LuaM/Objects/Weapons/Guns/Ammunition/Boxes/8x65mm.rsi
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]

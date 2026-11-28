@@ -33,6 +33,7 @@
   - AmmoBox700Thz
   - AmmoBox68x52mmCaselessBig
   - AmmoBox57x28mmBigFMJ
+  - AmmoBox8x65mmSKRBig # LuaM
   - Magazine35mmGrenadeStinger
   technologyPrerequisites:
   - TsfBasicGuns
