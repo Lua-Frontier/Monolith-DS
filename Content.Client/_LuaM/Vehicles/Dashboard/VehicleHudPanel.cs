@@ -1,5 +1,6 @@
 using System.Numerics;
 using System.Text;
+using Content.Client._LuaM.UserInterface.Hud;
 using Content.Client.Resources;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -22,20 +23,20 @@ public abstract class VehicleHudPanel : Control
     private readonly Dictionary<(string Format, int A, int B), string> _formatted = new();
     private readonly Dictionary<(Font Font, string Text, float Width, float Scale), string> _fitted = new();
 
-    protected static readonly Color Section = Color.FromHex("#111923F0");
-    protected static readonly Color SectionBorder = Color.FromHex("#2D4757");
-    protected static readonly Color Inset = Color.FromHex("#0D1219F6");
-    protected static readonly Color Header = Color.FromHex("#202631F5");
-    protected static readonly Color HeaderBorder = Color.FromHex("#5D6A7C");
-    protected static readonly Color Accent = Color.FromHex("#4EC6E8");
-    protected static readonly Color LitFill = Color.FromHex("#18344AF5");
-    protected static readonly Color Off = Color.FromHex("#293844");
-    protected static readonly Color OffFill = Color.FromHex("#10161FC8");
-    protected static readonly Color Text = Color.FromHex("#F1F3F6");
-    protected static readonly Color Muted = Color.FromHex("#7A8590");
-    protected static readonly Color Warn = Color.FromHex("#F0B030");
-    protected static readonly Color Danger = Color.FromHex("#E0402F");
-    protected static readonly Color Good = Color.FromHex("#4FD06A");
+    protected static readonly Color Section = HudPalette.Panel.WithAlpha(0.94f);
+    protected static readonly Color SectionBorder = HudPalette.Border;
+    protected static readonly Color Inset = HudPalette.Background.WithAlpha(0.96f);
+    protected static readonly Color Header = HudPalette.PanelRaised.WithAlpha(0.96f);
+    protected static readonly Color HeaderBorder = HudPalette.BorderBright;
+    protected static readonly Color Accent = HudPalette.Fg;
+    protected static readonly Color LitFill = HudPalette.FgFaint.WithAlpha(0.96f);
+    protected static readonly Color Off = HudPalette.LineDim;
+    protected static readonly Color OffFill = HudPalette.Panel.WithAlpha(0.78f);
+    protected static readonly Color Text = HudPalette.Cream;
+    protected static readonly Color Muted = HudPalette.TextDim;
+    protected static readonly Color Warn = HudPalette.Caution;
+    protected static readonly Color Danger = HudPalette.Bad;
+    protected static readonly Color Good = HudPalette.Good;
 
     protected readonly Font Digits;
     protected readonly Font DigitsSmall;
