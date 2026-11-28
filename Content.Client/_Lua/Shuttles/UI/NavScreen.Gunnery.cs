@@ -21,6 +21,9 @@ public sealed partial class NavScreen
     private readonly Dictionary<NetEntity, ShipGunType> _weaponTypes = new();
     private FireControllableEntry[]? _weapons;
     private bool _gunneryConnected;
+    // LuaM-start
+    private static readonly List<NetEntity> EmptySelectedWeapons = new();
+    // LuaM-end
 
     private void InitializeGunnery()
     {
@@ -85,7 +88,9 @@ public sealed partial class NavScreen
         if (!_gunneryConnected)
             return;
 
-        OnGunneryFire?.Invoke(new List<NetEntity>(), _entManager.GetNetCoordinates(coordinates));
+        // LuaM-start
+        OnGunneryFire?.Invoke(EmptySelectedWeapons, _entManager.GetNetCoordinates(coordinates));
+        // LuaM-end
     }
 
     private List<NetEntity> GetSelectedWeapons()
@@ -126,10 +131,15 @@ public sealed partial class NavScreen
             else if (_entManager.TryGetComponent<ShipGunTypeComponent>(entity, out var typeComp))
                 _weaponTypes[weapon.NetEntity] = typeComp.Type;
 
-            if (_weaponButtons.ContainsKey(weapon.NetEntity))
+            ShipGunType? gunType = _weaponTypes.TryGetValue(weapon.NetEntity, out var knownType) ? knownType : null;
+            // LuaM-start
+            if (_weaponButtons.TryGetValue(weapon.NetEntity, out var existingButton))
+            {
+                ConsoleStyles.UpdateGunType(existingButton, gunType);
                 continue;
+            }
+            // LuaM-end
 
-            ShipGunType? gunType = _weaponTypes.TryGetValue(weapon.NetEntity, out var knownType) ? knownType : null; // LuaM
             var button = new Button
             {
                 ToggleMode = true,

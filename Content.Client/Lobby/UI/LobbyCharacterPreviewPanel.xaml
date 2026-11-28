@@ -28,12 +28,17 @@
                     <PanelContainer MinHeight="1"><PanelContainer.PanelOverride><graphics:StyleBoxFlat BackgroundColor="#1A1F22" /></PanelContainer.PanelOverride></PanelContainer>
                     <RichTextLabel Name="Company" />
                     <Label Name="MonoCoins" StyleClasses="LuaMHudMark" />
-                    <BoxContainer Name="BalanceRow" Orientation="Horizontal" SeparationOverride="10">
+                    <!-- LuaM-start -->
+                    <BoxContainer Name="BalanceRow" Orientation="Horizontal" HorizontalExpand="True" SeparationOverride="10">
                         <Label Text="{Loc 'lobby-hud-field-balance'}" StyleClasses="LuaMHudLabel" VAlign="Center" FontColorOverride="#6FBF73" />
-                        <Label Name="BankBalance" StyleClasses="LuaMHudData" FontColorOverride="#6FBF73" VAlign="Center" />
+                        <Label Name="BankBalance" StyleClasses="LuaMHudData" FontColorOverride="#6FBF73" VAlign="Center"
+                               HorizontalExpand="True" ClipText="True" />
                     </BoxContainer>
+                    <!-- LuaM-end -->
+                    <!-- LuaM-start -->
                     <Button Name="CharacterSetup" Text="{Loc 'lobby-hud-setup-button'}" StyleClasses="LuaMHudAccent"
-                            HorizontalAlignment="Left" MinHeight="32" />
+                            HorizontalExpand="True" MinHeight="32" />
+                    <!-- LuaM-end -->
                 </BoxContainer>
             </BoxContainer>
             <Label Name="Summary" Visible="False" />

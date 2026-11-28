@@ -25,6 +25,7 @@ public sealed partial class MapScreen
 
     private void InitializeMapTarget()
     {
+        MapTargetSet.AddChild(new MapTargetIcon());
         MapTargetX.OnTextChanged += _ => _mapTargetModified = true;
         MapTargetY.OnTextChanged += _ => _mapTargetModified = true;
         MapTargetX.OnTextEntered += _ => SetMapTarget();

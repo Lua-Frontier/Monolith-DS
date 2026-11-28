@@ -99,12 +99,9 @@ namespace Content.Client.VendingMachines.UI
 
                 MainContainer.AddChild(outOfStockLabel);
 
-                SetSizeAfterUpdate(outOfStockLabel.Text.Length, 0);
-
-                return;
+                return; // LuaM
             }
 
-            var longestEntry = string.Empty;
             var listData = new List<VendorItemsListData>();
 
             for (var i = 0; i < inventory.Count; i++)
@@ -134,15 +131,10 @@ namespace Content.Client.VendingMachines.UI
                     itemText = $"[{BankSystemExtensions.ToSpesoString(cost)}] {itemName}";
                 // End Frontier: unlimited vending
 
-                if (itemText.Length > longestEntry.Length)
-                    longestEntry = itemText;
-
                 listData.Add(new VendorItemsListData(prototype!.ID, itemText, i)); // Frontier: prototype<prototype!
             }
 
-            VendingContents.PopulateList(listData);
-
-            SetSizeAfterUpdate(longestEntry.Length, inventory.Count);
+            VendingContents.PopulateList(listData); // LuaM
         }
 
         // Mono: Moved out frontier pricing logic to the separate method
@@ -241,11 +233,6 @@ namespace Content.Client.VendingMachines.UI
         }
         // End Frontier
 
-        private void SetSizeAfterUpdate(int longestEntryLength, int contentCount)
-        {
-            SetSize = new Vector2(Math.Clamp((longestEntryLength + 2) * 12, 250, 400),
-                Math.Clamp(contentCount * 50, 150, 350));
-        }
     }
 }
 

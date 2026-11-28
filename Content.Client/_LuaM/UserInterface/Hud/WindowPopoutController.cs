@@ -33,10 +33,12 @@ public sealed partial class WindowPopoutController : UIController
 
     private void OnWindowAdded(Control control)
     {
-        if (control is not BaseWindow window || FindButton(window, ButtonName) != null)
+        if (control is not BaseWindow window
+            || window is IWindowPopoutExcluded
+            || FindButton(window, ButtonName) != null)
             return;
 
-        if (FindCloseButton(window, 0) is not { Parent: { } row } close)
+        if (FindCloseButton(window, 0) is not { Visible: true, Parent: { } row } close)
             return;
 
         var button = new TextureButton

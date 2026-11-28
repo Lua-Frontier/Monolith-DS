@@ -49,6 +49,12 @@ public sealed class MarqueeLabel : Control
 
     public Label.AlignMode IdleAlign { get; set; } = Label.AlignMode.Center;
 
+    public Font? FontOverride
+    {
+        get => _label.FontOverride;
+        set => _label.FontOverride = value;
+    }
+
     public Color? FontColorOverride
     {
         get => _label.FontColorOverride;

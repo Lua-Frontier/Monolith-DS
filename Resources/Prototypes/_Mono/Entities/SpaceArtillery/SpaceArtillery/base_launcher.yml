@@ -64,7 +64,7 @@
       rotate: true
       bounds: "-1,-1,1,1"
   - type: ShipGunType
-    shipType: Kinetic
+    shipType: Ballistic # LuaM
   - type: ShipGunClass
     shipClass: Medium
   - type: LightningTarget
@@ -163,7 +163,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
   - type: ShipGunType
-    shipType: Kinetic
+    shipType: Ballistic # LuaM
   - type: ShipGunClass
     shipClass: Medium
   - type: BallisticAmmoProvider
@@ -266,7 +266,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
   - type: ShipGunType
-    shipType: Kinetic
+    shipType: Ballistic # LuaM
   - type: ShipGunClass
     shipClass: Medium
   - type: MagazineAmmoProvider

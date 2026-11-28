@@ -156,7 +156,7 @@ public sealed partial class MapScreen
                 MinHeight = 18f,
             };
             trackButton.AddStyleClass(ConsoleStyles.Button); // LuaM: ButtonSquare > console button
-            trackButton.AddChild(new MapTargetIconControl());
+            trackButton.AddChild(new MapTargetIcon()); // LuaM
             trackButton.OnPressed += _ => OnMapObjectTrackPress(mapObj);
             row.AddChild(trackButton);
         }
@@ -271,32 +271,4 @@ public sealed partial class MapScreen
         }
     }
 
-    private sealed class MapTargetIconControl : Control
-    {
-        public MapTargetIconControl()
-        {
-            MinSize = new Vector2(14f, 14f);
-            MaxSize = new Vector2(14f, 14f);
-            HorizontalAlignment = HAlignment.Center;
-            VerticalAlignment = VAlignment.Center;
-            MouseFilter = MouseFilterMode.Ignore;
-        }
-
-        protected override void Draw(DrawingHandleScreen handle)
-        {
-            base.Draw(handle);
-
-            var center = new Vector2(PixelWidth * 0.5f, PixelHeight * 0.5f);
-            var color = Color.FromHex("#C5CEDB");
-            const float radius = 3.5f;
-            const float outer = 6f;
-
-            LunaDraw.Circle(handle, center, radius, color, false);
-            LunaDraw.Circle(handle, center, 1f, color, true);
-            LunaDraw.Line(handle, center + new Vector2(0f, -outer), center + new Vector2(0f, -radius - 1f), color);
-            LunaDraw.Line(handle, center + new Vector2(0f, radius + 1f), center + new Vector2(0f, outer), color);
-            LunaDraw.Line(handle, center + new Vector2(-outer, 0f), center + new Vector2(-radius - 1f, 0f), color);
-            LunaDraw.Line(handle, center + new Vector2(radius + 1f, 0f), center + new Vector2(outer, 0f), color);
-        }
-    }
 }

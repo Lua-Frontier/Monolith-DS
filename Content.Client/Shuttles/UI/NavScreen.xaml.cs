@@ -28,6 +28,7 @@ public sealed partial class NavScreen : BoxContainer
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         _xformSystem = _entManager.System<SharedTransformSystem>();
+        TargetSet.AddChild(new MapTargetIcon()); // LuaM
 
         IFFToggle.OnToggled += OnIFFTogglePressed;
         IFFToggle.Pressed = NavRadar.ShowIFF;

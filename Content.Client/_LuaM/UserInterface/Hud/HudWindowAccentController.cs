@@ -59,6 +59,11 @@ public sealed partial class HudWindowAccentController : UIController
 
     private void MatchOwners()
     {
+        // LuaM-start
+        if (_pending.Count == 0)
+            return;
+        // LuaM-end
+
         var now = _timing.RealTime;
         _currentUis.Clear();
 
