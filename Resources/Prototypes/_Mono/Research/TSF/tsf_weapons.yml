@@ -33,7 +33,14 @@
   - AmmoBox700Thz
   - AmmoBox68x52mmCaselessBig
   - AmmoBox57x28mmBigFMJ
+  - AmmoBox8x65mmSKRBig # LuaM
   - Magazine35mmGrenadeStinger
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox57x28mmBigPractice
+  - AmmoBox57x28mmBigRubber
+  - AmmoBox57x28mmBigHP
+  - AmmoBox8x65mmSKRBigPractice
+  # LuaM-end
   technologyPrerequisites:
   - TsfBasicGuns
   # - UniversalMaterialResearchT2 # Commented by LuaM
@@ -71,6 +78,9 @@
   - LargePowerCellPlasma68x52mm
   - AmmoBox68x52mmCaselessPlasma
   - Magazine68x52mmCaselessPlasma
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox68x52mmCaselessBigPlasma
+  # LuaM-end
   technologyPrerequisites:
   - TsfAdvancedWeapons
   # - UniversalMaterialResearchT3 # Commented by LuaM

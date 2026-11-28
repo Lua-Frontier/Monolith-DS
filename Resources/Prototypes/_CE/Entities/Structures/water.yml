@@ -86,6 +86,8 @@
       collection: FootstepWater
       params:
         volume: 8
+    priority: -1 # LuaM: catwalks, carpets and tables over the water are heard instead
+    barefoot: true # LuaM: splashes under bare feet too
   - type: CESafeFalling
   - type: AmbientSound
     volume: 5

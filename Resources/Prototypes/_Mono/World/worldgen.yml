@@ -38,7 +38,7 @@
     minDistance: 1000
     maxDistance: 28000
     spacing: 200
-    dangerChance: 0.1
+    dangerCount: 20 # LuaM: dangerChance 0.1 > always 20 nebulae with weather, never near the stations with NebulaWeatherExclusion
     dangerClearance: 500
     fieldPrototype: AmbientSpaceFieldNebula
   # Lua-end

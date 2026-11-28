@@ -1,10 +1,12 @@
 using Content.Shared._LuaM.Stacks;
+using Content.Shared.Conveyor;
 using Content.Shared.Interaction;
 using Content.Shared.Materials;
 using Content.Shared.Stacks;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Throwing;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 
 namespace Content.Server._LuaM.Stacks;
@@ -52,7 +54,9 @@ public sealed class StackMagnetSystem : EntitySystem
     private readonly HashSet<Entity<StackComponent>> _nearby = new();
     private readonly List<Entity<StackComponent>> _group = new();
 
+    private EntityQuery<ConveyedComponent> _conveyedQuery;
     private EntityQuery<MaterialComponent> _materialQuery;
+    private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<UnitStackComponent> _unitQuery;
     private EntityQuery<ThrownItemComponent> _thrownQuery;
     private EntityQuery<TransformComponent> _xformQuery;
@@ -61,7 +65,9 @@ public sealed class StackMagnetSystem : EntitySystem
     {
         base.Initialize();
 
+        _conveyedQuery = GetEntityQuery<ConveyedComponent>();
         _materialQuery = GetEntityQuery<MaterialComponent>();
+        _physicsQuery = GetEntityQuery<PhysicsComponent>();
         _unitQuery = GetEntityQuery<UnitStackComponent>();
         _thrownQuery = GetEntityQuery<ThrownItemComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
@@ -231,11 +237,24 @@ public sealed class StackMagnetSystem : EntitySystem
             || !IsLoose(xform)
             || !IsMagnetic(ent)
             || _thrownQuery.HasComp(ent) // still flying, it is queued again when it lands
+            || IsRidingConveyor(ent) // carried away, it is queued again when it comes to rest
             || TerminatingOrDeleted(ent)
             || EntityManager.IsQueuedForDeletion(ent))
             return false;
 
         return !_blocked.TryGetValue(ent, out var until) || until <= now;
+    }
+
+    /// <summary>
+    /// Moving on a running conveyor. Such a stack must neither take a pile lying next to the belt along
+    /// (a whole harvest would ride into the grinder at the end of it) nor be pulled off the belt.
+    /// A pile resting at the end of the belt is asleep and merges as usual.
+    /// </summary>
+    private bool IsRidingConveyor(EntityUid uid)
+    {
+        return _conveyedQuery.HasComp(uid)
+            && _physicsQuery.TryComp(uid, out var physics)
+            && physics.Awake;
     }
 
     private bool IsBlockExpired(EntityUid uid, TimeSpan now)

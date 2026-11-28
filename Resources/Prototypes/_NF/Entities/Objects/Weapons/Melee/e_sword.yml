@@ -21,6 +21,7 @@
     - 0,0,2,0
     - 1,1,1,2
   - type: MeleeWeapon
+    range: 1.5 # LuaM: a pickaxe, keeps the usual range instead of the energy sword one
     autoAttack: true
   - type: ItemToggleMeleeWeapon
     activatedDamage:

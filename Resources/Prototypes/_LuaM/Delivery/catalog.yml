@@ -9,6 +9,7 @@
     FoodLuaMSausagesPack: 2000
     FoodLuaMMincePack: 1500
     DrinkLuaMKvassBottle: 1000
+    DrinkBeerCervezaCristalFull: 2000
   exclude:
   - BoxAgrichem
   - WeaponSubMachineGunAK220
@@ -51,6 +52,7 @@
     - FoodLuaMSausagesPack
     - FoodLuaMMincePack
     - DrinkLuaMKvassBottle
+    - DrinkBeerCervezaCristalFull
   - name: delivery-category-engineering
     inventories:
     - EngiVendInventory

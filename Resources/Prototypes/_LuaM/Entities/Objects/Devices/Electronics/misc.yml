@@ -27,3 +27,33 @@
     - CrateBluespaceElectronics
   - type: StaticPrice
     price: 125
+
+- type: entity
+  parent: BaseElectronics
+  id: SinkElectronics
+  name: sink electronics
+  description: An electronics board that controls the faucet and the drain of a sink.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: door_electronics
+  - type: Tag
+    tags:
+    - SinkElectronics
+  - type: StaticPrice
+    price: 55
+
+- type: entity
+  parent: BaseElectronics
+  id: SinkWideElectronics
+  name: wide sink electronics
+  description: An electronics board that controls the faucets and the drain of a wide sink.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: door_electronics
+  - type: Tag
+    tags:
+    - SinkWideElectronics
+  - type: StaticPrice
+    price: 75

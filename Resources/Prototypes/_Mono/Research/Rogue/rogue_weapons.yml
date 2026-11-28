@@ -78,6 +78,7 @@
   - Magazine762x39mmBox
   - Magazine127x99mm
   - AmmoBox127x99mm
+  - AmmoBox127x99mmBig # LuaM
   - Magazine127x99mmExplosive # LuaM
   - AmmoBox127x99mmExplosive # LuaM
   - AmmoBox145x114mm
@@ -86,6 +87,10 @@
   - WeaponDEWBasilisk
   - Magazine10Phz # for basilisk
   - AmmoBox10Phz # for basilisk
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox127x99mmBigExplosive
+  - AmmoBox145x114mmBigEMP
+  # LuaM-end
   technologyPrerequisites:
   # - UniversalMaterialResearchT3 # Commented by LuaM
   - RogueAdvancedGuns
@@ -108,6 +113,9 @@
   - AmmoBox635x40mmCaseless
   - MagazineAsmgtUniversal635x40mm
   - AmmoBox635x40mmCaselessBig
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox762x39mmBigSubsonic
+  # LuaM-end
   technologyPrerequisites:
   - RogueAdvancedGuns
   position: 3, 4 # LuaM: 13, 8 > 3, 4

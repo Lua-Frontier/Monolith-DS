@@ -723,6 +723,7 @@
   - type: CompanyAccessReader
     requiredCompanies:
     - TSF
+    - TSFHighComm # LuaM
   - type: AccessReader
     access: [["HeadOfSecurity"]]
 

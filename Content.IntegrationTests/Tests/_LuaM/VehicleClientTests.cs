@@ -1,3 +1,4 @@
+#nullable enable
 using System.Linq;
 using System.Numerics;
 using Content.Client._LuaM.Vehicles.Dashboard;
@@ -256,7 +257,7 @@ public sealed class VehicleClientTests
             var session = server.ResolveDependency<IPlayerManager>().Sessions.Single();
             rider = entities.SpawnEntity("MobHuman", map.GridCoords.Offset(new Vector2(0.5f, 0.5f)));
             Assert.That(minds.TryGetMind(session.UserId, out var mindId, out var mind), Is.True);
-            minds.TransferTo(mindId.Value, rider, mind: mind);
+            minds.TransferTo(mindId!.Value, rider, mind: mind);
         });
         return rider;
     }

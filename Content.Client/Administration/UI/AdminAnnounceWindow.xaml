@@ -26,7 +26,7 @@
         <BoxContainer Orientation="Horizontal">
             <CheckBox Name="EnableTTS" Access="Public" Text="{Loc admin-announce-enable-tts}" Pressed="True" />
             <Control HorizontalExpand="True" />
-            <OptionButton Name="VoiceSelector" Access="Public" HorizontalExpand="True" SizeFlagsStretchRatio="2"/>
+            <OptionButton Name="VoiceSelector" Access="Public" HorizontalExpand="True" SizeFlagsStretchRatio="2" Filterable="True"/> <!-- LuaM: Filterable -->
         </BoxContainer>
         <Label Name="ErrorMessage" Access="Public" Visible="False" Modulate="#FF7777" />
         <BoxContainer Orientation="Horizontal">

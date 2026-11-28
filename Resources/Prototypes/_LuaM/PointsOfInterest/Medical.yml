@@ -18,6 +18,7 @@
     companyName: MD
   - type: StationTransit
   - type: CyberpsychosisBlocker # no cyberpsychosis on the station
+  - type: NebulaWeatherExclusion # no hazardous nebulae near the station
 
 - type: gameMap
   id: Medical

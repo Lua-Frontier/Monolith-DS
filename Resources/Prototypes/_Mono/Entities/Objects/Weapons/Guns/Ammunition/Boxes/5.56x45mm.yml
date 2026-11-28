@@ -5,6 +5,7 @@
   id: BaseAmmoBox556x45mm
   name: ammunition box (5.56x45mm FMJ)
   components:
+  - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
@@ -167,8 +168,15 @@
 - type: entity
   parent: AmmoBox556x45mmBigFMJ
   id: AmmoBox556x45mmBigRubber
-  name: ammunition box (5.56x45mm rubber)
+  name: big ammunition box (5.56x45mm rubber) # LuaM: big
   components:
   - type: BallisticAmmoProvider
     capacity: 210
     proto: Cartridge556x45mmRubber
+  # LuaM-start: rubber mark like the other big variant boxes
+  - type: Sprite
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+    - state: rubber
+  # LuaM-end

@@ -14,7 +14,7 @@
         </BoxContainer>
         <BoxContainer Orientation="Horizontal" Visible="False" Name="TTSContainer" Margin="5">
             <Label Text="{Loc 'voice-mask-voice-change-info'}" />
-            <OptionButton Name="VoiceSelector" />
+            <OptionButton Name="VoiceSelector" Filterable="True" /> <!-- LuaM: Filterable -->
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>

@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 10/27/2026 17:38:08
-  entityCount: 10405
+  entityCount: 10283
 maps: []
 grids:
 - 1
@@ -6885,8 +6885,6 @@ entities:
     - type: Transform
       pos: -43.5,-6.5
       parent: 1
-- proto: AirlockEngineeringLocked
-  entities:
   - uid: 2363
     components:
     - type: Transform
@@ -6961,8 +6959,6 @@ entities:
     - type: Transform
       pos: 36.5,-7.5
       parent: 1
-- proto: AirlockExternalGlassNfsdLocked
-  entities:
   - uid: 2377
     components:
     - type: Transform
@@ -7366,7 +7362,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 25.5,10.5
       parent: 1
-- proto: AirlockHeadOfPersonnelGlassLocked
+- proto: AirlockCommandGlass
   entities:
   - uid: 2444
     components:
@@ -7374,7 +7370,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -24.5,9.5
       parent: 1
-- proto: AirlockHeadOfPersonnelLocked
+- proto: AirlockCommand
   entities:
   - uid: 2445
     components:
@@ -7446,7 +7442,7 @@ entities:
     - type: Transform
       pos: -51.5,-44.5
       parent: 1
-- proto: AirlockNfsdArmoryLocked
+- proto: AirlockNfsd
   entities:
   - uid: 2461
     components:
@@ -7511,7 +7507,80 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -2.5,7.5
       parent: 1
-- proto: AirlockNfsdBrigGlassLocked
+  - uid: 2523
+    components:
+    - type: Transform
+      pos: 19.5,-7.5
+      parent: 1
+  - uid: 2524
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,5.5
+      parent: 1
+  - uid: 2525
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8.5,-6.5
+      parent: 1
+  - uid: 2526
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8.5,-5.5
+      parent: 1
+  - uid: 2527
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,4.5
+      parent: 1
+  - uid: 2528
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8.5,1.5
+      parent: 1
+  - uid: 2529
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8.5,0.5
+      parent: 1
+  - uid: 2530
+    components:
+    - type: Transform
+      pos: -19.5,-38.5
+      parent: 1
+  - uid: 2531
+    components:
+    - type: Transform
+      pos: -5.5,-36.5
+      parent: 1
+  - uid: 2532
+    components:
+    - type: Transform
+      pos: -5.5,-38.5
+      parent: 1
+  - uid: 2533
+    components:
+    - type: Transform
+      pos: -19.5,-36.5
+      parent: 1
+  - uid: 2542
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -16.5,13.5
+      parent: 1
+    - type: Door
+      secondsUntilStateChange: -197526.4
+      state: Opening
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
+- proto: AirlockNfsdGlass
   entities:
   - uid: 2477
     components:
@@ -7689,71 +7758,6 @@ entities:
     - type: Transform
       pos: -49.5,-18.5
       parent: 1
-- proto: AirlockNfsdBrigLocked
-  entities:
-  - uid: 2523
-    components:
-    - type: Transform
-      pos: 19.5,-7.5
-      parent: 1
-  - uid: 2524
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,5.5
-      parent: 1
-  - uid: 2525
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8.5,-6.5
-      parent: 1
-  - uid: 2526
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8.5,-5.5
-      parent: 1
-  - uid: 2527
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,4.5
-      parent: 1
-  - uid: 2528
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8.5,1.5
-      parent: 1
-  - uid: 2529
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -8.5,0.5
-      parent: 1
-  - uid: 2530
-    components:
-    - type: Transform
-      pos: -19.5,-38.5
-      parent: 1
-  - uid: 2531
-    components:
-    - type: Transform
-      pos: -5.5,-36.5
-      parent: 1
-  - uid: 2532
-    components:
-    - type: Transform
-      pos: -5.5,-38.5
-      parent: 1
-  - uid: 2533
-    components:
-    - type: Transform
-      pos: -19.5,-36.5
-      parent: 1
-- proto: AirlockNfsdGlass
-  entities:
   - uid: 2534
     components:
     - type: Transform
@@ -7795,20 +7799,6 @@ entities:
     - type: Transform
       pos: -60.5,-4.5
       parent: 1
-- proto: AirlockNfsdLocked
-  entities:
-  - uid: 2542
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,13.5
-      parent: 1
-    - type: Door
-      secondsUntilStateChange: -197526.4
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
 - proto: AirlockShuttle
   entities:
   - uid: 2543
@@ -34128,16 +34118,7 @@ entities:
       pos: -24.5,-30.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9198
-      - 9312
-      - 9239
-      - 9241
-      - 9240
-      - 9197
-      - 9242
-      - 9244
-      - 9243
+      devices: []
   - uid: 9105
     components:
     - type: Transform
@@ -34145,23 +34126,14 @@ entities:
       pos: -3.5,-40.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9311
-      - 9199
-      - 9195
-      - 9196
+      devices: []
   - uid: 9106
     components:
     - type: Transform
       pos: -26.5,-5.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9179
-      - 9178
-      - 9224
-      - 9225
-      - 9374
+      devices: []
   - uid: 9107
     components:
     - type: Transform
@@ -34169,8 +34141,7 @@ entities:
       pos: -30.5,-5.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9228
+      devices: []
   - uid: 9108
     components:
     - type: Transform
@@ -34195,25 +34166,14 @@ entities:
       pos: -10.5,-8.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9251
-      - 9253
-      - 9252
-      - 9203
-      - 9289
-      - 9290
+      devices: []
   - uid: 9113
     components:
     - type: Transform
       pos: -12.5,-28.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9270
-      - 9268
-      - 9269
-      - 9317
-      - 9318
+      devices: []
   - uid: 9114
     components:
     - type: Transform
@@ -34221,24 +34181,14 @@ entities:
       pos: -10.5,-35.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9313
-      - 9314
-      - 9316
-      - 9315
-      - 9317
-      - 9318
-      - 9321
-      - 9320
+      devices: []
   - uid: 9115
     components:
     - type: Transform
       pos: -16.5,-43.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9320
-      - 9321
+      devices: []
   - uid: 9116
     components:
     - type: Transform
@@ -34246,11 +34196,7 @@ entities:
       pos: -7.5,-39.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9195
-      - 9196
-      - 9313
-      - 9314
+      devices: []
   - uid: 9117
     components:
     - type: Transform
@@ -34258,11 +34204,7 @@ entities:
       pos: -17.5,-39.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9316
-      - 9315
-      - 9193
-      - 9194
+      devices: []
   - uid: 9118
     components:
     - type: Transform
@@ -34270,11 +34212,7 @@ entities:
       pos: -21.5,-40.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9194
-      - 9193
-      - 9312
-      - 9198
+      devices: []
   - uid: 9119
     components:
     - type: Transform
@@ -34282,9 +34220,7 @@ entities:
       pos: -24.5,-57.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9322
-      - 9323
+      devices: []
   - uid: 9120
     components:
     - type: Transform
@@ -34292,16 +34228,7 @@ entities:
       pos: -12.5,-56.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9327
-      - 9326
-      - 9233
-      - 9235
-      - 9234
-      - 9324
-      - 9325
-      - 9322
-      - 9323
+      devices: []
   - uid: 9121
     components:
     - type: Transform
@@ -34309,9 +34236,7 @@ entities:
       pos: -10.5,-57.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9325
-      - 9324
+      devices: []
   - uid: 9122
     components:
     - type: Transform
@@ -34319,9 +34244,7 @@ entities:
       pos: 3.5,-57.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9326
-      - 9327
+      devices: []
   - uid: 9123
     components:
     - type: Transform
@@ -34329,13 +34252,7 @@ entities:
       pos: -0.5,-43.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9233
-      - 9235
-      - 9234
-      - 9237
-      - 9238
-      - 9236
+      devices: []
   - uid: 9124
     components:
     - type: Transform
@@ -34343,10 +34260,7 @@ entities:
       pos: -24.5,-43.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9240
-      - 9239
-      - 9241
+      devices: []
   - uid: 9126
     components:
     - type: Transform
@@ -34354,27 +34268,14 @@ entities:
       pos: -24.5,-20.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9182
-      - 9183
-      - 9242
-      - 9244
-      - 9243
+      devices: []
   - uid: 9128
     components:
     - type: Transform
       pos: -20.5,3.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9295
-      - 9296
-      - 9293
-      - 9292
-      - 9291
-      - 9251
-      - 9253
-      - 9252
+      devices: []
   - uid: 9129
     components:
     - type: Transform
@@ -34382,28 +34283,14 @@ entities:
       pos: -8.5,-8.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9192
-      - 9215
-      - 9216
-      - 9217
-      - 9289
-      - 9290
-      - 9291
-      - 9292
-      - 9294
-      - 9300
-      - 9301
+      devices: []
   - uid: 9130
     components:
     - type: Transform
       pos: -0.5,6.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9301
-      - 9300
-      - 9371
+      devices: []
   - uid: 9131
     components:
     - type: Transform
@@ -34422,9 +34309,7 @@ entities:
       pos: -29.5,7.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9283
-      - 9298
+      devices: []
   - uid: 9137
     components:
     - type: Transform
@@ -34432,10 +34317,7 @@ entities:
       pos: -19.5,6.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9298
-      - 9296
-      - 9299
+      devices: []
   - uid: 9138
     components:
     - type: Transform
@@ -34443,15 +34325,7 @@ entities:
       pos: 47.5,-6.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9359
-      - 9357
-      - 9361
-      - 9360
-      - 9358
-      - 9356
-      - 9355
-      - 9354
+      devices: []
   - uid: 9139
     components:
     - type: Transform
@@ -34459,13 +34333,7 @@ entities:
       pos: 24.5,-6.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9337
-      - 9353
-      - 9305
-      - 9306
-      - 9363
-      - 9362
+      devices: []
   - uid: 9140
     components:
     - type: Transform
@@ -34477,11 +34345,7 @@ entities:
       pos: 3.5,-8.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9307
-      - 9308
-      - 9310
-      - 9309
+      devices: []
   - uid: 9142
     components:
     - type: Transform
@@ -34495,21 +34359,14 @@ entities:
       pos: 4.5,-8.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9217
-      - 9216
-      - 9215
+      devices: []
   - uid: 9144
     components:
     - type: Transform
       pos: -10.5,-18.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9190
-      - 9191
-      - 9186
-      - 9187
+      devices: []
   - uid: 9145
     components:
     - type: Transform
@@ -34517,9 +34374,7 @@ entities:
       pos: -9.5,-11.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9191
-      - 9190
+      devices: []
   - uid: 9146
     components:
     - type: Transform
@@ -34527,8 +34382,7 @@ entities:
       pos: -5.5,-16.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9192
+      devices: []
   - uid: 9147
     components:
     - type: Transform
@@ -34536,12 +34390,7 @@ entities:
       pos: -20.5,-17.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9270
-      - 9268
-      - 9269
-      - 9187
-      - 9186
+      devices: []
   - uid: 9148
     components:
     - type: Transform
@@ -34555,19 +34404,14 @@ entities:
       pos: -9.5,3.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9293
-      - 9294
-      - 9295
+      devices: []
   - uid: 9152
     components:
     - type: Transform
       pos: -73.5,-9.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9332
-      - 9333
+      devices: []
   - uid: 9154
     components:
     - type: Transform
@@ -34575,31 +34419,14 @@ entities:
       pos: -67.5,-8.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9276
-      - 9275
-      - 9277
-      - 9333
-      - 9332
-      - 9319
-      - 9334
-      - 9335
-      - 9336
+      devices: []
   - uid: 9155
     components:
     - type: Transform
       pos: -61.5,-9.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9276
-      - 9275
-      - 9277
-      - 9331
-      - 9330
-      - 9329
-      - 9328
-      - 9370
+      devices: []
   - uid: 9157
     components:
     - type: Transform
@@ -34607,15 +34434,7 @@ entities:
       pos: -46.5,3.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9341
-      - 9342
-      - 9338
-      - 9339
-      - 9329
-      - 9328
-      - 9178
-      - 9179
+      devices: []
   - uid: 9158
     components:
     - type: Transform
@@ -34659,8 +34478,7 @@ entities:
       pos: -25.5,10.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9299
+      devices: []
   - uid: 9165
     components:
     - type: Transform
@@ -34674,8 +34492,7 @@ entities:
       pos: -58.5,-16.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9370
+      devices: []
   - uid: 9167
     components:
     - type: Transform
@@ -34683,11 +34500,7 @@ entities:
       pos: -39.5,-0.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9225
-      - 9224
-      - 9369
-      - 9368
+      devices: []
   - uid: 9168
     components:
     - type: Transform
@@ -34701,23 +34514,14 @@ entities:
       pos: -0.5,-30.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9237
-      - 9238
-      - 9236
-      - 9372
-      - 9373
-      - 9311
-      - 9199
+      devices: []
   - uid: 9171
     components:
     - type: Transform
       pos: 5.5,-35.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9372
-      - 9373
+      devices: []
   - uid: 9172
     components:
     - type: Transform
@@ -34725,9 +34529,7 @@ entities:
       pos: -52.5,9.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9338
-      - 9339
+      devices: []
   - uid: 9173
     components:
     - type: Transform
@@ -34735,9 +34537,7 @@ entities:
       pos: -44.5,-9.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9368
-      - 9369
+      devices: []
   - uid: 9174
     components:
     - type: Transform
@@ -34745,9 +34545,7 @@ entities:
       pos: -61.5,-7.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9365
-      - 9364
+      devices: []
   - uid: 9175
     components:
     - type: Transform
@@ -34755,8 +34553,7 @@ entities:
       pos: -40.5,-15.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9374
+      devices: []
   - uid: 9176
     components:
     - type: Transform
@@ -34765,7 +34562,6 @@ entities:
       parent: 1
     - type: DeviceList
       devices:
-      - 9375
       - 11372
       - 11266
       - 2648
@@ -34775,1145 +34571,7 @@ entities:
       pos: 22.5,3.5
       parent: 1
     - type: DeviceList
-      devices:
-      - 9376
-      - 9377
-- proto: Firelock
-  entities:
-  - uid: 9178
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -42.5,-10.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9157
-      - 9106
-  - uid: 9179
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -42.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9157
-      - 9106
-  - uid: 9182
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -27.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9126
-  - uid: 9183
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -25.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9126
-  - uid: 9186
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,-19.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9147
-      - 9144
-  - uid: 9187
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,-20.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9147
-      - 9144
-  - uid: 9190
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -11.5,-18.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9144
-      - 9145
-  - uid: 9191
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -13.5,-18.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9144
-      - 9145
-  - uid: 9192
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -6.5,-11.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9146
-      - 9129
-  - uid: 9193
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -19.5,-36.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9117
-      - 9118
-  - uid: 9194
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -19.5,-38.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9117
-      - 9118
-  - uid: 9195
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.5,-38.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9116
-      - 9105
-  - uid: 9196
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.5,-36.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9116
-      - 9105
-  - uid: 9197
-    components:
-    - type: Transform
-      pos: -28.5,-41.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9104
-- proto: FirelockEdge
-  entities:
-  - uid: 9198
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -24.5,-37.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9118
-      - 9104
-  - uid: 9199
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-37.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9105
-      - 9170
-  - uid: 9203
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -11.5,-4.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9112
-  - uid: 9215
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -2.5,-7.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9143
-      - 9129
-  - uid: 9216
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -2.5,-6.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9143
-      - 9129
-  - uid: 9217
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -2.5,-5.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9143
-      - 9129
-  - uid: 9218
-    components:
-    - type: Transform
-      pos: 18.5,-8.5
-      parent: 1
-  - uid: 9219
-    components:
-    - type: Transform
-      pos: 17.5,-8.5
-      parent: 1
-  - uid: 9224
-    components:
-    - type: Transform
-      pos: -40.5,-9.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9106
-      - 9167
-  - uid: 9225
-    components:
-    - type: Transform
-      pos: -41.5,-9.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9106
-      - 9167
-  - uid: 9228
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -25.5,-4.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9107
-  - uid: 9233
-    components:
-    - type: Transform
-      pos: 0.5,-51.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9120
-      - 9123
-  - uid: 9234
-    components:
-    - type: Transform
-      pos: 2.5,-51.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9120
-      - 9123
-  - uid: 9235
-    components:
-    - type: Transform
-      pos: 1.5,-51.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9120
-      - 9123
-  - uid: 9236
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,-42.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9123
-      - 9170
-  - uid: 9237
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,-42.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9123
-      - 9170
-  - uid: 9238
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,-42.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9123
-      - 9170
-  - uid: 9239
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -25.5,-42.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9124
-      - 9104
-  - uid: 9240
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -26.5,-42.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9124
-      - 9104
-  - uid: 9241
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -27.5,-42.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9124
-      - 9104
-  - uid: 9242
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -25.5,-22.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9126
-      - 9104
-  - uid: 9243
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -27.5,-22.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9126
-      - 9104
-  - uid: 9244
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -26.5,-22.5
-      parent: 1
-    - type: Door
-      secondsUntilStateChange: -228325.1
-      state: Closing
-    - type: DeviceNetwork
-      deviceLists:
-      - 9126
-      - 9104
-  - uid: 9251
-    components:
-    - type: Transform
-      pos: -11.5,-2.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9128
-      - 9112
-  - uid: 9252
-    components:
-    - type: Transform
-      pos: -9.5,-2.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9128
-      - 9112
-  - uid: 9253
-    components:
-    - type: Transform
-      pos: -10.5,-2.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9128
-      - 9112
-  - uid: 9268
-    components:
-    - type: Transform
-      pos: -18.5,-27.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9147
-      - 9113
-  - uid: 9269
-    components:
-    - type: Transform
-      pos: -19.5,-27.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9147
-      - 9113
-  - uid: 9270
-    components:
-    - type: Transform
-      pos: -17.5,-27.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9147
-      - 9113
-  - uid: 9275
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -66.5,-11.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9155
-      - 9154
-  - uid: 9276
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -66.5,-10.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9155
-      - 9154
-  - uid: 9277
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -66.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9155
-      - 9154
-  - uid: 9283
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -29.5,3.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9136
-  - uid: 9284
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -41.5,-25.5
-      parent: 1
-  - uid: 9286
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -39.5,-25.5
-      parent: 1
-  - uid: 9287
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -40.5,-25.5
-      parent: 1
-- proto: FirelockGlass
-  entities:
-  - uid: 9289
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,-6.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9112
-      - 9129
-  - uid: 9290
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,-5.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9112
-      - 9129
-  - uid: 9291
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,0.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9128
-      - 9129
-  - uid: 9292
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -8.5,1.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9128
-      - 9129
-  - uid: 9293
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,3.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9128
-      - 9150
-  - uid: 9294
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -7.5,5.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9129
-      - 9150
-  - uid: 9295
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -15.5,5.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9128
-      - 9150
-  - uid: 9296
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -19.5,5.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9128
-      - 9137
-  - uid: 9298
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -27.5,5.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9136
-      - 9137
-  - uid: 9299
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -24.5,9.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9137
-      - 9164
-  - uid: 9300
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,4.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9130
-      - 9129
-  - uid: 9301
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -3.5,5.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9130
-      - 9129
-  - uid: 9305
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 19.5,-10.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9139
-  - uid: 9306
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 19.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9139
-  - uid: 9307
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,-11.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9141
-  - uid: 9308
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,-9.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9141
-  - uid: 9309
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9141
-  - uid: 9310
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9141
-  - uid: 9311
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -0.5,-35.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9105
-      - 9170
-  - uid: 9312
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -24.5,-35.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9118
-      - 9104
-  - uid: 9313
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -10.5,-36.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9114
-      - 9116
-  - uid: 9314
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -10.5,-38.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9114
-      - 9116
-  - uid: 9315
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -14.5,-36.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9114
-      - 9117
-  - uid: 9316
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -14.5,-38.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9114
-      - 9117
-  - uid: 9317
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,-32.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9113
-      - 9114
-  - uid: 9318
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -11.5,-32.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9113
-      - 9114
-  - uid: 9319
-    components:
-    - type: Transform
-      pos: -72.5,4.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9154
-  - uid: 9320
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,-42.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9114
-      - 9115
-  - uid: 9321
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -11.5,-42.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9114
-      - 9115
-  - uid: 9322
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -25.5,-56.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9120
-      - 9119
-  - uid: 9323
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -27.5,-56.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9120
-      - 9119
-  - uid: 9324
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -11.5,-56.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9120
-      - 9121
-  - uid: 9325
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,-56.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9120
-      - 9121
-  - uid: 9326
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,-56.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9120
-      - 9122
-  - uid: 9327
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 2.5,-56.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9120
-      - 9122
-  - uid: 9328
-    components:
-    - type: Transform
-      pos: -52.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9155
-      - 9157
-  - uid: 9329
-    components:
-    - type: Transform
-      pos: -52.5,-10.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9155
-      - 9157
-  - uid: 9330
-    components:
-    - type: Transform
-      pos: -60.5,-9.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9155
-  - uid: 9331
-    components:
-    - type: Transform
-      pos: -59.5,-9.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9155
-  - uid: 9332
-    components:
-    - type: Transform
-      pos: -72.5,-10.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9154
-      - 9152
-  - uid: 9333
-    components:
-    - type: Transform
-      pos: -72.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9154
-      - 9152
-  - uid: 9334
-    components:
-    - type: Transform
-      pos: -72.5,6.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9154
-  - uid: 9335
-    components:
-    - type: Transform
-      pos: -70.5,8.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9154
-  - uid: 9336
-    components:
-    - type: Transform
-      pos: -68.5,8.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9154
-  - uid: 9337
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 25.5,8.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9139
-  - uid: 9338
-    components:
-    - type: Transform
-      pos: -51.5,8.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9157
-      - 9172
-  - uid: 9339
-    components:
-    - type: Transform
-      pos: -49.5,8.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9157
-      - 9172
-  - uid: 9341
-    components:
-    - type: Transform
-      pos: -52.5,6.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9157
-  - uid: 9342
-    components:
-    - type: Transform
-      pos: -52.5,4.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9157
-  - uid: 9353
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 27.5,8.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9139
-  - uid: 9354
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 44.5,8.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9138
-  - uid: 9355
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 46.5,8.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9138
-  - uid: 9356
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,6.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9138
-  - uid: 9357
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,-10.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9138
-  - uid: 9358
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,4.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9138
-  - uid: 9359
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,-12.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9138
-  - uid: 9360
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 46.5,-14.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9138
-  - uid: 9361
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 44.5,-14.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9138
-  - uid: 9362
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 27.5,-14.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9139
-  - uid: 9363
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 25.5,-14.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9139
-  - uid: 9364
-    components:
-    - type: Transform
-      pos: -60.5,-7.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9174
-  - uid: 9365
-    components:
-    - type: Transform
-      pos: -59.5,-7.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9174
-  - uid: 9368
-    components:
-    - type: Transform
-      pos: -43.5,-5.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9167
-      - 9173
-  - uid: 9369
-    components:
-    - type: Transform
-      pos: -43.5,-6.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9167
-      - 9173
-  - uid: 9370
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -56.5,-13.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9155
-      - 9166
-  - uid: 9371
-    components:
-    - type: Transform
-      pos: 4.5,7.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9130
-  - uid: 9372
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 4.5,-36.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9170
-      - 9171
-  - uid: 9373
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 4.5,-38.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9170
-      - 9171
-  - uid: 9374
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -38.5,-13.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9175
-      - 9106
-  - uid: 9375
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 19.5,-7.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9176
-  - uid: 9376
-    components:
-    - type: Transform
-      pos: 19.5,0.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9177
-  - uid: 9377
-    components:
-    - type: Transform
-      pos: 19.5,-0.5
-      parent: 1
-    - type: DeviceNetwork
-      deviceLists:
-      - 9177
+      devices: []
 - proto: FlippoEngravedLighter
   entities:
   - uid: 227
@@ -55056,7 +53714,7 @@ entities:
       parent: 1
     - type: DeltaPressure
       gridUid: 1
-- proto: PlasmaWindoorSecureCommandLocked
+- proto: WindoorSecurePlasma
   entities:
   - uid: 12216
     components:
@@ -70615,9 +69273,6 @@ entities:
       parent: 1
     - type: DeltaPressure
       gridUid: 1
-    - type: AccessReader
-      access:
-      - - Brig
   - uid: 13154
     components:
     - type: Transform
@@ -70642,8 +69297,6 @@ entities:
       parent: 1
     - type: DeltaPressure
       gridUid: 1
-- proto: WindoorSecureArmoryLocked
-  entities:
   - uid: 13157
     components:
     - type: Transform
@@ -70692,8 +69345,6 @@ entities:
       parent: 1
     - type: DeltaPressure
       gridUid: 1
-- proto: WindoorSecureFrontierCommandLocked
-  entities:
   - uid: 13163
     components:
     - type: Transform
@@ -70710,8 +69361,6 @@ entities:
       parent: 1
     - type: DeltaPressure
       gridUid: 1
-- proto: WindoorSecureHeadOfSecurityLocked
-  entities:
   - uid: 13165
     components:
     - type: Transform
@@ -70742,8 +69391,6 @@ entities:
       parent: 1
     - type: DeltaPressure
       gridUid: 1
-- proto: WindoorSecureSecurityLocked
-  entities:
   - uid: 13169
     components:
     - type: Transform

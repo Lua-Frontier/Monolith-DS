@@ -40,6 +40,9 @@
           maxVol: 1000
     - type: DrainableSolution
       solution: drainBuffer
+    - type: Construction # LuaM
+      graph: LuaMFloorDrain
+      node: drain
     - type: Damageable
       damageContainer: StructuralInorganic
       damageModifierSet: StructuralMetallic

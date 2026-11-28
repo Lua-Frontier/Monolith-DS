@@ -285,6 +285,7 @@
   - LuaMShipGunBarrelFlare
   - LuaMShipGunBarrelAK570
   - LuaMShipGunBarrelDravon
+  - MilitaryTechfabMachineCircuitboard
   position: 12, 2
 
 - type: technology

@@ -4,6 +4,7 @@
   id: BaseAmmoBox762x39mm
   name: ammunition box (7.62x39mm FMJ)
   components:
+  - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:

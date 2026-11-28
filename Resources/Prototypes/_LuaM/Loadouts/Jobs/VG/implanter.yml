@@ -1,0 +1,11 @@
+# VG implanters: the paid contractor ones, without the medical tracker, VG have their own Viper tracker.
+- type: loadoutGroup
+  id: VGImplanter
+  name: loadout-group-contractor-implanter
+  minLimit: 0
+  maxLimit: 5
+  loadouts:
+  - ContractorLightImplanter
+  - ContractorBikeHornImplanter
+  - ContractorSadTromboneImplanter
+  - ContractorMimePowersImplanter

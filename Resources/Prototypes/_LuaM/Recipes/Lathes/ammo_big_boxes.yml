@@ -1,0 +1,640 @@
+# Big ammo boxes, same cost bases as the other big boxes of their caliber class.
+
+- type: latheRecipe
+  parent: BaseAmmoFMJIntermediateBigAmmoBoxRecipe # 12 gauge boxes use the intermediate box cost
+  id: AmmoBox12_gaugeBigBuckshot
+  result: AmmoBox12_gaugeBigBuckshot
+
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigBuckshot
+  result: AmmoBox23x75mmBigBuckshot
+
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox127x99mmBig
+  result: AmmoBox127x99mmBig
+
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox8x65mmSKRBig
+  result: AmmoBox8x65mmSKRBig
+
+# Big boxes of the ammo variants, three times the small box like the FMJ big box bases.
+
+- type: latheRecipe
+  parent: BaseAmmoPracticePistolCaliberAmmoBoxRecipe
+  id: BaseAmmoPracticePistolCaliberBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 350
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryPistolCaliberAmmoBoxRecipe
+  id: BaseAmmoIncendiaryPistolCaliberBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 700
+    Plastic: 1350
+    Plasma: 2050
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumPistolCaliberAmmoBoxRecipe
+  id: BaseAmmoUraniumPistolCaliberBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 1150
+    UraniumDepleted: 300
+
+- type: latheRecipe
+  parent: BaseAmmoRubberPistolCaliberAmmoBoxRecipe
+  id: BaseAmmoRubberPistolCaliberBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 550
+    Plastic: 2850
+
+- type: latheRecipe
+  parent: BaseAmmoHPPistolCaliberAmmoBoxRecipe
+  id: BaseAmmoHPPistolCaliberBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 3400
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPPistolCaliberAmmoBoxRecipe
+  id: BaseAmmoPlasteelAPPistolCaliberBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 600
+    Plasteel: 2800
+
+- type: latheRecipe
+  parent: BaseAmmoRIPPistolCaliberAmmoBoxRecipe
+  id: BaseAmmoRIPPistolCaliberBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 1700
+    Plasteel: 1700
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeIntermediateAmmoBoxRecipe
+  id: BaseAmmoPracticeIntermediateBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 450
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryIntermediateAmmoBoxRecipe
+  id: BaseAmmoIncendiaryIntermediateBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 900
+    Plastic: 900
+    Plasma: 2600
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumIntermediateAmmoBoxRecipe
+  id: BaseAmmoUraniumIntermediateBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 1750
+    UraniumDepleted: 300
+
+- type: latheRecipe
+  parent: BaseAmmoRubberIntermediateAmmoBoxRecipe
+  id: BaseAmmoRubberIntermediateBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 1750
+    Plastic: 2600
+
+- type: latheRecipe
+  parent: BaseAmmoHPIntermediateAmmoBoxRecipe
+  id: BaseAmmoHPIntermediateBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 4300
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPIntermediateAmmoBoxRecipe
+  id: BaseAmmoPlasteelAPIntermediateBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 1050
+    Plasteel: 3250
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeFullyPoweredAmmoBoxRecipe
+  id: BaseAmmoPracticeFullyPoweredBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 550
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryFullyPoweredAmmoBoxRecipe
+  id: BaseAmmoIncendiaryFullyPoweredBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 1050
+    Plastic: 1050
+    Plasma: 3150
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumFullyPoweredAmmoBoxRecipe
+  id: BaseAmmoUraniumFullyPoweredBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 1750
+    UraniumDepleted: 600
+
+- type: latheRecipe
+  parent: BaseAmmoRubberFullyPoweredAmmoBoxRecipe
+  id: BaseAmmoRubberFullyPoweredBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 1050
+    Plastic: 4150
+
+- type: latheRecipe
+  parent: BaseAmmoHPFullyPoweredAmmoBoxRecipe
+  id: BaseAmmoHPFullyPoweredBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 5200
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPFullyPoweredAmmoBoxRecipe
+  id: BaseAmmoPlasteelAPFullyPoweredBigAmmoBoxRecipe
+  abstract: true
+  materials:
+    Steel: 1200
+    Plasteel: 4000
+
+# Boxes with their own small box recipe pay the small box cost times the big to small FMJ box cost ratio of the caliber.
+
+- type: latheRecipe
+  parent: BaseAmmoPracticePistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox9x19mmBigPractice
+  result: AmmoBox9x19mmBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox9x19mmBigIncendiary
+  result: AmmoBox9x19mmBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox9x19mmBigUranium
+  result: AmmoBox9x19mmBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox9x19mmBigRubber
+  result: AmmoBox9x19mmBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox9x19mmBigHP
+  result: AmmoBox9x19mmBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox9x19mmBigPlasteelAP
+  result: AmmoBox9x19mmBigPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoPracticePistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox45_ACPBigPractice
+  result: AmmoBox45_ACPBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox45_ACPBigIncendiary
+  result: AmmoBox45_ACPBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox45_ACPBigUranium
+  result: AmmoBox45_ACPBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox45_ACPBigRubber
+  result: AmmoBox45_ACPBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox45_ACPBigHP
+  result: AmmoBox45_ACPBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox45_ACPBigPlasteelAP
+  result: AmmoBox45_ACPBigPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoPracticePistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox46x30mmBigPractice
+  result: AmmoBox46x30mmBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox46x30mmBigIncendiary
+  result: AmmoBox46x30mmBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox46x30mmBigUranium
+  result: AmmoBox46x30mmBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox46x30mmBigRubber
+  result: AmmoBox46x30mmBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox46x30mmBigHP
+  result: AmmoBox46x30mmBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox46x30mmBigPlasteelAP
+  result: AmmoBox46x30mmBigPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoPracticePistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox57x28mmBigPractice
+  result: AmmoBox57x28mmBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox57x28mmBigIncendiary
+  result: AmmoBox57x28mmBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox57x28mmBigUranium
+  result: AmmoBox57x28mmBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox57x28mmBigRubber
+  result: AmmoBox57x28mmBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox57x28mmBigHP
+  result: AmmoBox57x28mmBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox57x28mmBigPlasteelAP
+  result: AmmoBox57x28mmBigPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoPracticePistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox762x25mmBigPractice
+  result: AmmoBox762x25mmBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox762x25mmBigIncendiary
+  result: AmmoBox762x25mmBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox762x25mmBigUranium
+  result: AmmoBox762x25mmBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox762x25mmBigRubber
+  result: AmmoBox762x25mmBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox762x25mmBigHP
+  result: AmmoBox762x25mmBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoRIPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox762x25mmBigRIP
+  result: AmmoBox762x25mmBigRIP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPPistolCaliberBigAmmoBoxRecipe
+  id: AmmoBox762x25mmBigPlasteelAP
+  result: AmmoBox762x25mmBigPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeIntermediateBigAmmoBoxRecipe
+  id: AmmoBox357_magnumBigPractice
+  result: AmmoBox357_magnumBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryIntermediateBigAmmoBoxRecipe
+  id: AmmoBox357_magnumBigIncendiary
+  result: AmmoBox357_magnumBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumIntermediateBigAmmoBoxRecipe
+  id: AmmoBox357_magnumBigUranium
+  result: AmmoBox357_magnumBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberIntermediateBigAmmoBoxRecipe
+  id: AmmoBox357_magnumBigRubber
+  result: AmmoBox357_magnumBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPIntermediateBigAmmoBoxRecipe
+  id: AmmoBox357_magnumBigHP
+  result: AmmoBox357_magnumBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPIntermediateBigAmmoBoxRecipe
+  id: AmmoBox357_magnumBigPlasteelAP
+  result: AmmoBox357_magnumBigPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeIntermediateBigAmmoBoxRecipe
+  id: AmmoBox556x45mmBigPractice
+  result: AmmoBox556x45mmBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryIntermediateBigAmmoBoxRecipe
+  id: AmmoBox556x45mmBigIncendiary
+  result: AmmoBox556x45mmBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumIntermediateBigAmmoBoxRecipe
+  id: AmmoBox556x45mmBigUranium
+  result: AmmoBox556x45mmBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberIntermediateBigAmmoBoxRecipe
+  id: AmmoBox556x45mmBigRubber
+  result: AmmoBox556x45mmBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPIntermediateBigAmmoBoxRecipe
+  id: AmmoBox556x45mmBigHP
+  result: AmmoBox556x45mmBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPIntermediateBigAmmoBoxRecipe
+  id: AmmoBox556x45mmBigPlasteelAP
+  result: AmmoBox556x45mmBigPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeIntermediateBigAmmoBoxRecipe
+  id: AmmoBox762x39mmBigPractice
+  result: AmmoBox762x39mmBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryIntermediateBigAmmoBoxRecipe
+  id: AmmoBox762x39mmBigIncendiary
+  result: AmmoBox762x39mmBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumIntermediateBigAmmoBoxRecipe
+  id: AmmoBox762x39mmBigUranium
+  result: AmmoBox762x39mmBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberIntermediateBigAmmoBoxRecipe
+  id: AmmoBox762x39mmBigRubber
+  result: AmmoBox762x39mmBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPIntermediateBigAmmoBoxRecipe
+  id: AmmoBox762x39mmBigHP
+  result: AmmoBox762x39mmBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPIntermediateBigAmmoBoxRecipe
+  id: AmmoBox762x39mmBigPlasteelAP
+  result: AmmoBox762x39mmBigPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoFMJIntermediateBigAmmoBoxRecipe
+  id: AmmoBox762x39mmBigSubsonic
+  result: AmmoBox762x39mmBigSubsonic
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x51mmBigPractice
+  result: AmmoBox762x51mmBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x51mmBigIncendiary
+  result: AmmoBox762x51mmBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x51mmBigUranium
+  result: AmmoBox762x51mmBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x51mmBigRubber
+  result: AmmoBox762x51mmBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x51mmBigHP
+  result: AmmoBox762x51mmBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x51mmBigPlasteelAP
+  result: AmmoBox762x51mmBigPlasteelAP
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x54mmRBigPractice
+  result: AmmoBox762x54mmRBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x54mmRBigIncendiary
+  result: AmmoBox762x54mmRBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x54mmRBigUranium
+  result: AmmoBox762x54mmRBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoRubberFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x54mmRBigRubber
+  result: AmmoBox762x54mmRBigRubber
+
+- type: latheRecipe
+  parent: BaseAmmoHPFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x54mmRBigHP
+  result: AmmoBox762x54mmRBigHP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox762x54mmRBigPlasteelAP
+  result: AmmoBox762x54mmRBigPlasteelAP
+
+- type: latheRecipe
+  parent: AmmoBox635x40mmCaselessRubber
+  id: AmmoBox635x40mmCaselessBigRubber
+  result: AmmoBox635x40mmCaselessBigRubber
+  materials:
+    Steel: 200
+
+- type: latheRecipe
+  parent: AmmoBox635x40mmCaselessPlasma
+  id: AmmoBox635x40mmCaselessBigPlasma
+  result: AmmoBox635x40mmCaselessBigPlasma
+  materials:
+    Steel: 2000
+    UraniumDepleted: 600
+
+- type: latheRecipe
+  parent: AmmoBox635x40mmCaselessHP
+  id: AmmoBox635x40mmCaselessBigHP
+  result: AmmoBox635x40mmCaselessBigHP
+  materials:
+    Steel: 2000
+
+- type: latheRecipe
+  parent: AmmoBox635x40mmCaselessAP
+  id: AmmoBox635x40mmCaselessBigAP
+  result: AmmoBox635x40mmCaselessBigAP
+  materials:
+    Steel: 2000
+    Plasteel: 750
+
+- type: latheRecipe
+  parent: AmmoBox68x52mmCaselessPlasma
+  id: AmmoBox68x52mmCaselessBigPlasma
+  result: AmmoBox68x52mmCaselessBigPlasma
+  materials:
+    Steel: 3000
+    UraniumDepleted: 900
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox8x65mmSKRBigPractice
+  result: AmmoBox8x65mmSKRBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox8x65mmSKRBigIncendiary
+  result: AmmoBox8x65mmSKRBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoRubberIntermediateBigAmmoBoxRecipe
+  id: AmmoBox12_gaugeBigBeanbag
+  result: AmmoBox12_gaugeBigBeanbag
+
+- type: latheRecipe
+  parent: BaseAmmoFMJIntermediateBigAmmoBoxRecipe
+  id: AmmoBox12_gaugeBigSlug
+  result: AmmoBox12_gaugeBigSlug
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryIntermediateBigAmmoBoxRecipe
+  id: AmmoBox12_gaugeBigFlare
+  result: AmmoBox12_gaugeBigFlare
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryIntermediateBigAmmoBoxRecipe
+  id: AmmoBox12_gaugeBigIncendiary
+  result: AmmoBox12_gaugeBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumIntermediateBigAmmoBoxRecipe
+  id: AmmoBox12_gaugeBigUranium
+  result: AmmoBox12_gaugeBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeIntermediateBigAmmoBoxRecipe
+  id: AmmoBox12_gaugeBigPractice
+  result: AmmoBox12_gaugeBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoFMJIntermediateBigAmmoBoxRecipe
+  id: AmmoBox12_gaugeBigOOBuckshot
+  result: AmmoBox12_gaugeBigOOBuckshot
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPIntermediateBigAmmoBoxRecipe
+  id: AmmoBox12_gaugeBigSlugAP
+  result: AmmoBox12_gaugeBigSlugAP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPIntermediateBigAmmoBoxRecipe
+  id: AmmoBox12_gaugeBigFlechette
+  result: AmmoBox12_gaugeBigFlechette
+
+- type: latheRecipe
+  parent: BaseAmmoRubberFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigBeanbag
+  result: AmmoBox23x75mmBigBeanbag
+
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigSlug
+  result: AmmoBox23x75mmBigSlug
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigFlare
+  result: AmmoBox23x75mmBigFlare
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigIncendiary
+  result: AmmoBox23x75mmBigIncendiary
+
+- type: latheRecipe
+  parent: BaseAmmoIncendiaryFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigFlashbang
+  result: AmmoBox23x75mmBigFlashbang
+
+- type: latheRecipe
+  parent: BaseAmmoUraniumFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigUranium
+  result: AmmoBox23x75mmBigUranium
+
+- type: latheRecipe
+  parent: BaseAmmoPracticeFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigPractice
+  result: AmmoBox23x75mmBigPractice
+
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigOOBuckshot
+  result: AmmoBox23x75mmBigOOBuckshot
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigSlugAP
+  result: AmmoBox23x75mmBigSlugAP
+
+- type: latheRecipe
+  parent: BaseAmmoPlasteelAPFullyPoweredBigAmmoBoxRecipe
+  id: AmmoBox23x75mmBigFlechette
+  result: AmmoBox23x75mmBigFlechette
+
+- type: latheRecipe
+  parent: AmmoBox127x99mmExplosive
+  id: AmmoBox127x99mmBigExplosive
+  result: AmmoBox127x99mmBigExplosive
+  materials:
+    Steel: 5200
+    Plastitanium: 1350
+
+- type: latheRecipe
+  parent: BaseAmmoFMJFullyPoweredAmmoBoxRecipe
+  id: AmmoBox145x114mmBigEMP
+  result: AmmoBox145x114mmBigEMP

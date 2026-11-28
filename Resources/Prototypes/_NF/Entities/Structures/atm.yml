@@ -317,6 +317,7 @@
   - type: CompanyAccessReader
     requiredCompanies:
     - TSF
+    - TSFHighComm # LuaM
   - type: AccessReader
     access: [["Bailiff"]]
 
@@ -364,3 +365,4 @@
     popupMessage: company-pdv-access-denied # LuaM
     requiredCompanies:
     - PDV
+    - PDVHighComm # LuaM

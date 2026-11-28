@@ -1,3 +1,4 @@
+using Content.Shared.Ghost; // LuaM
 using Content.Shared.Popups;
 using Content.Shared.UserInterface;
 
@@ -22,6 +23,11 @@ public sealed partial class CompanyAccessReaderSystem : EntitySystem
     {
         if (args.Cancelled)
             return;
+
+        // LuaM-start: the admin ghost ignores every company biocode, like the ship access readers
+        if (TryComp<GhostComponent>(args.User, out var ghost) && ghost.CanGhostInteract)
+            return;
+        // LuaM-end
 
         // Get user's company
         if (!TryComp<CompanyComponent>(args.User, out var userCompany))

@@ -1,5 +1,5 @@
-ent-WeaponTurretMoros = SL-170 «Морось»
+ent-WeaponTurretMoros = лазер SL-170 «Морось»
     .desc = Лазерное оружие, поражающее цели быстрыми и точными выстрелами.
-ent-WeaponTurretShkval = HL-220 «Шквал»
+ent-WeaponTurretShkval = лазер HL-220 «Шквал»
     .desc = Тяжелое лазерное оружие, выпускающее шквал выстрелов уничтожающих всё на своем пути.
 

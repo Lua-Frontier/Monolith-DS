@@ -4,6 +4,7 @@
   id: BaseAmmoBox762x25mm
   name: ammunition box (7.62x25mm FMJ)
   components:
+  - type: AmmoBox
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:

@@ -35,6 +35,42 @@
   - AmmoBox357_magnumBigFMJ
   - AmmoBox46x30mmBigFMJ
   - AmmoBox556x45mmBigFMJ
+  - AmmoBox12_gaugeBigBuckshot # LuaM
+  - AmmoBox23x75mmBigBuckshot # LuaM
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox9x19mmBigPractice
+  - AmmoBox9x19mmBigRubber
+  - AmmoBox9x19mmBigHP
+  - AmmoBox45_ACPBigPractice
+  - AmmoBox45_ACPBigRubber
+  - AmmoBox45_ACPBigHP
+  - AmmoBox46x30mmBigPractice
+  - AmmoBox46x30mmBigRubber
+  - AmmoBox46x30mmBigHP
+  - AmmoBox357_magnumBigPractice
+  - AmmoBox357_magnumBigRubber
+  - AmmoBox357_magnumBigHP
+  - AmmoBox556x45mmBigPractice
+  - AmmoBox556x45mmBigRubber
+  - AmmoBox556x45mmBigHP
+  - AmmoBox762x39mmBigPractice
+  - AmmoBox762x39mmBigRubber
+  - AmmoBox762x39mmBigHP
+  - AmmoBox762x51mmBigPractice
+  - AmmoBox762x51mmBigRubber
+  - AmmoBox762x51mmBigHP
+  - AmmoBox762x54mmRBigPractice
+  - AmmoBox762x54mmRBigRubber
+  - AmmoBox762x54mmRBigHP
+  - AmmoBox12_gaugeBigBeanbag
+  - AmmoBox12_gaugeBigSlug
+  - AmmoBox12_gaugeBigPractice
+  - AmmoBox12_gaugeBigOOBuckshot
+  - AmmoBox23x75mmBigBeanbag
+  - AmmoBox23x75mmBigSlug
+  - AmmoBox23x75mmBigPractice
+  - AmmoBox23x75mmBigOOBuckshot
+  # LuaM-end
   technologyPrerequisites:
   - AdvancedParts
 

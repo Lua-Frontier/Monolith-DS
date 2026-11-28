@@ -26,6 +26,15 @@
   - AmmoBox762x25mmHP
   - AmmoBox762x25mmRIP
   - AmmoBox762x25mmBigFMJ
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox762x25mmBigPractice
+  - AmmoBox762x25mmBigIncendiary
+  - AmmoBox762x25mmBigUranium
+  - AmmoBox762x25mmBigRubber
+  - AmmoBox762x25mmBigHP
+  - AmmoBox762x25mmBigRIP
+  - AmmoBox762x25mmBigPlasteelAP
+  # LuaM-end
   technologyPrerequisites:
   - UsspMediumGuns
   position: 8, 7

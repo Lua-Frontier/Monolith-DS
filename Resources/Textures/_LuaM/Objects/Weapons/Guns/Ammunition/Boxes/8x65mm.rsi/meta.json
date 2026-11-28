@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from SS13 Shiptest, modified by _starch_ (discord). Big box version based on the small box, incendiary and practice recolors follow the small boxes.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "base-b"
+    },
+    {
+      "name": "incendiary-b"
+    },
+    {
+      "name": "practice-b"
+    }
+  ]
+}

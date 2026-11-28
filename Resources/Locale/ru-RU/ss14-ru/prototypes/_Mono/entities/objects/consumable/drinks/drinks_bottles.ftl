@@ -2,5 +2,6 @@ ent-DrinkIceCreamJug = кувшин мороженого
     .desc = Кувшин, полный сладкого домашнего мороженого.
 ent-DrinkRootBearFloatJug = кувшин рут-бир флоат
     .desc = Рут-бир, но теперь с мороженым сверху. Это действительно шедевр канадских летних напитков.
-ent-DrinkBeerCervezaCristalFull = Admeme
+ent-DrinkBeerCervezaCristalFull = пиво «Цервеса Кристалл»
     .desc = Подозрительно дешёвое пиво в коричневой бутылке. При открытии торжественно возвещает «CERVEZA CRISTAAAL», будто только что выиграло приз за существование.
+    .suffix = Админ

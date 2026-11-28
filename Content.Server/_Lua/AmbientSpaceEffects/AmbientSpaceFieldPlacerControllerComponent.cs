@@ -33,6 +33,14 @@ public sealed partial class AmbientSpaceFieldPlacerControllerComponent : Compone
     [DataField]
     public float DangerClearance = 500f;
 
+    // LuaM-start
+    /// <summary>
+    /// If set, exactly this many nebulae get weather, picked after all of them are placed. <see cref="DangerChance"/> is then ignored.
+    /// </summary>
+    [DataField]
+    public int? DangerCount;
+    // LuaM-end
+
     [DataField]
     public EntProtoId FieldPrototype = "AmbientSpaceFieldNebula";
 

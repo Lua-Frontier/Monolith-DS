@@ -258,6 +258,14 @@ public sealed partial class BloodstreamSystem : EntitySystem
             _noBleedTarget = old;
         }
     }
+
+    /// <summary>
+    /// Whether damage to the entity should not cause bleeding right now, see <see cref="WithoutBleeding"/>.
+    /// </summary>
+    public bool IsBleedingSuppressed(EntityUid uid)
+    {
+        return _noBleedTarget == uid;
+    }
     // LuaM-end
 
     private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChangedEvent args)

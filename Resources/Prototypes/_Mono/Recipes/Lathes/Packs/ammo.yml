@@ -798,6 +798,11 @@
   - AmmoBox10Phz
   - AmmoBox635x40mmCaselessPlasma
   - Magazine635x40mmCaselessPlasma
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox635x40mmCaselessBigRubber
+  - AmmoBox635x40mmCaselessBigPlasma
+  - AmmoBox635x40mmCaselessBigHP
+  # LuaM-end
 
 #advanced = Uranium + Incendiary + Plasteel AP + Synth AP + RIP
 # MARK: Dynamic
@@ -845,6 +850,7 @@
   - Magazine762x54mmRIncendiary
   - AmmoBox762x54mmRIncendiary
   - Magazine8x65mmSKRIncendiary
+  - Magazine8x65mmSKRBoxIncendiary # LuaM
   - AmmoBox8x65mmSKRIncendiary
   - Magazine556x45mmIncendiary
   - SpeedLoader556x45mmIncendiary
@@ -872,6 +878,7 @@
 #Plasteel AP recipes
 
   - Magazine762x51mmPlasteelAP
+  - Magazine8x65mmSKRBox # LuaM: the 8x65mm SAW box
   - AmmoBox762x51mmPlasteelAP
   - Magazine762x54mmRPlasteelAP
   - AmmoBox762x54mmRPlasteelAP
@@ -985,12 +992,98 @@
   - AmmoBox635x40mmCaselessBig #PDV
   - AmmoBox68x52mmCaselessBig #TSF
   - AmmoBoxShenzhenBig #TSF
+  - AmmoBox12_gaugeBigBuckshot # LuaM
+  - AmmoBox23x75mmBigBuckshot # LuaM
+  - AmmoBox127x99mmBig # LuaM
 
 #8x65 SKR Ammo Box
   - AmmoBox8x65mmSKR
+  - AmmoBox8x65mmSKRBig # LuaM
 
 # Smart
   - MagazineSmart # LuaM
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox9x19mmBigPractice
+  - AmmoBox9x19mmBigIncendiary
+  - AmmoBox9x19mmBigUranium
+  - AmmoBox9x19mmBigRubber
+  - AmmoBox9x19mmBigHP
+  - AmmoBox9x19mmBigPlasteelAP
+  - AmmoBox45_ACPBigPractice
+  - AmmoBox45_ACPBigIncendiary
+  - AmmoBox45_ACPBigUranium
+  - AmmoBox45_ACPBigRubber
+  - AmmoBox45_ACPBigHP
+  - AmmoBox45_ACPBigPlasteelAP
+  - AmmoBox46x30mmBigPractice
+  - AmmoBox46x30mmBigIncendiary
+  - AmmoBox46x30mmBigUranium
+  - AmmoBox46x30mmBigRubber
+  - AmmoBox46x30mmBigHP
+  - AmmoBox46x30mmBigPlasteelAP
+  - AmmoBox57x28mmBigPractice
+  - AmmoBox57x28mmBigIncendiary
+  - AmmoBox57x28mmBigUranium
+  - AmmoBox57x28mmBigRubber
+  - AmmoBox57x28mmBigHP
+  - AmmoBox57x28mmBigPlasteelAP
+  - AmmoBox357_magnumBigPractice
+  - AmmoBox357_magnumBigIncendiary
+  - AmmoBox357_magnumBigUranium
+  - AmmoBox357_magnumBigRubber
+  - AmmoBox357_magnumBigHP
+  - AmmoBox357_magnumBigPlasteelAP
+  - AmmoBox556x45mmBigPractice
+  - AmmoBox556x45mmBigIncendiary
+  - AmmoBox556x45mmBigUranium
+  - AmmoBox556x45mmBigRubber
+  - AmmoBox556x45mmBigHP
+  - AmmoBox556x45mmBigPlasteelAP
+  - AmmoBox762x39mmBigPractice
+  - AmmoBox762x39mmBigIncendiary
+  - AmmoBox762x39mmBigUranium
+  - AmmoBox762x39mmBigRubber
+  - AmmoBox762x39mmBigHP
+  - AmmoBox762x39mmBigPlasteelAP
+  - AmmoBox762x39mmBigSubsonic
+  - AmmoBox762x51mmBigPractice
+  - AmmoBox762x51mmBigIncendiary
+  - AmmoBox762x51mmBigUranium
+  - AmmoBox762x51mmBigRubber
+  - AmmoBox762x51mmBigHP
+  - AmmoBox762x51mmBigPlasteelAP
+  - AmmoBox762x54mmRBigPractice
+  - AmmoBox762x54mmRBigIncendiary
+  - AmmoBox762x54mmRBigUranium
+  - AmmoBox762x54mmRBigRubber
+  - AmmoBox762x54mmRBigHP
+  - AmmoBox762x54mmRBigPlasteelAP
+  - AmmoBox635x40mmCaselessBigAP
+  - AmmoBox68x52mmCaselessBigPlasma
+  - AmmoBox8x65mmSKRBigPractice
+  - AmmoBox8x65mmSKRBigIncendiary
+  - AmmoBox12_gaugeBigBeanbag
+  - AmmoBox12_gaugeBigSlug
+  - AmmoBox12_gaugeBigFlare
+  - AmmoBox12_gaugeBigIncendiary
+  - AmmoBox12_gaugeBigUranium
+  - AmmoBox12_gaugeBigPractice
+  - AmmoBox12_gaugeBigOOBuckshot
+  - AmmoBox12_gaugeBigSlugAP
+  - AmmoBox12_gaugeBigFlechette
+  - AmmoBox23x75mmBigBeanbag
+  - AmmoBox23x75mmBigSlug
+  - AmmoBox23x75mmBigFlare
+  - AmmoBox23x75mmBigIncendiary
+  - AmmoBox23x75mmBigFlashbang
+  - AmmoBox23x75mmBigUranium
+  - AmmoBox23x75mmBigPractice
+  - AmmoBox23x75mmBigOOBuckshot
+  - AmmoBox23x75mmBigSlugAP
+  - AmmoBox23x75mmBigFlechette
+  - AmmoBox127x99mmBigExplosive
+  - AmmoBox145x114mmBigEMP
+  # LuaM-end
   
 - type: latheRecipePack
   id: EnergyAmmo # All energy ammo (which isn't a lot.)
@@ -1006,3 +1099,6 @@
   - Magazine68x52mmCaselessPlasma
   - Magazine635x40mmCaselessPlasma
   - AmmoBox635x40mmCaselessPlasma
+  # LuaM-start: big boxes of the ammo variants
+  - AmmoBox635x40mmCaselessBigPlasma
+  # LuaM-end

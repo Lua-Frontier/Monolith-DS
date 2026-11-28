@@ -41,7 +41,13 @@ public sealed partial class HudWindowAccentController : UIController
     private readonly HashSet<(EntityUid, Enum)> _currentUis = new();
     private readonly List<(EntityUid, Enum)> _stale = new();
     private readonly List<(BaseWindow Window, TimeSpan Added)> _pending = new();
-    private readonly Dictionary<BaseWindow, HudAccent> _owners = new();
+
+    /// <summary>
+    /// The accent of the entity a window was opened from, kept on the window itself so a reopened window keeps it.
+    /// A dictionary here kept up to 200 closed windows with all their controls alive.
+    /// </summary>
+    private static readonly AttachedProperty<HudAccent?> OwnerAccent =
+        AttachedProperty<HudAccent?>.Create("LuaMHudOwnerAccent", typeof(HudWindowAccentController));
 
     public override void FrameUpdate(Robust.Shared.Timing.FrameEventArgs args)
     {
@@ -53,11 +59,10 @@ public sealed partial class HudWindowAccentController : UIController
 
     private void MatchOwners()
     {
-        if (_owners.Count > 200)
-            _owners.Clear();
-
+        // LuaM-start
         if (_pending.Count == 0)
             return;
+        // LuaM-end
 
         var now = _timing.RealTime;
         _currentUis.Clear();
@@ -66,12 +71,16 @@ public sealed partial class HudWindowAccentController : UIController
         // System<T>() threw there every frame a window was waiting for its owner
         _entities.EntitySysManager.TryGetEntitySystem<Robust.Client.GameObjects.UserInterfaceSystem>(out var uiSystem);
 
-        if (_player.LocalEntity is { } player && uiSystem != null)
+        // read the component directly: GetActorUis is an iterator and allocated every frame
+        if (uiSystem != null && _entities.TryGetComponent<UserInterfaceUserComponent>(_player.LocalEntity, out var user))
         {
-            foreach (var (uid, key) in uiSystem.GetActorUis(player))
+            foreach (var (uid, keys) in user.OpenInterfaces)
             {
-                _currentUis.Add((uid, key));
-                _seen.TryAdd((uid, key), now);
+                foreach (var key in keys)
+                {
+                    _currentUis.Add((uid, key));
+                    _seen.TryAdd((uid, key), now);
+                }
             }
         }
 
@@ -115,7 +124,7 @@ public sealed partial class HudWindowAccentController : UIController
             {
                 var proto = _entities.GetComponentOrNull<MetaDataComponent>(owner.Item1)?.EntityPrototype?.ID;
                 var resolved = HudAccents.ForPrototype(proto, _protos) ?? HudAccents.For(window.GetType());
-                _owners[window] = resolved;
+                window.SetValue<HudAccent?>(OwnerAccent, resolved);
                 Decorate(window, resolved);
                 _pending.RemoveAt(i);
             }
@@ -124,7 +133,6 @@ public sealed partial class HudWindowAccentController : UIController
                 _pending.RemoveAt(i);
             }
         }
-
     }
 
     private readonly List<(BaseWindow Window, int Frames)> _fit = new();
@@ -171,7 +179,7 @@ public sealed partial class HudWindowAccentController : UIController
         if (window is not Content.Client.UserInterface.Systems.Storage.Controls.StorageWindow)
             _fit.Add((window, 0));
 
-        if (_owners.TryGetValue(window, out var known))
+        if (window.GetValue(OwnerAccent) is { } known)
         {
             Decorate(window, known);
             return;

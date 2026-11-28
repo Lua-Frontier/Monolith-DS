@@ -331,10 +331,10 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         efficiency *= reclaimerComponent.Efficiency;
 
         var totalChemicals = new Solution();
+        var stackCount = CompOrNull<StackComponent>(item)?.Count ?? 1; // LuaM
 
         if (Resolve(item, ref composition, false))
         {
-            var stackCount = CompOrNull<StackComponent>(item)?.Count ?? 1; // LuaM
             foreach (var (key, value) in composition.ChemicalComposition)
             {
                 // TODO use ReagentQuantity
@@ -353,7 +353,7 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
                 var solution = soln.Comp.Solution;
                 foreach (var quantity in solution.Contents)
                 {
-                    totalChemicals.AddReagent(quantity.Reagent.Prototype, quantity.Quantity * efficiency, false);
+                    totalChemicals.AddReagent(quantity.Reagent.Prototype, quantity.Quantity * efficiency * stackCount, false); // LuaM: + stackCount
                 }
             }
         }
@@ -363,7 +363,7 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
             // Are we a recycler? Only use drainable solution.
             if (_solutionContainer.TryGetDrainableSolution(item, out _, out var drainableSolution))
             {
-                totalChemicals.AddSolution(drainableSolution, _prototype);
+                totalChemicals.AddSolution(ScaleToStack(drainableSolution, stackCount), _prototype); // LuaM: ScaleToStack
             }
         }
         else
@@ -371,7 +371,7 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
             // Are we an industrial reagent grinder? Use extractable solution.
             if (_solutionContainer.TryGetExtractableSolution(item, out _, out var extractableSolution))
             {
-                totalChemicals.AddSolution(extractableSolution, _prototype);
+                totalChemicals.AddSolution(ScaleToStack(extractableSolution, stackCount), _prototype); // LuaM: ScaleToStack
             }
         }
 
@@ -382,4 +382,19 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
             _puddle.TrySpillAt(reclaimer, totalChemicals, out _, sound, transformComponent: xform);
         }
     }
+
+    // LuaM-start
+    /// <summary>
+    /// A stack keeps the solution of a single unit, so the whole stack holds that many times more.
+    /// </summary>
+    private static Solution ScaleToStack(Solution solution, int stackCount)
+    {
+        if (stackCount <= 1)
+            return solution;
+
+        var scaled = new Solution(solution);
+        scaled.ScaleSolution(stackCount);
+        return scaled;
+    }
+    // LuaM-end
 }

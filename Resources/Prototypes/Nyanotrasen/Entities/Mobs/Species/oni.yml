@@ -23,6 +23,7 @@
     spreadMultiplier: 15
     maxSpreadAngle: 180
   - type: BonusMeleeDamage
+    applyIfUser: true # LuaM: the bonus also works for punches
     damageModifierSet:
       coefficients:
         Blunt: 1.2 # LuaM: 1.2 > 1.45 > 1.2

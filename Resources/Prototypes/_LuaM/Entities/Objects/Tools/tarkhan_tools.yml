@@ -1,0 +1,83 @@
+# Tarkhan tools in the colours of the CV-280 'Basilisk' hardsuit, given in every Tarkhan kit.
+
+- type: entity
+  parent: SyndicateJawsOfLife
+  id: JawsOfLifeTarkhan
+  name: Tarkhan jaws of life
+  description: Advanced jaws of life in the colours of the CV-280 'Basilisk' hardsuit. Useful for entering ships or their departments.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tools/jaws_of_life_tarkhan.rsi
+    state: jaws_pry
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Clothing
+    sprite: _LuaM/Objects/Tools/jaws_of_life_tarkhan.rsi
+  - type: MultipleTool
+    entries:
+    - behavior: [ Prying ]
+      sprite:
+        sprite: _LuaM/Objects/Tools/jaws_of_life_tarkhan.rsi
+        state: jaws_pry
+      useSound: /Audio/Items/jaws_pry.ogg
+      changeSound: /Audio/Items/change_jaws.ogg
+    - behavior: [ Cutting ]
+      sprite:
+        sprite: _LuaM/Objects/Tools/jaws_of_life_tarkhan.rsi
+        state: jaws_cutter
+      useSound: /Audio/Items/jaws_cut.ogg
+      changeSound: /Audio/Items/change_jaws.ogg
+
+- type: entity
+  parent: PowerDrill
+  id: PowerDrillTarkhan
+  name: Tarkhan power drill
+  description: A powered hand drill in the colours of the CV-280 'Basilisk' hardsuit.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tools/drill_tarkhan.rsi
+    state: drill_screw
+  - type: Item
+    sprite: _LuaM/Objects/Tools/drill_tarkhan.rsi
+  - type: MultipleTool
+    entries:
+    - behavior: [ Screwing ]
+      sprite:
+        sprite: _LuaM/Objects/Tools/drill_tarkhan.rsi
+        state: drill_screw
+      useSound:
+        path: /Audio/Items/drill_use.ogg
+      changeSound:
+        path: /Audio/Items/change_drill.ogg
+    - behavior: [ Anchoring ]
+      sprite:
+        sprite: _LuaM/Objects/Tools/drill_tarkhan.rsi
+        state: drill_bolt
+      useSound:
+        path: /Audio/Items/drill_use.ogg
+      changeSound:
+        path: /Audio/Items/change_drill.ogg
+
+- type: entity
+  parent: WelderExperimental
+  id: WelderExperimentalTarkhan
+  name: Tarkhan advanced welding tool
+  description: An experimental welder in the colours of the CV-280 'Basilisk' hardsuit. Its plasma-like flame is less harmful to the eyes and it makes its own fuel.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tools/welder_tarkhan.rsi
+  - type: Item
+    sprite: _LuaM/Objects/Tools/welder_tarkhan.rsi
+
+- type: entity
+  parent: HandHeldMassScanner
+  id: HandHeldMassScannerTarkhan
+  name: Tarkhan mass scanner
+  description: A hand-held mass scanner in the colours of the CV-280 'Basilisk' hardsuit.
+  components:
+  - type: Sprite
+    sprite: _LuaM/Objects/Tools/handheld_mass_scanner_tarkhan.rsi

@@ -4,6 +4,7 @@
   id: BaseAmmoBox45_ACP
   name: ammunition box (.45 ACP FMJ)
   components:
+  - type: AmmoBox # LuaM: ammo boxes can not be stashed in a safety deposit box
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
